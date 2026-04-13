@@ -9,12 +9,12 @@ import {
   regionColors,
 } from "@/lib/data";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  // Generate static pages for all metros
-  const slugs = getAllSlugs();
-  return slugs.map((slug) => ({ slug }));
+  // Pre-build top 200 metros at build time; rest generated on-demand
+  const allMetros = getAllMetros();
+  return allMetros.slice(0, 200).map((m) => ({ slug: m.slug }));
 }
 
 export async function generateMetadata({
