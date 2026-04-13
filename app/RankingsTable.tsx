@@ -160,9 +160,10 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
           <tbody>
             {filtered.map((metro) => (
               <tr
-                key={metro.slug}
-                className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors"
-              >
+  key={metro.slug}
+  className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors cursor-pointer"
+  onClick={() => window.location.href = `/rankings/${metro.slug}`}
+>
                 <td
                   className="px-4 py-3 text-sm font-semibold"
                   style={{
@@ -173,14 +174,14 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                   #{metro.rank}
                 </td>
                 <td className="px-4 py-3">
-                  <div>
-                    <div className="font-semibold text-[var(--text)]">
-                      {metro.name}
-                    </div>
+  <a href={`/rankings/${metro.slug}`} className="block">
+    <div className="font-semibold text-[var(--text)] hover:text-[var(--accent)] transition">
+      {metro.name}
+    </div>
                     <div className="text-xs text-[var(--text-muted)]">
                       {metro.country}
                     </div>
-                  </div>
+                  </a>
                 </td>
                 <td className="px-4 py-3 text-sm">
                   <div
