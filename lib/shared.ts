@@ -42,7 +42,24 @@ export function formatMarketCap(n: number): string {
   if (n >= 1e12) return "$" + (n / 1e12).toFixed(1) + "T";
   if (n >= 1e9) return "$" + (n / 1e9).toFixed(0) + "B";
   if (n >= 1e6) return "$" + (n / 1e6).toFixed(0) + "M";
+  if (n >= 1e3) return "$" + (n / 1e3).toFixed(0) + "K";
   return "$" + n.toFixed(0);
+}
+
+export function formatGdp(n: number): string {
+  // GDP values are already in billions
+  if (n >= 1000) return "$" + (n / 1000).toFixed(1) + "T";
+  if (n >= 1) return "$" + n.toFixed(0) + "B";
+  if (n > 0) return "$" + (n * 1000).toFixed(0) + "M";
+  return "N/A";
+}
+
+export function formatDimValue(key: string, value: number): string {
+  // Format large numbers cleanly instead of scientific notation
+  if (key === "marketCap") return formatMarketCap(value);
+  if (key === "airportScore" || key === "luxuryStars") return value.toFixed(1);
+  if (Number.isInteger(value)) return value.toLocaleString();
+  return value.toFixed(2);
 }
 
 export const regionColors: Record<string, string> = {

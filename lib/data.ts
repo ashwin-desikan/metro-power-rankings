@@ -6,7 +6,7 @@ import { join } from "path";
 
 // Re-export shared types for convenience in server components
 export type { Metro, Region } from "./shared";
-export { formatPop, formatMarketCap, regionColors } from "./shared";
+export { formatPop, formatMarketCap, formatGdp, formatDimValue, regionColors } from "./shared";
 
 export interface MetroDetail {
   metro: {
@@ -32,7 +32,7 @@ export interface MetroDetail {
   skyscrapers?: { city: string; over150m: number; over200m: number; over300m: number };
   luxury?: { name: string; city: string; type: string }[];
   events?: { sport: string; event: string; year: string; venue: string }[];
-  marketCap?: { total: number; count: number; top10: number[] };
+  marketCap?: { total: number; count: number; top12: number[] };
   football?: { total: number; byLevel: Record<string, number> };
 }
 

@@ -385,7 +385,7 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
         detail['marketCap'] = {
             'total': round(sum(caps)),
             'count': len(caps),
-            'top10': [round(v) for v in caps[:10]],
+            'top12': [round(v) for v in caps[:12]],
         }
 
     if metro_name in football:

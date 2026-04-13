@@ -6,15 +6,17 @@ import {
   getMetroDetail,
   formatPop,
   formatMarketCap,
+  formatGdp,
+  formatDimValue,
   regionColors,
 } from "@/lib/data";
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  // Pre-build top 200 metros at build time; rest generated on-demand
-  const allMetros = getAllMetros();
-  return allMetros.slice(0, 200).map((m) => ({ slug: m.slug }));
+  // Generate static pages for all metros
+  const slugs = getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -78,12 +80,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
             Rankings
           </a>
           <span>/</span>
-          <a
-            href={`/regions/${metro.region.toLowerCase().replace(/\s+/g, "-")}`}
-            className="hover:text-[var(--accent)] transition"
-          >
+          <span className="text-[var(--text)]">
             {metro.region}
-          </a>
+          </span>
           <span>/</span>
           <span className="text-[var(--text)]">{metro.country}</span>
           <span>/</span>
@@ -104,7 +103,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 Population: <span className="text-[var(--text)]">{formatPop(metro.pop)}</span>
               </p>
               <p className="text-lg">
-                GDP: <span className="text-[var(--text)]">{formatMarketCap(metro.gdp)}</span> • GDP per capita:{" "}
+                GDP: <span className="text-[var(--text)]">{formatGdp(metro.gdp)}</span> • GDP per capita:{" "}
                 <span className="text-[var(--text)]">${metro.gdpPerCapita.toLocaleString()}</span>
               </p>
               {metro.gawcClass && (
@@ -253,7 +252,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                       className="px-6 py-3 text-right text-[var(--accent)] font-mono"
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
-                      {typeof value === "number" ? value.toFixed(2) : "—"}
+                      {typeof value === "number" ? formatDimValue(key, value) : "—"}
                     </td>
                   </tr>
                 ))}
@@ -363,23 +362,23 @@ export default async function MetroDetailPage({ params }: PageProps) {
         )}
 
         {/* Market Cap Section */}
-        {detail.marketCap && detail.marketCap.top10.length > 0 && (
+        {detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold mb-6">Top 10 Public Companies</h2>
+            <h2 className="text-2xl font-bold mb-6">Top 12 Public/Private Companies</h2>
             <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
               <table className="w-full text-sm">
                 <thead className="border-b border-[var(--border)]">
                   <tr className="bg-[var(--bg-card-hover)]">
                     <th className="text-left px-6 py-3 font-semibold text-[var(--text)]">
-                      Rank
+                      #
                     </th>
                     <th className="text-right px-6 py-3 font-semibold text-[var(--text)]">
-                      Market Cap
+                      Valuation
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {detail.marketCap.top10.map((value, idx) => (
+                  {detail.marketCap.top12.map((value, idx) => (
                     <tr
                       key={idx}
                       className={`border-t border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition ${
@@ -390,7 +389,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                         className="px-6 py-3 text-[var(--accent)] font-mono"
                         style={{ fontFamily: "'JetBrains Mono', monospace" }}
                       >
-                        #{idx + 1}
+                        {idx + 1}
                       </td>
                       <td
                         className="px-6 py-3 text-right text-[var(--accent)]"
