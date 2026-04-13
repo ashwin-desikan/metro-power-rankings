@@ -273,7 +273,7 @@ def extract_events(wb):
 
 
 def extract_mktcap(wb):
-    """Extract market cap data grouped by metro."""
+    """Extract market cap data grouped by metro, including company name and source."""
     ws = wb["MktCap_Data"]
     mktcap = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -282,10 +282,16 @@ def extract_mktcap(wb):
         val = safe_float(v[1])
         if not metro or val == 0:
             continue
-        mktcap.setdefault(metro, []).append(val)
-    # Sort each metro's companies by value descending
+        company_name = safe_str(v[2]) if len(v) > 2 else ''
+        source = safe_str(v[3]) if len(v) > 3 else ''
+        mktcap.setdefault(metro, []).append({
+            'valuation': val,
+            'name': company_name,
+            'source': source,
+        })
+    # Sort each metro's companies by valuation descending
     for metro in mktcap:
-        mktcap[metro].sort(reverse=True)
+        mktcap[metro].sort(key=lambda x: x['valuation'], reverse=True)
     return mktcap
 
 
@@ -381,11 +387,19 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
         detail['events'] = events[metro_name]
 
     if metro_name in mktcap:
-        caps = mktcap[metro_name]
+        companies = mktcap[metro_name]
+        total = sum(c['valuation'] for c in companies)
         detail['marketCap'] = {
-            'total': round(sum(caps)),
-            'count': len(caps),
-            'top12': [round(v) for v in caps[:12]],
+            'total': round(total),
+            'count': len(companies),
+            'top12': [
+                {
+                    'name': c['name'],
+                    'valuation': round(c['valuation']),
+                    'source': c['source'],
+                }
+                for c in companies[:12]
+            ],
         }
 
     if metro_name in football:
