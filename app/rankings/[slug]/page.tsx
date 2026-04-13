@@ -364,41 +364,64 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {/* Market Cap Section */}
         {detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold mb-6">Top 12 Public/Private Companies</h2>
+            <h2 className="text-2xl font-bold mb-6">Top Companies</h2>
             <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
               <table className="w-full text-sm">
                 <thead className="border-b border-[var(--border)]">
                   <tr className="bg-[var(--bg-card-hover)]">
-                    <th className="text-left px-6 py-3 font-semibold text-[var(--text)]">
+                    <th className="text-left px-4 py-3 font-semibold text-[var(--text)] w-10">
                       #
                     </th>
-                    <th className="text-right px-6 py-3 font-semibold text-[var(--text)]">
+                    <th className="text-left px-4 py-3 font-semibold text-[var(--text)]">
+                      Company
+                    </th>
+                    <th className="text-right px-4 py-3 font-semibold text-[var(--text)]">
                       Valuation
+                    </th>
+                    <th className="text-right px-4 py-3 font-semibold text-[var(--text)]">
+                      Type
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {detail.marketCap.top12.map((value, idx) => (
-                    <tr
-                      key={idx}
-                      className={`border-t border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition ${
-                        idx % 2 === 0 ? "bg-[var(--bg-card)]" : ""
-                      }`}
-                    >
-                      <td
-                        className="px-6 py-3 text-[var(--accent)] font-mono"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  {detail.marketCap.top12.map((company, idx) => {
+                    const val = typeof company === "number" ? company : company.valuation;
+                    const name = typeof company === "number" ? "" : company.name || "";
+                    const source = typeof company === "number" ? "" : company.source || "";
+                    const sourceColor =
+                      source === "Unicorn"
+                        ? "text-purple-400"
+                        : source === "Private"
+                        ? "text-amber-400"
+                        : "text-[var(--text-muted)]";
+                    return (
+                      <tr
+                        key={idx}
+                        className={`border-t border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition ${
+                          idx % 2 === 0 ? "bg-[var(--bg-card)]" : ""
+                        }`}
                       >
-                        {idx + 1}
-                      </td>
-                      <td
-                        className="px-6 py-3 text-right text-[var(--accent)]"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                      >
-                        {formatMarketCap(value)}
-                      </td>
-                    </tr>
-                  ))}
+                        <td
+                          className="px-4 py-3 text-[var(--text-muted)] font-mono"
+                          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                        >
+                          {idx + 1}
+                        </td>
+                        <td className="px-4 py-3 text-[var(--text)] font-medium">
+                          {name}
+                        </td>
+                        <td
+                          className="px-4 py-3 text-right text-[var(--accent)] font-mono"
+                          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                        >
+                          {formatMarketCap(val)}
+                        </td>
+                        <td className={`px-4 py-3 text-right text-xs ${sourceColor}`}>
+                          {source}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
