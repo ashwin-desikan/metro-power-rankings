@@ -3,14 +3,14 @@
 Extract data from MetroAreas.xlsx and generate JSON files for the website.
 
 Usage:
-    python scripts/extract.py [path/to/MetroAreas.xlsx]
+  python scripts/extract.py [path/to/MetroAreas.xlsx]
 
 If no path is given, looks for MetroAreas.xlsx in the parent directory.
 
 Outputs:
-    public/data/metros.json          - Main rankings (all 4,285 metros)
-    public/data/regions.json         - Regional aggregates
-    public/data/details/<slug>.json  - Per-metro detail files
+  public/data/metros.json - Main rankings (all 4,285 metros)
+  public/data/regions.json - Regional aggregates
+  public/data/details/<slug>.json - Per-metro detail files
 """
 
 import json
@@ -301,12 +301,17 @@ def extract_football(wb):
     football = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
         v = list(row)
-        metro = safe_str(v[0])
-        if not metro:
+        metro = safe_str(v[2])  # Metro Area column
+        team_name = safe_str(v[0])  # Team name column
+        if not metro or not team_name:
             continue
         football.setdefault(metro, []).append({
-            'level': safe_int(v[1]),
-            'major': safe_str(v[2]) == 'Y' if v[2] else False,
+            'team': team_name,
+            'city': safe_str(v[1]),
+            'country': safe_str(v[4]),
+            'league': safe_str(v[5]),
+            'level': safe_int(v[6]),
+            'major': safe_str(v[8]) == 'Y',
         })
     return football
 
@@ -411,6 +416,23 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
         for c in clubs:
             lvl = str(c['level'])
             detail['football']['byLevel'][lvl] = detail['football']['byLevel'].get(lvl, 0) + 1
+
+        # Merge football clubs into the teams array for site rendering
+        # Major league clubs always included; non-major only if they have a valid level (> 0)
+        if 'teams' not in detail:
+            detail['teams'] = []
+        for c in clubs:
+            if not c['major'] and not c['level']:
+                continue
+            detail['teams'].append({
+                'sport': 'Soccer',
+                'league': c['league'],
+                'team': c['team'],
+                'city': c['city'],
+                'country': c['country'],
+                'level': str(c['level']),
+                'major': c['major'],
+            })
 
     return detail
 
@@ -560,9 +582,9 @@ def main():
         json.dump(slim_metros, f, separators=(',', ':'))
 
     print("\nDone! Data files written to public/data/")
-    print(f"  metros.json    ({len(slim_metros)} metros)")
-    print(f"  regions.json   ({len(regions)} regions)")
-    print(f"  details/       ({detail_count} files)")
+    print(f"  metros.json ({len(slim_metros)} metros)")
+    print(f"  regions.json ({len(regions)} regions)")
+    print(f"  details/ ({detail_count} files)")
 
 
 if __name__ == "__main__":
