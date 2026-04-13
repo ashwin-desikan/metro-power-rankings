@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New York - Global Metro Power Rankings</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #08080D; --bg-card: #12121A; --bg-card-hover: #1A1A26;
+    --border: #1E1E2E; --text: #E8E8ED; --text-muted: #8888A0; --text-dim: #55556A;
+    --accent: #4ECDC4; --accent-dim: #2A7A74;
+  }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8,8,13,0.85); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border); padding: 0 2rem; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { font-weight: 700; font-size: 0.95rem; color: var(--accent); text-decoration: none; }
+  .nav-links { display: flex; gap: 1.75rem; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-search {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.4rem 0.8rem; color: var(--text-muted); font-size: 0.82rem; width: 220px; font-family: inherit;
+  }
+  .nav-search::placeholder { color: var(--text-dim); }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+  /* HERO */
+  .profile-hero {
+    padding: 6rem 0 3rem; position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .profile-hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 20%, rgba(78,205,196,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .breadcrumb {
+    font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--accent); }
+
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: end;
+  }
+  .hero-left h1 {
+    font-size: 3.2rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .hero-meta {
+    display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;
+    font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;
+  }
+  .hero-meta-item { display: flex; align-items: center; gap: 0.4rem; }
+  .hero-meta-divider { color: var(--text-dim); }
+
+  .hero-score-block { text-align: right; }
+  .hero-rank-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); }
+  .hero-rank {
+    font-family: 'JetBrains Mono', monospace; font-size: 4rem; font-weight: 800;
+    color: var(--accent); line-height: 1;
+  }
+  .hero-score-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin-top: 0.75rem; }
+  .hero-score {
+    font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700;
+    color: var(--text); line-height: 1.2;
+  }
+
+  /* STATS ROW */
+  .stats-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin: 2.5rem 0;
+  }
+  .stat-cell {
+    background: var(--bg-card); padding: 1.25rem 1rem; text-align: center;
+  }
+  .stat-cell-value {
+    font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 700; color: var(--text);
+  }
+  .stat-cell-label {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-dim); margin-top: 0.25rem;
+  }
+
+  /* RADAR CHART (CSS) */
+  .radar-section {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    margin: 2.5rem 0; align-items: start;
+  }
+  .dimension-table {
+    width: 100%; border-collapse: collapse; font-size: 0.82rem;
+  }
+  .dimension-table th {
+    text-align: left; padding: 0.5rem 0.75rem; font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+  .dimension-table th.num { text-align: right; }
+  .dimension-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(30,30,46,0.4); }
+  .dimension-table td.num {
+    text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 500;
+  }
+  .dim-bar-cell { width: 120px; }
+  .dim-bar { height: 6px; border-radius: 3px; background: var(--border); overflow: hidden; }
+  .dim-bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+  .dim-pctile {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-dim);
+  }
+
+  /* SECTION HEADERS */
+  .section { margin: 3rem 0; }
+  .section-title {
+    font-size: 1.3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.25rem;
+  }
+  .section-subtitle { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+  /* DETAIL CARDS */
+  .detail-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;
+  }
+  .detail-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.25rem; transition: border-color 0.2s;
+  }
+  .detail-card:hover { border-color: var(--accent-dim); }
+  .detail-card-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;
+  }
+  .detail-card-title { font-weight: 700; font-size: 0.88rem; }
+  .detail-card-badge {
+    font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 10px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .badge-major { background: rgba(78,205,196,0.15); color: var(--accent); }
+  .badge-count { background: rgba(136,136,160,0.15); color: var(--text-muted); }
+
+  .detail-list { list-style: none; }
+  .detail-list li {
+    padding: 0.35rem 0; font-size: 0.82rem; color: var(--text-muted);
+    border-bottom: 1px solid rgba(30,30,46,0.3);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .detail-list li:last-child { border-bottom: none; }
+  .detail-list-name { color: var(--text); font-weight: 500; }
+  .detail-list-meta { font-size: 0.72rem; color: var(--text-dim); }
+
+  /* HORIZONTAL SCROLLING CATEGORIES */
+  .category-tabs {
+    display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem; -webkit-overflow-scrolling: touch;
+  }
+  .category-tabs::-webkit-scrollbar { height: 2px; }
+  .category-tabs::-webkit-scrollbar-track { background: transparent; }
+  .category-tabs::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .cat-tab {
+    padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--border); background: transparent;
+    color: var(--text-muted); white-space: nowrap; font-family: inherit; transition: all 0.2s;
+  }
+  .cat-tab:hover { border-color: var(--accent-dim); color: var(--text); }
+  .cat-tab.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+
+  /* COMPANY LIST */
+  .company-row {
+    display: grid; grid-template-columns: 1fr auto; gap: 1rem;
+    padding: 0.5rem 0; border-bottom: 1px solid rgba(30,30,46,0.3);
+    font-size: 0.82rem; align-items: center;
+  }
+  .company-row:last-child { border-bottom: none; }
+  .company-val {
+    font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--accent);
+    font-size: 0.82rem;
+  }
+
+  /* SIMILAR METROS */
+  .similar-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;
+  }
+  .similar-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.25rem; text-align: center; cursor: pointer; transition: all 0.2s;
+  }
+  .similar-card:hover { border-color: var(--accent-dim); transform: translateY(-2px); }
+  .similar-rank { font-size: 0.68rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+  .similar-name { font-weight: 700; font-size: 1rem; margin: 0.25rem 0; }
+  .similar-score { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--accent); }
+  .similar-country { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.15rem; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border); padding: 2.5rem 0; margin-top: 4rem;
+    display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-dim);
+  }
+  footer a { color: var(--text-dim); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .hero-left h1 { font-size: 2.2rem; }
+    .hero-score-block { text-align: left; }
+    .radar-section { grid-template-columns: 1fr; }
+    .container { padding: 0 1.25rem; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+  }
+
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  .anim { animation: fadeInUp 0.5s ease-out both; }
+  .d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.1s; }
+  .d3 { animation-delay: 0.15s; } .d4 { animation-delay: 0.2s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">METRO POWER RANKINGS</a>
+  <div class="nav-links">
+    <a href="#">Rankings</a><a href="#">Compare</a><a href="#">Regions</a><a href="#">Articles</a><a href="#">Methodology</a>
+  </div>
+  <input type="text" class="nav-search" placeholder="Search 4,285 metros...">
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="profile-hero anim">
+    <div class="breadcrumb">
+      <a href="#">Rankings</a> &rsaquo; <a href="#">North America</a> &rsaquo; <a href="#">United States</a> &rsaquo; New York
+    </div>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <h1>New York</h1>
+        <div class="hero-meta">
+          <span class="hero-meta-item">United States</span>
+          <span class="hero-meta-divider">&bull;</span>
+          <span class="hero-meta-item">North America</span>
+          <span class="hero-meta-divider">&bull;</span>
+          <span class="hero-meta-item">Pop. 22.3M</span>
+          <span class="hero-meta-divider">&bull;</span>
+          <span class="hero-meta-item">GDP $2.5T</span>
+        </div>
+      </div>
+      <div class="hero-score-block">
+        <div class="hero-rank-label">Global Rank</div>
+        <div class="hero-rank">#1</div>
+        <div class="hero-score-label">Composite Score</div>
+        <div class="hero-score">175.7</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="stats-row anim d1">
+    <div class="stat-cell">
+      <div class="stat-cell-value">22</div>
+      <div class="stat-cell-label">Major League Teams</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value">253</div>
+      <div class="stat-cell-label">Public Companies</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value">$8.7T</div>
+      <div class="stat-cell-label">Market Cap</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value">324</div>
+      <div class="stat-cell-label">Skyscrapers 150m+</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value">499</div>
+      <div class="stat-cell-label">Metro Stations</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value">25</div>
+      <div class="stat-cell-label">Universities</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value">48</div>
+      <div class="stat-cell-label">Michelin/Forbes Stars</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-cell-value">15</div>
+      <div class="stat-cell-label">Major Events Hosted</div>
+    </div>
+  </div>
+
+  <!-- DIMENSION BREAKDOWN -->
+  <div class="section anim d2">
+    <h2 class="section-title">Score Breakdown</h2>
+    <p class="section-subtitle">How New York's 175.7 composite score is constructed across 16 dimensions</p>
+
+    <div class="radar-section">
+      <!-- RADAR CHART (SVG) -->
+      <div style="display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 400 400" width="100%" style="max-width:400px">
+          <!-- Grid -->
+          <g transform="translate(200,200)">
+            <circle cx="0" cy="0" r="160" fill="none" stroke="#1E1E2E" stroke-width="1"/>
+            <circle cx="0" cy="0" r="120" fill="none" stroke="#1E1E2E" stroke-width="1"/>
+            <circle cx="0" cy="0" r="80" fill="none" stroke="#1E1E2E" stroke-width="1"/>
+            <circle cx="0" cy="0" r="40" fill="none" stroke="#1E1E2E" stroke-width="1"/>
+            <!-- Axes (8 main dimensions) -->
+            <line x1="0" y1="-160" x2="0" y2="160" stroke="#1E1E2E" stroke-width="0.5"/>
+            <line x1="-160" y1="0" x2="160" y2="0" stroke="#1E1E2E" stroke-width="0.5"/>
+            <line x1="-113" y1="-113" x2="113" y2="113" stroke="#1E1E2E" stroke-width="0.5"/>
+            <line x1="113" y1="-113" x2="-113" y2="113" stroke="#1E1E2E" stroke-width="0.5"/>
+            <!-- Data polygon (New York's profile, normalized to max possible per dim) -->
+            <polygon
+              points="0,-56 80,-80 160,0 118,118 0,130 -72,72 -120,0 -45,-45"
+              fill="rgba(78,205,196,0.12)" stroke="#4ECDC4" stroke-width="2"/>
+            <!-- Dots -->
+            <circle cx="0" cy="-56" r="4" fill="#4ECDC4"/>
+            <circle cx="80" cy="-80" r="4" fill="#4ECDC4"/>
+            <circle cx="160" cy="0" r="4" fill="#4ECDC4"/>
+            <circle cx="118" cy="118" r="4" fill="#4ECDC4"/>
+            <circle cx="0" cy="130" r="4" fill="#4ECDC4"/>
+            <circle cx="-72" cy="72" r="4" fill="#4ECDC4"/>
+            <circle cx="-120" cy="0" r="4" fill="#4ECDC4"/>
+            <circle cx="-45" cy="-45" r="4" fill="#4ECDC4"/>
+            <!-- Labels -->
+            <text x="0" y="-170" text-anchor="middle" fill="#8888A0" font-size="10" font-family="Inter">Population</text>
+            <text x="135" y="-130" text-anchor="start" fill="#8888A0" font-size="10" font-family="Inter">Market Cap</text>
+            <text x="172" y="5" text-anchor="start" fill="#8888A0" font-size="10" font-family="Inter">Skyscrapers</text>
+            <text x="130" y="138" text-anchor="start" fill="#8888A0" font-size="10" font-family="Inter">Cultural</text>
+            <text x="0" y="155" text-anchor="middle" fill="#8888A0" font-size="10" font-family="Inter">Hospitality</text>
+            <text x="-130" y="90" text-anchor="end" fill="#8888A0" font-size="10" font-family="Inter">Transit</text>
+            <text x="-135" y="5" text-anchor="end" fill="#8888A0" font-size="10" font-family="Inter">Sports</text>
+            <text x="-90" y="-90" text-anchor="end" fill="#8888A0" font-size="10" font-family="Inter">Universities</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- DIMENSION TABLE -->
+      <div style="overflow-x:auto;">
+        <table class="dimension-table">
+          <thead>
+            <tr><th>Dimension</th><th class="num">Raw</th><th class="num">Points</th><th>Contribution</th></tr>
+          </thead>
+          <tbody id="dimTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPORTS TEAMS -->
+  <div class="section anim d3">
+    <h2 class="section-title">Professional Sports</h2>
+    <p class="section-subtitle">22 major league teams, 91 total teams and venues</p>
+
+    <div class="category-tabs" id="sportsTabs">
+      <button class="cat-tab active" data-cat="major">Major Leagues</button>
+      <button class="cat-tab" data-cat="football">Football (Soccer)</button>
+      <button class="cat-tab" data-cat="venues">Major Venues</button>
+      <button class="cat-tab" data-cat="college">College</button>
+    </div>
+
+    <div class="detail-grid" id="sportsGrid"></div>
+  </div>
+
+  <!-- UNIVERSITIES -->
+  <div class="section anim d4">
+    <h2 class="section-title">Universities &amp; Research</h2>
+    <p class="section-subtitle">25 universities including 3 in the global top 30 (CWUR)</p>
+
+    <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+      <div id="uniList"></div>
+    </div>
+  </div>
+
+  <!-- CULTURAL ASSETS & INFRASTRUCTURE -->
+  <div class="section">
+    <h2 class="section-title">Cultural Assets &amp; Infrastructure</h2>
+    <p class="section-subtitle">102 cataloged assets across 14 categories</p>
+
+    <div class="category-tabs" id="cultureTabs">
+      <button class="cat-tab active" data-cat="museum">Museums &amp; Landmarks (30)</button>
+      <button class="cat-tab" data-cat="event">Cultural Events (13)</button>
+      <button class="cat-tab" data-cat="sport-event">Sporting Events (15)</button>
+      <button class="cat-tab" data-cat="airport">Airports (7)</button>
+      <button class="cat-tab" data-cat="transit">Transit (8)</button>
+      <button class="cat-tab" data-cat="exchange">Exchanges (11)</button>
+      <button class="cat-tab" data-cat="bridge">Bridges &amp; Tunnels (5)</button>
+      <button class="cat-tab" data-cat="port">Ports (2)</button>
+    </div>
+
+    <div class="detail-grid" id="cultureGrid"></div>
+  </div>
+
+  <!-- TOP COMPANIES -->
+  <div class="section">
+    <h2 class="section-title">Largest Companies by Market Cap</h2>
+    <p class="section-subtitle">253 publicly traded HQs, $8.7 trillion total market capitalization</p>
+
+    <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:10px; padding:1.25rem;">
+      <div id="companyList"></div>
+    </div>
+  </div>
+
+  <!-- LUXURY HOSPITALITY -->
+  <div class="section">
+    <h2 class="section-title">Luxury Hospitality</h2>
+    <p class="section-subtitle">48 Michelin-starred restaurants and Forbes Travel Guide-rated hotels</p>
+
+    <div class="category-tabs" id="luxTabs">
+      <button class="cat-tab active" data-cat="3star">3-Star Michelin (5)</button>
+      <button class="cat-tab" data-cat="2star">2-Star Michelin (14)</button>
+      <button class="cat-tab" data-cat="ftg5">Forbes 5-Star Hotels (7)</button>
+      <button class="cat-tab" data-cat="ftg4">Forbes 4-Star Hotels (22)</button>
+    </div>
+
+    <div class="detail-grid" id="luxGrid"></div>
+  </div>
+
+  <!-- SIMILAR METROS -->
+  <div class="section">
+    <h2 class="section-title">Compare With</h2>
+    <p class="section-subtitle">Metros with similar composite profiles</p>
+    <div class="similar-grid">
+      <div class="similar-card">
+        <div class="similar-rank">#2 Global</div>
+        <div class="similar-name">London</div>
+        <div class="similar-score">174.5</div>
+        <div class="similar-country">United Kingdom</div>
+      </div>
+      <div class="similar-card">
+        <div class="similar-rank">#3 Global</div>
+        <div class="similar-name">Paris</div>
+        <div class="similar-score">137.8</div>
+        <div class="similar-country">France</div>
+      </div>
+      <div class="similar-card">
+        <div class="similar-rank">#4 Global</div>
+        <div class="similar-name">Tokyo</div>
+        <div class="similar-score">128.8</div>
+        <div class="similar-country">Japan</div>
+      </div>
+      <div class="similar-card">
+        <div class="similar-rank">#5 Global</div>
+        <div class="similar-name">San Francisco</div>
+        <div class="similar-score">117.6</div>
+        <div class="similar-country">United States</div>
+      </div>
+      <div class="similar-card">
+        <div class="similar-rank">#2 NA</div>
+        <div class="similar-name">Los Angeles</div>
+        <div class="similar-score">109.0</div>
+        <div class="similar-country">United States</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Global Metro Power Rankings. Data current as of April 2026.</div>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="#">Substack</a><a href="#">Methodology</a><a href="#">About</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+// DIMENSION BREAKDOWN
+const dims = [
+  { name: 'Skyscrapers', raw: '324 (150m+)', pts: 33.4, max: 35 },
+  { name: 'Cultural Assets', raw: '50 assets', pts: 32.5, max: 45 },
+  { name: 'Luxury Hospitality', raw: '166 stars', pts: 15.4, max: 18 },
+  { name: 'Annual Events', raw: '13 events', pts: 13.0, max: 15 },
+  { name: 'Market Capitalization', raw: '$8.7T', pts: 12.4, max: 37 },
+  { name: 'GaWC Connectivity', raw: '#1 globally', pts: 12.0, max: 12 },
+  { name: 'Major League Teams', raw: '22 teams', pts: 10.0, max: 10 },
+  { name: 'Minor/College Teams', raw: '53 teams', pts: 10.0, max: 10 },
+  { name: 'Population', raw: '22.3M', pts: 7.4, max: 21 },
+  { name: 'Metro Transit', raw: '499 stations', pts: 6.2, max: 7 },
+  { name: 'Airport Score', raw: '17 weighted', pts: 4.3, max: 5 },
+  { name: 'Sporting Events Hosted', raw: '15 major', pts: 3.0, max: 4 },
+  { name: 'Suburban Rail', raw: '408 stations', pts: 3.0, max: 4 },
+  { name: 'GDP Tier', raw: '$2.5T', pts: 3.0, max: 3 },
+  { name: 'Intercity Train Hubs', raw: '3 hubs', pts: 2.8, max: 6 },
+  { name: 'Top Universities', raw: '13 (Top 500 + hospitals)', pts: 8.3, max: 15 },
+];
+
+document.getElementById('dimTable').innerHTML = dims
+  .sort((a, b) => b.pts - a.pts)
+  .map(d => {
+    const pct = Math.round((d.pts / d.max) * 100);
+    return `
+    <tr>
+      <td>${d.name}</td>
+      <td class="num" style="color:var(--text-muted)">${d.raw}</td>
+      <td class="num" style="color:var(--accent); font-family:'JetBrains Mono',monospace; font-weight:600">${d.pts.toFixed(1)}</td>
+      <td class="dim-bar-cell">
+        <div class="dim-bar"><div class="dim-bar-fill" style="width:${pct}%"></div></div>
+        <span class="dim-pctile">${pct}% of max</span>
+      </td>
+    </tr>`;
+  }).join('');
+
+// SPORTS DATA
+const sports = {
+  major: [
+    { team: 'New York Yankees', league: 'MLB', sport: 'Baseball' },
+    { team: 'New York Mets', league: 'MLB', sport: 'Baseball' },
+    { team: 'New York Giants', league: 'NFL', sport: 'Football' },
+    { team: 'New York Jets', league: 'NFL', sport: 'Football' },
+    { team: 'New York Knicks', league: 'NBA', sport: 'Basketball' },
+    { team: 'Brooklyn Nets', league: 'NBA', sport: 'Basketball' },
+    { team: 'New York Rangers', league: 'NHL', sport: 'Hockey' },
+    { team: 'New York Islanders', league: 'NHL', sport: 'Hockey' },
+    { team: 'New Jersey Devils', league: 'NHL', sport: 'Hockey' },
+    { team: 'New York Liberty', league: 'WNBA', sport: 'W Basketball' },
+    { team: 'NJ/NY Gotham FC', league: 'NWSL', sport: 'W Football' },
+  ],
+  football: [
+    { team: 'New York City FC', league: 'MLS', sport: '1st Division' },
+    { team: 'New York Red Bulls', league: 'MLS', sport: '1st Division' },
+  ],
+  venues: [
+    { team: 'Madison Square Garden', league: '', sport: '20,789 capacity' },
+    { team: 'MetLife Stadium', league: '', sport: '82,500 capacity' },
+    { team: 'Yankee Stadium', league: '', sport: '46,537 capacity' },
+    { team: 'Citi Field', league: '', sport: '41,922 capacity' },
+    { team: 'Barclays Center', league: '', sport: '17,732 capacity' },
+    { team: 'UBS Arena', league: '', sport: '17,255 capacity' },
+    { team: 'Red Bull Arena', league: '', sport: '25,000 capacity' },
+  ],
+  college: [
+    { team: 'Rutgers Scarlet Knights', league: 'Big Ten', sport: 'FBS' },
+    { team: 'Army Black Knights', league: 'AAC', sport: 'FBS' },
+    { team: 'Princeton Tigers', league: 'Ivy League', sport: 'FCS' },
+    { team: 'Columbia Lions', league: 'Ivy League', sport: 'FCS' },
+    { team: 'Fordham Rams', league: 'Patriot League', sport: 'FCS' },
+  ],
+};
+
+function renderSports(cat) {
+  const items = sports[cat] || [];
+  document.getElementById('sportsGrid').innerHTML = items.map(t => `
+    <div class="detail-card">
+      <div class="detail-card-header">
+        <span class="detail-card-title">${t.team}</span>
+      </div>
+      <div style="font-size:0.78rem; color:var(--text-muted)">
+        ${t.league ? t.league + ' &bull; ' : ''}${t.sport}
+      </div>
+    </div>
+  `).join('');
+}
+
+document.getElementById('sportsTabs').addEventListener('click', e => {
+  if (!e.target.classList.contains('cat-tab')) return;
+  document.querySelectorAll('#sportsTabs .cat-tab').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  renderSports(e.target.dataset.cat);
+});
+renderSports('major');
+
+// UNIVERSITIES
+const unis = [
+  { rank: 6, name: 'Princeton University', city: 'Princeton' },
+  { rank: 8, name: 'Columbia University', city: 'New York' },
+  { rank: 25, name: 'New York University', city: 'New York' },
+  { rank: 63, name: 'Rutgers University', city: 'New Brunswick' },
+  { rank: 69, name: 'Rockefeller University', city: 'New York' },
+  { rank: 174, name: 'Icahn School of Medicine at Mount Sinai', city: 'New York' },
+  { rank: 215, name: 'Stony Brook University', city: 'Stony Brook' },
+  { rank: 270, name: 'Yeshiva University', city: 'New York' },
+  { rank: 399, name: 'Albert Einstein College of Medicine', city: 'Bronx' },
+  { rank: 417, name: 'City College of New York', city: 'New York' },
+];
+
+document.getElementById('uniList').innerHTML = unis.map(u => `
+  <div style="display:grid; grid-template-columns: 60px 1fr auto; align-items:center; padding:0.6rem 1.25rem; border-bottom:1px solid rgba(30,30,46,0.4); font-size:0.85rem;">
+    <span style="font-family:'JetBrains Mono',monospace; color:${u.rank <= 50 ? 'var(--accent)' : 'var(--text-dim)'}; font-weight:600; font-size:0.82rem">#${u.rank}</span>
+    <span style="font-weight:500">${u.name}</span>
+    <span style="font-size:0.75rem; color:var(--text-dim)">${u.city}</span>
+  </div>
+`).join('');
+
+// CULTURE & INFRA
+const culture = {
+  museum: [
+    'Metropolitan Museum of Art', 'American Museum of Natural History', 'MoMA',
+    'Guggenheim Museum', 'Whitney Museum', 'Statue of Liberty',
+    'Ellis Island', 'Central Park', 'Brooklyn Museum', 'Frick Collection',
+    'The Cloisters', 'Morgan Library & Museum', 'New-York Historical Society',
+    'Intrepid Sea, Air & Space Museum', 'Bronx Zoo', 'New York Botanical Garden',
+    'Carnegie Hall', 'Lincoln Center', 'Radio City Music Hall', 'Madison Square Garden',
+  ],
+  event: [
+    'Tony Awards', 'Met Gala', 'New York Fashion Week', 'Tribeca Film Festival',
+    'NYC Marathon', 'Macy\'s Thanksgiving Day Parade', 'New Year\'s Eve (Times Square)',
+    'US Open (Tennis)', 'Comic Con', 'SummerStage', 'Shakespeare in the Park',
+    'Village Halloween Parade', 'Pride March',
+  ],
+  'sport-event': [
+    'Super Bowl (2014)', 'US Open (Tennis, annual)', 'NYC Marathon (annual)',
+    'NCAA Final Four (1943, 1950)', 'MLB World Series (multiple)',
+    'NBA Finals (multiple)', 'Stanley Cup Finals (multiple)',
+    'WrestleMania (multiple)', 'PGA Championship', 'Ryder Cup',
+    'Masters Grand Prix', 'Belmont Stakes (annual)',
+  ],
+  airport: [
+    { name: 'JFK International', tier: 'Mega Hub' },
+    { name: 'Newark Liberty International', tier: 'Mega Hub' },
+    { name: 'LaGuardia', tier: 'Major International' },
+    { name: 'Westchester County', tier: 'Regional' },
+    { name: 'Long Island MacArthur', tier: 'Regional' },
+    { name: 'Stewart International', tier: 'Regional' },
+    { name: 'Trenton-Mercer', tier: 'Small' },
+  ],
+  transit: [
+    { name: 'NYC Subway', detail: '472 stations' },
+    { name: 'PATH', detail: '13 stations' },
+    { name: 'Hudson-Bergen Light Rail', detail: '24 stations' },
+    { name: 'Newark Light Rail', detail: '16 stations' },
+    { name: 'Long Island Rail Road', detail: 'Suburban rail' },
+    { name: 'Metro-North Railroad', detail: 'Suburban rail' },
+    { name: 'NJ Transit Rail', detail: 'Suburban rail' },
+    { name: 'Staten Island Railway', detail: '22 stations' },
+  ],
+  exchange: [
+    'New York Stock Exchange (NYSE)', 'Nasdaq', 'ICE Futures U.S.',
+    'COMEX', 'NYMEX', 'NYSE Arca', 'NYSE American',
+    'Nasdaq GEMX', 'Nasdaq ISE', 'Nasdaq PHLX', 'CBOE BZX',
+  ],
+  bridge: [
+    'Brooklyn Bridge', 'George Washington Bridge', 'Verrazzano-Narrows Bridge',
+    'Holland Tunnel', 'Lincoln Tunnel',
+  ],
+  port: [
+    { name: 'Port of New York and New Jersey', detail: 'Largest on East Coast' },
+    { name: 'Manhattan Cruise Terminal', detail: 'Passenger port' },
+  ],
+};
+
+function renderCulture(cat) {
+  const items = culture[cat] || [];
+  const grid = document.getElementById('cultureGrid');
+  if (typeof items[0] === 'string') {
+    grid.innerHTML = `<div class="detail-card" style="grid-column:1/-1">
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        ${items.map(i => `<span style="padding:0.3rem 0.7rem; background:rgba(78,205,196,0.08); border:1px solid rgba(78,205,196,0.15); border-radius:6px; font-size:0.78rem; color:var(--text)">${i}</span>`).join('')}
+      </div>
+    </div>`;
+  } else {
+    grid.innerHTML = items.map(i => `
+      <div class="detail-card">
+        <div class="detail-card-title">${i.name}</div>
+        <div style="font-size:0.75rem; color:var(--text-dim); margin-top:0.3rem">${i.tier || i.detail || ''}</div>
+      </div>
+    `).join('');
+  }
+}
+
+document.getElementById('cultureTabs').addEventListener('click', e => {
+  if (!e.target.classList.contains('cat-tab')) return;
+  document.querySelectorAll('#cultureTabs .cat-tab').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  renderCulture(e.target.dataset.cat);
+});
+renderCulture('museum');
+
+// TOP COMPANIES
+const companies = [
+  { name: 'JPMorgan Chase', val: 836 },
+  { name: 'Mastercard', val: 575 },
+  { name: 'Verizon Communications', val: 445 },
+  { name: 'Goldman Sachs', val: 300 },
+  { name: 'Morgan Stanley', val: 282 },
+  { name: 'Pfizer', val: 248 },
+  { name: 'IBM', val: 235 },
+  { name: 'Citigroup', val: 204 },
+  { name: 'American Express', val: 192 },
+  { name: 'Bristol-Myers Squibb', val: 181 },
+  { name: 'Honeywell', val: 170 },
+  { name: 'Blackstone', val: 165 },
+  { name: 'Johnson & Johnson', val: 155 },
+  { name: 'Regeneron Pharmaceuticals', val: 142 },
+  { name: 'Merck & Co.', val: 130 },
+];
+
+document.getElementById('companyList').innerHTML = companies.map((c, i) => `
+  <div class="company-row">
+    <div>
+      <span style="font-family:'JetBrains Mono',monospace; color:var(--text-dim); font-size:0.72rem; margin-right:0.75rem">${i+1}</span>
+      <span style="font-weight:500">${c.name}</span>
+    </div>
+    <div class="company-val">$${c.val}B</div>
+  </div>
+`).join('') + `<div style="font-size:0.75rem; color:var(--text-dim); padding-top:0.75rem; text-align:center">+ 238 more companies totaling $8.7 trillion</div>`;
+
+// LUXURY HOSPITALITY
+const luxury = {
+  '3star': ['Le Bernardin', 'Eleven Madison Park', 'Jungsik', 'Masa', 'Chef\'s Table at Brooklyn Fare'],
+  '2star': ['Daniel', 'Peter Luger Steak House', 'Sushi Nakazawa', 'Atomix', 'Ko', 'Aquavit', 'Atera', 'Blue Hill at Stone Barns', 'Gabriel Kreuther', 'Jean-Georges', 'L\'Artusi', 'Per Se', 'Saga', 'The Modern'],
+  'ftg5': ['Baccarat Hotel', 'Four Seasons Downtown', 'Mandarin Oriental', 'The Mark', 'The Peninsula', 'The Plaza', 'St. Regis New York'],
+  'ftg4': ['Aman New York', 'The Beekman', 'The Carlyle', 'Conrad New York', 'Four Seasons Midtown', 'The Greenwich Hotel', 'The Langham', 'Lotte New York Palace', 'Park Hyatt', 'The Pierre', 'Ritz-Carlton Central Park', 'The Surrey', 'Waldorf Astoria', '+ 9 more'],
+};
+
+function renderLux(cat) {
+  const items = luxury[cat] || [];
+  document.getElementById('luxGrid').innerHTML = `<div class="detail-card" style="grid-column:1/-1">
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+      ${items.map(i => `<span style="padding:0.3rem 0.7rem; background:rgba(78,205,196,0.08); border:1px solid rgba(78,205,196,0.15); border-radius:6px; font-size:0.78rem; color:var(--text)">${i}</span>`).join('')}
+    </div>
+  </div>`;
+}
+
+document.getElementById('luxTabs').addEventListener('click', e => {
+  if (!e.target.classList.contains('cat-tab')) return;
+  document.querySelectorAll('#luxTabs .cat-tab').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  renderLux(e.target.dataset.cat);
+});
+renderLux('3star');
+</script>
+</body>
+</html>

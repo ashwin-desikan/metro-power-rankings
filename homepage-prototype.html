@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Metro Power Rankings</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #08080D;
+    --bg-card: #12121A;
+    --bg-card-hover: #1A1A26;
+    --border: #1E1E2E;
+    --text: #E8E8ED;
+    --text-muted: #8888A0;
+    --text-dim: #55556A;
+    --accent: #4ECDC4;
+    --accent-dim: #2A7A74;
+    --score-high: #4ECDC4;
+    --score-mid: #F7DC6F;
+    --score-low: #E74C3C;
+    --region-na: #4ECDC4;
+    --region-eu: #7B68EE;
+    --region-asia: #FF6B6B;
+    --region-sa: #F7DC6F;
+    --region-africa: #FF8C42;
+    --region-oceania: #45B7D1;
+    --region-mena: #C39BD3;
+    --region-eurasia: #85C1E9;
+    --region-china: #E74C3C;
+    --region-eastasia: #FF6B9D;
+    --region-asean: #82E0AA;
+    --region-southasia: #F0B27A;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8, 8, 13, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    font-weight: 700; font-size: 0.95rem; letter-spacing: -0.02em;
+    color: var(--accent);
+  }
+  .nav-links { display: flex; gap: 1.75rem; }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none; font-size: 0.82rem;
+    font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); }
+  .nav-search {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.4rem 0.8rem; color: var(--text-muted); font-size: 0.82rem;
+    width: 220px; font-family: inherit;
+    transition: border-color 0.2s;
+  }
+  .nav-search:focus { outline: none; border-color: var(--accent); color: var(--text); }
+  .nav-search::placeholder { color: var(--text-dim); }
+
+  /* HERO */
+  .hero {
+    padding: 10rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(78,205,196,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem; color: var(--text-muted); max-width: 620px;
+    margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 400;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem; font-weight: 700; color: var(--accent);
+    line-height: 1.2;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.1em; margin-top: 0.25rem;
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 1200px; margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  .section-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .section-title {
+    font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em;
+  }
+  .section-subtitle {
+    font-size: 0.85rem; color: var(--text-muted);
+  }
+
+  /* FILTERS */
+  .filter-bar {
+    display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+  }
+  .filter-chip {
+    padding: 0.35rem 0.85rem; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 500; cursor: pointer;
+    border: 1px solid var(--border); background: transparent;
+    color: var(--text-muted); transition: all 0.2s;
+    font-family: inherit;
+  }
+  .filter-chip:hover { border-color: var(--accent-dim); color: var(--text); }
+  .filter-chip.active {
+    background: var(--accent); color: var(--bg); border-color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* TABLE */
+  .rankings-table-wrap {
+    overflow-x: auto; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--bg-card);
+  }
+  .rankings-table {
+    width: 100%; border-collapse: collapse; font-size: 0.85rem;
+  }
+  .rankings-table thead {
+    position: sticky; top: 0; z-index: 2;
+  }
+  .rankings-table th {
+    background: var(--bg-card);
+    padding: 0.75rem 1rem;
+    text-align: left; font-weight: 600; font-size: 0.72rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-dim); border-bottom: 1px solid var(--border);
+    cursor: pointer; user-select: none; white-space: nowrap;
+  }
+  .rankings-table th:hover { color: var(--text-muted); }
+  .rankings-table th.num, .rankings-table td.num { text-align: right; }
+  .rankings-table td {
+    padding: 0.7rem 1rem; border-bottom: 1px solid rgba(30,30,46,0.5);
+    white-space: nowrap;
+  }
+  .rankings-table tbody tr {
+    transition: background 0.15s;
+    cursor: pointer;
+  }
+  .rankings-table tbody tr:hover { background: var(--bg-card-hover); }
+
+  .rank-cell {
+    font-family: 'JetBrains Mono', monospace; font-weight: 600;
+    color: var(--text-dim); font-size: 0.82rem;
+    width: 3rem;
+  }
+  .rank-cell.top3 { color: var(--accent); }
+
+  .metro-name {
+    font-weight: 600; color: var(--text);
+  }
+  .metro-country {
+    color: var(--text-dim); font-size: 0.78rem; margin-left: 0.5rem;
+  }
+
+  .score-cell {
+    font-family: 'JetBrains Mono', monospace; font-weight: 600;
+  }
+  .score-bar-bg {
+    width: 80px; height: 4px; background: var(--border); border-radius: 2px;
+    display: inline-block; vertical-align: middle; margin-left: 0.75rem;
+  }
+  .score-bar-fill {
+    height: 100%; border-radius: 2px;
+    transition: width 0.5s ease-out;
+  }
+
+  .pop-cell {
+    font-family: 'JetBrains Mono', monospace; color: var(--text-muted);
+    font-size: 0.82rem;
+  }
+
+  .region-dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    margin-right: 0.5rem; vertical-align: middle;
+  }
+
+  /* DISTRIBUTION */
+  .dist-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .dist-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.25rem; text-align: center;
+    transition: border-color 0.2s;
+  }
+  .dist-card:hover { border-color: var(--accent-dim); }
+  .dist-card-range {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+    color: var(--text-muted); margin-bottom: 0.5rem;
+  }
+  .dist-card-count {
+    font-size: 1.8rem; font-weight: 800; color: var(--text);
+    line-height: 1.2;
+  }
+  .dist-card-pct {
+    font-size: 0.72rem; color: var(--text-dim); margin-top: 0.25rem;
+  }
+  .dist-card-bar {
+    height: 3px; background: var(--border); border-radius: 2px;
+    margin-top: 0.75rem; overflow: hidden;
+  }
+  .dist-card-bar-fill {
+    height: 100%; border-radius: 2px; background: var(--accent);
+    transition: width 1s ease-out;
+  }
+
+  /* EDITORIAL CARDS */
+  .articles-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+  .article-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.75rem;
+    transition: all 0.2s; cursor: pointer;
+    position: relative; overflow: hidden;
+  }
+  .article-card:hover {
+    border-color: var(--accent-dim);
+    transform: translateY(-2px);
+  }
+  .article-card-tag {
+    font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .article-card h3 {
+    font-size: 1.15rem; font-weight: 700; line-height: 1.35;
+    margin-bottom: 0.75rem; letter-spacing: -0.01em;
+  }
+  .article-card p {
+    font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;
+  }
+
+  /* REGIONAL CHAMPIONS */
+  .region-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .region-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.25rem;
+    transition: border-color 0.2s; cursor: pointer;
+  }
+  .region-card:hover { border-color: var(--accent-dim); }
+  .region-card-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .region-card-name {
+    font-weight: 700; font-size: 0.92rem;
+  }
+  .region-card-count {
+    font-size: 0.72rem; color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .region-champion {
+    display: flex; align-items: baseline; gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .region-champion-name { font-weight: 600; font-size: 1.05rem; }
+  .region-champion-score {
+    font-family: 'JetBrains Mono', monospace; color: var(--accent);
+    font-weight: 600; font-size: 0.9rem;
+  }
+  .region-runners {
+    font-size: 0.78rem; color: var(--text-dim); line-height: 1.5;
+  }
+
+  /* COMPARISON PREVIEW */
+  .compare-preview {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2.5rem;
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    gap: 2rem; align-items: center;
+  }
+  .compare-city { text-align: center; }
+  .compare-city-name {
+    font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+  .compare-city-score {
+    font-family: 'JetBrains Mono', monospace; font-size: 2.5rem;
+    font-weight: 700; color: var(--accent); line-height: 1.1;
+  }
+  .compare-city-country {
+    font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem;
+  }
+  .compare-vs {
+    font-size: 1.5rem; font-weight: 800; color: var(--text-dim);
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .compare-dimensions {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 2rem;
+    margin-top: 1rem;
+  }
+  .dim-row {
+    display: grid; grid-template-columns: 1fr auto 60px auto 1fr;
+    gap: 0.5rem; align-items: center; font-size: 0.82rem;
+  }
+  .dim-label {
+    text-align: center; grid-column: 1 / -1;
+    font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .dim-bar-left {
+    height: 6px; border-radius: 3px; justify-self: end;
+  }
+  .dim-bar-right {
+    height: 6px; border-radius: 3px;
+  }
+
+  /* INSIGHT CALLOUT */
+  .insight {
+    background: linear-gradient(135deg, rgba(78,205,196,0.08) 0%, rgba(78,205,196,0.02) 100%);
+    border: 1px solid rgba(78,205,196,0.2);
+    border-radius: 12px; padding: 2rem;
+    margin: 2rem 0;
+  }
+  .insight-label {
+    font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .insight p {
+    font-size: 1rem; line-height: 1.7; color: var(--text);
+  }
+  .insight strong { color: var(--accent); font-weight: 600; }
+
+  /* CTA */
+  .cta-section {
+    text-align: center; padding: 5rem 2rem;
+  }
+  .cta-section h2 {
+    font-size: 1.8rem; font-weight: 800; letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    color: var(--text-muted); max-width: 500px; margin: 0 auto 2rem;
+    font-size: 0.95rem;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.8rem 2rem; border-radius: 8px;
+    background: var(--accent); color: var(--bg);
+    font-weight: 700; font-size: 0.9rem; text-decoration: none;
+    font-family: inherit; border: none; cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.9; }
+  .cta-btn-secondary {
+    background: transparent; border: 1px solid var(--border);
+    color: var(--text); margin-left: 1rem;
+  }
+  .cta-btn-secondary:hover { border-color: var(--accent-dim); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border); padding: 2.5rem 2rem;
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer .footer-left {
+    font-size: 0.78rem; color: var(--text-dim);
+  }
+  footer .footer-links {
+    display: flex; gap: 1.5rem;
+  }
+  footer .footer-links a {
+    font-size: 0.78rem; color: var(--text-dim); text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer .footer-links a:hover { color: var(--text); }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in {
+    animation: fadeInUp 0.6s ease-out both;
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .nav-search { width: 160px; }
+    .hero { padding: 7rem 1.25rem 3rem; }
+    .hero-stats { gap: 1.5rem; }
+    .section { padding: 2.5rem 1.25rem; }
+    .compare-preview { grid-template-columns: 1fr; text-align: center; }
+    .compare-vs { padding: 0.5rem 0; }
+    .compare-dimensions { grid-template-columns: 1fr; }
+    .rankings-table { font-size: 0.78rem; }
+    .rankings-table td, .rankings-table th { padding: 0.5rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">METRO POWER RANKINGS</div>
+  <div class="nav-links">
+    <a href="#" class="active">Rankings</a>
+    <a href="#">Compare</a>
+    <a href="#">Regions</a>
+    <a href="#">Articles</a>
+    <a href="#">Methodology</a>
+  </div>
+  <input type="text" class="nav-search" placeholder="Search 4,285 metros..." id="globalSearch">
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="animate-in">
+    <div class="hero-eyebrow">Citizen of Nowhere</div>
+    <h1>Global Metro<br>Power Rankings</h1>
+    <p class="hero-subtitle">A 16-dimension composite score across every metropolitan area on Earth. Hand-curated over two years. No scraping, no AI-generated data.</p>
+  </div>
+  <div class="hero-stats animate-in delay-2">
+    <div class="hero-stat">
+      <div class="hero-stat-number" id="counterMetros">4,285</div>
+      <div class="hero-stat-label">Metro Areas</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number">16</div>
+      <div class="hero-stat-label">Dimensions</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number">237</div>
+      <div class="hero-stat-label">Countries</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-number">230K+</div>
+      <div class="hero-stat-label">Data Points</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP 25 RANKINGS -->
+<section class="section animate-in delay-3" id="rankingsSection">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">The Top 25</h2>
+      <p class="section-subtitle">The most complete metropolitan areas on Earth</p>
+    </div>
+  </div>
+
+  <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+    <div class="filter-bar" id="regionFilters" style="margin-bottom:0">
+      <button class="filter-chip active" data-region="all">All</button>
+      <button class="filter-chip" data-region="North America">N. America</button>
+      <button class="filter-chip" data-region="Europe">Europe</button>
+      <button class="filter-chip" data-region="East Asia">East Asia</button>
+      <button class="filter-chip" data-region="China">China</button>
+      <button class="filter-chip" data-region="ASEAN">ASEAN</button>
+      <button class="filter-chip" data-region="Latin America">Latin America</button>
+      <button class="filter-chip" data-region="MENA">MENA</button>
+      <button class="filter-chip" data-region="Oceania">Oceania</button>
+      <button class="filter-chip" data-region="South Asia">South Asia</button>
+      <button class="filter-chip" data-region="Africa">Africa</button>
+      <button class="filter-chip" data-region="Eurasia">Eurasia</button>
+    </div>
+    <div class="filter-bar" id="viewToggle" style="margin-bottom:0">
+      <button class="filter-chip active" data-view="25">Top 25</button>
+      <button class="filter-chip" data-view="100">Top 100</button>
+    </div>
+  </div>
+
+  <div class="rankings-table-wrap">
+    <table class="rankings-table" id="rankingsTable">
+      <thead>
+        <tr>
+          <th class="num" style="width:60px">#</th>
+          <th>Metro Area</th>
+          <th>Region</th>
+          <th class="num">Population</th>
+          <th class="num" style="min-width:200px">Score</th>
+        </tr>
+      </thead>
+      <tbody id="rankingsBody"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- INSIGHT CALLOUT -->
+<section class="section">
+  <div class="insight animate-in">
+    <div class="insight-label">Key Insight</div>
+    <p>New York and London are separated by just <strong>1.2 points</strong>, but they arrive at nearly the same number through almost completely non-overlapping strengths. New York leads in vertical scale (347 skyscrapers to London's 44) and corporate mass ($8.7T market cap). London leads in institutional breadth (64 cultural assets, 1,023 suburban rail stations, 30 major sporting events hosted). Two fundamentally different strategies for building a world city, arriving at the same destination.</p>
+  </div>
+</section>
+
+<!-- NY vs LONDON COMPARISON -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Head to Head</h2>
+      <p class="section-subtitle">Compare any two metros across all dimensions</p>
+    </div>
+  </div>
+
+  <div class="compare-preview">
+    <div class="compare-city">
+      <div class="compare-city-name">New York</div>
+      <div class="compare-city-score">175.7</div>
+      <div class="compare-city-country">United States</div>
+    </div>
+    <div class="compare-vs">VS</div>
+    <div class="compare-city">
+      <div class="compare-city-name">London</div>
+      <div class="compare-city-score">174.5</div>
+      <div class="compare-city-country">United Kingdom</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.5rem;" id="comparisonBars"></div>
+</section>
+
+<!-- DISTRIBUTION -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">The Distribution Is Extremely Skewed</h2>
+      <p class="section-subtitle">Over 70% of metros score below 1.0. The median is 0.33.</p>
+    </div>
+  </div>
+  <div class="dist-grid" id="distGrid"></div>
+</section>
+
+<!-- REGIONAL CHAMPIONS -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Regional Champions</h2>
+      <p class="section-subtitle">11-region classification for a sharper cultural and economic picture</p>
+    </div>
+  </div>
+  <div class="region-grid" id="regionGrid"></div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">Analysis</h2>
+      <p class="section-subtitle">Deep dives into the dataset</p>
+    </div>
+  </div>
+  <div class="articles-grid">
+    <div class="article-card">
+      <div class="article-card-tag">Published</div>
+      <h3>The Global Metro Power Rankings</h3>
+      <p>Measuring what makes a city matter. The first look at the full dataset, the top 25, and the methodology behind the composite score.</p>
+    </div>
+    <div class="article-card">
+      <div class="article-card-tag">Coming Soon</div>
+      <h3>The 50 Most Complete Small Cities</h3>
+      <p>Geneva, Lausanne, Macau, Edinburgh. Which cities punch furthest above their weight relative to population?</p>
+    </div>
+    <div class="article-card">
+      <div class="article-card-tag">Coming Soon</div>
+      <h3>Why China's Metros Score So High</h3>
+      <p>175 metros, 4 scoring above 50, and the highest median score of any region. What China's infrastructure buildout looks like in the data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Explore Every Metro on Earth</h2>
+  <p>Search, filter, and compare 4,285 metropolitan areas across 16 dimensions of global infrastructure.</p>
+  <a href="#" class="cta-btn">Explore Full Rankings</a>
+  <a href="#" class="cta-btn cta-btn-secondary">Read the Methodology</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">Global Metro Power Rankings. Data current as of April 2026.</div>
+  <div class="footer-links">
+    <a href="#">Substack</a>
+    <a href="#">Methodology</a>
+    <a href="#">About</a>
+    <a href="#">Download Data</a>
+  </div>
+</footer>
+
+<script>
+// DATA - TOP 100
+const regionColors = {
+  'North America': 'var(--region-na)',
+  'Europe': 'var(--region-eu)',
+  'East Asia': 'var(--region-eastasia)',
+  'China': 'var(--region-china)',
+  'Oceania': 'var(--region-oceania)',
+  'ASEAN': 'var(--region-asean)',
+  'Latin America': 'var(--region-sa)',
+  'MENA': 'var(--region-mena)',
+  'Eurasia': 'var(--region-eurasia)',
+  'South Asia': 'var(--region-southasia)',
+  'Africa': 'var(--region-africa)',
+};
+
+const allMetros = [
+  { rank:1, name:"New York", country:"United States", region:"North America", pop:22342624, score:175.7 },
+  { rank:2, name:"London", country:"United Kingdom", region:"Europe", pop:15984778, score:174.5 },
+  { rank:3, name:"Paris", country:"France", region:"Europe", pop:12878104, score:137.8 },
+  { rank:4, name:"Tokyo", country:"Japan", region:"East Asia", pop:40317972, score:128.8 },
+  { rank:5, name:"San Francisco\u2013San Jose", country:"United States", region:"North America", pop:7979579, score:117.6 },
+  { rank:6, name:"Los Angeles", country:"United States", region:"North America", pop:18507255, score:109.0 },
+  { rank:7, name:"Beijing", country:"China", region:"China", pop:22560773, score:105.5 },
+  { rank:8, name:"Seoul", country:"South Korea", region:"East Asia", pop:26043325, score:104.0 },
+  { rank:9, name:"Shanghai", country:"China", region:"China", pop:50359413, score:101.8 },
+  { rank:10, name:"Guangzhou", country:"China", region:"China", pop:62994136, score:95.4 },
+  { rank:11, name:"Washington\u2013Baltimore", country:"United States", region:"North America", pop:10204407, score:93.1 },
+  { rank:12, name:"Chicago", country:"United States", region:"North America", pop:9941597, score:88.7 },
+  { rank:13, name:"Boston", country:"United States", region:"North America", pop:6792923, score:84.2 },
+  { rank:14, name:"Osaka\u2013Kyoto\u2013Kobe", country:"Japan", region:"East Asia", pop:18126728, score:72.0 },
+  { rank:15, name:"Sydney", country:"Australia", region:"Oceania", pop:5497131, score:71.6 },
+  { rank:16, name:"Toronto", country:"Canada", region:"North America", pop:7670678, score:70.2 },
+  { rank:17, name:"Moscow", country:"Russia", region:"Eurasia", pop:21534777, score:68.9 },
+  { rank:18, name:"Hong Kong", country:"Hong Kong", region:"China", pop:7411945, score:67.6 },
+  { rank:19, name:"Istanbul", country:"Turkey", region:"MENA", pop:16293275, score:65.3 },
+  { rank:20, name:"Milan", country:"Italy", region:"Europe", pop:7832346, score:65.2 },
+  { rank:21, name:"Madrid", country:"Spain", region:"Europe", pop:6930703, score:64.5 },
+  { rank:22, name:"Rhine\u2013Ruhr", country:"Germany", region:"Europe", pop:11102474, score:62.7 },
+  { rank:23, name:"S\u00e3o Paulo", country:"Brazil", region:"Latin America", pop:22305115, score:62.5 },
+  { rank:24, name:"Singapore", country:"Singapore", region:"ASEAN", pop:5678287, score:62.0 },
+  { rank:25, name:"Melbourne", country:"Australia", region:"Oceania", pop:5411094, score:60.9 },
+  { rank:26, name:"Houston", country:"United States", region:"North America", pop:7981303, score:60.6 },
+  { rank:27, name:"Mexico City", country:"Mexico", region:"Latin America", pop:26370664, score:58.5 },
+  { rank:28, name:"Philadelphia", country:"United States", region:"North America", pop:7298206, score:57.9 },
+  { rank:29, name:"Miami", country:"United States", region:"North America", pop:6538896, score:57.8 },
+  { rank:30, name:"Dubai\u2013Sharjah", country:"UAE", region:"MENA", pop:5679122, score:55.7 },
+  { rank:31, name:"Dallas", country:"United States", region:"North America", pop:8730700, score:55.6 },
+  { rank:32, name:"Barcelona", country:"Spain", region:"Europe", pop:5702262, score:55.0 },
+  { rank:33, name:"Berlin", country:"Germany", region:"Europe", pop:5683734, score:54.9 },
+  { rank:34, name:"Seattle", country:"United States", region:"North America", pop:5105721, score:54.5 },
+  { rank:35, name:"Atlanta", country:"United States", region:"North America", pop:7258116, score:54.4 },
+  { rank:36, name:"Mumbai", country:"India", region:"South Asia", pop:23146605, score:54.3 },
+  { rank:37, name:"Bangkok", country:"Thailand", region:"ASEAN", pop:17310600, score:52.2 },
+  { rank:38, name:"Buenos Aires", country:"Argentina", region:"Latin America", pop:15188985, score:51.0 },
+  { rank:39, name:"Kuala Lumpur", country:"Malaysia", region:"ASEAN", pop:9668818, score:50.6 },
+  { rank:40, name:"Amsterdam", country:"Netherlands", region:"Europe", pop:2460092, score:49.2 },
+  { rank:41, name:"Brussels", country:"Belgium", region:"Europe", pop:2875717, score:48.2 },
+  { rank:42, name:"Nanjing", country:"China", region:"China", pop:9314685, score:48.0 },
+  { rank:43, name:"Manila", country:"Philippines", region:"ASEAN", pop:28250517, score:47.9 },
+  { rank:44, name:"Munich", country:"Germany", region:"Europe", pop:6114612, score:47.2 },
+  { rank:45, name:"Frankfurt", country:"Germany", region:"Europe", pop:6039919, score:46.7 },
+  { rank:46, name:"Jakarta", country:"Indonesia", region:"ASEAN", pop:36157354, score:46.1 },
+  { rank:47, name:"Chengdu", country:"China", region:"China", pop:20937757, score:45.3 },
+  { rank:48, name:"Vienna", country:"Austria", region:"Europe", pop:2723337, score:44.8 },
+  { rank:49, name:"Johannesburg", country:"South Africa", region:"Africa", pop:15099421, score:44.3 },
+  { rank:50, name:"Delhi", country:"India", region:"South Asia", pop:33446850, score:44.3 },
+  { rank:51, name:"Rome", country:"Italy", region:"Europe", pop:4200853, score:44.0 },
+  { rank:52, name:"Cairo", country:"Egypt", region:"MENA", pop:23708237, score:42.0 },
+  { rank:53, name:"San Diego", country:"United States", region:"North America", pop:3298799, score:42.0 },
+  { rank:54, name:"Montreal", country:"Canada", region:"North America", pop:5155863, score:41.9 },
+  { rank:55, name:"Wuhan", country:"China", region:"China", pop:13527071, score:39.9 },
+  { rank:56, name:"Taipei", country:"Taiwan", region:"East Asia", pop:9269756, score:39.5 },
+  { rank:57, name:"Stockholm", country:"Sweden", region:"Europe", pop:2415139, score:38.6 },
+  { rank:58, name:"Vancouver", country:"Canada", region:"North America", pop:3471561, score:38.4 },
+  { rank:59, name:"Hangzhou", country:"China", region:"China", pop:17206987, score:38.4 },
+  { rank:60, name:"Lisbon", country:"Portugal", region:"Europe", pop:3150191, score:37.7 },
+  { rank:61, name:"Denver", country:"United States", region:"North America", pop:3382760, score:36.5 },
+  { rank:62, name:"Rio de Janeiro", country:"Brazil", region:"Latin America", pop:12937950, score:36.5 },
+  { rank:63, name:"Detroit", country:"United States", region:"North America", pop:5430523, score:36.4 },
+  { rank:64, name:"Riyadh", country:"Saudi Arabia", region:"MENA", pop:7194013, score:36.4 },
+  { rank:65, name:"Chongqing", country:"China", region:"China", pop:21609651, score:34.6 },
+  { rank:66, name:"Las Vegas", country:"United States", region:"North America", pop:2454861, score:34.6 },
+  { rank:67, name:"Minneapolis", country:"United States", region:"North America", pop:4170245, score:34.6 },
+  { rank:68, name:"Xi'an", country:"China", region:"China", pop:17166620, score:34.4 },
+  { rank:69, name:"Changsha", country:"China", region:"China", pop:16676833, score:34.2 },
+  { rank:70, name:"Busan\u2013Ulsan", country:"South Korea", region:"East Asia", pop:8079273, score:33.7 },
+  { rank:71, name:"Manchester", country:"United Kingdom", region:"Europe", pop:3087309, score:33.6 },
+  { rank:72, name:"Tianjin", country:"China", region:"China", pop:19330096, score:33.5 },
+  { rank:73, name:"Doha", country:"Qatar", region:"MENA", pop:2669452, score:33.0 },
+  { rank:74, name:"Rotterdam\u2013The Hague", country:"Netherlands", region:"Europe", pop:3334090, score:32.9 },
+  { rank:75, name:"Qingdao", country:"China", region:"China", pop:10071722, score:32.7 },
+  { rank:76, name:"Tel Aviv", country:"Israel", region:"MENA", pop:3162539, score:32.5 },
+  { rank:77, name:"Abu Dhabi", country:"UAE", region:"MENA", pop:2823340, score:32.4 },
+  { rank:78, name:"Zurich", country:"Switzerland", region:"Europe", pop:1649715, score:32.2 },
+  { rank:79, name:"Copenhagen", country:"Denmark", region:"Europe", pop:2144354, score:31.1 },
+  { rank:80, name:"St. Louis", country:"United States", region:"North America", pop:2915867, score:31.1 },
+  { rank:81, name:"Dublin", country:"Ireland", region:"Europe", pop:1705928, score:31.0 },
+  { rank:82, name:"Austin", country:"United States", region:"North America", pop:2550637, score:30.8 },
+  { rank:83, name:"Pittsburgh", country:"United States", region:"North America", pop:2626109, score:30.8 },
+  { rank:84, name:"Nagoya", country:"Japan", region:"East Asia", pop:10593190, score:30.7 },
+  { rank:85, name:"New Orleans", country:"United States", region:"North America", pop:1487788, score:30.3 },
+  { rank:86, name:"Phoenix", country:"United States", region:"North America", pop:5186958, score:30.3 },
+  { rank:87, name:"Brisbane", country:"Australia", region:"Oceania", pop:2700584, score:30.2 },
+  { rank:88, name:"Warsaw", country:"Poland", region:"Europe", pop:3621224, score:30.0 },
+  { rank:89, name:"Calcutta", country:"India", region:"South Asia", pop:24875649, score:29.6 },
+  { rank:90, name:"Hamburg", country:"Germany", region:"Europe", pop:4757307, score:29.0 },
+  { rank:91, name:"Portland", country:"United States", region:"North America", pop:3326675, score:28.8 },
+  { rank:92, name:"Athens", country:"Greece", region:"Europe", pop:3792469, score:28.7 },
+  { rank:93, name:"Santiago", country:"Chile", region:"Latin America", pop:8310984, score:28.5 },
+  { rank:94, name:"Charlotte", country:"United States", region:"North America", pop:3052890, score:27.2 },
+  { rank:95, name:"Cape Town", country:"South Africa", region:"Africa", pop:5225057, score:26.8 },
+  { rank:96, name:"Cleveland", country:"United States", region:"North America", pop:3615326, score:26.5 },
+  { rank:97, name:"Tampa", country:"United States", region:"North America", pop:3424560, score:26.3 },
+  { rank:98, name:"Perth", country:"Australia", region:"Oceania", pop:2364521, score:26.2 },
+  { rank:99, name:"Raleigh\u2013Durham", country:"United States", region:"North America", pop:2286412, score:26.2 },
+  { rank:100, name:"Stuttgart", country:"Germany", region:"Europe", pop:5505771, score:25.8 },
+].map(m => ({ ...m, color: regionColors[m.region] || 'var(--text-dim)' }));
+
+const maxScore = 175.7;
+let currentView = 25;
+let currentRegion = 'all';
+
+function formatPop(n) {
+  if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(0) + 'K';
+  return n.toString();
+}
+
+function scoreColor(score) {
+  const pct = score / maxScore;
+  if (pct > 0.6) return 'var(--score-high)';
+  if (pct > 0.35) return 'var(--score-mid)';
+  return 'var(--score-low)';
+}
+
+// RENDER TABLE
+function renderTable() {
+  const body = document.getElementById('rankingsBody');
+  let data = currentView === 25 ? allMetros.slice(0, 25) : allMetros;
+  if (currentRegion !== 'all') {
+    data = allMetros.filter(m => m.region === currentRegion);
+  }
+
+  // Update section title
+  const titleEl = document.querySelector('#rankingsSection .section-title');
+  const subtitleEl = document.querySelector('#rankingsSection .section-subtitle');
+  if (currentRegion !== 'all') {
+    titleEl.textContent = currentRegion;
+    subtitleEl.textContent = data.length + ' metros in this region (showing all ranked in top 100)';
+  } else if (currentView === 100) {
+    titleEl.textContent = 'The Top 100';
+    subtitleEl.textContent = 'The 100 most complete metropolitan areas on Earth';
+  } else {
+    titleEl.textContent = 'The Top 25';
+    subtitleEl.textContent = 'The most complete metropolitan areas on Earth';
+  }
+
+  body.innerHTML = data.map((m, i) => `
+    <tr style="animation: fadeInUp 0.25s ease-out ${Math.min(i * 0.02, 0.8)}s both">
+      <td class="num rank-cell ${m.rank <= 3 ? 'top3' : ''}">${m.rank}</td>
+      <td>
+        <span class="metro-name">${m.name}</span>
+        <span class="metro-country">${m.country}</span>
+      </td>
+      <td>
+        <span class="region-dot" style="background:${m.color}"></span>
+        ${m.region}
+      </td>
+      <td class="num pop-cell">${formatPop(m.pop)}</td>
+      <td class="num score-cell" style="color:${scoreColor(m.score)}">
+        ${m.score.toFixed(1)}
+        <span class="score-bar-bg">
+          <span class="score-bar-fill" style="width:${(m.score/maxScore*100)}%;background:${scoreColor(m.score)}"></span>
+        </span>
+      </td>
+    </tr>
+  `).join('');
+}
+
+// REGION FILTER CHIPS
+document.getElementById('regionFilters').addEventListener('click', e => {
+  if (!e.target.classList.contains('filter-chip')) return;
+  document.querySelectorAll('#regionFilters .filter-chip').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  currentRegion = e.target.dataset.region;
+  renderTable();
+});
+
+// VIEW TOGGLE (Top 25 / Top 100)
+document.getElementById('viewToggle').addEventListener('click', e => {
+  if (!e.target.classList.contains('filter-chip')) return;
+  document.querySelectorAll('#viewToggle .filter-chip').forEach(c => c.classList.remove('active'));
+  e.target.classList.add('active');
+  currentView = parseInt(e.target.dataset.view);
+  renderTable();
+});
+
+// DISTRIBUTION
+const dist = [
+  { range: '100+', count: 9, pct: 0.2 },
+  { range: '50\u2013100', count: 30, pct: 0.7 },
+  { range: '20\u201350', count: 99, pct: 2.3 },
+  { range: '10\u201320', count: 114, pct: 2.7 },
+  { range: '5\u201310', count: 198, pct: 4.6 },
+  { range: '1\u20135', count: 806, pct: 18.8 },
+  { range: 'Below 1', count: 3026, pct: 70.7 }
+];
+
+document.getElementById('distGrid').innerHTML = dist.map((d, i) => `
+  <div class="dist-card" style="animation: fadeInUp 0.4s ease-out ${i * 0.08}s both">
+    <div class="dist-card-range">${d.range}</div>
+    <div class="dist-card-count">${d.count.toLocaleString()}</div>
+    <div class="dist-card-pct">${d.pct}% of all metros</div>
+    <div class="dist-card-bar">
+      <div class="dist-card-bar-fill" style="width:${Math.min(d.pct * 1.4, 100)}%"></div>
+    </div>
+  </div>
+`).join('');
+
+// REGIONAL CHAMPIONS
+const regions = [
+  { name: 'North America', champion: 'New York', score: 175.7, r2: 'San Francisco', r3: 'Los Angeles', count: 686, above50: 13, color: 'var(--region-na)' },
+  { name: 'Europe', champion: 'London', score: 174.5, r2: 'Paris', r3: 'Milan', count: 1385, above50: 7, color: 'var(--region-eu)' },
+  { name: 'East Asia', champion: 'Tokyo', score: 128.8, r2: 'Seoul', r3: 'Osaka', count: 89, above50: 3, color: 'var(--region-eastasia)' },
+  { name: 'China', champion: 'Beijing', score: 105.5, r2: 'Shanghai', r3: 'Guangzhou', count: 175, above50: 4, color: 'var(--region-china)' },
+  { name: 'Oceania', champion: 'Sydney', score: 71.6, r2: 'Melbourne', r3: 'Brisbane', count: 72, above50: 2, color: 'var(--region-oceania)' },
+  { name: 'Eurasia', champion: 'Moscow', score: 68.9, r2: 'St. Petersburg', r3: 'Baku', count: 442, above50: 1, color: 'var(--region-eurasia)' },
+  { name: 'MENA', champion: 'Istanbul', score: 65.3, r2: 'Dubai', r3: 'Cairo', count: 292, above50: 2, color: 'var(--region-mena)' },
+  { name: 'ASEAN', champion: 'Singapore', score: 62.0, r2: 'Bangkok', r3: 'Kuala Lumpur', count: 126, above50: 3, color: 'var(--region-asean)' },
+  { name: 'Latin America', champion: 'S\u00e3o Paulo', score: 62.5, r2: 'Mexico City', r3: 'Buenos Aires', count: 592, above50: 3, color: 'var(--region-sa)' },
+  { name: 'South Asia', champion: 'Mumbai', score: 54.3, r2: 'Delhi', r3: 'Calcutta', count: 141, above50: 1, color: 'var(--region-southasia)' },
+  { name: 'Africa', champion: 'Johannesburg', score: 44.3, r2: 'Cape Town', r3: 'Nairobi', count: 282, above50: 0, color: 'var(--region-africa)' },
+];
+
+document.getElementById('regionGrid').innerHTML = regions.map(r => `
+  <div class="region-card">
+    <div class="region-card-header">
+      <div class="region-card-name"><span class="region-dot" style="background:${r.color}"></span>${r.name}</div>
+      <div class="region-card-count">${r.count} metros</div>
+    </div>
+    <div class="region-champion">
+      <span class="region-champion-name">${r.champion}</span>
+      <span class="region-champion-score">${r.score}</span>
+    </div>
+    <div class="region-runners">${r.r2} &middot; ${r.r3} &middot; <strong>${r.above50}</strong> above 50</div>
+  </div>
+`).join('');
+
+// NY vs LONDON COMPARISON BARS
+const dimensions = [
+  { label: 'Market Cap', ny: 12.4, ldn: 6.1 },
+  { label: 'Skyscrapers', ny: 33.4, ldn: 21.7 },
+  { label: 'Cultural Assets', ny: 32.5, ldn: 41.6 },
+  { label: 'Metro Transit', ny: 6.2, ldn: 5.8 },
+  { label: 'Suburban Rail', ny: 3.0, ldn: 3.5 },
+  { label: 'Intercity Hubs', ny: 2.8, ldn: 5.6 },
+  { label: 'Luxury Hospitality', ny: 15.4, ldn: 16.7 },
+  { label: 'Sporting Events', ny: 3.0, ldn: 4.0 },
+  { label: 'Annual Events', ny: 13.0, ldn: 11.0 },
+  { label: 'Airport Score', ny: 4.3, ldn: 4.8 },
+];
+
+const compContainer = document.getElementById('comparisonBars');
+const maxDim = 42;
+compContainer.innerHTML = `
+  <div style="display:grid; gap:0.6rem;">
+    ${dimensions.map(d => {
+      const nyPct = (d.ny / maxDim * 100);
+      const ldnPct = (d.ldn / maxDim * 100);
+      const nyWins = d.ny > d.ldn;
+      const ldnWins = d.ldn > d.ny;
+      return `
+        <div style="display:grid; grid-template-columns: 80px 1fr 50px 50px 1fr; gap:0.5rem; align-items:center; font-size:0.78rem;">
+          <div style="text-align:right; color:var(--text-dim); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em">${d.label}</div>
+          <div style="display:flex; justify-content:flex-end;">
+            <div style="height:8px; border-radius:4px; background:${nyWins ? 'var(--accent)' : 'var(--border)'}; width:${nyPct}%; min-width:4px; transition: width 1s ease-out"></div>
+          </div>
+          <div style="text-align:right; font-family:'JetBrains Mono',monospace; font-weight:600; color:${nyWins ? 'var(--accent)' : 'var(--text-dim)'}; font-size:0.78rem">${d.ny.toFixed(1)}</div>
+          <div style="text-align:left; font-family:'JetBrains Mono',monospace; font-weight:600; color:${ldnWins ? 'var(--region-eu)' : 'var(--text-dim)'}; font-size:0.78rem">${d.ldn.toFixed(1)}</div>
+          <div style="display:flex; justify-content:flex-start;">
+            <div style="height:8px; border-radius:4px; background:${ldnWins ? 'var(--region-eu)' : 'var(--border)'}; width:${ldnPct}%; min-width:4px; transition: width 1s ease-out"></div>
+          </div>
+        </div>
+      `;
+    }).join('')}
+    <div style="display:grid; grid-template-columns: 80px 1fr 50px 50px 1fr; gap:0.5rem; font-size:0.68rem; color:var(--text-dim); margin-top:0.25rem;">
+      <div></div>
+      <div style="text-align:right; color:var(--accent)">New York</div>
+      <div></div><div></div>
+      <div style="color:var(--region-eu)">London</div>
+    </div>
+  </div>
+`;
+
+// SEARCH (searches all 100)
+document.getElementById('globalSearch').addEventListener('input', function(e) {
+  const q = e.target.value.toLowerCase().trim();
+  if (!q) { renderTable(); return; }
+  const body = document.getElementById('rankingsBody');
+  const filtered = allMetros.filter(m =>
+    m.name.toLowerCase().includes(q) ||
+    m.country.toLowerCase().includes(q) ||
+    m.region.toLowerCase().includes(q)
+  );
+
+  const titleEl = document.querySelector('#rankingsSection .section-title');
+  const subtitleEl = document.querySelector('#rankingsSection .section-subtitle');
+  titleEl.textContent = 'Search Results';
+  subtitleEl.textContent = filtered.length + ' metros matching "' + e.target.value.trim() + '"';
+
+  body.innerHTML = filtered.map((m, i) => `
+    <tr style="animation: fadeInUp 0.2s ease-out ${Math.min(i * 0.02, 0.5)}s both">
+      <td class="num rank-cell ${m.rank <= 3 ? 'top3' : ''}">${m.rank}</td>
+      <td><span class="metro-name">${m.name}</span><span class="metro-country">${m.country}</span></td>
+      <td><span class="region-dot" style="background:${m.color}"></span>${m.region}</td>
+      <td class="num pop-cell">${formatPop(m.pop)}</td>
+      <td class="num score-cell" style="color:${scoreColor(m.score)}">${m.score.toFixed(1)}
+        <span class="score-bar-bg"><span class="score-bar-fill" style="width:${(m.score/maxScore*100)}%;background:${scoreColor(m.score)}"></span></span>
+      </td>
+    </tr>
+  `).join('');
+});
+
+// INIT
+renderTable();
+</script>
+</body>
+</html>

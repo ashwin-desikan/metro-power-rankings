@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #08080D;
+  --bg-card: #12121A;
+  --bg-card-hover: #1A1A26;
+  --border: #1E1E2E;
+  --text: #E8E8ED;
+  --text-muted: #8888A0;
+  --text-dim: #55556A;
+  --accent: #4ECDC4;
+  --accent-dim: #2A7A74;
+  --region-na: #4ECDC4;
+  --region-eu: #7B68EE;
+  --region-eastasia: #FF6B9D;
+  --region-china: #E74C3C;
+  --region-oceania: #45B7D1;
+  --region-asean: #82E0AA;
+  --region-latam: #F7DC6F;
+  --region-mena: #C39BD3;
+  --region-eurasia: #85C1E9;
+  --region-southasia: #F0B27A;
+  --region-africa: #FF8C42;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }

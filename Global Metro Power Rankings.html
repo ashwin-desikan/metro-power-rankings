@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Global Metro Power Rankings: Measuring What Makes a City Matter</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6b6b6b;
+    --bg-page: #ffffff;
+    --bg-table-header: #1a1a1a;
+    --bg-table-stripe: #f8f8f8;
+    --border-light: #e0e0e0;
+    --accent: #c0392b;
+    --accent-light: #fdf2f0;
+    --link: #2563eb;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  /* Header */
+  .article-header {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 2.4em;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.15em;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 40px auto;
+  }
+
+  /* Headings */
+  h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.55em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 56px;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Body text */
+  p {
+    margin-bottom: 22px;
+    color: var(--text-primary);
+  }
+
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+
+  /* Blockquote (for the 100+ cities callout) */
+  blockquote {
+    margin: 28px 0;
+    padding: 20px 24px;
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Scoring dimensions list */
+  .scoring-list {
+    margin: 24px 0 28px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .scoring-list li {
+    position: relative;
+    padding: 6px 0 6px 20px;
+    font-size: 0.92em;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .scoring-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .scoring-list li strong {
+    color: var(--text-primary);
+  }
+
+  /* Tables */
+  .table-wrapper {
+    margin: 28px -12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.82em;
+    line-height: 1.5;
+  }
+
+  thead th {
+    background: var(--bg-table-header);
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.78em;
+    letter-spacing: 0.06em;
+    padding: 12px 14px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  thead th.num { text-align: right; }
+  thead th.ctr { text-align: center; }
+
+  tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+
+  tbody tr:nth-child(even) { background: var(--bg-table-stripe); }
+  tbody tr:hover { background: #f0f0f0; }
+
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.ctr { text-align: center; }
+
+  td.metro-name { font-weight: 600; color: var(--text-primary); }
+  td.metro-name-bold { font-weight: 700; color: var(--text-primary); }
+
+  /* Top 10 highlight */
+  .top-table tbody tr:nth-child(-n+10) td.metro-name-bold {
+    color: var(--accent);
+  }
+
+  .rank-cell {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 44px;
+  }
+
+  /* Methodology section */
+  .methodology {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 2px solid var(--border-light);
+  }
+
+  .methodology h2 { margin-top: 0; }
+
+  .methodology p {
+    font-size: 0.92em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .methodology strong {
+    color: var(--text-primary);
+  }
+
+  /* Series footer */
+  .series-footer {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--bg-table-stripe);
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 0.92em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .series-footer p { margin-bottom: 12px; color: var(--text-secondary); }
+  .series-footer p:last-child { margin-bottom: 0; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 32px 16px 60px; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.3em; }
+    body { font-size: 16px; }
+    table { font-size: 0.78em; }
+    thead th, tbody td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<article class="container">
+
+  <header class="article-header">
+    <h1>The Global Metro Power Rankings: Measuring What Makes a City Matter</h1>
+    <p class="subtitle">A 16-dimension composite score across 4,285 metropolitan areas, hand-curated over two years, attempts to quantify the completeness of a city's global infrastructure.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- THE QUESTION -->
+  <h2>The Question</h2>
+
+  <p>Population alone does not make a great city. Plenty of metros have tens of millions of people and little else. GDP alone doesn't explain it either, because GDP doesn't capture why people move to Berlin instead of Doha. The more interesting question is which cities have built the most complete ecosystem of infrastructure, culture, sport, finance, education, and connectivity.</p>
+
+  <p>I spent two years trying to answer that. I hand-curated data across 16 dimensions for every metropolitan area on Earth: 4,285 of them, spanning 237 countries. No scraping, no AI-generated data dumps. Every museum, every transit system, every stock exchange was individually verified and mapped to a specific metro through a municipality-level geographic hierarchy covering 182,000+ administrative units.</p>
+
+  <p>The result is a composite score that I call &ldquo;metro completeness&rdquo;: the breadth and depth of globally-recognized infrastructure and activity concentrated in one place.</p>
+
+  <!-- TOP 25 -->
+  <h2>The Top 25</h2>
+
+  <div class="table-wrapper">
+    <table class="top-table">
+      <thead>
+        <tr>
+          <th class="ctr">Rank</th>
+          <th>Metro Area</th>
+          <th>Country</th>
+          <th class="num">Pop.</th>
+          <th class="num">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-cell">1</td><td class="metro-name-bold">New York</td><td>United States</td><td class="num">22.3M</td><td class="num">175.7</td></tr>
+        <tr><td class="rank-cell">2</td><td class="metro-name-bold">London</td><td>United Kingdom</td><td class="num">16.0M</td><td class="num">174.5</td></tr>
+        <tr><td class="rank-cell">3</td><td class="metro-name-bold">Paris</td><td>France</td><td class="num">12.9M</td><td class="num">137.8</td></tr>
+        <tr><td class="rank-cell">4</td><td class="metro-name-bold">Tokyo</td><td>Japan</td><td class="num">40.3M</td><td class="num">128.8</td></tr>
+        <tr><td class="rank-cell">5</td><td class="metro-name-bold">San Francisco–San Jose</td><td>United States</td><td class="num">8.0M</td><td class="num">117.6</td></tr>
+        <tr><td class="rank-cell">6</td><td class="metro-name-bold">Los Angeles</td><td>United States</td><td class="num">18.5M</td><td class="num">109.0</td></tr>
+        <tr><td class="rank-cell">7</td><td class="metro-name-bold">Beijing</td><td>China</td><td class="num">22.6M</td><td class="num">105.5</td></tr>
+        <tr><td class="rank-cell">8</td><td class="metro-name-bold">Seoul</td><td>South Korea</td><td class="num">26.0M</td><td class="num">104.0</td></tr>
+        <tr><td class="rank-cell">9</td><td class="metro-name-bold">Shanghai</td><td>China</td><td class="num">50.4M</td><td class="num">101.8</td></tr>
+        <tr><td class="rank-cell">10</td><td class="metro-name-bold">Guangzhou</td><td>China</td><td class="num">63.0M</td><td class="num">95.4</td></tr>
+        <tr><td class="rank-cell">11</td><td class="metro-name">Washington–Baltimore</td><td>United States</td><td class="num">10.2M</td><td class="num">93.1</td></tr>
+        <tr><td class="rank-cell">12</td><td class="metro-name">Chicago</td><td>United States</td><td class="num">9.9M</td><td class="num">88.7</td></tr>
+        <tr><td class="rank-cell">13</td><td class="metro-name">Boston</td><td>United States</td><td class="num">6.8M</td><td class="num">84.2</td></tr>
+        <tr><td class="rank-cell">14</td><td class="metro-name">Osaka–Kyoto–Kobe</td><td>Japan</td><td class="num">18.1M</td><td class="num">72.0</td></tr>
+        <tr><td class="rank-cell">15</td><td class="metro-name">Sydney</td><td>Australia</td><td class="num">5.5M</td><td class="num">71.6</td></tr>
+        <tr><td class="rank-cell">16</td><td class="metro-name">Toronto</td><td>Canada</td><td class="num">7.7M</td><td class="num">70.2</td></tr>
+        <tr><td class="rank-cell">17</td><td class="metro-name">Moscow</td><td>Russia</td><td class="num">21.5M</td><td class="num">68.9</td></tr>
+        <tr><td class="rank-cell">18</td><td class="metro-name">Hong Kong</td><td>Hong Kong</td><td class="num">7.4M</td><td class="num">67.6</td></tr>
+        <tr><td class="rank-cell">19</td><td class="metro-name">Istanbul</td><td>Turkey</td><td class="num">16.3M</td><td class="num">65.3</td></tr>
+        <tr><td class="rank-cell">20</td><td class="metro-name">Milan</td><td>Italy</td><td class="num">7.8M</td><td class="num">65.2</td></tr>
+        <tr><td class="rank-cell">21</td><td class="metro-name">Madrid</td><td>Spain</td><td class="num">6.9M</td><td class="num">64.5</td></tr>
+        <tr><td class="rank-cell">22</td><td class="metro-name">Rhine–Ruhr</td><td>Germany</td><td class="num">11.1M</td><td class="num">62.7</td></tr>
+        <tr><td class="rank-cell">23</td><td class="metro-name">São Paulo</td><td>Brazil</td><td class="num">22.3M</td><td class="num">62.5</td></tr>
+        <tr><td class="rank-cell">24</td><td class="metro-name">Singapore</td><td>Singapore</td><td class="num">5.7M</td><td class="num">62.0</td></tr>
+        <tr><td class="rank-cell">25</td><td class="metro-name">Melbourne</td><td>Australia</td><td class="num">5.4M</td><td class="num">60.9</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>New York and London are separated by just 1.2 points. The gap between #1 and #3 (Paris at 137.8) is larger than the gap between #3 and #10.</p>
+
+  <!-- WHAT THE SCORE MEASURES -->
+  <h2>What the Score Measures</h2>
+
+  <p>The composite score sums 16 weighted components:</p>
+
+  <ul class="scoring-list">
+    <li><strong>Population</strong> &ndash; linear, divided by 3 million</li>
+    <li><strong>Market capitalization</strong> &ndash; total corporate HQ value, linear, divided by $700 billion</li>
+    <li><strong>Major league teams</strong> &ndash; top-tier professional sports presence, capped at 10</li>
+    <li><strong>Minor/college teams</strong> &ndash; 0.25 points each, capped at 40 teams</li>
+    <li><strong>Cultural assets</strong> &ndash; museums, landmarks, ports, stock exchanges, IXPs, military bases, central banks, data centers, and agricultural heritage sites (0.65 points each)</li>
+    <li><strong>Airport score</strong> &ndash; weighted by global tier (Mega Hub = 5, Major International = 3, International = 2, Regional = 1, Small = 0.5), multiplied by 0.25</li>
+    <li><strong>Top-50 universities</strong> &ndash; 3.5 points each (CWUR ranking)</li>
+    <li><strong>Other universities, hospitals, and research institutions</strong> &ndash; 2.2 points each</li>
+    <li><strong>Metro transit</strong> &ndash; subway and light rail station count, LOG-scaled</li>
+    <li><strong>GaWC global connectivity</strong> &ndash; reciprocal of world city network rank (12 &divide; rank)</li>
+    <li><strong>Suburban rail</strong> &ndash; commuter rail stations, LOG &times; 0.5</li>
+    <li><strong>Intercity train hubs</strong> &ndash; stations with 30M+ annual passengers, LOG &times; 2.0</li>
+    <li><strong>Skyscrapers</strong> &ndash; 150m+ buildings, LOG &times; 5.7</li>
+    <li><strong>Sporting events</strong> &ndash; Olympics, World Cups, Grand Slams hosted (0.2 each, capped at 20)</li>
+    <li><strong>Annual events</strong> &ndash; recurring festivals, parades, and fairs (1.0 point each)</li>
+    <li><strong>Luxury hospitality</strong> &ndash; Michelin stars and Forbes Travel Guide hotel stars, LOG &times; 3.0</li>
+    <li><strong>GDP tier</strong> &ndash; tiered from 0 to 3 points based on metro economic output</li>
+  </ul>
+
+  <p>The philosophy behind the weighting is deliberate: <strong>curated categorical data, not raw volume metrics.</strong> An airport's tier matters more than its passenger count. A city's number of stock exchanges matters more than its trading volume. The scoring rewards <em>breadth</em> (having something across many dimensions) over extreme depth in one.</p>
+
+  <!-- NINE CITIES -->
+  <h2>Nine Cities Score Above 100</h2>
+
+  <p>To clear 100, a metro needs strength across nearly every dimension: major sports leagues, world-class universities, a skyline, a transit system, global corporate presence, cultural landmarks, and international events. Only nine metros get there:</p>
+
+  <blockquote>
+    New York (175.7) &middot; London (174.5) &middot; Paris (137.8) &middot; Tokyo (128.8) &middot; San Francisco–San Jose (117.6) &middot; Los Angeles (109.0) &middot; Beijing (105.5) &middot; Seoul (104.0) &middot; Shanghai (101.8)
+  </blockquote>
+
+  <p>Four are American, four are Asian, and one is European. The next European metro after London and Paris is Moscow at 68.9, which sits 69 points below Paris.</p>
+
+  <!-- SAN FRANCISCO ANOMALY -->
+  <h2>The San Francisco Anomaly</h2>
+
+  <p>San Francisco–San Jose at #5 (117.6) is the dataset's most notable outlier. At 8 million people, it is smaller than Bangkok, Jakarta, or Manila, yet it scores higher than all of them combined.</p>
+
+  <p>The explanation is concentrated in a single dimension: <strong>$25.7 trillion in market capitalization</strong>, driven by Apple, Alphabet, Meta, NVIDIA, and the broader Silicon Valley ecosystem. Market cap alone contributes roughly 35 points to SF's score, which is more than the entire composite score of most metros on Earth.</p>
+
+  <p>I consider this a legitimate feature of the model, not a distortion. The scoring treats market cap as a signal of where the world's most consequential economic activity concentrates. By that measure, the corridor between San Jose and San Francisco represents the densest concentration of corporate value in human history.</p>
+
+  <!-- CONTINENTAL CHAMPIONS -->
+  <h2>Continental Champions</h2>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Continent</th>
+          <th>#1 Metro</th>
+          <th class="num">Score</th>
+          <th>#2</th>
+          <th>#3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>North America</td><td class="metro-name">New York</td><td class="num">175.7</td><td>San Francisco</td><td>Los Angeles</td></tr>
+        <tr><td>Europe</td><td class="metro-name">London</td><td class="num">174.5</td><td>Paris</td><td>Moscow</td></tr>
+        <tr><td>Asia</td><td class="metro-name">Tokyo</td><td class="num">128.8</td><td>Beijing</td><td>Seoul</td></tr>
+        <tr><td>South America</td><td class="metro-name">São Paulo</td><td class="num">62.5</td><td>Buenos Aires</td><td>Rio de Janeiro</td></tr>
+        <tr><td>Africa</td><td class="metro-name">Johannesburg</td><td class="num">44.3</td><td>Cairo</td><td>Cape Town</td></tr>
+        <tr><td>Oceania</td><td class="metro-name">Auckland</td><td class="num">25.6</td><td>Wellington</td><td>Christchurch</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The intercontinental gaps are worth noting. Europe's London (174.5) is competitive with North America's New York (175.7), and Asia's Tokyo (128.8) is within range. But South America's best (São Paulo, 62.5) would rank only #23 globally. Africa's champion (Johannesburg, 44.3) would be #49. Oceania's leader (Auckland, 25.6) wouldn't crack the top 100.</p>
+
+  <!-- ALT CONTINENT -->
+  <h2>A More Granular View: 11 Regions</h2>
+
+  <p>The six-continent framework is useful but blunt. It groups Turkey with Indonesia, lumps Russia with France, and files Australia under Asia. The dataset maintains an alternative regional classification that splits the world into 11 blocs, each representing a more culturally and economically coherent grouping: North America, Europe, China, East Asia (Japan, South Korea, Taiwan), MENA, Eurasia (Russia, Central Asia, the Caucasus), Latin America, ASEAN, Oceania, South Asia, and Africa.</p>
+
+  <p>Viewed through this lens, the picture sharpens considerably.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Region</th>
+          <th>#1 Metro</th>
+          <th class="num">Score</th>
+          <th>#2</th>
+          <th>#3</th>
+          <th class="num">Metros</th>
+          <th class="num">50+ Scorers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>North America</td><td class="metro-name">New York</td><td class="num">175.7</td><td>San Francisco</td><td>Los Angeles</td><td class="num">686</td><td class="num">13</td></tr>
+        <tr><td>Europe</td><td class="metro-name">London</td><td class="num">174.5</td><td>Paris</td><td>Milan</td><td class="num">1,385</td><td class="num">7</td></tr>
+        <tr><td>East Asia</td><td class="metro-name">Tokyo</td><td class="num">128.8</td><td>Seoul</td><td>Osaka–Kyoto–Kobe</td><td class="num">89</td><td class="num">3</td></tr>
+        <tr><td>China</td><td class="metro-name">Beijing</td><td class="num">105.5</td><td>Shanghai</td><td>Guangzhou</td><td class="num">175</td><td class="num">4</td></tr>
+        <tr><td>Oceania</td><td class="metro-name">Sydney</td><td class="num">71.6</td><td>Melbourne</td><td>Brisbane</td><td class="num">72</td><td class="num">2</td></tr>
+        <tr><td>Eurasia</td><td class="metro-name">Moscow</td><td class="num">68.9</td><td>St. Petersburg</td><td>Baku</td><td class="num">442</td><td class="num">1</td></tr>
+        <tr><td>MENA</td><td class="metro-name">Istanbul</td><td class="num">65.3</td><td>Dubai–Sharjah</td><td>Cairo</td><td class="num">292</td><td class="num">2</td></tr>
+        <tr><td>ASEAN</td><td class="metro-name">Singapore</td><td class="num">62.0</td><td>Bangkok</td><td>Kuala Lumpur</td><td class="num">126</td><td class="num">3</td></tr>
+        <tr><td>Latin America</td><td class="metro-name">São Paulo</td><td class="num">62.5</td><td>Mexico City</td><td>Buenos Aires</td><td class="num">592</td><td class="num">3</td></tr>
+        <tr><td>South Asia</td><td class="metro-name">Mumbai</td><td class="num">54.3</td><td>Delhi</td><td>Calcutta</td><td class="num">141</td><td class="num">1</td></tr>
+        <tr><td>Africa</td><td class="metro-name">Johannesburg</td><td class="num">44.3</td><td>Cape Town</td><td>Nairobi</td><td class="num">282</td><td class="num">0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>A few things become visible here that the traditional breakdown obscures. First, China as its own region is remarkably deep: 175 metros, 4 scoring above 50, and a median score of 2.52, which is the highest of any region. Beijing, Shanghai, and Guangzhou all clear 95. No other non-Western region has three metros at that level.</p>
+
+  <p>East Asia (Japan, South Korea, Taiwan), separated from China, reveals a different pattern. It has only 89 metros but its top two, Tokyo (128.8) and Seoul (104.0), are both in the global top 10. The region has extreme concentration at the top and relatively little depth below it.</p>
+
+  <p>The Oceania reclassification is notable. Under the standard six-continent model, Australia falls under Asia (the UN geoscheme groups it with Asia-Pacific), which buries Sydney and Melbourne behind Tokyo, Seoul, Beijing, and Shanghai. Reassigned to Oceania, Sydney (71.6) and Melbourne (60.9) emerge as clear regional leaders. Auckland (25.6), which led Oceania in the traditional view, drops to a distant fourth behind Brisbane (30.2).</p>
+
+  <p>Eurasia is the most structurally top-heavy region in the dataset: 442 metros, but only one (Moscow) scores above 50, and only two score above 20. The median score is 0.09, the lowest of any region. This is largely an artifact of the number of small Central Asian and Caucasus metros with minimal global infrastructure.</p>
+
+  <p>Africa remains the only region with zero metros scoring above 50. Johannesburg leads at 44.3, followed by Cape Town (26.8) and Nairobi (20.9). Of 282 metros, just 3 score above 20.</p>
+
+  <p>ASEAN, despite being the smallest region by metro count after Oceania, has a notably flat top: Singapore (62.0), Bangkok (52.2), and Kuala Lumpur (50.6) are all within 12 points of each other. That kind of competitive parity at the top is unusual in the dataset. Most regions are defined by a dominant capital or two, with a steep dropoff. ASEAN has three cities operating at roughly the same tier.</p>
+
+  <!-- PUNCH ABOVE WEIGHT -->
+  <h2>Cities That Punch Above Their Weight</h2>
+
+  <p>Some of the more interesting results come from smaller metros whose scores far exceed what their population alone would predict:</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Metro</th>
+          <th>Country</th>
+          <th class="num">Pop.</th>
+          <th class="num">Score</th>
+          <th class="num">Pts/Million</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="metro-name">Geneva</td><td>Switzerland</td><td class="num">0.6M</td><td class="num">23.8</td><td class="num">37.3</td></tr>
+        <tr><td class="metro-name">Lausanne</td><td>Switzerland</td><td class="num">0.6M</td><td class="num">19.8</td><td class="num">35.8</td></tr>
+        <tr><td class="metro-name">Macau</td><td>Macau</td><td class="num">0.7M</td><td class="num">23.7</td><td class="num">34.7</td></tr>
+        <tr><td class="metro-name">Basel</td><td>Switzerland</td><td class="num">0.6M</td><td class="num">19.9</td><td class="num">34.6</td></tr>
+        <tr><td class="metro-name">Edinburgh</td><td>UK</td><td class="num">0.9M</td><td class="num">24.8</td><td class="num">27.9</td></tr>
+        <tr><td class="metro-name">New Orleans</td><td>United States</td><td class="num">1.5M</td><td class="num">30.3</td><td class="num">20.4</td></tr>
+        <tr><td class="metro-name">Amsterdam</td><td>Netherlands</td><td class="num">2.5M</td><td class="num">49.2</td><td class="num">20.0</td></tr>
+        <tr><td class="metro-name">Zurich</td><td>Switzerland</td><td class="num">1.6M</td><td class="num">32.2</td><td class="num">19.5</td></tr>
+        <tr><td class="metro-name">Dublin</td><td>Ireland</td><td class="num">1.7M</td><td class="num">31.0</td><td class="num">18.2</td></tr>
+        <tr><td class="metro-name">Brussels</td><td>Belgium</td><td class="num">2.9M</td><td class="num">48.2</td><td class="num">16.8</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Switzerland dominates this list. Four of the top eight are Swiss: Geneva (CERN, UN European HQ, Red Cross), Lausanne (IOC headquarters), Basel (pharma hub and Art Basel's birthplace), and Zurich (global finance). These are cities with small populations and outsized global footprints, and the scoring captures that disproportion clearly.</p>
+
+  <!-- INVISIBLE GIANTS -->
+  <h2>The Invisible Giants</h2>
+
+  <p>The converse is equally striking. Some of the world's largest cities are nearly invisible in the data:</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Metro</th>
+          <th>Country</th>
+          <th class="num">Pop.</th>
+          <th class="num">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="metro-name">Lagos</td><td>Nigeria</td><td class="num">19.9M</td><td class="num">14.1</td></tr>
+        <tr><td class="metro-name">Karachi</td><td>Pakistan</td><td class="num">17.0M</td><td class="num">14.4</td></tr>
+        <tr><td class="metro-name">Kinshasa</td><td>Congo DR</td><td class="num">15.0M</td><td class="num">9.3</td></tr>
+        <tr><td class="metro-name">Lahore</td><td>Pakistan</td><td class="num">14.6M</td><td class="num">12.6</td></tr>
+        <tr><td class="metro-name">Shantou</td><td>China</td><td class="num">13.6M</td><td class="num">5.9</td></tr>
+        <tr><td class="metro-name">Chennai</td><td>India</td><td class="num">11.5M</td><td class="num">15.0</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Lagos has 20 million people and scores 14.1, lower than Edinburgh (population 900,000). This is not a flaw in the methodology. It reflects a real asymmetry: Lagos has explosive population growth and economic energy but lacks the curated, globally-recognized infrastructure layers that the score measures, including top-ranked universities, Michelin restaurants, stock exchanges, transit systems, skyscrapers, and international sporting events.</p>
+
+  <p>The score does not suggest Lagos is unimportant. What it captures is that Lagos has not yet built the institutional infrastructure that cities like Seoul or Dubai have used to convert population and economic activity into globally-legible achievements. That distinction matters, and the data makes it visible.</p>
+
+  <!-- DISTRIBUTION -->
+  <h2>The Distribution Is Extremely Skewed</h2>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Score Range</th>
+          <th class="num">Metros</th>
+          <th class="num">% of Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>100+</td><td class="num">9</td><td class="num">0.2%</td></tr>
+        <tr><td>50–100</td><td class="num">30</td><td class="num">0.7%</td></tr>
+        <tr><td>20–50</td><td class="num">99</td><td class="num">2.3%</td></tr>
+        <tr><td>10–20</td><td class="num">114</td><td class="num">2.7%</td></tr>
+        <tr><td>5–10</td><td class="num">198</td><td class="num">4.6%</td></tr>
+        <tr><td>1–5</td><td class="num">806</td><td class="num">18.8%</td></tr>
+        <tr><td>Below 1</td><td class="num">3,026</td><td class="num">70.7%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The median metro scores <strong>0.33</strong>. Over 70% of the world's metros score below 1.0, meaning they have, at most, a regional airport and a population estimate. The infrastructure that makes a city globally relevant is concentrated in fewer than 250 metros worldwide.</p>
+
+  <!-- NEW YORK VS LONDON -->
+  <h2>New York vs. London: 1.2 Points, Two Different Models of Dominance</h2>
+
+  <p>I should disclose a bias. I have lived in both of these cities, moving between them four times since 2011. London was my foundation: the better part of a decade in Islington and Clerkenwell, building a career in the UK tech scene through roles at companies like Skimlinks and Visual DNA. New York was the acceleration: two stints, the first from late 2017 through 2020 focused on data strategy in sports (with time at the NFL London office and MLB in New York), the second from 2022 to early 2025 on the Upper West Side, working as a Director at Amazon Advertising on the Amazon Marketing Cloud and data clean rooms. I am currently back in London, in Marylebone, which gives me a different vantage point on the city than my years in North London did.</p>
+
+  <p>When I tell people the dataset has New York at 175.7 and London at 174.5, the first question is always the same: how are they that close? The answer, once you decompose the scores, is that they are close <em>despite</em> being radically different cities. They arrive at nearly the same number through almost completely non-overlapping strengths.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th class="num">New York</th>
+          <th class="num">London</th>
+          <th>Advantage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Population (22.3M vs 16.0M)</td><td class="num">7.4</td><td class="num">5.3</td><td>NY +2.1</td></tr>
+        <tr><td>Market Cap ($8.7T vs $4.2T)</td><td class="num">12.4</td><td class="num">6.1</td><td>NY +6.3</td></tr>
+        <tr><td>Major League Teams</td><td class="num">10.0</td><td class="num">10.0</td><td>Tied (both capped)</td></tr>
+        <tr><td>Minor/College Teams</td><td class="num">10.0</td><td class="num">10.0</td><td>Tied (both capped)</td></tr>
+        <tr><td>Cultural Assets (50 vs 64)</td><td class="num">32.5</td><td class="num">41.6</td><td>LDN +9.1</td></tr>
+        <tr><td>Airport Score</td><td class="num">4.3</td><td class="num">4.8</td><td>LDN +0.5</td></tr>
+        <tr><td>Skyscrapers (347 vs 44)</td><td class="num">33.4</td><td class="num">21.7</td><td>NY +11.7</td></tr>
+        <tr><td>Metro Transit (499 vs 317 stations)</td><td class="num">6.2</td><td class="num">5.8</td><td>NY +0.4</td></tr>
+        <tr><td>Suburban Rail (408 vs 1,023 stations)</td><td class="num">3.0</td><td class="num">3.5</td><td>LDN +0.5</td></tr>
+        <tr><td>Intercity Train Hubs (3 vs 15)</td><td class="num">2.8</td><td class="num">5.6</td><td>LDN +2.8</td></tr>
+        <tr><td>Luxury Hospitality (166 vs 265 stars)</td><td class="num">15.4</td><td class="num">16.7</td><td>LDN +1.3</td></tr>
+        <tr><td>Sporting Events Hosted</td><td class="num">3.0</td><td class="num">4.0</td><td>LDN +1.0</td></tr>
+        <tr><td>Annual Events</td><td class="num">13.0</td><td class="num">11.0</td><td>NY +2.0</td></tr>
+        <tr><td>GaWC Connectivity</td><td class="num">12.0</td><td class="num">12.0</td><td>Tied (both #1)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>New York's scoring profile is defined by vertical scale. It has 347 skyscrapers to London's 44, which translates to an 11.7-point advantage in that dimension alone. Its market capitalization advantage is even larger: $8.7 trillion versus $4.2 trillion, contributing 6.3 more points. The New York subway has 499 stations, the largest rapid transit system in the Western Hemisphere. Its GDP of $2.5 trillion would make it the eighth-largest national economy on Earth if it were a country. New York is a city that builds upward and accumulates corporate mass.</p>
+
+  <p>London's profile is defined by institutional breadth. It has 53 museums, landmarks, bridges, and canals to New York's 35, producing a 9.1-point cultural advantage. Its suburban rail network of 1,023 stations (the Overground, Thameslink, Southeastern, and the National Rail commuter services) is 2.5 times larger than New York's. It has 15 intercity train hubs with 30M+ annual passengers to New York's 3. Its luxury hospitality footprint (265 Michelin and Forbes stars) exceeds New York's by 60%. And London has hosted 30 major international sporting events, double New York's 15, a reflection of the Olympics, multiple Rugby and Cricket World Cups, Wimbledon's annual cadence, and the sheer density of Premier League football. Seven clubs play in the top flight. New York has two MLS teams.</p>
+
+  <p>The structural difference maps neatly onto the broader North America vs. Europe dynamic in the dataset. North America has 686 metros to Europe's 1,385, but its aggregate market capitalization ($80.4 trillion) is triple Europe's ($26.5 trillion). North America has 1,133 skyscrapers to Europe's 224. It has 13 metros scoring above 50, compared to Europe's 7. Yet Europe has 118 intercity train hubs to North America's 15, 9,260 suburban rail stations to North America's 1,461, and 431 museums and landmarks to North America's 330. Europe's infrastructure is older, more distributed, and more layered into the urban fabric. North America's is newer, more concentrated, and more vertically oriented.</p>
+
+  <p>One number crystallizes the difference in how these two regions concentrate their power. London accounts for 40.9% of the United Kingdom's total metro score. New York accounts for 7.3% of the United States'. London <em>is</em> the UK, in a way that no single American city is America. The US distributes its infrastructure across a dozen major metros; the UK funnels an extraordinary proportion of its national capacity through a single node. This is a pattern visible across most of Europe: Paris dominates France, Milan and Madrid anchor Italy and Spain, and there are steep dropoffs after the capital in nearly every European country. The American model, by contrast, produces depth: six US metros score above 80, and thirteen score above 50.</p>
+
+  <p>Having lived this duality for fifteen years, I can say the data reflects something that is genuinely felt on the ground. New York's intensity is economic and vertical. You feel the corporate density, the sheer volume of transactions and people, the skyline asserting itself. London's intensity is institutional and layered. You feel the depth of history, the transport network threading through neighborhoods that have been continuously inhabited for centuries, the cultural infrastructure embedded into the streetscape in a way that resists quantification but that the scoring does, I think, capture reasonably well. The 1.2-point gap between them is not convergence. It is two fundamentally different strategies for building a world city, arriving at the same destination by entirely different routes.</p>
+
+  <!-- METHODOLOGY -->
+  <div class="methodology">
+    <h2>Methodology Notes</h2>
+
+    <p><strong>Data sources:</strong> All data is curated from official, first-party sources: IATA, ACI, CTBUH, Michelin Guide, Forbes Travel Guide, CWUR university rankings, GaWC world city network, companiesmarketcap.com, Wikipedia transit data, and extensive manual research for cultural assets, sporting events, and infrastructure. No third-party aggregators were used for financial data.</p>
+
+    <p><strong>Geographic precision:</strong> Every data point is mapped to a specific municipality and aggregated upward through a hand-built hierarchy of 133,000+ municipalities (33 countries) and 49,000+ counties (237 countries). Metro boundaries are defined bottom-up from core urban clusters, not from external metro definitions (OECD, Brookings, etc.) that use incompatible geographic boundaries.</p>
+
+    <p><strong>What's deliberately excluded:</strong> Raw volume metrics (passenger counts, container TEU, metro-level GDP) are not used. Metro-level GDP from external sources uses different geographic boundaries than this dataset. Market capitalization serves as the economic weight proxy. Football (soccer) league data is maintained separately and feeds into the scoring via local data tables.</p>
+
+    <p><strong>Known limitations:</strong> English-language source bias means Africa and South Asia are structurally undercounted in cultural categories. Michelin Guide coverage only extends to select countries. The scoring captures a current snapshot with no temporal dimension.</p>
+  </div>
+
+  <!-- SERIES FOOTER -->
+  <div class="series-footer">
+    <p>This is the first in a series analyzing the Global Metro Power Rankings dataset. Future pieces will explore: &ldquo;The 50 Most Complete Small Cities,&rdquo; &ldquo;Why China's Metros Score So High,&rdquo; and &ldquo;The Infrastructure Gap Between Continents.&rdquo;</p>
+    <p>Data current as of April 2026. The full dataset covers 4,285 metros across 22 interconnected worksheets with 230,000+ rows of source data.</p>
+  </div>
+
+</article>
+
+</body>
+</html>

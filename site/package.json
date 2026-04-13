@@ -1,0 +1,22 @@
+{
+  "name": "metro-power-rankings",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "extract": "python3 scripts/extract.py"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "next": "^16.2.3",
+    "postcss": "^8.5.9",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2"
+  }
+}
