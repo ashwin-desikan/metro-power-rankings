@@ -134,7 +134,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 <hr className="my-4 border-[var(--border)]" />
                 <p className="text-xs text-[var(--text-muted)] mb-1">% of Country Score</p>
                 <p className="text-2xl font-bold text-[var(--accent)]">
-                  {(metro.pctOfCountry * 100).toFixed(1)}%
+                  {metro.pctOfCountry.toFixed(1)}%
                 </p>
               </>
             )}
@@ -252,7 +252,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                       className="px-6 py-3 text-right text-[var(--accent)] font-mono"
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
-                      {typeof value === "number" ? formatDimValue(key, value) : "—"}
+                      {typeof value === "number" ? formatDimValue(key, value) : "\u2014"}
                     </td>
                   </tr>
                 ))}
@@ -261,11 +261,16 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Teams Section */}
-        {detail.teams && detail.teams.length > 0 && (
+        {/* Sporting Events Section (Teams + Major Events) */}
+        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0)) && (
           <section>
-            <h2 className="text-2xl font-bold mb-6">Sports Teams</h2>
-            <TeamsSection teams={detail.teams} />
+            <h2 className="text-2xl font-bold mb-6">Sporting Events</h2>
+            {detail.teams && detail.teams.length > 0 && (
+              <TeamsSection teams={detail.teams} />
+            )}
+            {detail.events && detail.events.length > 0 && (
+              <EventsSection events={detail.events} />
+            )}
           </section>
         )}
 
@@ -320,7 +325,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                         <p className="font-medium text-[var(--text)]">{asset.name}</p>
                         <p className="text-xs text-[var(--text-muted)]">
                           {asset.city}
-                          {asset.subtype && ` • ${asset.subtype}`}
+                          {asset.subtype && ` \u2022 ${asset.subtype}`}
                         </p>
                       </div>
                     ))}
@@ -432,26 +437,6 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Events Section */}
-        {detail.events && detail.events.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Major Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {detail.events.map((event, idx) => (
-                <div
-                  key={idx}
-                  className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition"
-                >
-                  <p className="font-semibold text-[var(--text)]">{event.event}</p>
-                  <p className="text-sm text-[var(--text-muted)] mb-2">
-                    {event.sport} • {event.year}
-                  </p>
-                  <p className="text-xs text-[var(--text-dim)]">Venue: {event.venue}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* Similar Metros Section */}
         {similarMetros.length > 0 && (
@@ -507,6 +492,20 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
   );
 }
 
+function sortTeamsFootballFirst(
+  teams: Array<{ sport: string; league: string; team: string; city: string; major: boolean }>
+) {
+  return [...teams].sort((a, b) => {
+    const aIsFootball = a.sport === "Soccer" || a.sport === "Football/Soccer" ? 0 : 1;
+    const bIsFootball = b.sport === "Soccer" || b.sport === "Football/Soccer" ? 0 : 1;
+    return aIsFootball - bIsFootball;
+  });
+}
+
+function normalizeTeamSport(sport: string): string {
+  return sport === "Soccer" ? "Football/Soccer" : sport;
+}
+
 function TeamsSection({
   teams,
 }: {
@@ -518,8 +517,8 @@ function TeamsSection({
     major: boolean;
   }>;
 }) {
-  const majorTeams = teams.filter((t) => t.major);
-  const otherTeams = teams.filter((t) => !t.major);
+  const majorTeams = sortTeamsFootballFirst(teams.filter((t) => t.major));
+  const otherTeams = sortTeamsFootballFirst(teams.filter((t) => !t.major));
 
   return (
     <div className="space-y-6">
@@ -538,7 +537,7 @@ function TeamsSection({
       {otherTeams.length > 0 && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
-            Other Professional Teams
+            Other Teams
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {otherTeams.map((team, idx) => (
@@ -571,17 +570,74 @@ function TeamCard({
       }`}
     >
       <p className="text-xs text-[var(--text-muted)] mb-1">
-        {team.sport} • {team.league}
+        {normalizeTeamSport(team.sport)} • {team.league}
       </p>
       <p className="font-semibold text-[var(--text)]">{team.team}</p>
       <p className="text-xs text-[var(--text-dim)]">{team.city}</p>
-      {team.major && (
-        <div className="mt-2 pt-2 border-t border-[var(--border)]">
-          <span className="text-xs bg-[var(--accent)] bg-opacity-20 text-[var(--accent)] px-2 py-1 rounded">
-            Major
-          </span>
-        </div>
-      )}
+    </div>
+  );
+}
+
+function EventsSection({
+  events,
+}: {
+  events: Array<{
+    sport: string;
+    event: string;
+    year: string;
+    venue: string;
+  }>;
+}) {
+  const categoryMap: Record<string, string> = {
+    Golf: "Golf Majors",
+    Tennis: "Tennis Majors",
+    F1: "F1 Races",
+  };
+
+  const grouped: Record<string, typeof events> = {};
+  for (const ev of events) {
+    const category = categoryMap[ev.sport] || ev.sport;
+    if (!grouped[category]) grouped[category] = [];
+    grouped[category].push(ev);
+  }
+
+  const categoryOrder = ["Golf Majors", "Tennis Majors", "F1 Races"];
+  const sortedCategories = Object.keys(grouped).sort((a, b) => {
+    const ai = categoryOrder.indexOf(a);
+    const bi = categoryOrder.indexOf(b);
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+  });
+
+  return (
+    <div className="mt-8">
+      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">
+        Major Sporting Events
+      </h3>
+      <div className="space-y-3">
+        {sortedCategories.map((category) => (
+          <details
+            key={category}
+            className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group"
+          >
+            <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
+              <span className="font-semibold text-[var(--text)]">{category}</span>
+              <span className="text-sm text-[var(--text-muted)]">
+                {grouped[category].length} event{grouped[category].length !== 1 ? "s" : ""}
+              </span>
+            </summary>
+            <div className="border-t border-[var(--border)] px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+              {grouped[category].map((ev, idx) => (
+                <div key={idx} className="py-2">
+                  <p className="font-medium text-[var(--text)]">{ev.event}</p>
+                  <p className="text-xs text-[var(--text-muted)]">
+                    {ev.year} • {ev.venue}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </details>
+        ))}
+      </div>
     </div>
   );
 }
