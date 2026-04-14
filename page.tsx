@@ -262,7 +262,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         </section>
 
         {/* Sporting Events Section (Teams + Major Events) */}
-        {(detail.teams?.length > 0 || detail.events?.length > 0) && (
+        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0)) && (
           <section>
             <h2 className="text-2xl font-bold mb-6">Sporting Events</h2>
             {detail.teams && detail.teams.length > 0 && (
