@@ -1,0 +1,4 @@
+- [Metro Power Rankings - Published Substack Post](reference_substack_metro_rankings.md) — First article URL and post ID on Citizen of Nowhere
+- [QA before deployment](feedback_qa_before_deploy.md) — Always run TS type checks before suggesting deploy; multiple failed builds from skipped validation
+- [Verify file paths before editing](feedback_verify_file_paths.md) — Confirm the file is the real framework route (app/rankings/[slug]/page.tsx), not a stale root copy
+- [No master branch](feedback_no_master_branch.md) — Never reference master; default remote branch is main
