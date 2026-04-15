@@ -581,10 +581,20 @@ def main():
     with open(data_dir / "metros.json", 'w') as f:
         json.dump(slim_metros, f, separators=(',', ':'))
 
+    # Write meta.json with last update date from the Excel file
+    import datetime
+    xlsx_mtime = os.path.getmtime(str(xlsx_path))
+    last_update = datetime.datetime.fromtimestamp(xlsx_mtime).strftime('%Y-%m-%d')
+    meta = {'lastUpdate': last_update}
+    with open(data_dir / "meta.json", 'w') as f:
+        json.dump(meta, f, separators=(',', ':'))
+    print(f"  meta.json: lastUpdate={last_update}")
+
     print("\nDone! Data files written to public/data/")
     print(f"  metros.json ({len(slim_metros)} metros)")
     print(f"  regions.json ({len(regions)} regions)")
     print(f"  details/ ({detail_count} files)")
+    print(f"  meta.json (lastUpdate: {last_update})")
 
 
 if __name__ == "__main__":

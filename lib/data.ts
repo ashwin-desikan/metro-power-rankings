@@ -61,3 +61,12 @@ export function getAllSlugs(): string[] {
   const metros = getAllMetros();
   return metros.map((m) => m.slug);
 }
+
+export function getMeta(): { lastUpdate: string } {
+  try {
+    const raw = readFileSync(join(dataDir, "meta.json"), "utf-8");
+    return JSON.parse(raw);
+  } catch {
+    return { lastUpdate: "" };
+  }
+}

@@ -13,6 +13,24 @@ import {
 
 export const dynamicParams = false;
 
+const infrastructureTypes = new Set([
+  "Airport", "Bridge/Tunnel/Dam/Canal", "Central Bank", "Data Center Hub",
+  "Internet Exchange", "Metro System", "Military Base", "Port",
+  "Stock Exchange", "Suburban Rail", "Trade Venue", "Train Station",
+]);
+
+const infrastructureOrder = [
+  "Airport", "Port", "Military Base", "Bridge/Tunnel/Dam/Canal",
+  "Train Station", "Metro System", "Suburban Rail", "Trade Venue",
+  "Central Bank", "Stock Exchange", "Data Center Hub", "Internet Exchange",
+];
+
+const culturalAssetOrder = [
+  "Museum/Landmark", "Cultural Event", "Universities", "Hospital", "Research Institution",
+];
+
+const sportsEventType = "Sporting Event";
+
 export async function generateStaticParams() {
   // Generate static pages for all metros
   const slugs = getAllSlugs();
@@ -144,7 +162,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {/* Stats Grid */}
         {hasStatsToShow(detail) && (
           <section>
-            <h2 className="text-2xl font-bold mb-6">Key Statistics</h2>
+            <h2 id="stats" className="text-2xl font-bold mb-6">Key Statistics</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {metro.dims.majorLeagueTeams > 0 && (
                 <StatCard
@@ -238,138 +256,55 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(metro.dims).map(([key, value], idx) => (
-                  <tr
-                    key={key}
-                    className={`border-t border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition ${
-                      idx % 2 === 0 ? "bg-[var(--bg-card)]" : ""
-                    }`}
-                  >
-                    <td className="px-6 py-3 text-[var(--text)]">
-                      {formatDimensionName(key)}
-                    </td>
-                    <td
-                      className="px-6 py-3 text-right text-[var(--accent)] font-mono"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                {Object.entries(metro.dims).map(([key, value], idx) => {
+                  const anchor = getDimensionAnchor(key);
+                  return (
+                    <tr
+                      key={key}
+                      className={`border-t border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition ${
+                        idx % 2 === 0 ? "bg-[var(--bg-card)]" : ""
+                      }`}
                     >
-                      {typeof value === "number" ? formatDimValue(key, value) : "\u2014"}
-                    </td>
-                  </tr>
-                ))}
+                      <td className="px-6 py-3">
+                        {anchor ? (
+                          <a href={`#${anchor}`} className="text-[var(--text)] hover:text-[var(--accent)] transition">
+                            {formatDimensionName(key)} <span className="text-xs text-[var(--text-muted)]">&#8599;</span>
+                          </a>
+                        ) : (
+                          <span className="text-[var(--text)]">{formatDimensionName(key)}</span>
+                        )}
+                      </td>
+                      <td
+                        className="px-6 py-3 text-right text-[var(--accent)] font-mono"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      >
+                        {typeof value === "number" ? formatDimValue(key, value) : "\u2014"}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
         </section>
 
-        {/* Sporting Events Section (Teams + Major Events) */}
-        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0)) && (
+        {/* Sports Section */}
+        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType])) && (
           <section>
-            <h2 className="text-2xl font-bold mb-6">Sporting Events</h2>
+            <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
             {detail.teams && detail.teams.length > 0 && (
               <TeamsSection teams={detail.teams} />
             )}
-            {detail.events && detail.events.length > 0 && (
-              <EventsSection events={detail.events} />
+            {((detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType])) && (
+              <EventsSection events={detail.events || []} sportingEvents={detail.culture?.[sportsEventType] || []} />
             )}
           </section>
         )}
 
-        {/* Universities Section */}
-        {detail.universities && detail.universities.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Universities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {detail.universities
-                .sort((a, b) => a.rank - b.rank)
-                .map((uni, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition"
-                  >
-                    <div className="flex items-start gap-3 mb-2">
-                      <div
-                        className="text-[var(--accent)] font-bold text-lg"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                      >
-                        #{uni.rank}
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-semibold text-[var(--text)]">{uni.name}</p>
-                        <p className="text-xs text-[var(--text-muted)]">
-                          {uni.city}, {uni.country}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </section>
-        )}
-
-        {/* Cultural Assets Section */}
-        {detail.culture && Object.keys(detail.culture).length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Cultural Assets</h2>
-            <div className="space-y-8">
-              {Object.entries(detail.culture).map(([type, assets]) => (
-                <div key={type}>
-                  <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">
-                    {type}
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {assets.map((asset, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition"
-                      >
-                        <p className="font-medium text-[var(--text)]">{asset.name}</p>
-                        <p className="text-xs text-[var(--text-muted)]">
-                          {asset.city}
-                          {asset.subtype && ` \u2022 ${asset.subtype}`}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Luxury Hospitality Section */}
-        {detail.luxury && detail.luxury.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Luxury Hospitality</h2>
-            <div className="space-y-6">
-              {Array.from(new Set(detail.luxury.map((l) => l.type))).map((type) => {
-                const itemsOfType = detail.luxury!.filter((l) => l.type === type);
-                return (
-                  <div key={type}>
-                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-3">
-                      {type}
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {itemsOfType.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition"
-                        >
-                          <p className="font-medium text-[var(--text)]">{item.name}</p>
-                          <p className="text-xs text-[var(--text-muted)]">{item.city}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        )}
-
-        {/* Market Cap Section */}
+        {/* Top Companies Section */}
         {detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold mb-6">Top Companies</h2>
+            <h2 id="companies" className="text-2xl font-bold mb-6">Top Companies</h2>
             <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
               <table className="w-full text-sm">
                 <thead className="border-b border-[var(--border)]">
@@ -437,6 +372,114 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
+
+        {/* Cultural Assets Section (includes Universities) */}
+        {((detail.culture && Object.keys(detail.culture).some(type => !infrastructureTypes.has(type) && type !== sportsEventType)) || (detail.universities && detail.universities.length > 0)) && (
+          <section>
+            <h2 id="culture" className="text-2xl font-bold mb-6">Cultural Assets</h2>
+            <div className="space-y-8">
+              {culturalAssetOrder.map((type) => {
+                if (type === "Universities") {
+                  if (!detail.universities || detail.universities.length === 0) return null;
+                  return (
+                    <div key={type} id="universities">
+                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Universities</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {detail.universities
+                          .sort((a, b) => a.rank - b.rank)
+                          .map((uni, idx) => (
+                            <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition">
+                              <div className="flex items-start gap-3 mb-2">
+                                <div className="text-[var(--accent)] font-bold text-lg" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                                  #{uni.rank}
+                                </div>
+                                <div className="flex-1">
+                                  <p className="font-semibold text-[var(--text)]">{uni.name}</p>
+                                  <p className="text-xs text-[var(--text-muted)]">{uni.city}, {uni.country}</p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  );
+                }
+                const assets = detail.culture?.[type];
+                if (!assets || assets.length === 0) return null;
+                return (
+                  <div key={type}>
+                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{type}</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {assets.map((asset, idx) => (
+                        <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
+                          <p className="font-medium text-[var(--text)]">{asset.name}</p>
+                          <p className="text-xs text-[var(--text-muted)]">
+                            {asset.city}
+                            {asset.subtype && ` \u2022 ${asset.subtype}`}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Infrastructure Section */}
+        {detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0) && (
+          <section>
+            <h2 id="infrastructure" className="text-2xl font-bold mb-6">Infrastructure</h2>
+            <div className="space-y-8">
+              {infrastructureOrder.map((type) => {
+                const assets = detail.culture?.[type];
+                if (!assets || assets.length === 0) return null;
+                return (
+                  <div key={type}>
+                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{type}</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {assets.map((asset, idx) => (
+                        <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
+                          <p className="font-medium text-[var(--text)]">{asset.name}</p>
+                          <p className="text-xs text-[var(--text-muted)]">
+                            {asset.city}
+                            {asset.subtype && ` \u2022 ${asset.subtype}`}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Luxury Hospitality Section */}
+        {detail.luxury && detail.luxury.length > 0 && (
+          <section>
+            <h2 id="luxury" className="text-2xl font-bold mb-6">Luxury Hospitality</h2>
+            <div className="space-y-6">
+              {Array.from(new Set(detail.luxury.map((l) => l.type))).map((type) => {
+                const itemsOfType = detail.luxury!.filter((l) => l.type === type);
+                return (
+                  <div key={type}>
+                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-3">{type}</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {itemsOfType.map((item, idx) => (
+                        <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
+                          <p className="font-medium text-[var(--text)]">{item.name}</p>
+                          <p className="text-xs text-[var(--text-muted)]">{item.city}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Similar Metros Section */}
         {similarMetros.length > 0 && (
@@ -580,12 +623,19 @@ function TeamCard({
 
 function EventsSection({
   events,
+  sportingEvents,
 }: {
   events: Array<{
     sport: string;
     event: string;
     year: string;
     venue: string;
+  }>;
+  sportingEvents: Array<{
+    name: string;
+    city: string;
+    subtype: string;
+    type: string;
   }>;
 }) {
   const categoryMap: Record<string, string> = {
@@ -594,14 +644,25 @@ function EventsSection({
     F1: "F1 Races",
   };
 
-  const grouped: Record<string, typeof events> = {};
+  const grouped: Record<string, Array<{ event: string; year: string; venue: string }>> = {};
+
+  // Add Sporting Event entries from culture data first
+  if (sportingEvents.length > 0) {
+    grouped["Sporting Events"] = sportingEvents.map((se) => ({
+      event: se.name,
+      year: se.subtype || "",
+      venue: se.city,
+    }));
+  }
+
+  // Add Golf/Tennis/F1 events
   for (const ev of events) {
     const category = categoryMap[ev.sport] || ev.sport;
     if (!grouped[category]) grouped[category] = [];
     grouped[category].push(ev);
   }
 
-  const categoryOrder = ["Golf Majors", "Tennis Majors", "F1 Races"];
+  const categoryOrder = ["Sporting Events", "Golf Majors", "Tennis Majors", "F1 Races"];
   const sortedCategories = Object.keys(grouped).sort((a, b) => {
     const ai = categoryOrder.indexOf(a);
     const bi = categoryOrder.indexOf(b);
@@ -643,6 +704,28 @@ function EventsSection({
 }
 
 // Helper functions
+function getDimensionAnchor(key: string): string | null {
+  const anchors: Record<string, string> = {
+    majorLeagueTeams: "sports",
+    totalTeams: "sports",
+    majorSportingEvents: "sports",
+    companies: "companies",
+    marketCap: "companies",
+    culturalEvents: "culture",
+    universities: "universities",
+    topUniHospResearch: "universities",
+    museumsLandmarks: "culture",
+    portsExchangesInfra: "infrastructure",
+    airportScore: "infrastructure",
+    luxuryStars: "luxury",
+    metroStations: "infrastructure",
+    suburbStations: "infrastructure",
+    trainHubs: "infrastructure",
+    skyscrapers: "infrastructure",
+  };
+  return anchors[key] || null;
+}
+
 function formatDimensionName(key: string): string {
   const names: Record<string, string> = {
     majorLeagueTeams: "Major League Teams",
