@@ -103,6 +103,12 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </span>
           <span>/</span>
           <span className="text-[var(--text)]">{metro.country}</span>
+          {metro.subCountry && (
+            <>
+              <span>/</span>
+              <span className="text-[var(--text)]">{metro.subCountry}</span>
+            </>
+          )}
           <span>/</span>
           <span className="text-[var(--accent)]">{metro.name}</span>
         </nav>
@@ -115,8 +121,25 @@ export default async function MetroDetailPage({ params }: PageProps) {
             </h1>
             <div className="space-y-2 text-[var(--text-muted)]">
               <p className="text-lg">
-                {metro.country} • {metro.region}
+                {metro.country}
+                {metro.subCountry && <> • <span className="text-[var(--text)]">{metro.subCountry}</span></>}
+                {" "}• {metro.region}
               </p>
+              {metro.primaryCity && (
+                <p className="text-lg">
+                  Primary City: <span className="text-[var(--text)]">{metro.primaryCity}</span>
+                </p>
+              )}
+              {metro.primaryState && (
+                <p className="text-lg">
+                  State/Province: <span className="text-[var(--text)]">{metro.primaryState}</span>
+                </p>
+              )}
+              {metro.language && (
+                <p className="text-lg">
+                  Primary Language: <span className="text-[var(--text)]">{metro.language}</span>
+                </p>
+              )}
               <p className="text-lg">
                 Population: <span className="text-[var(--text)]">{formatPop(metro.pop)}</span>
               </p>
@@ -128,6 +151,21 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 <p className="text-lg">
                   GAWC Class: <span className="text-[var(--text)]">{metro.gawcClass}</span>
                 </p>
+              )}
+              {/* Capital / Largest City Badges */}
+              {metro.capital && metro.capital.length > 0 && (
+                <div className="flex gap-2 mt-3">
+                  {(metro.capital === "Y" || metro.capital === "XY") && (
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                      Capital City
+                    </span>
+                  )}
+                  {(metro.capital === "X" || metro.capital === "XY") && (
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                      Largest City
+                    </span>
+                  )}
+                </div>
               )}
             </div>
           </div>
@@ -158,6 +196,38 @@ export default async function MetroDetailPage({ params }: PageProps) {
             )}
           </div>
         </div>
+
+        {/* City Status Card */}
+        {metro.capital && metro.capital.length > 0 && (
+          <section>
+            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
+              <div className="flex flex-wrap items-center gap-6">
+                {(metro.capital === "Y" || metro.capital === "XY") && (
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center">
+                      <span className="text-amber-400 text-lg">&#9733;</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-amber-400">National Capital</p>
+                      <p className="text-xs text-[var(--text-muted)]">Capital city of {metro.country}</p>
+                    </div>
+                  </div>
+                )}
+                {(metro.capital === "X" || metro.capital === "XY") && (
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                      <span className="text-blue-400 text-lg">&#9650;</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-blue-400">Largest City</p>
+                      <p className="text-xs text-[var(--text-muted)]">Largest metro area in {metro.country}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Stats Grid */}
         {hasStatsToShow(detail) && (
@@ -536,7 +606,7 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
 }
 
 function sortTeamsFootballFirst(
-  teams: Array<{ sport: string; league: string; team: string; city: string; major: boolean }>
+  teams: Array<{ sport: string; league: string; team: string; city: string; major: boolean; level?: string }>
 ) {
   return [...teams].sort((a, b) => {
     const aIsFootball = a.sport === "Soccer" || a.sport === "Football/Soccer" ? 0 : 1;
@@ -558,6 +628,7 @@ function TeamsSection({
     team: string;
     city: string;
     major: boolean;
+    level?: string;
   }>;
 }) {
   const majorTeams = sortTeamsFootballFirst(teams.filter((t) => t.major));
@@ -602,8 +673,10 @@ function TeamCard({
     team: string;
     city: string;
     major: boolean;
+    level?: string;
   };
 }) {
+  const isFootball = team.sport === "Soccer" || team.sport === "Football/Soccer";
   return (
     <div
       className={`border rounded-lg p-4 hover:border-[var(--accent)] transition ${
@@ -616,7 +689,10 @@ function TeamCard({
         {normalizeTeamSport(team.sport)} • {team.league}
       </p>
       <p className="font-semibold text-[var(--text)]">{team.team}</p>
-      <p className="text-xs text-[var(--text-dim)]">{team.city}</p>
+      <p className="text-xs text-[var(--text-dim)]">
+        {team.city}
+        {isFootball && team.level && <> • <span className="text-[var(--text-muted)]">Level: {team.level}</span></>}
+      </p>
     </div>
   );
 }

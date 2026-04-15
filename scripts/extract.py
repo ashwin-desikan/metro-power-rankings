@@ -509,12 +509,13 @@ def main():
     print("Writing metros.json...")
     slim_metros = []
     for m in metros:
-        slim_metros.append({
+        entry = {
             'rank': m['rank'],
             'slug': m['slug'],
             'name': m['name'],
             'country': m['country'],
             'region': m['region'],
+            'continent': m['continent'],
             'pop': m['pop'],
             'score': m['score'],
             'lat': m['lat'],
@@ -528,7 +529,11 @@ def main():
             'skyscrapers': m['dims']['skyscrapers'],
             'metroStations': m['dims']['metroStations'],
             'universities': m['dims']['universities'],
-        })
+        }
+        # Include subCountry for UK metros (for search)
+        if m['country'] == 'United Kingdom' and m['subCountry']:
+            entry['subCountry'] = m['subCountry']
+        slim_metros.append(entry)
 
     with open(data_dir / "metros.json", 'w') as f:
         json.dump(slim_metros, f, separators=(',', ':'))

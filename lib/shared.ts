@@ -5,7 +5,9 @@ export interface Metro {
   slug: string;
   name: string;
   country: string;
+  subCountry?: string;
   region: string;
+  continent: string;
   pop: number;
   score: number;
   lat: number;

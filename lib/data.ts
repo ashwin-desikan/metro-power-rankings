@@ -13,6 +13,10 @@ export interface MetroDetail {
     slug: string;
     name: string;
     country: string;
+    subCountry?: string;
+    language?: string;
+    capital?: string; // "X" = largest city, "Y" = capital, "XY" = both, "" = neither
+    primaryState?: string;
     region: string;
     pop: number;
     score: number;

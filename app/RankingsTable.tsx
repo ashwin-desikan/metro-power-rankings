@@ -7,6 +7,16 @@ interface RankingsTableProps {
   metros: Metro[];
 }
 
+const CONTINENTS = [
+  'All',
+  'Europe',
+  'North America',
+  'Asia',
+  'South America',
+  'Africa',
+  'Oceania',
+];
+
 const REGIONS = [
   'All',
   'North America',
@@ -26,38 +36,47 @@ const MAX_SCORE = 175.7; // New York's score
 
 export default function RankingsTable({ metros }: RankingsTableProps) {
   const [view, setView] = useState<'top25' | 'top100'>('top25');
+  const [selectedContinent, setSelectedContinent] = useState('All');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
   const filtered = useMemo(() => {
     let result = metros;
 
+    // Filter by continent
+    if (selectedContinent !== 'All') {
+      result = result.filter((m) => m.continent === selectedContinent);
+    }
+
     // Filter by region
     if (selectedRegion !== 'All') {
       result = result.filter((m) => m.region === selectedRegion);
     }
 
-    // Filter by search term
+    // Filter by search term (includes sub-country for UK cities)
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
       result = result.filter(
         (m) =>
           m.name.toLowerCase().includes(term) ||
           m.country.toLowerCase().includes(term) ||
-          m.primaryCity.toLowerCase().includes(term)
+          m.primaryCity.toLowerCase().includes(term) ||
+          (m.subCountry && m.subCountry.toLowerCase().includes(term))
       );
     }
 
     // Limit to view
     return result.slice(0, view === 'top25' ? 25 : 100);
-  }, [metros, selectedRegion, searchTerm, view]);
+  }, [metros, selectedContinent, selectedRegion, searchTerm, view]);
 
   const title =
     selectedRegion !== 'All'
       ? `${selectedRegion} Rankings`
-      : view === 'top25'
-        ? 'Top 25 Global Metros'
-        : 'Top 100 Global Metros';
+      : selectedContinent !== 'All'
+        ? `${selectedContinent} Rankings`
+        : view === 'top25'
+          ? 'Top 25 Global Metros'
+          : 'Top 100 Global Metros';
 
   return (
     <div className="space-y-6">
@@ -95,27 +114,56 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
             </button>
           </div>
 
+          {/* Continent Filter Chips */}
+          <div>
+            <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Continent</p>
+            <div className="flex flex-wrap gap-2">
+              {CONTINENTS.map((continent) => (
+                <button
+                  key={continent}
+                  onClick={() => {
+                    setSelectedContinent(continent);
+                    if (continent !== 'All') setSelectedRegion('All');
+                  }}
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                    selectedContinent === continent
+                      ? 'bg-[var(--accent)] text-black'
+                      : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
+                  }`}
+                >
+                  {continent}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Region Filter Chips */}
-          <div className="flex flex-wrap gap-2">
-            {REGIONS.map((region) => (
-              <button
-                key={region}
-                onClick={() => setSelectedRegion(region)}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
-                  selectedRegion === region
-                    ? 'bg-[var(--accent)] text-black'
-                    : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
-                }`}
-              >
-                {region}
-              </button>
-            ))}
+          <div>
+            <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</p>
+            <div className="flex flex-wrap gap-2">
+              {REGIONS.map((region) => (
+                <button
+                  key={region}
+                  onClick={() => {
+                    setSelectedRegion(region);
+                    if (region !== 'All') setSelectedContinent('All');
+                  }}
+                  className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                    selectedRegion === region
+                      ? 'bg-[var(--accent)] text-black'
+                      : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
+                  }`}
+                >
+                  {region}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Search */}
           <input
             type="text"
-            placeholder="Search metros, cities, countries..."
+            placeholder="Search metros, cities, countries, regions (e.g. Scotland)..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
