@@ -38,6 +38,7 @@ export interface MetroDetail {
   events?: { sport: string; event: string; year: string; venue: string }[];
   marketCap?: { total: number; count: number; top12: { name: string; valuation: number; source: string }[] };
   football?: { total: number; byLevel: Record<string, number> };
+  dimRanks?: Record<string, string | null>;
 }
 
 const dataDir = join(process.cwd(), "public", "data");

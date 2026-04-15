@@ -53,7 +53,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
       result = result.filter((m) => m.region === selectedRegion);
     }
 
-    // Filter by search term (includes sub-country for UK cities)
+    // Filter by search term (includes sub-country, states)
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
       result = result.filter(
@@ -61,7 +61,10 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
           m.name.toLowerCase().includes(term) ||
           m.country.toLowerCase().includes(term) ||
           m.primaryCity.toLowerCase().includes(term) ||
-          (m.subCountry && m.subCountry.toLowerCase().includes(term))
+          (m.subCountry && m.subCountry.toLowerCase().includes(term)) ||
+          (m.primaryState && m.primaryState.toLowerCase().includes(term)) ||
+          (m.state2 && m.state2.toLowerCase().includes(term)) ||
+          (m.state3 && m.state3.toLowerCase().includes(term))
       );
     }
 
@@ -163,7 +166,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
           {/* Search */}
           <input
             type="text"
-            placeholder="Search metros, cities, countries, regions (e.g. Scotland)..."
+            placeholder="Search metros, cities, countries, states (e.g. California, Scotland)..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"

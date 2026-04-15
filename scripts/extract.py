@@ -97,6 +97,8 @@ def extract_metros(wb):
             'capital': safe_str(v[3]),
             'gawcClass': safe_str(v[4]),
             'primaryState': safe_str(v[6]),
+            'state2': safe_str(v[7]),
+            'state3': safe_str(v[8]),
             'pop': pop,
             'region': region,
             'continent': safe_str(v[41]),
@@ -364,6 +366,46 @@ def compute_regions(metros):
     return list(regions.values())
 
 
+def compute_dimension_ranks(metros):
+    """Compute per-dimension ranks across all metros. Returns dict keyed by slug."""
+    dim_keys = list(metros[0]['dims'].keys()) if metros else []
+    ranks_by_slug = {}
+
+    for key in dim_keys:
+        # Collect (value, slug) pairs, sorted descending by value
+        entries = [(m['dims'][key], m['slug']) for m in metros]
+        entries.sort(key=lambda x: -x[0])
+
+        # Assign ranks with tie handling
+        rank_map = {}
+        i = 0
+        while i < len(entries):
+            val = entries[i][0]
+            # Find all entries with this same value
+            j = i
+            while j < len(entries) and entries[j][0] == val:
+                j += 1
+            tied_count = j - i
+            rank_pos = i + 1  # 1-based rank
+            is_tie = tied_count > 1 and val > 0
+            for k in range(i, j):
+                slug = entries[k][1]
+                if val <= 0:
+                    rank_map[slug] = None  # No rank for zero/negative values
+                elif is_tie:
+                    rank_map[slug] = f"T-{rank_pos}"
+                else:
+                    rank_map[slug] = str(rank_pos)
+            i = j
+
+        for slug, rank_str in rank_map.items():
+            if slug not in ranks_by_slug:
+                ranks_by_slug[slug] = {}
+            ranks_by_slug[slug][key] = rank_str
+
+    return ranks_by_slug
+
+
 def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mktcap, football):
     """Build a detail JSON object for a single metro."""
     detail = {}
@@ -499,6 +541,11 @@ def main():
     print("Computing regional aggregates...")
     regions = compute_regions(metros)
 
+    # Compute dimension ranks
+    print("Computing dimension ranks...")
+    dim_ranks = compute_dimension_ranks(metros)
+    print(f"  Ranked {len(dim_ranks)} metros across {len(metros[0]['dims'])} dimensions")
+
     # Output directories
     data_dir = site_dir / "public" / "data"
     details_dir = data_dir / "details"
@@ -533,6 +580,13 @@ def main():
         # Include subCountry for UK metros (for search)
         if m['country'] == 'United Kingdom' and m['subCountry']:
             entry['subCountry'] = m['subCountry']
+        # Include states for search (only non-empty values)
+        if m['primaryState']:
+            entry['primaryState'] = m['primaryState']
+        if m['state2']:
+            entry['state2'] = m['state2']
+        if m['state3']:
+            entry['state3'] = m['state3']
         slim_metros.append(entry)
 
     with open(data_dir / "metros.json", 'w') as f:
@@ -566,6 +620,10 @@ def main():
 
         # Add the full metro data to the detail file
         detail['metro'] = m
+
+        # Add dimension ranks
+        if slug in dim_ranks:
+            detail['dimRanks'] = dim_ranks[slug]
 
         detail_path = details_dir / f"{slug}.json"
         with open(detail_path, 'w') as f:

@@ -6,6 +6,9 @@ export interface Metro {
   name: string;
   country: string;
   subCountry?: string;
+  primaryState?: string;
+  state2?: string;
+  state3?: string;
   region: string;
   continent: string;
   pop: number;

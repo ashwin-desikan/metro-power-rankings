@@ -323,11 +323,18 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   <th className="text-right px-6 py-3 font-semibold text-[var(--text)]">
                     Value
                   </th>
+                  <th
+                    className="text-right px-6 py-3 font-semibold text-[var(--text)]"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    Rank
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {Object.entries(metro.dims).map(([key, value], idx) => {
                   const anchor = getDimensionAnchor(key);
+                  const rankStr = detail.dimRanks?.[key];
                   return (
                     <tr
                       key={key}
@@ -349,6 +356,18 @@ export default async function MetroDetailPage({ params }: PageProps) {
                         style={{ fontFamily: "'JetBrains Mono', monospace" }}
                       >
                         {typeof value === "number" ? formatDimValue(key, value) : "\u2014"}
+                      </td>
+                      <td
+                        className="px-6 py-3 text-right font-mono text-[var(--text-muted)]"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      >
+                        {rankStr ? (
+                          <span className={rankStr.startsWith("T-") ? "text-[var(--text-muted)]" : "text-[var(--text)]"}>
+                            #{rankStr}
+                          </span>
+                        ) : (
+                          "\u2014"
+                        )}
                       </td>
                     </tr>
                   );
