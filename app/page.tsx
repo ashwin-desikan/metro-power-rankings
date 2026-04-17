@@ -41,7 +41,7 @@ export default async function Home() {
               Rankings
             </a>
             <a
-              href="#"
+              href="/compare"
               className="text-sm hover:text-[var(--accent)] transition-colors"
             >
               Compare
