@@ -10,6 +10,7 @@ import {
   formatDimValue,
   regionColors,
 } from "@/lib/data";
+import { BASE_URL, placeJsonLd, serializeJsonLd } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -59,10 +60,19 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `/rankings/${slug}`,
+    },
     openGraph: {
       title,
       description,
       type: "website",
+      url: `${BASE_URL}/rankings/${slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }
@@ -82,6 +92,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
   const { metro } = detail;
   const allMetros = getAllMetros();
   const currentIndex = allMetros.findIndex((m) => m.slug === slug);
+  const bestScore = Math.max(...allMetros.map((m) => m.score));
 
   // Get similar metros (5 with adjacent ranks)
   const similarMetros = allMetros
@@ -89,8 +100,63 @@ export default async function MetroDetailPage({ params }: PageProps) {
     .sort((a, b) => a.rank - b.rank)
     .slice(0, 5);
 
+  // Structured data: Place with aggregateRating, plus BreadcrumbList.
+  const placeSchema = placeJsonLd({
+    name: metro.name,
+    country: metro.country,
+    region: metro.region,
+    slug: metro.slug,
+    rank: metro.rank,
+    score: metro.score,
+    pop: metro.pop,
+    lat: metro.lat,
+    lon: metro.lon,
+    bestScore,
+  });
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Rankings",
+        item: `${BASE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: metro.region,
+        item: `${BASE_URL}/#regions`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: metro.country,
+        item: `${BASE_URL}/?country=${encodeURIComponent(metro.country)}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: metro.name,
+        item: `${BASE_URL}/rankings/${metro.slug}`,
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-[var(--bg)]">
+      {/* Structured data: Place + aggregateRating and breadcrumb hierarchy */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(placeSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
+      />
+
       <div className="max-w-6xl mx-auto px-4 pt-28 pb-8 space-y-12">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-[var(--text-muted)]">

@@ -1,0 +1,76 @@
+# Global Metro Power Rankings - robots.txt
+# Permissive crawl policy: the dataset is meant to be cited.
+
+User-agent: *
+Allow: /
+
+# -------------------------------------------------------------------
+# Explicit AI/LLM crawler allowlist.
+# These are the agents that power real-time citation in ChatGPT Search,
+# Claude web search, Perplexity, Google AI Overviews, Bing Copilot, etc.
+# -------------------------------------------------------------------
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+Sitemap: https://metro-power-rankings.vercel.app/sitemap.xml

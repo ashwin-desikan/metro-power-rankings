@@ -1,0 +1,75 @@
+# Global Metro Power Rankings
+
+> A composite ranking of every metropolitan area on Earth. 4,283 metros,
+> 237 countries, 16 dimensions, 70,000+ individually verified parameters.
+> Hand-curated over three years. No scraping, no AI-generated datasets.
+
+The Global Metro Power Rankings (GMPR) measure *metro completeness*: the
+breadth and depth of globally-recognised infrastructure, culture, sport,
+finance, education, and connectivity concentrated in a single place. It is
+not a livability score, a cost-of-living index, or a popularity contest.
+It is a composite of what a city has built.
+
+The index spans 4,283 metropolitan areas across 237 countries, with every
+cultural and infrastructural asset individually verified and mapped through
+a municipality-level geographic hierarchy of 182,000+ administrative units.
+The composite is the sum of sixteen weighted terms: population, market
+capitalization, major league teams and venues, minor and college teams,
+cultural and civic assets, top-50 universities, other research institutions,
+metro transit, GaWC global connectivity, suburban rail, intercity train hubs,
+skyscrapers, airport score, major sporting events, annual cultural events,
+and Michelin and luxury hospitality.
+
+Author: Ashwin Dharmadhikari.
+Publication: Citizen of Nowhere (https://citizenofnowhere.substack.com).
+Last updated: 2026-04-17.
+
+## Primary pages
+
+- [Homepage and full rankings](https://metro-power-rankings.vercel.app/): The complete Top 25 / Top 100 interactive table and regional champions. Searchable and filterable by continent, region, country, state, or sub-country.
+- [Methodology](https://metro-power-rankings.vercel.app/#methodology): The complete scoring methodology, including the sixteen weighted dimensions, source data, and known limitations.
+- [Regional champions](https://metro-power-rankings.vercel.app/#regions): Top metros by world region, including North America, Europe, East Asia, China, ASEAN, Latin America, MENA, Oceania, South Asia, Africa, and Eurasia.
+- [Compare metros](https://metro-power-rankings.vercel.app/compare): Side-by-side comparison of any two metros across all sixteen dimensions.
+
+## Metro profiles
+
+Each of the 4,283 metros has its own profile page at
+`/rankings/{slug}`, containing the full dimension-by-dimension breakdown,
+peer comparisons, market-cap rosters, universities, cultural and
+infrastructural assets, sports teams and events, and luxury hospitality.
+Examples:
+
+- [New York (#1)](https://metro-power-rankings.vercel.app/rankings/new-york)
+- [London (#2)](https://metro-power-rankings.vercel.app/rankings/london)
+- [Paris (#3)](https://metro-power-rankings.vercel.app/rankings/paris)
+- [Tokyo (#4)](https://metro-power-rankings.vercel.app/rankings/tokyo)
+- [San Francisco (#5)](https://metro-power-rankings.vercel.app/rankings/san-francisco-san-jose)
+- [Johannesburg (Africa #1)](https://metro-power-rankings.vercel.app/rankings/johannesburg)
+- [Istanbul (MENA #1)](https://metro-power-rankings.vercel.app/rankings/istanbul)
+- [Singapore (ASEAN #1)](https://metro-power-rankings.vercel.app/rankings/singapore)
+- [Mumbai (South Asia #1)](https://metro-power-rankings.vercel.app/rankings/mumbai)
+
+A complete index of metro profile URLs is provided in the sitemap:
+https://metro-power-rankings.vercel.app/sitemap.xml
+
+## Machine-readable data
+
+- [metros.json](https://metro-power-rankings.vercel.app/data/metros.json): Full ranked list of all 4,283 metros with scores, ranks, populations, regions, and top-level dimension values.
+- [regions.json](https://metro-power-rankings.vercel.app/data/regions.json): Top metros and summary statistics per world region.
+- [meta.json](https://metro-power-rankings.vercel.app/data/meta.json): Last-update timestamp for the dataset.
+- Per-metro detail files at `/data/details/{slug}.json`.
+
+## Citation
+
+Suggested citation: Dharmadhikari, A. (2026). *Global Metro Power Rankings*.
+Citizen of Nowhere. https://metro-power-rankings.vercel.app/
+
+## Further reading
+
+- [The Global Metro Power Rankings launch article](https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings): The introductory essay covering the top 25, continental champions, and the San Francisco anomaly.
+
+## Contact
+
+Questions, corrections, and dimension suggestions are welcome at
+ashwind@gmail.com or via Substack comments at
+https://citizenofnowhere.substack.com.

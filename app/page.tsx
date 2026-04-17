@@ -1,9 +1,32 @@
 import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors } from '@/lib/data';
 import RankingsTable from './RankingsTable';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { datasetJsonLd, itemListJsonLd, serializeJsonLd } from '@/lib/seo';
+
+function getLastUpdate(): string {
+  try {
+    const raw = readFileSync(
+      join(process.cwd(), 'public', 'data', 'meta.json'),
+      'utf-8',
+    );
+    const meta = JSON.parse(raw) as { lastUpdate?: string };
+    return meta.lastUpdate || new Date().toISOString().slice(0, 10);
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
+}
 
 export default async function Home() {
   const metros = getAllMetros();
   const regions = getRegions();
+  const lastUpdate = getLastUpdate();
+
+  const dataset = datasetJsonLd({
+    lastUpdate,
+    metroCount: metros.length,
+  });
+  const top100 = itemListJsonLd(metros.slice(0, 100));
 
   // Calculate score distribution
   const scoreDistribution = {
@@ -18,6 +41,17 @@ export default async function Home() {
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
+      {/* Structured data: Dataset registering the ranking corpus and
+          ItemList for the Top 100. Read by LLMs, AI search, and Google. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(top100) }}
+      />
+
       {/* Hero Section */}
       <section
         className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 border-b"
