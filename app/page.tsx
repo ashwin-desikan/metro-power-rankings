@@ -46,9 +46,9 @@ export default async function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {[
               { label: 'Metros', value: '4,285' },
-              { label: 'Dimensions', value: '16' },
+              { label: 'Parameters', value: '70,000+' },
               { label: 'Countries', value: '237' },
-              { label: 'Data Points', value: '230K+' },
+              { label: 'Dimensions', value: '16' },
             ].map((stat) => (
               <div
                 key={stat.label}

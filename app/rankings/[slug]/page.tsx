@@ -652,8 +652,8 @@ function TeamsSection({
 }) {
   const majorTeamsRaw = sortTeamsFootballFirst(teams.filter((t) => t.major));
   const majorTeams = [
-    ...majorTeamsRaw.filter((t) => t.league !== "Major Venues"),
-    ...majorTeamsRaw.filter((t) => t.league === "Major Venues"),
+    ...majorTeamsRaw.filter((t) => t.league !== "Notable Venues"),
+    ...majorTeamsRaw.filter((t) => t.league === "Notable Venues"),
   ];
   const otherTeams = sortTeamsFootballFirst(teams.filter((t) => !t.major));
 

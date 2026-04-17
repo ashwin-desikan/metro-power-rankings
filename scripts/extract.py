@@ -141,6 +141,14 @@ def extract_metros(wb):
     return metros
 
 
+def _normalize_league(raw):
+    """Map internal league labels to the names shown on the site."""
+    s = safe_str(raw)
+    if s == "Major Venues":
+        return "Notable Venues"
+    return s
+
+
 def extract_teams(wb):
     """Extract teams grouped by metro."""
     ws = wb["Team List"]
@@ -152,7 +160,7 @@ def extract_teams(wb):
             continue
         teams.setdefault(metro, []).append({
             'sport': safe_str(v[0]),
-            'league': safe_str(v[1]),
+            'league': _normalize_league(v[1]),
             'team': safe_str(v[2]),
             'city': safe_str(v[5]),
             'country': safe_str(v[8]),
@@ -170,7 +178,7 @@ def extract_teams(wb):
                 continue
             teams.setdefault(metro, []).append({
                 'sport': safe_str(v[0]),
-                'league': safe_str(v[1]),
+                'league': _normalize_league(v[1]),
                 'team': safe_str(v[2]),
                 'city': safe_str(v[5]),
                 'country': safe_str(v[8]),

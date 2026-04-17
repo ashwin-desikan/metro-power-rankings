@@ -32,13 +32,18 @@ const REGIONS = [
   'Eurasia',
 ];
 
-const MAX_SCORE = 175.7; // New York's score
-
 export default function RankingsTable({ metros }: RankingsTableProps) {
   const [view, setView] = useState<'top25' | 'top100'>('top25');
   const [selectedContinent, setSelectedContinent] = useState('All');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Top score in the full dataset (the #1 metro). Drives the width of every
+  // rank bar so updates to MetroAreas.xlsx stay in sync without hardcoding.
+  const maxScore = useMemo(
+    () => metros.reduce((acc, m) => (m.score > acc ? m.score : acc), 0) || 1,
+    [metros],
+  );
 
   const filtered = useMemo(() => {
     let result = metros;
@@ -254,7 +259,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                     <div
                       className="h-1 bg-[var(--accent)] rounded-full"
                       style={{
-                        width: `${(metro.score / MAX_SCORE) * 80}px`,
+                        width: `${(metro.score / maxScore) * 80}px`,
                       }}
                     />
                     <span
