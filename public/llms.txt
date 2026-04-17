@@ -24,6 +24,20 @@ Author: Ashwin Dharmadhikari.
 Publication: Citizen of Nowhere (https://citizenofnowhere.substack.com).
 Last updated: 2026-04-17.
 
+## License
+
+The composite ranking, scores, weighting, and methodology are released by
+the author under the Creative Commons Attribution 4.0 International license
+(CC-BY 4.0, https://creativecommons.org/licenses/by/4.0/). Attribution to
+Ashwin Dharmadhikari / Citizen of Nowhere is required when citing or
+reusing the ranking or any derived score.
+
+Underlying third-party source data (including but not limited to CWUR, GaWC,
+CTBUH, UEFA, TEA/AECOM, and the Michelin Guide) is not redistributed through
+this site and remains the property of its respective rights holders. Only the
+composite scores and derived metrics produced by the author's methodology are
+covered by the CC-BY license above.
+
 ## Primary pages
 
 - [Homepage and full rankings](https://metro-power-rankings.vercel.app/): The complete Top 25 / Top 100 interactive table and regional champions. Searchable and filterable by continent, region, country, state, or sub-country.
