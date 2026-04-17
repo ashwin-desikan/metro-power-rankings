@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SiteNav from "./SiteNav";
 
 export const metadata: Metadata = {
   title: "Global Metro Power Rankings",
   description:
-    "16 dimensions, 4,285 metros, 237 countries. A composite score measuring the completeness of every metropolitan area on Earth.",
+    "70,000+ parameters across 16 dimensions, 4,285 metros, and 237 countries. A composite score measuring the completeness of every metropolitan area on Earth.",
   openGraph: {
     title: "Global Metro Power Rankings",
     description:
-      "16 dimensions, 4,285 metros, 237 countries. Measuring what makes a city matter.",
+      "70,000+ parameters across 16 dimensions, 4,285 metros, and 237 countries. Measuring what makes a city matter.",
     type: "website",
   },
 };
@@ -32,7 +33,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <SiteNav />
+        {children}
+      </body>
     </html>
   );
 }

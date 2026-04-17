@@ -18,63 +18,6 @@ export default async function Home() {
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
-      {/* Navigation Bar */}
-      <nav
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
-        style={{
-          backgroundColor: 'rgba(8, 8, 13, 0.8)',
-          borderColor: 'var(--border)',
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div
-            className="text-lg font-bold tracking-tight"
-            style={{ color: 'var(--accent)', fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            METRO POWER RANKINGS
-          </div>
-          <div className="hidden md:flex gap-8 items-center">
-            <a
-              href="#rankings"
-              className="text-sm hover:text-[var(--accent)] transition-colors"
-            >
-              Rankings
-            </a>
-            <a
-              href="/compare"
-              className="text-sm hover:text-[var(--accent)] transition-colors"
-            >
-              Compare
-            </a>
-            <a
-              href="#regions"
-              className="text-sm hover:text-[var(--accent)] transition-colors"
-            >
-              Regions
-            </a>
-            <a
-              href="https://citizenofnowhere.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm hover:text-[var(--accent)] transition-colors"
-            >
-              Articles
-            </a>
-            <a
-              href="#methodology"
-              className="text-sm hover:text-[var(--accent)] transition-colors"
-            >
-              Methodology
-            </a>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="px-3 py-1 bg-[var(--bg-card)] border border-[var(--border)] rounded text-sm text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)]"
-            />
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section
         className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 border-b"
@@ -94,8 +37,9 @@ export default async function Home() {
             Global Metro<br />Power Rankings
           </h1>
           <p className="text-lg text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
-            16 dimensions across 4,285 metropolitan areas spanning 237 countries.
-            A data-driven measure of what makes a city matter globally.
+            70,000+ individually verified parameters across 16 dimensions, 4,285
+            metropolitan areas, and 237 countries. A data-driven measure of what
+            makes a city matter globally.
           </p>
 
           {/* Stats */}
@@ -395,8 +339,8 @@ export default async function Home() {
           <h3 className="text-xl font-semibold mt-10 mb-3">Rankings Within Rankings</h3>
           <p className="text-[var(--text-muted)] mb-4">
             Readers sometimes expect a global index to categorize everything. This
-            one does not. I am tracking thousands of data points across sixteen
-            dimensions, and each dimension draws its own lines. Poland&apos;s
+            one does not. I am tracking more than 70,000 individual data points
+            across sixteen dimensions, and each dimension draws its own lines. Poland&apos;s
             volleyball league is top-ranked in the world, but Ekstraklasa is not
             among the twenty strongest football leagues, so Polish football clubs
             do not appear under &quot;major league teams.&quot; That is a feature,
@@ -430,8 +374,8 @@ export default async function Home() {
               <p>Sum of corporate HQ value, divided by $700B. NYC ($8.3T) earns ~11.9 points.</p>
             </div>
             <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">3. Major League Teams</p>
-              <p>NFL, MLB, NBA, NHL, top-flight football, rugby, cricket. 1:1, hard cap at 10.</p>
+              <p className="font-semibold text-[var(--text)] mb-1">3. Major League Teams/Venues</p>
+              <p>NFL, MLB, NBA, NHL, top-flight football, rugby, cricket, plus marquee venues. 1:1, hard cap at 10.</p>
             </div>
             <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
               <p className="font-semibold text-[var(--text)] mb-1">4. Minor &amp; College Teams</p>

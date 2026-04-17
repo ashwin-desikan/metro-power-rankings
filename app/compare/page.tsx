@@ -13,7 +13,7 @@ const MAX_METROS = 4;
 const DIMENSION_ORDER: { key: string; label: string; group: string }[] = [
   { key: 'marketCap', label: 'Market Cap', group: 'Economy' },
   { key: 'companies', label: 'Major Companies', group: 'Economy' },
-  { key: 'majorLeagueTeams', label: 'Major League Teams', group: 'Sports' },
+  { key: 'majorLeagueTeams', label: 'Major League Teams/Venues', group: 'Sports' },
   { key: 'totalTeams', label: 'Total Teams', group: 'Sports' },
   { key: 'majorSportingEvents', label: 'Major Sporting Events', group: 'Sports' },
   { key: 'universities', label: 'Universities', group: 'Education' },

@@ -91,7 +91,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-[var(--bg)]">
-      <div className="max-w-6xl mx-auto px-4 py-8 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 pt-28 pb-8 space-y-12">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
           <a href="/" className="hover:text-[var(--accent)] transition">
@@ -650,7 +650,11 @@ function TeamsSection({
     level?: string;
   }>;
 }) {
-  const majorTeams = sortTeamsFootballFirst(teams.filter((t) => t.major));
+  const majorTeamsRaw = sortTeamsFootballFirst(teams.filter((t) => t.major));
+  const majorTeams = [
+    ...majorTeamsRaw.filter((t) => t.league !== "Major Venues"),
+    ...majorTeamsRaw.filter((t) => t.league === "Major Venues"),
+  ];
   const otherTeams = sortTeamsFootballFirst(teams.filter((t) => !t.major));
 
   return (
@@ -658,7 +662,7 @@ function TeamsSection({
       {majorTeams.length > 0 && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">
-            Major League Teams
+            Major League Teams/Venues
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {majorTeams.map((team, idx) => (
@@ -823,7 +827,7 @@ function getDimensionAnchor(key: string): string | null {
 
 function formatDimensionName(key: string): string {
   const names: Record<string, string> = {
-    majorLeagueTeams: "Major League Teams",
+    majorLeagueTeams: "Major League Teams/Venues",
     totalTeams: "Total Teams",
     majorSportingEvents: "Major Sporting Events",
     companies: "Major Companies",
