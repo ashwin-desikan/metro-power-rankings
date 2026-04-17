@@ -62,8 +62,15 @@ export function datasetJsonLd(opts: { lastUpdate: string; metroCount: number }) 
     url: BASE_URL,
     identifier: BASE_URL,
     keywords: DATASET_KEYWORDS,
+    // The composite ranking, scores, and methodology are released under CC-BY
+    // 4.0 by the author. Underlying source data (CWUR, GaWC, CTBUH, UEFA,
+    // TEA/AECOM, Michelin Guide, etc.) remains the property of its respective
+    // rights holders and is not redistributed here.
     license: "https://creativecommons.org/licenses/by/4.0/",
+    usageInfo: `${BASE_URL}/#methodology`,
     isAccessibleForFree: true,
+    conditionsOfAccess:
+      "The composite ranking, scores, and methodology are released by the author under CC-BY 4.0. Underlying third-party source data (including but not limited to CWUR, GaWC, CTBUH, UEFA, TEA/AECOM, and the Michelin Guide) is not redistributed and remains the property of its respective rights holders.",
     inLanguage: "en",
     dateModified: opts.lastUpdate,
     datePublished: "2026-04-10",
