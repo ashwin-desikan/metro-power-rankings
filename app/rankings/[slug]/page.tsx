@@ -795,6 +795,7 @@ function EventsSection({
     event: string;
     year: string;
     venue: string;
+    type?: string;
   }>;
   sportingEvents: Array<{
     name: string;
@@ -807,9 +808,11 @@ function EventsSection({
     Golf: "Golf Majors",
     Tennis: "Tennis Majors",
     F1: "F1 Races",
+    Boxing: "Major Fights",
   };
 
-  const grouped: Record<string, Array<{ event: string; year: string; venue: string }>> = {};
+  type EventItem = { event: string; year: string; venue: string; type?: string };
+  const grouped: Record<string, EventItem[]> = {};
 
   // Add Sporting Event entries from culture data first
   if (sportingEvents.length > 0) {
@@ -820,14 +823,14 @@ function EventsSection({
     }));
   }
 
-  // Add Golf/Tennis/F1 events
+  // Add Golf/Tennis/F1/Boxing events
   for (const ev of events) {
     const category = categoryMap[ev.sport] || ev.sport;
     if (!grouped[category]) grouped[category] = [];
     grouped[category].push(ev);
   }
 
-  const categoryOrder = ["Sporting Events", "Golf Majors", "Tennis Majors", "F1 Races"];
+  const categoryOrder = ["Sporting Events", "Golf Majors", "Tennis Majors", "F1 Races", "Major Fights"];
   const sortedCategories = Object.keys(grouped).sort((a, b) => {
     const ai = categoryOrder.indexOf(a);
     const bi = categoryOrder.indexOf(b);
@@ -855,6 +858,9 @@ function EventsSection({
               {grouped[category].map((ev, idx) => (
                 <div key={idx} className="py-2">
                   <p className="font-medium text-[var(--text)]">{ev.event}</p>
+                  {ev.type && (
+                    <p className="text-xs text-[var(--accent)]">{ev.type}</p>
+                  )}
                   <p className="text-xs text-[var(--text-muted)]">
                     {ev.year} • {ev.venue}
                   </p>

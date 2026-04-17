@@ -265,7 +265,7 @@ def extract_luxury(wb):
 
 
 def extract_events(wb):
-    """Extract sporting events (Golf, Tennis, F1) grouped by metro."""
+    """Extract sporting events (Golf, Tennis, F1, Boxing) grouped by metro."""
     ws = wb["Golf-Tennis-F1"]
     events = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -273,12 +273,17 @@ def extract_events(wb):
         metro = safe_str(v[6])
         if not metro:
             continue
-        events.setdefault(metro, []).append({
+        entry = {
             'sport': safe_str(v[0]),
             'event': safe_str(v[1]),
             'year': safe_str(v[2]),
             'venue': safe_str(v[3]),
-        })
+        }
+        # Boxing Event type (Column K / index 10): only applies to Boxing rows
+        event_type = safe_str(v[10]) if len(v) > 10 else ''
+        if event_type:
+            entry['type'] = event_type
+        events.setdefault(metro, []).append(entry)
     return events
 
 
