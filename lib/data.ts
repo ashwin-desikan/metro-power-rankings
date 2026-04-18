@@ -32,7 +32,7 @@ export interface MetroDetail {
   };
   teams?: { sport: string; league: string; team: string; city: string; major: boolean }[];
   universities?: { rank: number; name: string; city: string; country: string }[];
-  culture?: Record<string, { name: string; city: string; subtype: string; type: string }[]>;
+  culture?: Record<string, { name: string; city: string; subtype: string; type: string; annual?: boolean }[]>;
   skyscrapers?: { city: string; over150m: number; over200m: number; over300m: number };
   luxury?: { name: string; city: string; type: string }[];
   events?: { sport: string; event: string; year: string; venue: string; type?: string }[];

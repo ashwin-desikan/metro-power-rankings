@@ -71,7 +71,7 @@ export default async function Home() {
             Global Metro<br />Power Rankings
           </h1>
           <p className="text-lg text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
-            70,000+ individually verified parameters across 16 dimensions, 4,285
+            70,000+ individually verified parameters across 16 dimensions, 4,200+
             metropolitan areas, and 237 countries. A data-driven measure of what
             makes a city matter globally.
           </p>
@@ -79,7 +79,7 @@ export default async function Home() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {[
-              { label: 'Metros', value: '4,285' },
+              { label: 'Metros', value: '4,200+' },
               { label: 'Parameters', value: '70,000+' },
               { label: 'Countries', value: '237' },
               { label: 'Dimensions', value: '16' },
@@ -318,7 +318,7 @@ export default async function Home() {
             Explore Every Metro on Earth
           </h2>
           <p className="text-lg text-[var(--text-muted)] mb-8">
-            Search, filter, and analyze data for all 4,285 metropolitan areas. Compare regions,
+            Search, filter, and analyze data for all 4,200+ metropolitan areas. Compare regions,
             understand global patterns, and discover emerging metros.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -485,7 +485,7 @@ export default async function Home() {
 
           <h3 className="text-xl font-semibold mt-10 mb-3">Data Sources</h3>
           <p className="text-[var(--text-muted)] mb-4">
-            The dataset is hand-curated across two years: 4,285 metropolitan areas
+            The dataset is hand-curated across two years: 4,200+ metropolitan areas
             spanning 237 countries, with every cultural and infrastructural asset
             individually verified and mapped through a municipality-level geographic
             hierarchy of 182,000+ administrative units. Primary sources include

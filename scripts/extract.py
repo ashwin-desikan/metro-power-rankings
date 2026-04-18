@@ -219,13 +219,18 @@ def extract_culture(wb):
         metro = safe_str(v[6])
         if not metro:
             continue
-        culture.setdefault(metro, []).append({
+        entry = {
             'name': safe_str(v[4]),
             'city': safe_str(v[5]),
             'subtype': safe_str(v[8]),
             'type': safe_str(v[11]),
             'majorType': safe_str(v[10]),
-        })
+        }
+        # Column O (index 14) = "Annual Event" flag, marked "Y" for recurring events
+        annual_flag = safe_str(v[14]) if len(v) > 14 else ''
+        if annual_flag.upper() == 'Y':
+            entry['annual'] = True
+        culture.setdefault(metro, []).append(entry)
     return culture
 
 

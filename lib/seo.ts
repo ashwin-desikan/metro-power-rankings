@@ -58,7 +58,7 @@ export function datasetJsonLd(opts: { lastUpdate: string; metroCount: number }) 
     name: SITE_NAME,
     alternateName: "GMPR",
     description:
-      "A composite ranking of every metropolitan area on Earth. 4,283 metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters. Hand-curated over three years.",
+      "A composite ranking of every metropolitan area on Earth. 4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters. Hand-curated over three years.",
     url: BASE_URL,
     identifier: BASE_URL,
     keywords: DATASET_KEYWORDS,

@@ -17,7 +17,7 @@ const DIMENSION_ORDER: { key: string; label: string; group: string }[] = [
   { key: 'totalTeams', label: 'Total Teams', group: 'Sports' },
   { key: 'majorSportingEvents', label: 'Major Sporting Events', group: 'Sports' },
   { key: 'universities', label: 'Universities', group: 'Education' },
-  { key: 'topUniHospResearch', label: 'Top Hospitals & Research', group: 'Education' },
+  { key: 'topUniHospResearch', label: 'Top Universities, Hospitals, & Research', group: 'Education' },
   { key: 'culturalEvents', label: 'Annual Cultural Events', group: 'Culture' },
   { key: 'museumsLandmarks', label: 'Museums & Landmarks', group: 'Culture' },
   { key: 'luxuryStars', label: 'Michelin & Luxury Stars', group: 'Culture' },

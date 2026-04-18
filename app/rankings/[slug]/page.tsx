@@ -27,10 +27,36 @@ const infrastructureOrder = [
 ];
 
 const culturalAssetOrder = [
-  "Museum/Landmark", "Cultural Event", "Universities", "Hospital", "Research Institution",
+  "Cultural Event", "Museum/Landmark", "Universities", "Hospital", "Research Institution",
 ];
 
 const sportsEventType = "Sporting Event";
+
+function formatAssetHeading(
+  type: string,
+  dims?: Record<string, number>
+): string {
+  switch (type) {
+    case "Hospital":
+      return "Top 250 Hospitals";
+    case "Research Institution":
+      return "Top Research Institutions";
+    case "Bridge/Tunnel/Dam/Canal":
+      return "Notable Bridge/Tunnel/Dam/Canals";
+    case "Train Station":
+      return "Notable Train Hubs";
+    case "Metro System": {
+      const n = dims?.metroStations;
+      return n && n > 0 ? `Metro System (${n.toLocaleString()} stations)` : "Metro System";
+    }
+    case "Suburban Rail": {
+      const n = dims?.suburbStations;
+      return n && n > 0 ? `Suburban Rail (${n.toLocaleString()} stations)` : "Suburban Rail";
+    }
+    default:
+      return type;
+  }
+}
 
 export async function generateStaticParams() {
   // Generate static pages for all metros
@@ -534,11 +560,54 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <h2 id="culture" className="text-2xl font-bold mb-6">Cultural Assets</h2>
             <div className="space-y-8">
               {culturalAssetOrder.map((type) => {
+                if (type === "Cultural Event") {
+                  const all = detail.culture?.[type];
+                  if (!all || all.length === 0) return null;
+                  const annual = all.filter((a) => a.annual === true);
+                  const oneOff = all
+                    .filter((a) => !a.annual)
+                    .slice()
+                    .sort((a, b) => {
+                      const ya = parseInt(a.name.trim().match(/^(\d{4})/)?.[1] || "0");
+                      const yb = parseInt(b.name.trim().match(/^(\d{4})/)?.[1] || "0");
+                      return yb - ya;
+                    });
+                  const renderCard = (asset: { name: string; city: string; subtype: string }, idx: number) => (
+                    <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
+                      <p className="font-medium text-[var(--text)]">{asset.name}</p>
+                      <p className="text-xs text-[var(--text-muted)]">
+                        {asset.city}
+                        {asset.subtype && ` \u2022 ${asset.subtype}`}
+                      </p>
+                    </div>
+                  );
+                  return (
+                    <div key={type}>
+                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Cultural Events</h3>
+                      {annual.length > 0 && (
+                        <div className="mb-6">
+                          <h4 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-3">Annual Events</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {annual.map(renderCard)}
+                          </div>
+                        </div>
+                      )}
+                      {oneOff.length > 0 && (
+                        <div>
+                          <h4 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-3">Notable One-off Events</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {oneOff.map(renderCard)}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
                 if (type === "Universities") {
                   if (!detail.universities || detail.universities.length === 0) return null;
                   return (
                     <div key={type} id="universities">
-                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Universities</h3>
+                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Top 2000 Universities</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {detail.universities
                           .sort((a, b) => a.rank - b.rank)
@@ -563,7 +632,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 if (!assets || assets.length === 0) return null;
                 return (
                   <div key={type}>
-                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{type}</h3>
+                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{formatAssetHeading(type, detail.metro.dims)}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {assets.map((asset, idx) => (
                         <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
@@ -592,7 +661,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 if (!assets || assets.length === 0) return null;
                 return (
                   <div key={type}>
-                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{type}</h3>
+                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{formatAssetHeading(type, detail.metro.dims)}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {assets.map((asset, idx) => (
                         <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
@@ -716,37 +785,90 @@ function TeamsSection({
     level?: string;
   }>;
 }) {
+  // Major League Teams/Venues: split into Teams and Notable Venues sub-groupings.
   const majorTeamsRaw = sortTeamsFootballFirst(teams.filter((t) => t.major));
-  const majorTeams = [
-    ...majorTeamsRaw.filter((t) => t.league !== "Notable Venues"),
-    ...majorTeamsRaw.filter((t) => t.league === "Notable Venues"),
-  ];
-  const otherTeams = sortTeamsFootballFirst(teams.filter((t) => !t.major));
+  const majorTeamsOnly = majorTeamsRaw.filter((t) => t.league !== "Notable Venues");
+  const majorVenues = majorTeamsRaw.filter((t) => t.league === "Notable Venues");
+
+  // Other Teams: three sub-groupings. Football/Soccer (men + women) takes precedence
+  // over the W-prefix women's bucket so that W Football lands in the soccer group.
+  const FOOTBALL_SPORTS = new Set(["Football", "Soccer", "Football/Soccer", "W Football"]);
+  const isFootball = (sport: string) => FOOTBALL_SPORTS.has(sport);
+  const isWomen = (sport: string) => /^W\s/.test(sport);
+
+  const otherTeamsRaw = teams.filter((t) => !t.major);
+  const otherFootball = sortTeamsFootballFirst(otherTeamsRaw.filter((t) => isFootball(t.sport)));
+  const otherWomen = otherTeamsRaw.filter((t) => !isFootball(t.sport) && isWomen(t.sport));
+  const otherMen = otherTeamsRaw.filter((t) => !isFootball(t.sport) && !isWomen(t.sport));
+
+  const subheadingClass =
+    "text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-3";
+  const gridClass = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
 
   return (
     <div className="space-y-6">
-      {majorTeams.length > 0 && (
+      {(majorTeamsOnly.length > 0 || majorVenues.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">
             Major League Teams/Venues
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {majorTeams.map((team, idx) => (
-              <TeamCard key={idx} team={team} />
-            ))}
-          </div>
+          {majorTeamsOnly.length > 0 && (
+            <div className={majorVenues.length > 0 ? "mb-6" : undefined}>
+              <h4 className={subheadingClass}>Teams</h4>
+              <div className={gridClass}>
+                {majorTeamsOnly.map((team, idx) => (
+                  <TeamCard key={idx} team={team} />
+                ))}
+              </div>
+            </div>
+          )}
+          {majorVenues.length > 0 && (
+            <div>
+              <h4 className={subheadingClass}>Notable Venues</h4>
+              <div className={gridClass}>
+                {majorVenues.map((team, idx) => (
+                  <TeamCard key={idx} team={team} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
-      {otherTeams.length > 0 && (
+      {(otherFootball.length > 0 || otherMen.length > 0 || otherWomen.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {otherTeams.map((team, idx) => (
-              <TeamCard key={idx} team={team} />
-            ))}
-          </div>
+          {otherFootball.length > 0 && (
+            <div className="mb-6">
+              <h4 className={subheadingClass}>Football/Soccer Teams</h4>
+              <div className={gridClass}>
+                {otherFootball.map((team, idx) => (
+                  <TeamCard key={idx} team={team} />
+                ))}
+              </div>
+            </div>
+          )}
+          {otherMen.length > 0 && (
+            <div className={otherWomen.length > 0 ? "mb-6" : undefined}>
+              <h4 className={subheadingClass}>Other Men&apos;s Teams</h4>
+              <div className={gridClass}>
+                {otherMen.map((team, idx) => (
+                  <TeamCard key={idx} team={team} />
+                ))}
+              </div>
+            </div>
+          )}
+          {otherWomen.length > 0 && (
+            <div>
+              <h4 className={subheadingClass}>Other Women&apos;s Teams</h4>
+              <div className={gridClass}>
+                {otherWomen.map((team, idx) => (
+                  <TeamCard key={idx} team={team} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -802,35 +924,92 @@ function EventsSection({
     city: string;
     subtype: string;
     type: string;
+    annual?: boolean;
   }>;
 }) {
-  const categoryMap: Record<string, string> = {
-    Golf: "Golf Majors",
-    Tennis: "Tennis Majors",
-    F1: "F1 Races",
-    Boxing: "Major Fights",
-  };
-
   type EventItem = { event: string; year: string; venue: string; type?: string };
   const grouped: Record<string, EventItem[]> = {};
 
-  // Add Sporting Event entries from culture data first
-  if (sportingEvents.length > 0) {
-    grouped["Sporting Events"] = sportingEvents.map((se) => ({
+  // Extract a 4-digit year from the start of an event name (for Culture-Infra finals
+  // like "1984 Super Bowl" where year is embedded in the name rather than a separate field).
+  const extractYear = (name: string): string => {
+    const m = name.trim().match(/^(\d{4})/);
+    return m ? m[1] : "";
+  };
+
+  // 1. Annual Sporting Events — Culture-Infra "Sporting Event" rows flagged annual
+  //    (Marathons, Tour de France, FA Cup Final, The Masters, etc.)
+  const annualEvents = sportingEvents.filter((se) => se.annual === true);
+  if (annualEvents.length > 0) {
+    grouped["Annual Sporting Events"] = annualEvents.map((se) => ({
       event: se.name,
-      year: se.subtype || "",
+      year: "",
       venue: se.city,
+      type: se.subtype,
     }));
   }
 
-  // Add Golf/Tennis/F1/Boxing events
-  for (const ev of events) {
-    const category = categoryMap[ev.sport] || ev.sport;
-    if (!grouped[category]) grouped[category] = [];
-    grouped[category].push(ev);
+  // 2. Championship Finals — one-off championship moments from two sources:
+  //    (a) Culture-Infra Sporting Events without the annual flag (year in the name)
+  //    (b) Golf-Tennis-F1 rows with Event Type = "US Sports Finals" (NBA/NHL/MLB finals)
+  const finalsFromCulture = sportingEvents
+    .filter((se) => !se.annual)
+    .map((se) => ({
+      event: se.name,
+      year: extractYear(se.name),
+      venue: se.city,
+      type: se.subtype,
+    }));
+  const finalsFromEvents = events
+    .filter((ev) => ev.type === "US Sports Finals")
+    .map((ev) => ({
+      event: ev.event,
+      year: ev.year || extractYear(ev.event),
+      venue: ev.venue,
+      type: ev.sport,
+    }));
+  const allFinals = [...finalsFromCulture, ...finalsFromEvents].sort(
+    (a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0)
+  );
+  if (allFinals.length > 0) {
+    grouped["Championship Finals"] = allFinals;
   }
 
-  const categoryOrder = ["Sporting Events", "Golf Majors", "Tennis Majors", "F1 Races", "Major Fights"];
+  // 3-6. Golf Majors / Tennis Majors / F1 Races / Major Fights.
+  //      US Sports Finals rows are excluded because they're already in Championship Finals.
+  //      Major Fights unifies Boxing and Pro Wrestling (WrestleMania) into one bucket.
+  for (const ev of events) {
+    if (ev.type === "US Sports Finals") continue;
+    let category: string | null = null;
+    if (ev.sport === "Golf") category = "Golf Majors";
+    else if (ev.sport === "Tennis") category = "Tennis Majors";
+    else if (ev.sport === "F1") category = "F1 Races";
+    else if (ev.sport === "Boxing" || ev.sport === "Pro Wrestling") category = "Major Fights";
+    if (!category) continue;
+    if (!grouped[category]) grouped[category] = [];
+    grouped[category].push({
+      event: ev.event,
+      year: ev.year,
+      venue: ev.venue,
+      type: ev.type,
+    });
+  }
+
+  // Sort Major Fights chronologically (newest first) because it mixes two sports.
+  if (grouped["Major Fights"]) {
+    grouped["Major Fights"].sort(
+      (a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0)
+    );
+  }
+
+  const categoryOrder = [
+    "Annual Sporting Events",
+    "Championship Finals",
+    "Golf Majors",
+    "Tennis Majors",
+    "F1 Races",
+    "Major Fights",
+  ];
   const sortedCategories = Object.keys(grouped).sort((a, b) => {
     const ai = categoryOrder.indexOf(a);
     const bi = categoryOrder.indexOf(b);
@@ -906,7 +1085,7 @@ function formatDimensionName(key: string): string {
     marketCap: "Market Cap Score",
     culturalEvents: "Cultural Events",
     universities: "Universities",
-    topUniHospResearch: "Top University Hospitals & Research",
+    topUniHospResearch: "Top Universities, Hospitals, & Research",
     museumsLandmarks: "Museums & Landmarks",
     portsExchangesInfra: "Ports, Exchanges & Infrastructure",
     airportScore: "Airport Score",

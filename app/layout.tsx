@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Global Metro Power Rankings",
   },
   description:
-    "A composite ranking of every metropolitan area on Earth. 4,283 metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters.",
+    "A composite ranking of every metropolitan area on Earth. 4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters.",
   applicationName: SITE_NAME,
   keywords: [
     "global city rankings",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE_NAME,
     description:
-      "4,283 metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters. Measuring what makes a city matter.",
+      "4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters. Measuring what makes a city matter.",
     type: "website",
     siteName: SITE_NAME,
     url: BASE_URL,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_NAME,
     description:
-      "4,283 metros. 237 countries. 16 dimensions. 70,000+ individually verified parameters.",
+      "4,200+ metros. 237 countries. 16 dimensions. 70,000+ individually verified parameters.",
   },
   robots: {
     index: true,
@@ -68,7 +68,7 @@ const siteGraph = {
       name: SITE_NAME,
       url: BASE_URL,
       description:
-        "A composite ranking of every metropolitan area on Earth. 4,283 metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters.",
+        "A composite ranking of every metropolitan area on Earth. 4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters.",
       inLanguage: "en",
       publisher: { "@id": `${PUBLISHER.url}/#publisher` },
       author: { "@id": `${AUTHOR.url}/#author` },
