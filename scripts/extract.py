@@ -186,24 +186,9 @@ def extract_teams(wb):
             'major': safe_str(v[11]) == 'Y',
         })
 
-    # Also get RegTeams
-    if "RegTeams" in wb.sheetnames:
-        ws2 = wb["RegTeams"]
-        for row in ws2.iter_rows(min_row=2, values_only=True):
-            v = list(row)
-            metro = safe_str(v[6])
-            if not metro:
-                continue
-            league = _normalize_league(v[1])
-            teams.setdefault(metro, []).append({
-                'sport': safe_str(v[0]),
-                'league': league,
-                'team': _normalize_venue_name(league, safe_str(v[2])),
-                'city': safe_str(v[5]),
-                'country': safe_str(v[8]),
-                'level': safe_str(v[9]),
-                'major': safe_str(v[11]) == 'Y',
-            })
+    # Note: RegTeams is intentionally NOT read. Team List is the single
+    # source of truth for teams. RegTeams holds stale/regional legacy rows
+    # (e.g. London Irish 2023) that must not reach the site.
 
     return teams
 

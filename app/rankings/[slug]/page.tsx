@@ -27,7 +27,14 @@ const infrastructureOrder = [
 ];
 
 const culturalAssetOrder = [
-  "Cultural Event", "Museum/Landmark", "Universities", "Hospital", "Research Institution",
+  "Cultural Event", "Museum/Landmark",
+];
+
+// Education & Research lives under its own H2 below Cultural Assets.
+// Universities is backed by detail.universities; Hospital and Research
+// Institution come from detail.culture like everything else.
+const educationResearchOrder = [
+  "Universities", "Hospital", "Research Institution",
 ];
 
 const sportsEventType = "Sporting Event";
@@ -254,7 +261,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
               )}
               {metro.primaryState && (
                 <p className="text-lg">
-                  State/Province: <span className="text-[var(--text)]">{metro.primaryState}</span>
+                  Primary State/Province: <span className="text-[var(--text)]">{metro.primaryState}</span>
                 </p>
               )}
               {metro.language && (
@@ -584,8 +591,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
         )}
 
 
-        {/* Cultural Assets Section (includes Universities) */}
-        {((detail.culture && Object.keys(detail.culture).some(type => !infrastructureTypes.has(type) && type !== sportsEventType)) || (detail.universities && detail.universities.length > 0)) && (
+        {/* Cultural Assets Section (Cultural Events + Museums/Landmarks) */}
+        {detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0) && (
           <section>
             <h2 id="culture" className="text-2xl font-bold mb-6">Cultural Assets</h2>
             <div className="space-y-8">
@@ -683,13 +690,36 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     </div>
                   );
                 }
+                return null;
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Education & Research Section (collapsed by default) */}
+        {((detail.universities && detail.universities.length > 0) ||
+          (detail.culture && (
+            (detail.culture["Hospital"]?.length ?? 0) > 0 ||
+            (detail.culture["Research Institution"]?.length ?? 0) > 0
+          ))) && (
+          <section>
+            <h2 id="education" className="text-2xl font-bold mb-6">Education &amp; Research</h2>
+            <div className="space-y-3">
+              {educationResearchOrder.map((type) => {
                 if (type === "Universities") {
-                  if (!detail.universities || detail.universities.length === 0) return null;
+                  const unis = detail.universities;
+                  if (!unis || unis.length === 0) return null;
                   return (
-                    <div key={type} id="universities">
-                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Top 2000 Universities</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {detail.universities
+                    <details key={type} id="universities" className={COLLAPSIBLE_CARD_CLASS}>
+                      <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                        <span className="font-semibold text-[var(--text)]">Top 2000 Universities</span>
+                        <span className="text-sm text-[var(--text-muted)]">
+                          {unis.length} {unis.length === 1 ? "entry" : "entries"}
+                        </span>
+                      </summary>
+                      <div className="border-t border-[var(--border)] px-4 py-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {unis
+                          .slice()
                           .sort((a, b) => a.rank - b.rank)
                           .map((uni, idx) => (
                             <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition">
@@ -705,15 +735,22 @@ export default async function MetroDetailPage({ params }: PageProps) {
                             </div>
                           ))}
                       </div>
-                    </div>
+                    </details>
                   );
                 }
                 const assets = detail.culture?.[type];
                 if (!assets || assets.length === 0) return null;
                 return (
-                  <div key={type}>
-                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{formatAssetHeading(type, detail.metro.dims)}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <details key={type} className={COLLAPSIBLE_CARD_CLASS}>
+                    <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                      <span className="font-semibold text-[var(--text)]">
+                        {formatAssetHeading(type, detail.metro.dims)}
+                      </span>
+                      <span className="text-sm text-[var(--text-muted)]">
+                        {assets.length} {assets.length === 1 ? "entry" : "entries"}
+                      </span>
+                    </summary>
+                    <div className="border-t border-[var(--border)] px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-3">
                       {assets.map((asset, idx) => (
                         <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
                           <p className="font-medium text-[var(--text)]">{asset.name}</p>
@@ -724,7 +761,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </details>
                 );
               })}
             </div>
