@@ -32,6 +32,36 @@ const culturalAssetOrder = [
 
 const sportsEventType = "Sporting Event";
 
+// Notable Venues ordering: Olympics-class venues lead, then football, then American
+// football, then the marquee team sports (basketball/baseball/cricket/rugby/hockey
+// in any order), then everything else. Sports that alias to the same family
+// (Test Cricket + T20 Cricket, Rugby Union + Rugby League, Olympics/Athletics +
+// bare "Olympics") collapse into one rank.
+const VENUE_SPORT_PRIORITY: Record<string, number> = {
+  "Olympics/Athletics": 0,
+  "Olympics": 0,
+  "Football": 1,
+  "Soccer": 1,
+  "Football/Soccer": 1,
+  "American Football": 2,
+  "Basketball": 3,
+  "Baseball": 3,
+  "Test Cricket": 3,
+  "T20 Cricket": 3,
+  "Rugby Union": 3,
+  "Rugby League": 3,
+  "Hockey": 3,
+};
+const venueSportRank = (sport: string): number =>
+  VENUE_SPORT_PRIORITY[sport] ?? 99;
+
+// Tailwind class string shared across collapsible subgroups (Other Teams,
+// Notable Venues, Museum buckets, Infrastructure entries, Luxury types).
+const COLLAPSIBLE_CARD_CLASS =
+  "bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group";
+const COLLAPSIBLE_SUMMARY_CLASS =
+  "flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none";
+
 function formatAssetHeading(
   type: string,
   dims?: Record<string, number>
@@ -603,6 +633,56 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     </div>
                   );
                 }
+                if (type === "Museum/Landmark") {
+                  const all = detail.culture?.[type];
+                  if (!all || all.length === 0) return null;
+                  // 4 smart buckets across the 20 subtypes. Unknown subtypes fall
+                  // into "Landmarks & Civic" so future xlsx additions don't break.
+                  const buckets: Array<{ name: string; subtypes: string[] }> = [
+                    { name: "Museums & Galleries", subtypes: ["Art", "History", "Science", "Cultural Heritage", "Archaeology"] },
+                    { name: "Performing Arts Venues", subtypes: ["Concert Hall", "Opera House", "Theatre", "Amphitheatre"] },
+                    { name: "Parks, Zoos & Theme Parks", subtypes: ["Park/Garden", "Zoo", "Aquarium", "Theme Park"] },
+                    { name: "Landmarks & Civic", subtypes: ["Memorial", "Religious site", "Government", "International Organization", "Library", "Shopping", "Film Hub"] },
+                  ];
+                  const knownSubtypes = new Set(buckets.flatMap((b) => b.subtypes));
+                  const renderCard = (asset: { name: string; city: string; subtype: string }, idx: number) => (
+                    <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
+                      <p className="font-medium text-[var(--text)]">{asset.name}</p>
+                      <p className="text-xs text-[var(--text-muted)]">
+                        {asset.city}
+                        {asset.subtype && ` \u2022 ${asset.subtype}`}
+                      </p>
+                    </div>
+                  );
+                  return (
+                    <div key={type}>
+                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Museums & Landmarks</h3>
+                      <div className="space-y-3">
+                        {buckets.map((bucket) => {
+                          const inBucket = all.filter((a) =>
+                            bucket.name === "Landmarks & Civic"
+                              ? bucket.subtypes.includes(a.subtype) || !knownSubtypes.has(a.subtype)
+                              : bucket.subtypes.includes(a.subtype)
+                          );
+                          if (inBucket.length === 0) return null;
+                          return (
+                            <details key={bucket.name} className={COLLAPSIBLE_CARD_CLASS}>
+                              <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                                <span className="font-semibold text-[var(--text)]">{bucket.name}</span>
+                                <span className="text-sm text-[var(--text-muted)]">
+                                  {inBucket.length} item{inBucket.length !== 1 ? "s" : ""}
+                                </span>
+                              </summary>
+                              <div className="border-t border-[var(--border)] px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                                {inBucket.map(renderCard)}
+                              </div>
+                            </details>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
                 if (type === "Universities") {
                   if (!detail.universities || detail.universities.length === 0) return null;
                   return (
@@ -655,25 +735,37 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0) && (
           <section>
             <h2 id="infrastructure" className="text-2xl font-bold mb-6">Infrastructure</h2>
-            <div className="space-y-8">
+            <div className="space-y-3">
               {infrastructureOrder.map((type) => {
                 const assets = detail.culture?.[type];
                 if (!assets || assets.length === 0) return null;
+                const isTransit = type === "Metro System" || type === "Suburban Rail";
                 return (
-                  <div key={type}>
-                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">{formatAssetHeading(type, detail.metro.dims)}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {assets.map((asset, idx) => (
-                        <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
-                          <p className="font-medium text-[var(--text)]">{asset.name}</p>
-                          <p className="text-xs text-[var(--text-muted)]">
-                            {asset.city}
-                            {asset.subtype && ` \u2022 ${asset.subtype}`}
-                          </p>
-                        </div>
-                      ))}
+                  <details key={type} className={COLLAPSIBLE_CARD_CLASS}>
+                    <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                      <span className="font-semibold text-[var(--text)]">
+                        {formatAssetHeading(type, detail.metro.dims)}
+                      </span>
+                      <span className="text-sm text-[var(--text-muted)]">
+                        {assets.length} {assets.length === 1 ? "entry" : "entries"}
+                      </span>
+                    </summary>
+                    <div className="border-t border-[var(--border)] px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {assets.map((asset, idx) => {
+                        const subline = isTransit && asset.stations
+                          ? `${asset.city} \u2022 ${asset.stations.toLocaleString()} stations`
+                          : asset.subtype
+                            ? `${asset.city} \u2022 ${asset.subtype}`
+                            : asset.city;
+                        return (
+                          <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
+                            <p className="font-medium text-[var(--text)]">{asset.name}</p>
+                            <p className="text-xs text-[var(--text-muted)]">{subline}</p>
+                          </div>
+                        );
+                      })}
                     </div>
-                  </div>
+                  </details>
                 );
               })}
             </div>
@@ -684,13 +776,18 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {detail.luxury && detail.luxury.length > 0 && (
           <section>
             <h2 id="luxury" className="text-2xl font-bold mb-6">Luxury Hospitality</h2>
-            <div className="space-y-6">
+            <div className="space-y-3">
               {Array.from(new Set(detail.luxury.map((l) => l.type))).map((type) => {
                 const itemsOfType = detail.luxury!.filter((l) => l.type === type);
                 return (
-                  <div key={type}>
-                    <h3 className="text-lg font-semibold text-[var(--accent)] mb-3">{type}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <details key={type} className={COLLAPSIBLE_CARD_CLASS}>
+                    <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                      <span className="font-semibold text-[var(--text)]">{type}</span>
+                      <span className="text-sm text-[var(--text-muted)]">
+                        {itemsOfType.length} {itemsOfType.length === 1 ? "entry" : "entries"}
+                      </span>
+                    </summary>
+                    <div className="border-t border-[var(--border)] px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-3">
                       {itemsOfType.map((item, idx) => (
                         <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
                           <p className="font-medium text-[var(--text)]">{item.name}</p>
@@ -698,7 +795,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </details>
                 );
               })}
             </div>
@@ -785,25 +882,53 @@ function TeamsSection({
     level?: string;
   }>;
 }) {
-  // Major League Teams/Venues: split into Teams and Notable Venues sub-groupings.
+  // Major League Teams/Venues: Teams stays expanded; Notable Venues collapses by default.
   const majorTeamsRaw = sortTeamsFootballFirst(teams.filter((t) => t.major));
   const majorTeamsOnly = majorTeamsRaw.filter((t) => t.league !== "Notable Venues");
   const majorVenues = majorTeamsRaw.filter((t) => t.league === "Notable Venues");
 
-  // Other Teams: three sub-groupings. Football/Soccer (men + women) takes precedence
-  // over the W-prefix women's bucket so that W Football lands in the soccer group.
+  // Other Teams: four sub-groupings, all collapsible. Priority order when sport + level
+  // overlap: College first (pulls out NCAA/FBS/FCS/College Hockey regardless of sport),
+  // then Football/Soccer (incl. W Football), then W-prefix women's, then everything else.
+  const COLLEGE_LEAGUES = new Set(["FBS", "FCS", "NCAA", "NCAA W", "College Hockey"]);
   const FOOTBALL_SPORTS = new Set(["Football", "Soccer", "Football/Soccer", "W Football"]);
+  const isCollege = (league: string) => COLLEGE_LEAGUES.has(league);
   const isFootball = (sport: string) => FOOTBALL_SPORTS.has(sport);
   const isWomen = (sport: string) => /^W\s/.test(sport);
 
   const otherTeamsRaw = teams.filter((t) => !t.major);
-  const otherFootball = sortTeamsFootballFirst(otherTeamsRaw.filter((t) => isFootball(t.sport)));
-  const otherWomen = otherTeamsRaw.filter((t) => !isFootball(t.sport) && isWomen(t.sport));
-  const otherMen = otherTeamsRaw.filter((t) => !isFootball(t.sport) && !isWomen(t.sport));
+  const otherCollege = otherTeamsRaw.filter((t) => isCollege(t.league));
+  const otherFootball = sortTeamsFootballFirst(
+    otherTeamsRaw.filter((t) => !isCollege(t.league) && isFootball(t.sport))
+  );
+  const otherWomen = otherTeamsRaw.filter(
+    (t) => !isCollege(t.league) && !isFootball(t.sport) && isWomen(t.sport)
+  );
+  const otherMen = otherTeamsRaw.filter(
+    (t) => !isCollege(t.league) && !isFootball(t.sport) && !isWomen(t.sport)
+  );
 
-  const subheadingClass =
-    "text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wide mb-3";
   const gridClass = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+
+  const collapsible = (
+    label: string,
+    items: typeof majorTeamsRaw,
+    noun = "team"
+  ) => (
+    <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
+      <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
+        <span className="font-semibold text-[var(--text)]">{label}</span>
+        <span className="text-sm text-[var(--text-muted)]">
+          {items.length} {noun}{items.length !== 1 ? "s" : ""}
+        </span>
+      </summary>
+      <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
+        {items.map((team, idx) => (
+          <TeamCard key={idx} team={team} />
+        ))}
+      </div>
+    </details>
+  );
 
   return (
     <div className="space-y-6">
@@ -813,62 +938,72 @@ function TeamsSection({
             Major League Teams/Venues
           </h3>
           {majorTeamsOnly.length > 0 && (
-            <div className={majorVenues.length > 0 ? "mb-6" : undefined}>
-              <h4 className={subheadingClass}>Teams</h4>
-              <div className={gridClass}>
-                {majorTeamsOnly.map((team, idx) => (
-                  <TeamCard key={idx} team={team} />
-                ))}
-              </div>
+            <div className={`${majorVenues.length > 0 ? "mb-3" : ""} ${gridClass}`}>
+              {majorTeamsOnly.map((team, idx) => (
+                <TeamCard key={idx} team={team} />
+              ))}
             </div>
           )}
-          {majorVenues.length > 0 && (
-            <div>
-              <h4 className={subheadingClass}>Notable Venues</h4>
-              <div className={gridClass}>
-                {majorVenues.map((team, idx) => (
-                  <TeamCard key={idx} team={team} />
-                ))}
-              </div>
-            </div>
-          )}
+          {majorVenues.length > 0 && (() => {
+            // Dedupe by venue name: a venue hosting multiple sports (e.g. Stade
+            // de France for Football + Rugby Union + Olympics/Athletics) renders
+            // once with all sports listed inside the card.
+            type AggregatedVenue = { name: string; city: string; sports: string[] };
+            const byName = new Map<string, AggregatedVenue>();
+            for (const v of majorVenues) {
+              const sport = normalizeTeamSport(v.sport);
+              const existing = byName.get(v.team);
+              if (existing) {
+                if (!existing.sports.includes(sport)) existing.sports.push(sport);
+              } else {
+                byName.set(v.team, { name: v.team, city: v.city, sports: [sport] });
+              }
+            }
+            const venues = Array.from(byName.values());
+            venues.forEach((v) =>
+              v.sports.sort((a, b) => venueSportRank(a) - venueSportRank(b))
+            );
+            venues.sort(
+              (a, b) => venueSportRank(a.sports[0]) - venueSportRank(b.sports[0])
+            );
+            return (
+              <details className={COLLAPSIBLE_CARD_CLASS}>
+                <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                  <span className="font-semibold text-[var(--text)]">Notable Venues</span>
+                  <span className="text-sm text-[var(--text-muted)]">
+                    {venues.length} {venues.length === 1 ? "venue" : "venues"}
+                  </span>
+                </summary>
+                <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
+                  {venues.map((venue, idx) => (
+                    <div
+                      key={idx}
+                      className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)]"
+                    >
+                      <p className="text-xs text-[var(--text-muted)] mb-1">
+                        {venue.sports.join(" \u2022 ")}
+                      </p>
+                      <p className="font-semibold text-[var(--text)]">{venue.name}</p>
+                      <p className="text-xs text-[var(--text-dim)]">{venue.city}</p>
+                    </div>
+                  ))}
+                </div>
+              </details>
+            );
+          })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherMen.length > 0 || otherWomen.length > 0) && (
+      {(otherFootball.length > 0 || otherCollege.length > 0 || otherMen.length > 0 || otherWomen.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
           </h3>
-          {otherFootball.length > 0 && (
-            <div className="mb-6">
-              <h4 className={subheadingClass}>Football/Soccer Teams</h4>
-              <div className={gridClass}>
-                {otherFootball.map((team, idx) => (
-                  <TeamCard key={idx} team={team} />
-                ))}
-              </div>
-            </div>
-          )}
-          {otherMen.length > 0 && (
-            <div className={otherWomen.length > 0 ? "mb-6" : undefined}>
-              <h4 className={subheadingClass}>Other Men&apos;s Teams</h4>
-              <div className={gridClass}>
-                {otherMen.map((team, idx) => (
-                  <TeamCard key={idx} team={team} />
-                ))}
-              </div>
-            </div>
-          )}
-          {otherWomen.length > 0 && (
-            <div>
-              <h4 className={subheadingClass}>Other Women&apos;s Teams</h4>
-              <div className={gridClass}>
-                {otherWomen.map((team, idx) => (
-                  <TeamCard key={idx} team={team} />
-                ))}
-              </div>
-            </div>
-          )}
+          <div className="space-y-3">
+            {otherFootball.length > 0 && collapsible("Football/Soccer Teams", otherFootball)}
+            {otherCollege.length > 0 && collapsible("College/University Teams", otherCollege)}
+            {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
+            {otherWomen.length > 0 && collapsible("Other Women\u2019s Teams", otherWomen)}
+          </div>
         </div>
       )}
     </div>

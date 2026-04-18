@@ -149,6 +149,23 @@ def _normalize_league(raw):
     return s
 
 
+# Manual venue name aliases so the same physical venue dedupes across sports.
+# Extend here rather than letting the frontend guess. The first tuple entry is
+# a normalized form matched as a substring; the value is the canonical name.
+_VENUE_NAME_ALIASES = {
+    "New Wembley Stadium": "Wembley Stadium",
+    "The O2 Arena": "O2 Arena",
+}
+
+
+def _normalize_venue_name(league, name):
+    """Canonicalize venue names so a venue appearing under multiple sports
+    (e.g. combat sports + tennis at the O2) dedupes cleanly on the frontend."""
+    if league != "Notable Venues":
+        return name
+    return _VENUE_NAME_ALIASES.get(name, name)
+
+
 def extract_teams(wb):
     """Extract teams grouped by metro."""
     ws = wb["Team List"]
@@ -158,10 +175,11 @@ def extract_teams(wb):
         metro = safe_str(v[6])
         if not metro:
             continue
+        league = _normalize_league(v[1])
         teams.setdefault(metro, []).append({
             'sport': safe_str(v[0]),
-            'league': _normalize_league(v[1]),
-            'team': safe_str(v[2]),
+            'league': league,
+            'team': _normalize_venue_name(league, safe_str(v[2])),
             'city': safe_str(v[5]),
             'country': safe_str(v[8]),
             'level': safe_str(v[9]),
@@ -176,10 +194,11 @@ def extract_teams(wb):
             metro = safe_str(v[6])
             if not metro:
                 continue
+            league = _normalize_league(v[1])
             teams.setdefault(metro, []).append({
                 'sport': safe_str(v[0]),
-                'league': _normalize_league(v[1]),
-                'team': safe_str(v[2]),
+                'league': league,
+                'team': _normalize_venue_name(league, safe_str(v[2])),
                 'city': safe_str(v[5]),
                 'country': safe_str(v[8]),
                 'level': safe_str(v[9]),
@@ -230,6 +249,18 @@ def extract_culture(wb):
         annual_flag = safe_str(v[14]) if len(v) > 14 else ''
         if annual_flag.upper() == 'Y':
             entry['annual'] = True
+        # Column P (index 15) = "# Stations", used on Metro System / Suburban Rail
+        # so each line shows its own station count instead of just the aggregate.
+        if entry['type'] in ('Metro System', 'Suburban Rail'):
+            stations = safe_int(v[15]) if len(v) > 15 else 0
+            if stations:
+                entry['stations'] = stations
+        # Override: America's Cup editions are championship moments, not annual events.
+        # The xlsx flags them Annual=Y because they recur on a multi-year cadence, but
+        # semantically each edition belongs in Championship Finals (like Super Bowl
+        # or World Series), not Annual Sporting Events.
+        if entry['type'] == 'Sporting Event' and entry['name'].startswith("America's Cup"):
+            entry.pop('annual', None)
         culture.setdefault(metro, []).append(entry)
     return culture
 
