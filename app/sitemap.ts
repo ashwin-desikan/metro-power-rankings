@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    {
+      url: `${BASE_URL}/neighborhoods`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
   ];
 
   const metroEntries: MetadataRoute.Sitemap = metros.map((m) => ({

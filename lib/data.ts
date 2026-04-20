@@ -38,7 +38,6 @@ export interface MetroDetail {
   events?: { sport: string; event: string; year: string; venue: string; type?: string }[];
   marketCap?: { total: number; count: number; top12: { name: string; valuation: number; source: string }[] };
   football?: { total: number; byLevel: Record<string, number> };
-  supertallStructures?: { name: string; city: string; heightM: number; yearBuilt: number | null }[];
   dimRanks?: Record<string, string | null>;
 }
 
