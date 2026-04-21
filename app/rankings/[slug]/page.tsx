@@ -11,6 +11,10 @@ import {
   regionColors,
 } from "@/lib/data";
 import { BASE_URL, placeJsonLd, serializeJsonLd } from "@/lib/seo";
+import {
+  getQualifierByMetroName,
+  qualifierAnchorId,
+} from "@/lib/neighborhoods";
 
 export const dynamicParams = false;
 
@@ -153,6 +157,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
   }
 
   const { metro } = detail;
+  const neighborhoodQualifier = getQualifierByMetroName(metro.name);
   const allMetros = getAllMetros();
   const currentIndex = allMetros.findIndex((m) => m.slug === slug);
   const bestScore = Math.max(...allMetros.map((m) => m.score));
@@ -353,6 +358,46 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     </div>
                   </div>
                 )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Walkable Elite Quarters — surfaced for metros that clear the Marylebone test */}
+        {neighborhoodQualifier && (
+          <section>
+            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
+              <div className="flex items-start gap-4 flex-wrap">
+                <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-emerald-400 text-lg" aria-hidden="true">&#9873;</span>
+                </div>
+                <div className="flex-1 min-w-[240px]">
+                  <p className="text-sm font-semibold text-emerald-400">Walkable Elite Quarters</p>
+                  <p className="text-xs text-[var(--text-muted)] mb-3">
+                    Neighborhoods that clear the dense, historic, walkable, elite residential test.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {neighborhoodQualifier.neighborhoods.map((n) => (
+                      <a
+                        key={n}
+                        href={`/neighborhoods#${qualifierAnchorId(metro.name)}`}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border bg-emerald-500/10 border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-200 transition-colors"
+                      >
+                        {n}
+                      </a>
+                    ))}
+                  </div>
+                  <p className="text-xs text-[var(--text-muted)] mt-3">
+                    From{" "}
+                    <a
+                      href={`/neighborhoods#${qualifierAnchorId(metro.name)}`}
+                      className="underline hover:text-[var(--accent)] transition-colors"
+                    >
+                      The Last of the Marylebones
+                    </a>
+                    . 103 of 4,200+ metros clear the bar.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -592,7 +637,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
 
 
         {/* Cultural Assets Section (Cultural Events + Museums/Landmarks) */}
-        {detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0) && (
+        {((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0)) ||
+          (detail.supertallStructures && detail.supertallStructures.length > 0)) && (
           <section>
             <h2 id="culture" className="text-2xl font-bold mb-6">Cultural Assets</h2>
             <div className="space-y-8">
@@ -641,8 +687,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   );
                 }
                 if (type === "Museum/Landmark") {
-                  const all = detail.culture?.[type];
-                  if (!all || all.length === 0) return null;
+                  const all = detail.culture?.[type] ?? [];
+                  const supertallCount = detail.supertallStructures?.length ?? 0;
+                  if (all.length === 0 && supertallCount === 0) return null;
                   // 4 smart buckets across the 20 subtypes. Unknown subtypes fall
                   // into "Landmarks & Civic" so future xlsx additions don't break.
                   const buckets: Array<{ name: string; subtypes: string[] }> = [
@@ -661,6 +708,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                       </p>
                     </div>
                   );
+                  const towers = detail.supertallStructures ?? [];
                   return (
                     <div key={type}>
                       <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Museums & Landmarks</h3>
@@ -686,6 +734,42 @@ export default async function MetroDetailPage({ params }: PageProps) {
                             </details>
                           );
                         })}
+                        {towers.length > 0 && (
+                          <details className={COLLAPSIBLE_CARD_CLASS}>
+                            <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                              <span className="font-semibold text-[var(--text)]">Supertall Structures (350m+)</span>
+                              <span className="text-sm text-[var(--text-muted)]">
+                                {towers.length} {towers.length === 1 ? "structure" : "structures"}
+                              </span>
+                            </summary>
+                            <div className="border-t border-[var(--border)] overflow-x-auto">
+                              <table className="w-full text-sm">
+                                <thead className="bg-[var(--bg-card)] text-[var(--text-muted)]">
+                                  <tr>
+                                    <th className="text-left font-medium px-4 py-2">Building</th>
+                                    <th className="text-left font-medium px-4 py-2">City</th>
+                                    <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Height (m)</th>
+                                    <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Year</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {towers.map((t, idx) => (
+                                    <tr key={idx} className="border-t border-[var(--border)]">
+                                      <td className="px-4 py-2 font-medium text-[var(--text)]">{t.name}</td>
+                                      <td className="px-4 py-2 text-[var(--text-muted)]">{t.city}</td>
+                                      <td className="px-4 py-2 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                                        {t.heightM.toLocaleString(undefined, { maximumFractionDigits: 1 })}
+                                      </td>
+                                      <td className="px-4 py-2 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                                        {t.yearBuilt ?? "\u2014"}
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </details>
+                        )}
                       </div>
                     </div>
                   );

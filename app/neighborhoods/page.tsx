@@ -8,7 +8,7 @@ import {
   SITE_NAME,
   serializeJsonLd,
 } from "@/lib/seo";
-import { QUALIFIERS, SKIPS } from "@/lib/neighborhoods";
+import { QUALIFIERS, SKIPS, qualifierAnchorId } from "@/lib/neighborhoods";
 
 export const dynamicParams = false;
 
@@ -372,7 +372,8 @@ export default function NeighborhoodsPage() {
               return (
                 <article
                   key={`${q.rank}-${q.metro}`}
-                  className="rounded-lg border p-5 sm:p-6 transition hover:border-[var(--accent)]"
+                  id={qualifierAnchorId(q.metro)}
+                  className="rounded-lg border p-5 sm:p-6 transition hover:border-[var(--accent)] scroll-mt-24"
                   style={{
                     borderColor: "var(--border)",
                     backgroundColor: "var(--bg-card)",

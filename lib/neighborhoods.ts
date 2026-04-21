@@ -969,3 +969,51 @@ export const SKIPS: NeighborhoodSkip[] = [
 
 export const QUALIFIER_COUNT = QUALIFIERS.length;
 export const SKIP_COUNT = SKIPS.length;
+
+// Normalize a metro name into a stable slug-like token. Used to match
+// dataset metro names against essay-authored metro names and to build
+// anchor IDs for qualifier cards.
+export function normalizeMetroName(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[.'\u2019]/g, "")
+    .replace(/[\s_/]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+// Aliases for metro names that differ between the dataset and the essay.
+// Keyed on the normalized dataset-side name, value is the normalized
+// essay-side name.
+const METRO_NAME_ALIASES: Record<string, string> = {
+  "tel-aviv": "tel-aviv",
+  "mexico-city": "mexico-city",
+  "st-louis": "st-louis",
+  "st-petersburg": "st-petersburg",
+  "san-sebastian": "san-sebastian",
+  "sao-paulo": "sao-paulo",
+};
+
+export function qualifierAnchorId(metroName: string): string {
+  return `qualifier-${normalizeMetroName(metroName)}`;
+}
+
+/**
+ * Look up the qualifier entry for a dataset metro by name. Returns null if
+ * the metro is not in the qualifying set. Match is tolerant of accent and
+ * punctuation differences.
+ */
+export function getQualifierByMetroName(
+  metroName: string,
+): NeighborhoodQualifier | null {
+  const target = normalizeMetroName(metroName);
+  const alias = METRO_NAME_ALIASES[target] ?? target;
+  for (const q of QUALIFIERS) {
+    const candidate = normalizeMetroName(q.metro);
+    if (candidate === target || candidate === alias) return q;
+  }
+  return null;
+}
