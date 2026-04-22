@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import type { Metadata } from "next";
 import {
   getAllMetros,
@@ -378,23 +379,23 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {neighborhoodQualifier.neighborhoods.map((n) => (
-                      <a
+                      <Link
                         key={n}
                         href={`/neighborhoods#${qualifierAnchorId(metro.name)}`}
                         className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border bg-emerald-500/10 border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-200 transition-colors"
                       >
                         {n}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                   <p className="text-xs text-[var(--text-muted)] mt-3">
                     From{" "}
-                    <a
+                    <Link
                       href={`/neighborhoods#${qualifierAnchorId(metro.name)}`}
                       className="underline hover:text-[var(--accent)] transition-colors"
                     >
                       The Last of the Marylebones
-                    </a>
+                    </Link>
                     . 103 of 4,200+ metros clear the bar.
                   </p>
                 </div>
@@ -1011,22 +1012,26 @@ function TeamsSection({
   // Other Teams: four sub-groupings, all collapsible. Priority order when sport + level
   // overlap: College first (pulls out NCAA/FBS/FCS/College Hockey regardless of sport),
   // then Football/Soccer (incl. W Football), then W-prefix women's, then everything else.
+  // isCollege checks level === "College" as the authoritative signal (ETL sets this for
+  // any row whose Main Division starts with NCAA, including minor-sport rows under
+  // generic league labels like "Other Sports"). COLLEGE_LEAGUES is kept as a fallback.
   const COLLEGE_LEAGUES = new Set(["FBS", "FCS", "NCAA", "NCAA W", "College Hockey"]);
   const FOOTBALL_SPORTS = new Set(["Football", "Soccer", "Football/Soccer", "W Football"]);
-  const isCollege = (league: string) => COLLEGE_LEAGUES.has(league);
+  const isCollege = (t: { league: string; level?: string }) =>
+    t.level === "College" || COLLEGE_LEAGUES.has(t.league);
   const isFootball = (sport: string) => FOOTBALL_SPORTS.has(sport);
   const isWomen = (sport: string) => /^W\s/.test(sport);
 
   const otherTeamsRaw = teams.filter((t) => !t.major);
-  const otherCollege = otherTeamsRaw.filter((t) => isCollege(t.league));
+  const otherCollege = otherTeamsRaw.filter((t) => isCollege(t));
   const otherFootball = sortTeamsFootballFirst(
-    otherTeamsRaw.filter((t) => !isCollege(t.league) && isFootball(t.sport))
+    otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))
   );
   const otherWomen = otherTeamsRaw.filter(
-    (t) => !isCollege(t.league) && !isFootball(t.sport) && isWomen(t.sport)
+    (t) => !isCollege(t) && !isFootball(t.sport) && isWomen(t.sport)
   );
   const otherMen = otherTeamsRaw.filter(
-    (t) => !isCollege(t.league) && !isFootball(t.sport) && !isWomen(t.sport)
+    (t) => !isCollege(t) && !isFootball(t.sport) && !isWomen(t.sport)
   );
 
   const gridClass = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";

@@ -176,13 +176,23 @@ def extract_teams(wb):
         if not metro:
             continue
         league = _normalize_league(v[1])
+        level = safe_str(v[9])
+        # Main Division (col 3) holds the authoritative tag for NCAA minor-sport
+        # rows the user has put under generic league labels like "Other Sports" or
+        # "Other Women Sports" (e.g. NCAA Wrestling, NCAA W Soccer, NCAA Baseball).
+        # Promote level to "College" whenever Main Division starts with "NCAA" so
+        # downstream bucketing routes these teams into College/University Teams
+        # regardless of league label.
+        main_division = safe_str(v[3])
+        if main_division.upper().startswith("NCAA") and level != "College":
+            level = "College"
         teams.setdefault(metro, []).append({
             'sport': safe_str(v[0]),
             'league': league,
             'team': _normalize_venue_name(league, safe_str(v[2])),
             'city': safe_str(v[5]),
             'country': safe_str(v[8]),
-            'level': safe_str(v[9]),
+            'level': level,
             'major': safe_str(v[11]) == 'Y',
         })
 
@@ -352,6 +362,40 @@ def extract_football(wb):
     return football
 
 
+def extract_towers(wb):
+    """Extract supertall structures (350m+) grouped by metro.
+
+    Tower_Data layout (Row 1 empty, Row 2 headers, Row 3+ data):
+      0: Rank, 1: Name, 2: Height (m), 3: Height (ft),
+      4: City, 5: Country, 6: Year Built, 7: Notes, 8: Metro Area
+    The xlsx is already pre-filtered to 350m+, but we still gate on
+    height as a defensive measure in case the threshold changes upstream.
+    """
+    if "Tower_Data" not in wb.sheetnames:
+        return {}
+    ws = wb["Tower_Data"]
+    towers = {}
+    for row in ws.iter_rows(min_row=3, values_only=True):
+        v = list(row)
+        if len(v) < 9:
+            continue
+        metro = safe_str(v[8])
+        name = safe_str(v[1])
+        height_m = safe_float(v[2])
+        if not metro or not name or height_m < 350:
+            continue
+        towers.setdefault(metro, []).append({
+            'name': name,
+            'city': safe_str(v[4]),
+            'heightM': round(height_m, 1),
+            'yearBuilt': safe_int(v[6]) or None,
+        })
+    # Sort each metro's towers tallest-first so the UI gets a stable order.
+    for metro in towers:
+        towers[metro].sort(key=lambda x: -x['heightM'])
+    return towers
+
+
 def compute_regions(metros):
     """Compute regional aggregates."""
     regions = {}
@@ -440,7 +484,7 @@ def compute_dimension_ranks(metros):
     return ranks_by_slug
 
 
-def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mktcap, football):
+def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mktcap, football, towers):
     """Build a detail JSON object for a single metro."""
     detail = {}
 
@@ -482,6 +526,9 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
                 for c in companies[:12]
             ],
         }
+
+    if metro_name in towers:
+        detail['supertallStructures'] = towers[metro_name]
 
     if metro_name in football:
         clubs = football[metro_name]
@@ -569,6 +616,10 @@ def main():
     football = extract_football(wb)
     print(f"  {sum(len(v) for v in football.values())} clubs")
 
+    print("Extracting supertall structures...")
+    towers = extract_towers(wb)
+    print(f"  {sum(len(v) for v in towers.values())} supertalls across {len(towers)} metros")
+
     wb.close()
 
     # Compute regions
@@ -649,7 +700,7 @@ def main():
 
         detail = build_detail(
             m['name'], teams, unis, culture_data, scrapers,
-            luxury, events, mktcap, football
+            luxury, events, mktcap, football, towers
         )
 
         # Add the full metro data to the detail file
@@ -687,7 +738,7 @@ def main():
         json.dump(meta, f, separators=(',', ':'))
     print(f"  meta.json: lastUpdate={last_update}")
 
-    print("\nDone! Data files written to public/data/")
+    print("\nDone\! Data files written to public/data/")
     print(f"  metros.json ({len(slim_metros)} metros)")
     print(f"  regions.json ({len(regions)} regions)")
     print(f"  details/ ({detail_count} files)")
