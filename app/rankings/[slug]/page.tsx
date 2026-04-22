@@ -1236,13 +1236,16 @@ function EventsSection({
     grouped["Championship Finals"] = allFinals;
   }
 
-  // 3-6. Golf Majors / Tennis Majors / F1 Races / Major Fights.
+  // 3-7. All-Star Games / Golf Majors / Tennis Majors / F1 Races / Major Fights.
   //      US Sports Finals rows are excluded because they're already in Championship Finals.
+  //      All-Star Games unifies MLB/NBA/NHL All-Star Games and NFL Pro Bowl, routed by
+  //      Event Type rather than sport so it supersedes the sport-based routing below.
   //      Major Fights unifies Boxing and Pro Wrestling (WrestleMania) into one bucket.
   for (const ev of events) {
     if (ev.type === "US Sports Finals") continue;
     let category: string | null = null;
-    if (ev.sport === "Golf") category = "Golf Majors";
+    if (ev.type === "All-Star Game") category = "All-Star Games";
+    else if (ev.sport === "Golf") category = "Golf Majors";
     else if (ev.sport === "Tennis") category = "Tennis Majors";
     else if (ev.sport === "F1") category = "F1 Races";
     else if (ev.sport === "Boxing" || ev.sport === "Pro Wrestling") category = "Major Fights";
@@ -1256,9 +1259,14 @@ function EventsSection({
     });
   }
 
-  // Sort Major Fights chronologically (newest first) because it mixes two sports.
+  // Sort Major Fights and All-Star Games chronologically (newest first) because they mix sports/leagues.
   if (grouped["Major Fights"]) {
     grouped["Major Fights"].sort(
+      (a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0)
+    );
+  }
+  if (grouped["All-Star Games"]) {
+    grouped["All-Star Games"].sort(
       (a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0)
     );
   }
@@ -1266,6 +1274,7 @@ function EventsSection({
   const categoryOrder = [
     "Annual Sporting Events",
     "Championship Finals",
+    "All-Star Games",
     "Golf Majors",
     "Tennis Majors",
     "F1 Races",
