@@ -585,6 +585,14 @@ export default async function Home() {
               <ul className="space-y-2 text-sm text-[var(--text-muted)]">
                 <li>
                   <a
+                    href="https://citizenofnowhere.org"
+                    className="hover:text-[var(--accent)]"
+                  >
+                    Citizen of Nowhere
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://citizenofnowhere.substack.com"
                     target="_blank"
                     rel="noopener noreferrer"

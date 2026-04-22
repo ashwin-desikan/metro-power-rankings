@@ -27,16 +27,27 @@ export default function SiteNav() {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
-        <a
-          href="/"
-          className="text-lg font-bold tracking-tight hover:opacity-80 transition whitespace-nowrap"
-          style={{
-            color: 'var(--accent)',
-            fontFamily: "'JetBrains Mono', monospace",
-          }}
-        >
-          METRO POWER RANKINGS
-        </a>
+        <div className="flex items-center gap-4 min-w-0">
+          <a
+            href="https://citizenofnowhere.org"
+            className="hidden sm:inline-flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors whitespace-nowrap"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            title="Back to Citizen of Nowhere"
+          >
+            <span aria-hidden="true">&larr;</span>
+            <span>Citizen of Nowhere</span>
+          </a>
+          <a
+            href="/"
+            className="text-lg font-bold tracking-tight hover:opacity-80 transition whitespace-nowrap"
+            style={{
+              color: 'var(--accent)',
+              fontFamily: "'JetBrains Mono', monospace",
+            }}
+          >
+            METRO POWER RANKINGS
+          </a>
+        </div>
         <div className="hidden md:flex gap-6 items-center">
           <a
             href="/#rankings"
