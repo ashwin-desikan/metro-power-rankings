@@ -186,7 +186,7 @@ def extract_teams(wb):
         main_division = safe_str(v[3])
         if main_division.upper().startswith("NCAA") and level != "College":
             level = "College"
-        teams.setdefault(metro, []).append({
+        team_entry = {
             'sport': safe_str(v[0]),
             'league': league,
             'team': _normalize_venue_name(league, safe_str(v[2])),
@@ -194,7 +194,17 @@ def extract_teams(wb):
             'country': safe_str(v[8]),
             'level': level,
             'major': safe_str(v[11]) == 'Y',
-        })
+        }
+        # Column O (index 14) = "Annual Event" flag, marked 'Y' for recurring
+        # event-type entries in Team List (F1 Grands Prix, NASCAR races, Sailing
+        # regattas, Powerboat races). These are teams in the source data but
+        # behave like events on the site, so they route exclusively into the
+        # "Annual Sporting Events" category on the metro page rather than the
+        # Major League Teams or Other Teams buckets.
+        annual_flag = safe_str(v[14]) if len(v) > 14 else ''
+        if annual_flag.upper() == 'Y':
+            team_entry['annual'] = True
+        teams.setdefault(metro, []).append(team_entry)
 
     # Note: RegTeams is intentionally NOT read. Team List is the single
     # source of truth for teams. RegTeams holds stale/regional legacy rows

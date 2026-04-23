@@ -553,17 +553,37 @@ export default async function MetroDetailPage({ params }: PageProps) {
         </section>
 
         {/* Sports Section */}
-        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType])) && (
-          <section>
-            <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
-            {detail.teams && detail.teams.length > 0 && (
-              <TeamsSection teams={detail.teams} />
-            )}
-            {((detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType])) && (
-              <EventsSection events={detail.events || []} sportingEvents={detail.culture?.[sportsEventType] || []} />
-            )}
-          </section>
-        )}
+        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType])) && (() => {
+          // Teams flagged Annual=Y in Team List (F1 Grands Prix, NASCAR races,
+          // Sailing regattas, Powerboat races) are recurring events, not
+          // standing team entries. Lift them out of detail.teams and inject
+          // them into the Annual Sporting Events category alongside
+          // Culture-Infra annuals like marathons and The Masters.
+          const annualTeamEvents = (detail.teams || [])
+            .filter((t) => t.annual === true)
+            .map((t) => ({
+              name: t.team,
+              city: t.city,
+              subtype: t.sport,
+              type: "Sporting Event",
+              annual: true,
+            }));
+          const mergedSportingEvents = [
+            ...(detail.culture?.[sportsEventType] || []),
+            ...annualTeamEvents,
+          ];
+          return (
+            <section>
+              <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
+              {detail.teams && detail.teams.length > 0 && (
+                <TeamsSection teams={detail.teams} />
+              )}
+              {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
+                <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
+              )}
+            </section>
+          );
+        })()}
 
         {/* Top Companies Section */}
         {detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 && (
@@ -1002,10 +1022,22 @@ function TeamsSection({
     city: string;
     major: boolean;
     level?: string;
+    annual?: boolean;
   }>;
 }) {
+  // Teams flagged Annual=Y in Team List (col O) are recurring-event entries
+  // (F1 Grands Prix, NASCAR races, Sailing regattas, Powerboat races). They
+  // render under Annual Sporting Events in EventsSection, not in any team
+  // bucket here, so we strip them before bucketing.
+  const teamsForBucketing = teams.filter((t) => t.annual !== true);
+
+  // Historic Venues (col B = "Historic Venues" in Team List) get their own
+  // display beneath Notable Venues. Filter them out of the standard buckets.
+  const historicVenuesRaw = teamsForBucketing.filter((t) => t.league === "Historic Venues");
+  const nonHistoricForBucketing = teamsForBucketing.filter((t) => t.league !== "Historic Venues");
+
   // Major League Teams/Venues: Teams stays expanded; Notable Venues collapses by default.
-  const majorTeamsRaw = sortTeamsFootballFirst(teams.filter((t) => t.major));
+  const majorTeamsRaw = sortTeamsFootballFirst(nonHistoricForBucketing.filter((t) => t.major));
   const majorTeamsOnly = majorTeamsRaw.filter((t) => t.league !== "Notable Venues");
   const majorVenues = majorTeamsRaw.filter((t) => t.league === "Notable Venues");
 
@@ -1022,7 +1054,7 @@ function TeamsSection({
   const isFootball = (sport: string) => FOOTBALL_SPORTS.has(sport);
   const isWomen = (sport: string) => /^W\s/.test(sport);
 
-  const otherTeamsRaw = teams.filter((t) => !t.major);
+  const otherTeamsRaw = nonHistoricForBucketing.filter((t) => !t.major);
   const otherCollege = otherTeamsRaw.filter((t) => isCollege(t));
   const otherFootball = sortTeamsFootballFirst(
     otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))
@@ -1058,7 +1090,7 @@ function TeamsSection({
 
   return (
     <div className="space-y-6">
-      {(majorTeamsOnly.length > 0 || majorVenues.length > 0) && (
+      {(majorTeamsOnly.length > 0 || majorVenues.length > 0 || historicVenuesRaw.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">
             Major League Teams/Venues
@@ -1096,6 +1128,54 @@ function TeamsSection({
               <details className={COLLAPSIBLE_CARD_CLASS}>
                 <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
                   <span className="font-semibold text-[var(--text)]">Notable Venues</span>
+                  <span className="text-sm text-[var(--text-muted)]">
+                    {venues.length} {venues.length === 1 ? "venue" : "venues"}
+                  </span>
+                </summary>
+                <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
+                  {venues.map((venue, idx) => (
+                    <div
+                      key={idx}
+                      className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)]"
+                    >
+                      <p className="text-xs text-[var(--text-muted)] mb-1">
+                        {venue.sports.join(" \u2022 ")}
+                      </p>
+                      <p className="font-semibold text-[var(--text)]">{venue.name}</p>
+                      <p className="text-xs text-[var(--text-dim)]">{venue.city}</p>
+                    </div>
+                  ))}
+                </div>
+              </details>
+            );
+          })()}
+          {historicVenuesRaw.length > 0 && (() => {
+            // Historic Venues: legacy or decommissioned sites that hosted major
+            // sporting moments (Astrodome, Maple Leaf Gardens, Panathenaic
+            // Stadium, etc.). Same dedupe-by-name pattern as Notable Venues so
+            // a venue hosting multiple historic disciplines renders once.
+            type AggregatedVenue = { name: string; city: string; sports: string[] };
+            const byName = new Map<string, AggregatedVenue>();
+            for (const v of historicVenuesRaw) {
+              const sport = normalizeTeamSport(v.sport);
+              const existing = byName.get(v.team);
+              if (existing) {
+                if (!existing.sports.includes(sport)) existing.sports.push(sport);
+              } else {
+                byName.set(v.team, { name: v.team, city: v.city, sports: [sport] });
+              }
+            }
+            const venues = Array.from(byName.values());
+            venues.forEach((v) =>
+              v.sports.sort((a, b) => venueSportRank(a) - venueSportRank(b))
+            );
+            venues.sort(
+              (a, b) => venueSportRank(a.sports[0]) - venueSportRank(b.sports[0])
+            );
+            return (
+              <details className={`${COLLAPSIBLE_CARD_CLASS} mt-3`}>
+                <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
+                  <span className="font-semibold text-[var(--text)]">Historic Venues</span>
                   <span className="text-sm text-[var(--text-muted)]">
                     {venues.length} {venues.length === 1 ? "venue" : "venues"}
                   </span>
@@ -1311,7 +1391,7 @@ function EventsSection({
                     <p className="text-xs text-[var(--accent)]">{ev.type}</p>
                   )}
                   <p className="text-xs text-[var(--text-muted)]">
-                    {ev.year} • {ev.venue}
+                    {ev.year} {"\u2022"} {ev.venue}
                   </p>
                 </div>
               ))}

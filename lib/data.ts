@@ -30,7 +30,7 @@ export interface MetroDetail {
     dims: Record<string, number>;
     pctOfCountry: number;
   };
-  teams?: { sport: string; league: string; team: string; city: string; major: boolean }[];
+  teams?: { sport: string; league: string; team: string; city: string; major: boolean; level?: string; annual?: boolean }[];
   universities?: { rank: number; name: string; city: string; country: string }[];
   culture?: Record<string, { name: string; city: string; subtype: string; type: string; annual?: boolean; stations?: number }[]>;
   skyscrapers?: { city: string; over150m: number; over200m: number; over300m: number };
