@@ -732,7 +732,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   const towers = detail.supertallStructures ?? [];
                   return (
                     <div key={type}>
-                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Museums & Landmarks</h3>
+                      <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">Notable Museums & Landmarks</h3>
                       <div className="space-y-3">
                         {buckets.map((bucket) => {
                           const inBucket = all.filter((a) =>
@@ -876,7 +876,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {/* Infrastructure Section */}
         {detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0) && (
           <section>
-            <h2 id="infrastructure" className="text-2xl font-bold mb-6">Infrastructure</h2>
+            <h2 id="infrastructure" className="text-2xl font-bold mb-6">Notable Infrastructure</h2>
             <div className="space-y-3">
               {infrastructureOrder.map((type) => {
                 const assets = detail.culture?.[type];
@@ -1436,7 +1436,7 @@ function formatDimensionName(key: string): string {
     culturalEvents: "Cultural Events",
     universities: "Universities",
     topUniHospResearch: "Top Universities, Hospitals, & Research",
-    museumsLandmarks: "Museums & Landmarks",
+    museumsLandmarks: "Notable Museums & Landmarks",
     portsExchangesInfra: "Ports, Exchanges & Infrastructure",
     airportScore: "Airport Score",
     luxuryStars: "Luxury Stars (Michelin)",

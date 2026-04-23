@@ -19,14 +19,14 @@ const DIMENSION_ORDER: { key: string; label: string; group: string }[] = [
   { key: 'universities', label: 'Universities', group: 'Education' },
   { key: 'topUniHospResearch', label: 'Top Universities, Hospitals, & Research', group: 'Education' },
   { key: 'culturalEvents', label: 'Annual Cultural Events', group: 'Culture' },
-  { key: 'museumsLandmarks', label: 'Museums & Landmarks', group: 'Culture' },
+  { key: 'museumsLandmarks', label: 'Notable Museums & Landmarks', group: 'Culture' },
   { key: 'luxuryStars', label: 'Michelin & Luxury Stars', group: 'Culture' },
-  { key: 'airportScore', label: 'Airport Score', group: 'Infrastructure' },
-  { key: 'portsExchangesInfra', label: 'Ports, Exchanges, Infra', group: 'Infrastructure' },
-  { key: 'metroStations', label: 'Metro Stations', group: 'Infrastructure' },
-  { key: 'suburbStations', label: 'Commuter Rail', group: 'Infrastructure' },
-  { key: 'trainHubs', label: 'Intercity Train Hubs', group: 'Infrastructure' },
-  { key: 'skyscrapers', label: 'Skyscrapers (150m+)', group: 'Infrastructure' },
+  { key: 'airportScore', label: 'Airport Score', group: 'Notable Infrastructure' },
+  { key: 'portsExchangesInfra', label: 'Ports, Exchanges, Infra', group: 'Notable Infrastructure' },
+  { key: 'metroStations', label: 'Metro Stations', group: 'Notable Infrastructure' },
+  { key: 'suburbStations', label: 'Commuter Rail', group: 'Notable Infrastructure' },
+  { key: 'trainHubs', label: 'Intercity Train Hubs', group: 'Notable Infrastructure' },
+  { key: 'skyscrapers', label: 'Skyscrapers (150m+)', group: 'Notable Infrastructure' },
 ];
 
 function parseRank(rankStr: string | null | undefined): number {

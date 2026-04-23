@@ -137,16 +137,17 @@ export default function SiteNav() {
             Methodology
           </a>
           {updated && (
-            <span
-              className="hidden lg:inline-block text-xs text-[var(--text-muted)] border rounded px-2 py-1 whitespace-nowrap"
+            <a
+              href="/updates"
+              className="hidden lg:inline-block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] border rounded px-2 py-1 whitespace-nowrap transition-colors hover:border-[var(--accent)]"
               style={{
                 borderColor: 'var(--border)',
                 fontFamily: "'JetBrains Mono', monospace",
               }}
-              title={`Source data last updated ${updated}`}
+              title={`Source data last updated ${updated}. Click for full release notes.`}
             >
               Updated {updated}
-            </span>
+            </a>
           )}
         </div>
       </div>

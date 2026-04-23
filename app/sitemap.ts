@@ -53,6 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.85,
     },
+    {
+      url: `${BASE_URL}/updates`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.5,
+    },
   ];
 
   const metroEntries: MetadataRoute.Sitemap = metros.map((m) => ({
