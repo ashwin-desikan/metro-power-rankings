@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import SiteNav from "./SiteNav";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
@@ -122,6 +123,7 @@ export default function RootLayout({
         <SiteNav />
         {children}
       </body>
+      <GoogleAnalytics gaId="G-8BQVX0NFZZ" />
     </html>
   );
 }

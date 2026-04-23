@@ -9,6 +9,7 @@
     "extract": "python3 scripts/extract.py"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.4",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
