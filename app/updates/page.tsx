@@ -44,6 +44,15 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-04-24",
+    headline: "Wikidata and Wikipedia linking on Top 25 metros and US major leagues",
+    items: [
+      "Top 25 metro profiles now carry Wikidata and Wikipedia links in structured data. Search engines and LLM crawlers can resolve each metro to its canonical entity, strengthening citation and entity-graph signals.",
+      "All US major league teams (NFL, MLB, NBA, NHL) plus every Canadian NHL franchise and the Toronto MLB and NBA sides now emit their own SportsTeam schema with Wikidata and Wikipedia references. 124 teams linked in total.",
+      "Coverage is intentionally partial in this pass. Metros ranked 26 and below and overseas leagues will follow in subsequent tranches; schema is additive and degrades gracefully where links are not yet present.",
+    ],
+  },
+  {
     date: "2026-04-23",
     headline: "Historic Venues, Annual Events, analytics",
     items: [

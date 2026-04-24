@@ -88,6 +88,13 @@ def extract_metros(wb):
         region = safe_str(v[65]) or safe_str(v[41])
         slug = slugify(name)
 
+        # Wikidata QID (col BT / idx 71) and Wikipedia URL (col BU / idx 72).
+        # Populated for Top 25 metros as of 2026-04-24; ranks 26+ intentionally
+        # blank. Omit keys entirely when absent so the JSON payload stays clean
+        # and downstream sameAs arrays never emit null placeholders.
+        qid = safe_str(v[71]) if len(v) > 71 else ''
+        wiki_url = safe_str(v[72]) if len(v) > 72 else ''
+
         metro = {
             'slug': slug,
             'name': name,
@@ -131,6 +138,10 @@ def extract_metros(wb):
             'naRank': safe_int(v[59]) if v[59] else None,
             'pctOfCountry': round(safe_float(v[67]) * 100, 1) if v[67] else 0,
         }
+        if qid:
+            metro['qid'] = qid
+        if wiki_url:
+            metro['wikipediaUrl'] = wiki_url
         metros.append(metro)
 
     # Sort by score descending and assign global rank
@@ -204,6 +215,16 @@ def extract_teams(wb):
         annual_flag = safe_str(v[14]) if len(v) > 14 else ''
         if annual_flag.upper() == 'Y':
             team_entry['annual'] = True
+        # Columns P/Q (idx 15/16) = Wikidata QID and Wikipedia URL. Populated
+        # as of 2026-04-24 for all US major league franchises (NFL/MLB/NBA/NHL)
+        # plus every Canadian NHL team and the Toronto MLB/NBA franchises.
+        # Omit the keys when empty so JSON-LD sameAs arrays never emit nulls.
+        qid = safe_str(v[15]) if len(v) > 15 else ''
+        wiki_url = safe_str(v[16]) if len(v) > 16 else ''
+        if qid:
+            team_entry['qid'] = qid
+        if wiki_url:
+            team_entry['wikipediaUrl'] = wiki_url
         teams.setdefault(metro, []).append(team_entry)
 
     # Note: RegTeams is intentionally NOT read. Team List is the single
@@ -361,14 +382,24 @@ def extract_football(wb):
         team_name = safe_str(v[0])  # Team name column
         if not metro or not team_name:
             continue
-        football.setdefault(metro, []).append({
+        # Columns J/K (idx 9/10) = Wikidata QID and Wikipedia URL. Scaffolded
+        # but unpopulated as of 2026-04-24; null-safe so when soccer/football
+        # clubs get their own linking pass, no code change is required here.
+        qid = safe_str(v[9]) if len(v) > 9 else ''
+        wiki_url = safe_str(v[10]) if len(v) > 10 else ''
+        entry = {
             'team': team_name,
             'city': safe_str(v[1]),
             'country': safe_str(v[4]),
             'league': safe_str(v[5]),
             'level': safe_int(v[6]),
             'major': safe_str(v[8]) == 'Y',
-        })
+        }
+        if qid:
+            entry['qid'] = qid
+        if wiki_url:
+            entry['wikipediaUrl'] = wiki_url
+        football.setdefault(metro, []).append(entry)
     return football
 
 
@@ -557,7 +588,7 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
         for c in clubs:
             if not c['major'] and not c['level']:
                 continue
-            detail['teams'].append({
+            merged = {
                 'sport': 'Soccer',
                 'league': c['league'],
                 'team': c['team'],
@@ -565,7 +596,12 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
                 'country': c['country'],
                 'level': str(c['level']),
                 'major': c['major'],
-            })
+            }
+            if c.get('qid'):
+                merged['qid'] = c['qid']
+            if c.get('wikipediaUrl'):
+                merged['wikipediaUrl'] = c['wikipediaUrl']
+            detail['teams'].append(merged)
 
     return detail
 
@@ -748,7 +784,7 @@ def main():
         json.dump(meta, f, separators=(',', ':'))
     print(f"  meta.json: lastUpdate={last_update}")
 
-    print("\nDone\! Data files written to public/data/")
+    print("\nDone. Data files written to public/data/")
     print(f"  metros.json ({len(slim_metros)} metros)")
     print(f"  regions.json ({len(regions)} regions)")
     print(f"  details/ ({detail_count} files)")

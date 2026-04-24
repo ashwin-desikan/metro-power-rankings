@@ -29,8 +29,10 @@ export interface MetroDetail {
     gawcClass: string;
     dims: Record<string, number>;
     pctOfCountry: number;
+    qid?: string;
+    wikipediaUrl?: string;
   };
-  teams?: { sport: string; league: string; team: string; city: string; major: boolean; level?: string; annual?: boolean }[];
+  teams?: { sport: string; league: string; team: string; city: string; major: boolean; level?: string; annual?: boolean; qid?: string; wikipediaUrl?: string }[];
   universities?: { rank: number; name: string; city: string; country: string }[];
   culture?: Record<string, { name: string; city: string; subtype: string; type: string; annual?: boolean; stations?: number }[]>;
   skyscrapers?: { city: string; over150m: number; over200m: number; over300m: number };

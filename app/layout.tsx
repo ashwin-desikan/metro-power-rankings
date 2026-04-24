@@ -83,7 +83,6 @@ const siteGraph = {
       "@type": "Person",
       "@id": `${AUTHOR.url}/#author`,
       name: AUTHOR.name,
-      email: AUTHOR.email,
       url: AUTHOR.url,
       sameAs: [AUTHOR.url],
     },

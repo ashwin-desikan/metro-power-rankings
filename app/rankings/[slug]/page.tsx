@@ -11,7 +11,7 @@ import {
   formatDimValue,
   regionColors,
 } from "@/lib/data";
-import { BASE_URL, placeJsonLd, serializeJsonLd } from "@/lib/seo";
+import { BASE_URL, placeJsonLd, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import {
   getQualifierByMetroName,
   qualifierAnchorId,
@@ -170,6 +170,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
     .slice(0, 5);
 
   // Structured data: Place with aggregateRating, plus BreadcrumbList.
+  // qid/wikipediaUrl expand Place.sameAs so entity resolvers (Google, LLM
+  // crawlers) can link this metro to its canonical Wikidata/Wikipedia record.
+  // Both are optional and omitted when absent.
   const placeSchema = placeJsonLd({
     name: metro.name,
     country: metro.country,
@@ -181,7 +184,28 @@ export default async function MetroDetailPage({ params }: PageProps) {
     lat: metro.lat,
     lon: metro.lon,
     bestScore,
+    qid: metro.qid,
+    wikipediaUrl: metro.wikipediaUrl,
   });
+
+  // SportsTeam JSON-LD is emitted per team that has a Wikidata QID. Teams
+  // without a QID are silently skipped so partial coverage never produces
+  // placeholder-laden schema. As of 2026-04-24, coverage spans NFL, MLB, NBA,
+  // NHL (all US franchises plus Toronto MLB/NBA and all seven Canadian NHL
+  // franchises); future tranches will extend to MLS, WNBA, and overseas leagues.
+  const teamSchemas = (detail.teams ?? [])
+    .filter((t) => t.qid)
+    .map((t) =>
+      sportsTeamJsonLd({
+        name: t.team,
+        sport: t.sport,
+        league: t.league,
+        metroName: metro.name,
+        metroSlug: metro.slug,
+        qid: t.qid,
+        wikipediaUrl: t.wikipediaUrl,
+      }),
+    );
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -216,7 +240,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-[var(--bg)]">
-      {/* Structured data: Place + aggregateRating and breadcrumb hierarchy */}
+      {/* Structured data: Place + aggregateRating, breadcrumb hierarchy, and
+          one SportsTeam entity per Wikidata-linked team. Only teams with a QID
+          produce a script tag, so partial coverage never pollutes the schema. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(placeSchema) }}
@@ -225,6 +251,13 @@ export default async function MetroDetailPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbSchema) }}
       />
+      {teamSchemas.map((schema, i) => (
+        <script
+          key={`team-schema-${i}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
+        />
+      ))}
 
       <div className="max-w-6xl mx-auto px-4 pt-28 pb-8 space-y-12">
         {/* Breadcrumb */}

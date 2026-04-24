@@ -602,7 +602,14 @@ export default async function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:ashwind@gmail.com" className="hover:text-[var(--accent)]">Contact</a>
+                  <a
+                    href="https://citizenofnowhere.substack.com/about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[var(--accent)]"
+                  >
+                    Contact
+                  </a>
                 </li>
               </ul>
             </div>

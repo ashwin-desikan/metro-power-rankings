@@ -8,7 +8,6 @@ export const SITE_NAME = "Global Metro Power Rankings";
 
 export const AUTHOR = {
   name: "Ashwin Dharmadhikari",
-  email: "ashwind@gmail.com",
   url: "https://citizenofnowhere.substack.com",
 };
 
@@ -78,7 +77,6 @@ export function datasetJsonLd(opts: { lastUpdate: string; metroCount: number }) 
     creator: {
       "@type": "Person",
       name: AUTHOR.name,
-      email: AUTHOR.email,
       url: AUTHOR.url,
     },
     publisher: {
@@ -150,9 +148,18 @@ export function placeJsonLd(opts: {
   lat?: number;
   lon?: number;
   bestScore?: number;
+  qid?: string;
+  wikipediaUrl?: string;
 }) {
   const bestScore = opts.bestScore ?? 180;
   const url = `${BASE_URL}/rankings/${opts.slug}`;
+
+  // sameAs: only emit when at least one external identifier is present. Keep
+  // the array free of undefined/empty values so rich-result validators do not
+  // flag null entries. QID is converted to a full Wikidata entity URL.
+  const sameAs: string[] = [];
+  if (opts.qid) sameAs.push(`https://www.wikidata.org/entity/${opts.qid}`);
+  if (opts.wikipediaUrl) sameAs.push(opts.wikipediaUrl);
 
   return {
     "@context": "https://schema.org",
@@ -175,6 +182,7 @@ export function placeJsonLd(opts: {
           },
         }
       : {}),
+    ...(sameAs.length ? { sameAs } : {}),
     additionalProperty: [
       {
         "@type": "PropertyValue",
@@ -214,4 +222,46 @@ export function placeJsonLd(opts: {
  */
 export function serializeJsonLd(obj: unknown): string {
   return JSON.stringify(obj).replace(/</g, "\\u003c");
+}
+
+
+/**
+ * Schema.org SportsTeam for a professional franchise.
+ * Emitted per team on metro detail pages when a Wikidata QID or Wikipedia URL
+ * is present. Deliberately minimal: just enough to help entity resolvers
+ * (Google, LLM crawlers) link our team references back to canonical entities.
+ *
+ * League maps to Schema.org SportsOrganization via `memberOf`. Metro is
+ * referenced by slug so the team graph connects back to the Place object on
+ * the same page.
+ */
+export function sportsTeamJsonLd(opts: {
+  name: string;
+  sport: string;
+  league: string;
+  metroName: string;
+  metroSlug: string;
+  qid?: string;
+  wikipediaUrl?: string;
+}) {
+  const sameAs: string[] = [];
+  if (opts.qid) sameAs.push(`https://www.wikidata.org/entity/${opts.qid}`);
+  if (opts.wikipediaUrl) sameAs.push(opts.wikipediaUrl);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "SportsTeam",
+    name: opts.name,
+    sport: opts.sport,
+    memberOf: {
+      "@type": "SportsOrganization",
+      name: opts.league,
+    },
+    location: {
+      "@type": "Place",
+      name: opts.metroName,
+      url: `${BASE_URL}/rankings/${opts.metroSlug}`,
+    },
+    ...(sameAs.length ? { sameAs } : {}),
+  };
 }
