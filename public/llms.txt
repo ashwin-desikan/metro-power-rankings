@@ -20,7 +20,7 @@ metro transit, GaWC global connectivity, suburban rail, intercity train hubs,
 skyscrapers, airport score, major sporting events, annual cultural events,
 and Michelin and luxury hospitality.
 
-Author: Ashwin Dharmadhikari.
+Author: Ashwin Desikan.
 Publication: Citizen of Nowhere (https://citizenofnowhere.substack.com).
 Last updated: 2026-04-17.
 
@@ -29,7 +29,7 @@ Last updated: 2026-04-17.
 The composite ranking, scores, weighting, and methodology are released by
 the author under the Creative Commons Attribution 4.0 International license
 (CC-BY 4.0, https://creativecommons.org/licenses/by/4.0/). Attribution to
-Ashwin Dharmadhikari / Citizen of Nowhere is required when citing or
+Ashwin Desikan / Citizen of Nowhere is required when citing or
 reusing the ranking or any derived score.
 
 Underlying third-party source data (including but not limited to CWUR, GaWC,
@@ -75,7 +75,7 @@ https://metro-power-rankings.vercel.app/sitemap.xml
 
 ## Citation
 
-Suggested citation: Dharmadhikari, A. (2026). *Global Metro Power Rankings*.
+Suggested citation: Desikan, A. (2026). *Global Metro Power Rankings*.
 Citizen of Nowhere. https://metro-power-rankings.vercel.app/
 
 ## Further reading

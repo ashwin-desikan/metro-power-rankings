@@ -7,7 +7,7 @@ export const BASE_URL = "https://metro-power-rankings.vercel.app";
 export const SITE_NAME = "Global Metro Power Rankings";
 
 export const AUTHOR = {
-  name: "Ashwin Dharmadhikari",
+  name: "Ashwin Desikan",
   url: "https://citizenofnowhere.substack.com",
 };
 
@@ -107,7 +107,7 @@ export function datasetJsonLd(opts: { lastUpdate: string; metroCount: number }) 
       name: "Global (237 countries)",
     },
     citation:
-      "Dharmadhikari, A. (2026). Global Metro Power Rankings. Citizen of Nowhere.",
+      "Desikan, A. (2026). Global Metro Power Rankings. Citizen of Nowhere.",
   };
 }
 
