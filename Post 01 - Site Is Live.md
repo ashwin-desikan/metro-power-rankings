@@ -10,7 +10,7 @@ When I published the first Metro Power Rankings piece, the full dataset lived in
 
 So I built a site.
 
-**[metro-power-rankings.vercel.app](https://metro-power-rankings.vercel.app/)**
+**[rankings.citizenofnowhere.org](https://rankings.citizenofnowhere.org/)**
 
 It is live today, and it is what a ranking dataset should be: browsable, hyperlinked, and honest about its inputs.
 
@@ -70,4 +70,4 @@ Thanks for reading. The site is the infrastructure. The next essays are the reas
 
 ---
 
-*[metro-power-rankings.vercel.app](https://metro-power-rankings.vercel.app/) — data current as of April 2026. 4,200+ metros, 237 countries, 16-dimension composite score. CC-BY on the composite score.*
+*[rankings.citizenofnowhere.org](https://rankings.citizenofnowhere.org/) — data current as of April 2026. 4,200+ metros, 237 countries, 16-dimension composite score. CC-BY on the composite score.*

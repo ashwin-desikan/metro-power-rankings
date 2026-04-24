@@ -97,7 +97,7 @@ The Marylebone form is a European urban form. Its global distribution is a map o
 
 ## The Tally
 
-I ran the four criteria against every metro in the dataset behind [the ranking site](https://metro-power-rankings.vercel.app). 103 neighborhoods cleared the bar. Across 4,200+ metros. That's under 2.5 percent.
+I ran the four criteria against every metro in the dataset behind [the ranking site](https://rankings.citizenofnowhere.org). 103 neighborhoods cleared the bar. Across 4,200+ metros. That's under 2.5 percent.
 
 The measure is narrow on purpose. It isn't the same question as which cities matter globally, or which are most productive, or most fun to visit. It's a specific question about a specific urban form. The answer is that the form is rare, unevenly distributed, and mostly a function of whether the pre-war city survived intact.
 
@@ -105,4 +105,4 @@ The measure is narrow on purpose. It isn't the same question as which cities mat
 
 ---
 
-*The full 103-metro list, with a paragraph of reasoning for every neighborhood call and every hard skip, lives on the site at [metro-power-rankings.vercel.app/neighborhoods](https://metro-power-rankings.vercel.app/neighborhoods). The dataset is the same one behind [the first essay](https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings). Reader notes welcome.*
+*The full 103-metro list, with a paragraph of reasoning for every neighborhood call and every hard skip, lives on the site at [rankings.citizenofnowhere.org/neighborhoods](https://rankings.citizenofnowhere.org/neighborhoods). The dataset is the same one behind [the first essay](https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings). Reader notes welcome.*

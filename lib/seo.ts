@@ -2,7 +2,7 @@
 // Keep BASE_URL in sync with the deployed domain (and update when moving
 // to a custom domain such as metropowerrankings.com).
 
-export const BASE_URL = "https://metro-power-rankings.vercel.app";
+export const BASE_URL = "https://rankings.citizenofnowhere.org";
 
 export const SITE_NAME = "Global Metro Power Rankings";
 
@@ -134,8 +134,11 @@ export function itemListJsonLd(
 }
 
 /**
- * Schema.org Place + aggregateRating for a single metro.
- * Score is expressed on a 0-to-180 scale (roughly the live distribution).
+ * Schema.org Place for a single metro.
+ * The GMPR composite score is expressed as a PropertyValue in
+ * additionalProperty (not AggregateRating, which Google only honors on
+ * parent types like Product/Recipe/LocalBusiness). Score is on a 0-to-180
+ * scale (roughly the live distribution).
  */
 export function placeJsonLd(opts: {
   name: string;
@@ -199,19 +202,27 @@ export function placeJsonLd(opts: {
         name: "World region",
         value: opts.region,
       },
+      {
+        "@type": "PropertyValue",
+        name: "GMPR composite score",
+        value: Number(opts.score.toFixed(1)),
+        minValue: 0,
+        maxValue: bestScore,
+        unitText: "points",
+      },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: opts.score.toFixed(1),
-      bestRating: bestScore,
-      worstRating: 0,
-      ratingCount: 1,
-      reviewCount: 1,
-    },
     isPartOf: {
       "@type": "Dataset",
       name: SITE_NAME,
       url: BASE_URL,
+      description:
+        "A composite ranking of every metropolitan area on Earth. 4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters.",
+      creator: {
+        "@type": "Person",
+        name: AUTHOR.name,
+        url: AUTHOR.url,
+      },
+      license: "https://creativecommons.org/licenses/by/4.0/",
     },
   };
 }

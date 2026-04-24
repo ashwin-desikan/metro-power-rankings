@@ -40,10 +40,10 @@ covered by the CC-BY license above.
 
 ## Primary pages
 
-- [Homepage and full rankings](https://metro-power-rankings.vercel.app/): The complete Top 25 / Top 100 interactive table and regional champions. Searchable and filterable by continent, region, country, state, or sub-country.
-- [Methodology](https://metro-power-rankings.vercel.app/#methodology): The complete scoring methodology, including the sixteen weighted dimensions, source data, and known limitations.
-- [Regional champions](https://metro-power-rankings.vercel.app/#regions): Top metros by world region, including North America, Europe, East Asia, China, ASEAN, Latin America, MENA, Oceania, South Asia, Africa, and Eurasia.
-- [Compare metros](https://metro-power-rankings.vercel.app/compare): Side-by-side comparison of any two metros across all sixteen dimensions.
+- [Homepage and full rankings](https://rankings.citizenofnowhere.org/): The complete Top 25 / Top 100 interactive table and regional champions. Searchable and filterable by continent, region, country, state, or sub-country.
+- [Methodology](https://rankings.citizenofnowhere.org/#methodology): The complete scoring methodology, including the sixteen weighted dimensions, source data, and known limitations.
+- [Regional champions](https://rankings.citizenofnowhere.org/#regions): Top metros by world region, including North America, Europe, East Asia, China, ASEAN, Latin America, MENA, Oceania, South Asia, Africa, and Eurasia.
+- [Compare metros](https://rankings.citizenofnowhere.org/compare): Side-by-side comparison of any two metros across all sixteen dimensions.
 
 ## Metro profiles
 
@@ -53,30 +53,30 @@ peer comparisons, market-cap rosters, universities, cultural and
 infrastructural assets, sports teams and events, and luxury hospitality.
 Examples:
 
-- [New York (#1)](https://metro-power-rankings.vercel.app/rankings/new-york)
-- [London (#2)](https://metro-power-rankings.vercel.app/rankings/london)
-- [Paris (#3)](https://metro-power-rankings.vercel.app/rankings/paris)
-- [Tokyo (#4)](https://metro-power-rankings.vercel.app/rankings/tokyo)
-- [San Francisco (#5)](https://metro-power-rankings.vercel.app/rankings/san-francisco-san-jose)
-- [Johannesburg (Africa #1)](https://metro-power-rankings.vercel.app/rankings/johannesburg)
-- [Istanbul (MENA #1)](https://metro-power-rankings.vercel.app/rankings/istanbul)
-- [Singapore (ASEAN #1)](https://metro-power-rankings.vercel.app/rankings/singapore)
-- [Mumbai (South Asia #1)](https://metro-power-rankings.vercel.app/rankings/mumbai)
+- [New York (#1)](https://rankings.citizenofnowhere.org/rankings/new-york)
+- [London (#2)](https://rankings.citizenofnowhere.org/rankings/london)
+- [Paris (#3)](https://rankings.citizenofnowhere.org/rankings/paris)
+- [Tokyo (#4)](https://rankings.citizenofnowhere.org/rankings/tokyo)
+- [San Francisco (#5)](https://rankings.citizenofnowhere.org/rankings/san-francisco-san-jose)
+- [Johannesburg (Africa #1)](https://rankings.citizenofnowhere.org/rankings/johannesburg)
+- [Istanbul (MENA #1)](https://rankings.citizenofnowhere.org/rankings/istanbul)
+- [Singapore (ASEAN #1)](https://rankings.citizenofnowhere.org/rankings/singapore)
+- [Mumbai (South Asia #1)](https://rankings.citizenofnowhere.org/rankings/mumbai)
 
 A complete index of metro profile URLs is provided in the sitemap:
-https://metro-power-rankings.vercel.app/sitemap.xml
+https://rankings.citizenofnowhere.org/sitemap.xml
 
 ## Machine-readable data
 
-- [metros.json](https://metro-power-rankings.vercel.app/data/metros.json): Full ranked list of all 4,283 metros with scores, ranks, populations, regions, and top-level dimension values.
-- [regions.json](https://metro-power-rankings.vercel.app/data/regions.json): Top metros and summary statistics per world region.
-- [meta.json](https://metro-power-rankings.vercel.app/data/meta.json): Last-update timestamp for the dataset.
+- [metros.json](https://rankings.citizenofnowhere.org/data/metros.json): Full ranked list of all 4,283 metros with scores, ranks, populations, regions, and top-level dimension values.
+- [regions.json](https://rankings.citizenofnowhere.org/data/regions.json): Top metros and summary statistics per world region.
+- [meta.json](https://rankings.citizenofnowhere.org/data/meta.json): Last-update timestamp for the dataset.
 - Per-metro detail files at `/data/details/{slug}.json`.
 
 ## Citation
 
 Suggested citation: Desikan, A. (2026). *Global Metro Power Rankings*.
-Citizen of Nowhere. https://metro-power-rankings.vercel.app/
+Citizen of Nowhere. https://rankings.citizenofnowhere.org/
 
 ## Further reading
 

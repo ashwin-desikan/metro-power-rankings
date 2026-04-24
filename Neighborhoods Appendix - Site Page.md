@@ -19,7 +19,7 @@ A **self-sufficiency test** sits on top of the four: the neighborhood must susta
 
 ## Qualifying Neighborhoods (103 Metros)
 
-Ordered by parent metro's rank in the [Global Metro Power Rankings](https://metro-power-rankings.vercel.app).
+Ordered by parent metro's rank in the [Global Metro Power Rankings](https://rankings.citizenofnowhere.org).
 
 ### 1. New York — Upper West Side; West Village
 
