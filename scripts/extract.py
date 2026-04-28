@@ -292,7 +292,15 @@ def extract_culture(wb):
 
 
 def extract_skyscrapers(wb):
-    """Extract skyscraper data grouped by metro."""
+    """Extract skyscraper data grouped by metro.
+
+    The Skyscrapers sheet has one row per municipality, and a single metro can
+    span multiple municipalities (NYC + Jersey City + Fort Lee, Tokyo +
+    Yokohama + Kawasaki, Bay Area's SF + San Jose + Oakland, etc.). We must
+    SUM the 150m+/200m+/300m+ tier counts across all rows for the metro, not
+    overwrite. The 'city' field stores the largest contributing municipality
+    so the value remains meaningful if surfaced later.
+    """
     ws = wb["Skyscrapers"]
     scrapers = {}
     for row in ws.iter_rows(min_row=3, values_only=True):
@@ -300,12 +308,34 @@ def extract_skyscrapers(wb):
         metro = safe_str(v[4])
         if not metro:
             continue
-        scrapers[metro] = {
-            'city': safe_str(v[2]),
-            'over150m': safe_int(v[9]),
-            'over200m': safe_int(v[10]),
-            'over300m': safe_int(v[11]),
-        }
+        city = safe_str(v[2])
+        over150 = safe_int(v[9])
+        over200 = safe_int(v[10])
+        over300 = safe_int(v[11])
+        agg = scrapers.get(metro)
+        if agg is None:
+            scrapers[metro] = {
+                'city': city,
+                'over150m': over150,
+                'over200m': over200,
+                'over300m': over300,
+                # Bookkeeping: track the largest contributor's 150m+ count so
+                # the headline city stays the densest municipality even when
+                # a smaller one is processed later in the sheet.
+                '_top_city_over150m': over150,
+            }
+            continue
+        agg['over150m'] += over150
+        agg['over200m'] += over200
+        agg['over300m'] += over300
+        # Promote the largest contributor as the headline city. Ties broken
+        # by row order (first occurrence wins).
+        if over150 > agg.get('_top_city_over150m', 0):
+            agg['city'] = city
+            agg['_top_city_over150m'] = over150
+    # Strip the bookkeeping field so the output JSON stays clean.
+    for v in scrapers.values():
+        v.pop('_top_city_over150m', None)
     return scrapers
 
 
