@@ -1,5 +1,6 @@
 import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors } from '@/lib/data';
 import RankingsTable from './RankingsTable';
+import Link from 'next/link';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { datasetJsonLd, itemListJsonLd, serializeJsonLd } from '@/lib/seo';
@@ -266,47 +267,79 @@ export default async function Home() {
             {[
               {
                 title: 'The Global Metro Power Rankings',
-                subtitle: 'Introducing our composite score measuring the completeness of every metropolitan area.',
-                status: 'Published',
+                subtitle:
+                  'The introductory essay: composite score, top 25, continental champions, and the San Francisco anomaly.',
+                status: 'Read on Substack',
                 statusColor: 'var(--accent)',
+                href: 'https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings',
+                external: true,
               },
               {
-                title: 'The 50 Most Complete Small Cities',
+                title: 'The Last of the Marylebones',
                 subtitle:
-                  'From Zurich to Singapore, these metros punch above their weight class.',
-                status: 'Coming Soon',
-                statusColor: 'var(--text-dim)',
+                  'A taxonomy of the world’s dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ metros.',
+                status: 'Read',
+                statusColor: 'var(--accent)',
+                href: '/neighborhoods',
+                external: false,
               },
               {
-                title: "Why China's Metros Score So High",
+                title: 'The Team That Wins the City',
                 subtitle:
-                  'Exploring the dimensions that make Chinese cities stand out globally.',
-                status: 'Coming Soon',
-                statusColor: 'var(--text-dim)',
+                  'One crest per city. The single sporting franchise that defines each of 236 global metros, with full rationales for the contested calls.',
+                status: 'Read',
+                statusColor: 'var(--accent)',
+                href: '/top-teams',
+                external: false,
               },
-            ].map((article) => (
-              <div
-                key={article.title}
-                className="p-6 rounded-lg border transition-all hover:border-[var(--accent)]"
-                style={{
-                  backgroundColor: 'var(--bg-card)',
-                  borderColor: 'var(--border)',
-                }}
-              >
-                <div className="mb-4">
-                  <span
-                    className="text-xs font-semibold uppercase tracking-widest"
-                    style={{ color: article.statusColor, fontFamily: "'JetBrains Mono', monospace" }}
-                  >
-                    {article.status}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold mb-3">{article.title}</h3>
-                <p className="text-sm text-[var(--text-muted)]">
-                  {article.subtitle}
-                </p>
-              </div>
-            ))}
+            ].map((article) => {
+              const cardBody = (
+                <>
+                  <div className="mb-4">
+                    <span
+                      className="text-xs font-semibold uppercase tracking-widest"
+                      style={{
+                        color: article.statusColor,
+                        fontFamily: "'JetBrains Mono', monospace",
+                      }}
+                    >
+                      {article.status}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold mb-3">{article.title}</h3>
+                  <p className="text-sm text-[var(--text-muted)]">
+                    {article.subtitle}
+                  </p>
+                </>
+              );
+              const cardClass =
+                'block p-6 rounded-lg border transition-all hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]';
+              const cardStyle = {
+                backgroundColor: 'var(--bg-card)',
+                borderColor: 'var(--border)',
+              } as const;
+              return article.external ? (
+                <a
+                  key={article.title}
+                  href={article.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClass}
+                  style={cardStyle}
+                >
+                  {cardBody}
+                </a>
+              ) : (
+                <Link
+                  key={article.title}
+                  href={article.href}
+                  className={cardClass}
+                  style={cardStyle}
+                >
+                  {cardBody}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

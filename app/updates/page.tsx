@@ -44,6 +44,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-04-28",
+    headline: "Top Teams reference, civic-identity card on metro profiles",
+    items: [
+      "Launched the Top Teams page: \"The Team That Wins the City,\" a single-pick taxonomy of the sporting franchise that defines each of 236 global metros. Cards include the team, sport, full rationale, and a Co-equal tag for contested rows like London, Milan, Istanbul, and Glasgow.",
+      "Metros with a top-team pick now surface a Top Team card on their profile alongside the Walkable Elite Quarters card, linking back to the relevant entry on the taxonomy page.",
+      "Refreshed featured-articles section on the home page to reflect both the Marylebones and Top Teams pieces; placeholders for unwritten essays removed.",
+      "Sitemap, llms.txt, and articles dropdown updated so the new piece is discoverable to crawlers, LLM agents, and human readers.",
+    ],
+  },
+  {
     date: "2026-04-24",
     headline: "Wikidata and Wikipedia linking on Top 25 metros and US major leagues",
     items: [
