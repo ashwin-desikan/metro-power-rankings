@@ -127,6 +127,18 @@ export default function SiteNav() {
                     Global neighborhoods reference
                   </div>
                 </a>
+                <a
+                  href="/top-teams"
+                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+                >
+                  <div className="font-medium">The Team That Wins the City</div>
+                  <div
+                    className="text-xs mt-0.5"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Top sports team by metro
+                  </div>
+                </a>
               </div>
             </div>
           </div>
