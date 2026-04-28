@@ -153,3 +153,67 @@ If only one thing ships: methodology page.
 If two: methodology + badges.
 Named tiers are cheap enough to bolt on in the same sprint as badges because they are just score-band labels plus light UI.
 Matchup pages and named cuts are a second wave that compound off the first wave because both rely on the tier and badge vocabulary.
+
+---
+
+## Content engine — parallel track
+
+A production pipeline for repeatable, data-driven publishing on Threads/X, Reddit, Substack Notes, and LinkedIn, with the live site as the canonical destination. Distinct from P0/P1 site work because the goal is reach and audience growth rather than feature shipping. The dataset has effectively unlimited story surface; the bottleneck is editorial selection and packaging, not ideation.
+
+### Anomaly mining notebook
+
+Why: surfacing surprises (top-decile on one dimension and bottom-decile on a related one, metros that move most when the composite is reweighted, top-100 metros that punch above their recognition) is the upstream input for every content piece. Without a mining layer, the engine reverts to ad-hoc browsing.
+
+Acceptance:
+- scripts/mine_anomalies.py reads public/data/details/*.json and emits a weekly digest of candidate stories.
+- Three categories at minimum: dimension polarity (high on X, low on related Y), rank-shift sensitivity (largest movers under alternative composite weights), and obscurity (high score relative to population or media salience).
+- Output as a markdown or CSV digest with metro name, anomaly type, supporting data points, and a one-line "story angle" hint.
+- Deterministic so digests can be diffed week over week to track which anomalies are persistent versus transient.
+
+### Reusable social visual templates
+
+Why: consistency builds brand recognition and collapses production time per piece from hours to minutes. The engine cannot scale without templates.
+
+Acceptance:
+- Three templates: metro comparison card (two metros, dimension-by-dimension grid), ranked-list card (top N on a chosen dimension with the score visualized), continent or world map with bubbles sized by any selected dimension.
+- Templates parameterized by dimension, metric, and color theme so the same template serves dozens of stories.
+- Export at standard social aspect ratios (1:1 for Instagram, 16:9 for X/LinkedIn, 9:16 for vertical video) without manual screenshotting.
+- Implementation choice: either a Next.js route (/share/[template]/[args]) that returns a PNG via @vercel/og or playwright, or a static-render script in scripts/. Either works; pick whichever fits the deploy story.
+
+### Historical snapshots and diff reporter
+
+Why: every "what changed and why" content piece requires a then-and-now diff. The freshness fields shipped 2026-04-27 (lastUpdate, companiesAsOf, marketCap.asOf) are the foundation, but no snapshot is preserved beyond the latest run.
+
+Acceptance:
+- ETL archives the prior public/data/ tree to public/data/archive/YYYY-MM-DD/ before regenerating.
+- scripts/diff_snapshots.py surfaces which metros moved most and on which dimensions between any two snapshots, formatted as a content-ready digest.
+- Methodology page references the snapshot URL pattern so any future academic or licensing use can cite a specific version.
+- Storage tradeoff: JSON compresses well; 24 monthly snapshots remains modest at current dataset sizes (~20 MB uncompressed per snapshot).
+
+### Editorial cadence document
+
+Why: most of the engine value comes from disciplined weekly publishing, not bespoke pieces. Capturing the cadence as a written artifact prevents drift.
+
+Acceptance:
+- CONTENT.md at project root listing publishing surfaces in priority order: Threads/X primary, Reddit (MapPorn, dataisbeautiful, urbanism subs) for map-friendly stories, Substack Notes for cross-post, LinkedIn for sports business and location strategy angles.
+- Templated thread openers organized by anomaly type (counter-narrative, obscure overperformer, surprising dimension polarity), populated from real anomalies surfaced in past weeks so they are not abstract.
+- Per-piece checklist that ensures every story funnels back to the canonical metro page on the live site, not a one-off social post.
+- Channels explicitly deprioritized for now: TikTok and Reels until proven stories exist to repurpose; YouTube long-form until weekly cadence is sustainable for at least six months.
+
+---
+
+## Monetization paths — recorded, not active
+
+These are deferred behind content engine and methodology work. Capturing here so they are not lost.
+
+Activate when content reach justifies it:
+- Newsletter sponsorships once the Substack list crosses roughly 10K subscribers; expect $25 to $50 CPM in this niche.
+- Site display advertising (Mediavine, Raptive, or similar) once traffic crosses roughly 50K monthly uniques; analytics/urbanism RPM sits at the higher end of the $5 to $20 range.
+- Sponsored content from aligned brands (travel boards, urban-tech startups, relocation services with editorial integrity), always with disclosure.
+- Annual "State of the Metros" PDF report at $99 individual / $499 institutional, bundled with site access.
+- Speaking and podcast appearances as a top-of-funnel amplifier, not a primary revenue line.
+
+Deferred indefinitely (revisit only on inbound pull):
+- Paid Substack tier as primary revenue. Technically feasible, deprioritized in favor of maximizing free reach first.
+- Commercial data licensing tier. The groundwork is in place via the freshness fields and CC-BY composite, but not pursued unless inbound enterprise demand surfaces.
+- White-label dashboards, courses, and SaaS tools. All require either heavy engineering or audience scale not yet present.
