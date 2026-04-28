@@ -320,6 +320,38 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   GAWC Class: <span className="text-[var(--text)]">{metro.gawcClass}</span>
                 </p>
               )}
+              {/* Sources line: outbound link to canonical Wikipedia and
+                  Wikidata records for the metro. Renders only when populated
+                  (Top 100 as of 2026-04-28). Pairs with the Place.sameAs
+                  emitted in JSON-LD above so visible UX matches schema. */}
+              {(metro.wikipediaUrl || metro.qid) && (
+                <p className="text-sm pt-2">
+                  <span className="text-[var(--text-muted)]">Sources: </span>
+                  {metro.wikipediaUrl && (
+                    <a
+                      href={metro.wikipediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--accent)] hover:underline"
+                    >
+                      Wikipedia
+                    </a>
+                  )}
+                  {metro.wikipediaUrl && metro.qid && (
+                    <span className="text-[var(--text-muted)]"> · </span>
+                  )}
+                  {metro.qid && (
+                    <a
+                      href={`https://www.wikidata.org/wiki/${metro.qid}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[var(--accent)] hover:underline"
+                    >
+                      Wikidata
+                    </a>
+                  )}
+                </p>
+              )}
               {/* Capital / Largest City Badges */}
               {metro.capital && metro.capital.length > 0 && (
                 <div className="flex gap-2 mt-3">
@@ -686,6 +718,17 @@ export default async function MetroDetailPage({ params }: PageProps) {
               Total Market Cap: {formatMarketCap(detail.marketCap.total)} across{" "}
               {detail.marketCap.count} companies
             </p>
+            {detail.marketCap.asOf && (
+              <p className="text-xs text-[var(--text-muted)] mt-1 italic">
+                Source data as of{" "}
+                {new Date(detail.marketCap.asOf + "T00:00:00").toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}{" "}
+                (companiesmarketcap.com)
+              </p>
+            )}
           </section>
         )}
 
@@ -1259,6 +1302,7 @@ function TeamCard({
     city: string;
     major: boolean;
     level?: string;
+    wikipediaUrl?: string;
   };
 }) {
   const isFootball = team.sport === "Soccer" || team.sport === "Football/Soccer";
@@ -1273,7 +1317,25 @@ function TeamCard({
       <p className="text-xs text-[var(--text-muted)] mb-1">
         {normalizeTeamSport(team.sport)} • {team.league}
       </p>
-      <p className="font-semibold text-[var(--text)]">{team.team}</p>
+      <p className="font-semibold text-[var(--text)] flex items-center gap-1.5">
+        <span>{team.team}</span>
+        {/* Tiny outbound Wikipedia mark. Renders only when team.wikipediaUrl is
+            populated so partial coverage never produces dangling icons. The
+            same URL is also emitted in SportsTeam.sameAs JSON-LD above so the
+            visible UX matches the structured data. */}
+        {team.wikipediaUrl && (
+          <a
+            href={team.wikipediaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Read ${team.team} on Wikipedia`}
+            title="Wikipedia"
+            className="text-[var(--text-muted)] hover:text-[var(--accent)] transition text-[10px] font-bold leading-none border border-[var(--border)] hover:border-[var(--accent)] rounded px-1 py-0.5"
+          >
+            W
+          </a>
+        )}
+      </p>
       <p className="text-xs text-[var(--text-dim)]">
         {team.city}
         {isFootball && team.level && <> • <span className="text-[var(--text-muted)]">Level: {team.level}</span></>}
@@ -1480,7 +1542,6 @@ function formatDimensionName(key: string): string {
   };
   return names[key] || key.replace(/([A-Z])/g, " $1").trim();
 }
-
 function hasStatsToShow(detail: any): boolean {
   const statsToCheck = [
     detail.metro?.dims?.majorLeagueTeams,
