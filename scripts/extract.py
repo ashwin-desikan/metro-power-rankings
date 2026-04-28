@@ -525,7 +525,43 @@ def compute_dimension_ranks(metros):
     return ranks_by_slug
 
 
-def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mktcap, football, towers):
+def find_companies_source(explicit_path=None):
+    """Locate the upstream companiesmarketcap.com xlsx whose mtime tells us
+    when the market cap data was last refreshed. Returns Path or None.
+
+    Lookup order:
+      1. COMPANIES_SOURCE_XLSX environment variable, if set
+      2. explicit_path argument, if provided
+      3. ~/OneDrive/Excel Files/companiesmarketcap.com - Companies ranked by Market Cap - CompaniesMarketCap.com (1).xlsx
+      4. ~/Excel Files/...
+      5. Sibling 'Excel Files' folder next to project root
+    """
+    filename = (
+        "companiesmarketcap.com - Companies ranked by Market Cap - "
+        "CompaniesMarketCap.com (1).xlsx"
+    )
+    candidates = []
+    env_path = os.environ.get("COMPANIES_SOURCE_XLSX")
+    if env_path:
+        candidates.append(Path(env_path))
+    if explicit_path:
+        candidates.append(Path(explicit_path))
+    home = Path.home()
+    candidates.extend([
+        home / "OneDrive" / "Excel Files" / filename,
+        home / "Excel Files" / filename,
+        Path(__file__).resolve().parent.parent.parent / "Excel Files" / filename,
+    ])
+    for c in candidates:
+        try:
+            if c.exists():
+                return c
+        except OSError:
+            continue
+    return None
+
+
+def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mktcap, football, towers, mktcap_as_of=None):
     """Build a detail JSON object for a single metro."""
     detail = {}
 
@@ -567,6 +603,8 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
                 for c in companies[:12]
             ],
         }
+        if mktcap_as_of:
+            detail['marketCap']['asOf'] = mktcap_as_of
 
     if metro_name in towers:
         detail['supertallStructures'] = towers[metro_name]
@@ -614,8 +652,12 @@ def main():
     if len(sys.argv) > 1:
         xlsx_path = Path(sys.argv[1])
     else:
-        # Look in parent of site/ directory
-        xlsx_path = site_dir.parent / "MetroAreas.xlsx"
+        # Prefer the project-root copy maintained by sync_source_xlsx.py;
+        # fall back to a sibling 'MetroAreas.xlsx' next to the project root
+        # for legacy layouts.
+        primary = site_dir / "MetroAreas.xlsx"
+        legacy = site_dir.parent / "MetroAreas.xlsx"
+        xlsx_path = primary if primary.exists() else legacy
 
     if not xlsx_path.exists():
         print(f"ERROR: Cannot find {xlsx_path}")
@@ -657,6 +699,21 @@ def main():
     print("Extracting market cap data...")
     mktcap = extract_mktcap(wb)
     print(f"  {sum(len(v) for v in mktcap.values())} companies")
+
+    # Capture the freshness of the upstream companiesmarketcap.com xlsx so
+    # the metro pages can render a "Source data as of {date}" line below the
+    # Top Companies table. Falls back gracefully when the file is not found
+    # (e.g. running ETL on a machine without the OneDrive sync).
+    import datetime as _dt
+    companies_src = find_companies_source()
+    if companies_src is not None:
+        mktcap_as_of = _dt.datetime.fromtimestamp(
+            os.path.getmtime(str(companies_src))
+        ).strftime('%Y-%m-%d')
+        print(f"  companies source: {companies_src.name} (asOf {mktcap_as_of})")
+    else:
+        mktcap_as_of = None
+        print("  companies source xlsx not found; skipping asOf stamp")
 
     print("Extracting football clubs...")
     football = extract_football(wb)
@@ -746,7 +803,8 @@ def main():
 
         detail = build_detail(
             m['name'], teams, unis, culture_data, scrapers,
-            luxury, events, mktcap, football, towers
+            luxury, events, mktcap, football, towers,
+            mktcap_as_of=mktcap_as_of,
         )
 
         # Add the full metro data to the detail file
@@ -780,9 +838,11 @@ def main():
     xlsx_mtime = os.path.getmtime(str(xlsx_path))
     last_update = datetime.datetime.fromtimestamp(xlsx_mtime).strftime('%Y-%m-%d')
     meta = {'lastUpdate': last_update}
+    if mktcap_as_of:
+        meta['companiesAsOf'] = mktcap_as_of
     with open(data_dir / "meta.json", 'w') as f:
         json.dump(meta, f, separators=(',', ':'))
-    print(f"  meta.json: lastUpdate={last_update}")
+    print(f"  meta.json: lastUpdate={last_update}" + (f", companiesAsOf={mktcap_as_of}" if mktcap_as_of else ""))
 
     print("\nDone. Data files written to public/data/")
     print(f"  metros.json ({len(slim_metros)} metros)")

@@ -6,6 +6,9 @@
 #   ./update-site.sh [path/to/MetroAreas.xlsx]
 #
 # What this does:
+#   0. Syncs the latest MetroAreas.xlsx from OneDrive into the project
+#      root if the source is newer (skipped when an explicit path is
+#      passed in or when SKIP_SYNC=1)
 #   1. Reads MetroAreas.xlsx and extracts JSON data files
 #   2. Commits the updated data to git
 #   3. Pushes to GitHub (which triggers Vercel auto-deploy)
@@ -21,9 +24,25 @@ cd "$SCRIPT_DIR"
 # Find the Excel file
 if [ -n "$1" ]; then
     XLSX_PATH="$1"
+    EXPLICIT_PATH=1
 else
-    # Default: look in the parent directory
-    XLSX_PATH="../MetroAreas.xlsx"
+    # Default: project root copy, kept in sync from OneDrive by Step 0
+    XLSX_PATH="./MetroAreas.xlsx"
+    EXPLICIT_PATH=0
+fi
+
+echo ""
+echo "======================================"
+echo "  Metro Power Rankings - Site Update"
+echo "======================================"
+echo ""
+
+# Step 0: Sync the master xlsx from OneDrive if newer.
+# Skipped when caller passes an explicit path or sets SKIP_SYNC=1.
+if [ "$EXPLICIT_PATH" -eq 0 ] && [ "${SKIP_SYNC:-0}" != "1" ]; then
+    echo "Step 0/3: Syncing MetroAreas.xlsx from OneDrive..."
+    python3 scripts/sync_source_xlsx.py
+    echo ""
 fi
 
 if [ ! -f "$XLSX_PATH" ]; then
@@ -32,11 +51,6 @@ if [ ! -f "$XLSX_PATH" ]; then
     exit 1
 fi
 
-echo ""
-echo "======================================"
-echo "  Metro Power Rankings - Site Update"
-echo "======================================"
-echo ""
 echo "Source: $XLSX_PATH"
 echo ""
 
