@@ -568,15 +568,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   value={detail.skyscrapers.over150m}
                 />
               )}
-              {detail.skyscrapers && detail.skyscrapers.over200m > 0 && (
-                <StatCard
-                  label="Supertall (200m+)"
-                  value={detail.skyscrapers.over200m}
-                />
-              )}
               {detail.skyscrapers && detail.skyscrapers.over300m > 0 && (
                 <StatCard
-                  label="Megatall (300m+)"
+                  label="Supertall (300m+)"
                   value={detail.skyscrapers.over300m}
                 />
               )}
