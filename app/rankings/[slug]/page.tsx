@@ -16,6 +16,10 @@ import {
   getQualifierByMetroName,
   qualifierAnchorId,
 } from "@/lib/neighborhoods";
+import {
+  getTopTeamByMetroName,
+  topTeamAnchorId,
+} from "@/lib/topTeams";
 
 export const dynamicParams = false;
 
@@ -159,6 +163,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
 
   const { metro } = detail;
   const neighborhoodQualifier = getQualifierByMetroName(metro.name);
+  const topTeamPick = getTopTeamByMetroName(metro.name);
   const allMetros = getAllMetros();
   const currentIndex = allMetros.findIndex((m) => m.slug === slug);
   const bestScore = Math.max(...allMetros.map((m) => m.score));
@@ -424,6 +429,65 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     </div>
                   </div>
                 )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Top Team — surfaced for metros that landed a pick on the Top
+            Sports Teams sheet. Mirrors the Walkable Elite Quarters card so
+            civic-identity surfaces cluster visually on the metro page. */}
+        {topTeamPick && (
+          <section>
+            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
+              <div className="flex items-start gap-4 flex-wrap">
+                <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-amber-400 text-lg" aria-hidden="true">&#9812;</span>
+                </div>
+                <div className="flex-1 min-w-[240px]">
+                  <p className="text-sm font-semibold text-amber-400">Top Team</p>
+                  <p className="text-xs text-[var(--text-muted)] mb-3">
+                    The single sporting franchise this metro is identified with.
+                  </p>
+                  <div className="flex flex-wrap gap-2 items-center">
+                    {topTeamPick.team.split("/").map((name) => {
+                      const trimmed = name.trim();
+                      return (
+                        <Link
+                          key={trimmed}
+                          href={`/top-teams#${topTeamAnchorId(topTeamPick.metro)}`}
+                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border bg-amber-500/10 border-amber-500/30 text-amber-300 hover:bg-amber-500/20 hover:text-amber-200 transition-colors"
+                        >
+                          {trimmed}
+                        </Link>
+                      );
+                    })}
+                    {topTeamPick.sport && (
+                      <span className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] font-mono border border-[var(--border)] rounded px-2 py-0.5">
+                        {topTeamPick.sport === "American Football (NCAA)"
+                          ? "College Football"
+                          : topTeamPick.sport === "Basketball (NCAA)"
+                          ? "College Basketball"
+                          : topTeamPick.sport}
+                      </span>
+                    )}
+                    {topTeamPick.team.includes("/") && (
+                      <span className="text-[10px] uppercase tracking-widest text-amber-400 font-mono border border-amber-500/30 rounded px-2 py-0.5">
+                        Co-equal
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-[var(--text-muted)] mt-3">
+                    From{" "}
+                    <Link
+                      href={`/top-teams#${topTeamAnchorId(topTeamPick.metro)}`}
+                      className="underline hover:text-[var(--accent)] transition-colors"
+                    >
+                      The Team That Wins the City
+                    </Link>
+                    . One pick per metro across 236 metros worldwide.
+                  </p>
+                </div>
               </div>
             </div>
           </section>

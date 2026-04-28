@@ -1672,14 +1672,46 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
 ];
 
+// Normalize a metro name into a stable token so dataset names can match
+// sheet/essay names regardless of accents and punctuation. Mirrors
+// normalizeMetroName() in lib/neighborhoods.ts so the two reference modules
+// behave the same.
+export function normalizeTopTeamMetroName(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[.'\u2019]/g, "")
+    .replace(/[\s_/]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 export function topTeamAnchorId(metro: string): string {
-  return (
-    "team-" +
-    metro
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, "")
-  );
+  return "team-" + normalizeTopTeamMetroName(metro);
+}
+
+// Aliases for metros where the dataset name and the sheet name diverge.
+// Keyed on the normalized dataset name; value is the normalized sheet name.
+const METRO_NAME_ALIASES: Record<string, string> = {
+  // Dataset uses bare "Minho"; sheet uses "Minho (Braga)". Map dataset->sheet
+  // so the metro page lookup hits the row.
+  minho: "minho-braga",
+};
+
+/**
+ * Look up the top-team pick for a dataset metro by name. Returns null when
+ * the metro has no entry on the Top Sports Teams sheet. Match is tolerant of
+ * accent and punctuation differences and falls back through METRO_NAME_ALIASES
+ * for the rare cases where the two name forms diverge.
+ */
+export function getTopTeamByMetroName(metroName: string): TopTeamPick | null {
+  const target = normalizeTopTeamMetroName(metroName);
+  const alias = METRO_NAME_ALIASES[target] ?? target;
+  for (const t of TOP_TEAMS) {
+    const candidate = normalizeTopTeamMetroName(t.metro);
+    if (candidate === target || candidate === alias) return t;
+  }
+  return null;
 }
