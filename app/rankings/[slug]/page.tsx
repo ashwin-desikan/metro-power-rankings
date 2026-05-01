@@ -421,6 +421,34 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 </p>
               </>
             )}
+            {/* Share row: Reddit and LinkedIn share links. X is intentionally
+                excluded. The OG image rendered at /rankings/[slug]/opengraph-image
+                gives each share preview a per-metro card with tier badge,
+                rank, score, and three signature dimensions. */}
+            <hr className="my-4 border-[var(--border)]" />
+            <p className="text-xs text-[var(--text-muted)] mb-2">Share</p>
+            <div className="flex gap-2 text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              <a
+                href={`https://www.reddit.com/submit?url=${encodeURIComponent(`${BASE_URL}/rankings/${slug}`)}&title=${encodeURIComponent(`${metro.name} (#${metro.rank}) - Global Metro Power Rankings`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                style={{ borderColor: "var(--border)" }}
+                title={`Share ${metro.name} on Reddit`}
+              >
+                Reddit
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${BASE_URL}/rankings/${slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                style={{ borderColor: "var(--border)" }}
+                title={`Share ${metro.name} on LinkedIn`}
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
 
@@ -456,7 +484,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Top Team — surfaced for metros that landed a pick on the Top
+        {/* Top Team : surfaced for metros that landed a pick on the Top
             Sports Teams sheet. Mirrors the Walkable Elite Quarters card so
             civic-identity surfaces cluster visually on the metro page. */}
         {topTeamPick && (
@@ -515,7 +543,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Walkable Elite Quarters — surfaced for metros that clear the Marylebone test */}
+        {/* Walkable Elite Quarters : surfaced for metros that clear the Marylebone test */}
         {neighborhoodQualifier && (
           <section>
             <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
@@ -1475,7 +1503,7 @@ function EventsSection({
     return m ? m[1] : "";
   };
 
-  // 1. Annual Sporting Events — Culture-Infra "Sporting Event" rows flagged annual
+  // 1. Annual Sporting Events : Culture-Infra "Sporting Event" rows flagged annual
   //    (Marathons, Tour de France, FA Cup Final, The Masters, etc.)
   const annualEvents = sportingEvents.filter((se) => se.annual === true);
   if (annualEvents.length > 0) {
@@ -1487,7 +1515,7 @@ function EventsSection({
     }));
   }
 
-  // 2. Multi-Sport Events — Olympics (Summer & Winter) plus the Pan American,
+  // 2. Multi-Sport Events : Olympics (Summer & Winter) plus the Pan American,
   //    Asian, and Commonwealth Games. Identified by Culture-Infra subtype
   //    "Olympics" or "Multi-sport Event". Pulled out of the Championship
   //    Finals catch-all so the metro page surfaces them as their own category.
@@ -1506,7 +1534,7 @@ function EventsSection({
     grouped["Multi-Sport Events"] = multiSportEvents;
   }
 
-  // 3. Championship Finals — one-off championship moments from two sources:
+  // 3. Championship Finals : one-off championship moments from two sources:
   //    (a) Culture-Infra Sporting Events without the annual flag (year in the name),
   //        excluding Olympics and Multi-sport Events which now have their own bucket.
   //    (b) Golf-Tennis-F1 rows with Event Type = "US Sports Finals" (NBA/NHL/MLB finals).
@@ -1568,7 +1596,7 @@ function EventsSection({
     );
   }
 
-  // 8. Complete Event Timeline — every one-off event from the buckets above,
+  // 8. Complete Event Timeline : every one-off event from the buckets above,
   //    merged into a single chronological view sorted year-descending. Annual
   //    Sporting Events are deliberately excluded because they recur every
   //    year and would dominate the timeline. Each entry carries its origin

@@ -53,6 +53,14 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-03",
+    headline: "Per-metro share cards, Reddit and LinkedIn share links",
+    items: [
+      "Every metro page now generates its own Open Graph share card showing rank, tier, score, and the three dimensions where the metro ranks highest globally.",
+      "Reddit and LinkedIn share buttons added to each metro page hero so links travel with the right preview.",
+    ],
+  },
+  {
     date: "2026-05-02",
     headline: "Methodology page, score tiers",
     items: [
