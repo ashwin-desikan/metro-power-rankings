@@ -1547,6 +1547,38 @@ function EventsSection({
     );
   }
 
+  // 8. Complete Event Timeline — every one-off event from the buckets above,
+  //    merged into a single chronological view sorted year-descending. Annual
+  //    Sporting Events are deliberately excluded because they recur every
+  //    year and would dominate the timeline. Each entry carries its origin
+  //    category in the `type` field so the merged view stays interpretable
+  //    when scanning across decades. Title is "Complete Event Timeline" so
+  //    the section reads as the master cross-bucket view.
+  const TIMELINE_TITLE = "Complete Event Timeline";
+  const ANNUAL_BUCKET = "Annual Sporting Events";
+  const timelineEntries: EventItem[] = [];
+  for (const cat of Object.keys(grouped)) {
+    if (cat === ANNUAL_BUCKET || cat === TIMELINE_TITLE) continue;
+    for (const it of grouped[cat]) {
+      timelineEntries.push({
+        event: it.event,
+        year: it.year,
+        venue: it.venue,
+        // Surface the bucket name in the type slot so each row tells the
+        // reader which category it came from. The original ev.type/subtype
+        // is intentionally dropped here because it duplicates the bucket
+        // label for most buckets and adds noise in a mixed timeline.
+        type: cat,
+      });
+    }
+  }
+  timelineEntries.sort(
+    (a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0)
+  );
+  if (timelineEntries.length > 0) {
+    grouped[TIMELINE_TITLE] = timelineEntries;
+  }
+
   const categoryOrder = [
     "Annual Sporting Events",
     "Multi-Sport Events",
@@ -1556,6 +1588,7 @@ function EventsSection({
     "Tennis Majors",
     "F1 Races",
     "Major Fights",
+    TIMELINE_TITLE,
   ];
   const sortedCategories = Object.keys(grouped).sort((a, b) => {
     const ai = categoryOrder.indexOf(a);

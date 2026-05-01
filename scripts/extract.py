@@ -197,14 +197,26 @@ def extract_teams(wb):
         main_division = safe_str(v[3])
         if main_division.upper().startswith("NCAA") and level != "College":
             level = "College"
+        # Major League column (col 11) uses three patterns:
+        #   ""           → not a major-league row
+        #   "Y"          → major-league row, league label comes from col 1 as-is
+        #   "<TierName>" → major-league row AND the tier name overrides the
+        #                  generic col 1 label. This is how Euroleague basketball
+        #                  is encoded: col 1 = "Int'l Basketball" (the bucket),
+        #                  col 11 = "Euroleague" (the actual tier the team
+        #                  competes in). Surface the tier so the metro page
+        #                  shows "Euroleague" rather than "Int'l Basketball".
+        ml_marker = safe_str(v[11])
+        is_major = ml_marker != ''
+        league_for_team = ml_marker if (is_major and ml_marker != 'Y') else league
         team_entry = {
             'sport': safe_str(v[0]),
-            'league': league,
-            'team': _normalize_venue_name(league, safe_str(v[2])),
+            'league': league_for_team,
+            'team': _normalize_venue_name(league_for_team, safe_str(v[2])),
             'city': safe_str(v[5]),
             'country': safe_str(v[8]),
             'level': level,
-            'major': safe_str(v[11]) == 'Y',
+            'major': is_major,
         }
         # Column O (index 14) = "Annual Event" flag, marked 'Y' for recurring
         # event-type entries in Team List (F1 Grands Prix, NASCAR races, Sailing
