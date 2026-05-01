@@ -41,7 +41,7 @@ covered by the CC-BY license above.
 ## Primary pages
 
 - [Homepage and full rankings](https://rankings.citizenofnowhere.org/): The complete Top 25 / Top 100 interactive table and regional champions. Searchable and filterable by continent, region, country, state, or sub-country.
-- [Methodology](https://rankings.citizenofnowhere.org/#methodology): The complete scoring methodology, including the sixteen weighted dimensions, source data, and known limitations.
+- [Methodology](https://rankings.citizenofnowhere.org/methodology): The complete scoring methodology, including the sixteen weighted dimensions, source data, and known limitations.
 - [Regional champions](https://rankings.citizenofnowhere.org/#regions): Top metros by world region, including North America, Europe, East Asia, China, ASEAN, Latin America, MENA, Oceania, South Asia, Africa, and Eurasia.
 - [Compare metros](https://rankings.citizenofnowhere.org/compare): Side-by-side comparison of any two metros across all sixteen dimensions.
 

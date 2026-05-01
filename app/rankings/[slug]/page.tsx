@@ -20,6 +20,7 @@ import {
   getTopTeamByMetroName,
   topTeamAnchorId,
 } from "@/lib/topTeams";
+import { computeTier } from "@/lib/tiers";
 
 export const dynamicParams = false;
 
@@ -391,6 +392,26 @@ export default async function MetroDetailPage({ params }: PageProps) {
               {metro.score.toFixed(1)}
             </div>
             <p className="text-[var(--text-muted)] text-sm">Power Score</p>
+            {/* Tier pill: categorical label for the score band. Links to the
+                relevant section of the methodology page so a reader can see
+                the boundaries and rationale for each band. */}
+            {(() => {
+              const tier = computeTier(metro.score);
+              return (
+                <Link
+                  href={`/methodology#tier-${tier.slug}`}
+                  className="inline-block mt-3 text-xs font-semibold rounded-full px-3 py-1 border transition hover:opacity-80"
+                  style={{
+                    color: tier.accentHex,
+                    borderColor: tier.accentHex,
+                    fontFamily: "'JetBrains Mono', monospace",
+                  }}
+                  title={tier.tagline}
+                >
+                  {tier.name}
+                </Link>
+              );
+            })()}
             {metro.pctOfCountry > 0 && (
               <>
                 <hr className="my-4 border-[var(--border)]" />

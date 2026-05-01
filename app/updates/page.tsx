@@ -53,6 +53,14 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-02",
+    headline: "Methodology page, score tiers",
+    items: [
+      "Launched /methodology: full formula, every dimension's weight and rationale, declared editorial choices, and known limitations.",
+      "Score tiers (Global Capital, World City, Major Metro, Regional Hub, Established City, Emerging City, Local City) now appear as pills on every metro page, linking to the relevant tier definition.",
+    ],
+  },
+  {
     date: "2026-05-01",
     headline: "Multi-Sport Events, Eurovision, Euroleague, Top Teams 312, Wikidata Top 156",
     items: [

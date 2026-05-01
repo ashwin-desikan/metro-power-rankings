@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getMeta } from '@/lib/data';
 
 const MONTHS = [
@@ -142,12 +143,12 @@ export default function SiteNav() {
               </div>
             </div>
           </div>
-          <a
-            href="/#methodology"
+          <Link
+            href="/methodology"
             className="text-sm hover:text-[var(--accent)] transition-colors"
           >
             Methodology
-          </a>
+          </Link>
           {updated && (
             <a
               href="/updates"
