@@ -59,7 +59,7 @@ const RELEASES: Release[] = [
       "New /methodology page documents every dimension, weight, source, and editorial choice; score tiers (Global Capital through Local City) now appear on every metro page.",
       "Per-metro and comparison Open Graph share cards now generate automatically, with Reddit and LinkedIn share buttons on every metro and matchup page.",
       "New /matchups/[a-vs-b] route with 300 pre-rendered head-to-head pages for the top 25 metros, each with a tier verdict and dimension-by-dimension winner grid.",
-      "Data refresh: Multi-Sport Events bucket and Complete Event Timeline added, Eurovision and Historical Events surfaced under Notable One-off Events, Euroleague basketball teams added, Top Teams expanded from 236 to 312 metros, Wikidata coverage expanded from Top 25 to Top 156.",
+      "Data refresh: Multi-Sport Events bucket, Eurovision and Historical Events surfaced, Euroleague teams added, Top Teams expanded to 312 metros, Wikidata coverage to Top 156.",
     ],
   },
   {
