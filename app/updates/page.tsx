@@ -34,8 +34,17 @@ export const metadata: Metadata = {
 };
 
 // Hand-curated release log. Add new entries at the top. Group same-day
-// shipping into a single date block. Keep each item readable to a
-// non-developer: what changed on the site, not what moved in the diff.
+// shipping into a single date block.
+//
+// === BREVITY RULES (enforced at build time, see end of file) ===
+// This is a PUBLIC release notes page, not an internal changelog.
+//   - At most 4 bullets per release. No exceptions.
+//   - Each bullet is ONE short sentence. No "including X, Y, Z" enumerations.
+//   - Headline: 4-8 words ideal, 12 word ceiling.
+//   - No internal mechanics: no script names, file paths, ETL details.
+//   - Long-form belongs in commit messages and Substack posts, not here.
+// If your edit makes `next build` fail with RELEASE_NOTES_VIOLATION,
+// your entry is too long. Cut bullets, not just words.
 type Release = {
   date: string; // ISO yyyy-mm-dd
   headline: string;
@@ -45,133 +54,141 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-01",
-    headline: "Multi-Sport Events bucket, Eurovision and Historical Events surfaced, Top Teams 312 metros, Wikidata Top 156, Melbourne #26",
+    headline: "Multi-Sport Events, Eurovision, Euroleague, Top Teams 312, Wikidata Top 156",
     items: [
-      "New Multi-Sport Events category on every metro page, sitting directly below Annual Sporting Events. Combines Summer and Winter Olympics with the Pan American Games, Asian Games, and Commonwealth Games into a single timeline. Hosting metros now show every Olympic and multi-sport tournament they have ever staged in one place, sorted most recent first. Examples: London (1908, 1948, 2012 Olympics + 1934 Commonwealth Games), Tokyo (1964, 2021 Olympics + 1958 Asian Games), Beijing (2008 Summer + 2022 Winter Olympics + 1990 Asian Games).",
-      "Notable One-off Events on metro pages now include Historical Events: civic moments and disasters that defined the metro outside the sports/culture bucket. Inaugural batch covers events including the US Declaration of Independence (Philadelphia), the assassination of Abraham Lincoln (Washington-Baltimore), the Tulsa Race Massacre, the Great San Francisco Earthquake, the Pinochet Coup (Santiago), Brazil\'s Independence Cry of Ipiranga (Sao Paulo), and 180+ others.",
-      "Eurovision Song Contest now appears under Notable One-off Events for every host city in the contest\'s history, from Lugano 1956 to Vienna 2026. The full host arc is searchable: cities like Vienna (1967, 2015, 2026), Malmo (1992, 2013, 2024), and Rotterdam (1976, 1980, 2020, 2021) show their multiple hostings in one place.",
-      "All Notable One-off Events are now sorted by year, most recent first, with year-extraction handling both prefix-style names (\"2011 Christchurch Earthquake\") and parenthesised-year names (\"Watergate Break-in (1972)\").",
-      "Euroleague basketball teams now appear in the Major League Teams section under their own \"Euroleague\" header. 20 clubs across 16 metros: Real Madrid, FC Barcelona Basquet, Olympiacos, Panathinaikos, Olimpia Milano, Virtus Bologna, KK Crvena zvezda, KK Partizan, Anadolu Efes, Fenerbahçe, Maccabi Tel Aviv, Hapoel Tel Aviv, Saski Baskonia, Valencia Basket, Žalgiris Kaunas, ASVEL, Paris Basketball, AS Monaco, FC Bayern München Basketball, and Dubai Basketball. The ETL now treats any non-empty Major League marker as a tier label, not just a Y/N flag, so future tier annotations (EuroCup, BCL, AFC Champions League, etc.) drop in cleanly.",
-      "New Complete Event Timeline collapsible at the bottom of Major Sporting Events. Aggregates every one-off event from the categories above (Multi-Sport Events, Championship Finals, All-Star Games, Golf Majors, Tennis Majors, F1 Races, Major Fights) into a single chronological view sorted year-descending. Lets readers scan a host metro\'s entire one-off sporting history at a glance instead of opening each category in turn. Annual Sporting Events are excluded since they recur every year and would dominate the list.",
-      "Notable Venues and Historic Venues data refreshed. Notable Venues gained 12 stadium entries: Stadion Maksimir (Zagreb), GSP Stadium (Nicosia), Aviva Stadium (Dublin), Arena Corinthians (Sao Paulo), Estádio Mineirão (Belo Horizonte), Estadio Olímpico Atahualpa (Quito), Metropolitano Stadium (Madrid), St. Jakob-Park (Basel), Hill Dickinson Stadium (Liverpool), London Stadium, Banc of California Stadium and Mercedes-Benz Stadium (Atlanta), Lower.com Field (Columbus). Historic Venues gained 6: Stade Yves-du-Manoir (Paris), Olympiastadion (Munich), Amsterdam Olympisch Stadion, Goodison Park (Liverpool), and the Oakland–Alameda County Coliseum cross-listed under American Football and Baseball for the San Francisco-San Jose metro. Subaru Park (Philadelphia) deprecated from the Notable list.",
-      "Top Teams reference grew from 236 to 312 metros, a 32% expansion that pushes coverage well past the Top 100 and deep into Tier 3. New picks include the Edmonton Oilers, Buffalo Bills, Memphis Grizzlies, Oklahoma City Thunder, Newcastle United, Real Sociedad, FC Astana, Cruzeiro / Atlético Mineiro (co-equal Belo Horizonte), Grêmio / Internacional (co-equal Porto Alegre), Adelaide Crows / Port Adelaide Power (co-equal AFL), Beitar Jerusalem, Dynamo Kyiv, Lahore Qalandars, Cangrejeros de Santurce, and the Tohoku Rakuten Golden Eagles.",
-      "Substantive pick revisions on existing rows: Seoul reframed from FC Seoul to the LG Twins (KBO\'s 2023 Korean Series champions), Sydney moved from Penrith Panthers to Sydney Roosters, Dhaka switched to the Dhaka Capitals (T20), Johannesburg recast as a co-equal Kaizer Chiefs / Orlando Pirates pairing, Belgrade and Prague added co-equal designations (Red Star / Partizan, Sparta / Slavia), and roughly a hundred rationales tightened for clarity. Authoring all this directly in the spreadsheet is now mirrored by scripts/_emit_topteams_ts.py, which regenerates lib/topTeams.ts on demand.",
-      "Wikidata and Wikipedia structured-data linking expanded from the Top 25 to the Top 156 global metros. Every metro through rank #156 now carries a canonical Q-ID and Wikipedia URL in JSON-LD Place.sameAs and as visible Sources links in the hero, more than six times the prior coverage. AI search and LLM crawlers can now resolve a much deeper slice of the corpus to canonical entities.",
-      "Newly linked metros include Auckland, Tehran, Bogota, Helsinki, Geneva, Cape Town, Nairobi, Edinburgh, Glasgow, Liverpool, Naples, Florence, Turin, Lyon, Marseille, Macau, Hanoi, Ho Chi Minh City, Lima, Panama City, Kuwait City, Jeddah, Baku, and 30+ Chinese second-tier cities.",
-      "Melbourne moved from #27 to #26, swapping with Miami, after adding the Boxing Day Test Match (annual MCG cricket fixture) to its sporting-events catalogue. The cultural-events dimension recalculation lifted the composite score from 59.7 to 60.9.",
-      "Knock-on Australian recalibrations: minor pctOfCountry shifts for Sydney, Brisbane, Perth, and Canberra to reflect Melbourne\'s revised share of national activity.",
+      "New Multi-Sport Events bucket on metro pages (Olympics, Pan American, Asian, and Commonwealth Games), plus a Complete Event Timeline view.",
+      "Notable One-off Events now surface Historical Events and the full Eurovision host history.",
+      "Euroleague basketball teams added to Major League Teams.",
+      "Top Teams expanded from 236 to 312 metros; Wikidata coverage from Top 25 to Top 156.",
     ],
   },
   {
     date: "2026-04-28",
-    headline: "Top Teams reference, civic-identity card on metro profiles",
+    headline: "Top Teams reference",
     items: [
-      "Launched the Top Teams page: \"The Team That Wins the City,\" a single-pick taxonomy of the sporting franchise that defines each of 236 global metros. Cards include the team, sport, full rationale, and a Co-equal tag for contested rows like London, Milan, Istanbul, and Glasgow.",
-      "Metros with a top-team pick now surface a Top Team card on their profile alongside the Walkable Elite Quarters card, linking back to the relevant entry on the taxonomy page.",
-      "Refreshed featured-articles section on the home page to reflect both the Marylebones and Top Teams pieces; placeholders for unwritten essays removed.",
-      "Sitemap, llms.txt, and articles dropdown updated so the new piece is discoverable to crawlers, LLM agents, and human readers.",
+      "Launched the Top Teams page: one defining sporting franchise per metro, with co-equal tags for contested calls.",
+      "Top Team card now appears on metro profiles alongside Walkable Elite Quarters.",
     ],
   },
   {
     date: "2026-04-24",
-    headline: "Wikidata and Wikipedia linking on Top 25 metros and US major leagues",
+    headline: "Wikidata linking on Top 25 metros and US major leagues",
     items: [
-      "Top 25 metro profiles now carry Wikidata and Wikipedia links in structured data. Search engines and LLM crawlers can resolve each metro to its canonical entity, strengthening citation and entity-graph signals.",
-      "All US major league teams (NFL, MLB, NBA, NHL) plus every Canadian NHL franchise and the Toronto MLB and NBA sides now emit their own SportsTeam schema with Wikidata and Wikipedia references. 124 teams linked in total.",
-      "Coverage is intentionally partial in this pass. Metros ranked 26 and below and overseas leagues will follow in subsequent tranches; schema is additive and degrades gracefully where links are not yet present.",
+      "Top 25 metro profiles now carry Wikidata and Wikipedia structured data.",
+      "All US major league teams plus Canadian NHL and Toronto MLB/NBA franchises emit SportsTeam schema; 124 teams linked.",
     ],
   },
   {
     date: "2026-04-23",
     headline: "Historic Venues, Annual Events, analytics",
     items: [
-      "Metro profiles now render a Historic Venues collapsible under Notable Venues. 41 sites across 40 metros, including the Astrodome, Korakuen Hall, Kooyong Stadium, and the Panathenaic Stadium.",
-      "Annual Sporting Events (F1 Grands Prix, NASCAR races, Sail Grand Prix regattas) route exclusively into their own category on the metro page rather than being mixed into major-league or other-teams buckets. 81 events across the site.",
-      "Section labels clarified: \"Museums & Landmarks\" is now \"Notable Museums & Landmarks\" and \"Infrastructure\" is now \"Notable Infrastructure,\" signalling that these are curated highlights rather than complete inventories.",
-      "Google Analytics 4 instrumented on both the rankings site and the citizenofnowhere.org brand hub so I can tell what people actually look at.",
+      "New Historic Venues collapsible on metro profiles (41 sites).",
+      "Annual Sporting Events route into their own category.",
+      "Google Analytics 4 instrumented.",
     ],
   },
   {
     date: "2026-04-22",
-    headline: "All-Star Games category, NCAA bucketing fix, data refresh",
+    headline: "All-Star Games category, NCAA bucketing",
     items: [
-      "All-Star Games now appear as their own category on metro profiles, separated from championship finals and major fights.",
-      "NCAA minor-sport teams (wrestling, women's soccer, baseball) that had been labeled with generic \"Other Sports\" league names now route correctly into the College and University Teams bucket.",
-      "Added a link back to the Citizen of Nowhere apex from the rankings header.",
-      "Published the project backlog so anyone can see what's queued next.",
-      "Refreshed underlying data from the latest source spreadsheet.",
+      "All-Star Games now their own category, separated from championship finals.",
+      "NCAA minor-sport teams routed correctly into College and University Teams.",
+      "Data refresh; project backlog published.",
     ],
   },
   {
     date: "2026-04-21",
     headline: "Walkable Elite Quarters card",
     items: [
-      "Metros that contain one of the 103 qualifying walkable-elite neighborhoods now surface a Walkable Elite Quarters card on their profile, linking to the full taxonomy.",
-      "Data refreshed to the April 21 source dataset.",
+      "Walkable Elite Quarters card now appears on profiles for the 103 qualifying metros.",
+      "Data refresh.",
     ],
   },
   {
     date: "2026-04-20",
     headline: "Neighborhoods reference, nav restructure",
     items: [
-      "Launched the Neighborhoods page: \"The Last of the Marylebones,\" a global taxonomy of dense, historic, walkable, elite residential quarters. 103 qualifiers out of 4,200+ metros, with criteria, rationales, and the hard skips.",
-      "Consolidated long-form essays behind an Articles dropdown in the top nav.",
-      "Corpus-size language standardized to \"4,200+ metros\" so the positioning stays stable as the dataset grows.",
+      "Launched the Neighborhoods page: 103 walkable-elite quarters out of 4,200+ metros.",
+      "Articles dropdown added to top nav.",
     ],
   },
   {
     date: "2026-04-18",
-    headline: "Supertall Structures, venue dedupe, restructured profiles",
+    headline: "Supertall Structures, venue dedupe",
     items: [
-      "New Supertall Structures (350m+) section on metro profiles, nested alongside Museums & Landmarks.",
-      "Venues that host multiple teams no longer appear as duplicates in the Notable Venues block. Sports for each shared venue now list inline.",
-      "Transit station counts now render per entry rather than rolled up to the metro level.",
-      "Major subgroups on metro profiles collapsed by default to make the page easier to scan.",
-      "Annual sporting events separated from one-off championship events so recurring fixtures and discrete finals are no longer conflated.",
-      "Data refreshed to the April 18 source dataset.",
+      "New Supertall Structures (350m+) section on metro profiles.",
+      "Multi-sport venues no longer duplicated in the Notable Venues block.",
+      "Annual events split from one-off championships; subgroups collapsed by default.",
     ],
   },
   {
     date: "2026-04-17",
-    headline: "AI/LLM discoverability, Compare tool, site navigation",
+    headline: "Compare tool, AI/LLM discoverability",
     items: [
-      "Launched the Compare tool: pick any two or three metros and see their dimensional ranks side by side with a shareable URL.",
-      "Added a top-level site navigation with a last-updated chip so the freshness of the underlying data is visible at a glance.",
-      "Shipped full AI/LLM discoverability: robots.txt, llms.txt, sitemap, and structured data (Dataset, ItemList, Place, AggregateRating, Breadcrumb JSON-LD) so the rankings surface cleanly in large-language-model tools and search engines.",
-      "License scope clarified: the composite score is CC-BY; third-party source data retains its original license.",
-      "Boxing moved into the Major Fights event group so heavyweight bouts sit alongside MMA title fights.",
-      "\"Major League Teams\" renamed to \"Major League Teams/Venues\" with teams rendered before venues; dimension count corrected to 16 with \"70,000+ individually verified parameters\" as the hero descriptor.",
-      "Footer rebuilt with real links and a dedicated methodology section; placeholder social links removed.",
+      "Launched the Compare tool: pick 2-3 metros and see their dimensional ranks side by side.",
+      "Top-level navigation with last-updated chip.",
+      "Full AI/LLM discoverability shipped (robots.txt, llms.txt, sitemap, JSON-LD).",
+      "Composite score licensed CC-BY.",
     ],
   },
   {
     date: "2026-04-15",
-    headline: "Breakdown table, continent filter, profile enhancements",
+    headline: "Breakdown table, continent filter",
     items: [
-      "Breakdown table now supports state and dimension-rank search, so you can find every metro in, say, Texas or every metro in the global top 20 for Airport Score.",
-      "Continent filter added on the home page rankings.",
-      "Metro profiles now show the primary city, football team levels, and event aggregations.",
-      "Data regenerated with state2/state3 fields and precomputed dimension ranks.",
+      "Breakdown table now searchable by state and dimension rank.",
+      "Continent filter on rankings; primary city and event aggregations on profiles.",
     ],
   },
   {
     date: "2026-04-14",
     headline: "Bug fixes",
     items: [
-      "Team badges, percentage displays, events aggregation, and football team naming all corrected after bug reports from early readers.",
+      "Team badges, percentage displays, events aggregation, and football team naming corrected.",
     ],
   },
   {
     date: "2026-04-13",
     headline: "Launch",
     items: [
-      "Initial release of the Global Metro Power Rankings. 4,200+ metros, 16 dimensions, ranked by composite score.",
-      "Metro profile pages with company names, sources, market cap, GDP, and breakdown by dimension.",
-      "Rankings table rows link through to each metro's profile.",
-      "Top 12 companies per metro on each profile.",
+      "Initial release: 4,200+ metros, 16 dimensions, ranked by composite score.",
+      "Metro profile pages with company names, sources, market cap, GDP, and dimension breakdowns.",
     ],
   },
 ];
+// Build-time enforcement of the brevity rules above. Runs at module load,
+// which means `next build` fails if any release breaks the limits. The
+// rules are deliberately strict: the file dropped from 19KB to 9KB after
+// two rounds of trimming, and the goal is to keep it that way.
+const RELEASE_LIMITS = {
+  maxBulletsPerRelease: 4,
+  maxCharsPerBullet: 220,
+  maxHeadlineWords: 12,
+} as const;
+
+function enforceReleaseBrevity(releases: Release[]): void {
+  for (const r of releases) {
+    if (r.items.length > RELEASE_LIMITS.maxBulletsPerRelease) {
+      throw new Error(
+        `RELEASE_NOTES_VIOLATION (${r.date}): ${r.items.length} bullets exceeds max ${RELEASE_LIMITS.maxBulletsPerRelease}. Cut bullets, not just words.`,
+      );
+    }
+    const headlineWords = r.headline.trim().split(/\s+/).length;
+    if (headlineWords > RELEASE_LIMITS.maxHeadlineWords) {
+      throw new Error(
+        `RELEASE_NOTES_VIOLATION (${r.date}): headline ${headlineWords} words exceeds max ${RELEASE_LIMITS.maxHeadlineWords}: "${r.headline}".`,
+      );
+    }
+    for (const item of r.items) {
+      if (item.length > RELEASE_LIMITS.maxCharsPerBullet) {
+        throw new Error(
+          `RELEASE_NOTES_VIOLATION (${r.date}): bullet is ${item.length} chars (max ${RELEASE_LIMITS.maxCharsPerBullet}). One short sentence only. Starts: "${item.slice(0, 80)}..."`,
+        );
+      }
+    }
+  }
+}
+
+enforceReleaseBrevity(RELEASES);
 
 const MONTHS = [
   "Jan", "Feb", "Mar", "Apr", "May", "Jun",
