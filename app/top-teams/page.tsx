@@ -212,7 +212,7 @@ export default function TopTeamsPage() {
     ],
   };
 
-  // ItemList JSON-LD for the 236 ranked picks
+  // ItemList JSON-LD for the ranked picks (count comes from TOP_TEAMS.length)
   const itemListLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",

@@ -286,7 +286,7 @@ export default async function Home() {
               {
                 title: 'The Team That Wins the City',
                 subtitle:
-                  'One crest per city. The single sporting franchise that defines each of 236 global metros, with full rationales for the contested calls.',
+                  'One crest per city. The single sporting franchise that defines each of 312 global metros, with full rationales for the contested calls.',
                 status: 'Read',
                 statusColor: 'var(--accent)',
                 href: '/top-teams',

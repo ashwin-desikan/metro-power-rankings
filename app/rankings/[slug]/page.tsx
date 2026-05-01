@@ -486,7 +486,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     >
                       The Team That Wins the City
                     </Link>
-                    . One pick per metro across 236 metros worldwide.
+                    . One pick per metro across 312 metros worldwide.
                   </p>
                 </div>
               </div>

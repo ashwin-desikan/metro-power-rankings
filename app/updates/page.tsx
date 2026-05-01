@@ -45,8 +45,10 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-01",
-    headline: "Wikidata coverage expands to Top 156, Melbourne climbs into Top 26",
+    headline: "Top Teams expands to 312 metros, Wikidata coverage hits Top 156, Melbourne climbs into Top 26",
     items: [
+      "Top Teams reference grew from 236 to 312 metros, a 32% expansion that pushes coverage well past the Top 100 and deep into Tier 3. New picks include the Edmonton Oilers, Buffalo Bills, Memphis Grizzlies, Oklahoma City Thunder, Newcastle United, Real Sociedad, FC Astana, Cruzeiro / Atlético Mineiro (co-equal Belo Horizonte), Grêmio / Internacional (co-equal Porto Alegre), Adelaide Crows / Port Adelaide Power (co-equal AFL), Beitar Jerusalem, Dynamo Kyiv, Lahore Qalandars, Cangrejeros de Santurce, and the Tohoku Rakuten Golden Eagles.",
+      "Substantive pick revisions on existing rows: Seoul reframed from FC Seoul to the LG Twins (KBO\'s 2023 Korean Series champions), Sydney moved from Penrith Panthers to Sydney Roosters, Dhaka switched to the Dhaka Capitals (T20), Johannesburg recast as a co-equal Kaizer Chiefs / Orlando Pirates pairing, Belgrade and Prague added co-equal designations (Red Star / Partizan, Sparta / Slavia), and roughly a hundred rationales tightened for clarity. Authoring all this directly in the spreadsheet is now mirrored by scripts/_emit_topteams_ts.py, which regenerates lib/topTeams.ts on demand.",
       "Wikidata and Wikipedia structured-data linking expanded from the Top 25 to the Top 156 global metros. Every metro through rank #156 now carries a canonical Q-ID and Wikipedia URL in JSON-LD Place.sameAs and as visible Sources links in the hero, more than six times the prior coverage. AI search and LLM crawlers can now resolve a much deeper slice of the corpus to canonical entities.",
       "Newly linked metros include Auckland, Tehran, Bogota, Helsinki, Geneva, Cape Town, Nairobi, Edinburgh, Glasgow, Liverpool, Naples, Florence, Turin, Lyon, Marseille, Macau, Hanoi, Ho Chi Minh City, Lima, Panama City, Kuwait City, Jeddah, Baku, and 30+ Chinese second-tier cities.",
       "Melbourne moved from #27 to #26, swapping with Miami, after adding the Boxing Day Test Match (annual MCG cricket fixture) to its sporting-events catalogue. The cultural-events dimension recalculation lifted the composite score from 59.7 to 60.9.",
