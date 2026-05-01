@@ -800,17 +800,39 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <div className="space-y-8">
               {culturalAssetOrder.map((type) => {
                 if (type === "Cultural Event") {
-                  const all = detail.culture?.[type];
-                  if (!all || all.length === 0) return null;
+                  const culturalAll = detail.culture?.[type] || [];
+                  // Pull Music-track events (Eurovision Song Contest in particular)
+                  // out of detail.events and present them alongside Culture-Infra
+                  // Cultural Events. Eurovision is filed in Golf-Tennis-F1 because
+                  // the source spreadsheet uses that sheet for any year-stamped
+                  // event tied to a venue. Surfacing it under Notable One-off
+                  // Events on the metro page is the natural home. Keep both
+                  // sport === "Music" and type === "Music Event" as triggers so
+                  // future entries are matched even if one field is empty.
+                  const musicEvents = (detail.events || [])
+                    .filter((ev) => ev.sport === "Music" || ev.type === "Music Event")
+                    .map((ev) => ({
+                      name: ev.year ? `${ev.year} ${ev.event}` : ev.event,
+                      city: ev.venue,
+                      subtype: ev.type || "Music Event",
+                      annual: false,
+                    }));
+                  const all = [...culturalAll, ...musicEvents];
+                  if (all.length === 0) return null;
                   const annual = all.filter((a) => a.annual === true);
+                  // Year extraction: look for any 4-digit year in the name so
+                  // entries with year prefixes ("2011 Christchurch Earthquake")
+                  // and parenthesised year suffixes ("Watergate Break-in (1972)")
+                  // both sort correctly by recency.
+                  const extractYear = (name: string): number => {
+                    const matches = name.match(/(\d{4})/g);
+                    if (!matches) return 0;
+                    return Math.max(...matches.map((m) => parseInt(m, 10)));
+                  };
                   const oneOff = all
                     .filter((a) => !a.annual)
                     .slice()
-                    .sort((a, b) => {
-                      const ya = parseInt(a.name.trim().match(/^(\d{4})/)?.[1] || "0");
-                      const yb = parseInt(b.name.trim().match(/^(\d{4})/)?.[1] || "0");
-                      return yb - ya;
-                    });
+                    .sort((a, b) => extractYear(b.name) - extractYear(a.name));
                   const renderCard = (asset: { name: string; city: string; subtype: string }, idx: number) => (
                     <div key={idx} className="bg-[var(--bg-card)] border border-[var(--border)] rounded p-3 hover:border-[var(--accent)] transition">
                       <p className="font-medium text-[var(--text)]">{asset.name}</p>
@@ -1444,11 +1466,31 @@ function EventsSection({
     }));
   }
 
-  // 2. Championship Finals — one-off championship moments from two sources:
-  //    (a) Culture-Infra Sporting Events without the annual flag (year in the name)
-  //    (b) Golf-Tennis-F1 rows with Event Type = "US Sports Finals" (NBA/NHL/MLB finals)
-  const finalsFromCulture = sportingEvents
-    .filter((se) => !se.annual)
+  // 2. Multi-Sport Events — Olympics (Summer & Winter) plus the Pan American,
+  //    Asian, and Commonwealth Games. Identified by Culture-Infra subtype
+  //    "Olympics" or "Multi-sport Event". Pulled out of the Championship
+  //    Finals catch-all so the metro page surfaces them as their own category.
+  const multiSportSubtypes = new Set(["Olympics", "Multi-sport Event"]);
+  const nonAnnualSporting = sportingEvents.filter((se) => !se.annual);
+  const multiSportEvents = nonAnnualSporting
+    .filter((se) => multiSportSubtypes.has(se.subtype))
+    .map((se) => ({
+      event: se.name,
+      year: extractYear(se.name),
+      venue: se.city,
+      type: se.subtype,
+    }))
+    .sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+  if (multiSportEvents.length > 0) {
+    grouped["Multi-Sport Events"] = multiSportEvents;
+  }
+
+  // 3. Championship Finals — one-off championship moments from two sources:
+  //    (a) Culture-Infra Sporting Events without the annual flag (year in the name),
+  //        excluding Olympics and Multi-sport Events which now have their own bucket.
+  //    (b) Golf-Tennis-F1 rows with Event Type = "US Sports Finals" (NBA/NHL/MLB finals).
+  const finalsFromCulture = nonAnnualSporting
+    .filter((se) => !multiSportSubtypes.has(se.subtype))
     .map((se) => ({
       event: se.name,
       year: extractYear(se.name),
@@ -1507,6 +1549,7 @@ function EventsSection({
 
   const categoryOrder = [
     "Annual Sporting Events",
+    "Multi-Sport Events",
     "Championship Finals",
     "All-Star Games",
     "Golf Majors",
