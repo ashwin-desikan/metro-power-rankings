@@ -44,6 +44,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-01",
+    headline: "Wikidata coverage expands to Top 156, Melbourne climbs into Top 26",
+    items: [
+      "Wikidata and Wikipedia structured-data linking expanded from the Top 25 to the Top 156 global metros. Every metro through rank #156 now carries a canonical Q-ID and Wikipedia URL in JSON-LD Place.sameAs and as visible Sources links in the hero, more than six times the prior coverage. AI search and LLM crawlers can now resolve a much deeper slice of the corpus to canonical entities.",
+      "Newly linked metros include Auckland, Tehran, Bogota, Helsinki, Geneva, Cape Town, Nairobi, Edinburgh, Glasgow, Liverpool, Naples, Florence, Turin, Lyon, Marseille, Macau, Hanoi, Ho Chi Minh City, Lima, Panama City, Kuwait City, Jeddah, Baku, and 30+ Chinese second-tier cities.",
+      "Melbourne moved from #27 to #26, swapping with Miami, after adding the Boxing Day Test Match (annual MCG cricket fixture) to its sporting-events catalogue. The cultural-events dimension recalculation lifted the composite score from 59.7 to 60.9.",
+      "Knock-on Australian recalibrations: minor pctOfCountry shifts for Sydney, Brisbane, Perth, and Canberra to reflect Melbourne\'s revised share of national activity.",
+    ],
+  },
+  {
     date: "2026-04-28",
     headline: "Top Teams reference, civic-identity card on metro profiles",
     items: [

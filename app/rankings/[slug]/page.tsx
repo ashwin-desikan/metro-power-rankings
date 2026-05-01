@@ -327,8 +327,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
               )}
               {/* Sources line: outbound link to canonical Wikipedia and
                   Wikidata records for the metro. Renders only when populated
-                  (Top 100 as of 2026-04-28). Pairs with the Place.sameAs
-                  emitted in JSON-LD above so visible UX matches schema. */}
+                  (Top 156 as of 2026-05-01, expanded from Top 100 prior). Pairs
+                  with the Place.sameAs emitted in JSON-LD above so visible UX
+                  matches schema. */}
               {(metro.wikipediaUrl || metro.qid) && (
                 <p className="text-sm pt-2">
                   <span className="text-[var(--text-muted)]">Sources: </span>
