@@ -1,11 +1,60 @@
+import type { Metadata } from 'next';
 import { getAllMetros, getMetroDetail, formatDimValue, formatPop, formatMarketCap, formatGdp, type MetroDetail } from '@/lib/data';
+import { BASE_URL } from '@/lib/seo';
 import MetroPicker from './MetroPicker';
 
-export const metadata = {
-  title: 'Compare Metros | Global Metro Power Rankings',
-  description:
-    'Side-by-side comparison of up to four metros across sixteen dimensions of the Global Metro Power Rankings.',
-};
+const PAGE_TITLE = 'Compare Metros | Global Metro Power Rankings';
+const PAGE_DESCRIPTION =
+  'Side-by-side comparison of up to four metros across sixteen dimensions of the Global Metro Power Rankings.';
+
+// Dynamic metadata: when the user shares a /compare URL with selected
+// metros, the og:image points at /api/og/compare with the same slugs so
+// the link preview renders the actual comparison rather than a generic
+// site card.
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ m?: string | string[] }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const raw = params.m;
+  const list = Array.isArray(raw) ? raw : raw ? [raw] : [];
+  const slugs = list
+    .flatMap((s) => s.split(','))
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean)
+    .slice(0, 4);
+
+  const titleSuffix =
+    slugs.length >= 2
+      ? `: ${slugs
+          .map((s) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' '))
+          .join(' vs ')}`
+      : '';
+
+  const ogImageUrl =
+    slugs.length >= 2
+      ? `${BASE_URL}/api/og/compare?m=${slugs.join(',')}`
+      : `${BASE_URL}/opengraph-image`;
+
+  return {
+    title: `${PAGE_TITLE.replace(' | Global Metro Power Rankings', '')}${titleSuffix} | Global Metro Power Rankings`,
+    description: PAGE_DESCRIPTION,
+    openGraph: {
+      title: `Metro comparison${titleSuffix}`,
+      description: PAGE_DESCRIPTION,
+      url: `${BASE_URL}/compare${slugs.length ? `?m=${slugs.join(',')}` : ''}`,
+      type: 'website',
+      images: [{ url: ogImageUrl, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Metro comparison${titleSuffix}`,
+      description: PAGE_DESCRIPTION,
+      images: [ogImageUrl],
+    },
+  };
+}
 
 const DEFAULT_SLUGS = ['new-york', 'london', 'tokyo', 'paris'];
 const MAX_METROS = 4;

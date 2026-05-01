@@ -53,29 +53,13 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
-    date: "2026-05-03",
-    headline: "Per-metro share cards, Reddit and LinkedIn share links",
-    items: [
-      "Every metro page now generates its own Open Graph share card showing rank, tier, score, and the three dimensions where the metro ranks highest globally.",
-      "Reddit and LinkedIn share buttons added to each metro page hero so links travel with the right preview.",
-    ],
-  },
-  {
-    date: "2026-05-02",
-    headline: "Methodology page, score tiers",
-    items: [
-      "Launched /methodology: full formula, every dimension's weight and rationale, declared editorial choices, and known limitations.",
-      "Score tiers (Global Capital, World City, Major Metro, Regional Hub, Established City, Emerging City, Local City) now appear as pills on every metro page, linking to the relevant tier definition.",
-    ],
-  },
-  {
     date: "2026-05-01",
-    headline: "Multi-Sport Events, Eurovision, Euroleague, Top Teams 312, Wikidata Top 156",
+    headline: "Methodology, score tiers, share cards, matchup pages, big data refresh",
     items: [
-      "New Multi-Sport Events bucket on metro pages (Olympics, Pan American, Asian, and Commonwealth Games), plus a Complete Event Timeline view.",
-      "Notable One-off Events now surface Historical Events and the full Eurovision host history.",
-      "Euroleague basketball teams added to Major League Teams.",
-      "Top Teams expanded from 236 to 312 metros; Wikidata coverage from Top 25 to Top 156.",
+      "New /methodology page documents every dimension, weight, source, and editorial choice; score tiers (Global Capital through Local City) now appear on every metro page.",
+      "Per-metro and comparison Open Graph share cards now generate automatically, with Reddit and LinkedIn share buttons on every metro and matchup page.",
+      "New /matchups/[a-vs-b] route with 300 pre-rendered head-to-head pages for the top 25 metros, each with a tier verdict and dimension-by-dimension winner grid.",
+      "Data refresh: Multi-Sport Events bucket and Complete Event Timeline added, Eurovision and Historical Events surfaced under Notable One-off Events, Euroleague basketball teams added, Top Teams expanded from 236 to 312 metros, Wikidata coverage expanded from Top 25 to Top 156.",
     ],
   },
   {

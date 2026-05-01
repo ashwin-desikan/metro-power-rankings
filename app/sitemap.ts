@@ -76,5 +76,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       m.rank <= 25 ? 0.9 : m.rank <= 100 ? 0.7 : m.rank <= 500 ? 0.5 : 0.3,
   }));
 
-  return [...staticEntries, ...metroEntries];
+  // Matchup pages: pre-rendered for the top 25 metros (300 unique pairs).
+  // Mirrors the static set generated at build time by app/matchups/[slug].
+  const top25Slugs = metros
+    .filter((m) => m.rank > 0 && m.rank <= 25)
+    .map((m) => m.slug);
+  const matchupEntries: MetadataRoute.Sitemap = [];
+  for (let i = 0; i < top25Slugs.length; i++) {
+    for (let j = i + 1; j < top25Slugs.length; j++) {
+      const [a, b] =
+        top25Slugs[i] < top25Slugs[j]
+          ? [top25Slugs[i], top25Slugs[j]]
+          : [top25Slugs[j], top25Slugs[i]];
+      matchupEntries.push({
+        url: `${BASE_URL}/matchups/${a}-vs-${b}`,
+        lastModified: stamp,
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
+    }
+  }
+
+  return [...staticEntries, ...metroEntries, ...matchupEntries];
 }
