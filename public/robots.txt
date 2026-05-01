@@ -3,6 +3,10 @@
 
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/admin
+Disallow: /api/admin/
 
 # -------------------------------------------------------------------
 # Explicit AI/LLM crawler allowlist.

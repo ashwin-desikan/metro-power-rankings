@@ -71,6 +71,7 @@ CONTENT.md
 /digests/
 /experiments/
 /internal/
+/data/
 
 # xlsx backups (sandbox bindfs creates these; do not push)
 MetroAreas.xlsx.bak-*
