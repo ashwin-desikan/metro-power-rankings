@@ -1,0 +1,103 @@
+tier,rank,slug,name,country,score,pop,uni_share_pct,second_dim
+A,608,gottingen,Göttingen,Germany,3.4,153576,97.3,population
+A,423,leiden,Leiden,Netherlands,5.5,371917,90.1,otherTeams
+A,367,uppsala,Uppsala,Sweden,6.6,279758,90.1,otherTeams
+A,527,wurzburg,Würzburg,Germany,4.2,386761,87.7,otherTeams
+A,644,munster,Munster,Germany,3.1,536117,86.3,otherTeams
+A,638,aachen,Aachen,Germany,3.1,582410,85.9,otherTeams
+A,623,west-lafayette,West Lafayette,United States,3.3,254145,82.2,otherTeams
+A,503,regensburg,Regensburg,Germany,4.5,499645,80.2,otherTeams
+B,602,london-on,London (ON),Canada,3.4,683950,78.8,otherTeams
+B,496,turku,Turku,Finland,4.5,355791,78.4,otherTeams
+B,661,durham,Durham,United Kingdom,3.0,98715,77.5,otherTeams
+B,594,blacksburg,Blacksburg,United States,3.5,182041,76.9,otherTeams
+B,655,lancaster,Lancaster,United Kingdom,3.0,142936,76.9,otherTeams
+B,497,hobart,Hobart,Australia,4.5,250470,76.4,otherTeams
+B,652,oulu,Oulu,Finland,3.0,209551,76.4,otherTeams
+B,591,columbia-mo,Columbia (MO),United States,3.5,267807,76.3,otherTeams
+B,481,saskatoon,Saskatoon,Canada,4.7,375583,73.0,otherTeams
+B,630,coimbra,Coimbra,Portugal,3.2,377911,72.5,suburbStations
+B,494,ithaca,Ithaca,United States,4.6,151547,72.0,otherTeams
+B,302,ulm,Ulm,Germany,8.3,723246,70.5,suburbStations
+B,604,santiago-de-compostela,Santiago de Compostela,Spain,3.4,169741,69.1,culturalEvents
+B,599,beer-sheva,Beer Sheva,Israel,3.4,275561,68.5,portsExchangesInfra
+B,597,pullman-moscow,Pullman-Moscow,United States,3.5,90579,67.8,otherTeams
+B,547,aalborg,Aalborg,Denmark,4.0,331840,67.8,otherTeams
+B,545,nancy,Nancy,France,4.0,428109,67.6,culturalEvents
+B,542,lansing,Lansing,United States,4.0,546221,67.4,otherTeams
+B,593,bath,Bath,United Kingdom,3.5,193411,67.3,majorLeagueTeams
+B,539,charlottesville,Charlottesville,United States,4.0,244451,67.0,otherTeams
+B,587,wollongong,Wollongong,Australia,3.6,326633,66.5,majorLeagueTeams
+B,431,champaign,Champaign,United States,5.4,242453,66.3,otherTeams
+B,290,montpellier,Montpellier,France,8.6,744182,66.3,otherTeams
+B,536,enschede,Enschede,Netherlands,4.1,412816,66.1,majorLeagueTeams
+B,457,tainan,Tainan,Taiwan,5.1,1874917,66.0,population
+B,293,oxford,Oxford,United Kingdom,8.6,564277,65.1,museumsLandmarks
+C,577,jilin,Jilin,China,3.7,3623713,64.9,population
+C,520,lubbock,Lubbock,United States,4.2,391834,63.8,portsExchangesInfra
+C,266,utrecht,Utrecht,Netherlands,9.5,876158,63.7,majorLeagueTeams
+C,253,cambridge,Cambridge,United Kingdom,10.3,414632,63.6,majorLeagueTeams
+C,515,york,York,United Kingdom,4.3,202822,63.3,majorLeagueTeams
+C,314,gent,Gent,Belgium,8.1,575887,63.0,majorLeagueTeams
+C,510,tuscaloosa,Tuscaloosa,United States,4.3,274836,62.9,majorLeagueTeams
+C,425,groningen,Groningen,Netherlands,5.5,503228,61.8,majorLeagueTeams
+C,504,coventry,Coventry,United Kingdom,4.4,593881,61.1,majorLeagueTeams
+C,463,yangzhou,Yangzhou,China,5.0,4559797,60.4,population
+C,544,exeter,Exeter,United Kingdom,4.0,130712,60.1,majorLeagueTeams
+C,540,bloomington,Bloomington,United States,4.0,207745,59.7,majorLeagueTeams
+C,418,arnhem-nijmegen,Arnhem-Nijmegen,Netherlands,5.6,887514,59.6,majorLeagueTeams
+C,458,columbia,Columbia,United States,5.0,992525,59.6,otherTeams
+C,495,college-station,College Station,United States,4.5,287462,59.4,majorLeagueTeams
+C,417,trondheim,Trondheim,Norway,5.7,266331,59.2,suburbStations
+C,490,gainesville,Gainesville,United States,4.6,433757,58.8,majorLeagueTeams
+C,419,haifa,Haifa,Israel,5.6,1053068,58.4,otherTeams
+C,260,hsinchu,Hsinchu,Taiwan,9.8,1022187,58.2,marketCap
+C,387,grenoble,Grenoble,France,6.2,750664,57.7,luxuryStars
+C,400,odense,Odense,Denmark,5.9,299047,56.3,majorLeagueTeams
+C,241,malmo,Malmo,Sweden,11.1,756970,55.2,majorLeagueTeams
+C,466,fort-collins,Fort Collins,United States,4.9,374574,54.8,otherTeams
+C,349,pamplona,Pamplona,Spain,7.1,373291,54.3,majorLeagueTeams
+C,218,gothenburg,Gothenburg,Sweden,12.5,1058278,53.7,otherTeams
+C,459,state-college,State College,United States,5.0,237937,53.7,majorLeagueTeams
+C,330,campinas,Campinas,Brazil,7.7,3317498,53.1,population
+C,413,maastricht,Maastricht,Netherlands,5.7,202919,52.9,luxuryStars
+C,236,nantes,Nantes,France,11.5,1134532,52.9,majorLeagueTeams
+C,483,dunedin-nz,Dunedin (NZ),New Zealand,4.6,130400,52.5,majorLeagueTeams
+C,448,perugia,Perugia,Italy,5.2,635988,52.1,majorLeagueTeams
+C,386,quebec-city,Quebec City,Canada,6.2,1267318,52.0,culturalEvents
+C,309,madison,Madison,United States,8.1,774092,51.5,otherTeams
+C,439,eugene,Eugene,United States,5.3,382396,51.2,majorLeagueTeams
+C,473,trento,Trento,Italy,4.8,548684,51.1,majorLeagueTeams
+C,434,clermont-ferrand,Clermont-Ferrand,France,5.3,501518,50.9,majorLeagueTeams
+C,433,tallahassee,Tallahassee,United States,5.3,397675,50.6,otherTeams
+C,44,nanjing,Nanjing,China,48.6,9314685,50.5,skyscrapers
+D,426,erfurt-weimar-jena,Erfurt-Weimar-Jena,Germany,5.4,627899,49.6,metroStations
+D,393,south-bend,South Bend,United States,6.0,812566,49.4,otherTeams
+D,299,new-haven,New Haven,United States,8.5,576718,48.5,otherTeams
+D,388,hamilton,Hamilton,Canada,6.2,632111,47.7,majorLeagueTeams
+D,142,lausanne,Lausanne,Switzerland,19.8,553037,47.6,luxuryStars
+D,220,albuquerque,Albuquerque,United States,12.4,1170126,47.5,luxuryStars
+D,414,newcastle-maitland,Newcastle-Maitland,Australia,5.7,645140,47.4,majorLeagueTeams
+D,227,strasbourg,Strasbourg,France,12.0,1156963,47.3,luxuryStars
+D,442,geelong,Geelong,Australia,5.2,355830,47.2,majorLeagueTeams
+D,409,springfield,Springfield,United States,5.7,700421,47.0,majorLeagueTeams
+D,407,cedar-rapids,Cedar Rapids,United States,5.8,461388,46.9,otherTeams
+D,217,bern,Bern,Switzerland,12.5,538421,46.9,majorLeagueTeams
+D,358,aberdeen,Aberdeen,United Kingdom,6.8,224400,46.3,portsExchangesInfra
+D,354,tampere,Tampere,Finland,7.0,365468,46.1,metroStations
+D,363,lebanon,Lebanon,United States,6.7,224804,46.0,luxuryStars
+D,402,brighton-hove,Brighton & Hove,United Kingdom,5.9,543594,45.9,majorLeagueTeams
+D,398,lexington,Lexington,United States,5.9,774562,45.6,otherTeams
+D,373,baton-rouge,Baton Rouge,United States,6.5,862602,44.9,otherTeams
+D,328,des-moines,Des Moines,United States,7.7,939222,43.3,otherTeams
+D,408,pisa-livorno,Pisa-Livorno,Italy,5.7,744481,43.2,museumsLandmarks
+D,183,rhine-neckar,Rhine-Neckar,Germany,14.7,2332195,42.9,majorLeagueTeams
+D,324,ljubljana,Ljubljana,Slovenia,7.8,570933,42.7,otherTeams
+D,377,gwangju,Gwangju,South Korea,6.4,1477573,42.0,metroStations
+D,369,kitchener-waterloo,Kitchener-Waterloo,Canada,6.5,706875,41.3,luxuryStars
+D,6,beijing,Beijing,China,110.7,22560773,41.2,museumsLandmarks
+D,312,richmond,Richmond,United States,8.1,1406110,40.9,otherTeams
+D,365,bari,Bari,Italy,6.7,1218073,40.5,luxuryStars
+D,364,karlsruhe,Karlsruhe,Germany,6.7,765314,40.5,metroStations
+D,362,granada,Granada,Spain,6.7,521109,40.4,metroStations
+D,286,sheffield,Sheffield,United Kingdom,8.7,822331,40.2,otherTeams
