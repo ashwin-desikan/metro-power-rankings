@@ -15,7 +15,7 @@ const PAGE_PATH = "/methodology";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Methodology";
 const PAGE_DESCRIPTION =
-  "How the Global Metro Power Rankings composite is built. Sixteen dimensions, the full formula, the editorial choices behind it, and what it can and cannot tell you.";
+  "How the Global Metro Power Rankings composite is built. Sixteen dimensions, their source data, the editorial choices behind them, and what the rankings can and cannot tell you.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -36,8 +36,9 @@ export const metadata: Metadata = {
 
 // Each dimension is a row in the composite. Weight column is the literal
 // multiplier applied in the formula; "shape" describes whether the value is
-// linear, capped, log-scaled, or tier-bonused. Source column points at the
-// underlying spreadsheet sheet so the reader can audit any single line.
+// linear, capped, log-scaled, or tier-bonused. Source column names the
+// upstream third-party dataset that the dimension relies on; internal
+// spreadsheet structure is intentionally not exposed in the public copy.
 type Dimension = {
   id: string;
   name: string;
@@ -54,8 +55,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "pop / 3,000,000",
     shape: "linear",
     rationale:
-      "Sets a baseline floor: a metro with thirty million people deserves credit for that scale alone, even before you measure what it does. The 3M divisor keeps the contribution moderate so a megacity does not drown out everything else.",
-    source: "Municipality and Counties sheets, aggregated by metro",
+      "Sets a baseline floor. A metro with thirty million people gets credit for that scale before any other dimension is counted. The 3M divisor keeps the contribution moderate so population alone never decides the ranking.",
+    source: "citypopulation.de for both municipality-level data (approximately 133,000 entries across 33 countries with full municipality coverage: US, Canada, UK, Germany, France, Spain, Italy, Japan, South Korea, Australia, Brazil, Mexico, China, India, Russia, Turkey, Poland, Netherlands, Belgium, Austria, Switzerland, Sweden, Norway, Denmark, Finland, Czech Republic, Portugal, Ireland, New Zealand, South Africa, Argentina, Colombia, Chile) and county/district-level data (approximately 49,000 entries across 237 countries) used as the secondary lookup for everywhere else. Country-level totals reconciled against Wikipedia's 'List of countries and dependencies by population' (en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population).",
   },
   {
     id: "major-league-teams",
@@ -63,8 +64,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "raw count, capped at 10",
     shape: "capped",
     rationale:
-      "Top-tier sporting franchises are a strong signal of civic identity, broadcast economy, and cultural reach. The cap prevents a city with eight major-league teams plus seven honorary entries from running away with the score.",
-    source: "Team List sheet, Major League column",
+      "Top-tier franchises signal civic identity, broadcast economy, and cultural reach. The cap stops a city with eight or more major-league teams from sweeping the score on this dimension alone.",
+    source: "Official league websites for NFL, NBA, NHL, MLB, and MLS, plus Wikipedia season articles for every other tracked competition: European top-flight football (Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Primeira Liga, and equivalents), EuroLeague basketball, AFL, CFL, top-flight rugby union (Premiership, Top 14, URC, Super Rugby Pacific), top-flight rugby league (NRL, Super League), and IPL plus other major T20 cricket leagues.",
   },
   {
     id: "other-teams",
@@ -72,8 +73,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "(total teams − major league) × 0.25, capped at 10",
     shape: "capped, low weight",
     rationale:
-      "Second-tier and minor-league teams matter, but materially less than the marquee franchises. The 0.25 multiplier and the 40-row pre-cap reflect that.",
-    source: "Team List sheet, all rows minus major-league",
+      "Second-tier and minor-league teams count, but at a fraction of the marquee franchises. The 0.25 multiplier and the 40-team pre-cap reflect that.",
+    source: "Wikipedia season articles for second-division and minor-league rosters across every sport listed above, plus Wikipedia NCAA program lists by conference (FBS, FCS, basketball).",
   },
   {
     id: "market-cap",
@@ -81,8 +82,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "USD / 700,000,000,000",
     shape: "linear",
     rationale:
-      "The total enterprise value of public and large-private companies headquartered in the metro. The $700B divisor calibrates so that a metro hosting a single trillion-dollar company adds ~1.4 to its score, not 14.",
-    source: "MktCap_Data sheet, refreshed from companiesmarketcap.com",
+      "Total enterprise value of public and large private companies headquartered in the metro. The $700B divisor is calibrated so a single trillion-dollar company adds roughly 1.4 points to the score, not 14.",
+    source: "Three upstream sources by company type. Public companies: companiesmarketcap.com. Private companies: Wikipedia's 'List of largest private non-governmental companies by revenue' and the Forbes Largest Private Companies list (forbes.com). Unicorns: CB Insights' Research Unicorn Companies (cbinsights.com). Approximately 12,475 entries combined, refreshed roughly weekly.",
   },
   {
     id: "companies-count",
@@ -90,8 +91,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "implicit, via market cap accumulation",
     shape: "linear",
     rationale:
-      "The corpus counts every company above the inclusion threshold. The score does not weight count separately because count and total market cap are highly correlated and double-counting would bias toward US tech-heavy metros.",
-    source: "MktCap_Data sheet",
+      "Every company above the inclusion threshold is in the corpus. Count is not weighted separately because count and total market cap are tightly correlated, and double-counting would bias the result toward US tech-heavy metros.",
+    source: "Same three upstream sources as Market capitalization above (companiesmarketcap.com, Wikipedia / Forbes for private companies, CB Insights for unicorns). Count is informational only; the score uses cumulative market cap, not the count, to avoid double-rewarding metros with many small public companies.",
   },
   {
     id: "cultural-events",
@@ -99,8 +100,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.65 (combined with museums and infrastructure)",
     shape: "linear",
     rationale:
-      "World expos, NATO summits, G7/G20 hostings, World's Fairs, royal weddings, papal events. These are one-off cultural moments that make a city the center of global attention for a period of days.",
-    source: "Culture-Infra sheet, type = 'Cultural Event'",
+      "World expos, NATO summits, G7 and G20 hostings, World's Fairs, royal weddings, papal events. One-off cultural moments that put a city at the center of global attention for a period of days.",
+    source: "Manually compiled from Wikipedia lists for World Expos, World's Fairs, NATO summits, G7 and G20 hostings, plus Vatican press records for papal events, royal-wedding press records, the World Marathon Majors organizers, the Cannes Film Festival, Oktoberfest, the Tour de France, the Masters Tournament, the Tennis Grand Slam organizers, and individual festival/biennial organizers. Historical Events sub-category (added 2026-05-01) is sourced manually from Wikipedia and primary historical references.",
   },
   {
     id: "museums-landmarks",
@@ -108,8 +109,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.65 (combined with cultural events and infrastructure)",
     shape: "linear",
     rationale:
-      "Museums, opera houses, concert halls, parks, religious sites, theme parks, world heritage. These are the durable cultural infrastructure that brings tourists and signals civic priority.",
-    source: "Culture-Infra sheet, type = 'Museum/Landmark'",
+      "Museums, opera houses, concert halls, parks, religious sites, theme parks, world heritage sites, plus iconic bridges, tunnels, dams, and canals. The durable cultural and engineering assets that draw visitors and signal civic priority.",
+    source: "museumworldranking.net (Top 426 museums globally), TEA/AECOM Global Experience Index 2024 (theme parks), TripAdvisor plus TEA plus AZA/EAZA accreditation (zoos and aquariums), Wikipedia 'List of contemporary amphitheatres', Wikipedia 'List of concert halls', Wikipedia 'List of opera houses', Wikipedia 'List of the world's largest libraries' (10M+ items), and US National Park Service 2024 visitor data for US national parks. Bridges, tunnels, dams, and canals from Wikipedia (longest bridges, longest tunnels, largest dams, ship canals), ASCE Monuments of the Millennium (asce.org), and ICOLD for major dams. UNESCO World Heritage Sites integration is in progress.",
   },
   {
     id: "infrastructure",
@@ -117,8 +118,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.65 (combined with cultural events and museums)",
     shape: "linear",
     rationale:
-      "Container ports, stock exchanges, internet exchanges, military bases, central banks, data center hubs, agricultural extraction hubs, trade venues. The connective tissue of a globally significant city.",
-    source: "Culture-Infra sheet, types Port through Trade Venue",
+      "Container ports, stock exchanges, internet exchanges, military bases, central banks, data center hubs, agricultural and extraction hubs, and trade venues. The plumbing of a globally relevant city.",
+    source: "Container ports: Lloyd's List Top 100, World Shipping Council Top 50, and AJOT Top 100. Passenger ports: CLIA State of the Cruise Industry Report 2025 plus AAA Cruise Forecast 2025. Trade venues: UFI World Map of Exhibition Venues 2025 (80,000 square metre minimum). Stock exchanges: World Federation of Exchanges (WFE) member list (world-exchanges.org) plus Wikipedia commodity-exchange lists. Internet exchanges: DE-CIX (de-cix.net), AMS-IX (ams-ix.net), IX.br, PeeringDB (peeringdb.com), Internet Society Pulse (pulse.internetsociety.org), and the Newby Ventures IXP directory. Data center hubs: Cushman & Wakefield Global Data Center Market Comparison (cushmanwakefield.com) plus Cloudscene (cloudscene.com). Central banks: BIS member directory (bis.org) plus Wikipedia 'List of central banks'. Military bases: DMDC (dmdc.osd.mil), Pentagon Base Structure Report 2024, Congressional Research Service reports, plus Wikipedia country-specific lists. Agriculture and extraction: FAO GIAHS Programme (fao.org/giahs), OriGIn geographic indications (origin-gi.com), CGIAR research centres (cgiar.org), MINING.com, USGS, plus company filings.",
   },
   {
     id: "airport-score",
@@ -126,8 +127,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.25",
     shape: "linear, low weight",
     rationale:
-      "Tier-1 mega-hubs (JFK, Heathrow, Hong Kong) score higher than tier-2 international gateways than tier-3 regional airports. International connectivity matters but is already partially captured by other dimensions.",
-    source: "Culture-Infra sheet, type = 'Airport'",
+      "Tier-1 mega-hubs (JFK, Heathrow, Hong Kong) score higher than tier-2 international gateways, which score higher than tier-3 regional airports. The weight is low because international connectivity is already partly captured by other dimensions.",
+    source: "ACI World Airport Traffic Dataset 2024 (final, released July 2025), supplemented by Wikipedia 'List of busiest airports by passenger traffic' and FAA classifications. Each entry is tier-classified 1 (mega-hub) through 5 (regional) using a composite of passenger volume, freight volume, and international destination count.",
   },
   {
     id: "universities-top50",
@@ -135,8 +136,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 3.5 per qualifying institution",
     shape: "linear, high weight",
     rationale:
-      "A top-50 global university is a generational asset. Boston punches above its size primarily because of the Harvard-MIT cluster, and the formula reflects that.",
-    source: "Universities sheet, CWUR rank ≤ 50",
+      "A top-50 global university is a generational asset. Boston ranks far higher than its population would predict because of the Harvard and MIT cluster, and the formula reflects that.",
+    source: "Center for World University Rankings 2024 (cwur.org), filtered to global rank ≤ 50.",
   },
   {
     id: "universities-top500",
@@ -144,8 +145,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 2.2 per institution (top-500 minus top-50)",
     shape: "linear",
     rationale:
-      "Universities ranked 51 to 500, top-250 hospitals, and major research institutions. Hospitals and research institutes are weighted at 0.5 of a university because they cluster less into a single peak measure.",
-    source: "Universities sheet plus Culture-Infra Hospital and Research rows",
+      "Universities ranked 51 to 500, top-250 hospitals, and major research institutions. Hospitals and research institutes carry half the weight of a university because they cluster less around a single peak ranking.",
+    source: "Center for World University Rankings 2024 (cwur.org) for ranks 51 to 500, Newsweek World's Best Hospitals 2024 (Top 250), and a manually-curated set of research institutions (47 entries across biomedical research institutes, applied research labs, national laboratories, independent think tanks, and policy research institutes) verified against each institution's own publicly-published profile.",
   },
   {
     id: "metro-stations",
@@ -153,8 +154,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "log(stations)",
     shape: "log-scaled",
     rationale:
-      "Log-scaled because the marginal value of station 200 is much less than station 20. Tokyo at 1,000+ stations shouldn't overwhelm London at 270.",
-    source: "Culture-Infra sheet, type = 'Metro System'",
+      "Log-scaled because adding the 200th station matters much less than adding the 20th. Tokyo at over 1,000 stations should not overwhelm London at 270.",
+    source: "Wikipedia 'List of metro systems' (en.wikipedia.org/wiki/List_of_metro_systems). Subway, light rail, and tram lines all counted; per-line station counts preserved.",
   },
   {
     id: "suburb-stations",
@@ -162,8 +163,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "log(stations) × 0.5",
     shape: "log-scaled, low weight",
     rationale:
-      "Suburban rail extends a metro's effective catchment. The 0.5 multiplier is half the metro-stations weight because suburban rail is functionally less central to daily urban life.",
-    source: "Culture-Infra sheet, type = 'Suburban Rail'",
+      "Suburban rail extends a metro's effective catchment. The 0.5 multiplier is half the metro-stations weight because commuter rail is functionally less central to daily urban life than the subway.",
+    source: "Wikipedia 'List of suburban and commuter rail systems' (en.wikipedia.org/wiki/List_of_suburban_and_commuter_rail_systems).",
   },
   {
     id: "train-hubs",
@@ -171,8 +172,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "log(hubs) × 2",
     shape: "log-scaled, high weight",
     rationale:
-      "Major intercity rail hubs (London King's Cross, Tokyo Station, Gare du Nord) are signal-rich because they require dense national rail and a city worth converging on.",
-    source: "Culture-Infra sheet, type = 'Train Station'",
+      "Major intercity rail hubs (London King's Cross, Tokyo Station, Gare du Nord) require both a dense national rail network and a city worth converging on, which is why they sit at high weight.",
+    source: "Wikipedia 'List of busiest railway stations' (en.wikipedia.org/wiki/List_of_busiest_railway_stations). Threshold is roughly 30 million or more passengers per year.",
   },
   {
     id: "skyscrapers",
@@ -180,8 +181,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "log(150m+ count) × 5.7",
     shape: "log-scaled, high weight",
     rationale:
-      "150m+ tall buildings are a near-universal indicator of capital concentration and land-value pressure. The high multiplier reflects that this metric is hard to fake — building skyscrapers requires sustained economic and political consensus.",
-    source: "Skyscrapers sheet, CTBUH/Skyscraper Center data",
+      "Buildings over 150m are a near-universal indicator of capital concentration and land-value pressure. The high multiplier reflects how hard this metric is to fake. Building tall requires sustained economic and political consensus.",
+    source: "Council on Tall Buildings and Urban Habitat (CTBUH) via skyscrapercenter.com. 150m+ buildings only; tier counts (150m+ / 200m+ / 300m+) preserved per metro.",
   },
   {
     id: "luxury-stars",
@@ -189,8 +190,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "log(stars) × 3",
     shape: "log-scaled",
     rationale:
-      "Michelin 2- and 3-star restaurants plus Forbes Travel Guide 4- and 5-star hotels. A measure of high-end consumption density that correlates with discretionary income, tourism, and cultural prestige.",
-    source: "Luxury Hospitality sheet plus Culture-Infra Michelin entries",
+      "Michelin 2- and 3-star restaurants plus Forbes Travel Guide 4- and 5-star hotels. A density measure of high-end consumption that tracks discretionary income, tourism, and cultural prestige.",
+    source: "Michelin Guide 2025 (442 two- and three-star restaurants across 105 metros) plus Forbes Travel Guide 2026 Star Awards (forbestravelguide.com): 343 Five-Star and 708 Four-Star hotels. Star count weighted 3-star × 3 + 2-star × 2 for restaurants; Five-Star × 3 + Four-Star × 2 for hotels.",
   },
   {
     id: "major-sporting-events",
@@ -198,8 +199,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.2, capped at 4",
     shape: "capped, low weight",
     rationale:
-      "Olympic and Multi-Sport hosting plus championship finals. Capped at 4 because a city that hosted three Olympics in the last century shouldn't outrank a finance capital on this dimension alone.",
-    source: "Culture-Infra Sporting Event rows",
+      "Olympic and multi-sport hosting plus championship finals. Capped at 4 so a city that hosted three Olympics last century cannot outrank a finance capital on this dimension alone.",
+    source: "Wikipedia season and event articles for Olympic Games, FIFA World Cup, tennis Grand Slams, Formula 1 Grands Prix, and NASCAR Cup Series, plus continental finals (UEFA Champions League, Copa Libertadores, AFC Champions League, CAF Champions League, and equivalents).",
   },
   {
     id: "annual-events",
@@ -207,8 +208,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "raw count",
     shape: "linear",
     rationale:
-      "F1 Grands Prix, marathons, tennis Grand Slams, the Cannes Film Festival. Each annual draw is one point, no cap — because a city that hosts five different annual marquee events deserves the cumulative credit.",
-    source: "Culture-Infra rows flagged Annual Event = Y",
+      "F1 Grands Prix, marathons, tennis Grand Slams, the Cannes Film Festival. Each annual draw is one point, with no cap, because a city hosting five different marquee fixtures should get the cumulative credit.",
+    source: "Per-fixture official sources: the Formula 1 official calendar, the Wikipedia NASCAR Cup Series season articles, the World Marathon Majors organizers, the Tennis Grand Slam organizers, the BWF World Tour calendar (badminton), WTT (table tennis), Riot Games (esports), evo.gg (fighting games), the Cannes Film Festival, and the European Broadcasting Union for Eurovision.",
   },
   {
     id: "gdp",
@@ -216,8 +217,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "+3 / +2 / +1 / +0.5 / 0",
     shape: "tiered bonus",
     rationale:
-      "Economic mass that the rest of the formula does not directly capture. Above $500B GDP gets +3, $200-500B gets +2, $50-200B gets +1, $10-50B gets +0.5. Tiered rather than linear so we do not over-reward US and Japanese metros that have unusually generous metro-GDP estimates.",
-    source: "Estimated GDP from Sheet2",
+      "Economic mass that the rest of the formula does not directly capture. Above $500B gets +3, $200B to $500B gets +2, $50B to $200B gets +1, $10B to $50B gets +0.5. Tiered rather than linear because US and Japanese metro-GDP estimates run unusually high and a linear bonus would skew the result.",
+    source: "Wikipedia 'List of cities by GDP' (en.wikipedia.org/wiki/List_of_cities_by_GDP). Reference years vary 2019-2025 by metro; each figure is in billions USD.",
   },
   {
     id: "gawc-class",
@@ -225,8 +226,8 @@ const DIMENSIONS: Dimension[] = [
     weight: "12 × (1 / GaWC class)",
     shape: "inverse, capped",
     rationale:
-      "The Globalization and World Cities Research Network's tier (1, 2, 3, 4, 5, 6) is a 25-year academic standard for ranking cities by global integration. Class 1 metros get +12, class 2 get +6, and so on. This is the only externally-sourced rank that feeds the composite, and it serves as a check against the dimension-level math.",
-    source: "GaWC 2024 World Cities Index, manually entered",
+      "The Globalization and World Cities Research Network's tier (1, 2, 3, 4, 5, 6) is a 25-year academic standard for ranking cities by global integration. Class 1 metros get +12, class 2 get +6, and so on. It is the only externally-sourced rank that feeds the composite, and it acts as a check on the dimension-level math.",
+    source: "Globalization and World Cities Research Network 2024 World Cities Index (lboro.ac.uk/microsites/geography/gawc). Class 1 = Alpha++ down to Class 12 = Sufficiency. Approximately 280 metros classified.",
   },
 ];
 
@@ -295,10 +296,10 @@ export default function MethodologyPage() {
             </h1>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed">
               The Global Metro Power Rankings score is a composite of sixteen
-              dimensions. This page explains every input, every weight, every
-              cap, and every editorial choice that shapes the result. If you
-              disagree with a ranking, this page is where you can find out
-              exactly why the formula produced it.
+              dimensions. This page sets out every input, every weight, every
+              cap, and every editorial choice behind the result. If you
+              disagree with a ranking, this is where you can find out why the
+              formula produced it.
             </p>
           </header>
 
@@ -309,40 +310,45 @@ export default function MethodologyPage() {
                 What counts as a global metro depends on what you are measuring.
                 A finance-only ranking puts London, New York, Hong Kong, and
                 Singapore at the top. A tourism-only ranking promotes Paris,
-                Tokyo, Bangkok, and Istanbul. A sports-only ranking surfaces a
-                very different set again. None of these single-axis rankings
-                describes the whole picture, and that is the gap this project
-                exists to fill.
+                Tokyo, Bangkok, and Istanbul. A sports-only ranking produces
+                a different list again. None of these single-axis views
+                describes the whole picture, which is the gap this project
+                addresses.
               </p>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                I picked sixteen dimensions because that is the number where
-                each axis is materially load-bearing without any one of them
-                being able to swing the result. The composite is built so that
-                a metro can earn its way into the upper tiers through any
+                I settled on sixteen dimensions because that is where each
+                axis is meaningful without any single one being able to swing
+                the result. A metro can reach the upper tiers through any
                 combination of strengths. New York is rank 1 because it
-                competes on every dimension; Boston is in the top thirteen
-                largely because of the Harvard-MIT cluster; Houston earns top
-                25 mostly through energy-sector market cap. The formula
-                respects all three paths.
+                competes on every dimension. Boston sits in the top thirteen
+                largely on the Harvard and MIT cluster. Houston earns top 25
+                mostly on energy-sector market cap. All three routes count.
               </p>
               <p className="text-[var(--text)] leading-relaxed">
-                The rankings are not a popularity contest, and they are not
-                a forecast. They are a current-state inventory of what each
-                metro actually has, expressed on a continuous scale.
+                The rankings are not a popularity contest and not a
+                forecast. They are an inventory of what each metro currently
+                has, expressed on a continuous scale.
               </p>
             </section>
 
             <section id="dimensions">
               <h2 className="text-2xl font-bold mb-4">The sixteen dimensions</h2>
               <p className="text-[var(--text)] leading-relaxed mb-6">
-                Every dimension below has a weight and a shape. Linear means
-                the contribution scales directly with the input. Capped means
-                the contribution stops growing past a ceiling so a single
-                outsized input cannot dominate. Log-scaled means the
-                contribution grows fast at low values and slows at high values,
-                which is appropriate for counts where the marginal value of the
-                hundredth station is much smaller than the marginal value of
-                the tenth.
+                Every dimension below has a weight, a shape, and a source.
+                Linear means the contribution scales directly with the input.
+                Capped means the contribution stops growing past a ceiling, so
+                an outsized input cannot dominate. Log-scaled means the
+                contribution grows fast at low values and slows at high
+                values, which fits counts where the hundredth station is worth
+                much less than the tenth.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-6">
+                The Source line on each dimension names the upstream third-
+                party dataset, ranking, or organisation behind it. Where a
+                recognised ranking is the truth (CWUR, GaWC, CTBUH, ACI, WFE,
+                BIS, Lloyd's List, UFI, Newsweek, ICOLD, the Michelin Guide,
+                Forbes Travel Guide), it is named so any number on the page
+                can be traced back to its origin.
               </p>
               <div className="space-y-6">
                 {DIMENSIONS.map((d) => (
@@ -371,53 +377,15 @@ export default function MethodologyPage() {
               </div>
             </section>
 
-            <section id="formula">
-              <h2 className="text-2xl font-bold mb-4">The full composite formula</h2>
-              <p className="text-[var(--text)] leading-relaxed mb-4">
-                Every metro&apos;s score is the sum of every dimension above. In
-                literal terms, the formula reads:
-              </p>
-              <pre
-                className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-4 overflow-x-auto text-xs leading-relaxed"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
-{`score = pop/3M
-      + marketCap/700B
-      + min(majorTeams, 10)
-      + min((totalTeams − majorTeams) × 0.25, 10)
-      + (culturalEvents + museums + infrastructure) × 0.65
-      + airportScore × 0.25
-      + top50Universities × 3.5
-      + (top500Universities − top50Universities) × 2.2
-      + log(metroStations)
-      + log(suburbStations) × 0.5
-      + log(trainHubs) × 2
-      + log(skyscrapers) × 5.7
-      + log(luxuryStars) × 3
-      + min(majorSportingEvents × 0.2, 4)
-      + count(annualEvents)
-      + gdpTierBonus(gdp)        // +3 / +2 / +1 / +0.5 / 0
-      + 12 × (1 / gawcClass)`}
-              </pre>
-              <p className="text-[var(--text)] leading-relaxed mt-4">
-                The formula lives in cell BG of the Metro Areas sheet in the
-                source spreadsheet and is the single source of truth. The
-                website never recalculates the score; it reads the precomputed
-                value from the spreadsheet and displays it. That keeps the
-                composite auditable from a single cell rather than scattered
-                across application code.
-              </p>
-            </section>
-
-            <section id="tiers">
+<section id="tiers">
               <h2 className="text-2xl font-bold mb-4">Score tiers</h2>
               <p className="text-[var(--text)] leading-relaxed mb-6">
-                Raw scores are continuous, but readers need categorical labels
-                to talk about. The seven tiers below carve the distribution
-                into bands that match the way urban economists already group
-                cities. The boundaries echo the GaWC alpha/beta/gamma
-                convention without requiring readers to learn the academic
-                shorthand.
+                Raw scores are continuous, but readers need categorical
+                labels to talk about. The seven tiers below carve the
+                distribution into bands that align with the way urban
+                economists already group cities. The boundaries echo the GaWC
+                alpha, beta, and gamma convention without requiring readers
+                to know the academic shorthand.
               </p>
               <div className="space-y-3">
                 {TIERS.map((t) => (
@@ -449,172 +417,163 @@ export default function MethodologyPage() {
             <section id="adjustments">
               <h2 className="text-2xl font-bold mb-4">Adjustments and design choices</h2>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Three families of adjustment apply across the formula and are
-                worth calling out so the choices are transparent rather than
-                buried in code.
+                Three families of adjustment apply across the formula. Each
+                is worth surfacing so the choices are visible rather than
+                hidden inside the spreadsheet.
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Caps on counted dimensions</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Major league teams are capped at ten and major sporting events
-                at four. These caps prevent a single dimension from running
+                Major league teams are capped at ten and major sporting
+                events at four. The caps stop a single dimension from running
                 away with the score in the rare metros where one input is
-                multiplied. New York with thirty-plus teams could outscore
-                everyone on team count alone without the cap; the cap forces
-                its score to come from breadth across dimensions.
+                multiplied. New York with thirty-plus teams could otherwise
+                clear everyone on team count alone. The cap forces its score
+                to come from breadth across dimensions.
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Log scaling on count metrics</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Metro stations, suburban rail stations, intercity hubs,
-                skyscrapers, and luxury stars are all log-scaled. The
-                substantive claim is that the marginal value of the
-                two-hundredth station or the fortieth Michelin star is much
-                less than the value of the tenth. Linear scaling would over-
-                reward Tokyo and Hong Kong specifically, two metros where
-                count metrics are unusually high.
+                Metro stations, commuter rail stations, intercity hubs,
+                skyscrapers, and luxury stars are all log-scaled. The claim
+                is simple: the two-hundredth station or fortieth Michelin
+                star is worth much less than the tenth. Linear scaling would
+                over-reward Tokyo and Hong Kong, two metros where count
+                metrics are unusually high.
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Tier bonuses for GDP and GaWC class</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                GDP is tiered (+3 / +2 / +1 / +0.5 / 0) rather than linear so
-                that the rest of the formula does most of the work and GDP
-                acts as a sanity check. The GaWC class adjustment uses the
-                academic 2024 GaWC tier as an external benchmark; class 1
-                metros get +12, class 2 get +6, etc. The GaWC bonus is the
-                only externally-sourced rank that feeds the composite, and
-                its purpose is to keep the formula honest against an
-                independent yardstick.
+                GDP is tiered (+3 / +2 / +1 / +0.5 / 0) rather than linear
+                so that the rest of the formula does most of the work and
+                GDP acts as a sanity check. The GaWC adjustment uses the
+                2024 GaWC tier as an external benchmark: class 1 metros get
+                +12, class 2 get +6, and so on. GaWC is the only outside
+                ranking that feeds the composite, and it is there to test
+                the dimension math against an independent yardstick.
               </p>
             </section>
 
             <section id="editorial">
               <h2 className="text-2xl font-bold mb-4">Declared editorial decisions</h2>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                The formula is deterministic, but the input data is not. Below
-                are the editorial choices I made when building the corpus,
-                each one documented so a reader can decide whether they agree.
+                The formula is deterministic. The input data is not. Below
+                are the editorial choices behind the corpus, each one
+                documented so you can decide whether you agree.
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Metro corridor consolidation</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Several entries in the rankings represent multi-city corridors
-                rather than single-municipality metros. Examples: Washington-
-                Baltimore, Rhine-Ruhr (Cologne / D&uuml;sseldorf / Essen),
-                Saxon Triangle (Leipzig / Dresden / Chemnitz), San Francisco-
-                San Jose (the Bay Area), Osaka-Kyoto-Kobe, Padua-Venice,
-                Boston-Cambridge, Hannover-Brunswick. Each was consolidated
-                because the underlying labor market and infrastructure is
-                genuinely shared, and treating them as separate metros would
-                misrepresent reality.
+                Several entries in the rankings are multi-city corridors
+                rather than single-municipality metros: Washington-Baltimore,
+                Rhine-Ruhr (Cologne, D&uuml;sseldorf, Essen), Saxon Triangle
+                (Leipzig, Dresden, Chemnitz), San Francisco-San Jose (the
+                Bay Area), Osaka-Kyoto-Kobe, Padua-Venice, Boston-Cambridge,
+                Hannover-Brunswick. Each was consolidated because the labor
+                market and infrastructure are genuinely shared. Treating
+                them as separate metros would misrepresent reality.
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Continent assignment overrides</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 A handful of countries are assigned to a continent that
-                differs from strict geographic convention so the regional
-                aggregates make economic and political sense. Australia and
-                New Zealand are grouped with Asia. Turkey, Israel, Russia,
-                Ukraine, Belarus, Kazakhstan, Georgia, Armenia, and Azerbaijan
-                are all grouped with Europe. The reasoning is that economic
-                gravity and political alignment are stronger signals than
-                tectonic geography for the purposes of regional rankings.
+                differs from strict geography so the regional aggregates
+                make economic and political sense. Australia and New Zealand
+                are grouped with Asia. Turkey, Israel, Russia, Ukraine,
+                Belarus, Kazakhstan, Georgia, Armenia, and Azerbaijan are
+                all grouped with Europe. For the purposes of regional
+                rankings, economic gravity and political alignment carry
+                more signal than tectonic geography.
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Naming conventions and disambiguation</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 Where multiple metros share a name, the rankings use a
                 disambiguating suffix or an ASCII variant: Cordova
                 (Argentina) versus C&oacute;rdoba (Spain), Toledo (Spain)
-                versus Toledo (Ohio), Naples (Italy) versus Naples (Florida).
-                Sao Paulo is rendered without the diacritic because the
-                spreadsheet is the source of truth and that is how the row
-                is keyed. These are stable choices, not bugs.
+                versus Toledo (Ohio), Naples (Italy) versus Naples
+                (Florida). Sao Paulo appears without the diacritic for
+                keying consistency. These are deliberate.
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Bloated municipality counts in some Spanish metros</h3>
               <p className="text-[var(--text)] leading-relaxed">
                 Some Spanish metros aggregate a large number of small
-                municipalities (Burgos with 371, Salamanca with 362, Zaragoza
-                with 293). The Municipality sheet is the source. I reviewed
-                each one and chose to leave the structure as the Spanish
-                national statistics agency defines it, rather than imposing a
-                US-style core-cluster approach.
+                municipalities (Burgos at 371, Salamanca at 362, Zaragoza at
+                293). The structure follows the Spanish national statistics
+                agency (INE) definitions. I reviewed each one and left them
+                intact rather than impose a US-style core-cluster approach.
               </p>
             </section>
 
             <section id="limitations">
               <h2 className="text-2xl font-bold mb-4">Known limitations</h2>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Three places where the rankings are weakest, in descending
-                order of how much it bothers me.
+                Three places where the rankings are weakest, in order of
+                how much it bothers me.
               </p>
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 <strong className="font-semibold">Developing-world coverage is uneven.</strong>{" "}
-                Sub-Saharan Africa, parts of Central Asia, and rural China and
-                India have municipality and county data that is much sparser
-                than the OECD comparison set. The result is that some metros in
-                these regions are likely under-counted on dimensions that
-                require granular sub-metro data. I am working to close this
-                gap but the source data simply does not exist at parity.
+                Sub-Saharan Africa, parts of Central Asia, and rural China
+                and India have municipality and county data far sparser than
+                the OECD comparison set. Some metros in these regions are
+                likely under-counted on dimensions that need granular
+                sub-metro data. I am working to close the gap, but the
+                source data does not yet exist at parity.
               </p>
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 <strong className="font-semibold">Cultural events skew toward Western recognition.</strong>{" "}
-                The Cultural Events corpus reflects the events I know about,
-                which is biased toward NATO summits, world expos, papal
-                events, and English-language coverage. A South American or
-                African counterpart event of equal scale may be missing simply
-                because I have not yet sourced it.
+                The Cultural Events corpus reflects the events I know
+                about, which biases toward NATO summits, world expos, papal
+                visits, and English-language coverage. A South American or
+                African counterpart of equal scale may be missing simply
+                because I have not sourced it yet.
               </p>
               <p className="text-[var(--text)] leading-relaxed">
                 <strong className="font-semibold">The formula is opinionated.</strong>{" "}
                 The weights are mine. A reader who thinks luxury hospitality
-                should not be a dimension at all, or that GDP should be
-                weighted three times higher, will produce a different
-                ranking. The transparency on this page is offered so you can
-                disagree with specific choices rather than the project as a
-                whole.
+                should not be a dimension at all, or that GDP should weigh
+                three times more, will produce a different ranking. This
+                page exists so the disagreement can land on a specific
+                choice rather than on the project as a whole.
               </p>
             </section>
 
             <section id="vintage">
               <h2 className="text-2xl font-bold mb-4">Data vintage and refresh cadence</h2>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Most dimensions are refreshed when the source spreadsheet is
-                edited; that timestamp drives the &quot;Updated&quot; chip in the site
-                navigation and the lastUpdate field in the dataset metadata.
-                Market cap data is sourced from companiesmarketcap.com and
-                refreshed independently; its age is exposed on every metro
-                page&apos;s Top Companies block as &quot;Source data as of
-                YYYY-MM-DD.&quot;
+                Most dimensions refresh when their source dataset is
+                updated, and that timestamp drives the &quot;Updated&quot; chip in
+                the site navigation and the lastUpdate field in the dataset
+                metadata. Market cap data refreshes on its own cadence, and
+                its age is shown on every metro page&apos;s Top Companies
+                block as &quot;Source data as of YYYY-MM-DD.&quot;
               </p>
               <p className="text-[var(--text)] leading-relaxed">
-                The composite is licensed CC-BY for reuse. If you cite the
-                rankings, the canonical attribution is &quot;Global Metro Power
-                Rankings, Citizen of Nowhere, [date],&quot; and a link to the
-                relevant metro page or to this methodology page. Third-party
-                source data retains its original license; the CC-BY scope
-                covers the composite score and its derived rankings only.
+                The composite is licensed CC-BY for reuse. If you cite
+                the rankings, use &quot;Global Metro Power Rankings, Citizen of
+                Nowhere, [date]&quot; with a link to the relevant metro page or
+                to this methodology page. Third-party source data keeps its
+                original license; the CC-BY scope covers the composite score
+                and its derived rankings only.
               </p>
             </section>
 
             <section id="version">
               <h2 className="text-2xl font-bold mb-4">This methodology version</h2>
               <p className="text-[var(--text)] leading-relaxed">
-                This page documents the methodology as of the date of last
-                refresh. Material changes to the formula will be recorded on
-                the{" "}
+                This page documents the methodology as of the last
+                refresh. Material changes to the formula are logged on the{" "}
                 <Link
                   href="/updates"
                   className="text-[var(--accent)] hover:underline"
                 >
                   release notes
                 </Link>
-                {" "}page, and historical versions of the methodology will be
-                preserved when material changes occur. Minor calibration of
-                weights does not constitute a material change; introduction or
-                removal of a dimension does.
+                {" "}page, and prior versions of the methodology are kept
+                when material changes occur. Minor weight calibration is not
+                a material change. Adding or removing a dimension is.
               </p>
             </section>
           </article>
 
           <footer className="mt-16 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
             <p>
-              Have a methodology objection or a missing dimension you think
-              should be included? Leave a comment on any post at{" "}
+              Have a methodology objection or think a dimension is
+              missing? Leave a comment on any post at{" "}
               <a
                 href="https://citizenofnowhere.substack.com"
                 target="_blank"
