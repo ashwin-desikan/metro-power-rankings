@@ -63,3 +63,25 @@ desktop.ini
 
 # cache
 .cache
+
+# internal planning artifacts (kept local, never published to the public repo)
+BACKLOG.md
+CONTENT.md
+/docs/
+/experiments/
+/internal/
+
+# xlsx backups (sandbox bindfs creates these; do not push)
+MetroAreas.xlsx.bak-*
+*.xlsx.bak-*
+
+# stale per-session helpers
+scripts/extract.py.broken
+scripts/__pycache__/
+.commit-msg-round*.txt
+commit-round*.ps1
+update-site.ps1
+update-site.sh
+patch-page.py
+NAV_PATCH_INSTRUCTIONS.md
+.trash.bak
