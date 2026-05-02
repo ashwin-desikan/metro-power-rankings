@@ -23,18 +23,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 METROS_JSON = ROOT / "public" / "data" / "metros.json"
 DETAILS_DIR = ROOT / "public" / "data" / "details"
-OUT_TWIN = ROOT / "public" / "data" / "twin-metros.csv"
-OUT_MEGA = ROOT / "public" / "data" / "megaregions.csv"
+OUT_CONURBATIONS = ROOT / "public" / "data" / "conurbations.csv"
 OUT_ISOLATED = ROOT / "public" / "data" / "isolated-capital.csv"
 
 TWIN_KM = 75.0
-# Hard cap on cluster diameter. Without this, transitive 75 km chaining
-# produces runaway clusters (Rhine-Ruhr 587 km, UK industrial belt 406 km,
-# Cork-Limerick-Galway 224 km) that aren't editorially "megaregions" but
-# whole-country networks. 150 km keeps tightly-packed metropolitan
-# clusters and drops the chain artifacts.
-CLUSTER_DIAMETER_CAP = 250.0
 ISOLATED_KM = 240.0
+
+
+def max_avg_pairwise_km_for_size(size):
+    """Size-dependent ceiling on a cluster's average pairwise distance.
+    Pairs through quartets get the link distance (75 km). From quintets
+    onward the ceiling starts at 80 and tightens by 1 km per added member
+    (size 5 = 80, size 6 = 79, size 7 = 78, size 8 = 77, size 9 = 76,
+    size 10 = 75, etc.). Lets in Toronto-Buffalo-Niagara, the Scottish
+    central belt, and similar networks that just edge over the link
+    distance, while keeping out runaway whole-country chains."""
+    if size <= 4:
+        return 75.0
+    return max(0.0, 85.0 - 1.0 * size)
 
 
 def haversine_km(lat1, lon1, lat2, lon2):
@@ -77,9 +83,8 @@ def load_capital_flags(metros):
 
 # --- Twin Metros: connected-component clusters ---
 
-def find_clusters(metros, threshold_km):
-    """Build adjacency by 75 km radius, return dict cluster_id -> [metro objects]."""
-    pool = [m for m in metros if has_coords(m)]
+def _connected_components(pool, threshold_km):
+    """Union-find connected components at the given link distance."""
     n = len(pool)
     parent = list(range(n))
     def find(x):
@@ -91,21 +96,49 @@ def find_clusters(metros, threshold_km):
         rx, ry = find(x), find(y)
         if rx != ry:
             parent[rx] = ry
-
-    # O(n^2) edge scan; n <= ~1400 so this is fine.
     for i in range(n):
         a = pool[i]
         for j in range(i + 1, n):
             b = pool[j]
             if haversine_km(a["lat"], a["lon"], b["lat"], b["lon"]) <= threshold_km:
                 union(i, j)
-
     clusters = {}
     for i in range(n):
         root = find(i)
         clusters.setdefault(root, []).append(pool[i])
-    # Drop singletons
-    return {k: v for k, v in clusters.items() if len(v) >= 2}
+    return [v for v in clusters.values() if len(v) >= 2]
+
+
+def _split_failing_cluster(members, current_link_km, min_link_km=30):
+    """Recursively split a cluster until all sub-clusters pass the size-
+    dependent avg-pairwise filter, or the link distance drops below the floor.
+    A failing 42-metro Benelux/Rhine-Ruhr blob splits at tighter link distances
+    until the Randstad core, the Rhine-Ruhr core, etc. emerge as clean
+    sub-clusters that satisfy the filter."""
+    if len(members) < 2:
+        return []
+    avg = cluster_avg_pairwise_km(members)
+    if avg <= max_avg_pairwise_km_for_size(len(members)):
+        return [members]
+    if current_link_km <= min_link_km:
+        return []
+    next_link = current_link_km - 10
+    sub_clusters = _connected_components(members, next_link)
+    result = []
+    for sub in sub_clusters:
+        result.extend(_split_failing_cluster(sub, next_link, min_link_km))
+    return result
+
+
+def find_clusters(metros, threshold_km):
+    """Form connected components at threshold_km, then recursively split any
+    cluster that fails the avg-pairwise filter. Returns dict cluster_id -> [metros]."""
+    pool = [m for m in metros if has_coords(m)]
+    initial = _connected_components(pool, threshold_km)
+    final = []
+    for cluster in initial:
+        final.extend(_split_failing_cluster(cluster, threshold_km))
+    return {i: c for i, c in enumerate(final)}
 
 
 def cluster_diameter_km(members):
@@ -120,26 +153,41 @@ def cluster_diameter_km(members):
     return d
 
 
+def cluster_avg_pairwise_km(members):
+    """Average of every pair's haversine distance inside the cluster."""
+    n = len(members)
+    if n < 2:
+        return 0.0
+    total = 0.0
+    count = 0
+    for i in range(n):
+        for j in range(i + 1, n):
+            total += haversine_km(members[i]["lat"], members[i]["lon"],
+                                  members[j]["lat"], members[j]["lon"])
+            count += 1
+    return total / count
+
+
 def tier_for_score_sum(score_sum):
-    """Tier by total cluster economic weight. Thresholds are calibrated so
-    Tier A captures the gravitationally heavy clusters (Hong Kong-Macau,
-    Vienna-Bratislava, the dense Northern Italian and Bay Area pairs), Tier B
-    the substantive regional clusters, Tier C the long tail."""
-    if score_sum >= 50: return "A"
-    if score_sum >= 20: return "B"
-    return "C"
+    """Tier by total cluster economic weight, aligned with the individual
+    metro tier scale. Tier A = Global (>=100), B = World (50-100),
+    C = Major (20-50), D = Regional (<20)."""
+    if score_sum >= 100: return "A"
+    if score_sum >= 50:  return "B"
+    if score_sum >= 20:  return "C"
+    return "D"
 
 
-def compute_twin_clusters(metros):
-    """Return (twin_rows, mega_rows). One row per cluster, identified by its
-    lead (lowest-rank member). The full member list is in cluster_member_slugs
-    / cluster_member_names; cluster_other_slugs / cluster_other_names exclude
-    the lead. Twin Metros holds clusters of size 2-3, Megaregions size 4+."""
+def compute_conurbation_clusters(metros):
+    """Return one list of cluster rows, ranked by total cluster score. One row
+    per cluster, identified by its lead (lowest-rank member). The full member
+    list is in cluster_member_slugs / cluster_member_names; the others fields
+    exclude the lead. Pairs through n-metro networks all live in one list."""
     clusters = find_clusters(metros, TWIN_KM)
     cluster_list = list(clusters.values())
     cluster_list.sort(key=lambda members: min(m["rank"] for m in members))
 
-    twin_rows, mega_rows = [], []
+    rows = []
     cluster_id = 0
     for members in cluster_list:
         cluster_id += 1
@@ -151,14 +199,15 @@ def compute_twin_clusters(metros):
         others_names = member_names[1:]
         size = len(members)
         diameter = round(cluster_diameter_km(members), 1)
-        if diameter > CLUSTER_DIAMETER_CAP:
+        avg_pairwise = round(cluster_avg_pairwise_km(members), 1)
+        # find_clusters already enforces the avg-pairwise filter via recursive
+        # splitting, so this is a sanity guard rather than a primary gate.
+        if avg_pairwise > max_avg_pairwise_km_for_size(size):
             continue
         score_sum = round(sum(m.get("score", 0) or 0 for m in members), 1)
         cid = f"c{cluster_id:03d}"
-        is_mega = size >= 4
         tier = tier_for_score_sum(score_sum)
-        target = mega_rows if is_mega else twin_rows
-        target.append({
+        rows.append({
             "slug": lead["slug"],
             "name": lead["name"],
             "country": lead["country"],
@@ -166,6 +215,7 @@ def compute_twin_clusters(metros):
             "cluster_id": cid,
             "cluster_size": size,
             "cluster_diameter_km": diameter,
+            "cluster_avg_pairwise_km": avg_pairwise,
             "cluster_score_sum": score_sum,
             "cluster_member_slugs": ";".join(member_slugs),
             "cluster_member_names": ";".join(member_names),
@@ -173,10 +223,8 @@ def compute_twin_clusters(metros):
             "cluster_other_names": ";".join(others_names),
             "tier": tier,
         })
-    # Sort by cluster_score_sum descending so the heaviest clusters surface first.
-    twin_rows.sort(key=lambda r: -r["cluster_score_sum"])
-    mega_rows.sort(key=lambda r: -r["cluster_score_sum"])
-    return twin_rows, mega_rows
+    rows.sort(key=lambda r: -r["cluster_score_sum"])
+    return rows
 
 
 # --- Isolated Capital: peer must be in the same or higher score tier ---
@@ -272,7 +320,7 @@ _KNOWN_CROSS_CONTINENT_GROUPS = [
 ]
 
 
-def qa_flag_suspect_clusters(metros, twin_rows, mega_rows):
+def qa_flag_suspect_clusters(metros, cluster_rows):
     """Surface cluster rows whose membership looks geographically inconsistent.
     Editorial choices in the workbook are respected; this is a lightweight
     prompt to verify lat/long values.
@@ -284,7 +332,7 @@ def qa_flag_suspect_clusters(metros, twin_rows, mega_rows):
     """
     by_slug = {m["slug"]: m for m in metros}
     suspects = []
-    for r in twin_rows + mega_rows:
+    for r in cluster_rows:
         slugs = r["cluster_member_slugs"].split(";")
         members = [by_slug.get(s) for s in slugs if s in by_slug]
         continents = {(m.get("continent") or "").strip() for m in members}
@@ -315,27 +363,23 @@ def main():
     metros = load_metros()
     capital_flags = load_capital_flags(metros)
 
-    twin_rows, mega_rows = compute_twin_clusters(metros)
+    conurbation_rows = compute_conurbation_clusters(metros)
     iso_rows = compute_isolated_capital(metros, capital_flags)
 
     cluster_cols = ["slug", "name", "country", "rank", "cluster_id", "cluster_size", "cluster_diameter_km",
-                    "cluster_score_sum", "cluster_member_slugs", "cluster_member_names",
+                    "cluster_avg_pairwise_km", "cluster_score_sum", "cluster_member_slugs", "cluster_member_names",
                     "cluster_other_slugs", "cluster_other_names", "tier"]
     iso_cols = ["slug", "name", "country", "rank", "distance_km", "peer_slug", "peer_name", "peer_country", "peer_rank", "tier"]
 
-    write_csv(OUT_TWIN, twin_rows, cluster_cols)
-    write_csv(OUT_MEGA, mega_rows, cluster_cols)
+    write_csv(OUT_CONURBATIONS, conurbation_rows, cluster_cols)
     write_csv(OUT_ISOLATED, iso_rows, iso_cols)
 
-    # Cluster summary across both files
-    seen = set()
+    # Cluster summary
     cluster_summary = []
-    for r in twin_rows + mega_rows:
-        if r["cluster_id"] in seen: continue
-        seen.add(r["cluster_id"])
+    for r in conurbation_rows:
         cluster_summary.append((r["cluster_id"], int(r["cluster_size"]), r["cluster_member_names"], float(r["cluster_diameter_km"])))
     print()
-    print(f"Total clusters: {len(cluster_summary)}  (twin: {len({r['cluster_id'] for r in twin_rows})}, megaregion: {len({r['cluster_id'] for r in mega_rows})})")
+    print(f"Total clusters: {len(cluster_summary)}")
     from collections import Counter
     sizes = Counter(s for _, s, _, _ in cluster_summary)
     print(f"By size: {sorted(sizes.items())}")
@@ -361,7 +405,7 @@ def main():
     for r in iso_rows[:25]:
         peer = f"{r['peer_name']} (#{r['peer_rank']})" if r['peer_name'] else "<none>"
         print(f"  {r['name']:<25} (#{r['rank']:>4}, {r['country']:<22})  nearest same-or-higher-tier peer = {peer:<28} {r['distance_km']:>6.1f} km  tier {r['tier']}")
-    qa_flag_suspect_clusters(metros, twin_rows, mega_rows)
+    qa_flag_suspect_clusters(metros, conurbation_rows)
 
     print()
     print("Re-checks for the 6 capitals user asked to bring back:")

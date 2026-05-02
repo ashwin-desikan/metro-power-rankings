@@ -8,6 +8,127 @@ import { join } from "path";
 import { getAllMetros } from "./data";
 import type { Metro } from "./shared";
 
+// ---------- Editorial overrides ----------
+
+// Metros at or above the World City tier that are inherently conurbations
+// even when the workbook treats them as a single row. Each entry adds a
+// cluster row with a hand-curated member-name list (the satellite cities
+// that physically comprise the metro). The metro's own composite score
+// drives its position; satellites are not double-counted.
+const _CONURBATION_OVERRIDES: { slug: string; displayName?: string; satellites: string[] }[] = [
+  // Global Capitals (score >= 100)
+  { slug: "new-york", displayName: "Tri-State Area", satellites: ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island", "Newark", "Jersey City", "Long Island", "Westchester"] },
+  { slug: "london", satellites: ["Westminster", "Camden", "Croydon", "Watford", "Reading", "St Albans"] },
+  { slug: "paris", displayName: "Île-de-France", satellites: ["Paris", "Boulogne-Billancourt", "Saint-Denis", "Argenteuil", "Versailles", "Créteil"] },
+  { slug: "tokyo", displayName: "Greater Tokyo", satellites: ["Tokyo", "Yokohama", "Kawasaki", "Saitama", "Chiba"] },
+  { slug: "san-francisco-san-jose", displayName: "Bay Area", satellites: ["San Francisco", "San Jose", "Oakland", "Fremont", "Berkeley", "Palo Alto"] },
+  { slug: "los-angeles", displayName: "Greater Los Angeles", satellites: ["Los Angeles", "Long Beach", "Anaheim", "Riverside-San Bernardino", "Santa Ana", "Glendale"] },
+  { slug: "seoul", displayName: "Sudogwon", satellites: ["Seoul", "Incheon", "Suwon", "Bucheon", "Goyang", "Seongnam"] },
+  { slug: "shanghai", displayName: "Yangtze River Delta", satellites: ["Shanghai", "Suzhou", "Wuxi", "Nantong", "Jiaxing"] },
+  // World Cities (50 <= score < 100) not already on the cluster list
+  { slug: "washington-baltimore", displayName: "Capital Region (DMV)", satellites: ["Washington DC", "Baltimore", "Arlington VA", "Alexandria", "Bethesda"] },
+  { slug: "chicago", displayName: "Chicagoland", satellites: ["Chicago", "Naperville", "Aurora", "Joliet", "Gary IN"] },
+  { slug: "osaka-kyoto-kobe", displayName: "Keihanshin", satellites: ["Osaka", "Kyoto", "Kobe", "Nara", "Sakai"] },
+  { slug: "moscow", displayName: "Greater Moscow", satellites: ["Moscow", "Khimki", "Mytishchi", "Balashikha", "Lyubertsy", "Podolsk"] },
+  { slug: "madrid", displayName: "Comunidad de Madrid", satellites: ["Madrid", "Móstoles", "Alcalá de Henares", "Getafe", "Leganés", "Fuenlabrada"] },
+  { slug: "milan", satellites: ["Milan", "Monza", "Bergamo", "Sesto San Giovanni", "Cinisello Balsamo"] },
+  { slug: "houston", displayName: "Greater Houston", satellites: ["Houston", "Sugar Land", "The Woodlands", "Pasadena", "Pearland", "Galveston"] },
+  { slug: "istanbul", displayName: "Greater Istanbul", satellites: ["Istanbul", "Beyoğlu", "Kadıköy", "Ümraniye", "Bağcılar"] },
+  { slug: "rhine-ruhr", displayName: "Rhine-Ruhr", satellites: ["Cologne", "Düsseldorf", "Essen", "Dortmund", "Duisburg", "Bochum", "Wuppertal", "Gelsenkirchen"] },
+  { slug: "miami", displayName: "South Florida", satellites: ["Miami", "Fort Lauderdale", "West Palm Beach", "Hollywood FL", "Pembroke Pines"] },
+  { slug: "mexico-city", displayName: "Valle de México", satellites: ["Mexico City", "Naucalpan", "Ecatepec", "Tlalnepantla", "Nezahualcóyotl"] },
+  { slug: "philadelphia", displayName: "Delaware Valley", satellites: ["Philadelphia", "Camden NJ", "Wilmington DE", "Chester PA", "Trenton"] },
+  { slug: "berlin", displayName: "Berlin-Brandenburg", satellites: ["Berlin", "Potsdam", "Brandenburg an der Havel", "Eberswalde"] },
+  { slug: "seattle", displayName: "Puget Sound", satellites: ["Seattle", "Tacoma", "Bellevue", "Everett", "Renton", "Kent"] },
+  { slug: "dallas", displayName: "DFW Metroplex", satellites: ["Dallas", "Fort Worth", "Arlington TX", "Plano", "Irving", "Garland", "Frisco"] },
+  { slug: "barcelona", displayName: "Greater Barcelona", satellites: ["Barcelona", "Sabadell", "Terrassa", "Mataró", "L'Hospitalet", "Badalona"] },
+  { slug: "atlanta", displayName: "Metro Atlanta", satellites: ["Atlanta", "Sandy Springs", "Roswell", "Marietta", "Alpharetta", "Smyrna"] },
+  { slug: "dubai-sharjah", displayName: "Northern Emirates", satellites: ["Dubai", "Sharjah", "Ajman", "Umm Al Quwain"] },
+  { slug: "mumbai", displayName: "Mumbai Metropolitan Region", satellites: ["Mumbai", "Thane", "Navi Mumbai", "Mira-Bhayandar", "Vasai-Virar", "Kalyan-Dombivli"] },
+  { slug: "munich", satellites: ["Munich", "Augsburg", "Ingolstadt", "Rosenheim", "Landshut", "Freising"] },
+  // Major Metros (score 20-50) that are inherently conurbations
+  { slug: "jakarta", displayName: "Jabodetabek", satellites: ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"] },
+  { slug: "frankfurt", displayName: "Rhein-Main", satellites: ["Frankfurt", "Offenbach", "Wiesbaden", "Mainz", "Hanau"] },
+  { slug: "johannesburg", displayName: "Gauteng", satellites: ["Johannesburg", "Soweto", "Sandton", "Roodepoort", "Randburg"] },
+  { slug: "cairo", displayName: "Greater Cairo", satellites: ["Cairo", "Giza", "6th of October City", "Helwan", "Shubra El Kheima"] },
+  { slug: "montreal", displayName: "Greater Montreal", satellites: ["Montreal", "Laval", "Longueuil", "Brossard"] },
+  { slug: "denver", satellites: ["Denver", "Aurora", "Lakewood CO", "Boulder", "Centennial"] },
+  { slug: "vancouver", displayName: "Metro Vancouver", satellites: ["Vancouver", "Burnaby", "Surrey", "Richmond BC", "Coquitlam"] },
+  { slug: "wuhan", displayName: "Wuhan Tri-City", satellites: ["Hankou", "Hanyang", "Wuchang"] },
+  { slug: "las-vegas", displayName: "Las Vegas Valley", satellites: ["Las Vegas", "Henderson", "North Las Vegas", "Paradise", "Spring Valley"] },
+  { slug: "lisbon", displayName: "Greater Lisbon", satellites: ["Lisbon", "Cascais", "Sintra", "Loures", "Almada", "Amadora"] },
+  { slug: "hangzhou", satellites: ["Hangzhou", "Yuhang", "Xiaoshan", "Lin'an", "Tonglu"] },
+  { slug: "minneapolis", displayName: "Twin Cities", satellites: ["Minneapolis", "St. Paul", "Bloomington MN", "Plymouth"] },
+  { slug: "doha", displayName: "Greater Doha", satellites: ["Doha", "Al Wakrah", "Al Rayyan", "Al Khor"] },
+  { slug: "changsha", displayName: "Chang-Zhu-Tan", satellites: ["Changsha", "Zhuzhou", "Xiangtan"] },
+  { slug: "st-louis", satellites: ["St. Louis", "East St. Louis", "Belleville IL", "St. Charles MO"] },
+  { slug: "busan-ulsan", satellites: ["Busan", "Ulsan", "Gimhae", "Yangsan"] },
+  { slug: "phoenix", displayName: "Valley of the Sun", satellites: ["Phoenix", "Mesa", "Scottsdale", "Tempe", "Chandler", "Gilbert", "Glendale AZ"] },
+  { slug: "athens", displayName: "Attica", satellites: ["Athens", "Piraeus", "Acharnes", "Peristeri", "Kallithea"] },
+  { slug: "dublin", displayName: "Greater Dublin Area", satellites: ["Dublin", "Tallaght", "Swords", "Dún Laoghaire", "Blanchardstown"] },
+  { slug: "nagoya", displayName: "Chukyo", satellites: ["Nagoya", "Toyota", "Toyohashi", "Okazaki", "Kasugai"] },
+  { slug: "portland", satellites: ["Portland", "Vancouver WA", "Beaverton", "Gresham", "Hillsboro"] },
+  { slug: "hamburg", satellites: ["Hamburg", "Lübeck", "Norderstedt", "Pinneberg"] },
+  { slug: "calcutta", displayName: "Kolkata Metro", satellites: ["Kolkata", "Howrah", "Bidhannagar", "Hooghly", "Barrackpore"] },
+  { slug: "cleveland", satellites: ["Cleveland", "Akron", "Lorain", "Lakewood OH", "Parma"] },
+  { slug: "raleigh-durham", displayName: "Research Triangle", satellites: ["Raleigh", "Durham", "Cary", "Chapel Hill"] },
+  { slug: "tehran", displayName: "Greater Tehran", satellites: ["Tehran", "Karaj", "Eslamshahr", "Rey", "Varamin"] },
+  { slug: "stuttgart", displayName: "Stuttgart Region", satellites: ["Stuttgart", "Esslingen", "Ludwigsburg", "Sindelfingen", "Tübingen"] },
+  { slug: "salt-lake-city-provo", displayName: "Wasatch Front", satellites: ["Salt Lake City", "Provo", "Ogden", "West Valley"] },
+  { slug: "padua-venice", displayName: "Veneto Triangle", satellites: ["Venice", "Padua", "Mestre", "Treviso"] },
+  { slug: "kansas-city", satellites: ["Kansas City MO", "Kansas City KS", "Overland Park", "Olathe", "Independence"] },
+  { slug: "shenyang", displayName: "Mid-Liaoning", satellites: ["Shenyang", "Anshan", "Fushun", "Benxi", "Liaoyang"] },
+  { slug: "liverpool", displayName: "Merseyside", satellites: ["Liverpool", "Birkenhead", "Wallasey", "St Helens", "Bootle"] },
+  { slug: "cincinnati", satellites: ["Cincinnati", "Covington KY", "Newport KY", "Florence KY"] },
+  { slug: "helsinki", satellites: ["Helsinki", "Espoo", "Vantaa", "Kauniainen"] },
+  { slug: "lima", displayName: "Lima-Callao", satellites: ["Lima", "Callao", "San Juan de Lurigancho", "Comas"] },
+  { slug: "hannover-brunswick", satellites: ["Hannover", "Braunschweig", "Salzgitter", "Wolfsburg"] },
+];
+
+// Named megaregions: hand-curated multi-metro clusters that the auto algorithm
+// either fragments (Randstad split into Amsterdam-east-NL and Rotterdam-Leiden)
+// or buries inside oversized regional belts (Brussels-Antwerp lost in an
+// 11-metro Flemish-Walloon-Northern-French cluster). Each entry claims its
+// listed memberSlugs; any auto cluster touching a claimed slug is dropped so
+// each metro lives in exactly one cluster. The displayName drives the lead
+// row's identity. extraSatellites adds non-dataset labels to the member list.
+const _NAMED_MEGAREGIONS: {
+  slug: string;
+  displayName: string;
+  leadSlug: string;
+  memberSlugs: string[];
+  extraSatellites?: string[];
+}[] = [
+  {
+    slug: "randstad",
+    displayName: "Randstad",
+    leadSlug: "amsterdam",
+    memberSlugs: ["amsterdam", "rotterdam-the-hague", "utrecht", "leiden"],
+    extraSatellites: ["The Hague", "Haarlem", "Almere", "Zaanstad", "Hilversum"],
+  },
+  {
+    slug: "flemish-diamond",
+    displayName: "Flemish Diamond",
+    leadSlug: "brussels",
+    memberSlugs: ["brussels", "antwerp", "mechelen", "leuven", "aalst", "gent"],
+    extraSatellites: ["Vilvoorde", "Asse"],
+  },
+  {
+    slug: "pearl-river-delta",
+    displayName: "Pearl River Delta",
+    leadSlug: "hong-kong",
+    memberSlugs: ["hong-kong", "macau", "guangzhou"],
+    extraSatellites: ["Shenzhen", "Dongguan", "Foshan", "Zhuhai"],
+  },
+  {
+    slug: "jing-jin-ji",
+    displayName: "Jing-Jin-Ji",
+    leadSlug: "beijing",
+    memberSlugs: ["beijing", "tianjin"],
+    extraSatellites: ["Langfang", "Baoding", "Tangshan", "Cangzhou"],
+  },
+];
+
 // ---------- Types ----------
 
 export type BadgeStatus = "live" | "coming-soon";
@@ -43,6 +164,10 @@ export type QualifyingMetro = {
     otherNames: string[];
     memberSlugs: string[];
     memberNames: string[];
+    // componentMetro: when the row's name is an editorial alias (e.g.,
+    // "Twin Cities", "Jabodetabek"), this points to the workbook metro the
+    // row links to so the connection is explicit on the page.
+    componentMetro?: { slug: string; name: string; rank: number };
   };
 };
 
@@ -108,7 +233,7 @@ function computeFromCsv(csvPath: string, valueColumn: string, contextLabel: stri
   return out;
 }
 
-// Shared helper for the Twin Metros + Megaregions cluster CSVs. Reads any
+// Shared helper for the Conurbations cluster CSV. Reads any
 // cluster CSV that follows the schema written by scripts/generate-distance-
 // badges.py (slug, name, country, rank, cluster_id, cluster_size,
 // cluster_diameter_km, cluster_member_slugs, cluster_member_names,
@@ -149,14 +274,6 @@ function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
   }
   // Sort heaviest cluster first
   return [...leads.values()].sort((a, b) => b.scoreSum - a.scoreSum).map((e) => e.qm);
-}
-
-function computeTwinClusters(): QualifyingMetro[] {
-  return computeClustersFromCsv("public/data/twin-metros.csv");
-}
-
-function computeMegaregionClusters(): QualifyingMetro[] {
-  return computeClustersFromCsv("public/data/megaregions.csv");
 }
 
 // Isolated Capital: capitals where the nearest peer at or above the capital's
@@ -242,8 +359,80 @@ function computeCultureCapital() { return computeFromCsv("public/data/culture-ca
 function computeSportsMecca() { return computeFromCsv("public/data/sports-mecca.csv", "sports_score", "Sports composite"); }
 function computeRailHub() { return computeFromCsv("public/data/rail-hub.csv", "rail_score", "Rail composite"); }
 function computeOverperformer() { return computeFromCsv("public/data/overperformer.csv", "multiple", "Pop-rank to score-rank multiple"); }
-function computeTwinMetros() { return computeTwinClusters(); }
-function computeMegaregions() { return computeMegaregionClusters(); }
+function computeConurbations(): QualifyingMetro[] {
+  const { bySlug } = getMetroIndex();
+
+  // 1. Build named megaregion rows. Each claims its listed memberSlugs.
+  const namedRows: QualifyingMetro[] = [];
+  const claimedByNamed = new Set<string>();
+  for (const ng of _NAMED_MEGAREGIONS) {
+    const memberMetas = ng.memberSlugs.map((s) => bySlug.get(s)).filter((m): m is Metro => m !== undefined);
+    if (memberMetas.length === 0) continue;
+    for (const s of ng.memberSlugs) claimedByNamed.add(s);
+    const lead = bySlug.get(ng.leadSlug) ?? memberMetas[0];
+    const scoreSum = Math.round(memberMetas.reduce((acc, m) => acc + (m.score ?? 0), 0) * 10) / 10;
+    const memberNames = memberMetas.map((m) => m.name).concat(ng.extraSatellites ?? []);
+    const otherSlugs = ng.memberSlugs.filter((s) => s !== lead.slug);
+    const otherNames = memberMetas.filter((m) => m.slug !== lead.slug).map((m) => m.name).concat(ng.extraSatellites ?? []);
+    const tier = scoreSum >= 100 ? "A" : scoreSum >= 50 ? "B" : scoreSum >= 20 ? "C" : "D";
+    namedRows.push({
+      slug: lead.slug, name: ng.displayName, country: lead.country,
+      rank: lead.rank, score: lead.score,
+      contextValue: scoreSum, contextLabel: "Cluster score",
+      tier,
+      cluster: {
+        id: `n-${ng.slug}`,
+        size: memberNames.length,
+        diameterKm: 0,
+        otherSlugs,
+        otherNames,
+        memberSlugs: ng.memberSlugs,
+        memberNames,
+        componentMetro: ng.displayName !== lead.name ? { slug: lead.slug, name: lead.name, rank: lead.rank } : undefined,
+      },
+    });
+  }
+
+  // 2. Auto clusters: drop any whose membership intersects a named megaregion.
+  const autoRaw = computeClustersFromCsv("public/data/conurbations.csv");
+  const auto = autoRaw.filter((q) => {
+    if (!q.cluster) return true;
+    return !q.cluster.memberSlugs.some((s) => claimedByNamed.has(s));
+  });
+  const autoSlugs = new Set<string>();
+  for (const q of auto) {
+    if (q.cluster) for (const s of q.cluster.memberSlugs) autoSlugs.add(s);
+    else autoSlugs.add(q.slug);
+  }
+
+  // 3. Single-metro overrides: skip if covered by auto OR a named megaregion.
+  const overrides: QualifyingMetro[] = [];
+  for (const ov of _CONURBATION_OVERRIDES) {
+    if (autoSlugs.has(ov.slug) || claimedByNamed.has(ov.slug)) continue;
+    const meta = bySlug.get(ov.slug);
+    if (!meta) continue;
+    const score = meta.score;
+    const tier = score >= 100 ? "A" : score >= 50 ? "B" : score >= 20 ? "C" : "D";
+    overrides.push({
+      slug: meta.slug, name: ov.displayName ?? meta.name, country: meta.country,
+      rank: meta.rank, score: meta.score,
+      contextValue: score, contextLabel: "Cluster score",
+      tier,
+      cluster: {
+        id: `o-${meta.slug}`,
+        size: ov.satellites.length,
+        diameterKm: 0,
+        otherSlugs: [],
+        otherNames: ov.satellites,
+        memberSlugs: [meta.slug],
+        memberNames: ov.satellites,
+        componentMetro: ov.displayName ? { slug: meta.slug, name: meta.name, rank: meta.rank } : undefined,
+      },
+    });
+  }
+
+  return [...namedRows, ...auto, ...overrides].sort((a, b) => b.contextValue - a.contextValue);
+}
 function computeIsolatedCapital() { return computeIsolatedCapitalRows(); }
 
 // ---------- Tier registries ----------
@@ -263,9 +452,10 @@ const SKYLINE_CITY_TIERS: BadgeTier[] = [
 ];
 
 const CLUSTER_TIERS: BadgeTier[] = [
-  { slug: "A", name: "Tier A — Heavyweight cluster", description: "Total composite score of 50 or more across all members. The gravitationally heaviest clusters: Boston-Providence, Guangzhou, Hong Kong-Macau, Singapore-Johor Bahru-Batam, Sydney-Wollongong, São Paulo-Santos, Melbourne-Geelong, Vienna-Bratislava, Rome-Vatican-Latina, Toronto-Buffalo-Niagara.", accentHex: "#22D3EE" },
-  { slug: "B", name: "Tier B — Substantive cluster", description: "Total composite score between 20 and 50 across all members. Substantive regional clusters where multiple meaningful metros stack into a real network: Taipei-Hsinchu, Delhi-Ghaziabad, Detroit-Windsor, Edinburgh-Glasgow-Dundee, Florence-Pisa-Siena-Lucca, Hartford-New Haven-Springfield.", accentHex: "#60A5FA" },
-  { slug: "C", name: "Tier C — Long-tail cluster", description: "Total composite score under 20 across all members. The long tail of small-but-real clusters that satisfy the distance rule without contributing major economic weight on their own.", accentHex: "#A78BFA" },
+  { slug: "A", name: "Tier A — Global", description: "Cluster score of 100 or more, mirroring the Global Capital threshold for individual metros. The gravitationally heaviest conurbations on Earth: Pearl River Delta, New York, London, Jing-Jin-Ji, Paris, Tokyo, San Francisco-San Jose, Los Angeles, Seoul, Shanghai, Boston-Providence, Randstad, Toronto.", accentHex: "#7c3aed" },
+  { slug: "B", name: "Tier B — World", description: "Cluster score between 50 and 100, mirroring the World City band. Substantial multi-metro networks that anchor a continent or region: Washington-Baltimore, Chicago, Flemish Diamond, Singapore-Johor Bahru-Batam, Zurich-Basel-Freiburg, Sydney-Wollongong, Osaka-Kyoto-Kobe, Moscow, Madrid, Houston, Istanbul.", accentHex: "#2563eb" },
+  { slug: "C", name: "Tier C — Major", description: "Cluster score between 20 and 50, mirroring the Major Metro band. Regionally meaningful conurbations where multiple metros stack into a real network: Edinburgh-Central Scotland, Detroit-Windsor, Vienna-Bratislava, Florence-Pisa-Siena-Lucca, Bilbao-Bayonne, Helsinki, Cardiff-Bristol-Bath.", accentHex: "#0d9488" },
+  { slug: "D", name: "Tier D — Regional", description: "Cluster score under 20, mirroring the Regional Hub and lower bands. The long tail of small-but-real conurbations that satisfy the distance rule without contributing major economic weight on their own.", accentHex: "#059669" },
 ];
 
 const ISOLATED_CAPITAL_TIERS: BadgeTier[] = [
@@ -332,16 +522,10 @@ export const BADGES: Badge[] = [
     methodologyAnchor: "#population", status: "live", compute: computeOverperformer,
   },
   {
-    slug: "twin-metros", name: "Twin Metros", emoji: "🔗",
-    shortDesc: "Pairs and triplets of metros within 75 km of each other, ranked by total cluster score.",
-    longDesc: "Two- and three-metro clusters connected by 75 km links, ranked by the sum of composite scores across all members. The heaviest pairs surface first: Boston-Providence (cluster score ~101), Guangzhou-Qingyuan (~98), Hong Kong-Macau (~92), Singapore-Johor Bahru-Batam (~79), Sydney-Wollongong (~76), São Paulo-Santos (~72), Melbourne-Geelong (~66), Vienna-Bratislava (~54), Rome-Vatican-Latina (~52), Manila-Angeles (~51). The list also surfaces the canonical cross-border twins lower in the tier (Detroit-Windsor 2 km, El Paso-Ciudad Juárez 10 km, Kinshasa-Brazzaville 11 km, Nice-Monaco 12 km, Jerusalem-Ramallah 14 km, Singapore-JB 18 km, San Diego-Tijuana 24 km, Copenhagen-Malmö 31 km). Larger clusters of four or more metros (within a 250 km diameter) are surfaced separately under the Megaregions badge.",
-    methodologyAnchor: "#population", status: "live", tiers: CLUSTER_TIERS, compute: computeTwinMetros,
-  },
-  {
-    slug: "megaregions", name: "Megaregions", emoji: "🌐",
-    shortDesc: "Clusters of four or more metros within a 250 km diameter, ranked by total cluster score.",
-    longDesc: "Connected-component clusters of four or more metros where each member sits within 75 km of at least one other member, and the cluster as a whole fits within a 250 km diameter. The diameter cap reins in transitive 75 km chains that would otherwise produce continent-spanning networks (the Rhine-Ruhr corridor at 587 km, the UK industrial belt at 406 km). Clusters are ranked by the sum of composite scores across all members. Heaviest first: Toronto-Buffalo-Kitchener-Hamilton-Niagara (cluster score ~100), Nanjing-Yangzhou-Zhenjiang-Taizhou (~70), Tel-Aviv-Jerusalem-Amman-Beer Sheva-Irbid-Gaza-Ramallah (~62), Edinburgh-Glasgow-Dundee-St. Andrews and the broader Central Scotland belt (~61), Marseille-Nice-Monaco-Toulon-Cuneo-Frejus (~60), Hangzhou-Suzhou-Jiaxing-Huzhou (~54). The long tail captures Florence-Pisa-Siena-Lucca, Hartford-New Haven-Springfield-New London, Lahore-Amritsar-Gujranwala-Sialkot, Cork-Limerick-Galway, the Caribbean Sint Maarten cluster, the upstate NY belt, and more.",
-    methodologyAnchor: "#population", status: "live", tiers: CLUSTER_TIERS, compute: computeMegaregions,
+    slug: "conurbations", name: "Conurbations", emoji: "🔗",
+    shortDesc: "Connected-component clusters of metros within 75 km, ranked by total cluster score.",
+    longDesc: "Metros that connect to one another by 75 km links, ranked by the sum of composite scores across all members. Clusters are formed via connected-component graph traversal at the 75 km link distance, then filtered by a size-dependent average pairwise distance cap (75 km for size 2-4, 80 km at size 5 declining 1 km per added member) so transitive chains can't produce whole-country networks. Top of the list: Boston-Providence (cluster score ~101), Toronto-Buffalo-Kitchener-Hamilton-Niagara (~100), Guangzhou-Qingyuan (~98), Hong Kong-Macau (~92), Singapore-Johor Bahru-Batam (~79), Sydney-Wollongong (~76), São Paulo-Santos (~72), Nanjing-Yangzhou-Zhenjiang-Taizhou (~70), Edinburgh-Glasgow-Dundee-St. Andrews and the broader Central Scotland belt (~61), Vienna-Bratislava (~54). The long tail captures the canonical cross-border twins (Detroit-Windsor, El Paso-Ciudad Juárez, San Diego-Tijuana, Kinshasa-Brazzaville, Nice-Monaco, Jerusalem-Ramallah) and the regional networks (Florence-Pisa-Siena-Lucca, Hartford-New Haven-Springfield-New London, Prague-Pardubice-Liberec, the Caribbean Sint Maarten cluster, the upstate New York belt).",
+    methodologyAnchor: "#population", status: "live", tiers: CLUSTER_TIERS, compute: computeConurbations,
   },
   {
     slug: "isolated-capital", name: "Isolated Capital", emoji: "🏔️",

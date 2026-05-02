@@ -54,11 +54,10 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-03",
-    headline: "Twin Metros, Megaregions, Isolated Capital badges live",
+    headline: "Conurbations and Isolated Capital badges live",
     items: [
-      "Twin Metros holds 75 km pairs and triplets ranked by combined cluster score: Boston-Providence, Hong Kong-Macau, Singapore-Johor Bahru-Batam, Vienna-Bratislava, Detroit-Windsor.",
-      "Megaregions holds clusters of 4+ metros within a 250 km diameter, ranked by combined score: Toronto-Buffalo-Niagara, Tel-Aviv-Jerusalem-Amman, Edinburgh-Glasgow-Dundee, Marseille-Nice-Monaco.",
-      "Isolated Capital lists national capitals more than 240 km from any peer of equal or greater rank: Brasília, Madrid, Buenos Aires, Santiago, Canberra, Wellington.",
+      "Conurbations holds connected metro clusters within 75 km, ranked by combined score: Boston-Providence, Toronto-Buffalo-Niagara, Hong Kong-Macau, Singapore-Johor Bahru-Batam, Edinburgh-Glasgow-Dundee.",
+      "Isolated Capital lists national capitals more than 240 km from any peer in the same or higher tier: Madrid, Buenos Aires, Santiago, Canberra, Wellington, Mexico City, Tokyo.",
     ],
   },
   {

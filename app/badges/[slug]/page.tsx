@@ -73,7 +73,7 @@ function formatContextValue(badgeSlug: string, value: number): string {
   if (badgeSlug === "overperformer") {
     return `${value.toFixed(1)}x`;
   }
-  if (badgeSlug === "twin-metros" || badgeSlug === "megaregions") {
+  if (badgeSlug === "conurbations") {
     return value.toFixed(1);
   }
   if (badgeSlug === "isolated-capital") {
@@ -110,6 +110,18 @@ function MetroRow({
         <span className="text-sm text-[var(--text-muted)] ml-2">
           {metro.country}
         </span>
+        {metro.cluster?.componentMetro ? (
+          <div className="text-xs text-[var(--text-dim)] mt-0.5">
+            <span>anchor: </span>
+            <Link
+              href={`/rankings/${metro.cluster.componentMetro.slug}`}
+              className="hover:text-[var(--accent)] underline-offset-2"
+            >
+              {metro.cluster.componentMetro.name}
+            </Link>
+            <span> (#{metro.cluster.componentMetro.rank})</span>
+          </div>
+        ) : null}
         {metro.cluster && metro.cluster.otherSlugs.length > 0 ? (
           <div className="text-xs text-[var(--text-muted)] mt-0.5">
             <span aria-hidden="true">↔ </span>
@@ -122,6 +134,12 @@ function MetroRow({
               </span>
             ))}
             <span className="text-[var(--text-dim)]"> ({metro.cluster.size} metros, {metro.cluster.diameterKm.toFixed(0)} km diameter)</span>
+          </div>
+        ) : metro.cluster && metro.cluster.otherNames.length > 0 ? (
+          <div className="text-xs text-[var(--text-muted)] mt-0.5">
+            <span aria-hidden="true">↔ </span>
+            <span>{metro.cluster.otherNames.join(", ")}</span>
+            <span className="text-[var(--text-dim)]"> ({metro.cluster.size} areas)</span>
           </div>
         ) : metro.peerName && metro.peerSlug ? (
           <div className="text-xs text-[var(--text-muted)] mt-0.5">
@@ -241,7 +259,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                   color: "var(--accent)",
                 }}
               >
-                {metros.length} {badge.slug === "twin-metros" || badge.slug === "megaregions" ? "qualifying clusters" : "qualifying metros"}
+                {metros.length} {badge.slug === "conurbations" ? "qualifying clusters" : "qualifying metros"}
               </span>
               {badge.methodologyAnchor ? (
                 <Link
