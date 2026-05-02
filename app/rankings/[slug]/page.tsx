@@ -360,21 +360,10 @@ export default async function MetroDetailPage({ params }: PageProps) {
                   )}
                 </p>
               )}
-              {/* Capital / Largest City Badges */}
-              {metro.capital && metro.capital.length > 0 && (
-                <div className="flex gap-2 mt-3">
-                  {(metro.capital === "Y" || metro.capital === "XY") && (
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">
-                      Capital City
-                    </span>
-                  )}
-                  {(metro.capital === "X" || metro.capital === "XY") && (
-                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                      Largest City
-                    </span>
-                  )}
-                </div>
-              )}
+              {/* Badges row: which categorical lenses this metro qualifies
+                  for. Lives below Wikipedia/Wikidata sources so the chip row
+                  reads as a peer of the structured-data citations. */}
+              <BadgeChips slug={slug} />
             </div>
           </div>
 
@@ -413,7 +402,6 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 </Link>
               );
             })()}
-            <BadgeChips slug={slug} />
             {metro.pctOfCountry > 0 && (
               <>
                 <hr className="my-4 border-[var(--border)]" />

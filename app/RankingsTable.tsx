@@ -179,7 +179,11 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
         </div>
       </div>
 
-      {/* Table */}
+      {/* Table — responsive treatment:
+          - Population column hides below sm: most expendable cut so rank,
+            name, region dot, and score all fit on a phone.
+          - Score bar viz hides below sm: only the numeric score remains.
+          - Padding tightens to px-2 on mobile, px-4 on sm+ */}
       <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
         <table className="w-full">
           <thead>
@@ -188,25 +192,25 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
               style={{ backgroundColor: 'var(--bg-card)' }}
             >
               <th
-                className="px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]"
+                className="px-2 sm:px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 Rank
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]">
+              <th className="px-2 sm:px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]">
                 Metro Area
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]">
+              <th className="px-2 sm:px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]">
                 Region
               </th>
               <th
-                className="px-4 py-3 text-right text-sm font-semibold text-[var(--text-muted)]"
+                className="hidden sm:table-cell px-4 py-3 text-right text-sm font-semibold text-[var(--text-muted)]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 Population
               </th>
               <th
-                className="px-4 py-3 text-right text-sm font-semibold text-[var(--text-muted)]"
+                className="px-2 sm:px-4 py-3 text-right text-sm font-semibold text-[var(--text-muted)]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 Score
@@ -221,7 +225,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
   onClick={() => window.location.href = `/rankings/${metro.slug}`}
 >
                 <td
-                  className="px-4 py-3 text-sm font-semibold"
+                  className="px-2 sm:px-4 py-3 text-sm font-semibold"
                   style={{
                     fontFamily: "'JetBrains Mono', monospace",
                     color: 'var(--accent)',
@@ -229,7 +233,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                 >
                   #{metro.rank}
                 </td>
-                <td className="px-4 py-3">
+                <td className="px-2 sm:px-4 py-3">
   <a href={`/rankings/${metro.slug}`} className="block">
     <div className="font-semibold text-[var(--text)] hover:text-[var(--accent)] transition">
       {metro.name}
@@ -239,7 +243,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                     </div>
                   </a>
                 </td>
-                <td className="px-4 py-3 text-sm">
+                <td className="px-2 sm:px-4 py-3 text-sm">
                   <div
                     className="w-2 h-2 rounded-full"
                     style={{
@@ -249,15 +253,15 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                   />
                 </td>
                 <td
-                  className="px-4 py-3 text-right text-sm text-[var(--text)]"
+                  className="hidden sm:table-cell px-4 py-3 text-right text-sm text-[var(--text)]"
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >
                   {formatPop(metro.pop)}
                 </td>
-                <td className="px-4 py-3 text-right">
+                <td className="px-2 sm:px-4 py-3 text-right">
                   <div className="flex items-center justify-end gap-2">
                     <div
-                      className="h-1 bg-[var(--accent)] rounded-full"
+                      className="hidden sm:block h-1 bg-[var(--accent)] rounded-full"
                       style={{
                         width: `${(metro.score / maxScore) * 80}px`,
                       }}

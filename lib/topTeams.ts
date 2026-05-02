@@ -288,8 +288,8 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rank: 39,
     metro: "Buenos Aires",
     sport: "Football",
-    team: "Boca Juniors",
-    rationale: "35 Argentine Primera titles, 6 Copa Libertadores (tied-most), home of Maradona's myth at La Bombonera. River Plate (38 titles, 4 Libertadores) is an equally valid choice , two of the biggest clubs on earth share this metro.",
+    team: "Boca Juniors / River Plate",
+    rationale: "Buenos Aires is uniquely co-headlined by two of the biggest clubs on earth. River Plate: 38 Argentine Primera titles (most ever) and 4 Copa Libertadores including 2018 vs Boca. Boca Juniors: 35 Primera titles and 6 Copa Libertadores (tied-most), home of Maradona's myth at La Bombonera. The Superclasico is widely regarded as world football's fiercest rivalry.",
   },
   {
     rank: 40,
