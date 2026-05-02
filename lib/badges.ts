@@ -28,6 +28,19 @@ export type QualifyingMetro = {
   contextValue: number;
   contextLabel: string;
   tier?: string;
+  // Isolated Capital: the nearest peer at or above the capital's own rank.
+  peerSlug?: string;
+  peerName?: string;
+  peerCountry?: string;
+  peerRank?: number;
+  // Twin Metros: the connected-component cluster this metro belongs to.
+  cluster?: {
+    id: string;
+    size: number;
+    diameterKm: number;
+    otherSlugs: string[];
+    otherNames: string[];
+  };
 };
 
 export type Badge = {
@@ -92,6 +105,83 @@ function computeFromCsv(csvPath: string, valueColumn: string, contextLabel: stri
   return out;
 }
 
+// Shared helper for the Twin Metros + Megaregions cluster CSVs. Reads any
+// cluster CSV that follows the schema written by scripts/generate-distance-
+// badges.py (slug, name, country, rank, cluster_id, cluster_size,
+// cluster_diameter_km, cluster_member_slugs, cluster_member_names,
+// cluster_other_slugs, cluster_other_names, tier).
+function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
+  const csv = loadCsv(csvPath);
+  const { bySlug } = getMetroIndex();
+  // Group rows by cluster_id and compute each cluster's best rank
+  const byCluster = new Map<string, { metaList: QualifyingMetro[]; bestRank: number }>();
+  for (const row of csv) {
+    const meta = bySlug.get(row.slug);
+    if (!meta) continue;
+    const size = parseInt(row.cluster_size, 10);
+    const diameter = parseFloat(row.cluster_diameter_km);
+    if (isNaN(size) || isNaN(diameter)) continue;
+    const otherSlugs = row.cluster_other_slugs ? row.cluster_other_slugs.split(";").filter(Boolean) : [];
+    const otherNames = row.cluster_other_names ? row.cluster_other_names.split(";").filter(Boolean) : [];
+    const qm: QualifyingMetro = {
+      slug: meta.slug, name: meta.name, country: meta.country,
+      rank: meta.rank, score: meta.score,
+      contextValue: diameter, contextLabel: "Cluster diameter",
+      tier: row.tier || undefined,
+      cluster: { id: row.cluster_id, size, diameterKm: diameter, otherSlugs, otherNames },
+    };
+    const cid = row.cluster_id;
+    const entry = byCluster.get(cid);
+    if (entry) {
+      entry.metaList.push(qm);
+      if (meta.rank < entry.bestRank) entry.bestRank = meta.rank;
+    } else {
+      byCluster.set(cid, { metaList: [qm], bestRank: meta.rank });
+    }
+  }
+  const sortedClusters = [...byCluster.entries()].sort((a, b) => a[1].bestRank - b[1].bestRank);
+  const out: QualifyingMetro[] = [];
+  for (const [, { metaList }] of sortedClusters) {
+    metaList.sort((a, b) => a.rank - b.rank);
+    out.push(...metaList);
+  }
+  return out;
+}
+
+function computeTwinClusters(): QualifyingMetro[] {
+  return computeClustersFromCsv("public/data/twin-metros.csv");
+}
+
+function computeMegaregionClusters(): QualifyingMetro[] {
+  return computeClustersFromCsv("public/data/megaregions.csv");
+}
+
+// Isolated Capital: capitals where the nearest peer at or above the capital's
+// own rank is more than 300 km. Sorted by distance descending: most-isolated
+// first.
+function computeIsolatedCapitalRows(): QualifyingMetro[] {
+  const csv = loadCsv("public/data/isolated-capital.csv");
+  const { bySlug } = getMetroIndex();
+  const out: QualifyingMetro[] = [];
+  for (const row of csv) {
+    const meta = bySlug.get(row.slug);
+    const value = parseFloat(row.distance_km);
+    if (!meta || isNaN(value)) continue;
+    out.push({
+      slug: meta.slug, name: meta.name, country: meta.country,
+      rank: meta.rank, score: meta.score,
+      contextValue: value, contextLabel: "km to nearest peer of equal or greater rank",
+      tier: row.tier || undefined,
+      peerSlug: row.peer_slug || undefined,
+      peerName: row.peer_name || undefined,
+      peerCountry: row.peer_country || undefined,
+      peerRank: row.peer_rank ? parseInt(row.peer_rank, 10) : undefined,
+    });
+  }
+  out.sort((a, b) => b.contextValue - a.contextValue);
+  return out;
+}
+
 // ---------- Live computes ----------
 
 function computeUniversityTown(): QualifyingMetro[] {
@@ -149,6 +239,9 @@ function computeCultureCapital() { return computeFromCsv("public/data/culture-ca
 function computeSportsMecca() { return computeFromCsv("public/data/sports-mecca.csv", "sports_score", "Sports composite"); }
 function computeRailHub() { return computeFromCsv("public/data/rail-hub.csv", "rail_score", "Rail composite"); }
 function computeOverperformer() { return computeFromCsv("public/data/overperformer.csv", "multiple", "Pop-rank to score-rank multiple"); }
+function computeTwinMetros() { return computeTwinClusters(); }
+function computeMegaregions() { return computeMegaregionClusters(); }
+function computeIsolatedCapital() { return computeIsolatedCapitalRows(); }
 
 // ---------- Tier registries ----------
 
@@ -164,6 +257,23 @@ const SKYLINE_CITY_TIERS: BadgeTier[] = [
   { slug: "B", name: "Tier B — Skyline-defined", description: "Skyscrapers contribute 65 to 80% of the composite. The skyline is most of what the city is.", accentHex: "#FF8C42" },
   { slug: "C", name: "Tier C — Skyline-anchored", description: "Skyscrapers contribute 50 to 65% of the composite. The vertical buildup is the largest single contributor.", accentHex: "#F0B27A" },
   { slug: "D", name: "Tier D — Skyline-leading", description: "Skyscrapers contribute 40 to 50% of the composite. The skyline is the #1 dimension; the metro has a meaningful second leg.", accentHex: "#F7DC6F" },
+];
+
+const TWIN_METROS_TIERS: BadgeTier[] = [
+  { slug: "A", name: "Tier A — Triplet", description: "Three metros connected by 75 km links. The classic three-city cluster (Vatican-Rome-Latina, Singapore-Johor Bahru-Batam, El Paso-Ciudad Juárez-Las Cruces, Tunis-Kinshasa-Brazzaville).", accentHex: "#22D3EE" },
+  { slug: "B", name: "Tier B — Pair", description: "Two metros within 75 km. The original twin-city archetype, including the canonical cross-border pairs (Detroit-Windsor, San Diego-Tijuana, Vienna-Bratislava, Hong Kong-Macau, Copenhagen-Malmö, Liège-Maastricht, Manama-Dammam, Amman-Jerusalem).", accentHex: "#60A5FA" },
+];
+
+const MEGAREGIONS_TIERS: BadgeTier[] = [
+  { slug: "A", name: "Tier A — Megaregion", description: "Fifteen or more metros connected by 75 km links. Trans-national megaregions where economic gravity flows through a network rather than a single core (Rhine-Ruhr-Amsterdam-Brussels at 42 metros, the UK industrial belt at 37, Frankfurt-Zurich-Strasbourg-Luxembourg at 27, the Po Valley at 15, Lyon-Geneva-Alpine at 15).", accentHex: "#0E7490" },
+  { slug: "B", name: "Tier B — Large cluster", description: "Eight to fourteen metros connected by 75 km links. Substantial regional clusters that don't quite reach megaregion scale (Aarhus-Jutland at 13, Bilbao-Bayonne at 11, Krakow-Upper Silesia at 9, Edinburgh-Central Scotland at 8, Toulouse-Languedoc at 8).", accentHex: "#0891B2" },
+  { slug: "C", name: "Tier C — Small cluster", description: "Four to seven metros connected by 75 km links. Tightly-packed regional pairs and triads that exceed the binary-twin threshold (Toronto-Buffalo-Niagara, Florence-Pisa-Siena-Lucca, Hartford-New Haven-Springfield, Lahore-Amritsar-Gujranwala-Sialkot).", accentHex: "#06B6D4" },
+];
+
+const ISOLATED_CAPITAL_TIERS: BadgeTier[] = [
+  { slug: "A", name: "Tier A — Continental remoteness", description: "More than 800 km from the nearest peer of equal or greater rank. Capitals where the next comparable metro is on the other side of the country, the continent, or an ocean.", accentHex: "#92400E" },
+  { slug: "B", name: "Tier B — Deeply isolated", description: "Between 500 and 800 km from the nearest peer of equal or greater rank. Reachable but never near. Many of these are deliberate inland or symbolic capitals.", accentHex: "#B45309" },
+  { slug: "C", name: "Tier C — Isolated", description: "Between 240 and 500 km from the nearest peer of equal or greater rank. Beyond same-day commute, but inside the regional sphere of a larger comparable metro.", accentHex: "#D97706" },
 ];
 
 // ---------- Badge registry ----------
@@ -225,15 +335,21 @@ export const BADGES: Badge[] = [
   },
   {
     slug: "twin-metros", name: "Twin Metros", emoji: "🔗",
-    shortDesc: "Within commuting reach of another top-500 metro.",
-    longDesc: "Metros that sit within a defined distance of another top-500 metro, sharing a labor market and often a polycentric economy. Coming soon.",
-    status: "coming-soon",
+    shortDesc: "Pairs and triplets of metros within 75 km of each other.",
+    longDesc: "Two- and three-metro clusters connected by 75 km links, the original twin-city archetype. Tier A holds the triplets (Vatican-Rome-Latina, Singapore-Johor Bahru-Batam, El Paso-Ciudad Juárez-Las Cruces, Limassol-Nicosia-Larnaca, Tunis-Kinshasa-Brazzaville). Tier B holds the binary pairs, where the canonical cross-border twins live (Detroit-Windsor at 2 km, El Paso-Ciudad Juárez at 10 km, Kinshasa-Brazzaville at 11 km, Nice-Monaco at 12 km, Jerusalem-Ramallah at 14 km, Maastricht-Genk at 17 km, Singapore-Johor Bahru at 18 km, San Diego-Tijuana at 24 km, Vienna-Bratislava at 55 km, Hong Kong-Macau at 66 km), alongside polycentric same-country pairs (Boston-Providence, Florence-Pisa, Glasgow-Edinburgh, Sydney-Wollongong). Larger clusters of four or more metros are surfaced separately under the Megaregions badge.",
+    methodologyAnchor: "#population", status: "live", tiers: TWIN_METROS_TIERS, compute: computeTwinMetros,
+  },
+  {
+    slug: "megaregions", name: "Megaregions", emoji: "🌐",
+    shortDesc: "Cluster of four or more metros connected by 75 km links.",
+    longDesc: "Connected-component clusters of four or more metros where each member sits within 75 km of at least one other member. The result is a map of the world's polycentric economic networks: the 42-metro Rhine-Ruhr corridor stretching from Amsterdam through Brussels, Antwerp and Lille into the German interior; the 37-metro UK industrial belt anchored on London; the 27-metro Rhine-Alpine corridor centred on Frankfurt-Zurich-Basel; the 15-metro Po Valley from Milan through Bologna; the 15-metro Lyon-Geneva-Alpine cluster; the 13-metro Jutland network; the 11-metro Basque Country/Aquitaine cluster; the 9-metro Krakow-Upper Silesia conurbation; the 8-metro Edinburgh-Central Scotland; the 8-metro Toulouse-Languedoc; the 7-metro Israel-Palestine-Jordan cluster (Tel-Aviv, Jerusalem, Amman, Beer Sheva, Irbid, Gaza, Ramallah). Tier breakdown is by cluster size: A is 15+, B is 8-14, C is 4-7. Each cluster is ranked by its most prominent member.",
+    methodologyAnchor: "#population", status: "live", tiers: MEGAREGIONS_TIERS, compute: computeMegaregions,
   },
   {
     slug: "isolated-capital", name: "Isolated Capital", emoji: "🏔️",
-    shortDesc: "No top-500 metro within commuting reach.",
-    longDesc: "Metros that are geographically isolated from any peer in the top 500. The opposite of Twin Metros. Coming soon.",
-    status: "coming-soon",
+    shortDesc: "National capitals more than 240 km from any peer of equal or greater rank.",
+    longDesc: "National capitals where no metro at or above the capital's own composite rank sits within 240 km. The peer-comparability rule replaces a hard rank floor: the disqualifying peer must be at least as prominent as the capital itself, so a small domestic neighbour does not knock a major capital off the list. Surfaces the deliberately-isolated planned capitals (Brasília 872 km to São Paulo, Madrid 1053 km to Paris, Buenos Aires 1675 km to São Paulo, Santiago 1139 km to Buenos Aires, Canberra 247 km to Sydney) alongside the geographically-isolated island and continental-gravity capitals (Nuuk, Reykjavík, Honiara, Papeete, Hamilton Bermuda, Avarua, Windhoek, Mogadishu, Port Moresby, Ulan Bator, Bangui, Antananarivo). Top-tier global capitals also surface mathematically because they have very few peers of equal rank anywhere on Earth (London, Tokyo, Paris, Beijing, Moscow). Sorted by distance descending: most-isolated first.",
+    methodologyAnchor: "#population", status: "live", tiers: ISOLATED_CAPITAL_TIERS, compute: computeIsolatedCapital,
   },
 ];
 

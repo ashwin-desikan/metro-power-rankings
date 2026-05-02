@@ -53,6 +53,15 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-03",
+    headline: "Twin Metros, Megaregions, Isolated Capital badges live",
+    items: [
+      "Twin Metros holds binary pairs and triplets connected by 75 km links: Detroit-Windsor, San Diego-Tijuana, Vienna-Bratislava, Singapore-Johor Bahru, Vatican-Rome-Latina.",
+      "Megaregions holds clusters of 4+ metros: the 42-metro Rhine-Ruhr corridor, the 37-metro UK industrial belt, the 27-metro Frankfurt-Zurich axis, and 29 smaller clusters.",
+      "Isolated Capital lists national capitals more than 240 km from any peer of equal or greater rank, surfacing Brasília, Madrid, Buenos Aires, Santiago, Canberra, Wellington.",
+    ],
+  },
+  {
     date: "2026-05-02",
     headline: "Badges launch: categorical lenses on the dataset",
     items: [

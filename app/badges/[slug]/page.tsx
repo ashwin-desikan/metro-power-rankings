@@ -73,6 +73,9 @@ function formatContextValue(badgeSlug: string, value: number): string {
   if (badgeSlug === "overperformer") {
     return `${value.toFixed(1)}x`;
   }
+  if (badgeSlug === "twin-metros" || badgeSlug === "megaregions" || badgeSlug === "isolated-capital") {
+    return `${value.toFixed(0)} km`;
+  }
   return value.toFixed(1);
 }
 
@@ -104,6 +107,34 @@ function MetroRow({
         <span className="text-sm text-[var(--text-muted)] ml-2">
           {metro.country}
         </span>
+        {metro.cluster && metro.cluster.otherSlugs.length > 0 ? (
+          <div className="text-xs text-[var(--text-muted)] mt-0.5">
+            <span aria-hidden="true">↔ </span>
+            {metro.cluster.otherSlugs.map((s, i) => (
+              <span key={s}>
+                <Link href={`/rankings/${s}`} className="hover:text-[var(--accent)]">
+                  {metro.cluster!.otherNames[i] ?? s}
+                </Link>
+                {i < metro.cluster!.otherSlugs.length - 1 ? <span>, </span> : null}
+              </span>
+            ))}
+            <span className="text-[var(--text-dim)]"> ({metro.cluster.size} metros, {metro.cluster.diameterKm.toFixed(0)} km diameter)</span>
+          </div>
+        ) : metro.peerName && metro.peerSlug ? (
+          <div className="text-xs text-[var(--text-muted)] mt-0.5">
+            <span aria-hidden="true">nearest peer: </span>
+            <Link
+              href={`/rankings/${metro.peerSlug}`}
+              className="hover:text-[var(--accent)]"
+            >
+              {metro.peerName}
+            </Link>
+            {metro.peerRank ? <span className="text-[var(--text-dim)]"> (#{metro.peerRank})</span> : null}
+            {metro.peerCountry && metro.peerCountry !== metro.country ? (
+              <span className="text-[var(--text-dim)]"> ({metro.peerCountry})</span>
+            ) : null}
+          </div>
+        ) : null}
       </td>
       {showTier && metro.tier ? (
         <td
