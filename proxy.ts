@@ -2,8 +2,9 @@
 // /api/admin paths. Cookie value is sha256(password + ADMIN_SALT). The
 // /admin/login page sets the cookie; /api/admin/logout clears it.
 //
-// We use Web Crypto (available in Edge runtime) so the same logic runs
-// on Vercel Edge without a Node runtime override.
+// Renamed from middleware.ts in Next.js 16: the file convention is now
+// proxy.ts and the function is `proxy` (default export). The Node runtime
+// is the only supported runtime for proxy; Web Crypto APIs still work.
 
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
@@ -27,7 +28,7 @@ function timingSafeEqual(a: string, b: string): boolean {
   return mismatch === 0;
 }
 
-export async function middleware(req: NextRequest) {
+export default async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   // Allow the login page itself and the login API to pass through.
