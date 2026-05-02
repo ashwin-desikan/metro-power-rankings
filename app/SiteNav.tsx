@@ -68,6 +68,15 @@ export default function SiteNav() {
           >
             Regions
           </a>
+          <a
+            href="/random"
+            className="text-sm hover:text-[var(--accent)] transition-colors"
+            title="Roll a tier-weighted random metro"
+            aria-label="Random metro"
+          >
+            <span aria-hidden="true">🎲</span>
+            <span className="sr-only">Random metro</span>
+          </a>
           <div className="relative group">
             <button
               type="button"
@@ -172,6 +181,12 @@ export default function SiteNav() {
             className="text-sm hover:text-[var(--accent)] transition-colors"
           >
             Methodology
+          </Link>
+          <Link
+            href="/about"
+            className="text-sm hover:text-[var(--accent)] transition-colors"
+          >
+            About
           </Link>
           {updated && (
             <a
