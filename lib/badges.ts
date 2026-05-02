@@ -1,0 +1,320 @@
+// Badges layer. Each badge is a categorical lens over the existing metros
+// dataset — no new data ingestion. Each live badge becomes an indexable
+// long-tail destination that reframes the same data through a different
+// question. See BACKLOG.md "Badges layer" for the full design spec.
+//
+// Adding a new badge: define the entry in BADGES, optionally implement a
+// `compute` function that returns the qualifying metros. Stub badges are
+// fine — they appear on the /badges index with a "coming soon" treatment.
+
+import { readFileSync, existsSync } from "fs";
+import { join } from "path";
+import { getAllMetros } from "./data";
+import type { Metro } from "./shared";
+
+// ---------- Types ----------
+
+export type BadgeStatus = "live" | "coming-soon";
+
+export type BadgeTier = {
+  slug: string;
+  name: string;
+  description: string;
+  accentHex: string;
+};
+
+export type QualifyingMetro = {
+  slug: string;
+  name: string;
+  country: string;
+  rank: number;
+  score: number;
+  contextValue: number;
+  contextLabel: string;
+  tier?: string;
+};
+
+export type Badge = {
+  slug: string;
+  name: string;
+  emoji: string;
+  shortDesc: string;
+  longDesc: string;
+  methodologyAnchor?: string;
+  status: BadgeStatus;
+  tiers?: BadgeTier[];
+  compute?: () => QualifyingMetro[];
+};
+
+// ---------- Helpers used by compute functions ----------
+
+function loadCsv(relPath: string): Record<string, string>[] {
+  const path = join(process.cwd(), relPath);
+  if (!existsSync(path)) return [];
+  const raw = readFileSync(path, "utf-8");
+  const lines = raw.split(/\r?\n/).filter((l) => l.length > 0);
+  if (lines.length === 0) return [];
+  const headers = lines[0].split(",");
+  return lines.slice(1).map((line) => {
+    const cells = line.split(",");
+    const row: Record<string, string> = {};
+    headers.forEach((h, i) => {
+      row[h] = cells[i] ?? "";
+    });
+    return row;
+  });
+}
+
+// ---------- Live computes ----------
+
+function computeUniversityTown(): QualifyingMetro[] {
+  const csv = loadCsv("public/data/academic-gravity-wells.csv");
+  const metros = getAllMetros();
+  const metroByName = new Map<string, Metro>();
+  for (const m of metros) metroByName.set(m.name, m);
+
+  const out: QualifyingMetro[] = [];
+  for (const row of csv) {
+    const meta = metroByName.get(row.name);
+    const share = parseFloat(row.uni_share_pct);
+    if (!meta || isNaN(share)) continue;
+    out.push({
+      slug: meta.slug,
+      name: meta.name,
+      country: meta.country,
+      rank: meta.rank,
+      score: meta.score,
+      contextValue: share,
+      contextLabel: "University share",
+      tier: row.tier,
+    });
+  }
+  out.sort((a, b) => b.contextValue - a.contextValue);
+  return out;
+}
+
+function computeMegacity(): QualifyingMetro[] {
+  const metros = getAllMetros();
+  return metros
+    .filter((m) => (m.pop ?? 0) >= 5_000_000)
+    .map((m) => ({
+      slug: m.slug,
+      name: m.name,
+      country: m.country,
+      rank: m.rank,
+      score: m.score,
+      contextValue: m.pop,
+      contextLabel: "Population",
+    }))
+    .sort((a, b) => b.contextValue - a.contextValue);
+}
+
+function computeSkylineCity(): QualifyingMetro[] {
+  const csv = loadCsv("public/data/skyline-cities.csv");
+  const metros = getAllMetros();
+  const metroByName = new Map<string, Metro>();
+  for (const m of metros) metroByName.set(m.name, m);
+
+  const out: QualifyingMetro[] = [];
+  for (const row of csv) {
+    const meta = metroByName.get(row.name);
+    const share = parseFloat(row.sky_share_pct);
+    if (!meta || isNaN(share)) continue;
+    out.push({
+      slug: meta.slug,
+      name: meta.name,
+      country: meta.country,
+      rank: meta.rank,
+      score: meta.score,
+      contextValue: share,
+      contextLabel: "Skyscraper share",
+      tier: row.tier,
+    });
+  }
+  out.sort((a, b) => b.contextValue - a.contextValue);
+  return out;
+}
+
+// ---------- Registry ----------
+
+const UNIVERSITY_TOWN_TIERS: BadgeTier[] = [
+  {
+    slug: "A",
+    name: "Tier A — Pure gravity well",
+    description: "Universities contribute 80% or more of the composite. The university IS the city.",
+    accentHex: "#7c3aed",
+  },
+  {
+    slug: "B",
+    name: "Tier B — University-defined",
+    description: "Universities contribute 65 to 80% of the composite. The university is most of what the city is.",
+    accentHex: "#7B68EE",
+  },
+  {
+    slug: "C",
+    name: "Tier C — University-anchored",
+    description: "Universities contribute 50 to 65% of the composite. The university is the largest single contributor.",
+    accentHex: "#4ECDC4",
+  },
+  {
+    slug: "D",
+    name: "Tier D — University-leading",
+    description: "Universities contribute 40 to 50% of the composite. The university is the #1 dimension; the metro has a real second leg.",
+    accentHex: "#82E0AA",
+  },
+];
+
+const SKYLINE_CITY_TIERS: BadgeTier[] = [
+  {
+    slug: "A",
+    name: "Tier A — Skyline IS the city",
+    description: "Skyscrapers contribute 80% or more of the composite. In most cases this is municipal-debt-driven vertical construction, not organic urban density.",
+    accentHex: "#E74C3C",
+  },
+  {
+    slug: "B",
+    name: "Tier B — Skyline-defined",
+    description: "Skyscrapers contribute 65 to 80% of the composite. The skyline is most of what the city is.",
+    accentHex: "#FF8C42",
+  },
+  {
+    slug: "C",
+    name: "Tier C — Skyline-anchored",
+    description: "Skyscrapers contribute 50 to 65% of the composite. The vertical buildup is the largest single contributor.",
+    accentHex: "#F0B27A",
+  },
+  {
+    slug: "D",
+    name: "Tier D — Skyline-leading",
+    description: "Skyscrapers contribute 40 to 50% of the composite. The skyline is the #1 dimension; the metro has a meaningful second leg.",
+    accentHex: "#F7DC6F",
+  },
+];
+
+export const BADGES: Badge[] = [
+  {
+    slug: "university-town",
+    name: "University Town",
+    emoji: "🎓",
+    shortDesc: "Cities where one university dominates the score.",
+    longDesc: "Metros where the universities dimension is the single largest contributor to the composite score. Includes the pure gravity wells (Uppsala, Leiden, Göttingen) where the university accounts for 80% or more, alongside the diversified university cities where the institution is the anchor without being the entirety. Drawn from the Academic Gravity Wells analysis.",
+    methodologyAnchor: "#universities",
+    status: "live",
+    tiers: UNIVERSITY_TOWN_TIERS,
+    compute: computeUniversityTown,
+  },
+  {
+    slug: "skyline-city",
+    name: "Skyline City",
+    emoji: "🏙️",
+    shortDesc: "Cities where skyscrapers dominate the entire score.",
+    longDesc: "Metros where the skyscrapers dimension is the single largest contributor to the composite score. Some entries reflect organic vertical density (a finance or tourism economy that built upward to match its capital). Most reflect municipal-debt-driven vertical construction outpacing every other dimension of urban infrastructure: second- and third-tier Chinese cities, Gulf marble capitals, tower-tourism enclaves where the skyline is the city. Drawn from the 85% Illusion analysis.",
+    methodologyAnchor: "#skyscrapers",
+    status: "live",
+    tiers: SKYLINE_CITY_TIERS,
+    compute: computeSkylineCity,
+  },
+  {
+    slug: "megacity",
+    name: "Megacity",
+    emoji: "🌆",
+    shortDesc: "Metros above 5 million population.",
+    longDesc: "The conventional 5-million-plus threshold for a megacity. Population alone does not produce score dominance in the composite ranking, but it does set the stage for every other dimension to compound. Sorted by metro population.",
+    methodologyAnchor: "#population",
+    status: "live",
+    compute: computeMegacity,
+  },
+  {
+    slug: "global-gateway",
+    name: "Global Gateway",
+    emoji: "✈️",
+    shortDesc: "Top decile on airport infrastructure and passenger traffic.",
+    longDesc: "Metros where the airport dimension is in the top 10% globally. Coming soon.",
+    methodologyAnchor: "#airport-score",
+    status: "coming-soon",
+  },
+  {
+    slug: "finance-capital",
+    name: "Finance Capital",
+    emoji: "💼",
+    shortDesc: "Top decile on market capitalization and exchanges.",
+    longDesc: "Metros where listed-company market cap and exchange infrastructure put them in the top 10% globally. Coming soon.",
+    methodologyAnchor: "#market-cap",
+    status: "coming-soon",
+  },
+  {
+    slug: "culture-capital",
+    name: "Culture Capital",
+    emoji: "🎭",
+    shortDesc: "Top decile across cultural events, museums, and Michelin density.",
+    longDesc: "Metros where cultural infrastructure (events, museums and landmarks, Michelin-starred dining) places them in the top 10% globally. Coming soon.",
+    methodologyAnchor: "#cultural-events",
+    status: "coming-soon",
+  },
+  {
+    slug: "sports-mecca",
+    name: "Sports Mecca",
+    emoji: "🏟️",
+    shortDesc: "Top decile on sports teams plus major sporting events.",
+    longDesc: "Metros where the combination of major league teams, total teams, and major sporting events places them in the top 10% globally. Coming soon.",
+    methodologyAnchor: "#major-league-teams",
+    status: "coming-soon",
+  },
+  {
+    slug: "rail-hub",
+    name: "Rail Hub",
+    emoji: "🚆",
+    shortDesc: "Top decile on metro stations plus intercity rail.",
+    longDesc: "Metros where the combination of metro stations, suburban stations, and intercity train hubs places them in the top 10% globally. Coming soon.",
+    methodologyAnchor: "#metro-stations",
+    status: "coming-soon",
+  },
+  {
+    slug: "twin-metros",
+    name: "Twin Metros",
+    emoji: "🔗",
+    shortDesc: "Within commuting reach of another top-500 metro.",
+    longDesc: "Metros that sit within a defined distance of another top-500 metro, sharing a labor market and often a polycentric economy. Coming soon.",
+    status: "coming-soon",
+  },
+  {
+    slug: "isolated-capital",
+    name: "Isolated Capital",
+    emoji: "🏔️",
+    shortDesc: "No top-500 metro within commuting reach.",
+    longDesc: "Metros that are geographically isolated from any peer in the top 500. The opposite of Twin Metros. Coming soon.",
+    status: "coming-soon",
+  },
+  {
+    slug: "overperformer",
+    name: "Overperformer",
+    emoji: "📈",
+    shortDesc: "Score punches well above population weight.",
+    longDesc: "Metros where the composite score sits much higher than the population rank: concentrated capital, talent, or institutional gravity that doesn't require scale. Coming soon.",
+    methodologyAnchor: "#population",
+    status: "coming-soon",
+  },
+];
+
+// ---------- Public API ----------
+
+export function getAllBadges(): Badge[] {
+  return BADGES;
+}
+
+export function getLiveBadges(): Badge[] {
+  return BADGES.filter((b) => b.status === "live");
+}
+
+export function getBadge(slug: string): Badge | undefined {
+  return BADGES.find((b) => b.slug === slug);
+}
+
+export function getQualifyingMetros(badge: Badge): QualifyingMetro[] {
+  if (badge.status !== "live" || !badge.compute) return [];
+  return badge.compute();
+}
+
+export function getLiveBadgeSlugs(): string[] {
+  return getLiveBadges().map((b) => b.slug);
+}

@@ -1,0 +1,83 @@
+tier,rank,slug,name,country,score,pop,skyscrapers,sky_share_pct,second_dim
+A,502,bentong,Bentong,Malaysia,4.5,116799,6,99.1,population
+A,692,benidorm,Benidorm,Spain,2.8,189389,3,97.7,population
+A,453,laibin,Laibin,China,5.1,2074611,6,86.5,population
+A,845,fujairah,Fujairah,United Arab Emirates,2.0,114356,2,85.6,otherTeams
+A,255,itajai,Itajai,Brazil,10.2,532640,33,84.6,museumsLandmarks
+A,435,beihai,Beihai,China,5.3,1853227,6,83.6,population
+A,721,fangchenggang,Fangchenggang,China,2.6,1046068,2,83.1,population
+A,258,liuzhou,Liuzhou,China,10.1,4157934,25,83.0,population
+A,405,malacca-city,Malacca City,Malaysia,5.8,998428,5,82.7,population
+A,617,ashgabat,Ashgabat,Turkmenistan,3.3,1030063,3,82.1,population
+A,817,nha-trang,Nha Trang,Vietnam,2.1,422601,2,81.4,airportScore
+B,305,chonburi,Chonburi,Thailand,8.3,1711400,14,79.2,portsExchangesInfra
+B,348,rizhao,Rizhao,China,7.1,2968365,9,76.8,population
+B,773,batumi,Batumi,Georgia,2.3,234600,2,74.8,otherTeams
+B,203,johor-bahru,Johor Bahru,Malaysia,13.6,2214006,35,73.4,portsExchangesInfra
+B,296,mecca,Mecca,Saudi Arabia,8.5,2427924,9,72.1,culturalEvents
+B,189,george-town,George Town,Malaysia,14.3,2623088,38,71.6,portsExchangesInfra
+B,464,joao-pessoa,João Pessoa,Brazil,4.9,1393026,4,69.5,suburbStations
+B,359,huzhou,Huzhou,China,6.8,3367579,5,69.2,population
+B,370,cartagena,Cartagena,Colombia,6.5,1311359,6,68.0,airportScore
+B,147,nanning,Nanning,China,19.0,8741584,94,66.0,population
+B,171,guiyang,Guiyang,China,15.8,5987018,39,65.5,population
+B,713,shanwei,Shanwei,China,2.6,2738482,2,65.3,population
+C,429,limassol,Limassol,Cyprus,5.4,204605,3,64.9,otherTeams
+C,346,yichang,Yichang,China,7.1,3762407,5,64.9,population
+C,150,panama-city,Panama City,Panama,18.6,2089953,68,64.8,metroStations
+C,274,zhanjiang,Zhanjiang,China,9.2,6981236,11,64.8,population
+C,267,astana,Astana,Kazakhstan,9.5,1472050,8,64.6,otherTeams
+C,378,cebu,Cebu,Philippines,6.4,5151274,4,63.6,population
+C,432,ordos,Ordos,China,5.3,2153638,3,62.7,population
+C,254,goiania,Goiania,Brazil,10.3,2747710,9,62.1,otherTeams
+C,619,st-catharines-niagara,St. Catharines-Niagara,Canada,3.3,539180,2,61.4,museumsLandmarks
+C,303,wuhu,Wuhu,China,8.3,3644420,6,61.1,metroStations
+C,185,taiyuan,Taiyuan,China,14.6,5304061,21,60.9,population
+C,232,pyongyang,Pyongyang,North Korea,11.8,4481967,18,60.7,population
+C,674,yinchuan,Yinchuan,China,2.9,2859074,2,58.8,population
+C,658,zaozhuang,Zaozhuang,China,3.0,3855601,2,57.2,population
+C,294,pohang,Pohang,South Korea,8.6,501109,8,56.8,universities
+C,157,nanchang,Nanchang,China,17.7,6255007,41,56.7,universities
+C,155,kunming,Kunming,China,18.0,8460088,35,56.7,population
+C,277,yantai,Yantai,China,9.0,7102116,6,55.7,population
+C,301,taizhou,Taizhou,China,8.3,4512762,5,54.8,population
+C,184,haikou,Haikou,China,14.6,2873358,17,54.8,luxuryStars
+C,640,takamatsu,Takamatsu,Japan,3.1,950244,2,54.6,suburbStations
+C,639,kota-kinabalu,Kota Kinabalu,Malaysia,3.1,1017738,2,54.6,suburbStations
+C,635,luan,Lu'an,China,3.2,4393699,2,54.0,population
+C,148,ningbo,Ningbo,China,19.0,9404283,32,53.9,population
+C,224,urumqi,Urumqi,China,12.2,5667954,9,53.1,population
+C,234,gold-coast,Gold Coast,Australia,11.7,781182,11,53.1,majorLeagueTeams
+C,219,kaohsiung,Kaohsiung,Taiwan,12.5,2765932,9,53.1,metroStations
+C,176,shijiazhuang,Shijiazhuang,China,15.3,11235086,17,52.7,population
+C,334,jiaxing,Jiaxing,China,7.5,5400868,4,52.5,population
+C,230,wenzhou,Wenzhou,China,11.9,9572903,10,52.4,population
+C,512,zibo,Zibo,China,4.3,4704138,2,52.3,population
+C,164,manama,Manama,Bahrain,16.9,1501635,21,52.2,luxuryStars
+C,384,barranquilla,Barranquilla,Colombia,6.3,2384224,3,51.7,majorLeagueTeams
+C,204,surabaya,Surabaya,Indonesia,13.5,9924515,11,51.6,population
+C,179,lanzhou,Lanzhou,China,15.2,4359446,19,51.5,universities
+C,115,shenyang,Shenyang,China,24.5,9070093,102,51.4,population
+C,304,zhenjiang,Zhenjiang,China,8.3,3210418,5,51.4,universities
+C,174,changchun,Changchun,China,15.4,9066906,16,51.3,population
+C,273,beirut,Beirut,Lebanon,9.2,2136099,4,50.5,population
+C,231,nantong,Nantong,China,11.8,7726635,9,50.3,population
+D,169,taichung,Taichung,Taiwan,16.1,4087457,16,50.0,luxuryStars
+D,416,bratislava,Bratislava,Slovakia,5.7,723714,2,49.6,majorLeagueTeams
+D,134,jinan,Jinan,China,21.6,9202957,46,48.9,population
+D,579,guilin,Guilin,China,3.6,4931137,2,47.5,population
+D,117,dalian,Dalian,China,23.7,7450785,60,47.1,universities
+D,243,phnom-penh,Phnom Penh,Cambodia,11.0,2764578,6,46.9,luxuryStars
+D,130,hefei,Hefei,China,22.6,9369881,49,45.7,universities
+D,265,tulsa,Tulsa,United States,9.5,1180615,4,45.7,otherTeams
+D,160,monterrey,Monterrey,Mexico,17.4,5322117,15,45.5,majorLeagueTeams
+D,162,colombo,Colombo,Sri Lanka,17.1,6219000,16,45.0,population
+D,291,luoyang,Luoyang,China,8.6,7056699,4,45.0,population
+D,206,izmir,Izmir,Turkey,13.4,4367451,8,45.0,population
+D,278,sanya,Sanya,China,9.0,1031396,5,44.4,luxuryStars
+D,143,kuwait-city,Kuwait City,Kuwait,19.5,4616262,20,44.2,luxuryStars
+D,122,xiamen,Xiamen,China,23.6,5163970,41,43.1,luxuryStars
+D,188,daejeon,Daejeon,South Korea,14.4,4019004,12,42.8,universities
+D,149,fuzhou,Fuzhou,China,18.8,8291268,19,42.6,population
+D,222,caracas,Caracas,Venezuela,12.3,5091438,5,41.6,population
+D,441,lianyungang,Lianyungang,China,5.2,4599360,2,40.6,population

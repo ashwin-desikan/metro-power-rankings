@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllMetros } from "@/lib/data";
+import { getLiveBadgeSlugs } from "@/lib/badges";
 import { BASE_URL } from "@/lib/seo";
 
 // Read lastUpdate from meta.json to stamp sitemap entries.
@@ -60,12 +61,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${BASE_URL}/badges`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/updates`,
       lastModified: stamp,
       changeFrequency: "weekly",
       priority: 0.5,
     },
   ];
+
+  const badgeEntries: MetadataRoute.Sitemap = getLiveBadgeSlugs().map(
+    (slug) => ({
+      url: `${BASE_URL}/badges/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    }),
+  );
 
   const metroEntries: MetadataRoute.Sitemap = metros.map((m) => ({
     url: `${BASE_URL}/rankings/${m.slug}`,
@@ -97,5 +113,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...staticEntries, ...metroEntries, ...matchupEntries];
+  return [
+    ...staticEntries,
+    ...badgeEntries,
+    ...metroEntries,
+    ...matchupEntries,
+  ];
 }

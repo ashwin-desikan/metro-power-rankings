@@ -152,6 +152,18 @@ export default function SiteNav() {
                     Head-to-head metro pages
                   </div>
                 </a>
+                <a
+                  href="/badges"
+                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+                >
+                  <div className="font-medium">Badges</div>
+                  <div
+                    className="text-xs mt-0.5"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Categorical lenses over the dataset
+                  </div>
+                </a>
               </div>
             </div>
           </div>
