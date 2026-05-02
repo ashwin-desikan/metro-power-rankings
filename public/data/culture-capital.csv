@@ -7,19 +7,19 @@ rank,slug,name,country,score,pop,culture_score
 119,macau,Macau,Macau,23.7,681293,172.0
 7,los-angeles,Los Angeles,United States,109.8,18507255,169.0
 18,hong-kong,Hong Kong,Hong Kong,68.5,7411945,120.0
-14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,72.6,18126728,116.0
-5,san-francisco-san-jose,San Francisco-San Jose,United States,122.1,7979579,110.0
+14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,72.7,18126728,116.0
+5,san-francisco-san-jose,San Francisco-San Jose,United States,122.7,7979579,110.0
 26,miami,Miami,United States,62.0,6538896,106.0
 9,shanghai,Shanghai,China,104.5,50359413,100.0
 36,bangkok,Bangkok,Thailand,54.2,17310600,99.0
 10,washington-baltimore,Washington-Baltimore,United States,96.7,10204407,98.0
 279,cancun,Cancun,Mexico,9.0,934189,91.0
-6,beijing,Beijing,China,110.7,22560773,87.0
-13,boston,Boston,United States,87.3,6792923,83.0
+6,beijing,Beijing,China,110.8,22560773,87.0
+13,boston,Boston,United States,87.2,6792923,83.0
 225,denpasar,Denpasar,Indonesia,12.2,2457404,83.0
 154,nice,Nice,France,18.3,1114579,82.0
 25,singapore,Singapore,Singapore,63.9,5678287,79.0
-8,seoul,Seoul,South Korea,106.9,26043325,76.0
+8,seoul,Seoul,South Korea,107.0,26043325,76.0
 48,rome,Rome,Italy,47.5,4224901,76.0
 20,milan,Milan,Italy,67.5,7843262,75.0
 12,chicago,Chicago,United States,90.5,9941597,74.0
@@ -58,44 +58,34 @@ rank,slug,name,country,score,pop,culture_score
 56,vancouver,Vancouver,Canada,40.7,3471561,30.0
 15,sydney,Sydney,Australia,72.3,5497131,29.0
 23,sao-paulo,Sao Paulo,Brazil,65.3,22305115,29.0
-79,copenhagen,Copenhagen,Denmark,33.3,2144354,29.0
+79,copenhagen,Copenhagen,Denmark,33.4,2144354,29.0
 97,prague,Prague,Czech Republic,28.2,2035589,29.0
 106,budapest,Budapest,Hungary,26.6,3031160,29.0
-325,lucerne,Lucerne,Switzerland,7.8,355471,28.0
 372,marrakesh,Marrakesh,Morocco,6.5,1405373,28.0
-37,mumbai,Mumbai,India,54.0,23146605,27.0
-40,buenos-aires,Buenos Aires,Argentina,51.8,15188985,27.0
 447,bozeman,Bozeman,United States,5.2,126984,27.0
-21,houston,Houston,United States,65.3,7981303,26.0
-81,austin,Austin,United States,32.9,2550637,26.0
+40,buenos-aires,Buenos Aires,Argentina,51.8,15188985,27.0
+37,mumbai,Mumbai,India,54.0,23146605,27.0
+21,houston,Houston,United States,65.5,7981303,26.0
+81,austin,Austin,United States,33.0,2550637,26.0
 50,chengdu,Chengdu,China,46.0,20937757,25.0
-53,san-diego,San Diego,United States,42.0,3298799,24.0
-86,dublin,Dublin,Ireland,32.0,1705928,24.0
-107,edinburgh,Edinburgh,United Kingdom,26.5,887900,24.0
 164,manama,Manama,Bahrain,16.9,1501635,24.0
-29,philadelphia,Philadelphia,United States,60.5,7298206,23.0
-91,hamburg,Hamburg,Germany,30.0,4757307,23.0
-318,monterey,Monterey,United States,8.0,436251,23.0
 17,moscow,Moscow,Russia,70.3,21534777,22
-82,pittsburgh,Pittsburgh,United States,32.9,2626109,22.0
-85,new-orleans,New Orleans,United States,32.0,1487788,22.0
-462,siem-reap,Siem Reap,Cambodia,5.0,317793,22.0
 513,the-valley,The Valley,Anguilla,4.3,15701,22.0
-34,atlanta,Atlanta,United States,56.7,7258116,21.0
+462,siem-reap,Siem Reap,Cambodia,5.0,317793,22.0
 49,johannesburg,Johannesburg,South Africa,46.2,15099421,21.0
-77,phoenix,Phoenix,United States,33.5,5186958,21.0
-399,messina,Messina,Italy,5.9,594074,21.0
 509,victoria-sey,Victoria (SEY),Seychelles,4.3,88382,21.0
-88,portland,Portland,United States,31.7,3326675,20.0
 143,kuwait-city,Kuwait City,Kuwait,19.5,4616262,20.0
-471,bolzano,Bolzano,Italy,4.8,542134,20.0
-498,higuey,Higüey,Dominican Republic,4.5,318036,20.0
-55,denver,Denver,United States,40.9,3382760,19.0
-202,providence,Providence,United States,13.6,1700901,19.0
-508,chambery,Chambéry,France,4.3,290377,19.0
-32,dallas,Dallas,United States,57.5,8730700,18.0
 146,baku,Baku,Azerbaijan,19.2,3601738,18.0
-249,san-sebastian,San Sebastián,Spain,10.5,412581,18.0
-319,santa-barbara,Santa Barbara,United States,8.0,444500,17.0
-474,mula,Muğla,Turkey,4.8,983146,17.0
-522,liberia,Liberia,Costa Rica,4.2,76969,17.0
+553,thimphu,Thimphu,Bhutan,3.9,138736,16.0
+101,st-petersburg,St. Petersburg,Russia,27.1,6257471,14
+28,melbourne,Melbourne,Australia,61.1,5411094,13.0
+278,sanya,Sanya,China,9.0,1031396,12.0
+535,surat-thani,Surat Thani,Thailand,4.1,1062600,12.0
+51,delhi,Delhi,India,45.6,33446850,11
+140,hanoi,Hanoi,Vietnam,20.3,8993040,11.0
+410,kigali,Kigali,Rwanda,5.7,1745555,11.0
+361,naha,Naha,Japan,6.7,1467480,11.0
+103,perth,Perth,Australia,26.7,2364521,10.0
+73,changsha,Changsha,China,34.2,16676833,10.0
+549,utsunomiya,Utsunomiya,Japan,4.0,1027635,9.0
+165,fukuoka,Fukuoka,Japan,16.8,2607948,8.0

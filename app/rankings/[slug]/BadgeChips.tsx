@@ -6,6 +6,8 @@
 import Link from "next/link";
 import { getBadgesForMetro } from "@/lib/badges";
 
+// Tier letter (A/B/C/D) is rendered directly on the chip.
+
 export default function BadgeChips({ slug }: { slug: string }) {
   const badges = getBadgesForMetro(slug);
   if (badges.length === 0) return null;
@@ -15,23 +17,33 @@ export default function BadgeChips({ slug }: { slug: string }) {
       className="flex flex-wrap gap-2 mt-4"
       aria-label="Badges this metro qualifies for"
     >
-      {badges.map(({ badge }) => (
-        <Link
-          key={badge.slug}
-          href={`/badges/${badge.slug}`}
-          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-          style={{
-            backgroundColor: "var(--bg-card)",
-            borderColor: "var(--border)",
-            color: "var(--text)",
-            fontFamily: "'JetBrains Mono', monospace",
-          }}
-          title={badge.shortDesc}
-        >
-          <span aria-hidden="true">{badge.emoji}</span>
-          <span>{badge.name}</span>
-        </Link>
-      ))}
+      {badges.map(({ badge, qualifying }) => {
+        const isConurbation = badge.slug === "conurbations";
+        const tierLabel =
+          isConurbation && qualifying.tier
+            ? `Tier ${qualifying.tier}`
+            : undefined;
+        return (
+          <Link
+            key={badge.slug}
+            href={`/badges/${badge.slug}`}
+            className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            style={{
+              backgroundColor: "var(--bg-card)",
+              borderColor: "var(--border)",
+              color: "var(--text)",
+              fontFamily: "'JetBrains Mono', monospace",
+            }}
+            title={badge.shortDesc}
+          >
+            <span aria-hidden="true">{badge.emoji}</span>
+            <span>
+              {badge.name}
+              {tierLabel ? <span className="text-[var(--text-muted)]"> · {tierLabel}</span> : null}
+            </span>
+          </Link>
+        );
+      })}
     </div>
   );
 }

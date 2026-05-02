@@ -86,19 +86,30 @@ function MetroRow({
   metro,
   badgeSlug,
   showTier = false,
+  position,
 }: {
   metro: QualifyingMetro;
   badgeSlug: string;
   showTier?: boolean;
+  position?: number;
 }) {
   const tier = computeTier(metro.score);
+  // Conurbations: ranks A/B/C by descending list position; D uses the lead
+  // metro's own rank, prefixed "M" so the reader knows it's a metro rank
+  // rather than a conurbation rank.
+  const rankLabel =
+    badgeSlug === "conurbations"
+      ? metro.tier === "D"
+        ? `M#${metro.rank}`
+        : `#${position ?? metro.rank}`
+      : `#${metro.rank}`;
   return (
     <tr style={{ borderBottom: "1px solid var(--border)" }}>
       <td
         className="py-3 pr-4 text-xs text-[var(--text-dim)]"
         style={{ fontFamily: "'JetBrains Mono', monospace" }}
       >
-        #{metro.rank}
+        {rankLabel}
       </td>
       <td className="py-3 pr-4">
         <Link
@@ -204,6 +215,9 @@ export default async function BadgeDetailPage({ params }: Props) {
       if (arr) arr.push(m);
     }
   }
+  // Positional rank in the sorted list (1-based).
+  const positionBySlug = new Map<string, number>();
+  metros.forEach((m, i) => positionBySlug.set(m.slug, i + 1));
 
   const collectionLd = {
     "@context": "https://schema.org",
@@ -352,6 +366,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                             metro={m}
                             badgeSlug={badge.slug}
                             showTier={false}
+                            position={positionBySlug.get(m.slug)}
                           />
                         ))}
                       </tbody>
@@ -387,12 +402,13 @@ export default async function BadgeDetailPage({ params }: Props) {
                     </tr>
                   </thead>
                   <tbody>
-                    {metros.map((m) => (
+                    {metros.map((m, i) => (
                       <MetroRow
                         key={m.slug}
                         metro={m}
                         badgeSlug={badge.slug}
                         showTier={showTierColumn}
+                        position={i + 1}
                       />
                     ))}
                   </tbody>

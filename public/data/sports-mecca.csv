@@ -11,17 +11,17 @@ rank,slug,name,country,score,pop,sports_score
 12,chicago,Chicago,United States,90.5,9941597,89
 34,atlanta,Atlanta,United States,56.7,7258116,88
 28,melbourne,Melbourne,Australia,61.1,5411094,82
-5,san-francisco-san-jose,San Francisco-San Jose,United States,122.1,7979579,81
-77,phoenix,Phoenix,United States,33.5,5186958,81
-109,indianapolis,Indianapolis,United States,25.9,2584194,79
+5,san-francisco-san-jose,San Francisco-San Jose,United States,122.7,7979579,81
+77,phoenix,Phoenix,United States,33.6,5186958,81
+109,indianapolis,Indianapolis,United States,26.0,2584194,79
 15,sydney,Sydney,Australia,72.3,5497131,78
 19,madrid,Madrid,Spain,68.0,6930703,77
-13,boston,Boston,United States,87.3,6792923,73
+13,boston,Boston,United States,87.2,6792923,73
 22,istanbul,Istanbul,Turkey,65.3,16293275,70
 49,johannesburg,Johannesburg,South Africa,46.2,15099421,69
 67,manchester,Manchester,United Kingdom,35.4,3087309,68
 32,dallas,Dallas,United States,57.5,8730700,67
-21,houston,Houston,United States,65.3,7981303,66
+21,houston,Houston,United States,65.5,7981303,66
 20,milan,Milan,Italy,67.5,7843262,64
 114,kansas-city,Kansas City,United States,24.7,2593094,64
 80,athens,Athens,Greece,33.2,3792469,61
@@ -39,63 +39,16 @@ rank,slug,name,country,score,pop,sports_score
 62,detroit,Detroit,United States,39.1,5430523,50
 27,mexico-city,Mexico City,Mexico,61.6,26370664,49
 138,glasgow,Glasgow,United Kingdom,20.8,1740760,49
-53,san-diego,San Diego,United States,42.0,3298799,48
+53,san-diego,San Diego,United States,42.1,3298799,48
 64,rio-de-janeiro,Rio de Janeiro,Brazil,37.9,12937950,48
 30,berlin,Berlin,Germany,59.7,5683734,47
 24,rhine-ruhr,Rhine-Ruhr,Germany,65.0,11102474,46
 95,tampa,Tampa,United States,29.3,3424560,45
 96,charlotte,Charlotte,United States,29.2,3052890,45
-8,seoul,Seoul,South Korea,106.9,26043325,43
+8,seoul,Seoul,South Korea,107.0,26043325,43
 41,amsterdam,Amsterdam,Netherlands,51.0,2460092,42
 70,doha,Doha,Qatar,34.9,2669452,42
 75,st-louis,St. Louis,United States,34.0,2915867,42
 72,rotterdam-the-hague,Rotterdam-The Hague,Netherlands,34.6,3334090,41
 42,brussels,Brussels,Belgium,50.5,2875717,40
 100,auckland,Auckland,New Zealand,27.3,1695200,40
-55,denver,Denver,United States,40.9,3382760,39
-128,birmingham,Birmingham,United Kingdom,22.8,3260752,39
-129,liverpool,Liverpool,United Kingdom,22.7,1897870,39
-14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,72.6,18126728,38
-23,sao-paulo,Sao Paulo,Brazil,65.3,22305115,38
-46,vienna,Vienna,Austria,48.0,2723337,38
-104,salt-lake-city-provo,Salt Lake City-Provo,United States,26.7,2874061,38
-6,beijing,Beijing,China,110.7,22560773,36
-170,louisville,Louisville,United States,15.9,1555530,36
-54,montreal,Montreal,Canada,41.9,5155863,34
-35,dubai-sharjah,Dubai-Sharjah,United Arab Emirates,56.0,5679122,33
-106,budapest,Budapest,Hungary,26.6,3031160,32
-93,cleveland,Cleveland,United States,29.5,3615326,31
-131,porto,Porto,Portugal,22.1,2065679,31
-56,vancouver,Vancouver,Canada,40.7,3471561,30
-74,tel-aviv,Tel-Aviv,Israel,34.0,3162539,30
-82,pittsburgh,Pittsburgh,United States,32.9,2626109,30
-88,portland,Portland,United States,31.7,3326675,30
-103,perth,Perth,Australia,26.7,2364521,29
-173,san-antonio,San Antonio,United States,15.5,2782526,29
-9,shanghai,Shanghai,China,104.5,50359413,28
-68,abu-dhabi,Abu Dhabi,United Arab Emirates,35.1,2823340,28
-90,brisbane,Brisbane,Australia,30.4,2700584,28
-98,raleigh-durham,Raleigh-Durham,United States,27.7,2286412,28
-102,stuttgart,Stuttgart,Germany,26.8,5505771,28
-107,edinburgh,Edinburgh,United Kingdom,26.5,887900,28
-112,nashville,Nashville,United States,25.0,2289095,28
-86,dublin,Dublin,Ireland,32.0,1705928,27
-135,cincinnati,Cincinnati,United States,21.2,2345538,27
-223,cardiff,Cardiff,United Kingdom,12.2,494248,27
-36,bangkok,Bangkok,Thailand,54.2,17310600,26
-81,austin,Austin,United States,32.9,2550637,26
-172,belgrade,Belgrade,Serbia,15.7,1811428,26
-196,leeds-bradford,Leeds-Bradford,United Kingdom,13.8,2351599,26
-18,hong-kong,Hong Kong,Hong Kong,68.5,7411945,25
-61,stockholm,Stockholm,Sweden,39.3,2415139,25
-87,nagoya,Nagoya,Japan,31.9,10593190,25
-43,manila,Manila,Philippines,49.8,28250517,24
-251,montevideo,Montevideo,Uruguay,10.4,1986800,24
-144,antwerp,Antwerp,Belgium,19.4,1559765,23
-178,seville,Seville,Spain,15.2,1950056,23
-11,guangzhou,Guangzhou,China,96.3,62994136,22
-45,jakarta,Jakarta,Indonesia,48.3,36157354,22
-51,delhi,Delhi,India,45.6,33446850,22
-79,copenhagen,Copenhagen,Denmark,33.3,2144354,22
-94,santiago,Santiago,Chile,29.4,8310984,22
-105,valencia,Valencia,Spain,26.6,2593243,22

@@ -98,6 +98,7 @@ const _NAMED_MEGAREGIONS: {
   leadSlug: string;
   memberSlugs: string[];
   extraSatellites?: string[];
+  country?: string;  // override the lead's country when needed (e.g. PRD spans HK + China)
 }[] = [
   {
     slug: "randstad",
@@ -116,8 +117,8 @@ const _NAMED_MEGAREGIONS: {
   {
     slug: "pearl-river-delta",
     displayName: "Pearl River Delta",
-    leadSlug: "hong-kong",
-    memberSlugs: ["hong-kong", "macau", "guangzhou"],
+    leadSlug: "guangzhou",
+    memberSlugs: ["guangzhou", "hong-kong", "macau"],
     extraSatellites: ["Shenzhen", "Dongguan", "Foshan", "Zhuhai"],
   },
   {
@@ -184,6 +185,19 @@ export type Badge = {
 };
 
 // ---------- Helpers ----------
+
+function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371.0088;
+  const p1 = (lat1 * Math.PI) / 180;
+  const p2 = (lat2 * Math.PI) / 180;
+  const dp = ((lat2 - lat1) * Math.PI) / 180;
+  const dl = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dp / 2) ** 2 +
+    Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(a));
+}
+
 
 function loadCsv(relPath: string): Record<string, string>[] {
   const path = join(process.cwd(), relPath);
@@ -290,7 +304,7 @@ function computeIsolatedCapitalRows(): QualifyingMetro[] {
     out.push({
       slug: meta.slug, name: meta.name, country: meta.country,
       rank: meta.rank, score: meta.score,
-      contextValue: value, contextLabel: "km to nearest same-or-higher-tier peer",
+      contextValue: value, contextLabel: "km to nearest tier-comparable peer",
       tier: row.tier || undefined,
       peerSlug: row.peer_slug || undefined,
       peerName: row.peer_name || undefined,
@@ -374,16 +388,32 @@ function computeConurbations(): QualifyingMetro[] {
     const memberNames = memberMetas.map((m) => m.name).concat(ng.extraSatellites ?? []);
     const otherSlugs = ng.memberSlugs.filter((s) => s !== lead.slug);
     const otherNames = memberMetas.filter((m) => m.slug !== lead.slug).map((m) => m.name).concat(ng.extraSatellites ?? []);
+    // Diameter: max pairwise haversine among workbook member metros that have coords.
+    let diameterKm = 0;
+    const withCoords = memberMetas.filter((m) => (m.lat ?? 0) !== 0 && (m.lon ?? 0) !== 0);
+    for (let i = 0; i < withCoords.length; i++) {
+      for (let j = i + 1; j < withCoords.length; j++) {
+        const d = haversineKm(withCoords[i].lat, withCoords[i].lon, withCoords[j].lat, withCoords[j].lon);
+        if (d > diameterKm) diameterKm = d;
+      }
+    }
     const tier = scoreSum >= 100 ? "A" : scoreSum >= 50 ? "B" : scoreSum >= 20 ? "C" : "D";
+    // Derive the country list from members (dedupe preserving first-appearance order).
+    // The explicit `country` override still wins if set.
+    const memberCountries: string[] = [];
+    for (const m of memberMetas) {
+      if (m.country && !memberCountries.includes(m.country)) memberCountries.push(m.country);
+    }
+    const countryDisplay = ng.country ?? memberCountries.join(" / ");
     namedRows.push({
-      slug: lead.slug, name: ng.displayName, country: lead.country,
+      slug: lead.slug, name: ng.displayName, country: countryDisplay,
       rank: lead.rank, score: lead.score,
       contextValue: scoreSum, contextLabel: "Cluster score",
       tier,
       cluster: {
         id: `n-${ng.slug}`,
         size: memberNames.length,
-        diameterKm: 0,
+        diameterKm: Math.round(diameterKm * 10) / 10,
         otherSlugs,
         otherNames,
         memberSlugs: ng.memberSlugs,
@@ -459,9 +489,9 @@ const CLUSTER_TIERS: BadgeTier[] = [
 ];
 
 const ISOLATED_CAPITAL_TIERS: BadgeTier[] = [
-  { slug: "A", name: "Tier A — Continental remoteness", description: "More than 800 km from the nearest peer in the same or higher score tier. Capitals where the next tier-comparable metro is on the other side of the country, the continent, or an ocean.", accentHex: "#92400E" },
-  { slug: "B", name: "Tier B — Deeply isolated", description: "Between 500 and 800 km from the nearest peer in the same or higher score tier. Reachable but never near. Many of these are deliberate inland or symbolic capitals.", accentHex: "#B45309" },
-  { slug: "C", name: "Tier C — Isolated", description: "Between 240 and 500 km from the nearest peer in the same or higher score tier. Beyond same-day commute, but inside the regional sphere of a larger comparable metro.", accentHex: "#D97706" },
+  { slug: "A", name: "Tier A — Continental remoteness", description: "More than 800 km from the nearest tier-comparable metro. The next peer of similar weight is across a continent, an ocean, or both.", accentHex: "#92400E" },
+  { slug: "B", name: "Tier B — Deeply isolated", description: "Between 500 and 800 km from the nearest tier-comparable metro. Reachable, never near. Many of these are deliberately inland or symbolic capitals.", accentHex: "#B45309" },
+  { slug: "C", name: "Tier C — Isolated", description: "Between 240 and 500 km from the nearest tier-comparable metro. Beyond a day's commute but inside the regional sphere of a larger neighbor.", accentHex: "#D97706" },
 ];
 
 // ---------- Badge registry ----------
@@ -487,32 +517,32 @@ export const BADGES: Badge[] = [
   },
   {
     slug: "global-gateway", name: "Global Gateway", emoji: "✈️",
-    shortDesc: "The 100 metros with the strongest airport infrastructure.",
-    longDesc: "Metros that lead the world on the airport dimension, a composite of passenger traffic, intercontinental connectivity, and hub capacity. Top 100 by airport score, ranging from London and New York at the apex down through the regional gateways that anchor a continent's air network.",
+    shortDesc: "Metros with airport scores at or above the global-gateway floor.",
+    longDesc: "Metros whose airport dimension clears 5.0, the floor that separates a continental gateway from a regional hub. The composite blends passenger traffic, intercontinental connectivity, and hub capacity. Sixty-two metros qualify, ranging from London and New York at the apex through the regional gateways that anchor a continent's air network. Below the threshold, airports are large enough to be regionally important but not the kind of node that defines the global air network.",
     methodologyAnchor: "#airport-score", status: "live", compute: computeGlobalGateway,
   },
   {
     slug: "finance-capital", name: "Finance Capital", emoji: "💼",
-    shortDesc: "The 100 metros with the largest listed-company market cap.",
-    longDesc: "Metros where the public-equity market capitalization of headquartered companies is highest. Captures the gravitational centers of global capital: San Francisco-San Jose at the top, then New York, Seattle, Beijing, Tokyo, London, Paris. Sorted by total market cap of companies headquartered in the metro.",
+    shortDesc: "Metros where headquartered listed companies sum to $300 billion or more.",
+    longDesc: "Metros where the public-equity market capitalization of headquartered companies clears $300 billion. The gravitational centers of global capital: San Francisco-San Jose at the top, then New York, Seattle, Beijing, Tokyo, London, Paris. Eighty-four metros qualify. Below the threshold a metro might host meaningful regional capital but not the kind of capital pool that anchors a global financial network.",
     methodologyAnchor: "#market-cap", status: "live", compute: computeFinanceCapital,
   },
   {
     slug: "culture-capital", name: "Culture Capital", emoji: "🎭",
-    shortDesc: "The 100 metros with the deepest cultural infrastructure.",
-    longDesc: "Metros that lead on the combined cultural dimensions: cultural events (festivals, fairs, biennales), museums and landmarks, and luxury hospitality (Michelin-starred dining, Forbes Travel Guide hotels). London leads on every component; Paris and New York follow. The list also surfaces the unexpected (Macau, Dubai-Sharjah) where the cultural infrastructure is the product of recent and deliberate investment.",
+    shortDesc: "Metros with deep cultural infrastructure (composite ≥ 30) plus regional top-3 representatives.",
+    longDesc: "Metros whose combined cultural composite (cultural events, museums and landmarks, luxury hospitality) clears 30. London leads on every component; Paris and New York follow. The list also surfaces the unexpected (Macau, Dubai-Sharjah) where the cultural infrastructure is the product of recent and deliberate investment. To prevent the badge from over-rewarding wealthy regions, each of the 11 world regions also contributes its top three metros by culture score, even if those metros fall below the threshold. The result is roughly 90 entries, with the long tail capturing the editorially-strongest cultural metro in each region rather than only the global elite.",
     methodologyAnchor: "#cultural-events", status: "live", compute: computeCultureCapital,
   },
   {
     slug: "sports-mecca", name: "Sports Mecca", emoji: "🏟️",
-    shortDesc: "The 100 metros with the densest professional sports presence.",
-    longDesc: "Metros that lead on the combined sports dimensions: major league teams (weighted double), total professional teams across all leagues, and major sporting events hosted (weighted triple). Captures the cities where sport is part of the civic identity, from London at the top through to the second-tier metros that punch above their weight on a single league.",
+    shortDesc: "Metros with a combined sports composite at or above the major-league-anchor floor.",
+    longDesc: "Metros whose combined sports composite (major league teams weighted double, total professional teams across all leagues, major sporting events weighted triple) clears 40. Captures the cities where sport is part of the civic identity, from London at the top through the second-tier metros that punch above their weight on a single league. Fifty-three metros qualify. Below the threshold a metro might have a couple of teams but not the volume or marquee-event presence that defines a sports city.",
     methodologyAnchor: "#major-league-teams", status: "live", compute: computeSportsMecca,
   },
   {
     slug: "rail-hub", name: "Rail Hub", emoji: "🚆",
-    shortDesc: "The 100 metros with the most extensive rail infrastructure.",
-    longDesc: "Metros that lead on the combined rail dimensions: metro stations (subway/MRT), suburban stations (commuter rail, weighted half), and intercity train hubs (weighted 5x for the network-effect value). Tokyo leads at over a thousand composite points, followed by London, Shanghai, Guangzhou, Toronto, Osaka-Kyoto-Kobe, Rhine-Ruhr.",
+    shortDesc: "Metros with extensive rail infrastructure (composite ≥ 130).",
+    longDesc: "Metros whose combined rail composite (metro stations, suburban stations weighted half, intercity train hubs weighted 5x for the network-effect value) clears 130. Tokyo leads at over a thousand composite points, followed by London, Shanghai, Guangzhou, Toronto, Osaka-Kyoto-Kobe, Rhine-Ruhr. Seventy-five metros qualify. Below the threshold a metro might have a single subway line or a stretch of commuter rail but not the layered network that defines a true rail hub.",
     methodologyAnchor: "#metro-stations", status: "live", compute: computeRailHub,
   },
   {
@@ -523,14 +553,14 @@ export const BADGES: Badge[] = [
   },
   {
     slug: "conurbations", name: "Conurbations", emoji: "🔗",
-    shortDesc: "Connected-component clusters of metros within 75 km, ranked by total cluster score.",
-    longDesc: "Metros that connect to one another by 75 km links, ranked by the sum of composite scores across all members. Clusters are formed via connected-component graph traversal at the 75 km link distance, then filtered by a size-dependent average pairwise distance cap (75 km for size 2-4, 80 km at size 5 declining 1 km per added member) so transitive chains can't produce whole-country networks. Top of the list: Boston-Providence (cluster score ~101), Toronto-Buffalo-Kitchener-Hamilton-Niagara (~100), Guangzhou-Qingyuan (~98), Hong Kong-Macau (~92), Singapore-Johor Bahru-Batam (~79), Sydney-Wollongong (~76), São Paulo-Santos (~72), Nanjing-Yangzhou-Zhenjiang-Taizhou (~70), Edinburgh-Glasgow-Dundee-St. Andrews and the broader Central Scotland belt (~61), Vienna-Bratislava (~54). The long tail captures the canonical cross-border twins (Detroit-Windsor, El Paso-Ciudad Juárez, San Diego-Tijuana, Kinshasa-Brazzaville, Nice-Monaco, Jerusalem-Ramallah) and the regional networks (Florence-Pisa-Siena-Lucca, Hartford-New Haven-Springfield-New London, Prague-Pardubice-Liberec, the Caribbean Sint Maarten cluster, the upstate New York belt).",
+    shortDesc: "Connected metro clusters and named megaregions, ranked by combined cluster score.",
+    longDesc: "Conurbations are multi-metro networks ranked by the sum of composite scores across their members. Three layers feed the list. Named megaregions surface the canonical multi-city groupings the workbook can't form on its own (Pearl River Delta, Jing-Jin-Ji, Randstad, Flemish Diamond). Editorial overrides give each Global Capital, World City, and Major Metro that's structurally a conurbation its true civic name (Tri-State Area, Bay Area, Sudogwon, Île-de-France, Twin Cities, DFW Metroplex, Wasatch Front, Chukyo, Jabodetabek, Chang-Zhu-Tan, Research Triangle, Merseyside, and 40 others). Auto-clustered networks fill the long tail: connected components formed at a 75 km link distance, recursively split when a cluster exceeds its size-dependent average-pairwise ceiling so transitive chains can't masquerade as whole-country belts. Tiers mirror the individual metro scale exactly: Global (cluster score ≥100), World (50-100), Major (20-50), Regional (<20). The top of the list is Pearl River Delta at 188.5, Tri-State Area at 181.1, Greater London at 180.1, Jing-Jin-Ji at 144.3, Île-de-France at 142.6. The middle tier captures the canonical cross-border twins (Detroit-Windsor, San Diego-Tijuana, Vienna-Bratislava, Kinshasa-Brazzaville, Nice-Monaco) and tight regional networks (Florence-Pisa-Siena-Lucca, Hartford-New Haven-Springfield-New London, Prague-Pardubice-Liberec, Edinburgh-Central Scotland, the Caribbean Sint Maarten cluster, the upstate New York belt).",
     methodologyAnchor: "#population", status: "live", tiers: CLUSTER_TIERS, compute: computeConurbations,
   },
   {
     slug: "isolated-capital", name: "Isolated Capital", emoji: "🏔️",
-    shortDesc: "National capitals more than 240 km from any peer in the same or higher score tier.",
-    longDesc: "National capitals where no metro in the same or higher score tier sits within 240 km. Tier-comparability replaces rank-comparability: a Local City small town never disqualifies a Major Metro capital, but a peer in the capital's own tier or above does. Surfaces the deliberately-isolated capitals at the World City and Major Metro tiers (Madrid 505 km to Barcelona, Buenos Aires 1675 km to São Paulo, Santiago 1139 km to Buenos Aires, Mexico City 1210 km to Houston, Canberra 247 km to Sydney) alongside the geographically-isolated capitals (Nairobi, Reykjavík, Honiara, Papeete, Hamilton Bermuda, Avarua, Windhoek, Port Moresby, Ulan Bator). Global Capital-tier capitals (Tokyo, London, Beijing, Moscow) surface against each other across continents because the tier has few members worldwide. Note: Brasília no longer qualifies because Goiânia (same Regional Hub tier) sits 178 km away. Sorted by distance descending: most-isolated first.",
+    shortDesc: "National capitals more than 240 km from any metro in the same or higher score tier.",
+    longDesc: "National capitals whose nearest peer in the same composite tier or higher sits more than 240 km away. The tier filter is the analytical pivot. A Local City village 30 km from a capital should not count against the badge; only metros at or above the capital's own tier do. The question the badge answers becomes who is your nearest peer of comparable weight, and how far is it.\n\nThree archetypes share the list. The geographically-isolated capitals are the obvious set: Reykjavík, Honiara, Papeete, Hamilton Bermuda, Avarua, Nuuk, Port Moresby, Ulan Bator, sitting on islands, peninsulas, or thin populations where the next World City is hundreds of kilometres of ocean or steppe away. The continental-gravity capitals are the more interesting set: Nairobi, Lima, Buenos Aires, Santiago, Mexico City, Cape Town, Dakar, Bogotá. These are countries so dominated by their capital that the next tier-comparable metro sits across an ocean or a sub-continent, not because the capital is geographically remote but because the country has only one true urban centre. The thin-peer-tier capitals round out the list: London, Paris, Tokyo, Beijing, Seoul, Moscow. The Global Capital tier has so few members worldwide that even London and Paris, 344 km apart across the Channel, both qualify because no other Global Capital is within 240 km of either. Tokyo's nearest is Seoul at 1,153 km. Beijing's is Seoul at 952 km. Moscow, sitting one tier down at World City, has Berlin 1,609 km away.\n\nSorted by distance descending, most-isolated first.",
     methodologyAnchor: "#population", status: "live", tiers: ISOLATED_CAPITAL_TIERS, compute: computeIsolatedCapital,
   },
 ];
@@ -583,6 +613,9 @@ function buildBadgesByMetroIndex(): Map<string, BadgeForMetro[]> {
   }
   for (const arr of idx.values()) {
     arr.sort((a, b) => {
+      // Conurbations is the marquee multi-metro lens; pin it first.
+      if (a.badge.slug === "conurbations" && b.badge.slug !== "conurbations") return -1;
+      if (b.badge.slug === "conurbations" && a.badge.slug !== "conurbations") return 1;
       const aTiered = a.badge.tiers ? 1 : 0;
       const bTiered = b.badge.tiers ? 1 : 0;
       return bTiered - aTiered;

@@ -54,10 +54,12 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-03",
-    headline: "Conurbations and Isolated Capital badges live",
+    headline: "Conurbations launch, tier-comparability for Isolated Capital, dimension significance",
     items: [
-      "Conurbations holds connected metro clusters within 75 km, ranked by combined score: Boston-Providence, Toronto-Buffalo-Niagara, Hong Kong-Macau, Singapore-Johor Bahru-Batam, Edinburgh-Glasgow-Dundee.",
-      "Isolated Capital lists national capitals more than 240 km from any peer in the same or higher tier: Madrid, Buenos Aires, Santiago, Canberra, Wellington, Mexico City, Tokyo.",
+      "Conurbations badge merges the prior Twin Metros and Megaregions into one, with 4 named megaregions, ~55 editorial overrides with civic names (Bay Area, Sudogwon, Jabodetabek), and recursive cluster splitting.",
+      "Conurbation tiers align with the individual metro tier scale (Global, World, Major, Regional). The Conurbation chip is pinned first on every metro page with its tier letter.",
+      "Isolated Capital now uses tier-comparability at 240 km: only peers in the capital's own composite tier or higher count as disqualifying neighbours.",
+      "Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub now use significance thresholds instead of a flat top-100 cap; Culture Capital adds a regional top-3 fallback.",
     ],
   },
   {

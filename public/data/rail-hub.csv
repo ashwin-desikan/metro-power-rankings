@@ -4,16 +4,16 @@ rank,slug,name,country,score,pop,rail_score
 9,shanghai,Shanghai,China,104.5,50359413,853.5
 11,guangzhou,Guangzhou,China,96.3,62994136,804.0
 16,toronto,Toronto,Canada,71.5,7670678,797.5
-14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,72.6,18126728,794.0
+14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,72.7,18126728,794.0
 24,rhine-ruhr,Rhine-Ruhr,Germany,65.0,11102474,754.0
 1,new-york,New York,United States,181.1,22342624,718.0
 3,paris,Paris,France,142.6,12878104,696.0
-8,seoul,Seoul,South Korea,106.9,26043325,675.0
+8,seoul,Seoul,South Korea,107.0,26043325,675.0
 17,moscow,Moscow,Russia,70.3,21534777,667.0
 41,amsterdam,Amsterdam,Netherlands,51.0,2460092,549.0
-6,beijing,Beijing,China,110.7,22560773,456.0
+6,beijing,Beijing,China,110.8,22560773,456.0
 233,sendai,Sendai,Japan,11.7,2301996,419.5
-5,san-francisco-san-jose,San Francisco-San Jose,United States,122.1,7979579,373.0
+5,san-francisco-san-jose,San Francisco-San Jose,United States,122.7,7979579,373.0
 87,nagoya,Nagoya,Japan,31.9,10593190,346.0
 19,madrid,Madrid,Spain,68.0,6930703,333.0
 57,wuhan,Wuhan,China,40.6,13527071,322.0
@@ -38,7 +38,7 @@ rank,slug,name,country,score,pop,rail_score
 97,prague,Prague,Czech Republic,28.2,2035589,213.5
 20,milan,Milan,Italy,67.5,7843262,212.5
 165,fukuoka,Fukuoka,Japan,16.8,2607948,209.5
-13,boston,Boston,United States,87.3,6792923,205.5
+13,boston,Boston,United States,87.2,6792923,205.5
 18,hong-kong,Hong Kong,Hong Kong,68.5,7411945,201.0
 46,vienna,Vienna,Austria,48.0,2723337,198.5
 10,washington-baltimore,Washington-Baltimore,United States,96.7,10204407,197.5
@@ -74,28 +74,3 @@ rank,slug,name,country,score,pop,rail_score
 42,brussels,Brussels,Belgium,50.5,2875717,134.0
 76,busan-ulsan,Busan-Ulsan,South Korea,33.9,8079273,130.0
 121,oslo,Oslo,Norway,23.6,1609732,130.0
-32,dallas,Dallas,United States,57.5,8730700,128.5
-148,ningbo,Ningbo,China,19.0,9404283,128.5
-131,porto,Porto,Portugal,22.1,2065679,125.0
-60,lisbon,Lisbon,Portugal,39.4,3150191,120.5
-163,bilbao,Bilbao,Spain,17.0,1189040,118.0
-49,johannesburg,Johannesburg,South Africa,46.2,15099421,112.0
-85,new-orleans,New Orleans,United States,32.0,1487788,112.0
-117,dalian,Dalian,China,23.7,7450785,110.0
-54,montreal,Montreal,Canada,41.9,5155863,108.5
-155,kunming,Kunming,China,18.0,8460088,108.0
-45,jakarta,Jakarta,Indonesia,48.3,36157354,106.0
-162,colombo,Colombo,Sri Lanka,17.1,6219000,105.5
-84,zurich,Zurich,Switzerland,32.2,1649715,100.5
-127,naples,Naples,Italy,23.0,3864340,100.5
-149,fuzhou,Fuzhou,China,18.8,8291268,100.0
-106,budapest,Budapest,Hungary,26.6,3031160,99.5
-157,nanchang,Nanchang,China,17.7,6255007,99.0
-147,nanning,Nanning,China,19.0,8741584,98.0
-79,copenhagen,Copenhagen,Denmark,33.3,2144354,96.5
-171,guiyang,Guiyang,China,15.8,5987018,95.5
-52,cairo,Cairo,Egypt,43.9,23708237,95.0
-89,warsaw,Warsaw,Poland,31.4,3621224,94.5
-739,st-gallen,St. Gallen,Switzerland,2.5,127169,94.0
-80,athens,Athens,Greece,33.2,3792469,93.5
-201,nuremberg,Nuremberg,Germany,13.6,1371796,93.0
