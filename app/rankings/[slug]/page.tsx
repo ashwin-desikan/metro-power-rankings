@@ -21,6 +21,7 @@ import {
   topTeamAnchorId,
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
+import BadgeChips from "./BadgeChips";
 
 export const dynamicParams = false;
 
@@ -412,6 +413,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 </Link>
               );
             })()}
+            <BadgeChips slug={slug} />
             {metro.pctOfCountry > 0 && (
               <>
                 <hr className="my-4 border-[var(--border)]" />

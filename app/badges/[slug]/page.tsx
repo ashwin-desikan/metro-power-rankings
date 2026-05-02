@@ -70,6 +70,9 @@ function formatContextValue(badgeSlug: string, value: number): string {
   if (badgeSlug === "rail-hub" || badgeSlug === "global-gateway") {
     return value % 1 === 0 ? value.toFixed(0) : value.toFixed(1);
   }
+  if (badgeSlug === "overperformer") {
+    return `${value.toFixed(1)}x`;
+  }
   return value.toFixed(1);
 }
 

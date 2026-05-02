@@ -217,6 +217,14 @@ function computeRailHub(): QualifyingMetro[] {
   );
 }
 
+function computeOverperformer(): QualifyingMetro[] {
+  return computeFromCsv(
+    "public/data/overperformer.csv",
+    "multiple",
+    "Pop-rank to score-rank multiple",
+  );
+}
+
 // ---------- Tier registries ----------
 
 const UNIVERSITY_TOWN_TIERS: BadgeTier[] = [
@@ -378,10 +386,11 @@ export const BADGES: Badge[] = [
     slug: "overperformer",
     name: "Overperformer",
     emoji: "📈",
-    shortDesc: "Score punches well above population weight.",
-    longDesc: "Metros where the composite score sits much higher than the population rank: concentrated capital, talent, or institutional gravity that doesn't require scale. Coming soon.",
+    shortDesc: "Score rank punches well above population rank.",
+    longDesc: "Metros where the composite score sits much higher than the population rank: concentrated capital, talent, or institutional gravity that does not require scale. San Francisco-San Jose punches 17.6x above its weight, London 14.5x, New York 14.0x. The list also surfaces less-obvious overperformers like Monaco, Macau, Geneva, Edinburgh — cities where a small population supports an outsized footprint of capital, institutions, or both. Top 100 by pop-rank-to-score-rank multiple.",
     methodologyAnchor: "#population",
-    status: "coming-soon",
+    status: "live",
+    compute: computeOverperformer,
   },
 ];
 
@@ -406,4 +415,29 @@ export function getQualifyingMetros(badge: Badge): QualifyingMetro[] {
 
 export function getLiveBadgeSlugs(): string[] {
   return getLiveBadges().map((b) => b.slug);
+}
+
+// For a given metro slug, return the live badges it qualifies for, paired
+// with the contextValue / label / tier from the badge's qualifying list.
+// Used to render badge chips on metro detail pages.
+export type BadgeForMetro = {
+  badge: Badge;
+  qualifying: QualifyingMetro;
+};
+
+export function getBadgesForMetro(metroSlug: string): BadgeForMetro[] {
+  const out: BadgeForMetro[] = [];
+  for (const badge of getLiveBadges()) {
+    if (!badge.compute) continue;
+    const list = badge.compute();
+    const match = list.find((m) => m.slug === metroSlug);
+    if (match) out.push({ badge, qualifying: match });
+  }
+  // Sort: tiered badges first (richer signal), preserve registry order otherwise
+  out.sort((a, b) => {
+    const aTiered = a.badge.tiers ? 1 : 0;
+    const bTiered = b.badge.tiers ? 1 : 0;
+    return bTiered - aTiered;
+  });
+  return out;
 }

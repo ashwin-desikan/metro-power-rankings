@@ -1,0 +1,101 @@
+rank,slug,name,country,score,pop,score_rank,pop_rank,multiple
+5,san-francisco-san-jose,San Francisco-San Jose,United States,122.1,7979579,5,88,17.6
+2,london,London,United Kingdom,180.1,15984778,2,29,14.5
+1,new-york,New York,United States,181.1,22342624,1,14,14.0
+3,paris,Paris,France,142.6,12878104,3,39,13.0
+281,monaco,Monaco,Monaco,8.9,37309,281,3144,11.19
+15,sydney,Sydney,Australia,72.3,5497131,15,153,10.2
+41,amsterdam,Amsterdam,Netherlands,51.0,2460092,41,415,10.12
+119,macau,Macau,Macau,23.7,681293,119,1043,8.76
+125,geneva,Geneva,Switzerland,23.1,638565,125,1088,8.7
+13,boston,Boston,United States,87.3,6792923,13,112,8.62
+137,basel,Basel,Switzerland,20.8,573624,137,1171,8.55
+142,lausanne,Lausanne,Switzerland,19.8,553037,142,1198,8.44
+42,brussels,Brussels,Belgium,50.5,2875717,42,350,8.33
+107,edinburgh,Edinburgh,United Kingdom,26.5,887900,107,863,8.07
+46,vienna,Vienna,Austria,48.0,2723337,46,369,8.02
+390,george-town-cay,George Town (CAY),Cayman Islands,6.1,67187,390,2957,7.58
+59,las-vegas,Las Vegas,United States,39.4,2454861,59,418,7.08
+85,new-orleans,New Orleans,United States,32.0,1487788,85,601,7.07
+61,stockholm,Stockholm,Sweden,39.3,2415139,61,423,6.93
+84,zurich,Zurich,Switzerland,32.2,1649715,84,559,6.65
+487,davos,Davos,Switzerland,4.6,26681,487,3215,6.6
+257,bergen,Bergen,Norway,10.1,325962,257,1681,6.54
+493,gibraltar,Gibraltar,Gibraltar,4.6,31604,493,3185,6.46
+86,dublin,Dublin,Ireland,32.0,1705928,86,551,6.41
+513,the-valley,The Valley,Anguilla,4.3,15701,513,3282,6.4
+518,kotor,Kotor,Montenegro,4.2,22746,518,3235,6.25
+517,providenciales,Providenciales,Turks & Caicos Islands,4.2,23769,517,3225,6.24
+514,jackson-wy,Jackson (WY),United States,4.3,36204,514,3153,6.13
+79,copenhagen,Copenhagen,Denmark,33.3,2144354,79,477,6.04
+25,singapore,Singapore,Singapore,63.9,5678287,25,149,5.96
+447,bozeman,Bozeman,United States,5.2,126984,447,2630,5.88
+16,toronto,Toronto,Canada,71.5,7670678,16,94,5.88
+541,san-marino,San Marino,San Marino,4.0,33698,541,3172,5.86
+209,canberra,Canberra,Australia,13.2,540710,209,1219,5.83
+249,san-sebastian,San Sebastián,Spain,10.5,412581,249,1448,5.82
+562,st-moritz,St. Moritz,Switzerland,3.8,18307,562,3267,5.81
+223,cardiff,Cardiff,United Kingdom,12.2,494248,223,1296,5.81
+19,madrid,Madrid,Spain,68.0,6930703,19,110,5.79
+437,flagstaff,Flagstaff,United States,5.3,145161,437,2530,5.79
+573,gustavia,Gustavia,Saint Barthélemy,3.7,10889,573,3302,5.76
+581,vatican-city,Vatican City,Vatican City,3.6,882,581,3345,5.76
+358,aberdeen,Aberdeen,United Kingdom,6.8,224400,358,2057,5.75
+264,southampton,Southampton,United Kingdom,9.6,385368,264,1511,5.72
+253,cambridge,Cambridge,United Kingdom,10.3,414632,253,1446,5.72
+363,lebanon,Lebanon,United States,6.7,224804,363,2056,5.66
+217,bern,Bern,Switzerland,12.5,538421,217,1227,5.65
+31,seattle,Seattle,United States,58.7,5105721,31,175,5.65
+28,melbourne,Melbourne,Australia,61.1,5411094,28,158,5.64
+582,santorini,Santorini,Greece,3.6,15457,582,3284,5.64
+509,victoria-sey,Victoria (SEY),Seychelles,4.3,88382,509,2856,5.61
+522,liberia,Liberia,Costa Rica,4.2,76969,522,2920,5.59
+53,san-diego,San Diego,United States,42.0,3298799,53,296,5.58
+421,dundee,Dundee,United Kingdom,5.5,173830,421,2333,5.54
+100,auckland,Auckland,New Zealand,27.3,1695200,100,554,5.54
+347,stavanger,Stavanger,Norway,7.1,265026,347,1902,5.48
+70,doha,Doha,Qatar,34.9,2669452,70,381,5.44
+578,basseterre,Basseterre,St. Kitts & Nevis,3.6,38138,578,3140,5.43
+483,dunedin-nz,Dunedin (NZ),New Zealand,4.6,130400,483,2609,5.4
+502,bentong,Bentong,Malaysia,4.5,116799,502,2679,5.34
+18,hong-kong,Hong Kong,Hong Kong,68.5,7411945,18,96,5.33
+413,maastricht,Maastricht,Netherlands,5.7,202919,413,2165,5.24
+68,abu-dhabi,Abu Dhabi,United Arab Emirates,35.1,2823340,68,356,5.24
+310,los-cabos,Los Cabos,Mexico,8.1,351111,310,1611,5.2
+60,lisbon,Lisbon,Portugal,39.4,3150191,60,311,5.18
+55,denver,Denver,United States,40.9,3382760,55,284,5.16
+284,innsbruck,Innsbruck,Austria,8.8,406689,284,1461,5.14
+632,st-andrews,St. Andrews,United Kingdom,3.2,21830,632,3243,5.13
+97,prague,Prague,Czech Republic,28.2,2035589,97,497,5.12
+574,andorra-la-vella,Andorra la Vella,Andorra,3.7,79535,574,2905,5.06
+494,ithaca,Ithaca,United States,4.6,151547,494,2496,5.05
+367,uppsala,Uppsala,Sweden,6.6,279758,367,1844,5.02
+429,limassol,Limassol,Cyprus,5.4,204605,429,2154,5.02
+468,bridgetown,Bridgetown,Barbados,4.9,171363,468,2349,5.02
+10,washington-baltimore,Washington-Baltimore,United States,96.7,10204407,10,50,5.0
+614,st-johns-ant,St. John's (ANT),Antigua & Barbuda,3.3,51737,614,3055,4.98
+325,lucerne,Lucerne,Switzerland,7.8,355471,325,1603,4.93
+56,vancouver,Vancouver,Canada,40.7,3471561,56,276,4.93
+81,austin,Austin,United States,32.9,2550637,81,399,4.93
+263,aarhus,Aarhus,Denmark,9.6,494486,263,1295,4.92
+30,berlin,Berlin,Germany,59.7,5683734,30,147,4.9
+256,luxembourg-city,Luxembourg City,Luxembourg,10.2,522560,256,1251,4.89
+255,itajai,Itajai,Brazil,10.2,532640,255,1233,4.84
+154,nice,Nice,France,18.3,1114579,154,741,4.81
+544,exeter,Exeter,United Kingdom,4.0,130712,544,2605,4.79
+597,pullman-moscow,Pullman-Moscow,United States,3.5,90579,597,2842,4.76
+67,manchester,Manchester,United Kingdom,35.4,3087309,67,318,4.75
+629,castries,Castries,Saint Lucia,3.2,65656,629,2966,4.72
+82,pittsburgh,Pittsburgh,United States,32.9,2626109,82,386,4.71
+121,oslo,Oslo,Norway,23.6,1609732,121,569,4.7
+531,ibiza,Ibiza,Spain,4.1,154186,531,2477,4.66
+556,glenwood-springs,Glenwood Springs,United States,3.9,134140,556,2584,4.65
+585,albertville,Albertville,France,3.6,112282,585,2706,4.63
+431,champaign,Champaign,United States,5.4,242453,431,1992,4.62
+553,thimphu,Thimphu,Bhutan,3.9,138736,553,2554,4.62
+48,rome,Rome,Italy,47.5,4224901,48,220,4.58
+26,miami,Miami,United States,62.0,6538896,26,119,4.58
+113,calgary,Calgary,Canada,25.0,1897326,113,514,4.55
+417,trondheim,Trondheim,Norway,5.7,266331,417,1896,4.55
+625,kalamata,Kalamata,Greece,3.3,91094,625,2838,4.54
+75,st-louis,St. Louis,United States,34.0,2915867,75,340,4.53
