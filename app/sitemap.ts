@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllMetros } from "@/lib/data";
 import { getLiveBadgeSlugs } from "@/lib/badges";
+import { getAllCountrySlugs } from "@/lib/countries";
 import { BASE_URL } from "@/lib/seo";
 
 // Read lastUpdate from meta.json to stamp sitemap entries.
@@ -67,6 +68,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${BASE_URL}/countries`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${BASE_URL}/updates`,
       lastModified: stamp,
       changeFrequency: "weekly",
@@ -86,6 +93,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: stamp,
       changeFrequency: "monthly",
       priority: 0.75,
+    }),
+  );
+
+  const countryEntries: MetadataRoute.Sitemap = getAllCountrySlugs().map(
+    (slug) => ({
+      url: `${BASE_URL}/countries/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.6,
     }),
   );
 
@@ -122,6 +138,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticEntries,
     ...badgeEntries,
+    ...countryEntries,
     ...metroEntries,
     ...matchupEntries,
   ];

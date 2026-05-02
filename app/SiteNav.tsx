@@ -101,6 +101,18 @@ export default function SiteNav() {
                     Side-by-side any 2 to 4 metros
                   </div>
                 </a>
+                <a
+                  href="/countries"
+                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+                >
+                  <div className="font-medium">Countries</div>
+                  <div
+                    className="text-xs mt-0.5"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Population, metros, and composite score by country
+                  </div>
+                </a>
                 <div className="border-t" style={{ borderColor: "var(--border)" }} />
                 <a
                   href="/badges"

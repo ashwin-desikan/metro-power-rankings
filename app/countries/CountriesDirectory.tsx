@@ -1,0 +1,373 @@
+"use client";
+
+// Client-side directory: sortable, filterable, expandable rows.
+// Receives the full country list pre-computed by the server page.
+
+import Link from "next/link";
+import { useMemo, useState } from "react";
+
+export type DirectoryCountry = {
+  slug: string;
+  name: string;
+  parent: string | null;
+  parent_slug: string | null;
+  continent: string | null;
+  pop: number | null;
+  metroCount: number;
+  scoreTotal: number | null;
+  capital: string | null;
+  disputed?: boolean;
+  children: DirectoryCountry[];
+};
+
+type SortKey = "pop" | "metroCount" | "scoreTotal" | "name";
+type SortDir = "asc" | "desc";
+
+const CONTINENTS = [
+  "All",
+  "Europe",
+  "North America",
+  "Asia",
+  "South America",
+  "Africa",
+  "Oceania",
+];
+
+function fmtPop(n: number | null): string {
+  if (n == null) return "—";
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `${(n / 1_000).toFixed(0)}k`;
+  return `${n}`;
+}
+
+function fmtScore(n: number | null): string {
+  if (n == null) return "—";
+  return n.toFixed(1);
+}
+
+export default function CountriesDirectory({
+  countries,
+}: {
+  countries: DirectoryCountry[];
+}) {
+  const [sortKey, setSortKey] = useState<SortKey>("pop");
+  const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [continent, setContinent] = useState<string>("All");
+  const [search, setSearch] = useState<string>("");
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
+
+  function toggleSort(key: SortKey) {
+    if (sortKey === key) {
+      setSortDir(sortDir === "desc" ? "asc" : "desc");
+    } else {
+      setSortKey(key);
+      setSortDir(key === "name" ? "asc" : "desc");
+    }
+  }
+
+  function toggleExpand(slug: string) {
+    const next = new Set(expanded);
+    if (next.has(slug)) next.delete(slug);
+    else next.add(slug);
+    setExpanded(next);
+  }
+
+  const filtered = useMemo(() => {
+    let rows = countries;
+    if (continent !== "All") {
+      rows = rows.filter((c) => c.continent === continent);
+    }
+    if (search) {
+      const q = search.toLowerCase();
+      rows = rows.filter((c) => {
+        if (c.name.toLowerCase().includes(q)) return true;
+        if (c.children.some((k) => k.name.toLowerCase().includes(q)))
+          return true;
+        return false;
+      });
+    }
+    const sorted = [...rows];
+    sorted.sort((a, b) => {
+      let av: number | string | null = null;
+      let bv: number | string | null = null;
+      if (sortKey === "name") {
+        av = a.name;
+        bv = b.name;
+      } else if (sortKey === "pop") {
+        av = a.pop;
+        bv = b.pop;
+      } else if (sortKey === "metroCount") {
+        av = a.metroCount;
+        bv = b.metroCount;
+      } else if (sortKey === "scoreTotal") {
+        av = a.scoreTotal;
+        bv = b.scoreTotal;
+      }
+      if (av == null && bv == null) return 0;
+      if (av == null) return 1;
+      if (bv == null) return -1;
+      if (typeof av === "string" && typeof bv === "string") {
+        return sortDir === "asc"
+          ? av.localeCompare(bv)
+          : bv.localeCompare(av);
+      }
+      const aN = typeof av === "number" ? av : 0;
+      const bN = typeof bv === "number" ? bv : 0;
+      return sortDir === "asc" ? aN - bN : bN - aN;
+    });
+    return sorted;
+  }, [countries, continent, search, sortKey, sortDir]);
+
+  function arrow(key: SortKey): string {
+    if (sortKey !== key) return "";
+    return sortDir === "desc" ? " ↓" : " ↑";
+  }
+
+  return (
+    <div className="space-y-4">
+      {/* Controls */}
+      <div className="space-y-4">
+        <div>
+          <p
+            className="text-xs text-[var(--text-muted)] mb-2"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            Continent
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {CONTINENTS.map((c) => (
+              <button
+                key={c}
+                onClick={() => setContinent(c)}
+                className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                  continent === c
+                    ? "bg-[var(--accent)] text-black"
+                    : "bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Search countries (e.g. Germany, Hong Kong, Cayman Islands)..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+        />
+      </div>
+
+      {/* Table */}
+      <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
+        <table className="w-full text-sm">
+          <thead>
+            <tr
+              className="border-b border-[var(--border)]"
+              style={{ backgroundColor: "var(--bg-card)" }}
+            >
+              <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] w-8" />
+              <th
+                className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]"
+                onClick={() => toggleSort("name")}
+              >
+                Country{arrow("name")}
+              </th>
+              <th
+                className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                Continent
+              </th>
+              <th
+                className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                onClick={() => toggleSort("pop")}
+              >
+                Population{arrow("pop")}
+              </th>
+              <th
+                className="hidden sm:table-cell px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                onClick={() => toggleSort("metroCount")}
+              >
+                Metros{arrow("metroCount")}
+              </th>
+              <th
+                className="hidden sm:table-cell px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                onClick={() => toggleSort("scoreTotal")}
+              >
+                Score{arrow("scoreTotal")}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((c) => {
+              const hasChildren = c.children.length > 0;
+              const isOpen = expanded.has(c.slug);
+              return (
+                <CountryRows
+                  key={c.slug}
+                  country={c}
+                  isOpen={isOpen}
+                  hasChildren={hasChildren}
+                  onToggle={() => toggleExpand(c.slug)}
+                />
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      {filtered.length === 0 ? (
+        <div
+          className="text-center py-12 text-[var(--text-muted)]"
+          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          No countries match your filters.
+        </div>
+      ) : null}
+
+      <p className="text-xs text-[var(--text-dim)] mt-2">
+        {filtered.length} of {countries.length} parent countries shown.
+        Constituents and territories shown when expanded. Click any country for
+        the full metro breakdown.
+      </p>
+    </div>
+  );
+}
+
+function CountryRows({
+  country,
+  isOpen,
+  hasChildren,
+  onToggle,
+}: {
+  country: DirectoryCountry;
+  isOpen: boolean;
+  hasChildren: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <>
+      <tr
+        className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors"
+      >
+        <td className="px-2 sm:px-4 py-3 align-top">
+          {hasChildren ? (
+            <button
+              onClick={onToggle}
+              className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors w-6 h-6 inline-flex items-center justify-center"
+              aria-label={isOpen ? "Collapse" : "Expand"}
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              {isOpen ? "−" : "+"}
+            </button>
+          ) : null}
+        </td>
+        <td className="px-2 sm:px-4 py-3">
+          <Link
+            href={`/countries/${country.slug}`}
+            className="font-semibold hover:text-[var(--accent)] transition-colors"
+          >
+            {country.name}
+          </Link>
+          {country.disputed ? (
+            <span
+              className="ml-2 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded italic"
+              style={{
+                color: "var(--text-dim)",
+                border: "1px solid var(--border)",
+                fontFamily: "'JetBrains Mono', monospace",
+              }}
+              title="Internationally disputed"
+            >
+              disputed
+            </span>
+          ) : null}
+        </td>
+        <td className="hidden md:table-cell px-4 py-3 text-[var(--text-muted)]">
+          {country.continent ?? ""}
+        </td>
+        <td
+          className="px-2 sm:px-4 py-3 text-right text-[var(--text)]"
+          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          {fmtPop(country.pop)}
+        </td>
+        <td
+          className="hidden sm:table-cell px-4 py-3 text-right text-[var(--text-muted)]"
+          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          {country.metroCount}
+        </td>
+        <td
+          className="hidden sm:table-cell px-4 py-3 text-right font-semibold"
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            color: "var(--accent)",
+          }}
+        >
+          {fmtScore(country.scoreTotal)}
+        </td>
+      </tr>
+      {isOpen && hasChildren
+        ? country.children.map((child) => (
+            <tr
+              key={child.slug}
+              className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors"
+              style={{ backgroundColor: "rgba(255,255,255,0.015)" }}
+            >
+              <td className="px-2 sm:px-4 py-2 align-top" />
+              <td className="px-2 sm:px-4 py-2 pl-8 sm:pl-12">
+                <Link
+                  href={`/countries/${child.slug}`}
+                  className="text-sm hover:text-[var(--accent)] transition-colors"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  {child.name}
+                </Link>
+                {child.disputed ? (
+                  <span
+                    className="ml-2 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded italic"
+                    style={{
+                      color: "var(--text-dim)",
+                      border: "1px solid var(--border)",
+                      fontFamily: "'JetBrains Mono', monospace",
+                    }}
+                    title="Internationally disputed"
+                  >
+                    disputed
+                  </span>
+                ) : null}
+              </td>
+              <td className="hidden md:table-cell px-4 py-2 text-[var(--text-dim)] text-xs">
+                {child.continent ?? ""}
+              </td>
+              <td
+                className="px-2 sm:px-4 py-2 text-right text-[var(--text-muted)] text-xs"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                {fmtPop(child.pop)}
+              </td>
+              <td
+                className="hidden sm:table-cell px-4 py-2 text-right text-[var(--text-dim)] text-xs"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                {child.metroCount}
+              </td>
+              <td
+                className="hidden sm:table-cell px-4 py-2 text-right text-[var(--text-muted)] text-xs"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                {fmtScore(child.scoreTotal)}
+              </td>
+            </tr>
+          ))
+        : null}
+    </>
+  );
+}
