@@ -1,11 +1,22 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { Metro, formatPop, regionColors } from '@/lib/shared';
 
 interface RankingsTableProps {
   metros: Metro[];
 }
+
+type SearchScope = 'all' | 'country' | 'metro' | 'state' | 'county';
+
+const SEARCH_SCOPE_LABEL: Record<SearchScope, string> = {
+  all: 'All',
+  country: 'Country',
+  metro: 'Metro Area',
+  state: 'State / Province',
+  county: 'County / Municipality',
+};
 
 const CONTINENTS = [
   'All',
@@ -37,6 +48,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
   const [selectedContinent, setSelectedContinent] = useState('All');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchScope, setSearchScope] = useState<SearchScope>('all');
 
   // Top score in the full dataset (the #1 metro). Drives the width of every
   // rank bar so updates to MetroAreas.xlsx stay in sync without hardcoding.
@@ -58,24 +70,33 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
       result = result.filter((m) => m.region === selectedRegion);
     }
 
-    // Filter by search term (includes sub-country, states)
+    // Filter by search term, scoped to the selected field bucket. The
+    // scope dropdown lets readers narrow the search to country / metro /
+    // state / county, useful when the same string (e.g. "Lincoln") could
+    // match a city, a state, or a county.
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
-      result = result.filter(
-        (m) =>
-          m.name.toLowerCase().includes(term) ||
-          m.country.toLowerCase().includes(term) ||
-          m.primaryCity.toLowerCase().includes(term) ||
-          (m.subCountry && m.subCountry.toLowerCase().includes(term)) ||
-          (m.primaryState && m.primaryState.toLowerCase().includes(term)) ||
-          (m.state2 && m.state2.toLowerCase().includes(term)) ||
-          (m.state3 && m.state3.toLowerCase().includes(term))
-      );
+      const matchesCountry = (m: Metro) => m.country.toLowerCase().includes(term);
+      const matchesMetro = (m: Metro) => m.name.toLowerCase().includes(term);
+      const matchesState = (m: Metro) =>
+        (m.subCountry && m.subCountry.toLowerCase().includes(term)) ||
+        (m.primaryState && m.primaryState.toLowerCase().includes(term)) ||
+        (m.state2 && m.state2.toLowerCase().includes(term)) ||
+        (m.state3 && m.state3.toLowerCase().includes(term)) ||
+        false;
+      const matchesCounty = (m: Metro) => m.primaryCity.toLowerCase().includes(term);
+      result = result.filter((m) => {
+        if (searchScope === 'country') return matchesCountry(m);
+        if (searchScope === 'metro') return matchesMetro(m);
+        if (searchScope === 'state') return matchesState(m);
+        if (searchScope === 'county') return matchesCounty(m);
+        return matchesCountry(m) || matchesMetro(m) || matchesState(m) || matchesCounty(m);
+      });
     }
 
     // Limit to view
     return result.slice(0, view === 'top25' ? 25 : 100);
-  }, [metros, selectedContinent, selectedRegion, searchTerm, view]);
+  }, [metros, selectedContinent, selectedRegion, searchTerm, searchScope, view]);
 
   const title =
     selectedRegion !== 'All'
@@ -168,14 +189,62 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
             </div>
           </div>
 
-          {/* Search */}
-          <input
-            type="text"
-            placeholder="Search metros, cities, countries, states (e.g. California, Scotland)..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
-          />
+          {/* Countries callout — sits just above the search bar so readers
+              who want a country-first lens find it before they start typing. */}
+          <Link
+            href="/countries"
+            className="block rounded-lg border px-4 py-3 transition-colors hover:border-[var(--accent)] group"
+            style={{
+              backgroundColor: 'var(--bg-card)',
+              borderColor: 'var(--border)',
+            }}
+          >
+            <div className="flex items-baseline justify-between gap-3 flex-wrap">
+              <div>
+                <span className="text-sm font-semibold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
+                  Looking for a country?
+                </span>
+                <span className="text-sm text-[var(--text-muted)] ml-2">
+                  Browse all 245 sovereign states, constituents, territories,
+                  and disputed regions on the Countries page.
+                </span>
+              </div>
+              <span
+                className="text-xs text-[var(--accent)]"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                Open Countries &rarr;
+              </span>
+            </div>
+          </Link>
+
+          {/* Search row: scope dropdown + text input */}
+          <div className="flex flex-col sm:flex-row gap-2">
+            <select
+              value={searchScope}
+              onChange={(e) => setSearchScope(e.target.value as SearchScope)}
+              className="px-3 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] sm:w-56"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              aria-label="Search scope"
+            >
+              {(Object.keys(SEARCH_SCOPE_LABEL) as SearchScope[]).map((k) => (
+                <option key={k} value={k}>{SEARCH_SCOPE_LABEL[k]}</option>
+              ))}
+            </select>
+            <input
+              type="text"
+              placeholder={
+                searchScope === 'country' ? 'Search by country (e.g. Germany, Japan)...'
+                  : searchScope === 'metro' ? 'Search by metro area (e.g. Tokyo, Sao Paulo)...'
+                  : searchScope === 'state' ? 'Search by state or province (e.g. California, Scotland)...'
+                  : searchScope === 'county' ? 'Search by county or municipality (e.g. Cook, Manchester)...'
+                  : 'Search metros, cities, countries, states (e.g. California, Scotland)...'
+              }
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="flex-1 px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+            />
+          </div>
         </div>
       </div>
 

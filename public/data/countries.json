@@ -4127,8 +4127,8 @@
   {
     "slug": "faroe-islands",
     "name": "Faroe Islands",
-    "parent": null,
-    "parent_slug": null,
+    "parent": "Denmark",
+    "parent_slug": "denmark",
     "continent": "Europe",
     "altContinent": "Europe",
     "pop": 55177,
@@ -6127,6 +6127,6 @@
     "biggestMetro": "London",
     "mostImportantMetro": "London",
     "isoCode": "GB",
-    "source": "Synthesized from England + Scotland + Wales + Northern Ireland (xlsx omits UK as a top-level row)"
+    "source": "Synthesized from England + Scotland + Wales + Northern Ireland"
   }
 ]
