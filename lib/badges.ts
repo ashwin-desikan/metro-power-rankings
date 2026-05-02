@@ -128,6 +128,13 @@ const _NAMED_MEGAREGIONS: {
     memberSlugs: ["beijing", "tianjin"],
     extraSatellites: ["Langfang", "Baoding", "Tangshan", "Cangzhou"],
   },
+  {
+    slug: "north-west-england",
+    displayName: "North-West England",
+    leadSlug: "manchester",
+    memberSlugs: ["manchester", "liverpool", "blackburn-burnley", "blackpool", "lancaster"],
+    extraSatellites: ["Bolton", "Stockport", "Salford", "Warrington", "Preston", "Birkenhead", "St Helens"],
+  },
 ];
 
 // ---------- Types ----------
@@ -160,6 +167,7 @@ export type QualifyingMetro = {
     id: string;
     size: number;
     diameterKm: number;
+    populationSum: number;
     // otherSlugs/otherNames exclude the lead; memberSlugs/memberNames include it.
     otherSlugs: string[];
     otherNames: string[];
@@ -289,7 +297,11 @@ function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
       rank: meta.rank, score: meta.score,
       contextValue: scoreSum, contextLabel: "Cluster score",
       tier: row.tier || undefined,
-      cluster: { id: cid, size, diameterKm: diameter, otherSlugs, otherNames, memberSlugs, memberNames },
+      cluster: {
+        id: cid, size, diameterKm: diameter,
+        populationSum: memberSlugs.reduce((acc, ms) => acc + (bySlug.get(ms)?.pop ?? 0), 0),
+        otherSlugs, otherNames, memberSlugs, memberNames,
+      },
     };
     leads.set(cid, { qm, bestRank: meta.rank, scoreSum });
   }
@@ -421,6 +433,7 @@ function computeConurbations(): QualifyingMetro[] {
         id: `n-${ng.slug}`,
         size: memberNames.length,
         diameterKm: Math.round(diameterKm * 10) / 10,
+        populationSum: memberMetas.reduce((acc, m) => acc + (m.pop ?? 0), 0),
         otherSlugs,
         otherNames,
         memberSlugs: ng.memberSlugs,
@@ -459,6 +472,7 @@ function computeConurbations(): QualifyingMetro[] {
         id: `o-${meta.slug}`,
         size: ov.satellites.length,
         diameterKm: 0,
+        populationSum: meta.pop ?? 0,
         otherSlugs: [],
         otherNames: ov.satellites,
         memberSlugs: [meta.slug],

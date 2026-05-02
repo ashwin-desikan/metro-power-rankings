@@ -53,23 +53,13 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
-    date: "2026-05-03",
-    headline: "Conurbations launch, tier-comparability for Isolated Capital, dimension significance",
-    items: [
-      "Conurbations badge merges the prior Twin Metros and Megaregions into one, with 4 named megaregions, ~55 editorial overrides with civic names (Bay Area, Sudogwon, Jabodetabek), and recursive cluster splitting.",
-      "Conurbation tiers align with the individual metro tier scale (Global, World, Major, Regional). The Conurbation chip is pinned first on every metro page with its tier letter.",
-      "Isolated Capital now uses tier-comparability at 240 km: only peers in the capital's own composite tier or higher count as disqualifying neighbours.",
-      "Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub now use significance thresholds instead of a flat top-100 cap; Culture Capital adds a regional top-3 fallback.",
-    ],
-  },
-  {
     date: "2026-05-02",
-    headline: "Badges launch: categorical lenses on the dataset",
+    headline: "Badges launch: 11 categorical lenses on the dataset",
     items: [
-      "New /badges section: each badge reframes the metros dataset through a different question, indexable as a standalone destination.",
-      "University Town live with 103 metros tiered by how much the universities dimension contributes to the composite score.",
-      "Skyline City live with 82 metros where skyscrapers dominate the score, ranging from organic vertical density to municipal-debt-driven construction.",
-      "Eight more badges scaffolded for upcoming releases including Global Gateway, Finance Capital, and Sports Mecca.",
+      "New /badges section launches with 11 categorical lenses including University Town (103 metros), Skyline City (82), Megacity, Overperformer, and the seven below.",
+      "Conurbations groups metros by 75 km clustering with 5 named megaregions, ~55 editorial overrides with civic names, tiers aligned with the metro scale (Global / World / Major / Regional).",
+      "Isolated Capital lists national capitals more than 240 km from any peer in the same composite tier or higher; surfaces deliberate planned capitals and continental-gravity capitals.",
+      "Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub launch with significance thresholds in place of top-100 caps; Culture Capital adds a regional top-3 fallback.",
     ],
   },
   {

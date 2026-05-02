@@ -144,13 +144,13 @@ function MetroRow({
                 {i < metro.cluster!.otherSlugs.length - 1 ? <span>, </span> : null}
               </span>
             ))}
-            <span className="text-[var(--text-dim)]"> ({metro.cluster.size} metros, {metro.cluster.diameterKm.toFixed(0)} km diameter)</span>
+            <span className="text-[var(--text-dim)]"> ({metro.cluster.size} metros, {metro.cluster.diameterKm.toFixed(0)} km, {formatPop(metro.cluster.populationSum)} pop)</span>
           </div>
         ) : metro.cluster && metro.cluster.otherNames.length > 0 ? (
           <div className="text-xs text-[var(--text-muted)] mt-0.5">
             <span aria-hidden="true">↔ </span>
             <span>{metro.cluster.otherNames.join(", ")}</span>
-            <span className="text-[var(--text-dim)]"> ({metro.cluster.size} areas)</span>
+            <span className="text-[var(--text-dim)]"> ({metro.cluster.size} areas, {formatPop(metro.cluster.populationSum)} pop)</span>
           </div>
         ) : metro.peerName && metro.peerSlug ? (
           <div className="text-xs text-[var(--text-muted)] mt-0.5">
