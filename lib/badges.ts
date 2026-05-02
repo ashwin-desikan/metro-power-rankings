@@ -277,8 +277,15 @@ function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
     if (existing && meta.rank >= existing.bestRank) continue;
     const otherSlugs = memberSlugs.filter((s) => s !== meta.slug);
     const otherNames = memberNames.filter((_, i) => memberSlugs[i] !== meta.slug);
+    // Country list across all members, deduped preserving first-appearance order.
+    const memberCountries: string[] = [];
+    for (const ms of memberSlugs) {
+      const mm = bySlug.get(ms);
+      if (mm?.country && !memberCountries.includes(mm.country)) memberCountries.push(mm.country);
+    }
+    const countryDisplay = memberCountries.length > 0 ? memberCountries.join(" / ") : meta.country;
     const qm: QualifyingMetro = {
-      slug: meta.slug, name: meta.name, country: meta.country,
+      slug: meta.slug, name: meta.name, country: countryDisplay,
       rank: meta.rank, score: meta.score,
       contextValue: scoreSum, contextLabel: "Cluster score",
       tier: row.tier || undefined,
