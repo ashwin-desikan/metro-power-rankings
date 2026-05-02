@@ -28,6 +28,12 @@ OUT_MEGA = ROOT / "public" / "data" / "megaregions.csv"
 OUT_ISOLATED = ROOT / "public" / "data" / "isolated-capital.csv"
 
 TWIN_KM = 75.0
+# Hard cap on cluster diameter. Without this, transitive 75 km chaining
+# produces runaway clusters (Rhine-Ruhr 587 km, UK industrial belt 406 km,
+# Cork-Limerick-Galway 224 km) that aren't editorially "megaregions" but
+# whole-country networks. 150 km keeps tightly-packed metropolitan
+# clusters and drops the chain artifacts.
+CLUSTER_DIAMETER_CAP = 250.0
 ISOLATED_KM = 240.0
 
 
@@ -114,17 +120,14 @@ def cluster_diameter_km(members):
     return d
 
 
-def tier_for_twin(size):
-    """Twin Metros holds clusters of size 2 or 3 only."""
-    if size == 3: return "A"  # triplet
-    return "B"                 # pair (size 2)
-
-
-def tier_for_megaregion(size):
-    """Megaregions holds clusters of size 4+."""
-    if size >= 15: return "A"  # megaregion (15+)
-    if size >= 8:  return "B"  # large cluster (8-14)
-    return "C"                  # small cluster (4-7)
+def tier_for_score_sum(score_sum):
+    """Tier by total cluster economic weight. Thresholds are calibrated so
+    Tier A captures the gravitationally heavy clusters (Hong Kong-Macau,
+    Vienna-Bratislava, the dense Northern Italian and Bay Area pairs), Tier B
+    the substantive regional clusters, Tier C the long tail."""
+    if score_sum >= 50: return "A"
+    if score_sum >= 20: return "B"
+    return "C"
 
 
 def compute_twin_clusters(metros):
@@ -148,9 +151,12 @@ def compute_twin_clusters(metros):
         others_names = member_names[1:]
         size = len(members)
         diameter = round(cluster_diameter_km(members), 1)
+        if diameter > CLUSTER_DIAMETER_CAP:
+            continue
+        score_sum = round(sum(m.get("score", 0) or 0 for m in members), 1)
         cid = f"c{cluster_id:03d}"
         is_mega = size >= 4
-        tier = tier_for_megaregion(size) if is_mega else tier_for_twin(size)
+        tier = tier_for_score_sum(score_sum)
         target = mega_rows if is_mega else twin_rows
         target.append({
             "slug": lead["slug"],
@@ -160,16 +166,34 @@ def compute_twin_clusters(metros):
             "cluster_id": cid,
             "cluster_size": size,
             "cluster_diameter_km": diameter,
+            "cluster_score_sum": score_sum,
             "cluster_member_slugs": ";".join(member_slugs),
             "cluster_member_names": ";".join(member_names),
             "cluster_other_slugs": ";".join(others_slugs),
             "cluster_other_names": ";".join(others_names),
             "tier": tier,
         })
+    # Sort by cluster_score_sum descending so the heaviest clusters surface first.
+    twin_rows.sort(key=lambda r: -r["cluster_score_sum"])
+    mega_rows.sort(key=lambda r: -r["cluster_score_sum"])
     return twin_rows, mega_rows
 
 
-# --- Isolated Capital: peer must be at least as prominent ---
+# --- Isolated Capital: peer must be in the same or higher score tier ---
+
+# Score tier index, mirroring lib/tiers.ts. Lower index = higher tier:
+# 0=Global Capital, 1=World City, 2=Major Metro, 3=Regional Hub,
+# 4=Established, 5=Emerging, 6=Local. The score is used only to bucket
+# the metro into a tier; comparison is then strictly tier-vs-tier.
+_TIER_LOWER_BOUNDS = [100.0, 50.0, 20.0, 10.0, 5.0, 1.0, 0.0]
+
+
+def tier_index(score):
+    for i, lb in enumerate(_TIER_LOWER_BOUNDS):
+        if score >= lb:
+            return i
+    return len(_TIER_LOWER_BOUNDS) - 1
+
 
 def tier_for_isolated(distance_km):
     if distance_km >= 800: return "A"
@@ -178,10 +202,10 @@ def tier_for_isolated(distance_km):
 
 
 def compute_isolated_capital(metros, capital_flags):
-    """Capital qualifies when no metro with rank <= capital's own rank sits
-    within ISOLATED_KM. The peer-prominence rule replaces the previous
-    arbitrary top-200 floor with a comparability rule: the disqualifying peer
-    must be at least as prominent as the capital itself.
+    """Capital qualifies when no metro in the same or higher tier sits within
+    ISOLATED_KM. Comparison is strictly tier-vs-tier: a Local City small town
+    never disqualifies a Major Metro capital; only peers in the capital's own
+    tier or above count.
     """
     rows = []
     for a in metros:
@@ -190,8 +214,7 @@ def compute_isolated_capital(metros, capital_flags):
         marker = capital_flags.get(a["slug"], "")
         if marker not in ("Y", "XY"):
             continue
-        a_rank = a["rank"]
-        # Peers eligible to disqualify: rank <= a_rank, has coords, not self
+        a_tier = tier_index(a.get("score", 0) or 0)
         nearest = None
         nearest_d = float("inf")
         for b in metros:
@@ -199,13 +222,13 @@ def compute_isolated_capital(metros, capital_flags):
                 continue
             if not has_coords(b):
                 continue
-            if b["rank"] > a_rank:
+            # Peer must be at the capital's tier or higher (lower index = higher tier)
+            if tier_index(b.get("score", 0) or 0) > a_tier:
                 continue
             d = haversine_km(a["lat"], a["lon"], b["lat"], b["lon"])
             if d < nearest_d:
                 nearest_d = d
                 nearest = b
-        # Capital with no eligible peer at all is implicitly maximally isolated
         if nearest is None:
             nearest_d = float("inf")
         if nearest_d > ISOLATED_KM:
@@ -234,6 +257,60 @@ def write_csv(path, rows, columns):
     print(f"wrote {path.relative_to(ROOT)}: {len(rows)} rows")
 
 
+# Country pairs/triplets that are *real* geographic adjacencies across
+# continents. Clusters drawn entirely from these sets are not flagged.
+_KNOWN_CROSS_CONTINENT_GROUPS = [
+    {"Spain", "Morocco", "Gibraltar"},
+    {"Spain", "Morocco"},
+    {"Israel", "Egypt", "Jordan", "Palestine"},
+    {"Israel", "Jordan", "Palestine"},
+    {"Russia", "Kazakhstan"},
+    {"Turkey", "Greece"},
+    {"Indonesia", "Papua New Guinea", "East Timor"},
+    {"Yemen", "Djibouti", "Eritrea"},
+    {"Singapore", "Malaysia", "Indonesia"},  # southern tip of Malay Peninsula
+]
+
+
+def qa_flag_suspect_clusters(metros, twin_rows, mega_rows):
+    """Surface cluster rows whose membership looks geographically inconsistent.
+    Editorial choices in the workbook are respected; this is a lightweight
+    prompt to verify lat/long values.
+
+    Filters: clusters spanning multiple continents AND not entirely contained
+    in a known cross-continent geographic group; small clusters (size<=4)
+    spanning 3+ countries are also flagged unless their countries match a
+    known group.
+    """
+    by_slug = {m["slug"]: m for m in metros}
+    suspects = []
+    for r in twin_rows + mega_rows:
+        slugs = r["cluster_member_slugs"].split(";")
+        members = [by_slug.get(s) for s in slugs if s in by_slug]
+        continents = {(m.get("continent") or "").strip() for m in members}
+        continents.discard("")
+        countries = {(m.get("country") or "").strip() for m in members}
+        size = int(r["cluster_size"])
+        flag = None
+        if len(continents) > 1:
+            flag = "cross-continent"
+        elif size <= 4 and len(countries) >= 3:
+            flag = "3+countries-small"
+        if flag is None:
+            continue
+        # Apply allowlist
+        ok = any(countries.issubset(group) for group in _KNOWN_CROSS_CONTINENT_GROUPS)
+        if ok:
+            continue
+        suspects.append((r["cluster_id"], size, sorted(continents), sorted(countries), slugs, flag))
+    if not suspects:
+        print("\n=== QA: no suspect clusters detected ===")
+        return
+    print("\n=== QA: suspect clusters (verify lat/long values) ===")
+    for cid, sz, conts, ctry, slugs, flag in suspects:
+        print(f"  {cid} [{flag}] (n={sz}, continents={conts}, countries={ctry}): {';'.join(slugs)}")
+
+
 def main():
     metros = load_metros()
     capital_flags = load_capital_flags(metros)
@@ -242,7 +319,8 @@ def main():
     iso_rows = compute_isolated_capital(metros, capital_flags)
 
     cluster_cols = ["slug", "name", "country", "rank", "cluster_id", "cluster_size", "cluster_diameter_km",
-                    "cluster_member_slugs", "cluster_member_names", "cluster_other_slugs", "cluster_other_names", "tier"]
+                    "cluster_score_sum", "cluster_member_slugs", "cluster_member_names",
+                    "cluster_other_slugs", "cluster_other_names", "tier"]
     iso_cols = ["slug", "name", "country", "rank", "distance_km", "peer_slug", "peer_name", "peer_country", "peer_rank", "tier"]
 
     write_csv(OUT_TWIN, twin_rows, cluster_cols)
@@ -282,7 +360,9 @@ def main():
     print("Most-isolated 25:")
     for r in iso_rows[:25]:
         peer = f"{r['peer_name']} (#{r['peer_rank']})" if r['peer_name'] else "<none>"
-        print(f"  {r['name']:<25} (#{r['rank']:>4}, {r['country']:<22})  nearest peer-of-rank-≤-{r['rank']} = {peer:<28} {r['distance_km']:>6.1f} km  tier {r['tier']}")
+        print(f"  {r['name']:<25} (#{r['rank']:>4}, {r['country']:<22})  nearest same-or-higher-tier peer = {peer:<28} {r['distance_km']:>6.1f} km  tier {r['tier']}")
+    qa_flag_suspect_clusters(metros, twin_rows, mega_rows)
+
     print()
     print("Re-checks for the 6 capitals user asked to bring back:")
     target = ["Brasilia","Brasília","Canberra","Madrid","Buenos Aires","Santiago","Wellington"]
@@ -297,13 +377,14 @@ def main():
             cand = [m for m in metros if t in m['name']]
             if cand and has_coords(cand[0]):
                 c = cand[0]
-                ranked = [m for m in metros if has_coords(m) and m['rank'] <= c['rank'] and m['slug'] != c['slug']]
+                a_tier = tier_index(c.get('score', 0) or 0)
+                ranked = [m for m in metros if has_coords(m) and tier_index(m.get('score', 0) or 0) <= a_tier and m['slug'] != c['slug']]
                 if not ranked:
                     print(f"  OUT: {t} - no peer-of-higher-rank exists")
                 else:
                     nearest = min(ranked, key=lambda x: haversine_km(c['lat'], c['lon'], x['lat'], x['lon']))
                     nd = haversine_km(c['lat'], c['lon'], nearest['lat'], nearest['lon'])
-                    print(f"  OUT: {t} (#{c['rank']}) -> nearest peer-of-rank-≤-{c['rank']} = {nearest['name']} (#{nearest['rank']}) {nd:.1f} km")
+                    print(f"  OUT: {t} (#{c['rank']}) -> nearest same-or-higher-tier peer = {nearest['name']} (#{nearest['rank']}) {nd:.1f} km")
 
 
 if __name__ == "__main__":

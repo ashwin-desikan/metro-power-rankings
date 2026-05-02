@@ -73,7 +73,10 @@ function formatContextValue(badgeSlug: string, value: number): string {
   if (badgeSlug === "overperformer") {
     return `${value.toFixed(1)}x`;
   }
-  if (badgeSlug === "twin-metros" || badgeSlug === "megaregions" || badgeSlug === "isolated-capital") {
+  if (badgeSlug === "twin-metros" || badgeSlug === "megaregions") {
+    return value.toFixed(1);
+  }
+  if (badgeSlug === "isolated-capital") {
     return `${value.toFixed(0)} km`;
   }
   return value.toFixed(1);
