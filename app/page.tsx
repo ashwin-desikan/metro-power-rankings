@@ -196,12 +196,18 @@ export default async function Home() {
                   <h3 className="text-lg font-bold">{region.name}</h3>
                 </div>
 
-                {/* Top 3 metros */}
+                {/* Top 3 metros — each row links to its metro detail page */}
                 <div className="space-y-3 mb-6">
-                  {region.top3.map((metro, idx) => (
-                    <div key={metro.slug} className="flex justify-between items-baseline">
+                  {region.top3.map((metro) => (
+                    <Link
+                      key={metro.slug}
+                      href={`/rankings/${metro.slug}`}
+                      className="group flex justify-between items-baseline rounded-md -mx-2 px-2 py-1 transition-colors hover:bg-[var(--bg-card-hover)]"
+                    >
                       <div className="flex-1">
-                        <div className="text-sm font-semibold">{metro.name}</div>
+                        <div className="text-sm font-semibold group-hover:text-[var(--accent)] transition-colors">
+                          {metro.name}
+                        </div>
                         <div className="text-xs text-[var(--text-muted)]">
                           #{metro.rank}
                         </div>
@@ -215,7 +221,7 @@ export default async function Home() {
                       >
                         {metro.score.toFixed(1)}
                       </div>
-                    </div>
+                    </Link>
                   ))}
                 </div>
 
