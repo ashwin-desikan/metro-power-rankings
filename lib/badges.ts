@@ -38,8 +38,11 @@ export type QualifyingMetro = {
     id: string;
     size: number;
     diameterKm: number;
+    // otherSlugs/otherNames exclude the lead; memberSlugs/memberNames include it.
     otherSlugs: string[];
     otherNames: string[];
+    memberSlugs: string[];
+    memberNames: string[];
   };
 };
 
@@ -113,39 +116,36 @@ function computeFromCsv(csvPath: string, valueColumn: string, contextLabel: stri
 function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
   const csv = loadCsv(csvPath);
   const { bySlug } = getMetroIndex();
-  // Group rows by cluster_id and compute each cluster's best rank
-  const byCluster = new Map<string, { metaList: QualifyingMetro[]; bestRank: number }>();
+  // Build one QualifyingMetro per cluster: the cluster's lead (lowest-rank
+  // member). The cluster's full member list lives on `cluster.memberSlugs`/
+  // `cluster.memberNames`; `otherSlugs`/`otherNames` excludes the lead. The
+  // inverted index `buildBadgesByMetroIndex` walks `memberSlugs` so every
+  // cluster member still gets a chip on its own metro detail page.
+  const leads = new Map<string, { qm: QualifyingMetro; bestRank: number; memberSlugs: string[]; memberNames: string[] }>();
   for (const row of csv) {
     const meta = bySlug.get(row.slug);
     if (!meta) continue;
     const size = parseInt(row.cluster_size, 10);
     const diameter = parseFloat(row.cluster_diameter_km);
     if (isNaN(size) || isNaN(diameter)) continue;
-    const otherSlugs = row.cluster_other_slugs ? row.cluster_other_slugs.split(";").filter(Boolean) : [];
-    const otherNames = row.cluster_other_names ? row.cluster_other_names.split(";").filter(Boolean) : [];
+    const cid = row.cluster_id;
+    const memberSlugs = row.cluster_member_slugs ? row.cluster_member_slugs.split(";").filter(Boolean) : [meta.slug];
+    const memberNames = row.cluster_member_names ? row.cluster_member_names.split(";").filter(Boolean) : [meta.name];
+    // Skip if this row isn't the cluster's lead (we'll see it later in another row, or already saw it).
+    const existing = leads.get(cid);
+    if (existing && meta.rank >= existing.bestRank) continue;
+    const otherSlugs = memberSlugs.filter((s) => s !== meta.slug);
+    const otherNames = memberNames.filter((_, i) => memberSlugs[i] !== meta.slug);
     const qm: QualifyingMetro = {
       slug: meta.slug, name: meta.name, country: meta.country,
       rank: meta.rank, score: meta.score,
       contextValue: diameter, contextLabel: "Cluster diameter",
       tier: row.tier || undefined,
-      cluster: { id: row.cluster_id, size, diameterKm: diameter, otherSlugs, otherNames },
+      cluster: { id: cid, size, diameterKm: diameter, otherSlugs, otherNames, memberSlugs, memberNames },
     };
-    const cid = row.cluster_id;
-    const entry = byCluster.get(cid);
-    if (entry) {
-      entry.metaList.push(qm);
-      if (meta.rank < entry.bestRank) entry.bestRank = meta.rank;
-    } else {
-      byCluster.set(cid, { metaList: [qm], bestRank: meta.rank });
-    }
+    leads.set(cid, { qm, bestRank: meta.rank, memberSlugs, memberNames });
   }
-  const sortedClusters = [...byCluster.entries()].sort((a, b) => a[1].bestRank - b[1].bestRank);
-  const out: QualifyingMetro[] = [];
-  for (const [, { metaList }] of sortedClusters) {
-    metaList.sort((a, b) => a.rank - b.rank);
-    out.push(...metaList);
-  }
-  return out;
+  return [...leads.values()].sort((a, b) => a.bestRank - b.bestRank).map((e) => e.qm);
 }
 
 function computeTwinClusters(): QualifyingMetro[] {
@@ -386,9 +386,17 @@ function buildBadgesByMetroIndex(): Map<string, BadgeForMetro[]> {
     if (!badge.compute) continue;
     const list = getQualifyingMetros(badge);
     for (const qualifying of list) {
-      const arr = idx.get(qualifying.slug);
-      if (arr) arr.push({ badge, qualifying });
-      else idx.set(qualifying.slug, [{ badge, qualifying }]);
+      // For cluster entries, every member of the cluster gets a chip pointing
+      // to this same lead-row entry. For non-cluster entries, only the entry
+      // itself is indexed.
+      const slugsToIndex = qualifying.cluster
+        ? qualifying.cluster.memberSlugs
+        : [qualifying.slug];
+      for (const slug of slugsToIndex) {
+        const arr = idx.get(slug);
+        if (arr) arr.push({ badge, qualifying });
+        else idx.set(slug, [{ badge, qualifying }]);
+      }
     }
   }
   for (const arr of idx.values()) {

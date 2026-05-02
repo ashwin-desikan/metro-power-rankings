@@ -238,7 +238,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                   color: "var(--accent)",
                 }}
               >
-                {metros.length} qualifying metros
+                {metros.length} {badge.slug === "twin-metros" || badge.slug === "megaregions" ? "qualifying clusters" : "qualifying metros"}
               </span>
               {badge.methodologyAnchor ? (
                 <Link

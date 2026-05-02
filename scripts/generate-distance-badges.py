@@ -128,8 +128,10 @@ def tier_for_megaregion(size):
 
 
 def compute_twin_clusters(metros):
-    """Return (twin_rows, mega_rows). Twin Metros holds clusters of size 2-3.
-    Megaregions holds clusters of size 4+."""
+    """Return (twin_rows, mega_rows). One row per cluster, identified by its
+    lead (lowest-rank member). The full member list is in cluster_member_slugs
+    / cluster_member_names; cluster_other_slugs / cluster_other_names exclude
+    the lead. Twin Metros holds clusters of size 2-3, Megaregions size 4+."""
     clusters = find_clusters(metros, TWIN_KM)
     cluster_list = list(clusters.values())
     cluster_list.sort(key=lambda members: min(m["rank"] for m in members))
@@ -139,31 +141,31 @@ def compute_twin_clusters(metros):
     for members in cluster_list:
         cluster_id += 1
         members_sorted = sorted(members, key=lambda m: m["rank"])
+        lead = members_sorted[0]
         member_slugs = [m["slug"] for m in members_sorted]
         member_names = [m["name"] for m in members_sorted]
+        others_slugs = member_slugs[1:]
+        others_names = member_names[1:]
         size = len(members)
         diameter = round(cluster_diameter_km(members), 1)
         cid = f"c{cluster_id:03d}"
         is_mega = size >= 4
         tier = tier_for_megaregion(size) if is_mega else tier_for_twin(size)
         target = mega_rows if is_mega else twin_rows
-        for m in members_sorted:
-            others_slugs = [s for s in member_slugs if s != m["slug"]]
-            others_names = [n for n, s in zip(member_names, member_slugs) if s != m["slug"]]
-            target.append({
-                "slug": m["slug"],
-                "name": m["name"],
-                "country": m["country"],
-                "rank": m["rank"],
-                "cluster_id": cid,
-                "cluster_size": size,
-                "cluster_diameter_km": diameter,
-                "cluster_member_slugs": ";".join(member_slugs),
-                "cluster_member_names": ";".join(member_names),
-                "cluster_other_slugs": ";".join(others_slugs),
-                "cluster_other_names": ";".join(others_names),
-                "tier": tier,
-            })
+        target.append({
+            "slug": lead["slug"],
+            "name": lead["name"],
+            "country": lead["country"],
+            "rank": lead["rank"],
+            "cluster_id": cid,
+            "cluster_size": size,
+            "cluster_diameter_km": diameter,
+            "cluster_member_slugs": ";".join(member_slugs),
+            "cluster_member_names": ";".join(member_names),
+            "cluster_other_slugs": ";".join(others_slugs),
+            "cluster_other_names": ";".join(others_names),
+            "tier": tier,
+        })
     return twin_rows, mega_rows
 
 
