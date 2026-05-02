@@ -17,8 +17,6 @@ import type { Metro } from "./shared";
 // drives its position; satellites are not double-counted.
 const _CONURBATION_OVERRIDES: { slug: string; displayName?: string; satellites: string[] }[] = [
   // Global Capitals (score >= 100)
-  { slug: "new-york", displayName: "Tri-State Area", satellites: ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island", "Newark", "Jersey City", "Long Island", "Westchester"] },
-  { slug: "london", satellites: ["Westminster", "Camden", "Croydon", "Watford", "Reading", "St Albans"] },
   { slug: "paris", displayName: "Île-de-France", satellites: ["Paris", "Boulogne-Billancourt", "Saint-Denis", "Argenteuil", "Versailles", "Créteil"] },
   { slug: "tokyo", displayName: "Greater Tokyo", satellites: ["Tokyo", "Yokohama", "Kawasaki", "Saitama", "Chiba"] },
   { slug: "san-francisco-san-jose", displayName: "Bay Area", satellites: ["San Francisco", "San Jose", "Oakland", "Fremont", "Berkeley", "Palo Alto"] },
@@ -134,6 +132,27 @@ const _NAMED_MEGAREGIONS: {
     leadSlug: "manchester",
     memberSlugs: ["manchester", "liverpool", "blackburn-burnley", "blackpool", "lancaster"],
     extraSatellites: ["Bolton", "Stockport", "Salford", "Warrington", "Preston", "Birkenhead", "St Helens"],
+  },
+  {
+    slug: "tri-state-area",
+    displayName: "Tri-State Area",
+    leadSlug: "new-york",
+    memberSlugs: ["new-york", "new-haven"],
+    extraSatellites: ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island", "Newark", "Jersey City", "Long Island", "Westchester"],
+  },
+  {
+    slug: "greater-south-east",
+    displayName: "Greater South East",
+    leadSlug: "london",
+    memberSlugs: ["london", "cambridge", "oxford", "milton-keynes", "bedford", "canterbury"],
+    extraSatellites: ["Westminster", "Camden", "Croydon", "Watford", "Reading", "St Albans", "Slough", "Chelmsford", "Southend-on-Sea", "Maidstone", "Tunbridge Wells", "Aylesbury", "Banbury"],
+  },
+  {
+    slug: "haven-gateway",
+    displayName: "Haven Gateway",
+    leadSlug: "ipswich",
+    memberSlugs: ["ipswich", "colchester"],
+    extraSatellites: ["Felixstowe", "Harwich", "Clacton-on-Sea"],
   },
 ];
 
