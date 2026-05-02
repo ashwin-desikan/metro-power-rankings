@@ -65,17 +65,57 @@ function loadCsv(relPath: string): Record<string, string>[] {
   });
 }
 
+function buildMetroIndex(): Map<string, Metro> {
+  const idx = new Map<string, Metro>();
+  for (const m of getAllMetros()) idx.set(m.slug, m);
+  return idx;
+}
+
+// Generic CSV-driven compute: each row has slug + a value column. We
+// look up the metro by slug to get current rank/score/pop, since the CSV
+// can lag a refresh.
+function computeFromCsv(
+  csvPath: string,
+  valueColumn: string,
+  contextLabel: string,
+): QualifyingMetro[] {
+  const csv = loadCsv(csvPath);
+  const metroBySlug = buildMetroIndex();
+  const out: QualifyingMetro[] = [];
+  for (const row of csv) {
+    const meta = metroBySlug.get(row.slug);
+    const value = parseFloat(row[valueColumn]);
+    if (!meta || isNaN(value)) continue;
+    out.push({
+      slug: meta.slug,
+      name: meta.name,
+      country: meta.country,
+      rank: meta.rank,
+      score: meta.score,
+      contextValue: value,
+      contextLabel,
+      tier: row.tier || undefined,
+    });
+  }
+  out.sort((a, b) => b.contextValue - a.contextValue);
+  return out;
+}
+
 // ---------- Live computes ----------
 
 function computeUniversityTown(): QualifyingMetro[] {
+  // Special-case: CSV uses 'name' lookup historically; map by name as well
   const csv = loadCsv("public/data/academic-gravity-wells.csv");
   const metros = getAllMetros();
   const metroByName = new Map<string, Metro>();
-  for (const m of metros) metroByName.set(m.name, m);
-
+  const metroBySlug = new Map<string, Metro>();
+  for (const m of metros) {
+    metroByName.set(m.name, m);
+    metroBySlug.set(m.slug, m);
+  }
   const out: QualifyingMetro[] = [];
   for (const row of csv) {
-    const meta = metroByName.get(row.name);
+    const meta = metroBySlug.get(row.slug) || metroByName.get(row.name);
     const share = parseFloat(row.uni_share_pct);
     if (!meta || isNaN(share)) continue;
     out.push({
@@ -93,31 +133,18 @@ function computeUniversityTown(): QualifyingMetro[] {
   return out;
 }
 
-function computeMegacity(): QualifyingMetro[] {
-  const metros = getAllMetros();
-  return metros
-    .filter((m) => (m.pop ?? 0) >= 5_000_000)
-    .map((m) => ({
-      slug: m.slug,
-      name: m.name,
-      country: m.country,
-      rank: m.rank,
-      score: m.score,
-      contextValue: m.pop,
-      contextLabel: "Population",
-    }))
-    .sort((a, b) => b.contextValue - a.contextValue);
-}
-
 function computeSkylineCity(): QualifyingMetro[] {
   const csv = loadCsv("public/data/skyline-cities.csv");
   const metros = getAllMetros();
   const metroByName = new Map<string, Metro>();
-  for (const m of metros) metroByName.set(m.name, m);
-
+  const metroBySlug = new Map<string, Metro>();
+  for (const m of metros) {
+    metroByName.set(m.name, m);
+    metroBySlug.set(m.slug, m);
+  }
   const out: QualifyingMetro[] = [];
   for (const row of csv) {
-    const meta = metroByName.get(row.name);
+    const meta = metroBySlug.get(row.slug) || metroByName.get(row.name);
     const share = parseFloat(row.sky_share_pct);
     if (!meta || isNaN(share)) continue;
     out.push({
@@ -135,7 +162,62 @@ function computeSkylineCity(): QualifyingMetro[] {
   return out;
 }
 
-// ---------- Registry ----------
+function computeMegacity(): QualifyingMetro[] {
+  return getAllMetros()
+    .filter((m) => (m.pop ?? 0) >= 5_000_000)
+    .map((m) => ({
+      slug: m.slug,
+      name: m.name,
+      country: m.country,
+      rank: m.rank,
+      score: m.score,
+      contextValue: m.pop,
+      contextLabel: "Population",
+    }))
+    .sort((a, b) => b.contextValue - a.contextValue);
+}
+
+function computeGlobalGateway(): QualifyingMetro[] {
+  return computeFromCsv(
+    "public/data/global-gateway.csv",
+    "airport_score",
+    "Airport score",
+  );
+}
+
+function computeFinanceCapital(): QualifyingMetro[] {
+  return computeFromCsv(
+    "public/data/finance-capital.csv",
+    "marketCap",
+    "Market cap (USD)",
+  );
+}
+
+function computeCultureCapital(): QualifyingMetro[] {
+  return computeFromCsv(
+    "public/data/culture-capital.csv",
+    "culture_score",
+    "Culture composite",
+  );
+}
+
+function computeSportsMecca(): QualifyingMetro[] {
+  return computeFromCsv(
+    "public/data/sports-mecca.csv",
+    "sports_score",
+    "Sports composite",
+  );
+}
+
+function computeRailHub(): QualifyingMetro[] {
+  return computeFromCsv(
+    "public/data/rail-hub.csv",
+    "rail_score",
+    "Rail composite",
+  );
+}
+
+// ---------- Tier registries ----------
 
 const UNIVERSITY_TOWN_TIERS: BadgeTier[] = [
   {
@@ -191,6 +273,8 @@ const SKYLINE_CITY_TIERS: BadgeTier[] = [
   },
 ];
 
+// ---------- Badge registry ----------
+
 export const BADGES: Badge[] = [
   {
     slug: "university-town",
@@ -228,46 +312,51 @@ export const BADGES: Badge[] = [
     slug: "global-gateway",
     name: "Global Gateway",
     emoji: "✈️",
-    shortDesc: "Top decile on airport infrastructure and passenger traffic.",
-    longDesc: "Metros where the airport dimension is in the top 10% globally. Coming soon.",
+    shortDesc: "The 100 metros with the strongest airport infrastructure.",
+    longDesc: "Metros that lead the world on the airport dimension, a composite of passenger traffic, intercontinental connectivity, and hub capacity. Top 100 by airport score, ranging from London and New York at the apex down through the regional gateways that anchor a continent's air network.",
     methodologyAnchor: "#airport-score",
-    status: "coming-soon",
+    status: "live",
+    compute: computeGlobalGateway,
   },
   {
     slug: "finance-capital",
     name: "Finance Capital",
     emoji: "💼",
-    shortDesc: "Top decile on market capitalization and exchanges.",
-    longDesc: "Metros where listed-company market cap and exchange infrastructure put them in the top 10% globally. Coming soon.",
+    shortDesc: "The 100 metros with the largest listed-company market cap.",
+    longDesc: "Metros where the public-equity market capitalization of headquartered companies is highest. Captures the gravitational centers of global capital: San Francisco-San Jose at the top, then New York, Seattle, Beijing, Tokyo, London, Paris. Sorted by total market cap of companies headquartered in the metro.",
     methodologyAnchor: "#market-cap",
-    status: "coming-soon",
+    status: "live",
+    compute: computeFinanceCapital,
   },
   {
     slug: "culture-capital",
     name: "Culture Capital",
     emoji: "🎭",
-    shortDesc: "Top decile across cultural events, museums, and Michelin density.",
-    longDesc: "Metros where cultural infrastructure (events, museums and landmarks, Michelin-starred dining) places them in the top 10% globally. Coming soon.",
+    shortDesc: "The 100 metros with the deepest cultural infrastructure.",
+    longDesc: "Metros that lead on the combined cultural dimensions: cultural events (festivals, fairs, biennales), museums and landmarks, and luxury hospitality (Michelin-starred dining, Forbes Travel Guide hotels). London leads on every component; Paris and New York follow. The list also surfaces the unexpected (Macau, Dubai-Sharjah) where the cultural infrastructure is the product of recent and deliberate investment.",
     methodologyAnchor: "#cultural-events",
-    status: "coming-soon",
+    status: "live",
+    compute: computeCultureCapital,
   },
   {
     slug: "sports-mecca",
     name: "Sports Mecca",
     emoji: "🏟️",
-    shortDesc: "Top decile on sports teams plus major sporting events.",
-    longDesc: "Metros where the combination of major league teams, total teams, and major sporting events places them in the top 10% globally. Coming soon.",
+    shortDesc: "The 100 metros with the densest professional sports presence.",
+    longDesc: "Metros that lead on the combined sports dimensions: major league teams (weighted double), total professional teams across all leagues, and major sporting events hosted (weighted triple). Captures the cities where sport is part of the civic identity, from London at the top through to the second-tier metros that punch above their weight on a single league.",
     methodologyAnchor: "#major-league-teams",
-    status: "coming-soon",
+    status: "live",
+    compute: computeSportsMecca,
   },
   {
     slug: "rail-hub",
     name: "Rail Hub",
     emoji: "🚆",
-    shortDesc: "Top decile on metro stations plus intercity rail.",
-    longDesc: "Metros where the combination of metro stations, suburban stations, and intercity train hubs places them in the top 10% globally. Coming soon.",
+    shortDesc: "The 100 metros with the most extensive rail infrastructure.",
+    longDesc: "Metros that lead on the combined rail dimensions: metro stations (subway/MRT), suburban stations (commuter rail, weighted half), and intercity train hubs (weighted 5x for the network-effect value). Tokyo leads at over a thousand composite points, followed by London, Shanghai, Guangzhou, Toronto, Osaka-Kyoto-Kobe, Rhine-Ruhr.",
     methodologyAnchor: "#metro-stations",
-    status: "coming-soon",
+    status: "live",
+    compute: computeRailHub,
   },
   {
     slug: "twin-metros",

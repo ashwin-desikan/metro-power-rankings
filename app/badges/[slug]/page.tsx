@@ -56,8 +56,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function formatContextValue(badgeSlug: string, value: number): string {
   if (badgeSlug === "university-town") return `${value.toFixed(0)}%`;
+  if (badgeSlug === "skyline-city") return `${value.toFixed(0)}%`;
   if (badgeSlug === "megacity") return formatPop(value);
-  // Sensible default: integer with 1 dp
+  if (badgeSlug === "finance-capital") {
+    if (value >= 1e12) return `$${(value / 1e12).toFixed(1)}T`;
+    if (value >= 1e9) return `$${(value / 1e9).toFixed(1)}B`;
+    if (value >= 1e6) return `$${(value / 1e6).toFixed(0)}M`;
+    return `$${value.toFixed(0)}`;
+  }
+  if (badgeSlug === "culture-capital" || badgeSlug === "sports-mecca") {
+    return value.toFixed(0);
+  }
+  if (badgeSlug === "rail-hub" || badgeSlug === "global-gateway") {
+    return value % 1 === 0 ? value.toFixed(0) : value.toFixed(1);
+  }
   return value.toFixed(1);
 }
 

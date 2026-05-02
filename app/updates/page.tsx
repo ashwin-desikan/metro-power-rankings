@@ -53,6 +53,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-02",
+    headline: "Badges launch: categorical lenses on the dataset",
+    items: [
+      "New /badges section: each badge reframes the metros dataset through a different question, indexable as a standalone destination.",
+      "University Town live with 103 metros tiered by how much the universities dimension contributes to the composite score.",
+      "Skyline City live with 82 metros where skyscrapers dominate the score, ranging from organic vertical density to municipal-debt-driven construction.",
+      "Eight more badges scaffolded for upcoming releases including Global Gateway, Finance Capital, and Sports Mecca.",
+    ],
+  },
+  {
     date: "2026-05-01",
     headline: "Methodology, score tiers, share cards, matchup pages, big data refresh",
     items: [
