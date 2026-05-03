@@ -833,9 +833,13 @@ def load_overture(path):
     # province mismatches, Spain regional mistags, microstate municipalities
     # tagged subtype=region rather than locality). Indexed by
     # (country_code, normalized_base).
+    # country_locality_index entries are (geom, region) tuples. The region
+    # lets lookup_polygon reject cross-province matches (e.g., Saskatchewan
+    # "Brock" was being returned for Ontario "Brock Township" because the
+    # country-wide index dropped province context).
     country_locality_index = {}
-    def _add_country(c_code, base, geom, names_dict):
-        country_locality_index.setdefault((c_code, base), geom)
+    def _add_country(c_code, base, geom, region, names_dict):
+        country_locality_index.setdefault((c_code, base), (geom, region))
         if isinstance(names_dict, dict):
             common = names_dict.get("common")
             if common is not None:
@@ -846,15 +850,15 @@ def load_overture(path):
                 if en:
                     en_base = normalize_base(en)
                     if en_base and en_base != base:
-                        country_locality_index.setdefault((c_code, en_base), geom)
+                        country_locality_index.setdefault((c_code, en_base), (geom, region))
     # Localities (the bulk) — including region=None microstate localities.
     for _, row in locality_all.iterrows():
-        _add_country(row["country"], row["base"], row["geometry"], row["names"])
+        _add_country(row["country"], row["base"], row["geometry"], row["region"], row["names"])
     # localadmin rows (BE communes are dually tagged; CD east cities may show up).
     localadmin = nam[nam["subtype"] == "localadmin"].copy()
     localadmin["base"] = localadmin["primary"].apply(normalize_base)
     for _, row in localadmin.iterrows():
-        _add_country(row["country"], row["base"], row["geometry"], row["names"])
+        _add_country(row["country"], row["base"], row["geometry"], row["region"], row["names"])
     # subtype=region rows for microstates (AD/LI/MT cities are tagged as region,
     # not locality). Restrict to microstates so we don't pollute the index with
     # full state polygons elsewhere.
@@ -864,7 +868,7 @@ def load_overture(path):
     ].copy()
     micro_regions["base"] = micro_regions["primary"].apply(normalize_base)
     for _, row in micro_regions.iterrows():
-        _add_country(row["country"], row["base"], row["geometry"], row["names"])
+        _add_country(row["country"], row["base"], row["geometry"], row["region"], row["names"])
     print(f"      country-wide locality fallback: {len(country_locality_index):,} entries")
 
     # Country polygon fallback for true microstates (Andorra, Vatican, Liechtenstein,
@@ -947,6 +951,7 @@ def load_counties_sheet(path):
                     "metro_display": str(metro_area).strip(),
                     "norm": normalize_base(ward),
                     "iso": iso,
+                    "src": "Counties",
                 })
             continue
         state_map = COUNTRY_TO_STATE_MAP[country]
@@ -962,6 +967,7 @@ def load_counties_sheet(path):
             "metro_display": str(metro_area).strip(),
             "norm": normalize_base(str(county).strip()),
             "iso": iso,
+            "src": "Counties",
         })
     print(f"      rows kept (US/CA/MX with metro): {len(out):,}")
     by_country = defaultdict(int)
@@ -1019,6 +1025,7 @@ def load_municipality_sheet(path):
             "metro_display": str(metro_area).strip(),
             "norm": normalize_base(str(municipality).strip()),
             "iso": iso,
+            "src": "Municipality",
         })
     print(f"      Municipality rows kept: {len(out):,}")
     by_country = defaultdict(int)
@@ -1065,10 +1072,11 @@ def resolve_slug(c, metros_index):
 
 
 def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
-                   country_locality_index=None):
+                   country_locality_index=None, locality_index=None):
     iso = c["iso"]
     norm = c["norm"]
     type_l = c["type"].lower() if c["type"] else ""
+    src = c.get("src")
     label = f"{c['county']} ({iso or '???'}, type={c['type']!r})"
 
     # DC special case
@@ -1081,13 +1089,29 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
     # workbook entries, microstates, and as a last resort for region mistags).
     country_code = COUNTRY_NAME_TO_ISO.get(c.get("country"))
 
+    def _country_lookup(name):
+        # Country-wide fallback with region guard: rejects a match whose
+        # polygon region differs from the workbook iso. Prevents cross-province
+        # leakage (e.g., Saskatchewan "Brock" was being returned for Ontario
+        # "Brock Township" because the country-wide index dropped province context).
+        if not (country_code and country_locality_index is not None):
+            return None
+        entry = country_locality_index.get((country_code, name))
+        if entry is None:
+            return None
+        geom, geom_region = entry
+        if iso and geom_region and geom_region != iso:
+            return None  # cross-region — reject
+        return geom
+
     if not iso:
         # No iso (Ireland provinces, microstates with sentinel iso=country_code,
-        # etc.). Try country-wide locality lookup.
+        # etc.). Try country-wide locality lookup. No region guard since iso
+        # is None by definition here.
         if country_code and country_locality_index is not None:
-            geom = country_locality_index.get((country_code, norm))
-            if geom is not None:
-                return geom, None
+            entry = country_locality_index.get((country_code, norm))
+            if entry is not None:
+                return entry[0], None
         return None, label + " [state not in ISO map]"
 
     # QC amalgamated cities (Type='Territory'): consult locality index first.
@@ -1107,6 +1131,15 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
     primary_key = (iso, norm, not is_city_type)
     fallback_key = (iso, norm, is_city_type)
 
+    # Municipality-sheet rows (CA + Europe) are sub-county by editorial intent.
+    # Try region-keyed locality FIRST so a Town/Township/Village/Parish doesn't
+    # accidentally claim a same-name County polygon (e.g., Perth Town in Lanark
+    # was matching Perth County in southwestern Ontario).
+    if src == "Municipality" and locality_index is not None:
+        geom = locality_index.get((iso, norm))
+        if geom is not None:
+            return geom, None
+
     if primary_key in poly_index:
         return poly_index[primary_key], None
     if fallback_key in poly_index:
@@ -1119,12 +1152,21 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
             if k in poly_index:
                 return poly_index[k], None
 
-    # Country-wide locality fallback. Catches Spain region mistags (Burgos
-    # tagged ES-AN by Overture), Belgium province mismatches, etc.
-    if country_code and country_locality_index is not None:
-        geom = country_locality_index.get((country_code, norm))
+    # Region-keyed locality lookup (Counties-sheet rows reach this only after
+    # the county tier misses; preserves province context before we drop down to
+    # the country-wide fallback).
+    if locality_index is not None:
+        geom = locality_index.get((iso, norm))
         if geom is not None:
             return geom, None
+
+    # Country-wide locality fallback. Catches Spain region mistags (Burgos
+    # tagged ES-AN by Overture), Belgium province mismatches. Region guard
+    # prevents this tier from picking up a same-name match in a different
+    # province (the source of the Canada cross-province leakage bug).
+    geom = _country_lookup(norm)
+    if geom is not None:
+        return geom, None
 
     return None, label
 
@@ -1148,6 +1190,22 @@ def main():
             unmatched_metros.add(f"{c['metro_display']} ({c['country']})")
             continue
         by_slug[slug].append(c)
+    # Dedupe within each metro: when the same (iso, norm) appears in both
+    # Counties and Municipality sheets (e.g., Hamilton ON, where the workbook
+    # has the city listed both as a Census Division and as a City), prefer the
+    # Counties row. The Counties row hits poly_index (the actual amalgamated
+    # city polygon); the Municipality row would otherwise fire locality_index
+    # and pick up an unrelated same-name township.
+    deduped_by_slug = {}
+    for slug, members in by_slug.items():
+        counties_keys = {(m["iso"], m["norm"]) for m in members if m.get("src") == "Counties"}
+        kept = []
+        for m in members:
+            if m.get("src") == "Municipality" and (m["iso"], m["norm"]) in counties_keys:
+                continue
+            kept.append(m)
+        deduped_by_slug[slug] = kept
+    by_slug = deduped_by_slug
     print(f"      Metros resolved to slugs: {len(by_slug)}")
     print(f"      Metros unmatched (display name not in metros.json): {len(unmatched_metros)}")
     if unmatched_metros and "--verbose" in sys.argv:
@@ -1183,7 +1241,8 @@ def main():
         if not polys:
             for c in members:
                 geom, fail = lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
-                                             country_locality_index=country_locality_index)
+                                             country_locality_index=country_locality_index,
+                                             locality_index=locality_index)
                 if geom is not None:
                     polys.append(geom)
                 if fail:
@@ -1231,15 +1290,22 @@ def main():
                 # Last resort: the whole region polygon for cases where the
                 # metro IS the entire province (Beijing CN-BJ, Shanghai CN-SH,
                 # Australian Capital Territory AU-ACT). Workbook metro_display
-                # may not match the region's primary name.
-                if fallback_geom is None and iso:
+                # may not match the region's primary name. Gated to len==1 so
+                # we don't return e.g. all of Newfoundland for Corner Brook
+                # when Overture coverage of NL is too sparse to resolve any of
+                # its 27 member localities.
+                if fallback_geom is None and iso and len(members) == 1:
                     fallback_geom = region_index.get((iso, "*REGION*"))
-                # Country-wide locality fallback.
+                # Country-wide locality fallback. Unpacks the (geom, region)
+                # tuple stored in the index. No region guard here since this is
+                # the metro-name fallback used when no per-member match worked.
                 if fallback_geom is None:
                     country_code = COUNTRY_NAME_TO_ISO.get(members[0]["country"])
                     if country_code:
-                        fallback_geom = country_locality_index.get(
+                        entry = country_locality_index.get(
                             (country_code, norm_metro))
+                        if entry is not None:
+                            fallback_geom = entry[0]
                 # Country polygon fallback (Andorra, Vatican, Liechtenstein,
                 # Malta, French overseas — metro IS the country/dependency).
                 if fallback_geom is None:
