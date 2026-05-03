@@ -10,6 +10,10 @@ import {
 } from "@/lib/badges";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop } from "@/lib/shared";
+import { getAllMetros } from "@/lib/data";
+import ConurbationsTable, {
+  type EnrichedConurbationRow,
+} from "./ConurbationsTable";
 import {
   AUTHOR,
   BASE_URL,
@@ -290,8 +294,35 @@ export default async function BadgeDetailPage({ params }: Props) {
             </div>
           </header>
 
+          {/* Conurbations: client-side search + filter, mirrors
+              the homepage RankingsTable scope-dropdown pattern. */}
+          {badge.slug === "conurbations" && badge.tiers ? (() => {
+            const all = getAllMetros();
+            const bySlug = new Map(all.map((m) => [m.slug, m]));
+            const enriched: EnrichedConurbationRow[] = metros.map((m) => {
+              const slugs = m.cluster?.memberSlugs ?? [m.slug];
+              const members = slugs
+                .map((s) => bySlug.get(s))
+                .filter((mm): mm is NonNullable<typeof mm> => mm !== undefined)
+                .map((mm) => ({
+                  slug: mm.slug,
+                  name: mm.name,
+                  country: mm.country,
+                  subCountry: mm.subCountry,
+                  primaryState: mm.primaryState,
+                  state2: mm.state2,
+                  state3: mm.state3,
+                  primaryCity: mm.primaryCity,
+                }));
+              return { ...m, members };
+            });
+            return (
+              <ConurbationsTable rows={enriched} tiers={badge.tiers!} />
+            );
+          })() : null}
+
           {/* Tier breakdown (when applicable) */}
-          {badge.tiers ? (
+          {badge.slug !== "conurbations" && badge.tiers ? (
             <section className="mb-12">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {badge.tiers.map((t) => {
@@ -321,7 +352,7 @@ export default async function BadgeDetailPage({ params }: Props) {
           ) : null}
 
           {/* List */}
-          {badge.tiers ? (
+          {badge.slug !== "conurbations" && badge.tiers ? (
             badge.tiers.map((t) => {
               const group = tieredGroups.get(t.slug) ?? [];
               if (group.length === 0) return null;
@@ -375,7 +406,7 @@ export default async function BadgeDetailPage({ params }: Props) {
                 </section>
               );
             })
-          ) : (
+          ) : badge.slug === "conurbations" ? null : (
             <section className="mb-12">
               <div
                 className="border rounded-lg overflow-x-auto"
