@@ -2,7 +2,7 @@
 US metro boundary GeoJSON generator.
 
 Reads:
-  - Overture Maps division_area Parquet (filtered to US counties)
+  - Overture Maps division_area Parquet (filtered to US counties + DC region)
   - MetroAreas.xlsx Counties sheet (US rows with Metro Area assignment)
   - public/data/metros.json (for slug resolution)
 
@@ -19,12 +19,36 @@ Run from project root:
 
 The Overture Parquet path defaults to the user's local layout but is
 overridable via the OVERTURE_DIVISION_AREA env var.
+
+Editorial decisions baked in:
+
+1. Virginia / Maryland city-vs-county collisions. VA has 41 independent
+   cities tagged subtype=county in Overture (matches FIPS). Some collide
+   on bare name with a same-named county: Fairfax County vs Fairfax (city),
+   Franklin / Richmond / Roanoke. Maryland has the same shape with
+   Baltimore (city, no suffix) vs Baltimore County. The script keys
+   Overture rows on (region, base_name, has_county_suffix) so these
+   distinguish; the Counties sheet's Type column ("County" vs "City")
+   chooses which bucket to look up.
+
+2. District of Columbia. DC has no subtype=county row in Overture; it
+   appears as subtype=region with primary "District of Columbia". The
+   Counties sheet rows it as type="Federal District" with name "Washington".
+   A special branch routes Federal District lookups to the DC region polygon.
+
+3. Connecticut planning regions. CT abolished its 8 traditional counties
+   in 2022. Both the Counties sheet (rows tagged type="Planning Region")
+   and Overture (subtype=county with " Planning Region" name suffix)
+   carry the new regions. The script treats " Planning Region" as just
+   another county-style admin suffix; that's enough to make the join
+   work without any hardcoded crosswalk.
 """
 
 import os
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from collections import defaultdict
 
@@ -33,7 +57,6 @@ import openpyxl
 from shapely.ops import unary_union
 from shapely.geometry import mapping
 
-# Configuration
 SOURCE_PARQUET = os.environ.get(
     "OVERTURE_DIVISION_AREA",
     r"C:\Users\ashwi\Desktop\Projects\MapData\us-conus-division-area.parquet",
@@ -42,14 +65,8 @@ WORKBOOK = "MetroAreas.xlsx"
 METROS_JSON = "public/data/metros.json"
 OUT_DIR = Path("public/data/metro-boundaries")
 
-# Simplification tolerance in degrees. ~0.005 deg ≈ 500m at mid-latitudes.
-# Keeps file sizes small without visibly distorting county outlines at the
-# zoom levels we render maps at on metro pages.
 SIMPLIFY_TOLERANCE_DEG = 0.005
 
-# US state full name → ISO 3166-2 two-letter code (sans US- prefix because
-# Overture's region field includes it: "US-AL"). The Counties sheet uses
-# full names; Overture uses ISO 3166-2.
 US_STATE_TO_ISO = {
     "Alabama": "US-AL", "Alaska": "US-AK", "Arizona": "US-AZ", "Arkansas": "US-AR",
     "California": "US-CA", "Colorado": "US-CO", "Connecticut": "US-CT",
@@ -69,53 +86,112 @@ US_STATE_TO_ISO = {
     "Wisconsin": "US-WI", "Wyoming": "US-WY",
 }
 
+# County-style admin suffixes. Stripped during normalization; presence is
+# also used to distinguish Fairfax County (with suffix) from Fairfax (the
+# Virginia independent city, without suffix).
+COUNTY_SUFFIXES = (
+    " County", " Parish", " Borough", " Census Area",
+    " Municipality", " Municipio", " Planning Region",
+)
 
-def normalize_county_name(name: str) -> str:
-    """Lowercase and strip suffixes so 'St. Clair' matches 'St. Clair County'."""
+# Editorial aliases for counties whose Overture name differs from the
+# Counties sheet. RI Washington County is colloquially "South County" and
+# Overture chose the colloquial form.
+COUNTY_ALIASES = {
+    ("US-RI", "washington"): "south",
+}
+
+
+def has_county_suffix(name: str) -> bool:
+    if not name:
+        return False
+    return any(name.endswith(s) for s in COUNTY_SUFFIXES)
+
+
+def strip_admin_suffixes(name: str) -> str:
+    """Strip County / Parish / Planning Region / etc. Does NOT strip ' City'
+    because some real county names contain it (James City County VA,
+    Charles City County VA). City-suffixed workbook entries get pre-stripped
+    in load_counties_sheet based on the Type column instead.
+    """
     if not name:
         return ""
     s = str(name).strip()
-    # Strip any trailing administrative suffix that one side has and the other doesn't
-    for suffix in [
-        " County", " Parish", " Borough", " Census Area",
-        " Municipality", " Municipio", " (city)", " city",
-    ]:
-        if s.lower().endswith(suffix.lower()):
+    for suffix in COUNTY_SUFFIXES:
+        if s.endswith(suffix):
             s = s[: -len(suffix)].strip()
             break
-    # Normalize: lowercase, drop punctuation, collapse spaces
+    return s
+
+
+def normalize_base(name: str) -> str:
+    s = strip_admin_suffixes(name)
+    # ASCII-fold so Coös matches Coos (NH), Doña Ana matches Dona Ana (NM).
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
     s = s.lower().replace(".", "").replace("'", "").replace("’", "")
     s = re.sub(r"\s+", " ", s).strip()
+    # Canonicalize abbreviation pairs that diverge across data sources.
+    s = re.sub(r"^saint\s+", "st ", s)
+    s = re.sub(r"^sainte\s+", "ste ", s)
+    s = re.sub(r"^fort\s+", "ft ", s)
+    s = re.sub(r"^mount\s+", "mt ", s)
+    # Collapse French-origin compound prefixes that diverge in spacing:
+    # "De Witt" / "DeWitt", "La Salle" / "LaSalle", etc.
+    s = re.sub(r"^(de|la|le|du|des)\s+", lambda m: m.group(1), s)
     return s
 
 
 def strip_disambiguator(metro_name: str) -> str:
-    """Strip the trailing '(XX)' disambiguator. 'Birmingham (AL)' -> 'Birmingham'."""
     return re.sub(r"\s*\([^)]*\)\s*$", "", metro_name).strip()
 
 
-def load_overture_us_counties(path: str) -> gpd.GeoDataFrame:
-    """Read Overture division_area Parquet, filter to US counties."""
+def load_overture(path):
     print(f"[1/5] Reading Overture Parquet: {path}")
     gdf = gpd.read_parquet(path, columns=["country", "subtype", "region", "names", "geometry"])
-    us = gdf[(gdf["country"] == "US") & (gdf["subtype"] == "county")].copy()
-    # Extract primary name from the names struct (it's a dict with 'primary' key)
-    us["primary_name"] = us["names"].apply(
-        lambda n: n.get("primary") if isinstance(n, dict) else None
-    )
-    us = us[us["primary_name"].notna() & us["region"].notna()].copy()
-    us["norm"] = us["primary_name"].apply(normalize_county_name)
-    print(f"      US county rows with name + region: {len(us)}")
-    return us
+    us = gdf[gdf["country"] == "US"].copy()
+    us["primary"] = us["names"].apply(lambda n: n.get("primary") if isinstance(n, dict) else None)
+    us = us[us["primary"].notna() & us["region"].notna()].copy()
+
+    counties = us[us["subtype"] == "county"].copy()
+    counties["base"] = counties["primary"].apply(normalize_base)
+    counties["has_suffix"] = counties["primary"].apply(has_county_suffix)
+    print(f"      US county-subtype rows: {len(counties)}")
+
+    poly_index = {}
+    for _, row in counties.iterrows():
+        key = (row["region"], row["base"], row["has_suffix"])
+        # First-write-wins: rare duplicate Overture rows (e.g. MD Baltimore
+        # County appears twice) shouldn't multiply geometry in the dissolve.
+        poly_index.setdefault(key, row["geometry"])
+
+    # Fallback: county-name-suffixed neighborhood rows. Overture mis-tags
+    # some real counties (e.g. Nash County NC) as subtype=neighborhood.
+    # Only fills keys the primary county index doesn't already cover.
+    fallback = us[
+        (us["subtype"] == "neighborhood")
+        & us["primary"].apply(has_county_suffix)
+    ].copy()
+    fallback["base"] = fallback["primary"].apply(normalize_base)
+    added = 0
+    for _, row in fallback.iterrows():
+        key = (row["region"], row["base"], True)
+        if key not in poly_index:
+            poly_index[key] = row["geometry"]
+            added += 1
+    print(f"      mis-tagged county-named neighborhoods recovered: {added}")
+
+    dc_region = us[(us["region"] == "US-DC") & (us["subtype"] == "region")]
+    dc_poly = dc_region.iloc[0]["geometry"] if len(dc_region) > 0 else None
+    print(f"      DC region polygon: {'found' if dc_poly is not None else 'MISSING'}")
+
+    return poly_index, dc_poly
 
 
-def load_counties_sheet(path: str) -> list:
-    """Read MetroAreas.xlsx Counties sheet, return US rows with metro assignment."""
+def load_counties_sheet(path):
     print(f"[2/5] Reading Counties sheet from {path}")
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     ws = wb["Counties"]
     rows = list(ws.iter_rows(values_only=True))
-    headers = rows[0]
     out = []
     for r in rows[1:]:
         if not r or r[0] != "United States":
@@ -129,17 +205,16 @@ def load_counties_sheet(path: str) -> list:
         out.append({
             "county": str(county).strip(),
             "state_full": str(state_full).strip(),
-            "type": county_type,
+            "type": str(county_type or "").strip(),
             "metro_display": str(metro_area).strip(),
-            "norm": normalize_county_name(county),
+            "norm": normalize_base(str(county).strip()),
             "iso": US_STATE_TO_ISO.get(str(state_full).strip()),
         })
     print(f"      US rows with metro assignment: {len(out)}")
     return out
 
 
-def load_metros_index(path: str) -> dict:
-    """Build (norm_name_no_paren, primary_state) -> slug index for US metros."""
+def load_metros_index(path):
     with open(path, "r", encoding="utf-8") as f:
         metros = json.load(f)
     idx = {}
@@ -149,36 +224,71 @@ def load_metros_index(path: str) -> dict:
         name_norm = strip_disambiguator(m.get("name", "")).lower().strip()
         state = m.get("primaryState") or ""
         idx[(name_norm, state)] = m["slug"]
-        # Fallback: name alone (only if unique)
         idx.setdefault((name_norm, None), m["slug"])
     return idx
 
 
-def resolve_slug(metro_display: str, state_full: str, metros_index: dict):
-    """Resolve a Metro Area display name + state to a metros.json slug."""
+def resolve_slug(metro_display, state_full, metros_index):
     base = strip_disambiguator(metro_display).lower().strip()
-    # Try (name, state) first; fall back to (name, None) if unique
     return metros_index.get((base, state_full)) or metros_index.get((base, None))
+
+
+def lookup_polygon(c, poly_index, dc_poly):
+    """Resolve a Counties-sheet row to a polygon. Returns (geom_or_None, fail_label_or_None)."""
+    iso = c["iso"]
+    norm = c["norm"]
+    type_l = c["type"].lower() if c["type"] else ""
+    label = f"{c['county']} ({iso or '???'}, type={c['type']!r})"
+
+    # Federal District (DC)
+    if "federal district" in type_l or iso == "US-DC":
+        if dc_poly is not None:
+            return dc_poly, None
+        return None, label + " [no DC region polygon]"
+
+    if not iso:
+        return None, label + " [state not in ISO map]"
+
+    # Apply editorial alias when workbook name differs from Overture's.
+    alias_key = (iso, norm)
+    if alias_key in COUNTY_ALIASES:
+        norm = COUNTY_ALIASES[alias_key]
+
+    # City vs County disambiguation. type='City' usually means an independent
+    # city (Baltimore City MD, Alexandria VA), where Overture stores a bare
+    # name with no " County" suffix. Try the bare key first.
+    is_city_type = type_l == "city"
+    primary_key = (iso, norm, not is_city_type)
+    fallback_key = (iso, norm, is_city_type)
+
+    if primary_key in poly_index:
+        return poly_index[primary_key], None
+    if fallback_key in poly_index:
+        return poly_index[fallback_key], None
+
+    # If type='City' and the workbook name ends with " city" (e.g. "Baltimore
+    # City"), retry with " city" stripped — Overture stores the bare form
+    # ("Baltimore"). But places where "City" is actually part of the name
+    # (Carson City NV is the canonical example) match the unstripped form
+    # above and skip this branch entirely.
+    if is_city_type and norm.endswith(" city"):
+        stripped = norm[: -len(" city")].strip()
+        for k in [(iso, stripped, False), (iso, stripped, True)]:
+            if k in poly_index:
+                return poly_index[k], None
+
+    return None, label
 
 
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    overture = load_overture_us_counties(SOURCE_PARQUET)
+    poly_index, dc_poly = load_overture(SOURCE_PARQUET)
     counties = load_counties_sheet(WORKBOOK)
     metros_index = load_metros_index(METROS_JSON)
 
-    # Build (region_iso, county_norm) -> polygon lookup
-    print("[3/5] Indexing Overture polygons by (region, county_norm)")
-    poly_index = {}
-    for _, row in overture.iterrows():
-        key = (row["region"], row["norm"])
-        poly_index[key] = row["geometry"]
-    print(f"      Indexed {len(poly_index)} unique county polygons")
-
-    # Group Counties sheet by metro slug
-    print("[4/5] Grouping Counties sheet by metro slug")
-    by_slug: dict[str, list] = defaultdict(list)
+    print("[3/5] Grouping by metro slug")
+    by_slug = defaultdict(list)
     unmatched_metros = set()
     for c in counties:
         slug = resolve_slug(c["metro_display"], c["state_full"], metros_index)
@@ -194,28 +304,23 @@ def main():
         if len(unmatched_metros) > 20:
             print(f"        ... and {len(unmatched_metros) - 20} more")
 
-    # For each metro: dissolve member county polygons, simplify, write GeoJSON
-    print("[5/5] Building per-metro GeoJSON files")
+    print("[4/5] Resolving polygons + dissolving per metro")
     written = 0
-    skipped_no_polys = 0
-    unmatched_counties_total = 0
+    skipped = 0
+    unmatched_total = 0
     for slug, members in by_slug.items():
         polys = []
         unmatched_local = []
         for c in members:
-            if not c["iso"]:
-                unmatched_local.append(f"{c['county']} (state '{c['state_full']}' not mapped)")
-                continue
-            p = poly_index.get((c["iso"], c["norm"]))
-            if p is None:
-                unmatched_local.append(f"{c['county']} ({c['iso']})")
-                continue
-            polys.append(p)
+            geom, fail = lookup_polygon(c, poly_index, dc_poly)
+            if geom is not None:
+                polys.append(geom)
+            if fail:
+                unmatched_local.append(fail)
         if not polys:
-            skipped_no_polys += 1
+            skipped += 1
             continue
-        unmatched_counties_total += len(unmatched_local)
-        # Dissolve into single MultiPolygon, simplify
+        unmatched_total += len(unmatched_local)
         dissolved = unary_union(polys)
         simplified = dissolved.simplify(SIMPLIFY_TOLERANCE_DEG, preserve_topology=True)
         feature = {
@@ -230,16 +335,16 @@ def main():
             "geometry": mapping(simplified),
         }
         fc = {"type": "FeatureCollection", "features": [feature]}
-        out_path = OUT_DIR / f"{slug}.geojson"
-        with open(out_path, "w", encoding="utf-8") as f:
+        with open(OUT_DIR / f"{slug}.geojson", "w", encoding="utf-8") as f:
             json.dump(fc, f, separators=(",", ":"))
         written += 1
 
     print()
+    print("[5/5] Done")
     print("=== Summary ===")
     print(f"Metros written:                {written}")
-    print(f"Metros skipped (no polygons):  {skipped_no_polys}")
-    print(f"Total unmatched counties:      {unmatched_counties_total}")
+    print(f"Metros skipped (no polygons):  {skipped}")
+    print(f"Total unmatched counties:      {unmatched_total}")
     print(f"Output dir:                    {OUT_DIR.resolve()}")
 
 
