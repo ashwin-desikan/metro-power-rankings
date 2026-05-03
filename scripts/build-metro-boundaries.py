@@ -145,14 +145,14 @@ AU_STATE_TO_ISO = {
 # India (28 states + 8 union territories)
 IN_STATE_TO_ISO = {
     "Andhra Pradesh": "IN-AP", "Arunachal Pradesh": "IN-AR", "Assam": "IN-AS",
-    "Bihar": "IN-BR", "Chhattisgarh": "IN-CT", "Goa": "IN-GA", "Gujarat": "IN-GJ",
+    "Bihar": "IN-BR", "Chhattisgarh": "IN-CG", "Goa": "IN-GA", "Gujarat": "IN-GJ",
     "Haryana": "IN-HR", "Himachal Pradesh": "IN-HP", "Jharkhand": "IN-JH",
     "Karnataka": "IN-KA", "Kerala": "IN-KL", "Madhya Pradesh": "IN-MP",
     "Maharashtra": "IN-MH", "Manipur": "IN-MN", "Meghalaya": "IN-ML",
     "Mizoram": "IN-MZ", "Nagaland": "IN-NL", "Odisha": "IN-OD", "Punjab": "IN-PB",
     "Rajasthan": "IN-RJ", "Sikkim": "IN-SK", "Tamil Nadu": "IN-TN",
-    "Telangana": "IN-TG", "Tripura": "IN-TR", "Uttar Pradesh": "IN-UP",
-    "Uttarakhand": "IN-UT", "West Bengal": "IN-WB",
+    "Telangana": "IN-TS", "Tripura": "IN-TR", "Uttar Pradesh": "IN-UP",
+    "Uttarakhand": "IN-UK", "West Bengal": "IN-WB",
     # Union Territories:
     "Andaman & Nicobar Islands": "IN-AN", "Andaman and Nicobar Islands": "IN-AN",
     "Chandigarh": "IN-CH",
@@ -282,6 +282,194 @@ RU_STATE_TO_ISO = {
     "Yaroslavl Oblast": "RU-YAR", "Zabaykalsky Krai": "RU-ZAB",
 }
 
+# Germany (16 states)
+DE_STATE_TO_ISO = {
+    "Baden-Württemberg": "DE-BW", "Bavaria": "DE-BY", "Bayern": "DE-BY",
+    "Berlin": "DE-BE", "Brandenburg": "DE-BB", "Bremen": "DE-HB",
+    "Hamburg": "DE-HH", "Hesse": "DE-HE", "Hessen": "DE-HE",
+    "Lower Saxony": "DE-NI", "Niedersachsen": "DE-NI",
+    "Mecklenburg-Vorpommern": "DE-MV", "Mecklenburg-Western Pomerania": "DE-MV",
+    "North Rhine-Westphalia": "DE-NW", "Nordrhein-Westfalen": "DE-NW",
+    "Rhineland-Palatinate": "DE-RP", "Rheinland-Pfalz": "DE-RP",
+    "Saarland": "DE-SL", "Saxony": "DE-SN", "Sachsen": "DE-SN",
+    "Saxony-Anhalt": "DE-ST", "Sachsen-Anhalt": "DE-ST",
+    "Schleswig-Holstein": "DE-SH",
+    "Thuringia": "DE-TH", "Thüringen": "DE-TH",
+}
+
+# France (13 metropolitan regions, post-2016 reorganization)
+FR_STATE_TO_ISO = {
+    "Auvergne-Rhône-Alpes": "FR-ARA", "Bourgogne-Franche-Comté": "FR-BFC",
+    "Brittany": "FR-BRE", "Bretagne": "FR-BRE",
+    "Centre-Val de Loire": "FR-CVL", "Corsica": "FR-20R", "Corse": "FR-20R",
+    "Grand Est": "FR-GES", "Hauts-de-France": "FR-HDF",
+    "Île-de-France": "FR-IDF", "Ile-de-France": "FR-IDF",
+    "Normandy": "FR-NOR", "Normandie": "FR-NOR",
+    "Nouvelle-Aquitaine": "FR-NAQ", "Occitanie": "FR-OCC",
+    "Pays de la Loire": "FR-PDL",
+    "Provence-Alpes-Côte d'Azur": "FR-PAC", "Provence-Alpes-Cote d'Azur": "FR-PAC",
+}
+
+# Italy (20 regions)
+IT_STATE_TO_ISO = {
+    "Abruzzo": "IT-65", "Aosta Valley": "IT-23", "Valle d'Aosta": "IT-23",
+    "Apulia": "IT-75", "Puglia": "IT-75", "Basilicata": "IT-77",
+    "Calabria": "IT-78", "Campania": "IT-72", "Emilia-Romagna": "IT-45",
+    "Friuli-Venezia Giulia": "IT-36", "Lazio": "IT-62", "Liguria": "IT-42",
+    "Lombardy": "IT-25", "Lombardia": "IT-25",
+    "Marche": "IT-57", "Molise": "IT-67", "Piedmont": "IT-21", "Piemonte": "IT-21",
+    "Sardinia": "IT-88", "Sardegna": "IT-88", "Sicily": "IT-82", "Sicilia": "IT-82",
+    "Trentino-South Tyrol": "IT-32", "Trentino-Alto Adige": "IT-32",
+    "Tuscany": "IT-52", "Toscana": "IT-52", "Umbria": "IT-55",
+    "Veneto": "IT-34",
+}
+
+# Spain (17 autonomous communities + 2 autonomous cities)
+ES_STATE_TO_ISO = {
+    "Andalusia": "ES-AN", "Andalucía": "ES-AN",
+    "Aragon": "ES-AR", "Aragón": "ES-AR",
+    "Asturias": "ES-AS",
+    "Balearic Islands": "ES-IB", "Islas Baleares": "ES-IB",
+    "Basque Country": "ES-PV", "País Vasco": "ES-PV", "Pais Vasco": "ES-PV",
+    "Canary Islands": "ES-CN", "Islas Canarias": "ES-CN",
+    "Cantabria": "ES-CB",
+    "Castile and León": "ES-CL", "Castile-León": "ES-CL", "Castilla y León": "ES-CL",
+    "Castilla-La Mancha": "ES-CM",
+    "Catalonia": "ES-CT", "Cataluña": "ES-CT", "Catalunya": "ES-CT",
+    "Ceuta": "ES-CE", "Extremadura": "ES-EX",
+    "Galicia": "ES-GA", "La Rioja": "ES-RI", "Madrid": "ES-MD",
+    "Melilla": "ES-ML", "Murcia": "ES-MC",
+    "Navarre": "ES-NC", "Navarra": "ES-NC",
+    "Valencian Community": "ES-VC", "Valencia": "ES-VC", "Comunitat Valenciana": "ES-VC",
+}
+
+# Switzerland (26 cantons)
+CH_STATE_TO_ISO = {
+    "Aargau": "CH-AG",
+    "Appenzell Ausserrhoden": "CH-AR", "Appenzell Innerrhoden": "CH-AI",
+    "Basel-Landschaft": "CH-BL", "Basel-Land": "CH-BL",
+    "Basel-Stadt": "CH-BS", "Bern": "CH-BE", "Berne": "CH-BE",
+    "Fribourg": "CH-FR", "Freiburg": "CH-FR",
+    "Geneva": "CH-GE", "Genève": "CH-GE", "Genf": "CH-GE",
+    "Glarus": "CH-GL", "Graubünden": "CH-GR", "Grisons": "CH-GR",
+    "Jura": "CH-JU", "Lucerne": "CH-LU", "Luzern": "CH-LU",
+    "Neuchâtel": "CH-NE", "Neuchatel": "CH-NE",
+    "Nidwalden": "CH-NW", "Obwalden": "CH-OW",
+    "Schaffhausen": "CH-SH", "Schwyz": "CH-SZ",
+    "Solothurn": "CH-SO", "St. Gallen": "CH-SG", "Sankt Gallen": "CH-SG",
+    "Thurgau": "CH-TG", "Ticino": "CH-TI",
+    "Uri": "CH-UR", "Valais": "CH-VS", "Wallis": "CH-VS",
+    "Vaud": "CH-VD", "Zug": "CH-ZG",
+    "Zürich": "CH-ZH", "Zurich": "CH-ZH",
+}
+
+# Poland (16 voivodeships)
+PL_STATE_TO_ISO = {
+    "Greater Poland": "PL-30", "Wielkopolska": "PL-30",
+    "Kuyavian-Pomeranian": "PL-04", "Kujawsko-Pomorskie": "PL-04",
+    "Lesser Poland": "PL-12", "Małopolskie": "PL-12", "Malopolskie": "PL-12",
+    "Lower Silesian": "PL-02", "Dolnośląskie": "PL-02", "Dolnoslaskie": "PL-02",
+    "Lublin": "PL-06", "Lubelskie": "PL-06",
+    "Lubusz": "PL-08", "Lubuskie": "PL-08",
+    "Łódź": "PL-10", "Lodzkie": "PL-10", "Łódzkie": "PL-10",
+    "Masovian": "PL-14", "Mazowieckie": "PL-14",
+    "Opole": "PL-16", "Opolskie": "PL-16",
+    "Podkarpackie": "PL-18", "Subcarpathian": "PL-18",
+    "Podlaskie": "PL-20", "Pomeranian": "PL-22", "Pomorskie": "PL-22",
+    "Silesian": "PL-24", "Śląskie": "PL-24", "Slaskie": "PL-24",
+    "Świętokrzyskie": "PL-26", "Swietokrzyskie": "PL-26",
+    "Warmian-Masurian": "PL-28", "Warmińsko-Mazurskie": "PL-28",
+    "West Pomeranian": "PL-32", "Zachodniopomorskie": "PL-32",
+}
+
+# Austria (9 federal states)
+AT_STATE_TO_ISO = {
+    "Burgenland": "AT-1", "Carinthia": "AT-2", "Kärnten": "AT-2",
+    "Lower Austria": "AT-3", "Niederösterreich": "AT-3",
+    "Salzburg": "AT-5", "Styria": "AT-6", "Steiermark": "AT-6",
+    "Tyrol": "AT-7", "Tirol": "AT-7",
+    "Upper Austria": "AT-4", "Oberösterreich": "AT-4",
+    "Vienna": "AT-9", "Wien": "AT-9",
+    "Vorarlberg": "AT-8",
+}
+
+# Portugal (18 districts + 2 autonomous regions)
+PT_STATE_TO_ISO = {
+    "Aveiro": "PT-01", "Beja": "PT-02", "Braga": "PT-03", "Bragança": "PT-04",
+    "Castelo Branco": "PT-05", "Coimbra": "PT-06", "Évora": "PT-07",
+    "Faro": "PT-08", "Guarda": "PT-09", "Leiria": "PT-10", "Lisbon": "PT-11",
+    "Lisboa": "PT-11", "Portalegre": "PT-12", "Porto": "PT-13",
+    "Santarém": "PT-14", "Setúbal": "PT-15", "Viana do Castelo": "PT-16",
+    "Vila Real": "PT-17", "Viseu": "PT-18",
+    "Azores Islands": "PT-20", "Azores": "PT-20", "Açores": "PT-20",
+    "Madeira Islands": "PT-30", "Madeira": "PT-30",
+}
+
+# Belgium (11: 10 provinces + Brussels)
+BE_STATE_TO_ISO = {
+    "Antwerp": "BE-VAN", "Antwerpen": "BE-VAN",
+    "Brussels": "BE-BRU", "Brussels-Capital Region": "BE-BRU",
+    "East Flanders": "BE-VOV", "Oost-Vlaanderen": "BE-VOV",
+    "Flemish Brabant": "BE-VBR", "Vlaams-Brabant": "BE-VBR",
+    "Hainaut": "BE-WHT",
+    "Liège": "BE-WLG", "Luik": "BE-WLG",
+    "Limburg": "BE-VLI",
+    "Luxembourg": "BE-WLX",
+    "Namur": "BE-WNA",
+    "Walloon Brabant": "BE-WBR", "Brabant Wallon": "BE-WBR",
+    "West Flanders": "BE-VWV", "West-Vlaanderen": "BE-VWV",
+}
+
+# Ireland: workbook uses provinces (Connacht/Leinster/Munster/Ulster), but
+# Overture indexes counties (IE-CO, IE-D, IE-G, etc.). Map all four provinces to
+# the sentinel "IE" so the country-wide locality fallback handles lookups.
+IE_STATE_TO_ISO = {None: "IE"}
+
+# DR Congo (26 provinces post-2015 reform)
+CD_STATE_TO_ISO = {
+    "Bas-Uele": "CD-BU", "Equateur": "CD-EQ", "Haut-Katanga": "CD-HK",
+    "Haut-Lomami": "CD-HL", "Haut-Uele": "CD-HU", "Ituri": "CD-IT",
+    "Kasaï": "CD-KS", "Kasai": "CD-KS",
+    "Kasaï-Central": "CD-KC", "Kasai-Central": "CD-KC",
+    "Kasaï-Oriental": "CD-KE", "Kasai-Oriental": "CD-KE",
+    "Kinshasa": "CD-KN", "Kongo Central": "CD-BC",
+    "Kwango": "CD-KG", "Kwilu": "CD-KL", "Lomami": "CD-LO",
+    "Lualaba": "CD-LU", "Mai-Ndombe": "CD-MN", "Maniema": "CD-MA",
+    "Mongala": "CD-MO", "Nord-Kivu": "CD-NK", "Nord-Ubangi": "CD-NU",
+    "Sankuru": "CD-SA", "Sud-Kivu": "CD-SK", "Sud-Ubangi": "CD-SU",
+    "Tanganyika": "CD-TA", "Tshopo": "CD-TO", "Tshuapa": "CD-TU",
+}
+
+# UK constituent countries handled by mapping workbook "England"/"Scotland"/etc.
+# to a single-region map. Workbook state column has county/council-area names
+# that may not directly resolve, so we use country-level fallback heavily.
+# ISO 3166-2 for GB is GB-ENG / GB-SCT / GB-WLS / GB-NIR at the constituent
+# country level. Below that there's a deep hierarchy of council areas / 
+# unitary authorities / districts. We map workbook country to GB-XXX uniformly,
+# treating any state value as the same constituent-country region.
+def _make_single_region(iso): return {None: iso}  # any state maps to this iso
+GB_ENG_MAP = {None: "GB-ENG"}
+GB_SCT_MAP = {None: "GB-SCT"}
+GB_WLS_MAP = {None: "GB-WLS"}
+GB_NIR_MAP = {None: "GB-NIR"}
+
+# Microstates and small territories: a single region/iso applies to everything.
+LU_MAP = {None: "LU"}
+MT_MAP = {None: "MT"}
+AD_MAP = {None: "AD"}
+VA_MAP = {None: "VA"}
+LI_MAP = {None: "LI"}
+GG_MAP = {None: "GG"}
+IM_MAP = {None: "IM"}
+JE_MAP = {None: "JE"}
+
+# French overseas territories: each is its own ISO 3166-1 country
+GF_MAP = {None: "GF"}  # French Guiana
+GP_MAP = {None: "GP"}  # Guadeloupe
+MQ_MAP = {None: "MQ"}  # Martinique
+RE_MAP = {None: "RE"}  # Réunion
+PM_MAP = {None: "PM"}  # Saint Pierre and Miquelon
+
 # Workbook Country column → state-to-ISO map
 COUNTRY_TO_STATE_MAP = {
     "United States": US_STATE_TO_ISO,
@@ -296,6 +484,50 @@ COUNTRY_TO_STATE_MAP = {
     "China": CN_STATE_TO_ISO,
     "South Korea": KR_STATE_TO_ISO,
     "Russia": RU_STATE_TO_ISO,
+    "Germany": DE_STATE_TO_ISO,
+    "France": FR_STATE_TO_ISO,
+    "Italy": IT_STATE_TO_ISO,
+    "Spain": ES_STATE_TO_ISO,
+    "Switzerland": CH_STATE_TO_ISO,
+    "Poland": PL_STATE_TO_ISO,
+    "Austria": AT_STATE_TO_ISO,
+    "Portugal": PT_STATE_TO_ISO,
+    "Belgium": BE_STATE_TO_ISO,
+    "Ireland": IE_STATE_TO_ISO,
+    "Congo DR": CD_STATE_TO_ISO,
+    "England": GB_ENG_MAP, "Scotland": GB_SCT_MAP,
+    "Wales": GB_WLS_MAP, "Northern Ireland": GB_NIR_MAP,
+    "Luxembourg": LU_MAP, "Malta": MT_MAP,
+    "Andorra": AD_MAP, "Vatican City": VA_MAP,
+    "Liechtenstein": LI_MAP, "Guernsey": GG_MAP,
+    "Isle of Man": IM_MAP, "Jersey": JE_MAP,
+    "French Guiana": GF_MAP, "Guadeloupe": GP_MAP,
+    "Martinique": MQ_MAP, "Réunion": RE_MAP, "Reunion": RE_MAP,
+    "Saint Pierre and Miquelon": PM_MAP,
+}
+
+
+# Workbook country name → 2-letter ISO 3166-1 alpha-2 code. Used by the
+# country-wide locality / country-polygon fallbacks for places where workbook
+# state values don't align with Overture's region tagging (Ireland provinces
+# vs counties, Belgium provinces vs regions, microstates with empty regions).
+COUNTRY_NAME_TO_ISO = {
+    "United States": "US", "Canada": "CA", "Mexico": "MX",
+    "Brazil": "BR", "Australia": "AU", "India": "IN",
+    "Japan": "JP", "Netherlands": "NL", "Turkey": "TR",
+    "China": "CN", "South Korea": "KR", "Russia": "RU",
+    "Germany": "DE", "France": "FR", "Italy": "IT",
+    "Spain": "ES", "Switzerland": "CH", "Poland": "PL",
+    "Austria": "AT", "Portugal": "PT", "Belgium": "BE",
+    "Ireland": "IE", "Congo DR": "CD",
+    "England": "GB", "Scotland": "GB",
+    "Wales": "GB", "Northern Ireland": "GB",
+    "Luxembourg": "LU", "Malta": "MT", "Andorra": "AD",
+    "Vatican City": "VA", "Liechtenstein": "LI",
+    "Guernsey": "GG", "Isle of Man": "IM", "Jersey": "JE",
+    "French Guiana": "GF", "Guadeloupe": "GP",
+    "Martinique": "MQ", "Réunion": "RE", "Reunion": "RE",
+    "Saint Pierre and Miquelon": "PM",
 }
 
 # County-style admin suffixes. Stripped during normalization. Presence is
@@ -309,6 +541,9 @@ COUNTY_SUFFIXES = (
     " United Counties", " Region", " Rural District", " District",
     # CN-specific (Pinyin, post-ASCII-fold drops tone marks):
     " Shi", " Xian", " Qu", " Zizhizhou",
+    # Pudong "Xīnqū" (新区 = "new district") collapses to "Xinqu" after fold
+    # without a separating space, so " Qu" alone doesn't strip it.
+    " Xinqu", " Xin Qu",
     # JP-specific:
     " Shi", " Ku", " Cho", " Son",
     # KR-specific (with hyphen, since Overture has "Yeosu-si" / "Haeundae-gu"):
@@ -331,6 +566,8 @@ ADMIN_PREFIX_PATTERN = re.compile(
     r"municipality of(?: the county of)?|village of|town of|city of|"
     r"district of|county of|"
     r"ville de|paroisse de|"
+    # QC: "Agglomération de Longueuil" → "Longueuil"
+    r"agglom(?:e|é)ration de|"
     # AU patterns (Overture: "Shire Of Gingin", "City of Cockburn"):
     r"shire of|borough of|council of)\s+",
     re.IGNORECASE,
@@ -350,6 +587,27 @@ COUNTY_ALIASES = {
     ("CA-ON", "haldimand-norfolk"): "haldimand",
     # MX: Fortín de las Flores is the formal name; workbook abbreviates.
     ("MX-VER", "fortin"): "fortin de las flores",
+    # IN: workbook uses anglicized "Hardwar" but Overture uses Hindi-correct
+    # "Haridwar" (Roorkee metro is in Haridwar district, Uttarakhand).
+    ("IN-UK", "hardwar"): "haridwar",
+}
+
+
+# Editorial boundary overrides keyed by metro slug. When a slug appears here,
+# the boundary is built from the listed region ISO 3166-2 codes (using the
+# region_index "*REGION*" sentinel) instead of from member-county lookups.
+#
+# Why this exists: Russia's "городской округ" (urban-district) restructuring
+# produces disjoint city-center polygons when matched piecemeal — workbook
+# entries for surrounding raions resolve to small urban-core polygons rather
+# than the full administrative district, leaving rural gaps between matched
+# polygons. The cleanest fix for the city + oblast metros is to fall back to
+# the region polygons directly.
+METRO_BOUNDARY_OVERRIDES = {
+    # Moscow city + Moscow Oblast
+    "moscow": ["RU-MOW", "RU-MOS"],
+    # Saint Petersburg city + Leningrad Oblast
+    "saint-petersburg": ["RU-SPE", "RU-LEN"],
 }
 
 
@@ -393,9 +651,12 @@ def normalize_base(name: str) -> str:
     # Grand Sudbury" by keeping the English form on the left side.
     if " / " in name:
         name = name.split(" / ", 1)[0].strip()
-    s = strip_admin_suffixes(name)
+    # ASCII-fold BEFORE suffix matching so diacritic variants resolve
+    # consistently (CN Pinyin "Qū" → "Qu" matches the " Qu" suffix; JP "Tōkyō"
+    # matches lookup keys; QC "Saint-Élie" matches editorial aliases).
+    s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
+    s = strip_admin_suffixes(s)
     s = strip_admin_prefixes(s)
-    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
     s = s.lower().replace(".", "").replace("'", "").replace("’", "")
     s = re.sub(r"\s+", " ", s).strip()
     s = re.sub(r"^saint\s+", "st ", s)
@@ -413,23 +674,56 @@ def strip_disambiguator(metro_name: str) -> str:
 def load_overture(path):
     print(f"[1/5] Reading Overture Parquet: {path}")
     gdf = gpd.read_parquet(path, columns=["country", "subtype", "region", "names", "geometry"])
-    target_countries = ["US", "CA", "MX", "BR", "AU", "IN", "JP", "NL", "TR", "CN", "KR", "RU"]
+    target_countries = [
+        "US", "CA", "MX", "BR", "AU", "IN", "JP", "NL", "TR", "CN", "KR", "RU",
+        "DE", "FR", "IT", "ES", "CH", "PL", "AT", "PT", "BE", "IE", "CD", "GB",
+        "LU", "MT", "AD", "VA", "LI", "GG", "IM", "JE",
+        "GF", "GP", "MQ", "RE", "PM",
+        # Australian external territories with their own ISO 3166-1 codes:
+        "CX", "CC", "NF",
+    ]
     nam = gdf[gdf["country"].isin(target_countries)].copy()
     nam["primary"] = nam["names"].apply(lambda n: n.get("primary") if isinstance(n, dict) else None)
-    nam = nam[nam["primary"].notna() & nam["region"].notna()].copy()
+    # Keep all rows with a primary name. Microstate territories (GF, GP, MQ,
+    # RE, PM, GG, JE, IM, VA, CX, CC, NF) have region=None — those are
+    # legitimate top-level polygons we need for country-wide / country-polygon
+    # fallbacks. Downstream indexes filter region.notna() where needed.
+    nam = nam[nam["primary"].notna()].copy()
 
     # Brazil has 0 subtype=county rows. All BR municipios live in subtype=locality.
     # Include them in the county index for BR specifically.
     counties_mask = (nam["subtype"] == "county") | (
         (nam["country"] == "BR") & (nam["subtype"] == "locality")
+    ) | (
+        # Belgium: only 10 county-subtype rows. The 2,821 BE municipalities
+        # (gemeenten / communes) live in subtype=locality.
+        (nam["country"] == "BE") & (nam["subtype"] == "locality")
+    ) | (
+        # Luxembourg: communes are subtype=county already (100 rows), no need
+        # for locality there. French overseas + microstates: include localities
+        # so per-county Overture rows for GP/MQ/RE/GF/GG/JE/IM/AD resolve.
+        (nam["country"].isin(["GF", "GP", "MQ", "RE", "GG", "JE", "IM", "AD", "MT"]))
+        & (nam["subtype"] == "locality")
+    ) | (
+        # China: prefecture-level districts (Pudong, Minhang, Wujin, etc.) are
+        # subtype=localadmin in Overture, with English aliases like "Pudong"
+        # and "Wujin District". The county subtype is sparse for CN; localadmin
+        # is the right granularity for the Municipality sheet's District rows.
+        (nam["country"] == "CN") & (nam["subtype"] == "localadmin")
     )
     counties = nam[counties_mask].copy()
+    # Region-keyed indexes (poly_index, qc_locality_index, locality_index,
+    # region_index) require a non-null region. Country-keyed indexes
+    # (country_locality_index, country_polygon) handle the null-region rows.
+    counties_with_region = counties[counties["region"].notna()].copy()
+    counties_with_region["base"] = counties_with_region["primary"].apply(normalize_base)
+    counties_with_region["has_suffix"] = counties_with_region["primary"].apply(has_county_suffix)
     counties["base"] = counties["primary"].apply(normalize_base)
-    counties["has_suffix"] = counties["primary"].apply(has_county_suffix)
-    print(f"      county-subtype rows (incl BR localities): {len(counties):,}")
+    print(f"      county-subtype rows (incl BR localities + microstate localities): {len(counties):,}")
+    print(f"        with non-null region (region-keyed index): {len(counties_with_region):,}")
 
     poly_index = {}
-    for _, row in counties.iterrows():
+    for _, row in counties_with_region.iterrows():
         # Primary key (the row's primary name)
         key = (row["region"], row["base"], row["has_suffix"])
         poly_index.setdefault(key, row["geometry"])
@@ -488,8 +782,9 @@ def load_overture(path):
     # subtype=county), Bethel AK (workbook says "Bethel" type=Census Area,
     # Overture has "Bethel" subtype=locality), Maykop RU (Cyrillic primary
     # but English alias matches workbook).
-    locality = nam[nam["subtype"] == "locality"].copy()
-    locality["base"] = locality["primary"].apply(normalize_base)
+    locality_all = nam[nam["subtype"] == "locality"].copy()
+    locality_all["base"] = locality_all["primary"].apply(normalize_base)
+    locality = locality_all[locality_all["region"].notna()].copy()
     locality_index = {}
     for _, row in locality.iterrows():
         locality_index.setdefault((row["region"], row["base"]), row["geometry"])
@@ -511,7 +806,7 @@ def load_overture(path):
     # Region fallback index. Catches province-level metros where the entire
     # state is the metro extent (Beijing, Shanghai, Tianjin, Chongqing all
     # tagged subtype=region only; ACT for Canberra; etc.).
-    region_subtype = nam[nam["subtype"] == "region"].copy()
+    region_subtype = nam[(nam["subtype"] == "region") & nam["region"].notna()].copy()
     region_subtype["base"] = region_subtype["primary"].apply(normalize_base)
     region_index = {}
     for _, row in region_subtype.iterrows():
@@ -533,7 +828,81 @@ def load_overture(path):
         region_index.setdefault((row["region"], "*REGION*"), row["geometry"])
     print(f"      region fallback index: {len(region_index):,} entries")
 
-    return poly_index, dc_poly, qc_locality_index, locality_index, region_index
+    # Country-wide locality fallback. Catches workbook entries whose state
+    # doesn't resolve to Overture's region tagging (Ireland provinces, Belgium
+    # province mismatches, Spain regional mistags, microstate municipalities
+    # tagged subtype=region rather than locality). Indexed by
+    # (country_code, normalized_base).
+    country_locality_index = {}
+    def _add_country(c_code, base, geom, names_dict):
+        country_locality_index.setdefault((c_code, base), geom)
+        if isinstance(names_dict, dict):
+            common = names_dict.get("common")
+            if common is not None:
+                try:
+                    en = dict(common).get("en")
+                except (TypeError, ValueError):
+                    en = None
+                if en:
+                    en_base = normalize_base(en)
+                    if en_base and en_base != base:
+                        country_locality_index.setdefault((c_code, en_base), geom)
+    # Localities (the bulk) — including region=None microstate localities.
+    for _, row in locality_all.iterrows():
+        _add_country(row["country"], row["base"], row["geometry"], row["names"])
+    # localadmin rows (BE communes are dually tagged; CD east cities may show up).
+    localadmin = nam[nam["subtype"] == "localadmin"].copy()
+    localadmin["base"] = localadmin["primary"].apply(normalize_base)
+    for _, row in localadmin.iterrows():
+        _add_country(row["country"], row["base"], row["geometry"], row["names"])
+    # subtype=region rows for microstates (AD/LI/MT cities are tagged as region,
+    # not locality). Restrict to microstates so we don't pollute the index with
+    # full state polygons elsewhere.
+    micro_country_codes = {"AD", "LI", "MT", "VA"}
+    micro_regions = nam[
+        (nam["subtype"] == "region") & nam["country"].isin(micro_country_codes)
+    ].copy()
+    micro_regions["base"] = micro_regions["primary"].apply(normalize_base)
+    for _, row in micro_regions.iterrows():
+        _add_country(row["country"], row["base"], row["geometry"], row["names"])
+    print(f"      country-wide locality fallback: {len(country_locality_index):,} entries")
+
+    # Country polygon fallback for true microstates (Andorra, Vatican, Liechtenstein,
+    # Malta) and small dependencies (Guernsey, Jersey, Isle of Man, French overseas,
+    # Saint Pierre & Miquelon) where the metro IS the entire jurisdiction.
+    # Prefer subtype=country, then subtype=dependency, then largest subtype=region.
+    country_polygon = {}
+    for c_code in ["AD", "VA", "LI", "MT", "LU", "GG", "JE", "IM",
+                   "GF", "GP", "MQ", "RE", "PM", "IE", "BE",
+                   "CX", "CC", "NF"]:
+        sub_country = nam[(nam["country"] == c_code) & (nam["subtype"] == "country")]
+        if len(sub_country) > 0:
+            country_polygon[c_code] = sub_country.iloc[0]["geometry"]
+            continue
+        sub_dep = nam[(nam["country"] == c_code) & (nam["subtype"] == "dependency")]
+        if len(sub_dep) > 0:
+            country_polygon[c_code] = sub_dep.iloc[0]["geometry"]
+            continue
+        # Largest region polygon as last resort (PM has only locality+dependency
+        # so this is mostly a no-op for true microstates).
+        sub_region = nam[(nam["country"] == c_code) & (nam["subtype"] == "region")]
+        if len(sub_region) > 0:
+            country_polygon[c_code] = sub_region.iloc[0]["geometry"]
+    print(f"      country polygon fallback: {len(country_polygon)} entries")
+
+    return (poly_index, dc_poly, qc_locality_index, locality_index,
+            region_index, country_locality_index, country_polygon)
+
+
+# Tokyo Special Wards Area: workbook treats the 23 special wards (区) as one row.
+# Overture has each ward as subtype=county with English primary name. We expand
+# the workbook entry into 23 county-style rows so each polygon resolves cleanly.
+TOKYO_23_WARDS = [
+    "Chiyoda", "Chuo", "Minato", "Shinjuku", "Bunkyo", "Taito", "Sumida",
+    "Koto", "Shinagawa", "Meguro", "Ota", "Setagaya", "Shibuya", "Nakano",
+    "Suginami", "Toshima", "Kita", "Arakawa", "Itabashi", "Nerima", "Adachi",
+    "Katsushika", "Edogawa",
+]
 
 
 def load_counties_sheet(path):
@@ -551,13 +920,40 @@ def load_counties_sheet(path):
             if country:
                 skipped_country[country] += 1
             continue
+        # User editorial choice: for China, use the Municipality sheet only.
+        # Counties sheet has prefecture-level cities (Sūzhōu Shì, Wúxī Shì) that
+        # bloat metro boundaries when mixed with district-level Municipality
+        # rows; the Municipality sheet is the canonical source.
+        if country == "China":
+            skipped_country["China (using Municipality)"] += 1
+            continue
         county = r[1]
         state_full = r[2]
         county_type = r[6]
         metro_area = r[7]
         if not (county and state_full and metro_area):
             continue
+        # Tokyo Special Wards Area: expand single row into 23 ward rows.
+        if (country == "Japan" and state_full == "Tokyo"
+                and str(county_type or "").strip() == "Special Wards Area"):
+            state_map = COUNTRY_TO_STATE_MAP[country]
+            iso = state_map.get(str(state_full).strip()) if None not in state_map else state_map[None]
+            for ward in TOKYO_23_WARDS:
+                out.append({
+                    "country": country,
+                    "county": ward,
+                    "state_full": str(state_full).strip(),
+                    "type": "Special Ward",
+                    "metro_display": str(metro_area).strip(),
+                    "norm": normalize_base(ward),
+                    "iso": iso,
+                })
+            continue
         state_map = COUNTRY_TO_STATE_MAP[country]
+        if None in state_map:
+            iso = state_map[None]
+        else:
+            iso = state_map.get(str(state_full).strip())
         out.append({
             "country": country,
             "county": str(county).strip(),
@@ -565,7 +961,7 @@ def load_counties_sheet(path):
             "type": str(county_type or "").strip(),
             "metro_display": str(metro_area).strip(),
             "norm": normalize_base(str(county).strip()),
-            "iso": state_map.get(str(state_full).strip()),
+            "iso": iso,
         })
     print(f"      rows kept (US/CA/MX with metro): {len(out):,}")
     by_country = defaultdict(int)
@@ -580,22 +976,83 @@ def load_counties_sheet(path):
     return out
 
 
+def load_municipality_sheet(path):
+    """Read MetroAreas.xlsx Municipality sheet (same dict shape as load_counties_sheet).
+    Different column layout: country=col 1, name=col 2, state=col 4, type=col 7,
+    metro=col 6. Used for Europe + UK constituent countries + microstates +
+    French overseas territories where boundary data is at municipality level.
+    For COUNTRY_TO_STATE_MAP entries that are single-region (microstates, GB
+    constituents, French overseas), any state value resolves to the same ISO.
+    """
+    print(f"[2b/5] Reading Municipality sheet from {path}")
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    ws = wb["Municipality"]
+    rows = list(ws.iter_rows(values_only=True))
+    out = []
+    skipped_country = defaultdict(int)
+    for r in rows[1:]:
+        if not r:
+            continue
+        country = r[1]
+        if country not in COUNTRY_TO_STATE_MAP:
+            if country:
+                skipped_country[country] += 1
+            continue
+        municipality = r[2]
+        state_full = r[4]
+        county_type = r[7]
+        metro_area = r[6]
+        if not (municipality and metro_area):
+            continue
+        state_map = COUNTRY_TO_STATE_MAP[country]
+        # Single-region maps (microstates etc.) have None as the only key
+        # and resolve any state value to that single ISO.
+        if None in state_map:
+            iso = state_map[None]
+        else:
+            iso = state_map.get(str(state_full).strip()) if state_full else None
+        out.append({
+            "country": country,
+            "county": str(municipality).strip(),
+            "state_full": str(state_full or "").strip(),
+            "type": str(county_type or "").strip(),
+            "metro_display": str(metro_area).strip(),
+            "norm": normalize_base(str(municipality).strip()),
+            "iso": iso,
+        })
+    print(f"      Municipality rows kept: {len(out):,}")
+    by_country = defaultdict(int)
+    for c in out:
+        by_country[c["country"]] += 1
+    for k, v in sorted(by_country.items(), key=lambda x: -x[1])[:15]:
+        print(f"        {k}: {v:,}")
+    return out
+
+
 def load_metros_index(path):
     """Build (norm_name, country) -> slug index. Country is used as
     disambiguator so 'York' UK doesn't collide with 'York' (PA, US).
     """
     with open(path, "r", encoding="utf-8") as f:
         metros = json.load(f)
+    # metros.json may use "United Kingdom" while the workbook uses
+    # constituent countries. Map both directions.
+    UK_MAPPING = {"United Kingdom"}
     idx = {}
     for m in metros:
         country = m.get("country", "")
-        if country not in COUNTRY_TO_STATE_MAP:
+        if country not in COUNTRY_TO_STATE_MAP and country not in UK_MAPPING:
             continue
         name_norm = strip_disambiguator(m.get("name", "")).lower().strip()
         state = m.get("primaryState") or ""
         idx[(name_norm, state, country)] = m["slug"]
-        # Fallback: name + country (no state) for metros where state is missing
         idx.setdefault((name_norm, None, country), m["slug"])
+        # If metro is in UK, also index by each constituent country
+        # so workbook entries with country=England/Scotland/Wales/NIR resolve.
+        if country in UK_MAPPING:
+            for constituent in ("England", "Scotland", "Wales", "Northern Ireland"):
+                idx.setdefault((name_norm, state, constituent), m["slug"])
+                idx.setdefault((name_norm, None, constituent), m["slug"])
     return idx
 
 
@@ -607,7 +1064,8 @@ def resolve_slug(c, metros_index):
     )
 
 
-def lookup_polygon(c, poly_index, dc_poly, qc_locality_index):
+def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
+                   country_locality_index=None):
     iso = c["iso"]
     norm = c["norm"]
     type_l = c["type"].lower() if c["type"] else ""
@@ -619,7 +1077,17 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index):
             return dc_poly, None
         return None, label + " [no DC region polygon]"
 
+    # Country-code resolution for country-wide fallbacks (used by IE province
+    # workbook entries, microstates, and as a last resort for region mistags).
+    country_code = COUNTRY_NAME_TO_ISO.get(c.get("country"))
+
     if not iso:
+        # No iso (Ireland provinces, microstates with sentinel iso=country_code,
+        # etc.). Try country-wide locality lookup.
+        if country_code and country_locality_index is not None:
+            geom = country_locality_index.get((country_code, norm))
+            if geom is not None:
+                return geom, None
         return None, label + " [state not in ISO map]"
 
     # QC amalgamated cities (Type='Territory'): consult locality index first.
@@ -651,14 +1119,24 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index):
             if k in poly_index:
                 return poly_index[k], None
 
+    # Country-wide locality fallback. Catches Spain region mistags (Burgos
+    # tagged ES-AN by Overture), Belgium province mismatches, etc.
+    if country_code and country_locality_index is not None:
+        geom = country_locality_index.get((country_code, norm))
+        if geom is not None:
+            return geom, None
+
     return None, label
 
 
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    poly_index, dc_poly, qc_locality_index, locality_index, region_index = load_overture(SOURCE_PARQUET)
+    (poly_index, dc_poly, qc_locality_index, locality_index, region_index,
+     country_locality_index, country_polygon) = load_overture(SOURCE_PARQUET)
     counties = load_counties_sheet(WORKBOOK)
+    municipalities = load_municipality_sheet(WORKBOOK)
+    counties.extend(municipalities)
     metros_index = load_metros_index(METROS_JSON)
 
     print("[3/5] Grouping by metro slug")
@@ -687,12 +1165,29 @@ def main():
     for slug, members in by_slug.items():
         polys = []
         unmatched_local = []
-        for c in members:
-            geom, fail = lookup_polygon(c, poly_index, dc_poly, qc_locality_index)
-            if geom is not None:
-                polys.append(geom)
-            if fail:
-                unmatched_local.append(fail)
+
+        # Editorial boundary override: use region polygons directly.
+        if slug in METRO_BOUNDARY_OVERRIDES:
+            for region_iso in METRO_BOUNDARY_OVERRIDES[slug]:
+                geom = region_index.get((region_iso, "*REGION*"))
+                if geom is not None:
+                    polys.append(geom)
+            if polys:
+                # Mark members as recovered via override so the unmatched
+                # array reads cleanly.
+                unmatched_local = [
+                    f"[boundary override: {' + '.join(METRO_BOUNDARY_OVERRIDES[slug])}]"
+                ]
+                metro_fallback_count += 1
+
+        if not polys:
+            for c in members:
+                geom, fail = lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
+                                             country_locality_index=country_locality_index)
+                if geom is not None:
+                    polys.append(geom)
+                if fail:
+                    unmatched_local.append(fail)
 
         # Metro-level fallback: when no member counties match, try the metro's
         # display name as a county or locality lookup. Catches CA Census
@@ -701,7 +1196,24 @@ def main():
         if not polys and members:
             iso = members[0]["iso"]
             metro_display = members[0]["metro_display"]
-            if iso and metro_display:
+
+            # AU external territories: workbook says country=Australia but the
+            # data is under their own ISO 3166-1 codes (CX/CC/NF). Route by
+            # metro display name.
+            au_external = {
+                "Christmas Island": "CX",
+                "Cocos (Keeling) Islands": "CC",
+                "Norfolk Island": "NF",
+            }
+            if members[0]["country"] == "Australia" and metro_display in au_external:
+                ext_code = au_external[metro_display]
+                ext_geom = country_polygon.get(ext_code)
+                if ext_geom is not None:
+                    polys.append(ext_geom)
+                    metro_fallback_count += 1
+                    unmatched_local = [f"[recovered via AU external territory polygon: {metro_display}]"]
+
+            if not polys and iso and metro_display:
                 norm_metro = normalize_base(strip_disambiguator(metro_display))
                 # Try county index in both has-suffix flavors
                 fallback_geom = None
@@ -720,8 +1232,20 @@ def main():
                 # metro IS the entire province (Beijing CN-BJ, Shanghai CN-SH,
                 # Australian Capital Territory AU-ACT). Workbook metro_display
                 # may not match the region's primary name.
-                if fallback_geom is None:
+                if fallback_geom is None and iso:
                     fallback_geom = region_index.get((iso, "*REGION*"))
+                # Country-wide locality fallback.
+                if fallback_geom is None:
+                    country_code = COUNTRY_NAME_TO_ISO.get(members[0]["country"])
+                    if country_code:
+                        fallback_geom = country_locality_index.get(
+                            (country_code, norm_metro))
+                # Country polygon fallback (Andorra, Vatican, Liechtenstein,
+                # Malta, French overseas — metro IS the country/dependency).
+                if fallback_geom is None:
+                    country_code = COUNTRY_NAME_TO_ISO.get(members[0]["country"])
+                    if country_code:
+                        fallback_geom = country_polygon.get(country_code)
                 if fallback_geom is not None:
                     polys.append(fallback_geom)
                     metro_fallback_count += 1
