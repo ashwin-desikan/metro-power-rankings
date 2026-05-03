@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getMeta } from '@/lib/data';
+import MobileMenu from './MobileMenu';
 
 const MONTHS = [
   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -263,6 +264,7 @@ export default function SiteNav() {
             </a>
           )}
         </div>
+        <MobileMenu updated={updated} />
       </div>
     </nav>
   );
