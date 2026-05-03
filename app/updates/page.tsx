@@ -53,6 +53,15 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-03",
+    headline: "Conurbations get proper editorial names",
+    items: [
+      "60+ conurbations now display under their civic, geographic, or political names: Bodensee, Lowcountry, SIJORI Triangle, Tuscany, Côte d'Azur, Borderplex, Mälardalen, Mindong, Greater Golden Horseshoe, plus many more.",
+      "Tier B for Conurbations renamed Continental (was World); the metro tier World City likewise becomes Continental City to sharpen the editorial vocabulary.",
+      "Davos cluster fixed: the 138 km transitive bridge-chain is replaced by Bodensee, a real cross-border Lake Constance conurbation. Davos and St. Moritz now solo.",
+    ],
+  },
+  {
     date: "2026-05-02",
     headline: "Badges launch: 11 categorical lenses on the dataset",
     items: [
