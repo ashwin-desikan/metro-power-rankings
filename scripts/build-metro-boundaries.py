@@ -62,7 +62,7 @@ from shapely.geometry import mapping
 
 SOURCE_PARQUET = os.environ.get(
     "OVERTURE_DIVISION_AREA",
-    r"C:\Users\ashwi\Desktop\Projects\MapData\north-america-division-area.parquet",
+    r"C:\Users\ashwi\Desktop\Projects\MapData\global-division-area.parquet",
 )
 WORKBOOK = "MetroAreas.xlsx"
 METROS_JSON = "public/data/metros.json"
@@ -119,11 +119,183 @@ MX_STATE_TO_ISO = {
     "Zacatecas": "MX-ZAC",
 }
 
+# Brazil (27 federal units)
+BR_STATE_TO_ISO = {
+    "Acre": "BR-AC", "Alagoas": "BR-AL", "Amapá": "BR-AP", "Amazonas": "BR-AM",
+    "Bahia": "BR-BA", "Ceará": "BR-CE", "Distrito Federal": "BR-DF",
+    "Espírito Santo": "BR-ES", "Goiás": "BR-GO", "Maranhão": "BR-MA",
+    "Mato Grosso": "BR-MT", "Mato Grosso do Sul": "BR-MS", "Minas Gerais": "BR-MG",
+    "Pará": "BR-PA", "Paraíba": "BR-PB", "Paraná": "BR-PR", "Pernambuco": "BR-PE",
+    "Piauí": "BR-PI", "Rio de Janeiro": "BR-RJ", "Rio Grande do Norte": "BR-RN",
+    "Rio Grande do Sul": "BR-RS", "Rondônia": "BR-RO", "Roraima": "BR-RR",
+    "Santa Catarina": "BR-SC", "São Paulo": "BR-SP", "Sergipe": "BR-SE",
+    "Tocantins": "BR-TO",
+}
+
+# Australia (8 states/territories + offshore)
+AU_STATE_TO_ISO = {
+    "Australian Capital Territory": "AU-ACT", "New South Wales": "AU-NSW",
+    "Northern Territory": "AU-NT", "Queensland": "AU-QLD",
+    "South Australia": "AU-SA", "Tasmania": "AU-TAS", "Victoria": "AU-VIC",
+    "Western Australia": "AU-WA",
+    "Christmas Island": "AU-CX", "Cocos (Keeling) Islands": "AU-CC",
+    "Jervis Bay": "AU-JBT", "Norfolk Island": "AU-NF",
+}
+
+# India (28 states + 8 union territories)
+IN_STATE_TO_ISO = {
+    "Andhra Pradesh": "IN-AP", "Arunachal Pradesh": "IN-AR", "Assam": "IN-AS",
+    "Bihar": "IN-BR", "Chhattisgarh": "IN-CT", "Goa": "IN-GA", "Gujarat": "IN-GJ",
+    "Haryana": "IN-HR", "Himachal Pradesh": "IN-HP", "Jharkhand": "IN-JH",
+    "Karnataka": "IN-KA", "Kerala": "IN-KL", "Madhya Pradesh": "IN-MP",
+    "Maharashtra": "IN-MH", "Manipur": "IN-MN", "Meghalaya": "IN-ML",
+    "Mizoram": "IN-MZ", "Nagaland": "IN-NL", "Odisha": "IN-OD", "Punjab": "IN-PB",
+    "Rajasthan": "IN-RJ", "Sikkim": "IN-SK", "Tamil Nadu": "IN-TN",
+    "Telangana": "IN-TG", "Tripura": "IN-TR", "Uttar Pradesh": "IN-UP",
+    "Uttarakhand": "IN-UT", "West Bengal": "IN-WB",
+    # Union Territories:
+    "Andaman & Nicobar Islands": "IN-AN", "Andaman and Nicobar Islands": "IN-AN",
+    "Chandigarh": "IN-CH",
+    "Dadra & Nagar Haveli and Daman & Diu": "IN-DH",
+    "Delhi": "IN-DL", "NCT of Delhi": "IN-DL",
+    "Jammu & Kashmir": "IN-JK", "Jammu and Kashmir": "IN-JK",
+    "Ladakh": "IN-LA", "Lakshadweep": "IN-LD", "Puducherry": "IN-PY",
+}
+
+# Japan (47 prefectures, ISO uses numeric: JP-01 to JP-47)
+JP_STATE_TO_ISO = {
+    "Hokkaido": "JP-01", "Aomori": "JP-02", "Iwate": "JP-03", "Miyagi": "JP-04",
+    "Akita": "JP-05", "Yamagata": "JP-06", "Fukushima": "JP-07", "Ibaraki": "JP-08",
+    "Tochigi": "JP-09", "Gunma": "JP-10", "Saitama": "JP-11", "Chiba": "JP-12",
+    "Tokyo": "JP-13", "Kanagawa": "JP-14", "Niigata": "JP-15", "Toyama": "JP-16",
+    "Ishikawa": "JP-17", "Fukui": "JP-18", "Yamanashi": "JP-19", "Nagano": "JP-20",
+    "Gifu": "JP-21", "Shizuoka": "JP-22", "Aichi": "JP-23", "Mie": "JP-24",
+    "Shiga": "JP-25", "Kyoto": "JP-26", "Osaka": "JP-27", "Hyogo": "JP-28",
+    "Nara": "JP-29", "Wakayama": "JP-30", "Tottori": "JP-31", "Shimane": "JP-32",
+    "Okayama": "JP-33", "Hiroshima": "JP-34", "Yamaguchi": "JP-35", "Tokushima": "JP-36",
+    "Kagawa": "JP-37", "Ehime": "JP-38", "Kochi": "JP-39", "Fukuoka": "JP-40",
+    "Saga": "JP-41", "Nagasaki": "JP-42", "Kumamoto": "JP-43", "Oita": "JP-44",
+    "Miyazaki": "JP-45", "Kagoshima": "JP-46", "Okinawa": "JP-47",
+}
+
+# Netherlands (12 provinces)
+NL_STATE_TO_ISO = {
+    "Drenthe": "NL-DR", "Flevoland": "NL-FL", "Friesland": "NL-FR",
+    "Fryslân": "NL-FR", "Gelderland": "NL-GE", "Groningen": "NL-GR",
+    "Limburg": "NL-LI", "Noord-Brabant": "NL-NB", "North Brabant": "NL-NB",
+    "Noord-Holland": "NL-NH", "North Holland": "NL-NH",
+    "Overijssel": "NL-OV", "Utrecht": "NL-UT",
+    "Zeeland": "NL-ZE", "Zuid-Holland": "NL-ZH", "South Holland": "NL-ZH",
+}
+
+# Turkey (81 provinces, ISO uses 01-81)
+TR_STATE_TO_ISO = {
+    "Adana": "TR-01", "Adıyaman": "TR-02", "Afyonkarahisar": "TR-03", "Ağrı": "TR-04",
+    "Amasya": "TR-05", "Ankara": "TR-06", "Antalya": "TR-07", "Artvin": "TR-08",
+    "Aydın": "TR-09", "Balıkesir": "TR-10", "Bilecik": "TR-11", "Bingöl": "TR-12",
+    "Bitlis": "TR-13", "Bolu": "TR-14", "Burdur": "TR-15", "Bursa": "TR-16",
+    "Çanakkale": "TR-17", "Çankırı": "TR-18", "Çorum": "TR-19", "Denizli": "TR-20",
+    "Diyarbakır": "TR-21", "Edirne": "TR-22", "Elazığ": "TR-23", "Erzincan": "TR-24",
+    "Erzurum": "TR-25", "Eskişehir": "TR-26", "Gaziantep": "TR-27", "Giresun": "TR-28",
+    "Gümüşhane": "TR-29", "Hakkâri": "TR-30", "Hatay": "TR-31", "Isparta": "TR-32",
+    "Mersin": "TR-33", "İstanbul": "TR-34", "Istanbul": "TR-34", "İzmir": "TR-35",
+    "Izmir": "TR-35", "Kars": "TR-36", "Kastamonu": "TR-37", "Kayseri": "TR-38",
+    "Kırklareli": "TR-39", "Kırşehir": "TR-40", "Kocaeli": "TR-41", "Konya": "TR-42",
+    "Kütahya": "TR-43", "Malatya": "TR-44", "Manisa": "TR-45", "Kahramanmaraş": "TR-46",
+    "Mardin": "TR-47", "Muğla": "TR-48", "Muş": "TR-49", "Nevşehir": "TR-50",
+    "Niğde": "TR-51", "Ordu": "TR-52", "Rize": "TR-53", "Sakarya": "TR-54",
+    "Samsun": "TR-55", "Siirt": "TR-56", "Sinop": "TR-57", "Sivas": "TR-58",
+    "Tekirdağ": "TR-59", "Tokat": "TR-60", "Trabzon": "TR-61", "Tunceli": "TR-62",
+    "Şanlıurfa": "TR-63", "Uşak": "TR-64", "Van": "TR-65", "Yozgat": "TR-66",
+    "Zonguldak": "TR-67", "Aksaray": "TR-68", "Bayburt": "TR-69", "Karaman": "TR-70",
+    "Kırıkkale": "TR-71", "Batman": "TR-72", "Şırnak": "TR-73", "Bartın": "TR-74",
+    "Ardahan": "TR-75", "Iğdır": "TR-76", "Yalova": "TR-77", "Karabük": "TR-78",
+    "Kilis": "TR-79", "Osmaniye": "TR-80", "Düzce": "TR-81",
+}
+
+# China — workbook uses province names in English/Pinyin. ISO uses CN-XX.
+CN_STATE_TO_ISO = {
+    "Anhui": "CN-AH", "Beijing": "CN-BJ", "Chongqing": "CN-CQ", "Fujian": "CN-FJ",
+    "Gansu": "CN-GS", "Guangdong": "CN-GD", "Guangxi": "CN-GX", "Guizhou": "CN-GZ",
+    "Hainan": "CN-HI", "Hebei": "CN-HE", "Heilongjiang": "CN-HL", "Henan": "CN-HA",
+    "Hubei": "CN-HB", "Hunan": "CN-HN", "Inner Mongolia": "CN-NM", "Jiangsu": "CN-JS",
+    "Jiangxi": "CN-JX", "Jilin": "CN-JL", "Liaoning": "CN-LN", "Ningxia": "CN-NX",
+    "Qinghai": "CN-QH", "Shaanxi": "CN-SN", "Shandong": "CN-SD", "Shanghai": "CN-SH",
+    "Shanxi": "CN-SX", "Sichuan": "CN-SC", "Tianjin": "CN-TJ", "Tibet": "CN-XZ",
+    "Xinjiang": "CN-XJ", "Yunnan": "CN-YN", "Zhejiang": "CN-ZJ",
+    # SARs are usually separate countries in workbook but include just in case
+    "Hong Kong": "CN-HK", "Macau": "CN-MO", "Taiwan": "CN-TW",
+}
+
+# South Korea (17 first-level admin areas, ISO uses numeric)
+KR_STATE_TO_ISO = {
+    "Seoul": "KR-11", "Busan": "KR-26", "Daegu": "KR-27", "Incheon": "KR-28",
+    "Gwangju": "KR-29", "Daejeon": "KR-30", "Ulsan": "KR-31", "Sejong": "KR-50",
+    "Gyeonggi": "KR-41", "Gangwon": "KR-42", "Chungcheongbuk": "KR-43",
+    "Chungcheongnam": "KR-44", "Jeollabuk": "KR-45", "Jeollanam": "KR-46",
+    "Gyeongsangbuk": "KR-47", "Gyeongsangnam": "KR-48", "Jeju": "KR-49",
+}
+
+# Russia (85 federal subjects, ISO uses RU-XXX). Mapping common English names
+# (workbook uses English transliterations).
+RU_STATE_TO_ISO = {
+    "Adygea": "RU-AD", "Altai": "RU-AL", "Altai Krai": "RU-ALT",
+    "Amur Oblast": "RU-AMU", "Arkhangelsk Oblast": "RU-ARK",
+    "Astrakhan Oblast": "RU-AST", "Bashkortostan": "RU-BA",
+    "Belgorod Oblast": "RU-BEL", "Bryansk Oblast": "RU-BRY",
+    "Buryatia": "RU-BU", "Chechnya": "RU-CE", "Chelyabinsk Oblast": "RU-CHE",
+    "Chukotka": "RU-CHU", "Chuvashia": "RU-CU", "Dagestan": "RU-DA",
+    "Ingushetia": "RU-IN", "Irkutsk Oblast": "RU-IRK",
+    "Ivanovo Oblast": "RU-IVA", "Jewish Autonomous Oblast": "RU-YEV",
+    "Kabardino-Balkaria": "RU-KB", "Kaliningrad Oblast": "RU-KGD",
+    "Kalmykia": "RU-KL", "Kaluga Oblast": "RU-KLU",
+    "Kamchatka Krai": "RU-KAM", "Karachay-Cherkessia": "RU-KC",
+    "Karelia": "RU-KR", "Kemerovo Oblast": "RU-KEM",
+    "Khabarovsk Krai": "RU-KHA", "Khakassia": "RU-KK",
+    "Khanty-Mansi Autonomous Okrug": "RU-KHM", "Khanty-Mansi-Yugra": "RU-KHM", "Yugra": "RU-KHM",
+    "Kirov Oblast": "RU-KIR", "Komi": "RU-KO", "Kostroma Oblast": "RU-KOS",
+    "Krasnodar Krai": "RU-KDA", "Krasnoyarsk Krai": "RU-KYA",
+    "Kurgan Oblast": "RU-KGN", "Kursk Oblast": "RU-KRS",
+    "Leningrad Oblast": "RU-LEN", "Lipetsk Oblast": "RU-LIP",
+    "Magadan Oblast": "RU-MAG", "Mari El": "RU-ME", "Mordovia": "RU-MO",
+    "Moscow": "RU-MOW", "Moscow Oblast": "RU-MOS",
+    "Murmansk Oblast": "RU-MUR", "Nenets Autonomous Okrug": "RU-NEN", "Nenets": "RU-NEN",
+    "Nizhny Novgorod Oblast": "RU-NIZ", "North Ossetia-Alania": "RU-SE",
+    "Novgorod Oblast": "RU-NGR", "Novosibirsk Oblast": "RU-NVS",
+    "Omsk Oblast": "RU-OMS", "Orenburg Oblast": "RU-ORE",
+    "Oryol Oblast": "RU-ORL", "Penza Oblast": "RU-PNZ",
+    "Perm Krai": "RU-PER", "Primorsky Krai": "RU-PRI",
+    "Pskov Oblast": "RU-PSK", "Rostov Oblast": "RU-ROS",
+    "Ryazan Oblast": "RU-RYA", "Saint Petersburg": "RU-SPE",
+    "Sakha": "RU-SA", "Sakha Republic": "RU-SA", "Yakutia": "RU-SA",
+    "Sakhalin Oblast": "RU-SAK", "Samara Oblast": "RU-SAM",
+    "Saratov Oblast": "RU-SAR", "Smolensk Oblast": "RU-SMO",
+    "Stavropol Krai": "RU-STA", "Sverdlovsk Oblast": "RU-SVE",
+    "Tambov Oblast": "RU-TAM", "Tatarstan": "RU-TA",
+    "Tomsk Oblast": "RU-TOM", "Tula Oblast": "RU-TUL",
+    "Tuva": "RU-TY", "Tver Oblast": "RU-TVE",
+    "Tyumen Oblast": "RU-TYU", "Udmurtia": "RU-UD",
+    "Ulyanovsk Oblast": "RU-ULY", "Vladimir Oblast": "RU-VLA",
+    "Volgograd Oblast": "RU-VGG", "Vologda Oblast": "RU-VLG",
+    "Voronezh Oblast": "RU-VOR",
+    "Yamalo-Nenets Autonomous Okrug": "RU-YAN", "Yamalo-Nenets": "RU-YAN",
+    "Yaroslavl Oblast": "RU-YAR", "Zabaykalsky Krai": "RU-ZAB",
+}
+
 # Workbook Country column → state-to-ISO map
 COUNTRY_TO_STATE_MAP = {
     "United States": US_STATE_TO_ISO,
     "Canada": CA_STATE_TO_ISO,
     "Mexico": MX_STATE_TO_ISO,
+    "Brazil": BR_STATE_TO_ISO,
+    "Australia": AU_STATE_TO_ISO,
+    "India": IN_STATE_TO_ISO,
+    "Japan": JP_STATE_TO_ISO,
+    "Netherlands": NL_STATE_TO_ISO,
+    "Turkey": TR_STATE_TO_ISO,
+    "China": CN_STATE_TO_ISO,
+    "South Korea": KR_STATE_TO_ISO,
+    "Russia": RU_STATE_TO_ISO,
 }
 
 # County-style admin suffixes. Stripped during normalization. Presence is
@@ -135,6 +307,14 @@ COUNTY_SUFFIXES = (
     # CA-specific:
     " Regional District", " Regional Municipality", " District Municipality",
     " United Counties", " Region", " Rural District", " District",
+    # CN-specific (Pinyin, post-ASCII-fold drops tone marks):
+    " Shi", " Xian", " Qu", " Zizhizhou",
+    # JP-specific:
+    " Shi", " Ku", " Cho", " Son",
+    # KR-specific (with hyphen, since Overture has "Yeosu-si" / "Haeundae-gu"):
+    "-si", "-gu", "-gun",
+    # RU/EN-alias suffixes:
+    " Urban District", " Rural Settlement", " Urban Settlement",
 )
 
 # CA-specific prefix patterns. Stripped to leave just the place name.
@@ -150,7 +330,9 @@ ADMIN_PREFIX_PATTERN = re.compile(
     r"municipio de|region of|"
     r"municipality of(?: the county of)?|village of|town of|city of|"
     r"district of|county of|"
-    r"ville de|paroisse de)\s+",
+    r"ville de|paroisse de|"
+    # AU patterns (Overture: "Shire Of Gingin", "City of Cockburn"):
+    r"shire of|borough of|council of)\s+",
     re.IGNORECASE,
 )
 
@@ -231,19 +413,44 @@ def strip_disambiguator(metro_name: str) -> str:
 def load_overture(path):
     print(f"[1/5] Reading Overture Parquet: {path}")
     gdf = gpd.read_parquet(path, columns=["country", "subtype", "region", "names", "geometry"])
-    nam = gdf[gdf["country"].isin(["US", "CA", "MX"])].copy()
+    target_countries = ["US", "CA", "MX", "BR", "AU", "IN", "JP", "NL", "TR", "CN", "KR", "RU"]
+    nam = gdf[gdf["country"].isin(target_countries)].copy()
     nam["primary"] = nam["names"].apply(lambda n: n.get("primary") if isinstance(n, dict) else None)
     nam = nam[nam["primary"].notna() & nam["region"].notna()].copy()
 
-    counties = nam[nam["subtype"] == "county"].copy()
+    # Brazil has 0 subtype=county rows. All BR municipios live in subtype=locality.
+    # Include them in the county index for BR specifically.
+    counties_mask = (nam["subtype"] == "county") | (
+        (nam["country"] == "BR") & (nam["subtype"] == "locality")
+    )
+    counties = nam[counties_mask].copy()
     counties["base"] = counties["primary"].apply(normalize_base)
     counties["has_suffix"] = counties["primary"].apply(has_county_suffix)
-    print(f"      county-subtype rows (US/CA/MX): {len(counties):,}")
+    print(f"      county-subtype rows (incl BR localities): {len(counties):,}")
 
     poly_index = {}
     for _, row in counties.iterrows():
+        # Primary key (the row's primary name)
         key = (row["region"], row["base"], row["has_suffix"])
         poly_index.setdefault(key, row["geometry"])
+        # Also index by names.common["en"] alias when available — catches
+        # CN/KR/RU where primary is in native script ("合肥市" / "여수시") and
+        # workbook uses Latin transliteration ("Hefei", "Yeosu", "Chukotsky").
+        names = row["names"]
+        if isinstance(names, dict):
+            common = names.get("common")
+            if common is not None:
+                # common may be a list of (lang, value) tuples
+                try:
+                    common_dict = dict(common)
+                except (TypeError, ValueError):
+                    common_dict = {}
+                en = common_dict.get("en")
+                if en:
+                    en_base = normalize_base(en)
+                    if en_base and en_base != row["base"]:
+                        en_key = (row["region"], en_base, has_county_suffix(en))
+                        poly_index.setdefault(en_key, row["geometry"])
 
     # Fallback: subtype=neighborhood rows with county-style suffix.
     # Catches Overture mis-tags like Nash County NC.
@@ -279,15 +486,54 @@ def load_overture(path):
     # county doesn't exist in Overture but the metro lead-city does. Examples:
     # Calgary (workbook says "Division No. 6", Overture has "Calgary"
     # subtype=county), Bethel AK (workbook says "Bethel" type=Census Area,
-    # Overture has "Bethel" subtype=locality).
+    # Overture has "Bethel" subtype=locality), Maykop RU (Cyrillic primary
+    # but English alias matches workbook).
     locality = nam[nam["subtype"] == "locality"].copy()
     locality["base"] = locality["primary"].apply(normalize_base)
     locality_index = {}
     for _, row in locality.iterrows():
         locality_index.setdefault((row["region"], row["base"]), row["geometry"])
+        # Also index by english alias for non-Latin scripts
+        names = row["names"]
+        if isinstance(names, dict):
+            common = names.get("common")
+            if common is not None:
+                try:
+                    en = dict(common).get("en")
+                except (TypeError, ValueError):
+                    en = None
+                if en:
+                    en_base = normalize_base(en)
+                    if en_base and en_base != row["base"]:
+                        locality_index.setdefault((row["region"], en_base), row["geometry"])
     print(f"      locality fallback index: {len(locality_index):,} entries")
 
-    return poly_index, dc_poly, qc_locality_index, locality_index
+    # Region fallback index. Catches province-level metros where the entire
+    # state is the metro extent (Beijing, Shanghai, Tianjin, Chongqing all
+    # tagged subtype=region only; ACT for Canberra; etc.).
+    region_subtype = nam[nam["subtype"] == "region"].copy()
+    region_subtype["base"] = region_subtype["primary"].apply(normalize_base)
+    region_index = {}
+    for _, row in region_subtype.iterrows():
+        region_index.setdefault((row["region"], row["base"]), row["geometry"])
+        names = row["names"]
+        if isinstance(names, dict):
+            common = names.get("common")
+            if common is not None:
+                try:
+                    en = dict(common).get("en")
+                except (TypeError, ValueError):
+                    en = None
+                if en:
+                    en_base = normalize_base(en)
+                    if en_base and en_base != row["base"]:
+                        region_index.setdefault((row["region"], en_base), row["geometry"])
+        # Also index by region-iso alone (so Beijing → CN-BJ region polygon
+        # is reachable without name match). Stored as (iso, "*REGION*").
+        region_index.setdefault((row["region"], "*REGION*"), row["geometry"])
+    print(f"      region fallback index: {len(region_index):,} entries")
+
+    return poly_index, dc_poly, qc_locality_index, locality_index, region_index
 
 
 def load_counties_sheet(path):
@@ -411,7 +657,7 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index):
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    poly_index, dc_poly, qc_locality_index, locality_index = load_overture(SOURCE_PARQUET)
+    poly_index, dc_poly, qc_locality_index, locality_index, region_index = load_overture(SOURCE_PARQUET)
     counties = load_counties_sheet(WORKBOOK)
     metros_index = load_metros_index(METROS_JSON)
 
@@ -466,6 +712,16 @@ def main():
                 # Try locality index
                 if fallback_geom is None:
                     fallback_geom = locality_index.get((iso, norm_metro))
+                # Try region index (province-level metros: Beijing, Shanghai,
+                # ACT, Tianjin, etc. that exist only as subtype=region).
+                if fallback_geom is None:
+                    fallback_geom = region_index.get((iso, norm_metro))
+                # Last resort: the whole region polygon for cases where the
+                # metro IS the entire province (Beijing CN-BJ, Shanghai CN-SH,
+                # Australian Capital Territory AU-ACT). Workbook metro_display
+                # may not match the region's primary name.
+                if fallback_geom is None:
+                    fallback_geom = region_index.get((iso, "*REGION*"))
                 if fallback_geom is not None:
                     polys.append(fallback_geom)
                     metro_fallback_count += 1
