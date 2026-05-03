@@ -606,8 +606,14 @@ COUNTY_ALIASES = {
 METRO_BOUNDARY_OVERRIDES = {
     # Moscow city + Moscow Oblast
     "moscow": ["RU-MOW", "RU-MOS"],
-    # Saint Petersburg city + Leningrad Oblast
-    "saint-petersburg": ["RU-SPE", "RU-LEN"],
+    # St. Petersburg city + Leningrad Oblast (slug is "st-petersburg" in
+    # metros.json, not "saint-petersburg" — the prior key never matched).
+    "st-petersburg": ["RU-SPE", "RU-LEN"],
+    # Canberra IS the Australian Capital Territory; no city-level Overture
+    # entry exists. Previously relied on the *REGION* sentinel auto-fallback,
+    # now made explicit because that fallback was producing wrong-region
+    # polygons for many other metros (UK Scotland, Russian oblast capitals).
+    "canberra": ["AU-ACT"],
 }
 
 
@@ -1005,7 +1011,8 @@ def load_municipality_sheet(path):
                 skipped_country[country] += 1
             continue
         municipality = r[2]
-        state_full = r[4]
+        district = r[3]  # col 3: District / Arrondissement / County (intermediate admin level)
+        state_full = r[4]  # col 4: State / Region (broadest admin level)
         county_type = r[7]
         metro_area = r[6]
         if not (municipality and metro_area):
@@ -1026,6 +1033,15 @@ def load_municipality_sheet(path):
             "norm": normalize_base(str(municipality).strip()),
             "iso": iso,
             "src": "Municipality",
+            # Cascade fallback names (col 3 District, col 4 State). These are
+            # tried in lookup_polygon when the Municipality (col 2) name fails
+            # to resolve in Overture. Crucial for UK metros where col 2 holds
+            # MSOAs (which Overture doesn't carry) but col 3 holds Local
+            # Authority Districts (which Overture does carry as subtype=county).
+            "district": str(district).strip() if district else "",
+            "district_norm": normalize_base(str(district).strip()) if district else "",
+            "state_name": str(state_full).strip() if state_full else "",
+            "state_norm": normalize_base(str(state_full).strip()) if state_full else "",
         })
     print(f"      Municipality rows kept: {len(out):,}")
     by_country = defaultdict(int)
@@ -1073,27 +1089,67 @@ def resolve_slug(c, metros_index):
 
 def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
                    country_locality_index=None, locality_index=None):
+    """Resolve a workbook row to an Overture polygon.
+
+    For Municipality-sheet rows, this function cascades through three name
+    levels in order of specificity:
+      1. Municipality (col 2 in workbook) — finest granularity
+      2. District / Arrondissement / County (col 3) — intermediate
+      3. State / Region (col 4) — broadest
+
+    The cascade exists because the workbook's smallest unit (e.g., UK MSOAs,
+    French communes, Italian comuni) often does not exist in Overture's
+    division_area dataset, but the next level up (Local Authority District,
+    arrondissement, provincia) usually does. Without the cascade, every
+    Municipality row that misses on level 1 was being thrown away — the
+    earlier source of the UK whole-England-polygon disaster.
+    """
     iso = c["iso"]
-    norm = c["norm"]
     type_l = c["type"].lower() if c["type"] else ""
     src = c.get("src")
     label = f"{c['county']} ({iso or '???'}, type={c['type']!r})"
 
-    # DC special case
+    # Cascade name candidates for Municipality rows; single name for others
+    name_candidates = [c["norm"]]
+    if src == "Municipality":
+        for k in ("district_norm", "state_norm"):
+            n = c.get(k)
+            if n and n != c["norm"] and n not in name_candidates:
+                name_candidates.append(n)
+
+    # Inner helper does the per-name resolution; outer loop tries each name
+    geom = _resolve_one_name(c, name_candidates[0], iso, type_l, src, label,
+                             poly_index, dc_poly, qc_locality_index,
+                             country_locality_index, locality_index)
+    if geom is not None:
+        return geom, None
+    # Cascade through fallback names if Municipality name missed
+    for fallback in name_candidates[1:]:
+        geom = _resolve_one_name(c, fallback, iso, type_l, src, label,
+                                 poly_index, dc_poly, qc_locality_index,
+                                 country_locality_index, locality_index)
+        if geom is not None:
+            return geom, None
+    return None, label
+
+
+def _resolve_one_name(c, norm, iso, type_l, src, label,
+                      poly_index, dc_poly, qc_locality_index,
+                      country_locality_index, locality_index):
+    """Resolve a single (iso, norm) candidate against the indexes. Same chain
+    as lookup_polygon used to be inline, but parameterized by the name so
+    lookup_polygon can call it once per cascade level."""
+
+    # DC special case (only fires on the Municipality-name pass, since
+    # district/state cascade rows don't carry the DC type)
     if "federal district" in type_l or iso == "US-DC":
         if dc_poly is not None:
-            return dc_poly, None
-        return None, label + " [no DC region polygon]"
+            return dc_poly
+        return None
 
-    # Country-code resolution for country-wide fallbacks (used by IE province
-    # workbook entries, microstates, and as a last resort for region mistags).
     country_code = COUNTRY_NAME_TO_ISO.get(c.get("country"))
 
     def _country_lookup(name):
-        # Country-wide fallback with region guard: rejects a match whose
-        # polygon region differs from the workbook iso. Prevents cross-province
-        # leakage (e.g., Saskatchewan "Brock" was being returned for Ontario
-        # "Brock Township" because the country-wide index dropped province context).
         if not (country_code and country_locality_index is not None):
             return None
         entry = country_locality_index.get((country_code, name))
@@ -1105,22 +1161,15 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
         return geom
 
     if not iso:
-        # No iso (Ireland provinces, microstates with sentinel iso=country_code,
-        # etc.). Try country-wide locality lookup. No region guard since iso
-        # is None by definition here.
         if country_code and country_locality_index is not None:
             entry = country_locality_index.get((country_code, norm))
             if entry is not None:
-                return entry[0], None
-        return None, label + " [state not in ISO map]"
+                return entry[0]
+        return None
 
-    # QC amalgamated cities (Type='Territory'): consult locality index first.
-    # These are single-city merged municipalities (Montréal, Laval, Longueuil,
-    # Gatineau, Quebec, Lévis, Sherbrooke, etc.) that exist in Overture as
-    # subtype=locality rather than subtype=county.
     if iso == "CA-QC" and "territory" in type_l:
         if norm in qc_locality_index:
-            return qc_locality_index[norm], None
+            return qc_locality_index[norm]
 
     # Editorial aliases (e.g. RI Washington -> South)
     alias_key = (iso, norm)
@@ -1131,44 +1180,36 @@ def lookup_polygon(c, poly_index, dc_poly, qc_locality_index,
     primary_key = (iso, norm, not is_city_type)
     fallback_key = (iso, norm, is_city_type)
 
-    # Municipality-sheet rows (CA + Europe) are sub-county by editorial intent.
-    # Try region-keyed locality FIRST so a Town/Township/Village/Parish doesn't
-    # accidentally claim a same-name County polygon (e.g., Perth Town in Lanark
-    # was matching Perth County in southwestern Ontario).
+    # Municipality-sheet rows: try region-keyed locality FIRST so a sub-county
+    # type (Town/Township/Village/Parish) doesn't accidentally claim a same-name
+    # County polygon (e.g., Perth Town in Lanark was matching Perth County in
+    # southwestern Ontario).
     if src == "Municipality" and locality_index is not None:
         geom = locality_index.get((iso, norm))
         if geom is not None:
-            return geom, None
+            return geom
 
     if primary_key in poly_index:
-        return poly_index[primary_key], None
+        return poly_index[primary_key]
     if fallback_key in poly_index:
-        return poly_index[fallback_key], None
+        return poly_index[fallback_key]
 
-    # type='City' fallback: try with " city" suffix stripped
     if is_city_type and norm.endswith(" city"):
         stripped = norm[: -len(" city")].strip()
         for k in [(iso, stripped, False), (iso, stripped, True)]:
             if k in poly_index:
-                return poly_index[k], None
+                return poly_index[k]
 
-    # Region-keyed locality lookup (Counties-sheet rows reach this only after
-    # the county tier misses; preserves province context before we drop down to
-    # the country-wide fallback).
     if locality_index is not None:
         geom = locality_index.get((iso, norm))
         if geom is not None:
-            return geom, None
+            return geom
 
-    # Country-wide locality fallback. Catches Spain region mistags (Burgos
-    # tagged ES-AN by Overture), Belgium province mismatches. Region guard
-    # prevents this tier from picking up a same-name match in a different
-    # province (the source of the Canada cross-province leakage bug).
     geom = _country_lookup(norm)
     if geom is not None:
-        return geom, None
+        return geom
 
-    return None, label
+    return None
 
 
 def main():
@@ -1287,15 +1328,20 @@ def main():
                 # ACT, Tianjin, etc. that exist only as subtype=region).
                 if fallback_geom is None:
                     fallback_geom = region_index.get((iso, norm_metro))
-                # Last resort: the whole region polygon for cases where the
-                # metro IS the entire province (Beijing CN-BJ, Shanghai CN-SH,
-                # Australian Capital Territory AU-ACT). Workbook metro_display
-                # may not match the region's primary name. Gated to len==1 so
-                # we don't return e.g. all of Newfoundland for Corner Brook
-                # when Overture coverage of NL is too sparse to resolve any of
-                # its 27 member localities.
-                if fallback_geom is None and iso and len(members) == 1:
-                    fallback_geom = region_index.get((iso, "*REGION*"))
+                # *REGION* sentinel auto-fallback REMOVED. Previously this
+                # returned the entire province polygon when no other lookup
+                # worked, which was correct for whole-region metros (Canberra)
+                # but produced wrong polygons whenever the workbook's members
+                # were sub-region but failed to resolve in Overture (UK Scotland
+                # cities returned the whole Scotland polygon; UK England MSOA-
+                # driven metros returned the whole England polygon; small
+                # Russian oblast capitals returned the whole oblast).
+                #
+                # Metros that genuinely span an entire region must now be in
+                # METRO_BOUNDARY_OVERRIDES (Moscow, St. Petersburg, Canberra
+                # currently). Metros without resolvable members are skipped
+                # (no boundary file written) — better an absent boundary than
+                # a misleading one.
                 # Country-wide locality fallback. Unpacks the (geom, region)
                 # tuple stored in the index. No region guard here since this is
                 # the metro-name fallback used when no per-member match worked.
