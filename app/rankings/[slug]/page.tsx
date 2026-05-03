@@ -22,7 +22,7 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import BadgeChips from "./BadgeChips";
-import MetroClusterMap from "./MetroClusterMap";
+import MetroPageMap from "./MetroPageMap";
 
 export const dynamicParams = false;
 
@@ -475,10 +475,10 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Conurbation cluster map : geographic context for any metro
-            that's part of a multi-metro conurbation. Renders nothing for
-            solo metros. */}
-        <MetroClusterMap slug={slug} />
+        {/* Map: cluster context for any metro that's part of a multi-metro
+            conurbation, single-point Location pin otherwise. Returns null
+            for the handful of zero-coord workbook entries. */}
+        <MetroPageMap slug={slug} />
 
         {/* Top Team : surfaced for metros that landed a pick on the Top
             Sports Teams sheet. Mirrors the Walkable Elite Quarters card so
