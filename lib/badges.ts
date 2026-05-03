@@ -169,6 +169,55 @@ const _NAMED_MEGAREGIONS: {
     memberSlugs: ["zurich", "lucerne", "zug", "aarau", "baden", "schaffhausen", "wil"],
     extraSatellites: ["Winterthur", "Frauenfeld"],
   },
+  {
+    slug: "scottish-central-belt",
+    displayName: "Scottish Central Belt",
+    leadSlug: "edinburgh",
+    memberSlugs: ["edinburgh", "glasgow", "dundee", "st-andrews", "perth-scotland", "falkirk", "ayr", "kilmarnock"],
+    extraSatellites: ["Stirling", "Paisley", "East Kilbride", "Hamilton", "Motherwell", "Greenock", "Livingston", "Kirkcaldy"],
+  },
+  {
+    slug: "english-midlands",
+    displayName: "English Midlands",
+    leadSlug: "birmingham",
+    memberSlugs: ["birmingham", "nottingham", "leicester", "coventry", "derby"],
+    extraSatellites: ["Wolverhampton", "Solihull", "Walsall", "Dudley", "Sandwell", "West Bromwich", "Mansfield", "Loughborough"],
+  },
+  {
+    slug: "severnside",
+    displayName: "Severnside",
+    leadSlug: "cardiff",
+    memberSlugs: ["cardiff", "bristol", "bath", "newport", "gloucester", "cheltenham"],
+    extraSatellites: ["Weston-super-Mare", "Chepstow", "Caerphilly", "Bridgend", "Stroud"],
+  },
+  {
+    slug: "english-south-coast",
+    displayName: "English South Coast",
+    leadSlug: "southampton",
+    memberSlugs: ["southampton", "brighton-hove", "bournemouth", "portsmouth"],
+    extraSatellites: ["Worthing", "Eastbourne", "Poole", "Isle of Wight", "Eastleigh", "Fareham", "Gosport", "Havant"],
+  },
+  {
+    slug: "north-east-england",
+    displayName: "North East England",
+    leadSlug: "newcastle",
+    memberSlugs: ["newcastle", "durham", "sunderland", "middlesbrough"],
+    extraSatellites: ["Gateshead", "Stockton-on-Tees", "Hartlepool", "Darlington", "North Shields", "South Shields"],
+  },
+  {
+    slug: "west-and-north-yorkshire",
+    displayName: "West and North Yorkshire",
+    leadSlug: "leeds-bradford",
+    memberSlugs: ["leeds-bradford", "york"],
+    extraSatellites: ["Wakefield", "Halifax", "Huddersfield", "Harrogate", "Dewsbury", "Castleford"],
+  },
+  {
+    slug: "devon",
+    displayName: "Devon",
+    leadSlug: "exeter",
+    memberSlugs: ["exeter", "plymouth"],
+    extraSatellites: ["Torquay", "Exmouth", "Barnstaple", "Tiverton", "Newton Abbot", "Paignton"],
+  },
 ];
 
 // ---------- Types ----------
