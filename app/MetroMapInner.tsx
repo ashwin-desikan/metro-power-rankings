@@ -1,12 +1,14 @@
 'use client';
 
-import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline } from 'react-leaflet';
+import { useEffect } from 'react';
+import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
 
 // Padding adapts to span: tight derbies get more breathing room than
 // continent-wide clusters. Returns south-west then north-east bound pairs.
-function getBounds(points: MapPoint[]): [[number, number], [number, number]] {
+function getPointBounds(points: MapPoint[]): [[number, number], [number, number]] {
   const lats = points.map((p) => p.lat);
   const lons = points.map((p) => p.lon);
   const span = Math.max(
@@ -20,20 +22,37 @@ function getBounds(points: MapPoint[]): [[number, number], [number, number]] {
   ];
 }
 
-// Single-point case needs a center + zoom rather than bounds.
-function isSinglePoint(points: MapPoint[]): boolean {
-  return points.length === 1;
+// When a boundary GeoJSON is provided, fit map bounds to its extent so
+// the map frames the metro region naturally rather than the city pin alone.
+function FitToBoundary({ boundary }: { boundary: unknown }) {
+  const map = useMap();
+  useEffect(() => {
+    if (!boundary) return;
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const layer = L.geoJSON(boundary as any);
+      const bounds = layer.getBounds();
+      if (bounds.isValid()) map.fitBounds(bounds, { padding: [20, 20] });
+    } catch {
+      // ignore malformed boundary; pin-only fallback is fine
+    }
+  }, [boundary, map]);
+  return null;
 }
 
 export default function MetroMapInner({
   points,
   showConnections,
+  boundary,
 }: {
   points: MapPoint[];
   showConnections: boolean;
+  boundary?: unknown;
 }) {
-  const single = isSinglePoint(points);
-  const bounds = single ? undefined : getBounds(points);
+  const single = points.length === 1;
+  // When a boundary is present, FitToBoundary takes over after mount;
+  // bounds/center here are just the initial frame.
+  const bounds = boundary || single ? undefined : getPointBounds(points);
   const center: [number, number] | undefined = single ? [points[0].lat, points[0].lon] : undefined;
   return (
     <MapContainer
@@ -46,10 +65,27 @@ export default function MetroMapInner({
     >
       <TileLayer
         url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
+        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://overturemaps.org/">Overture Maps</a>'
         subdomains={['a', 'b', 'c', 'd']}
         maxZoom={18}
       />
+      {boundary ? (
+        <>
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          <GeoJSON
+            // Key forces re-render when boundary changes (e.g. between metros)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            data={boundary as any}
+            style={{
+              color: '#4ECDC4',
+              weight: 2,
+              fillColor: '#4ECDC4',
+              fillOpacity: 0.18,
+            }}
+          />
+          <FitToBoundary boundary={boundary} />
+        </>
+      ) : null}
       {showConnections && points.length >= 2 ? (
         <Polyline
           positions={points.map((p) => [p.lat, p.lon])}

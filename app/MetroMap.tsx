@@ -28,10 +28,16 @@ export type MapPoint = {
 export default function MetroMap({
   points,
   showConnections = true,
+  boundary,
   height = 320,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
+  // Optional GeoJSON FeatureCollection to render as a shaded polygon layer.
+  // When provided, the map fits bounds to the boundary extent rather than
+  // the points alone. `unknown` keeps the type loose so server components
+  // can pass through whatever JSON.parse returns.
+  boundary?: unknown;
   height?: number;
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
@@ -43,7 +49,7 @@ export default function MetroMap({
       style={{ height, width: '100%' }}
       className="rounded-lg overflow-hidden border border-[var(--border)]"
     >
-      <InnerMap points={valid} showConnections={showConnections} />
+      <InnerMap points={valid} showConnections={showConnections} boundary={boundary} />
     </div>
   );
 }

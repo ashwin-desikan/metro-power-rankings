@@ -1,80 +1,60 @@
-// Server component. Two cases handled in priority order:
-//   1. Metro is part of a conurbation cluster with 2+ workbook members:
-//      render a MetroMap of all members ("Greater Golden Horseshoe").
-//   2. Metro has valid lat/lon but is solo: render a single-point map
-//      ("Where is Manchester?") so every metro page gets a geographic anchor.
-//   3. Metro has zero coords: return null silently.
+// Server component. Renders a Leaflet map for any metro with valid
+// primary-city coordinates. Two layers stack:
+//   1. A primary-city pin at metros.json (lat, lon)
+//   2. (Optional) A dissolved-county boundary polygon, loaded from
+//      public/data/metro-boundaries/{slug}.geojson if it exists.
+//
+// US metros currently have boundary coverage (~580 metros via Overture
+// Maps division_area + the workbook Counties sheet). Other countries
+// fall back to the pin-only view until per-country boundary ETLs ship.
+
+import { readFileSync } from "fs";
+import { join } from "path";
 
 import { getAllMetros } from "@/lib/data";
-import { getBadgesForMetro } from "@/lib/badges";
 import MetroMap from "@/app/MetroMap";
+
+function loadBoundary(slug: string): unknown | null {
+  try {
+    const p = join(process.cwd(), "public", "data", "metro-boundaries", `${slug}.geojson`);
+    const raw = readFileSync(p, "utf-8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
 
 export default function MetroPageMap({ slug }: { slug: string }) {
   const all = getAllMetros();
-  const bySlug = new Map(all.map((m) => [m.slug, m]));
-  const self = bySlug.get(slug);
+  const self = all.find((m) => m.slug === slug);
   if (!self) return null;
+  if (self.lat === 0 && self.lon === 0) return null;
 
-  const badges = getBadgesForMetro(slug);
-  const conurbation = badges.find((b) => b.badge.slug === "conurbations");
-  const cluster = conurbation?.qualifying.cluster;
+  const pinName = self.primaryCity || self.name;
+  const boundary = loadBoundary(slug);
 
-  // Case 1: cluster with 2+ workbook members that have valid coords.
-  if (cluster) {
-    const points = cluster.memberSlugs
-      .map((s) => bySlug.get(s))
-      .filter((m): m is NonNullable<typeof m> => m !== undefined && (m.lat !== 0 || m.lon !== 0))
-      .map((m) => ({ slug: m.slug, name: m.name, lat: m.lat, lon: m.lon }));
-
-    if (points.length >= 2) {
-      return (
-        <section>
-          <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
-            <div className="flex items-baseline justify-between gap-3 mb-4 flex-wrap">
-              <h3 className="text-base font-semibold">
-                <span aria-hidden="true">🔗</span> {conurbation!.qualifying.name}
-              </h3>
-              <span
-                className="text-xs"
-                style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}
-              >
-                {points.length} metros · {cluster.diameterKm.toFixed(0)} km diameter
-              </span>
-            </div>
-            <MetroMap points={points} height={320} />
-          </div>
-        </section>
-      );
-    }
-  }
-
-  // Case 2: solo metro with valid coords. Show a single-point "where is this"
-  // map at city-zoom (Leaflet zoom 10 shows roughly ~50 km on a side).
-  if (self.lat !== 0 || self.lon !== 0) {
-    return (
-      <section>
-        <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
-          <div className="flex items-baseline justify-between gap-3 mb-4 flex-wrap">
-            <h3 className="text-base font-semibold">
-              <span aria-hidden="true">📍</span> Location
-            </h3>
-            <span
-              className="text-xs"
-              style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}
-            >
-              {self.lat.toFixed(2)}, {self.lon.toFixed(2)}
-            </span>
-          </div>
-          <MetroMap
-            points={[{ slug: self.slug, name: self.name, lat: self.lat, lon: self.lon }]}
-            showConnections={false}
-            height={300}
-          />
+  return (
+    <section>
+      <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
+        <div className="flex items-baseline justify-between gap-3 mb-4 flex-wrap">
+          <h3 className="text-base font-semibold">
+            <span aria-hidden="true">📍</span>{" "}
+            {boundary ? `${self.name} metro area` : `Primary city: ${pinName}`}
+          </h3>
+          <span
+            className="text-xs"
+            style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}
+          >
+            {self.lat.toFixed(2)}, {self.lon.toFixed(2)}
+          </span>
         </div>
-      </section>
-    );
-  }
-
-  // Case 3: no valid coords. Silent.
-  return null;
+        <MetroMap
+          points={[{ slug: self.slug, name: pinName, lat: self.lat, lon: self.lon }]}
+          showConnections={false}
+          boundary={boundary}
+          height={boundary ? 400 : 300}
+        />
+      </div>
+    </section>
+  );
 }
