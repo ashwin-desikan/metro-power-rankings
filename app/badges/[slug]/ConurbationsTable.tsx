@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { formatPop } from '@/lib/shared';
 import { tierAnchor, computeTier } from '@/lib/tiers';
+import MetroMap from '@/app/MetroMap';
 
 // Per-member metadata enriched server-side from metros.json. Drives state /
 // province / city searches that the QualifyingMetro shape alone can't answer.
@@ -16,6 +17,8 @@ export type EnrichedMember = {
   state2?: string;
   state3?: string;
   primaryCity?: string;
+  lat: number;
+  lon: number;
 };
 
 export type EnrichedConurbationRow = {
@@ -65,16 +68,21 @@ function formatContext(value: number): string {
 function ConurbationRowView({
   row,
   position,
+  isOpen,
+  onToggle,
 }: {
   row: EnrichedConurbationRow;
   position: number;
+  isOpen: boolean;
+  onToggle: () => void;
 }) {
   const tier = computeTier(row.score);
   const rankLabel =
     row.tier === 'D' ? `M#${row.rank}` : `#${position}`;
 
   return (
-    <tr style={{ borderBottom: '1px solid var(--border)' }}>
+    <>
+    <tr style={{ borderBottom: isOpen ? 'none' : '1px solid var(--border)' }}>
       <td
         className="py-3 pr-4 pl-4 text-xs text-[var(--text-dim)]"
         style={{ fontFamily: "'JetBrains Mono', monospace" }}
@@ -127,6 +135,21 @@ function ConurbationRowView({
             </span>
           </div>
         ) : null}
+        {hasMappableMembers(row) ? (
+          <button
+            type="button"
+            onClick={onToggle}
+            className="mt-2 text-xs px-2 py-0.5 rounded border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+            style={{
+              borderColor: 'var(--border)',
+              color: 'var(--text-muted)',
+              fontFamily: "'JetBrains Mono', monospace",
+            }}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? 'Hide map' : 'Show map'}
+          </button>
+        ) : null}
       </td>
       <td
         className="py-3 pr-4 text-right font-bold"
@@ -146,7 +169,28 @@ function ConurbationRowView({
         </Link>
       </td>
     </tr>
+    {isOpen && hasMappableMembers(row) ? (
+      <tr>
+        <td colSpan={4} className="px-4 pb-4" style={{ borderBottom: '1px solid var(--border)' }}>
+          <MetroMap
+            points={row.members
+              .filter((m) => m.lat !== 0 || m.lon !== 0)
+              .map((m) => ({ slug: m.slug, name: m.name, lat: m.lat, lon: m.lon }))}
+            height={360}
+          />
+        </td>
+      </tr>
+    ) : null}
+    </>
   );
+}
+
+// A cluster is mappable if it has 2+ members with non-zero coordinates.
+// Single-metro override rows render with one workbook member and are
+// excluded; the map of a single dot has no editorial value.
+function hasMappableMembers(row: EnrichedConurbationRow): boolean {
+  const withCoords = row.members.filter((m) => m.lat !== 0 || m.lon !== 0);
+  return withCoords.length >= 2;
 }
 
 export default function ConurbationsTable({
@@ -158,6 +202,7 @@ export default function ConurbationsTable({
 }) {
   const [searchScope, setSearchScope] = useState<SearchScope>('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [openSlug, setOpenSlug] = useState<string | null>(null);
 
   // Positional rank in the original (unfiltered) sorted list — preserved so
   // that filtering doesn't renumber the cluster ranks (#1 stays #1 regardless
@@ -353,6 +398,8 @@ export default function ConurbationsTable({
                       key={r.slug}
                       row={r}
                       position={positionBySlug.get(r.slug) ?? r.rank}
+                      isOpen={openSlug === r.slug}
+                      onToggle={() => setOpenSlug(openSlug === r.slug ? null : r.slug)}
                     />
                   ))}
                 </tbody>

@@ -313,6 +313,8 @@ export default async function BadgeDetailPage({ params }: Props) {
                   state2: mm.state2,
                   state3: mm.state3,
                   primaryCity: mm.primaryCity,
+                  lat: mm.lat,
+                  lon: mm.lon,
                 }));
               return { ...m, members };
             });
