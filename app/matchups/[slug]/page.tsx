@@ -8,6 +8,7 @@ import {
 } from "@/lib/data";
 import { BASE_URL } from "@/lib/seo";
 import { computeTier } from "@/lib/tiers";
+import MetroMap from "@/app/MetroMap";
 
 // Matchup pages: canonical head-to-head URLs for any two metros.
 // URL pattern: /matchups/{a-slug}-vs-{b-slug}
@@ -347,6 +348,17 @@ export default async function MatchupPage({ params }: PageProps) {
             );
           })}
         </div>
+
+        {/* Map: derby-style geographic context — two markers, dashed line, distance implied */}
+        <section className="mb-10">
+          <MetroMap
+            points={[
+              { slug: detailA.metro.slug, name: detailA.metro.name, lat: detailA.metro.lat, lon: detailA.metro.lon },
+              { slug: detailB.metro.slug, name: detailB.metro.name, lat: detailB.metro.lat, lon: detailB.metro.lon },
+            ]}
+            height={360}
+          />
+        </section>
 
         {/* Editorial paragraph */}
         <section className="mb-10">
