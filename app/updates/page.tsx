@@ -59,6 +59,7 @@ const RELEASES: Release[] = [
       "60+ conurbations now display under their civic, geographic, or political names: Bodensee, Lowcountry, SIJORI Triangle, Tuscany, Côte d'Azur, Borderplex, Mälardalen, Mindong, Greater Golden Horseshoe, plus many more.",
       "Tier B for Conurbations renamed Continental (was World); the metro tier World City likewise becomes Continental City to sharpen the editorial vocabulary.",
       "Davos cluster fixed: the 138 km transitive bridge-chain is replaced by Bodensee, a real cross-border Lake Constance conurbation. Davos and St. Moritz now solo.",
+      "Leaflet maps embed on matchup pages (two-point derby view), metro detail pages (cluster context or single-point location pin), and the conurbations badge page (click-to-expand per cluster).",
     ],
   },
   {
