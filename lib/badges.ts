@@ -77,6 +77,7 @@ const _CONURBATION_OVERRIDES: { slug: string; displayName?: string; satellites: 
   { slug: "kansas-city", satellites: ["Kansas City MO", "Kansas City KS", "Overland Park", "Olathe", "Independence"] },
   { slug: "shenyang", displayName: "Mid-Liaoning", satellites: ["Shenyang", "Anshan", "Fushun", "Benxi", "Liaoyang"] },
   { slug: "liverpool", displayName: "Merseyside", satellites: ["Liverpool", "Birkenhead", "Wallasey", "St Helens", "Bootle"] },
+  { slug: "sheffield", displayName: "South Yorkshire", satellites: ["Sheffield", "Rotherham", "Barnsley", "Doncaster"] },
   { slug: "cincinnati", satellites: ["Cincinnati", "Covington KY", "Newport KY", "Florence KY"] },
   { slug: "helsinki", satellites: ["Helsinki", "Espoo", "Vantaa", "Kauniainen"] },
   { slug: "lima", displayName: "Lima-Callao", satellites: ["Lima", "Callao", "San Juan de Lurigancho", "Comas"] },
@@ -153,6 +154,20 @@ const _NAMED_MEGAREGIONS: {
     leadSlug: "ipswich",
     memberSlugs: ["ipswich", "colchester"],
     extraSatellites: ["Felixstowe", "Harwich", "Clacton-on-Sea"],
+  },
+  {
+    slug: "trinational-basel",
+    displayName: "Trinational Basel",
+    leadSlug: "basel",
+    memberSlugs: ["basel", "freiburg", "colmar", "mulhouse", "villingen-schwenningen"],
+    extraSatellites: ["Saint-Louis (Alsace)", "Weil am Rhein", "Lörrach"],
+  },
+  {
+    slug: "greater-zurich",
+    displayName: "Greater Zurich",
+    leadSlug: "zurich",
+    memberSlugs: ["zurich", "lucerne", "zug", "aarau", "baden", "schaffhausen", "wil"],
+    extraSatellites: ["Winterthur", "Frauenfeld"],
   },
 ];
 
