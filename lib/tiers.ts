@@ -4,7 +4,7 @@
 // reader to know the academic shorthand.
 //
 // Boundaries chosen from the live distribution (4,284 metros as of
-// 2026-05-01): Global Capitals carve off the 9 metros above 100, World City
+// 2026-05-01): Global Capitals carve off the 9 metros above 100, Continental City
 // captures the next 33, Major Metro the next 99, and so on down. The
 // distribution is intentionally pyramid-shaped because the corpus is global
 // rather than just elite — most metros in the world are local in scope, and
@@ -16,7 +16,7 @@
 export type Tier = {
   // Stable slug used in URLs and code (e.g. "world-city")
   slug: string;
-  // Reader-facing name (e.g. "World City")
+  // Reader-facing name (e.g. "Continental City")
   name: string;
   // Lower-bound score (inclusive); upper-bound is the next tier's lowerBound
   lowerBound: number;
@@ -38,7 +38,7 @@ export const TIERS: Tier[] = [
   },
   {
     slug: "world-city",
-    name: "World City",
+    name: "Continental City",
     lowerBound: 50,
     tagline: "Globally significant. Material presence in finance, culture, and infrastructure.",
     accentHex: "#2563eb",
@@ -90,7 +90,7 @@ export function computeTier(score: number): Tier {
   return TIERS[TIERS.length - 1];
 }
 
-// Convenience for OG card / structured data: returns "World City" etc.
+// Convenience for OG card / structured data: returns "Continental City" etc.
 export function tierName(score: number): string {
   return computeTier(score).name;
 }
