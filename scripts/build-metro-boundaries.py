@@ -97,15 +97,22 @@ METROS_JSON = "public/data/metros.json"
 OUT_DIR = Path("public/data/metro-boundaries")
 BUILD_CACHE_FILE = OUT_DIR / "build-cache.json"
 SIMPLIFY_TOLERANCE_DEG = 0.005
+# Each member polygon is simplified to this tolerance BEFORE the per-metro
+# unary_union. Cuts vertex count 5-10x on dense commune sets (Paris 1,563
+# communes, Bordeaux 534, etc.) without visible quality loss at metro zoom.
+# Set to 0 to disable pre-simplification.
+MEMBER_SIMPLIFY_TOLERANCE_DEG = 0.001
 OUTLIER_PART_MAX_KM = 200.0
 
 
 # ---------- Per-country parquet routing ---------------------------------
 COUNTRY_PARQUET_MAP = {
-    # Add per-country parquet entries as you produce them via
-    # scripts/extract-overture-parquet.py, e.g.:
-    # "France":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
+    # France routed to its own parquet to keep heavy commune scans off the
+    # 5.8 GB global file. Generated via scripts/extract-overture-parquet.py.
+    "France": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
+    # Add additional per-country parquet entries here as you produce them:
     # "Germany":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
+    # "Italy":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IT.parquet",
 }
 
 
@@ -173,7 +180,7 @@ SHEET_SCHEMAS = {
 SCRIPT_VERSION_HASH = hashlib.sha256(json.dumps({
     "outlier_max_km":  OUTLIER_PART_MAX_KM,
     "simplify_tol":    SIMPLIFY_TOLERANCE_DEG,
-    "logic_version":   "v1",
+    "logic_version":   "v2",
 }, sort_keys=True).encode()).hexdigest()[:12]
 
 
@@ -576,6 +583,7 @@ def main():
     written = 0
     skipped_no_geom = 0
     skipped_no_anchor = 0
+    derived_anchors = 0
     unmatched_per_metro = defaultdict(list)
     trim_audit = []
     successfully_built = set()
@@ -594,13 +602,41 @@ def main():
         if not polys:
             skipped_no_geom += 1
             continue
+
+        # Pre-simplify each member to cut vertex count before union.
+        # Massive speedup on heavy metros (Paris 1,563 communes).
+        if MEMBER_SIMPLIFY_TOLERANCE_DEG > 0:
+            polys = [
+                p.simplify(MEMBER_SIMPLIFY_TOLERANCE_DEG, preserve_topology=True)
+                for p in polys
+            ]
+
         merged = unary_union(polys)
 
         anchor_lat, anchor_lon = slug_anchor.get(slug, (None, None))
-        if (anchor_lat is not None and anchor_lon is not None
-                and isinstance(anchor_lat, (int, float))
-                and isinstance(anchor_lon, (int, float))
-                and not (anchor_lat == 0 and anchor_lon == 0)):
+        anchor_valid = (
+            anchor_lat is not None and anchor_lon is not None
+            and isinstance(anchor_lat, (int, float))
+            and isinstance(anchor_lon, (int, float))
+            and not (anchor_lat == 0 and anchor_lon == 0)
+        )
+        if not anchor_valid:
+            # Derive anchor from the largest polygon part. This guarantees
+            # the anchor lies inside the urban core for chains-of-islands
+            # cases (Honolulu, Tokyo) since the mainland part dominates.
+            try:
+                if merged.geom_type == "MultiPolygon":
+                    largest = max(merged.geoms, key=lambda p: p.area)
+                else:
+                    largest = merged
+                rp = largest.representative_point()
+                anchor_lat, anchor_lon = float(rp.y), float(rp.x)
+                anchor_valid = True
+                derived_anchors += 1
+            except Exception:
+                pass
+
+        if anchor_valid:
             merged, n_dropped, dropped_dists = trim_outlier_parts(
                 merged, float(anchor_lat), float(anchor_lon))
             if n_dropped > 0:
@@ -657,8 +693,10 @@ def main():
     print(f"Cache entries persisted: {len(cache['hashes']):,}")
     print(f"Stale files removed: {deleted:,}")
     print(f"Metros skipped (no geometry resolved): {skipped_no_geom:,}")
+    if derived_anchors:
+        print(f"Metros with anchor derived from largest polygon part: {derived_anchors:,}")
     if skipped_no_anchor:
-        print(f"Metros built without outlier-trim (no anchor lat/lon): {skipped_no_anchor:,}")
+        print(f"Metros built without outlier-trim (no anchor at all): {skipped_no_anchor:,}")
     if trim_audit:
         print(f"Outlier-trim applied to {len(trim_audit)} metro(s):")
         for slug, n, max_d in sorted(trim_audit, key=lambda x: -x[2]):
