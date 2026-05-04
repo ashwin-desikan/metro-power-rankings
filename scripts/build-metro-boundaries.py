@@ -5,68 +5,66 @@ columns on BOTH the Counties sheet and the Municipality sheet:
 
   - Subtype           (Overture subtype, e.g. 'county', 'region', 'locality')
   - Admin Level       (e.g. 2)
-  - Region            (ISO 3166-2, e.g. 'US-AL', 'CA-ON', 'MX-AGU', 'GB-SCT')
+  - Region            (ISO 3166-2, e.g. 'US-AL', 'CA-ON', 'MX-AGU', 'GB-SCT',
+                       'FR-ARA')
   - Primary Name      (exact Overture primary name, e.g. 'Marshall County',
-                       'Manicouagan', 'Municipio de Aguascalientes',
-                       'Aberdeen City')
-
-The two sheets store these columns at slightly different positions because
-the Municipality sheet has two extra leading columns. The SHEET_SCHEMAS dict
-below records the exact column offsets per sheet so the loader can pull the
-same logical fields out of either one.
+                       'Manicouagan', 'Aberdeen City', 'Abbeville')
 
 Each country we support is mapped (via COUNTRY_SHEET_MAP) to exactly ONE
 source sheet AND to one Overture parquet (via COUNTRY_PARQUET_MAP, which
-falls back to SOURCE_PARQUET if a country isn't listed). Any row whose
-country is in the map but appears in the wrong sheet is silently skipped,
-which prevents double-coverage. Any row whose country is not in the map is
-also skipped: the frontend then falls back to a primary-city pin from
-metros.json (lat, lon).
+falls back to SOURCE_PARQUET if a country isn't listed).
 
 Initial routing:
   United States  -> counties      (SOURCE_PARQUET)
   Mexico         -> counties      (SOURCE_PARQUET)
   Canada         -> municipality  (SOURCE_PARQUET)
   United Kingdom -> municipality  (SOURCE_PARQUET)
+  France         -> municipality  (SOURCE_PARQUET)
 
-Workbook-country normalization:
-  The UK is split across four constituent country values in the workbook
-  (England / Scotland / Wales / Northern Ireland). metros.json uses a
-  single canonical "United Kingdom" value. WORKBOOK_TO_CANONICAL_COUNTRY
-  collapses constituents to the canonical name before slug resolution.
-  Add new entries here whenever a country in the workbook appears under
-  multiple names but should share a single metros.json identity.
+Incremental build (build cache):
+  Each metro's polygon is the function of its sorted (region, subtype,
+  primary) row set, its anchor (lat, lon) from metros.json, and a small
+  set of script constants captured in SCRIPT_VERSION_HASH below. We hash
+  those inputs per metro and store the hash in
+  public/data/metro-boundaries/build-cache.json. (Filename intentionally
+  has no leading dot - OneDrive and Defender on Windows treat dot-prefix
+  files inconsistently and silently delete them in some configurations.)
+
+  On each run, we compute the new input hashes BEFORE touching the
+  parquet. Metros whose hash matches the cache AND whose GeoJSON is
+  present on disk are skipped entirely. The parquet scan runs only over
+  the keys needed by metros that actually need rebuilding. If no metros
+  need rebuilding and no stale slugs need pruning, the script exits in
+  seconds without scanning the parquet at all.
+
+  Pass --force to bypass the cache and rebuild everything.
+
+  Bump SCRIPT_VERSION_HASH manually (or change any constant it includes)
+  to force a global rebuild from the next run on. The hash is derived
+  from the constants automatically, so bumping OUTLIER_PART_MAX_KM (for
+  example) invalidates all cached metros without manual intervention.
 
 To extend to a new country:
   1. Pick the sheet that holds its rows (Counties or Municipality).
   2. Populate the four Overture columns by hand for those rows.
-  3. Add one entry to COUNTRY_SHEET_MAP and one to COUNTRY_TO_ISO.
-  4. Add one entry to COUNTRY_PARQUET_MAP pointing at a country-scoped
-     Overture extract (do NOT add new countries to the global parquet -
-     scanning a 5.8 GB file per added country is wasteful). Per-country
-     extracts typically run 10-500 MB and scan in seconds.
-  5. If the workbook stores the country under multiple names that should
-     map to a single metros.json identity, add entries to
-     WORKBOOK_TO_CANONICAL_COUNTRY.
-
-The script picks the new country up on the next run with no other code
-changes required.
+  3. Add one entry each to COUNTRY_SHEET_MAP, COUNTRY_TO_ISO,
+     COUNTRY_PARQUET_MAP. If the workbook stores the country under
+     multiple constituent names, add WORKBOOK_TO_CANONICAL_COUNTRY entries.
+  4. Run scripts/extract-overture-parquet.py to produce the per-country
+     runtime parquet.
 
 Outlier-part trim:
-  After unioning a metro's member polygons, the result is decomposed and
-  any disjoint MultiPolygon parts whose minimum distance from the metro's
-  anchor point exceeds OUTLIER_PART_MAX_KM are dropped. This trims off
-  remote oceanic outposts (Honolulu's Northwestern Hawaiian Islands,
-  Tokyo's Izu/Ogasawara chains) without harming legitimate large
-  contiguous metros (NYC, LA, etc.) since those are single polygons or
-  have all parts within the threshold of the anchor.
+  After unioning a metro's member polygons, parts of the resulting
+  MultiPolygon whose minimum distance from the anchor exceeds
+  OUTLIER_PART_MAX_KM are dropped. Trims off Honolulu's NWHI tail and
+  Tokyo's Izu/Ogasawara without harming NYC-scale metros.
 
 Behavior:
-  - Wipes public/data/metro-boundaries/ at start (only files for currently
-    routed slugs are kept).
-  - Writes one GeoJSON per metro with at least one resolved member.
-  - Reports unmatched rows (workbook Primary Name not found in parquet)
-    and per-metro outlier trim audit.
+  - Reads build-cache.json; computes new hashes; skips unchanged metros.
+  - Wipes only stale slugs (no longer in workbook) from
+    public/data/metro-boundaries/.
+  - Writes one GeoJSON per metro that actually rebuilt.
+  - Writes the updated cache file at the end.
 
 Dependencies:
   pip install geopandas openpyxl pyarrow
@@ -76,6 +74,7 @@ via the OVERTURE_DIVISION_AREA env var.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import sys
@@ -96,51 +95,21 @@ SOURCE_PARQUET = os.environ.get(
 WORKBOOK = "MetroAreas.xlsx"
 METROS_JSON = "public/data/metros.json"
 OUT_DIR = Path("public/data/metro-boundaries")
+BUILD_CACHE_FILE = OUT_DIR / "build-cache.json"
 SIMPLIFY_TOLERANCE_DEG = 0.005
-
-# Maximum distance (km) any disjoint multipolygon part may be from the
-# metro's anchor point. Parts beyond this are dropped before simplify.
-#
-# 200 km is calibrated against the largest legitimate metro footprints:
-# New York's eastern Long Island fragments reach ~175 km from Manhattan
-# (kept), LA's Channel-Islands-side parts reach ~145 km (kept), Tokyo's
-# Izu Oshima sits ~110 km south (will be kept when JP ships). Honolulu's
-# Northwestern Hawaiian Islands start at 461 km (dropped), Tokyo's
-# Hachijōjima ~290 km and Ogasawara ~1,000 km (dropped). Tune by editing
-# this single value.
 OUTLIER_PART_MAX_KM = 200.0
 
 
 # ---------- Per-country parquet routing ---------------------------------
-#
-# COUNTRY_PARQUET_MAP lets each country pull from its OWN Overture parquet
-# extract. Countries not listed fall back to SOURCE_PARQUET above.
-#
-# Why this matters: the global Overture division-area parquet is ~5.8 GB.
-# Scanning it once for US+MX+CA+GB is fine (the existing arrangement),
-# but every additional country we add would re-scan the same 5.8 GB.
-# Per-country extracts are typically 10-500 MB, scan in seconds, and keep
-# memory low.
-#
-# How to extend: produce a per-country parquet (use Overture's release CLI
-# to extract `division_area` filtered by country), drop it into
-# C:\Users\ashwi\Desktop\Projects\MapData\, and add an entry below. The
-# loader will scan it exactly once with that country's wanted keys.
-#
-# US/MX/CA/GB intentionally omitted: they continue to use SOURCE_PARQUET
-# (the existing global file). Don't move them unless you have a reason.
 COUNTRY_PARQUET_MAP = {
-    # Examples for future use:
+    # Add per-country parquet entries as you produce them via
+    # scripts/extract-overture-parquet.py, e.g.:
     # "France":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
     # "Germany":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
 }
 
 
 # ---------- Per-country sheet routing -----------------------------------
-#
-# COUNTRY_SHEET_MAP is the single source of truth for which workbook sheet
-# holds the boundary-source rows for each country (using the CANONICAL
-# country name, post WORKBOOK_TO_CANONICAL_COUNTRY normalization).
 COUNTRY_SHEET_MAP = {
     "United States":  "counties",
     "Mexico":         "counties",
@@ -149,9 +118,6 @@ COUNTRY_SHEET_MAP = {
     "France":         "municipality",
 }
 
-# COUNTRY_TO_ISO maps the canonical country name to the ISO 3166-1 alpha-2
-# code that Overture uses in its `country` column. Used to narrow the
-# parquet scan.
 COUNTRY_TO_ISO = {
     "United States":  "US",
     "Mexico":         "MX",
@@ -160,9 +126,6 @@ COUNTRY_TO_ISO = {
     "France":         "FR",
 }
 
-# WORKBOOK_TO_CANONICAL_COUNTRY normalizes workbook country values that
-# differ from the canonical name used in metros.json and downstream maps.
-# Every key here must map to a country also present in COUNTRY_SHEET_MAP.
 WORKBOOK_TO_CANONICAL_COUNTRY = {
     "England":          "United Kingdom",
     "Scotland":         "United Kingdom",
@@ -170,11 +133,6 @@ WORKBOOK_TO_CANONICAL_COUNTRY = {
     "Northern Ireland": "United Kingdom",
 }
 
-# UK_CONSTITUENT_REGION corrects the Region column for UK rows. The
-# workbook stores 'GB-ENG' as a fill-down across all four constituents
-# (an editorial shortcut). Overture publishes UK admin entities under the
-# proper constituent ISO 3166-2 code, so we re-derive it from the original
-# workbook constituent name (col 1, BEFORE canonical normalization).
 UK_CONSTITUENT_REGION = {
     "England":          "GB-ENG",
     "Scotland":         "GB-SCT",
@@ -182,9 +140,6 @@ UK_CONSTITUENT_REGION = {
     "Northern Ireland": "GB-NIR",
 }
 
-# SHEET_SCHEMAS records the column offsets per sheet for the seven fields
-# the loader needs. The Municipality sheet shifts everything by 1 because
-# col 0 holds an editorial flag and col 2 holds the Municipality name.
 SHEET_SCHEMAS = {
     "counties": {
         "sheet_name":        "Counties",
@@ -209,10 +164,22 @@ SHEET_SCHEMAS = {
 }
 
 
+# ---------- Build-cache versioning --------------------------------------
+#
+# Hash of the script constants that affect output geometry. If any of
+# these change, ALL cached metros are invalidated automatically on the
+# next run. To force a global rebuild without changing a constant, bump
+# the literal "logic_version" string below.
+SCRIPT_VERSION_HASH = hashlib.sha256(json.dumps({
+    "outlier_max_km":  OUTLIER_PART_MAX_KM,
+    "simplify_tol":    SIMPLIFY_TOLERANCE_DEG,
+    "logic_version":   "v1",
+}, sort_keys=True).encode()).hexdigest()[:12]
+
+
 # ---------- Geometry helpers --------------------------------------------
 
 def _haversine_km(lat1, lon1, lat2, lon2):
-    """Great-circle distance in kilometers between two (lat, lon) points."""
     R = 6371.0
     dlat = radians(lat2 - lat1)
     dlon = radians(lon2 - lon1)
@@ -223,24 +190,14 @@ def _haversine_km(lat1, lon1, lat2, lon2):
 
 def trim_outlier_parts(geom, anchor_lat, anchor_lon,
                        max_distance_km=OUTLIER_PART_MAX_KM):
-    """For MultiPolygon geometries, drop disjoint parts whose minimum
-    distance from the anchor (lat, lon) exceeds `max_distance_km`.
-
-    Returns (trimmed_geom, dropped_count, dropped_distances_km). Single
-    polygons and small multis (one part) are returned unchanged with an
-    empty drop list.
-    """
     if geom is None or geom.is_empty:
         return geom, 0, []
     if geom.geom_type != "MultiPolygon":
         return geom, 0, []
-
     parts = list(geom.geoms)
     if len(parts) <= 1:
         return geom, 0, []
-
     anchor = Point(anchor_lon, anchor_lat)
-
     kept = []
     dropped = []
     for p in parts:
@@ -255,28 +212,20 @@ def trim_outlier_parts(geom, anchor_lat, anchor_lon,
             kept.append(p)
         else:
             dropped.append((p, d_km))
-
     if not kept:
         largest = max(parts, key=lambda p: p.area)
         return largest, len(parts) - 1, [d for _, d in dropped]
-
     if len(kept) == 1:
         result = kept[0]
     else:
         result = MultiPolygon(kept)
-
     return result, len(dropped), [d for _, d in dropped]
 
 
 # ---------- Overture loader ----------------------------------------------
 
 def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
-    """Stream the Overture parquet and keep only rows whose (region, subtype,
-    primary_name) tuple is in `wanted_keys` AND whose country is in
-    `wanted_iso_codes`. Returns two indexes (land-class preferred, any-class
-    fallback) keyed by (region, subtype, primary_name).
-    """
-    print(f"[1/4] Reading Overture parquet: {parquet_path}")
+    print(f"      Reading parquet: {parquet_path}")
     print(f"      country filter: {sorted(wanted_iso_codes)}")
     t0 = time.time()
     import pyarrow.parquet as pq
@@ -328,14 +277,6 @@ def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
 # ---------- Workbook loader ----------------------------------------------
 
 def _read_sheet_rows(wb, sheet_key: str):
-    """Yield normalized row dicts from one source sheet. Each dict carries:
-        country (canonical), state_full, metro_display, region, subtype,
-        primary, sheet_key (audit trail).
-    Only rows whose canonical country routes to THIS sheet via
-    COUNTRY_SHEET_MAP are kept. Rows whose country routes to a different
-    sheet are silently skipped here (they'll be picked up by that sheet's
-    pass).
-    """
     schema = SHEET_SCHEMAS[sheet_key]
     sheet_name = schema["sheet_name"]
     if sheet_name not in wb.sheetnames:
@@ -360,8 +301,6 @@ def _read_sheet_rows(wb, sheet_key: str):
         if not r or len(r) <= max_needed:
             continue
         country_workbook = r[cc]
-        # Normalize for routing/slug lookup. Pre-normalization name is
-        # kept around so per-constituent overrides still work.
         country_canonical = WORKBOOK_TO_CANONICAL_COUNTRY.get(
             country_workbook, country_workbook)
         if country_canonical not in COUNTRY_SHEET_MAP:
@@ -385,25 +324,14 @@ def _read_sheet_rows(wb, sheet_key: str):
         subtype_str = str(subtype).strip()
         primary_str = str(primary).strip()
 
-        # ---- Counties-only inline overrides for upstream Overture quirks ----
         if sheet_key == "counties":
-            # DC: workbook stores it as subtype=county for editorial parity
-            # with the rest of the Counties sheet, but Overture publishes it
-            # at admin_level=1, subtype=region.
             if region_str == "US-DC" and subtype_str == "county":
                 subtype_str = "region"
-            # Nash County NC: Overture mistags this single county as
-            # subtype=neighborhood. Workbook is editorially correct.
             if (region_str == "US-NC" and subtype_str == "county"
                     and primary_str == "Nash County"):
                 subtype_str = "neighborhood"
 
-        # ---- Municipality-only inline overrides ----
         if sheet_key == "municipality":
-            # UK constituent fill-down correction. Workbook has
-            # region='GB-ENG' on every UK row across all four constituents;
-            # Overture indexes UK admin entities under the proper
-            # constituent ISO. Re-derive from col 1 (constituent name).
             if (country_workbook in UK_CONSTITUENT_REGION
                     and region_str == "GB-ENG"):
                 corrected = UK_CONSTITUENT_REGION[country_workbook]
@@ -430,9 +358,7 @@ def _read_sheet_rows(wb, sheet_key: str):
 
 
 def load_workbook_rows(path: str):
-    """Read both sheets, applying COUNTRY_SHEET_MAP routing. Returns one flat
-    list of row dicts."""
-    print(f"[2/4] Reading {path} (sheets: "
+    print(f"[1/5] Reading {path} (sheets: "
           f"{', '.join(SHEET_SCHEMAS[s]['sheet_name'] for s in SHEET_SCHEMAS)})")
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
 
@@ -450,8 +376,6 @@ def load_workbook_rows(path: str):
 # ---------- Slug resolver ------------------------------------------------
 
 def load_metros_index(path: str):
-    """Build (metro_display_lower, country) -> {slug, lat, lon} index,
-    restricted to the countries currently routed in COUNTRY_SHEET_MAP."""
     with open(path, "r", encoding="utf-8") as f:
         metros = json.load(f)
     idx = {}
@@ -474,39 +398,71 @@ def resolve_slug_info(row, metros_index):
     return metros_index.get((base, row["country"]))
 
 
+# ---------- Build cache --------------------------------------------------
+
+def compute_input_hash(members, anchor):
+    """Stable hash of the inputs that determine a metro's polygon."""
+    keys = sorted([
+        (m["region"], m["subtype"], m["primary"]) for m in members
+    ])
+    payload = json.dumps({
+        "version": SCRIPT_VERSION_HASH,
+        "keys":    keys,
+        "anchor":  list(anchor) if anchor and anchor[0] is not None else None,
+    }, sort_keys=True)
+    return hashlib.sha256(payload.encode()).hexdigest()[:16]
+
+
+def load_build_cache():
+    if not BUILD_CACHE_FILE.exists():
+        return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
+    try:
+        with open(BUILD_CACHE_FILE, "r", encoding="utf-8") as f:
+            cache = json.load(f)
+        if not isinstance(cache, dict) or "hashes" not in cache:
+            return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
+        # If script version changed since cache was written, all entries
+        # are invalid. Drop them but keep the file alive for the rewrite.
+        if cache.get("version") != SCRIPT_VERSION_HASH:
+            print(f"      cache: script version changed, invalidating "
+                  f"{len(cache.get('hashes', {})):,} entries")
+            return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
+        return cache
+    except Exception as e:
+        print(f"      cache: failed to read ({e}), starting fresh")
+        return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
+
+
+def save_build_cache(cache):
+    abs_path = BUILD_CACHE_FILE.resolve()
+    print(f"      cache: writing to {abs_path}")
+    print(f"      cache: entries to write: {len(cache.get('hashes', {})):,}")
+    try:
+        BUILD_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(BUILD_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(cache, f, indent=2, sort_keys=True)
+        # Verify on disk
+        if BUILD_CACHE_FILE.exists():
+            sz = BUILD_CACHE_FILE.stat().st_size
+            print(f"      cache: WROTE ok ({sz:,} bytes on disk)")
+        else:
+            print(f"      cache: ERROR wrote without exception but file does not exist on disk")
+    except Exception as e:
+        print(f"      cache: WRITE FAILED ({type(e).__name__}: {e})")
+        raise
+
+
 # ---------- Main ---------------------------------------------------------
 
 def main():
+    force = "--force" in sys.argv
+    if force:
+        print("FORCE rebuild requested; cache will be ignored.")
+
     rows = load_workbook_rows(WORKBOOK)
-
-    rows_by_parquet = defaultdict(list)
-    for r in rows:
-        parquet = COUNTRY_PARQUET_MAP.get(r["country"], SOURCE_PARQUET)
-        rows_by_parquet[parquet].append(r)
-    print(f"      parquet routing: {len(rows_by_parquet)} distinct parquet(s)")
-    for p, rs in rows_by_parquet.items():
-        countries = sorted({r["country"] for r in rs})
-        print(f"        {p}")
-        print(f"          {len(rs):,} rows, countries: {countries}")
-
-    by_key_land = defaultdict(list)
-    by_key_any = defaultdict(list)
-    for parquet_path, parquet_rows in rows_by_parquet.items():
-        parquet_keys = {(r["region"], r["subtype"], r["primary"])
-                        for r in parquet_rows}
-        parquet_iso = {COUNTRY_TO_ISO[r["country"]]
-                       for r in parquet_rows
-                       if r["country"] in COUNTRY_TO_ISO}
-        print(f"      wanted keys for {parquet_path}: {len(parquet_keys):,}")
-        pl, pa = load_overture(parquet_path, parquet_keys, parquet_iso)
-        for k, v in pl.items():
-            by_key_land[k].extend(v)
-        for k, v in pa.items():
-            by_key_any[k].extend(v)
-
     metros_index = load_metros_index(METROS_JSON)
 
-    print("[3/4] Resolving slugs and grouping members")
+    print("[2/5] Resolving slugs and grouping members")
     by_slug = defaultdict(list)
     slug_anchor = {}
     unresolved_metros = set()
@@ -528,7 +484,28 @@ def main():
             print(f"        ... and {len(unresolved_metros) - 10} more")
 
     keep_slugs = set(by_slug.keys())
-    print(f"[4/4] Pruning {OUT_DIR} to keep {len(keep_slugs):,} routed slugs")
+
+    print("[3/5] Computing input hashes and consulting cache")
+    cache = load_build_cache() if not force else {
+        "version": SCRIPT_VERSION_HASH, "hashes": {}
+    }
+    cached_hashes = cache.get("hashes", {})
+    new_hashes = {}
+    needs_rebuild = set()
+    for slug, members in by_slug.items():
+        h = compute_input_hash(members, slug_anchor.get(slug))
+        new_hashes[slug] = h
+        if cached_hashes.get(slug) != h:
+            needs_rebuild.add(slug)
+        else:
+            # Cache hit only counts if the GeoJSON file actually exists
+            if not (OUT_DIR / f"{slug}.geojson").exists():
+                needs_rebuild.add(slug)
+    print(f"      cached entries: {len(cached_hashes):,}")
+    print(f"      cache hits: {len(by_slug) - len(needs_rebuild):,}")
+    print(f"      need rebuild: {len(needs_rebuild):,}")
+
+    print("[4/5] Pruning stale boundary files")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     deleted = 0
     failed_to_delete = []
@@ -553,12 +530,57 @@ def main():
                 mf.write(name + "\n")
         print(f"      manifest written to {manifest}")
 
+    if not needs_rebuild:
+        print("[5/5] Nothing to rebuild; skipping parquet scan.")
+        # Drop cache entries for slugs no longer in workbook so the file
+        # stays clean.
+        cache["version"] = SCRIPT_VERSION_HASH
+        cache["hashes"] = {s: new_hashes[s] for s in keep_slugs}
+        save_build_cache(cache)
+        print()
+        print("=" * 60)
+        print(f"Boundaries written: 0 (all {len(by_slug):,} metros up to date)")
+        print(f"Stale files removed: {deleted:,}")
+        print("=" * 60)
+        return
+
+    print(f"[5/5] Rebuilding {len(needs_rebuild):,} metro(s)")
+
+    # Group rebuild rows by parquet path
+    rebuild_rows = [r for slug in needs_rebuild for r in by_slug[slug]]
+    rows_by_parquet = defaultdict(list)
+    for r in rebuild_rows:
+        parquet = COUNTRY_PARQUET_MAP.get(r["country"], SOURCE_PARQUET)
+        rows_by_parquet[parquet].append(r)
+    print(f"      parquet routing: {len(rows_by_parquet)} distinct parquet(s)")
+    for p, rs in rows_by_parquet.items():
+        countries = sorted({r["country"] for r in rs})
+        print(f"        {p}")
+        print(f"          {len(rs):,} rows, countries: {countries}")
+
+    by_key_land = defaultdict(list)
+    by_key_any = defaultdict(list)
+    for parquet_path, parquet_rows in rows_by_parquet.items():
+        parquet_keys = {(r["region"], r["subtype"], r["primary"])
+                        for r in parquet_rows}
+        parquet_iso = {COUNTRY_TO_ISO[r["country"]]
+                       for r in parquet_rows
+                       if r["country"] in COUNTRY_TO_ISO}
+        print(f"      wanted keys for {parquet_path}: {len(parquet_keys):,}")
+        pl, pa = load_overture(parquet_path, parquet_keys, parquet_iso)
+        for k, v in pl.items():
+            by_key_land[k].extend(v)
+        for k, v in pa.items():
+            by_key_any[k].extend(v)
+
     written = 0
     skipped_no_geom = 0
     skipped_no_anchor = 0
     unmatched_per_metro = defaultdict(list)
     trim_audit = []
-    for slug, members in by_slug.items():
+    successfully_built = set()
+    for slug in needs_rebuild:
+        members = by_slug[slug]
         polys = []
         for m in members:
             key = (m["region"], m["subtype"], m["primary"])
@@ -598,6 +620,7 @@ def main():
                 "slug": slug,
                 "members": len(polys),
                 "country": members[0]["country"],
+                "input_hash": new_hashes[slug],
             },
             "geometry": mapping(merged),
         }
@@ -606,6 +629,7 @@ def main():
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump({"type": "FeatureCollection", "features": [feature]}, f)
             written += 1
+            successfully_built.add(slug)
         except PermissionError:
             import tempfile as _tf, shutil as _sh
             tfd, tname = _tf.mkstemp(dir=OUT_DIR, suffix=".geojson")
@@ -614,10 +638,24 @@ def main():
                 json.dump({"type": "FeatureCollection", "features": [feature]}, f)
             _sh.move(tname, out_path)
             written += 1
+            successfully_built.add(slug)
+
+    # Persist cache: keep only slugs still in workbook AND either rebuilt
+    # successfully OR previously cached (which means their existing GeoJSON
+    # is still valid).
+    cache["version"] = SCRIPT_VERSION_HASH
+    cache["hashes"] = {
+        slug: new_hashes[slug]
+        for slug in keep_slugs
+        if slug in successfully_built or slug not in needs_rebuild
+    }
+    save_build_cache(cache)
 
     print()
     print("=" * 60)
     print(f"Boundaries written: {written:,}")
+    print(f"Cache entries persisted: {len(cache['hashes']):,}")
+    print(f"Stale files removed: {deleted:,}")
     print(f"Metros skipped (no geometry resolved): {skipped_no_geom:,}")
     if skipped_no_anchor:
         print(f"Metros built without outlier-trim (no anchor lat/lon): {skipped_no_anchor:,}")

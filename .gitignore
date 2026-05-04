@@ -87,3 +87,7 @@ update-site.sh
 patch-page.py
 NAV_PATCH_INSTRUCTIONS.md
 .trash.bak
+
+# boundary builder cache (local optimization; rebuilt on demand)
+public/data/metro-boundaries/build-cache.json
+public/data/metro-boundaries/.build-cache.json
