@@ -56,8 +56,8 @@ const RELEASES: Release[] = [
     date: "2026-05-04",
     headline: "Real boundaries for North America, the UK, France, and Germany",
     items: [
-      "Maps now render true administrative polygons for 595 US, 93 Mexican, 83 Canadian, 180 UK, 113 French, and 73 German metros (1,137 total) instead of city-center pins.",
-      "Lewes is merged into Brighton & Hove; three Newfoundland metros still fall back to a city pin until source data is populated.",
+      "Maps now render true administrative polygons for 595 US, 93 Mexican, 83 Canadian, 179 UK, 113 French, and 73 German metros (1,136 total) instead of city-center pins.",
+      "Lewes merges into Brighton & Hove and Warrington into Liverpool; three Newfoundland metros still fall back to a city pin until source data is populated.",
       "Boundaries come straight from Overture Maps, so editorial updates flow through with one rebuild.",
       "Honolulu and similar metros no longer drag thousand-mile administrative tails into the map; remote oceanic outposts are trimmed automatically.",
     ],
