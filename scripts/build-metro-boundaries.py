@@ -146,6 +146,7 @@ COUNTRY_SHEET_MAP = {
     "Mexico":         "counties",
     "Canada":         "municipality",
     "United Kingdom": "municipality",
+    "France":         "municipality",
 }
 
 # COUNTRY_TO_ISO maps the canonical country name to the ISO 3166-1 alpha-2
@@ -156,6 +157,7 @@ COUNTRY_TO_ISO = {
     "Mexico":         "MX",
     "Canada":         "CA",
     "United Kingdom": "GB",
+    "France":         "FR",
 }
 
 # WORKBOOK_TO_CANONICAL_COUNTRY normalizes workbook country values that

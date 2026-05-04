@@ -54,10 +54,10 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-04",
-    headline: "Real boundaries for US, Mexico, Canada, and UK metros",
+    headline: "Real boundaries for North America, the UK, and France",
     items: [
-      "Maps now render true administrative polygons for 595 US, 93 Mexican, 85 Canadian, and 180 UK metros (England, Scotland, Wales, Northern Ireland) instead of city-center pins.",
-      "Three Canadian metros (Corner Brook, Grand Falls-Windsor, St. John's) still fall back to a city pin until source data is populated.",
+      "Maps now render true administrative polygons for 595 US, 93 Mexican, 85 Canadian, 179 UK, and 113 French metros (1,065 total) instead of city-center pins.",
+      "Lewes is merged into Brighton & Hove; three small Canadian metros still fall back to a city pin until source data is populated.",
       "Boundaries come straight from Overture Maps, so updates flow through with one rebuild.",
       "Honolulu and similar metros no longer drag thousand-mile administrative tails into the map; remote oceanic outposts are trimmed automatically.",
     ],
