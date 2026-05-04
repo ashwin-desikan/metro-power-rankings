@@ -7,6 +7,7 @@ import {
   getCountry,
   getMetrosForCountry,
 } from "@/lib/countries";
+import CountryMap from "./CountryMap";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
 import {
@@ -205,6 +206,10 @@ export default async function CountryDetailPage({ params }: Props) {
                 ))}
               </div>
             </section>
+          ) : null}
+
+          {metros.length > 0 ? (
+            <CountryMap slug={country.slug} countryName={country.name} />
           ) : null}
 
           <section className="mb-12">

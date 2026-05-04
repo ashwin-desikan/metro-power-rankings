@@ -30,6 +30,7 @@ export default function MetroMap({
   showConnections = true,
   boundary,
   height = 320,
+  interactiveFeatures = false,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
@@ -39,17 +40,29 @@ export default function MetroMap({
   // can pass through whatever JSON.parse returns.
   boundary?: unknown;
   height?: number;
+  // When true, the boundary is treated as a multi-feature country layer:
+  // polygons are colored by tier, hover shows a tooltip per metro, and
+  // clicking a polygon routes to that metro's detail page.
+  interactiveFeatures?: boolean;
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
   // don't sit at (0,0) off Africa. They reappear once coords land in the xlsx.
   const valid = points.filter((p) => p.lat !== 0 || p.lon !== 0);
-  if (valid.length === 0) return null;
+  // Render the map if we have any usable content: at least one valid point
+  // OR a boundary FeatureCollection. The country map runs the boundary-only
+  // path with points=[].
+  if (valid.length === 0 && !boundary) return null;
   return (
     <div
       style={{ height, width: '100%' }}
       className="rounded-lg overflow-hidden border border-[var(--border)]"
     >
-      <InnerMap points={valid} showConnections={showConnections} boundary={boundary} />
+      <InnerMap
+        points={valid}
+        showConnections={showConnections}
+        boundary={boundary}
+        interactiveFeatures={interactiveFeatures}
+      />
     </div>
   );
 }
