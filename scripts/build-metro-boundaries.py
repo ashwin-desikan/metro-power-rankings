@@ -15,19 +15,29 @@ below records the exact column offsets per sheet so the loader can pull the
 same logical fields out of either one.
 
 Each country we support is mapped (via COUNTRY_SHEET_MAP) to exactly ONE
-source sheet. Any row whose country is in the map but appears in the wrong
-sheet is silently skipped, which prevents double-coverage. Any row whose
-country is not in the map is also skipped: the frontend then falls back to
-a primary-city pin from metros.json (lat, lon).
+source sheet AND to one Overture parquet (via COUNTRY_PARQUET_MAP, which
+falls back to SOURCE_PARQUET if a country isn't listed). Any row whose
+country is in the map but appears in the wrong sheet is silently skipped,
+which prevents double-coverage. Any row whose country is not in the map is
+also skipped: the frontend then falls back to a primary-city pin from
+metros.json (lat, lon).
 
 Initial routing:
-  United States -> counties
-  Mexico        -> counties
-  Canada        -> municipality
+  United States -> counties     (SOURCE_PARQUET, the global file)
+  Mexico        -> counties     (SOURCE_PARQUET)
+  Canada        -> municipality (SOURCE_PARQUET)
 
-To extend to a new country: pick the sheet that holds its rows, populate the
-four Overture columns by hand for those rows, and add a single entry to
-COUNTRY_SHEET_MAP. The script picks it up on the next run.
+To extend to a new country:
+  1. Pick the sheet that holds its rows (Counties or Municipality).
+  2. Populate the four Overture columns by hand for those rows.
+  3. Add one entry to COUNTRY_SHEET_MAP and one to COUNTRY_TO_ISO.
+  4. Add one entry to COUNTRY_PARQUET_MAP pointing at a country-scoped
+     Overture extract (do NOT add new countries to the global parquet -
+     scanning a 5.8 GB file per added country is wasteful). Per-country
+     extracts typically run 10-500 MB and scan in seconds.
+
+The script picks the new country up on the next run with no other code
+changes required.
 
 Behavior:
   - Wipes public/data/metro-boundaries/ at start (only files for currently
@@ -63,6 +73,31 @@ WORKBOOK = "MetroAreas.xlsx"
 METROS_JSON = "public/data/metros.json"
 OUT_DIR = Path("public/data/metro-boundaries")
 SIMPLIFY_TOLERANCE_DEG = 0.005
+
+
+# ---------- Per-country parquet routing ---------------------------------
+#
+# COUNTRY_PARQUET_MAP lets each country pull from its OWN Overture parquet
+# extract. Countries not listed fall back to SOURCE_PARQUET above.
+#
+# Why this matters: the global Overture division-area parquet is ~5.8 GB.
+# Scanning it once for US+MX+CA is fine (the existing arrangement), but
+# every additional country we add would re-scan the same 5.8 GB. Per-country
+# extracts are typically 10-500 MB, scan in seconds, and keep memory low.
+#
+# How to extend: download a per-country parquet (use Overture's release CLI
+# to extract `division_area` filtered by country), drop it into
+# C:\Users\ashwi\Desktop\Projects\MapData\, and add an entry below. The
+# loader will scan it exactly once with that country's wanted keys.
+#
+# US/MX/CA intentionally omitted: they continue to use SOURCE_PARQUET (the
+# existing global file). Don't move them unless you have a reason.
+COUNTRY_PARQUET_MAP = {
+    # Examples for future use:
+    # "United Kingdom": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GB.parquet",
+    # "France":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
+    # "Germany":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
+}
 
 
 # ---------- Per-country sheet routing -----------------------------------
@@ -268,7 +303,6 @@ def load_workbook_rows(path: str):
           f"{', '.join(SHEET_SCHEMAS[s]['sheet_name'] for s in SHEET_SCHEMAS)})")
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
 
-    # Audit: surface any country that's mapped but missing from the map's sheet.
     sheets_in_use = {COUNTRY_SHEET_MAP[c] for c in COUNTRY_SHEET_MAP}
     print(f"      country routing: " + ", ".join(
         f"{c}->{COUNTRY_SHEET_MAP[c]}" for c in COUNTRY_SHEET_MAP))
@@ -307,10 +341,38 @@ def resolve_slug(row, metros_index):
 
 def main():
     rows = load_workbook_rows(WORKBOOK)
-    wanted_keys = {(r["region"], r["subtype"], r["primary"]) for r in rows}
-    wanted_iso = {COUNTRY_TO_ISO[c] for c in COUNTRY_SHEET_MAP if c in COUNTRY_TO_ISO}
-    print(f"      wanted (region, subtype, primary) keys: {len(wanted_keys):,}")
-    by_key_land, by_key_any = load_overture(SOURCE_PARQUET, wanted_keys, wanted_iso)
+
+    # Group rows by which Overture parquet they should be sourced from.
+    # Countries listed in COUNTRY_PARQUET_MAP get their own per-country
+    # extract; everyone else falls back to SOURCE_PARQUET.
+    rows_by_parquet = defaultdict(list)
+    for r in rows:
+        parquet = COUNTRY_PARQUET_MAP.get(r["country"], SOURCE_PARQUET)
+        rows_by_parquet[parquet].append(r)
+    print(f"      parquet routing: {len(rows_by_parquet)} distinct parquet(s)")
+    for p, rs in rows_by_parquet.items():
+        countries = sorted({r["country"] for r in rs})
+        print(f"        {p}")
+        print(f"          {len(rs):,} rows, countries: {countries}")
+
+    # Scan each parquet once with its own country + key filter, then merge
+    # the resulting indexes. Keys are globally unique on (region, subtype,
+    # primary) so per-parquet results never collide.
+    by_key_land = defaultdict(list)
+    by_key_any = defaultdict(list)
+    for parquet_path, parquet_rows in rows_by_parquet.items():
+        parquet_keys = {(r["region"], r["subtype"], r["primary"])
+                        for r in parquet_rows}
+        parquet_iso = {COUNTRY_TO_ISO[r["country"]]
+                       for r in parquet_rows
+                       if r["country"] in COUNTRY_TO_ISO}
+        print(f"      wanted keys for {parquet_path}: {len(parquet_keys):,}")
+        pl, pa = load_overture(parquet_path, parquet_keys, parquet_iso)
+        for k, v in pl.items():
+            by_key_land[k].extend(v)
+        for k, v in pa.items():
+            by_key_any[k].extend(v)
+
     metros_index = load_metros_index(METROS_JSON)
 
     # Group rows by slug
