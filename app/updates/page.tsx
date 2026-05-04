@@ -53,6 +53,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-04",
+    headline: "Real boundaries for US, Mexico, and Canada metros",
+    items: [
+      "Maps now render true administrative polygons for 596 US, 92 Mexican, and 85 Canadian metros instead of city-center pins.",
+      "Three Canadian metros (Corner Brook, Grand Falls-Windsor, St. John's) still fall back to a city pin until source data is populated.",
+      "Boundaries come straight from Overture Maps, so updates flow through with one rebuild.",
+      "Honolulu and similar metros no longer drag thousand-mile administrative tails into the map; remote oceanic outposts are trimmed automatically.",
+    ],
+  },
+  {
     date: "2026-05-03",
     headline: "Conurbations get proper editorial names",
     items: [

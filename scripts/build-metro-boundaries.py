@@ -39,11 +39,21 @@ To extend to a new country:
 The script picks the new country up on the next run with no other code
 changes required.
 
+Outlier-part trim:
+  After unioning a metro's member polygons, the result is decomposed and
+  any disjoint MultiPolygon parts whose minimum distance from the metro's
+  anchor point exceeds OUTLIER_PART_MAX_KM are dropped. This trims off
+  remote oceanic outposts (Honolulu's Northwestern Hawaiian Islands,
+  Tokyo's Izu/Ogasawara chains) without harming legitimate large
+  contiguous metros (NYC, LA, etc.) since those are single polygons or
+  have all parts within the threshold of the anchor.
+
 Behavior:
   - Wipes public/data/metro-boundaries/ at start (only files for currently
     routed slugs are kept).
   - Writes one GeoJSON per metro with at least one resolved member.
-  - Reports unmatched rows (workbook Primary Name not found in parquet).
+  - Reports unmatched rows (workbook Primary Name not found in parquet)
+    and per-metro outlier trim audit.
 
 Dependencies:
   pip install geopandas openpyxl pyarrow
@@ -58,11 +68,12 @@ import os
 import sys
 import time
 from collections import defaultdict
+from math import asin, cos, radians, sin, sqrt
 from pathlib import Path
 
 import openpyxl
-from shapely.geometry import mapping
-from shapely.ops import unary_union
+from shapely.geometry import MultiPolygon, Point, mapping
+from shapely.ops import nearest_points, unary_union
 
 
 SOURCE_PARQUET = os.environ.get(
@@ -73,6 +84,18 @@ WORKBOOK = "MetroAreas.xlsx"
 METROS_JSON = "public/data/metros.json"
 OUT_DIR = Path("public/data/metro-boundaries")
 SIMPLIFY_TOLERANCE_DEG = 0.005
+
+# Maximum distance (km) any disjoint multipolygon part may be from the
+# metro's anchor point. Parts beyond this are dropped before simplify.
+#
+# 200 km is calibrated against the largest legitimate metro footprints:
+# New York's eastern Long Island fragments reach ~175 km from Manhattan
+# (kept), LA's Channel-Islands-side parts reach ~145 km (kept), Tokyo's
+# Izu Oshima sits ~110 km south (will be kept when JP ships). Honolulu's
+# Northwestern Hawaiian Islands start at 461 km (dropped), Tokyo's
+# Hachijōjima ~290 km and Ogasawara ~1,000 km (dropped). Tune by editing
+# this single value.
+OUTLIER_PART_MAX_KM = 200.0
 
 
 # ---------- Per-country parquet routing ---------------------------------
@@ -149,6 +172,73 @@ SHEET_SCHEMAS = {
 }
 
 
+# ---------- Geometry helpers --------------------------------------------
+
+def _haversine_km(lat1, lon1, lat2, lon2):
+    """Great-circle distance in kilometers between two (lat, lon) points."""
+    R = 6371.0
+    dlat = radians(lat2 - lat1)
+    dlon = radians(lon2 - lon1)
+    a = (sin(dlat / 2) ** 2
+         + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon / 2) ** 2)
+    return 2 * R * asin(sqrt(a))
+
+
+def trim_outlier_parts(geom, anchor_lat, anchor_lon,
+                       max_distance_km=OUTLIER_PART_MAX_KM):
+    """For MultiPolygon geometries, drop disjoint parts whose minimum
+    distance from the anchor (lat, lon) exceeds `max_distance_km`.
+
+    Returns (trimmed_geom, dropped_count, dropped_distances_km). Single
+    polygons and small multis (one part) are returned unchanged with an
+    empty drop list.
+    """
+    if geom is None or geom.is_empty:
+        return geom, 0, []
+    if geom.geom_type != "MultiPolygon":
+        return geom, 0, []
+
+    parts = list(geom.geoms)
+    if len(parts) <= 1:
+        return geom, 0, []
+
+    anchor = Point(anchor_lon, anchor_lat)
+
+    kept = []
+    dropped = []
+    for p in parts:
+        # Find the closest point on this part to the anchor, then compute
+        # great-circle distance. shapely.distance is in degrees and
+        # underestimates real km at higher latitudes; haversine on the
+        # nearest pair is geographically correct.
+        try:
+            near_on_part, _ = nearest_points(p, anchor)
+            d_km = _haversine_km(anchor_lat, anchor_lon,
+                                 near_on_part.y, near_on_part.x)
+        except Exception:
+            # If the nearest_points call somehow fails, keep the part to
+            # avoid silent data loss.
+            kept.append(p)
+            continue
+        if d_km <= max_distance_km:
+            kept.append(p)
+        else:
+            dropped.append((p, d_km))
+
+    if not kept:
+        # Shouldn't happen if anchor is inside any part; as a safety net,
+        # keep the largest part so we never emit an empty geometry.
+        largest = max(parts, key=lambda p: p.area)
+        return largest, len(parts) - 1, [d for _, d in dropped]
+
+    if len(kept) == 1:
+        result = kept[0]
+    else:
+        result = MultiPolygon(kept)
+
+    return result, len(dropped), [d for _, d in dropped]
+
+
 # ---------- Overture loader ----------------------------------------------
 
 def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
@@ -156,10 +246,6 @@ def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
     primary_name) tuple is in `wanted_keys` AND whose country is in
     `wanted_iso_codes`. Returns two indexes (land-class preferred, any-class
     fallback) keyed by (region, subtype, primary_name).
-
-    Memory profile: scans the parquet row by row via pyarrow batches, decoding
-    geometry only for matching rows. Peak RSS stays under ~600 MB even on the
-    NA parquet because we never materialize the full dataframe.
     """
     print(f"[1/4] Reading Overture parquet: {parquet_path}")
     print(f"      country filter: {sorted(wanted_iso_codes)}")
@@ -247,7 +333,6 @@ def _read_sheet_rows(wb, sheet_key: str):
             not_routed += 1
             continue
         if COUNTRY_SHEET_MAP[country] != sheet_key:
-            # this country lives in the other sheet; skip
             routed_elsewhere += 1
             continue
 
@@ -317,8 +402,8 @@ def load_workbook_rows(path: str):
 # ---------- Slug resolver ------------------------------------------------
 
 def load_metros_index(path: str):
-    """Build (metro_display_lower, country) -> slug index, restricted to the
-    countries currently routed in COUNTRY_SHEET_MAP."""
+    """Build (metro_display_lower, country) -> {slug, lat, lon} index,
+    restricted to the countries currently routed in COUNTRY_SHEET_MAP."""
     with open(path, "r", encoding="utf-8") as f:
         metros = json.load(f)
     idx = {}
@@ -328,11 +413,15 @@ def load_metros_index(path: str):
             continue
         name = m.get("name", "").strip().lower()
         country = m.get("country", "")
-        idx[(name, country)] = m["slug"]
+        idx[(name, country)] = {
+            "slug": m["slug"],
+            "lat":  m.get("lat"),
+            "lon":  m.get("lon"),
+        }
     return idx
 
 
-def resolve_slug(row, metros_index):
+def resolve_slug_info(row, metros_index):
     base = row["metro_display"].strip().lower()
     return metros_index.get((base, row["country"]))
 
@@ -343,8 +432,6 @@ def main():
     rows = load_workbook_rows(WORKBOOK)
 
     # Group rows by which Overture parquet they should be sourced from.
-    # Countries listed in COUNTRY_PARQUET_MAP get their own per-country
-    # extract; everyone else falls back to SOURCE_PARQUET.
     rows_by_parquet = defaultdict(list)
     for r in rows:
         parquet = COUNTRY_PARQUET_MAP.get(r["country"], SOURCE_PARQUET)
@@ -355,9 +442,7 @@ def main():
         print(f"        {p}")
         print(f"          {len(rs):,} rows, countries: {countries}")
 
-    # Scan each parquet once with its own country + key filter, then merge
-    # the resulting indexes. Keys are globally unique on (region, subtype,
-    # primary) so per-parquet results never collide.
+    # Scan each parquet once with its own country + key filter.
     by_key_land = defaultdict(list)
     by_key_any = defaultdict(list)
     for parquet_path, parquet_rows in rows_by_parquet.items():
@@ -375,16 +460,19 @@ def main():
 
     metros_index = load_metros_index(METROS_JSON)
 
-    # Group rows by slug
+    # Group rows by slug; remember anchor point per slug for outlier trim.
     print("[3/4] Resolving slugs and grouping members")
     by_slug = defaultdict(list)
+    slug_anchor = {}
     unresolved_metros = set()
     for row in rows:
-        slug = resolve_slug(row, metros_index)
-        if slug is None:
+        info = resolve_slug_info(row, metros_index)
+        if info is None:
             unresolved_metros.add(f"{row['metro_display']} ({row['country']})")
             continue
+        slug = info["slug"]
         by_slug[slug].append(row)
+        slug_anchor[slug] = (info["lat"], info["lon"])
     print(f"      metros resolved: {len(by_slug):,}")
     if unresolved_metros:
         print(f"      metros unresolved (display name not in metros.json): "
@@ -424,7 +512,9 @@ def main():
     # Build polygons per metro
     written = 0
     skipped_no_geom = 0
+    skipped_no_anchor = 0
     unmatched_per_metro = defaultdict(list)
+    trim_audit = []  # list of (slug, dropped_count, max_distance_km)
     for slug, members in by_slug.items():
         polys = []
         for m in members:
@@ -440,6 +530,20 @@ def main():
             skipped_no_geom += 1
             continue
         merged = unary_union(polys)
+
+        # ---- Outlier-part trim ----
+        anchor_lat, anchor_lon = slug_anchor.get(slug, (None, None))
+        if (anchor_lat is not None and anchor_lon is not None
+                and isinstance(anchor_lat, (int, float))
+                and isinstance(anchor_lon, (int, float))
+                and not (anchor_lat == 0 and anchor_lon == 0)):
+            merged, n_dropped, dropped_dists = trim_outlier_parts(
+                merged, float(anchor_lat), float(anchor_lon))
+            if n_dropped > 0:
+                trim_audit.append((slug, n_dropped, max(dropped_dists)))
+        else:
+            skipped_no_anchor += 1
+
         try:
             simplified = merged.simplify(SIMPLIFY_TOLERANCE_DEG, preserve_topology=True)
             if simplified.is_valid and not simplified.is_empty:
@@ -461,8 +565,6 @@ def main():
                 json.dump({"type": "FeatureCollection", "features": [feature]}, f)
             written += 1
         except PermissionError:
-            # Sandbox bind-mount may treat existing files as read-only.
-            # Try writing to a temp file then renaming over.
             import tempfile as _tf, shutil as _sh
             tfd, tname = _tf.mkstemp(dir=OUT_DIR, suffix=".geojson")
             os.close(tfd)
@@ -475,6 +577,12 @@ def main():
     print("=" * 60)
     print(f"Boundaries written: {written:,}")
     print(f"Metros skipped (no geometry resolved): {skipped_no_geom:,}")
+    if skipped_no_anchor:
+        print(f"Metros built without outlier-trim (no anchor lat/lon): {skipped_no_anchor:,}")
+    if trim_audit:
+        print(f"Outlier-trim applied to {len(trim_audit)} metro(s):")
+        for slug, n, max_d in sorted(trim_audit, key=lambda x: -x[2]):
+            print(f"  {slug}: dropped {n} part(s), furthest {max_d:,.0f} km")
     if unmatched_per_metro:
         total_unmatched = sum(len(v) for v in unmatched_per_metro.values())
         print(f"Members unmatched in parquet: {total_unmatched:,} across "
