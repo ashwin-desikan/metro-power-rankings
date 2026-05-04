@@ -54,11 +54,11 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-04",
-    headline: "Real boundaries for North America, the UK, and France",
+    headline: "Real boundaries for North America, the UK, France, and Germany",
     items: [
-      "Maps now render true administrative polygons for 595 US, 93 Mexican, 85 Canadian, 179 UK, and 113 French metros (1,065 total) instead of city-center pins.",
-      "Lewes is merged into Brighton & Hove; three small Canadian metros still fall back to a city pin until source data is populated.",
-      "Boundaries come straight from Overture Maps, so updates flow through with one rebuild.",
+      "Maps now render true administrative polygons for 595 US, 93 Mexican, 83 Canadian, 180 UK, 113 French, and 73 German metros (1,137 total) instead of city-center pins.",
+      "Lewes is merged into Brighton & Hove; three Newfoundland metros still fall back to a city pin until source data is populated.",
+      "Boundaries come straight from Overture Maps, so editorial updates flow through with one rebuild.",
       "Honolulu and similar metros no longer drag thousand-mile administrative tails into the map; remote oceanic outposts are trimmed automatically.",
     ],
   },
@@ -110,11 +110,10 @@ const RELEASES: Release[] = [
   },
   {
     date: "2026-04-23",
-    headline: "Historic Venues, Annual Events, analytics",
+    headline: "Historic Venues, Annual Events",
     items: [
       "New Historic Venues collapsible on metro profiles (41 sites).",
       "Annual Sporting Events route into their own category.",
-      "Google Analytics 4 instrumented.",
     ],
   },
   {
@@ -123,7 +122,6 @@ const RELEASES: Release[] = [
     items: [
       "All-Star Games now their own category, separated from championship finals.",
       "NCAA minor-sport teams routed correctly into College and University Teams.",
-      "Data refresh; project backlog published.",
     ],
   },
   {
@@ -131,7 +129,6 @@ const RELEASES: Release[] = [
     headline: "Walkable Elite Quarters card",
     items: [
       "Walkable Elite Quarters card now appears on profiles for the 103 qualifying metros.",
-      "Data refresh.",
     ],
   },
   {
