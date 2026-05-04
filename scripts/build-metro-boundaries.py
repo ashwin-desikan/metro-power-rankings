@@ -107,11 +107,11 @@ OUTLIER_PART_MAX_KM = 200.0
 
 # ---------- Per-country parquet routing ---------------------------------
 COUNTRY_PARQUET_MAP = {
-    # France routed to its own parquet to keep heavy commune scans off the
-    # 5.8 GB global file. Generated via scripts/extract-overture-parquet.py.
-    "France": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
+    # Per-country parquets keep heavy commune scans off the 5.8 GB global
+    # file. Generate via scripts/extract-overture-parquet.py.
+    "France":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
+    "Germany": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
     # Add additional per-country parquet entries here as you produce them:
-    # "Germany":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
     # "Italy":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IT.parquet",
 }
 
@@ -123,6 +123,7 @@ COUNTRY_SHEET_MAP = {
     "Canada":         "municipality",
     "United Kingdom": "municipality",
     "France":         "municipality",
+    "Germany":        "municipality",
 }
 
 COUNTRY_TO_ISO = {
@@ -131,6 +132,7 @@ COUNTRY_TO_ISO = {
     "Canada":         "CA",
     "United Kingdom": "GB",
     "France":         "FR",
+    "Germany":        "DE",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
