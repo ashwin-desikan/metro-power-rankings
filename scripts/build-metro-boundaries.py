@@ -5,9 +5,10 @@ columns on BOTH the Counties sheet and the Municipality sheet:
 
   - Subtype           (Overture subtype, e.g. 'county', 'region', 'locality')
   - Admin Level       (e.g. 2)
-  - Region            (ISO 3166-2, e.g. 'US-AL', 'CA-ON', 'MX-AGU')
+  - Region            (ISO 3166-2, e.g. 'US-AL', 'CA-ON', 'MX-AGU', 'GB-SCT')
   - Primary Name      (exact Overture primary name, e.g. 'Marshall County',
-                       'Manicouagan', 'Municipio de Aguascalientes')
+                       'Manicouagan', 'Municipio de Aguascalientes',
+                       'Aberdeen City')
 
 The two sheets store these columns at slightly different positions because
 the Municipality sheet has two extra leading columns. The SHEET_SCHEMAS dict
@@ -23,9 +24,18 @@ also skipped: the frontend then falls back to a primary-city pin from
 metros.json (lat, lon).
 
 Initial routing:
-  United States -> counties     (SOURCE_PARQUET, the global file)
-  Mexico        -> counties     (SOURCE_PARQUET)
-  Canada        -> municipality (SOURCE_PARQUET)
+  United States  -> counties      (SOURCE_PARQUET)
+  Mexico         -> counties      (SOURCE_PARQUET)
+  Canada         -> municipality  (SOURCE_PARQUET)
+  United Kingdom -> municipality  (SOURCE_PARQUET)
+
+Workbook-country normalization:
+  The UK is split across four constituent country values in the workbook
+  (England / Scotland / Wales / Northern Ireland). metros.json uses a
+  single canonical "United Kingdom" value. WORKBOOK_TO_CANONICAL_COUNTRY
+  collapses constituents to the canonical name before slug resolution.
+  Add new entries here whenever a country in the workbook appears under
+  multiple names but should share a single metros.json identity.
 
 To extend to a new country:
   1. Pick the sheet that holds its rows (Counties or Municipality).
@@ -35,6 +45,9 @@ To extend to a new country:
      Overture extract (do NOT add new countries to the global parquet -
      scanning a 5.8 GB file per added country is wasteful). Per-country
      extracts typically run 10-500 MB and scan in seconds.
+  5. If the workbook stores the country under multiple names that should
+     map to a single metros.json identity, add entries to
+     WORKBOOK_TO_CANONICAL_COUNTRY.
 
 The script picks the new country up on the next run with no other code
 changes required.
@@ -104,20 +117,20 @@ OUTLIER_PART_MAX_KM = 200.0
 # extract. Countries not listed fall back to SOURCE_PARQUET above.
 #
 # Why this matters: the global Overture division-area parquet is ~5.8 GB.
-# Scanning it once for US+MX+CA is fine (the existing arrangement), but
-# every additional country we add would re-scan the same 5.8 GB. Per-country
-# extracts are typically 10-500 MB, scan in seconds, and keep memory low.
+# Scanning it once for US+MX+CA+GB is fine (the existing arrangement),
+# but every additional country we add would re-scan the same 5.8 GB.
+# Per-country extracts are typically 10-500 MB, scan in seconds, and keep
+# memory low.
 #
-# How to extend: download a per-country parquet (use Overture's release CLI
+# How to extend: produce a per-country parquet (use Overture's release CLI
 # to extract `division_area` filtered by country), drop it into
 # C:\Users\ashwi\Desktop\Projects\MapData\, and add an entry below. The
 # loader will scan it exactly once with that country's wanted keys.
 #
-# US/MX/CA intentionally omitted: they continue to use SOURCE_PARQUET (the
-# existing global file). Don't move them unless you have a reason.
+# US/MX/CA/GB intentionally omitted: they continue to use SOURCE_PARQUET
+# (the existing global file). Don't move them unless you have a reason.
 COUNTRY_PARQUET_MAP = {
     # Examples for future use:
-    # "United Kingdom": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GB.parquet",
     # "France":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
     # "Germany":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
 }
@@ -126,23 +139,45 @@ COUNTRY_PARQUET_MAP = {
 # ---------- Per-country sheet routing -----------------------------------
 #
 # COUNTRY_SHEET_MAP is the single source of truth for which workbook sheet
-# holds the boundary-source rows for each country. When extending coverage
-# to a new country, decide which sheet you're populating and add an entry
-# here. Do NOT have one country split across both sheets: that defeats the
-# whole point of routing.
+# holds the boundary-source rows for each country (using the CANONICAL
+# country name, post WORKBOOK_TO_CANONICAL_COUNTRY normalization).
 COUNTRY_SHEET_MAP = {
-    "United States": "counties",
-    "Mexico":        "counties",
-    "Canada":        "municipality",
+    "United States":  "counties",
+    "Mexico":         "counties",
+    "Canada":         "municipality",
+    "United Kingdom": "municipality",
 }
 
-# COUNTRY_TO_ISO maps the workbook's full-country-name values to the ISO
-# 3166-1 alpha-2 codes that Overture uses in its `country` column. Used to
-# narrow the parquet scan to the relevant rows.
+# COUNTRY_TO_ISO maps the canonical country name to the ISO 3166-1 alpha-2
+# code that Overture uses in its `country` column. Used to narrow the
+# parquet scan.
 COUNTRY_TO_ISO = {
-    "United States": "US",
-    "Mexico":        "MX",
-    "Canada":        "CA",
+    "United States":  "US",
+    "Mexico":         "MX",
+    "Canada":         "CA",
+    "United Kingdom": "GB",
+}
+
+# WORKBOOK_TO_CANONICAL_COUNTRY normalizes workbook country values that
+# differ from the canonical name used in metros.json and downstream maps.
+# Every key here must map to a country also present in COUNTRY_SHEET_MAP.
+WORKBOOK_TO_CANONICAL_COUNTRY = {
+    "England":          "United Kingdom",
+    "Scotland":         "United Kingdom",
+    "Wales":            "United Kingdom",
+    "Northern Ireland": "United Kingdom",
+}
+
+# UK_CONSTITUENT_REGION corrects the Region column for UK rows. The
+# workbook stores 'GB-ENG' as a fill-down across all four constituents
+# (an editorial shortcut). Overture publishes UK admin entities under the
+# proper constituent ISO 3166-2 code, so we re-derive it from the original
+# workbook constituent name (col 1, BEFORE canonical normalization).
+UK_CONSTITUENT_REGION = {
+    "England":          "GB-ENG",
+    "Scotland":         "GB-SCT",
+    "Wales":            "GB-WLS",
+    "Northern Ireland": "GB-NIR",
 }
 
 # SHEET_SCHEMAS records the column offsets per sheet for the seven fields
@@ -207,17 +242,11 @@ def trim_outlier_parts(geom, anchor_lat, anchor_lon,
     kept = []
     dropped = []
     for p in parts:
-        # Find the closest point on this part to the anchor, then compute
-        # great-circle distance. shapely.distance is in degrees and
-        # underestimates real km at higher latitudes; haversine on the
-        # nearest pair is geographically correct.
         try:
             near_on_part, _ = nearest_points(p, anchor)
             d_km = _haversine_km(anchor_lat, anchor_lon,
                                  near_on_part.y, near_on_part.x)
         except Exception:
-            # If the nearest_points call somehow fails, keep the part to
-            # avoid silent data loss.
             kept.append(p)
             continue
         if d_km <= max_distance_km:
@@ -226,8 +255,6 @@ def trim_outlier_parts(geom, anchor_lat, anchor_lon,
             dropped.append((p, d_km))
 
     if not kept:
-        # Shouldn't happen if anchor is inside any part; as a safety net,
-        # keep the largest part so we never emit an empty geometry.
         largest = max(parts, key=lambda p: p.area)
         return largest, len(parts) - 1, [d for _, d in dropped]
 
@@ -300,11 +327,12 @@ def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
 
 def _read_sheet_rows(wb, sheet_key: str):
     """Yield normalized row dicts from one source sheet. Each dict carries:
-        country, state_full, metro_display, region, subtype, primary,
-        sheet_key (audit trail).
-    Only rows whose country routes to THIS sheet via COUNTRY_SHEET_MAP are
-    kept. Rows whose country routes to a different sheet are silently
-    skipped here (they'll be picked up by that sheet's pass).
+        country (canonical), state_full, metro_display, region, subtype,
+        primary, sheet_key (audit trail).
+    Only rows whose canonical country routes to THIS sheet via
+    COUNTRY_SHEET_MAP are kept. Rows whose country routes to a different
+    sheet are silently skipped here (they'll be picked up by that sheet's
+    pass).
     """
     schema = SHEET_SCHEMAS[sheet_key]
     sheet_name = schema["sheet_name"]
@@ -325,14 +353,19 @@ def _read_sheet_rows(wb, sheet_key: str):
     routed_elsewhere = 0
     not_routed = 0
     incomplete = 0
+    uk_region_overrides = 0
     for r in ws.iter_rows(min_row=2, values_only=True):
         if not r or len(r) <= max_needed:
             continue
-        country = r[cc]
-        if country not in COUNTRY_SHEET_MAP:
+        country_workbook = r[cc]
+        # Normalize for routing/slug lookup. Pre-normalization name is
+        # kept around so per-constituent overrides still work.
+        country_canonical = WORKBOOK_TO_CANONICAL_COUNTRY.get(
+            country_workbook, country_workbook)
+        if country_canonical not in COUNTRY_SHEET_MAP:
             not_routed += 1
             continue
-        if COUNTRY_SHEET_MAP[country] != sheet_key:
+        if COUNTRY_SHEET_MAP[country_canonical] != sheet_key:
             routed_elsewhere += 1
             continue
 
@@ -363,12 +396,22 @@ def _read_sheet_rows(wb, sheet_key: str):
                     and primary_str == "Nash County"):
                 subtype_str = "neighborhood"
 
-        # If a Municipality-only override is needed in the future, add it
-        # under `if sheet_key == "municipality":` here.
+        # ---- Municipality-only inline overrides ----
+        if sheet_key == "municipality":
+            # UK constituent fill-down correction. Workbook has
+            # region='GB-ENG' on every UK row across all four constituents;
+            # Overture indexes UK admin entities under the proper
+            # constituent ISO. Re-derive from col 1 (constituent name).
+            if (country_workbook in UK_CONSTITUENT_REGION
+                    and region_str == "GB-ENG"):
+                corrected = UK_CONSTITUENT_REGION[country_workbook]
+                if corrected != region_str:
+                    uk_region_overrides += 1
+                region_str = corrected
 
         kept += 1
         yield {
-            "country":       country,
+            "country":       country_canonical,
             "state_full":    str(state_full or "").strip(),
             "metro_display": str(metro_display).strip(),
             "region":        region_str,
@@ -377,8 +420,11 @@ def _read_sheet_rows(wb, sheet_key: str):
             "sheet_key":     sheet_key,
         }
 
+    extra = ""
+    if uk_region_overrides:
+        extra = f"  uk-region-overrides {uk_region_overrides:,}"
     print(f"      [{sheet_name}] kept {kept:,}  routed-elsewhere {routed_elsewhere:,}  "
-          f"unrouted-country {not_routed:,}  incomplete {incomplete:,}")
+          f"unrouted-country {not_routed:,}  incomplete {incomplete:,}{extra}")
 
 
 def load_workbook_rows(path: str):
@@ -431,7 +477,6 @@ def resolve_slug_info(row, metros_index):
 def main():
     rows = load_workbook_rows(WORKBOOK)
 
-    # Group rows by which Overture parquet they should be sourced from.
     rows_by_parquet = defaultdict(list)
     for r in rows:
         parquet = COUNTRY_PARQUET_MAP.get(r["country"], SOURCE_PARQUET)
@@ -442,7 +487,6 @@ def main():
         print(f"        {p}")
         print(f"          {len(rs):,} rows, countries: {countries}")
 
-    # Scan each parquet once with its own country + key filter.
     by_key_land = defaultdict(list)
     by_key_any = defaultdict(list)
     for parquet_path, parquet_rows in rows_by_parquet.items():
@@ -460,7 +504,6 @@ def main():
 
     metros_index = load_metros_index(METROS_JSON)
 
-    # Group rows by slug; remember anchor point per slug for outlier trim.
     print("[3/4] Resolving slugs and grouping members")
     by_slug = defaultdict(list)
     slug_anchor = {}
@@ -482,7 +525,6 @@ def main():
         if len(unresolved_metros) > 10:
             print(f"        ... and {len(unresolved_metros) - 10} more")
 
-    # Identify which files we need to keep vs. which to remove.
     keep_slugs = set(by_slug.keys())
     print(f"[4/4] Pruning {OUT_DIR} to keep {len(keep_slugs):,} routed slugs")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -509,12 +551,11 @@ def main():
                 mf.write(name + "\n")
         print(f"      manifest written to {manifest}")
 
-    # Build polygons per metro
     written = 0
     skipped_no_geom = 0
     skipped_no_anchor = 0
     unmatched_per_metro = defaultdict(list)
-    trim_audit = []  # list of (slug, dropped_count, max_distance_km)
+    trim_audit = []
     for slug, members in by_slug.items():
         polys = []
         for m in members:
@@ -531,7 +572,6 @@ def main():
             continue
         merged = unary_union(polys)
 
-        # ---- Outlier-part trim ----
         anchor_lat, anchor_lon = slug_anchor.get(slug, (None, None))
         if (anchor_lat is not None and anchor_lon is not None
                 and isinstance(anchor_lat, (int, float))
