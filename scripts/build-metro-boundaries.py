@@ -1,25 +1,38 @@
-"""Build metro boundary GeoJSON files for the United States and Mexico only.
+"""Build metro boundary GeoJSON files using a per-country sheet routing.
 
-The MetroAreas.xlsx Counties sheet now carries four user-curated columns
-that tie each row directly to its Overture division_area feature:
+The MetroAreas.xlsx workbook now carries the same four user-curated Overture
+columns on BOTH the Counties sheet and the Municipality sheet:
 
-  - col 12: Subtype           (Overture subtype, e.g. 'county')
-  - col 13: Admin Level       (e.g. 2)
-  - col 14: Region (ISO 3166-2, e.g. 'US-AL', 'MX-AGU')
-  - col 15: Primary Name      (exact Overture primary name, e.g.
-                               'Marshall County', 'Municipio de Aguascalientes')
+  - Subtype           (Overture subtype, e.g. 'county', 'region', 'locality')
+  - Admin Level       (e.g. 2)
+  - Region            (ISO 3166-2, e.g. 'US-AL', 'CA-ON', 'MX-AGU')
+  - Primary Name      (exact Overture primary name, e.g. 'Marshall County',
+                       'Manicouagan', 'Municipio de Aguascalientes')
 
-This script does a direct lookup against the Overture parquet using
-(region, subtype, primary name) as the key. No name normalization. No
-country-specific branches. No suffix stripping. No alias maps.
+The two sheets store these columns at slightly different positions because
+the Municipality sheet has two extra leading columns. The SHEET_SCHEMAS dict
+below records the exact column offsets per sheet so the loader can pull the
+same logical fields out of either one.
 
-All countries other than US and Mexico are intentionally skipped. The
-frontend (app/rankings/[slug]/MetroPageMap.tsx) falls back to a primary-city
-pin from metros.json (lat, lon) when no boundary GeoJSON exists.
+Each country we support is mapped (via COUNTRY_SHEET_MAP) to exactly ONE
+source sheet. Any row whose country is in the map but appears in the wrong
+sheet is silently skipped, which prevents double-coverage. Any row whose
+country is not in the map is also skipped: the frontend then falls back to
+a primary-city pin from metros.json (lat, lon).
+
+Initial routing:
+  United States -> counties
+  Mexico        -> counties
+  Canada        -> municipality
+
+To extend to a new country: pick the sheet that holds its rows, populate the
+four Overture columns by hand for those rows, and add a single entry to
+COUNTRY_SHEET_MAP. The script picks it up on the next run.
 
 Behavior:
-  - Wipes public/data/metro-boundaries/ at start.
-  - Writes one GeoJSON per US/Mexico metro with at least one resolved member.
+  - Wipes public/data/metro-boundaries/ at start (only files for currently
+    routed slugs are kept).
+  - Writes one GeoJSON per metro with at least one resolved member.
   - Reports unmatched rows (workbook Primary Name not found in parquet).
 
 Dependencies:
@@ -32,7 +45,6 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 import sys
 import time
 from collections import defaultdict
@@ -52,21 +64,70 @@ METROS_JSON = "public/data/metros.json"
 OUT_DIR = Path("public/data/metro-boundaries")
 SIMPLIFY_TOLERANCE_DEG = 0.005
 
-SUPPORTED_COUNTRIES = ("United States", "Mexico")
+
+# ---------- Per-country sheet routing -----------------------------------
+#
+# COUNTRY_SHEET_MAP is the single source of truth for which workbook sheet
+# holds the boundary-source rows for each country. When extending coverage
+# to a new country, decide which sheet you're populating and add an entry
+# here. Do NOT have one country split across both sheets: that defeats the
+# whole point of routing.
+COUNTRY_SHEET_MAP = {
+    "United States": "counties",
+    "Mexico":        "counties",
+    "Canada":        "municipality",
+}
+
+# COUNTRY_TO_ISO maps the workbook's full-country-name values to the ISO
+# 3166-1 alpha-2 codes that Overture uses in its `country` column. Used to
+# narrow the parquet scan to the relevant rows.
+COUNTRY_TO_ISO = {
+    "United States": "US",
+    "Mexico":        "MX",
+    "Canada":        "CA",
+}
+
+# SHEET_SCHEMAS records the column offsets per sheet for the seven fields
+# the loader needs. The Municipality sheet shifts everything by 1 because
+# col 0 holds an editorial flag and col 2 holds the Municipality name.
+SHEET_SCHEMAS = {
+    "counties": {
+        "sheet_name":        "Counties",
+        "col_country":       0,
+        "col_state_full":    2,
+        "col_metro_display": 7,
+        "col_subtype":       12,
+        "col_admin_level":   13,
+        "col_region":        14,
+        "col_primary":       15,
+    },
+    "municipality": {
+        "sheet_name":        "Municipality",
+        "col_country":       1,
+        "col_state_full":    4,
+        "col_metro_display": 6,
+        "col_subtype":       13,
+        "col_admin_level":   14,
+        "col_region":        15,
+        "col_primary":       16,
+    },
+}
 
 
 # ---------- Overture loader ----------------------------------------------
 
-def load_overture(parquet_path: str, wanted_keys: set):
+def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
     """Stream the Overture parquet and keep only rows whose (region, subtype,
-    primary_name) tuple is in `wanted_keys`. Returns two indexes (land-class
-    preferred, any-class fallback) keyed by (region, subtype, primary_name).
+    primary_name) tuple is in `wanted_keys` AND whose country is in
+    `wanted_iso_codes`. Returns two indexes (land-class preferred, any-class
+    fallback) keyed by (region, subtype, primary_name).
 
     Memory profile: scans the parquet row by row via pyarrow batches, decoding
     geometry only for matching rows. Peak RSS stays under ~600 MB even on the
-    NA parquet because we never materialize the full 67k US+MX dataframe.
+    NA parquet because we never materialize the full dataframe.
     """
     print(f"[1/4] Reading Overture parquet: {parquet_path}")
+    print(f"      country filter: {sorted(wanted_iso_codes)}")
     t0 = time.time()
     import pyarrow.parquet as pq
     from shapely import wkb as shapely_wkb
@@ -87,7 +148,7 @@ def load_overture(parquet_path: str, wanted_keys: set):
         geoms_col = batch.column("geometry").to_pylist()
         for i in range(len(countries)):
             rows_scanned += 1
-            if countries[i] not in ("US", "MX"):
+            if countries[i] not in wanted_iso_codes:
                 continue
             nm = names_col[i]
             primary = nm.get("primary") if isinstance(nm, dict) else None
@@ -116,72 +177,120 @@ def load_overture(parquet_path: str, wanted_keys: set):
 
 # ---------- Workbook loader ----------------------------------------------
 
-def load_workbook_rows(path: str):
-    """Read the Counties sheet and return (country, region, subtype,
-    primary_name, metro_display, state_full) tuples for US + Mexico rows
-    that have all four user-curated Overture columns populated.
+def _read_sheet_rows(wb, sheet_key: str):
+    """Yield normalized row dicts from one source sheet. Each dict carries:
+        country, state_full, metro_display, region, subtype, primary,
+        sheet_key (audit trail).
+    Only rows whose country routes to THIS sheet via COUNTRY_SHEET_MAP are
+    kept. Rows whose country routes to a different sheet are silently
+    skipped here (they'll be picked up by that sheet's pass).
     """
-    print(f"[2/4] Reading {path} Counties sheet")
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
-    ws = wb["Counties"]
-    out = []
-    skipped = 0
+    schema = SHEET_SCHEMAS[sheet_key]
+    sheet_name = schema["sheet_name"]
+    if sheet_name not in wb.sheetnames:
+        print(f"      WARNING: sheet '{sheet_name}' not in workbook, skipping")
+        return
+    ws = wb[sheet_name]
+
+    cc = schema["col_country"]
+    cs = schema["col_state_full"]
+    cm = schema["col_metro_display"]
+    csub = schema["col_subtype"]
+    creg = schema["col_region"]
+    cpri = schema["col_primary"]
+    max_needed = max(cc, cs, cm, csub, creg, cpri)
+
+    kept = 0
+    routed_elsewhere = 0
+    not_routed = 0
     incomplete = 0
     for r in ws.iter_rows(min_row=2, values_only=True):
-        if not r:
+        if not r or len(r) <= max_needed:
             continue
-        country = r[0]
-        if country not in SUPPORTED_COUNTRIES:
-            skipped += 1
+        country = r[cc]
+        if country not in COUNTRY_SHEET_MAP:
+            not_routed += 1
             continue
-        state_full = r[2]
-        metro_display = r[7]
-        subtype = r[12] if len(r) > 12 else None
-        # admin_level = r[13]  # not needed for lookup
-        region = r[14] if len(r) > 14 else None
-        primary = r[15] if len(r) > 15 else None
+        if COUNTRY_SHEET_MAP[country] != sheet_key:
+            # this country lives in the other sheet; skip
+            routed_elsewhere += 1
+            continue
+
+        state_full = r[cs]
+        metro_display = r[cm]
+        subtype = r[csub]
+        region = r[creg]
+        primary = r[cpri]
+
         if not (region and subtype and primary and metro_display):
             incomplete += 1
             continue
+
         region_str = str(region).strip()
         subtype_str = str(subtype).strip()
-        # DC exception: workbook stores DC as subtype=county for editorial
-        # consistency with the rest of the Counties sheet, but Overture
-        # publishes it at admin_level=1 (subtype=region). Override here so
-        # the downstream lookup hits the right Overture entity.
-        if region_str == "US-DC" and subtype_str == "county":
-            subtype_str = "region"
-        # Nash County NC exception: Overture has the entity at
-        # subtype=neighborhood instead of subtype=county (one of NC's 100
-        # counties is mistagged in their dataset). Workbook value is
-        # editorially correct; this override patches around the Overture bug.
         primary_str = str(primary).strip()
-        if (region_str == "US-NC" and subtype_str == "county"
-                and primary_str == "Nash County"):
-            subtype_str = "neighborhood"
-        out.append({
-            "country": country,
-            "state_full": str(state_full or "").strip(),
+
+        # ---- Counties-only inline overrides for upstream Overture quirks ----
+        if sheet_key == "counties":
+            # DC: workbook stores it as subtype=county for editorial parity
+            # with the rest of the Counties sheet, but Overture publishes it
+            # at admin_level=1, subtype=region.
+            if region_str == "US-DC" and subtype_str == "county":
+                subtype_str = "region"
+            # Nash County NC: Overture mistags this single county as
+            # subtype=neighborhood. Workbook is editorially correct.
+            if (region_str == "US-NC" and subtype_str == "county"
+                    and primary_str == "Nash County"):
+                subtype_str = "neighborhood"
+
+        # If a Municipality-only override is needed in the future, add it
+        # under `if sheet_key == "municipality":` here.
+
+        kept += 1
+        yield {
+            "country":       country,
+            "state_full":    str(state_full or "").strip(),
             "metro_display": str(metro_display).strip(),
-            "region": region_str,
-            "subtype": subtype_str,
-            "primary": primary_str,
-        })
-    print(f"      kept: {len(out):,} rows (skipped non-US/MX: {skipped:,}, "
-          f"incomplete US/MX: {incomplete:,})")
+            "region":        region_str,
+            "subtype":       subtype_str,
+            "primary":       primary_str,
+            "sheet_key":     sheet_key,
+        }
+
+    print(f"      [{sheet_name}] kept {kept:,}  routed-elsewhere {routed_elsewhere:,}  "
+          f"unrouted-country {not_routed:,}  incomplete {incomplete:,}")
+
+
+def load_workbook_rows(path: str):
+    """Read both sheets, applying COUNTRY_SHEET_MAP routing. Returns one flat
+    list of row dicts."""
+    print(f"[2/4] Reading {path} (sheets: "
+          f"{', '.join(SHEET_SCHEMAS[s]['sheet_name'] for s in SHEET_SCHEMAS)})")
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+
+    # Audit: surface any country that's mapped but missing from the map's sheet.
+    sheets_in_use = {COUNTRY_SHEET_MAP[c] for c in COUNTRY_SHEET_MAP}
+    print(f"      country routing: " + ", ".join(
+        f"{c}->{COUNTRY_SHEET_MAP[c]}" for c in COUNTRY_SHEET_MAP))
+
+    out = []
+    for sheet_key in sheets_in_use:
+        out.extend(_read_sheet_rows(wb, sheet_key))
+    print(f"      total rows kept across all sheets: {len(out):,}")
     return out
 
 
 # ---------- Slug resolver ------------------------------------------------
 
 def load_metros_index(path: str):
-    """Build (metro_display_lower, country) -> slug index. Country is the
-    disambiguator so US/MX same-name metros don't collide."""
+    """Build (metro_display_lower, country) -> slug index, restricted to the
+    countries currently routed in COUNTRY_SHEET_MAP."""
     with open(path, "r", encoding="utf-8") as f:
         metros = json.load(f)
     idx = {}
+    routed = set(COUNTRY_SHEET_MAP)
     for m in metros:
-        if m.get("country") not in SUPPORTED_COUNTRIES:
+        if m.get("country") not in routed:
             continue
         name = m.get("name", "").strip().lower()
         country = m.get("country", "")
@@ -199,8 +308,9 @@ def resolve_slug(row, metros_index):
 def main():
     rows = load_workbook_rows(WORKBOOK)
     wanted_keys = {(r["region"], r["subtype"], r["primary"]) for r in rows}
+    wanted_iso = {COUNTRY_TO_ISO[c] for c in COUNTRY_SHEET_MAP if c in COUNTRY_TO_ISO}
     print(f"      wanted (region, subtype, primary) keys: {len(wanted_keys):,}")
-    by_key_land, by_key_any = load_overture(SOURCE_PARQUET, wanted_keys)
+    by_key_land, by_key_any = load_overture(SOURCE_PARQUET, wanted_keys, wanted_iso)
     metros_index = load_metros_index(METROS_JSON)
 
     # Group rows by slug
@@ -222,10 +332,9 @@ def main():
         if len(unresolved_metros) > 10:
             print(f"        ... and {len(unresolved_metros) - 10} more")
 
-    # Identify which files we need to keep (US/MX slugs we will write) vs.
-    # which to remove (everything else).
+    # Identify which files we need to keep vs. which to remove.
     keep_slugs = set(by_slug.keys())
-    print(f"[4/4] Pruning {OUT_DIR} to keep {len(keep_slugs):,} US/MX slugs")
+    print(f"[4/4] Pruning {OUT_DIR} to keep {len(keep_slugs):,} routed slugs")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     deleted = 0
     failed_to_delete = []
