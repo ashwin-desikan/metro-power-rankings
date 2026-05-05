@@ -1,18 +1,22 @@
 // Server component. Renders a Leaflet map for any metro with valid
-// primary-city coordinates. Two layers stack:
-//   1. A primary-city pin at metros.json (lat, lon)
-//   2. (Optional) A dissolved-county boundary polygon, loaded from
+// primary-city coordinates. Three layers stack:
+//   1. (Optional) A dissolved-county boundary polygon, loaded from
 //      public/data/metro-boundaries/{slug}.geojson if it exists.
+//   2. Team / venue markers from Team List + FootballClub_Data, color-
+//      coded by category (Major League / Other teams / Venues). The
+//      classification mirrors the written sections of the metro page
+//      (TeamsSection + EventsSection in page.tsx).
+//   3. A primary-city pin at metros.json (lat, lon).
 //
-// US metros currently have boundary coverage (~580 metros via Overture
-// Maps division_area + the workbook Counties sheet). Other countries
-// fall back to the pin-only view until per-country boundary ETLs ship.
+// Markers are computed server-side and passed as plain JSON. Entries
+// missing lat/lng silently fall through to the written sections only.
 
 import { readFileSync } from "fs";
 import { join } from "path";
 
 import { getAllMetros } from "@/lib/data";
 import MetroMap from "@/app/MetroMap";
+import { buildMarkers, MARKER_COLORS, MARKER_LABELS, type MarkerCategory } from "@/lib/teamMarkers";
 
 function loadBoundary(slug: string): unknown | null {
   try {
@@ -24,7 +28,15 @@ function loadBoundary(slug: string): unknown | null {
   }
 }
 
-export default function MetroPageMap({ slug }: { slug: string }) {
+type MarkerInput = Parameters<typeof buildMarkers>[0];
+
+export default function MetroPageMap({
+  slug,
+  teams,
+}: {
+  slug: string;
+  teams?: MarkerInput;
+}) {
   const all = getAllMetros();
   const self = all.find((m) => m.slug === slug);
   if (!self) return null;
@@ -32,6 +44,13 @@ export default function MetroPageMap({ slug }: { slug: string }) {
 
   const pinName = self.primaryCity || self.name;
   const boundary = loadBoundary(slug);
+  const markers = buildMarkers(teams);
+
+  // Legend chips render only when at least one marker in that category
+  // is present. Keeps the chrome quiet on metros with no plottable rows.
+  const presentCategories: MarkerCategory[] = (["majorLeague", "otherTeam", "venue"] as const).filter(
+    (cat) => markers.some((m) => m.category === cat)
+  );
 
   return (
     <section>
@@ -53,7 +72,28 @@ export default function MetroPageMap({ slug }: { slug: string }) {
           showConnections={false}
           boundary={boundary}
           height={boundary ? 400 : 300}
+          markers={markers}
         />
+        {presentCategories.length > 0 && (
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-xs" style={{ color: "var(--text-muted)" }}>
+            {presentCategories.map((cat) => (
+              <span key={cat} className="flex items-center gap-1.5">
+                <span
+                  aria-hidden="true"
+                  style={{
+                    display: "inline-block",
+                    width: 8,
+                    height: 8,
+                    borderRadius: "50%",
+                    background: MARKER_COLORS[cat],
+                    border: "1px solid #0f172a",
+                  }}
+                />
+                {MARKER_LABELS[cat]}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

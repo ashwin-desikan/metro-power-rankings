@@ -18,6 +18,8 @@ const InnerMap = dynamic(() => import('./MetroMapInner'), {
   ),
 });
 
+import type { TeamMarker } from "@/lib/teamMarkers";
+
 export type MapPoint = {
   slug: string;
   name: string;
@@ -31,6 +33,7 @@ export default function MetroMap({
   boundary,
   height = 320,
   interactiveFeatures = false,
+  markers,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
@@ -44,6 +47,10 @@ export default function MetroMap({
   // polygons are colored by tier, hover shows a tooltip per metro, and
   // clicking a polygon routes to that metro's detail page.
   interactiveFeatures?: boolean;
+  // Optional team / venue markers rendered as a third layer above the
+  // boundary and primary pin. Categorized into Major League / Other
+  // teams / Venues so each color band reads at a glance.
+  markers?: TeamMarker[];
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
   // don't sit at (0,0) off Africa. They reappear once coords land in the xlsx.
@@ -62,6 +69,7 @@ export default function MetroMap({
         showConnections={showConnections}
         boundary={boundary}
         interactiveFeatures={interactiveFeatures}
+        markers={markers}
       />
     </div>
   );

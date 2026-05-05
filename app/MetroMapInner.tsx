@@ -2,10 +2,11 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap, LayerGroup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
+import { MARKER_COLORS, MARKER_LABELS, type TeamMarker } from '@/lib/teamMarkers';
 
 // Padding adapts to span: tight derbies get more breathing room than
 // continent-wide clusters. Returns south-west then north-east bound pairs.
@@ -72,6 +73,7 @@ export default function MetroMapInner({
   showConnections,
   boundary,
   interactiveFeatures = false,
+  markers,
 }: {
   points: MapPoint[];
   showConnections: boolean;
@@ -81,6 +83,10 @@ export default function MetroMapInner({
   // navigates to the metro detail page. Default false preserves the
   // single-boundary behavior used on metro detail and matchup pages.
   interactiveFeatures?: boolean;
+  // Team / venue markers, classified by category. Rendered above the
+  // boundary polygon and below the primary pin so the metro's home pin
+  // stays visually dominant.
+  markers?: TeamMarker[];
 }) {
   const router = useRouter();
   const single = points.length === 1;
@@ -159,6 +165,38 @@ export default function MetroMapInner({
           positions={points.map((p) => [p.lat, p.lon])}
           pathOptions={{ color: '#4ECDC4', weight: 2, dashArray: '6 6', opacity: 0.85 }}
         />
+      ) : null}
+      {markers && markers.length > 0 ? (
+        <LayerGroup>
+          {markers.map((m, idx) => {
+            const fill = MARKER_COLORS[m.category];
+            return (
+              <CircleMarker
+                key={`marker-${idx}-${m.lat}-${m.lng}`}
+                center={[m.lat, m.lng]}
+                radius={4}
+                pathOptions={{
+                  color: '#0f172a',
+                  weight: 1,
+                  fillColor: fill,
+                  fillOpacity: 0.9,
+                }}
+              >
+                <Tooltip direction="top" offset={[0, -4]} opacity={0.95}>
+                  <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.35 }}>
+                    <div style={{ fontWeight: 600 }}>{m.name}</div>
+                    <div style={{ color: '#9ca3af' }}>
+                      {m.sport}{m.league ? ` · ${m.league}` : ''}
+                    </div>
+                    <div style={{ color: fill, fontSize: 11, marginTop: 2 }}>
+                      {MARKER_LABELS[m.category]}
+                    </div>
+                  </div>
+                </Tooltip>
+              </CircleMarker>
+            );
+          })}
+        </LayerGroup>
       ) : null}
       {points.map((p) => (
         <CircleMarker

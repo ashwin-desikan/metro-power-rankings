@@ -237,6 +237,16 @@ def extract_teams(wb):
             team_entry['qid'] = qid
         if wiki_url:
             team_entry['wikipediaUrl'] = wiki_url
+        # Columns R/S (idx 17/18) = Lat / Long for the team's home venue (or for
+        # venue-class rows, the venue itself). Used to render team and venue
+        # markers on the metro detail page map. Both must be present and numeric
+        # for the marker to plot; otherwise the entry is rendered in the written
+        # sections only.
+        lat = safe_float(v[17]) if len(v) > 17 else 0
+        lng = safe_float(v[18]) if len(v) > 18 else 0
+        if lat or lng:
+            team_entry['lat'] = lat
+            team_entry['lng'] = lng
         teams.setdefault(metro, []).append(team_entry)
 
     # Note: RegTeams is intentionally NOT read. Team List is the single
@@ -415,7 +425,18 @@ def extract_mktcap(wb):
 
 
 def extract_football(wb):
-    """Extract football club data grouped by metro."""
+    """Extract football club data grouped by metro.
+
+    FootballClub_Data column layout (as of 2026-05-05):
+      0: Team, 1: City, 2: Metro Area, 3: County, 4: Country, 5: League,
+      6: Level, 7: Club, 8: Major League, 9: Latitude, 10: Longitude.
+
+    Country aggregate rows (col 7 = "Country") are pure roll-ups and have
+    no metro home; skip them. Cols 9/10 previously scaffolded for QID and
+    Wikipedia URL; the user repurposed them for venue coordinates on
+    2026-05-05. If a future pass adds club-level Wikidata linking, give
+    those columns a new home rather than reusing 9/10.
+    """
     ws = wb["FootballClub_Data"]
     football = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -424,11 +445,10 @@ def extract_football(wb):
         team_name = safe_str(v[0])  # Team name column
         if not metro or not team_name:
             continue
-        # Columns J/K (idx 9/10) = Wikidata QID and Wikipedia URL. Scaffolded
-        # but unpopulated as of 2026-04-24; null-safe so when soccer/football
-        # clubs get their own linking pass, no code change is required here.
-        qid = safe_str(v[9]) if len(v) > 9 else ''
-        wiki_url = safe_str(v[10]) if len(v) > 10 else ''
+        # Skip Country-level aggregate rows (~250 entries); they exist to
+        # carry a country-wide pin and are not stadiums.
+        if safe_str(v[7]) == 'Country':
+            continue
         entry = {
             'team': team_name,
             'city': safe_str(v[1]),
@@ -437,10 +457,13 @@ def extract_football(wb):
             'level': safe_int(v[6]),
             'major': safe_str(v[8]) == 'Y',
         }
-        if qid:
-            entry['qid'] = qid
-        if wiki_url:
-            entry['wikipediaUrl'] = wiki_url
+        # Cols 9/10 = Latitude / Longitude. Only attach when both are
+        # present and numeric so the marker layer can filter cleanly.
+        lat = safe_float(v[9]) if len(v) > 9 else 0
+        lng = safe_float(v[10]) if len(v) > 10 else 0
+        if lat or lng:
+            entry['lat'] = lat
+            entry['lng'] = lng
         football.setdefault(metro, []).append(entry)
     return football
 
@@ -681,6 +704,9 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
                 merged['qid'] = c['qid']
             if c.get('wikipediaUrl'):
                 merged['wikipediaUrl'] = c['wikipediaUrl']
+            if c.get('lat') is not None and c.get('lng') is not None:
+                merged['lat'] = c['lat']
+                merged['lng'] = c['lng']
             detail['teams'].append(merged)
 
     return detail

@@ -478,7 +478,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {/* Map: cluster context for any metro that's part of a multi-metro
             conurbation, single-point Location pin otherwise. Returns null
             for the handful of zero-coord workbook entries. */}
-        <MetroPageMap slug={slug} />
+        <MetroPageMap slug={slug} teams={detail.teams} />
 
         {/* Top Team : surfaced for metros that landed a pick on the Top
             Sports Teams sheet. Mirrors the Walkable Elite Quarters card so
