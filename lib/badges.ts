@@ -606,6 +606,11 @@ export type QualifyingMetro = {
   slug: string;
   name: string;
   country: string;
+  // ETL-resolved country slugs so badge rows can link to /countries/[slug].
+  // Prefers UK constituent (England / Scotland / etc.) when present;
+  // sovereignSlug holds the parent for breadcrumb-style links.
+  countrySlug?: string;
+  sovereignSlug?: string;
   rank: number;
   score: number;
   contextValue: number;
@@ -661,8 +666,13 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): nu
 }
 
 
-function loadCsv(relPath: string): Record<string, string>[] {
-  const path = join(process.cwd(), relPath);
+// IMPORTANT: the path is statically scoped under public/data/ so Turbopack's
+// File Tracing only walks that subtree at build time. A fully dynamic
+// path.join(process.cwd(), relPath) caused NFT to trace the entire project
+// root (~11k files) and pulled next.config.ts into the function bundle,
+// blowing past Vercel's deploy size limit. Always pass a bare filename here.
+function loadCsv(fileName: string): Record<string, string>[] {
+  const path = join(process.cwd(), "public", "data", fileName);
   if (!existsSync(path)) return [];
   const raw = readFileSync(path, "utf-8");
   const lines = raw.split(/\r?\n/).filter((l) => l.length > 0);
@@ -690,8 +700,8 @@ function getMetroIndex() {
   return _metroIndex;
 }
 
-function computeFromCsv(csvPath: string, valueColumn: string, contextLabel: string): QualifyingMetro[] {
-  const csv = loadCsv(csvPath);
+function computeFromCsv(csvName: string, valueColumn: string, contextLabel: string): QualifyingMetro[] {
+  const csv = loadCsv(csvName);
   const { bySlug } = getMetroIndex();
   const out: QualifyingMetro[] = [];
   for (const row of csv) {
@@ -700,6 +710,7 @@ function computeFromCsv(csvPath: string, valueColumn: string, contextLabel: stri
     if (!meta || isNaN(value)) continue;
     out.push({
       slug: meta.slug, name: meta.name, country: meta.country,
+      countrySlug: meta.countrySlug, sovereignSlug: meta.sovereignSlug,
       rank: meta.rank, score: meta.score,
       contextValue: value, contextLabel,
       tier: row.tier || undefined,
@@ -714,8 +725,8 @@ function computeFromCsv(csvPath: string, valueColumn: string, contextLabel: stri
 // badges.py (slug, name, country, rank, cluster_id, cluster_size,
 // cluster_diameter_km, cluster_member_slugs, cluster_member_names,
 // cluster_other_slugs, cluster_other_names, tier).
-function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
-  const csv = loadCsv(csvPath);
+function computeClustersFromCsv(csvName: string): QualifyingMetro[] {
+  const csv = loadCsv(csvName);
   const { bySlug } = getMetroIndex();
   // Build one QualifyingMetro per cluster: the cluster's lead (lowest-rank
   // member). The cluster's full member list lives on `cluster.memberSlugs`/
@@ -746,8 +757,14 @@ function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
       if (mm?.country && !memberCountries.includes(mm.country)) memberCountries.push(mm.country);
     }
     const countryDisplay = memberCountries.length > 0 ? memberCountries.join(" / ") : meta.country;
+    // Country links only make sense when every member shares one country.
+    // Multi-country clusters (e.g. Detroit-Windsor) render the joined string
+    // as plain text since the link target is ambiguous.
+    const sameCountry = memberCountries.length <= 1;
     const qm: QualifyingMetro = {
       slug: meta.slug, name: meta.name, country: countryDisplay,
+      countrySlug: sameCountry ? meta.countrySlug : undefined,
+      sovereignSlug: sameCountry ? meta.sovereignSlug : undefined,
       rank: meta.rank, score: meta.score,
       contextValue: scoreSum, contextLabel: "Cluster score",
       tier: row.tier || undefined,
@@ -767,7 +784,7 @@ function computeClustersFromCsv(csvPath: string): QualifyingMetro[] {
 // own rank is more than 300 km. Sorted by distance descending: most-isolated
 // first.
 function computeIsolatedCapitalRows(): QualifyingMetro[] {
-  const csv = loadCsv("public/data/isolated-capital.csv");
+  const csv = loadCsv("isolated-capital.csv");
   const { bySlug } = getMetroIndex();
   const out: QualifyingMetro[] = [];
   for (const row of csv) {
@@ -776,6 +793,7 @@ function computeIsolatedCapitalRows(): QualifyingMetro[] {
     if (!meta || isNaN(value)) continue;
     out.push({
       slug: meta.slug, name: meta.name, country: meta.country,
+      countrySlug: meta.countrySlug, sovereignSlug: meta.sovereignSlug,
       rank: meta.rank, score: meta.score,
       contextValue: value, contextLabel: "km to nearest tier-comparable peer",
       tier: row.tier || undefined,
@@ -792,7 +810,7 @@ function computeIsolatedCapitalRows(): QualifyingMetro[] {
 // ---------- Live computes ----------
 
 function computeUniversityTown(): QualifyingMetro[] {
-  const csv = loadCsv("public/data/academic-gravity-wells.csv");
+  const csv = loadCsv("academic-gravity-wells.csv");
   const { bySlug, byName } = getMetroIndex();
   const out: QualifyingMetro[] = [];
   for (const row of csv) {
@@ -801,6 +819,7 @@ function computeUniversityTown(): QualifyingMetro[] {
     if (!meta || isNaN(share)) continue;
     out.push({
       slug: meta.slug, name: meta.name, country: meta.country,
+      countrySlug: meta.countrySlug, sovereignSlug: meta.sovereignSlug,
       rank: meta.rank, score: meta.score,
       contextValue: share, contextLabel: "University share",
       tier: row.tier,
@@ -811,7 +830,7 @@ function computeUniversityTown(): QualifyingMetro[] {
 }
 
 function computeSkylineCity(): QualifyingMetro[] {
-  const csv = loadCsv("public/data/skyline-cities.csv");
+  const csv = loadCsv("skyline-cities.csv");
   const { bySlug, byName } = getMetroIndex();
   const out: QualifyingMetro[] = [];
   for (const row of csv) {
@@ -820,6 +839,7 @@ function computeSkylineCity(): QualifyingMetro[] {
     if (!meta || isNaN(share)) continue;
     out.push({
       slug: meta.slug, name: meta.name, country: meta.country,
+      countrySlug: meta.countrySlug, sovereignSlug: meta.sovereignSlug,
       rank: meta.rank, score: meta.score,
       contextValue: share, contextLabel: "Skyscraper share",
       tier: row.tier,
@@ -834,18 +854,19 @@ function computeMegacity(): QualifyingMetro[] {
     .filter((m) => (m.pop ?? 0) >= 5_000_000)
     .map((m) => ({
       slug: m.slug, name: m.name, country: m.country,
+      countrySlug: m.countrySlug, sovereignSlug: m.sovereignSlug,
       rank: m.rank, score: m.score,
       contextValue: m.pop, contextLabel: "Population",
     }))
     .sort((a, b) => b.contextValue - a.contextValue);
 }
 
-function computeGlobalGateway() { return computeFromCsv("public/data/global-gateway.csv", "airport_score", "Airport score"); }
-function computeFinanceCapital() { return computeFromCsv("public/data/finance-capital.csv", "marketCap", "Market cap (USD)"); }
-function computeCultureCapital() { return computeFromCsv("public/data/culture-capital.csv", "culture_score", "Culture composite"); }
-function computeSportsMecca() { return computeFromCsv("public/data/sports-mecca.csv", "sports_score", "Sports composite"); }
-function computeRailHub() { return computeFromCsv("public/data/rail-hub.csv", "rail_score", "Rail composite"); }
-function computeOverperformer() { return computeFromCsv("public/data/overperformer.csv", "multiple", "Pop-rank to score-rank multiple"); }
+function computeGlobalGateway() { return computeFromCsv("global-gateway.csv", "airport_score", "Airport score"); }
+function computeFinanceCapital() { return computeFromCsv("finance-capital.csv", "marketCap", "Market cap (USD)"); }
+function computeCultureCapital() { return computeFromCsv("culture-capital.csv", "culture_score", "Culture composite"); }
+function computeSportsMecca() { return computeFromCsv("sports-mecca.csv", "sports_score", "Sports composite"); }
+function computeRailHub() { return computeFromCsv("rail-hub.csv", "rail_score", "Rail composite"); }
+function computeOverperformer() { return computeFromCsv("overperformer.csv", "multiple", "Pop-rank to score-rank multiple"); }
 function computeConurbations(): QualifyingMetro[] {
   const { bySlug } = getMetroIndex();
 
@@ -878,8 +899,14 @@ function computeConurbations(): QualifyingMetro[] {
       if (m.country && !memberCountries.includes(m.country)) memberCountries.push(m.country);
     }
     const countryDisplay = ng.country ?? memberCountries.join(" / ");
+    // Single-country named megaregions get linked country slugs; multi-
+    // country megaregions (e.g. anything spanning two sovereigns) leave
+    // them undefined so the joined display text renders without a link.
+    const sameCountry = memberCountries.length <= 1 && !ng.country;
     namedRows.push({
       slug: lead.slug, name: ng.displayName, country: countryDisplay,
+      countrySlug: sameCountry ? lead.countrySlug : undefined,
+      sovereignSlug: sameCountry ? lead.sovereignSlug : undefined,
       rank: lead.rank, score: lead.score,
       contextValue: scoreSum, contextLabel: "Cluster score",
       tier,
@@ -898,7 +925,7 @@ function computeConurbations(): QualifyingMetro[] {
   }
 
   // 2. Auto clusters: drop any whose membership intersects a named megaregion.
-  const autoRaw = computeClustersFromCsv("public/data/conurbations.csv");
+  const autoRaw = computeClustersFromCsv("conurbations.csv");
   const auto = autoRaw.filter((q) => {
     if (!q.cluster) return true;
     return !q.cluster.memberSlugs.some((s) => claimedByNamed.has(s));
@@ -919,6 +946,7 @@ function computeConurbations(): QualifyingMetro[] {
     const tier = score >= 100 ? "A" : score >= 50 ? "B" : score >= 20 ? "C" : "D";
     overrides.push({
       slug: meta.slug, name: ov.displayName ?? meta.name, country: meta.country,
+      countrySlug: meta.countrySlug, sovereignSlug: meta.sovereignSlug,
       rank: meta.rank, score: meta.score,
       contextValue: score, contextLabel: "Cluster score",
       tier,
