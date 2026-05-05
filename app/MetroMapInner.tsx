@@ -7,6 +7,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
 import { MARKER_COLORS, MARKER_LABELS, sortForRender, formatLevel, type TeamMarker } from '@/lib/teamMarkers';
+import { normalizeSport } from '@/lib/sportLabels';
 
 // Padding adapts to span: tight derbies get more breathing room than
 // continent-wide clusters. Returns south-west then north-east bound pairs.
@@ -191,7 +192,7 @@ export default function MetroMapInner({
                   <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
                     <div style={{ fontWeight: 600 }}>{m.name}</div>
                     <div style={{ color: '#9ca3af' }}>
-                      {m.sport}{m.league ? ` · ${m.league}` : ''}
+                      {normalizeSport(m.sport)}{m.league ? ` · ${m.league}` : ''}
                     </div>
                     {levelLabel ? (
                       <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 1 }}>

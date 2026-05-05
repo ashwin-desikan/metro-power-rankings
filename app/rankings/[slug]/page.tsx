@@ -21,6 +21,7 @@ import {
   topTeamAnchorId,
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
+import { normalizeSport } from "@/lib/sportLabels";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -514,7 +515,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                           ? "College Football"
                           : topTeamPick.sport === "Basketball (NCAA)"
                           ? "College Basketball"
-                          : topTeamPick.sport}
+                          : normalizeSport(topTeamPick.sport)}
                       </span>
                     )}
                     {topTeamPick.team.includes("/") && (
@@ -733,7 +734,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             .map((t) => ({
               name: t.team,
               city: t.city,
-              subtype: t.sport,
+              subtype: normalizeSport(t.sport),
               type: "Sporting Event",
               annual: true,
             }));
@@ -1211,7 +1212,10 @@ function sortTeamsFootballFirst(
 }
 
 function normalizeTeamSport(sport: string): string {
-  return sport === "Soccer" ? "Football/Soccer" : sport;
+  // Delegates to the shared sport-label rule. Local shim retained so
+  // existing call sites (TeamCard, sortTeamsFootballFirst predicates)
+  // don't have to be touched while the underlying mapping evolves.
+  return normalizeSport(sport);
 }
 
 function TeamsSection({

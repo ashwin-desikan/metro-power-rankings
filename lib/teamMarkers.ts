@@ -23,7 +23,14 @@ export type TeamMarker = {
   sport: string;
   league: string;
   level?: string;
+  // Primary category drives marker color and z-order. Major League takes
+  // precedence over the venue label, so Beaver Stadium / MSG / Wembley
+  // render in emerald.
   category: MarkerCategory;
+  // Every category this marker satisfies. A major-quality venue carries
+  // both "majorLeague" and "venue" so it surfaces under either filter.
+  // Used by the filter UI for ANY-match visibility.
+  categories: MarkerCategory[];
 };
 
 type TeamLike = {
@@ -47,6 +54,20 @@ export function classifyTeam(t: TeamLike): MarkerCategory {
   return "otherTeam";
 }
 
+// All categories the marker satisfies. The primary `category` is one of
+// these; venues that are also major-quality get tagged with both so the
+// Venues filter shows them alongside non-major venues.
+export function deriveCategories(t: TeamLike): MarkerCategory[] {
+  const isVenueLeague = t.league === "Notable Venues" || t.league === "Historic Venues";
+  const isAnnual = t.annual === true;
+  const isVenue = isVenueLeague || isAnnual;
+  const out: MarkerCategory[] = [];
+  if (t.major) out.push("majorLeague");
+  if (isVenue) out.push("venue");
+  if (!t.major && !isVenue) out.push("otherTeam");
+  return out;
+}
+
 export function buildMarkers(teams: readonly TeamLike[] | undefined): TeamMarker[] {
   if (!teams) return [];
   const out: TeamMarker[] = [];
@@ -62,6 +83,7 @@ export function buildMarkers(teams: readonly TeamLike[] | undefined): TeamMarker
       league: t.league,
       level: t.level && t.level !== "" ? t.level : undefined,
       category: classifyTeam(t),
+      categories: deriveCategories(t),
     });
   }
   return spreadColocated(dedupeIdentical(out));
@@ -151,14 +173,15 @@ export function sortForRender(markers: TeamMarker[]): TeamMarker[] {
   );
 }
 
-// Visual palette. Picked to read against the dark CARTO basemap and to
-// stay distinct from the polygon fill (#4ECDC4) and tier accents in
-// MetroMapInner. Major league = bright emerald, venues = warm amber,
-// other teams = muted slate so dense metros don't flood the eye.
+// Visual palette. Picked to read against the dark CARTO basemap AND the
+// teal #4ECDC4 boundary polygon so no marker color competes with the
+// metro footprint. Major league = warm gold (premier connotation),
+// venues = magenta (high contrast against teal and gold), other teams
+// = light slate (recessive so dense metros don't flood the eye).
 export const MARKER_COLORS: Record<MarkerCategory, string> = {
-  majorLeague: "#10b981", // emerald-500
-  venue: "#f59e0b",       // amber-500
-  otherTeam: "#94a3b8",   // slate-400
+  majorLeague: "#fbbf24", // amber-400 / warm gold
+  venue: "#ec4899",       // pink-500 / magenta
+  otherTeam: "#cbd5e1",   // slate-300 / soft neutral
 };
 
 export const MARKER_LABELS: Record<MarkerCategory, string> = {

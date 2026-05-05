@@ -9,6 +9,7 @@ import {
   serializeJsonLd,
 } from "@/lib/seo";
 import { TOP_TEAMS, topTeamAnchorId } from "@/lib/topTeams";
+import { normalizeSport } from "@/lib/sportLabels";
 
 export const dynamicParams = false;
 
@@ -128,11 +129,13 @@ function resolveSlug(metro: string, index: Map<string, string>): string | null {
 }
 
 // Sport label normalization for display: keep dataset labels but soften the
-// (NCAA) suffix into a parenthetical that reads better in card chrome.
+// (NCAA) suffix into a parenthetical that reads better in card chrome,
+// and route the global "Football"/"Soccer" labels through the shared
+// rule so readers always see "Football/Soccer".
 function sportLabel(sport: string): string {
   if (sport === "American Football (NCAA)") return "College Football";
   if (sport === "Basketball (NCAA)") return "College Basketball";
-  return sport;
+  return normalizeSport(sport);
 }
 
 // Aggregate counts for the summary chips at the top of the page. Computed at
