@@ -6,6 +6,7 @@ import MetroMap, { type MapPoint } from '@/app/MetroMap';
 import {
   MARKER_COLORS,
   MARKER_LABELS,
+  filterCategoryFor,
   type MarkerCategory,
   type TeamMarker,
 } from '@/lib/teamMarkers';
@@ -38,12 +39,15 @@ export default function MapWithFilters({
   markers: TeamMarker[];
   height: number;
 }) {
-  // A marker counts toward every category in its categories[] array.
-  // Beaver Stadium (majorLeague + venue) increments both totals.
+  // Each marker counts toward exactly one chip — its filterCategory —
+  // so totals never double-count and the chip number matches what the
+  // filter actually reveals when toggled. Beaver Stadium (tagged
+  // majorLeague + venue) counts toward Venues only, since the Venues
+  // toggle is what controls its visibility.
   const counts = useMemo(() => {
     const c: Record<MarkerCategory, number> = { majorLeague: 0, otherTeam: 0, venue: 0 };
     for (const m of markers) {
-      for (const cat of m.categories) c[cat] += 1;
+      c[filterCategoryFor(m)] += 1;
     }
     return c;
   }, [markers]);
@@ -81,7 +85,10 @@ export default function MapWithFilters({
   const visibleMarkers = useMemo(() => {
     const allSportsSelected = selectedSports.size === allSports.length;
     return markers.filter((m) => {
-      const catMatch = m.categories.some((c) => activeCats.has(c));
+      // Visibility is governed by a single category (filterCategoryFor):
+      // venue beats majorLeague, so Major League Venues only show when
+      // Venues is on. Major League toggled alone will not surface them.
+      const catMatch = activeCats.has(filterCategoryFor(m));
       if (!catMatch) return false;
       if (allSportsSelected) return true;
       return selectedSports.has(normalizeSport(m.sport));

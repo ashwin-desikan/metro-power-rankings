@@ -1,10 +1,10 @@
-// Country-level boundary aggregator. Server-only (uses fs.readFileSync).
+// Country / state-level boundary aggregator. Server-only (uses fs.readFileSync).
 //
-// For a given country slug, reads each member metro's boundary GeoJSON from
-// public/data/metro-boundaries/{slug}.geojson, injects per-metro metadata
-// (name, rank, score, tier, population) into the Feature's properties, and
-// returns a single FeatureCollection that can be fed to react-leaflet's
-// <GeoJSON> component for the country map.
+// For a given country or state, reads each member metro's boundary GeoJSON
+// from public/data/metro-boundaries/{slug}.geojson, injects per-metro
+// metadata (name, rank, score, tier, population) into the Feature's
+// properties, and returns a single FeatureCollection that can be fed to
+// react-leaflet's <GeoJSON> component.
 //
 // Returns null when no member metros have boundaries on disk; the caller
 // should fall back gracefully.
@@ -17,6 +17,7 @@ import { readFileSync, existsSync } from "fs";
 import { join } from "path";
 import { getMetrosForCountry } from "./countries";
 import { computeTier } from "./tiers";
+import type { Metro } from "./shared";
 
 type GeoJSONFeature = {
   type: "Feature";
@@ -44,7 +45,13 @@ const BOUNDARY_DIR = join(
 );
 
 export function loadCountryBoundaries(slug: string): CountryBoundaryResult {
-  const metros = getMetrosForCountry(slug);
+  return loadBoundariesForMetros(getMetrosForCountry(slug));
+}
+
+// Reusable: aggregate boundaries for any list of metros (state pages
+// pass the metros for that state directly). Same payload shape as the
+// country-level aggregator so the same map component handles both.
+export function loadBoundariesForMetros(metros: readonly Metro[]): CountryBoundaryResult {
   const features: GeoJSONFeature[] = [];
   let totalBytes = 0;
 

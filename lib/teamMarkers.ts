@@ -68,6 +68,22 @@ export function deriveCategories(t: TeamLike): MarkerCategory[] {
   return out;
 }
 
+// The filter category determines which single chip controls a marker's
+// visibility. Venue beats majorLeague: a Major League Venue (Beaver Stadium,
+// MSG, Wembley) is governed by the Venues toggle alone — turning Major
+// League on without Venues will NOT surface it. This satisfies the rule:
+//   Both ML and V on  → all categories visible
+//   ML on, V off       → only pure-team Major League rows; no venues
+//   ML off, V on       → all venues (including major-quality)
+//   Both off            → nothing
+// Each marker counts toward exactly one chip count under this rule, so
+// totals don't double-count.
+export function filterCategoryFor(m: TeamMarker): MarkerCategory {
+  if (m.categories.includes("venue")) return "venue";
+  if (m.categories.includes("majorLeague")) return "majorLeague";
+  return "otherTeam";
+}
+
 export function buildMarkers(teams: readonly TeamLike[] | undefined): TeamMarker[] {
   if (!teams) return [];
   const out: TeamMarker[] = [];
