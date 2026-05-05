@@ -19,7 +19,14 @@ Initial routing:
   Mexico         -> counties      (SOURCE_PARQUET)
   Canada         -> municipality  (SOURCE_PARQUET)
   United Kingdom -> municipality  (SOURCE_PARQUET)
-  France         -> municipality  (SOURCE_PARQUET)
+  France         -> municipality  (overture-FR.parquet)
+  Germany        -> municipality  (overture-DE.parquet)
+  Italy          -> municipality  (overture-IT.parquet)
+  Spain          -> municipality  (overture-ES.parquet)
+  Poland         -> municipality  (overture-PL.parquet)
+  Andorra        -> municipality  (SOURCE_PARQUET)
+  San Marino     -> municipality  (SOURCE_PARQUET)
+  Vatican City   -> municipality  (SOURCE_PARQUET)
 
 Incremental build (build cache):
   Each metro's polygon is the function of its sorted (region, subtype,
@@ -111,8 +118,11 @@ COUNTRY_PARQUET_MAP = {
     # file. Generate via scripts/extract-overture-parquet.py.
     "France":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
     "Germany": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
-    # Add additional per-country parquet entries here as you produce them:
-    # "Italy":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IT.parquet",
+    "Italy":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IT.parquet",
+    "Spain":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ES.parquet",
+    "Poland":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-PL.parquet",
+    # Andorra, San Marino, Vatican City are tiny enough to fall through to
+    # the global SOURCE_PARQUET; no per-country parquet needed.
 }
 
 
@@ -124,6 +134,12 @@ COUNTRY_SHEET_MAP = {
     "United Kingdom": "municipality",
     "France":         "municipality",
     "Germany":        "municipality",
+    "Italy":          "municipality",
+    "Spain":          "municipality",
+    "Poland":         "municipality",
+    "Andorra":        "municipality",
+    "San Marino":     "municipality",
+    "Vatican City":   "municipality",
 }
 
 COUNTRY_TO_ISO = {
@@ -133,6 +149,12 @@ COUNTRY_TO_ISO = {
     "United Kingdom": "GB",
     "France":         "FR",
     "Germany":        "DE",
+    "Italy":          "IT",
+    "Spain":          "ES",
+    "Poland":         "PL",
+    "Andorra":        "AD",
+    "San Marino":     "SM",
+    "Vatican City":   "VA",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {

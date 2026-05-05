@@ -5,6 +5,15 @@ export interface Metro {
   slug: string;
   name: string;
   country: string;
+  // ETL-resolved slug for /countries/[slug]. Prefers UK constituent
+  // (England / Scotland / Wales / Northern Ireland) when present; falls
+  // back to the sovereign country. Set when the country name matches a
+  // row in public/data/countries.json.
+  countrySlug?: string;
+  // Sovereign country slug for breadcrumb-style links when the metro is in
+  // a constituent (e.g. Manchester's countrySlug = 'england', sovereignSlug
+  // = 'united-kingdom'). Only set when the two differ.
+  sovereignSlug?: string;
   subCountry?: string;
   primaryState?: string;
   state2?: string;
@@ -70,6 +79,17 @@ export function formatGdp(n: number): string {
   if (n >= 1) return "$" + n.toFixed(0) + "B";
   if (n > 0) return "$" + (n * 1000).toFixed(0) + "M";
   return "N/A";
+}
+
+// Kebab-case slug for any free-text label (region names, etc.). Used to
+// build anchor IDs on the homepage that the metro page links into.
+export function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 export function formatDimValue(key: string, value: number): string {

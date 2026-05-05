@@ -53,6 +53,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-05",
+    headline: "Country pages, state pages, team markers, six more countries",
+    items: [
+      "Every country and every state with metros now has its own page, with a tier-colored map of all member metros and a full ranked table.",
+      "Metro maps now show team and venue markers (Major League gold, other teams slate, venues magenta) with a sport filter, and Football/Soccer is unified as one label everywhere.",
+      "Real administrative boundaries added for Italy (84 metros), Spain (103), Poland (71), Andorra, San Marino, and Vatican City; the polygon map now spans 12 countries.",
+      "Country, state, and region names across the site now link to their canonical pages; Warrington merges into Liverpool (UK 179 metros, total 4,283).",
+    ],
+  },
+  {
     date: "2026-05-04",
     headline: "Real boundaries for North America, the UK, France, and Germany",
     items: [

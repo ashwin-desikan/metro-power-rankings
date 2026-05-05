@@ -1,4 +1,4 @@
-import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors } from '@/lib/data';
+import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors, slugify } from '@/lib/data';
 import RankingsTable from './RankingsTable';
 import Link from 'next/link';
 import { readFileSync } from 'fs';
@@ -179,7 +179,8 @@ export default async function Home() {
             {regions.map((region) => (
               <div
                 key={region.name}
-                className="p-6 rounded-lg border transition-all hover:border-[var(--accent)]"
+                id={`region-${slugify(region.name)}`}
+                className="p-6 rounded-lg border transition-all hover:border-[var(--accent)] scroll-mt-24"
                 style={{
                   backgroundColor: 'var(--bg-card)',
                   borderColor: 'var(--border)',

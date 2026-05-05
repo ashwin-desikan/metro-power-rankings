@@ -50,7 +50,7 @@ OUT_DIR = Path(os.environ.get(
     "OVERTURE_PER_COUNTRY_DIR",
     str(Path(SOURCE_PARQUET).parent),
 ))
-DEFAULT_COUNTRIES = ("GB", "DE", "FR", "IT", "ES", "NL", "PL", "JP")
+DEFAULT_COUNTRIES = ("GB", "DE", "FR", "IT", "ES", "NL", "PL", "JP", "AD", "SM", "VA")
 COUNTRIES = tuple(
     s.strip().upper()
     for s in os.environ.get(
@@ -164,6 +164,9 @@ def main():
             "NL": "Netherlands",
             "PL": "Poland",
             "JP": "Japan",
+            "AD": "Andorra",
+            "SM": "San Marino",
+            "VA": "Vatican City",
         }.get(iso, iso)
         print(f'    "{hint}": r"{out_paths[iso]}",')
 

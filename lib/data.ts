@@ -6,7 +6,7 @@ import { join } from "path";
 
 // Re-export shared types for convenience in server components
 export type { Metro, Region } from "./shared";
-export { formatPop, formatMarketCap, formatGdp, formatDimValue, regionColors } from "./shared";
+export { formatPop, formatMarketCap, formatGdp, formatDimValue, regionColors, slugify } from "./shared";
 
 export interface MetroDetail {
   metro: {
@@ -14,9 +14,21 @@ export interface MetroDetail {
     name: string;
     country: string;
     subCountry?: string;
+    // ETL-resolved slugs for /countries/[...] and /states/[...] links.
+    // countrySlug prefers UK constituent (England / Scotland / etc.) when
+    // present; sovereignSlug holds the parent (united-kingdom) for those
+    // cases so breadcrumbs can link both levels.
+    countrySlug?: string;
+    sovereignSlug?: string;
+    stateSlug?: string;
+    state2Slug?: string;
+    state3Slug?: string;
+    additionalStates?: { name: string; slug?: string }[];
     language?: string;
     capital?: string; // "X" = largest city, "Y" = capital, "XY" = both, "" = neither
     primaryState?: string;
+    state2?: string;
+    state3?: string;
     region: string;
     pop: number;
     score: number;

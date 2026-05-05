@@ -10,6 +10,7 @@ import {
   formatGdp,
   formatDimValue,
   regionColors,
+  slugify,
 } from "@/lib/data";
 import { BASE_URL, placeJsonLd, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import {
@@ -275,15 +276,36 @@ export default async function MetroDetailPage({ params }: PageProps) {
             Rankings
           </a>
           <span>/</span>
-          <span className="text-[var(--text)]">
+          <a
+            href={`/#region-${slugify(metro.region)}`}
+            className="text-[var(--text)] hover:text-[var(--accent)] transition"
+          >
             {metro.region}
-          </span>
+          </a>
           <span>/</span>
-          <span className="text-[var(--text)]">{metro.country}</span>
+          {(metro.sovereignSlug ?? metro.countrySlug) ? (
+            <Link
+              href={`/countries/${metro.sovereignSlug ?? metro.countrySlug}`}
+              className="text-[var(--text)] hover:text-[var(--accent)]"
+            >
+              {metro.country}
+            </Link>
+          ) : (
+            <span className="text-[var(--text)]">{metro.country}</span>
+          )}
           {metro.subCountry && (
             <>
               <span>/</span>
-              <span className="text-[var(--text)]">{metro.subCountry}</span>
+              {metro.countrySlug ? (
+                <Link
+                  href={`/countries/${metro.countrySlug}`}
+                  className="text-[var(--text)] hover:text-[var(--accent)]"
+                >
+                  {metro.subCountry}
+                </Link>
+              ) : (
+                <span className="text-[var(--text)]">{metro.subCountry}</span>
+              )}
             </>
           )}
           <span>/</span>
@@ -298,9 +320,38 @@ export default async function MetroDetailPage({ params }: PageProps) {
             </h1>
             <div className="space-y-2 text-[var(--text-muted)]">
               <p className="text-lg">
-                {metro.country}
-                {metro.subCountry && <> • <span className="text-[var(--text)]">{metro.subCountry}</span></>}
-                {" "}• {metro.region}
+                {(metro.sovereignSlug ?? metro.countrySlug) ? (
+                  <Link
+                    href={`/countries/${metro.sovereignSlug ?? metro.countrySlug}`}
+                    className="hover:text-[var(--accent)]"
+                  >
+                    {metro.country}
+                  </Link>
+                ) : (
+                  metro.country
+                )}
+                {metro.subCountry && (
+                  <>
+                    {" "}•{" "}
+                    {metro.countrySlug ? (
+                      <Link
+                        href={`/countries/${metro.countrySlug}`}
+                        className="text-[var(--text)] hover:text-[var(--accent)]"
+                      >
+                        {metro.subCountry}
+                      </Link>
+                    ) : (
+                      <span className="text-[var(--text)]">{metro.subCountry}</span>
+                    )}
+                  </>
+                )}
+                {" "}•{" "}
+                <a
+                  href={`/#region-${slugify(metro.region)}`}
+                  className="hover:text-[var(--accent)]"
+                >
+                  {metro.region}
+                </a>
               </p>
               {metro.primaryCity && (
                 <p className="text-lg">
@@ -309,7 +360,17 @@ export default async function MetroDetailPage({ params }: PageProps) {
               )}
               {metro.primaryState && (
                 <p className="text-lg">
-                  Primary State/Province: <span className="text-[var(--text)]">{metro.primaryState}</span>
+                  Primary State/Province:{" "}
+                  {metro.stateSlug ? (
+                    <Link
+                      href={`/states/${metro.stateSlug}`}
+                      className="text-[var(--text)] hover:text-[var(--accent)]"
+                    >
+                      {metro.primaryState}
+                    </Link>
+                  ) : (
+                    <span className="text-[var(--text)]">{metro.primaryState}</span>
+                  )}
                 </p>
               )}
               {metro.language && (
@@ -456,7 +517,19 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-amber-400">National Capital</p>
-                      <p className="text-xs text-[var(--text-muted)]">Capital city of {metro.country}</p>
+                      <p className="text-xs text-[var(--text-muted)]">
+                        Capital city of{" "}
+                        {(metro.sovereignSlug ?? metro.countrySlug) ? (
+                          <Link
+                            href={`/countries/${metro.sovereignSlug ?? metro.countrySlug}`}
+                            className="hover:text-[var(--accent)]"
+                          >
+                            {metro.country}
+                          </Link>
+                        ) : (
+                          metro.country
+                        )}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -467,7 +540,19 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-blue-400">Largest City</p>
-                      <p className="text-xs text-[var(--text-muted)]">Largest metro area in {metro.country}</p>
+                      <p className="text-xs text-[var(--text-muted)]">
+                        Largest metro area in{" "}
+                        {(metro.sovereignSlug ?? metro.countrySlug) ? (
+                          <Link
+                            href={`/countries/${metro.sovereignSlug ?? metro.countrySlug}`}
+                            className="hover:text-[var(--accent)]"
+                          >
+                            {metro.country}
+                          </Link>
+                        ) : (
+                          metro.country
+                        )}
+                      </p>
                     </div>
                   </div>
                 )}
