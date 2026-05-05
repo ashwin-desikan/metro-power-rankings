@@ -273,6 +273,11 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                 Region
               </th>
               <th
+                className="hidden md:table-cell px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]"
+              >
+                State
+              </th>
+              <th
                 className="hidden sm:table-cell px-4 py-3 text-right text-sm font-semibold text-[var(--text-muted)]"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
@@ -320,6 +325,39 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                         regionColors[metro.region] || 'var(--text-dim)',
                     }}
                   />
+                </td>
+                <td className="hidden md:table-cell px-4 py-3 text-sm" onClick={(e) => e.stopPropagation()}>
+                  {metro.primaryState ? (
+                    metro.stateSlug ? (
+                      <Link href={`/states/${metro.stateSlug}`} className="text-[var(--text)] hover:text-[var(--accent)]">
+                        {metro.primaryState}
+                      </Link>
+                    ) : (
+                      <span className="text-[var(--text)]">{metro.primaryState}</span>
+                    )
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
+                  {(metro.state2 || metro.state3 || (metro.additionalStates && metro.additionalStates.length > 0)) ? (
+                    <div className="text-[10px] text-[var(--text-dim)] mt-0.5">
+                      {[
+                        metro.state2 ? { name: metro.state2, slug: metro.state2Slug } : null,
+                        metro.state3 ? { name: metro.state3, slug: metro.state3Slug } : null,
+                        ...(metro.additionalStates ?? []),
+                      ]
+                        .filter((s): s is { name: string; slug?: string } => s !== null)
+                        .map((s, idx, arr) => (
+                          <span key={`${s.name}-${idx}`}>
+                            {s.slug ? (
+                              <Link href={`/states/${s.slug}`} className="hover:text-[var(--accent)]">{s.name}</Link>
+                            ) : (
+                              <span>{s.name}</span>
+                            )}
+                            {idx < arr.length - 1 ? <span> · </span> : null}
+                          </span>
+                        ))}
+                    </div>
+                  ) : null}
                 </td>
                 <td
                   className="hidden sm:table-cell px-4 py-3 text-right text-sm text-[var(--text)]"

@@ -424,6 +424,246 @@ def extract_mktcap(wb):
     return mktcap
 
 
+def _slugify_state(name):
+    """Slug-ify a state/admin division name for use in URLs."""
+    if not name:
+        return ""
+    s = safe_str(name).lower()
+    # Strip diacritics
+    import unicodedata
+    s = unicodedata.normalize('NFKD', s)
+    s = ''.join(c for c in s if not unicodedata.combining(c))
+    # Replace common punctuation/whitespace
+    out = []
+    for ch in s:
+        if ch.isalnum():
+            out.append(ch)
+        elif ch in (' ', '-', '_', '/', '.', "'", '(', ')'):
+            out.append('-')
+    s = ''.join(out)
+    # Collapse repeated dashes and trim
+    while '--' in s:
+        s = s.replace('--', '-')
+    return s.strip('-')
+
+
+# Editorial overrides: metros whose real footprint spans more states/
+# administrative areas than the workbook's primary/state2/state3 columns
+# can carry. Each metro lists ADDITIONAL state names (in addition to its
+# primaryState/state2/state3) to render on the metro page tables and to
+# include in /states/[slug] pages for those states.
+#
+# Names must match the Administrative Division (col 2) in the States sheet
+# under the metro's country (or subCountry for UK constituents). Add new
+# entries here as editorial calls land.
+METRO_ADDITIONAL_STATES = {
+    # Greater London Built-Up Area extends well beyond the boundary of the
+    # GLA into the home counties; commuter belt covers Surrey,
+    # Hertfordshire, and Berkshire.
+    "London": ["Surrey", "Hertfordshire", "Berkshire"],
+}
+
+
+def extract_states(wb, all_metros):
+    """Extract states/provinces from the States (ISO 3166-2) sheet.
+
+    Returns:
+      states_list: list of state dicts ready for states.json
+      metro_state_slugs: dict {metro_name: {primary?, state2?, state3?}}
+        Each value is a dict with up to three keys mapping the metro's
+        primaryState / state2 / state3 names to their resolved state slugs.
+        Missing keys mean the lookup found no match (state isn't in the
+        ISO sheet under either country or subCountry).
+
+    Keying: (Country, Administrative Division) is the canonical pair. Cross-
+    reference each metro's (country, primaryState) against this pair, falling
+    back to (subCountry, primaryState) for UK constituents whose metros tag
+    country='United Kingdom' but the States sheet stores them under
+    Country='England' / 'Scotland' / 'Wales' / 'Northern Ireland'.
+
+    Slug rule: kebab-cased Administrative Division. On collision (Punjab in
+    India + Pakistan, Amazonas in Brazil/Venezuela/Colombia), append the
+    country slug to disambiguate. Final fallback prepends ISO if available.
+    """
+    if "States (ISO 3166-2)" not in wb.sheetnames:
+        return [], {}
+    ws = wb["States (ISO 3166-2)"]
+
+    # Pre-compute country slug map from metros so state slug collisions can
+    # disambiguate using the same conventions as country pages.
+    country_slug = {}
+    for m in all_metros:
+        country_slug[m['country']] = m['country'].lower().replace(' ', '-')
+        if m.get('subCountry'):
+            country_slug[m['subCountry']] = m['subCountry'].lower().replace(' ', '-')
+
+    # Pass 1: collect raw state rows.
+    raw = []
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        v = list(row)
+        admin = safe_str(v[2]) if len(v) > 2 else ''
+        country = safe_str(v[4]) if len(v) > 4 else ''
+        if not admin or not country:
+            continue
+        raw.append({
+            'name': admin,
+            'type': safe_str(v[3]) if len(v) > 3 else '',
+            'country': country,  # the immediate parent in the sheet (England, Anguilla, etc.)
+            'pop': safe_int(v[5]) if len(v) > 5 else 0,
+            'capital': safe_str(v[6]) if len(v) > 6 else '',
+            'continent': safe_str(v[8]) if len(v) > 8 else '',
+            'iso': safe_str(v[9]) if len(v) > 9 else '',
+            'subRegion': safe_str(v[10]) if len(v) > 10 else '',
+            'mainCountry': safe_str(v[11]) if len(v) > 11 else '',
+            'languageAdmin': safe_str(v[12]) if len(v) > 12 else '',
+            'languageSecondary': safe_str(v[13]) if len(v) > 13 else '',
+            'languageDeFacto': safe_str(v[16]) if len(v) > 16 else '',
+            'languageNational': safe_str(v[17]) if len(v) > 17 else '',
+        })
+
+    # Pass 2: assign collision-aware slugs.
+    # Group by raw slug to detect collisions across countries.
+    by_raw_slug = {}
+    for s in raw:
+        rs = _slugify_state(s['name'])
+        if not rs:
+            continue
+        s['_raw_slug'] = rs
+        by_raw_slug.setdefault(rs, []).append(s)
+
+    states_by_key = {}  # (country, name) -> state dict with final slug
+    for rs, group in by_raw_slug.items():
+        if len(group) == 1:
+            s = group[0]
+            s['slug'] = rs
+        else:
+            # Disambiguate by appending the immediate parent country slug.
+            for s in group:
+                country_part = country_slug.get(s['country']) or _slugify_state(s['country'])
+                # If state name == country name (e.g. Andorra/Andorra),
+                # don't double the slug — fall back to ISO if present.
+                if rs == country_part and s['iso']:
+                    s['slug'] = s['iso'].lower()
+                else:
+                    s['slug'] = f"{rs}-{country_part}"
+        for s in group:
+            states_by_key[(s['country'], s['name'])] = s
+
+    # Sanity: enforce slug uniqueness across the whole set; fall back to ISO
+    # on any residual collision so the slug truly identifies one row.
+    seen_slugs = {}
+    for s in states_by_key.values():
+        if s['slug'] in seen_slugs and seen_slugs[s['slug']] is not s:
+            if s['iso']:
+                s['slug'] = s['iso'].lower()
+            else:
+                s['slug'] = f"{s['slug']}-{_slugify_state(s['mainCountry'])}"
+        seen_slugs[s['slug']] = s
+
+    # Pass 3: resolve every metro's primary, #2 and #3 state slugs and
+    # increment per-state counters from the primary match. The homepage
+    # rankings table and country-page tables both read all three slugs
+    # off metros.json so neither has to redo the lookup at render time.
+    metro_state_slugs = {}  # metro_name -> {primary, state2, state3}
+
+    def _resolve(country, sub, name):
+        if not name:
+            return None
+        return (
+            states_by_key.get((country, name))
+            or (states_by_key.get((sub, name)) if sub else None)
+        )
+
+    for m in all_metros:
+        country = m['country']
+        sub = m.get('subCountry') or ''
+        primary = m.get('primaryState') or ''
+        s2 = m.get('state2') or ''
+        s3 = m.get('state3') or ''
+        primary_state = _resolve(country, sub, primary)
+        s2_state = _resolve(country, sub, s2)
+        s3_state = _resolve(country, sub, s3)
+        slugs = {}
+        if primary_state:
+            slugs['primary'] = primary_state['slug']
+            primary_state.setdefault('_metroCount', 0)
+            primary_state['_metroCount'] += 1
+            primary_state.setdefault('_metroPop', 0)
+            primary_state['_metroPop'] += m['pop'] or 0
+            primary_state.setdefault('_scoreTotal', 0.0)
+            primary_state['_scoreTotal'] += m['score'] or 0.0
+        if s2_state:
+            slugs['state2'] = s2_state['slug']
+        if s3_state:
+            slugs['state3'] = s3_state['slug']
+        # Editorial additional-states overrides. Each name is resolved
+        # against the same (country, name) / (subCountry, name) lookup
+        # so the resulting slugs are guaranteed to match real state pages.
+        # The matched states also get their metroCount incremented so the
+        # additional-state pages report London correctly.
+        extras = METRO_ADDITIONAL_STATES.get(m['name'], [])
+        if extras:
+            additional = []
+            for name in extras:
+                st = _resolve(country, sub, name)
+                if st:
+                    additional.append({'name': name, 'slug': st['slug']})
+                    st.setdefault('_metroCount', 0)
+                    st['_metroCount'] += 1
+                    st.setdefault('_metroPop', 0)
+                    st['_metroPop'] += m['pop'] or 0
+                    st.setdefault('_scoreTotal', 0.0)
+                    st['_scoreTotal'] += m['score'] or 0.0
+                else:
+                    # Editorial override didn't match; surface in build log
+                    # so the workbook curator can fix the name or add the row.
+                    print(f"  [warn] additional-state override for {m['name']!r} did not match {(country, name)!r}")
+                    additional.append({'name': name})
+            if additional:
+                slugs['additional'] = additional
+        if slugs:
+            metro_state_slugs[m['name']] = slugs
+
+    # Final shape for states.json — keep concise; promote internal keys.
+    states_list = []
+    for s in states_by_key.values():
+        country_slug_val = country_slug.get(s['country']) or _slugify_state(s['country'])
+        main_country_slug_val = (
+            country_slug.get(s['mainCountry']) or _slugify_state(s['mainCountry'])
+            if s['mainCountry'] else None
+        )
+        out = {
+            'slug': s['slug'],
+            'name': s['name'],
+            'country': s['country'],
+            'countrySlug': country_slug_val,
+            'mainCountry': s['mainCountry'] or s['country'],
+            'mainCountrySlug': main_country_slug_val or country_slug_val,
+            'type': s['type'] or 'Administrative Area',
+            'iso': s['iso'] or None,
+            'pop': s['pop'] or None,
+            'capital': s['capital'] or None,
+            'continent': s['continent'] or None,
+            'subRegion': s['subRegion'] or None,
+            'languageAdmin': s['languageAdmin'] or None,
+            'languageSecondary': s['languageSecondary'] or None,
+            'languageDeFacto': s['languageDeFacto'] or None,
+            'languageNational': s['languageNational'] or None,
+            'metroCount': s.get('_metroCount', 0),
+            'metroPop': s.get('_metroPop', 0),
+            'scoreTotal': round(s.get('_scoreTotal', 0.0), 2),
+        }
+        states_list.append(out)
+
+    # Stable sort: by main country, then descending metro count, then name.
+    states_list.sort(key=lambda x: (
+        x['mainCountrySlug'] or '',
+        -(x['metroCount'] or 0),
+        x['name'],
+    ))
+    return states_list, metro_state_slugs
+
+
 def extract_football(wb):
     """Extract football club data grouped by metro.
 
@@ -791,6 +1031,10 @@ def main():
     towers = extract_towers(wb)
     print(f"  {sum(len(v) for v in towers.values())} supertalls across {len(towers)} metros")
 
+    print("Extracting states/provinces...")
+    states_list, metro_state_slugs = extract_states(wb, metros)
+    print(f"  {len(states_list)} states; {len(metro_state_slugs)} metros resolved to state slug")
+
     wb.close()
 
     # Compute regions
@@ -843,6 +1087,21 @@ def main():
             entry['state2'] = m['state2']
         if m['state3']:
             entry['state3'] = m['state3']
+        # Resolved state slugs (from extract_states matching). Includes
+        # the primary state plus state2 / state3 when each name resolves
+        # against the States sheet. Both the homepage rankings table and
+        # the country-page metro table read these directly so neither
+        # client component has to redo the (country, name) lookup.
+        slugs = metro_state_slugs.get(m['name'])
+        if slugs:
+            if slugs.get('primary'):
+                entry['stateSlug'] = slugs['primary']
+            if slugs.get('state2'):
+                entry['state2Slug'] = slugs['state2']
+            if slugs.get('state3'):
+                entry['state3Slug'] = slugs['state3']
+            if slugs.get('additional'):
+                entry['additionalStates'] = slugs['additional']
         slim_metros.append(entry)
 
     with open(data_dir / "metros.json", 'w') as f:
@@ -854,6 +1113,13 @@ def main():
     print("Writing regions.json...")
     with open(data_dir / "regions.json", 'w') as f:
         json.dump(regions, f, separators=(',', ':'))
+
+    # Write states.json (every state row in the ISO sheet, with metro counts).
+    print("Writing states.json...")
+    with open(data_dir / "states.json", 'w') as f:
+        json.dump(states_list, f, separators=(',', ':'))
+    states_size = os.path.getsize(data_dir / "states.json")
+    print(f"  states.json: {states_size:,} bytes ({states_size/1024:.0f} KB)")
 
     # Write per-metro detail files
     print("Writing detail files...")

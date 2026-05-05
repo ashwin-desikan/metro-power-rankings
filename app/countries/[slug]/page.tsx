@@ -7,6 +7,7 @@ import {
   getCountry,
   getMetrosForCountry,
 } from "@/lib/countries";
+import { getStatesForCountry } from "@/lib/states";
 import CountryMap from "./CountryMap";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
@@ -39,6 +40,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: { title: `${c.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
     twitter: { card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
   };
+}
+
+// Heading for the states/provinces chip section. We pick by dominant Type
+// from the rows themselves so federations read as "States", others as
+// "Provinces", "Regions", etc. Keeps the chrome accurate per country.
+function pickStateHeading(states: { type: string }[]): string {
+  if (states.length === 0) return "States and provinces";
+  const counts = new Map<string, number>();
+  for (const s of states) counts.set(s.type, (counts.get(s.type) || 0) + 1);
+  const dominant = [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
+  // Pluralize in a way that reads naturally.
+  const pluralized: Record<string, string> = {
+    State: "States",
+    Province: "Provinces",
+    Territory: "Territories",
+    Region: "Regions",
+    Department: "Departments",
+    County: "Counties",
+    District: "Districts",
+    Prefecture: "Prefectures",
+    "Federal District": "Federal Districts",
+    "Autonomous Region": "Autonomous Regions",
+    "Autonomous Republic": "Autonomous Republics",
+    "Administrative Area": "Administrative Areas",
+  };
+  return pluralized[dominant] || `${dominant}s`;
 }
 
 function fmtArea(n: number | null): string {
@@ -86,6 +113,14 @@ export default async function CountryDetailPage({ params }: Props) {
 
   const metros = getMetrosForCountry(slug);
   const children = getChildrenOf(country.name);
+  // States listed under this country in the States sheet (col 4 = Country
+  // exact match). UK gets zero hits because UK subdivisions live under
+  // England / Scotland / Wales / Northern Ireland; those constituent
+  // pages render their own state chips.
+  const states = getStatesForCountry(country.name);
+  // Pick a section heading appropriate to the dominant subdivision type.
+  // Most countries list "States" or "Provinces"; some are mixed.
+  const stateLabel = pickStateHeading(states);
 
   // Roll disputed-territory population, metro pop, area, and score into the
   // parent's hero stats. Morocco gains Western Sahara, Cyprus gains
@@ -208,6 +243,41 @@ export default async function CountryDetailPage({ params }: Props) {
             </section>
           ) : null}
 
+          {states.length > 0 ? (
+            <section className="mb-12">
+              <h2 className="text-xl font-bold mb-3">{stateLabel}</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                {states.length} {stateLabel.toLowerCase()} listed under {country.name}. Click any to see its metros and footprint.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {states.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/states/${s.slug}`}
+                    className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                    style={{
+                      backgroundColor: "var(--bg-card)",
+                      borderColor: "var(--border)",
+                      color: "var(--text)",
+                      fontFamily: "'JetBrains Mono', monospace",
+                    }}
+                    title={s.iso ? `${s.type} · ${s.iso}` : s.type}
+                  >
+                    {s.name}
+                    {s.metroCount > 0 ? (
+                      <span
+                        className="text-[10px]"
+                        style={{ color: "var(--text-dim)" }}
+                      >
+                        {s.metroCount}
+                      </span>
+                    ) : null}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
           {metros.length > 0 ? (
             <CountryMap slug={country.slug} countryName={country.name} />
           ) : null}
@@ -224,6 +294,7 @@ export default async function CountryDetailPage({ params }: Props) {
                         style={{ borderBottom: "1px solid var(--border)", fontFamily: "'JetBrains Mono', monospace" }}>
                       <th className="py-2 pl-4 pr-4">Rank</th>
                       <th className="py-2 pr-4">Metro</th>
+                      <th className="hidden md:table-cell py-2 pr-4">State</th>
                       <th className="hidden sm:table-cell py-2 pr-4 text-right">Population</th>
                       <th className="py-2 pr-4 text-right">Score</th>
                       <th className="py-2 pr-4 text-right">Tier</th>
@@ -232,6 +303,12 @@ export default async function CountryDetailPage({ params }: Props) {
                   <tbody>
                     {metros.map((m) => {
                       const tier = computeTier(m.score);
+                      // State column reads ETL-resolved stateSlug, state2Slug,
+                      // state3Slug directly off metros.json. Multi-state metros
+                      // (NYC, Washington-Baltimore, Cincinnati) can link to all
+                      // three constituent states.
+                      const state2Slug = m.state2Slug;
+                      const state3Slug = m.state3Slug;
                       return (
                         <tr key={m.slug} style={{ borderBottom: "1px solid var(--border)" }}>
                           <td className="py-3 pl-4 pr-4 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>#{m.rank}</td>
@@ -240,6 +317,39 @@ export default async function CountryDetailPage({ params }: Props) {
                             {isCapital(m.name) ? <CapitalBadge /> : null}
                             {isLargest(m.name) && !isCapital(m.name) ? <LargestBadge /> : null}
                             {isLargest(m.name) && isCapital(m.name) ? <LargestBadge /> : null}
+                          </td>
+                          <td className="hidden md:table-cell py-3 pr-4 text-xs">
+                            {m.primaryState ? (
+                              m.stateSlug ? (
+                                <Link href={`/states/${m.stateSlug}`} className="text-[var(--text)] hover:text-[var(--accent)]">
+                                  {m.primaryState}
+                                </Link>
+                              ) : (
+                                <span className="text-[var(--text)]">{m.primaryState}</span>
+                              )
+                            ) : (
+                              <span className="text-[var(--text-dim)]">—</span>
+                            )}
+                            {(m.state2 || m.state3 || (m.additionalStates && m.additionalStates.length > 0)) ? (
+                              <div className="text-[10px] text-[var(--text-dim)] mt-0.5">
+                                {[
+                                  m.state2 ? { name: m.state2, slug: state2Slug } : null,
+                                  m.state3 ? { name: m.state3, slug: state3Slug } : null,
+                                  ...(m.additionalStates ?? []),
+                                ]
+                                  .filter((s): s is { name: string; slug?: string } => s !== null)
+                                  .map((s, idx, arr) => (
+                                    <span key={`${s.name}-${idx}`}>
+                                      {s.slug ? (
+                                        <Link href={`/states/${s.slug}`} className="hover:text-[var(--accent)]">{s.name}</Link>
+                                      ) : (
+                                        <span>{s.name}</span>
+                                      )}
+                                      {idx < arr.length - 1 ? <span> · </span> : null}
+                                    </span>
+                                  ))}
+                              </div>
+                            ) : null}
                           </td>
                           <td className="hidden sm:table-cell py-3 pr-4 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{formatPop(m.pop)}</td>
                           <td className="py-3 pr-4 text-right font-bold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{m.score.toFixed(1)}</td>

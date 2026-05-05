@@ -9,6 +9,19 @@ export interface Metro {
   primaryState?: string;
   state2?: string;
   state3?: string;
+  // ETL-resolved state slugs from the (Country, Administrative Division)
+  // match against the States sheet. Set when the corresponding state name
+  // resolves to a row in public/data/states.json. The homepage rankings
+  // table and country-page metro table read these directly.
+  stateSlug?: string;
+  state2Slug?: string;
+  state3Slug?: string;
+  // Editorial overrides for metros whose footprint extends beyond the
+  // workbook's primary/state2/state3 slots (e.g. Greater London Built-Up
+  // Area into Surrey/Hertfordshire/Berkshire). Each entry carries a name
+  // and an optional slug; if slug is missing the override didn't resolve
+  // and the name renders as plain text rather than a link.
+  additionalStates?: { name: string; slug?: string }[];
   region: string;
   continent: string;
   pop: number;
