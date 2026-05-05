@@ -42,30 +42,68 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Heading for the states/provinces chip section. We pick by dominant Type
-// from the rows themselves so federations read as "States", others as
-// "Provinces", "Regions", etc. Keeps the chrome accurate per country.
-function pickStateHeading(states: { type: string }[]): string {
-  if (states.length === 0) return "States and provinces";
-  const counts = new Map<string, number>();
-  for (const s of states) counts.set(s.type, (counts.get(s.type) || 0) + 1);
-  const dominant = [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
-  // Pluralize in a way that reads naturally.
-  const pluralized: Record<string, string> = {
-    State: "States",
-    Province: "Provinces",
-    Territory: "Territories",
-    Region: "Regions",
-    Department: "Departments",
-    County: "Counties",
-    District: "Districts",
-    Prefecture: "Prefectures",
-    "Federal District": "Federal Districts",
-    "Autonomous Region": "Autonomous Regions",
-    "Autonomous Republic": "Autonomous Republics",
-    "Administrative Area": "Administrative Areas",
-  };
-  return pluralized[dominant] || `${dominant}s`;
+// Pluralize a single Type label in a way that reads naturally. Falls
+// back to a trailing "s" for any type not in the editorial map.
+const TYPE_PLURALS: Record<string, string> = {
+  State: "States",
+  Province: "Provinces",
+  Territory: "Territories",
+  Region: "Regions",
+  Department: "Departments",
+  County: "Counties",
+  Country: "Countries",
+  District: "Districts",
+  Prefecture: "Prefectures",
+  Borough: "Boroughs",
+  "Federal District": "Federal Districts",
+  "Federal City": "Federal Cities",
+  "Autonomous Region": "Autonomous Regions",
+  "Autonomous Republic": "Autonomous Republics",
+  "Autonomous Oblast": "Autonomous Oblasts",
+  "Autonomous Okrug": "Autonomous Okrugs",
+  "Autonomous Community": "Autonomous Communities",
+  "Administrative Area": "Administrative Areas",
+  "Special Administrative Region": "Special Administrative Regions",
+  "Unitary Authority": "Unitary Authorities",
+  "Metropolitan Borough": "Metropolitan Boroughs",
+  "London Borough": "London Boroughs",
+  Krai: "Krais",
+  Oblast: "Oblasts",
+  Republic: "Republics",
+};
+
+function pluralizeType(type: string): string {
+  if (!type) return "Subdivisions";
+  if (TYPE_PLURALS[type]) return TYPE_PLURALS[type];
+  // Heuristic fallbacks: handle "y" → "ies", anything ending in s/x/z stays as-is.
+  if (/[sxz]$/i.test(type)) return type;
+  if (/[bcdfghjklmnpqrstvwxz]y$/i.test(type)) return type.slice(0, -1) + "ies";
+  return `${type}s`;
+}
+
+// Group states by Type, sort each group by metroCount desc then name, and
+// return the groups themselves sorted by group-size desc. So a country with
+// 32 Counties + 28 Unitary Authorities + 1 Administrative Area renders the
+// Counties group first.
+function groupStatesByType<S extends { type: string; metroCount: number; name: string }>(
+  states: readonly S[]
+): { type: string; label: string; rows: S[] }[] {
+  const buckets = new Map<string, S[]>();
+  for (const s of states) {
+    const t = s.type || "Subdivision";
+    if (!buckets.has(t)) buckets.set(t, []);
+    buckets.get(t)!.push(s);
+  }
+  const groups: { type: string; label: string; rows: S[] }[] = [];
+  for (const [t, list] of buckets.entries()) {
+    list.sort((a, b) => {
+      if (b.metroCount !== a.metroCount) return b.metroCount - a.metroCount;
+      return a.name.localeCompare(b.name);
+    });
+    groups.push({ type: t, label: pluralizeType(t), rows: list });
+  }
+  groups.sort((a, b) => b.rows.length - a.rows.length || a.label.localeCompare(b.label));
+  return groups;
 }
 
 function fmtArea(n: number | null): string {
@@ -118,9 +156,17 @@ export default async function CountryDetailPage({ params }: Props) {
   // England / Scotland / Wales / Northern Ireland; those constituent
   // pages render their own state chips.
   const states = getStatesForCountry(country.name);
-  // Pick a section heading appropriate to the dominant subdivision type.
-  // Most countries list "States" or "Provinces"; some are mixed.
-  const stateLabel = pickStateHeading(states);
+  // Group by Type so countries with mixed subdivision schemes (England:
+  // Counties + Unitary Authorities + Metropolitan Boroughs + Administrative
+  // Areas; Russia: Republics + Krais + Oblasts + ...) show every type with
+  // its own count rather than collapsing to whichever is dominant.
+  const stateGroups = groupStatesByType(states);
+  const stateSectionTitle =
+    stateGroups.length === 0
+      ? "States and provinces"
+      : stateGroups.length === 1
+        ? stateGroups[0].label
+        : "Administrative subdivisions";
 
   // Roll disputed-territory population, metro pop, area, and score into the
   // parent's hero stats. Morocco gains Western Sahara, Cyprus gains
@@ -243,38 +289,58 @@ export default async function CountryDetailPage({ params }: Props) {
             </section>
           ) : null}
 
-          {states.length > 0 ? (
+          {stateGroups.length > 0 ? (
             <section className="mb-12">
-              <h2 className="text-xl font-bold mb-3">{stateLabel}</h2>
+              <h2 className="text-xl font-bold mb-3">{stateSectionTitle}</h2>
               <p className="text-sm text-[var(--text-muted)] mb-4">
-                {states.length} {stateLabel.toLowerCase()} listed under {country.name}. Click any to see its metros and footprint.
+                {states.length} {states.length === 1 ? "entry" : "entries"} listed under {country.name}
+                {stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""}
+                . Click any to see its metros and footprint.
               </p>
-              <div className="flex flex-wrap gap-2">
-                {states.map((s) => (
-                  <Link
-                    key={s.slug}
-                    href={`/states/${s.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                    style={{
-                      backgroundColor: "var(--bg-card)",
-                      borderColor: "var(--border)",
-                      color: "var(--text)",
-                      fontFamily: "'JetBrains Mono', monospace",
-                    }}
-                    title={s.iso ? `${s.type} · ${s.iso}` : s.type}
-                  >
-                    {s.name}
-                    {s.metroCount > 0 ? (
-                      <span
-                        className="text-[10px]"
-                        style={{ color: "var(--text-dim)" }}
-                      >
-                        {s.metroCount}
+              {stateGroups.map((group) => (
+                <div key={group.type} className="mb-5 last:mb-0">
+                  {stateGroups.length > 1 ? (
+                    <h3
+                      className="text-[11px] uppercase tracking-wider font-semibold mb-2"
+                      style={{
+                        color: "var(--text-muted)",
+                        fontFamily: "'JetBrains Mono', monospace",
+                      }}
+                    >
+                      {group.label}{" "}
+                      <span style={{ color: "var(--text-dim)" }}>
+                        ({group.rows.length})
                       </span>
-                    ) : null}
-                  </Link>
-                ))}
-              </div>
+                    </h3>
+                  ) : null}
+                  <div className="flex flex-wrap gap-2">
+                    {group.rows.map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={`/states/${s.slug}`}
+                        className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                        style={{
+                          backgroundColor: "var(--bg-card)",
+                          borderColor: "var(--border)",
+                          color: "var(--text)",
+                          fontFamily: "'JetBrains Mono', monospace",
+                        }}
+                        title={s.iso ? `${s.type} · ${s.iso}` : s.type}
+                      >
+                        {s.name}
+                        {s.metroCount > 0 ? (
+                          <span
+                            className="text-[10px]"
+                            style={{ color: "var(--text-dim)" }}
+                          >
+                            {s.metroCount}
+                          </span>
+                        ) : null}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </section>
           ) : null}
 
