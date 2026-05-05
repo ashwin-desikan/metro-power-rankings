@@ -1,22 +1,20 @@
-// Server component. Renders a Leaflet map for any metro with valid
-// primary-city coordinates. Three layers stack:
-//   1. (Optional) A dissolved-county boundary polygon, loaded from
-//      public/data/metro-boundaries/{slug}.geojson if it exists.
+// Server component. Loads the metro pin, the optional boundary polygon,
+// and the team/venue marker set, then hands them to a client-side
+// wrapper (MapWithFilters) that adds per-category toggles. Three layers
+// stack on the map itself:
+//   1. (Optional) Dissolved-county boundary polygon from
+//      public/data/metro-boundaries/{slug}.geojson.
 //   2. Team / venue markers from Team List + FootballClub_Data, color-
-//      coded by category (Major League / Other teams / Venues). The
-//      classification mirrors the written sections of the metro page
-//      (TeamsSection + EventsSection in page.tsx).
-//   3. A primary-city pin at metros.json (lat, lon).
-//
-// Markers are computed server-side and passed as plain JSON. Entries
-// missing lat/lng silently fall through to the written sections only.
+//      coded by category (Major League / Other teams / Venues).
+//   3. The primary-city pin at metros.json (lat, lon).
 
 import { readFileSync } from "fs";
 import { join } from "path";
 
 import { getAllMetros } from "@/lib/data";
-import MetroMap from "@/app/MetroMap";
-import { buildMarkers, MARKER_COLORS, MARKER_LABELS, type MarkerCategory } from "@/lib/teamMarkers";
+import { buildMarkers } from "@/lib/teamMarkers";
+
+import MapWithFilters from "./MapWithFilters";
 
 function loadBoundary(slug: string): unknown | null {
   try {
@@ -46,12 +44,6 @@ export default function MetroPageMap({
   const boundary = loadBoundary(slug);
   const markers = buildMarkers(teams);
 
-  // Legend chips render only when at least one marker in that category
-  // is present. Keeps the chrome quiet on metros with no plottable rows.
-  const presentCategories: MarkerCategory[] = (["majorLeague", "otherTeam", "venue"] as const).filter(
-    (cat) => markers.some((m) => m.category === cat)
-  );
-
   return (
     <section>
       <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
@@ -67,33 +59,12 @@ export default function MetroPageMap({
             {self.lat.toFixed(2)}, {self.lon.toFixed(2)}
           </span>
         </div>
-        <MetroMap
-          points={[{ slug: self.slug, name: pinName, lat: self.lat, lon: self.lon }]}
-          showConnections={false}
+        <MapWithFilters
+          point={{ slug: self.slug, name: pinName, lat: self.lat, lon: self.lon }}
           boundary={boundary}
-          height={boundary ? 400 : 300}
           markers={markers}
+          height={boundary ? 400 : 300}
         />
-        {presentCategories.length > 0 && (
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-xs" style={{ color: "var(--text-muted)" }}>
-            {presentCategories.map((cat) => (
-              <span key={cat} className="flex items-center gap-1.5">
-                <span
-                  aria-hidden="true"
-                  style={{
-                    display: "inline-block",
-                    width: 8,
-                    height: 8,
-                    borderRadius: "50%",
-                    background: MARKER_COLORS[cat],
-                    border: "1px solid #0f172a",
-                  }}
-                />
-                {MARKER_LABELS[cat]}
-              </span>
-            ))}
-          </div>
-        )}
       </div>
     </section>
   );

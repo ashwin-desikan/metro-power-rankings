@@ -6,7 +6,7 @@ import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useM
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
-import { MARKER_COLORS, MARKER_LABELS, type TeamMarker } from '@/lib/teamMarkers';
+import { MARKER_COLORS, MARKER_LABELS, sortForRender, formatLevel, type TeamMarker } from '@/lib/teamMarkers';
 
 // Padding adapts to span: tight derbies get more breathing room than
 // continent-wide clusters. Returns south-west then north-east bound pairs.
@@ -168,27 +168,37 @@ export default function MetroMapInner({
       ) : null}
       {markers && markers.length > 0 ? (
         <LayerGroup>
-          {markers.map((m, idx) => {
+          {sortForRender(markers).map((m, idx) => {
             const fill = MARKER_COLORS[m.category];
+            const levelLabel = formatLevel(m.level);
             return (
               <CircleMarker
                 key={`marker-${idx}-${m.lat}-${m.lng}`}
                 center={[m.lat, m.lng]}
-                radius={4}
+                radius={7}
                 pathOptions={{
                   color: '#0f172a',
-                  weight: 1,
+                  weight: 1.5,
                   fillColor: fill,
-                  fillOpacity: 0.9,
+                  fillOpacity: 0.95,
+                }}
+                eventHandlers={{
+                  mouseover: (e) => e.target.setRadius(9),
+                  mouseout: (e) => e.target.setRadius(7),
                 }}
               >
-                <Tooltip direction="top" offset={[0, -4]} opacity={0.95}>
-                  <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.35 }}>
+                <Tooltip direction="top" offset={[0, -7]} opacity={0.97}>
+                  <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
                     <div style={{ fontWeight: 600 }}>{m.name}</div>
                     <div style={{ color: '#9ca3af' }}>
                       {m.sport}{m.league ? ` · ${m.league}` : ''}
                     </div>
-                    <div style={{ color: fill, fontSize: 11, marginTop: 2 }}>
+                    {levelLabel ? (
+                      <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 1 }}>
+                        {levelLabel}
+                      </div>
+                    ) : null}
+                    <div style={{ color: fill, fontSize: 11, marginTop: 2, fontWeight: 500 }}>
                       {MARKER_LABELS[m.category]}
                     </div>
                   </div>

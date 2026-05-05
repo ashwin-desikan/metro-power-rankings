@@ -1,18 +1,15 @@
 // Classifies Team List + FootballClub_Data entries into the three
 // marker categories used on the metro detail page map. Mirrors the
-// logic that drives the written sections in app/rankings/[slug]/page.tsx
-// (TeamsSection plus the annual-events lift into EventsSection):
+// Major-League-takes-precedence rule the user established 2026-05-05:
 //
-//   - "venue"      → League === "Notable Venues" or "Historic Venues"
-//                    (Notable Venues stay in the venue bucket regardless
-//                    of the major-league flag, matching how the page
-//                    renders Beaver Stadium, Cotton Bowl, etc.)
-//                    Also catches Annual Event rows (F1 GPs, NASCAR,
-//                    sailing regattas) since those are venue-anchored
-//                    recurring events on the live site.
-//   - "majorLeague"→ major === true and not a venue or annual entry
-//   - "otherTeam"  → everything else (minor leagues, college, women's,
-//                    international, foreign top flights via FootballClub_Data)
+//   - "majorLeague" → major === true. Wins over the Notable Venues / Historic
+//                     Venues league tag so Beaver Stadium, Cotton Bowl, and
+//                     other major-quality venues read as Major League.
+//   - "venue"       → League === "Notable Venues" or "Historic Venues" with
+//                     major !== true, OR annual === true (F1 GPs, NASCAR,
+//                     sailing regattas, all venue-anchored recurring events).
+//   - "otherTeam"   → everything else (minor leagues, college, women's,
+//                     international, foreign top flights without ML flag).
 //
 // The map renders only entries with valid lat/lng. Entries without
 // coordinates fall back to the written sections only.
@@ -25,6 +22,7 @@ export type TeamMarker = {
   name: string;
   sport: string;
   league: string;
+  level?: string;
   category: MarkerCategory;
 };
 
@@ -34,14 +32,18 @@ type TeamLike = {
   team: string;
   major: boolean;
   annual?: boolean;
+  level?: string;
   lat?: number;
   lng?: number;
 };
 
 export function classifyTeam(t: TeamLike): MarkerCategory {
+  // Major League precedence: a flagged row is always Major League regardless
+  // of its league label, so a Notable Venue with major=Y (e.g. Beaver Stadium)
+  // surfaces as emerald rather than amber.
+  if (t.major) return "majorLeague";
   if (t.league === "Notable Venues" || t.league === "Historic Venues") return "venue";
   if (t.annual === true) return "venue";
-  if (t.major) return "majorLeague";
   return "otherTeam";
 }
 
@@ -58,10 +60,95 @@ export function buildMarkers(teams: readonly TeamLike[] | undefined): TeamMarker
       name: t.team,
       sport: t.sport,
       league: t.league,
+      level: t.level && t.level !== "" ? t.level : undefined,
       category: classifyTeam(t),
     });
   }
+  return spreadColocated(dedupeIdentical(out));
+}
+
+// Workbook-level duplicates: the same physical venue is sometimes listed
+// once per sport under "Notable Venues" (Madison Square Garden appears 4x
+// for NBA/NHL/combat/etc.). Collapse those to one marker. We dedupe only
+// when name + league + quantized coords all match, so distinct entries
+// like Penn State football vs Penn State hockey (same name, different
+// league) survive and fan out via spreadColocated.
+function dedupeIdentical(markers: TeamMarker[]): TeamMarker[] {
+  const seen = new Set<string>();
+  const out: TeamMarker[] = [];
+  for (const m of markers) {
+    const key = `${m.name}|${m.league}|${Math.round(m.lat * COLOCATION_QUANT)}|${Math.round(m.lng * COLOCATION_QUANT)}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(m);
+  }
   return out;
+}
+
+// Spread markers that share (or near-share) coordinates so every entry is
+// independently hoverable. Stadiums with multiple resident teams (Jets +
+// Giants at MetLife, Inter + Milan at San Siro, Yankees + their training
+// affiliates) collapse to a single visible dot otherwise. Grouping
+// quantizes to ~100m at the equator (3 decimals); same-group markers
+// fan out on a circle of radius ~110m which reads cleanly at metro zoom
+// without misrepresenting position at continent zoom.
+const COLOCATION_QUANT = 1000; // 1 / 0.001 degrees ≈ 110m
+const FAN_OUT_RADIUS_DEG = 0.001; // ≈ 110m
+
+function spreadColocated(markers: TeamMarker[]): TeamMarker[] {
+  if (markers.length < 2) return markers;
+  const groups = new Map<string, TeamMarker[]>();
+  for (const m of markers) {
+    const key = `${Math.round(m.lat * COLOCATION_QUANT)},${Math.round(m.lng * COLOCATION_QUANT)}`;
+    const arr = groups.get(key);
+    if (arr) arr.push(m);
+    else groups.set(key, [m]);
+  }
+  const out: TeamMarker[] = [];
+  for (const group of groups.values()) {
+    if (group.length === 1) {
+      out.push(group[0]);
+      continue;
+    }
+    // Sort group so the highest-priority marker takes the topmost slot in
+    // the fan (12 o'clock). Within a tier, longer team names go later so
+    // the visual cluster has its most-recognizable label in the prime
+    // position. categoryOrder higher = drawn later = on top in z-order.
+    const sorted = [...group].sort((a, b) => {
+      const dr = CATEGORY_RENDER_ORDER[b.category] - CATEGORY_RENDER_ORDER[a.category];
+      if (dr !== 0) return dr;
+      return a.name.length - b.name.length;
+    });
+    const cx = group.reduce((s, m) => s + m.lat, 0) / group.length;
+    const cy = group.reduce((s, m) => s + m.lng, 0) / group.length;
+    const n = sorted.length;
+    for (let i = 0; i < n; i++) {
+      // Start at 12 o'clock (–π/2) and rotate clockwise.
+      const angle = -Math.PI / 2 + (2 * Math.PI * i) / n;
+      out.push({
+        ...sorted[i],
+        lat: cx + FAN_OUT_RADIUS_DEG * Math.cos(angle),
+        lng: cy + FAN_OUT_RADIUS_DEG * Math.sin(angle),
+      });
+    }
+  }
+  return out;
+}
+
+// Render priority. Higher = drawn later = appears on top when icons
+// stack. Major League always wins z-order so the emerald icon is the
+// one the user sees first when an Other-team marker happens to share
+// pixels with a Major League marker.
+export const CATEGORY_RENDER_ORDER: Record<MarkerCategory, number> = {
+  otherTeam: 0,
+  venue: 1,
+  majorLeague: 2,
+};
+
+export function sortForRender(markers: TeamMarker[]): TeamMarker[] {
+  return [...markers].sort(
+    (a, b) => CATEGORY_RENDER_ORDER[a.category] - CATEGORY_RENDER_ORDER[b.category]
+  );
 }
 
 // Visual palette. Picked to read against the dark CARTO basemap and to
@@ -79,3 +166,15 @@ export const MARKER_LABELS: Record<MarkerCategory, string> = {
   otherTeam: "Other teams",
   venue: "Venues",
 };
+
+// Format a level value for the tooltip. Pure integers render as
+// "Level N"; everything else (strings like "College", "FBS",
+// "Minor Lg Base") render as-is. Empty / undefined returns null
+// so the caller can omit the line entirely.
+export function formatLevel(level: string | undefined): string | null {
+  if (!level) return null;
+  const trimmed = level.trim();
+  if (!trimmed) return null;
+  if (/^\d+$/.test(trimmed)) return `Level ${trimmed}`;
+  return trimmed;
+}
