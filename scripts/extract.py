@@ -447,6 +447,100 @@ def _slugify_state(name):
     return s.strip('-')
 
 
+# Per-country sheet routing is data-driven inside extract_metro_state_edges
+# rather than driven by a static list. Notes lists 33 countries as
+# "Municipality countries", but several (Brazil, Japan, Russia, India,
+# Australia) actually have zero rows there in practice. Discovering which
+# sovereigns have Municipality rows at runtime keeps coverage correct
+# regardless of which long-tail countries get added or moved between sheets.
+
+# Map UK constituent labels back to the sovereign so per-state lookups
+# resolve consistently against the States sheet (which stores Greater
+# London under Country='England', Edinburgh under Country='Scotland', etc.).
+WORKBOOK_TO_CANONICAL_COUNTRY = {
+    "England":          "United Kingdom",
+    "Scotland":         "United Kingdom",
+    "Wales":            "United Kingdom",
+    "Northern Ireland": "United Kingdom",
+}
+
+
+def extract_metro_state_edges(wb, all_metros):
+    """Aggregate (state, metro) edges from Counties + Municipality.
+
+    Routing is data-driven, not based on a static list. We scan Municipality
+    first to discover which countries actually have rows there. Those
+    countries are sourced exclusively from Municipality (it's denser when
+    populated). Every other country falls through to Counties — including
+    countries Notes lists as "Municipality" but which have zero rows there
+    in practice (Brazil, Japan, Russia, India, Australia all qualify as of
+    Session 73).
+
+    Sheet column layout (verified directly against the workbook, ignoring
+    the Notes' off-by-one column-letter shorthand for Counties):
+      Counties:     col 0 = Country, col 2 = State, col 7 = Metro, col 8 = Sub Country
+      Municipality: col 1 = Country, col 4 = State, col 6 = Metro
+
+    UK rows in Municipality use the constituent ("England", "Scotland",
+    etc.) in col 1, never the sovereign. Those canonicalize to United
+    Kingdom in the edge key while the constituent is preserved for the
+    States-sheet matcher's fallback path.
+
+    Returns:
+      edges: dict[(country, sub_country, state_name)] -> set(metro_name)
+    """
+    edges = {}
+    metros_by_name = {m['name']: m for m in all_metros}
+
+    def add_edge(country, sub, state, metro_name):
+        if not country or not state or not metro_name:
+            return
+        if metro_name not in metros_by_name:
+            return
+        canonical = WORKBOOK_TO_CANONICAL_COUNTRY.get(country, country)
+        sub_label = (
+            country if country in WORKBOOK_TO_CANONICAL_COUNTRY else (sub or "")
+        )
+        key = (canonical, sub_label, state)
+        edges.setdefault(key, set()).add(metro_name)
+
+    # Pass 1: scan Municipality. Track which sovereign countries have
+    # actual rows so the Counties pass below knows which to skip.
+    municipality_sovereigns = set()
+    if "Municipality" in wb.sheetnames:
+        ws = wb["Municipality"]
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            v = list(row)
+            country = safe_str(v[1]) if len(v) > 1 else ''
+            if not country:
+                continue
+            canonical = WORKBOOK_TO_CANONICAL_COUNTRY.get(country, country)
+            municipality_sovereigns.add(canonical)
+            state = safe_str(v[4]) if len(v) > 4 else ''
+            metro = safe_str(v[6]) if len(v) > 6 else ''
+            add_edge(country, '', state, metro)
+
+    # Pass 2: scan Counties for countries NOT served by Municipality.
+    # Falls back the long tail (Brazil, Japan, India, Russia, Australia,
+    # plus the 200+ smaller countries that never had Municipality rows).
+    if "Counties" in wb.sheetnames:
+        ws = wb["Counties"]
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            v = list(row)
+            country = safe_str(v[0]) if len(v) > 0 else ''
+            if not country:
+                continue
+            canonical = WORKBOOK_TO_CANONICAL_COUNTRY.get(country, country)
+            if canonical in municipality_sovereigns:
+                continue
+            state = safe_str(v[2]) if len(v) > 2 else ''
+            metro = safe_str(v[7]) if len(v) > 7 else ''
+            sub = safe_str(v[8]) if len(v) > 8 else ''
+            add_edge(country, sub, state, metro)
+
+    return edges
+
+
 # Editorial overrides: metros whose real footprint spans more states/
 # administrative areas than the workbook's primary/state2/state3 columns
 # can carry. Each metro lists ADDITIONAL state names (in addition to its
@@ -560,11 +654,13 @@ def extract_states(wb, all_metros):
                 s['slug'] = f"{s['slug']}-{_slugify_state(s['mainCountry'])}"
         seen_slugs[s['slug']] = s
 
-    # Pass 3: resolve every metro's primary, #2 and #3 state slugs and
-    # increment per-state counters from the primary match. The homepage
-    # rankings table and country-page tables both read all three slugs
-    # off metros.json so neither has to redo the lookup at render time.
-    metro_state_slugs = {}  # metro_name -> {primary, state2, state3}
+    # Pass 3: resolve every metro's primary, #2 and #3 state slugs. The
+    # homepage rankings table and country-page tables both read these three
+    # slugs off metros.json so neither has to redo the lookup at render
+    # time. Per-state metro counts (and the state page's metro list) come
+    # from the cross-sheet aggregator below — which sees the FULL list of
+    # states a metro spans rather than just the workbook's three slots.
+    metro_state_slugs = {}  # metro_name -> {primary, state2, state3, additional}
 
     def _resolve(country, sub, name):
         if not name:
@@ -574,6 +670,8 @@ def extract_states(wb, all_metros):
             or (states_by_key.get((sub, name)) if sub else None)
         )
 
+    # Resolve the up-to-three workbook slots for the homepage / country
+    # tables (these are space-constrained and only show 3 states inline).
     for m in all_metros:
         country = m['country']
         sub = m.get('subCountry') or ''
@@ -586,21 +684,10 @@ def extract_states(wb, all_metros):
         slugs = {}
         if primary_state:
             slugs['primary'] = primary_state['slug']
-            primary_state.setdefault('_metroCount', 0)
-            primary_state['_metroCount'] += 1
-            primary_state.setdefault('_metroPop', 0)
-            primary_state['_metroPop'] += m['pop'] or 0
-            primary_state.setdefault('_scoreTotal', 0.0)
-            primary_state['_scoreTotal'] += m['score'] or 0.0
         if s2_state:
             slugs['state2'] = s2_state['slug']
         if s3_state:
             slugs['state3'] = s3_state['slug']
-        # Editorial additional-states overrides. Each name is resolved
-        # against the same (country, name) / (subCountry, name) lookup
-        # so the resulting slugs are guaranteed to match real state pages.
-        # The matched states also get their metroCount incremented so the
-        # additional-state pages report London correctly.
         extras = METRO_ADDITIONAL_STATES.get(m['name'], [])
         if extras:
             additional = []
@@ -608,21 +695,75 @@ def extract_states(wb, all_metros):
                 st = _resolve(country, sub, name)
                 if st:
                     additional.append({'name': name, 'slug': st['slug']})
-                    st.setdefault('_metroCount', 0)
-                    st['_metroCount'] += 1
-                    st.setdefault('_metroPop', 0)
-                    st['_metroPop'] += m['pop'] or 0
-                    st.setdefault('_scoreTotal', 0.0)
-                    st['_scoreTotal'] += m['score'] or 0.0
                 else:
-                    # Editorial override didn't match; surface in build log
-                    # so the workbook curator can fix the name or add the row.
                     print(f"  [warn] additional-state override for {m['name']!r} did not match {(country, name)!r}")
                     additional.append({'name': name})
             if additional:
                 slugs['additional'] = additional
         if slugs:
             metro_state_slugs[m['name']] = slugs
+
+    # Pass 4: cross-sheet aggregation. Counties + Municipality together
+    # capture every state a metro touches (a metro that spans 7 English
+    # ceremonial counties has 7 edges in Municipality; primaryState only
+    # records 1). For each (country, state) edge, accumulate the metro into
+    # the matching State row's _metroSlugs set and recompute totals from
+    # that set. This becomes the source of truth for the country-page chip
+    # counts and the /states/[slug] metro list.
+    edges = extract_metro_state_edges(wb, all_metros)
+    metros_by_name = {m['name']: m for m in all_metros}
+    metros_by_slug = {m['slug']: m for m in all_metros}
+    state_by_slug = {s['slug']: s for s in states_by_key.values()}
+
+    for (country, sub_label, state_name), metro_set in edges.items():
+        st = _resolve(country, sub_label, state_name)
+        if not st:
+            # No matching row in States sheet. Common in countries whose
+            # Counties data tags state names that aren't in the ISO sheet
+            # under the same Country column (cross-listed via Sub-Country
+            # is already tried by _resolve). Skip silently — the metro
+            # still shows on its primary state page if that resolved.
+            continue
+        bucket = st.setdefault('_metroSlugs', set())
+        for metro_name in metro_set:
+            m = metros_by_name.get(metro_name)
+            if m:
+                bucket.add(m['slug'])
+
+    # Always also include the metro's primary state slug — the workbook's
+    # primaryState is the intentional editorial primary, and a metro
+    # sometimes has zero rows in Counties/Municipality for its primary
+    # state (e.g., when the "metro" is actually a single municipality and
+    # the parent state isn't otherwise tagged). Belt-and-braces.
+    for m in all_metros:
+        slugs = metro_state_slugs.get(m['name'], {})
+        primary = slugs.get('primary')
+        if not primary:
+            continue
+        primary_state = state_by_slug.get(primary)
+        if primary_state:
+            primary_state.setdefault('_metroSlugs', set()).add(m['slug'])
+
+    # Roll the metro slug set into final counts and a sorted list. Pop
+    # and score totals follow the same set so they don't double-count
+    # metros that span multiple workbook columns. O(N) overall thanks
+    # to the metros_by_slug index built above.
+    for st in states_by_key.values():
+        slug_set = st.get('_metroSlugs') or set()
+        st['_metroCount'] = len(slug_set)
+        st['_metroPop'] = 0
+        st['_scoreTotal'] = 0.0
+        for sl in slug_set:
+            mm = metros_by_slug.get(sl)
+            if mm:
+                st['_metroPop'] += mm.get('pop') or 0
+                st['_scoreTotal'] += mm.get('score') or 0.0
+        # Stable order: by metro rank ascending so the highest-ranked
+        # metro in each state lands first in the state page table.
+        st['_metroSlugList'] = sorted(
+            slug_set,
+            key=lambda sl: metros_by_slug.get(sl, {}).get('rank', 99999),
+        )
 
     # Final shape for states.json — keep concise; promote internal keys.
     states_list = []
@@ -652,6 +793,12 @@ def extract_states(wb, all_metros):
             'metroCount': s.get('_metroCount', 0),
             'metroPop': s.get('_metroPop', 0),
             'scoreTotal': round(s.get('_scoreTotal', 0.0), 2),
+            # The full list of metro slugs that touch this state (from
+            # Counties/Municipality cross-sheet aggregation, plus each
+            # metro's primary state). Drives the /states/[slug] metro
+            # table; supersedes the older "filter metros by stateSlug"
+            # client-side scan, which only saw the first-3 workbook slots.
+            'metroSlugs': s.get('_metroSlugList', []),
         }
         states_list.append(out)
 
@@ -1037,6 +1184,54 @@ def main():
 
     wb.close()
 
+    # Build a country-name -> slug lookup from public/data/countries.json so
+    # every metro entry can carry a ready-to-use countrySlug field. Client
+    # components on the homepage and elsewhere link metros to /countries/...
+    # without a runtime lookup. Also captures subCountry slug for UK metros
+    # so the constituent (England / Scotland / Wales / Northern Ireland)
+    # link reads naturally rather than always pointing at /countries/united-kingdom.
+    country_slug_by_name = {}
+    countries_json_path = site_dir / "public" / "data" / "countries.json"
+    if countries_json_path.exists():
+        try:
+            with open(countries_json_path, encoding='utf-8') as f:
+                for c in json.load(f):
+                    if c.get('name') and c.get('slug'):
+                        country_slug_by_name[c['name']] = c['slug']
+            print(f"  loaded {len(country_slug_by_name)} country slugs from countries.json")
+        except Exception as e:
+            print(f"  WARN: could not parse countries.json ({e}); countrySlug will be omitted")
+    else:
+        print("  WARN: countries.json not found; countrySlug will be omitted from metros.json")
+
+    # Enrich every metro dict with resolved slug fields BEFORE both the
+    # slim metros.json emission and the per-metro detail emission consume
+    # them. This way detail.metro (used by app/rankings/[slug]/page.tsx)
+    # and slim_metros (used by the homepage RankingsTable) both link to
+    # /countries/[slug] and /states/[slug] without any runtime lookup.
+    for m in metros:
+        primary_cs = country_slug_by_name.get(m.get('country') or '')
+        sub_cs = (
+            country_slug_by_name.get(m.get('subCountry') or '')
+            if m.get('subCountry')
+            else None
+        )
+        if sub_cs:
+            m['countrySlug'] = sub_cs
+            if primary_cs and primary_cs != sub_cs:
+                m['sovereignSlug'] = primary_cs
+        elif primary_cs:
+            m['countrySlug'] = primary_cs
+        slugs = metro_state_slugs.get(m['name']) or {}
+        if slugs.get('primary'):
+            m['stateSlug'] = slugs['primary']
+        if slugs.get('state2'):
+            m['state2Slug'] = slugs['state2']
+        if slugs.get('state3'):
+            m['state3Slug'] = slugs['state3']
+        if slugs.get('additional'):
+            m['additionalStates'] = slugs['additional']
+
     # Compute regions
     print("Computing regional aggregates...")
     regions = compute_regions(metros)
@@ -1077,6 +1272,11 @@ def main():
             'metroStations': m['dims']['metroStations'],
             'universities': m['dims']['universities'],
         }
+        # Country slugs (resolved on the master metros list above).
+        if m.get('countrySlug'):
+            entry['countrySlug'] = m['countrySlug']
+        if m.get('sovereignSlug'):
+            entry['sovereignSlug'] = m['sovereignSlug']
         # Include subCountry for UK metros (for search)
         if m['country'] == 'United Kingdom' and m['subCountry']:
             entry['subCountry'] = m['subCountry']
@@ -1092,16 +1292,15 @@ def main():
         # against the States sheet. Both the homepage rankings table and
         # the country-page metro table read these directly so neither
         # client component has to redo the (country, name) lookup.
-        slugs = metro_state_slugs.get(m['name'])
-        if slugs:
-            if slugs.get('primary'):
-                entry['stateSlug'] = slugs['primary']
-            if slugs.get('state2'):
-                entry['state2Slug'] = slugs['state2']
-            if slugs.get('state3'):
-                entry['state3Slug'] = slugs['state3']
-            if slugs.get('additional'):
-                entry['additionalStates'] = slugs['additional']
+        # State slugs (resolved on the master metros list above).
+        if m.get('stateSlug'):
+            entry['stateSlug'] = m['stateSlug']
+        if m.get('state2Slug'):
+            entry['state2Slug'] = m['state2Slug']
+        if m.get('state3Slug'):
+            entry['state3Slug'] = m['state3Slug']
+        if m.get('additionalStates'):
+            entry['additionalStates'] = m['additionalStates']
         slim_metros.append(entry)
 
     with open(data_dir / "metros.json", 'w') as f:

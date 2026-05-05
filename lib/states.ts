@@ -43,6 +43,12 @@ export type State = {
   metroCount: number;
   metroPop: number;
   scoreTotal: number;
+  // The full list of metro slugs that touch this state, computed at ETL
+  // time by aggregating (Country, State, Metro) edges from Counties +
+  // Municipality. A metro that spans 7 English ceremonial counties shows
+  // up on all 7 state pages here, even though only its first 3 are stored
+  // on the metros.json row.
+  metroSlugs?: string[];
 };
 
 // ---------- Memoized loaders ----------
@@ -91,13 +97,24 @@ export function getStatesForCountry(countryName: string): State[] {
   });
 }
 
-// Metros assigned to a state via the resolved stateSlug, state2Slug,
-// state3Slug, OR any entry in the editorial additionalStates list. So
-// London surfaces on /states/greater-london (primary) AND on
-// /states/surrey, /states/hertfordshire, /states/berkshire (additional).
-// Sorted by global rank.
+// Metros assigned to a state via the cross-sheet aggregation in extract.py.
+// state.metroSlugs is the authoritative list (built from Counties +
+// Municipality edges plus each metro's primary state). Falls back to the
+// older 3-slot scan only when metroSlugs is missing — generally only
+// happens during local dev runs against pre-aggregator data.
 export function getMetrosForState(slug: string): Metro[] {
-  return getAllMetros()
+  const state = getState(slug);
+  const all = getAllMetros();
+  if (state?.metroSlugs && state.metroSlugs.length > 0) {
+    const wanted = new Set(state.metroSlugs);
+    return all
+      .filter((m) => wanted.has(m.slug))
+      .sort((a, b) => a.rank - b.rank);
+  }
+  // Legacy fallback: scan the 3-slot system + editorial additionalStates.
+  // Kept so a stale states.json doesn't blank out every state page during
+  // local development.
+  return all
     .filter((m) => {
       if (m.stateSlug === slug) return true;
       if (m.state2Slug === slug) return true;
@@ -110,6 +127,17 @@ export function getMetrosForState(slug: string): Metro[] {
 
 export function getAllStateSlugs(): string[] {
   return getAllStates().map((s) => s.slug);
+}
+
+// Slugs that are worth pre-generating at build time. States with zero
+// metros (~1,650 of the 3,480 rows in the sheet) still get a route — see
+// dynamicParams=true on the state page — but they render on first request
+// rather than during the static-params pass, which keeps Vercel build
+// time roughly halved.
+export function getStateSlugsWithMetros(): string[] {
+  return getAllStates()
+    .filter((s) => s.metroCount > 0)
+    .map((s) => s.slug);
 }
 
 // Look up a state slug by (country, name) with a (subCountry, name)
