@@ -4,8 +4,8 @@
 // metro's detail page. Falls back to null when no boundaries exist; the
 // country page handles "no map" gracefully.
 
-import MetroMap from "@/app/MetroMap";
 import { loadCountryBoundaries } from "@/lib/country-boundaries";
+import CountryMapClient from "./CountryMapClient";
 
 export default function CountryMap({
   slug,
@@ -44,13 +44,7 @@ export default function CountryMap({
           </span>
         </div>
 
-        <MetroMap
-          points={[]}
-          showConnections={false}
-          boundary={collection}
-          interactiveFeatures={true}
-          height={520}
-        />
+        <CountryMapClient collection={collection} height={520} />
 
         <div
           className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] tracking-wide"
@@ -61,8 +55,8 @@ export default function CountryMap({
         >
           <LegendSwatch color="#7c3aed" label="Global Capital" />
           <LegendSwatch color="#2563eb" label="Continental City" />
-          <LegendSwatch color="#0d9488" label="Major Metro" />
-          <LegendSwatch color="#059669" label="Regional Hub" />
+          <LegendSwatch color="#0891b2" label="Major Metro" />
+          <LegendSwatch color="#16a34a" label="Regional Hub" />
           <LegendSwatch color="#ca8a04" label="Established" />
           <LegendSwatch color="#ea580c" label="Emerging" />
           <LegendSwatch color="#6b7280" label="Local" />
