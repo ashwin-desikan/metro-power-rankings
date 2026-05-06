@@ -49,13 +49,31 @@ function FitToBoundary({ boundary }: { boundary: unknown }) {
 const TIER_FILL: Record<string, string> = {
   'global-capital':   '#7c3aed',
   'world-city':       '#2563eb',
-  'major-metro':      '#0d9488',
-  'regional-hub':     '#059669',
+  'major-metro':      '#0891b2',
+  'regional-hub':     '#16a34a',
   'established-city': '#ca8a04',
   'emerging-city':    '#ea580c',
   'local-city':       '#6b7280',
 };
 const DEFAULT_FILL = '#4ECDC4';
+
+// Build a stable React key from a boundary FeatureCollection. react-leaflet
+// won't diff <GeoJSON data> on prop change, so when the country-map tier
+// toggle filters the collection we have to remount via key. Joining feature
+// slugs is cheap and uniquely identifies the visible set; falls back to
+// the JSON length when slugs are absent (single-metro pages).
+function getBoundaryKey(boundary: unknown): string {
+  if (!boundary || typeof boundary !== 'object') return 'none';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const features = (boundary as any).features;
+  if (!Array.isArray(features)) return 'single';
+  if (features.length === 0) return 'empty';
+  const slugs = features
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .map((f: any) => f?.properties?.slug || '')
+    .join('|');
+  return `${features.length}:${slugs}`;
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function tierStyle(feature: any) {
@@ -143,7 +161,11 @@ export default function MetroMapInner({
         <>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
           <GeoJSON
-            // Key forces re-render when boundary changes (e.g. between metros)
+            // react-leaflet GeoJSON does NOT diff `data` once mounted; without
+            // a changing `key`, tier toggles on the country map (filtered
+            // FeatureCollection) would not visually update. Key off the
+            // collection identity so any change forces a remount.
+            key={getBoundaryKey(boundary)}
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             data={boundary as any}
             style={

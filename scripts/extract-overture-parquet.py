@@ -14,7 +14,7 @@ Workflow:
      per-parquet routing summary to confirm it picks up the per-country file.
 
 Defaults match scripts\\dump-overture-country.py:
-  GB DE FR IT ES NL PL JP
+  GB DE FR IT ES NL PL JP AD SM VA
 
 Override via env:
   OVERTURE_DIVISION_AREA      - source global parquet path

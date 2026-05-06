@@ -46,22 +46,6 @@ export default function CountryMap({
 
         <CountryMapClient collection={collection} height={520} />
 
-        <div
-          className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] tracking-wide"
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            color: "var(--text-muted)",
-          }}
-        >
-          <LegendSwatch color="#7c3aed" label="Global Capital" />
-          <LegendSwatch color="#2563eb" label="Continental City" />
-          <LegendSwatch color="#0891b2" label="Major Metro" />
-          <LegendSwatch color="#16a34a" label="Regional Hub" />
-          <LegendSwatch color="#ca8a04" label="Established" />
-          <LegendSwatch color="#ea580c" label="Emerging" />
-          <LegendSwatch color="#6b7280" label="Local" />
-        </div>
-
         <p
           className="mt-3 text-xs"
           style={{ color: "var(--text-dim)" }}
@@ -72,18 +56,5 @@ export default function CountryMap({
         </p>
       </div>
     </section>
-  );
-}
-
-function LegendSwatch({ color, label }: { color: string; label: string }) {
-  return (
-    <span className="inline-flex items-center gap-1.5">
-      <span
-        aria-hidden="true"
-        className="inline-block w-2.5 h-2.5 rounded-sm"
-        style={{ backgroundColor: color, opacity: 0.7 }}
-      />
-      {label}
-    </span>
   );
 }

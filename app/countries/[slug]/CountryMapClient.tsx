@@ -117,10 +117,19 @@ export default function CountryMapClient({
 
   return (
     <>
-      {/* Toggle bar: per-tier pills plus All/None controls. Pills wrap
-          on narrow viewports. */}
+      <MetroMap
+        points={[]}
+        showConnections={false}
+        boundary={filteredCollection}
+        interactiveFeatures={true}
+        height={height}
+      />
+
+      {/* Toggle bar: per-tier pills plus All/None controls. Sits below the
+          map so it doubles as the legend (color swatch + tier name + count
+          per pill). Pills wrap on narrow viewports. */}
       <div
-        className="flex flex-wrap items-center gap-2 mb-4"
+        className="flex flex-wrap items-center gap-2 mt-4"
         style={{ fontFamily: "'JetBrains Mono', monospace" }}
       >
         <button
@@ -187,14 +196,6 @@ export default function CountryMapClient({
             : `${visibleCount} of ${totalCount} polygons`}
         </span>
       </div>
-
-      <MetroMap
-        points={[]}
-        showConnections={false}
-        boundary={filteredCollection}
-        interactiveFeatures={true}
-        height={height}
-      />
     </>
   );
 }

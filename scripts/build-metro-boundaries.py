@@ -17,6 +17,8 @@ falls back to SOURCE_PARQUET if a country isn't listed).
 Initial routing:
   United States  -> counties      (SOURCE_PARQUET)
   Mexico         -> counties      (SOURCE_PARQUET)
+  Japan          -> counties      (overture-JP.parquet)
+  Netherlands    -> counties      (overture-NL.parquet)
   Canada         -> municipality  (SOURCE_PARQUET)
   United Kingdom -> municipality  (SOURCE_PARQUET)
   France         -> municipality  (overture-FR.parquet)
@@ -116,11 +118,13 @@ OUTLIER_PART_MAX_KM = 200.0
 COUNTRY_PARQUET_MAP = {
     # Per-country parquets keep heavy commune scans off the 5.8 GB global
     # file. Generate via scripts/extract-overture-parquet.py.
-    "France":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
-    "Germany": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
-    "Italy":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IT.parquet",
-    "Spain":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ES.parquet",
-    "Poland":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-PL.parquet",
+    "France":      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FR.parquet",
+    "Germany":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DE.parquet",
+    "Italy":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IT.parquet",
+    "Spain":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ES.parquet",
+    "Poland":      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-PL.parquet",
+    "Japan":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-JP.parquet",
+    "Netherlands": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-NL.parquet",
     # Andorra, San Marino, Vatican City are tiny enough to fall through to
     # the global SOURCE_PARQUET; no per-country parquet needed.
 }
@@ -130,6 +134,8 @@ COUNTRY_PARQUET_MAP = {
 COUNTRY_SHEET_MAP = {
     "United States":  "counties",
     "Mexico":         "counties",
+    "Japan":          "counties",
+    "Netherlands":    "counties",
     "Canada":         "municipality",
     "United Kingdom": "municipality",
     "France":         "municipality",
@@ -145,6 +151,8 @@ COUNTRY_SHEET_MAP = {
 COUNTRY_TO_ISO = {
     "United States":  "US",
     "Mexico":         "MX",
+    "Japan":          "JP",
+    "Netherlands":    "NL",
     "Canada":         "CA",
     "United Kingdom": "GB",
     "France":         "FR",
