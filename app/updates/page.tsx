@@ -53,6 +53,14 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-07",
+    headline: "Methodology now compares against peer city indices",
+    items: [
+      "New peer-comparison section on /methodology positions this index against Oxford Economics GCI, GaWC, Mori GPCI, EIU Liveability, Mercer, and Z/Yen GFCI.",
+      "Each entry sets out what the peer measures, where it is genuinely stronger, and where this project diverges.",
+    ],
+  },
+  {
     date: "2026-05-05",
     headline: "Country pages, state pages, team markers, six more countries",
     items: [

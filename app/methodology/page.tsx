@@ -261,7 +261,7 @@ const articleJsonLd = {
   author: { "@id": `${AUTHOR.url}/#author` },
   publisher: { "@id": `${PUBLISHER.url}/#publisher` },
   datePublished: "2026-05-01",
-  dateModified: "2026-05-01",
+  dateModified: "2026-05-07",
   breadcrumb: breadcrumbJsonLd,
 };
 
@@ -529,6 +529,158 @@ export default function MethodologyPage() {
                 three times more, will produce a different ranking. This
                 page exists so the disagreement can land on a specific
                 choice rather than on the project as a whole.
+              </p>
+            </section>
+
+            <section id="peers">
+              <h2 className="text-2xl font-bold mb-4">How this index relates to other major city rankings</h2>
+              <p className="text-[var(--text)] leading-relaxed mb-6">
+                Several established indices score the world&apos;s cities.
+                Each one answers a slightly different question. The summary
+                below sets out what each measures, where it is genuinely
+                stronger than this project, and where this project diverges.
+                The Globalization and World Cities Research Network (GaWC)
+                is treated separately because it is already an input to this
+                composite rather than a peer ranking.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-2">Oxford Economics Global Cities Index (OEGCI)</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Covers the 1,000 largest urban economies across 27 indicators
+                grouped into five categories (Economics, Human Capital,
+                Quality of Life, Environment, Governance) weighted
+                30/25/25/10/10. Built on OECD Functional Urban Area
+                definitions and Oxford Economics&apos; Global Cities
+                Forecasting Service, which means the indicators sit on top
+                of an active forecasting model rather than a static
+                snapshot. The 2025 edition adds an eight-archetype
+                classification (Global Leaders, Regional Leaders, Cultural
+                Capitals, Sustainable Cities, Industrial Hubs, Legacy
+                Cities, Developing Megacities, Emerging Standouts).
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                <strong className="font-semibold">Where OEGCI is stronger:</strong>{" "}
+                forward-looking five-year projections, OECD-grade
+                geographic units, indicator depth on income inequality,
+                housing burden, life expectancy, and air quality.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                <strong className="font-semibold">Where this index differs:</strong>{" "}
+                broader coverage (over 4,000 metros versus 1,000), free
+                public access, transparent and opinionated weights rather
+                than a fixed 30/25/25/10/10 split, plus state-level and
+                country-level rollups OEGCI does not publish. OEGCI&apos;s
+                Governance category is measured at the national level, so
+                every city in a given country shares the same governance
+                score, which this index avoids.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-2">GaWC World Cities Index</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                The Globalization and World Cities Research Network at
+                Loughborough University publishes the longest-running
+                academic classification of cities, based on the office
+                networks of advanced producer service firms (law,
+                accounting, finance, advertising, management consulting).
+                Its alpha, beta, gamma, sufficiency tiers are the standard
+                shorthand in urban geography. GaWC is already an input to
+                this composite (see the GaWC class adjustment above), not
+                a competing ranking. Its strength is the rigor of its
+                methodology on a single dimension; its limit is that it
+                only describes a city&apos;s integration into the global
+                service economy, which is one slice of what makes a metro
+                significant.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-2">Mori Memorial Foundation Global Power City Index (GPCI)</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                A Tokyo-based ranking of 48 leading cities across six
+                functions (Economy, Research and Development, Cultural
+                Interaction, Liveability, Environment, Accessibility) using
+                roughly 70 indicators. London, New York, Tokyo, Paris, and
+                Singapore typically lead. GPCI is the most balanced of the
+                global rankings on quality and competitiveness, with
+                particular strength in cultural interaction and
+                accessibility metrics that other indices undercount.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                <strong className="font-semibold">Where this index differs:</strong>{" "}
+                GPCI&apos;s 48-city ceiling is by design, since each
+                indicator is hand-curated. This project trades that depth
+                for two orders of magnitude more breadth, with thinner
+                per-metro data on the long tail.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-2">Economist Intelligence Unit Global Liveability Index</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Annual ranking of 173 cities across five categories
+                (Stability, Healthcare, Culture and Environment, Education,
+                Infrastructure) on roughly 30 qualitative and quantitative
+                indicators. Vienna, Copenhagen, Zurich, and Melbourne
+                typically lead. Built for international assignment
+                planning, with stability metrics that capture conflict
+                exposure, terrorism risk, and civil unrest.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                <strong className="font-semibold">Where this index differs:</strong>{" "}
+                EIU optimises for &quot;where is it pleasant and safe to be
+                posted as an expat,&quot; which systematically underweights
+                economic mass, cultural reach, and infrastructure scale.
+                Vienna scores higher than New York for liveability;
+                Citizen of Nowhere does not.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-2">Mercer Quality of Living Survey</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Annual ranking of 230-plus cities across 39 factors covering
+                political and social environment, economic environment,
+                socio-cultural environment, medical and health
+                considerations, schools and education, public services and
+                transport, recreation, consumer goods, housing, and natural
+                environment. Used by multinational HR teams to set expat
+                hardship and cost-of-living allowances. Vienna has led for
+                more than a decade.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                <strong className="font-semibold">Where this index differs:</strong>{" "}
+                Mercer&apos;s lens is functionally the same as EIU&apos;s
+                (expat suitability), with more granular sub-categories
+                covering the practical mechanics of relocation. It is not
+                designed to capture global influence, financial weight, or
+                cultural reach.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-2">Z/Yen Global Financial Centres Index (GFCI)</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Biannual ranking (March and September) of more than 120
+                financial centres on five areas (Business Environment,
+                Human Capital, Infrastructure, Financial Sector Development,
+                Reputational and General Factors). Built from instrumental
+                factors plus a rolling survey of finance professionals.
+                New York, London, Hong Kong, Singapore, and San Francisco
+                typically occupy the top spots.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                <strong className="font-semibold">Where this index differs:</strong>{" "}
+                GFCI is single-purpose by design, scoring only how
+                competitive a city is as a finance hub. It is the
+                authoritative source on that question and an excellent
+                cross-check for the Market Capitalization and
+                Infrastructure dimensions above, but it does not attempt
+                the broader composite this project does.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-2">In summary</h3>
+              <p className="text-[var(--text)] leading-relaxed">
+                Each of these indices is the right tool for a specific
+                question. Use OEGCI for forward-looking economic
+                forecasting, GaWC for service-economy integration, GPCI
+                for balanced city competitiveness in the top 48, EIU and
+                Mercer for relocation suitability, GFCI for finance-hub
+                competitiveness. This project answers a different
+                question: across every dimension that signals a globally
+                relevant metro, where does each one stand right now, on
+                the same continuous scale, with the formula visible.
               </p>
             </section>
 
