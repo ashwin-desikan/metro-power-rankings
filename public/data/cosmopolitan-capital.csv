@@ -1,0 +1,21 @@
+rank,slug,name,country,score,pop,score_value,note
+107,edinburgh,Edinburgh,United Kingdom,26.5,887900,26.5,"Scottish capital, festival city"
+126,geneva,Geneva,Switzerland,23.1,638565,23.1,Diplomatic capital and Lake Geneva cultural seat
+131,porto,Porto,Portugal,22.1,2065679,22.1,Atlantic wine and architecture city
+135,helsinki,Helsinki,Finland,21.2,1714354,21.2,Nordic design and education capital
+142,lausanne,Lausanne,Switzerland,19.8,553037,19.8,Lake Geneva academic and Olympic capital
+151,florence,Florence,Italy,18.6,1540513,18.6,Renaissance gallery and university city
+179,seville,Seville,Spain,15.2,1950056,15.2,Andalusian cultural capital
+195,bologna,Bologna,Italy,13.9,1024290,13.9,Oldest European university city
+210,bordeaux,Bordeaux,France,13.1,1674980,13.1,Wine capital and architectural ensemble
+254,cambridge,Cambridge,United Kingdom,10.2,414632,10.2,University town with global academic gravity
+276,wellington,Wellington,New Zealand,9.0,543500,9.0,New Zealand creative capital
+293,oxford,Oxford,United Kingdom,8.6,564277,8.6,University town with global academic gravity
+324,ljubljana,Ljubljana,Slovenia,7.8,570933,7.8,Slovenian compact capital
+344,salzburg,Salzburg,Austria,7.1,572846,7.1,"Mozart city, festival town"
+362,granada,Granada,Spain,6.7,521109,6.7,Moorish heritage city
+397,riga,Riga,Latvia,5.9,993600,5.9,Baltic art-nouveau cultural seat
+452,reykjavik,Reykjavík,Iceland,5.1,261298,5.1,Smallest national capital with global cultural reach
+460,bruges,Bruges,Belgium,5.0,287473,5.0,Medieval canal town
+593,bath,Bath,United Kingdom,3.5,193411,3.5,Georgian heritage city
+898,dubrovnik,Dubrovnik,Croatia,1.8,60510,1.8,Walled Adriatic heritage city

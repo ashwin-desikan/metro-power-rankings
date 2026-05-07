@@ -54,10 +54,10 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-07",
-    headline: "Methodology now compares against peer city indices",
+    headline: "Methodology peer-index comparison plus three archetype badges",
     items: [
       "New peer-comparison section on /methodology positions this index against Oxford Economics GCI, GaWC, Mori GPCI, EIU Liveability, Mercer, and Z/Yen GFCI.",
-      "Each entry sets out what the peer measures, where it is genuinely stronger, and where this project diverges.",
+      "Three new badges launch: Greying Power (21 metros), Cosmopolitan Capital (20), and Emerging Standout (18), inspired by the Oxford Economics city archetypes.",
     ],
   },
   {

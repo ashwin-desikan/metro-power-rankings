@@ -867,6 +867,9 @@ function computeCultureCapital() { return computeFromCsv("culture-capital.csv", 
 function computeSportsMecca() { return computeFromCsv("sports-mecca.csv", "sports_score", "Sports composite"); }
 function computeRailHub() { return computeFromCsv("rail-hub.csv", "rail_score", "Rail composite"); }
 function computeOverperformer() { return computeFromCsv("overperformer.csv", "multiple", "Pop-rank to score-rank multiple"); }
+function computeGreyingPower() { return computeFromCsv("greying-power.csv", "score_value", "Composite score"); }
+function computeCosmopolitanCapital() { return computeFromCsv("cosmopolitan-capital.csv", "score_value", "Composite score"); }
+function computeEmergingStandout() { return computeFromCsv("emerging-standout.csv", "score_value", "Composite score"); }
 function computeConurbations(): QualifyingMetro[] {
   const { bySlug } = getMetroIndex();
 
@@ -987,8 +990,8 @@ const SKYLINE_CITY_TIERS: BadgeTier[] = [
 const CLUSTER_TIERS: BadgeTier[] = [
   { slug: "A", name: "Tier A — Global", description: "Cluster score of 100 or more, mirroring the Global Capital threshold for individual metros. The gravitationally heaviest conurbations on Earth: Pearl River Delta, New York, London, Jing-Jin-Ji, Paris, Tokyo, San Francisco-San Jose, Los Angeles, Seoul, Shanghai, Boston-Providence, Randstad, Toronto.", accentHex: "#7c3aed" },
   { slug: "B", name: "Tier B — Continental", description: "Cluster score between 50 and 100, mirroring the Continental City band. Substantial multi-metro networks that anchor a continent or region: Washington-Baltimore, Chicago, Flemish Diamond, Singapore-Johor Bahru-Batam, Zurich-Basel-Freiburg, Sydney-Wollongong, Osaka-Kyoto-Kobe, Moscow, Madrid, Houston, Istanbul.", accentHex: "#2563eb" },
-  { slug: "C", name: "Tier C — Major", description: "Cluster score between 20 and 50, mirroring the Major Metro band. Regionally meaningful conurbations where multiple metros stack into a real network: Edinburgh-Central Scotland, Detroit-Windsor, Vienna-Bratislava, Florence-Pisa-Siena-Lucca, Bilbao-Bayonne, Helsinki, Cardiff-Bristol-Bath.", accentHex: "#0d9488" },
-  { slug: "D", name: "Tier D — Regional", description: "Cluster score under 20, mirroring the Regional Hub and lower bands. The long tail of small-but-real conurbations that satisfy the distance rule without contributing major economic weight on their own.", accentHex: "#059669" },
+  { slug: "C", name: "Tier C — Major", description: "Cluster score between 20 and 50, mirroring the Major Metro band. Regionally meaningful conurbations where multiple metros stack into a real network: Edinburgh-Central Scotland, Detroit-Windsor, Vienna-Bratislava, Florence-Pisa-Siena-Lucca, Bilbao-Bayonne, Helsinki, Cardiff-Bristol-Bath.", accentHex: "#0891b2" },
+  { slug: "D", name: "Tier D — Regional", description: "Cluster score under 20, mirroring the Regional Hub and lower bands. The long tail of small-but-real conurbations that satisfy the distance rule without contributing major economic weight on their own.", accentHex: "#16a34a" },
 ];
 
 const ISOLATED_CAPITAL_TIERS: BadgeTier[] = [
@@ -1065,6 +1068,24 @@ export const BADGES: Badge[] = [
     shortDesc: "National capitals more than 240 km from any metro in the same or higher score tier.",
     longDesc: "National capitals whose nearest peer in the same composite tier or higher sits more than 240 km away. The tier filter is the analytical pivot. A Local City village 30 km from a capital should not count against the badge; only metros at or above the capital's own tier do. The question the badge answers becomes who is your nearest peer of comparable weight, and how far is it.\n\nThree archetypes share the list. The geographically-isolated capitals are the obvious set: Reykjavík, Honiara, Papeete, Hamilton Bermuda, Avarua, Nuuk, Port Moresby, Ulan Bator, sitting on islands, peninsulas, or thin populations where the next Continental City is hundreds of kilometres of ocean or steppe away. The continental-gravity capitals are the more interesting set: Nairobi, Lima, Buenos Aires, Santiago, Mexico City, Cape Town, Dakar, Bogotá. These are countries so dominated by their capital that the next tier-comparable metro sits across an ocean or a sub-continent, not because the capital is geographically remote but because the country has only one true urban centre. The thin-peer-tier capitals round out the list: London, Paris, Tokyo, Beijing, Seoul, Moscow. The Global Capital tier has so few members worldwide that even London and Paris, 344 km apart across the Channel, both qualify because no other Global Capital is within 240 km of either. Tokyo's nearest is Seoul at 1,153 km. Beijing's is Seoul at 952 km. Moscow, sitting one tier down at Continental City, has Berlin 1,609 km away.\n\nSorted by distance descending, most-isolated first.",
     methodologyAnchor: "#population", status: "live", tiers: ISOLATED_CAPITAL_TIERS, compute: computeIsolatedCapital,
+  },
+  {
+    slug: "greying-power", name: "Greying Power", emoji: "🕰️",
+    shortDesc: "Cities once forged in steel, ships, or empire whose population has stopped growing.",
+    longDesc: "Metros with deep historical and economic significance whose demographic curve has flattened or reversed. The post-industrial Great Lakes (Detroit, Cleveland, Pittsburgh, Buffalo). The legacy ports and shipbuilding cities of northern Europe (Liverpool, Newcastle, Glasgow, Marseille). The manufacturing capitals of Italy and Spain (Turin, Genoa, Bilbao). The legacy metros of Japan and Korea (Osaka-Kyoto-Kobe, Sapporo, Busan). Saint Petersburg, Athens, Wolfsburg. The badge surfaces the difference between a city that is declining and a city that has already declined and is now finding a second act. Inspired by the Oxford Economics Global Cities Index 2025 'Legacy Cities' archetype.",
+    methodologyAnchor: "#population", status: "live", compute: computeGreyingPower,
+  },
+  {
+    slug: "cosmopolitan-capital", name: "Cosmopolitan Capital", emoji: "🎟️",
+    shortDesc: "Small metros with disproportionate cultural reach and migrant pull.",
+    longDesc: "Metros with a population under roughly two million whose cultural-events footprint, museum and landmark density, and luxury-hospitality presence punch above their size. Edinburgh, Florence, Reykjavík, Lausanne, Bruges, Salzburg, Bath, Oxford, Cambridge, Bologna, Bordeaux, Sevilla, Granada, Wellington. The badge captures the paradox of being small enough to walk across in a morning and large enough to anchor a continent's cultural conversation. Distinct from the Culture Capital badge, which scores total cultural infrastructure regardless of size; this one scores cultural infrastructure relative to population. Inspired by the Oxford Economics Global Cities Index 2025 'Cultural Capitals' archetype.",
+    methodologyAnchor: "#cultural-events", status: "live", compute: computeCosmopolitanCapital,
+  },
+  {
+    slug: "emerging-standout", name: "Emerging Standout", emoji: "🌱",
+    shortDesc: "Developing-world metros outperforming their countries on productivity and capital.",
+    longDesc: "Metros in emerging economies that significantly outperform their respective national averages on income per person, productivity, and the capital they attract. Bengaluru, Hyderabad, Pune, Ho Chi Minh City, Hanoi, Cebu City, Davao City, Medellín, Tashkent, Almaty, Tbilisi. Distinct from megacity status: emerging standouts can be relatively small but are rising fast, and the badge highlights metros where the gap between the city and the country has widened over the past decade. Inspired by the Oxford Economics Global Cities Index 2025 'Emerging Standouts' archetype.",
+    methodologyAnchor: "#gdp", status: "live", compute: computeEmergingStandout,
   },
 ];
 

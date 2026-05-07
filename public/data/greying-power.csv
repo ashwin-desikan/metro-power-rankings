@@ -1,0 +1,22 @@
+rank,slug,name,country,score,pop,score_value,note
+14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,74.9,18126728,74.9,Industrial corridor with declining demographics
+62,detroit,Detroit,United States,39.1,5430523,39.1,"Auto capital, severe population decline"
+75,st-louis,St. Louis,United States,34.0,2915867,34.0,"Mississippi river capital, long decline"
+76,busan-ulsan,Busan-Ulsan,South Korea,33.9,8079273,33.9,Korean port and industrial corridor
+81,athens,Athens,Greece,33.2,3792469,33.2,"Classical capital, post-2010 demographic stress"
+83,pittsburgh,Pittsburgh,United States,32.9,2626109,32.9,"Steel capital, post-industrial reinvention"
+93,cleveland,Cleveland,United States,29.5,3615326,29.5,Great Lakes manufacturing belt
+101,st-petersburg,St. Petersburg,Russia,27.1,6257471,27.1,"Imperial capital, demographic decline"
+123,liverpool,Liverpool,United Kingdom,23.6,2237316,23.6,"Atlantic shipping hub, post-industrial"
+128,naples,Naples,Italy,23.0,3864340,23.0,Imperial port city with stagnant growth
+127,marseille,Marseille,France,23.0,2069811,23.0,"Mediterranean port, persistent stagnation"
+129,birmingham,Birmingham,United Kingdom,22.8,3260752,22.8,"Industrial Midlands, slow recovery"
+132,turin,Turin,Italy,21.9,2204779,21.9,"Italian auto capital, post-industrial"
+138,glasgow,Glasgow,United Kingdom,20.8,1740760,20.8,"Clyde shipbuilding capital, demographic flatline"
+163,bilbao,Bilbao,Spain,17.0,1189040,17.0,Basque steel city reinvented after collapse
+187,sapporo,Sapporo,Japan,14.5,2678144,14.5,"Hokkaido capital, ageing demographics"
+214,buffalo,Buffalo,United States,12.6,1235647,12.6,"Erie Canal terminus, slow contraction"
+216,lille,Lille,France,12.6,1267099,12.6,"Flanders textile capital, post-industrial"
+221,newcastle,Newcastle,United Kingdom,12.3,867574,12.3,Tyneside shipbuilding heartland
+248,genoa,Genoa,Italy,10.5,820691,10.5,"Historic maritime republic, ageing population"
+286,sheffield,Sheffield,United Kingdom,8.7,822331,8.7,"Steel city, demographic stagnation"

@@ -1,0 +1,19 @@
+rank,slug,name,country,score,pop,score_value,note
+49,johannesburg,Johannesburg,South Africa,46.2,15099421,46.2,Gauteng financial centre
+108,cape-town,Cape Town,South Africa,26.4,5225057,26.4,Western Cape economic outperformer
+116,bogota,Bogota,Colombia,24.2,10986954,24.2,Colombian capital and finance centre
+124,ho-chi-minh-city,Ho Chi Minh City,Vietnam,23.3,12114305,23.3,Vietnam's economic capital
+133,nairobi,Nairobi,Kenya,21.8,9293380,21.8,East African finance and tech hub
+139,lima,Lima,Peru,20.8,11323378,20.8,"Peruvian capital, primate-city momentum"
+140,hanoi,Hanoi,Vietnam,20.3,8993040,20.3,Vietnam's political and rising tech capital
+168,bangalore,Bangalore,India,16.3,13231511,16.3,"India's tech capital, gap from country widening"
+176,hyderabad,Hyderabad,India,15.4,8829661,15.4,Indian secondary tech hub
+181,chennai,Chennai,India,15.0,11477688,15.0,South Indian IT and manufacturing
+198,medellin,Medellin,Colombia,13.7,4144738,13.7,Colombian innovation district
+237,pune,Pune,India,11.5,9429408,11.5,Maharashtra tech and education hub
+238,almaty,Almaty,Kazakhstan,11.3,2708133,11.3,Kazakh financial capital
+312,casablanca,Casablanca,Morocco,8.1,4723840,8.1,Moroccan economic capital
+338,tashkent,Tashkent,Uzbekistan,7.3,3661620,7.3,"Uzbek capital, post-2017 reform momentum"
+378,cebu,Cebu,Philippines,6.4,5151274,6.4,Philippine secondary growth pole
+381,tbilisi,Tbilisi,Georgia,6.3,1330200,6.3,Caucasus reform standout
+1239,davao,Davao,Philippines,1.1,2457430,1.1,Mindanao economic hub
