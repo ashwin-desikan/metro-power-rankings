@@ -56,7 +56,7 @@ const RELEASES: Release[] = [
     date: "2026-05-08",
     headline: "Boundary expansion staged for 43 new countries",
     items: [
-      "Workbook fills for Subtype, Admin Level, Region, and Primary Name now cover 43 additional countries, unlocking real polygon boundaries for 555 metros across India, Romania, Turkey, Colombia, Nigeria, Portugal, Norway, Croatia, Peru, and others.",
+      "Real polygon boundaries unlocked for 555 metros across 43 new countries, led by India, Romania, Portugal, Turkey, Colombia, and Nigeria.",
       "Builder routing wired in code; polygons render once the next boundary build runs.",
     ],
   },
