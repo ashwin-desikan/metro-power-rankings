@@ -26,7 +26,7 @@ import { normalizeSport, uniqueDisplaySports } from '@/lib/sportLabels';
 //      the metro's marker set. Default state is all-selected. Combines
 //      AND with the category toggles.
 
-const CATEGORIES: readonly MarkerCategory[] = ['majorLeague', 'otherTeam', 'venue'];
+const CATEGORIES: readonly MarkerCategory[] = ['majorLeague', 'otherTeam', 'venue', 'university'];
 
 export default function MapWithFilters({
   point,
@@ -45,7 +45,7 @@ export default function MapWithFilters({
   // majorLeague + venue) counts toward Venues only, since the Venues
   // toggle is what controls its visibility.
   const counts = useMemo(() => {
-    const c: Record<MarkerCategory, number> = { majorLeague: 0, otherTeam: 0, venue: 0 };
+    const c: Record<MarkerCategory, number> = { majorLeague: 0, otherTeam: 0, venue: 0, university: 0 };
     for (const m of markers) {
       c[filterCategoryFor(m)] += 1;
     }
@@ -105,7 +105,7 @@ export default function MapWithFilters({
     });
   };
 
-  const totalCount = counts.majorLeague + counts.otherTeam + counts.venue;
+  const totalCount = counts.majorLeague + counts.otherTeam + counts.venue + counts.university;
 
   return (
     <>

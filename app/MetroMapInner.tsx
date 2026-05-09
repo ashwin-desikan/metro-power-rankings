@@ -213,16 +213,31 @@ export default function MetroMapInner({
                 <Tooltip direction="top" offset={[0, -7]} opacity={0.97}>
                   <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
                     <div style={{ fontWeight: 600 }}>{m.name}</div>
-                    <div style={{ color: '#9ca3af' }}>
-                      {normalizeSport(m.sport)}{m.league ? ` · ${m.league}` : ''}
-                    </div>
+                    {m.subtitle ? (
+                      <div style={{ color: '#9ca3af' }}>{m.subtitle}</div>
+                    ) : (m.sport || m.league) ? (
+                      <div style={{ color: '#9ca3af' }}>
+                        {normalizeSport(m.sport)}{m.league ? ` · ${m.league}` : ''}
+                      </div>
+                    ) : null}
                     {levelLabel ? (
                       <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 1 }}>
                         {levelLabel}
                       </div>
                     ) : null}
                     <div style={{ color: fill, fontSize: 11, marginTop: 2, fontWeight: 500 }}>
-                      {MARKER_LABELS[m.category]}
+                      {m.href ? (
+                        <a
+                          href={m.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: fill, textDecoration: 'underline' }}
+                        >
+                          {MARKER_LABELS[m.category]} →
+                        </a>
+                      ) : (
+                        MARKER_LABELS[m.category]
+                      )}
                     </div>
                   </div>
                 </Tooltip>

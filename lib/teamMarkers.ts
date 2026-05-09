@@ -14,7 +14,7 @@
 // The map renders only entries with valid lat/lng. Entries without
 // coordinates fall back to the written sections only.
 
-export type MarkerCategory = "majorLeague" | "otherTeam" | "venue";
+export type MarkerCategory = "majorLeague" | "otherTeam" | "venue" | "university";
 
 export type TeamMarker = {
   lat: number;
@@ -31,6 +31,14 @@ export type TeamMarker = {
   // both "majorLeague" and "venue" so it surfaces under either filter.
   // Used by the filter UI for ANY-match visibility.
   categories: MarkerCategory[];
+  // Optional override for the second tooltip line. When set, the tooltip
+  // shows this string instead of `${sport} · ${league}`. Used by the
+  // university marker category to render "Global #N" without abusing
+  // the sport/league fields.
+  subtitle?: string;
+  // Optional outbound link rendered as the bottom-row category label
+  // when present. Universities link to the CWUR index; teams have none.
+  href?: string;
 };
 
 type TeamLike = {
@@ -79,9 +87,49 @@ export function deriveCategories(t: TeamLike): MarkerCategory[] {
 // Each marker counts toward exactly one chip count under this rule, so
 // totals don't double-count.
 export function filterCategoryFor(m: TeamMarker): MarkerCategory {
+  if (m.categories.includes("university")) return "university";
   if (m.categories.includes("venue")) return "venue";
   if (m.categories.includes("majorLeague")) return "majorLeague";
   return "otherTeam";
+}
+
+// Build markers from a metro's `details.universities` array. Each entry
+// must carry numeric lat/lng (the ETL only attaches them when both are
+// present in the workbook). The CWUR top-500 had ~100% coverage as of
+// 2026-05-09; ranks 501+ surface only in the written list, not on the map.
+export type UniversityLike = {
+  rank?: number;
+  name?: string;
+  city?: string;
+  country?: string;
+  lat?: number;
+  lng?: number;
+};
+
+const CWUR_INDEX_URL = "https://cwur.org/2025.php";
+
+export function buildUniversityMarkers(unis: readonly UniversityLike[] | undefined): TeamMarker[] {
+  if (!unis) return [];
+  const out: TeamMarker[] = [];
+  for (const u of unis) {
+    if (typeof u.lat !== "number" || typeof u.lng !== "number") continue;
+    if (!Number.isFinite(u.lat) || !Number.isFinite(u.lng)) continue;
+    if (u.lat === 0 && u.lng === 0) continue;
+    if (!u.name) continue;
+    const rankStr = u.rank ? `Global #${u.rank}` : "Top-ranked";
+    out.push({
+      lat: u.lat,
+      lng: u.lng,
+      name: u.name,
+      sport: "",
+      league: "",
+      category: "university",
+      categories: ["university"],
+      subtitle: rankStr,
+      href: CWUR_INDEX_URL,
+    });
+  }
+  return spreadColocated(dedupeIdentical(out));
 }
 
 export function buildMarkers(teams: readonly TeamLike[] | undefined): TeamMarker[] {
@@ -174,13 +222,15 @@ function spreadColocated(markers: TeamMarker[]): TeamMarker[] {
 }
 
 // Render priority. Higher = drawn later = appears on top when icons
-// stack. Major League always wins z-order so the emerald icon is the
+// stack. Major League always wins z-order so the gold icon is the
 // one the user sees first when an Other-team marker happens to share
-// pixels with a Major League marker.
+// pixels with a Major League marker. Universities sit just under venues
+// so a university campus colocated with a stadium does not steal focus.
 export const CATEGORY_RENDER_ORDER: Record<MarkerCategory, number> = {
   otherTeam: 0,
-  venue: 1,
-  majorLeague: 2,
+  university: 1,
+  venue: 2,
+  majorLeague: 3,
 };
 
 export function sortForRender(markers: TeamMarker[]): TeamMarker[] {
@@ -191,25 +241,24 @@ export function sortForRender(markers: TeamMarker[]): TeamMarker[] {
 
 // Visual palette. Picked to read against the dark CARTO basemap AND the
 // teal #4ECDC4 boundary polygon so no marker color competes with the
-// metro footprint. Major league = warm gold (premier connotation),
-// venues = magenta (high contrast against teal and gold), other teams
-// = light slate (recessive so dense metros don't flood the eye).
+// metro footprint.
 export const MARKER_COLORS: Record<MarkerCategory, string> = {
   majorLeague: "#fbbf24", // amber-400 / warm gold
   venue: "#ec4899",       // pink-500 / magenta
   otherTeam: "#cbd5e1",   // slate-300 / soft neutral
+  university: "#6366f1",  // indigo-500 / academic blue
 };
 
 export const MARKER_LABELS: Record<MarkerCategory, string> = {
   majorLeague: "Major League",
   otherTeam: "Other teams",
   venue: "Venues",
+  university: "Universities",
 };
 
 // Format a level value for the tooltip. Pure integers render as
-// "Level N"; everything else (strings like "College", "FBS",
-// "Minor Lg Base") render as-is. Empty / undefined returns null
-// so the caller can omit the line entirely.
+// "Level N"; everything else renders as-is. Empty / undefined returns
+// null so the caller can omit the line entirely.
 export function formatLevel(level: string | undefined): string | null {
   if (!level) return null;
   const trimmed = level.trim();

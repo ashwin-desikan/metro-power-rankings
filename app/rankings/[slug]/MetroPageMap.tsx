@@ -1,27 +1,32 @@
 // Server component. Loads the metro pin, the optional boundary polygon,
-// and the team/venue marker set, then hands them to a client-side
-// wrapper (MapWithFilters) that adds per-category toggles. Three layers
-// stack on the map itself:
+// and the team/venue + university marker sets, then hands them to a
+// client-side wrapper (MapWithFilters) that adds per-category toggles.
+// Four layers stack on the map itself:
 //   1. (Optional) Dissolved-county boundary polygon from
 //      public/data/metro-boundaries/{slug}.geojson.
 //   2. Team / venue markers from Team List + FootballClub_Data, color-
 //      coded by category (Major League / Other teams / Venues).
-//   3. The primary-city pin at metros.json (lat, lon).
+//   3. University markers from CWUR top-500 (indigo), surfaced when the
+//      details file carries lat/lng (workbook coverage 2026-05-09 onward).
+//   4. The primary-city pin at metros.json (lat, lon).
 
 import { getAllMetros } from "@/lib/data";
-import { buildMarkers } from "@/lib/teamMarkers";
+import { buildMarkers, buildUniversityMarkers } from "@/lib/teamMarkers";
 import { loadMetroBoundaryCollection } from "@/lib/country-boundaries";
 
 import MapWithFilters from "./MapWithFilters";
 
 type MarkerInput = Parameters<typeof buildMarkers>[0];
+type UniversityInput = Parameters<typeof buildUniversityMarkers>[0];
 
 export default function MetroPageMap({
   slug,
   teams,
+  universities,
 }: {
   slug: string;
   teams?: MarkerInput;
+  universities?: UniversityInput;
 }) {
   const all = getAllMetros();
   const self = all.find((m) => m.slug === slug);
@@ -30,7 +35,9 @@ export default function MetroPageMap({
 
   const pinName = self.primaryCity || self.name;
   const boundary = loadMetroBoundaryCollection(slug);
-  const markers = buildMarkers(teams);
+  const teamMarkers = buildMarkers(teams);
+  const uniMarkers = buildUniversityMarkers(universities);
+  const markers = [...teamMarkers, ...uniMarkers];
 
   return (
     <section>

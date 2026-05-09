@@ -257,7 +257,13 @@ def extract_teams(wb):
 
 
 def extract_universities(wb):
-    """Extract universities grouped by metro."""
+    """Extract universities grouped by metro.
+
+    Cols Q/R (idx 16/17) carry Lat / Long for the campus. Populated for
+    the global top-500 as of 2026-05-09; ranks 501-2000 still empty.
+    Attach lat/lng only when both are present so the metro page map
+    layer can filter cleanly.
+    """
     ws = wb["Universities"]
     unis = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
@@ -265,12 +271,18 @@ def extract_universities(wb):
         metro = safe_str(v[5])
         if not metro:
             continue
-        unis.setdefault(metro, []).append({
+        entry = {
             'rank': safe_int(v[2]),
             'name': safe_str(v[3]),
             'city': safe_str(v[4]),
             'country': safe_str(v[0]),
-        })
+        }
+        lat = safe_float(v[16]) if len(v) > 16 else 0
+        lng = safe_float(v[17]) if len(v) > 17 else 0
+        if lat or lng:
+            entry['lat'] = lat
+            entry['lng'] = lng
+        unis.setdefault(metro, []).append(entry)
     # Sort each metro's universities by rank
     for metro in unis:
         unis[metro].sort(key=lambda x: x['rank'] if x['rank'] else 9999)
@@ -1382,6 +1394,7 @@ def main():
     print(f"  regions.json ({len(regions)} regions)")
     print(f"  details/ ({detail_count} files)")
     print(f"  meta.json (lastUpdate: {last_update})")
+    # Regenerate quiz forward queue against the freshly written data.
     # Regenerate quiz forward queue against the freshly written data.
     # Locked issues are preserved by generator idempotency. Forward slots
     # are recomputed. The CI guard validates non-strict; tier-band slips
