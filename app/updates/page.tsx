@@ -54,10 +54,11 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-09",
-    headline: "Frozen Conurbations badge",
+    headline: "Frozen Conurbations badge and Substack auto-sync",
     items: [
       "New /badges/frozen-conurbations surfaces five paired cities severed by border, missing bridge, or political division: Lahore-Amritsar, Nicosia-North Nicosia, Kinshasa-Brazzaville, Detroit-Windsor, San Diego-Tijuana.",
       "Chips appear on each affected metro page, linking back to the case set.",
+      "Home page Featured Articles strip now auto-syncs with Substack so new posts appear within 24 hours without a manual deploy.",
     ],
   },
   {
