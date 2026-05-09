@@ -870,6 +870,83 @@ function computeOverperformer() { return computeFromCsv("overperformer.csv", "mu
 function computeGreyingPower() { return computeFromCsv("greying-power.csv", "score_value", "Composite score"); }
 function computeCosmopolitanCapital() { return computeFromCsv("cosmopolitan-capital.csv", "score_value", "Composite score"); }
 function computeEmergingStandout() { return computeFromCsv("emerging-standout.csv", "score_value", "Composite score"); }
+
+// Frozen Conurbations: paired metros that should function as a single urban
+// system but have been severed by political geography or missing
+// infrastructure. CSV lists one row per affected metro grouped by case_id;
+// the compute returns one QualifyingMetro per case (the higher-profile
+// member as lead) with a populated cluster so chips appear on both members
+// via buildBadgesByMetroIndex.
+function computeFrozenConurbations(): QualifyingMetro[] {
+  const csv = loadCsv("frozen-conurbations.csv");
+  const { bySlug } = getMetroIndex();
+  const caseMembers = new Map<string, string[]>();
+  const caseNames = new Map<string, string[]>();
+  for (const row of csv) {
+    const memArr = caseMembers.get(row.case_id) ?? [];
+    if (!memArr.includes(row.slug)) memArr.push(row.slug);
+    caseMembers.set(row.case_id, memArr);
+    const nameArr = caseNames.get(row.case_id) ?? [];
+    if (!nameArr.includes(row.name)) nameArr.push(row.name);
+    caseNames.set(row.case_id, nameArr);
+  }
+  const leadByCase = new Map<string, { slug: string; rank: number }>();
+  for (const row of csv) {
+    const meta = bySlug.get(row.slug);
+    if (!meta) continue;
+    const cur = leadByCase.get(row.case_id);
+    if (!cur || meta.rank < cur.rank) {
+      leadByCase.set(row.case_id, { slug: row.slug, rank: meta.rank });
+    }
+  }
+  const out: QualifyingMetro[] = [];
+  for (const row of csv) {
+    const lead = leadByCase.get(row.case_id);
+    if (!lead || lead.slug !== row.slug) continue;
+    const meta = bySlug.get(row.slug);
+    if (!meta) continue;
+    const sinceYear = parseInt(row.score_value, 10);
+    if (isNaN(sinceYear)) continue;
+    const memberSlugs = caseMembers.get(row.case_id) ?? [row.slug];
+    const memberNames = caseNames.get(row.case_id) ?? [row.name];
+    const otherSlugs = memberSlugs.filter((s) => s !== row.slug);
+    const otherNames = memberNames.filter((_, i) => memberSlugs[i] !== row.slug);
+    // Diameter: max pairwise haversine across members. Population sum across members.
+    const memberMetas = memberSlugs.map((s) => bySlug.get(s)).filter((m): m is Metro => m !== undefined);
+    let diameterKm = 0;
+    const withCoords = memberMetas.filter((m) => (m.lat ?? 0) !== 0 && (m.lon ?? 0) !== 0);
+    for (let i = 0; i < withCoords.length; i++) {
+      for (let j = i + 1; j < withCoords.length; j++) {
+        const d = haversineKm(withCoords[i].lat, withCoords[i].lon, withCoords[j].lat, withCoords[j].lon);
+        if (d > diameterKm) diameterKm = d;
+      }
+    }
+    const populationSum = memberMetas.reduce((acc, m) => acc + (m.pop ?? 0), 0);
+    out.push({
+      slug: meta.slug,
+      name: meta.name,
+      country: meta.country,
+      countrySlug: meta.countrySlug,
+      sovereignSlug: meta.sovereignSlug,
+      rank: meta.rank,
+      score: meta.score,
+      contextValue: sinceYear,
+      contextLabel: `Severed ${sinceYear} (${row.severing_condition})`,
+      cluster: {
+        id: row.case_id,
+        size: memberSlugs.length,
+        diameterKm,
+        populationSum,
+        otherSlugs,
+        otherNames,
+        memberSlugs,
+        memberNames,
+      },
+    });
+  }
+  out.sort((a, b) => a.contextValue - b.contextValue);
+  return out;
+}
 function computeConurbations(): QualifyingMetro[] {
   const { bySlug } = getMetroIndex();
 
@@ -1086,6 +1163,12 @@ export const BADGES: Badge[] = [
     shortDesc: "Developing-world metros outperforming their countries on productivity and capital.",
     longDesc: "Metros in emerging economies that significantly outperform their respective national averages on income per person, productivity, and the capital they attract. Bengaluru, Hyderabad, Pune, Ho Chi Minh City, Hanoi, Cebu City, Davao City, Medellín, Tashkent, Almaty, Tbilisi. Distinct from megacity status: emerging standouts can be relatively small but are rising fast, and the badge highlights metros where the gap between the city and the country has widened over the past decade. Inspired by the Oxford Economics Global Cities Index 2025 'Emerging Standouts' archetype.",
     methodologyAnchor: "#gdp", status: "live", compute: computeEmergingStandout,
+  },
+  {
+    slug: "frozen-conurbations", name: "Frozen Conurbations", emoji: "❄️",
+    shortDesc: "Pairs of cities that should function as one urban system but have been severed by political geography or missing infrastructure.",
+    longDesc: "Five cases where two cities sit close enough to share a labor market, an airshed, and a river basin, but operate as separate urban systems because of borders, walls, or missing bridges. Lahore and Amritsar were one Punjabi city for centuries before Partition severed them at the Wagah border in 1947. Nicosia and North Nicosia have been the only divided capital in Europe since 1974. Kinshasa and Brazzaville sit five kilometres apart across the Congo River and remain the only adjacent national capitals on Earth without a direct surface link. Detroit and Windsor share a regional economy that still moves a quarter of all US-Canada trade despite post-9/11 border friction. San Diego and Tijuana run a combined twenty-million-person labor market across one of the busiest borders in the world. The badge sits adjacent to the Conurbations and Twin Metros lenses but answers a different question: not which cities cluster, but which cities should cluster and do not.",
+    methodologyAnchor: "#population", status: "live", compute: computeFrozenConurbations,
   },
 ];
 

@@ -83,6 +83,9 @@ function formatContextValue(badgeSlug: string, value: number): string {
   if (badgeSlug === "isolated-capital") {
     return `${value.toFixed(0)} km`;
   }
+  if (badgeSlug === "frozen-conurbations") {
+    return value.toFixed(0);
+  }
   return value.toFixed(1);
 }
 

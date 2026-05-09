@@ -53,6 +53,14 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-09",
+    headline: "Frozen Conurbations badge",
+    items: [
+      "New /badges/frozen-conurbations surfaces five paired cities severed by border, missing bridge, or political division: Lahore-Amritsar, Nicosia-North Nicosia, Kinshasa-Brazzaville, Detroit-Windsor, San Diego-Tijuana.",
+      "Chips appear on each affected metro page, linking back to the case set.",
+    ],
+  },
+  {
     date: "2026-05-08",
     headline: "Boundary expansion staged for 43 new countries",
     items: [
