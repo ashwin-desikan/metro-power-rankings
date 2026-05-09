@@ -308,14 +308,23 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                   #{metro.rank}
                 </td>
                 <td className="px-2 sm:px-4 py-3">
-  <a href={`/rankings/${metro.slug}`} className="block">
-    <div className="font-semibold text-[var(--text)] hover:text-[var(--accent)] transition">
-      {metro.name}
-    </div>
-                    <div className="text-xs text-[var(--text-muted)]">
-                      {metro.country}
+                  <a href={`/rankings/${metro.slug}`} className="block">
+                    <div className="font-semibold text-[var(--text)] hover:text-[var(--accent)] transition">
+                      {metro.name}
                     </div>
                   </a>
+                  <div className="text-xs text-[var(--text-muted)]" onClick={(e) => e.stopPropagation()}>
+                    {(metro.sovereignSlug ?? metro.countrySlug) ? (
+                      <Link
+                        href={`/countries/${metro.sovereignSlug ?? metro.countrySlug}`}
+                        className="hover:text-[var(--accent)]"
+                      >
+                        {metro.country}
+                      </Link>
+                    ) : (
+                      metro.country
+                    )}
+                  </div>
                 </td>
                 <td className="px-2 sm:px-4 py-3 text-sm">
                   <div

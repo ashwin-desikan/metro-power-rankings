@@ -319,7 +319,16 @@ export default async function MatchupPage({ params }: PageProps) {
                   <h2 className="text-2xl font-bold">{d.metro.name}</h2>
                 </Link>
                 <p className="text-sm text-[var(--text-muted)] mt-1">
-                  {d.metro.country}
+                  {(d.metro.sovereignSlug ?? d.metro.countrySlug) ? (
+                    <Link
+                      href={`/countries/${d.metro.sovereignSlug ?? d.metro.countrySlug}`}
+                      className="hover:text-[var(--accent)]"
+                    >
+                      {d.metro.country}
+                    </Link>
+                  ) : (
+                    d.metro.country
+                  )}
                 </p>
                 <div className="flex items-center gap-3 mt-4">
                   <span

@@ -8,23 +8,11 @@
 //      coded by category (Major League / Other teams / Venues).
 //   3. The primary-city pin at metros.json (lat, lon).
 
-import { readFileSync } from "fs";
-import { join } from "path";
-
 import { getAllMetros } from "@/lib/data";
 import { buildMarkers } from "@/lib/teamMarkers";
+import { loadMetroBoundaryCollection } from "@/lib/country-boundaries";
 
 import MapWithFilters from "./MapWithFilters";
-
-function loadBoundary(slug: string): unknown | null {
-  try {
-    const p = join(process.cwd(), "public", "data", "metro-boundaries", `${slug}.geojson`);
-    const raw = readFileSync(p, "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
-}
 
 type MarkerInput = Parameters<typeof buildMarkers>[0];
 
@@ -41,7 +29,7 @@ export default function MetroPageMap({
   if (self.lat === 0 && self.lon === 0) return null;
 
   const pinName = self.primaryCity || self.name;
-  const boundary = loadBoundary(slug);
+  const boundary = loadMetroBoundaryCollection(slug);
   const markers = buildMarkers(teams);
 
   return (

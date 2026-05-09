@@ -48,14 +48,14 @@ export const TIERS: Tier[] = [
     name: "Major Metro",
     lowerBound: 20,
     tagline: "Regionally dominant with reach beyond its borders.",
-    accentHex: "#0d9488",
+    accentHex: "#0891b2",
   },
   {
     slug: "regional-hub",
     name: "Regional Hub",
     lowerBound: 10,
     tagline: "Anchors a sub-national region. Serves a substantial catchment.",
-    accentHex: "#059669",
+    accentHex: "#16a34a",
   },
   {
     slug: "established-city",

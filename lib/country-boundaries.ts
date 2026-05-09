@@ -44,8 +44,58 @@ const BOUNDARY_DIR = join(
   "metro-boundaries",
 );
 
+// Module-scoped cache of parsed boundary geometry by metro slug. Each
+// metro page, country page, and state page that includes a metro
+// previously read and JSON.parsed the same geojson file independently.
+// In a build with 8,000+ static pages and 4,000+ metros, that meant a
+// metro polygon could be parsed 3-5 times. Caching the parse cuts I/O
+// and CPU significantly. `null` means we tried and the file is missing
+// or unreadable; we cache the negative result too so we don't retry.
+type CachedBoundary = { geometry: GeoJSONFeature["geometry"]; bytes: number } | null;
+const boundaryCache = new Map<string, CachedBoundary>();
+
+function loadOneBoundary(slug: string): CachedBoundary {
+  if (boundaryCache.has(slug)) return boundaryCache.get(slug)!;
+  const path = join(BOUNDARY_DIR, `${slug}.geojson`);
+  if (!existsSync(path)) {
+    boundaryCache.set(slug, null);
+    return null;
+  }
+  try {
+    const raw = readFileSync(path, "utf-8");
+    const parsed = JSON.parse(raw) as { features?: GeoJSONFeature[] };
+    const f = parsed.features?.[0];
+    if (!f || !f.geometry) {
+      boundaryCache.set(slug, null);
+      return null;
+    }
+    const cached: CachedBoundary = { geometry: f.geometry, bytes: raw.length };
+    boundaryCache.set(slug, cached);
+    return cached;
+  } catch {
+    boundaryCache.set(slug, null);
+    return null;
+  }
+}
+
 export function loadCountryBoundaries(slug: string): CountryBoundaryResult {
   return loadBoundariesForMetros(getMetrosForCountry(slug));
+}
+
+// Single-metro convenience that reuses the same parse cache as the
+// country/state aggregator. The metro detail page renders each metro
+// exactly once at build time, but its boundary may also be needed by
+// country and state pages — caching the parse here means the cost is
+// paid once per build worker rather than 3-5x.
+export function loadMetroBoundaryCollection(
+  slug: string,
+): CountryBoundaryCollection | null {
+  const cached = loadOneBoundary(slug);
+  if (!cached) return null;
+  return {
+    type: "FeatureCollection",
+    features: [{ type: "Feature", properties: {}, geometry: cached.geometry }],
+  };
 }
 
 // Reusable: aggregate boundaries for any list of metros (state pages
@@ -56,26 +106,9 @@ export function loadBoundariesForMetros(metros: readonly Metro[]): CountryBounda
   let totalBytes = 0;
 
   for (const m of metros) {
-    const path = join(BOUNDARY_DIR, `${m.slug}.geojson`);
-    if (!existsSync(path)) continue;
-
-    let raw: string;
-    try {
-      raw = readFileSync(path, "utf-8");
-    } catch {
-      continue;
-    }
-    totalBytes += raw.length;
-
-    let parsed: { features?: GeoJSONFeature[] };
-    try {
-      parsed = JSON.parse(raw) as { features?: GeoJSONFeature[] };
-    } catch {
-      continue;
-    }
-
-    const f = parsed.features?.[0];
-    if (!f || !f.geometry) continue;
+    const cached = loadOneBoundary(m.slug);
+    if (!cached) continue;
+    totalBytes += cached.bytes;
 
     const tier = computeTier(m.score);
     features.push({
@@ -89,7 +122,7 @@ export function loadBoundariesForMetros(metros: readonly Metro[]): CountryBounda
         tier: tier.name,
         tierSlug: tier.slug,
       },
-      geometry: f.geometry,
+      geometry: cached.geometry,
     });
   }
 

@@ -25,6 +25,11 @@ export type EnrichedConurbationRow = {
   slug: string;
   name: string;
   country: string;
+  // ETL-resolved slugs so the country name in the row can link to the
+  // /countries/[slug] page. countrySlug prefers UK constituent (e.g.
+  // England); sovereignSlug holds the parent (united-kingdom).
+  countrySlug?: string;
+  sovereignSlug?: string;
   rank: number;
   score: number;
   contextValue: number;
@@ -97,7 +102,16 @@ function ConurbationRowView({
           {row.name}
         </Link>
         <span className="text-sm text-[var(--text-muted)] ml-2">
-          {row.country}
+          {(row.sovereignSlug ?? row.countrySlug) ? (
+            <Link
+              href={`/countries/${row.sovereignSlug ?? row.countrySlug}`}
+              className="hover:text-[var(--accent)]"
+            >
+              {row.country}
+            </Link>
+          ) : (
+            row.country
+          )}
         </span>
         {row.cluster?.componentMetro ? (
           <div className="text-xs text-[var(--text-dim)] mt-0.5">

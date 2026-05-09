@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { getAllMetros, getMetroDetail, formatDimValue, formatPop, formatMarketCap, formatGdp, type MetroDetail } from '@/lib/data';
 import { BASE_URL } from '@/lib/seo';
 import MetroPicker from './MetroPicker';
@@ -193,13 +194,22 @@ export default async function ComparePage({ searchParams }: PageProps) {
 function MetroColumnHeader({ d }: { d: MetroDetail }) {
   return (
     <div>
+      <div className="text-xs text-[var(--text-muted)] uppercase tracking-wide">
+        {(d.metro.sovereignSlug ?? d.metro.countrySlug) ? (
+          <Link
+            href={`/countries/${d.metro.sovereignSlug ?? d.metro.countrySlug}`}
+            className="hover:text-[var(--accent)]"
+          >
+            {d.metro.country}
+          </Link>
+        ) : (
+          d.metro.country
+        )}
+      </div>
       <a
         href={`/rankings/${d.metro.slug}`}
         className="block hover:text-[var(--accent)] transition"
       >
-        <div className="text-xs text-[var(--text-muted)] uppercase tracking-wide">
-          {d.metro.country}
-        </div>
         <div className="text-xl font-bold mt-1 leading-tight">
           {d.metro.name}
         </div>
