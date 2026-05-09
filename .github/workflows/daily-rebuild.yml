@@ -1,0 +1,79 @@
+# Daily rebuild of rankings.citizenofnowhere.org so the Featured Articles
+# strip on / picks up new Substack posts without manual intervention.
+#
+# Why this exists
+#   The home page Featured Articles strip is hydrated at build time from the
+#   Substack RSS feed (see lib/substack.ts). Although the loader uses a
+#   1-hour ISR revalidate so request-time renders refresh hourly, the
+#   statically generated home page itself only re-renders on a fresh build.
+#   A daily rebuild guarantees new Substack posts surface within 24 hours
+#   even if no other commit lands. This mirrors the same pattern shipped on
+#   citizenofnowhere-brand.
+#
+# How it works
+#   1. GitHub Actions invokes this workflow on the schedule below (and on
+#      manual dispatch from the Actions tab).
+#   2. The workflow POSTs to the Vercel Deploy Hook URL stored in the
+#      VERCEL_DEPLOY_HOOK_URL repo secret.
+#   3. Vercel queues a fresh production build of the main branch. The build
+#      pulls the latest Substack RSS, regenerates the home-page HTML, and ships.
+#
+# Secret setup (one-time)
+#   - In Vercel: Project Settings → Git → Deploy Hooks → Create Hook.
+#       Name: daily-substack-refresh
+#       Branch: main
+#     Copy the URL it returns.
+#   - In GitHub: Repo Settings → Secrets and variables → Actions → New
+#     repository secret.
+#       Name:  VERCEL_DEPLOY_HOOK_URL
+#       Value: <the hook URL from Vercel>
+#
+# Cost / footprint
+#   One HTTP POST per day. No checkout, no install, no build runtime burned in
+#   GitHub. Vercel build minutes cost is identical to a manual redeploy.
+
+name: Daily rebuild (Substack refresh)
+
+on:
+  schedule:
+    # 13:32 UTC daily. Off-the-hour to avoid contention with other crons and
+    # offset 15 minutes from the brand-site rebuild so they don't both queue
+    # against Vercel at the same instant.
+    - cron: "32 13 * * *"
+  workflow_dispatch: {}
+
+# Only one rebuild in flight at a time.
+concurrency:
+  group: daily-rebuild
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  trigger-vercel-deploy:
+    name: Trigger Vercel deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify secret is configured
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "::error::VERCEL_DEPLOY_HOOK_URL secret is not set. See workflow header for setup steps."
+            exit 1
+          fi
+          echo "Secret present (length: ${#HOOK_URL})."
+
+      - name: POST to Vercel Deploy Hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          response=$(curl -fsS -X POST \
+            --retry 3 --retry-delay 5 --retry-connrefused \
+            -H "Content-Type: application/json" \
+            -d '{"trigger":"github-actions-daily"}' \
+            "$HOOK_URL")
+          echo "Vercel response: $response"
