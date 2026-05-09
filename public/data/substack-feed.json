@@ -1,0 +1,55 @@
+{
+  "_comment": "Cached fallback snapshot for lib/substack.ts. The live RSS feed at https://citizenofnowhere.substack.com/feed is the source of truth at runtime; this file is used when fetch fails (e.g., sandbox egress blocked, Substack 5xx) so the home page can always render. Refresh by running scripts/refresh-substack-feed.ts or by editing manually after publishing a new post.",
+  "fetchedAt": "2026-05-09",
+  "posts": [
+    {
+      "title": "Reading the Oxford Economics Global Cities Index Against Our Own",
+      "url": "https://citizenofnowhere.substack.com/p/reading-the-oxford-economics-global",
+      "pubDate": "2026-05-08",
+      "description": "Peer comparison against OEGCI 2025: three methodology critiques and three archetype badges that came out of the analysis.",
+      "slug": "reading-the-oxford-economics-global"
+    },
+    {
+      "title": "The 85% Illusion: When Cities Build Skylines Instead of Economies",
+      "url": "https://citizenofnowhere.substack.com/p/the-85-illusion-when-cities-build",
+      "pubDate": "2026-05-04",
+      "description": "Why skyline density and economic gravity diverge, and what the gap reveals about the cities that overbuild vertical capacity.",
+      "slug": "the-85-illusion-when-cities-build"
+    },
+    {
+      "title": "Company Towns of the Mind: The Academic Gravity Wells",
+      "url": "https://citizenofnowhere.substack.com/p/company-towns-of-the-mind-the-academic",
+      "pubDate": "2026-05-01",
+      "description": "The metros where universities outweigh every other engine of civic gravity, and what that does to a city's identity.",
+      "slug": "company-towns-of-the-mind-the-academic"
+    },
+    {
+      "title": "The Team That Wins the City",
+      "url": "https://citizenofnowhere.substack.com/p/the-team-that-wins-the-city",
+      "pubDate": "2026-04-28",
+      "description": "One crest per city: the single sporting franchise that defines each of 312 global metros, with rationales for the contested calls.",
+      "slug": "the-team-that-wins-the-city"
+    },
+    {
+      "title": "The Last of the Marylebones",
+      "url": "https://citizenofnowhere.substack.com/p/the-last-of-the-marylebones",
+      "pubDate": "2026-04-21",
+      "description": "A taxonomy of the world's dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ metros.",
+      "slug": "the-last-of-the-marylebones"
+    },
+    {
+      "title": "The Global Metro Power Rankings Site Is Live",
+      "url": "https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings-site",
+      "pubDate": "2026-04-20",
+      "description": "Launch note for the public site: how to navigate the rankings, the badges, the matchups, and the methodology.",
+      "slug": "the-global-metro-power-rankings-site"
+    },
+    {
+      "title": "The Global Metro Power Rankings: Measuring What Makes a City Matter",
+      "url": "https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings",
+      "pubDate": "2026-04-12",
+      "description": "Series opener. Composite score, top 25, continental champions, and the San Francisco anomaly.",
+      "slug": "the-global-metro-power-rankings"
+    }
+  ]
+}

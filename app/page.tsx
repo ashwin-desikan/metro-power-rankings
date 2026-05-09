@@ -4,6 +4,57 @@ import Link from 'next/link';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { datasetJsonLd, itemListJsonLd, serializeJsonLd } from '@/lib/seo';
+import { getSubstackPosts, type SubstackPost } from '@/lib/substack';
+
+// Internal evergreen pieces that should always appear in the Featured Articles
+// strip alongside the latest Substack posts. Order matters: pinned items
+// render first, then RSS items fill remaining slots up to FEATURED_LIMIT.
+type FeaturedCard = {
+  title: string;
+  subtitle: string;
+  status: string;
+  href: string;
+  external: boolean;
+};
+
+const PINNED_FEATURED: FeaturedCard[] = [
+  {
+    title: 'The Last of the Marylebones',
+    subtitle:
+      'A taxonomy of the world’s dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ metros.',
+    status: 'Read',
+    href: '/neighborhoods',
+    external: false,
+  },
+  {
+    title: 'The Team That Wins the City',
+    subtitle:
+      'One crest per city. The single sporting franchise that defines each of 312 global metros, with full rationales for the contested calls.',
+    status: 'Read',
+    href: '/top-teams',
+    external: false,
+  },
+];
+
+const FEATURED_LIMIT = 4;
+
+function buildFeaturedCards(posts: SubstackPost[]): FeaturedCard[] {
+  // Dedupe: if a pinned card points at a Substack URL we also have in the
+  // feed, prefer the pinned copy and drop the duplicate from the RSS slice.
+  const pinnedHrefs = new Set(PINNED_FEATURED.map((c) => c.href));
+  const remaining = FEATURED_LIMIT - PINNED_FEATURED.length;
+  const fromFeed: FeaturedCard[] = posts
+    .filter((p) => !pinnedHrefs.has(p.url))
+    .slice(0, Math.max(0, remaining))
+    .map((p) => ({
+      title: p.title,
+      subtitle: p.description,
+      status: 'Read on Substack',
+      href: p.url,
+      external: true,
+    }));
+  return [...PINNED_FEATURED, ...fromFeed].slice(0, FEATURED_LIMIT);
+}
 
 function getLastUpdate(): string {
   try {
@@ -22,6 +73,8 @@ export default async function Home() {
   const metros = getAllMetros();
   const regions = getRegions();
   const lastUpdate = getLastUpdate();
+  const substackPosts = await getSubstackPosts();
+  const featuredArticles = buildFeaturedCards(substackPosts);
 
   const dataset = datasetJsonLd({
     lastUpdate,
@@ -270,43 +323,16 @@ export default async function Home() {
           >
             Featured Articles
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'The Global Metro Power Rankings',
-                subtitle:
-                  'The introductory essay: composite score, top 25, continental champions, and the San Francisco anomaly.',
-                status: 'Read on Substack',
-                statusColor: 'var(--accent)',
-                href: 'https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings',
-                external: true,
-              },
-              {
-                title: 'The Last of the Marylebones',
-                subtitle:
-                  'A taxonomy of the world’s dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ metros.',
-                status: 'Read',
-                statusColor: 'var(--accent)',
-                href: '/neighborhoods',
-                external: false,
-              },
-              {
-                title: 'The Team That Wins the City',
-                subtitle:
-                  'One crest per city. The single sporting franchise that defines each of 312 global metros, with full rationales for the contested calls.',
-                status: 'Read',
-                statusColor: 'var(--accent)',
-                href: '/top-teams',
-                external: false,
-              },
-            ].map((article) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredArticles.map((article) => {
+              const statusColor = 'var(--accent)';
               const cardBody = (
                 <>
                   <div className="mb-4">
                     <span
                       className="text-xs font-semibold uppercase tracking-widest"
                       style={{
-                        color: article.statusColor,
+                        color: statusColor,
                         fontFamily: "'JetBrains Mono', monospace",
                       }}
                     >
@@ -658,7 +684,7 @@ export default async function Home() {
             className="border-t pt-8 text-sm text-[var(--text-muted)]"
             style={{ borderColor: 'var(--border)' }}
           >
-            <p>&copy; 2026 Global Metro Power Rankings. Hand-curated by Ashwin D.</p>
+            <p>&copy; 2026 Global Metro Power Rankings. Hand-curated by Ashwin Desikan.</p>
           </div>
         </div>
       </footer>
