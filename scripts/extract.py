@@ -1382,6 +1382,18 @@ def main():
     print(f"  regions.json ({len(regions)} regions)")
     print(f"  details/ ({detail_count} files)")
     print(f"  meta.json (lastUpdate: {last_update})")
+    # Regenerate quiz forward queue against the freshly written data.
+    # Locked issues are preserved by generator idempotency. Forward slots
+    # are recomputed. The CI guard validates non-strict; tier-band slips
+    # emit warnings rather than failing the ETL.
+    import subprocess
+    print("\n--- quiz queue ---")
+    try:
+        subprocess.run(["python3", "scripts/generate_quiz_questions.py", "--days", "30"],
+                       check=True)
+        subprocess.run(["python3", "scripts/check_quiz_queue.py"], check=False)
+    except Exception as e:
+        print(f"  quiz queue regeneration failed: {e}", file=sys.stderr)
 
 
 if __name__ == "__main__":
