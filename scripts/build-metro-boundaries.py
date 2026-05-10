@@ -167,6 +167,13 @@ COUNTRY_PARQUET_MAP = {
     "Croatia":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-HR.parquet",
     "Congo DR":    r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CD.parquet",
     "Luxembourg":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-LU.parquet",
+    # 2026-05-10 expansion (six countries with workbook fills complete):
+    "Brazil":      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BR.parquet",
+    "Austria":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AT.parquet",
+    "Switzerland": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CH.parquet",
+    "China":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CN.parquet",
+    "Australia":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AU.parquet",
+    "South Korea": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-KR.parquet",
     # Andorra, San Marino, Vatican City, and the remaining 2026-05-08 small
     # countries (most of Latin America, sub-Saharan Africa, the Channel
     # Islands, etc.) are tiny enough to fall through to SOURCE_PARQUET; no
@@ -240,6 +247,14 @@ COUNTRY_SHEET_MAP = {
     "Congo DR":                 "municipality",
     "Guernsey":                 "municipality",
     "Jersey":                   "municipality",
+    # 2026-05-10 expansion - Counties (3)
+    "Brazil":                   "counties",
+    "Australia":                "counties",
+    "South Korea":              "counties",
+    # 2026-05-10 expansion - Municipality (3)
+    "Austria":                  "municipality",
+    "Switzerland":              "municipality",
+    "China":                    "municipality",
 }
 
 COUNTRY_TO_ISO = {
@@ -302,6 +317,13 @@ COUNTRY_TO_ISO = {
     "Congo DR":                 "CD",
     "Guernsey":                 "GG",
     "Jersey":                   "JE",
+    # 2026-05-10 expansion (six countries)
+    "Brazil":                   "BR",
+    "Austria":                  "AT",
+    "Switzerland":              "CH",
+    "China":                    "CN",
+    "Australia":                "AU",
+    "South Korea":              "KR",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {

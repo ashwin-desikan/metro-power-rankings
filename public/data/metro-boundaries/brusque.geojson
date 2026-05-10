@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"slug": "brusque", "members": 1, "country": "Brazil", "input_hash": "1097789df7247275"}, "geometry": {"type": "Polygon", "coordinates": [[[-50.3278464, -27.8269918], [-50.3283569, -27.8188375], [-50.3329451, -27.8214719], [-50.3278464, -27.8269918]]]}}]}

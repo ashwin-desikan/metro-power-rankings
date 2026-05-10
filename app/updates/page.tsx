@@ -54,11 +54,11 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-10",
-    headline: "Football clubs on the map, Tokyo refresh, boundary protocol",
+    headline: "498 new boundaries plus football markers and Tokyo refresh",
     items: [
-      "Football clubs now plot as Major League markers on every metro map, with stadium coordinates backfilled for 499 top-flight clubs.",
-      "Tokyo polygon rebuilt with the 23 special wards correctly inside the metro footprint; the new refreshment protocol catches this kind of staleness automatically.",
-      "Workbook refresh adds 2 new metros and 36 new real polygons across 13 countries.",
+      "Real polygons now render for Brazil (218), China (172), Switzerland (32), Australia (31), Austria (27), and South Korea (18); 498 new boundaries in total.",
+      "Football clubs plot as Major League markers on every metro map, with stadium coordinates backfilled for 499 top-flight clubs.",
+      "Tokyo polygon rebuilt with the 23 special wards correctly inside the metro footprint; new refreshment protocol catches this kind of staleness automatically.",
     ],
   },
   {
