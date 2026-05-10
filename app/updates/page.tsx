@@ -54,10 +54,11 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-10",
-    headline: "Data refresh and 20 new boundary polygons",
+    headline: "Football clubs on the map, Tokyo refresh, boundary protocol",
     items: [
-      "Workbook refresh adds Armidale (Australia) and Udupi (India), refreshes 1,374 university coordinates, and cleans 2,100 team rows.",
-      "Real polygons now render for Udupi plus 19 metros from yesterday's expansion across India, Turkey, Nigeria, Croatia, Luxembourg, Portugal, Romania, and Colombia.",
+      "Football clubs now plot as Major League markers on every metro map, with stadium coordinates backfilled for 499 top-flight clubs.",
+      "Tokyo polygon rebuilt with the 23 special wards correctly inside the metro footprint; the new refreshment protocol catches this kind of staleness automatically.",
+      "Workbook refresh adds 2 new metros and 36 new real polygons across 13 countries.",
     ],
   },
   {

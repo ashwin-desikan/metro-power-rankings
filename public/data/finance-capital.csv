@@ -1,7 +1,7 @@
 rank,slug,name,country,score,pop,marketCap
 5,san-francisco-san-jose,San Francisco-San Jose,United States,124.6,7979579,29197607093432.0
 1,new-york,New York,United States,181.1,22342624,8838935753728.0
-31,seattle,Seattle,United States,58.5,5105721,6924408960256.0
+31,seattle,Seattle,United States,58.8,5105721,6924408960256.0
 6,beijing,Beijing,China,110.7,22560773,4803127896032.0
 4,tokyo,Tokyo,Japan,133.0,40317972,4769526972523.0
 2,london,London,United Kingdom,180.2,16152605,4257166323900.0
@@ -26,7 +26,7 @@ rank,slug,name,country,score,pop,marketCap
 178,omaha-lincoln,Omaha-Lincoln,United States,15.3,1411207,1331770803712.0
 9,shanghai,Shanghai,China,104.5,50359413,1282136564918.0
 24,rhine-ruhr,Rhine-Ruhr,Germany,65.0,11102474,1275009297183.0
-109,indianapolis,Indianapolis,United States,25.7,2584194,1174977060864.0
+110,indianapolis,Indianapolis,United States,25.0,2584194,1174977060864.0
 18,hong-kong,Hong Kong,Hong Kong,68.6,7411945,1102107448116.0
 407,fayetteville,Fayetteville,United States,5.8,629669,1086875854848.0
 14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,75.0,18126728,1053176501364.0
@@ -48,7 +48,7 @@ rank,slug,name,country,score,pop,marketCap
 282,eindhoven,Eindhoven,Netherlands,9.0,816291,688008511488.0
 55,denver,Denver,United States,40.9,3382760,684799688832.0
 19,madrid,Madrid,Spain,68.0,6930703,666003209512.0
-29,philadelphia,Philadelphia,United States,60.2,7298206,654918693056.0
+29,philadelphia,Philadelphia,United States,60.5,7298206,654918693056.0
 51,delhi,Delhi,India,45.7,33446850,652046982275.0
 112,calgary,Calgary,Canada,25.0,1897326,638120396729.0
 44,nanjing,Nanjing,China,48.6,9314685,633977354351.0

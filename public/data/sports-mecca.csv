@@ -1,5 +1,5 @@
 rank,slug,name,country,score,pop,sports_score
-2,london,London,United Kingdom,180.2,16152605,289
+2,london,London,United Kingdom,180.2,16152605,287
 7,los-angeles,Los Angeles,United States,109.9,18507255,213
 1,new-york,New York,United States,181.1,22342624,198
 4,tokyo,Tokyo,Japan,133.0,40317972,158
@@ -15,7 +15,7 @@ rank,slug,name,country,score,pop,sports_score
 77,phoenix,Phoenix,United States,33.6,5186958,81
 19,madrid,Madrid,Spain,68.0,6930703,80
 15,sydney,Sydney,Australia,72.3,5497131,78
-109,indianapolis,Indianapolis,United States,25.7,2584194,78
+110,indianapolis,Indianapolis,United States,25.0,2584194,76
 13,boston,Boston,United States,87.3,6792923,73
 22,istanbul,Istanbul,Turkey,65.3,16293275,73
 49,johannesburg,Johannesburg,South Africa,46.2,15099421,69
@@ -26,11 +26,11 @@ rank,slug,name,country,score,pop,sports_score
 82,athens,Athens,Greece,33.2,3792469,64
 115,kansas-city,Kansas City,United States,24.8,2593094,64
 65,minneapolis,Minneapolis,United States,37.7,4170245,60
-29,philadelphia,Philadelphia,United States,60.2,7298206,59
 24,rhine-ruhr,Rhine-Ruhr,Germany,65.0,11102474,58
-31,seattle,Seattle,United States,58.5,5105721,57
+29,philadelphia,Philadelphia,United States,60.5,7298206,57
 48,rome,Rome,Italy,47.5,4224901,57
 17,moscow,Moscow,Russia,70.3,21534777,56
+31,seattle,Seattle,United States,58.8,5105721,55
 33,barcelona,Barcelona,Spain,56.7,5702262,55
 52,cairo,Cairo,Egypt,43.9,23708237,54
 16,toronto,Toronto,Canada,71.6,7670678,53

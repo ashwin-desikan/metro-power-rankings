@@ -38,7 +38,7 @@ rank,slug,name,country,score,pop,culture_score
 38,munich,Munich,Germany,52.0,6114612,47.0
 16,toronto,Toronto,Canada,71.6,7670678,46.0
 130,naples,Naples,Italy,23.0,3864340,44.0
-110,padua-venice,Padua-Venice,Italy,25.6,2646958,41.0
+109,padua-venice,Padua-Venice,Italy,25.6,2646958,41.0
 111,orlando,Orlando,United States,25.0,3974152,40.0
 27,mexico-city,Mexico City,Mexico,61.7,26370664,38.0
 46,vienna,Vienna,Austria,48.0,2723337,37.0

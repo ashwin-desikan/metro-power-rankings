@@ -29,7 +29,7 @@ rank,slug,name,country,score,pop,airport_score
 14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,75.0,18126728,6.0
 16,toronto,Toronto,Canada,71.6,7670678,6.0
 25,singapore,Singapore,Singapore,64.0,5678287,6.0
-31,seattle,Seattle,United States,58.5,5105721,6.0
+31,seattle,Seattle,United States,58.8,5105721,6.0
 36,bangkok,Bangkok,Thailand,54.2,17310600,6.0
 37,mumbai,Mumbai,India,54.1,23146605,6.0
 39,kuala-lumpur,Kuala Lumpur,Malaysia,51.9,9668818,6.0
