@@ -1,91 +1,91 @@
 rank,slug,name,country,score,pop,culture_score
-2,london,London,United Kingdom,180.1,15984778,333.0
-3,paris,Paris,France,142.6,12878104,220.0
+2,london,London,United Kingdom,180.2,16152605,333.0
+3,paris,Paris,France,142.7,12878104,220.0
 1,new-york,New York,United States,181.1,22342624,218.0
 35,dubai-sharjah,Dubai-Sharjah,United Arab Emirates,56.0,5679122,216.0
-4,tokyo,Tokyo,Japan,132.9,40317972,212.0
-119,macau,Macau,Macau,23.7,681293,172.0
-7,los-angeles,Los Angeles,United States,109.8,18507255,169.0
-18,hong-kong,Hong Kong,Hong Kong,68.5,7411945,120.0
-14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,72.7,18126728,116.0
-5,san-francisco-san-jose,San Francisco-San Jose,United States,122.7,7979579,110.0
-26,miami,Miami,United States,62.0,6538896,106.0
+4,tokyo,Tokyo,Japan,133.0,40317972,212.0
+114,macau,Macau,Macau,24.9,681293,172.0
+7,los-angeles,Los Angeles,United States,109.9,18507255,169.0
+18,hong-kong,Hong Kong,Hong Kong,68.6,7411945,120.0
+14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,75.0,18126728,116.0
+5,san-francisco-san-jose,San Francisco-San Jose,United States,124.6,7979579,110.0
+26,miami,Miami,United States,62.1,6538896,106.0
 9,shanghai,Shanghai,China,104.5,50359413,100.0
 36,bangkok,Bangkok,Thailand,54.2,17310600,99.0
-10,washington-baltimore,Washington-Baltimore,United States,96.7,10204407,98.0
-279,cancun,Cancun,Mexico,9.0,934189,91.0
-6,beijing,Beijing,China,110.8,22560773,87.0
-13,boston,Boston,United States,87.2,6792923,83.0
+10,washington-baltimore,Washington-Baltimore,United States,96.8,10204407,98.0
+281,cancun,Cancun,Mexico,9.0,934189,91.0
+6,beijing,Beijing,China,110.7,22560773,87.0
+13,boston,Boston,United States,87.3,6792923,83.0
 225,denpasar,Denpasar,Indonesia,12.2,2457404,83.0
-154,nice,Nice,France,18.3,1114579,82.0
-25,singapore,Singapore,Singapore,63.9,5678287,79.0
-8,seoul,Seoul,South Korea,107.0,26043325,76.0
+147,nice,Nice,France,19.3,1114579,82.0
+25,singapore,Singapore,Singapore,64.0,5678287,79.0
+8,seoul,Seoul,South Korea,107.8,26043325,76.0
 48,rome,Rome,Italy,47.5,4224901,76.0
 20,milan,Milan,Italy,67.5,7843262,75.0
 12,chicago,Chicago,United States,90.5,9941597,74.0
-59,las-vegas,Las Vegas,United States,39.4,2454861,74.0
-310,los-cabos,Los Cabos,Mexico,8.1,351111,74.0
+59,las-vegas,Las Vegas,United States,39.5,2454861,74.0
+312,los-cabos,Los Cabos,Mexico,8.1,351111,74.0
 22,istanbul,Istanbul,Turkey,65.3,16293275,73.0
-151,florence,Florence,Italy,18.6,1540513,72.0
+143,florence,Florence,Italy,19.6,1540513,72.0
 19,madrid,Madrid,Spain,68.0,6930703,66.0
 33,barcelona,Barcelona,Spain,56.7,5702262,60.0
 70,doha,Doha,Qatar,34.9,2669452,58.0
 43,manila,Manila,Philippines,49.8,28250517,57.0
 68,abu-dhabi,Abu Dhabi,United Arab Emirates,35.1,2823340,54.0
 11,guangzhou,Guangzhou,China,96.3,62994136,53.0
-195,honolulu,Honolulu,United States,13.8,998747,52.0
+197,honolulu,Honolulu,United States,13.8,998747,52.0
 30,berlin,Berlin,Germany,59.7,5683734,51.0
-38,munich,Munich,Germany,51.9,6114612,47.0
-16,toronto,Toronto,Canada,71.5,7670678,46.0
-127,naples,Naples,Italy,23.0,3864340,44.0
+38,munich,Munich,Germany,52.0,6114612,47.0
+16,toronto,Toronto,Canada,71.6,7670678,46.0
+130,naples,Naples,Italy,23.0,3864340,44.0
 110,padua-venice,Padua-Venice,Italy,25.6,2646958,41.0
 111,orlando,Orlando,United States,25.0,3974152,40.0
-27,mexico-city,Mexico City,Mexico,61.6,26370664,38.0
+27,mexico-city,Mexico City,Mexico,61.7,26370664,38.0
 46,vienna,Vienna,Austria,48.0,2723337,37.0
-391,puerto-vallarta,Puerto Vallarta,Mexico,6.0,479471,37.0
+394,puerto-vallarta,Puerto Vallarta,Mexico,6.0,479471,37.0
 39,kuala-lumpur,Kuala Lumpur,Malaysia,51.9,9668818,36.0
 60,lisbon,Lisbon,Portugal,39.4,3150191,36.0
-104,salt-lake-city-provo,Salt Lake City-Provo,United States,26.7,2874061,36.0
-84,zurich,Zurich,Switzerland,32.2,1649715,35.0
-108,cape-town,Cape Town,South Africa,26.4,5225057,34.0
-125,geneva,Geneva,Switzerland,23.1,638565,34.0
-41,amsterdam,Amsterdam,Netherlands,51.0,2460092,33.0
-58,taipei,Taipei,Taiwan,39.7,9269756,33.0
+105,salt-lake-city-provo,Salt Lake City-Provo,United States,26.7,2874061,36.0
+85,zurich,Zurich,Switzerland,32.3,1649715,35.0
+108,cape-town,Cape Town,South Africa,26.5,5225057,34.0
+127,geneva,Geneva,Switzerland,23.1,638565,34.0
+42,amsterdam,Amsterdam,Netherlands,51.0,2460092,33.0
+58,taipei,Taipei,Taiwan,39.8,9269756,33.0
 66,riyadh,Riyadh,Saudi Arabia,36.4,7194013,33.0
-389,port-louis,Port Louis,Mauritius,6.1,344286,33.0
-42,brussels,Brussels,Belgium,50.5,2875717,32.0
+392,port-louis,Port Louis,Mauritius,6.1,344286,33.0
+41,brussels,Brussels,Belgium,51.5,2875717,32.0
 52,cairo,Cairo,Egypt,43.9,23708237,30.0
 56,vancouver,Vancouver,Canada,40.7,3471561,30.0
 15,sydney,Sydney,Australia,72.3,5497131,29.0
 23,sao-paulo,Sao Paulo,Brazil,65.3,22305115,29.0
-79,copenhagen,Copenhagen,Denmark,33.4,2144354,29.0
-97,prague,Prague,Czech Republic,28.2,2035589,29.0
-106,budapest,Budapest,Hungary,26.6,3031160,29.0
-372,marrakesh,Marrakesh,Morocco,6.5,1405373,28.0
-447,bozeman,Bozeman,United States,5.2,126984,27.0
+80,copenhagen,Copenhagen,Denmark,33.4,2144354,29.0
+98,prague,Prague,Czech Republic,28.2,2035589,29.0
+107,budapest,Budapest,Hungary,26.6,3031160,29.0
+374,marrakesh,Marrakesh,Morocco,6.5,1405373,28.0
+446,bozeman,Bozeman,United States,5.2,126984,27.0
 40,buenos-aires,Buenos Aires,Argentina,51.8,15188985,27.0
-37,mumbai,Mumbai,India,54.0,23146605,27.0
-21,houston,Houston,United States,65.5,7981303,26.0
-81,austin,Austin,United States,33.0,2550637,26.0
+37,mumbai,Mumbai,India,54.1,23146605,27.0
+21,houston,Houston,United States,65.4,7981303,26.0
+81,austin,Austin,United States,33.4,2550637,26.0
 50,chengdu,Chengdu,China,46.0,20937757,25.0
 164,manama,Manama,Bahrain,16.9,1501635,24.0
 17,moscow,Moscow,Russia,70.3,21534777,22
-513,the-valley,The Valley,Anguilla,4.3,15701,22.0
-462,siem-reap,Siem Reap,Cambodia,5.0,317793,22.0
+516,the-valley,The Valley,Anguilla,4.3,15701,22.0
+463,siem-reap,Siem Reap,Cambodia,5.0,317793,22.0
 49,johannesburg,Johannesburg,South Africa,46.2,15099421,21.0
-509,victoria-sey,Victoria (SEY),Seychelles,4.3,88382,21.0
-143,kuwait-city,Kuwait City,Kuwait,19.5,4616262,20.0
-146,baku,Baku,Azerbaijan,19.2,3601738,18.0
-553,thimphu,Thimphu,Bhutan,3.9,138736,16.0
-101,st-petersburg,St. Petersburg,Russia,27.1,6257471,14
-28,melbourne,Melbourne,Australia,61.1,5411094,13.0
-278,sanya,Sanya,China,9.0,1031396,12.0
-535,surat-thani,Surat Thani,Thailand,4.1,1062600,12.0
-51,delhi,Delhi,India,45.6,33446850,11
-140,hanoi,Hanoi,Vietnam,20.3,8993040,11.0
-410,kigali,Kigali,Rwanda,5.7,1745555,11.0
-361,naha,Naha,Japan,6.7,1467480,11.0
-103,perth,Perth,Australia,26.7,2364521,10.0
+512,victoria-sey,Victoria (SEY),Seychelles,4.3,88382,21.0
+144,kuwait-city,Kuwait City,Kuwait,19.5,4616262,20.0
+149,baku,Baku,Azerbaijan,19.2,3601738,18.0
+554,thimphu,Thimphu,Bhutan,3.9,138736,16.0
+102,st-petersburg,St. Petersburg,Russia,27.1,6257471,14
+28,melbourne,Melbourne,Australia,61.2,5411094,13.0
+279,sanya,Sanya,China,9.0,1031396,12.0
+537,surat-thani,Surat Thani,Thailand,4.1,1062600,12.0
+51,delhi,Delhi,India,45.7,33446850,11
+141,hanoi,Hanoi,Vietnam,20.4,8993040,11.0
+411,kigali,Kigali,Rwanda,5.7,1745555,11.0
+362,naha,Naha,Japan,6.7,1467480,11.0
+104,perth,Perth,Australia,26.7,2364521,10.0
 73,changsha,Changsha,China,34.2,16676833,10.0
-549,utsunomiya,Utsunomiya,Japan,4.0,1027635,9.0
+550,utsunomiya,Utsunomiya,Japan,4.0,1027635,9.0
 165,fukuoka,Fukuoka,Japan,16.8,2607948,8.0

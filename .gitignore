@@ -79,6 +79,8 @@ MetroAreas.xlsx.bak-*
 
 # stale per-session helpers
 scripts/extract.py.broken
+scripts/_run_boundaries_*.py
+scripts/_rebuild_boundary_cache.py
 scripts/__pycache__/
 .commit-msg-round*.txt
 commit-round*.ps1
@@ -91,3 +93,4 @@ NAV_PATCH_INSTRUCTIONS.md
 # boundary builder cache (local optimization; rebuilt on demand)
 public/data/metro-boundaries/build-cache.json
 public/data/metro-boundaries/.build-cache.json
+public/data/stale-boundaries-to-delete.txt

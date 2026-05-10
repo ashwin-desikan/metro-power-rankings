@@ -1,134 +1,132 @@
 slug,name,country,rank,distance_km,peer_slug,peer_name,peer_country,peer_rank,tier
-nairobi,Nairobi,Kenya,133,2545.9,jeddah,Jeddah,Saudi Arabia,120,A
-port-louis,Port Louis,Mauritius,389,2462.8,dar-es-salaam,Dar es Salaam,Tanzania,239,A
-papeete,Papeete,Tahiti,525,2409.4,apia,Apia,Samoa,994,A
-bogota,Bogota,Colombia,116,1892.0,lima,Lima,Peru,139,A
-lima,Lima,Peru,139,1892.0,bogota,Bogota,Colombia,116,A
+nairobi,Nairobi,Kenya,133,2545.9,jeddah,Jeddah,Saudi Arabia,122,A
+port-louis,Port Louis,Mauritius,392,2462.8,dar-es-salaam,Dar es Salaam,Tanzania,240,A
+papeete,Papeete,Tahiti,527,2409.4,apia,Apia,Samoa,998,A
+bogota,Bogota,Colombia,119,1892.0,lima,Lima,Peru,140,A
+lima,Lima,Peru,140,1892.0,bogota,Bogota,Colombia,119,A
 buenos-aires,Buenos Aires,Argentina,40,1674.9,sao-paulo,Sao Paulo,Brazil,23,A
 moscow,Moscow,Russia,17,1608.8,berlin,Berlin,Germany,30,A
-dakar,Dakar,Senegal,446,1510.2,tenerife,Tenerife,Spain,350,A
-nuuk,Nuuk,Greenland,1867,1430.1,reykjavik,Reykjavík,Iceland,452,A
-victoria-sey,Victoria (SEY),Seychelles,509,1347.9,mogadishu,Mogadishu,Somalia,787,A
-reykjavik,Reykjavík,Iceland,452,1322.5,aberdeen,Aberdeen,United Kingdom,358,A
+dakar,Dakar,Senegal,448,1510.2,tenerife,Tenerife,Spain,351,A
+nuuk,Nuuk,Greenland,1867,1430.1,reykjavik,Reykjavík,Iceland,453,A
+victoria-sey,Victoria (SEY),Seychelles,512,1347.9,mogadishu,Mogadishu,Somalia,794,A
+reykjavik,Reykjavík,Iceland,453,1322.5,aberdeen,Aberdeen,United Kingdom,330,A
 johannesburg,Johannesburg,South Africa,49,1261.6,cape-town,Cape Town,South Africa,108,A
 cape-town,Cape Town,South Africa,108,1261.6,johannesburg,Johannesburg,South Africa,49,A
-honiara,Honiara,Solomon Islands,2508,1253.0,yaren,Yaren,Nauru,2841,A
-noumea,Noumea,New Caledonia,1333,1250.7,nadi,Nadi,Fiji,759,A
+honiara,Honiara,Solomon Islands,2509,1253.0,yaren,Yaren,Nauru,2842,A
+noumea,Noumea,New Caledonia,1335,1250.7,nadi,Nadi,Fiji,765,A
 mexico-city,Mexico City,Mexico,27,1209.5,houston,Houston,United States,21,A
 bangkok,Bangkok,Thailand,36,1187.7,kuala-lumpur,Kuala Lumpur,Malaysia,39,A
-tehran,Tehran,Iran,99,1156.9,doha,Doha,Qatar,70,A
+tehran,Tehran,Iran,100,1156.9,doha,Doha,Qatar,70,A
 tokyo,Tokyo,Japan,4,1152.6,seoul,Seoul,South Korea,8,A
-apia,Apia,Samoa,994,1151.4,suva,Suva,Fiji,488,A
+apia,Apia,Samoa,998,1151.4,suva,Suva,Fiji,490,A
 delhi,Delhi,India,51,1148.1,mumbai,Mumbai,India,37,A
 santiago,Santiago,Chile,94,1138.9,buenos-aires,Buenos Aires,Argentina,40,A
 manila,Manila,Philippines,43,1119.1,hong-kong,Hong Kong,Hong Kong,18,A
-hamilton-ber,Hamilton (BER),Bermuda,1627,1105.3,nantucket,Nantucket,United States,832,A
-avarua,Avarua,Cook Islands,4261,1085.7,alofi,Alofi,Niue,2880,A
-antananarivo,Antananarivo,Madagascar,786,1056.8,port-louis,Port Louis,Mauritius,389,A
-addis-ababa,Addis Ababa,Ethiopia,288,983.9,khartoum,Khartoum,Sudan,380,A
-khartoum,Khartoum,Sudan,380,965.1,jeddah,Jeddah,Saudi Arabia,120,A
+hamilton-ber,Hamilton (BER),Bermuda,1628,1105.3,nantucket,Nantucket,United States,840,A
+avarua,Avarua,Cook Islands,4263,1085.7,alofi,Alofi,Niue,2883,A
+antananarivo,Antananarivo,Madagascar,793,1056.8,port-louis,Port Louis,Mauritius,392,A
+addis-ababa,Addis Ababa,Ethiopia,288,983.9,khartoum,Khartoum,Sudan,382,A
+khartoum,Khartoum,Sudan,382,965.1,jeddah,Jeddah,Saudi Arabia,122,A
 beijing,Beijing,China,6,952.3,seoul,Seoul,South Korea,8,A
-astana,Astana,Kazakhstan,267,946.5,yekaterinburg,Yekaterinburg,Russia,261,A
-windhoek,Windhoek,Namibia,1056,931.2,gaborone,Gaborone,Botswana,961,A
-mogadishu,Mogadishu,Somalia,787,921.8,dire-dawa,Dire Dawa,Ethiopia,1195,A
+astana,Astana,Kazakhstan,271,946.5,yekaterinburg,Yekaterinburg,Russia,265,A
+windhoek,Windhoek,Namibia,1057,931.2,gaborone,Gaborone,Botswana,967,A
+mogadishu,Mogadishu,Somalia,794,921.8,dire-dawa,Dire Dawa,Ethiopia,1198,A
 jakarta,Jakarta,Indonesia,45,905.4,singapore,Singapore,Singapore,25,A
-caracas,Caracas,Venezuela,222,892.0,san-juan,San Juan,Puerto Rico,246,A
-san-juan,San Juan,Puerto Rico,246,892.0,caracas,Caracas,Venezuela,222,A
+caracas,Caracas,Venezuela,222,892.0,san-juan,San Juan,Puerto Rico,247,A
+san-juan,San Juan,Puerto Rico,247,892.0,caracas,Caracas,Venezuela,222,A
 seoul,Seoul,South Korea,8,866.5,shanghai,Shanghai,China,9,A
-port-moresby,Port Moresby,Papua New Guinea,840,845.0,cairns,Cairns,Australia,1094,A
-ulan-bator,Ulan Bator,Mongolia,884,836.9,baotou,Baotou,China,685,A
-asuncion,Asuncion,Paraguay,353,821.0,porto-alegre,Porto Alegre,Brazil,245,A
-hanoi,Hanoi,Vietnam,140,798.3,guangzhou,Guangzhou,China,11,B
-bangui,Bangui,Central African Republic,1526,784.9,yaounde,Yaoundé,Cameroon,595,B
-kigali,Kigali,Rwanda,410,755.3,nairobi,Nairobi,Kenya,133,B
-funafuti,Funafuti,Tuvalu,2860,732.1,mata-utu,Mata Utu,Wallis and Futuna,1879,B
-dili,Dili,East Timor,2077,722.8,darwin,Darwin,Australia,1162,B
-yaren,Yaren,Nauru,2841,705.5,tarawa,Tarawa,Kiribati,2593,B
-bamako,Bamako,Mali,687,704.4,ouagadougou,Ouagadougou,Burkina Faso,1024,B
-ndjamena,N'Djamena,Chad,1505,703.0,kano,Kano,Nigeria,742,B
-palikir,Palikir,Federated States of Micronesia,4071,698.7,weno,Weno,Federated States of Micronesia,3961,B
+port-moresby,Port Moresby,Papua New Guinea,849,845.0,cairns,Cairns,Australia,1095,A
+ulan-bator,Ulan Bator,Mongolia,892,836.9,baotou,Baotou,China,688,A
+asuncion,Asuncion,Paraguay,354,821.0,porto-alegre,Porto Alegre,Brazil,246,A
+hanoi,Hanoi,Vietnam,141,798.3,guangzhou,Guangzhou,China,11,B
+bangui,Bangui,Central African Republic,1527,784.9,yaounde,Yaoundé,Cameroon,596,B
+kigali,Kigali,Rwanda,411,755.3,nairobi,Nairobi,Kenya,133,B
+funafuti,Funafuti,Tuvalu,2862,732.1,mata-utu,Mata Utu,Wallis and Futuna,1879,B
+dili,Dili,East Timor,2078,722.8,darwin,Darwin,Australia,1165,B
+yaren,Yaren,Nauru,2842,705.5,tarawa,Tarawa,Kiribati,2592,B
+bamako,Bamako,Mali,690,704.4,ouagadougou,Ouagadougou,Burkina Faso,1027,B
+ndjamena,N'Djamena,Chad,1506,703.0,kano,Kano,Nigeria,749,B
+palikir,Palikir,Federated States of Micronesia,4070,698.7,weno,Weno,Federated States of Micronesia,3961,B
 kyiv,Kyiv,Ukraine,205,689.1,warsaw,Warsaw,Poland,89,B
 colombo,Colombo,Sri Lanka,162,685.9,chennai,Chennai,India,181,B
-cayenne,Cayenne,French Guiana,1341,676.6,georgetown-guy,Georgetown (GUY),Guyana,784,B
-majuro,Majuro,Marshall Islands,1869,672.6,tarawa,Tarawa,Kiribati,2593,B
-tarawa,Tarawa,Kiribati,2593,672.6,majuro,Majuro,Marshall Islands,1869,B
-dar-es-salaam,Dar es Salaam,Tanzania,239,670.5,nairobi,Nairobi,Kenya,133,B
-tashkent,Tashkent,Uzbekistan,338,664.1,almaty,Almaty,Kazakhstan,238,B
-praia-cv,Praia (CV),Cape Verde,1667,650.9,dakar,Dakar,Senegal,446,B
-ouagadougou,Ouagadougou,Burkina Faso,1024,632.0,kumasi,Kumasi,Ghana,805,B
-male,Malé,Maldives,2242,614.2,thiruvananthapuram,Thiruvananthapuram,India,1081,B
-nukualofa,Nukuʻalofa,Tonga,2581,598.3,alofi,Alofi,Niue,2880,B
-georgetown-guy,Georgetown (GUY),Guyana,784,564.7,port-of-spain,Port of Spain,Trinidad & Tobago,667,B
-athens,Athens,Greece,80,562.0,istanbul,Istanbul,Turkey,22,B
-baghdad,Baghdad,Iraq,320,556.3,kuwait-city,Kuwait City,Kuwait,143,B
-kinshasa,Kinshasa,Congo DR,272,551.2,luanda,Luanda,Angola,392,B
-luanda,Luanda,Angola,392,551.2,kinshasa,Kinshasa,Congo DR,272,B
-baku,Baku,Azerbaijan,146,541.5,tehran,Tehran,Iran,99,B
-port-vila,Port Vila,Vanuatu,2464,541.5,noumea,Noumea,New Caledonia,1333,B
-panama-city,Panama City,Panama,150,530.2,medellin,Medellin,Colombia,199,B
-la-paz,La Paz,Bolivia,427,526.1,cusco,Cusco,Peru,451,B
-asmara,Asmara,Eritrea,1662,523.4,khamis-mushait,Khamis Mushait,Saudi Arabia,1151,B
-torshavn,Torshavn,Faroe Islands,1868,523.4,inverness,Inverness,United Kingdom,1180,B
-juba,Juba,South Sudan,1959,517.8,kampala,Kampala,Uganda,568,B
-warsaw,Warsaw,Poland,89,517.1,prague,Prague,Czech Republic,97,B
-san-jose,San José,Costa Rica,420,511.6,panama-city,Panama City,Panama,150,B
+cayenne,Cayenne,French Guiana,1343,676.6,georgetown-guy,Georgetown (GUY),Guyana,792,B
+majuro,Majuro,Marshall Islands,1869,672.6,tarawa,Tarawa,Kiribati,2592,B
+tarawa,Tarawa,Kiribati,2592,672.6,majuro,Majuro,Marshall Islands,1869,B
+dar-es-salaam,Dar es Salaam,Tanzania,240,670.5,nairobi,Nairobi,Kenya,133,B
+tashkent,Tashkent,Uzbekistan,340,664.1,almaty,Almaty,Kazakhstan,239,B
+praia-cv,Praia (CV),Cape Verde,1668,650.9,dakar,Dakar,Senegal,448,B
+ouagadougou,Ouagadougou,Burkina Faso,1027,632.0,kumasi,Kumasi,Ghana,813,B
+male,Malé,Maldives,2242,614.2,thiruvananthapuram,Thiruvananthapuram,India,1082,B
+nukualofa,Nukuʻalofa,Tonga,2580,598.3,alofi,Alofi,Niue,2883,B
+georgetown-guy,Georgetown (GUY),Guyana,792,564.7,port-of-spain,Port of Spain,Trinidad & Tobago,671,B
+athens,Athens,Greece,82,562.0,istanbul,Istanbul,Turkey,22,B
+baghdad,Baghdad,Iraq,323,556.3,kuwait-city,Kuwait City,Kuwait,144,B
+kinshasa,Kinshasa,Congo DR,275,551.2,luanda,Luanda,Angola,367,B
+luanda,Luanda,Angola,367,551.2,kinshasa,Kinshasa,Congo DR,275,B
+baku,Baku,Azerbaijan,149,541.5,tehran,Tehran,Iran,100,B
+port-vila,Port Vila,Vanuatu,2466,541.5,noumea,Noumea,New Caledonia,1335,B
+panama-city,Panama City,Panama,153,530.2,medellin,Medellin,Colombia,199,B
+la-paz,La Paz,Bolivia,428,526.1,cusco,Cusco,Peru,452,B
+torshavn,Torshavn,Faroe Islands,1868,523.4,inverness,Inverness,United Kingdom,1183,B
+juba,Juba,South Sudan,1958,517.8,kampala,Kampala,Uganda,569,B
+warsaw,Warsaw,Poland,89,517.1,prague,Prague,Czech Republic,98,B
+san-jose,San José,Costa Rica,421,511.6,panama-city,Panama City,Panama,153,B
 madrid,Madrid,Spain,19,505.4,barcelona,Barcelona,Spain,33,B
-kingston,Kingston,Jamaica,356,504.4,george-town-cay,George Town (CAY),Cayman Islands,390,B
-george-town-cay,George Town (CAY),Cayman Islands,390,504.4,kingston,Kingston,Jamaica,356,B
+kingston,Kingston,Jamaica,357,504.4,george-town-cay,George Town (CAY),Cayman Islands,393,B
+george-town-cay,George Town (CAY),Cayman Islands,393,504.4,kingston,Kingston,Jamaica,357,B
 riyadh,Riyadh,Saudi Arabia,66,493.4,doha,Doha,Qatar,70,C
 berlin,Berlin,Germany,30,477.3,rhine-ruhr,Rhine-Ruhr,Germany,24,C
-quito,Quito,Ecuador,316,463.3,cali,Cali,Colombia,340,C
+quito,Quito,Ecuador,318,463.3,cali,Cali,Colombia,342,C
 bucharest,Bucharest,Romania,208,445.1,istanbul,Istanbul,Turkey,22,C
-abidjan,Abidjan,Côte d'Ivoire,401,426.0,accra,Accra,Ghana,374,C
-algiers,Algiers,Algeria,247,424.2,valencia,Valencia,Spain,105,C
-oslo,Oslo,Norway,121,416.3,stockholm,Stockholm,Sweden,61,C
-niamey,Niamey,Niger,1514,414.8,ouagadougou,Ouagadougou,Burkina Faso,1024,C
-accra,Accra,Ghana,374,407.7,lagos,Lagos,Nigeria,182,C
+abidjan,Abidjan,Côte d'Ivoire,403,426.0,accra,Accra,Ghana,376,C
+algiers,Algiers,Algeria,248,424.2,valencia,Valencia,Spain,106,C
+oslo,Oslo,Norway,123,416.3,stockholm,Stockholm,Sweden,61,C
+niamey,Niamey,Niger,1514,414.8,ouagadougou,Ouagadougou,Burkina Faso,1027,C
+accra,Accra,Ghana,376,407.7,lagos,Lagos,Nigeria,182,C
 cairo,Cairo,Egypt,52,406.9,tel-aviv,Tel-Aviv,Israel,74,C
-nouakchott,Nouakchott,Mauritania,1523,404.5,dakar,Dakar,Senegal,446,C
-minsk,Minsk,Belarus,343,402.6,riga,Riga,Latvia,397,C
-santo-domingo,Santo Domingo,Dominican Republic,287,399.5,san-juan,San Juan,Puerto Rico,246,C
-lusaka,Lusaka,Zambia,770,396.1,harare,Harare,Zimbabwe,558,C
+nouakchott,Nouakchott,Mauritania,1524,404.5,dakar,Dakar,Senegal,448,C
+minsk,Minsk,Belarus,344,402.6,riga,Riga,Latvia,399,C
+santo-domingo,Santo Domingo,Dominican Republic,287,399.5,san-juan,San Juan,Puerto Rico,247,C
+lusaka,Lusaka,Zambia,778,396.1,harare,Harare,Zimbabwe,559,C
 stockholm,Stockholm,Sweden,61,395.8,helsinki,Helsinki,Finland,136,C
-kuwait-city,Kuwait City,Kuwait,143,388.6,dammam,Dammam,Saudi Arabia,186,C
-bloemfontein,Bloemfontein,South Africa,842,370.4,johannesburg,Johannesburg,South Africa,49,C
-havana,Havana,Cuba,543,367.6,miami,Miami,United States,26,C
-harare,Harare,Zimbabwe,558,364.9,bulawayo,Bulawayo,Zimbabwe,915,C
-riga,Riga,Latvia,397,361.5,helsinki,Helsinki,Finland,136,C
-monrovia,Monrovia,Liberia,950,360.6,freetown,Freetown,Sierra Leone,1005,C
-taipei,Taipei,Taiwan,58,356.2,xiamen,Xiamen,China,122,C
-ankara,Ankara,Turkey,153,349.4,istanbul,Istanbul,Turkey,22,C
-muscat,Muscat,Oman,352,349.1,ras-al-khaimah,Ras al-Khaimah,United Arab Emirates,411,C
+kuwait-city,Kuwait City,Kuwait,144,388.6,dammam,Dammam,Saudi Arabia,187,C
+bloemfontein,Bloemfontein,South Africa,851,370.4,johannesburg,Johannesburg,South Africa,49,C
+havana,Havana,Cuba,545,367.6,miami,Miami,United States,26,C
+harare,Harare,Zimbabwe,559,364.9,bulawayo,Bulawayo,Zimbabwe,922,C
+riga,Riga,Latvia,399,361.5,helsinki,Helsinki,Finland,136,C
+monrovia,Monrovia,Liberia,956,360.6,freetown,Freetown,Sierra Leone,1009,C
+taipei,Taipei,Taiwan,58,356.2,xiamen,Xiamen,China,124,C
+ankara,Ankara,Turkey,146,349.4,istanbul,Istanbul,Turkey,22,C
+muscat,Muscat,Oman,353,349.1,ras-al-khaimah,Ras al-Khaimah,United Arab Emirates,412,C
 london,London,United Kingdom,2,343.6,paris,Paris,France,3,C
 paris,Paris,France,3,343.6,london,London,United Kingdom,2,C
-paramaribo,Paramaribo,Suriname,2152,333.8,cayenne,Cayenne,French Guiana,1341,C
-dodoma-city,Dodoma City,Tanzania,1877,326.9,arusha,Arusha,Tanzania,1074,C
-belgrade,Belgrade,Serbia,172,320.4,budapest,Budapest,Hungary,106,C
-chisinau,Chisinau,Moldova,735,317.5,constana,Constanţa,Romania,903,C
-kampala,Kampala,Uganda,568,316.7,mwanza,Mwanza,Tanzania,1313,C
-tunis,Tunis,Tunisia,271,316.2,palermo,Palermo,Italy,444,C
+paramaribo,Paramaribo,Suriname,2153,333.8,cayenne,Cayenne,French Guiana,1343,C
+dodoma-city,Dodoma City,Tanzania,1877,326.9,arusha,Arusha,Tanzania,1075,C
+belgrade,Belgrade,Serbia,173,320.4,budapest,Budapest,Hungary,107,C
+kampala,Kampala,Uganda,569,316.7,mwanza,Mwanza,Tanzania,1315,C
+tunis,Tunis,Tunisia,274,316.2,palermo,Palermo,Italy,445,C
 singapore,Singapore,Singapore,25,309.3,kuala-lumpur,Kuala Lumpur,Malaysia,39,C
 kuala-lumpur,Kuala Lumpur,Malaysia,39,309.3,singapore,Singapore,Singapore,25,C
-dushanbe,Dushanbe,Tajikistan,611,307.4,tashkent,Tashkent,Uzbekistan,338,C
-wellington,Wellington,New Zealand,276,305.1,christchurch,Christchurch,New Zealand,415,C
-tripoli,Tripoli,Libya,769,304.8,sfax,Sfax,Tunisia,1010,C
-libreville,Libreville,Gabon,718,304.3,sao-tome,São Tomé,São Tomé and Príncipe,1345,C
-sao-tome,São Tomé,São Tomé and Príncipe,1345,304.3,libreville,Libreville,Gabon,718,C
+dushanbe,Dushanbe,Tajikistan,614,307.4,tashkent,Tashkent,Uzbekistan,340,C
+wellington,Wellington,New Zealand,278,305.1,christchurch,Christchurch,New Zealand,416,C
+tripoli,Tripoli,Libya,777,304.8,sfax,Sfax,Tunisia,1014,C
+libreville,Libreville,Gabon,723,304.3,sao-tome,São Tomé,São Tomé and Príncipe,1347,C
+sao-tome,São Tomé,São Tomé and Príncipe,1347,304.3,libreville,Libreville,Gabon,723,C
 doha,Doha,Qatar,70,301.7,abu-dhabi,Abu Dhabi,United Arab Emirates,68,C
-helsinki,Helsinki,Finland,136,300.6,st-petersburg,St. Petersburg,Russia,101,C
-nassau-bah,Nassau (BAH),Bahamas,500,296.3,miami,Miami,United States,26,C
-copenhagen,Copenhagen,Denmark,79,288.6,hamburg,Hamburg,Germany,91,C
-abuja,Abuja,Nigeria,489,284.0,enugu,Enugu,Nigeria,1009,C
-lisbon,Lisbon,Portugal,60,274.3,porto,Porto,Portugal,131,C
-islamabad,Islamabad,Pakistan,379,268.5,lahore,Lahore,Pakistan,215,C
-valletta-malta-island,Valletta-Malta Island,Malta,295,267.0,palermo,Palermo,Italy,444,C
-djibouti,Djibouti,Djibouti,648,260.7,dire-dawa,Dire Dawa,Ethiopia,1195,C
-prague,Prague,Czech Republic,97,250.9,vienna,Vienna,Austria,46,C
+helsinki,Helsinki,Finland,136,300.6,st-petersburg,St. Petersburg,Russia,102,C
+nassau-bah,Nassau (BAH),Bahamas,502,296.3,miami,Miami,United States,26,C
+copenhagen,Copenhagen,Denmark,80,288.6,hamburg,Hamburg,Germany,91,C
+abuja,Abuja,Nigeria,491,284.0,enugu,Enugu,Nigeria,1013,C
+lisbon,Lisbon,Portugal,60,274.3,porto,Porto,Portugal,128,C
+islamabad,Islamabad,Pakistan,381,268.5,lahore,Lahore,Pakistan,215,C
+valletta-malta-island,Valletta-Malta Island,Malta,295,267.0,palermo,Palermo,Italy,445,C
+djibouti,Djibouti,Djibouti,652,260.7,dire-dawa,Dire Dawa,Ethiopia,1198,C
+prague,Prague,Czech Republic,98,250.9,vienna,Vienna,Austria,46,C
 dhaka,Dhaka,Bangladesh,161,250.6,calcutta,Calcutta,India,92,C
 canberra,Canberra,Australia,209,246.8,sydney,Sydney,Australia,15,C
-moroni,Moroni,Comoros,2413,245.5,mamoudzou,Mamoudzou,Mayotte,3172,C
-mamoudzou,Mamoudzou,Mayotte,3172,245.5,moroni,Moroni,Comoros,2413,C
-laayoune,Laayoune,Western Sahara,2136,245.0,las-palmas,Las Palmas,Spain,746,C
-aden,Aden,Yemen,1656,244.2,djibouti,Djibouti,Djibouti,648,C
-naypyidaw,Naypyidaw,Myanmar,1626,244.1,mandalay,Mandalay,Myanmar,1069,C
-lilongwe,Lilongwe,Malawi,1030,242.1,blantyre,Blantyre,Malawi,835,C
+moroni,Moroni,Comoros,2415,245.5,mamoudzou,Mamoudzou,Mayotte,3175,C
+mamoudzou,Mamoudzou,Mayotte,3175,245.5,moroni,Moroni,Comoros,2415,C
+laayoune,Laayoune,Western Sahara,2137,245.0,las-palmas,Las Palmas,Spain,612,C
+aden,Aden,Yemen,1656,244.2,djibouti,Djibouti,Djibouti,652,C
+naypyidaw,Naypyidaw,Myanmar,1627,244.1,mandalay,Mandalay,Myanmar,1070,C
+lilongwe,Lilongwe,Malawi,1033,242.1,blantyre,Blantyre,Malawi,843,C

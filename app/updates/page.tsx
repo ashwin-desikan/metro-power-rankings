@@ -53,6 +53,14 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-10",
+    headline: "Data refresh and 20 new boundary polygons",
+    items: [
+      "Workbook refresh adds Armidale (Australia) and Udupi (India), refreshes 1,374 university coordinates, and cleans 2,100 team rows.",
+      "Real polygons now render for Udupi plus 19 metros from yesterday's expansion across India, Turkey, Nigeria, Croatia, Luxembourg, Portugal, Romania, and Colombia.",
+    ],
+  },
+  {
     date: "2026-05-09",
     headline: "Frozen Conurbations badge and Substack auto-sync",
     items: [

@@ -1,180 +1,224 @@
 slug,name,country,rank,cluster_id,cluster_size,cluster_diameter_km,cluster_avg_pairwise_km,cluster_score_sum,cluster_member_slugs,cluster_member_names,cluster_other_slugs,cluster_other_names,tier
-brussels,Brussels,Belgium,42,c015,11,141.0,71.2,109.6,brussels;antwerp;lille;gent;bruges;charleroi;lens;kortrijk;aalst;mechelen;la-louviere,Brussels;Antwerp;Lille;Gent;Bruges;Charleroi;Lens;Kortrijk;Aalst;Mechelen;La Louvière,antwerp;lille;gent;bruges;charleroi;lens;kortrijk;aalst;mechelen;la-louviere,Antwerp;Lille;Gent;Bruges;Charleroi;Lens;Kortrijk;Aalst;Mechelen;La Louvière,A
-boston,Boston,United States,13,c002,2,66.7,66.7,100.8,boston;providence,Boston;Providence,providence,Providence,A
-toronto,Toronto,Canada,16,c004,5,143.7,78.6,100.1,toronto;buffalo;kitchener-waterloo;hamilton;st-catharines-niagara,Toronto;Buffalo;Kitchener-Waterloo;Hamilton;St. Catharines-Niagara,buffalo;kitchener-waterloo;hamilton;st-catharines-niagara,Buffalo;Kitchener-Waterloo;Hamilton;St. Catharines-Niagara,A
+brussels,Brussels,Belgium,41,c014,12,141.0,67.9,111.5,brussels;antwerp;lille;gent;bruges;charleroi;lens;kortrijk;aalst;mechelen;la-louviere;oudenaarde,Brussels;Antwerp;Lille;Gent;Bruges;Charleroi;Lens;Kortrijk;Aalst;Mechelen;La Louvière;Oudenaarde,antwerp;lille;gent;bruges;charleroi;lens;kortrijk;aalst;mechelen;la-louviere;oudenaarde,Antwerp;Lille;Gent;Bruges;Charleroi;Lens;Kortrijk;Aalst;Mechelen;La Louvière;Oudenaarde,A
+boston,Boston,United States,13,c002,2,66.7,66.7,100.9,boston;providence,Boston;Providence,providence,Providence,A
+toronto,Toronto,Canada,16,c004,5,143.7,78.6,100.2,toronto;buffalo;kitchener-waterloo;hamilton;st-catharines-niagara,Toronto;Buffalo;Kitchener-Waterloo;Hamilton;St. Catharines-Niagara,buffalo;kitchener-waterloo;hamilton;st-catharines-niagara,Buffalo;Kitchener-Waterloo;Hamilton;St. Catharines-Niagara,A
 guangzhou,Guangzhou,China,11,c001,2,65.0,65.0,98.3,guangzhou;qingyuan,Guangzhou;Qingyuan,qingyuan,Qingyuan,B
-hong-kong,Hong Kong,Hong Kong,18,c005,2,65.8,65.8,92.2,hong-kong;macau,Hong Kong;Macau,macau,Macau,B
-singapore,Singapore,Singapore,25,c009,3,59.2,39.5,78.6,singapore;johor-bahru;batam,Singapore;Johor Bahru;Batam,johor-bahru;batam,Johor Bahru;Batam,B
-zurich,Zurich,Switzerland,84,c030,8,134.9,73.7,77.4,zurich;basel;freiburg;lucerne;colmar;zug;aarau;villingen-schwenningen,Zurich;Basel;Freiburg;Lucerne;Colmar;Zug;Aarau;Villingen-Schwenningen,basel;freiburg;lucerne;colmar;zug;aarau;villingen-schwenningen,Basel;Freiburg;Lucerne;Colmar;Zug;Aarau;Villingen-Schwenningen,B
+hong-kong,Hong Kong,Hong Kong,18,c005,2,65.8,65.8,93.5,hong-kong;macau,Hong Kong;Macau,macau,Macau,B
+rhine-ruhr,Rhine-Ruhr,Germany,24,c008,9,146.4,69.5,88.9,rhine-ruhr;liege;maastricht;aachen;genk;sittard-geleen;ahrweiler;gummersbach;duren,Rhine-Ruhr;Liege;Maastricht;Aachen;Genk;Sittard-Geleen;Ahrweiler;Gummersbach;Düren,liege;maastricht;aachen;genk;sittard-geleen;ahrweiler;gummersbach;duren,Liege;Maastricht;Aachen;Genk;Sittard-Geleen;Ahrweiler;Gummersbach;Düren,B
+singapore,Singapore,Singapore,25,c009,3,59.2,39.5,78.7,singapore;johor-bahru;batam,Singapore;Johor Bahru;Batam,johor-bahru;batam,Johor Bahru;Batam,B
 sydney,Sydney,Australia,15,c003,2,69.6,69.6,75.9,sydney;wollongong,Sydney;Wollongong,wollongong,Wollongong,B
-amsterdam,Amsterdam,Netherlands,41,c014,8,107.1,59.6,74.4,amsterdam;utrecht;arnhem-nijmegen;wageningen;zwolle;alkmaar;amersfoort;deventer,Amsterdam;Utrecht;Arnhem-Nijmegen;Wageningen;Zwolle;Alkmaar;Amersfoort;Deventer,utrecht;arnhem-nijmegen;wageningen;zwolle;alkmaar;amersfoort;deventer,Utrecht;Arnhem-Nijmegen;Wageningen;Zwolle;Alkmaar;Amersfoort;Deventer,B
+amsterdam,Amsterdam,Netherlands,42,c015,8,107.1,59.6,74.4,amsterdam;utrecht;arnhem-nijmegen;wageningen;zwolle;alkmaar;amersfoort;deventer,Amsterdam;Utrecht;Arnhem-Nijmegen;Wageningen;Zwolle;Alkmaar;Amersfoort;Deventer,utrecht;arnhem-nijmegen;wageningen;zwolle;alkmaar;amersfoort;deventer,Utrecht;Arnhem-Nijmegen;Wageningen;Zwolle;Alkmaar;Amersfoort;Deventer,B
 sao-paulo,Sao Paulo,Brazil,23,c007,2,54.9,54.9,72.5,sao-paulo;santos,Sao Paulo;Santos,santos,Santos,B
+milan,Milan,Italy,20,c006,3,62.0,42.5,71.0,milan;novara;vercelli,Milan;Novara;Vercelli,novara;vercelli,Novara;Vercelli,B
 nanjing,Nanjing,China,44,c017,4,113.9,61.0,70.2,nanjing;taizhou;zhenjiang;yangzhou,Nanjing;Taizhou;Zhenjiang;Yangzhou,taizhou;zhenjiang;yangzhou,Taizhou;Zhenjiang;Yangzhou,B
-milan,Milan,Italy,20,c006,2,44.4,44.4,70.0,milan;novara,Milan;Novara,novara,Novara,B
-rhine-ruhr,Rhine-Ruhr,Germany,24,c008,3,63.3,50.5,67.0,rhine-ruhr;ahrweiler;gummersbach,Rhine-Ruhr;Ahrweiler;Gummersbach,ahrweiler;gummersbach,Ahrweiler;Gummersbach,B
-melbourne,Melbourne,Australia,28,c010,2,65.5,65.5,66.3,melbourne;geelong,Melbourne;Geelong,geelong,Geelong,B
+manchester,Manchester,United Kingdom,67,c026,6,72.8,43.5,69.1,manchester;liverpool;lancaster;blackburn-burnley;blackpool;preston,Manchester;Liverpool;Lancaster;Blackburn-Burnley;Blackpool;Preston,liverpool;lancaster;blackburn-burnley;blackpool;preston,Liverpool;Lancaster;Blackburn-Burnley;Blackpool;Preston,B
+melbourne,Melbourne,Australia,28,c010,2,65.5,65.5,66.4,melbourne;geelong,Melbourne;Geelong,geelong,Geelong,B
+edinburgh,Edinburgh,United Kingdom,97,c035,8,152.0,75.3,62.9,edinburgh;glasgow;dundee;st-andrews;perth-scotland;falkirk;ayr;kilmarnock,Edinburgh;Glasgow;Dundee;St. Andrews;Perth (Scotland);Falkirk;Ayr;Kilmarnock,glasgow;dundee;st-andrews;perth-scotland;falkirk;ayr;kilmarnock,Glasgow;Dundee;St. Andrews;Perth (Scotland);Falkirk;Ayr;Kilmarnock,B
 bangkok,Bangkok,Thailand,36,c011,2,68.2,68.2,62.5,bangkok;chonburi,Bangkok;Chonburi,chonburi,Chonburi,B
-edinburgh,Edinburgh,United Kingdom,107,c036,8,152.0,75.3,60.9,edinburgh;glasgow;dundee;st-andrews;perth-scotland;falkirk;ayr;kilmarnock,Edinburgh;Glasgow;Dundee;St. Andrews;Perth (Scotland);Falkirk;Ayr;Kilmarnock,glasgow;dundee;st-andrews;perth-scotland;falkirk;ayr;kilmarnock,Glasgow;Dundee;St. Andrews;Perth (Scotland);Falkirk;Ayr;Kilmarnock,B
 kuala-lumpur,Kuala Lumpur,Malaysia,39,c012,2,49.1,49.1,56.4,kuala-lumpur;bentong,Kuala Lumpur;Bentong,bentong,Bentong,B
+geneva,Geneva,Switzerland,127,c046,6,119.7,61.0,56.1,geneva;lausanne;annecy;chambery;albertville;thonon-les-bains,Geneva;Lausanne;Annecy;Chambéry;Albertville;Thonon-les-Bains,lausanne;annecy;chambery;albertville;thonon-les-bains,Lausanne;Annecy;Chambéry;Albertville;Thonon-les-Bains,B
+rome,Rome,Italy,48,c019,5,106.3,68.9,55.7,rome;vatican-city;laquila;latina;rieti,Rome;Vatican City;L'Aquila;Latina;Rieti,vatican-city;laquila;latina;rieti,Vatican City;L'Aquila;Latina;Rieti,B
+vienna,Vienna,Austria,46,c018,4,109.7,65.5,55.4,vienna;bratislava;eisenstadt;st-polten,Vienna;Bratislava;Eisenstadt;St. Polten,bratislava;eisenstadt;st-polten,Bratislava;Eisenstadt;St. Polten,B
 buenos-aires,Buenos Aires,Argentina,40,c013,2,53.8,53.8,55.2,buenos-aires;la-plata,Buenos Aires;La Plata,la-plata,La Plata,B
-vienna,Vienna,Austria,46,c018,2,55.0,55.0,53.7,vienna;bratislava,Vienna;Bratislava,bratislava,Bratislava,B
-rome,Rome,Italy,48,c019,3,61.2,41.2,52.5,rome;vatican-city;latina,Rome;Vatican City;Latina,vatican-city;latina,Vatican City;Latina,B
 manila,Manila,Philippines,43,c016,2,73.8,73.8,51.0,manila;angeles,Manila;Angeles,angeles,Angeles,B
-taipei,Taipei,Taiwan,58,c022,2,64.9,64.9,49.5,taipei;hsinchu,Taipei;Hsinchu,hsinchu,Hsinchu,C
-delhi,Delhi,India,51,c020,2,24.7,24.7,46.7,delhi;ghaziabad,Delhi;Ghaziabad,ghaziabad,Ghaziabad,C
+taipei,Taipei,Taiwan,58,c022,2,64.9,64.9,49.8,taipei;hsinchu,Taipei;Hsinchu,hsinchu,Hsinchu,C
+delhi,Delhi,India,51,c020,2,24.7,24.7,46.8,delhi;ghaziabad,Delhi;Ghaziabad,ghaziabad,Ghaziabad,C
 tel-aviv,Tel-Aviv,Israel,74,c028,3,53.0,37.0,46.3,tel-aviv;jerusalem;ramallah,Tel-Aviv;Jerusalem;Ramallah,jerusalem;ramallah,Jerusalem;Ramallah,C
 san-diego,San Diego,United States,53,c021,2,24.3,24.3,45.9,san-diego;tijuana,San Diego;Tijuana,tijuana,Tijuana,C
 stockholm,Stockholm,Sweden,61,c023,2,62.7,62.7,45.9,stockholm;uppsala,Stockholm;Uppsala,uppsala,Uppsala,C
-birmingham,Birmingham,United Kingdom,128,c047,5,72.0,46.4,44.9,birmingham;nottingham;leicester;coventry;derby,Birmingham;Nottingham;Leicester;Coventry;Derby,nottingham;leicester;coventry;derby,Nottingham;Leicester;Coventry;Derby,C
-copenhagen,Copenhagen,Denmark,79,c029,2,31.0,31.0,44.5,copenhagen;malmo,Copenhagen;Malmo,malmo,Malmo,C
-brisbane,Brisbane,Australia,90,c031,2,71.1,71.1,42.1,brisbane;gold-coast,Brisbane;Gold Coast,gold-coast,Gold Coast,C
-manchester,Manchester,United Kingdom,67,c026,4,72.8,46.2,41.8,manchester;lancaster;blackburn-burnley;blackpool,Manchester;Lancaster;Blackburn-Burnley;Blackpool,lancaster;blackburn-burnley;blackpool,Lancaster;Blackburn-Burnley;Blackpool,C
+copenhagen,Copenhagen,Denmark,80,c029,2,31.0,31.0,44.5,copenhagen;malmo,Copenhagen;Malmo,malmo,Malmo,C
+brisbane,Brisbane,Australia,90,c032,2,71.1,71.1,42.1,brisbane;gold-coast,Brisbane;Gold Coast,gold-coast,Gold Coast,C
+zurich,Zurich,Switzerland,85,c031,3,40.3,28.0,41.8,zurich;lucerne;zug,Zurich;Lucerne;Zug,lucerne;zug,Lucerne;Zug,C
 detroit,Detroit,United States,62,c024,2,2.0,2.0,40.3,detroit;windsor,Detroit;Windsor,windsor,Windsor,C
 rotterdam-the-hague,Rotterdam-The Hague,Netherlands,72,c027,2,25.6,25.6,40.1,rotterdam-the-hague;leiden,Rotterdam-The Hague;Leiden,leiden,Leiden,C
 rio-de-janeiro,Rio de Janeiro,Brazil,64,c025,2,67.5,67.5,39.2,rio-de-janeiro;saquarema,Rio de Janeiro;Saquarema,saquarema,Saquarema,C
-bologna,Bologna,Italy,194,c065,7,145.9,75.7,35.7,bologna;parma;brescia;modena;cremona;reggio-emilia;piacenza,Bologna;Parma;Brescia;Modena;Cremona;Reggio Emilia;Piacenza,parma;brescia;modena;cremona;reggio-emilia;piacenza,Parma;Brescia;Modena;Cremona;Reggio Emilia;Piacenza,C
-geneva,Geneva,Switzerland,125,c044,4,73.3,46.8,35.6,geneva;annecy;chambery;albertville,Geneva;Annecy;Chambéry;Albertville,annecy;chambery;albertville,Annecy;Chambéry;Albertville,C
-prague,Prague,Czech Republic,97,c034,6,100.0,67.8,34.7,prague;pardubice;liberec;hradec-kralove;mlada-boleslav;jablonec,Prague;Pardubice;Liberec;Hradec Králové;Mladá Boleslav;Jablonec,pardubice;liberec;hradec-kralove;mlada-boleslav;jablonec,Pardubice;Liberec;Hradec Králové;Mladá Boleslav;Jablonec,C
-tampa,Tampa,United States,95,c032,2,68.7,68.7,33.6,tampa;sarasota,Tampa;Sarasota,sarasota,Sarasota,C
-bilbao,Bilbao,Spain,163,c057,4,77.4,54.5,32.7,bilbao;san-sebastian;vitoria-gasteiz;eibar,Bilbao;San Sebastián;Vitoria-Gasteiz;Eibar,san-sebastian;vitoria-gasteiz;eibar,San Sebastián;Vitoria-Gasteiz;Eibar,C
-jeddah,Jeddah,Saudi Arabia,120,c040,2,65.9,65.9,32.1,jeddah;mecca,Jeddah;Mecca,mecca,Mecca,C
-manama,Manama,Bahrain,164,c058,2,53.8,53.8,31.4,manama;dammam,Manama;Dammam,dammam,Dammam,C
-charlotte,Charlotte,United States,96,c033,2,72.4,72.4,30.4,charlotte;hickory,Charlotte;Hickory,hickory,Hickory,C
-krakow,Krakow,Poland,242,c076,7,125.9,73.1,30.4,krakow;upper-silesian;czstochowa;owicim;ostrava;karvina;zawiercie,Krakow;Upper Silesian;Częstochowa;Oświęcim;Ostrava;Karviná;Zawiercie,upper-silesian;czstochowa;owicim;ostrava;karvina;zawiercie,Upper Silesian;Częstochowa;Oświęcim;Ostrava;Karviná;Zawiercie,C
-indianapolis,Indianapolis,United States,109,c037,2,74.1,74.1,30.0,indianapolis;bloomington,Indianapolis;Bloomington,bloomington,Bloomington,C
-cardiff,Cardiff,United Kingdom,223,c071,6,89.0,50.3,29.6,cardiff;bristol;bath;newport;gloucester;cheltenham,Cardiff;Bristol;Bath;Newport;Gloucester;Cheltenham,bristol;bath;newport;gloucester;cheltenham,Bristol;Bath;Newport;Gloucester;Cheltenham,C
-valencia,Valencia,Spain,105,c035,2,63.8,63.8,29.5,valencia;castellon,Valencia;Castellon,castellon,Castellon,C
-nice,Nice,France,154,c054,3,63.8,42.7,29.4,nice;monaco;frejus,Nice;Monaco;Frejus,monaco;frejus,Monaco;Frejus,C
-hartford,Hartford,United States,235,c074,4,95.3,69.7,28.7,hartford;new-haven;springfield;new-london,Hartford;New Haven;Springfield;New London,new-haven;springfield;new-london,New Haven;Springfield;New London,C
-porto,Porto,Portugal,131,c049,2,47.0,47.0,28.4,porto;minho,Porto;Minho,minho,Minho,C
-zhengzhou,Zhengzhou,China,124,c043,4,107.6,71.6,28.1,zhengzhou;xinxiang;kaifeng;jiaozuo,Zhengzhou;Xinxiang;Kaifeng;Jiaozuo,xinxiang;kaifeng;jiaozuo,Xinxiang;Kaifeng;Jiaozuo,C
-marseille,Marseille,France,126,c045,2,49.1,49.1,27.2,marseille;toulon,Marseille;Toulon,toulon,Toulon,C
-florence,Florence,Italy,151,c053,4,88.3,62.0,27.2,florence;pisa-livorno;siena;lucca,Florence;Pisa-Livorno;Siena;Lucca,pisa-livorno;siena;lucca,Pisa-Livorno;Siena;Lucca,C
-nashville,Nashville,United States,112,c038,2,65.9,65.9,26.8,nashville;clarksville,Nashville;Clarksville,clarksville,Clarksville,C
-lyon,Lyon,France,118,c039,3,107.1,71.6,26.7,lyon;bourg-en-bresse;saint-etienne,Lyon;Bourg-en-Bresse;Saint Étienne,bourg-en-bresse;saint-etienne,Bourg-en-Bresse;Saint Étienne,C
-hefei,Hefei,China,130,c048,2,67.3,67.3,25.8,hefei;luan,Hefei;Lu'an,luan,Lu'an,C
-xiamen,Xiamen,China,122,c041,2,44.9,44.9,25.6,xiamen;zhangzhou,Xiamen;Zhangzhou,zhangzhou,Zhangzhou,C
-naples,Naples,Italy,127,c046,2,46.1,46.1,24.8,naples;salerno,Naples;Salerno,salerno,Salerno,C
-ho-chi-minh-city,Ho Chi Minh City,Vietnam,123,c042,2,72.7,72.7,24.3,ho-chi-minh-city;vng-tau,Ho Chi Minh City;Vũng Tàu,vng-tau,Vũng Tàu,C
-jinan,Jinan,China,134,c050,2,50.9,50.9,23.4,jinan;taian,Jinan;Tai'an,taian,Tai'an,C
-rhine-neckar,Rhine-Neckar,Germany,183,c061,3,66.7,57.1,22.9,rhine-neckar;karlsruhe;kaiserslautern,Rhine-Neckar;Karlsruhe;Kaiserslautern,karlsruhe;kaiserslautern,Karlsruhe;Kaiserslautern,C
-fuzhou,Fuzhou,China,149,c052,2,69.9,69.9,21.3,fuzhou;ningde,Fuzhou;Ningde,ningde,Ningde,C
-liege,Liege,Belgium,283,c090,5,46.1,31.6,21.1,liege;maastricht;aachen;genk;sittard-geleen,Liege;Maastricht;Aachen;Genk;Sittard-Geleen,maastricht;aachen;genk;sittard-geleen,Maastricht;Aachen;Genk;Sittard-Geleen,C
-ningbo,Ningbo,China,148,c051,2,65.2,65.2,20.1,ningbo;zhoushan,Ningbo;Zhoushan,zhoushan,Zhoushan,C
-southampton,Southampton,United Kingdom,264,c084,4,123.0,66.5,20.0,southampton;brighton-hove;bournemouth;portsmouth,Southampton;Brighton & Hove;Bournemouth;Portsmouth,brighton-hove;bournemouth;portsmouth,Brighton & Hove;Bournemouth;Portsmouth,C
-newcastle,Newcastle,United Kingdom,221,c070,4,55.3,31.8,19.6,newcastle;durham;sunderland;middlesbrough,Newcastle;Durham;Sunderland;Middlesbrough,durham;sunderland;middlesbrough,Durham;Sunderland;Middlesbrough,D
-sacramento,Sacramento,United States,158,c055,2,69.5,69.5,19.4,sacramento;stockton,Sacramento;Stockton,stockton,Stockton,D
-fukuoka,Fukuoka,Japan,165,c059,2,53.4,53.4,19.3,fukuoka;kitakyushu,Fukuoka;Kitakyushu,kitakyushu,Kitakyushu,D
-dhaka,Dhaka,Bangladesh,161,c056,2,70.3,70.3,18.5,dhaka;tangail,Dhaka;Tangail,tangail,Tangail,D
-leeds-bradford,Leeds-Bradford,United Kingdom,196,c066,2,35.1,35.1,18.1,leeds-bradford;york,Leeds-Bradford;York,york,York,D
-kaohsiung,Kaohsiung,Taiwan,219,c069,2,41.4,41.4,17.6,kaohsiung;tainan,Kaohsiung;Tainan,tainan,Tainan,D
-toulouse,Toulouse,France,193,c064,3,85.1,64.6,16.5,toulouse;carcassonne;castres,Toulouse;Carcassonne;Castres,carcassonne;castres,Carcassonne;Castres,D
-taiyuan,Taiyuan,China,185,c062,2,62.1,62.1,16.4,taiyuan;xinzhou,Taiyuan;Xinzhou,xinzhou,Xinzhou,D
-hiroshima,Hiroshima,Japan,180,c060,2,68.1,68.1,16.2,hiroshima;matsuyama,Hiroshima;Matsuyama,matsuyama,Matsuyama,D
-linz,Linz,Austria,313,c092,3,107.5,74.6,16.2,linz;salzburg;ried,Linz;Salzburg;Ried,salzburg;ried,Salzburg;Ried,D
-daejeon,Daejeon,South Korea,188,c063,2,62.3,62.3,16.0,daejeon;jeonju,Daejeon;Jeonju,jeonju,Jeonju,D
-davos,Davos,Switzerland,487,c109,7,138.6,61.9,15.9,davos;st-moritz;st-gallen;konstanz;altach;bregenz;vaduz,Davos;St. Moritz;St. Gallen;Konstanz;Altach;Bregenz;Vaduz,st-moritz;st-gallen;konstanz;altach;bregenz;vaduz,St. Moritz;St. Gallen;Konstanz;Altach;Bregenz;Vaduz,D
-luxembourg-city,Luxembourg City,Luxembourg,256,c080,3,102.0,68.0,15.3,luxembourg-city;nancy;metz,Luxembourg City;Nancy;Metz,nancy;metz,Nancy;Metz,D
-liuzhou,Liuzhou,China,258,c081,2,68.7,68.7,15.2,liuzhou;laibin,Liuzhou;Laibin,laibin,Laibin,D
-lahore,Lahore,Pakistan,215,c068,2,50.9,50.9,14.3,lahore;amritsar,Lahore;Amritsar,amritsar,Amritsar,D
-the-valley,The Valley,Anguilla,513,c115,5,108.3,50.1,14.3,the-valley;gustavia;basseterre;philipsburg;marigot,The Valley;Gustavia;Basseterre;Philipsburg;Marigot,gustavia;basseterre;philipsburg;marigot,Gustavia;Basseterre;Philipsburg;Marigot,D
-daegu,Daegu,South Korea,211,c067,2,53.1,53.1,14.1,daegu;gimcheon,Daegu;Gimcheon,gimcheon,Gimcheon,D
-aarhus,Aarhus,Denmark,263,c083,5,76.7,48.3,13.9,aarhus;viborg;silkeborg;randers;herning,Aarhus;Viborg;Silkeborg;Randers;Herning,viborg;silkeborg;randers;herning,Viborg;Silkeborg;Randers;Herning,D
-montpellier,Montpellier,France,290,c091,3,83.4,55.8,13.8,montpellier;nimes;avignon,Montpellier;Nîmes;Avignon,nimes;avignon,Nîmes;Avignon,D
-nantes,Nantes,France,236,c075,2,50.3,50.3,12.8,nantes;saint-nazaire,Nantes;Saint-Nazaire,saint-nazaire,Saint-Nazaire,D
-verona,Verona,Italy,250,c077,2,43.9,43.9,12.8,verona;vicenza,Verona;Vicenza,vicenza,Vicenza,D
-sendai,Sendai,Japan,233,c073,2,67.5,67.5,12.7,sendai;fukushima,Sendai;Fukushima,fukushima,Fukushima,D
-eindhoven,Eindhoven,Netherlands,282,c089,3,51.9,35.1,12.3,eindhoven;breda;tilburg,Eindhoven;Breda;Tilburg,breda;tilburg,Breda;Tilburg,D
-pyongyang,Pyongyang,North Korea,232,c072,2,0.0,0.0,12.0,pyongyang;wonsan,Pyongyang;Wonsan,wonsan,Wonsan,D
-kinshasa,Kinshasa,Congo DR,272,c085,2,10.9,10.9,11.7,kinshasa;brazzaville,Kinshasa;Brazzaville,brazzaville,Brazzaville,D
-limassol,Limassol,Cyprus,429,c101,3,60.4,52.2,11.6,limassol;nicosia;larnaca,Limassol;Nicosia;Larnaca,nicosia;larnaca,Nicosia;Larnaca,D
-erfurt-weimar-jena,Erfurt-Weimar-Jena,Germany,426,c099,4,114.3,73.6,11.5,erfurt-weimar-jena;gottingen;kassel;eisenach,Erfurt-Weimar-Jena;Göttingen;Kassel;Eisenach,gottingen;kassel;eisenach,Göttingen;Kassel;Eisenach,D
-goiania,Goiania,Brazil,253,c078,2,52.1,52.1,11.3,goiania;anapolis,Goiania;Anápolis,anapolis,Anápolis,D
-zhanjiang,Zhanjiang,China,274,c086,2,73.7,73.7,11.3,zhanjiang;maoming,Zhanjiang;Maoming,maoming,Maoming,D
-alicante,Alicante,Spain,598,c128,5,126.3,67.6,11.2,alicante;benidorm;murcia;cartagena-es;elche,Alicante;Benidorm;Murcia;Cartagena (ES);Elche,benidorm;murcia;cartagena-es;elche,Benidorm;Murcia;Cartagena (ES);Elche,D
-dresden,Dresden,Germany,259,c082,2,45.9,45.9,10.9,dresden;teplice,Dresden;Teplice,teplice,Teplice,D
-odense,Odense,Denmark,400,c097,5,88.5,49.6,10.8,odense;fredericia;billund;vejle;haderslev,Odense;Fredericia;Billund;Vejle;Haderslev,fredericia;billund;vejle;haderslev,Fredericia;Billund;Vejle;Haderslev,D
-handan,Handan,China,470,c106,3,108.3,72.3,10.8,handan;anyang;xingtai,Handan;Anyang;Xingtai,anyang;xingtai,Anyang;Xingtai,D
-xuzhou,Xuzhou,China,329,c093,2,62.5,62.5,10.7,xuzhou;zaozhuang,Xuzhou;Zaozhuang,zaozhuang,Zaozhuang,D
-thessaloniki,Thessaloniki,Greece,275,c087,2,71.3,71.3,10.1,thessaloniki;serres,Thessaloniki;Serres,serres,Serres,D
-cancun,Cancun,Mexico,279,c088,2,63.6,63.6,10.0,cancun;playa-del-carmen,Cancun;Playa del Carmen,playa-del-carmen,Playa del Carmen,D
-savannah,Savannah,United States,430,c102,2,35.3,35.3,9.6,savannah;hilton-head,Savannah;Hilton Head,hilton-head,Hilton Head,D
-bolzano,Bolzano,Italy,471,c107,2,51.4,51.4,9.6,bolzano;trento,Bolzano;Trento,trento,Trento,D
-jiaxing,Jiaxing,China,334,c094,2,62.8,62.8,8.5,jiaxing;suzhou,Jiaxing;Suzhou,suzhou,Suzhou,D
-okayama,Okayama,Japan,450,c104,2,36.4,36.4,8.3,okayama;takamatsu,Okayama;Takamatsu,takamatsu,Takamatsu,D
-kotor,Kotor,Montenegro,518,c116,3,98.5,66.5,8.3,kotor;podgorica;dubrovnik,Kotor;Podgorica;Dubrovnik,podgorica;dubrovnik,Podgorica;Dubrovnik,D
-shizuoka,Shizuoka,Japan,523,c117,3,112.2,74.9,8.3,shizuoka;hamamatsu;numazu,Shizuoka;Hamamatsu;Numazu,hamamatsu;numazu,Hamamatsu;Numazu,D
-el-paso,El Paso,United States,533,c120,3,77.0,51.4,8.2,el-paso;ciudad-juarez;las-cruces,El Paso;Ciudad Juarez;Las Cruces,ciudad-juarez;las-cruces,Ciudad Juarez;Las Cruces,D
-zibo,Zibo,China,512,c114,3,90.7,73.1,8.1,zibo;binzhou;dongying,Zibo;Binzhou;Dongying,binzhou;dongying,Binzhou;Dongying,D
-barranquilla,Barranquilla,Colombia,384,c095,2,70.4,70.4,8.0,barranquilla;santa-marta,Barranquilla;Santa Marta,santa-marta,Santa Marta,D
-queretaro,Querétaro,Mexico,532,c119,2,51.6,51.6,7.5,queretaro;san-miguel-de-allende,Querétaro;San Miguel de Allende,san-miguel-de-allende,San Miguel de Allende,D
-port-elizabeth,Port Elizabeth,South Africa,403,c098,2,62.8,62.8,6.9,port-elizabeth;jeffreys-bay,Port Elizabeth;Jeffreys Bay,jeffreys-bay,Jeffreys Bay,D
-wrocaw,Wrocław,Poland,428,c100,2,66.3,66.3,6.7,wrocaw;lubin,Wrocław;Lubin,lubin,Lubin,D
-palermo,Palermo,Italy,444,c103,2,73.0,73.0,6.7,palermo;trapani,Palermo;Trapani,trapani,Trapani,D
-port-louis,Port Louis,Mauritius,389,c096,2,17.7,17.7,6.2,port-louis;curepipe,Port Louis;Curepipe,curepipe,Curepipe,D
-gibraltar,Gibraltar,Gibraltar,493,c111,2,58.3,58.3,6.2,gibraltar;tangier,Gibraltar;Tangier,tangier,Tangier,D
-fort-collins,Fort Collins,United States,466,c105,2,33.2,33.2,6.1,fort-collins;greeley,Fort Collins;Greeley,greeley,Greeley,D
-sarajevo,Sarajevo,Bosnia-Herzegovina,492,c110,2,75.0,75.0,6.0,sarajevo;mostar,Sarajevo;Mostar,mostar,Mostar,D
-grand-rapids,Grand Rapids,United States,560,c127,2,74.7,74.7,6.0,grand-rapids;kalamazoo,Grand Rapids;Kalamazoo,kalamazoo,Kalamazoo,D
-santiago-de-compostela,Santiago de Compostela,Spain,604,c131,2,54.9,54.9,6.0,santiago-de-compostela;corunna,Santiago de Compostela;Corunna,corunna,Corunna,D
-ithaca,Ithaca,United States,494,c112,2,61.6,61.6,5.9,ithaca;binghamton,Ithaca;Binghamton,binghamton,Binghamton,D
-pereira,Pereira,Colombia,606,c132,3,62.2,42.6,5.9,pereira;manizales;armenia,Pereira;Manizales;Armenia,manizales;armenia,Manizales;Armenia,D
-bandung,Bandung,Indonesia,475,c108,2,70.3,70.3,5.8,bandung;sukabumi,Bandung;Sukabumi,sukabumi,Sukabumi,D
-exeter,Exeter,United Kingdom,544,c124,2,57.4,57.4,5.7,exeter;plymouth,Exeter;Plymouth,plymouth,Plymouth,D
-od,Łódź,Poland,501,c113,2,45.8,45.8,5.5,od;belchatow,Łódź;Belchatow,belchatow,Belchatow,D
-enschede,Enschede,Netherlands,536,c121,2,21.7,21.7,5.4,enschede;almelo,Enschede;Almelo,almelo,Almelo,D
-samara,Samara,Russia,551,c125,2,64.1,64.1,5.4,samara;tolyatti,Samara;Tolyatti,tolyatti,Tolyatti,D
-bielefeld,Bielefeld,Germany,529,c118,2,40.0,40.0,5.3,bielefeld;minden,Bielefeld;Minden,minden,Minden,D
-charlottesville,Charlottesville,United States,539,c122,2,56.8,56.8,5.3,charlottesville;harrisonburg,Charlottesville;Harrisonburg,harrisonburg,Harrisonburg,D
-san-marino,San Marino,San Marino,541,c123,2,17.1,17.1,5.3,san-marino;rimini,San Marino;Rimini,rimini,Rimini,D
-trieste,Trieste,Italy,557,c126,2,61.8,61.8,5.3,trieste;udine,Trieste;Udine,udine,Udine,D
-toyama,Toyama,Japan,683,c141,2,47.3,47.3,5.2,toyama;kanazawa,Toyama;Kanazawa,kanazawa,Kanazawa,D
-brno,Brno,Czech Republic,934,c165,4,77.4,56.6,5.1,brno;olomouc;zlin;uherske-hradit,Brno;Olomouc;Zlín;Uherské Hradiště,olomouc;zlin;uherske-hradit,Olomouc;Zlín;Uherské Hradiště,D
-adana,Adana,Turkey,654,c139,2,65.4,65.4,4.8,adana;mersin,Adana;Mersin,mersin,Mersin,D
-ancona,Ancona,Italy,730,c146,3,53.1,38.4,4.7,ancona;macerata;fermo,Ancona;Macerata;Fermo,macerata;fermo,Macerata;Fermo,D
-lecce,Lecce,Italy,751,c148,3,79.5,59.6,4.7,lecce;taranto;brindisi,Lecce;Taranto;Brindisi,taranto;brindisi,Taranto;Brindisi,D
-chalon-sur-saone,Chalon-sur-Saône,France,752,c149,2,61.9,61.9,4.7,chalon-sur-saone;dijon,Chalon-sur-Saône;Dijon,dijon,Dijon,D
-kalamata,Kalamata,Greece,625,c135,2,57.1,57.1,4.6,kalamata;tripoli-gre,Kalamata;Tripoli (GRE),tripoli-gre,Tripoli (GRE),D
-green-bay,Green Bay,United States,636,c137,2,42.3,42.3,4.6,green-bay;appleton,Green Bay;Appleton,appleton,Appleton,D
-lublin,Lublin,Poland,603,c130,2,64.0,64.0,4.4,lublin;chem,Lublin;Chełm,chem,Chełm,D
-bayonne,Bayonne,France,637,c138,2,41.7,41.7,4.4,bayonne;dax,Bayonne;Dax,dax,Dax,D
-fangchenggang,Fangchenggang,China,721,c143,2,42.9,42.9,4.4,fangchenggang;qinzhou,Fangchenggang;Qinzhou,qinzhou,Qinzhou,D
-northampton,Northampton,United Kingdom,722,c144,2,24.3,24.3,4.4,northampton;milton-keynes,Northampton;Milton Keynes,milton-keynes,Milton Keynes,D
-catania,Catania,Italy,613,c133,2,71.6,71.6,4.3,catania;ragusa,Catania;Ragusa,ragusa,Ragusa,D
-bandar-seri-begawan,Bandar Seri Begawan,Brunei,675,c140,2,53.1,53.1,4.2,bandar-seri-begawan;labuan,Bandar Seri Begawan;Labuan,labuan,Labuan,D
-xuchang,Xuchang,China,740,c147,2,61.5,61.5,4.2,xuchang;pingdingshan,Xuchang;Pingdingshan,pingdingshan,Pingdingshan,D
-buraidah,Buraidah,Saudi Arabia,790,c151,2,69.6,69.6,4.2,buraidah;ar-rass,Buraidah;Ar Rass,ar-rass,Ar Rass,D
-caen,Caen,France,797,c152,2,49.0,49.0,4.2,caen;le-havre,Caen;Le Havre,le-havre,Le Havre,D
-castries,Castries,Saint Lucia,629,c136,2,67.8,67.8,4.0,castries;fort-de-france,Castries;Fort-de-France,fort-de-france,Fort-de-France,D
-tours,Tours,France,757,c150,2,53.4,53.4,4.0,tours;blois,Tours;Blois,blois,Blois,D
-limerick-city,Limerick City,Ireland,690,c142,2,38.0,38.0,3.9,limerick-city;tipperary,Limerick City;Tipperary,tipperary,Tipperary,D
-linkoping,Linköping,Sweden,728,c145,2,38.6,38.6,3.9,linkoping;norrkoping,Linköping;Norrköping,norrkoping,Norrköping,D
-beer-sheva,Beer Sheva,Israel,599,c129,2,41.5,41.5,3.8,beer-sheva;gaza,Beer Sheva;Gaza,gaza,Gaza,D
-gujranwala,Gujranwala,Pakistan,801,c154,2,46.0,46.0,3.7,gujranwala;sialkot,Gujranwala;Sialkot,sialkot,Sialkot,D
-st-johns-ant,St. John's (ANT),Antigua & Barbuda,614,c134,2,53.0,53.0,3.6,st-johns-ant;brades,St. John's (ANT);Brades,brades,Brades,D
-cumilla,Cumilla,Bangladesh,830,c155,2,66.3,66.3,3.6,cumilla;noakhali,Cumilla;Noakhali,noakhali,Noakhali,D
-columbus-ga,Columbus (GA),United States,890,c163,2,49.1,49.1,3.4,columbus-ga;auburn,Columbus (GA);Auburn,auburn,Auburn,D
-krabi,Krabi,Thailand,798,c153,2,61.1,61.1,3.3,krabi;phuket,Krabi;Phuket,phuket,Phuket,D
-bloomingtonnormal,Bloomington–Normal,United States,863,c157,2,55.4,55.4,3.3,bloomingtonnormal;peoria,Bloomington–Normal;Peoria,peoria,Peoria,D
-panaji,Panaji,India,865,c158,2,28.7,28.7,3.3,panaji;margao,Panaji;Margao,margao,Margao,D
-rzeszow,Rzeszów,Poland,877,c161,2,72.5,72.5,3.3,rzeszow;tarnow,Rzeszów;Tarnów,tarnow,Tarnów,D
-road-town,Road Town,British Virgin Islands,861,c156,3,75.3,59.2,3.1,road-town;charlotte-amalie;christiansted,Road Town;Charlotte Amalie;Christiansted,charlotte-amalie;christiansted,Charlotte Amalie;Christiansted,D
-port-said,Port Said,Egypt,868,c159,2,49.3,49.3,3.1,port-said;damietta,Port Said;Damietta,damietta,Damietta,D
-kielce,Kielce,Poland,875,c160,2,69.8,69.8,3.0,kielce;radom,Kielce;Radom,radom,Radom,D
-yuncheng,Yuncheng,China,889,c162,2,33.6,33.6,3.0,yuncheng;sanmenxia,Yuncheng;Sanmenxia,sanmenxia,Sanmenxia,D
-trabzon,Trabzon,Turkey,909,c164,2,67.7,67.7,2.9,trabzon;rize,Trabzon;Rize,rize,Rize,D
-swansea,Swansea,United Kingdom,956,c166,2,16.2,16.2,2.9,swansea;llanelli,Swansea;Llanelli,llanelli,Llanelli,D
-killeen,Killeen,United States,981,c167,2,71.1,71.1,2.9,killeen;waco,Killeen;Waco,waco,Waco,D
-fort-walton-beach,Fort Walton Beach,United States,1001,c169,2,57.4,57.4,2.7,fort-walton-beach;pensacola,Fort Walton Beach;Pensacola,pensacola,Pensacola,D
-malappuram,Malappuram,India,1070,c170,2,38.1,38.1,2.7,malappuram;kozhikode,Malappuram;Kozhikode,kozhikode,Kozhikode,D
-volos,Volos,Greece,990,c168,2,54.0,54.0,2.6,volos;larisa,Volos;Larisa,larisa,Larisa,D
-dover,Dover,United Kingdom,1127,c173,2,49.4,49.4,2.5,dover;boulogne-sur-mer,Dover;Boulogne-sur-Mer,boulogne-sur-mer,Boulogne-sur-Mer,D
-heerenveen,Heerenveen,Netherlands,1124,c172,2,28.0,28.0,2.4,heerenveen;leeuwarden,Heerenveen;Leeuwarden,leeuwarden,Leeuwarden,D
-viseu,Viseu,Portugal,1118,c171,2,56.0,56.0,2.3,viseu;guarda,Viseu;Guarda,guarda,Guarda,D
-iloilo,Iloilo,Philippines,1222,c175,2,42.7,42.7,2.2,iloilo;bacolod,Iloilo;Bacolod,bacolod,Bacolod,D
-bengbu,Bengbu,China,1218,c174,2,48.9,48.9,2.1,bengbu;huainan,Bengbu;Huainan,huainan,Huainan,D
-willemstad,Willemstad,Curaçao,1258,c176,2,67.0,67.0,1.4,willemstad;kralendijk,Willemstad;Kralendijk,kralendijk,Kralendijk,D
-cotonou,Cotonou,Benin,1502,c177,2,27.4,27.4,1.0,cotonou;porto-novo,Cotonou;Porto-Novo,porto-novo,Porto-Novo,D
-st-peter-port,St Peter Port,Guernsey,1821,c178,2,43.1,43.1,0.8,st-peter-port;saint-helier,St Peter Port;Saint Helier,saint-helier,Saint Helier,D
-belize-city,Belize City,Belize,2371,c179,2,66.5,66.5,0.3,belize-city;belmopan,Belize City;Belmopan,belmopan,Belmopan,D
-koror-city,Koror City,Palau,2843,c180,2,23.8,23.8,0.3,koror-city;ngerulmud,Koror City;Ngerulmud,ngerulmud,Ngerulmud,D
+bologna,Bologna,Italy,196,c068,7,145.9,75.7,35.7,bologna;parma;brescia;modena;cremona;reggio-emilia;piacenza,Bologna;Parma;Brescia;Modena;Cremona;Reggio Emilia;Piacenza,parma;brescia;modena;cremona;reggio-emilia;piacenza,Parma;Brescia;Modena;Cremona;Reggio Emilia;Piacenza,C
+prague,Prague,Czech Republic,98,c036,6,100.0,67.8,34.7,prague;pardubice;liberec;hradec-kralove;mlada-boleslav;jablonec,Prague;Pardubice;Liberec;Hradec Králové;Mladá Boleslav;Jablonec,pardubice;liberec;hradec-kralove;mlada-boleslav;jablonec,Pardubice;Liberec;Hradec Králové;Mladá Boleslav;Jablonec,C
+pittsburgh,Pittsburgh,United States,83,c030,2,74.4,74.4,33.7,pittsburgh;wheeling,Pittsburgh;Wheeling,wheeling,Wheeling,C
+tampa,Tampa,United States,95,c033,2,68.7,68.7,33.6,tampa;sarasota,Tampa;Sarasota,sarasota,Sarasota,C
+bilbao,Bilbao,Spain,163,c059,4,77.4,54.5,32.7,bilbao;san-sebastian;vitoria-gasteiz;eibar,Bilbao;San Sebastián;Vitoria-Gasteiz;Eibar,san-sebastian;vitoria-gasteiz;eibar,San Sebastián;Vitoria-Gasteiz;Eibar,C
+jeddah,Jeddah,Saudi Arabia,122,c042,2,65.9,65.9,32.1,jeddah;mecca,Jeddah;Mecca,mecca,Mecca,C
+nice,Nice,France,147,c053,3,63.8,42.7,31.6,nice;monaco;frejus,Nice;Monaco;Frejus,monaco;frejus,Monaco;Frejus,C
+manama,Manama,Bahrain,164,c060,2,53.8,53.8,31.4,manama;dammam,Manama;Dammam,dammam,Dammam,C
+upper-silesian,Upper Silesian,Poland,238,c081,7,125.9,73.1,31.4,upper-silesian;krakow;czstochowa;owicim;ostrava;karvina;zawiercie,Upper Silesian;Krakow;Częstochowa;Oświęcim;Ostrava;Karviná;Zawiercie,krakow;czstochowa;owicim;ostrava;karvina;zawiercie,Krakow;Częstochowa;Oświęcim;Ostrava;Karviná;Zawiercie,C
+charlotte,Charlotte,United States,96,c034,2,72.4,72.4,30.4,charlotte;hickory,Charlotte;Hickory,hickory,Hickory,C
+indianapolis,Indianapolis,United States,109,c038,2,74.1,74.1,29.7,indianapolis;bloomington,Indianapolis;Bloomington,bloomington,Bloomington,C
+valencia,Valencia,Spain,106,c037,2,63.8,63.8,29.5,valencia;castellon,Valencia;Castellon,castellon,Castellon,C
+porto,Porto,Portugal,128,c047,2,47.0,47.0,29.4,porto;minho,Porto;Minho,minho,Minho,C
+birmingham,Birmingham,United Kingdom,116,c040,2,27.2,27.2,29.2,birmingham;coventry,Birmingham;Coventry,coventry,Coventry,C
+florence,Florence,Italy,143,c052,5,149.2,76.6,29.2,florence;pisa-livorno;siena;lucca;la-spezia,Florence;Pisa-Livorno;Siena;Lucca;La Spezia,pisa-livorno;siena;lucca;la-spezia,Pisa-Livorno;Siena;Lucca;La Spezia,C
+hartford,Hartford,United States,235,c079,4,95.3,69.7,28.7,hartford;new-haven;springfield;new-london,Hartford;New Haven;Springfield;New London,new-haven;springfield;new-london,New Haven;Springfield;New London,C
+zhengzhou,Zhengzhou,China,126,c045,4,107.6,71.6,28.1,zhengzhou;xinxiang;kaifeng;jiaozuo,Zhengzhou;Xinxiang;Kaifeng;Jiaozuo,xinxiang;kaifeng;jiaozuo,Xinxiang;Kaifeng;Jiaozuo,C
+lyon,Lyon,France,121,c041,3,107.1,71.6,27.7,lyon;saint-etienne;bourg-en-bresse,Lyon;Saint Étienne;Bourg-en-Bresse,saint-etienne;bourg-en-bresse,Saint Étienne;Bourg-en-Bresse,C
+marseille,Marseille,France,129,c048,2,49.1,49.1,27.2,marseille;toulon,Marseille;Toulon,toulon,Toulon,C
+nashville,Nashville,United States,113,c039,2,65.9,65.9,26.8,nashville;clarksville,Nashville;Clarksville,clarksville,Clarksville,C
+cardiff,Cardiff,United Kingdom,224,c076,4,57.9,35.9,26.8,cardiff;bristol;bath;newport,Cardiff;Bristol;Bath;Newport,bristol;bath;newport,Bristol;Bath;Newport,C
+hefei,Hefei,China,132,c050,2,67.3,67.3,25.8,hefei;luan,Hefei;Lu'an,luan,Lu'an,C
+xiamen,Xiamen,China,124,c043,2,44.9,44.9,25.6,xiamen;zhangzhou,Xiamen;Zhangzhou,zhangzhou,Zhangzhou,C
+naples,Naples,Italy,130,c049,2,46.1,46.1,24.8,naples;salerno,Naples;Salerno,salerno,Salerno,C
+ho-chi-minh-city,Ho Chi Minh City,Vietnam,125,c044,2,72.7,72.7,24.3,ho-chi-minh-city;vng-tau,Ho Chi Minh City;Vũng Tàu,vng-tau,Vũng Tàu,C
+jinan,Jinan,China,134,c051,2,50.9,50.9,23.4,jinan;taian,Jinan;Tai'an,taian,Tai'an,C
+rhine-neckar,Rhine-Neckar,Germany,183,c063,3,66.7,57.1,22.9,rhine-neckar;karlsruhe;kaiserslautern,Rhine-Neckar;Karlsruhe;Kaiserslautern,karlsruhe;kaiserslautern,Karlsruhe;Kaiserslautern,C
+newcastle,Newcastle,United Kingdom,221,c075,4,55.3,31.8,21.6,newcastle;sunderland;durham;middlesbrough,Newcastle;Sunderland;Durham;Middlesbrough,sunderland;durham;middlesbrough,Sunderland;Durham;Middlesbrough,C
+fuzhou,Fuzhou,China,152,c055,2,69.9,69.9,21.3,fuzhou;ningde,Fuzhou;Ningde,ningde,Ningde,C
+sacramento,Sacramento,United States,158,c057,3,111.1,74.8,20.4,sacramento;stockton;modesto,Sacramento;Stockton;Modesto,stockton;modesto,Stockton;Modesto,C
+ningbo,Ningbo,China,151,c054,2,65.2,65.2,20.1,ningbo;zhoushan,Ningbo;Zhoushan,zhoushan,Zhoushan,C
+panama-city,Panama City,Panama,153,c056,2,58.8,58.8,19.3,panama-city;colon-pan,Panama City;Colón (Pan),colon-pan,Colón (Pan),D
+fukuoka,Fukuoka,Japan,165,c061,2,53.4,53.4,19.3,fukuoka;kitakyushu,Fukuoka;Kitakyushu,kitakyushu,Kitakyushu,D
+leeds-bradford,Leeds-Bradford,United Kingdom,188,c065,2,35.1,35.1,18.8,leeds-bradford;york,Leeds-Bradford;York,york,York,D
+dhaka,Dhaka,Bangladesh,161,c058,2,70.3,70.3,18.5,dhaka;tangail,Dhaka;Tangail,tangail,Tangail,D
+kaohsiung,Kaohsiung,Taiwan,218,c074,3,96.0,66.3,18.5,kaohsiung;tainan;jiayi,Kaohsiung;Tainan;Jiayi,tainan;jiayi,Tainan;Jiayi,D
+hiroshima,Hiroshima,Japan,172,c062,2,68.1,68.1,17.0,hiroshima;matsuyama,Hiroshima;Matsuyama,matsuyama,Matsuyama,D
+toulouse,Toulouse,France,195,c067,3,85.1,64.6,16.5,toulouse;carcassonne;castres,Toulouse;Carcassonne;Castres,carcassonne;castres,Carcassonne;Castres,D
+taiyuan,Taiyuan,China,185,c064,2,62.1,62.1,16.4,taiyuan;xinzhou,Taiyuan;Xinzhou,xinzhou,Xinzhou,D
+cambridge,Cambridge,United Kingdom,256,c087,6,110.3,66.3,16.3,cambridge;ipswich;peterborough;kings-lynn;colchester;sudbury,Cambridge;Ipswich;Peterborough;King's Lynn;Colchester;Sudbury,ipswich;peterborough;kings-lynn;colchester;sudbury,Ipswich;Peterborough;King's Lynn;Colchester;Sudbury,D
+linz,Linz,Austria,316,c102,3,107.5,74.6,16.2,linz;salzburg;ried,Linz;Salzburg;Ried,salzburg;ried,Salzburg;Ried,D
+southampton,Southampton,United Kingdom,249,c082,3,56.9,40.0,16.1,southampton;bournemouth;portsmouth,Southampton;Bournemouth;Portsmouth,bournemouth;portsmouth,Bournemouth;Portsmouth,D
+daejeon,Daejeon,South Korea,190,c066,2,62.3,62.3,16.0,daejeon;jeonju,Daejeon;Jeonju,jeonju,Jeonju,D
+luxembourg-city,Luxembourg City,Luxembourg,258,c089,3,102.0,68.0,15.3,luxembourg-city;nancy;metz,Luxembourg City;Nancy;Metz,nancy;metz,Nancy;Metz,D
+liuzhou,Liuzhou,China,260,c090,2,68.7,68.7,15.2,liuzhou;laibin,Liuzhou;Laibin,laibin,Laibin,D
+izmir,Izmir,Turkey,206,c070,2,34.3,34.3,14.4,izmir;manisa,Izmir;Manisa,manisa,Manisa,D
+nuremberg,Nuremberg,Germany,202,c069,2,65.2,65.2,14.3,nuremberg;bayreuth,Nuremberg;Bayreuth,bayreuth,Bayreuth,D
+lahore,Lahore,Pakistan,215,c073,2,50.9,50.9,14.3,lahore;amritsar,Lahore;Amritsar,amritsar,Amritsar,D
+the-valley,The Valley,Anguilla,516,c133,5,108.3,50.1,14.3,the-valley;gustavia;basseterre;philipsburg;marigot,The Valley;Gustavia;Basseterre;Philipsburg;Marigot,gustavia;basseterre;philipsburg;marigot,Gustavia;Basseterre;Philipsburg;Marigot,D
+bucharest,Bucharest,Romania,208,c071,2,60.4,60.4,14.2,bucharest;ploieti,Bucharest;Ploieşti,ploieti,Ploieşti,D
+daegu,Daegu,South Korea,211,c072,2,53.1,53.1,14.1,daegu;gimcheon,Daegu;Gimcheon,gimcheon,Gimcheon,D
+aarhus,Aarhus,Denmark,267,c093,5,76.7,48.3,13.9,aarhus;viborg;silkeborg;randers;herning,Aarhus;Viborg;Silkeborg;Randers;Herning,viborg;silkeborg;randers;herning,Viborg;Silkeborg;Randers;Herning,D
+montpellier,Montpellier,France,290,c099,3,83.4,55.8,13.8,montpellier;nimes;avignon,Montpellier;Nîmes;Avignon,nimes;avignon,Nîmes;Avignon,D
+eindhoven,Eindhoven,Netherlands,282,c098,4,51.9,33.0,13.3,eindhoven;breda;tilburg;den-bosch,Eindhoven;Breda;Tilburg;Den Bosch,breda;tilburg;den-bosch,Breda;Tilburg;Den Bosch,D
+nantes,Nantes,France,236,c080,2,50.3,50.3,12.8,nantes;saint-nazaire,Nantes;Saint-Nazaire,saint-nazaire,Saint-Nazaire,D
+verona,Verona,Italy,252,c084,2,43.9,43.9,12.8,verona;vicenza,Verona;Vicenza,vicenza,Vicenza,D
+sendai,Sendai,Japan,233,c078,2,67.5,67.5,12.7,sendai;fukushima,Sendai;Fukushima,fukushima,Fukushima,D
+nottingham,Nottingham,United Kingdom,254,c085,2,22.0,22.0,12.5,nottingham;derby,Nottingham;Derby,derby,Derby,D
+freiburg,Freiburg,Germany,273,c094,2,37.7,37.7,12.5,freiburg;colmar,Freiburg;Colmar,colmar,Colmar,D
+limassol,Limassol,Cyprus,430,c116,4,110.6,69.8,12.4,limassol;nicosia;larnaca;paphos,Limassol;Nicosia;Larnaca;Paphos,nicosia;larnaca;paphos,Nicosia;Larnaca;Paphos,D
+pyongyang,Pyongyang,North Korea,232,c077,2,0.0,0.0,12.0,pyongyang;wonsan,Pyongyang;Wonsan,wonsan,Wonsan,D
+kinshasa,Kinshasa,Congo DR,275,c095,2,10.9,10.9,11.7,kinshasa;brazzaville,Kinshasa;Brazzaville,brazzaville,Brazzaville,D
+goiania,Goiania,Brazil,255,c086,2,52.1,52.1,11.3,goiania;anapolis,Goiania;Anápolis,anapolis,Anápolis,D
+zhanjiang,Zhanjiang,China,277,c096,2,73.7,73.7,11.3,zhanjiang;maoming,Zhanjiang;Maoming,maoming,Maoming,D
+genoa,Genoa,Italy,250,c083,2,37.7,37.7,11.2,genoa;savona,Genoa;Savona,savona,Savona,D
+alicante,Alicante,Spain,599,c147,5,126.3,67.6,11.2,alicante;benidorm;murcia;cartagena-es;elche,Alicante;Benidorm;Murcia;Cartagena (ES);Elche,benidorm;murcia;cartagena-es;elche,Benidorm;Murcia;Cartagena (ES);Elche,D
+thessaloniki,Thessaloniki,Greece,262,c091,2,71.3,71.3,11.1,thessaloniki;serres,Thessaloniki;Serres,serres,Serres,D
+itajai,Itajai,Brazil,257,c088,2,69.7,69.7,10.9,itajai;joinville,Itajai;Joinville,joinville,Joinville,D
+dresden,Dresden,Germany,264,c092,2,45.9,45.9,10.9,dresden;teplice,Dresden;Teplice,teplice,Teplice,D
+cancun,Cancun,Mexico,281,c097,3,73.2,51.9,10.9,cancun;playa-del-carmen;cozumel,Cancun;Playa del Carmen;Cozumel,playa-del-carmen;cozumel,Playa del Carmen;Cozumel,D
+odense,Odense,Denmark,402,c112,5,88.5,49.6,10.8,odense;fredericia;billund;vejle;haderslev,Odense;Fredericia;Billund;Vejle;Haderslev,fredericia;billund;vejle;haderslev,Fredericia;Billund;Vejle;Haderslev,D
+handan,Handan,China,471,c123,3,108.3,72.3,10.8,handan;anyang;xingtai,Handan;Anyang;Xingtai,anyang;xingtai,Anyang;Xingtai,D
+xuzhou,Xuzhou,China,332,c104,2,62.5,62.5,10.7,xuzhou;zaozhuang,Xuzhou;Zaozhuang,zaozhuang,Zaozhuang,D
+madison,Madison,United States,311,c101,3,93.5,63.6,10.0,madison;rockford;beloit,Madison;Rockford;Beloit,rockford;beloit,Rockford;Beloit,D
+bielefeld,Bielefeld,Germany,531,c137,5,95.3,60.9,9.9,bielefeld;munster;minden;paderborn;osnabruck,Bielefeld;Munster;Minden;Paderborn;Osnabrück,munster;minden;paderborn;osnabruck,Munster;Minden;Paderborn;Osnabrück,D
+savannah,Savannah,United States,431,c117,2,35.3,35.3,9.6,savannah;hilton-head,Savannah;Hilton Head,hilton-head,Hilton Head,D
+bolzano,Bolzano,Italy,472,c124,2,51.4,51.4,9.6,bolzano;trento,Bolzano;Trento,trento,Trento,D
+shizuoka,Shizuoka,Japan,526,c135,3,112.2,74.9,9.0,shizuoka;numazu;hamamatsu,Shizuoka;Numazu;Hamamatsu,numazu;hamamatsu,Numazu;Hamamatsu,D
+rennes,Rennes,France,307,c100,2,67.6,67.6,8.9,rennes;avranches,Rennes;Avranches,avranches,Avranches,D
+victoria,Victoria,Canada,328,c103,2,74.4,74.4,8.6,victoria;bellingham,Victoria;Bellingham,bellingham,Bellingham,D
+jiaxing,Jiaxing,China,337,c105,2,62.8,62.8,8.6,jiaxing;suzhou,Jiaxing;Suzhou,suzhou,Suzhou,D
+davos,Davos,Switzerland,489,c127,2,34.1,34.1,8.4,davos;st-moritz,Davos;St. Moritz,st-moritz,St. Moritz,D
+okayama,Okayama,Japan,451,c119,2,36.4,36.4,8.3,okayama;takamatsu,Okayama;Takamatsu,takamatsu,Takamatsu,D
+kotor,Kotor,Montenegro,521,c134,3,98.5,66.5,8.3,kotor;podgorica;dubrovnik,Kotor;Podgorica;Dubrovnik,podgorica;dubrovnik,Podgorica;Dubrovnik,D
+el-paso,El Paso,United States,535,c139,3,77.0,51.4,8.2,el-paso;ciudad-juarez;las-cruces,El Paso;Ciudad Juarez;Las Cruces,ciudad-juarez;las-cruces,Ciudad Juarez;Las Cruces,D
+zibo,Zibo,China,515,c132,3,90.7,73.1,8.1,zibo;binzhou;dongying,Zibo;Binzhou;Dongying,binzhou;dongying,Binzhou;Dongying,D
+barranquilla,Barranquilla,Colombia,387,c109,2,70.4,70.4,8.0,barranquilla;santa-marta,Barranquilla;Santa Marta,santa-marta,Santa Marta,D
+wrocaw,Wrocław,Poland,383,c107,2,66.3,66.3,7.7,wrocaw;lubin,Wrocław;Lubin,lubin,Lubin,D
+queretaro,Querétaro,Mexico,534,c138,2,51.6,51.6,7.5,queretaro;san-miguel-de-allende,Querétaro;San Miguel de Allende,san-miguel-de-allende,San Miguel de Allende,D
+st-gallen,St. Gallen,Switzerland,746,c171,5,63.3,35.9,7.5,st-gallen;konstanz;altach;bregenz;vaduz,St. Gallen;Konstanz;Altach;Bregenz;Vaduz,konstanz;altach;bregenz;vaduz,Konstanz;Altach;Bregenz;Vaduz,D
+tbilisi,Tbilisi,Georgia,384,c108,2,59.9,59.9,7.2,tbilisi;telavi,Tbilisi;Telavi,telavi,Telavi,D
+gibraltar,Gibraltar,Gibraltar,495,c129,3,58.3,39.9,7.2,gibraltar;tangier;algeciras,Gibraltar;Tangier;Algeciras,tangier;algeciras,Tangier;Algeciras,D
+cebu,Cebu,Philippines,380,c106,2,72.3,72.3,7.1,cebu;tagbilaran,Cebu;Tagbilaran,tagbilaran,Tagbilaran,D
+santiago-de-compostela,Santiago de Compostela,Spain,605,c150,3,71.9,48.8,7.1,santiago-de-compostela;corunna;ferrol,Santiago de Compostela;Corunna;Ferrol,corunna;ferrol,Corunna;Ferrol,D
+port-elizabeth,Port Elizabeth,South Africa,404,c113,2,62.8,62.8,6.9,port-elizabeth;jeffreys-bay,Port Elizabeth;Jeffreys Bay,jeffreys-bay,Jeffreys Bay,D
+messina,Messina,Italy,401,c111,2,13.1,13.1,6.7,messina;reggio-calabria,Messina;Reggio Calabria,reggio-calabria,Reggio Calabria,D
+palermo,Palermo,Italy,445,c118,2,73.0,73.0,6.7,palermo;trapani,Palermo;Trapani,trapani,Trapani,D
+erfurt-weimar-jena,Erfurt-Weimar-Jena,Germany,427,c115,2,49.4,49.4,6.5,erfurt-weimar-jena;eisenach,Erfurt-Weimar-Jena;Eisenach,eisenach,Eisenach,D
+harrisburg,Harrisburg,United States,425,c114,2,55.8,55.8,6.4,harrisburg;lancaster-pa,Harrisburg;Lancaster (PA),lancaster-pa,Lancaster (PA),D
+port-louis,Port Louis,Mauritius,392,c110,2,17.7,17.7,6.2,port-louis;curepipe,Port Louis;Curepipe,curepipe,Curepipe,D
+fresno,Fresno,United States,457,c120,2,63.3,63.3,6.1,fresno;visalia,Fresno;Visalia,visalia,Visalia,D
+fort-collins,Fort Collins,United States,467,c122,2,33.2,33.2,6.1,fort-collins;greeley,Fort Collins;Greeley,greeley,Greeley,D
+sarajevo,Sarajevo,Bosnia-Herzegovina,494,c128,2,75.0,75.0,6.0,sarajevo;mostar,Sarajevo;Mostar,mostar,Mostar,D
+grand-rapids,Grand Rapids,United States,561,c145,2,74.7,74.7,6.0,grand-rapids;kalamazoo,Grand Rapids;Kalamazoo,kalamazoo,Kalamazoo,D
+state-college,State College,United States,460,c121,2,54.5,54.5,5.9,state-college;altoona,State College;Altoona,altoona,Altoona,D
+ithaca,Ithaca,United States,496,c130,2,61.6,61.6,5.9,ithaca;binghamton,Ithaca;Binghamton,binghamton,Binghamton,D
+pereira,Pereira,Colombia,607,c151,3,62.2,42.6,5.9,pereira;manizales;armenia,Pereira;Manizales;Armenia,manizales;armenia,Manizales;Armenia,D
+bandung,Bandung,Indonesia,476,c125,2,70.3,70.3,5.8,bandung;sukabumi,Bandung;Sukabumi,sukabumi,Sukabumi,D
+exeter,Exeter,United Kingdom,546,c143,2,57.4,57.4,5.7,exeter;plymouth,Exeter;Plymouth,plymouth,Plymouth,D
+cadiz,Cádiz,Spain,487,c126,2,22.8,22.8,5.6,cadiz;jerez,Cádiz;Jerez,jerez,Jerez,D
+od,Łódź,Poland,503,c131,2,45.8,45.8,5.5,od;belchatow,Łódź;Belchatow,belchatow,Belchatow,D
+enschede,Enschede,Netherlands,538,c140,2,21.7,21.7,5.4,enschede;almelo,Enschede;Almelo,almelo,Almelo,D
+samara,Samara,Russia,552,c144,2,64.1,64.1,5.4,samara;tolyatti,Samara;Tolyatti,tolyatti,Tolyatti,D
+charlottesville,Charlottesville,United States,541,c141,2,56.8,56.8,5.3,charlottesville;harrisonburg,Charlottesville;Harrisonburg,harrisonburg,Harrisonburg,D
+san-marino,San Marino,San Marino,543,c142,2,17.1,17.1,5.3,san-marino;rimini,San Marino;Rimini,rimini,Rimini,D
+blacksburg,Blacksburg,United States,595,c146,3,77.6,61.9,5.2,blacksburg;martinsville;roanoke,Blacksburg;Martinsville;Roanoke,martinsville;roanoke,Martinsville;Roanoke,D
+toyama,Toyama,Japan,686,c164,2,47.3,47.3,5.2,toyama;kanazawa,Toyama;Kanazawa,kanazawa,Kanazawa,D
+brno,Brno,Czech Republic,941,c194,4,77.4,56.6,5.1,brno;olomouc;zlin;uherske-hradit,Brno;Olomouc;Zlín;Uherské Hradiště,olomouc;zlin;uherske-hradit,Olomouc;Zlín;Uherské Hradiště,D
+wurzburg,Würzburg,Germany,529,c136,2,35.0,35.0,5.0,wurzburg;schweinfurt,Würzburg;Schweinfurt,schweinfurt,Schweinfurt,D
+gottingen,Göttingen,Germany,609,c152,2,39.5,39.5,5.0,gottingen;kassel,Göttingen;Kassel,kassel,Kassel,D
+tours,Tours,France,763,c175,3,107.4,72.0,4.9,tours;blois;orleans,Tours;Blois;Orléans,blois;orleans,Blois;Orléans,D
+adana,Adana,Turkey,658,c160,2,65.4,65.4,4.8,adana;mersin,Adana;Mersin,mersin,Mersin,D
+linkoping,Linköping,Sweden,735,c169,3,67.1,47.5,4.8,linkoping;norrkoping;motala,Linköping;Norrköping;Motala,norrkoping;motala,Norrköping;Motala,D
+ancona,Ancona,Italy,737,c170,3,53.1,38.4,4.7,ancona;macerata;fermo,Ancona;Macerata;Fermo,macerata;fermo,Macerata;Fermo,D
+lecce,Lecce,Italy,757,c173,3,79.5,59.6,4.7,lecce;taranto;brindisi,Lecce;Taranto;Brindisi,taranto;brindisi,Taranto;Brindisi,D
+chalon-sur-saone,Chalon-sur-Saône,France,758,c174,2,61.9,61.9,4.7,chalon-sur-saone;dijon,Chalon-sur-Saône;Dijon,dijon,Dijon,D
+kalamata,Kalamata,Greece,628,c156,2,57.1,57.1,4.6,kalamata;tripoli-gre,Kalamata;Tripoli (GRE),tripoli-gre,Tripoli (GRE),D
+green-bay,Green Bay,United States,640,c158,2,42.3,42.3,4.6,green-bay;appleton,Green Bay;Appleton,appleton,Appleton,D
+lublin,Lublin,Poland,604,c149,2,64.0,64.0,4.4,lublin;chem,Lublin;Chełm,chem,Chełm,D
+bayonne,Bayonne,France,641,c159,2,41.7,41.7,4.4,bayonne;dax,Bayonne;Dax,dax,Dax,D
+fangchenggang,Fangchenggang,China,726,c167,2,42.9,42.9,4.4,fangchenggang;qinzhou,Fangchenggang;Qinzhou,qinzhou,Qinzhou,D
+northampton,Northampton,United Kingdom,727,c168,2,24.3,24.3,4.4,northampton;milton-keynes,Northampton;Milton Keynes,milton-keynes,Milton Keynes,D
+lugano,Lugano,Switzerland,611,c153,2,22.0,22.0,4.3,lugano;bellinzona,Lugano;Bellinzona,bellinzona,Bellinzona,D
+catania,Catania,Italy,616,c154,2,71.6,71.6,4.3,catania;ragusa,Catania;Ragusa,ragusa,Ragusa,D
+bandar-seri-begawan,Bandar Seri Begawan,Brunei,679,c163,2,53.1,53.1,4.2,bandar-seri-begawan;labuan,Bandar Seri Begawan;Labuan,labuan,Labuan,D
+buraidah,Buraidah,Saudi Arabia,797,c178,2,69.6,69.6,4.2,buraidah;ar-rass,Buraidah;Ar Rass,ar-rass,Ar Rass,D
+caen,Caen,France,805,c180,2,49.0,49.0,4.2,caen;le-havre,Caen;Le Havre,le-havre,Le Havre,D
+castries,Castries,Saint Lucia,633,c157,2,67.8,67.8,4.0,castries;fort-de-france,Castries;Fort-de-France,fort-de-france,Fort-de-France,D
+limerick-city,Limerick City,Ireland,693,c166,2,38.0,38.0,3.9,limerick-city;tipperary,Limerick City;Tipperary,tipperary,Tipperary,D
+beer-sheva,Beer Sheva,Israel,601,c148,2,41.5,41.5,3.8,beer-sheva;gaza,Beer Sheva;Gaza,gaza,Gaza,D
+valencia-vn,Valencia (VN),Venezuela,669,c161,2,46.1,46.1,3.8,valencia-vn;maracay,Valencia (VN);Maracay,maracay,Maracay,D
+zaragoza,Zaragoza,Spain,687,c165,2,66.8,66.8,3.7,zaragoza;huesca,Zaragoza;Huesca,huesca,Huesca,D
+gujranwala,Gujranwala,Pakistan,809,c182,2,46.0,46.0,3.7,gujranwala;sialkot,Gujranwala;Sialkot,sialkot,Sialkot,D
+st-johns-ant,St. John's (ANT),Antigua & Barbuda,617,c155,2,53.0,53.0,3.6,st-johns-ant;brades,St. John's (ANT);Brades,brades,Brades,D
+port-harcourt,Port Harcourt,Nigeria,676,c162,2,57.6,57.6,3.6,port-harcourt;aba,Port Harcourt;Aba,aba,Aba,D
+cumilla,Cumilla,Bangladesh,838,c183,2,66.3,66.3,3.6,cumilla;noakhali,Cumilla;Noakhali,noakhali,Noakhali,D
+columbus-ga,Columbus (GA),United States,899,c192,2,49.1,49.1,3.4,columbus-ga;auburn,Columbus (GA);Auburn,auburn,Auburn,D
+dover,Dover,United Kingdom,1128,c208,3,50.3,37.0,3.4,dover;boulogne-sur-mer;folkestone,Dover;Boulogne-sur-Mer;Folkestone,boulogne-sur-mer;folkestone,Boulogne-sur-Mer;Folkestone,D
+xuchang,Xuchang,China,748,c172,2,54.8,54.8,3.3,xuchang;luohe,Xuchang;Luohe,luohe,Luohe,D
+krabi,Krabi,Thailand,806,c181,2,61.1,61.1,3.3,krabi;phuket,Krabi;Phuket,phuket,Phuket,D
+bloomingtonnormal,Bloomington–Normal,United States,872,c185,2,55.4,55.4,3.3,bloomingtonnormal;peoria,Bloomington–Normal;Peoria,peoria,Peoria,D
+panaji,Panaji,India,874,c186,2,28.7,28.7,3.3,panaji;margao,Panaji;Margao,margao,Margao,D
+rzeszow,Rzeszów,Poland,885,c190,2,72.5,72.5,3.3,rzeszow;tarnow,Rzeszów;Tarnów,tarnow,Tarnów,D
+izmit,İzmit,Turkey,790,c176,2,39.5,39.5,3.1,izmit;adapazar,İzmit;Adapazarı,adapazar,Adapazarı,D
+road-town,Road Town,British Virgin Islands,870,c184,3,75.3,59.2,3.1,road-town;charlotte-amalie;christiansted,Road Town;Charlotte Amalie;Christiansted,charlotte-amalie;christiansted,Charlotte Amalie;Christiansted,D
+port-said,Port Said,Egypt,877,c187,2,49.3,49.3,3.1,port-said;damietta,Port Said;Damietta,damietta,Damietta,D
+idaho-falls,Idaho Falls,United States,802,c179,2,74.1,74.1,3.0,idaho-falls;pocatello,Idaho Falls;Pocatello,pocatello,Pocatello,D
+kielce,Kielce,Poland,883,c189,2,69.8,69.8,3.0,kielce;radom,Kielce;Radom,radom,Radom,D
+yuncheng,Yuncheng,China,897,c191,2,33.6,33.6,3.0,yuncheng;sanmenxia,Yuncheng;Sanmenxia,sanmenxia,Sanmenxia,D
+nagasaki,Nagasaki,Japan,795,c177,2,50.1,50.1,2.9,nagasaki;sasebo,Nagasaki;Sasebo,sasebo,Sasebo,D
+trabzon,Trabzon,Turkey,917,c193,2,67.7,67.7,2.9,trabzon;rize,Trabzon;Rize,rize,Rize,D
+swansea,Swansea,United Kingdom,963,c195,2,16.2,16.2,2.9,swansea;llanelli,Swansea;Llanelli,llanelli,Llanelli,D
+killeen,Killeen,United States,986,c196,2,71.1,71.1,2.9,killeen;waco,Killeen;Waco,waco,Waco,D
+gloucester,Gloucester,United Kingdom,995,c199,2,11.6,11.6,2.8,gloucester;cheltenham,Gloucester;Cheltenham,cheltenham,Cheltenham,D
+coimbatore,Coimbatore,India,878,c188,2,43.3,43.3,2.7,coimbatore;tiruppur,Coimbatore;Tiruppur,tiruppur,Tiruppur,D
+fort-walton-beach,Fort Walton Beach,United States,1005,c200,2,57.4,57.4,2.7,fort-walton-beach;pensacola,Fort Walton Beach;Pensacola,pensacola,Pensacola,D
+malappuram,Malappuram,India,1071,c204,2,38.1,38.1,2.7,malappuram;kozhikode,Malappuram;Kozhikode,kozhikode,Kozhikode,D
+volos,Volos,Greece,994,c198,2,54.0,54.0,2.6,volos;larisa,Volos;Larisa,larisa,Larisa,D
+jinzhou,Jinzhou,China,992,c197,2,50.5,50.5,2.4,jinzhou;huludao,Jinzhou;Huludao,huludao,Huludao,D
+yingkou,Yingkou,China,1046,c202,2,53.0,53.0,2.4,yingkou;panjin,Yingkou;Panjin,panjin,Panjin,D
+heerenveen,Heerenveen,Netherlands,1125,c207,2,28.0,28.0,2.4,heerenveen;leeuwarden,Heerenveen;Leeuwarden,leeuwarden,Leeuwarden,D
+malang,Malang,Indonesia,1050,c203,2,69.1,69.1,2.3,malang;kediri,Malang;Kediri,kediri,Kediri,D
+thiruvananthapuram,Thiruvananthapuram,India,1082,c205,2,54.2,54.2,2.3,thiruvananthapuram;kollam,Thiruvananthapuram;Kollam,kollam,Kollam,D
+viseu,Viseu,Portugal,1119,c206,2,56.0,56.0,2.3,viseu;guarda,Viseu;Guarda,guarda,Guarda,D
+namangan,Namangan,Uzbekistan,1494,c219,3,68.7,64.8,2.3,namangan;fergana;andizhan,Namangan;Fergana;Andizhan,fergana;andizhan,Fergana;Andizhan,D
+sevastopol,Sevastopol,Russia,1024,c201,2,52.5,52.5,2.2,sevastopol;yalta,Sevastopol;Yalta,yalta,Yalta,D
+iloilo,Iloilo,Philippines,1226,c211,2,42.7,42.7,2.2,iloilo;bacolod,Iloilo;Bacolod,bacolod,Bacolod,D
+bengbu,Bengbu,China,1221,c210,2,48.9,48.9,2.1,bengbu;huainan,Bengbu;Huainan,huainan,Huainan,D
+ludhiana,Ludhiana,India,1185,c209,2,54.1,54.1,1.9,ludhiana;jalandhar,Ludhiana;Jalandhar,jalandhar,Jalandhar,D
+agrinio,Agrinio,Greece,1291,c213,2,50.5,50.5,1.9,agrinio;patras,Agrinio;Patras,patras,Patras,D
+jessore,Jessore,Bangladesh,1295,c214,2,49.2,49.2,1.9,jessore;khulna,Jessore;Khulna,khulna,Khulna,D
+asansol,Asansol,India,1342,c215,2,54.6,54.6,1.9,asansol;dhanbad,Asansol;Dhanbad,dhanbad,Dhanbad,D
+tyler,Tyler,United States,1417,c216,2,55.2,55.2,1.7,tyler;longview,Tyler;Longview,longview,Longview,D
+cape-girardeau,Cape Girardeau,United States,1478,c218,2,53.9,53.9,1.6,cape-girardeau;carbondale,Cape Girardeau;Carbondale,carbondale,Carbondale,D
+lattakia,Lattakia,Syria,1455,c217,2,70.4,70.4,1.5,lattakia;tartus,Lattakia;Tartus,tartus,Tartus,D
+willemstad,Willemstad,Curaçao,1261,c212,2,67.0,67.0,1.4,willemstad;kralendijk,Willemstad;Kralendijk,kralendijk,Kralendijk,D
+cotonou,Cotonou,Benin,1503,c220,2,27.4,27.4,1.0,cotonou;porto-novo,Cotonou;Porto-Novo,porto-novo,Porto-Novo,D
+st-peter-port,St Peter Port,Guernsey,1821,c221,2,43.1,43.1,0.8,st-peter-port;saint-helier,St Peter Port;Saint Helier,saint-helier,Saint Helier,D
+belize-city,Belize City,Belize,2372,c222,2,66.5,66.5,0.3,belize-city;belmopan,Belize City;Belmopan,belmopan,Belmopan,D
+koror-city,Koror City,Palau,2844,c223,2,23.8,23.8,0.3,koror-city;ngerulmud,Koror City;Ngerulmud,ngerulmud,Ngerulmud,D
