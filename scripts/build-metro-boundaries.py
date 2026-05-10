@@ -53,6 +53,30 @@ Incremental build (build cache):
   from the constants automatically, so bumping OUTLIER_PART_MAX_KM (for
   example) invalidates all cached metros without manual intervention.
 
+Refreshment protocol (age-based invalidation):
+  Each cache entry stores a `built_at` ISO timestamp alongside its hash.
+  A metro is rebuilt if any of these are true:
+    - Its (region, subtype, primary) member set or anchor changed (hash
+      mismatch).
+    - Its GeoJSON file is missing on disk.
+    - Its cached built_at is older than DEFAULT_MAX_AGE_DAYS.
+    - Its cache entry is in the legacy plain-string format (no built_at
+      recorded), which means it predates the refreshment protocol.
+
+  Override the age threshold with --max-age-days N. Use --max-age-days 0
+  to rebuild every metro whose cache entry is at least one second old,
+  which is effectively the same as --force but cheaper (it preserves
+  cache structure and built_at recording for the next run).
+
+  Recommended usage:
+    - Daily incremental: no flags. Rebuilds only metros with hash drift.
+    - Weekly refresh: --max-age-days 7. Picks up stale builds caused by
+      script-logic drift the SCRIPT_VERSION_HASH check missed.
+    - Monthly deep refresh: --max-age-days 30. Catches anything quirky.
+  The boundary build runs locally because the Overture parquets live on
+  the user's workstation, not in CI. Helper: scripts/refresh-boundaries.ps1
+  wraps the weekly variant for one-click invocation.
+
 To extend to a new country:
   1. Pick the sheet that holds its rows (Counties or Municipality).
   2. Populate the four Overture columns by hand for those rows.
@@ -112,6 +136,12 @@ SIMPLIFY_TOLERANCE_DEG = 0.005
 # Set to 0 to disable pre-simplification.
 MEMBER_SIMPLIFY_TOLERANCE_DEG = 0.001
 OUTLIER_PART_MAX_KM = 200.0
+
+# Refreshment protocol: any cached polygon older than this is rebuilt even
+# if its hash has not changed. Catches drift from earlier script logic that
+# the SCRIPT_VERSION_HASH check missed (e.g., the 2026-05-06 Tokyo build that
+# excluded the 23 special wards). Override at the CLI with --max-age-days N.
+DEFAULT_MAX_AGE_DAYS = 30
 
 
 # ---------- Per-country parquet routing ---------------------------------
@@ -561,6 +591,27 @@ def compute_input_hash(members, anchor):
     return hashlib.sha256(payload.encode()).hexdigest()[:16]
 
 
+def _normalize_cache_entries(cache):
+    """Migrate legacy cache entries (plain hash strings) to the structured
+    {hash, built_at} form. Legacy entries get a missing built_at so the
+    age-based refresh rebuilds them on the next eligible run.
+    """
+    hashes = cache.get("hashes", {})
+    out = {}
+    for slug, entry in hashes.items():
+        if isinstance(entry, str):
+            out[slug] = {"hash": entry, "built_at": None}
+        elif isinstance(entry, dict):
+            out[slug] = {
+                "hash": entry.get("hash"),
+                "built_at": entry.get("built_at"),
+            }
+        else:
+            out[slug] = {"hash": None, "built_at": None}
+    cache["hashes"] = out
+    return cache
+
+
 def load_build_cache():
     if not BUILD_CACHE_FILE.exists():
         return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
@@ -569,13 +620,11 @@ def load_build_cache():
             cache = json.load(f)
         if not isinstance(cache, dict) or "hashes" not in cache:
             return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
-        # If script version changed since cache was written, all entries
-        # are invalid. Drop them but keep the file alive for the rewrite.
         if cache.get("version") != SCRIPT_VERSION_HASH:
             print(f"      cache: script version changed, invalidating "
                   f"{len(cache.get('hashes', {})):,} entries")
             return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
-        return cache
+        return _normalize_cache_entries(cache)
     except Exception as e:
         print(f"      cache: failed to read ({e}), starting fresh")
         return {"version": SCRIPT_VERSION_HASH, "hashes": {}}
@@ -602,10 +651,27 @@ def save_build_cache(cache):
 
 # ---------- Main ---------------------------------------------------------
 
+def _parse_max_age_days(argv):
+    """Pull --max-age-days N out of argv. Default DEFAULT_MAX_AGE_DAYS."""
+    for i, tok in enumerate(argv):
+        if tok == "--max-age-days" and i + 1 < len(argv):
+            return int(argv[i + 1])
+        if tok.startswith("--max-age-days="):
+            return int(tok.split("=", 1)[1])
+    return DEFAULT_MAX_AGE_DAYS
+
+
 def main():
+    import datetime as _dt
     force = "--force" in sys.argv
+    max_age_days = _parse_max_age_days(sys.argv)
+    age_threshold = _dt.timedelta(days=max(0, max_age_days))
+    now = _dt.datetime.now(_dt.timezone.utc)
     if force:
         print("FORCE rebuild requested; cache will be ignored.")
+    else:
+        print(f"Refreshment protocol: rebuild any polygon older than "
+              f"{max_age_days} day(s).")
 
     rows = load_workbook_rows(WORKBOOK)
     metros_index = load_metros_index(METROS_JSON)
@@ -640,18 +706,41 @@ def main():
     cached_hashes = cache.get("hashes", {})
     new_hashes = {}
     needs_rebuild = set()
+    aged_out = 0
+    legacy_entries = 0
     for slug, members in by_slug.items():
         h = compute_input_hash(members, slug_anchor.get(slug))
         new_hashes[slug] = h
-        if cached_hashes.get(slug) != h:
+        entry = cached_hashes.get(slug) or {}
+        cached_h = entry.get("hash") if isinstance(entry, dict) else entry
+        if cached_h != h:
             needs_rebuild.add(slug)
-        else:
-            # Cache hit only counts if the GeoJSON file actually exists
-            if not (OUT_DIR / f"{slug}.geojson").exists():
+            continue
+        if not (OUT_DIR / f"{slug}.geojson").exists():
+            needs_rebuild.add(slug)
+            continue
+        built_at_raw = entry.get("built_at") if isinstance(entry, dict) else None
+        if not built_at_raw:
+            needs_rebuild.add(slug)
+            legacy_entries += 1
+            continue
+        try:
+            built_at = _dt.datetime.fromisoformat(built_at_raw)
+            if built_at.tzinfo is None:
+                built_at = built_at.replace(tzinfo=_dt.timezone.utc)
+            if (now - built_at) > age_threshold:
                 needs_rebuild.add(slug)
+                aged_out += 1
+        except Exception:
+            needs_rebuild.add(slug)
+            legacy_entries += 1
     print(f"      cached entries: {len(cached_hashes):,}")
     print(f"      cache hits: {len(by_slug) - len(needs_rebuild):,}")
     print(f"      need rebuild: {len(needs_rebuild):,}")
+    if aged_out:
+        print(f"      aged-out (older than {max_age_days}d): {aged_out:,}")
+    if legacy_entries:
+        print(f"      legacy entries with no built_at: {legacy_entries:,}")
 
     print("[4/5] Pruning stale boundary files")
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -819,13 +908,19 @@ def main():
 
     # Persist cache: keep only slugs still in workbook AND either rebuilt
     # successfully OR previously cached (which means their existing GeoJSON
-    # is still valid).
+    # is still valid). Each entry carries the hash plus a built_at timestamp
+    # so the refreshment protocol can age-out stale polygons next run.
+    now_iso = now.isoformat()
+    new_entries = {}
+    for slug in keep_slugs:
+        if slug in successfully_built:
+            new_entries[slug] = {"hash": new_hashes[slug], "built_at": now_iso}
+        elif slug not in needs_rebuild:
+            prior = cached_hashes.get(slug) or {}
+            prior_built = prior.get("built_at") if isinstance(prior, dict) else None
+            new_entries[slug] = {"hash": new_hashes[slug], "built_at": prior_built}
     cache["version"] = SCRIPT_VERSION_HASH
-    cache["hashes"] = {
-        slug: new_hashes[slug]
-        for slug in keep_slugs
-        if slug in successfully_built or slug not in needs_rebuild
-    }
+    cache["hashes"] = new_entries
     save_build_cache(cache)
 
     print()
