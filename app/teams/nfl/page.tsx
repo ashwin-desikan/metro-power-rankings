@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, TITLE_COLORS } from "@/lib/nfl";
+import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, TITLE_COLORS, withStadiumLocations, withTeamSlugs } from "@/lib/nfl";
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -78,7 +78,15 @@ export default function NflIndexPage() {
         monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
       />
 
-      <TopGamesTable allTime={getTopGamesAllTime()} byDecade={getTopGamesByDecade()} />
+      <TopGamesTable
+        allTime={withTeamSlugs(withStadiumLocations(getTopGamesAllTime()))}
+        byDecade={Object.fromEntries(
+          Object.entries(getTopGamesByDecade()).map(([k, v]) => [
+            k,
+            withTeamSlugs(withStadiumLocations(v)),
+          ])
+        )}
+      />
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <a href="/methodology" className="hover:text-[var(--text-muted)]">methodology</a>.

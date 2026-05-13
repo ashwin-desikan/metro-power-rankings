@@ -33,6 +33,18 @@ type SortKey =
 
 type SortDir = "asc" | "desc";
 
+// Pro Football Reference year-URL resolver. Branches by Season.league so
+// AAFC (1946-49), AFL (1960-69), and APFA (1920-21) seasons route to the
+// league-specific PFR endpoint. NFL and unknown leagues use the generic
+// /years/{year}/ page (which on PFR is the NFL-era ledger).
+function pfrYearUrl(year: number, league: string): string {
+  const lg = (league || "").toUpperCase();
+  if (lg === "APFA") return `https://www.pro-football-reference.com/years/${year}_APFA/`;
+  if (lg === "AAFC") return `https://www.pro-football-reference.com/years/${year}_AAFC/`;
+  if (lg === "AFL")  return `https://www.pro-football-reference.com/years/${year}_AFL/`;
+  return `https://www.pro-football-reference.com/years/${year}/`;
+}
+
 // Historical-franchise monogram presets. Slightly desaturated so the eye
 // reads "no longer active" without being punitive. Era-appropriate where
 // the team's known colors are documented.
@@ -289,7 +301,15 @@ export default function HistoricalTable({ rows, histChamps, histSeasons }: Props
                             }}
                           >
                             <td className="py-1.5 pr-3" style={{ color: s.champ ? TITLE_COLORS.sb.bg : undefined, fontWeight: s.champ ? 600 : undefined }}>
-                              {s.year}
+                              <a
+                                href={pfrYearUrl(s.year, s.league)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline decoration-dotted underline-offset-2"
+                                title={`${s.year} season on Pro Football Reference`}
+                              >
+                                {s.year}
+                              </a>
                             </td>
                             <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.league}</td>
                             <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.city} {s.team}</td>

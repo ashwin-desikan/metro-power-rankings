@@ -9,6 +9,7 @@ import {
   serializeJsonLd,
 } from "@/lib/seo";
 import { TOP_TEAMS, topTeamAnchorId } from "@/lib/topTeams";
+import { resolveTeamLink } from "@/lib/teamLinks";
 import { normalizeSport } from "@/lib/sportLabels";
 
 export const dynamicParams = false;
@@ -443,9 +444,38 @@ export default function TopTeamsPage() {
                         className="text-sm mt-1 flex flex-wrap items-center gap-2"
                         style={{ color: "var(--text-muted)" }}
                       >
-                        <span style={{ color: "var(--text)" }} className="font-semibold">
-                          {t.team}
-                        </span>
+                        {(() => {
+                          // resolveTeamLink returns null for sports that have no team-page
+                          // wired up yet (NBA/NHL/MLB today), or for co-equal "A / B" rows
+                          // we have not split. In those cases we fall back to plain text.
+                          const link = resolveTeamLink(t.sport, t.team);
+                          if (!link) {
+                            return (
+                              <span style={{ color: "var(--text)" }} className="font-semibold">
+                                {t.team}
+                              </span>
+                            );
+                          }
+                          return (
+                            <Link
+                              href={link.href}
+                              className="inline-flex items-center gap-2 font-semibold hover:text-[var(--accent)] transition-colors"
+                              style={{ color: "var(--text)" }}
+                            >
+                              {link.logoUrl ? (
+                                <img
+                                  src={link.logoUrl}
+                                  alt=""
+                                  width={20}
+                                  height={20}
+                                  className="inline-block flex-shrink-0 object-contain"
+                                  aria-hidden
+                                />
+                              ) : null}
+                              <span>{t.team}</span>
+                            </Link>
+                          );
+                        })()}
                         {t.sport && (
                           <span
                             className="inline-block text-[10px] uppercase tracking-widest border rounded px-2 py-0.5"

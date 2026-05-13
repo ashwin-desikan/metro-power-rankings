@@ -14,6 +14,9 @@ import {
   logoUrlFor,
   monogramFor,
   TITLE_COLORS,
+  lookupStadiumLocation,
+  abbreviateState,
+  getFranchiseByCanonical,
 } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -361,11 +364,67 @@ export default async function FranchisePage({ params }: Props) {
                         </span>
                       </td>
                       <td className="py-2 pr-3">
-                        <span className="text-[var(--text-muted)]">{g.is_home ? "vs " : "@ "}</span>
-                        {g.opp_city} {g.opp_team}
-                        <span className="ml-2 tabular-nums" style={{ color: g.result === "W" ? "var(--accent)" : g.result === "L" ? "#fca5a5" : "var(--text-muted)" }}>
-                          {g.pf}-{g.pa}
-                        </span>
+                        <div className="leading-tight">
+                          {(() => {
+                            // Mirror the league-wide TopGamesTable scoreline:
+                            // winner first, bolded; loser muted on the right.
+                            // The team is on the left when the row is a W or T;
+                            // for losses we put the opponent on the left so the
+                            // bolded "winner" position stays consistent.
+                            //
+                            // Names use team_city / team from the row, NOT the
+                            // franchise's current name, so the era-correct name
+                            // surfaces (e.g. "Houston Oilers" on a Tennessee
+                            // Titans row from 1995). Links still resolve to the
+                            // current franchise slug for both sides.
+                            const isLoss = g.result === "L";
+                            const isTie = g.result === "T";
+                            const oppF = getFranchiseByCanonical(g.opp_canonical);
+                            const teamSide = { city: g.team_city, team: g.team, slug: f.slug, score: g.pf };
+                            const oppSide = { city: g.opp_city, team: g.opp_team, slug: oppF?.slug, score: g.pa };
+                            const left = isLoss ? oppSide : teamSide;
+                            const right = isLoss ? teamSide : oppSide;
+                            const renderName = (side: { city: string; team: string; slug: string | undefined }, bold: boolean) => {
+                              const label = `${side.city} ${side.team}`;
+                              const cls = bold ? "font-semibold" : "text-[var(--text-muted)]";
+                              if (side.slug) {
+                                return (
+                                  <Link href={`/teams/nfl/${side.slug}`} className={`${cls} hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2`}>
+                                    {label}
+                                  </Link>
+                                );
+                              }
+                              return <span className={cls}>{label}</span>;
+                            };
+                            return (
+                              <>
+                                {renderName(left, !isTie)}{" "}
+                                <span className="tabular-nums font-semibold" style={{ color: isTie ? "var(--text-muted)" : "var(--accent)" }}>{left.score}</span>
+                                <span className="mx-1 text-[var(--text-dim)]">{isTie ? "=" : "-"}</span>
+                                <span className="tabular-nums text-[var(--text-muted)]">{right.score}</span>{" "}
+                                {renderName(right, false)}
+                              </>
+                            );
+                          })()}
+                        </div>
+                        {g.stadium ? (() => {
+                          const loc = lookupStadiumLocation(g.stadium);
+                          const subtitle = loc
+                            ? `${g.stadium} · ${loc.city}${loc.state ? ", " + abbreviateState(loc.state) : ""}`
+                            : g.stadium;
+                          return (
+                            <div
+                              className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
+                              style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                              title={subtitle}
+                            >
+                              {g.stadium}
+                              {loc ? (
+                                <span className="ml-1 opacity-80">· {loc.city}{loc.state ? `, ${abbreviateState(loc.state)}` : ""}</span>
+                              ) : null}
+                            </div>
+                          );
+                        })() : null}
                       </td>
                       <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
                     </tr>
@@ -410,7 +469,15 @@ export default async function FranchisePage({ params }: Props) {
                     }}
                   >
                     <td className="py-1.5" style={{ color: s.champ ? TITLE_COLORS.sb.bg : undefined, fontWeight: s.champ ? 600 : undefined }}>
-                      {s.year}
+                      <a
+                        href={pfrYearUrl(s.year, s.league)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline decoration-dotted underline-offset-2"
+                        title={`${s.year} season on Pro Football Reference`}
+                      >
+                        {s.year}
+                      </a>
                     </td>
                     <td className="py-1.5 text-[var(--text-muted)]">{s.city} {s.team}</td>
                     <td className="text-right py-1.5">{s.w}</td>
@@ -542,6 +609,18 @@ function Row({ k, v }: { k: string; v: string }) {
       <td className="py-1.5 text-right tabular-nums">{v}</td>
     </tr>
   );
+}
+
+// Pro Football Reference year-URL resolver. Branches by Season.league so
+// AAFC (1946-49), AFL (1960-69), and APFA (1920-21) seasons route to the
+// league-specific PFR endpoint. NFL and unknown leagues use the generic
+// /years/{year}/ page (which on PFR is the NFL-era ledger).
+function pfrYearUrl(year: number, league: string): string {
+  const lg = (league || "").toUpperCase();
+  if (lg === "APFA") return `https://www.pro-football-reference.com/years/${year}_APFA/`;
+  if (lg === "AAFC") return `https://www.pro-football-reference.com/years/${year}_AAFC/`;
+  if (lg === "AFL")  return `https://www.pro-football-reference.com/years/${year}_AFL/`;
+  return `https://www.pro-football-reference.com/years/${year}/`;
 }
 
 function superBowlRoman(seasonYear: number): string {

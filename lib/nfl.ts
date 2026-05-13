@@ -129,6 +129,15 @@ export type TopGameTeamRow = {
   stadium: string;
   is_home: boolean;
   du: number;
+  // Resolved at render time via lookupStadiumLocation. Optional so the
+  // ETL output stays unchanged; null/undefined means we could not match
+  // the stadium name (e.g. neutral-site Rose Bowl pre-extras-map).
+  stadium_city?: string | null;
+  stadium_state?: string | null;
+  // Slug of the opponent franchise if it is one of the 32 current
+  // active franchises. Null for any historical/defunct opponent so
+  // the renderer can fall back to plain text.
+  opp_slug?: string | null;
 };
 
 export type TopGameLeagueRow = {
@@ -148,6 +157,16 @@ export type TopGameLeagueRow = {
   is_tie: boolean;
   stadium: string;
   du: number;
+  // Resolved via lookupStadiumLocation; optional so the ETL output is
+  // unchanged. Server-side pages enrich these before passing rows to
+  // the client TopGamesTable component.
+  stadium_city?: string | null;
+  stadium_state?: string | null;
+  // Slugs of the winner and loser, but ONLY when they map to a
+  // currently active franchise. Null for defunct/historical entries
+  // so the renderer falls back to plain text rather than a dead link.
+  winner_slug?: string | null;
+  loser_slug?: string | null;
 };
 
 export type HistoricalFranchise = {
@@ -361,6 +380,127 @@ export function monogramFor(slug: string): { bg: string; fg: string; mono: strin
 }
 
 const LOGO_DIR = join(process.cwd(), "public", "data", "nfl", "logos");
+
+// US state abbreviation map. Used to compress "San Diego, California"
+// down to "San Diego, CA" for the stadium subtitle on game-score tables.
+// Non-US or unknown states pass through unchanged.
+const US_STATE_ABBR: Record<string, string> = {
+  "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
+  "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
+  "Florida": "FL", "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID",
+  "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+  "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
+  "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS",
+  "Missouri": "MO", "Montana": "MT", "Nebraska": "NE", "Nevada": "NV",
+  "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+  "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+  "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
+  "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
+  "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
+  "Wisconsin": "WI", "Wyoming": "WY", "District of Columbia": "DC",
+};
+
+export function abbreviateState(state: string | null | undefined): string {
+  if (!state) return "";
+  return US_STATE_ABBR[state] || state;
+}
+
+// Stadium locations that never appear in any franchise's stadium-history
+// block, typically because they are neutral-site venues (Rose Bowl, etc.)
+// that no NFL team ever called home. Lookup falls back to this map when
+// the stadium-history index returns nothing.
+const EXTRA_STADIUM_LOCATIONS: Record<string, { city: string; state: string }> = {
+  "rose bowl": { city: "Pasadena", state: "California" },
+  "tulane stadium": { city: "New Orleans", state: "Louisiana" },
+  "los angeles memorial coliseum": { city: "Los Angeles", state: "California" },
+  "memorial coliseum": { city: "Los Angeles", state: "California" },
+  "wembley stadium": { city: "London", state: "England" },
+  "tottenham hotspur stadium": { city: "London", state: "England" },
+  "estadio azteca": { city: "Mexico City", state: "Mexico" },
+  "deutsche bank park": { city: "Frankfurt", state: "Germany" },
+  "allianz arena": { city: "Munich", state: "Germany" },
+  "neo química arena": { city: "São Paulo", state: "Brazil" },
+};
+
+// Built once from stadium-history.json, then reused for every render.
+// Keys are lowercased stadium names. Both the canonical building name
+// (e.g. "San Diego Stadium") and every era name (e.g. "Qualcomm Stadium",
+// "Jack Murphy Stadium") map to the same location. Per-game stadium
+// names in top-games-* rows are the contemporaneous era name, so the
+// era-keyed entries are what matters here.
+let _stadiumIndex: Map<string, { city: string; state: string }> | null = null;
+
+function buildStadiumIndex(): Map<string, { city: string; state: string }> {
+  const idx = new Map<string, { city: string; state: string }>();
+  const data = getStadiumHistoryRaw();
+  for (const buildings of Object.values(data)) {
+    for (const b of buildings) {
+      if (!b.city) continue;
+      const loc = { city: b.city, state: b.state || "" };
+      if (b.canonical) {
+        const k = b.canonical.toLowerCase();
+        if (!idx.has(k)) idx.set(k, loc);
+      }
+      for (const era of b.eras || []) {
+        if (era.era_name) {
+          const k = era.era_name.toLowerCase();
+          if (!idx.has(k)) idx.set(k, loc);
+        }
+      }
+    }
+  }
+  return idx;
+}
+
+function getStadiumHistoryRaw(): Record<string, StadiumBuilding[]> {
+  if (!_stadiumHistory) _stadiumHistory = read<Record<string, StadiumBuilding[]>>("stadium-history.json");
+  return _stadiumHistory;
+}
+
+export function lookupStadiumLocation(name: string | null | undefined):
+  { city: string; state: string } | null {
+  if (!name) return null;
+  if (!_stadiumIndex) _stadiumIndex = buildStadiumIndex();
+  const k = name.toLowerCase();
+  return _stadiumIndex.get(k) || EXTRA_STADIUM_LOCATIONS[k] || null;
+}
+
+export function getFranchiseByCanonical(canonical: string): Franchise | undefined {
+  return indices().byCanonical.get(canonical);
+}
+
+// Server-only enrichment: attaches `winner_slug`/`loser_slug` (league
+// game rows) or `opp_slug` (per-team rows) to each row when the canonical
+// maps to a currently active franchise. Defunct/historical opponents are
+// intentionally left null so the client renderer doesn't link to a 404.
+export function withTeamSlugs<T extends Record<string, unknown>>(rows: T[]): T[] {
+  const { byCanonical } = indices();
+  return rows.map((r) => {
+    const out: Record<string, unknown> = { ...r };
+    if (typeof r.winner_canonical === "string") {
+      out.winner_slug = byCanonical.get(r.winner_canonical)?.slug ?? null;
+    }
+    if (typeof r.loser_canonical === "string") {
+      out.loser_slug = byCanonical.get(r.loser_canonical)?.slug ?? null;
+    }
+    if (typeof r.opp_canonical === "string") {
+      out.opp_slug = byCanonical.get(r.opp_canonical)?.slug ?? null;
+    }
+    return out as T;
+  });
+}
+
+// Mutating helper for server pages: enriches every game row with
+// resolved stadium_city / stadium_state. Returns a NEW array; callers
+// can pass the result straight into the client TopGamesTable.
+export function withStadiumLocations<T extends { stadium: string }>(rows: T[]): T[] {
+  return rows.map((g) => {
+    const loc = lookupStadiumLocation(g.stadium);
+    return loc
+      ? { ...g, stadium_city: loc.city, stadium_state: loc.state }
+      : { ...g, stadium_city: null, stadium_state: null };
+  });
+}
 
 export function logoUrlFor(slug: string): string | null {
   const svgPath = join(LOGO_DIR, `${slug}.svg`);

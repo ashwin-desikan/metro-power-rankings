@@ -32,6 +32,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/badges",
   "@/lib/substack",
   "@/lib/data",
+  "@/lib/teamLinks",
 ];
 
 const SCAN_DIRS = ["app", "components"];

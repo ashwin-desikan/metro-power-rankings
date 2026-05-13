@@ -1,11 +1,36 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/nfl";
 
 // Replace the bare "Super Bowl" round label with a numbered one ("SB 50"
 // for the 2015 season, "SB " + roman for every other Super Bowl). Other
 // round names ("NFL Champ", "Wk 18", "Divisional", etc.) pass through.
+// Compact US-state abbreviator. Mirrors lib/nfl.ts US_STATE_ABBR so the
+// client bundle doesn't need to import a value from the server-only data
+// module. Non-US states (international NFL games) pass through unchanged.
+const US_STATE_ABBR: Record<string, string> = {
+  "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
+  "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
+  "Florida": "FL", "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID",
+  "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+  "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
+  "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS",
+  "Missouri": "MO", "Montana": "MT", "Nebraska": "NE", "Nevada": "NV",
+  "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+  "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+  "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
+  "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
+  "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
+  "Wisconsin": "WI", "Wyoming": "WY", "District of Columbia": "DC",
+};
+
+function abbrevState(state: string | null | undefined): string {
+  if (!state) return "";
+  return US_STATE_ABBR[state] || state;
+}
+
 function roundLabel(seasonYear: number, round: string): string {
   if (round !== "Super Bowl") return round;
   const n = seasonYear - 1965;
@@ -113,11 +138,39 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                   {g.year}{g.round ? ` ${roundLabel(g.year, g.round)}` : ""}{g.ot ? " · OT" : ""}
                 </td>
                 <td className="py-2 pr-3">
-                  <span className="font-semibold">{g.winner_city} {g.winner_team}</span>{" "}
-                  <span className="tabular-nums font-semibold" style={{ color: "var(--accent)" }}>{g.winner_score}</span>
-                  <span className="mx-1 text-[var(--text-dim)]">{g.is_tie ? "=" : "-"}</span>
-                  <span className="tabular-nums text-[var(--text-muted)]">{g.loser_score}</span>{" "}
-                  <span className="text-[var(--text-muted)]">{g.loser_city} {g.loser_team}</span>
+                  <div className="leading-tight">
+                    {g.winner_slug ? (
+                      <Link href={`/teams/nfl/${g.winner_slug}`} className="font-semibold hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">
+                        {g.winner_city} {g.winner_team}
+                      </Link>
+                    ) : (
+                      <span className="font-semibold">{g.winner_city} {g.winner_team}</span>
+                    )}{" "}
+                    <span className="tabular-nums font-semibold" style={{ color: "var(--accent)" }}>{g.winner_score}</span>
+                    <span className="mx-1 text-[var(--text-dim)]">{g.is_tie ? "=" : "-"}</span>
+                    <span className="tabular-nums text-[var(--text-muted)]">{g.loser_score}</span>{" "}
+                    {g.loser_slug ? (
+                      <Link href={`/teams/nfl/${g.loser_slug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">
+                        {g.loser_city} {g.loser_team}
+                      </Link>
+                    ) : (
+                      <span className="text-[var(--text-muted)]">{g.loser_city} {g.loser_team}</span>
+                    )}
+                  </div>
+                  {g.stadium ? (
+                    <div
+                      className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
+                      style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                      title={[g.stadium, g.stadium_city, g.stadium_state].filter(Boolean).join(" — ")}
+                    >
+                      {g.stadium}
+                      {g.stadium_city ? (
+                        <span className="ml-1 opacity-80">
+                          · {g.stadium_city}{g.stadium_state ? `, ${abbrevState(g.stadium_state)}` : ""}
+                        </span>
+                      ) : null}
+                    </div>
+                  ) : null}
                 </td>
                 <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
               </tr>
