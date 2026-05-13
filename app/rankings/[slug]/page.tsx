@@ -23,7 +23,7 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport } from "@/lib/sportLabels";
-import { getNflSlugByTeamName } from "@/lib/nfl";
+import { getNflFranchiseByTeamName, getNflSlugByTeamName } from "@/lib/nfl";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -1525,6 +1525,10 @@ function TeamCard({
   // Link NFL teams to their /teams/nfl/[slug] page. Other leagues stay
   // plain text until those team pages exist.
   const nflSlug = team.league === "NFL" ? getNflSlugByTeamName(team.team) : undefined;
+  // Pull the full franchise record for NFL teams so we can surface
+  // championship and win-pct chips alongside the team name (mirrors
+  // the badges shown on /teams/nfl).
+  const nflFranchise = team.league === "NFL" ? getNflFranchiseByTeamName(team.team) : undefined;
   return (
     <div
       className={`border rounded-lg p-4 hover:border-[var(--accent)] transition ${
@@ -1565,6 +1569,40 @@ function TeamCard({
         {team.city}
         {isFootball && team.level && <> • <span className="text-[var(--text-muted)]">Level: {team.level}</span></>}
       </p>
+      {nflFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{
+              background: nflFranchise.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+              color: nflFranchise.championships > 0 ? "#d4af37" : "var(--text-dim)",
+            }}
+            title="League championships (pre-Super Bowl + Super Bowl era)"
+          >
+            {nflFranchise.championships === 0
+              ? "No titles"
+              : nflFranchise.championships === 1
+              ? "1 title"
+              : `${nflFranchise.championships} titles`}
+          </span>
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+            title="All-time regular-season win pct"
+          >
+            {nflFranchise.win_pct.toFixed(3)} W%
+          </span>
+          {nflFranchise.division_titles > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
+              title="Division titles"
+            >
+              {nflFranchise.division_titles} div
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -1785,24 +1823,22 @@ function getDimensionAnchor(key: string): string | null {
     majorSportingEvents: "sports",
     companies: "companies",
     marketCap: "companies",
-    culturalEvents: "culture",
     universities: "universities",
     topUniHospResearch: "universities",
     museumsLandmarks: "culture",
     portsExchangesInfra: "infrastructure",
     airportScore: "infrastructure",
     luxuryStars: "luxury",
-    metroStations: "infrastructure",
-    suburbStations: "infrastructure",
-    trainHubs: "infrastructure",
-    skyscrapers: "infrastructure",
+    metroStations: "transit",
+    suburbStations: "transit",
+    trainHubs: "transit",
+    skyscrapers: "skyline",
   };
   return anchors[key] || null;
 }
-
-function formatDimensionName(key: string): string {
+function getStatLabel(key: string): string {
   const names: Record<string, string> = {
-    majorLeagueTeams: "Major League Teams/Venues",
+    majorLeagueTeams: "Major League Teams",
     totalTeams: "Total Teams",
     majorSportingEvents: "Major Sporting Events",
     companies: "Major Companies",

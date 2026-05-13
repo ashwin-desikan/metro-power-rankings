@@ -49,8 +49,11 @@ DEFAULT_SOURCE_CANDIDATES = [
     Path(os.path.expanduser("~/OneDrive/Excel Files/NFL_all_backup.xlsx")),
     Path(os.path.expanduser("~/OneDrive/Excel Files/NFL_all - Copy.xlsx")),
     Path(os.path.expanduser("~/OneDrive/Excel Files/NFL_all.xlsx")),
+    # OneDrive (Windows) — preferred filenames
+    Path(os.path.expanduser("~/OneDrive/Excel Files/NFL_all_copy.xlsx")),
     # OneDrive via Linux bindfs mount
     Path("/sessions/jolly-tender-turing/mnt/Excel Files/NFL_all_backup.xlsx"),
+    Path("/sessions/jolly-tender-turing/mnt/Excel Files/NFL_all_copy.xlsx"),
     Path("/sessions/jolly-tender-turing/mnt/Excel Files/NFL_all - Copy.xlsx"),
     Path("/sessions/jolly-tender-turing/mnt/Excel Files/NFL_all.xlsx"),
     # Project-local fallback (if the user committed a frozen copy)
@@ -500,10 +503,22 @@ def read_top_games(wb):
         dl = safe_str(row[IDX["dl"]]) if len(row) > IDX["dl"] else ""
         ee = safe_str(row[IDX["ee"]]) if len(row) > IDX["ee"] else ""
 
+        # Canonical date (YYYY-MM-DD) for display. openpyxl returns datetime
+        # for Excel-formatted date columns; fall back to None if the cell is
+        # blank or non-date (very early-era rows occasionally have just a year).
+        date_raw = row[IDX["date"]] if len(row) > IDX["date"] else None
+        date_iso = None
+        try:
+            if hasattr(date_raw, "strftime"):
+                date_iso = date_raw.strftime("%Y-%m-%d")
+        except Exception:
+            date_iso = None
+
         # This-team-perspective row (always captured for the franchise page).
         if dk:
             by_team[dk].append({
                 "year": year,
+                "date": date_iso,
                 "week": week if isinstance(week, (int, float)) else None,
                 "round": ptype or regplay,
                 "team_city": city, "team": team, "team_canonical": dk,
@@ -545,6 +560,7 @@ def read_top_games(wb):
 
         all_games.append({
             "year": year,
+            "date": date_iso,
             "week": week if isinstance(week, (int, float)) else None,
             "round": ptype or regplay,
             "winner_city": winner_city, "winner_team": winner_team, "winner_canonical": winner_canonical,
@@ -851,7 +867,6 @@ def main():
                 "champ": r["championship"],
             }
             for r in rows
-        ]
     (OUT_DIR / "seasons-by-team.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False))
 
     (OUT_DIR / "pro-bowl-counts.json").write_text(json.dumps(pb_counts, indent=2, ensure_ascii=False))

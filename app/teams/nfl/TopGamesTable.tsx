@@ -69,7 +69,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
           <thead>
             <tr className="text-[var(--text-muted)]">
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">#</th>
-              <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Year</th>
+              <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Date</th>
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Round</th>
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Winner</th>
               <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Score</th>
@@ -85,7 +85,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                 style={{ borderColor: "var(--border)" }}
               >
                 <td className="py-2 pr-3 text-[var(--text-muted)]">{i + 1}</td>
-                <td className="py-2 pr-3">{g.year}</td>
+                <td className="py-2 pr-3 whitespace-nowrap">{g.date ?? g.year}</td>
                 <td className="py-2 pr-3 text-[var(--text-muted)]">{g.round}{g.ot ? " · OT" : ""}</td>
                 <td className="py-2 pr-3 font-semibold">
                   {g.winner_city} {g.winner_team}

@@ -112,6 +112,7 @@ export type Season = {
 
 export type TopGameTeamRow = {
   year: number;
+  date: string | null;
   week: number | null;
   round: string;
   team_city: string;
@@ -131,6 +132,7 @@ export type TopGameTeamRow = {
 
 export type TopGameLeagueRow = {
   year: number;
+  date: string | null;
   week: number | null;
   round: string;
   winner_city: string;
@@ -220,6 +222,14 @@ export function getNflSlugByTeamName(teamFullName: string): string | undefined {
     }
   }
   return _byFullName.get(teamFullName);
+}
+
+// Returns the full Franchise record for a team-name string, or undefined.
+// Used by the metro detail page TeamCard to surface championship and
+// win-pct chips for NFL teams alongside the team name.
+export function getNflFranchiseByTeamName(teamFullName: string): Franchise | undefined {
+  const slug = getNflSlugByTeamName(teamFullName);
+  return slug ? indices().bySlug.get(slug) : undefined;
 }
 
 export function getChampionships(canonical: string): Championship[] {
