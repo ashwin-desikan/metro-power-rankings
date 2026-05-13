@@ -2247,3 +2247,44 @@ export function getTopTeamByMetroName(metroName: string): TopTeamPick | null {
   }
   return null;
 }
+
+
+/**
+ * Reverse-lookup: find the Top Team entry that names this franchise, even
+ * if the picking metro differs from the franchise's own metro. This is
+ * load-bearing for cases like the Green Bay Packers, who are listed as
+ * Milwaukee's Top Team (rank 159) despite playing in Green Bay. The
+ * franchise's own metro lookup misses; this team-name lookup catches it.
+ *
+ * Tie-break: if the franchise IS the named pick for multiple metros
+ * (rare), prefer the entry whose metro matches the franchise's own metro
+ * so the badge reads naturally. Otherwise return the first match.
+ *
+ * Pass an array of candidate names (display_name, city + team, just team)
+ * to be tolerant of NFL\u2019s "{city} {team}" form vs MLB\u2019s bare
+ * "{team}" form. Pass the franchise\u2019s own metro as ownMetro so the
+ * tie-break works.
+ */
+export function findTopTeamForName(
+  candidateNames: ReadonlyArray<string | null | undefined>,
+  ownMetro?: string,
+): TopTeamPick | null {
+  const norm = normalizeTopTeamMetroName;
+  const normalizedTargets = new Set(
+    candidateNames
+      .filter((n): n is string => typeof n === "string" && n.length > 0)
+      .map(norm)
+      .filter((n) => n.length > 0),
+  );
+  if (normalizedTargets.size === 0) return null;
+  const ownMetroNorm = ownMetro ? norm(ownMetro) : "";
+  let firstMatch: TopTeamPick | null = null;
+  for (const t of TOP_TEAMS) {
+    const teamCandidates = t.team.split("/").map((p) => norm(p.trim()));
+    const hit = teamCandidates.some((c) => normalizedTargets.has(c));
+    if (!hit) continue;
+    if (!firstMatch) firstMatch = t;
+    if (ownMetroNorm && norm(t.metro) === ownMetroNorm) return t;
+  }
+  return firstMatch;
+}

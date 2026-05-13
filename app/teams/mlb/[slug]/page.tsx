@@ -21,8 +21,7 @@ import {
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { getTopTeamByMetroName, topTeamAnchorId } from "@/lib/topTeams";
-import { normalizeTopTeamMetroName } from "@/lib/topTeams";
+import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 
 export const dynamicParams = false;
 
@@ -103,23 +102,17 @@ export default async function FranchisePage({ params }: Props) {
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
 
-  // Top Team badge: surface only when this franchise is the metro's named
-  // pick on the Top Sports Teams sheet. The pick string may be co-equal
-  // ("Inter / AC Milan") so we accept any "/"-separated half whose
-  // normalized form matches the franchise display name.
-  const topTeamPick = f.metro ? getTopTeamByMetroName(f.metro) : null;
+  // Top Team badge. Scan TOP_TEAMS by team name (not just by the
+  // franchise's own metro) so cross-metro picks surface. Tie-break inside
+  // the helper prefers a pick whose metro matches the franchise's own
+  // metro when one exists. Pass MLB's display_name first (the city + team
+  // form expected in the workbook) plus fallbacks.
+  const topTeamPick = findTopTeamForName(
+    [f.display_name, `${f.city} ${f.team}`, f.name, f.team],
+    f.metro,
+  );
   const franchiseCount = getAllFranchiseSlugs().length;
-  const topTeamFranchiseMatch = (() => {
-    if (!topTeamPick) return false;
-    const norm = normalizeTopTeamMetroName;
-    const targets = topTeamPick.team.split("/").map((t) => norm(t.trim()));
-    const candidates = [
-      norm(f.display_name ?? f.name),
-      norm(`${f.city} ${f.team}`),
-      norm(f.name),
-    ];
-    return targets.some((t) => candidates.includes(t));
-  })();
+  const topTeamFranchiseMatch = topTeamPick !== null;
 
 
   // Live current-season standings from ESPN. Gate logic:
@@ -146,7 +139,7 @@ export default async function FranchisePage({ params }: Props) {
         year: standings.season_year,
         league: "MLB",
         city: f.city,
-        team: f.name,
+        team: f.team,
         w: liveStanding.wins,
         l: liveStanding.losses,
         t: liveStanding.ties,

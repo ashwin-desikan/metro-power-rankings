@@ -22,8 +22,7 @@ import {
 import { getCurrentNflStandings } from "@/lib/standings";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { getTopTeamByMetroName, topTeamAnchorId } from "@/lib/topTeams";
-import { normalizeTopTeamMetroName } from "@/lib/topTeams";
+import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 
 export const dynamicParams = false;
 
@@ -100,22 +99,17 @@ export default async function FranchisePage({ params }: Props) {
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
 
-  // Top Team badge: surface only when this franchise is the metro's named
-  // pick on the Top Sports Teams sheet. The pick string may be co-equal
-  // ("Inter / AC Milan") so we accept any "/"-separated half whose
-  // normalized form matches the franchise display name.
-  const topTeamPick = f.metro ? getTopTeamByMetroName(f.metro) : null;
+  // Top Team badge. We scan TOP_TEAMS by team name (not just by the
+  // franchise's own metro) so cross-metro picks surface — most notably
+  // the Green Bay Packers, who are Milwaukee's Top Team (rank 159)
+  // despite playing in Green Bay. Tie-break inside the helper prefers a
+  // pick whose metro matches the franchise's own metro when one exists.
+  const topTeamPick = findTopTeamForName(
+    [f.name, `${f.city} ${f.team}`, f.team],
+    f.metro,
+  );
   const franchiseCount = getAllFranchiseSlugs().length;
-  const topTeamFranchiseMatch = (() => {
-    if (!topTeamPick) return false;
-    const norm = normalizeTopTeamMetroName;
-    const targets = topTeamPick.team.split("/").map((t) => norm(t.trim()));
-    const candidates = [
-      norm(f.name),
-      norm(`${f.city} ${f.team}`),
-    ];
-    return targets.some((t) => candidates.includes(t));
-  })();
+  const topTeamFranchiseMatch = topTeamPick !== null;
 
   // Live current-season standings from ESPN. Gate logic:
   //   1. ESPN must return a standings row for this franchise.
@@ -128,19 +122,30 @@ export default async function FranchisePage({ params }: Props) {
   // We intentionally do NOT gate on season_type. ESPN occasionally still
   // flags games as preseason/postseason during transitions; games_played
   // is the truth source.
+  //
+  // Calendar floor: the NFL regular season opens the Thursday after Labor
+  // Day (first Mon of September). Until Sept 1, ESPN's /nfl/standings can
+  // and does leak last season's final W-L into the upcoming year's row,
+  // which would make the in-progress row show 2025 numbers under a 2026
+  // header. Block the live row outright before Sept 1 of the current
+  // year as a hard floor; after Sept 1 the games_played guard still
+  // prevents preseason 0-0 entries from surfacing until Week 1 kicks off.
   const standings = await getCurrentNflStandings();
   const liveStanding = standings.by_canonical[f.canonical];
-  const currentYear = new Date().getFullYear();
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const nflSeasonOpens = new Date(currentYear, 8, 1); // Sept 1 (month is 0-indexed)
   const showLiveRow =
     !!liveStanding &&
     liveStanding.games_played > 0 &&
-    standings.season_year === currentYear;
+    standings.season_year === currentYear &&
+    now >= nflSeasonOpens;
   const liveSeasonRow: (Season & { is_live: true }) | null = showLiveRow
     ? {
         year: standings.season_year,
         league: "NFL",
         city: f.city,
-        team: f.name,
+        team: f.team,
         w: liveStanding.wins,
         l: liveStanding.losses,
         t: liveStanding.ties,

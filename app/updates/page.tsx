@@ -53,6 +53,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-13",
+    headline: "MLB franchises launched, Wikipedia/Wikidata + Top Team on every team",
+    items: [
+      "All 30 MLB franchises live at /teams/mlb with championships, pennants, Season-by-season, top postseason games, stadium history, and MVP/Cy Young rolls; 40 defunct clubs at /teams/mlb/historical.",
+      "Both NFL and MLB team pages now fold live ESPN standings into Season-by-season as an in-progress 'as of yesterday' row, gated on real games played; ESPN refreshes daily at 08:00 UTC.",
+      "Every team page now shows Wikipedia and Wikidata badges, a Top Team chip when the franchise is that metro's named pick (cross-metro picks like the Packers for Milwaukee included), and a back-to-league link.",
+      "Hero says 'Founded: / Metro Area:' separately so it no longer implies the franchise was founded in its current metro; metro pages show MLB chips and links alongside NFL; stadium names deep-link to the metro map.",
+    ],
+  },
+  {
     date: "2026-05-12",
     headline: "NFL team pages with championships, awards, and the Pottsville asterisk",
     items: [
