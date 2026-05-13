@@ -17,8 +17,10 @@ import {
   lookupStadiumLocation,
   abbreviateState,
   getFranchiseByCanonical,
+  type Season,
 } from "@/lib/nfl";
 import { getCurrentNflStandings } from "@/lib/standings";
+import SeasonsByTeamTable from "./SeasonsByTeamTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -95,9 +97,47 @@ export default async function FranchisePage({ params }: Props) {
   const mono = monogramFor(f.slug);
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
-  // Live current-season standings from ESPN. Async + ISR-cached via
-  // Next; degrades silently to null when the upstream is unreachable.
+  // Live current-season standings from ESPN. Async + ISR-cached via Next.
+  // Used ONLY to prepend an in-progress row to the Season-by-season table
+  // once regular-season games have been played. Anything that happens
+  // earlier (offseason, preseason, ESPN unreachable) is hidden entirely:
+  // the team page surfaces nothing about the current year until games
+  // have actually been played. The workbook absorbs the season after it
+  // wraps and the live row is replaced on the next ETL pass.
   const standings = await getCurrentNflStandings();
+  const liveStanding = standings.by_canonical[f.canonical];
+  const showLiveRow =
+    !!liveStanding &&
+    (standings.season_type === "regular" || standings.season_type === "postseason") &&
+    liveStanding.games_played > 0;
+  const liveSeasonRow: (Season & { is_live: true }) | null = showLiveRow
+    ? {
+        year: standings.season_year,
+        league: "NFL",
+        city: f.city,
+        team: f.name,
+        w: liveStanding.wins,
+        l: liveStanding.losses,
+        t: liveStanding.ties,
+        win_pct: liveStanding.win_pct,
+        pf: liveStanding.points_for,
+        pa: liveStanding.points_against,
+        division: liveStanding.division || seasons[seasons.length - 1]?.division || "",
+        place: liveStanding.division_rank ? `#${liveStanding.division_rank}` : "",
+        playoff: false,
+        div_title: false,
+        conf_final: false,
+        champ_app: false,
+        champ: false,
+        is_live: true,
+      }
+    : null;
+  const seasonRows: Array<Season & { is_live?: true }> = liveSeasonRow
+    ? [liveSeasonRow, ...[...seasons].reverse()]
+    : [...seasons].reverse();
+  const seasonRangeEnd = liveSeasonRow
+    ? liveSeasonRow.year
+    : seasons[seasons.length - 1]?.year ?? new Date().getFullYear() - 1;
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -148,94 +188,6 @@ export default async function FranchisePage({ params }: Props) {
           )}
         </div>
       </header>
-
-      {/* Live current-season block. Sits between the franchise hero and
-          the all-time stat strip so the eye reads "where they are now"
-          before "where they have been." Hidden when ESPN is unreachable. */}
-      {standings.source_label ? (() => {
-        const cs = standings.by_canonical[f.canonical];
-        const liveTone = standings.season_type === "regular" || standings.season_type === "postseason";
-        return (
-          <section
-            className="mt-4 rounded-xl border-l-4 border-y border-r p-5"
-            style={{
-              background: "var(--bg-card)",
-              borderColor: "var(--border)",
-              borderLeftColor: liveTone ? "var(--accent)" : "var(--text-dim)",
-            }}
-          >
-            <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
-              <h2 className="text-base font-semibold tracking-tight">
-                {standings.source_label}
-              </h2>
-              <span
-                className="text-[10px] uppercase tracking-widest"
-                style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
-                title={`Pulled from ESPN public standings on ${standings.fetched_at}`}
-              >
-                via ESPN · refreshed hourly
-              </span>
-            </div>
-            {!cs ? (
-              <p className="text-sm italic" style={{ color: "var(--text-muted)" }}>
-                No live standing matched {f.name} in the current ESPN payload.
-              </p>
-            ) : standings.is_preseason && cs.games_played === 0 ? (
-              <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                {f.name} have not played a {standings.season_year} season game yet. The 2026 regular season opens in September; this block fills in once Week 1 kicks off.
-              </p>
-            ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
-                <StatCell
-                  v={`${cs.wins}-${cs.losses}${cs.ties > 0 ? `-${cs.ties}` : ""}`}
-                  k="Record"
-                  sub={`${cs.games_played} games`}
-                />
-                <StatCell
-                  v={cs.win_pct.toFixed(3)}
-                  k="Win pct"
-                />
-                {cs.division_rank !== null ? (
-                  <StatCell
-                    v={`#${cs.division_rank}`}
-                    k={`${cs.conference || ""} ${cs.division || "Division"}`.trim()}
-                  />
-                ) : null}
-                {cs.conf_rank !== null ? (
-                  <StatCell
-                    v={`#${cs.conf_rank}`}
-                    k={`${cs.conference || "Conference"} rank`}
-                  />
-                ) : null}
-                {cs.playoff_seed !== null ? (
-                  <StatCell
-                    v={`#${cs.playoff_seed}`}
-                    k="Playoff seed"
-                  />
-                ) : null}
-                {cs.streak ? (
-                  <StatCell
-                    v={cs.streak}
-                    k="Streak"
-                  />
-                ) : null}
-                <StatCell
-                  v={cs.points_for.toString()}
-                  k="Points for"
-                />
-                <StatCell
-                  v={cs.points_against.toString()}
-                  k="Points against"
-                />
-                <StatCell
-                  v={`${cs.point_diff > 0 ? "+" : ""}${cs.point_diff}`}
-                  k="Differential"
-                />
-              </div>
-            )}
-          </section>
-        );
-      })() : null}
 
       {/* Headline stat strip */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
@@ -531,68 +483,15 @@ export default async function FranchisePage({ params }: Props) {
       {/* Season-by-season */}
       <details className="mt-4 border rounded-xl" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <summary className="cursor-pointer px-5 py-4 font-semibold text-sm flex items-center justify-between">
-          <span>Season-by-season ({f.founding_year} to 2025)</span>
-          <span className="text-[var(--text-muted)] text-xs">{seasons.length} seasons</span>
+          <span>Season-by-season ({f.founding_year} to {seasonRangeEnd})</span>
+          <span className="text-[var(--text-muted)] text-xs">{seasonRows.length} seasons</span>
         </summary>
         <div className="px-5 pb-5">
-          <table className="w-full text-xs tabular-nums">
-            <thead>
-              <tr className="text-[var(--text-muted)]">
-                <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px]">Season</th>
-                <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px]">Team</th>
-                <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px]">W</th>
-                <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px]">L</th>
-                <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px]">T</th>
-                <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px]">Win%</th>
-                <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pl-3">Division</th>
-                <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px]">Finish</th>
-                <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px]">Postseason</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[...seasons].reverse().map((s) => {
-                return (
-                  <tr
-                    key={`${s.year}-${s.team}`}
-                    className="border-t"
-                    style={{
-                      borderColor: "var(--border)",
-                      background: s.champ ? "rgba(212,175,55,0.07)" : undefined,
-                    }}
-                  >
-                    <td className="py-1.5" style={{ color: s.champ ? TITLE_COLORS.sb.bg : undefined, fontWeight: s.champ ? 600 : undefined }}>
-                      <a
-                        href={pfrYearUrl(s.year, s.league)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline decoration-dotted underline-offset-2"
-                        title={`${s.year} season on Pro Football Reference`}
-                      >
-                        {s.year}
-                      </a>
-                    </td>
-                    <td className="py-1.5 text-[var(--text-muted)]">{s.city} {s.team}</td>
-                    <td className="text-right py-1.5">{s.w}</td>
-                    <td className="text-right py-1.5">{s.l}</td>
-                    <td className="text-right py-1.5">{s.t}</td>
-                    <td className="text-right py-1.5">{s.win_pct.toFixed(3)}</td>
-                    <td className="pl-3 py-1.5 text-[var(--text-muted)]">{s.division}</td>
-                    <td className="py-1.5 text-[var(--text-muted)]">{s.place}</td>
-                    <td className="py-1.5">
-                      <SeasonBadges
-                        playoff={s.playoff}
-                        divTitle={s.div_title}
-                        confFinal={s.conf_final}
-                        champApp={s.champ_app}
-                        champ={s.champ}
-                        year={s.year}
-                      />
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <SeasonsByTeamTable
+            rows={seasonRows}
+            sourceLabel={standings.source_label || undefined}
+            week={standings.week}
+          />
         </div>
       </details>
     </main>
@@ -624,76 +523,6 @@ function Block({ title, deck, children }: { title: string; deck: string | null; 
   );
 }
 
-function SeasonBadges({
-  playoff, divTitle, confFinal, champApp, champ, year,
-}: {
-  playoff: boolean; divTitle: boolean; confFinal: boolean; champApp: boolean; champ: boolean; year: number;
-}) {
-  const isSb = year >= 1966;
-  const era = isSb ? TITLE_COLORS.sb : TITLE_COLORS.pre_sb;
-  const badges: React.ReactNode[] = [];
-  if (champ) {
-    badges.push(
-      <span
-        key="champ"
-        className="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide"
-        style={{ background: era.bg, color: era.text }}
-        title={isSb ? "Won Super Bowl" : "Won NFL/AAFC/AFL championship"}
-      >
-        Champion
-      </span>
-    );
-  } else if (champApp) {
-    badges.push(
-      <span
-        key="champapp"
-        className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
-        style={{ border: `1px solid ${era.bg}`, color: era.bg }}
-        title={isSb ? "Reached Super Bowl, lost" : "Reached championship game, lost"}
-      >
-        {isSb ? "SB App" : "Title App"}
-      </span>
-    );
-  } else if (confFinal) {
-    badges.push(
-      <span
-        key="cf"
-        className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
-        style={{ background: "rgba(78,205,196,0.16)", color: "var(--accent)" }}
-        title="Reached conference championship game"
-      >
-        Conf Final
-      </span>
-    );
-  }
-  if (divTitle) {
-    badges.push(
-      <span
-        key="div"
-        className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
-        style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
-        title="Won division"
-      >
-        Div Title
-      </span>
-    );
-  }
-  if (playoff && !divTitle && !confFinal && !champApp && !champ) {
-    badges.push(
-      <span
-        key="po"
-        className="text-[10px] font-medium px-1.5 py-0.5 rounded"
-        style={{ background: "rgba(255,255,255,0.04)", color: "var(--text-muted)" }}
-        title="Made the playoffs"
-      >
-        Playoffs
-      </span>
-    );
-  }
-  if (badges.length === 0) return <span className="text-[var(--text-dim)]">—</span>;
-  return <span className="inline-flex flex-wrap gap-1">{badges}</span>;
-}
-
 function Row({ k, v }: { k: string; v: string }) {
   return (
     <tr className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -701,18 +530,6 @@ function Row({ k, v }: { k: string; v: string }) {
       <td className="py-1.5 text-right tabular-nums">{v}</td>
     </tr>
   );
-}
-
-// Pro Football Reference year-URL resolver. Branches by Season.league so
-// AAFC (1946-49), AFL (1960-69), and APFA (1920-21) seasons route to the
-// league-specific PFR endpoint. NFL and unknown leagues use the generic
-// /years/{year}/ page (which on PFR is the NFL-era ledger).
-function pfrYearUrl(year: number, league: string): string {
-  const lg = (league || "").toUpperCase();
-  if (lg === "APFA") return `https://www.pro-football-reference.com/years/${year}_APFA/`;
-  if (lg === "AAFC") return `https://www.pro-football-reference.com/years/${year}_AAFC/`;
-  if (lg === "AFL")  return `https://www.pro-football-reference.com/years/${year}_AFL/`;
-  return `https://www.pro-football-reference.com/years/${year}/`;
 }
 
 function superBowlRoman(seasonYear: number): string {
