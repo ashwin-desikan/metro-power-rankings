@@ -25,6 +25,9 @@ const ITEMS: Item[] = [
   { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Data' },
   { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Data' },
 
+  { href: '/teams/nfl', label: 'NFL', hint: 'All 32 active franchises ranked by titles', group: 'Sports' },
+  { href: '/teams/nfl/historical', label: 'NFL · Historical', hint: 'Defunct franchises and the Pottsville asterisk', group: 'Sports' },
+
   {
     href: 'https://citizenofnowhere.substack.com',
     label: 'Citizen of Nowhere',
@@ -179,7 +182,6 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
               <div
                 className="mt-3 pt-3 border-t text-xs text-[var(--text-muted)] px-3"
                 style={{
-                  borderColor: 'var(--border)',
                   fontFamily: "'JetBrains Mono', monospace",
                 }}
               >

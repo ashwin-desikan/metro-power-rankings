@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { getMeta } from '@/lib/data';
-import MobileMenu from './MobileMenu';
+import { getMeta } from "@/lib/data";
+import MobileMenu from "./MobileMenu";
+import DesktopNav from "./DesktopNav";
 
 const MONTHS = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ];
 
 function formatIsoDate(iso: string): string {
@@ -16,6 +16,10 @@ function formatIsoDate(iso: string): string {
   return `${month} ${day}, ${year}`;
 }
 
+// Server shell: reads meta from disk and passes the formatted date prop
+// down to the client DesktopNav (which owns the stateful dropdowns) and
+// MobileMenu. Keeping the data read on the server avoids shipping the
+// meta.json contents to the client bundle.
 export default function SiteNav() {
   const meta = getMeta();
   const updated = meta.lastUpdate ? formatIsoDate(meta.lastUpdate) : null;
@@ -24,8 +28,8 @@ export default function SiteNav() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
       style={{
-        backgroundColor: 'rgba(8, 8, 13, 0.8)',
-        borderColor: 'var(--border)',
+        backgroundColor: "rgba(8, 8, 13, 0.8)",
+        borderColor: "var(--border)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
@@ -43,227 +47,15 @@ export default function SiteNav() {
             href="/"
             className="text-lg font-bold tracking-tight hover:opacity-80 transition whitespace-nowrap"
             style={{
-              color: 'var(--accent)',
+              color: "var(--accent)",
               fontFamily: "'JetBrains Mono', monospace",
             }}
           >
             METRO POWER RANKINGS
           </a>
         </div>
-        <div className="hidden md:flex gap-6 items-center">
-          <a
-            href="/#rankings"
-            className="text-sm hover:text-[var(--accent)] transition-colors"
-          >
-            Rankings
-          </a>
-          <div className="relative group">
-            <button
-              type="button"
-              className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1"
-              aria-haspopup="true"
-            >
-              Data
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="10"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-            <div
-              className="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 absolute right-0 top-full pt-2 transition-opacity duration-150"
-              style={{ minWidth: "260px" }}
-            >
-              <div
-                className="border rounded-md shadow-xl backdrop-blur-md overflow-hidden"
-                style={{
-                  backgroundColor: "rgba(8, 8, 13, 0.95)",
-                  borderColor: "var(--border)",
-                }}
-              >
-                <a
-                  href="/compare"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                >
-                  <div className="font-medium">Compare</div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Side-by-side any 2 to 4 metros
-                  </div>
-                </a>
-                <a
-                  href="/countries"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                >
-                  <div className="font-medium">Countries</div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Population, metros, and composite score by country
-                  </div>
-                </a>
-                <div className="border-t" style={{ borderColor: "var(--border)" }} />
-                <a
-                  href="/badges"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                >
-                  <div className="font-medium">Badges</div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Categorical lenses over the dataset
-                  </div>
-                </a>
-                <a
-                  href="/matchups/london-vs-new-york"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                >
-                  <div className="font-medium">Matchups</div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Head-to-head metro pages
-                  </div>
-                </a>
-                <a
-                  href="/random"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                  title="Roll a tier-weighted random metro"
-                >
-                  <div className="font-medium">
-                    <span aria-hidden="true">🎲</span> Random metro
-                  </div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Tier-weighted random pick
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <a
-            href="/#regions"
-            className="text-sm hover:text-[var(--accent)] transition-colors"
-          >
-            Regions
-          </a>
-          <div className="relative group">
-            <button
-              type="button"
-              className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1"
-              aria-haspopup="true"
-            >
-              Articles
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="10"
-                height="10"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-            <div
-              className="invisible opacity-0 group-hover:visible group-hover:opacity-100 focus-within:visible focus-within:opacity-100 absolute right-0 top-full pt-2 transition-opacity duration-150"
-              style={{ minWidth: "260px" }}
-            >
-              <div
-                className="border rounded-md shadow-xl backdrop-blur-md overflow-hidden"
-                style={{
-                  backgroundColor: "rgba(8, 8, 13, 0.95)",
-                  borderColor: "var(--border)",
-                }}
-              >
-                <a
-                  href="https://citizenofnowhere.substack.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                >
-                  <div className="font-medium">Citizen of Nowhere</div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    All essays on Substack
-                  </div>
-                </a>
-                <div className="border-t" style={{ borderColor: "var(--border)" }} />
-                <a
-                  href="/neighborhoods"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                >
-                  <div className="font-medium">The Last of the Marylebones</div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Global neighborhoods reference
-                  </div>
-                </a>
-                <a
-                  href="/top-teams"
-                  className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-                >
-                  <div className="font-medium">The Team That Wins the City</div>
-                  <div
-                    className="text-xs mt-0.5"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Top sports team by metro
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <Link
-            href="/methodology"
-            className="text-sm hover:text-[var(--accent)] transition-colors"
-          >
-            Methodology
-          </Link>
-          <Link
-            href="/about"
-            className="text-sm hover:text-[var(--accent)] transition-colors"
-          >
-            About
-          </Link>
-          {updated && (
-            <a
-              href="/updates"
-              className="hidden lg:inline-block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] border rounded px-2 py-1 whitespace-nowrap transition-colors hover:border-[var(--accent)]"
-              style={{
-                borderColor: 'var(--border)',
-                fontFamily: "'JetBrains Mono', monospace",
-              }}
-              title={`Source data last updated ${updated}. Click for full release notes.`}
-            >
-              Updated {updated}
-            </a>
-          )}
-        </div>
+
+        <DesktopNav updated={updated} />
         <MobileMenu updated={updated} />
       </div>
     </nav>

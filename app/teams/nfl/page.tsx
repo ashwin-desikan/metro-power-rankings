@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, TITLE_COLORS } from "@/lib/nfl";
 import TopGamesTable from "./TopGamesTable";
+import FranchiseTable from "./FranchiseTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -68,70 +69,14 @@ export default function NflIndexPage() {
         </span>
       </div>
 
-      {/* 32-team grid */}
-      <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
-        {franchises.map((f) => {
-          const mono = monogramFor(f.slug);
-          const logo = logoUrlFor(f.slug);
-          return (
-            <Link
-              key={f.slug}
-              href={`/teams/nfl/${f.slug}`}
-              className="rounded-xl border p-4 flex items-start gap-3 transition-colors"
-              style={{
-                background: "var(--bg-card)",
-                borderColor: "var(--border)",
-              }}
-            >
-              {logo ? (
-                <img
-                  src={logo}
-                  alt={`${f.name} logo`}
-                  className="w-11 h-11 flex-shrink-0 object-contain"
-                />
-              ) : (
-                <div
-                  className="w-11 h-11 rounded-full grid place-items-center font-bold flex-shrink-0"
-                  style={{ background: mono.bg, color: mono.fg, fontSize: "13px", letterSpacing: "-0.02em" }}
-                  aria-hidden
-                >
-                  {mono.mono}
-                </div>
-              )}
-              <div className="min-w-0 flex-1">
-                <div className="font-semibold text-sm leading-tight">{f.name}</div>
-                <div className="text-[11px] text-[var(--text-muted)] mt-0.5">
-                  {f.metro_slug ? (
-                    <Link href={`/metros/${f.metro_slug}`} className="hover:text-[var(--text)]">
-                      {f.metro}
-                    </Link>
-                  ) : (
-                    f.metro
-                  )}
-                  {" · "}{f.division}
-                </div>
-                <div className="flex gap-1.5 mt-2 flex-wrap">
-                  <span
-                    className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
-                    style={{
-                      background: f.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
-                      color: f.championships > 0 ? TITLE_COLORS.sb.bg : "var(--text-dim)",
-                    }}
-                  >
-                    {f.championships === 0 ? "No titles" : f.championships === 1 ? "1 title" : `${f.championships} titles`}
-                  </span>
-                  <span
-                    className="text-[10px] px-1.5 py-0.5 rounded"
-                    style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
-                  >
-                    {f.win_pct.toFixed(3)} W%
-                  </span>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      {/* 32-team sortable table. Logo and monogram maps are computed
+          server-side so the client component never has to touch the
+          filesystem; sorting state lives entirely in the client. */}
+      <FranchiseTable
+        franchises={franchises}
+        logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+        monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
+      />
 
       <TopGamesTable allTime={getTopGamesAllTime()} byDecade={getTopGamesByDecade()} />
 

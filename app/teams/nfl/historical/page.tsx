@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   getHistoricalFranchises,
   getHistoricalChampionships,
+  getHistoricalSeasons,
   TITLE_COLORS,
 } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -45,6 +46,7 @@ function monoFor(canonical: string): { bg: string; fg: string; mono: string } {
 export default function HistoricalPage() {
   const rows = getHistoricalFranchises();
   const histChamps = getHistoricalChampionships();
+  const histSeasons = getHistoricalSeasons();
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -66,62 +68,81 @@ export default function HistoricalPage() {
         </p>
       </header>
 
-      {/* Table */}
-      <section
-        className="rounded-xl border p-3 sm:p-5 overflow-x-auto"
-        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      {/* Header strip (acts as a column header for the details list below) */}
+      <div
+        className="hidden md:grid gap-3 px-4 py-2 text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-medium"
+        style={{ gridTemplateColumns: "1fr 1.2fr 0.7fr 0.5fr 0.5fr 0.5fr 0.5fr 0.6fr 1.2fr" }}
       >
-        <table className="w-full text-xs sm:text-sm">
-          <thead>
-            <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px]">Franchise</th>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px]">City</th>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px]">League</th>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px]">Seasons</th>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px] text-right">W</th>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px] text-right">L</th>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px] text-right">T</th>
-              <th className="font-medium py-2 pr-3 uppercase tracking-wider text-[10px] text-right">Win%</th>
-              <th className="font-medium py-2 uppercase tracking-wider text-[10px]">Titles</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => {
-              const mono = monoFor(r.canonical);
-              const titleEntries = histChamps[r.canonical] || [];
-              const isPottsville = r.canonical === "Maroons";
-              return (
-                <tr
-                  key={r.canonical}
-                  className="border-b align-middle"
+        <div className="pl-9">Franchise</div>
+        <div>City</div>
+        <div>League</div>
+        <div className="text-center">Seasons</div>
+        <div className="text-right">W</div>
+        <div className="text-right">L</div>
+        <div className="text-right">T</div>
+        <div className="text-right">Win%</div>
+        <div>Titles</div>
+      </div>
+
+      {/* Collapsible per-franchise rows. Each row is a native <details>
+          element so the +/- toggle works without JavaScript. */}
+      <section className="rounded-xl border overflow-hidden"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        {rows.map((r) => {
+          const mono = monoFor(r.canonical);
+          const titleEntries = histChamps[r.canonical] || [];
+          const seasonRows = histSeasons[r.canonical] || [];
+          const isPottsville = r.canonical === "Maroons";
+          return (
+            <details
+              key={r.canonical}
+              className="group border-b last:border-b-0"
+              style={{
+                borderColor: "var(--border)",
+                background: isPottsville ? "rgba(94, 20, 20, 0.08)" : undefined,
+              }}
+            >
+              <summary
+                className="flex items-center gap-3 cursor-pointer select-none px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors"
+              >
+                <span
+                  className="inline-grid place-items-center rounded-full flex-shrink-0 text-xs font-bold transition-transform"
                   style={{
-                    borderColor: "var(--border)",
-                    background: isPottsville ? "rgba(94, 20, 20, 0.08)" : undefined,
+                    background: "transparent",
+                    color: "var(--text-muted)",
+                    border: "1px solid var(--border)",
+                    width: 22, height: 22, fontSize: 14, lineHeight: 1,
                   }}
+                  aria-hidden
                 >
-                  <td className="py-2.5 pr-3">
-                    <div className="flex items-center gap-2.5">
-                      <span
-                        className="inline-grid place-items-center rounded-full flex-shrink-0"
-                        style={{
-                          background: mono.bg, color: mono.fg,
-                          width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em",
-                        }}
-                        aria-hidden
-                      >
-                        {mono.mono}
-                      </span>
-                      <span>{r.name}</span>
-                    </div>
-                  </td>
-                  <td className="py-2.5 pr-3 text-[var(--text-muted)]">{r.city}</td>
-                  <td className="py-2.5 pr-3 text-[var(--text-muted)]">{r.league}</td>
-                  <td className="py-2.5 pr-3 text-[var(--text-muted)] tabular-nums">{r.seasons}</td>
-                  <td className="py-2.5 pr-3 text-right tabular-nums">{r.w}</td>
-                  <td className="py-2.5 pr-3 text-right tabular-nums">{r.l}</td>
-                  <td className="py-2.5 pr-3 text-right tabular-nums">{r.t}</td>
-                  <td className="py-2.5 pr-3 text-right tabular-nums">{r.win_pct.toFixed(3)}</td>
-                  <td className="py-2.5">
+                  <span className="group-open:hidden">+</span>
+                  <span className="hidden group-open:inline">−</span>
+                </span>
+                <div
+                  className="flex-1 grid items-center gap-3 text-xs sm:text-sm"
+                  style={{ gridTemplateColumns: "1fr 1.2fr 0.7fr 0.5fr 0.5fr 0.5fr 0.5fr 0.6fr 1.2fr" }}
+                >
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span
+                      className="inline-grid place-items-center rounded-full flex-shrink-0"
+                      style={{
+                        background: mono.bg, color: mono.fg,
+                        width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em",
+                      }}
+                      aria-hidden
+                    >
+                      {mono.mono}
+                    </span>
+                    <span className="truncate">{r.name}</span>
+                  </div>
+                  <div className="text-[var(--text-muted)] truncate">{r.city}</div>
+                  <div className="text-[var(--text-muted)]">{r.league}</div>
+                  <div className="text-[var(--text-muted)] tabular-nums text-center">{r.seasons}</div>
+                  <div className="text-right tabular-nums">{r.w}</div>
+                  <div className="text-right tabular-nums">{r.l}</div>
+                  <div className="text-right tabular-nums">{r.t}</div>
+                  <div className="text-right tabular-nums">{r.win_pct.toFixed(3)}</div>
+                  <div>
                     {titleEntries.length === 0 ? (
                       <span className="text-[var(--text-dim)]">—</span>
                     ) : (
@@ -170,12 +191,65 @@ export default function HistoricalPage() {
                         })}
                       </span>
                     )}
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                  </div>
+                </div>
+              </summary>
+
+              {/* Body: per-season records for this franchise */}
+              <div className="px-4 pb-4 pt-1 border-t" style={{ borderColor: "var(--border)" }}>
+                {seasonRows.length === 0 ? (
+                  <p className="text-xs text-[var(--text-dim)] italic py-3">
+                    No season-by-season records in the source workbook.
+                  </p>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs tabular-nums mt-2">
+                      <thead>
+                        <tr className="text-[var(--text-muted)]">
+                          <th className="text-left font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">Year</th>
+                          <th className="text-left font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">League</th>
+                          <th className="text-left font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">Team</th>
+                          <th className="text-right font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">W</th>
+                          <th className="text-right font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">L</th>
+                          <th className="text-right font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">T</th>
+                          <th className="text-right font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">Win%</th>
+                          <th className="text-left font-medium py-1.5 pr-3 uppercase tracking-wider text-[10px]">Finish</th>
+                          <th className="text-left font-medium py-1.5 uppercase tracking-wider text-[10px]">Notes</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {seasonRows.map((s) => (
+                          <tr
+                            key={`${s.year}-${s.team}`}
+                            className="border-t"
+                            style={{
+                              borderColor: "var(--border)",
+                              background: s.champ ? "rgba(212,175,55,0.07)" : undefined,
+                            }}
+                          >
+                            <td className="py-1.5 pr-3" style={{ color: s.champ ? TITLE_COLORS.sb.bg : undefined, fontWeight: s.champ ? 600 : undefined }}>
+                              {s.year}
+                            </td>
+                            <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.league}</td>
+                            <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.city} {s.team}</td>
+                            <td className="py-1.5 pr-3 text-right">{s.w}</td>
+                            <td className="py-1.5 pr-3 text-right">{s.l}</td>
+                            <td className="py-1.5 pr-3 text-right">{s.t}</td>
+                            <td className="py-1.5 pr-3 text-right">{s.win_pct.toFixed(3)}</td>
+                            <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.place}</td>
+                            <td className="py-1.5 text-[var(--text-muted)]">
+                              {s.champ ? "Champion" : s.champ_app ? "Title game" : s.playoff ? "Playoffs" : ""}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            </details>
+          );
+        })}
       </section>
 
       {/* Pottsville stolen-title footnote */}
