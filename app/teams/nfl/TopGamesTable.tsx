@@ -3,6 +3,31 @@
 import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/nfl";
 
+// Replace the bare "Super Bowl" round label with a numbered one ("SB 50"
+// for the 2015 season, "SB " + roman for every other Super Bowl). Other
+// round names ("NFL Champ", "Wk 18", "Divisional", etc.) pass through.
+function roundLabel(seasonYear: number, round: string): string {
+  if (round !== "Super Bowl") return round;
+  const n = seasonYear - 1965;
+  if (n < 1) return round;
+  if (n === 50) return "SB 50";
+  return "SB " + toRoman(n);
+}
+
+function toRoman(num: number): string {
+  const lookup: [number, string][] = [
+    [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"],
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+  ];
+  let result = "";
+  for (const [value, sym] of lookup) {
+    while (num >= value) { result += sym; num -= value; }
+  }
+  return result;
+}
+
+
 type Props = {
   allTime: TopGameLeagueRow[];
   byDecade: Record<string, TopGameLeagueRow[]>;
@@ -71,9 +96,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">#</th>
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Date</th>
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Round</th>
-              <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Winner</th>
-              <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Score</th>
-              <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Loser</th>
+              <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Match</th>
               <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px]">Game Score</th>
             </tr>
           </thead>
@@ -87,19 +110,21 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                 <td className="py-2 pr-3 text-[var(--text-muted)]">{i + 1}</td>
                 <td className="py-2 pr-3 whitespace-nowrap">{g.date ?? g.year}</td>
                 <td className="py-2 pr-3 text-[var(--text-muted)]">
-                  {g.year}{g.round ? ` ${g.round}` : ""}{g.ot ? " · OT" : ""}
+                  {g.year}{g.round ? ` ${roundLabel(g.year, g.round)}` : ""}{g.ot ? " · OT" : ""}
                 </td>
-                <td className="py-2 pr-3 font-semibold">
-                  {g.winner_city} {g.winner_team}
+                <td className="py-2 pr-3">
+                  <span className="font-semibold">{g.winner_city} {g.winner_team}</span>{" "}
+                  <span className="tabular-nums font-semibold" style={{ color: "var(--accent)" }}>{g.winner_score}</span>
+                  <span className="mx-1 text-[var(--text-dim)]">{g.is_tie ? "=" : "-"}</span>
+                  <span className="tabular-nums text-[var(--text-muted)]">{g.loser_score}</span>{" "}
+                  <span className="text-[var(--text-muted)]">{g.loser_city} {g.loser_team}</span>
                 </td>
-                <td className="py-2 pr-3 text-right">{g.winner_score}-{g.loser_score}</td>
-                <td className="py-2 pr-3 text-[var(--text-muted)]">{g.loser_city} {g.loser_team}</td>
                 <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
               </tr>
             ))}
             {rows.length === 0 && (
               <tr>
-                <td colSpan={7} className="py-6 text-center text-[var(--text-dim)] italic">
+                <td colSpan={5} className="py-6 text-center text-[var(--text-dim)] italic">
                   No games in this bucket.
                 </td>
               </tr>

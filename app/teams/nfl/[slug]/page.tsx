@@ -128,7 +128,7 @@ export default async function FranchisePage({ params }: Props) {
           <p className="text-sm text-[var(--text-muted)] mt-1">
             Founded {f.founding_year ?? "—"} in{" "}
             {f.metro_slug ? (
-              <Link href={`/metros/${f.metro_slug}`} className="text-[var(--accent)] hover:underline">{f.metro}</Link>
+              <Link href={`/rankings/${f.metro_slug}`} className="text-[var(--accent)] hover:underline">{f.metro}</Link>
             ) : (
               <span className="text-[var(--text)]">{f.metro}</span>
             )}
@@ -230,7 +230,7 @@ export default async function FranchisePage({ params }: Props) {
               <Row k="Regular-season W-L-T" v={`${f.all_time_w}-${f.all_time_l}-${f.all_time_t}`} />
               <Row k="Win pct" v={f.win_pct.toFixed(3)} />
               <Row k="Playoff record" v={`${f.playoff_w}-${f.playoff_l}-${f.playoff_t} (${f.playoff_win_pct.toFixed(3)})`} />
-              <Row k="Championship appearances" v={(f.playoff_w + f.playoff_l > 0 ? `${champs.length} won` : `${champs.length} won`)} />
+              <Row k="Championship appearances" v={`${champAppearances.length} (${champs.length} wins)`} />
               <Row k="Conference final appearances" v={`${f.conf_finals_app} (${f.conf_finals_wins} wins)`} />
               <Row k="Total seasons" v={f.seasons.toString()} />
               <Row k=".500 or better seasons" v={f.seasons_500_plus.toString()} />
@@ -323,8 +323,7 @@ export default async function FranchisePage({ params }: Props) {
                   <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Date</th>
                   <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Round</th>
                   <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Result</th>
-                  <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Opponent</th>
-                  <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Score</th>
+                  <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Match</th>
                   <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px]">Game Score</th>
                 </tr>
               </thead>
@@ -344,7 +343,7 @@ export default async function FranchisePage({ params }: Props) {
                       <td className="py-2 pr-3 text-[var(--text-muted)]">{i + 1}</td>
                       <td className="py-2 pr-3 whitespace-nowrap">{g.date ?? g.year}</td>
                       <td className="py-2 pr-3 text-[var(--text-muted)]">
-                        {g.year}{g.round ? ` ${g.round}` : ""}{g.week ? ` · Wk ${g.week}` : ""}
+                        {g.year}{g.round ? ` ${roundLabel(g.year, g.round)}` : ""}{g.week ? ` · Wk ${g.week}` : ""}
                       </td>
                       <td className="py-2 pr-3">
                         <span
@@ -364,8 +363,10 @@ export default async function FranchisePage({ params }: Props) {
                       <td className="py-2 pr-3">
                         <span className="text-[var(--text-muted)]">{g.is_home ? "vs " : "@ "}</span>
                         {g.opp_city} {g.opp_team}
+                        <span className="ml-2 tabular-nums" style={{ color: g.result === "W" ? "var(--accent)" : g.result === "L" ? "#fca5a5" : "var(--text-muted)" }}>
+                          {g.pf}-{g.pa}
+                        </span>
                       </td>
-                      <td className="py-2 pr-3 text-right">{g.pf}-{g.pa}</td>
                       <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
                     </tr>
                   );
@@ -546,7 +547,18 @@ function Row({ k, v }: { k: string; v: string }) {
 function superBowlRoman(seasonYear: number): string {
   const sbNumber = seasonYear - 1965;
   if (sbNumber < 1) return "";
+  // NFL officially branded the 50th Super Bowl as "Super Bowl 50" in 2015,
+  // breaking the Roman-numeral tradition because "Super Bowl L" looked
+  // unfortunate on logos. Honor that convention.
+  if (sbNumber === 50) return "50";
   return toRoman(sbNumber);
+}
+
+// Transform a bare "Super Bowl" round label into the numbered form
+// ("SB 50" or "SB " + roman). Any other round string passes through.
+function roundLabel(seasonYear: number, round: string): string {
+  if (round !== "Super Bowl") return round;
+  return "SB " + superBowlRoman(seasonYear);
 }
 
 function toRoman(num: number): string {
