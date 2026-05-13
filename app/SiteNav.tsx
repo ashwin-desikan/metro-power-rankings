@@ -20,9 +20,29 @@ function formatIsoDate(iso: string): string {
 // down to the client DesktopNav (which owns the stateful dropdowns) and
 // MobileMenu. Keeping the data read on the server avoids shipping the
 // meta.json contents to the client bundle.
+//
+// "Updated" semantics: this is the date a reader sees and trusts as "how
+// fresh is this site". We surface the MOST RECENT of:
+//   - The workbook's lastUpdate (set by scripts/extract.py from the
+//     MetroAreas.xlsx mtime; reflects when the underlying metros dataset
+//     was last refreshed).
+//   - Today's build date (this server component re-evaluates on every
+//     Vercel build, including the 08:00 UTC daily refresh).
+// Whichever is later wins. This way the badge advances daily even when
+// the workbook hasn't changed (because live standings / Substack / etc.
+// still re-fetch every build), but it sticks to a workbook date if some-
+// how the workbook was just touched and the build hasn't run yet.
+function maxIsoDate(a: string, b: string): string {
+  if (!a) return b;
+  if (!b) return a;
+  return a >= b ? a : b;
+}
+
 export default function SiteNav() {
   const meta = getMeta();
-  const updated = meta.lastUpdate ? formatIsoDate(meta.lastUpdate) : null;
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const newestIso = maxIsoDate(meta.lastUpdate || "", todayIso);
+  const updated = newestIso ? formatIsoDate(newestIso) : null;
 
   return (
     <nav

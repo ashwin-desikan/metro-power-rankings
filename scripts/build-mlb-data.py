@@ -489,11 +489,50 @@ def build_stadium_history(year_by_year, stadium_master):
     return out  # placeholder — replaced by build_stadium_history_full below
 
 
+def _split_combined_park(name):
+    """For "X/Y" or "X / Y" or longer chains, return list of stripped parts.
+    Returns [name] if no slash. Whitespace around slashes is tolerated."""
+    if not name or "/" not in name:
+        return [name] if name else []
+    return [p.strip() for p in re.split(r"\s*/\s*", name) if p and p.strip()]
+
+
+def _read_season_to_canonical(wb):
+    """Stadiums sheet col N (season-name) → col O (canonical). Used to
+    resolve a combined-row's individual parts back to their canonical
+    venue names (e.g. Skydome → Rogers Centre)."""
+    ws = wb["Stadiums"]
+    out = {}
+    for i, row in enumerate(ws.iter_rows(values_only=True)):
+        if i == 0:
+            continue
+        sn = safe_str(row[13]) if len(row) > 13 else ""
+        canon = safe_str(row[14]) if len(row) > 14 else ""
+        if sn and canon:
+            out[sn] = canon
+    return out
+
+
 def build_stadium_history_full(wb, stadium_master):
-    """Build stadium history per canonical franchise by re-walking Year by
-    Year so we keep the per-season ballpark name + canonical mapping."""
+    """Build stadium history per canonical franchise.
+
+    Two notable behaviours vs. a naive year-walk:
+      1. Combined-year rows like "Robison Field/Sportsman's Park IV" (a
+         mid-season ballpark switch) are SPLIT — each side resolves to its
+         standalone canonical via the Stadiums lookup, and the transition
+         year is attributed to BOTH venues by extending their first/last
+         year ranges. The combined name itself is never emitted as a
+         standalone venue row.
+      2. Non-contiguous appearances of the same canonical venue collapse
+         into a single entry (relevant for Blue Jays 2020 Sahlen Field
+         and Rogers Centre 1990-2019 + 2021-present).
+
+    Output venues per franchise are sorted DESCENDING by first_year so the
+    most recent venue renders at the top, matching the NFL convention.
+    """
+    season_to_canonical = _read_season_to_canonical(wb)
+
     ws = wb["Year by Year"]
-    # First pass: collect (year, season_name, canonical_name) tuples per franchise
     per_team_seasons = defaultdict(list)
     for i, row in enumerate(ws.iter_rows(values_only=True)):
         if i == 0:
@@ -511,38 +550,70 @@ def build_stadium_history_full(wb, stadium_master):
     out = {}
     for franchise_canon, seasons in per_team_seasons.items():
         seasons.sort(key=lambda x: x[0])
-        venues = []  # list of {canonical, first_year, last_year, eras: [{era_name,first,last}]}
+        venues_by_canonical = {}  # canonical -> venue dict
 
-        def push_era(venues, year, season_name, canon_park):
-            if not canon_park:
+        def attribute(year, era_label, resolved_canonical):
+            """Extend (or create) a venue entry for resolved_canonical and
+            record this year in its eras array."""
+            if not resolved_canonical:
                 return
-            if venues and venues[-1]["canonical"] == canon_park:
-                v = venues[-1]
-                v["last_year"] = year
-                if v["eras"] and v["eras"][-1]["era_name"] == season_name:
-                    v["eras"][-1]["last_year"] = year
-                else:
-                    v["eras"].append({
-                        "era_name": season_name or canon_park,
-                        "first_year": year,
-                        "last_year": year,
-                    })
-            else:
-                venues.append({
-                    "canonical": canon_park,
+            v = venues_by_canonical.get(resolved_canonical)
+            if v is None:
+                v = {
+                    "canonical": resolved_canonical,
                     "first_year": year,
                     "last_year": year,
                     "eras": [{
-                        "era_name": season_name or canon_park,
+                        "era_name": era_label or resolved_canonical,
                         "first_year": year,
                         "last_year": year,
                     }],
+                }
+                venues_by_canonical[resolved_canonical] = v
+                return
+            v["first_year"] = min(v["first_year"], year)
+            v["last_year"] = max(v["last_year"], year)
+            last_era = v["eras"][-1] if v["eras"] else None
+            label = era_label or resolved_canonical
+            if last_era and last_era["era_name"] == label:
+                last_era["first_year"] = min(last_era["first_year"], year)
+                last_era["last_year"] = max(last_era["last_year"], year)
+            else:
+                v["eras"].append({
+                    "era_name": label,
+                    "first_year": year,
+                    "last_year": year,
                 })
 
         for (year, season_name, canon_park) in seasons:
-            push_era(venues, year, season_name, canon_park)
+            if not canon_park:
+                continue
+            if "/" in canon_park:
+                # Combined-year row. Split into parts; resolve each via the
+                # Stadiums season-name lookup. Attribute this year to every
+                # part's standalone canonical. Don't push a combined venue.
+                parts = _split_combined_park(canon_park)
+                # Try to split the season_name in parallel so each part keeps
+                # its own era label; fall back to the canonical name when the
+                # split lengths don't line up.
+                season_parts = _split_combined_park(season_name)
+                if len(season_parts) != len(parts):
+                    season_parts = parts
+                for idx, part in enumerate(parts):
+                    if not part:
+                        continue
+                    resolved = season_to_canonical.get(part, part)
+                    # Strip any /-residue that survived a lookup miss
+                    resolved = resolved.strip()
+                    label = season_parts[idx] if idx < len(season_parts) else part
+                    attribute(year, label, resolved)
+            else:
+                attribute(year, season_name, canon_park)
 
-        # Attach city/metro/state from stadium master where we have it
+        # Stitch in city/metro/state from the Stadiums master, sort eras
+        # by year ascending, sort venues DESCENDING by first_year (newest
+        # first) to match NFL.
+        venues = list(venues_by_canonical.values())
         for v in venues:
             sm = stadium_master.get(v["canonical"])
             if sm:
@@ -553,7 +624,8 @@ def build_stadium_history_full(wb, stadium_master):
                 v["city"] = ""
                 v["metro"] = ""
                 v["state"] = ""
-
+            v["eras"].sort(key=lambda e: e["first_year"] or 0)
+        venues.sort(key=lambda v: (-(v["first_year"] or 0), v["canonical"]))
         out[franchise_canon] = venues
     return out
 

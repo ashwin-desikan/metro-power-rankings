@@ -22,6 +22,8 @@ import {
 import { getCurrentNflStandings } from "@/lib/standings";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { getTopTeamByMetroName, topTeamAnchorId } from "@/lib/topTeams";
+import { normalizeTopTeamMetroName } from "@/lib/topTeams";
 
 export const dynamicParams = false;
 
@@ -97,6 +99,24 @@ export default async function FranchisePage({ params }: Props) {
   const mono = monogramFor(f.slug);
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
+
+  // Top Team badge: surface only when this franchise is the metro's named
+  // pick on the Top Sports Teams sheet. The pick string may be co-equal
+  // ("Inter / AC Milan") so we accept any "/"-separated half whose
+  // normalized form matches the franchise display name.
+  const topTeamPick = f.metro ? getTopTeamByMetroName(f.metro) : null;
+  const franchiseCount = getAllFranchiseSlugs().length;
+  const topTeamFranchiseMatch = (() => {
+    if (!topTeamPick) return false;
+    const norm = normalizeTopTeamMetroName;
+    const targets = topTeamPick.team.split("/").map((t) => norm(t.trim()));
+    const candidates = [
+      norm(f.name),
+      norm(`${f.city} ${f.team}`),
+    ];
+    return targets.some((t) => candidates.includes(t));
+  })();
+
   // Live current-season standings from ESPN. Gate logic:
   //   1. ESPN must return a standings row for this franchise.
   //   2. That row must have games_played > 0 (so preseason rosters with 0-0
@@ -158,6 +178,19 @@ export default async function FranchisePage({ params }: Props) {
         <span className="text-[var(--text-dim)]">{f.name}</span>
       </nav>
 
+      {/* Back-to-league chip. Sits between the breadcrumb and the hero
+          so the link is impossible to miss while reading down. */}
+      <div className="mb-4">
+        <Link
+          href="/teams/nfl"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+        >
+          <span aria-hidden>&larr;</span>
+          <span>All {franchiseCount} NFL franchises</span>
+        </Link>
+      </div>
+
       {/* Hero */}
       <header
         className="rounded-2xl border p-7 flex flex-col sm:flex-row gap-6 items-start"
@@ -207,6 +240,19 @@ export default async function FranchisePage({ params }: Props) {
             <p className="text-xs text-[var(--text-muted)] mt-2 italic">
               Formerly based in {formerly}.
             </p>
+          )}
+          {topTeamPick && topTeamFranchiseMatch && (
+            <Link
+              href={`/top-teams#${topTeamAnchorId(topTeamPick.metro)}`}
+              className="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full border bg-amber-500/10 border-amber-500/30 text-amber-300 hover:bg-amber-500/20 hover:text-amber-200 transition-colors text-xs font-medium"
+              title={`This franchise is the metro\u2019s named Top Team pick on The Team That Wins the City`}
+            >
+              <span className="text-amber-400 text-base leading-none" aria-hidden>&#9812;</span>
+              <span className="font-semibold tracking-wide">Top Team</span>
+              <span className="opacity-80">
+                {topTeamPick.metro}
+              </span>
+            </Link>
           )}
           {(f.wikipedia_url || f.wikidata_qid) && (
             <div className="flex flex-wrap gap-2 mt-3 text-[11px]">
@@ -376,11 +422,49 @@ export default async function FranchisePage({ params }: Props) {
         </Block>
       </div>
 
-      {/* Season-by-season */}
-      <details className="mt-4 border rounded-xl" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-        <summary className="cursor-pointer px-5 py-4 font-semibold text-sm flex items-center justify-between">
-          <span>Season-by-season ({f.founding_year} to {seasonRangeEnd})</span>
-          <span className="text-[var(--text-muted)] text-xs">{seasonRows.length} seasons</span>
+      {/* Season-by-season — visually emphasised so it doesn't get lost when
+          scrolling. Left accent border, bumped vertical padding, bigger
+          summary type, and a chevron that flips on open. */}
+      <details
+        className="group mt-6 border-l-4 border-y border-r rounded-xl shadow-sm"
+        style={{
+          background: "var(--bg-card)",
+          borderTopColor: "var(--border)",
+          borderRightColor: "var(--border)",
+          borderBottomColor: "var(--border)",
+          borderLeftColor: "var(--accent)",
+        }}
+      >
+        <summary className="cursor-pointer px-5 sm:px-6 py-5 list-none flex items-center justify-between gap-4 hover:bg-[var(--bg-card-hover)] transition-colors rounded-xl">
+          <div className="flex items-center gap-3 min-w-0">
+            <span
+              aria-hidden
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold transition-transform group-open:rotate-90"
+              style={{
+                background: "rgba(78,205,196,0.16)",
+                color: "var(--accent)",
+              }}
+            >
+              ›
+            </span>
+            <div className="min-w-0">
+              <div className="text-base sm:text-lg font-semibold tracking-tight">Season-by-season</div>
+              <div className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] mt-0.5">
+                {f.founding_year} to {seasonRangeEnd} · {seasonRows.length} seasons · click to expand
+              </div>
+            </div>
+          </div>
+          <span
+            className="hidden sm:inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold px-2 py-1 rounded"
+            style={{
+              background: "rgba(78,205,196,0.12)",
+              color: "var(--accent)",
+              fontFamily: "'JetBrains Mono', monospace",
+            }}
+          >
+            <span className="group-open:hidden">Show table</span>
+            <span className="hidden group-open:inline">Hide table</span>
+          </span>
         </summary>
         <div className="px-5 pb-5">
           <SeasonsByTeamTable

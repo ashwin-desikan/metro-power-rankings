@@ -30,8 +30,21 @@ type SortKey =
 
 type SortDir = "asc" | "desc";
 
-function brefYearUrl(year: number): string {
-  return `https://www.baseball-reference.com/leagues/majors/${year}.shtml`;
+// MLB year-page URL on Baseball-Reference. Modern era (1903+) uses the
+// unified "majors" standings page. Pre-1903 routes to the workbook's
+// league-specific page (AA = American Association 1882-1891; NL pennant
+// races back to 1876; the short-lived PL, FL, UA, NA leagues likewise).
+function brefYearUrl(year: number, league: string): string {
+  if (year >= 1903) return `https://www.baseball-reference.com/leagues/majors/${year}-standings.shtml`;
+  const lg = (league || "").toUpperCase().trim();
+  if (lg === "AA") return `https://www.baseball-reference.com/leagues/AA/${year}.shtml`;
+  if (lg === "NL") return `https://www.baseball-reference.com/leagues/NL/${year}.shtml`;
+  if (lg === "AL") return `https://www.baseball-reference.com/leagues/AL/${year}.shtml`;
+  if (lg === "PL") return `https://www.baseball-reference.com/leagues/PL/${year}.shtml`;
+  if (lg === "FL") return `https://www.baseball-reference.com/leagues/FL/${year}.shtml`;
+  if (lg === "UA") return `https://www.baseball-reference.com/leagues/UA/${year}.shtml`;
+  if (lg === "NA") return `https://www.baseball-reference.com/leagues/NA/${year}.shtml`;
+  return `https://www.baseball-reference.com/leagues/majors/${year}-standings.shtml`;
 }
 
 // Historical-franchise monogram presets. Slightly desaturated so the eye
@@ -252,7 +265,7 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
                             >
                               <td className="py-1.5 pr-3" style={{ color: champColor, fontWeight: (s.champ || s.oth_chmp) ? 600 : undefined }}>
                                 <a
-                                  href={brefYearUrl(s.year)}
+                                  href={brefYearUrl(s.year, s.league)}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="hover:underline decoration-dotted underline-offset-2"

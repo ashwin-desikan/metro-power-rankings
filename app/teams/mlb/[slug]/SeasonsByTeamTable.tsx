@@ -34,8 +34,21 @@ type Props = {
 const TITLE_GOLD = "#d4af37";
 const PRE_WS_SLATE = "#6e8aa6";
 
-function brefYearUrl(year: number): string {
-  return `https://www.baseball-reference.com/leagues/majors/${year}.shtml`;
+// MLB year-page URL on Baseball-Reference. Modern era (1903+) uses the
+// unified "majors" standings page. Pre-1903 routes to the workbook's
+// league-specific page (AA = American Association 1882-1891; NL pennant
+// races back to 1876; the short-lived PL, FL, UA, NA leagues likewise).
+function brefYearUrl(year: number, league: string): string {
+  if (year >= 1903) return `https://www.baseball-reference.com/leagues/majors/${year}-standings.shtml`;
+  const lg = (league || "").toUpperCase().trim();
+  if (lg === "AA") return `https://www.baseball-reference.com/leagues/AA/${year}.shtml`;
+  if (lg === "NL") return `https://www.baseball-reference.com/leagues/NL/${year}.shtml`;
+  if (lg === "AL") return `https://www.baseball-reference.com/leagues/AL/${year}.shtml`;
+  if (lg === "PL") return `https://www.baseball-reference.com/leagues/PL/${year}.shtml`;
+  if (lg === "FL") return `https://www.baseball-reference.com/leagues/FL/${year}.shtml`;
+  if (lg === "UA") return `https://www.baseball-reference.com/leagues/UA/${year}.shtml`;
+  if (lg === "NA") return `https://www.baseball-reference.com/leagues/NA/${year}.shtml`;
+  return `https://www.baseball-reference.com/leagues/majors/${year}-standings.shtml`;
 }
 
 function parseFinish(p: string): number {
@@ -57,13 +70,21 @@ function compare(a: SeasonRow, b: SeasonRow, key: SortKey): number {
   }
 }
 
+// Format the "as of" date for the live in-progress row. The build runs
+// once a day around 08:00 UTC (see .github/workflows/daily-rebuild.yml),
+// at which point ESPN's standings cache reflects games played the
+// previous calendar day in UTC terms. Subtract 24h from fetched_at and
+// render in UTC so readers see the date that matches the games on the
+// row, not the build timestamp. Fixed UTC formatting keeps the label
+// stable across reader timezones.
 function formatFetchedDate(iso: string | undefined): string | null {
   if (!iso) return null;
   try {
     const d = new Date(iso);
     if (isNaN(d.getTime())) return null;
-    return d.toLocaleDateString("en-US", {
-      month: "short", day: "numeric", year: "numeric",
+    const yesterday = new Date(d.getTime() - 24 * 60 * 60 * 1000);
+    return yesterday.toLocaleDateString("en-US", {
+      month: "short", day: "numeric", year: "numeric", timeZone: "UTC",
     });
   } catch {
     return null;
@@ -157,7 +178,7 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Pro
                       <span title={`${s.year} season in progress`}>{s.year}</span>
                     ) : (
                       <a
-                        href={brefYearUrl(s.year)}
+                        href={brefYearUrl(s.year, s.league)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:underline decoration-dotted underline-offset-2"

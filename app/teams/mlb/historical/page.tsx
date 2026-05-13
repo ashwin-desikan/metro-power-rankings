@@ -32,6 +32,19 @@ export default function HistoricalPage() {
         <span className="text-[var(--text-dim)]">Historical</span>
       </nav>
 
+      {/* Back-to-league chip. Mirrors the per-team page so readers always
+          have a one-click path back to the active-franchise list. */}
+      <div className="mb-4">
+        <Link
+          href="/teams/mlb"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+        >
+          <span aria-hidden>&larr;</span>
+          <span>All 30 MLB franchises</span>
+        </Link>
+      </div>
+
       <header className="mb-6">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">Defunct franchises</div>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Historical MLB franchises</h1>
