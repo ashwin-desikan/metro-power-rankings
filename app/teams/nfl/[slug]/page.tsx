@@ -561,13 +561,3 @@ function toRoman(num: number): string {
   }
   return result;
 }
-
-function StatCell({ v, k, sub }: { v: string; k: string; sub?: string }) {
-  return (
-    <div className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-      <div className="text-2xl font-bold tracking-tight">{v}</div>
-      <div className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mt-1">{k}</div>
-      {sub && <div className="text-[11px] text-[var(--text-dim)] mt-0.5">{sub}</div>}
-    </div>
-  );
-}

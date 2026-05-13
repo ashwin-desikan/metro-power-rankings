@@ -333,15 +333,17 @@ export function monogramFor(slug: string): { bg: string; fg: string; mono: strin
   return MONOGRAM_BY_SLUG[slug] || { bg: "#1E1E2E", fg: "#E8E8ED", mono: "NFL" };
 }
 
+// Static path roots so Turbopack's Node File Tracer can scope the
+// existsSync calls to `public/data/nfl/logos/` only. Earlier versions
+// built the full path with a variable suffix, which Turbopack treated
+// as a project-wide glob and traced 13,974 unrelated files into the
+// serverless bundle.
+const LOGO_DIR = join(process.cwd(), "public", "data", "nfl", "logos");
+
 export function logoUrlFor(slug: string): string | null {
-  const candidates = [
-    `public/data/nfl/logos/${slug}.svg`,
-    `public/data/nfl/logos/${slug}.png`,
-  ];
-  for (const rel of candidates) {
-    if (existsSync(join(process.cwd(), rel))) {
-      return "/" + rel.replace(/^public\//, "");
-    }
-  }
+  const svgPath = join(LOGO_DIR, `${slug}.svg`);
+  if (existsSync(svgPath)) return `/data/nfl/logos/${slug}.svg`;
+  const pngPath = join(LOGO_DIR, `${slug}.png`);
+  if (existsSync(pngPath)) return `/data/nfl/logos/${slug}.png`;
   return null;
 }
