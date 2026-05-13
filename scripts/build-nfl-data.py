@@ -90,6 +90,27 @@ CITY_HISTORY_OVERRIDES = {
     "Maroons": "Toledo/Kenosha",
 }
 
+# Editorial round-label overrides for the Regular Season sheet. Keyed by
+# (date_iso, frozenset(winner_canonical, loser_canonical)) so the override
+# fires regardless of which team-row is being processed. Use only when the
+# workbook label is verifiably wrong and a workbook fix is deferred.
+ROUND_OVERRIDES = {
+    # 2023 AFC Championship Game, Kansas City 17 at Baltimore 10 (M&T Bank).
+    # The workbook currently labels this game NFC Champ; both franchises are
+    # AFC. Override to AFC Champ at ETL time pending a workbook correction.
+    ("2024-01-28", frozenset({"Chiefs", "Ravens"})): "AFC Champ",
+}
+
+
+def resolve_round(date_iso, team_a_canonical, team_b_canonical, workbook_label):
+    """Apply ROUND_OVERRIDES if a matching (date, team-pair) entry exists,
+    otherwise return the workbook label unchanged."""
+    if date_iso and team_a_canonical and team_b_canonical:
+        key = (date_iso, frozenset({team_a_canonical, team_b_canonical}))
+        if key in ROUND_OVERRIDES:
+            return ROUND_OVERRIDES[key]
+    return workbook_label
+
 
 # -------- Helpers --------
 
@@ -536,7 +557,7 @@ def read_top_games(wb):
                 "year": year,
                 "date": date_iso,
                 "week": week if isinstance(week, (int, float)) else None,
-                "round": ptype or regplay,
+                "round": resolve_round(date_iso, dk, dl, ptype or regplay),
                 "team_city": city, "team": team, "team_canonical": dk,
                 "opp_city": opp_city, "opp_team": opp_team, "opp_canonical": dl,
                 "pf": pf, "pa": pa,
@@ -578,7 +599,7 @@ def read_top_games(wb):
             "year": year,
             "date": date_iso,
             "week": week if isinstance(week, (int, float)) else None,
-            "round": ptype or regplay,
+            "round": resolve_round(date_iso, winner_canonical, loser_canonical, ptype or regplay),
             "winner_city": winner_city, "winner_team": winner_team, "winner_canonical": winner_canonical,
             "loser_city": loser_city, "loser_team": loser_team, "loser_canonical": loser_canonical,
             "winner_score": winner_pf,
@@ -758,8 +779,6 @@ def build_historical(totals, year_by_year):
             "championships": tot["championships"],
             "stolen_championships": 1 if canonical in stolen_by_canon else 0,
         })
-    # Default sort: real championships desc, then any row with a stolen
-    # title (sits just below the champion tier), then by city.
     rows.sort(key=lambda r: (
         -r["championships"],
         -r["stolen_championships"],
@@ -880,4 +899,50 @@ def main():
 
     historical = build_historical(totals, yby)
     print(f"Built historical: {len(historical)}")
-    (OUT_DIR / "historical.json").write_text(json.d
+    (OUT_DIR / "historical.json").write_text(json.dumps(historical, indent=2, ensure_ascii=False))
+
+    hist_champs = build_historical_championships(yby, totals)
+    (OUT_DIR / "historical-championships.json").write_text(json.dumps(hist_champs, indent=2, ensure_ascii=False))
+
+    (OUT_DIR / "hall-of-fame.json").write_text(json.dumps(dict(hof), indent=2, ensure_ascii=False))
+
+    active_canonicals = {f["canonical"]: f["slug"] for f in franchises}
+    seasons_out = {}
+    for canonical, slug in active_canonicals.items():
+        rows = yby.get(canonical, [])
+        seasons_out[slug] = [
+            {
+                "year": r["year"], "league": r["league"], "city": r["city"],
+                "team": r["team_historical"],
+                "w": r["w"], "l": r["l"], "t": r["t"], "win_pct": round(r["win_pct"], 4),
+                "pf": r["pf"], "pa": r["pa"],
+                "division": r["division"], "place": r["place"],
+                "playoff": r["playoff_appearance"],
+                "div_title": r["division_title"],
+                "conf_final": r["conference_final"],
+                "champ_app": r["championship_appearance"],
+                "champ": r["championship"],
+            }
+            for r in rows
+        ]
+    (OUT_DIR / "seasons-by-team.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False))
+
+    (OUT_DIR / "pro-bowl-counts.json").write_text(json.dumps(pb_counts, indent=2, ensure_ascii=False))
+
+    # Top Games (DU Game Score)
+    top_by_team = build_top_games_by_team(games_by_team_canonical, franchises, top_n=12)
+    (OUT_DIR / "top-games-by-team.json").write_text(json.dumps(top_by_team, indent=2, ensure_ascii=False))
+
+    top_all_time = build_top_games_all_time(all_games, top_n=50)
+    (OUT_DIR / "top-games-all-time.json").write_text(json.dumps(top_all_time, indent=2, ensure_ascii=False))
+
+    top_by_decade = build_top_games_by_decade(all_games, top_n_per_decade=10)
+    (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False))
+
+    print("\nWrote:")
+    for f in sorted(OUT_DIR.glob("*.json")):
+        print(f"  {f.relative_to(REPO_ROOT)}  ({f.stat().st_size:,} bytes)")
+
+
+if __name__ == "__main__":
+    main()
