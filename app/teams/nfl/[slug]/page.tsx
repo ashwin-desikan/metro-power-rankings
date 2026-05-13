@@ -5,11 +5,13 @@ import {
   getAllFranchiseSlugs,
   getFranchiseBySlug,
   getChampionships,
+  getChampionshipAppearances,
   getStadiumHistory,
   getAwards,
-  getHallOfFamers,
   getSeasons,
   getProBowlCount,
+  getTopGamesForTeam,
+  logoUrlFor,
   monogramFor,
   TITLE_COLORS,
 } from "@/lib/nfl";
@@ -80,12 +82,14 @@ export default async function FranchisePage({ params }: Props) {
   if (!f) notFound();
 
   const champs = getChampionships(f.canonical);
+  const champAppearances = getChampionshipAppearances(f.canonical);
   const stadiums = getStadiumHistory(f.canonical);
   const awards = getAwards(f.canonical);
-  const hof = getHallOfFamers(f.canonical);
   const seasons = getSeasons(f.slug);
   const proBowlCount = getProBowlCount(f.canonical);
+  const topGames = getTopGamesForTeam(f.slug);
   const mono = monogramFor(f.slug);
+  const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
 
   return (
@@ -104,13 +108,21 @@ export default async function FranchisePage({ params }: Props) {
         className="rounded-2xl border p-7 flex flex-col sm:flex-row gap-6 items-start"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
       >
-        <div
-          className="w-20 h-20 rounded-full grid place-items-center font-extrabold flex-shrink-0"
-          style={{ background: mono.bg, color: mono.fg, fontSize: "24px" }}
-          aria-hidden
-        >
-          {mono.mono}
-        </div>
+        {logo ? (
+          <img
+            src={logo}
+            alt={`${f.name} logo`}
+            className="w-20 h-20 flex-shrink-0 object-contain"
+          />
+        ) : (
+          <div
+            className="w-20 h-20 rounded-full grid place-items-center font-extrabold flex-shrink-0"
+            style={{ background: mono.bg, color: mono.fg, fontSize: "24px" }}
+            aria-hidden
+          >
+            {mono.mono}
+          </div>
+        )}
         <div className="flex-1 min-w-0">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
@@ -179,6 +191,37 @@ export default async function FranchisePage({ params }: Props) {
         )}
       </Block>
 
+      {/* Championship appearances (wins + losses combined) */}
+      <Block
+        title="Championship appearances"
+        deck="Every championship game appearance, win or loss. Solid chip = won; outlined chip = lost. Same pre-Super Bowl / Super Bowl color split as titles."
+      >
+        {champAppearances.length === 0 ? (
+          <p className="text-sm text-[var(--text-muted)] italic">No championship game appearances.</p>
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            {champAppearances.map((a) => {
+              const colors = TITLE_COLORS[a.era];
+              const label = a.era === "sb" ? `SB ${superBowlRoman(a.year)} (${a.year})` : `${a.year}`;
+              return (
+                <span
+                  key={a.year}
+                  className="text-xs font-semibold px-2.5 py-1 rounded inline-flex items-center gap-1"
+                  style={a.is_winner
+                    ? { background: colors.bg, color: colors.text }
+                    : { background: "transparent", color: colors.bg, border: `1px solid ${colors.bg}` }
+                  }
+                  title={`${a.is_winner ? "Won" : "Lost"} ${a.record ? `(${a.record} regular season)` : ""}`}
+                >
+                  {label}
+                  {a.is_winner ? <span aria-hidden style={{ fontSize: "9px" }}>●</span> : null}
+                </span>
+              );
+            })}
+          </div>
+        )}
+      </Block>
+
       <div className="grid gap-4 lg:grid-cols-2 mt-4">
         {/* All-time record */}
         <Block title="All-time record" deck={null}>
@@ -237,7 +280,7 @@ export default async function FranchisePage({ params }: Props) {
       {/* Award winners */}
       <Block
         title="Award winners"
-        deck={`League-wide awards held by ${f.name} players or coaches. Pulled from the AP, Bert Bell, Walter Payton, and Super Bowl MVP rolls. Plus ${proBowlCount} Pro Bowl selections all-time and ${hof.length} primary-team Hall of Fame inductees.`}
+        deck={`League-wide awards held by ${f.name} players or coaches. Pulled from the AP, Bert Bell, Walter Payton, and Super Bowl MVP rolls. Plus ${proBowlCount} Pro Bowl selections all-time.`}
       >
         <div className="grid gap-4 sm:grid-cols-2">
           {AWARD_ORDER.map((awardKey) => {
@@ -259,29 +302,78 @@ export default async function FranchisePage({ params }: Props) {
               </div>
             );
           })}
-          {hof.length > 0 && (
-            <div className="sm:col-span-2">
-              <h3 className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] font-semibold mb-1">
-                Hall of Fame inductees (primary team)
-              </h3>
-              <ul className="text-sm space-y-0.5 columns-1 sm:columns-2">
-                {hof.map((p, i) => (
-                  <li key={i} className="break-inside-avoid flex gap-2">
-                    <span className="text-[var(--text-muted)] tabular-nums w-12 flex-shrink-0">{p.year}</span>
-                    <span>
-                      {p.player}
-                      {p.position && p.category === "Player" ? <span className="text-[var(--text-muted)]"> · {p.position}</span> : null}
-                      {p.category && p.category !== "Player" ? <span className="text-[var(--text-muted)]"> · {p.category}</span> : null}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-[var(--text-dim)] mt-2">
-                Multi-team inductees appear on their primary team only in v1.
-              </p>
-            </div>
-          )}
+          {/* Hall of Fame inductees temporarily suppressed; will return once
+              the data reconciliation pass completes. */}
         </div>
+      </Block>
+
+      {/* Top games — ranked by DU Game Score */}
+      <Block
+        title="Top 12 games"
+        deck={`Highest-rated games in franchise history by the site's Game Score (ELO) metric, which combines hype, quality, stakes, and matchup rank. Losses can outrank routine wins because the formula scores game quality, not franchise spin.`}
+      >
+        {topGames.length === 0 ? (
+          <p className="text-sm text-[var(--text-muted)] italic">No scored games in the dataset.</p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs tabular-nums">
+              <thead>
+                <tr className="text-[var(--text-muted)]">
+                  <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">#</th>
+                  <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Year</th>
+                  <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Round</th>
+                  <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Result</th>
+                  <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Opponent</th>
+                  <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px] pr-3">Score</th>
+                  <th className="text-right font-medium py-2 uppercase tracking-wider text-[10px]">Game Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topGames.map((g, i) => {
+                  const isLoss = g.result === "L";
+                  const isTie = g.result === "T";
+                  return (
+                    <tr
+                      key={`${g.year}-${g.opp_canonical}-${i}`}
+                      className="border-t"
+                      style={{
+                        borderColor: "var(--border)",
+                        background: isLoss ? "rgba(239,68,68,0.04)" : undefined,
+                      }}
+                    >
+                      <td className="py-2 pr-3 text-[var(--text-muted)]">{i + 1}</td>
+                      <td className="py-2 pr-3">{g.year}</td>
+                      <td className="py-2 pr-3 text-[var(--text-muted)]">
+                        {g.round}{g.week ? ` · Wk ${g.week}` : null}
+                      </td>
+                      <td className="py-2 pr-3">
+                        <span
+                          className="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide"
+                          style={
+                            g.result === "W"
+                              ? { background: "rgba(78,205,196,0.18)", color: "var(--accent)" }
+                              : g.result === "L"
+                              ? { background: "rgba(239,68,68,0.18)", color: "#fca5a5" }
+                              : { background: "rgba(255,255,255,0.06)", color: "var(--text-muted)" }
+                          }
+                        >
+                          {isTie ? "T" : g.result}
+                          {g.ot ? " · OT" : ""}
+                        </span>
+                      </td>
+                      <td className="py-2 pr-3">
+                        <span className="text-[var(--text-muted)]">{g.is_home ? "vs " : "@ "}</span>
+                        {g.opp_city} {g.opp_team}
+                      </td>
+                      <td className="py-2 pr-3 text-right">{g.pf}-{g.pa}</td>
+                      <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
       </Block>
 
       {/* Season-by-season */}
@@ -307,7 +399,6 @@ export default async function FranchisePage({ params }: Props) {
             </thead>
             <tbody>
               {[...seasons].reverse().map((s) => {
-                const post = s.champ ? "Won championship" : s.playoff ? "Made playoffs" : "—";
                 return (
                   <tr
                     key={`${s.year}-${s.team}`}
@@ -327,7 +418,16 @@ export default async function FranchisePage({ params }: Props) {
                     <td className="text-right py-1.5">{s.win_pct.toFixed(3)}</td>
                     <td className="pl-3 py-1.5 text-[var(--text-muted)]">{s.division}</td>
                     <td className="py-1.5 text-[var(--text-muted)]">{s.place}</td>
-                    <td className="py-1.5">{post}</td>
+                    <td className="py-1.5">
+                      <SeasonBadges
+                        playoff={s.playoff}
+                        divTitle={s.div_title}
+                        confFinal={s.conf_final}
+                        champApp={s.champ_app}
+                        champ={s.champ}
+                        year={s.year}
+                      />
+                    </td>
                   </tr>
                 );
               })}
@@ -364,6 +464,76 @@ function Block({ title, deck, children }: { title: string; deck: string | null; 
   );
 }
 
+function SeasonBadges({
+  playoff, divTitle, confFinal, champApp, champ, year,
+}: {
+  playoff: boolean; divTitle: boolean; confFinal: boolean; champApp: boolean; champ: boolean; year: number;
+}) {
+  const isSb = year >= 1966;
+  const era = isSb ? TITLE_COLORS.sb : TITLE_COLORS.pre_sb;
+  const badges: React.ReactNode[] = [];
+  if (champ) {
+    badges.push(
+      <span
+        key="champ"
+        className="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide"
+        style={{ background: era.bg, color: era.text }}
+        title={isSb ? "Won Super Bowl" : "Won NFL/AAFC/AFL championship"}
+      >
+        Champion
+      </span>
+    );
+  } else if (champApp) {
+    badges.push(
+      <span
+        key="champapp"
+        className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
+        style={{ border: `1px solid ${era.bg}`, color: era.bg }}
+        title={isSb ? "Reached Super Bowl, lost" : "Reached championship game, lost"}
+      >
+        {isSb ? "SB App" : "Title App"}
+      </span>
+    );
+  } else if (confFinal) {
+    badges.push(
+      <span
+        key="cf"
+        className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
+        style={{ background: "rgba(78,205,196,0.16)", color: "var(--accent)" }}
+        title="Reached conference championship game"
+      >
+        Conf Final
+      </span>
+    );
+  }
+  if (divTitle) {
+    badges.push(
+      <span
+        key="div"
+        className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
+        style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
+        title="Won division"
+      >
+        Div Title
+      </span>
+    );
+  }
+  if (playoff && !divTitle && !confFinal && !champApp && !champ) {
+    badges.push(
+      <span
+        key="po"
+        className="text-[10px] font-medium px-1.5 py-0.5 rounded"
+        style={{ background: "rgba(255,255,255,0.04)", color: "var(--text-muted)" }}
+        title="Made the playoffs"
+      >
+        Playoffs
+      </span>
+    );
+  }
+  if (badges.length === 0) return <span className="text-[var(--text-dim)]">—</span>;
+  return <span className="inline-flex flex-wrap gap-1">{badges}</span>;
+}
+
 function Row({ k, v }: { k: string; v: string }) {
   return (
     <tr className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -373,11 +543,8 @@ function Row({ k, v }: { k: string; v: string }) {
   );
 }
 
-// Super Bowl roman numeral lookup. The workbook records the CHAMPIONSHIP year
-// (the year the regular season started). Super Bowl I was played February 1967
-// following the 1966 NFL season; the workbook tags it 1966.
 function superBowlRoman(seasonYear: number): string {
-  const sbNumber = seasonYear - 1965; // 1966 -> SB I
+  const sbNumber = seasonYear - 1965;
   if (sbNumber < 1) return "";
   return toRoman(sbNumber);
 }
@@ -393,4 +560,14 @@ function toRoman(num: number): string {
     while (num >= value) { result += sym; num -= value; }
   }
   return result;
+}
+
+function StatCell({ v, k, sub }: { v: string; k: string; sub?: string }) {
+  return (
+    <div className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      <div className="text-2xl font-bold tracking-tight">{v}</div>
+      <div className="text-[10px] uppercase tracking-widest text-[var(--text-muted)] mt-1">{k}</div>
+      {sub && <div className="text-[11px] text-[var(--text-dim)] mt-0.5">{sub}</div>}
+    </div>
+  );
 }

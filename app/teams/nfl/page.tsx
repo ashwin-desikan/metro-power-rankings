@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllFranchises, monogramFor, TITLE_COLORS } from "@/lib/nfl";
+import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, TITLE_COLORS } from "@/lib/nfl";
+import TopGamesTable from "./TopGamesTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -71,6 +72,7 @@ export default function NflIndexPage() {
       <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))" }}>
         {franchises.map((f) => {
           const mono = monogramFor(f.slug);
+          const logo = logoUrlFor(f.slug);
           return (
             <Link
               key={f.slug}
@@ -81,13 +83,21 @@ export default function NflIndexPage() {
                 borderColor: "var(--border)",
               }}
             >
-              <div
-                className="w-11 h-11 rounded-full grid place-items-center font-bold flex-shrink-0"
-                style={{ background: mono.bg, color: mono.fg, fontSize: "13px", letterSpacing: "-0.02em" }}
-                aria-hidden
-              >
-                {mono.mono}
-              </div>
+              {logo ? (
+                <img
+                  src={logo}
+                  alt={`${f.name} logo`}
+                  className="w-11 h-11 flex-shrink-0 object-contain"
+                />
+              ) : (
+                <div
+                  className="w-11 h-11 rounded-full grid place-items-center font-bold flex-shrink-0"
+                  style={{ background: mono.bg, color: mono.fg, fontSize: "13px", letterSpacing: "-0.02em" }}
+                  aria-hidden
+                >
+                  {mono.mono}
+                </div>
+              )}
               <div className="min-w-0 flex-1">
                 <div className="font-semibold text-sm leading-tight">{f.name}</div>
                 <div className="text-[11px] text-[var(--text-muted)] mt-0.5">
@@ -122,6 +132,8 @@ export default function NflIndexPage() {
           );
         })}
       </div>
+
+      <TopGamesTable allTime={getTopGamesAllTime()} byDecade={getTopGamesByDecade()} />
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <a href="/methodology" className="hover:text-[var(--text-muted)]">methodology</a>.

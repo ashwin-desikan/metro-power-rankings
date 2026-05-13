@@ -56,10 +56,10 @@ const RELEASES: Release[] = [
     date: "2026-05-12",
     headline: "NFL team pages with championships, awards, and the Pottsville asterisk",
     items: [
-      "Every NFL franchise has its own page at /teams/nfl/[slug] with color-coded championship chips, all-time record, stadium history, award winners, Hall of Famers, and a season table.",
-      "League index at /teams/nfl sorts the 32 active franchises by titles, with metro links back to the rankings.",
-      "Defunct franchises live at /teams/nfl/historical, including the Pottsville Maroons' 1925 stolen championship with the Carr-suspension story.",
-      "Team names on metro pages now link to the new team pages for NFL clubs.",
+      "Every NFL franchise has its own page at /teams/nfl/[slug] with color-coded championship chips, championship appearances, all-time record, stadium history, and award winners.",
+      "Top 12 games per franchise and a top 50 of all-time list at /teams/nfl, ranked by the site's DU Game Score with a decade filter.",
+      "Defunct franchises live at /teams/nfl/historical, including the Pottsville Maroons' 1925 stolen championship.",
+      "New Sports menu in the top nav; Data and Articles dropdowns now work properly on touch.",
     ],
   },
   {

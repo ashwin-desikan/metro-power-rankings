@@ -282,7 +282,9 @@ def read_year_by_year(wb):
         pa = safe_int(row[10])
         playoff_y = safe_str(row[11])
         div_title_y = safe_str(row[12])
-        # T (col 19) = Champs Y/blank
+        # R (17) = CF App, S (18) = Cham App, T (19) = Champs (Y/blank)
+        cf_app_y = safe_str(row[17])
+        cham_app_y = safe_str(row[18])
         champ_y = safe_str(row[19])
         # U (20) division, V (21) place
         division = safe_str(row[20])
@@ -305,6 +307,8 @@ def read_year_by_year(wb):
             "pf": pf, "pa": pa,
             "playoff_appearance": playoff_y == "Y",
             "division_title": div_title_y == "Y",
+            "conference_final": cf_app_y == "Y",
+            "championship_appearance": cham_app_y == "Y",
             "championship": champ_y == "Y",
             "division": division,
             "place": place,
@@ -436,6 +440,126 @@ def read_hall_of_fame(wb):
     return by_team
 
 
+def read_top_games(wb):
+    """
+    Regular Season sheet: 36,391 rows (2 per game), 142 cols. Extract game-level
+    metadata + DU Game Score (column index 124). Dedupe by Game ID (EE = col 134)
+    so each game appears once league-wide, but ALSO keep per-team variants so a
+    franchise page can show the game from that team's perspective.
+
+    Returns:
+      games: list of dicts, one per game (deduped by EE), with both teams labeled
+      by_team_canonical: dict[canonical_name] -> list of game dicts, this-team
+        perspective preserved (W/L from this team's row)
+    """
+    ws = wb["Regular Season"]
+    # Column indices (0-based) from Claude Notes section 3:
+    #   A=0 League, B=1 Season(Year), D=3 Week, E=4 Reg/Play, F=5 Play.Type,
+    #   H=7 Date, K=10 City, L=11 Team, M=12 W/L/T,
+    #   O=14 OppCity, P=15 OppTeam, Q=16 PF, R=17 PA, S=18 OT,
+    #   T=19 Stadium era, U=20 StadArea, V=21 StadState, W=22 H/A
+    #   DK=114 Name (this canonical), DL=115 Opp canonical,
+    #   DU=124 Game Score (refined), EE=134 GameID
+    IDX = dict(league=0, year=1, week=3, regplay=4, ptype=5, date=7,
+               city=10, team=11, result=12, opp_city=14, opp_team=15,
+               pf=16, pa=17, ot=18, stadium=19, ha=22,
+               dk=114, dl=115, du=124, ee=134)
+    seen_game_ids = set()
+    all_games = []
+    by_team = defaultdict(list)
+
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        # Skip rows with no DU score (incomplete / projection rows).
+        if len(row) <= IDX["du"]:
+            continue
+        du = row[IDX["du"]]
+        if du is None or du == "":
+            continue
+        try:
+            du_val = float(du)
+        except (ValueError, TypeError):
+            continue
+        # Pull all the fields we need.
+        year = safe_int(row[IDX["year"]], None)
+        if year is None:
+            continue
+        week = row[IDX["week"]] if len(row) > IDX["week"] else None
+        regplay = safe_str(row[IDX["regplay"]])
+        ptype = safe_str(row[IDX["ptype"]])
+        city = safe_str(row[IDX["city"]])
+        team = safe_str(row[IDX["team"]])
+        result = safe_str(row[IDX["result"]])  # W / L / T
+        opp_city = safe_str(row[IDX["opp_city"]])
+        opp_team = safe_str(row[IDX["opp_team"]])
+        pf = safe_int(row[IDX["pf"]])
+        pa = safe_int(row[IDX["pa"]])
+        ot = safe_str(row[IDX["ot"]])
+        stadium = safe_str(row[IDX["stadium"]])
+        ha = safe_str(row[IDX["ha"]])
+        dk = safe_str(row[IDX["dk"]]) if len(row) > IDX["dk"] else ""
+        dl = safe_str(row[IDX["dl"]]) if len(row) > IDX["dl"] else ""
+        ee = safe_str(row[IDX["ee"]]) if len(row) > IDX["ee"] else ""
+
+        # This-team-perspective row (always captured for the franchise page).
+        if dk:
+            by_team[dk].append({
+                "year": year,
+                "week": week if isinstance(week, (int, float)) else None,
+                "round": ptype or regplay,
+                "team_city": city, "team": team, "team_canonical": dk,
+                "opp_city": opp_city, "opp_team": opp_team, "opp_canonical": dl,
+                "pf": pf, "pa": pa,
+                "result": result,
+                "ot": ot == "OT",
+                "stadium": stadium,
+                "is_home": ha == "vs",
+                "du": round(du_val, 4),
+            })
+
+        # League-wide dedupe. EE = Date & this-team & opp, which is not
+        # symmetric across the two rows of the same game (one row has
+        # date+A+B, the other date+B+A). Build a symmetric key instead.
+        date_val = row[IDX["date"]] if len(row) > IDX["date"] else None
+        sym_key = f"{date_val}|{min(dk, dl)}|{max(dk, dl)}" if dk and dl else None
+        if sym_key and sym_key in seen_game_ids:
+            continue
+        if sym_key:
+            seen_game_ids.add(sym_key)
+        # Determine winner (canonical name) for the league-wide row
+        if result == "W":
+            winner_canonical, loser_canonical = dk, dl
+            winner_city, winner_team = city, team
+            loser_city, loser_team = opp_city, opp_team
+            winner_pf, loser_pa = pf, pa
+        elif result == "L":
+            winner_canonical, loser_canonical = dl, dk
+            winner_city, winner_team = opp_city, opp_team
+            loser_city, loser_team = city, team
+            winner_pf, loser_pa = pa, pf
+        else:
+            # Tie: arbitrary "team A / team B" naming
+            winner_canonical, loser_canonical = dk, dl
+            winner_city, winner_team = city, team
+            loser_city, loser_team = opp_city, opp_team
+            winner_pf, loser_pa = pf, pa
+
+        all_games.append({
+            "year": year,
+            "week": week if isinstance(week, (int, float)) else None,
+            "round": ptype or regplay,
+            "winner_city": winner_city, "winner_team": winner_team, "winner_canonical": winner_canonical,
+            "loser_city": loser_city, "loser_team": loser_team, "loser_canonical": loser_canonical,
+            "winner_score": winner_pf,
+            "loser_score": loser_pa,
+            "ot": ot == "OT",
+            "is_tie": result == "T",
+            "stadium": stadium,
+            "du": round(du_val, 4),
+        })
+
+    return all_games, by_team
+
+
 def read_pro_bowl_counts(wb):
     """
     Pro Bowl: count selections per canonical franchise (col O Name).
@@ -544,6 +668,29 @@ def build_championships(year_by_year):
     return {k: sorted(v, key=lambda r: r["year"]) for k, v in out.items()}
 
 
+def build_championship_appearances(year_by_year):
+    """
+    Per-franchise list of championship-game appearances (won OR lost),
+    with era flag and an 'is_winner' boolean. Mirrors build_championships
+    in shape so the renderer can iterate either list with the same colors.
+    """
+    out = defaultdict(list)
+    for canonical, seasons in year_by_year.items():
+        for s in seasons:
+            if s["championship_appearance"] or s["championship"]:
+                era = "sb" if s["year"] >= 1966 else "pre_sb"
+                out[canonical].append({
+                    "year": s["year"],
+                    "era": era,
+                    "league": s["league"],
+                    "is_winner": s["championship"],
+                    "record": f"{s['w']}-{s['l']}-{s['t']}",
+                    "season_city": s["city"],
+                    "season_team": s["team_historical"],
+                })
+    return {k: sorted(v, key=lambda r: r["year"]) for k, v in out.items()}
+
+
 def build_historical(totals):
     """Defunct franchises for /teams/nfl/historical."""
     rows = []
@@ -567,6 +714,34 @@ def build_historical(totals):
     return rows
 
 
+def build_top_games_by_team(by_team, franchises, top_n=12):
+    """For each active franchise (slug-keyed), return top N games by DU score
+    from that team's perspective."""
+    out = {}
+    for f in franchises:
+        canonical = f["canonical"]
+        rows = sorted(by_team.get(canonical, []), key=lambda g: -g["du"])[:top_n]
+        out[f["slug"]] = rows
+    return out
+
+
+def build_top_games_all_time(all_games, top_n=50):
+    """Top N games across the league by DU score, deduped by GameID."""
+    return sorted(all_games, key=lambda g: -g["du"])[:top_n]
+
+
+def build_top_games_by_decade(all_games, top_n_per_decade=10):
+    """Top N games per decade. 1920s bucket = years 1920-1929, etc."""
+    by_decade = defaultdict(list)
+    for g in all_games:
+        decade = (g["year"] // 10) * 10
+        by_decade[decade].append(g)
+    out = {}
+    for decade, games in by_decade.items():
+        out[str(decade)] = sorted(games, key=lambda g: -g["du"])[:top_n_per_decade]
+    return out
+
+
 def build_historical_championships(year_by_year, totals):
     """Championship years for defunct franchises with stolen-title flagging."""
     out = defaultdict(list)
@@ -586,7 +761,6 @@ def build_historical_championships(year_by_year, totals):
                     entry["stolen"] = True
                     entry["stolen_note"] = STOLEN_TITLES[stolen_key]
                 out[canonical].append(entry)
-        # Even if no championship rows captured via Year by Year, allow stolen flag injection
         for (sname, syear), note in STOLEN_TITLES.items():
             if sname == canonical and not any(e["year"] == syear for e in out[canonical]):
                 out[canonical].append({
@@ -594,8 +768,6 @@ def build_historical_championships(year_by_year, totals):
                 })
     return {k: sorted(v, key=lambda r: r["year"]) for k, v in out.items()}
 
-
-# -------- Main --------
 
 def main():
     src = find_source_xlsx(sys.argv)
@@ -631,6 +803,10 @@ def main():
     pb_counts = read_pro_bowl_counts(wb)
     print(f"  {sum(pb_counts.values())} total selections across {len(pb_counts)} teams")
 
+    print("Reading Regular Season top games (DU score)...")
+    all_games, games_by_team_canonical = read_top_games(wb)
+    print(f"  {len(all_games)} unique games scored, {len(games_by_team_canonical)} franchises with game data")
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     franchises = build_franchises(lookup, totals, yby)
@@ -640,9 +816,11 @@ def main():
     champs = build_championships(yby)
     (OUT_DIR / "championships.json").write_text(json.dumps(champs, indent=2, ensure_ascii=False))
 
+    champ_apps = build_championship_appearances(yby)
+    (OUT_DIR / "championship-appearances.json").write_text(json.dumps(champ_apps, indent=2, ensure_ascii=False))
+
     (OUT_DIR / "stadium-history.json").write_text(json.dumps(stadiums, indent=2, ensure_ascii=False))
 
-    # Awards by team: convert defaultdict to plain dict for json
     awards_plain = {team: dict(awards_by_type) for team, awards_by_type in awards.items()}
     (OUT_DIR / "award-winners.json").write_text(json.dumps(awards_plain, indent=2, ensure_ascii=False))
 
@@ -655,7 +833,6 @@ def main():
 
     (OUT_DIR / "hall-of-fame.json").write_text(json.dumps(dict(hof), indent=2, ensure_ascii=False))
 
-    # Per-franchise season-by-season rows (active 32 only for v1)
     active_canonicals = {f["canonical"]: f["slug"] for f in franchises}
     seasons_out = {}
     for canonical, slug in active_canonicals.items():
@@ -669,6 +846,8 @@ def main():
                 "division": r["division"], "place": r["place"],
                 "playoff": r["playoff_appearance"],
                 "div_title": r["division_title"],
+                "conf_final": r["conference_final"],
+                "champ_app": r["championship_appearance"],
                 "champ": r["championship"],
             }
             for r in rows
@@ -677,19 +856,16 @@ def main():
 
     (OUT_DIR / "pro-bowl-counts.json").write_text(json.dumps(pb_counts, indent=2, ensure_ascii=False))
 
-    # Light summary for the build log
-    print("\nWrote:")
-    for f in sorted(OUT_DIR.glob("*.json")):
-        print(f"  {f.relative_to(REPO_ROOT)}  ({f.stat().st_size:,} bytes)")
+    # Top Games (DU Game Score)
+    top_by_team = build_top_games_by_team(games_by_team_canonical, franchises, top_n=12)
+    (OUT_DIR / "top-games-by-team.json").write_text(json.dumps(top_by_team, indent=2, ensure_ascii=False))
 
+    top_all_time = build_top_games_all_time(all_games, top_n=50)
+    (OUT_DIR / "top-games-all-time.json").write_text(json.dumps(top_all_time, indent=2, ensure_ascii=False))
 
-if __name__ == "__main__":
-    main()
-eam.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False))
+    top_by_decade = build_top_games_by_decade(all_games, top_n_per_decade=10)
+    (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False))
 
-    (OUT_DIR / "pro-bowl-counts.json").write_text(json.dumps(pb_counts, indent=2, ensure_ascii=False))
-
-    # Light summary for the build log
     print("\nWrote:")
     for f in sorted(OUT_DIR.glob("*.json")):
         print(f"  {f.relative_to(REPO_ROOT)}  ({f.stat().st_size:,} bytes)")

@@ -3,7 +3,7 @@
 // NFL_all.xlsx (canonical schema documented in the workbook's Claude Notes
 // sheet). Server-only — uses fs.readFileSync.
 
-import { readFileSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 
 // ---------- Types ----------
@@ -56,6 +56,16 @@ export type Championship = {
   stolen_note?: string;
 };
 
+export type ChampionshipAppearance = {
+  year: number;
+  era: "pre_sb" | "sb";
+  league?: string;
+  is_winner: boolean;
+  record?: string;
+  season_city?: string;
+  season_team?: string;
+};
+
 export type StadiumEra = {
   era_name: string;
   first_year: number | null;
@@ -95,7 +105,46 @@ export type Season = {
   division: string; place: string;
   playoff: boolean;
   div_title: boolean;
+  conf_final: boolean;
+  champ_app: boolean;
   champ: boolean;
+};
+
+export type TopGameTeamRow = {
+  year: number;
+  week: number | null;
+  round: string;
+  team_city: string;
+  team: string;
+  team_canonical: string;
+  opp_city: string;
+  opp_team: string;
+  opp_canonical: string;
+  pf: number;
+  pa: number;
+  result: "W" | "L" | "T" | "";
+  ot: boolean;
+  stadium: string;
+  is_home: boolean;
+  du: number;
+};
+
+export type TopGameLeagueRow = {
+  year: number;
+  week: number | null;
+  round: string;
+  winner_city: string;
+  winner_team: string;
+  winner_canonical: string;
+  loser_city: string;
+  loser_team: string;
+  loser_canonical: string;
+  winner_score: number;
+  loser_score: number;
+  ot: boolean;
+  is_tie: boolean;
+  stadium: string;
+  du: number;
 };
 
 export type HistoricalFranchise = {
@@ -115,6 +164,7 @@ let _franchises: Franchise[] | null = null;
 let _bySlug: Map<string, Franchise> | null = null;
 let _byCanonical: Map<string, Franchise> | null = null;
 let _championships: Record<string, Championship[]> | null = null;
+let _champAppearances: Record<string, ChampionshipAppearance[]> | null = null;
 let _stadiumHistory: Record<string, StadiumBuilding[]> | null = null;
 let _awards: Record<string, Record<string, AwardWinner[]>> | null = null;
 let _hof: Record<string, HallOfFamer[]> | null = null;
@@ -122,6 +172,9 @@ let _seasons: Record<string, Season[]> | null = null;
 let _historical: HistoricalFranchise[] | null = null;
 let _historicalChamps: Record<string, Championship[]> | null = null;
 let _proBowlCounts: Record<string, number> | null = null;
+let _topGamesByTeam: Record<string, TopGameTeamRow[]> | null = null;
+let _topGamesAllTime: TopGameLeagueRow[] | null = null;
+let _topGamesByDecade: Record<string, TopGameLeagueRow[]> | null = null;
 
 function read<T>(filename: string): T {
   const path = join(process.cwd(), "public", "data", "nfl", filename);
@@ -174,6 +227,11 @@ export function getChampionships(canonical: string): Championship[] {
   return _championships[canonical] || [];
 }
 
+export function getChampionshipAppearances(canonical: string): ChampionshipAppearance[] {
+  if (!_champAppearances) _champAppearances = read<Record<string, ChampionshipAppearance[]>>("championship-appearances.json");
+  return _champAppearances[canonical] || [];
+}
+
 export function getStadiumHistory(canonical: string): StadiumBuilding[] {
   if (!_stadiumHistory) _stadiumHistory = read<Record<string, StadiumBuilding[]>>("stadium-history.json");
   return _stadiumHistory[canonical] || [];
@@ -192,6 +250,21 @@ export function getHallOfFamers(canonical: string): HallOfFamer[] {
 export function getSeasons(slug: string): Season[] {
   if (!_seasons) _seasons = read<Record<string, Season[]>>("seasons-by-team.json");
   return _seasons[slug] || [];
+}
+
+export function getTopGamesForTeam(slug: string): TopGameTeamRow[] {
+  if (!_topGamesByTeam) _topGamesByTeam = read<Record<string, TopGameTeamRow[]>>("top-games-by-team.json");
+  return _topGamesByTeam[slug] || [];
+}
+
+export function getTopGamesAllTime(): TopGameLeagueRow[] {
+  if (!_topGamesAllTime) _topGamesAllTime = read<TopGameLeagueRow[]>("top-games-all-time.json");
+  return _topGamesAllTime;
+}
+
+export function getTopGamesByDecade(): Record<string, TopGameLeagueRow[]> {
+  if (!_topGamesByDecade) _topGamesByDecade = read<Record<string, TopGameLeagueRow[]>>("top-games-by-decade.json");
+  return _topGamesByDecade;
 }
 
 export function getProBowlCount(canonical: string): number {
@@ -247,6 +320,7 @@ export const MONOGRAM_BY_SLUG: Record<string, { bg: string; fg: string; mono: st
   "new-york-jets":          { bg: "#125740", fg: "#ffffff", mono: "NYJ" },
   "cleveland-browns":       { bg: "#311D00", fg: "#FF3C00", mono: "CLE" },
   "tennessee-titans":       { bg: "#0C2340", fg: "#4B92DB", mono: "TEN" },
+  "atlanta-falcons":        { bg: "#A71930", fg: "#ffffff", mono: "ATL" },
   "arizona-cardinals":      { bg: "#97233F", fg: "#ffffff", mono: "ARI" },
   "los-angeles-chargers":   { bg: "#0080C6", fg: "#FFC20E", mono: "LAC" },
   "detroit-lions":          { bg: "#0076B6", fg: "#B0B7BC", mono: "DET" },
@@ -257,4 +331,17 @@ export const MONOGRAM_BY_SLUG: Record<string, { bg: string; fg: string; mono: st
 
 export function monogramFor(slug: string): { bg: string; fg: string; mono: string } {
   return MONOGRAM_BY_SLUG[slug] || { bg: "#1E1E2E", fg: "#E8E8ED", mono: "NFL" };
+}
+
+export function logoUrlFor(slug: string): string | null {
+  const candidates = [
+    `public/data/nfl/logos/${slug}.svg`,
+    `public/data/nfl/logos/${slug}.png`,
+  ];
+  for (const rel of candidates) {
+    if (existsSync(join(process.cwd(), rel))) {
+      return "/" + rel.replace(/^public\//, "");
+    }
+  }
+  return null;
 }
