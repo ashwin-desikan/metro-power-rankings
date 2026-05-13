@@ -1871,3 +1871,25 @@ function hasStatsToShow(detail: any): boolean {
   ];
   return statsToCheck.some((stat) => stat && stat > 0);
 }
+
+function formatDimensionName(key: string): string {
+  const names: Record<string, string> = {
+    majorLeagueTeams: "Major League Teams/Venues",
+    totalTeams: "Total Teams",
+    majorSportingEvents: "Major Sporting Events",
+    companies: "Major Companies",
+    marketCap: "Market Cap Score",
+    culturalEvents: "Cultural Events",
+    universities: "Universities",
+    topUniHospResearch: "Top Universities, Hospitals, & Research",
+    museumsLandmarks: "Notable Museums & Landmarks",
+    portsExchangesInfra: "Ports, Exchanges & Infrastructure",
+    airportScore: "Airport Score",
+    luxuryStars: "Luxury Stars (Michelin)",
+    metroStations: "Metro Stations",
+    suburbStations: "Commuter Rail Stations",
+    trainHubs: "Train Hubs",
+    skyscrapers: "Skyscrapers",
+  };
+  return names[key] || key.replace(/([A-Z])/g, " $1").trim();
+}
