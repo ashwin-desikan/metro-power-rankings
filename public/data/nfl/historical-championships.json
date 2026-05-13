@@ -24,14 +24,6 @@
       "season_team": "Bulldogs"
     }
   ],
-  "Maroons": [
-    {
-      "year": 1925,
-      "era": "pre_sb",
-      "stolen": true,
-      "stolen_note": "Won on the field; stripped after a Notre Dame All-Stars exhibition in Frankford's territory. Pete Rozelle reviewed in 1963 and 1972. NFL owners voted 30-2 in 2003 to leave the title with the Cardinals. The Maroons faithful have never accepted it."
-    }
-  ],
   "Wolverines": [
     {
       "year": 1924,
@@ -57,6 +49,14 @@
       "league": "NFL",
       "season_city": "Providence",
       "season_team": "Steam Roller"
+    }
+  ],
+  "Bulldogs (Boston)": [
+    {
+      "year": 1925,
+      "era": "pre_sb",
+      "stolen": true,
+      "stolen_note": "Pottsville finished 1925 at 10-2 and beat the Chicago Cardinals 21-7 in the de facto championship game. Six days later they played a Notre Dame All-Stars exhibition at Shibe Park inside the Frankford Yellow Jackets' protected territory and were suspended. The Cardinals padded their record against two dissolved teams and were awarded the title. Pete Rozelle reviewed in 1963 and 1972. NFL owners voted 30-2 in 2003 to leave the title with the Cardinals. Pottsville faithful have never accepted it."
     }
   ]
 }

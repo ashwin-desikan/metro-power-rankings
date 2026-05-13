@@ -156,8 +156,16 @@ export type HistoricalFranchise = {
   team_historical: string;
   league: string;
   seasons: number;
+  // Active range, derived in the ETL from the per-team Year-by-Year rows.
+  // null when no season data is present (rare).
+  first_year: number | null;
+  last_year: number | null;
   w: number; l: number; t: number; win_pct: number;
   championships: number;
+  // 1 if this franchise has any stolen-title entry in historical-championships
+  // (currently only Bulldogs (Boston) 1925). Used as the secondary sort key
+  // so a stolen-title row lifts into the champions tier.
+  stolen_championships: number;
 };
 
 // ---------- Loaders (memoized) ----------

@@ -65,13 +65,29 @@ DEFAULT_SOURCE_CANDIDATES = [
 
 OUT_DIR = REPO_ROOT / "public" / "data" / "nfl"
 
-# Stolen-championship editorial flag for Pottsville Maroons 1925.
-# Documented at the /teams/nfl/historical page; see scope memory.
+# Stolen-championship editorial flag for the 1925 Pottsville Maroons season.
+# The Pottsville Maroons / Boston Bulldogs lineage is one franchise in the
+# workbook with canonical name "Bulldogs (Boston)" (Pottsville 1925-28, Boston
+# 1929). The separate canonical "Maroons" is the Toledo/Kenosha franchise
+# (1922-24) that folded before Pottsville existed. Attach the stolen title
+# to the Pottsville lineage, not the Toledo/Kenosha one.
 STOLEN_TITLES = {
-    ("Maroons", 1925): "Won on the field; stripped after a Notre Dame All-Stars exhibition in "
-                       "Frankford's territory. Pete Rozelle reviewed in 1963 and 1972. "
-                       "NFL owners voted 30-2 in 2003 to leave the title with the Cardinals. "
-                       "The Maroons faithful have never accepted it.",
+    ("Bulldogs (Boston)", 1925):
+        "Pottsville finished 1925 at 10-2 and beat the Chicago Cardinals 21-7 in the de facto "
+        "championship game. Six days later they played a Notre Dame All-Stars exhibition at Shibe "
+        "Park inside the Frankford Yellow Jackets' protected territory and were suspended. The "
+        "Cardinals padded their record against two dissolved teams and were awarded the title. "
+        "Pete Rozelle reviewed in 1963 and 1972. NFL owners voted 30-2 in 2003 to leave the title "
+        "with the Cardinals. Pottsville faithful have never accepted it.",
+}
+
+# Editorial overrides for city_history. The workbook's Totals row for the
+# Toledo/Kenosha Maroons franchise erroneously includes "Pottsville/Boston"
+# in its city list; those cities belong to the separate Bulldogs (Boston)
+# franchise. Apply override at ETL time rather than asking the user to
+# touch the source workbook.
+CITY_HISTORY_OVERRIDES = {
+    "Maroons": "Toledo/Kenosha",
 }
 
 
@@ -707,26 +723,48 @@ def build_championship_appearances(year_by_year):
     return {k: sorted(v, key=lambda r: r["year"]) for k, v in out.items()}
 
 
-def build_historical(totals):
-    """Defunct franchises for /teams/nfl/historical."""
+def build_historical(totals, year_by_year):
+    """Defunct franchises for /teams/nfl/historical.
+
+    Adds first_year and last_year computed from Year-by-Year so the page
+    can show a true active-range column and sort on it. Also applies any
+    CITY_HISTORY_OVERRIDES, and marks any franchise that has a stolen
+    championship entry so the page can lift it into the champions tier
+    of the default sort.
+    """
+    stolen_by_canon = {canon for (canon, _yr) in STOLEN_TITLES.keys()}
     rows = []
     for canonical, tot in totals.items():
         if tot["is_current"]:
             continue
+        seasons = year_by_year.get(canonical, [])
+        years = [s["year"] for s in seasons if s.get("year")]
+        first_year = min(years) if years else None
+        last_year = max(years) if years else None
+        city = CITY_HISTORY_OVERRIDES.get(canonical, tot["city_history"])
         rows.append({
             "canonical": canonical,
             "name": canonical,
-            "city": tot["city_history"],
+            "city": city,
             "team_historical": tot["team_history"],
             "league": tot["league"],
             "seasons": tot["seasons"],
+            "first_year": first_year,
+            "last_year": last_year,
             "w": tot["all_time_w"],
             "l": tot["all_time_l"],
             "t": tot["all_time_t"],
             "win_pct": round(tot["win_pct"], 4),
             "championships": tot["championships"],
+            "stolen_championships": 1 if canonical in stolen_by_canon else 0,
         })
-    rows.sort(key=lambda r: (-r["championships"], r["city"] or ""))
+    # Default sort: real championships desc, then any row with a stolen
+    # title (sits just below the champion tier), then by city.
+    rows.sort(key=lambda r: (
+        -r["championships"],
+        -r["stolen_championships"],
+        r["city"] or "",
+    ))
     return rows
 
 
@@ -840,51 +878,6 @@ def main():
     awards_plain = {team: dict(awards_by_type) for team, awards_by_type in awards.items()}
     (OUT_DIR / "award-winners.json").write_text(json.dumps(awards_plain, indent=2, ensure_ascii=False))
 
-    historical = build_historical(totals)
+    historical = build_historical(totals, yby)
     print(f"Built historical: {len(historical)}")
-    (OUT_DIR / "historical.json").write_text(json.dumps(historical, indent=2, ensure_ascii=False))
-
-    hist_champs = build_historical_championships(yby, totals)
-    (OUT_DIR / "historical-championships.json").write_text(json.dumps(hist_champs, indent=2, ensure_ascii=False))
-
-    (OUT_DIR / "hall-of-fame.json").write_text(json.dumps(dict(hof), indent=2, ensure_ascii=False))
-
-    active_canonicals = {f["canonical"]: f["slug"] for f in franchises}
-    seasons_out = {}
-    for canonical, slug in active_canonicals.items():
-        rows = yby.get(canonical, [])
-        seasons_out[slug] = [
-            {
-                "year": r["year"], "league": r["league"], "city": r["city"],
-                "team": r["team_historical"],
-                "w": r["w"], "l": r["l"], "t": r["t"], "win_pct": round(r["win_pct"], 4),
-                "pf": r["pf"], "pa": r["pa"],
-                "division": r["division"], "place": r["place"],
-                "playoff": r["playoff_appearance"],
-                "div_title": r["division_title"],
-                "conf_final": r["conference_final"],
-                "champ_app": r["championship_appearance"],
-                "champ": r["championship"],
-            }
-            for r in rows
-    (OUT_DIR / "seasons-by-team.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False))
-
-    (OUT_DIR / "pro-bowl-counts.json").write_text(json.dumps(pb_counts, indent=2, ensure_ascii=False))
-
-    # Top Games (DU Game Score)
-    top_by_team = build_top_games_by_team(games_by_team_canonical, franchises, top_n=12)
-    (OUT_DIR / "top-games-by-team.json").write_text(json.dumps(top_by_team, indent=2, ensure_ascii=False))
-
-    top_all_time = build_top_games_all_time(all_games, top_n=50)
-    (OUT_DIR / "top-games-all-time.json").write_text(json.dumps(top_all_time, indent=2, ensure_ascii=False))
-
-    top_by_decade = build_top_games_by_decade(all_games, top_n_per_decade=10)
-    (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False))
-
-    print("\nWrote:")
-    for f in sorted(OUT_DIR.glob("*.json")):
-        print(f"  {f.relative_to(REPO_ROOT)}  ({f.stat().st_size:,} bytes)")
-
-
-if __name__ == "__main__":
-    main()
+    (OUT_DIR / "historical.json").write_text(json.d

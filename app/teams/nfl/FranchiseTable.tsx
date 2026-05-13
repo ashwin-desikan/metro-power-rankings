@@ -119,7 +119,7 @@ export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) 
                 </td>
                 <td className="py-2.5 pr-3 text-[var(--text-muted)]">
                   {f.metro_slug ? (
-                    <Link href={`/metros/${f.metro_slug}`} className="hover:text-[var(--accent)] transition-colors">
+                    <Link href={`/rankings/${f.metro_slug}`} className="hover:text-[var(--accent)] transition-colors">
                       {f.metro}
                     </Link>
                   ) : (

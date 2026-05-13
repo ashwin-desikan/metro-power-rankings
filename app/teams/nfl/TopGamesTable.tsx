@@ -86,7 +86,9 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
               >
                 <td className="py-2 pr-3 text-[var(--text-muted)]">{i + 1}</td>
                 <td className="py-2 pr-3 whitespace-nowrap">{g.date ?? g.year}</td>
-                <td className="py-2 pr-3 text-[var(--text-muted)]">{g.round}{g.ot ? " · OT" : ""}</td>
+                <td className="py-2 pr-3 text-[var(--text-muted)]">
+                  {g.year}{g.round ? ` ${g.round}` : ""}{g.ot ? " · OT" : ""}
+                </td>
                 <td className="py-2 pr-3 font-semibold">
                   {g.winner_city} {g.winner_team}
                 </td>

@@ -25,8 +25,7 @@ const ITEMS: Item[] = [
   { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Data' },
   { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Data' },
 
-  { href: '/teams/nfl', label: 'NFL', hint: 'All 32 active franchises ranked by titles', group: 'Sports' },
-  { href: '/teams/nfl/historical', label: 'NFL · Historical', hint: 'Defunct franchises and the Pottsville asterisk', group: 'Sports' },
+  { href: '/teams/nfl', label: 'NFL', hint: 'All 32 active franchises; defunct franchises link from inside', group: 'Sports' },
 
   {
     href: 'https://citizenofnowhere.substack.com',

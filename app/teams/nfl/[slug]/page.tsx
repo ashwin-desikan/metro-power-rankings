@@ -344,7 +344,7 @@ export default async function FranchisePage({ params }: Props) {
                       <td className="py-2 pr-3 text-[var(--text-muted)]">{i + 1}</td>
                       <td className="py-2 pr-3 whitespace-nowrap">{g.date ?? g.year}</td>
                       <td className="py-2 pr-3 text-[var(--text-muted)]">
-                        {g.round}{g.week ? ` · Wk ${g.week}` : null}
+                        {g.year}{g.round ? ` ${g.round}` : ""}{g.week ? ` · Wk ${g.week}` : ""}
                       </td>
                       <td className="py-2 pr-3">
                         <span
