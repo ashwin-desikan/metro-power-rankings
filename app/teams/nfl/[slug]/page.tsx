@@ -97,19 +97,24 @@ export default async function FranchisePage({ params }: Props) {
   const mono = monogramFor(f.slug);
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
-  // Live current-season standings from ESPN. Async + ISR-cached via Next.
-  // Used ONLY to prepend an in-progress row to the Season-by-season table
-  // once regular-season games have been played. Anything that happens
-  // earlier (offseason, preseason, ESPN unreachable) is hidden entirely:
-  // the team page surfaces nothing about the current year until games
-  // have actually been played. The workbook absorbs the season after it
-  // wraps and the live row is replaced on the next ETL pass.
+  // Live current-season standings from ESPN. Gate logic:
+  //   1. ESPN must return a standings row for this franchise.
+  //   2. That row must have games_played > 0 (so preseason rosters with 0-0
+  //      records don't surface).
+  //   3. ESPN's season.year must equal the current calendar year, so we
+  //      never confuse last year's final standings (already in the workbook)
+  //      with this year's in-progress data during transitions.
+  //
+  // We intentionally do NOT gate on season_type. ESPN occasionally still
+  // flags games as preseason/postseason during transitions; games_played
+  // is the truth source.
   const standings = await getCurrentNflStandings();
   const liveStanding = standings.by_canonical[f.canonical];
+  const currentYear = new Date().getFullYear();
   const showLiveRow =
     !!liveStanding &&
-    (standings.season_type === "regular" || standings.season_type === "postseason") &&
-    liveStanding.games_played > 0;
+    liveStanding.games_played > 0 &&
+    standings.season_year === currentYear;
   const liveSeasonRow: (Season & { is_live: true }) | null = showLiveRow
     ? {
         year: standings.season_year,
@@ -132,12 +137,15 @@ export default async function FranchisePage({ params }: Props) {
         is_live: true,
       }
     : null;
+  const isEmptyRow = (s: Season): boolean =>
+    s.w === 0 && s.l === 0 && s.t === 0 && !s.playoff && !s.div_title && !s.champ && !s.champ_app;
+  const workbookReversed = [...seasons].reverse();
   const seasonRows: Array<Season & { is_live?: true }> = liveSeasonRow
-    ? [liveSeasonRow, ...[...seasons].reverse()]
-    : [...seasons].reverse();
+    ? [liveSeasonRow, ...workbookReversed.filter((r) => !(r.year === liveSeasonRow.year && isEmptyRow(r)))]
+    : workbookReversed.filter((r) => !(r.year >= currentYear && isEmptyRow(r)));
   const seasonRangeEnd = liveSeasonRow
     ? liveSeasonRow.year
-    : seasons[seasons.length - 1]?.year ?? new Date().getFullYear() - 1;
+    : (seasonRows[0]?.year ?? new Date().getFullYear() - 1);
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -199,6 +207,36 @@ export default async function FranchisePage({ params }: Props) {
             <p className="text-xs text-[var(--text-muted)] mt-2 italic">
               Formerly based in {formerly}.
             </p>
+          )}
+          {(f.wikipedia_url || f.wikidata_qid) && (
+            <div className="flex flex-wrap gap-2 mt-3 text-[11px]">
+              {f.wikipedia_url && (
+                <a
+                  href={f.wikipedia_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+                  title={`Open this franchise on Wikipedia`}
+                >
+                  <span className="font-bold tracking-wider text-[10px]">W</span>
+                  <span>Wikipedia</span>
+                </a>
+              )}
+              {f.wikidata_qid && (
+                <a
+                  href={`https://www.wikidata.org/wiki/${f.wikidata_qid}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+                  title={`Open Wikidata entity ${f.wikidata_qid}`}
+                >
+                  <span className="font-bold tracking-wider text-[10px]">Q</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>{f.wikidata_qid}</span>
+                </a>
+              )}
+            </div>
           )}
         </div>
       </header>
@@ -338,35 +376,21 @@ export default async function FranchisePage({ params }: Props) {
         </Block>
       </div>
 
-      {/* Award winners */}
-      <Block
-        title="Award winners"
-        deck={`League-wide awards held by ${f.name} players or coaches. Pulled from the AP, Bert Bell, Walter Payton, and Super Bowl MVP rolls. Plus ${proBowlCount} Pro Bowl selections all-time.`}
-      >
-        <div className="grid gap-4 sm:grid-cols-2">
-          {AWARD_ORDER.map((awardKey) => {
-            const winners = awards[awardKey];
-            if (!winners || winners.length === 0) return null;
-            return (
-              <div key={awardKey}>
-                <h3 className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] font-semibold mb-1">
-                  {awardKey}
-                </h3>
-                <ul className="text-sm space-y-0.5">
-                  {winners.map((w, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-[var(--text-muted)] tabular-nums w-12 flex-shrink-0">{w.year}</span>
-                      <span>{w.player}{w.position ? <span className="text-[var(--text-muted)]"> · {w.position}</span> : null}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-          {/* Hall of Fame inductees temporarily suppressed; will return once
-              the data reconciliation pass completes. */}
+      {/* Season-by-season */}
+      <details className="mt-4 border rounded-xl" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <summary className="cursor-pointer px-5 py-4 font-semibold text-sm flex items-center justify-between">
+          <span>Season-by-season ({f.founding_year} to {seasonRangeEnd})</span>
+          <span className="text-[var(--text-muted)] text-xs">{seasonRows.length} seasons</span>
+        </summary>
+        <div className="px-5 pb-5">
+          <SeasonsByTeamTable
+            rows={seasonRows}
+            sourceLabel={standings.source_label || undefined}
+            week={standings.week}
+          />
         </div>
-      </Block>
+      </details>
+
 
       {/* Top games — ranked by DU Game Score */}
       <Block
@@ -494,20 +518,37 @@ export default async function FranchisePage({ params }: Props) {
         )}
       </Block>
 
-      {/* Season-by-season */}
-      <details className="mt-4 border rounded-xl" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-        <summary className="cursor-pointer px-5 py-4 font-semibold text-sm flex items-center justify-between">
-          <span>Season-by-season ({f.founding_year} to {seasonRangeEnd})</span>
-          <span className="text-[var(--text-muted)] text-xs">{seasonRows.length} seasons</span>
-        </summary>
-        <div className="px-5 pb-5">
-          <SeasonsByTeamTable
-            rows={seasonRows}
-            sourceLabel={standings.source_label || undefined}
-            week={standings.week}
-          />
+      {/* Award winners */}
+      <Block
+        title="Award winners"
+        deck={`League-wide awards held by ${f.name} players or coaches. Pulled from the AP, Bert Bell, Walter Payton, and Super Bowl MVP rolls. Plus ${proBowlCount} Pro Bowl selections all-time.`}
+      >
+        <div className="grid gap-4 sm:grid-cols-2">
+          {AWARD_ORDER.map((awardKey) => {
+            const winners = awards[awardKey];
+            if (!winners || winners.length === 0) return null;
+            return (
+              <div key={awardKey}>
+                <h3 className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] font-semibold mb-1">
+                  {awardKey}
+                </h3>
+                <ul className="text-sm space-y-0.5">
+                  {winners.map((w, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="text-[var(--text-muted)] tabular-nums w-12 flex-shrink-0">{w.year}</span>
+                      <span>{w.player}{w.position ? <span className="text-[var(--text-muted)]"> · {w.position}</span> : null}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+          {/* Hall of Fame inductees temporarily suppressed; will return once
+              the data reconciliation pass completes. */}
         </div>
-      </details>
+      </Block>
+
+
     </main>
   );
 }

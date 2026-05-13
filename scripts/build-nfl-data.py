@@ -65,6 +65,38 @@ DEFAULT_SOURCE_CANDIDATES = [
 
 OUT_DIR = REPO_ROOT / "public" / "data" / "nfl"
 
+
+def read_team_external_links():
+    """Load team-wikidata.tsv (at project root, shared across all leagues)
+    and return a dict keyed by display-name (e.g. "Buffalo Bills") ->
+    {"wikipedia_url", "wikidata_qid"}.
+
+    Match key for NFL is the display name = "{city} {team}", which matches
+    the TSV's column 0 directly (Buffalo Bills, Las Vegas Raiders, etc.).
+    Falls back to empty when the file is missing.
+    """
+    tsv_path = REPO_ROOT / "team-wikidata.tsv"
+    out = {}
+    if not tsv_path.exists():
+        print(f"  (note: {tsv_path.name} not found at project root; team Wikipedia/Wikidata links will be blank)")
+        return out
+    with tsv_path.open(encoding="utf-8") as fh:
+        for line in fh:
+            parts = line.rstrip("\r\n").split("\t")
+            if len(parts) < 3:
+                continue
+            team = parts[0].strip()
+            qid = parts[1].strip()
+            wiki = parts[2].strip()
+            if not team:
+                continue
+            out[team] = {
+                "wikipedia_url": wiki or None,
+                "wikidata_qid": qid or None,
+            }
+    return out
+
+
 # Stolen-championship editorial flag for the 1925 Pottsville Maroons season.
 # The Pottsville Maroons / Boston Bulldogs lineage is one franchise in the
 # workbook with canonical name "Bulldogs (Boston)" (Pottsville 1925-28, Boston
@@ -630,7 +662,7 @@ def read_pro_bowl_counts(wb):
 
 # -------- Output builders --------
 
-def build_franchises(lookup, totals, year_by_year):
+def build_franchises(lookup, totals, year_by_year, external_links):
     """
     Active 32 franchises. Combines Lookup (current city/team/metro/etc) with
     Totals (all-time stats). Slug = slugify(city + "-" + team).
@@ -669,6 +701,8 @@ def build_franchises(lookup, totals, year_by_year):
             "state": lk["state"],
             "founding_year": founding_year,
             "prior_cities": prior_cities,
+            "wikipedia_url": (external_links.get(f"{lk['city']} {lk['team']}") or {}).get("wikipedia_url"),
+            "wikidata_qid": (external_links.get(f"{lk['city']} {lk['team']}") or {}).get("wikidata_qid"),
             "championships": tot["championships"],
             "division_titles": tot["division_titles"],
             "playoff_appearances": tot["playoff_appearances"],
@@ -882,7 +916,11 @@ def main():
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    franchises = build_franchises(lookup, totals, yby)
+    print("Reading team-wikidata.tsv (Wikipedia/Wikidata cross-links)...")
+    external_links = read_team_external_links()
+    print(f"  {len(external_links)} teams with external links")
+
+    franchises = build_franchises(lookup, totals, yby, external_links)
     print(f"Built franchises: {len(franchises)}")
     (OUT_DIR / "franchises.json").write_text(json.dumps(franchises, indent=2, ensure_ascii=False))
 

@@ -27,6 +27,8 @@ export type Franchise = {
   stadium_season_name: string;
   founding_year: number;
   prior_cities: string[];
+  wikipedia_url?: string | null;
+  wikidata_qid?: string | null;
   championships: number;          // WS titles only
   pre_ws_championships: number;   // pre-1903 cups
   total_championships: number;    // sum

@@ -25,6 +25,8 @@ export type Franchise = {
   state: string;
   founding_year: number | null;
   prior_cities: string[];
+  wikipedia_url?: string | null;
+  wikidata_qid?: string | null;
   championships: number;
   division_titles: number;
   playoff_appearances: number;

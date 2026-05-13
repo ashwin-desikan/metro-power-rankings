@@ -40,7 +40,9 @@
     "prior_cities": [
       "Los Angeles",
       "California"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Los_Angeles_Angels",
+    "wikidata_qid": "Q743309"
   },
   {
     "canonical": "Astros",
@@ -80,7 +82,9 @@
     "last_lcs_app": 2023,
     "last_division_title": 2024,
     "last_playoff_app": 2024,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Houston_Astros",
+    "wikidata_qid": "Q848117"
   },
   {
     "canonical": "Athletics",
@@ -125,7 +129,9 @@
       "Kansas City",
       "Oakland",
       "The"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Athletics_(baseball)",
+    "wikidata_qid": "Q504339"
   },
   {
     "canonical": "Blue Jays",
@@ -165,7 +171,9 @@
     "last_lcs_app": 2025,
     "last_division_title": 2025,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Toronto_Blue_Jays",
+    "wikidata_qid": "Q650829"
   },
   {
     "canonical": "Braves",
@@ -208,7 +216,9 @@
     "prior_cities": [
       "Boston",
       "Milwaukee"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Atlanta_Braves",
+    "wikidata_qid": "Q461595"
   },
   {
     "canonical": "Brewers",
@@ -250,7 +260,9 @@
     "last_playoff_app": 2025,
     "prior_cities": [
       "Seattle"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Milwaukee_Brewers",
+    "wikidata_qid": "Q848103"
   },
   {
     "canonical": "Cardinals",
@@ -290,7 +302,9 @@
     "last_lcs_app": 2019,
     "last_division_title": 2022,
     "last_playoff_app": 2022,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/St._Louis_Cardinals",
+    "wikidata_qid": "Q504309"
   },
   {
     "canonical": "Cubs",
@@ -330,7 +344,9 @@
     "last_lcs_app": 2017,
     "last_division_title": 2020,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chicago_Cubs",
+    "wikidata_qid": "Q246782"
   },
   {
     "canonical": "Diamondbacks",
@@ -372,7 +388,9 @@
     "last_playoff_app": 2023,
     "prior_cities": [
       "Arizona"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Arizona_Diamondbacks",
+    "wikidata_qid": "Q670376"
   },
   {
     "canonical": "Dodgers",
@@ -414,7 +432,9 @@
     "last_playoff_app": 2025,
     "prior_cities": [
       "Brooklyn"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Los_Angeles_Dodgers",
+    "wikidata_qid": "Q334634"
   },
   {
     "canonical": "Giants",
@@ -456,7 +476,9 @@
     "last_playoff_app": 2021,
     "prior_cities": [
       "New York"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/San_Francisco_Giants",
+    "wikidata_qid": "Q308966"
   },
   {
     "canonical": "Guardians",
@@ -496,7 +518,9 @@
     "last_lcs_app": 2024,
     "last_division_title": 2025,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cleveland_Guardians",
+    "wikidata_qid": "Q642553"
   },
   {
     "canonical": "Mariners",
@@ -536,7 +560,9 @@
     "last_lcs_app": 2025,
     "last_division_title": 2025,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Seattle_Mariners",
+    "wikidata_qid": "Q466586"
   },
   {
     "canonical": "Marlins",
@@ -578,7 +604,9 @@
     "last_playoff_app": 2023,
     "prior_cities": [
       "Florida"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Miami_Marlins",
+    "wikidata_qid": "Q652879"
   },
   {
     "canonical": "Mets",
@@ -618,7 +646,9 @@
     "last_lcs_app": 2024,
     "last_division_title": 2015,
     "last_playoff_app": 2024,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/New_York_Mets",
+    "wikidata_qid": "Q692417"
   },
   {
     "canonical": "Nationals",
@@ -660,7 +690,9 @@
     "last_playoff_app": 2019,
     "prior_cities": [
       "Montreal"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Washington_Nationals",
+    "wikidata_qid": "Q825838"
   },
   {
     "canonical": "Orioles",
@@ -703,7 +735,9 @@
     "prior_cities": [
       "Milwaukee",
       "St. Louis"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Baltimore_Orioles",
+    "wikidata_qid": "Q650816"
   },
   {
     "canonical": "Padres",
@@ -743,7 +777,9 @@
     "last_lcs_app": 2022,
     "last_division_title": 2006,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/San_Diego_Padres",
+    "wikidata_qid": "Q721134"
   },
   {
     "canonical": "Phillies",
@@ -783,7 +819,9 @@
     "last_lcs_app": 2023,
     "last_division_title": 2025,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Philadelphia_Phillies",
+    "wikidata_qid": "Q650840"
   },
   {
     "canonical": "Pirates",
@@ -825,7 +863,9 @@
     "last_playoff_app": 2015,
     "prior_cities": [
       "Pittsburg"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pittsburgh_Pirates",
+    "wikidata_qid": "Q653772"
   },
   {
     "canonical": "Rangers",
@@ -868,7 +908,9 @@
     "prior_cities": [
       "Washington",
       "Texas"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Texas_Rangers_(baseball)",
+    "wikidata_qid": "Q329816"
   },
   {
     "canonical": "Rays",
@@ -910,7 +952,9 @@
     "last_playoff_app": 2023,
     "prior_cities": [
       "Tampa Bay"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tampa_Bay_Rays",
+    "wikidata_qid": "Q650865"
   },
   {
     "canonical": "Red Sox",
@@ -950,7 +994,9 @@
     "last_lcs_app": 2021,
     "last_division_title": 2018,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Boston_Red_Sox",
+    "wikidata_qid": "Q213959"
   },
   {
     "canonical": "Reds",
@@ -990,7 +1036,9 @@
     "last_lcs_app": 1995,
     "last_division_title": 2012,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cincinnati_Reds",
+    "wikidata_qid": "Q826751"
   },
   {
     "canonical": "Rockies",
@@ -1032,7 +1080,9 @@
     "last_playoff_app": 2018,
     "prior_cities": [
       "Colorado"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Colorado_Rockies",
+    "wikidata_qid": "Q388858"
   },
   {
     "canonical": "Royals",
@@ -1072,7 +1122,9 @@
     "last_lcs_app": 2015,
     "last_division_title": 2015,
     "last_playoff_app": 2024,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kansas_City_Royals",
+    "wikidata_qid": "Q744530"
   },
   {
     "canonical": "Tigers",
@@ -1112,7 +1164,9 @@
     "last_lcs_app": 2013,
     "last_division_title": 2014,
     "last_playoff_app": 2025,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Detroit_Tigers",
+    "wikidata_qid": "Q650855"
   },
   {
     "canonical": "Twins",
@@ -1155,7 +1209,9 @@
     "prior_cities": [
       "Washington",
       "Minnesota"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Minnesota_Twins",
+    "wikidata_qid": "Q604879"
   },
   {
     "canonical": "White Sox",
@@ -1195,7 +1251,9 @@
     "last_lcs_app": 2005,
     "last_division_title": 2021,
     "last_playoff_app": 2021,
-    "prior_cities": []
+    "prior_cities": [],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chicago_White_Sox",
+    "wikidata_qid": "Q335169"
   },
   {
     "canonical": "Yankees",
@@ -1237,6 +1295,8 @@
     "last_playoff_app": 2025,
     "prior_cities": [
       "Baltimore"
-    ]
+    ],
+    "wikipedia_url": "https://en.wikipedia.org/wiki/New_York_Yankees",
+    "wikidata_qid": "Q213417"
   }
 ]

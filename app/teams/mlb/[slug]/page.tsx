@@ -101,16 +101,25 @@ export default async function FranchisePage({ params }: Props) {
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
 
-  // Live current-season standings from ESPN. Same gate behaviour as the
-  // NFL pages: only render the in-progress row once regular-season games
-  // have been played. Anything earlier (spring training, offseason, ESPN
-  // unreachable) is hidden entirely.
+  // Live current-season standings from ESPN. Gate logic:
+  //   1. ESPN must return a standings row for this franchise.
+  //   2. That row must have games_played > 0 (so spring training / opening
+  //      day rosters with 0-0 records don't surface).
+  //   3. ESPN's season.year must equal the current calendar year, to avoid
+  //      ESPN returning last year's final standings (which the workbook
+  //      already covers cleanly) while a season transition is in progress.
+  //
+  // We intentionally do NOT gate on season_type here. ESPN MLB occasionally
+  // returns regular-season standings with games_played > 0 while still
+  // flagging season.type=1 ("spring") during early-April transitions. The
+  // games_played guard is the right truth source.
   const standings = await getCurrentMlbStandings();
   const liveStanding = standings.by_canonical[f.canonical];
+  const currentYear = new Date().getFullYear();
   const showLiveRow =
     !!liveStanding &&
-    (standings.season_type === "regular" || standings.season_type === "postseason") &&
-    liveStanding.games_played > 0;
+    liveStanding.games_played > 0 &&
+    standings.season_year === currentYear;
   const liveSeasonRow: (Season & { is_live: true }) | null = showLiveRow
     ? {
         year: standings.season_year,
@@ -140,12 +149,19 @@ export default async function FranchisePage({ params }: Props) {
         is_live: true,
       }
     : null;
+  // A workbook row is "empty placeholder" if it has no W, no L, no
+  // postseason flags. Real seasons (including in-progress workbook updates)
+  // always have at least one non-zero value here. The 2026 rows that arrive
+  // pre-populated with just City/Division and W=0 L=0 are placeholders.
+  const isEmptyRow = (s: Season): boolean =>
+    s.w === 0 && s.l === 0 && !s.ws_app && !s.playoff && !s.champ && !s.oth_chmp_app;
+  const workbookReversed = [...seasons].reverse();
   const seasonRows: Array<Season & { is_live?: true }> = liveSeasonRow
-    ? [liveSeasonRow, ...[...seasons].reverse()]
-    : [...seasons].reverse();
+    ? [liveSeasonRow, ...workbookReversed.filter((r) => !(r.year === liveSeasonRow.year && isEmptyRow(r)))]
+    : workbookReversed.filter((r) => !(r.year >= currentYear && isEmptyRow(r)));
   const seasonRangeEnd = liveSeasonRow
     ? liveSeasonRow.year
-    : seasons[seasons.length - 1]?.year ?? new Date().getFullYear() - 1;
+    : (seasonRows[0]?.year ?? new Date().getFullYear() - 1);
 
   // Resolve opponent slugs server-side for top-games rows so the renderer
   // can link to active franchise pages and fall back to plain text for
@@ -217,6 +233,36 @@ export default async function FranchisePage({ params }: Props) {
             <p className="text-xs text-[var(--text-muted)] mt-2 italic">
               Formerly based in {formerly}.
             </p>
+          )}
+          {(f.wikipedia_url || f.wikidata_qid) && (
+            <div className="flex flex-wrap gap-2 mt-3 text-[11px]">
+              {f.wikipedia_url && (
+                <a
+                  href={f.wikipedia_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+                  title={`Open this franchise on Wikipedia`}
+                >
+                  <span className="font-bold tracking-wider text-[10px]">W</span>
+                  <span>Wikipedia</span>
+                </a>
+              )}
+              {f.wikidata_qid && (
+                <a
+                  href={`https://www.wikidata.org/wiki/${f.wikidata_qid}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+                  style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+                  title={`Open Wikidata entity ${f.wikidata_qid}`}
+                >
+                  <span className="font-bold tracking-wider text-[10px]">Q</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>{f.wikidata_qid}</span>
+                </a>
+              )}
+            </div>
           )}
         </div>
       </header>
@@ -374,37 +420,21 @@ export default async function FranchisePage({ params }: Props) {
         </Block>
       </div>
 
-      {/* Award winners */}
-      <Block
-        title="Award winners"
-        deck={`League-wide awards held by ${f.name} players or managers. Curated to the headline tier: MVP, Cy Young, Rookie of the Year, Manager of the Year, postseason MVPs, Hank Aaron, Roberto Clemente, and the rare Triple Crown.`}
-      >
-        {Object.keys(awards).length === 0 ? (
-          <p className="text-sm text-[var(--text-muted)] italic">No awards in this dataset.</p>
-        ) : (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {AWARD_ORDER.map((awardKey) => {
-              const winners = awards[awardKey];
-              if (!winners || winners.length === 0) return null;
-              return (
-                <div key={awardKey}>
-                  <h3 className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] font-semibold mb-1">
-                    {awardKey} <span className="text-[var(--text-dim)]">· {winners.length}</span>
-                  </h3>
-                  <ul className="text-sm space-y-0.5">
-                    {winners.map((w, i) => (
-                      <li key={i} className="flex gap-2">
-                        <span className="text-[var(--text-muted)] tabular-nums w-12 flex-shrink-0">{w.year}</span>
-                        <span>{w.player}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        )}
-      </Block>
+      {/* Season-by-season */}
+      <details className="mt-4 border rounded-xl" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <summary className="cursor-pointer px-5 py-4 font-semibold text-sm flex items-center justify-between">
+          <span>Season-by-season ({f.founding_year} to {seasonRangeEnd})</span>
+          <span className="text-[var(--text-muted)] text-xs">{seasonRows.length} seasons</span>
+        </summary>
+        <div className="px-5 pb-5">
+          <SeasonsByTeamTable
+            rows={seasonRows}
+            sourceLabel={standings.source_label || undefined}
+            fetchedAt={standings.fetched_at || undefined}
+          />
+        </div>
+      </details>
+
 
       {/* Top postseason games */}
       <Block
@@ -509,20 +539,39 @@ export default async function FranchisePage({ params }: Props) {
         )}
       </Block>
 
-      {/* Season-by-season */}
-      <details className="mt-4 border rounded-xl" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-        <summary className="cursor-pointer px-5 py-4 font-semibold text-sm flex items-center justify-between">
-          <span>Season-by-season ({f.founding_year} to {seasonRangeEnd})</span>
-          <span className="text-[var(--text-muted)] text-xs">{seasonRows.length} seasons</span>
-        </summary>
-        <div className="px-5 pb-5">
-          <SeasonsByTeamTable
-            rows={seasonRows}
-            sourceLabel={standings.source_label || undefined}
-            fetchedAt={standings.fetched_at || undefined}
-          />
-        </div>
-      </details>
+      {/* Award winners */}
+      <Block
+        title="Award winners"
+        deck={`League-wide awards held by ${f.name} players or managers. Curated to the headline tier: MVP, Cy Young, Rookie of the Year, Manager of the Year, postseason MVPs, Hank Aaron, Roberto Clemente, and the rare Triple Crown.`}
+      >
+        {Object.keys(awards).length === 0 ? (
+          <p className="text-sm text-[var(--text-muted)] italic">No awards in this dataset.</p>
+        ) : (
+          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-6 [column-fill:balance]">
+            {AWARD_ORDER.map((awardKey) => {
+              const winners = awards[awardKey];
+              if (!winners || winners.length === 0) return null;
+              return (
+                <div key={awardKey} className="break-inside-avoid mb-4">
+                  <h3 className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] font-semibold mb-1">
+                    {awardKey} <span className="text-[var(--text-dim)]">· {winners.length}</span>
+                  </h3>
+                  <ul className="text-sm space-y-0.5">
+                    {winners.map((w, i) => (
+                      <li key={i} className="flex gap-2">
+                        <span className="text-[var(--text-muted)] tabular-nums w-12 flex-shrink-0">{w.year}</span>
+                        <span>{w.player}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </Block>
+
+
     </main>
   );
 }

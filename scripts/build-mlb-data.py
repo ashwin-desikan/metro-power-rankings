@@ -739,7 +739,7 @@ def _resolve_display_city(canonical, cur_city):
     return cur_city
 
 
-def build_franchises(totals, latest_meta, year_by_year, earliest_year):
+def build_franchises(totals, latest_meta, year_by_year, earliest_year, external_links):
     """Build the 30 active franchise rows."""
     out = []
     for canonical, t in totals.items():
@@ -756,12 +756,14 @@ def build_franchises(totals, latest_meta, year_by_year, earliest_year):
             sc = s["city"]
             if sc and sc != cur_city and sc not in prior_cities:
                 prior_cities.append(sc)
+        display_name = _resolve_display_name(canonical, meta, cur_city)
+        ext = external_links.get(display_name, {})
         out.append({
             "canonical": canonical,
             "slug": franchise_slug(canonical),
             "key": "",  # filled later from Team Lookup if needed
             "name": meta.get("team") or canonical,
-            "display_name": _resolve_display_name(canonical, meta, cur_city),
+            "display_name": display_name,
             "city": _resolve_display_city(canonical, cur_city),
             "team": meta.get("team") or canonical,
             "league": meta.get("league") or t["league_history"],
@@ -795,6 +797,8 @@ def build_franchises(totals, latest_meta, year_by_year, earliest_year):
             "last_division_title": t["last_division_title"],
             "last_playoff_app": t["last_playoff_app"],
             "prior_cities": prior_cities,
+            "wikipedia_url": ext.get("wikipedia_url"),
+            "wikidata_qid": ext.get("wikidata_qid"),
         })
     out.sort(key=lambda f: f["name"])
     return out
@@ -930,6 +934,60 @@ def build_seasons_by_team(franchises, year_by_year):
     return out
 
 
+def read_team_external_links():
+    """Load team-wikidata.tsv and return a dict keyed by display-name
+    (e.g. "New York Yankees") -> {"wikipedia_url", "wikidata_qid"}.
+
+    The TSV at project root carries 124 rows covering NFL + MLB + NBA + NHL.
+    Columns are tab-separated: Team, Wikidata QID, Wikipedia URL, Wikidata URL,
+    Verified flag. The same file is consumed by build-nfl-data.py (and any
+    future league ETL). Match key is display_name, which for MLB matches the
+    user's display-override mapping including the bare "Athletics".
+
+    Falls back to the older TeamQIDs_MLB_NBA_NHL.xlsx if the TSV is missing,
+    for backward compatibility during migration.
+    """
+    tsv_path = REPO_ROOT / "team-wikidata.tsv"
+    out = {}
+    if tsv_path.exists():
+        with tsv_path.open(encoding="utf-8") as fh:
+            for line in fh:
+                parts = line.rstrip("\r\n").split("\t")
+                if len(parts) < 3:
+                    continue
+                team = parts[0].strip()
+                qid = parts[1].strip()
+                wiki = parts[2].strip()
+                if not team:
+                    continue
+                out[team] = {
+                    "wikipedia_url": wiki or None,
+                    "wikidata_qid": qid or None,
+                }
+        return out
+    # Fallback to legacy xlsx
+    xlsx_path = REPO_ROOT / "TeamQIDs_MLB_NBA_NHL.xlsx"
+    if xlsx_path.exists():
+        qid_wb = openpyxl.load_workbook(xlsx_path, read_only=True, data_only=True)
+        ws = qid_wb["Wikidata_QIDs"]
+        for i, row in enumerate(ws.iter_rows(values_only=True)):
+            if i == 0:
+                continue
+            team = safe_str(row[0]) if len(row) > 0 else ""
+            qid = safe_str(row[1]) if len(row) > 1 else ""
+            wiki = safe_str(row[2]) if len(row) > 2 else ""
+            if not team:
+                continue
+            out[team] = {
+                "wikipedia_url": wiki or None,
+                "wikidata_qid": qid or None,
+            }
+        qid_wb.close()
+        return out
+    print("  (note: team-wikidata.tsv not found; team Wikipedia/Wikidata links will be blank)")
+    return out
+
+
 # -------- Main --------
 
 def main():
@@ -969,7 +1027,11 @@ def main():
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    franchises = build_franchises(totals, latest_meta, yby, earliest_year)
+    print("Reading TeamQIDs (Wikipedia/Wikidata cross-links)...")
+    external_links = read_team_external_links()
+    print(f"  {len(external_links)} teams with external links")
+
+    franchises = build_franchises(totals, latest_meta, yby, earliest_year, external_links)
     print(f"Built franchises: {len(franchises)}")
     (OUT_DIR / "franchises.json").write_text(json.dumps(franchises, indent=2, ensure_ascii=False))
 
