@@ -23,6 +23,7 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport } from "@/lib/sportLabels";
+import { getNflSlugByTeamName } from "@/lib/nfl";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -1521,6 +1522,9 @@ function TeamCard({
   };
 }) {
   const isFootball = team.sport === "Soccer" || team.sport === "Football/Soccer";
+  // Link NFL teams to their /teams/nfl/[slug] page. Other leagues stay
+  // plain text until those team pages exist.
+  const nflSlug = team.league === "NFL" ? getNflSlugByTeamName(team.team) : undefined;
   return (
     <div
       className={`border rounded-lg p-4 hover:border-[var(--accent)] transition ${
@@ -1533,7 +1537,13 @@ function TeamCard({
         {normalizeTeamSport(team.sport)} • {team.league}
       </p>
       <p className="font-semibold text-[var(--text)] flex items-center gap-1.5">
-        <span>{team.team}</span>
+        {nflSlug ? (
+          <Link href={`/teams/nfl/${nflSlug}`} className="hover:text-[var(--accent)] transition">
+            {team.team}
+          </Link>
+        ) : (
+          <span>{team.team}</span>
+        )}
         {/* Tiny outbound Wikipedia mark. Renders only when team.wikipediaUrl is
             populated so partial coverage never produces dangling icons. The
             same URL is also emitted in SportsTeam.sameAs JSON-LD above so the

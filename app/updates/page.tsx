@@ -53,6 +53,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-12",
+    headline: "NFL team pages with championships, awards, and the Pottsville asterisk",
+    items: [
+      "Every NFL franchise has its own page at /teams/nfl/[slug] with color-coded championship chips, all-time record, stadium history, award winners, Hall of Famers, and a season table.",
+      "League index at /teams/nfl sorts the 32 active franchises by titles, with metro links back to the rankings.",
+      "Defunct franchises live at /teams/nfl/historical, including the Pottsville Maroons' 1925 stolen championship with the Carr-suspension story.",
+      "Team names on metro pages now link to the new team pages for NFL clubs.",
+    ],
+  },
+  {
     date: "2026-05-10",
     headline: "498 new boundaries plus football markers and Tokyo refresh",
     items: [

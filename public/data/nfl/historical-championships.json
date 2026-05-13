@@ -1,0 +1,62 @@
+{
+  "Indians (Akron)": [
+    {
+      "year": 1920,
+      "era": "pre_sb",
+      "league": "APFA",
+      "season_city": "Akron",
+      "season_team": "Pros"
+    }
+  ],
+  "Bulldogs (Canton)": [
+    {
+      "year": 1922,
+      "era": "pre_sb",
+      "league": "NFL",
+      "season_city": "Canton",
+      "season_team": "Bulldogs"
+    },
+    {
+      "year": 1923,
+      "era": "pre_sb",
+      "league": "NFL",
+      "season_city": "Canton",
+      "season_team": "Bulldogs"
+    }
+  ],
+  "Maroons": [
+    {
+      "year": 1925,
+      "era": "pre_sb",
+      "stolen": true,
+      "stolen_note": "Won on the field; stripped after a Notre Dame All-Stars exhibition in Frankford's territory. Pete Rozelle reviewed in 1963 and 1972. NFL owners voted 30-2 in 2003 to leave the title with the Cardinals. The Maroons faithful have never accepted it."
+    }
+  ],
+  "Wolverines": [
+    {
+      "year": 1924,
+      "era": "pre_sb",
+      "league": "NFL",
+      "season_city": "Cleveland",
+      "season_team": "Bulldogs"
+    }
+  ],
+  "Yellow Jackets": [
+    {
+      "year": 1926,
+      "era": "pre_sb",
+      "league": "NFL",
+      "season_city": "Frankford",
+      "season_team": "Yellow Jackets"
+    }
+  ],
+  "Steam Roller": [
+    {
+      "year": 1928,
+      "era": "pre_sb",
+      "league": "NFL",
+      "season_city": "Providence",
+      "season_team": "Steam Roller"
+    }
+  ]
+}

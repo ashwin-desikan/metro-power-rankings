@@ -1,0 +1,1454 @@
+{
+  "Redskins": [
+    {
+      "year": 1963,
+      "player": "Sammy Baugh",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1963,
+      "player": "George Preston Marshall",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 1968,
+      "player": "Cliff Battles",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1968,
+      "player": "Wayne Millner",
+      "category": "Player",
+      "position": "End"
+    },
+    {
+      "year": 1969,
+      "player": "Albert Glen (Turk) Edwards",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1976,
+      "player": "Ray Flaherty",
+      "category": "Coach/Player",
+      "position": "End"
+    },
+    {
+      "year": 1983,
+      "player": "Sonny Jurgensen",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1984,
+      "player": "Charley Taylor",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1986,
+      "player": "Ken Houston",
+      "category": "Player",
+      "position": "Safety"
+    },
+    {
+      "year": 1992,
+      "player": "John Riggins",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 1996,
+      "player": "Joe Gibbs",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 2002,
+      "player": "George Allen",
+      "category": "Coach",
+      "position": ""
+    }
+  ],
+  "Eagles": [
+    {
+      "year": 1963,
+      "player": "Bert Bell",
+      "category": "Administrator/Owner",
+      "position": ""
+    },
+    {
+      "year": 1965,
+      "player": "Steve Van Buren",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1967,
+      "player": "Chuck Bednarik",
+      "category": "Player",
+      "position": "Linebacker/Center"
+    },
+    {
+      "year": 1969,
+      "player": "Earle (Greasy) Neale",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1970,
+      "player": "Pete Pihos",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1998,
+      "player": "Tommy McDonald",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 2004,
+      "player": "Bob Brown",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 2006,
+      "player": "Reggie White",
+      "category": "Player",
+      "position": "Defensive End"
+    }
+  ],
+  "Lions": [
+    {
+      "year": 1963,
+      "player": "Earl (Dutch) Clark",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1966,
+      "player": "Bill Dudley",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1967,
+      "player": "Bobby Layne",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1968,
+      "player": "Alex Wojciechowicz",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1970,
+      "player": "Jack Christiansen",
+      "category": "Player",
+      "position": "Safety"
+    },
+    {
+      "year": 1973,
+      "player": "Joe Schmidt",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1974,
+      "player": "Dick (Night Train) Lane",
+      "category": "Player",
+      "position": "Cornerback"
+    },
+    {
+      "year": 1979,
+      "player": "Yale Lary",
+      "category": "Player",
+      "position": "Safety"
+    },
+    {
+      "year": 1986,
+      "player": "Doak Walker",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1992,
+      "player": "Lem Barney",
+      "category": "Player",
+      "position": "Cornerback"
+    },
+    {
+      "year": 1996,
+      "player": "Lou Creekmur",
+      "category": "Player",
+      "position": "Tackle/Guard"
+    },
+    {
+      "year": 2004,
+      "player": "Barry Sanders",
+      "category": "Player",
+      "position": "Running Back"
+    }
+  ],
+  "Bears": [
+    {
+      "year": 1963,
+      "player": "Harold (Red) Grange",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1963,
+      "player": "George Halas",
+      "category": "Coach/Owner/Player",
+      "position": "End"
+    },
+    {
+      "year": 1963,
+      "player": "Bronko Nagurski",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1964,
+      "player": "Ed Healey",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1964,
+      "player": "William Roy (Link) Lyman",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1964,
+      "player": "George Trafton",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1965,
+      "player": "John (Paddy) Driscoll",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1965,
+      "player": "Daniel Fortmann, M.D",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 1965,
+      "player": "Sid Luckman",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1966,
+      "player": "George McAfee",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1966,
+      "player": "Clyde (Bulldog) Turner",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1967,
+      "player": "Joe Stydahar",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1971,
+      "player": "Bill Hewitt",
+      "category": "Player",
+      "position": "End"
+    },
+    {
+      "year": 1974,
+      "player": "Bill George",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1975,
+      "player": "George Connor",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1977,
+      "player": "Gale Sayers",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1979,
+      "player": "Dick Butkus",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1982,
+      "player": "Doug Atkins",
+      "category": "Player",
+      "position": "Defensive End"
+    },
+    {
+      "year": 1982,
+      "player": "George Musso",
+      "category": "Player",
+      "position": "Tackle/Guard"
+    },
+    {
+      "year": 1988,
+      "player": "Mike Ditka",
+      "category": "Player",
+      "position": "Tight End"
+    },
+    {
+      "year": 1991,
+      "player": "Stan Jones",
+      "category": "Player",
+      "position": "Tackle/Guard"
+    },
+    {
+      "year": 1993,
+      "player": "Walter Payton",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 1995,
+      "player": "Jim Finks",
+      "category": "Administrator (T)",
+      "position": ""
+    },
+    {
+      "year": 1998,
+      "player": "Mike Singletary",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 2002,
+      "player": "Dan Hampton",
+      "category": "Player",
+      "position": "Defensive End"
+    }
+  ],
+  "Giants": [
+    {
+      "year": 1963,
+      "player": "Mel Hein",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1963,
+      "player": "Tim Mara",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 1966,
+      "player": "Steve Owen",
+      "category": "Coach/Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1967,
+      "player": "Ken Strong",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1967,
+      "player": "Emlen Tunnell",
+      "category": "Player",
+      "position": "Safety"
+    },
+    {
+      "year": 1971,
+      "player": "Andy Robustelli",
+      "category": "Player",
+      "position": "Defensive End"
+    },
+    {
+      "year": 1975,
+      "player": "Roosevelt Brown",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1977,
+      "player": "Frank Gifford",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1978,
+      "player": "Alphonse (Tuffy) Leemans",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1981,
+      "player": "Morris (Red) Badgro",
+      "category": "Player",
+      "position": "End"
+    },
+    {
+      "year": 1982,
+      "player": "Sam Huff",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1984,
+      "player": "Arnie Weinmeister",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1997,
+      "player": "Wellington Mara",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 1999,
+      "player": "Lawrence Taylor",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 2005,
+      "player": "Benny Friedman",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 2006,
+      "player": "Harry Carson",
+      "category": "Player",
+      "position": "Linebacker"
+    }
+  ],
+  "Bulldogs (Canton)": [
+    {
+      "year": 1963,
+      "player": "Wilbur (Pete) Henry",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1963,
+      "player": "Jim Thorpe",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1965,
+      "player": "Guy Chamberlin",
+      "category": "Coach/Player",
+      "position": "End"
+    },
+    {
+      "year": 1966,
+      "player": "Joe Guyon",
+      "category": "Player",
+      "position": "Halfback"
+    }
+  ],
+  "Packers": [
+    {
+      "year": 1963,
+      "player": "Robert (Cal) Hubbard",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1963,
+      "player": "Don Hutson",
+      "category": "Player",
+      "position": "End"
+    },
+    {
+      "year": 1963,
+      "player": "Earl (Curly) Lambeau",
+      "category": "Coach/Owner/Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1963,
+      "player": "John (Blood) McNally",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1964,
+      "player": "Clarke Hinkle",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1964,
+      "player": "August (Mike) Michalske",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 1966,
+      "player": "Arnie Herber",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1971,
+      "player": "Vince Lombardi",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1974,
+      "player": "Tony Canadeo",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1976,
+      "player": "Jim Taylor",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1977,
+      "player": "Forrest Gregg",
+      "category": "Player",
+      "position": "Tackle/Guard"
+    },
+    {
+      "year": 1977,
+      "player": "Bart Starr",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1978,
+      "player": "Ray Nitschke",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1980,
+      "player": "Herb Adderley",
+      "category": "Player",
+      "position": "Cornerback"
+    },
+    {
+      "year": 1981,
+      "player": "Willie Davis",
+      "category": "Player",
+      "position": "Defensive End"
+    },
+    {
+      "year": 1981,
+      "player": "Jim Ringo",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1986,
+      "player": "Paul Hornung",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1989,
+      "player": "Willie Wood",
+      "category": "Player",
+      "position": "Safety"
+    },
+    {
+      "year": 1995,
+      "player": "Henry Jordan",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 2003,
+      "player": "James Lofton",
+      "category": "Player",
+      "position": "Wide Receiver"
+    }
+  ],
+  "Cardinals": [
+    {
+      "year": 1963,
+      "player": "Ernie Nevers",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1964,
+      "player": "Jimmy Conzelman",
+      "category": "Coach/Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1967,
+      "player": "Charles Bidwill, Sr.",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 1968,
+      "player": "Charley Trippi",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1972,
+      "player": "Ollie Matson",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1978,
+      "player": "Larry Wilson",
+      "category": "Player",
+      "position": "Safety"
+    },
+    {
+      "year": 1994,
+      "player": "Jackie Smith",
+      "category": "Player",
+      "position": "Tight End"
+    },
+    {
+      "year": 1996,
+      "player": "Dan Dierdorf",
+      "category": "Player",
+      "position": "Tackle"
+    }
+  ],
+  "Steelers": [
+    {
+      "year": 1964,
+      "player": "Art Rooney",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 1966,
+      "player": "Walt Kiesling",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 1969,
+      "player": "Ernie Stautner",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1987,
+      "player": "Joe Greene",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1987,
+      "player": "John Henry Johnson",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1988,
+      "player": "Jack Ham",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1989,
+      "player": "Mel Blount",
+      "category": "Player",
+      "position": "Cornerback"
+    },
+    {
+      "year": 1989,
+      "player": "Terry Bradshaw",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1990,
+      "player": "Franco Harris",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 1990,
+      "player": "Jack Lambert",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1993,
+      "player": "Chuck Noll",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1997,
+      "player": "Mike Webster",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 2000,
+      "player": "Dan Rooney",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 2001,
+      "player": "Lynn Swann",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 2002,
+      "player": "John Stallworth",
+      "category": "Player",
+      "position": "Wide Receiver"
+    }
+  ],
+  "Browns": [
+    {
+      "year": 1965,
+      "player": "Otto Graham",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1967,
+      "player": "Paul Brown",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1968,
+      "player": "Marion Motley",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1971,
+      "player": "Jim Brown",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1974,
+      "player": "Lou Groza",
+      "category": "Player",
+      "position": "Kicker/Tackle"
+    },
+    {
+      "year": 1975,
+      "player": "Dante Lavelli",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1976,
+      "player": "Leonard (Len) Ford",
+      "category": "Player",
+      "position": "Defensive End"
+    },
+    {
+      "year": 1977,
+      "player": "Bill Willis",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1983,
+      "player": "Bobby Mitchell",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1983,
+      "player": "Paul Warfield",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1984,
+      "player": "Mike McCormack",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1985,
+      "player": "Frank Gatski",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1994,
+      "player": "Leroy Kelly",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 1999,
+      "player": "Ozzie Newsome",
+      "category": "Player",
+      "position": "Tight End"
+    }
+  ],
+  "Rams": [
+    {
+      "year": 1965,
+      "player": "Bob Waterfield",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1967,
+      "player": "Dan Reeves",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 1968,
+      "player": "Elroy (Crazylegs) Hirsch",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1970,
+      "player": "Tom Fears",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1971,
+      "player": "Norm Van Brocklin",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1980,
+      "player": "David (Deacon) Jones",
+      "category": "Player",
+      "position": "Defensive End"
+    },
+    {
+      "year": 1982,
+      "player": "Merlin Olsen",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1999,
+      "player": "Eric Dickerson",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 1999,
+      "player": "Tom Mack",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 2001,
+      "player": "Jackie Slater",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 2001,
+      "player": "Jack Youngblood",
+      "category": "Player",
+      "position": "Defensive End"
+    }
+  ],
+  "Colts": [
+    {
+      "year": 1968,
+      "player": "Art Donovan",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1972,
+      "player": "Gino Marchetti",
+      "category": "Player",
+      "position": "Defensive End"
+    },
+    {
+      "year": 1973,
+      "player": "Raymond Berry",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1973,
+      "player": "Jim Parker",
+      "category": "Player",
+      "position": "Guard/Tackle"
+    },
+    {
+      "year": 1975,
+      "player": "Leonard (Lenny) Moore",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1978,
+      "player": "Weeb Ewbank",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1979,
+      "player": "Johnny Unitas",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1992,
+      "player": "John Mackey",
+      "category": "Player",
+      "position": "Tight End"
+    }
+  ],
+  "49ers": [
+    {
+      "year": 1969,
+      "player": "Leo Nomellini",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1969,
+      "player": "Fletcher (Joe) Perry",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1970,
+      "player": "Hugh McElhenny",
+      "category": "Player",
+      "position": "Halfback"
+    },
+    {
+      "year": 1971,
+      "player": "Y.A. Tittle",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1990,
+      "player": "Bob St. Clair",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1993,
+      "player": "Bill Walsh",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1994,
+      "player": "Jimmy Johnson",
+      "category": "Player",
+      "position": "Cornerback"
+    },
+    {
+      "year": 2000,
+      "player": "Ronnie Lott",
+      "category": "Player",
+      "position": "Safety/Cornerback"
+    },
+    {
+      "year": 2000,
+      "player": "Joe Montana",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 2000,
+      "player": "Dave Wilcox",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 2005,
+      "player": "Steve Young",
+      "category": "Player",
+      "position": "Quarterback"
+    }
+  ],
+  "Tigers": [
+    {
+      "year": 1971,
+      "player": "Frank (Bruiser) Kinard",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1972,
+      "player": "Clarence (Ace) Parker",
+      "category": "Player",
+      "position": "Quarterback"
+    }
+  ],
+  "Chiefs": [
+    {
+      "year": 1972,
+      "player": "Lamar Hunt",
+      "category": "Owner",
+      "position": ""
+    },
+    {
+      "year": 1983,
+      "player": "Bobby Bell",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1986,
+      "player": "Willie Lanier",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1987,
+      "player": "Len Dawson",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1990,
+      "player": "Buck Buchanan",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1991,
+      "player": "Jan Stenerud",
+      "category": "Player",
+      "position": "Kicker"
+    },
+    {
+      "year": 2003,
+      "player": "Hank Stram",
+      "category": "Coach",
+      "position": ""
+    }
+  ],
+  "Chargers": [
+    {
+      "year": 1978,
+      "player": "Lance Alworth",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1979,
+      "player": "Ron Mix",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1983,
+      "player": "Sid Gillman",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1993,
+      "player": "Dan Fouts",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1995,
+      "player": "Kellen Winslow",
+      "category": "Player",
+      "position": "Tight End"
+    },
+    {
+      "year": 1996,
+      "player": "Charlie Joiner",
+      "category": "Player",
+      "position": "Wide Receiver"
+    }
+  ],
+  "Cowboys": [
+    {
+      "year": 1980,
+      "player": "Bob Lilly",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1985,
+      "player": "Roger Staubach",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1990,
+      "player": "Tom Landry",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1991,
+      "player": "Tex Schramm",
+      "category": "Administrator (T)",
+      "position": ""
+    },
+    {
+      "year": 1994,
+      "player": "Tony Dorsett",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 1994,
+      "player": "Randy White",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1996,
+      "player": "Mel Renfro",
+      "category": "Player",
+      "position": "Safety/Cornerback"
+    },
+    {
+      "year": 2006,
+      "player": "Rayfield Wright",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 2006,
+      "player": "Troy Aikman",
+      "category": "Player",
+      "position": "Quarterback"
+    }
+  ],
+  "Raiders": [
+    {
+      "year": 1980,
+      "player": "Jim Otto",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1981,
+      "player": "George Blanda",
+      "category": "Player",
+      "position": "Quarterback/Kicker"
+    },
+    {
+      "year": 1984,
+      "player": "Willie Brown",
+      "category": "Player",
+      "position": "Cornerback"
+    },
+    {
+      "year": 1987,
+      "player": "Gene Upshaw",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 1988,
+      "player": "Fred Biletnikoff",
+      "category": "Player",
+      "position": "Wide Receiver"
+    },
+    {
+      "year": 1989,
+      "player": "Art Shell",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 1990,
+      "player": "Ted Hendricks",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 1992,
+      "player": "Al Davis",
+      "category": "Administrator/Owner",
+      "position": ""
+    },
+    {
+      "year": 1997,
+      "player": "Mike Haynes",
+      "category": "Player",
+      "position": "Cornerback"
+    },
+    {
+      "year": 2000,
+      "player": "Howie Long",
+      "category": "Player",
+      "position": "Defensive End"
+    },
+    {
+      "year": 2002,
+      "player": "Dave Casper",
+      "category": "Player",
+      "position": "Tight End"
+    },
+    {
+      "year": 2003,
+      "player": "Marcus Allen",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 2006,
+      "player": "John Madden",
+      "category": "Coach",
+      "position": ""
+    }
+  ],
+  "Jets": [
+    {
+      "year": 1985,
+      "player": "Joe Namath",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1987,
+      "player": "Don Maynard",
+      "category": "Player",
+      "position": "Wide Receiver"
+    }
+  ],
+  "Bills": [
+    {
+      "year": 1985,
+      "player": "O.J. Simpson",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 1999,
+      "player": "Billy Shaw",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 2001,
+      "player": "Marv Levy",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 2002,
+      "player": "Jim Kelly",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 2003,
+      "player": "Joe DeLamielleure",
+      "category": "Player",
+      "position": "Guard"
+    }
+  ],
+  "Vikings": [
+    {
+      "year": 1986,
+      "player": "Fran Tarkenton",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1988,
+      "player": "Alan Page",
+      "category": "Player",
+      "position": "Defensive Tackle"
+    },
+    {
+      "year": 1994,
+      "player": "Bud Grant",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1998,
+      "player": "Paul Krause",
+      "category": "Player",
+      "position": "Safety"
+    },
+    {
+      "year": 2001,
+      "player": "Ron Yary",
+      "category": "Player",
+      "position": "Tackle"
+    },
+    {
+      "year": 2004,
+      "player": "Carl Eller",
+      "category": "Player",
+      "position": "Defensive End"
+    }
+  ],
+  "Dolphins": [
+    {
+      "year": 1987,
+      "player": "Larry Csonka",
+      "category": "Player",
+      "position": "Fullback"
+    },
+    {
+      "year": 1987,
+      "player": "Jim Langer",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 1990,
+      "player": "Bob Griese",
+      "category": "Player",
+      "position": "Quarterback"
+    },
+    {
+      "year": 1993,
+      "player": "Larry Little",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 1997,
+      "player": "Don Shula",
+      "category": "Coach",
+      "position": ""
+    },
+    {
+      "year": 1998,
+      "player": "Dwight Stephenson",
+      "category": "Player",
+      "position": "Center"
+    },
+    {
+      "year": 2001,
+      "player": "Nick Buoniconti",
+      "category": "Player",
+      "position": "Linebacker"
+    },
+    {
+      "year": 2005,
+      "player": "Dan Marino",
+      "category": "Player",
+      "position": "Quarterback"
+    }
+  ],
+  "Titans": [
+    {
+      "year": 1991,
+      "player": "Earl Campbell",
+      "category": "Player",
+      "position": "Running Back"
+    },
+    {
+      "year": 2001,
+      "player": "Mike Munchak",
+      "category": "Player",
+      "position": "Guard"
+    },
+    {
+      "year": 2003,
+      "player": "Elvin Bethea",
+      "category": "Player",
+      "position": "Defensive End"
+    }
+  ],
+  "Patriots": [
+    {
+      "year": 1991,
+      "player": "John Hannah",
+      "category": "Player",
+      "position": "Guard"
+    }
+  ],
+  "Seahawks": [
+    {
+      "year": 1995,
+      "player": "Steve Largent",
+      "category": "Player",
+      "position": "Wide Receiver"
+    }
+  ],
+  "Buccaneers": [
+    {
+      "year": 1995,
+      "player": "Lee Roy Selmon",
+      "category": "Player",
+      "position": "Defensive End"
+    }
+  ],
+  "Bengals": [
+    {
+      "year": 1998,
+      "player": "Anthony Muñoz",
+      "category": "Player",
+      "position": "Tackle"
+    }
+  ],
+  "Broncos": [
+    {
+      "year": 2004,
+      "player": "John Elway",
+      "category": "Player",
+      "position": "Quarterback"
+    }
+  ],
+  "Indians (Akron)": [
+    {
+      "year": 2005,
+      "player": "Fritz Pollard",
+      "category": "Coach/Player",
+      "position": "Halfback"
+    }
+  ],
+  "Oilers": [
+    {
+      "year": 2006,
+      "player": "Warren Moon",
+      "category": "Player",
+      "position": "Quarterback"
+    }
+  ]
+}

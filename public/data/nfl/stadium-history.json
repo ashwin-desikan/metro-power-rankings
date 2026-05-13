@@ -1,0 +1,3700 @@
+{
+  "Bisons": [
+    {
+      "canonical": "Bison Stadium",
+      "city": "Buffalo",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1924,
+      "last_year": 1929,
+      "eras": [
+        {
+          "era_name": "Bison Stadium",
+          "first_year": 1924,
+          "last_year": 1927
+        },
+        {
+          "era_name": "Bison Stadium",
+          "first_year": 1929,
+          "last_year": 1929
+        }
+      ]
+    },
+    {
+      "canonical": "Buffalo Baseball Park",
+      "city": "Buffalo",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1922,
+      "last_year": 1923,
+      "eras": [
+        {
+          "era_name": "Buffalo Baseball Park",
+          "first_year": 1922,
+          "last_year": 1923
+        }
+      ]
+    },
+    {
+      "canonical": "Canisus Villa",
+      "city": "Buffalo",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1920,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Canisus Villa/Buffalo Baseball Park",
+          "first_year": 1920,
+          "last_year": 1920
+        },
+        {
+          "era_name": "Canisus Villa",
+          "first_year": 1921,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Bears": [
+    {
+      "canonical": "Soldier Field",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1971,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Soldier Field",
+          "first_year": 1971,
+          "last_year": 2001
+        },
+        {
+          "era_name": "Soldier Field",
+          "first_year": 2003,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Illinois Memorial Stadium",
+      "city": "Champaign",
+      "metro": "Champaign",
+      "state": "Illinois",
+      "first_year": 2002,
+      "last_year": 2002,
+      "eras": [
+        {
+          "era_name": "Illinois Memorial Stadium",
+          "first_year": 2002,
+          "last_year": 2002
+        }
+      ]
+    },
+    {
+      "canonical": "Wrigley Field",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1921,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Cubs Park",
+          "first_year": 1921,
+          "last_year": 1925
+        },
+        {
+          "era_name": "Wrigley Field",
+          "first_year": 1926,
+          "last_year": 1970
+        }
+      ]
+    },
+    {
+      "canonical": "Staley Field",
+      "city": "Decatur",
+      "metro": "Springfield",
+      "state": "Illinois",
+      "first_year": 1920,
+      "last_year": 1920,
+      "eras": [
+        {
+          "era_name": "Staley Field",
+          "first_year": 1920,
+          "last_year": 1920
+        }
+      ]
+    }
+  ],
+  "Tigers (Chi)": [
+    {
+      "canonical": "Wrigley Field",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1920,
+      "last_year": 1920,
+      "eras": [
+        {
+          "era_name": "Wrigley Field",
+          "first_year": 1920,
+          "last_year": 1920
+        }
+      ]
+    }
+  ],
+  "Crimson Giants": [
+    {
+      "canonical": "Bosse Field",
+      "city": "Evansville",
+      "metro": "Evansville",
+      "state": "Indiana",
+      "first_year": 1921,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Bosse Field",
+          "first_year": 1921,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Colonels": [
+    {
+      "canonical": "Parkway Field",
+      "city": "Louisville",
+      "metro": "Louisville",
+      "state": "Kentucky",
+      "first_year": 1923,
+      "last_year": 1923,
+      "eras": [
+        {
+          "era_name": "Parkway Field",
+          "first_year": 1923,
+          "last_year": 1923
+        }
+      ]
+    },
+    {
+      "canonical": "Kentucky Fair Grounds",
+      "city": "Louisville",
+      "metro": "Louisville",
+      "state": "Kentucky",
+      "first_year": 1922,
+      "last_year": 1922,
+      "eras": [
+        {
+          "era_name": "Kentucky Fair Grounds",
+          "first_year": 1922,
+          "last_year": 1922
+        }
+      ]
+    },
+    {
+      "canonical": "Eclipse Park",
+      "city": "Louisville",
+      "metro": "Louisville",
+      "state": "Kentucky",
+      "first_year": 1921,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Eclipse Park",
+          "first_year": 1921,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Indians (Akron)": [
+    {
+      "canonical": "General Field",
+      "city": "Akron",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1924,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "General Field",
+          "first_year": 1924,
+          "last_year": 1926
+        }
+      ]
+    },
+    {
+      "canonical": "Wooster Avenue Stadium",
+      "city": "Akron",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1923,
+      "last_year": 1923,
+      "eras": [
+        {
+          "era_name": "Wooster Avenue Stadium",
+          "first_year": 1923,
+          "last_year": 1923
+        }
+      ]
+    },
+    {
+      "canonical": "Elk's Field",
+      "city": "Akron",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1922,
+      "last_year": 1922,
+      "eras": [
+        {
+          "era_name": "Elk's Field",
+          "first_year": 1922,
+          "last_year": 1922
+        }
+      ]
+    },
+    {
+      "canonical": "League Park",
+      "city": "Akron",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1920,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "League Park",
+          "first_year": 1920,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Tigers (Clev)": [
+    {
+      "canonical": "League Park II",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1920,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Dunn Field",
+          "first_year": 1920,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Senators (W)": [
+    {
+      "canonical": "National Park",
+      "city": "Washington",
+      "metro": "Washington-Baltimore",
+      "state": "DC",
+      "first_year": 1921,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "National Park",
+          "first_year": 1921,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Cardinals": [
+    {
+      "canonical": "State Farm Stadium",
+      "city": "Glendale",
+      "metro": "Phoenix",
+      "state": "Arizona",
+      "first_year": 2006,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "University of Phoenix Stadium",
+          "first_year": 2006,
+          "last_year": 2017
+        },
+        {
+          "era_name": "State Farm Stadium",
+          "first_year": 2018,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Sun Devil Stadium",
+      "city": "Tempe",
+      "metro": "Phoenix",
+      "state": "Arizona",
+      "first_year": 1988,
+      "last_year": 2005,
+      "eras": [
+        {
+          "era_name": "Sun Devil Stadium",
+          "first_year": 1988,
+          "last_year": 2005
+        }
+      ]
+    },
+    {
+      "canonical": "Cardinals Stadium",
+      "city": "Tempe",
+      "metro": "Phoenix",
+      "state": "Arizona",
+      "first_year": 1988,
+      "last_year": 1995,
+      "eras": [
+        {
+          "era_name": "Cardinals Stadium",
+          "first_year": 1988,
+          "last_year": 1995
+        }
+      ]
+    },
+    {
+      "canonical": "Busch Stadium",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1966,
+      "last_year": 1987,
+      "eras": [
+        {
+          "era_name": "Busch Memorial Stadium",
+          "first_year": 1966,
+          "last_year": 1982
+        },
+        {
+          "era_name": "Busch Stadium",
+          "first_year": 1983,
+          "last_year": 1987
+        }
+      ]
+    },
+    {
+      "canonical": "Sportsman's Park II",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1960,
+      "last_year": 1965,
+      "eras": [
+        {
+          "era_name": "Sportsman's Park II",
+          "first_year": 1960,
+          "last_year": 1965
+        }
+      ]
+    },
+    {
+      "canonical": "Soldier Field",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1959,
+      "last_year": 1959,
+      "eras": [
+        {
+          "era_name": "Soldier Field",
+          "first_year": 1959,
+          "last_year": 1959
+        }
+      ]
+    },
+    {
+      "canonical": "Comiskey Park",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1922,
+      "last_year": 1958,
+      "eras": [
+        {
+          "era_name": "Comiskey Park",
+          "first_year": 1922,
+          "last_year": 1922
+        },
+        {
+          "era_name": "Comiskey Park/Normal Park",
+          "first_year": 1923,
+          "last_year": 1923
+        },
+        {
+          "era_name": "Comiskey Park",
+          "first_year": 1924,
+          "last_year": 1925
+        },
+        {
+          "era_name": "Comiskey Park",
+          "first_year": 1929,
+          "last_year": 1930
+        },
+        {
+          "era_name": "Comiskey Park",
+          "first_year": 1937,
+          "last_year": 1943
+        },
+        {
+          "era_name": "Comiskey Park",
+          "first_year": 1945,
+          "last_year": 1958
+        }
+      ]
+    },
+    {
+      "canonical": "Wrigley Field",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1931,
+      "last_year": 1936,
+      "eras": [
+        {
+          "era_name": "Wrigley Field",
+          "first_year": 1931,
+          "last_year": 1936
+        }
+      ]
+    },
+    {
+      "canonical": "Normal Field",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1920,
+      "last_year": 1928,
+      "eras": [
+        {
+          "era_name": "Normal Field",
+          "first_year": 1920,
+          "last_year": 1921
+        },
+        {
+          "era_name": "Normal Field",
+          "first_year": 1926,
+          "last_year": 1926
+        },
+        {
+          "era_name": "Normal Field/Soldier Field",
+          "first_year": 1927,
+          "last_year": 1927
+        },
+        {
+          "era_name": "Normal Field",
+          "first_year": 1928,
+          "last_year": 1928
+        }
+      ]
+    },
+    {
+      "canonical": "Normal Park",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1920,
+      "last_year": 1928,
+      "eras": [
+        {
+          "era_name": "Normal Park",
+          "first_year": 1920,
+          "last_year": 1928
+        }
+      ]
+    }
+  ],
+  "Brickley's Giants": [
+    {
+      "canonical": "Polo Grounds IV",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1921,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Polo Grounds IV",
+          "first_year": 1921,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Jeffersons": [
+    {
+      "canonical": "Edgerton Park",
+      "city": "Rochester",
+      "metro": "Rochester",
+      "state": "New York",
+      "first_year": 1922,
+      "last_year": 1924,
+      "eras": [
+        {
+          "era_name": "Edgerton Park",
+          "first_year": 1922,
+          "last_year": 1924
+        }
+      ]
+    },
+    {
+      "canonical": "Rochester Baseball Park",
+      "city": "Rochester",
+      "metro": "Rochester",
+      "state": "New York",
+      "first_year": 1921,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Rochester Baseball Park",
+          "first_year": 1921,
+          "last_year": 1921
+        }
+      ]
+    },
+    {
+      "canonical": "Bay Street Park",
+      "city": "Rochester",
+      "metro": "Rochester",
+      "state": "New York",
+      "first_year": null,
+      "last_year": null,
+      "eras": [
+        {
+          "era_name": "Bay Street Park",
+          "first_year": null,
+          "last_year": null
+        }
+      ]
+    }
+  ],
+  "Heralds": [
+    {
+      "canonical": "Tiger Stadium",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1920,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Navin Field",
+          "first_year": 1920,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Flyers": [
+    {
+      "canonical": "Walnut Street Stadium",
+      "city": "Muncie",
+      "metro": "Muncie",
+      "state": "Indiana",
+      "first_year": 1921,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Walnut Street Stadium",
+          "first_year": 1921,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Packers": [
+    {
+      "canonical": "Lambeau Field",
+      "city": "Green Bay",
+      "metro": "Green Bay",
+      "state": "Wisconsin",
+      "first_year": 1957,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "City Stadium/County Stadium",
+          "first_year": 1957,
+          "last_year": 1964
+        },
+        {
+          "era_name": "Lambeau Field/County Stadium",
+          "first_year": 1965,
+          "last_year": 1994
+        },
+        {
+          "era_name": "Lambeau Field",
+          "first_year": 1995,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "County Stadium",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1953,
+      "last_year": 1994,
+      "eras": [
+        {
+          "era_name": "County Stadium",
+          "first_year": 1953,
+          "last_year": 1994
+        }
+      ]
+    },
+    {
+      "canonical": "East Stadium",
+      "city": "Green Bay",
+      "metro": "Green Bay",
+      "state": "Wisconsin",
+      "first_year": 1925,
+      "last_year": 1956,
+      "eras": [
+        {
+          "era_name": "City Stadium",
+          "first_year": 1925,
+          "last_year": 1932
+        },
+        {
+          "era_name": "East Stadium",
+          "first_year": 1933,
+          "last_year": 1933
+        },
+        {
+          "era_name": "East Stadium/Wis. State Fair Park",
+          "first_year": 1934,
+          "last_year": 1950
+        },
+        {
+          "era_name": "East Stadium/Mil. State Fair Park",
+          "first_year": 1951,
+          "last_year": 1951
+        },
+        {
+          "era_name": "East Stadium/Marquette Stadium",
+          "first_year": 1952,
+          "last_year": 1952
+        },
+        {
+          "era_name": "East Stadium/County Stadium",
+          "first_year": 1953,
+          "last_year": 1956
+        }
+      ]
+    },
+    {
+      "canonical": "Marquette Stadium",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1952,
+      "last_year": 1952,
+      "eras": [
+        {
+          "era_name": "Marquette Stadium",
+          "first_year": 1952,
+          "last_year": 1952
+        }
+      ]
+    },
+    {
+      "canonical": "Wisconsin State Fair Park",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1933,
+      "last_year": 1951,
+      "eras": [
+        {
+          "era_name": "Wisconsin State Fair Park",
+          "first_year": 1933,
+          "last_year": 1951
+        }
+      ]
+    },
+    {
+      "canonical": "Milwaukee State Fair Park",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1951,
+      "last_year": 1951,
+      "eras": [
+        {
+          "era_name": "Milwaukee State Fair Park",
+          "first_year": 1951,
+          "last_year": 1951
+        }
+      ]
+    },
+    {
+      "canonical": "Bellevue Field",
+      "city": "Green Bay",
+      "metro": "Green Bay",
+      "state": "Wisconsin",
+      "first_year": 1923,
+      "last_year": 1924,
+      "eras": [
+        {
+          "era_name": "Bellevue Field",
+          "first_year": 1923,
+          "last_year": 1924
+        }
+      ]
+    },
+    {
+      "canonical": "Hagemeister Park",
+      "city": "Green Bay",
+      "metro": "Green Bay",
+      "state": "Wisconsin",
+      "first_year": 1921,
+      "last_year": 1922,
+      "eras": [
+        {
+          "era_name": "Hagemeister Park",
+          "first_year": 1921,
+          "last_year": 1922
+        }
+      ]
+    }
+  ],
+  "Indians (Marion)": [
+    {
+      "canonical": "Lincoln Park",
+      "city": "Marion",
+      "metro": "Marion",
+      "state": "Ohio",
+      "first_year": 1922,
+      "last_year": 1922,
+      "eras": [
+        {
+          "era_name": "Lincoln Park",
+          "first_year": 1922,
+          "last_year": 1922
+        }
+      ]
+    }
+  ],
+  "Maroons": [
+    {
+      "canonical": "Nash Employees Field",
+      "city": "Kenosha",
+      "metro": "Chicago",
+      "state": "Wisconsin",
+      "first_year": 1924,
+      "last_year": 1924,
+      "eras": [
+        {
+          "era_name": "Nash Employees Field",
+          "first_year": 1924,
+          "last_year": 1924
+        }
+      ]
+    },
+    {
+      "canonical": "Armory Park",
+      "city": "Toledo",
+      "metro": "Toledo",
+      "state": "Ohio",
+      "first_year": 1923,
+      "last_year": 1923,
+      "eras": [
+        {
+          "era_name": "Armory Park",
+          "first_year": 1923,
+          "last_year": 1923
+        }
+      ]
+    },
+    {
+      "canonical": "Swayne Field",
+      "city": "Toledo",
+      "metro": "Toledo",
+      "state": "Ohio",
+      "first_year": 1922,
+      "last_year": 1922,
+      "eras": [
+        {
+          "era_name": "Swayne Field",
+          "first_year": 1922,
+          "last_year": 1922
+        }
+      ]
+    }
+  ],
+  "Pros": [
+    {
+      "canonical": "Hammond Turner Field",
+      "city": "Hammond",
+      "metro": "Chicago",
+      "state": "Indiana",
+      "first_year": 1926,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Hammond Turner Field",
+          "first_year": 1926,
+          "last_year": 1926
+        }
+      ]
+    },
+    {
+      "canonical": "Gleason Field",
+      "city": "Hammond",
+      "metro": "Chicago",
+      "state": "Indiana",
+      "first_year": 1923,
+      "last_year": 1923,
+      "eras": [
+        {
+          "era_name": "Gleason Field",
+          "first_year": 1923,
+          "last_year": 1923
+        }
+      ]
+    }
+  ],
+  "Bulldogs (Canton)": [
+    {
+      "canonical": "Lakeside Park",
+      "city": "Canton",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1920,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Lakeside Park",
+          "first_year": 1920,
+          "last_year": 1923
+        },
+        {
+          "era_name": "Lakeside Park",
+          "first_year": 1925,
+          "last_year": 1926
+        }
+      ]
+    }
+  ],
+  "Tigers (Colm)": [
+    {
+      "canonical": "West Side Athletic Club",
+      "city": "Columbus",
+      "metro": "Columbus",
+      "state": "Ohio",
+      "first_year": 1924,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "West Side Athletic Club",
+          "first_year": 1924,
+          "last_year": 1924
+        },
+        {
+          "era_name": "West Side Athletic Club",
+          "first_year": 1926,
+          "last_year": 1926
+        }
+      ]
+    },
+    {
+      "canonical": "Neil Park",
+      "city": "Columbus",
+      "metro": "Columbus",
+      "state": "Ohio",
+      "first_year": 1921,
+      "last_year": 1923,
+      "eras": [
+        {
+          "era_name": "Neil Park",
+          "first_year": 1921,
+          "last_year": 1923
+        }
+      ]
+    }
+  ],
+  "All-Stars": [
+    {
+      "canonical": "Sportsman's Park II",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1923,
+      "last_year": 1923,
+      "eras": [
+        {
+          "era_name": "Sportsman's Park II",
+          "first_year": 1923,
+          "last_year": 1923
+        }
+      ]
+    }
+  ],
+  "Tornadoes": [
+    {
+      "canonical": "Horlick Legion Athletic Field",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1922,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Horlick Legion Athletic Field",
+          "first_year": 1922,
+          "last_year": 1924
+        },
+        {
+          "era_name": "Horlick Legion Athletic Field",
+          "first_year": 1926,
+          "last_year": 1926
+        }
+      ]
+    },
+    {
+      "canonical": "Newark Velodrome",
+      "city": "Newark",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": null,
+      "last_year": null,
+      "eras": [
+        {
+          "era_name": "Newark Velodrome",
+          "first_year": null,
+          "last_year": null
+        }
+      ]
+    }
+  ],
+  "Cowboys (KC)": [
+    {
+      "canonical": "Muehlebach Field",
+      "city": "Kansas City",
+      "metro": "Kansas City",
+      "state": "Missouri",
+      "first_year": 1924,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Muehlebach Field",
+          "first_year": 1924,
+          "last_year": 1924
+        },
+        {
+          "era_name": "Muehlebach Field",
+          "first_year": 1926,
+          "last_year": 1926
+        }
+      ]
+    }
+  ],
+  "Redjackets": [
+    {
+      "canonical": "Nicollet Park",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1921,
+      "last_year": 1930,
+      "eras": [
+        {
+          "era_name": "Nicollet Park",
+          "first_year": 1921,
+          "last_year": 1924
+        },
+        {
+          "era_name": "Nicollet Park",
+          "first_year": 1929,
+          "last_year": 1930
+        }
+      ]
+    }
+  ],
+  "Tigers": [
+    {
+      "canonical": "Ebbets Field",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1930,
+      "last_year": 1944,
+      "eras": [
+        {
+          "era_name": "Ebbets Field",
+          "first_year": 1930,
+          "last_year": 1944
+        }
+      ]
+    },
+    {
+      "canonical": "Triangle Park",
+      "city": "Dayton",
+      "metro": "Dayton",
+      "state": "Ohio",
+      "first_year": 1920,
+      "last_year": 1927,
+      "eras": [
+        {
+          "era_name": "Triangle Park",
+          "first_year": 1920,
+          "last_year": 1924
+        },
+        {
+          "era_name": "Triangle Park",
+          "first_year": 1926,
+          "last_year": 1927
+        }
+      ]
+    }
+  ],
+  "Independents": [
+    {
+      "canonical": "Douglas Park",
+      "city": "Rock Island",
+      "metro": "Moline",
+      "state": "Illinois",
+      "first_year": 1920,
+      "last_year": 1925,
+      "eras": [
+        {
+          "era_name": "Douglas Park",
+          "first_year": 1920,
+          "last_year": 1925
+        }
+      ]
+    }
+  ],
+  "Wolverines": [
+    {
+      "canonical": "University of Detroit Stadium",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1928,
+      "last_year": 1928,
+      "eras": [
+        {
+          "era_name": "University of Detroit Stadium",
+          "first_year": 1928,
+          "last_year": 1928
+        }
+      ]
+    },
+    {
+      "canonical": "Luna Park",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1927,
+      "last_year": 1927,
+      "eras": [
+        {
+          "era_name": "Luna Park",
+          "first_year": 1927,
+          "last_year": 1927
+        }
+      ]
+    },
+    {
+      "canonical": "League Park II",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1923,
+      "last_year": 1925,
+      "eras": [
+        {
+          "era_name": "Dunn Field",
+          "first_year": 1923,
+          "last_year": 1925
+        }
+      ]
+    }
+  ],
+  "Tornadoes (NJ)": [
+    {
+      "canonical": "Newark Schools Stadium",
+      "city": "Newark",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 1930,
+      "last_year": 1930,
+      "eras": [
+        {
+          "era_name": "Newark Schools Stadium",
+          "first_year": 1930,
+          "last_year": 1930
+        }
+      ]
+    },
+    {
+      "canonical": "Knights of Columbus Stadium",
+      "city": "Newark",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 1929,
+      "last_year": 1929,
+      "eras": [
+        {
+          "era_name": "Knights of Columbus Stadium",
+          "first_year": 1929,
+          "last_year": 1929
+        }
+      ]
+    },
+    {
+      "canonical": "Duluth Athletic Park",
+      "city": "Duluth",
+      "metro": "Duluth",
+      "state": "Minnesota",
+      "first_year": 1923,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Duluth Athletic Park",
+          "first_year": 1923,
+          "last_year": 1926
+        }
+      ]
+    }
+  ],
+  "Stapletons": [
+    {
+      "canonical": "Thompson's Stadium",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1929,
+      "last_year": 1932,
+      "eras": [
+        {
+          "era_name": "Thompson's Stadium",
+          "first_year": 1929,
+          "last_year": 1932
+        }
+      ]
+    },
+    {
+      "canonical": "Yankee Stadium",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1927,
+      "last_year": 1928,
+      "eras": [
+        {
+          "era_name": "Yankee Stadium",
+          "first_year": 1927,
+          "last_year": 1928
+        }
+      ]
+    },
+    {
+      "canonical": "Ebbets Field",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1926,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Ebbets Field",
+          "first_year": 1926,
+          "last_year": 1926
+        }
+      ]
+    }
+  ],
+  "Badgers": [
+    {
+      "canonical": "Milwaukee Athletic Park",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1922,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Milwaukee Athletic Park",
+          "first_year": 1922,
+          "last_year": 1926
+        }
+      ]
+    }
+  ],
+  "Panthers (Det)": [
+    {
+      "canonical": "Tiger Stadium",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1925,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Navin Field",
+          "first_year": 1925,
+          "last_year": 1926
+        }
+      ]
+    }
+  ],
+  "Blues": [
+    {
+      "canonical": "Velodrome",
+      "city": "Hartford",
+      "metro": "Hartford",
+      "state": "Connecticut",
+      "first_year": 1926,
+      "last_year": 1926,
+      "eras": [
+        {
+          "era_name": "Velodrome",
+          "first_year": 1926,
+          "last_year": 1926
+        }
+      ]
+    }
+  ],
+  "Bulldogs (Boston)": [
+    {
+      "canonical": "Braves Field",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1929,
+      "last_year": 1929,
+      "eras": [
+        {
+          "era_name": "Braves Field",
+          "first_year": 1929,
+          "last_year": 1929
+        }
+      ]
+    },
+    {
+      "canonical": "Minersville Park",
+      "city": "Pottsville",
+      "metro": "Pottsville",
+      "state": "Pennsylvania",
+      "first_year": 1925,
+      "last_year": 1928,
+      "eras": [
+        {
+          "era_name": "Minersville Park",
+          "first_year": 1925,
+          "last_year": 1928
+        }
+      ]
+    }
+  ],
+  "Yellow Jackets": [
+    {
+      "canonical": "Baker Bowl",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1931,
+      "last_year": 1931,
+      "eras": [
+        {
+          "era_name": "Baker Bowl",
+          "first_year": 1931,
+          "last_year": 1931
+        }
+      ]
+    },
+    {
+      "canonical": "Frankford Stadium",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1924,
+      "last_year": 1930,
+      "eras": [
+        {
+          "era_name": "Frankford Stadium",
+          "first_year": 1924,
+          "last_year": 1930
+        }
+      ]
+    }
+  ],
+  "Indians (Clev)": [
+    {
+      "canonical": "Cleveland Municipal Stadium",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1931,
+      "last_year": 1931,
+      "eras": [
+        {
+          "era_name": "Cleveland Municipal Stadium",
+          "first_year": 1931,
+          "last_year": 1931
+        }
+      ]
+    }
+  ],
+  "Steam Roller": [
+    {
+      "canonical": "Cycledrome",
+      "city": "Providence",
+      "metro": "Providence",
+      "state": "Rhode Island",
+      "first_year": 1925,
+      "last_year": 1931,
+      "eras": [
+        {
+          "era_name": "Cycledrome",
+          "first_year": 1925,
+          "last_year": 1931
+        }
+      ]
+    },
+    {
+      "canonical": "Kinsley Park",
+      "city": "Providence",
+      "metro": "Providence",
+      "state": "Rhode Island",
+      "first_year": null,
+      "last_year": null,
+      "eras": [
+        {
+          "era_name": "Kinsley Park",
+          "first_year": null,
+          "last_year": null
+        }
+      ]
+    }
+  ],
+  "Commanders": [
+    {
+      "canonical": "Northwest Stadium",
+      "city": "Landover",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1997,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Jack Kent Cooke Stadium",
+          "first_year": 1997,
+          "last_year": 1998
+        },
+        {
+          "era_name": "FedEx Field",
+          "first_year": 1999,
+          "last_year": 2023
+        },
+        {
+          "era_name": "Northwest Stadium",
+          "first_year": 2024,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "RFK Stadium",
+      "city": "Washington",
+      "metro": "Washington-Baltimore",
+      "state": "DC",
+      "first_year": 1961,
+      "last_year": 1996,
+      "eras": [
+        {
+          "era_name": "DC Stadium",
+          "first_year": 1961,
+          "last_year": 1968
+        },
+        {
+          "era_name": "RFK Stadium",
+          "first_year": 1969,
+          "last_year": 1996
+        }
+      ]
+    },
+    {
+      "canonical": "Griffith Stadium",
+      "city": "Washington",
+      "metro": "Washington-Baltimore",
+      "state": "DC",
+      "first_year": 1937,
+      "last_year": 1960,
+      "eras": [
+        {
+          "era_name": "Griffith Stadium",
+          "first_year": 1937,
+          "last_year": 1960
+        }
+      ]
+    },
+    {
+      "canonical": "Fenway Park",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1933,
+      "last_year": 1936,
+      "eras": [
+        {
+          "era_name": "Fenway Park",
+          "first_year": 1933,
+          "last_year": 1936
+        }
+      ]
+    },
+    {
+      "canonical": "Braves Field",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1932,
+      "last_year": 1932,
+      "eras": [
+        {
+          "era_name": "Braves Field",
+          "first_year": 1932,
+          "last_year": 1932
+        }
+      ]
+    }
+  ],
+  "Gunners": [
+    {
+      "canonical": "Crosley Field/ Sportsman's Park II",
+      "city": "Cincinnati/St.Louis",
+      "metro": "Cincinnati/St.Louis",
+      "state": "Ohio/Missouri",
+      "first_year": 1934,
+      "last_year": 1934,
+      "eras": [
+        {
+          "era_name": "Crosley Field/ Sportsman's Park II",
+          "first_year": 1934,
+          "last_year": 1934
+        }
+      ]
+    },
+    {
+      "canonical": "Crosley Field",
+      "city": "Cincinnati",
+      "metro": "Cincinnati",
+      "state": "Ohio",
+      "first_year": 1933,
+      "last_year": 1933,
+      "eras": [
+        {
+          "era_name": "Crosley Field",
+          "first_year": 1933,
+          "last_year": 1933
+        }
+      ]
+    }
+  ],
+  "Lions": [
+    {
+      "canonical": "Ford Field",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 2002,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Ford Field",
+          "first_year": 2002,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Pontiac Silverdome",
+      "city": "Pontiac",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1975,
+      "last_year": 2001,
+      "eras": [
+        {
+          "era_name": "Pontiac Silverdome",
+          "first_year": 1975,
+          "last_year": 2001
+        }
+      ]
+    },
+    {
+      "canonical": "Tiger Stadium",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1938,
+      "last_year": 1974,
+      "eras": [
+        {
+          "era_name": "Briggs Stadium",
+          "first_year": 1938,
+          "last_year": 1960
+        },
+        {
+          "era_name": "Tiger Stadium",
+          "first_year": 1961,
+          "last_year": 1974
+        }
+      ]
+    },
+    {
+      "canonical": "University of Detroit Stadium",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1934,
+      "last_year": 1937,
+      "eras": [
+        {
+          "era_name": "University of Detroit Stadium",
+          "first_year": 1934,
+          "last_year": 1937
+        }
+      ]
+    },
+    {
+      "canonical": "Universal Stadium",
+      "city": "Portsmouth",
+      "metro": "Portsmouth",
+      "state": "Ohio",
+      "first_year": 1930,
+      "last_year": 1933,
+      "eras": [
+        {
+          "era_name": "Universal Stadium",
+          "first_year": 1930,
+          "last_year": 1933
+        }
+      ]
+    }
+  ],
+  "Eagles": [
+    {
+      "canonical": "Lincoln Financial Field",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 2003,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Lincoln Financial Field",
+          "first_year": 2003,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Veterans Stadium",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1971,
+      "last_year": 2002,
+      "eras": [
+        {
+          "era_name": "Veterans Stadium",
+          "first_year": 1971,
+          "last_year": 2002
+        }
+      ]
+    },
+    {
+      "canonical": "Franklin Field",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1958,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Franklin Field",
+          "first_year": 1958,
+          "last_year": 1970
+        }
+      ]
+    },
+    {
+      "canonical": "Connie Mack Stadium",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1940,
+      "last_year": 1957,
+      "eras": [
+        {
+          "era_name": "Shibe Park",
+          "first_year": 1940,
+          "last_year": 1942
+        },
+        {
+          "era_name": "Shibe Park",
+          "first_year": 1944,
+          "last_year": 1952
+        },
+        {
+          "era_name": "Connie Mack Stadium",
+          "first_year": 1953,
+          "last_year": 1957
+        }
+      ]
+    },
+    {
+      "canonical": "JFK Stadium",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1936,
+      "last_year": 1939,
+      "eras": [
+        {
+          "era_name": "Municipal Stadium",
+          "first_year": 1936,
+          "last_year": 1939
+        }
+      ]
+    },
+    {
+      "canonical": "Baker Bowl",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1933,
+      "last_year": 1935,
+      "eras": [
+        {
+          "era_name": "Baker Bowl",
+          "first_year": 1933,
+          "last_year": 1935
+        }
+      ]
+    }
+  ],
+  "Rams": [
+    {
+      "canonical": "SoFi Stadium",
+      "city": "Inglewood",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 2020,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "SoFi Stadium",
+          "first_year": 2020,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Los Angeles Memorial Coliseum",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1946,
+      "last_year": 2019,
+      "eras": [
+        {
+          "era_name": "Los Angeles Memorial Coliseum",
+          "first_year": 1946,
+          "last_year": 1979
+        },
+        {
+          "era_name": "Los Angeles Memorial Coliseum",
+          "first_year": 2016,
+          "last_year": 2019
+        }
+      ]
+    },
+    {
+      "canonical": "Edward Jones Dome",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1996,
+      "last_year": 2015,
+      "eras": [
+        {
+          "era_name": "TWA Dome",
+          "first_year": 1996,
+          "last_year": 2000
+        },
+        {
+          "era_name": "Dome at America's Center",
+          "first_year": 2001,
+          "last_year": 2001
+        },
+        {
+          "era_name": "Edward Jomes Dome",
+          "first_year": 2002,
+          "last_year": 2002
+        },
+        {
+          "era_name": "Edward Jones Dome",
+          "first_year": 2003,
+          "last_year": 2015
+        }
+      ]
+    },
+    {
+      "canonical": "Busch Stadium",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1995,
+      "last_year": 1995,
+      "eras": [
+        {
+          "era_name": "Busch Stadium",
+          "first_year": 1995,
+          "last_year": 1995
+        }
+      ]
+    },
+    {
+      "canonical": "Angel Stadium of Anaheim",
+      "city": "Anaheim",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1980,
+      "last_year": 1994,
+      "eras": [
+        {
+          "era_name": "Anaheim Stadium",
+          "first_year": 1980,
+          "last_year": 1994
+        }
+      ]
+    },
+    {
+      "canonical": "Cleveland Municipal Stadium",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1937,
+      "last_year": 1945,
+      "eras": [
+        {
+          "era_name": "Cleveland Municipal Stadium",
+          "first_year": 1937,
+          "last_year": 1937
+        },
+        {
+          "era_name": "Cleveland Municipal Stadium",
+          "first_year": 1939,
+          "last_year": 1942
+        },
+        {
+          "era_name": "Cleveland Municipal Stadium",
+          "first_year": 1944,
+          "last_year": 1945
+        }
+      ]
+    },
+    {
+      "canonical": "Shaw Stadium",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1938,
+      "last_year": 1938,
+      "eras": [
+        {
+          "era_name": "Shaw Stadium",
+          "first_year": 1938,
+          "last_year": 1938
+        }
+      ]
+    }
+  ],
+  "Steelers": [
+    {
+      "canonical": "Acrisure Stadium",
+      "city": "Pittsburgh",
+      "metro": "Pittsburgh",
+      "state": "Pennsylvania",
+      "first_year": 2001,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Heinz Field",
+          "first_year": 2001,
+          "last_year": 2021
+        },
+        {
+          "era_name": "Acrisure Stadium",
+          "first_year": 2022,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Three Rivers Stadium",
+      "city": "Pittsburgh",
+      "metro": "Pittsburgh",
+      "state": "Pennsylvania",
+      "first_year": 1970,
+      "last_year": 2000,
+      "eras": [
+        {
+          "era_name": "Three Rivers Stadium",
+          "first_year": 1970,
+          "last_year": 2000
+        }
+      ]
+    },
+    {
+      "canonical": "Pitt Stadium",
+      "city": "Pittsburgh",
+      "metro": "Pittsburgh",
+      "state": "Pennsylvania",
+      "first_year": 1958,
+      "last_year": 1969,
+      "eras": [
+        {
+          "era_name": "Pitt Stadium",
+          "first_year": 1958,
+          "last_year": 1958
+        },
+        {
+          "era_name": "Pitt Stadium",
+          "first_year": 1964,
+          "last_year": 1969
+        }
+      ]
+    },
+    {
+      "canonical": "Forbes Field",
+      "city": "Pittsburgh",
+      "metro": "Pittsburgh",
+      "state": "Pennsylvania",
+      "first_year": 1933,
+      "last_year": 1963,
+      "eras": [
+        {
+          "era_name": "Forbes Field",
+          "first_year": 1933,
+          "last_year": 1942
+        },
+        {
+          "era_name": "Forbes Field",
+          "first_year": 1945,
+          "last_year": 1957
+        },
+        {
+          "era_name": "Forbes Field",
+          "first_year": 1959,
+          "last_year": 1963
+        }
+      ]
+    }
+  ],
+  "Steagles": [
+    {
+      "canonical": "Connie Mack Stadium/Forbes Field",
+      "city": "Philadelphia/Pittsburgh",
+      "metro": "Phila-Pit",
+      "state": "Pennsylvania",
+      "first_year": 1943,
+      "last_year": 1943,
+      "eras": [
+        {
+          "era_name": "Shibe Park/Forbes Field",
+          "first_year": 1943,
+          "last_year": 1943
+        }
+      ]
+    }
+  ],
+  "Carpitts": [
+    {
+      "canonical": "Comiskey Park/Forbes Field",
+      "city": "Chicago/Pittsburgh",
+      "metro": "Chicago/Pittsburgh",
+      "state": "Illinois/Penn.",
+      "first_year": 1944,
+      "last_year": 1944,
+      "eras": [
+        {
+          "era_name": "Comiskey Park/Forbes Field",
+          "first_year": 1944,
+          "last_year": 1944
+        }
+      ]
+    }
+  ],
+  "Seahawks (Mia)": [
+    {
+      "canonical": "Orange Bowl",
+      "city": "Miami",
+      "metro": "Miami",
+      "state": "Florida",
+      "first_year": 1946,
+      "last_year": 1946,
+      "eras": [
+        {
+          "era_name": "Orange Bowl",
+          "first_year": 1946,
+          "last_year": 1946
+        }
+      ]
+    }
+  ],
+  "Dodgers": [
+    {
+      "canonical": "Ebbets Field",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1946,
+      "last_year": 1948,
+      "eras": [
+        {
+          "era_name": "Ebbets Field",
+          "first_year": 1946,
+          "last_year": 1948
+        }
+      ]
+    }
+  ],
+  "Texans (D)": [
+    {
+      "canonical": "Cotton Bowl",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1952,
+      "last_year": 1952,
+      "eras": [
+        {
+          "era_name": "Cotton Bowl",
+          "first_year": 1952,
+          "last_year": 1952
+        }
+      ]
+    },
+    {
+      "canonical": "Yankee Stadium",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1950,
+      "last_year": 1951,
+      "eras": [
+        {
+          "era_name": "Yankee Stadium",
+          "first_year": 1950,
+          "last_year": 1951
+        }
+      ]
+    },
+    {
+      "canonical": "Polo Grounds IV",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1949,
+      "last_year": 1949,
+      "eras": [
+        {
+          "era_name": "Polo Grounds IV",
+          "first_year": 1949,
+          "last_year": 1949
+        }
+      ]
+    },
+    {
+      "canonical": "Fenway Park",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1944,
+      "last_year": 1948,
+      "eras": [
+        {
+          "era_name": "Fenway Park",
+          "first_year": 1944,
+          "last_year": 1948
+        }
+      ]
+    }
+  ],
+  "Bills (D)": [
+    {
+      "canonical": "Civic Stadium",
+      "city": "Buffalo",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1946,
+      "last_year": 1949,
+      "eras": [
+        {
+          "era_name": "Buffalo Civic Stadium",
+          "first_year": 1946,
+          "last_year": 1949
+        }
+      ]
+    }
+  ],
+  "Dons": [
+    {
+      "canonical": "Los Angeles Memorial Coliseum",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1946,
+      "last_year": 1949,
+      "eras": [
+        {
+          "era_name": "Los Angeles Memorial Coliseum",
+          "first_year": 1946,
+          "last_year": 1949
+        }
+      ]
+    }
+  ],
+  "Hornets": [
+    {
+      "canonical": "Soldier Field",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1946,
+      "last_year": 1949,
+      "eras": [
+        {
+          "era_name": "Soldier Field",
+          "first_year": 1946,
+          "last_year": 1949
+        }
+      ]
+    }
+  ],
+  "Yankees": [
+    {
+      "canonical": "Yankee Stadium",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1946,
+      "last_year": 1949,
+      "eras": [
+        {
+          "era_name": "Yankee Stadium",
+          "first_year": 1946,
+          "last_year": 1949
+        }
+      ]
+    }
+  ],
+  "Colts (D)": [
+    {
+      "canonical": "Baltimore Stadium",
+      "city": "Baltimore",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1947,
+      "last_year": 1950,
+      "eras": [
+        {
+          "era_name": "Baltimore Stadium",
+          "first_year": 1947,
+          "last_year": 1950
+        }
+      ]
+    }
+  ],
+  "Giants": [
+    {
+      "canonical": "MetLife Stadium",
+      "city": "East Rutherford",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 2010,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "New Meadowlands Stadium",
+          "first_year": 2010,
+          "last_year": 2010
+        },
+        {
+          "era_name": "MetLife Stadium",
+          "first_year": 2011,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Giants Stadium",
+      "city": "East Rutherford",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 1977,
+      "last_year": 2009,
+      "eras": [
+        {
+          "era_name": "Giants Stadium",
+          "first_year": 1977,
+          "last_year": 2009
+        }
+      ]
+    },
+    {
+      "canonical": "Shea Stadium",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1976,
+      "last_year": 1976,
+      "eras": [
+        {
+          "era_name": "Shea Stadium",
+          "first_year": 1976,
+          "last_year": 1976
+        }
+      ]
+    },
+    {
+      "canonical": "Yale Bowl",
+      "city": "New Haven",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1974,
+      "last_year": 1975,
+      "eras": [
+        {
+          "era_name": "Yale Bowl",
+          "first_year": 1974,
+          "last_year": 1975
+        }
+      ]
+    },
+    {
+      "canonical": "Yankee Stadium",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1956,
+      "last_year": 1973,
+      "eras": [
+        {
+          "era_name": "Yankee Stadium",
+          "first_year": 1956,
+          "last_year": 1973
+        }
+      ]
+    },
+    {
+      "canonical": "Polo Grounds IV",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1925,
+      "last_year": 1955,
+      "eras": [
+        {
+          "era_name": "Polo Grounds IV",
+          "first_year": 1925,
+          "last_year": 1955
+        }
+      ]
+    }
+  ],
+  "Raiders": [
+    {
+      "canonical": "Allegiant Stadium",
+      "city": "Paradise",
+      "metro": "Las Vegas",
+      "state": "Nevada",
+      "first_year": 2020,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Allegiant Stadium",
+          "first_year": 2020,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Oakland-Alameda County Coliseum",
+      "city": "Oakland",
+      "metro": "San Francisco",
+      "state": "California",
+      "first_year": 1966,
+      "last_year": 2019,
+      "eras": [
+        {
+          "era_name": "Oakland-Alameda County Coliseum",
+          "first_year": 1966,
+          "last_year": 1981
+        },
+        {
+          "era_name": "Oakland-Alameda County Coliseum",
+          "first_year": 1995,
+          "last_year": 1997
+        },
+        {
+          "era_name": "Network Associates Coliseum",
+          "first_year": 1998,
+          "last_year": 2003
+        },
+        {
+          "era_name": "McAfee Coliseum",
+          "first_year": 2004,
+          "last_year": 2009
+        },
+        {
+          "era_name": "Oakland-Alameda County Coliseum",
+          "first_year": 2010,
+          "last_year": 2010
+        },
+        {
+          "era_name": "O.co Coliseum",
+          "first_year": 2011,
+          "last_year": 2015
+        },
+        {
+          "era_name": "Oakland-Alameda County Coliseum",
+          "first_year": 2016,
+          "last_year": 2019
+        }
+      ]
+    },
+    {
+      "canonical": "Los Angeles Memorial Coliseum",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1982,
+      "last_year": 1994,
+      "eras": [
+        {
+          "era_name": "Los Angeles Memorial Coliseum",
+          "first_year": 1982,
+          "last_year": 1994
+        }
+      ]
+    },
+    {
+      "canonical": "Frank Youell Field",
+      "city": "Oakland",
+      "metro": "San Francisco",
+      "state": "California",
+      "first_year": 1962,
+      "last_year": 1965,
+      "eras": [
+        {
+          "era_name": "Frank Youell Field",
+          "first_year": 1962,
+          "last_year": 1965
+        }
+      ]
+    },
+    {
+      "canonical": "Candlestick Park",
+      "city": "San Francisco",
+      "metro": "San Francisco",
+      "state": "California",
+      "first_year": 1961,
+      "last_year": 1961,
+      "eras": [
+        {
+          "era_name": "Candlestick Park",
+          "first_year": 1961,
+          "last_year": 1961
+        }
+      ]
+    },
+    {
+      "canonical": "Kezar Stadium",
+      "city": "San Francisco",
+      "metro": "San Francisco",
+      "state": "California",
+      "first_year": 1960,
+      "last_year": 1960,
+      "eras": [
+        {
+          "era_name": "Kezar Stadium",
+          "first_year": 1960,
+          "last_year": 1960
+        }
+      ]
+    }
+  ],
+  "Chargers": [
+    {
+      "canonical": "SoFi Stadium",
+      "city": "Inglewood",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 2020,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "SoFi Stadium",
+          "first_year": 2020,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Dignity Health Sports Park",
+      "city": "Carson",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 2017,
+      "last_year": 2019,
+      "eras": [
+        {
+          "era_name": "StubHub Center",
+          "first_year": 2017,
+          "last_year": 2018
+        },
+        {
+          "era_name": "Dignity Health Sports Park",
+          "first_year": 2019,
+          "last_year": 2019
+        }
+      ]
+    },
+    {
+      "canonical": "SDCCU Stadium",
+      "city": "San Diego",
+      "metro": "San Diego",
+      "state": "California",
+      "first_year": 1967,
+      "last_year": 2016,
+      "eras": [
+        {
+          "era_name": "San Diego Stadium",
+          "first_year": 1967,
+          "last_year": 1981
+        },
+        {
+          "era_name": "Jack Murphy Stadium",
+          "first_year": 1982,
+          "last_year": 1996
+        },
+        {
+          "era_name": "Qualcomm Stadium",
+          "first_year": 1997,
+          "last_year": 2016
+        }
+      ]
+    },
+    {
+      "canonical": "Balboa Stadium",
+      "city": "San Diego",
+      "metro": "San Diego",
+      "state": "California",
+      "first_year": 1961,
+      "last_year": 1966,
+      "eras": [
+        {
+          "era_name": "Balboa Stadium",
+          "first_year": 1961,
+          "last_year": 1966
+        }
+      ]
+    },
+    {
+      "canonical": "Los Angeles Memorial Coliseum",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1960,
+      "last_year": 1960,
+      "eras": [
+        {
+          "era_name": "Los Angeles Memorial Coliseum",
+          "first_year": 1960,
+          "last_year": 1960
+        }
+      ]
+    }
+  ],
+  "Chiefs": [
+    {
+      "canonical": "Arrowhead Stadium",
+      "city": "Kansas City",
+      "metro": "Kansas City",
+      "state": "Missouri",
+      "first_year": 1972,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Arrowhead Stadium",
+          "first_year": 1972,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Kansas City Municipal Stadium",
+      "city": "Kansas City",
+      "metro": "Kansas City",
+      "state": "Missouri",
+      "first_year": 1963,
+      "last_year": 1971,
+      "eras": [
+        {
+          "era_name": "Kansas City Municipal Stadium",
+          "first_year": 1963,
+          "last_year": 1971
+        }
+      ]
+    },
+    {
+      "canonical": "Cotton Bowl",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1960,
+      "last_year": 1962,
+      "eras": [
+        {
+          "era_name": "Cotton Bowl",
+          "first_year": 1960,
+          "last_year": 1962
+        }
+      ]
+    }
+  ],
+  "Patriots": [
+    {
+      "canonical": "Gillette Stadium",
+      "city": "Foxboro",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 2002,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Gillette Stadium",
+          "first_year": 2002,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Foxboro Stadium",
+      "city": "Foxboro",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1971,
+      "last_year": 2001,
+      "eras": [
+        {
+          "era_name": "Schaefer Stadium",
+          "first_year": 1971,
+          "last_year": 1982
+        },
+        {
+          "era_name": "Sullivan Stadium",
+          "first_year": 1983,
+          "last_year": 1989
+        },
+        {
+          "era_name": "Foxboro Stadium",
+          "first_year": 1990,
+          "last_year": 2001
+        }
+      ]
+    },
+    {
+      "canonical": "Harvard Stadium",
+      "city": "Cambridge",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1970,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Harvard Stadium",
+          "first_year": 1970,
+          "last_year": 1970
+        }
+      ]
+    },
+    {
+      "canonical": "Alumni Stadium",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1969,
+      "last_year": 1969,
+      "eras": [
+        {
+          "era_name": "Alumni Stadium",
+          "first_year": 1969,
+          "last_year": 1969
+        }
+      ]
+    },
+    {
+      "canonical": "Fenway Park",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1963,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Fenway Park",
+          "first_year": 1963,
+          "last_year": 1968
+        }
+      ]
+    },
+    {
+      "canonical": "Nickerson Field",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1960,
+      "last_year": 1962,
+      "eras": [
+        {
+          "era_name": "Nickerson Field",
+          "first_year": 1960,
+          "last_year": 1962
+        }
+      ]
+    }
+  ],
+  "Jets": [
+    {
+      "canonical": "MetLife Stadium",
+      "city": "East Rutherford",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 2010,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "New Meadowlands Stadium",
+          "first_year": 2010,
+          "last_year": 2010
+        },
+        {
+          "era_name": "MetLife Stadium",
+          "first_year": 2011,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Giants Stadium",
+      "city": "East Rutherford",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 1984,
+      "last_year": 2009,
+      "eras": [
+        {
+          "era_name": "Giants Stadium",
+          "first_year": 1984,
+          "last_year": 2009
+        }
+      ]
+    },
+    {
+      "canonical": "Shea Stadium",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1964,
+      "last_year": 1983,
+      "eras": [
+        {
+          "era_name": "Shea Stadium",
+          "first_year": 1964,
+          "last_year": 1983
+        }
+      ]
+    },
+    {
+      "canonical": "Polo Grounds IV",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1960,
+      "last_year": 1963,
+      "eras": [
+        {
+          "era_name": "Polo Grounds IV",
+          "first_year": 1960,
+          "last_year": 1963
+        }
+      ]
+    }
+  ],
+  "Titans": [
+    {
+      "canonical": "Nissan Stadium",
+      "city": "Nashville",
+      "metro": "Nashville",
+      "state": "Tennessee",
+      "first_year": 1999,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Adelphia Coliseum",
+          "first_year": 1999,
+          "last_year": 2001
+        },
+        {
+          "era_name": "The Coliseum",
+          "first_year": 2002,
+          "last_year": 2005
+        },
+        {
+          "era_name": "LP Field",
+          "first_year": 2006,
+          "last_year": 2014
+        },
+        {
+          "era_name": "Nissan Stadium",
+          "first_year": 2015,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Vanderbilt Stadium",
+      "city": "Nashville",
+      "metro": "Nashville",
+      "state": "Tennessee",
+      "first_year": 1998,
+      "last_year": 1998,
+      "eras": [
+        {
+          "era_name": "Vanderbilt Stadium",
+          "first_year": 1998,
+          "last_year": 1998
+        }
+      ]
+    },
+    {
+      "canonical": "Liberty Bowl",
+      "city": "Memphis",
+      "metro": "Memphis",
+      "state": "Tennessee",
+      "first_year": 1997,
+      "last_year": 1997,
+      "eras": [
+        {
+          "era_name": "Liberty Bowl",
+          "first_year": 1997,
+          "last_year": 1997
+        }
+      ]
+    },
+    {
+      "canonical": "Astrodome",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 1968,
+      "last_year": 1996,
+      "eras": [
+        {
+          "era_name": "Astrodome",
+          "first_year": 1968,
+          "last_year": 1996
+        }
+      ]
+    },
+    {
+      "canonical": "Rice Stadium",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 1965,
+      "last_year": 1967,
+      "eras": [
+        {
+          "era_name": "Rice Stadium",
+          "first_year": 1965,
+          "last_year": 1967
+        }
+      ]
+    },
+    {
+      "canonical": "Jeppesen Stadium",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 1960,
+      "last_year": 1964,
+      "eras": [
+        {
+          "era_name": "Jeppesen Stadium",
+          "first_year": 1960,
+          "last_year": 1964
+        }
+      ]
+    }
+  ],
+  "Bengals": [
+    {
+      "canonical": "Paycor Stadium",
+      "city": "Cincinnati",
+      "metro": "Cincinnati",
+      "state": "Ohio",
+      "first_year": 2000,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Paul Brown Stadium",
+          "first_year": 2000,
+          "last_year": 2021
+        },
+        {
+          "era_name": "Paycor Stadium",
+          "first_year": 2022,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Cinergy Field",
+      "city": "Cincinnati",
+      "metro": "Cincinnati",
+      "state": "Ohio",
+      "first_year": 1970,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "Riverfront Stadium",
+          "first_year": 1970,
+          "last_year": 1996
+        },
+        {
+          "era_name": "Cinergy Field",
+          "first_year": 1997,
+          "last_year": 1999
+        }
+      ]
+    },
+    {
+      "canonical": "Nippert Stadium",
+      "city": "Cincinnati",
+      "metro": "Cincinnati",
+      "state": "Ohio",
+      "first_year": 1968,
+      "last_year": 1969,
+      "eras": [
+        {
+          "era_name": "Nippert Stadium",
+          "first_year": 1968,
+          "last_year": 1969
+        }
+      ]
+    }
+  ],
+  "Cowboys": [
+    {
+      "canonical": "AT&T Stadium",
+      "city": "Arlington",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 2009,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Cowboys Stadium",
+          "first_year": 2009,
+          "last_year": 2014
+        },
+        {
+          "era_name": "AT&T Stadium",
+          "first_year": 2015,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Texas Stadium",
+      "city": "Irving",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1971,
+      "last_year": 2008,
+      "eras": [
+        {
+          "era_name": "Texas Stadium",
+          "first_year": 1971,
+          "last_year": 2008
+        }
+      ]
+    },
+    {
+      "canonical": "Cotton Bowl",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1960,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Cotton Bowl",
+          "first_year": 1960,
+          "last_year": 1970
+        }
+      ]
+    }
+  ],
+  "49ers": [
+    {
+      "canonical": "Levi's Stadium",
+      "city": "Santa Clara",
+      "metro": "San Francisco",
+      "state": "California",
+      "first_year": 2015,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Levi's Stadium",
+          "first_year": 2015,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Candlestick Park",
+      "city": "San Francisco",
+      "metro": "San Francisco",
+      "state": "California",
+      "first_year": 1971,
+      "last_year": 2014,
+      "eras": [
+        {
+          "era_name": "Candlestick Park",
+          "first_year": 1971,
+          "last_year": 1994
+        },
+        {
+          "era_name": "3Com Park",
+          "first_year": 1995,
+          "last_year": 2001
+        },
+        {
+          "era_name": "Candlestick Park",
+          "first_year": 2002,
+          "last_year": 2003
+        },
+        {
+          "era_name": "Monster Park",
+          "first_year": 2004,
+          "last_year": 2007
+        },
+        {
+          "era_name": "Candlestick Park",
+          "first_year": 2008,
+          "last_year": 2014
+        }
+      ]
+    },
+    {
+      "canonical": "Kezar Stadium",
+      "city": "San Francisco",
+      "metro": "San Francisco",
+      "state": "California",
+      "first_year": 1946,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Kezar Stadium",
+          "first_year": 1946,
+          "last_year": 1970
+        }
+      ]
+    }
+  ],
+  "Bills": [
+    {
+      "canonical": "Highmark Stadium",
+      "city": "Orchard Park",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1973,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Rich Stadium",
+          "first_year": 1973,
+          "last_year": 1998
+        },
+        {
+          "era_name": "Ralph Wilson Stadium",
+          "first_year": 1999,
+          "last_year": 2015
+        },
+        {
+          "era_name": "New Era Field",
+          "first_year": 2016,
+          "last_year": 2019
+        },
+        {
+          "era_name": "Bills Stadium",
+          "first_year": 2020,
+          "last_year": 2020
+        },
+        {
+          "era_name": "Highmark Stadium",
+          "first_year": 2021,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "War Memorial Stadium",
+      "city": "Buffalo",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1960,
+      "last_year": 1972,
+      "eras": [
+        {
+          "era_name": "War Memorial Stadium",
+          "first_year": 1960,
+          "last_year": 1972
+        }
+      ]
+    }
+  ],
+  "Falcons": [
+    {
+      "canonical": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
+      "metro": "Atlanta",
+      "state": "Georgia",
+      "first_year": 2017,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Mercedes-Benz Stadium",
+          "first_year": 2017,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Georgia Dome",
+      "city": "Atlanta",
+      "metro": "Atlanta",
+      "state": "Georgia",
+      "first_year": 1992,
+      "last_year": 2016,
+      "eras": [
+        {
+          "era_name": "Georgia Dome",
+          "first_year": 1992,
+          "last_year": 2016
+        }
+      ]
+    },
+    {
+      "canonical": "Atlanta-Fulton County Stadium",
+      "city": "Atlanta",
+      "metro": "Atlanta",
+      "state": "Georgia",
+      "first_year": 1966,
+      "last_year": 1991,
+      "eras": [
+        {
+          "era_name": "Atlanta Stadium",
+          "first_year": 1966,
+          "last_year": 1974
+        },
+        {
+          "era_name": "Atlanta-Fulton County Stadium",
+          "first_year": 1975,
+          "last_year": 1991
+        }
+      ]
+    }
+  ],
+  "Saints": [
+    {
+      "canonical": "Caesars Superdome",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 1975,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Louisiana Superdome",
+          "first_year": 1975,
+          "last_year": 2004
+        },
+        {
+          "era_name": "Louisiana Superdome",
+          "first_year": 2006,
+          "last_year": 2010
+        },
+        {
+          "era_name": "Mercedes-Benz Superdome",
+          "first_year": 2011,
+          "last_year": 2020
+        },
+        {
+          "era_name": "Caesars Superdome",
+          "first_year": 2021,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Alamodome/LSU Tiger Stadium",
+      "city": "San Antonio/Baton Rouge",
+      "metro": "San Antonio/Baton Rouge",
+      "state": "Texas/Louisiana",
+      "first_year": 2005,
+      "last_year": 2005,
+      "eras": [
+        {
+          "era_name": "Alamodome/LSU Tiger Stadium",
+          "first_year": 2005,
+          "last_year": 2005
+        }
+      ]
+    },
+    {
+      "canonical": "Tulane Stadium",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 1967,
+      "last_year": 1974,
+      "eras": [
+        {
+          "era_name": "Tulane Stadium",
+          "first_year": 1967,
+          "last_year": 1974
+        }
+      ]
+    }
+  ],
+  "Vikings": [
+    {
+      "canonical": "U.S. Bank Stadium",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 2016,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "U.S. Bank Stadium",
+          "first_year": 2016,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "TCF Bank Stadium",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 2015,
+      "last_year": 2015,
+      "eras": [
+        {
+          "era_name": "TCF Bank Stadium",
+          "first_year": 2015,
+          "last_year": 2015
+        }
+      ]
+    },
+    {
+      "canonical": "Hubert H. Humphrey Metrodome",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1982,
+      "last_year": 2014,
+      "eras": [
+        {
+          "era_name": "Hubert H. Humphrey Metrodome",
+          "first_year": 1982,
+          "last_year": 2014
+        }
+      ]
+    },
+    {
+      "canonical": "Metropolitan Stadium",
+      "city": "Bloomington",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1961,
+      "last_year": 1981,
+      "eras": [
+        {
+          "era_name": "Metropolitan Stadium",
+          "first_year": 1961,
+          "last_year": 1981
+        }
+      ]
+    }
+  ],
+  "Colts": [
+    {
+      "canonical": "Lucas Oil Stadium",
+      "city": "Indianapolis",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 2008,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Lucas Oil Stadium",
+          "first_year": 2008,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "RCA Dome",
+      "city": "Indianapolis",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 1984,
+      "last_year": 2007,
+      "eras": [
+        {
+          "era_name": "Hoosier Dome",
+          "first_year": 1984,
+          "last_year": 1993
+        },
+        {
+          "era_name": "Hoosier Dome",
+          "first_year": 1984,
+          "last_year": 1993
+        },
+        {
+          "era_name": "RCA Dome",
+          "first_year": 1994,
+          "last_year": 2007
+        }
+      ]
+    },
+    {
+      "canonical": "Memorial Stadium",
+      "city": "Baltimore",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1953,
+      "last_year": 1983,
+      "eras": [
+        {
+          "era_name": "Memorial Stadium",
+          "first_year": 1953,
+          "last_year": 1983
+        }
+      ]
+    }
+  ],
+  "Dolphins": [
+    {
+      "canonical": "Hard Rock Stadium",
+      "city": "Miami",
+      "metro": "Miami",
+      "state": "Florida",
+      "first_year": 1987,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Joe Robbie Stadium",
+          "first_year": 1987,
+          "last_year": 1995
+        },
+        {
+          "era_name": "Pro Player Stadium",
+          "first_year": 1996,
+          "last_year": 2004
+        },
+        {
+          "era_name": "Dolphins Stadium",
+          "first_year": 2005,
+          "last_year": 2008
+        },
+        {
+          "era_name": "Land Shark Stadium",
+          "first_year": 2009,
+          "last_year": 2009
+        },
+        {
+          "era_name": "Sun Life Stadium",
+          "first_year": 2010,
+          "last_year": 2015
+        },
+        {
+          "era_name": "Hard Rock Stadium",
+          "first_year": 2016,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Orange Bowl",
+      "city": "Miami",
+      "metro": "Miami",
+      "state": "Florida",
+      "first_year": 1966,
+      "last_year": 1986,
+      "eras": [
+        {
+          "era_name": "Orange Bowl",
+          "first_year": 1966,
+          "last_year": 1986
+        }
+      ]
+    }
+  ],
+  "Seahawks": [
+    {
+      "canonical": "Lumen Field",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 2002,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Seahawks Stadium",
+          "first_year": 2002,
+          "last_year": 2003
+        },
+        {
+          "era_name": "Qwest Field",
+          "first_year": 2004,
+          "last_year": 2010
+        },
+        {
+          "era_name": "CenturyLink Field",
+          "first_year": 2011,
+          "last_year": 2020
+        },
+        {
+          "era_name": "Lumen Field",
+          "first_year": 2021,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Husky Stadium",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 1994,
+      "last_year": 2001,
+      "eras": [
+        {
+          "era_name": "Husky Stadium",
+          "first_year": 1994,
+          "last_year": 1994
+        },
+        {
+          "era_name": "Husky Stadium",
+          "first_year": 2000,
+          "last_year": 2001
+        }
+      ]
+    },
+    {
+      "canonical": "Kingdome",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 1976,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "Kingdome",
+          "first_year": 1976,
+          "last_year": 1993
+        },
+        {
+          "era_name": "Kingdome",
+          "first_year": 1995,
+          "last_year": 1999
+        }
+      ]
+    }
+  ],
+  "Panthers": [
+    {
+      "canonical": "Bank of America Stadium",
+      "city": "Charlotte",
+      "metro": "Charlotte",
+      "state": "North Carolina",
+      "first_year": 1996,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Ericsson Stadium",
+          "first_year": 1996,
+          "last_year": 2003
+        },
+        {
+          "era_name": "Bank of America Stadium",
+          "first_year": 2004,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Clemson Stadium",
+      "city": "Clemson",
+      "metro": "Charlotte",
+      "state": "North Carolina",
+      "first_year": 1995,
+      "last_year": 1995,
+      "eras": [
+        {
+          "era_name": "Clemson Stadium",
+          "first_year": 1995,
+          "last_year": 1995
+        }
+      ]
+    }
+  ],
+  "Browns": [
+    {
+      "canonical": "Huntington Bank Field",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1999,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Cleveland Browns Stadium",
+          "first_year": 1999,
+          "last_year": 2012
+        },
+        {
+          "era_name": "FirstEnergy Stadium",
+          "first_year": 2013,
+          "last_year": 2023
+        },
+        {
+          "era_name": "Huntington Bank Field",
+          "first_year": 2024,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Cleveland Municipal Stadium",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1946,
+      "last_year": 1995,
+      "eras": [
+        {
+          "era_name": "Cleveland Municipal Stadium",
+          "first_year": 1946,
+          "last_year": 1995
+        }
+      ]
+    }
+  ],
+  "Buccaneers": [
+    {
+      "canonical": "Raymond James Stadium",
+      "city": "Tampa",
+      "metro": "Tampa",
+      "state": "Florida",
+      "first_year": 1998,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Raymond James Stadium",
+          "first_year": 1998,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Houlihan's Stadium",
+      "city": "Tampa",
+      "metro": "Tampa",
+      "state": "Florida",
+      "first_year": 1976,
+      "last_year": 1997,
+      "eras": [
+        {
+          "era_name": "Tampa Stadium",
+          "first_year": 1976,
+          "last_year": 1995
+        },
+        {
+          "era_name": "Houlihan's Stadium",
+          "first_year": 1996,
+          "last_year": 1997
+        }
+      ]
+    }
+  ],
+  "Jaguars": [
+    {
+      "canonical": "EverBank Stadium",
+      "city": "Jacksonville",
+      "metro": "Jacksonville",
+      "state": "Florida",
+      "first_year": 1995,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Jacksonville Municipal Stadium",
+          "first_year": 1995,
+          "last_year": 1996
+        },
+        {
+          "era_name": "Alltel Stadium",
+          "first_year": 1997,
+          "last_year": 2007
+        },
+        {
+          "era_name": "Jacksonville Municipal Stadium",
+          "first_year": 2008,
+          "last_year": 2010
+        },
+        {
+          "era_name": "EverBank Field",
+          "first_year": 2011,
+          "last_year": 2017
+        },
+        {
+          "era_name": "TIAA Bank Field",
+          "first_year": 2018,
+          "last_year": 2023
+        },
+        {
+          "era_name": "EverBank Stadium",
+          "first_year": 2024,
+          "last_year": 2025
+        }
+      ]
+    }
+  ],
+  "Ravens": [
+    {
+      "canonical": "M&T Bank Stadium",
+      "city": "Baltimore",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1998,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Ravens Stadium",
+          "first_year": 1998,
+          "last_year": 1998
+        },
+        {
+          "era_name": "PSINet Stadium",
+          "first_year": 1999,
+          "last_year": 2001
+        },
+        {
+          "era_name": "Ravens Stadium",
+          "first_year": 2002,
+          "last_year": 2002
+        },
+        {
+          "era_name": "M&T Bank Stadium",
+          "first_year": 2003,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Memorial Stadium",
+      "city": "Baltimore",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1996,
+      "last_year": 1997,
+      "eras": [
+        {
+          "era_name": "Memorial Stadium",
+          "first_year": 1996,
+          "last_year": 1997
+        }
+      ]
+    }
+  ],
+  "Broncos": [
+    {
+      "canonical": "Empower Field at Mile High",
+      "city": "Denver",
+      "metro": "Denver",
+      "state": "Colorado",
+      "first_year": 2001,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Invesco Field",
+          "first_year": 2001,
+          "last_year": 2010
+        },
+        {
+          "era_name": "Sports Authority Field",
+          "first_year": 2011,
+          "last_year": 2017
+        },
+        {
+          "era_name": "Broncos Stadium at Mile High",
+          "first_year": 2018,
+          "last_year": 2019
+        },
+        {
+          "era_name": "Empower Field at Mile High",
+          "first_year": 2020,
+          "last_year": 2025
+        }
+      ]
+    },
+    {
+      "canonical": "Mile High Stadium",
+      "city": "Denver",
+      "metro": "Denver",
+      "state": "Colorado",
+      "first_year": 1960,
+      "last_year": 2000,
+      "eras": [
+        {
+          "era_name": "Mile High Stadium",
+          "first_year": 1960,
+          "last_year": 2000
+        }
+      ]
+    },
+    {
+      "canonical": "Bears Stadium",
+      "city": "Denver",
+      "metro": "Denver",
+      "state": "Colorado",
+      "first_year": 1960,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Bears Stadium",
+          "first_year": 1960,
+          "last_year": 1968
+        }
+      ]
+    }
+  ],
+  "Texans": [
+    {
+      "canonical": "NRG Stadium",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 2002,
+      "last_year": 2025,
+      "eras": [
+        {
+          "era_name": "Reliant Stadium",
+          "first_year": 2002,
+          "last_year": 2014
+        },
+        {
+          "era_name": "NRG Stadium",
+          "first_year": 2015,
+          "last_year": 2025
+        }
+      ]
+    }
+  ],
+  "All-Americans": [
+    {
+      "canonical": "Canisius Villa",
+      "city": "Buffalo",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1920,
+      "last_year": 1921,
+      "eras": [
+        {
+          "era_name": "Canisius Villa",
+          "first_year": 1920,
+          "last_year": 1921
+        }
+      ]
+    }
+  ],
+  "Reds": [
+    {
+      "canonical": "Redland Field",
+      "city": "Cincinnati",
+      "metro": "Cincinnati",
+      "state": "Ohio",
+      "first_year": 1933,
+      "last_year": 1934,
+      "eras": [
+        {
+          "era_name": "Redland Field",
+          "first_year": 1933,
+          "last_year": 1934
+        }
+      ]
+    }
+  ],
+  "Indians": [
+    {
+      "canonical": "Dunn Field",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1920,
+      "last_year": 1925,
+      "eras": [
+        {
+          "era_name": "Dunn Field",
+          "first_year": 1920,
+          "last_year": 1925
+        }
+      ]
+    }
+  ],
+  "Brecks": [
+    {
+      "canonical": "Eclipse Park II",
+      "city": "Louisville",
+      "metro": "Louisville",
+      "state": "Kentucky",
+      "first_year": null,
+      "last_year": null,
+      "eras": [
+        {
+          "era_name": "Eclipse Park II",
+          "first_year": null,
+          "last_year": null
+        }
+      ]
+    }
+  ]
+}
