@@ -1,0 +1,2056 @@
+{
+  "Indians (Akron)": [
+    {
+      "year": 1920,
+      "era": "pre_sb",
+      "league": "APFA",
+      "is_winner": true,
+      "record": "6-0-3",
+      "season_city": "Akron",
+      "season_team": "Pros"
+    }
+  ],
+  "Bears": [
+    {
+      "year": 1921,
+      "era": "pre_sb",
+      "league": "APFA",
+      "is_winner": true,
+      "record": "9-1-1",
+      "season_city": "Chicago",
+      "season_team": "Staleys"
+    },
+    {
+      "year": 1932,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "7-1-6",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1933,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-2-1",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1934,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-0-0",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1937,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-1-1",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1940,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-3-0",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1941,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-1-0",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1942,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-0-0",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1943,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-1-1",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1946,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-2-1",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1956,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-2-1",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1963,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-1-2",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 1985,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "15-1-0",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    },
+    {
+      "year": 2006,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Chicago",
+      "season_team": "Bears"
+    }
+  ],
+  "Cardinals": [
+    {
+      "year": 1925,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-2-1",
+      "season_city": "Chicago",
+      "season_team": "Cardinals"
+    },
+    {
+      "year": 1947,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-3-0",
+      "season_city": "Chicago",
+      "season_team": "Cardinals"
+    },
+    {
+      "year": 1948,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-1-0",
+      "season_city": "Chicago",
+      "season_team": "Cardinals"
+    },
+    {
+      "year": 2008,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-7-0",
+      "season_city": "Arizona",
+      "season_team": "Cardinals"
+    }
+  ],
+  "Bulldogs (Canton)": [
+    {
+      "year": 1922,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-0-2",
+      "season_city": "Canton",
+      "season_team": "Bulldogs"
+    },
+    {
+      "year": 1923,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-0-1",
+      "season_city": "Canton",
+      "season_team": "Bulldogs"
+    }
+  ],
+  "Packers": [
+    {
+      "year": 1929,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-0-1",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1930,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-3-1",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1931,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-2-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1936,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-1-1",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1938,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-3-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1939,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-2-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1944,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-2-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1960,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-4-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1961,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-3-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1962,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-1-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1965,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-3-1",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1966,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-2-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1967,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-4-1",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1996,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 1997,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    },
+    {
+      "year": 2010,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-6-0",
+      "season_city": "Green Bay",
+      "season_team": "Packers"
+    }
+  ],
+  "Wolverines": [
+    {
+      "year": 1924,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "7-1-1",
+      "season_city": "Cleveland",
+      "season_team": "Bulldogs"
+    }
+  ],
+  "Yellow Jackets": [
+    {
+      "year": 1926,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-1-2",
+      "season_city": "Frankford",
+      "season_team": "Yellow Jackets"
+    }
+  ],
+  "Giants": [
+    {
+      "year": 1927,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-1-1",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1933,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-3-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1934,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-5-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1935,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-3-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1938,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-2-1",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1939,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-1-1",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1941,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-3-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1944,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-1-1",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1946,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "7-3-1",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1956,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-3-1",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1958,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-3-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1959,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-2-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1961,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-3-1",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1962,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-2-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1963,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-3-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1986,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 1990,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 2000,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 2007,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-6-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    },
+    {
+      "year": 2011,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-7-0",
+      "season_city": "New York",
+      "season_team": "Giants"
+    }
+  ],
+  "Steam Roller": [
+    {
+      "year": 1928,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-1-2",
+      "season_city": "Providence",
+      "season_team": "Steam Roller"
+    }
+  ],
+  "Lions": [
+    {
+      "year": 1932,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "6-2-4",
+      "season_city": "Portsmouth",
+      "season_team": "Spartans"
+    },
+    {
+      "year": 1935,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "7-3-2",
+      "season_city": "Detroit",
+      "season_team": "Lions"
+    },
+    {
+      "year": 1952,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-3-0",
+      "season_city": "Detroit",
+      "season_team": "Lions"
+    },
+    {
+      "year": 1953,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-2-0",
+      "season_city": "Detroit",
+      "season_team": "Lions"
+    },
+    {
+      "year": 1954,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-2-1",
+      "season_city": "Detroit",
+      "season_team": "Lions"
+    },
+    {
+      "year": 1957,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-4-0",
+      "season_city": "Detroit",
+      "season_team": "Lions"
+    }
+  ],
+  "Commanders": [
+    {
+      "year": 1936,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "7-5-0",
+      "season_city": "Boston",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1937,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-3-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1940,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-2-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1942,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-1-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1943,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "6-3-1",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1945,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-2-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1972,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-3-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1982,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-1-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1983,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-2-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1987,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-4-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    },
+    {
+      "year": 1991,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "Washington",
+      "season_team": "Redskins"
+    }
+  ],
+  "Eagles": [
+    {
+      "year": 1947,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-4-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 1948,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-2-1",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 1949,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-1-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 1960,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-2-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 1980,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 2004,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 2017,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 2022,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-3-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    },
+    {
+      "year": 2024,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-3-0",
+      "season_city": "Philadelphia",
+      "season_team": "Eagles"
+    }
+  ],
+  "Steelers": [
+    {
+      "year": 1974,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-3-1",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    },
+    {
+      "year": 1975,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-2-0",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    },
+    {
+      "year": 1978,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    },
+    {
+      "year": 1979,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    },
+    {
+      "year": 1995,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    },
+    {
+      "year": 2005,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-5-0",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    },
+    {
+      "year": 2008,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    },
+    {
+      "year": 2010,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "Pittsburgh",
+      "season_team": "Steelers"
+    }
+  ],
+  "Rams": [
+    {
+      "year": 1945,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-1-0",
+      "season_city": "Cleveland",
+      "season_team": "Rams"
+    },
+    {
+      "year": 1949,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-2-2",
+      "season_city": "Los Angeles",
+      "season_team": "Rams"
+    },
+    {
+      "year": 1950,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-3-0",
+      "season_city": "Los Angeles",
+      "season_team": "Rams"
+    },
+    {
+      "year": 1951,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "8-4-0",
+      "season_city": "Los Angeles",
+      "season_team": "Rams"
+    },
+    {
+      "year": 1955,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-3-1",
+      "season_city": "Los Angeles",
+      "season_team": "Rams"
+    },
+    {
+      "year": 1979,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-7-0",
+      "season_city": "Los Angeles",
+      "season_team": "Rams"
+    },
+    {
+      "year": 1999,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "St. Louis",
+      "season_team": "Rams"
+    },
+    {
+      "year": 2001,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-2-0",
+      "season_city": "St. Louis",
+      "season_team": "Rams"
+    },
+    {
+      "year": 2018,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Los Angeles",
+      "season_team": "Rams"
+    },
+    {
+      "year": 2021,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-5-0",
+      "season_city": "Los Angeles",
+      "season_team": "Rams"
+    }
+  ],
+  "Yankees": [
+    {
+      "year": 1946,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": false,
+      "record": "10-3-1",
+      "season_city": "New York",
+      "season_team": "Yankees"
+    },
+    {
+      "year": 1947,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": false,
+      "record": "11-2-1",
+      "season_city": "New York",
+      "season_team": "Yankees"
+    }
+  ],
+  "Bills (D)": [
+    {
+      "year": 1948,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": false,
+      "record": "7-7-0",
+      "season_city": "Buffalo",
+      "season_team": "Bills"
+    }
+  ],
+  "Browns": [
+    {
+      "year": 1946,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": true,
+      "record": "12-2-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1947,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": true,
+      "record": "12-1-1",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1948,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": true,
+      "record": "14-0-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1949,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": true,
+      "record": "9-1-2",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1950,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-2-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1951,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-1-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1952,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "8-4-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1953,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-1-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1954,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-3-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1955,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-2-1",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1957,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "9-2-1",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1964,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-3-1",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    },
+    {
+      "year": 1965,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-3-0",
+      "season_city": "Cleveland",
+      "season_team": "Browns"
+    }
+  ],
+  "49ers": [
+    {
+      "year": 1949,
+      "era": "pre_sb",
+      "league": "AAFC",
+      "is_winner": false,
+      "record": "9-3-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 1981,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 1984,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "15-1-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 1988,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-6-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 1989,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 1994,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 2012,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-4-1",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 2019,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    },
+    {
+      "year": 2023,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-5-0",
+      "season_city": "San Francisco",
+      "season_team": "49ers"
+    }
+  ],
+  "Colts": [
+    {
+      "year": 1958,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-3-0",
+      "season_city": "Baltimore",
+      "season_team": "Colts"
+    },
+    {
+      "year": 1959,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "9-3-0",
+      "season_city": "Baltimore",
+      "season_team": "Colts"
+    },
+    {
+      "year": 1964,
+      "era": "pre_sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-2-0",
+      "season_city": "Baltimore",
+      "season_team": "Colts"
+    },
+    {
+      "year": 1968,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-1-0",
+      "season_city": "Baltimore",
+      "season_team": "Colts"
+    },
+    {
+      "year": 1970,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-2-1",
+      "season_city": "Baltimore",
+      "season_team": "Colts"
+    },
+    {
+      "year": 2006,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Indianapolis",
+      "season_team": "Colts"
+    },
+    {
+      "year": 2009,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-2-0",
+      "season_city": "Indianapolis",
+      "season_team": "Colts"
+    }
+  ],
+  "Titans": [
+    {
+      "year": 1960,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "10-4-0",
+      "season_city": "Houston",
+      "season_team": "Oilers"
+    },
+    {
+      "year": 1961,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "10-3-1",
+      "season_city": "Houston",
+      "season_team": "Oilers"
+    },
+    {
+      "year": 1962,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "11-3-0",
+      "season_city": "Houston",
+      "season_team": "Oilers"
+    },
+    {
+      "year": 1999,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Tennessee",
+      "season_team": "Titans"
+    }
+  ],
+  "Jets": [
+    {
+      "year": 1968,
+      "era": "sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "11-3-0",
+      "season_city": "New York",
+      "season_team": "Jets"
+    }
+  ],
+  "Bills": [
+    {
+      "year": 1964,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "12-2-0",
+      "season_city": "Buffalo",
+      "season_team": "Bills"
+    },
+    {
+      "year": 1965,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "10-3-1",
+      "season_city": "Buffalo",
+      "season_team": "Bills"
+    },
+    {
+      "year": 1990,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Buffalo",
+      "season_team": "Bills"
+    },
+    {
+      "year": 1991,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Buffalo",
+      "season_team": "Bills"
+    },
+    {
+      "year": 1992,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "Buffalo",
+      "season_team": "Bills"
+    },
+    {
+      "year": 1993,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "Buffalo",
+      "season_team": "Bills"
+    }
+  ],
+  "Patriots": [
+    {
+      "year": 1963,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "7-6-1",
+      "season_city": "Boston",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 1985,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 1996,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2001,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-5-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2003,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2004,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2007,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "16-0-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2011,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2014,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2016,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2017,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2018,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-5-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    },
+    {
+      "year": 2025,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-3-0",
+      "season_city": "New England",
+      "season_team": "Patriots"
+    }
+  ],
+  "Chargers": [
+    {
+      "year": 1960,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "10-4-0",
+      "season_city": "Los Angeles",
+      "season_team": "Chargers"
+    },
+    {
+      "year": 1961,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "12-2-0",
+      "season_city": "San Diego",
+      "season_team": "Chargers"
+    },
+    {
+      "year": 1963,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "11-3-0",
+      "season_city": "San Diego",
+      "season_team": "Chargers"
+    },
+    {
+      "year": 1964,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "8-5-1",
+      "season_city": "San Diego",
+      "season_team": "Chargers"
+    },
+    {
+      "year": 1965,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "9-2-3",
+      "season_city": "San Diego",
+      "season_team": "Chargers"
+    },
+    {
+      "year": 1994,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "San Diego",
+      "season_team": "Chargers"
+    }
+  ],
+  "Chiefs": [
+    {
+      "year": 1962,
+      "era": "pre_sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "11-3-0",
+      "season_city": "Dallas",
+      "season_team": "Texans"
+    },
+    {
+      "year": 1966,
+      "era": "sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "11-2-1",
+      "season_city": "Kansas City",
+      "season_team": "Chiefs"
+    },
+    {
+      "year": 1969,
+      "era": "sb",
+      "league": "AFL",
+      "is_winner": true,
+      "record": "11-3-0",
+      "season_city": "Kansas City",
+      "season_team": "Chiefs"
+    },
+    {
+      "year": 2019,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Kansas City",
+      "season_team": "Chiefs"
+    },
+    {
+      "year": 2020,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-2-0",
+      "season_city": "Kansas City",
+      "season_team": "Chiefs"
+    },
+    {
+      "year": 2022,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-3-0",
+      "season_city": "Kansas City",
+      "season_team": "Chiefs"
+    },
+    {
+      "year": 2023,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-6-0",
+      "season_city": "Kansas City",
+      "season_team": "Chiefs"
+    },
+    {
+      "year": 2024,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "15-2-0",
+      "season_city": "Kansas City",
+      "season_team": "Chiefs"
+    }
+  ],
+  "Raiders": [
+    {
+      "year": 1967,
+      "era": "sb",
+      "league": "AFL",
+      "is_winner": false,
+      "record": "13-1-0",
+      "season_city": "Oakland",
+      "season_team": "Raiders"
+    },
+    {
+      "year": 1976,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-1-0",
+      "season_city": "Oakland",
+      "season_team": "Raiders"
+    },
+    {
+      "year": 1980,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-5-0",
+      "season_city": "Oakland",
+      "season_team": "Raiders"
+    },
+    {
+      "year": 1983,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Los Angeles",
+      "season_team": "Raiders"
+    },
+    {
+      "year": 2002,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "Oakland",
+      "season_team": "Raiders"
+    }
+  ],
+  "Broncos": [
+    {
+      "year": 1977,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-2-0",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    },
+    {
+      "year": 1986,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    },
+    {
+      "year": 1987,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-4-1",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    },
+    {
+      "year": 1989,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    },
+    {
+      "year": 1997,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    },
+    {
+      "year": 1998,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-2-0",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    },
+    {
+      "year": 2013,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    },
+    {
+      "year": 2015,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Denver",
+      "season_team": "Broncos"
+    }
+  ],
+  "Cowboys": [
+    {
+      "year": 1970,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-4-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    },
+    {
+      "year": 1971,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-3-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    },
+    {
+      "year": 1975,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-4-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    },
+    {
+      "year": 1977,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-2-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    },
+    {
+      "year": 1978,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    },
+    {
+      "year": 1992,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    },
+    {
+      "year": 1993,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    },
+    {
+      "year": 1995,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Dallas",
+      "season_team": "Cowboys"
+    }
+  ],
+  "Vikings": [
+    {
+      "year": 1969,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-2-0",
+      "season_city": "Minnesota",
+      "season_team": "Vikings"
+    },
+    {
+      "year": 1973,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-2-0",
+      "season_city": "Minnesota",
+      "season_team": "Vikings"
+    },
+    {
+      "year": 1974,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-4-0",
+      "season_city": "Minnesota",
+      "season_team": "Vikings"
+    },
+    {
+      "year": 1976,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-2-1",
+      "season_city": "Minnesota",
+      "season_team": "Vikings"
+    }
+  ],
+  "Dolphins": [
+    {
+      "year": 1971,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-3-1",
+      "season_city": "Miami",
+      "season_team": "Dolphins"
+    },
+    {
+      "year": 1972,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-0-0",
+      "season_city": "Miami",
+      "season_team": "Dolphins"
+    },
+    {
+      "year": 1973,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-2-0",
+      "season_city": "Miami",
+      "season_team": "Dolphins"
+    },
+    {
+      "year": 1982,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "7-2-0",
+      "season_city": "Miami",
+      "season_team": "Dolphins"
+    },
+    {
+      "year": 1984,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-2-0",
+      "season_city": "Miami",
+      "season_team": "Dolphins"
+    }
+  ],
+  "Falcons": [
+    {
+      "year": 1998,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "14-2-0",
+      "season_city": "Atlanta",
+      "season_team": "Falcons"
+    },
+    {
+      "year": 2016,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "Atlanta",
+      "season_team": "Falcons"
+    }
+  ],
+  "Saints": [
+    {
+      "year": 2009,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "New Orleans",
+      "season_team": "Saints"
+    }
+  ],
+  "Bengals": [
+    {
+      "year": 1981,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "Cincinnati",
+      "season_team": "Bengals"
+    },
+    {
+      "year": 1988,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "Cincinnati",
+      "season_team": "Bengals"
+    },
+    {
+      "year": 2021,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "10-7-0",
+      "season_city": "Cincinnati",
+      "season_team": "Bengals"
+    }
+  ],
+  "Buccaneers": [
+    {
+      "year": 2002,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Tampa Bay",
+      "season_team": "Buccaneers"
+    },
+    {
+      "year": 2020,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "11-5-0",
+      "season_city": "Tampa Bay",
+      "season_team": "Buccaneers"
+    }
+  ],
+  "Seahawks": [
+    {
+      "year": 2005,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "13-3-0",
+      "season_city": "Seattle",
+      "season_team": "Seahawks"
+    },
+    {
+      "year": 2013,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "13-3-0",
+      "season_city": "Seattle",
+      "season_team": "Seahawks"
+    },
+    {
+      "year": 2014,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "12-4-0",
+      "season_city": "Seattle",
+      "season_team": "Seahawks"
+    },
+    {
+      "year": 2025,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "14-3-0",
+      "season_city": "Seattle",
+      "season_team": "Seahawks"
+    }
+  ],
+  "Panthers": [
+    {
+      "year": 2003,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "11-5-0",
+      "season_city": "Carolina",
+      "season_team": "Panthers"
+    },
+    {
+      "year": 2015,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": false,
+      "record": "15-1-0",
+      "season_city": "Carolina",
+      "season_team": "Panthers"
+    }
+  ],
+  "Ravens": [
+    {
+      "year": 2000,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "12-4-0",
+      "season_city": "Baltimore",
+      "season_team": "Ravens"
+    },
+    {
+      "year": 2012,
+      "era": "sb",
+      "league": "NFL",
+      "is_winner": true,
+      "record": "10-6-0",
+      "season_city": "Baltimore",
+      "season_team": "Ravens"
+    }
+  ]
+}
