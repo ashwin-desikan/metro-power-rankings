@@ -282,6 +282,8 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
                                   ? "LCS"
                                   : s.playoff
                                   ? "Playoffs"
+                                  : s.tiebreaker
+                                  ? "Tiebreaker (missed playoffs)"
                                   : ""}
                               </td>
                             </tr>

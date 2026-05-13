@@ -215,6 +215,7 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Pro
                         champ={s.champ}
                         otherCupApp={s.oth_chmp_app}
                         otherCupWon={s.oth_chmp}
+                        tiebreaker={s.tiebreaker === true}
                         year={s.year}
                       />
                     )}
@@ -281,6 +282,7 @@ function SeasonBadges({
   champ,
   otherCupApp,
   otherCupWon,
+  tiebreaker,
   year,
 }: {
   playoff: boolean;
@@ -290,6 +292,7 @@ function SeasonBadges({
   champ: boolean;
   otherCupApp: boolean;
   otherCupWon: boolean;
+  tiebreaker: boolean;
   year: number;
 }) {
   const isWsEra = year >= 1903;
@@ -373,6 +376,18 @@ function SeasonBadges({
         title="Made the playoffs"
       >
         Playoffs
+      </span>,
+    );
+  }
+  if (tiebreaker && !playoff) {
+    badges.push(
+      <span
+        key="tb"
+        className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide"
+        style={{ background: "rgba(110,138,166,0.16)", color: "#a9b8cc", border: "1px solid rgba(110,138,166,0.45)" }}
+        title="Played a one-game tiebreaker and missed the playoffs"
+      >
+        Tiebreaker
       </span>,
     );
   }

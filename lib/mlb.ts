@@ -107,6 +107,7 @@ export type Season = {
   oth_chmp_app: boolean;
   oth_chmp: boolean;
   conf_final: boolean;
+  tiebreaker?: boolean;   // played in a one-game tiebreaker that year
 };
 
 export type TopGameTeamRow = {

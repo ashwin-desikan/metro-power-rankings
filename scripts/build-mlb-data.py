@@ -316,7 +316,28 @@ def read_totals(wb):
     return out
 
 
-def read_year_by_year(wb):
+def read_tiebreaker_years(wb):
+    """Walk Detailed Playoffs and return the set of (canonical_franchise, year)
+    pairs that played in a tiebreaker game. The Tiebreaker round in the
+    workbook covers any one-game playoff to break a regular-season tie
+    (e.g., 1948 Guardians-Red Sox, 1978 Yankees-Red Sox, 2008 White Sox-
+    Twins, 2018 Brewers-Cubs and Dodgers-Rockies)."""
+    ws = wb["Detailed Playoffs"]
+    out = set()
+    for i, row in enumerate(ws.iter_rows(values_only=True)):
+        if i == 0:
+            continue
+        rnd = safe_str(row[2]) if len(row) > 2 else ""
+        if "Tiebreaker" not in rnd:
+            continue
+        canonical = safe_str(row[24]) if len(row) > 24 else ""
+        year = safe_int(row[1])
+        if canonical and year:
+            out.add((canonical, year))
+    return out
+
+
+def read_year_by_year(wb, tiebreaker_set):
     """Build season-by-season per canonical franchise from Year by Year.
 
     Returns dict { canonical_name: [season_row, ...] } sorted ascending by
@@ -367,6 +388,7 @@ def read_year_by_year(wb):
         # Skip in-progress (no W or L) rows for ranking purposes but keep
         # them in the season list as zero-filled. The team page filters in
         # the live ESPN row separately for the in-progress season.
+        played_tiebreaker = (canonical, year) in tiebreaker_set
         by_team[canonical].append({
             "year": year,
             "league": league,
@@ -389,6 +411,7 @@ def read_year_by_year(wb):
             "oth_chmp_app": oth_chmp_app_yn,
             "oth_chmp": oth_champ_yn,
             "conf_final": lcs_app_yn,  # LCS is the conference final analog for MLB
+            "tiebreaker": played_tiebreaker,
             "division": division,
             "main_div": main_div,
             "place": place,
@@ -920,8 +943,12 @@ def main():
     totals = read_totals(wb)
     print(f"  {len(totals)} franchise rows (active + defunct)")
 
+    print("Reading Detailed Playoffs (tiebreaker scan)...")
+    tiebreaker_set = read_tiebreaker_years(wb)
+    print(f"  {len(tiebreaker_set)} team-seasons that played in a tiebreaker game")
+
     print("Reading Year by Year...")
-    yby, latest_meta, earliest_year = read_year_by_year(wb)
+    yby, latest_meta, earliest_year = read_year_by_year(wb, tiebreaker_set)
     print(f"  {len(yby)} canonical names, {sum(len(v) for v in yby.values())} team-seasons")
 
     print("Reading Stadium master...")

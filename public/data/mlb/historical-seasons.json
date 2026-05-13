@@ -22,6 +22,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -48,6 +49,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -74,6 +76,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -100,6 +103,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -126,6 +130,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -152,6 +157,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "3"
@@ -178,6 +184,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "5"
@@ -204,6 +211,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "5"
@@ -230,6 +238,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -256,6 +265,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "4"
@@ -282,6 +292,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "12"
@@ -308,6 +319,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -334,6 +346,7 @@
       "oth_chmp_app": true,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "1"
@@ -360,6 +373,7 @@
       "oth_chmp_app": true,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "1"
@@ -386,6 +400,7 @@
       "oth_chmp_app": true,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "1"
@@ -412,6 +427,7 @@
       "oth_chmp_app": true,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -438,6 +454,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -464,6 +481,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "4"
@@ -492,6 +510,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -518,6 +537,7 @@
       "oth_chmp_app": false,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "1"
@@ -544,6 +564,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -570,6 +591,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -596,6 +618,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -622,6 +645,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -648,6 +672,7 @@
       "oth_chmp_app": true,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "1"
@@ -674,6 +699,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "4"
@@ -702,6 +728,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -728,6 +755,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -754,6 +782,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -780,6 +809,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -806,6 +836,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -832,6 +863,7 @@
       "oth_chmp_app": true,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -858,6 +890,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -884,6 +917,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -910,6 +944,7 @@
       "oth_chmp_app": true,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -936,6 +971,7 @@
       "oth_chmp_app": true,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -962,6 +998,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -988,6 +1025,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -1014,6 +1052,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "12"
@@ -1042,6 +1081,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "2"
@@ -1068,6 +1108,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "5"
@@ -1094,6 +1135,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "3"
@@ -1120,6 +1162,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -1146,6 +1189,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "4"
@@ -1172,6 +1216,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "4"
@@ -1198,6 +1243,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -1224,6 +1270,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -1250,6 +1297,7 @@
       "oth_chmp_app": true,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "1"
@@ -1276,6 +1324,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -1302,6 +1351,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "9"
@@ -1328,6 +1378,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "11"
@@ -1354,6 +1405,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "12"
@@ -1380,6 +1432,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "12"
@@ -1406,6 +1459,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "12"
@@ -1432,6 +1486,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "11"
@@ -1458,6 +1513,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "9"
@@ -1484,6 +1540,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "9"
@@ -1512,6 +1569,7 @@
       "oth_chmp_app": false,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "1"
@@ -1540,6 +1598,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "3"
@@ -1566,6 +1625,7 @@
       "oth_chmp_app": false,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "1"
@@ -1592,6 +1652,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -1618,6 +1679,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "4"
@@ -1644,6 +1706,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -1670,6 +1733,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "5"
@@ -1696,6 +1760,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "3"
@@ -1722,6 +1787,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "3"
@@ -1748,6 +1814,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -1776,6 +1843,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "4"
@@ -1802,6 +1870,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -1828,6 +1897,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -1854,6 +1924,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -1880,6 +1951,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -1906,6 +1978,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -1932,6 +2005,7 @@
       "oth_chmp_app": true,
       "oth_chmp": true,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "1"
@@ -1958,6 +2032,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -1986,6 +2061,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "9"
@@ -2012,6 +2088,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "10"
@@ -2038,6 +2115,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "12"
@@ -2064,6 +2142,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "11"
@@ -2090,6 +2169,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "10"
@@ -2116,6 +2196,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "9"
@@ -2142,6 +2223,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -2168,6 +2250,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "11"
@@ -2194,6 +2277,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "11"
@@ -2222,6 +2306,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -2250,6 +2335,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -2276,6 +2362,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "2"
@@ -2302,6 +2389,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -2330,6 +2418,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "3"
@@ -2358,6 +2447,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "5"
@@ -2386,6 +2476,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "9"
@@ -2414,6 +2505,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "5"
@@ -2442,6 +2534,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -2470,6 +2563,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "4"
@@ -2498,6 +2592,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -2524,6 +2619,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -2550,6 +2646,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -2578,6 +2675,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -2604,6 +2702,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -2632,6 +2731,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -2658,6 +2758,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -2684,6 +2785,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -2710,6 +2812,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -2738,6 +2841,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "4"
@@ -2764,6 +2868,7 @@
       "oth_chmp_app": true,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "1"
@@ -2790,6 +2895,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -2816,6 +2922,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -2842,6 +2949,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "7"
@@ -2870,6 +2978,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -2898,6 +3007,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -2924,6 +3034,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -2952,6 +3063,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -2978,6 +3090,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -3004,6 +3117,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -3030,6 +3144,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -3056,6 +3171,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -3082,6 +3198,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -3108,6 +3225,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -3136,6 +3254,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -3162,6 +3281,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -3188,6 +3308,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -3214,6 +3335,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -3240,6 +3362,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "4"
@@ -3266,6 +3389,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -3294,6 +3418,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "6"
@@ -3320,6 +3445,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "2"
@@ -3348,6 +3474,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "12"
@@ -3376,6 +3503,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "10"
@@ -3404,6 +3532,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "8"
@@ -3432,6 +3561,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "AA",
       "main_div": "AA",
       "place": "13"
@@ -3460,6 +3590,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -3486,6 +3617,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "4"
@@ -3512,6 +3644,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -3538,6 +3671,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -3566,6 +3700,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -3592,6 +3727,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -3618,6 +3754,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -3646,6 +3783,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -3672,6 +3810,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -3698,6 +3837,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -3724,6 +3864,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -3750,6 +3891,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "8"
@@ -3778,6 +3920,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"
@@ -3806,6 +3949,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -3834,6 +3978,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -3862,6 +4007,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -3888,6 +4034,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -3916,6 +4063,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "5"
@@ -3942,6 +4090,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "2"
@@ -3970,6 +4119,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "3"
@@ -3996,6 +4146,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "4"
@@ -4024,6 +4175,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "6"
@@ -4052,6 +4204,7 @@
       "oth_chmp_app": false,
       "oth_chmp": false,
       "conf_final": false,
+      "tiebreaker": false,
       "division": "NL",
       "main_div": "NL",
       "place": "7"

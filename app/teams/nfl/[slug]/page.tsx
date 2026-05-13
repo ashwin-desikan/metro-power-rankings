@@ -173,13 +173,27 @@ export default async function FranchisePage({ params }: Props) {
         <div className="flex-1 min-w-0">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
-            Founded {f.founding_year ?? "—"} in{" "}
+            <span className="text-[var(--text-dim)]">Founded:</span> <span className="text-[var(--text)]">{f.founding_year ?? "—"}</span>
+            {" · "}
+            <span className="text-[var(--text-dim)]">Metro Area:</span>{" "}
             {f.metro_slug ? (
               <Link href={`/rankings/${f.metro_slug}`} className="text-[var(--accent)] hover:underline">{f.metro}</Link>
             ) : (
               <span className="text-[var(--text)]">{f.metro}</span>
             )}
-            {" · "}{f.conf}{" · "}{f.division}{" · "}Home: <span className="text-[var(--text)]">{f.stadium}</span>
+            {" · "}{f.conf}{" · "}{f.division}{" · "}
+            <span className="text-[var(--text-dim)]">Home:</span>{" "}
+            {f.metro_slug ? (
+              <Link
+                href={`/rankings/${f.metro_slug}#map`}
+                className="text-[var(--text)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2"
+                title={`Open the ${f.metro} metro map`}
+              >
+                {f.stadium}
+              </Link>
+            ) : (
+              <span className="text-[var(--text)]">{f.stadium}</span>
+            )}
           </p>
           {formerly && (
             <p className="text-xs text-[var(--text-muted)] mt-2 italic">

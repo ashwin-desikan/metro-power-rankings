@@ -46,22 +46,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Order matches scripts/build-mlb-data.py AWARD_ORDER. The MLB workbook stores
+// MVP / Cy Young / Rookie of the Year / Manager of the Year with the league
+// in column G, so the ETL synthesises "AL MVP" / "NL MVP" etc. as the JSON
+// key. If you add a new award, update this list AND the ETL in lockstep.
 const AWARD_ORDER: string[] = [
-  "AL Most Valuable Player",
-  "NL Most Valuable Player",
+  "AL MVP",
+  "NL MVP",
   "AL Cy Young",
   "NL Cy Young",
   "AL Rookie of the Year",
   "NL Rookie of the Year",
   "AL Manager of the Year",
   "NL Manager of the Year",
-  "World Series MVP",
+  "WS MVP",
   "ALCS MVP",
   "NLCS MVP",
   "All-Star Game MVP",
-  "Hank Aaron Award AL",
-  "Hank Aaron Award NL",
-  "Roberto Clemente Award",
+  "Hank Aaron Award",
+  "Comeback Player of the Year",
+  "Babe Ruth Award",
+  "Reliever of the Year Award",
   "Triple Crown Batter",
   "Triple Crown Pitcher",
 ];
@@ -184,7 +189,9 @@ export default async function FranchisePage({ params }: Props) {
         <div className="flex-1 min-w-0">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.display_name}</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
-            Founded {f.founding_year ?? "—"} in{" "}
+            <span className="text-[var(--text-dim)]">Founded:</span> <span className="text-[var(--text)]">{f.founding_year ?? "—"}</span>
+            {" · "}
+            <span className="text-[var(--text-dim)]">Metro Area:</span>{" "}
             {f.metro_slug ? (
               <Link href={`/rankings/${f.metro_slug}`} className="text-[var(--accent)] hover:underline">{f.metro}</Link>
             ) : (
@@ -192,7 +199,19 @@ export default async function FranchisePage({ params }: Props) {
             )}
             {f.conf ? <>{" · "}{f.conf}</> : null}
             {f.division ? <>{" · "}{f.division}</> : null}
-            {" · "}Home: <span className="text-[var(--text)]">{f.stadium}</span>
+            {" · "}
+            <span className="text-[var(--text-dim)]">Home:</span>{" "}
+            {f.metro_slug ? (
+              <Link
+                href={`/rankings/${f.metro_slug}#map`}
+                className="text-[var(--text)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2"
+                title={`Open the ${f.metro} metro map`}
+              >
+                {f.stadium}
+              </Link>
+            ) : (
+              <span className="text-[var(--text)]">{f.stadium}</span>
+            )}
           </p>
           {formerly && (
             <p className="text-xs text-[var(--text-muted)] mt-2 italic">
@@ -265,10 +284,14 @@ export default async function FranchisePage({ params }: Props) {
         )}
       </Block>
 
-      {/* Championship appearances (wins + losses combined) */}
+      {/* Pennants (formerly "Championship appearances"). In baseball, the
+          pennant is the league championship — the team that advances to the
+          World Series. Pre-1903 cup appearances (Temple Cup, Chronicle-
+          Telegraph, World's Series) sit in the same block for franchises old
+          enough to have them. */}
       <Block
-        title="Championship appearances"
-        deck="Every World Series appearance and pre-1903 cup appearance. Solid chip = won; outlined chip = lost."
+        title="Pennants"
+        deck="Every World Series appearance and pre-1903 cup appearance. Solid chip = won the pennant (WS / cup); outlined chip = lost the WS / cup."
       >
         {champAppearances.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No championship appearances.</p>

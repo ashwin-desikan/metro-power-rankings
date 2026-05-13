@@ -21,24 +21,48 @@ import "server-only";
 import {
   getNflFranchiseByTeamName,
   logoUrlFor as nflLogoUrlFor,
+  monogramFor as nflMonogramFor,
 } from "./nfl";
+import {
+  getMlbFranchiseByTeamName,
+  logoUrlFor as mlbLogoUrlFor,
+  monogramFor as mlbMonogramFor,
+} from "./mlb";
+
+export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
-  slug: string;        // league-internal slug, e.g. "pittsburgh-steelers"
-  league: "nfl";       // discriminator for future leagues
-  href: string;        // /teams/<league>/<slug>
-  logoUrl: string | null; // /data/<league>/logos/<slug>.svg or null
-  displayName: string; // canonical display name from the league source
+  slug: string;             // league-internal slug
+  league: "nfl" | "mlb";    // discriminator for future leagues
+  href: string;             // /teams/<league>/<slug>
+  logoUrl: string | null;   // /data/<league>/logos/<slug>.svg or null
+  monogram: Monogram;       // colored monogram fallback when logoUrl is null
+  displayName: string;      // canonical display name from the league source
 };
 
-// Sport-label values that route to the NFL franchise table.
+// Sport-label and league-label values that route to each league's franchise
+// table. The metro-side workbook stores both a `sport` and a `league` field;
+// resolveTeamLink accepts either via the second `leagueHint` parameter so we
+// can match either column when convenient.
 const NFL_SPORT_LABELS = new Set(["American Football", "NFL"]);
+const MLB_SPORT_LABELS = new Set(["Baseball", "MLB"]);
 
-export function resolveTeamLink(sport: string, teamName: string): TeamLink | null {
+function isNfl(sport: string, leagueHint: string): boolean {
+  return NFL_SPORT_LABELS.has(sport) || leagueHint === "NFL";
+}
+function isMlb(sport: string, leagueHint: string): boolean {
+  return MLB_SPORT_LABELS.has(sport) || leagueHint === "MLB";
+}
+
+export function resolveTeamLink(
+  sport: string,
+  teamName: string,
+  leagueHint: string = "",
+): TeamLink | null {
   if (!teamName) return null;
   const cleanName = teamName.trim();
 
-  if (NFL_SPORT_LABELS.has(sport)) {
+  if (isNfl(sport, leagueHint)) {
     const f = getNflFranchiseByTeamName(cleanName);
     if (!f) return null;
     return {
@@ -46,14 +70,27 @@ export function resolveTeamLink(sport: string, teamName: string): TeamLink | nul
       league: "nfl",
       href: `/teams/nfl/${f.slug}`,
       logoUrl: nflLogoUrlFor(f.slug),
+      monogram: nflMonogramFor(f.slug),
       displayName: f.name,
     };
   }
 
+  if (isMlb(sport, leagueHint)) {
+    const f = getMlbFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "mlb",
+      href: `/teams/mlb/${f.slug}`,
+      logoUrl: mlbLogoUrlFor(f.slug),
+      monogram: mlbMonogramFor(f.slug),
+      displayName: f.display_name,
+    };
+  }
+
   // Future leagues drop in here.
-  // if (NBA_SPORT_LABELS.has(sport)) { ... }
-  // if (MLB_SPORT_LABELS.has(sport)) { ... }
-  // if (NHL_SPORT_LABELS.has(sport)) { ... }
+  // if (isNba(sport, leagueHint)) { ... }
+  // if (isNhl(sport, leagueHint)) { ... }
 
   return null;
 }
@@ -66,12 +103,13 @@ export function resolveTeamLink(sport: string, teamName: string): TeamLink | nul
 export function resolveTeamLinksFromString(
   sport: string,
   teamString: string,
+  leagueHint: string = "",
 ): TeamLink[] {
   if (!teamString) return [];
   const parts = teamString.split("/").map((p) => p.trim()).filter(Boolean);
   const out: TeamLink[] = [];
   for (const p of parts) {
-    const link = resolveTeamLink(sport, p);
+    const link = resolveTeamLink(sport, p, leagueHint);
     if (link) out.push(link);
   }
   return out;

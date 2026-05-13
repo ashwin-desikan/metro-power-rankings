@@ -23,7 +23,9 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport } from "@/lib/sportLabels";
-import { getNflFranchiseByTeamName, getNflSlugByTeamName } from "@/lib/nfl";
+import { getNflFranchiseByTeamName } from "@/lib/nfl";
+import { getMlbFranchiseByTeamName } from "@/lib/mlb";
+import { resolveTeamLink } from "@/lib/teamLinks";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -564,8 +566,12 @@ export default async function MetroDetailPage({ params }: PageProps) {
 
         {/* Map: cluster context for any metro that's part of a multi-metro
             conurbation, single-point Location pin otherwise. Returns null
-            for the handful of zero-coord workbook entries. */}
-        <MetroPageMap slug={slug} teams={detail.teams} universities={detail.universities} />
+            for the handful of zero-coord workbook entries. The #map id is
+            the anchor target for stadium-name links on the per-team pages
+            (e.g. /teams/nfl/buffalo-bills "Home: Highmark Stadium"). */}
+        <div id="map" className="scroll-mt-20">
+          <MetroPageMap slug={slug} teams={detail.teams} universities={detail.universities} />
+        </div>
 
         {/* Top Team : surfaced for metros that landed a pick on the Top
             Sports Teams sheet. Mirrors the Walkable Elite Quarters card so
@@ -1522,13 +1528,22 @@ function TeamCard({
   };
 }) {
   const isFootball = team.sport === "Soccer" || team.sport === "Football/Soccer";
-  // Link NFL teams to their /teams/nfl/[slug] page. Other leagues stay
-  // plain text until those team pages exist.
-  const nflSlug = team.league === "NFL" ? getNflSlugByTeamName(team.team) : undefined;
-  // Pull the full franchise record for NFL teams so we can surface
-  // championship and win-pct chips alongside the team name (mirrors
-  // the badges shown on /teams/nfl).
-  const nflFranchise = team.league === "NFL" ? getNflFranchiseByTeamName(team.team) : undefined;
+
+  // Resolve team-page link, logo, and monogram via lib/teamLinks. Returns
+  // null for any team that's not a known league franchise (minor-league,
+  // NCAA, soccer clubs, etc.); those rows stay plain text.
+  //
+  // To add a new league, extend lib/teamLinks.ts — this card auto-picks
+  // it up. The chip block below uses the league discriminator to surface
+  // sport-appropriate stats (NFL: titles + div titles; MLB: WS titles +
+  // pennants).
+  const link = resolveTeamLink(team.sport, team.team, team.league);
+
+  // Pull franchise records for chip rendering. Either may resolve depending
+  // on which league this team belongs to; both null for unsupported leagues.
+  const nflFranchise = link?.league === "nfl" ? getNflFranchiseByTeamName(team.team) : undefined;
+  const mlbFranchise = link?.league === "mlb" ? getMlbFranchiseByTeamName(team.team) : undefined;
+
   return (
     <div
       className={`border rounded-lg p-4 hover:border-[var(--accent)] transition ${
@@ -1540,32 +1555,55 @@ function TeamCard({
       <p className="text-xs text-[var(--text-muted)] mb-1">
         {normalizeTeamSport(team.sport)} • {team.league}
       </p>
-      <p className="font-semibold text-[var(--text)] flex items-center gap-1.5">
-        {nflSlug ? (
-          <Link href={`/teams/nfl/${nflSlug}`} className="hover:text-[var(--accent)] transition">
-            {team.team}
-          </Link>
-        ) : (
-          <span>{team.team}</span>
-        )}
-        {/* Tiny outbound Wikipedia mark. Renders only when team.wikipediaUrl is
-            populated so partial coverage never produces dangling icons. The
-            same URL is also emitted in SportsTeam.sameAs JSON-LD above so the
-            visible UX matches the structured data. */}
-        {team.wikipediaUrl && (
-          <a
-            href={team.wikipediaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Read ${team.team} on Wikipedia`}
-            title="Wikipedia"
-            className="text-[var(--text-muted)] hover:text-[var(--accent)] transition text-[10px] font-bold leading-none border border-[var(--border)] hover:border-[var(--accent)] rounded px-1 py-0.5"
-          >
-            W
-          </a>
-        )}
-      </p>
-      <p className="text-xs text-[var(--text-dim)]">
+      <div className="flex items-center gap-2.5">
+        {link ? (
+          link.logoUrl ? (
+            <img
+              src={link.logoUrl}
+              alt=""
+              className="w-8 h-8 flex-shrink-0 object-contain"
+            />
+          ) : (
+            <span
+              className="inline-grid place-items-center rounded-full flex-shrink-0"
+              style={{
+                background: link.monogram.bg,
+                color: link.monogram.fg,
+                width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em",
+              }}
+              aria-hidden
+            >
+              {link.monogram.mono}
+            </span>
+          )
+        ) : null}
+        <p className="font-semibold text-[var(--text)] flex items-center gap-1.5 min-w-0">
+          {link ? (
+            <Link href={link.href} className="hover:text-[var(--accent)] transition truncate">
+              {team.team}
+            </Link>
+          ) : (
+            <span className="truncate">{team.team}</span>
+          )}
+          {/* Tiny outbound Wikipedia mark. Renders only when team.wikipediaUrl is
+              populated so partial coverage never produces dangling icons. The
+              same URL is also emitted in SportsTeam.sameAs JSON-LD above so the
+              visible UX matches the structured data. */}
+          {team.wikipediaUrl && (
+            <a
+              href={team.wikipediaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Read ${team.team} on Wikipedia`}
+              title="Wikipedia"
+              className="text-[var(--text-muted)] hover:text-[var(--accent)] transition text-[10px] font-bold leading-none border border-[var(--border)] hover:border-[var(--accent)] rounded px-1 py-0.5 flex-shrink-0"
+            >
+              W
+            </a>
+          )}
+        </p>
+      </div>
+      <p className="text-xs text-[var(--text-dim)] mt-1">
         {team.city}
         {isFootball && team.level && <> • <span className="text-[var(--text-muted)]">Level: {team.level}</span></>}
       </p>
@@ -1601,6 +1639,40 @@ function TeamCard({
               {nflFranchise.division_titles} div
             </span>
           )}
+        </div>
+      )}
+      {mlbFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{
+              background: mlbFranchise.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+              color: mlbFranchise.championships > 0 ? "#d4af37" : "var(--text-dim)",
+            }}
+            title="World Series titles"
+          >
+            {mlbFranchise.championships === 0
+              ? "No WS"
+              : mlbFranchise.championships === 1
+              ? "1 WS"
+              : `${mlbFranchise.championships} WS`}
+          </span>
+          {mlbFranchise.ws_appearances > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}
+              title="Pennants — World Series appearances (won or lost)"
+            >
+              {mlbFranchise.ws_appearances} pennant{mlbFranchise.ws_appearances === 1 ? "" : "s"}
+            </span>
+          )}
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+            title="All-time regular-season win pct"
+          >
+            {mlbFranchise.win_pct.toFixed(3)} W%
+          </span>
         </div>
       )}
     </div>
