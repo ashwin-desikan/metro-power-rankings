@@ -18,6 +18,7 @@ import {
   abbreviateState,
   getFranchiseByCanonical,
 } from "@/lib/nfl";
+import { getCurrentNflStandings } from "@/lib/standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -94,6 +95,9 @@ export default async function FranchisePage({ params }: Props) {
   const mono = monogramFor(f.slug);
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
+  // Live current-season standings from ESPN. Async + ISR-cached via
+  // Next; degrades silently to null when the upstream is unreachable.
+  const standings = await getCurrentNflStandings();
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -144,6 +148,94 @@ export default async function FranchisePage({ params }: Props) {
           )}
         </div>
       </header>
+
+      {/* Live current-season block. Sits between the franchise hero and
+          the all-time stat strip so the eye reads "where they are now"
+          before "where they have been." Hidden when ESPN is unreachable. */}
+      {standings.source_label ? (() => {
+        const cs = standings.by_canonical[f.canonical];
+        const liveTone = standings.season_type === "regular" || standings.season_type === "postseason";
+        return (
+          <section
+            className="mt-4 rounded-xl border-l-4 border-y border-r p-5"
+            style={{
+              background: "var(--bg-card)",
+              borderColor: "var(--border)",
+              borderLeftColor: liveTone ? "var(--accent)" : "var(--text-dim)",
+            }}
+          >
+            <div className="flex items-baseline justify-between flex-wrap gap-2 mb-3">
+              <h2 className="text-base font-semibold tracking-tight">
+                {standings.source_label}
+              </h2>
+              <span
+                className="text-[10px] uppercase tracking-widest"
+                style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                title={`Pulled from ESPN public standings on ${standings.fetched_at}`}
+              >
+                via ESPN · refreshed hourly
+              </span>
+            </div>
+            {!cs ? (
+              <p className="text-sm italic" style={{ color: "var(--text-muted)" }}>
+                No live standing matched {f.name} in the current ESPN payload.
+              </p>
+            ) : standings.is_preseason && cs.games_played === 0 ? (
+              <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+                {f.name} have not played a {standings.season_year} season game yet. The 2026 regular season opens in September; this block fills in once Week 1 kicks off.
+              </p>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+                <StatCell
+                  v={`${cs.wins}-${cs.losses}${cs.ties > 0 ? `-${cs.ties}` : ""}`}
+                  k="Record"
+                  sub={`${cs.games_played} games`}
+                />
+                <StatCell
+                  v={cs.win_pct.toFixed(3)}
+                  k="Win pct"
+                />
+                {cs.division_rank !== null ? (
+                  <StatCell
+                    v={`#${cs.division_rank}`}
+                    k={`${cs.conference || ""} ${cs.division || "Division"}`.trim()}
+                  />
+                ) : null}
+                {cs.conf_rank !== null ? (
+                  <StatCell
+                    v={`#${cs.conf_rank}`}
+                    k={`${cs.conference || "Conference"} rank`}
+                  />
+                ) : null}
+                {cs.playoff_seed !== null ? (
+                  <StatCell
+                    v={`#${cs.playoff_seed}`}
+                    k="Playoff seed"
+                  />
+                ) : null}
+                {cs.streak ? (
+                  <StatCell
+                    v={cs.streak}
+                    k="Streak"
+                  />
+                ) : null}
+                <StatCell
+                  v={cs.points_for.toString()}
+                  k="Points for"
+                />
+                <StatCell
+                  v={cs.points_against.toString()}
+                  k="Points against"
+                />
+                <StatCell
+                  v={`${cs.point_diff > 0 ? "+" : ""}${cs.point_diff}`}
+                  k="Differential"
+                />
+              </div>
+            )}
+          </section>
+        );
+      })() : null}
 
       {/* Headline stat strip */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
