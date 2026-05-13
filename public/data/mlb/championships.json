@@ -1,0 +1,1151 @@
+{
+  "Guardians": [
+    {
+      "year": 1920,
+      "city": "Cleveland",
+      "team": "Indians",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1948,
+      "city": "Cleveland",
+      "team": "Indians",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Royals": [
+    {
+      "year": 1985,
+      "city": "Kansas City",
+      "team": "Royals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2015,
+      "city": "Kansas City",
+      "team": "Royals",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Tigers": [
+    {
+      "year": 1935,
+      "city": "Detroit",
+      "team": "Tigers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1945,
+      "city": "Detroit",
+      "team": "Tigers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1968,
+      "city": "Detroit",
+      "team": "Tigers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1984,
+      "city": "Detroit",
+      "team": "Tigers",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Twins": [
+    {
+      "year": 1924,
+      "city": "Washington",
+      "team": "Senators",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1987,
+      "city": "Minnesota",
+      "team": "Twins",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1991,
+      "city": "Minnesota",
+      "team": "Twins",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "White Sox": [
+    {
+      "year": 1901,
+      "city": "Chicago",
+      "team": "White Sox",
+      "league": "AL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1906,
+      "city": "Chicago",
+      "team": "White Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1917,
+      "city": "Chicago",
+      "team": "White Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2005,
+      "city": "Chicago",
+      "team": "White Sox",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Blue Jays": [
+    {
+      "year": 1992,
+      "city": "Toronto",
+      "team": "Blue Jays",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1993,
+      "city": "Toronto",
+      "team": "Blue Jays",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Orioles": [
+    {
+      "year": 1966,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1970,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1983,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Red Sox": [
+    {
+      "year": 1903,
+      "city": "Boston",
+      "team": "Pilgrims",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1912,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1915,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1916,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1918,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2004,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2007,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2013,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2018,
+      "city": "Boston",
+      "team": "Red Sox",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Yankees": [
+    {
+      "year": 1923,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1927,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1928,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1932,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1936,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1937,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1938,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1939,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1941,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1943,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1947,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1949,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1950,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1951,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1952,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1953,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1956,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1958,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1961,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1962,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1977,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1978,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1996,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1998,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1999,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2000,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2009,
+      "city": "New York",
+      "team": "Yankees",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Angels": [
+    {
+      "year": 2002,
+      "city": "Anaheim",
+      "team": "Angels",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Astros": [
+    {
+      "year": 2017,
+      "city": "Houston",
+      "team": "Astros",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2022,
+      "city": "Houston",
+      "team": "Astros",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Athletics": [
+    {
+      "year": 1902,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "league": "AL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1910,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1911,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1913,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1929,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1930,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1972,
+      "city": "Oakland",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1973,
+      "city": "Oakland",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1974,
+      "city": "Oakland",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1989,
+      "city": "Oakland",
+      "team": "Athletics",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Rangers": [
+    {
+      "year": 2023,
+      "city": "Texas",
+      "team": "Rangers",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Cardinals": [
+    {
+      "year": 1885,
+      "city": "St. Louis",
+      "team": "Browns",
+      "league": "AA",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1886,
+      "city": "St. Louis",
+      "team": "Browns",
+      "league": "AA",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1926,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1931,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1934,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1942,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1944,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1946,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1964,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1967,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1982,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2006,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2011,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Cubs": [
+    {
+      "year": 1876,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1880,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1881,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1882,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1885,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1907,
+      "city": "Chicago",
+      "team": "Cubs",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1908,
+      "city": "Chicago",
+      "team": "Cubs",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2016,
+      "city": "Chicago",
+      "team": "Cubs",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Pirates": [
+    {
+      "year": 1901,
+      "city": "Pittsburg",
+      "team": "Pirates",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1902,
+      "city": "Pittsburg",
+      "team": "Pirates",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1909,
+      "city": "Pittsburg",
+      "team": "Pirates",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1925,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1960,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1971,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1979,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Reds": [
+    {
+      "year": 1882,
+      "city": "Cincinnati",
+      "team": "Red Stockings",
+      "league": "AA",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1919,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1940,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1975,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1976,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1990,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Braves": [
+    {
+      "year": 1877,
+      "city": "Boston",
+      "team": "Red Caps",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1878,
+      "city": "Boston",
+      "team": "Red Caps",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1883,
+      "city": "Boston",
+      "team": "Beaneaters",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1891,
+      "city": "Boston",
+      "team": "Beaneaters",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1892,
+      "city": "Boston",
+      "team": "Beaneaters",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1893,
+      "city": "Boston",
+      "team": "Beaneaters",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1898,
+      "city": "Boston",
+      "team": "Beaneaters",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1914,
+      "city": "Boston",
+      "team": "Braves",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1957,
+      "city": "Milwaukee",
+      "team": "Braves",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1995,
+      "city": "Atlanta",
+      "team": "Braves",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2021,
+      "city": "Atlanta",
+      "team": "Braves",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Marlins": [
+    {
+      "year": 1997,
+      "city": "Florida",
+      "team": "Marlins",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2003,
+      "city": "Florida",
+      "team": "Marlins",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Mets": [
+    {
+      "year": 1969,
+      "city": "New York",
+      "team": "Mets",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1986,
+      "city": "New York",
+      "team": "Mets",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Nationals": [
+    {
+      "year": 2019,
+      "city": "Washington",
+      "team": "Nationals",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Phillies": [
+    {
+      "year": 1980,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2008,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Diamondbacks": [
+    {
+      "year": 2001,
+      "city": "Arizona",
+      "team": "Diamondbacks",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Dodgers": [
+    {
+      "year": 1890,
+      "city": "Brooklyn",
+      "team": "Bridegrooms",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1899,
+      "city": "Brooklyn",
+      "team": "Superbas",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1900,
+      "city": "Brooklyn",
+      "team": "Superbas",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1955,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1959,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1963,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1965,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1981,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1988,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2020,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2024,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2025,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Giants": [
+    {
+      "year": 1888,
+      "city": "New York",
+      "team": "Giants",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1889,
+      "city": "New York",
+      "team": "Giants",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1894,
+      "city": "New York",
+      "team": "Giants",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1905,
+      "city": "New York",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1921,
+      "city": "New York",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1922,
+      "city": "New York",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1933,
+      "city": "New York",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 1954,
+      "city": "New York",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2010,
+      "city": "San Francisco",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2012,
+      "city": "San Francisco",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    },
+    {
+      "year": 2014,
+      "city": "San Francisco",
+      "team": "Giants",
+      "league": "MLB",
+      "era": "ws"
+    }
+  ],
+  "Orioles (1)": [
+    {
+      "year": 1896,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1897,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "league": "NL",
+      "era": "pre_ws"
+    }
+  ],
+  "Colonels": [
+    {
+      "year": 1890,
+      "city": "Louisville",
+      "team": "Colonels",
+      "league": "AA",
+      "era": "pre_ws"
+    }
+  ],
+  "Spiders": [
+    {
+      "year": 1895,
+      "city": "Cleveland",
+      "team": "Spiders",
+      "league": "NL",
+      "era": "pre_ws"
+    }
+  ],
+  "Red Stockings": [
+    {
+      "year": 1891,
+      "city": "Boston",
+      "team": "Red Stockings",
+      "league": "AA",
+      "era": "pre_ws"
+    }
+  ],
+  "Athletics (2)": [
+    {
+      "year": 1883,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "league": "AA",
+      "era": "pre_ws"
+    }
+  ],
+  "Wolverines": [
+    {
+      "year": 1887,
+      "city": "Detroit",
+      "team": "Wolverines",
+      "league": "NL",
+      "era": "pre_ws"
+    }
+  ],
+  "Grays": [
+    {
+      "year": 1879,
+      "city": "Providence",
+      "team": "Grays",
+      "league": "NL",
+      "era": "pre_ws"
+    },
+    {
+      "year": 1884,
+      "city": "Providence",
+      "team": "Grays",
+      "league": "NL",
+      "era": "pre_ws"
+    }
+  ]
+}

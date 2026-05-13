@@ -1,0 +1,1962 @@
+{
+  "Guardians": [
+    {
+      "year": 1920,
+      "city": "Cleveland",
+      "team": "Indians",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1948,
+      "city": "Cleveland",
+      "team": "Indians",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1954,
+      "city": "Cleveland",
+      "team": "Indians",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1995,
+      "city": "Cleveland",
+      "team": "Indians",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1997,
+      "city": "Cleveland",
+      "team": "Indians",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2016,
+      "city": "Cleveland",
+      "team": "Indians",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Royals": [
+    {
+      "year": 1980,
+      "city": "Kansas City",
+      "team": "Royals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1985,
+      "city": "Kansas City",
+      "team": "Royals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2014,
+      "city": "Kansas City",
+      "team": "Royals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2015,
+      "city": "Kansas City",
+      "team": "Royals",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Tigers": [
+    {
+      "year": 1907,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1908,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1909,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1934,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1935,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1940,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1945,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1968,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1984,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2006,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2012,
+      "city": "Detroit",
+      "team": "Tigers",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Twins": [
+    {
+      "year": 1924,
+      "city": "Washington",
+      "team": "Senators",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1925,
+      "city": "Washington",
+      "team": "Senators",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1933,
+      "city": "Washington",
+      "team": "Senators",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1965,
+      "city": "Minnesota",
+      "team": "Twins",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1987,
+      "city": "Minnesota",
+      "team": "Twins",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1991,
+      "city": "Minnesota",
+      "team": "Twins",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "White Sox": [
+    {
+      "year": 1906,
+      "city": "Chicago",
+      "team": "White Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1917,
+      "city": "Chicago",
+      "team": "White Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1919,
+      "city": "Chicago",
+      "team": "White Sox",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1959,
+      "city": "Chicago",
+      "team": "White Sox",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2005,
+      "city": "Chicago",
+      "team": "White Sox",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Blue Jays": [
+    {
+      "year": 1992,
+      "city": "Toronto",
+      "team": "Blue Jays",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1993,
+      "city": "Toronto",
+      "team": "Blue Jays",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2025,
+      "city": "Toronto",
+      "team": "Blue Jays",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Orioles": [
+    {
+      "year": 1944,
+      "city": "St. Louis",
+      "team": "Browns",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1966,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1969,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1970,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1971,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1979,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1983,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Rays": [
+    {
+      "year": 2008,
+      "city": "Tampa Bay",
+      "team": "Rays",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2020,
+      "city": "Tampa Bay",
+      "team": "Rays",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Red Sox": [
+    {
+      "year": 1903,
+      "city": "Boston",
+      "team": "Pilgrims",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1912,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1915,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1916,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1918,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1946,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1967,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1975,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1986,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2004,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2007,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2013,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2018,
+      "city": "Boston",
+      "team": "Red Sox",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Yankees": [
+    {
+      "year": 1921,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1922,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1923,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1926,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1927,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1928,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1932,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1936,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1937,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1938,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1939,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1941,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1942,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1943,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1947,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1949,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1950,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1951,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1952,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1953,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1955,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1956,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1957,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1958,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1960,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1961,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1962,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1963,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1964,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1976,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1977,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1978,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1981,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1996,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1998,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1999,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2000,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2001,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2003,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2009,
+      "city": "New York",
+      "team": "Yankees",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2024,
+      "city": "New York",
+      "team": "Yankees",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Angels": [
+    {
+      "year": 2002,
+      "city": "Anaheim",
+      "team": "Angels",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Astros": [
+    {
+      "year": 2005,
+      "city": "Houston",
+      "team": "Astros",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2017,
+      "city": "Houston",
+      "team": "Astros",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2019,
+      "city": "Houston",
+      "team": "Astros",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2021,
+      "city": "Houston",
+      "team": "Astros",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2022,
+      "city": "Houston",
+      "team": "Astros",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Athletics": [
+    {
+      "year": 1905,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1910,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1911,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1913,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1914,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1929,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1930,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1931,
+      "city": "Philadelphia",
+      "team": "Athletics",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1972,
+      "city": "Oakland",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1973,
+      "city": "Oakland",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1974,
+      "city": "Oakland",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1988,
+      "city": "Oakland",
+      "team": "Athletics",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1989,
+      "city": "Oakland",
+      "team": "Athletics",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1990,
+      "city": "Oakland",
+      "team": "Athletics",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Rangers": [
+    {
+      "year": 2010,
+      "city": "Texas",
+      "team": "Rangers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2011,
+      "city": "Texas",
+      "team": "Rangers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2023,
+      "city": "Texas",
+      "team": "Rangers",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Brewers": [
+    {
+      "year": 1982,
+      "city": "Milwaukee",
+      "team": "Brewers",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Cardinals": [
+    {
+      "year": 1885,
+      "city": "St. Louis",
+      "team": "Browns",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1886,
+      "city": "St. Louis",
+      "team": "Browns",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1887,
+      "city": "St. Louis",
+      "team": "Browns",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1888,
+      "city": "St. Louis",
+      "team": "Browns",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1926,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1928,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1930,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1931,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1934,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1942,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1943,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1944,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1946,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1964,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1967,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1968,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1982,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1985,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1987,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2004,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2006,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2011,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2013,
+      "city": "St. Louis",
+      "team": "Cardinals",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Cubs": [
+    {
+      "year": 1882,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1885,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1886,
+      "city": "Chicago",
+      "team": "White Stockings",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1906,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1907,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1908,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1910,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1918,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1929,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1932,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1935,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1938,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1945,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2016,
+      "city": "Chicago",
+      "team": "Cubs",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Pirates": [
+    {
+      "year": 1900,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1903,
+      "city": "Pittsburg",
+      "team": "Pirates",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1909,
+      "city": "Pittsburg",
+      "team": "Pirates",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1925,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1927,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1960,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1971,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1979,
+      "city": "Pittsburgh",
+      "team": "Pirates",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Reds": [
+    {
+      "year": 1882,
+      "city": "Cincinnati",
+      "team": "Red Stockings",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1919,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1939,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1940,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1961,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1970,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1972,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1975,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1976,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1990,
+      "city": "Cincinnati",
+      "team": "Reds",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Braves": [
+    {
+      "year": 1892,
+      "city": "Boston",
+      "team": "Beaneaters",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1897,
+      "city": "Boston",
+      "team": "Beaneaters",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1914,
+      "city": "Boston",
+      "team": "Braves",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1948,
+      "city": "Boston",
+      "team": "Braves",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1957,
+      "city": "Milwaukee",
+      "team": "Braves",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1958,
+      "city": "Milwaukee",
+      "team": "Braves",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1991,
+      "city": "Atlanta",
+      "team": "Braves",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1992,
+      "city": "Atlanta",
+      "team": "Braves",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1995,
+      "city": "Atlanta",
+      "team": "Braves",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1996,
+      "city": "Atlanta",
+      "team": "Braves",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1999,
+      "city": "Atlanta",
+      "team": "Braves",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2021,
+      "city": "Atlanta",
+      "team": "Braves",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Marlins": [
+    {
+      "year": 1997,
+      "city": "Florida",
+      "team": "Marlins",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2003,
+      "city": "Florida",
+      "team": "Marlins",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Mets": [
+    {
+      "year": 1969,
+      "city": "New York",
+      "team": "Mets",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1973,
+      "city": "New York",
+      "team": "Mets",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1986,
+      "city": "New York",
+      "team": "Mets",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2000,
+      "city": "New York",
+      "team": "Mets",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2015,
+      "city": "New York",
+      "team": "Mets",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Nationals": [
+    {
+      "year": 2019,
+      "city": "Washington",
+      "team": "Nationals",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Phillies": [
+    {
+      "year": 1915,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1950,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1980,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1983,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1993,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2008,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2009,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2022,
+      "city": "Philadelphia",
+      "team": "Phillies",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Diamondbacks": [
+    {
+      "year": 2001,
+      "city": "Arizona",
+      "team": "Diamondbacks",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2023,
+      "city": "Arizona",
+      "team": "Diamondbacks",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Dodgers": [
+    {
+      "year": 1889,
+      "city": "Brooklyn",
+      "team": "Bridegrooms",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1890,
+      "city": "Brooklyn",
+      "team": "Bridegrooms",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1900,
+      "city": "Brooklyn",
+      "team": "Superbas",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1916,
+      "city": "Brooklyn",
+      "team": "Robins",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1920,
+      "city": "Brooklyn",
+      "team": "Robins",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1941,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1947,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1949,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1952,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1953,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1955,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1956,
+      "city": "Brooklyn",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1959,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1963,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1965,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1966,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1974,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1977,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1978,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1981,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1988,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2017,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2018,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2020,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2024,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2025,
+      "city": "Los Angeles",
+      "team": "Dodgers",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Giants": [
+    {
+      "year": 1888,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1889,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1894,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1905,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1911,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1912,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1913,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1917,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1921,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1922,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1923,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1924,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1933,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1936,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1937,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1951,
+      "city": "New York",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1954,
+      "city": "New York",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 1962,
+      "city": "San Francisco",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1989,
+      "city": "San Francisco",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2002,
+      "city": "San Francisco",
+      "team": "Giants",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 2010,
+      "city": "San Francisco",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2012,
+      "city": "San Francisco",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    },
+    {
+      "year": 2014,
+      "city": "San Francisco",
+      "team": "Giants",
+      "won": true,
+      "era": "ws"
+    }
+  ],
+  "Padres": [
+    {
+      "year": 1984,
+      "city": "San Diego",
+      "team": "Padres",
+      "won": false,
+      "era": "ws"
+    },
+    {
+      "year": 1998,
+      "city": "San Diego",
+      "team": "Padres",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Rockies": [
+    {
+      "year": 2007,
+      "city": "Colorado",
+      "team": "Rockies",
+      "won": false,
+      "era": "ws"
+    }
+  ],
+  "Orioles (1)": [
+    {
+      "year": 1894,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1895,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1896,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1897,
+      "city": "Baltimore",
+      "team": "Orioles",
+      "won": true,
+      "era": "pre_ws"
+    }
+  ],
+  "Colonels": [
+    {
+      "year": 1890,
+      "city": "Louisville",
+      "team": "Colonels",
+      "won": true,
+      "era": "pre_ws"
+    }
+  ],
+  "Spiders": [
+    {
+      "year": 1892,
+      "city": "Cleveland",
+      "team": "Spiders",
+      "won": false,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1895,
+      "city": "Cleveland",
+      "team": "Spiders",
+      "won": true,
+      "era": "pre_ws"
+    },
+    {
+      "year": 1896,
+      "city": "Cleveland",
+      "team": "Spiders",
+      "won": false,
+      "era": "pre_ws"
+    }
+  ],
+  "Wolverines": [
+    {
+      "year": 1887,
+      "city": "Detroit",
+      "team": "Wolverines",
+      "won": true,
+      "era": "pre_ws"
+    }
+  ],
+  "Metropolitans": [
+    {
+      "year": 1884,
+      "city": "New York",
+      "team": "Metropolitans",
+      "won": false,
+      "era": "pre_ws"
+    }
+  ],
+  "Grays": [
+    {
+      "year": 1884,
+      "city": "Providence",
+      "team": "Grays",
+      "won": true,
+      "era": "pre_ws"
+    }
+  ]
+}

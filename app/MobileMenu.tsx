@@ -26,6 +26,7 @@ const ITEMS: Item[] = [
   { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Data' },
 
   { href: '/teams/nfl', label: 'NFL', hint: 'All 32 active franchises; defunct franchises link from inside', group: 'Sports' },
+  { href: '/teams/mlb', label: 'MLB', hint: 'All 30 active franchises; defunct franchises link from inside', group: 'Sports' },
 
   {
     href: 'https://citizenofnowhere.substack.com',

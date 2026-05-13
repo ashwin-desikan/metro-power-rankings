@@ -29,11 +29,13 @@ const REPO_ROOT = resolve(__dirname, "..");
 
 const SERVER_ONLY_MODULES = [
   "@/lib/nfl",
+  "@/lib/mlb",
   "@/lib/badges",
   "@/lib/substack",
   "@/lib/data",
   "@/lib/teamLinks",
   "@/lib/standings",
+  "@/lib/mlb-standings",
 ];
 
 const SCAN_DIRS = ["app", "components"];

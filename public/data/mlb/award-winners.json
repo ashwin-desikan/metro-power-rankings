@@ -1,0 +1,2012 @@
+{
+  "Braves": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1889,
+        "player": "John Clarkson",
+        "team_at_time": "Beaneaters",
+        "league": "NL"
+      },
+      {
+        "year": 1877,
+        "player": "Tommy Bond",
+        "team_at_time": "Red Caps",
+        "league": "NL"
+      }
+    ],
+    "Triple Crown Batter": [
+      {
+        "year": 1894,
+        "player": "Hugh Duffy",
+        "team_at_time": "Beaneaters",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2021,
+        "player": "Jorge Soler",
+        "team_at_time": "Braves",
+        "league": "MLB"
+      },
+      {
+        "year": 1995,
+        "player": "Tom Glavine",
+        "team_at_time": "Braves",
+        "league": "MLB"
+      },
+      {
+        "year": 1957,
+        "player": "Lew Burdette",
+        "team_at_time": "Braves",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2021,
+        "player": "Eddie Rosario",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1999,
+        "player": "Eddie Perez",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1996,
+        "player": "Javy Lopez",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1995,
+        "player": "Mike Devereaux",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1992,
+        "player": "John Smoltz",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1991,
+        "player": "Steve Avery",
+        "team_at_time": "Braves",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2010,
+        "player": "Brian McCann",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1994,
+        "player": "Fred McGriff",
+        "team_at_time": "Braves",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Grays": {
+    "Triple Crown Batter": [
+      {
+        "year": 1878,
+        "player": "Paul Hines",
+        "team_at_time": "Grays",
+        "league": "NL"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 1884,
+        "player": "Old Hoss Radbourn",
+        "team_at_time": "Grays",
+        "league": "NL"
+      }
+    ]
+  },
+  "Colonels": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1884,
+        "player": "Guy Hecker",
+        "team_at_time": "Colonels",
+        "league": "AA"
+      }
+    ]
+  },
+  "Cardinals": {
+    "Triple Crown Batter": [
+      {
+        "year": 1937,
+        "player": "Joe Medwick",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1925,
+        "player": "Rogers Hornsby",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1922,
+        "player": "Rogers Hornsby",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1887,
+        "player": "Tip O'Neill",
+        "team_at_time": "Browns",
+        "league": "AA"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2011,
+        "player": "David Freese",
+        "team_at_time": "Cardinals",
+        "league": "MLB"
+      },
+      {
+        "year": 2006,
+        "player": "David Eckstein",
+        "team_at_time": "Cardinals",
+        "league": "MLB"
+      },
+      {
+        "year": 1982,
+        "player": "Darrell Porter",
+        "team_at_time": "Cardinals",
+        "league": "MLB"
+      },
+      {
+        "year": 1967,
+        "player": "Bob Gibson",
+        "team_at_time": "Cardinals",
+        "league": "MLB"
+      },
+      {
+        "year": 1964,
+        "player": "Bob Gibson",
+        "team_at_time": "Cardinals",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2013,
+        "player": "Michael Wacha",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "David Freese",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2006,
+        "player": "Jeff Suppan",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2004,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1985,
+        "player": "Ozzie Smith",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1982,
+        "player": "Darrell Porter",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
+    ]
+  },
+  "Giants": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1908,
+        "player": "Christy Mathewson",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1905,
+        "player": "Christy Mathewson",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1894,
+        "player": "Amos Rusie",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1888,
+        "player": "Tim Keefe",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2012,
+        "player": "Melky Cabrera",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1973,
+        "player": "Bobby Bonds",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      },
+      {
+        "year": 1969,
+        "player": "Willie McCovey",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      },
+      {
+        "year": 1968,
+        "player": "Willie Mays",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      },
+      {
+        "year": 1965,
+        "player": "Juan Marichal",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      },
+      {
+        "year": 1963,
+        "player": "Willie Mays",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2014,
+        "player": "Madison Bumgarner",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2012,
+        "player": "Marco Scutaro",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2010,
+        "player": "Cody Ross",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2002,
+        "player": "Benito Santiago",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1989,
+        "player": "Will Clark",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1987,
+        "player": "Jeffrey Leonard",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2014,
+        "player": "Madison Bumgarner",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      },
+      {
+        "year": 2012,
+        "player": "Pablo Sandoval",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      },
+      {
+        "year": 2010,
+        "player": "Edgar Renteria",
+        "team_at_time": "Giants",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Athletics": {
+    "Triple Crown Batter": [
+      {
+        "year": 1933,
+        "player": "Jimmie Foxx",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1901,
+        "player": "Nap Lajoie",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 1931,
+        "player": "Lefty Grove",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1930,
+        "player": "Lefty Grove",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1905,
+        "player": "Rube Waddell",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 1989,
+        "player": "Dave Stewart",
+        "team_at_time": "Athletics",
+        "league": "MLB"
+      },
+      {
+        "year": 1974,
+        "player": "Rollie Fingers",
+        "team_at_time": "Athletics",
+        "league": "MLB"
+      },
+      {
+        "year": 1973,
+        "player": "Reggie Jackson",
+        "team_at_time": "Athletics",
+        "league": "MLB"
+      },
+      {
+        "year": 1972,
+        "player": "Gene Tenace",
+        "team_at_time": "Athletics",
+        "league": "MLB"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 1990,
+        "player": "Dave Stewart",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1989,
+        "player": "Rickey Henderson",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1988,
+        "player": "Dennis Eckersley",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1988,
+        "player": "Terry Steinbach",
+        "team_at_time": "Athletics",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Red Sox": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1999,
+        "player": "Pedro Martinez",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1901,
+        "player": "Cy Young",
+        "team_at_time": "Americans",
+        "league": "AL"
+      }
+    ],
+    "Triple Crown Batter": [
+      {
+        "year": 1967,
+        "player": "Carl Yastrzemski",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1947,
+        "player": "Ted Williams",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1942,
+        "player": "Ted Williams",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2024,
+        "player": "Jarren Duran",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "J. D. Drew",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      },
+      {
+        "year": 1999,
+        "player": "Pedro Martinez",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      },
+      {
+        "year": 1986,
+        "player": "Roger Clemens",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      },
+      {
+        "year": 1970,
+        "player": "Carl Yastrzemski",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2018,
+        "player": "Jackie Bradley",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2013,
+        "player": "Koji Uehara",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Josh Beckett",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "David Ortiz",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1986,
+        "player": "Marty Barrett",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2018,
+        "player": "Steve Pearce",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      },
+      {
+        "year": 2013,
+        "player": "David Ortiz",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      },
+      {
+        "year": 2007,
+        "player": "Mike Lowell",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      },
+      {
+        "year": 2004,
+        "player": "Manny Ramirez",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Tigers": {
+    "Triple Crown Batter": [
+      {
+        "year": 2012,
+        "player": "Miguel Cabrera",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1909,
+        "player": "Ty Cobb",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 2011,
+        "player": "Justin Verlander",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1945,
+        "player": "Hal Newhouser",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 1984,
+        "player": "Alan Trammell",
+        "team_at_time": "Tigers",
+        "league": "MLB"
+      },
+      {
+        "year": 1968,
+        "player": "Mickey Lolich",
+        "team_at_time": "Tigers",
+        "league": "MLB"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2012,
+        "player": "Delmon Young",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2006,
+        "player": "Placido Polanco",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1984,
+        "player": "Kirk Gibson",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ]
+  },
+  "Twins": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 2006,
+        "player": "Johan Santana",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1924,
+        "player": "Walter Johnson",
+        "team_at_time": "Senators",
+        "league": "AL"
+      },
+      {
+        "year": 1918,
+        "player": "Walter Johnson",
+        "team_at_time": "Senators",
+        "league": "AL"
+      },
+      {
+        "year": 1913,
+        "player": "Walter Johnson",
+        "team_at_time": "Senators",
+        "league": "AL"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 1991,
+        "player": "Kirby Puckett",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1987,
+        "player": "Gary Gaetti",
+        "team_at_time": "Twins",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 1991,
+        "player": "Jack Morris",
+        "team_at_time": "Twins",
+        "league": "MLB"
+      },
+      {
+        "year": 1987,
+        "player": "Frank Viola",
+        "team_at_time": "Twins",
+        "league": "MLB"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1993,
+        "player": "Kirby Puckett",
+        "team_at_time": "Twins",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Phillies": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1972,
+        "player": "Steve Carlton",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1916,
+        "player": "Pete Alexander",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1915,
+        "player": "Pete Alexander",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "Triple Crown Batter": [
+      {
+        "year": 1933,
+        "player": "Chuck Klein",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2025,
+        "player": "Kyle Schwarber",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1964,
+        "player": "Johnny Callison",
+        "team_at_time": "Phillies",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2022,
+        "player": "Bryce Harper",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 2009,
+        "player": "Ryan Howard",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 2008,
+        "player": "Cole Hamels",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1993,
+        "player": "Curt Schilling",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1983,
+        "player": "Gary Matthews",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1980,
+        "player": "Manny Trillo",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2008,
+        "player": "Cole Hamels",
+        "team_at_time": "Phillies",
+        "league": "MLB"
+      },
+      {
+        "year": 1980,
+        "player": "Mike Schmidt",
+        "team_at_time": "Phillies",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Cubs": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1920,
+        "player": "Pete Alexander",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1918,
+        "player": "Hippo Vaughn",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1975,
+        "player": "Bill Madlock",
+        "team_at_time": "Cubs",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2016,
+        "player": "Javier Baez",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 2016,
+        "player": "Jon Lester",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2016,
+        "player": "Ben Zobrist",
+        "team_at_time": "Cubs",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Dodgers": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 2011,
+        "player": "Clayton Kershaw",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1966,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1965,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1963,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1924,
+        "player": "Dazzy Vance",
+        "team_at_time": "Robins",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2025,
+        "player": "Yoshinobu Yamamoto",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 2024,
+        "player": "Freddie Freeman",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 2020,
+        "player": "Corey Seager",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1988,
+        "player": "Orel Hershiser",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1981,
+        "player": "Pedro Guerrero",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1981,
+        "player": "Ron Cey",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1981,
+        "player": "Steve Yeager",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1965,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1963,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1959,
+        "player": "Larry Sherry",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1955,
+        "player": "Johnny Podres",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1996,
+        "player": "Mike Piazza",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1978,
+        "player": "Steve Garvey",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1977,
+        "player": "Don Sutton",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1974,
+        "player": "Steve Garvey",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1962,
+        "player": "Maury Wills",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2025,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2024,
+        "player": "Tommy Edman",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2020,
+        "player": "Corey Seager",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2018,
+        "player": "Cody Bellinger",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2017,
+        "player": "Justin Turner",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2017,
+        "player": "Chris Taylor",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1988,
+        "player": "Orel Hershiser",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1981,
+        "player": "Burt Hooton",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1978,
+        "player": "Steve Garvey",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1977,
+        "player": "Dusty Baker",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ]
+  },
+  "Yankees": {
+    "Triple Crown Batter": [
+      {
+        "year": 1956,
+        "player": "Mickey Mantle",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1934,
+        "player": "Lou Gehrig",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 1937,
+        "player": "Lefty Gomez",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1934,
+        "player": "Lefty Gomez",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2009,
+        "player": "Hideki Matsui",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 2000,
+        "player": "Derek Jeter",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1999,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1998,
+        "player": "Scott Brosius",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1996,
+        "player": "John Wetteland",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1978,
+        "player": "Bucky Dent",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1977,
+        "player": "Reggie Jackson",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1962,
+        "player": "Ralph Terry",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1961,
+        "player": "Whitey Ford",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1960,
+        "player": "Bobby Richardson",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1958,
+        "player": "Bob Turley",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      },
+      {
+        "year": 1956,
+        "player": "Don Larsen",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2024,
+        "player": "Giancarlo Stanton",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2009,
+        "player": "CC Sabathia",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2003,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2001,
+        "player": "Andy Pettitte",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "David Justice",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1999,
+        "player": "Orlando Hernandez",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1998,
+        "player": "David Wells",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "Bernie Williams",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1981,
+        "player": "Graig Nettles",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2022,
+        "player": "Giancarlo Stanton",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2013,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "NL"
+      },
+      {
+        "year": 2000,
+        "player": "Derek Jeter",
+        "team_at_time": "Yankees",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Reds": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1939,
+        "player": "Bucky Walters",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1982,
+        "player": "Dave Concepcion",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      },
+      {
+        "year": 1980,
+        "player": "Ken Griffey",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      },
+      {
+        "year": 1976,
+        "player": "George Foster",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      },
+      {
+        "year": 1972,
+        "player": "Joe Morgan",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      },
+      {
+        "year": 1967,
+        "player": "Tony Perez",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 1990,
+        "player": "Jose Rijo",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      },
+      {
+        "year": 1976,
+        "player": "Johnny Bench",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      },
+      {
+        "year": 1975,
+        "player": "Pete Rose",
+        "team_at_time": "Reds",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 1990,
+        "player": "Rob Dibble",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1990,
+        "player": "Randy Myers",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ]
+  },
+  "Guardians": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 2020,
+        "player": "Shane Bieber",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1940,
+        "player": "Bob Feller",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2016,
+        "player": "Andrew Miller",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Marquis Grissom",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1995,
+        "player": "Orel Hershiser",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2019,
+        "player": "Shane Bieber",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Sandy Alomar Jr.",
+        "team_at_time": "Indians",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Angels": {
+    "All-Star Game MVP": [
+      {
+        "year": 2015,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2014,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2003,
+        "player": "Garret Anderson",
+        "team_at_time": "Angels",
+        "league": "MLB"
+      },
+      {
+        "year": 1983,
+        "player": "Fred Lynn",
+        "team_at_time": "Angels",
+        "league": "MLB"
+      },
+      {
+        "year": 1962,
+        "player": "Leon Wagner",
+        "team_at_time": "Angels",
+        "league": "MLB"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2002,
+        "player": "Adam Kennedy",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 1982,
+        "player": "Fred Lynn",
+        "team_at_time": "Angels",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2002,
+        "player": "Troy Glaus",
+        "team_at_time": "Angels",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Orioles": {
+    "All-Star Game MVP": [
+      {
+        "year": 2005,
+        "player": "Miguel Tejada",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 2001,
+        "player": "Cal Ripken Jr.",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1998,
+        "player": "Roberto Alomar",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1991,
+        "player": "Cal Ripken Jr.",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1971,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1966,
+        "player": "Brooks Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      }
+    ],
+    "Triple Crown Batter": [
+      {
+        "year": 1966,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 1983,
+        "player": "Rick Dempsey",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1970,
+        "player": "Brooks Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1966,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 1983,
+        "player": "Mike Boddicker",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ]
+  },
+  "Mets": {
+    "World Series MVP": [
+      {
+        "year": 1986,
+        "player": "Ray Knight",
+        "team_at_time": "Mets",
+        "league": "MLB"
+      },
+      {
+        "year": 1969,
+        "player": "Donn Clendenon",
+        "team_at_time": "Mets",
+        "league": "MLB"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1975,
+        "player": "Jon Matlack",
+        "team_at_time": "Mets",
+        "league": "MLB"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 1985,
+        "player": "Dwight Gooden",
+        "team_at_time": "Mets",
+        "league": "NL"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2015,
+        "player": "Daniel Murphy",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 2000,
+        "player": "Mike Hampton",
+        "team_at_time": "Mets",
+        "league": "NL"
+      }
+    ]
+  },
+  "Pirates": {
+    "World Series MVP": [
+      {
+        "year": 1979,
+        "player": "Willie Stargell",
+        "team_at_time": "Pirates",
+        "league": "MLB"
+      },
+      {
+        "year": 1971,
+        "player": "Roberto Clemente",
+        "team_at_time": "Pirates",
+        "league": "MLB"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1979,
+        "player": "Dave Parker",
+        "team_at_time": "Pirates",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 1979,
+        "player": "Willie Stargell",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ]
+  },
+  "Royals": {
+    "ALCS MVP": [
+      {
+        "year": 2015,
+        "player": "Alcides Escobar",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 2014,
+        "player": "Lorenzo Cain",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1985,
+        "player": "George Brett",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1980,
+        "player": "Frank White",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2015,
+        "player": "Salvador Perez",
+        "team_at_time": "Royals",
+        "league": "MLB"
+      },
+      {
+        "year": 1985,
+        "player": "Bret Saberhagen",
+        "team_at_time": "Royals",
+        "league": "MLB"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2016,
+        "player": "Eric Hosmer",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1989,
+        "player": "Bo Jackson",
+        "team_at_time": "Royals",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Nationals": {
+    "All-Star Game MVP": [
+      {
+        "year": 1987,
+        "player": "Tim Raines",
+        "team_at_time": "Expos",
+        "league": "MLB"
+      },
+      {
+        "year": 1984,
+        "player": "Gary Carter",
+        "team_at_time": "Expos",
+        "league": "MLB"
+      },
+      {
+        "year": 1981,
+        "player": "Gary Carter",
+        "team_at_time": "Expos",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2019,
+        "player": "Howie Kendrick",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2019,
+        "player": "Stephen Strasburg",
+        "team_at_time": "Nationals",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Padres": {
+    "NLCS MVP": [
+      {
+        "year": 1998,
+        "player": "Sterling Hitchcock",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1984,
+        "player": "Steve Garvey",
+        "team_at_time": "Padres",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1985,
+        "player": "LaMarr Hoyt",
+        "team_at_time": "Padres",
+        "league": "MLB"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 2007,
+        "player": "Jake Peavy",
+        "team_at_time": "Padres",
+        "league": "NL"
+      }
+    ]
+  },
+  "Astros": {
+    "NLCS MVP": [
+      {
+        "year": 2005,
+        "player": "Roy Oswalt",
+        "team_at_time": "Astros",
+        "league": "NL"
+      },
+      {
+        "year": 1986,
+        "player": "Mike Scott",
+        "team_at_time": "Astros",
+        "league": "NL"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2022,
+        "player": "Jeremy Pena",
+        "team_at_time": "Astros",
+        "league": "AL"
+      },
+      {
+        "year": 2021,
+        "player": "Yordan Alvarez",
+        "team_at_time": "Astros",
+        "league": "AL"
+      },
+      {
+        "year": 2019,
+        "player": "Jose Altuve",
+        "team_at_time": "Astros",
+        "league": "AL"
+      },
+      {
+        "year": 2017,
+        "player": "Justin Verlander",
+        "team_at_time": "Astros",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2022,
+        "player": "Jeremy Pena",
+        "team_at_time": "Astros",
+        "league": "MLB"
+      },
+      {
+        "year": 2017,
+        "player": "George Springer",
+        "team_at_time": "Astros",
+        "league": "MLB"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2018,
+        "player": "Alex Bregman",
+        "team_at_time": "Astros",
+        "league": "AL"
+      }
+    ]
+  },
+  "Rangers": {
+    "All-Star Game MVP": [
+      {
+        "year": 2006,
+        "player": "Michael Young",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      },
+      {
+        "year": 2004,
+        "player": "Alfonso Soriano",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      },
+      {
+        "year": 1990,
+        "player": "Julio Franco",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2023,
+        "player": "Adolis Garcia",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Nelson Cruz",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2010,
+        "player": "Josh Hamilton",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2023,
+        "player": "Corey Seager",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Blue Jays": {
+    "ALCS MVP": [
+      {
+        "year": 2025,
+        "player": "Vladimir Guerrero",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1993,
+        "player": "Dave Stewart",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1992,
+        "player": "Roberto Alomar",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 1993,
+        "player": "Paul Molitor",
+        "team_at_time": "Blue Jays",
+        "league": "MLB"
+      },
+      {
+        "year": 1992,
+        "player": "Pat Borders",
+        "team_at_time": "Blue Jays",
+        "league": "MLB"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 1998,
+        "player": "Roger Clemens",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Roger Clemens",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2021,
+        "player": "Vladimir Guerrero",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ]
+  },
+  "Mariners": {
+    "All-Star Game MVP": [
+      {
+        "year": 2017,
+        "player": "Robinson Cano",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Ichiro Suzuki",
+        "team_at_time": "Mariners",
+        "league": "MLB"
+      },
+      {
+        "year": 1992,
+        "player": "Ken Griffey Jr.",
+        "team_at_time": "Mariners",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Marlins": {
+    "All-Star Game MVP": [
+      {
+        "year": 1995,
+        "player": "Jeff Conine",
+        "team_at_time": "Marlins",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2003,
+        "player": "Ivan Rodriguez",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 1997,
+        "player": "Livan Hernandez",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2003,
+        "player": "Josh Beckett",
+        "team_at_time": "Marlins",
+        "league": "MLB"
+      },
+      {
+        "year": 1997,
+        "player": "Livan Hernandez",
+        "team_at_time": "Marlins",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Diamondbacks": {
+    "NLCS MVP": [
+      {
+        "year": 2023,
+        "player": "Ketel Marte",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
+      {
+        "year": 2001,
+        "player": "Craig Counsell",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2001,
+        "player": "Randy Johnson",
+        "team_at_time": "Diamondbacks",
+        "league": "MLB"
+      },
+      {
+        "year": 2001,
+        "player": "Curt Schilling",
+        "team_at_time": "Diamondbacks",
+        "league": "MLB"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 2002,
+        "player": "Randy Johnson",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      }
+    ]
+  },
+  "White Sox": {
+    "ALCS MVP": [
+      {
+        "year": 2005,
+        "player": "Paul Konerko",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      }
+    ],
+    "World Series MVP": [
+      {
+        "year": 2005,
+        "player": "Jermaine Dye",
+        "team_at_time": "White Sox",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Rockies": {
+    "NLCS MVP": [
+      {
+        "year": 2007,
+        "player": "Matt Holliday",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2023,
+        "player": "Elias Diaz",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
+    ]
+  },
+  "Rays": {
+    "ALCS MVP": [
+      {
+        "year": 2020,
+        "player": "Randy Arozarena",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "Matt Garza",
+        "team_at_time": "Rays",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2009,
+        "player": "Carl Crawford",
+        "team_at_time": "Rays",
+        "league": "MLB"
+      }
+    ]
+  },
+  "Brewers": {
+    "All-Star Game MVP": [
+      {
+        "year": 2011,
+        "player": "Prince Fielder",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      }
+    ]
+  }
+}
