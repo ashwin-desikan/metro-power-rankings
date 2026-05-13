@@ -173,6 +173,7 @@ let _hof: Record<string, HallOfFamer[]> | null = null;
 let _seasons: Record<string, Season[]> | null = null;
 let _historical: HistoricalFranchise[] | null = null;
 let _historicalChamps: Record<string, Championship[]> | null = null;
+let _historicalSeasons: Record<string, Season[]> | null = null;
 let _proBowlCounts: Record<string, number> | null = null;
 let _topGamesByTeam: Record<string, TopGameTeamRow[]> | null = null;
 let _topGamesAllTime: TopGameLeagueRow[] | null = null;
@@ -292,6 +293,14 @@ export function getHistoricalChampionships(): Record<string, Championship[]> {
   return _historicalChamps;
 }
 
+// Per-defunct-franchise season-by-season records. Keyed on canonical
+// name (Year by Year DN). Surfaced on /teams/nfl/historical inside the
+// collapsible "+" disclosure next to each franchise row.
+export function getHistoricalSeasons(): Record<string, Season[]> {
+  if (!_historicalSeasons) _historicalSeasons = read<Record<string, Season[]>>("historical-seasons.json");
+  return _historicalSeasons;
+}
+
 // ---------- Display helpers ----------
 
 // Editorial palette per scope memory. Slate for pre-Super Bowl titles
@@ -335,7 +344,6 @@ export const MONOGRAM_BY_SLUG: Record<string, { bg: string; fg: string; mono: st
   "los-angeles-chargers":   { bg: "#0080C6", fg: "#FFC20E", mono: "LAC" },
   "detroit-lions":          { bg: "#0076B6", fg: "#B0B7BC", mono: "DET" },
   "jacksonville-jaguars":   { bg: "#006778", fg: "#D7A22A", mono: "JAX" },
-  "houston-texans":         { bg: "#03202F", fg: "#ffffff", mono: "HOU" },
   "carolina-panthers":      { bg: "#0085CA", fg: "#ffffff", mono: "CAR" },
 };
 
@@ -343,11 +351,6 @@ export function monogramFor(slug: string): { bg: string; fg: string; mono: strin
   return MONOGRAM_BY_SLUG[slug] || { bg: "#1E1E2E", fg: "#E8E8ED", mono: "NFL" };
 }
 
-// Static path roots so Turbopack's Node File Tracer can scope the
-// existsSync calls to `public/data/nfl/logos/` only. Earlier versions
-// built the full path with a variable suffix, which Turbopack treated
-// as a project-wide glob and traced 13,974 unrelated files into the
-// serverless bundle.
 const LOGO_DIR = join(process.cwd(), "public", "data", "nfl", "logos");
 
 export function logoUrlFor(slug: string): string | null {
