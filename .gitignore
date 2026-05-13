@@ -94,3 +94,6 @@ NAV_PATCH_INSTRUCTIONS.md
 public/data/metro-boundaries/build-cache.json
 public/data/metro-boundaries/.build-cache.json
 public/data/stale-boundaries-to-delete.txt
+
+# Local Vercel deploy status snapshot, written by npm run deploy-status
+.deploy-status.json
