@@ -2,7 +2,14 @@
 
 import { useMemo, useState } from "react";
 import type { HistoricalFranchise, Championship, Season } from "@/lib/nfl";
-import { TITLE_COLORS } from "@/lib/nfl";
+
+// Inlined from lib/nfl.ts so this client component does not import any
+// value from the server-only data module. Keep in sync with TITLE_COLORS
+// in lib/nfl.ts (slate for pre-Super Bowl, gold for Super Bowl era).
+const TITLE_COLORS = {
+  pre_sb: { bg: "#6e8aa6", text: "#0c1320" },
+  sb:     { bg: "#d4af37", text: "#1a1408" },
+} as const;
 
 // Sortable, expandable defunct-franchise table for /teams/nfl/historical.
 // Each row is a native <details> element so the +/- toggle survives even

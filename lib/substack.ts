@@ -1,3 +1,4 @@
+import "server-only";
 // Substack RSS loader for the Featured Articles strip on /.
 //
 // Strategy:

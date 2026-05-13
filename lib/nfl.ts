@@ -1,3 +1,4 @@
+import "server-only";
 // NFL team-pages data layer.
 // Source: public/data/nfl/*.json, emitted by scripts/build-nfl-data.py from
 // NFL_all.xlsx (canonical schema documented in the workbook's Claude Notes

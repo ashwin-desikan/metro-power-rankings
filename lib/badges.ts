@@ -1,3 +1,4 @@
+import "server-only";
 // Badges layer. Each badge is a categorical lens over the existing metros
 // dataset — no new data ingestion. Each live badge becomes an indexable
 // long-tail destination that reframes the same data through a different
