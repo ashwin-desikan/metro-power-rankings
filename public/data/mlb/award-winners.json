@@ -22,7 +22,139 @@
         "league": "NL"
       }
     ],
-    "World Series MVP": [
+    "NL MVP": [
+      {
+        "year": 2023,
+        "player": "Ronald Acuna",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2020,
+        "player": "Freddie Freeman",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1999,
+        "player": "Chipper Jones",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1991,
+        "player": "Terry Pendleton",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1983,
+        "player": "Dale Murphy",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1982,
+        "player": "Dale Murphy",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1957,
+        "player": "Hank Aaron",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1947,
+        "player": "Bob Elliott",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1914,
+        "player": "Johnny Evers",
+        "team_at_time": "Braves",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2025,
+        "player": "Drake Baldwin",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2022,
+        "player": "Michael Harris",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2018,
+        "player": "Ronald Acuna",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "Craig Kimbrel",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2000,
+        "player": "Rafael Furcal",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1990,
+        "player": "David Justice",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1978,
+        "player": "Bob Horner",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1971,
+        "player": "Earl Williams",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1950,
+        "player": "Sam Jethroe",
+        "team_at_time": "Braves",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2021,
+        "player": "Freddie Freeman",
+        "team_at_time": "Braves",
+        "league": "MLB"
+      },
+      {
+        "year": 1995,
+        "player": "Tom Glavine",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1957,
+        "player": "Lew Burdette",
+        "team_at_time": "Braves",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2021,
         "player": "Jorge Soler",
@@ -40,6 +172,76 @@
         "player": "Lew Burdette",
         "team_at_time": "Braves",
         "league": "MLB"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2024,
+        "player": "Chris Sale",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1998,
+        "player": "Tom Glavine",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1996,
+        "player": "John Smoltz",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1995,
+        "player": "Greg Maddux",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1994,
+        "player": "Greg Maddux",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1993,
+        "player": "Greg Maddux",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1991,
+        "player": "Tom Glavine",
+        "team_at_time": "Braves",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2018,
+        "player": "Brian Snitker",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2005,
+        "player": "Bobby Cox",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2004,
+        "player": "Bobby Cox",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 1991,
+        "player": "Bobby Cox",
+        "team_at_time": "Braves",
+        "league": "NL"
       }
     ],
     "NLCS MVP": [
@@ -92,6 +294,78 @@
         "player": "Fred McGriff",
         "team_at_time": "Braves",
         "league": "MLB"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2014,
+        "player": "Craig Kimbrel",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2012,
+        "player": "Craig Kimbrel",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2002,
+        "player": "John Smoltz",
+        "team_at_time": "Braves",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2023,
+        "player": "Ronald Acuna",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2020,
+        "player": "Freddie Freeman",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2005,
+        "player": "Andruw Jones",
+        "team_at_time": "Braves",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2025,
+        "player": "Ronald Acuña",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2024,
+        "player": "Chris Sale",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2019,
+        "player": "Josh Donaldson",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2018,
+        "player": "Jonny Venters",
+        "team_at_time": "Braves",
+        "league": "NL"
+      },
+      {
+        "year": 2010,
+        "player": "Tim Hudson",
+        "team_at_time": "Braves",
+        "league": "NL"
       }
     ]
   },
@@ -150,7 +424,205 @@
         "league": "AA"
       }
     ],
-    "World Series MVP": [
+    "NL MVP": [
+      {
+        "year": 2022,
+        "player": "Paul Goldschmidt",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2009,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2008,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2005,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1985,
+        "player": "Willie McGee",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1979,
+        "player": "Keith Hernandez",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1971,
+        "player": "Joe Torre",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1968,
+        "player": "Bob Gibson",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1967,
+        "player": "Orlando Cepeda",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1964,
+        "player": "Ken Boyer",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1948,
+        "player": "Stan Musial",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1946,
+        "player": "Stan Musial",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1944,
+        "player": "Marty Marion",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1943,
+        "player": "Stan Musial",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1942,
+        "player": "Mort Cooper",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1937,
+        "player": "Joe Medwick",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1934,
+        "player": "Dizzy Dean",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1931,
+        "player": "Frankie Frisch",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1928,
+        "player": "Jim Bottomley",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1926,
+        "player": "Bob O'Farrell",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1925,
+        "player": "Rogers Hornsby",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2001,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1986,
+        "player": "Todd Worrell",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1985,
+        "player": "Vince Coleman",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1974,
+        "player": "Bake McBride",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1955,
+        "player": "Bill Virdon",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1954,
+        "player": "Wally Moon",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2011,
+        "player": "David Freese",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2006,
+        "player": "David Eckstein",
+        "team_at_time": "Cardinals",
+        "league": "AL"
+      },
+      {
+        "year": 1982,
+        "player": "Bruce Sutter",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1967,
+        "player": "Lou Brock",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1964,
+        "player": "Bob Gibson",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2011,
         "player": "David Freese",
@@ -180,6 +652,76 @@
         "player": "Bob Gibson",
         "team_at_time": "Cardinals",
         "league": "MLB"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2005,
+        "player": "Chris Carpenter",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1970,
+        "player": "Bob Gibson",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1968,
+        "player": "Bob Gibson",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2024,
+        "player": "Ryan Helsley",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1995,
+        "player": "Tom Henke",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1992,
+        "player": "Lee Smith",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1991,
+        "player": "Lee Smith",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1986,
+        "player": "Todd Worrell",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1984,
+        "player": "Bruce Sutter",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1982,
+        "player": "Bruce Sutter",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1981,
+        "player": "Bruce Sutter",
+        "team_at_time": "Cardinals",
+        "league": "NL"
       }
     ],
     "NLCS MVP": [
@@ -219,6 +761,66 @@
         "team_at_time": "Cardinals",
         "league": "NL"
       }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2019,
+        "player": "Mike Shildt",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2002,
+        "player": "Tony LaRussa",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 1985,
+        "player": "Whitey Herzog",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2022,
+        "player": "Paul Goldschmidt",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2009,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2003,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2022,
+        "player": "Albert Pujols",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "Lance Berkman",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      },
+      {
+        "year": 2009,
+        "player": "Chris Carpenter",
+        "team_at_time": "Cardinals",
+        "league": "NL"
+      }
     ]
   },
   "Giants": {
@@ -244,6 +846,162 @@
       {
         "year": 1888,
         "player": "Tim Keefe",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 2012,
+        "player": "Buster Posey",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2004,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2003,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2002,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2001,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2000,
+        "player": "Jeff Kent",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1993,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1989,
+        "player": "Kevin Mitchell",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1969,
+        "player": "Willie McCovey",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1965,
+        "player": "Willie Mays",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1954,
+        "player": "Willie Mays",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1936,
+        "player": "Carl Hubbell",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1933,
+        "player": "Carl Hubbell",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1912,
+        "player": "Larry Doyle",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2010,
+        "player": "Buster Posey",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1975,
+        "player": "John Montefusco",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1973,
+        "player": "Gary Matthews",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1959,
+        "player": "Willie McCovey",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1958,
+        "player": "Orlando Cepeda",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1951,
+        "player": "Willie Mays",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2014,
+        "player": "Madison Bumgarner",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2012,
+        "player": "Pablo Sandoval",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2012,
+        "player": "Pablo Sandoval",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2010,
+        "player": "Tim Lincecum",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1954,
+        "player": "Dusty Rhodes",
         "team_at_time": "Giants",
         "league": "NL"
       }
@@ -286,6 +1044,26 @@
         "league": "MLB"
       }
     ],
+    "NL Cy Young": [
+      {
+        "year": 2009,
+        "player": "Tim Lincecum",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2008,
+        "player": "Tim Lincecum",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1967,
+        "player": "Mike McCormick",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 2014,
@@ -324,7 +1102,67 @@
         "league": "NL"
       }
     ],
-    "World Series MVP": [
+    "NL Manager of the Year": [
+      {
+        "year": 2021,
+        "player": "Gabe Kapler",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2000,
+        "player": "Dusty Baker",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1997,
+        "player": "Dusty Baker",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 1993,
+        "player": "Dusty Baker",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 1994,
+        "player": "Rod Beck",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2012,
+        "player": "Buster Posey",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2004,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2002,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2001,
+        "player": "Barry Bonds",
+        "team_at_time": "Giants",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2014,
         "player": "Madison Bumgarner",
@@ -342,6 +1180,20 @@
         "player": "Edgar Renteria",
         "team_at_time": "Giants",
         "league": "MLB"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2021,
+        "player": "Buster Posey",
+        "team_at_time": "Giants",
+        "league": "NL"
+      },
+      {
+        "year": 2012,
+        "player": "Buster Posey",
+        "team_at_time": "Giants",
+        "league": "NL"
       }
     ]
   },
@@ -380,7 +1232,201 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "AL MVP": [
+      {
+        "year": 2002,
+        "player": "Miguel Tejada",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "Jason Giambi",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1992,
+        "player": "Dennis Eckersley",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1990,
+        "player": "Rickey Henderson",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1988,
+        "player": "Jose Canseco",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1973,
+        "player": "Reggie Jackson",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1971,
+        "player": "Vida Blue",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1952,
+        "player": "Bobby Shantz",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1933,
+        "player": "Jimmie Foxx",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1932,
+        "player": "Jimmie Foxx",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1931,
+        "player": "Lefty Grove",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1928,
+        "player": "Mickey Cochrane",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1914,
+        "player": "Eddie Collins",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2025,
+        "player": "Nick Kurtz",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 2009,
+        "player": "Andrew Bailey",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 2005,
+        "player": "Huston Street",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "Bobby Crosby",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1998,
+        "player": "Ben Grieve",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1988,
+        "player": "Walt Weiss",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1987,
+        "player": "Mark McGwire",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1986,
+        "player": "Jose Canseco",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1952,
+        "player": "Harry Byrd",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2002,
+        "player": "Barry Zito",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1992,
+        "player": "Dennis Eckersley",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1990,
+        "player": "Bob Welch",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1974,
+        "player": "Catfish Hunter",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1971,
+        "player": "Vida Blue",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 1989,
+        "player": "Dave Stewart",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1974,
+        "player": "Dick Green",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1973,
+        "player": "Bert Campaneris",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1972,
+        "player": "Gene Tenace",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 1989,
         "player": "Dave Stewart",
@@ -433,6 +1479,64 @@
         "team_at_time": "Athletics",
         "league": "MLB"
       }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2018,
+        "player": "Bob Melvin",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 2012,
+        "player": "Bob Melvin",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1992,
+        "player": "Tony LaRussa",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1988,
+        "player": "Tony LaRussa",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2020,
+        "player": "Liam Hendriks",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 2003,
+        "player": "Keith Foulke",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 2002,
+        "player": "Billy Koch",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1992,
+        "player": "Dennis Eckersley",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      },
+      {
+        "year": 1988,
+        "player": "Dennis Eckersley",
+        "team_at_time": "Athletics",
+        "league": "AL"
+      }
     ]
   },
   "Red Sox": {
@@ -447,6 +1551,80 @@
         "year": 1901,
         "player": "Cy Young",
         "team_at_time": "Americans",
+        "league": "AL"
+      }
+    ],
+    "AL MVP": [
+      {
+        "year": 2018,
+        "player": "Mookie Betts",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "Dustin Pedroia",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1995,
+        "player": "Mo Vaughn",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1986,
+        "player": "Roger Clemens",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1978,
+        "player": "Jim Rice",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1975,
+        "player": "Fred Lynn",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1967,
+        "player": "Carl Yastrzemski",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1958,
+        "player": "Jackie Jensen",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1949,
+        "player": "Ted Williams",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1946,
+        "player": "Ted Williams",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1938,
+        "player": "Jimmie Foxx",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1912,
+        "player": "Tris Speaker",
+        "team_at_time": "Red Sox",
         "league": "AL"
       }
     ],
@@ -466,6 +1644,88 @@
       {
         "year": 1942,
         "player": "Ted Williams",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2007,
+        "player": "Dustin Pedroia",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Nomar Garciaparra",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1975,
+        "player": "Fred Lynn",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1972,
+        "player": "Carlton Fisk",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1961,
+        "player": "Don Schwall",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1950,
+        "player": "Walt Dropo",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2016,
+        "player": "Rick Porcello",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "Pedro Martinez",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1999,
+        "player": "Pedro Martinez",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1991,
+        "player": "Roger Clemens",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1987,
+        "player": "Roger Clemens",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1986,
+        "player": "Roger Clemens",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1967,
+        "player": "Jim Lonborg",
         "team_at_time": "Red Sox",
         "league": "AL"
       }
@@ -502,6 +1762,64 @@
         "league": "MLB"
       }
     ],
+    "Babe Ruth Award": [
+      {
+        "year": 2018,
+        "player": "David Price",
+        "team_at_time": "Red Sox",
+        "league": "MLB"
+      },
+      {
+        "year": 2013,
+        "player": "David Ortiz",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Jonathan Papelbon",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "Keith Foulke",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1975,
+        "player": "Luis Tiant",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2025,
+        "player": "Aroldis Chapman",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2017,
+        "player": "Craig Kimbrel",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1998,
+        "player": "Tom Gordon",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1977,
+        "player": "Bill Campbell",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
     "ALCS MVP": [
       {
         "year": 2018,
@@ -534,7 +1852,53 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "AL Manager of the Year": [
+      {
+        "year": 1999,
+        "player": "Jimy Williams",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1986,
+        "player": "John McNamara",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2018,
+        "player": "J. D. Martinez",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2016,
+        "player": "David Ortiz",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "Kevin Youkilis",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2005,
+        "player": "David Ortiz",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "Manny Ramirez",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2018,
         "player": "Steve Pearce",
@@ -559,6 +1923,26 @@
         "team_at_time": "Red Sox",
         "league": "MLB"
       }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2018,
+        "player": "David Price",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2016,
+        "player": "Rick Porcello",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Jacoby Ellsbury",
+        "team_at_time": "Red Sox",
+        "league": "AL"
+      }
     ]
   },
   "Tigers": {
@@ -571,6 +1955,80 @@
       },
       {
         "year": 1909,
+        "player": "Ty Cobb",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "AL MVP": [
+      {
+        "year": 2013,
+        "player": "Miguel Cabrera",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2012,
+        "player": "Miguel Cabrera",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Justin Verlander",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1984,
+        "player": "Willie Hernandez",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1968,
+        "player": "Denny McLain",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1945,
+        "player": "Hal Newhouser",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1944,
+        "player": "Hal Newhouser",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1940,
+        "player": "Hank Greenberg",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1937,
+        "player": "Charlie Gehringer",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1935,
+        "player": "Hank Greenberg",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1934,
+        "player": "Mickey Cochrane",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1911,
         "player": "Ty Cobb",
         "team_at_time": "Tigers",
         "league": "AL"
@@ -590,7 +2048,97 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "AL Rookie of the Year": [
+      {
+        "year": 2016,
+        "player": "Michael Fulmer",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2006,
+        "player": "Justin Verlander",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1978,
+        "player": "Lou Whitaker",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1976,
+        "player": "Mark Fidrych",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1953,
+        "player": "Harvey Kuenn",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 1984,
+        "player": "Jack Morris",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1968,
+        "player": "Mickey Lolich",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2025,
+        "player": "Tarik Skubal",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2024,
+        "player": "Tarik Skubal",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2013,
+        "player": "Max Scherzer",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Justin Verlander",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1984,
+        "player": "Willie Hernandez",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1969,
+        "player": "Denny McLain",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1968,
+        "player": "Denny McLain",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 1984,
         "player": "Alan Trammell",
@@ -623,9 +2171,367 @@
         "team_at_time": "Tigers",
         "league": "AL"
       }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2006,
+        "player": "Jim Leyland",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1987,
+        "player": "Sparky Anderson",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 1984,
+        "player": "Sparky Anderson",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2011,
+        "player": "Jose Valverde",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "Todd Jones",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2013,
+        "player": "Miguel Cabrera",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      },
+      {
+        "year": 2012,
+        "player": "Miguel Cabrera",
+        "team_at_time": "Tigers",
+        "league": "AL"
+      }
+    ]
+  },
+  "Cubs": {
+    "NL MVP": [
+      {
+        "year": 2016,
+        "player": "Kris Bryant",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1998,
+        "player": "Sammy Sosa",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1987,
+        "player": "Andre Dawson",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1984,
+        "player": "Ryne Sandberg",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1959,
+        "player": "Ernie Banks",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1958,
+        "player": "Ernie Banks",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1952,
+        "player": "Hank Sauer",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1945,
+        "player": "Phil Cavarretta",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1935,
+        "player": "Gabby Hartnett",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1929,
+        "player": "Rogers Hornsby",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1911,
+        "player": "Frank Schulte",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 1920,
+        "player": "Pete Alexander",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1918,
+        "player": "Hippo Vaughn",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2015,
+        "player": "Kris Bryant",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 2008,
+        "player": "Geovany Soto",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1998,
+        "player": "Kerry Wood",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1989,
+        "player": "Jerome Walton",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1962,
+        "player": "Ken Hubbs",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1961,
+        "player": "Billy Williams",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2015,
+        "player": "Jake Arrieta",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1992,
+        "player": "Greg Maddux",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1984,
+        "player": "Rick Sutcliffe",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1979,
+        "player": "Bruce Sutter",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1971,
+        "player": "Fergie Jenkins",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1975,
+        "player": "Bill Madlock",
+        "team_at_time": "Cubs",
+        "league": "MLB"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 1993,
+        "player": "Randy Myers",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1979,
+        "player": "Bruce Sutter",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2015,
+        "player": "Joe Maddon",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 2008,
+        "player": "Lou Piniella",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1989,
+        "player": "Don Zimmer",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1984,
+        "player": "Jim Frey",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2016,
+        "player": "Kris Bryant",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 2008,
+        "player": "Aramis Ramirez",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 1999,
+        "player": "Sammy Sosa",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2016,
+        "player": "Jon Lester",
+        "team_at_time": "Cubs",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2016,
+        "player": "Javier Baez",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      },
+      {
+        "year": 2016,
+        "player": "Jon Lester",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
+      {
+        "year": 2016,
+        "player": "Ben Zobrist",
+        "team_at_time": "Cubs",
+        "league": "MLB"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2023,
+        "player": "Cody Bellinger",
+        "team_at_time": "Cubs",
+        "league": "NL"
+      }
     ]
   },
   "Twins": {
+    "AL MVP": [
+      {
+        "year": 2009,
+        "player": "Joe Mauer",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 2006,
+        "player": "Justin Morneau",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1977,
+        "player": "Rod Carew",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1969,
+        "player": "Harmon Killebrew",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1965,
+        "player": "Zoilo Versalles",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1925,
+        "player": "Roger Peckinpaugh",
+        "team_at_time": "Senators",
+        "league": "AL"
+      },
+      {
+        "year": 1924,
+        "player": "Walter Johnson",
+        "team_at_time": "Senators",
+        "league": "AL"
+      },
+      {
+        "year": 1913,
+        "player": "Walter Johnson",
+        "team_at_time": "Senators",
+        "league": "AL"
+      }
+    ],
     "Triple Crown Pitcher": [
       {
         "year": 2006,
@@ -652,6 +2558,84 @@
         "league": "AL"
       }
     ],
+    "AL Rookie of the Year": [
+      {
+        "year": 1995,
+        "player": "Marty Cordova",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1991,
+        "player": "Chuck Knoblauch",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1979,
+        "player": "John Castino",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1967,
+        "player": "Rod Carew",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1964,
+        "player": "Tony Oliva",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1959,
+        "player": "Bob Allison",
+        "team_at_time": "Senators",
+        "league": "AL"
+      },
+      {
+        "year": 1958,
+        "player": "Albie Pearson",
+        "team_at_time": "Senators",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2006,
+        "player": "Johan Santana",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "Johan Santana",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1988,
+        "player": "Frank Viola",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1970,
+        "player": "Jim Perry",
+        "team_at_time": "Twins",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 1976,
+        "player": "Bill Campbell",
+        "team_at_time": "Twins",
+        "league": "AL"
+      }
+    ],
     "ALCS MVP": [
       {
         "year": 1991,
@@ -666,7 +2650,21 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "Babe Ruth Award": [
+      {
+        "year": 1991,
+        "player": "Jack Morris",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1987,
+        "player": "Frank Viola",
+        "team_at_time": "Twins",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 1991,
         "player": "Jack Morris",
@@ -680,6 +2678,32 @@
         "league": "MLB"
       }
     ],
+    "AL Manager of the Year": [
+      {
+        "year": 2019,
+        "player": "Rocco Baldelli",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 2017,
+        "player": "Paul Molitor",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 2010,
+        "player": "Ron Gardenhire",
+        "team_at_time": "Twins",
+        "league": "AL"
+      },
+      {
+        "year": 1991,
+        "player": "Tom Kelly",
+        "team_at_time": "Twins",
+        "league": "AL"
+      }
+    ],
     "All-Star Game MVP": [
       {
         "year": 1993,
@@ -687,151 +2711,115 @@
         "team_at_time": "Twins",
         "league": "MLB"
       }
-    ]
-  },
-  "Phillies": {
-    "Triple Crown Pitcher": [
-      {
-        "year": 1972,
-        "player": "Steve Carlton",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 1916,
-        "player": "Pete Alexander",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 1915,
-        "player": "Pete Alexander",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      }
     ],
-    "Triple Crown Batter": [
+    "Comeback Player of the Year": [
       {
-        "year": 1933,
-        "player": "Chuck Klein",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      }
-    ],
-    "All-Star Game MVP": [
-      {
-        "year": 2025,
-        "player": "Kyle Schwarber",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 1964,
-        "player": "Johnny Callison",
-        "team_at_time": "Phillies",
-        "league": "MLB"
-      }
-    ],
-    "NLCS MVP": [
-      {
-        "year": 2022,
-        "player": "Bryce Harper",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 2009,
-        "player": "Ryan Howard",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 2008,
-        "player": "Cole Hamels",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 1993,
-        "player": "Curt Schilling",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 1983,
-        "player": "Gary Matthews",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      },
-      {
-        "year": 1980,
-        "player": "Manny Trillo",
-        "team_at_time": "Phillies",
-        "league": "NL"
-      }
-    ],
-    "World Series MVP": [
-      {
-        "year": 2008,
-        "player": "Cole Hamels",
-        "team_at_time": "Phillies",
-        "league": "MLB"
-      },
-      {
-        "year": 1980,
-        "player": "Mike Schmidt",
-        "team_at_time": "Phillies",
-        "league": "MLB"
-      }
-    ]
-  },
-  "Cubs": {
-    "Triple Crown Pitcher": [
-      {
-        "year": 1920,
-        "player": "Pete Alexander",
-        "team_at_time": "Cubs",
-        "league": "NL"
-      },
-      {
-        "year": 1918,
-        "player": "Hippo Vaughn",
-        "team_at_time": "Cubs",
-        "league": "NL"
-      }
-    ],
-    "All-Star Game MVP": [
-      {
-        "year": 1975,
-        "player": "Bill Madlock",
-        "team_at_time": "Cubs",
-        "league": "MLB"
-      }
-    ],
-    "NLCS MVP": [
-      {
-        "year": 2016,
-        "player": "Javier Baez",
-        "team_at_time": "Cubs",
-        "league": "NL"
-      },
-      {
-        "year": 2016,
-        "player": "Jon Lester",
-        "team_at_time": "Cubs",
-        "league": "NL"
-      }
-    ],
-    "World Series MVP": [
-      {
-        "year": 2016,
-        "player": "Ben Zobrist",
-        "team_at_time": "Cubs",
-        "league": "MLB"
+        "year": 2010,
+        "player": "Francisco Liriano",
+        "team_at_time": "Twins",
+        "league": "AL"
       }
     ]
   },
   "Dodgers": {
+    "NL MVP": [
+      {
+        "year": 2025,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2024,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2019,
+        "player": "Cody Bellinger",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2014,
+        "player": "Clayton Kershaw",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1988,
+        "player": "Kirk Gibson",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1974,
+        "player": "Steve Garvey",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1963,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1962,
+        "player": "Maury Wills",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1956,
+        "player": "Don Newcombe",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1955,
+        "player": "Roy Campanella",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1953,
+        "player": "Roy Campanella",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1951,
+        "player": "Roy Campanella",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1949,
+        "player": "Jackie Robinson",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1941,
+        "player": "Dolph Camilli",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1924,
+        "player": "Dazzy Vance",
+        "team_at_time": "Robins",
+        "league": "NL"
+      },
+      {
+        "year": 1913,
+        "player": "Jake Daubert",
+        "team_at_time": "Superbas",
+        "league": "NL"
+      }
+    ],
     "Triple Crown Pitcher": [
       {
         "year": 2011,
@@ -864,7 +2852,161 @@
         "league": "NL"
       }
     ],
-    "World Series MVP": [
+    "NL Rookie of the Year": [
+      {
+        "year": 2017,
+        "player": "Cody Bellinger",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2016,
+        "player": "Corey Seager",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1996,
+        "player": "Todd Hollandsworth",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1995,
+        "player": "Hideo Nomo",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1994,
+        "player": "Raul Mondesi",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1993,
+        "player": "Mike Piazza",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1992,
+        "player": "Eric Karros",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1982,
+        "player": "Steve Sax",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1981,
+        "player": "Fernando Valenzuela",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1980,
+        "player": "Steve Howe",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1979,
+        "player": "Rick Sutcliffe",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1969,
+        "player": "Ted Sizemore",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1965,
+        "player": "Jim Lefebvre",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1960,
+        "player": "Frank Howard",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1953,
+        "player": "Jim Gilliam",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1952,
+        "player": "Joe Black",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1949,
+        "player": "Don Newcombe",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2025,
+        "player": "Yoshinobu Yamamoto",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 2024,
+        "player": "Mookie Betts",
+        "team_at_time": "Dodgers",
+        "league": "MLB"
+      },
+      {
+        "year": 1988,
+        "player": "Orel Hershiser",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1981,
+        "player": "Ron Cey",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1965,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1963,
+        "player": "Sandy Koufax",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1959,
+        "player": "Larry Sherry",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1955,
+        "player": "Johnny Podres",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2025,
         "player": "Yoshinobu Yamamoto",
@@ -964,6 +3106,50 @@
         "league": "MLB"
       }
     ],
+    "NL Cy Young": [
+      {
+        "year": 2014,
+        "player": "Clayton Kershaw",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2013,
+        "player": "Clayton Kershaw",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "Clayton Kershaw",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2003,
+        "player": "Eric Gagne",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1988,
+        "player": "Orel Hershiser",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1981,
+        "player": "Fernando Valenzuela",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1974,
+        "player": "Mike Marshall",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 2025,
@@ -1025,9 +3211,809 @@
         "team_at_time": "Dodgers",
         "league": "NL"
       }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2016,
+        "player": "Dave Roberts",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1988,
+        "player": "Tommy Lasorda",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 1983,
+        "player": "Tommy Lasorda",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2017,
+        "player": "Kenley Jansen",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2016,
+        "player": "Kenley Jansen",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2004,
+        "player": "Eric Gagne",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2003,
+        "player": "Eric Gagne",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2006,
+        "player": "Nomar Garciaparra",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2025,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2024,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "Matt Kemp",
+        "team_at_time": "Dodgers",
+        "league": "NL"
+      }
+    ]
+  },
+  "Phillies": {
+    "Triple Crown Pitcher": [
+      {
+        "year": 1972,
+        "player": "Steve Carlton",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1916,
+        "player": "Pete Alexander",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1915,
+        "player": "Pete Alexander",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 2021,
+        "player": "Bryce Harper",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 2007,
+        "player": "Jimmy Rollins",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 2006,
+        "player": "Ryan Howard",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1986,
+        "player": "Mike Schmidt",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1981,
+        "player": "Mike Schmidt",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1980,
+        "player": "Mike Schmidt",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1950,
+        "player": "Jim Konstanty",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1932,
+        "player": "Chuck Klein",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "Triple Crown Batter": [
+      {
+        "year": 1933,
+        "player": "Chuck Klein",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2005,
+        "player": "Ryan Howard",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1997,
+        "player": "Scott Rolen",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1964,
+        "player": "Dick Allen",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1957,
+        "player": "Jack Sanford",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2025,
+        "player": "Kyle Schwarber",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1964,
+        "player": "Johnny Callison",
+        "team_at_time": "Phillies",
+        "league": "MLB"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2010,
+        "player": "Roy Halladay",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1987,
+        "player": "Steve Bedrosian",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1983,
+        "player": "John Denny",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1982,
+        "player": "Steve Carlton",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1980,
+        "player": "Steve Carlton",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1977,
+        "player": "Steve Carlton",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1972,
+        "player": "Steve Carlton",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2008,
+        "player": "Cole Hamels",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1980,
+        "player": "Tug McGraw",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2022,
+        "player": "Bryce Harper",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 2009,
+        "player": "Ryan Howard",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 2008,
+        "player": "Cole Hamels",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1993,
+        "player": "Curt Schilling",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1983,
+        "player": "Gary Matthews",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1980,
+        "player": "Manny Trillo",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
+      {
+        "year": 2008,
+        "player": "Cole Hamels",
+        "team_at_time": "Phillies",
+        "league": "MLB"
+      },
+      {
+        "year": 1980,
+        "player": "Mike Schmidt",
+        "team_at_time": "Phillies",
+        "league": "MLB"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2008,
+        "player": "Brad Lidge",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1987,
+        "player": "Steve Bedrosian",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 1983,
+        "player": "Al Holland",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2001,
+        "player": "Larry Bowa",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2021,
+        "player": "Bryce Harper",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      },
+      {
+        "year": 2006,
+        "player": "Ryan Howard",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2008,
+        "player": "Brad Lidge",
+        "team_at_time": "Phillies",
+        "league": "NL"
+      }
+    ]
+  },
+  "Orioles": {
+    "AL MVP": [
+      {
+        "year": 1991,
+        "player": "Cal Ripken Jr.",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1983,
+        "player": "Cal Ripken Jr.",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1970,
+        "player": "Boog Powell",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1966,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1964,
+        "player": "Brooks Robinson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1922,
+        "player": "George Sisler",
+        "team_at_time": "Browns",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2023,
+        "player": "Gunnar Henderson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1989,
+        "player": "Gregg Olson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1982,
+        "player": "Cal Ripken Jr.",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1977,
+        "player": "Eddie Murray",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1973,
+        "player": "Al Bumbry",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1965,
+        "player": "Curt Blefary",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1960,
+        "player": "Ron Hansen",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1949,
+        "player": "Roy Sievers",
+        "team_at_time": "Browns",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2005,
+        "player": "Miguel Tejada",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 2001,
+        "player": "Cal Ripken Jr.",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1998,
+        "player": "Roberto Alomar",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1991,
+        "player": "Cal Ripken Jr.",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1971,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1966,
+        "player": "Brooks Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 1983,
+        "player": "Rick Dempsey",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1970,
+        "player": "Brooks Robinson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1966,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ],
+    "Triple Crown Batter": [
+      {
+        "year": 1966,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
+      {
+        "year": 1983,
+        "player": "Rick Dempsey",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1970,
+        "player": "Brooks Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      },
+      {
+        "year": 1966,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "MLB"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 1980,
+        "player": "Steve Stone",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1979,
+        "player": "Mike Flanagan",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1976,
+        "player": "Jim Palmer",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1975,
+        "player": "Jim Palmer",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1973,
+        "player": "Jim Palmer",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1969,
+        "player": "Mike Cuellar",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 1983,
+        "player": "Mike Boddicker",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2023,
+        "player": "Brandon Hyde",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 2014,
+        "player": "Buck Showalter",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Davey Johnson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1989,
+        "player": "Frank Robinson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2023,
+        "player": "Felix Bautista",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 2016,
+        "player": "Zack Britton",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 2012,
+        "player": "Jim Johnson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Randy Myers",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 1994,
+        "player": "Lee Smith",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2021,
+        "player": "Trey Mancini",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      },
+      {
+        "year": 2006,
+        "player": "Jim Johnson",
+        "team_at_time": "Orioles",
+        "league": "AL"
+      }
     ]
   },
   "Yankees": {
+    "AL MVP": [
+      {
+        "year": 2025,
+        "player": "Aaron Judge",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2024,
+        "player": "Aaron Judge",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2022,
+        "player": "Aaron Judge",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2005,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1985,
+        "player": "Don Mattingly",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1976,
+        "player": "Thurman Munson",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1963,
+        "player": "Elston Howard",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1962,
+        "player": "Mickey Mantle",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1961,
+        "player": "Roger Maris",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1960,
+        "player": "Roger Maris",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1957,
+        "player": "Mickey Mantle",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1956,
+        "player": "Mickey Mantle",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1955,
+        "player": "Yogi Berra",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1954,
+        "player": "Yogi Berra",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1951,
+        "player": "Yogi Berra",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1950,
+        "player": "Phil Rizzuto",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1947,
+        "player": "Joe DiMaggio",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1943,
+        "player": "Spud Chandler",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1942,
+        "player": "Joe Gordon",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1941,
+        "player": "Joe DiMaggio",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1939,
+        "player": "Joe DiMaggio",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1936,
+        "player": "Lou Gehrig",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1927,
+        "player": "Lou Gehrig",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1923,
+        "player": "Babe Ruth",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
     "Triple Crown Batter": [
       {
         "year": 1956,
@@ -1056,7 +4042,167 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "Babe Ruth Award": [
+      {
+        "year": 2009,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "Derek Jeter",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1999,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1998,
+        "player": "Scott Brosius",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "Cecil Fielder",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1978,
+        "player": "Bucky Dent",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1977,
+        "player": "Reggie Jackson",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1962,
+        "player": "Ralph Terry",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1961,
+        "player": "Whitey Ford",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1958,
+        "player": "Elston Howard",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1956,
+        "player": "Don Larsen",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1953,
+        "player": "Billy Martin",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1952,
+        "player": "Johnny Mize",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1951,
+        "player": "Phil Rizzuto",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1950,
+        "player": "Jerry Coleman",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1949,
+        "player": "Joe Page",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2024,
+        "player": "Luis Gil",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2017,
+        "player": "Aaron Judge",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "Derek Jeter",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1981,
+        "player": "Dave Righetti",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1970,
+        "player": "Thurman Munson",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1968,
+        "player": "Stan Bahnsen",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1962,
+        "player": "Tom Tresh",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1957,
+        "player": "Tony Kubek",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1954,
+        "player": "Bob Grim",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1951,
+        "player": "Gil McDougald",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2009,
         "player": "Hideki Matsui",
@@ -1130,6 +4276,100 @@
         "league": "MLB"
       }
     ],
+    "AL Cy Young": [
+      {
+        "year": 2023,
+        "player": "Gerrit Cole",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2001,
+        "player": "Roger Clemens",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1978,
+        "player": "Ron Guidry",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1977,
+        "player": "Sparky Lyle",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2019,
+        "player": "Aroldis Chapman",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2015,
+        "player": "Andrew Miller",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2009,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2005,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2001,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1999,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "John Wetteland",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1987,
+        "player": "Dave Righetti",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1986,
+        "player": "Dave Righetti",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1978,
+        "player": "Goose Gossage",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
     "ALCS MVP": [
       {
         "year": 2024,
@@ -1186,6 +4426,26 @@
         "league": "AL"
       }
     ],
+    "AL Manager of the Year": [
+      {
+        "year": 1998,
+        "player": "Joe Torre",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "Joe Torre",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 1994,
+        "player": "Buck Showalter",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
     "All-Star Game MVP": [
       {
         "year": 2022,
@@ -1205,14 +4465,570 @@
         "team_at_time": "Yankees",
         "league": "MLB"
       }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2013,
+        "player": "Mariano Rivera",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2005,
+        "player": "Jason Giambi",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2025,
+        "player": "Aaron Judge",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2024,
+        "player": "Aaron Judge",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2022,
+        "player": "Aaron Judge",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2009,
+        "player": "Derek Jeter",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      },
+      {
+        "year": 2006,
+        "player": "Derek Jeter",
+        "team_at_time": "Yankees",
+        "league": "AL"
+      }
+    ]
+  },
+  "Guardians": {
+    "AL MVP": [
+      {
+        "year": 1953,
+        "player": "Al Rosen",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1948,
+        "player": "Lou Boudreau",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1926,
+        "player": "George Burns",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 2020,
+        "player": "Shane Bieber",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1940,
+        "player": "Bob Feller",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 1990,
+        "player": "Sandy Alomar Jr.",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1980,
+        "player": "Joe Charboneau",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1971,
+        "player": "Chris Chambliss",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1955,
+        "player": "Herb Score",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2020,
+        "player": "Shane Bieber",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 2017,
+        "player": "Corey Kluber",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 2014,
+        "player": "Corey Kluber",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "Cliff Lee",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "CC Sabathia",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1972,
+        "player": "Gaylord Perry",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2016,
+        "player": "Andrew Miller",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Marquis Grissom",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1995,
+        "player": "Orel Hershiser",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2024,
+        "player": "Emmanuel Clase",
+        "team_at_time": "Guardians",
+        "league": "AL"
+      },
+      {
+        "year": 2022,
+        "player": "Emmanuel Clase",
+        "team_at_time": "Guardians",
+        "league": "AL"
+      },
+      {
+        "year": 1995,
+        "player": "Jose Mesa",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2019,
+        "player": "Shane Bieber",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Sandy Alomar Jr.",
+        "team_at_time": "Indians",
+        "league": "MLB"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 1999,
+        "player": "Manny Ramirez",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2025,
+        "player": "Stephen Vogt",
+        "team_at_time": "Guardians",
+        "league": "AL"
+      },
+      {
+        "year": 2024,
+        "player": "Stephen Vogt",
+        "team_at_time": "Guardians",
+        "league": "AL"
+      },
+      {
+        "year": 2022,
+        "player": "Terry Francona",
+        "team_at_time": "Guardians",
+        "league": "AL"
+      },
+      {
+        "year": 2016,
+        "player": "Terry Francona",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 2013,
+        "player": "Terry Francona",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Eric Wedge",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2019,
+        "player": "Carlos Carrasco",
+        "team_at_time": "Indians",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "Cliff Lee",
+        "team_at_time": "Indians",
+        "league": "AL"
+      }
+    ]
+  },
+  "Pirates": {
+    "NL MVP": [
+      {
+        "year": 2013,
+        "player": "Andrew McCutchen",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1992,
+        "player": "Barry Bonds",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1990,
+        "player": "Barry Bonds",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1979,
+        "player": "Willie Stargell",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1978,
+        "player": "Dave Parker",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1966,
+        "player": "Roberto Clemente",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1960,
+        "player": "Dick Groat",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1927,
+        "player": "Paul Waner",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 1979,
+        "player": "Willie Stargell",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1971,
+        "player": "Roberto Clemente",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1960,
+        "player": "Bill Mazeroski",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
+      {
+        "year": 1979,
+        "player": "Willie Stargell",
+        "team_at_time": "Pirates",
+        "league": "MLB"
+      },
+      {
+        "year": 1971,
+        "player": "Roberto Clemente",
+        "team_at_time": "Pirates",
+        "league": "MLB"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 1979,
+        "player": "Dave Parker",
+        "team_at_time": "Pirates",
+        "league": "MLB"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 1979,
+        "player": "Willie Stargell",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2025,
+        "player": "Paul Skenes",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1990,
+        "player": "Doug Drabek",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2013,
+        "player": "Clint Hurdle",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1992,
+        "player": "Jim Leyland",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 1990,
+        "player": "Jim Leyland",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2024,
+        "player": "Paul Skenes",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      },
+      {
+        "year": 2004,
+        "player": "Jason Bay",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2013,
+        "player": "Francisco Liriano",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2015,
+        "player": "Mark Melancon",
+        "team_at_time": "Pirates",
+        "league": "NL"
+      }
     ]
   },
   "Reds": {
+    "NL MVP": [
+      {
+        "year": 2010,
+        "player": "Joey Votto",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1995,
+        "player": "Barry Larkin",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1977,
+        "player": "George Foster",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1976,
+        "player": "Joe Morgan",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1975,
+        "player": "Joe Morgan",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1973,
+        "player": "Pete Rose",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1972,
+        "player": "Johnny Bench",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1970,
+        "player": "Johnny Bench",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1961,
+        "player": "Frank Robinson",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1940,
+        "player": "Frank McCormick",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1939,
+        "player": "Bucky Walters",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1938,
+        "player": "Ernie Lombardi",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
     "Triple Crown Pitcher": [
       {
         "year": 1939,
         "player": "Bucky Walters",
         "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2021,
+        "player": "Jonathan India",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1999,
+        "player": "Scott Williamson",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1988,
+        "player": "Chris Sabo",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1976,
+        "player": "Pat Zachry",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1968,
+        "player": "Johnny Bench",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1966,
+        "player": "Tommy Helms",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1963,
+        "player": "Pete Rose",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1956,
+        "player": "Frank Robinson",
+        "team_at_time": "Redlegs",
         "league": "NL"
       }
     ],
@@ -1248,7 +5064,7 @@
         "league": "MLB"
       }
     ],
-    "World Series MVP": [
+    "WS MVP": [
       {
         "year": 1990,
         "player": "Jose Rijo",
@@ -1268,6 +5084,46 @@
         "league": "MLB"
       }
     ],
+    "Babe Ruth Award": [
+      {
+        "year": 1990,
+        "player": "Billy Hatcher",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1976,
+        "player": "Johnny Bench",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 1997,
+        "player": "Jeff Shaw",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1996,
+        "player": "Jeff Brantley",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1988,
+        "player": "John Franco",
+        "team_at_time": "Reds",
+        "league": "NL"
+      },
+      {
+        "year": 1976,
+        "player": "Rawly Eastwick",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 1990,
@@ -1281,55 +5137,215 @@
         "team_at_time": "Reds",
         "league": "NL"
       }
-    ]
-  },
-  "Guardians": {
-    "Triple Crown Pitcher": [
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 1999,
+        "player": "Jack McKeon",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2005,
+        "player": "Ken Griffey Jr.",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2010,
+        "player": "Joey Votto",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ],
+    "NL Cy Young": [
       {
         "year": 2020,
-        "player": "Shane Bieber",
-        "team_at_time": "Indians",
+        "player": "Trevor Bauer",
+        "team_at_time": "Reds",
+        "league": "NL"
+      }
+    ]
+  },
+  "White Sox": {
+    "AL Rookie of the Year": [
+      {
+        "year": 2014,
+        "player": "Jose Abreu",
+        "team_at_time": "White Sox",
         "league": "AL"
       },
       {
-        "year": 1940,
-        "player": "Bob Feller",
-        "team_at_time": "Indians",
+        "year": 1985,
+        "player": "Ozzie Guillen",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1983,
+        "player": "Ron Kittle",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1966,
+        "player": "Tommie Agee",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1963,
+        "player": "Gary Peters",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1956,
+        "player": "Luis Aparicio",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      }
+    ],
+    "AL MVP": [
+      {
+        "year": 2020,
+        "player": "Jose Abreu",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1994,
+        "player": "Frank Thomas",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1993,
+        "player": "Frank Thomas",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1972,
+        "player": "Dick Allen",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1959,
+        "player": "Nellie Fox",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 1993,
+        "player": "Jack McDowell",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1983,
+        "player": "LaMarr Hoyt",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2005,
+        "player": "Ozzie Guillen",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "Jerry Manuel",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1993,
+        "player": "Gene Lamont",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1990,
+        "player": "Jeff Torborg",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1983,
+        "player": "Tony LaRussa",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2021,
+        "player": "Liam Hendriks",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      },
+      {
+        "year": 1990,
+        "player": "Bobby Thigpen",
+        "team_at_time": "White Sox",
         "league": "AL"
       }
     ],
     "ALCS MVP": [
       {
-        "year": 2016,
-        "player": "Andrew Miller",
-        "team_at_time": "Indians",
-        "league": "AL"
-      },
-      {
-        "year": 1997,
-        "player": "Marquis Grissom",
-        "team_at_time": "Indians",
-        "league": "AL"
-      },
-      {
-        "year": 1995,
-        "player": "Orel Hershiser",
-        "team_at_time": "Indians",
+        "year": 2005,
+        "player": "Paul Konerko",
+        "team_at_time": "White Sox",
         "league": "AL"
       }
     ],
-    "All-Star Game MVP": [
+    "Babe Ruth Award": [
       {
-        "year": 2019,
-        "player": "Shane Bieber",
-        "team_at_time": "Indians",
+        "year": 2005,
+        "player": "Jermaine Dye",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
+      {
+        "year": 2005,
+        "player": "Jermaine Dye",
+        "team_at_time": "White Sox",
+        "league": "MLB"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2020,
+        "player": "Jose Abreu",
+        "team_at_time": "White Sox",
+        "league": "AL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2024,
+        "player": "Garrett Crochet",
+        "team_at_time": "White Sox",
         "league": "AL"
       },
       {
-        "year": 1997,
-        "player": "Sandy Alomar Jr.",
-        "team_at_time": "Indians",
-        "league": "MLB"
+        "year": 2023,
+        "player": "Liam Hendriks",
+        "team_at_time": "White Sox",
+        "league": "AL"
       }
     ]
   },
@@ -1366,6 +5382,50 @@
         "league": "MLB"
       }
     ],
+    "AL MVP": [
+      {
+        "year": 2023,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2021,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2019,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2016,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2014,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "Vladimir Guerrero",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 1979,
+        "player": "Don Baylor",
+        "team_at_time": "Angels",
+        "league": "AL"
+      }
+    ],
     "ALCS MVP": [
       {
         "year": 2002,
@@ -1380,93 +5440,203 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "Reliever of the Year Award": [
+      {
+        "year": 2008,
+        "player": "Francisco Rodriguez",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2006,
+        "player": "Francisco Rodriguez",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 1991,
+        "player": "Bryan Harvey",
+        "team_at_time": "Angels",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2018,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2012,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 1993,
+        "player": "Tim Salmon",
+        "team_at_time": "Angels",
+        "league": "AL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2002,
+        "player": "Troy Glaus",
+        "team_at_time": "Angels",
+        "league": "AL"
+      }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2009,
+        "player": "Mike Scioscia",
+        "team_at_time": "Angels",
+        "league": "AL"
+      },
+      {
+        "year": 2002,
+        "player": "Mike Scioscia",
+        "team_at_time": "Angels",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2002,
         "player": "Troy Glaus",
         "team_at_time": "Angels",
         "league": "MLB"
       }
-    ]
-  },
-  "Orioles": {
-    "All-Star Game MVP": [
+    ],
+    "AL Cy Young": [
       {
         "year": 2005,
-        "player": "Miguel Tejada",
-        "team_at_time": "Orioles",
-        "league": "MLB"
-      },
-      {
-        "year": 2001,
-        "player": "Cal Ripken Jr.",
-        "team_at_time": "Orioles",
-        "league": "MLB"
-      },
-      {
-        "year": 1998,
-        "player": "Roberto Alomar",
-        "team_at_time": "Orioles",
-        "league": "MLB"
-      },
-      {
-        "year": 1991,
-        "player": "Cal Ripken Jr.",
-        "team_at_time": "Orioles",
-        "league": "MLB"
-      },
-      {
-        "year": 1971,
-        "player": "Frank Robinson",
-        "team_at_time": "Orioles",
-        "league": "MLB"
-      },
-      {
-        "year": 1966,
-        "player": "Brooks Robinson",
-        "team_at_time": "Orioles",
-        "league": "MLB"
-      }
-    ],
-    "Triple Crown Batter": [
-      {
-        "year": 1966,
-        "player": "Frank Robinson",
-        "team_at_time": "Orioles",
+        "player": "Bartolo Colon",
+        "team_at_time": "Angels",
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "Hank Aaron Award": [
       {
-        "year": 1983,
-        "player": "Rick Dempsey",
-        "team_at_time": "Orioles",
-        "league": "MLB"
+        "year": 2023,
+        "player": "Shohei Ohtani",
+        "team_at_time": "Angels",
+        "league": "AL"
       },
       {
-        "year": 1970,
-        "player": "Brooks Robinson",
-        "team_at_time": "Orioles",
-        "league": "MLB"
+        "year": 2019,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
+        "league": "AL"
       },
       {
-        "year": 1966,
-        "player": "Frank Robinson",
-        "team_at_time": "Orioles",
-        "league": "MLB"
-      }
-    ],
-    "ALCS MVP": [
-      {
-        "year": 1983,
-        "player": "Mike Boddicker",
-        "team_at_time": "Orioles",
+        "year": 2014,
+        "player": "Mike Trout",
+        "team_at_time": "Angels",
         "league": "AL"
       }
     ]
   },
   "Mets": {
-    "World Series MVP": [
+    "NL Rookie of the Year": [
+      {
+        "year": 2019,
+        "player": "Pete Alonso",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 2014,
+        "player": "Jacob deGrom",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1984,
+        "player": "Dwight Gooden",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1983,
+        "player": "Darryl Strawberry",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1972,
+        "player": "Jon Matlack",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1967,
+        "player": "Tom Seaver",
+        "team_at_time": "Mets",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 1986,
+        "player": "Ray Knight",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1969,
+        "player": "Al Weis",
+        "team_at_time": "Mets",
+        "league": "NL"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2019,
+        "player": "Jacob deGrom",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 2018,
+        "player": "Jacob deGrom",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 2012,
+        "player": "R. A. Dickey",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1985,
+        "player": "Dwight Gooden",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1975,
+        "player": "Tom Seaver",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1973,
+        "player": "Tom Seaver",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1969,
+        "player": "Tom Seaver",
+        "team_at_time": "Mets",
+        "league": "NL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 1986,
         "player": "Ray Knight",
@@ -1496,6 +5666,32 @@
         "league": "NL"
       }
     ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2025,
+        "player": "Edwin Diaz",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 2022,
+        "player": "Edwin Diaz",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 2001,
+        "player": "Armando Benitez",
+        "team_at_time": "Mets",
+        "league": "NL"
+      },
+      {
+        "year": 1990,
+        "player": "John Franco",
+        "team_at_time": "Mets",
+        "league": "NL"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 2015,
@@ -1509,41 +5705,51 @@
         "team_at_time": "Mets",
         "league": "NL"
       }
-    ]
-  },
-  "Pirates": {
-    "World Series MVP": [
+    ],
+    "Comeback Player of the Year": [
       {
-        "year": 1979,
-        "player": "Willie Stargell",
-        "team_at_time": "Pirates",
-        "league": "MLB"
-      },
-      {
-        "year": 1971,
-        "player": "Roberto Clemente",
-        "team_at_time": "Pirates",
-        "league": "MLB"
+        "year": 2015,
+        "player": "Matt Harvey",
+        "team_at_time": "Mets",
+        "league": "NL"
       }
     ],
-    "All-Star Game MVP": [
+    "NL Manager of the Year": [
       {
-        "year": 1979,
-        "player": "Dave Parker",
-        "team_at_time": "Pirates",
-        "league": "MLB"
-      }
-    ],
-    "NLCS MVP": [
-      {
-        "year": 1979,
-        "player": "Willie Stargell",
-        "team_at_time": "Pirates",
+        "year": 2022,
+        "player": "Buck Showalter",
+        "team_at_time": "Mets",
         "league": "NL"
       }
     ]
   },
   "Royals": {
+    "AL Rookie of the Year": [
+      {
+        "year": 2003,
+        "player": "Angel Berroa",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1999,
+        "player": "Carlos Beltran",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1994,
+        "player": "Bob Hamelin",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1969,
+        "player": "Lou Piniella",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
+    ],
     "ALCS MVP": [
       {
         "year": 2015,
@@ -1570,7 +5776,99 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "AL MVP": [
+      {
+        "year": 1980,
+        "player": "George Brett",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2014,
+        "player": "Greg Holland",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1993,
+        "player": "Jeff Montgomery",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1985,
+        "player": "Dan Quisenberry",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1984,
+        "player": "Dan Quisenberry",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1983,
+        "player": "Dan Quisenberry",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1982,
+        "player": "Dan Quisenberry",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1980,
+        "player": "Dan Quisenberry",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2015,
+        "player": "Wade Davis",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1985,
+        "player": "Bret Saberhagen",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2009,
+        "player": "Zack Greinke",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1994,
+        "player": "David Cone",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1989,
+        "player": "Bret Saberhagen",
+        "team_at_time": "Royals",
+        "league": "AL"
+      },
+      {
+        "year": 1985,
+        "player": "Bret Saberhagen",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2015,
         "player": "Salvador Perez",
@@ -1597,9 +5895,45 @@
         "team_at_time": "Royals",
         "league": "MLB"
       }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2003,
+        "player": "Tony Pena",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2017,
+        "player": "Mike Moustakas",
+        "team_at_time": "Royals",
+        "league": "AL"
+      }
     ]
   },
   "Nationals": {
+    "NL Rookie of the Year": [
+      {
+        "year": 2012,
+        "player": "Bryce Harper",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 1977,
+        "player": "Andre Dawson",
+        "team_at_time": "Expos",
+        "league": "NL"
+      },
+      {
+        "year": 1970,
+        "player": "Carl Morton",
+        "team_at_time": "Expos",
+        "league": "NL"
+      }
+    ],
     "All-Star Game MVP": [
       {
         "year": 1987,
@@ -1620,6 +5954,116 @@
         "league": "MLB"
       }
     ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2005,
+        "player": "Chad Cordero",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 1985,
+        "player": "Jeff Reardon",
+        "team_at_time": "Expos",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2014,
+        "player": "Matt Williams",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 2012,
+        "player": "Davey Johnson",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 1994,
+        "player": "Felipe Alou",
+        "team_at_time": "Expos",
+        "league": "NL"
+      },
+      {
+        "year": 1987,
+        "player": "Buck Rodgers",
+        "team_at_time": "Expos",
+        "league": "NL"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2017,
+        "player": "Max Scherzer",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 2016,
+        "player": "Max Scherzer",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 1997,
+        "player": "Pedro Martinez",
+        "team_at_time": "Expos",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2017,
+        "player": "Ryan Zimmerman",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 2016,
+        "player": "Anthony Rendon",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      },
+      {
+        "year": 2007,
+        "player": "Dmitri Young",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2015,
+        "player": "Bryce Harper",
+        "team_at_time": "Nationals",
+        "league": "MLB"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 2015,
+        "player": "Bryce Harper",
+        "team_at_time": "Nationals",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2019,
+        "player": "Juan Soto",
+        "team_at_time": "Nationals",
+        "league": "MLB"
+      },
+      {
+        "year": 2019,
+        "player": "Stephen Strasburg",
+        "team_at_time": "Nationals",
+        "league": "MLB"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 2019,
@@ -1628,7 +6072,7 @@
         "league": "NL"
       }
     ],
-    "World Series MVP": [
+    "WS MVP": [
       {
         "year": 2019,
         "player": "Stephen Strasburg",
@@ -1637,7 +6081,281 @@
       }
     ]
   },
+  "Rangers": {
+    "AL MVP": [
+      {
+        "year": 2010,
+        "player": "Josh Hamilton",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2003,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 1999,
+        "player": "Ivan Rodriguez",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 1998,
+        "player": "Juan Gonzalez",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "Juan Gonzalez",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 1974,
+        "player": "Jeff Burroughs",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2010,
+        "player": "Neftali Feliz",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 1974,
+        "player": "Mike Hargrove",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 1989,
+        "player": "Jeff Russell",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 1979,
+        "player": "Jim Kern",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2006,
+        "player": "Michael Young",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      },
+      {
+        "year": 2004,
+        "player": "Alfonso Soriano",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      },
+      {
+        "year": 1990,
+        "player": "Julio Franco",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2015,
+        "player": "Jeff Banister",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2004,
+        "player": "Buck Showalter",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "Johnny Oates",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2003,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2002,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2001,
+        "player": "Alex Rodriguez",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2023,
+        "player": "Adolis Garcia",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Nelson Cruz",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2010,
+        "player": "Josh Hamilton",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2025,
+        "player": "Jacob deGrom",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      },
+      {
+        "year": 2015,
+        "player": "Prince Fielder",
+        "team_at_time": "Rangers",
+        "league": "AL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2023,
+        "player": "Adolis Garcia",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      }
+    ],
+    "WS MVP": [
+      {
+        "year": 2023,
+        "player": "Corey Seager",
+        "team_at_time": "Rangers",
+        "league": "MLB"
+      }
+    ]
+  },
   "Padres": {
+    "NL Cy Young": [
+      {
+        "year": 2023,
+        "player": "Blake Snell",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 2007,
+        "player": "Jake Peavy",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1989,
+        "player": "Mark Davis",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1978,
+        "player": "Gaylord Perry",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1976,
+        "player": "Randy Jones",
+        "team_at_time": "Padres",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 1987,
+        "player": "Benito Santiago",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1976,
+        "player": "Butch Metzger",
+        "team_at_time": "Padres",
+        "league": "NL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2010,
+        "player": "Heath Bell",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 2009,
+        "player": "Heath Bell",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 2006,
+        "player": "Trevor Hoffman",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1998,
+        "player": "Trevor Hoffman",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1989,
+        "player": "Mark Davis",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1980,
+        "player": "Rollie Fingers",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1978,
+        "player": "Rollie Fingers",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1977,
+        "player": "Rollie Fingers",
+        "team_at_time": "Padres",
+        "league": "NL"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 1998,
@@ -1660,6 +6378,28 @@
         "league": "MLB"
       }
     ],
+    "NL Manager of the Year": [
+      {
+        "year": 2010,
+        "player": "Buddy Black",
+        "team_at_time": "Padres",
+        "league": "NL"
+      },
+      {
+        "year": 1996,
+        "player": "Bruce Bochy",
+        "team_at_time": "Padres",
+        "league": "NL"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 1996,
+        "player": "Ken Caminiti",
+        "team_at_time": "Padres",
+        "league": "NL"
+      }
+    ],
     "Triple Crown Pitcher": [
       {
         "year": 2007,
@@ -1669,7 +6409,499 @@
       }
     ]
   },
+  "Blue Jays": {
+    "AL Rookie of the Year": [
+      {
+        "year": 2002,
+        "player": "Eric Hinske",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1979,
+        "player": "Alfredo Griffin",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 1985,
+        "player": "Bobby Cox",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "AL MVP": [
+      {
+        "year": 2015,
+        "player": "Josh Donaldson",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1987,
+        "player": "George Bell",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "ALCS MVP": [
+      {
+        "year": 2025,
+        "player": "Vladimir Guerrero",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1993,
+        "player": "Dave Stewart",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1992,
+        "player": "Roberto Alomar",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 1993,
+        "player": "Paul Molitor",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1992,
+        "player": "Dave Winfield",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
+      {
+        "year": 1993,
+        "player": "Paul Molitor",
+        "team_at_time": "Blue Jays",
+        "league": "MLB"
+      },
+      {
+        "year": 1992,
+        "player": "Pat Borders",
+        "team_at_time": "Blue Jays",
+        "league": "MLB"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2021,
+        "player": "Robbie Ray",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 2003,
+        "player": "Roy Halladay",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1998,
+        "player": "Roger Clemens",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Roger Clemens",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1996,
+        "player": "Pat Hentgen",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "Triple Crown Pitcher": [
+      {
+        "year": 1998,
+        "player": "Roger Clemens",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Roger Clemens",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2021,
+        "player": "Vladimir Guerrero",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 2015,
+        "player": "Josh Donaldson",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Jose Bautista",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 2010,
+        "player": "Jose Bautista",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "Carlos Delgado",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2009,
+        "player": "Aaron Hill",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2021,
+        "player": "Vladimir Guerrero",
+        "team_at_time": "Blue Jays",
+        "league": "AL"
+      }
+    ]
+  },
+  "Brewers": {
+    "AL Cy Young": [
+      {
+        "year": 1982,
+        "player": "Pete Vuckovich",
+        "team_at_time": "Brewers",
+        "league": "AL"
+      },
+      {
+        "year": 1981,
+        "player": "Rollie Fingers",
+        "team_at_time": "Brewers",
+        "league": "AL"
+      }
+    ],
+    "AL MVP": [
+      {
+        "year": 1989,
+        "player": "Robin Yount",
+        "team_at_time": "Brewers",
+        "league": "AL"
+      },
+      {
+        "year": 1982,
+        "player": "Robin Yount",
+        "team_at_time": "Brewers",
+        "league": "AL"
+      },
+      {
+        "year": 1981,
+        "player": "Rollie Fingers",
+        "team_at_time": "Brewers",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2023,
+        "player": "Devin Williams",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2021,
+        "player": "Josh Hader",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2020,
+        "player": "Devin Williams",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2019,
+        "player": "Josh Hader",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2018,
+        "player": "Josh Hader",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "John Axford",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 1981,
+        "player": "Rollie Fingers",
+        "team_at_time": "Brewers",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 1992,
+        "player": "Pat Listach",
+        "team_at_time": "Brewers",
+        "league": "AL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2019,
+        "player": "Christian Yelich",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2018,
+        "player": "Christian Yelich",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2007,
+        "player": "Prince Fielder",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2020,
+        "player": "Devin Williams",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2007,
+        "player": "Ryan Braun",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2011,
+        "player": "Prince Fielder",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 2018,
+        "player": "Christian Yelich",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "Ryan Braun",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2021,
+        "player": "Corbin Burnes",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2025,
+        "player": "Pat Murphy",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      },
+      {
+        "year": 2024,
+        "player": "Pat Murphy",
+        "team_at_time": "Brewers",
+        "league": "NL"
+      }
+    ]
+  },
+  "Mariners": {
+    "AL Rookie of the Year": [
+      {
+        "year": 2022,
+        "player": "Julio Rodriguez",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 2020,
+        "player": "Kyle Lewis",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 2001,
+        "player": "Ichiro Suzuki",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 2000,
+        "player": "Kazuhiro Sasaki",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 1984,
+        "player": "Alvin Davis",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2017,
+        "player": "Robinson Cano",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Ichiro Suzuki",
+        "team_at_time": "Mariners",
+        "league": "MLB"
+      },
+      {
+        "year": 1992,
+        "player": "Ken Griffey Jr.",
+        "team_at_time": "Mariners",
+        "league": "MLB"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2010,
+        "player": "Felix Hernandez",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 1995,
+        "player": "Randy Johnson",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      }
+    ],
+    "AL Manager of the Year": [
+      {
+        "year": 2001,
+        "player": "Lou Piniella",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 1995,
+        "player": "Lou Piniella",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      }
+    ],
+    "AL MVP": [
+      {
+        "year": 2001,
+        "player": "Ichiro Suzuki",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 1997,
+        "player": "Ken Griffey Jr.",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2018,
+        "player": "Edwin Diaz",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "J. J. Putz",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2014,
+        "player": "Chris Young",
+        "team_at_time": "Mariners",
+        "league": "AL"
+      }
+    ]
+  },
   "Astros": {
+    "NL Cy Young": [
+      {
+        "year": 2004,
+        "player": "Roger Clemens",
+        "team_at_time": "Astros",
+        "league": "NL"
+      },
+      {
+        "year": 1986,
+        "player": "Mike Scott",
+        "team_at_time": "Astros",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 1998,
+        "player": "Larry Dierker",
+        "team_at_time": "Astros",
+        "league": "NL"
+      },
+      {
+        "year": 1986,
+        "player": "Hal Lanier",
+        "team_at_time": "Astros",
+        "league": "NL"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 2005,
@@ -1682,6 +6914,64 @@
         "player": "Mike Scott",
         "team_at_time": "Astros",
         "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 1991,
+        "player": "Jeff Bagwell",
+        "team_at_time": "Astros",
+        "league": "NL"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 1994,
+        "player": "Jeff Bagwell",
+        "team_at_time": "Astros",
+        "league": "NL"
+      }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 1999,
+        "player": "Billy Wagner",
+        "team_at_time": "Astros",
+        "league": "NL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2022,
+        "player": "Justin Verlander",
+        "team_at_time": "Astros",
+        "league": "AL"
+      },
+      {
+        "year": 2019,
+        "player": "Justin Verlander",
+        "team_at_time": "Astros",
+        "league": "AL"
+      },
+      {
+        "year": 2015,
+        "player": "Dallas Keuchel",
+        "team_at_time": "Astros",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2019,
+        "player": "Yordan Alvarez",
+        "team_at_time": "Astros",
+        "league": "AL"
+      },
+      {
+        "year": 2015,
+        "player": "Carlos Correa",
+        "team_at_time": "Astros",
+        "league": "AL"
       }
     ],
     "ALCS MVP": [
@@ -1710,7 +7000,43 @@
         "league": "AL"
       }
     ],
-    "World Series MVP": [
+    "Babe Ruth Award": [
+      {
+        "year": 2022,
+        "player": "Jeremy Pena",
+        "team_at_time": "Astros",
+        "league": "MLB"
+      },
+      {
+        "year": 2017,
+        "player": "Jose Altuve",
+        "team_at_time": "Astros",
+        "league": "MLB"
+      },
+      {
+        "year": 2017,
+        "player": "Justin Verlander",
+        "team_at_time": "Astros",
+        "league": "MLB"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2017,
+        "player": "Jose Altuve",
+        "team_at_time": "Astros",
+        "league": "AL"
+      }
+    ],
+    "AL MVP": [
+      {
+        "year": 2017,
+        "player": "Jose Altuve",
+        "team_at_time": "Astros",
+        "league": "AL"
+      }
+    ],
+    "WS MVP": [
       {
         "year": 2022,
         "player": "Jeremy Pena",
@@ -1731,135 +7057,13 @@
         "team_at_time": "Astros",
         "league": "AL"
       }
-    ]
-  },
-  "Rangers": {
-    "All-Star Game MVP": [
-      {
-        "year": 2006,
-        "player": "Michael Young",
-        "team_at_time": "Rangers",
-        "league": "MLB"
-      },
-      {
-        "year": 2004,
-        "player": "Alfonso Soriano",
-        "team_at_time": "Rangers",
-        "league": "MLB"
-      },
-      {
-        "year": 1990,
-        "player": "Julio Franco",
-        "team_at_time": "Rangers",
-        "league": "MLB"
-      }
     ],
-    "ALCS MVP": [
+    "Comeback Player of the Year": [
       {
-        "year": 2023,
-        "player": "Adolis Garcia",
-        "team_at_time": "Rangers",
+        "year": 2022,
+        "player": "Justin Verlander",
+        "team_at_time": "Astros",
         "league": "AL"
-      },
-      {
-        "year": 2011,
-        "player": "Nelson Cruz",
-        "team_at_time": "Rangers",
-        "league": "AL"
-      },
-      {
-        "year": 2010,
-        "player": "Josh Hamilton",
-        "team_at_time": "Rangers",
-        "league": "AL"
-      }
-    ],
-    "World Series MVP": [
-      {
-        "year": 2023,
-        "player": "Corey Seager",
-        "team_at_time": "Rangers",
-        "league": "MLB"
-      }
-    ]
-  },
-  "Blue Jays": {
-    "ALCS MVP": [
-      {
-        "year": 2025,
-        "player": "Vladimir Guerrero",
-        "team_at_time": "Blue Jays",
-        "league": "AL"
-      },
-      {
-        "year": 1993,
-        "player": "Dave Stewart",
-        "team_at_time": "Blue Jays",
-        "league": "AL"
-      },
-      {
-        "year": 1992,
-        "player": "Roberto Alomar",
-        "team_at_time": "Blue Jays",
-        "league": "AL"
-      }
-    ],
-    "World Series MVP": [
-      {
-        "year": 1993,
-        "player": "Paul Molitor",
-        "team_at_time": "Blue Jays",
-        "league": "MLB"
-      },
-      {
-        "year": 1992,
-        "player": "Pat Borders",
-        "team_at_time": "Blue Jays",
-        "league": "MLB"
-      }
-    ],
-    "Triple Crown Pitcher": [
-      {
-        "year": 1998,
-        "player": "Roger Clemens",
-        "team_at_time": "Blue Jays",
-        "league": "AL"
-      },
-      {
-        "year": 1997,
-        "player": "Roger Clemens",
-        "team_at_time": "Blue Jays",
-        "league": "AL"
-      }
-    ],
-    "All-Star Game MVP": [
-      {
-        "year": 2021,
-        "player": "Vladimir Guerrero",
-        "team_at_time": "Blue Jays",
-        "league": "AL"
-      }
-    ]
-  },
-  "Mariners": {
-    "All-Star Game MVP": [
-      {
-        "year": 2017,
-        "player": "Robinson Cano",
-        "team_at_time": "Mariners",
-        "league": "AL"
-      },
-      {
-        "year": 2007,
-        "player": "Ichiro Suzuki",
-        "team_at_time": "Mariners",
-        "league": "MLB"
-      },
-      {
-        "year": 1992,
-        "player": "Ken Griffey Jr.",
-        "team_at_time": "Mariners",
-        "league": "MLB"
       }
     ]
   },
@@ -1870,6 +7074,20 @@
         "player": "Jeff Conine",
         "team_at_time": "Marlins",
         "league": "MLB"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2003,
+        "player": "Josh Beckett",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 1997,
+        "player": "Moises Alou",
+        "team_at_time": "Marlins",
+        "league": "NL"
       }
     ],
     "NLCS MVP": [
@@ -1886,7 +7104,7 @@
         "league": "NL"
       }
     ],
-    "World Series MVP": [
+    "WS MVP": [
       {
         "year": 2003,
         "player": "Josh Beckett",
@@ -1899,9 +7117,209 @@
         "team_at_time": "Marlins",
         "league": "MLB"
       }
+    ],
+    "Reliever of the Year Award": [
+      {
+        "year": 2000,
+        "player": "Antonio Alfonseca",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ],
+    "NL Manager of the Year": [
+      {
+        "year": 2023,
+        "player": "Skip Schumaker",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 2020,
+        "player": "Don Mattingly",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 2006,
+        "player": "Joe Girardi",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 2003,
+        "player": "Jack McKeon",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2013,
+        "player": "Jose Fernandez",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 2009,
+        "player": "Chris Coghlan",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 2006,
+        "player": "Hanley Ramirez",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 2003,
+        "player": "Dontrelle Willis",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ],
+    "Comeback Player of the Year": [
+      {
+        "year": 2014,
+        "player": "Casey McGehee",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2017,
+        "player": "Giancarlo Stanton",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      },
+      {
+        "year": 2014,
+        "player": "Giancarlo Stanton",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 2017,
+        "player": "Giancarlo Stanton",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ],
+    "NL Cy Young": [
+      {
+        "year": 2022,
+        "player": "Sandy Alcantara",
+        "team_at_time": "Marlins",
+        "league": "NL"
+      }
+    ]
+  },
+  "Rockies": {
+    "NL Manager of the Year": [
+      {
+        "year": 2009,
+        "player": "Jim Tracy",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      },
+      {
+        "year": 1995,
+        "player": "Don Baylor",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
+    ],
+    "NL MVP": [
+      {
+        "year": 1997,
+        "player": "Larry Walker",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2000,
+        "player": "Todd Helton",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
+      {
+        "year": 2002,
+        "player": "Jason Jennings",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
+    ],
+    "NLCS MVP": [
+      {
+        "year": 2007,
+        "player": "Matt Holliday",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
+    ],
+    "All-Star Game MVP": [
+      {
+        "year": 2023,
+        "player": "Elias Diaz",
+        "team_at_time": "Rockies",
+        "league": "NL"
+      }
     ]
   },
   "Diamondbacks": {
+    "NL Cy Young": [
+      {
+        "year": 2006,
+        "player": "Brandon Webb",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
+      {
+        "year": 2002,
+        "player": "Randy Johnson",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
+      {
+        "year": 2001,
+        "player": "Randy Johnson",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
+      {
+        "year": 2000,
+        "player": "Randy Johnson",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
+      {
+        "year": 1999,
+        "player": "Randy Johnson",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2001,
+        "player": "Randy Johnson",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
+      {
+        "year": 2001,
+        "player": "Curt Schilling",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      }
+    ],
     "NLCS MVP": [
       {
         "year": 2023,
@@ -1916,7 +7334,7 @@
         "league": "NL"
       }
     ],
-    "World Series MVP": [
+    "WS MVP": [
       {
         "year": 2001,
         "player": "Randy Johnson",
@@ -1937,45 +7355,67 @@
         "team_at_time": "Diamondbacks",
         "league": "NL"
       }
-    ]
-  },
-  "White Sox": {
-    "ALCS MVP": [
-      {
-        "year": 2005,
-        "player": "Paul Konerko",
-        "team_at_time": "White Sox",
-        "league": "AL"
-      }
     ],
-    "World Series MVP": [
+    "NL Manager of the Year": [
       {
-        "year": 2005,
-        "player": "Jermaine Dye",
-        "team_at_time": "White Sox",
-        "league": "MLB"
-      }
-    ]
-  },
-  "Rockies": {
-    "NLCS MVP": [
+        "year": 2017,
+        "player": "Torey Lovullo",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
+      {
+        "year": 2011,
+        "player": "Kirk Gibson",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      },
       {
         "year": 2007,
-        "player": "Matt Holliday",
-        "team_at_time": "Rockies",
+        "player": "Bob Melvin",
+        "team_at_time": "Diamondbacks",
         "league": "NL"
       }
     ],
-    "All-Star Game MVP": [
+    "Reliever of the Year Award": [
+      {
+        "year": 2007,
+        "player": "Jose Valverde",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      }
+    ],
+    "Hank Aaron Award": [
+      {
+        "year": 2013,
+        "player": "Paul Goldschmidt",
+        "team_at_time": "Diamondbacks",
+        "league": "NL"
+      }
+    ],
+    "NL Rookie of the Year": [
       {
         "year": 2023,
-        "player": "Elias Diaz",
-        "team_at_time": "Rockies",
+        "player": "Corbin Carroll",
+        "team_at_time": "Diamondbacks",
         "league": "NL"
       }
     ]
   },
   "Rays": {
+    "Comeback Player of the Year": [
+      {
+        "year": 2012,
+        "player": "Fernando Rodney",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2007,
+        "player": "Carlos Pena",
+        "team_at_time": "Devil Rays",
+        "league": "AL"
+      }
+    ],
     "ALCS MVP": [
       {
         "year": 2020,
@@ -1990,6 +7430,58 @@
         "league": "AL"
       }
     ],
+    "AL Manager of the Year": [
+      {
+        "year": 2021,
+        "player": "Kevin Cash",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2020,
+        "player": "Kevin Cash",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Joe Maddon",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "Joe Maddon",
+        "team_at_time": "Rays",
+        "league": "AL"
+      }
+    ],
+    "AL Rookie of the Year": [
+      {
+        "year": 2021,
+        "player": "Randy Arozarena",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2013,
+        "player": "Wil Myers",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2011,
+        "player": "Jeremy Hellickson",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2008,
+        "player": "Evan Longoria",
+        "team_at_time": "Rays",
+        "league": "AL"
+      }
+    ],
     "All-Star Game MVP": [
       {
         "year": 2009,
@@ -1997,15 +7489,35 @@
         "team_at_time": "Rays",
         "league": "MLB"
       }
-    ]
-  },
-  "Brewers": {
-    "All-Star Game MVP": [
+    ],
+    "Reliever of the Year Award": [
       {
-        "year": 2011,
-        "player": "Prince Fielder",
-        "team_at_time": "Brewers",
-        "league": "NL"
+        "year": 2010,
+        "player": "Rafael Soriano",
+        "team_at_time": "Rays",
+        "league": "AL"
+      }
+    ],
+    "AL Cy Young": [
+      {
+        "year": 2018,
+        "player": "Blake Snell",
+        "team_at_time": "Rays",
+        "league": "AL"
+      },
+      {
+        "year": 2012,
+        "player": "David Price",
+        "team_at_time": "Rays",
+        "league": "AL"
+      }
+    ],
+    "Babe Ruth Award": [
+      {
+        "year": 2020,
+        "player": "Randy Arozarena",
+        "team_at_time": "Rays",
+        "league": "MLB"
       }
     ]
   }

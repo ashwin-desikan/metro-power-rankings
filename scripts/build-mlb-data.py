@@ -71,54 +71,102 @@ OUT_DIR = REPO_ROOT / "public" / "data" / "mlb"
 # World's Series, NL pennants). Tracked as Oth Chmp / Oth Chmp App in Totals.
 WS_ERA_START = 1903
 
-# Curated award list for the team page. Order is editorial: headline single
-# winners first, then category awards. Positional Silver Sluggers / Gold
-# Gloves are intentionally NOT in v1 since they would push 600+ entries onto
-# every franchise page.
+# Curated award list for the team page. Order is editorial: MVP first,
+# Cy Young second, then Rookie / Manager, then postseason MVPs, then the
+# yearly honors and the rare Triple Crowns. Positional Silver Sluggers,
+# Gold Gloves, TSN All-Star, and Platinum Glove are intentionally NOT in
+# v1 since they would push hundreds of entries onto every franchise page.
+#
+# Workbook reality: the Awards sheet stores BARE award names (column F)
+# and keeps the league in column G ("Lg"). So MVP is stored once as "MVP"
+# and we synthesise "AL MVP" / "NL MVP" at ETL time. Awards that are
+# already league-specific in the workbook ("ALCS MVP", "NLCS MVP",
+# "Triple Crown Pitcher", etc.) pass through unchanged.
 AWARD_ORDER = [
-    "AL Most Valuable Player",
-    "NL Most Valuable Player",
+    "AL MVP",
+    "NL MVP",
     "AL Cy Young",
     "NL Cy Young",
     "AL Rookie of the Year",
     "NL Rookie of the Year",
     "AL Manager of the Year",
     "NL Manager of the Year",
-    "World Series MVP",
     "ALCS MVP",
     "NLCS MVP",
+    "WS MVP",
     "All-Star Game MVP",
-    "Hank Aaron Award AL",
-    "Hank Aaron Award NL",
-    "Roberto Clemente Award",
+    "Hank Aaron Award",
+    "Comeback Player of the Year",
+    "Babe Ruth Award",
+    "Reliever of the Year Award",
     "Triple Crown Batter",
     "Triple Crown Pitcher",
 ]
 
-# Aliases: the workbook stores awards with assorted shorthand. Normalise on
-# read so the page can use a stable display label.
-AWARD_ALIASES = {
-    "AL MVP": "AL Most Valuable Player",
-    "NL MVP": "NL Most Valuable Player",
-    "MVP NL": "NL Most Valuable Player",
-    "MVP AL": "AL Most Valuable Player",
-    "Cy Young AL": "AL Cy Young",
-    "Cy Young NL": "NL Cy Young",
-    "AL ROY": "AL Rookie of the Year",
-    "NL ROY": "NL Rookie of the Year",
-    "Rookie of the Year AL": "AL Rookie of the Year",
-    "Rookie of the Year NL": "NL Rookie of the Year",
-    "AL MOY": "AL Manager of the Year",
-    "NL MOY": "NL Manager of the Year",
-    "Manager of the Year AL": "AL Manager of the Year",
-    "Manager of the Year NL": "NL Manager of the Year",
-    "WS MVP": "World Series MVP",
-    "WSMVP": "World Series MVP",
-    "ALCS MVP": "ALCS MVP",
-    "NLCS MVP": "NLCS MVP",
-    "ASG MVP": "All-Star Game MVP",
+# Awards whose bare workbook name is league-agnostic and needs an "AL "
+# or "NL " prefix synthesised from the League column.
+LEAGUE_SPLIT_AWARDS = {
+    "MVP", "Cy Young", "Rookie of the Year", "Manager of the Year",
+}
+
+# Awards stored already in their final form (no league prefix needed,
+# label passes through verbatim). All other workbook award strings fall
+# outside the curated tier and are excluded from team pages in v1.
+PASS_THROUGH_AWARDS = {
+    "WS MVP",
+    "ALCS MVP",
+    "NLCS MVP",
+    "All Star MVP",          # renamed below to "All-Star Game MVP" for display
+    "Hank Aaron Award",
+    "Comeback Player of the Year",
+    "Babe Ruth Award",
+    "Reliever of the Year Award",
+    "Triple Crown Batter",
+    "Triple Crown Pitcher",
+}
+
+# Display rename for one workbook label.
+PASS_THROUGH_DISPLAY = {
     "All Star MVP": "All-Star Game MVP",
-    "ASMVP": "All-Star Game MVP",
+}
+
+
+def resolve_award_label(workbook_award, workbook_league):
+    """Combine the bare workbook award name with the league column to
+    produce the page's display label. Returns None for awards outside the
+    curated tier."""
+    if not workbook_award:
+        return None
+    name = str(workbook_award).strip()
+    if name in LEAGUE_SPLIT_AWARDS:
+        lg = (workbook_league or "").strip().upper()
+        if lg in ("AL", "NL"):
+            return f"{lg} {name}"
+        return None
+    if name in PASS_THROUGH_AWARDS:
+        return PASS_THROUGH_DISPLAY.get(name, name)
+    return None
+
+
+# Editorial display-name overrides. Some workbook E-column City values are
+# the specific municipality the team plays in (Arlington, St. Petersburg,
+# Phoenix, etc.) but the franchise brands itself with a broader regional
+# label that fans actually use. Override at ETL time so the team page hero
+# and FranchiseTable display the brand name. The workbook stays the source
+# of truth for the City field; this only changes what we render.
+#
+# Note: "Athletics" intentionally has NO city prefix. The team played 2025
+# in West Sacramento and is contracted to move to Las Vegas in 2028; while
+# the franchise is in this transitional state the cleanest display is the
+# bare team mark. Restore "Las Vegas Athletics" override here in 2028.
+DISPLAY_NAME_OVERRIDES = {
+    "Rangers":      ("Texas", "Rangers"),         # Arlington -> Texas
+    "Rays":         ("Tampa Bay", "Rays"),        # St. Petersburg -> Tampa Bay
+    "Rockies":      ("Colorado", "Rockies"),      # Denver -> Colorado
+    "Diamondbacks": ("Arizona", "Diamondbacks"),  # Phoenix -> Arizona
+    "Angels":       ("Los Angeles", "Angels"),    # Anaheim -> Los Angeles
+    "Twins":        ("Minnesota", "Twins"),       # Minneapolis -> Minnesota
+    "Athletics":    ("", "Athletics"),            # bare mark while franchise is in transit
 }
 
 
@@ -186,13 +234,6 @@ def is_truthy_yn(val):
         return False
     s = str(val).strip().upper()
     return s in ("Y", "YES", "1", "TRUE")
-
-
-def normalise_award(label):
-    if not label:
-        return None
-    s = safe_str(label)
-    return AWARD_ALIASES.get(s, s)
 
 
 # -------- Workbook loader --------
@@ -497,6 +538,11 @@ def build_stadium_history_full(wb, stadium_master):
 def read_awards(wb):
     """Group player awards by canonical franchise name (col I).
 
+    Workbook stores bare award names in col F and league in col G. We
+    combine them here via resolve_award_label so the page sees stable
+    keys like "AL MVP" / "NL Cy Young". Anything outside AWARD_ORDER is
+    excluded from the curated v1 tier.
+
     Returns { canonical: { award_label: [ {year, player, team_at_time, league}, ... ] } }
     """
     ws = wb["Awards"]
@@ -508,12 +554,12 @@ def read_awards(wb):
         player = safe_str(row[2])
         team_at_time = safe_str(row[4])
         award_raw = row[5] if len(row) > 5 else None
-        award = normalise_award(award_raw)
+        league = safe_str(row[6]) if len(row) > 6 else ""
+        award = resolve_award_label(award_raw, league)
         if not award:
             continue
         if award not in AWARD_ORDER:
             continue
-        league = safe_str(row[6]) if len(row) > 6 else ""
         canonical = safe_str(row[8]) if len(row) > 8 else ""
         if not canonical or not player or not year:
             continue
@@ -523,7 +569,6 @@ def read_awards(wb):
             "team_at_time": team_at_time,
             "league": league,
         })
-    # Sort each award list newest-first
     for canon in out:
         for award in out[canon]:
             out[canon][award].sort(key=lambda r: -r["year"])
@@ -564,7 +609,10 @@ def read_top_games(wb):
         rf = safe_int(row[10])
         ra = safe_int(row[11])
         fin_inn = safe_int(row[12]) or None
-        ballpark_canon = safe_str(row[35]) if len(row) > 35 else safe_str(row[13])
+        ballpark_season = safe_str(row[13])  # N: the name the venue had that year
+        ballpark_canon = safe_str(row[35]) if len(row) > 35 else ballpark_season
+        ballpark_city = safe_str(row[15]) if len(row) > 15 else ""   # P: Ballpark Area
+        ballpark_state = safe_str(row[16]) if len(row) > 16 else ""  # Q: State
         opponent_canon = safe_str(row[25]) if len(row) > 25 else ""
         home_away = safe_str(row[43]) if len(row) > 43 else ""
         game_score_raw = row[44] if len(row) > 44 else None
@@ -592,7 +640,10 @@ def read_top_games(wb):
             "result": result,
             "fin_inn": fin_inn,
             "extra_innings": (fin_inn is not None and fin_inn > 9),
-            "stadium": ballpark_canon,
+            "stadium": ballpark_season,                    # season-name, what it was called that year
+            "stadium_canonical": ballpark_canon,           # current canonical for cross-reference
+            "stadium_city": ballpark_city,
+            "stadium_state": ballpark_state,
             "is_home": home_away.lower() in ("home", "h"),
             "game_score": round(game_score, 4),
         })
@@ -634,7 +685,10 @@ def read_top_games(wb):
             "fin_inn": fin_inn,
             "extra_innings": (fin_inn is not None and fin_inn > 9),
             "is_tie": result == "T",
-            "stadium": ballpark_canon,
+            "stadium": ballpark_season,                    # season-name
+            "stadium_canonical": ballpark_canon,
+            "stadium_city": ballpark_city,
+            "stadium_state": ballpark_state,
             "game_score": round(game_score, 4),
         })
 
@@ -642,6 +696,25 @@ def read_top_games(wb):
 
 
 # -------- Builders --------
+
+def _resolve_display_name(canonical, meta, cur_city):
+    """Use DISPLAY_NAME_OVERRIDES when present; fall back to workbook City + Team."""
+    override = DISPLAY_NAME_OVERRIDES.get(canonical)
+    if override is not None:
+        city_label, team_label = override
+        return f"{city_label} {team_label}".strip()
+    return f"{cur_city or meta.get('city') or ''} {meta.get('team') or canonical}".strip()
+
+
+def _resolve_display_city(canonical, cur_city):
+    """Override the displayed City for branded franchises (Tampa Bay, Texas, etc.).
+    Keeps the workbook City field as the source of truth, only changing what
+    surfaces on the hero and other display surfaces."""
+    override = DISPLAY_NAME_OVERRIDES.get(canonical)
+    if override is not None:
+        return override[0]
+    return cur_city
+
 
 def build_franchises(totals, latest_meta, year_by_year, earliest_year):
     """Build the 30 active franchise rows."""
@@ -665,8 +738,8 @@ def build_franchises(totals, latest_meta, year_by_year, earliest_year):
             "slug": franchise_slug(canonical),
             "key": "",  # filled later from Team Lookup if needed
             "name": meta.get("team") or canonical,
-            "display_name": f"{meta.get('home_city') or meta.get('city')} {meta.get('team') or canonical}".strip(),
-            "city": cur_city,
+            "display_name": _resolve_display_name(canonical, meta, cur_city),
+            "city": _resolve_display_city(canonical, cur_city),
             "team": meta.get("team") or canonical,
             "league": meta.get("league") or t["league_history"],
             "conf": meta.get("main_div") or "",
@@ -786,6 +859,18 @@ def build_historical(totals, year_by_year):
     return rows
 
 
+def build_historical_seasons(historical_rows, year_by_year):
+    """One season-by-season list per defunct franchise, keyed by canonical
+    name. Drives the +/- disclosure on /teams/mlb/historical."""
+    out = {}
+    for row in historical_rows:
+        canonical = row["canonical"]
+        seasons = year_by_year.get(canonical, [])
+        # Sort ascending year so the disclosure reads top-down chronologically.
+        out[canonical] = sorted(seasons, key=lambda s: s["year"])
+    return out
+
+
 def build_top_games_by_team(by_team, franchises, top_n=12):
     out = {}
     for f in franchises:
@@ -875,6 +960,10 @@ def main():
     historical = build_historical(totals, yby)
     print(f"Built historical: {len(historical)}")
     (OUT_DIR / "historical.json").write_text(json.dumps(historical, indent=2, ensure_ascii=False))
+
+    historical_seasons = build_historical_seasons(historical, yby)
+    print(f"Built historical-seasons: {len(historical_seasons)} franchises, {sum(len(v) for v in historical_seasons.values())} season-rows")
+    (OUT_DIR / "historical-seasons.json").write_text(json.dumps(historical_seasons, indent=2, ensure_ascii=False))
 
     seasons_out = build_seasons_by_team(franchises, yby)
     (OUT_DIR / "seasons-by-team.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False))

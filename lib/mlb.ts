@@ -125,7 +125,10 @@ export type TopGameTeamRow = {
   result: "W" | "L" | "T" | "";
   fin_inn: number | null;
   extra_innings: boolean;
-  stadium: string;
+  stadium: string;                 // the name the venue went by that season
+  stadium_canonical?: string;      // current canonical (for cross-reference / hovers)
+  stadium_city?: string;
+  stadium_state?: string;
   is_home: boolean;
   game_score: number;
   opp_slug?: string | null;
@@ -147,7 +150,10 @@ export type TopGameLeagueRow = {
   fin_inn: number | null;
   extra_innings: boolean;
   is_tie: boolean;
-  stadium: string;
+  stadium: string;                 // season-name (what the venue was called that year)
+  stadium_canonical?: string;
+  stadium_city?: string;
+  stadium_state?: string;
   game_score: number;
   winner_slug?: string | null;
   loser_slug?: string | null;
@@ -177,6 +183,7 @@ let _stadiumHistory: Record<string, StadiumBuilding[]> | null = null;
 let _awards: Record<string, Record<string, AwardWinner[]>> | null = null;
 let _seasons: Record<string, Season[]> | null = null;
 let _historical: HistoricalFranchise[] | null = null;
+let _historicalSeasons: Record<string, Season[]> | null = null;
 let _topGamesByTeam: Record<string, TopGameTeamRow[]> | null = null;
 let _topGamesAllTime: TopGameLeagueRow[] | null = null;
 let _topGamesByDecade: Record<string, TopGameLeagueRow[]> | null = null;
@@ -278,6 +285,14 @@ export function getTopGamesByDecade(): Record<string, TopGameLeagueRow[]> {
 export function getHistoricalFranchises(): HistoricalFranchise[] {
   if (!_historical) _historical = read<HistoricalFranchise[]>("historical.json");
   return _historical;
+}
+
+// Per-defunct-franchise season-by-season records. Keyed on canonical name.
+// Surfaced on /teams/mlb/historical inside the +/- disclosure next to each
+// franchise row.
+export function getHistoricalSeasons(): Record<string, Season[]> {
+  if (!_historicalSeasons) _historicalSeasons = read<Record<string, Season[]>>("historical-seasons.json");
+  return _historicalSeasons;
 }
 
 // ---------- Display helpers ----------

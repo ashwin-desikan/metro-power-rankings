@@ -28,6 +28,7 @@ type SortDir = "asc" | "desc";
 type Props = {
   rows: SeasonRow[];
   sourceLabel?: string;
+  fetchedAt?: string;   // ISO timestamp from ESPN standings; rendered as a sub-line on the live row
 };
 
 const TITLE_GOLD = "#d4af37";
@@ -56,7 +57,21 @@ function compare(a: SeasonRow, b: SeasonRow, key: SortKey): number {
   }
 }
 
-export default function SeasonsByTeamTable({ rows, sourceLabel }: Props) {
+function formatFetchedDate(iso: string | undefined): string | null {
+  if (!iso) return null;
+  try {
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return null;
+    return d.toLocaleDateString("en-US", {
+      month: "short", day: "numeric", year: "numeric",
+    });
+  } catch {
+    return null;
+  }
+}
+
+export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Props) {
+  const asOfDate = formatFetchedDate(fetchedAt);
   const [sortKey, setSortKey] = useState<SortKey>("year");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
 
@@ -153,7 +168,18 @@ export default function SeasonsByTeamTable({ rows, sourceLabel }: Props) {
                     )}
                   </td>
                   <td className="py-1.5 text-[var(--text-muted)]">
-                    {s.city} {s.team}
+                    <div className="leading-tight">
+                      {[s.city, s.team].filter(Boolean).join(" ")}
+                    </div>
+                    {isLive && asOfDate ? (
+                      <div
+                        className="text-[9px] mt-0.5 not-italic"
+                        style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                        title={`Live record from ESPN, fetched ${fetchedAt}`}
+                      >
+                        as of {asOfDate}
+                      </div>
+                    ) : null}
                   </td>
                   <td className="text-right py-1.5">{s.w}</td>
                   <td className="text-right py-1.5">{s.l}</td>
@@ -201,7 +227,7 @@ export default function SeasonsByTeamTable({ rows, sourceLabel }: Props) {
       </div>
       {liveRow ? (
         <p className="text-[10px] mt-3" style={{ color: "var(--text-dim)" }}>
-          In-progress {liveRow.year} row pulled from ESPN public standings, refreshed hourly. Replaced by the canonical workbook row after the season concludes.
+          In-progress {liveRow.year} row pulled from ESPN public standings{asOfDate ? `, as of ${asOfDate}` : ""}. Refreshed hourly via Next ISR; the record on the row reflects the most recent ESPN snapshot.
         </p>
       ) : null}
     </>

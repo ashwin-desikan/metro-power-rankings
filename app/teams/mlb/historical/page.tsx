@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getHistoricalFranchises } from "@/lib/mlb";
+import { getHistoricalFranchises, getHistoricalSeasons } from "@/lib/mlb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HistoricalTable from "./HistoricalTable";
 
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 
 export default function HistoricalPage() {
   const rows = getHistoricalFranchises();
+  const histSeasons = getHistoricalSeasons();
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -43,7 +44,7 @@ export default function HistoricalPage() {
         </p>
       </header>
 
-      <HistoricalTable rows={rows} />
+      <HistoricalTable rows={rows} histSeasons={histSeasons} />
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Active 30: <Link href="/teams/mlb" className="hover:text-[var(--text-muted)]">/teams/mlb</Link>.

@@ -17,6 +17,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Progressive Field",
+      "stadium_canonical": "Progressive Field",
+      "stadium_city": "Cleveland",
+      "stadium_state": "Ohio",
       "game_score": 3.5718
     },
     {
@@ -36,6 +39,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Busch Stadium III",
+      "stadium_canonical": "Busch Stadium III",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 2.0808
     },
     {
@@ -54,7 +60,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Globe Life Park in Arlington",
+      "stadium": "Rangers Ballpark in Arlington",
+      "stadium_canonical": "Globe Life Park in Arlington",
+      "stadium_city": "Dallas",
+      "stadium_state": "Texas",
       "game_score": 2.0538
     },
     {
@@ -73,7 +82,10 @@
       "fin_inn": 10,
       "extra_innings": true,
       "is_tie": false,
-      "stadium": "Daikin Park",
+      "stadium": "Minute Maid Park",
+      "stadium_canonical": "Daikin Park",
+      "stadium_city": "Houston",
+      "stadium_state": "Texas",
       "game_score": 1.991
     },
     {
@@ -93,6 +105,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Dodger Stadium",
+      "stadium_canonical": "Dodger Stadium",
+      "stadium_city": "Los Angeles",
+      "stadium_state": "California",
       "game_score": 1.8974
     },
     {
@@ -112,6 +127,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Dodger Stadium",
+      "stadium_canonical": "Dodger Stadium",
+      "stadium_city": "Los Angeles",
+      "stadium_state": "California",
       "game_score": 1.8096
     },
     {
@@ -131,6 +149,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Wrigley Field",
+      "stadium_canonical": "Wrigley Field",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.802
     },
     {
@@ -150,6 +171,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Progressive Field",
+      "stadium_canonical": "Progressive Field",
+      "stadium_city": "Cleveland",
+      "stadium_state": "Ohio",
       "game_score": 1.7196
     },
     {
@@ -169,6 +193,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Citi Field",
+      "stadium_canonical": "Citi Field",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.7154
     },
     {
@@ -187,7 +214,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Daikin Park",
+      "stadium": "Minute Maid Park",
+      "stadium_canonical": "Daikin Park",
+      "stadium_city": "Houston",
+      "stadium_state": "Texas",
       "game_score": 1.713
     }
   ],
@@ -209,6 +239,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Forbes Field",
+      "stadium_canonical": "Forbes Field",
+      "stadium_city": "Pittsburgh",
+      "stadium_state": "Pennsylvania",
       "game_score": 2.8155
     },
     {
@@ -228,6 +261,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Busch Stadium II",
+      "stadium_canonical": "Busch Stadium II",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 2.065
     },
     {
@@ -247,6 +283,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Metropolitan Stadium",
+      "stadium_canonical": "Metropolitan Stadium",
+      "stadium_city": "Minneapolis",
+      "stadium_state": "Minnesota",
       "game_score": 1.9987
     },
     {
@@ -266,6 +305,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Shea Stadium",
+      "stadium_canonical": "Shea Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.9714
     },
     {
@@ -285,6 +327,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.9558
     },
     {
@@ -304,6 +349,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Metropolitan Stadium",
+      "stadium_canonical": "Metropolitan Stadium",
+      "stadium_city": "Minneapolis",
+      "stadium_state": "Minnesota",
       "game_score": 1.8949
     },
     {
@@ -323,6 +371,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.8785
     },
     {
@@ -342,6 +393,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Busch Stadium II",
+      "stadium_canonical": "Busch Stadium II",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.8136
     },
     {
@@ -361,6 +415,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Shea Stadium",
+      "stadium_canonical": "Shea Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.7423
     },
     {
@@ -380,6 +437,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Candlestick Park",
+      "stadium_canonical": "Candlestick Park",
+      "stadium_city": "San Francisco",
+      "stadium_state": "Calfornia",
       "game_score": 1.6426
     }
   ],
@@ -401,6 +461,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Shea Stadium",
+      "stadium_canonical": "Shea Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 2.802
     },
     {
@@ -420,6 +483,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Shea Stadium",
+      "stadium_canonical": "Shea Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 2.3558
     },
     {
@@ -439,6 +505,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Hubert H Humphrey Metrodome",
+      "stadium_canonical": "Hubert H Humphrey Metrodome",
+      "stadium_city": "Minneapolis",
+      "stadium_state": "Minnesota",
       "game_score": 2.1121
     },
     {
@@ -457,7 +526,10 @@
       "fin_inn": 11,
       "extra_innings": true,
       "is_tie": false,
-      "stadium": "Angel Stadium",
+      "stadium": "Anaheim Stadium",
+      "stadium_canonical": "Angel Stadium",
+      "stadium_city": "Los Angeles",
+      "stadium_state": "California",
       "game_score": 2.1095
     },
     {
@@ -477,6 +549,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 2.0844
     },
     {
@@ -495,7 +570,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "SDCCU Stadium",
+      "stadium": "Jack Murphy Stadium",
+      "stadium_canonical": "SDCCU Stadium",
+      "stadium_city": "San Diego",
+      "stadium_state": "California",
       "game_score": 1.9778
     },
     {
@@ -515,6 +593,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Busch Stadium II",
+      "stadium_canonical": "Busch Stadium II",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.8845
     },
     {
@@ -534,6 +615,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Candlestick Park",
+      "stadium_canonical": "Candlestick Park",
+      "stadium_city": "San Francisco",
+      "stadium_state": "Calfornia",
       "game_score": 1.8833
     },
     {
@@ -553,6 +637,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Astrodome",
+      "stadium_canonical": "Astrodome",
+      "stadium_city": "Houston",
+      "stadium_state": "Texas",
       "game_score": 1.8824
     },
     {
@@ -571,7 +658,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Kauffman Stadium",
+      "stadium": "Royals Stadium",
+      "stadium_canonical": "Kauffman Stadium",
+      "stadium_city": "Kansas City",
+      "stadium_state": "Missouri",
       "game_score": 1.8807
     }
   ],
@@ -593,6 +683,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 2.6493
     },
     {
@@ -611,7 +704,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Cinergy Field",
+      "stadium": "Riverfront Stadium",
+      "stadium_canonical": "Cinergy Field",
+      "stadium_city": "Cincinnati",
+      "stadium_state": "Ohio",
       "game_score": 2.6264
     },
     {
@@ -631,6 +727,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 2.212
     },
     {
@@ -650,6 +749,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Memorial Stadium",
+      "stadium_canonical": "Memorial Stadium",
+      "stadium_city": "Baltimore",
+      "stadium_state": "Maryland",
       "game_score": 1.8464
     },
     {
@@ -668,7 +770,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Cinergy Field",
+      "stadium": "Riverfront Stadium",
+      "stadium_canonical": "Cinergy Field",
+      "stadium_city": "Cincinnati",
+      "stadium_state": "Ohio",
       "game_score": 1.7459
     },
     {
@@ -688,6 +793,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Memorial Stadium",
+      "stadium_canonical": "Memorial Stadium",
+      "stadium_city": "Baltimore",
+      "stadium_state": "Maryland",
       "game_score": 1.6913
     },
     {
@@ -706,7 +814,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "RingCentral Coliseum",
+      "stadium": "Oakland-Alameda County Coliseum",
+      "stadium_canonical": "RingCentral Coliseum",
+      "stadium_city": "San Francisco",
+      "stadium_state": "Calfornia",
       "game_score": 1.637
     },
     {
@@ -725,7 +836,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Cinergy Field",
+      "stadium": "Riverfront Stadium",
+      "stadium_canonical": "Cinergy Field",
+      "stadium_city": "Cincinnati",
+      "stadium_state": "Ohio",
       "game_score": 1.6358
     },
     {
@@ -745,6 +859,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Memorial Stadium",
+      "stadium_canonical": "Memorial Stadium",
+      "stadium_city": "Baltimore",
+      "stadium_state": "Maryland",
       "game_score": 1.6261
     },
     {
@@ -764,6 +881,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Memorial Stadium",
+      "stadium_canonical": "Memorial Stadium",
+      "stadium_city": "Baltimore",
+      "stadium_state": "Maryland",
       "game_score": 1.5842
     }
   ],
@@ -785,6 +905,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Atlanta-Fulton County Stadium",
+      "stadium_canonical": "Atlanta-Fulton County Stadium",
+      "stadium_city": "Atlanta",
+      "stadium_state": "Georgia",
       "game_score": 2.5843
     },
     {
@@ -804,6 +927,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Hubert H Humphrey Metrodome",
+      "stadium_canonical": "Hubert H Humphrey Metrodome",
+      "stadium_city": "Minneapolis",
+      "stadium_state": "Minnesota",
       "game_score": 2.4899
     },
     {
@@ -823,6 +949,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Hubert H Humphrey Metrodome",
+      "stadium_canonical": "Hubert H Humphrey Metrodome",
+      "stadium_city": "Minneapolis",
+      "stadium_state": "Minnesota",
       "game_score": 2.1777
     },
     {
@@ -842,6 +971,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Atlanta-Fulton County Stadium",
+      "stadium_canonical": "Atlanta-Fulton County Stadium",
+      "stadium_city": "Atlanta",
+      "stadium_state": "Georgia",
       "game_score": 2.1752
     },
     {
@@ -861,6 +993,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Atlanta-Fulton County Stadium",
+      "stadium_canonical": "Atlanta-Fulton County Stadium",
+      "stadium_city": "Atlanta",
+      "stadium_state": "Georgia",
       "game_score": 1.9891
     },
     {
@@ -879,7 +1014,10 @@
       "fin_inn": 11,
       "extra_innings": true,
       "is_tie": false,
-      "stadium": "Hard Rock Stadium",
+      "stadium": "Pro Player Stadium",
+      "stadium_canonical": "Hard Rock Stadium",
+      "stadium_city": "Miami",
+      "stadium_state": "Florida",
       "game_score": 1.9279
     },
     {
@@ -898,7 +1036,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Rogers Centre",
+      "stadium": "Skydome",
+      "stadium_canonical": "Rogers Centre",
+      "stadium_city": "Toronto",
+      "stadium_state": "Ontario",
       "game_score": 1.8497
     },
     {
@@ -917,7 +1058,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Progressive Field",
+      "stadium": "Jacobs Field",
+      "stadium_canonical": "Progressive Field",
+      "stadium_city": "Cleveland",
+      "stadium_state": "Ohio",
       "game_score": 1.7967
     },
     {
@@ -937,6 +1081,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Three Rivers Stadium",
+      "stadium_canonical": "Three Rivers Stadium",
+      "stadium_city": "Pittsburgh",
+      "stadium_state": "Pennsylvania",
       "game_score": 1.7951
     },
     {
@@ -956,6 +1103,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Rate Field",
+      "stadium_canonical": "Rate Field",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.7598
     }
   ],
@@ -977,6 +1127,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Globe Life Field",
+      "stadium_canonical": "Globe Life Field",
+      "stadium_city": "Dallas",
+      "stadium_state": "Texas",
       "game_score": 2.4908
     },
     {
@@ -996,6 +1149,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Rogers Centre",
+      "stadium_canonical": "Rogers Centre",
+      "stadium_city": "Toronto",
+      "stadium_state": "Ontario",
       "game_score": 2.2723
     },
     {
@@ -1015,6 +1171,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Rogers Centre",
+      "stadium_canonical": "Rogers Centre",
+      "stadium_city": "Toronto",
+      "stadium_state": "Ontario",
       "game_score": 1.8018
     },
     {
@@ -1034,6 +1193,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Globe Life Field",
+      "stadium_canonical": "Globe Life Field",
+      "stadium_city": "Dallas",
+      "stadium_state": "Texas",
       "game_score": 1.799
     },
     {
@@ -1053,6 +1215,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Globe Life Field",
+      "stadium_canonical": "Globe Life Field",
+      "stadium_city": "Dallas",
+      "stadium_state": "Texas",
       "game_score": 1.7809
     },
     {
@@ -1072,6 +1237,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Progressive Field",
+      "stadium_canonical": "Progressive Field",
+      "stadium_city": "Cleveland",
+      "stadium_state": "Ohio",
       "game_score": 1.6062
     },
     {
@@ -1091,6 +1259,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Globe Life Field",
+      "stadium_canonical": "Globe Life Field",
+      "stadium_city": "Dallas",
+      "stadium_state": "Texas",
       "game_score": 1.5472
     },
     {
@@ -1110,6 +1281,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Dodger Stadium",
+      "stadium_canonical": "Dodger Stadium",
+      "stadium_city": "Los Angeles",
+      "stadium_state": "California",
       "game_score": 1.5392
     },
     {
@@ -1129,6 +1303,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Globe Life Field",
+      "stadium_canonical": "Globe Life Field",
+      "stadium_city": "Dallas",
+      "stadium_state": "Texas",
       "game_score": 1.5264
     },
     {
@@ -1148,6 +1325,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Globe Life Field",
+      "stadium_canonical": "Globe Life Field",
+      "stadium_city": "Dallas",
+      "stadium_state": "Texas",
       "game_score": 1.4842
     }
   ],
@@ -1169,6 +1349,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Braves Field",
+      "stadium_canonical": "Braves Field",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 2.4039
     },
     {
@@ -1188,6 +1371,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Wrigley Field",
+      "stadium_canonical": "Wrigley Field",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 2.1135
     },
     {
@@ -1207,6 +1393,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Sportsman's Park III",
+      "stadium_canonical": "Sportsman's Park III",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 2.0744
     },
     {
@@ -1226,6 +1415,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Sportsman's Park III",
+      "stadium_canonical": "Sportsman's Park III",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.977
     },
     {
@@ -1245,6 +1437,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Crosley Field",
+      "stadium_canonical": "Crosley Field",
+      "stadium_city": "Cincinnati",
+      "stadium_state": "Ohio",
       "game_score": 1.7954
     },
     {
@@ -1264,6 +1459,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Sportsman's Park III",
+      "stadium_canonical": "Sportsman's Park III",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.7705
     },
     {
@@ -1283,6 +1481,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Sportsman's Park III",
+      "stadium_canonical": "Sportsman's Park III",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.7552
     },
     {
@@ -1302,6 +1503,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Wrigley Field",
+      "stadium_canonical": "Wrigley Field",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.6899
     },
     {
@@ -1321,6 +1525,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Ebbets Field",
+      "stadium_canonical": "Ebbets Field",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.6574
     },
     {
@@ -1340,6 +1547,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.6221
     }
   ],
@@ -1361,6 +1571,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Griffith Stadium I",
+      "stadium_canonical": "Griffith Stadium I",
+      "stadium_city": "Washington",
+      "stadium_state": "DC",
       "game_score": 2.3554
     },
     {
@@ -1380,6 +1593,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds IV",
+      "stadium_canonical": "Polo Grounds IV",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 2.0301
     },
     {
@@ -1399,6 +1615,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Griffith Stadium I",
+      "stadium_canonical": "Griffith Stadium I",
+      "stadium_city": "Washington",
+      "stadium_state": "DC",
       "game_score": 1.9702
     },
     {
@@ -1418,6 +1637,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds IV",
+      "stadium_canonical": "Polo Grounds IV",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.9585
     },
     {
@@ -1437,6 +1659,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "League Park",
+      "stadium_canonical": "League Park",
+      "stadium_city": "Cleveland",
+      "stadium_state": "Ohio",
       "game_score": 1.9162
     },
     {
@@ -1455,7 +1680,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium I",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.9136
     },
     {
@@ -1475,6 +1703,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds IV",
+      "stadium_canonical": "Polo Grounds IV",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.887
     },
     {
@@ -1494,6 +1725,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "League Park",
+      "stadium_canonical": "League Park",
+      "stadium_city": "Cleveland",
+      "stadium_state": "Ohio",
       "game_score": 1.8294
     },
     {
@@ -1513,6 +1747,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Sportsman's Park III",
+      "stadium_canonical": "Sportsman's Park III",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.7734
     },
     {
@@ -1532,6 +1769,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds IV",
+      "stadium_canonical": "Polo Grounds IV",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.7455
     }
   ],
@@ -1553,6 +1793,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Busch Stadium II",
+      "stadium_canonical": "Busch Stadium II",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 2.2766
     },
     {
@@ -1571,7 +1814,10 @@
       "fin_inn": 11,
       "extra_innings": true,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium II",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 2.2587
     },
     {
@@ -1590,7 +1836,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Daikin Park",
+      "stadium": "Minute Maid Park",
+      "stadium_canonical": "Daikin Park",
+      "stadium_city": "Houston",
+      "stadium_state": "Texas",
       "game_score": 2.1638
     },
     {
@@ -1610,6 +1859,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Bank One Ballpark",
+      "stadium_canonical": "Bank One Ballpark",
+      "stadium_city": "Phoenix",
+      "stadium_state": "Arizona",
       "game_score": 2.1634
     },
     {
@@ -1628,7 +1880,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Angel Stadium",
+      "stadium": "Edison International Field",
+      "stadium_canonical": "Angel Stadium",
+      "stadium_city": "Los Angeles",
+      "stadium_state": "California",
       "game_score": 1.966
     },
     {
@@ -1648,6 +1903,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.8979
     },
     {
@@ -1666,7 +1924,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium II",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.8944
     },
     {
@@ -1685,7 +1946,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Angel Stadium",
+      "stadium": "Edison International Field",
+      "stadium_canonical": "Angel Stadium",
+      "stadium_city": "Los Angeles",
+      "stadium_state": "California",
       "game_score": 1.8615
     },
     {
@@ -1705,6 +1969,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.7968
     },
     {
@@ -1724,6 +1991,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.7492
     }
   ],
@@ -1745,6 +2015,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Huntington Avenue Grounds",
+      "stadium_canonical": "Huntington Avenue Grounds",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 2.2204
     },
     {
@@ -1764,6 +2037,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Exposition Park",
+      "stadium_canonical": "Exposition Park",
+      "stadium_city": "Pittsburgh",
+      "stadium_state": "Pennsylvania",
       "game_score": 1.8544
     },
     {
@@ -1783,6 +2059,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Exposition Park",
+      "stadium_canonical": "Exposition Park",
+      "stadium_city": "Pittsburgh",
+      "stadium_state": "Pennsylvania",
       "game_score": 1.7905
     },
     {
@@ -1801,7 +2080,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Tiger Stadium",
+      "stadium": "Bennett Park",
+      "stadium_canonical": "Tiger Stadium",
+      "stadium_city": "Detroit",
+      "stadium_state": "Michigan",
       "game_score": 1.7648
     },
     {
@@ -1820,7 +2102,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Tiger Stadium",
+      "stadium": "Bennett Park",
+      "stadium_canonical": "Tiger Stadium",
+      "stadium_city": "Detroit",
+      "stadium_state": "Michigan",
       "game_score": 1.7452
     },
     {
@@ -1840,6 +2125,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "West Side Park II",
+      "stadium_canonical": "West Side Park II",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.7294
     },
     {
@@ -1859,6 +2147,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "South Side Park II",
+      "stadium_canonical": "South Side Park II",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.7142
     },
     {
@@ -1878,6 +2169,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds III",
+      "stadium_canonical": "Polo Grounds III",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.6564
     },
     {
@@ -1897,6 +2191,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Exposition Park",
+      "stadium_canonical": "Exposition Park",
+      "stadium_city": "Pittsburgh",
+      "stadium_state": "Pennsylvania",
       "game_score": 1.6515
     },
     {
@@ -1916,6 +2213,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds III",
+      "stadium_canonical": "Polo Grounds III",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.5669
     }
   ],
@@ -1936,7 +2236,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium I",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 2.2167
     },
     {
@@ -1955,7 +2258,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium I",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.7783
     },
     {
@@ -1974,7 +2280,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium I",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.7545
     },
     {
@@ -1993,7 +2302,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium I",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.657
     },
     {
@@ -2013,6 +2325,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds IV",
+      "stadium_canonical": "Polo Grounds IV",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.6458
     },
     {
@@ -2032,6 +2347,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Los Angeles Memorial Coliseum",
+      "stadium_canonical": "Los Angeles Memorial Coliseum",
+      "stadium_city": "Los Angeles",
+      "stadium_state": "California",
       "game_score": 1.6376
     },
     {
@@ -2051,6 +2369,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "County Stadium",
+      "stadium_canonical": "County Stadium",
+      "stadium_city": "Milwaukee",
+      "stadium_state": "Wisconsin",
       "game_score": 1.6365
     },
     {
@@ -2070,6 +2391,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "County Stadium",
+      "stadium_canonical": "County Stadium",
+      "stadium_city": "Milwaukee",
+      "stadium_state": "Wisconsin",
       "game_score": 1.6213
     },
     {
@@ -2089,6 +2413,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "County Stadium",
+      "stadium_canonical": "County Stadium",
+      "stadium_city": "Milwaukee",
+      "stadium_state": "Wisconsin",
       "game_score": 1.5976
     },
     {
@@ -2108,6 +2435,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Comiskey Park",
+      "stadium_canonical": "Comiskey Park",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.5627
     }
   ],
@@ -2129,6 +2459,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 2.1287
     },
     {
@@ -2148,6 +2481,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Crosley Field",
+      "stadium_canonical": "Crosley Field",
+      "stadium_city": "Cincinnati",
+      "stadium_state": "Ohio",
       "game_score": 1.9488
     },
     {
@@ -2166,7 +2502,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Connie Mack Stadium",
+      "stadium": "Baker Bowl",
+      "stadium_canonical": "Connie Mack Stadium",
+      "stadium_city": "Philadelphia",
+      "stadium_state": "Pennsylvania",
       "game_score": 1.8263
     },
     {
@@ -2186,6 +2525,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Crosley Field",
+      "stadium_canonical": "Crosley Field",
+      "stadium_city": "Cincinnati",
+      "stadium_state": "Ohio",
       "game_score": 1.7724
     },
     {
@@ -2205,6 +2547,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Comiskey Park",
+      "stadium_canonical": "Comiskey Park",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.741
     },
     {
@@ -2224,6 +2569,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "West Side Park II",
+      "stadium_canonical": "West Side Park II",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.6998
     },
     {
@@ -2243,6 +2591,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Fenway Park",
+      "stadium_canonical": "Fenway Park",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.6769
     },
     {
@@ -2262,6 +2613,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds IV",
+      "stadium_canonical": "Polo Grounds IV",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.6755
     },
     {
@@ -2281,6 +2635,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Braves Field",
+      "stadium_canonical": "Braves Field",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.6659
     },
     {
@@ -2300,6 +2657,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds IV",
+      "stadium_canonical": "Polo Grounds IV",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.6522
     }
   ],
@@ -2320,7 +2680,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Tiger Stadium",
+      "stadium": "Navin Field",
+      "stadium_canonical": "Tiger Stadium",
+      "stadium_city": "Detroit",
+      "stadium_state": "Michigan",
       "game_score": 1.7686
     },
     {
@@ -2340,6 +2703,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Wrigley Field",
+      "stadium_canonical": "Wrigley Field",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.5409
     },
     {
@@ -2359,6 +2725,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Wrigley Field",
+      "stadium_canonical": "Wrigley Field",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.5232
     },
     {
@@ -2377,7 +2746,10 @@
       "fin_inn": null,
       "extra_innings": false,
       "is_tie": false,
-      "stadium": "Tiger Stadium",
+      "stadium": "Navin Field",
+      "stadium_canonical": "Tiger Stadium",
+      "stadium_city": "Detroit",
+      "stadium_state": "Michigan",
       "game_score": 1.514
     },
     {
@@ -2397,6 +2769,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Wrigley Field",
+      "stadium_canonical": "Wrigley Field",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.5015
     },
     {
@@ -2416,6 +2791,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Griffith Stadium I",
+      "stadium_canonical": "Griffith Stadium I",
+      "stadium_city": "Washington",
+      "stadium_state": "DC",
       "game_score": 1.4964
     },
     {
@@ -2435,6 +2813,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Crosley Field",
+      "stadium_canonical": "Crosley Field",
+      "stadium_city": "Cincinnati",
+      "stadium_state": "Ohio",
       "game_score": 1.4823
     },
     {
@@ -2454,6 +2835,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Griffith Stadium I",
+      "stadium_canonical": "Griffith Stadium I",
+      "stadium_city": "Washington",
+      "stadium_state": "DC",
       "game_score": 1.4707
     },
     {
@@ -2472,7 +2856,10 @@
       "fin_inn": 10,
       "extra_innings": true,
       "is_tie": false,
-      "stadium": "Yankee Stadium",
+      "stadium": "Yankee Stadium I",
+      "stadium_canonical": "Yankee Stadium",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.4294
     },
     {
@@ -2492,6 +2879,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Sportsman's Park III",
+      "stadium_canonical": "Sportsman's Park III",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.4208
     }
   ],
@@ -2513,6 +2903,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Sportsman's Park I",
+      "stadium_canonical": "Sportsman's Park I",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.2456
     },
     {
@@ -2532,6 +2925,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Sportsman's Park I",
+      "stadium_canonical": "Sportsman's Park I",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.2312
     },
     {
@@ -2551,6 +2947,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "West Side Park I",
+      "stadium_canonical": "West Side Park I",
+      "stadium_city": "Chicago",
+      "stadium_state": "Illinois",
       "game_score": 1.1662
     },
     {
@@ -2570,6 +2969,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Sportsman's Park I",
+      "stadium_canonical": "Sportsman's Park I",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.1148
     },
     {
@@ -2589,6 +2991,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Sportsman's Park I",
+      "stadium_canonical": "Sportsman's Park I",
+      "stadium_city": "St. Louis",
+      "stadium_state": "Missouri",
       "game_score": 1.0972
     },
     {
@@ -2608,6 +3013,9 @@
       "extra_innings": true,
       "is_tie": false,
       "stadium": "Polo Grounds II",
+      "stadium_canonical": "Polo Grounds II",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.0896
     },
     {
@@ -2627,6 +3035,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Polo Grounds III",
+      "stadium_canonical": "Polo Grounds III",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.0883
     },
     {
@@ -2646,6 +3057,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Recreation Park",
+      "stadium_canonical": "Recreation Park",
+      "stadium_city": "Detroit",
+      "stadium_state": "Michigan",
       "game_score": 1.0684
     },
     {
@@ -2665,6 +3079,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Philadelphia Baseball Grounds",
+      "stadium_canonical": "Philadelphia Baseball Grounds",
+      "stadium_city": "Philadelphia",
+      "stadium_state": "Pennsylvania",
       "game_score": 1.066
     },
     {
@@ -2684,6 +3101,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Philadelphia Baseball Grounds",
+      "stadium_canonical": "Philadelphia Baseball Grounds",
+      "stadium_city": "Philadelphia",
+      "stadium_state": "Pennsylvania",
       "game_score": 1.0492
     }
   ],
@@ -2705,6 +3125,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Washington Park II",
+      "stadium_canonical": "Washington Park II",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.1949
     },
     {
@@ -2724,6 +3147,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Washington Park II",
+      "stadium_canonical": "Washington Park II",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 1.0824
     },
     {
@@ -2743,6 +3169,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "South End Grounds II",
+      "stadium_canonical": "South End Grounds II",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 1.0433
     },
     {
@@ -2762,6 +3191,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Oriole Park",
+      "stadium_canonical": "Oriole Park",
+      "stadium_city": "Baltimore",
+      "stadium_state": "Maryland",
       "game_score": 1.0288
     },
     {
@@ -2781,6 +3213,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "South End Grounds II",
+      "stadium_canonical": "South End Grounds II",
+      "stadium_city": "Boston",
+      "stadium_state": "Massachusetts",
       "game_score": 0.9754
     },
     {
@@ -2800,6 +3235,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Oriole Park",
+      "stadium_canonical": "Oriole Park",
+      "stadium_city": "Baltimore",
+      "stadium_state": "Maryland",
       "game_score": 0.9718
     },
     {
@@ -2819,6 +3257,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Oriole Park",
+      "stadium_canonical": "Oriole Park",
+      "stadium_city": "Baltimore",
+      "stadium_state": "Maryland",
       "game_score": 0.9364
     },
     {
@@ -2838,6 +3279,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Eclipse Park I",
+      "stadium_canonical": "Eclipse Park I",
+      "stadium_city": "Louisville",
+      "stadium_state": "Kentucky",
       "game_score": 0.9181
     },
     {
@@ -2857,6 +3301,9 @@
       "extra_innings": false,
       "is_tie": false,
       "stadium": "Washington Park II",
+      "stadium_canonical": "Washington Park II",
+      "stadium_city": "New York",
+      "stadium_state": "New York",
       "game_score": 0.9127
     },
     {
@@ -2876,6 +3323,9 @@
       "extra_innings": false,
       "is_tie": true,
       "stadium": "Eclipse Park I",
+      "stadium_canonical": "Eclipse Park I",
+      "stadium_city": "Louisville",
+      "stadium_state": "Kentucky",
       "game_score": 0.9006
     }
   ]

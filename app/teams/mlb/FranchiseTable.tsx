@@ -14,7 +14,7 @@ type SortKey =
   | "division"
   | "founding_year"
   | "championships"
-  | "division_titles"
+  | "pennants"
   | "win_pct"
   | "record"
   | "playoff_appearances";
@@ -38,7 +38,7 @@ function compare(a: Franchise, b: Franchise, key: SortKey): number {
     case "division": return (a.division || "").localeCompare(b.division || "");
     case "founding_year": return (a.founding_year ?? 0) - (b.founding_year ?? 0);
     case "championships": return a.championships - b.championships;
-    case "division_titles": return a.division_titles - b.division_titles;
+    case "pennants": return a.ws_appearances - b.ws_appearances;
     case "win_pct": return a.win_pct - b.win_pct;
     case "record": return a.all_time_w - b.all_time_w;
     case "playoff_appearances": return a.playoff_appearances - b.playoff_appearances;
@@ -65,7 +65,7 @@ export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) 
       setSortDir(sortDir === "asc" ? "desc" : "asc");
     } else {
       setSortKey(key);
-      const numeric: SortKey[] = ["championships", "division_titles", "win_pct", "record", "playoff_appearances", "founding_year"];
+      const numeric: SortKey[] = ["championships", "pennants", "win_pct", "record", "playoff_appearances", "founding_year"];
       setSortDir(numeric.includes(key) ? "desc" : "asc");
     }
   }
@@ -83,7 +83,7 @@ export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) 
             <Th label="Division"             k="division"            cur={sortKey} dir={sortDir} onClick={toggle} />
             <Th label="Founded"              k="founding_year"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="WS"                   k="championships"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Div"                  k="division_titles"     cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+            <Th label="Pennants"             k="pennants"            cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="Playoffs"             k="playoff_appearances" cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="All-time"             k="record"              cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="Win%"                 k="win_pct"             cur={sortKey} dir={sortDir} onClick={toggle} align="right" className="pr-4" />
@@ -137,7 +137,7 @@ export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) 
                     {f.championships}
                   </span>
                 </td>
-                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.division_titles}</td>
+                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.ws_appearances}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.playoff_appearances}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.all_time_w}-{f.all_time_l}</td>
                 <td className="py-2.5 pr-4 text-right">{f.win_pct.toFixed(3)}</td>

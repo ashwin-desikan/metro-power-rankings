@@ -105,15 +105,22 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                       <span className="text-[var(--text-muted)]">{g.loser_city} {g.loser_team}</span>
                     )}
                   </div>
-                  {g.stadium ? (
-                    <div
-                      className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
-                      style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
-                      title={g.stadium}
-                    >
-                      {g.stadium}
-                    </div>
-                  ) : null}
+                  {g.stadium ? (() => {
+                    const locParts = [g.stadium_city, g.stadium_state].filter(Boolean).join(", ");
+                    const title = g.stadium_canonical && g.stadium_canonical !== g.stadium
+                      ? `${g.stadium} (now ${g.stadium_canonical})${locParts ? " — " + locParts : ""}`
+                      : `${g.stadium}${locParts ? " — " + locParts : ""}`;
+                    return (
+                      <div
+                        className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
+                        style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                        title={title}
+                      >
+                        {g.stadium}
+                        {locParts ? <span className="ml-1 opacity-80">· {locParts}</span> : null}
+                      </div>
+                    );
+                  })() : null}
                 </td>
                 <td className="py-2 text-right font-semibold">{g.game_score.toFixed(3)}</td>
               </tr>
