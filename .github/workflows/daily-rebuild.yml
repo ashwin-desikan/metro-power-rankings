@@ -1,14 +1,21 @@
-# Daily rebuild of rankings.citizenofnowhere.org so the Featured Articles
-# strip on / picks up new Substack posts without manual intervention.
+# Daily rebuild of rankings.citizenofnowhere.org. Triggers a fresh Vercel
+# production build so the next ETL-driven pages pull the latest external
+# data without manual intervention. Two consumers benefit:
+#
+#   1. Home-page Featured Articles strip (hydrated from Substack RSS via
+#      lib/substack.ts at build time).
+#   2. Live MLB and NFL standings on /teams/{league}/[slug] pages
+#      (lib/mlb-standings.ts and lib/standings.ts fetch ESPN at build
+#      time and serve via 1-hour ISR thereafter). The daily rebuild puts
+#      a fresh ESPN snapshot into the static cache once a day so the
+#      in-progress season row reflects yesterday's games as soon as
+#      readers wake up.
 #
 # Why this exists
-#   The home page Featured Articles strip is hydrated at build time from the
-#   Substack RSS feed (see lib/substack.ts). Although the loader uses a
-#   1-hour ISR revalidate so request-time renders refresh hourly, the
-#   statically generated home page itself only re-renders on a fresh build.
-#   A daily rebuild guarantees new Substack posts surface within 24 hours
-#   even if no other commit lands. This mirrors the same pattern shipped on
-#   citizenofnowhere-brand.
+#   Although both data sources self-refresh via Next ISR for request-time
+#   renders, the statically generated pages only re-render on a fresh
+#   build. A daily rebuild guarantees freshness within 24 hours even when
+#   no other commit lands. Mirrors the pattern shipped on citizenofnowhere-brand.
 #
 # How it works
 #   1. GitHub Actions invokes this workflow on the schedule below (and on
@@ -32,14 +39,21 @@
 #   One HTTP POST per day. No checkout, no install, no build runtime burned in
 #   GitHub. Vercel build minutes cost is identical to a manual redeploy.
 
-name: Daily rebuild (Substack refresh)
+name: Daily rebuild (Substack + live standings)
 
 on:
   schedule:
-    # 13:32 UTC daily. Off-the-hour to avoid contention with other crons and
-    # offset 15 minutes from the brand-site rebuild so they don't both queue
-    # against Vercel at the same instant.
-    - cron: "32 13 * * *"
+    # 08:00 UTC daily. Chosen so the freshly-baked ESPN standings cache
+    # reflects "yesterday's" MLB and NFL games:
+    #   - East Coast late games end around 03:00-04:00 UTC.
+    #   - West Coast late games end around 05:00-09:00 UTC. The 08:00
+    #     timing catches almost all of them; the rare 12-inning Pacific
+    #     game running past 09:00 UTC will simply be in the next day's
+    #     refresh.
+    # The team page's in-progress live row labels the data "as of
+    # {yesterday}" so the date matches what readers see when they open
+    # the page during US daytime hours.
+    - cron: "0 8 * * *"
   workflow_dispatch: {}
 
 # Only one rebuild in flight at a time.
