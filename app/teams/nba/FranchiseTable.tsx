@@ -88,6 +88,7 @@ function compare(a: Franchise, b: Franchise, key: SortKey, state: Record<string,
 }
 
 export default function FranchiseTable({ franchises, playoffState, logoMap, monoMap }: Props) {
+  const showPostseason = Object.keys(playoffState).length > 0;
   const [sortKey, setSortKey] = useState<SortKey>("championships");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
 
@@ -132,8 +133,8 @@ export default function FranchiseTable({ franchises, playoffState, logoMap, mono
             <Th label="Playoffs"           k="playoff_appearances" cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="All-Stars"          k="all_stars"           cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="All-time"           k="record"              cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Win%"               k="win_pct"             cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Postseason"         k="postseason"          cur={sortKey} dir={sortDir} onClick={toggle} align="right" className="pr-4" />
+            <Th label="Win%"               k="win_pct"             cur={sortKey} dir={sortDir} onClick={toggle} align="right" className={showPostseason ? "" : "pr-4"} />
+            {showPostseason && <Th label="Postseason"         k="postseason"          cur={sortKey} dir={sortDir} onClick={toggle} align="right" className="pr-4" />}
           </tr>
         </thead>
         <tbody>
@@ -186,19 +187,21 @@ export default function FranchiseTable({ franchises, playoffState, logoMap, mono
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">
                   {f.win_pct ? f.win_pct.toFixed(3).replace(/^0/, "") : "—"}
                 </td>
-                <td className="py-2.5 pr-4 text-right">
-                  {psStyle ? (
-                    <span
-                      className="inline-block rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
-                      style={{ background: psStyle.bg, color: psStyle.text }}
-                      title={ps?.last_round}
-                    >
-                      {psStyle.label}
-                    </span>
-                  ) : (
-                    <span className="text-[var(--text-dim)] text-[10px]">—</span>
-                  )}
-                </td>
+                {showPostseason && (
+                  <td className="py-2.5 pr-4 text-right">
+                    {psStyle ? (
+                      <span
+                        className="inline-block rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                        style={{ background: psStyle.bg, color: psStyle.text }}
+                        title={ps?.last_round}
+                      >
+                        {psStyle.label}
+                      </span>
+                    ) : (
+                      <span className="text-[var(--text-dim)] text-[10px]">—</span>
+                    )}
+                  </td>
+                )}
               </tr>
             );
           })}

@@ -12,6 +12,7 @@ import {
   getAllNbaSelections,
   getSeasons,
   getTopGamesForTeam,
+  getPlayoffState,
   getPlayoffStateForCanonical,
   logoUrlFor,
   monogramFor,
@@ -90,6 +91,8 @@ export default async function FranchisePage({ params }: Props) {
   const seasons = getSeasons(f.slug);
   const topGames = getTopGamesForTeam(f.slug);
   const playoffState = getPlayoffStateForCanonical(f.canonical);
+  const playoffBundle = getPlayoffState();
+  const showPostseasonChip = playoffState && !playoffBundle.is_postseason_complete;
   const mono = monogramFor(f.slug);
   const logo = logoUrlFor(f.slug);
   const formerly = priorCitySummary(f);
@@ -223,8 +226,8 @@ export default async function FranchisePage({ params }: Props) {
               <span className="text-[var(--text-dim)] ml-1">player-seasons across history</span>
             </p>
           )}
-          {/* Playoff state badge in hero */}
-          {playoffState && (
+          {/* Playoff state badge in hero — drops after Finals end */}
+          {showPostseasonChip && playoffState && (
             <div className="mt-3">
               <span
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide"
@@ -420,7 +423,17 @@ export default async function FranchisePage({ params }: Props) {
                   style={{ borderColor: "var(--border)" }}
                 >
                   <div className="flex items-baseline gap-2 flex-wrap">
-                    <h3 className="font-semibold text-sm">{b.canonical}</h3>
+                    {b.metro ? (
+                      <Link
+                        href={`/rankings/${b.metro.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}#map`}
+                        className="font-semibold text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2"
+                        title={`Open the ${b.metro} metro map`}
+                      >
+                        {b.canonical}
+                      </Link>
+                    ) : (
+                      <h3 className="font-semibold text-sm">{b.canonical}</h3>
+                    )}
                     <span className="text-xs text-[var(--text-muted)]">
                       {b.first_year ?? "?"}{b.last_year && b.last_year >= 2025 ? "-present" : `-${b.last_year ?? "?"}`}
                     </span>
@@ -501,13 +514,33 @@ export default async function FranchisePage({ params }: Props) {
                           {s.playoff_state_label}
                         </span>
                       ) : s.champ ? (
-                        <span className="text-amber-400 font-semibold text-[11px]">NBA Champion</span>
+                        <span
+                          className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                          style={{ background: "#d4af37", color: "#1a1408" }}
+                        >
+                          NBA Champion
+                        </span>
                       ) : s.champ_app ? (
-                        <span className="text-[var(--text-muted)] text-[11px]">Lost Finals</span>
+                        <span
+                          className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap border"
+                          style={{ borderColor: "#a07a30", color: "#a07a30" }}
+                        >
+                          Lost Finals
+                        </span>
                       ) : s.cf_app ? (
-                        <span className="text-[var(--text-muted)] text-[11px]">Lost Conf. Finals</span>
+                        <span
+                          className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap border"
+                          style={{ borderColor: "var(--text-muted)", color: "var(--text-muted)" }}
+                        >
+                          Lost Conf. Finals
+                        </span>
                       ) : s.playoff ? (
-                        <span className="text-[var(--text-muted)] text-[11px]">Playoffs</span>
+                        <span
+                          className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                          style={{ background: "var(--bg-card-hover)", color: "var(--text-muted)" }}
+                        >
+                          Playoffs
+                        </span>
                       ) : (
                         ""
                       )}
@@ -540,11 +573,11 @@ export default async function FranchisePage({ params }: Props) {
                       {AWARD_LABEL_LONG[awardKey]}
                     </span>
                   </h3>
-                  <ul className="text-sm space-y-0.5">
+                  <ul className="text-xs space-y-0">
                     {winners.map((w, i) => (
-                      <li key={i} className="flex gap-2">
-                        <span className="text-[var(--text-muted)] tabular-nums w-12 flex-shrink-0">{seasonLabel(w.year)}</span>
-                        <span>{w.player}</span>
+                      <li key={i} className="flex gap-2 leading-tight py-0.5">
+                        <span className="text-[var(--text-muted)] tabular-nums w-14 flex-shrink-0 text-[10px]">{seasonLabel(w.year)}</span>
+                        <span className="truncate">{w.player}</span>
                       </li>
                     ))}
                   </ul>
@@ -563,7 +596,7 @@ export default async function FranchisePage({ params }: Props) {
         {allNbaYears.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No All-NBA selections recorded.</p>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-0.5">
             {allNbaYears.map((year) => {
               const picks = allNbaByYear.get(year)!;
               const ordered = [...picks].sort((a, b) => {
@@ -571,16 +604,16 @@ export default async function FranchisePage({ params }: Props) {
                 return (order[a.tier] ?? 9) - (order[b.tier] ?? 9);
               });
               return (
-                <div key={year} className="flex items-baseline gap-3 text-sm">
-                  <span className="text-[var(--text-muted)] tabular-nums w-16 flex-shrink-0">{seasonLabel(year)}</span>
-                  <div className="flex flex-wrap gap-1.5">
+                <div key={year} className="flex items-baseline gap-2 text-xs py-0.5">
+                  <span className="text-[var(--text-muted)] tabular-nums w-14 flex-shrink-0 text-[10px]">{seasonLabel(year)}</span>
+                  <div className="flex flex-wrap gap-1">
                     {ordered.map((p, i) => {
                       const tierStyle =
                         p.tier === "1st" ? "bg-amber-500/15 text-amber-300 border-amber-500/30" :
                         p.tier === "2nd" ? "bg-slate-400/15 text-slate-300 border-slate-400/30" :
                                            "bg-stone-500/10 text-stone-400 border-stone-500/25";
                       return (
-                        <span key={i} className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded border ${tierStyle}`}>
+                        <span key={i} className={`inline-flex items-center gap-1 text-[10px] px-1.5 py-0 rounded border leading-tight ${tierStyle}`}>
                           <span className="font-bold">{p.tier}</span>
                           <span>{p.player}</span>
                         </span>

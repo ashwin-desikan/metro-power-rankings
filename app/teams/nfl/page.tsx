@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, TITLE_COLORS, withStadiumLocations, withTeamSlugs } from "@/lib/nfl";
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
+import LeagueMap from "./LeagueMap";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -72,6 +73,8 @@ export default function NflIndexPage() {
       {/* 32-team sortable table. Logo and monogram maps are computed
           server-side so the client component never has to touch the
           filesystem; sorting state lives entirely in the client. */}
+      <LeagueMap franchises={franchises} />
+
       <FranchiseTable
         franchises={franchises}
         logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}

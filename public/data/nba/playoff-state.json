@@ -1,5 +1,6 @@
 {
   "year": 2026,
+  "is_postseason_complete": false,
   "by_franchise": {
     "Trail Blazers": {
       "state": "eliminated_qf",
@@ -62,8 +63,8 @@
       "year": 2026
     },
     "Hawks": {
-      "state": "active_qf",
-      "last_round": "In the First Round",
+      "state": "eliminated_qf",
+      "last_round": "Eliminated First Round",
       "year": 2026
     },
     "Knicks": {

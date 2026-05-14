@@ -24,6 +24,8 @@ export type Franchise = {
   state: string;
   arena: string;
   arena_season_name: string;
+  lat: number | null;
+  lng: number | null;
   founding_year: number | null;
   prior_cities: string[];
   wikipedia_url?: string | null;
@@ -214,6 +216,7 @@ export type PlayoffStateRecord = {
 
 export type PlayoffStateBundle = {
   year: number | null;
+  is_postseason_complete: boolean;
   by_franchise: Record<string, PlayoffStateRecord>;
 };
 
@@ -450,8 +453,8 @@ export function brefYearUrl(year: number, league: string = "NBA"): string {
 // (e.g., 2026 = 2025-26 season). Common display: "2025-26".
 export function seasonLabel(endYear: number): string {
   if (!endYear) return "";
-  const startYY = ((endYear - 1) % 100).toString().padStart(2, "0");
-  return `${endYear - 1}-${startYY}`;
+  const endYY = (endYear % 100).toString().padStart(2, "0");
+  return `${endYear - 1}-${endYY}`;
 }
 
 // Round-num to display label (used by Top Games table).

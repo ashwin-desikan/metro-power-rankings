@@ -756,6 +756,7 @@ def read_playoff_state(wb, year_by_year):
         clinch = is_truthy_yn(row[24]) if len(row) > 24 else False
         champ = is_truthy_yn(row[44]) if len(row) > 44 else False
         result = safe_str(row[12])
+        series_l_val = safe_int(row[23]) if len(row) > 23 else 0
 
         st = state_by_team.setdefault(canonical, {
             "deepest_round": 5,  # higher number = earlier round
@@ -763,11 +764,19 @@ def read_playoff_state(wb, year_by_year):
             "champion": False,
             "lost_finals": False,
             "rounds_played": set(),
+            "losses_by_round": {},  # round_num -> max loss count seen
         })
         # "Deepest" means lowest round_num
         if round_num < st["deepest_round"]:
             st["deepest_round"] = round_num
         st["rounds_played"].add(round_num)
+        # Track max series_l seen for this team in this round (winning team also has rows
+        # at the closing game, but their result is W; we only record series_l on L rows
+        # so the count reflects actual series losses by this team).
+        if result == "L":
+            prev = st["losses_by_round"].get(round_num, 0)
+            if series_l_val > prev:
+                st["losses_by_round"][round_num] = series_l_val
         if champ and result == "W":
             st["champion"] = True
         # Only a loss row should mark a team as eliminated. The workbook
@@ -780,6 +789,21 @@ def read_playoff_state(wb, year_by_year):
             st["eliminated_at_round"] = round_num
         if round_num == 1 and result == "L" and elim:
             st["lost_finals"] = True
+
+    # Inference pass: if a team has 4+ losses in their deepest round (or 3+ in
+    # pre-1984 best-of-5 R1), mark eliminated at that round even when the workbook
+    # didn't tag Elim=Y on the loss row. Best-of-7 ends at 4 L's; best-of-5 at 3.
+    for canon, st in state_by_team.items():
+        if st["eliminated_at_round"] is not None or st["champion"]:
+            continue
+        deepest = st["deepest_round"]
+        max_l_in_deepest = st["losses_by_round"].get(deepest, 0)
+        # All modern rounds are best-of-7. Best-of-5 was the R1 format pre-1984; we
+        # use 3 as the threshold for round 4 in those eras. Since latest_year is
+        # always modern when this matters, the simple >=4 check covers the bulk.
+        threshold = 3 if (latest_year < 1984 and deepest == 4) else 4
+        if max_l_in_deepest >= threshold:
+            st["eliminated_at_round"] = deepest
 
     out = {}
     for canon, st in state_by_team.items():
@@ -824,7 +848,13 @@ def read_playoff_state(wb, year_by_year):
             "year": latest_year,
         }
 
-    return out, latest_year
+    # Postseason is complete if a champion has been crowned OR every team has been
+    # eliminated. Page renderers use this flag to drop the chip layer after the Finals
+    # so stale "X eliminated in semifinals" badges don't linger through the offseason.
+    has_active = any(o.get("state", "").startswith("active_") for o in out.values())
+    has_champion = any(o.get("state") == "champion" for o in out.values())
+    is_complete = has_champion or (len(out) > 0 and not has_active)
+    return out, latest_year, is_complete
 
 
 def read_team_external_links():
@@ -851,10 +881,77 @@ def read_team_external_links():
     return out
 
 
+
+
+# ----- MetroAreas.xlsx Team List integration -----
+
+# Authoritative source for team -> metro/lat/lng mapping. Joins by canonical
+# team display name (e.g. "Atlanta Hawks"). The NBA workbook's Arenas sheet
+# carries its own metro fields and was normalized to MetroAreas canonical in
+# a prior workbook session, but the Team List sheet remains the single source
+# of truth across the rankings site (per feedback memory: "Team List is the
+# only source of truth for teams"). Using it here keeps the NBA team pages
+# aligned with the rest of the surface area.
+METROAREAS_PATHS = [
+    Path(os.path.expanduser("~/OneDrive/Excel Files/MetroAreas.xlsx")),
+    REPO_ROOT / "MetroAreas.xlsx",
+    Path("/sessions/nice-epic-hawking/mnt/Excel Files/MetroAreas.xlsx"),
+]
+
+
+def read_metro_team_list():
+    """Read MetroAreas.xlsx Team List sheet, filter to NBA rows, return
+    dict keyed by team display name: { 'Atlanta Hawks': {metro, city, state, lat, lng}, ... }.
+
+    Falls back to empty dict if the workbook is unreachable so the build
+    never blocks on it; the NBA workbook's arena join still fills metros
+    in that case.
+    """
+    out = {}
+    for p in METROAREAS_PATHS:
+        if not p.exists():
+            continue
+        try:
+            mwb = openpyxl.load_workbook(p, read_only=True, data_only=True)
+        except Exception as e:
+            print(f"  (warning: could not open {p}: {e})")
+            continue
+        if "Team List" not in mwb.sheetnames:
+            mwb.close()
+            continue
+        ws = mwb["Team List"]
+        # Columns: 0=Sport, 1=League, 2=Team, 5=City, 6=Metro, 7=State,
+        # 17=Lat, 18=Long.
+        for i, row in enumerate(ws.iter_rows(values_only=True)):
+            if i == 0:
+                continue
+            league = safe_str(row[1] if len(row) > 1 else "")
+            if league.upper() != "NBA":
+                continue
+            team = safe_str(row[2] if len(row) > 2 else "")
+            if not team:
+                continue
+            out[team] = {
+                "city": safe_str(row[5] if len(row) > 5 else ""),
+                "metro": safe_str(row[6] if len(row) > 6 else ""),
+                "state": safe_str(row[7] if len(row) > 7 else ""),
+                "lat": safe_float(row[17] if len(row) > 17 else 0) or None,
+                "lng": safe_float(row[18] if len(row) > 18 else 0) or None,
+            }
+        mwb.close()
+        if out:
+            print(f"  Team List loaded from {p}: {len(out)} NBA team rows")
+            return out
+    print("  (warning: MetroAreas.xlsx Team List not found; falling back to NBA workbook arena join)")
+    return out
+
+
 # -------- Builders --------
 
 def build_franchises(totals, latest_meta, year_by_year, earliest_year,
-                     external_links, all_star_counts):
+                     external_links, all_star_counts, arenas=None, metroareas_team_list=None):
+    arenas = arenas or {}
+    metroareas_team_list = metroareas_team_list or {}
     out = []
     for canonical, t in totals.items():
         if not t.get("is_current"):
@@ -890,9 +987,12 @@ def build_franchises(totals, latest_meta, year_by_year, earliest_year,
             "league": "NBA",
             "conf": meta.get("conf", ""),
             "division": meta.get("division", ""),
-            "metro": "",  # to be filled by lib at render time via canonical-arena city lookup
-            "metro_slug": None,
-            "state": "",
+            # MetroAreas Team List override (authoritative source). Falls back to arena join when not found.
+            "metro": (metroareas_team_list.get(display_name, {}) or {}).get("metro") or (arenas.get(meta.get("home_arena_canonical", ""), {}) or {}).get("metro", "") or (arenas.get(meta.get("home_arena_season", ""), {}) or {}).get("metro", ""),
+            "metro_slug": metro_slugify((metroareas_team_list.get(display_name, {}) or {}).get("metro") or (arenas.get(meta.get("home_arena_canonical", ""), {}) or {}).get("metro", "") or (arenas.get(meta.get("home_arena_season", ""), {}) or {}).get("metro", "")),
+            "state": (metroareas_team_list.get(display_name, {}) or {}).get("state") or (arenas.get(meta.get("home_arena_canonical", ""), {}) or {}).get("state", "") or (arenas.get(meta.get("home_arena_season", ""), {}) or {}).get("state", ""),
+            "lat": (metroareas_team_list.get(display_name, {}) or {}).get("lat"),
+            "lng": (metroareas_team_list.get(display_name, {}) or {}).get("lng"),
             "arena": meta.get("home_arena_canonical", "") or meta.get("home_arena_season", ""),
             "arena_season_name": meta.get("home_arena_season", ""),
             "founding_year": founding_year,
@@ -1107,8 +1207,11 @@ def main():
     print(f"  {len(all_games)} unique games scanned, {len(games_by_team)} franchises with game data")
 
     print("Reading playoff state (current postseason)...")
-    playoff_state, latest_playoff_year = read_playoff_state(wb, yby)
+    playoff_state, latest_playoff_year, postseason_complete = read_playoff_state(wb, yby)
     print(f"  Year {latest_playoff_year}: {len(playoff_state)} franchises with state")
+
+    print("Reading MetroAreas.xlsx Team List (authoritative metro + lat/lng)...")
+    metro_team_list = read_metro_team_list()
 
     print("Reading TeamQIDs (Wikipedia/Wikidata cross-links)...")
     external_links = read_team_external_links()
@@ -1117,7 +1220,8 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     franchises = build_franchises(totals, latest_meta, yby, earliest_year,
-                                  external_links, all_star_counts)
+                                  external_links, all_star_counts, arenas=arenas,
+                                  metroareas_team_list=metro_team_list)
     print(f"Built franchises: {len(franchises)}")
     (OUT_DIR / "franchises.json").write_text(json.dumps(franchises, indent=2, ensure_ascii=False))
 
@@ -1158,7 +1262,7 @@ def main():
     (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False))
 
     (OUT_DIR / "playoff-state.json").write_text(
-        json.dumps({"year": latest_playoff_year, "by_franchise": playoff_state}, indent=2, ensure_ascii=False)
+        json.dumps({"year": latest_playoff_year, "is_postseason_complete": postseason_complete, "by_franchise": playoff_state}, indent=2, ensure_ascii=False)
     )
 
     print("\nWrote:")

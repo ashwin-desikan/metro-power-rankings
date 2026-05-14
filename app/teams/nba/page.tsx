@@ -42,6 +42,7 @@ export default function NbaIndexPage() {
   const totalChamps = franchises.reduce((s, f) => s + f.championships, 0);
   const withChamps = franchises.filter(f => f.championships > 0).length;
   const playoffState = getPlayoffState();
+  const isPostseasonOver = playoffState.is_postseason_complete;
   const inPlayoffs = Object.entries(playoffState.by_franchise).filter(
     ([, st]) => st.state.startsWith("active_")
   ).length;
@@ -76,7 +77,7 @@ export default function NbaIndexPage() {
         </div>
       </header>
 
-      <LeagueMap franchises={franchises} playoffState={playoffState.by_franchise} />
+      <LeagueMap franchises={franchises} playoffState={isPostseasonOver ? {} : playoffState.by_franchise} />
 
       <div className="flex flex-wrap gap-4 text-xs text-[var(--text-muted)] mb-6 mt-8">
         <span className="flex items-center gap-2">
@@ -87,7 +88,7 @@ export default function NbaIndexPage() {
           <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.aba.bg }} />
           ABA championships (1968-76)
         </span>
-        {playoffState.year && (
+        {playoffState.year && !isPostseasonOver && (
           <span className="flex items-center gap-2">
             <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: PLAYOFF_STATE_COLORS.active_cf.bg }} />
             {playoffState.year} playoff status
@@ -97,7 +98,7 @@ export default function NbaIndexPage() {
 
       <FranchiseTable
         franchises={franchises}
-        playoffState={playoffState.by_franchise}
+        playoffState={isPostseasonOver ? {} : playoffState.by_franchise}
         logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
         monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
       />

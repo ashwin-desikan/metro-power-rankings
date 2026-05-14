@@ -11,6 +11,7 @@ import {
 } from "@/lib/mlb";
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
+import LeagueMap from "./LeagueMap";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -95,6 +96,8 @@ export default function MlbIndexPage() {
           World Series era (1903-present)
         </span>
       </div>
+
+      <LeagueMap franchises={franchises} />
 
       <FranchiseTable
         franchises={franchises}
