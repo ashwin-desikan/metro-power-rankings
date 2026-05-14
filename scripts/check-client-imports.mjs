@@ -30,12 +30,14 @@ const REPO_ROOT = resolve(__dirname, "..");
 const SERVER_ONLY_MODULES = [
   "@/lib/nfl",
   "@/lib/mlb",
+  "@/lib/nba",
   "@/lib/badges",
   "@/lib/substack",
   "@/lib/data",
   "@/lib/teamLinks",
   "@/lib/standings",
   "@/lib/mlb-standings",
+  "@/lib/nba-standings",
 ];
 
 const SCAN_DIRS = ["app", "components"];

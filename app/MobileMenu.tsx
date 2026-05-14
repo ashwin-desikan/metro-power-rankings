@@ -27,6 +27,7 @@ const ITEMS: Item[] = [
 
   { href: '/teams/nfl', label: 'NFL', hint: 'All 32 active franchises; defunct franchises link from inside', group: 'Sports' },
   { href: '/teams/mlb', label: 'MLB', hint: 'All 30 active franchises; defunct franchises link from inside', group: 'Sports' },
+  { href: '/teams/nba', label: 'NBA', hint: 'All 30 active franchises; ABA cups in slate; live 2026 playoff status', group: 'Sports' },
 
   {
     href: 'https://citizenofnowhere.substack.com',

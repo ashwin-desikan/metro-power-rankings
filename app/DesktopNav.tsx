@@ -142,9 +142,10 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Dropdown id="sports" label="Sports" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/teams/nfl" title="NFL" hint="All 32 active franchises, sortable. Defunct franchises link from inside." />
         <DropdownItem href="/teams/mlb" title="MLB" hint="All 30 active franchises, sortable. Defunct franchises link from inside." />
+        <DropdownItem href="/teams/nba" title="NBA" hint="All 30 active franchises. ABA cups in slate; live 2026 playoff status." />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <div className="px-4 py-3 text-xs" style={{ color: "var(--text-dim)" }}>
-          NBA and NHL pages coming next.
+          NHL coming next.
         </div>
       </Dropdown>
 

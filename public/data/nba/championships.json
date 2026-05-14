@@ -1,0 +1,672 @@
+{
+  "Thunder": [
+    {
+      "year": 1979,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Seattle",
+      "team": "Supersonics"
+    },
+    {
+      "year": 2025,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Oklahoma City",
+      "team": "Thunder"
+    }
+  ],
+  "Pistons": [
+    {
+      "year": 1989,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Detroit",
+      "team": "Pistons"
+    },
+    {
+      "year": 1990,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Detroit",
+      "team": "Pistons"
+    },
+    {
+      "year": 2004,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Detroit",
+      "team": "Pistons"
+    }
+  ],
+  "Spurs": [
+    {
+      "year": 1999,
+      "era": "nba",
+      "league": "NBA",
+      "city": "San Antonio",
+      "team": "Spurs"
+    },
+    {
+      "year": 2003,
+      "era": "nba",
+      "league": "NBA",
+      "city": "San Antonio",
+      "team": "Spurs"
+    },
+    {
+      "year": 2005,
+      "era": "nba",
+      "league": "NBA",
+      "city": "San Antonio",
+      "team": "Spurs"
+    },
+    {
+      "year": 2007,
+      "era": "nba",
+      "league": "NBA",
+      "city": "San Antonio",
+      "team": "Spurs"
+    },
+    {
+      "year": 2014,
+      "era": "nba",
+      "league": "NBA",
+      "city": "San Antonio",
+      "team": "Spurs"
+    }
+  ],
+  "Celtics": [
+    {
+      "year": 1957,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1959,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1960,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1961,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1962,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1963,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1964,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1965,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1966,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1968,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1969,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1974,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1976,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1981,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1984,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 1986,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 2008,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    },
+    {
+      "year": 2024,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Boston",
+      "team": "Celtics"
+    }
+  ],
+  "Nuggets": [
+    {
+      "year": 2023,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Denver",
+      "team": "Nuggets"
+    }
+  ],
+  "Knicks": [
+    {
+      "year": 1970,
+      "era": "nba",
+      "league": "NBA",
+      "city": "New York",
+      "team": "Knicks"
+    },
+    {
+      "year": 1973,
+      "era": "nba",
+      "league": "NBA",
+      "city": "New York",
+      "team": "Knicks"
+    }
+  ],
+  "Rockets": [
+    {
+      "year": 1994,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Houston",
+      "team": "Rockets"
+    },
+    {
+      "year": 1995,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Houston",
+      "team": "Rockets"
+    }
+  ],
+  "Lakers": [
+    {
+      "year": 1949,
+      "era": "baa",
+      "league": "BAA",
+      "city": "Minneapolis",
+      "team": "Lakers"
+    },
+    {
+      "year": 1950,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Minneapolis",
+      "team": "Lakers"
+    },
+    {
+      "year": 1952,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Minneapolis",
+      "team": "Lakers"
+    },
+    {
+      "year": 1953,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Minneapolis",
+      "team": "Lakers"
+    },
+    {
+      "year": 1954,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Minneapolis",
+      "team": "Lakers"
+    },
+    {
+      "year": 1972,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 1980,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 1982,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 1985,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 1987,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 1988,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 2000,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 2001,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 2002,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 2009,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 2010,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    },
+    {
+      "year": 2020,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Los Angeles",
+      "team": "Lakers"
+    }
+  ],
+  "Cavaliers": [
+    {
+      "year": 2016,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Cleveland",
+      "team": "Cavaliers"
+    }
+  ],
+  "Raptors": [
+    {
+      "year": 2019,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Toronto",
+      "team": "Raptors"
+    }
+  ],
+  "Hawks": [
+    {
+      "year": 1958,
+      "era": "nba",
+      "league": "NBA",
+      "city": "St. Louis",
+      "team": "Hawks"
+    }
+  ],
+  "Heat": [
+    {
+      "year": 2006,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Miami",
+      "team": "Heat"
+    },
+    {
+      "year": 2012,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Miami",
+      "team": "Heat"
+    },
+    {
+      "year": 2013,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Miami",
+      "team": "Heat"
+    }
+  ],
+  "76ers": [
+    {
+      "year": 1955,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Syracuse",
+      "team": "Nationals"
+    },
+    {
+      "year": 1967,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Philadelphia",
+      "team": "76ers"
+    },
+    {
+      "year": 1983,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Philadelphia",
+      "team": "76ers"
+    }
+  ],
+  "Warriors": [
+    {
+      "year": 1947,
+      "era": "baa",
+      "league": "BAA",
+      "city": "Philadelphia",
+      "team": "Warriors"
+    },
+    {
+      "year": 1956,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Philadelphia",
+      "team": "Warriors"
+    },
+    {
+      "year": 1975,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Golden State",
+      "team": "Warriors"
+    },
+    {
+      "year": 2015,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Golden State",
+      "team": "Warriors"
+    },
+    {
+      "year": 2017,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Golden State",
+      "team": "Warriors"
+    },
+    {
+      "year": 2018,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Golden State",
+      "team": "Warriors"
+    },
+    {
+      "year": 2022,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Golden State",
+      "team": "Warriors"
+    }
+  ],
+  "Trail Blazers": [
+    {
+      "year": 1977,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Portland",
+      "team": "Trail Blazers"
+    }
+  ],
+  "Bucks": [
+    {
+      "year": 1971,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Milwaukee",
+      "team": "Bucks"
+    },
+    {
+      "year": 2021,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Milwaukee",
+      "team": "Bucks"
+    }
+  ],
+  "Bulls": [
+    {
+      "year": 1991,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Chicago",
+      "team": "Bulls"
+    },
+    {
+      "year": 1992,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Chicago",
+      "team": "Bulls"
+    },
+    {
+      "year": 1993,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Chicago",
+      "team": "Bulls"
+    },
+    {
+      "year": 1996,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Chicago",
+      "team": "Bulls"
+    },
+    {
+      "year": 1997,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Chicago",
+      "team": "Bulls"
+    },
+    {
+      "year": 1998,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Chicago",
+      "team": "Bulls"
+    }
+  ],
+  "Mavericks": [
+    {
+      "year": 2011,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Dallas",
+      "team": "Mavericks"
+    }
+  ],
+  "Pacers": [
+    {
+      "year": 1970,
+      "era": "aba",
+      "league": "ABA",
+      "city": "Indiana",
+      "team": "Pacers"
+    },
+    {
+      "year": 1972,
+      "era": "aba",
+      "league": "ABA",
+      "city": "Indiana",
+      "team": "Pacers"
+    },
+    {
+      "year": 1973,
+      "era": "aba",
+      "league": "ABA",
+      "city": "Indiana",
+      "team": "Pacers"
+    }
+  ],
+  "Kings": [
+    {
+      "year": 1951,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Rochester",
+      "team": "Royals"
+    }
+  ],
+  "Nets": [
+    {
+      "year": 1974,
+      "era": "aba",
+      "league": "ABA",
+      "city": "New York",
+      "team": "Nets"
+    },
+    {
+      "year": 1976,
+      "era": "aba",
+      "league": "ABA",
+      "city": "New York",
+      "team": "Nets"
+    }
+  ],
+  "Wizards": [
+    {
+      "year": 1978,
+      "era": "nba",
+      "league": "NBA",
+      "city": "Washington",
+      "team": "Bullets"
+    }
+  ],
+  "Colonels (ABA)": [
+    {
+      "year": 1975,
+      "era": "aba",
+      "league": "ABA",
+      "city": "Kentucky",
+      "team": "Colonels"
+    }
+  ],
+  "Stars": [
+    {
+      "year": 1971,
+      "era": "aba",
+      "league": "ABA",
+      "city": "Utah",
+      "team": "Stars"
+    }
+  ],
+  "Squires": [
+    {
+      "year": 1969,
+      "era": "aba",
+      "league": "ABA",
+      "city": "Oakland",
+      "team": "Oaks"
+    }
+  ],
+  "Condors": [
+    {
+      "year": 1968,
+      "era": "aba",
+      "league": "ABA",
+      "city": "Pittsburgh",
+      "team": "Pipers"
+    }
+  ],
+  "Bullets": [
+    {
+      "year": 1948,
+      "era": "baa",
+      "league": "BAA",
+      "city": "Baltimore",
+      "team": "Bullets"
+    }
+  ]
+}

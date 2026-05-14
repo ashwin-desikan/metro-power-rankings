@@ -1,0 +1,4956 @@
+{
+  "Capitols": [
+    {
+      "year": 1949,
+      "player": "Bob Feerick",
+      "tier": "2nd"
+    },
+    {
+      "year": 1949,
+      "player": "Bones McKinney",
+      "tier": "2nd"
+    },
+    {
+      "year": 1948,
+      "player": "Bob Feerick",
+      "tier": "1st"
+    },
+    {
+      "year": 1948,
+      "player": "Fred Scolari",
+      "tier": "2nd"
+    },
+    {
+      "year": 1947,
+      "player": "Bob Feerick",
+      "tier": "1st"
+    },
+    {
+      "year": 1947,
+      "player": "Bones McKinney",
+      "tier": "1st"
+    },
+    {
+      "year": 1947,
+      "player": "Fred Scolari",
+      "tier": "2nd"
+    }
+  ],
+  "Warriors": [
+    {
+      "year": 2025,
+      "player": "Stephen Curry",
+      "tier": "2nd"
+    },
+    {
+      "year": 2024,
+      "player": "Stephen Curry",
+      "tier": "3rd"
+    },
+    {
+      "year": 2023,
+      "player": "Stephen Curry",
+      "tier": "2nd"
+    },
+    {
+      "year": 2022,
+      "player": "Stephen Curry",
+      "tier": "2nd"
+    },
+    {
+      "year": 2021,
+      "player": "Stephen Curry",
+      "tier": "1st"
+    },
+    {
+      "year": 2019,
+      "player": "Stephen Curry",
+      "tier": "1st"
+    },
+    {
+      "year": 2019,
+      "player": "Kevin Durant",
+      "tier": "2nd"
+    },
+    {
+      "year": 2018,
+      "player": "Kevin Durant",
+      "tier": "1st"
+    },
+    {
+      "year": 2018,
+      "player": "Stephen Curry",
+      "tier": "3rd"
+    },
+    {
+      "year": 2017,
+      "player": "Kevin Durant",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "Stephen Curry",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "Draymond Green",
+      "tier": "3rd"
+    },
+    {
+      "year": 2016,
+      "player": "Stephen Curry",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "Draymond Green",
+      "tier": "2nd"
+    },
+    {
+      "year": 2016,
+      "player": "Klay Thompson",
+      "tier": "3rd"
+    },
+    {
+      "year": 2015,
+      "player": "Stephen Curry",
+      "tier": "1st"
+    },
+    {
+      "year": 2015,
+      "player": "Klay Thompson",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "Stephen Curry",
+      "tier": "2nd"
+    },
+    {
+      "year": 2013,
+      "player": "David Lee",
+      "tier": "3rd"
+    },
+    {
+      "year": 1994,
+      "player": "Latrell Sprewell",
+      "tier": "1st"
+    },
+    {
+      "year": 1993,
+      "player": "Tim Hardaway",
+      "tier": "3rd"
+    },
+    {
+      "year": 1992,
+      "player": "Chris Mullin",
+      "tier": "1st"
+    },
+    {
+      "year": 1992,
+      "player": "Tim Hardaway",
+      "tier": "2nd"
+    },
+    {
+      "year": 1991,
+      "player": "Chris Mullin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1990,
+      "player": "Chris Mullin",
+      "tier": "3rd"
+    },
+    {
+      "year": 1989,
+      "player": "Chris Mullin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1982,
+      "player": "Bernard King",
+      "tier": "2nd"
+    },
+    {
+      "year": 1976,
+      "player": "Rick Barry",
+      "tier": "1st"
+    },
+    {
+      "year": 1976,
+      "player": "Phil Smith",
+      "tier": "2nd"
+    },
+    {
+      "year": 1975,
+      "player": "Rick Barry",
+      "tier": "1st"
+    },
+    {
+      "year": 1974,
+      "player": "Rick Barry",
+      "tier": "1st"
+    },
+    {
+      "year": 1973,
+      "player": "Rick Barry",
+      "tier": "2nd"
+    },
+    {
+      "year": 1967,
+      "player": "Rick Barry",
+      "tier": "1st"
+    },
+    {
+      "year": 1966,
+      "player": "Rick Barry",
+      "tier": "1st"
+    },
+    {
+      "year": 1964,
+      "player": "Wilt Chamberlain",
+      "tier": "1st"
+    },
+    {
+      "year": 1963,
+      "player": "Wilt Chamberlain",
+      "tier": "2nd"
+    },
+    {
+      "year": 1962,
+      "player": "Wilt Chamberlain",
+      "tier": "1st"
+    },
+    {
+      "year": 1961,
+      "player": "Wilt Chamberlain",
+      "tier": "1st"
+    },
+    {
+      "year": 1960,
+      "player": "Wilt Chamberlain",
+      "tier": "1st"
+    },
+    {
+      "year": 1959,
+      "player": "Paul Arizin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1958,
+      "player": "Tom Gola",
+      "tier": "2nd"
+    },
+    {
+      "year": 1957,
+      "player": "Paul Arizin",
+      "tier": "1st"
+    },
+    {
+      "year": 1957,
+      "player": "Neil Johnston",
+      "tier": "2nd"
+    },
+    {
+      "year": 1956,
+      "player": "Neil Johnston",
+      "tier": "1st"
+    },
+    {
+      "year": 1956,
+      "player": "Paul Arizin",
+      "tier": "1st"
+    },
+    {
+      "year": 1956,
+      "player": "Jack George",
+      "tier": "2nd"
+    },
+    {
+      "year": 1955,
+      "player": "Neil Johnston",
+      "tier": "1st"
+    },
+    {
+      "year": 1954,
+      "player": "Neil Johnston",
+      "tier": "1st"
+    },
+    {
+      "year": 1953,
+      "player": "Neil Johnston",
+      "tier": "1st"
+    },
+    {
+      "year": 1953,
+      "player": "Andy Phillip",
+      "tier": "2nd"
+    },
+    {
+      "year": 1952,
+      "player": "Paul Arizin",
+      "tier": "1st"
+    },
+    {
+      "year": 1952,
+      "player": "Andy Phillip",
+      "tier": "2nd"
+    },
+    {
+      "year": 1951,
+      "player": "Joe Fulks",
+      "tier": "2nd"
+    },
+    {
+      "year": 1949,
+      "player": "Joe Fulks",
+      "tier": "1st"
+    },
+    {
+      "year": 1948,
+      "player": "Howie Dallmar",
+      "tier": "1st"
+    },
+    {
+      "year": 1948,
+      "player": "Joe Fulks",
+      "tier": "1st"
+    },
+    {
+      "year": 1947,
+      "player": "Joe Fulks",
+      "tier": "1st"
+    }
+  ],
+  "Stags": [
+    {
+      "year": 1950,
+      "player": "Max Zaslofsky",
+      "tier": "1st"
+    },
+    {
+      "year": 1949,
+      "player": "Max Zaslofsky",
+      "tier": "1st"
+    },
+    {
+      "year": 1948,
+      "player": "Max Zaslofsky",
+      "tier": "1st"
+    },
+    {
+      "year": 1948,
+      "player": "Stan Miasek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1947,
+      "player": "Max Zaslofsky",
+      "tier": "1st"
+    },
+    {
+      "year": 1947,
+      "player": "Chuck Halbert",
+      "tier": "2nd"
+    }
+  ],
+  "Pistons": [
+    {
+      "year": 2025,
+      "player": "Cade Cunningham",
+      "tier": "3rd"
+    },
+    {
+      "year": 2019,
+      "player": "Blake Griffin",
+      "tier": "3rd"
+    },
+    {
+      "year": 2016,
+      "player": "Andre Drummond",
+      "tier": "3rd"
+    },
+    {
+      "year": 2007,
+      "player": "Chauncey Billups",
+      "tier": "3rd"
+    },
+    {
+      "year": 2006,
+      "player": "Ben Wallace",
+      "tier": "2nd"
+    },
+    {
+      "year": 2006,
+      "player": "Chauncey Billups",
+      "tier": "2nd"
+    },
+    {
+      "year": 2005,
+      "player": "Ben Wallace",
+      "tier": "3rd"
+    },
+    {
+      "year": 2004,
+      "player": "Ben Wallace",
+      "tier": "2nd"
+    },
+    {
+      "year": 2003,
+      "player": "Ben Wallace",
+      "tier": "2nd"
+    },
+    {
+      "year": 2002,
+      "player": "Ben Wallace",
+      "tier": "3rd"
+    },
+    {
+      "year": 2000,
+      "player": "Grant Hill",
+      "tier": "2nd"
+    },
+    {
+      "year": 1999,
+      "player": "Grant Hill",
+      "tier": "2nd"
+    },
+    {
+      "year": 1998,
+      "player": "Grant Hill",
+      "tier": "2nd"
+    },
+    {
+      "year": 1997,
+      "player": "Grant Hill",
+      "tier": "1st"
+    },
+    {
+      "year": 1996,
+      "player": "Grant Hill",
+      "tier": "2nd"
+    },
+    {
+      "year": 1993,
+      "player": "Joe Dumars",
+      "tier": "2nd"
+    },
+    {
+      "year": 1992,
+      "player": "Dennis Rodman",
+      "tier": "3rd"
+    },
+    {
+      "year": 1991,
+      "player": "Joe Dumars",
+      "tier": "3rd"
+    },
+    {
+      "year": 1990,
+      "player": "Joe Dumars",
+      "tier": "3rd"
+    },
+    {
+      "year": 1987,
+      "player": "Isiah Thomas",
+      "tier": "2nd"
+    },
+    {
+      "year": 1986,
+      "player": "Isiah Thomas",
+      "tier": "1st"
+    },
+    {
+      "year": 1985,
+      "player": "Isiah Thomas",
+      "tier": "1st"
+    },
+    {
+      "year": 1984,
+      "player": "Isiah Thomas",
+      "tier": "1st"
+    },
+    {
+      "year": 1983,
+      "player": "Isiah Thomas",
+      "tier": "2nd"
+    },
+    {
+      "year": 1974,
+      "player": "Dave Bing",
+      "tier": "2nd"
+    },
+    {
+      "year": 1971,
+      "player": "Dave Bing",
+      "tier": "1st"
+    },
+    {
+      "year": 1968,
+      "player": "Dave Bing",
+      "tier": "1st"
+    },
+    {
+      "year": 1963,
+      "player": "Bailey Howell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1961,
+      "player": "Gene Shue",
+      "tier": "2nd"
+    },
+    {
+      "year": 1960,
+      "player": "Gene Shue",
+      "tier": "1st"
+    },
+    {
+      "year": 1958,
+      "player": "George Yardley",
+      "tier": "1st"
+    },
+    {
+      "year": 1957,
+      "player": "George Yardley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1955,
+      "player": "Larry Foust",
+      "tier": "1st"
+    },
+    {
+      "year": 1952,
+      "player": "Larry Foust",
+      "tier": "2nd"
+    },
+    {
+      "year": 1950,
+      "player": "Fred Schaus",
+      "tier": "2nd"
+    },
+    {
+      "year": 1947,
+      "player": "Stan Miasek",
+      "tier": "1st"
+    }
+  ],
+  "Steamrollers": [
+    {
+      "year": 1949,
+      "player": "Ken Sailors",
+      "tier": "2nd"
+    },
+    {
+      "year": 1947,
+      "player": "Ernie Calverley",
+      "tier": "2nd"
+    }
+  ],
+  "Rebels": [
+    {
+      "year": 1947,
+      "player": "Frank Baumholtz",
+      "tier": "2nd"
+    }
+  ],
+  "Hawks": [
+    {
+      "year": 2022,
+      "player": "Trae Young",
+      "tier": "3rd"
+    },
+    {
+      "year": 2011,
+      "player": "Al Horford",
+      "tier": "3rd"
+    },
+    {
+      "year": 2010,
+      "player": "Joe Johnson",
+      "tier": "3rd"
+    },
+    {
+      "year": 1998,
+      "player": "Dikembe Mutombo",
+      "tier": "3rd"
+    },
+    {
+      "year": 1993,
+      "player": "Dominique Wilkins",
+      "tier": "2nd"
+    },
+    {
+      "year": 1992,
+      "player": "Kevin Willis",
+      "tier": "3rd"
+    },
+    {
+      "year": 1991,
+      "player": "Dominique Wilkins",
+      "tier": "2nd"
+    },
+    {
+      "year": 1989,
+      "player": "Dominique Wilkins",
+      "tier": "3rd"
+    },
+    {
+      "year": 1988,
+      "player": "Dominique Wilkins",
+      "tier": "2nd"
+    },
+    {
+      "year": 1987,
+      "player": "Dominique Wilkins",
+      "tier": "2nd"
+    },
+    {
+      "year": 1986,
+      "player": "Dominique Wilkins",
+      "tier": "1st"
+    },
+    {
+      "year": 1980,
+      "player": "Dan Roundfield",
+      "tier": "2nd"
+    },
+    {
+      "year": 1973,
+      "player": "Pete Maravich",
+      "tier": "2nd"
+    },
+    {
+      "year": 1970,
+      "player": "Lou Hudson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1965,
+      "player": "Bob Pettit",
+      "tier": "2nd"
+    },
+    {
+      "year": 1964,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1963,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1962,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1961,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1960,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1959,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1959,
+      "player": "Cliff Hagan",
+      "tier": "2nd"
+    },
+    {
+      "year": 1959,
+      "player": "Slater Martin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1958,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1958,
+      "player": "Cliff Hagan",
+      "tier": "2nd"
+    },
+    {
+      "year": 1958,
+      "player": "Slater Martin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1957,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1957,
+      "player": "Slater Martin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1956,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    },
+    {
+      "year": 1951,
+      "player": "Frank Brian",
+      "tier": "2nd"
+    },
+    {
+      "year": 1949,
+      "player": "John Logan",
+      "tier": "2nd"
+    },
+    {
+      "year": 1948,
+      "player": "John Logan",
+      "tier": "2nd"
+    },
+    {
+      "year": 1947,
+      "player": "John Logan",
+      "tier": "2nd"
+    }
+  ],
+  "Celtics": [
+    {
+      "year": 2025,
+      "player": "Jayson Tatum",
+      "tier": "1st"
+    },
+    {
+      "year": 2024,
+      "player": "Jayson Tatum",
+      "tier": "1st"
+    },
+    {
+      "year": 2023,
+      "player": "Jayson Tatum",
+      "tier": "1st"
+    },
+    {
+      "year": 2023,
+      "player": "Jaylen Brown",
+      "tier": "2nd"
+    },
+    {
+      "year": 2022,
+      "player": "Jayson Tatum",
+      "tier": "1st"
+    },
+    {
+      "year": 2020,
+      "player": "Jayson Tatum",
+      "tier": "3rd"
+    },
+    {
+      "year": 2019,
+      "player": "Kyrie Irving",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "Isaiah Thomas",
+      "tier": "2nd"
+    },
+    {
+      "year": 2012,
+      "player": "Rajon Rondo",
+      "tier": "3rd"
+    },
+    {
+      "year": 2009,
+      "player": "Paul Pierce",
+      "tier": "2nd"
+    },
+    {
+      "year": 2008,
+      "player": "Kevin Garnett",
+      "tier": "1st"
+    },
+    {
+      "year": 2008,
+      "player": "Paul Pierce",
+      "tier": "3rd"
+    },
+    {
+      "year": 2003,
+      "player": "Paul Pierce",
+      "tier": "3rd"
+    },
+    {
+      "year": 2002,
+      "player": "Paul Pierce",
+      "tier": "3rd"
+    },
+    {
+      "year": 1990,
+      "player": "Larry Bird",
+      "tier": "2nd"
+    },
+    {
+      "year": 1989,
+      "player": "Robert Parish",
+      "tier": "3rd"
+    },
+    {
+      "year": 1988,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1987,
+      "player": "Kevin McHale",
+      "tier": "1st"
+    },
+    {
+      "year": 1987,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1986,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1985,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1984,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1983,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1982,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1982,
+      "player": "Robert Parish",
+      "tier": "2nd"
+    },
+    {
+      "year": 1981,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1981,
+      "player": "Nate Archibald",
+      "tier": "2nd"
+    },
+    {
+      "year": 1980,
+      "player": "Larry Bird",
+      "tier": "1st"
+    },
+    {
+      "year": 1977,
+      "player": "Jo Jo White",
+      "tier": "2nd"
+    },
+    {
+      "year": 1976,
+      "player": "Dave Cowens",
+      "tier": "2nd"
+    },
+    {
+      "year": 1976,
+      "player": "John Havlicek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1975,
+      "player": "Dave Cowens",
+      "tier": "2nd"
+    },
+    {
+      "year": 1975,
+      "player": "Jo Jo White",
+      "tier": "2nd"
+    },
+    {
+      "year": 1975,
+      "player": "John Havlicek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1974,
+      "player": "John Havlicek",
+      "tier": "1st"
+    },
+    {
+      "year": 1973,
+      "player": "John Havlicek",
+      "tier": "1st"
+    },
+    {
+      "year": 1973,
+      "player": "Dave Cowens",
+      "tier": "2nd"
+    },
+    {
+      "year": 1972,
+      "player": "John Havlicek",
+      "tier": "1st"
+    },
+    {
+      "year": 1971,
+      "player": "John Havlicek",
+      "tier": "1st"
+    },
+    {
+      "year": 1970,
+      "player": "John Havlicek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1969,
+      "player": "John Havlicek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1968,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1968,
+      "player": "John Havlicek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1967,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1967,
+      "player": "Sam Jones",
+      "tier": "2nd"
+    },
+    {
+      "year": 1966,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1966,
+      "player": "John Havlicek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1966,
+      "player": "Sam Jones",
+      "tier": "2nd"
+    },
+    {
+      "year": 1965,
+      "player": "Bill Russell",
+      "tier": "1st"
+    },
+    {
+      "year": 1965,
+      "player": "Sam Jones",
+      "tier": "2nd"
+    },
+    {
+      "year": 1964,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1964,
+      "player": "John Havlicek",
+      "tier": "2nd"
+    },
+    {
+      "year": 1964,
+      "player": "Tom Heinsohn",
+      "tier": "2nd"
+    },
+    {
+      "year": 1963,
+      "player": "Bill Russell",
+      "tier": "1st"
+    },
+    {
+      "year": 1963,
+      "player": "Bob Cousy",
+      "tier": "2nd"
+    },
+    {
+      "year": 1963,
+      "player": "Tom Heinsohn",
+      "tier": "2nd"
+    },
+    {
+      "year": 1962,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1962,
+      "player": "Bob Cousy",
+      "tier": "2nd"
+    },
+    {
+      "year": 1962,
+      "player": "Tom Heinsohn",
+      "tier": "2nd"
+    },
+    {
+      "year": 1961,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1961,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1961,
+      "player": "Tom Heinsohn",
+      "tier": "2nd"
+    },
+    {
+      "year": 1960,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1960,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1960,
+      "player": "Bill Sharman",
+      "tier": "2nd"
+    },
+    {
+      "year": 1959,
+      "player": "Bill Russell",
+      "tier": "1st"
+    },
+    {
+      "year": 1959,
+      "player": "Bill Sharman",
+      "tier": "1st"
+    },
+    {
+      "year": 1959,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1958,
+      "player": "Bill Sharman",
+      "tier": "1st"
+    },
+    {
+      "year": 1958,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1958,
+      "player": "Bill Russell",
+      "tier": "2nd"
+    },
+    {
+      "year": 1957,
+      "player": "Bill Sharman",
+      "tier": "1st"
+    },
+    {
+      "year": 1957,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1956,
+      "player": "Bill Sharman",
+      "tier": "1st"
+    },
+    {
+      "year": 1956,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1955,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1955,
+      "player": "Bill Sharman",
+      "tier": "2nd"
+    },
+    {
+      "year": 1954,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1954,
+      "player": "Ed Macauley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1953,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1953,
+      "player": "Ed Macauley",
+      "tier": "1st"
+    },
+    {
+      "year": 1953,
+      "player": "Bill Sharman",
+      "tier": "2nd"
+    },
+    {
+      "year": 1952,
+      "player": "Bob Cousy",
+      "tier": "1st"
+    },
+    {
+      "year": 1952,
+      "player": "Ed Macauley",
+      "tier": "1st"
+    },
+    {
+      "year": 1951,
+      "player": "Ed Macauley",
+      "tier": "1st"
+    },
+    {
+      "year": 1948,
+      "player": "Ed Sadowski",
+      "tier": "1st"
+    }
+  ],
+  "Wizards": [
+    {
+      "year": 2021,
+      "player": "Bradley Beal",
+      "tier": "3rd"
+    },
+    {
+      "year": 2017,
+      "player": "John Wall",
+      "tier": "3rd"
+    },
+    {
+      "year": 2007,
+      "player": "Gilbert Arenas",
+      "tier": "2nd"
+    },
+    {
+      "year": 2006,
+      "player": "Gilbert Arenas",
+      "tier": "3rd"
+    },
+    {
+      "year": 2005,
+      "player": "Gilbert Arenas",
+      "tier": "3rd"
+    },
+    {
+      "year": 1998,
+      "player": "Rod Strickland",
+      "tier": "2nd"
+    },
+    {
+      "year": 1996,
+      "player": "Juwan Howard",
+      "tier": "3rd"
+    },
+    {
+      "year": 1991,
+      "player": "Bernard King",
+      "tier": "3rd"
+    },
+    {
+      "year": 1987,
+      "player": "Moses Malone",
+      "tier": "2nd"
+    },
+    {
+      "year": 1979,
+      "player": "Elvin Hayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1979,
+      "player": "Bobby Dandridge",
+      "tier": "2nd"
+    },
+    {
+      "year": 1977,
+      "player": "Elvin Hayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1976,
+      "player": "Elvin Hayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1975,
+      "player": "Elvin Hayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1975,
+      "player": "Phil Chenier",
+      "tier": "2nd"
+    },
+    {
+      "year": 1974,
+      "player": "Elvin Hayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1973,
+      "player": "Elvin Hayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1972,
+      "player": "Archie Clark",
+      "tier": "2nd"
+    },
+    {
+      "year": 1971,
+      "player": "Gus Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1970,
+      "player": "Gus Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1969,
+      "player": "Earl Monroe",
+      "tier": "1st"
+    },
+    {
+      "year": 1969,
+      "player": "Wes Unseld",
+      "tier": "1st"
+    },
+    {
+      "year": 1966,
+      "player": "Gus Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1965,
+      "player": "Gus Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1948,
+      "player": "Buddy Jeannette",
+      "tier": "2nd"
+    }
+  ],
+  "Knicks": [
+    {
+      "year": 2025,
+      "player": "Jalen Brunson",
+      "tier": "2nd"
+    },
+    {
+      "year": 2025,
+      "player": "Karl-Anthony Towns",
+      "tier": "3rd"
+    },
+    {
+      "year": 2024,
+      "player": "Jalen Brunson",
+      "tier": "2nd"
+    },
+    {
+      "year": 2023,
+      "player": "Julius Randle",
+      "tier": "3rd"
+    },
+    {
+      "year": 2021,
+      "player": "Julius Randle",
+      "tier": "2nd"
+    },
+    {
+      "year": 2013,
+      "player": "Carmelo Anthony",
+      "tier": "2nd"
+    },
+    {
+      "year": 2012,
+      "player": "Carmelo Anthony",
+      "tier": "3rd"
+    },
+    {
+      "year": 2012,
+      "player": "Tyson Chandler",
+      "tier": "3rd"
+    },
+    {
+      "year": 2011,
+      "player": "Amar'e Stoudemire",
+      "tier": "2nd"
+    },
+    {
+      "year": 1997,
+      "player": "Patrick Ewing",
+      "tier": "2nd"
+    },
+    {
+      "year": 1993,
+      "player": "Patrick Ewing",
+      "tier": "2nd"
+    },
+    {
+      "year": 1992,
+      "player": "Patrick Ewing",
+      "tier": "2nd"
+    },
+    {
+      "year": 1991,
+      "player": "Patrick Ewing",
+      "tier": "2nd"
+    },
+    {
+      "year": 1990,
+      "player": "Patrick Ewing",
+      "tier": "1st"
+    },
+    {
+      "year": 1989,
+      "player": "Patrick Ewing",
+      "tier": "2nd"
+    },
+    {
+      "year": 1988,
+      "player": "Patrick Ewing",
+      "tier": "2nd"
+    },
+    {
+      "year": 1985,
+      "player": "Bernard King",
+      "tier": "1st"
+    },
+    {
+      "year": 1984,
+      "player": "Bernard King",
+      "tier": "1st"
+    },
+    {
+      "year": 1975,
+      "player": "Walt Frazier",
+      "tier": "1st"
+    },
+    {
+      "year": 1974,
+      "player": "Walt Frazier",
+      "tier": "1st"
+    },
+    {
+      "year": 1973,
+      "player": "Walt Frazier",
+      "tier": "2nd"
+    },
+    {
+      "year": 1972,
+      "player": "Walt Frazier",
+      "tier": "1st"
+    },
+    {
+      "year": 1971,
+      "player": "Walt Frazier",
+      "tier": "2nd"
+    },
+    {
+      "year": 1971,
+      "player": "Willis Reed",
+      "tier": "2nd"
+    },
+    {
+      "year": 1970,
+      "player": "Walt Frazier",
+      "tier": "1st"
+    },
+    {
+      "year": 1970,
+      "player": "Willis Reed",
+      "tier": "1st"
+    },
+    {
+      "year": 1969,
+      "player": "Dave DeBusschere",
+      "tier": "2nd"
+    },
+    {
+      "year": 1969,
+      "player": "Willis Reed",
+      "tier": "2nd"
+    },
+    {
+      "year": 1968,
+      "player": "Willis Reed",
+      "tier": "2nd"
+    },
+    {
+      "year": 1967,
+      "player": "Willis Reed",
+      "tier": "2nd"
+    },
+    {
+      "year": 1962,
+      "player": "Richie Guerin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1960,
+      "player": "Richie Guerin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1959,
+      "player": "Richie Guerin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1955,
+      "player": "Harry Gallatin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1954,
+      "player": "Harry Gallatin",
+      "tier": "1st"
+    },
+    {
+      "year": 1954,
+      "player": "Carl Braun",
+      "tier": "2nd"
+    },
+    {
+      "year": 1951,
+      "player": "Dick McGuire",
+      "tier": "2nd"
+    },
+    {
+      "year": 1948,
+      "player": "Carl Braun",
+      "tier": "2nd"
+    }
+  ],
+  "Kings": [
+    {
+      "year": 2024,
+      "player": "Domantas Sabonis",
+      "tier": "3rd"
+    },
+    {
+      "year": 2023,
+      "player": "De'Aaron Fox",
+      "tier": "3rd"
+    },
+    {
+      "year": 2023,
+      "player": "Domantas Sabonis",
+      "tier": "3rd"
+    },
+    {
+      "year": 2016,
+      "player": "DeMarcus Cousins",
+      "tier": "2nd"
+    },
+    {
+      "year": 2015,
+      "player": "DeMarcus Cousins",
+      "tier": "2nd"
+    },
+    {
+      "year": 2004,
+      "player": "Peja Stojakovic",
+      "tier": "2nd"
+    },
+    {
+      "year": 2003,
+      "player": "Chris Webber",
+      "tier": "2nd"
+    },
+    {
+      "year": 2002,
+      "player": "Chris Webber",
+      "tier": "2nd"
+    },
+    {
+      "year": 2001,
+      "player": "Chris Webber",
+      "tier": "1st"
+    },
+    {
+      "year": 2000,
+      "player": "Chris Webber",
+      "tier": "3rd"
+    },
+    {
+      "year": 1999,
+      "player": "Chris Webber",
+      "tier": "2nd"
+    },
+    {
+      "year": 1998,
+      "player": "Mitch Richmond",
+      "tier": "3rd"
+    },
+    {
+      "year": 1997,
+      "player": "Mitch Richmond",
+      "tier": "2nd"
+    },
+    {
+      "year": 1996,
+      "player": "Mitch Richmond",
+      "tier": "3rd"
+    },
+    {
+      "year": 1995,
+      "player": "Mitch Richmond",
+      "tier": "2nd"
+    },
+    {
+      "year": 1994,
+      "player": "Mitch Richmond",
+      "tier": "2nd"
+    },
+    {
+      "year": 1981,
+      "player": "Otis Birdsong",
+      "tier": "2nd"
+    },
+    {
+      "year": 1979,
+      "player": "Phil Ford",
+      "tier": "2nd"
+    },
+    {
+      "year": 1976,
+      "player": "Nate Archibald",
+      "tier": "1st"
+    },
+    {
+      "year": 1975,
+      "player": "Nate Archibald",
+      "tier": "1st"
+    },
+    {
+      "year": 1973,
+      "player": "Nate Archibald",
+      "tier": "1st"
+    },
+    {
+      "year": 1972,
+      "player": "Nate Archibald",
+      "tier": "2nd"
+    },
+    {
+      "year": 1970,
+      "player": "Oscar Robertson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1969,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1968,
+      "player": "Jerry Lucas",
+      "tier": "1st"
+    },
+    {
+      "year": 1968,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1967,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1967,
+      "player": "Jerry Lucas",
+      "tier": "2nd"
+    },
+    {
+      "year": 1966,
+      "player": "Jerry Lucas",
+      "tier": "1st"
+    },
+    {
+      "year": 1966,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1965,
+      "player": "Jerry Lucas",
+      "tier": "1st"
+    },
+    {
+      "year": 1965,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1964,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1964,
+      "player": "Jerry Lucas",
+      "tier": "2nd"
+    },
+    {
+      "year": 1963,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1962,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1962,
+      "player": "Jack Twyman",
+      "tier": "2nd"
+    },
+    {
+      "year": 1961,
+      "player": "Oscar Robertson",
+      "tier": "1st"
+    },
+    {
+      "year": 1960,
+      "player": "Jack Twyman",
+      "tier": "2nd"
+    },
+    {
+      "year": 1958,
+      "player": "Maurice Stokes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1957,
+      "player": "Maurice Stokes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1956,
+      "player": "Maurice Stokes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1954,
+      "player": "Bob Wanzer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1953,
+      "player": "Bob Davies",
+      "tier": "2nd"
+    },
+    {
+      "year": 1953,
+      "player": "Bob Wanzer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1952,
+      "player": "Bob Davies",
+      "tier": "1st"
+    },
+    {
+      "year": 1952,
+      "player": "Bob Wanzer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1951,
+      "player": "Bob Davies",
+      "tier": "1st"
+    },
+    {
+      "year": 1950,
+      "player": "Bob Davies",
+      "tier": "1st"
+    },
+    {
+      "year": 1949,
+      "player": "Bob Davies",
+      "tier": "1st"
+    },
+    {
+      "year": 1949,
+      "player": "Arnie Risen",
+      "tier": "2nd"
+    }
+  ],
+  "Lakers": [
+    {
+      "year": 2025,
+      "player": "LeBron James",
+      "tier": "2nd"
+    },
+    {
+      "year": 2024,
+      "player": "Anthony Davis",
+      "tier": "2nd"
+    },
+    {
+      "year": 2024,
+      "player": "LeBron James",
+      "tier": "3rd"
+    },
+    {
+      "year": 2023,
+      "player": "LeBron James",
+      "tier": "3rd"
+    },
+    {
+      "year": 2022,
+      "player": "LeBron James",
+      "tier": "3rd"
+    },
+    {
+      "year": 2021,
+      "player": "LeBron James",
+      "tier": "2nd"
+    },
+    {
+      "year": 2020,
+      "player": "Anthony Davis",
+      "tier": "1st"
+    },
+    {
+      "year": 2020,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2019,
+      "player": "LeBron James",
+      "tier": "3rd"
+    },
+    {
+      "year": 2013,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "Dwight Howard",
+      "tier": "3rd"
+    },
+    {
+      "year": 2012,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2012,
+      "player": "Andrew Bynum",
+      "tier": "2nd"
+    },
+    {
+      "year": 2011,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2011,
+      "player": "Pau Gasol",
+      "tier": "2nd"
+    },
+    {
+      "year": 2010,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2010,
+      "player": "Pau Gasol",
+      "tier": "3rd"
+    },
+    {
+      "year": 2009,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2009,
+      "player": "Pau Gasol",
+      "tier": "3rd"
+    },
+    {
+      "year": 2008,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2007,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2006,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2005,
+      "player": "Kobe Bryant",
+      "tier": "3rd"
+    },
+    {
+      "year": 2004,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2004,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 2003,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2003,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 2002,
+      "player": "Kobe Bryant",
+      "tier": "1st"
+    },
+    {
+      "year": 2002,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 2001,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 2001,
+      "player": "Kobe Bryant",
+      "tier": "2nd"
+    },
+    {
+      "year": 2000,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 2000,
+      "player": "Kobe Bryant",
+      "tier": "2nd"
+    },
+    {
+      "year": 1999,
+      "player": "Shaquille O'Neal",
+      "tier": "2nd"
+    },
+    {
+      "year": 1999,
+      "player": "Kobe Bryant",
+      "tier": "3rd"
+    },
+    {
+      "year": 1998,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 1997,
+      "player": "Shaquille O'Neal",
+      "tier": "3rd"
+    },
+    {
+      "year": 1991,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1991,
+      "player": "James Worthy",
+      "tier": "3rd"
+    },
+    {
+      "year": 1990,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1990,
+      "player": "James Worthy",
+      "tier": "3rd"
+    },
+    {
+      "year": 1989,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1988,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1987,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1986,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1986,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1985,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1985,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "2nd"
+    },
+    {
+      "year": 1984,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1984,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1983,
+      "player": "Magic Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1983,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "2nd"
+    },
+    {
+      "year": 1982,
+      "player": "Magic Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1981,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1980,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1979,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "2nd"
+    },
+    {
+      "year": 1978,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "2nd"
+    },
+    {
+      "year": 1977,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1976,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1974,
+      "player": "Gail Goodrich",
+      "tier": "1st"
+    },
+    {
+      "year": 1973,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1972,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1972,
+      "player": "Wilt Chamberlain",
+      "tier": "2nd"
+    },
+    {
+      "year": 1971,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1970,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1969,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1969,
+      "player": "Jerry West",
+      "tier": "2nd"
+    },
+    {
+      "year": 1968,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1968,
+      "player": "Jerry West",
+      "tier": "2nd"
+    },
+    {
+      "year": 1967,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1967,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1966,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1965,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1965,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1964,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1964,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1963,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1963,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1962,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1962,
+      "player": "Jerry West",
+      "tier": "1st"
+    },
+    {
+      "year": 1961,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1960,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1959,
+      "player": "Elgin Baylor",
+      "tier": "1st"
+    },
+    {
+      "year": 1957,
+      "player": "Dick Garmaker",
+      "tier": "2nd"
+    },
+    {
+      "year": 1956,
+      "player": "Clyde Lovellette",
+      "tier": "2nd"
+    },
+    {
+      "year": 1956,
+      "player": "Slater Martin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1955,
+      "player": "Slater Martin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1955,
+      "player": "Vern Mikkelsen",
+      "tier": "2nd"
+    },
+    {
+      "year": 1954,
+      "player": "George Mikan",
+      "tier": "1st"
+    },
+    {
+      "year": 1954,
+      "player": "Jim Pollard",
+      "tier": "2nd"
+    },
+    {
+      "year": 1953,
+      "player": "George Mikan",
+      "tier": "1st"
+    },
+    {
+      "year": 1953,
+      "player": "Vern Mikkelsen",
+      "tier": "2nd"
+    },
+    {
+      "year": 1952,
+      "player": "George Mikan",
+      "tier": "1st"
+    },
+    {
+      "year": 1952,
+      "player": "Jim Pollard",
+      "tier": "2nd"
+    },
+    {
+      "year": 1952,
+      "player": "Vern Mikkelsen",
+      "tier": "2nd"
+    },
+    {
+      "year": 1951,
+      "player": "George Mikan",
+      "tier": "1st"
+    },
+    {
+      "year": 1951,
+      "player": "Vern Mikkelsen",
+      "tier": "2nd"
+    },
+    {
+      "year": 1950,
+      "player": "George Mikan",
+      "tier": "1st"
+    },
+    {
+      "year": 1950,
+      "player": "Jim Pollard",
+      "tier": "1st"
+    },
+    {
+      "year": 1949,
+      "player": "George Mikan",
+      "tier": "1st"
+    },
+    {
+      "year": 1949,
+      "player": "Jim Pollard",
+      "tier": "1st"
+    }
+  ],
+  "Olympians": [
+    {
+      "year": 1951,
+      "player": "Alex Groza",
+      "tier": "1st"
+    },
+    {
+      "year": 1951,
+      "player": "Ralph Beard",
+      "tier": "1st"
+    },
+    {
+      "year": 1950,
+      "player": "Alex Groza",
+      "tier": "1st"
+    },
+    {
+      "year": 1950,
+      "player": "Ralph Beard",
+      "tier": "2nd"
+    }
+  ],
+  "76ers": [
+    {
+      "year": 2023,
+      "player": "Joel Embiid",
+      "tier": "1st"
+    },
+    {
+      "year": 2022,
+      "player": "Joel Embiid",
+      "tier": "2nd"
+    },
+    {
+      "year": 2021,
+      "player": "Joel Embiid",
+      "tier": "2nd"
+    },
+    {
+      "year": 2020,
+      "player": "Ben Simmons",
+      "tier": "3rd"
+    },
+    {
+      "year": 2019,
+      "player": "Joel Embiid",
+      "tier": "2nd"
+    },
+    {
+      "year": 2018,
+      "player": "Joel Embiid",
+      "tier": "2nd"
+    },
+    {
+      "year": 2006,
+      "player": "Allen Iverson",
+      "tier": "3rd"
+    },
+    {
+      "year": 2005,
+      "player": "Allen Iverson",
+      "tier": "1st"
+    },
+    {
+      "year": 2003,
+      "player": "Allen Iverson",
+      "tier": "2nd"
+    },
+    {
+      "year": 2002,
+      "player": "Allen Iverson",
+      "tier": "2nd"
+    },
+    {
+      "year": 2002,
+      "player": "Dikembe Mutombo",
+      "tier": "3rd"
+    },
+    {
+      "year": 2001,
+      "player": "Allen Iverson",
+      "tier": "1st"
+    },
+    {
+      "year": 2001,
+      "player": "Dikembe Mutombo",
+      "tier": "2nd"
+    },
+    {
+      "year": 2000,
+      "player": "Allen Iverson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1999,
+      "player": "Allen Iverson",
+      "tier": "1st"
+    },
+    {
+      "year": 1992,
+      "player": "Charles Barkley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1991,
+      "player": "Charles Barkley",
+      "tier": "1st"
+    },
+    {
+      "year": 1990,
+      "player": "Charles Barkley",
+      "tier": "1st"
+    },
+    {
+      "year": 1989,
+      "player": "Charles Barkley",
+      "tier": "1st"
+    },
+    {
+      "year": 1988,
+      "player": "Charles Barkley",
+      "tier": "1st"
+    },
+    {
+      "year": 1987,
+      "player": "Charles Barkley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1986,
+      "player": "Charles Barkley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1985,
+      "player": "Moses Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1984,
+      "player": "Julius Erving",
+      "tier": "2nd"
+    },
+    {
+      "year": 1984,
+      "player": "Moses Malone",
+      "tier": "2nd"
+    },
+    {
+      "year": 1983,
+      "player": "Julius Erving",
+      "tier": "1st"
+    },
+    {
+      "year": 1983,
+      "player": "Moses Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1982,
+      "player": "Julius Erving",
+      "tier": "1st"
+    },
+    {
+      "year": 1981,
+      "player": "Julius Erving",
+      "tier": "1st"
+    },
+    {
+      "year": 1980,
+      "player": "Julius Erving",
+      "tier": "1st"
+    },
+    {
+      "year": 1978,
+      "player": "Julius Erving",
+      "tier": "1st"
+    },
+    {
+      "year": 1977,
+      "player": "George McGinnis",
+      "tier": "2nd"
+    },
+    {
+      "year": 1977,
+      "player": "Julius Erving",
+      "tier": "2nd"
+    },
+    {
+      "year": 1976,
+      "player": "George McGinnis",
+      "tier": "1st"
+    },
+    {
+      "year": 1972,
+      "player": "Billy Cunningham",
+      "tier": "2nd"
+    },
+    {
+      "year": 1971,
+      "player": "Billy Cunningham",
+      "tier": "1st"
+    },
+    {
+      "year": 1970,
+      "player": "Billy Cunningham",
+      "tier": "1st"
+    },
+    {
+      "year": 1969,
+      "player": "Billy Cunningham",
+      "tier": "1st"
+    },
+    {
+      "year": 1969,
+      "player": "Hal Greer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1968,
+      "player": "Wilt Chamberlain",
+      "tier": "1st"
+    },
+    {
+      "year": 1968,
+      "player": "Hal Greer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1967,
+      "player": "Wilt Chamberlain",
+      "tier": "1st"
+    },
+    {
+      "year": 1967,
+      "player": "Hal Greer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1966,
+      "player": "Wilt Chamberlain",
+      "tier": "1st"
+    },
+    {
+      "year": 1966,
+      "player": "Hal Greer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1965,
+      "player": "Hal Greer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1965,
+      "player": "Wilt Chamberlain",
+      "tier": "2nd"
+    },
+    {
+      "year": 1964,
+      "player": "Hal Greer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1963,
+      "player": "Hal Greer",
+      "tier": "2nd"
+    },
+    {
+      "year": 1961,
+      "player": "Dolph Schayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1961,
+      "player": "Larry Costello",
+      "tier": "2nd"
+    },
+    {
+      "year": 1960,
+      "player": "Dolph Schayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1959,
+      "player": "Dolph Schayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1958,
+      "player": "Dolph Schayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1957,
+      "player": "Dolph Schayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1956,
+      "player": "Dolph Schayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1955,
+      "player": "Dolph Schayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1955,
+      "player": "Paul Seymour",
+      "tier": "2nd"
+    },
+    {
+      "year": 1954,
+      "player": "Dolph Schayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1954,
+      "player": "Paul Seymour",
+      "tier": "2nd"
+    },
+    {
+      "year": 1953,
+      "player": "Dolph Schayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1952,
+      "player": "Dolph Schayes",
+      "tier": "1st"
+    },
+    {
+      "year": 1951,
+      "player": "Dolph Schayes",
+      "tier": "2nd"
+    },
+    {
+      "year": 1950,
+      "player": "Al Cervi",
+      "tier": "2nd"
+    },
+    {
+      "year": 1950,
+      "player": "Dolph Schayes",
+      "tier": "2nd"
+    }
+  ],
+  "Packers": [
+    {
+      "year": 1950,
+      "player": "Frank Brian",
+      "tier": "2nd"
+    }
+  ],
+  "Bucks": [
+    {
+      "year": 2025,
+      "player": "Giannis Antetokounmpo",
+      "tier": "1st"
+    },
+    {
+      "year": 2024,
+      "player": "Giannis Antetokounmpo",
+      "tier": "1st"
+    },
+    {
+      "year": 2023,
+      "player": "Giannis Antetokounmpo",
+      "tier": "1st"
+    },
+    {
+      "year": 2022,
+      "player": "Giannis Antetokounmpo",
+      "tier": "1st"
+    },
+    {
+      "year": 2021,
+      "player": "Giannis Antetokounmpo",
+      "tier": "1st"
+    },
+    {
+      "year": 2020,
+      "player": "Giannis Antetokounmpo",
+      "tier": "1st"
+    },
+    {
+      "year": 2019,
+      "player": "Giannis Antetokounmpo",
+      "tier": "1st"
+    },
+    {
+      "year": 2018,
+      "player": "Giannis Antetokounmpo",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "Giannis Antetokounmpo",
+      "tier": "2nd"
+    },
+    {
+      "year": 2010,
+      "player": "Andrew Bogut",
+      "tier": "3rd"
+    },
+    {
+      "year": 2004,
+      "player": "Michael Redd",
+      "tier": "3rd"
+    },
+    {
+      "year": 2001,
+      "player": "Ray Allen",
+      "tier": "3rd"
+    },
+    {
+      "year": 1997,
+      "player": "Vin Baker",
+      "tier": "3rd"
+    },
+    {
+      "year": 1989,
+      "player": "Terry Cummings",
+      "tier": "3rd"
+    },
+    {
+      "year": 1986,
+      "player": "Sidney Moncrief",
+      "tier": "2nd"
+    },
+    {
+      "year": 1985,
+      "player": "Sidney Moncrief",
+      "tier": "2nd"
+    },
+    {
+      "year": 1985,
+      "player": "Terry Cummings",
+      "tier": "2nd"
+    },
+    {
+      "year": 1984,
+      "player": "Sidney Moncrief",
+      "tier": "2nd"
+    },
+    {
+      "year": 1983,
+      "player": "Sidney Moncrief",
+      "tier": "1st"
+    },
+    {
+      "year": 1982,
+      "player": "Sidney Moncrief",
+      "tier": "2nd"
+    },
+    {
+      "year": 1981,
+      "player": "Marques Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1980,
+      "player": "Marques Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1979,
+      "player": "Marques Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1974,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1973,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1972,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1971,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "1st"
+    },
+    {
+      "year": 1971,
+      "player": "Oscar Robertson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1970,
+      "player": "Kareem Abdul-Jabbar",
+      "tier": "2nd"
+    },
+    {
+      "year": 1955,
+      "player": "Bob Pettit",
+      "tier": "1st"
+    }
+  ],
+  "Suns": [
+    {
+      "year": 2024,
+      "player": "Kevin Durant",
+      "tier": "2nd"
+    },
+    {
+      "year": 2024,
+      "player": "Devin Booker",
+      "tier": "3rd"
+    },
+    {
+      "year": 2022,
+      "player": "Devin Booker",
+      "tier": "1st"
+    },
+    {
+      "year": 2022,
+      "player": "Chris Paul",
+      "tier": "3rd"
+    },
+    {
+      "year": 2021,
+      "player": "Chris Paul",
+      "tier": "2nd"
+    },
+    {
+      "year": 2014,
+      "player": "Goran Dragić",
+      "tier": "3rd"
+    },
+    {
+      "year": 2010,
+      "player": "Amar'e Stoudemire",
+      "tier": "2nd"
+    },
+    {
+      "year": 2010,
+      "player": "Steve Nash",
+      "tier": "2nd"
+    },
+    {
+      "year": 2009,
+      "player": "Shaquille O'Neal",
+      "tier": "3rd"
+    },
+    {
+      "year": 2008,
+      "player": "Amare Stoudemire",
+      "tier": "2nd"
+    },
+    {
+      "year": 2008,
+      "player": "Steve Nash",
+      "tier": "2nd"
+    },
+    {
+      "year": 2007,
+      "player": "Amare Stoudemire",
+      "tier": "1st"
+    },
+    {
+      "year": 2007,
+      "player": "Steve Nash",
+      "tier": "1st"
+    },
+    {
+      "year": 2006,
+      "player": "Steve Nash",
+      "tier": "1st"
+    },
+    {
+      "year": 2006,
+      "player": "Shawn Marion",
+      "tier": "3rd"
+    },
+    {
+      "year": 2005,
+      "player": "Steve Nash",
+      "tier": "1st"
+    },
+    {
+      "year": 2005,
+      "player": "Amare Stoudemire",
+      "tier": "2nd"
+    },
+    {
+      "year": 2005,
+      "player": "Shawn Marion",
+      "tier": "3rd"
+    },
+    {
+      "year": 2003,
+      "player": "Stephon Marbury",
+      "tier": "3rd"
+    },
+    {
+      "year": 2001,
+      "player": "Jason Kidd",
+      "tier": "1st"
+    },
+    {
+      "year": 2000,
+      "player": "Jason Kidd",
+      "tier": "1st"
+    },
+    {
+      "year": 1999,
+      "player": "Jason Kidd",
+      "tier": "1st"
+    },
+    {
+      "year": 1996,
+      "player": "Charles Barkley",
+      "tier": "3rd"
+    },
+    {
+      "year": 1995,
+      "player": "Charles Barkley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1994,
+      "player": "Charles Barkley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1994,
+      "player": "Kevin Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1993,
+      "player": "Charles Barkley",
+      "tier": "1st"
+    },
+    {
+      "year": 1992,
+      "player": "Kevin Johnson",
+      "tier": "3rd"
+    },
+    {
+      "year": 1991,
+      "player": "Kevin Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1990,
+      "player": "Kevin Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1990,
+      "player": "Tom Chambers",
+      "tier": "2nd"
+    },
+    {
+      "year": 1989,
+      "player": "Kevin Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1989,
+      "player": "Tom Chambers",
+      "tier": "2nd"
+    },
+    {
+      "year": 1981,
+      "player": "Dennis Johnson",
+      "tier": "1st"
+    },
+    {
+      "year": 1980,
+      "player": "Paul Westphal",
+      "tier": "1st"
+    },
+    {
+      "year": 1979,
+      "player": "Paul Westphal",
+      "tier": "1st"
+    },
+    {
+      "year": 1979,
+      "player": "Walter Davis",
+      "tier": "2nd"
+    },
+    {
+      "year": 1978,
+      "player": "Paul Westphal",
+      "tier": "2nd"
+    },
+    {
+      "year": 1978,
+      "player": "Walter Davis",
+      "tier": "2nd"
+    },
+    {
+      "year": 1977,
+      "player": "Paul Westphal",
+      "tier": "1st"
+    },
+    {
+      "year": 1970,
+      "player": "Connie Hawkins",
+      "tier": "1st"
+    }
+  ],
+  "Bulls": [
+    {
+      "year": 2022,
+      "player": "DeMar DeRozan",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "Jimmy Butler",
+      "tier": "3rd"
+    },
+    {
+      "year": 2015,
+      "player": "Pau Gasol",
+      "tier": "2nd"
+    },
+    {
+      "year": 2014,
+      "player": "Joakim Noah",
+      "tier": "1st"
+    },
+    {
+      "year": 2011,
+      "player": "Derrick Rose",
+      "tier": "1st"
+    },
+    {
+      "year": 1998,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1998,
+      "player": "Scottie Pippen",
+      "tier": "3rd"
+    },
+    {
+      "year": 1997,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1997,
+      "player": "Scottie Pippen",
+      "tier": "2nd"
+    },
+    {
+      "year": 1996,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1996,
+      "player": "Scottie Pippen",
+      "tier": "1st"
+    },
+    {
+      "year": 1995,
+      "player": "Scottie Pippen",
+      "tier": "1st"
+    },
+    {
+      "year": 1994,
+      "player": "Scottie Pippen",
+      "tier": "1st"
+    },
+    {
+      "year": 1993,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1993,
+      "player": "Scottie Pippen",
+      "tier": "3rd"
+    },
+    {
+      "year": 1992,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1992,
+      "player": "Scottie Pippen",
+      "tier": "2nd"
+    },
+    {
+      "year": 1991,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1990,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1989,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1988,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1987,
+      "player": "Michael Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 1985,
+      "player": "Michael Jordan",
+      "tier": "2nd"
+    },
+    {
+      "year": 1974,
+      "player": "Norm Van Lier",
+      "tier": "2nd"
+    },
+    {
+      "year": 1972,
+      "player": "Bob Love",
+      "tier": "2nd"
+    },
+    {
+      "year": 1971,
+      "player": "Bob Love",
+      "tier": "2nd"
+    }
+  ],
+  "Supersonics": [
+    {
+      "year": 2005,
+      "player": "Ray Allen",
+      "tier": "2nd"
+    },
+    {
+      "year": 2002,
+      "player": "Gary Payton",
+      "tier": "2nd"
+    },
+    {
+      "year": 2001,
+      "player": "Gary Payton",
+      "tier": "3rd"
+    },
+    {
+      "year": 2000,
+      "player": "Gary Payton",
+      "tier": "1st"
+    },
+    {
+      "year": 1999,
+      "player": "Gary Payton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1998,
+      "player": "Gary Payton",
+      "tier": "1st"
+    },
+    {
+      "year": 1998,
+      "player": "Vin Baker",
+      "tier": "2nd"
+    },
+    {
+      "year": 1997,
+      "player": "Gary Payton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1996,
+      "player": "Gary Payton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1996,
+      "player": "Shawn Kemp",
+      "tier": "2nd"
+    },
+    {
+      "year": 1995,
+      "player": "Gary Payton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1995,
+      "player": "Shawn Kemp",
+      "tier": "2nd"
+    },
+    {
+      "year": 1995,
+      "player": "Detlef Schrempf",
+      "tier": "3rd"
+    },
+    {
+      "year": 1994,
+      "player": "Shawn Kemp",
+      "tier": "2nd"
+    },
+    {
+      "year": 1994,
+      "player": "Gary Payton",
+      "tier": "3rd"
+    },
+    {
+      "year": 1989,
+      "player": "Dale Ellis",
+      "tier": "3rd"
+    },
+    {
+      "year": 1982,
+      "player": "Gus Williams",
+      "tier": "1st"
+    },
+    {
+      "year": 1980,
+      "player": "Dennis Johnson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1980,
+      "player": "Gus Williams",
+      "tier": "2nd"
+    },
+    {
+      "year": 1975,
+      "player": "Spencer Haywood",
+      "tier": "2nd"
+    },
+    {
+      "year": 1974,
+      "player": "Spencer Haywood",
+      "tier": "2nd"
+    },
+    {
+      "year": 1973,
+      "player": "Spencer Haywood",
+      "tier": "1st"
+    },
+    {
+      "year": 1972,
+      "player": "Spencer Haywood",
+      "tier": "1st"
+    }
+  ],
+  "Clippers": [
+    {
+      "year": 2025,
+      "player": "James Harden",
+      "tier": "3rd"
+    },
+    {
+      "year": 2024,
+      "player": "Kawhi Leonard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2021,
+      "player": "Kawhi Leonard",
+      "tier": "1st"
+    },
+    {
+      "year": 2021,
+      "player": "Paul George",
+      "tier": "3rd"
+    },
+    {
+      "year": 2020,
+      "player": "Kawhi Leonard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "DeAndre Jordan",
+      "tier": "3rd"
+    },
+    {
+      "year": 2016,
+      "player": "DeAndre Jordan",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "Chris Paul",
+      "tier": "2nd"
+    },
+    {
+      "year": 2015,
+      "player": "Chris Paul",
+      "tier": "2nd"
+    },
+    {
+      "year": 2015,
+      "player": "Blake Griffin",
+      "tier": "3rd"
+    },
+    {
+      "year": 2015,
+      "player": "DeAndre Jordan",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "Chris Paul",
+      "tier": "1st"
+    },
+    {
+      "year": 2014,
+      "player": "Blake Griffin",
+      "tier": "2nd"
+    },
+    {
+      "year": 2013,
+      "player": "Chris Paul",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "Blake Griffin",
+      "tier": "2nd"
+    },
+    {
+      "year": 2012,
+      "player": "Chris Paul",
+      "tier": "1st"
+    },
+    {
+      "year": 2012,
+      "player": "Blake Griffin",
+      "tier": "2nd"
+    },
+    {
+      "year": 2006,
+      "player": "Elton Brand",
+      "tier": "2nd"
+    },
+    {
+      "year": 1994,
+      "player": "Dominique Wilkins",
+      "tier": "3rd"
+    },
+    {
+      "year": 1979,
+      "player": "Lloyd Free",
+      "tier": "2nd"
+    },
+    {
+      "year": 1976,
+      "player": "Randy Smith",
+      "tier": "2nd"
+    },
+    {
+      "year": 1975,
+      "player": "Bob McAdoo",
+      "tier": "1st"
+    },
+    {
+      "year": 1974,
+      "player": "Bob McAdoo",
+      "tier": "2nd"
+    }
+  ],
+  "Jazz": [
+    {
+      "year": 2021,
+      "player": "Rudy Gobert",
+      "tier": "3rd"
+    },
+    {
+      "year": 2020,
+      "player": "Rudy Gobert",
+      "tier": "3rd"
+    },
+    {
+      "year": 2019,
+      "player": "Rudy Gobert",
+      "tier": "3rd"
+    },
+    {
+      "year": 2017,
+      "player": "Rudy Gobert",
+      "tier": "2nd"
+    },
+    {
+      "year": 2010,
+      "player": "Deron Williams",
+      "tier": "2nd"
+    },
+    {
+      "year": 2008,
+      "player": "Deron Williams",
+      "tier": "2nd"
+    },
+    {
+      "year": 2008,
+      "player": "Carlos Boozer",
+      "tier": "3rd"
+    },
+    {
+      "year": 2001,
+      "player": "Karl Malone",
+      "tier": "3rd"
+    },
+    {
+      "year": 2000,
+      "player": "Karl Malone",
+      "tier": "2nd"
+    },
+    {
+      "year": 1999,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1999,
+      "player": "John Stockton",
+      "tier": "3rd"
+    },
+    {
+      "year": 1998,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1997,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1997,
+      "player": "John Stockton",
+      "tier": "3rd"
+    },
+    {
+      "year": 1996,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1996,
+      "player": "John Stockton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1995,
+      "player": "John Stockton",
+      "tier": "1st"
+    },
+    {
+      "year": 1995,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1994,
+      "player": "John Stockton",
+      "tier": "1st"
+    },
+    {
+      "year": 1994,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1993,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1993,
+      "player": "John Stockton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1992,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1992,
+      "player": "John Stockton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1991,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1991,
+      "player": "John Stockton",
+      "tier": "3rd"
+    },
+    {
+      "year": 1990,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1990,
+      "player": "John Stockton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1989,
+      "player": "Karl Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1989,
+      "player": "John Stockton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1988,
+      "player": "John Stockton",
+      "tier": "2nd"
+    },
+    {
+      "year": 1988,
+      "player": "Karl Malone",
+      "tier": "2nd"
+    },
+    {
+      "year": 1984,
+      "player": "Adrian Dantley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1981,
+      "player": "Adrian Dantley",
+      "tier": "2nd"
+    },
+    {
+      "year": 1978,
+      "player": "Leonard Robinson",
+      "tier": "1st"
+    },
+    {
+      "year": 1978,
+      "player": "Pete Maravich",
+      "tier": "2nd"
+    },
+    {
+      "year": 1977,
+      "player": "Pete Maravich",
+      "tier": "1st"
+    },
+    {
+      "year": 1976,
+      "player": "Pete Maravich",
+      "tier": "1st"
+    }
+  ],
+  "Nuggets": [
+    {
+      "year": 2025,
+      "player": "Nikola Jokić",
+      "tier": "1st"
+    },
+    {
+      "year": 2024,
+      "player": "Nikola Jokić",
+      "tier": "1st"
+    },
+    {
+      "year": 2023,
+      "player": "Nikola Jokić",
+      "tier": "2nd"
+    },
+    {
+      "year": 2022,
+      "player": "Nikola Jokić",
+      "tier": "1st"
+    },
+    {
+      "year": 2021,
+      "player": "Nikola Jokić",
+      "tier": "1st"
+    },
+    {
+      "year": 2020,
+      "player": "Nikola Jokić",
+      "tier": "2nd"
+    },
+    {
+      "year": 2019,
+      "player": "Nikola Jokić",
+      "tier": "1st"
+    },
+    {
+      "year": 2010,
+      "player": "Carmelo Anthony",
+      "tier": "2nd"
+    },
+    {
+      "year": 2009,
+      "player": "Carmelo Anthony",
+      "tier": "3rd"
+    },
+    {
+      "year": 2009,
+      "player": "Chauncey Billups",
+      "tier": "3rd"
+    },
+    {
+      "year": 2007,
+      "player": "Carmelo Anthony",
+      "tier": "3rd"
+    },
+    {
+      "year": 2006,
+      "player": "Carmelo Anthony",
+      "tier": "3rd"
+    },
+    {
+      "year": 1999,
+      "player": "Antonio McDyess",
+      "tier": "3rd"
+    },
+    {
+      "year": 1987,
+      "player": "Lafayette Lever",
+      "tier": "2nd"
+    },
+    {
+      "year": 1986,
+      "player": "Alex English",
+      "tier": "2nd"
+    },
+    {
+      "year": 1983,
+      "player": "Alex English",
+      "tier": "2nd"
+    },
+    {
+      "year": 1982,
+      "player": "Alex English",
+      "tier": "2nd"
+    },
+    {
+      "year": 1978,
+      "player": "David Thompson",
+      "tier": "1st"
+    },
+    {
+      "year": 1977,
+      "player": "David Thompson",
+      "tier": "1st"
+    }
+  ],
+  "Trail Blazers": [
+    {
+      "year": 2023,
+      "player": "Damian Lillard",
+      "tier": "3rd"
+    },
+    {
+      "year": 2021,
+      "player": "Damian Lillard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2020,
+      "player": "Damian Lillard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2019,
+      "player": "Damian Lillard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2018,
+      "player": "Damian Lillard",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "Damian Lillard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2015,
+      "player": "LaMarcus Aldridge",
+      "tier": "2nd"
+    },
+    {
+      "year": 2014,
+      "player": "Damian Lillard",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "LaMarcus Aldridge",
+      "tier": "3rd"
+    },
+    {
+      "year": 2011,
+      "player": "LaMarcus Aldridge",
+      "tier": "3rd"
+    },
+    {
+      "year": 2010,
+      "player": "Brandon Roy",
+      "tier": "3rd"
+    },
+    {
+      "year": 2009,
+      "player": "Brandon Roy",
+      "tier": "2nd"
+    },
+    {
+      "year": 1992,
+      "player": "Clyde Drexler",
+      "tier": "1st"
+    },
+    {
+      "year": 1991,
+      "player": "Clyde Drexler",
+      "tier": "2nd"
+    },
+    {
+      "year": 1990,
+      "player": "Clyde Drexler",
+      "tier": "3rd"
+    },
+    {
+      "year": 1988,
+      "player": "Clyde Drexler",
+      "tier": "2nd"
+    },
+    {
+      "year": 1984,
+      "player": "Jim Paxson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1978,
+      "player": "Bill Walton",
+      "tier": "1st"
+    },
+    {
+      "year": 1978,
+      "player": "Maurice Lucas",
+      "tier": "2nd"
+    },
+    {
+      "year": 1977,
+      "player": "Bill Walton",
+      "tier": "2nd"
+    }
+  ],
+  "Spurs": [
+    {
+      "year": 2018,
+      "player": "LaMarcus Aldridge",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "Kawhi Leonard",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "Kawhi Leonard",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "LaMarcus Aldridge",
+      "tier": "3rd"
+    },
+    {
+      "year": 2015,
+      "player": "Tim Duncan",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "Tony Parker",
+      "tier": "2nd"
+    },
+    {
+      "year": 2013,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "Tony Parker",
+      "tier": "2nd"
+    },
+    {
+      "year": 2012,
+      "player": "Tony Parker",
+      "tier": "2nd"
+    },
+    {
+      "year": 2011,
+      "player": "Manu Ginóbili",
+      "tier": "3rd"
+    },
+    {
+      "year": 2010,
+      "player": "Tim Duncan",
+      "tier": "3rd"
+    },
+    {
+      "year": 2009,
+      "player": "Tim Duncan",
+      "tier": "2nd"
+    },
+    {
+      "year": 2009,
+      "player": "Tony Parker",
+      "tier": "3rd"
+    },
+    {
+      "year": 2008,
+      "player": "Tim Duncan",
+      "tier": "2nd"
+    },
+    {
+      "year": 2008,
+      "player": "Manu Ginóbili",
+      "tier": "3rd"
+    },
+    {
+      "year": 2007,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2006,
+      "player": "Tim Duncan",
+      "tier": "2nd"
+    },
+    {
+      "year": 2005,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2004,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2003,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2002,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2001,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2001,
+      "player": "David Robinson",
+      "tier": "3rd"
+    },
+    {
+      "year": 2000,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 2000,
+      "player": "David Robinson",
+      "tier": "3rd"
+    },
+    {
+      "year": 1999,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 1998,
+      "player": "Tim Duncan",
+      "tier": "1st"
+    },
+    {
+      "year": 1998,
+      "player": "David Robinson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1996,
+      "player": "David Robinson",
+      "tier": "1st"
+    },
+    {
+      "year": 1995,
+      "player": "David Robinson",
+      "tier": "1st"
+    },
+    {
+      "year": 1995,
+      "player": "Dennis Rodman",
+      "tier": "3rd"
+    },
+    {
+      "year": 1994,
+      "player": "David Robinson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1993,
+      "player": "David Robinson",
+      "tier": "3rd"
+    },
+    {
+      "year": 1992,
+      "player": "David Robinson",
+      "tier": "1st"
+    },
+    {
+      "year": 1991,
+      "player": "David Robinson",
+      "tier": "1st"
+    },
+    {
+      "year": 1990,
+      "player": "David Robinson",
+      "tier": "3rd"
+    },
+    {
+      "year": 1986,
+      "player": "Alvin Robertson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1983,
+      "player": "George Gervin",
+      "tier": "2nd"
+    },
+    {
+      "year": 1982,
+      "player": "George Gervin",
+      "tier": "1st"
+    },
+    {
+      "year": 1981,
+      "player": "George Gervin",
+      "tier": "1st"
+    },
+    {
+      "year": 1980,
+      "player": "George Gervin",
+      "tier": "1st"
+    },
+    {
+      "year": 1979,
+      "player": "George Gervin",
+      "tier": "1st"
+    },
+    {
+      "year": 1978,
+      "player": "George Gervin",
+      "tier": "1st"
+    },
+    {
+      "year": 1977,
+      "player": "George Gervin",
+      "tier": "2nd"
+    }
+  ],
+  "Rockets": [
+    {
+      "year": 2020,
+      "player": "James Harden",
+      "tier": "1st"
+    },
+    {
+      "year": 2020,
+      "player": "Russell Westbrook",
+      "tier": "3rd"
+    },
+    {
+      "year": 2019,
+      "player": "James Harden",
+      "tier": "1st"
+    },
+    {
+      "year": 2018,
+      "player": "James Harden",
+      "tier": "1st"
+    },
+    {
+      "year": 2017,
+      "player": "James Harden",
+      "tier": "1st"
+    },
+    {
+      "year": 2015,
+      "player": "James Harden",
+      "tier": "1st"
+    },
+    {
+      "year": 2014,
+      "player": "James Harden",
+      "tier": "1st"
+    },
+    {
+      "year": 2014,
+      "player": "Dwight Howard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2013,
+      "player": "James Harden",
+      "tier": "3rd"
+    },
+    {
+      "year": 2009,
+      "player": "Yao Ming",
+      "tier": "2nd"
+    },
+    {
+      "year": 2008,
+      "player": "Tracy McGrady",
+      "tier": "3rd"
+    },
+    {
+      "year": 2008,
+      "player": "Yao Ming",
+      "tier": "3rd"
+    },
+    {
+      "year": 2007,
+      "player": "Tracy McGrady",
+      "tier": "2nd"
+    },
+    {
+      "year": 2007,
+      "player": "Yao Ming",
+      "tier": "2nd"
+    },
+    {
+      "year": 2006,
+      "player": "Yao Ming",
+      "tier": "3rd"
+    },
+    {
+      "year": 2005,
+      "player": "Tracy McGrady",
+      "tier": "3rd"
+    },
+    {
+      "year": 2004,
+      "player": "Yao Ming",
+      "tier": "3rd"
+    },
+    {
+      "year": 1999,
+      "player": "Hakeem Olajuwon",
+      "tier": "3rd"
+    },
+    {
+      "year": 1997,
+      "player": "Hakeem Olajuwon",
+      "tier": "1st"
+    },
+    {
+      "year": 1996,
+      "player": "Hakeem Olajuwon",
+      "tier": "2nd"
+    },
+    {
+      "year": 1995,
+      "player": "Clyde Drexler",
+      "tier": "3rd"
+    },
+    {
+      "year": 1995,
+      "player": "Hakeem Olajuwon",
+      "tier": "3rd"
+    },
+    {
+      "year": 1994,
+      "player": "Hakeem Olajuwon",
+      "tier": "1st"
+    },
+    {
+      "year": 1993,
+      "player": "Hakeem Olajuwon",
+      "tier": "1st"
+    },
+    {
+      "year": 1991,
+      "player": "Hakeem Olajuwon",
+      "tier": "3rd"
+    },
+    {
+      "year": 1990,
+      "player": "Hakeem Olajuwon",
+      "tier": "2nd"
+    },
+    {
+      "year": 1989,
+      "player": "Hakeem Olajuwon",
+      "tier": "1st"
+    },
+    {
+      "year": 1988,
+      "player": "Hakeem Olajuwon",
+      "tier": "1st"
+    },
+    {
+      "year": 1987,
+      "player": "Hakeem Olajuwon",
+      "tier": "1st"
+    },
+    {
+      "year": 1986,
+      "player": "Hakeem Olajuwon",
+      "tier": "2nd"
+    },
+    {
+      "year": 1985,
+      "player": "Ralph Sampson",
+      "tier": "2nd"
+    },
+    {
+      "year": 1982,
+      "player": "Moses Malone",
+      "tier": "1st"
+    },
+    {
+      "year": 1981,
+      "player": "Moses Malone",
+      "tier": "2nd"
+    },
+    {
+      "year": 1980,
+      "player": "Moses Malone",
+      "tier": "2nd"
+    },
+    {
+      "year": 1979,
+      "player": "Moses Malone",
+      "tier": "1st"
+    }
+  ],
+  "Nets": [
+    {
+      "year": 2022,
+      "player": "Kevin Durant",
+      "tier": "2nd"
+    },
+    {
+      "year": 2021,
+      "player": "Kyrie Irving",
+      "tier": "3rd"
+    },
+    {
+      "year": 2004,
+      "player": "Jason Kidd",
+      "tier": "1st"
+    },
+    {
+      "year": 2003,
+      "player": "Jason Kidd",
+      "tier": "2nd"
+    },
+    {
+      "year": 2002,
+      "player": "Jason Kidd",
+      "tier": "1st"
+    },
+    {
+      "year": 2000,
+      "player": "Stephon Marbury",
+      "tier": "3rd"
+    },
+    {
+      "year": 1994,
+      "player": "Derrick Coleman",
+      "tier": "3rd"
+    },
+    {
+      "year": 1993,
+      "player": "Derrick Coleman",
+      "tier": "3rd"
+    },
+    {
+      "year": 1993,
+      "player": "Drazen Petrovic",
+      "tier": "3rd"
+    },
+    {
+      "year": 1983,
+      "player": "Buck Williams",
+      "tier": "2nd"
+    }
+  ],
+  "Cavaliers": [
+    {
+      "year": 2025,
+      "player": "Donovan Mitchell",
+      "tier": "1st"
+    },
+    {
+      "year": 2025,
+      "player": "Evan Mobley",
+      "tier": "2nd"
+    },
+    {
+      "year": 2023,
+      "player": "Donovan Mitchell",
+      "tier": "2nd"
+    },
+    {
+      "year": 2018,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2017,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2015,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2015,
+      "player": "Kyrie Irving",
+      "tier": "3rd"
+    },
+    {
+      "year": 2010,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2009,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2008,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2007,
+      "player": "Lebron James",
+      "tier": "2nd"
+    },
+    {
+      "year": 2006,
+      "player": "Lebron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2005,
+      "player": "LeBron James",
+      "tier": "2nd"
+    },
+    {
+      "year": 1994,
+      "player": "Mark Price",
+      "tier": "3rd"
+    },
+    {
+      "year": 1993,
+      "player": "Mark Price",
+      "tier": "1st"
+    },
+    {
+      "year": 1992,
+      "player": "Brad Daugherty",
+      "tier": "3rd"
+    },
+    {
+      "year": 1992,
+      "player": "Mark Price",
+      "tier": "3rd"
+    },
+    {
+      "year": 1989,
+      "player": "Mark Price",
+      "tier": "3rd"
+    }
+  ],
+  "Hornets": [
+    {
+      "year": 2019,
+      "player": "Kemba Walker",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "Al Jefferson",
+      "tier": "3rd"
+    },
+    {
+      "year": 2000,
+      "player": "Eddie Jones",
+      "tier": "3rd"
+    },
+    {
+      "year": 1998,
+      "player": "Glen Rice",
+      "tier": "3rd"
+    },
+    {
+      "year": 1997,
+      "player": "Glen Rice",
+      "tier": "2nd"
+    },
+    {
+      "year": 1997,
+      "player": "Anthony Mason",
+      "tier": "3rd"
+    },
+    {
+      "year": 1993,
+      "player": "Larry Johnson",
+      "tier": "2nd"
+    }
+  ],
+  "Magic": [
+    {
+      "year": 2012,
+      "player": "Dwight Howard",
+      "tier": "1st"
+    },
+    {
+      "year": 2011,
+      "player": "Dwight Howard",
+      "tier": "1st"
+    },
+    {
+      "year": 2010,
+      "player": "Dwight Howard",
+      "tier": "1st"
+    },
+    {
+      "year": 2009,
+      "player": "Dwight Howard",
+      "tier": "1st"
+    },
+    {
+      "year": 2008,
+      "player": "Dwight Howard",
+      "tier": "1st"
+    },
+    {
+      "year": 2007,
+      "player": "Dwight Howard",
+      "tier": "3rd"
+    },
+    {
+      "year": 2004,
+      "player": "Tracy McGrady",
+      "tier": "2nd"
+    },
+    {
+      "year": 2003,
+      "player": "Tracy McGrady",
+      "tier": "1st"
+    },
+    {
+      "year": 2002,
+      "player": "Tracy McGrady",
+      "tier": "1st"
+    },
+    {
+      "year": 2001,
+      "player": "Tracy McGrady",
+      "tier": "2nd"
+    },
+    {
+      "year": 1997,
+      "player": "Penny Hardaway",
+      "tier": "3rd"
+    },
+    {
+      "year": 1996,
+      "player": "Penny Hardaway",
+      "tier": "1st"
+    },
+    {
+      "year": 1996,
+      "player": "Shaquille O'Neal",
+      "tier": "3rd"
+    },
+    {
+      "year": 1995,
+      "player": "Penny Hardaway",
+      "tier": "1st"
+    },
+    {
+      "year": 1995,
+      "player": "Shaquille O'Neal",
+      "tier": "2nd"
+    },
+    {
+      "year": 1994,
+      "player": "Shaquille O'Neal",
+      "tier": "3rd"
+    }
+  ],
+  "Pacers": [
+    {
+      "year": 2025,
+      "player": "Tyrese Haliburton",
+      "tier": "3rd"
+    },
+    {
+      "year": 2024,
+      "player": "Tyrese Haliburton",
+      "tier": "3rd"
+    },
+    {
+      "year": 2018,
+      "player": "Victor Oladipo",
+      "tier": "3rd"
+    },
+    {
+      "year": 2016,
+      "player": "Paul George",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "Paul George",
+      "tier": "3rd"
+    },
+    {
+      "year": 2013,
+      "player": "Paul George",
+      "tier": "3rd"
+    },
+    {
+      "year": 2004,
+      "player": "Jermaine O'Neal",
+      "tier": "2nd"
+    },
+    {
+      "year": 2004,
+      "player": "Ron Artest",
+      "tier": "3rd"
+    },
+    {
+      "year": 2003,
+      "player": "Jermaine O'Neal",
+      "tier": "3rd"
+    },
+    {
+      "year": 2002,
+      "player": "Jermaine O'Neal",
+      "tier": "3rd"
+    },
+    {
+      "year": 1998,
+      "player": "Reggie Miller",
+      "tier": "3rd"
+    },
+    {
+      "year": 1996,
+      "player": "Reggie Miller",
+      "tier": "3rd"
+    },
+    {
+      "year": 1995,
+      "player": "Reggie Miller",
+      "tier": "3rd"
+    }
+  ],
+  "Heat": [
+    {
+      "year": 2023,
+      "player": "Jimmy Butler",
+      "tier": "2nd"
+    },
+    {
+      "year": 2021,
+      "player": "Jimmy Butler",
+      "tier": "3rd"
+    },
+    {
+      "year": 2020,
+      "player": "Jimmy Butler",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "Dwyane Wade",
+      "tier": "3rd"
+    },
+    {
+      "year": 2012,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2012,
+      "player": "Dwyane Wade",
+      "tier": "3rd"
+    },
+    {
+      "year": 2011,
+      "player": "LeBron James",
+      "tier": "1st"
+    },
+    {
+      "year": 2011,
+      "player": "Dwyane Wade",
+      "tier": "2nd"
+    },
+    {
+      "year": 2010,
+      "player": "Dwyane Wade",
+      "tier": "1st"
+    },
+    {
+      "year": 2009,
+      "player": "Dwyane Wade",
+      "tier": "1st"
+    },
+    {
+      "year": 2007,
+      "player": "Dwyane Wade",
+      "tier": "3rd"
+    },
+    {
+      "year": 2006,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 2006,
+      "player": "Dwyane Wade",
+      "tier": "2nd"
+    },
+    {
+      "year": 2005,
+      "player": "Shaquille O'Neal",
+      "tier": "1st"
+    },
+    {
+      "year": 2005,
+      "player": "Dwyane Wade",
+      "tier": "2nd"
+    },
+    {
+      "year": 2000,
+      "player": "Alonzo Mourning",
+      "tier": "2nd"
+    },
+    {
+      "year": 1999,
+      "player": "Alonzo Mourning",
+      "tier": "1st"
+    },
+    {
+      "year": 1999,
+      "player": "Tim Hardaway",
+      "tier": "2nd"
+    },
+    {
+      "year": 1998,
+      "player": "Tim Hardaway",
+      "tier": "2nd"
+    },
+    {
+      "year": 1997,
+      "player": "Tim Hardaway",
+      "tier": "1st"
+    }
+  ],
+  "Timberwolves": [
+    {
+      "year": 2025,
+      "player": "Anthony Edwards",
+      "tier": "2nd"
+    },
+    {
+      "year": 2024,
+      "player": "Anthony Edwards",
+      "tier": "2nd"
+    },
+    {
+      "year": 2022,
+      "player": "Karl-Anthony Towns",
+      "tier": "3rd"
+    },
+    {
+      "year": 2018,
+      "player": "Jimmy Butler",
+      "tier": "3rd"
+    },
+    {
+      "year": 2018,
+      "player": "Karl-Anthony Towns",
+      "tier": "3rd"
+    },
+    {
+      "year": 2014,
+      "player": "Kevin Love",
+      "tier": "2nd"
+    },
+    {
+      "year": 2012,
+      "player": "Kevin Love",
+      "tier": "2nd"
+    },
+    {
+      "year": 2007,
+      "player": "Kevin Garnett",
+      "tier": "3rd"
+    },
+    {
+      "year": 2005,
+      "player": "Kevin Garnett",
+      "tier": "2nd"
+    },
+    {
+      "year": 2004,
+      "player": "Kevin Garnett",
+      "tier": "1st"
+    },
+    {
+      "year": 2004,
+      "player": "Sam Cassell",
+      "tier": "2nd"
+    },
+    {
+      "year": 2003,
+      "player": "Kevin Garnett",
+      "tier": "1st"
+    },
+    {
+      "year": 2002,
+      "player": "Kevin Garnett",
+      "tier": "2nd"
+    },
+    {
+      "year": 2001,
+      "player": "Kevin Garnett",
+      "tier": "2nd"
+    },
+    {
+      "year": 2000,
+      "player": "Kevin Garnett",
+      "tier": "1st"
+    },
+    {
+      "year": 1999,
+      "player": "Kevin Garnett",
+      "tier": "3rd"
+    }
+  ],
+  "Raptors": [
+    {
+      "year": 2022,
+      "player": "Pascal Siakam",
+      "tier": "3rd"
+    },
+    {
+      "year": 2020,
+      "player": "Pascal Siakam",
+      "tier": "2nd"
+    },
+    {
+      "year": 2019,
+      "player": "Kawhi Leonard",
+      "tier": "2nd"
+    },
+    {
+      "year": 2018,
+      "player": "DeMar DeRozan",
+      "tier": "2nd"
+    },
+    {
+      "year": 2017,
+      "player": "DeMar DeRozan",
+      "tier": "3rd"
+    },
+    {
+      "year": 2016,
+      "player": "Kyle Lowry",
+      "tier": "3rd"
+    },
+    {
+      "year": 2007,
+      "player": "Chris Bosh",
+      "tier": "2nd"
+    },
+    {
+      "year": 2001,
+      "player": "Vince Carter",
+      "tier": "2nd"
+    },
+    {
+      "year": 2000,
+      "player": "Vince Carter",
+      "tier": "3rd"
+    }
+  ],
+  "Mavericks": [
+    {
+      "year": 2024,
+      "player": "Luka Dončić",
+      "tier": "1st"
+    },
+    {
+      "year": 2023,
+      "player": "Luka Dončić",
+      "tier": "1st"
+    },
+    {
+      "year": 2022,
+      "player": "Luka Dončić",
+      "tier": "1st"
+    },
+    {
+      "year": 2021,
+      "player": "Luka Dončić",
+      "tier": "1st"
+    },
+    {
+      "year": 2020,
+      "player": "Luka Dončić",
+      "tier": "1st"
+    },
+    {
+      "year": 2012,
+      "player": "Dirk Nowitzki",
+      "tier": "3rd"
+    },
+    {
+      "year": 2011,
+      "player": "Dirk Nowitzki",
+      "tier": "2nd"
+    },
+    {
+      "year": 2010,
+      "player": "Dirk Nowitzki",
+      "tier": "2nd"
+    },
+    {
+      "year": 2009,
+      "player": "Dirk Nowitzki",
+      "tier": "1st"
+    },
+    {
+      "year": 2008,
+      "player": "Dirk Nowitzki",
+      "tier": "2nd"
+    },
+    {
+      "year": 2007,
+      "player": "Dirk Nowitzki",
+      "tier": "1st"
+    },
+    {
+      "year": 2006,
+      "player": "Dirk Nowitzki",
+      "tier": "1st"
+    },
+    {
+      "year": 2005,
+      "player": "Dirk Nowitzki",
+      "tier": "1st"
+    },
+    {
+      "year": 2004,
+      "player": "Dirk Nowitzki",
+      "tier": "3rd"
+    },
+    {
+      "year": 2003,
+      "player": "Dirk Nowitzki",
+      "tier": "2nd"
+    },
+    {
+      "year": 2003,
+      "player": "Steve Nash",
+      "tier": "3rd"
+    },
+    {
+      "year": 2002,
+      "player": "Dirk Nowitzki",
+      "tier": "2nd"
+    },
+    {
+      "year": 2002,
+      "player": "Steve Nash",
+      "tier": "3rd"
+    },
+    {
+      "year": 2001,
+      "player": "Dirk Nowitzki",
+      "tier": "3rd"
+    }
+  ],
+  "Pelicans": [
+    {
+      "year": 2018,
+      "player": "Anthony Davis",
+      "tier": "1st"
+    },
+    {
+      "year": 2017,
+      "player": "Anthony Davis",
+      "tier": "1st"
+    },
+    {
+      "year": 2015,
+      "player": "Anthony Davis",
+      "tier": "1st"
+    },
+    {
+      "year": 2011,
+      "player": "Chris Paul",
+      "tier": "3rd"
+    },
+    {
+      "year": 2009,
+      "player": "Chris Paul",
+      "tier": "2nd"
+    },
+    {
+      "year": 2008,
+      "player": "Chris Paul",
+      "tier": "1st"
+    },
+    {
+      "year": 2004,
+      "player": "Baron Davis",
+      "tier": "3rd"
+    },
+    {
+      "year": 2003,
+      "player": "Jamal Mashburn",
+      "tier": "3rd"
+    }
+  ],
+  "Thunder": [
+    {
+      "year": 2025,
+      "player": "Shai Gilgeous-Alexander",
+      "tier": "1st"
+    },
+    {
+      "year": 2024,
+      "player": "Shai Gilgeous-Alexander",
+      "tier": "1st"
+    },
+    {
+      "year": 2023,
+      "player": "Shai Gilgeous-Alexander",
+      "tier": "1st"
+    },
+    {
+      "year": 2020,
+      "player": "Chris Paul",
+      "tier": "2nd"
+    },
+    {
+      "year": 2019,
+      "player": "Paul George",
+      "tier": "1st"
+    },
+    {
+      "year": 2019,
+      "player": "Russell Westbrook",
+      "tier": "3rd"
+    },
+    {
+      "year": 2018,
+      "player": "Russell Westbrook",
+      "tier": "2nd"
+    },
+    {
+      "year": 2018,
+      "player": "Paul George",
+      "tier": "3rd"
+    },
+    {
+      "year": 2017,
+      "player": "Russell Westbrook",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "Russell Westbrook",
+      "tier": "1st"
+    },
+    {
+      "year": 2016,
+      "player": "Kevin Durant",
+      "tier": "2nd"
+    },
+    {
+      "year": 2015,
+      "player": "Russell Westbrook",
+      "tier": "2nd"
+    },
+    {
+      "year": 2014,
+      "player": "Kevin Durant",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "Kevin Durant",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "Russell Westbrook",
+      "tier": "2nd"
+    },
+    {
+      "year": 2012,
+      "player": "Kevin Durant",
+      "tier": "1st"
+    },
+    {
+      "year": 2012,
+      "player": "Russell Westbrook",
+      "tier": "2nd"
+    },
+    {
+      "year": 2011,
+      "player": "Kevin Durant",
+      "tier": "1st"
+    },
+    {
+      "year": 2011,
+      "player": "Russell Westbrook",
+      "tier": "2nd"
+    },
+    {
+      "year": 2010,
+      "player": "Kevin Durant",
+      "tier": "1st"
+    }
+  ],
+  "Grizzlies": [
+    {
+      "year": 2025,
+      "player": "Jaren Jackson Jr.",
+      "tier": "3rd"
+    },
+    {
+      "year": 2022,
+      "player": "Ja Morant",
+      "tier": "2nd"
+    },
+    {
+      "year": 2015,
+      "player": "Marc Gasol",
+      "tier": "1st"
+    },
+    {
+      "year": 2013,
+      "player": "Marc Gasol",
+      "tier": "2nd"
+    },
+    {
+      "year": 2011,
+      "player": "Zach Randolph",
+      "tier": "3rd"
+    }
+  ]
+}

@@ -1,0 +1,2793 @@
+{
+  "Thunder": [
+    {
+      "canonical": "Paycom Center",
+      "city": "Oklahoma City",
+      "metro": "Oklahoma City",
+      "state": "Oklahoma",
+      "first_year": 2009,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Ford Center",
+          "first_year": 2009,
+          "last_year": 2009
+        },
+        {
+          "era_name": "Oklahoma City Arena",
+          "first_year": 2010,
+          "last_year": 2010
+        },
+        {
+          "era_name": "Chesapeake Energy Arena",
+          "first_year": 2011,
+          "last_year": 2022
+        },
+        {
+          "era_name": "Paycom Center",
+          "first_year": 2023,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Climate Pledge Arena",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 1996,
+      "last_year": 2008,
+      "eras": [
+        {
+          "era_name": "Key Arena",
+          "first_year": 1996,
+          "last_year": 2008
+        }
+      ]
+    },
+    {
+      "canonical": "Tacoma Dome",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 1994,
+      "last_year": 1995,
+      "eras": [
+        {
+          "era_name": "Seattle Center Coliseum/Tacoma Dome",
+          "first_year": 1994,
+          "last_year": 1994
+        },
+        {
+          "era_name": "Tacoma Dome",
+          "first_year": 1995,
+          "last_year": 1995
+        }
+      ]
+    },
+    {
+      "canonical": "Climate Pledge Arena",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 1986,
+      "last_year": 1993,
+      "eras": [
+        {
+          "era_name": "Seattle Center Coliseum",
+          "first_year": 1986,
+          "last_year": 1993
+        }
+      ]
+    },
+    {
+      "canonical": "Kingdome",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 1979,
+      "last_year": 1985,
+      "eras": [
+        {
+          "era_name": "Kingdome",
+          "first_year": 1979,
+          "last_year": 1985
+        }
+      ]
+    },
+    {
+      "canonical": "Climate Pledge Arena",
+      "city": "Seattle",
+      "metro": "Seattle",
+      "state": "Washington",
+      "first_year": 1968,
+      "last_year": 1978,
+      "eras": [
+        {
+          "era_name": "Seattle Center Coliseum",
+          "first_year": 1968,
+          "last_year": 1978
+        }
+      ]
+    }
+  ],
+  "Pistons": [
+    {
+      "canonical": "Little Caesars Arena",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 2018,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Little Caesars Arena",
+          "first_year": 2018,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Palace of Auburn Hills",
+      "city": "Auburn Hills",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1989,
+      "last_year": 2017,
+      "eras": [
+        {
+          "era_name": "Palace of Auburn Hills",
+          "first_year": 1989,
+          "last_year": 2008
+        },
+        {
+          "era_name": "The Palace of Auburn Hills",
+          "first_year": 2009,
+          "last_year": 2017
+        }
+      ]
+    },
+    {
+      "canonical": "Pontiac Silverdome",
+      "city": "Pontiac",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1979,
+      "last_year": 1988,
+      "eras": [
+        {
+          "era_name": "Pontiac Silverdome",
+          "first_year": 1979,
+          "last_year": 1988
+        }
+      ]
+    },
+    {
+      "canonical": "Cobo Arena",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1962,
+      "last_year": 1978,
+      "eras": [
+        {
+          "era_name": "Cobo Arena",
+          "first_year": 1962,
+          "last_year": 1978
+        }
+      ]
+    },
+    {
+      "canonical": "Olympia Stadium",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1958,
+      "last_year": 1961,
+      "eras": [
+        {
+          "era_name": "Olympia Stadium",
+          "first_year": 1958,
+          "last_year": 1961
+        }
+      ]
+    },
+    {
+      "canonical": "Allen County War Memorial Coliseum",
+      "city": "Fort Wayne",
+      "metro": "Fort Wayne",
+      "state": "Indiana",
+      "first_year": 1953,
+      "last_year": 1957,
+      "eras": [
+        {
+          "era_name": "Ft. Wayne Memorial Coliseum",
+          "first_year": 1953,
+          "last_year": 1957
+        }
+      ]
+    },
+    {
+      "canonical": "North Side High School Gym",
+      "city": "Fort Wayne",
+      "metro": "Fort Wayne",
+      "state": "Indiana",
+      "first_year": 1949,
+      "last_year": 1952,
+      "eras": [
+        {
+          "era_name": "North Side High School Gym",
+          "first_year": 1949,
+          "last_year": 1952
+        }
+      ]
+    }
+  ],
+  "Spurs": [
+    {
+      "canonical": "Frost Bank Center",
+      "city": "San Antonio",
+      "metro": "San Antonio",
+      "state": "Texas",
+      "first_year": 2003,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "SBC Center",
+          "first_year": 2003,
+          "last_year": 2005
+        },
+        {
+          "era_name": "AT&T Center",
+          "first_year": 2006,
+          "last_year": 2023
+        },
+        {
+          "era_name": "Frost Bank Center",
+          "first_year": 2024,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Alamodome",
+      "city": "San Antonio",
+      "metro": "San Antonio",
+      "state": "Texas",
+      "first_year": 1994,
+      "last_year": 2002,
+      "eras": [
+        {
+          "era_name": "Alamodome",
+          "first_year": 1994,
+          "last_year": 2002
+        }
+      ]
+    },
+    {
+      "canonical": "Hemisfair Arena",
+      "city": "San Antonio",
+      "metro": "San Antonio",
+      "state": "Texas",
+      "first_year": 1974,
+      "last_year": 1993,
+      "eras": [
+        {
+          "era_name": "Hemisfair Arena",
+          "first_year": 1974,
+          "last_year": 1993
+        }
+      ]
+    },
+    {
+      "canonical": "Dallas Memorial Auditorium",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1972,
+      "last_year": 1973,
+      "eras": [
+        {
+          "era_name": "Dallas Memorial Auditorium/Moody Coliseum",
+          "first_year": 1972,
+          "last_year": 1973
+        }
+      ]
+    },
+    {
+      "canonical": "Moody Coliseum",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1971,
+      "last_year": 1971,
+      "eras": [
+        {
+          "era_name": "Moody Coliseum/Tarrant CC/Lubbock Mem. Aud.",
+          "first_year": 1971,
+          "last_year": 1971
+        }
+      ]
+    },
+    {
+      "canonical": "Dallas Memorial Auditorium",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1968,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Dallas Memorial Auditorium/Moody Coliseum",
+          "first_year": 1968,
+          "last_year": 1970
+        }
+      ]
+    }
+  ],
+  "Celtics": [
+    {
+      "canonical": "TD Garden",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1996,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "FleetCenter",
+          "first_year": 1996,
+          "last_year": 2005
+        },
+        {
+          "era_name": "TD Banknorth Garden",
+          "first_year": 2006,
+          "last_year": 2009
+        },
+        {
+          "era_name": "TD Garden",
+          "first_year": 2010,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Boston Garden",
+      "city": "Boston",
+      "metro": "Boston",
+      "state": "Massachusetts",
+      "first_year": 1947,
+      "last_year": 1995,
+      "eras": [
+        {
+          "era_name": "Boston Garden",
+          "first_year": 1947,
+          "last_year": 1995
+        }
+      ]
+    }
+  ],
+  "Nuggets": [
+    {
+      "canonical": "Ball Arena",
+      "city": "Denver",
+      "metro": "Denver",
+      "state": "Colorado",
+      "first_year": 2000,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Pepsi Center",
+          "first_year": 2000,
+          "last_year": 2020
+        },
+        {
+          "era_name": "Ball Arena",
+          "first_year": 2021,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "McNichols Sports Arena",
+      "city": "Denver",
+      "metro": "Denver",
+      "state": "Colorado",
+      "first_year": 1976,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "McNichols Sports Arena",
+          "first_year": 1976,
+          "last_year": 1999
+        }
+      ]
+    },
+    {
+      "canonical": "Auditorium Arena",
+      "city": "Denver",
+      "metro": "Denver",
+      "state": "Colorado",
+      "first_year": 1968,
+      "last_year": 1975,
+      "eras": [
+        {
+          "era_name": "Auditorium Arena",
+          "first_year": 1968,
+          "last_year": 1975
+        }
+      ]
+    }
+  ],
+  "Knicks": [
+    {
+      "canonical": "Madison Square Garden IV",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1969,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Madison Square Garden IV",
+          "first_year": 1969,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Madison Square Garden III",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1947,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Madison Square Garden III",
+          "first_year": 1947,
+          "last_year": 1968
+        }
+      ]
+    }
+  ],
+  "Rockets": [
+    {
+      "canonical": "Toyota Center",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 2004,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Toyota Center",
+          "first_year": 2004,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Compaq Center",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 1976,
+      "last_year": 2003,
+      "eras": [
+        {
+          "era_name": "The Summit",
+          "first_year": 1976,
+          "last_year": 1997
+        },
+        {
+          "era_name": "Compaq Center",
+          "first_year": 1998,
+          "last_year": 2003
+        }
+      ]
+    },
+    {
+      "canonical": "Fertitta Center",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 1974,
+      "last_year": 1975,
+      "eras": [
+        {
+          "era_name": "Hofheinz Pavilion",
+          "first_year": 1974,
+          "last_year": 1975
+        }
+      ]
+    },
+    {
+      "canonical": "Hofheinz Pavilion",
+      "city": "",
+      "metro": "",
+      "state": "",
+      "first_year": 1973,
+      "last_year": 1973,
+      "eras": [
+        {
+          "era_name": "Hofheinz Pavilion/Hemisfair Arena",
+          "first_year": 1973,
+          "last_year": 1973
+        }
+      ]
+    },
+    {
+      "canonical": "Fertitta Center",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 1972,
+      "last_year": 1972,
+      "eras": [
+        {
+          "era_name": "Hofheinz Pavilion",
+          "first_year": 1972,
+          "last_year": 1972
+        }
+      ]
+    },
+    {
+      "canonical": "Pechanga Arena San Diego",
+      "city": "San Diego",
+      "metro": "San Diego",
+      "state": "California",
+      "first_year": 1968,
+      "last_year": 1971,
+      "eras": [
+        {
+          "era_name": "San Diego Sports Arena",
+          "first_year": 1968,
+          "last_year": 1971
+        }
+      ]
+    }
+  ],
+  "Lakers": [
+    {
+      "canonical": "Crypto.com Arena",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 2000,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Staples Center",
+          "first_year": 2000,
+          "last_year": 2021
+        },
+        {
+          "era_name": "Crypto.com Arena",
+          "first_year": 2022,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Great Western Forum",
+      "city": "Inglewood",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1968,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "The Forum",
+          "first_year": 1968,
+          "last_year": 1988
+        },
+        {
+          "era_name": "Great Western Forum",
+          "first_year": 1989,
+          "last_year": 1999
+        }
+      ]
+    },
+    {
+      "canonical": "Los Angeles Sports Arena",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1961,
+      "last_year": 1967,
+      "eras": [
+        {
+          "era_name": "Los Angeles Sports Arena",
+          "first_year": 1961,
+          "last_year": 1967
+        }
+      ]
+    },
+    {
+      "canonical": "Minneapolis Auditorium",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1949,
+      "last_year": 1960,
+      "eras": [
+        {
+          "era_name": "Minneapolis Auditorium",
+          "first_year": 1949,
+          "last_year": 1960
+        }
+      ]
+    }
+  ],
+  "Cavaliers": [
+    {
+      "canonical": "Rocket Mortgage Fieldhouse",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1995,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Gund Arena",
+          "first_year": 1995,
+          "last_year": 2005
+        },
+        {
+          "era_name": "Quicken Loans Arena",
+          "first_year": 2006,
+          "last_year": 2019
+        },
+        {
+          "era_name": "Rocket Mortgage Fieldhouse",
+          "first_year": 2020,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Richfield Coliseum",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1975,
+      "last_year": 1994,
+      "eras": [
+        {
+          "era_name": "Richfield Coliseum",
+          "first_year": 1975,
+          "last_year": 1994
+        }
+      ]
+    },
+    {
+      "canonical": "Cleveland Arena",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1971,
+      "last_year": 1974,
+      "eras": [
+        {
+          "era_name": "Cleveland Arena",
+          "first_year": 1971,
+          "last_year": 1974
+        }
+      ]
+    }
+  ],
+  "Timberwolves": [
+    {
+      "canonical": "Target Center",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1991,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Target Center",
+          "first_year": 1991,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Hubert H. Humphrey Metrodome",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1990,
+      "last_year": 1990,
+      "eras": [
+        {
+          "era_name": "Hubert H. Humphrey Metrodome",
+          "first_year": 1990,
+          "last_year": 1990
+        }
+      ]
+    }
+  ],
+  "Raptors": [
+    {
+      "canonical": "Scotiabank Arena",
+      "city": "Toronto",
+      "metro": "Toronto",
+      "state": "Ontario",
+      "first_year": 2022,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Scotiabank Arena",
+          "first_year": 2022,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Benchmark International Arena",
+      "city": "",
+      "metro": "",
+      "state": "",
+      "first_year": 2021,
+      "last_year": 2021,
+      "eras": [
+        {
+          "era_name": "Amalie Arena",
+          "first_year": 2021,
+          "last_year": 2021
+        }
+      ]
+    },
+    {
+      "canonical": "Scotiabank Arena",
+      "city": "Toronto",
+      "metro": "Toronto",
+      "state": "Ontario",
+      "first_year": 1999,
+      "last_year": 2020,
+      "eras": [
+        {
+          "era_name": "Skydome/Air Canada Centre",
+          "first_year": 1999,
+          "last_year": 1999
+        },
+        {
+          "era_name": "Air Canada Centre",
+          "first_year": 2000,
+          "last_year": 2018
+        },
+        {
+          "era_name": "Scotiabank Arena",
+          "first_year": 2019,
+          "last_year": 2020
+        }
+      ]
+    },
+    {
+      "canonical": "Rogers Centre",
+      "city": "Toronto",
+      "metro": "Toronto",
+      "state": "Ontario",
+      "first_year": 1996,
+      "last_year": 1998,
+      "eras": [
+        {
+          "era_name": "Skydome",
+          "first_year": 1996,
+          "last_year": 1998
+        }
+      ]
+    }
+  ],
+  "Clippers": [
+    {
+      "canonical": "Intuit Dome",
+      "city": "Inglewood",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 2025,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Intuit Dome",
+          "first_year": 2025,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Crypto.com Arena",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 2000,
+      "last_year": 2024,
+      "eras": [
+        {
+          "era_name": "Staples Center",
+          "first_year": 2000,
+          "last_year": 2021
+        },
+        {
+          "era_name": "Crypto.com Arena",
+          "first_year": 2022,
+          "last_year": 2024
+        }
+      ]
+    },
+    {
+      "canonical": "Los Angeles Sports Arena",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1985,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "Los Angeles Sports Arena",
+          "first_year": 1985,
+          "last_year": 1994
+        },
+        {
+          "era_name": "Los Angeles Sports Arena/Arrowhead Pond",
+          "first_year": 1995,
+          "last_year": 1999
+        }
+      ]
+    },
+    {
+      "canonical": "Pechanga Arena San Diego",
+      "city": "San Diego",
+      "metro": "San Diego",
+      "state": "California",
+      "first_year": 1979,
+      "last_year": 1984,
+      "eras": [
+        {
+          "era_name": "San Diego Sports Arena",
+          "first_year": 1979,
+          "last_year": 1984
+        }
+      ]
+    },
+    {
+      "canonical": "Memorial Auditorium",
+      "city": "Buffalo",
+      "metro": "Buffalo",
+      "state": "New York",
+      "first_year": 1971,
+      "last_year": 1978,
+      "eras": [
+        {
+          "era_name": "Memorial Auditorium",
+          "first_year": 1971,
+          "last_year": 1978
+        }
+      ]
+    }
+  ],
+  "Hawks": [
+    {
+      "canonical": "State Farm Arena",
+      "city": "Atlanta",
+      "metro": "Atlanta",
+      "state": "Georgia",
+      "first_year": 2000,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Philips Arena",
+          "first_year": 2000,
+          "last_year": 2018
+        },
+        {
+          "era_name": "State Farm Arena",
+          "first_year": 2019,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Alexander Memorial Coliseum",
+      "city": "Atlanta",
+      "metro": "Atlanta",
+      "state": "Georgia",
+      "first_year": 1998,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "Alexander Memorial Coliseum/Georgia Dome",
+          "first_year": 1998,
+          "last_year": 1999
+        }
+      ]
+    },
+    {
+      "canonical": "The Omni",
+      "city": "Atlanta",
+      "metro": "Atlanta",
+      "state": "Georgia",
+      "first_year": 1969,
+      "last_year": 1997,
+      "eras": [
+        {
+          "era_name": "The Omni",
+          "first_year": 1969,
+          "last_year": 1997
+        }
+      ]
+    },
+    {
+      "canonical": "Kiel Auditorium",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1956,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Kiel Auditorium",
+          "first_year": 1956,
+          "last_year": 1968
+        }
+      ]
+    },
+    {
+      "canonical": "UW-Milwaukee Panther Arena",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1952,
+      "last_year": 1955,
+      "eras": [
+        {
+          "era_name": "Milwaukee Arena",
+          "first_year": 1952,
+          "last_year": 1955
+        }
+      ]
+    },
+    {
+      "canonical": "Wharton Field House",
+      "city": "Moline",
+      "metro": "Davenport",
+      "state": "Illinois",
+      "first_year": 1950,
+      "last_year": 1951,
+      "eras": [
+        {
+          "era_name": "Wharton Field House",
+          "first_year": 1950,
+          "last_year": 1951
+        }
+      ]
+    }
+  ],
+  "Suns": [
+    {
+      "canonical": "Mortgage Matchup Center",
+      "city": "Phoenix",
+      "metro": "Phoenix",
+      "state": "Arizona",
+      "first_year": 1993,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "America West Arena",
+          "first_year": 1993,
+          "last_year": 2005
+        },
+        {
+          "era_name": "US Airways Center",
+          "first_year": 2006,
+          "last_year": 2015
+        },
+        {
+          "era_name": "Talking Stick Resort Arena",
+          "first_year": 2016,
+          "last_year": 2020
+        },
+        {
+          "era_name": "Phoenix Suns Arena",
+          "first_year": 2021,
+          "last_year": 2021
+        },
+        {
+          "era_name": "Footprint Center",
+          "first_year": 2022,
+          "last_year": 2025
+        },
+        {
+          "era_name": "Mortgage Matchup Center",
+          "first_year": 2026,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Arizona Veterans Memorial Coliseum",
+      "city": "Phoenix",
+      "metro": "Phoenix",
+      "state": "Arizona",
+      "first_year": 1969,
+      "last_year": 1992,
+      "eras": [
+        {
+          "era_name": "Arizona Veteran's Memorial Coliseum",
+          "first_year": 1969,
+          "last_year": 1992
+        }
+      ]
+    }
+  ],
+  "Magic": [
+    {
+      "canonical": "Kia Center",
+      "city": "Orlando",
+      "metro": "Orlando",
+      "state": "Florida",
+      "first_year": 1990,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Orlando Arena",
+          "first_year": 1990,
+          "last_year": 1999
+        },
+        {
+          "era_name": "TD Waterhouse Centre",
+          "first_year": 2000,
+          "last_year": 2006
+        },
+        {
+          "era_name": "Amway Arena",
+          "first_year": 2007,
+          "last_year": 2010
+        },
+        {
+          "era_name": "Amway Center",
+          "first_year": 2011,
+          "last_year": 2023
+        },
+        {
+          "era_name": "Kia Center",
+          "first_year": 2024,
+          "last_year": 2026
+        }
+      ]
+    }
+  ],
+  "Heat": [
+    {
+      "canonical": "Kaseya Center",
+      "city": "Miami",
+      "metro": "Miami",
+      "state": "Florida",
+      "first_year": 2000,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Miami Arena/American Airlines Arena",
+          "first_year": 2000,
+          "last_year": 2000
+        },
+        {
+          "era_name": "American Airlines Arena",
+          "first_year": 2001,
+          "last_year": 2021
+        },
+        {
+          "era_name": "FTX Arena",
+          "first_year": 2022,
+          "last_year": 2022
+        },
+        {
+          "era_name": "Kaseya Center",
+          "first_year": 2023,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Miami Arena",
+      "city": "Miami",
+      "metro": "Miami",
+      "state": "Florida",
+      "first_year": 1989,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "Miami Arena",
+          "first_year": 1989,
+          "last_year": 1999
+        }
+      ]
+    }
+  ],
+  "76ers": [
+    {
+      "canonical": "Xfinity Mobile Arena",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1997,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Corestates Center",
+          "first_year": 1997,
+          "last_year": 1998
+        },
+        {
+          "era_name": "First Union Center",
+          "first_year": 1999,
+          "last_year": 2003
+        },
+        {
+          "era_name": "Wachovia Center",
+          "first_year": 2004,
+          "last_year": 2010
+        },
+        {
+          "era_name": "Wells Fargo Center",
+          "first_year": 2011,
+          "last_year": 2025
+        },
+        {
+          "era_name": "Xfinity Mobile Arena",
+          "first_year": 2026,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "The Spectrum",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1968,
+      "last_year": 1996,
+      "eras": [
+        {
+          "era_name": "The Spectrum",
+          "first_year": 1968,
+          "last_year": 1994
+        },
+        {
+          "era_name": "Corestates Spectrum",
+          "first_year": 1995,
+          "last_year": 1996
+        }
+      ]
+    },
+    {
+      "canonical": "Convention Hall",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1964,
+      "last_year": 1967,
+      "eras": [
+        {
+          "era_name": "Convention Hall/Philadelphia Arena",
+          "first_year": 1964,
+          "last_year": 1967
+        }
+      ]
+    },
+    {
+      "canonical": "Onondaga County War Memorial",
+      "city": "Syracuse",
+      "metro": "Syracuse",
+      "state": "New York",
+      "first_year": 1952,
+      "last_year": 1963,
+      "eras": [
+        {
+          "era_name": "Onondaga County War Memorial",
+          "first_year": 1952,
+          "last_year": 1963
+        }
+      ]
+    },
+    {
+      "canonical": "New York State Fair Coliseum",
+      "city": "Syracuse",
+      "metro": "Syracuse",
+      "state": "New York",
+      "first_year": 1950,
+      "last_year": 1951,
+      "eras": [
+        {
+          "era_name": "New York State Fair Coliseum",
+          "first_year": 1950,
+          "last_year": 1951
+        }
+      ]
+    }
+  ],
+  "Hornets": [
+    {
+      "canonical": "Spectrum Center",
+      "city": "Charlotte",
+      "metro": "Charlotte",
+      "state": "North Carolina",
+      "first_year": 2006,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Charlotte Bobcats Arena",
+          "first_year": 2006,
+          "last_year": 2007
+        },
+        {
+          "era_name": "Time Warner Cable Arena",
+          "first_year": 2008,
+          "last_year": 2016
+        },
+        {
+          "era_name": "Spectrum Center",
+          "first_year": 2017,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Charlotte Coliseum II",
+      "city": "Charlotte",
+      "metro": "Charlotte",
+      "state": "North Carolina",
+      "first_year": 1989,
+      "last_year": 2005,
+      "eras": [
+        {
+          "era_name": "Charlotte Coliseum",
+          "first_year": 1989,
+          "last_year": 2005
+        }
+      ]
+    }
+  ],
+  "Warriors": [
+    {
+      "canonical": "Chase Center",
+      "city": "San Francisco",
+      "metro": "San Francisco-San Jose",
+      "state": "California",
+      "first_year": 2020,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Chase Center",
+          "first_year": 2020,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Oracle Arena",
+      "city": "Oakland",
+      "metro": "San Francisco-San Jose",
+      "state": "California",
+      "first_year": 1998,
+      "last_year": 2019,
+      "eras": [
+        {
+          "era_name": "New Arena in Oakland",
+          "first_year": 1998,
+          "last_year": 2002
+        },
+        {
+          "era_name": "Arena in Oakland",
+          "first_year": 2003,
+          "last_year": 2005
+        },
+        {
+          "era_name": "Oakland Arena",
+          "first_year": 2006,
+          "last_year": 2006
+        },
+        {
+          "era_name": "Oracle Arena",
+          "first_year": 2007,
+          "last_year": 2019
+        }
+      ]
+    },
+    {
+      "canonical": "SAP Center at San Jose",
+      "city": "San Jose",
+      "metro": "San Francisco-San Jose",
+      "state": "California",
+      "first_year": 1997,
+      "last_year": 1997,
+      "eras": [
+        {
+          "era_name": "San Jose Arena",
+          "first_year": 1997,
+          "last_year": 1997
+        }
+      ]
+    },
+    {
+      "canonical": "Oracle Arena",
+      "city": "Oakland",
+      "metro": "San Francisco-San Jose",
+      "state": "California",
+      "first_year": 1972,
+      "last_year": 1996,
+      "eras": [
+        {
+          "era_name": "Oakland-Alameda County Coliseum Arena",
+          "first_year": 1972,
+          "last_year": 1996
+        }
+      ]
+    },
+    {
+      "canonical": "Cow Palace",
+      "city": "San Francisco",
+      "metro": "San Francisco-San Jose",
+      "state": "California",
+      "first_year": 1968,
+      "last_year": 1971,
+      "eras": [
+        {
+          "era_name": "Cow Palace",
+          "first_year": 1968,
+          "last_year": 1971
+        }
+      ]
+    },
+    {
+      "canonical": "Civic Auditorium",
+      "city": "",
+      "metro": "",
+      "state": "",
+      "first_year": 1965,
+      "last_year": 1967,
+      "eras": [
+        {
+          "era_name": "Civic Auditorium/USF Memorial Gym",
+          "first_year": 1965,
+          "last_year": 1966
+        },
+        {
+          "era_name": "Cow Palace/Civic Auditroium",
+          "first_year": 1967,
+          "last_year": 1967
+        }
+      ]
+    },
+    {
+      "canonical": "Cow Palace",
+      "city": "San Francisco",
+      "metro": "San Francisco-San Jose",
+      "state": "California",
+      "first_year": 1963,
+      "last_year": 1964,
+      "eras": [
+        {
+          "era_name": "Cow Palace",
+          "first_year": 1963,
+          "last_year": 1964
+        }
+      ]
+    },
+    {
+      "canonical": "Convention Hall",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1953,
+      "last_year": 1962,
+      "eras": [
+        {
+          "era_name": "Convention Hall/Philadelphia Arena",
+          "first_year": 1953,
+          "last_year": 1962
+        }
+      ]
+    },
+    {
+      "canonical": "Philadelphia Arena",
+      "city": "Philadelphia",
+      "metro": "Philadelphia",
+      "state": "Pennsylvania",
+      "first_year": 1947,
+      "last_year": 1952,
+      "eras": [
+        {
+          "era_name": "Philadelphia Arena",
+          "first_year": 1947,
+          "last_year": 1952
+        }
+      ]
+    }
+  ],
+  "Trail Blazers": [
+    {
+      "canonical": "Moda Center",
+      "city": "Portland",
+      "metro": "Portland",
+      "state": "Oregon",
+      "first_year": 1996,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Rose Garden",
+          "first_year": 1996,
+          "last_year": 2013
+        },
+        {
+          "era_name": "Moda Center",
+          "first_year": 2014,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Memorial Coliseum",
+      "city": "Portland",
+      "metro": "Portland",
+      "state": "Oregon",
+      "first_year": 1971,
+      "last_year": 1995,
+      "eras": [
+        {
+          "era_name": "Memorial Coliseum",
+          "first_year": 1971,
+          "last_year": 1995
+        }
+      ]
+    }
+  ],
+  "Bucks": [
+    {
+      "canonical": "Fiserv Forum",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 2019,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Fiserv Forum",
+          "first_year": 2019,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Bradley Center",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1989,
+      "last_year": 2018,
+      "eras": [
+        {
+          "era_name": "Bradley Center",
+          "first_year": 1989,
+          "last_year": 2018
+        }
+      ]
+    },
+    {
+      "canonical": "UW-Milwaukee Panther Arena",
+      "city": "Milwaukee",
+      "metro": "Milwaukee",
+      "state": "Wisconsin",
+      "first_year": 1969,
+      "last_year": 1988,
+      "eras": [
+        {
+          "era_name": "Milwaukee Arena",
+          "first_year": 1969,
+          "last_year": 1988
+        }
+      ]
+    }
+  ],
+  "Bulls": [
+    {
+      "canonical": "United Center",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1995,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "United Center",
+          "first_year": 1995,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Chicago Stadium",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1968,
+      "last_year": 1994,
+      "eras": [
+        {
+          "era_name": "Chicago Stadium",
+          "first_year": 1968,
+          "last_year": 1994
+        }
+      ]
+    },
+    {
+      "canonical": "Chicago Amphitheater",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1967,
+      "last_year": 1967,
+      "eras": [
+        {
+          "era_name": "Chicago Amphitheater",
+          "first_year": 1967,
+          "last_year": 1967
+        }
+      ]
+    }
+  ],
+  "Mavericks": [
+    {
+      "canonical": "American Airlines Center",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 2002,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "American Airlines Center",
+          "first_year": 2002,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Reunion Arena",
+      "city": "Dallas",
+      "metro": "Dallas",
+      "state": "Texas",
+      "first_year": 1981,
+      "last_year": 2001,
+      "eras": [
+        {
+          "era_name": "Reunion Arena",
+          "first_year": 1981,
+          "last_year": 2001
+        }
+      ]
+    }
+  ],
+  "Grizzlies": [
+    {
+      "canonical": "FedExForum",
+      "city": "Memphis",
+      "metro": "Memphis",
+      "state": "Tennessee",
+      "first_year": 2005,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "FedExForum",
+          "first_year": 2005,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "The Pyramid",
+      "city": "Memphis",
+      "metro": "Memphis",
+      "state": "Tennessee",
+      "first_year": 2002,
+      "last_year": 2004,
+      "eras": [
+        {
+          "era_name": "The Pyramid",
+          "first_year": 2002,
+          "last_year": 2004
+        }
+      ]
+    },
+    {
+      "canonical": "General Motors Place",
+      "city": "Vancouver",
+      "metro": "Vancouver",
+      "state": "British Columbia",
+      "first_year": 1996,
+      "last_year": 2001,
+      "eras": [
+        {
+          "era_name": "General Motors Place",
+          "first_year": 1996,
+          "last_year": 2001
+        }
+      ]
+    }
+  ],
+  "Pelicans": [
+    {
+      "canonical": "Smoothie King Center",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 2008,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "New Orleans Arena",
+          "first_year": 2008,
+          "last_year": 2013
+        },
+        {
+          "era_name": "Smoothie King Center",
+          "first_year": 2014,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Paycom Center",
+      "city": "Oklahoma City",
+      "metro": "Oklahoma City",
+      "state": "Oklahoma",
+      "first_year": 2006,
+      "last_year": 2007,
+      "eras": [
+        {
+          "era_name": "Ford Center/New Orleans Arena",
+          "first_year": 2006,
+          "last_year": 2007
+        }
+      ]
+    },
+    {
+      "canonical": "Smoothie King Center",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 2003,
+      "last_year": 2005,
+      "eras": [
+        {
+          "era_name": "New Orleans Arena",
+          "first_year": 2003,
+          "last_year": 2005
+        }
+      ]
+    }
+  ],
+  "Pacers": [
+    {
+      "canonical": "Gainbridge Fieldhouse",
+      "city": "Indianapolis",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 2000,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Conseco Fieldhouse",
+          "first_year": 2000,
+          "last_year": 2011
+        },
+        {
+          "era_name": "Bankers Life Fieldhouse",
+          "first_year": 2012,
+          "last_year": 2022
+        },
+        {
+          "era_name": "Gainbridge Fieldhouse",
+          "first_year": 2023,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Market Square Arena",
+      "city": "Indianapolis",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 1975,
+      "last_year": 1999,
+      "eras": [
+        {
+          "era_name": "Market Square Arena",
+          "first_year": 1975,
+          "last_year": 1999
+        }
+      ]
+    },
+    {
+      "canonical": "Indiana Farmers Coliseum",
+      "city": "Indianapolis",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 1968,
+      "last_year": 1974,
+      "eras": [
+        {
+          "era_name": "Indiana State Fairgrounds Coliseum",
+          "first_year": 1968,
+          "last_year": 1974
+        }
+      ]
+    }
+  ],
+  "Kings": [
+    {
+      "canonical": "Golden 1 Center",
+      "city": "Sacramento",
+      "metro": "Sacramento",
+      "state": "California",
+      "first_year": 2017,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Golden 1 Center",
+          "first_year": 2017,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Sleep Train Arena",
+      "city": "Sacramento",
+      "metro": "Sacramento",
+      "state": "California",
+      "first_year": 2013,
+      "last_year": 2016,
+      "eras": [
+        {
+          "era_name": "Sleep Train Arena",
+          "first_year": 2013,
+          "last_year": 2016
+        }
+      ]
+    },
+    {
+      "canonical": "Power Balance Pavilion",
+      "city": "",
+      "metro": "",
+      "state": "",
+      "first_year": 2010,
+      "last_year": 2012,
+      "eras": [
+        {
+          "era_name": "Power Balance Pavilion",
+          "first_year": 2010,
+          "last_year": 2012
+        }
+      ]
+    },
+    {
+      "canonical": "Sleep Train Arena",
+      "city": "Sacramento",
+      "metro": "Sacramento",
+      "state": "California",
+      "first_year": 1989,
+      "last_year": 2009,
+      "eras": [
+        {
+          "era_name": "Arco Arena II",
+          "first_year": 1989,
+          "last_year": 2009
+        }
+      ]
+    },
+    {
+      "canonical": "Arco Arena I",
+      "city": "Sacramento",
+      "metro": "Sacramento",
+      "state": "California",
+      "first_year": 1986,
+      "last_year": 1988,
+      "eras": [
+        {
+          "era_name": "Arco Arena I",
+          "first_year": 1986,
+          "last_year": 1988
+        }
+      ]
+    },
+    {
+      "canonical": "Hy-Vee Arena",
+      "city": "Kansas City",
+      "metro": "Kansas City",
+      "state": "Missouri",
+      "first_year": 1979,
+      "last_year": 1985,
+      "eras": [
+        {
+          "era_name": "Kemper Arena",
+          "first_year": 1979,
+          "last_year": 1985
+        }
+      ]
+    },
+    {
+      "canonical": "Kemper Arena",
+      "city": "",
+      "metro": "",
+      "state": "",
+      "first_year": 1975,
+      "last_year": 1978,
+      "eras": [
+        {
+          "era_name": "Kemper Arena/Omaha Civic Auditorium",
+          "first_year": 1975,
+          "last_year": 1978
+        }
+      ]
+    },
+    {
+      "canonical": "Kansas City Municipal Auditorium",
+      "city": "Kansas City",
+      "metro": "Kansas City",
+      "state": "Missouri",
+      "first_year": 1973,
+      "last_year": 1974,
+      "eras": [
+        {
+          "era_name": "KC Municipal Auditorium/Omaha Civic Auditorium",
+          "first_year": 1973,
+          "last_year": 1974
+        }
+      ]
+    },
+    {
+      "canonical": "Cincinnati Gardens",
+      "city": "Cincinnati",
+      "metro": "Cincinnati",
+      "state": "Ohio",
+      "first_year": 1958,
+      "last_year": 1972,
+      "eras": [
+        {
+          "era_name": "Cincinnati Gardens",
+          "first_year": 1958,
+          "last_year": 1972
+        }
+      ]
+    },
+    {
+      "canonical": "Blue Cross Arena",
+      "city": "Rochester",
+      "metro": "Rochester",
+      "state": "New York",
+      "first_year": 1956,
+      "last_year": 1957,
+      "eras": [
+        {
+          "era_name": "Rochester War Memorial",
+          "first_year": 1956,
+          "last_year": 1957
+        }
+      ]
+    },
+    {
+      "canonical": "Edgerton Park Arena",
+      "city": "Rochester",
+      "metro": "Rochester",
+      "state": "New York",
+      "first_year": 1949,
+      "last_year": 1955,
+      "eras": [
+        {
+          "era_name": "Edgarton Park Arena",
+          "first_year": 1949,
+          "last_year": 1955
+        }
+      ]
+    }
+  ],
+  "Jazz": [
+    {
+      "canonical": "Delta Center",
+      "city": "Salt Lake City",
+      "metro": "Salt Lake City-Provo",
+      "state": "Utah",
+      "first_year": 1992,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Delta Center",
+          "first_year": 1992,
+          "last_year": 2006
+        },
+        {
+          "era_name": "EnergySolutions Arena",
+          "first_year": 2007,
+          "last_year": 2015
+        },
+        {
+          "era_name": "Vivint Smart Home Arena",
+          "first_year": 2016,
+          "last_year": 2022
+        },
+        {
+          "era_name": "Vivint Arena",
+          "first_year": 2023,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Salt Palace",
+      "city": "Salt Lake City",
+      "metro": "Salt Lake City-Provo",
+      "state": "Utah",
+      "first_year": 1980,
+      "last_year": 1991,
+      "eras": [
+        {
+          "era_name": "Salt Palace",
+          "first_year": 1980,
+          "last_year": 1983
+        },
+        {
+          "era_name": "Salt Palace/Thomas & Mack Center",
+          "first_year": 1984,
+          "last_year": 1984
+        },
+        {
+          "era_name": "Salt Palace",
+          "first_year": 1985,
+          "last_year": 1991
+        }
+      ]
+    },
+    {
+      "canonical": "Caesars Superdome",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 1976,
+      "last_year": 1979,
+      "eras": [
+        {
+          "era_name": "Louisiana Superdome",
+          "first_year": 1976,
+          "last_year": 1979
+        }
+      ]
+    },
+    {
+      "canonical": "New Orleans Municipal Auditorium",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 1975,
+      "last_year": 1975,
+      "eras": [
+        {
+          "era_name": "Municipal Auditorium/Louisiana Superdome",
+          "first_year": 1975,
+          "last_year": 1975
+        }
+      ]
+    }
+  ],
+  "Nets": [
+    {
+      "canonical": "Barclays Center",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 2013,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "Barclays Center",
+          "first_year": 2013,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "Prudential Center",
+      "city": "Newark",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 2011,
+      "last_year": 2012,
+      "eras": [
+        {
+          "era_name": "Prudential Center",
+          "first_year": 2011,
+          "last_year": 2012
+        }
+      ]
+    },
+    {
+      "canonical": "Izod Center",
+      "city": "East Rutherford",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 1982,
+      "last_year": 2010,
+      "eras": [
+        {
+          "era_name": "Brendan Byrne Arena",
+          "first_year": 1982,
+          "last_year": 1996
+        },
+        {
+          "era_name": "Continental Airlines Arena",
+          "first_year": 1997,
+          "last_year": 2007
+        },
+        {
+          "era_name": "Izod Center",
+          "first_year": 2008,
+          "last_year": 2010
+        }
+      ]
+    },
+    {
+      "canonical": "Jersey Mike's Arena",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 1978,
+      "last_year": 1981,
+      "eras": [
+        {
+          "era_name": "Rutgers Athletic Center",
+          "first_year": 1978,
+          "last_year": 1981
+        }
+      ]
+    },
+    {
+      "canonical": "Nassau Veterans Memorial Coliseum",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1972,
+      "last_year": 1977,
+      "eras": [
+        {
+          "era_name": "Nassau Veteran's Memorial Coliseum",
+          "first_year": 1972,
+          "last_year": 1977
+        }
+      ]
+    },
+    {
+      "canonical": "Island Garden",
+      "city": "New York",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1970,
+      "last_year": 1971,
+      "eras": [
+        {
+          "era_name": "Island Garden",
+          "first_year": 1970,
+          "last_year": 1971
+        }
+      ]
+    },
+    {
+      "canonical": "Long Island Arena",
+      "city": "Commack",
+      "metro": "New York",
+      "state": "New York",
+      "first_year": 1969,
+      "last_year": 1969,
+      "eras": [
+        {
+          "era_name": "Long Island Arena",
+          "first_year": 1969,
+          "last_year": 1969
+        }
+      ]
+    },
+    {
+      "canonical": "Teaneck Armory",
+      "city": "Teaneck",
+      "metro": "New York",
+      "state": "New Jersey",
+      "first_year": 1968,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Teaneck Armory",
+          "first_year": 1968,
+          "last_year": 1968
+        }
+      ]
+    }
+  ],
+  "Wizards": [
+    {
+      "canonical": "Capital One Arena",
+      "city": "Washington",
+      "metro": "Washington-Baltimore",
+      "state": "DC",
+      "first_year": 1998,
+      "last_year": 2026,
+      "eras": [
+        {
+          "era_name": "USAir Arena/MCI Center",
+          "first_year": 1998,
+          "last_year": 1998
+        },
+        {
+          "era_name": "MCI Center",
+          "first_year": 1999,
+          "last_year": 2005
+        },
+        {
+          "era_name": "Verizon Center",
+          "first_year": 2006,
+          "last_year": 2017
+        },
+        {
+          "era_name": "Capital One Arena",
+          "first_year": 2018,
+          "last_year": 2026
+        }
+      ]
+    },
+    {
+      "canonical": "USAir Arena",
+      "city": "Landover",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1974,
+      "last_year": 1997,
+      "eras": [
+        {
+          "era_name": "Capital Centre",
+          "first_year": 1974,
+          "last_year": 1992
+        },
+        {
+          "era_name": "USAir Arena",
+          "first_year": 1993,
+          "last_year": 1997
+        }
+      ]
+    },
+    {
+      "canonical": "CFG Bank Arena",
+      "city": "Baltimore",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1964,
+      "last_year": 1973,
+      "eras": [
+        {
+          "era_name": "Batimore Civic Center",
+          "first_year": 1964,
+          "last_year": 1973
+        }
+      ]
+    },
+    {
+      "canonical": "Chicago Coliseum",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1963,
+      "last_year": 1963,
+      "eras": [
+        {
+          "era_name": "Chicago Coliseum",
+          "first_year": 1963,
+          "last_year": 1963
+        }
+      ]
+    },
+    {
+      "canonical": "Chicago Amphitheater",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1962,
+      "last_year": 1962,
+      "eras": [
+        {
+          "era_name": "Chicago Amphitheater",
+          "first_year": 1962,
+          "last_year": 1962
+        }
+      ]
+    }
+  ],
+  "Colonels (ABA)": [
+    {
+      "canonical": "Freedom Hall",
+      "city": "Louisville",
+      "metro": "Louisville",
+      "state": "Kentucky",
+      "first_year": 1971,
+      "last_year": 1976,
+      "eras": [
+        {
+          "era_name": "Freedom Hall",
+          "first_year": 1971,
+          "last_year": 1976
+        }
+      ]
+    },
+    {
+      "canonical": "Louisville Convention Center",
+      "city": "Louisville",
+      "metro": "Louisville",
+      "state": "Kentucky",
+      "first_year": 1968,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Lousiville Convention Center",
+          "first_year": 1968,
+          "last_year": 1969
+        },
+        {
+          "era_name": "Louisville Convention Center",
+          "first_year": 1970,
+          "last_year": 1970
+        }
+      ]
+    }
+  ],
+  "Spirits": [
+    {
+      "canonical": "St. Louis Arena",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1975,
+      "last_year": 1976,
+      "eras": [
+        {
+          "era_name": "St. Louis Arena",
+          "first_year": 1975,
+          "last_year": 1976
+        }
+      ]
+    },
+    {
+      "canonical": "Charlotte Coliseum I",
+      "city": "",
+      "metro": "",
+      "state": "",
+      "first_year": 1970,
+      "last_year": 1974,
+      "eras": [
+        {
+          "era_name": "Charlotte Coliseum/Greensboro Col./Reynolds Col.",
+          "first_year": 1970,
+          "last_year": 1974
+        }
+      ]
+    },
+    {
+      "canonical": "Sam Houston Coliseum",
+      "city": "Houston",
+      "metro": "Houston",
+      "state": "Texas",
+      "first_year": 1968,
+      "last_year": 1969,
+      "eras": [
+        {
+          "era_name": "Sam Houston Coliseum",
+          "first_year": 1968,
+          "last_year": 1969
+        }
+      ]
+    }
+  ],
+  "Stars": [
+    {
+      "canonical": "Salt Palace",
+      "city": "Salt Lake City",
+      "metro": "Salt Lake City-Provo",
+      "state": "Utah",
+      "first_year": 1971,
+      "last_year": 1976,
+      "eras": [
+        {
+          "era_name": "Salt Palace",
+          "first_year": 1971,
+          "last_year": 1976
+        }
+      ]
+    },
+    {
+      "canonical": "Los Angeles Sports Arena",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1969,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Los Angeles Sports Arena",
+          "first_year": 1969,
+          "last_year": 1970
+        }
+      ]
+    },
+    {
+      "canonical": "Anaheim Convention Center",
+      "city": "Los Angeles",
+      "metro": "Los Angeles",
+      "state": "California",
+      "first_year": 1968,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Anaheim Convention Center",
+          "first_year": 1968,
+          "last_year": 1968
+        }
+      ]
+    }
+  ],
+  "Sails": [
+    {
+      "canonical": "Pechanga Arena San Diego",
+      "city": "San Diego",
+      "metro": "San Diego",
+      "state": "California",
+      "first_year": 1973,
+      "last_year": 1976,
+      "eras": [
+        {
+          "era_name": "San Diego Sports Arena",
+          "first_year": 1973,
+          "last_year": 1976
+        }
+      ]
+    }
+  ],
+  "Squires": [
+    {
+      "canonical": "Norfolk Scope",
+      "city": "Norfolk",
+      "metro": "Norfolk",
+      "state": "Virginia",
+      "first_year": 1971,
+      "last_year": 1976,
+      "eras": [
+        {
+          "era_name": "Norfolk Scope/Richmond Coliseum/ODU Fieldhouse",
+          "first_year": 1971,
+          "last_year": 1976
+        }
+      ]
+    },
+    {
+      "canonical": "Uline Arena",
+      "city": "Washington",
+      "metro": "Washington-Baltimore",
+      "state": "DC",
+      "first_year": 1970,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Washington Coliseum",
+          "first_year": 1970,
+          "last_year": 1970
+        }
+      ]
+    },
+    {
+      "canonical": "Oracle Arena",
+      "city": "Oakland",
+      "metro": "San Francisco-San Jose",
+      "state": "California",
+      "first_year": 1968,
+      "last_year": 1969,
+      "eras": [
+        {
+          "era_name": "Oakland-Alameda County Coliseum Arena",
+          "first_year": 1968,
+          "last_year": 1969
+        }
+      ]
+    }
+  ],
+  "Sounds": [
+    {
+      "canonical": "Mid-South Coliseum",
+      "city": "Memphis",
+      "metro": "Memphis",
+      "state": "Tennessee",
+      "first_year": 1971,
+      "last_year": 1975,
+      "eras": [
+        {
+          "era_name": "Mid-South Coliseum",
+          "first_year": 1971,
+          "last_year": 1975
+        }
+      ]
+    },
+    {
+      "canonical": "New Orleans Municipal Auditorium",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 1969,
+      "last_year": 1970,
+      "eras": [
+        {
+          "era_name": "Municipal Auditorium/Tulane Gymnasium",
+          "first_year": 1969,
+          "last_year": 1970
+        }
+      ]
+    },
+    {
+      "canonical": "Loyola Field House",
+      "city": "New Orleans",
+      "metro": "New Orleans",
+      "state": "Louisiana",
+      "first_year": 1968,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Loyola Field House",
+          "first_year": 1968,
+          "last_year": 1968
+        }
+      ]
+    }
+  ],
+  "The Floridians": [
+    {
+      "canonical": "Miami Beach Convention Hall",
+      "city": "Miami",
+      "metro": "Miami",
+      "state": "Florida",
+      "first_year": 1969,
+      "last_year": 1972,
+      "eras": [
+        {
+          "era_name": "Miami Beach Convention Hall",
+          "first_year": 1969,
+          "last_year": 1970
+        },
+        {
+          "era_name": "Miami Beach Conv. Hall/Hixon Hall/Jacksonville Col.",
+          "first_year": 1971,
+          "last_year": 1972
+        }
+      ]
+    },
+    {
+      "canonical": "Metropolitan Sports Center",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1968,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Metropolitan Sports Center",
+          "first_year": 1968,
+          "last_year": 1968
+        }
+      ]
+    }
+  ],
+  "Condors": [
+    {
+      "canonical": "Civic Arena",
+      "city": "Pittsburgh",
+      "metro": "Pittsburgh",
+      "state": "Pennsylvania",
+      "first_year": 1970,
+      "last_year": 1972,
+      "eras": [
+        {
+          "era_name": "Civic Arena",
+          "first_year": 1970,
+          "last_year": 1972
+        }
+      ]
+    },
+    {
+      "canonical": "Metropolitan Sports Center",
+      "city": "Minneapolis",
+      "metro": "Minneapolis",
+      "state": "Minnesota",
+      "first_year": 1969,
+      "last_year": 1969,
+      "eras": [
+        {
+          "era_name": "Metropolitan Sports Center/Duluth Auditorium",
+          "first_year": 1969,
+          "last_year": 1969
+        }
+      ]
+    },
+    {
+      "canonical": "Civic Arena",
+      "city": "Pittsburgh",
+      "metro": "Pittsburgh",
+      "state": "Pennsylvania",
+      "first_year": 1968,
+      "last_year": 1968,
+      "eras": [
+        {
+          "era_name": "Civic Arena",
+          "first_year": 1968,
+          "last_year": 1968
+        }
+      ]
+    }
+  ],
+  "Bullets": [
+    {
+      "canonical": "Baltimore Coliseum",
+      "city": "Baltimore",
+      "metro": "Washington-Baltimore",
+      "state": "Maryland",
+      "first_year": 1948,
+      "last_year": 1954,
+      "eras": [
+        {
+          "era_name": "Baltimore Coliseum",
+          "first_year": 1948,
+          "last_year": 1954
+        }
+      ]
+    }
+  ],
+  "Olympians": [
+    {
+      "canonical": "Hinkle Fieldhouse",
+      "city": "Indianapolis",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 1950,
+      "last_year": 1953,
+      "eras": [
+        {
+          "era_name": "Butler Field House",
+          "first_year": 1950,
+          "last_year": 1953
+        }
+      ]
+    }
+  ],
+  "Capitols": [
+    {
+      "canonical": "Uline Arena",
+      "city": "Washington",
+      "metro": "Washington-Baltimore",
+      "state": "DC",
+      "first_year": 1947,
+      "last_year": 1951,
+      "eras": [
+        {
+          "era_name": "Uline Arena",
+          "first_year": 1947,
+          "last_year": 1951
+        }
+      ]
+    }
+  ],
+  "Stags": [
+    {
+      "canonical": "Chicago Stadium",
+      "city": "Chicago",
+      "metro": "Chicago",
+      "state": "Illinois",
+      "first_year": 1947,
+      "last_year": 1950,
+      "eras": [
+        {
+          "era_name": "Chicago Stadium",
+          "first_year": 1947,
+          "last_year": 1950
+        }
+      ]
+    }
+  ],
+  "Packers": [
+    {
+      "canonical": "Anderson High School Gymnasium",
+      "city": "Muncie",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 1950,
+      "last_year": 1950,
+      "eras": [
+        {
+          "era_name": "Anderson High School Gymnasium",
+          "first_year": 1950,
+          "last_year": 1950
+        }
+      ]
+    }
+  ],
+  "Bombers": [
+    {
+      "canonical": "Kiel Auditorium",
+      "city": "St. Louis",
+      "metro": "St. Louis",
+      "state": "Missouri",
+      "first_year": 1947,
+      "last_year": 1950,
+      "eras": [
+        {
+          "era_name": "Kiel Auditorium",
+          "first_year": 1947,
+          "last_year": 1950
+        }
+      ]
+    }
+  ],
+  "Redskins": [
+    {
+      "canonical": "Sheboygan Municipal Auditorium",
+      "city": "Sheboygan",
+      "metro": "Sheboygan",
+      "state": "Wisconsin",
+      "first_year": 1950,
+      "last_year": 1950,
+      "eras": [
+        {
+          "era_name": "Sheboygan Municipal Auditorium",
+          "first_year": 1950,
+          "last_year": 1950
+        }
+      ]
+    }
+  ],
+  "Hawks (Wat)": [
+    {
+      "canonical": "Waterloo Hippodrome",
+      "city": "Waterloo",
+      "metro": "Waterloo (IA)",
+      "state": "Iowa",
+      "first_year": 1950,
+      "last_year": 1950,
+      "eras": [
+        {
+          "era_name": "Waterloo Hippodrome",
+          "first_year": 1950,
+          "last_year": 1950
+        }
+      ]
+    }
+  ],
+  "Nuggets (Def)": [
+    {
+      "canonical": "Denver Auditorium",
+      "city": "Denver",
+      "metro": "Denver",
+      "state": "Colorado",
+      "first_year": 1950,
+      "last_year": 1950,
+      "eras": [
+        {
+          "era_name": "Denver Auditorium",
+          "first_year": 1950,
+          "last_year": 1950
+        }
+      ]
+    }
+  ],
+  "Jets": [
+    {
+      "canonical": "Hinkle Fieldhouse",
+      "city": "Indianapolis",
+      "metro": "Indianapolis",
+      "state": "Indiana",
+      "first_year": 1949,
+      "last_year": 1949,
+      "eras": [
+        {
+          "era_name": "Butler Field House",
+          "first_year": 1949,
+          "last_year": 1949
+        }
+      ]
+    }
+  ],
+  "Steamrollers": [
+    {
+      "canonical": "Amica Mutual Pavilion",
+      "city": "Providence",
+      "metro": "Providence",
+      "state": "Rhode Island",
+      "first_year": 1947,
+      "last_year": 1949,
+      "eras": [
+        {
+          "era_name": "Providence Civic Center",
+          "first_year": 1947,
+          "last_year": 1949
+        }
+      ]
+    }
+  ],
+  "Rebels": [
+    {
+      "canonical": "Cleveland Arena",
+      "city": "Cleveland",
+      "metro": "Cleveland",
+      "state": "Ohio",
+      "first_year": 1947,
+      "last_year": 1947,
+      "eras": [
+        {
+          "era_name": "Cleveland Arena",
+          "first_year": 1947,
+          "last_year": 1947
+        }
+      ]
+    }
+  ],
+  "Falcons": [
+    {
+      "canonical": "Olympia Stadium",
+      "city": "Detroit",
+      "metro": "Detroit",
+      "state": "Michigan",
+      "first_year": 1947,
+      "last_year": 1947,
+      "eras": [
+        {
+          "era_name": "Olympia Stadium",
+          "first_year": 1947,
+          "last_year": 1947
+        }
+      ]
+    }
+  ],
+  "Huskies": [
+    {
+      "canonical": "Maple Leaf Gardens",
+      "city": "Toronto",
+      "metro": "Toronto",
+      "state": "Ontario",
+      "first_year": 1947,
+      "last_year": 1947,
+      "eras": [
+        {
+          "era_name": "Maple Leaf Gardens",
+          "first_year": 1947,
+          "last_year": 1947
+        }
+      ]
+    }
+  ],
+  "Ironmen": [
+    {
+      "canonical": "Duquesne Gardens",
+      "city": "Pittsburgh",
+      "metro": "Pittsburgh",
+      "state": "Pennsylvania",
+      "first_year": 1947,
+      "last_year": 1947,
+      "eras": [
+        {
+          "era_name": "Duquesne Gardens",
+          "first_year": 1947,
+          "last_year": 1947
+        }
+      ]
+    }
+  ]
+}

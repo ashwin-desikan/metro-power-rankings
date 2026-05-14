@@ -28,16 +28,21 @@ import {
   logoUrlFor as mlbLogoUrlFor,
   monogramFor as mlbMonogramFor,
 } from "./mlb";
+import {
+  getNbaFranchiseByTeamName,
+  logoUrlFor as nbaLogoUrlFor,
+  monogramFor as nbaMonogramFor,
+} from "./nba";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
-  slug: string;             // league-internal slug
-  league: "nfl" | "mlb";    // discriminator for future leagues
-  href: string;             // /teams/<league>/<slug>
-  logoUrl: string | null;   // /data/<league>/logos/<slug>.svg or null
-  monogram: Monogram;       // colored monogram fallback when logoUrl is null
-  displayName: string;      // canonical display name from the league source
+  slug: string;                    // league-internal slug
+  league: "nfl" | "mlb" | "nba";   // discriminator for future leagues
+  href: string;                    // /teams/<league>/<slug>
+  logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
+  monogram: Monogram;              // colored monogram fallback when logoUrl is null
+  displayName: string;             // canonical display name from the league source
 };
 
 // Sport-label and league-label values that route to each league's franchise
@@ -46,12 +51,16 @@ export type TeamLink = {
 // can match either column when convenient.
 const NFL_SPORT_LABELS = new Set(["American Football", "NFL"]);
 const MLB_SPORT_LABELS = new Set(["Baseball", "MLB"]);
+const NBA_SPORT_LABELS = new Set(["Basketball", "NBA"]);
 
 function isNfl(sport: string, leagueHint: string): boolean {
   return NFL_SPORT_LABELS.has(sport) || leagueHint === "NFL";
 }
 function isMlb(sport: string, leagueHint: string): boolean {
   return MLB_SPORT_LABELS.has(sport) || leagueHint === "MLB";
+}
+function isNba(sport: string, leagueHint: string): boolean {
+  return NBA_SPORT_LABELS.has(sport) || leagueHint === "NBA";
 }
 
 export function resolveTeamLink(
@@ -88,8 +97,20 @@ export function resolveTeamLink(
     };
   }
 
+  if (isNba(sport, leagueHint)) {
+    const f = getNbaFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "nba",
+      href: `/teams/nba/${f.slug}`,
+      logoUrl: nbaLogoUrlFor(f.slug),
+      monogram: nbaMonogramFor(f.slug),
+      displayName: f.display_name,
+    };
+  }
+
   // Future leagues drop in here.
-  // if (isNba(sport, leagueHint)) { ... }
   // if (isNhl(sport, leagueHint)) { ... }
 
   return null;

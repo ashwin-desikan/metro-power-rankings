@@ -1,0 +1,1722 @@
+{
+  "Pistons": {
+    "ROY": [
+      {
+        "year": 1995,
+        "player": "Grant Hill"
+      },
+      {
+        "year": 1967,
+        "player": "Dave Bing"
+      },
+      {
+        "year": 1953,
+        "player": "Don Meineke"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2002,
+        "player": "Rick Carlisle"
+      },
+      {
+        "year": 1974,
+        "player": "Ray Scott"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2006,
+        "player": "Ben Wallace"
+      },
+      {
+        "year": 2005,
+        "player": "Ben Wallace"
+      },
+      {
+        "year": 2003,
+        "player": "Ben Wallace"
+      },
+      {
+        "year": 2002,
+        "player": "Ben Wallace"
+      },
+      {
+        "year": 1991,
+        "player": "Dennis Rodman"
+      },
+      {
+        "year": 1990,
+        "player": "Dennis Rodman"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2002,
+        "player": "Corliss Williamson"
+      }
+    ]
+  },
+  "Bullets": {
+    "ROY": [
+      {
+        "year": 1954,
+        "player": "Ray Felix"
+      }
+    ]
+  },
+  "Hawks": {
+    "ROY": [
+      {
+        "year": 1955,
+        "player": "Bob Pettit"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 1959,
+        "player": "Bob Pettit"
+      },
+      {
+        "year": 1956,
+        "player": "Bob Pettit"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2015,
+        "player": "Mike Budenholzer"
+      },
+      {
+        "year": 1994,
+        "player": "Lenny Wilkens"
+      },
+      {
+        "year": 1986,
+        "player": "Mike Fratello"
+      },
+      {
+        "year": 1978,
+        "player": "Hubie Brown"
+      },
+      {
+        "year": 1968,
+        "player": "Richie Guerin"
+      },
+      {
+        "year": 1963,
+        "player": "Harry Gallatin"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 1998,
+        "player": "Dikembe Mutombo"
+      },
+      {
+        "year": 1997,
+        "player": "Dikembe Mutombo"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2025,
+        "player": "Dyson Daniels"
+      },
+      {
+        "year": 1998,
+        "player": "Alan Henderson"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2010,
+        "player": "Jamal Crawford"
+      }
+    ]
+  },
+  "Kings": {
+    "ROY": [
+      {
+        "year": 2010,
+        "player": "Tyreke Evans"
+      },
+      {
+        "year": 1979,
+        "player": "Phil Ford"
+      },
+      {
+        "year": 1956,
+        "player": "Maurice Stokes"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 1964,
+        "player": "Oscar Robertson"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2023,
+        "player": "Mike Brown"
+      },
+      {
+        "year": 1979,
+        "player": "Cotton Fitzsimmons"
+      },
+      {
+        "year": 1975,
+        "player": "Phil Johnson"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2003,
+        "player": "Bobby Jackson"
+      }
+    ],
+    "CPOY": [
+      {
+        "year": 2023,
+        "player": "De'Aaron Fox"
+      }
+    ]
+  },
+  "Celtics": {
+    "MVP": [
+      {
+        "year": 1986,
+        "player": "Larry Bird"
+      },
+      {
+        "year": 1985,
+        "player": "Larry Bird"
+      },
+      {
+        "year": 1984,
+        "player": "Larry Bird"
+      },
+      {
+        "year": 1973,
+        "player": "Dave Cowens"
+      },
+      {
+        "year": 1965,
+        "player": "Bill Russell"
+      },
+      {
+        "year": 1963,
+        "player": "Bill Russell"
+      },
+      {
+        "year": 1962,
+        "player": "Bill Russell"
+      },
+      {
+        "year": 1961,
+        "player": "Bill Russell"
+      },
+      {
+        "year": 1958,
+        "player": "Bill Russell"
+      },
+      {
+        "year": 1957,
+        "player": "Bob Cousy"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 1980,
+        "player": "Larry Bird"
+      },
+      {
+        "year": 1971,
+        "player": "Dave Cowens"
+      },
+      {
+        "year": 1957,
+        "player": "Tommy Heinsohn"
+      }
+    ],
+    "COY": [
+      {
+        "year": 1980,
+        "player": "Bill Fitch"
+      },
+      {
+        "year": 1973,
+        "player": "Tom Heinsohn"
+      },
+      {
+        "year": 1965,
+        "player": "Red Auerbach"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2025,
+        "player": "Payton Pritchard"
+      },
+      {
+        "year": 2023,
+        "player": "Malcolm Brogdon"
+      },
+      {
+        "year": 1986,
+        "player": "Bill Walton"
+      },
+      {
+        "year": 1985,
+        "player": "Kevin McHale"
+      },
+      {
+        "year": 1984,
+        "player": "Kevin McHale"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2022,
+        "player": "Marcus Smart"
+      },
+      {
+        "year": 2008,
+        "player": "Kevin Garnett"
+      }
+    ]
+  },
+  "Warriors": {
+    "ROY": [
+      {
+        "year": 1994,
+        "player": "Chris Webber"
+      },
+      {
+        "year": 1989,
+        "player": "Mitch Richmond"
+      },
+      {
+        "year": 1975,
+        "player": "Jamaal Wilkes"
+      },
+      {
+        "year": 1966,
+        "player": "Rick Barry"
+      },
+      {
+        "year": 1960,
+        "player": "Wilt Chamberlain"
+      },
+      {
+        "year": 1958,
+        "player": "Woody Sauldsberry"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2016,
+        "player": "Stephen Curry"
+      },
+      {
+        "year": 2015,
+        "player": "Stephen Curry"
+      },
+      {
+        "year": 1960,
+        "player": "Wilt Chamberlain"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2016,
+        "player": "Steve Kerr"
+      },
+      {
+        "year": 1992,
+        "player": "Don Nelson"
+      },
+      {
+        "year": 1964,
+        "player": "Alex Hannum"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2007,
+        "player": "Monta Ellis"
+      },
+      {
+        "year": 2003,
+        "player": "Gilbert Arenas"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2017,
+        "player": "Draymond Green"
+      }
+    ],
+    "CPOY": [
+      {
+        "year": 2024,
+        "player": "Stephen Curry"
+      }
+    ]
+  },
+  "Lakers": {
+    "ROY": [
+      {
+        "year": 1959,
+        "player": "Elgin Baylor"
+      }
+    ],
+    "COY": [
+      {
+        "year": 1995,
+        "player": "Del Harris"
+      },
+      {
+        "year": 1990,
+        "player": "Pat Riley"
+      },
+      {
+        "year": 1972,
+        "player": "Bill Sharman"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2008,
+        "player": "Kobe Bryant"
+      },
+      {
+        "year": 2000,
+        "player": "Shaquille O'Neal"
+      },
+      {
+        "year": 1990,
+        "player": "Magic Johnson"
+      },
+      {
+        "year": 1989,
+        "player": "Magic Johnson"
+      },
+      {
+        "year": 1987,
+        "player": "Magic Johnson"
+      },
+      {
+        "year": 1980,
+        "player": "Kareem Abdul-Jabbar"
+      },
+      {
+        "year": 1977,
+        "player": "Kareem Abdul-Jabbar"
+      },
+      {
+        "year": 1976,
+        "player": "Kareem Abdul-Jabbar"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 1987,
+        "player": "Michael Cooper"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2011,
+        "player": "Lamar Odom"
+      }
+    ]
+  },
+  "Royals": {
+    "ROY": [
+      {
+        "year": 1964,
+        "player": "Jerry Lucas"
+      },
+      {
+        "year": 1961,
+        "player": "Oscar Robertson"
+      }
+    ]
+  },
+  "Wizards": {
+    "ROY": [
+      {
+        "year": 1969,
+        "player": "Wes Unseld"
+      },
+      {
+        "year": 1968,
+        "player": "Earl Monroe"
+      },
+      {
+        "year": 1963,
+        "player": "Terry Dischinger"
+      },
+      {
+        "year": 1962,
+        "player": "Walt Bellamy"
+      }
+    ],
+    "COY": [
+      {
+        "year": 1982,
+        "player": "Gene Shue"
+      },
+      {
+        "year": 1969,
+        "player": "Gene Shue"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 1969,
+        "player": "Wes Unseld"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 1996,
+        "player": "Gheorghe Muresan"
+      },
+      {
+        "year": 1994,
+        "player": "Don MacLean"
+      },
+      {
+        "year": 1992,
+        "player": "Pervis Ellison"
+      }
+    ]
+  },
+  "Knicks": {
+    "ROY": [
+      {
+        "year": 1988,
+        "player": "Mark Jackson"
+      },
+      {
+        "year": 1986,
+        "player": "Patrick Ewing"
+      },
+      {
+        "year": 1965,
+        "player": "Willis Reed"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2021,
+        "player": "Tom Thibodeau"
+      },
+      {
+        "year": 1993,
+        "player": "Pat Riley"
+      },
+      {
+        "year": 1970,
+        "player": "Red Holzman"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 1970,
+        "player": "Willis Reed"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2013,
+        "player": "J. R. Smith"
+      },
+      {
+        "year": 1997,
+        "player": "John Starks"
+      },
+      {
+        "year": 1995,
+        "player": "Anthony Mason"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2012,
+        "player": "Tyson Chandler"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2021,
+        "player": "Julius Randle"
+      }
+    ],
+    "CPOY": [
+      {
+        "year": 2025,
+        "player": "Jalen Brunson"
+      }
+    ]
+  },
+  "76ers": {
+    "COY": [
+      {
+        "year": 2001,
+        "player": "Larry Brown"
+      },
+      {
+        "year": 1966,
+        "player": "Dolph Schayes"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2023,
+        "player": "Joel Embiid"
+      },
+      {
+        "year": 2001,
+        "player": "Allen Iverson"
+      },
+      {
+        "year": 1983,
+        "player": "Moses Malone"
+      },
+      {
+        "year": 1981,
+        "player": "Julius Erving"
+      },
+      {
+        "year": 1968,
+        "player": "Wilt Chamberlain"
+      },
+      {
+        "year": 1967,
+        "player": "Wilt Chamberlain"
+      },
+      {
+        "year": 1966,
+        "player": "Wilt Chamberlain"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2001,
+        "player": "Aaron McKie"
+      },
+      {
+        "year": 1983,
+        "player": "Bobby Jones"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2024,
+        "player": "Tyrese Maxey"
+      },
+      {
+        "year": 1995,
+        "player": "Dana Barros"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2018,
+        "player": "Ben Simmons"
+      },
+      {
+        "year": 2014,
+        "player": "Michael Carter-Williams"
+      },
+      {
+        "year": 1997,
+        "player": "Allen Iverson"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2001,
+        "player": "Dikembe Mutombo"
+      }
+    ]
+  },
+  "Bulls": {
+    "COY": [
+      {
+        "year": 2011,
+        "player": "Tom Thibodeau"
+      },
+      {
+        "year": 1996,
+        "player": "Phil Jackson"
+      },
+      {
+        "year": 1971,
+        "player": "Dick Motta"
+      },
+      {
+        "year": 1967,
+        "player": "Johnny Kerr"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2009,
+        "player": "Derrick Rose"
+      },
+      {
+        "year": 2000,
+        "player": "Elton Brand"
+      },
+      {
+        "year": 1985,
+        "player": "Michael Jordan"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2014,
+        "player": "Joakim Noah"
+      },
+      {
+        "year": 1988,
+        "player": "Michael Jordan"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2011,
+        "player": "Derrick Rose"
+      },
+      {
+        "year": 1998,
+        "player": "Michael Jordan"
+      },
+      {
+        "year": 1996,
+        "player": "Michael Jordan"
+      },
+      {
+        "year": 1992,
+        "player": "Michael Jordan"
+      },
+      {
+        "year": 1991,
+        "player": "Michael Jordan"
+      },
+      {
+        "year": 1988,
+        "player": "Michael Jordan"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2005,
+        "player": "Ben Gordon"
+      },
+      {
+        "year": 1996,
+        "player": "Toni Kukoc"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2015,
+        "player": "Jimmy Butler"
+      }
+    ]
+  },
+  "Bucks": {
+    "ROY": [
+      {
+        "year": 2017,
+        "player": "Malcolm Brogdon"
+      },
+      {
+        "year": 1970,
+        "player": "Kareem Abdul-Jabbar"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2020,
+        "player": "Giannis Antetokounmpo"
+      },
+      {
+        "year": 2019,
+        "player": "Giannis Antetokounmpo"
+      },
+      {
+        "year": 1974,
+        "player": "Kareem Abdul-Jabbar"
+      },
+      {
+        "year": 1972,
+        "player": "Kareem Abdul-Jabbar"
+      },
+      {
+        "year": 1971,
+        "player": "Kareem Abdul-Jabbar"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2019,
+        "player": "Mike Budenholzer"
+      },
+      {
+        "year": 1985,
+        "player": "Don Nelson"
+      },
+      {
+        "year": 1983,
+        "player": "Don Nelson"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2020,
+        "player": "Giannis Antetokounmpo"
+      },
+      {
+        "year": 1984,
+        "player": "Sidney Moncrief"
+      },
+      {
+        "year": 1983,
+        "player": "Sidney Moncrief"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 1990,
+        "player": "Ricky Pierce"
+      },
+      {
+        "year": 1987,
+        "player": "Ricky Pierce"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2017,
+        "player": "Giannis Antetokounmpo"
+      }
+    ]
+  },
+  "Trail  Blazers": {
+    "ROY": [
+      {
+        "year": 2007,
+        "player": "Brandon Roy"
+      },
+      {
+        "year": 1972,
+        "player": "Sidney Wicks"
+      },
+      {
+        "year": 1971,
+        "player": "Geoff Petrie"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 1978,
+        "player": "Bill Walton"
+      }
+    ],
+    "COY": [
+      {
+        "year": 1999,
+        "player": "Mike Dunleavy"
+      },
+      {
+        "year": 1987,
+        "player": "Mike Schuler"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 1988,
+        "player": "Kevin Duckworth"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 1993,
+        "player": "Clifford Robinson"
+      }
+    ]
+  },
+  "Clippers": {
+    "ROY": [
+      {
+        "year": 2011,
+        "player": "Blake Griffin"
+      },
+      {
+        "year": 1983,
+        "player": "Terry Cummings"
+      },
+      {
+        "year": 1977,
+        "player": "Adrian Dantley"
+      },
+      {
+        "year": 1974,
+        "player": "Ernie DiGregorio"
+      },
+      {
+        "year": 1973,
+        "player": "Bob McAdoo"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 1975,
+        "player": "Bob McAdoo"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2005,
+        "player": "Bobby Simmons"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2020,
+        "player": "Montrezl Harrell"
+      },
+      {
+        "year": 2019,
+        "player": "Lou Williams"
+      },
+      {
+        "year": 2018,
+        "player": "Lou Williams"
+      },
+      {
+        "year": 2016,
+        "player": "Jamal Crawford"
+      },
+      {
+        "year": 2014,
+        "player": "Jamal Crawford"
+      }
+    ]
+  },
+  "Cavaliers": {
+    "COY": [
+      {
+        "year": 2025,
+        "player": "Kenny Atkinson"
+      },
+      {
+        "year": 2009,
+        "player": "Mike Brown"
+      },
+      {
+        "year": 1976,
+        "player": "Bill Fitch"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2012,
+        "player": "Kyrie Irving"
+      },
+      {
+        "year": 2004,
+        "player": "Lebron James"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2010,
+        "player": "LeBron James"
+      },
+      {
+        "year": 2009,
+        "player": "LeBron James"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2025,
+        "player": "Evan Mobley"
+      }
+    ]
+  },
+  "Suns": {
+    "ROY": [
+      {
+        "year": 2003,
+        "player": "Amare Stoudemire"
+      },
+      {
+        "year": 1978,
+        "player": "Walter Davis"
+      },
+      {
+        "year": 1976,
+        "player": "Alvan Adams"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2022,
+        "player": "Monty Williams"
+      },
+      {
+        "year": 2005,
+        "player": "Mike D'Antoni"
+      },
+      {
+        "year": 1989,
+        "player": "Cotton Fitzsimmons"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2014,
+        "player": "Goran Dragić"
+      },
+      {
+        "year": 2006,
+        "player": "Boris Diaw"
+      },
+      {
+        "year": 1989,
+        "player": "Kevin Johnson"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2007,
+        "player": "Leandro Barbosa"
+      },
+      {
+        "year": 2000,
+        "player": "Rodney Rogers"
+      },
+      {
+        "year": 1998,
+        "player": "Danny Manning"
+      },
+      {
+        "year": 1989,
+        "player": "Eddie Johnson"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2006,
+        "player": "Steve Nash"
+      },
+      {
+        "year": 2005,
+        "player": "Steve Nash"
+      },
+      {
+        "year": 1993,
+        "player": "Charles Barkley"
+      }
+    ]
+  },
+  "Rockets": {
+    "COY": [
+      {
+        "year": 2017,
+        "player": "Mike D'Antoni"
+      },
+      {
+        "year": 1991,
+        "player": "Don Chaney"
+      },
+      {
+        "year": 1977,
+        "player": "Tom Nissalke"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2018,
+        "player": "James Harden"
+      },
+      {
+        "year": 1994,
+        "player": "Hakeem Olajuwon"
+      },
+      {
+        "year": 1982,
+        "player": "Moses Malone"
+      },
+      {
+        "year": 1979,
+        "player": "Moses Malone"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2000,
+        "player": "Steve Francis"
+      },
+      {
+        "year": 1984,
+        "player": "Ralph Sampson"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 1994,
+        "player": "Hakeem Olajuwon"
+      },
+      {
+        "year": 1993,
+        "player": "Hakeem Olajuwon"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2010,
+        "player": "Aaron Brooks"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2017,
+        "player": "Eric Gordon"
+      }
+    ]
+  },
+  "Pacers": {
+    "COY": [
+      {
+        "year": 1998,
+        "player": "Larry Bird"
+      },
+      {
+        "year": 1981,
+        "player": "Jack McKinney"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 1987,
+        "player": "Chuck Person"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 1992,
+        "player": "Detlef Schrempf"
+      },
+      {
+        "year": 1991,
+        "player": "Detlef Schrempf"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2018,
+        "player": "Victor Oladipo"
+      },
+      {
+        "year": 2013,
+        "player": "Paul George"
+      },
+      {
+        "year": 2009,
+        "player": "Danny Granger"
+      },
+      {
+        "year": 2002,
+        "player": "Jermaine O'Neal"
+      },
+      {
+        "year": 2000,
+        "player": "Jalen Rose"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2004,
+        "player": "Ron Artest"
+      }
+    ]
+  },
+  "Jazz": {
+    "ROY": [
+      {
+        "year": 1981,
+        "player": "Darrell Griffith"
+      }
+    ],
+    "COY": [
+      {
+        "year": 1984,
+        "player": "Frank Layden"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2021,
+        "player": "Rudy Gobert"
+      },
+      {
+        "year": 2019,
+        "player": "Rudy Gobert"
+      },
+      {
+        "year": 2018,
+        "player": "Rudy Gobert"
+      },
+      {
+        "year": 1989,
+        "player": "Mark Eaton"
+      },
+      {
+        "year": 1985,
+        "player": "Mark Eaton"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 1999,
+        "player": "Karl Malone"
+      },
+      {
+        "year": 1997,
+        "player": "Karl Malone"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2021,
+        "player": "Jordan Clarkson"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2023,
+        "player": "Lauri Markkanen"
+      }
+    ]
+  },
+  "Nets": {
+    "ROY": [
+      {
+        "year": 1991,
+        "player": "Derrick Coleman"
+      },
+      {
+        "year": 1982,
+        "player": "Buck Williams"
+      }
+    ]
+  },
+  "Spurs": {
+    "DPOY": [
+      {
+        "year": 2016,
+        "player": "Kawhi Leonard"
+      },
+      {
+        "year": 2015,
+        "player": "Kawhi Leonard"
+      },
+      {
+        "year": 1992,
+        "player": "David Robinson"
+      },
+      {
+        "year": 1986,
+        "player": "Alvin Robertson"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 1986,
+        "player": "Alvin Robertson"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2025,
+        "player": "Stephon Castle"
+      },
+      {
+        "year": 2024,
+        "player": "Victor Wembanyama"
+      },
+      {
+        "year": 1998,
+        "player": "Tim Duncan"
+      },
+      {
+        "year": 1990,
+        "player": "David Robinson"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2003,
+        "player": "Tim Duncan"
+      },
+      {
+        "year": 2002,
+        "player": "Tim Duncan"
+      },
+      {
+        "year": 1995,
+        "player": "David Robinson"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2014,
+        "player": "Gregg Popovich"
+      },
+      {
+        "year": 2012,
+        "player": "Gregg Popovich"
+      },
+      {
+        "year": 2003,
+        "player": "Gregg Popovich"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2008,
+        "player": "Manu Ginóbili"
+      }
+    ]
+  },
+  "Supersonics": {
+    "MIP": [
+      {
+        "year": 1987,
+        "player": "Dale Ellis"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 1996,
+        "player": "Gary Payton"
+      }
+    ]
+  },
+  "Nuggets": {
+    "COY": [
+      {
+        "year": 2013,
+        "player": "George Karl"
+      },
+      {
+        "year": 1988,
+        "player": "Doug Moe"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 1993,
+        "player": "Mahmoud Abdul-Rauf"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2007,
+        "player": "Marcus Camby"
+      },
+      {
+        "year": 1995,
+        "player": "Dikembe Mutombo"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2024,
+        "player": "Nikola Jokić"
+      },
+      {
+        "year": 2022,
+        "player": "Nikola Jokić"
+      },
+      {
+        "year": 2021,
+        "player": "Nikola Jokić"
+      }
+    ]
+  },
+  "Mavericks": {
+    "6MOY": [
+      {
+        "year": 2009,
+        "player": "Jason Terry"
+      },
+      {
+        "year": 2004,
+        "player": "Antawn Jamison"
+      },
+      {
+        "year": 1988,
+        "player": "Roy Tarpley"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2019,
+        "player": "Luka Dončić"
+      },
+      {
+        "year": 1995,
+        "player": "Jason Kidd"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2006,
+        "player": "Avery Johnson"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2007,
+        "player": "Dirk Nowitzki"
+      }
+    ]
+  },
+  "Heat": {
+    "MIP": [
+      {
+        "year": 1997,
+        "player": "Isaac Austin"
+      },
+      {
+        "year": 1990,
+        "player": "Rony Seikaly"
+      }
+    ],
+    "COY": [
+      {
+        "year": 1997,
+        "player": "Pat Riley"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2000,
+        "player": "Alonzo Mourning"
+      },
+      {
+        "year": 1999,
+        "player": "Alonzo Mourning"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2013,
+        "player": "LeBron James"
+      },
+      {
+        "year": 2012,
+        "player": "LeBron James"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2022,
+        "player": "Tyler Herro"
+      }
+    ]
+  },
+  "Magic": {
+    "MIP": [
+      {
+        "year": 2012,
+        "player": "Ryan Anderson"
+      },
+      {
+        "year": 2008,
+        "player": "Hedo Türkoğlu"
+      },
+      {
+        "year": 2001,
+        "player": "Tracy McGrady"
+      },
+      {
+        "year": 1999,
+        "player": "Darrell Armstrong"
+      },
+      {
+        "year": 1991,
+        "player": "Scott Skiles"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2023,
+        "player": "Paolo Banchero"
+      },
+      {
+        "year": 2001,
+        "player": "Mike Miller"
+      },
+      {
+        "year": 1993,
+        "player": "Shaquille O'Neal"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 1999,
+        "player": "Darrell Armstrong"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2000,
+        "player": "Doc Rivers"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2011,
+        "player": "Dwight Howard"
+      },
+      {
+        "year": 2010,
+        "player": "Dwight Howard"
+      },
+      {
+        "year": 2009,
+        "player": "Dwight Howard"
+      }
+    ]
+  },
+  "Hornets": {
+    "ROY": [
+      {
+        "year": 2021,
+        "player": "LaMelo Ball"
+      },
+      {
+        "year": 2005,
+        "player": "Emeka Okafor"
+      },
+      {
+        "year": 1992,
+        "player": "Larry Johnson"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 1994,
+        "player": "Dell Curry"
+      }
+    ]
+  },
+  "Raptors": {
+    "ROY": [
+      {
+        "year": 2022,
+        "player": "Scottie Barnes"
+      },
+      {
+        "year": 1999,
+        "player": "Vince Carter"
+      },
+      {
+        "year": 1996,
+        "player": "Damon Stoudamire"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2020,
+        "player": "Nick Nurse"
+      },
+      {
+        "year": 2018,
+        "player": "Dwane Casey"
+      },
+      {
+        "year": 2007,
+        "player": "Sam Mitchell"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2015,
+        "player": "Lou Williams"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2019,
+        "player": "Pascal Siakam"
+      }
+    ]
+  },
+  "Grizzlies": {
+    "ROY": [
+      {
+        "year": 2020,
+        "player": "Ja Morant"
+      },
+      {
+        "year": 2002,
+        "player": "Pau Gasol"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2004,
+        "player": "Hubie Brown"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2006,
+        "player": "Mike Miller"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2023,
+        "player": "Jaren Jackson Jr."
+      },
+      {
+        "year": 2013,
+        "player": "Marc Gasol"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2022,
+        "player": "Ja Morant"
+      }
+    ]
+  },
+  "Trail Blazers": {
+    "MIP": [
+      {
+        "year": 2016,
+        "player": "CJ McCollum"
+      },
+      {
+        "year": 2004,
+        "player": "Zach Randolph"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2013,
+        "player": "Damian Lillard"
+      }
+    ]
+  },
+  "Timberwolves": {
+    "MVP": [
+      {
+        "year": 2004,
+        "player": "Kevin Garnett"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2011,
+        "player": "Kevin Love"
+      }
+    ],
+    "ROY": [
+      {
+        "year": 2016,
+        "player": "Karl-Anthony Towns"
+      },
+      {
+        "year": 2015,
+        "player": "Andrew Wiggins"
+      }
+    ],
+    "DPOY": [
+      {
+        "year": 2024,
+        "player": "Rudy Gobert"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2024,
+        "player": "Naz Reid"
+      }
+    ]
+  },
+  "Pelicans": {
+    "ROY": [
+      {
+        "year": 2006,
+        "player": "Chris Paul"
+      }
+    ],
+    "COY": [
+      {
+        "year": 2008,
+        "player": "Byron Scott"
+      }
+    ],
+    "MIP": [
+      {
+        "year": 2020,
+        "player": "Brandon Ingram"
+      }
+    ]
+  },
+  "SuperSonics": {
+    "ROY": [
+      {
+        "year": 2008,
+        "player": "Kevin Durant"
+      }
+    ]
+  },
+  "Thunder": {
+    "COY": [
+      {
+        "year": 2024,
+        "player": "Mark Daigneault"
+      },
+      {
+        "year": 2010,
+        "player": "Scott Brooks"
+      }
+    ],
+    "6MOY": [
+      {
+        "year": 2012,
+        "player": "James Harden"
+      }
+    ],
+    "MVP": [
+      {
+        "year": 2025,
+        "player": "Shai Gilgeous-Alexander"
+      },
+      {
+        "year": 2017,
+        "player": "Russell Westbrook"
+      },
+      {
+        "year": 2014,
+        "player": "Kevin Durant"
+      }
+    ]
+  }
+}
