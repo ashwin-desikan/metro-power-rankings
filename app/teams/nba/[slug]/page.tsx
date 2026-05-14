@@ -636,7 +636,7 @@ export default async function FranchisePage({ params }: Props) {
         {allNbaYears.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No All-NBA selections recorded.</p>
         ) : (
-          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-6 [column-fill:balance]">
+          <div className="columns-1 sm:columns-2 gap-x-8 [column-fill:balance]">
             {allNbaYears.map((year) => {
               const picks = allNbaByYear.get(year)!;
               const ordered = [...picks].sort((a, b) => {
@@ -644,20 +644,24 @@ export default async function FranchisePage({ params }: Props) {
                 return (order[a.tier] ?? 9) - (order[b.tier] ?? 9);
               });
               return (
-                <div key={year} className="break-inside-avoid mb-1 text-[11px] leading-tight">
-                  <span className="text-[var(--text-muted)] tabular-nums text-[10px] mr-1">{seasonLabel(year)}</span>
-                  {ordered.map((p, i) => {
-                    const tierColor =
-                      p.tier === "1st" ? "text-amber-300" :
-                      p.tier === "2nd" ? "text-slate-300" :
-                                         "text-stone-400";
-                    return (
-                      <span key={i} className="inline-block mr-1.5">
-                        <span className={`font-bold ${tierColor}`}>{p.tier}</span>{" "}
-                        <span className="text-[var(--text)]">{p.player}</span>
-                      </span>
-                    );
-                  })}
+                <div key={year} className="break-inside-avoid mb-3">
+                  <div className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] font-semibold mb-1">
+                    {seasonLabel(year)} <span className="text-[var(--text-dim)]">· {ordered.length}</span>
+                  </div>
+                  <ul className="text-xs space-y-0.5">
+                    {ordered.map((p, i) => {
+                      const tierColor =
+                        p.tier === "1st" ? "text-amber-300" :
+                        p.tier === "2nd" ? "text-slate-300" :
+                                           "text-stone-400";
+                      return (
+                        <li key={i} className="flex gap-2 leading-tight">
+                          <span className={`font-bold tabular-nums w-6 flex-shrink-0 ${tierColor}`}>{p.tier}</span>
+                          <span className="text-[var(--text)]">{p.player}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               );
             })}
