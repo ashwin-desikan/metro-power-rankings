@@ -422,35 +422,38 @@ export default async function FranchisePage({ params }: Props) {
                   className="border rounded-lg p-3"
                   style={{ borderColor: "var(--border)" }}
                 >
-                  <div className="flex items-baseline gap-2 flex-wrap">
-                    {b.metro ? (
-                      <Link
-                        href={`/rankings/${b.metro.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}#map`}
-                        className="font-semibold text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2"
-                        title={`Open the ${b.metro} metro map`}
-                      >
-                        {b.canonical}
-                      </Link>
-                    ) : (
-                      <h3 className="font-semibold text-sm">{b.canonical}</h3>
-                    )}
-                    <span className="text-xs text-[var(--text-muted)]">
-                      {b.first_year ?? "?"}{b.last_year && b.last_year >= 2025 ? "-present" : `-${b.last_year ?? "?"}`}
-                    </span>
-                  </div>
-                  <div className="text-xs text-[var(--text-muted)] mt-0.5">
-                    {b.city}{b.state ? `, ${abbreviateState(b.state)}` : ""}
-                  </div>
-                  {b.eras.length > 1 && (
-                    <ul className="text-xs text-[var(--text-muted)] mt-2 pl-4 list-disc space-y-0.5">
-                      {b.eras.map((e, i) => (
-                        <li key={i}>
-                          <span className="text-[var(--text)]">{e.era_name}</span>{" "}
-                          <span className="opacity-70">({e.first_year}-{e.last_year && e.last_year >= 2025 ? "present" : e.last_year})</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  {/* Render each AS-OF era as the primary line, with the
+                      canonical (current) building name as a "now: X" subtitle
+                      only when the canonical differs from the as-of name. */}
+                  {b.eras.map((e, i) => {
+                    const sameAsCanonical = e.era_name === b.canonical;
+                    const yearLabel = `${e.first_year ?? "?"}${e.last_year && e.last_year >= 2025 ? "-present" : `-${e.last_year ?? "?"}`}`;
+                    const metroSlug = b.metro ? b.metro.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") : "";
+                    return (
+                      <div key={i} className={i > 0 ? "mt-2 pt-2 border-t" : ""} style={{ borderColor: i > 0 ? "var(--border)" : undefined }}>
+                        <div className="flex items-baseline gap-2 flex-wrap">
+                          {metroSlug ? (
+                            <Link
+                              href={`/rankings/${metroSlug}#map`}
+                              className="font-semibold text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2"
+                              title={`Open the ${b.metro} metro map`}
+                            >
+                              {e.era_name}
+                            </Link>
+                          ) : (
+                            <h3 className="font-semibold text-sm">{e.era_name}</h3>
+                          )}
+                          <span className="text-xs text-[var(--text-muted)]">{yearLabel}</span>
+                        </div>
+                        <div className="text-xs text-[var(--text-muted)] mt-0.5">
+                          {b.city}{b.state ? `, ${abbreviateState(b.state)}` : ""}
+                          {!sameAsCanonical && (
+                            <span className="ml-2 italic opacity-80">now: {b.canonical}</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               ))}
             </div>
@@ -505,8 +508,8 @@ export default async function FranchisePage({ params }: Props) {
                 <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">W</th>
                 <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">L</th>
                 <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Win%</th>
-                <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PF</th>
-                <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PA</th>
+                <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PF/G</th>
+                <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PA/G</th>
                 <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Place</th>
                 <th className="text-left py-2 font-medium uppercase tracking-wider text-[10px]">Postseason</th>
               </tr>
@@ -538,8 +541,8 @@ export default async function FranchisePage({ params }: Props) {
                     <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">
                       {s.win_pct ? s.win_pct.toFixed(3).replace(/^0/, "") : "—"}
                     </td>
-                    <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pf || ""}</td>
-                    <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pa || ""}</td>
+                    <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pf_g ? s.pf_g.toFixed(1) : ""}</td>
+                    <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pa_g ? s.pa_g.toFixed(1) : ""}</td>
                     <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.place || "—"}</td>
                     <td className="py-1.5">
                       {isInProgress ? (

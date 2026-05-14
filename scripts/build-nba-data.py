@@ -356,6 +356,8 @@ def read_year_by_year(wb):
         num_all_stars = safe_int(row[35]) if len(row) > 35 else 0
         num_all_nba = safe_int(row[36]) if len(row) > 36 else 0
         conf = safe_str(row[37]) if len(row) > 37 else ""
+        pf_g = safe_float(row[54]) if len(row) > 54 else 0.0
+        pa_g = safe_float(row[55]) if len(row) > 55 else 0.0
         # Canonical home arena lives in col DA = index 104
         home_arena_canonical = safe_str(row[104]) if len(row) > 104 else ""
 
@@ -369,6 +371,8 @@ def read_year_by_year(wb):
             "win_pct": round(win_pct, 4) if win_pct else 0.0,
             "pf": pf,
             "pa": pa,
+            "pf_g": round(pf_g, 2) if pf_g else 0.0,
+            "pa_g": round(pa_g, 2) if pa_g else 0.0,
             "point_diff": pf - pa,
             "playoff": playoff_yn,
             "div_title": div_title_yn,

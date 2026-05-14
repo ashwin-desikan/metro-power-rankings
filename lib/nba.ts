@@ -107,6 +107,8 @@ export type Season = {
   win_pct: number;
   pf: number;
   pa: number;
+  pf_g: number;
+  pa_g: number;
   point_diff: number;
   playoff: boolean;
   div_title: boolean;
