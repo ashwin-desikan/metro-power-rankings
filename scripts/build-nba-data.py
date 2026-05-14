@@ -770,7 +770,13 @@ def read_playoff_state(wb, year_by_year):
         st["rounds_played"].add(round_num)
         if champ and result == "W":
             st["champion"] = True
-        if elim:
+        # Only a loss row should mark a team as eliminated. The workbook
+        # pre-populates Clinch=Y / Elim=Y on shell rows for the clinching
+        # game; the WINNING team's row also has those flags (their loser
+        # opponent is the one eliminated). Gating on result == "L" prevents
+        # an advancing team from being classified as eliminated when their
+        # series-clinch game's Elim=Y leaks through.
+        if elim and result == "L":
             st["eliminated_at_round"] = round_num
         if round_num == 1 and result == "L" and elim:
             st["lost_finals"] = True

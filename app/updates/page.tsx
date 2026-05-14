@@ -56,10 +56,10 @@ const RELEASES: Release[] = [
     date: "2026-05-14",
     headline: "NBA franchises launched with live playoff status",
     items: [
-      "All 30 NBA franchises live at /teams/nba with championships, Finals and Conference Finals appearances, Season-by-season, arena history, and Wikipedia + Wikidata embeds; 23 defunct franchises at /teams/nba/historical including the 8 ABA-only clubs whose lineages never merged.",
-      "ABA championships render in slate to mark the rival league (1968-76, merged into NBA in 1976); BAA + NBA titles in gold. Pacers and Nets surface 3 and 2 ABA cups respectively.",
-      "Each team page carries an All-NBA Selections block (1st, 2nd, 3rd team by year and player), career All-Star count in the hero, and award rolls for MVP, DPOY, ROY, COY, MIP, Sixth Man, and Clutch Player.",
-      "Index page shows a live 2026 playoff-status chip on every franchise still in the bracket, plus a full Leaflet team map across all three major US leagues.",
+      "All 30 NBA franchises live at /teams/nba with championships, Finals, Conference Finals, Season-by-season, arena history, and Wikipedia embeds; 23 defunct franchises at /teams/nba/historical including 8 ABA-only clubs.",
+      "ABA championships render in slate (rival league 1968-76, merged into NBA in 1976) and BAA + NBA cups in gold; Pacers surface 3 ABA titles, Nets 2.",
+      "Each team page adds an All-NBA Selections block by year and player, career All-Star count in the hero, and award rolls for MVP, DPOY, ROY, COY, MIP, Sixth Man, and Clutch Player.",
+      "Index page shows a live 2026 playoff-status chip on every franchise still in the bracket plus a Leaflet team map shared with NFL and MLB.",
     ],
   },
   {
