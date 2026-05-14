@@ -176,7 +176,19 @@ export default function FranchiseTable({ franchises, playoffState, logoMap, mono
                 </td>
                 <td className="py-2.5 pr-3 text-[var(--text-muted)]">{f.conf}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.founding_year ?? "—"}</td>
-                <td className="py-2.5 pr-3 text-right font-semibold">{f.championships || ""}</td>
+                <td className="py-2.5 pr-3 text-right">
+                  {f.championships > 0 ? (
+                    <span
+                      className="inline-block rounded px-1.5 py-0.5 text-[11px] font-bold tabular-nums"
+                      style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+                      title={`${f.championships} championship${f.championships === 1 ? "" : "s"}`}
+                    >
+                      {f.championships}
+                    </span>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
+                </td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.championship_appearances || ""}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.cf_appearances || ""}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.playoff_appearances || ""}</td>

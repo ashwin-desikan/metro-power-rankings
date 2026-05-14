@@ -71,7 +71,7 @@ export default function LeagueMap({ franchises }: Props) {
 
   return (
     <section className="mb-6">
-      <MetroMap points={points} height={420} showConnections={false} />
+      <MetroMap points={points} height={280} showConnections={false} />
     </section>
   );
 }

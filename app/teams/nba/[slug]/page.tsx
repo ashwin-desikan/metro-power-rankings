@@ -458,16 +458,48 @@ export default async function FranchisePage({ params }: Props) {
         </Block>
       </div>
 
-      {/* Season-by-season */}
-      <Block
-        title="Season-by-season"
-        deck={`Every season since ${f.founding_year}. Playoff seed, division finish, and per-game results from the workbook. Most recent season carries the ${psYear ?? "current"} playoff-status chip when applicable.`}
+      {/* Season-by-season — collapsed by default to mirror MLB/NFL */}
+      <details
+        className="group mt-4 border-l-4 border-y border-r rounded-xl shadow-sm"
+        style={{
+          background: "var(--bg-card)",
+          borderTopColor: "var(--border)",
+          borderRightColor: "var(--border)",
+          borderBottomColor: "var(--border)",
+          borderLeftColor: "var(--accent)",
+        }}
       >
-        <div className="overflow-x-auto -mx-5">
+        <summary className="cursor-pointer px-5 sm:px-6 py-5 list-none flex items-center justify-between gap-4 hover:bg-[var(--bg-card-hover)] transition-colors rounded-xl">
+          <div className="flex items-center gap-3 min-w-0">
+            <span
+              aria-hidden
+              className="inline-flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold transition-transform group-open:rotate-90"
+              style={{ background: "rgba(78,205,196,0.16)", color: "var(--accent)" }}
+            >
+              ›
+            </span>
+            <div className="min-w-0">
+              <div className="text-base sm:text-lg font-semibold tracking-tight">Season-by-season</div>
+              <div className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] mt-0.5">
+                {f.founding_year} to {seasonRows[0]?.year ?? "—"} · {seasonRows.length} seasons · click to expand
+              </div>
+            </div>
+          </div>
+          <span
+            className="hidden sm:inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold px-2 py-1 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)", fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            <span className="group-open:hidden">Show table</span>
+            <span className="hidden group-open:inline">Hide table</span>
+          </span>
+        </summary>
+        <div className="px-5 pb-5">
+        <div className="overflow-x-auto">
           <table className="w-full text-xs tabular-nums">
             <thead className="text-[var(--text-muted)]">
               <tr className="border-b" style={{ borderColor: "var(--border)" }}>
-                <th className="text-left py-2 pl-5 pr-3 font-medium uppercase tracking-wider text-[10px]">Season</th>
+                <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Season</th>
+                <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Team</th>
                 <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Conf</th>
                 <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Division</th>
                 <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">W</th>
@@ -476,7 +508,7 @@ export default async function FranchisePage({ params }: Props) {
                 <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PF</th>
                 <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PA</th>
                 <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Place</th>
-                <th className="text-left py-2 pr-5 font-medium uppercase tracking-wider text-[10px]">Postseason</th>
+                <th className="text-left py-2 font-medium uppercase tracking-wider text-[10px]">Postseason</th>
               </tr>
             </thead>
             <tbody>
@@ -484,7 +516,7 @@ export default async function FranchisePage({ params }: Props) {
                 const isInProgress = !!s.playoff_state_label;
                 return (
                   <tr key={s.year} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-                    <td className="py-1.5 pl-5 pr-3">
+                    <td className="py-1.5 pr-3">
                       <a
                         href={brefYearUrl(s.year, s.league)}
                         target="_blank"
@@ -494,6 +526,10 @@ export default async function FranchisePage({ params }: Props) {
                       >
                         {seasonLabel(s.year)}
                       </a>
+                    </td>
+                    <td className="py-1.5 pr-3 whitespace-nowrap">
+                      <span className="text-[var(--text)]">{s.city}</span>{" "}
+                      <span className="text-[var(--text-muted)]">{s.team}</span>
                     </td>
                     <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.main_div || "—"}</td>
                     <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.division || "—"}</td>
@@ -505,7 +541,7 @@ export default async function FranchisePage({ params }: Props) {
                     <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pf || ""}</td>
                     <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pa || ""}</td>
                     <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.place || "—"}</td>
-                    <td className="py-1.5 pr-5">
+                    <td className="py-1.5">
                       {isInProgress ? (
                         <span
                           className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
@@ -551,7 +587,8 @@ export default async function FranchisePage({ params }: Props) {
             </tbody>
           </table>
         </div>
-      </Block>
+        </div>
+      </details>
 
       {/* Awards block */}
       <Block
@@ -596,7 +633,7 @@ export default async function FranchisePage({ params }: Props) {
         {allNbaYears.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No All-NBA selections recorded.</p>
         ) : (
-          <div className="space-y-0.5">
+          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-6 [column-fill:balance]">
             {allNbaYears.map((year) => {
               const picks = allNbaByYear.get(year)!;
               const ordered = [...picks].sort((a, b) => {
@@ -604,22 +641,20 @@ export default async function FranchisePage({ params }: Props) {
                 return (order[a.tier] ?? 9) - (order[b.tier] ?? 9);
               });
               return (
-                <div key={year} className="flex items-baseline gap-2 text-xs py-0.5">
-                  <span className="text-[var(--text-muted)] tabular-nums w-14 flex-shrink-0 text-[10px]">{seasonLabel(year)}</span>
-                  <div className="flex flex-wrap gap-1">
-                    {ordered.map((p, i) => {
-                      const tierStyle =
-                        p.tier === "1st" ? "bg-amber-500/15 text-amber-300 border-amber-500/30" :
-                        p.tier === "2nd" ? "bg-slate-400/15 text-slate-300 border-slate-400/30" :
-                                           "bg-stone-500/10 text-stone-400 border-stone-500/25";
-                      return (
-                        <span key={i} className={`inline-flex items-center gap-1 text-[10px] px-1.5 py-0 rounded border leading-tight ${tierStyle}`}>
-                          <span className="font-bold">{p.tier}</span>
-                          <span>{p.player}</span>
-                        </span>
-                      );
-                    })}
-                  </div>
+                <div key={year} className="break-inside-avoid mb-1 text-[11px] leading-tight">
+                  <span className="text-[var(--text-muted)] tabular-nums text-[10px] mr-1">{seasonLabel(year)}</span>
+                  {ordered.map((p, i) => {
+                    const tierColor =
+                      p.tier === "1st" ? "text-amber-300" :
+                      p.tier === "2nd" ? "text-slate-300" :
+                                         "text-stone-400";
+                    return (
+                      <span key={i} className="inline-block mr-1.5">
+                        <span className={`font-bold ${tierColor}`}>{p.tier}</span>{" "}
+                        <span className="text-[var(--text)]">{p.player}</span>
+                      </span>
+                    );
+                  })}
                 </div>
               );
             })}

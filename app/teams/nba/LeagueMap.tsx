@@ -61,7 +61,7 @@ export default function LeagueMap({ franchises, playoffState }: Props) {
 
   return (
     <section className="mb-6">
-      <MetroMap points={points} height={420} showConnections={false} />
+      <MetroMap points={points} height={280} showConnections={false} />
       {legendItems.length > 0 && (
         <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
           {legendItems.map((item) => (
