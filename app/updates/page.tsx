@@ -54,12 +54,12 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-15",
-    headline: "Sovereign City Index, All Sports map, NBA playoff bracket",
+    headline: "Sovereign City Index, /sports launch, NBA + MLB league widgets",
     items: [
       "New essay The Sovereign City Index ranks twelve planned cities (NEOM, Forest City, Nusantara, Egypt's NAC, and eight more) on the announcement-to-reality gap.",
-      "New /sports landing page plots 866 Major League teams across 14 sports on one filterable map, with league directory cards and cross-league team search.",
-      "NBA index now shows a live East/West playoff ladder above the table, alive teams in colored chips and eliminated teams dimmed, finals slot resolves on its own.",
-      "ABA championship seasons render in slate instead of gold-NBA Champion; league map width capped on desktop; NFL map slug-mismatch bug fixed so pins actually render.",
+      "New /sports landing page plots 886 Major League teams (now including Euroleague) on a filterable global map, with sport-chip filter above the map and league directory cards below.",
+      "NBA league page now shows a live East/West playoff ladder; MLB league page shows live 2026 division standings from ESPN. Both sit above the league map and refresh hourly.",
+      "Polish: ABA championships render in slate; NFL map slug bug fixed; NBA PF/G and PA/G off-by-one corrected; nav dropdowns no longer hidden behind Leaflet maps.",
     ],
   },
   {

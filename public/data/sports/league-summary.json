@@ -1,14 +1,14 @@
 {
-  "total_markers": 866,
+  "total_markers": 886,
   "by_sport": {
     "Football": 499,
     "Rugby Union": 51,
+    "Basketball": 50,
     "W Football": 44,
     "Baseball": 42,
     "Volleyball": 36,
     "American Football": 32,
     "Hockey": 32,
-    "Basketball": 30,
     "W Basketball": 27,
     "Handball": 19,
     "Aussie Rules": 18,
@@ -27,6 +27,7 @@
     "United States": 30,
     "Int'l W Basketball": 27,
     "Egypt": 22,
+    "Int'l Basketball": 20,
     "Brazil": 20,
     "Colombia": 20,
     "England": 20,
@@ -55,32 +56,31 @@
     "Minor Lg Base": 12,
     "Austria": 12,
     "Denmark": 12,
-    "Scotland": 12,
-    "South Korea": 12
+    "Scotland": 12
   },
   "by_country_top": {
     "United States": 172,
     "Japan": 42,
+    "Spain": 40,
     "Australia": 38,
-    "Germany": 36,
-    "Spain": 36,
-    "Italy": 34,
-    "France": 31,
+    "Germany": 37,
+    "Italy": 36,
+    "France": 33,
     "Poland": 31,
     "Argentina": 30,
     "United Kingdom": 29,
     "Russia": 28,
     "Canada": 22,
     "Egypt": 22,
-    "Brazil": 20,
-    "Colombia": 20
+    "Turkey": 20,
+    "Brazil": 20
   },
   "markers_with_team_page": 92,
   "sources": {
-    "team_list": 367,
+    "team_list": 387,
     "football_club_data": 499,
     "team_list_excluded_no_coords": 0,
-    "team_list_excluded_not_ml": 2779,
+    "team_list_excluded_not_ml": 2759,
     "team_list_excluded_notable_venues": 648,
     "football_club_data_excluded_no_coords": 0
   },
@@ -116,6 +116,14 @@
       "status": "coming",
       "page": null,
       "team_count": 32
+    },
+    {
+      "league": "Int'l Basketball",
+      "label": "Euroleague",
+      "sport": "Basketball",
+      "status": "coming",
+      "page": null,
+      "team_count": 20
     },
     {
       "league": "England",

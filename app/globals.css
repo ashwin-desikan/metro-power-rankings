@@ -36,3 +36,15 @@ body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+/* Leaflet stacking context. Leaflet's internal panes use z-index ranges
+   that climb past 700 (popup pane), which lets them paint over the nav
+   dropdowns (z-50 on the SiteNav header). `isolation: isolate` creates a
+   stacking context on the map container so all internal panes are
+   trapped below the parent's z-index, regardless of their raw values.
+   Belt-and-braces: also force container z-index to 0 for older browsers
+   that don't honor `isolation`. */
+.leaflet-container {
+  isolation: isolate;
+  z-index: 0 !important;
+}

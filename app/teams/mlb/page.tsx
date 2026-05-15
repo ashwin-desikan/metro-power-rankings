@@ -12,6 +12,7 @@ import {
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
+import MlbStandings from "./MlbStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -54,7 +55,7 @@ function withTeamSlugs<T extends { winner_canonical: string; loser_canonical: st
   }));
 }
 
-export default function MlbIndexPage() {
+export default async function MlbIndexPage() {
   const franchises = getAllFranchises();
   const totalWS = franchises.reduce((s, f) => s + f.championships, 0);
   const totalPreWS = franchises.reduce((s, f) => s + f.pre_ws_championships, 0);
@@ -96,6 +97,8 @@ export default function MlbIndexPage() {
           World Series era (1903-present)
         </span>
       </div>
+
+      <MlbStandings />
 
       <LeagueMap franchises={franchises} />
 

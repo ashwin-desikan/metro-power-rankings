@@ -356,8 +356,10 @@ def read_year_by_year(wb):
         num_all_stars = safe_int(row[35]) if len(row) > 35 else 0
         num_all_nba = safe_int(row[36]) if len(row) > 36 else 0
         conf = safe_str(row[37]) if len(row) > 37 else ""
-        pf_g = safe_float(row[54]) if len(row) > 54 else 0.0
-        pa_g = safe_float(row[55]) if len(row) > 55 else 0.0
+        # PF/G is col BB = index 53; PA/G is col BC = index 54. Earlier
+        # version read 54/55 which surfaced PA/G and Reb/G respectively.
+        pf_g = safe_float(row[53]) if len(row) > 53 else 0.0
+        pa_g = safe_float(row[54]) if len(row) > 54 else 0.0
         # Canonical home arena lives in col DA = index 104
         home_arena_canonical = safe_str(row[104]) if len(row) > 104 else ""
 

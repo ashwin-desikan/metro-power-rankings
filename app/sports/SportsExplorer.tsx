@@ -250,16 +250,26 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       </div>
 
-      {/* Filter chip groups */}
+      {/* Sport filter — always visible chip row, mirrors the metro-page
+          MapWithFilters pattern. Sport is the primary discriminator on a
+          global map; League and Country live below in the disclosure. */}
+      <FilterRow
+        label="Sport"
+        facets={sportFacets}
+        active={filters.sports}
+        onToggle={(v) => toggle("sports", v)}
+        renderDot={(name) => SPORT_COLORS[name] || DEFAULT_SPORT_COLOR}
+      />
+
+      {/* Secondary filters — collapsed by default so the page stays calm. */}
       <details className="rounded-lg border" style={{ borderColor: "var(--border)" }}>
         <summary className="cursor-pointer px-4 py-2 text-xs uppercase tracking-widest font-semibold text-[var(--text-muted)] flex items-center justify-between hover:text-[var(--text)]">
-          <span>Filters</span>
+          <span>More filters</span>
           <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">
-            {filters.sports.size + filters.leagues.size + filters.countries.size} active
+            {filters.leagues.size + filters.countries.size} active
           </span>
         </summary>
         <div className="px-4 pb-4 space-y-3">
-          <FilterRow label="Sport" facets={sportFacets} active={filters.sports} onToggle={(v) => toggle("sports", v)} renderDot={(name) => SPORT_COLORS[name] || DEFAULT_SPORT_COLOR} />
           <FilterRow label="League" facets={leagueFacets} active={filters.leagues} onToggle={(v) => toggle("leagues", v)} />
           <FilterRow label="Country" facets={countryFacets.slice(0, 30)} active={filters.countries} onToggle={(v) => toggle("countries", v)} />
         </div>

@@ -188,7 +188,11 @@ def main():
             continue
         sport, league, team, main_div, division, city, metro, state, country, level, _metro_val, ml, season, _affil, _annual, qid, wiki, lat, lng = r[:19]
 
-        if ml != "Y":
+        # Both literal 'Y' and 'Euroleague' (the workbook's flag for Euroleague
+        # basketball clubs) are treated as Major League rows. Everything else
+        # is excluded from the launch scope.
+        is_major_league_row = ml == "Y" or ml == "Euroleague"
+        if not is_major_league_row:
             excluded_not_ml += 1
             continue
         if league == "Notable Venues":
@@ -213,7 +217,7 @@ def main():
             "state": state or None,
             "country": country,
             "country_iso2": country_iso2,
-            "level": "Major" if ml == "Y" else "Other",
+            "level": "Major",
             "lat": float(lat),
             "lng": float(lng),
             "wikidata_qid": qid or None,
@@ -300,6 +304,7 @@ def main():
             {"league": "MLB",  "label": "MLB",            "sport": "Baseball",           "status": "live",   "page": "/teams/mlb", "team_count": by_league.get("MLB", 0)},
             {"league": "NBA",  "label": "NBA",            "sport": "Basketball",         "status": "live",   "page": "/teams/nba", "team_count": by_league.get("NBA", 0)},
             {"league": "NHL",  "label": "NHL",            "sport": "Hockey",             "status": "coming", "page": None,         "team_count": by_league.get("NHL", 0)},
+            {"league": "Int'l Basketball", "label": "Euroleague", "sport": "Basketball", "status": "coming", "page": None,         "team_count": by_league.get("Int'l Basketball", 0)},
             {"league": "England",  "label": "Premier League", "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("England", 0)},
             {"league": "Spain",    "label": "La Liga",        "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("Spain", 0)},
             {"league": "Italy",    "label": "Serie A",        "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("Italy", 0)},
