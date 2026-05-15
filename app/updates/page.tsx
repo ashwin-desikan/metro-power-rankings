@@ -53,6 +53,15 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-15",
+    headline: "Sovereign City Index essay published",
+    items: [
+      "New essay The Sovereign City Index ranks twelve planned cities (NEOM, Forest City, Nusantara, Egypt's NAC, and eight more) on the announcement-to-reality gap.",
+      "Realism composite scores capital deployment, population yield, governance autonomy, and milestone fidelity (each 0-25, summing to 0-100) with a per-project source footnote.",
+      "Twelve metros named in the piece deep-link into the live rankings, with adjacent badges (Skyline City, Cosmopolitan Capital, Emerging Standout) surfaced inline.",
+    ],
+  },
+  {
     date: "2026-05-14",
     headline: "NBA franchises launched with live playoff status",
     items: [
@@ -89,6 +98,7 @@ const RELEASES: Release[] = [
       "Real polygons now render for Brazil (218), China (172), Switzerland (32), Australia (31), Austria (27), and South Korea (18); 498 new boundaries in total.",
       "Football clubs plot as Major League markers on every metro map, with stadium coordinates backfilled for 499 top-flight clubs.",
       "Tokyo polygon rebuilt with the 23 special wards correctly inside the metro footprint; new refreshment protocol catches this kind of staleness automatically.",
+      "New essay Greying Power: When Demographic Decline Buys Stability published on Substack, pairing with the existing badge.",
     ],
   },
   {
@@ -107,6 +117,7 @@ const RELEASES: Release[] = [
     items: [
       "Real polygon boundaries unlocked for 555 metros across 43 new countries, led by India, Romania, Portugal, Turkey, Colombia, and Nigeria.",
       "Builder routing wired in code; polygons render once the next boundary build runs.",
+      "New essay Reading the Oxford Economics Index Against Our Own published on Substack, anchoring the new peer-comparison section on /methodology.",
     ],
   },
   {
@@ -132,9 +143,9 @@ const RELEASES: Release[] = [
     headline: "Real boundaries for North America, the UK, France, and Germany",
     items: [
       "Maps now render true administrative polygons for 595 US, 93 Mexican, 83 Canadian, 179 UK, 113 French, and 73 German metros (1,136 total) instead of city-center pins.",
-      "Lewes merges into Brighton & Hove and Warrington into Liverpool; three Newfoundland metros still fall back to a city pin until source data is populated.",
+      "Lewes merges into Brighton & Hove and Warrington into Liverpool; remote oceanic outposts are trimmed so Honolulu no longer drags thousand-mile administrative tails.",
       "Boundaries come straight from Overture Maps, so editorial updates flow through with one rebuild.",
-      "Honolulu and similar metros no longer drag thousand-mile administrative tails into the map; remote oceanic outposts are trimmed automatically.",
+      "New essay The 85% Illusion: When Cities Build Skylines Instead of Economies published on Substack, anchored by the Skyline City badge.",
     ],
   },
   {
@@ -159,12 +170,12 @@ const RELEASES: Release[] = [
   },
   {
     date: "2026-05-01",
-    headline: "Methodology, score tiers, share cards, matchup pages, big data refresh",
+    headline: "Methodology, score tiers, share cards, matchup pages",
     items: [
       "New /methodology page documents every dimension, weight, source, and editorial choice; score tiers (Global Capital through Local City) now appear on every metro page.",
       "Per-metro and comparison Open Graph share cards now generate automatically, with Reddit and LinkedIn share buttons on every metro and matchup page.",
       "New /matchups/[a-vs-b] route with 300 pre-rendered head-to-head pages for the top 25 metros, each with a tier verdict and dimension-by-dimension winner grid.",
-      "Data refresh: Multi-Sport Events bucket, Eurovision and Historical Events surfaced, Euroleague teams added, Top Teams expanded to 312 metros, Wikidata coverage to Top 156.",
+      "New essay Company Towns of the Mind: The Academic Gravity Wells published on Substack, anchored by the new badge.",
     ],
   },
   {
@@ -173,6 +184,7 @@ const RELEASES: Release[] = [
     items: [
       "Launched the Top Teams page: one defining sporting franchise per metro, with co-equal tags for contested calls.",
       "Top Team card now appears on metro profiles alongside Walkable Elite Quarters.",
+      "New essay The Team That Wins the City published on Substack, anchored by the Top Teams reference.",
     ],
   },
   {
@@ -204,6 +216,7 @@ const RELEASES: Release[] = [
     headline: "Walkable Elite Quarters card",
     items: [
       "Walkable Elite Quarters card now appears on profiles for the 103 qualifying metros.",
+      "New essay The Last of the Marylebones published on Substack, taxonomy of walkable elite neighborhoods anchoring the card.",
     ],
   },
   {
@@ -212,6 +225,7 @@ const RELEASES: Release[] = [
     items: [
       "Launched the Neighborhoods page: 103 walkable-elite quarters out of 4,200+ metros.",
       "Articles dropdown added to top nav.",
+      "Companion essay The Global Metro Power Rankings Site Is Live published on Substack, announcing the launch.",
     ],
   },
   {
@@ -254,6 +268,13 @@ const RELEASES: Release[] = [
     items: [
       "Initial release: 4,200+ metros, 16 dimensions, ranked by composite score.",
       "Metro profile pages with company names, sources, market cap, GDP, and dimension breakdowns.",
+    ],
+  },
+  {
+    date: "2026-04-12",
+    headline: "Series opener Substack published",
+    items: [
+      "Inaugural essay The Global Metro Power Rankings: Measuring What Makes a City Matter published on Substack, introducing the dimension-based composite framework one day before the site went live.",
     ],
   },
 ];
@@ -388,6 +409,50 @@ export default function UpdatesPage() {
                   </time>
                 </div>
                 <div className="flex-1 min-w-0">
+                  <h2 className="text-xl font-bold mb-4 text-[var(--text)]">
+                    {release.headline}
+                  </h2>
+                  <ul className="space-y-3">
+                    {release.items.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="text-[var(--text)] leading-relaxed flex gap-3"
+                      >
+                        <span
+                          className="text-[var(--accent)] flex-shrink-0 mt-1"
+                          aria-hidden="true"
+                        >
+                          &middot;
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <footer className="mt-16 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
+            <p>
+              Have a correction, a feature request, or a city you think is
+              miscategorized? Leave a comment on any post at{" "}
+              <a
+                href="https://citizenofnowhere.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--accent)] hover:underline"
+              >
+                Citizen of Nowhere
+              </a>
+              .
+            </p>
+          </footer>
+        </div>
+      </main>
+    </>
+  );
+}
                   <h2 className="text-xl font-bold mb-4 text-[var(--text)]">
                     {release.headline}
                   </h2>
