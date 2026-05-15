@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
+import { Suspense } from "react";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import SportsExplorer, { type TeamMarker } from "./SportsExplorer";
@@ -73,8 +74,22 @@ export default function SportsPage() {
         </div>
       </header>
 
-      {/* The interactive explorer (map + filters + search) */}
-      <SportsExplorer teams={teams} />
+      {/* The interactive explorer (map + filters + search). Next 16
+          requires useSearchParams() consumers to sit under a Suspense
+          boundary during static prerender, even though we hydrate to a
+          client component immediately on mount. */}
+      <Suspense
+        fallback={
+          <div
+            className="rounded-lg border h-[540px] flex items-center justify-center text-xs"
+            style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            Loading explorer…
+          </div>
+        }
+      >
+        <SportsExplorer teams={teams} />
+      </Suspense>
 
       {/* League summary cards */}
       <section className="mt-10">
