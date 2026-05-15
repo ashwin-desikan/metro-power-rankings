@@ -228,6 +228,14 @@ def main():
             excluded_no_coords += 1
             continue
 
+        # Fold the four UK home nations into a single 'United Kingdom'
+        # country chip on the /sports map. Workbook keeps them separate
+        # for legitimate editorial reasons (e.g. the FootballClub_Data
+        # league field uses 'England' as the Premier-League marker), but
+        # at the country-filter facet level they read as one geography.
+        if country in ("England", "Scotland", "Wales", "Northern Ireland"):
+            country = "United Kingdom"
+
         country_iso2 = COUNTRY_ISO2.get(country)
         team_page_url = lookup_team_page_url(league or "", team or "", franchise_index)
 
@@ -283,6 +291,10 @@ def main():
         if lat is None or lng is None or (lat == 0 and lng == 0):
             fc_no_coords += 1
             continue
+
+        # UK home-nations consolidation (parallel to Team List path).
+        if country in ("England", "Scotland", "Wales", "Northern Ireland"):
+            country = "United Kingdom"
 
         country_iso2 = COUNTRY_ISO2.get(country)
 

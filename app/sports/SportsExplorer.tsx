@@ -96,6 +96,21 @@ export const CONFERENCE_COLORS: Record<string, string> = {
 // Basketball adds the Big East as the fifth high-major (it does not
 // sponsor FBS football, so it stays out of the football set). Workbook
 // stores them under their full conference names; UI uses the same strings.
+// Crown leagues = top-flight competition in their sport. The chip in
+// the League facet row is prefixed with a crown so users can see at a
+// glance which competition is the apex of its sport. Football uses the
+// country-named leagues (FootballClub_Data convention) for the top-five
+// European competitions.
+export const CROWN_LEAGUES = new Set<string>([
+  // Football (top-five European leagues, country-named in workbook)
+  "England", "Spain", "Italy", "France", "Germany",
+  // North American Big Four + CFL
+  "NBA", "NFL", "NHL", "MLB", "CFL",
+  // Other top flights named by the user
+  "Top 14", "WSL", "NWSL", "Superlega", "NRL", "AFL",
+  "Handball-Bundesliga", "WNBA", "IPL",
+]);
+
 const POWER_CONF_FBS_LEAGUES = ["Big Ten", "Southeastern", "Big 12", "Atlantic Coast"] as const;
 const POWER_CONF_CBB_LEAGUES = ["Big Ten", "Southeastern", "Big 12", "Atlantic Coast", "Big East"] as const;
 const POWER_CONF_FBS_SET = new Set<string>(POWER_CONF_FBS_LEAGUES);
@@ -154,6 +169,14 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     searchParams.get("cbb") === "all" ? "all" : "p4",
   );
 
+  // Crown Jewels preset: single-toggle filter that restricts visible
+  // markers to the apex competition in each sport (CROWN_LEAGUES). Off
+  // by default; URL `crown=1` opts in. Independent of college tier and
+  // every other filter; layers on top via AND.
+  const [crownOnly, setCrownOnly] = useState<boolean>(
+    searchParams.get("crown") === "1",
+  );
+
   // Push filter changes to URL (replace, not push, to keep history clean)
   useEffect(() => {
     const params = new URLSearchParams();
@@ -166,9 +189,10 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     if (query.trim()) params.set("q", query.trim());
     if (fbsTier === "all") params.set("fbs", "all");
     if (cbbTier === "all") params.set("cbb", "all");
+    if (crownOnly) params.set("crown", "1");
     const qs = params.toString();
     router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  }, [filters, query, fbsTier, cbbTier, pathname, router]);
+  }, [filters, query, fbsTier, cbbTier, crownOnly, pathname, router]);
 
   // ---- College gate predicate (declared early so facets can use it) ----
   // FBS football and NCAA D-I basketball are each gated by their sport's
@@ -227,6 +251,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
     return teams.filter((t) => {
+      if (crownOnly && !CROWN_LEAGUES.has(t.league)) return false;
       if (collegeGateHides(t)) return false;
       if (filters.sports.size > 0 && !filters.sports.has(t.sport)) return false;
       if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) return false;
@@ -237,7 +262,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
       }
       return true;
     });
-  }, [teams, filters, query, collegeGateHides]);
+  }, [teams, filters, query, crownOnly, collegeGateHides]);
 
   // ---- Search dropdown (top matches by team/metro substring) ----
   const searchMatches = useMemo(() => {
@@ -276,7 +301,16 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     setQuery("");
     setFbsTier("p4");
     setCbbTier("p4");
+    setCrownOnly(false);
   }
+
+  // Count of markers eligible for the Crown Jewels filter (matches the
+  // CROWN_LEAGUES set across all sports). Used as a context anchor next
+  // to the toggle chip.
+  const crownCount = useMemo(
+    () => teams.filter((t) => CROWN_LEAGUES.has(t.league)).length,
+    [teams],
+  );
 
   // Counts shown next to the radio chips as context anchors.
   const fbsP4Count = useMemo(
@@ -306,7 +340,8 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     filters.sports.size + filters.leagues.size + filters.countries.size > 0 ||
     query.trim().length > 0 ||
     fbsTier !== "p4" ||
-    cbbTier !== "p4";
+    cbbTier !== "p4" ||
+    crownOnly;
 
   return (
     <section className="space-y-3">
@@ -371,6 +406,33 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         className="rounded-lg overflow-hidden border"
       >
         <SportsMapInner markers={visible} />
+      </div>
+
+      {/* Crown Jewels preset — single-click filter to the world's apex
+          competition in each sport. Lives above Sport so it reads as
+          the fastest path to a curated view. */}
+      <div>
+        <div className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] mb-1.5">Preset</div>
+        <div className="flex flex-wrap gap-1.5">
+          <button
+            type="button"
+            onClick={() => setCrownOnly((v) => !v)}
+            aria-pressed={crownOnly}
+            title={crownOnly
+              ? "On: showing only the world's top-flight league in each sport. Click to clear."
+              : "Off: click to filter to the world's top-flight league in each sport (NBA, NFL, NHL, MLB, CFL, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Top 14, WSL, NWSL, Superlega, NRL, AFL, Handball-Bundesliga, WNBA, IPL)."}
+            className={`inline-flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-full border transition-colors ${
+              crownOnly
+                ? "bg-[var(--accent)] text-[var(--bg)] border-[var(--accent)]"
+                : "hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            }`}
+            style={!crownOnly ? { borderColor: "var(--border)", color: "var(--text-muted)" } : undefined}
+          >
+            <span aria-hidden className="text-[10px] leading-none">👑</span>
+            <span>Crown Jewels</span>
+            <span className="opacity-70 tabular-nums">{crownCount}</span>
+          </button>
+        </div>
       </div>
 
       {/* Sport filter — primary discriminator, always visible. */}
@@ -511,10 +573,12 @@ function FilterRowBare({
     <div className="flex flex-wrap gap-1.5">
       {facets.map(([name, count]) => {
         const isActive = active.has(name);
+        const isCrown = CROWN_LEAGUES.has(name);
         return (
           <button
             key={name}
             onClick={() => onToggle(name)}
+            title={isCrown ? `${name}: top flight in its sport` : undefined}
             className={`inline-flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-full border transition-colors ${
               isActive
                 ? "bg-[var(--accent)] text-[var(--bg)] border-[var(--accent)]"
@@ -522,6 +586,11 @@ function FilterRowBare({
             }`}
             style={!isActive ? { borderColor: "var(--border)", color: "var(--text-muted)" } : undefined}
           >
+            {isCrown && (
+              <span aria-hidden className="text-[10px] leading-none" style={{ filter: "saturate(0.85)" }}>
+                👑
+              </span>
+            )}
             <span>{name}</span>
             <span className="opacity-70 tabular-nums">{count}</span>
           </button>
