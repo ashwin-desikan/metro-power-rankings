@@ -14,6 +14,7 @@ import Link from "next/link";
 export type TeamMarker = {
   sport: string;
   league: string;
+  league_raw?: string;
   team: string;
   main_div: string | null;
   division: string | null;
@@ -60,6 +61,13 @@ export const SPORT_COLORS: Record<string, string> = {
 };
 export const DEFAULT_SPORT_COLOR = "#475569"; // slate-600
 
+// Power 4 = the four autonomy / revenue-driving conferences. Used as a
+// quick-filter preset that crosses both FBS football and NCAA Division I
+// basketball in one click. Workbook stores them under their full
+// conference names; UI uses the same strings.
+const POWER_4_LEAGUES = ["Big Ten", "Southeastern", "Big 12", "Atlantic Coast"] as const;
+const POWER_4_SET = new Set<string>(POWER_4_LEAGUES);
+
 const SportsMapInner = dynamic(() => import("./SportsMapInner"), {
   ssr: false,
   loading: () => (
@@ -100,6 +108,14 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   }));
   const [query, setQuery] = useState<string>(searchParams.get("q") || "");
 
+  // Power 4 college gate. Defaults ON: FBS football and NCAA Division I
+  // basketball are shown ONLY for the four autonomy conferences (Big Ten,
+  // SEC, Big 12, ACC) unless the user toggles the chip off. Other sports
+  // are never affected by this gate. URL param `p4=0` opts out.
+  const [p4OnlyForCollege, setP4OnlyForCollege] = useState<boolean>(
+    searchParams.get("p4") !== "0",
+  );
+
   // Push filter changes to URL (replace, not push, to keep history clean)
   useEffect(() => {
     const params = new URLSearchParams();
@@ -110,9 +126,10 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     if (l) params.set("league", l);
     if (c) params.set("country", c);
     if (query.trim()) params.set("q", query.trim());
+    if (!p4OnlyForCollege) params.set("p4", "0");
     const qs = params.toString();
     router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  }, [filters, query, pathname, router]);
+  }, [filters, query, p4OnlyForCollege, pathname, router]);
 
   // ---- Derived facets ----
   // Sport list (descending by count) and country list (descending by count).
@@ -143,6 +160,14 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
     return teams.filter((t) => {
+      // Power 4 default gate: restrict FBS football + NCAA basketball to
+      // the four autonomy conferences. Applies even when no explicit
+      // league filter is set, but only to those two college buckets.
+      if (p4OnlyForCollege) {
+        const isFbs = t.league_raw === "FBS";
+        const isNcaaHoops = t.sport === "Basketball" && t.league_raw === "NCAA";
+        if ((isFbs || isNcaaHoops) && !POWER_4_SET.has(t.league)) return false;
+      }
       if (filters.sports.size > 0 && !filters.sports.has(t.sport)) return false;
       if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) return false;
       if (filters.countries.size > 0 && !filters.countries.has(t.country)) return false;
@@ -152,7 +177,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
       }
       return true;
     });
-  }, [teams, filters, query]);
+  }, [teams, filters, query, p4OnlyForCollege]);
 
   // ---- Search dropdown (top matches by team/metro substring) ----
   const searchMatches = useMemo(() => {
@@ -189,9 +214,25 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   function clearAll() {
     setFilters({ sports: new Set(), leagues: new Set(), countries: new Set() });
     setQuery("");
+    setP4OnlyForCollege(true);
   }
 
-  const hasFilters = filters.sports.size + filters.leagues.size + filters.countries.size > 0 || query.trim().length > 0;
+  // Power 4 chip is a Boolean toggle for the default-on college gate.
+  // The chip count shows how many P4 teams exist across FBS + NCAA, used
+  // as a context anchor; the gate itself is binary.
+  const power4Active = p4OnlyForCollege;
+  const power4Count = useMemo(
+    () => teams.filter((t) => POWER_4_SET.has(t.league)).length,
+    [teams],
+  );
+  function togglePower4() {
+    setP4OnlyForCollege((v) => !v);
+  }
+
+  const hasFilters =
+    filters.sports.size + filters.leagues.size + filters.countries.size > 0 ||
+    query.trim().length > 0 ||
+    !p4OnlyForCollege;
 
   return (
     <section className="space-y-3">
@@ -256,6 +297,33 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         className="rounded-lg overflow-hidden border"
       >
         <SportsMapInner markers={visible} />
+      </div>
+
+      {/* Preset row — single-click quick filters that cross multiple
+          sports / leagues. Sits above Sport so it reads as the fastest
+          path to a curated view. Today: Power 4. Add more presets here
+          (G5, Premier vs Champions, etc.) without restructuring. */}
+      <div>
+        <div className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] mb-1.5">Preset</div>
+        <div className="flex flex-wrap gap-1.5">
+          <button
+            type="button"
+            onClick={togglePower4}
+            aria-pressed={power4Active}
+            title={power4Active
+              ? "On: restricting FBS football and NCAA basketball to the four autonomy conferences. Click to show every college team."
+              : "Off: showing all FBS football and NCAA basketball teams. Click to restrict back to the Power 4 conferences."}
+            className={`inline-flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-full border transition-colors ${
+              power4Active
+                ? "bg-[var(--accent)] text-[var(--bg)] border-[var(--accent)]"
+                : "hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            }`}
+            style={!power4Active ? { borderColor: "var(--border)", color: "var(--text-muted)" } : undefined}
+          >
+            <span>Power 4</span>
+            <span className="opacity-70 tabular-nums">{power4Count}</span>
+          </button>
+        </div>
       </div>
 
       {/* Sport filter — sits below the map. Chips already carry the sport

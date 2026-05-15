@@ -23,12 +23,33 @@ function regionOf(division: string): Region {
   return "Other";
 }
 
+// Workbook-anchored fallback: when ESPN omits a clean league marker, the
+// 30 modern franchises split AL/NL deterministically. Used only when the
+// upstream league field is empty AND the division string carries no
+// recognizable cue.
+const AL_TEAMS = new Set([
+  "Yankees", "Red Sox", "Blue Jays", "Orioles", "Rays",
+  "Guardians", "Twins", "Royals", "Tigers", "White Sox",
+  "Astros", "Mariners", "Rangers", "Angels", "Athletics",
+]);
+const NL_TEAMS = new Set([
+  "Phillies", "Mets", "Braves", "Marlins", "Nationals",
+  "Cubs", "Brewers", "Cardinals", "Pirates", "Reds",
+  "Dodgers", "Padres", "Giants", "Diamondbacks", "Rockies",
+]);
+
 function leagueOf(team: TeamStanding): "AL" | "NL" | "" {
   if (team.league === "AL" || team.league === "NL") return team.league;
-  // Fallback: division string may carry "American" or "National"
+  // Fallback 1: division string may carry "American" / "National" or
+  // prefix "AL " / "NL ".
   const lower = (team.division || "").toLowerCase();
-  if (lower.includes("american")) return "AL";
-  if (lower.includes("national")) return "NL";
+  if (lower.includes("american") || lower.startsWith("al ")) return "AL";
+  if (lower.includes("national") || lower.startsWith("nl ")) return "NL";
+  // Fallback 2: workbook-anchored team-name map (the 30 modern clubs are
+  // a fixed partition; ESPN cosmetic renames don't move them between
+  // leagues).
+  if (AL_TEAMS.has(team.canonical)) return "AL";
+  if (NL_TEAMS.has(team.canonical)) return "NL";
   return "";
 }
 

@@ -183,16 +183,41 @@ def main():
     excluded_not_ml = 0
     team_list_count = 0
 
+    # Leagues that should be re-labeled by Main Division instead of the
+    # workbook's broad League bucket. "Int'l Basketball" is handled
+    # separately because Euroleague clubs (ml='Euroleague') keep the
+    # Euroleague brand while non-Euroleague Int'l Basketball rows use
+    # main_div.
+    MAIN_DIV_LABEL_LEAGUES = {
+        "Minor Lg Base",
+        "Int'l Volleyball",
+        "Int'l W Basketball",
+        "Int'l Handball",
+        "Minor/Jr/Int'l Hockey",
+        "FBS",
+    }
+    # Leagues whose rows are admitted regardless of the ml flag. The
+    # default scope is ml in {Y, Euroleague}; these additions surface
+    # second-tier and collegiate competitions on the map (rendered as
+    # level=Other so they fill slate instead of gold).
+    NON_ML_INCLUDED_LEAGUES = {
+        "Minor/Jr/Int'l Hockey",
+        "FBS",
+    }
+
     for r in rows:
         if not r or len(r) < 19:
             continue
         sport, league, team, main_div, division, city, metro, state, country, level, _metro_val, ml, season, _affil, _annual, qid, wiki, lat, lng = r[:19]
 
-        # Both literal 'Y' and 'Euroleague' (the workbook's flag for Euroleague
-        # basketball clubs) are treated as Major League rows. Everything else
-        # is excluded from the launch scope.
+        # Admission rules:
+        #   - ml == 'Y' or 'Euroleague' (the original Major League scope), OR
+        #   - league is in NON_ML_INCLUDED_LEAGUES, OR
+        #   - sport == 'Basketball' and league == 'NCAA' (D-I basketball).
         is_major_league_row = ml == "Y" or ml == "Euroleague"
-        if not is_major_league_row:
+        is_ncaa_basketball = sport == "Basketball" and league == "NCAA"
+        is_non_ml_admit = league in NON_ML_INCLUDED_LEAGUES or is_ncaa_basketball
+        if not (is_major_league_row or is_non_ml_admit):
             excluded_not_ml += 1
             continue
         if league == "Notable Venues":
@@ -205,9 +230,24 @@ def main():
         country_iso2 = COUNTRY_ISO2.get(country)
         team_page_url = lookup_team_page_url(league or "", team or "", franchise_index)
 
+        # Display-league override. Some workbook League values are broad
+        # buckets ("Int'l Volleyball", "FBS") and the actual top-flight
+        # competition lives in Main Division. Re-bucket those rows so the
+        # chip filter exposes the league the user actually recognizes.
+        display_league = league
+        if league == "Int'l Basketball":
+            display_league = "Euroleague" if ml == "Euroleague" else (main_div or league)
+        elif league in MAIN_DIV_LABEL_LEAGUES or is_ncaa_basketball:
+            display_league = main_div or league
+
+        # Level coding: gold (Major) for ml='Y'/'Euroleague' rows, slate
+        # (Other) for the NCAA / Minor / Junior / second-flight admissions.
+        marker_level = "Major" if is_major_league_row else "Other"
+
         markers.append({
             "sport": sport,
-            "league": league,
+            "league": display_league,
+            "league_raw": league,
             "team": team,
             "main_div": main_div or None,
             "division": division or None,
@@ -217,7 +257,7 @@ def main():
             "state": state or None,
             "country": country,
             "country_iso2": country_iso2,
-            "level": "Major",
+            "level": marker_level,
             "lat": float(lat),
             "lng": float(lng),
             "wikidata_qid": qid or None,
@@ -248,6 +288,7 @@ def main():
         markers.append({
             "sport": "Football",  # top-flight soccer
             "league": league,
+            "league_raw": league,
             "team": team,
             "main_div": None,
             "division": None,
@@ -280,8 +321,11 @@ def main():
     by_country = Counter(m["country"] for m in markers)
     pageable = sum(1 for m in markers if m["team_page_url"])
 
+    by_level = Counter(m["level"] for m in markers)
     summary = {
         "total_markers": len(markers),
+        "major_markers": by_level.get("Major", 0),
+        "other_markers": by_level.get("Other", 0),
         "by_sport": dict(by_sport.most_common()),
         "by_league_top": dict(by_league.most_common(40)),
         "by_country_top": dict(by_country.most_common(15)),
@@ -304,7 +348,7 @@ def main():
             {"league": "MLB",  "label": "MLB",            "sport": "Baseball",           "status": "live",   "page": "/teams/mlb", "team_count": by_league.get("MLB", 0)},
             {"league": "NBA",  "label": "NBA",            "sport": "Basketball",         "status": "live",   "page": "/teams/nba", "team_count": by_league.get("NBA", 0)},
             {"league": "NHL",  "label": "NHL",            "sport": "Hockey",             "status": "coming", "page": None,         "team_count": by_league.get("NHL", 0)},
-            {"league": "Int'l Basketball", "label": "Euroleague", "sport": "Basketball", "status": "coming", "page": None,         "team_count": by_league.get("Int'l Basketball", 0)},
+            {"league": "Euroleague", "label": "Euroleague", "sport": "Basketball", "status": "coming", "page": None,         "team_count": by_league.get("Euroleague", 0)},
             {"league": "England",  "label": "Premier League", "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("England", 0)},
             {"league": "Spain",    "label": "La Liga",        "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("Spain", 0)},
             {"league": "Italy",    "label": "Serie A",        "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("Italy", 0)},

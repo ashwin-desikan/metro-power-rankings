@@ -7,7 +7,6 @@ import {
   getAllFranchiseSlugs,
   logoUrlFor,
   monogramFor,
-  TITLE_COLORS,
 } from "@/lib/mlb";
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
@@ -86,17 +85,6 @@ export default async function MlbIndexPage() {
           </div>
         </div>
       </header>
-
-      <div className="flex flex-wrap gap-4 text-xs text-[var(--text-muted)] mb-6">
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.pre_ws.bg }} />
-          Pre-1903 cup era (Temple Cup, World's Series, etc.)
-        </span>
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.ws.bg }} />
-          World Series era (1903-present)
-        </span>
-      </div>
 
       <MlbStandings />
 

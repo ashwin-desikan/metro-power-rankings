@@ -38,6 +38,8 @@ type LeagueCard = {
 
 type Summary = {
   total_markers: number;
+  major_markers: number;
+  other_markers: number;
   by_sport: Record<string, number>;
   by_league_top: Record<string, number>;
   by_country_top: Record<string, number>;
@@ -61,14 +63,14 @@ export default function SportsPage() {
       {/* Hero */}
       <header className="mb-8">
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">All Sports</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Every Major League team, on one map</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-2">Every top-flight team, on one map</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           {summary.total_markers.toLocaleString()} teams across {Object.keys(summary.by_sport).length} sports and {Object.keys(summary.by_country_top).length}+ countries.
           Filter by sport, league, or country, or jump straight to a per-franchise page where one exists.
           Per-team pages are live for NFL, MLB, and NBA today, with NHL queued next.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">
-          <div><strong className="text-[var(--text)] text-sm">{summary.total_markers.toLocaleString()}</strong> Major League teams</div>
+          <div><strong className="text-[var(--text)] text-sm">{summary.major_markers.toLocaleString()}</strong> Major League · <strong className="text-[var(--text)] text-sm">{summary.other_markers.toLocaleString()}</strong> College & second flight</div>
           <div><strong className="text-[var(--text)] text-sm">{summary.markers_with_team_page}</strong> with per-franchise pages</div>
           <div><strong className="text-[var(--text)] text-sm">{liveCount}</strong> leagues live · {comingCount} coming</div>
         </div>
@@ -130,7 +132,7 @@ export default function SportsPage() {
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Data from <Link href="/methodology" className="hover:text-[var(--text-muted)]">MetroAreas.xlsx</Link> Team List and FootballClub_Data.
-        Launch scope is Major League only; college and minor leagues to follow.
+        Gold markers are the Major League scope; slate markers are NCAA Division I, FBS, and second-flight or international competitions.
       </p>
     </main>
   );

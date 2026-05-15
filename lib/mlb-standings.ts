@@ -125,32 +125,73 @@ function shapeStandings(raw: unknown): StandingsSnapshot {
   for (const childRaw of children) {
     const child = asObj(childRaw);
     if (!child) continue;
-    const leagueAbbr = asStr(child.abbreviation).toUpperCase();
-    const league: "AL" | "NL" | "" =
-      leagueAbbr === "AL" ? "AL" : leagueAbbr === "NL" ? "NL" : "";
 
-    // Top-level league standings live at child.standings.entries; per-
-    // division standings nest one level deeper at child.children[].standings.
+    // Resolve league with multiple fallbacks. ESPN sometimes returns
+    // `abbreviation` as 'AL' or 'NL' on the league child, sometimes
+    // as the division abbreviation when children are flattened, and
+    // sometimes only the league `name` ("American League") is populated.
+    const leagueAbbr = asStr(child.abbreviation).toUpperCase();
+    const childName = asStr(child.name);
+    const childNameLower = childName.toLowerCase();
+    const childId = asStr(child.id);
+    let league: "AL" | "NL" | "" = "";
+    if (leagueAbbr === "AL" || leagueAbbr.startsWith("AL ") || childNameLower.includes("american")) {
+      league = "AL";
+    } else if (leagueAbbr === "NL" || leagueAbbr.startsWith("NL ") || childNameLower.includes("national")) {
+      league = "NL";
+    } else if (childId === "8") {
+      league = "AL";
+    } else if (childId === "7") {
+      league = "NL";
+    }
+
+    // Three shapes seen in the wild:
+    //   (1) child.standings.entries flat (no division grouping)
+    //   (2) child.children[].standings.entries nested by division
+    //   (3) child IS the division (children flattened at top level)
     const directEntries = asArr(asObj(child.standings)?.entries);
     const nestedEntries = asArr(child.children).flatMap((divRaw) => {
       const div = asObj(divRaw);
       return div ? asArr(asObj(div.standings)?.entries).map((e) => ({
         entry: e,
-        division: asStr(div.name),
+        division: asStr(div.name) || asStr(div.abbreviation),
       })) : [];
     });
 
+    // For shape (1): default the division to the child name only if it
+    // looks like a division string ("AL East"), not the league name.
+    const childNameLooksLikeDivision = /east|central|west/i.test(childName);
+    const flatDivisionDefault = childNameLooksLikeDivision ? childName : "";
+
     const flatEntries = directEntries.length
-      ? directEntries.map((e) => ({ entry: e, division: "" }))
+      ? directEntries.map((e) => ({ entry: e, division: flatDivisionDefault }))
       : nestedEntries;
 
-    for (const { entry: entryRaw, division } of flatEntries) {
+    for (const { entry: entryRaw, division: divHint } of flatEntries) {
       const entry = asObj(entryRaw);
       if (!entry) continue;
       const team = asObj(entry.team) || {};
       const teamName = asStr(team.name) || asStr(team.shortDisplayName);
       if (!teamName) continue;
       const canonical = CANONICAL_OVERRIDE[teamName] || teamName;
+
+      // Resolve a useful division string. Priority: explicit hint from
+      // the wrapper, then team.groups.name (ESPN sometimes drops the
+      // division there), then team.groups.parent.name, then the league
+      // child name only if it looks like a division.
+      let division = divHint;
+      if (!division) {
+        const groups = asArr(team.groups);
+        for (const g of groups) {
+          const go = asObj(g);
+          const gname = asStr(go?.name);
+          if (gname && /east|central|west/i.test(gname)) { division = gname; break; }
+          const parent = asObj(go?.parent);
+          const pname = asStr(parent?.name);
+          if (pname && /east|central|west/i.test(pname)) { division = pname; break; }
+        }
+      }
+      if (!division && childNameLooksLikeDivision) division = childName;
 
       const stats = asArr(entry.stats);
       const findStat = (name: string) =>

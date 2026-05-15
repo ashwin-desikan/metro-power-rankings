@@ -22,6 +22,7 @@ const INTL_VENUES: Array<{ name: string; lat: number; lng: number; city: string 
   { name: "Wembley Stadium",           lat: 51.5560, lng: -0.2796, city: "London, England" },
   { name: "Twickenham Stadium",        lat: 51.4560, lng: -0.3416, city: "London, England" },
   { name: "Stade de France",           lat: 48.9244, lng:  2.3601, city: "Saint-Denis, France" },
+  { name: "Santiago Bernabéu Stadium", lat: 40.4530, lng: -3.6883, city: "Madrid, Spain" },
   { name: "Olympiastadion Berlin",     lat: 52.5147, lng: 13.2395, city: "Berlin, Germany" },
   { name: "Deutsche Bank Park",        lat: 50.0686, lng:  8.6451, city: "Frankfurt, Germany" },
   { name: "Allianz Arena",             lat: 48.2188, lng: 11.6249, city: "Munich, Germany" },
