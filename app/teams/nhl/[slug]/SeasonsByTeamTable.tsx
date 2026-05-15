@@ -38,8 +38,21 @@ function seasonLabel(year: number): string {
 }
 
 function postseasonChip(s: Season): { label: string; color?: string; bg?: string } | null {
-  if (s.champ) return { label: "Stanley Cup", color: "#1a1408", bg: "#d4af37" };
-  if (s.champ_app) return { label: "Lost Final", color: "#fff", bg: "#a07a30" };
+  // Stanley Cup era (NHL, NHA, PCHA, WCHL) ships in gold. WHA Avco Cup
+  // wins from 1973-79 ship in slate as a rival-league championship,
+  // parallel to ABA in NBA.
+  if (s.champ) {
+    if (s.league === "WHA") {
+      return { label: "Avco Cup", color: "#0c1320", bg: "#6e8aa6" };
+    }
+    return { label: "Stanley Cup", color: "#1a1408", bg: "#d4af37" };
+  }
+  if (s.champ_app) {
+    if (s.league === "WHA") {
+      return { label: "Lost Avco Final", color: "#fff", bg: "#475569" };
+    }
+    return { label: "Lost Final", color: "#fff", bg: "#a07a30" };
+  }
   if (s.sf_cf_app) return { label: "Conference Finals", color: "#fff", bg: "#5b5b5b" };
   if (s.playoff) return { label: "Playoffs", color: "#0c1320", bg: "#6e8aa6" };
   return null;

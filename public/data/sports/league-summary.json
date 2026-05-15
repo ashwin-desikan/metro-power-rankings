@@ -1,10 +1,10 @@
 {
-  "total_markers": 1413,
-  "major_markers": 910,
+  "total_markers": 1432,
+  "major_markers": 929,
   "other_markers": 503,
   "by_sport": {
     "Football": 499,
-    "Basketball": 415,
+    "Basketball": 435,
     "American Football": 170,
     "Hockey": 54,
     "Rugby Union": 51,
@@ -12,14 +12,13 @@
     "Baseball": 42,
     "Volleyball": 36,
     "Rugby League": 31,
-    "Handball": 19,
     "Aussie Rules": 18,
+    "Handball": 18,
     "W Basketball": 15,
     "T20 Cricket": 10,
     "Canadian Football": 9
   },
   "by_league_top": {
-    "Dom. Rugby Union": 51,
     "Big Ten": 36,
     "Atlantic Coast": 35,
     "Big 12": 32,
@@ -37,6 +36,7 @@
     "Egypt": 22,
     "KHL": 22,
     "Mountain West": 21,
+    "CBA": 20,
     "Euroleague": 20,
     "Brazil": 20,
     "Colombia": 20,
@@ -66,6 +66,7 @@
     "United Kingdom": 41,
     "Spain": 40,
     "Australia": 38,
+    "China": 37,
     "Germany": 37,
     "Italy": 36,
     "France": 35,
@@ -74,15 +75,14 @@
     "Argentina": 30,
     "Canada": 22,
     "Egypt": 22,
-    "Turkey": 20,
-    "Brazil": 20
+    "Turkey": 20
   },
   "markers_with_team_page": 92,
   "sources": {
-    "team_list": 914,
+    "team_list": 933,
     "football_club_data": 499,
     "team_list_excluded_no_coords": 0,
-    "team_list_excluded_not_ml": 2232,
+    "team_list_excluded_not_ml": 2213,
     "team_list_excluded_notable_venues": 648,
     "football_club_data_excluded_no_coords": 0
   },

@@ -194,6 +194,7 @@ def main():
         "Int'l W Basketball",
         "Int'l Handball",
         "Minor/Jr/Int'l Hockey",
+        "Dom. Rugby Union",
         "FBS",
     }
     # Leagues whose rows are admitted regardless of the ml flag. The

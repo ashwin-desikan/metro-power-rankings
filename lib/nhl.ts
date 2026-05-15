@@ -381,10 +381,11 @@ export function lossColumnsForYear(year: number): { showT: boolean; showOtl: boo
 
 // Postseason result label for the season-by-season table.
 // Order of detection matters: Champion > Lost Final > Lost SF/CF > Lost
-// earlier round > Made playoffs > Missed.
+// earlier round > Made playoffs > Missed. League-aware: WHA seasons get
+// the Avco Cup label instead of Stanley Cup.
 export function postseasonResult(s: Season): string {
-  if (s.champ) return "Stanley Cup";
-  if (s.champ_app) return "Lost Final";
+  if (s.champ) return s.league === "WHA" ? "Avco Cup" : "Stanley Cup";
+  if (s.champ_app) return s.league === "WHA" ? "Lost Avco Final" : "Lost Final";
   if (s.sf_cf_app) return "Lost CF";
   if (s.playoff) return "Made playoffs";
   return "Missed";
