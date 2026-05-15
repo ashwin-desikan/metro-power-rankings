@@ -8,7 +8,7 @@ import { useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { MapContainer, TileLayer, CircleMarker, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { SPORT_COLORS, DEFAULT_SPORT_COLOR, type TeamMarker } from "./SportsExplorer";
+import { SPORT_COLORS, DEFAULT_SPORT_COLOR, CONFERENCE_COLORS, type TeamMarker } from "./SportsExplorer";
 
 type Props = { markers: TeamMarker[] };
 
@@ -72,7 +72,12 @@ export default function SportsMapInner({ markers }: Props) {
       />
       <FitToMarkers markers={markers} />
       {markers.map((m, i) => {
-        const ring = SPORT_COLORS[m.sport] || DEFAULT_SPORT_COLOR;
+        // Conference color takes precedence for college rows (FBS football,
+        // NCAA Division I basketball). Everything else uses the sport hue.
+        const isCollege = m.league_raw === "FBS" || (m.sport === "Basketball" && m.league_raw === "NCAA");
+        const ring = (isCollege && CONFERENCE_COLORS[m.league])
+          || SPORT_COLORS[m.sport]
+          || DEFAULT_SPORT_COLOR;
         const fill = m.level === "Major" ? MAJOR_FILL : OTHER_FILL;
         return (
           <CircleMarker

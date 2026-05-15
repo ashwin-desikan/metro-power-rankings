@@ -198,10 +198,10 @@ def main():
     }
     # Leagues whose rows are admitted regardless of the ml flag. The
     # default scope is ml in {Y, Euroleague}; these additions surface
-    # second-tier and collegiate competitions on the map (rendered as
-    # level=Other so they fill slate instead of gold).
+    # collegiate competitions on the map (rendered as level=Other so
+    # they fill slate instead of gold). NCAA Division I basketball is
+    # admitted via a separate sport-scoped rule below.
     NON_ML_INCLUDED_LEAGUES = {
-        "Minor/Jr/Int'l Hockey",
         "FBS",
     }
 
