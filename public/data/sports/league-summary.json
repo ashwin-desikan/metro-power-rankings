@@ -1,0 +1,209 @@
+{
+  "total_markers": 866,
+  "by_sport": {
+    "Football": 499,
+    "Rugby Union": 51,
+    "W Football": 44,
+    "Baseball": 42,
+    "Volleyball": 36,
+    "American Football": 32,
+    "Hockey": 32,
+    "Basketball": 30,
+    "W Basketball": 27,
+    "Handball": 19,
+    "Aussie Rules": 18,
+    "Rugby League": 17,
+    "T20 Cricket": 10,
+    "Canadian Football": 9
+  },
+  "by_league_top": {
+    "Dom. Rugby Union": 51,
+    "Int'l Volleyball": 36,
+    "NFL": 32,
+    "NHL": 32,
+    "MLB": 30,
+    "NBA": 30,
+    "Argentina": 30,
+    "United States": 30,
+    "Int'l W Basketball": 27,
+    "Egypt": 22,
+    "Brazil": 20,
+    "Colombia": 20,
+    "England": 20,
+    "Italy": 20,
+    "Japan": 20,
+    "Spain": 20,
+    "Int'l Handball": 19,
+    "AFL": 18,
+    "France": 18,
+    "Germany": 18,
+    "Mexico": 18,
+    "Netherlands": 18,
+    "Poland": 18,
+    "Portugal": 18,
+    "Saudi Arabia": 18,
+    "Turkey": 18,
+    "NRL": 17,
+    "Belgium": 16,
+    "China": 16,
+    "Czech Republic": 16,
+    "Russia": 16,
+    "Liga F": 16,
+    "NWSL": 16,
+    "South Africa": 15,
+    "Greece": 14,
+    "Minor Lg Base": 12,
+    "Austria": 12,
+    "Denmark": 12,
+    "Scotland": 12,
+    "South Korea": 12
+  },
+  "by_country_top": {
+    "United States": 172,
+    "Japan": 42,
+    "Australia": 38,
+    "Germany": 36,
+    "Spain": 36,
+    "Italy": 34,
+    "France": 31,
+    "Poland": 31,
+    "Argentina": 30,
+    "United Kingdom": 29,
+    "Russia": 28,
+    "Canada": 22,
+    "Egypt": 22,
+    "Brazil": 20,
+    "Colombia": 20
+  },
+  "markers_with_team_page": 92,
+  "sources": {
+    "team_list": 367,
+    "football_club_data": 499,
+    "team_list_excluded_no_coords": 0,
+    "team_list_excluded_not_ml": 2779,
+    "team_list_excluded_notable_venues": 648,
+    "football_club_data_excluded_no_coords": 0
+  },
+  "league_cards": [
+    {
+      "league": "NFL",
+      "label": "NFL",
+      "sport": "American Football",
+      "status": "live",
+      "page": "/teams/nfl",
+      "team_count": 32
+    },
+    {
+      "league": "MLB",
+      "label": "MLB",
+      "sport": "Baseball",
+      "status": "live",
+      "page": "/teams/mlb",
+      "team_count": 30
+    },
+    {
+      "league": "NBA",
+      "label": "NBA",
+      "sport": "Basketball",
+      "status": "live",
+      "page": "/teams/nba",
+      "team_count": 30
+    },
+    {
+      "league": "NHL",
+      "label": "NHL",
+      "sport": "Hockey",
+      "status": "coming",
+      "page": null,
+      "team_count": 32
+    },
+    {
+      "league": "England",
+      "label": "Premier League",
+      "sport": "Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 20
+    },
+    {
+      "league": "Spain",
+      "label": "La Liga",
+      "sport": "Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 20
+    },
+    {
+      "league": "Italy",
+      "label": "Serie A",
+      "sport": "Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 20
+    },
+    {
+      "league": "Germany",
+      "label": "Bundesliga",
+      "sport": "Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 18
+    },
+    {
+      "league": "France",
+      "label": "Ligue 1",
+      "sport": "Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 18
+    },
+    {
+      "league": "AFL",
+      "label": "AFL",
+      "sport": "Aussie Rules",
+      "status": "coming",
+      "page": null,
+      "team_count": 18
+    },
+    {
+      "league": "NRL",
+      "label": "NRL",
+      "sport": "Rugby League",
+      "status": "coming",
+      "page": null,
+      "team_count": 17
+    },
+    {
+      "league": "IPL",
+      "label": "IPL",
+      "sport": "T20 Cricket",
+      "status": "coming",
+      "page": null,
+      "team_count": 10
+    },
+    {
+      "league": "CFL",
+      "label": "CFL",
+      "sport": "Canadian Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 9
+    },
+    {
+      "league": "NWSL",
+      "label": "NWSL",
+      "sport": "W Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 16
+    },
+    {
+      "league": "WSL",
+      "label": "WSL",
+      "sport": "W Football",
+      "status": "coming",
+      "page": null,
+      "team_count": 12
+    }
+  ]
+}

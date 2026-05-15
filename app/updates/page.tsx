@@ -54,11 +54,12 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-15",
-    headline: "Sovereign City Index essay published",
+    headline: "Sovereign City Index, All Sports map, NBA playoff bracket",
     items: [
       "New essay The Sovereign City Index ranks twelve planned cities (NEOM, Forest City, Nusantara, Egypt's NAC, and eight more) on the announcement-to-reality gap.",
-      "Realism composite scores capital deployment, population yield, governance autonomy, and milestone fidelity (each 0-25, summing to 0-100) with a per-project source footnote.",
-      "Twelve metros named in the piece deep-link into the live rankings, with adjacent badges (Skyline City, Cosmopolitan Capital, Emerging Standout) surfaced inline.",
+      "New /sports landing page plots 866 Major League teams across 14 sports on one filterable map, with league directory cards and cross-league team search.",
+      "NBA index now shows a live East/West playoff ladder above the table, alive teams in colored chips and eliminated teams dimmed, finals slot resolves on its own.",
+      "ABA championship seasons render in slate instead of gold-NBA Champion; league map width capped on desktop; NFL map slug-mismatch bug fixed so pins actually render.",
     ],
   },
   {

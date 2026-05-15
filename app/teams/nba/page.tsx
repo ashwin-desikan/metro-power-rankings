@@ -11,6 +11,7 @@ import {
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
+import PlayoffBracket from "./PlayoffBracket";
 
 export const dynamicParams = false;
 
@@ -76,6 +77,12 @@ export default function NbaIndexPage() {
           </div>
         </div>
       </header>
+
+      <PlayoffBracket
+        franchises={franchises}
+        playoffBundle={playoffState}
+        logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+      />
 
       <LeagueMap franchises={franchises} playoffState={isPostseasonOver ? {} : playoffState.by_franchise} />
 

@@ -67,7 +67,7 @@ export default function LeagueMap({ franchises }: Props) {
     .filter((p): p is MapPoint => p !== null);
 
   return (
-    <section className="mb-6">
+    <section className="mb-6 mx-auto max-w-3xl">
       <MetroMap points={points} height={280} showConnections={false} />
     </section>
   );

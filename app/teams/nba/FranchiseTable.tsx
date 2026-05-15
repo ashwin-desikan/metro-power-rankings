@@ -201,14 +201,18 @@ export default function FranchiseTable({ franchises, playoffState, logoMap, mono
                 </td>
                 {showPostseason && (
                   <td className="py-2.5 pr-4 text-right">
-                    {psStyle ? (
-                      <span
-                        className="inline-block rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                    {psStyle && ps ? (
+                      <a
+                        href={`https://en.wikipedia.org/wiki/${ps.year}_NBA_playoffs`}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-block rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap hover:opacity-80 transition-opacity"
                         style={{ background: psStyle.bg, color: psStyle.text }}
-                        title={ps?.last_round}
+                        title={`${ps.year} NBA playoffs · ${ps.last_round} (Wikipedia)`}
                       >
                         {psStyle.label}
-                      </span>
+                      </a>
                     ) : (
                       <span className="text-[var(--text-dim)] text-[10px]">—</span>
                     )}
