@@ -87,7 +87,11 @@ export default function SportsMapInner({ markers }: Props) {
             }}
             eventHandlers={{
               click: () => {
-                if (m.team_page_url) router.push(m.team_page_url);
+                // Prefer the metro page when available; fall back to the
+                // team page only if the marker has no metro slug. Most users
+                // want city context first, team page second.
+                if (m.metro_slug) router.push(`/rankings/${m.metro_slug}`);
+                else if (m.team_page_url) router.push(m.team_page_url);
               },
             }}
           >
@@ -97,8 +101,10 @@ export default function SportsMapInner({ markers }: Props) {
                 <div style={{ fontSize: 11, opacity: 0.85 }}>
                   {m.league} · {m.metro || m.city || m.country}
                 </div>
-                {m.team_page_url && (
-                  <div style={{ fontSize: 10, marginTop: 2, opacity: 0.7 }}>Click to open</div>
+                {(m.metro_slug || m.team_page_url) && (
+                  <div style={{ fontSize: 10, marginTop: 2, opacity: 0.7 }}>
+                    Click for {m.metro_slug ? "metro page" : "team page"}
+                  </div>
                 )}
               </div>
             </Tooltip>

@@ -7,10 +7,44 @@
 
 import MetroMap, { type MapPoint } from "../../MetroMap";
 import type { Franchise } from "@/lib/nfl";
+import type { TeamMarker } from "@/lib/teamMarkers";
 
 type Props = {
   franchises: Franchise[];
 };
+
+// Venues outside the United States that have hosted NFL regular-season,
+// preseason, or international-series games. Rendered as pink "venue"
+// markers (MetroMap's existing category palette) so they read as distinct
+// from the 32 active home stadiums.
+const INTL_VENUES: Array<{ name: string; lat: number; lng: number; city: string }> = [
+  { name: "Tottenham Hotspur Stadium", lat: 51.6043, lng: -0.0664, city: "London, England" },
+  { name: "Wembley Stadium",           lat: 51.5560, lng: -0.2796, city: "London, England" },
+  { name: "Twickenham Stadium",        lat: 51.4560, lng: -0.3416, city: "London, England" },
+  { name: "Stade de France",           lat: 48.9244, lng:  2.3601, city: "Saint-Denis, France" },
+  { name: "Olympiastadion Berlin",     lat: 52.5147, lng: 13.2395, city: "Berlin, Germany" },
+  { name: "Deutsche Bank Park",        lat: 50.0686, lng:  8.6451, city: "Frankfurt, Germany" },
+  { name: "Allianz Arena",             lat: 48.2188, lng: 11.6249, city: "Munich, Germany" },
+  { name: "Croke Park",                lat: 53.3608, lng: -6.2519, city: "Dublin, Ireland" },
+  { name: "Estadio Azteca",            lat: 19.3029, lng: -99.1505, city: "Mexico City, Mexico" },
+  { name: "Arena Corinthians",         lat: -23.5453, lng: -46.4744, city: "São Paulo, Brazil" },
+  { name: "Estádio do Maracanã", lat: -22.9122, lng: -43.2302, city: "Rio de Janeiro, Brazil" },
+  { name: "Rogers Centre",             lat: 43.6414, lng: -79.3894, city: "Toronto, Canada" },
+  { name: "Melbourne Cricket Ground",  lat: -37.8200, lng: 144.9833, city: "Melbourne, Australia" },
+];
+
+function buildIntlVenueMarkers(): TeamMarker[] {
+  return INTL_VENUES.map((v) => ({
+    lat: v.lat,
+    lng: v.lng,
+    name: v.name,
+    sport: "American Football",
+    league: "NFL International",
+    category: "venue" as const,
+    categories: ["venue" as const],
+    subtitle: v.city,
+  }));
+}
 
 // Keys are FULL franchise slugs ("green-bay-packers"), matching the values
 // emitted by the ETL into public/data/nfl/franchises.json. The earlier short-
@@ -74,9 +108,26 @@ export default function LeagueMap({ franchises }: Props) {
     })
     .filter((p): p is MapPoint => p !== null);
 
+  const intlMarkers = buildIntlVenueMarkers();
+
   return (
     <section className="mb-6 mx-auto max-w-3xl">
-      <MetroMap points={points} height={280} showConnections={false} />
+      <MetroMap
+        points={points}
+        height={280}
+        showConnections={false}
+        markers={intlMarkers}
+      />
+      <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
+        <span className="flex items-center gap-1.5">
+          <span aria-hidden className="inline-block w-2 h-2 rounded-full" style={{ background: "#4ECDC4" }} />
+          Home stadiums (32)
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span aria-hidden className="inline-block w-2 h-2 rounded-full" style={{ background: "#ec4899" }} />
+          International venues ({INTL_VENUES.length})
+        </span>
+      </div>
     </section>
   );
 }

@@ -250,9 +250,18 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       </div>
 
-      {/* Sport filter — always visible chip row, mirrors the metro-page
-          MapWithFilters pattern. Sport is the primary discriminator on a
-          global map; League and Country live below in the disclosure. */}
+      {/* Map */}
+      <div
+        style={{ height: 540 }}
+        className="rounded-lg overflow-hidden border"
+      >
+        <SportsMapInner markers={visible} />
+      </div>
+
+      {/* Sport filter — sits below the map. Chips already carry the sport
+          color dot, so the separate legend block was redundant and was
+          dropped. Sport is the primary discriminator; League and Country
+          live one level deeper inside the More filters disclosure. */}
       <FilterRow
         label="Sport"
         facets={sportFacets}
@@ -261,7 +270,6 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         renderDot={(name) => SPORT_COLORS[name] || DEFAULT_SPORT_COLOR}
       />
 
-      {/* Secondary filters — collapsed by default so the page stays calm. */}
       <details className="rounded-lg border" style={{ borderColor: "var(--border)" }}>
         <summary className="cursor-pointer px-4 py-2 text-xs uppercase tracking-widest font-semibold text-[var(--text-muted)] flex items-center justify-between hover:text-[var(--text)]">
           <span>More filters</span>
@@ -275,22 +283,15 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       </details>
 
-      {/* Map */}
-      <div
-        style={{ height: 540 }}
-        className="rounded-lg overflow-hidden border"
-      >
-        <SportsMapInner markers={visible} />
-      </div>
-
-      {/* Legend */}
-      <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-[var(--text-muted)]">
+      {/* Dropped legend block — the Sport chip row already shows the dot
+          + sport name + count, so a separate color key was duplicative.
+          Keeping this empty placeholder so the diff is small. */}
+      <div className="hidden">
         {sportFacets.map(([s]) => (
-          <span key={s} className="inline-flex items-center gap-1.5">
+          <span key={s}>
             <span
               aria-hidden
-              className="inline-block w-2.5 h-2.5 rounded-full border-2"
-              style={{ borderColor: SPORT_COLORS[s] || DEFAULT_SPORT_COLOR, background: "#d4af37" }}
+              style={{ borderColor: SPORT_COLORS[s] || DEFAULT_SPORT_COLOR }}
             />
             {s}
           </span>

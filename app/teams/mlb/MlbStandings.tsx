@@ -1,66 +1,101 @@
 // MlbStandings — current-season standings widget for the /teams/mlb index.
 // Pulls live data via @/lib/mlb-standings (ESPN public feed with hourly ISR).
 // Renders six division mini-tables in a responsive grid, sorted by win pct.
+//
+// Division-name handling: ESPN can return the division string as either the
+// abbreviated form ("AL East") or the long form ("American League East"),
+// and the wrapping is sometimes by-division and sometimes by-league. We
+// match tolerantly by league (AL/NL) + region keyword (East/Central/West)
+// rather than a hard-coded label, so the widget renders correctly even
+// when ESPN renames or restructures the feed.
 
 import Link from "next/link";
 import { getCurrentMlbStandings, type TeamStanding } from "@/lib/mlb-standings";
 import { getAllFranchises, logoUrlFor, monogramFor } from "@/lib/mlb";
 
-type Props = {
-  // Optional override for the canonical division order; defaults to the
-  // post-2013 alignment with AL on top, NL on bottom, geography left to right.
-  divisionOrder?: string[];
-};
+type Region = "East" | "Central" | "West" | "Other";
 
-const DEFAULT_DIVISION_ORDER = [
-  "AL East",
-  "AL Central",
-  "AL West",
-  "NL East",
-  "NL Central",
-  "NL West",
-];
+function regionOf(division: string): Region {
+  const lower = (division || "").toLowerCase();
+  if (lower.includes("east")) return "East";
+  if (lower.includes("central")) return "Central";
+  if (lower.includes("west")) return "West";
+  return "Other";
+}
 
-// Compute games-back from the division leader. MLB convention is
-// GB = ((leader_w - team_w) + (team_l - leader_l)) / 2. Returns null when
-// the team IS the leader (so the UI can render "—" instead of "0.0").
+function leagueOf(team: TeamStanding): "AL" | "NL" | "" {
+  if (team.league === "AL" || team.league === "NL") return team.league;
+  // Fallback: division string may carry "American" or "National"
+  const lower = (team.division || "").toLowerCase();
+  if (lower.includes("american")) return "AL";
+  if (lower.includes("national")) return "NL";
+  return "";
+}
+
+const REGION_ORDER: Region[] = ["East", "Central", "West", "Other"];
+const LEAGUE_ORDER: ("AL" | "NL" | "")[] = ["AL", "NL", ""];
+const LEAGUE_LABEL: Record<string, string> = { AL: "AL", NL: "NL", "": "" };
+
 function gamesBack(team: TeamStanding, leader: TeamStanding): number | null {
   if (team.canonical === leader.canonical) return null;
   return ((leader.wins - team.wins) + (team.losses - leader.losses)) / 2;
 }
 
-export default async function MlbStandings({ divisionOrder = DEFAULT_DIVISION_ORDER }: Props) {
+export default async function MlbStandings() {
   const standings = await getCurrentMlbStandings();
-  if (!standings.source_label || Object.keys(standings.by_canonical).length === 0) {
-    // ESPN unreachable or feed empty — silently hide the widget rather than
-    // shipping a broken block. The franchise table below is still useful.
+  if (Object.keys(standings.by_canonical).length === 0) {
+    // ESPN unreachable or feed empty — hide rather than ship a broken block.
     return null;
   }
 
-  // Build franchise lookup so we can render the proper display name + logo
-  // + per-franchise slug for linking. ESPN's display_name is decent but the
-  // workbook canonical name is what we use everywhere else on the site.
   const franchises = getAllFranchises();
   const bySlug = new Map(franchises.map((f) => [f.slug, f]));
-  const bySlugByCanonical = new Map(franchises.map((f) => [f.canonical, f.slug]));
+  const slugByCanonical = new Map(franchises.map((f) => [f.canonical, f.slug]));
 
-  // Group ESPN rows by their division string.
-  const byDivision = new Map<string, TeamStanding[]>();
+  // Bucket teams by (league, region). Each bucket is one division. The
+  // raw division string from ESPN is preserved for the section label.
+  type Bucket = { league: "AL" | "NL" | ""; region: Region; label: string; teams: TeamStanding[] };
+  const buckets = new Map<string, Bucket>();
   for (const t of Object.values(standings.by_canonical)) {
-    if (!t.division) continue;
-    if (!byDivision.has(t.division)) byDivision.set(t.division, []);
-    byDivision.get(t.division)!.push(t);
-  }
-  // Sort each division by win pct desc, then by wins desc as tiebreak.
-  for (const [, teams] of byDivision) {
-    teams.sort((a, b) => (b.win_pct - a.win_pct) || (b.wins - a.wins));
+    const league = leagueOf(t);
+    const region = regionOf(t.division || "");
+    const key = `${league}|${region}`;
+    if (!buckets.has(key)) {
+      const label = t.division
+        ? t.division
+        : (league && region !== "Other" ? `${league} ${region}` : "Other");
+      buckets.set(key, { league, region, label, teams: [] });
+    }
+    buckets.get(key)!.teams.push(t);
   }
 
-  // If the division names we got don't match the default order (unlikely
-  // but possible if ESPN renames anything), fall back to whatever ESPN gave.
-  const orderedDivisions = divisionOrder.filter((d) => byDivision.has(d));
-  const remaining = Array.from(byDivision.keys()).filter((d) => !orderedDivisions.includes(d));
-  const finalOrder = [...orderedDivisions, ...remaining];
+  // Sort teams within each bucket desc by win pct, then wins desc.
+  for (const b of buckets.values()) {
+    b.teams.sort((a, b) => (b.win_pct - a.win_pct) || (b.wins - a.wins));
+  }
+
+  // Order buckets: AL East/Central/West, NL East/Central/West, then anything else.
+  const ordered: Bucket[] = [];
+  for (const lg of LEAGUE_ORDER) {
+    for (const r of REGION_ORDER) {
+      const key = `${lg}|${r}`;
+      if (buckets.has(key)) ordered.push(buckets.get(key)!);
+    }
+  }
+
+  // If we ended up with zero ordered buckets (shouldn't happen given we
+  // already gated on by_canonical), hide the block.
+  if (ordered.length === 0) return null;
+
+  const fetchedDate = (() => {
+    try {
+      return new Date(standings.fetched_at).toLocaleDateString("en-US", {
+        month: "short", day: "numeric", year: "numeric",
+      });
+    } catch {
+      return "";
+    }
+  })();
 
   return (
     <section className="mb-8">
@@ -68,7 +103,7 @@ export default async function MlbStandings({ divisionOrder = DEFAULT_DIVISION_OR
         <div>
           <h2 className="text-lg font-bold tracking-tight">{standings.season_year} MLB Standings</h2>
           <p className="text-xs text-[var(--text-muted)]">
-            Sorted by win percentage within each division. Live from ESPN, refreshed hourly. As of {new Date(standings.fetched_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}.
+            Live from ESPN, refreshed hourly{fetchedDate ? `. As of ${fetchedDate}.` : "."}
           </p>
         </div>
         <a
@@ -82,19 +117,22 @@ export default async function MlbStandings({ divisionOrder = DEFAULT_DIVISION_OR
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {finalOrder.map((div) => {
-          const teams = byDivision.get(div) ?? [];
-          if (teams.length === 0) return null;
-          const leader = teams[0];
+        {ordered.map((b) => {
+          if (b.teams.length === 0) return null;
+          const leader = b.teams[0];
+          // Pretty label: prefer "AL East" form over "American League East"
+          const pretty = b.league && b.region !== "Other"
+            ? `${LEAGUE_LABEL[b.league]} ${b.region}`
+            : b.label;
           return (
             <div
-              key={div}
+              key={`${b.league}-${b.region}`}
               className="rounded-xl border p-3"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
               <h3 className="text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] mb-2 flex items-baseline justify-between gap-2">
-                <span>{div}</span>
-                <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{teams.length} teams</span>
+                <span>{pretty}</span>
+                <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{b.teams.length} teams</span>
               </h3>
               <table className="w-full text-xs tabular-nums">
                 <thead className="text-[var(--text-muted)]">
@@ -107,8 +145,8 @@ export default async function MlbStandings({ divisionOrder = DEFAULT_DIVISION_OR
                   </tr>
                 </thead>
                 <tbody>
-                  {teams.map((t) => {
-                    const slug = bySlugByCanonical.get(t.canonical);
+                  {b.teams.map((t) => {
+                    const slug = slugByCanonical.get(t.canonical);
                     const fr = slug ? bySlug.get(slug) : null;
                     const logo = slug ? logoUrlFor(slug) : null;
                     const mono = slug ? monogramFor(slug) : null;
