@@ -347,7 +347,7 @@ def main():
             {"league": "NFL",  "label": "NFL",            "sport": "American Football",  "status": "live",   "page": "/teams/nfl", "team_count": by_league.get("NFL", 0)},
             {"league": "MLB",  "label": "MLB",            "sport": "Baseball",           "status": "live",   "page": "/teams/mlb", "team_count": by_league.get("MLB", 0)},
             {"league": "NBA",  "label": "NBA",            "sport": "Basketball",         "status": "live",   "page": "/teams/nba", "team_count": by_league.get("NBA", 0)},
-            {"league": "NHL",  "label": "NHL",            "sport": "Hockey",             "status": "coming", "page": None,         "team_count": by_league.get("NHL", 0)},
+            {"league": "NHL",  "label": "NHL",            "sport": "Hockey",             "status": "live",   "page": "/teams/nhl", "team_count": by_league.get("NHL", 0)},
             {"league": "Euroleague", "label": "Euroleague", "sport": "Basketball", "status": "coming", "page": None,         "team_count": by_league.get("Euroleague", 0)},
             {"league": "England",  "label": "Premier League", "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("England", 0)},
             {"league": "Spain",    "label": "La Liga",        "sport": "Football",       "status": "coming", "page": None,         "team_count": by_league.get("Spain", 0)},

@@ -33,12 +33,17 @@ import {
   logoUrlFor as nbaLogoUrlFor,
   monogramFor as nbaMonogramFor,
 } from "./nba";
+import {
+  getNhlFranchiseByTeamName,
+  logoUrlFor as nhlLogoUrlFor,
+  monogramFor as nhlMonogramFor,
+} from "./nhl";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -52,6 +57,7 @@ export type TeamLink = {
 const NFL_SPORT_LABELS = new Set(["American Football", "NFL"]);
 const MLB_SPORT_LABELS = new Set(["Baseball", "MLB"]);
 const NBA_SPORT_LABELS = new Set(["Basketball", "NBA"]);
+const NHL_SPORT_LABELS = new Set(["Hockey", "NHL"]);
 
 function isNfl(sport: string, leagueHint: string): boolean {
   return NFL_SPORT_LABELS.has(sport) || leagueHint === "NFL";
@@ -61,6 +67,9 @@ function isMlb(sport: string, leagueHint: string): boolean {
 }
 function isNba(sport: string, leagueHint: string): boolean {
   return NBA_SPORT_LABELS.has(sport) || leagueHint === "NBA";
+}
+function isNhl(sport: string, leagueHint: string): boolean {
+  return NHL_SPORT_LABELS.has(sport) || leagueHint === "NHL";
 }
 
 export function resolveTeamLink(
@@ -110,28 +119,23 @@ export function resolveTeamLink(
     };
   }
 
-  // Future leagues drop in here.
-  // if (isNhl(sport, leagueHint)) { ... }
+  if (isNhl(sport, leagueHint)) {
+    const f = getNhlFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    const mono = nhlMonogramFor(f.slug);
+    if (!mono) return null;
+    return {
+      slug: f.slug,
+      league: "nhl",
+      href: `/teams/nhl/${f.slug}`,
+      logoUrl: nhlLogoUrlFor(f.slug),
+      monogram: mono,
+      displayName: f.display_name,
+    };
+  }
 
   return null;
 }
 
 // Best-effort resolver for the co-equal case where TopTeams stores two
-// names joined with " / " (e.g. "Arsenal / Chelsea"). Returns one link
-// per name that resolves; names with no match are dropped. Currently
-// useful only when both halves point to the same league; for soccer
-// today this returns nothing because no soccer resolver is wired in.
-export function resolveTeamLinksFromString(
-  sport: string,
-  teamString: string,
-  leagueHint: string = "",
-): TeamLink[] {
-  if (!teamString) return [];
-  const parts = teamString.split("/").map((p) => p.trim()).filter(Boolean);
-  const out: TeamLink[] = [];
-  for (const p of parts) {
-    const link = resolveTeamLink(sport, p, leagueHint);
-    if (link) out.push(link);
-  }
-  return out;
-}
+// names joined with " / " (e.g. "Arsenal / Chelsea

@@ -54,12 +54,12 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-15",
-    headline: "Sovereign City Index, /sports launch, NBA + MLB league widgets",
+    headline: "NHL franchises live, Sovereign City Index, /sports overhaul",
     items: [
-      "New essay The Sovereign City Index ranks twelve planned cities (NEOM, Forest City, Nusantara, Egypt's NAC, and eight more) on the announcement-to-reality gap.",
-      "New /sports landing page plots 886 Major League teams (now including Euroleague) on a filterable global map, with sport-chip filter above the map and league directory cards below.",
-      "NBA league page now shows a live East/West playoff ladder; MLB league page shows live 2026 division standings from ESPN. Both sit above the league map and refresh hourly.",
-      "Polish: ABA championships render in slate; NFL map slug bug fixed; NBA PF/G and PA/G off-by-one corrected; nav dropdowns no longer hidden behind Leaflet maps.",
+      "All 32 NHL franchises at /teams/nhl with Stanley Cups from 1910 in gold, WHA Avco Cups in slate, Presidents' Trophy seasons, eight major trophies per franchise, arena history, and live ESPN division standings.",
+      "New essay The Sovereign City Index ranks twelve planned cities (NEOM, Nusantara, NAC, and nine more) on the announcement-to-reality gap.",
+      "New /sports landing page plots 1,389 teams (Major League plus FBS football and NCAA Division I basketball) on a filterable global map, with conference-colored markers and a Power 4 cap by default.",
+      "Live league widgets refresh hourly: NBA East/West playoff ladder, MLB division standings, and NHL division grids; NFL adds 14 international venues including the Bernabéu; ABA and Avco cups in slate.",
     ],
   },
   {

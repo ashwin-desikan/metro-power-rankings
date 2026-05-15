@@ -1,0 +1,2024 @@
+{
+"wanderers":[
+{
+"arena":"Montreal Arena",
+"arena_canonical":"Montreal Arena",
+"start_year":1911,
+"end_year":1918,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Jubilee Arena",
+"arena_canonical":"Jubilee Arena",
+"start_year":1910,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"eagles":[
+{
+"arena":"St. Louis Arena",
+"arena_canonical":"St. Louis Arena",
+"start_year":1935,
+"end_year":1935,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+},
+{
+"arena":"Ottawa Auditorium",
+"arena_canonical":"Ottawa Auditorium",
+"start_year":1924,
+"end_year":1934,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+},
+{
+"arena":"Laurier Avenue Arena",
+"arena_canonical":"Laurier Avenue Arena",
+"start_year":1910,
+"end_year":1923,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+}
+],
+"creamery-kings":[
+{
+"arena":"Renfrew Arena",
+"arena_canonical":"Renfrew Arena",
+"start_year":1910,
+"end_year":1911,
+"city":"Renfrew",
+"state":"Ontario",
+"metro":"Renfrew"
+}
+],
+"haileybury":[
+{
+"arena":"Haileybury Arena",
+"arena_canonical":"Haileybury Arena",
+"start_year":1910,
+"end_year":1910,
+"city":"Haileybury",
+"state":"Ontario",
+"metro":"Haileybury"
+}
+],
+"silver-kings":[
+{
+"arena":"Cobalt Arena",
+"arena_canonical":"Cobalt Arena",
+"start_year":1910,
+"end_year":1910,
+"city":"Cobalt",
+"state":"Ontario",
+"metro":"Haileybury"
+}
+],
+"shamrocks-m":[
+{
+"arena":"Montreal Arena",
+"arena_canonical":"Montreal Arena",
+"start_year":1910,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"canadiens":[
+{
+"arena":"Bell Centre",
+"arena_canonical":"Bell Centre",
+"start_year":2003,
+"end_year":2026,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Molson Centre",
+"arena_canonical":"Bell Centre",
+"start_year":1997,
+"end_year":2002,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Montreal Forum/Molson Centre",
+"arena_canonical":"Bell Centre",
+"start_year":1996,
+"end_year":1996,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Montreal Forum",
+"arena_canonical":"Montreal Forum",
+"start_year":1927,
+"end_year":1995,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Mount Royal Arena",
+"arena_canonical":"Mount Royal Arena",
+"start_year":1921,
+"end_year":1926,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Mount Royal Arena/Jubilee Arena",
+"arena_canonical":"Mount Royal Arena",
+"start_year":1919,
+"end_year":1920,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Jubilee Arena/Montreal Arena",
+"arena_canonical":"Jubilee Arena",
+"start_year":1918,
+"end_year":1918,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Montreal Arena",
+"arena_canonical":"Montreal Arena",
+"start_year":1911,
+"end_year":1917,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Jubilee Arena",
+"arena_canonical":"Jubilee Arena",
+"start_year":1910,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"americans":[
+{
+"arena":"Madison Square Garden III",
+"arena_canonical":"Madison Square Garden III",
+"start_year":1926,
+"end_year":1942,
+"city":"New York",
+"state":"New York",
+"metro":"New York"
+},
+{
+"arena":"Hamilton Arena",
+"arena_canonical":"Hamilton Arena",
+"start_year":1921,
+"end_year":1925,
+"city":"Hamilton",
+"state":"Ontario",
+"metro":"Hamilton"
+},
+{
+"arena":"Le Colisee de Quebec",
+"arena_canonical":"Le Colisee de Quebec",
+"start_year":1911,
+"end_year":1920,
+"city":"Quebec City",
+"state":"Quebec",
+"metro":"Quebec City"
+}
+],
+"red-wings":[
+{
+"arena":"Little Caesars Arena",
+"arena_canonical":"Little Caesars Arena",
+"start_year":2018,
+"end_year":2026,
+"city":"Detroit",
+"state":"Michigan",
+"metro":"Detroit"
+},
+{
+"arena":"Joe Louis Arena",
+"arena_canonical":"Joe Louis Arena",
+"start_year":1980,
+"end_year":2017,
+"city":"Detroit",
+"state":"Michigan",
+"metro":"Detroit"
+},
+{
+"arena":"Olympia Stadium",
+"arena_canonical":"Olympia Stadium",
+"start_year":1928,
+"end_year":1979,
+"city":"Detroit",
+"state":"Michigan",
+"metro":"Detroit"
+},
+{
+"arena":"Border Cities Arena",
+"arena_canonical":"Border Cities Arena",
+"start_year":1927,
+"end_year":1927,
+"city":"Windsor",
+"state":"Ontario",
+"metro":"Detroit"
+},
+{
+"arena":"Victoria Arena",
+"arena_canonical":"Victoria Arena",
+"start_year":1919,
+"end_year":1926,
+"city":"Victoria",
+"state":"British Columbia",
+"metro":"Victoria"
+},
+{
+"arena":"Portland Ice Arena",
+"arena_canonical":"Portland Ice Arena",
+"start_year":1915,
+"end_year":1918,
+"city":"Portland",
+"state":"Oregon",
+"metro":"Portland"
+},
+{
+"arena":"Royal City Arena",
+"arena_canonical":"Royal City Arena",
+"start_year":1913,
+"end_year":1914,
+"city":"New Westminster",
+"state":"British Columbia",
+"metro":"Vancouver"
+},
+{
+"arena":"Denman Arena",
+"arena_canonical":"Denman Arena",
+"start_year":1912,
+"end_year":1912,
+"city":"New Westminster",
+"state":"British Columbia",
+"metro":"Vancouver"
+}
+],
+"maroons-v":[
+{
+"arena":"Denman Arena",
+"arena_canonical":"Denman Arena",
+"start_year":1912,
+"end_year":1926,
+"city":"Vancouver",
+"state":"British Columbia",
+"metro":"Vancouver"
+}
+],
+"canaries":[
+{
+"arena":"Elm Street Barn",
+"arena_canonical":"Elm Street Barn",
+"start_year":1917,
+"end_year":1917,
+"city":"Spokane",
+"state":"Washington",
+"metro":"Spokane"
+},
+{
+"arena":"Victoria Arena",
+"arena_canonical":"Victoria Arena",
+"start_year":1912,
+"end_year":1916,
+"city":"Victoria",
+"state":"British Columbia",
+"metro":"Victoria"
+}
+],
+"blueshirts":[
+{
+"arena":"Toronto Arena",
+"arena_canonical":"Toronto Arena",
+"start_year":1913,
+"end_year":1917,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+}
+],
+"shamrocks-t":[
+{
+"arena":"Toronto Arena",
+"arena_canonical":"Toronto Arena",
+"start_year":1913,
+"end_year":1915,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+}
+],
+"metropolitans":[
+{
+"arena":"Seattle Ice Arena",
+"arena_canonical":"Seattle Ice Arena",
+"start_year":1916,
+"end_year":1924,
+"city":"Seattle",
+"state":"Washington",
+"metro":"Seattle"
+}
+],
+"228th-batallion":[
+{
+"arena":"Toronto Arena",
+"arena_canonical":"Toronto Arena",
+"start_year":1917,
+"end_year":1917,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+}
+],
+"maple-leafs":[
+{
+"arena":"Scotiabank Arena",
+"arena_canonical":"Scotiabank Arena",
+"start_year":2019,
+"end_year":2026,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+},
+{
+"arena":"Air Canada Centre",
+"arena_canonical":"Scotiabank Arena",
+"start_year":2000,
+"end_year":2018,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+},
+{
+"arena":"Maple Leaf Gardens/Air Canada Centre",
+"arena_canonical":"Scotiabank Arena",
+"start_year":1999,
+"end_year":1999,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+},
+{
+"arena":"Maple Leaf Gardens",
+"arena_canonical":"Maple Leaf Gardens",
+"start_year":1932,
+"end_year":1998,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+},
+{
+"arena":"Toronto Arena",
+"arena_canonical":"Toronto Arena",
+"start_year":1918,
+"end_year":1931,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+}
+],
+"eskimos":[
+{
+"arena":"Edmonton Arena",
+"arena_canonical":"Edmonton Arena",
+"start_year":1922,
+"end_year":1926,
+"city":"Edmonton",
+"state":"Alberta",
+"metro":"Edmonton"
+}
+],
+"blackhawks":[
+{
+"arena":"United Center",
+"arena_canonical":"United Center",
+"start_year":1995,
+"end_year":2026,
+"city":"Chicago",
+"state":"Illinois",
+"metro":"Chicago"
+},
+{
+"arena":"Chicago Stadium",
+"arena_canonical":"Chicago Stadium",
+"start_year":1930,
+"end_year":1994,
+"city":"Chicago",
+"state":"Illinois",
+"metro":"Chicago"
+},
+{
+"arena":"Chicago Coliseum",
+"arena_canonical":"Chicago Coliseum",
+"start_year":1927,
+"end_year":1929,
+"city":"Chicago",
+"state":"Illinois",
+"metro":"Chicago"
+},
+{
+"arena":"Portland Ice Arena",
+"arena_canonical":"Portland Ice Arena",
+"start_year":1926,
+"end_year":1926,
+"city":"Portland",
+"state":"Oregon",
+"metro":"Portland"
+},
+{
+"arena":"Regina Agridome",
+"arena_canonical":"Regina Agridome",
+"start_year":1922,
+"end_year":1925,
+"city":"Regina",
+"state":"Saskatchewan",
+"metro":"Regina"
+}
+],
+"tigers-cal":[
+{
+"arena":"Calgary Corral",
+"arena_canonical":"Calgary Corral",
+"start_year":1922,
+"end_year":1926,
+"city":"Calgary",
+"state":"Alberta",
+"metro":"Calgary"
+}
+],
+"crescents":[
+{
+"arena":"Saskatchewan Place",
+"arena_canonical":"Saskatchewan Place",
+"start_year":1923,
+"end_year":1926,
+"city":"Saskatoon",
+"state":"Saskatchewan",
+"metro":"Saskatoon"
+},
+{
+"arena":"Saskatchewan Place/Moose Jaw Civic Center",
+"arena_canonical":"Saskatchewan Place",
+"start_year":1922,
+"end_year":1922,
+"city":"Saskatoon/Moose Jaw",
+"state":"Saskatchewan",
+"metro":"Saskatoon/Moose Jaw"
+}
+],
+"maroons":[
+{
+"arena":"Montreal Forum",
+"arena_canonical":"Montreal Forum",
+"start_year":1927,
+"end_year":1938,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Mount Royal Arena",
+"arena_canonical":"Mount Royal Arena",
+"start_year":1925,
+"end_year":1926,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"bruins":[
+{
+"arena":"TD Garden",
+"arena_canonical":"TD Garden",
+"start_year":2010,
+"end_year":2026,
+"city":"Boston",
+"state":"Massachusetts",
+"metro":"Boston"
+},
+{
+"arena":"TD Banknorth Garden",
+"arena_canonical":"TD Garden",
+"start_year":2006,
+"end_year":2009,
+"city":"Boston",
+"state":"Massachusetts",
+"metro":"Boston"
+},
+{
+"arena":"FleetCenter",
+"arena_canonical":"TD Garden",
+"start_year":1996,
+"end_year":2004,
+"city":"Boston",
+"state":"Massachusetts",
+"metro":"Boston"
+},
+{
+"arena":"Boston Garden",
+"arena_canonical":"Boston Garden",
+"start_year":1929,
+"end_year":1995,
+"city":"Boston",
+"state":"Massachusetts",
+"metro":"Boston"
+},
+{
+"arena":"Boston Arena",
+"arena_canonical":"Boston Arena",
+"start_year":1925,
+"end_year":1928,
+"city":"Boston",
+"state":"Massachusetts",
+"metro":"Boston"
+}
+],
+"quakers":[
+{
+"arena":"Philadelphia Arena",
+"arena_canonical":"Philadelphia Arena",
+"start_year":1931,
+"end_year":1931,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+},
+{
+"arena":"Duquesne Gardens",
+"arena_canonical":"Duquesne Gardens",
+"start_year":1926,
+"end_year":1930,
+"city":"Pittsburgh",
+"state":"Pennsylvania",
+"metro":"Pittsburgh"
+}
+],
+"rangers":[
+{
+"arena":"Madison Square Garden IV",
+"arena_canonical":"Madison Square Garden IV",
+"start_year":1969,
+"end_year":2026,
+"city":"New York",
+"state":"New York",
+"metro":"New York"
+},
+{
+"arena":"Madison Square Garden III",
+"arena_canonical":"Madison Square Garden III",
+"start_year":1927,
+"end_year":1968,
+"city":"New York",
+"state":"New York",
+"metro":"New York"
+}
+],
+"flyers":[
+{
+"arena":"Wells Fargo Center",
+"arena_canonical":"Xfinity Mobile Arena",
+"start_year":2011,
+"end_year":2026,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+},
+{
+"arena":"Wachovia Center",
+"arena_canonical":"Xfinity Mobile Arena",
+"start_year":2004,
+"end_year":2010,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+},
+{
+"arena":"First Union Center",
+"arena_canonical":"Xfinity Mobile Arena",
+"start_year":1999,
+"end_year":2003,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+},
+{
+"arena":"Corestates Center",
+"arena_canonical":"Xfinity Mobile Arena",
+"start_year":1997,
+"end_year":1998,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+},
+{
+"arena":"Corestates Spectrum",
+"arena_canonical":"The Spectrum",
+"start_year":1995,
+"end_year":1996,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+},
+{
+"arena":"The Spectrum",
+"arena_canonical":"The Spectrum",
+"start_year":1968,
+"end_year":1994,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+}
+],
+"kings":[
+{
+"arena":"Crypto.com Arena",
+"arena_canonical":"Crypto.com Arena",
+"start_year":2022,
+"end_year":2026,
+"city":"Los Angeles",
+"state":"California",
+"metro":"Los Angeles"
+},
+{
+"arena":"Staples Center",
+"arena_canonical":"Crypto.com Arena",
+"start_year":2000,
+"end_year":2021,
+"city":"Los Angeles",
+"state":"California",
+"metro":"Los Angeles"
+},
+{
+"arena":"Great Western Forum",
+"arena_canonical":"Great Western Forum",
+"start_year":1989,
+"end_year":1999,
+"city":"Inglewood",
+"state":"California",
+"metro":"Los Angeles"
+},
+{
+"arena":"The Forum",
+"arena_canonical":"Great Western Forum",
+"start_year":1968,
+"end_year":1988,
+"city":"Inglewood",
+"state":"California",
+"metro":"Los Angeles"
+}
+],
+"blues":[
+{
+"arena":"Enterprise Center",
+"arena_canonical":"Enterprise Center",
+"start_year":2019,
+"end_year":2026,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+},
+{
+"arena":"Scottrade Center",
+"arena_canonical":"Enterprise Center",
+"start_year":2007,
+"end_year":2018,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+},
+{
+"arena":"Savvis Center",
+"arena_canonical":"Enterprise Center",
+"start_year":2001,
+"end_year":2006,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+},
+{
+"arena":"Kiel Center",
+"arena_canonical":"Enterprise Center",
+"start_year":1995,
+"end_year":2000,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+},
+{
+"arena":"St. Louis Arena",
+"arena_canonical":"St. Louis Arena",
+"start_year":1983,
+"end_year":1994,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+},
+{
+"arena":"Checkerdome",
+"arena_canonical":"St. Louis Arena",
+"start_year":1978,
+"end_year":1982,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+},
+{
+"arena":"St. Louis Arena",
+"arena_canonical":"St. Louis Arena",
+"start_year":1968,
+"end_year":1977,
+"city":"St. Louis",
+"state":"Missouri",
+"metro":"St. Louis"
+}
+],
+"stars":[
+{
+"arena":"American Airlines Center",
+"arena_canonical":"American Airlines Center",
+"start_year":2002,
+"end_year":2026,
+"city":"Dallas",
+"state":"Texas",
+"metro":"Dallas"
+},
+{
+"arena":"Reunion Arena",
+"arena_canonical":"Reunion Arena",
+"start_year":1994,
+"end_year":2001,
+"city":"Dallas",
+"state":"Texas",
+"metro":"Dallas"
+},
+{
+"arena":"Met Center",
+"arena_canonical":"Met Center",
+"start_year":1983,
+"end_year":1993,
+"city":"Bloomington",
+"state":"Minnesota",
+"metro":"Minneapolis"
+},
+{
+"arena":"Metropolitan Sports Center",
+"arena_canonical":"Met Center",
+"start_year":1968,
+"end_year":1982,
+"city":"Bloomington",
+"state":"Minnesota",
+"metro":"Minneapolis"
+}
+],
+"penguins":[
+{
+"arena":"PPG Paints Arena",
+"arena_canonical":"PPG Paints Arena",
+"start_year":2017,
+"end_year":2026,
+"city":"Pittsburgh",
+"state":"Pennsylvania",
+"metro":"Pittsburgh"
+},
+{
+"arena":"Consol Energy Center",
+"arena_canonical":"PPG Paints Arena",
+"start_year":2011,
+"end_year":2016,
+"city":"Pittsburgh",
+"state":"Pennsylvania",
+"metro":"Pittsburgh"
+},
+{
+"arena":"Mellon Arena",
+"arena_canonical":"Mellon Arena",
+"start_year":1999,
+"end_year":2010,
+"city":"Pittsburgh",
+"state":"Pennsylvania",
+"metro":"Pittsburgh"
+},
+{
+"arena":"Civic Arena",
+"arena_canonical":"Mellon Arena",
+"start_year":1968,
+"end_year":1998,
+"city":"Pittsburgh",
+"state":"Pennsylvania",
+"metro":"Pittsburgh"
+}
+],
+"barons":[
+{
+"arena":"Richfield Coliseum",
+"arena_canonical":"Richfield Coliseum",
+"start_year":1977,
+"end_year":1978,
+"city":"Richfield",
+"state":"Ohio",
+"metro":"Cleveland"
+},
+{
+"arena":"Oakland-Alameda County Coliseum Arena",
+"arena_canonical":"Oracle Arena",
+"start_year":1968,
+"end_year":1976,
+"city":"Oakland",
+"state":"California",
+"metro":"San Francisco"
+}
+],
+"sabres":[
+{
+"arena":"KeyBank Center",
+"arena_canonical":"KeyBank Center",
+"start_year":2017,
+"end_year":2026,
+"city":"Buffalo",
+"state":"New York",
+"metro":"Buffalo"
+},
+{
+"arena":"First Niagara Center",
+"arena_canonical":"KeyBank Center",
+"start_year":2012,
+"end_year":2016,
+"city":"Buffalo",
+"state":"New York",
+"metro":"Buffalo"
+},
+{
+"arena":"HSBC Arena",
+"arena_canonical":"KeyBank Center",
+"start_year":2000,
+"end_year":2011,
+"city":"Buffalo",
+"state":"New York",
+"metro":"Buffalo"
+},
+{
+"arena":"Marine Midland Arena",
+"arena_canonical":"KeyBank Center",
+"start_year":1997,
+"end_year":1999,
+"city":"Buffalo",
+"state":"New York",
+"metro":"Buffalo"
+},
+{
+"arena":"Memorial Auditorium",
+"arena_canonical":"Memorial Auditorium",
+"start_year":1971,
+"end_year":1996,
+"city":"Buffalo",
+"state":"New York",
+"metro":"Buffalo"
+}
+],
+"canucks":[
+{
+"arena":"Rogers Arena",
+"arena_canonical":"Rogers Arena",
+"start_year":2011,
+"end_year":2026,
+"city":"Vancouver",
+"state":"British Columbia",
+"metro":"Vancouver"
+},
+{
+"arena":"General Motors Place",
+"arena_canonical":"Rogers Arena",
+"start_year":1996,
+"end_year":2010,
+"city":"Vancouver",
+"state":"British Columbia",
+"metro":"Vancouver"
+},
+{
+"arena":"Pacific Coliseum",
+"arena_canonical":"Pacific Coliseum",
+"start_year":1971,
+"end_year":1995,
+"city":"Vancouver",
+"state":"British Columbia",
+"metro":"Vancouver"
+}
+],
+"islanders":[
+{
+"arena":"UBS Arena",
+"arena_canonical":"UBS Arena",
+"start_year":2022,
+"end_year":2026,
+"city":"Elmont",
+"state":"New York",
+"metro":"New York"
+},
+{
+"arena":"Nassau Veteran's Memorial Coliseum",
+"arena_canonical":"Nassau Veterans Memorial Coliseum",
+"start_year":2021,
+"end_year":2021,
+"city":"Uniondale",
+"state":"New York",
+"metro":"New York"
+},
+{
+"arena":"Barclays Center/Nassau Veteran's Memorial Coliseum",
+"arena_canonical":"Nassau Veterans Memorial Coliseum",
+"start_year":2020,
+"end_year":2020,
+"city":"New York/Uniondale",
+"state":"New York",
+"metro":"New York"
+},
+{
+"arena":"Barclays Center/Nassau Veteran's Memorial Coliseum",
+"arena_canonical":"Barclays Center",
+"start_year":2019,
+"end_year":2019,
+"city":"New York/Uniondale",
+"state":"New York",
+"metro":"New York"
+},
+{
+"arena":"Barclays Center",
+"arena_canonical":"Barclays Center",
+"start_year":2016,
+"end_year":2018,
+"city":"New York",
+"state":"New York",
+"metro":"New York"
+},
+{
+"arena":"Nassau Veteran's Memorial Coliseum",
+"arena_canonical":"Nassau Veterans Memorial Coliseum",
+"start_year":1973,
+"end_year":2015,
+"city":"Uniondale",
+"state":"New York",
+"metro":"New York"
+}
+],
+"hurricanes":[
+{
+"arena":"PNC Arena",
+"arena_canonical":"Lenovo Center",
+"start_year":2013,
+"end_year":2026,
+"city":"Raleigh",
+"state":"North Carolina",
+"metro":"Raleigh"
+},
+{
+"arena":"RBC Center",
+"arena_canonical":"Lenovo Center",
+"start_year":2003,
+"end_year":2012,
+"city":"Raleigh",
+"state":"North Carolina",
+"metro":"Raleigh"
+},
+{
+"arena":"Raleigh Entertainment and Sports Arena",
+"arena_canonical":"Lenovo Center",
+"start_year":2000,
+"end_year":2002,
+"city":"Raleigh",
+"state":"North Carolina",
+"metro":"Raleigh"
+},
+{
+"arena":"Greensboro Coliseum",
+"arena_canonical":"First Horizon Coliseum",
+"start_year":1998,
+"end_year":1999,
+"city":"Greensboro",
+"state":"North Carolina",
+"metro":"Greensboro"
+},
+{
+"arena":"Hartford Civic Center",
+"arena_canonical":"XL Center",
+"start_year":1980,
+"end_year":1997,
+"city":"Hartford",
+"state":"Connecticut",
+"metro":"Hartford"
+},
+{
+"arena":"Springfield Civic Center",
+"arena_canonical":"Springfield Civic Center",
+"start_year":1979,
+"end_year":1979,
+"city":"Springfield",
+"state":"Massachusetts",
+"metro":"Springfield"
+},
+{
+"arena":"Hartford Civic Center/Springfield Civic Center",
+"arena_canonical":"XL Center",
+"start_year":1978,
+"end_year":1978,
+"city":"Hartford",
+"state":"Connecticut",
+"metro":"Hartford"
+},
+{
+"arena":"Hartford Civic Center",
+"arena_canonical":"XL Center",
+"start_year":1976,
+"end_year":1977,
+"city":"Hartford",
+"state":"Connecticut",
+"metro":"Hartford"
+},
+{
+"arena":"Hartford Civic Center/W. Springfield Big E",
+"arena_canonical":"XL Center",
+"start_year":1975,
+"end_year":1975,
+"city":"Hartford",
+"state":"Connecticut",
+"metro":"Hartford"
+},
+{
+"arena":"Boston Garden",
+"arena_canonical":"Boston Garden",
+"start_year":1973,
+"end_year":1974,
+"city":"Boston",
+"state":"Massachusetts",
+"metro":"Boston"
+}
+],
+"fighting-saints-2":[
+{
+"arena":"St. Paul Civic Centre",
+"arena_canonical":"St. Paul Civic Center",
+"start_year":1977,
+"end_year":1977,
+"city":"St. Paul",
+"state":"Minnesota",
+"metro":"Minneapolis"
+},
+{
+"arena":"Richfield Coliseum",
+"arena_canonical":"Richfield Coliseum",
+"start_year":1975,
+"end_year":1976,
+"city":"Richfield",
+"state":"Ohio",
+"metro":"Cleveland"
+},
+{
+"arena":"Cleveland Arena",
+"arena_canonical":"Cleveland Arena",
+"start_year":1973,
+"end_year":1974,
+"city":"Cleveland",
+"state":"Ohio",
+"metro":"Cleveland"
+}
+],
+"cowboys-cal":[
+{
+"arena":"Calgary Corral",
+"arena_canonical":"Calgary Corral",
+"start_year":1976,
+"end_year":1977,
+"city":"Calgary",
+"state":"Alberta",
+"metro":"Calgary"
+},
+{
+"arena":"Pacific Coliseum",
+"arena_canonical":"Pacific Coliseum",
+"start_year":1974,
+"end_year":1975,
+"city":"Vancouver",
+"state":"British Columbia",
+"metro":"Vancouver"
+},
+{
+"arena":"Philadelphia Civic Center",
+"arena_canonical":"Philadelphia Civic Center",
+"start_year":1973,
+"end_year":1973,
+"city":"Philadelphia",
+"state":"Pennsylvania",
+"metro":"Philadelphia"
+}
+],
+"bulls-b":[
+{
+"arena":"Birmingham-Jefferson Civic Center",
+"arena_canonical":"Birmingham-Jefferson Civic Center",
+"start_year":1977,
+"end_year":1979,
+"city":"Birmingham",
+"state":"Alabama",
+"metro":"Birmingham"
+},
+{
+"arena":"Maple Leaf Gardens",
+"arena_canonical":"Maple Leaf Gardens",
+"start_year":1975,
+"end_year":1976,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+},
+{
+"arena":"Varsity Arena",
+"arena_canonical":"Varsity Arena",
+"start_year":1974,
+"end_year":1974,
+"city":"Toronto",
+"state":"Ontario",
+"metro":"Toronto"
+},
+{
+"arena":"Ottawa Civic Center",
+"arena_canonical":"Ottawa Civic Centre",
+"start_year":1973,
+"end_year":1973,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+}
+],
+"avalanche":[
+{
+"arena":"Ball Arena",
+"arena_canonical":"Ball Arena",
+"start_year":2021,
+"end_year":2026,
+"city":"Denver",
+"state":"Colorado",
+"metro":"Denver"
+},
+{
+"arena":"Pepsi Center",
+"arena_canonical":"Ball Arena",
+"start_year":2000,
+"end_year":2020,
+"city":"Denver",
+"state":"Colorado",
+"metro":"Denver"
+},
+{
+"arena":"McNichols Arena",
+"arena_canonical":"McNichols Sports Arena",
+"start_year":1996,
+"end_year":1999,
+"city":"Denver",
+"state":"Colorado",
+"metro":"Denver"
+},
+{
+"arena":"Le Colisee",
+"arena_canonical":"Le Colisee de Quebec",
+"start_year":1973,
+"end_year":1995,
+"city":"Quebec City",
+"state":"Quebec",
+"metro":"Quebec City"
+}
+],
+"mariners":[
+{
+"arena":"San Diego Sports Arena",
+"arena_canonical":"Pechanga Arena San Diego",
+"start_year":1975,
+"end_year":1977,
+"city":"San Diego",
+"state":"California",
+"metro":"San Diego"
+},
+{
+"arena":"Madison Square Garden IV/Cherry Hill Arena",
+"arena_canonical":"Cherry Hill Arena",
+"start_year":1974,
+"end_year":1974,
+"city":"New York/Cherry Hill",
+"state":"New York/New Jersey",
+"metro":"New York/Philadelphia"
+},
+{
+"arena":"Madison Square Garden IV",
+"arena_canonical":"Madison Square Garden IV",
+"start_year":1973,
+"end_year":1973,
+"city":"New York",
+"state":"New York",
+"metro":"New York"
+}
+],
+"flames":[
+{
+"arena":"Scotiabank Saddledome",
+"arena_canonical":"Scotiabank Saddledome",
+"start_year":2011,
+"end_year":2026,
+"city":"Calgary",
+"state":"Alberta",
+"metro":"Calgary"
+},
+{
+"arena":"Pengrowth Saddledome",
+"arena_canonical":"Scotiabank Saddledome",
+"start_year":2001,
+"end_year":2010,
+"city":"Calgary",
+"state":"Alberta",
+"metro":"Calgary"
+},
+{
+"arena":"Canadian Airlines Saddledome",
+"arena_canonical":"Scotiabank Saddledome",
+"start_year":1996,
+"end_year":2000,
+"city":"Calgary",
+"state":"Alberta",
+"metro":"Calgary"
+},
+{
+"arena":"Olympic Saddledome",
+"arena_canonical":"Scotiabank Saddledome",
+"start_year":1984,
+"end_year":1995,
+"city":"Calgary",
+"state":"Alberta",
+"metro":"Calgary"
+},
+{
+"arena":"Calgary Corral",
+"arena_canonical":"Calgary Corral",
+"start_year":1981,
+"end_year":1983,
+"city":"Calgary",
+"state":"Alberta",
+"metro":"Calgary"
+},
+{
+"arena":"The Omni",
+"arena_canonical":"The Omni",
+"start_year":1973,
+"end_year":1980,
+"city":"Atlanta",
+"state":"Georgia",
+"metro":"Atlanta"
+}
+],
+"mammoth":[
+{
+"arena":"Delta Center",
+"arena_canonical":"Delta Center",
+"start_year":2025,
+"end_year":2026,
+"city":"Salt Lake City",
+"state":"Utah",
+"metro":"Salt Lake City-Provo"
+},
+{
+"arena":"Mullett Arena",
+"arena_canonical":"Mullett Arena",
+"start_year":2023,
+"end_year":2024,
+"city":"Tempe",
+"state":"Arizona",
+"metro":"Phoenix"
+},
+{
+"arena":"Gila River Arena",
+"arena_canonical":"Glendale Arena",
+"start_year":2015,
+"end_year":2022,
+"city":"Glendale",
+"state":"Arizona",
+"metro":"Phoenix"
+},
+{
+"arena":"Jobing.com Arena",
+"arena_canonical":"Glendale Arena",
+"start_year":2007,
+"end_year":2014,
+"city":"Glendale",
+"state":"Arizona",
+"metro":"Phoenix"
+},
+{
+"arena":"Glendale Arena",
+"arena_canonical":"Glendale Arena",
+"start_year":2006,
+"end_year":2006,
+"city":"Glendale",
+"state":"Arizona",
+"metro":"Phoenix"
+},
+{
+"arena":"America West Arena/Glendale Arena",
+"arena_canonical":"Glendale Arena",
+"start_year":2004,
+"end_year":2004,
+"city":"Glendale",
+"state":"Arizona",
+"metro":"Phoenix"
+},
+{
+"arena":"America West Arena",
+"arena_canonical":"Mortgage Matchup Center",
+"start_year":1997,
+"end_year":2003,
+"city":"Phoenix",
+"state":"Arizona",
+"metro":"Phoenix"
+},
+{
+"arena":"Winnipeg Arena",
+"arena_canonical":"Winnipeg Arena",
+"start_year":1973,
+"end_year":1996,
+"city":"Winnipeg",
+"state":"Manitoba",
+"metro":"Winnipeg"
+}
+],
+"aeros":[
+{
+"arena":"The Summit",
+"arena_canonical":"Compaq Center",
+"start_year":1975,
+"end_year":1978,
+"city":"Houston",
+"state":"Texas",
+"metro":"Houston"
+},
+{
+"arena":"Sam Houston Coliseum",
+"arena_canonical":"Sam Houston Coliseum",
+"start_year":1973,
+"end_year":1974,
+"city":"Houston",
+"state":"Texas",
+"metro":"Houston"
+}
+],
+"blades":[
+{
+"arena":"Cobo Arena/Baltimore Arena",
+"arena_canonical":"CFG Bank Arena",
+"start_year":1975,
+"end_year":1975,
+"city":"Detroit/Baltimore",
+"state":"Michigan/Maryland",
+"metro":"Detroit/Baltimore"
+},
+{
+"arena":"Los Angeles Sports Arena",
+"arena_canonical":"Los Angeles Sports Arena",
+"start_year":1973,
+"end_year":1974,
+"city":"Los Angeles",
+"state":"California",
+"metro":"Los Angeles"
+}
+],
+"oilers":[
+{
+"arena":"Rogers Place",
+"arena_canonical":"Rogers Place",
+"start_year":2017,
+"end_year":2026,
+"city":"Edmonton",
+"state":"Alberta",
+"metro":"Edmonton"
+},
+{
+"arena":"Rexall Place",
+"arena_canonical":"Northlands Coliseum",
+"start_year":2004,
+"end_year":2016,
+"city":"Edmonton",
+"state":"Alberta",
+"metro":"Edmonton"
+},
+{
+"arena":"Skyreach Centre",
+"arena_canonical":"Northlands Coliseum",
+"start_year":1999,
+"end_year":2003,
+"city":"Edmonton",
+"state":"Alberta",
+"metro":"Edmonton"
+},
+{
+"arena":"Edmonton Coliseum",
+"arena_canonical":"Northlands Coliseum",
+"start_year":1995,
+"end_year":1998,
+"city":"Edmonton",
+"state":"Alberta",
+"metro":"Edmonton"
+},
+{
+"arena":"Northlands Coliseum",
+"arena_canonical":"Northlands Coliseum",
+"start_year":1975,
+"end_year":1994,
+"city":"Edmonton",
+"state":"Alberta",
+"metro":"Edmonton"
+},
+{
+"arena":"Edmonton Gardens",
+"arena_canonical":"Edmonton Gardens",
+"start_year":1973,
+"end_year":1974,
+"city":"Edmonton",
+"state":"Alberta",
+"metro":"Edmonton"
+}
+],
+"fighting-saints-1":[
+{
+"arena":"St. Paul Civic Centre",
+"arena_canonical":"St. Paul Civic Center",
+"start_year":1973,
+"end_year":1976,
+"city":"St. Paul",
+"state":"Minnesota",
+"metro":"Minneapolis"
+}
+],
+"cougars":[
+{
+"arena":"International Amphitheatre",
+"arena_canonical":"International Amphitheatre",
+"start_year":1973,
+"end_year":1975,
+"city":"Chicago",
+"state":"Illinois",
+"metro":"Chicago"
+}
+],
+"devils":[
+{
+"arena":"Prudential Center",
+"arena_canonical":"Prudential Center",
+"start_year":2008,
+"end_year":2026,
+"city":"Newark",
+"state":"New Jersey",
+"metro":"New York"
+},
+{
+"arena":"Continental Airlines Arena",
+"arena_canonical":"Izod Center",
+"start_year":1997,
+"end_year":2007,
+"city":"East Rutherford",
+"state":"New Jersey",
+"metro":"New York"
+},
+{
+"arena":"Brendan Byrne Arena",
+"arena_canonical":"Izod Center",
+"start_year":1983,
+"end_year":1996,
+"city":"East Rutherford",
+"state":"New Jersey",
+"metro":"New York"
+},
+{
+"arena":"McNichols Arena",
+"arena_canonical":"McNichols Sports Arena",
+"start_year":1977,
+"end_year":1982,
+"city":"Denver",
+"state":"Colorado",
+"metro":"Denver"
+},
+{
+"arena":"Kemper Arena",
+"arena_canonical":"Hy-Vee Arena",
+"start_year":1975,
+"end_year":1976,
+"city":"Kansas City",
+"state":"Missouri",
+"metro":"Kansas City"
+}
+],
+"racers":[
+{
+"arena":"Market Square Arena",
+"arena_canonical":"Market Square Arena",
+"start_year":1975,
+"end_year":1979,
+"city":"Indianapolis",
+"state":"Indiana",
+"metro":"Indianapolis"
+}
+],
+"capitals":[
+{
+"arena":"Capital One Arena",
+"arena_canonical":"Capital One Arena",
+"start_year":2018,
+"end_year":2026,
+"city":"Washington",
+"state":"DC",
+"metro":"Washington-Baltimore"
+},
+{
+"arena":"Verizon Center",
+"arena_canonical":"Capital One Arena",
+"start_year":2006,
+"end_year":2017,
+"city":"Washington",
+"state":"DC",
+"metro":"Washington-Baltimore"
+},
+{
+"arena":"MCI Center",
+"arena_canonical":"Capital One Arena",
+"start_year":1998,
+"end_year":2004,
+"city":"Washington",
+"state":"DC",
+"metro":"Washington-Baltimore"
+},
+{
+"arena":"USAir Arena",
+"arena_canonical":"USAir Arena",
+"start_year":1994,
+"end_year":1997,
+"city":"Landover",
+"state":"DC",
+"metro":"Washington-Baltimore"
+},
+{
+"arena":"Capital Centre",
+"arena_canonical":"USAir Arena",
+"start_year":1975,
+"end_year":1993,
+"city":"Landover",
+"state":"DC",
+"metro":"Washington-Baltimore"
+}
+],
+"roadrunners":[
+{
+"arena":"Arizona Veteran's Memorial Coliseum",
+"arena_canonical":"Arizona Veterans Memorial Coliseum",
+"start_year":1975,
+"end_year":1977,
+"city":"Phoenix",
+"state":"Arizona",
+"metro":"Phoenix"
+}
+],
+"stingers":[
+{
+"arena":"Riverfront Coliseum",
+"arena_canonical":"Riverfront Coliseum",
+"start_year":1976,
+"end_year":1979,
+"city":"Cincinnati",
+"state":"Ohio",
+"metro":"Cincinnati"
+}
+],
+"civics":[
+{
+"arena":"McNichols Arena/Ottawa Civic Center",
+"arena_canonical":"Ottawa Civic Centre",
+"start_year":1976,
+"end_year":1976,
+"city":"Denver/Ottawa",
+"state":"Colorado/Ontario",
+"metro":"Denver/Ottawa"
+}
+],
+"all-stars":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1978,
+"end_year":1979,
+"city":"Soviet",
+"state":"",
+"metro":""
+}
+],
+"national-team-c":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1978,
+"end_year":1979,
+"city":"Czechoslovakia",
+"state":"",
+"metro":""
+}
+],
+"national-team-f":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1979,
+"end_year":1979,
+"city":"Finland",
+"state":"",
+"metro":""
+}
+],
+"sharks":[
+{
+"arena":"SAP Center",
+"arena_canonical":"SAP Center at San Jose",
+"start_year":2014,
+"end_year":2026,
+"city":"San Jose",
+"state":"California",
+"metro":"San Francisco"
+},
+{
+"arena":"HP Pavilion",
+"arena_canonical":"SAP Center at San Jose",
+"start_year":2003,
+"end_year":2013,
+"city":"San Jose",
+"state":"California",
+"metro":"San Francisco"
+},
+{
+"arena":"Compaq Center at San Jose",
+"arena_canonical":"SAP Center at San Jose",
+"start_year":2001,
+"end_year":2002,
+"city":"San Jose",
+"state":"California",
+"metro":"San Francisco"
+},
+{
+"arena":"San Jose Arena",
+"arena_canonical":"SAP Center at San Jose",
+"start_year":1994,
+"end_year":2000,
+"city":"San Jose",
+"state":"California",
+"metro":"San Francisco"
+},
+{
+"arena":"Cow Palace",
+"arena_canonical":"Cow Palace",
+"start_year":1992,
+"end_year":1993,
+"city":"Daly City",
+"state":"California",
+"metro":"San Francisco"
+}
+],
+"lightning":[
+{
+"arena":"Benchmark International Arena",
+"arena_canonical":"Benchmark International Arena",
+"start_year":2026,
+"end_year":2026,
+"city":"Tampa",
+"state":"Florida",
+"metro":"Tampa"
+},
+{
+"arena":"Amalie Arena",
+"arena_canonical":"Benchmark International Arena",
+"start_year":2015,
+"end_year":2025,
+"city":"Tampa",
+"state":"Florida",
+"metro":"Tampa"
+},
+{
+"arena":"Tampa Bay Times Forum",
+"arena_canonical":"Benchmark International Arena",
+"start_year":2013,
+"end_year":2014,
+"city":"Tampa",
+"state":"Florida",
+"metro":"Tampa"
+},
+{
+"arena":"St. Pete Times Forum",
+"arena_canonical":"Benchmark International Arena",
+"start_year":2003,
+"end_year":2012,
+"city":"Tampa",
+"state":"Florida",
+"metro":"Tampa"
+},
+{
+"arena":"Ice Palace",
+"arena_canonical":"Benchmark International Arena",
+"start_year":1997,
+"end_year":2002,
+"city":"Tampa",
+"state":"Florida",
+"metro":"Tampa"
+},
+{
+"arena":"Thunderdome",
+"arena_canonical":"Tropicana Field",
+"start_year":1994,
+"end_year":1996,
+"city":"St. Petersburg",
+"state":"Florida",
+"metro":"Tampa"
+},
+{
+"arena":"Expo Hall",
+"arena_canonical":"Benchmark International Arena",
+"start_year":1993,
+"end_year":1993,
+"city":"Tampa",
+"state":"Florida",
+"metro":"Tampa"
+}
+],
+"senators":[
+{
+"arena":"Canadian Tire Centre",
+"arena_canonical":"Canadian Tire Centre",
+"start_year":2014,
+"end_year":2026,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+},
+{
+"arena":"Scotiabank Place",
+"arena_canonical":"Canadian Tire Centre",
+"start_year":2006,
+"end_year":2013,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+},
+{
+"arena":"Corel Centre",
+"arena_canonical":"Canadian Tire Centre",
+"start_year":1997,
+"end_year":2004,
+"city":"Kanata",
+"state":"Ontario",
+"metro":"Ottawa"
+},
+{
+"arena":"Ottawa Civic Center/Palladium",
+"arena_canonical":"Canadian Tire Centre",
+"start_year":1996,
+"end_year":1996,
+"city":"Kanata",
+"state":"Ontario",
+"metro":"Ottawa"
+},
+{
+"arena":"Ottawa Civic Center",
+"arena_canonical":"Ottawa Civic Centre",
+"start_year":1993,
+"end_year":1995,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+}
+],
+"panthers":[
+{
+"arena":"Amerant Bank Arena",
+"arena_canonical":"Amerant Bank Arena",
+"start_year":2024,
+"end_year":2026,
+"city":"Sunrise",
+"state":"Florida",
+"metro":"Miami"
+},
+{
+"arena":"FLA Live Arena",
+"arena_canonical":"Amerant Bank Arena",
+"start_year":2022,
+"end_year":2023,
+"city":"Sunrise",
+"state":"Florida",
+"metro":"Miami"
+},
+{
+"arena":"BB&T Center",
+"arena_canonical":"Amerant Bank Arena",
+"start_year":2013,
+"end_year":2021,
+"city":"Sunrise",
+"state":"Florida",
+"metro":"Miami"
+},
+{
+"arena":"BankAtlantic Center",
+"arena_canonical":"Amerant Bank Arena",
+"start_year":2006,
+"end_year":2012,
+"city":"Sunrise",
+"state":"Florida",
+"metro":"Miami"
+},
+{
+"arena":"Office Depot Center",
+"arena_canonical":"Amerant Bank Arena",
+"start_year":2003,
+"end_year":2004,
+"city":"Sunrise",
+"state":"Florida",
+"metro":"Miami"
+},
+{
+"arena":"National Car Rental Center",
+"arena_canonical":"Amerant Bank Arena",
+"start_year":1999,
+"end_year":2002,
+"city":"Sunrise",
+"state":"Florida",
+"metro":"Miami"
+},
+{
+"arena":"Miami Arena",
+"arena_canonical":"Miami Arena",
+"start_year":1994,
+"end_year":1998,
+"city":"Miami",
+"state":"Florida",
+"metro":"Miami"
+}
+],
+"ducks":[
+{
+"arena":"Honda Center",
+"arena_canonical":"Honda Center",
+"start_year":2007,
+"end_year":2026,
+"city":"Anaheim",
+"state":"California",
+"metro":"Los Angeles"
+},
+{
+"arena":"Arrowhead Pond",
+"arena_canonical":"Honda Center",
+"start_year":1994,
+"end_year":2006,
+"city":"Anaheim",
+"state":"California",
+"metro":"Los Angeles"
+}
+],
+"predators":[
+{
+"arena":"Bridgestone Arena",
+"arena_canonical":"Bridgestone Arena",
+"start_year":2011,
+"end_year":2026,
+"city":"Nashville",
+"state":"Tennessee",
+"metro":"Nashville"
+},
+{
+"arena":"Sommet Center",
+"arena_canonical":"Bridgestone Arena",
+"start_year":2008,
+"end_year":2010,
+"city":"Nashville",
+"state":"Tennessee",
+"metro":"Nashville"
+},
+{
+"arena":"Gaylord Entertainment Center",
+"arena_canonical":"Bridgestone Arena",
+"start_year":2000,
+"end_year":2007,
+"city":"Nashville",
+"state":"Tennessee",
+"metro":"Nashville"
+},
+{
+"arena":"Nashville Arena",
+"arena_canonical":"Bridgestone Arena",
+"start_year":1999,
+"end_year":1999,
+"city":"Nashville",
+"state":"Tennessee",
+"metro":"Nashville"
+}
+],
+"jets":[
+{
+"arena":"Canada Life Centre",
+"arena_canonical":"Canada Life Centre",
+"start_year":2022,
+"end_year":2026,
+"city":"Winnipeg",
+"state":"Manitoba",
+"metro":"Winnipeg"
+},
+{
+"arena":"Bell MTS Place",
+"arena_canonical":"Canada Life Centre",
+"start_year":2018,
+"end_year":2021,
+"city":"Winnipeg",
+"state":"Manitoba",
+"metro":"Winnipeg"
+},
+{
+"arena":"MTS Centre",
+"arena_canonical":"Canada Life Centre",
+"start_year":2012,
+"end_year":2017,
+"city":"Winnipeg",
+"state":"Manitoba",
+"metro":"Winnipeg"
+},
+{
+"arena":"Philips Arena",
+"arena_canonical":"State Farm Arena",
+"start_year":2000,
+"end_year":2011,
+"city":"Atlanta",
+"state":"Georgia",
+"metro":"Atlanta"
+}
+],
+"blue-jackets":[
+{
+"arena":"Nationwide Arena",
+"arena_canonical":"Nationwide Arena",
+"start_year":2001,
+"end_year":2026,
+"city":"Columbus",
+"state":"Ohio",
+"metro":"Columbus"
+}
+],
+"wild":[
+{
+"arena":"Xcel Energy Center",
+"arena_canonical":"Xcel Energy Center",
+"start_year":2001,
+"end_year":2026,
+"city":"St. Paul",
+"state":"Minnesota",
+"metro":"Minneapolis"
+}
+],
+"golden-knights":[
+{
+"arena":"T-Mobile Arena",
+"arena_canonical":"T-Mobile Arena",
+"start_year":2018,
+"end_year":2026,
+"city":"Paradise",
+"state":"Nevada",
+"metro":"Las Vegas"
+}
+],
+"kraken":[
+{
+"arena":"Climate Pledge Arena",
+"arena_canonical":"Climate Pledge Arena",
+"start_year":2022,
+"end_year":2026,
+"city":"Seattle",
+"state":"Washington",
+"metro":"Seattle"
+}
+]
+}

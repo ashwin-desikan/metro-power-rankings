@@ -1,0 +1,3390 @@
+{
+"eagles":[
+{
+"year":1924,
+"player":"Frank Nighbor",
+"trophy":"Hart",
+"position":""
+}
+],
+"americans":[
+{
+"year":1942,
+"player":"Tom Anderson",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1929,
+"player":"Roy Worters",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1925,
+"player":"Billy Burch",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1931,
+"player":"Roy Worters",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1935,
+"player":"Dave Schriner",
+"trophy":"Calder",
+"position":""
+}
+],
+"maroons":[
+{
+"year":1930,
+"player":"Nels Stewart",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1926,
+"player":"Nels Stewart",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1934,
+"player":"Russ Blinko",
+"trophy":"Calder",
+"position":""
+}
+],
+"canadiens":[
+{
+"year":2015,
+"player":"Carey Price",
+"trophy":"Hart",
+"position":"G"
+},
+{
+"year":2002,
+"player":"Jose Theodore",
+"trophy":"Hart",
+"position":"G"
+},
+{
+"year":1978,
+"player":"Guy Lafleur",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1977,
+"player":"Guy Lafleur",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1964,
+"player":"Jean Beliveau",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1962,
+"player":"Jacques Plante",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1961,
+"player":"Bernie Geoffrion",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1956,
+"player":"Jean Beliveau",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1947,
+"player":"Maurice Richard",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1945,
+"player":"Elmer Lach",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1939,
+"player":"Toe Blake",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1937,
+"player":"Babe Siebert",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1934,
+"player":"Aurel Joliat",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1932,
+"player":"Howie Morenz",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1931,
+"player":"Howie Morenz",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1928,
+"player":"Howie Morenz",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1927,
+"player":"Herb Gardiner",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":2013,
+"player":"P. K. Subban",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1989,
+"player":"Chris Chelios",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1980,
+"player":"Larry Robinson",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1977,
+"player":"Larry Robinson",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1966,
+"player":"Jacques Laperriere",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1961,
+"player":"Doug Harvey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1960,
+"player":"Doug Harvey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1959,
+"player":"Tom Johnson",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1958,
+"player":"Doug Harvey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1957,
+"player":"Doug Harvey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1956,
+"player":"Doug Harvey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1955,
+"player":"Doug Harvey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2015,
+"player":"Carey Price",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2002,
+"player":"Jose Theodore",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1992,
+"player":"Patrick Roy",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1990,
+"player":"Patrick Roy",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1989,
+"player":"Patrick Roy",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1981,
+"player":"Denis Herron",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1981,
+"player":"Michel Larocque",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1981,
+"player":"Sevigny Sevigny",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1979,
+"player":"Ken Dryden",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1979,
+"player":"Michel Larocque",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1978,
+"player":"Ken Dryden",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1978,
+"player":"Michel Larocque",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1977,
+"player":"Ken Dryden",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1977,
+"player":"Michel Larocque",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1976,
+"player":"Ken Dryden",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1973,
+"player":"Ken Dryden",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1968,
+"player":"Vachon Vachon",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1968,
+"player":"Gump Worsley",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1966,
+"player":"Charlie Charlie",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1966,
+"player":"Gump Worsley",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1964,
+"player":"Charlie Hodge",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1962,
+"player":"Jacques Plante",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1960,
+"player":"Jacques Plante",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1959,
+"player":"Jacques Plante",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1958,
+"player":"Jacques Plante",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1957,
+"player":"Jacques Plante",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1956,
+"player":"Jacques Plante",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1950,
+"player":"Bill Durnan",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1949,
+"player":"Bill Durnan",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1947,
+"player":"Bill Durnan",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1946,
+"player":"Bill Durnan",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1945,
+"player":"Bill Durnan",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1944,
+"player":"Bill Durnan",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1929,
+"player":"George Hainsworth",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1928,
+"player":"George Hainsworth",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1927,
+"player":"George Hainsworth",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2025,
+"player":"Lane Hutson",
+"trophy":"Calder",
+"position":"D"
+},
+{
+"year":1972,
+"player":"Ken Dryden",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1964,
+"player":"Jacques Laperriere",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1962,
+"player":"Bobby Rousseau",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1959,
+"player":"Ralph Backstrom",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1952,
+"player":"Bernie Geoffrion",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1941,
+"player":"Johnny Quilty",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1993,
+"player":"Patrick Roy",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1986,
+"player":"Patrick Roy",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1979,
+"player":"Bob Gainey",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1978,
+"player":"Larry Robinson",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1977,
+"player":"Guy Lafleur",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1973,
+"player":"Yvan Cournoyer",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1971,
+"player":"Ken Dryden",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1969,
+"player":"Serge Savard",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1965,
+"player":"Jean Beliveau",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1989,
+"player":"Pat Burns",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1977,
+"player":"Scotty Bowman",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1992,
+"player":"Guy Carbonneau",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1989,
+"player":"Guy Carbonneau",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1988,
+"player":"Guy Carbonneau",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1981,
+"player":"Bob Gainey",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1980,
+"player":"Bob Gainey",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1979,
+"player":"Bob Gainey",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1978,
+"player":"Bob Gainey",
+"trophy":"Selke",
+"position":""
+}
+],
+"bruins":[
+{
+"year":1974,
+"player":"Phil Esposito",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1972,
+"player":"Bobby Orr",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1971,
+"player":"Bobby Orr",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1970,
+"player":"Bobby Orr",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1969,
+"player":"Phil Esposito",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1951,
+"player":"Milt Schmidt",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1943,
+"player":"Bill Cowley",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1941,
+"player":"Bill Cowley",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1938,
+"player":"Eddie Shore",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1936,
+"player":"Eddie Shore",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1935,
+"player":"Eddie Shore",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1933,
+"player":"Eddie Shore",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":2009,
+"player":"Zdeno Chara",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1994,
+"player":"Ray Bourque",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1991,
+"player":"Ray Bourque",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1990,
+"player":"Ray Bourque",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1988,
+"player":"Ray Bourque",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1987,
+"player":"Ray Bourque",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1975,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1974,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1973,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1972,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1971,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1970,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1969,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1968,
+"player":"Bobby Orr",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2023,
+"player":"Linus Ullmark",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2014,
+"player":"Tuukka Rask",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2011,
+"player":"Tim Thomas",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2009,
+"player":"Tim Thomas",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1983,
+"player":"Pete Peeters",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1942,
+"player":"Frank Brimsek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1939,
+"player":"Frank Brimsek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1938,
+"player":"Tiny Thompson",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1936,
+"player":"Tiny Thompson",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1933,
+"player":"Tiny Thompson",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1930,
+"player":"Tiny Thompson",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2004,
+"player":"Andrew Raycroft",
+"trophy":"Calder",
+"position":"G"
+},
+{
+"year":1998,
+"player":"Sergei Samsonov",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1980,
+"player":"Ray Bourque",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1968,
+"player":"Derek Sanderson",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1967,
+"player":"Bobby Orr",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1957,
+"player":"Larry Regan",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1950,
+"player":"Jack Gelineau",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1939,
+"player":"Frank Brimsek",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2011,
+"player":"Tim Thomas",
+"trophy":"Conn Smythe",
+"position":"G"
+},
+{
+"year":1972,
+"player":"Bobby Orr",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1970,
+"player":"Bobby Orr",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":2023,
+"player":"Jim Montgomery",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2020,
+"player":"Bruce Cassidy",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2009,
+"player":"Claude Julien",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1998,
+"player":"Pat Burns",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1976,
+"player":"Don Cherry",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2023,
+"player":"Patrice Bergeron",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2022,
+"player":"Patrice Bergeron",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2017,
+"player":"Patrice Bergeron",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2015,
+"player":"Patrice Bergeron",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2014,
+"player":"Patrice Bergeron",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2012,
+"player":"Patrice Bergeron",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":1982,
+"player":"Steve Kasper",
+"trophy":"Selke",
+"position":""
+}
+],
+"blackhawks":[
+{
+"year":2016,
+"player":"Patrick Kane",
+"trophy":"Hart",
+"position":"RW"
+},
+{
+"year":1968,
+"player":"Stan Mikita",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1967,
+"player":"Stan Mikita",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1966,
+"player":"Bobby Hull",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1965,
+"player":"Bobby Hull",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1954,
+"player":"Al Rollins",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1946,
+"player":"Max Bentley",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":2014,
+"player":"Duncan Keith",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2010,
+"player":"Duncan Keith",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1996,
+"player":"Chris Chelios",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1993,
+"player":"Chelios Chelios",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1982,
+"player":"Doug Wilson",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1965,
+"player":"Pierre Pilote",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1964,
+"player":"Pierre Pilote",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1963,
+"player":"Pierre Pilote",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1993,
+"player":"Ed Belfour",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1991,
+"player":"Ed Belfour",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1974,
+"player":"Tony Esposito",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1972,
+"player":"Tony Esposito",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1972,
+"player":"Gary Smith",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1970,
+"player":"Tony Esposito",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1967,
+"player":"Denis DeJordy",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1967,
+"player":"Glenn Hall",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1963,
+"player":"Glenn Hall",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1935,
+"player":"Lorne Chabot",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1934,
+"player":"Charlie Gardiner",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1932,
+"player":"Charlie Gardiner",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2024,
+"player":"Connor Bedard",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":2016,
+"player":"Artemi Panarin",
+"trophy":"Calder",
+"position":"LW"
+},
+{
+"year":2008,
+"player":"Patrick Kane",
+"trophy":"Calder",
+"position":"RW"
+},
+{
+"year":1991,
+"player":"Ed Belfour",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1983,
+"player":"Steve Larmer",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1970,
+"player":"Esposito Esposito",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1960,
+"player":"Bill Hay",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1955,
+"player":"Ed Litzenberger",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1938,
+"player":"Cully Dahlstrom",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1936,
+"player":"Mike Karakas",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2015,
+"player":"Duncan Keith",
+"trophy":"Conn Smythe",
+"position":"D"
+},
+{
+"year":2013,
+"player":"Patrick Kane",
+"trophy":"Conn Smythe",
+"position":"RW"
+},
+{
+"year":2010,
+"player":"Jonathan Toews",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":1983,
+"player":"Orval Tessier",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2013,
+"player":"Jonathan Toews",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":1991,
+"player":"Dirk Graham",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1986,
+"player":"Troy Murray",
+"trophy":"Selke",
+"position":""
+}
+],
+"red-wings":[
+{
+"year":1994,
+"player":"Sergei Fedorov",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":1963,
+"player":"Gordie Howe",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1960,
+"player":"Gordie Howe",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1958,
+"player":"Gordie Howe",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1957,
+"player":"Gordie Howe",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1953,
+"player":"Gordie Howe",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1952,
+"player":"Gordie Howe",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1949,
+"player":"Sid Abel",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1940,
+"player":"Eddie Goodfellow",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":2011,
+"player":"Nicklas Lidstrom",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2008,
+"player":"Nicklas Lidstrom",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2007,
+"player":"Nicklas Lidstrom",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2006,
+"player":"Nicklas Lidstrom",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2003,
+"player":"Nicklas Lidstrom",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2002,
+"player":"Nicklas Lidstrom",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2001,
+"player":"Nicklas Lidstrom",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1995,
+"player":"Paul Coffey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1954,
+"player":"Red Kelly",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1955,
+"player":"Terry Sawchuk",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1953,
+"player":"Terry Sawchuk",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1952,
+"player":"Terry Sawchuk",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1943,
+"player":"Johnny Mowers",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1937,
+"player":"Normie Smith",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2022,
+"player":"Moritz Seider",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1965,
+"player":"Roger Crozier",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1956,
+"player":"Glenn Hall",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1951,
+"player":"Terry Sawchuk",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1948,
+"player":"Jim McFadden",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1933,
+"player":"Carl Voss",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2008,
+"player":"Henrik Zetterberg",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":2002,
+"player":"Nicklas Lidstrom",
+"trophy":"Conn Smythe",
+"position":"D"
+},
+{
+"year":1998,
+"player":"Steve Yzerman",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":1997,
+"player":"Mike Vernon",
+"trophy":"Conn Smythe",
+"position":"G"
+},
+{
+"year":1966,
+"player":"Roger Crozier",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1996,
+"player":"Scotty Bowman",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1988,
+"player":"Jacques Demers",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1987,
+"player":"Jacques Demers",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1978,
+"player":"Bobby Bobby",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2010,
+"player":"Pavel Datsyuk",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2009,
+"player":"Pavel Datsyuk",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2008,
+"player":"Pavel Datsyuk",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2004,
+"player":"Kris Draper",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2000,
+"player":"Steve Yzerman",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":1996,
+"player":"Sergei Fedorov",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":1994,
+"player":"Sergei Fedorov",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2009,
+"player":"Pavel Datsyuk",
+"trophy":"Lady Byng",
+"position":"C"
+},
+{
+"year":2008,
+"player":"Pavel Datsyuk",
+"trophy":"Lady Byng",
+"position":"C"
+},
+{
+"year":2007,
+"player":"Pavel Datsyuk",
+"trophy":"Lady Byng",
+"position":"C"
+}
+],
+"maple-leafs":[
+{
+"year":2022,
+"player":"Auston Matthews",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":1955,
+"player":"Ted Kennedy",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1944,
+"player":"Babe Pratt",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1965,
+"player":"Johnny Bower",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1965,
+"player":"Terry Sawchuk",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1961,
+"player":"Johnny Bower",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1954,
+"player":"Harry Lumley",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1951,
+"player":"Al Rollins",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1948,
+"player":"Turk Broda",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1941,
+"player":"Turk Broda",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2017,
+"player":"Auston Matthews",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":1966,
+"player":"Brit Selby",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1963,
+"player":"Kent Douglas",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1961,
+"player":"Dave Keon",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1958,
+"player":"Frank Mahovlich",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1947,
+"player":"Howie Meeker",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1945,
+"player":"Frank McCool",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1944,
+"player":"Gus Bodnar",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1943,
+"player":"Gaye Stewart",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1937,
+"player":"Syl Apps",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1967,
+"player":"Dave Keon",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1993,
+"player":"Pat Burns",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1993,
+"player":"Doug Gilmour",
+"trophy":"Selke",
+"position":""
+}
+],
+"rangers":[
+{
+"year":1992,
+"player":"Mark Messier",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":1959,
+"player":"Andy Bathgate",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1950,
+"player":"Charlie Rayner",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1948,
+"player":"Buddy O'Connor",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":2021,
+"player":"Adam Fox",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1997,
+"player":"Brian Leetch",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1992,
+"player":"Brian Leetch",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1967,
+"player":"Harry Howell",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1962,
+"player":"Doug Harvey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2022,
+"player":"Igor Shesterkin",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2012,
+"player":"Henrik Lundqvist",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1986,
+"player":"John Vanbiesbrouck",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1971,
+"player":"Ed Giacomin",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1971,
+"player":"Gilles Villemure",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1940,
+"player":"Dave Kerr",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1989,
+"player":"Brian Leetch",
+"trophy":"Calder",
+"position":"D"
+},
+{
+"year":1973,
+"player":"Steve Vickers",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1954,
+"player":"Camille Henry",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1953,
+"player":"Gump Worsley",
+"trophy":"Calder",
+"position":"G"
+},
+{
+"year":1949,
+"player":"Pentti Lund",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1946,
+"player":"Edgar Laprade",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1942,
+"player":"Grant Warwick",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1940,
+"player":"Kilby MacDonald",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1994,
+"player":"Brian Leetch",
+"trophy":"Conn Smythe",
+"position":"D"
+}
+],
+"blues":[
+{
+"year":2000,
+"player":"Chris Pronger",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1991,
+"player":"Brett Hull",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":2000,
+"player":"Chris Pronger",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1999,
+"player":"Al MacInnis",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1969,
+"player":"Glenn Hall",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1969,
+"player":"Jacques Plante",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2003,
+"player":"Barret Jackman",
+"trophy":"Calder",
+"position":"D"
+},
+{
+"year":2019,
+"player":"Ryan O'Reilly",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":1968,
+"player":"Glenn Hall",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":2012,
+"player":"Ken Hitchcock[e]",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2000,
+"player":"Joel Quenneville",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1991,
+"player":"Brian Sutter",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1981,
+"player":"Gordon \"Red\" Berenson",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2019,
+"player":"Ryan O'Reilly",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":1990,
+"player":"Rick Meagher",
+"trophy":"Selke",
+"position":""
+}
+],
+"stars":[
+{
+"year":1979,
+"player":"Bobby Smith",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1969,
+"player":"Danny Grant",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1999,
+"player":"Joe Nieuwendyk",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":2003,
+"player":"Jere Lehtinen",
+"trophy":"Selke",
+"position":"LW"
+},
+{
+"year":1999,
+"player":"Jere Lehtinen",
+"trophy":"Selke",
+"position":"LW"
+},
+{
+"year":1998,
+"player":"Jere Lehtinen",
+"trophy":"Selke",
+"position":""
+}
+],
+"sabres":[
+{
+"year":1998,
+"player":"Dominik Hasek",
+"trophy":"Hart",
+"position":"G"
+},
+{
+"year":1997,
+"player":"Dominik Hasek",
+"trophy":"Hart",
+"position":"G"
+},
+{
+"year":2010,
+"player":"Ryan Miller",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2001,
+"player":"Dominik Hasek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1999,
+"player":"Dominik Hasek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1998,
+"player":"Dominik Hasek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1997,
+"player":"Dominik Hasek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1995,
+"player":"Dominik Hasek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1994,
+"player":"Dominik Hasek",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1984,
+"player":"Tom Barrasso",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1980,
+"player":"Don Edwards",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1980,
+"player":"Bob Sauve",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2010,
+"player":"Tyler Myers",
+"trophy":"Calder",
+"position":"D"
+},
+{
+"year":1984,
+"player":"Tom Barrasso",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1971,
+"player":"Gilbert Perreault",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2006,
+"player":"Lindy Ruff",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1997,
+"player":"Ted Nolan",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1997,
+"player":"Michael Peca",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":1985,
+"player":"Craig Ramsay",
+"trophy":"Selke",
+"position":""
+}
+],
+"flyers":[
+{
+"year":1995,
+"player":"Eric Lindros",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1976,
+"player":"Bobby Clarke",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1975,
+"player":"Bobby Clarke",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1973,
+"player":"Bobby Clarke",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1987,
+"player":"Ron Hextall",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1985,
+"player":"Pelle Lindbergh",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1975,
+"player":"Bernie Parent",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1974,
+"player":"Bernie Parent",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1987,
+"player":"Ron Hextall",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1976,
+"player":"Reg Leach",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1975,
+"player":"Bernie Parent",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1974,
+"player":"Bernie Parent",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":2001,
+"player":"Bill Barber",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1985,
+"player":"Mike Keenan",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1980,
+"player":"Pat Quinn",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1974,
+"player":"Fred Shero",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2020,
+"player":"Sean Couturier",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":1987,
+"player":"Dave Poulin",
+"trophy":"Selke",
+"position":""
+},
+{
+"year":1983,
+"player":"Bobby Clarke",
+"trophy":"Selke",
+"position":""
+}
+],
+"islanders":[
+{
+"year":1979,
+"player":"Bryan Trottier",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1979,
+"player":"Denis Potvin",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1978,
+"player":"Denis Potvin",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1976,
+"player":"Denis Potvin",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1982,
+"player":"Billy Smith",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2018,
+"player":"Mathew Barzal",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":1997,
+"player":"Bryan Berard",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1978,
+"player":"Mike Bossy",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1976,
+"player":"Bryan Trottier",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1974,
+"player":"Denis Potvin",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1983,
+"player":"Billy Smith",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1982,
+"player":"Mike Bossy",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1981,
+"player":"Butch Goring",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1980,
+"player":"Bryan Trottier",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":2019,
+"player":"Barry Trotz",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1979,
+"player":"Al Arbour",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2002,
+"player":"Michael Peca",
+"trophy":"Selke",
+"position":""
+}
+],
+"kings":[
+{
+"year":1989,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":2016,
+"player":"Drew Doughty",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1998,
+"player":"Rob Blake",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1987,
+"player":"Luc Robitaille",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2014,
+"player":"Justin Williams",
+"trophy":"Conn Smythe",
+"position":"RW"
+},
+{
+"year":2012,
+"player":"Jonathan Quick",
+"trophy":"Conn Smythe",
+"position":"G"
+},
+{
+"year":1975,
+"player":"Bob Pulford",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2018,
+"player":"Anze Kopitar",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2016,
+"player":"Anze Kopitar",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2025,
+"player":"Anze Kopitar",
+"trophy":"Lady Byng",
+"position":"C"
+},
+{
+"year":2023,
+"player":"Anze Kopitar",
+"trophy":"Lady Byng",
+"position":"C"
+},
+{
+"year":2016,
+"player":"Anze Kopitar",
+"trophy":"Lady Byng",
+"position":"C"
+}
+],
+"flames":[
+{
+"year":2019,
+"player":"Mark Giordano",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2006,
+"player":"Miikka Kiprusoff",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1990,
+"player":"Sergei Makarov",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1988,
+"player":"Joe Nieuwendyk",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1986,
+"player":"Gary Suter",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1977,
+"player":"Willi Plett",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1975,
+"player":"Eric Vail",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1989,
+"player":"Al MacInnis",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":2022,
+"player":"Darryl Sutter",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2015,
+"player":"Bob Hartley",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2017,
+"player":"Johnny Gaudreau",
+"trophy":"Lady Byng",
+"position":"LW"
+},
+{
+"year":2015,
+"player":"Jiri Hudler",
+"trophy":"Lady Byng",
+"position":"RW"
+}
+],
+"oilers":[
+{
+"year":2023,
+"player":"Connor McDavid",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2021,
+"player":"Connor McDavid",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2020,
+"player":"Leon Draisaitl",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2017,
+"player":"Connor McDavid",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":1990,
+"player":"Mark Messier",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1987,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1986,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1985,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1984,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1983,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1982,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1981,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1980,
+"player":"Wayne Gretzky",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1986,
+"player":"Paul Coffey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1985,
+"player":"Paul Coffey",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1988,
+"player":"Grant Fuhr",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2024,
+"player":"Connor McDavid",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":1990,
+"player":"Bill Ranford",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1988,
+"player":"Wayne Gretzky",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1985,
+"player":"Wayne Gretzky",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1984,
+"player":"Mark Messier",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1986,
+"player":"Glen Sather",
+"trophy":"Adams",
+"position":"Coach"
+}
+],
+"avalanche":[
+{
+"year":2024,
+"player":"Nathan MacKinnon",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2003,
+"player":"Peter Forsberg",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2001,
+"player":"Joe Sakic",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2025,
+"player":"Cale Makar",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2022,
+"player":"Cale Makar",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2020,
+"player":"Cale Makar",
+"trophy":"Calder",
+"position":"D"
+},
+{
+"year":2014,
+"player":"Nathan MacKinnon",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":2012,
+"player":"Gabriel Landeskog",
+"trophy":"Calder",
+"position":"LW"
+},
+{
+"year":1999,
+"player":"Chris Drury",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1995,
+"player":"Peter Forsberg",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":1981,
+"player":"Peter Stastny",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2022,
+"player":"Cale Makar",
+"trophy":"Conn Smythe",
+"position":"D"
+},
+{
+"year":2001,
+"player":"Patrick Roy",
+"trophy":"Conn Smythe",
+"position":"G"
+},
+{
+"year":1996,
+"player":"Joe Sakic",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":2014,
+"player":"Patrick Roy",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1995,
+"player":"Marc Crawford",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2020,
+"player":"Nathan MacKinnon",
+"trophy":"Lady Byng",
+"position":"C"
+},
+{
+"year":2014,
+"player":"Ryan O'Reilly",
+"trophy":"Lady Byng",
+"position":"C"
+}
+],
+"penguins":[
+{
+"year":2014,
+"player":"Sidney Crosby",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2012,
+"player":"Evgeni Malkin",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2007,
+"player":"Sidney Crosby",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":1999,
+"player":"Jaromir Jagr",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1996,
+"player":"Mario Lemieux",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1993,
+"player":"Mario Lemieux",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1988,
+"player":"Mario Lemieux",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1981,
+"player":"Randy Carlyle",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2007,
+"player":"Evgeni Malkin",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":1985,
+"player":"Mario Lemieux",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2017,
+"player":"Sidney Crosby",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":2016,
+"player":"Sidney Crosby",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":2009,
+"player":"Evgeni Malkin",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":1992,
+"player":"Mario Lemieux",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1991,
+"player":"Mario Lemieux",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":2011,
+"player":"Dan Bylsma",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1995,
+"player":"Ron Francis",
+"trophy":"Selke",
+"position":""
+}
+],
+"mammoth":[
+{
+"year":1993,
+"player":"Teemu Selanne",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1982,
+"player":"Dale Hawerchuk",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2010,
+"player":"Dave Tippett",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2002,
+"player":"Bob Francis",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1990,
+"player":"Bob Murdoch",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1982,
+"player":"Tom Watt",
+"trophy":"Adams",
+"position":"Coach"
+}
+],
+"capitals":[
+{
+"year":2013,
+"player":"Alexander Ovechkin",
+"trophy":"Hart",
+"position":"RW"
+},
+{
+"year":2009,
+"player":"Alexander Ovechkin",
+"trophy":"Hart",
+"position":"LW"
+},
+{
+"year":2008,
+"player":"Alexander Ovechkin",
+"trophy":"Hart",
+"position":"LW"
+},
+{
+"year":1984,
+"player":"Rod Langway",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1983,
+"player":"Rod Langway",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2016,
+"player":"Braden Holtby",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2000,
+"player":"Olaf Kolzig",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1996,
+"player":"Jim Carey",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2006,
+"player":"Alexander Ovechkin",
+"trophy":"Calder",
+"position":"LW"
+},
+{
+"year":2018,
+"player":"Alexander Ovechkin",
+"trophy":"Conn Smythe",
+"position":"LW"
+},
+{
+"year":2025,
+"player":"Spencer Carbery",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2016,
+"player":"Barry Trotz",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2008,
+"player":"Bruce Boudreau[e]",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1984,
+"player":"Bryan Murray",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1984,
+"player":"Doug Jarvis",
+"trophy":"Selke",
+"position":""
+}
+],
+"canucks":[
+{
+"year":2010,
+"player":"Henrik Sedin",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2024,
+"player":"Quinn Hughes",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2019,
+"player":"Elias Pettersson",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":1992,
+"player":"Pavel Bure",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2024,
+"player":"Rick Tocchet",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2007,
+"player":"Alain Vigneault",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1992,
+"player":"Pat Quinn",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2011,
+"player":"Ryan Kesler",
+"trophy":"Selke",
+"position":"C"
+}
+],
+"devils":[
+{
+"year":2018,
+"player":"Taylor Hall",
+"trophy":"Hart",
+"position":"LW"
+},
+{
+"year":2004,
+"player":"Scott Niedermayer",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2008,
+"player":"Martin Brodeur",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2007,
+"player":"Martin Brodeur",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2004,
+"player":"Martin Brodeur",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2003,
+"player":"Martin Brodeur",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2000,
+"player":"Scott Gomez",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":1994,
+"player":"Martin Brodeur",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2000,
+"player":"Scott Stevens",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1995,
+"player":"Claude Lemieux",
+"trophy":"Conn Smythe",
+"position":""
+},
+{
+"year":1994,
+"player":"Jacques Lemaire",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2001,
+"player":"John Madden",
+"trophy":"Selke",
+"position":""
+}
+],
+"senators":[
+{
+"year":2015,
+"player":"Erik Karlsson",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2012,
+"player":"Erik Karlsson",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":1996,
+"player":"Daniel Alfredsson",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2013,
+"player":"Paul MacLean",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":1999,
+"player":"Jacques Martin",
+"trophy":"Adams",
+"position":"Coach"
+}
+],
+"sharks":[
+{
+"year":2006,
+"player":"Joe Thornton",
+"trophy":"Hart",
+"position":"C"
+},
+{
+"year":2023,
+"player":"Erik Karlsson",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2017,
+"player":"Brent Burns",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2001,
+"player":"Evgeni Nabokov",
+"trophy":"Calder",
+"position":"G"
+}
+],
+"jets":[
+{
+"year":2025,
+"player":"Connor Hellebuyck",
+"trophy":"Hart",
+"position":"G"
+},
+{
+"year":2025,
+"player":"Connor Hellebuyck",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2024,
+"player":"Connor Hellebuyck",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2020,
+"player":"Connor Hellebuyck",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2002,
+"player":"Dany Heatley",
+"trophy":"Calder",
+"position":""
+},
+{
+"year":2022,
+"player":"Kyle Connor",
+"trophy":"Lady Byng",
+"position":"LW"
+}
+],
+"wild":[
+{
+"year":2021,
+"player":"Kirill Kaprizov",
+"trophy":"Calder",
+"position":"LW"
+},
+{
+"year":2003,
+"player":"Jacques Lemaire",
+"trophy":"Adams",
+"position":"Coach"
+}
+],
+"ducks":[
+{
+"year":2011,
+"player":"Corey Perry",
+"trophy":"Hart",
+"position":"RW"
+},
+{
+"year":2007,
+"player":"Scott Niedermayer",
+"trophy":"Conn Smythe",
+"position":"D"
+},
+{
+"year":2003,
+"player":"Jean-Sebastien Giguere",
+"trophy":"Conn Smythe",
+"position":"G"
+}
+],
+"lightning":[
+{
+"year":2019,
+"player":"Nikita Kucherov",
+"trophy":"Hart",
+"position":"RW"
+},
+{
+"year":2004,
+"player":"Martin St. Louis",
+"trophy":"Hart",
+"position":"RW"
+},
+{
+"year":2018,
+"player":"Victor Hedman",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2019,
+"player":"Andrei Vasilevskiy",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2021,
+"player":"Andrei Vasilevskiy",
+"trophy":"Conn Smythe",
+"position":"G"
+},
+{
+"year":2020,
+"player":"Victor Hedman",
+"trophy":"Conn Smythe",
+"position":"D"
+},
+{
+"year":2004,
+"player":"Brad Richards",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":2004,
+"player":"John Tortorella",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2013,
+"player":"Martin St. Louis",
+"trophy":"Lady Byng",
+"position":"RW"
+},
+{
+"year":2011,
+"player":"Martin St. Louis",
+"trophy":"Lady Byng",
+"position":"RW"
+},
+{
+"year":2010,
+"player":"Martin St. Louis",
+"trophy":"Lady Byng",
+"position":"RW"
+}
+],
+"hurricanes":[
+{
+"year":2011,
+"player":"Jeff Skinner",
+"trophy":"Calder",
+"position":"C"
+},
+{
+"year":2006,
+"player":"Cam Ward",
+"trophy":"Conn Smythe",
+"position":"G"
+},
+{
+"year":2021,
+"player":"Rod Brind'Amour",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2007,
+"player":"Rod Brind'Amour",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2006,
+"player":"Rod Brind'Amour",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2024,
+"player":"Jaccob Slavin",
+"trophy":"Lady Byng",
+"position":"D"
+},
+{
+"year":2021,
+"player":"Jaccob Slavin",
+"trophy":"Lady Byng",
+"position":"D"
+}
+],
+"blue-jackets":[
+{
+"year":2017,
+"player":"Sergei Bobrovsky",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2013,
+"player":"Sergei Bobrovsky",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2009,
+"player":"Steve Mason",
+"trophy":"Calder",
+"position":"G"
+},
+{
+"year":2017,
+"player":"John Tortorella",
+"trophy":"Adams",
+"position":"Coach"
+}
+],
+"panthers":[
+{
+"year":2015,
+"player":"Aaron Ekblad",
+"trophy":"Calder",
+"position":"D"
+},
+{
+"year":2013,
+"player":"Jonathan Huberdeau",
+"trophy":"Calder",
+"position":"LW"
+},
+{
+"year":2025,
+"player":"Sam Bennett",
+"trophy":"Conn Smythe",
+"position":"C"
+},
+{
+"year":2025,
+"player":"Aleksander Barkov",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2024,
+"player":"Aleksander Barkov",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2021,
+"player":"Aleksander Barkov",
+"trophy":"Selke",
+"position":"C"
+},
+{
+"year":2019,
+"player":"Aleksander Barkov",
+"trophy":"Lady Byng",
+"position":"C"
+},
+{
+"year":2012,
+"player":"Brian Campbell",
+"trophy":"Lady Byng",
+"position":"D"
+}
+],
+"golden-knights":[
+{
+"year":2021,
+"player":"Marc-Andre Fleury",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":2023,
+"player":"Jonathan Marchessault",
+"trophy":"Conn Smythe",
+"position":"RW"
+},
+{
+"year":2018,
+"player":"Gerard Gallant",
+"trophy":"Adams",
+"position":"Coach"
+},
+{
+"year":2018,
+"player":"William Karlsson",
+"trophy":"Lady Byng",
+"position":"C"
+}
+],
+"predators":[
+{
+"year":2020,
+"player":"Roman Josi",
+"trophy":"Norris",
+"position":"D"
+},
+{
+"year":2018,
+"player":"Pekka Rinne",
+"trophy":"Vezina",
+"position":"G"
+}
+],
+"kraken":[
+{
+"year":2023,
+"player":"Matty Beniers",
+"trophy":"Calder",
+"position":"C"
+}
+]
+}

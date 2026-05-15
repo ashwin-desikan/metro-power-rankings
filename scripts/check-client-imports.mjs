@@ -38,6 +38,8 @@ const SERVER_ONLY_MODULES = [
   "@/lib/standings",
   "@/lib/mlb-standings",
   "@/lib/nba-standings",
+  "@/lib/nhl",
+  "@/lib/nhl-standings",
 ];
 
 const SCAN_DIRS = ["app", "components"];
