@@ -1,0 +1,174 @@
+# /updates drift watcher
+#
+# Why this exists
+#   app/updates/page.tsx is a hand-curated public release log. When shipping
+#   commits land without a matching /updates entry, readers see new behavior
+#   on the site that nothing on /updates explains. This workflow detects that
+#   gap and opens a GitHub Issue so the next session knows to add an entry.
+#
+#   It is monitoring, not auto-generation: the public release notes have a
+#   distinct voice and a brevity rule (max 4 bullets, one short sentence each)
+#   that does not survive translation from commit messages. The bot only nags.
+#
+# How it works
+#   1. Finds the most recent commit that touched app/updates/page.tsx and
+#      uses its commit timestamp as the floor.
+#      Anchoring on commit time (not the editorial `date: "..."` string in
+#      the file) is what makes this accurate: same-day commits landing AFTER
+#      a /updates edit still count toward drift.
+#   2. Counts subsequent commits, excluding edits that only touched
+#      /updates itself, the substack snapshot, data JSONs, the workbook,
+#      and internal docs (which are gitignored anyway but listed here for
+#      future-proofing).
+#   3. If the count is at or above DRIFT_THRESHOLD, opens or updates a
+#      dedicated Issue listing the shipped commits. Below threshold, closes
+#      any open drift Issue.
+#
+# Tuning
+#   DRIFT_THRESHOLD controls noise. Default 3: two commits without an entry
+#   is normal session pacing; three or more usually means an entry is owed.
+#
+# Trigger cost
+#   One checkout + a handful of git commands per day. Negligible.
+
+name: /updates drift watcher
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: updates-drift-watcher
+  cancel-in-progress: true
+
+env:
+  DRIFT_THRESHOLD: 3
+
+jobs:
+  check-drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect drift
+        id: drift
+        run: |
+          set -euo pipefail
+
+          # Commit hash + ISO timestamp of the last edit to /updates.
+          LAST_UPDATES_SHA=$(git log -1 --pretty=format:'%H' -- app/updates/page.tsx)
+          if [ -z "$LAST_UPDATES_SHA" ]; then
+            echo "::error::Could not find any commit touching app/updates/page.tsx"
+            exit 1
+          fi
+          LAST_UPDATES_TS=$(git log -1 --pretty=format:'%cI' "$LAST_UPDATES_SHA")
+          LAST_UPDATES_DATE=$(git log -1 --pretty=format:'%cd' --date=short "$LAST_UPDATES_SHA")
+
+          # Most recent editorial date in the file (for the issue body).
+          LATEST_ENTRY=$(grep -oE 'date:[[:space:]]*"[0-9]{4}-[0-9]{2}-[0-9]{2}"' app/updates/page.tsx \
+                          | head -1 \
+                          | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+
+          # Exclude paths that ARE the /updates entries or data refreshes.
+          EXCLUDES=(
+            ':!app/updates/page.tsx'
+            ':!public/data/substack-feed.json'
+            ':!public/data/metros.json'
+            ':!public/data/regions.json'
+            ':!public/data/details'
+            ':!public/data/sports'
+            ':!public/data/teams'
+            ':!MetroAreas.xlsx'
+            ':!*.xlsx'
+            ':!BACKLOG.md'
+            ':!CONTENT.md'
+          )
+
+          # Commits strictly newer than the last /updates touch.
+          COMMITS=$(git log "${LAST_UPDATES_SHA}..HEAD" \
+                      --pretty=format:'%h %cd %s' --date=short \
+                      -- "${EXCLUDES[@]}" 2>/dev/null || true)
+
+          if [ -z "$COMMITS" ]; then
+            COUNT=0
+          else
+            COUNT=$(printf '%s\n' "$COMMITS" | wc -l | tr -d ' ')
+          fi
+
+          echo "Last /updates commit: $LAST_UPDATES_SHA ($LAST_UPDATES_TS)"
+          echo "Latest editorial date in file: $LATEST_ENTRY"
+          echo "Shipping commits since that touch: $COUNT"
+
+          {
+            echo "latest_entry=$LATEST_ENTRY"
+            echo "last_updates_date=$LAST_UPDATES_DATE"
+            echo "last_updates_sha=$LAST_UPDATES_SHA"
+            echo "count=$COUNT"
+          } >> "$GITHUB_OUTPUT"
+          printf '%s\n' "$COMMITS" | tail -25 > /tmp/commits.txt
+
+      - name: Open or update drift issue
+        if: ${{ fromJSON(steps.drift.outputs.count) >= fromJSON(env.DRIFT_THRESHOLD) }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COUNT: ${{ steps.drift.outputs.count }}
+          LATEST_ENTRY: ${{ steps.drift.outputs.latest_entry }}
+          LAST_UPDATES_DATE: ${{ steps.drift.outputs.last_updates_date }}
+          LAST_UPDATES_SHA: ${{ steps.drift.outputs.last_updates_sha }}
+        run: |
+          set -euo pipefail
+          TITLE="/updates is ${COUNT} commits behind (last edit ${LAST_UPDATES_DATE})"
+          BODY_FILE=$(mktemp)
+          {
+            echo "Last edit to \`app/updates/page.tsx\`: **${LAST_UPDATES_DATE}** (commit \`${LAST_UPDATES_SHA:0:9}\`)"
+            echo ""
+            echo "Most recent editorial date in the file: **${LATEST_ENTRY}**"
+            echo ""
+            echo "Shipping commits since that edit (excludes /updates itself, data snapshots, internal docs):"
+            echo ""
+            echo '```'
+            cat /tmp/commits.txt
+            echo '```'
+            echo ""
+            echo "Next step: if any of these are user-visible, amend the existing entry or add a new release entry at the top of \`app/updates/page.tsx\` (max 4 bullets, one sentence each)."
+            echo ""
+            echo "If everything above is internal-only, close this issue with a one-line note and the next run will respect it."
+            echo ""
+            echo "_Filed by \`.github/workflows/updates-drift-watcher.yml\`. Re-runs daily at 09:00 UTC._"
+          } > "$BODY_FILE"
+
+          EXISTING=$(gh issue list --state open \
+                       --search '"/updates is" in:title' \
+                       --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "Updating issue #${EXISTING}"
+            gh issue edit "$EXISTING" --title "$TITLE" --body-file "$BODY_FILE"
+          else
+            echo "Creating new drift issue"
+            gh issue create --title "$TITLE" --body-file "$BODY_FILE"
+          fi
+
+      - name: Close drift issue if resolved
+        if: ${{ fromJSON(steps.drift.outputs.count) < fromJSON(env.DRIFT_THRESHOLD) }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COUNT: ${{ steps.drift.outputs.count }}
+        run: |
+          set -euo pipefail
+          EXISTING=$(gh issue list --state open \
+                       --search '"/updates is" in:title' \
+                       --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue close "$EXISTING" --comment "Resolved: drift back under threshold (${COUNT} commits since last /updates edit)."
+          else
+            echo "No open drift issue; nothing to close."
+          fi

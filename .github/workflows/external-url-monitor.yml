@@ -1,0 +1,159 @@
+# External URL monitor
+#
+# Why this exists
+#   Several places in the codebase depend on external URLs that move silently:
+#     - lib/teamMarkers.ts pins cwur.org/2025.php; when CWUR ships 2026 the
+#       year-encoded URL 404s and no build error fires.
+#     - lib/{standings,mlb-standings,nba-standings,nhl-standings}.ts depend
+#       on ESPN's public standings API; ESPN has renamed teams mid-season
+#       before (NHL "Hockey Club" -> "Mammoth") and could rotate endpoints.
+#     - lib/substack.ts and the brand site both pull the public Substack
+#       RSS feed; a Substack outage degrades the home page silently if ISR
+#       happens to refresh during the window.
+#
+#   Each of these breaks readers, not builds. This workflow runs a daily
+#   HEAD/GET probe across the pinned URLs and files a single deduplicated
+#   Issue when something goes wrong. When the URL recovers, it closes the
+#   Issue automatically.
+#
+# What it does NOT do
+#   - Content-hash drift detection (noisy on dynamic pages). Status only.
+#   - Auto-patch. The Issue is the deliverable; humans decide the fix.
+#
+# Trigger cost
+#   ~7 curl HEAD/GETs per day, no checkout. Free tier safe.
+
+name: External URL monitor
+
+on:
+  schedule:
+    - cron: "30 7 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: external-url-monitor
+  cancel-in-progress: true
+
+jobs:
+  check-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe pinned external URLs
+        id: check
+        run: |
+          set -uo pipefail
+          # Format: url|name|notes (notes optional, surfaced in the Issue body).
+          URLS=(
+            "https://cwur.org/2025.php|CWUR 2025 index|Year-pinned URL; will need bump when CWUR publishes 2026"
+            "https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings|ESPN MLB standings|"
+            "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings|ESPN NBA standings|"
+            "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings|ESPN NHL standings|"
+            "https://site.api.espn.com/apis/v2/sports/football/nfl/standings|ESPN NFL standings|"
+            "https://citizenofnowhere.substack.com/feed|Substack RSS feed|Hot path: lib/substack.ts on rankings + brand site"
+            "https://citizenofnowhere.substack.com/archive|Substack archive page|"
+          )
+
+          FAILURES=""
+          ALL_RESULTS=""
+          UA="CitizenOfNowhereBot/1.0 (+https://rankings.citizenofnowhere.org)"
+
+          for entry in "${URLS[@]}"; do
+            url="${entry%%|*}"
+            rest="${entry#*|}"
+            name="${rest%%|*}"
+            notes="${rest#*|}"
+
+            # ESPN's JSON API and Substack RSS sometimes 405 on HEAD; GET them.
+            if [[ "$url" == *api.espn.com* || "$url" == */feed ]]; then
+              status=$(curl -sS -o /dev/null -w '%{http_code}' \
+                         --max-time 15 -A "$UA" "$url" || echo "000")
+            else
+              status=$(curl -sIS -o /dev/null -w '%{http_code}' \
+                         --max-time 15 -A "$UA" "$url" || echo "000")
+            fi
+
+            # Treat empty as 000.
+            [ -z "$status" ] && status="000"
+
+            ALL_RESULTS+="$(printf '%-4s  %-28s  %s' "$status" "$name" "$url")"$'\n'
+
+            # 2xx / 3xx pass; everything else (4xx, 5xx, 000 network failure) is a hit.
+            case "$status" in
+              2*|3*) : ;;
+              *)
+                if [ -n "$notes" ]; then
+                  FAILURES+="- **$name** [\`$status\`] $url  _($notes)_"$'\n'
+                else
+                  FAILURES+="- **$name** [\`$status\`] $url"$'\n'
+                fi
+                ;;
+            esac
+          done
+
+          echo "All results:"
+          printf '%s' "$ALL_RESULTS"
+
+          if [ -n "$FAILURES" ]; then
+            printf '%s' "$FAILURES"   > /tmp/failures.md
+            printf '%s' "$ALL_RESULTS" > /tmp/all-results.txt
+            echo "has_failures=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_failures=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update monitor issue
+        if: steps.check.outputs.has_failures == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TITLE="External URL monitor: failures detected"
+          BODY_FILE=$(mktemp)
+          {
+            echo "One or more pinned external URLs returned a non-success status this run."
+            echo ""
+            echo "## Failures"
+            echo ""
+            cat /tmp/failures.md
+            echo ""
+            echo "## All probes this run"
+            echo ""
+            echo '```'
+            cat /tmp/all-results.txt
+            echo '```'
+            echo ""
+            echo "**Next step:** triage the failing URL. If the upstream moved, update the constant in code; if it is a transient outage, close this issue and the next run will reopen it if the failure persists."
+            echo ""
+            echo "_Filed by \`.github/workflows/external-url-monitor.yml\`. Re-runs daily at 07:30 UTC and will close this Issue automatically when all probes pass._"
+          } > "$BODY_FILE"
+
+          EXISTING=$(gh issue list --state open \
+                       --search '"External URL monitor" in:title' \
+                       --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "Updating issue #${EXISTING}"
+            gh issue edit "$EXISTING" --title "$TITLE" --body-file "$BODY_FILE"
+          else
+            echo "Creating new monitor issue"
+            gh issue create --title "$TITLE" --body-file "$BODY_FILE"
+          fi
+
+      - name: Close monitor issue if all healthy
+        if: steps.check.outputs.has_failures == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          EXISTING=$(gh issue list --state open \
+                       --search '"External URL monitor" in:title' \
+                       --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue close "$EXISTING" --comment "All monitored URLs returned 2xx/3xx this run."
+          else
+            echo "No open monitor issue; nothing to close."
+          fi
