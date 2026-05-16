@@ -7,18 +7,27 @@
  * repo root so future sessions (and future-you) can read what's live without
  * having to open the Vercel dashboard.
  *
- * Auth: this script delegates to the `gh` CLI, which you've already
- * authenticated on your Windows machine. No tokens to manage, no secrets
- * to leak. If `gh` is missing, the script falls back to `curl` with the
- * GITHUB_TOKEN env var.
+ * Auth strategy (zero-config first):
+ *   1. `gh` CLI if installed + authenticated (handles auth + rate limits).
+ *   2. Anonymous GitHub API (no setup; works for public repos at 60/hr/IP).
+ *      Default path for this public repo.
+ *   3. Authenticated via GITHUB_TOKEN env var (escape hatch for rate limits
+ *      or if the repo flips to private).
  *
- * Why this design instead of polling GitHub from inside Cowork: GitHub's
- * API is rate-limited at 60/hr for unauthenticated callers and the Cowork
- * sandbox IP is blocked at the network edge (403 even on /rate_limit).
- * Running the check from your machine is both auth-clean and the natural
- * post-push moment.
+ * Vercel integration detection:
+ *   Vercel can post deploy state via the Check Runs API (modern, GitHub
+ *   App integration) OR via the legacy commit-status API (older hook-only
+ *   wiring). This script polls both and merges results so it works with
+ *   either integration style. If neither yields a Vercel entry, the
+ *   diagnostic dumps every check + status found on the commit so the user
+ *   can see whether the GitHub App is wired at all.
  *
- * Output format (.deploy-status.json):
+ * Windows quirk:
+ *   On certain Node versions, calling process.exit() while a fetch keep-
+ *   alive socket is mid-teardown triggers a libuv assertion crash. We set
+ *   process.exitCode and return instead, letting Node exit cleanly.
+ *
+ * Output (`.deploy-status.json`):
  *   {
  *     "commit": "<full sha>",
  *     "commit_short": "<7-char sha>",
@@ -26,18 +35,19 @@
  *     "deployment_url": "<vercel preview / production url, if any>",
  *     "details_url": "<vercel build log url>",
  *     "checked_at": "<iso timestamp>",
- *     "raw_check_name": "Vercel" (or whatever the check is labeled)
+ *     "raw_check_name": "Vercel" or null,
+ *     "source": "check-run" | "commit-status" | "none"
  *   }
  *
  * Exit codes: 0 = success, 1 = failure or unknown, 2 = still building.
  *
  * Usage:
- *   npm run deploy-status              # check HEAD
- *   node scripts/deploy-status.mjs <sha>   # check a specific commit
+ *   npm run deploy-status
+ *   node scripts/deploy-status.mjs <sha>
  */
 
 import { execSync, spawnSync } from "node:child_process";
-import { writeFileSync, existsSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -58,7 +68,8 @@ function resolveCommit() {
     return shell("git rev-parse HEAD");
   } catch (e) {
     console.error("deploy-status: could not resolve HEAD via git -", e.message);
-    process.exit(1);
+    process.exitCode = 1;
+    return null;
   }
 }
 
@@ -67,107 +78,207 @@ function ghAvailable() {
   return r.status === 0;
 }
 
-function fetchCheckRunsViaGh(sha) {
-  const r = spawnSync(
-    "gh",
-    ["api", `repos/${OWNER}/${REPO}/commits/${sha}/check-runs`, "--paginate"],
-    { encoding: "utf8" },
-  );
-  if (r.status !== 0) {
-    throw new Error("gh api failed: " + (r.stderr || r.stdout || "unknown"));
+class HttpError extends Error {
+  constructor(message, status, meta) {
+    super(message);
+    this.status = status;
+    this.meta = meta || {};
   }
-  return JSON.parse(r.stdout);
 }
 
-function fetchCheckRunsViaCurl(sha) {
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) {
-    throw new Error(
-      "neither `gh` nor GITHUB_TOKEN env var is available. Install GitHub CLI " +
-      "and run `gh auth login`, or set GITHUB_TOKEN to a PAT with repo:read scope."
-    );
+async function ghFetch(path) {
+  // GitHub CLI is wired-in auth + rate-limit handling. Use it when available.
+  if (ghAvailable()) {
+    const r = spawnSync("gh", ["api", path, "--paginate"], { encoding: "utf8" });
+    if (r.status === 0) {
+      try { return JSON.parse(r.stdout); } catch { /* fall through */ }
+    }
   }
-  const url = `https://api.github.com/repos/${OWNER}/${REPO}/commits/${sha}/check-runs`;
-  const cmd = `curl -fsS -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${token}" -H "User-Agent: deploy-status" "${url}"`;
-  const raw = shell(cmd);
-  return JSON.parse(raw);
+  // Fall back to direct fetch. Anonymous first; escalate to GITHUB_TOKEN
+  // if GitHub returns 401/403/429.
+  const url = `https://api.github.com/${path}`;
+  const baseHeaders = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": "deploy-status",
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
+  let res = await fetch(url, { headers: baseHeaders });
+  if (!res.ok && (res.status === 401 || res.status === 403 || res.status === 429)) {
+    const token = process.env.GITHUB_TOKEN;
+    if (token) {
+      res = await fetch(url, {
+        headers: { ...baseHeaders, Authorization: `Bearer ${token}` },
+      });
+    } else {
+      throw new HttpError(
+        "GitHub returned " + res.status + " for " + path + ". " +
+        "Set GITHUB_TOKEN to a PAT (github.com/settings/tokens; classic with " +
+        "repo:status, or fine-grained with Actions:read on this repo), or " +
+        "install GitHub CLI and run `gh auth login`.",
+        res.status,
+      );
+    }
+  }
+  if (!res.ok) {
+    throw new HttpError(`GET ${path} returned HTTP ${res.status}`, res.status);
+  }
+  return res.json();
 }
 
-function fetchCheckRuns(sha) {
-  if (ghAvailable()) return fetchCheckRunsViaGh(sha);
-  return fetchCheckRunsViaCurl(sha);
+// ---------- Sources ----------
+
+// Modern: Check Runs API. Vercel GitHub App posts here.
+async function getCheckRuns(sha) {
+  const payload = await ghFetch(`repos/${OWNER}/${REPO}/commits/${sha}/check-runs`);
+  return Array.isArray(payload?.check_runs) ? payload.check_runs : [];
 }
 
-// Pick the Vercel check. Vercel's GitHub App labels its check "Vercel" by
-// default, but project-scoped deploys also produce per-project labels like
-// "Vercel - metro-power-rankings". Match liberally.
-function pickVercelCheck(payload) {
-  const runs = (payload && payload.check_runs) || [];
-  // Strongest match first: official Vercel app
-  const byApp = runs.find(
-    (r) => r.app && r.app.slug === "vercel" && r.name,
-  );
+// Legacy: Combined commit status. Older Vercel integrations post here.
+async function getCommitStatuses(sha) {
+  const payload = await ghFetch(`repos/${OWNER}/${REPO}/commits/${sha}/status`);
+  return Array.isArray(payload?.statuses) ? payload.statuses : [];
+}
+
+// ---------- Match + normalize ----------
+
+function pickVercelCheckRun(runs) {
+  // Vercel GitHub App slug is "vercel". Some setups produce per-project
+  // names like "Vercel - <project>". Match liberally.
+  const byApp = runs.find((r) => r.app && r.app.slug === "vercel" && r.name);
   if (byApp) return byApp;
-  // Fallback: name starts with "Vercel"
   const byName = runs.find((r) => /^vercel/i.test(r.name || ""));
   if (byName) return byName;
   return null;
 }
 
-function normalizeState(check) {
-  // GitHub check-runs use a status + conclusion split:
-  //   status: queued | in_progress | completed
-  //   conclusion: success | failure | cancelled | skipped | timed_out | neutral | action_required
+function pickVercelStatus(statuses) {
+  // Legacy commit-status entries from Vercel typically carry context
+  // "vercel" or "vercel/<project>". Sometimes also under "deployment".
+  const byContext = statuses.find(
+    (s) => /^vercel(\/|$)/i.test(s.context || ""),
+  );
+  if (byContext) return byContext;
+  const byCreator = statuses.find(
+    (s) => /vercel/i.test(s.creator?.login || ""),
+  );
+  if (byCreator) return byCreator;
+  return null;
+}
+
+function normalizeStateFromCheckRun(check) {
   if (!check) return "unknown";
   if (check.status === "completed") return check.conclusion || "unknown";
   return check.status; // queued or in_progress
+}
+
+function normalizeStateFromStatus(status) {
+  // Legacy state vocabulary: pending | success | failure | error
+  if (!status) return "unknown";
+  const s = (status.state || "").toLowerCase();
+  if (s === "pending") return "in_progress";
+  if (s === "error" || s === "failure") return "failure";
+  if (s === "success") return "success";
+  return "unknown";
 }
 
 function shortSha(sha) {
   return sha.slice(0, 7);
 }
 
-function main() {
+function writeStatus(s) {
+  const out = join(REPO_ROOT, ".deploy-status.json");
+  writeFileSync(out, JSON.stringify(s, null, 2) + "\n");
+}
+
+function extractUrl(text) {
+  if (!text) return null;
+  const m = /(https?:\/\/[^\s)]+vercel\.app[^\s)]*)/i.exec(text);
+  return m ? m[1] : null;
+}
+
+async function main() {
   const sha = resolveCommit();
+  if (!sha) return;
   console.log(`deploy-status: probing ${shortSha(sha)}...`);
 
-  let payload;
+  let runs = [];
+  let statuses = [];
   try {
-    payload = fetchCheckRuns(sha);
+    [runs, statuses] = await Promise.all([
+      getCheckRuns(sha).catch(() => []),
+      getCommitStatuses(sha).catch(() => []),
+    ]);
   } catch (e) {
     console.error(`deploy-status: lookup failed - ${e.message}`);
-    process.exit(1);
+    process.exitCode = 1;
+    return;
   }
 
-  const check = pickVercelCheck(payload);
-  if (!check) {
-    console.error(
-      `deploy-status: no Vercel check found on ${shortSha(sha)}. ` +
-      `The Vercel GitHub App may not have posted yet — wait 30s and re-run.`
-    );
-    writeStatus({
-      commit: sha,
-      commit_short: shortSha(sha),
-      state: "unknown",
-      deployment_url: null,
-      details_url: null,
-      checked_at: new Date().toISOString(),
-      raw_check_name: null,
-    });
-    process.exit(2);
+  const checkRun = pickVercelCheckRun(runs);
+  const statusRow = pickVercelStatus(statuses);
+
+  // Prefer the modern check run when both exist. If only a status row exists,
+  // use it. If neither, dump diagnostics so the user can see what IS there.
+  let source = "none";
+  let state = "unknown";
+  let detailsUrl = null;
+  let deployUrl = null;
+  let rawName = null;
+
+  if (checkRun) {
+    source = "check-run";
+    state = normalizeStateFromCheckRun(checkRun);
+    detailsUrl = checkRun.details_url || null;
+    deployUrl = extractUrl(checkRun.output?.summary || "");
+    rawName = checkRun.name || null;
+  } else if (statusRow) {
+    source = "commit-status";
+    state = normalizeStateFromStatus(statusRow);
+    detailsUrl = statusRow.target_url || null;
+    deployUrl = extractUrl(statusRow.description || "") || statusRow.target_url || null;
+    rawName = statusRow.context || null;
   }
 
-  const state = normalizeState(check);
   const status = {
     commit: sha,
     commit_short: shortSha(sha),
     state,
-    deployment_url: (check.output && check.output.summary && extractUrl(check.output.summary)) || null,
-    details_url: check.details_url || null,
+    deployment_url: deployUrl,
+    details_url: detailsUrl,
     checked_at: new Date().toISOString(),
-    raw_check_name: check.name || null,
+    raw_check_name: rawName,
+    source,
   };
   writeStatus(status);
+
+  if (source === "none") {
+    console.error(`deploy-status: no Vercel entry found on ${shortSha(sha)}.`);
+    if (runs.length === 0 && statuses.length === 0) {
+      console.error(
+        "  GitHub returned 0 checks and 0 statuses on this commit. Either the " +
+        "Vercel GitHub App is not installed on this repo, or it hasn't posted yet."
+      );
+      console.error(
+        "  If you only use a Vercel Deploy Hook (per daily-rebuild.yml), there " +
+        "is no commit-level status to read. Install the Vercel GitHub App at " +
+        "https://github.com/apps/vercel to enable deploy-status reporting."
+      );
+    } else {
+      console.error("  Checks present:");
+      for (const r of runs) {
+        console.error(`    [check-run] name="${r.name}" app=${r.app?.slug || "?"} status=${r.status} conclusion=${r.conclusion || "-"}`);
+      }
+      for (const s of statuses) {
+        console.error(`    [status]    context="${s.context}" state=${s.state} creator=${s.creator?.login || "?"}`);
+      }
+      console.error(
+        "  None matched the Vercel patterns. If one of these IS Vercel under a " +
+        "different name, share the name and I'll add it to the matcher."
+      );
+    }
+    process.exitCode = 2;
+    return;
+  }
 
   const tag = {
     success: "PASS",
@@ -176,28 +287,13 @@ function main() {
     queued: "QUEUED",
   }[state] || state.toUpperCase();
 
-  console.log(`deploy-status: ${tag} on ${shortSha(sha)} (${check.name})`);
-  if (status.details_url) console.log(`  build log: ${status.details_url}`);
-  if (status.deployment_url) console.log(`  deploy:    ${status.deployment_url}`);
+  console.log(`deploy-status: ${tag} on ${shortSha(sha)} (${rawName}, via ${source})`);
+  if (detailsUrl) console.log(`  build log: ${detailsUrl}`);
+  if (deployUrl) console.log(`  deploy:    ${deployUrl}`);
 
-  // Exit codes encode the state so this can be chained in CI / scripts.
-  if (state === "success") process.exit(0);
-  if (state === "in_progress" || state === "queued") process.exit(2);
-  process.exit(1);
-}
-
-function writeStatus(s) {
-  const out = join(REPO_ROOT, ".deploy-status.json");
-  writeFileSync(out, JSON.stringify(s, null, 2) + "\n");
-}
-
-// Vercel's check output.summary often embeds a deployment URL in markdown.
-// Best-effort extraction so the JSON file has both the build log AND the
-// deployed site link.
-function extractUrl(text) {
-  if (!text) return null;
-  const m = /(https?:\/\/[^\s)]+vercel\.app[^\s)]*)/i.exec(text);
-  return m ? m[1] : null;
+  if (state === "success") process.exitCode = 0;
+  else if (state === "in_progress" || state === "queued") process.exitCode = 2;
+  else process.exitCode = 1;
 }
 
 main();
