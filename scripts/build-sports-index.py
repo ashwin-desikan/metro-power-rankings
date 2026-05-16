@@ -104,12 +104,18 @@ COUNTRY_ISO2 = {
 }
 
 
+# Workbook Level values that are actually league names (the workbook
+# inadvertently doubles them up). These belong in the League filter row,
+# not in the Level filter row.
+_LEVEL_VALUES_THAT_ARE_LEAGUES = {"F1", "NASCAR"}
+
 def _normalize_level(raw):
     """Return the workbook Level column value as a stable string, or None.
 
     Filters out empty / None / 0 / 'None' / 'none' so the Level filter chip
     row stays clean. Preserves real values: '1', '2', '3', 'College',
-    'Junior', 'Independent', 'NASCAR', 'A' / 'AA' / 'AAA' / 'High-A', etc.
+    'Junior', 'Independent', 'A' / 'AA' / 'AAA' / 'High-A', etc. Drops the
+    league-name values (F1, NASCAR) which should surface only as League chips.
     """
     if raw is None:
         return None
@@ -122,6 +128,8 @@ def _normalize_level(raw):
         return str(raw)
     s = str(raw).strip()
     if not s or s.lower() == "none" or s == "0":
+        return None
+    if s in _LEVEL_VALUES_THAT_ARE_LEAGUES:
         return None
     return s
 
@@ -313,58 +321,33 @@ def main():
     fc_count = 0
     fc_no_coords = 0
 
-    # Continent -> FIFA confederation map. Per MetroRankings convention,
-    # this uses the workbook's continent assignment (geographic), not FIFA's
-    # politically-shaped membership. So Israel + Kazakhstan map to UEFA
-    # (continent='Europe' in our workbook), Australia maps to AFC
-    # (continent='Asia' in our workbook), Guyana / Suriname map to CONCACAF
-    # (continent='North America' in our workbook).
-    CONTINENT_TO_FED = {
-        "Europe":        "UEFA",
-        "South America": "CONMEBOL",
-        "North America": "CONCACAF",
-        "Asia":          "AFC",
-        "Africa":        "CAF",
-        "Oceania":       "OFC",
-    }
-    # Country name -> federation. Built from public/data/countries.json so
-    # national-team markers can be filtered by confederation in the UI.
-    country_to_fed: dict[str, str] = {}
-    countries_path = ROOT / "public" / "data" / "countries.json"
-    if countries_path.exists():
-        with open(countries_path) as cf:
-            for c in json.load(cf):
-                name = c.get("name")
-                continent = c.get("continent")
-                fed = CONTINENT_TO_FED.get(continent)
-                if name and fed:
-                    country_to_fed[name] = fed
-
-    # Editorial overrides for national-team rows whose 'country' string
-    # does not match a current entry in countries.json. Covers:
-    #  - Historic nations (USSR, Yugoslavia, Czechoslovakia, East Germany,
-    #    Saar, South Vietnam, South Yemen, Netherlands Antilles).
-    #  - Renamed nations (Macedonia -> North Macedonia, Swaziland -> Eswatini).
-    #  - Limited-recognition entities mapped by the federation they actually
-    #    play in or would play in geographically (Kurdistan / Tibet / Chagos
-    #    Islands / Somaliland / Zanzibar).
-    country_to_fed.update({
-        "Soviet Union":         "UEFA",
-        "Yugoslavia":           "UEFA",
-        "Czechoslovakia":       "UEFA",
-        "East Germany":         "UEFA",
-        "Saar":                 "UEFA",
-        "Macedonia":            "UEFA",
-        "Netherlands Antilles": "CONCACAF",
-        "South Vietnam":        "AFC",
-        "South Yemen":          "AFC",
-        "Kurdistan":            "AFC",
-        "Tibet":                "AFC",
-        "Chagos Islands":       "AFC",
-        "Swaziland":            "CAF",
-        "Somaliland":           "CAF",
-        "Zanzibar":             "CAF",
-    })
+    # National-team metadata is sourced from public/data/national-teams.tsv
+    # (definitive reference uploaded 2026-05-16). Columns: National Team,
+    # Federation, FIFA, Active/Defunct. Federation includes 'Unaffiliated'.
+    # FIFA is either 'FIFA' or blank. Status is 'Active' or 'Defunct';
+    # Defunct rows are NEVER emitted as markers.
+    #
+    # We deliberately do NOT alias workbook names to NT names. The workbook
+    # carries both legacy and modern entries for two countries (Macedonia +
+    # North Macedonia, Swaziland + Eswatini); only the modern names match
+    # NT directly, which keeps the FIFA count exact. The legacy duplicates
+    # silently fall through to the no-NT-entry skip.
+    NT_COUNTRY_ALIASES: dict[str, str] = {}
+    nt_path = ROOT / "public" / "data" / "national-teams.tsv"
+    nt_lookup: dict[str, dict] = {}
+    if nt_path.exists():
+        with open(nt_path, "r") as nf:
+            next(nf)  # header
+            for line in nf:
+                parts = line.rstrip("\r\n").split("\t")
+                if len(parts) < 4 or not parts[0]:
+                    continue
+                name, fed, fifa, status = (p.strip() for p in parts[:4])
+                nt_lookup[name] = {
+                    "federation": fed or None,
+                    "fifa": fifa == "FIFA",
+                    "active": status == "Active",
+                }
 
     fc_excluded_not_ml = 0  # retained for parity but no longer used to drop rows
     for r in rows:
@@ -375,25 +358,37 @@ def main():
             fc_no_coords += 1
             continue
 
-        # UK home-nations consolidation (parallel to Team List path).
-        if country in ("England", "Scotland", "Wales", "Northern Ireland"):
+        is_national_team = isinstance(club, str) and club.strip().lower() == "country"
+
+        # UK home-nations consolidation applies to CLUB rows only. National-
+        # team rows must stay distinct (England, Scotland, Wales, Northern
+        # Ireland are separate UEFA / FIFA national football teams; there is
+        # no 'United Kingdom' international team).
+        if not is_national_team and country in ("England", "Scotland", "Wales", "Northern Ireland"):
             country = "United Kingdom"
 
         country_iso2 = COUNTRY_ISO2.get(country)
-        # National-team rows (Club designation = 'Country') surface as the
-        # 'International Teams' pseudo-league and inherit the Major tier so
-        # they render gold-filled and show up in the Major League preset.
-        # The federation tag (UEFA / CONMEBOL / CONCACAF / AFC / CAF / OFC)
-        # is derived from the workbook continent via CONTINENT_TO_FED.
-        is_national_team = isinstance(club, str) and club.strip().lower() == "country"
+        nt_fifa = None
+        nt_active = None
         if is_national_team:
             # International Teams ship as level=Other so they only enter
             # the visible set via the Special Filter opt-in (not in the
-            # default Major League preset). The federation tag is still
-            # derived so the Federation sub-filter works when surfaced.
+            # default Major League preset). Federation / FIFA / Active
+            # come from public/data/national-teams.tsv via nt_lookup.
+            # Lookup by team name (which equals the country name for sovereign
+            # nations and the territory name for dependencies whose 'country'
+            # column is the parent sovereign — Christmas Island under Australia,
+            # Saba / Sint Eustatius under Bonaire, etc).
+            lookup_key = NT_COUNTRY_ALIASES.get(team, team)
+            nt_entry = nt_lookup.get(lookup_key)
+            if nt_entry is None or not nt_entry["active"]:
+                # Skip rows that are defunct or absent from the reference.
+                continue
             display_league = "International Teams"
             fc_marker_level = "Other"
-            federation = country_to_fed.get(country)
+            federation = nt_entry["federation"]
+            nt_fifa = nt_entry["fifa"]
+            nt_active = nt_entry["active"]
         else:
             display_league = league
             fc_marker_level = "Major" if ml == "Y" else "Other"
@@ -420,6 +415,8 @@ def main():
             "team_page_url": None,  # no per-club pages yet
             "source": "football_club_data",
             "federation": federation,
+            "fifa": nt_fifa,
+            "active": nt_active,
             "workbook_level": _normalize_level(level),
         })
         fc_count += 1

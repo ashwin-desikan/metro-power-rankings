@@ -31,7 +31,9 @@ export type TeamMarker = {
   wikipedia_url: string | null;
   team_page_url: string | null;
   source: "team_list" | "football_club_data";
-  federation?: string | null; // UEFA / CONMEBOL / CONCACAF / AFC / CAF / OFC for national-team rows
+  federation?: string | null; // UEFA / COMNEBOL / CONCACAF / AFC / CAF / OFC / Unaffiliated for national-team rows
+  fifa?: boolean | null;     // true if the country is a FIFA member, false otherwise; null for non-national-team rows
+  active?: boolean | null;   // always true on emitted national-team markers (defunct rows are excluded entirely)
   workbook_level?: string | null; // Team List col J / FootballClub_Data col G (numeric tiers, College, Junior, etc.)
 };
 
@@ -135,12 +137,19 @@ type FilterState = {
   leagues: Set<string>;
   countries: Set<string>;
   federations: Set<string>;
+  fifa: Set<string>;     // {'FIFA'} | {'Non-FIFA'} | {} | {both}
+  active: Set<string>;   // {'Active'} | {} (Defunct excluded from data)
   levels: Set<string>;
 };
 
-// Federation chip order: biggest member set first, OFC last. Used by
-// both the facet ordering and the chip row in the UI.
-const FEDERATION_ORDER = ["UEFA", "CAF", "AFC", "CONCACAF", "CONMEBOL", "OFC"] as const;
+// Federation chip order. Mirrors the six FIFA confederations + the
+// Unaffiliated bucket (countries that play international football but
+// don't belong to any of the six confederations: Falkland Islands,
+// Greenland, Northern Cyprus, Monaco, Vatican City, etc). COMNEBOL
+// spelling intentional — mirrors public/data/national-teams.tsv exactly.
+const FEDERATION_ORDER = [
+  "UEFA", "COMNEBOL", "CONCACAF", "AFC", "CAF", "OFC", "Unaffiliated",
+] as const;
 
 function parseSetParam(s: string | null): Set<string> {
   if (!s) return new Set();
@@ -162,6 +171,8 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     leagues:     parseSetParam(searchParams.get("league")),
     countries:   parseSetParam(searchParams.get("country")),
     federations: parseSetParam(searchParams.get("fed")),
+    fifa:        parseSetParam(searchParams.get("fifa")),
+    active:      parseSetParam(searchParams.get("active")),
     levels:      parseSetParam(searchParams.get("level")),
   }));
   const [query, setQuery] = useState<string>(searchParams.get("q") || "");
@@ -195,11 +206,15 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     const l = stringifySet(filters.leagues);
     const c = stringifySet(filters.countries);
     const fed = stringifySet(filters.federations);
+    const fifa = stringifySet(filters.fifa);
+    const act = stringifySet(filters.active);
     const lev = stringifySet(filters.levels);
     if (s) params.set("sport", s);
     if (l) params.set("league", l);
     if (c) params.set("country", c);
     if (fed) params.set("fed", fed);
+    if (fifa) params.set("fifa", fifa);
+    if (act) params.set("active", act);
     if (lev) params.set("level", lev);
     if (query.trim()) params.set("q", query.trim());
     if (preset !== DEFAULT_PRESET) params.set("preset", preset);
@@ -316,6 +331,50 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
       .map((f) => [f, counts.get(f)!] as [string, number]);
   }, [teams, presetIncludes, filters.sports, filters.leagues, filters.countries]);
 
+  // FIFA facets — appears when International Teams is on. Two-state
+  // (FIFA / Non-FIFA) so users can scope to recognized vs unrecognized
+  // confederation entries (Falkland Islands, Northern Cyprus, etc.).
+  const fifaFacets = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const t of teams) {
+      if (!presetIncludes(t)) continue;
+      if (t.fifa === undefined || t.fifa === null) continue;
+      if (filters.sports.size > 0 && !filters.sports.has(t.sport)) continue;
+      if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) continue;
+      if (filters.countries.size > 0 && !filters.countries.has(t.country)) continue;
+      if (filters.federations.size > 0 && (!t.federation || !filters.federations.has(t.federation))) continue;
+      const k = t.fifa ? "FIFA" : "Non-FIFA";
+      counts.set(k, (counts.get(k) || 0) + 1);
+    }
+    return (["FIFA", "Non-FIFA"] as const)
+      .filter((k) => counts.has(k))
+      .map((k) => [k, counts.get(k)!] as [string, number]);
+  }, [teams, presetIncludes, filters.sports, filters.leagues, filters.countries, filters.federations]);
+
+  // Active facets — informational chip row alongside FIFA. Defunct rows
+  // are excluded from the data emit, so this resolves to a single 'Active'
+  // chip showing the surviving count.
+  const activeFacets = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const t of teams) {
+      if (!presetIncludes(t)) continue;
+      if (t.active === undefined || t.active === null) continue;
+      if (filters.sports.size > 0 && !filters.sports.has(t.sport)) continue;
+      if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) continue;
+      if (filters.countries.size > 0 && !filters.countries.has(t.country)) continue;
+      if (filters.federations.size > 0 && (!t.federation || !filters.federations.has(t.federation))) continue;
+      if (filters.fifa.size > 0) {
+        const fifaLabel = t.fifa === true ? "FIFA" : t.fifa === false ? "Non-FIFA" : null;
+        if (!fifaLabel || !filters.fifa.has(fifaLabel)) continue;
+      }
+      const k = t.active ? "Active" : "Defunct";
+      counts.set(k, (counts.get(k) || 0) + 1);
+    }
+    return (["Active", "Defunct"] as const)
+      .filter((k) => counts.has(k))
+      .map((k) => [k, counts.get(k)!] as [string, number]);
+  }, [teams, presetIncludes, filters.sports, filters.leagues, filters.countries, filters.federations, filters.fifa]);
+
   // Level facets — workbook Level column (Team List col J / FootballClub_Data
   // col G). Heterogeneous across sports: numeric divisions ('1', '2', '3'),
   // college ('College'), and named tiers ('Junior', 'Independent', 'NASCAR',
@@ -351,6 +410,15 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
       if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) return false;
       if (filters.countries.size > 0 && !filters.countries.has(t.country)) return false;
       if (filters.federations.size > 0 && (!t.federation || !filters.federations.has(t.federation))) return false;
+      if (filters.fifa.size > 0) {
+        const fifaLabel = t.fifa === true ? "FIFA" : t.fifa === false ? "Non-FIFA" : null;
+        if (!fifaLabel || !filters.fifa.has(fifaLabel)) return false;
+      }
+      if (filters.active.size > 0) {
+        // 'Active' on emitted national-team markers is always true (defunct
+        // are excluded); the chip still acts as an explicit narrow scope.
+        if (t.active !== true || !filters.active.has("Active")) return false;
+      }
       if (filters.levels.size > 0 && (!t.workbook_level || !filters.levels.has(t.workbook_level))) return false;
       if (q) {
         const haystack = `${t.team} ${t.city ?? ""} ${t.metro ?? ""} ${t.league}`.toLowerCase();
@@ -423,17 +491,28 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   }
 
   // International Teams Special Filter: toggling on adds 'International
-  // Teams' to filters.leagues so the visible set narrows to just the 250
-  // national teams. The League FilterRow is hidden when this is on
-  // (the Federation sub-filter is the only meaningful narrower left).
+  // Teams' to filters.leagues so the visible set narrows to just the
+  // national teams. The League FilterRow is hidden when this is on (the
+  // Federation / FIFA / Active sub-filters are the only meaningful
+  // narrowers left). When toggling off, also clear any Federation / FIFA
+  // / Active selections so they do not silently filter the global set.
   function toggleAddInternational() {
     setAddInternational((prev) => {
       const next = !prev;
       setFilters((prevF) => {
         const leagues = new Set(prevF.leagues);
-        if (next) leagues.add("International Teams");
-        else leagues.delete("International Teams");
-        return { ...prevF, leagues };
+        if (next) {
+          leagues.add("International Teams");
+          return { ...prevF, leagues };
+        }
+        leagues.delete("International Teams");
+        return {
+          ...prevF,
+          leagues,
+          federations: new Set<string>(),
+          fifa: new Set<string>(),
+          active: new Set<string>(),
+        };
       });
       return next;
     });
@@ -451,7 +530,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     setPreset(newPreset);
   }
   function clearAll() {
-    setFilters({ sports: new Set(), leagues: new Set(), countries: new Set(), federations: new Set(), levels: new Set() });
+    setFilters({ sports: new Set(), leagues: new Set(), countries: new Set(), federations: new Set(), fifa: new Set(), active: new Set(), levels: new Set() });
     setQuery("");
     setPreset(DEFAULT_PRESET);
     setAddPower(false);
@@ -489,7 +568,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   const showInternationalSpecial = presetAllowsSpecial && sportsActive.has("Football");
 
   const hasFilters =
-    filters.sports.size + filters.leagues.size + filters.countries.size + filters.federations.size + filters.levels.size > 0 ||
+    filters.sports.size + filters.leagues.size + filters.countries.size + filters.federations.size + filters.fifa.size + filters.active.size + filters.levels.size > 0 ||
     query.trim().length > 0 ||
     preset !== DEFAULT_PRESET ||
     addPower ||
@@ -636,7 +715,8 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
             count={majorCount}
             active={preset === "major"}
             onClick={() => handlePresetChange("major")}
-            title="Every workbook Major League top-flight team across all sports."
+            silver
+            title="Every workbook Major League top-flight team across all sports. Includes the Gold Standard as a strict subset."
           />
           <PresetChip
             label="Other Teams"
@@ -745,6 +825,33 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         />
       )}
 
+      {/* FIFA filter — appears when International Teams is on. Splits
+          national teams into FIFA members (211 today) and Non-FIFA (38). */}
+      {addInternational && fifaFacets.length > 0 && (
+        <FilterRow
+          label="FIFA"
+          facets={fifaFacets}
+          active={filters.fifa}
+          onToggle={(v) => toggle("fifa", v)}
+          onClearGroup={() => clearGroup("fifa")}
+          litWhenUnselected={federationRowLit}
+        />
+      )}
+
+      {/* Active filter — informational chip row. Defunct teams are
+          excluded from data entirely so this is currently a single-chip
+          row showing the active count. */}
+      {addInternational && activeFacets.length > 0 && (
+        <FilterRow
+          label="Active"
+          facets={activeFacets}
+          active={filters.active}
+          onToggle={(v) => toggle("active", v)}
+          onClearGroup={() => clearGroup("active")}
+          litWhenUnselected={federationRowLit}
+        />
+      )}
+
       {/* Level filter — reflects the workbook Level column (Team List col J,
           FootballClub_Data col G). Values include '1' / '2' / '3' (tiered
           numeric divisions), 'College', 'Junior', 'Independent', 'NASCAR',
@@ -806,13 +913,15 @@ function PresetChip({
   active,
   onClick,
   crown,
+  silver,
   title,
 }: {
   label: string;
   count: number;
   active: boolean;
   onClick: () => void;
-  crown?: boolean;
+  crown?: boolean;  // 🥇 Gold Standard
+  silver?: boolean; // 🥈 Major League (Gold Standard is a strict subset, so this is for the wider Major League preset)
   title?: string;
 }) {
   return (
@@ -829,6 +938,7 @@ function PresetChip({
       style={!active ? { borderColor: "var(--border)", color: "var(--text-muted)" } : undefined}
     >
       {crown && <span aria-hidden className="text-[10px] leading-none">🥇</span>}
+      {silver && <span aria-hidden className="text-[10px] leading-none">🥈</span>}
       <span>{label}</span>
       <span className="opacity-70 tabular-nums">{count}</span>
     </button>
