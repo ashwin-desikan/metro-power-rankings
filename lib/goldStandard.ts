@@ -29,6 +29,7 @@ export const GOLD_STANDARD_LEAGUES_BY_SPORT: Record<string, ReadonlySet<string>>
   "Handball":          new Set(["Handball-Bundesliga"]),
   "W Basketball":      new Set(["WNBA"]),
   "T20 Cricket":       new Set(["IPL"]),
+  "Auto Racing":       new Set(["F1"]),
 };
 
 export function isGoldStandardLeague(sport: string, league: string): boolean {

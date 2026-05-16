@@ -244,6 +244,12 @@ def main():
         # for ml in {Y, Euroleague}, 'Other' otherwise). The /sports UI
         # gates visibility via the preset chip.
         is_major_league_row = ml == "Y" or ml == "Euroleague"
+        # Sport-specific overrides: F1 and NASCAR are workbook ml='' but
+        # are unambiguously Major League scope in their sport. Promote them
+        # to Major so they ship in the default first paint and the Gold
+        # Standard set (F1 only) can resolve correctly.
+        if sport == "Auto Racing" and league in ("F1", "NASCAR"):
+            is_major_league_row = True
         is_ncaa_basketball = sport == "Basketball" and league == "NCAA"
         if league in NON_TEAM_LEAGUES:
             excluded_notable_venues += 1

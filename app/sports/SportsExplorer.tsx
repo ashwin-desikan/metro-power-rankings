@@ -45,14 +45,14 @@ export const SPORT_COLORS: Record<string, string> = {
   "Basketball":         "#ea580c", // orange-600
   "Hockey":             "#0369a1", // sky-700 (ice)
   "Football":           "#15803d", // green-700
-  "Rugby Union":        "#166534", // green-800
-  "Rugby League":       "#65a30d", // lime-600
+  "Rugby Union":        "#881337", // rose-900 (deep wine — distinct from football green)
+  "Rugby League":       "#e11d48", // rose-600 (bright wine — same family as Rugby Union, distinctly brighter)
   "T20 Cricket":        "#0e7490", // cyan-700
   "Test Cricket":       "#155e75", // cyan-800
   "Aussie Rules":       "#4338ca", // indigo-700
   "W Football":         "#be185d", // pink-700
   "W Basketball":       "#9d174d", // rose-800
-  "Volleyball":         "#0f766e", // teal-700
+  "Volleyball":         "#facc15", // yellow-400 (bright gold — distinct from football green)
   "Handball":           "#6d28d9", // purple-700
   "Canadian Football":  "#92400e", // amber-800
   "Golf":               "#14532d", // green-900
@@ -104,6 +104,11 @@ function isPowerConferences(t: TeamMarker): boolean {
   if (t.sport === "Basketball" && t.league_raw === "NCAA" && POWER_CONF_CBB_SET.has(t.league)) return true;
   return false;
 }
+
+// Union of the FBS Power 4 + Big East (the Basketball-only fifth high
+// major). Used when the Power Conferences Special Filter toggles on to
+// auto-select these chips in the League filter row.
+const POWER_CONFERENCE_ALL = ["Big Ten", "Southeastern", "Big 12", "Atlantic Coast", "Big East"] as const;
 
 const SportsMapInner = dynamic(() => import("./SportsMapInner"), {
   ssr: false,
@@ -396,6 +401,55 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   function clearGroup(group: keyof FilterState) {
     setFilters((prev) => ({ ...prev, [group]: new Set() }));
   }
+
+  // Power Conferences Special Filter: toggling on AUTO-SELECTS the 4/5
+  // conference chips in filters.leagues (so they highlight in the League
+  // row AND narrow the visible set to those conferences). Toggling off
+  // removes them. The union covers both AF and Basketball; Big East has
+  // no FBS rows so the AF view will only ever surface 4 of the 5.
+  function toggleAddPower() {
+    setAddPower((prev) => {
+      const next = !prev;
+      setFilters((prevF) => {
+        const leagues = new Set(prevF.leagues);
+        POWER_CONFERENCE_ALL.forEach((l) => {
+          if (next) leagues.add(l);
+          else leagues.delete(l);
+        });
+        return { ...prevF, leagues };
+      });
+      return next;
+    });
+  }
+
+  // International Teams Special Filter: toggling on adds 'International
+  // Teams' to filters.leagues so the visible set narrows to just the 250
+  // national teams. The League FilterRow is hidden when this is on
+  // (the Federation sub-filter is the only meaningful narrower left).
+  function toggleAddInternational() {
+    setAddInternational((prev) => {
+      const next = !prev;
+      setFilters((prevF) => {
+        const leagues = new Set(prevF.leagues);
+        if (next) leagues.add("International Teams");
+        else leagues.delete("International Teams");
+        return { ...prevF, leagues };
+      });
+      return next;
+    });
+  }
+
+  // Preset switch: cleanup Special Filter state when transitioning to
+  // Gold or Major (where the chips are hidden). Without this, residual
+  // Special-Filter-driven entries in filters.leagues would constrain the
+  // top-flight view to a near-empty map.
+  function handlePresetChange(newPreset: Preset) {
+    if (newPreset === "gold" || newPreset === "major") {
+      if (addPower) toggleAddPower();
+      if (addInternational) toggleAddInternational();
+    }
+    setPreset(newPreset);
+  }
   function clearAll() {
     setFilters({ sports: new Set(), leagues: new Set(), countries: new Set(), federations: new Set(), levels: new Set() });
     setQuery("");
@@ -425,9 +479,14 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   // both chips stay hidden because Special Filters by spec are opt-in
   // surfaces revealed by sport selection).
   const sportsActive = filters.sports;
-  const showPowerSpecial =
-    sportsActive.has("American Football") || sportsActive.has("Basketball");
-  const showInternationalSpecial = sportsActive.has("Football");
+  // Special Filters only surface under Other / All presets. Under Gold / Major
+  // the visible scope is top-flight only, and the Special Filter subsets
+  // (Power Conferences college, International Teams national teams) sit
+  // outside that scope, so the chips would be meaningless.
+  const presetAllowsSpecial = preset === "other" || preset === "all";
+  const showPowerSpecial = presetAllowsSpecial &&
+    (sportsActive.has("American Football") || sportsActive.has("Basketball"));
+  const showInternationalSpecial = presetAllowsSpecial && sportsActive.has("Football");
 
   const hasFilters =
     filters.sports.size + filters.leagues.size + filters.countries.size + filters.federations.size + filters.levels.size > 0 ||
@@ -516,11 +575,49 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         <SportsMapInner markers={visible} />
       </div>
 
+      {/* Tier definitions — expandable native disclosure so the page
+          stays compact on first paint but the semantics of each Preset
+          chip are one click away. Counts come from the same useMemos
+          that drive the chips, so they stay in sync as the data evolves. */}
+      <details className="group rounded-lg border border-[var(--border)] bg-[var(--bg-card)]/30">
+        <summary className="cursor-pointer list-none px-3 py-2 text-[11px] font-medium text-[var(--text-muted)] hover:text-[var(--accent)] flex items-center gap-2">
+          <span className="text-[10px] transition-transform group-open:rotate-90" aria-hidden>▶</span>
+          What do these tiers mean?
+        </summary>
+        <div className="grid sm:grid-cols-3 gap-4 px-4 pb-4 pt-1 text-[12px] leading-relaxed">
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              <span aria-hidden>🥇</span> Gold Standard{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({goldStandardCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              The apex top-flight in each sport. Football's top-five European leagues (Premier League / La Liga / Serie A / Bundesliga / Ligue 1) plus WSL and NWSL on the women's side. NFL, MLB, NBA, NHL, Top 14, Superlega, NRL, AFL, Handball-Bundesliga, WNBA, IPL elsewhere. The leagues a global sports fan names first.
+            </p>
+          </div>
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              <span aria-hidden>🥈</span> Major League{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({majorCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              Every workbook-flagged Major League team. Includes the Gold Standard as a strict subset plus other top flights: KHL hockey, CBA basketball, Euroleague, NPB baseball, CFL, Brasileirão, Argentine Primera, Liga F, and country-level top-flight football outside the European top five.
+            </p>
+          </div>
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              Other Teams{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({otherCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              Everything else with a place on the map: US college (FBS, NCAA Division I, NCAA W, FCS, College Hockey), Minor League Baseball, junior hockey, lower-flight football across every footballing nation, second-tier international competitions. Plus 250 national football teams via the Special Filter when Sport=Football is selected.
+            </p>
+          </div>
+        </div>
+      </details>
+
       {/* Preset row — mutually exclusive. Gold Standard = top-flight per sport;
           Major League = workbook 'Major League' = Y; Other = everything else
-          (college, minor, junior, lower-flight football); All = both combined.
-          A separate additive chip layers Power Conferences college on top of
-          Crown / Major (auto-hidden under Other / All). */}
+          (college, minor, junior, lower-flight football); All = both combined. */}
       <div>
         <div className="flex items-baseline gap-2 mb-1.5">
           <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">Preset</span>
@@ -530,7 +627,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
             label="Gold Standard"
             count={goldStandardCount}
             active={preset === "gold"}
-            onClick={() => setPreset("gold")}
+            onClick={() => handlePresetChange("gold")}
             crown
             title="The world's top-flight competition in each sport: NBA, NFL, NHL, MLB, CFL, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Top 14, WSL, NWSL, Superlega, NRL, AFL, Handball-Bundesliga, WNBA, IPL."
           />
@@ -538,21 +635,21 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
             label="Major League"
             count={majorCount}
             active={preset === "major"}
-            onClick={() => setPreset("major")}
+            onClick={() => handlePresetChange("major")}
             title="Every workbook Major League top-flight team across all sports."
           />
           <PresetChip
             label="Other Teams"
             count={otherCount}
             active={preset === "other"}
-            onClick={() => setPreset("other")}
+            onClick={() => handlePresetChange("other")}
             title="Every other team: college (FBS, NCAA D-I, FCS, College Hockey, NCAA W), Minor League, Junior, lower-flight football, second-tier international leagues."
           />
           <PresetChip
             label="All Teams"
             count={allCount}
             active={preset === "all"}
-            onClick={() => setPreset("all")}
+            onClick={() => handlePresetChange("all")}
             title="Everything on file: Major League + Other combined."
           />
         </div>
@@ -582,7 +679,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
                 label="+ NCAA Power Conferences"
                 count={powerCount}
                 active={addPower}
-                onClick={() => setAddPower((v) => !v)}
+                onClick={toggleAddPower}
                 title={addPower
                   ? "On: Big Ten / SEC / Big 12 / ACC football and Big East-inclusive Big 5 basketball are layered on top of the preset. Click to remove."
                   : "Off: click to layer NCAA Power Conferences (Big Ten / SEC / Big 12 / ACC football + Big East-inclusive Big 5 basketball) on top of the preset."}
@@ -593,7 +690,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
                 label="+ International Teams"
                 count={internationalCount}
                 active={addInternational}
-                onClick={() => setAddInternational((v) => !v)}
+                onClick={toggleAddInternational}
                 title={addInternational
                   ? "On: the 250 national football teams are layered on top of the preset, with the Federation sub-filter below. Click to remove."
                   : "Off: click to layer the 250 national football teams on top of the preset."}
@@ -608,7 +705,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
           with 🥈. Sort tier: crown > major > other, then count desc.
           International Teams is excluded from this row (it lives in
           Special Filters above). */}
-      {(filters.sports.size > 0 || filters.countries.size > 0) && leagueFacets.length > 0 && (
+      {(filters.sports.size > 0 || filters.countries.size > 0) && leagueFacets.length > 0 && !addInternational && (
         <FilterRow
           label="League"
           facets={leagueFacets}
