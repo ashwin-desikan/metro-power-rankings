@@ -54,12 +54,12 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-16",
-    headline: "/sports overhaul: presets, International Teams, Federation + Level filters",
+    headline: "/sports: Gold Standard, Special Filters, Federation + Level, medal badges",
     items: [
-      "Four mutually exclusive Preset chips above Sport (Crown Jewels 361 / Major League 1,179 / Other Teams 7,485 / All Teams 8,664) with a '+ NCAA Power Conferences' additive default on.",
-      "New 'International Teams' league surfaces 250 national football teams under Major League; Federation sub-filter (UEFA / CAF / AFC / CONCACAF / OFC / CONMEBOL) maps from MetroRankings continent.",
-      "Crown Jewels now sport-scoped so W Football no longer inherits the country-named men's leagues; League chips sort crown > major > other with 👑 and 🥈 badges; new Level filter row below League.",
-      "Filter chips light up when an upstream filter narrows their scope; per-category Clear links. Tooltip shows team / sport · league · level / location. NBA playoff badges link to Wikipedia; ABA in slate.",
+      "Four mutually exclusive Presets (Gold Standard 361 / Major League 929 / Other 7,735 / All 8,664). Power Conferences and International Teams now Special Filters, surfacing only when the relevant Sport is selected.",
+      "League chips wear 🥇 for Gold Standard (sport apex) and 🥈 for Major League non-Gold; sort gold > silver > other. Same medals now appear on metro page TeamCards next to each team's league.",
+      "Federation sub-filter (UEFA / CAF / AFC / CONCACAF / OFC / CONMEBOL) appears when the International Teams Special Filter is on; Level filter uses the workbook column (1/2/3, College, Junior, etc).",
+      "Filter chips light up when an upstream filter narrows scope; per-category Clear links. Tooltip shows team / sport · league · level / location. NBA playoff badges link to Wikipedia; ABA in slate.",
     ],
   },
   {
