@@ -69,7 +69,10 @@ const REVALIDATE_SECONDS = 3600;
 export async function getCurrentNhlStandings(): Promise<StandingsSnapshot> {
   let raw: unknown = null;
   try {
+    // 5-second timeout caps the failure cost when ESPN is slow / down.
+    // The existing try/catch handles AbortError identically to a 5xx.
     const res = await fetch(ESPN_STANDINGS_URL, {
+      signal: AbortSignal.timeout(5000),
       next: { revalidate: REVALIDATE_SECONDS },
       headers: {
         "User-Agent": "rankings-citizen-of-nowhere/1.0",

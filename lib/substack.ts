@@ -41,7 +41,10 @@ const REVALIDATE_SECONDS = 3600;
 export async function getSubstackPosts(limit = 10): Promise<SubstackPost[]> {
   let live: SubstackPost[] = [];
   try {
+    // 5-second timeout: never let a hung Substack hold up the build.
+    // The try/catch below falls back to the on-disk snapshot.
     const res = await fetch(FEED_URL, {
+      signal: AbortSignal.timeout(5000),
       // ISR-style revalidate. Works in Next.js server components.
       next: { revalidate: REVALIDATE_SECONDS },
       headers: {
