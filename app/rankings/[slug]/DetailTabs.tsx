@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { isGoldStandardLeague } from "@/lib/goldStandard";
 
 interface TabProps {
   label: string;
@@ -104,20 +105,26 @@ function TeamCard({
     major: boolean;
   };
 }) {
+  // 🥇 Gold Standard = apex top flight in its sport (sport-scoped via
+  // lib/goldStandard.ts; 'Soccer' is normalized to 'Football' there).
+  // 🥈 Major League = ml=Y in the workbook but not Gold Standard.
+  // 👑 (crown) is reserved for the metro's Top Team designation and is
+  // surfaced elsewhere on the metro page, not on these cards.
+  const isGold = isGoldStandardLeague(team.sport, team.league);
+  const isSilver = team.major && !isGold;
   return (
     <div className="border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)]">
-      <p className="text-xs text-[var(--text-muted)] mb-1">
-        {team.league}
+      <p className="text-xs text-[var(--text-muted)] mb-1 flex items-center gap-1.5">
+        {isGold && (
+          <span aria-hidden title="Gold Standard: top flight in its sport">🥇</span>
+        )}
+        {isSilver && (
+          <span aria-hidden title="Major League">🥈</span>
+        )}
+        <span>{team.league}</span>
       </p>
       <p className="font-semibold text-[var(--text)]">{team.team}</p>
       <p className="text-xs text-[var(--text-dim)]">{team.city}</p>
-      {team.major && (
-        <div className="mt-2 pt-2 border-t border-[var(--border)]">
-          <span className="text-xs bg-[var(--accent)] bg-opacity-20 text-[var(--accent)] px-2 py-1 rounded">
-            Major
-          </span>
-        </div>
-      )}
     </div>
   );
 }

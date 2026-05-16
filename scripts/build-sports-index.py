@@ -15,7 +15,7 @@ Scope: every Team List and FootballClub_Data row with valid coordinates.
   level='Other' (everything else). Notable Venues and Historic Venues are
   excluded (inert stadiums, not teams).
   The /sports UI gates the visible set with a preset chip:
-    Crown Jewels  = level='Major' AND CROWN_LEAGUES.has(league)
+    Gold Standard = level='Major' AND isGoldStandardLeague(sport, league)
     Major League  = level='Major'
     Other         = level='Other'
     All           = no level filter
@@ -102,6 +102,28 @@ COUNTRY_ISO2 = {
     "Qatar": "QA",
     "Israel": "IL",
 }
+
+
+def _normalize_level(raw):
+    """Return the workbook Level column value as a stable string, or None.
+
+    Filters out empty / None / 0 / 'None' / 'none' so the Level filter chip
+    row stays clean. Preserves real values: '1', '2', '3', 'College',
+    'Junior', 'Independent', 'NASCAR', 'A' / 'AA' / 'AAA' / 'High-A', etc.
+    """
+    if raw is None:
+        return None
+    if isinstance(raw, (int, float)):
+        if raw == 0:
+            return None
+        # Drop trailing .0 for ints stored as float.
+        if isinstance(raw, float) and raw.is_integer():
+            return str(int(raw))
+        return str(raw)
+    s = str(raw).strip()
+    if not s or s.lower() == "none" or s == "0":
+        return None
+    return s
 
 
 def slugify(s: str) -> str:
@@ -275,6 +297,7 @@ def main():
             "wikipedia_url": wiki or None,
             "team_page_url": team_page_url,
             "source": "team_list",
+            "workbook_level": _normalize_level(level),
         })
         team_list_count += 1
 
@@ -358,8 +381,12 @@ def main():
         # is derived from the workbook continent via CONTINENT_TO_FED.
         is_national_team = isinstance(club, str) and club.strip().lower() == "country"
         if is_national_team:
+            # International Teams ship as level=Other so they only enter
+            # the visible set via the Special Filter opt-in (not in the
+            # default Major League preset). The federation tag is still
+            # derived so the Federation sub-filter works when surfaced.
             display_league = "International Teams"
-            fc_marker_level = "Major"
+            fc_marker_level = "Other"
             federation = country_to_fed.get(country)
         else:
             display_league = league
@@ -387,6 +414,7 @@ def main():
             "team_page_url": None,  # no per-club pages yet
             "source": "football_club_data",
             "federation": federation,
+            "workbook_level": _normalize_level(level),
         })
         fc_count += 1
 

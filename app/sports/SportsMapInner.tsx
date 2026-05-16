@@ -104,7 +104,8 @@ export default function SportsMapInner({ markers }: Props) {
               <div style={{ fontFamily: "'Inter', sans-serif" }}>
                 <div style={{ fontWeight: 600, fontSize: 12 }}>{m.team}</div>
                 <div style={{ fontSize: 11, opacity: 0.85 }}>
-                  {m.sport} · {m.league} · {m.level === "Major" ? "Major League" : "Other"}
+                  {m.sport} · {m.league}
+                  {m.workbook_level ? ` · Level ${m.workbook_level}` : (m.level === "Major" ? " · Major League" : "")}
                 </div>
                 <div style={{ fontSize: 10, opacity: 0.75 }}>
                   {m.league === "International Teams" && m.federation
