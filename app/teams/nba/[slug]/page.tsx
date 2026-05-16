@@ -226,20 +226,24 @@ export default async function FranchisePage({ params }: Props) {
               <span className="text-[var(--text-dim)] ml-1">player-seasons across history</span>
             </p>
           )}
-          {/* Playoff state badge in hero — drops after Finals end */}
+          {/* Playoff state badge in hero — drops after Finals end. Links
+              out to the current year's Wikipedia playoffs page. */}
           {showPostseasonChip && playoffState && (
             <div className="mt-3">
-              <span
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide"
+              <a
+                href={`https://en.wikipedia.org/wiki/${playoffState.year}_NBA_playoffs`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide hover:opacity-85 transition-opacity"
                 style={{
                   background: PLAYOFF_STATE_COLORS[playoffState.state].bg,
                   color: PLAYOFF_STATE_COLORS[playoffState.state].text,
                 }}
-                title={`${playoffState.year} playoffs: ${playoffState.last_round}`}
+                title={`${playoffState.year} NBA playoffs: ${playoffState.last_round} (Wikipedia)`}
               >
                 <span aria-hidden>●</span>
                 <span>{playoffState.year} · {PLAYOFF_STATE_COLORS[playoffState.state].label}</span>
-              </span>
+              </a>
             </div>
           )}
           {/* Top Team badge */}
@@ -546,19 +550,33 @@ export default async function FranchisePage({ params }: Props) {
                     <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.place || "—"}</td>
                     <td className="py-1.5">
                       {isInProgress ? (
-                        <span
-                          className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                        <a
+                          href={`https://en.wikipedia.org/wiki/${s.year}_NBA_playoffs`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap hover:opacity-80 transition-opacity"
                           style={{ background: s.playoff_state_bg, color: s.playoff_state_text }}
+                          title={`${s.year} NBA playoffs (Wikipedia)`}
                         >
                           {s.playoff_state_label}
-                        </span>
+                        </a>
                       ) : s.champ ? (
-                        <span
-                          className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
-                          style={{ background: "#d4af37", color: "#1a1408" }}
-                        >
-                          NBA Champion
-                        </span>
+                        s.league === "ABA" ? (
+                          <span
+                            className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                            style={{ background: TITLE_COLORS.aba.bg, color: TITLE_COLORS.aba.text }}
+                            title="ABA Champion (rival league, 1968-76)"
+                          >
+                            ABA Champion
+                          </span>
+                        ) : (
+                          <span
+                            className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                            style={{ background: TITLE_COLORS.nba.bg, color: TITLE_COLORS.nba.text }}
+                          >
+                            {s.league === "BAA" ? "BAA Champion" : "NBA Champion"}
+                          </span>
+                        )
                       ) : s.champ_app ? (
                         <span
                           className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap border"
@@ -636,7 +654,11 @@ export default async function FranchisePage({ params }: Props) {
         {allNbaYears.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No All-NBA selections recorded.</p>
         ) : (
-          <div className="columns-1 sm:columns-2 gap-x-8 [column-fill:balance]">
+          // Dense horizontal layout: one row per season, picks flow right as
+          // tier-colored chips. Two-column on lg+ so high-volume franchises
+          // (Lakers, Celtics) don't run forever. Breathing room comes from
+          // space-y on rows and gap-x between chips rather than card padding.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-1.5">
             {allNbaYears.map((year) => {
               const picks = allNbaByYear.get(year)!;
               const ordered = [...picks].sort((a, b) => {
@@ -644,24 +666,24 @@ export default async function FranchisePage({ params }: Props) {
                 return (order[a.tier] ?? 9) - (order[b.tier] ?? 9);
               });
               return (
-                <div key={year} className="break-inside-avoid mb-3">
-                  <div className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] font-semibold mb-1">
-                    {seasonLabel(year)} <span className="text-[var(--text-dim)]">· {ordered.length}</span>
-                  </div>
-                  <ul className="text-xs space-y-0.5">
+                <div key={year} className="flex items-baseline gap-3 text-xs leading-snug">
+                  <span className="font-mono tabular-nums text-[11px] text-[var(--text-muted)] w-14 flex-shrink-0">
+                    {seasonLabel(year)}
+                  </span>
+                  <div className="flex flex-wrap gap-x-3 gap-y-1 min-w-0">
                     {ordered.map((p, i) => {
-                      const tierColor =
+                      const tierClass =
                         p.tier === "1st" ? "text-amber-300" :
                         p.tier === "2nd" ? "text-slate-300" :
                                            "text-stone-400";
                       return (
-                        <li key={i} className="flex gap-2 leading-tight">
-                          <span className={`font-bold tabular-nums w-6 flex-shrink-0 ${tierColor}`}>{p.tier}</span>
+                        <span key={i} className="inline-flex items-baseline gap-1.5 whitespace-nowrap">
+                          <span className={`font-bold tabular-nums ${tierClass}`}>{p.tier}</span>
                           <span className="text-[var(--text)]">{p.player}</span>
-                        </li>
+                        </span>
                       );
                     })}
-                  </ul>
+                  </div>
                 </div>
               );
             })}
