@@ -54,12 +54,12 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-16",
-    headline: "/sports preset row replaces Crown Jewels toggle",
+    headline: "/sports overhaul: presets, International Teams, Federation + Level filters",
     items: [
-      "Four mutually exclusive presets above the Sport row: Crown Jewels (361 top-flight markers), Major League (929), Other Teams (7,735), and All Teams (8,664).",
-      "Separate '+ NCAA Power Conferences' additive chip (default on) layers 79 high-major college markers on top of the Crown or Major preset.",
-      "Filter chips now light up when an upstream filter narrows their scope, so cross-scoping is visible at a glance; each filter category gets its own Clear link.",
-      "NBA team pages: playoff-state badges and in-progress season chips link out to the year's Wikipedia playoffs page; ABA / BAA championship rows render in their own colors.",
+      "Four mutually exclusive Preset chips above Sport (Crown Jewels 361 / Major League 1,179 / Other Teams 7,485 / All Teams 8,664) with a '+ NCAA Power Conferences' additive default on.",
+      "New 'International Teams' league surfaces 250 national football teams under Major League; Federation sub-filter (UEFA / CAF / AFC / CONCACAF / OFC / CONMEBOL) maps from MetroRankings continent.",
+      "Crown Jewels now sport-scoped so W Football no longer inherits the country-named men's leagues; League chips sort crown > major > other with 👑 and 🥈 badges; new Level filter row below League.",
+      "Filter chips light up when an upstream filter narrows their scope; per-category Clear links. Tooltip shows team / sport · league · level / location. NBA playoff badges link to Wikipedia; ABA in slate.",
     ],
   },
   {
