@@ -93,6 +93,11 @@ jobs:
           node-version: "20"
 
       - name: Refresh Substack snapshot
+        # Best-effort: if Substack 403s the runner today, we still want the
+        # rest of the workflow (Vercel deploy hook) to fire so the daily
+        # production rebuild happens regardless. Failure shows as a yellow
+        # warning in the GH UI without sending an email blast.
+        continue-on-error: true
         run: node scripts/refresh-substack-feed.mjs
 
       - name: Commit snapshot if changed

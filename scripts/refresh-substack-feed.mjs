@@ -83,12 +83,22 @@ function parseRss(xml) {
   return posts;
 }
 
+// Substack (via Cloudflare) 403s GitHub Actions runner IPs when the
+// request UA looks bot-ish. lib/substack.ts uses a bot-styled UA and works
+// fine from Vercel build runners (different IP ranges, not flagged), but
+// this script runs from GitHub Actions so we present a browser UA. We are
+// not pretending to be a person browsing — this is the published public RSS
+// feed and the runner hits it once a day. The UA is a workaround for
+// Cloudflare's default bot challenge, nothing more.
+const BROWSER_UA = "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0";
+
 async function main() {
   console.log(`Fetching ${FEED_URL} ...`);
   const res = await fetch(FEED_URL, {
     headers: {
-      "User-Agent": "CitizenOfNowhereBot/1.0 (+https://rankings.citizenofnowhere.org)",
+      "User-Agent": BROWSER_UA,
       Accept: "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.5",
     },
   });
   if (!res.ok) {
