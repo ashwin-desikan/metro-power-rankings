@@ -53,6 +53,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-16",
+    headline: "/sports preset row replaces Crown Jewels toggle",
+    items: [
+      "Four mutually exclusive presets above the Sport row: Crown Jewels (361 top-flight markers), Major League (929), Other Teams (7,735), and All Teams (8,664).",
+      "Separate '+ NCAA Power Conferences' additive chip (default on) layers 79 high-major college markers on top of the Crown or Major preset.",
+      "Filter chips now light up when an upstream filter narrows their scope, so cross-scoping is visible at a glance; each filter category gets its own Clear link.",
+      "NBA team pages: playoff-state badges and in-progress season chips link out to the year's Wikipedia playoffs page; ABA / BAA championship rows render in their own colors.",
+    ],
+  },
+  {
     date: "2026-05-15",
     headline: "NHL franchises live, Sovereign City Index, /sports overhaul",
     items: [
