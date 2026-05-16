@@ -284,6 +284,59 @@ def main():
     fc_count = 0
     fc_no_coords = 0
 
+    # Continent -> FIFA confederation map. Per MetroRankings convention,
+    # this uses the workbook's continent assignment (geographic), not FIFA's
+    # politically-shaped membership. So Israel + Kazakhstan map to UEFA
+    # (continent='Europe' in our workbook), Australia maps to AFC
+    # (continent='Asia' in our workbook), Guyana / Suriname map to CONCACAF
+    # (continent='North America' in our workbook).
+    CONTINENT_TO_FED = {
+        "Europe":        "UEFA",
+        "South America": "CONMEBOL",
+        "North America": "CONCACAF",
+        "Asia":          "AFC",
+        "Africa":        "CAF",
+        "Oceania":       "OFC",
+    }
+    # Country name -> federation. Built from public/data/countries.json so
+    # national-team markers can be filtered by confederation in the UI.
+    country_to_fed: dict[str, str] = {}
+    countries_path = ROOT / "public" / "data" / "countries.json"
+    if countries_path.exists():
+        with open(countries_path) as cf:
+            for c in json.load(cf):
+                name = c.get("name")
+                continent = c.get("continent")
+                fed = CONTINENT_TO_FED.get(continent)
+                if name and fed:
+                    country_to_fed[name] = fed
+
+    # Editorial overrides for national-team rows whose 'country' string
+    # does not match a current entry in countries.json. Covers:
+    #  - Historic nations (USSR, Yugoslavia, Czechoslovakia, East Germany,
+    #    Saar, South Vietnam, South Yemen, Netherlands Antilles).
+    #  - Renamed nations (Macedonia -> North Macedonia, Swaziland -> Eswatini).
+    #  - Limited-recognition entities mapped by the federation they actually
+    #    play in or would play in geographically (Kurdistan / Tibet / Chagos
+    #    Islands / Somaliland / Zanzibar).
+    country_to_fed.update({
+        "Soviet Union":         "UEFA",
+        "Yugoslavia":           "UEFA",
+        "Czechoslovakia":       "UEFA",
+        "East Germany":         "UEFA",
+        "Saar":                 "UEFA",
+        "Macedonia":            "UEFA",
+        "Netherlands Antilles": "CONCACAF",
+        "South Vietnam":        "AFC",
+        "South Yemen":          "AFC",
+        "Kurdistan":            "AFC",
+        "Tibet":                "AFC",
+        "Chagos Islands":       "AFC",
+        "Swaziland":            "CAF",
+        "Somaliland":           "CAF",
+        "Zanzibar":             "CAF",
+    })
+
     fc_excluded_not_ml = 0  # retained for parity but no longer used to drop rows
     for r in rows:
         if not r or len(r) < 11:
@@ -298,11 +351,24 @@ def main():
             country = "United Kingdom"
 
         country_iso2 = COUNTRY_ISO2.get(country)
-        fc_marker_level = "Major" if ml == "Y" else "Other"
+        # National-team rows (Club designation = 'Country') surface as the
+        # 'International Teams' pseudo-league and inherit the Major tier so
+        # they render gold-filled and show up in the Major League preset.
+        # The federation tag (UEFA / CONMEBOL / CONCACAF / AFC / CAF / OFC)
+        # is derived from the workbook continent via CONTINENT_TO_FED.
+        is_national_team = isinstance(club, str) and club.strip().lower() == "country"
+        if is_national_team:
+            display_league = "International Teams"
+            fc_marker_level = "Major"
+            federation = country_to_fed.get(country)
+        else:
+            display_league = league
+            fc_marker_level = "Major" if ml == "Y" else "Other"
+            federation = None
 
         markers.append({
             "sport": "Football",  # top-flight soccer
-            "league": league,
+            "league": display_league,
             "league_raw": league,
             "team": team,
             "main_div": None,
@@ -320,6 +386,7 @@ def main():
             "wikipedia_url": None,
             "team_page_url": None,  # no per-club pages yet
             "source": "football_club_data",
+            "federation": federation,
         })
         fc_count += 1
 

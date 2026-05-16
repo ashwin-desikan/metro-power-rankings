@@ -31,6 +31,7 @@ export type TeamMarker = {
   wikipedia_url: string | null;
   team_page_url: string | null;
   source: "team_list" | "football_club_data";
+  federation?: string | null; // UEFA / CONMEBOL / CONCACAF / AFC / CAF / OFC for national-team rows
 };
 
 // Sport -> ring color. Fill color is always Level-coded so two channels
@@ -85,13 +86,30 @@ export const CONFERENCE_COLORS: Record<string, string> = {
 
 // Crown Jewels = the apex top-flight competition in each sport. Used by
 // the Crown Jewels preset and for the crown emoji on League facets.
-// Football uses the country-named leagues (FootballClub_Data convention).
-export const CROWN_LEAGUES = new Set<string>([
-  "England", "Spain", "Italy", "France", "Germany",
-  "NBA", "NFL", "NHL", "MLB", "CFL",
-  "Top 14", "WSL", "NWSL", "Superlega", "NRL", "AFL",
-  "Handball-Bundesliga", "WNBA", "IPL",
-]);
+// Scoped per sport so the country-named Football leagues (England / Spain /
+// Italy / France / Germany == Premier League / La Liga / etc) do not bleed
+// into W Football, where the country-named workbook entries are the women's
+// domestic leagues and WSL / NWSL are the actual top flight.
+export const CROWN_LEAGUES_BY_SPORT: Record<string, ReadonlySet<string>> = {
+  "Football":          new Set(["England", "Spain", "Italy", "France", "Germany"]),
+  "American Football": new Set(["NFL"]),
+  "Baseball":          new Set(["MLB"]),
+  "Basketball":        new Set(["NBA"]),
+  "Hockey":            new Set(["NHL"]),
+  "Canadian Football": new Set(["CFL"]),
+  "Rugby Union":       new Set(["Top 14"]),
+  "W Football":        new Set(["WSL", "NWSL"]),
+  "Volleyball":        new Set(["Superlega"]),
+  "Rugby League":      new Set(["NRL"]),
+  "Aussie Rules":      new Set(["AFL"]),
+  "Handball":          new Set(["Handball-Bundesliga"]),
+  "W Basketball":      new Set(["WNBA"]),
+  "T20 Cricket":       new Set(["IPL"]),
+};
+
+export function isCrownLeague(sport: string, league: string): boolean {
+  return CROWN_LEAGUES_BY_SPORT[sport]?.has(league) ?? false;
+}
 
 // Power Conferences = the additive overlay that brings the recognizable
 // US college schools into the default first-paint view. Football uses
@@ -131,7 +149,13 @@ type FilterState = {
   sports: Set<string>;
   leagues: Set<string>;
   countries: Set<string>;
+  federations: Set<string>;
+  levels: Set<string>;
 };
+
+// Federation chip order: biggest member set first, OFC last. Used by
+// both the facet ordering and the chip row in the UI.
+const FEDERATION_ORDER = ["UEFA", "CAF", "AFC", "CONCACAF", "CONMEBOL", "OFC"] as const;
 
 function parseSetParam(s: string | null): Set<string> {
   if (!s) return new Set();
@@ -149,9 +173,11 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
 
   // ---- Filter state (rehydrated from URL on first paint) ----
   const [filters, setFilters] = useState<FilterState>(() => ({
-    sports:    parseSetParam(searchParams.get("sport")),
-    leagues:   parseSetParam(searchParams.get("league")),
-    countries: parseSetParam(searchParams.get("country")),
+    sports:      parseSetParam(searchParams.get("sport")),
+    leagues:     parseSetParam(searchParams.get("league")),
+    countries:   parseSetParam(searchParams.get("country")),
+    federations: parseSetParam(searchParams.get("fed")),
+    levels:      parseSetParam(searchParams.get("level")),
   }));
   const [query, setQuery] = useState<string>(searchParams.get("q") || "");
 
@@ -176,9 +202,13 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     const s = stringifySet(filters.sports);
     const l = stringifySet(filters.leagues);
     const c = stringifySet(filters.countries);
+    const fed = stringifySet(filters.federations);
+    const lev = stringifySet(filters.levels);
     if (s) params.set("sport", s);
     if (l) params.set("league", l);
     if (c) params.set("country", c);
+    if (fed) params.set("fed", fed);
+    if (lev) params.set("level", lev);
     if (query.trim()) params.set("q", query.trim());
     if (preset !== DEFAULT_PRESET) params.set("preset", preset);
     if (!addPower) params.set("power", "0");
@@ -198,7 +228,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
       // college would otherwise be entirely excluded).
       if (addPower && isPowerConferences(t)) return true;
       switch (preset) {
-        case "crown": return t.level === "Major" && CROWN_LEAGUES.has(t.league);
+        case "crown": return t.level === "Major" && isCrownLeague(t.sport, t.league);
         case "major": return t.level === "Major";
         case "other": return t.level === "Other";
         case "all":   return true;
@@ -223,16 +253,40 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
   }, [teams, presetIncludes, filters.leagues, filters.countries]);
 
-  const leagueFacets = useMemo(() => {
+  // League facets emit [name, count] tuples sorted by tier then count desc:
+  //   tier 0 = Crown Jewels (apex of sport)
+  //   tier 1 = Major League (workbook ml=Y or Euroleague, non-crown)
+  //   tier 2 = Other (college, minor, junior, lower-flight football)
+  // crownLeagueFlags and majorLeagueFlags are surfaced separately so the
+  // FilterRow's renderCrown / renderMajor helpers know which chips to badge.
+  const leagueFacetData = useMemo(() => {
     const counts = new Map<string, number>();
+    const crown = new Set<string>();
+    const major = new Set<string>();
     for (const t of teams) {
       if (!presetIncludes(t)) continue;
       if (filters.sports.size > 0 && !filters.sports.has(t.sport)) continue;
       if (filters.countries.size > 0 && !filters.countries.has(t.country)) continue;
       counts.set(t.league, (counts.get(t.league) || 0) + 1);
+      if (isCrownLeague(t.sport, t.league)) crown.add(t.league);
+      if (t.level === "Major") major.add(t.league);
     }
-    return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
+    function tier(league: string): number {
+      if (crown.has(league)) return 0;
+      if (major.has(league)) return 1;
+      return 2;
+    }
+    const facets = Array.from(counts.entries()).sort((a, b) => {
+      const ta = tier(a[0]);
+      const tb = tier(b[0]);
+      if (ta !== tb) return ta - tb;
+      return b[1] - a[1];
+    });
+    return { facets, crown, major };
   }, [teams, presetIncludes, filters.sports, filters.countries]);
+  const leagueFacets = leagueFacetData.facets;
+  const crownLeagueFlags = leagueFacetData.crown;
+  const majorLeagueFlags = leagueFacetData.major;
 
   const countryFacets = useMemo(() => {
     const counts = new Map<string, number>();
@@ -245,6 +299,42 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
   }, [teams, presetIncludes, filters.sports, filters.leagues]);
 
+  // Federation facets — only meaningful when 'International Teams' is in the
+  // active league filter. Cross-scopes against every other filter group and
+  // the preset. Ordered geographically (largest member set first, OFC last).
+  const federationFacets = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const t of teams) {
+      if (!presetIncludes(t)) continue;
+      if (!t.federation) continue;
+      if (filters.sports.size > 0 && !filters.sports.has(t.sport)) continue;
+      if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) continue;
+      if (filters.countries.size > 0 && !filters.countries.has(t.country)) continue;
+      counts.set(t.federation, (counts.get(t.federation) || 0) + 1);
+    }
+    return FEDERATION_ORDER
+      .filter((f) => counts.has(f))
+      .map((f) => [f, counts.get(f)!] as [string, number]);
+  }, [teams, presetIncludes, filters.sports, filters.leagues, filters.countries]);
+
+  // Level facets — Major / Other tiers within the current visible scope.
+  // Only renders the row when 2+ levels survive (otherwise the chip would
+  // be a single no-op choice).
+  const levelFacets = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const t of teams) {
+      if (!presetIncludes(t)) continue;
+      if (filters.sports.size > 0 && !filters.sports.has(t.sport)) continue;
+      if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) continue;
+      if (filters.countries.size > 0 && !filters.countries.has(t.country)) continue;
+      if (filters.federations.size > 0 && (!t.federation || !filters.federations.has(t.federation))) continue;
+      counts.set(t.level, (counts.get(t.level) || 0) + 1);
+    }
+    return (["Major", "Other"] as const)
+      .filter((l) => counts.has(l))
+      .map((l) => [l, counts.get(l)!] as [string, number]);
+  }, [teams, presetIncludes, filters.sports, filters.leagues, filters.countries, filters.federations]);
+
   // ---- Visible markers (after filtering) ----
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -253,6 +343,8 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
       if (filters.sports.size > 0 && !filters.sports.has(t.sport)) return false;
       if (filters.leagues.size > 0 && !filters.leagues.has(t.league)) return false;
       if (filters.countries.size > 0 && !filters.countries.has(t.country)) return false;
+      if (filters.federations.size > 0 && (!t.federation || !filters.federations.has(t.federation))) return false;
+      if (filters.levels.size > 0 && !filters.levels.has(t.level)) return false;
       if (q) {
         const haystack = `${t.team} ${t.city ?? ""} ${t.metro ?? ""} ${t.league}`.toLowerCase();
         if (!haystack.includes(q)) return false;
@@ -290,6 +382,12 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         const filteredLeagues = new Set(Array.from(prev.leagues).filter((l) => reachableLeagues.has(l)));
         return { ...prev, sports: next, leagues: filteredLeagues };
       }
+      // When the user removes 'International Teams' from the league filter,
+      // also clear the federation sub-filter — otherwise stale chips would
+      // silently keep narrowing the visible set with no UI to clear them.
+      if (group === "leagues" && value === "International Teams" && !next.has("International Teams")) {
+        return { ...prev, leagues: next, federations: new Set() };
+      }
       return { ...prev, [group]: next };
     });
   }
@@ -297,7 +395,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
     setFilters((prev) => ({ ...prev, [group]: new Set() }));
   }
   function clearAll() {
-    setFilters({ sports: new Set(), leagues: new Set(), countries: new Set() });
+    setFilters({ sports: new Set(), leagues: new Set(), countries: new Set(), federations: new Set(), levels: new Set() });
     setQuery("");
     setPreset(DEFAULT_PRESET);
     setAddPower(true);
@@ -305,7 +403,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
 
   // ---- Preset chip counts (raw, not preset-gated) ----
   const crownCount = useMemo(
-    () => teams.filter((t) => t.level === "Major" && CROWN_LEAGUES.has(t.league)).length,
+    () => teams.filter((t) => t.level === "Major" && isCrownLeague(t.sport, t.league)).length,
     [teams],
   );
   const majorCount = useMemo(() => teams.filter((t) => t.level === "Major").length, [teams]);
@@ -318,7 +416,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   const showPowerAdditive = preset === "crown" || preset === "major";
 
   const hasFilters =
-    filters.sports.size + filters.leagues.size + filters.countries.size > 0 ||
+    filters.sports.size + filters.leagues.size + filters.countries.size + filters.federations.size + filters.levels.size > 0 ||
     query.trim().length > 0 ||
     preset !== DEFAULT_PRESET ||
     !addPower;
@@ -328,11 +426,15 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
   // makes cross-scoping visible: pick Sport=Football and the Country
   // chips that remain glow to confirm "these are your candidates".
   const sportRowLit =
-    preset !== DEFAULT_PRESET || !addPower || filters.leagues.size > 0 || filters.countries.size > 0 || query.trim().length > 0;
+    preset !== DEFAULT_PRESET || !addPower || filters.leagues.size > 0 || filters.countries.size > 0 || filters.federations.size > 0 || filters.levels.size > 0 || query.trim().length > 0;
   const countryRowLit =
-    preset !== DEFAULT_PRESET || !addPower || filters.sports.size > 0 || filters.leagues.size > 0 || query.trim().length > 0;
+    preset !== DEFAULT_PRESET || !addPower || filters.sports.size > 0 || filters.leagues.size > 0 || filters.federations.size > 0 || filters.levels.size > 0 || query.trim().length > 0;
   const leagueRowLit =
-    preset !== DEFAULT_PRESET || !addPower || filters.sports.size > 0 || filters.countries.size > 0 || query.trim().length > 0;
+    preset !== DEFAULT_PRESET || !addPower || filters.sports.size > 0 || filters.countries.size > 0 || filters.federations.size > 0 || filters.levels.size > 0 || query.trim().length > 0;
+  const federationRowLit =
+    preset !== DEFAULT_PRESET || !addPower || filters.sports.size > 0 || filters.leagues.size > 0 || filters.countries.size > 0 || filters.levels.size > 0 || query.trim().length > 0;
+  const levelRowLit =
+    preset !== DEFAULT_PRESET || !addPower || filters.sports.size > 0 || filters.leagues.size > 0 || filters.countries.size > 0 || filters.federations.size > 0 || query.trim().length > 0;
 
   return (
     <section className="space-y-3">
@@ -484,7 +586,8 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
       />
 
       {/* League filter — appears once Sport or Country is selected.
-          Crown leagues prefixed with 👑. */}
+          Crown leagues prefixed with 👑, non-crown Major League leagues
+          with 🥈. Sort tier: crown > major > other, then count desc. */}
       {(filters.sports.size > 0 || filters.countries.size > 0) && (
         <FilterRow
           label="League"
@@ -493,7 +596,37 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
           onToggle={(v) => toggle("leagues", v)}
           onClearGroup={() => clearGroup("leagues")}
           litWhenUnselected={leagueRowLit}
-          renderCrown={(name) => CROWN_LEAGUES.has(name)}
+          renderCrown={(name) => crownLeagueFlags.has(name)}
+          renderMajor={(name) => majorLeagueFlags.has(name)}
+        />
+      )}
+
+      {/* Federation filter — only when 'International Teams' is in the
+          active league filter. Maps to FIFA confederations using workbook
+          continent (Israel/Kazakhstan -> UEFA, Australia -> AFC, Suriname
+          -> CONCACAF). */}
+      {filters.leagues.has("International Teams") && federationFacets.length > 0 && (
+        <FilterRow
+          label="Federation"
+          facets={federationFacets}
+          active={filters.federations}
+          onToggle={(v) => toggle("federations", v)}
+          onClearGroup={() => clearGroup("federations")}
+          litWhenUnselected={federationRowLit}
+        />
+      )}
+
+      {/* Level filter — Major / Other. Only shows when 2+ levels survive
+          the upstream filters (preset / sport / country / league /
+          federation), otherwise the chip is a single no-op choice. */}
+      {levelFacets.length >= 2 && (
+        <FilterRow
+          label="Level"
+          facets={levelFacets}
+          active={filters.levels}
+          onToggle={(v) => toggle("levels", v)}
+          onClearGroup={() => clearGroup("levels")}
+          litWhenUnselected={levelRowLit}
         />
       )}
     </section>
@@ -555,6 +688,7 @@ function FilterRow({
   litWhenUnselected,
   renderDot,
   renderCrown,
+  renderMajor,
 }: {
   label: string;
   facets: [string, number][];
@@ -564,6 +698,7 @@ function FilterRow({
   litWhenUnselected: boolean;
   renderDot?: (name: string) => string;
   renderCrown?: (name: string) => boolean;
+  renderMajor?: (name: string) => boolean;
 }) {
   if (facets.length === 0) return null;
   const hasSelection = active.size > 0;
@@ -586,6 +721,9 @@ function FilterRow({
         {facets.map(([name, count]) => {
           const isActive = active.has(name);
           const isCrown = renderCrown?.(name) ?? false;
+          // Major-only badge shows for non-crown leagues that still carry
+          // at least one workbook ml=Y row. Crown overrides silver.
+          const isMajor = !isCrown && (renderMajor?.(name) ?? false);
           // Visual state selection. Selected wins. Otherwise lit if upstream
           // filter is active. Otherwise idle.
           let chipClass: string;
@@ -615,8 +753,13 @@ function FilterRow({
                 <span aria-hidden className="inline-block w-2 h-2 rounded-full" style={{ background: renderDot(name) }} />
               )}
               {isCrown && (
-                <span aria-hidden className="text-[10px] leading-none" style={{ filter: "saturate(0.85)" }}>
+                <span aria-hidden className="text-[10px] leading-none" style={{ filter: "saturate(0.85)" }} title="Crown Jewel: top flight in its sport">
                   👑
+                </span>
+              )}
+              {isMajor && (
+                <span aria-hidden className="text-[10px] leading-none" style={{ filter: "saturate(0.4)" }} title="Major League">
+                  🥈
                 </span>
               )}
               <span>{name}</span>

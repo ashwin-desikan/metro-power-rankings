@@ -104,7 +104,12 @@ export default function SportsMapInner({ markers }: Props) {
               <div style={{ fontFamily: "'Inter', sans-serif" }}>
                 <div style={{ fontWeight: 600, fontSize: 12 }}>{m.team}</div>
                 <div style={{ fontSize: 11, opacity: 0.85 }}>
-                  {m.league} · {m.metro || m.city || m.country}
+                  {m.sport} · {m.league} · {m.level === "Major" ? "Major League" : "Other"}
+                </div>
+                <div style={{ fontSize: 10, opacity: 0.75 }}>
+                  {m.league === "International Teams" && m.federation
+                    ? `${m.federation} (${m.country})`
+                    : (m.metro || m.city || m.country)}
                 </div>
                 {(m.metro_slug || m.team_page_url) && (
                   <div style={{ fontSize: 10, marginTop: 2, opacity: 0.7 }}>
