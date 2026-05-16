@@ -67,7 +67,15 @@ export async function getSubstackPosts(limit = 10): Promise<SubstackPost[]> {
 
 function loadSnapshot(): SubstackPost[] {
   try {
-    const raw = readFileSync(join(process.cwd(), ...SNAPSHOT_PATH), "utf-8");
+    // Literal path args (no spread) so Turbopack's File Tracer can resolve
+    // the read statically. The turbopackIgnore comment in front of
+    // process.cwd() tells the tracer 'treat this as opaque' so it doesn't
+    // walk the whole project root looking for matches (which was tracing
+    // 14148 files and pulling next.config.ts into the function bundle).
+    const raw = readFileSync(
+      join(/*turbopackIgnore: true*/ process.cwd(), "public", "data", "substack-feed.json"),
+      "utf-8",
+    );
     const parsed = JSON.parse(raw) as { posts?: SubstackPost[] };
     return Array.isArray(parsed.posts) ? parsed.posts : [];
   } catch {

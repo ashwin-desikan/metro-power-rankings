@@ -673,7 +673,11 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): nu
 // root (~11k files) and pulled next.config.ts into the function bundle,
 // blowing past Vercel's deploy size limit. Always pass a bare filename here.
 function loadCsv(fileName: string): Record<string, string>[] {
-  const path = join(process.cwd(), "public", "data", fileName);
+  // fileName is dynamic; the turbopackIgnore comment keeps the File Tracer
+  // from walking every file under public/data/ (which was matching 27540
+  // files even though only ~12 CSVs are read here). Build-time read still
+  // works because the files exist on disk during `next build`.
+  const path = join(process.cwd(), "public", "data", /*turbopackIgnore: true*/ fileName);
   if (!existsSync(path)) return [];
   const raw = readFileSync(path, "utf-8");
   const lines = raw.split(/\r?\n/).filter((l) => l.length > 0);
