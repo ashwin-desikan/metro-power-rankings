@@ -10,10 +10,15 @@ Writes:
   public/data/sports/all-teams.json  — array of marker rows
   public/data/sports/league-summary.json — per-league counts for the cards
 
-Launch scope: Major League only.
-  - Team List rows where col L (Major League) == 'Y' and League != 'Notable Venues'
-    (Notable Venues are event/venue rows, not teams)
-  - FootballClub_Data rows where col I (Major League) == 'Y'
+Scope: every Team List and FootballClub_Data row with valid coordinates.
+  Each marker carries level='Major' (workbook ml=='Y' or 'Euroleague') or
+  level='Other' (everything else). Notable Venues and Historic Venues are
+  excluded (inert stadiums, not teams).
+  The /sports UI gates the visible set with a preset chip:
+    Crown Jewels  = level='Major' AND CROWN_LEAGUES.has(league)
+    Major League  = level='Major'
+    Other         = level='Other'
+    All           = no level filter
 
 team_page_url resolution:
   - NFL/MLB/NBA: cross-reference public/data/<league>/franchises.json by team name
@@ -196,14 +201,16 @@ def main():
         "Minor/Jr/Int'l Hockey",
         "Dom. Rugby Union",
         "FBS",
+        "FCS",
+        "NCAA W",
+        "College Hockey",
+        "Other Sports",
+        "Other Women Sports",
     }
-    # Leagues whose rows are admitted regardless of the ml flag. The
-    # default scope is ml in {Y, Euroleague}; these additions surface
-    # collegiate competitions on the map (rendered as level=Other so
-    # they fill slate instead of gold). NCAA Division I basketball is
-    # admitted via a separate sport-scoped rule below.
-    NON_ML_INCLUDED_LEAGUES = {
-        "FBS",
+    # Inert venue rows that should never appear on the /sports map.
+    NON_TEAM_LEAGUES = {
+        "Notable Venues",   # event venues, not teams
+        "Historic Venues",  # historic stadiums, not teams
     }
 
     for r in rows:
@@ -211,17 +218,12 @@ def main():
             continue
         sport, league, team, main_div, division, city, metro, state, country, level, _metro_val, ml, season, _affil, _annual, qid, wiki, lat, lng = r[:19]
 
-        # Admission rules:
-        #   - ml == 'Y' or 'Euroleague' (the original Major League scope), OR
-        #   - league is in NON_ML_INCLUDED_LEAGUES, OR
-        #   - sport == 'Basketball' and league == 'NCAA' (D-I basketball).
+        # Every row admits; tier is encoded via marker_level ('Major'
+        # for ml in {Y, Euroleague}, 'Other' otherwise). The /sports UI
+        # gates visibility via the preset chip.
         is_major_league_row = ml == "Y" or ml == "Euroleague"
         is_ncaa_basketball = sport == "Basketball" and league == "NCAA"
-        is_non_ml_admit = league in NON_ML_INCLUDED_LEAGUES or is_ncaa_basketball
-        if not (is_major_league_row or is_non_ml_admit):
-            excluded_not_ml += 1
-            continue
-        if league == "Notable Venues":
+        if league in NON_TEAM_LEAGUES:
             excluded_notable_venues += 1
             continue
         if lat is None or lng is None or (lat == 0 and lng == 0):
@@ -282,12 +284,11 @@ def main():
     fc_count = 0
     fc_no_coords = 0
 
+    fc_excluded_not_ml = 0  # retained for parity but no longer used to drop rows
     for r in rows:
         if not r or len(r) < 11:
             continue
         team, city, metro, county, country, league, level, club, ml, lat, lng = r[:11]
-        if ml != "Y":
-            continue
         if lat is None or lng is None or (lat == 0 and lng == 0):
             fc_no_coords += 1
             continue
@@ -297,6 +298,7 @@ def main():
             country = "United Kingdom"
 
         country_iso2 = COUNTRY_ISO2.get(country)
+        fc_marker_level = "Major" if ml == "Y" else "Other"
 
         markers.append({
             "sport": "Football",  # top-flight soccer
@@ -311,7 +313,7 @@ def main():
             "state": None,
             "country": country,
             "country_iso2": country_iso2,
-            "level": "Major",
+            "level": fc_marker_level,
             "lat": float(lat),
             "lng": float(lng),
             "wikidata_qid": None,
