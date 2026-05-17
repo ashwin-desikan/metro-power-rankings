@@ -56,9 +56,9 @@ const RELEASES: Release[] = [
     date: "2026-05-17",
     headline: "Velvet Rock Index launched: the geography of producer-driven music, 1974 to 1989",
     items: [
-      "New essay Velvet Rock argues that yacht rock is the wrong frame for the producer-driven adult pop of 1974 to 1989; the right frame is geographic, naming six cities and two islands that anchored a transatlantic recording economy.",
-      "New Velvet Rock Capital badge at /badges/velvet-rock-capital identifies the eight metros (Los Angeles, New York, London, Nassau, Brades for Montserrat, Bath, Philadelphia, Stockholm) with primary, satellite, and offshore-island-branch tiers; chips now appear on each metro page.",
-      "Methodology page adds a Velvet Rock Index section documenting the four-dimension construction (studio infrastructure, anchor records, producer concentration, capital disproportion) and the window's closing date of September 17, 1989, when Hurricane Hugo destroyed AIR Studios Montserrat.",
+      "New essay Velvet Rock: The Map Yacht Rock Erased argues yacht rock is the wrong frame; six cities and two islands anchored the producer-driven recording economy of 1974 to 1989.",
+      "New Velvet Rock Capital badge flags eight metros (LA, NY, London, Nassau, Brades, Bath, Philadelphia, Stockholm) across primary, satellite, and offshore-island tiers; chips appear on each metro page.",
+      "Methodology adds a #velvet-rock section on the four-dimension construction and the September 17, 1989 close, when Hurricane Hugo destroyed AIR Studios Montserrat.",
     ],
   },
   {
