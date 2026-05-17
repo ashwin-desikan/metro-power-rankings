@@ -110,7 +110,7 @@
     "football_club_data": 5579,
     "team_list_excluded_no_coords": 0,
     "team_list_excluded_not_ml": 0,
-    "team_list_excluded_notable_venues": 704,
+    "team_list_excluded_notable_venues": 708,
     "football_club_data_excluded_no_coords": 4280
   },
   "league_cards": [
@@ -152,7 +152,7 @@
       "sport": "Basketball",
       "status": "coming",
       "page": null,
-      "team_count": 20
+      "team_count": 0
     },
     {
       "league": "England",
