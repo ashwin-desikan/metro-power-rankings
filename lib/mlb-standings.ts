@@ -196,6 +196,22 @@ function shapeStandings(raw: unknown): StandingsSnapshot {
       }
       if (!division && childNameLooksLikeDivision) division = childName;
 
+      // Last-resort league inference: when ESPN's response flattens the
+      // 6 divisions to the top-level children with no AL/NL wrapper, the
+      // child-level detection above leaves `league` empty even though the
+      // division string itself ('AL East', 'NL West') is fully specified.
+      // Infer from the resolved division string before persisting so the
+      // standings widget never falls back to the 'Other' bucket.
+      let effectiveLeague: 'AL' | 'NL' | '' = league;
+      if (!effectiveLeague && division) {
+        const divLower = division.toLowerCase();
+        if (divLower.startsWith('al ') || divLower.includes('american')) {
+          effectiveLeague = 'AL';
+        } else if (divLower.startsWith('nl ') || divLower.includes('national')) {
+          effectiveLeague = 'NL';
+        }
+      }
+
       const stats = asArr(entry.stats);
       const findStat = (name: string) =>
         stats.map(asObj).find((s) => s && asStr(s.name) === name);
@@ -227,7 +243,7 @@ function shapeStandings(raw: unknown): StandingsSnapshot {
         league_rank: statPresent("leagueRank") ? statNum("leagueRank") : null,
         playoff_seed: statPresent("playoffSeed") ? statNum("playoffSeed") : null,
         streak: statStr("streak") || null,
-        league,
+        league: effectiveLeague,
         division,
       };
     }

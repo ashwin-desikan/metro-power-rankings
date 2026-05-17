@@ -135,7 +135,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     metro: "Moscow",
     sport: "Basketball",
     team: "PBC CSKA Moscow",
-    rationale: "8-time Euroleague champion (tied with Real Madrid for most in European history), Russia's most dominant sports club across eras. FC Spartak Moscow (10 Soviet + 10 Russian football titles) is an equally defensible pick.",
+    rationale: "8-time EuroLeague champion (tied with Real Madrid for most in European history), Russia's most dominant sports club across eras. FC Spartak Moscow (10 Soviet + 10 Russian football titles) is an equally defensible pick.",
   },
   {
     rank: 18,
@@ -562,7 +562,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     metro: "Tel-Aviv",
     sport: "Basketball",
     team: "Maccabi Tel Aviv BC",
-    rationale: "6 Euroleague titles (most by any non-Spanish/Russian club), Israel's most successful sports franchise. In football, Maccabi Tel Aviv FC has 26 Israeli titles.",
+    rationale: "6 EuroLeague titles (most by any non-Spanish/Russian club), Israel's most successful sports franchise. In football, Maccabi Tel Aviv FC has 26 Israeli titles.",
   },
   {
     rank: 79,
@@ -583,7 +583,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     metro: "Athens",
     sport: "Football",
     team: "Olympiakos CFP",
-    rationale: "48 Greek Super League titles (most ever), 2024 UEFA Europa Conference League champions , first Greek club to win a European trophy. Panathinaikos is the cross-town rival (20 titles). In basketball, Panathinaikos BC (7 Euroleague titles, most in Greek sport) is an equal claimant.",
+    rationale: "48 Greek Super League titles (most ever), 2024 UEFA Europa Conference League champions , first Greek club to win a European trophy. Panathinaikos is the cross-town rival (20 titles). In basketball, Panathinaikos BC (7 EuroLeague titles, most in Greek sport) is an equal claimant.",
   },
   {
     rank: 82,

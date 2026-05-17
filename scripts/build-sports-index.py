@@ -219,14 +219,13 @@ def main():
     team_list_count = 0
 
     # Leagues that should be re-labeled by Main Division instead of the
-    # workbook's broad League bucket. "Int'l Basketball" is handled
-    # separately because Euroleague clubs (ml='Euroleague') keep the
-    # Euroleague brand while non-Euroleague Int'l Basketball rows use
-    # main_div.
+    # workbook's broad League bucket. "Int'l Basketball" and "Int'l W
+    # Basketball" are handled separately because Euroleague /
+    # EuroLeague Women clubs (ml='Euroleague') keep the Euroleague brand
+    # while non-Euroleague rows in those buckets fall back to main_div.
     MAIN_DIV_LABEL_LEAGUES = {
         "Minor Lg Base",
         "Int'l Volleyball",
-        "Int'l W Basketball",
         "Int'l Handball",
         "Minor/Jr/Int'l Hockey",
         "Dom. Rugby Union",
@@ -284,9 +283,21 @@ def main():
         # buckets ("Int'l Volleyball", "FBS") and the actual top-flight
         # competition lives in Main Division. Re-bucket those rows so the
         # chip filter exposes the league the user actually recognizes.
+        #
+        # Int'l Basketball and Int'l W Basketball both follow the same
+        # column-precedence pattern: the Major League column (col M) overrides
+        # Main Division when it carries 'Euroleague' (men's Euroleague clubs
+        # competing in continental play, and EuroLeague Women clubs likewise),
+        # while non-Euroleague rows in those broad buckets fall back to
+        # main_div for the chip label.
         display_league = league
         if league == "Int'l Basketball":
-            display_league = "Euroleague" if ml == "Euroleague" else (main_div or league)
+            # Display string flips to camel-case 'EuroLeague' (official branding,
+            # Wikipedia article title). Workbook ml token stays 'Euroleague'
+            # as the trigger value.
+            display_league = "EuroLeague" if ml == "Euroleague" else (main_div or league)
+        elif league == "Int'l W Basketball":
+            display_league = "EuroLeague Women" if ml == "Euroleague" else (main_div or league)
         elif league in MAIN_DIV_LABEL_LEAGUES or is_ncaa_basketball:
             display_league = main_div or league
 

@@ -34,9 +34,35 @@ type Props = {
   playoffState: Record<string, PlayoffStateRecord>;
 };
 
+// Marker color contract. Gold for franchise home arenas mirrors the NHL
+// LeagueMap pattern; pink for international venues so the two categories
+// read at a glance. Both kept in sync with the legend chips below the map.
+const TEAM_COLOR = "#d4af37";
+const VENUE_COLOR = "#ec4899";
+
+// NBA Global Games venues (regular-season + preseason international games),
+// 1990 to present + the next scheduled slate. Coordinates either pulled from
+// MetroAreas.xlsx Team List (when the venue already exists as a Notable
+// Venues row) or sourced via training-data lookup and flagged for editorial
+// verification. Co-op Live, The O2, Accor Arena, Uber Arena, Saitama Super
+// Arena, and Tokyo Dome carry workbook coords; the remaining four are
+// researched values that should land in Team List on the next workbook edit
+// so the rest of the site picks them up via ETL.
+const GLOBAL_GAMES_VENUES: Array<{ name: string; lat: number; lng: number; city: string }> = [
+  { name: "Tokyo Dome",                   lat: 35.70564,  lng: 139.751891, city: "Tokyo, Japan" },
+  { name: "Yokohama Arena",               lat: 35.5119,   lng: 139.6166,   city: "Yokohama, Japan" },
+  { name: "Tokyo Metropolitan Gymnasium", lat: 35.6772,   lng: 139.7106,   city: "Tokyo, Japan" },
+  { name: "Saitama Super Arena",          lat: 35.9636,   lng: 139.6306,   city: "Saitama, Japan" },
+  { name: "Palacio de los Deportes",      lat: 19.4036,   lng: -99.0987,   city: "Mexico City, Mexico" },
+  { name: "Arena Ciudad de México",       lat: 19.4825,   lng: -99.1907,   city: "Mexico City, Mexico" },
+  { name: "The O2 Arena",                 lat: 51.5033,   lng: 0.0031,     city: "London, United Kingdom" },
+  { name: "Co-op Live",                   lat: 53.483,    lng: -2.2,       city: "Manchester, United Kingdom" },
+  { name: "Accor Arena",                  lat: 48.8386,   lng: 2.3786,     city: "Paris, France" },
+  { name: "Uber Arena",                   lat: 52.5083,   lng: 13.4433,    city: "Berlin, Germany" },
+];
 
 export default function LeagueMap({ franchises, playoffState }: Props) {
-  const points: MapPoint[] = franchises
+  const teamPoints: MapPoint[] = franchises
     .map((f) => {
       if (f.lat == null || f.lng == null) return null;
       return {
@@ -44,9 +70,22 @@ export default function LeagueMap({ franchises, playoffState }: Props) {
         name: f.display_name,
         lat: f.lat,
         lon: f.lng,
+        color: TEAM_COLOR,
       } as MapPoint;
     })
     .filter((p): p is MapPoint => p !== null);
+
+  // Venue markers use a stable key prefix so they cannot collide with
+  // franchise slugs in the React render key.
+  const venuePoints: MapPoint[] = GLOBAL_GAMES_VENUES.map((v, i) => ({
+    slug: `intl-venue-${i}`,
+    name: `${v.name} — ${v.city}`,
+    lat: v.lat,
+    lon: v.lng,
+    color: VENUE_COLOR,
+  } as MapPoint));
+
+  const points: MapPoint[] = [...teamPoints, ...venuePoints];
 
   // Build a quick legend of playoff-state colors actually present
   const activeStates = new Set(
@@ -62,8 +101,22 @@ export default function LeagueMap({ franchises, playoffState }: Props) {
   return (
     <section className="mb-6 mx-auto max-w-3xl">
       <MetroMap points={points} height={280} showConnections={false} />
+      {/* Always-on category legend: gold = NBA home arena, pink = Global
+          Games international venue. Sits above the playoff-state strip so
+          readers parse the marker categories first, then the postseason
+          state colors second. */}
+      <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-2 h-2 rounded-full" style={{ background: TEAM_COLOR }} />
+          NBA home arenas ({teamPoints.length})
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="inline-block w-2 h-2 rounded-full" style={{ background: VENUE_COLOR }} />
+          Global Games venues
+        </span>
+      </div>
       {legendItems.length > 0 && (
-        <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
+        <div className="flex flex-wrap gap-3 mt-2 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
           {legendItems.map((item) => (
             <span key={item.state} className="flex items-center gap-1.5">
               <span

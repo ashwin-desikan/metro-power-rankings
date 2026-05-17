@@ -33,6 +33,11 @@ export type MapPoint = {
   city?: string;
   state?: string;
   country?: string;
+  // Optional per-point fill color override. When set, MetroMapInner uses
+  // this color for the marker instead of the default teal accent. Used by
+  // league-map components that mix team markers with neutral venue markers
+  // (e.g. NHL Global Series venues rendered pink alongside gold team pins).
+  color?: string;
 };
 
 export default function MetroMap({

@@ -7,9 +7,10 @@ import {
   ORIGINAL_SIX,
 } from "@/lib/nhl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { getNhlPlayoffState } from "@/lib/nhl-playoffs";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
-import NhlStandings from "./NhlStandings";
+import NhlPlayoffBracket from "./NhlPlayoffBracket";
 
 export const dynamicParams = false;
 
@@ -17,7 +18,7 @@ const PAGE_PATH = "/teams/nhl";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "NHL franchises";
 const PAGE_DESCRIPTION =
-  "All 32 active National Hockey League franchises, ranked by Stanley Cup wins across the NHA (1910-17), PCHA, WCHL, and NHL eras, plus WHA Avco Cup wins for the four franchises that came from the rival league. Founded year, current city and metro, Presidents' Trophy and Stanley Cup Final counts, and live current-season standings.";
+  "All 32 active National Hockey League franchises, ranked by Stanley Cup wins across the NHA (1910-17), PCHA, WCHL, and NHL eras, plus WHA Avco Cup wins for the four franchises that came from the rival league. Founded year, current city and metro, Presidents' Trophy and Stanley Cup Final counts, plus live Stanley Cup playoff bracket state.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -41,6 +42,10 @@ export default function NhlIndexPage() {
   const totalChamps = franchises.reduce((s, f) => s + f.championships, 0);
   const withChamps = franchises.filter(f => f.championships > 0).length;
   const totalPresidents = franchises.reduce((s, f) => s + f.best_record_seasons, 0);
+  const playoffBundle = getNhlPlayoffState();
+  const inPlayoffs = Object.values(playoffBundle.by_franchise).filter(
+    (st) => st.state.startsWith("active_"),
+  ).length;
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -60,25 +65,26 @@ export default function NhlIndexPage() {
           <div><strong className="text-[var(--text)] text-sm">{withChamps}</strong> with at least one Cup</div>
           <div><strong className="text-[var(--text)] text-sm">{totalChamps}</strong> Stanley Cups awarded</div>
           <div><strong className="text-[var(--text)] text-sm">{totalPresidents}</strong> Best-Record / Presidents' Trophy seasons</div>
+          {playoffBundle.year && inPlayoffs > 0 && (
+            <div>
+              <strong className="text-[var(--text)] text-sm">{inPlayoffs}</strong> still active in the {playoffBundle.year} playoffs
+            </div>
+          )}
           <div>
             Defunct franchises: <Link href="/teams/nhl/historical" className="text-[var(--accent)] hover:underline">/teams/nhl/historical</Link>
           </div>
         </div>
       </header>
 
-      <NhlStandings />
+      <NhlPlayoffBracket
+        franchises={franchises}
+        playoffBundle={playoffBundle}
+        logoMap={Object.fromEntries(franchises.map((f) => [f.slug, logoUrlFor(f.slug)]))}
+      />
 
       <LeagueMap franchises={franchises} />
 
       <div className="flex flex-wrap gap-4 text-xs text-[var(--text-muted)] mb-6 mt-8">
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: "#d4af37" }} />
-          Stanley Cup (1910+, gold)
-        </span>
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: "#6e8aa6" }} />
-          WHA Avco Cup (1973-79, slate)
-        </span>
         <span className="flex items-center gap-2">
           <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: "#3a2e1a" }} />
           <span style={{ color: "#d4af37" }}>O6</span> Original Six (1942-1967)

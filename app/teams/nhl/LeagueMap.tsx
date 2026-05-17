@@ -22,6 +22,11 @@ type Props = {
   franchises: Franchise[];
 };
 
+// Marker color contract — kept inline so the legend chips below the map
+// match the rendered fills exactly.
+const TEAM_COLOR = "#d4af37";
+const VENUE_COLOR = "#ec4899";
+
 export default function LeagueMap({ franchises }: Props) {
   const teamPoints: MapPoint[] = franchises
     .map((f) => {
@@ -31,18 +36,20 @@ export default function LeagueMap({ franchises }: Props) {
         name: f.display_name,
         lat: f.lat,
         lon: f.lng,
+        color: TEAM_COLOR,
       } as MapPoint;
     })
     .filter((p): p is MapPoint => p !== null);
 
   // International venues use a stable key prefixed to avoid collision
-  // with franchise slugs.
+  // with franchise slugs. Pink fill so the legend ('Global Series venues')
+  // reads as a distinct category from the gold team pins.
   const venuePoints: MapPoint[] = INTL_VENUES.map((v, i) => ({
     slug: `intl-venue-${i}`,
     name: `${v.name} — ${v.city}`,
     lat: v.lat,
     lon: v.lng,
-    category: "venue",
+    color: VENUE_COLOR,
   } as MapPoint));
 
   return (
@@ -50,11 +57,11 @@ export default function LeagueMap({ franchises }: Props) {
       <MetroMap points={[...teamPoints, ...venuePoints]} height={320} showConnections={false} />
       <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
         <span className="flex items-center gap-1.5">
-          <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#d4af37" }} />
+          <span className="inline-block w-2 h-2 rounded-full" style={{ background: TEAM_COLOR }} />
           NHL home arenas (32)
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#ec4899" }} />
+          <span className="inline-block w-2 h-2 rounded-full" style={{ background: VENUE_COLOR }} />
           Global Series venues
         </span>
       </div>

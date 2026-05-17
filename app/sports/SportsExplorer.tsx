@@ -679,7 +679,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
               <span className="text-[var(--text-dim)] font-normal tabular-nums">({majorCount.toLocaleString()})</span>
             </div>
             <p className="text-[var(--text-muted)]">
-              Every workbook-flagged Major League team. Includes the Gold Standard as a strict subset plus other top flights: KHL hockey, CBA basketball, Euroleague, NPB baseball, CFL, Brasileirão, Argentine Primera, Liga F, and country-level top-flight football outside the European top five.
+              Every workbook-flagged Major League team. Includes the Gold Standard as a strict subset plus other top flights: KHL hockey, CBA basketball, EuroLeague, NPB baseball, CFL, Brasileirão, Argentine Primera, Liga F, and country-level top-flight football outside the European top five.
             </p>
           </div>
           <div>

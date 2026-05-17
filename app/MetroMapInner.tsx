@@ -289,6 +289,10 @@ export default function MetroMapInner({
       {refitOnChange ? <FitToPoints points={points} /> : null}
       {points.map((p) => {
         const richMeta = [p.city, p.state, p.country].filter(Boolean).join(' · ');
+        // Per-point color override lets league-map callers mix categories
+        // (e.g. gold NHL team pins alongside pink Global Series venues).
+        // Falls back to the site's teal accent.
+        const fill = p.color ?? '#4ECDC4';
         return (
         <CircleMarker
           key={p.slug}
@@ -297,7 +301,7 @@ export default function MetroMapInner({
           pathOptions={{
             color: '#ffffff',
             weight: 2,
-            fillColor: '#4ECDC4',
+            fillColor: fill,
             fillOpacity: 1,
           }}
           eventHandlers={
