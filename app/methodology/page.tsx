@@ -684,6 +684,53 @@ export default function MethodologyPage() {
               </p>
             </section>
 
+            <section id="velvet-rock">
+              <h2 className="text-2xl font-bold mb-4">The Velvet Rock Index</h2>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                A curated index, not a composite-derived lens. The{" "}
+                <Link href="/badges/velvet-rock-capital" className="text-[var(--accent)] hover:underline">
+                  Velvet Rock Capital
+                </Link>{" "}
+                badge identifies the eight metros that anchored the
+                producer-driven recording economy of 1974 to 1989: three
+                primary capitals (Los Angeles, New York, London), three
+                satellites (Bath and Somerset, Philadelphia, Stockholm), and
+                two offshore island branches (Nassau via Compass Point
+                Studios, and Montserrat via AIR Studios at Salem). The
+                window opens at 1974 with the maturation of the post-
+                Wrecking-Crew session economy and closes on September 17,
+                1989, when Hurricane Hugo destroyed AIR Studios Montserrat.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                The score for each metro is a 0 to 100 composite across
+                four dimensions, each weighted equally at 0 to 25. Studio
+                infrastructure counts flagship rooms operating in the
+                window, weighted by share of canonical tracking and mixing
+                work. Anchor records counts canonical long-players
+                substantially produced in the metro, crediting both tracking
+                and final mix where the city did one but not the other.
+                Producer and session-musician concentration measures the
+                resident or semi-resident production talent based in the
+                metro across the window. Capital disproportion measures how
+                exposed the metro&apos;s claim is to this single industry under
+                non-recurring conditions; the two island branches score the
+                full 25 here because their global cultural footprint during
+                the period rested on one building each.
+              </p>
+              <p className="text-[var(--text)] leading-relaxed">
+                Unlike the composite ranking, the Velvet Rock Index is an
+                editorial frame, not a data-derived lens. It is intended as
+                a portable model for similar indices on offshore financial
+                centers, free-port logistics hubs, and other industries where
+                a small number of metros carried disproportionate weight
+                under specific and non-recurring capital conditions. The
+                accompanying essay,{" "}
+                <em>Velvet Rock: The Geography of Producer-Driven Music,
+                1974 to 1989</em>, is published on the Citizen of Nowhere
+                Substack.
+              </p>
+            </section>
+
             <section id="vintage">
               <h2 className="text-2xl font-bold mb-4">Data vintage and refresh cadence</h2>
               <p className="text-[var(--text)] leading-relaxed mb-3">

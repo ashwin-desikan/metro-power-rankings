@@ -875,6 +875,7 @@ function computeOverperformer() { return computeFromCsv("overperformer.csv", "mu
 function computeGreyingPower() { return computeFromCsv("greying-power.csv", "score_value", "Composite score"); }
 function computeCosmopolitanCapital() { return computeFromCsv("cosmopolitan-capital.csv", "score_value", "Composite score"); }
 function computeEmergingStandout() { return computeFromCsv("emerging-standout.csv", "score_value", "Composite score"); }
+function computeVelvetRockCapital() { return computeFromCsv("velvet-rock-capital.csv", "score_value", "VRI score"); }
 
 // Frozen Conurbations: paired metros that should function as a single urban
 // system but have been severed by political geography or missing
@@ -1082,6 +1083,12 @@ const ISOLATED_CAPITAL_TIERS: BadgeTier[] = [
   { slug: "C", name: "Tier C — Isolated", description: "Between 240 and 500 km from the nearest tier-comparable metro. Beyond a day's commute but inside the regional sphere of a larger neighbor.", accentHex: "#D97706" },
 ];
 
+const VELVET_ROCK_TIERS: BadgeTier[] = [
+  { slug: "P", name: "Primary capital", description: "One of the three metros whose flagship rooms anchored the producer-driven recording economy of 1974 to 1989. Both tracking and mixing capacity, deep producer rosters, dense session-musician benches. Los Angeles, New York, London.", accentHex: "#c9a227" },
+  { slug: "S", name: "Satellite", description: "Secondary node in the network: real flagship infrastructure but specialized, not full-spectrum. Bath/Somerset for residential country-house tracking, Philadelphia for American R&B and quiet-storm sessions, Stockholm for the Polar Studios fusion of American studio fidelity with Northern European production grammar.", accentHex: "#6e7a8a" },
+  { slug: "I", name: "Offshore island branch", description: "Caribbean island studio operated as a deliberate offshore branch of the major-label system. Compass Point in Nassau (Chris Blackwell, 1977) and AIR Studios Montserrat at Salem (George Martin, 1979). Both metros' claim on the global cultural map during the window rests on a single building under non-recurring capital conditions.", accentHex: "#a72d68" },
+];
+
 // ---------- Badge registry ----------
 
 export const BADGES: Badge[] = [
@@ -1174,6 +1181,12 @@ export const BADGES: Badge[] = [
     shortDesc: "Pairs of cities that should function as one urban system but have been severed by political geography or missing infrastructure.",
     longDesc: "Five cases where two cities sit close enough to share a labor market, an airshed, and a river basin, but operate as separate urban systems because of borders, walls, or missing bridges. Lahore and Amritsar were one Punjabi city for centuries before Partition severed them at the Wagah border in 1947. Nicosia and North Nicosia have been the only divided capital in Europe since 1974. Kinshasa and Brazzaville sit five kilometres apart across the Congo River and remain the only adjacent national capitals on Earth without a direct surface link. Detroit and Windsor share a regional economy that still moves a quarter of all US-Canada trade despite post-9/11 border friction. San Diego and Tijuana run a combined twenty-million-person labor market across one of the busiest borders in the world. The badge sits adjacent to the Conurbations and Twin Metros lenses but answers a different question: not which cities cluster, but which cities should cluster and do not.",
     methodologyAnchor: "#population", status: "live", compute: computeFrozenConurbations,
+  },
+  {
+    slug: "velvet-rock-capital", name: "Velvet Rock Capital", emoji: "🎚️",
+    shortDesc: "Metros that anchored the transatlantic producer-driven recording economy of 1974 to 1989.",
+    longDesc: "Eight metros where the producer-driven adult-pop catalog of 1974 to 1989 was substantially made. Velvet Rock is a working term for the studio-luxury, mid-tempo, harmonically sophisticated music that yacht rock has flattened into a Southern California beach trope. The real frame is geographic. Three primary capitals (Los Angeles, New York, London) carried the network's tracking and mixing volume. Three satellites contributed specialized infrastructure: Bath and Somerset for the residential country-house studios (the Wool Hall, Ashcombe House), Philadelphia for American R&B and quiet storm at Sigma Sound, Stockholm for the Polar Studios fusion that becomes the late-1990s Cheiron pop factory. Two offshore island branches carried disproportionate weight: Compass Point in Nassau (Chris Blackwell, 1977) and AIR Studios Montserrat at Salem (George Martin, 1979). The window closes on September 17, 1989, when Hurricane Hugo destroys the Montserrat studio; the digital sampler, New Jack Swing, and the project-studio production model collectively dissolve the economic logic that funded the era within five years. The Velvet Rock Index scores each metro 0 to 100 across studio infrastructure, anchor records, producer and session-musician concentration, and capital disproportion (the degree to which the metro's claim rests on this one industry under specific conditions). Inspired by the long-running stylistic debate over yacht rock, sophisti-pop, and quiet storm as separate frames; resolved here as a single geographic phenomenon.",
+    methodologyAnchor: "#velvet-rock", status: "live", tiers: VELVET_ROCK_TIERS, compute: computeVelvetRockCapital,
   },
 ];
 
