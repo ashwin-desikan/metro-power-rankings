@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, TITLE_COLORS, withStadiumLocations, withTeamSlugs } from "@/lib/nfl";
+import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, withStadiumLocations, withTeamSlugs } from "@/lib/nfl";
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
@@ -57,18 +57,6 @@ export default function NflIndexPage() {
           </div>
         </div>
       </header>
-
-      {/* Legend */}
-      <div className="flex flex-wrap gap-4 text-xs text-[var(--text-muted)] mb-6">
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.pre_sb.bg }} />
-          Pre-Super Bowl titles (1920-1965)
-        </span>
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.sb.bg }} />
-          Super Bowl era (1966-present)
-        </span>
-      </div>
 
       {/* 32-team sortable table. Logo and monogram maps are computed
           server-side so the client component never has to touch the

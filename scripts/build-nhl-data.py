@@ -824,6 +824,128 @@ def build_historical_seasons(historical, year_by_year):
     return out
 
 
+# -------- Playoff state --------
+
+def read_playoff_state(wb):
+    """Read NHL.xlsx Year by Year sheet for the latest playoff year and
+    infer each franchise's playoff state.
+
+    Returns (year, is_postseason_complete, by_canonical) where by_canonical
+    maps {canonical_team_name: {state, last_round, year}}. State values
+    align with lib/nhl-playoffs.ts NhlPlayoffStateValue.
+
+    Inference rules (NHL needs 4 series wins per round):
+      - Champs Y                                                -> champion
+      - Cham App Y, Champs None: in / lost Stanley Cup Final
+          (lost_final if any champion exists this year, else active_final)
+      - SF/CF App Y, Cham App None                              -> active_cf
+      - Made playoffs, P.Wins < 4                               -> eliminated_qf
+      - Made playoffs, P.Wins >= 4, SF/CF App None: still in R2.
+          Use NHL bracket pairings (two R1 winners share a Division within
+          the same Conference; the one with SF/CF App = Y won, the other is
+          eliminated_semis). Two R1 winners in the same division with
+          neither holding SF/CF App = Y -> both active_semis (series live).
+    """
+    ws = wb["Year by Year"]
+    header = list(next(ws.iter_rows(min_row=1, max_row=1, values_only=True)))
+    def col(name):
+        return header.index(name) if name in header else -1
+    idx = {n: col(n) for n in [
+        "Year", "Team", "Play. Ap", "P. Wins", "P. Loss.",
+        "SF/CF App", "Cham App", "Champs.", "Division", "Leag.",
+    ]}
+
+    # Use the latest year present with any playoff activity.
+    latest = 0
+    for r in ws.iter_rows(values_only=True):
+        if not r: continue
+        y = r[idx["Year"]]
+        if isinstance(y, int) and y > latest and r[idx["Leag."]] == "NHL":
+            latest = y
+    year = latest
+
+    teams = []
+    for r in ws.iter_rows(values_only=True):
+        if not r or r[idx["Year"]] != year or r[idx["Leag."]] != "NHL":
+            continue
+        teams.append({
+            "canonical": r[idx["Team"]],
+            "papp":  r[idx["Play. Ap"]],
+            "pwin":  r[idx["P. Wins"]] or 0,
+            "ploss": r[idx["P. Loss."]] or 0,
+            "sf":    r[idx["SF/CF App"]],
+            "ch":    r[idx["Cham App"]],
+            "chmps": r[idx["Champs."]],
+            "div":   r[idx["Division"]],
+        })
+
+    playoff_teams = [t for t in teams if (t["papp"] or "") == "Y"]
+    r1_winners = [t for t in playoff_teams if t["pwin"] >= 4]
+
+    from collections import defaultdict
+    by_div = defaultdict(list)
+    for t in r1_winners:
+        by_div[t["div"]].append(t)
+
+    results = {}
+    for winners in by_div.values():
+        if len(winners) != 2:
+            for t in winners:
+                results[t["canonical"]] = (
+                    "active_cf" if (t["sf"] or "") == "Y" else "active_semis"
+                )
+            continue
+        a, b = winners
+        a_sf = (a["sf"] or "") == "Y"
+        b_sf = (b["sf"] or "") == "Y"
+        if a_sf and not b_sf:
+            results[a["canonical"]] = "active_cf"
+            results[b["canonical"]] = "eliminated_semis"
+        elif b_sf and not a_sf:
+            results[b["canonical"]] = "active_cf"
+            results[a["canonical"]] = "eliminated_semis"
+        elif a_sf and b_sf:
+            results[a["canonical"]] = "active_cf"
+            results[b["canonical"]] = "active_cf"
+        else:
+            results[a["canonical"]] = "active_semis"
+            results[b["canonical"]] = "active_semis"
+
+    for t in playoff_teams:
+        if t["canonical"] not in results:
+            results[t["canonical"]] = "eliminated_qf"
+
+    any_champion = any((t["chmps"] or "") == "Y" for t in playoff_teams)
+    for t in playoff_teams:
+        if (t["chmps"] or "") == "Y":
+            results[t["canonical"]] = "champion"
+        elif (t["ch"] or "") == "Y":
+            results[t["canonical"]] = "lost_final" if any_champion else "active_final"
+
+    LABEL = {
+        "champion":         "Stanley Cup Champion",
+        "lost_final":       "Lost Stanley Cup Final",
+        "active_final":     "In the Stanley Cup Final",
+        "eliminated_cf":    "Eliminated Conference Finals",
+        "active_cf":        "Conference Finals",
+        "eliminated_semis": "Eliminated Conference Semifinals",
+        "active_semis":     "Conference Semifinals",
+        "eliminated_qf":    "Eliminated First Round",
+    }
+    STATE_RANK = {
+        "champion": 0, "lost_final": 1, "active_final": 1,
+        "eliminated_cf": 2, "active_cf": 2,
+        "eliminated_semis": 3, "active_semis": 3,
+        "eliminated_qf": 4,
+    }
+    sorted_keys = sorted(results.keys(), key=lambda k: (STATE_RANK[results[k]], k))
+    by_canonical = {
+        k: {"state": results[k], "last_round": LABEL[results[k]], "year": year}
+        for k in sorted_keys
+    }
+    return year, any_champion, by_canonical
+
+
 # -------- Main --------
 
 def main():
@@ -877,6 +999,17 @@ def main():
     all_star_team_slug = by_slug(all_star_team_counts, franchises, historical)
     stadium_history_slug = by_slug(stadium_history, franchises, historical)
 
+    # Playoff state for the current season, inferred from Year by Year
+    # P.Wins / P.Loss / SF/CF App / Cham App / Champs. columns. Refreshed on
+    # every NHL workbook sync so the /teams/nhl bracket stays current.
+    playoff_year, postseason_complete, playoff_by_canonical = read_playoff_state(wb)
+    playoff_bundle = {
+        "year": playoff_year,
+        "is_postseason_complete": postseason_complete,
+        "by_franchise": playoff_by_canonical,
+    }
+    print(f"  Playoff state: year={playoff_year}, {len(playoff_by_canonical)} teams flagged, complete={postseason_complete}")
+
     outputs = {
         "franchises.json": franchises,
         "historical.json": historical,
@@ -888,6 +1021,7 @@ def main():
         "stadium-history.json": stadium_history_slug,
         "seasons-by-team.json": seasons_by_team,
         "historical-seasons.json": historical_seasons,
+        "playoff-state.json": playoff_bundle,
     }
 
     for name, data in outputs.items():

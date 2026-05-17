@@ -44,6 +44,16 @@ WORKBOOK = ROOT / "MetroAreas.xlsx"
 OUT_DIR = ROOT / "public" / "data" / "sports"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+# Season-specific tooltip notes. Keyed by (sport_lower, team_lower) so cosmetic
+# renames in the workbook don't drift these. Bahrain and Saudi Arabian Grands
+# Prix were cancelled from the 2026 F1 calendar after the regional conflict
+# disrupted the early-season fly-aways. Surfaced on the /sports map tooltip
+# so readers see the marker but know the race didn't run this season.
+SEASON_NOTES_2026 = {
+    ("auto racing", "bahrain grand prix"):       "2026 race cancelled (regional conflict)",
+    ("auto racing", "saudi arabian grand prix"): "2026 race cancelled (regional conflict)",
+}
+
 # Country -> ISO2 mini-map for sites we ship. Extends as global coverage grows;
 # fallback uses None when the workbook country isn't mapped.
 COUNTRY_ISO2 = {
@@ -305,7 +315,13 @@ def main():
         # (Other) for the NCAA / Minor / Junior / second-flight admissions.
         marker_level = "Major" if is_major_league_row else "Other"
 
-        markers.append({
+        # Season-specific notes. Used for events that exist on the calendar
+        # but didn't happen in a specific year (cancellations, postponements,
+        # venue switches). Surfaced in the /sports map tooltip. Keyed by
+        # (sport, team) lowercase tuples so cosmetic renames don't drift.
+        season_note = SEASON_NOTES_2026.get((sport.lower(), (team or "").lower()))
+
+        marker = {
             "sport": sport,
             "league": display_league,
             "league_raw": league,
@@ -326,7 +342,10 @@ def main():
             "team_page_url": team_page_url,
             "source": "team_list",
             "workbook_level": _normalize_level(level),
-        })
+        }
+        if season_note:
+            marker["season_note"] = season_note
+        markers.append(marker)
         team_list_count += 1
 
     # ---------- FootballClub_Data ----------

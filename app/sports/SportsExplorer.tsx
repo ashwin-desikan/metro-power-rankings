@@ -35,6 +35,7 @@ export type TeamMarker = {
   fifa?: boolean | null;     // true if the country is a FIFA member, false otherwise; null for non-national-team rows
   active?: boolean | null;   // always true on emitted national-team markers (defunct rows are excluded entirely)
   workbook_level?: string | null; // Team List col J / FootballClub_Data col G (numeric tiers, College, Junior, etc.)
+  season_note?: string | null; // Optional per-season annotation surfaced in the map tooltip — e.g. '2026 race cancelled' for F1 GPs that were dropped from the calendar.
 };
 
 // Sport -> ring color. Fill color is always Level-coded so two channels

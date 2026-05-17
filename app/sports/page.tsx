@@ -69,6 +69,9 @@ export default function SportsPage() {
           Filter by sport, league, or country, or jump straight to a per-franchise page where one exists.
           Per-team pages are live for NFL, MLB, and NBA today, with NHL queued next.
         </p>
+        <p className="text-[var(--text-dim)] max-w-3xl text-xs mt-2">
+          Rosters and divisions current as of Feb 2026. Level + division changes happen during each sport&apos;s offseason and are noted in <Link href="/updates" className="underline hover:text-[var(--accent)]">/updates</Link>.
+        </p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">
           <div><strong className="text-[var(--text)] text-sm">{summary.major_markers.toLocaleString()}</strong> Major League · <strong className="text-[var(--text)] text-sm">{summary.other_markers.toLocaleString()}</strong> College & second flight</div>
           <div><strong className="text-[var(--text)] text-sm">{summary.markers_with_team_page}</strong> with per-franchise pages</div>

@@ -76,11 +76,13 @@ export default function NhlIndexPage() {
         </div>
       </header>
 
-      <NhlPlayoffBracket
-        franchises={franchises}
-        playoffBundle={playoffBundle}
-        logoMap={Object.fromEntries(franchises.map((f) => [f.slug, logoUrlFor(f.slug)]))}
-      />
+      <div className="mx-auto max-w-3xl">
+        <NhlPlayoffBracket
+          franchises={franchises}
+          playoffBundle={playoffBundle}
+          logoMap={Object.fromEntries(franchises.map((f) => [f.slug, logoUrlFor(f.slug)]))}
+        />
+      </div>
 
       <LeagueMap franchises={franchises} />
 

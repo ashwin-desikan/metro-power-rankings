@@ -86,7 +86,9 @@ export default async function MlbIndexPage() {
         </div>
       </header>
 
-      <MlbStandings />
+      <div className="mx-auto max-w-3xl">
+        <MlbStandings />
+      </div>
 
       <LeagueMap franchises={franchises} />
 

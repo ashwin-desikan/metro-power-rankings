@@ -112,6 +112,11 @@ export default function SportsMapInner({ markers }: Props) {
                     ? `${m.federation} (${m.country})`
                     : (m.metro || m.city || m.country)}
                 </div>
+                {m.season_note && (
+                  <div style={{ fontSize: 10, marginTop: 2, color: "#f97316", fontWeight: 500 }}>
+                    {m.season_note}
+                  </div>
+                )}
                 {(m.metro_slug || m.team_page_url) && (
                   <div style={{ fontSize: 10, marginTop: 2, opacity: 0.7 }}>
                     Click for {m.metro_slug ? "metro page" : "team page"}

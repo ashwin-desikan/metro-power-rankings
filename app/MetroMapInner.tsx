@@ -196,6 +196,11 @@ export default function MetroMapInner({
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://overturemaps.org/">Overture Maps</a>'
         subdomains={['a', 'b', 'c', 'd']}
         maxZoom={18}
+        minZoom={2}
+        // noWrap stops Leaflet from repeating continents off either edge
+        // when the map zooms out to a world view. Keeps the classic single
+        // Mercator panel by default.
+        noWrap={true}
       />
       {boundary ? (
         <>

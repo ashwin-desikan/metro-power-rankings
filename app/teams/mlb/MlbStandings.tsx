@@ -15,12 +15,30 @@ import { getAllFranchises, logoUrlFor, monogramFor } from "@/lib/mlb";
 
 type Region = "East" | "Central" | "West" | "Other";
 
-function regionOf(division: string): Region {
-  const lower = (division || "").toLowerCase();
+// Canonical-team region map. The 30 modern MLB clubs are a fixed
+// partition across the 6 divisions and ESPN cosmetic renames don't move
+// them. Used as a fallback when ESPN returns an empty division string
+// (which 2026 has been doing intermittently — the source of the
+// persistent 'Other' bucket bug).
+const DIVISION_BY_TEAM: Record<string, "East" | "Central" | "West"> = {
+  // AL
+  "Yankees": "East", "Red Sox": "East", "Blue Jays": "East", "Orioles": "East", "Rays": "East",
+  "Guardians": "Central", "Twins": "Central", "Royals": "Central", "Tigers": "Central", "White Sox": "Central",
+  "Astros": "West", "Mariners": "West", "Rangers": "West", "Angels": "West", "Athletics": "West",
+  // NL
+  "Phillies": "East", "Mets": "East", "Braves": "East", "Marlins": "East", "Nationals": "East",
+  "Cubs": "Central", "Brewers": "Central", "Cardinals": "Central", "Pirates": "Central", "Reds": "Central",
+  "Dodgers": "West", "Giants": "West", "Padres": "West", "Diamondbacks": "West", "Rockies": "West",
+};
+
+function regionOf(team: TeamStanding): Region {
+  const lower = (team.division || "").toLowerCase();
   if (lower.includes("east")) return "East";
   if (lower.includes("central")) return "Central";
   if (lower.includes("west")) return "West";
-  return "Other";
+  // Canonical-team fallback — final line of defense when ESPN's division
+  // string is empty or unrecognized.
+  return DIVISION_BY_TEAM[team.canonical] || "Other";
 }
 
 // Workbook-anchored fallback: when ESPN omits a clean league marker, the
@@ -79,7 +97,7 @@ export default async function MlbStandings() {
   const buckets = new Map<string, Bucket>();
   for (const t of Object.values(standings.by_canonical)) {
     const league = leagueOf(t);
-    const region = regionOf(t.division || "");
+    const region = regionOf(t);
     const key = `${league}|${region}`;
     if (!buckets.has(key)) {
       const label = t.division
@@ -191,9 +209,13 @@ export default async function MlbStandings() {
                                 </span>
                               )}
                               <span className="truncate">{displayShort}</span>
+                              <span className="text-[10px] text-[var(--text-dim)] ml-1 whitespace-nowrap">{pretty}</span>
                             </Link>
                           ) : (
-                            <span className="text-[var(--text-dim)]">{displayShort}</span>
+                            <span className="text-[var(--text-dim)]">
+                              {displayShort}
+                              <span className="text-[10px] text-[var(--text-dim)] ml-1">{pretty}</span>
+                            </span>
                           )}
                         </td>
                         <td className="py-1 px-1 text-right">{t.wins}</td>
