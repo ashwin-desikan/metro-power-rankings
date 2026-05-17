@@ -1,5 +1,86 @@
 {
-  "year": 2026,
-  "is_postseason_complete": false,
-  "by_franchise": {}
+"year":2026,
+"is_postseason_complete":false,
+"by_franchise":{
+"Avalanche":{
+"state":"active_cf",
+"last_round":"Conference Finals",
+"year":2026
+},
+"Golden Knights":{
+"state":"active_cf",
+"last_round":"Conference Finals",
+"year":2026
+},
+"Hurricanes":{
+"state":"active_cf",
+"last_round":"Conference Finals",
+"year":2026
+},
+"Canadiens":{
+"state":"active_semis",
+"last_round":"Conference Semifinals",
+"year":2026
+},
+"Ducks":{
+"state":"eliminated_semis",
+"last_round":"Eliminated Conference Semifinals",
+"year":2026
+},
+"Flyers":{
+"state":"eliminated_semis",
+"last_round":"Eliminated Conference Semifinals",
+"year":2026
+},
+"Sabres":{
+"state":"active_semis",
+"last_round":"Conference Semifinals",
+"year":2026
+},
+"Wild":{
+"state":"eliminated_semis",
+"last_round":"Eliminated Conference Semifinals",
+"year":2026
+},
+"Bruins":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+},
+"Kings":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+},
+"Lightning":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+},
+"Mammoth":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+},
+"Oilers":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+},
+"Penguins":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+},
+"Senators":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+},
+"Stars":{
+"state":"eliminated_qf",
+"last_round":"Eliminated First Round",
+"year":2026
+}
+}
 }
