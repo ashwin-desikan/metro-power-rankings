@@ -3,6 +3,8 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Metro, formatPop, regionColors } from '@/lib/shared';
+import MetroMap, { type MapPoint } from './MetroMap';
+import { useMetroBoundaries } from '@/lib/useMetroBoundaries';
 
 interface RankingsTableProps {
   metros: Metro[];
@@ -107,8 +109,43 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
           ? 'Top 25 Global Metros'
           : 'Top 100 Global Metros';
 
+  // Map layer: every visible row that carries lat/lon becomes a marker.
+  // The set is reactive to every filter (view / continent / region / search)
+  // so the map and table always show the same metros. Boundary polygons
+  // load on-demand for whichever slugs are visible.
+  const mapPoints = useMemo<MapPoint[]>(
+    () =>
+      filtered
+        .filter((m): m is Metro & { lat: number; lon: number } =>
+          typeof m.lat === 'number' &&
+          typeof m.lon === 'number' &&
+          (m.lat !== 0 || m.lon !== 0),
+        )
+        .map((m) => ({
+          slug: m.slug,
+          name: m.name,
+          lat: m.lat,
+          lon: m.lon,
+          city: m.primaryCity,
+          state: m.primaryState,
+          country: m.country,
+        })),
+    [filtered],
+  );
+  const mapBoundary = useMetroBoundaries(mapPoints.map((p) => p.slug));
+
   return (
     <div className="space-y-6">
+      {mapPoints.length > 0 ? (
+        <MetroMap
+          points={mapPoints}
+          showConnections={false}
+          height={320}
+          refitOnChange
+          clickToNavigate
+          boundary={mapBoundary ?? undefined}
+        />
+      ) : null}
       <div>
         <h2
           className="text-2xl font-bold mb-4"
@@ -275,6 +312,11 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
               <th
                 className="hidden md:table-cell px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]"
               >
+                Primary City
+              </th>
+              <th
+                className="hidden md:table-cell px-4 py-3 text-left text-sm font-semibold text-[var(--text-muted)]"
+              >
                 State
               </th>
               <th
@@ -334,6 +376,13 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
                         regionColors[metro.region] || 'var(--text-dim)',
                     }}
                   />
+                </td>
+                <td className="hidden md:table-cell px-4 py-3 text-sm text-[var(--text)]">
+                  {metro.primaryCity ? (
+                    <span>{metro.primaryCity}</span>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
                 </td>
                 <td className="hidden md:table-cell px-4 py-3 text-sm" onClick={(e) => e.stopPropagation()}>
                   {metro.primaryState ? (

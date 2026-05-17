@@ -25,6 +25,14 @@ export type MapPoint = {
   name: string;
   lat: number;
   lon: number;
+  // Optional metadata used by the home-page rankings map for richer
+  // tooltips. When any of these are present, MetroMapInner renders a
+  // multi-line tooltip (metro / city · state · country) instead of just
+  // the metro name. Existing single-point callers (metro detail, country
+  // page, comparison) can omit them and keep the legacy plain-name tooltip.
+  city?: string;
+  state?: string;
+  country?: string;
 };
 
 export default function MetroMap({
@@ -34,6 +42,8 @@ export default function MetroMap({
   height = 320,
   interactiveFeatures = false,
   markers,
+  refitOnChange = false,
+  clickToNavigate = false,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
@@ -51,6 +61,15 @@ export default function MetroMap({
   // boundary and primary pin. Categorized into Major League / Other
   // teams / Venues so each color band reads at a glance.
   markers?: TeamMarker[];
+  // When true, the map re-fits bounds every time the points array changes
+  // (filter-driven maps like the home-page rankings overlay). Default false
+  // preserves the metro-detail / comparison / country-page behavior where
+  // bounds are computed once at mount and never updated.
+  refitOnChange?: boolean;
+  // When true, clicking a point marker navigates to /rankings/{slug}.
+  // Opt-in so the metro-detail single-pin map does not become accidentally
+  // self-clickable.
+  clickToNavigate?: boolean;
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
   // don't sit at (0,0) off Africa. They reappear once coords land in the xlsx.
@@ -70,6 +89,8 @@ export default function MetroMap({
         boundary={boundary}
         interactiveFeatures={interactiveFeatures}
         markers={markers}
+        refitOnChange={refitOnChange}
+        clickToNavigate={clickToNavigate}
       />
     </div>
   );

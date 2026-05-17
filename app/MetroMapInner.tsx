@@ -43,6 +43,36 @@ function FitToBoundary({ boundary }: { boundary: unknown }) {
   return null;
 }
 
+// Re-fit map bounds whenever the points array changes. Used by the
+// home-page rankings map where the table filter set is reactive. A stable
+// key derived from the slug list keeps the effect dep array shallow so
+// React doesn't re-run on every parent render.
+function FitToPoints({ points }: { points: MapPoint[] }) {
+  const map = useMap();
+  const key = points.map((p) => p.slug).join('|');
+  useEffect(() => {
+    if (points.length === 0) return;
+    if (points.length === 1) {
+      map.setView([points[0].lat, points[0].lon], 9);
+      return;
+    }
+    const lats = points.map((p) => p.lat);
+    const lons = points.map((p) => p.lon);
+    const span = Math.max(
+      Math.max(...lats) - Math.min(...lats),
+      Math.max(...lons) - Math.min(...lons),
+    );
+    const pad = Math.max(0.5, span * 0.15);
+    const bounds: [[number, number], [number, number]] = [
+      [Math.min(...lats) - pad, Math.min(...lons) - pad],
+      [Math.max(...lats) + pad, Math.max(...lons) + pad],
+    ];
+    map.fitBounds(bounds, { padding: [20, 20] });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key, map]);
+  return null;
+}
+
 // Tier accent palette. Mirrors lib/tiers.ts so the country-map polygon
 // shading reads as the same hierarchy used everywhere else on the site.
 // Falls back to the site accent for any feature missing a tier slug.
@@ -93,6 +123,8 @@ export default function MetroMapInner({
   boundary,
   interactiveFeatures = false,
   markers,
+  refitOnChange = false,
+  clickToNavigate = false,
 }: {
   points: MapPoint[];
   showConnections: boolean;
@@ -106,6 +138,14 @@ export default function MetroMapInner({
   // boundary polygon and below the primary pin so the metro's home pin
   // stays visually dominant.
   markers?: TeamMarker[];
+  // Re-fit map bounds whenever the points array changes. Powers the
+  // home-page rankings overlay where the table's filter state drives
+  // the visible point set.
+  refitOnChange?: boolean;
+  // Wire each point marker to navigate to /rankings/{slug} on click.
+  // Opt-in so existing single-pin callers (metro detail) don't become
+  // accidentally self-clickable.
+  clickToNavigate?: boolean;
 }) {
   const router = useRouter();
   const single = points.length === 1;
@@ -246,7 +286,10 @@ export default function MetroMapInner({
           })}
         </LayerGroup>
       ) : null}
-      {points.map((p) => (
+      {refitOnChange ? <FitToPoints points={points} /> : null}
+      {points.map((p) => {
+        const richMeta = [p.city, p.state, p.country].filter(Boolean).join(' · ');
+        return (
         <CircleMarker
           key={p.slug}
           center={[p.lat, p.lon]}
@@ -257,12 +300,25 @@ export default function MetroMapInner({
             fillColor: '#4ECDC4',
             fillOpacity: 1,
           }}
+          eventHandlers={
+            clickToNavigate
+              ? { click: () => router.push(`/rankings/${p.slug}`) }
+              : undefined
+          }
         >
           <Tooltip direction="top" offset={[0, -6]} permanent={false}>
-            {p.name}
+            {richMeta ? (
+              <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
+                <div style={{ fontWeight: 600 }}>{p.name}</div>
+                <div style={{ color: '#9ca3af', fontSize: 11 }}>{richMeta}</div>
+              </div>
+            ) : (
+              p.name
+            )}
           </Tooltip>
         </CircleMarker>
-      ))}
+        );
+      })}
     </MapContainer>
   );
 }
