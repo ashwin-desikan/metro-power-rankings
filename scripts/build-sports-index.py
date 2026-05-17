@@ -243,10 +243,13 @@ def main():
         "Historic Venues",  # historic stadiums, not teams
     }
 
+    # Schema as of 2026-05-17: 20 cols. Gold Standard col L (idx 11) inserted
+    # between Metro Area (val) and Major League. All downstream indices
+    # shifted by 1; the gold flag is unpacked alongside the rest.
     for r in rows:
-        if not r or len(r) < 19:
+        if not r or len(r) < 20:
             continue
-        sport, league, team, main_div, division, city, metro, state, country, level, _metro_val, ml, season, _affil, _annual, qid, wiki, lat, lng = r[:19]
+        sport, league, team, main_div, division, city, metro, state, country, level, _metro_val, gold_flag, ml, season, _affil, _annual, qid, wiki, lat, lng = r[:20]
 
         # Every row admits; tier is encoded via marker_level ('Major'
         # for ml in {Y, Euroleague}, 'Other' otherwise). The /sports UI

@@ -927,7 +927,8 @@ def read_metro_team_list():
             continue
         ws = mwb["Team List"]
         # Columns: 0=Sport, 1=League, 2=Team, 5=City, 6=Metro, 7=State,
-        # 17=Lat, 18=Long.
+        # 18=Lat, 19=Long. Shifted from 17/18 on 2026-05-17 when the Gold
+        # Standard column was inserted at col L of Team List.
         for i, row in enumerate(ws.iter_rows(values_only=True)):
             if i == 0:
                 continue
@@ -941,8 +942,8 @@ def read_metro_team_list():
                 "city": safe_str(row[5] if len(row) > 5 else ""),
                 "metro": safe_str(row[6] if len(row) > 6 else ""),
                 "state": safe_str(row[7] if len(row) > 7 else ""),
-                "lat": safe_float(row[17] if len(row) > 17 else 0) or None,
-                "lng": safe_float(row[18] if len(row) > 18 else 0) or None,
+                "lat": safe_float(row[18] if len(row) > 18 else 0) or None,
+                "lng": safe_float(row[19] if len(row) > 19 else 0) or None,
             }
         mwb.close()
         if out:

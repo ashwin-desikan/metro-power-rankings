@@ -513,8 +513,11 @@ def read_metro_team_list():
     wb = openpyxl.load_workbook(metro_wb_path, read_only=True, data_only=True)
     ws = wb["Team List"]
     out = {}
+    # Cols shifted 2026-05-17: Gold Standard inserted at col L pushed Major
+    # League to col M (idx 12), Wikidata QID to col Q (idx 16), Wikipedia
+    # URL to col R (idx 17), Lat/Long to cols S/T (idx 18/19).
     for i, row in enumerate(ws.iter_rows(values_only=True)):
-        if i == 0 or not row or len(row) < 19:
+        if i == 0 or not row or len(row) < 20:
             continue
         sport = safe_str(row[0])
         league = safe_str(row[1])
@@ -523,11 +526,11 @@ def read_metro_team_list():
         metro = safe_str(row[6])
         state = safe_str(row[7])
         country = safe_str(row[8])
-        ml = safe_str(row[11])
-        qid = safe_str(row[15])
-        wiki = safe_str(row[16])
-        lat = safe_float(row[17])
-        lng = safe_float(row[18])
+        ml = safe_str(row[12])
+        qid = safe_str(row[16])
+        wiki = safe_str(row[17])
+        lat = safe_float(row[18])
+        lng = safe_float(row[19])
         if league != "NHL" or ml != "Y":
             continue
         # Extract the nickname (last word) so it matches canonical Name

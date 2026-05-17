@@ -197,16 +197,26 @@ def extract_teams(wb):
         main_division = safe_str(v[3])
         if main_division.upper().startswith("NCAA") and level != "College":
             level = "College"
-        # Major League column (col 11) uses three patterns:
+        # Col L (idx 11) = "Gold Standard" flag, inserted 2026-05-17 as a
+        # workbook-driven source for the apex top-flight designation per
+        # sport-league. Replaces the hardcoded lib/goldStandard.ts map; a
+        # curated Football men's Big 5 override is layered on the TS side
+        # because the workbook intentionally leaves men's Football blank.
+        # Cell value 'Gold' (case-insensitive) flags the row; anything else
+        # (including blank) does not.
+        gold_marker = safe_str(v[11])
+        is_gold = gold_marker.upper() == 'GOLD'
+        # Col M (idx 12) = "Major League" marker, shifted from idx 11 when the
+        # Gold Standard column was inserted. Same three-value pattern as before:
         #   ""           → not a major-league row
         #   "Y"          → major-league row, league label comes from col 1 as-is
         #   "<TierName>" → major-league row AND the tier name overrides the
         #                  generic col 1 label. This is how Euroleague basketball
         #                  is encoded: col 1 = "Int'l Basketball" (the bucket),
-        #                  col 11 = "Euroleague" (the actual tier the team
+        #                  col M = "Euroleague" (the actual tier the team
         #                  competes in). Surface the tier so the metro page
         #                  shows "Euroleague" rather than "Int'l Basketball".
-        ml_marker = safe_str(v[11])
+        ml_marker = safe_str(v[12])
         is_major = ml_marker != ''
         league_for_team = ml_marker if (is_major and ml_marker != 'Y') else league
         team_entry = {
@@ -218,32 +228,37 @@ def extract_teams(wb):
             'level': level,
             'major': is_major,
         }
-        # Column O (index 14) = "Annual Event" flag, marked 'Y' for recurring
+        if is_gold:
+            team_entry['gold'] = True
+        # Col P (idx 15) = "Annual Event" flag, marked 'Y' for recurring
         # event-type entries in Team List (F1 Grands Prix, NASCAR races, Sailing
         # regattas, Powerboat races). These are teams in the source data but
         # behave like events on the site, so they route exclusively into the
         # "Annual Sporting Events" category on the metro page rather than the
-        # Major League Teams or Other Teams buckets.
-        annual_flag = safe_str(v[14]) if len(v) > 14 else ''
+        # Major League Teams or Other Teams buckets. Shifted from idx 14 when
+        # the Gold Standard column was inserted at col L (2026-05-17).
+        annual_flag = safe_str(v[15]) if len(v) > 15 else ''
         if annual_flag.upper() == 'Y':
             team_entry['annual'] = True
-        # Columns P/Q (idx 15/16) = Wikidata QID and Wikipedia URL. Populated
+        # Cols Q/R (idx 16/17) = Wikidata QID and Wikipedia URL. Populated
         # as of 2026-04-24 for all US major league franchises (NFL/MLB/NBA/NHL)
         # plus every Canadian NHL team and the Toronto MLB/NBA franchises.
         # Omit the keys when empty so JSON-LD sameAs arrays never emit nulls.
-        qid = safe_str(v[15]) if len(v) > 15 else ''
-        wiki_url = safe_str(v[16]) if len(v) > 16 else ''
+        # Shifted from idx 15/16 when the Gold Standard column was inserted.
+        qid = safe_str(v[16]) if len(v) > 16 else ''
+        wiki_url = safe_str(v[17]) if len(v) > 17 else ''
         if qid:
             team_entry['qid'] = qid
         if wiki_url:
             team_entry['wikipediaUrl'] = wiki_url
-        # Columns R/S (idx 17/18) = Lat / Long for the team's home venue (or for
+        # Cols S/T (idx 18/19) = Lat / Long for the team's home venue (or for
         # venue-class rows, the venue itself). Used to render team and venue
         # markers on the metro detail page map. Both must be present and numeric
         # for the marker to plot; otherwise the entry is rendered in the written
-        # sections only.
-        lat = safe_float(v[17]) if len(v) > 17 else 0
-        lng = safe_float(v[18]) if len(v) > 18 else 0
+        # sections only. Shifted from idx 17/18 when the Gold Standard column
+        # was inserted at col L (2026-05-17).
+        lat = safe_float(v[18]) if len(v) > 18 else 0
+        lng = safe_float(v[19]) if len(v) > 19 else 0
         if lat or lng:
             team_entry['lat'] = lat
             team_entry['lng'] = lng
@@ -254,6 +269,44 @@ def extract_teams(wb):
     # (e.g. London Irish 2023) that must not reach the site.
 
     return teams
+
+
+def extract_gold_standard_leagues(wb):
+    """Build the sport -> set of league names map from Team List col L.
+
+    The workbook owns Gold Standard designation as of 2026-05-17. Each row
+    whose col L value is 'Gold' (case-insensitive) contributes its (Sport,
+    League) pair to the map. The Major League override is honored: if col M
+    is a tier-name override (e.g. 'Euroleague' for an Int'l Basketball row),
+    that tier becomes the league key on the gold side too, so the JSON map
+    aligns with the league strings emitted by extract_teams.
+
+    Returns:
+      { sport_name: [league_name, ...] }  (sorted, deduplicated)
+
+    The Football men's Big 5 override (England / Spain / Italy / France /
+    Germany) is intentionally NOT applied here. The workbook leaves men's
+    Football blank by design; the curated override is layered on the TS
+    side in lib/goldStandard.ts so the JSON file remains a pure mirror of
+    the workbook.
+    """
+    ws = wb["Team List"]
+    by_sport = {}
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        v = list(row)
+        if len(v) < 13:
+            continue
+        gold_marker = safe_str(v[11])
+        if gold_marker.upper() != 'GOLD':
+            continue
+        sport = safe_str(v[0])
+        league_raw = _normalize_league(v[1])
+        ml_marker = safe_str(v[12])
+        league = ml_marker if (ml_marker and ml_marker != 'Y') else league_raw
+        if not sport or not league:
+            continue
+        by_sport.setdefault(sport, set()).add(league)
+    return {sport: sorted(leagues) for sport, leagues in sorted(by_sport.items())}
 
 
 def extract_universities(wb):
@@ -1194,6 +1247,11 @@ def main():
     states_list, metro_state_slugs = extract_states(wb, metros)
     print(f"  {len(states_list)} states; {len(metro_state_slugs)} metros resolved to state slug")
 
+    print("Extracting Gold Standard leagues (workbook col L of Team List)...")
+    gold_leagues = extract_gold_standard_leagues(wb)
+    total_gold = sum(len(v) for v in gold_leagues.values())
+    print(f"  {len(gold_leagues)} sports, {total_gold} leagues flagged Gold")
+
     wb.close()
 
     # Build a country-name -> slug lookup from public/data/countries.json so
@@ -1388,6 +1446,17 @@ def main():
     with open(data_dir / "meta.json", 'w') as f:
         json.dump(meta, f, separators=(',', ':'))
     print(f"  meta.json: lastUpdate={last_update}" + (f", companiesAsOf={mktcap_as_of}" if mktcap_as_of else ""))
+
+    # Gold Standard map (workbook col L of Team List, extracted above before
+    # the workbook was closed). Consumed by lib/goldStandard.ts via static
+    # JSON import alongside a curated Football men's Big 5 override on the
+    # TS side. Emit even when empty so the file always exists for the import.
+    print("Writing gold-standard-leagues.json...")
+    with open(data_dir / "gold-standard-leagues.json", 'w') as f:
+        json.dump({'sports': gold_leagues}, f, separators=(',', ':'))
+    gs_size = os.path.getsize(data_dir / "gold-standard-leagues.json")
+    gs_total = sum(len(v) for v in gold_leagues.values())
+    print(f"  gold-standard-leagues.json: {gs_size:,} bytes ({len(gold_leagues)} sports, {gs_total} leagues)")
 
     print("\nDone. Data files written to public/data/")
     print(f"  metros.json ({len(slim_metros)} metros)")
