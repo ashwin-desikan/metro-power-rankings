@@ -97,3 +97,9 @@ public/data/stale-boundaries-to-delete.txt
 
 # Local Vercel deploy status snapshot, written by npm run deploy-status
 .deploy-status.json
+
+# workbook-sync orchestrator run logs
+.workbook-sync-log/
+
+# League workbooks staged from OneDrive by scripts/stage-leagues.py
+workbooks/
