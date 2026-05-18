@@ -91,7 +91,7 @@ def steps_plan(args) -> List[Step]:
     # Pass staged paths to each league builder so the build never reads from
     # OneDrive in the hot path. The staging step above is what holds the
     # OneDrive lock risk, and it surfaces a clean error if it can't.
-    nfl_path = str(WORKBOOKS_DIR / "NFL_all_backup.xlsx")
+    nfl_path = str(WORKBOOKS_DIR / "NFL_all.xlsx")
     nba_path = str(WORKBOOKS_DIR / "NBA.xlsx")
     nhl_path = str(WORKBOOKS_DIR / "NHL.xlsx")
     mlb_path = str(WORKBOOKS_DIR / "MLB.xlsx")
@@ -102,7 +102,7 @@ def steps_plan(args) -> List[Step]:
              output_globs=["MetroAreas.xlsx"]),
         Step("stage-leagues", "2/11  stage NFL/NBA/NHL/MLB workbooks",
              stage_cmd,
-             output_globs=["workbooks/NFL_all_backup.xlsx",
+             output_globs=["workbooks/NFL_all.xlsx",
                            "workbooks/NBA.xlsx",
                            "workbooks/NHL.xlsx",
                            "workbooks/MLB.xlsx"]),
@@ -167,7 +167,10 @@ class Painter:
     def dim(self, s):   return self._c("2", s)
 
 
-def fingerprint(globs: List[str]) -> str:
+def fingerprint(globs: List[str], step_ran: bool = True) -> str:
+    """Summarize the on-disk state of the files a step would normally write.
+    When step_ran is False (the step aborted before getting to its outputs),
+    suppress 'MISSING' noise; the file simply was not written this run."""
     parts = []
     for g in globs:
         p = PROJECT_ROOT / g
@@ -176,7 +179,10 @@ def fingerprint(globs: List[str]) -> str:
             mt = datetime.fromtimestamp(st.st_mtime).strftime("%H:%M:%S")
             parts.append(f"{g.split('/')[-1]} {st.st_size}B @{mt}")
         except FileNotFoundError:
-            parts.append(f"{g.split('/')[-1]} MISSING")
+            if step_ran:
+                parts.append(f"{g.split('/')[-1]} MISSING")
+            else:
+                parts.append(f"{g.split('/')[-1]} not written")
     return ", ".join(parts) if parts else ""
 
 
@@ -218,7 +224,7 @@ def summary(painter: Painter, results: List[tuple[Step, int, float]]):
     name_w = max(len(s.short) for s, _, _ in results) if results else 6
     for step, rc, sec in results:
         tag = painter.green("OK  ") if rc == 0 else painter.red("FAIL")
-        fp = fingerprint(step.output_globs)
+        fp = fingerprint(step.output_globs, step_ran=(rc == 0))
         suffix = "  " + painter.dim(fp) if fp else ""
         print(f"  {tag}  {step.short.ljust(name_w)}  {sec:6.1f}s{suffix}")
 

@@ -9,7 +9,7 @@ The contract is intentionally the same so the workbook-sync skill can treat
 them as siblings.
 
 Targets:
-  NFL_all_backup.xlsx -> workbooks/NFL_all_backup.xlsx
+  NFL_all.xlsx        -> workbooks/NFL_all.xlsx
   NBA.xlsx            -> workbooks/NBA.xlsx
   NHL.xlsx            -> workbooks/NHL.xlsx
   MLB.xlsx            -> workbooks/MLB.xlsx
@@ -45,7 +45,7 @@ CLI:
 Exit codes:
   0  all requested workbooks staged or already current
   1  a source file was not found
-  2  Excel '~$' lockfile present (close Excel and retry)
+  2  Excel '~$' lockfile present and active (close Excel; stale lockfiles are warned and ignored)
   3  sharing violation persisted after all retries
   4  validation failed (EOCD missing / not a complete xlsx)
   5  copy or backup failed
@@ -66,7 +66,7 @@ from pathlib import Path
 # Logical short name -> default source filename. Update if the user renames a
 # workbook in OneDrive. The user-readable short names are stable.
 WORKBOOKS = {
-    "nfl": "NFL_all_backup.xlsx",
+    "nfl": "NFL_all.xlsx",
     "nba": "NBA.xlsx",
     "nhl": "NHL.xlsx",
     "mlb": "MLB.xlsx",
@@ -104,9 +104,24 @@ def find_source(short_name: str) -> Path | None:
     return None
 
 
-def has_excel_lockfile(src: Path) -> Path | None:
+def excel_lockfile_status(src: Path) -> tuple[Path | None, bool]:
+    """Return (lockfile_path, is_active) for the Excel '~$NAME.xlsx' marker
+    that sits next to src when Excel has the workbook open.
+
+    A real (active) lockfile is freshly written when Excel opens the file, so
+    its mtime is at-or-after the workbook's. Stale lockfiles from old Excel
+    crashes can persist for years on disk; their mtime is older than the
+    workbook's own mtime, and they should be reported as a warning rather
+    than aborting the run.
+    """
     lock = src.parent / f"~${src.name}"
-    return lock if lock.exists() else None
+    if not lock.exists():
+        return (None, False)
+    try:
+        active = lock.stat().st_mtime >= src.stat().st_mtime - 1.0
+    except OSError:
+        active = True
+    return (lock, active)
 
 
 def validate_eocd(path: Path) -> bool:
@@ -186,11 +201,15 @@ def stage_one(short_name: str, staging_dir: Path, args) -> int:
               f"candidate location", file=sys.stderr)
         return 1
 
-    lock = has_excel_lockfile(src)
+    lock, lock_active = excel_lockfile_status(src)
     if lock is not None:
-        print(f"  FAIL {short_name}: Excel lockfile present at {lock}. "
-              f"Close Excel and retry.", file=sys.stderr)
-        return 2
+        if lock_active:
+            print(f"  FAIL {short_name}: Excel lockfile present at {lock}. "
+                  f"Close Excel and retry.", file=sys.stderr)
+            return 2
+        if not args.quiet:
+            print(f"  WARN {short_name}: stale lockfile {lock.name} "
+                  f"(older than the workbook); proceeding.", file=sys.stderr)
 
     if target.exists() and not args.force:
         # If staged copy is newer, surface that and require --force.

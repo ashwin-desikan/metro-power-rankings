@@ -1,6 +1,6 @@
 ---
 name: workbook-sync
-description: "Run the full Metro Area Project data refresh pipeline end to end. Use whenever the user says they updated MetroAreas.xlsx, edited a league workbook (NFL_all_backup.xlsx, NBA.xlsx, NHL.xlsx, MLB.xlsx), wants to 'sync the workbook', 'rebuild the data', 'refresh the JSON', 'rerun the ETL', regenerate metro boundaries, or anything that should propagate xlsx edits to public/data/*.json and the boundary geojsons. Chains sync_source_xlsx.py -> stage-leagues.py -> extract.py -> build-nfl-data.py -> build-nba-data.py -> build-mlb-data.py -> build-nhl-data.py -> build-sports-index.py -> build-metro-boundaries.py -> client-import check -> tsc, then proposes a commit. The stage step copies league workbooks out of OneDrive so OneDrive sharing locks never block a builder mid-run. Do NOT use for content/Substack drafts, plugin work, or anything that does not touch workbook-derived data."
+description: "Run the full Metro Area Project data refresh pipeline end to end. Use whenever the user says they updated MetroAreas.xlsx, edited a league workbook (NFL_all.xlsx, NBA.xlsx, NHL.xlsx, MLB.xlsx), wants to 'sync the workbook', 'rebuild the data', 'refresh the JSON', 'rerun the ETL', regenerate metro boundaries, or anything that should propagate xlsx edits to public/data/*.json and the boundary geojsons. Chains sync_source_xlsx.py -> stage-leagues.py -> extract.py -> build-nfl-data.py -> build-nba-data.py -> build-mlb-data.py -> build-nhl-data.py -> build-sports-index.py -> build-metro-boundaries.py -> client-import check -> tsc, then proposes a commit. The stage step copies league workbooks out of OneDrive so OneDrive sharing locks never block a builder mid-run, and treats stale (pre-workbook) ~$ lockfiles as warnings rather than aborts. Do NOT use for content/Substack drafts, plugin work, or anything that does not touch workbook-derived data."
 ---
 
 # workbook-sync
@@ -34,7 +34,7 @@ or anything that doesn't touch workbook-derived JSON.
   `MetroAreas.xlsx` lags until `sync_source_xlsx.py` runs.
 - The bindfs mount pads xlsx files on copy; `sync_source_xlsx.py` already
   validates EOCD before clobbering, so the skill does not need to.
-- League workbooks (NFL_all_backup.xlsx, NBA.xlsx, NHL.xlsx, MLB.xlsx) are
+- League workbooks (NFL_all.xlsx, NBA.xlsx, NHL.xlsx, MLB.xlsx) are
   staged into `./workbooks/` by `stage-leagues.py` before any builder runs.
   This is the reason the skill exists in this shape: reading league workbooks
   in place from OneDrive triggers sharing-violation aborts whenever Excel is
@@ -117,7 +117,7 @@ them by hand before pushing.
 | sync             | OneDrive source missing, or `~$MetroAreas.xlsx` lock file present            | Ask user to close Excel; re-run. If genuinely missing, set `METROAREAS_SOURCE_XLSX`. |
 | sync (exit 2)    | Project copy is newer than OneDrive source                                   | Confirm intent with user, then re-run with `--force-sync`.                  |
 | sync (exit 4)    | xlsx integrity check failed (bindfs padding, OneDrive mid-sync)              | Wait 30 seconds, re-run. If it persists, user must re-save the workbook.    |
-| stage-leagues (2)| Excel `~$NAME.xlsx` lockfile present for one of NFL/NBA/NHL/MLB              | Ask user to close Excel for the named workbook; re-run. No `--force` will fix this; the file is genuinely held. |
+| stage-leagues (2)| Active Excel `~$NAME.xlsx` lockfile (mtime >= workbook mtime)                | Ask user to close Excel for the named workbook; re-run. Stale lockfiles (older than the workbook) are warned and proceed automatically. |
 | stage-leagues (3)| Sharing violation persisted across retries (OneDrive mid-upload, anti-virus) | Wait 30-60 seconds and re-run; raise `--retry-count` if it recurs.          |
 | stage-leagues (4)| Source xlsx failed EOCD validation                                           | OneDrive partial-write or bindfs pad. Wait for OneDrive icon to settle.     |
 | stage-leagues (5)| Staged copy is newer than OneDrive source                                    | Confirm intent, re-run with `--force-sync` (forwards `--force` to stage-leagues). |
