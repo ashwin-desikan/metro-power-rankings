@@ -61,6 +61,9 @@ jobs:
           FAILURES=""
           ALL_RESULTS=""
           UA="CitizenOfNowhereBot/1.0 (+https://rankings.citizenofnowhere.org)"
+          # Substack sits behind Cloudflare and 403s unrecognized bot UAs.
+          # A browser-shaped UA passes through; the request is read-only.
+          BROWSER_UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 
           for entry in "${URLS[@]}"; do
             url="${entry%%|*}"
@@ -68,13 +71,20 @@ jobs:
             name="${rest%%|*}"
             notes="${rest#*|}"
 
+            # Substack endpoints need a browser-shaped UA to pass Cloudflare.
+            if [[ "$url" == *substack.com* ]]; then
+              req_ua="$BROWSER_UA"
+            else
+              req_ua="$UA"
+            fi
+
             # ESPN's JSON API and Substack RSS sometimes 405 on HEAD; GET them.
             if [[ "$url" == *api.espn.com* || "$url" == */feed ]]; then
               status=$(curl -sS -o /dev/null -w '%{http_code}' \
-                         --max-time 15 -A "$UA" "$url" || echo "000")
+                         --max-time 15 -A "$req_ua" "$url" || echo "000")
             else
               status=$(curl -sIS -o /dev/null -w '%{http_code}' \
-                         --max-time 15 -A "$UA" "$url" || echo "000")
+                         --max-time 15 -A "$req_ua" "$url" || echo "000")
             fi
 
             # Treat empty as 000.
@@ -110,8 +120,9 @@ jobs:
         if: steps.check.outputs.has_failures == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           TITLE="External URL monitor: failures detected"
           BODY_FILE=$(mktemp)
           {
@@ -147,8 +158,9 @@ jobs:
         if: steps.check.outputs.has_failures == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           EXISTING=$(gh issue list --state open \
                        --search '"External URL monitor" in:title' \
                        --json number --jq '.[0].number // empty')
