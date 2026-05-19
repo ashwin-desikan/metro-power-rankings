@@ -1373,19 +1373,19 @@ def main():
             entry['additionalStates'] = m['additionalStates']
         slim_metros.append(entry)
 
-    with open(data_dir / "metros.json", 'w') as f:
+    with open(data_dir / "metros.json", 'w', encoding='utf-8') as f:
         json.dump(slim_metros, f, separators=(',', ':'))
     size = os.path.getsize(data_dir / "metros.json")
     print(f"  metros.json: {size:,} bytes ({size/1024:.0f} KB)")
 
     # Write regions.json
     print("Writing regions.json...")
-    with open(data_dir / "regions.json", 'w') as f:
+    with open(data_dir / "regions.json", 'w', encoding='utf-8') as f:
         json.dump(regions, f, separators=(',', ':'))
 
     # Write states.json (every state row in the ISO sheet, with metro counts).
     print("Writing states.json...")
-    with open(data_dir / "states.json", 'w') as f:
+    with open(data_dir / "states.json", 'w', encoding='utf-8') as f:
         json.dump(states_list, f, separators=(',', ':'))
     states_size = os.path.getsize(data_dir / "states.json")
     print(f"  states.json: {states_size:,} bytes ({states_size/1024:.0f} KB)")
@@ -1418,7 +1418,7 @@ def main():
             detail['dimRanks'] = dim_ranks[slug]
 
         detail_path = details_dir / f"{slug}.json"
-        with open(detail_path, 'w') as f:
+        with open(detail_path, 'w', encoding='utf-8') as f:
             json.dump(detail, f, separators=(',', ':'))
 
         fsize = os.path.getsize(detail_path)
@@ -1433,7 +1433,7 @@ def main():
         if matched:
             sm['slug'] = matched['slug']
 
-    with open(data_dir / "metros.json", 'w') as f:
+    with open(data_dir / "metros.json", 'w', encoding='utf-8') as f:
         json.dump(slim_metros, f, separators=(',', ':'))
 
     # Write meta.json with last update date from the Excel file
@@ -1443,7 +1443,7 @@ def main():
     meta = {'lastUpdate': last_update}
     if mktcap_as_of:
         meta['companiesAsOf'] = mktcap_as_of
-    with open(data_dir / "meta.json", 'w') as f:
+    with open(data_dir / "meta.json", 'w', encoding='utf-8') as f:
         json.dump(meta, f, separators=(',', ':'))
     print(f"  meta.json: lastUpdate={last_update}" + (f", companiesAsOf={mktcap_as_of}" if mktcap_as_of else ""))
 
@@ -1452,7 +1452,7 @@ def main():
     # JSON import alongside a curated Football men's Big 5 override on the
     # TS side. Emit even when empty so the file always exists for the import.
     print("Writing gold-standard-leagues.json...")
-    with open(data_dir / "gold-standard-leagues.json", 'w') as f:
+    with open(data_dir / "gold-standard-leagues.json", 'w', encoding='utf-8') as f:
         json.dump({'sports': gold_leagues}, f, separators=(',', ':'))
     gs_size = os.path.getsize(data_dir / "gold-standard-leagues.json")
     gs_total = sum(len(v) for v in gold_leagues.values())

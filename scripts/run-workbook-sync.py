@@ -138,7 +138,10 @@ def steps_plan(args) -> List[Step]:
         # tsc is the slowest of the lot; run it last
         plan.append(Step(
             "tsc",           "11/11 typecheck (tsc --noEmit)",
-            ["npx", "tsc", "--noEmit"]))
+            # Invoke tsc via node directly (node_modules/typescript/bin/tsc).
+            # Avoids npx.cmd on Windows, which subprocess.run cannot resolve
+            # without shell=True.
+            ["node", str(PROJECT_ROOT / "node_modules" / "typescript" / "bin" / "tsc"), "--noEmit"]))
 
     if args.only:
         wanted = set(s.strip() for s in args.only.split(","))

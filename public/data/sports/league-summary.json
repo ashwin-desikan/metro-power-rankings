@@ -1,9 +1,9 @@
 {
-  "total_markers": 8811,
+  "total_markers": 8806,
   "major_markers": 1144,
-  "other_markers": 7667,
+  "other_markers": 7662,
   "by_sport": {
-    "Football": 5585,
+    "Football": 5580,
     "Basketball": 741,
     "W Basketball": 454,
     "Hockey": 344,
@@ -49,7 +49,7 @@
     "England": 456,
     "Germany": 317,
     "Spain": 307,
-    "International Teams": 244,
+    "International Teams": 239,
     "Italy": 204,
     "France": 166,
     "Russia": 154,
@@ -107,7 +107,7 @@
   "markers_with_team_page": 92,
   "sources": {
     "team_list": 3232,
-    "football_club_data": 5579,
+    "football_club_data": 5574,
     "team_list_excluded_no_coords": 0,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 708,

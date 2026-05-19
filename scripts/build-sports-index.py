@@ -458,7 +458,7 @@ def main():
     markers.sort(key=lambda m: (m["sport"] or "", m["league"] or "", m["team"] or ""))
 
     out_path = OUT_DIR / "all-teams.json"
-    with open(out_path, "w") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(markers, f, ensure_ascii=False, indent=0, separators=(",", ":"))
 
     # ---------- Summary ----------
@@ -510,7 +510,7 @@ def main():
     }
 
     summary_path = OUT_DIR / "league-summary.json"
-    with open(summary_path, "w") as f:
+    with open(summary_path, "w", encoding="utf-8") as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
 
     print(f"Wrote {out_path} ({len(markers)} markers)")

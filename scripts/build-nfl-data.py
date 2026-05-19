@@ -922,27 +922,27 @@ def main():
 
     franchises = build_franchises(lookup, totals, yby, external_links)
     print(f"Built franchises: {len(franchises)}")
-    (OUT_DIR / "franchises.json").write_text(json.dumps(franchises, indent=2, ensure_ascii=False))
+    (OUT_DIR / "franchises.json").write_text(json.dumps(franchises, indent=2, ensure_ascii=False), encoding="utf-8")
 
     champs = build_championships(yby)
-    (OUT_DIR / "championships.json").write_text(json.dumps(champs, indent=2, ensure_ascii=False))
+    (OUT_DIR / "championships.json").write_text(json.dumps(champs, indent=2, ensure_ascii=False), encoding="utf-8")
 
     champ_apps = build_championship_appearances(yby)
-    (OUT_DIR / "championship-appearances.json").write_text(json.dumps(champ_apps, indent=2, ensure_ascii=False))
+    (OUT_DIR / "championship-appearances.json").write_text(json.dumps(champ_apps, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    (OUT_DIR / "stadium-history.json").write_text(json.dumps(stadiums, indent=2, ensure_ascii=False))
+    (OUT_DIR / "stadium-history.json").write_text(json.dumps(stadiums, indent=2, ensure_ascii=False), encoding="utf-8")
 
     awards_plain = {team: dict(awards_by_type) for team, awards_by_type in awards.items()}
-    (OUT_DIR / "award-winners.json").write_text(json.dumps(awards_plain, indent=2, ensure_ascii=False))
+    (OUT_DIR / "award-winners.json").write_text(json.dumps(awards_plain, indent=2, ensure_ascii=False), encoding="utf-8")
 
     historical = build_historical(totals, yby)
     print(f"Built historical: {len(historical)}")
-    (OUT_DIR / "historical.json").write_text(json.dumps(historical, indent=2, ensure_ascii=False))
+    (OUT_DIR / "historical.json").write_text(json.dumps(historical, indent=2, ensure_ascii=False), encoding="utf-8")
 
     hist_champs = build_historical_championships(yby, totals)
-    (OUT_DIR / "historical-championships.json").write_text(json.dumps(hist_champs, indent=2, ensure_ascii=False))
+    (OUT_DIR / "historical-championships.json").write_text(json.dumps(hist_champs, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    (OUT_DIR / "hall-of-fame.json").write_text(json.dumps(dict(hof), indent=2, ensure_ascii=False))
+    (OUT_DIR / "hall-of-fame.json").write_text(json.dumps(dict(hof), indent=2, ensure_ascii=False), encoding="utf-8")
 
     active_canonicals = {f["canonical"]: f["slug"] for f in franchises}
     seasons_out = {}
@@ -963,19 +963,19 @@ def main():
             }
             for r in rows
         ]
-    (OUT_DIR / "seasons-by-team.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False))
+    (OUT_DIR / "seasons-by-team.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    (OUT_DIR / "pro-bowl-counts.json").write_text(json.dumps(pb_counts, indent=2, ensure_ascii=False))
+    (OUT_DIR / "pro-bowl-counts.json").write_text(json.dumps(pb_counts, indent=2, ensure_ascii=False), encoding="utf-8")
 
     # Top Games (DU Game Score)
     top_by_team = build_top_games_by_team(games_by_team_canonical, franchises, top_n=12)
-    (OUT_DIR / "top-games-by-team.json").write_text(json.dumps(top_by_team, indent=2, ensure_ascii=False))
+    (OUT_DIR / "top-games-by-team.json").write_text(json.dumps(top_by_team, indent=2, ensure_ascii=False), encoding="utf-8")
 
     top_all_time = build_top_games_all_time(all_games, top_n=50)
-    (OUT_DIR / "top-games-all-time.json").write_text(json.dumps(top_all_time, indent=2, ensure_ascii=False))
+    (OUT_DIR / "top-games-all-time.json").write_text(json.dumps(top_all_time, indent=2, ensure_ascii=False), encoding="utf-8")
 
     top_by_decade = build_top_games_by_decade(all_games, top_n_per_decade=10)
-    (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False))
+    (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print("\nWrote:")
     for f in sorted(OUT_DIR.glob("*.json")):
