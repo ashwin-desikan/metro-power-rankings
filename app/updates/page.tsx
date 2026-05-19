@@ -53,6 +53,15 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-19",
+    headline: "Round 2 playoffs; arena history fix; data refresh",
+    items: [
+      "Conference Finals chips now appear on NBA and NHL team pages; brackets reflect the live Round 2 results across both leagues.",
+      "NBA stadium-history regains five multi-tenant arenas that previously rendered with blank city, metro, and state on historical franchise pages.",
+      "Workbook-driven refresh sweeps season stats, awards, and roster data across every team page in the four leagues; metro chips update in lockstep.",
+    ],
+  },
+  {
     date: "2026-05-17",
     headline: "Velvet Rock Index launched: the geography of producer-driven music, 1974 to 1989",
     items: [

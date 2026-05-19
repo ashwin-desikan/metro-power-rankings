@@ -725,9 +725,8 @@ export default function MethodologyPage() {
                 a small number of metros carried disproportionate weight
                 under specific and non-recurring capital conditions. The
                 accompanying essay,{" "}
-                <em>Velvet Rock: The Geography of Producer-Driven Music,
-                1974 to 1989</em>, is published on the Citizen of Nowhere
-                Substack.
+                <em>Velvet Rock: The Map Yacht Rock Erased</em>,
+                is published on the Citizen of Nowhere Substack.
               </p>
             </section>
 

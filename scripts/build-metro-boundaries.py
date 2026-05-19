@@ -174,6 +174,10 @@ COUNTRY_PARQUET_MAP = {
     "China":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CN.parquet",
     "Australia":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AU.parquet",
     "South Korea": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-KR.parquet",
+    # 2026-05-19 expansion (three countries with workbook fills complete):
+    "Russia":      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-RU.parquet",
+    "Ireland":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IE.parquet",
+    "Belgium":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BE.parquet",
     # Andorra, San Marino, Vatican City, and the remaining 2026-05-08 small
     # countries (most of Latin America, sub-Saharan Africa, the Channel
     # Islands, etc.) are tiny enough to fall through to SOURCE_PARQUET; no
@@ -255,6 +259,11 @@ COUNTRY_SHEET_MAP = {
     "Austria":                  "municipality",
     "Switzerland":              "municipality",
     "China":                    "municipality",
+    # 2026-05-19 expansion - Counties (1)
+    "Russia":                   "counties",
+    # 2026-05-19 expansion - Municipality (2)
+    "Ireland":                  "municipality",
+    "Belgium":                  "municipality",
 }
 
 COUNTRY_TO_ISO = {
@@ -324,6 +333,10 @@ COUNTRY_TO_ISO = {
     "China":                    "CN",
     "Australia":                "AU",
     "South Korea":              "KR",
+    # 2026-05-19 expansion (three countries)
+    "Russia":                   "RU",
+    "Ireland":                  "IE",
+    "Belgium":                  "BE",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
