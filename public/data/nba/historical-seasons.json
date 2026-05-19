@@ -996,7 +996,7 @@
       "main_div": "ABA Eastern",
       "place": "2nd",
       "home_arena_season": "Metropolitan Sports Center",
-      "home_arena_canonical": "Metropolitan Sports Center",
+      "home_arena_canonical": "Met Center",
       "num_all_stars": 3,
       "num_all_nba": 0
     },
@@ -1684,7 +1684,7 @@
       "main_div": "ABA Eastern",
       "place": "1st",
       "home_arena_season": "Civic Arena",
-      "home_arena_canonical": "Civic Arena",
+      "home_arena_canonical": "Mellon Arena",
       "num_all_stars": 2,
       "num_all_nba": 0
     },
@@ -1746,7 +1746,7 @@
       "main_div": "ABA Eastern",
       "place": "5th",
       "home_arena_season": "Civic Arena",
-      "home_arena_canonical": "Civic Arena",
+      "home_arena_canonical": "Mellon Arena",
       "num_all_stars": 1,
       "num_all_nba": 0
     },
@@ -1777,7 +1777,7 @@
       "main_div": "ABA Eastern",
       "place": "5th",
       "home_arena_season": "Civic Arena",
-      "home_arena_canonical": "Civic Arena",
+      "home_arena_canonical": "Mellon Arena",
       "num_all_stars": 2,
       "num_all_nba": 0
     },
@@ -1808,7 +1808,7 @@
       "main_div": "ABA Eastern",
       "place": "6th",
       "home_arena_season": "Civic Arena",
-      "home_arena_canonical": "Civic Arena",
+      "home_arena_canonical": "Mellon Arena",
       "num_all_stars": 2,
       "num_all_nba": 0
     }

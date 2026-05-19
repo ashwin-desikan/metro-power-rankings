@@ -43,8 +43,8 @@
       "year": 2026
     },
     "Timberwolves": {
-      "state": "active_semis",
-      "last_round": "In the Conference Semifinals",
+      "state": "eliminated_semis",
+      "last_round": "Eliminated Conference Semifinals",
       "year": 2026
     },
     "Nuggets": {
@@ -78,18 +78,18 @@
       "year": 2026
     },
     "Cavaliers": {
-      "state": "active_semis",
-      "last_round": "In the Conference Semifinals",
+      "state": "active_cf",
+      "last_round": "In the Conference Finals",
       "year": 2026
     },
     "Spurs": {
-      "state": "active_semis",
-      "last_round": "In the Conference Semifinals",
+      "state": "active_cf",
+      "last_round": "In the Conference Finals",
       "year": 2026
     },
     "Pistons": {
-      "state": "active_semis",
-      "last_round": "In the Conference Semifinals",
+      "state": "eliminated_semis",
+      "last_round": "Eliminated Conference Semifinals",
       "year": 2026
     },
     "Thunder": {

@@ -426,7 +426,10 @@ def read_arenas(wb):
         if not canonical:
             continue
         sport = safe_str(row[9]) if len(row) > 9 else ""
-        if sport and sport.upper() != "NBA":
+        # Sport may be multi-tagged (e.g., 'NHL / NBA', 'NHL/NBA/NCAA').
+        # Match by token-set membership so cross-listed arenas survive.
+        sport_tokens = {t.strip().upper() for t in sport.replace('/', ',').split(',') if t.strip()}
+        if sport_tokens and "NBA" not in sport_tokens:
             continue
         out[canonical] = {
             "canonical": canonical,

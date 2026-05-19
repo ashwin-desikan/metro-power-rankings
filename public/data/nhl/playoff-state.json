@@ -7,6 +7,11 @@
 "last_round":"Conference Finals",
 "year":2026
 },
+"Canadiens":{
+"state":"active_cf",
+"last_round":"Conference Finals",
+"year":2026
+},
 "Golden Knights":{
 "state":"active_cf",
 "last_round":"Conference Finals",
@@ -15,11 +20,6 @@
 "Hurricanes":{
 "state":"active_cf",
 "last_round":"Conference Finals",
-"year":2026
-},
-"Canadiens":{
-"state":"active_semis",
-"last_round":"Conference Semifinals",
 "year":2026
 },
 "Ducks":{
@@ -33,8 +33,8 @@
 "year":2026
 },
 "Sabres":{
-"state":"active_semis",
-"last_round":"Conference Semifinals",
+"state":"eliminated_semis",
+"last_round":"Eliminated Conference Semifinals",
 "year":2026
 },
 "Wild":{

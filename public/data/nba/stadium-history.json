@@ -727,9 +727,9 @@
     },
     {
       "canonical": "Benchmark International Arena",
-      "city": "",
-      "metro": "",
-      "state": "",
+      "city": "Tampa",
+      "metro": "Tampa",
+      "state": "Florida",
       "first_year": 2021,
       "last_year": 2021,
       "eras": [
@@ -1602,7 +1602,7 @@
       ]
     },
     {
-      "canonical": "General Motors Place",
+      "canonical": "Rogers Arena",
       "city": "Vancouver",
       "metro": "Vancouver",
       "state": "British Columbia",
@@ -2473,8 +2473,8 @@
       ]
     },
     {
-      "canonical": "Metropolitan Sports Center",
-      "city": "Minneapolis",
+      "canonical": "Met Center",
+      "city": "Bloomington",
       "metro": "Minneapolis",
       "state": "Minnesota",
       "first_year": 1968,
@@ -2490,7 +2490,7 @@
   ],
   "Condors": [
     {
-      "canonical": "Civic Arena",
+      "canonical": "Mellon Arena",
       "city": "Pittsburgh",
       "metro": "Pittsburgh",
       "state": "Pennsylvania",
@@ -2506,9 +2506,9 @@
     },
     {
       "canonical": "Metropolitan Sports Center",
-      "city": "Minneapolis",
-      "metro": "Minneapolis",
-      "state": "Minnesota",
+      "city": "",
+      "metro": "",
+      "state": "",
       "first_year": 1969,
       "last_year": 1969,
       "eras": [
@@ -2520,7 +2520,7 @@
       ]
     },
     {
-      "canonical": "Civic Arena",
+      "canonical": "Mellon Arena",
       "city": "Pittsburgh",
       "metro": "Pittsburgh",
       "state": "Pennsylvania",
