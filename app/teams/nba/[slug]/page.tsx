@@ -24,7 +24,7 @@ import {
   nbaRoundLabel,
   type Season,
 } from "@/lib/nba";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 
 export const dynamicParams = false;
@@ -133,8 +133,24 @@ export default async function FranchisePage({ params }: Props) {
   }
   const allNbaYears = Array.from(allNbaByYear.keys()).sort((a, b) => b - a);
 
+  const sportsTeamLd = sportsTeamJsonLd({
+    name: f.display_name,
+    sport: "Basketball",
+    league: "NBA",
+    metroName: f.metro,
+    metroSlug: f.metro_slug ?? "",
+    qid: f.wikidata_qid ?? undefined,
+    wikipediaUrl: f.wikipedia_url ?? undefined,
+    url: `${BASE_URL}/teams/nba/${f.slug}`,
+    foundingYear: f.founding_year ?? undefined,
+  });
+
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(sportsTeamLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:text-[var(--text)]">Home</Link>

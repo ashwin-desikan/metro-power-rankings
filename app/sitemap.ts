@@ -2,6 +2,11 @@ import type { MetadataRoute } from "next";
 import { getAllMetros } from "@/lib/data";
 import { getLiveBadgeSlugs } from "@/lib/badges";
 import { getAllCountrySlugs } from "@/lib/countries";
+import { getStateSlugsWithMetros } from "@/lib/states";
+import { getAllFranchiseSlugs as getNflSlugs } from "@/lib/nfl";
+import { getAllFranchiseSlugs as getNbaSlugs } from "@/lib/nba";
+import { getAllFranchiseSlugs as getMlbSlugs } from "@/lib/mlb";
+import { getAllFranchiseSlugs as getNhlSlugs } from "@/lib/nhl";
 import { BASE_URL } from "@/lib/seo";
 
 // Read lastUpdate from meta.json to stamp sitemap entries.
@@ -60,6 +65,60 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: stamp,
       changeFrequency: "monthly",
       priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/sports`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/teams/nfl`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/teams/nba`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/teams/mlb`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/teams/nhl`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/teams/nfl/historical`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/teams/nba/historical`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/teams/mlb/historical`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    },
+    {
+      url: `${BASE_URL}/teams/nhl/historical`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.55,
     },
     {
       url: `${BASE_URL}/badges`,
@@ -135,10 +194,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Per-state pages. Only states that have at least one tracked metro get
+  // indexed; pure admin-only rows are excluded by getStateSlugsWithMetros.
+  const stateEntries: MetadataRoute.Sitemap = getStateSlugsWithMetros().map(
+    (slug) => ({
+      url: `${BASE_URL}/states/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.55,
+    }),
+  );
+
+  // Per-franchise team pages across the four leagues. Each franchise gets
+  // its own /teams/{league}/{slug} entry. Priority slightly below metro
+  // detail pages, since each team also surfaces inside the metro graph.
+  const franchiseEntries: MetadataRoute.Sitemap = [
+    ...getNflSlugs().map((slug) => ({
+      url: `${BASE_URL}/teams/nfl/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+    ...getNbaSlugs().map((slug) => ({
+      url: `${BASE_URL}/teams/nba/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+    ...getMlbSlugs().map((slug) => ({
+      url: `${BASE_URL}/teams/mlb/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+    ...getNhlSlugs().map((slug) => ({
+      url: `${BASE_URL}/teams/nhl/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
+  ];
+
   return [
     ...staticEntries,
     ...badgeEntries,
     ...countryEntries,
+    ...stateEntries,
+    ...franchiseEntries,
     ...metroEntries,
     ...matchupEntries,
   ];

@@ -108,6 +108,7 @@ function FindingCard({
           <Link
             href={`/rankings/${finding.slug}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="text-base font-semibold hover:text-[var(--accent)]"
           >
             {finding.name}
@@ -319,6 +320,7 @@ function QueueRow({ entry }: { entry: QueueEntry }) {
           <Link
             href={`/rankings/${entry.source.slug}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-[var(--accent)]"
           >
             {entry.metroName}
@@ -576,6 +578,7 @@ function ActivityPanel({
                 <Link
                   href={`/rankings/${e.source.slug}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-[var(--accent)]"
                 >
                   {e.metroName}

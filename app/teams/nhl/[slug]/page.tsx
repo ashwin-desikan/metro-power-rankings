@@ -22,7 +22,7 @@ import {
   type AwardWinner,
 } from "@/lib/nhl";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
-import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
 
@@ -109,8 +109,24 @@ export default async function NhlTeamPage({ params }: Props) {
     } catch { return ""; }
   })();
 
+  const sportsTeamLd = sportsTeamJsonLd({
+    name: f.display_name,
+    sport: "Ice Hockey",
+    league: "NHL",
+    metroName: f.metro,
+    metroSlug: f.metro_slug ?? "",
+    qid: f.wikidata_qid ?? undefined,
+    wikipediaUrl: f.wikipedia_url ?? undefined,
+    url: `${BASE_URL}/teams/nhl/${f.slug}`,
+    foundingYear: f.founded ?? undefined,
+  });
+
   return (
     <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(sportsTeamLd) }}
+      />
       <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-3 flex items-center gap-3 flex-wrap">
         <Link href="/teams/nhl" className="hover:text-[var(--accent)]">← All NHL franchises</Link>
         {f.metro && f.metro_slug && (
