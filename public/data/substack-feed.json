@@ -1,55 +1,111 @@
 {
   "_comment": "Cached fallback snapshot for lib/substack.ts. The live RSS feed at https://citizenofnowhere.substack.com/feed is the source of truth at runtime; this file is used when fetch fails (e.g., sandbox egress blocked, Substack 5xx) so the home page can always render. Refresh by running scripts/refresh-substack-feed.ts or by editing manually after publishing a new post.",
-  "fetchedAt": "2026-05-09",
+  "fetchedAt": "2026-05-20",
   "posts": [
+    {
+      "title": "Velvet Rock: The Map Yacht Rock Erased",
+      "url": "https://citizenofnowhere.substack.com/p/velvet-rock-the-map-yacht-rock-erased",
+      "pubDate": "2026-05-17",
+      "description": "A geographic case for the producer-driven music made in six cities and two islands, 1974 to 1989.",
+      "slug": "velvet-rock-the-map-yacht-rock-erased"
+    },
+    {
+      "title": "The Sovereign City Index",
+      "url": "https://citizenofnowhere.substack.com/p/the-sovereign-city-index",
+      "pubDate": "2026-05-15",
+      "description": "Ranking the world’s planned cities by the gap between what was announced and what is actually on the ground.",
+      "slug": "the-sovereign-city-index"
+    },
+    {
+      "title": "Greying Power: When Demographic Decline Buys Stability",
+      "url": "https://citizenofnowhere.substack.com/p/greying-power-when-demographic-decline",
+      "pubDate": "2026-05-10",
+      "description": "A taxonomy of the cities that stopped growing and started getting a few things right.",
+      "slug": "greying-power-when-demographic-decline"
+    },
     {
       "title": "Reading the Oxford Economics Global Cities Index Against Our Own",
       "url": "https://citizenofnowhere.substack.com/p/reading-the-oxford-economics-global",
       "pubDate": "2026-05-08",
-      "description": "Peer comparison against OEGCI 2025: three methodology critiques and three archetype badges that came out of the analysis.",
+      "description": "Where the rigorous read agrees with us, and where it doesn't.",
       "slug": "reading-the-oxford-economics-global"
     },
     {
       "title": "The 85% Illusion: When Cities Build Skylines Instead of Economies",
       "url": "https://citizenofnowhere.substack.com/p/the-85-illusion-when-cities-build",
       "pubDate": "2026-05-04",
-      "description": "Why skyline density and economic gravity diverge, and what the gap reveals about the cities that overbuild vertical capacity.",
+      "description": "Walk through Marylebone in London or the Upper West Side in Manhattan.",
       "slug": "the-85-illusion-when-cities-build"
     },
     {
       "title": "Company Towns of the Mind: The Academic Gravity Wells",
       "url": "https://citizenofnowhere.substack.com/p/company-towns-of-the-mind-the-academic",
       "pubDate": "2026-05-01",
-      "description": "The metros where universities outweigh every other engine of civic gravity, and what that does to a city's identity.",
+      "description": "What the data reveals about the cities built entirely around intellectual capital",
       "slug": "company-towns-of-the-mind-the-academic"
     },
     {
       "title": "The Team That Wins the City",
       "url": "https://citizenofnowhere.substack.com/p/the-team-that-wins-the-city",
       "pubDate": "2026-04-28",
-      "description": "One crest per city: the single sporting franchise that defines each of 312 global metros, with rationales for the contested calls.",
+      "description": "One crest per city. Across 200+ metros, the team that wins the civic identity contest is rarely the one with the most trophies. It's the one whose disappearance would change what the city is.",
       "slug": "the-team-that-wins-the-city"
     },
     {
       "title": "The Last of the Marylebones",
       "url": "https://citizenofnowhere.substack.com/p/the-last-of-the-marylebones",
       "pubDate": "2026-04-21",
-      "description": "A taxonomy of the world's dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ metros.",
+      "description": "A taxonomy of the world's great dense, historic, walkable neighborhoods. Out of 4,200+ metros, only a few still clear the bar.",
       "slug": "the-last-of-the-marylebones"
     },
     {
       "title": "The Global Metro Power Rankings Site Is Live",
       "url": "https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings-site",
       "pubDate": "2026-04-20",
-      "description": "Launch note for the public site: how to navigate the rankings, the badges, the matchups, and the methodology.",
+      "description": "Following up on the first post: the full dataset is now browsable. 4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters. Three years of hand-curation, now searchable.",
       "slug": "the-global-metro-power-rankings-site"
     },
     {
-      "title": "The Global Metro Power Rankings: Measuring What Makes a City Matter",
+      "title": "The Global Metro Power Rankings",
       "url": "https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings",
       "pubDate": "2026-04-12",
-      "description": "Series opener. Composite score, top 25, continental champions, and the San Francisco anomaly.",
+      "description": "Measuring What Makes a City Matter",
       "slug": "the-global-metro-power-rankings"
+    },
+    {
+      "title": "Sports Roundup - 8 September 2025",
+      "url": "https://citizenofnowhere.substack.com/p/sports-roundup-8-september-2025-e8a",
+      "pubDate": "2025-09-08",
+      "description": "In this episode of Ashwin and Sopan's Sports Roundup, the hosts discuss a variety of recent sports events, including the ongoing European football qualifying matches, the start of the NFL season, cricket tournaments, and",
+      "slug": "sports-roundup-8-september-2025-e8a"
+    },
+    {
+      "title": "Sports Roundup - 14 August 2025",
+      "url": "https://citizenofnowhere.substack.com/p/sports-roundup-14-august-2025-ceb",
+      "pubDate": "2025-08-14",
+      "description": "In this episode of Ashwin and Sopan's Sports Roundup, the hosts celebrate their team's recent victory as world champions and discuss the upcoming Premier League season.",
+      "slug": "sports-roundup-14-august-2025-ceb"
+    },
+    {
+      "title": "Sports Roundup - 28 July 2025",
+      "url": "https://citizenofnowhere.substack.com/p/sports-roundup-28-july-2025-04e",
+      "pubDate": "2025-07-30",
+      "description": "In this episode of the Sports Roundup, Ashwin and Sophon discuss a variety of sports topics, including the recent successes of the England women's football team, the latest in MLB, cricket updates, rugby highlights, and",
+      "slug": "sports-roundup-28-july-2025-04e"
+    },
+    {
+      "title": "Sports Roundup - 11 July 2025",
+      "url": "https://citizenofnowhere.substack.com/p/sports-roundup-11-july-2025-12c",
+      "pubDate": "2025-07-11",
+      "description": "We're covering the Club World Cup, Women’s Euros, Wimbledon, Rugby/Cricket, and more...",
+      "slug": "sports-roundup-11-july-2025-12c"
+    },
+    {
+      "title": "Thoughts and Rants from Nowhere-land",
+      "url": "https://citizenofnowhere.substack.com/p/coming-soon",
+      "pubDate": "2020-05-01",
+      "description": "Welcome to Citizen of Nowhere by me, Ashwin Desikan.",
+      "slug": "coming-soon"
     }
   ]
 }
