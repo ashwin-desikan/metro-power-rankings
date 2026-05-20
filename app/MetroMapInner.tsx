@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap, LayerGroup } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
@@ -221,10 +221,17 @@ export default function MetroMapInner({
       zoom={single ? 9 : undefined}
       style={{ height: '100%', width: '100%', background: 'var(--bg-card)' }}
       scrollWheelZoom={false}
-      attributionControl={true}
+      attributionControl={false}
+      zoomControl={false}
       preferCanvas={interactiveFeatures}
       worldCopyJump={true}
     >
+      {/* Default zoom (top-left) and attribution (bottom-right) overlap
+          markers in the corners readers most want to click. Reposition
+          both: zoom to bottom-right, attribution to bottom-left without
+          the Leaflet prefix so it reads as a discreet credit line. */}
+      <ZoomControl position="bottomright" />
+      <AttributionControl position="bottomleft" prefix={false} />
       <TileLayer
         url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://overturemaps.org/">Overture Maps</a>'

@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "Every badge page now ships a filtered map under the hero: tier-colored markers, continent and tier toggles, click-through to /rankings, and bounds refit so filter changes zoom in on the visible set.",
       "Map applies automatically to every live badge in lib/badges.ts BADGES; adding a new badge to the registry gives that badge a map with zero per-badge wiring.",
       "Shared formatContextValue helper moved from the badge page into lib/badges so the map tooltip and the row list format the per-row value (population, market cap, distance, percentage, score) identically.",
-      "All maps gain a deeper zoom-out: minZoom drops from 2 to 1 so readers can pull all the way out and see the whole planet in one frame; pairs cleanly with the world-wrap setup from earlier today.",
+      "All maps: zoom moves to bottom-right and attribution to a discreet bottom-left line so neither covers corner markers; minZoom drops from 2 to 1 so readers can pull out to a full planet view.",
     ],
   },
   {
