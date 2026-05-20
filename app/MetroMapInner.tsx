@@ -214,6 +214,7 @@ export default function MetroMapInner({
       scrollWheelZoom={false}
       attributionControl={true}
       preferCanvas={interactiveFeatures}
+      worldCopyJump={true}
     >
       <TileLayer
         url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
@@ -221,10 +222,9 @@ export default function MetroMapInner({
         subdomains={['a', 'b', 'c', 'd']}
         maxZoom={18}
         minZoom={2}
-        // noWrap stops Leaflet from repeating continents off either edge
-        // when the map zooms out to a world view. Keeps the classic single
-        // Mercator panel by default.
-        noWrap={true}
+        // World-wrap on: tiles repeat horizontally so panning east or west
+        // never hits a hard edge. Pairs with worldCopyJump on MapContainer
+        // so markers always render at the longitude the user is viewing.
       />
       <PrimaryPinPane />
       {boundary ? (
