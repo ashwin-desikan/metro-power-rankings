@@ -230,10 +230,13 @@ export default function MetroMapInner({
         attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://overturemaps.org/">Overture Maps</a>'
         subdomains={['a', 'b', 'c', 'd']}
         maxZoom={18}
-        minZoom={2}
+        minZoom={1}
         // World-wrap on: tiles repeat horizontally so panning east or west
         // never hits a hard edge. Pairs with worldCopyJump on MapContainer
         // so markers always render at the longitude the user is viewing.
+        // minZoom=1 lets readers pull all the way out to see the whole
+        // planet in one frame; below that, the CARTO tile pack returns
+        // 404s and Leaflet renders empty squares.
       />
       <PrimaryPinPane />
       {boundary ? (
@@ -357,10 +360,10 @@ export default function MetroMapInner({
             permanent={false}
             pane="primaryPinTooltips"
           >
-            {richMeta ? (
+            {(p.subtitle || richMeta) ? (
               <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
                 <div style={{ fontWeight: 600 }}>{p.name}</div>
-                <div style={{ color: '#9ca3af', fontSize: 11 }}>{richMeta}</div>
+                <div style={{ color: '#9ca3af', fontSize: 11 }}>{p.subtitle || richMeta}</div>
               </div>
             ) : (
               p.name

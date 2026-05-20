@@ -8,6 +8,7 @@ import { readFileSync, existsSync } from "fs";
 import { join } from "path";
 import { getAllMetros } from "./data";
 import type { Metro } from "./shared";
+import { formatPop } from "./shared";
 
 // ---------- Editorial overrides ----------
 
@@ -1090,6 +1091,42 @@ const VELVET_ROCK_TIERS: BadgeTier[] = [
 ];
 
 // ---------- Badge registry ----------
+
+// Format the per-row context value (population, market cap, score, distance,
+// percentage, etc.) for each badge. Centralized here so any consumer that
+// renders a qualifying-metros list (the /badges/[slug] page, the BadgeMap
+// tooltip, future share cards) uses the same formatting rule. Any new
+// badge added to BADGES below should add its formatting case here too.
+export function formatContextValue(badgeSlug: string, value: number): string {
+  if (badgeSlug === "university-town") return `${value.toFixed(0)}%`;
+  if (badgeSlug === "skyline-city") return `${value.toFixed(0)}%`;
+  if (badgeSlug === "megacity") return formatPop(value);
+  if (badgeSlug === "finance-capital") {
+    if (value >= 1e12) return `$${(value / 1e12).toFixed(1)}T`;
+    if (value >= 1e9) return `$${(value / 1e9).toFixed(1)}B`;
+    if (value >= 1e6) return `$${(value / 1e6).toFixed(0)}M`;
+    return `$${value.toFixed(0)}`;
+  }
+  if (badgeSlug === "culture-capital" || badgeSlug === "sports-mecca") {
+    return value.toFixed(0);
+  }
+  if (badgeSlug === "rail-hub" || badgeSlug === "global-gateway") {
+    return value % 1 === 0 ? value.toFixed(0) : value.toFixed(1);
+  }
+  if (badgeSlug === "overperformer") {
+    return `${value.toFixed(1)}x`;
+  }
+  if (badgeSlug === "conurbations") {
+    return value.toFixed(1);
+  }
+  if (badgeSlug === "isolated-capital") {
+    return `${value.toFixed(0)} km`;
+  }
+  if (badgeSlug === "frozen-conurbations") {
+    return value.toFixed(0);
+  }
+  return value.toFixed(1);
+}
 
 export const BADGES: Badge[] = [
   {

@@ -6,6 +6,7 @@ import {
   getBadge,
   getLiveBadgeSlugs,
   getQualifyingMetros,
+  formatContextValue,
   type QualifyingMetro,
 } from "@/lib/badges";
 import { computeTier, tierAnchor } from "@/lib/tiers";
@@ -14,6 +15,7 @@ import { getAllMetros } from "@/lib/data";
 import ConurbationsTable, {
   type EnrichedConurbationRow,
 } from "./ConurbationsTable";
+import BadgeMap from "./BadgeMap";
 import {
   AUTHOR,
   BASE_URL,
@@ -58,36 +60,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function formatContextValue(badgeSlug: string, value: number): string {
-  if (badgeSlug === "university-town") return `${value.toFixed(0)}%`;
-  if (badgeSlug === "skyline-city") return `${value.toFixed(0)}%`;
-  if (badgeSlug === "megacity") return formatPop(value);
-  if (badgeSlug === "finance-capital") {
-    if (value >= 1e12) return `$${(value / 1e12).toFixed(1)}T`;
-    if (value >= 1e9) return `$${(value / 1e9).toFixed(1)}B`;
-    if (value >= 1e6) return `$${(value / 1e6).toFixed(0)}M`;
-    return `$${value.toFixed(0)}`;
-  }
-  if (badgeSlug === "culture-capital" || badgeSlug === "sports-mecca") {
-    return value.toFixed(0);
-  }
-  if (badgeSlug === "rail-hub" || badgeSlug === "global-gateway") {
-    return value % 1 === 0 ? value.toFixed(0) : value.toFixed(1);
-  }
-  if (badgeSlug === "overperformer") {
-    return `${value.toFixed(1)}x`;
-  }
-  if (badgeSlug === "conurbations") {
-    return value.toFixed(1);
-  }
-  if (badgeSlug === "isolated-capital") {
-    return `${value.toFixed(0)} km`;
-  }
-  if (badgeSlug === "frozen-conurbations") {
-    return value.toFixed(0);
-  }
-  return value.toFixed(1);
-}
 
 function MetroRow({
   metro,
@@ -296,6 +268,12 @@ export default async function BadgeDetailPage({ params }: Props) {
               ) : null}
             </div>
           </header>
+
+          {/* Map of qualifying metros. Markers colored by badge tier (when
+              defined), filtered by continent and tier, click-to-navigate.
+              Rendered once per badge via the shared BadgeMap helper so any
+              new badge added to lib/badges.ts BADGES picks it up here. */}
+          <BadgeMap badge={badge} qualifying={metros} />
 
           {/* Conurbations: client-side search + filter, mirrors
               the homepage RankingsTable scope-dropdown pattern. */}

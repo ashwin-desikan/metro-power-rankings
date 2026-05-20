@@ -19,6 +19,16 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-20",
+    headline: "Badge maps for every badge, deeper map zoom-out",
+    items: [
+      "Every badge page now ships a filtered map under the hero: tier-colored markers, continent and tier toggles, click-through to /rankings, and bounds refit so filter changes zoom in on the visible set.",
+      "Map applies automatically to every live badge in lib/badges.ts BADGES; adding a new badge to the registry gives that badge a map with zero per-badge wiring.",
+      "Shared formatContextValue helper moved from the badge page into lib/badges so the map tooltip and the row list format the per-row value (population, market cap, distance, percentage, score) identically.",
+      "All maps gain a deeper zoom-out: minZoom drops from 2 to 1 so readers can pull all the way out and see the whole planet in one frame; pairs cleanly with the world-wrap setup from earlier today.",
+    ],
+  },
+  {
+    date: "2026-05-20",
     headline: "Side feed, map fixes: pin, refit, world-wrap",
     items: [
       "New sticky side feed sits next to the rankings at lg+: Discover (Sports first), every live badge in a compact grid, latest essays from the journal, and Random metro plus Methodology CTAs. Wraps below the table on tablet.",

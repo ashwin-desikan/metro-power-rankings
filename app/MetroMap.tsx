@@ -38,6 +38,10 @@ export type MapPoint = {
   // league-map components that mix team markers with neutral venue markers
   // (e.g. NHL Global Series venues rendered pink alongside gold team pins).
   color?: string;
+  // Optional explicit tooltip subtitle. Overrides the auto-joined
+  // city / state / country line when present. Used by BadgeMap to surface
+  // a "#rank · value · tier" line per qualifying metro.
+  subtitle?: string;
 };
 
 export default function MetroMap({
