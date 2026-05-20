@@ -54,6 +54,16 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-20",
+    headline: "Vocabulary sweep: metro replaces city across the site",
+    items: [
+      "Descriptive copy across home, about, methodology, neighborhoods, top-teams, llms.txt, and league pages now refers to metros / metropolitan areas / urban areas; generic 'city' is dropped as the unit of analysis.",
+      "Tier names rename City to Metro across Continental, Established, Emerging, and Local; URL slugs unchanged so inbound links and share cards keep working.",
+      "Allowed exceptions kept: Primary City as a data field, GaWC World Cities, Oxford Global Cities Index, and other proper-noun citations; literal city names like Mexico City, Kansas City, Quebec City.",
+      "Search placeholders updated: Find a metro on the home page, Search team or metro on the sports page. The Team That Wins the City essay title preserved for inbound-link integrity.",
+    ],
+  },
+  {
+    date: "2026-05-20",
     headline: "Home redesigned: search hero, discovery strip, filtered map",
     items: [
       "Hero compressed to three lines plus an inline search-with-autocomplete; keyboard '/' focuses the input from anywhere on the page.",
@@ -203,7 +213,7 @@ const RELEASES: Release[] = [
     headline: "Conurbations get proper editorial names",
     items: [
       "60+ conurbations now display under their civic, geographic, or political names: Bodensee, Lowcountry, SIJORI Triangle, Tuscany, Côte d'Azur, Borderplex, Mälardalen, Mindong, Greater Golden Horseshoe, plus many more.",
-      "Tier B for Conurbations renamed Continental (was World); the metro tier World City likewise becomes Continental City to sharpen the editorial vocabulary.",
+      "Tier B for Conurbations renamed Continental (was World); the metro tier World City likewise becomes Continental Metro to sharpen the editorial vocabulary.",
       "Davos cluster fixed: the 138 km transitive bridge-chain is replaced by Bodensee, a real cross-border Lake Constance conurbation. Davos and St. Moritz now solo.",
       "Leaflet maps embed on matchup pages (two-point derby view), metro detail pages (cluster context or single-point location pin), and the conurbations badge page (click-to-expand per cluster).",
     ],
@@ -222,7 +232,7 @@ const RELEASES: Release[] = [
     date: "2026-05-01",
     headline: "Methodology, score tiers, share cards, matchup pages",
     items: [
-      "New /methodology page documents every dimension, weight, source, and editorial choice; score tiers (Global Capital through Local City) now appear on every metro page.",
+      "New /methodology page documents every dimension, weight, source, and editorial choice; score tiers (Global Capital through Local Metro) now appear on every metro page.",
       "Per-metro and comparison Open Graph share cards now generate automatically, with Reddit and LinkedIn share buttons on every metro and matchup page.",
       "New /matchups/[a-vs-b] route with 300 pre-rendered head-to-head pages for the top 25 metros, each with a tier verdict and dimension-by-dimension winner grid.",
       "New essay Company Towns of the Mind: The Academic Gravity Wells published on Substack, anchored by the new badge.",

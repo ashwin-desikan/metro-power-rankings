@@ -14,10 +14,10 @@ export const metadata: Metadata = {
     "A composite ranking of every metropolitan area on Earth, across sixteen dimensions, hand-curated from individually verified parameters.",
   applicationName: SITE_NAME,
   keywords: [
-    "global city rankings",
+    "global metro rankings",
     "metropolitan areas",
-    "city power score",
-    "world cities",
+    "metro power score",
+    "world metros",
     "urban index",
     "sports business expansion",
     "location intelligence",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: SITE_NAME,
     description:
-      "Every metropolitan area on Earth, sixteen dimensions, individually verified parameters. Measuring what makes a city matter.",
+      "Every metropolitan area on Earth, sixteen dimensions, individually verified parameters. Measuring what makes a metro matter.",
     type: "website",
     siteName: SITE_NAME,
     url: BASE_URL,

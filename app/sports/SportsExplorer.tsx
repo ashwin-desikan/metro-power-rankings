@@ -597,7 +597,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         <div className="relative flex-1 max-w-md">
           <input
             type="search"
-            placeholder="Search team, city, or metro…"
+            placeholder="Search team or metro…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full px-3 py-2 rounded-lg border bg-transparent text-sm focus:outline-none focus:border-[var(--accent)]"

@@ -49,7 +49,7 @@ export default async function HomeConsole() {
       eyebrow: 'Reference',
       title: 'The team that wins the city',
       subtitle:
-        'One crest per metro: the single franchise whose disappearance would change what the city is.',
+        'One crest per metro: the single franchise whose disappearance would change what the metro is.',
       href: '/top-teams',
       accent: '#0891b2',
     },

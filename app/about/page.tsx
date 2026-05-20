@@ -89,11 +89,11 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4">Why this exists</h2>
             <div className="space-y-4 text-[var(--text)] leading-relaxed">
               <p>
-                Most "best cities" rankings rely on subjective livability
+                Most "best metros" rankings rely on subjective livability
                 surveys, opaque weighting, and a small reference set of usual
                 suspects. They are useful for travel magazines, less useful
-                for understanding why one city is more globally consequential
-                than another.
+                for understanding why one metropolitan area is more globally
+                consequential than another.
               </p>
               <p>
                 This project measures hard infrastructure: intercity rail,
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <p>
                 Ashwin Desikan. Marketing technology and digital
                 transformation background, with a long-running interest in
-                cities and sports as the two most legible expressions of
+                metros and sports as the two most legible expressions of
                 civic identity.
               </p>
               <p>

@@ -7,7 +7,7 @@
 // interactive controls.
 //
 // Tier preference persists across country pages via localStorage so a reader
-// who narrows to "Continental City + Major Metro" while exploring the US
+// who narrows to "Continental Metro + Major Metro" while exploring the US
 // keeps that view when they navigate to Germany. Default is all tiers on,
 // which matches prior behavior.
 

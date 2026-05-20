@@ -4,7 +4,7 @@
 // reader to know the academic shorthand.
 //
 // Boundaries chosen from the live distribution (4,284 metros as of
-// 2026-05-01): Global Capitals carve off the 9 metros above 100, Continental City
+// 2026-05-01): Global Capitals carve off the 9 metros above 100, Continental Metro
 // captures the next 33, Major Metro the next 99, and so on down. The
 // distribution is intentionally pyramid-shaped because the corpus is global
 // rather than just elite — most metros in the world are local in scope, and
@@ -16,7 +16,7 @@
 export type Tier = {
   // Stable slug used in URLs and code (e.g. "world-city")
   slug: string;
-  // Reader-facing name (e.g. "Continental City")
+  // Reader-facing name (e.g. "Continental Metro")
   name: string;
   // Lower-bound score (inclusive); upper-bound is the next tier's lowerBound
   lowerBound: number;
@@ -38,7 +38,7 @@ export const TIERS: Tier[] = [
   },
   {
     slug: "world-city",
-    name: "Continental City",
+    name: "Continental Metro",
     lowerBound: 50,
     tagline: "Globally significant. Material presence in finance, culture, and infrastructure.",
     accentHex: "#2563eb",
@@ -59,21 +59,21 @@ export const TIERS: Tier[] = [
   },
   {
     slug: "established-city",
-    name: "Established City",
+    name: "Established Metro",
     lowerBound: 5,
     tagline: "Mature urban center with diversified economic and civic life.",
     accentHex: "#ca8a04",
   },
   {
     slug: "emerging-city",
-    name: "Emerging City",
+    name: "Emerging Metro",
     lowerBound: 1,
     tagline: "Building presence on multiple dimensions; growth trajectory matters more than current rank.",
     accentHex: "#ea580c",
   },
   {
     slug: "local-city",
-    name: "Local City",
+    name: "Local Metro",
     lowerBound: 0,
     tagline: "Primarily local in scope. Most of the world's metros sit here, and that is a feature.",
     accentHex: "#6b7280",
@@ -82,7 +82,7 @@ export const TIERS: Tier[] = [
 
 // Resolve a numeric composite score to its tier. Always returns a tier
 // because the lowest band has lowerBound 0 — every metro qualifies for
-// at least Local City.
+// at least Local Metro.
 export function computeTier(score: number): Tier {
   for (const t of TIERS) {
     if (score >= t.lowerBound) return t;
@@ -90,7 +90,7 @@ export function computeTier(score: number): Tier {
   return TIERS[TIERS.length - 1];
 }
 
-// Convenience for OG card / structured data: returns "Continental City" etc.
+// Convenience for OG card / structured data: returns "Continental Metro" etc.
 export function tierName(score: number): string {
   return computeTier(score).name;
 }

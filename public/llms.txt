@@ -9,7 +9,7 @@ The Global Metro Power Rankings (GMPR) measure *metro completeness*: the
 breadth and depth of globally-recognised infrastructure, culture, sport,
 finance, education, and connectivity concentrated in a single place. It is
 not a livability score, a cost-of-living index, or a popularity contest.
-It is a composite of what a city has built.
+It is a composite of what a metro has built.
 
 The index spans every populated metropolitan area on Earth, with every
 cultural and infrastructural asset individually verified and mapped through

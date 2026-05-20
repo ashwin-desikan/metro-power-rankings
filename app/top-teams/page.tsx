@@ -18,7 +18,7 @@ const PAGE_PATH = "/top-teams";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "The Team That Wins the City";
 const PAGE_DESCRIPTION =
-  "One crest per city. The team that wins the civic identity contest is rarely the one with the most trophies. It is the one whose disappearance would change what the city is.";
+  "One crest per metro. The team that wins the civic identity contest is rarely the one with the most trophies. It is the one whose disappearance would change what the metro is.";
 const PAGE_PUBLISHED = "2026-04-28";
 
 export const metadata: Metadata = {
@@ -183,7 +183,7 @@ export default function TopTeamsPage() {
     mainEntityOfPage: PAGE_URL,
     headline: PAGE_TITLE,
     alternativeHeadline:
-      "One crest per city: the top sporting franchise that defines each global metro with a serious civic-identity call",
+      "One crest per metro: the top sporting franchise that defines each global metro with a serious civic-identity call",
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     datePublished: PAGE_PUBLISHED,
@@ -209,7 +209,7 @@ export default function TopTeamsPage() {
       "civic identity",
       "metro sports",
       "global sports rankings",
-      "city sports culture",
+      "metro sports culture",
       "football clubs",
       "sports geography",
     ],
@@ -269,7 +269,7 @@ export default function TopTeamsPage() {
             className="text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl"
             style={{ color: "var(--text-muted)" }}
           >
-            One crest per city. Out of the full corpus, {summary.total} metros have a top-team call
+            One crest per metro. Out of the full corpus, {summary.total} metros have a top-team call
             serious enough to land. Every row links back to the metro&rsquo;s ranking page.
           </p>
 
@@ -340,7 +340,7 @@ export default function TopTeamsPage() {
           <p className="mb-5 text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
             &ldquo;Top team&rdquo; is not the team with the most trophies right now. It is not the
             team that won most recently. It is the team that, if it disappeared, would change the
-            city&rsquo;s idea of itself.
+            metro&rsquo;s idea of itself.
           </p>
           <ul
             className="space-y-3 text-sm leading-relaxed mb-6 ml-6 list-disc"
@@ -348,11 +348,11 @@ export default function TopTeamsPage() {
           >
             <li>
               <strong>Civic footprint over silverware.</strong> Trophies count. Continuity,
-              cultural reach, and the team&rsquo;s grip on the city&rsquo;s self-image count more.
+              cultural reach, and the team&rsquo;s grip on the metro&rsquo;s self-image count more.
             </li>
             <li>
               <strong>Inheritance over insurgency.</strong> A modern oligarch project does not
-              automatically displace the club the city has worn for a hundred years. Sometimes it
+              automatically displace the club the metro has worn for a hundred years. Sometimes it
               earns co-equal status (London, Milan). Rarely, it wins outright (PSG).
             </li>
             <li>

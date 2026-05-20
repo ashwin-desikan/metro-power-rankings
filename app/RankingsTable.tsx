@@ -279,7 +279,7 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
                   : searchScope === 'metro' ? 'Search by metro area (e.g. Tokyo, Sao Paulo)...'
                   : searchScope === 'state' ? 'Search by state or province (e.g. California, Scotland)...'
                   : searchScope === 'county' ? 'Search by county or municipality (e.g. Cook, Manchester)...'
-                  : 'Search metros, cities, countries, states (e.g. California, Scotland)...'
+                  : 'Search metros, primary cities, countries, states (e.g. California, Scotland)...'
               }
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}

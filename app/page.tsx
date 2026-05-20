@@ -32,7 +32,7 @@ const PINNED_FEATURED: FeaturedCard[] = [
   {
     title: 'The Team That Wins the City',
     subtitle:
-      'One crest per city. The single sporting franchise that defines each global metro with a serious civic-identity call, with full rationales for the contested calls.',
+      'One crest per metro. The single sporting franchise that defines each global metro with a serious civic-identity call, with full rationales for the contested calls.',
     status: 'Read',
     href: '/top-teams',
     external: false,
@@ -418,13 +418,13 @@ export default async function Home() {
           >
             Methodology
           </p>
-          <h2 className="text-4xl font-bold mb-6">How the Score Is Built</h2>
+          <h2 className="text-4xl font-bold mb-6">How the score is built</h2>
           <p className="text-lg text-[var(--text-muted)] mb-6">
             The Global Metro Power Rankings measure <em>metro completeness</em>: the
             breadth and depth of globally-recognized infrastructure, culture, sport,
             finance, education, and connectivity concentrated in a single place. It
             is not a livability score, a cost-of-living index, or a popularity
-            contest. It is a composite of what a city has built.
+            contest. It is a composite of what a metro has built.
           </p>
 
           <h3 className="text-xl font-semibold mt-10 mb-3">Rankings Within Rankings</h3>
@@ -525,9 +525,9 @@ export default async function Home() {
           <h3 className="text-xl font-semibold mt-10 mb-3">Why These Weights</h3>
           <p className="text-[var(--text-muted)] mb-4">
             The design rewards breadth over extreme depth in any one dimension. A
-            city that has a stock exchange <em>and</em> top-flight universities{' '}
+            metro that has a stock exchange <em>and</em> top-flight universities{' '}
             <em>and</em> a skyline <em>and</em> major league sports will beat a
-            city that dominates just one of those.
+            metro that dominates just one of those.
           </p>
           <p className="text-[var(--text-muted)] mb-4">
             Logarithmic scaling for transit, skyscrapers, and Michelin stars
@@ -551,7 +551,7 @@ export default async function Home() {
             (theme park attendance), UFI (convention centers), the Michelin Guide
             and Wikipedia&apos;s published lists, and national statistics agencies
             for population. There is no scraping, no AI-generated fill, and no
-            guessing: if a city cannot be matched to a metro through the municipality
+            guessing: if an urban area cannot be matched to a metro through the municipality
             or county lookup, it is excluded.
           </p>
 

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION,
   },
   keywords: [
-    "walkable cities",
+    "walkable metros",
     "historic neighborhoods",
     "urban form",
     "Marylebone",
@@ -168,7 +168,7 @@ export default function NeighborhoodsPage() {
       url: BASE_URL,
     },
     keywords: [
-      "walkable cities",
+      "walkable metros",
       "historic neighborhoods",
       "urban form",
       "Marylebone",
@@ -524,7 +524,7 @@ export default function NeighborhoodsPage() {
               Minneapolis, Pittsburgh, Portland, New Orleans, Kyoto, Valencia, Stuttgart, Mumbai,
               and Detroit were all initially skipped on a global-prestige filter and reversed on
               criteria review. Flagged openly because they demonstrate that the bar is about the
-              four criteria, not about whether a city is famous.
+              four criteria, not about whether a metro is famous.
             </p>
             <p>
               <strong>Methodology.</strong> This is not a quantitative ranking. The four criteria
@@ -545,7 +545,7 @@ export default function NeighborhoodsPage() {
               >
                 tell me
               </a>
-              . Structural corrections (a category I did not weight, a city I undercounted) are
+              . Structural corrections (a category I did not weight, a metro I undercounted) are
               more useful than cosmetic ones.
             </p>
           </div>

@@ -59,7 +59,7 @@ export default function StateMap({
           }}
         >
           <LegendSwatch color="#7c3aed" label="Global Capital" />
-          <LegendSwatch color="#2563eb" label="Continental City" />
+          <LegendSwatch color="#2563eb" label="Continental Metro" />
           <LegendSwatch color="#0891b2" label="Major Metro" />
           <LegendSwatch color="#16a34a" label="Regional Hub" />
           <LegendSwatch color="#ca8a04" label="Established" />

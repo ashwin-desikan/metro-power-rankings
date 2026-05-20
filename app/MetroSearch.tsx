@@ -132,8 +132,8 @@ export default function MetroSearch({ entries, maxResults = 6 }: Props) {
           onFocus={() => setFocused(true)}
           onBlur={() => setTimeout(() => setFocused(false), 150)}
           onKeyDown={handleKeyDown}
-          placeholder="Find your city"
-          aria-label="Search metros by name, city, or country"
+          placeholder="Find a metro"
+          aria-label="Search metros by name, primary city, or country"
           className="flex-1 bg-transparent outline-none text-sm"
           style={{ color: 'var(--text)' }}
         />

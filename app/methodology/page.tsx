@@ -64,7 +64,7 @@ const DIMENSIONS: Dimension[] = [
     weight: "raw count, capped at 10",
     shape: "capped",
     rationale:
-      "Top-tier franchises signal civic identity, broadcast economy, and cultural reach. The cap stops a city with eight or more major-league teams from sweeping the score on this dimension alone.",
+      "Top-tier franchises signal civic identity, broadcast economy, and cultural reach. The cap stops a metro with eight or more major-league teams from sweeping the score on this dimension alone.",
     source: "Official league websites for NFL, NBA, NHL, MLB, and MLS, plus Wikipedia season articles for every other tracked competition: European top-flight football (Premier League, La Liga, Serie A, Bundesliga, Ligue 1, Eredivisie, Primeira Liga, and equivalents), EuroLeague basketball, AFL, CFL, top-flight rugby union (Premiership, Top 14, URC, Super Rugby Pacific), top-flight rugby league (NRL, Super League), and IPL plus other major T20 cricket leagues.",
   },
   {
@@ -100,7 +100,7 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.65 (combined with museums and infrastructure)",
     shape: "linear",
     rationale:
-      "World expos, NATO summits, G7 and G20 hostings, World's Fairs, royal weddings, papal events. One-off cultural moments that put a city at the center of global attention for a period of days.",
+      "World expos, NATO summits, G7 and G20 hostings, World's Fairs, royal weddings, papal events. One-off cultural moments that put a metro at the center of global attention for a period of days.",
     source: "Manually compiled from Wikipedia lists for World Expos, World's Fairs, NATO summits, G7 and G20 hostings, plus Vatican press records for papal events, royal-wedding press records, the World Marathon Majors organizers, the Cannes Film Festival, Oktoberfest, the Tour de France, the Masters Tournament, the Tennis Grand Slam organizers, and individual festival/biennial organizers. Historical Events sub-category (added 2026-05-01) is sourced manually from Wikipedia and primary historical references.",
   },
   {
@@ -118,7 +118,7 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.65 (combined with cultural events and museums)",
     shape: "linear",
     rationale:
-      "Container ports, stock exchanges, internet exchanges, military bases, central banks, data center hubs, agricultural and extraction hubs, and trade venues. The plumbing of a globally relevant city.",
+      "Container ports, stock exchanges, internet exchanges, military bases, central banks, data center hubs, agricultural and extraction hubs, and trade venues. The plumbing of a globally relevant metro.",
     source: "Container ports: Lloyd's List Top 100, World Shipping Council Top 50, and AJOT Top 100. Passenger ports: CLIA State of the Cruise Industry Report 2025 plus AAA Cruise Forecast 2025. Trade venues: UFI World Map of Exhibition Venues 2025 (80,000 square metre minimum). Stock exchanges: World Federation of Exchanges (WFE) member list (world-exchanges.org) plus Wikipedia commodity-exchange lists. Internet exchanges: DE-CIX (de-cix.net), AMS-IX (ams-ix.net), IX.br, PeeringDB (peeringdb.com), Internet Society Pulse (pulse.internetsociety.org), and the Newby Ventures IXP directory. Data center hubs: Cushman & Wakefield Global Data Center Market Comparison (cushmanwakefield.com) plus Cloudscene (cloudscene.com). Central banks: BIS member directory (bis.org) plus Wikipedia 'List of central banks'. Military bases: DMDC (dmdc.osd.mil), Pentagon Base Structure Report 2024, Congressional Research Service reports, plus Wikipedia country-specific lists. Agriculture and extraction: FAO GIAHS Programme (fao.org/giahs), OriGIn geographic indications (origin-gi.com), CGIAR research centres (cgiar.org), MINING.com, USGS, plus company filings.",
   },
   {
@@ -172,7 +172,7 @@ const DIMENSIONS: Dimension[] = [
     weight: "log(hubs) × 2",
     shape: "log-scaled, high weight",
     rationale:
-      "Major intercity rail hubs (London King's Cross, Tokyo Station, Gare du Nord) require both a dense national rail network and a city worth converging on, which is why they sit at high weight.",
+      "Major intercity rail hubs (London King's Cross, Tokyo Station, Gare du Nord) require both a dense national rail network and a metro worth converging on, which is why they sit at high weight.",
     source: "Wikipedia 'List of busiest railway stations' (en.wikipedia.org/wiki/List_of_busiest_railway_stations). Threshold is roughly 30 million or more passengers per year.",
   },
   {
@@ -199,7 +199,7 @@ const DIMENSIONS: Dimension[] = [
     weight: "× 0.2, capped at 4",
     shape: "capped, low weight",
     rationale:
-      "Olympic and multi-sport hosting plus championship finals. Capped at 4 so a city that hosted three Olympics last century cannot outrank a finance capital on this dimension alone.",
+      "Olympic and multi-sport hosting plus championship finals. Capped at 4 so a metro that hosted three Olympics last century cannot outrank a finance capital on this dimension alone.",
     source: "Wikipedia season and event articles for Olympic Games, FIFA World Cup, tennis Grand Slams, Formula 1 Grands Prix, and NASCAR Cup Series, plus continental finals (UEFA Champions League, Copa Libertadores, AFC Champions League, CAF Champions League, and equivalents).",
   },
   {
@@ -208,7 +208,7 @@ const DIMENSIONS: Dimension[] = [
     weight: "raw count",
     shape: "linear",
     rationale:
-      "F1 Grands Prix, marathons, tennis Grand Slams, the Cannes Film Festival. Each annual draw is one point, with no cap, because a city hosting five different marquee fixtures should get the cumulative credit.",
+      "F1 Grands Prix, marathons, tennis Grand Slams, the Cannes Film Festival. Each annual draw is one point, with no cap, because a metro hosting five different marquee fixtures should get the cumulative credit.",
     source: "Per-fixture official sources: the Formula 1 official calendar, the Wikipedia NASCAR Cup Series season articles, the World Marathon Majors organizers, the Tennis Grand Slam organizers, the BWF World Tour calendar (badminton), WTT (table tennis), Riot Games (esports), evo.gg (fighting games), the Cannes Film Festival, and the European Broadcasting Union for Eurovision.",
   },
   {
@@ -383,7 +383,7 @@ export default function MethodologyPage() {
                 Raw scores are continuous, but readers need categorical
                 labels to talk about. The seven tiers below carve the
                 distribution into bands that align with the way urban
-                economists already group cities. The boundaries echo the GaWC
+                economists already group metros. The boundaries echo the GaWC
                 alpha, beta, and gamma convention without requiring readers
                 to know the academic shorthand.
               </p>
@@ -460,7 +460,7 @@ export default function MethodologyPage() {
               </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Metro corridor consolidation</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Several entries in the rankings are multi-city corridors
+                Several entries in the rankings are multi-metro corridors
                 rather than single-municipality metros: Washington-Baltimore,
                 Rhine-Ruhr (Cologne, D&uuml;sseldorf, Essen), Saxon Triangle
                 (Leipzig, Dresden, Chemnitz), San Francisco-San Jose (the
@@ -533,9 +533,9 @@ export default function MethodologyPage() {
             </section>
 
             <section id="peers">
-              <h2 className="text-2xl font-bold mb-4">How this index relates to other major city rankings</h2>
+              <h2 className="text-2xl font-bold mb-4">How this index relates to other major metro rankings</h2>
               <p className="text-[var(--text)] leading-relaxed mb-6">
-                Several established indices score the world&apos;s cities.
+                Several established indices score the world&apos;s metropolitan areas.
                 Each one answers a slightly different question. The summary
                 below sets out what each measures, where it is genuinely
                 stronger than this project, and where this project diverges.
@@ -571,7 +571,7 @@ export default function MethodologyPage() {
                 than a fixed 30/25/25/10/10 split, plus state-level and
                 country-level rollups OEGCI does not publish. OEGCI&apos;s
                 Governance category is measured at the national level, so
-                every city in a given country shares the same governance
+                every metro in a given country shares the same governance
                 score, which this index avoids.
               </p>
 
@@ -579,7 +579,7 @@ export default function MethodologyPage() {
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 The Globalization and World Cities Research Network at
                 Loughborough University publishes the longest-running
-                academic classification of cities, based on the office
+                academic classification of metros, based on the office
                 networks of advanced producer service firms (law,
                 accounting, finance, advertising, management consulting).
                 Its alpha, beta, gamma, sufficiency tiers are the standard
@@ -587,14 +587,14 @@ export default function MethodologyPage() {
                 this composite (see the GaWC class adjustment above), not
                 a competing ranking. Its strength is the rigor of its
                 methodology on a single dimension; its limit is that it
-                only describes a city&apos;s integration into the global
+                only describes a metro&apos;s integration into the global
                 service economy, which is one slice of what makes a metro
                 significant.
               </p>
 
               <h3 className="text-lg font-semibold mt-6 mb-2">Mori Memorial Foundation Global Power City Index (GPCI)</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                A Tokyo-based ranking of 48 leading cities across six
+                A Tokyo-based ranking of 48 leading metros across six
                 functions (Economy, Research and Development, Cultural
                 Interaction, Liveability, Environment, Accessibility) using
                 roughly 70 indicators. London, New York, Tokyo, Paris, and
@@ -605,7 +605,7 @@ export default function MethodologyPage() {
               </p>
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 <strong className="font-semibold">Where this index differs:</strong>{" "}
-                GPCI&apos;s 48-city ceiling is by design, since each
+                GPCI&apos;s 48-metro ceiling is by design, since each
                 indicator is hand-curated. This project trades that depth
                 for two orders of magnitude more breadth, with thinner
                 per-metro data on the long tail.
@@ -613,7 +613,7 @@ export default function MethodologyPage() {
 
               <h3 className="text-lg font-semibold mt-6 mb-2">Economist Intelligence Unit Global Liveability Index</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Annual ranking of 173 cities across five categories
+                Annual ranking of 173 metros across five categories
                 (Stability, Healthcare, Culture and Environment, Education,
                 Infrastructure) on roughly 30 qualitative and quantitative
                 indicators. Vienna, Copenhagen, Zurich, and Melbourne
@@ -632,7 +632,7 @@ export default function MethodologyPage() {
 
               <h3 className="text-lg font-semibold mt-6 mb-2">Mercer Quality of Living Survey</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
-                Annual ranking of 230-plus cities across 39 factors covering
+                Annual ranking of 230-plus metros across 39 factors covering
                 political and social environment, economic environment,
                 socio-cultural environment, medical and health
                 considerations, schools and education, public services and
@@ -663,7 +663,7 @@ export default function MethodologyPage() {
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 <strong className="font-semibold">Where this index differs:</strong>{" "}
                 GFCI is single-purpose by design, scoring only how
-                competitive a city is as a finance hub. It is the
+                competitive a metro is as a finance hub. It is the
                 authoritative source on that question and an excellent
                 cross-check for the Market Capitalization and
                 Infrastructure dimensions above, but it does not attempt
@@ -675,7 +675,7 @@ export default function MethodologyPage() {
                 Each of these indices is the right tool for a specific
                 question. Use OEGCI for forward-looking economic
                 forecasting, GaWC for service-economy integration, GPCI
-                for balanced city competitiveness in the top 48, EIU and
+                for balanced metro competitiveness in the top 48, EIU and
                 Mercer for relocation suitability, GFCI for finance-hub
                 competitiveness. This project answers a different
                 question: across every dimension that signals a globally
@@ -708,7 +708,7 @@ export default function MethodologyPage() {
                 window, weighted by share of canonical tracking and mixing
                 work. Anchor records counts canonical long-players
                 substantially produced in the metro, crediting both tracking
-                and final mix where the city did one but not the other.
+                and final mix where the metro did one but not the other.
                 Producer and session-musician concentration measures the
                 resident or semi-resident production talent based in the
                 metro across the window. Capital disproportion measures how

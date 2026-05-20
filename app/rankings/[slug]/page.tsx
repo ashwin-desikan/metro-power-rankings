@@ -508,7 +508,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* City Status Card */}
+        {/* Capital + Largest City Card */}
         {metro.capital && metro.capital.length > 0 && (
           <section>
             <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-6">
@@ -521,7 +521,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     <div>
                       <p className="text-sm font-semibold text-amber-400">National Capital</p>
                       <p className="text-xs text-[var(--text-muted)]">
-                        Capital city of{" "}
+                        National capital of{" "}
                         {(metro.sovereignSlug ?? metro.countrySlug) ? (
                           <Link
                             href={`/countries/${metro.sovereignSlug ?? metro.countrySlug}`}
