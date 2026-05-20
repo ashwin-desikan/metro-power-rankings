@@ -1,33 +1,29 @@
 import Link from 'next/link';
 import { getSubstackPosts } from '@/lib/substack';
-import { RELEASES } from '@/lib/releases';
+import { getLiveBadges } from '@/lib/badges';
 
 // Home sidebar / side feed. Sits alongside the rankings table at lg+ and
 // stacks below at smaller widths. Surfaces the surfaces that would
 // otherwise live only in the nav:
-//   1. Discover — categorical entry points (Badges, Sports, Top Teams, Compare)
-//   2. From the journal — latest Substack essays (chronological)
-//   3. Recently shipped — last few /updates headlines (chronological)
-//   4. Random metro CTA at the foot
+//   1. Discover — categorical entry points (Sports first, then Top Teams,
+//      Compare). Sports leads because the cartography layer is the
+//      project's second most-loved surface after the rankings themselves.
+//   2. All badges — every live badge in the registry, compact emoji
+//      list. Lets readers scan the alternate lenses without leaving home.
+//   3. From the journal — latest Substack essays.
+//   4. Random metro + Methodology CTAs at the foot.
 //
-// Server component. Substack RSS is fetched at build time / ISR
-// revalidate; releases come from the shared lib/releases module.
+// Server component. Substack RSS fetched at build time / on ISR
+// revalidate; badge list comes from the shared lib/badges registry.
 
 type DiscoverCard = {
   eyebrow: string;
   title: string;
   href: string;
-  external?: boolean;
   accent: string;
 };
 
 const DISCOVER: DiscoverCard[] = [
-  {
-    eyebrow: 'Badges',
-    title: 'Explore by lens',
-    href: '/badges',
-    accent: '#7c3aed',
-  },
   {
     eyebrow: 'Sports',
     title: 'Every team on one map',
@@ -57,7 +53,7 @@ function formatDate(iso: string): string {
 
 export default async function HomeSidebar() {
   const posts = await getSubstackPosts(3);
-  const recentReleases = RELEASES.slice(0, 3);
+  const badges = getLiveBadges();
 
   return (
     <aside
@@ -65,7 +61,7 @@ export default async function HomeSidebar() {
       style={{ alignSelf: 'start' }}
     >
       <Section title="Discover">
-        <div className="grid grid-cols-2 lg:grid-cols-1 gap-2">
+        <div className="grid grid-cols-1 gap-2">
           {DISCOVER.map((c) => (
             <Link
               key={c.href}
@@ -103,8 +99,59 @@ export default async function HomeSidebar() {
         </div>
       </Section>
 
+      {badges.length > 0 && (
+        <Section title="All badges" trailing={
+          <Link
+            href="/badges"
+            className="text-[10px] hover:text-[var(--accent)] transition-colors"
+            style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            See all &rarr;
+          </Link>
+        }>
+          <ul className="grid grid-cols-2 gap-1.5">
+            {badges.map((b) => (
+              <li key={b.slug}>
+                <Link
+                  href={`/badges/${b.slug}`}
+                  className="flex items-center gap-1.5 rounded-md border px-2 py-1.5 transition-colors hover:border-[var(--accent)]"
+                  style={{
+                    backgroundColor: 'var(--bg-card)',
+                    borderColor: 'var(--border)',
+                  }}
+                  title={b.shortDesc}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{ fontSize: '14px', lineHeight: 1, flexShrink: 0 }}
+                  >
+                    {b.emoji}
+                  </span>
+                  <span
+                    className="text-xs truncate"
+                    style={{ color: 'var(--text)' }}
+                  >
+                    {b.name}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
       {posts.length > 0 && (
-        <Section title="From the journal">
+        <Section title="From the journal" trailing={
+          <a
+            href="https://citizenofnowhere.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] hover:text-[var(--accent)] transition-colors"
+            style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            All essays &#8599;
+          </a>
+        }>
           <ul className="space-y-2">
             {posts.map((p) => (
               <li key={p.slug}>
@@ -127,42 +174,6 @@ export default async function HomeSidebar() {
               </li>
             ))}
           </ul>
-          <a
-            href="https://citizenofnowhere.substack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-2 text-[11px] hover:text-[var(--accent)] transition-colors"
-            style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            All essays &#8599;
-          </a>
-        </Section>
-      )}
-
-      {recentReleases.length > 0 && (
-        <Section title="Recently shipped">
-          <ul className="space-y-2">
-            {recentReleases.map((r, i) => (
-              <li key={`${r.date}-${i}`}>
-                <div
-                  className="text-[10px] mb-0.5"
-                  style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  {formatDate(r.date)}
-                </div>
-                <div className="text-sm font-medium leading-snug" style={{ color: 'var(--text)' }}>
-                  {r.headline}
-                </div>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/updates"
-            className="inline-block mt-2 text-[11px] hover:text-[var(--accent)] transition-colors"
-            style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            All updates &rarr;
-          </Link>
         </Section>
       )}
 
@@ -186,14 +197,25 @@ export default async function HomeSidebar() {
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({
+  title,
+  trailing,
+  children,
+}: {
+  title: string;
+  trailing?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <div
-        className="text-[10px] tracking-widest uppercase mb-2"
-        style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
-      >
-        {title}
+      <div className="flex items-baseline justify-between mb-2">
+        <div
+          className="text-[10px] tracking-widest uppercase"
+          style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          {title}
+        </div>
+        {trailing}
       </div>
       {children}
     </div>
