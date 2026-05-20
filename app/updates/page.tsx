@@ -54,6 +54,15 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-20",
+    headline: "Home reordered: rankings land in the first viewport",
+    items: [
+      "Hero tightened to three rendered lines (eyebrow, headline, subhead); the rankings table now sits roughly 160 pixels below the top of the content area on a typical laptop.",
+      "Hero search input removed; the RankingsTable's built-in search owns the affordance, and the '/' keystroke shortcut now focuses that input from anywhere on the page.",
+      "Discovery strip (Badges, Sports, Top Teams, Latest essay) moves below the rankings table so readers see the data first and the entry points second.",
+    ],
+  },
+  {
+    date: "2026-05-20",
     headline: "Vocabulary sweep: metro replaces city across the site",
     items: [
       "Descriptive copy across home, about, methodology, neighborhoods, top-teams, llms.txt, and league pages now refers to metros / metropolitan areas / urban areas; generic 'city' is dropped as the unit of analysis.",

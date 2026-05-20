@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Metro, formatPop, regionColors } from '@/lib/shared';
 import MetroMap, { type MapPoint } from './MetroMap';
@@ -50,6 +50,21 @@ const REGIONS = [
 ];
 
 export default function RankingsTable({ metros, showMap = true }: RankingsTableProps) {
+  // '/' keystroke focuses the search input. Common discovery primitive on
+  // lookup-first pages; previously lived on the hero MetroSearch. Now the
+  // table owns it because the table owns the search input.
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
+  useEffect(() => {
+    const onKey = (ev: KeyboardEvent) => {
+      if (ev.key !== '/') return;
+      const tag = (document.activeElement as HTMLElement | null)?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      ev.preventDefault();
+      searchInputRef.current?.focus();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
   const [view, setView] = useState<'top25' | 'top100'>('top25');
   const [selectedContinent, setSelectedContinent] = useState('All');
   const [selectedRegion, setSelectedRegion] = useState('All');
@@ -272,19 +287,36 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
                 <option key={k} value={k}>{SEARCH_SCOPE_LABEL[k]}</option>
               ))}
             </select>
-            <input
-              type="text"
-              placeholder={
-                searchScope === 'country' ? 'Search by country (e.g. Germany, Japan)...'
-                  : searchScope === 'metro' ? 'Search by metro area (e.g. Tokyo, Sao Paulo)...'
-                  : searchScope === 'state' ? 'Search by state or province (e.g. California, Scotland)...'
-                  : searchScope === 'county' ? 'Search by county or municipality (e.g. Cook, Manchester)...'
-                  : 'Search metros, primary cities, countries, states (e.g. California, Scotland)...'
-              }
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="flex-1 px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
-            />
+            <div className="relative flex-1">
+              <input
+                ref={searchInputRef}
+                type="text"
+                placeholder={
+                  searchScope === 'country' ? 'Search by country (e.g. Germany, Japan)...'
+                    : searchScope === 'metro' ? 'Search by metro area (e.g. Tokyo, Sao Paulo)...'
+                    : searchScope === 'state' ? 'Search by state or province (e.g. California, Scotland)...'
+                    : searchScope === 'county' ? 'Search by county or municipality (e.g. Cook, Manchester)...'
+                    : 'Search metros, primary cities, countries, states (e.g. California, Scotland)...'
+                }
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                aria-label="Search metros"
+                className="w-full px-4 py-2 pr-10 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+              />
+              {!searchTerm && (
+                <kbd
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] px-1.5 py-0.5 rounded border hidden sm:inline-block pointer-events-none"
+                  style={{
+                    borderColor: 'var(--border)',
+                    color: 'var(--text-muted)',
+                    fontFamily: "'JetBrains Mono', monospace",
+                  }}
+                  aria-hidden="true"
+                >
+                  /
+                </kbd>
+              )}
+            </div>
           </div>
         </div>
       </div>
