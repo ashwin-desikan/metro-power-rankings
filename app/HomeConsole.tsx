@@ -1,200 +1,159 @@
 import Link from 'next/link';
-import { getAllMetros, getMeta } from '@/lib/data';
-import { tierName } from '@/lib/tiers';
-import HomeMap from './HomeMap';
-import MetroSearch, { type SearchEntry } from './MetroSearch';
+import { getSubstackPosts } from '@/lib/substack';
 
-// Home console: the map-plus-sidecar zone that sits directly under the
-// compressed hero. Replaces the old stats grid as the first interactive
-// surface a visitor sees. Map on the left (about 60% width at md+), search
-// and top-five on the right. Both stacks collapse to vertical on narrow
-// viewports without losing any of the three components.
+// Home discovery strip. Sits between the hero and the rankings table.
+// Four cards that point at the parts of the site that are otherwise only
+// reachable from the nav: the badge taxonomy, the sports cartography
+// layer, the top-teams reference essay, and the latest Substack essay.
 //
-// All data is read server-side via lib/data so metros.json never crosses
-// to the client; we ship only the slim SearchEntry list to MetroSearch.
-export default function HomeConsole() {
-  const metros = getAllMetros();
-  const meta = getMeta();
+// Each card is a Link with a colored accent rule on the left edge, a
+// title, and a one-line subtitle. No counts in the copy (the workbook
+// changes too often). The Substack card pulls the most recent post from
+// the same loader the Featured Articles strip below uses, so the title
+// stays fresh without any new infrastructure.
+//
+// Server component — Substack RSS is fetched at build time / on ISR
+// revalidate, never at request time.
 
-  // Slim entry list for client-side autocomplete. Stripping every field
-  // except what the dropdown renders keeps the JS payload small (~150KB
-  // gzipped for the full corpus vs ~1.6MB for the raw metros.json).
-  const searchEntries: SearchEntry[] = metros.map((m) => ({
-    rank: m.rank,
-    slug: m.slug,
-    name: m.name,
-    country: m.country,
-    primaryCity: m.primaryCity,
-    score: m.score,
-    tierName: tierName(m.score),
-  }));
+type Card = {
+  title: string;
+  subtitle: string;
+  href: string;
+  external?: boolean;
+  accent: string;
+  eyebrow: string;
+};
 
-  const topFive = metros
-    .filter((m) => m.rank > 0)
-    .sort((a, b) => a.rank - b.rank)
-    .slice(0, 5);
+export default async function HomeConsole() {
+  const posts = await getSubstackPosts(1);
+  const latest = posts[0];
 
-  // Top 250 metros for the editorial map. Shipped as a slim shape (no
-  // dimension breakdown, no team rosters) to keep the home-page payload
-  // small. The map ignores any row without lat/lon.
-  const mapMetros = metros
-    .filter((m) => m.rank > 0 && typeof m.lat === 'number' && typeof m.lon === 'number')
-    .sort((a, b) => a.rank - b.rank)
-    .slice(0, 250)
-    .map((m) => ({
-      rank: m.rank,
-      slug: m.slug,
-      name: m.name,
-      country: m.country,
-      primaryCity: m.primaryCity,
-      primaryState: m.primaryState,
-      score: m.score,
-      lat: m.lat,
-      lon: m.lon,
-    }));
-
-  // Format the lastUpdate stamp. meta.lastUpdate is ISO-ish (YYYY-MM-DD);
-  // render as Mon DD, YYYY to match the /updates page convention.
-  const lastUpdateLabel = (() => {
-    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(meta.lastUpdate || '');
-    if (!m) return meta.lastUpdate || '';
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    return `${months[parseInt(m[2], 10) - 1]} ${parseInt(m[3], 10)}, ${m[1]}`;
-  })();
+  const cards: Card[] = [
+    {
+      eyebrow: 'Badges',
+      title: 'Explore by lens',
+      subtitle:
+        'Alternate views of the same dataset: Greying Power, Cosmopolitan Capital, Velvet Rock, and more.',
+      href: '/badges',
+      accent: '#7c3aed',
+    },
+    {
+      eyebrow: 'Sports',
+      title: 'Every team on one map',
+      subtitle:
+        'Cartography across the tracked sports, with per-franchise pages for NFL, NBA, MLB, and NHL.',
+      href: '/sports',
+      accent: '#2563eb',
+    },
+    {
+      eyebrow: 'Reference',
+      title: 'The team that wins the city',
+      subtitle:
+        'One crest per metro: the single franchise whose disappearance would change what the city is.',
+      href: '/top-teams',
+      accent: '#0891b2',
+    },
+    latest
+      ? {
+          eyebrow: 'From the journal',
+          title: latest.title,
+          subtitle:
+            latest.description?.trim() ||
+            'Long-form essays on civic geography, sports business, and the indices behind both.',
+          href: latest.url,
+          external: true,
+          accent: '#16a34a',
+        }
+      : {
+          eyebrow: 'From the journal',
+          title: 'Citizen of Nowhere on Substack',
+          subtitle:
+            'Long-form essays on civic geography, sports business, and the indices behind both.',
+          href: 'https://citizenofnowhere.substack.com',
+          external: true,
+          accent: '#16a34a',
+        },
+  ];
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 pb-6 border-b" style={{ borderColor: 'var(--border)' }}>
+    <section
+      className="px-4 sm:px-6 lg:px-8 pb-6 border-b"
+      style={{ borderColor: 'var(--border)' }}
+    >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-          {/* Map column - 60% on lg+, stacks above sidecar on smaller widths. */}
-          <div className="lg:col-span-3">
-            <HomeMap initialMetros={mapMetros} />
-            <div
-              className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px]"
-              style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
-            >
-              <span className="inline-flex items-center gap-1">
-                <span
-                  className="inline-block w-2 h-2 rounded-full"
-                  style={{ background: '#7c3aed' }}
-                  aria-hidden="true"
-                />
-                Global Capital
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <span
-                  className="inline-block w-2 h-2 rounded-full"
-                  style={{ background: '#2563eb' }}
-                  aria-hidden="true"
-                />
-                Continental
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <span
-                  className="inline-block w-2 h-2 rounded-full"
-                  style={{ background: '#0891b2' }}
-                  aria-hidden="true"
-                />
-                Major
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <span
-                  className="inline-block w-2 h-2 rounded-full"
-                  style={{ background: '#16a34a' }}
-                  aria-hidden="true"
-                />
-                Regional
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <span
-                  className="inline-block w-2 h-2 rounded-full"
-                  style={{ background: '#6b7280' }}
-                  aria-hidden="true"
-                />
-                Lower tiers
-              </span>
-            </div>
-          </div>
-
-          {/* Sidecar - search and top 5. 40% on lg+, full-width on smaller. */}
-          <aside className="lg:col-span-2 flex flex-col gap-3">
-            <div>
-              <div
-                className="text-[10px] tracking-widest mb-1.5 uppercase"
-                style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
+        <div
+          className="text-[11px] tracking-widest uppercase mb-3"
+          style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          Discover
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {cards.map((card, i) =>
+            card.external ? (
+              <a
+                key={i}
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-lg border p-4 transition-colors hover:border-[var(--accent)]"
+                style={{
+                  backgroundColor: 'var(--bg-card)',
+                  borderColor: 'var(--border)',
+                  borderLeftWidth: '3px',
+                  borderLeftColor: card.accent,
+                }}
               >
-                Find your city
-              </div>
-              <MetroSearch entries={searchEntries} />
-            </div>
-
-            <div
-              className="rounded-lg border p-3"
-              style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <div
-                  className="text-[10px] tracking-widest uppercase"
-                  style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  Top 5
-                </div>
-                <div
-                  className="text-[10px]"
-                  style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  Updated {lastUpdateLabel}
-                </div>
-              </div>
-              <ul className="space-y-1.5">
-                {topFive.map((m) => (
-                  <li key={m.slug}>
-                    <Link
-                      href={`/rankings/${m.slug}`}
-                      className="flex items-center justify-between gap-2 py-0.5 px-1 rounded hover:bg-[var(--bg-hover,rgba(255,255,255,0.04))] transition-colors"
-                    >
-                      <span className="flex items-center gap-2 min-w-0">
-                        <span
-                          className="inline-block w-5 text-right text-xs"
-                          style={{
-                            color: 'var(--text-muted)',
-                            fontFamily: "'JetBrains Mono', monospace",
-                          }}
-                        >
-                          {m.rank}
-                        </span>
-                        <span className="text-sm truncate" style={{ color: 'var(--text)' }}>
-                          {m.name}
-                        </span>
-                      </span>
-                      <span
-                        className="text-xs whitespace-nowrap"
-                        style={{
-                          color: 'var(--text-muted)',
-                          fontFamily: "'JetBrains Mono', monospace",
-                        }}
-                      >
-                        {m.score.toFixed(1)}
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div
-                className="mt-2.5 pt-2.5 flex items-center justify-between text-[11px] border-t"
-                style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}
+                <DiscoveryCardBody card={card} external />
+              </a>
+            ) : (
+              <Link
+                key={i}
+                href={card.href}
+                className="group block rounded-lg border p-4 transition-colors hover:border-[var(--accent)]"
+                style={{
+                  backgroundColor: 'var(--bg-card)',
+                  borderColor: 'var(--border)',
+                  borderLeftWidth: '3px',
+                  borderLeftColor: card.accent,
+                }}
               >
-                <Link href="/random" className="hover:text-[var(--accent)] transition-colors">
-                  Random metro &rarr;
-                </Link>
-                <Link href="/compare" className="hover:text-[var(--accent)] transition-colors">
-                  Compare &rarr;
-                </Link>
-              </div>
-            </div>
-          </aside>
+                <DiscoveryCardBody card={card} />
+              </Link>
+            ),
+          )}
         </div>
       </div>
     </section>
+  );
+}
+
+function DiscoveryCardBody({ card, external }: { card: Card; external?: boolean }) {
+  return (
+    <>
+      <div className="flex items-center justify-between mb-1.5">
+        <span
+          className="text-[10px] tracking-widest uppercase"
+          style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
+        >
+          {card.eyebrow}
+        </span>
+        <span
+          className="text-xs transition-transform group-hover:translate-x-0.5"
+          style={{ color: 'var(--text-muted)' }}
+          aria-hidden="true"
+        >
+          {external ? '↗' : '→'}
+        </span>
+      </div>
+      <div className="text-sm sm:text-[15px] font-semibold mb-1.5" style={{ color: 'var(--text)' }}>
+        {card.title}
+      </div>
+      <div
+        className="text-xs leading-relaxed"
+        style={{ color: 'var(--text-muted)' }}
+      >
+        {card.subtitle}
+      </div>
+    </>
   );
 }

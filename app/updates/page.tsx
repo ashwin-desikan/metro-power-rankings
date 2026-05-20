@@ -54,11 +54,12 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-20",
-    headline: "Home redesigned: compressed hero, map and search console",
+    headline: "Home redesigned: search hero, discovery strip, filtered map",
     items: [
-      "Hero shrinks to three lines (eyebrow, headline, one-line subhead); the rankings table now appears within the first viewport on a typical laptop instead of below a wall of marketing copy.",
-      "New home console between hero and table: tier-colored world map on the left, live search-with-autocomplete and a top-five leaderboard on the right.",
-      "Keyboard '/' shortcut focuses the search; results show rank, tier, and score inline so a reader can decide before clicking. Rankings table columns and behavior are unchanged.",
+      "Hero compressed to three lines plus an inline search-with-autocomplete; keyboard '/' focuses the input from anywhere on the page.",
+      "Discovery strip between hero and rankings: four cards point at Badges, Sports, Top Teams, and the latest Substack essay so the surfaces buried in the menu now have a home-page entry.",
+      "Map moves back inside the rankings table block and tracks whatever filter is active (Top 25 by default, narrows with continent/region/search) instead of showing a fixed top-N slice.",
+      "Rankings table columns and behavior are unchanged: Rank, Metro Area, Region, Primary City, State, Population, Score.",
     ],
   },
   {

@@ -1,6 +1,8 @@
 import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors, slugify } from '@/lib/data';
 import RankingsTable from './RankingsTable';
 import HomeConsole from './HomeConsole';
+import MetroSearch, { type SearchEntry } from './MetroSearch';
+import { tierName } from '@/lib/tiers';
 import Link from 'next/link';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -77,6 +79,18 @@ export default async function Home() {
   const substackPosts = await getSubstackPosts();
   const featuredArticles = buildFeaturedCards(substackPosts);
 
+  // Slim search index for the hero MetroSearch. Server-rendered so the
+  // client receives only the fields the autocomplete dropdown shows.
+  const searchEntries: SearchEntry[] = metros.map((m) => ({
+    rank: m.rank,
+    slug: m.slug,
+    name: m.name,
+    country: m.country,
+    primaryCity: m.primaryCity,
+    score: m.score,
+    tierName: tierName(m.score),
+  }));
+
   const dataset = datasetJsonLd({
     lastUpdate,
     metroCount: metros.length,
@@ -107,12 +121,11 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(top100) }}
       />
 
-      {/* Compressed hero. Three lines, fixed vertical budget so the
-          console and the rankings table appear within the first viewport
-          on a typical 13-inch laptop. */}
-      <section
-        className="pt-20 pb-6 px-4 sm:px-6 lg:px-8"
-      >
+      {/* Compressed hero. Eyebrow, headline, one-line subhead, then the
+          search bar inline. Total height kept tight so the rankings table
+          (with its filter-aware map) appears within the first viewport on
+          a typical 13-inch laptop. */}
+      <section className="pt-20 pb-5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <p
             className="text-xs font-semibold tracking-widest mb-2 uppercase"
@@ -126,27 +139,30 @@ export default async function Home() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
             Global Metro Power Rankings
           </h1>
-          <p className="text-base sm:text-lg text-[var(--text-muted)] max-w-3xl">
+          <p className="text-base sm:text-lg text-[var(--text-muted)] mb-4 max-w-3xl">
             Every populated metropolitan area on Earth, scored across sixteen
             weighted dimensions and ranked on a single composite.
           </p>
+          <div className="max-w-xl">
+            <MetroSearch entries={searchEntries} />
+          </div>
         </div>
       </section>
 
-      {/* Home console: map on the left, search and top-five on the right.
-          Replaces the old four-tile stats grid with a real interactive
-          surface; all three (map, search, leaderboard) live above the fold
-          and the rankings table starts immediately below. */}
+      {/* Discovery strip. Four cards point at the surfaces that are
+          otherwise only reachable from the nav: badges, sports, top-teams
+          reference, latest Substack essay. Sits between the hero and the
+          rankings table so a reader sees both immediately. */}
       <HomeConsole />
 
       {/* Rankings Table Section */}
       <section
         id="rankings"
-        className="py-20 px-4 sm:px-6 lg:px-8 border-b"
+        className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 border-b"
         style={{ borderColor: 'var(--border)' }}
       >
         <div className="max-w-7xl mx-auto">
-          <RankingsTable metros={metros} showMap={false} />
+          <RankingsTable metros={metros} />
         </div>
       </section>
 
