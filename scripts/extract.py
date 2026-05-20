@@ -649,12 +649,16 @@ def extract_states(wb, all_metros):
     ws = wb["States (ISO 3166-2)"]
 
     # Pre-compute country slug map from metros so state slug collisions can
-    # disambiguate using the same conventions as country pages.
+    # disambiguate using the same conventions as country pages. The canonical
+    # slugify() helper strips ampersands, apostrophes, periods, commas, and
+    # diacritics; using the naive lower+replace here previously produced
+    # state countrySlug values like "antigua-&-barbuda" that did not match
+    # any entry in countries.json and 404d on the country link.
     country_slug = {}
     for m in all_metros:
-        country_slug[m['country']] = m['country'].lower().replace(' ', '-')
+        country_slug[m['country']] = slugify(m['country'])
         if m.get('subCountry'):
-            country_slug[m['subCountry']] = m['subCountry'].lower().replace(' ', '-')
+            country_slug[m['subCountry']] = slugify(m['subCountry'])
 
     # Pass 1: collect raw state rows.
     raw = []

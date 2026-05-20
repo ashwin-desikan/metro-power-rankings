@@ -647,12 +647,28 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       </div>
 
-      {/* Map */}
-      <div
-        style={{ height: 540 }}
-        className="rounded-lg overflow-hidden border"
-      >
-        <SportsMapInner markers={visible} />
+      {/* Map. Mobile gets a viewport-height ceiling so the filter chips
+          stay on screen; tablets and up keep the original fixed 540px. */}
+      <div className="rounded-lg overflow-hidden border h-[60vh] sm:h-[540px]">
+        {visible.length === 0 ? (
+          <div className="h-full w-full flex items-center justify-center text-center px-6">
+            <div>
+              <p className="text-sm text-[var(--text)] mb-2">
+                No teams match these filters.
+              </p>
+              {hasFilters && (
+                <button
+                  onClick={clearAll}
+                  className="text-xs underline decoration-dotted text-[var(--text-muted)] hover:text-[var(--accent)]"
+                >
+                  Clear all filters
+                </button>
+              )}
+            </div>
+          </div>
+        ) : (
+          <SportsMapInner markers={visible} />
+        )}
       </div>
 
       {/* Tier definitions — expandable native disclosure so the page
