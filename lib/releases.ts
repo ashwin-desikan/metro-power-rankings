@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-05-21",
+    headline: "Singapore polygon, small-jurisdiction boundaries, top-teams fixes",
+    items: [
+      "Singapore boundaries now resolve to the full planning-area footprint instead of a single pin; population corrected to roughly 6.1M, with the score and ASEAN regional shares recomputed downstream.",
+      "Malta, Liechtenstein, and Vatican City pick up proper polygons for the first time; Overture region codes (ISO 3166-2) wired across every administrative subdivision so the boundary builder can resolve them.",
+      "Top Sports Teams: Berlin (Alba Berlin) and Buenos Aires (Boca / River) rationales corrected after a cross-paste sent Real Madrid and Bayern Munich content into the wrong rows; Arsenal stat refreshed on London.",
+      "Workbook sync also refreshes Argentina and India country-pop estimates and propagates the Singapore population delta through the ASEAN regional aggregates.",
+    ],
+  },
+  {
     date: "2026-05-20",
     headline: "Badge maps for every badge, deeper map zoom-out",
     items: [
