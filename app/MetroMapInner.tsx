@@ -25,20 +25,29 @@ function getPointBounds(points: MapPoint[]): [[number, number], [number, number]
   ];
 }
 
-// Create a custom Leaflet pane that sits ABOVE the default overlayPane
-// (where GeoJSON polygons render) and the default markerPane. The
-// primary CircleMarker layer below mounts onto this pane via the `pane`
-// path option, which keeps the pin and its tooltip clickable at any
-// zoom even when a large boundary polygon would otherwise cover them.
+// Create two custom Leaflet panes used by the primary city pin layer:
+//   - primaryPins (z-index 670) sits above the default overlayPane (400,
+//     GeoJSON polygons), markerPane (600), and tooltipPane (650). The
+//     primary CircleMarker mounts here so the pin is always hoverable
+//     above the boundary polygon at any zoom.
+//   - primaryPinTooltips (z-index 690) sits above the pin pane so the
+//     tooltip floats on top of the pin itself; without a dedicated pane
+//     the default tooltipPane (650) would sit below primaryPins and the
+//     tooltip would disappear behind the pin on hover.
+// Panes are idempotent — createPane is only called the first time the
+// component mounts on a given map.
 function PrimaryPinPane() {
   const map = useMap();
   useEffect(() => {
     if (!map.getPane('primaryPins')) {
       const pane = map.createPane('primaryPins');
-      // Defaults: overlayPane=400, markerPane=600, tooltipPane=650.
-      // 670 puts the pin above markers and tooltips so hover always wins.
       pane.style.zIndex = '670';
       pane.style.pointerEvents = 'auto';
+    }
+    if (!map.getPane('primaryPinTooltips')) {
+      const tipPane = map.createPane('primaryPinTooltips');
+      tipPane.style.zIndex = '690';
+      tipPane.style.pointerEvents = 'none';
     }
   }, [map]);
   return null;
@@ -342,7 +351,12 @@ export default function MetroMapInner({
               : undefined
           }
         >
-          <Tooltip direction="top" offset={[0, -6]} permanent={false}>
+          <Tooltip
+            direction="top"
+            offset={[0, -6]}
+            permanent={false}
+            pane="primaryPinTooltips"
+          >
             {richMeta ? (
               <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
                 <div style={{ fontWeight: 600 }}>{p.name}</div>

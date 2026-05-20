@@ -22,7 +22,7 @@ export const RELEASES: Release[] = [
     headline: "Side feed, map fixes: pin, refit, world-wrap",
     items: [
       "New sticky side feed sits next to the rankings at lg+: Discover (Sports first), every live badge in a compact grid, latest essays from the journal, and Random metro plus Methodology CTAs. Wraps below the table on tablet.",
-      "Map: primary metro pin moves to a custom Leaflet pane above the boundary polygon (z-index 670) so hover and click work at every zoom level, even when the polygon covers the city center.",
+      "Map: primary metro pin and its tooltip move to custom Leaflet panes above the boundary polygon (pin z-index 670, tooltip 690); hover and click work at every zoom and the tooltip floats above the pin itself.",
       "Map: filter changes zoom into the visible set more aggressively (padding tightened from 15% span to 6%); animated 0.5s fit so toggles read as motion rather than a jump cut.",
       "Map: world-wrap on. Continents repeat horizontally and worldCopyJump keeps markers seamless when the user pans across the antimeridian; no more hard edge of the world.",
     ],
