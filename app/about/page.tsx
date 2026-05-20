@@ -78,10 +78,10 @@ export default function AboutPage() {
               The Global Metro Power Rankings
             </h1>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed">
-              A composite ranking of every metropolitan area on Earth — 4,200
-              metros, 237 countries, 16 dimensions, 70,000 individually
-              verified parameters. The ranking is the product; everything else
-              on this site is the apparatus that supports it.
+              A composite ranking of every metropolitan area on Earth.
+              Sixteen dimensions, individually verified parameters,
+              hand-curated. The ranking is the product; everything else on
+              this site is the apparatus that supports it.
             </p>
           </header>
 
@@ -191,7 +191,7 @@ export default function AboutPage() {
                   <span className="text-[var(--text-muted)]">
                     {" "}— Thomas Brinkhoff&apos;s exhaustive metropolitan
                     population dataset. The population dimension across the
-                    full 4,200-metro corpus would not be tractable without it.
+                    full metro corpus would not be tractable without it.
                   </span>
                 </li>
                 <li>

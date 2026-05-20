@@ -23,7 +23,7 @@ const PAGE_PATH = "/countries";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Countries";
 const PAGE_DESCRIPTION =
-  "Population, metros, and composite score by country. 244 sovereign states, constituents, territories, and disputed regions, ranked and filterable.";
+  "Population, metros, and composite score by country. Sovereign states, constituents, territories, and disputed regions, ranked and filterable.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -120,7 +120,7 @@ export default function CountriesIndexPage() {
               Population, metros, and composite score by country.
             </h1>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed max-w-3xl">
-              244 sovereign states, constituents, territories, and disputed
+              Sovereign states, constituents, territories, and disputed
               regions. Each row links to a per-country breakdown of every metro
               tracked under that flag. Click the &quot;+&quot; on any parent
               country to see its constituents and territories.

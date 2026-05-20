@@ -21,7 +21,7 @@ const PINNED_FEATURED: FeaturedCard[] = [
   {
     title: 'The Last of the Marylebones',
     subtitle:
-      'A taxonomy of the world’s dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ metros.',
+      'A taxonomy of the world’s dense, historic, walkable, elite residential neighborhoods. A small qualifying set out of the full metro corpus.',
     status: 'Read',
     href: '/neighborhoods',
     external: false,
@@ -29,7 +29,7 @@ const PINNED_FEATURED: FeaturedCard[] = [
   {
     title: 'The Team That Wins the City',
     subtitle:
-      'One crest per city. The single sporting franchise that defines each of 312 global metros, with full rationales for the contested calls.',
+      'One crest per city. The single sporting franchise that defines each global metro with a serious civic-identity call, with full rationales for the contested calls.',
     status: 'Read',
     href: '/top-teams',
     external: false,
@@ -125,18 +125,18 @@ export default async function Home() {
             Global Metro<br />Power Rankings
           </h1>
           <p className="text-lg text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
-            70,000+ individually verified parameters across 16 dimensions, 4,200+
-            metropolitan areas, and 237 countries. A data-driven measure of what
+            Individually verified parameters across sixteen dimensions, every
+            populated metropolitan area on Earth. A data-driven measure of what
             makes a city matter globally.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {[
-              { label: 'Metros', value: '4,200+' },
-              { label: 'Parameters', value: '70,000+' },
-              { label: 'Countries', value: '237' },
-              { label: 'Dimensions', value: '16' },
+              { label: 'Metros', value: 'Thousands' },
+              { label: 'Parameters', value: 'Tens of thousands' },
+              { label: 'Countries', value: 'Every country' },
+              { label: 'Dimensions', value: 'Sixteen' },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -384,7 +384,7 @@ export default async function Home() {
             Explore Every Metro on Earth
           </h2>
           <p className="text-lg text-[var(--text-muted)] mb-8">
-            Search, filter, and analyze data for all 4,200+ metropolitan areas. Compare regions,
+            Search, filter, and analyze data for every metropolitan area in the corpus. Compare regions,
             understand global patterns, and discover emerging metros.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -439,7 +439,7 @@ export default async function Home() {
           <h3 className="text-xl font-semibold mt-10 mb-3">Rankings Within Rankings</h3>
           <p className="text-[var(--text-muted)] mb-4">
             Readers sometimes expect a global index to categorize everything. This
-            one does not. I am tracking more than 70,000 individual data points
+            one does not. I am tracking tens of thousands of individual data points
             across sixteen dimensions, and each dimension draws its own lines. Poland&apos;s
             volleyball league is top-ranked in the world, but Ekstraklasa is not
             among the twenty strongest football leagues, so Polish football clubs
@@ -551,10 +551,10 @@ export default async function Home() {
 
           <h3 className="text-xl font-semibold mt-10 mb-3">Data Sources</h3>
           <p className="text-[var(--text-muted)] mb-4">
-            The dataset is hand-curated across two years: 4,200+ metropolitan areas
-            spanning 237 countries, with every cultural and infrastructural asset
+            The dataset is hand-curated across years: every metropolitan area in the corpus
+            spans the populated world, with every cultural and infrastructural asset
             individually verified and mapped through a municipality-level geographic
-            hierarchy of 182,000+ administrative units. Primary sources include
+            hierarchy of hundreds of thousands of administrative units. Primary sources include
             CWUR (universities), GaWC Research Network (global connectivity), CTBUH
             Skyscraper Center (150m+ buildings), UEFA (stadium ratings), TEA/AECOM
             (theme park attendance), UFI (convention centers), the Michelin Guide

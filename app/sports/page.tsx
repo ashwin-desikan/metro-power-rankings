@@ -65,9 +65,9 @@ export default function SportsPage() {
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">All Sports</div>
         <h1 className="text-4xl font-bold tracking-tight mb-2">Every top-flight team, on one map</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          {summary.total_markers.toLocaleString()} teams across {Object.keys(summary.by_sport).length} sports and {Object.keys(summary.by_country_top).length}+ countries.
+          Every top-flight team across the tracked sports and countries, on one map.
           Filter by sport, league, or country, or jump straight to a per-franchise page where one exists.
-          Per-team pages are live for NFL, MLB, and NBA today, with NHL queued next.
+          Per-team pages are live for NFL, MLB, NBA, and NHL.
         </p>
         <p className="text-[var(--text-dim)] max-w-3xl text-xs mt-2">
           Rosters and divisions current as of Feb 2026. Level + division changes happen during each sport&apos;s offseason and are noted in <Link href="/updates" className="underline hover:text-[var(--accent)]">/updates</Link>.

@@ -18,9 +18,8 @@ const PAGE_PATH = "/top-teams";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "The Team That Wins the City";
 const PAGE_DESCRIPTION =
-  "One crest per city. Across 237 metros, the team that wins the civic identity contest is rarely the one with the most trophies. It is the one whose disappearance would change what the city is.";
+  "One crest per city. The team that wins the civic identity contest is rarely the one with the most trophies. It is the one whose disappearance would change what the city is.";
 const PAGE_PUBLISHED = "2026-04-28";
-const METRO_UNIVERSE_LABEL = "4,200+";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -184,7 +183,7 @@ export default function TopTeamsPage() {
     mainEntityOfPage: PAGE_URL,
     headline: PAGE_TITLE,
     alternativeHeadline:
-      "One crest per city: the top sporting franchise that defines each of 237 global metros",
+      "One crest per city: the top sporting franchise that defines each global metro with a serious civic-identity call",
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     datePublished: PAGE_PUBLISHED,
@@ -270,9 +269,8 @@ export default function TopTeamsPage() {
             className="text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl"
             style={{ color: "var(--text-muted)" }}
           >
-            One crest per city. Out of {METRO_UNIVERSE_LABEL} metros in the Global Metro Power
-            Rankings dataset, {summary.total} have a top-team call serious enough to land. Every
-            row links back to the metro&rsquo;s ranking page.
+            One crest per city. Out of the full corpus, {summary.total} metros have a top-team call
+            serious enough to land. Every row links back to the metro&rsquo;s ranking page.
           </p>
 
           {/* Summary chips */}
@@ -299,12 +297,6 @@ export default function TopTeamsPage() {
               style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
             >
               {summary.contestedCount} contested rows
-            </span>
-            <span
-              className="inline-block border rounded px-3 py-1.5"
-              style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
-            >
-              {METRO_UNIVERSE_LABEL} metros in corpus
             </span>
           </div>
 

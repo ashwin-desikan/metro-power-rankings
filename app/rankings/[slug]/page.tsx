@@ -664,7 +664,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     >
                       The Last of the Marylebones
                     </Link>
-                    . 103 of 4,200+ metros clear the bar.
+                    . A small qualifying set out of the full corpus.
                   </p>
                 </div>
               </div>

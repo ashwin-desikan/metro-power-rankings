@@ -57,7 +57,7 @@ export function datasetJsonLd(opts: { lastUpdate: string; metroCount: number }) 
     name: SITE_NAME,
     alternateName: "GMPR",
     description:
-      "A composite ranking of every metropolitan area on Earth. 4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters. Hand-curated over three years.",
+      "A composite ranking of every metropolitan area on Earth, across sixteen dimensions, hand-curated from individually verified parameters over years.",
     url: BASE_URL,
     identifier: BASE_URL,
     keywords: DATASET_KEYWORDS,
@@ -104,7 +104,7 @@ export function datasetJsonLd(opts: { lastUpdate: string; metroCount: number }) 
     ],
     spatialCoverage: {
       "@type": "Place",
-      name: "Global (237 countries)",
+      name: "Global",
     },
     citation:
       "Desikan, A. (2026). Global Metro Power Rankings. Citizen of Nowhere.",
@@ -216,7 +216,7 @@ export function placeJsonLd(opts: {
       name: SITE_NAME,
       url: BASE_URL,
       description:
-        "A composite ranking of every metropolitan area on Earth. 4,200+ metros, 237 countries, 16 dimensions, 70,000+ individually verified parameters.",
+        "A composite ranking of every metropolitan area on Earth, across sixteen dimensions, hand-curated from individually verified parameters.",
       creator: {
         "@type": "Person",
         name: AUTHOR.name,
@@ -254,6 +254,14 @@ export function sportsTeamJsonLd(opts: {
   metroSlug: string;
   qid?: string;
   wikipediaUrl?: string;
+  // Optional canonical URL for the franchise page (e.g. /teams/nfl/{slug}).
+  // When present the schema treats the franchise page as the canonical
+  // SportsTeam entity URL; when absent the schema is fragment-shaped and
+  // assumes it is being co-emitted on the metro Place page.
+  url?: string;
+  // Optional founding year, surfaced when known. ISO date string preferred,
+  // but a bare year (e.g. "1899") is acceptable per schema.org guidance.
+  foundingYear?: number | string;
 }) {
   const sameAs: string[] = [];
   if (opts.qid) sameAs.push(`https://www.wikidata.org/entity/${opts.qid}`);
@@ -263,6 +271,7 @@ export function sportsTeamJsonLd(opts: {
     "@context": "https://schema.org",
     "@type": "SportsTeam",
     name: opts.name,
+    ...(opts.url ? { url: opts.url, identifier: opts.url } : {}),
     sport: opts.sport,
     memberOf: {
       "@type": "SportsOrganization",
@@ -273,6 +282,7 @@ export function sportsTeamJsonLd(opts: {
       name: opts.metroName,
       url: `${BASE_URL}/rankings/${opts.metroSlug}`,
     },
+    ...(opts.foundingYear ? { foundingDate: String(opts.foundingYear) } : {}),
     ...(sameAs.length ? { sameAs } : {}),
   };
 }

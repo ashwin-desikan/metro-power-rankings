@@ -1,8 +1,9 @@
 # Global Metro Power Rankings
 
-> A composite ranking of every metropolitan area on Earth. 4,283 metros,
-> 237 countries, 16 dimensions, 70,000+ individually verified parameters.
-> Hand-curated over three years. No scraping, no AI-generated datasets.
+> A composite ranking of every metropolitan area on Earth. Thousands of
+> metros, hundreds of countries, sixteen dimensions, tens of thousands of
+> individually verified parameters. Hand-curated over years. No scraping,
+> no AI-generated datasets.
 
 The Global Metro Power Rankings (GMPR) measure *metro completeness*: the
 breadth and depth of globally-recognised infrastructure, culture, sport,
@@ -10,9 +11,10 @@ finance, education, and connectivity concentrated in a single place. It is
 not a livability score, a cost-of-living index, or a popularity contest.
 It is a composite of what a city has built.
 
-The index spans 4,283 metropolitan areas across 237 countries, with every
+The index spans every populated metropolitan area on Earth, with every
 cultural and infrastructural asset individually verified and mapped through
-a municipality-level geographic hierarchy of 182,000+ administrative units.
+a municipality-level geographic hierarchy of hundreds of thousands of
+administrative units.
 The composite is the sum of sixteen weighted terms: population, market
 capitalization, major league teams and venues, minor and college teams,
 cultural and civic assets, top-50 universities, other research institutions,
@@ -22,7 +24,7 @@ and Michelin and luxury hospitality.
 
 Author: Ashwin Desikan.
 Publication: Citizen of Nowhere (https://citizenofnowhere.substack.com).
-Last updated: 2026-04-17.
+Last updated: 2026-05-20.
 
 ## License
 
@@ -47,7 +49,7 @@ covered by the CC-BY license above.
 
 ## Metro profiles
 
-Each of the 4,283 metros has its own profile page at
+Each metro in the corpus has its own profile page at
 `/rankings/{slug}`, containing the full dimension-by-dimension breakdown,
 peer comparisons, market-cap rosters, universities, cultural and
 infrastructural assets, sports teams and events, and luxury hospitality.
@@ -68,7 +70,7 @@ https://rankings.citizenofnowhere.org/sitemap.xml
 
 ## Machine-readable data
 
-- [metros.json](https://rankings.citizenofnowhere.org/data/metros.json): Full ranked list of all 4,283 metros with scores, ranks, populations, regions, and top-level dimension values.
+- [metros.json](https://rankings.citizenofnowhere.org/data/metros.json): Full ranked list of every metro in the corpus with scores, ranks, populations, regions, and top-level dimension values.
 - [regions.json](https://rankings.citizenofnowhere.org/data/regions.json): Top metros and summary statistics per world region.
 - [meta.json](https://rankings.citizenofnowhere.org/data/meta.json): Last-update timestamp for the dataset.
 - Per-metro detail files at `/data/details/{slug}.json`.
@@ -81,9 +83,9 @@ Citizen of Nowhere. https://rankings.citizenofnowhere.org/
 ## Further reading
 
 - [The Global Metro Power Rankings launch article](https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings): The introductory essay covering the top 25, continental champions, and the San Francisco anomaly.
-- [The Last of the Marylebones](https://citizenofnowhere.substack.com/p/the-last-of-the-marylebones): A taxonomy of the world's dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ metros, with the four-criteria framework and the hard skips. On-site reference at https://rankings.citizenofnowhere.org/neighborhoods.
-- [The Team That Wins the City](https://rankings.citizenofnowhere.org/top-teams): One crest per city. The single sporting franchise that defines each of 236 global metros, with deep dives on the contested calls (London, Milan, Istanbul, Glasgow) and the carve-outs where football loses. Substack post forthcoming at https://citizenofnowhere.substack.com.
-- [Metro matchups](https://rankings.citizenofnowhere.org/matchups/london-vs-new-york): Canonical head-to-head pages for the top 25 metros (300 pairs). Tier match, dimension verdict, and shareable link previews.
+- [The Last of the Marylebones](https://citizenofnowhere.substack.com/p/the-last-of-the-marylebones): A taxonomy of the world's dense, historic, walkable, elite residential neighborhoods. A small qualifying set out of the full metro corpus, with the four-criteria framework and the hard skips. On-site reference at https://rankings.citizenofnowhere.org/neighborhoods.
+- [The Team That Wins the City](https://rankings.citizenofnowhere.org/top-teams): One crest per city. The single sporting franchise that defines each global metro with a serious civic-identity call, with deep dives on the contested calls (London, Milan, Istanbul, Glasgow) and the carve-outs where football loses.
+- [Metro matchups](https://rankings.citizenofnowhere.org/matchups/london-vs-new-york): Canonical head-to-head pages for the top 25 metros. Tier match, dimension verdict, and shareable link previews.
 
 ## Contact
 

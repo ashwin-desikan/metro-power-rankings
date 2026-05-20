@@ -56,7 +56,7 @@ const DIMENSIONS: Dimension[] = [
     shape: "linear",
     rationale:
       "Sets a baseline floor. A metro with thirty million people gets credit for that scale before any other dimension is counted. The 3M divisor keeps the contribution moderate so population alone never decides the ranking.",
-    source: "citypopulation.de for both municipality-level data (approximately 133,000 entries across 33 countries with full municipality coverage: US, Canada, UK, Germany, France, Spain, Italy, Japan, South Korea, Australia, Brazil, Mexico, China, India, Russia, Turkey, Poland, Netherlands, Belgium, Austria, Switzerland, Sweden, Norway, Denmark, Finland, Czech Republic, Portugal, Ireland, New Zealand, South Africa, Argentina, Colombia, Chile) and county/district-level data (approximately 49,000 entries across 237 countries) used as the secondary lookup for everywhere else. Country-level totals reconciled against Wikipedia's 'List of countries and dependencies by population' (en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population).",
+    source: "citypopulation.de for both municipality-level data (the set of countries with full municipality coverage: US, Canada, UK, Germany, France, Spain, Italy, Japan, South Korea, Australia, Brazil, Mexico, China, India, Russia, Turkey, Poland, Netherlands, Belgium, Austria, Switzerland, Sweden, Norway, Denmark, Finland, Czech Republic, Portugal, Ireland, New Zealand, South Africa, Argentina, Colombia, Chile) and county/district-level data used as the secondary lookup for everywhere else. Country-level totals reconciled against Wikipedia's 'List of countries and dependencies by population' (en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population).",
   },
   {
     id: "major-league-teams",
@@ -83,7 +83,7 @@ const DIMENSIONS: Dimension[] = [
     shape: "linear",
     rationale:
       "Total enterprise value of public and large private companies headquartered in the metro. The $700B divisor is calibrated so a single trillion-dollar company adds roughly 1.4 points to the score, not 14.",
-    source: "Three upstream sources by company type. Public companies: companiesmarketcap.com. Private companies: Wikipedia's 'List of largest private non-governmental companies by revenue' and the Forbes Largest Private Companies list (forbes.com). Unicorns: CB Insights' Research Unicorn Companies (cbinsights.com). Approximately 12,475 entries combined, refreshed roughly weekly.",
+    source: "Three upstream sources by company type. Public companies: companiesmarketcap.com. Private companies: Wikipedia's 'List of largest private non-governmental companies by revenue' and the Forbes Largest Private Companies list (forbes.com). Unicorns: CB Insights' Research Unicorn Companies (cbinsights.com). Refreshed roughly weekly.",
   },
   {
     id: "companies-count",
@@ -566,7 +566,7 @@ export default function MethodologyPage() {
               </p>
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 <strong className="font-semibold">Where this index differs:</strong>{" "}
-                broader coverage (over 4,000 metros versus 1,000), free
+                broader coverage (the full global metro corpus versus the top thousand), free
                 public access, transparent and opinionated weights rather
                 than a fixed 30/25/25/10/10 split, plus state-level and
                 country-level rollups OEGCI does not publish. OEGCI&apos;s

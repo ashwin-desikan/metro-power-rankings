@@ -53,6 +53,16 @@ type Release = {
 
 const RELEASES: Release[] = [
   {
+    date: "2026-05-20",
+    headline: "Scope copy, sitemap, team JSON-LD, error pages, country-link fix",
+    items: [
+      "Home, About, Methodology source notes, Countries, /sports, /top-teams, /neighborhoods, llms.txt drop hardcoded counts in favor of qualitative language; home stats grid becomes qualitative labels.",
+      "Sitemap adds the per-state route system, four /teams/{league} indexes and historical pages, every franchise page, and /sports; SportsTeam JSON-LD now ships on every franchise page.",
+      "Root not-found and error pages added; uncaught exceptions and missing slugs now render a navigable fallback with site nav rather than the default Next bare screen.",
+      "Country links from state pages now resolve correctly; the slug builder was producing values like antigua-&-barbuda that did not match countries.json. 123 references repaired.",
+    ],
+  },
+  {
     date: "2026-05-19",
     headline: "Round 2 playoffs, arena fix, data refresh, RU/IE/BE polygons",
     items: [
@@ -376,7 +386,38 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Article + WebPage co-emission. Article anchors the page as a recurring
+// release-notes feed for entity-resolving AI crawlers; WebPage carries the
+// breadcrumb. datePublished is pinned to the first ship date; dateModified
+// tracks the most recent release entry so freshness signals stay accurate.
+const FIRST_RELEASE_DATE = RELEASES[RELEASES.length - 1]?.date ?? "2026-04-10";
+const LATEST_RELEASE_DATE = RELEASES[0]?.date ?? FIRST_RELEASE_DATE;
+
 const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": `${PAGE_URL}#article`,
+  mainEntityOfPage: PAGE_URL,
+  url: PAGE_URL,
+  headline: `${PAGE_TITLE} - Global Metro Power Rankings`,
+  alternativeHeadline: "What shipped and when on the Global Metro Power Rankings",
+  description: PAGE_DESCRIPTION,
+  datePublished: FIRST_RELEASE_DATE,
+  dateModified: LATEST_RELEASE_DATE,
+  inLanguage: "en",
+  isPartOf: { "@id": `${BASE_URL}/#website` },
+  author: { "@id": `${AUTHOR.url}/#author` },
+  publisher: { "@id": `${PUBLISHER.url}/#publisher` },
+  keywords: [
+    "release notes",
+    "changelog",
+    "global metro power rankings",
+    "civic geography",
+    "product updates",
+  ],
+};
+
+const webPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "@id": `${PAGE_URL}#webpage`,
@@ -384,10 +425,11 @@ const articleJsonLd = {
   name: `${PAGE_TITLE} | ${SITE_NAME}`,
   description: PAGE_DESCRIPTION,
   isPartOf: { "@id": `${BASE_URL}/#website` },
-  dateModified: RELEASES[0]?.date,
+  dateModified: LATEST_RELEASE_DATE,
   author: { "@id": `${AUTHOR.url}/#author` },
   publisher: { "@id": `${PUBLISHER.url}/#publisher` },
   breadcrumb: breadcrumbJsonLd,
+  mainEntity: { "@id": `${PAGE_URL}#article` },
 };
 
 export default function UpdatesPage() {
@@ -395,7 +437,7 @@ export default function UpdatesPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd({ "@context": "https://schema.org", "@graph": [articleJsonLd, webPageJsonLd] }) }}
       />
       <main className="min-h-screen pt-24 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">

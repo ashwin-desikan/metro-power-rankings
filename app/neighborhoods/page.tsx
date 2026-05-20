@@ -16,9 +16,8 @@ const PAGE_PATH = "/neighborhoods";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "The Last of the Marylebones";
 const PAGE_DESCRIPTION =
-  "A taxonomy of the world's dense, historic, walkable, elite residential neighborhoods. 103 qualifiers out of 4,200+ global metros. Full criteria, rationales, and the hard skips.";
+  "A taxonomy of the world's dense, historic, walkable, elite residential neighborhoods. A small qualifying set out of the full global metro corpus. Full criteria, rationales, and the hard skips.";
 const PAGE_PUBLISHED = "2026-04-20";
-const METRO_UNIVERSE_LABEL = "4,200+";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -240,9 +239,8 @@ export default function NeighborhoodsPage() {
             style={{ color: "var(--text-muted)" }}
           >
             A taxonomy of the world&rsquo;s dense, historic, walkable, elite residential
-            neighborhoods. Out of {METRO_UNIVERSE_LABEL} metros in the Global Metro Power
-            Rankings dataset, {qualifierCount} clear the four-criteria bar. The full list, every
-            rationale, every hard skip.
+            neighborhoods. Out of the full metro corpus, {qualifierCount} clear the
+            four-criteria bar. The full list, every rationale, every hard skip.
           </p>
 
           {/* Summary chips */}
@@ -266,13 +264,7 @@ export default function NeighborhoodsPage() {
               className="inline-block border rounded px-3 py-1.5"
               style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
             >
-              {METRO_UNIVERSE_LABEL} metros in corpus
-            </span>
-            <span
-              className="inline-block border rounded px-3 py-1.5"
-              style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
-            >
-              under 2.5% pass rate
+              under a 3% pass rate
             </span>
           </div>
 
