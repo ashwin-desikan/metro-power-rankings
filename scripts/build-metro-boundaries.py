@@ -178,10 +178,15 @@ COUNTRY_PARQUET_MAP = {
     "Russia":      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-RU.parquet",
     "Ireland":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IE.parquet",
     "Belgium":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BE.parquet",
-    # Andorra, San Marino, Vatican City, and the remaining 2026-05-08 small
-    # countries (most of Latin America, sub-Saharan Africa, the Channel
-    # Islands, etc.) are tiny enough to fall through to SOURCE_PARQUET; no
-    # per-country parquet needed.
+    # 2026-05-20 expansion (Singapore, Malta, Liechtenstein, Vatican City):
+    "Singapore":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SG.parquet",
+    "Malta":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MT.parquet",
+    "Liechtenstein": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-LI.parquet",
+    "Vatican City":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VA.parquet",
+    # Andorra, San Marino, and the remaining 2026-05-08 small countries
+    # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
+    # are tiny enough to fall through to SOURCE_PARQUET; no per-country
+    # parquet needed.
 }
 
 
@@ -264,6 +269,11 @@ COUNTRY_SHEET_MAP = {
     # 2026-05-19 expansion - Municipality (2)
     "Ireland":                  "municipality",
     "Belgium":                  "municipality",
+    # 2026-05-20 expansion - Counties (1)
+    "Singapore":                "counties",
+    # 2026-05-20 expansion - Municipality (2)
+    "Malta":                    "municipality",
+    "Liechtenstein":            "municipality",
 }
 
 COUNTRY_TO_ISO = {
@@ -337,6 +347,10 @@ COUNTRY_TO_ISO = {
     "Russia":                   "RU",
     "Ireland":                  "IE",
     "Belgium":                  "BE",
+    # 2026-05-20 expansion (three countries)
+    "Singapore":                "SG",
+    "Malta":                    "MT",
+    "Liechtenstein":            "LI",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
@@ -543,6 +557,12 @@ def _read_sheet_rows(wb, sheet_key: str):
             if (region_str == "US-NC" and subtype_str == "county"
                     and primary_str == "Nash County"):
                 subtype_str = "neighborhood"
+            if country_canonical == "Singapore":
+                # Singapore Overture has region=None on every row (city-state
+                # with no top-level subdivision). The workbook fills 'SG' as
+                # Region (ISO 3166-2) for clarity; normalize to None so the
+                # (region, subtype, primary) key matches the parquet.
+                region_str = None
 
         if sheet_key == "municipality":
             if (country_workbook in UK_CONSTITUENT_REGION
