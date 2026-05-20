@@ -56,7 +56,7 @@ const RELEASES: Release[] = [
     date: "2026-05-20",
     headline: "Scope copy, sitemap, team JSON-LD, error pages, country-link fix",
     items: [
-      "Home, About, Methodology source notes, Countries, /sports, /top-teams, /neighborhoods, llms.txt drop hardcoded counts in favor of qualitative language; home stats grid becomes qualitative labels.",
+      "Scope copy across the site drops hardcoded counts for qualitative language; home stats grid reshaped from brittle counts to positioning tiles (Global / Composite / Curated / Open).",
       "Sitemap adds the per-state route system, four /teams/{league} indexes and historical pages, every franchise page, and /sports; SportsTeam JSON-LD now ships on every franchise page.",
       "Root not-found and error pages added; uncaught exceptions and missing slugs now render a navigable fallback with site nav rather than the default Next bare screen.",
       "Country links from state pages now resolve correctly; the slug builder was producing values like antigua-&-barbuda that did not match countries.json. 123 references repaired.",

@@ -133,10 +133,10 @@ export default async function Home() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             {[
-              { label: 'Metros', value: 'Thousands' },
-              { label: 'Parameters', value: 'Tens of thousands' },
-              { label: 'Countries', value: 'Every country' },
-              { label: 'Dimensions', value: 'Sixteen' },
+              { value: 'Global', label: 'Every populated metro' },
+              { value: 'Composite', label: 'Sixteen weighted dimensions' },
+              { value: 'Curated', label: 'Source-verified, no scraping' },
+              { value: 'Open', label: 'CC-BY 4.0 methodology' },
             ].map((stat) => (
               <div
                 key={stat.label}
