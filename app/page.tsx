@@ -1,6 +1,6 @@
 import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors, slugify } from '@/lib/data';
 import RankingsTable from './RankingsTable';
-import HomeConsole from './HomeConsole';
+import HomeSidebar from './HomeSidebar';
 import Link from 'next/link';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -133,24 +133,27 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Rankings Table Section. Primary content. Sits immediately
-          under the hero so readers see the filtered map + table inside the
-          first viewport. */}
+      {/* Rankings + sidebar. At lg+ the rankings table sits in 8 cols
+          and a sticky sidebar (Discover, latest essays, recently shipped,
+          random metro CTA) sits in 4 cols. Below lg the sidebar wraps
+          underneath the table so mobile and tablet readers still see
+          everything in sequence. */}
       <section
         id="rankings"
         className="pt-4 pb-12 px-4 sm:px-6 lg:px-8 border-b"
         style={{ borderColor: 'var(--border)' }}
       >
         <div className="max-w-7xl mx-auto">
-          <RankingsTable metros={metros} />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-8 min-w-0">
+              <RankingsTable metros={metros} />
+            </div>
+            <div className="lg:col-span-4">
+              <HomeSidebar />
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* Discovery strip. Four cards point at the surfaces that are
-          otherwise only reachable from the nav: badges, sports, top-teams
-          reference, latest Substack essay. Sits below the rankings table
-          so readers see the data first, then the discovery prompts. */}
-      <HomeConsole />
 
       {/* Score Distribution Section */}
       <section

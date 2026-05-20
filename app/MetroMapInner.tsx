@@ -25,6 +25,25 @@ function getPointBounds(points: MapPoint[]): [[number, number], [number, number]
   ];
 }
 
+// Create a custom Leaflet pane that sits ABOVE the default overlayPane
+// (where GeoJSON polygons render) and the default markerPane. The
+// primary CircleMarker layer below mounts onto this pane via the `pane`
+// path option, which keeps the pin and its tooltip clickable at any
+// zoom even when a large boundary polygon would otherwise cover them.
+function PrimaryPinPane() {
+  const map = useMap();
+  useEffect(() => {
+    if (!map.getPane('primaryPins')) {
+      const pane = map.createPane('primaryPins');
+      // Defaults: overlayPane=400, markerPane=600, tooltipPane=650.
+      // 670 puts the pin above markers and tooltips so hover always wins.
+      pane.style.zIndex = '670';
+      pane.style.pointerEvents = 'auto';
+    }
+  }, [map]);
+  return null;
+}
+
 // When a boundary GeoJSON is provided, fit map bounds to its extent so
 // the map frames the metro region naturally rather than the city pin alone.
 function FitToBoundary({ boundary }: { boundary: unknown }) {
@@ -62,12 +81,17 @@ function FitToPoints({ points }: { points: MapPoint[] }) {
       Math.max(...lats) - Math.min(...lats),
       Math.max(...lons) - Math.min(...lons),
     );
-    const pad = Math.max(0.5, span * 0.15);
+    // Tightened from 0.5 / span*0.15 so filter changes zoom in more
+    // aggressively. A continent-wide filter now frames continent-fill,
+    // not continent-plus-surrounding-ocean.
+    const pad = Math.max(0.2, span * 0.06);
     const bounds: [[number, number], [number, number]] = [
       [Math.min(...lats) - pad, Math.min(...lons) - pad],
       [Math.max(...lats) + pad, Math.max(...lons) + pad],
     ];
-    map.fitBounds(bounds, { padding: [20, 20] });
+    // animate: true is the leaflet default; explicit duration keeps the
+    // transition snappy without feeling jumpy on rapid filter toggles.
+    map.fitBounds(bounds, { padding: [16, 16], animate: true, duration: 0.5 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key, map]);
   return null;
@@ -202,6 +226,7 @@ export default function MetroMapInner({
         // Mercator panel by default.
         noWrap={true}
       />
+      <PrimaryPinPane />
       {boundary ? (
         <>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
@@ -303,11 +328,13 @@ export default function MetroMapInner({
           key={p.slug}
           center={[p.lat, p.lon]}
           radius={6}
+          pane="primaryPins"
           pathOptions={{
             color: '#ffffff',
             weight: 2,
             fillColor: fill,
             fillOpacity: 1,
+            pane: 'primaryPins',
           }}
           eventHandlers={
             clickToNavigate
