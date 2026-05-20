@@ -54,6 +54,15 @@ type Release = {
 const RELEASES: Release[] = [
   {
     date: "2026-05-20",
+    headline: "Home redesigned: compressed hero, map and search console",
+    items: [
+      "Hero shrinks to three lines (eyebrow, headline, one-line subhead); the rankings table now appears within the first viewport on a typical laptop instead of below a wall of marketing copy.",
+      "New home console between hero and table: tier-colored world map on the left, live search-with-autocomplete and a top-five leaderboard on the right.",
+      "Keyboard '/' shortcut focuses the search; results show rank, tier, and score inline so a reader can decide before clicking. Rankings table columns and behavior are unchanged.",
+    ],
+  },
+  {
+    date: "2026-05-20",
     headline: "Scope copy, sitemap, team JSON-LD, error pages, country-link fix",
     items: [
       "Scope copy across the site drops hardcoded counts for qualitative language; home stats grid reshaped from brittle counts to positioning tiles (Global / Composite / Curated / Open).",

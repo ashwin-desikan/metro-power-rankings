@@ -1,5 +1,6 @@
 import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors, slugify } from '@/lib/data';
 import RankingsTable from './RankingsTable';
+import HomeConsole from './HomeConsole';
 import Link from 'next/link';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -106,14 +107,15 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(top100) }}
       />
 
-      {/* Hero Section */}
+      {/* Compressed hero. Three lines, fixed vertical budget so the
+          console and the rankings table appear within the first viewport
+          on a typical 13-inch laptop. */}
       <section
-        className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 border-b"
-        style={{ borderColor: 'var(--border)' }}
+        className="pt-20 pb-6 px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto">
           <p
-            className="text-sm font-semibold tracking-widest mb-4 uppercase"
+            className="text-xs font-semibold tracking-widest mb-2 uppercase"
             style={{
               color: 'var(--accent)',
               fontFamily: "'JetBrains Mono', monospace",
@@ -121,48 +123,21 @@ export default async function Home() {
           >
             Citizen of Nowhere
           </p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Global Metro<br />Power Rankings
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 leading-tight">
+            Global Metro Power Rankings
           </h1>
-          <p className="text-lg text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
-            Individually verified parameters across sixteen dimensions, every
-            populated metropolitan area on Earth. A data-driven measure of what
-            makes a city matter globally.
+          <p className="text-base sm:text-lg text-[var(--text-muted)] max-w-3xl">
+            Every populated metropolitan area on Earth, scored across sixteen
+            weighted dimensions and ranked on a single composite.
           </p>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {[
-              { value: 'Global', label: 'Every populated metro' },
-              { value: 'Composite', label: 'Sixteen weighted dimensions' },
-              { value: 'Curated', label: 'Source-verified, no scraping' },
-              { value: 'Open', label: 'CC-BY 4.0 methodology' },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="p-4 rounded-lg border"
-                style={{
-                  backgroundColor: 'var(--bg-card)',
-                  borderColor: 'var(--border)',
-                }}
-              >
-                <div
-                  className="text-2xl font-bold"
-                  style={{
-                    color: 'var(--accent)',
-                    fontFamily: "'JetBrains Mono', monospace",
-                  }}
-                >
-                  {stat.value}
-                </div>
-                <div className="text-xs text-[var(--text-muted)] mt-1">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
+
+      {/* Home console: map on the left, search and top-five on the right.
+          Replaces the old four-tile stats grid with a real interactive
+          surface; all three (map, search, leaderboard) live above the fold
+          and the rankings table starts immediately below. */}
+      <HomeConsole />
 
       {/* Rankings Table Section */}
       <section
@@ -171,7 +146,7 @@ export default async function Home() {
         style={{ borderColor: 'var(--border)' }}
       >
         <div className="max-w-7xl mx-auto">
-          <RankingsTable metros={metros} />
+          <RankingsTable metros={metros} showMap={false} />
         </div>
       </section>
 

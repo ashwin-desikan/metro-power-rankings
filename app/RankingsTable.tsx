@@ -8,6 +8,10 @@ import { useMetroBoundaries } from '@/lib/useMetroBoundaries';
 
 interface RankingsTableProps {
   metros: Metro[];
+  // Defaults to true. Set false when the parent renders its own map above
+  // the table (e.g. the home console) to avoid duplicating the visual.
+  // Table columns and behavior are unchanged either way.
+  showMap?: boolean;
 }
 
 type SearchScope = 'all' | 'country' | 'metro' | 'state' | 'county';
@@ -45,7 +49,7 @@ const REGIONS = [
   'Eurasia',
 ];
 
-export default function RankingsTable({ metros }: RankingsTableProps) {
+export default function RankingsTable({ metros, showMap = true }: RankingsTableProps) {
   const [view, setView] = useState<'top25' | 'top100'>('top25');
   const [selectedContinent, setSelectedContinent] = useState('All');
   const [selectedRegion, setSelectedRegion] = useState('All');
@@ -136,7 +140,7 @@ export default function RankingsTable({ metros }: RankingsTableProps) {
 
   return (
     <div className="space-y-6">
-      {mapPoints.length > 0 ? (
+      {showMap && mapPoints.length > 0 ? (
         <MetroMap
           points={mapPoints}
           showConnections={false}
