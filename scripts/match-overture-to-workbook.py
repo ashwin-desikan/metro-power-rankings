@@ -62,6 +62,25 @@ COUNTRY_ROUTE = {
     "Belgium":     ("Municipality", "BE"),
     "Brazil":      ("Counties",     "BR"),
     "Russia":      ("Counties",     "RU"),
+    # 2026-05-21 expansion (CSV dumps already in Overture-Per-Country-Raw;
+    # workbook rows present in Counties but Subtype/Admin/Region/Primary blank):
+    "Algeria":     ("Counties",     "DZ"),
+    "Egypt":       ("Counties",     "EG"),
+    "Finland":     ("Counties",     "FI"),
+    "Ghana":       ("Counties",     "GH"),
+    "Greece":      ("Counties",     "GR"),
+    "Hungary":     ("Counties",     "HU"),
+    "Indonesia":   ("Counties",     "ID"),
+    "Israel":      ("Counties",     "IL"),
+    "Kuwait":      ("Counties",     "KW"),
+    "Moldova":     ("Counties",     "MD"),
+    "Qatar":       ("Counties",     "QA"),
+    "Sweden":      ("Counties",     "SE"),
+    "Tunisia":     ("Counties",     "TN"),
+    "Taiwan":      ("Counties",     "TW"),
+    "Venezuela":   ("Counties",     "VE"),
+    "Vietnam":     ("Counties",     "VN"),
+    "Samoa":       ("Counties",     "WS"),
 }
 
 COUNTIES_COLS = {

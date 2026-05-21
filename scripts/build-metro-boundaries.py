@@ -183,6 +183,29 @@ COUNTRY_PARQUET_MAP = {
     "Malta":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MT.parquet",
     "Liechtenstein": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-LI.parquet",
     "Vatican City":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VA.parquet",
+    # 2026-05-21 expansion - workbook fills complete:
+    "Argentina":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AR.parquet",
+    "Bulgaria":      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BG.parquet",
+    "Denmark":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DK.parquet",
+    "Puerto Rico":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-PR.parquet",
+    # 2026-05-21 expansion - workbook fills PENDING (matcher run required):
+    "Algeria":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-DZ.parquet",
+    "Egypt":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-EG.parquet",
+    "Finland":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FI.parquet",
+    "Ghana":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GH.parquet",
+    "Greece":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GR.parquet",
+    "Hungary":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-HU.parquet",
+    "Indonesia":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ID.parquet",
+    "Israel":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IL.parquet",
+    "Kuwait":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-KW.parquet",
+    "Moldova":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MD.parquet",
+    "Qatar":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-QA.parquet",
+    "Sweden":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SE.parquet",
+    "Tunisia":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-TN.parquet",
+    "Taiwan":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-TW.parquet",
+    "Venezuela":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VE.parquet",
+    "Vietnam":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VN.parquet",
+    "Samoa":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-WS.parquet",
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
     # are tiny enough to fall through to SOURCE_PARQUET; no per-country
@@ -274,6 +297,29 @@ COUNTRY_SHEET_MAP = {
     # 2026-05-20 expansion - Municipality (2)
     "Malta":                    "municipality",
     "Liechtenstein":            "municipality",
+    # 2026-05-21 expansion - Counties (workbook fills complete: 4)
+    "Argentina":                "counties",
+    "Bulgaria":                 "counties",
+    "Denmark":                  "counties",
+    "Puerto Rico":              "counties",
+    # 2026-05-21 expansion - Counties (matcher pending: 17)
+    "Algeria":                  "counties",
+    "Egypt":                    "counties",
+    "Finland":                  "counties",
+    "Ghana":                    "counties",
+    "Greece":                   "counties",
+    "Hungary":                  "counties",
+    "Indonesia":                "counties",
+    "Israel":                   "counties",
+    "Kuwait":                   "counties",
+    "Moldova":                  "counties",
+    "Qatar":                    "counties",
+    "Sweden":                   "counties",
+    "Tunisia":                  "counties",
+    "Taiwan":                   "counties",
+    "Venezuela":                "counties",
+    "Vietnam":                  "counties",
+    "Samoa":                    "counties",
 }
 
 COUNTRY_TO_ISO = {
@@ -351,6 +397,29 @@ COUNTRY_TO_ISO = {
     "Singapore":                "SG",
     "Malta":                    "MT",
     "Liechtenstein":            "LI",
+    # 2026-05-21 expansion - workbook fills complete (4)
+    "Argentina":                "AR",
+    "Bulgaria":                 "BG",
+    "Denmark":                  "DK",
+    "Puerto Rico":              "PR",
+    # 2026-05-21 expansion - matcher pending (17)
+    "Algeria":                  "DZ",
+    "Egypt":                    "EG",
+    "Finland":                  "FI",
+    "Ghana":                    "GH",
+    "Greece":                   "GR",
+    "Hungary":                  "HU",
+    "Indonesia":                "ID",
+    "Israel":                   "IL",
+    "Kuwait":                   "KW",
+    "Moldova":                  "MD",
+    "Qatar":                    "QA",
+    "Sweden":                   "SE",
+    "Tunisia":                  "TN",
+    "Taiwan":                   "TW",
+    "Venezuela":                "VE",
+    "Vietnam":                  "VN",
+    "Samoa":                    "WS",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
