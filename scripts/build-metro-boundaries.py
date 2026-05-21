@@ -436,6 +436,15 @@ UK_CONSTITUENT_REGION = {
     "Northern Ireland": "GB-NIR",
 }
 
+# Countries Overture treats as having no ISO 3166-2 subdivision (region=None
+# on every parquet row). The workbook Region column may be blank or carry the
+# country code; we normalize to None so the (region, subtype, primary) lookup
+# key matches the parquet, and we relax the incomplete-row check accordingly.
+REGIONLESS_COUNTRIES = {
+    "Singapore",
+    "Puerto Rico",
+}
+
 SHEET_SCHEMAS = {
     "counties": {
         "sheet_name":        "Counties",
@@ -612,11 +621,17 @@ def _read_sheet_rows(wb, sheet_key: str):
         region = r[creg]
         primary = r[cpri]
 
-        if not (region and subtype and primary and metro_display):
-            incomplete += 1
-            continue
+        region_is_optional = country_canonical in REGIONLESS_COUNTRIES
+        if region_is_optional:
+            if not (subtype and primary and metro_display):
+                incomplete += 1
+                continue
+        else:
+            if not (region and subtype and primary and metro_display):
+                incomplete += 1
+                continue
 
-        region_str = str(region).strip()
+        region_str = str(region).strip() if region else None
         subtype_str = str(subtype).strip()
         primary_str = str(primary).strip()
 
@@ -626,11 +641,13 @@ def _read_sheet_rows(wb, sheet_key: str):
             if (region_str == "US-NC" and subtype_str == "county"
                     and primary_str == "Nash County"):
                 subtype_str = "neighborhood"
-            if country_canonical == "Singapore":
-                # Singapore Overture has region=None on every row (city-state
-                # with no top-level subdivision). The workbook fills 'SG' as
-                # Region (ISO 3166-2) for clarity; normalize to None so the
-                # (region, subtype, primary) key matches the parquet.
+            if country_canonical in REGIONLESS_COUNTRIES:
+                # Country has no ISO 3166-2 subdivision in Overture
+                # (region=None on every parquet row). Whether the workbook
+                # Region column is blank or carries the country code, we
+                # normalize to None so the (region, subtype, primary) key
+                # matches the parquet. Singapore (filled 'SG') and Puerto
+                # Rico (left blank) both flow through this path.
                 region_str = None
 
         if sheet_key == "municipality":

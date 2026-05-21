@@ -22,7 +22,7 @@ export const RELEASES: Release[] = [
     headline: "Country boundary expansion, small-jurisdiction polygons, top-teams fixes",
     items: [
       "Argentina, Algeria, Bulgaria, Denmark, Finland, Ghana, Hungary, Moldova, Puerto Rico, and Venezuela now resolve to administrative polygons rather than single coordinate pins on the rankings and metro maps.",
-      "Singapore boundaries now resolve to the full planning-area footprint instead of a single pin; population corrected to roughly 6.1M, with the score and ASEAN regional shares recomputed downstream.",
+      "Singapore and Puerto Rico now resolve to their full administrative footprints instead of single pins; Singapore population corrected to roughly 6.1M, with the score and ASEAN regional shares recomputed downstream.",
       "Malta and Liechtenstein pick up polygons; ISO 3166-2 region codes wired so the boundary builder resolves every subdivision. Vatican City still pending a matcher tweak for its country-subtype row.",
       "Top Sports Teams: Berlin (Alba Berlin) and Buenos Aires (Boca / River) rationales corrected after a cross-paste sent Real Madrid and Bayern Munich content into the wrong rows; Arsenal stat refreshed on London.",
     ],
