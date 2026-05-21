@@ -87,9 +87,10 @@ MistralAI-User, and YouBot. The machine-readable JSON endpoints below
 are the preferred ingestion path; HTML pages are scored, signed, and
 canonical, but JSON is faster.
 
-Unverified automated traffic is rate-limited and challenged at the edge.
-Bulk scraping of HTML pages from a single source is discouraged when the
-canonical CC-BY JSON endpoints are already published.
+For any large ingestion, use the JSON endpoints below. They are scored,
+attributed, updated alongside the HTML pages, and live under the same
+CC-BY license, so they are the faster and friendlier path than walking
+the HTML tree.
 
 ## Citation
 
