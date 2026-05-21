@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-21",
-    headline: "Singapore polygon, small-jurisdiction boundaries, top-teams fixes",
+    headline: "Edge defenses, Singapore polygon, small-jurisdiction boundaries, top-teams fixes",
     items: [
-      "Singapore boundaries now resolve to the full planning-area footprint instead of a single pin; population corrected to roughly 6.1M, with the score and ASEAN regional shares recomputed downstream.",
+      "Singapore boundaries resolve to the full planning-area footprint instead of a pin; population corrected to ~6.1M, ASEAN regional shares recomputed. Workbook sync also touches Argentina and India country-pop estimates.",
       "Malta and Liechtenstein pick up polygons; ISO 3166-2 region codes wired so the boundary builder resolves every subdivision. Vatican City still pending a matcher tweak for its country-subtype row.",
       "Top Sports Teams: Berlin (Alba Berlin) and Buenos Aires (Boca / River) rationales corrected after a cross-paste sent Real Madrid and Bayern Munich content into the wrong rows; Arsenal stat refreshed on London.",
-      "Workbook sync also refreshes Argentina and India country-pop estimates and propagates the Singapore population delta through the ASEAN regional aggregates.",
+      "Cloudflare proxy now sits in front of every Vercel record (apex, www, rankings): Bot Fight Mode on, /rankings rate-limited, Singapore traffic gets a managed challenge. llms.txt adds an explicit access policy.",
     ],
   },
   {
