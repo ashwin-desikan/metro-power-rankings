@@ -81,6 +81,152 @@ COUNTRY_ROUTE = {
     "Venezuela":   ("Counties",     "VE"),
     "Vietnam":     ("Counties",     "VN"),
     "Samoa":       ("Counties",     "WS"),
+    # 2026-05-21 expansion (second wave): 142 additional entries spanning
+    # territories, city-states, dependencies, and the long tail of UN
+    # member states. Bonaire is the only BQ entry; Saba and Sint Eustatius
+    # (single-row each in the workbook) are hand-filled from BQ.xlsx output.
+    "French Guiana":                                ("Counties", "GF"),
+    "Guadeloupe":                                   ("Counties", "GP"),
+    "Martinique":                                   ("Counties", "MQ"),
+    "Monaco":                                       ("Counties", "MC"),
+    "Réunion":                                      ("Counties", "RE"),
+    "Saint Pierre and Miquelon":                    ("Counties", "PM"),
+    "Isle of Man":                                  ("Counties", "IM"),
+    "Curaçao":                                      ("Counties", "CW"),
+    "Cameroon":                                     ("Counties", "CM"),
+    "Slovenia":                                     ("Counties", "SI"),
+    "Iran":                                         ("Counties", "IR"),
+    "Ukraine":                                      ("Counties", "UA"),
+    "Tahiti":                                       ("Counties", "PF"),
+    "Ethiopia":                                     ("Counties", "ET"),
+    "Serbia":                                       ("Counties", "RS"),
+    "Kazakhstan":                                   ("Counties", "KZ"),
+    "Czech Republic":                               ("Counties", "CZ"),
+    "Lithuania":                                    ("Counties", "LT"),
+    "Uzbekistan":                                   ("Counties", "UZ"),
+    "Bosnia-Herzegovina":                           ("Counties", "BA"),
+    "North Korea":                                  ("Counties", "KP"),
+    "Bolivia":                                      ("Counties", "BO"),
+    "Wallis and Futuna":                            ("Counties", "WF"),
+    "Iraq":                                         ("Counties", "IQ"),
+    "Slovakia":                                     ("Counties", "SK"),
+    "North Macedonia":                              ("Counties", "MK"),
+    "South Africa":                                 ("Counties", "ZA"),
+    "Chile":                                        ("Counties", "CL"),
+    "Cyprus":                                       ("Counties", "CY"),
+    "Saudi Arabia":                                 ("Counties", "SA"),
+    "Sierra Leone":                                 ("Counties", "SL"),
+    "Tanzania":                                     ("Counties", "TZ"),
+    "Azerbaijan":                                   ("Counties", "AZ"),
+    "Belarus":                                      ("Counties", "BY"),
+    "Mozambique":                                   ("Counties", "MZ"),
+    "Paraguay":                                     ("Counties", "PY"),
+    "Myanmar":                                      ("Counties", "MM"),
+    "Thailand":                                     ("Counties", "TH"),
+    "Seychelles":                                   ("Counties", "SC"),
+    "United Arab Emirates":                         ("Counties", "AE"),
+    "Albania":                                      ("Counties", "AL"),
+    "Estonia":                                      ("Counties", "EE"),
+    "Latvia":                                       ("Counties", "LV"),
+    "Morocco":                                      ("Counties", "MA"),
+    "Philippines":                                  ("Counties", "PH"),
+    "New Zealand":                                  ("Counties", "NZ"),
+    "Pakistan":                                     ("Counties", "PK"),
+    "Afghanistan":                                  ("Counties", "AF"),
+    "Kosovo":                                       ("Counties", "XK"),
+    "Georgia":                                      ("Counties", "GE"),
+    "Guam":                                         ("Counties", "GU"),
+    "Hong Kong":                                    ("Counties", "HK"),
+    "Aruba":                                        ("Counties", "AW"),
+    "Bangladesh":                                   ("Counties", "BD"),
+    "Montenegro":                                   ("Counties", "ME"),
+    "Armenia":                                      ("Counties", "AM"),
+    "Mayotte":                                      ("Counties", "YT"),
+    "Syria":                                        ("Counties", "SY"),
+    "Faroe Islands":                                ("Counties", "FO"),
+    "Iceland":                                      ("Counties", "IS"),
+    "Madagascar":                                   ("Counties", "MG"),
+    "Namibia":                                      ("Counties", "NA"),
+    "Nauru":                                        ("Counties", "NR"),
+    "New Caledonia":                                ("Counties", "NC"),
+    "Fiji":                                         ("Counties", "FJ"),
+    "Laos":                                         ("Counties", "LA"),
+    "Kyrgyzstan":                                   ("Counties", "KG"),
+    "Nepal":                                        ("Counties", "NP"),
+    "Palau":                                        ("Counties", "PW"),
+    "Tajikistan":                                   ("Counties", "TJ"),
+    "Trinidad & Tobago":                            ("Counties", "TT"),
+    "Lebanon":                                      ("Counties", "LB"),
+    "Oman":                                         ("Counties", "OM"),
+    "Senegal":                                      ("Counties", "SN"),
+    "Sri Lanka":                                    ("Counties", "LK"),
+    "Uruguay":                                      ("Counties", "UY"),
+    "Bermuda":                                      ("Counties", "BM"),
+    "Bhutan":                                       ("Counties", "BT"),
+    "Cape Verde":                                   ("Counties", "CV"),
+    "Mali":                                         ("Counties", "ML"),
+    "Mongolia":                                     ("Counties", "MN"),
+    "Saint Martin":                                 ("Counties", "MF"),
+    "Palestine":                                    ("Counties", "PS"),
+    "Turkmenistan":                                 ("Counties", "TM"),
+    "Botswana":                                     ("Counties", "BW"),
+    "Gibraltar":                                    ("Counties", "GI"),
+    "Jordan":                                       ("Counties", "JO"),
+    "Macau":                                        ("Counties", "MO"),
+    "Tonga":                                        ("Counties", "TO"),
+    "Jamaica":                                      ("Counties", "JM"),
+    "Libya":                                        ("Counties", "LY"),
+    "Niger":                                        ("Counties", "NE"),
+    "Papua New Guinea":                             ("Counties", "PG"),
+    "Bahamas":                                      ("Counties", "BS"),
+    "Cayman Islands":                               ("Counties", "KY"),
+    "Rwanda":                                       ("Counties", "RW"),
+    "St. Vincent & the Grenadines":                 ("Counties", "VC"),
+    "Bahrain":                                      ("Counties", "BH"),
+    "Barbados":                                     ("Counties", "BB"),
+    "Comoros":                                      ("Counties", "KM"),
+    "Congo":                                        ("Counties", "CG"),
+    "Mauritania":                                   ("Counties", "MR"),
+    "Mauritius":                                    ("Counties", "MU"),
+    "São Tomé and Príncipe":                        ("Counties", "ST"),
+    "Côte d'Ivoire":                                ("Counties", "CI"),
+    "Kiribati":                                     ("Counties", "KI"),
+    "Montserrat":                                   ("Counties", "MS"),
+    "Saint Barthélemy":                             ("Counties", "BL"),
+    "Belize":                                       ("Counties", "BZ"),
+    "Equatorial Guinea":                            ("Counties", "GQ"),
+    "Federated States of Micronesia":               ("Counties", "FM"),
+    "Guinea-Bissau":                                ("Counties", "GW"),
+    "Liberia":                                      ("Counties", "LR"),
+    "Maldives":                                     ("Counties", "MV"),
+    "Togo":                                         ("Counties", "TG"),
+    "Turks & Caicos Islands":                       ("Counties", "TC"),
+    "US Virgin Islands":                            ("Counties", "VI"),
+    "Western Sahara":                               ("Counties", "EH"),
+    "American Samoa":                               ("Counties", "AS"),
+    "Anguilla":                                     ("Counties", "AI"),
+    "Antigua & Barbuda":                            ("Counties", "AG"),
+    "Bonaire":                                      ("Counties", "BQ"),
+    "British Virgin Islands":                       ("Counties", "VG"),
+    "Chad":                                         ("Counties", "TD"),
+    "Cook Islands":                                 ("Counties", "CK"),
+    "Djibouti":                                     ("Counties", "DJ"),
+    "Dominica":                                     ("Counties", "DM"),
+    "East Timor":                                   ("Counties", "TL"),
+    "Eswatini":                                     ("Counties", "SZ"),
+    "Falkland Islands":                             ("Counties", "FK"),
+    "Grenada":                                      ("Counties", "GD"),
+    "Guyana":                                       ("Counties", "GY"),
+    "Marshall Islands":                             ("Counties", "MH"),
+    "Niue":                                         ("Counties", "NU"),
+    "Northern Mariana Islands":                     ("Counties", "MP"),
+    "Saint Helena, Ascension and Tristan da Cunha": ("Counties", "SH"),
+    "Saint Lucia":                                  ("Counties", "LC"),
+    "Sint Maarten":                                 ("Counties", "SX"),
+    "Solomon Islands":                              ("Counties", "SB"),
+    "Suriname":                                     ("Counties", "SR"),
+    "Tokelau":                                      ("Counties", "TK"),
+    "Tuvalu":                                       ("Counties", "TV"),
 }
 
 COUNTIES_COLS = {
@@ -394,6 +540,77 @@ def rec_tuple(rec):
     )
 
 
+FILLS = {
+    CONFIDENCE_HIGH: PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"),
+    CONFIDENCE_MED:  PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
+    CONFIDENCE_LOW:  PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
+    CONFIDENCE_NONE: PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid"),
+}
+
+
+def write_combined_output(collected, out_dir):
+    """Write one consolidated combined.xlsx + combined.csv across every
+    country processed in this run.
+
+    Each entry in ``collected`` is a dict with keys ``country`` (workbook
+    name), ``header`` (per-country output header), ``rows`` (list of
+    (full_row, conf) tuples), and ``counts``.
+
+    The combined file uses the FIRST country's header as the canonical
+    schema, prepending a ``Source Country`` column. Per-country headers
+    align when every country routes to the same sheet (Counties vs
+    Municipality); a future run that mixes sheet routings may diverge in
+    the columns after Confidence -- scope to one sheet at a time if so.
+    """
+    if not collected:
+        print("\n=== Combined output: no rows to write ===")
+        return
+    out_dir.mkdir(parents=True, exist_ok=True)
+    xlsx_path = out_dir / "combined.xlsx"
+    csv_path = out_dir / "combined.csv"
+
+    base_header = ["Source Country"] + list(collected[0]["header"])
+
+    out_wb = openpyxl.Workbook()
+    out_ws = out_wb.active
+    out_ws.title = "Suggestions"
+    out_ws.append(base_header)
+    bold = Font(bold=True)
+    for cell in out_ws[1]:
+        cell.font = bold
+
+    grand_counts = {CONFIDENCE_HIGH: 0, CONFIDENCE_MED: 0,
+                    CONFIDENCE_LOW: 0,  CONFIDENCE_NONE: 0}
+    csv_rows = [base_header]
+    total_rows = 0
+    for entry in collected:
+        country = entry["country"]
+        for full_row, conf in entry["rows"]:
+            tagged = [country] + list(full_row)
+            out_ws.append(tagged)
+            for cell in out_ws[out_ws.max_row]:
+                cell.fill = FILLS[conf]
+            grand_counts[conf] += 1
+            csv_rows.append(tagged)
+            total_rows += 1
+
+    with open(csv_path, "w", encoding="utf-8-sig", newline="") as cf:
+        w = csv.writer(cf)
+        for r in csv_rows:
+            w.writerow(["" if v is None else v for v in r])
+    print(f"\n=== Combined output ===")
+    print(f"  wrote {csv_path}  ({total_rows:,} rows across {len(collected)} countries)")
+    try:
+        out_wb.save(xlsx_path)
+        print(f"  wrote {xlsx_path}")
+    except PermissionError:
+        print(f"  SKIP {xlsx_path}: file is open in Excel")
+    total = sum(grand_counts.values())
+    for conf in (CONFIDENCE_HIGH, CONFIDENCE_MED, CONFIDENCE_LOW, CONFIDENCE_NONE):
+        pct = (100.0 * grand_counts[conf] / total) if total else 0
+        print(f"    {conf:<5} {grand_counts[conf]:>6,} ({pct:5.1f}%)")
+
+
 def process_country(country_name, sheet_kind, country_iso, wb, args):
     print(f"\n=== {country_name} ({country_iso}) -> {sheet_kind} sheet ===")
     t0 = time.time()
@@ -432,6 +649,43 @@ def process_country(country_name, sheet_kind, country_iso, wb, args):
     ]
     full_header = list(src_header) + extra_header
 
+    counts = {CONFIDENCE_HIGH: 0, CONFIDENCE_MED: 0,
+              CONFIDENCE_LOW: 0,  CONFIDENCE_NONE: 0}
+    processed_rows = []
+    for raw_row in rows:
+        res = match_row(raw_row, sheet_kind, region_name_to_iso, by_region, county_trees, regions_per_iso, global_by_name)
+        direct_t = rec_tuple(res["direct"])
+        county_t = rec_tuple(res["parent_county"])
+        region_t = rec_tuple(res["parent_region"])
+        conf = confidence_for(res["direct_score"]) if res["direct"] is not None else CONFIDENCE_NONE
+        extra = list(direct_t) + list(county_t) + list(region_t) + [
+            conf, round(res["direct_score"], 3), res["region_iso"] or "",
+        ]
+        padded = list(raw_row[:src_ncols]) + [None] * max(0, src_ncols - len(raw_row[:src_ncols]))
+        full_row = padded + extra
+        processed_rows.append((full_row, conf))
+        counts[conf] += 1
+
+    collector = args.get("collector")
+    if collector is not None:
+        # Combined-output mode: defer file writing to write_combined_output
+        # in main(). Each entry carries the country tag so the combined
+        # file can prepend a Source Country column.
+        collector.append({
+            "country": country_name,
+            "header":  full_header,
+            "rows":    processed_rows,
+            "counts":  counts,
+        })
+        elapsed = time.time() - t0
+        print(f"  collected {len(processed_rows):,} rows ({elapsed:.1f}s)")
+        total = sum(counts.values())
+        for conf in (CONFIDENCE_HIGH, CONFIDENCE_MED, CONFIDENCE_LOW, CONFIDENCE_NONE):
+            pct = (100.0 * counts[conf] / total) if total else 0
+            print(f"    {conf:<5} {counts[conf]:>6,} ({pct:5.1f}%)")
+        return
+
+    # Per-country file mode (original behavior preserved).
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     xlsx_path = OUT_DIR / f"{country_iso}.xlsx"
     csv_path = OUT_DIR / f"{country_iso}.csv"
@@ -444,30 +698,11 @@ def process_country(country_name, sheet_kind, country_iso, wb, args):
     for cell in out_ws[1]:
         cell.font = bold
 
-    fills = {
-        CONFIDENCE_HIGH: PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"),
-        CONFIDENCE_MED:  PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
-        CONFIDENCE_LOW:  PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
-        CONFIDENCE_NONE: PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid"),
-    }
-
-    counts = {CONFIDENCE_HIGH: 0, CONFIDENCE_MED: 0, CONFIDENCE_LOW: 0, CONFIDENCE_NONE: 0}
     csv_rows = [full_header]
-    for raw_row in rows:
-        res = match_row(raw_row, sheet_kind, region_name_to_iso, by_region, county_trees, regions_per_iso, global_by_name)
-        direct_t = rec_tuple(res["direct"])
-        county_t = rec_tuple(res["parent_county"])
-        region_t = rec_tuple(res["parent_region"])
-        conf = confidence_for(res["direct_score"]) if res["direct"] is not None else CONFIDENCE_NONE
-        extra = list(direct_t) + list(county_t) + list(region_t) + [
-            conf, round(res["direct_score"], 3), res["region_iso"] or "",
-        ]
-        padded = list(raw_row[:src_ncols]) + [None] * max(0, src_ncols - len(raw_row[:src_ncols]))
-        full_row = padded + extra
+    for full_row, conf in processed_rows:
         out_ws.append(full_row)
         for cell in out_ws[out_ws.max_row]:
-            cell.fill = fills[conf]
-        counts[conf] += 1
+            cell.fill = FILLS[conf]
         csv_rows.append(full_row)
 
     # Write CSV first (cheap, never locked).
@@ -480,7 +715,7 @@ def process_country(country_name, sheet_kind, country_iso, wb, args):
     try:
         out_wb.save(xlsx_path)
         print(f"  wrote {xlsx_path}  ({time.time()-t0:.1f}s total)")
-    except PermissionError as e:
+    except PermissionError:
         print(f"  SKIP {xlsx_path}: file is open in Excel ({time.time()-t0:.1f}s total)")
     total = sum(counts.values())
     for conf in (CONFIDENCE_HIGH, CONFIDENCE_MED, CONFIDENCE_LOW, CONFIDENCE_NONE):
@@ -489,11 +724,14 @@ def process_country(country_name, sheet_kind, country_iso, wb, args):
 
 
 def main():
-    args = {"metro_only": False}
+    args = {"metro_only": False, "collector": None}
     countries = []
+    combined = False
     for tok in sys.argv[1:]:
         if tok == "--metro-only":
             args["metro_only"] = True
+        elif tok == "--combined":
+            combined = True
         elif tok in {iso for (_, iso) in COUNTRY_ROUTE.values()}:
             countries.append(tok)
         elif tok in COUNTRY_ROUTE:
@@ -501,10 +739,14 @@ def main():
     if not countries:
         countries = [iso for (_, iso) in COUNTRY_ROUTE.values()]
 
+    if combined:
+        args["collector"] = []
+
     print(f"Workbook: {WORKBOOK}")
     print(f"Source dir: {SOURCE_DIR}")
     print(f"Output dir: {OUT_DIR}")
     print(f"Metro-only: {args['metro_only']}")
+    print(f"Combined output: {combined}")
     print(f"Countries: {countries}")
 
     wb = openpyxl.load_workbook(WORKBOOK, read_only=True, data_only=True)
@@ -516,6 +758,9 @@ def main():
             continue
         sheet, _ = COUNTRY_ROUTE[country_name]
         process_country(country_name, sheet, iso, wb, args)
+
+    if combined and args["collector"]:
+        write_combined_output(args["collector"], OUT_DIR)
 
 
 if __name__ == "__main__":

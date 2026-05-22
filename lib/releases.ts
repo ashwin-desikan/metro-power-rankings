@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-05-22",
+    headline: "Sweeping boundary expansion across continents and territories",
+    items: [
+      "A wider cohort of countries resolves to administrative polygons: Bangladesh, Chile, New Zealand, Nepal, Philippines, Senegal, Serbia, Thailand, Uruguay, and a tail of Caribbean and Pacific states.",
+      "Small territories and city-states pick up their first polygons: Hong Kong, Isle of Man, Réunion, Martinique, Guadeloupe, Mayotte, Cayman Islands, and most Pacific micronations.",
+      "Greece, Indonesia, and Taiwan complete their polygon fills from the prior matcher batch and now render administrative shapes alongside their newly added peers.",
+      "Per-metro detail pages refresh against the latest workbook edits to Universities, Top Sports Teams, and stadium data.",
+    ],
+  },
+  {
     date: "2026-05-21",
     headline: "Country boundary expansion, small-jurisdiction polygons, top-teams fixes",
     items: [
