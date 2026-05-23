@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-05-23",
+    headline: "Afghanistan, Iran, Iraq, Azerbaijan boundary expansion",
+    items: [
+      "Afghanistan, Iran, Iraq, and Azerbaijan now resolve to administrative polygons on the rankings and metro maps, replacing single-coordinate pins for the metros across each country.",
+      "Hungary and Russia administrative boundaries refresh against updated workbook fills; a small number of metros pick up tighter or corrected shapes.",
+      "Country populations refreshed using the latest official 2025 and early-2026 estimates from national statistical agencies across roughly thirty countries.",
+      "Per-metro detail pages refresh against the latest workbook edits to Universities, Top Sports Teams, and stadium data.",
+    ],
+  },
+  {
     date: "2026-05-22",
     headline: "Sweeping boundary expansion across continents and territories",
     items: [

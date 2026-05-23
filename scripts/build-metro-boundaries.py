@@ -248,6 +248,11 @@ COUNTRY_PARQUET_MAP = {
     "Venezuela":     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VE.parquet",
     "Vietnam":       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VN.parquet",
     "Samoa":         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-WS.parquet",
+    # 2026-05-23 expansion - workbook fills landed:
+    "Afghanistan":   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AF.parquet",
+    "Azerbaijan":    r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AZ.parquet",
+    "Iran":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IR.parquet",
+    "Iraq":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IQ.parquet",
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
     # are tiny enough to fall through to SOURCE_PARQUET; no per-country
@@ -405,6 +410,11 @@ COUNTRY_SHEET_MAP = {
     "Venezuela":                "counties",
     "Vietnam":                  "counties",
     "Samoa":                    "counties",
+    # 2026-05-23 expansion
+    "Afghanistan":              "counties",
+    "Azerbaijan":               "counties",
+    "Iran":                     "counties",
+    "Iraq":                     "counties",
 }
 
 COUNTRY_TO_ISO = {
@@ -548,6 +558,11 @@ COUNTRY_TO_ISO = {
     "Venezuela":                "VE",
     "Vietnam":                  "VN",
     "Samoa":                    "WS",
+    # 2026-05-23 expansion
+    "Afghanistan":              "AF",
+    "Azerbaijan":               "AZ",
+    "Iran":                     "IR",
+    "Iraq":                     "IQ",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {

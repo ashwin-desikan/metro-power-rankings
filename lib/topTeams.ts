@@ -69,17 +69,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 8,
-    metro: "Shanghai",
-    sport: "Football",
-    team: "Shanghai Port",
-    rationale: "2018 and 2023 CSL champions, city's flagship football side backed by SIPG. Shanghai Sharks (CBA, Yao Ming's former club) are a historic alternative.",
-  },
-  {
-    rank: 9,
     metro: "Seoul",
     sport: "Baseball",
     team: "LG Twins",
     rationale: "2023 Korean Series champions, breaking a 29-year title drought. 3 KBO Korean Series titles total (1990, 1994, 2023). Largest fanbase in KBO and Seoul's flagship baseball franchise. Plays at Jamsil Stadium. FC Seoul (6 K League 1 titles, largest average attendance in Korean football) is the cross-code alternative.",
+  },
+  {
+    rank: 9,
+    metro: "Shanghai",
+    sport: "Football",
+    team: "Shanghai Port",
+    rationale: "2018 and 2023 CSL champions, city's flagship football side backed by SIPG. Shanghai Sharks (CBA, Yao Ming's former club) are a historic alternative.",
   },
   {
     rank: 10,
@@ -1819,17 +1819,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 259,
-    metro: "Goiania",
-    sport: "Football",
-    team: "Goiás EC / Atlético Goianiense",
-    rationale: "Goiás EC: 14 Campeonato Goiano titles, multiple Brasileirão Série A campaigns. Atlético Goianiense: regular Série A side. Co-equal cross-town rivals in Goiás state football.",
-  },
-  {
-    rank: 260,
     metro: "Cambridge",
     sport: "Football",
     team: "Cambridge United",
     rationale: "EFL League One side, founded 1912. Cambridge's flagship pro football club playing at Abbey Stadium. The Boat Race (Oxford v Cambridge, held since 1829) is the metro's signature global sporting event in rowing, but Cambridge United is the city's pro club identity.",
+  },
+  {
+    rank: 260,
+    metro: "Goiania",
+    sport: "Football",
+    team: "Goiás EC / Atlético Goianiense",
+    rationale: "Goiás EC: 14 Campeonato Goiano titles, multiple Brasileirão Série A campaigns. Atlético Goianiense: regular Série A side. Co-equal cross-town rivals in Goiás state football.",
   },
   {
     rank: 261,
@@ -1966,17 +1966,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 287,
-    metro: "Salvador",
-    sport: "Football",
-    team: "EC Bahia",
-    rationale: "2 Brasileirão titles (1959, 1988), massive fanbase , one of Brazil's historic regional giants, now in the Grupo City ownership.",
-  },
-  {
-    rank: 288,
     metro: "Eindhoven",
     sport: "Football",
     team: "PSV Eindhoven",
     rationale: "26 Eredivisie titles (2nd-most after Ajax), 1988 European Cup, 1978 UEFA Cup. Dutch 'Big 3' member alongside Ajax and Feyenoord , a global football name.",
+  },
+  {
+    rank: 288,
+    metro: "Salvador",
+    sport: "Football",
+    team: "EC Bahia",
+    rationale: "2 Brasileirão titles (1959, 1988), massive fanbase , one of Brazil's historic regional giants, now in the Grupo City ownership.",
   },
   {
     rank: 289,
