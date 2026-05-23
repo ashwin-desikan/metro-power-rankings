@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-23",
-    headline: "Afghanistan, Iran, Iraq, Azerbaijan boundary expansion",
+    headline: "Middle East and Central Asia boundary expansion",
     items: [
-      "Afghanistan, Iran, Iraq, and Azerbaijan now resolve to administrative polygons on the rankings and metro maps, replacing single-coordinate pins for the metros across each country.",
-      "Hungary and Russia administrative boundaries refresh against updated workbook fills; a small number of metros pick up tighter or corrected shapes.",
-      "Country populations refreshed using the latest official 2025 and early-2026 estimates from national statistical agencies across roughly thirty countries.",
-      "Per-metro detail pages refresh against the latest workbook edits to Universities, Top Sports Teams, and stadium data.",
+      "Eleven countries newly resolve to administrative polygons: Afghanistan, Azerbaijan, Bahrain, Iran, Iraq, Kuwait, Lebanon, Oman, Saudi Arabia, Syria, and the United Arab Emirates.",
+      "Palestinian territories render with West Bank and Gaza Strip governorates handled through dedicated Overture extracts; Israeli West Bank settlements render via the same cross-border routing.",
+      "UAE metros use city-level polygons where Overture has them and hand-curated polygons for the Dubai-Sharjah-Ajman conurbation and Al Ain, replacing the oversized emirate fallbacks.",
+      "Country populations refreshed for roughly thirty countries with 2025 and early-2026 national estimates; per-metro detail pages refresh against the latest workbook edits.",
     ],
   },
   {

@@ -253,6 +253,14 @@ COUNTRY_PARQUET_MAP = {
     "Azerbaijan":    r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AZ.parquet",
     "Iran":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IR.parquet",
     "Iraq":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-IQ.parquet",
+    # 2026-05-23 PM expansion - Middle East + UAE locality-first wiring:
+    "Bahrain":               r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BH.parquet",
+    "Lebanon":               r"C:\Users\ashwi\Desktop\Projects\MapData\overture-LB.parquet",
+    "Oman":                  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-OM.parquet",
+    "Palestine":             r"C:\Users\ashwi\Desktop\Projects\MapData\overture-PS.parquet",  # XW + XG combined
+    "Saudi Arabia":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SA.parquet",
+    "Syria":                 r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SY.parquet",
+    "United Arab Emirates":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AE.parquet",
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
     # are tiny enough to fall through to SOURCE_PARQUET; no per-country
@@ -415,6 +423,14 @@ COUNTRY_SHEET_MAP = {
     "Azerbaijan":               "counties",
     "Iran":                     "counties",
     "Iraq":                     "counties",
+    # 2026-05-23 PM expansion
+    "Bahrain":                  "counties",
+    "Lebanon":                  "counties",
+    "Oman":                     "counties",
+    "Palestine":                "counties",
+    "Saudi Arabia":             "counties",
+    "Syria":                    "counties",
+    "United Arab Emirates":     "counties",
 }
 
 COUNTRY_TO_ISO = {
@@ -563,6 +579,14 @@ COUNTRY_TO_ISO = {
     "Azerbaijan":               "AZ",
     "Iran":                     "IR",
     "Iraq":                     "IQ",
+    # 2026-05-23 PM expansion
+    "Bahrain":                  "BH",
+    "Lebanon":                  "LB",
+    "Oman":                     "OM",
+    "Palestine":                "PS",
+    "Saudi Arabia":             "SA",
+    "Syria":                    "SY",
+    "United Arab Emirates":     "AE",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
@@ -583,6 +607,54 @@ UK_CONSTITUENT_REGION = {
 # on every parquet row). The workbook Region column may be blank or carry the
 # country code; we normalize to None so the (region, subtype, primary) lookup
 # key matches the parquet, and we relax the incomplete-row check accordingly.
+# Hand-curated boundaries: these slugs have manually drawn polygons in
+# public/data/metro-boundaries/<slug>.geojson. The builder skips them in
+# every phase - it neither hashes them, rebuilds them, nor prunes their
+# files. Used for metros where Overture's admin layer is mismatched against
+# the actual metro footprint (e.g. multi-emirate conurbations, oasis cities
+# without locality polygons). The on-disk geojson is the source of truth.
+# Properties.input_hash is set to "manual-curated" by convention.
+CURATED_BOUNDARY_SLUGS = frozenset([
+    "dubai-sharjah",   # Dubai-Sharjah-Ajman urban band (3-emirate composite)
+    "al-ain",          # Al Ain oasis city (no Overture locality polygon)
+])
+
+
+# When a country's per-country parquet contains rows tagged with country
+# codes other than the country's standard ISO, the builder needs to know
+# which codes to accept when scanning the parquet. Default behavior pulls
+# parquet_iso from COUNTRY_TO_ISO (single value), which fails when the
+# parquet is a multi-ISO composite. Add overrides here.
+#
+# overture-PS.parquet is the XW (West Bank) + XG (Gaza) combined extract.
+# Overture does not use ISO PS at all - it tags rows with XW or XG - so the
+# filter must accept both.
+COUNTRY_PARQUET_ISO_OVERRIDE = {
+    "Palestine": {"XW", "XG"},
+}
+
+
+# Per-row cross-border routing. When a workbook row's Region (ISO 3166-2)
+# starts with an ISO code that has its own dedicated parquet, route the row
+# to that parquet instead of the country default. Used for the Israel /
+# West Bank case: 23 Israeli settlements have reg_iso='XW' even though
+# country='Israel' - they need the XW parquet, not the IL parquet, because
+# Overture tags West Bank entities under XW regardless of administrating
+# authority. Same mechanism handles Palestine rows tagged 'XW' (West Bank
+# PA cities) and 'XG' (Gaza governorates).
+CROSS_BORDER_PARQUET = {
+    "XW": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-XW.parquet",
+    "XG": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-XG.parquet",
+}
+
+
+def _region_iso_prefix(reg_iso):
+    """ISO 3166-1 alpha-2 prefix from a region code like 'IL-Z' or 'XW'."""
+    if not reg_iso:
+        return None
+    return reg_iso.split("-", 1)[0] if "-" in reg_iso else reg_iso
+
+
 REGIONLESS_COUNTRIES = {
     "Singapore",
     "Puerto Rico",
@@ -995,7 +1067,7 @@ def main():
         if len(unresolved_metros) > 10:
             print(f"        ... and {len(unresolved_metros) - 10} more")
 
-    keep_slugs = set(by_slug.keys())
+    keep_slugs = set(by_slug.keys()) | CURATED_BOUNDARY_SLUGS
 
     print("[3/5] Computing input hashes and consulting cache")
     cache = load_build_cache() if not force else {
@@ -1007,6 +1079,8 @@ def main():
     aged_out = 0
     legacy_entries = 0
     for slug, members in by_slug.items():
+        if slug in CURATED_BOUNDARY_SLUGS:
+            continue  # never touch curated polygons
         h = compute_input_hash(members, slug_anchor.get(slug))
         new_hashes[slug] = h
         entry = cached_hashes.get(slug) or {}
@@ -1070,7 +1144,7 @@ def main():
         # Drop cache entries for slugs no longer in workbook so the file
         # stays clean.
         cache["version"] = SCRIPT_VERSION_HASH
-        cache["hashes"] = {s: new_hashes[s] for s in keep_slugs}
+        cache["hashes"] = {s: new_hashes[s] for s in keep_slugs if s in new_hashes}
         save_build_cache(cache)
         print()
         print("=" * 60)
@@ -1085,7 +1159,11 @@ def main():
     rebuild_rows = [r for slug in needs_rebuild for r in by_slug[slug]]
     rows_by_parquet = defaultdict(list)
     for r in rebuild_rows:
-        parquet = COUNTRY_PARQUET_MAP.get(r["country"], SOURCE_PARQUET)
+        iso_pref = _region_iso_prefix(r.get("region"))
+        if iso_pref and iso_pref in CROSS_BORDER_PARQUET:
+            parquet = CROSS_BORDER_PARQUET[iso_pref]
+        else:
+            parquet = COUNTRY_PARQUET_MAP.get(r["country"], SOURCE_PARQUET)
         rows_by_parquet[parquet].append(r)
     print(f"      parquet routing: {len(rows_by_parquet)} distinct parquet(s)")
     for p, rs in rows_by_parquet.items():
@@ -1098,9 +1176,17 @@ def main():
     for parquet_path, parquet_rows in rows_by_parquet.items():
         parquet_keys = {(r["region"], r["subtype"], r["primary"])
                         for r in parquet_rows}
-        parquet_iso = {COUNTRY_TO_ISO[r["country"]]
-                       for r in parquet_rows
-                       if r["country"] in COUNTRY_TO_ISO}
+        parquet_iso = set()
+        for r in parquet_rows:
+            iso_pref = _region_iso_prefix(r.get("region"))
+            if iso_pref:
+                parquet_iso.add(iso_pref)
+            else:
+                override = COUNTRY_PARQUET_ISO_OVERRIDE.get(r["country"])
+                if override:
+                    parquet_iso.update(override)
+                elif r["country"] in COUNTRY_TO_ISO:
+                    parquet_iso.add(COUNTRY_TO_ISO[r["country"]])
         print(f"      wanted keys for {parquet_path}: {len(parquet_keys):,}")
         pl, pa = load_overture(parquet_path, parquet_keys, parquet_iso)
         for k, v in pl.items():
@@ -1211,6 +1297,8 @@ def main():
     now_iso = now.isoformat()
     new_entries = {}
     for slug in keep_slugs:
+        if slug in CURATED_BOUNDARY_SLUGS:
+            continue  # no cache entry needed; curated polygons are always-on
         if slug in successfully_built:
             new_entries[slug] = {"hash": new_hashes[slug], "built_at": now_iso}
         elif slug not in needs_rebuild:
