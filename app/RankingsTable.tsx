@@ -67,7 +67,7 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
   }, []);
   const [view, setView] = useState<'top25' | 'top100'>('top25');
   const [selectedContinent, setSelectedContinent] = useState('All');
-  const [selectedRegion, setSelectedRegion] = useState('All');
+  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchScope, setSearchScope] = useState<SearchScope>('all');
 
@@ -86,9 +86,11 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
       result = result.filter((m) => m.continent === selectedContinent);
     }
 
-    // Filter by region
-    if (selectedRegion !== 'All') {
-      result = result.filter((m) => m.region === selectedRegion);
+    // Filter by region. Multi-select: empty array means no region filter;
+    // any populated set is OR semantics (metro region must be in the set).
+    if (selectedRegions.length > 0) {
+      const set = new Set(selectedRegions);
+      result = result.filter((m) => set.has(m.region));
     }
 
     // Filter by search term, scoped to the selected field bucket. The
@@ -117,16 +119,18 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
 
     // Limit to view
     return result.slice(0, view === 'top25' ? 25 : 100);
-  }, [metros, selectedContinent, selectedRegion, searchTerm, searchScope, view]);
+  }, [metros, selectedContinent, selectedRegions, searchTerm, searchScope, view]);
 
   const title =
-    selectedRegion !== 'All'
-      ? `${selectedRegion} Rankings`
-      : selectedContinent !== 'All'
-        ? `${selectedContinent} Rankings`
-        : view === 'top25'
-          ? 'Top 25 Global Metros'
-          : 'Top 100 Global Metros';
+    selectedRegions.length === 1
+      ? `${selectedRegions[0]} Rankings`
+      : selectedRegions.length > 1
+        ? `${selectedRegions.length} Regions Rankings`
+        : selectedContinent !== 'All'
+          ? `${selectedContinent} Rankings`
+          : view === 'top25'
+            ? 'Top 25 Global Metros'
+            : 'Top 100 Global Metros';
 
   // Map layer: every visible row that carries lat/lon becomes a marker.
   // The set is reactive to every filter (view / continent / region / search)
@@ -208,7 +212,7 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
                   key={continent}
                   onClick={() => {
                     setSelectedContinent(continent);
-                    if (continent !== 'All') setSelectedRegion('All');
+                    if (continent !== 'All') setSelectedRegions([]);
                   }}
                   className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
                     selectedContinent === continent
@@ -222,26 +226,46 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
             </div>
           </div>
 
-          {/* Region Filter Chips */}
+          {/* Region Filter Chips - multi-select. The 'All' chip is the
+              reset (clears the set); any other chip toggles in/out. Region
+              selection clears Continent (some regions span continents like
+              Eurasia and MENA). */}
           <div>
-            <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</p>
+            <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              Region {selectedRegions.length > 1 ? <span className="text-[var(--text-dim)]">({selectedRegions.length} selected)</span> : null}
+            </p>
             <div className="flex flex-wrap gap-2">
-              {REGIONS.map((region) => (
-                <button
-                  key={region}
-                  onClick={() => {
-                    setSelectedRegion(region);
-                    if (region !== 'All') setSelectedContinent('All');
-                  }}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
-                    selectedRegion === region
-                      ? 'bg-[var(--accent)] text-black'
-                      : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
-                  }`}
-                >
-                  {region}
-                </button>
-              ))}
+              {REGIONS.map((region) => {
+                const isAllChip = region === 'All';
+                const selected = isAllChip
+                  ? selectedRegions.length === 0
+                  : selectedRegions.includes(region);
+                return (
+                  <button
+                    key={region}
+                    onClick={() => {
+                      if (isAllChip) {
+                        setSelectedRegions([]);
+                        return;
+                      }
+                      setSelectedRegions((prev) => {
+                        const set = new Set(prev);
+                        if (set.has(region)) set.delete(region); else set.add(region);
+                        return Array.from(set);
+                      });
+                      setSelectedContinent('All');
+                    }}
+                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                      selected
+                        ? 'bg-[var(--accent)] text-black'
+                        : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
+                    }`}
+                    aria-pressed={selected}
+                  >
+                    {region}
+                  </button>
+                );
+              })}
             </div>
           </div>
 

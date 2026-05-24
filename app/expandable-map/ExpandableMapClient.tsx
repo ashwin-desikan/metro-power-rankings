@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { Metro } from '@/lib/shared';
 import MetroMap, { type MapPoint } from './../MetroMap';
-import { useMetroBoundaries } from '@/lib/useMetroBoundaries';
+import { useCombinedBoundaries } from '@/lib/useMetroBoundaries';
 import { computeTier, TIERS } from '@/lib/tiers';
 
 type SearchScope = 'all' | 'country' | 'metro' | 'state' | 'county';
@@ -37,7 +37,7 @@ const ALL_TIER_SLUGS = TIERS.map((t) => t.slug);
 // localStorage keys. Versioned so future schema changes can invalidate
 // older payloads cleanly via key bump. v2 bumped over v1 because we added
 // selectedTiers and view to the persisted filter shape.
-const LS_FILTERS = 'expandable-map.filters.v2';
+const LS_FILTERS = 'expandable-map.filters.v3';
 const LS_SIZE = 'expandable-map.size.v1';
 const LS_VIEWPORT = 'expandable-map.viewport.v1';
 
@@ -47,7 +47,7 @@ const MAX_HEIGHT = 2400;
 
 type FilterState = {
   selectedContinent: string;
-  selectedRegion: string;
+  selectedRegions: string[]; // multi-select; empty = no region filter
   selectedCountry: string;
   selectedTiers: string[]; // tier slugs that are visible
   view: ViewLimit;
@@ -67,7 +67,7 @@ type ViewportState = {
 
 const DEFAULT_FILTERS: FilterState = {
   selectedContinent: 'All',
-  selectedRegion: 'All',
+  selectedRegions: [],
   selectedCountry: 'All',
   selectedTiers: ALL_TIER_SLUGS,
   view: 'all',
@@ -129,16 +129,29 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
   useEffect(() => { if (hydratedRef.current) writeLS(LS_FILTERS, filters); }, [filters]);
   useEffect(() => { if (hydratedRef.current) writeLS(LS_SIZE, size); }, [size]);
 
-  // Filter-aware setFilters helper. Every filter mutation should go through
-  // this so the saved viewport is cleared and the map re-fits to the new
-  // points. The user's pan/zoom is preserved until the next filter change.
-  const updateFilters = useCallback((mut: (f: FilterState) => FilterState) => {
-    setFilters((f) => mut(f));
-    setViewport(null);
-    if (typeof window !== 'undefined') {
-      try { window.localStorage.removeItem(LS_VIEWPORT); } catch {}
-    }
-  }, []);
+  // Refit token. Increments only when a filter change should refit the map
+  // (geographic: continent/region/country/search/view). Tier toggles do NOT
+  // increment, so toggling tier visibility never moves the viewport.
+  const [refitToken, setRefitToken] = useState(0);
+
+  // Filter mutation helper. Pass triggerRefit:false for visibility-only
+  // changes (tier toggle) that should preserve the user's current map
+  // viewport. Default true matches the original behavior so any caller
+  // that does not explicitly opt out still refits as before.
+  const updateFilters = useCallback(
+    (mut: (f: FilterState) => FilterState, opts?: { triggerRefit?: boolean }) => {
+      const triggerRefit = opts?.triggerRefit ?? true;
+      setFilters((f) => mut(f));
+      if (triggerRefit) {
+        setViewport(null);
+        setRefitToken((t) => t + 1);
+        if (typeof window !== 'undefined') {
+          try { window.localStorage.removeItem(LS_VIEWPORT); } catch {}
+        }
+      }
+    },
+    [],
+  );
 
   // Viewport persistence (debounced trailing 250ms). Set only by user pan/zoom
   // events that fire after the initial render. We don't try to distinguish
@@ -171,8 +184,9 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     if (filters.selectedContinent !== 'All') {
       result = result.filter((m) => m.continent === filters.selectedContinent);
     }
-    if (filters.selectedRegion !== 'All') {
-      result = result.filter((m) => m.region === filters.selectedRegion);
+    if (filters.selectedRegions.length > 0) {
+      const set = new Set(filters.selectedRegions);
+      result = result.filter((m) => set.has(m.region));
     }
     if (filters.selectedCountry !== 'All') {
       result = result.filter((m) => m.country === filters.selectedCountry);
@@ -251,18 +265,24 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     if (filters.selectedContinent !== 'All') {
       pool = pool.filter((m) => m.continent === filters.selectedContinent);
     }
-    if (filters.selectedRegion !== 'All') {
-      pool = pool.filter((m) => m.region === filters.selectedRegion);
+    if (filters.selectedRegions.length > 0) {
+      const set = new Set(filters.selectedRegions);
+      pool = pool.filter((m) => set.has(m.region));
     }
     return Array.from(new Set(pool.map((m) => m.country))).filter(Boolean).sort();
-  }, [metros, filters.selectedContinent, filters.selectedRegion]);
+  }, [metros, filters.selectedContinent, filters.selectedRegions]);
 
   // Polygons load for ALL filtered metros - no auto-load cap. Canvas mode
   // on MetroMap keeps render perf acceptable past 1,000 features. At the
   // unfiltered global level (~4,000 metros) initial fetch is heavy but
   // subsequent navigation is cached by the boundary loader.
   const boundarySlugs = useMemo(() => mapPoints.map((p) => p.slug), [mapPoints]);
-  const rawBoundary = useMetroBoundaries(boundarySlugs);
+  // Use the combined boundaries fetch (one HTTP request per session) instead
+  // of per-slug. At full corpus this drops Cloudflare hits from ~4,000 small
+  // requests to 1, eliminating the burst that was tripping Bot Fight Mode
+  // and showing up as a traffic spike. Falls back to no boundary if the
+  // combined file is not deployed yet (the boundary build script emits it).
+  const rawBoundary = useCombinedBoundaries(boundarySlugs);
 
   // Enrich boundary features with tier props so MetroMapInner tier-styles
   // each polygon. Each feature's slug is read from properties.slug (set by
@@ -343,21 +363,23 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
 
   const activeFilterCount =
     (filters.selectedContinent !== 'All' ? 1 : 0) +
-    (filters.selectedRegion !== 'All' ? 1 : 0) +
+    (filters.selectedRegions.length > 0 ? 1 : 0) +
     (filters.selectedCountry !== 'All' ? 1 : 0) +
     (filters.selectedTiers.length < TIERS.length ? 1 : 0) +
     (filters.view !== 'all' ? 1 : 0) +
     (filters.searchTerm ? 1 : 0);
 
   const toggleTier = (slug: string) => {
+    // Tier visibility is a render-side filter, not a geographic one. Keep
+    // the user's current viewport (no refit) so they can toggle tiers
+    // without losing their pan/zoom. Empty selectedTiers is allowed - the
+    // user explicitly cleared the map; the 'None' button surfaces that
+    // intent and 'Show all tiers' restores everything.
     updateFilters((f) => {
       const set = new Set(f.selectedTiers);
       if (set.has(slug)) set.delete(slug); else set.add(slug);
-      // If the user is about to deselect the last visible tier, restore all
-      // (avoids the "empty map" trap).
-      if (set.size === 0) return { ...f, selectedTiers: ALL_TIER_SLUGS };
       return { ...f, selectedTiers: Array.from(set) };
-    });
+    }, { triggerRefit: false });
   };
   const tierAllOn = filters.selectedTiers.length === TIERS.length;
 
@@ -392,7 +414,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
                 ...f,
                 selectedContinent: c,
                 // Continent and region are mutually exclusive
-                selectedRegion: c !== 'All' ? 'All' : f.selectedRegion,
+                selectedRegions: c !== 'All' ? [] : f.selectedRegions,
                 // Picking a continent clears any country selection that may
                 // have been narrowed under a different continent
                 selectedCountry: c !== 'All' ? 'All' : f.selectedCountry,
@@ -407,35 +429,66 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </div>
       </div>
 
-      {/* Region — selecting clears Continent because some regions span
-          continents (Eurasia, MENA). */}
+      {/* Region - multi-select. Click multiple chips to combine (OR
+          semantics: a metro matches if its region is any of the selected
+          ones). 'All' chip clears the selection back to no region filter.
+          Any region selection clears the active Continent (because some
+          regions span continents, e.g. Eurasia and MENA) and any active
+          country narrowing. */}
       <div>
-        <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</p>
+        <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          Region {filters.selectedRegions.length > 1 ? <span className="text-[var(--text-dim)]">({filters.selectedRegions.length} selected)</span> : null}
+        </p>
         <div className="flex flex-wrap gap-2">
-          {REGIONS.map((r) => (
-            <button
-              key={r}
-              onClick={() => updateFilters((f) => ({
-                ...f,
-                selectedRegion: r,
-                selectedContinent: r !== 'All' ? 'All' : f.selectedContinent,
-                selectedCountry: r !== 'All' ? 'All' : f.selectedCountry,
-              }))}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
-                filters.selectedRegion === r
-                  ? 'bg-[var(--accent)] text-black'
-                  : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
-              }`}
-            >{r}</button>
-          ))}
+          {REGIONS.map((r) => {
+            const isAllChip = r === 'All';
+            const selected = isAllChip
+              ? filters.selectedRegions.length === 0
+              : filters.selectedRegions.includes(r);
+            return (
+              <button
+                key={r}
+                onClick={() => updateFilters((f) => {
+                  if (isAllChip) {
+                    // 'All' is the reset chip: clears region multi-select
+                    // but leaves Continent / Country untouched so the
+                    // user can still combine with the active continent.
+                    return { ...f, selectedRegions: [] };
+                  }
+                  // Toggle this region in/out of the set. Selecting any
+                  // region clears Continent and Country.
+                  const set = new Set(f.selectedRegions);
+                  if (set.has(r)) set.delete(r); else set.add(r);
+                  return {
+                    ...f,
+                    selectedRegions: Array.from(set),
+                    selectedContinent: 'All',
+                    selectedCountry: 'All',
+                  };
+                })}
+                className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                  selected
+                    ? 'bg-[var(--accent)] text-black'
+                    : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
+                }`}
+                aria-pressed={selected}
+              >{r}</button>
+            );
+          })}
         </div>
       </div>
 
       {/* Country picker */}
       <div>
         <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-          Country {filters.selectedContinent !== 'All' || filters.selectedRegion !== 'All'
-            ? <span className="text-[var(--text-dim)]">(scoped to {filters.selectedRegion !== 'All' ? filters.selectedRegion : filters.selectedContinent})</span>
+          Country {filters.selectedContinent !== 'All' || filters.selectedRegions.length > 0
+            ? <span className="text-[var(--text-dim)]">(scoped to {
+                filters.selectedRegions.length > 0
+                  ? filters.selectedRegions.length === 1
+                    ? filters.selectedRegions[0]
+                    : `${filters.selectedRegions.length} regions`
+                  : filters.selectedContinent
+              })</span>
             : null}
         </p>
         <select
@@ -445,13 +498,13 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
             // Selecting "All" returns to global view: clear continent/region
             // too so the map snaps back to fit the entire corpus.
             if (next === 'All') {
-              updateFilters((f) => ({ ...f, selectedCountry: 'All', selectedContinent: 'All', selectedRegion: 'All' }));
+              updateFilters((f) => ({ ...f, selectedCountry: 'All', selectedContinent: 'All', selectedRegions: [] }));
             } else {
               updateFilters((f) => ({
                 ...f,
                 selectedCountry: next,
                 selectedContinent: 'All',
-                selectedRegion: 'All',
+                selectedRegions: [],
               }));
             }
           }}
@@ -466,17 +519,28 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </select>
       </div>
 
-      {/* Tier legend (filterable) */}
+      {/* Tier legend (filterable). All / None buttons let the user clear
+          the map and selectively add tiers back. Tier toggles preserve
+          the map viewport via updateFilters triggerRefit:false. */}
       <div>
         <div className="flex items-center justify-between mb-2 gap-2">
           <p className="text-xs text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Tier</p>
-          {!tierAllOn ? (
-            <button
-              onClick={() => updateFilters((f) => ({ ...f, selectedTiers: ALL_TIER_SLUGS }))}
-              className="text-xs text-[var(--accent)] hover:underline"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            >Show all tiers</button>
-          ) : null}
+          <div className="flex items-center gap-3">
+            {!tierAllOn ? (
+              <button
+                onClick={() => updateFilters((f) => ({ ...f, selectedTiers: ALL_TIER_SLUGS }), { triggerRefit: false })}
+                className="text-xs text-[var(--accent)] hover:underline"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >All</button>
+            ) : null}
+            {filters.selectedTiers.length > 0 ? (
+              <button
+                onClick={() => updateFilters((f) => ({ ...f, selectedTiers: [] }), { triggerRefit: false })}
+                className="text-xs text-[var(--accent)] hover:underline"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >None</button>
+            ) : null}
+          </div>
         </div>
         <div className="flex flex-wrap gap-2">
           {TIERS.map((t) => {
@@ -589,6 +653,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           onViewportChange={handleViewportChange}
           preferCanvas
           scrollWheelZoom
+          refitToken={refitToken}
         />
 
         {/* Fullscreen overlays */}

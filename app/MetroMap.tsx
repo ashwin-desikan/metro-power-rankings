@@ -62,6 +62,7 @@ export default function MetroMap({
   onViewportChange,
   preferCanvas,
   scrollWheelZoom = false,
+  refitToken,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
@@ -111,6 +112,11 @@ export default function MetroMap({
   // accidental scroll-over-map should not zoom the map. Set true on
   // full-canvas surfaces like /expandable-map where scroll is expected.
   scrollWheelZoom?: boolean;
+  // Optional explicit refit trigger. When provided, FitToPoints fires only
+  // when this number changes, not on every points change. Lets the caller
+  // decide which filter mutations should refit (e.g. geographic) vs which
+  // should preserve the current viewport (e.g. tier visibility toggles).
+  refitToken?: number;
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
   // don't sit at (0,0) off Africa. They reappear once coords land in the xlsx.
@@ -137,6 +143,7 @@ export default function MetroMap({
         onViewportChange={onViewportChange}
         preferCanvas={preferCanvas}
         scrollWheelZoom={scrollWheelZoom}
+        refitToken={refitToken}
       />
     </div>
   );

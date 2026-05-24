@@ -123,3 +123,90 @@ export function useMetroBoundaries(slugs: string[]): FeatureCollection | null {
 
   return collection;
 }
+
+// Module-level cache for the combined boundaries.json file. Fetched once
+// per page session and reused across filter changes. The boundary builder
+// emits a single FeatureCollection with every metro's simplified polygon;
+// this hook fetches the file once and filters to the requested slug set.
+//
+// Why a separate hook: the Expandable Map at unfiltered full-corpus scale
+// would otherwise fire ~4,000 individual /data/metro-boundaries/*.geojson
+// requests, which presents to Cloudflare as a scraping burst and trips
+// Bot Fight Mode rate limiting. One combined fetch fans out to zero
+// origin hits after the first user warms the edge cache.
+//
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let combinedCache: any | null | undefined = undefined;
+let combinedInFlight: Promise<unknown> | null = null;
+
+async function fetchCombinedBoundaries(): Promise<unknown | null> {
+  if (combinedCache !== undefined) return combinedCache;
+  if (combinedInFlight) return combinedInFlight;
+  combinedInFlight = (async () => {
+    try {
+      const res = await fetch(`/data/boundaries-simplified.json`, {
+        cache: "force-cache",
+      });
+      if (!res.ok) {
+        combinedCache = null;
+        return null;
+      }
+      const data = await res.json();
+      combinedCache = data;
+      return data;
+    } catch {
+      combinedCache = null;
+      return null;
+    } finally {
+      combinedInFlight = null;
+    }
+  })();
+  return combinedInFlight;
+}
+
+// Combined-fetch variant of useMetroBoundaries. Loads boundaries-simplified.json
+// once per session and returns the subset of features whose slug appears in
+// the requested set. Use on the Expandable Map. Detail pages and the home
+// rankings overlay should keep using useMetroBoundaries (per-slug) so they
+// only pay for the small set they actually display.
+export function useCombinedBoundaries(slugs: string[]): FeatureCollection | null {
+  const key = [...slugs].sort().join("|");
+  const [collection, setCollection] = useState<FeatureCollection | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    if (slugs.length === 0) {
+      setCollection(null);
+      return;
+    }
+    fetchCombinedBoundaries().then((data) => {
+      if (cancelled) return;
+      if (!data) {
+        // File missing on edge - boundary build has not emitted it yet.
+        // Returning null is preferable to falling back to ~4,000 per-slug
+        // fetches because that would re-create the very Cloudflare spike
+        // this hook exists to avoid. Markers still render either way.
+        setCollection(null);
+        return;
+      }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const allFeatures = ((data as any).features ?? []) as any[];
+      const wanted = new Set(slugs);
+      const filtered = allFeatures.filter((f) => {
+        const s = f?.properties?.slug;
+        return typeof s === "string" && wanted.has(s);
+      });
+      setCollection(
+        filtered.length > 0
+          ? { type: "FeatureCollection", features: filtered }
+          : null,
+      );
+    });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
+
+  return collection;
+}

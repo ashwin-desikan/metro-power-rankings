@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapContainer, TileLayer, CircleMarker, Tooltip, Popup, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl, Pane } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl, Pane } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
@@ -60,9 +60,22 @@ function FitToBoundary({ boundary }: { boundary: unknown }) {
 // home-page rankings map where the table filter set is reactive. A stable
 // key derived from the slug list keeps the effect dep array shallow so
 // React doesn't re-run on every parent render.
-function FitToPoints({ points, skipFirst = false }: { points: MapPoint[]; skipFirst?: boolean }) {
+function FitToPoints({
+  points,
+  skipFirst = false,
+  refitToken,
+}: {
+  points: MapPoint[];
+  skipFirst?: boolean;
+  // When provided, the effect re-fires only when this token changes, NOT
+  // when the points slug list changes. Used by the Expandable Map so tier
+  // toggles (which change points but should preserve viewport) do not
+  // refit, while geographic filter changes (which increment the token)
+  // do refit.
+  refitToken?: number;
+}) {
   const map = useMap();
-  const key = points.map((p) => p.slug).join('|');
+  const tokenKey = refitToken !== undefined ? `tok:${refitToken}` : points.map((p) => p.slug).join('|');
   const firstMount = useRef(true);
   useEffect(() => {
     if (firstMount.current) {
@@ -92,7 +105,7 @@ function FitToPoints({ points, skipFirst = false }: { points: MapPoint[]; skipFi
     // transition snappy without feeling jumpy on rapid filter toggles.
     map.fitBounds(bounds, { padding: [16, 16], animate: true, duration: 0.5 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key, map]);
+  }, [tokenKey, map]);
   return null;
 }
 
@@ -177,6 +190,7 @@ export default function MetroMapInner({
   onViewportChange,
   preferCanvas,
   scrollWheelZoom = false,
+  refitToken,
 }: {
   points: MapPoint[];
   showConnections: boolean;
@@ -211,6 +225,9 @@ export default function MetroMapInner({
   // Enable mouse-wheel zoom on the underlying MapContainer. Default false
   // so embedded maps inside scrollable pages do not steal page scroll.
   scrollWheelZoom?: boolean;
+  // Explicit refit trigger. When defined, FitToPoints fires only when this
+  // value changes; when undefined, legacy behavior (fires on points change).
+  refitToken?: number;
 }) {
   const router = useRouter();
   const single = points.length === 1;
@@ -412,7 +429,7 @@ export default function MetroMapInner({
           })}
         </LayerGroup>
       ) : null}
-      {refitOnChange ? <FitToPoints points={points} skipFirst={hasInitialView} /> : null}
+      {refitOnChange ? <FitToPoints points={points} skipFirst={hasInitialView} refitToken={refitToken} /> : null}
       {onViewportChange ? <ViewportTracker onChange={onViewportChange} /> : null}
       {points.map((p) => {
         const richMeta = [p.city, p.state, p.country].filter(Boolean).join(' · ');
@@ -459,6 +476,16 @@ export default function MetroMapInner({
               : undefined
           }
         >
+          {/* Hover tooltip carries the full info: metro name, city/state/country,
+              and rank/tier. Single-click on the marker no longer pops a
+              React-Leaflet <Popup> because at full-corpus scale (~4,000
+              metros) pre-mounting that many Popup components creates
+              tens of thousands of detached DOM nodes on first render
+              and overflows the React commit phase (the "up/ud" infinite
+              recursion the user observed in devtools). Polygons keep
+              click-to-popup via layer.bindPopup which is a single
+              imperative call with no React component cost. Marker
+              interaction is now: hover for details, dblclick to navigate. */}
           <Tooltip direction="top" offset={[0, -4]} permanent={false} pane="primaryPinTooltips">
             <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
               <div style={{ fontWeight: 600 }}>{p.name}</div>
@@ -470,25 +497,6 @@ export default function MetroMapInner({
               ) : null}
             </div>
           </Tooltip>
-          {clickToNavigate ? (
-            <Popup closeButton autoClose autoPan>
-              <div style={{ fontFamily: "'Inter', system-ui, sans-serif", minWidth: 160 }}>
-                <div style={{ fontWeight: 600, fontSize: 14 }}>{p.name}</div>
-                {(p.subtitle || richMeta) ? (
-                  <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 2 }}>{p.subtitle || richMeta}</div>
-                ) : null}
-                {p.details ? (
-                  <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 2 }}>{p.details}</div>
-                ) : null}
-                <a
-                  href={`/rankings/${p.slug}`}
-                  style={{ display: 'inline-block', marginTop: 8, color: '#4ECDC4', fontSize: 12, textDecoration: 'underline' }}
-                >
-                  Open metro page →
-                </a>
-              </div>
-            </Popup>
-          ) : null}
         </CircleMarker>
         );
       })}

@@ -118,6 +118,7 @@ from pathlib import Path
 
 import openpyxl
 from shapely.geometry import MultiPolygon, Point, mapping
+from shapely.geometry import shape as _shapely_shape
 from shapely.ops import nearest_points, unary_union
 
 
@@ -1620,6 +1621,60 @@ def main():
     cache["version"] = SCRIPT_VERSION_HASH
     cache["hashes"] = new_entries
     save_build_cache(cache)
+
+    # Emit a single combined + simplified boundaries file for the Expandable
+    # Map's full-corpus view. Per-metro .geojson files stay as-is for detail
+    # pages, the home rankings overlay, and any per-slug caller. This combined
+    # file is one HTTP request instead of ~4,000, sized for one-shot edge cache
+    # rather than thousands of small CDN hits. Simplification tolerance 0.002
+    # degree is visually indistinguishable at country/continent zoom and cuts
+    # raw size roughly 5x; gzip lands around 3 MB at full corpus.
+    print()
+    print("[*] Emitting combined + simplified boundaries.json ...")
+    combined_path = OUT_DIR / "boundaries-simplified.json"
+    SIMPLIFY_TOL = 0.002
+    combined_features = []
+    combined_written = 0
+    combined_skipped = 0
+    for gj_file in sorted(OUT_DIR.glob("*.geojson")):
+        slug = gj_file.stem
+        if slug in CURATED_BOUNDARY_SLUGS:
+            # Keep curated polygons un-simplified - they're already minimal
+            # and editorial. Read and append as-is.
+            pass
+        try:
+            with open(gj_file, "r", encoding="utf-8") as f:
+                fc = json.load(f)
+            for feat in (fc.get("features") or []):
+                geom = feat.get("geometry")
+                if not geom:
+                    continue
+                # Re-simplify via shapely. Curated polygons skip simplification.
+                if slug not in CURATED_BOUNDARY_SLUGS:
+                    try:
+                        sh = _shapely_shape(geom)
+                        sh = sh.simplify(SIMPLIFY_TOL, preserve_topology=True)
+                        geom = mapping(sh)
+                    except Exception:
+                        # Fall back to original geometry on simplify failure
+                        pass
+                props = dict(feat.get("properties") or {})
+                props["slug"] = slug
+                combined_features.append({
+                    "type": "Feature",
+                    "properties": props,
+                    "geometry": geom,
+                })
+                combined_written += 1
+        except Exception as e:
+            combined_skipped += 1
+            print(f"  warn: failed to read {gj_file.name}: {e}")
+    with open(combined_path, "w", encoding="utf-8") as f:
+        json.dump({"type": "FeatureCollection", "features": combined_features}, f, separators=(',', ':'))
+    combined_size = combined_path.stat().st_size
+    print(f"      combined boundaries: {combined_written:,} features, {combined_size/1024/1024:.1f} MB raw")
+    if combined_skipped:
+        print(f"      (skipped {combined_skipped} file(s) with read errors)")
 
     print()
     print("=" * 60)
