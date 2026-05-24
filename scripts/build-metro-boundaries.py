@@ -261,6 +261,13 @@ COUNTRY_PARQUET_MAP = {
     "Saudi Arabia":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SA.parquet",
     "Syria":                 r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SY.parquet",
     "United Arab Emirates":  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AE.parquet",
+    # 2026-05-24 expansion - Bonaire's two Dutch Caribbean cousins:
+    "Saba":                  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-XS.parquet",
+    "Sint Eustatius":        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-XE.parquet",
+    # 2026-05-24 expansion - newly keyed countries from workbook sync:
+    "South Africa":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ZA.parquet",
+    "Belarus":               r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BY.parquet",
+    "Ukraine":               r"C:\Users\ashwi\Desktop\Projects\MapData\overture-UA.parquet",
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
     # are tiny enough to fall through to SOURCE_PARQUET; no per-country
@@ -431,6 +438,12 @@ COUNTRY_SHEET_MAP = {
     "Saudi Arabia":             "counties",
     "Syria":                    "counties",
     "United Arab Emirates":     "counties",
+    # 2026-05-24 expansion
+    "Saba":                     "counties",
+    "Sint Eustatius":           "counties",
+    "South Africa":             "counties",
+    "Belarus":                  "counties",
+    "Ukraine":                  "counties",
 }
 
 COUNTRY_TO_ISO = {
@@ -587,6 +600,12 @@ COUNTRY_TO_ISO = {
     "Saudi Arabia":             "SA",
     "Syria":                    "SY",
     "United Arab Emirates":     "AE",
+    # 2026-05-24 expansion
+    "Saba":                     "XS",
+    "Sint Eustatius":           "XE",
+    "South Africa":             "ZA",
+    "Belarus":                  "BY",
+    "Ukraine":                  "UA",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
@@ -645,6 +664,11 @@ COUNTRY_PARQUET_ISO_OVERRIDE = {
 CROSS_BORDER_PARQUET = {
     "XW": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-XW.parquet",
     "XG": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-XG.parquet",
+    # 2026-05-24: Russia-Crimea metros (Feodosia, Kerch, Simferopol, Sevastopol,
+    # Yalta, etc.) live in workbook as Russia rows but Overture files Crimea
+    # under UA (ISO follows pre-2014 borders). reg_iso prefixes UA-43 (Crimea)
+    # and UA-40 (Sevastopol) route those rows to the UA parquet.
+    "UA": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-UA.parquet",
 }
 
 
@@ -653,6 +677,23 @@ def _region_iso_prefix(reg_iso):
     if not reg_iso:
         return None
     return reg_iso.split("-", 1)[0] if "-" in reg_iso else reg_iso
+
+
+def _effective_region(region_str):
+    """Region value used for the (region, subtype, primary) parquet join key.
+
+    CROSS_BORDER_PARQUET keys (XW, XG) name parquets whose rows all carry
+    region=None because those Overture codes sit at the top of the hierarchy
+    (Overture treats them as the country, not a subdivision). The workbook
+    fills region='XW'/'XG' so CROSS_BORDER_PARQUET routing can pick the
+    right parquet, but the join key has to be normalized back to None so it
+    matches the parquet rows. Without this, Palestine's WB+Gaza metros and
+    Israel's 23 WB settlement rows route to the right parquet but never
+    match a key.
+    """
+    if region_str in CROSS_BORDER_PARQUET:
+        return None
+    return region_str
 
 
 REGIONLESS_COUNTRIES = {
@@ -672,6 +713,10 @@ REGIONLESS_COUNTRIES = {
     "Northern Mariana Islands",
     "Réunion",
     "Tokelau",
+    # 2026-05-24 expansion: Saba (ISO XS) and Sint Eustatius (ISO XE)
+    # both appear in Overture as single dependency rows with region=None.
+    "Saba",
+    "Sint Eustatius",
 }
 
 SHEET_SCHEMAS = {
@@ -1174,7 +1219,7 @@ def main():
     by_key_land = defaultdict(list)
     by_key_any = defaultdict(list)
     for parquet_path, parquet_rows in rows_by_parquet.items():
-        parquet_keys = {(r["region"], r["subtype"], r["primary"])
+        parquet_keys = {(_effective_region(r["region"]), r["subtype"], r["primary"])
                         for r in parquet_rows}
         parquet_iso = set()
         for r in parquet_rows:
@@ -1205,7 +1250,7 @@ def main():
         members = by_slug[slug]
         polys = []
         for m in members:
-            key = (m["region"], m["subtype"], m["primary"])
+            key = (_effective_region(m["region"]), m["subtype"], m["primary"])
             geoms = by_key_land.get(key) or by_key_any.get(key)
             if not geoms:
                 unmatched_per_metro[slug].append(
