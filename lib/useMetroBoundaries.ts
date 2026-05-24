@@ -35,7 +35,7 @@ async function fetchBoundary(slug: string): Promise<unknown | null> {
   const p = (async () => {
     try {
       const res = await fetch(`/data/metro-boundaries/${slug}.geojson`, {
-        cache: "force-cache",
+        cache: "default",
       });
       if (!res.ok) {
         cache.set(slug, null);
@@ -145,7 +145,7 @@ async function fetchCombinedBoundaries(): Promise<unknown | null> {
   combinedInFlight = (async () => {
     try {
       const res = await fetch(`/data/boundaries-simplified.json`, {
-        cache: "force-cache",
+        cache: "default",
       });
       if (!res.ok) {
         combinedCache = null;
