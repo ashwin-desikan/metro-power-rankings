@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "West Bank and Gaza now render after a cross-border join-key fix; Israeli West Bank settlements union into the Jerusalem metro polygon via the same route.",
       "Dozens of newly resolved jurisdictions: Bermuda, Turks and Caicos, BVI, Gibraltar, Anguilla, Saint Helena, Montserrat, Falklands, Macau, Guam, US Virgin Islands, Jersey, Guernsey, and Åland.",
       "Mass mid-size country wiring: Madagascar, Mozambique, Mongolia, Kazakhstan, Tanzania, Morocco, Slovakia, Czech Republic, Lithuania, Slovenia, Iceland, and roughly thirty-five more newly resolve to polygons.",
-      "Maps: smaller pin, polygon-first interaction (hover, click for popup, double-click to navigate), and a pane race fix that restores Brussels, Athens, Hong Kong, Prague, Copenhagen and other small-footprint markers.",
+      "Maps: polygon-first interaction (hover, click for popup, double-click to navigate); Expandable Map scroll-wheel zoom; small-footprint markers (Brussels, Athens, Hong Kong, Prague) restored via synchronous pane.",
     ],
   },
   {

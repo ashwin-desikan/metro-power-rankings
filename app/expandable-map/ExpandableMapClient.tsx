@@ -228,16 +228,20 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           typeof m.lon === 'number' &&
           (m.lat !== 0 || m.lon !== 0),
         )
-        .map((m) => ({
-          slug: m.slug,
-          name: m.name,
-          lat: m.lat,
-          lon: m.lon,
-          city: m.primaryCity,
-          state: m.primaryState,
-          country: m.country,
-          color: slugTier.get(m.slug)?.accentHex,
-        })),
+        .map((m) => {
+          const t = slugTier.get(m.slug);
+          return {
+            slug: m.slug,
+            name: m.name,
+            lat: m.lat,
+            lon: m.lon,
+            city: m.primaryCity,
+            state: m.primaryState,
+            country: m.country,
+            color: t?.accentHex,
+            details: t ? `#${t.rank} · ${t.name}` : undefined,
+          };
+        }),
     [filtered, slugTier],
   );
 
@@ -584,6 +588,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           initialZoom={viewport?.zoom}
           onViewportChange={handleViewportChange}
           preferCanvas
+          scrollWheelZoom
         />
 
         {/* Fullscreen overlays */}

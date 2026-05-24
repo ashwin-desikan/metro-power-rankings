@@ -42,6 +42,10 @@ export type MapPoint = {
   // city / state / country line when present. Used by BadgeMap to surface
   // a "#rank · value · tier" line per qualifying metro.
   subtitle?: string;
+  // Optional third tooltip line. Use for "#rank · tier-name" or similar
+  // numeric/categorical details that should hover-reveal alongside the
+  // metro name and city/state/country line.
+  details?: string;
 };
 
 export default function MetroMap({
@@ -57,6 +61,7 @@ export default function MetroMap({
   initialZoom,
   onViewportChange,
   preferCanvas,
+  scrollWheelZoom = false,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
@@ -101,6 +106,11 @@ export default function MetroMap({
   // unset for the home rankings overlay where the filter cap keeps the
   // polygon count well under the SVG threshold.
   preferCanvas?: boolean;
+  // Enable mouse-wheel zoom. Off by default because embedded maps (home
+  // rankings overlay, metro detail card) live inside scrollable pages and
+  // accidental scroll-over-map should not zoom the map. Set true on
+  // full-canvas surfaces like /expandable-map where scroll is expected.
+  scrollWheelZoom?: boolean;
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
   // don't sit at (0,0) off Africa. They reappear once coords land in the xlsx.
@@ -126,6 +136,7 @@ export default function MetroMap({
         initialZoom={initialZoom}
         onViewportChange={onViewportChange}
         preferCanvas={preferCanvas}
+        scrollWheelZoom={scrollWheelZoom}
       />
     </div>
   );

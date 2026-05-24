@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapContainer, TileLayer, CircleMarker, Tooltip, Popup, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Tooltip, Popup, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl, Pane } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
@@ -176,6 +176,7 @@ export default function MetroMapInner({
   initialZoom,
   onViewportChange,
   preferCanvas,
+  scrollWheelZoom = false,
 }: {
   points: MapPoint[];
   showConnections: boolean;
@@ -207,6 +208,9 @@ export default function MetroMapInner({
   // interactiveFeatures-driven value so existing callers keep their
   // current behavior unchanged.
   preferCanvas?: boolean;
+  // Enable mouse-wheel zoom on the underlying MapContainer. Default false
+  // so embedded maps inside scrollable pages do not steal page scroll.
+  scrollWheelZoom?: boolean;
 }) {
   const router = useRouter();
   const single = points.length === 1;
@@ -259,7 +263,13 @@ export default function MetroMapInner({
         `<a href="/rankings/${slug}" style="display:inline-block;margin-top:8px;color:#4ECDC4;font-size:12px;text-decoration:underline;">Open metro page &rarr;</a>` +
         `</div>`;
       layer.bindPopup(popupHtml, { closeButton: true, autoClose: true, autoPan: true });
-      layer.on('dblclick', () => {
+      // Double-click navigates. Stop propagation so Leaflet's default
+      // dblclick-to-zoom on the map doesn't also fire and yank the
+      // viewport on the way to the detail page.
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      layer.on('dblclick', (e: any) => {
+        L.DomEvent.stopPropagation(e);
+        L.DomEvent.preventDefault(e);
         router.push(`/rankings/${slug}`);
       });
     }
@@ -271,12 +281,11 @@ export default function MetroMapInner({
       center={center}
       zoom={zoom}
       style={{ height: '100%', width: '100%', background: 'var(--bg-card)' }}
-      scrollWheelZoom={false}
-      // When clickToNavigate is on, dblclick is the user's navigate-to-detail
-      // gesture; disable Leaflet's default dblclick-to-zoom so the gesture
-      // is not consumed by the zoom handler. Single-pin and metro-detail
-      // maps keep the default dblclick zoom for normal map exploration.
-      doubleClickZoom={!clickToNavigate}
+      scrollWheelZoom={scrollWheelZoom}
+      // Leaflet's default dblclick-to-zoom stays ON so users can still
+      // zoom by double-clicking empty map area. Marker and polygon
+      // dblclick handlers call L.DomEvent.stopPropagation so a dblclick
+      // ON a metro layer navigates without also firing the map zoom.
       attributionControl={false}
       zoomControl={false}
       preferCanvas={preferCanvas ?? interactiveFeatures}
@@ -301,6 +310,19 @@ export default function MetroMapInner({
         // planet in one frame; below that, the CARTO tile pack returns
         // 404s and Leaflet renders empty squares.
       />
+      {/* Synchronous pane creation for the primary city pin layer. The
+          react-leaflet <Pane> component creates the Leaflet pane during
+          MapContainer initialization, BEFORE sibling children render. This
+          replaces the previous useEffect-based pane creation that raced
+          the first CircleMarker render and silently dropped markers for
+          small-footprint metros (Brussels, Athens, Hong Kong, Prague,
+          Copenhagen, etc). zIndex 670 sits above the default markerPane
+          (600) and the default overlayPane (400, GeoJSON polygons), so
+          the pin is always drawn on top of any boundary layer regardless
+          of which mounts first or last. Critical in canvas mode where
+          render order within a single pane determines z-stacking. */}
+      <Pane name="primaryPins" style={{ zIndex: 670 }} />
+      <Pane name="primaryPinTooltips" style={{ zIndex: 690, pointerEvents: 'none' }} />
       {boundary ? (
         <>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
@@ -402,38 +424,51 @@ export default function MetroMapInner({
         <CircleMarker
           key={p.slug}
           center={[p.lat, p.lon]}
-          // Smaller pin so polygons read as the primary interaction surface.
-          // Pin still anchors the metro position for filtering-by-pan and
-          // unambiguously marks lat/lon when polygons are not visible at the
-          // current zoom; reduced from radius 6 to 3 per user feedback.
-          radius={3}
-          // No custom pane: Leaflet's default markerPane (z=600) sits above
-          // overlayPane (z=400, GeoJSON polygons) so the pin is still on
-          // top. The prior custom pane was created in a useEffect that ran
-          // after children mounted, racing the first CircleMarker render
-          // and silently dropping markers for small-footprint metros
-          // (Brussels, Athens, Hong Kong, Prague, Copenhagen, etc).
+          // Pin small enough that polygons remain the primary visual layer,
+          // large enough to reliably click. Radius 4 lands at ~10px target
+          // diameter which is the practical floor for pointer accuracy.
+          radius={4}
+          // Pinned to the synchronously-created primaryPins pane (z=670)
+          // so pins always render above the GeoJSON boundary layer, no
+          // matter which mounts first or whether the GeoJSON remounts
+          // when the boundary fetch resolves. This is the actual fix for
+          // Brussels / Athens / Hong Kong / Prague / Copenhagen markers
+          // being invisible - in canvas mode without an explicit pane,
+          // the GeoJSON's late remount on async fetch resolution pushes
+          // it to the top of the draw order and covers the pin.
+          pane="primaryPins"
           pathOptions={{
             color: '#ffffff',
             weight: 1.5,
             fillColor: fill,
             fillOpacity: 1,
+            pane: 'primaryPins',
           }}
           eventHandlers={
             clickToNavigate
-              ? { dblclick: () => router.push(`/rankings/${p.slug}`) }
+              ? {
+                  // Double-click navigates. Stop propagation so the map's
+                  // default dblclick-to-zoom does not also fire underneath.
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                  dblclick: (e: any) => {
+                    L.DomEvent.stopPropagation(e);
+                    L.DomEvent.preventDefault(e);
+                    router.push(`/rankings/${p.slug}`);
+                  },
+                }
               : undefined
           }
         >
-          <Tooltip direction="top" offset={[0, -4]} permanent={false}>
-            {(p.subtitle || richMeta) ? (
-              <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
-                <div style={{ fontWeight: 600 }}>{p.name}</div>
+          <Tooltip direction="top" offset={[0, -4]} permanent={false} pane="primaryPinTooltips">
+            <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
+              <div style={{ fontWeight: 600 }}>{p.name}</div>
+              {(p.subtitle || richMeta) ? (
                 <div style={{ color: '#9ca3af', fontSize: 11 }}>{p.subtitle || richMeta}</div>
-              </div>
-            ) : (
-              p.name
-            )}
+              ) : null}
+              {p.details ? (
+                <div style={{ color: '#9ca3af', fontSize: 11 }}>{p.details}</div>
+              ) : null}
+            </div>
           </Tooltip>
           {clickToNavigate ? (
             <Popup closeButton autoClose autoPan>
@@ -441,6 +476,9 @@ export default function MetroMapInner({
                 <div style={{ fontWeight: 600, fontSize: 14 }}>{p.name}</div>
                 {(p.subtitle || richMeta) ? (
                   <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 2 }}>{p.subtitle || richMeta}</div>
+                ) : null}
+                {p.details ? (
+                  <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 2 }}>{p.details}</div>
                 ) : null}
                 <a
                   href={`/rankings/${p.slug}`}
