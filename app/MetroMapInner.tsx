@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl } from 'react-leaflet';
+import { MapContainer, TileLayer, CircleMarker, Tooltip, Popup, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { MapPoint } from './MetroMap';
@@ -25,33 +25,18 @@ function getPointBounds(points: MapPoint[]): [[number, number], [number, number]
   ];
 }
 
-// Create two custom Leaflet panes used by the primary city pin layer:
-//   - primaryPins (z-index 670) sits above the default overlayPane (400,
-//     GeoJSON polygons), markerPane (600), and tooltipPane (650). The
-//     primary CircleMarker mounts here so the pin is always hoverable
-//     above the boundary polygon at any zoom.
-//   - primaryPinTooltips (z-index 690) sits above the pin pane so the
-//     tooltip floats on top of the pin itself; without a dedicated pane
-//     the default tooltipPane (650) would sit below primaryPins and the
-//     tooltip would disappear behind the pin on hover.
-// Panes are idempotent — createPane is only called the first time the
-// component mounts on a given map.
-function PrimaryPinPane() {
-  const map = useMap();
-  useEffect(() => {
-    if (!map.getPane('primaryPins')) {
-      const pane = map.createPane('primaryPins');
-      pane.style.zIndex = '670';
-      pane.style.pointerEvents = 'auto';
-    }
-    if (!map.getPane('primaryPinTooltips')) {
-      const tipPane = map.createPane('primaryPinTooltips');
-      tipPane.style.zIndex = '690';
-      tipPane.style.pointerEvents = 'none';
-    }
-  }, [map]);
-  return null;
-}
+// Previously created custom panes for the primary city pin (z=670) and
+// pin tooltip (z=690). That setup had a race: the pane was created in a
+// useEffect that runs AFTER children mount, so the first CircleMarker
+// render attached to a non-existent pane and Leaflet would either drop
+// the marker silently or attach it to the wrong layer. Affected metros
+// were the ones whose polygon footprint is too small to act as a visual
+// fallback (Brussels, Athens, Hong Kong, Prague, Copenhagen, etc).
+//
+// Fix: use Leaflet's default panes throughout. markerPane (z=600) sits
+// above the default overlayPane (z=400) where GeoJSON polygons live, so
+// the pin is still drawn above the boundary. tooltipPane (z=650) sits
+// above markerPane so hover tooltips still float over the pin.
 
 // When a boundary GeoJSON is provided, fit map bounds to its extent so
 // the map frames the metro region naturally rather than the city pin alone.
@@ -249,6 +234,8 @@ export default function MetroMapInner({
     const name = p.name as string | undefined;
     const rank = p.rank as number | undefined;
     const tier = p.tier as string | undefined;
+    const slug = typeof p.slug === 'string' ? (p.slug as string) : undefined;
+    // Hover tooltip: quick read on mouseover, no commitment.
     if (name) {
       const html =
         `<div style="font-family:'Inter',system-ui,sans-serif;padding:2px 4px;">` +
@@ -258,9 +245,21 @@ export default function MetroMapInner({
         `</div>`;
       layer.bindTooltip(html, { direction: 'top', sticky: true, opacity: 0.95 });
     }
-    if (typeof p.slug === 'string') {
-      const slug = p.slug as string;
-      layer.on('click', () => {
+    // Single click: open a popup with metro name + link to detail page.
+    // Double click: navigate directly. Together with doubleClickZoom={false}
+    // on MapContainer, this gives the user three interaction modes:
+    //   hover -> tooltip (info only)
+    //   click -> popup (with a link to commit)
+    //   dblclick -> navigate (shortcut)
+    if (slug && name) {
+      const popupHtml =
+        `<div style="font-family:'Inter',system-ui,sans-serif;min-width:160px;padding:2px 4px;">` +
+        `<div style="font-weight:600;font-size:14px;">${name}</div>` +
+        (rank ? `<div style="color:#9ca3af;font-size:11px;margin-top:2px;">Rank #${rank}${tier ? ` · ${tier}` : ''}</div>` : '') +
+        `<a href="/rankings/${slug}" style="display:inline-block;margin-top:8px;color:#4ECDC4;font-size:12px;text-decoration:underline;">Open metro page &rarr;</a>` +
+        `</div>`;
+      layer.bindPopup(popupHtml, { closeButton: true, autoClose: true, autoPan: true });
+      layer.on('dblclick', () => {
         router.push(`/rankings/${slug}`);
       });
     }
@@ -273,6 +272,11 @@ export default function MetroMapInner({
       zoom={zoom}
       style={{ height: '100%', width: '100%', background: 'var(--bg-card)' }}
       scrollWheelZoom={false}
+      // When clickToNavigate is on, dblclick is the user's navigate-to-detail
+      // gesture; disable Leaflet's default dblclick-to-zoom so the gesture
+      // is not consumed by the zoom handler. Single-pin and metro-detail
+      // maps keep the default dblclick zoom for normal map exploration.
+      doubleClickZoom={!clickToNavigate}
       attributionControl={false}
       zoomControl={false}
       preferCanvas={preferCanvas ?? interactiveFeatures}
@@ -297,7 +301,6 @@ export default function MetroMapInner({
         // planet in one frame; below that, the CARTO tile pack returns
         // 404s and Leaflet renders empty squares.
       />
-      <PrimaryPinPane />
       {boundary ? (
         <>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
@@ -399,27 +402,30 @@ export default function MetroMapInner({
         <CircleMarker
           key={p.slug}
           center={[p.lat, p.lon]}
-          radius={6}
-          pane="primaryPins"
+          // Smaller pin so polygons read as the primary interaction surface.
+          // Pin still anchors the metro position for filtering-by-pan and
+          // unambiguously marks lat/lon when polygons are not visible at the
+          // current zoom; reduced from radius 6 to 3 per user feedback.
+          radius={3}
+          // No custom pane: Leaflet's default markerPane (z=600) sits above
+          // overlayPane (z=400, GeoJSON polygons) so the pin is still on
+          // top. The prior custom pane was created in a useEffect that ran
+          // after children mounted, racing the first CircleMarker render
+          // and silently dropping markers for small-footprint metros
+          // (Brussels, Athens, Hong Kong, Prague, Copenhagen, etc).
           pathOptions={{
             color: '#ffffff',
-            weight: 2,
+            weight: 1.5,
             fillColor: fill,
             fillOpacity: 1,
-            pane: 'primaryPins',
           }}
           eventHandlers={
             clickToNavigate
-              ? { click: () => router.push(`/rankings/${p.slug}`) }
+              ? { dblclick: () => router.push(`/rankings/${p.slug}`) }
               : undefined
           }
         >
-          <Tooltip
-            direction="top"
-            offset={[0, -6]}
-            permanent={false}
-            pane="primaryPinTooltips"
-          >
+          <Tooltip direction="top" offset={[0, -4]} permanent={false}>
             {(p.subtitle || richMeta) ? (
               <div style={{ fontFamily: "'Inter', system-ui, sans-serif", fontSize: 12, lineHeight: 1.4 }}>
                 <div style={{ fontWeight: 600 }}>{p.name}</div>
@@ -429,6 +435,22 @@ export default function MetroMapInner({
               p.name
             )}
           </Tooltip>
+          {clickToNavigate ? (
+            <Popup closeButton autoClose autoPan>
+              <div style={{ fontFamily: "'Inter', system-ui, sans-serif", minWidth: 160 }}>
+                <div style={{ fontWeight: 600, fontSize: 14 }}>{p.name}</div>
+                {(p.subtitle || richMeta) ? (
+                  <div style={{ color: '#9ca3af', fontSize: 11, marginTop: 2 }}>{p.subtitle || richMeta}</div>
+                ) : null}
+                <a
+                  href={`/rankings/${p.slug}`}
+                  style={{ display: 'inline-block', marginTop: 8, color: '#4ECDC4', fontSize: 12, textDecoration: 'underline' }}
+                >
+                  Open metro page →
+                </a>
+              </div>
+            </Popup>
+          ) : null}
         </CircleMarker>
         );
       })}
