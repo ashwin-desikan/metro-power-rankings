@@ -28,7 +28,7 @@ Initial routing:
   Poland         -> municipality  (overture-PL.parquet)
   Andorra        -> municipality  (SOURCE_PARQUET)
   San Marino     -> municipality  (SOURCE_PARQUET)
-  Vatican City   -> municipality  (SOURCE_PARQUET)
+  Vatican City   -> counties      (overture-VA.parquet)
 
 Incremental build (build cache):
   Each metro's polygon is the function of its sorted (region, subtype,
@@ -268,6 +268,37 @@ COUNTRY_PARQUET_MAP = {
     "South Africa":          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ZA.parquet",
     "Belarus":               r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BY.parquet",
     "Ukraine":               r"C:\Users\ashwi\Desktop\Projects\MapData\overture-UA.parquet",
+    # 2026-05-24 PM expansion - French overseas + Monaco + Channel:
+    "French Guiana":             r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GF.parquet",
+    "Monaco":                    r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MC.parquet",
+    "Saint Pierre and Miquelon": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-PM.parquet",
+    # 2026-05-24 PM expansion - UK-linked territories + Macau + US territories:
+    "Jersey":                                       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-JE.parquet",
+    "Guernsey":                                     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GG.parquet",
+    "Bermuda":                                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BM.parquet",
+    "Turks & Caicos Islands":                       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-TC.parquet",
+    "British Virgin Islands":                       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VG.parquet",
+    "Gibraltar":                                    r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GI.parquet",
+    "Anguilla":                                     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AI.parquet",
+    "Saint Helena, Ascension and Tristan da Cunha": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SH.parquet",
+    "Montserrat":                                   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MS.parquet",
+    "Falkland Islands":                             r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FK.parquet",
+    "Macau":                                        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MO.parquet",
+    "Guam":                                         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-GU.parquet",
+    "US Virgin Islands":                            r"C:\Users\ashwi\Desktop\Projects\MapData\overture-VI.parquet",
+    # 2026-05-24 late - additional newly-filled small countries:
+    "Saint Lucia":                                  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-LC.parquet",
+    "Saint Martin":                                 r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MF.parquet",
+    "Antigua & Barbuda":                            r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AG.parquet",
+    "Solomon Islands":                              r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SB.parquet",
+    "Saint Barthélemy":                             r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BL.parquet",
+    "Sint Maarten":                                 r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SX.parquet",
+    "Bonaire":                                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BQ.parquet",
+    # 2026-05-24 - Western Sahara files under MA in Overture (no per-country
+    # EH parquet exists). Rows carry MA-11/MA-12/MA-13 regions; the
+    # iso_pref routing already handles those. Es-Semara row has region=None
+    # so the ISO override is needed for the parquet_iso filter.
+    "Western Sahara":                               r"C:\Users\ashwi\Desktop\Projects\MapData\overture-MA.parquet",
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
     # are tiny enough to fall through to SOURCE_PARQUET; no per-country
@@ -295,7 +326,7 @@ COUNTRY_SHEET_MAP = {
     "Poland":                   "municipality",
     "Andorra":                  "municipality",
     "San Marino":               "municipality",
-    "Vatican City":             "municipality",
+    "Vatican City":             "counties",
     # 2026-05-08 expansion - Counties (38)
     "Romania":                  "counties",
     "Colombia":                 "counties",
@@ -339,8 +370,8 @@ COUNTRY_SHEET_MAP = {
     "Portugal":                 "municipality",
     "Luxembourg":               "municipality",
     "Congo DR":                 "municipality",
-    "Guernsey":                 "municipality",
-    "Jersey":                   "municipality",
+    "Guernsey":                 "counties",
+    "Jersey":                   "counties",
     # 2026-05-10 expansion - Counties (3)
     "Brazil":                   "counties",
     "Australia":                "counties",
@@ -444,6 +475,28 @@ COUNTRY_SHEET_MAP = {
     "South Africa":             "counties",
     "Belarus":                  "counties",
     "Ukraine":                  "counties",
+    "French Guiana":             "counties",
+    "Monaco":                    "counties",
+    "Saint Pierre and Miquelon": "counties",
+    "Bermuda":                                      "counties",
+    "Turks & Caicos Islands":                       "counties",
+    "British Virgin Islands":                       "counties",
+    "Gibraltar":                                    "counties",
+    "Anguilla":                                     "counties",
+    "Saint Helena, Ascension and Tristan da Cunha": "counties",
+    "Montserrat":                                   "counties",
+    "Falkland Islands":                             "counties",
+    "Macau":                                        "counties",
+    "Guam":                                         "counties",
+    "US Virgin Islands":                            "counties",
+    "Saint Lucia":                                  "counties",
+    "Saint Martin":                                 "counties",
+    "Antigua & Barbuda":                            "counties",
+    "Solomon Islands":                              "counties",
+    "Saint Barthélemy":                             "counties",
+    "Sint Maarten":                                 "counties",
+    "Bonaire":                                      "counties",
+    "Western Sahara":                               "counties",
 }
 
 COUNTRY_TO_ISO = {
@@ -606,6 +659,28 @@ COUNTRY_TO_ISO = {
     "South Africa":             "ZA",
     "Belarus":                  "BY",
     "Ukraine":                  "UA",
+    "French Guiana":             "GF",
+    "Monaco":                    "MC",
+    "Saint Pierre and Miquelon": "PM",
+    "Bermuda":                                      "BM",
+    "Turks & Caicos Islands":                       "TC",
+    "British Virgin Islands":                       "VG",
+    "Gibraltar":                                    "GI",
+    "Anguilla":                                     "AI",
+    "Saint Helena, Ascension and Tristan da Cunha": "SH",
+    "Montserrat":                                   "MS",
+    "Falkland Islands":                             "FK",
+    "Macau":                                        "MO",
+    "Guam":                                         "GU",
+    "US Virgin Islands":                            "VI",
+    "Saint Lucia":                                  "LC",
+    "Saint Martin":                                 "MF",
+    "Antigua & Barbuda":                            "AG",
+    "Solomon Islands":                              "SB",
+    "Saint Barthélemy":                             "BL",
+    "Sint Maarten":                                 "SX",
+    "Bonaire":                                      "BQ",
+    "Western Sahara":                               "EH",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
@@ -650,6 +725,11 @@ CURATED_BOUNDARY_SLUGS = frozenset([
 # filter must accept both.
 COUNTRY_PARQUET_ISO_OVERRIDE = {
     "Palestine": {"XW", "XG"},
+    # 2026-05-24: Western Sahara workbook rows route to overture-MA.parquet
+    # because Overture files Sahrawi territory under MA-11/12/13. The Es-Semara
+    # row has region=None so we need this override to tell load_overture the
+    # parquet country code is MA, not EH.
+    "Western Sahara": {"MA"},
 }
 
 
@@ -669,6 +749,10 @@ CROSS_BORDER_PARQUET = {
     # under UA (ISO follows pre-2014 borders). reg_iso prefixes UA-43 (Crimea)
     # and UA-40 (Sevastopol) route those rows to the UA parquet.
     "UA": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-UA.parquet",
+    # 2026-05-24: Aland Islands - workbook rows are under Country='Finland'
+    # with reg_iso='AX' since Aland is autonomous within Finland by ISO 3166-1
+    # convention. Overture files them under country='AX'.
+    "AX": r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AX.parquet",
 }
 
 
@@ -717,6 +801,31 @@ REGIONLESS_COUNTRIES = {
     # both appear in Overture as single dependency rows with region=None.
     "Saba",
     "Sint Eustatius",
+    # Vatican City - only polygon is subtype=country with region=None.
+    "Vatican City",
+    # 2026-05-24 PM expansion - all three carry region=None on every parquet row:
+    "French Guiana",
+    "Monaco",
+    "Saint Pierre and Miquelon",
+    # 2026-05-24 territories - single-island dependencies, region=None throughout
+    # (Saint Helena is NOT in this set - it has SH-TA/SH-AC/SH-HL subregions):
+    "Jersey",
+    "Guernsey",
+    "Bermuda",
+    "Turks & Caicos Islands",
+    "British Virgin Islands",
+    "Gibraltar",
+    "Anguilla",
+    "Montserrat",
+    "Falkland Islands",
+    "Macau",
+    "Guam",
+    "US Virgin Islands",
+    # 2026-05-24 late additions - single-island dependencies:
+    "Saint Martin",
+    "Saint Barthélemy",
+    "Sint Maarten",
+    "Bonaire",
 }
 
 SHEET_SCHEMAS = {

@@ -713,17 +713,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 100,
-    metro: "St. Petersburg",
-    sport: "Football",
-    team: "Zenit St. Petersburg",
-    rationale: "10 Russian Premier League titles (including 6 straight 2019-2024), 2008 UEFA Cup, 2008 UEFA Super Cup , Russia's dominant modern club.",
-  },
-  {
-    rank: 101,
     metro: "Raleigh-Durham",
     sport: "Basketball (NCAA)",
     team: "North Carolina / Duke",
     rationale: "North Carolina: 6 NCAA men's basketball national championships (1957, 1982, 1993, 2005, 2009, 2017) , tied for 3rd-most in NCAA history. Dean Smith and Roy Williams dynasties, home of Michael Jordan's 1982 title-winning shot. Duke: 5 NCAA titles (1991, 1992, 2001, 2010, 2015), Coach K's 42-year reign producing the winningest coach in men's college basketball history. Genuinely co-equal , UNC edges on trophy count, Duke on modern-era consistency and the Krzyzewski dynasty. The Tobacco Road rivalry is the defining rivalry in American college sports and arguably the cultural #1 of the entire metro. Carolina Hurricanes (2006 Stanley Cup) are the only major pro franchise.",
+  },
+  {
+    rank: 101,
+    metro: "St. Petersburg",
+    sport: "Football",
+    team: "Zenit St. Petersburg",
+    rationale: "10 Russian Premier League titles (including 6 straight 2019-2024), 2008 UEFA Cup, 2008 UEFA Super Cup , Russia's dominant modern club.",
   },
   {
     rank: 102,
@@ -2147,18 +2147,18 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rationale: "1969 UEFA Cup Winners' Cup champions (only Slovak/Czechoslovak club ever to win a major European trophy), 15 Slovak titles.",
   },
   {
-    rank: 430,
-    metro: "La Paz",
-    sport: "Football",
-    team: "Bolívar",
-    rationale: "30 Bolivian league titles (most ever), regular Copa Libertadores participant playing at 3,600m altitude , the highest-altitude major club venue in world football.",
-  },
-  {
-    rank: 435,
+    rank: 424,
     metro: "Tallahassee",
     sport: "American Football (NCAA)",
     team: "Florida State",
     rationale: "3 national championships (1993, 1999, 2013), Bobby Bowden's 377 wins. Doak Campbell Stadium and the Seminole tomahawk chop.",
+  },
+  {
+    rank: 431,
+    metro: "La Paz",
+    sport: "Football",
+    team: "Bolívar",
+    rationale: "30 Bolivian league titles (most ever), regular Copa Libertadores participant playing at 3,600m altitude , the highest-altitude major club venue in world football.",
   },
   {
     rank: 436,

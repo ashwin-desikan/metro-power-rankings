@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-24",
-    headline: "Cross-border fix plus six new countries resolve to polygons",
+    headline: "Mass boundary expansion across dependencies, territories, and small states",
     items: [
-      "West Bank and Gaza polygons now render for Bethlehem, Gaza, Hebron, Jenin, Nablus, and Ramallah after a join-key fix to the cross-border parquet routing that shipped Saturday.",
-      "South Africa, Belarus, Ukraine, and Sweden newly resolve to administrative polygons; Saba and Sint Eustatius pick up their first shapes via per-country Overture extracts (XS and XE).",
-      "Russia metros in Crimea and Sevastopol (Feodosia, Kerch, Simferopol, Yalta) route to the Ukraine parquet because Overture files Crimea under UA per pre-2014 borders.",
-      "Israeli West Bank settlements (Beitar Illit, Ma'ale Adumim, Giv'at Ze'ev, Efrat, Har Adar) union into the Jerusalem metro polygon via the same cross-border route.",
+      "West Bank and Gaza now render after a cross-border join-key fix; Israeli West Bank settlements union into the Jerusalem metro polygon via the same route.",
+      "Dozens of newly resolved jurisdictions: Bermuda, Turks and Caicos, BVI, Gibraltar, Anguilla, Saint Helena, Montserrat, Falklands, Macau, Guam, US Virgin Islands, Jersey, Guernsey, and Åland.",
+      "Big-country fills land for South Africa, Belarus, Ukraine, Sweden, plus French Guiana, Monaco, Saint Pierre and Miquelon, Vatican City, Saba, Sint Eustatius, Saint Lucia, and a long Caribbean and Pacific tail.",
+      "Russia metros in Crimea and Sevastopol route to the Ukraine parquet; Western Sahara routes to the Morocco parquet, since Overture follows the corresponding ISO conventions.",
     ],
   },
   {
