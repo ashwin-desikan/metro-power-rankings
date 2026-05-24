@@ -56,6 +56,7 @@ export default function MetroMap({
   initialCenter,
   initialZoom,
   onViewportChange,
+  preferCanvas,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
@@ -92,6 +93,14 @@ export default function MetroMap({
   // Optional callback fired on every moveend / zoomend so the parent can
   // persist the current viewport. Receives the current map center and zoom.
   onViewportChange?: (center: [number, number], zoom: number) => void;
+  // Force canvas-mode rendering for the polygon layer. Default false uses
+  // SVG (one DOM node per polygon, hover-friendly but slow past ~1,000
+  // features). True forces preferCanvas on MapContainer, which renders
+  // polygons via the Canvas API and stays smooth at thousands of features.
+  // Use on filter-driven full-corpus maps like /expandable-map; leave
+  // unset for the home rankings overlay where the filter cap keeps the
+  // polygon count well under the SVG threshold.
+  preferCanvas?: boolean;
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
   // don't sit at (0,0) off Africa. They reappear once coords land in the xlsx.
@@ -116,6 +125,7 @@ export default function MetroMap({
         initialCenter={initialCenter}
         initialZoom={initialZoom}
         onViewportChange={onViewportChange}
+        preferCanvas={preferCanvas}
       />
     </div>
   );
