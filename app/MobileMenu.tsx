@@ -19,6 +19,7 @@ const ITEMS: Item[] = [
   { href: '/#rankings', label: 'Rankings', hint: 'Top metros by composite score' },
   { href: '/#regions', label: 'Regions', hint: 'Group view by world region' },
 
+  { href: '/expandable-map', label: 'Expandable Map', hint: 'Full-corpus interactive map; resizable, persistent filters and viewport', group: 'Data' },
   { href: '/compare', label: 'Compare', hint: 'Side-by-side any 2 to 4 metros', group: 'Data' },
   { href: '/countries', label: 'Countries', hint: 'Population, metros, and composite score by country', group: 'Data' },
   { href: '/badges', label: 'Badges', hint: 'Categorical lenses over the dataset', group: 'Data' },

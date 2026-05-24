@@ -150,6 +150,30 @@ function tierStyle(feature: any) {
   };
 }
 
+// Tracks moveend / zoomend events and forwards the current center+zoom to
+// the parent. Used by the Expandable Map page to persist the viewport to
+// localStorage. The hook returns null because we only need the side effect.
+function ViewportTracker({
+  onChange,
+}: {
+  onChange: (center: [number, number], zoom: number) => void;
+}) {
+  const map = useMap();
+  useEffect(() => {
+    const handler = () => {
+      const c = map.getCenter();
+      onChange([c.lat, c.lng], map.getZoom());
+    };
+    map.on('moveend', handler);
+    map.on('zoomend', handler);
+    return () => {
+      map.off('moveend', handler);
+      map.off('zoomend', handler);
+    };
+  }, [map, onChange]);
+  return null;
+}
+
 export default function MetroMapInner({
   points,
   showConnections,
@@ -158,6 +182,9 @@ export default function MetroMapInner({
   markers,
   refitOnChange = false,
   clickToNavigate = false,
+  initialCenter,
+  initialZoom,
+  onViewportChange,
 }: {
   points: MapPoint[];
   showConnections: boolean;
@@ -179,17 +206,32 @@ export default function MetroMapInner({
   // Opt-in so existing single-pin callers (metro detail) don't become
   // accidentally self-clickable.
   clickToNavigate?: boolean;
+  // Optional saved-viewport restore. When both are provided, the map
+  // initializes at this center+zoom instead of fitting bounds to points.
+  initialCenter?: [number, number];
+  initialZoom?: number;
+  // Optional callback fired on every moveend / zoomend.
+  onViewportChange?: (center: [number, number], zoom: number) => void;
 }) {
   const router = useRouter();
   const single = points.length === 1;
-  // When a boundary is present, FitToBoundary takes over after mount;
-  // bounds/center here are just the initial frame.
-  const bounds = boundary || single || points.length === 0 ? undefined : getPointBounds(points);
-  const center: [number, number] | undefined = single
-    ? [points[0].lat, points[0].lon]
-    : points.length === 0
-      ? [0, 0]
-      : undefined;
+  // When an initial viewport is supplied (e.g. restored from localStorage on
+  // the Expandable Map page), use it as-is and skip the bounds-derived frame.
+  // Otherwise fall back to the standard fitBounds / single-pin behavior.
+  const hasInitialView = initialCenter !== undefined && initialZoom !== undefined;
+  const bounds = hasInitialView
+    ? undefined
+    : boundary || single || points.length === 0
+      ? undefined
+      : getPointBounds(points);
+  const center: [number, number] | undefined = hasInitialView
+    ? initialCenter
+    : single
+      ? [points[0].lat, points[0].lon]
+      : points.length === 0
+        ? [0, 0]
+        : undefined;
+  const zoom = hasInitialView ? initialZoom : single ? 9 : undefined;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleEachFeature = (feature: any, layer: any) => {
@@ -218,7 +260,7 @@ export default function MetroMapInner({
     <MapContainer
       bounds={bounds}
       center={center}
-      zoom={single ? 9 : undefined}
+      zoom={zoom}
       style={{ height: '100%', width: '100%', background: 'var(--bg-card)' }}
       scrollWheelZoom={false}
       attributionControl={false}
@@ -335,7 +377,8 @@ export default function MetroMapInner({
           })}
         </LayerGroup>
       ) : null}
-      {refitOnChange ? <FitToPoints points={points} /> : null}
+      {refitOnChange && !hasInitialView ? <FitToPoints points={points} /> : null}
+      {onViewportChange ? <ViewportTracker onChange={onViewportChange} /> : null}
       {points.map((p) => {
         const richMeta = [p.city, p.state, p.country].filter(Boolean).join(' · ');
         // Per-point color override lets league-map callers mix categories

@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "West Bank and Gaza now render after a cross-border join-key fix; Israeli West Bank settlements union into the Jerusalem metro polygon via the same route.",
       "Dozens of newly resolved jurisdictions: Bermuda, Turks and Caicos, BVI, Gibraltar, Anguilla, Saint Helena, Montserrat, Falklands, Macau, Guam, US Virgin Islands, Jersey, Guernsey, and Åland.",
       "Big-country fills land for South Africa, Belarus, Ukraine, Sweden, plus French Guiana, Monaco, Saint Pierre and Miquelon, Vatican City, Saba, Sint Eustatius, Saint Lucia, and a long Caribbean and Pacific tail.",
-      "Russia metros in Crimea and Sevastopol route to the Ukraine parquet; Western Sahara routes to the Morocco parquet, since Overture follows the corresponding ISO conventions.",
+      "New Expandable Map page at /expandable-map lifts the home rankings map into a dedicated view: resizable canvas, fullscreen toggle, and persistent filters and viewport across sessions.",
     ],
   },
   {

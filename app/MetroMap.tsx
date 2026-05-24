@@ -53,6 +53,9 @@ export default function MetroMap({
   markers,
   refitOnChange = false,
   clickToNavigate = false,
+  initialCenter,
+  initialZoom,
+  onViewportChange,
 }: {
   points: MapPoint[];
   showConnections?: boolean;
@@ -79,6 +82,16 @@ export default function MetroMap({
   // Opt-in so the metro-detail single-pin map does not become accidentally
   // self-clickable.
   clickToNavigate?: boolean;
+  // Optional explicit initial center / zoom. When both are provided they
+  // override the default fitBounds behavior on first mount, used by the
+  // Expandable Map page to restore the user's last-saved viewport from
+  // localStorage. refitOnChange should be false when this is set so the
+  // restored viewport is not immediately re-fit to the points.
+  initialCenter?: [number, number];
+  initialZoom?: number;
+  // Optional callback fired on every moveend / zoomend so the parent can
+  // persist the current viewport. Receives the current map center and zoom.
+  onViewportChange?: (center: [number, number], zoom: number) => void;
 }) {
   // Filter out zero-coord workbook entries (e.g. Mulhouse, Baden) so they
   // don't sit at (0,0) off Africa. They reappear once coords land in the xlsx.
@@ -100,6 +113,9 @@ export default function MetroMap({
         markers={markers}
         refitOnChange={refitOnChange}
         clickToNavigate={clickToNavigate}
+        initialCenter={initialCenter}
+        initialZoom={initialZoom}
+        onViewportChange={onViewportChange}
       />
     </div>
   );

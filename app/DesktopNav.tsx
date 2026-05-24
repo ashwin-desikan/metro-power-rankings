@@ -127,6 +127,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       </a>
 
       <Dropdown id="data" label="Data" openId={openId} setOpenId={setOpenId}>
+        <DropdownItem href="/expandable-map" title="Expandable Map" hint="Full-corpus interactive map; resizable canvas, persistent filters and viewport" />
         <DropdownItem href="/compare" title="Compare" hint="Side-by-side any 2 to 4 metros" />
         <DropdownItem href="/countries" title="Countries" hint="Population, metros, and composite score by country" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
