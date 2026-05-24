@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Metro } from '@/lib/shared';
 import MetroMap, { type MapPoint } from './../MetroMap';
 import { useMetroBoundaries } from '@/lib/useMetroBoundaries';
+import { computeTier, TIERS } from '@/lib/tiers';
 
 type SearchScope = 'all' | 'country' | 'metro' | 'state' | 'county';
 
@@ -36,6 +37,7 @@ const MAX_HEIGHT = 2400; // generous ceiling; fullscreen uses viewport height in
 type FilterState = {
   selectedContinent: string;
   selectedRegion: string;
+  selectedCountry: string;
   searchTerm: string;
   searchScope: SearchScope;
 };
@@ -75,6 +77,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
   const [filters, setFilters] = useState<FilterState>({
     selectedContinent: 'All',
     selectedRegion: 'All',
+    selectedCountry: 'All',
     searchTerm: '',
     searchScope: 'all',
   });
@@ -159,6 +162,9 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     if (filters.selectedRegion !== 'All') {
       result = result.filter((m) => m.region === filters.selectedRegion);
     }
+    if (filters.selectedCountry !== 'All') {
+      result = result.filter((m) => m.country === filters.selectedCountry);
+    }
     if (filters.searchTerm) {
       const term = filters.searchTerm.toLowerCase();
       const matchesCountry = (m: Metro) => m.country.toLowerCase().includes(term);
@@ -197,10 +203,52 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           city: m.primaryCity,
           state: m.primaryState,
           country: m.country,
+          // Tier color so the map reads as a heatmap of significance: purple
+          // Global Capital -> blue Continental -> teal Major -> green Regional
+          // -> yellow Established -> orange Emerging -> grey Local. Matches
+          // the tier badges everywhere else on the site.
+          color: computeTier(m.score).accentHex,
         })),
     [filtered],
   );
-  const mapBoundary = useMetroBoundaries(mapPoints.map((p) => p.slug));
+
+  // Country list, scoped by the active continent/region selection so the
+  // dropdown stays relevant. Empty selection (continent=All, region=All)
+  // shows every country in the corpus.
+  const countryOptions = useMemo(() => {
+    let pool = metros;
+    if (filters.selectedContinent !== 'All') {
+      pool = pool.filter((m) => m.continent === filters.selectedContinent);
+    }
+    if (filters.selectedRegion !== 'All') {
+      pool = pool.filter((m) => m.region === filters.selectedRegion);
+    }
+    return Array.from(new Set(pool.map((m) => m.country))).filter(Boolean).sort();
+  }, [metros, filters.selectedContinent, filters.selectedRegion]);
+
+  // Polygon-load gating. The full corpus is roughly 4,000 metros / 50 MB of
+  // boundary geojsons. Loading all on every page open would crush slow
+  // connections and render perf even with canvas mode. We gate at a soft
+  // threshold: at or below POLYGON_AUTO_LIMIT we fetch automatically; above
+  // it the user has to opt in via the "Load polygons" toggle. Markers always
+  // render either way so the map is useful even before polygons load.
+  const POLYGON_AUTO_LIMIT = 500;
+  const [polygonOverride, setPolygonOverride] = useState(false);
+  const shouldLoadPolygons = mapPoints.length <= POLYGON_AUTO_LIMIT || polygonOverride;
+  const boundarySlugs = useMemo(
+    () => (shouldLoadPolygons ? mapPoints.map((p) => p.slug) : []),
+    [shouldLoadPolygons, mapPoints],
+  );
+  const mapBoundary = useMetroBoundaries(boundarySlugs);
+
+  // Reset the explicit override when the user narrows the filter set back
+  // under the auto-limit, so re-broadening does not silently re-trigger a
+  // 4,000-polygon fetch.
+  useEffect(() => {
+    if (polygonOverride && mapPoints.length <= POLYGON_AUTO_LIMIT) {
+      setPolygonOverride(false);
+    }
+  }, [mapPoints.length, polygonOverride]);
 
   // Resize handle: drag the bottom edge to set height. Listener attaches on
   // pointerdown and detaches on pointerup. Height clamped to [MIN, MAX].
@@ -256,6 +304,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     setFilters({
       selectedContinent: 'All',
       selectedRegion: 'All',
+      selectedCountry: 'All',
       searchTerm: '',
       searchScope: 'all',
     });
@@ -264,6 +313,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
   const activeFilterCount =
     (filters.selectedContinent !== 'All' ? 1 : 0) +
     (filters.selectedRegion !== 'All' ? 1 : 0) +
+    (filters.selectedCountry !== 'All' ? 1 : 0) +
     (filters.searchTerm ? 1 : 0);
 
   const filterBar = (
@@ -312,6 +362,52 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </div>
       </div>
 
+      {/* Country picker. Scoped by continent/region selections above.
+          Faster than typing the country name in search, and pairs with the
+          continent/region chips naturally. Selecting a country clears the
+          continent/region above to avoid conflicting filters. */}
+      <div>
+        <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          Country {filters.selectedContinent !== 'All' || filters.selectedRegion !== 'All'
+            ? <span className="text-[var(--text-dim)]">(scoped to {filters.selectedRegion !== 'All' ? filters.selectedRegion : filters.selectedContinent})</span>
+            : null}
+        </p>
+        <select
+          value={filters.selectedCountry}
+          onChange={(e) => setFilters((f) => ({
+            ...f,
+            selectedCountry: e.target.value,
+            // Selecting a country clears continent/region so the row count
+            // narrows monotonically rather than producing empty intersections.
+            selectedContinent: e.target.value !== 'All' ? 'All' : f.selectedContinent,
+            selectedRegion: e.target.value !== 'All' ? 'All' : f.selectedRegion,
+          }))}
+          className="w-full sm:max-w-md px-3 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          aria-label="Filter by country"
+        >
+          <option value="All">All countries ({countryOptions.length.toLocaleString()})</option>
+          {countryOptions.map((c) => (
+            <option key={c} value={c}>{c}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Tier legend. Mirrors the marker color per tier so the map reads as
+          a heatmap of significance. Not interactive - the same continent /
+          region / country filters drive what is visible. */}
+      <div>
+        <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Tier color</p>
+        <div className="flex flex-wrap gap-3 text-xs">
+          {TIERS.map((t) => (
+            <span key={t.slug} className="inline-flex items-center gap-1.5">
+              <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: t.accentHex, border: '1px solid rgba(255,255,255,0.15)' }} />
+              <span className="text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{t.name}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* Search row */}
       <div className="flex flex-col sm:flex-row gap-2">
         <select
@@ -346,7 +442,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
             <h1 className="text-2xl font-bold" style={{ color: 'var(--accent)' }}>Expandable Map</h1>
             <p className="text-sm text-[var(--text-muted)] mt-1">
               {filtered.length.toLocaleString()} metro{filtered.length === 1 ? '' : 's'} match the current filters.
-              Drag the bottom edge to resize. Filters and viewport persist.
+              Drag the bottom edge to resize. Filters and viewport persist. Polygons auto-load when the filtered set is at or below {POLYGON_AUTO_LIMIT}; markers always show.
             </p>
           </div>
           <div className="flex gap-2">
@@ -392,7 +488,23 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           initialCenter={viewport?.center}
           initialZoom={viewport?.zoom}
           onViewportChange={handleViewportChange}
+          preferCanvas
         />
+        {/* Polygon-load banner. Sits above the map in the top-center, only
+            when the filtered set is too large to auto-load polygons. Clicking
+            opts in for this filter state; markers are unaffected either way. */}
+        {!shouldLoadPolygons ? (
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[1000] px-4 py-2 rounded-md text-xs font-medium border bg-[var(--bg-card)] border-[var(--border)] shadow-lg flex items-center gap-3"
+               style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+            <span className="text-[var(--text-muted)]">
+              Showing markers only ({mapPoints.length.toLocaleString()} metros). Polygons auto-load at &le; {POLYGON_AUTO_LIMIT}.
+            </span>
+            <button
+              onClick={() => setPolygonOverride(true)}
+              className="text-[var(--accent)] hover:underline"
+            >Load polygons</button>
+          </div>
+        ) : null}
         {/* Fullscreen overlays: floating filter panel + exit button */}
         {size.fullscreen ? (
           <>

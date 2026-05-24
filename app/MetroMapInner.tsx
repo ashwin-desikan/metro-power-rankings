@@ -185,6 +185,7 @@ export default function MetroMapInner({
   initialCenter,
   initialZoom,
   onViewportChange,
+  preferCanvas,
 }: {
   points: MapPoint[];
   showConnections: boolean;
@@ -212,6 +213,10 @@ export default function MetroMapInner({
   initialZoom?: number;
   // Optional callback fired on every moveend / zoomend.
   onViewportChange?: (center: [number, number], zoom: number) => void;
+  // Force canvas rendering on MapContainer. Defaults to the
+  // interactiveFeatures-driven value so existing callers keep their
+  // current behavior unchanged.
+  preferCanvas?: boolean;
 }) {
   const router = useRouter();
   const single = points.length === 1;
@@ -265,7 +270,7 @@ export default function MetroMapInner({
       scrollWheelZoom={false}
       attributionControl={false}
       zoomControl={false}
-      preferCanvas={interactiveFeatures}
+      preferCanvas={preferCanvas ?? interactiveFeatures}
       worldCopyJump={true}
     >
       {/* Default zoom (top-left) and attribution (bottom-right) overlap

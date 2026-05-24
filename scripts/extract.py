@@ -70,10 +70,40 @@ def safe_str(val):
     return str(val).strip()
 
 
+def build_country_continent_map(wb):
+    """Canonical country -> continent map from the Country Populations sheet.
+
+    Country Populations has duplicate rows for some countries (UK has 16,
+    France 12, etc.) corresponding to constituent countries / overseas
+    territories. The FIRST row per country is the sovereign-state summary
+    and carries the right continent (col 13). Subsequent rows for
+    constituents may have stale or contradictory continent values, so we
+    take only the first occurrence per country name.
+    """
+    ws = wb["Country Populations"]
+    out = {}
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if not row or not row[0]:
+            continue
+        country = row[0]
+        if country in out:
+            continue  # first-occurrence wins
+        cont = row[13] if len(row) > 13 else None
+        if cont:
+            out[country] = str(cont).strip()
+    return out
+
+
 def extract_metros(wb):
     """Extract main metro data from the Metro Areas sheet."""
     ws = wb["Metro Areas"]
     metros = []
+    # Derive continent from the country join rather than trusting Metro
+    # Areas col 41, which has hundreds of stale or wrong values (e.g.
+    # Mangaluru / International Falls / Shima tagged 'Europe'). The
+    # workbook column stays as a fallback when the country has no
+    # continent in Country Populations.
+    country_continent = build_country_continent_map(wb)
 
     for row in ws.iter_rows(min_row=4, values_only=True):
         v = list(row)
@@ -108,7 +138,7 @@ def extract_metros(wb):
             'state3': safe_str(v[8]),
             'pop': pop,
             'region': region,
-            'continent': safe_str(v[41]),
+            'continent': country_continent.get(safe_str(v[0])) or safe_str(v[41]),
             'score': round(score, 1),
             'lat': lat,
             'lon': lon,
