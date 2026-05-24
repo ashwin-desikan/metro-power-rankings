@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "West Bank and Gaza now render after a cross-border join-key fix; Israeli West Bank settlements union into the Jerusalem metro polygon via the same route.",
       "Dozens of newly resolved jurisdictions: Bermuda, Turks and Caicos, BVI, Gibraltar, Anguilla, Saint Helena, Montserrat, Falklands, Macau, Guam, US Virgin Islands, Jersey, Guernsey, and Åland.",
       "Mass mid-size country wiring: Madagascar, Mozambique, Mongolia, Kazakhstan, Tanzania, Morocco, Slovakia, Czech Republic, Lithuania, Slovenia, Iceland, and roughly thirty-five more newly resolve to polygons.",
-      "New Expandable Map at /expandable-map: country dropdown plus continent and region chips, tier-colored markers, resizable and fullscreen canvas, persistent state, and on-demand polygon loading.",
+      "Expandable Map polished: Top 25/50/100 view, filterable tier legend, tier-colored polygons and markers, country picker, auto-fit on filter change, working fullscreen, and all polygons load (no cap).",
     ],
   },
   {

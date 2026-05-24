@@ -65,7 +65,7 @@ export default function MetroMap({
   // the points alone. `unknown` keeps the type loose so server components
   // can pass through whatever JSON.parse returns.
   boundary?: unknown;
-  height?: number;
+  height?: number | string;
   // When true, the boundary is treated as a multi-feature country layer:
   // polygons are colored by tier, hover shows a tooltip per metro, and
   // clicking a polygon routes to that metro's detail page.

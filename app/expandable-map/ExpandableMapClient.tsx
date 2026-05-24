@@ -24,20 +24,33 @@ const REGIONS = [
   'Latin America', 'MENA', 'Oceania', 'South Asia', 'Africa', 'Eurasia',
 ];
 
+type ViewLimit = 'all' | 'top25' | 'top50' | 'top100';
+const VIEW_LIMITS: { id: ViewLimit; label: string; cap: number | null }[] = [
+  { id: 'all', label: 'All', cap: null },
+  { id: 'top25', label: 'Top 25', cap: 25 },
+  { id: 'top50', label: 'Top 50', cap: 50 },
+  { id: 'top100', label: 'Top 100', cap: 100 },
+];
+
+const ALL_TIER_SLUGS = TIERS.map((t) => t.slug);
+
 // localStorage keys. Versioned so future schema changes can invalidate
-// older payloads cleanly via key bump.
-const LS_FILTERS = 'expandable-map.filters.v1';
+// older payloads cleanly via key bump. v2 bumped over v1 because we added
+// selectedTiers and view to the persisted filter shape.
+const LS_FILTERS = 'expandable-map.filters.v2';
 const LS_SIZE = 'expandable-map.size.v1';
 const LS_VIEWPORT = 'expandable-map.viewport.v1';
 
 const MIN_HEIGHT = 320;
 const DEFAULT_HEIGHT = 640;
-const MAX_HEIGHT = 2400; // generous ceiling; fullscreen uses viewport height instead
+const MAX_HEIGHT = 2400;
 
 type FilterState = {
   selectedContinent: string;
   selectedRegion: string;
   selectedCountry: string;
+  selectedTiers: string[]; // tier slugs that are visible
+  view: ViewLimit;
   searchTerm: string;
   searchScope: SearchScope;
 };
@@ -50,6 +63,16 @@ type SizeState = {
 type ViewportState = {
   center: [number, number];
   zoom: number;
+};
+
+const DEFAULT_FILTERS: FilterState = {
+  selectedContinent: 'All',
+  selectedRegion: 'All',
+  selectedCountry: 'All',
+  selectedTiers: ALL_TIER_SLUGS,
+  view: 'all',
+  searchTerm: '',
+  searchScope: 'all',
 };
 
 function readLS<T>(key: string, fallback: T): T {
@@ -74,78 +97,65 @@ function writeLS<T>(key: string, value: T) {
 
 export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
   // Filters
-  const [filters, setFilters] = useState<FilterState>({
-    selectedContinent: 'All',
-    selectedRegion: 'All',
-    selectedCountry: 'All',
-    searchTerm: '',
-    searchScope: 'all',
-  });
+  const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTERS);
 
-  // Size: a numeric height plus a fullscreen toggle. When fullscreen, we
-  // render the map at calc(100vh - <header offset>) instead of `height` px.
+  // Size
   const [size, setSize] = useState<SizeState>({
     height: DEFAULT_HEIGHT,
     fullscreen: false,
   });
 
-  // Viewport. `null` until the user has actually panned/zoomed; until then
-  // the map runs default fitBounds behavior.
+  // Viewport. null = use bounds-fit. Non-null = use these center/zoom (on
+  // first mount only, until the next filter change clears it back to null).
   const [viewport, setViewport] = useState<ViewportState | null>(null);
 
-  // On mount, hydrate from localStorage. Doing this in an effect rather than
-  // useState initializer avoids SSR hydration mismatches.
+  // Hydrate from localStorage on mount
   const hydratedRef = useRef(false);
   useEffect(() => {
-    setFilters(readLS<FilterState>(LS_FILTERS, filters));
-    setSize(readLS<SizeState>(LS_SIZE, size));
+    setFilters(readLS<FilterState>(LS_FILTERS, DEFAULT_FILTERS));
+    setSize(readLS<SizeState>(LS_SIZE, { height: DEFAULT_HEIGHT, fullscreen: false }));
     const vp = typeof window !== 'undefined' ? window.localStorage.getItem(LS_VIEWPORT) : null;
     if (vp) {
       try {
         const parsed = JSON.parse(vp) as ViewportState;
-        if (
-          Array.isArray(parsed.center) &&
-          parsed.center.length === 2 &&
-          typeof parsed.zoom === 'number'
-        ) {
+        if (Array.isArray(parsed.center) && parsed.center.length === 2 && typeof parsed.zoom === 'number') {
           setViewport(parsed);
         }
-      } catch {
-        // ignore
-      }
+      } catch {}
     }
     hydratedRef.current = true;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Persist filter changes
-  useEffect(() => {
-    if (!hydratedRef.current) return;
-    writeLS(LS_FILTERS, filters);
-  }, [filters]);
+  useEffect(() => { if (hydratedRef.current) writeLS(LS_FILTERS, filters); }, [filters]);
+  useEffect(() => { if (hydratedRef.current) writeLS(LS_SIZE, size); }, [size]);
 
-  // Persist size changes
-  useEffect(() => {
-    if (!hydratedRef.current) return;
-    writeLS(LS_SIZE, size);
-  }, [size]);
+  // Filter-aware setFilters helper. Every filter mutation should go through
+  // this so the saved viewport is cleared and the map re-fits to the new
+  // points. The user's pan/zoom is preserved until the next filter change.
+  const updateFilters = useCallback((mut: (f: FilterState) => FilterState) => {
+    setFilters((f) => mut(f));
+    setViewport(null);
+    if (typeof window !== 'undefined') {
+      try { window.localStorage.removeItem(LS_VIEWPORT); } catch {}
+    }
+  }, []);
 
-  // Viewport persist with light throttling (only write at most every 250ms
-  // on the trailing edge so a vigorous drag does not pummel localStorage).
+  // Viewport persistence (debounced trailing 250ms). Set only by user pan/zoom
+  // events that fire after the initial render. We don't try to distinguish
+  // programmatic refits from user moves; the updateFilters helper above
+  // resets viewport at the moment of user filter intent, which is the
+  // moment that matters.
   const viewportWriteTimer = useRef<number | null>(null);
   const handleViewportChange = useCallback((center: [number, number], zoom: number) => {
     setViewport({ center, zoom });
     if (!hydratedRef.current) return;
-    if (viewportWriteTimer.current !== null) {
-      window.clearTimeout(viewportWriteTimer.current);
-    }
+    if (viewportWriteTimer.current !== null) window.clearTimeout(viewportWriteTimer.current);
     viewportWriteTimer.current = window.setTimeout(() => {
       writeLS(LS_VIEWPORT, { center, zoom });
     }, 250);
   }, []);
 
-  // Clear viewport (force refit on next render) — used by the "Reset view"
-  // button. Clears both state and localStorage so a reload won't restore it.
+  // Reset viewport explicitly
   const resetViewport = useCallback(() => {
     setViewport(null);
     if (typeof window !== 'undefined') {
@@ -153,7 +163,9 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     }
   }, []);
 
-  // Filter computation
+  // Filter computation. Order: continent / region / country / tier / search /
+  // view-cap. Each filter is independent so the user can stack them. View
+  // cap applies AFTER all other filters so "Top 25 of Europe" works.
   const filtered = useMemo(() => {
     let result = metros;
     if (filters.selectedContinent !== 'All') {
@@ -164,6 +176,10 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     }
     if (filters.selectedCountry !== 'All') {
       result = result.filter((m) => m.country === filters.selectedCountry);
+    }
+    if (filters.selectedTiers.length < TIERS.length) {
+      const visible = new Set(filters.selectedTiers);
+      result = result.filter((m) => visible.has(computeTier(m.score).slug));
     }
     if (filters.searchTerm) {
       const term = filters.searchTerm.toLowerCase();
@@ -184,8 +200,25 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         return matchesCountry(m) || matchesMetro(m) || matchesState(m) || matchesCounty(m);
       });
     }
+    // View cap (Top 25 / 50 / 100). Score-descending order already comes from
+    // metros.json. Apply slice last so search/filter narrow first.
+    const limit = VIEW_LIMITS.find((v) => v.id === filters.view)?.cap;
+    if (limit !== undefined && limit !== null) {
+      result = result.slice(0, limit);
+    }
     return result;
   }, [metros, filters]);
+
+  // Per-metro tier lookup used both for marker color and for enriching
+  // polygon features with tierSlug so MetroMapInner can color them.
+  const slugTier = useMemo(() => {
+    const m = new Map<string, { slug: string; name: string; accentHex: string; rank: number }>();
+    metros.forEach((metro, i) => {
+      const t = computeTier(metro.score);
+      m.set(metro.slug, { slug: t.slug, name: t.name, accentHex: t.accentHex, rank: i + 1 });
+    });
+    return m;
+  }, [metros]);
 
   const mapPoints = useMemo<MapPoint[]>(
     () =>
@@ -203,18 +236,12 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           city: m.primaryCity,
           state: m.primaryState,
           country: m.country,
-          // Tier color so the map reads as a heatmap of significance: purple
-          // Global Capital -> blue Continental -> teal Major -> green Regional
-          // -> yellow Established -> orange Emerging -> grey Local. Matches
-          // the tier badges everywhere else on the site.
-          color: computeTier(m.score).accentHex,
+          color: slugTier.get(m.slug)?.accentHex,
         })),
-    [filtered],
+    [filtered, slugTier],
   );
 
-  // Country list, scoped by the active continent/region selection so the
-  // dropdown stays relevant. Empty selection (continent=All, region=All)
-  // shows every country in the corpus.
+  // Country dropdown options - scoped by active continent/region
   const countryOptions = useMemo(() => {
     let pool = metros;
     if (filters.selectedContinent !== 'All') {
@@ -226,37 +253,42 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     return Array.from(new Set(pool.map((m) => m.country))).filter(Boolean).sort();
   }, [metros, filters.selectedContinent, filters.selectedRegion]);
 
-  // Polygon-load gating. The full corpus is roughly 4,000 metros / 50 MB of
-  // boundary geojsons. Loading all on every page open would crush slow
-  // connections and render perf even with canvas mode. We gate at a soft
-  // threshold: at or below POLYGON_AUTO_LIMIT we fetch automatically; above
-  // it the user has to opt in via the "Load polygons" toggle. Markers always
-  // render either way so the map is useful even before polygons load.
-  const POLYGON_AUTO_LIMIT = 500;
-  const [polygonOverride, setPolygonOverride] = useState(false);
-  const shouldLoadPolygons = mapPoints.length <= POLYGON_AUTO_LIMIT || polygonOverride;
-  const boundarySlugs = useMemo(
-    () => (shouldLoadPolygons ? mapPoints.map((p) => p.slug) : []),
-    [shouldLoadPolygons, mapPoints],
-  );
-  const mapBoundary = useMetroBoundaries(boundarySlugs);
+  // Polygons load for ALL filtered metros - no auto-load cap. Canvas mode
+  // on MetroMap keeps render perf acceptable past 1,000 features. At the
+  // unfiltered global level (~4,000 metros) initial fetch is heavy but
+  // subsequent navigation is cached by the boundary loader.
+  const boundarySlugs = useMemo(() => mapPoints.map((p) => p.slug), [mapPoints]);
+  const rawBoundary = useMetroBoundaries(boundarySlugs);
 
-  // Reset the explicit override when the user narrows the filter set back
-  // under the auto-limit, so re-broadening does not silently re-trigger a
-  // 4,000-polygon fetch.
-  useEffect(() => {
-    if (polygonOverride && mapPoints.length <= POLYGON_AUTO_LIMIT) {
-      setPolygonOverride(false);
-    }
-  }, [mapPoints.length, polygonOverride]);
+  // Enrich boundary features with tier props so MetroMapInner tier-styles
+  // each polygon. Each feature's slug is read from properties.slug (set by
+  // the boundary builder) and mapped to the tier color via slugTier above.
+  const tieredBoundary = useMemo(() => {
+    if (!rawBoundary) return undefined;
+    return {
+      ...rawBoundary,
+      features: rawBoundary.features.map((f) => {
+        const slug = (f.properties?.slug as string | undefined) ?? '';
+        const t = slugTier.get(slug);
+        return {
+          ...f,
+          properties: {
+            ...f.properties,
+            tierSlug: t?.slug,
+            tier: t?.name,
+            rank: t?.rank,
+          },
+        };
+      }),
+    };
+  }, [rawBoundary, slugTier]);
 
-  // Resize handle: drag the bottom edge to set height. Listener attaches on
-  // pointerdown and detaches on pointerup. Height clamped to [MIN, MAX].
+  // Resize handle
   const dragging = useRef(false);
   const dragStartY = useRef(0);
   const dragStartHeight = useRef(DEFAULT_HEIGHT);
   const onResizeDown = (e: React.PointerEvent) => {
-    if (size.fullscreen) return; // resize disabled in fullscreen
+    if (size.fullscreen) return;
     dragging.current = true;
     dragStartY.current = e.clientY;
     dragStartHeight.current = size.height;
@@ -278,7 +310,17 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     };
   }, []);
 
-  // '/' keystroke focuses search input
+  // Escape exits fullscreen
+  useEffect(() => {
+    if (!size.fullscreen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSize((s) => ({ ...s, fullscreen: false }));
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [size.fullscreen]);
+
+  // '/' focuses search
   const searchInputRef = useRef<HTMLInputElement | null>(null);
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
@@ -292,32 +334,49 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // Effective render height: viewport-based when fullscreen, fixed otherwise.
-  // "calc(100vh - 96px)" leaves room for the site header (h-16 = 64px) plus
-  // a little breathing room. The filter bar is rendered above the map in
-  // non-fullscreen mode; in fullscreen the filter bar floats as an overlay
-  // anchored to the top-left of the map container.
-  const mapHeight = size.fullscreen ? '100vh' : `${size.height}px`;
-
   // Reset filters
-  const resetFilters = () => {
-    setFilters({
-      selectedContinent: 'All',
-      selectedRegion: 'All',
-      selectedCountry: 'All',
-      searchTerm: '',
-      searchScope: 'all',
-    });
-  };
+  const resetFilters = () => updateFilters(() => DEFAULT_FILTERS);
 
   const activeFilterCount =
     (filters.selectedContinent !== 'All' ? 1 : 0) +
     (filters.selectedRegion !== 'All' ? 1 : 0) +
     (filters.selectedCountry !== 'All' ? 1 : 0) +
+    (filters.selectedTiers.length < TIERS.length ? 1 : 0) +
+    (filters.view !== 'all' ? 1 : 0) +
     (filters.searchTerm ? 1 : 0);
+
+  const toggleTier = (slug: string) => {
+    updateFilters((f) => {
+      const set = new Set(f.selectedTiers);
+      if (set.has(slug)) set.delete(slug); else set.add(slug);
+      // If the user is about to deselect the last visible tier, restore all
+      // (avoids the "empty map" trap).
+      if (set.size === 0) return { ...f, selectedTiers: ALL_TIER_SLUGS };
+      return { ...f, selectedTiers: Array.from(set) };
+    });
+  };
+  const tierAllOn = filters.selectedTiers.length === TIERS.length;
 
   const filterBar = (
     <div className="space-y-4">
+      {/* View cap (Top N) */}
+      <div>
+        <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>View</p>
+        <div className="flex flex-wrap gap-2">
+          {VIEW_LIMITS.map((v) => (
+            <button
+              key={v.id}
+              onClick={() => updateFilters((f) => ({ ...f, view: v.id }))}
+              className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                filters.view === v.id
+                  ? 'bg-[var(--accent)] text-black'
+                  : 'bg-[var(--bg-card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-[var(--text-dim)]'
+              }`}
+            >{v.label}</button>
+          ))}
+        </div>
+      </div>
+
       {/* Continent */}
       <div>
         <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Continent</p>
@@ -325,10 +384,14 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           {CONTINENTS.map((c) => (
             <button
               key={c}
-              onClick={() => setFilters((f) => ({
+              onClick={() => updateFilters((f) => ({
                 ...f,
                 selectedContinent: c,
+                // Continent and region are mutually exclusive
                 selectedRegion: c !== 'All' ? 'All' : f.selectedRegion,
+                // Picking a continent clears any country selection that may
+                // have been narrowed under a different continent
+                selectedCountry: c !== 'All' ? 'All' : f.selectedCountry,
               }))}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
                 filters.selectedContinent === c
@@ -340,17 +403,19 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </div>
       </div>
 
-      {/* Region */}
+      {/* Region — selecting clears Continent because some regions span
+          continents (Eurasia, MENA). */}
       <div>
         <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</p>
         <div className="flex flex-wrap gap-2">
           {REGIONS.map((r) => (
             <button
               key={r}
-              onClick={() => setFilters((f) => ({
+              onClick={() => updateFilters((f) => ({
                 ...f,
                 selectedRegion: r,
                 selectedContinent: r !== 'All' ? 'All' : f.selectedContinent,
+                selectedCountry: r !== 'All' ? 'All' : f.selectedCountry,
               }))}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
                 filters.selectedRegion === r
@@ -362,10 +427,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </div>
       </div>
 
-      {/* Country picker. Scoped by continent/region selections above.
-          Faster than typing the country name in search, and pairs with the
-          continent/region chips naturally. Selecting a country clears the
-          continent/region above to avoid conflicting filters. */}
+      {/* Country picker */}
       <div>
         <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
           Country {filters.selectedContinent !== 'All' || filters.selectedRegion !== 'All'
@@ -374,14 +436,21 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </p>
         <select
           value={filters.selectedCountry}
-          onChange={(e) => setFilters((f) => ({
-            ...f,
-            selectedCountry: e.target.value,
-            // Selecting a country clears continent/region so the row count
-            // narrows monotonically rather than producing empty intersections.
-            selectedContinent: e.target.value !== 'All' ? 'All' : f.selectedContinent,
-            selectedRegion: e.target.value !== 'All' ? 'All' : f.selectedRegion,
-          }))}
+          onChange={(e) => {
+            const next = e.target.value;
+            // Selecting "All" returns to global view: clear continent/region
+            // too so the map snaps back to fit the entire corpus.
+            if (next === 'All') {
+              updateFilters((f) => ({ ...f, selectedCountry: 'All', selectedContinent: 'All', selectedRegion: 'All' }));
+            } else {
+              updateFilters((f) => ({
+                ...f,
+                selectedCountry: next,
+                selectedContinent: 'All',
+                selectedRegion: 'All',
+              }));
+            }
+          }}
           className="w-full sm:max-w-md px-3 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
           aria-label="Filter by country"
@@ -393,18 +462,38 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </select>
       </div>
 
-      {/* Tier legend. Mirrors the marker color per tier so the map reads as
-          a heatmap of significance. Not interactive - the same continent /
-          region / country filters drive what is visible. */}
+      {/* Tier legend (filterable) */}
       <div>
-        <p className="text-xs text-[var(--text-muted)] mb-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Tier color</p>
-        <div className="flex flex-wrap gap-3 text-xs">
-          {TIERS.map((t) => (
-            <span key={t.slug} className="inline-flex items-center gap-1.5">
-              <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: t.accentHex, border: '1px solid rgba(255,255,255,0.15)' }} />
-              <span className="text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{t.name}</span>
-            </span>
-          ))}
+        <div className="flex items-center justify-between mb-2 gap-2">
+          <p className="text-xs text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Tier</p>
+          {!tierAllOn ? (
+            <button
+              onClick={() => updateFilters((f) => ({ ...f, selectedTiers: ALL_TIER_SLUGS }))}
+              className="text-xs text-[var(--accent)] hover:underline"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >Show all tiers</button>
+          ) : null}
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {TIERS.map((t) => {
+            const on = filters.selectedTiers.includes(t.slug);
+            return (
+              <button
+                key={t.slug}
+                onClick={() => toggleTier(t.slug)}
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border transition-all ${
+                  on
+                    ? 'border-[var(--text-dim)] text-[var(--text)]'
+                    : 'border-[var(--border)] text-[var(--text-dim)] opacity-50 hover:opacity-90'
+                }`}
+                style={{ fontFamily: "'JetBrains Mono', monospace", backgroundColor: on ? 'var(--bg-card)' : 'transparent' }}
+                aria-pressed={on}
+              >
+                <span className="inline-block w-3 h-3 rounded-full" style={{ backgroundColor: t.accentHex, border: '1px solid rgba(255,255,255,0.15)' }} />
+                {t.name}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -412,7 +501,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
       <div className="flex flex-col sm:flex-row gap-2">
         <select
           value={filters.searchScope}
-          onChange={(e) => setFilters((f) => ({ ...f, searchScope: e.target.value as SearchScope }))}
+          onChange={(e) => updateFilters((f) => ({ ...f, searchScope: e.target.value as SearchScope }))}
           className="px-3 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] sm:w-56"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
           aria-label="Search scope"
@@ -426,7 +515,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           type="text"
           placeholder="Search metros…  (press / to focus)"
           value={filters.searchTerm}
-          onChange={(e) => setFilters((f) => ({ ...f, searchTerm: e.target.value }))}
+          onChange={(e) => updateFilters((f) => ({ ...f, searchTerm: e.target.value }))}
           className="flex-1 px-3 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
         />
       </div>
@@ -434,7 +523,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
   );
 
   return (
-    <div className={size.fullscreen ? 'fixed inset-0 z-50 bg-[var(--bg)]' : 'space-y-4'}>
+    <div className={size.fullscreen ? 'fixed inset-0 z-[100] bg-[var(--bg)] flex flex-col' : 'space-y-4'}>
       {/* Header / control bar */}
       {!size.fullscreen ? (
         <div className="flex items-baseline justify-between gap-3 flex-wrap">
@@ -442,7 +531,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
             <h1 className="text-2xl font-bold" style={{ color: 'var(--accent)' }}>Expandable Map</h1>
             <p className="text-sm text-[var(--text-muted)] mt-1">
               {filtered.length.toLocaleString()} metro{filtered.length === 1 ? '' : 's'} match the current filters.
-              Drag the bottom edge to resize. Filters and viewport persist. Polygons auto-load when the filtered set is at or below {POLYGON_AUTO_LIMIT}; markers always show.
+              Drag the bottom edge to resize. Filters, viewport, and tier visibility persist across sessions.
             </p>
           </div>
           <div className="flex gap-2">
@@ -469,52 +558,45 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
         </div>
       ) : null}
 
-      {/* Filter bar (always above the map in non-fullscreen; floating panel in fullscreen) */}
+      {/* Filter bar (non-fullscreen) */}
       {!size.fullscreen ? (
         <div className="rounded-lg border border-[var(--border)] bg-[var(--bg-card)] p-4">
           {filterBar}
         </div>
       ) : null}
 
-      {/* Map container */}
-      <div className="relative" style={{ height: mapHeight }}>
+      {/* Map container. In fullscreen mode it must flex-grow to fill the
+          remaining height of the fixed-position parent; otherwise it uses
+          the resizable pixel height. */}
+      <div
+        className={size.fullscreen ? 'relative flex-1 min-h-0' : 'relative'}
+        style={size.fullscreen ? undefined : { height: `${size.height}px` }}
+      >
         <MetroMap
           points={mapPoints}
           showConnections={false}
-          height={size.fullscreen ? 0 : size.height}
-          refitOnChange={!viewport}
+          height={size.fullscreen ? '100%' : size.height}
+          refitOnChange
           clickToNavigate
-          boundary={mapBoundary ?? undefined}
+          interactiveFeatures
+          boundary={tieredBoundary ?? undefined}
           initialCenter={viewport?.center}
           initialZoom={viewport?.zoom}
           onViewportChange={handleViewportChange}
           preferCanvas
         />
-        {/* Polygon-load banner. Sits above the map in the top-center, only
-            when the filtered set is too large to auto-load polygons. Clicking
-            opts in for this filter state; markers are unaffected either way. */}
-        {!shouldLoadPolygons ? (
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[1000] px-4 py-2 rounded-md text-xs font-medium border bg-[var(--bg-card)] border-[var(--border)] shadow-lg flex items-center gap-3"
-               style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-            <span className="text-[var(--text-muted)]">
-              Showing markers only ({mapPoints.length.toLocaleString()} metros). Polygons auto-load at &le; {POLYGON_AUTO_LIMIT}.
-            </span>
-            <button
-              onClick={() => setPolygonOverride(true)}
-              className="text-[var(--accent)] hover:underline"
-            >Load polygons</button>
-          </div>
-        ) : null}
-        {/* Fullscreen overlays: floating filter panel + exit button */}
+
+        {/* Fullscreen overlays */}
         {size.fullscreen ? (
           <>
             <button
               onClick={() => setSize((s) => ({ ...s, fullscreen: false }))}
               className="absolute top-3 right-3 z-[1000] px-3 py-1.5 rounded-md text-xs font-medium border bg-[var(--bg-card)] border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors shadow-lg"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              title="Esc"
             >Exit fullscreen</button>
-            <details className="absolute top-3 left-3 z-[1000] w-[min(360px,calc(100vw-2rem))] rounded-lg border bg-[var(--bg-card)] border-[var(--border)] shadow-lg">
-              <summary className="cursor-pointer select-none px-4 py-2 text-sm font-semibold flex items-center justify-between">
+            <details className="absolute top-3 left-3 z-[1000] w-[min(420px,calc(100vw-2rem))] max-h-[calc(100vh-2rem)] overflow-auto rounded-lg border bg-[var(--bg-card)] border-[var(--border)] shadow-lg" open>
+              <summary className="cursor-pointer select-none px-4 py-2 text-sm font-semibold flex items-center justify-between sticky top-0 bg-[var(--bg-card)]">
                 <span>Filters</span>
                 <span className="text-xs text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                   {filtered.length.toLocaleString()} matched
@@ -525,7 +607,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
           </>
         ) : null}
 
-        {/* Resize handle (only in non-fullscreen) */}
+        {/* Resize handle */}
         {!size.fullscreen ? (
           <div
             onPointerDown={onResizeDown}
@@ -542,7 +624,7 @@ export default function ExpandableMapClient({ metros }: { metros: Metro[] }) {
       {!size.fullscreen ? (
         <div className="text-xs text-[var(--text-muted)] flex items-center justify-between flex-wrap gap-2 pt-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
           <span>
-            Map height: {size.height}px · Click a metro to open its detail page · Filters and viewport persist across sessions
+            Map height: {size.height}px · Click a marker or polygon to open a metro · Filter changes auto-fit; pan/zoom is saved across sessions
           </span>
           <Link href="/" className="hover:text-[var(--accent)] transition-colors">
             ← Back to rankings

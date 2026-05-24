@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, Polyline, GeoJSON, useMap, LayerGroup, ZoomControl, AttributionControl } from 'react-leaflet';
 import L from 'leaflet';
@@ -75,10 +75,15 @@ function FitToBoundary({ boundary }: { boundary: unknown }) {
 // home-page rankings map where the table filter set is reactive. A stable
 // key derived from the slug list keeps the effect dep array shallow so
 // React doesn't re-run on every parent render.
-function FitToPoints({ points }: { points: MapPoint[] }) {
+function FitToPoints({ points, skipFirst = false }: { points: MapPoint[]; skipFirst?: boolean }) {
   const map = useMap();
   const key = points.map((p) => p.slug).join('|');
+  const firstMount = useRef(true);
   useEffect(() => {
+    if (firstMount.current) {
+      firstMount.current = false;
+      if (skipFirst) return; // honor caller-provided initialCenter on mount
+    }
     if (points.length === 0) return;
     if (points.length === 1) {
       map.setView([points[0].lat, points[0].lon], 9);
@@ -382,7 +387,7 @@ export default function MetroMapInner({
           })}
         </LayerGroup>
       ) : null}
-      {refitOnChange && !hasInitialView ? <FitToPoints points={points} /> : null}
+      {refitOnChange ? <FitToPoints points={points} skipFirst={hasInitialView} /> : null}
       {onViewportChange ? <ViewportTracker onChange={onViewportChange} /> : null}
       {points.map((p) => {
         const richMeta = [p.city, p.state, p.country].filter(Boolean).join(' · ');
