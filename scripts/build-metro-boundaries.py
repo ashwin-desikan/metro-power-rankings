@@ -1631,7 +1631,7 @@ def main():
     # raw size roughly 5x; gzip lands around 3 MB at full corpus.
     print()
     print("[*] Emitting combined + simplified boundaries.json ...")
-    combined_path = OUT_DIR / "boundaries-simplified.json"
+    combined_path = OUT_DIR.parent / "boundaries-simplified.json"
     SIMPLIFY_TOL = 0.002
     combined_features = []
     combined_written = 0
