@@ -112,6 +112,15 @@ import json
 import os
 import sys
 import time
+
+# Windows console default is cp1252, which cannot encode Cyrillic, Greek,
+# Arabic, or many accented Latin characters that appear in Overture primary
+# names and the workbook's diagnostic rows (unmatched-members summary, etc).
+# Reconfigure stdout/stderr to utf-8 with errors=replace so prints never
+# crash mid-summary on a non-encodable glyph. Python 3.7+ has reconfigure().
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 from collections import defaultdict
 from math import asin, cos, radians, sin, sqrt
 from pathlib import Path
@@ -349,6 +358,21 @@ COUNTRY_PARQUET_MAP = {
     "Turkmenistan":                   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-TM.parquet",
     "Uzbekistan":                     r"C:\Users\ashwi\Desktop\Projects\MapData\overture-UZ.parquet",
     "Wallis and Futuna":              r"C:\Users\ashwi\Desktop\Projects\MapData\overture-WF.parquet",
+
+    # 2026-05-24 evening expansion - workbook fills PENDING (matcher run required):
+    "Albania":                       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AL.parquet",
+    "Armenia":                       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AM.parquet",
+    "Aruba":                         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-AW.parquet",
+    "Bolivia":                       r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BO.parquet",
+    "Bosnia-Herzegovina":            r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BA.parquet",
+    "Cameroon":                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CM.parquet",
+    "Congo":                         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CG.parquet",
+    "Cyprus":                        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CY.parquet",
+    "Ethiopia":                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ET.parquet",
+    "North Korea":                   r"C:\Users\ashwi\Desktop\Projects\MapData\overture-KP.parquet",
+    "Yemen":                         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-YE.parquet",
+    "Zambia":                        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ZM.parquet",
+    "Zimbabwe":                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ZW.parquet",
 
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
@@ -598,6 +622,21 @@ COUNTRY_SHEET_MAP = {
     "Uzbekistan":                     "counties",
     "Wallis and Futuna":              "counties",
 
+    # 2026-05-24 evening expansion - workbook fills PENDING (matcher run required):
+    "Albania":                       "counties",
+    "Armenia":                       "counties",
+    "Aruba":                         "counties",
+    "Bolivia":                       "counties",
+    "Bosnia-Herzegovina":            "counties",
+    "Cameroon":                      "counties",
+    "Congo":                         "counties",
+    "Cyprus":                        "counties",
+    "Ethiopia":                      "counties",
+    "North Korea":                   "counties",
+    "Yemen":                         "counties",
+    "Zambia":                        "counties",
+    "Zimbabwe":                      "counties",
+
 }
 
 COUNTRY_TO_ISO = {
@@ -832,6 +871,21 @@ COUNTRY_TO_ISO = {
     "Uzbekistan":                     "UZ",
     "Wallis and Futuna":              "WF",
 
+
+    # 2026-05-24 evening expansion - workbook fills PENDING (matcher run required):
+    "Albania":                       "AL",
+    "Armenia":                       "AM",
+    "Aruba":                         "AW",
+    "Bolivia":                       "BO",
+    "Bosnia-Herzegovina":            "BA",
+    "Cameroon":                      "CM",
+    "Congo":                         "CG",
+    "Cyprus":                        "CY",
+    "Ethiopia":                      "ET",
+    "North Korea":                   "KP",
+    "Yemen":                         "YE",
+    "Zambia":                        "ZM",
+    "Zimbabwe":                      "ZW",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
@@ -985,6 +1039,13 @@ REGIONLESS_COUNTRIES = {
     "Madagascar",
     "New Caledonia",
     "Tahiti",
+    # 2026-05-24 evening Bucket A: Cyprus and Aruba both have universal
+    # region=None on every matcher-suggested row. Cyprus's locality-subtype
+    # fills (Greek-script primary names) carry no ISO 3166-2 subdivision in
+    # Overture; Aruba is a single-territory dependency. Without REGIONLESS,
+    # every fill gets filtered as incomplete and zero polygons render.
+    "Cyprus",
+    "Aruba",
 }
 
 SHEET_SCHEMAS = {

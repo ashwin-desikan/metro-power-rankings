@@ -19,6 +19,15 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-24",
+    headline: "Eight more countries resolve to polygons, plus pre-push coverage check",
+    items: [
+      "Albania, Armenia, Aruba, Bolivia, Bosnia-Herzegovina, Cameroon, Cyprus, and Zambia newly resolve to administrative polygons across the home, country, and Expandable Map views.",
+      "Boundary build pipeline gains a public-data sanity check that flags newly-keyed countries producing zero polygons pre-push rather than post-deploy.",
+      "Home rankings overlay now uses the same combined-boundaries fetch as the Expandable Map, dropping the per-page request burst that was tripping edge protections.",
+    ],
+  },
+  {
+    date: "2026-05-24",
     headline: "Mass boundary expansion across dependencies, territories, and small states",
     items: [
       "West Bank and Gaza now render after a cross-border join-key fix; Israeli West Bank settlements union into the Jerusalem metro polygon via the same route.",

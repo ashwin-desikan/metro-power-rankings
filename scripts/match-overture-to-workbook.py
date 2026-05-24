@@ -227,6 +227,10 @@ COUNTRY_ROUTE = {
     "Suriname":                                     ("Counties", "SR"),
     "Tokelau":                                      ("Counties", "TK"),
     "Tuvalu":                                       ("Counties", "TV"),
+    # 2026-05-24 evening expansion (Bucket A tail):
+    "Yemen":                                        ("Counties", "YE"),
+    "Zambia":                                       ("Counties", "ZM"),
+    "Zimbabwe":                                     ("Counties", "ZW"),
 }
 
 COUNTIES_COLS = {

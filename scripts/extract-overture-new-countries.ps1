@@ -2,7 +2,9 @@
 # into the boundary builder.
 #
 # Countries: Ireland, China, Austria, Switzerland, Belgium, Brazil, Russia,
-#            Australia, South Korea (nine total).
+#            Australia, South Korea, plus Bucket A 2026-05-24 evening:
+#            Albania, Armenia, Aruba, Bolivia, Bosnia-Herzegovina, Cameroon,
+#            Congo, Cyprus, Ethiopia, North Korea, Yemen, Zambia, Zimbabwe.
 #
 # Why this exists
 #   Each country added to COUNTRY_PARQUET_MAP in build-metro-boundaries.py
@@ -39,7 +41,7 @@ $ErrorActionPreference = "Stop"
 $projectRoot = Split-Path -Parent $PSScriptRoot
 Set-Location $projectRoot
 
-$env:OVERTURE_EXTRACT_COUNTRIES = "IE,CN,AT,CH,BE,BR,RU,AU,KR"
+$env:OVERTURE_EXTRACT_COUNTRIES = "IE,CN,AT,CH,BE,BR,RU,AU,KR,AL,AM,AW,BA,BO,CG,CM,CY,ET,KP,YE,ZM,ZW"
 if ($OutDir) {
     $env:OVERTURE_PER_COUNTRY_DIR = $OutDir
 }
