@@ -166,9 +166,10 @@ async function fetchCombinedBoundaries(): Promise<unknown | null> {
 
 // Combined-fetch variant of useMetroBoundaries. Loads boundaries-simplified.json
 // once per session and returns the subset of features whose slug appears in
-// the requested set. Use on the Expandable Map. Detail pages and the home
-// rankings overlay should keep using useMetroBoundaries (per-slug) so they
-// only pay for the small set they actually display.
+// the requested set. Used on both the Expandable Map (full corpus) and the
+// home rankings overlay (top 25 to top 100). Detail pages stay on
+// useMetroBoundaries (per-slug) because they only ever request a single
+// boundary and pulling the full combined payload would be wasteful overhead.
 export function useCombinedBoundaries(slugs: string[]): FeatureCollection | null {
   const key = [...slugs].sort().join("|");
   const [collection, setCollection] = useState<FeatureCollection | null>(null);

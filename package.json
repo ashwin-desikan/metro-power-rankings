@@ -10,7 +10,8 @@
     "rebuild:trigger": "node scripts/trigger-rebuild.mjs",
     "typecheck": "tsc --noEmit",
     "check:client-imports": "node scripts/check-client-imports.mjs",
-    "verify": "npm run typecheck && npm run check:client-imports && next build",
+    "check:public-data": "node scripts/check-public-data.mjs",
+    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && next build",
     "deploy-status": "node scripts/deploy-status.mjs"
   },
   "dependencies": {

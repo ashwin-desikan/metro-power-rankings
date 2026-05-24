@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Metro, formatPop, regionColors } from '@/lib/shared';
 import MetroMap, { type MapPoint } from './MetroMap';
-import { useMetroBoundaries } from '@/lib/useMetroBoundaries';
+import { useCombinedBoundaries } from '@/lib/useMetroBoundaries';
 
 interface RankingsTableProps {
   metros: Metro[];
@@ -155,7 +155,7 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
         })),
     [filtered],
   );
-  const mapBoundary = useMetroBoundaries(mapPoints.map((p) => p.slug));
+  const mapBoundary = useCombinedBoundaries(mapPoints.map((p) => p.slug));
 
   return (
     <div className="space-y-6">
