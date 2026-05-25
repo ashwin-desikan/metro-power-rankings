@@ -380,6 +380,9 @@ COUNTRY_PARQUET_MAP = {
     "Fiji":                          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FJ.parquet",
     "Niger":                         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-NE.parquet",
     "Côte d'Ivoire":                 r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CI.parquet",
+    # 2026-05-25 PM - parquet + matcher fills already on disk, just missing builder wiring:
+    "Barbados":                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BB.parquet",
+    "Bhutan":                        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-BT.parquet",
 
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
@@ -557,7 +560,11 @@ COUNTRY_SHEET_MAP = {
     "South Africa":             "counties",
     "Belarus":                  "counties",
     "Ukraine":                  "counties",
-    "French Guiana":             "counties",
+    # French Guiana flipped to municipality 2026-05-25 PM: ten communes are
+    # filled in Municipality (Cayenne, Kourou, Matoury, Remire-Montjoly etc.);
+    # the single Counties row had blank Overture columns so the build silently
+    # rendered no Cayenne polygon.
+    "French Guiana":             "municipality",
     # Monaco quartiers live in the Counties sheet today; flip to Municipality
     # when the workbook rows are moved (open editorial decision 2026-05-25).
     "Monaco":                    "municipality",
@@ -651,6 +658,9 @@ COUNTRY_SHEET_MAP = {
     "Fiji":                          "counties",
     "Niger":                         "counties",
     "Côte d'Ivoire":                 "counties",
+    # 2026-05-25 PM - parquet + matcher fills already on disk, just missing builder wiring:
+    "Barbados":                      "counties",
+    "Bhutan":                        "counties",
 
 }
 
@@ -907,6 +917,9 @@ COUNTRY_TO_ISO = {
     "Fiji":                          "FJ",
     "Niger":                         "NE",
     "Côte d'Ivoire":                 "CI",
+    # 2026-05-25 PM - parquet + matcher fills already on disk, just missing builder wiring:
+    "Barbados":                      "BB",
+    "Bhutan":                        "BT",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {

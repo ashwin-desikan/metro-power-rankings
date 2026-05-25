@@ -85,7 +85,7 @@ COUNTRY_ROUTE = {
     # territories, city-states, dependencies, and the long tail of UN
     # member states. Bonaire is the only BQ entry; Saba and Sint Eustatius
     # (single-row each in the workbook) are hand-filled from BQ.xlsx output.
-    "French Guiana":                                ("Counties", "GF"),
+    "French Guiana":                                ("Municipality", "GF"),
     "Guadeloupe":                                   ("Counties", "GP"),
     "Martinique":                                   ("Counties", "MQ"),
     "Monaco":                                       ("Municipality", "MC"),
