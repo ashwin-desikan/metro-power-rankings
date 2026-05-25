@@ -763,6 +763,44 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         renderDot={(name) => SPORT_COLORS[name] || DEFAULT_SPORT_COLOR}
       />
 
+      {/* Football league hub callout — when sport filter includes Football,
+          surface the five canonical /teams/football/leagues/[slug] hubs so
+          a reader can jump straight into the all-time-champions + current-
+          standings view for any Big 5 top flight without hunting through
+          the nav. Mirrors the way the Sports dropdown links them. */}
+      {filters.sports.has("Football") && (
+        <div>
+          <div className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] mb-1.5">
+            Football league hubs
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {[
+              { slug: "premier-league", label: "Premier League" },
+              { slug: "la-liga",        label: "La Liga" },
+              { slug: "serie-a",        label: "Serie A" },
+              { slug: "bundesliga",     label: "Bundesliga" },
+              { slug: "ligue-1",        label: "Ligue 1" },
+            ].map((h) => (
+              <Link
+                key={h.slug}
+                href={`/teams/football/leagues/${h.slug}`}
+                className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+                title={`Open the ${h.label} hub: current standings, all-time champions, most decorated`}
+              >
+                <span
+                  className="inline-block rounded-full"
+                  style={{ background: SPORT_COLORS["Football"], width: 8, height: 8 }}
+                  aria-hidden
+                />
+                {h.label}
+                <span aria-hidden>→</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Special Filters — sport-conditional opt-in additives. Hidden
           entirely unless the user has selected a sport that exposes a
           special filter. Power Conferences appears for American Football /

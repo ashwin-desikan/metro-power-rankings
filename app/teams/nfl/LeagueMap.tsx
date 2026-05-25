@@ -5,9 +5,11 @@
 // hardcoded for the 32 current stadiums as of 2025. v2 should pull these
 // from the workbook's Team List columns so the ETL keeps them fresh.
 
+import { useMemo, useState } from "react";
 import MetroMap, { type MapPoint } from "../../MetroMap";
 import type { Franchise } from "@/lib/nfl";
 import type { TeamMarker } from "@/lib/teamMarkers";
+import YearFilterBar from "../_shared/YearFilterBar";
 
 type Props = {
   franchises: Franchise[];
@@ -96,8 +98,24 @@ const STADIUM_COORDS: Record<string, { lat: number; lon: number }> = {
 };
 
 export default function LeagueMap({ franchises }: Props) {
+  const [seasonYear, setSeasonYear] = useState<string>("");
+  const { minYear, maxYear } = useMemo(() => {
+    let lo = 9999, hi = 0;
+    for (const f of franchises) {
+      const fy = f.founding_year ?? null;
+      if (fy && fy < lo) lo = fy;
+      if (fy && fy > hi) hi = fy;
+    }
+    return { minYear: lo === 9999 ? 1920 : lo, maxYear: hi === 0 ? 2026 : Math.max(hi, 2026) };
+  }, [franchises]);
+
+  // Year filter: when ALL, show every current franchise + intl venues.
+  // When a year is selected, show only franchises founded by that year
+  // and hide intl venues (per editorial spec).
+  const sy = seasonYear ? parseInt(seasonYear, 10) : null;
   const points: MapPoint[] = franchises
     .map((f) => {
+      if (sy !== null && (f.founding_year ?? 9999) > sy) return null;
       const coords = STADIUM_COORDS[f.slug];
       if (!coords) return null;
       return {
@@ -109,7 +127,7 @@ export default function LeagueMap({ franchises }: Props) {
     })
     .filter((p): p is MapPoint => p !== null);
 
-  const intlMarkers = buildIntlVenueMarkers();
+  const intlMarkers: TeamMarker[] = sy === null ? buildIntlVenueMarkers() : [];
 
   return (
     <section className="mb-6 mx-auto max-w-3xl">
@@ -119,10 +137,17 @@ export default function LeagueMap({ franchises }: Props) {
         showConnections={false}
         markers={intlMarkers}
       />
+      {/* Year filter UI temporarily disabled. The state + filter logic
+          + imports above are intentionally retained so re-enabling is a
+          one-line uncomment once we have historical stadium coordinates
+          per franchise (today's map pins are current-day stadiums, which
+          would misplace a franchise viewed in an earlier year). Tracked
+          in BACKLOG.md "Historical stadium coords for closed leagues". */}
+      {/* <YearFilterBar seasonYear={seasonYear} setSeasonYear={setSeasonYear} minYear={minYear} maxYear={maxYear} /> */}
       <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
         <span className="flex items-center gap-1.5">
           <span aria-hidden className="inline-block w-2 h-2 rounded-full" style={{ background: "#4ECDC4" }} />
-          Home stadiums (32)
+          Home stadiums ({points.length})
         </span>
         <span className="flex items-center gap-1.5">
           <span aria-hidden className="inline-block w-2 h-2 rounded-full" style={{ background: "#ec4899" }} />

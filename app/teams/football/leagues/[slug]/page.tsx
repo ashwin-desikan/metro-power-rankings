@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import {
   getAllLeagueHubSlugs,
   getLeagueHub,
+  getAllClubs,
   monogramForFootball,
   type FootballLeagueHub,
 } from "@/lib/football";
+import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -39,6 +41,21 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   const hub = getLeagueHub(slug);
   if (!hub) notFound();
 
+  // All in-scope clubs for this hub's country, slimmed to the fields the
+  // map needs. tier_by_year drives the year filter and tier coloring.
+  const hubClubs: HubClub[] = getAllClubs()
+    .filter((c) => c.country === hub.country)
+    .map((c) => ({
+      slug: c.slug,
+      cur_name: c.cur_name,
+      metro: c.metro,
+      lat: c.lat,
+      lng: c.lng,
+      first_year: c.first_year,
+      last_year: c.last_year,
+      tier_by_year: c.tier_by_year ?? {},
+    }));
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
@@ -57,6 +74,7 @@ export default async function FootballLeagueHubPage({ params }: Props) {
       </header>
 
       <CurrentStandings hub={hub} />
+      <LeagueHubMap country={hub.country} clubs={hubClubs} />
       <AllTimeChampions hub={hub} />
     </main>
   );
@@ -112,6 +130,12 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
               <th className="py-2 text-right font-medium">GF</th>
               <th className="py-2 text-right font-medium">GA</th>
               <th className="py-2 text-right font-medium">GD</th>
+              <th
+                className="py-2 pl-3 text-left font-medium whitespace-nowrap"
+                title="European competition the club qualified for next season"
+              >
+                Eur Qual <span className="text-[var(--text-dim)] normal-case font-normal">(next yr)</span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -121,7 +145,7 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
               <tr key={s.slug} className="border-b" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1.5 tabular-nums">{s.place ?? "-"}</td>
                 <td className="py-1.5">
-                  <span className="inline-flex items-center gap-2">
+                  <span className="inline-flex items-center gap-2 flex-wrap">
                     <ColorBall slug={s.slug} name={s.cur_name} />
                     <Link href={`/teams/football/${s.slug}`} className="hover:underline font-medium">
                       {s.cur_name}
@@ -135,6 +159,24 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
                         Champion
                       </span>
                     )}
+                    {s.promoted && (
+                      <span
+                        className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}
+                        title="Promoted this season"
+                      >
+                        Promoted
+                      </span>
+                    )}
+                    {s.relegated && (
+                      <span
+                        className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}
+                        title="Relegated this season"
+                      >
+                        Relegated
+                      </span>
+                    )}
                   </span>
                 </td>
                 <td className="py-1.5 text-right tabular-nums">{s.matches ?? "-"}</td>
@@ -145,6 +187,17 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
                 <td className="py-1.5 text-right tabular-nums">{s.gf ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.ga ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.gd ?? "-"}</td>
+                <td className="py-1.5 pl-3 text-xs whitespace-nowrap">
+                  {s.eur_qual && (
+                    <span
+                      className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+                      style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
+                      title="Qualified for this European competition next season"
+                    >
+                      {s.eur_qual}
+                    </span>
+                  )}
+                </td>
               </tr>
               );
             })}

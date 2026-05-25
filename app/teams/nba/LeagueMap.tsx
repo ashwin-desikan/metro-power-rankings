@@ -9,8 +9,10 @@
 // Each franchise carries its arena lat/lng on franchises.json; this component
 // just maps those into the existing MetroMap (Leaflet) wrapper.
 
+import { useMemo, useState } from "react";
 import MetroMap, { type MapPoint } from "../../MetroMap";
 import type { Franchise, PlayoffStateRecord } from "@/lib/nba";
+import YearFilterBar from "../_shared/YearFilterBar";
 
 // Inlined from lib/nba (kept client-safe; lib/nba is server-only).
 // Keep in sync with lib/nba PLAYOFF_STATE_COLORS.
@@ -62,8 +64,20 @@ const GLOBAL_GAMES_VENUES: Array<{ name: string; lat: number; lng: number; city:
 ];
 
 export default function LeagueMap({ franchises, playoffState }: Props) {
+  const [seasonYear, setSeasonYear] = useState<string>("");
+  const { minYear, maxYear } = useMemo(() => {
+    let lo = 9999, hi = 0;
+    for (const f of franchises) {
+      const fy = f.founding_year ?? null;
+      if (fy && fy < lo) lo = fy;
+      if (fy && fy > hi) hi = fy;
+    }
+    return { minYear: lo === 9999 ? 1946 : lo, maxYear: hi === 0 ? 2026 : Math.max(hi, 2026) };
+  }, [franchises]);
+  const sy = seasonYear ? parseInt(seasonYear, 10) : null;
   const teamPoints: MapPoint[] = franchises
     .map((f) => {
+      if (sy !== null && (f.founding_year ?? 9999) > sy) return null;
       if (f.lat == null || f.lng == null) return null;
       return {
         slug: f.slug,
@@ -75,15 +89,17 @@ export default function LeagueMap({ franchises, playoffState }: Props) {
     })
     .filter((p): p is MapPoint => p !== null);
 
-  // Venue markers use a stable key prefix so they cannot collide with
-  // franchise slugs in the React render key.
-  const venuePoints: MapPoint[] = GLOBAL_GAMES_VENUES.map((v, i) => ({
-    slug: `intl-venue-${i}`,
-    name: `${v.name} — ${v.city}`,
-    lat: v.lat,
-    lon: v.lng,
-    color: VENUE_COLOR,
-  } as MapPoint));
+  // Venue markers only show when ALL year (= sy null). Stable key prefix
+  // avoids collision with franchise slugs in the React render.
+  const venuePoints: MapPoint[] = sy === null
+    ? GLOBAL_GAMES_VENUES.map((v, i) => ({
+        slug: `intl-venue-${i}`,
+        name: `${v.name} — ${v.city}`,
+        lat: v.lat,
+        lon: v.lng,
+        color: VENUE_COLOR,
+      } as MapPoint))
+    : [];
 
   const points: MapPoint[] = [...teamPoints, ...venuePoints];
 
@@ -101,10 +117,10 @@ export default function LeagueMap({ franchises, playoffState }: Props) {
   return (
     <section className="mb-6 mx-auto max-w-3xl">
       <MetroMap points={points} height={280} showConnections={false} />
+      {/* Year filter UI temporarily disabled; see NFL LeagueMap note + BACKLOG. */}
+      {/* <YearFilterBar seasonYear={seasonYear} setSeasonYear={setSeasonYear} minYear={minYear} maxYear={maxYear} /> */}
       {/* Always-on category legend: gold = NBA home arena, pink = Global
-          Games international venue. Sits above the playoff-state strip so
-          readers parse the marker categories first, then the postseason
-          state colors second. */}
+          Games international venue. */}
       <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-2 h-2 rounded-full" style={{ background: TEAM_COLOR }} />

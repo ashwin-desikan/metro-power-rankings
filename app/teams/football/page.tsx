@@ -30,10 +30,14 @@ export default function FootballIndex() {
     cur_name: c.cur_name,
     country: c.country,
     metro: c.metro,
+    lat: c.lat,
+    lng: c.lng,
     tiers: c.tiers,
     first_year: c.first_year,
     last_year: c.last_year,
     league_seasons: c.league_seasons,
+    tier_by_year: c.tier_by_year ?? {},
+    country_by_year: c.country_by_year ?? {},
   }));
 
   return (
@@ -74,7 +78,6 @@ export default function FootballIndex() {
         </div>
       </section>
 
-      <h2 className="text-lg font-semibold mb-3">All clubs</h2>
       <FootballIndexClient clubs={clientClubs} />
     </main>
   );

@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-25",
-    headline: "Football clubs land for the Big 5 leagues and English pyramid",
+    headline: "Football v0 plus polish: maps, filters, badges, deep links",
     items: [
-      "Every club that has played top-flight football in England, Spain, Italy, Germany, or France gets a canonical page, plus full coverage of the English pyramid through National League.",
-      "Each club page renders the season-by-season standings, cup finals, and European appearances with deepest-round tags and gold/silver Cup Winner badges; team color balls appear throughout the football pages.",
-      "Five league hubs (Premier League, La Liga, Serie A, Bundesliga, Ligue 1) carry current-season standings plus all-time national champions across every era, so pre-Bundesliga Schalke and pre-Serie A Genoa titles appear.",
-      "Club names on the metro pages and in the /sports map popups deep-link to the new canonical pages; the /teams/football index filters by country and by active-in-season year.",
+      "Canonical pages for every club that has played top-flight football in England, Spain, Italy, Germany, or France, plus full coverage of the English pyramid through National League.",
+      "Each club page renders season-by-season standings, cup finals, and European appearances with star-marked gold/silver Cup Winner badges and team color balls throughout.",
+      "Five league hubs (Premier League, La Liga, Serie A, Bundesliga, Ligue 1) carry current standings with Champion / Promoted / Relegated / Eur Qual pills, all-time national champions across every era, and a country map.",
+      "Filterable map on /teams/football with country chips, multi-select level, and year slider plus step buttons; deep-linked from /sports, the Sports menu, and every metro page team card.",
     ],
   },
   {

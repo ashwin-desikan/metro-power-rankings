@@ -68,7 +68,10 @@ export default async function FootballClubPage({ params }: Props) {
 
   // German pre-Bundesliga playoff count is surfaced separately because the
   // workbook only carries participants, not league standings, for that era.
-  const showPlayoffSplit = club.playoff_appearances > 0;
+  // Gate strictly on country=Germany since other countries' early-era rows
+  // (Italy pre-1929, France pre-1929) may also be playoff-format but the
+  // label naming-wise only makes sense for Germany.
+  const showPlayoffSplit = club.country === "Germany" && club.playoff_appearances > 0;
 
   // Honors strip for the header.
   const honors: Array<{ label: string; count: number | null; lastYear?: number | null }> = [];
@@ -81,6 +84,16 @@ export default async function FootballClubPage({ params }: Props) {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mb-3">
+        <Link
+          href="/teams/football"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          <span aria-hidden>←</span>
+          Back to Football
+        </Link>
+      </div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}
@@ -143,7 +156,12 @@ export default async function FootballClubPage({ params }: Props) {
         </div>
       </section>
 
-      <SeasonsTable seasons={seasons} tierLabels={tierLabels} country={club.country} />
+      <SeasonsTable
+        seasons={seasons}
+        tierLabels={tierLabels}
+        country={club.country}
+        europe={europe}
+      />
 
       {cups.length > 0 && <CupsBlock cups={cups} country={club.country} />}
 
@@ -196,15 +214,32 @@ function Stat({ label, value }: { label: string; value: string }) {
 const POS_HIGHLIGHT = { background: "rgba(78,205,196,0.07)" } as const;
 const PTS_HIGHLIGHT = { background: "rgba(245,215,110,0.07)" } as const;
 
+// European competitions that count as a per-season entry on the club row.
+// Excludes Super Cup (USC), Club World Cup (FCWC), Intercontinental Cup
+// (IC), Recopa Sudamericana (RCSA), Copa Interamericana (CI) per editorial
+// spec. CL + CLB are both Champions League (qualifying vs main bracket).
+const SEASON_COMP_INCLUDE = new Set(["CL", "CLB", "EL", "CWC", "EUCL", "OTH", "OTHC"]);
+const GOLD_TROPHY_CODES = new Set(["CL", "CLB"]); // European Cup / Champions League
+
 function SeasonsTable({
   seasons,
   tierLabels,
   country,
+  europe,
 }: {
   seasons: FootballSeason[];
   tierLabels: Record<number, string>;
   country: string;
+  europe: FootballEuropeEntry[];
 }) {
+  // Index European entries by year for O(1) lookup per season row.
+  const europeByYear = new Map<number, FootballEuropeEntry[]>();
+  for (const e of europe) {
+    if (e.year === null) continue;
+    if (!e.code || !SEASON_COMP_INCLUDE.has(e.code)) continue;
+    if (!europeByYear.has(e.year)) europeByYear.set(e.year, []);
+    europeByYear.get(e.year)!.push(e);
+  }
   if (seasons.length === 0) {
     return (
       <section
@@ -236,11 +271,12 @@ function SeasonsTable({
               className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
               style={{ borderColor: "var(--border)" }}
             >
+              <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">Year</th>
+              <th className="py-2 text-left font-medium">League</th>
+              <th className="py-2 text-left font-medium">Team</th>
               <th className="py-2 px-2 text-right font-medium" style={POS_HIGHLIGHT}>Pos</th>
-              <th className="py-2 text-left font-medium">Year</th>
-              <th className="py-2 text-left font-medium">Level</th>
-              <th className="py-2 text-left font-medium">Competition</th>
-              <th className="py-2 text-left font-medium">Team name</th>
+              <th className="py-2 text-left font-medium">Notes</th>
+              <th className="py-2 text-left font-medium">Eur Comp</th>
               <th className="py-2 text-right font-medium">W</th>
               <th className="py-2 text-right font-medium">D</th>
               <th className="py-2 text-right font-medium">L</th>
@@ -248,15 +284,22 @@ function SeasonsTable({
               <th className="py-2 text-right font-medium">GF</th>
               <th className="py-2 text-right font-medium">GA</th>
               <th className="py-2 text-right font-medium">GD</th>
+              <th
+                className="py-2 pl-3 text-left font-medium whitespace-nowrap"
+                title="European competition the club qualified for next season"
+              >
+                Eur Qual <span className="text-[var(--text-dim)] normal-case font-normal">(next yr)</span>
+              </th>
             </tr>
           </thead>
           <tbody>
             {seasons.map((s, i) => {
-              const tierLabel = (s.level && tierLabels[s.level]) || s.league || "-";
-              // Champion pill = workbook BX (Champions) flag, which is the
-              // canonical national-champion signal. Fires for league-format
-              // Level 1 winners and for pre-modern playoff champions; does
-              // NOT fire for second-division winners.
+              // League name comes straight from the workbook (e.g. 'First
+              // Division', 'Premier League', 'Deutsche Fußballmeisterschaft')
+              // with the level as a numeric suffix in parens. tierLabels
+              // table is no longer consulted here per editorial spec.
+              const leagueLabel = s.league || "-";
+              // Champion pill = workbook BX (Champions) flag.
               const isChamp = s.champion === true;
               return (
                 <tr
@@ -264,45 +307,83 @@ function SeasonsTable({
                   className="border-b"
                   style={{ borderColor: "var(--border)" }}
                 >
+                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{s.year ?? "-"}</td>
+                  <td className="py-1.5">
+                    <span>{leagueLabel}</span>
+                    {s.level && (
+                      <span className="text-[var(--text-muted)] ml-1 tabular-nums">({s.level})</span>
+                    )}
+                  </td>
+                  <td className="py-1.5 text-sm" style={{ color: "var(--text-muted)" }}>
+                    {s.team || s.cur_name}
+                  </td>
                   <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={POS_HIGHLIGHT}>
                     {s.place ?? "-"}
                   </td>
-                  <td className="py-1.5 tabular-nums">{s.year ?? "-"}</td>
-                  <td className="py-1.5 tabular-nums">{s.level ? `L${s.level}` : "-"}</td>
                   <td className="py-1.5">
-                    <span>{tierLabel}</span>
-                    {s.format === "playoff" && (
-                      <span className="ml-2 inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                            style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}>
-                        national playoff
-                      </span>
-                    )}
-                    {isChamp && (
-                      <span className="ml-2 inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                            style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>
-                        champion
-                      </span>
-                    )}
-                    {s.promoted && (
-                      <span className="ml-2 inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                            style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                        promoted
-                      </span>
-                    )}
-                    {s.relegated && (
-                      <span className="ml-2 inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                            style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                        relegated
-                      </span>
-                    )}
-                    {s.eur_qual && (
-                      <span className="ml-2 inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                            style={{ background: "rgba(59,130,246,0.16)", color: "#3b82f6" }}>
-                        europe
-                      </span>
-                    )}
+                    <span className="inline-flex flex-wrap gap-1">
+                      {s.format === "playoff" && (
+                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+                              style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}>
+                          national playoff
+                        </span>
+                      )}
+                      {isChamp && (
+                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+                              style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>
+                          champion
+                        </span>
+                      )}
+                      {s.promoted && (
+                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+                              style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
+                          promoted
+                        </span>
+                      )}
+                      {s.relegated && (
+                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+                              style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
+                          relegated
+                        </span>
+                      )}
+                    </span>
                   </td>
-                  <td className="py-1.5 text-[var(--text-muted)] text-xs">{s.team || s.cur_name}</td>
+                  <td className="py-1.5 text-xs">
+                    {(() => {
+                      const entries = (s.year !== null ? europeByYear.get(s.year) : null) ?? [];
+                      if (entries.length === 0) return null;
+                      return (
+                        <span className="inline-flex flex-wrap gap-1">
+                          {entries.map((e, ei) => {
+                            const isGold = e.trophy_won && e.code && GOLD_TROPHY_CODES.has(e.code);
+                            const isSilver = e.trophy_won && !isGold;
+                            const bg = isGold
+                              ? "rgba(212,175,55,0.22)"
+                              : isSilver
+                                ? "rgba(192,192,192,0.20)"
+                                : "rgba(120,120,140,0.16)";
+                            const fg = isGold ? "#d4af37" : isSilver ? "#c0c0c0" : "var(--text-muted)";
+                            const title = e.trophy_won
+                              ? `${e.competition} winner this season`
+                              : `${e.competition}: ${e.result_label}`;
+                            return (
+                              <span
+                                key={ei}
+                                className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+                                style={{ background: bg, color: fg }}
+                                title={title}
+                              >
+                                {e.trophy_won && (
+                                  <span aria-hidden className="mr-0.5">★</span>
+                                )}
+                                {e.code}
+                              </span>
+                            );
+                          })}
+                        </span>
+                      );
+                    })()}
+                  </td>
                   {s.format === "league" ? (
                     <>
                       <td className="py-1.5 text-right tabular-nums">{s.w ?? "-"}</td>
@@ -318,6 +399,17 @@ function SeasonsTable({
                       knockout-format championship; per-match data not recorded
                     </td>
                   )}
+                  <td className="py-1.5 pl-3 text-xs whitespace-nowrap">
+                    {s.eur_qual && (
+                      <span
+                        className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+                        style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
+                        title="Qualified for this European competition next season"
+                      >
+                        {s.eur_qual}
+                      </span>
+                    )}
+                  </td>
                 </tr>
               );
             })}

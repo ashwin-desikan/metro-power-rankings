@@ -65,6 +65,14 @@ OUT_DIR = REPO_ROOT / "public" / "data" / "football"
 
 BIG5 = {"England", "Spain", "Italy", "Germany", "France"}
 
+# Hand-curated coordinate overrides for clubs whose Lookup / FootballClub_Data
+# rows carry wrong lat/lng (typically an Albany NY fallback from a US-centric
+# geocoder). Keyed by slug. Workbook should be updated to match these values
+# at some point; see BACKLOG.md "Workbook coordinate fixes".
+CURATED_COORDINATE_OVERRIDES = {
+    "siena": (43.321667, 11.326111),  # Stadio Artemio Franchi, Siena, Italy
+}
+
 # Mapping from country -> set of in-scope tier levels.
 COUNTRY_TIERS = {
     "England": {1, 2, 3, 4, 5},
@@ -158,10 +166,14 @@ def detect_format(w, d, l, matches):
 
 # ---------- ETL: clubs from Lookup ----------
 
-def build_clubs_index(wb, in_scope_curnames):
+def build_clubs_index(wb, in_scope_curnames, country_mode_by_cn=None):
     """Build the master club index from Lookup, restricted to in_scope_curnames.
     Collapses intra-country dupe rows (e.g. Hornchurch, Watford Rovers) by
-    preferring the row with metro/lat/long populated."""
+    preferring the row with metro/lat/long populated. country_mode_by_cn,
+    when provided, overrides Lookup's country with the mode of in-scope
+    standings-row countries so wartime / cross-border clubs (Rapid Wien,
+    AS Monaco, Cardiff, Swansea) sit under the country they actually played
+    in within our Big 5 scope."""
     ws = wb["Lookup"]
     hdr, _ = header_map(ws)
     # Per Claude Notes verified col indices: Cur. Name = M (12), Team = A (0),
@@ -210,16 +222,30 @@ def build_clubs_index(wb, in_scope_curnames):
         def cell(i):
             return r[i] if i < len(r) and r[i] not in ("",) else None
 
+        # Country: standings-row mode wins (for wartime / cross-border
+        # clubs); Lookup country is the fallback.
+        lookup_country = cell(idx_country)
+        country = (country_mode_by_cn or {}).get(cn, lookup_country)
+        slug = slugify(cn)
+        lat = to_float(cell(idx_lat))
+        lng = to_float(cell(idx_lng))
+        # Hand-curated overrides take precedence when the workbook coords
+        # are known-bad (Siena was geocoded to Albany NY in both Lookup
+        # and FootballClub_Data; permanent fix tracked in BACKLOG.md).
+        override = CURATED_COORDINATE_OVERRIDES.get(slug)
+        if override:
+            lat, lng = override
         clubs[cn] = {
-            "slug": slugify(cn),
+            "slug": slug,
             "cur_name": cn,
-            "country": cell(idx_country),
+            "country": country,
+            "federation_country": lookup_country if lookup_country != country else None,
             "city": cell(idx_city),
             "metro": cell(idx_metro),
             "county": cell(idx_county),
             "continent": cell(idx_continent),
-            "lat": to_float(cell(idx_lat)),
-            "lng": to_float(cell(idx_lng)),
+            "lat": lat,
+            "lng": lng,
         }
     return clubs
 
@@ -296,6 +322,17 @@ def collect_standings_rows(wb):
             fmt = detect_format(w, d, l, matches)
             champion = True if (idx_champion < len(row) and row[idx_champion] == "Y") else False
             runner_up_final = True if (idx_final < len(row) and row[idx_final] == "Y" and not champion) else False
+            # Workbook's Relegated column carries richer values than just
+            # 'Y': 'Reg' (relegated), 'Prom' (promoted), 'Not Prom' (lost
+            # in promotion playoff). Use it directly as a seed so the
+            # latest completed season has a flag even when the next-year
+            # tier transition hasn't been recorded yet (no year+1 data).
+            wb_rel_raw = None
+            if idx_relegated is not None and idx_relegated < len(row):
+                wb_rel_raw = row[idx_relegated]
+            wb_rel_str = str(wb_rel_raw).strip() if wb_rel_raw else ""
+            wb_promoted = wb_rel_str in ("Prom", "Y-Prom")
+            wb_relegated = wb_rel_str in ("Y", "Reg", "Y-Reg")
             rows_out.append({
                 "slug": slugify(cn),
                 "cur_name": cn,
@@ -310,11 +347,18 @@ def collect_standings_rows(wb):
                 "pts": pts, "gf": gf, "ga": ga, "gd": gdiff,
                 "matches": matches,
                 "format": fmt,
-                "eur_qual": True if (idx_eur_qual is not None and idx_eur_qual < len(row) and row[idx_eur_qual] == "Y") else False,
-                # promoted / relegated are derived in a second pass from
-                # consecutive-season level transitions; see below.
-                "promoted": False,
-                "relegated": False,
+                # Eur Qual carries the competition code ('CL', 'EL', 'EUCL',
+                # 'CWC', etc.) for the season's UEFA qualification awarded
+                # via the workbook. Empty / None means no qualification.
+                "eur_qual": (str(row[idx_eur_qual]).strip() if (idx_eur_qual is not None and idx_eur_qual < len(row) and row[idx_eur_qual]) else None),
+                # promoted / relegated start from the workbook's own flag.
+                # The forward-scan pass below OVERRIDES this seed when the
+                # next existing-year row for the same club shows a tier
+                # transition (handles WWI / WWII gap years where Arsenal
+                # 1915 sits at L2 with workbook 'Reg' but the next data
+                # row 1920 puts them at L1 = actually promoted).
+                "promoted": wb_promoted,
+                "relegated": wb_relegated,
                 # Workbook BX (Champions) flag = national champion only,
                 # which is the right signal for the Champion pill since
                 # second-division winners and playoff-format champs both
@@ -367,6 +411,12 @@ def collect_cup_finals(wb, in_scope_curnames):
                 return "scheduled"
             return "lost"
 
+        # Super cups happen at season start (August); the 2026 super cups
+        # haven't been played yet as of May 2026, and the workbook can't
+        # distinguish 'scheduled' from 'lost' for them (both finalists
+        # show K='Y' but J=None on both sides). Drop super cup rows for
+        # the upcoming season's year; bring them back when MAX_DISPLAYED_YEAR
+        # ticks past 2026.
         for kind, win_idx, final_idx in (
             ("major", idx_maj, idx_maj_f),
             ("minor", idx_min, idx_min_f),
@@ -376,6 +426,11 @@ def collect_cup_finals(wb, in_scope_curnames):
             if win_idx >= len(row) or final_idx >= len(row): continue
             res = status(row[win_idx], row[final_idx])
             if not res: continue
+            # Suppress 2026 super cups (not yet played as of May 2026).
+            # Major and minor cups happen mid-to-late season and HAVE been
+            # played for 2025-26.
+            if kind == "super" and year and year >= 2026:
+                continue
             rows.append({
                 "slug": slugify(cn),
                 "cur_name": cn,
@@ -597,8 +652,24 @@ def main():
     standings_rows, in_scope_curnames = collect_standings_rows(wb)
     print(f"  {len(standings_rows)} rows, {len(in_scope_curnames)} distinct canonical clubs")
 
+    # Country mode per club, derived from the in-scope standings rows.
+    # Wartime annexations (SK Rapid Wien, First Vienna FC, FC Admira Wacker
+    # Mödling under the German playoff during 1938-1945; DFC Prag pre-WWI
+    # German Empire) and cross-border traditions (AS Monaco in Ligue 1,
+    # Cardiff and Swansea in English football, AC Libertas in early Italian
+    # football, Moghreb Tétouán during the Spanish protectorate) all put
+    # the club in a Big 5 country that differs from their Lookup federation.
+    # Use the standings-row country as the canonical for everything site-
+    # facing so the index, league hubs, and per-club page header all reflect
+    # the workbook's own country-of-play classification.
+    country_mode_by_cn = {}
+    for cn in in_scope_curnames:
+        counts = Counter(r["country"] for r in standings_rows if r["cur_name"] == cn)
+        if counts:
+            country_mode_by_cn[cn] = counts.most_common(1)[0][0]
+
     print("Building club index from Lookup...")
-    clubs = build_clubs_index(wb, in_scope_curnames)
+    clubs = build_clubs_index(wb, in_scope_curnames, country_mode_by_cn)
     missing = in_scope_curnames - set(clubs.keys())
     if missing:
         print(f"  WARN: {len(missing)} in-scope clubs have NO Lookup entry; synthesizing minimal records")
@@ -609,6 +680,7 @@ def main():
                 "slug": slugify(cn),
                 "cur_name": cn,
                 "country": country,
+                "federation_country": None,
                 "city": None, "metro": None, "county": None,
                 "continent": "Europe",
                 "lat": None, "lng": None,
@@ -663,11 +735,35 @@ def main():
         club_rows = [r for r in standings_rows if r["cur_name"] == cn]
         tiers = sorted({r["level"] for r in club_rows if r["level"] is not None})
         years = [r["year"] for r in club_rows if r["year"]]
-        playoff_only_years = {r["year"] for r in club_rows if r["format"] == "playoff"}
+        # Exclude 2027 placeholder rows from the playoff count so non-German
+        # clubs (Chelsea, etc.) that have a 2026-27 placeholder row don't
+        # mistakenly trigger the German-era playoff label downstream.
+        playoff_only_years = {r["year"] for r in club_rows
+                              if r["format"] == "playoff" and r["year"] and r["year"] < 2027}
         # Top-flight (Level 1) league seasons -- the only thing that should
         # carry the "top-flight" label per editorial spec.
         level1_league_years = {r["year"] for r in club_rows if r["format"] == "league" and r["level"] == 1}
         lower_league_years = {r["year"] for r in club_rows if r["format"] == "league" and (r["level"] or 0) > 1}
+        # Per-year level map for the index page filter UX. Keys are year
+        # numbers as strings (JSON limitation); values are the lowest level
+        # number (highest tier) the club played that year. Empty when the
+        # club has no row for that year. Skips 2027 placeholders to match
+        # the lib/football.ts MAX_DISPLAYED_YEAR clamp.
+        tier_by_year: dict[str, int] = {}
+        # Parallel per-year country map. Mulhouse 1941 must group under
+        # Germany (Anschluss-era Alsace was annexed) even though the club's
+        # overall mode country is France. When multiple rows exist for the
+        # same year at different levels, prefer the higher-tier (lower
+        # level number) row's country, matching tier_by_year semantics.
+        country_by_year: dict[str, str] = {}
+        for r in club_rows:
+            y, lv, ctry = r["year"], r["level"], r["country"]
+            if y is None or lv is None or y >= 2027: continue
+            key = str(y)
+            cur = tier_by_year.get(key)
+            if cur is None or lv < cur:
+                tier_by_year[key] = lv
+                if ctry: country_by_year[key] = ctry
         club["tiers"] = tiers
         club["first_year"] = min(years) if years else None
         club["last_year"] = max(years) if years else None
@@ -677,36 +773,53 @@ def main():
         club["league_seasons"] = len(level1_league_years) + len(lower_league_years)
         club["playoff_appearances"] = len(playoff_only_years)
         club["totals"] = totals.get(cn, {})
+        club["tier_by_year"] = tier_by_year
+        club["country_by_year"] = country_by_year
 
     # Derive promoted / relegated per row from consecutive-season level
-    # transitions. Sort each club's rows by year asc, then for each row
-    # find the next year's row for that club; lower next-level (numerically
-    # smaller) means promoted, higher means relegated.
+    # transitions. The forward-scan finds the NEXT EXISTING year for the
+    # same club (not just y+1), which closes WWI and WWII gaps (Arsenal
+    # 1915 L2 -> 1920 L1 = promoted) and correctly handles English clubs
+    # that took a season off. When the forward-scan produces a verdict,
+    # it OVERRIDES the workbook seed (the workbook's 1915 'Reg' for
+    # Arsenal is wrong because Arsenal was actually promoted via the
+    # post-war First Division expansion). When the forward-scan finds
+    # no next year (latest completed season) OR the next year is at the
+    # same level (e.g. Villarreal 2012 -> 2014 both L1 because their
+    # 2013 Segunda season is outside our scope), the workbook seed wins.
     seasons_by_slug = defaultdict(list)
     for r in standings_rows:
         seasons_by_slug[r["slug"]].append(r)
     for slug, rows in seasons_by_slug.items():
         rows.sort(key=lambda r: (r["year"] or 0, r["level"] or 99))
-        # Index rows by year for next-year lookups; if a club has multiple
-        # rows in the same year (e.g. mid-season split), use the deepest
-        # tier (highest level number) since promotion/relegation is judged
-        # against the lowest-played tier.
+        # Index by year, picking the lowest-tier (highest level number)
+        # row when multiple rows share a year.
         by_year = {}
+        years_sorted = []
         for r in rows:
             y, lv = r["year"], r["level"]
             if y is None or lv is None: continue
             cur = by_year.get(y)
             if cur is None or (cur["level"] or 0) < lv:
                 by_year[y] = r
+        years_sorted = sorted(by_year.keys())
         for r in rows:
             y, lv = r["year"], r["level"]
             if y is None or lv is None: continue
-            nxt = by_year.get(y + 1)
-            if not nxt or nxt["level"] is None: continue
+            # Find next existing year strictly greater than y.
+            nxt = None
+            for ny in years_sorted:
+                if ny > y:
+                    nxt = by_year[ny]; break
+            if not nxt or nxt["level"] is None:
+                continue  # latest season; workbook seed stands
             if nxt["level"] < lv:
                 r["promoted"] = True
+                r["relegated"] = False  # override stale workbook seed
             elif nxt["level"] > lv:
                 r["relegated"] = True
+                r["promoted"] = False
+            # else: same level -- keep workbook seed (Villarreal 2012 case)
         # Final sort: descending by year (newest first), then by level so
         # multi-tier same-year rows show the higher tier first.
         rows.sort(key=lambda r: (-(r["year"] or 0), r["level"] or 99))

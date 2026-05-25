@@ -48,6 +48,16 @@ export type FootballClub = {
   league_seasons: number;
   playoff_appearances: number;
   totals: FootballClubTotals;
+  // Compact map { year-as-string: level-number }. Lets the index page
+  // filter UI show each club's level for a selected season without
+  // pulling the full 7MB seasons.json into the client bundle.
+  tier_by_year: Record<string, number>;
+  // Per-year country of play. Mulhouse 1941 = Germany (Anschluss-era
+  // Alsace) even though the club's mode country is France. Used by the
+  // index when a season year is selected so the country grouping +
+  // country filter + map color reflect where the club actually played
+  // that year, not their canonical federation.
+  country_by_year: Record<string, string>;
 };
 
 export type FootballSeason = {
@@ -69,7 +79,10 @@ export type FootballSeason = {
   gd: number | null;
   matches: number | null;
   format: "league" | "playoff";
-  eur_qual: boolean;
+  // Competition code awarded for next season's European qualification:
+  // 'CL' (Champions League), 'EL' (Europa League), 'EUCL' (Conference
+  // League), 'CWC' (legacy Cup Winners' Cup), etc. null when no qualification.
+  eur_qual: string | null;
   // promoted / relegated derived from the next season's tier transition
   // (lower next-level = promoted, higher next-level = relegated). The
   // workbook's own Relegated column is ignored in the ETL because it only

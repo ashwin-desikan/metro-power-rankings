@@ -6,8 +6,10 @@
 // from the workbook's Team List / Stadiums columns so the ETL keeps them
 // fresh automatically.
 
+import { useMemo, useState } from "react";
 import MetroMap, { type MapPoint } from "../../MetroMap";
 import type { Franchise } from "@/lib/mlb";
+import YearFilterBar from "../_shared/YearFilterBar";
 
 type Props = {
   franchises: Franchise[];
@@ -76,8 +78,21 @@ const BALLPARK_COORDS: Record<string, { lat: number; lon: number }> = {
 };
 
 export default function LeagueMap({ franchises }: Props) {
+  const [seasonYear, setSeasonYear] = useState<string>("");
+  const { minYear, maxYear } = useMemo(() => {
+    let lo = 9999, hi = 0;
+    for (const f of franchises) {
+      const fy = f.founding_year ?? null;
+      if (fy && fy < lo) lo = fy;
+      if (fy && fy > hi) hi = fy;
+    }
+    return { minYear: lo === 9999 ? 1876 : lo, maxYear: hi === 0 ? 2026 : Math.max(hi, 2026) };
+  }, [franchises]);
+
+  const sy = seasonYear ? parseInt(seasonYear, 10) : null;
   const teamPoints: MapPoint[] = franchises
     .map((f) => {
+      if (sy !== null && (f.founding_year ?? 9999) > sy) return null;
       const coords = BALLPARK_COORDS[f.slug];
       if (!coords) return null;
       return {
@@ -90,21 +105,24 @@ export default function LeagueMap({ franchises }: Props) {
     })
     .filter((p): p is MapPoint => p !== null);
 
-  // Venue markers use a stable key prefix so they cannot collide with
-  // franchise slugs in the React render key.
-  const venuePoints: MapPoint[] = GLOBAL_GAMES_VENUES.map((v, i) => ({
-    slug: `intl-venue-${i}`,
-    name: `${v.name} — ${v.city}`,
-    lat: v.lat,
-    lon: v.lng,
-    color: VENUE_COLOR,
-  } as MapPoint));
+  // Global Games venues only when ALL year (= sy null).
+  const venuePoints: MapPoint[] = sy === null
+    ? GLOBAL_GAMES_VENUES.map((v, i) => ({
+        slug: `intl-venue-${i}`,
+        name: `${v.name} — ${v.city}`,
+        lat: v.lat,
+        lon: v.lng,
+        color: VENUE_COLOR,
+      } as MapPoint))
+    : [];
 
   const points: MapPoint[] = [...teamPoints, ...venuePoints];
 
   return (
     <section className="mb-6 mx-auto max-w-3xl">
       <MetroMap points={points} height={280} showConnections={false} />
+      {/* Year filter UI temporarily disabled; see NFL LeagueMap note + BACKLOG. */}
+      {/* <YearFilterBar seasonYear={seasonYear} setSeasonYear={setSeasonYear} minYear={minYear} maxYear={maxYear} /> */}
       <div className="flex flex-wrap gap-3 mt-3 text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
         <span className="flex items-center gap-1.5">
           <span className="inline-block w-2 h-2 rounded-full" style={{ background: TEAM_COLOR }} />

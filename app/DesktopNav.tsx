@@ -147,6 +147,8 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/teams/mlb" title="MLB" hint="All 30 active franchises, sortable. Defunct franchises link from inside." />
         <DropdownItem href="/teams/nba" title="NBA" hint="All 30 active franchises. ABA cups in slate; live 2026 playoff status." />
         <DropdownItem href="/teams/nhl" title="NHL" hint="All 32 active franchises. Stanley Cups from 1910 in gold; WHA Avco cups in slate; Presidents' Trophy / Best Reg Record seasons surfaced." />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/teams/football" title="Club Football" hint="Big 5 European top flights plus the full English pyramid. Filterable index, map, league hubs, canonical club pages." />
       </Dropdown>
 
       <Dropdown id="articles" label="Articles" openId={openId} setOpenId={setOpenId}>
