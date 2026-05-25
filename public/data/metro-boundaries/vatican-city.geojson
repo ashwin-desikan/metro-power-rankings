@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"slug": "vatican-city", "members": 1, "country": "Vatican City", "input_hash": "7a26c9f1dd743918"}, "geometry": {"type": "Polygon", "coordinates": [[[12.4545155, 41.9002048], [12.4554001, 41.9073829], [12.4457878, 41.9019669], [12.4545155, 41.9002048]]]}}]}
