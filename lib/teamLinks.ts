@@ -38,12 +38,16 @@ import {
   logoUrlFor as nhlLogoUrlFor,
   monogramFor as nhlMonogramFor,
 } from "./nhl";
+import {
+  getFootballClubByName,
+  monogramForFootball,
+} from "./football";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -58,6 +62,9 @@ const NFL_SPORT_LABELS = new Set(["American Football", "NFL"]);
 const MLB_SPORT_LABELS = new Set(["Baseball", "MLB"]);
 const NBA_SPORT_LABELS = new Set(["Basketball", "NBA"]);
 const NHL_SPORT_LABELS = new Set(["Hockey", "NHL"]);
+// Workbook stores football as both "Football" (Team List, /sports markers)
+// and "Soccer" (FootballClub_Data merge in extract.py for metro detail).
+const FOOTBALL_SPORT_LABELS = new Set(["Football", "Soccer", "Football/Soccer"]);
 
 function isNfl(sport: string, leagueHint: string): boolean {
   return NFL_SPORT_LABELS.has(sport) || leagueHint === "NFL";
@@ -70,6 +77,9 @@ function isNba(sport: string, leagueHint: string): boolean {
 }
 function isNhl(sport: string, leagueHint: string): boolean {
   return NHL_SPORT_LABELS.has(sport) || leagueHint === "NHL";
+}
+function isFootball(sport: string): boolean {
+  return FOOTBALL_SPORT_LABELS.has(sport);
 }
 
 export function resolveTeamLink(
@@ -131,6 +141,19 @@ export function resolveTeamLink(
       logoUrl: nhlLogoUrlFor(f.slug),
       monogram: mono,
       displayName: f.display_name,
+    };
+  }
+
+  if (isFootball(sport)) {
+    const f = getFootballClubByName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "football",
+      href: `/teams/football/${f.slug}`,
+      logoUrl: null,
+      monogram: monogramForFootball(f.cur_name),
+      displayName: f.cur_name,
     };
   }
 

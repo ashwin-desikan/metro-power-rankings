@@ -162,6 +162,17 @@ def normalize_team_name(s: str) -> str:
     return s.strip()
 
 
+def load_football_slug_lookup() -> dict:
+    """Return {normalized_team_name: slug} for clubs with a /teams/football/[slug] page.
+    Source: public/data/football/slug-lookup.json (emitted by build-football-data.py).
+    """
+    path = ROOT / "public" / "data" / "football" / "slug-lookup.json"
+    if not path.exists():
+        return {}
+    with open(path) as f:
+        return json.load(f)
+
+
 def load_franchise_slugs() -> dict:
     """Return {league_lower: {normalized_team_name: slug}} for NFL/MLB/NBA.
 
@@ -217,6 +228,7 @@ def lookup_team_page_url(league: str, team_name: str, franchise_index: dict) -> 
 def main():
     wb = openpyxl.load_workbook(WORKBOOK, read_only=True, data_only=True)
     franchise_index = load_franchise_slugs()
+    football_slug_lookup = load_football_slug_lookup()
 
     markers: list[dict] = []
 
@@ -445,7 +457,11 @@ def main():
             "lng": float(lng),
             "wikidata_qid": None,
             "wikipedia_url": None,
-            "team_page_url": None,  # no per-club pages yet
+            "team_page_url": (
+                f"/teams/football/{football_slug_lookup[normalize_team_name(team)]}"
+                if not is_national_team and normalize_team_name(team) in football_slug_lookup
+                else None
+            ),
             "source": "football_club_data",
             "federation": federation,
             "fifa": nt_fifa,
