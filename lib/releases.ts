@@ -22,8 +22,8 @@ export const RELEASES: Release[] = [
     headline: "Football clubs land for the Big 5 leagues and English pyramid",
     items: [
       "Every club that has played top-flight football in England, Spain, Italy, Germany, or France gets a canonical page, plus full coverage of the English pyramid through National League.",
-      "Each club page shows a season-by-season standings timeline, cup finals, and European appearances; pre-Bundesliga German rows and pre-modern Italian and French rows are tagged as national-playoff format.",
-      "Five league hubs (Premier League, La Liga, Serie A, Bundesliga, Ligue 1) carry current-season standings and a chronological all-time top-flight champions list back to each league's founding.",
+      "Each club page renders the season-by-season standings, cup finals, and European appearances with deepest-round tags and gold/silver Cup Winner badges; team color balls appear throughout the football pages.",
+      "Five league hubs (Premier League, La Liga, Serie A, Bundesliga, Ligue 1) carry current-season standings plus all-time national champions across every era, so pre-Bundesliga Schalke and pre-Serie A Genoa titles appear.",
       "Club names on the metro pages and in the /sports map popups deep-link to the new canonical pages; the /teams/football index filters by country and by active-in-season year.",
     ],
   },

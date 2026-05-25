@@ -257,6 +257,15 @@ def collect_standings_rows(wb):
         idx_eur_qual = hdr.get("Eur Qual")
         idx_relegated = hdr.get("Relegated")
         idx_div = hdr.get("Division")
+        # Per Claude Notes BV-CA block: BW=Final (74), BX=Champions (75).
+        # The Champions flag is the canonical national-champion signal; it
+        # fires for both league-format Level 1 winners (place=1) AND for
+        # pre-modern playoff/knockout champions where place is null. It
+        # does NOT fire for Second Division winners (e.g. MU 1975) or
+        # 2.Bundesliga winners (e.g. Schalke 2022), so it cleanly matches
+        # the editorial spec: Champion pill = national champion only.
+        idx_champion = 75
+        idx_final = 74
 
         for row in ws.iter_rows(min_row=2, values_only=True):
             if not row: continue
@@ -285,6 +294,8 @@ def collect_standings_rows(wb):
             division = row[idx_div] if idx_div is not None and idx_div < len(row) else None
 
             fmt = detect_format(w, d, l, matches)
+            champion = True if (idx_champion < len(row) and row[idx_champion] == "Y") else False
+            runner_up_final = True if (idx_final < len(row) and row[idx_final] == "Y" and not champion) else False
             rows_out.append({
                 "slug": slugify(cn),
                 "cur_name": cn,
@@ -300,7 +311,16 @@ def collect_standings_rows(wb):
                 "matches": matches,
                 "format": fmt,
                 "eur_qual": True if (idx_eur_qual is not None and idx_eur_qual < len(row) and row[idx_eur_qual] == "Y") else False,
-                "relegated": True if (idx_relegated is not None and idx_relegated < len(row) and row[idx_relegated] == "Y") else False,
+                # promoted / relegated are derived in a second pass from
+                # consecutive-season level transitions; see below.
+                "promoted": False,
+                "relegated": False,
+                # Workbook BX (Champions) flag = national champion only,
+                # which is the right signal for the Champion pill since
+                # second-division winners and playoff-format champs both
+                # need consistent treatment.
+                "champion": champion,
+                "final": runner_up_final,
             })
             curnames.add(cn)
     return rows_out, curnames
@@ -369,37 +389,93 @@ def collect_cup_finals(wb, in_scope_curnames):
 
 # ---------- ETL: European appearances ----------
 
-def collect_european(wb, in_scope_curnames):
-    """For each in-scope club, summarize European-competition appearances
-    from Eur Summary (one row per team-per-season-per-competition)."""
-    ws = wb["Eur Summary"]
-    hdr, _ = header_map(ws)
-    idx_season = hdr.get("Season", 2)
-    idx_comp_name = hdr.get("Leag/Comp.", 3)
-    idx_team_seas = hdr.get("Seas", 5)
-    idx_cn = hdr.get("Cur. Name", 6)
-    idx_comp_code = hdr.get("Comp", 11)
+# Rnd# 1=Final, 2=SF, 3=QF, 4=R16, 5=Group Stage, 6+ qualifying / earlier rounds.
+# Rnd Bin carries the per-competition stage code (CLF, CLBSF, ELQ, etc.). We
+# label off the bin suffix so the mapping survives competition-name changes.
+ROUND_LABEL_BY_RND = {
+    1: "Final",
+    2: "Semi-final",
+    3: "Quarter-final",
+    4: "Round of 16",
+    5: "Group stage",
+    6: "Round of 32 / qualifying",
+    7: "Qualifying",
+    8: "Qualifying",
+    9: "Qualifying",
+    10: "Qualifying",
+    11: "Qualifying",
+}
 
-    by_club = defaultdict(list)
+def collect_european(wb, in_scope_curnames):
+    """For each in-scope club, aggregate European-competition results from
+    Eur RndbyRnd into one row per (club, year, competition) with the
+    farthest round reached and a trophy_won flag.
+
+    The user-facing result label is derived from the minimum Rnd# (the
+    deepest round) and the Trophy Won flag, not from row count, since a
+    Trophy Won = Y row only exists on the eventual winner's final-round
+    entry."""
+    ws = wb["Eur RndbyRnd"]
+    hdr, _ = header_map(ws)
+    idx_season = hdr.get("Season")
+    idx_comp_name = hdr.get("Leag/Comp.")
+    idx_team_seas = hdr.get("Seas")
+    idx_cn = hdr.get("Cur. Name")
+    idx_rnd = hdr.get("Rnd#")
+    idx_comp_code = hdr.get("Comp")
+    idx_bin = hdr.get("Rnd Bin")
+    idx_trophy = hdr.get("Trophy Won")
+
+    # Aggregate: { (slug, year, code) -> {meta} }
+    agg = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
-        if not row or idx_cn >= len(row): continue
+        if not row or idx_cn is None or idx_cn >= len(row): continue
         cn = row[idx_cn]
         if not cn or str(cn).strip() not in in_scope_curnames: continue
         cn = str(cn).strip()
-        year = to_int(row[idx_team_seas]) if idx_team_seas < len(row) else None
-        season = row[idx_season] if idx_season < len(row) else None
-        comp = row[idx_comp_name] if idx_comp_name < len(row) else None
-        code = row[idx_comp_code] if idx_comp_code < len(row) else None
-        by_club[slugify(cn)].append({
-            "year": year,
-            "season": str(season) if season else None,
-            "competition": str(comp) if comp else None,
-            "code": str(code) if code else None,
-        })
+        year = to_int(row[idx_team_seas]) if idx_team_seas is not None else None
+        comp_name = row[idx_comp_name] if idx_comp_name is not None and idx_comp_name < len(row) else None
+        code = row[idx_comp_code] if idx_comp_code is not None and idx_comp_code < len(row) else None
+        rnd = to_int(row[idx_rnd]) if idx_rnd is not None and idx_rnd < len(row) else None
+        bin_label = row[idx_bin] if idx_bin is not None and idx_bin < len(row) else None
+        trophy = row[idx_trophy] if idx_trophy is not None and idx_trophy < len(row) else None
+        season = row[idx_season] if idx_season is not None and idx_season < len(row) else None
 
-    # Sort each club's entries by year ascending then competition.
+        if year is None or not code: continue
+        key = (slugify(cn), year, str(code))
+        rec = agg.get(key)
+        if rec is None:
+            rec = {
+                "year": year,
+                "season": str(season) if season else None,
+                "competition": str(comp_name) if comp_name else None,
+                "code": str(code),
+                "deepest_rnd": rnd,
+                "deepest_bin": str(bin_label) if bin_label else None,
+                "trophy_won": trophy == "Y",
+            }
+            agg[key] = rec
+        else:
+            # Track the deepest round (smallest Rnd#).
+            if rnd is not None and (rec["deepest_rnd"] is None or rnd < rec["deepest_rnd"]):
+                rec["deepest_rnd"] = rnd
+                rec["deepest_bin"] = str(bin_label) if bin_label else None
+            if trophy == "Y":
+                rec["trophy_won"] = True
+
+    # Group by slug and sort DESCENDING by year then competition.
+    by_club = defaultdict(list)
+    for (slug, _y, _c), rec in agg.items():
+        # Final label combines trophy_won + deepest_rnd into one human string.
+        if rec["trophy_won"]:
+            rec["result_label"] = "Winner"
+        elif rec["deepest_rnd"] is not None:
+            rec["result_label"] = ROUND_LABEL_BY_RND.get(rec["deepest_rnd"], f"Round {rec['deepest_rnd']}")
+        else:
+            rec["result_label"] = "Entered"
+        by_club[slug].append(rec)
     for slug in by_club:
-        by_club[slug].sort(key=lambda r: (r["year"] or 0, r["competition"] or ""))
+        by_club[slug].sort(key=lambda r: (-(r["year"] or 0), r["competition"] or ""))
     return dict(by_club)
 
 
@@ -476,11 +552,15 @@ def build_league_hubs(wb, standings_rows):
         current = [r for r in modern if r["year"] == latest_year]
         current.sort(key=lambda r: (r["place"] if r["place"] is not None else 99))
 
-        # All-time champions: place == 1 OR (champion-flag via place==1 within
-        # the country's Level-1 set across ALL league names). The standings
-        # row's Place # is the source of truth; the workbook uses 1 for the
-        # year's champion across every era including knockouts.
-        champs = [r for r in rows if r["place"] == 1]
+        # All-time champions: workbook BX (Champions) flag is the source
+        # of truth. It fires for league-format Level 1 winners AND for
+        # pre-modern playoff/knockout champions where place is null
+        # (Schalke pre-Bundesliga, the Italian Football Championship era,
+        # the French amateur era). It does NOT fire for second-division
+        # winners, so Schalke's 2.Bundesliga rows correctly drop out of
+        # the all-time list while their 7 pre-Bundesliga German titles
+        # appear regardless of their current league level.
+        champs = [r for r in rows if r.get("champion")]
         champs.sort(key=lambda r: r["year"] or 0)
 
         hubs[slug] = {
@@ -584,20 +664,52 @@ def main():
         tiers = sorted({r["level"] for r in club_rows if r["level"] is not None})
         years = [r["year"] for r in club_rows if r["year"]]
         playoff_only_years = {r["year"] for r in club_rows if r["format"] == "playoff"}
-        league_format_years = {r["year"] for r in club_rows if r["format"] == "league"}
+        # Top-flight (Level 1) league seasons -- the only thing that should
+        # carry the "top-flight" label per editorial spec.
+        level1_league_years = {r["year"] for r in club_rows if r["format"] == "league" and r["level"] == 1}
+        lower_league_years = {r["year"] for r in club_rows if r["format"] == "league" and (r["level"] or 0) > 1}
         club["tiers"] = tiers
         club["first_year"] = min(years) if years else None
         club["last_year"] = max(years) if years else None
-        club["league_seasons"] = len(league_format_years)
+        club["top_flight_seasons"] = len(level1_league_years)
+        club["lower_tier_seasons"] = len(lower_league_years)
+        # Kept for backwards compat with the index page filter logic.
+        club["league_seasons"] = len(level1_league_years) + len(lower_league_years)
         club["playoff_appearances"] = len(playoff_only_years)
         club["totals"] = totals.get(cn, {})
 
-    # Group seasons + cups by slug.
+    # Derive promoted / relegated per row from consecutive-season level
+    # transitions. Sort each club's rows by year asc, then for each row
+    # find the next year's row for that club; lower next-level (numerically
+    # smaller) means promoted, higher means relegated.
     seasons_by_slug = defaultdict(list)
     for r in standings_rows:
         seasons_by_slug[r["slug"]].append(r)
-    for slug in seasons_by_slug:
-        seasons_by_slug[slug].sort(key=lambda r: (r["year"] or 0, r["level"] or 99))
+    for slug, rows in seasons_by_slug.items():
+        rows.sort(key=lambda r: (r["year"] or 0, r["level"] or 99))
+        # Index rows by year for next-year lookups; if a club has multiple
+        # rows in the same year (e.g. mid-season split), use the deepest
+        # tier (highest level number) since promotion/relegation is judged
+        # against the lowest-played tier.
+        by_year = {}
+        for r in rows:
+            y, lv = r["year"], r["level"]
+            if y is None or lv is None: continue
+            cur = by_year.get(y)
+            if cur is None or (cur["level"] or 0) < lv:
+                by_year[y] = r
+        for r in rows:
+            y, lv = r["year"], r["level"]
+            if y is None or lv is None: continue
+            nxt = by_year.get(y + 1)
+            if not nxt or nxt["level"] is None: continue
+            if nxt["level"] < lv:
+                r["promoted"] = True
+            elif nxt["level"] > lv:
+                r["relegated"] = True
+        # Final sort: descending by year (newest first), then by level so
+        # multi-tier same-year rows show the higher tier first.
+        rows.sort(key=lambda r: (-(r["year"] or 0), r["level"] or 99))
 
     cups_by_slug = defaultdict(list)
     for r in cups_rows:

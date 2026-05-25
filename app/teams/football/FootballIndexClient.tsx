@@ -9,6 +9,121 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 
+// Tiny color dot keyed by slug. Mirrors the curated colors + slug-hash
+// fallback from lib/football.ts. Re-implemented client-side because the
+// 60-entry CURATED map + 12-entry palette is small enough to ship inline
+// and avoids forcing the entire server-only lib/football module into the
+// client bundle.
+const CURATED: Record<string, { bg: string; fg: string }> = {
+  arsenal: { bg: "#EF0107", fg: "#FFF" },
+  "manchester-united": { bg: "#DA291C", fg: "#FFE500" },
+  "manchester-city": { bg: "#6CABDD", fg: "#1C2C5B" },
+  liverpool: { bg: "#C8102E", fg: "#FFF" },
+  chelsea: { bg: "#034694", fg: "#FFF" },
+  "tottenham-hotspur": { bg: "#132257", fg: "#FFF" },
+  "newcastle-united": { bg: "#241F20", fg: "#FFF" },
+  "aston-villa": { bg: "#670E36", fg: "#94BEE5" },
+  everton: { bg: "#003399", fg: "#FFF" },
+  "leeds-united": { bg: "#FFCD00", fg: "#1D428A" },
+  "west-ham-united": { bg: "#7A263A", fg: "#1BB1E7" },
+  "nottingham-forest": { bg: "#DD0000", fg: "#FFF" },
+  "brighton-hove-albion": { bg: "#0057B8", fg: "#FFF" },
+  "crystal-palace": { bg: "#1B458F", fg: "#C4122E" },
+  "wolverhampton-wanderers": { bg: "#FDB913", fg: "#231F20" },
+  southampton: { bg: "#D71920", fg: "#FFF" },
+  "leicester-city": { bg: "#003090", fg: "#FDBE11" },
+  sunderland: { bg: "#EB172B", fg: "#FFF" },
+  "sheffield-united": { bg: "#EE2737", fg: "#FFF" },
+  "sheffield-wednesday": { bg: "#0E4C92", fg: "#FFF" },
+  "derby-county": { bg: "#000", fg: "#FFF" },
+  middlesbrough: { bg: "#E2231A", fg: "#FFF" },
+  "preston-north-end": { bg: "#FFF", fg: "#1F4193" },
+  "afc-bournemouth": { bg: "#DA291C", fg: "#000" },
+  fulham: { bg: "#000", fg: "#FFF" },
+  brentford: { bg: "#E30613", fg: "#FFF" },
+  "real-madrid": { bg: "#FEBE10", fg: "#00529F" },
+  "fc-barcelona": { bg: "#A50044", fg: "#004D98" },
+  "atletico-de-madrid": { bg: "#CB3524", fg: "#FFF" },
+  sevilla: { bg: "#D71920", fg: "#FFF" },
+  valencia: { bg: "#FF7F00", fg: "#000" },
+  "real-sociedad": { bg: "#003F87", fg: "#FFF" },
+  "athletic-bilbao": { bg: "#EE2523", fg: "#FFF" },
+  villarreal: { bg: "#FFE667", fg: "#005187" },
+  "real-betis": { bg: "#00954C", fg: "#FFF" },
+  "celta-de-vigo": { bg: "#8AC7E8", fg: "#C81C2C" },
+  "deportivo-de-la-coruna": { bg: "#0072CE", fg: "#FFF" },
+  "rcd-espanyol": { bg: "#005EB8", fg: "#FFF" },
+  "real-zaragoza": { bg: "#FFF", fg: "#003DA5" },
+  juventus: { bg: "#000", fg: "#FFF" },
+  "ac-milan": { bg: "#FB090B", fg: "#000" },
+  internazionale: { bg: "#0068A8", fg: "#000" },
+  "ssc-napoli": { bg: "#12A0D7", fg: "#FFF" },
+  "as-roma": { bg: "#8E1F2F", fg: "#F0BC42" },
+  lazio: { bg: "#87CEEB", fg: "#FFF" },
+  atalanta: { bg: "#1C1F4F", fg: "#FFF" },
+  fiorentina: { bg: "#482F92", fg: "#FFF" },
+  torino: { bg: "#8B0000", fg: "#FFF" },
+  sampdoria: { bg: "#1F3A93", fg: "#FFF" },
+  genoa: { bg: "#C8102E", fg: "#003DA5" },
+  bologna: { bg: "#911F2F", fg: "#1B468C" },
+  udinese: { bg: "#000", fg: "#FFF" },
+  "bayern-munich": { bg: "#DC052D", fg: "#FFF" },
+  "borussia-dortmund": { bg: "#FDE100", fg: "#000" },
+  "rb-leipzig": { bg: "#DD0741", fg: "#FFF" },
+  "bayer-leverkusen": { bg: "#E32221", fg: "#000" },
+  "eintracht-frankfurt": { bg: "#E1000F", fg: "#000" },
+  "vfb-stuttgart": { bg: "#E32219", fg: "#FFF" },
+  "borussia-monchengladbach": { bg: "#000", fg: "#00B050" },
+  "werder-bremen": { bg: "#1D9053", fg: "#FFF" },
+  "1-fc-koln": { bg: "#ED1C24", fg: "#FFF" },
+  "fc-schalke-04": { bg: "#004D9E", fg: "#FFF" },
+  "hertha-bsc": { bg: "#005CA9", fg: "#FFF" },
+  "hamburger-sv": { bg: "#003C8F", fg: "#FFF" },
+  "1-fc-nurnberg": { bg: "#8B1A1A", fg: "#FFF" },
+  "vfl-wolfsburg": { bg: "#65B32E", fg: "#FFF" },
+  "paris-saint-germain": { bg: "#004170", fg: "#ED1C24" },
+  "olympique-marseille": { bg: "#2FAEE0", fg: "#FFF" },
+  "as-monaco": { bg: "#ED1C24", fg: "#FFF" },
+  "olympique-lyonnais": { bg: "#DA001A", fg: "#1B449C" },
+  "lille-osc": { bg: "#DA291C", fg: "#003DA5" },
+  "as-saint-etienne": { bg: "#0F8A3F", fg: "#FFF" },
+  "rc-lens": { bg: "#FFCC00", fg: "#DA0023" },
+  "ogc-nice": { bg: "#ED1C24", fg: "#000" },
+  "stade-rennais": { bg: "#D90D2E", fg: "#000" },
+  "fc-girondins-de-bordeaux": { bg: "#001489", fg: "#FFF" },
+  "fc-nantes": { bg: "#FFCD00", fg: "#008752" },
+  "toulouse-fc": { bg: "#5F259F", fg: "#FFF" },
+  "montpellier-hsc": { bg: "#F46D1D", fg: "#1F3F88" },
+  strasbourg: { bg: "#005EB8", fg: "#FFF" },
+};
+const PALETTE = [
+  { bg: "#15803d", fg: "#ecfdf5" }, { bg: "#7c3aed", fg: "#f5f3ff" },
+  { bg: "#0ea5e9", fg: "#f0f9ff" }, { bg: "#ea580c", fg: "#fff7ed" },
+  { bg: "#be185d", fg: "#fdf2f8" }, { bg: "#0d9488", fg: "#f0fdfa" },
+  { bg: "#a16207", fg: "#fefce8" }, { bg: "#4338ca", fg: "#eef2ff" },
+  { bg: "#65a30d", fg: "#f7fee7" }, { bg: "#9d174d", fg: "#fdf2f8" },
+  { bg: "#1e3a8a", fg: "#dbeafe" }, { bg: "#525252", fg: "#fafafa" },
+];
+function colorFor(slug: string) {
+  if (CURATED[slug]) return CURATED[slug];
+  let h = 2166136261;
+  for (let i = 0; i < slug.length; i++) {
+    h ^= slug.charCodeAt(i);
+    h = (h * 16777619) >>> 0;
+  }
+  return PALETTE[h % PALETTE.length];
+}
+function Dot({ slug }: { slug: string }) {
+  const c = colorFor(slug);
+  return (
+    <span
+      className="inline-block rounded-full flex-shrink-0"
+      style={{ background: c.bg, width: 10, height: 10 }}
+      aria-hidden
+    />
+  );
+}
+
 export type IndexClub = {
   slug: string;
   cur_name: string;
@@ -186,7 +301,8 @@ export default function FootballIndexClient({ clubs }: Props) {
                 const highest = Math.min(...(c.tiers.length ? c.tiers : [99]));
                 const tierLabel = TIER_LABEL_BY_COUNTRY[g.country]?.[highest];
                 return (
-                  <li key={c.slug}>
+                  <li key={c.slug} className="flex items-baseline gap-2">
+                    <Dot slug={c.slug} />
                     <Link href={`/teams/football/${c.slug}`} className="hover:underline">
                       {c.cur_name}
                     </Link>

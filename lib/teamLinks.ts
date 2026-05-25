@@ -152,7 +152,7 @@ export function resolveTeamLink(
       league: "football",
       href: `/teams/football/${f.slug}`,
       logoUrl: null,
-      monogram: monogramForFootball(f.cur_name),
+      monogram: monogramForFootball(f.cur_name, f.slug),
       displayName: f.cur_name,
     };
   }

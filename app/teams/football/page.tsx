@@ -7,9 +7,10 @@ import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
 export const metadata: Metadata = {
   title: "Football clubs",
   description:
-    "Canonical pages for every club that has played top-flight football in England, Spain, " +
-    "Italy, Germany, or France, plus all five English league pyramid tiers. Source: the grand " +
-    "Football workbook covering 1872 to present.",
+    "Canonical pages for every club that has played Level 1 football in England, Spain, " +
+    "Italy, Germany, or France, plus all five English league pyramid tiers (Premier League, " +
+    "Championship, League One, League Two, National League). Source: the grand Football " +
+    "workbook covering 1872 to present.",
   alternates: { canonical: "/teams/football" },
   openGraph: {
     title: `Football clubs | ${SITE_NAME}`,
@@ -46,10 +47,10 @@ export default function FootballIndex() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Football</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          Big 5 European top flights plus the full English pyramid through National League.
-          Each club has a season-by-season history pulled from the grand football workbook
-          (top-flight rows back to the 1870s for England, 1890s for France and Italy, 1900s for
-          Spain and Germany).
+          Big 5 European top flights (Level 1 only for Spain, Italy, Germany, France) plus the full
+          English pyramid through National League. Each club has a season-by-season history pulled
+          from the grand football workbook, with top-flight (Level 1) rows back to the 1870s for
+          England, 1890s for France and Italy, 1900s for Spain and Germany.
         </p>
       </header>
 
@@ -66,7 +67,7 @@ export default function FootballIndex() {
               <div className="text-base font-semibold">{h.league}</div>
               <div className="text-xs text-[var(--text-muted)] mt-1">{h.country}</div>
               <div className="text-xs text-[var(--text-muted)] mt-2 tabular-nums">
-                {h.all_time_champions.length} all-time top-flight champion entries
+                {h.all_time_champions.length} all-time Level 1 champion entries
               </div>
             </Link>
           ))}

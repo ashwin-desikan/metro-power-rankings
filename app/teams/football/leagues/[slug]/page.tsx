@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import {
   getAllLeagueHubSlugs,
   getLeagueHub,
+  monogramForFootball,
   type FootballLeagueHub,
 } from "@/lib/football";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!h) return { title: "League not found" };
   return {
     title: h.league,
-    description: `${h.league} (${h.country}): current-season standings and complete all-time top-flight champions list.`,
+    description: `${h.league} (${h.country}): current-season standings and complete all-time Level 1 champions list.`,
     alternates: { canonical: `/teams/football/leagues/${h.slug}` },
     openGraph: {
       title: `${h.league} | ${SITE_NAME}`,
@@ -51,13 +52,34 @@ export default async function FootballLeagueHubPage({ params }: Props) {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)]">
-          {hub.country} top-flight history.
+          {hub.country} Level 1 (top-flight) history.
         </p>
       </header>
 
       <CurrentStandings hub={hub} />
       <AllTimeChampions hub={hub} />
     </main>
+  );
+}
+
+function ColorBall({ slug, name }: { slug: string; name: string }) {
+  const m = monogramForFootball(name, slug);
+  return (
+    <span
+      className="inline-grid place-items-center rounded-full flex-shrink-0"
+      style={{
+        background: m.bg,
+        color: m.fg,
+        width: 22,
+        height: 22,
+        fontSize: 9,
+        fontWeight: 700,
+        letterSpacing: "-0.02em",
+      }}
+      aria-hidden
+    >
+      {m.mono}
+    </span>
   );
 }
 
@@ -93,13 +115,27 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
             </tr>
           </thead>
           <tbody>
-            {hub.current_standings.map((s) => (
+            {hub.current_standings.map((s) => {
+              const isChamp = s.champion === true || s.place === 1;
+              return (
               <tr key={s.slug} className="border-b" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1.5 tabular-nums">{s.place ?? "-"}</td>
                 <td className="py-1.5">
-                  <Link href={`/teams/football/${s.slug}`} className="hover:underline font-medium">
-                    {s.cur_name}
-                  </Link>
+                  <span className="inline-flex items-center gap-2">
+                    <ColorBall slug={s.slug} name={s.cur_name} />
+                    <Link href={`/teams/football/${s.slug}`} className="hover:underline font-medium">
+                      {s.cur_name}
+                    </Link>
+                    {isChamp && (
+                      <span
+                        className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}
+                        title="League champion this season"
+                      >
+                        Champion
+                      </span>
+                    )}
+                  </span>
                 </td>
                 <td className="py-1.5 text-right tabular-nums">{s.matches ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.w ?? "-"}</td>
@@ -110,7 +146,8 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
                 <td className="py-1.5 text-right tabular-nums">{s.ga ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.gd ?? "-"}</td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -150,7 +187,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
       style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
     >
       <h2 className="text-base font-semibold">
-        All-time top-flight champions{" "}
+        All-time Level 1 champions{" "}
         <span className="text-[var(--text-muted)] font-normal text-sm tabular-nums">
           ({hub.all_time_champions.length})
         </span>
@@ -170,8 +207,11 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
           <h3 className="text-sm font-semibold mb-2">Most decorated</h3>
           <ul className="text-sm grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">
             {topClubs.slice(0, 12).map((c) => (
-              <li key={c.slug} className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
-                <Link href={`/teams/football/${c.slug}`} className="hover:underline">{c.name}</Link>
+              <li key={c.slug} className="flex items-center justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+                <span className="inline-flex items-center gap-2">
+                  <ColorBall slug={c.slug} name={c.name} />
+                  <Link href={`/teams/football/${c.slug}`} className="hover:underline">{c.name}</Link>
+                </span>
                 <span className="text-[var(--text-muted)] tabular-nums">
                   {c.count}
                   {c.last && <span className="text-xs ml-1.5">last {c.last}</span>}
@@ -183,7 +223,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
       )}
 
       <div className="mt-6">
-        <h3 className="text-sm font-semibold mb-2">Chronological</h3>
+        <h3 className="text-sm font-semibold mb-2">Chronological (most recent first)</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -197,9 +237,11 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
               </tr>
             </thead>
             <tbody>
-              {hub.all_time_champions.map((ch, i) => {
+              {[...hub.all_time_champions].sort((a, b) => (b.year ?? 0) - (a.year ?? 0)).map((ch, i, arr) => {
+                // Era break marker fires at the boundary between modern
+                // and legacy league names, regardless of sort direction.
                 const showBreak = breakYear && ch.year === breakYear &&
-                  (i === 0 || hub.all_time_champions[i - 1].year !== breakYear);
+                  (i === 0 || arr[i - 1].year !== breakYear);
                 return (
                   <>
                     {showBreak && (
@@ -213,9 +255,12 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
                     <tr key={`${ch.year}-${i}`} className="border-b" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1.5 tabular-nums">{ch.year ?? "-"}</td>
                       <td className="py-1.5">
-                        <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline font-medium">
-                          {ch.champion}
-                        </Link>
+                        <span className="inline-flex items-center gap-2">
+                          <ColorBall slug={ch.champion_slug} name={ch.champion} />
+                          <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline font-medium">
+                            {ch.champion}
+                          </Link>
+                        </span>
                         {ch.champion_team && ch.champion_team !== ch.champion && (
                           <span className="text-[var(--text-muted)] text-xs ml-2">as {ch.champion_team}</span>
                         )}
