@@ -28,7 +28,8 @@ Initial routing:
   Poland         -> municipality  (overture-PL.parquet)
   Andorra        -> municipality  (SOURCE_PARQUET)
   San Marino     -> municipality  (SOURCE_PARQUET)
-  Vatican City   -> counties      (overture-VA.parquet)
+  Vatican City   -> municipality  (overture-VA.parquet)
+  Monaco         -> municipality  (overture-MC.parquet)
 
 Incremental build (build cache):
   Each metro's polygon is the function of its sorted (region, subtype,
@@ -401,7 +402,7 @@ COUNTRY_SHEET_MAP = {
     "Poland":                   "municipality",
     "Andorra":                  "municipality",
     "San Marino":               "municipality",
-    "Vatican City":             "counties",
+    "Vatican City":             "municipality",
     # 2026-05-08 expansion - Counties (38)
     "Romania":                  "counties",
     "Colombia":                 "counties",
@@ -551,7 +552,9 @@ COUNTRY_SHEET_MAP = {
     "Belarus":                  "counties",
     "Ukraine":                  "counties",
     "French Guiana":             "counties",
-    "Monaco":                    "counties",
+    # Monaco quartiers live in the Counties sheet today; flip to Municipality
+    # when the workbook rows are moved (open editorial decision 2026-05-25).
+    "Monaco":                    "municipality",
     "Saint Pierre and Miquelon": "counties",
     "Bermuda":                                      "counties",
     "Turks & Caicos Islands":                       "counties",
@@ -1078,11 +1081,40 @@ SHEET_SCHEMAS = {
 # these change, ALL cached metros are invalidated automatically on the
 # next run. To force a global rebuild without changing a constant, bump
 # the literal "logic_version" string below.
-SCRIPT_VERSION_HASH = hashlib.sha256(json.dumps({
-    "outlier_max_km":  OUTLIER_PART_MAX_KM,
-    "simplify_tol":    SIMPLIFY_TOLERANCE_DEG,
-    "logic_version":   "v2",
-}, sort_keys=True).encode()).hexdigest()[:12]
+def _compute_script_version_hash() -> str:
+    """Derive the cache-invalidation hash from script constants plus the
+    routing structures that govern which parquet rows feed which metro.
+
+    Including the routing maps means wiring changes (a new country added to
+    COUNTRY_PARQUET_MAP, a SHEET_MAP flip, a REGIONLESS toggle, a new
+    CROSS_BORDER prefix) naturally invalidate the cache without anyone
+    having to remember --force. v3 marks the Option 2 mixed-REGIONLESS
+    refactor (row filter no longer requires Region for non-REGIONLESS
+    countries; load_overture indexes Tier B name keys; resolution phase
+    accepts unambiguous global-by-name matches).
+    """
+    payload = {
+        "outlier_max_km":                OUTLIER_PART_MAX_KM,
+        "simplify_tol":                  SIMPLIFY_TOLERANCE_DEG,
+        "logic_version":                 "v3-mixed-regionless",
+        "country_parquet_map":           sorted(COUNTRY_PARQUET_MAP.items()),
+        "country_sheet_map":             sorted(COUNTRY_SHEET_MAP.items()),
+        "country_to_iso":                sorted(COUNTRY_TO_ISO.items()),
+        "regionless_countries":          sorted(REGIONLESS_COUNTRIES),
+        "cross_border_parquet":          sorted(CROSS_BORDER_PARQUET.items()),
+        "country_parquet_iso_override":  sorted(
+            (k, sorted(v)) for k, v in COUNTRY_PARQUET_ISO_OVERRIDE.items()
+        ),
+        "sheet_schemas":                 sorted(
+            (k, sorted(v.items())) for k, v in SHEET_SCHEMAS.items()
+        ),
+    }
+    return hashlib.sha256(
+        json.dumps(payload, sort_keys=True, default=str).encode()
+    ).hexdigest()[:12]
+
+
+SCRIPT_VERSION_HASH = _compute_script_version_hash()
 
 
 # ---------- Geometry helpers --------------------------------------------
@@ -1132,7 +1164,15 @@ def trim_outlier_parts(geom, anchor_lat, anchor_lon,
 
 # ---------- Overture loader ----------------------------------------------
 
-def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
+def load_overture(parquet_path: str, wanted_keys: set, wanted_keys_name: set,
+                  wanted_iso_codes: set):
+    """Load Overture polygons from a per-country parquet.
+
+    Returns four dicts, two for Tier A (region, subtype, primary) lookup and
+    two for Tier B (subtype, primary) global-by-name fallback. Tier B values
+    carry the parquet row's region so the resolution phase can confirm the
+    match is unambiguous before accepting it.
+    """
     print(f"      Reading parquet: {parquet_path}")
     print(f"      country filter: {sorted(wanted_iso_codes)}")
     t0 = time.time()
@@ -1144,6 +1184,8 @@ def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
 
     by_key_land = defaultdict(list)
     by_key_any = defaultdict(list)
+    by_name_land = defaultdict(list)
+    by_name_any = defaultdict(list)
     rows_scanned = 0
     rows_kept = 0
     for batch in pf.iter_batches(batch_size=10_000, columns=cols):
@@ -1161,8 +1203,11 @@ def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
             primary = nm.get("primary") if isinstance(nm, dict) else None
             if not primary:
                 continue
-            key = (regions[i], subtypes[i], primary)
-            if key not in wanted_keys:
+            key_full = (regions[i], subtypes[i], primary)
+            key_name = (subtypes[i], primary)
+            want_full = key_full in wanted_keys
+            want_name = key_name in wanted_keys_name
+            if not (want_full or want_name):
                 continue
             geom_bytes = geoms_col[i]
             if not geom_bytes:
@@ -1171,15 +1216,22 @@ def load_overture(parquet_path: str, wanted_keys: set, wanted_iso_codes: set):
                 geom = shapely_wkb.loads(geom_bytes)
             except Exception:
                 continue
-            if classes[i] == "land":
-                by_key_land[key].append(geom)
-            by_key_any[key].append(geom)
+            is_land = classes[i] == "land"
+            if want_full:
+                if is_land:
+                    by_key_land[key_full].append(geom)
+                by_key_any[key_full].append(geom)
+            if want_name:
+                if is_land:
+                    by_name_land[key_name].append((regions[i], geom))
+                by_name_any[key_name].append((regions[i], geom))
             rows_kept += 1
 
     print(f"      scanned {rows_scanned:,} rows, kept {rows_kept:,} matching keys "
           f"in {time.time()-t0:.1f}s")
-    print(f"      indexed {len(by_key_any):,} unique (region, subtype, primary) keys")
-    return by_key_land, by_key_any
+    print(f"      indexed {len(by_key_any):,} Tier A keys, "
+          f"{len(by_name_any):,} Tier B name keys")
+    return by_key_land, by_key_any, by_name_land, by_name_any
 
 
 # ---------- Workbook loader ----------------------------------------------
@@ -1204,6 +1256,7 @@ def _read_sheet_rows(wb, sheet_key: str):
     routed_elsewhere = 0
     not_routed = 0
     incomplete = 0
+    region_blank = 0
     uk_region_overrides = 0
     for r in ws.iter_rows(min_row=2, values_only=True):
         if not r or len(r) <= max_needed:
@@ -1224,15 +1277,20 @@ def _read_sheet_rows(wb, sheet_key: str):
         region = r[creg]
         primary = r[cpri]
 
+        # Universal requirement: subtype, primary, and metro display must be
+        # filled to have any chance of resolving to a polygon. Region is
+        # preferred (drives Tier A lookup) but no longer strictly required
+        # for non-REGIONLESS countries. Rows with blank Region pass through
+        # and the polygon resolution phase attempts a Tier B global-by-name
+        # fallback within the country. Tier B matches that are ambiguous
+        # (same name in multiple regions) are surfaced in the unmatched
+        # audit so editorial can fill Region on the affected rows.
+        if not (subtype and primary and metro_display):
+            incomplete += 1
+            continue
         region_is_optional = country_canonical in REGIONLESS_COUNTRIES
-        if region_is_optional:
-            if not (subtype and primary and metro_display):
-                incomplete += 1
-                continue
-        else:
-            if not (region and subtype and primary and metro_display):
-                incomplete += 1
-                continue
+        if not region:
+            region_blank += 1
 
         region_str = str(region).strip() if region else None
         subtype_str = str(subtype).strip()
@@ -1244,14 +1302,6 @@ def _read_sheet_rows(wb, sheet_key: str):
             if (region_str == "US-NC" and subtype_str == "county"
                     and primary_str == "Nash County"):
                 subtype_str = "neighborhood"
-            if country_canonical in REGIONLESS_COUNTRIES:
-                # Country has no ISO 3166-2 subdivision in Overture
-                # (region=None on every parquet row). Whether the workbook
-                # Region column is blank or carries the country code, we
-                # normalize to None so the (region, subtype, primary) key
-                # matches the parquet. Singapore (filled 'SG') and Puerto
-                # Rico (left blank) both flow through this path.
-                region_str = None
 
         if sheet_key == "municipality":
             if (country_workbook in UK_CONSTITUENT_REGION
@@ -1260,6 +1310,16 @@ def _read_sheet_rows(wb, sheet_key: str):
                 if corrected != region_str:
                     uk_region_overrides += 1
                 region_str = corrected
+
+        if country_canonical in REGIONLESS_COUNTRIES:
+            # Country has no ISO 3166-2 subdivision in Overture (region=None
+            # on every parquet row). Whether the workbook Region column is
+            # blank or carries the country code (or a sub-region code that
+            # Overture doesn't tag), normalize to None so the (region,
+            # subtype, primary) join key matches the parquet. This applies
+            # to BOTH sheets: Singapore (Counties, filled 'SG') and Vatican
+            # City (Municipality, filled 'VA') both depend on it.
+            region_str = None
 
         kept += 1
         yield {
@@ -1275,6 +1335,8 @@ def _read_sheet_rows(wb, sheet_key: str):
     extra = ""
     if uk_region_overrides:
         extra = f"  uk-region-overrides {uk_region_overrides:,}"
+    if region_blank:
+        extra += f"  region-blank-pass-through {region_blank:,}"
     print(f"      [{sheet_name}] kept {kept:,}  routed-elsewhere {routed_elsewhere:,}  "
           f"unrouted-country {not_routed:,}  incomplete {incomplete:,}{extra}")
 
@@ -1323,10 +1385,19 @@ def resolve_slug_info(row, metros_index):
 # ---------- Build cache --------------------------------------------------
 
 def compute_input_hash(members, anchor):
-    """Stable hash of the inputs that determine a metro's polygon."""
-    keys = sorted([
-        (m["region"], m["subtype"], m["primary"]) for m in members
-    ])
+    """Stable hash of the inputs that determine a metro's polygon.
+
+    Sort key normalizes None to "" so a metro whose members carry a mix of
+    filled and blank Region sorts deterministically. None is preserved in
+    the payload tuple itself (json serializes it as null) so the hash still
+    changes when a row's region transitions from blank to filled.
+    """
+    def _sort_key(m):
+        return (m["region"] or "", m["subtype"] or "", m["primary"] or "")
+    keys = sorted(
+        [(m["region"], m["subtype"], m["primary"]) for m in members],
+        key=lambda t: (t[0] or "", t[1] or "", t[2] or ""),
+    )
     payload = json.dumps({
         "version": SCRIPT_VERSION_HASH,
         "keys":    keys,
@@ -1547,9 +1618,16 @@ def main():
 
     by_key_land = defaultdict(list)
     by_key_any = defaultdict(list)
+    by_name_land = defaultdict(list)  # Tier B: (subtype, primary) -> [(region, geom)]
+    by_name_any = defaultdict(list)
     for parquet_path, parquet_rows in rows_by_parquet.items():
         parquet_keys = {(_effective_region(r["region"]), r["subtype"], r["primary"])
                         for r in parquet_rows}
+        # Tier B name-only keys: only rows whose workbook Region is blank
+        # trigger the global-by-name fallback. Rows with Region filled stay
+        # on the strict Tier A path.
+        parquet_keys_name = {(r["subtype"], r["primary"])
+                             for r in parquet_rows if not r.get("region")}
         parquet_iso = set()
         for r in parquet_rows:
             iso_pref = _region_iso_prefix(r.get("region"))
@@ -1561,12 +1639,18 @@ def main():
                     parquet_iso.update(override)
                 elif r["country"] in COUNTRY_TO_ISO:
                     parquet_iso.add(COUNTRY_TO_ISO[r["country"]])
-        print(f"      wanted keys for {parquet_path}: {len(parquet_keys):,}")
-        pl, pa = load_overture(parquet_path, parquet_keys, parquet_iso)
+        print(f"      wanted keys for {parquet_path}: "
+              f"{len(parquet_keys):,} Tier A, {len(parquet_keys_name):,} Tier B")
+        pl, pa, pnl, pna = load_overture(
+            parquet_path, parquet_keys, parquet_keys_name, parquet_iso)
         for k, v in pl.items():
             by_key_land[k].extend(v)
         for k, v in pa.items():
             by_key_any[k].extend(v)
+        for k, v in pnl.items():
+            by_name_land[k].extend(v)
+        for k, v in pna.items():
+            by_name_any[k].extend(v)
 
     written = 0
     skipped_no_geom = 0
@@ -1581,6 +1665,23 @@ def main():
         for m in members:
             key = (_effective_region(m["region"]), m["subtype"], m["primary"])
             geoms = by_key_land.get(key) or by_key_any.get(key)
+            if not geoms and not m.get("region"):
+                # Tier B fallback: workbook Region was blank. Resolve by
+                # (subtype, primary) within the country. Accept only when
+                # every candidate shares one region (or all None); ambiguous
+                # cases are surfaced so editorial can disambiguate by
+                # filling Region on the affected workbook row.
+                name_key = (m["subtype"], m["primary"])
+                candidates = by_name_land.get(name_key) or by_name_any.get(name_key)
+                if candidates:
+                    distinct_regions = {c[0] for c in candidates}
+                    if len(distinct_regions) == 1:
+                        geoms = [c[1] for c in candidates]
+                    else:
+                        unmatched_per_metro[slug].append(
+                            f"AMBIGUOUS Tier B {m['subtype']}/{m['primary']!r} "
+                            f"in regions {sorted(str(r) for r in distinct_regions)}"
+                        )
             if not geoms:
                 unmatched_per_metro[slug].append(
                     f"{m['region']}/{m['subtype']}/{m['primary']!r}"

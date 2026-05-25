@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-05-25",
+    headline: "Capital-district polygons resolve via name fallback",
+    items: [
+      "Belgrade and other capital-district metros where Overture lacks an ISO 3166-2 sub-region tag now resolve to polygons automatically, with no manual workbook fills required.",
+      "Monaco and Vatican City route through the correct sheet so their quarter and parish rows feed the polygon build instead of being silently filtered.",
+      "Cache invalidation now picks up wiring changes on its own: routing maps, sheet maps, REGIONLESS membership, and sheet schemas all feed the version hash so a forgotten --force can no longer mask a rebuild.",
+    ],
+  },
+  {
     date: "2026-05-24",
     headline: "Eight more countries resolve to polygons, plus pre-push coverage check",
     items: [
