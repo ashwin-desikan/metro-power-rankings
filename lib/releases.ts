@@ -24,6 +24,7 @@ export const RELEASES: Release[] = [
       "Belgrade and other capital-district metros where Overture lacks an ISO 3166-2 sub-region tag now resolve to polygons automatically, with no manual workbook fills required.",
       "Monaco and Vatican City route through the correct sheet so their quarter and parish rows feed the polygon build instead of being silently filtered.",
       "Cache invalidation now picks up wiring changes on its own: routing maps, sheet maps, REGIONLESS membership, and sheet schemas all feed the version hash so a forgotten --force can no longer mask a rebuild.",
+      "Another wave of countries newly resolves to polygons after a workbook sync: Pakistan, Vietnam, Ethiopia, Sierra Leone, North Korea, Zimbabwe, Samoa, Fiji, Niger, Congo, and Côte d'Ivoire.",
     ],
   },
   {

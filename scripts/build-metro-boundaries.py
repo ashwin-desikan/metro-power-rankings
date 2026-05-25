@@ -374,6 +374,12 @@ COUNTRY_PARQUET_MAP = {
     "Yemen":                         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-YE.parquet",
     "Zambia":                        r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ZM.parquet",
     "Zimbabwe":                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-ZW.parquet",
+    # 2026-05-25 expansion - matcher fills landed in latest workbook sync:
+    "Sierra Leone":                  r"C:\Users\ashwi\Desktop\Projects\MapData\overture-SL.parquet",
+    "Pakistan":                      r"C:\Users\ashwi\Desktop\Projects\MapData\overture-PK.parquet",
+    "Fiji":                          r"C:\Users\ashwi\Desktop\Projects\MapData\overture-FJ.parquet",
+    "Niger":                         r"C:\Users\ashwi\Desktop\Projects\MapData\overture-NE.parquet",
+    "Côte d'Ivoire":                 r"C:\Users\ashwi\Desktop\Projects\MapData\overture-CI.parquet",
 
     # Andorra, San Marino, and the remaining 2026-05-08 small countries
     # (most of Latin America, sub-Saharan Africa, the Channel Islands, etc.)
@@ -639,6 +645,12 @@ COUNTRY_SHEET_MAP = {
     "Yemen":                         "counties",
     "Zambia":                        "counties",
     "Zimbabwe":                      "counties",
+    # 2026-05-25 expansion - matcher fills landed in latest workbook sync:
+    "Sierra Leone":                  "counties",
+    "Pakistan":                      "counties",
+    "Fiji":                          "counties",
+    "Niger":                         "counties",
+    "Côte d'Ivoire":                 "counties",
 
 }
 
@@ -889,6 +901,12 @@ COUNTRY_TO_ISO = {
     "Yemen":                         "YE",
     "Zambia":                        "ZM",
     "Zimbabwe":                      "ZW",
+    # 2026-05-25 expansion - matcher fills landed in latest workbook sync:
+    "Sierra Leone":                  "SL",
+    "Pakistan":                      "PK",
+    "Fiji":                          "FJ",
+    "Niger":                         "NE",
+    "Côte d'Ivoire":                 "CI",
 }
 
 WORKBOOK_TO_CANONICAL_COUNTRY = {
