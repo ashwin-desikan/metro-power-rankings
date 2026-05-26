@@ -7,14 +7,15 @@ import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
 export const metadata: Metadata = {
   title: "Football clubs",
   description:
-    "Canonical pages for every club that has played Level 1 football in England, Spain, " +
-    "Italy, Germany, or France, plus all five English league pyramid tiers (Premier League, " +
-    "Championship, League One, League Two, National League). Source: the grand Football " +
-    "workbook covering 1872 to present.",
+    "Canonical pages for every club that has played Level 1 football in England, Spain, Italy, " +
+    "Germany, France, the Netherlands, Portugal, or Scotland, plus the full English league " +
+    "pyramid (Premier League through National League) and the full Scottish league pyramid " +
+    "(Scottish Premiership through League Two). Source: the grand Football workbook covering " +
+    "1872 to present.",
   alternates: { canonical: "/teams/football" },
   openGraph: {
     title: `Football clubs | ${SITE_NAME}`,
-    description: "Canonical pages for the Big 5 European leagues and the English pyramid.",
+    description: "Canonical pages for the top European football leagues and the English pyramid.",
     url: `${BASE_URL}/teams/football`,
     type: "website",
   },
@@ -51,10 +52,13 @@ export default function FootballIndex() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Football</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          Big 5 European top flights (Level 1 only for Spain, Italy, Germany, France) plus the full
-          English pyramid through National League. Each club has a season-by-season history pulled
-          from the grand football workbook, with top-flight (Level 1) rows back to the 1870s for
-          England, 1890s for France and Italy, 1900s for Spain and Germany.
+          Top European top flights across England, Spain, Italy, Germany, France, the Netherlands,
+          Portugal, and Scotland. England (down to National League) and Scotland (down to League
+          Two) are wired through their full league pyramids; the others are top-flight only. Each
+          club has a season-by-season history pulled from the grand football workbook, with
+          top-flight rows reaching back to the 1870s in England, the 1890s in France and Italy,
+          the 1900s in Spain and Germany, the 1880s in Scotland, and the 1930s in the Netherlands
+          and Portugal.
         </p>
       </header>
 

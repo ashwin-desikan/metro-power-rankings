@@ -1,9 +1,15 @@
 "use client";
 
-// Client wrapper for the Big 5 league hub map. Single-country (no country
-// chips), with year input + slider + step buttons and a level filter row
-// (only relevant when England, since the other four are L1 only in v0).
-// Reuses FootballMapInner so the visual matches the /teams/football index.
+// Client wrapper for the per-country league hub map. Single-country (no
+// country chips), with year input + slider + step buttons and a level
+// filter row (relevant for England and Scotland; the other six countries
+// are L1 only in v0). Reuses FootballMapInner so the visual matches the
+// /teams/football index.
+//
+// TODO: these per-country color and scope constants are duplicated from
+// app/teams/football/FootballIndexClient.tsx. Centralize in a shared
+// module on the next refactor pass so adding a country only requires one
+// edit. Keep these two in lockstep until then.
 
 import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
@@ -14,14 +20,22 @@ const FootballMap = dynamic(() => import("../../FootballMapInner"), {
   loading: () => null,
 });
 
-// Per-country color ramp by tier. England gets the red shading; the
-// other four countries are L1-only in v0.
+// Per-country color ramp by tier. England and Scotland are wired down
+// their full pyramids and shade L2+ progressively lighter. The other six
+// countries are L1-only in v0.
 const COUNTRY_TIER_COLORS: Record<string, Record<number, string>> = {
-  England: { 1: "#dc2626", 2: "#ef4444", 3: "#f87171", 4: "#fca5a5", 5: "#fecaca" },
-  Spain:   { 1: "#f97316" },
-  Italy:   { 1: "#15803d" },
-  Germany: { 1: "#eab308" },
-  France:  { 1: "#1d4ed8" },
+  England: {
+    1: "#dc2626", 2: "#ef4444", 3: "#f87171", 4: "#fca5a5", 5: "#fecaca",
+  },
+  Scotland: {
+    1: "#0ea5e9", 2: "#38bdf8", 3: "#7dd3fc", 4: "#bae6fd",
+  },
+  Spain:       { 1: "#f97316" },
+  Italy:       { 1: "#15803d" },
+  Germany:     { 1: "#eab308" },
+  France:      { 1: "#1d4ed8" },
+  Netherlands: { 1: "#fb923c" },
+  Portugal:    { 1: "#be123c" },
 };
 
 function colorForTier(country: string, level: number | undefined): string {
@@ -31,11 +45,14 @@ function colorForTier(country: string, level: number | undefined): string {
 }
 
 const COUNTRY_LEVELS_IN_SCOPE: Record<string, number[]> = {
-  England: [1, 2, 3, 4, 5],
-  Spain:   [1],
-  Italy:   [1],
-  Germany: [1],
-  France:  [1],
+  England:     [1, 2, 3, 4, 5],
+  Scotland:    [1, 2, 3, 4],
+  Spain:       [1],
+  Italy:       [1],
+  Germany:     [1],
+  France:      [1],
+  Netherlands: [1],
+  Portugal:    [1],
 };
 
 export type HubClub = {

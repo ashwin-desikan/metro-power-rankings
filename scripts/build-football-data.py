@@ -5,9 +5,12 @@ Build Football team-pages data from the grand Football workbook
 see the workbook's Claude Notes sheet for full schema).
 
 V0 scope:
-  - Big 5 Level 1 top flights (England, Spain, Italy, Germany, France)
+  - Level 1 top flights across England, Spain, Italy, Germany, France,
+    Netherlands, Portugal, Scotland
   - English Levels 2-5 additionally (Championship, League One, League Two,
     National League and their historical predecessors)
+  - Scottish Levels 2-4 additionally (Championship, League One, League Two
+    and their historical predecessors in the SPFL pyramid)
   - One canonical page per distinct Cur. Name across the in-scope tiers
   - Season-by-season standings (P/W/D/L/Pts/GF/GA/GD/Place) + cup finals
     + European appearances + summary totals
@@ -24,7 +27,7 @@ Outputs (all under public/data/football/):
   seasons.json   - { slug: [season rows...] }
   cups.json      - { slug: [cup-final rows...] }
   europe.json    - { slug: [european-competition entries...] }
-  leagues.json   - Big 5 league hub data (current standings + all-time champions)
+  leagues.json   - per-country league hub data (current standings + all-time champions)
 
 Usage:
   python3 scripts/build-football-data.py
@@ -63,7 +66,8 @@ for sess in Path("/sessions").glob("*/mnt/Excel Files/Champions League-201516.xl
 
 OUT_DIR = REPO_ROOT / "public" / "data" / "football"
 
-BIG5 = {"England", "Spain", "Italy", "Germany", "France"}
+IN_SCOPE_COUNTRIES = {"England", "Spain", "Italy", "Germany", "France",
+                      "Netherlands", "Portugal", "Scotland"}
 
 # Hand-curated coordinate overrides for clubs whose Lookup / FootballClub_Data
 # rows carry wrong lat/lng (typically an Albany NY fallback from a US-centric
@@ -73,22 +77,32 @@ CURATED_COORDINATE_OVERRIDES = {
     "siena": (43.321667, 11.326111),  # Stadio Artemio Franchi, Siena, Italy
 }
 
-# Mapping from country -> set of in-scope tier levels.
+# Mapping from country -> set of in-scope tier levels. England carries the
+# full pyramid through National League (L1-5); Scotland carries the full
+# SPFL pyramid (L1-4: Premiership, Championship, League One, League Two).
+# Every other country is Level 1 only until a deliberate expansion lands.
 COUNTRY_TIERS = {
-    "England": {1, 2, 3, 4, 5},
-    "Spain":   {1},
-    "Italy":   {1},
-    "Germany": {1},
-    "France":  {1},
+    "England":     {1, 2, 3, 4, 5},
+    "Spain":       {1},
+    "Italy":       {1},
+    "Germany":     {1},
+    "France":      {1},
+    "Netherlands": {1},
+    "Portugal":    {1},
+    "Scotland":    {1, 2, 3, 4},
 }
 
-# League hub slugs for the five modern top-flight competitions.
+# League hub slugs for the modern top-flight competitions across the in-scope
+# countries.
 LEAGUE_HUBS = [
-    ("premier-league", "England", "Premier League", "Premier League", 1),
-    ("la-liga",        "Spain",   "La Liga",        "La Liga",        1),
-    ("serie-a",        "Italy",   "Serie A",        "Serie A",        1),
-    ("bundesliga",     "Germany", "Bundesliga",     "Bundesliga",     1),
-    ("ligue-1",        "France",  "Ligue 1",        "Ligue 1",        1),
+    ("premier-league",       "England",     "Premier League",       "Premier League",       1),
+    ("la-liga",              "Spain",       "La Liga",              "La Liga",              1),
+    ("serie-a",              "Italy",       "Serie A",              "Serie A",              1),
+    ("bundesliga",           "Germany",     "Bundesliga",           "Bundesliga",           1),
+    ("ligue-1",              "France",      "Ligue 1",              "Ligue 1",              1),
+    ("eredivisie",           "Netherlands", "Eredivisie",           "Eredivisie",           1),
+    ("primeira-liga",        "Portugal",    "Primeira Liga",        "Primeira Liga",        1),
+    ("scottish-premiership", "Scotland",    "Scottish Premiership", "Scottish Premiership", 1),
 ]
 
 # Standings sheets share an identical 86-column schema.
@@ -297,7 +311,7 @@ def collect_standings_rows(wb):
             if not row: continue
             if idx_country is None or idx_country >= len(row): continue
             country = row[idx_country]
-            if country not in BIG5: continue
+            if country not in IN_SCOPE_COUNTRIES: continue
             cn = row[idx_curname] if idx_curname < len(row) else None
             if not cn: continue
             cn = str(cn).strip()
@@ -394,7 +408,7 @@ def collect_cup_finals(wb, in_scope_curnames):
     for row in ws.iter_rows(min_row=2, values_only=True):
         if not row: continue
         country = row[idx_country] if idx_country < len(row) else None
-        if country not in BIG5: continue
+        if country not in IN_SCOPE_COUNTRIES: continue
         cn = row[idx_cn] if idx_cn < len(row) else None
         if not cn or str(cn).strip() not in in_scope_curnames: continue
         cn = str(cn).strip()
@@ -843,7 +857,7 @@ def main():
     payload_index = {
         "generated_at": __import__("datetime").date.today().isoformat(),
         "source": str(src.name),
-        "scope": {"big5": sorted(BIG5), "country_tiers": {k: sorted(v) for k, v in COUNTRY_TIERS.items()}},
+        "scope": {"countries": sorted(IN_SCOPE_COUNTRIES), "country_tiers": {k: sorted(v) for k, v in COUNTRY_TIERS.items()}},
         "clubs": [c for c in sorted(clubs.values(), key=lambda x: (x["country"] or "", x["cur_name"]))],
     }
     with open(index_path, "w", encoding="utf-8") as f:

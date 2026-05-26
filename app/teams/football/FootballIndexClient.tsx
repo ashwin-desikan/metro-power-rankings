@@ -148,7 +148,8 @@ type Props = {
   clubs: IndexClub[];
 };
 
-const COUNTRY_ORDER = ["England", "Spain", "Italy", "Germany", "France"];
+const COUNTRY_ORDER = ["England", "Spain", "Italy", "Germany", "France",
+                       "Netherlands", "Portugal", "Scotland"];
 
 // Country palette - chosen for visual distinguishability and a faint nod to
 // national-team kit traditions (Three Lions red, Spanish red-orange / La
@@ -156,17 +157,20 @@ const COUNTRY_ORDER = ["England", "Spain", "Italy", "Germany", "France"];
 // Les Bleus navy). Shared between the map markers and the country group
 // header swatches so the eye can follow a club from the map to the list.
 export const COUNTRY_COLORS: Record<string, string> = {
-  England: "#dc2626",  // red
-  Spain:   "#f97316",  // orange-red
-  Italy:   "#15803d",  // green
-  Germany: "#eab308",  // gold-yellow
-  France:  "#1d4ed8",  // navy blue
+  England:     "#dc2626",  // red
+  Spain:       "#f97316",  // orange-red
+  Italy:       "#15803d",  // green
+  Germany:     "#eab308",  // gold-yellow
+  France:      "#1d4ed8",  // navy blue
+  Netherlands: "#fb923c",  // bright orange (KNVB)
+  Portugal:    "#be123c",  // deep crimson
+  Scotland:    "#0ea5e9",  // sky blue (distinct from France navy)
 };
 
 // Per-tier shades within each country's hue family. Level 1 is the primary;
 // lower tiers lighten progressively so the visual hierarchy maps to the
-// pyramid. England is the only country with sub-L1 coverage in v0 so the
-// other four are L1-only.
+// pyramid. England and Scotland are wired down their full pyramids; the
+// other six countries are L1-only in v0.
 const COUNTRY_TIER_COLORS: Record<string, Record<number, string>> = {
   England: {
     1: "#dc2626",  // red-600 (primary)
@@ -175,10 +179,18 @@ const COUNTRY_TIER_COLORS: Record<string, Record<number, string>> = {
     4: "#fca5a5",  // red-300
     5: "#fecaca",  // red-200
   },
-  Spain:   { 1: "#f97316" },
-  Italy:   { 1: "#15803d" },
-  Germany: { 1: "#eab308" },
-  France:  { 1: "#1d4ed8" },
+  Scotland: {
+    1: "#0ea5e9",  // sky-500 (primary)
+    2: "#38bdf8",  // sky-400
+    3: "#7dd3fc",  // sky-300
+    4: "#bae6fd",  // sky-200
+  },
+  Spain:       { 1: "#f97316" },
+  Italy:       { 1: "#15803d" },
+  Germany:     { 1: "#eab308" },
+  France:      { 1: "#1d4ed8" },
+  Netherlands: { 1: "#fb923c" },
+  Portugal:    { 1: "#be123c" },
 };
 
 // Resolve a marker color from (country, level). Falls back to the country
@@ -189,15 +201,19 @@ function colorForCountryTier(country: string, level: number | undefined): string
   return COUNTRY_COLORS[country] ?? "#525252";
 }
 
-// Which tier levels are in scope for each Big 5 country. England has
-// 1-5 (full pyramid through National League); the other four are L1
-// only in v0. Drives the Level chip row visibility.
+// Which tier levels are in scope for each in-scope country. England has
+// 1-5 (full pyramid through National League); Scotland has 1-4 (full SPFL
+// pyramid). Every other country is L1 only in v0. Drives the Level chip
+// row visibility.
 const COUNTRY_LEVELS_IN_SCOPE: Record<string, number[]> = {
-  England: [1, 2, 3, 4, 5],
-  Spain:   [1],
-  Italy:   [1],
-  Germany: [1],
-  France:  [1],
+  England:     [1, 2, 3, 4, 5],
+  Scotland:    [1, 2, 3, 4],
+  Spain:       [1],
+  Italy:       [1],
+  Germany:     [1],
+  France:      [1],
+  Netherlands: [1],
+  Portugal:    [1],
 };
 
 const TIER_LABEL_BY_COUNTRY: Record<string, Record<number, string>> = {
@@ -207,6 +223,12 @@ const TIER_LABEL_BY_COUNTRY: Record<string, Record<number, string>> = {
     3: "League One",
     4: "League Two",
     5: "National League",
+  },
+  Scotland: {
+    1: "Premiership / Premier Division",
+    2: "Championship / First Division",
+    3: "League One / Second Division",
+    4: "League Two / Third Division",
   },
 };
 
@@ -326,9 +348,9 @@ export default function FootballIndexClient({ clubs }: Props) {
   }, [filtered, seasonYear]);
 
   // Which Level chips are available given the active country filter.
-  // When no country is selected, show the union across all Big 5 (1-5).
-  // When countries are selected, show only the union of their in-scope
-  // levels. England is the only country with sub-L1 coverage so any
+  // When no country is selected, show the union across all in-scope
+  // countries (1-5). When countries are selected, show only the union of
+  // their in-scope levels. England is the only country with sub-L1 so any
   // selection that includes England exposes Levels 2-5.
   const visibleLevels = useMemo(() => {
     const activeCountries = countries.size === 0 ? COUNTRY_ORDER : [...countries];

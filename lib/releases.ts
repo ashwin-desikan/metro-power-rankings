@@ -19,11 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-26",
-    headline: "Mobile standings polish; Domestic Cup column; finals signal on club pages",
+    headline: "Football expanded across more European leagues; club page polish",
     items: [
-      "Current standings on the Premier League, La Liga, Serie A, Bundesliga, and Ligue 1 hubs drop goals-for, goals-against, and European qualification columns on phone viewports so club names and primary stats can breathe.",
-      "Football club season-by-season tables now flag Domestic Cup final appearances inline; major-cup pills carry country-specific labels (FA, Copa, Coppa, Pokal, Coupe) while secondary cups all read Lg Cup.",
-      "Both Domestic Cup and European Competition columns now share a unified language for finals: filled pill with a solid star marks winners, outlined pill with an open star marks the runner-up.",
+      "Football now covers the Eredivisie, Primeira Liga, and Scottish Premiership alongside the existing five top flights, with full league hubs and canonical club pages; Scotland is wired down to League Two.",
+      "Club season tables flag Domestic Cup and European finals inline: filled pill plus star for winners, outlined pill plus open star for runners-up; major cups use country labels, secondary cups read Lg Cup.",
+      "Current standings on the league hub pages drop goals-for, goals-against, and European qualification columns on phone viewports so club names and primary stats can breathe.",
       "Polish: club page season tables now space the win, draw, loss, and goals columns evenly so the numeric block stops crowding on desktop.",
     ],
   },

@@ -2,11 +2,12 @@ import "server-only";
 
 // Football team-pages data layer.
 //
-// V0 scope: Big 5 Level 1 (England, Spain, Italy, Germany, France) plus
-// English Levels 2-5. One canonical page per distinct Cur. Name across the
-// in-scope tiers. Source: scripts/build-football-data.py reads from the
-// grand Football workbook (Champions League-201516.xlsx) and emits the
-// JSONs we consume here.
+// V0 scope: Level 1 across England, Spain, Italy, Germany, France,
+// Netherlands, Portugal, and Scotland, plus English Levels 2-5 and
+// Scottish Levels 2-4. One canonical page per distinct Cur. Name across
+// the in-scope tiers. Source: scripts/build-football-data.py reads from
+// the grand Football workbook (Champions League-201516.xlsx) and emits
+// the JSONs we consume here.
 //
 // Server-only — uses fs.readFileSync. Listed in
 // scripts/check-client-imports.mjs SERVER_ONLY_MODULES.
@@ -158,7 +159,7 @@ function loadJson<T>(name: string, fallback: T): T {
 type IndexPayload = {
   generated_at: string;
   source: string;
-  scope: { big5: string[]; country_tiers: Record<string, number[]> };
+  scope: { countries: string[]; country_tiers: Record<string, number[]> };
   clubs: FootballClub[];
 };
 
@@ -175,7 +176,7 @@ function getIndex(): IndexPayload {
     const raw = loadJson<IndexPayload>("index.json", {
       generated_at: "",
       source: "",
-      scope: { big5: [], country_tiers: {} },
+      scope: { countries: [], country_tiers: {} },
       clubs: [],
     });
     // Clamp last_year to MAX_DISPLAYED_YEAR so the "Most recent season"
@@ -305,8 +306,9 @@ export function getClubsGroupedByCountry(): Array<{
     if (!groups.has(c.country)) groups.set(c.country, []);
     groups.get(c.country)!.push(c);
   }
-  // Big 5 order matches the league-hub list for visual consistency.
-  const order = ["England", "Spain", "Italy", "Germany", "France"];
+  // Country order matches the league-hub list for visual consistency.
+  const order = ["England", "Spain", "Italy", "Germany", "France",
+                 "Netherlands", "Portugal", "Scotland"];
   return order
     .filter((c) => groups.has(c))
     .map((country) => ({
@@ -345,7 +347,8 @@ export function getFootballClubByName(teamName: string): FootballClub | null {
   return getClubBySlug(slug);
 }
 
-// Curated primary colors for marquee Big 5 clubs. Slug keys. Foreground is
+// Curated primary colors for marquee clubs across the in-scope countries.
+// Slug keys. Foreground is
 // chosen for contrast against the background; in most cases this is
 // off-white for dark backgrounds and near-black for light backgrounds.
 // If you add a club, follow the workbook's slugified Cur. Name as the key.
@@ -508,17 +511,22 @@ export const EUROPEAN_COMP_NAMES: Record<string, string> = {
   OTHC: "Other Champions track",
 };
 
-// Convenience: the canonical name for each Big 5 country's level-1 league
-// (used when rendering a club page header summary).
+// Convenience: the canonical name for each in-scope country's level-1
+// league (used when rendering a club page header summary).
 export const COUNTRY_TOP_FLIGHT: Record<string, string> = {
   England: "Premier League",
   Spain: "La Liga",
   Italy: "Serie A",
   Germany: "Bundesliga",
   France: "Ligue 1",
+  Netherlands: "Eredivisie",
+  Portugal: "Primeira Liga",
+  Scotland: "Scottish Premiership",
 };
 
-// Convenience: which tiers exist per country in our v0 scope.
+// Convenience: which tiers exist per country in our v0 scope. England and
+// Scotland are wired down their full league pyramids; every other country
+// is Level 1 only.
 export const COUNTRY_TIER_LABELS: Record<string, Record<number, string>> = {
   England: {
     1: "Premier League",
@@ -527,8 +535,16 @@ export const COUNTRY_TIER_LABELS: Record<string, Record<number, string>> = {
     4: "League Two",
     5: "National League",
   },
+  Scotland: {
+    1: "Scottish Premiership",
+    2: "Scottish Championship",
+    3: "Scottish League One",
+    4: "Scottish League Two",
+  },
   Spain: { 1: "La Liga" },
   Italy: { 1: "Serie A" },
   Germany: { 1: "Bundesliga" },
   France: { 1: "Ligue 1" },
+  Netherlands: { 1: "Eredivisie" },
+  Portugal: { 1: "Primeira Liga" },
 };

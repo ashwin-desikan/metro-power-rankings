@@ -231,11 +231,14 @@ const GOLD_TROPHY_CODES = new Set(["CL", "CLB"]); // European Cup / Champions Le
 // like the Community Shield) are deliberately excluded from the column
 // and remain in the dedicated "Cup finals" section below.
 const DOMESTIC_CUP_SHORT_LABELS: Record<string, { major: string; minor: string }> = {
-  England: { major: "FA", minor: "Lg Cup" },
-  Spain: { major: "Copa", minor: "Lg Cup" },
-  Italy: { major: "Coppa", minor: "Lg Cup" },
-  Germany: { major: "Pokal", minor: "Lg Cup" },
-  France: { major: "Coupe", minor: "Lg Cup" },
+  England:     { major: "FA",       minor: "Lg Cup" },
+  Spain:       { major: "Copa",     minor: "Lg Cup" },
+  Italy:       { major: "Coppa",    minor: "Lg Cup" },
+  Germany:     { major: "Pokal",    minor: "Lg Cup" },
+  France:      { major: "Coupe",    minor: "Lg Cup" },
+  Netherlands: { major: "KNVB",     minor: "Lg Cup" },
+  Portugal:    { major: "Taça",     minor: "Lg Cup" },
+  Scotland:    { major: "Scot Cup", minor: "Lg Cup" },
 };
 // Fallback for countries without an entry above (none in v0 scope today).
 const DOMESTIC_CUP_FALLBACK = { major: "Cup", minor: "Lg Cup" };
@@ -243,11 +246,14 @@ const DOMESTIC_CUP_FALLBACK = { major: "Cup", minor: "Lg Cup" };
 // Full names for the column tooltips, sourced from the same dictionary the
 // CupsBlock below uses. Keep these in sync if you rename one.
 const DOMESTIC_CUP_FULL_NAMES: Record<string, { major: string; minor: string }> = {
-  England: { major: "FA Cup", minor: "League Cup" },
-  Spain: { major: "Copa del Rey", minor: "Copa de la Liga" },
-  Italy: { major: "Coppa Italia", minor: "Coppa Italia Serie C" },
-  Germany: { major: "DFB-Pokal", minor: "DFB-Ligapokal" },
-  France: { major: "Coupe de France", minor: "Coupe de la Ligue" },
+  England:     { major: "FA Cup",          minor: "League Cup" },
+  Spain:       { major: "Copa del Rey",    minor: "Copa de la Liga" },
+  Italy:       { major: "Coppa Italia",    minor: "Coppa Italia Serie C" },
+  Germany:     { major: "DFB-Pokal",       minor: "DFB-Ligapokal" },
+  France:      { major: "Coupe de France", minor: "Coupe de la Ligue" },
+  Netherlands: { major: "KNVB Beker",      minor: "Dutch League Cup" },
+  Portugal:    { major: "Taça de Portugal",minor: "Taça da Liga" },
+  Scotland:    { major: "Scottish Cup",    minor: "Scottish League Cup" },
 };
 
 function SeasonsTable({
@@ -555,11 +561,14 @@ function SeasonsTable({
 
 function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: string }) {
   const cupNames: Record<string, Record<string, string>> = {
-    England: { major: "FA Cup", minor: "League Cup", super: "Community Shield" },
-    Spain: { major: "Copa del Rey", minor: "Copa de la Liga", super: "Supercopa de España" },
-    Italy: { major: "Coppa Italia", minor: "Coppa Italia Serie C", super: "Supercoppa Italiana" },
-    Germany: { major: "DFB-Pokal", minor: "DFB-Ligapokal", super: "DFL-Supercup" },
-    France: { major: "Coupe de France", minor: "Coupe de la Ligue", super: "Trophée des Champions" },
+    England:     { major: "FA Cup",           minor: "League Cup",            super: "Community Shield" },
+    Spain:       { major: "Copa del Rey",     minor: "Copa de la Liga",       super: "Supercopa de España" },
+    Italy:       { major: "Coppa Italia",     minor: "Coppa Italia Serie C",  super: "Supercoppa Italiana" },
+    Germany:     { major: "DFB-Pokal",        minor: "DFB-Ligapokal",         super: "DFL-Supercup" },
+    France:      { major: "Coupe de France",  minor: "Coupe de la Ligue",     super: "Trophée des Champions" },
+    Netherlands: { major: "KNVB Beker",       minor: "Dutch League Cup",      super: "Johan Cruijff Schaal" },
+    Portugal:    { major: "Taça de Portugal", minor: "Taça da Liga",          super: "Supertaça Cândido de Oliveira" },
+    Scotland:    { major: "Scottish Cup",     minor: "Scottish League Cup",   super: "Scottish Super Cup" },
   };
   const names = cupNames[country] ?? { major: "Major cup", minor: "League cup", super: "Super cup" };
 
