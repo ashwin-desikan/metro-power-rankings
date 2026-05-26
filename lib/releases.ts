@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-26",
-    headline: "More European football leagues; era-correct competition labels",
+    headline: "International Football launches; European league expansion and polish",
     items: [
-      "Football now covers the Eredivisie, Primeira Liga, and Scottish Premiership alongside the existing five top flights; Scotland is wired down to League Two.",
+      "International Football v1 ships at /teams/national: ELO-ranked national-team table with country flags, FIFA ranks, and trophy counts; per-team pages with tournament history and tournament-finals; eight tournament hubs.",
+      "Club Football now covers the Eredivisie, Primeira Liga, and Scottish Premiership alongside the existing five top flights; Scotland is wired down to League Two.",
       "Club season tables flag Domestic Cup and European finals inline: filled pill plus star for winners, outlined pill plus open star for runners-up; major cups use country labels, secondary cups read Lg Cup.",
-      "Mobile polish: league hub standings drop GF, GA, and European qualification columns on phone viewports. Desktop polish: club page season tables space their numeric columns evenly.",
-      "European competition pills use era-correct abbreviations (EC for pre-1993 European Cup, UC for the UEFA Cup era, ICFC for Inter-Cities Fairs Cup) and sort CL then CWC then EL then EUCL within a season; ECL renders as EUCL.",
+      "Club page polish: standings on phone hide secondary columns; desktop numeric columns space evenly; European competition pills use era-correct abbreviations (EC, UC, ICFC) and sort within a season.",
     ],
   },
   {

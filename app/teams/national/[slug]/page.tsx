@@ -1,0 +1,411 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  getAllNationalTeamSlugs,
+  getNationalTeamBySlug,
+  getAppearancesForTeam,
+  getFinalsForTeam,
+  getRankSnapshots,
+  type NationalTeamAppearance,
+  type NationalTeamFinal,
+  type TournamentCategory,
+} from "@/lib/international";
+import {
+  CATEGORY_SHORT_LABEL,
+  appearanceCategorySortKey,
+  CONTINENT_COLORS,
+  flagForTeam,
+} from "@/lib/international-display";
+import { BASE_URL, SITE_NAME } from "@/lib/seo";
+
+export const dynamicParams = false;
+
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateStaticParams() {
+  return getAllNationalTeamSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const t = getNationalTeamBySlug(slug);
+  if (!t) return { title: "Team not found" };
+  const trophies = t.totals.trophies ?? 0;
+  const desc =
+    `${t.cur_name} national football team: ` +
+    `${trophies} senior trophy${trophies === 1 ? "" : "ies"} across ` +
+    `${t.totals.tour_app} tournament appearance${t.totals.tour_app === 1 ? "" : "s"}.`;
+  return {
+    title: t.cur_name,
+    description: desc,
+    alternates: { canonical: `/teams/national/${t.slug}` },
+    openGraph: {
+      title: `${t.cur_name} (national team) | ${SITE_NAME}`,
+      description: desc,
+      url: `${BASE_URL}/teams/national/${t.slug}`,
+      type: "website",
+    },
+  };
+}
+
+export default async function NationalTeamPage({ params }: Props) {
+  const { slug } = await params;
+  const team = getNationalTeamBySlug(slug);
+  if (!team) notFound();
+
+  const appearances = getAppearancesForTeam(slug);
+  const finals = getFinalsForTeam(slug);
+  const snapshots = getRankSnapshots();
+
+  // Honors strip pills.
+  const honors: Array<{ label: string; count: number; lastYear?: number | null }> = [];
+  if (team.world_cup.champ) {
+    honors.push({ label: "World Cup titles", count: team.world_cup.champ, lastYear: team.world_cup.last_champ });
+  }
+  if (team.continental.champ) {
+    honors.push({ label: "Continental titles", count: team.continental.champ, lastYear: team.continental.last_champ });
+  }
+  if (team.intercontinental.champ) {
+    honors.push({ label: "Intercontinental titles", count: team.intercontinental.champ });
+  }
+  if (team.other.champ) {
+    honors.push({ label: "Other tournament wins", count: team.other.champ });
+  }
+  if (team.world_cup.finals - team.world_cup.champ > 0) {
+    honors.push({ label: "World Cup final runs", count: team.world_cup.finals });
+  }
+  if (team.continental.finals - team.continental.champ > 0) {
+    honors.push({ label: "Continental finals reached", count: team.continental.finals });
+  }
+
+  const continentColor = team.continent ? CONTINENT_COLORS[team.continent] ?? "#525252" : "#525252";
+
+  return (
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mb-3">
+        <Link
+          href="/teams/national"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          <span aria-hidden>←</span>
+          Back to International Football
+        </Link>
+      </div>
+      <nav className="text-xs text-[var(--text-muted)] mb-4">
+        <Link href="/" className="hover:underline">Home</Link>
+        {" / "}
+        <Link href="/teams/national" className="hover:underline">International Football</Link>
+        {" / "}
+        <span>{team.cur_name}</span>
+      </nav>
+
+      <header className="mb-6">
+        <div className="flex items-center gap-3 flex-wrap">
+          <span
+            className="inline-block w-3 h-3 rounded-full flex-shrink-0"
+            style={{ background: continentColor }}
+            aria-hidden
+          />
+          {flagForTeam(team.slug) && (
+            <span className="text-3xl leading-none" aria-hidden>{flagForTeam(team.slug)}</span>
+          )}
+          <h1 className="text-3xl font-semibold tracking-tight">{team.cur_name}</h1>
+          {!team.active && (
+            <span
+              className="inline-block rounded px-2 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+              style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}
+              title="No longer fielding a senior side"
+            >
+              Defunct
+            </span>
+          )}
+        </div>
+        <p className="mt-1 text-sm text-[var(--text-muted)]">
+          {team.continent}
+          {team.federation && <> · {team.federation}</>}
+          {team.subdivision && <> · {team.subdivision}</>}
+        </p>
+        {(team.elo_rank || team.fifa_rank) && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {team.elo_rank && (
+              <span
+                className="inline-flex items-baseline gap-1.5 rounded-md border px-2.5 py-1 text-xs"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                title={`ELO ranking snapshot as of ${snapshots.elo}`}
+              >
+                <span className="font-semibold tabular-nums">#{team.elo_rank}</span>
+                <span className="text-[var(--text-muted)]">ELO</span>
+                <span className="text-[var(--text-dim)]">· {snapshots.elo}</span>
+              </span>
+            )}
+            {team.fifa_rank && (
+              <span
+                className="inline-flex items-baseline gap-1.5 rounded-md border px-2.5 py-1 text-xs"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                title={`FIFA ranking snapshot as of ${snapshots.fifa}`}
+              >
+                <span className="font-semibold tabular-nums">#{team.fifa_rank}</span>
+                <span className="text-[var(--text-muted)]">FIFA</span>
+                <span className="text-[var(--text-dim)]">· {snapshots.fifa}</span>
+              </span>
+            )}
+          </div>
+        )}
+        {honors.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {honors.map((h) => (
+              <span
+                key={h.label}
+                className="inline-flex items-baseline gap-1.5 rounded-md border px-2.5 py-1 text-xs"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <span className="font-semibold tabular-nums">{h.count}</span>
+                <span className="text-[var(--text-muted)]">{h.label}</span>
+                {h.lastYear && (
+                  <span className="text-[var(--text-muted)]">· last {h.lastYear}</span>
+                )}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <section
+        className="rounded-xl border p-5 mb-6"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      >
+        <h2 className="text-base font-semibold">Footprint</h2>
+        <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+          <Stat label="Tournament appearances" value={String(team.totals.tour_app)} />
+          <Stat label="Trophies" value={String(team.totals.trophies)} />
+          <Stat label="Major trophies" value={String(team.totals.major_trophies)} />
+          <Stat label="Last appearance" value={team.totals.last_app ? String(team.totals.last_app) : "-"} />
+          <Stat label="World Cup appearances" value={String(team.world_cup.app)} />
+          <Stat label="Continental appearances" value={String(team.continental.app)} />
+          <Stat label="Last final reached" value={team.totals.last_finals ? String(team.totals.last_finals) : "-"} />
+          <Stat label="Last trophy" value={team.totals.last_trophy ? String(team.totals.last_trophy) : "-"} />
+        </div>
+      </section>
+
+      <AppearancesTable appearances={appearances} />
+
+      {finals.length > 0 && <FinalsTable finals={finals} />}
+    </main>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-[var(--text-muted)] text-xs uppercase tracking-wide">{label}</div>
+      <div className="text-base font-semibold tabular-nums mt-0.5">{value}</div>
+    </div>
+  );
+}
+
+const CATEGORY_PILL_STYLE: Record<TournamentCategory, { bg: string; fg: string }> = {
+  WC:    { bg: "rgba(212,175,55,0.22)", fg: "#d4af37" },  // gold-ish
+  EUROS: { bg: "rgba(29,78,216,0.18)",  fg: "#1d4ed8" },
+  COPA:  { bg: "rgba(21,128,61,0.18)",  fg: "#15803d" },
+  AFCON: { bg: "rgba(234,179,8,0.20)",  fg: "#a16207" },
+  ASIAN: { bg: "rgba(220,38,38,0.18)",  fg: "#dc2626" },
+  GOLD:  { bg: "rgba(14,165,233,0.18)", fg: "#0284c7" },
+  OFC:   { bg: "rgba(168,85,247,0.18)", fg: "#9333ea" },
+  INTER: { bg: "rgba(192,192,192,0.20)", fg: "#6b7280" },
+  OTHER: { bg: "rgba(120,120,140,0.16)", fg: "var(--text-muted)" },
+};
+
+function AppearancesTable({ appearances }: { appearances: NationalTeamAppearance[] }) {
+  if (appearances.length === 0) {
+    return (
+      <section
+        className="rounded-xl border p-5 mb-6"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      >
+        <h2 className="text-base font-semibold">Tournament history</h2>
+        <p className="mt-2 text-sm text-[var(--text-muted)]">No tournament appearances on file.</p>
+      </section>
+    );
+  }
+  // Sort by year desc, then category priority within a year.
+  const sorted = [...appearances].sort((a, b) => {
+    const yd = (b.year ?? 0) - (a.year ?? 0);
+    if (yd !== 0) return yd;
+    return appearanceCategorySortKey(a.category) - appearanceCategorySortKey(b.category);
+  });
+  return (
+    <section
+      className="rounded-xl border p-5 mb-6"
+      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+    >
+      <h2 className="text-base font-semibold">Tournament history</h2>
+      <p className="mt-1 text-xs text-[var(--text-muted)]">
+        Most recent first. Every senior international tournament appearance on file: World Cups,
+        continental cups, intercontinental tournaments, and selected others. Rows marked
+        &quot;as ...&quot; were played under a predecessor name (Soviet Union, Yugoslavia,
+        Czechoslovakia, etc.).
+      </p>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr
+              className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">Year</th>
+              <th className="py-2 text-left font-medium">Tournament</th>
+              <th className="py-2 text-left font-medium">Round reached</th>
+              <th className="py-2 text-left font-medium">Played as</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((a, i) => {
+              const style = CATEGORY_PILL_STYLE[a.category];
+              const shortLabel = CATEGORY_SHORT_LABEL[a.category];
+              return (
+                <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{a.year}</td>
+                  <td className="py-1.5">
+                    <span className="inline-flex items-center gap-2 flex-wrap">
+                      <span
+                        className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: style.bg, color: style.fg }}
+                        title={a.tournament_label}
+                      >
+                        {shortLabel}
+                      </span>
+                      <span>{a.tournament_label}</span>
+                    </span>
+                  </td>
+                  <td className="py-1.5">
+                    {a.champion ? (
+                      <span
+                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+                        style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
+                        title="Won this tournament"
+                      >
+                        <span aria-hidden>★</span> Champion
+                      </span>
+                    ) : a.round_reached === "Final" ? (
+                      <span
+                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+                        style={{
+                          background: "transparent",
+                          color: "var(--text-muted)",
+                          boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.45)",
+                        }}
+                        title="Reached final, lost"
+                      >
+                        <span aria-hidden>☆</span> Final
+                      </span>
+                    ) : (
+                      <span className="text-[var(--text-muted)]">{a.round_reached}</span>
+                    )}
+                  </td>
+                  <td className="py-1.5 text-xs text-[var(--text-muted)]">
+                    {a.team_as ? <>as {a.team_as}</> : null}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
+function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
+  return (
+    <section
+      className="rounded-xl border p-5 mb-6"
+      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+    >
+      <h2 className="text-base font-semibold">Tournament finals</h2>
+      <p className="mt-1 text-xs text-[var(--text-muted)]">
+        Every senior-tournament final this team has played. Wins highlighted in gold; losses muted.
+        Penalty shootouts shown as &quot;PKs&quot; alongside the regulation score.
+      </p>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr
+              className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">Year</th>
+              <th className="py-2 text-left font-medium">Tournament</th>
+              <th className="py-2 text-left font-medium">Opponent</th>
+              <th className="py-2 px-2 text-right font-medium">Score</th>
+              <th className="py-2 text-left font-medium">Result</th>
+              <th className="py-2 text-left font-medium hidden sm:table-cell">Venue</th>
+            </tr>
+          </thead>
+          <tbody>
+            {finals.map((f, i) => {
+              const isWin = f.result === "W";
+              const scoreText = f.for_goals != null && f.against_goals != null
+                ? `${f.for_goals}-${f.against_goals}`
+                : "-";
+              const pkText = f.penalty_kicks ? ` (PKs ${f.penalty_kicks})` : "";
+              return (
+                <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{f.year}</td>
+                  <td className="py-1.5">{f.competition}</td>
+                  <td className="py-1.5">
+                    {f.opp_slug && flagForTeam(f.opp_slug) && (
+                      <span className="mr-1.5" aria-hidden>{flagForTeam(f.opp_slug)}</span>
+                    )}
+                    {f.opp_slug ? (
+                      <Link href={`/teams/national/${f.opp_slug}`} className="hover:underline">
+                        {f.opp_cur_name}
+                      </Link>
+                    ) : (
+                      <span>{f.opp_cur_name ?? "-"}</span>
+                    )}
+                    {f.opp_team_as && (
+                      <span className="text-[var(--text-muted)] text-xs ml-1">(as {f.opp_team_as})</span>
+                    )}
+                  </td>
+                  <td className="py-1.5 px-2 text-right tabular-nums">
+                    {scoreText}
+                    {pkText && <span className="text-[var(--text-muted)] text-xs"> {pkText}</span>}
+                  </td>
+                  <td className="py-1.5">
+                    {isWin ? (
+                      <span
+                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+                        style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
+                      >
+                        <span aria-hidden>★</span> Won
+                      </span>
+                    ) : f.result === "L" ? (
+                      <span
+                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+                        style={{
+                          background: "transparent",
+                          color: "var(--text-muted)",
+                          boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.45)",
+                        }}
+                      >
+                        <span aria-hidden>☆</span> Lost
+                      </span>
+                    ) : (
+                      <span className="text-[var(--text-muted)]">{f.result ?? "-"}</span>
+                    )}
+                  </td>
+                  <td className="py-1.5 text-xs text-[var(--text-muted)] hidden sm:table-cell">
+                    {f.stadium && <>{f.stadium}</>}
+                    {f.stad_country && <span>{f.stadium ? ", " : ""}{f.stad_country}</span>}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
