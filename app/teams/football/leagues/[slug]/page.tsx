@@ -127,11 +127,11 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
               <th className="py-2 text-right font-medium">D</th>
               <th className="py-2 text-right font-medium">L</th>
               <th className="py-2 text-right font-medium">Pts</th>
-              <th className="py-2 text-right font-medium">GF</th>
-              <th className="py-2 text-right font-medium">GA</th>
+              <th className="py-2 text-right font-medium hidden sm:table-cell">GF</th>
+              <th className="py-2 text-right font-medium hidden sm:table-cell">GA</th>
               <th className="py-2 text-right font-medium">GD</th>
               <th
-                className="py-2 pl-3 text-left font-medium whitespace-nowrap"
+                className="py-2 pl-3 text-left font-medium whitespace-nowrap hidden sm:table-cell"
                 title="European competition the club qualified for next season"
               >
                 Eur Qual <span className="text-[var(--text-dim)] normal-case font-normal">(next yr)</span>
@@ -184,10 +184,10 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
                 <td className="py-1.5 text-right tabular-nums">{s.d ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.l ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.pts ?? "-"}</td>
-                <td className="py-1.5 text-right tabular-nums">{s.gf ?? "-"}</td>
-                <td className="py-1.5 text-right tabular-nums">{s.ga ?? "-"}</td>
+                <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{s.gf ?? "-"}</td>
+                <td className="py-1.5 text-right tabular-nums hidden sm:table-cell">{s.ga ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.gd ?? "-"}</td>
-                <td className="py-1.5 pl-3 text-xs whitespace-nowrap">
+                <td className="py-1.5 pl-3 text-xs whitespace-nowrap hidden sm:table-cell">
                   {s.eur_qual && (
                     <span
                       className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
