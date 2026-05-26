@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-26",
-    headline: "Football expanded across more European leagues; club page polish",
+    headline: "More European football leagues; era-correct competition labels",
     items: [
-      "Football now covers the Eredivisie, Primeira Liga, and Scottish Premiership alongside the existing five top flights, with full league hubs and canonical club pages; Scotland is wired down to League Two.",
+      "Football now covers the Eredivisie, Primeira Liga, and Scottish Premiership alongside the existing five top flights; Scotland is wired down to League Two.",
       "Club season tables flag Domestic Cup and European finals inline: filled pill plus star for winners, outlined pill plus open star for runners-up; major cups use country labels, secondary cups read Lg Cup.",
-      "Current standings on the league hub pages drop goals-for, goals-against, and European qualification columns on phone viewports so club names and primary stats can breathe.",
-      "Polish: club page season tables now space the win, draw, loss, and goals columns evenly so the numeric block stops crowding on desktop.",
+      "Mobile polish: league hub standings drop GF, GA, and European qualification columns on phone viewports. Desktop polish: club page season tables space their numeric columns evenly.",
+      "European competition pills use era-correct abbreviations (EC for pre-1993 European Cup, UC for the UEFA Cup era, ICFC for Inter-Cities Fairs Cup) and sort CL then CWC then EL then EUCL within a season; ECL renders as EUCL.",
     ],
   },
   {

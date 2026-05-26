@@ -495,11 +495,17 @@ export function colorForFootballClub(slug: string): { bg: string; fg: string } {
 
 // Convenience: full readable competition name from the Eur RndbyRnd-style
 // short code. Mirrors the alphabet-soup table in the workbook's Claude
-// Notes section 2.7.
+// Notes section 2.7. The era-specific codes (EC / UC / ICFC) are
+// synthesized at display time by europeanCompDisplayCode() and are not
+// present in the raw data, but listed here so tooltips can lift their
+// full name from one place.
 export const EUROPEAN_COMP_NAMES: Record<string, string> = {
   CL: "Champions League",
   CLB: "Champions League",
-  EL: "Europa League / UEFA Cup",
+  EC: "European Cup",
+  EL: "Europa League",
+  UC: "UEFA Cup",
+  ICFC: "Inter-Cities Fairs Cup",
   EUCL: "Conference League",
   CWC: "Cup Winners' Cup",
   OTH: "Inter-Cities Fairs / Inter Toto",
@@ -510,6 +516,64 @@ export const EUROPEAN_COMP_NAMES: Record<string, string> = {
   CI: "Copa Interamericana",
   OTHC: "Other Champions track",
 };
+
+// Era-aware display code for European competitions. The raw workbook code
+// stays as the semantic anchor (CL = "Europe's senior knockout", EL =
+// "Europe's secondary knockout") but the abbreviation rendered to the
+// reader reflects what the competition was actually branded that decade:
+//
+//   CL / CLB pre-1993 (end year) → EC  (European Cup)
+//   CL / CLB 1993 onward        → CL  (Champions League)
+//   EL 1956-1971                → ICFC (Inter-Cities Fairs Cup)
+//   EL 1972-2009                → UC  (UEFA Cup)
+//   EL 2010 onward              → EL  (Europa League)
+//   ECL (legacy alias)          → EUCL (Conference League)
+//   anything else               → unchanged
+//
+// Year here is the END year of the season (e.g. 1971 = the 1970-71 season).
+// A null year falls through to the raw code, which preserves the current
+// behavior for any entry that lacks a year.
+export function europeanCompDisplayCode(rawCode: string | null, endYear: number | null): string {
+  if (!rawCode) return "";
+  const code = rawCode === "ECL" ? "EUCL" : rawCode;
+  if (endYear == null) return code;
+  if (code === "CL" || code === "CLB") {
+    return endYear <= 1992 ? "EC" : code;
+  }
+  if (code === "EL") {
+    if (endYear <= 1971) return "ICFC";
+    if (endYear <= 2009) return "UC";
+    return "EL";
+  }
+  return code;
+}
+
+// Display-order rank for sorting multiple European competitions within a
+// single season. Lower number renders first. Today's hierarchy:
+// Champions League (and its European Cup predecessor) → Cup Winners' Cup
+// → Europa League / UEFA Cup / Inter-Cities Fairs Cup → Conference League
+// → anything else. Cup Winners' Cup is slotted between CL and EL because
+// in its 1960-1999 lifespan it sat in roughly that prestige position.
+export function europeanCompSortKey(rawCode: string | null): number {
+  if (!rawCode) return 99;
+  const code = rawCode === "ECL" ? "EUCL" : rawCode;
+  switch (code) {
+    case "CL":
+    case "CLB":
+      return 1;
+    case "CWC":
+      return 2;
+    case "EL":
+      return 3;
+    case "EUCL":
+      return 4;
+    case "OTH":
+    case "OTHC":
+      return 5;
+    default:
+      return 99;
+  }
+}
 
 // Convenience: the canonical name for each in-scope country's level-1
 // league (used when rendering a club page header summary).

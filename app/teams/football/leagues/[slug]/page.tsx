@@ -6,6 +6,7 @@ import {
   getLeagueHub,
   getAllClubs,
   monogramForFootball,
+  europeanCompDisplayCode,
   type FootballLeagueHub,
 } from "@/lib/football";
 import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
@@ -194,7 +195,7 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
                       style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
                       title="Qualified for this European competition next season"
                     >
-                      {s.eur_qual}
+                      {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
                     </span>
                   )}
                 </td>

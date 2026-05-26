@@ -9,6 +9,8 @@ import {
   getEuropeForClub,
   monogramForFootball,
   EUROPEAN_COMP_NAMES,
+  europeanCompDisplayCode,
+  europeanCompSortKey,
   COUNTRY_TIER_LABELS,
   COUNTRY_TOP_FLIGHT,
   type FootballSeason,
@@ -270,12 +272,18 @@ function SeasonsTable({
   cups: FootballCupFinal[];
 }) {
   // Index European entries by year for O(1) lookup per season row.
+  // Within a single season, sort by competition tier so the row reads
+  // CL/CLB → CWC → EL → EUCL → others. The ECL→EUCL alias is handled
+  // inside europeanCompSortKey() so legacy data stays compatible.
   const europeByYear = new Map<number, FootballEuropeEntry[]>();
   for (const e of europe) {
     if (e.year === null) continue;
     if (!e.code || !SEASON_COMP_INCLUDE.has(e.code)) continue;
     if (!europeByYear.has(e.year)) europeByYear.set(e.year, []);
     europeByYear.get(e.year)!.push(e);
+  }
+  for (const arr of europeByYear.values()) {
+    arr.sort((a, b) => europeanCompSortKey(a.code) - europeanCompSortKey(b.code));
   }
 
   // Index domestic cup finals by year. Super cups (curtain-raisers) live
@@ -515,7 +523,7 @@ function SeasonsTable({
                                 {symbol && (
                                   <span aria-hidden className="mr-0.5">{symbol}</span>
                                 )}
-                                {e.code}
+                                {europeanCompDisplayCode(e.code, e.year)}
                               </span>
                             );
                           })}
@@ -545,7 +553,7 @@ function SeasonsTable({
                         style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
                         title="Qualified for this European competition next season"
                       >
-                        {s.eur_qual}
+                        {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
                       </span>
                     )}
                   </td>
@@ -653,7 +661,7 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
                   <td className="py-1.5">
                     {e.competition}
                     {e.code && EUROPEAN_COMP_NAMES[e.code] && e.code !== "OTHC" && (
-                      <span className="ml-2 text-[var(--text-muted)] text-xs">({e.code})</span>
+                      <span className="ml-2 text-[var(--text-muted)] text-xs">({europeanCompDisplayCode(e.code, e.year)})</span>
                     )}
                   </td>
                   <td className="py-1.5">
