@@ -403,6 +403,7 @@ function SeasonsTable({
                         <span className="inline-flex flex-wrap gap-1">
                           {entries.map((c, ci) => {
                             const isWin = c.result === "won";
+                            const isLost = c.result === "lost";
                             const isScheduled = c.result === "scheduled";
                             const shortLabel = c.kind === "major"
                               ? cupShortLabels.major
@@ -412,21 +413,30 @@ function SeasonsTable({
                               : "Domestic cup";
                             const resultText = c.result === "won" ? "won" : c.result === "lost" ? "runner-up" : "scheduled";
                             const title = `${fullName}: ${resultText}`;
+                            // Visual states: filled gold + ★ for winners,
+                            // outlined grey + ☆ for runners-up (reached final,
+                            // lost), light italic for scheduled.
                             const bg = isWin
                               ? "rgba(245,215,110,0.18)"
-                              : isScheduled
-                                ? "rgba(120,120,140,0.10)"
-                                : "rgba(120,120,140,0.16)";
+                              : isLost
+                                ? "transparent"
+                                : "rgba(120,120,140,0.10)";
                             const fg = isWin ? "#b58900" : "var(--text-muted)";
+                            const boxShadow = isLost
+                              ? "inset 0 0 0 1px rgba(120,120,140,0.45)"
+                              : undefined;
                             return (
                               <span
                                 key={ci}
                                 className={"inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide" + (isScheduled ? " italic" : "")}
-                                style={{ background: bg, color: fg }}
+                                style={{ background: bg, color: fg, boxShadow }}
                                 title={title}
                               >
                                 {isWin && (
                                   <span aria-hidden className="mr-0.5">★</span>
+                                )}
+                                {isLost && (
+                                  <span aria-hidden className="mr-0.5">☆</span>
                                 )}
                                 {shortLabel}
                               </span>
@@ -443,26 +453,58 @@ function SeasonsTable({
                       return (
                         <span className="inline-flex flex-wrap gap-1">
                           {entries.map((e, ei) => {
-                            const isGold = e.trophy_won && e.code && GOLD_TROPHY_CODES.has(e.code);
-                            const isSilver = e.trophy_won && !isGold;
-                            const bg = isGold
-                              ? "rgba(212,175,55,0.22)"
-                              : isSilver
-                                ? "rgba(192,192,192,0.20)"
-                                : "rgba(120,120,140,0.16)";
-                            const fg = isGold ? "#d4af37" : isSilver ? "#c0c0c0" : "var(--text-muted)";
-                            const title = e.trophy_won
+                            const isWinner = e.trophy_won;
+                            const isUcl = !!(e.code && GOLD_TROPHY_CODES.has(e.code));
+                            // Reached the final but did not win it. Only
+                            // surfaced when we have a numeric deepest_rnd —
+                            // a missing value is treated as "did not reach
+                            // final" rather than guessing from result_label.
+                            const isFinalistLost = !isWinner && e.deepest_rnd === 1;
+                            // Five visual states. Filled fills with a star
+                            // for winners; outlined fills with an open star
+                            // for finals reached and lost; plain grey with
+                            // no symbol for participation that exited
+                            // before the final.
+                            let bg: string;
+                            let fg: string;
+                            let boxShadow: string | undefined;
+                            let symbol: string | null = null;
+                            if (isWinner && isUcl) {
+                              bg = "rgba(212,175,55,0.22)";
+                              fg = "#d4af37";
+                              symbol = "★";
+                            } else if (isWinner) {
+                              bg = "rgba(192,192,192,0.20)";
+                              fg = "#c0c0c0";
+                              symbol = "★";
+                            } else if (isFinalistLost && isUcl) {
+                              bg = "transparent";
+                              fg = "#d4af37";
+                              boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)";
+                              symbol = "☆";
+                            } else if (isFinalistLost) {
+                              bg = "transparent";
+                              fg = "#c0c0c0";
+                              boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)";
+                              symbol = "☆";
+                            } else {
+                              bg = "rgba(120,120,140,0.16)";
+                              fg = "var(--text-muted)";
+                            }
+                            const title = isWinner
                               ? `${e.competition} winner this season`
-                              : `${e.competition}: ${e.result_label}`;
+                              : isFinalistLost
+                                ? `${e.competition}: reached final, lost`
+                                : `${e.competition}: ${e.result_label}`;
                             return (
                               <span
                                 key={ei}
                                 className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
-                                style={{ background: bg, color: fg }}
+                                style={{ background: bg, color: fg, boxShadow }}
                                 title={title}
                               >
-                                {e.trophy_won && (
-                                  <span aria-hidden className="mr-0.5">★</span>
+                                {symbol && (
+                                  <span aria-hidden className="mr-0.5">{symbol}</span>
                                 )}
                                 {e.code}
                               </span>
