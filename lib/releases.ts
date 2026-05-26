@@ -22,8 +22,9 @@ export const RELEASES: Release[] = [
     headline: "Mobile standings polish; Domestic Cup column; finals signal on club pages",
     items: [
       "Current standings on the Premier League, La Liga, Serie A, Bundesliga, and Ligue 1 hubs drop goals-for, goals-against, and European qualification columns on phone viewports so club names and primary stats can breathe.",
-      "Football club season-by-season tables now flag Domestic Cup final appearances inline; English clubs get both FA and League pills, other Big 5 countries get the main cup.",
+      "Football club season-by-season tables now flag Domestic Cup final appearances inline; major-cup pills carry country-specific labels (FA, Copa, Coppa, Pokal, Coupe) while secondary cups all read Lg Cup.",
       "Both Domestic Cup and European Competition columns now share a unified language for finals: filled pill with a solid star marks winners, outlined pill with an open star marks the runner-up.",
+      "Polish: club page season tables now space the win, draw, loss, and goals columns evenly so the numeric block stops crowding on desktop.",
     ],
   },
   {

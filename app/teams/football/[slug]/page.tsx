@@ -222,17 +222,20 @@ const PTS_HIGHLIGHT = { background: "rgba(245,215,110,0.07)" } as const;
 const SEASON_COMP_INCLUDE = new Set(["CL", "CLB", "EL", "CWC", "EUCL", "OTH", "OTHC"]);
 const GOLD_TROPHY_CODES = new Set(["CL", "CLB"]); // European Cup / Champions League
 
-// Short labels for the per-season Domestic Cup column. England gets both
-// the primary (FA Cup) and the secondary (League Cup) since users asked for
-// both signals. Other Big 5 countries get the major cup only; super cups
-// (curtain-raisers like the Community Shield) are deliberately excluded
-// from the column and remain in the dedicated "Cup finals" section below.
-const DOMESTIC_CUP_SHORT_LABELS: Record<string, { major: string; minor?: string }> = {
-  England: { major: "FA", minor: "League" },
-  Spain: { major: "Copa" },
-  Italy: { major: "Coppa" },
-  Germany: { major: "Pokal" },
-  France: { major: "Coupe" },
+// Short labels for the per-season Domestic Cup column. Major cup gets a
+// country-specific label (FA, Copa, Coppa, Pokal, Coupe). Secondary cups
+// all render as "Lg Cup" since they are functionally the same competition
+// type across countries (Copa de la Liga, Coppa Italia Serie C, DFB-
+// Ligapokal, Coupe de la Ligue, EFL Cup), and the country context is
+// already established by the page itself. Super cups (curtain-raisers
+// like the Community Shield) are deliberately excluded from the column
+// and remain in the dedicated "Cup finals" section below.
+const DOMESTIC_CUP_SHORT_LABELS: Record<string, { major: string; minor: string }> = {
+  England: { major: "FA", minor: "Lg Cup" },
+  Spain: { major: "Copa", minor: "Lg Cup" },
+  Italy: { major: "Coppa", minor: "Lg Cup" },
+  Germany: { major: "Pokal", minor: "Lg Cup" },
+  France: { major: "Coupe", minor: "Lg Cup" },
 };
 // Fallback for countries without an entry above (none in v0 scope today).
 const DOMESTIC_CUP_FALLBACK = { major: "Cup", minor: "Lg Cup" };
@@ -324,13 +327,13 @@ function SeasonsTable({
               <th className="py-2 text-left font-medium">Notes</th>
               <th className="py-2 text-left font-medium whitespace-nowrap">Domestic Cup</th>
               <th className="py-2 text-left font-medium">Eur Comp</th>
-              <th className="py-2 text-right font-medium">W</th>
-              <th className="py-2 text-right font-medium">D</th>
-              <th className="py-2 text-right font-medium">L</th>
+              <th className="py-2 px-2 text-right font-medium">W</th>
+              <th className="py-2 px-2 text-right font-medium">D</th>
+              <th className="py-2 px-2 text-right font-medium">L</th>
               <th className="py-2 px-2 text-right font-medium" style={PTS_HIGHLIGHT}>Pts</th>
-              <th className="py-2 text-right font-medium">GF</th>
-              <th className="py-2 text-right font-medium">GA</th>
-              <th className="py-2 text-right font-medium">GD</th>
+              <th className="py-2 px-2 text-right font-medium">GF</th>
+              <th className="py-2 px-2 text-right font-medium">GA</th>
+              <th className="py-2 px-2 text-right font-medium">GD</th>
               <th
                 className="py-2 pl-3 text-left font-medium whitespace-nowrap"
                 title="European competition the club qualified for next season"
@@ -516,13 +519,13 @@ function SeasonsTable({
                   </td>
                   {s.format === "league" ? (
                     <>
-                      <td className="py-1.5 text-right tabular-nums">{s.w ?? "-"}</td>
-                      <td className="py-1.5 text-right tabular-nums">{s.d ?? "-"}</td>
-                      <td className="py-1.5 text-right tabular-nums">{s.l ?? "-"}</td>
+                      <td className="py-1.5 px-2 text-right tabular-nums">{s.w ?? "-"}</td>
+                      <td className="py-1.5 px-2 text-right tabular-nums">{s.d ?? "-"}</td>
+                      <td className="py-1.5 px-2 text-right tabular-nums">{s.l ?? "-"}</td>
                       <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={PTS_HIGHLIGHT}>{s.pts ?? "-"}</td>
-                      <td className="py-1.5 text-right tabular-nums">{s.gf ?? "-"}</td>
-                      <td className="py-1.5 text-right tabular-nums">{s.ga ?? "-"}</td>
-                      <td className="py-1.5 text-right tabular-nums">{s.gd ?? "-"}</td>
+                      <td className="py-1.5 px-2 text-right tabular-nums">{s.gf ?? "-"}</td>
+                      <td className="py-1.5 px-2 text-right tabular-nums">{s.ga ?? "-"}</td>
+                      <td className="py-1.5 px-2 text-right tabular-nums">{s.gd ?? "-"}</td>
                     </>
                   ) : (
                     <td colSpan={7} className="py-1.5 text-right text-[var(--text-muted)] text-xs italic" style={PTS_HIGHLIGHT}>
