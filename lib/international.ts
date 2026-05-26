@@ -102,6 +102,41 @@ export type NationalTeamFinal = {
   stad_metro: string | null;
 };
 
+export type WorldCup2026GroupRow = {
+  cur_name: string;
+  slug: string | null;
+  w: number;
+  d: number;
+  l: number;
+  gs: number;
+  ga: number;
+  gd: number;
+  pts: number;
+  matches: number;
+};
+
+export type WorldCup2026KnockoutMatch = {
+  team_cur_name: string;
+  team_slug: string | null;
+  opp_cur_name: string;
+  opp_slug: string | null;
+  team_score: number | null;
+  opp_score: number | null;
+  penalty_kicks: number | null;
+  result: string | null;
+  stadium: string | null;
+  stad_country: string | null;
+  stad_metro: string | null;
+  date: string | null;
+  played: boolean;
+};
+
+export type WorldCup2026Bundle = {
+  tournament: { name: string; year: number; starts_iso: string };
+  group_stage: Record<string, WorldCup2026GroupRow[]>;
+  knockout: Record<string, WorldCup2026KnockoutMatch[]>;
+};
+
 export type TournamentHub = {
   slug: string;
   label: string;
@@ -155,6 +190,8 @@ let _indexCache: IndexPayload | null = null;
 let _appearancesCache: Record<string, NationalTeamAppearance[]> | null = null;
 let _finalsCache: Record<string, NationalTeamFinal[]> | null = null;
 let _tournamentsCache: Record<string, TournamentHub> | null = null;
+let _wc2026Cache: WorldCup2026Bundle | null = null;
+let _wc2026Checked = false;
 
 function getIndex(): IndexPayload {
   if (!_indexCache) {
@@ -225,4 +262,43 @@ export function getTournamentHub(slug: string): TournamentHub | null {
 
 export function getRankSnapshots(): { elo: string; fifa: string } {
   return getIndex().rank_snapshots;
+}
+
+export function getWorldCup2026(): WorldCup2026Bundle | null {
+  if (!_wc2026Checked) {
+    const candidate = loadJson<WorldCup2026Bundle | null>("wc2026.json", null);
+    _wc2026Cache = candidate && candidate.tournament ? candidate : null;
+    _wc2026Checked = true;
+  }
+  return _wc2026Cache;
+}
+
+// Resolve a team's deepest stage in the 2026 World Cup so the per-team
+// page's WC2026 appearance row shows a live indicator that progresses
+// through the tournament. Returns the deepest round the team appears in,
+// from "Final" / "Third Place Game" / "Semifinals" / "Quarterfinals" /
+// "Round of 16" / "Round of 32" / "Group Stage". Returns null when the
+// team isn't in the bracket at all (qualifier-stage casualties, etc.).
+const WC2026_DEEPEST_ROUND_PRIORITY = [
+  "Final",
+  "Third Place Game",
+  "Semifinals",
+  "Quarterfinals",
+  "Round of 16",
+  "Round of 32",
+];
+
+export function getWorldCup2026StageForTeam(slug: string): string | null {
+  const wc = getWorldCup2026();
+  if (!wc) return null;
+  for (const rn of WC2026_DEEPEST_ROUND_PRIORITY) {
+    const matches = wc.knockout[rn] ?? [];
+    if (matches.some((m) => m.team_slug === slug || m.opp_slug === slug)) {
+      return rn;
+    }
+  }
+  for (const teams of Object.values(wc.group_stage)) {
+    if (teams.some((t) => t.slug === slug)) return "Group Stage";
+  }
+  return null;
 }
