@@ -7,7 +7,7 @@
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { CONTINENT_COLORS, flagForTeam } from "@/lib/international-display";
+import { CONTINENT_COLORS, flagForTeam, displayNameForTeam } from "@/lib/international-display";
 import type { NationalMapPoint } from "./NationalMapInner";
 
 const NationalMap = dynamic(() => import("./NationalMapInner"), {
@@ -28,6 +28,7 @@ export type IndexTeam = {
   centroid: [number, number] | null;
   active: boolean;
   has_country_page: boolean;
+  country_page_slug: string | null;
 };
 
 type Props = {
@@ -44,6 +45,37 @@ const CONTINENT_ORDER = [
   "Oceania",
   "World",
 ];
+
+function SortableTh({
+  label,
+  active,
+  dir,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  dir: "asc" | "desc";
+  onClick: () => void;
+}) {
+  const arrow = active ? (dir === "asc" ? "↑" : "↓") : "↕";
+  return (
+    <th className="py-2 px-2 text-right font-medium whitespace-nowrap">
+      <button
+        type="button"
+        onClick={onClick}
+        className="inline-flex items-center gap-1 hover:text-[var(--accent)] transition"
+        style={{
+          color: active ? "var(--accent)" : "inherit",
+          fontWeight: "inherit",
+        }}
+        title={`Sort by ${label} (${dir === "asc" ? "best first" : "worst first"})`}
+      >
+        <span>{label}</span>
+        <span className="text-[10px] opacity-70" aria-hidden>{arrow}</span>
+      </button>
+    </th>
+  );
+}
 
 // Federations we surface as filter chips. Order matches FIFA confederation
 // hierarchy. The workbook uses COMNEBOL spelling intentionally per the
@@ -83,22 +115,44 @@ export default function NationalIndexClient({ teams }: Props) {
     return out;
   }, [filtered]);
 
-  // Sort the filtered set by ELO rank ascending (best first). Teams with no
-  // ELO rank land at the bottom and are ordered alphabetically among
-  // themselves.
+  // Sort state: which column is the current sort key, and direction. ELO
+  // ascending is the v1 default since lower = better in ranking systems.
+  const [sortKey, setSortKey] = useState<"elo" | "fifa">("elo");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+
+  function toggleSort(key: "elo" | "fifa") {
+    if (sortKey === key) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir("asc");
+    }
+  }
+
   const ranked = useMemo(() => {
+    const sentinel = Number.POSITIVE_INFINITY; // null-ranks sink to bottom regardless of direction
     return [...filtered].sort((a, b) => {
-      const ae = a.elo_rank ?? Number.POSITIVE_INFINITY;
-      const be = b.elo_rank ?? Number.POSITIVE_INFINITY;
-      if (ae !== be) return ae - be;
+      const av = sortKey === "elo" ? a.elo_rank : a.fifa_rank;
+      const bv = sortKey === "elo" ? b.elo_rank : b.fifa_rank;
+      const aRank = av ?? sentinel;
+      const bRank = bv ?? sentinel;
+      // Always push nulls to the bottom regardless of direction.
+      if (aRank === sentinel && bRank !== sentinel) return 1;
+      if (bRank === sentinel && aRank !== sentinel) return -1;
+      const diff = sortDir === "asc" ? aRank - bRank : bRank - aRank;
+      if (diff !== 0) return diff;
       return a.cur_name.localeCompare(b.cur_name);
     });
-  }, [filtered]);
+  }, [filtered, sortKey, sortDir]);
 
   const refitKey = `${[...continents].sort().join(",")}|${[...federations].sort().join(",")}`;
 
   return (
     <div>
+      <section className="mb-8">
+        <NationalMap points={points} refitKey={refitKey} />
+      </section>
+
       <section className="mb-6">
         <div className="flex flex-wrap items-center gap-2 mb-3">
           {CONTINENT_ORDER.filter((c) => c !== "World").map((c) => {
@@ -186,10 +240,6 @@ export default function NationalIndexClient({ teams }: Props) {
         </p>
       </section>
 
-      <section className="mb-8">
-        <NationalMap points={points} refitKey={refitKey} />
-      </section>
-
       <section>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -198,9 +248,19 @@ export default function NationalIndexClient({ teams }: Props) {
                 className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
                 style={{ borderColor: "var(--border)" }}
               >
-                <th className="py-2 px-2 text-right font-medium whitespace-nowrap">ELO</th>
                 <th className="py-2 px-2 text-left font-medium">National team</th>
-                <th className="py-2 px-2 text-right font-medium whitespace-nowrap">FIFA</th>
+                <SortableTh
+                  label="ELO"
+                  active={sortKey === "elo"}
+                  dir={sortDir}
+                  onClick={() => toggleSort("elo")}
+                />
+                <SortableTh
+                  label="FIFA"
+                  active={sortKey === "fifa"}
+                  dir={sortDir}
+                  onClick={() => toggleSort("fifa")}
+                />
                 <th className="py-2 px-2 text-right font-medium">Trophies</th>
                 <th className="py-2 px-2 text-right font-medium whitespace-nowrap hidden sm:table-cell">Major trophies</th>
                 <th className="py-2 px-2 text-left font-medium hidden sm:table-cell">Country</th>
@@ -222,15 +282,12 @@ export default function NationalIndexClient({ teams }: Props) {
                     className="border-b"
                     style={{ borderColor: "var(--border)" }}
                   >
-                    <td className="py-1.5 px-2 text-right tabular-nums whitespace-nowrap font-semibold">
-                      {t.elo_rank ?? <span className="text-[var(--text-dim)] font-normal">—</span>}
-                    </td>
                     <td className="py-1.5 px-2">
                       <span className="inline-flex items-center gap-2">
                         {continentDot}
                         {flag && <span className="text-base leading-none" aria-hidden>{flag}</span>}
                         <Link href={`/teams/national/${t.slug}`} className="hover:underline font-medium">
-                          {t.cur_name}
+                          {displayNameForTeam(t.slug, t.cur_name)}
                         </Link>
                         {!t.active && (
                           <span
@@ -245,6 +302,9 @@ export default function NationalIndexClient({ teams }: Props) {
                         )}
                       </span>
                     </td>
+                    <td className="py-1.5 px-2 text-right tabular-nums whitespace-nowrap font-semibold">
+                      {t.elo_rank ?? <span className="text-[var(--text-dim)] font-normal">—</span>}
+                    </td>
                     <td className="py-1.5 px-2 text-right tabular-nums whitespace-nowrap">
                       {t.fifa_rank ?? <span className="text-[var(--text-dim)]">—</span>}
                     </td>
@@ -255,9 +315,9 @@ export default function NationalIndexClient({ teams }: Props) {
                       {t.major_trophies > 0 ? t.major_trophies : <span className="text-[var(--text-dim)]">—</span>}
                     </td>
                     <td className="py-1.5 px-2 hidden sm:table-cell">
-                      {t.has_country_page ? (
+                      {t.has_country_page && t.country_page_slug ? (
                         <Link
-                          href={`/countries/${t.slug}`}
+                          href={`/countries/${t.country_page_slug}`}
                           className="text-[var(--accent)] hover:underline text-xs"
                           title={`Open ${t.cur_name} country page`}
                         >

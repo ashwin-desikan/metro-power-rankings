@@ -3,14 +3,17 @@ import Link from "next/link";
 import {
   getAllNationalTeams,
   getAllTournamentHubs,
+  getWorldCup2026,
 } from "@/lib/international";
 import {
   centroidForTeam,
   TOURNAMENT_HUB_ORDER,
+  countryPageSlugFor,
 } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import NationalIndexClient, { type IndexTeam } from "./NationalIndexClient";
+import WorldCup2026 from "./WorldCup2026";
 
 export const metadata: Metadata = {
   title: "International Football",
@@ -29,22 +32,27 @@ export const metadata: Metadata = {
 export default function NationalIndexPage() {
   const teams = getAllNationalTeams();
   const hubs = getAllTournamentHubs();
+  const wc2026 = getWorldCup2026();
   const countrySlugSet = new Set(getAllCountrySlugs());
 
-  const clientTeams: IndexTeam[] = teams.map((t) => ({
-    slug: t.slug,
-    cur_name: t.cur_name,
-    continent: t.continent ?? "World",
-    federation: t.federation,
-    trophies: t.totals.trophies,
-    major_trophies: t.totals.major_trophies,
-    tour_app: t.totals.tour_app,
-    fifa_rank: t.fifa_rank,
-    elo_rank: t.elo_rank,
-    centroid: centroidForTeam({ slug: t.slug, continent: t.continent }),
-    active: t.active,
-    has_country_page: countrySlugSet.has(t.slug),
-  }));
+  const clientTeams: IndexTeam[] = teams.map((t) => {
+    const resolvedCountrySlug = countryPageSlugFor(t.slug);
+    return {
+      slug: t.slug,
+      cur_name: t.cur_name,
+      continent: t.continent ?? "World",
+      federation: t.federation,
+      trophies: t.totals.trophies,
+      major_trophies: t.totals.major_trophies,
+      tour_app: t.totals.tour_app,
+      fifa_rank: t.fifa_rank,
+      elo_rank: t.elo_rank,
+      centroid: centroidForTeam({ slug: t.slug, continent: t.continent }),
+      active: t.active,
+      has_country_page: countrySlugSet.has(resolvedCountrySlug),
+      country_page_slug: countrySlugSet.has(resolvedCountrySlug) ? resolvedCountrySlug : null,
+    };
+  });
 
   // Order hubs per editorial priority.
   const orderedHubs = TOURNAMENT_HUB_ORDER
@@ -69,6 +77,8 @@ export default function NationalIndexPage() {
           Finalissima). Friendlies and qualifiers are out of scope.
         </p>
       </header>
+
+      {wc2026 && <WorldCup2026 wc={wc2026} />}
 
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">Tournament hubs</h2>

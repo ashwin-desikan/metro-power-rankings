@@ -6,7 +6,7 @@ import {
   getTournamentHub,
   type TournamentHub,
 } from "@/lib/international";
-import { flagForTeam } from "@/lib/international-display";
+import { flagForTeam, displayNameForTeam } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -103,7 +103,7 @@ function MostDecorated({ hub }: { hub: TournamentHub }) {
               )}
               {d.slug ? (
                 <Link href={`/teams/national/${d.slug}`} className="hover:underline">
-                  {d.cur_name}
+                  {displayNameForTeam(d.slug, d.cur_name)}
                 </Link>
               ) : (
                 <>{d.cur_name}</>
@@ -169,7 +169,7 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
                     )}
                     {c.champion_slug ? (
                       <Link href={`/teams/national/${c.champion_slug}`} className="hover:underline font-medium">
-                        {c.champion_cur_name}
+                        {displayNameForTeam(c.champion_slug, c.champion_cur_name)}
                       </Link>
                     ) : (
                       <span className="font-medium">{c.champion_cur_name}</span>
@@ -190,7 +190,7 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
                           )}
                           {f.slug ? (
                             <Link href={`/teams/national/${f.slug}`} className="hover:underline">
-                              {f.cur_name}
+                              {displayNameForTeam(f.slug, f.cur_name)}
                             </Link>
                           ) : (
                             f.cur_name

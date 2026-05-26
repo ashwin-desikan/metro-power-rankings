@@ -69,10 +69,14 @@ export const COUNTRY_FLAGS: Record<string, string> = {
   "congo-dr": "🇨🇩", "cook-islands": "🇨🇰", "costa-rica": "🇨🇷",
   "cote-d-ivoire": "🇨🇮", croatia: "🇭🇷", cuba: "🇨🇺", curacao: "🇨🇼",
   cyprus: "🇨🇾", "czech-republic": "🇨🇿", denmark: "🇩🇰", djibouti: "🇩🇯",
-  dominica: "🇩🇲", "dominican-republic": "🇩🇴", "east-germany": "🏴", "east-timor": "🇹🇱",
+  dominica: "🇩🇲", "dominican-republic": "🇩🇴", "east-timor": "🇹🇱",
   ecuador: "🇪🇨", egypt: "🇪🇬", "el-salvador": "🇸🇻", england: "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
   "equatorial-guinea": "🇬🇶", eritrea: "🇪🇷", estonia: "🇪🇪", eswatini: "🇸🇿",
   ethiopia: "🇪🇹", "faroe-islands": "🇫🇴",
+  // Defunct national teams (no continuous current-form successor). Each
+  // gets the historical-entity marker since no standard Unicode flag emoji
+  // exists for the East German, South Yemeni, or South Vietnamese flags.
+  "east-germany": "🏛️", "south-yemen": "🏛️", "south-vietnam": "🏛️",
   "federated-states-of-micronesia": "🇫🇲", fiji: "🇫🇯", finland: "🇫🇮",
   france: "🇫🇷", "france-b": "🇫🇷", "french-guiana": "🇬🇫",
   gabon: "🇬🇦", gambia: "🇬🇲", georgia: "🇬🇪", germany: "🇩🇪",
@@ -128,6 +132,47 @@ export const COUNTRY_FLAGS: Record<string, string> = {
 
 export function flagForTeam(slug: string): string {
   return COUNTRY_FLAGS[slug] ?? "";
+}
+
+// Generic historical-entity marker shown next to predecessor identities
+// (Soviet Union, Yugoslavia, Czechoslovakia, etc.) in attribution columns.
+// Unicode doesn't carry stable emoji for those defunct flags, so we pick
+// a single neutral glyph and apply it consistently.
+export const HISTORICAL_FLAG = "🏛️";
+
+// Display-name overrides for countries that officially adopted a new name
+// and want it reflected across the Sports product. Slugs stay unchanged
+// so URLs and data joins remain stable. Scope is intentionally narrow:
+// only the Sports product surfaces; the broader MetroAreas display is a
+// separate decision.
+//   Czech Republic -> Czechia (officially adopted 2016, mainstream by 2023
+//     when FIFA and most major sports bodies switched).
+//   Turkey -> Türkiye (UN-approved rename December 2021).
+export const TEAM_DISPLAY_NAME_OVERRIDES: Record<string, string> = {
+  "czech-republic": "Czechia",
+  turkey: "Türkiye",
+};
+
+export function displayNameForTeam(slug: string, fallback: string): string {
+  return TEAM_DISPLAY_NAME_OVERRIDES[slug] ?? fallback;
+}
+
+// The /countries product slugifies composite names by dropping "and" and
+// collapsing certain joiner sequences, while the international product
+// keeps the natural-language "and". This map resolves the international
+// team slug to the actual /countries slug for cross-product linking.
+// Unmapped slugs pass through unchanged.
+export const COUNTRY_PAGE_SLUG_OVERRIDES: Record<string, string> = {
+  "antigua-and-barbuda": "antigua-barbuda",
+  "trinidad-and-tobago": "trinidad-tobago",
+  "st-kitts-and-nevis": "st-kitts-nevis",
+  "st-vincent-and-the-grenadines": "st-vincent-the-grenadines",
+  "turks-and-caicos-islands": "turks-caicos-islands",
+  "cote-d-ivoire": "cote-divoire",
+};
+
+export function countryPageSlugFor(intlSlug: string): string {
+  return COUNTRY_PAGE_SLUG_OVERRIDES[intlSlug] ?? intlSlug;
 }
 
 // Short category label for round/category badges.

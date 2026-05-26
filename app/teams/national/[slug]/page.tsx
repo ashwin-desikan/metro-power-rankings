@@ -7,6 +7,7 @@ import {
   getAppearancesForTeam,
   getFinalsForTeam,
   getRankSnapshots,
+  getWorldCup2026StageForTeam,
   type NationalTeamAppearance,
   type NationalTeamFinal,
   type TournamentCategory,
@@ -16,6 +17,8 @@ import {
   appearanceCategorySortKey,
   CONTINENT_COLORS,
   flagForTeam,
+  displayNameForTeam,
+  HISTORICAL_FLAG,
 } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -31,17 +34,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const t = getNationalTeamBySlug(slug);
   if (!t) return { title: "Team not found" };
+  const displayName = displayNameForTeam(t.slug, t.cur_name);
   const trophies = t.totals.trophies ?? 0;
   const desc =
-    `${t.cur_name} national football team: ` +
+    `${displayName} national football team: ` +
     `${trophies} senior trophy${trophies === 1 ? "" : "ies"} across ` +
     `${t.totals.tour_app} tournament appearance${t.totals.tour_app === 1 ? "" : "s"}.`;
   return {
-    title: t.cur_name,
+    title: displayName,
     description: desc,
     alternates: { canonical: `/teams/national/${t.slug}` },
     openGraph: {
-      title: `${t.cur_name} (national team) | ${SITE_NAME}`,
+      title: `${displayName} (national team) | ${SITE_NAME}`,
       description: desc,
       url: `${BASE_URL}/teams/national/${t.slug}`,
       type: "website",
@@ -98,7 +102,7 @@ export default async function NationalTeamPage({ params }: Props) {
         {" / "}
         <Link href="/teams/national" className="hover:underline">International Football</Link>
         {" / "}
-        <span>{team.cur_name}</span>
+        <span>{displayNameForTeam(team.slug, team.cur_name)}</span>
       </nav>
 
       <header className="mb-6">
@@ -111,7 +115,7 @@ export default async function NationalTeamPage({ params }: Props) {
           {flagForTeam(team.slug) && (
             <span className="text-3xl leading-none" aria-hidden>{flagForTeam(team.slug)}</span>
           )}
-          <h1 className="text-3xl font-semibold tracking-tight">{team.cur_name}</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">{displayNameForTeam(team.slug, team.cur_name)}</h1>
           {!team.active && (
             <span
               className="inline-block rounded px-2 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
@@ -189,7 +193,11 @@ export default async function NationalTeamPage({ params }: Props) {
         </div>
       </section>
 
-      <AppearancesTable appearances={appearances} />
+      <AppearancesTable
+        appearances={appearances}
+        team={{ ...team, cur_name: displayNameForTeam(team.slug, team.cur_name) }}
+        wc2026Stage={getWorldCup2026StageForTeam(team.slug)}
+      />
 
       {finals.length > 0 && <FinalsTable finals={finals} />}
     </main>
@@ -217,7 +225,15 @@ const CATEGORY_PILL_STYLE: Record<TournamentCategory, { bg: string; fg: string }
   OTHER: { bg: "rgba(120,120,140,0.16)", fg: "var(--text-muted)" },
 };
 
-function AppearancesTable({ appearances }: { appearances: NationalTeamAppearance[] }) {
+function AppearancesTable({
+  appearances,
+  team,
+  wc2026Stage,
+}: {
+  appearances: NationalTeamAppearance[];
+  team: { cur_name: string };
+  wc2026Stage: string | null;
+}) {
   if (appearances.length === 0) {
     return (
       <section
@@ -243,9 +259,9 @@ function AppearancesTable({ appearances }: { appearances: NationalTeamAppearance
       <h2 className="text-base font-semibold">Tournament history</h2>
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent first. Every senior international tournament appearance on file: World Cups,
-        continental cups, intercontinental tournaments, and selected others. Rows marked
-        &quot;as ...&quot; were played under a predecessor name (Soviet Union, Yugoslavia,
-        Czechoslovakia, etc.).
+        continental cups, intercontinental tournaments, and selected others. The Name column shows
+        what the team was called at the time of that appearance (Soviet Union, Yugoslavia,
+        Czechoslovakia, etc. on rows played under a predecessor identity).
       </p>
       <div className="mt-4 overflow-x-auto">
         <table className="w-full text-sm">
@@ -255,18 +271,29 @@ function AppearancesTable({ appearances }: { appearances: NationalTeamAppearance
               style={{ borderColor: "var(--border)" }}
             >
               <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">Year</th>
+              <th className="py-2 text-left font-medium">Name</th>
               <th className="py-2 text-left font-medium">Tournament</th>
               <th className="py-2 text-left font-medium">Round reached</th>
-              <th className="py-2 text-left font-medium">Played as</th>
             </tr>
           </thead>
           <tbody>
             {sorted.map((a, i) => {
               const style = CATEGORY_PILL_STYLE[a.category];
               const shortLabel = CATEGORY_SHORT_LABEL[a.category];
+              const nameAtTime = a.team_as ?? team.cur_name;
               return (
                 <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{a.year}</td>
+                  <td className="py-1.5 text-sm">
+                    {a.team_as ? (
+                      <span className="inline-flex items-center gap-1 text-[var(--text)]">
+                        <span aria-hidden title="Historical identity">{HISTORICAL_FLAG}</span>
+                        <span>{nameAtTime}</span>
+                      </span>
+                    ) : (
+                      <span className="text-[var(--text-muted)]">{nameAtTime}</span>
+                    )}
+                  </td>
                   <td className="py-1.5">
                     <span className="inline-flex items-center gap-2 flex-wrap">
                       <span
@@ -280,7 +307,20 @@ function AppearancesTable({ appearances }: { appearances: NationalTeamAppearance
                     </span>
                   </td>
                   <td className="py-1.5">
-                    {a.champion ? (
+                    {a.year === 2026 && a.category === "WC" && wc2026Stage ? (
+                      <Link
+                        href="/teams/national#wc2026"
+                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide hover:underline"
+                        style={{
+                          background: "rgba(59,130,246,0.18)",
+                          color: "#3b82f6",
+                        }}
+                        title="Live 2026 World Cup standings and bracket on the International Football home page"
+                      >
+                        {wc2026Stage}
+                        <span className="text-[9px] opacity-70" aria-hidden>→ live</span>
+                      </Link>
+                    ) : a.champion ? (
                       <span
                         className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
                         style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
@@ -303,9 +343,6 @@ function AppearancesTable({ appearances }: { appearances: NationalTeamAppearance
                     ) : (
                       <span className="text-[var(--text-muted)]">{a.round_reached}</span>
                     )}
-                  </td>
-                  <td className="py-1.5 text-xs text-[var(--text-muted)]">
-                    {a.team_as ? <>as {a.team_as}</> : null}
                   </td>
                 </tr>
               );
@@ -360,7 +397,7 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
                     )}
                     {f.opp_slug ? (
                       <Link href={`/teams/national/${f.opp_slug}`} className="hover:underline">
-                        {f.opp_cur_name}
+                        {displayNameForTeam(f.opp_slug, f.opp_cur_name ?? "-")}
                       </Link>
                     ) : (
                       <span>{f.opp_cur_name ?? "-"}</span>
