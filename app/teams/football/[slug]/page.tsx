@@ -161,6 +161,7 @@ export default async function FootballClubPage({ params }: Props) {
         tierLabels={tierLabels}
         country={club.country}
         europe={europe}
+        cups={cups}
       />
 
       {cups.length > 0 && <CupsBlock cups={cups} country={club.country} />}
@@ -221,16 +222,43 @@ const PTS_HIGHLIGHT = { background: "rgba(245,215,110,0.07)" } as const;
 const SEASON_COMP_INCLUDE = new Set(["CL", "CLB", "EL", "CWC", "EUCL", "OTH", "OTHC"]);
 const GOLD_TROPHY_CODES = new Set(["CL", "CLB"]); // European Cup / Champions League
 
+// Short labels for the per-season Domestic Cup column. England gets both
+// the primary (FA Cup) and the secondary (League Cup) since users asked for
+// both signals. Other Big 5 countries get the major cup only; super cups
+// (curtain-raisers like the Community Shield) are deliberately excluded
+// from the column and remain in the dedicated "Cup finals" section below.
+const DOMESTIC_CUP_SHORT_LABELS: Record<string, { major: string; minor?: string }> = {
+  England: { major: "FA", minor: "League" },
+  Spain: { major: "Copa" },
+  Italy: { major: "Coppa" },
+  Germany: { major: "Pokal" },
+  France: { major: "Coupe" },
+};
+// Fallback for countries without an entry above (none in v0 scope today).
+const DOMESTIC_CUP_FALLBACK = { major: "Cup", minor: "Lg Cup" };
+
+// Full names for the column tooltips, sourced from the same dictionary the
+// CupsBlock below uses. Keep these in sync if you rename one.
+const DOMESTIC_CUP_FULL_NAMES: Record<string, { major: string; minor: string }> = {
+  England: { major: "FA Cup", minor: "League Cup" },
+  Spain: { major: "Copa del Rey", minor: "Copa de la Liga" },
+  Italy: { major: "Coppa Italia", minor: "Coppa Italia Serie C" },
+  Germany: { major: "DFB-Pokal", minor: "DFB-Ligapokal" },
+  France: { major: "Coupe de France", minor: "Coupe de la Ligue" },
+};
+
 function SeasonsTable({
   seasons,
   tierLabels,
   country,
   europe,
+  cups,
 }: {
   seasons: FootballSeason[];
   tierLabels: Record<number, string>;
   country: string;
   europe: FootballEuropeEntry[];
+  cups: FootballCupFinal[];
 }) {
   // Index European entries by year for O(1) lookup per season row.
   const europeByYear = new Map<number, FootballEuropeEntry[]>();
@@ -240,6 +268,24 @@ function SeasonsTable({
     if (!europeByYear.has(e.year)) europeByYear.set(e.year, []);
     europeByYear.get(e.year)!.push(e);
   }
+
+  // Index domestic cup finals by year. Super cups (curtain-raisers) live
+  // in the CupsBlock section only; they are not "domestic cup finals" in
+  // the FA-Cup-final sense and clutter the per-season row.
+  const cupsByYear = new Map<number, FootballCupFinal[]>();
+  for (const c of cups) {
+    if (c.year === null) continue;
+    if (c.kind === "super") continue;
+    if (!cupsByYear.has(c.year)) cupsByYear.set(c.year, []);
+    cupsByYear.get(c.year)!.push(c);
+  }
+  // Order major before minor within a single season so FA renders before
+  // League when both exist.
+  for (const arr of cupsByYear.values()) {
+    arr.sort((a, b) => (a.kind === "major" ? -1 : 1) - (b.kind === "major" ? -1 : 1));
+  }
+  const cupShortLabels = DOMESTIC_CUP_SHORT_LABELS[country] ?? DOMESTIC_CUP_FALLBACK;
+  const cupFullNames = DOMESTIC_CUP_FULL_NAMES[country];
   if (seasons.length === 0) {
     return (
       <section
@@ -276,6 +322,7 @@ function SeasonsTable({
               <th className="py-2 text-left font-medium">Team</th>
               <th className="py-2 px-2 text-right font-medium" style={POS_HIGHLIGHT}>Pos</th>
               <th className="py-2 text-left font-medium">Notes</th>
+              <th className="py-2 text-left font-medium whitespace-nowrap">Domestic Cup</th>
               <th className="py-2 text-left font-medium">Eur Comp</th>
               <th className="py-2 text-right font-medium">W</th>
               <th className="py-2 text-right font-medium">D</th>
@@ -347,6 +394,47 @@ function SeasonsTable({
                         </span>
                       )}
                     </span>
+                  </td>
+                  <td className="py-1.5 text-xs">
+                    {(() => {
+                      const entries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];
+                      if (entries.length === 0) return null;
+                      return (
+                        <span className="inline-flex flex-wrap gap-1">
+                          {entries.map((c, ci) => {
+                            const isWin = c.result === "won";
+                            const isScheduled = c.result === "scheduled";
+                            const shortLabel = c.kind === "major"
+                              ? cupShortLabels.major
+                              : (cupShortLabels.minor ?? "Cup");
+                            const fullName = cupFullNames
+                              ? (c.kind === "major" ? cupFullNames.major : cupFullNames.minor)
+                              : "Domestic cup";
+                            const resultText = c.result === "won" ? "won" : c.result === "lost" ? "runner-up" : "scheduled";
+                            const title = `${fullName}: ${resultText}`;
+                            const bg = isWin
+                              ? "rgba(245,215,110,0.18)"
+                              : isScheduled
+                                ? "rgba(120,120,140,0.10)"
+                                : "rgba(120,120,140,0.16)";
+                            const fg = isWin ? "#b58900" : "var(--text-muted)";
+                            return (
+                              <span
+                                key={ci}
+                                className={"inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide" + (isScheduled ? " italic" : "")}
+                                style={{ background: bg, color: fg }}
+                                title={title}
+                              >
+                                {isWin && (
+                                  <span aria-hidden className="mr-0.5">★</span>
+                                )}
+                                {shortLabel}
+                              </span>
+                            );
+                          })}
+                        </span>
+                      );
+                    })()}
                   </td>
                   <td className="py-1.5 text-xs">
                     {(() => {

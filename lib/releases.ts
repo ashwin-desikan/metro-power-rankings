@@ -19,9 +19,10 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-26",
-    headline: "Mobile polish on Big 5 standings",
+    headline: "Mobile standings polish plus domestic cup column on club pages",
     items: [
       "Current standings on the Premier League, La Liga, Serie A, Bundesliga, and Ligue 1 hubs drop goals-for, goals-against, and European qualification columns on phone viewports so club names and primary stats can breathe.",
+      "Football club season-by-season tables now flag Domestic Cup final appearances inline with a star marking winners; English clubs get both FA and League pills, other Big 5 countries get the main cup.",
     ],
   },
   {
