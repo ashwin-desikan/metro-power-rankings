@@ -68,8 +68,8 @@
       "year": 2026
     },
     "Knicks": {
-      "state": "active_cf",
-      "last_round": "In the Conference Finals",
+      "state": "active_finals",
+      "last_round": "In the Finals",
       "year": 2026
     },
     "Raptors": {
@@ -78,8 +78,8 @@
       "year": 2026
     },
     "Cavaliers": {
-      "state": "active_cf",
-      "last_round": "In the Conference Finals",
+      "state": "eliminated_cf",
+      "last_round": "Eliminated Conference Finals",
       "year": 2026
     },
     "Spurs": {

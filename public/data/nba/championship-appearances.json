@@ -366,6 +366,13 @@
       "won": false,
       "city": "New York",
       "team": "Knicks"
+    },
+    {
+      "year": 2026,
+      "era": "nba",
+      "won": false,
+      "city": "New York",
+      "team": "Knicks"
     }
   ],
   "Rockets": [
