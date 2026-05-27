@@ -149,6 +149,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/teams/nhl" title="NHL" hint="All 32 active franchises. Stanley Cups from 1910 in gold; WHA Avco cups in slate; Presidents' Trophy / Best Reg Record seasons surfaced." />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/teams/football" title="Club Football" hint="Top European league hubs plus the full English pyramid. Filterable index, map, league hubs, canonical club pages." />
+        <DropdownItem href="/teams/national" title="International Football" hint="Senior national-team pages and tournament hubs: World Cup, all six continental cups, intercontinental tournaments. Tournament history, finals, current ELO and FIFA ranks." />
       </Dropdown>
 
       <Dropdown id="articles" label="Articles" openId={openId} setOpenId={setOpenId}>

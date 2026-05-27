@@ -32,6 +32,7 @@ const ITEMS: Item[] = [
   { href: '/teams/nba', label: 'NBA', hint: 'All 30 active franchises; ABA cups in slate; live 2026 playoff status', group: 'Sports' },
   { href: '/teams/nhl', label: 'NHL', hint: 'All 32 active franchises; Stanley Cups from 1910 in gold, WHA Avco in slate', group: 'Sports' },
   { href: '/teams/football', label: 'Club Football', hint: 'Top European league hubs plus the full English pyramid; canonical club pages and league hubs', group: 'Sports' },
+  { href: '/teams/national', label: 'International Football', hint: 'National-team pages and tournament hubs: World Cup, continental cups, intercontinental tournaments', group: 'Sports' },
 
   {
     href: 'https://citizenofnowhere.substack.com',
