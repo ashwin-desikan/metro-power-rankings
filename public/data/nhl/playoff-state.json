@@ -2,17 +2,17 @@
 "year":2026,
 "is_postseason_complete":false,
 "by_franchise":{
+"Golden Knights":{
+"state":"active_final",
+"last_round":"In the Stanley Cup Final",
+"year":2026
+},
 "Avalanche":{
 "state":"active_cf",
 "last_round":"Conference Finals",
 "year":2026
 },
 "Canadiens":{
-"state":"active_cf",
-"last_round":"Conference Finals",
-"year":2026
-},
-"Golden Knights":{
 "state":"active_cf",
 "last_round":"Conference Finals",
 "year":2026

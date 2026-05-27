@@ -1974,6 +1974,14 @@
 "wild":[],
 "golden-knights":[
 {
+"year":2026,
+"league":"NHL",
+"era":"stanley",
+"result":"Lost",
+"city":"Vegas",
+"team":"Golden Knights"
+},
+{
 "year":2023,
 "league":"NHL",
 "era":"stanley",
