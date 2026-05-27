@@ -24,6 +24,19 @@ export type TournamentCategory = "WC" | "EUROS" | "COPA" | "AFCON" | "ASIAN"
 
 export type FinalsCategory = "WC" | "CON" | "INTER" | "OTHER" | null;
 
+export type ContinentTournamentCode = "EUROS" | "COPA" | "AFCON" | "ASIAN" | "GOLD" | "OFC";
+
+export type HonorsBreakdown = {
+  wc_champ: number;
+  wc_finals_lost: number;
+  wc_sf_only: number;
+  continental_champ: number;
+  continental_finals_lost: number;
+  intercontinental_champ: number;
+  per_continent_champ: Record<ContinentTournamentCode, number>;
+  per_continent_runner_up: Record<ContinentTournamentCode, number>;
+};
+
 export type NationalTeam = {
   slug: string;
   name: string;          // workbook Name (legacy / English variant)
@@ -71,6 +84,43 @@ export type NationalTeam = {
   fifa_recognized: boolean;
   subdivision: string | null;
   active: boolean;
+  // Weighted honors index plus the per-category breakdown used to defend
+  // the score. Populated by build-international-data.py. See HONORS_WEIGHTS
+  // and CONTINENT_TOURNAMENT_WEIGHTS in that script for the math.
+  honors_index: number;
+  honors_breakdown: HonorsBreakdown;
+  // Longevity signals used by the similar-teams engine. Tournament span is
+  // last_year - first_year across all categorized appearances; decade
+  // coverage is the count of distinct decades with at least one appearance.
+  tournament_span_years: number;
+  decade_coverage: number;
+};
+
+export type HonorsLeaderboardEntry = {
+  rank: number;
+  slug: string;
+  cur_name: string;
+  continent: string | null;
+  honors_index: number;
+  honors_breakdown: HonorsBreakdown;
+  elo_rank: number | null;
+  fifa_rank: number | null;
+  active: boolean;
+};
+
+export type HonorsLeaderboardPayload = {
+  weights: Record<string, number>;
+  leaderboard: HonorsLeaderboardEntry[];
+  leaderboard_size: number;
+};
+
+export type SimilarTeamNeighbor = {
+  slug: string;
+  cur_name: string;
+  continent: string | null;
+  distance: number;
+  shared_axis: string | null;
+  honors_index: number | null;
 };
 
 export type NationalTeamAppearance = {
@@ -192,6 +242,8 @@ let _finalsCache: Record<string, NationalTeamFinal[]> | null = null;
 let _tournamentsCache: Record<string, TournamentHub> | null = null;
 let _wc2026Cache: WorldCup2026Bundle | null = null;
 let _wc2026Checked = false;
+let _honorsCache: HonorsLeaderboardPayload | null = null;
+let _similarCache: Record<string, SimilarTeamNeighbor[]> | null = null;
 
 function getIndex(): IndexPayload {
   if (!_indexCache) {
@@ -262,6 +314,24 @@ export function getTournamentHub(slug: string): TournamentHub | null {
 
 export function getRankSnapshots(): { elo: string; fifa: string } {
   return getIndex().rank_snapshots;
+}
+
+export function getHonorsLeaderboard(): HonorsLeaderboardPayload {
+  if (!_honorsCache) {
+    _honorsCache = loadJson<HonorsLeaderboardPayload>("honors-leaderboard.json", {
+      weights: {},
+      leaderboard: [],
+      leaderboard_size: 0,
+    });
+  }
+  return _honorsCache;
+}
+
+export function getSimilarTeamsForTeam(slug: string): SimilarTeamNeighbor[] {
+  if (!_similarCache) {
+    _similarCache = loadJson<Record<string, SimilarTeamNeighbor[]>>("similar-teams.json", {});
+  }
+  return _similarCache[slug] ?? [];
 }
 
 export function getWorldCup2026(): WorldCup2026Bundle | null {

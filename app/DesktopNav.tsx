@@ -141,15 +141,15 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       </a>
 
       <Dropdown id="sports" label="Sports" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/sports" title="All sports" hint="Every Major League team across every sport, on one filterable map." />
+        <DropdownItem href="/sports" title="All sports" hint="Every top-flight team on one map." />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/teams/nfl" title="NFL" hint="All 32 active franchises, sortable. Defunct franchises link from inside." />
-        <DropdownItem href="/teams/mlb" title="MLB" hint="All 30 active franchises, sortable. Defunct franchises link from inside." />
-        <DropdownItem href="/teams/nba" title="NBA" hint="All 30 active franchises. ABA cups in slate; live 2026 playoff status." />
-        <DropdownItem href="/teams/nhl" title="NHL" hint="All 32 active franchises. Stanley Cups from 1910 in gold; WHA Avco cups in slate; Presidents' Trophy / Best Reg Record seasons surfaced." />
+        <DropdownItem href="/teams/nfl" title="NFL" hint="32 franchises, sortable." />
+        <DropdownItem href="/teams/mlb" title="MLB" hint="30 franchises, sortable." />
+        <DropdownItem href="/teams/nba" title="NBA" hint="30 franchises; live 2026 playoffs." />
+        <DropdownItem href="/teams/nhl" title="NHL" hint="32 franchises; Stanley Cups since 1910." />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/teams/football" title="Club Football" hint="Top European league hubs plus the full English pyramid. Filterable index, map, league hubs, canonical club pages." />
-        <DropdownItem href="/teams/national" title="International Football" hint="Senior national-team pages and tournament hubs: World Cup, all six continental cups, intercontinental tournaments. Tournament history, finals, current ELO and FIFA ranks." />
+        <DropdownItem href="/teams/football" title="Club Football" hint="European top flights plus the English pyramid." />
+        <DropdownItem href="/teams/national" title="International Football" hint="National teams and tournament hubs." />
       </Dropdown>
 
       <Dropdown id="articles" label="Articles" openId={openId} setOpenId={setOpenId}>

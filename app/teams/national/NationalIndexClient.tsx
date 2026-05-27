@@ -22,6 +22,8 @@ export type IndexTeam = {
   federation: string | null;
   trophies: number;
   major_trophies: number;
+  last_trophy: number | null;
+  last_major_trophy: number | null;
   tour_app: number;
   fifa_rank: number | null;
   elo_rank: number | null;
@@ -33,6 +35,7 @@ export type IndexTeam = {
 
 type Props = {
   teams: IndexTeam[];
+  snapshots: { elo: string; fifa: string };
 };
 
 // Continent display order. World last; we'll show it grouped under "Other".
@@ -51,27 +54,36 @@ function SortableTh({
   active,
   dir,
   onClick,
+  caption,
 }: {
   label: string;
   active: boolean;
   dir: "asc" | "desc";
   onClick: () => void;
+  caption?: string;
 }) {
   const arrow = active ? (dir === "asc" ? "↑" : "↓") : "↕";
   return (
-    <th className="py-2 px-2 text-right font-medium whitespace-nowrap">
+    <th className="py-2 px-2 text-right font-medium whitespace-nowrap align-bottom">
       <button
         type="button"
         onClick={onClick}
-        className="inline-flex items-center gap-1 hover:text-[var(--accent)] transition"
+        className="inline-flex flex-col items-end gap-0.5 hover:text-[var(--accent)] transition"
         style={{
           color: active ? "var(--accent)" : "inherit",
           fontWeight: "inherit",
         }}
         title={`Sort by ${label} (${dir === "asc" ? "best first" : "worst first"})`}
       >
-        <span>{label}</span>
-        <span className="text-[10px] opacity-70" aria-hidden>{arrow}</span>
+        <span className="inline-flex items-center gap-1">
+          <span>{label}</span>
+          <span className="text-[10px] opacity-70" aria-hidden>{arrow}</span>
+        </span>
+        {caption && (
+          <span className="text-[9px] font-normal tracking-normal normal-case text-[var(--text-dim)] tabular-nums">
+            {caption}
+          </span>
+        )}
       </button>
     </th>
   );
@@ -82,7 +94,7 @@ function SortableTh({
 // project's editorial position.
 const FEDERATIONS = ["UEFA", "COMNEBOL", "CAF", "AFC", "CONCACAF", "OFC"];
 
-export default function NationalIndexClient({ teams }: Props) {
+export default function NationalIndexClient({ teams, snapshots }: Props) {
   const [continents, setContinents] = useState<Set<string>>(new Set());
   const [federations, setFederations] = useState<Set<string>>(new Set());
   const [search, setSearch] = useState<string>("");
@@ -130,7 +142,7 @@ export default function NationalIndexClient({ teams }: Props) {
   }
 
   const ranked = useMemo(() => {
-    const sentinel = Number.POSITIVE_INFINITY; // null-ranks sink to bottom regardless of direction
+    const sentinel = Number.POSITIVE_INFINITY;
     return [...filtered].sort((a, b) => {
       const av = sortKey === "elo" ? a.elo_rank : a.fifa_rank;
       const bv = sortKey === "elo" ? b.elo_rank : b.fifa_rank;
@@ -248,22 +260,24 @@ export default function NationalIndexClient({ teams }: Props) {
                 className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
                 style={{ borderColor: "var(--border)" }}
               >
-                <th className="py-2 px-2 text-left font-medium">National team</th>
+                <th className="py-2 px-2 text-left font-medium align-bottom">National team</th>
                 <SortableTh
                   label="ELO"
                   active={sortKey === "elo"}
                   dir={sortDir}
                   onClick={() => toggleSort("elo")}
+                  caption={`as of ${snapshots.elo}`}
                 />
                 <SortableTh
                   label="FIFA"
                   active={sortKey === "fifa"}
                   dir={sortDir}
                   onClick={() => toggleSort("fifa")}
+                  caption={`as of ${snapshots.fifa}`}
                 />
-                <th className="py-2 px-2 text-right font-medium">Trophies</th>
-                <th className="py-2 px-2 text-right font-medium whitespace-nowrap hidden sm:table-cell">Major trophies</th>
-                <th className="py-2 px-2 text-left font-medium hidden sm:table-cell">Country</th>
+                <th className="py-2 px-2 text-right font-medium align-bottom">Trophies</th>
+                <th className="py-2 px-2 text-right font-medium whitespace-nowrap hidden sm:table-cell align-bottom">Major trophies</th>
+                <th className="py-2 px-2 text-left font-medium hidden sm:table-cell align-bottom">Country</th>
               </tr>
             </thead>
             <tbody>
@@ -308,11 +322,29 @@ export default function NationalIndexClient({ teams }: Props) {
                     <td className="py-1.5 px-2 text-right tabular-nums whitespace-nowrap">
                       {t.fifa_rank ?? <span className="text-[var(--text-dim)]">—</span>}
                     </td>
-                    <td className="py-1.5 px-2 text-right tabular-nums">
-                      {t.trophies > 0 ? t.trophies : <span className="text-[var(--text-dim)]">—</span>}
+                    <td className="py-1.5 px-2 text-right tabular-nums whitespace-nowrap">
+                      {t.trophies > 0 ? (
+                        <span>
+                          {t.trophies}
+                          {t.last_trophy && (
+                            <span className="text-[var(--text-muted)] text-xs"> ({t.last_trophy})</span>
+                          )}
+                        </span>
+                      ) : (
+                        <span className="text-[var(--text-dim)]">—</span>
+                      )}
                     </td>
-                    <td className="py-1.5 px-2 text-right tabular-nums hidden sm:table-cell">
-                      {t.major_trophies > 0 ? t.major_trophies : <span className="text-[var(--text-dim)]">—</span>}
+                    <td className="py-1.5 px-2 text-right tabular-nums whitespace-nowrap hidden sm:table-cell">
+                      {t.major_trophies > 0 ? (
+                        <span>
+                          {t.major_trophies}
+                          {t.last_major_trophy && (
+                            <span className="text-[var(--text-muted)] text-xs"> ({t.last_major_trophy})</span>
+                          )}
+                        </span>
+                      ) : (
+                        <span className="text-[var(--text-dim)]">—</span>
+                      )}
                     </td>
                     <td className="py-1.5 px-2 hidden sm:table-cell">
                       {t.has_country_page && t.country_page_slug ? (

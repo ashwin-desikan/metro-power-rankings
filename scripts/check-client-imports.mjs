@@ -32,6 +32,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/mlb",
   "@/lib/nba",
   "@/lib/football",
+  "@/lib/international",
   "@/lib/badges",
   "@/lib/substack",
   "@/lib/data",

@@ -1,21 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllClubs, getAllLeagueHubs } from "@/lib/football";
+import { getAllClubs, getAllLeagueHubs, getAllEuropeanTournamentHubs } from "@/lib/football";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
 
 export const metadata: Metadata = {
-  title: "Football clubs",
+  title: "Club Football",
   description:
-    "Canonical pages for every club that has played Level 1 football in England, Spain, Italy, " +
-    "Germany, France, the Netherlands, Portugal, or Scotland, plus the full English league " +
-    "pyramid (Premier League through National League) and the full Scottish league pyramid " +
-    "(Scottish Premiership through League Two). Source: the grand Football workbook covering " +
-    "1872 to present.",
+    "Three layers of club football: UEFA and FIFA tournament hubs (Champions League, Europa League, " +
+    "Conference League, Cup Winners' Cup, Fairs Cup, Super Cup, Club World Cup) with a live 2025-26 " +
+    "bracket; eight top-flight league hubs; and canonical per-club pages with season-by-season history.",
   alternates: { canonical: "/teams/football" },
   openGraph: {
-    title: `Football clubs | ${SITE_NAME}`,
-    description: "Canonical pages for the top European football leagues and the English pyramid.",
+    title: `Club Football | ${SITE_NAME}`,
+    description: "European and world club football: tournaments, leagues, and per-club history from the 1870s on.",
     url: `${BASE_URL}/teams/football`,
     type: "website",
   },
@@ -24,6 +22,7 @@ export const metadata: Metadata = {
 export default function FootballIndex() {
   const clubs = getAllClubs();
   const hubs = getAllLeagueHubs();
+  const tournamentHubs = getAllEuropeanTournamentHubs();
 
   // Trim to the fields the client component needs (keeps the bundle compact).
   const clientClubs: IndexClub[] = clubs.map((c) => ({
@@ -52,15 +51,63 @@ export default function FootballIndex() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Football</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          Top European top flights across England, Spain, Italy, Germany, France, the Netherlands,
-          Portugal, and Scotland. England (down to National League) and Scotland (down to League
-          Two) are wired through their full league pyramids; the others are top-flight only. Each
-          club has a season-by-season history pulled from the grand football workbook, with
-          top-flight rows reaching back to the 1870s in England, the 1890s in France and Italy,
-          the 1900s in Spain and Germany, the 1880s in Scotland, and the 1930s in the Netherlands
-          and Portugal.
+          Three layers of club football on one product surface. UEFA and FIFA tournament hubs
+          carry every Champions League, Europa League, Conference League, Cup Winners&apos; Cup,
+          Inter-Cities Fairs Cup, UEFA Super Cup, and Club World Cup edition, with a round-by-round
+          bracket on the 2025-26 competitions still in flight. League hubs cover the eight top
+          flights (England, Spain, Italy, Germany, France, Netherlands, Portugal, Scotland) with
+          current standings and all-time champions. And the canonical per-club pages render
+          season-by-season standings, cup finals, and European appearances, reaching back to the
+          1870s in England, the 1890s in France and Italy, and the 1880s in Scotland.
         </p>
       </header>
+
+      <section className="mb-10">
+        <h2 className="text-lg font-semibold mb-3">European & world tournament hubs</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {tournamentHubs.map((t) => {
+            const topClub = t.most_decorated[0];
+            const isLive = t.active && t.current_entries.length > 0;
+            return (
+              <Link
+                key={t.slug}
+                href={`/teams/football/tournaments/${t.slug}`}
+                className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <div className="font-semibold">{t.short_label}</div>
+                  {!t.active && (
+                    <span
+                      className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold"
+                      style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}
+                    >
+                      Defunct
+                    </span>
+                  )}
+                  {isLive && (
+                    <span
+                      className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold"
+                      style={{ background: "rgba(16,185,129,0.18)", color: "#10b981" }}
+                    >
+                      Live
+                    </span>
+                  )}
+                </div>
+                <div className="text-xs text-[var(--text-muted)] mt-1 tabular-nums">
+                  {t.editions} edition{t.editions === 1 ? "" : "s"}
+                  {t.year_min && t.year_max ? <> · {t.year_min}–{t.year_max}</> : null}
+                </div>
+                {topClub && (
+                  <div className="text-xs text-[var(--text-muted)] mt-2">
+                    Most titled: <span className="font-medium text-[var(--text)]">{topClub.cur_name}</span> ({topClub.champion_count})
+                  </div>
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">League hubs</h2>

@@ -1,10 +1,16 @@
+"use client";
+
 // WorldCup2026 — live (well, pre-tournament-static) standings + bracket
 // widget for the International Football index page. Driven by
 // public/data/international/wc2026.json which the ETL refreshes from
 // Int Tournaments. Group Stage layout mirrors MlbStandings (mini-tables
 // per group). Knockout bracket renders per round in horizontal cards
 // rather than a tree view; tree-of-pairings is a v1.1 polish item.
+//
+// Collapsed by default to keep the index page concise. Auto-expands when
+// the URL hash is #wc2026 (the deep link from the per-team WC2026 row).
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { WorldCup2026Bundle } from "@/lib/international";
 import { flagForTeam, displayNameForTeam } from "@/lib/international-display";
@@ -27,19 +33,66 @@ export default function WorldCup2026({ wc }: Props) {
   const today = new Date();
   const preTournament = today < startsDate;
 
+  const [open, setOpen] = useState(false);
+
+  // Auto-expand when the URL hash targets this section (e.g. a team page
+  // links to /teams/national#wc2026 from their WC 2026 row). Listening to
+  // hashchange too so an in-page hash update opens the section without a
+  // reload.
+  useEffect(() => {
+    function syncFromHash() {
+      if (typeof window === "undefined") return;
+      if (window.location.hash === "#wc2026") setOpen(true);
+    }
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, []);
+
+  const summaryNote = preTournament
+    ? `Group stage opens ${startsDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}.`
+    : "Live standings from workbook. Refreshes on next deploy.";
+
   return (
     <section className="mb-10" id="wc2026">
-      <header className="mb-4">
-        <h2 className="text-lg font-bold tracking-tight">{wc.tournament.name}</h2>
-        <p className="text-xs text-[var(--text-muted)]">
-          {preTournament
-            ? <>Group stage opens {startsDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}. Standings populate live from the workbook once matches kick off.</>
-            : <>Live standings from workbook. Refreshes on next deploy.</>}
-        </p>
-      </header>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls="wc2026-body"
+        className="w-full text-left rounded-xl border px-4 py-3 transition hover:border-[var(--accent)]"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      >
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0">
+            <h2 className="text-base font-semibold tracking-tight truncate">
+              {wc.tournament.name}
+            </h2>
+            <p className="text-xs text-[var(--text-muted)] mt-0.5 truncate">
+              {summaryNote} Group standings and knockout bracket {open ? "below" : "available on expand"}.
+            </p>
+          </div>
+          <span
+            className="inline-flex items-center gap-1 text-xs text-[var(--text-muted)] flex-shrink-0"
+            aria-hidden
+          >
+            <span className="hidden sm:inline">{open ? "Collapse" : "Expand"}</span>
+            <span
+              className="inline-block transition-transform"
+              style={{ transform: open ? "rotate(90deg)" : "rotate(0deg)" }}
+            >
+              ▸
+            </span>
+          </span>
+        </div>
+      </button>
 
-      <GroupStage groups={wc.group_stage} />
-      <Bracket knockout={wc.knockout} />
+      {open && (
+        <div id="wc2026-body" className="mt-4">
+          <GroupStage groups={wc.group_stage} />
+          <Bracket knockout={wc.knockout} />
+        </div>
+      )}
     </section>
   );
 }

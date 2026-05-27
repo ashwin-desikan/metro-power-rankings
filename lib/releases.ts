@@ -18,10 +18,20 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-05-27",
+    headline: "European tournament hubs, comparable programs, and quiz",
+    items: [
+      "New /teams/football/tournaments: hubs for the Champions League, Europa League, Conference League, Cup Winners' Cup, Fairs Cup, Super Cup, and Club World Cup. Round-by-round 2025-26 bracket on active runs.",
+      "Every national-team page now surfaces five Comparable Programs: the closest historical cohort by honors profile and footprint. Croatia clusters with Sweden and Portugal; Hungary with Czechia and Netherlands.",
+      "New honors quiz at /teams/national/quiz. Five fingerprints, names and flags stripped, four options. The final screen surfaces the comp set for every team you missed.",
+      "All Sports directory wires up Club Football and International Football as live cards; College Football and College Basketball coming soon. The 2026 World Cup widget collapses by default.",
+    ],
+  },
+  {
     date: "2026-05-26",
     headline: "International Football launches; European league expansion and polish",
     items: [
-      "International Football v1 ships at /teams/national: ELO-ranked national-team table with country flags, FIFA ranks, and trophy counts; per-team pages with tournament history and tournament-finals; eight tournament hubs.",
+      "International Football v1: sortable ELO/FIFA team table; per-team tournament history and finals; eight tournament hubs; live 2026 World Cup standings and bracket; Czechia and Türkiye display correctly.",
       "Club Football now covers the Eredivisie, Primeira Liga, and Scottish Premiership alongside the existing five top flights; Scotland is wired down to League Two.",
       "Club season tables flag Domestic Cup and European finals inline: filled pill plus star for winners, outlined pill plus open star for runners-up; major cups use country labels, secondary cups read Lg Cup.",
       "Club page polish: standings on phone hide secondary columns; desktop numeric columns space evenly; European competition pills use era-correct abbreviations (EC, UC, ICFC) and sort within a season.",

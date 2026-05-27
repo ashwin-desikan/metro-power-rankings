@@ -52,11 +52,69 @@ function loadJson<T>(rel: string): T {
   return JSON.parse(fs.readFileSync(file, "utf8")) as T;
 }
 
+// Editorial card overrides for the league directory:
+//  - The five top-flight Big 5 league cards (England/Spain/Italy/Germany/France)
+//    are removed because Club Football covers them with live league hubs.
+//  - Club Football and International Football are inserted as live cards.
+//  - College Football and College Basketball are listed as coming soon.
+// The JSON builder will keep emitting the Big 5 cards until updated; the
+// override here is the single source of truth for what /sports shows.
+const REMOVED_LEAGUE_KEYS = new Set(["England", "Spain", "Italy", "Germany", "France"]);
+const INJECTED_LIVE_CARDS: LeagueCard[] = [
+  {
+    league: "ClubFootball",
+    label: "Club Football",
+    sport: "Football",
+    status: "live",
+    page: "/teams/football",
+    team_count: 0, // count surfaced by the per-page hubs; suppressed here
+  },
+  {
+    league: "InternationalFootball",
+    label: "International Football",
+    sport: "Football",
+    status: "live",
+    page: "/teams/national",
+    team_count: 0,
+  },
+];
+const INJECTED_COMING_CARDS: LeagueCard[] = [
+  {
+    league: "CFB",
+    label: "College Football",
+    sport: "American Football",
+    status: "coming",
+    page: null,
+    team_count: 0,
+  },
+  {
+    league: "CBB",
+    label: "College Basketball",
+    sport: "Basketball",
+    status: "coming",
+    page: null,
+    team_count: 0,
+  },
+];
+
 export default function SportsPage() {
   const teams = loadJson<TeamMarker[]>("all-teams.json");
   const summary = loadJson<Summary>("league-summary.json");
-  const liveCount = summary.league_cards.filter((c) => c.status === "live").length;
-  const comingCount = summary.league_cards.filter((c) => c.status === "coming").length;
+
+  // Compose the directory cards: drop the removed Big 5 entries, then place
+  // the two live Football inserts before any coming-soon group, and append
+  // the two college coming-soon entries at the end of the coming group.
+  const baseCards = summary.league_cards.filter((c) => !REMOVED_LEAGUE_KEYS.has(c.league));
+  const liveCards = baseCards.filter((c) => c.status === "live");
+  const comingCards = baseCards.filter((c) => c.status === "coming");
+  const composedCards: LeagueCard[] = [
+    ...liveCards,
+    ...INJECTED_LIVE_CARDS,
+    ...comingCards,
+    ...INJECTED_COMING_CARDS,
+  ];
+  const liveCount = composedCards.filter((c) => c.status === "live").length;
+  const comingCount = composedCards.filter((c) => c.status === "coming").length;
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -103,8 +161,13 @@ export default function SportsPage() {
           Live cards link straight to the per-franchise pages. Coming-soon cards stay on this page until that league ships.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-          {summary.league_cards.map((c) => {
+          {composedCards.map((c) => {
             const isLive = c.status === "live" && c.page;
+            // Suppress the team-count line for cards where the count is
+            // representational (Club Football / International Football hubs
+            // host their own counts on their respective pages, and the two
+            // college coming-soons have no count yet).
+            const showTeamCount = c.team_count > 0;
             const inner = (
               <div
                 className={`rounded-xl border p-4 h-full transition-colors ${
@@ -121,7 +184,9 @@ export default function SportsPage() {
                   )}
                 </div>
                 <div className="text-xs text-[var(--text-muted)]">{c.sport}</div>
-                <div className="text-xs text-[var(--text-dim)] mt-1 tabular-nums">{c.team_count} teams</div>
+                {showTeamCount && (
+                  <div className="text-xs text-[var(--text-dim)] mt-1 tabular-nums">{c.team_count} teams</div>
+                )}
               </div>
             );
             return isLive ? (

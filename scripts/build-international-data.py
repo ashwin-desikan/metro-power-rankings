@@ -686,6 +686,284 @@ def build_teams_index(totals_rows, summary_rows, federation_lookup):
 MAX_DISPLAYED_TOURNAMENT_YEAR = 2026  # Bump after the next major-tournament cycle (Euros 2028, Asian Cup 2027 etc.) actually concludes.
 
 
+# ---------- Honors weighting + similar-teams configuration ----------
+#
+# Editorial weights for the honors index. Each starter weight reflects the
+# defensible delta in prestige between achievement levels. Numbers are
+# deliberately round so the methodology block on the site can defend them
+# in two sentences:
+#  - World Cup win is the apex (8). A Euros / Copa América win and a World
+#    Cup final lost are co-equal (3 each).
+#  - Continental final lost (1) sits clearly below an intercontinental win
+#    (1.5) because reaching a final still beats winning a smaller cup.
+#  - A World Cup semifinal that didn't reach the final (0.75) is the lightest
+#    weighted entry: enough to differentiate teams that "got close" from
+#    those that never did, without inflating the score.
+HONORS_WEIGHTS = {
+    "wc_win": 8.0,
+    "wc_final_lost": 3.0,
+    "continental_win": 3.0,            # before continent-tier multiplier
+    "continental_final_lost": 1.0,     # before continent-tier multiplier
+    "intercontinental_win": 1.5,
+    "wc_sf_without_final": 0.75,
+}
+
+# Continent tiering. Any football fan will tell you a Gold Cup is not a Euros.
+# Multiplier applied to continental_win and continental_final_lost weights so
+# Brazil's Copa stays at full value while Mexico's Gold Cups get appropriately
+# discounted. Tiers are deliberately three-tier (1.0 / 0.75 / 0.5 / 0.3) so
+# the methodology block can defend them in one sentence: Euros and Copa are
+# the top tier of continental competition; AFCON sits one notch below; Asian
+# Cup and Gold Cup at half weight; OFC at one-third reflecting AUS/NZL
+# dominance of a small field.
+CONTINENT_TOURNAMENT_WEIGHTS = {
+    "EUROS": 1.0,
+    "COPA":  1.0,
+    "AFCON": 0.75,
+    "ASIAN": 0.5,
+    "GOLD":  0.5,
+    "OFC":   0.3,
+}
+
+# Similar-teams scoring: six honors-shape dimensions weighted higher (honors
+# profile is the editorial signal we cluster on) plus two longevity-shape
+# dimensions weighted lower (span + decade coverage break ties between teams
+# with similar trophy hauls but very different historical arcs).
+SIMILAR_DIMENSION_WEIGHTS = {
+    "wc_champ": 2.0,
+    "wc_finals_lost": 1.5,
+    "continental_champ": 1.5,
+    "continental_finals_lost": 1.0,
+    "intercontinental_champ": 1.0,
+    "wc_sf_without_final": 0.75,
+    "tournament_span_years": 0.5,
+    "decade_coverage": 0.5,
+}
+
+# How many nearest neighbors to surface per team.
+SIMILAR_NEIGHBORS = 5
+
+# How many teams to surface in the honors leaderboard payload.
+LEADERBOARD_SIZE = 30
+
+
+def compute_honors(team_obj, team_appearances):
+    """Returns (honors_index_float, breakdown_dict) for a team. Walks the
+    team's appearance rows to derive per-continent wins and runner-up counts
+    so the continent-tier multiplier can apply cleanly. team_appearances is
+    the list of appearance dicts for this team (the value out of
+    build_appearances() keyed by slug).
+
+    breakdown_dict is what the methodology block on /teams/national defends
+    in plain English; it surfaces the per-category counts AND the points
+    each category contributed."""
+    wc = team_obj["world_cup"]
+
+    wc_champ = wc["champ"] or 0
+    wc_finals_lost = max((wc["finals"] or 0) - wc_champ, 0)
+    wc_sf_only = max((wc["sf"] or 0) - (wc["finals"] or 0), 0)
+
+    # Derive per-continental-tournament champion + runner-up counts from
+    # appearances. Each appearance has a category (EUROS/COPA/AFCON/ASIAN/
+    # GOLD/OFC/WC/INTER/OTHER). We tally champions and final-round losses
+    # per continental category and apply the tier multiplier.
+    per_continent_champ = {k: 0 for k in CONTINENT_TOURNAMENT_WEIGHTS}
+    per_continent_runner_up = {k: 0 for k in CONTINENT_TOURNAMENT_WEIGHTS}
+    for a in (team_appearances or []):
+        cat = a.get("category")
+        if cat not in CONTINENT_TOURNAMENT_WEIGHTS:
+            continue
+        if a.get("champion"):
+            per_continent_champ[cat] += 1
+        elif a.get("round_reached") == "Final":
+            per_continent_runner_up[cat] += 1
+
+    # Continental contribution to the index.
+    continental_points = 0.0
+    for cat, mult in CONTINENT_TOURNAMENT_WEIGHTS.items():
+        continental_points += per_continent_champ[cat] * HONORS_WEIGHTS["continental_win"] * mult
+        continental_points += per_continent_runner_up[cat] * HONORS_WEIGHTS["continental_final_lost"] * mult
+
+    inter_champ = (team_obj["intercontinental"]["champ"] or 0)
+
+    score = (
+        wc_champ * HONORS_WEIGHTS["wc_win"]
+        + wc_finals_lost * HONORS_WEIGHTS["wc_final_lost"]
+        + continental_points
+        + inter_champ * HONORS_WEIGHTS["intercontinental_win"]
+        + wc_sf_only * HONORS_WEIGHTS["wc_sf_without_final"]
+    )
+
+    # Aggregate continental counts for the breakdown (sum across continents)
+    # plus per-tournament-tier detail so the per-team panel can show "Won 13
+    # Gold Cups (tier 0.5, contributed 19.5 points)".
+    continental_champ_total = sum(per_continent_champ.values())
+    continental_finals_lost_total = sum(per_continent_runner_up.values())
+
+    breakdown = {
+        "wc_champ": wc_champ,
+        "wc_finals_lost": wc_finals_lost,
+        "wc_sf_only": wc_sf_only,
+        "continental_champ": continental_champ_total,
+        "continental_finals_lost": continental_finals_lost_total,
+        "intercontinental_champ": inter_champ,
+        "per_continent_champ": per_continent_champ,
+        "per_continent_runner_up": per_continent_runner_up,
+    }
+    return round(score, 2), breakdown
+
+
+def compute_team_longevity(slug, summary_rows, slug_for_any):
+    """Tournament span (last_year - first_year, in years) and decade coverage
+    (count of distinct decades 1900-2030 with at least one tournament
+    appearance). Used by the similar-teams engine. Returns (span, decades)."""
+    years = []
+    for r in summary_rows:
+        if not r.get("year"):
+            continue
+        if r["year"] > MAX_DISPLAYED_TOURNAMENT_YEAR:
+            continue
+        # Route the row to its slug the same way build_appearances does so
+        # the per-team longevity numbers match what shows up on the page.
+        successor_slug = slug_for_any.get(r["cur_name"])
+        is_for_this_slug = successor_slug == slug
+        if (
+            not is_for_this_slug
+            and r.get("team") in TRULY_DEFUNCT_TEAMS
+            and slug_for_any.get(r["team"]) == slug
+        ):
+            is_for_this_slug = True
+        if not is_for_this_slug:
+            continue
+        years.append(r["year"])
+    if not years:
+        return 0, 0
+    span = max(years) - min(years)
+    decades = len({(y // 10) * 10 for y in years})
+    return span, decades
+
+
+def build_similar_teams(teams):
+    """For each team, compute weighted-Euclidean z-score distance against
+    every other team across the SIMILAR_DIMENSION_WEIGHTS axes. Surface the
+    five nearest neighbors per slug. Returns a dict {slug: [neighbor_obj, ...]}.
+    Each neighbor_obj carries slug, cur_name, distance (rounded for display)
+    and the shared-strength axis (the dimension where the pair is closest
+    relative to the cohort, used by the editorial caption)."""
+    if not teams:
+        return {}
+
+    dims = list(SIMILAR_DIMENSION_WEIGHTS.keys())
+
+    def vec(t):
+        b = t["honors_breakdown"]
+        return [
+            float(b["wc_champ"]),
+            float(b["wc_finals_lost"]),
+            float(b["continental_champ"]),
+            float(b["continental_finals_lost"]),
+            float(b["intercontinental_champ"]),
+            float(b["wc_sf_only"]),
+            float(t["tournament_span_years"]),
+            float(t["decade_coverage"]),
+        ]
+
+    matrix = [vec(t) for t in teams]
+    # z-score each dimension across the cohort. Teams with zero across the
+    # board still get a vector at the origin; the distance metric handles
+    # them naturally (they cluster together as "never been to a tournament").
+    means = []
+    stds = []
+    for i in range(len(dims)):
+        col = [row[i] for row in matrix]
+        mu = sum(col) / len(col)
+        var = sum((v - mu) ** 2 for v in col) / len(col)
+        sigma = var ** 0.5 or 1.0  # avoid divide-by-zero on degenerate dims
+        means.append(mu)
+        stds.append(sigma)
+
+    z_matrix = []
+    for row in matrix:
+        z_matrix.append([(row[i] - means[i]) / stds[i] for i in range(len(dims))])
+
+    weights = [SIMILAR_DIMENSION_WEIGHTS[d] for d in dims]
+
+    out = {}
+    for i, t in enumerate(teams):
+        dists = []
+        for j, other in enumerate(teams):
+            if i == j:
+                continue
+            # Weighted Euclidean across z-scored axes.
+            d2 = 0.0
+            for k in range(len(dims)):
+                diff = z_matrix[i][k] - z_matrix[j][k]
+                d2 += weights[k] * diff * diff
+            dists.append((d2 ** 0.5, j))
+        dists.sort(key=lambda x: x[0])
+        neighbors = []
+        for dist, j in dists[:SIMILAR_NEIGHBORS]:
+            other = teams[j]
+            # Identify the axis where the pair is closest relative to its
+            # weight contribution. Used as a hint for the editorial caption,
+            # which is finalized in the UI layer.
+            best_axis = None
+            best_score = None
+            for k, d in enumerate(dims):
+                contrib = weights[k] * (z_matrix[i][k] - z_matrix[j][k]) ** 2
+                # Lowest contribution = most-shared dimension. Skip dims where
+                # both teams are at the cohort baseline (z near 0) since
+                # "shared" there just means both are unremarkable on that axis.
+                if abs(z_matrix[i][k]) < 0.25 and abs(z_matrix[j][k]) < 0.25:
+                    continue
+                if best_score is None or contrib < best_score:
+                    best_score = contrib
+                    best_axis = d
+            neighbors.append({
+                "slug": other["slug"],
+                "cur_name": other["cur_name"],
+                "continent": other.get("continent"),
+                "distance": round(dist, 3),
+                "shared_axis": best_axis,
+                "honors_index": other.get("honors_index"),
+            })
+        out[t["slug"]] = neighbors
+    return out
+
+
+def build_honors_leaderboard(teams):
+    """Sorted descending by honors_index. Ties broken by World Cup wins,
+    then continental wins, then total trophies, then cur_name alphabetical."""
+    ranked = sorted(
+        teams,
+        key=lambda t: (
+            -(t.get("honors_index") or 0),
+            -(t["world_cup"]["champ"] or 0),
+            -(t["continental"]["champ"] or 0),
+            -(t["totals"]["trophies"] or 0),
+            t["cur_name"].lower(),
+        ),
+    )
+    leaderboard = []
+    for rank, t in enumerate(ranked[:LEADERBOARD_SIZE], start=1):
+        leaderboard.append({
+            "rank": rank,
+            "slug": t["slug"],
+            "cur_name": t["cur_name"],
+            "continent": t.get("continent"),
+            "honors_index": t.get("honors_index"),
+            "honors_breakdown": t.get("honors_breakdown"),
+            "elo_rank": t.get("elo_rank"),
+            "fifa_rank": t.get("fifa_rank"),
+            "active": t.get("active"),
+        })
+    return {
+        "weights": HONORS_WEIGHTS,
+        "leaderboard": leaderboard,
+        "leaderboard_size": LEADERBOARD_SIZE,
+    }
+
+
 def build_appearances(summary_rows, slug_for_any):
     """{slug: [appearance rows...]}. Each summary row may emit up to two
     entries: one on the successor's page (with 'as Defunct' attribution),
@@ -1057,6 +1335,30 @@ def main():
     appearances = build_appearances(summary_rows, slug_for_any)
     print(f"  {sum(len(v) for v in appearances.values())} appearance rows across {len(appearances)} teams")
 
+    # Honors index and longevity per team. Honors uses the team's appearance
+    # rows to apply continent-tier weights (Gold Cup is not a Euros). Longevity
+    # walks summary_rows once per team; cost is negligible at this dataset size.
+    print("\nComputing honors index and longevity...")
+    for t in teams:
+        honors_index, breakdown = compute_honors(t, appearances.get(t["slug"], []))
+        span, decades = compute_team_longevity(t["slug"], summary_rows, slug_for_any)
+        t["honors_index"] = honors_index
+        t["honors_breakdown"] = breakdown
+        t["tournament_span_years"] = span
+        t["decade_coverage"] = decades
+    top_honors = sorted(teams, key=lambda t: -(t.get("honors_index") or 0))[:5]
+    print("  Top 5 by honors index: " + ", ".join(
+        f"{t['cur_name']} ({t['honors_index']})" for t in top_honors
+    ))
+
+    print("\nBuilding similar-teams engine...")
+    similar = build_similar_teams(teams)
+    print(f"  {len(similar)} teams with neighbor lists")
+
+    print("\nBuilding honors leaderboard...")
+    leaderboard_payload = build_honors_leaderboard(teams)
+    print(f"  top {len(leaderboard_payload['leaderboard'])} entries")
+
     print("\nBuilding finals...")
     finals_by_slug = build_finals(finals_rows, slug_for_any)
     print(f"  {sum(len(v) for v in finals_by_slug.values())} final-match rows across {len(finals_by_slug)} teams")
@@ -1102,6 +1404,8 @@ def main():
     dump("finals.json", finals_by_slug)
     dump("tournaments.json", tournament_hubs)
     dump("slug-lookup.json", slug_lookup)
+    dump("honors-leaderboard.json", leaderboard_payload)
+    dump("similar-teams.json", similar)
     if wc2026:
         dump("wc2026.json", wc2026)
 

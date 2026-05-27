@@ -4,6 +4,7 @@ import {
   getAllNationalTeams,
   getAllTournamentHubs,
   getWorldCup2026,
+  getRankSnapshots,
 } from "@/lib/international";
 import {
   centroidForTeam,
@@ -33,6 +34,7 @@ export default function NationalIndexPage() {
   const teams = getAllNationalTeams();
   const hubs = getAllTournamentHubs();
   const wc2026 = getWorldCup2026();
+  const snapshots = getRankSnapshots();
   const countrySlugSet = new Set(getAllCountrySlugs());
 
   const clientTeams: IndexTeam[] = teams.map((t) => {
@@ -44,6 +46,8 @@ export default function NationalIndexPage() {
       federation: t.federation,
       trophies: t.totals.trophies,
       major_trophies: t.totals.major_trophies,
+      last_trophy: t.totals.last_trophy,
+      last_major_trophy: t.totals.last_major_trophy,
       tour_app: t.totals.tour_app,
       fifa_rank: t.fifa_rank,
       elo_rank: t.elo_rank,
@@ -68,7 +72,16 @@ export default function NationalIndexPage() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">International Football</h1>
+        <div className="flex items-baseline justify-between flex-wrap gap-3">
+          <h1 className="text-3xl font-semibold tracking-tight">International Football</h1>
+          <Link
+            href="/teams/national/quiz"
+            className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            Try the honors quiz →
+          </Link>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           National-team coverage as a sibling product to the metro-anchored Club Football pages.
           Every senior men&apos;s national team with tournament history on file, every FIFA World
@@ -107,7 +120,63 @@ export default function NationalIndexPage() {
 
       <section className="mb-6">
         <h2 className="text-lg font-semibold mb-3">National teams</h2>
-        <NationalIndexClient teams={clientTeams} />
+        <NationalIndexClient teams={clientTeams} snapshots={snapshots} />
+      </section>
+
+      <section
+        id="methodology"
+        className="mt-10 rounded-xl border p-5 text-sm"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      >
+        <h2 className="text-base font-semibold mb-2">Honors index methodology</h2>
+        <p className="text-[var(--text-muted)] mb-3">
+          A weighted score across every senior international achievement on file. Drives the
+          Comparable Programs cohorts on each team page and the <Link href="/teams/national/quiz" className="underline hover:text-[var(--accent)]">honors quiz</Link>.
+          Numbers are deliberately round so the editorial choices are visible, not hidden behind a model.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 mb-3">
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>World Cup win</span><span className="font-semibold tabular-nums">8.0</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>World Cup final lost</span><span className="font-semibold tabular-nums">3.0</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>World Cup semifinal (no final)</span><span className="font-semibold tabular-nums">0.75</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>Continental win (base, before tier)</span><span className="font-semibold tabular-nums">3.0</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>Continental final lost (base)</span><span className="font-semibold tabular-nums">1.0</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>Intercontinental win</span><span className="font-semibold tabular-nums">1.5</span>
+          </div>
+        </div>
+        <p className="text-[var(--text-muted)] mb-2">
+          Continental titles are not all equal. The base weight is multiplied by a tournament-tier factor:
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-1 mb-3">
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>Euros / Copa América</span><span className="font-semibold tabular-nums">×1.0</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>AFCON</span><span className="font-semibold tabular-nums">×0.75</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>Asian Cup / Gold Cup</span><span className="font-semibold tabular-nums">×0.5</span>
+          </div>
+          <div className="flex items-baseline justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
+            <span>OFC Nations Cup</span><span className="font-semibold tabular-nums">×0.3</span>
+          </div>
+        </div>
+        <p className="text-[var(--text-muted)] text-xs">
+          Intercontinental honors include the FIFA Confederations Cup, the King Fahd Cup, and
+          the Finalissima. Olympic football, the Central European International Cup, and the
+          Pan-American Championship are surfaced as appearance history but do not contribute to
+          this index. Future tournaments are excluded until they conclude.
+        </p>
       </section>
     </main>
   );

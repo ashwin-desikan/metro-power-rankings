@@ -141,6 +141,57 @@ export type FootballLeagueHub = {
   }>;
 };
 
+// ---------- European tournament hubs ----------
+
+export type EuropeanChampion = {
+  year: number;
+  season: string | null;
+  cur_name: string;
+  slug: string | null;
+  competition: string | null;
+};
+
+export type EuropeanFinalist = EuropeanChampion;
+
+export type EuropeanMostDecorated = {
+  cur_name: string;
+  slug: string | null;
+  champion_count: number;
+  // Finals reached total (wins + losses). The page surfaces "15 cups, 18
+  // finals" so a reader sees the W/L spread without doing math.
+  finals_count: number;
+  finals_lost: number;
+  last_won: number | null;
+  // Most recent year the club reached the final (won or lost). Important for
+  // never-won clubs whose last_won is always null but whose last_final is
+  // the meaningful "when did they last appear here" anchor.
+  last_final: number | null;
+};
+
+export type EuropeanCurrentEntry = {
+  cur_name: string;
+  slug: string | null;
+  deepest_rnd: number | null;
+  trophy: boolean;
+};
+
+export type EuropeanTournamentHub = {
+  slug: string;
+  label: string;
+  short_label: string;
+  active: boolean;
+  era_notes: string;
+  year_min: number | null;
+  year_max: number | null;
+  editions: number;
+  champions: EuropeanChampion[];
+  finalists: EuropeanFinalist[];
+  most_decorated: EuropeanMostDecorated[];
+  current_season: string | null;
+  current_year: number | null;
+  current_entries: EuropeanCurrentEntry[];
+};
+
 // ---------- File loading ----------
 
 const DATA_DIR = join(process.cwd(), "public", "data", "football");
@@ -170,6 +221,7 @@ let _seasonsCache: Record<string, FootballSeason[]> | null = null;
 let _cupsCache: Record<string, FootballCupFinal[]> | null = null;
 let _europeCache: Record<string, FootballEuropeEntry[]> | null = null;
 let _leaguesCache: Record<string, FootballLeagueHub> | null = null;
+let _europeanTournamentsCache: Record<string, EuropeanTournamentHub> | null = null;
 
 function getIndex(): IndexPayload {
   if (!_indexCache) {
@@ -291,6 +343,56 @@ export function getLeagueHub(slug: string): FootballLeagueHub | null {
 
 export function getAllLeagueHubSlugs(): string[] {
   return Object.keys(getLeaguesMap());
+}
+
+// ---------- European tournament hub accessors ----------
+
+// Editorial display order for the European tournament hubs: active majors
+// first, then defunct, then the Super Cup and intercontinental sit at the
+// end as their own tier.
+export const EUROPEAN_TOURNAMENT_HUB_ORDER: string[] = [
+  "champions-league",
+  "europa-league",
+  "conference-league",
+  "cup-winners-cup",
+  "inter-cities-fairs-cup",
+  "uefa-super-cup",
+  "club-world-cup",
+];
+
+function getEuropeanTournamentsMap(): Record<string, EuropeanTournamentHub> {
+  if (!_europeanTournamentsCache) {
+    _europeanTournamentsCache = loadJson<Record<string, EuropeanTournamentHub>>(
+      "european-tournaments.json",
+      {},
+    );
+  }
+  return _europeanTournamentsCache;
+}
+
+export function getAllEuropeanTournamentHubs(): EuropeanTournamentHub[] {
+  const map = getEuropeanTournamentsMap();
+  // Return in editorial order; any hub not in the order list goes to the end.
+  const ordered: EuropeanTournamentHub[] = [];
+  const seen = new Set<string>();
+  for (const slug of EUROPEAN_TOURNAMENT_HUB_ORDER) {
+    if (map[slug]) {
+      ordered.push(map[slug]);
+      seen.add(slug);
+    }
+  }
+  for (const [slug, hub] of Object.entries(map)) {
+    if (!seen.has(slug)) ordered.push(hub);
+  }
+  return ordered;
+}
+
+export function getAllEuropeanTournamentHubSlugs(): string[] {
+  return Object.keys(getEuropeanTournamentsMap());
+}
+
+export function getEuropeanTournamentHub(slug: string): EuropeanTournamentHub | null {
+  return getEuropeanTournamentsMap()[slug] ?? null;
 }
 
 // Group clubs by country for the index page. England gets sub-grouped by

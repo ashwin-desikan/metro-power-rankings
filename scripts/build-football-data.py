@@ -548,6 +548,291 @@ def collect_european(wb, in_scope_curnames):
     return dict(by_club)
 
 
+# ---------- ETL: European tournament hubs ----------
+
+# Editorial mapping from user-facing tournament hub slug to the underlying
+# Eur RndbyRnd codes and year ranges. Some competitions are defunct (CWC,
+# ICFC); some are still active. The Europa League / UEFA Cup hub is filtered
+# to year >= 1972 so the Inter-Cities Fairs Cup era (1955-1971) routes to its
+# own dedicated hub, even though the workbook uses the same EL code for the
+# whole span. Club World Cup and Intercontinental Cup share a hub because
+# they overlapped briefly and merged after 2004; the workbook keeps separate
+# codes (FCWC, IC).
+EUROPEAN_TOURNAMENT_HUBS = [
+    {
+        "slug": "champions-league",
+        "label": "UEFA Champions League / European Cup",
+        "short_label": "Champions League",
+        "codes": ["CL"],
+        "year_min": None,
+        "year_max": None,
+        "active": True,
+        "era_notes": "Founded 1955 as the European Cup; rebranded UEFA Champions League in 1992-93.",
+    },
+    {
+        "slug": "europa-league",
+        "label": "UEFA Europa League / UEFA Cup",
+        "short_label": "Europa League",
+        "codes": ["EL"],
+        "year_min": 1972,
+        "year_max": None,
+        "active": True,
+        "era_notes": "UEFA Cup 1972-2009; rebranded UEFA Europa League in 2009-10.",
+    },
+    {
+        "slug": "conference-league",
+        "label": "UEFA Conference League",
+        "short_label": "Conference League",
+        "codes": ["EUCL"],
+        "year_min": None,
+        "year_max": None,
+        "active": True,
+        "era_notes": "UEFA's tertiary European club competition since 2021-22.",
+    },
+    {
+        "slug": "cup-winners-cup",
+        "label": "UEFA Cup Winners' Cup",
+        "short_label": "Cup Winners' Cup",
+        "codes": ["CWC"],
+        "year_min": None,
+        "year_max": None,
+        "active": False,
+        "era_notes": "1960-61 to 1998-99. Discontinued; merged into the UEFA Cup after the 1998-99 final.",
+    },
+    {
+        "slug": "inter-cities-fairs-cup",
+        "label": "Inter-Cities Fairs Cup",
+        "short_label": "Fairs Cup",
+        "codes": ["EL"],
+        "year_min": None,
+        "year_max": 1971,
+        "active": False,
+        "era_notes": "1955-1971. Predecessor to the UEFA Cup. Never officially recognized by UEFA as one of its competitions.",
+    },
+    {
+        "slug": "uefa-super-cup",
+        "label": "UEFA Super Cup",
+        "short_label": "Super Cup",
+        "codes": ["USC"],
+        "year_min": None,
+        "year_max": None,
+        "active": True,
+        "era_notes": "Annual one-match final between the UEFA Champions League and UEFA Europa League winners.",
+    },
+    {
+        "slug": "club-world-cup",
+        "label": "FIFA Club World Cup / Intercontinental Cup",
+        "short_label": "Club World Cup",
+        "codes": ["FCWC", "IC"],
+        "year_min": None,
+        "year_max": None,
+        "active": True,
+        "era_notes": "Intercontinental Cup 1960-2004; FIFA Club World Cup since 2000. The two competitions overlapped, then merged after 2004 into a unified FIFA tournament.",
+    },
+]
+
+# What deepest-round bucket a Rnd# belongs to, for the live-bracket widget.
+# Anything Rnd# > 5 (qualifying rounds before group stage) is folded into the
+# "qualifying" bucket so the visual stays compact.
+BRACKET_ROUND_BUCKETS = [
+    {"key": "final",        "label": "Final",         "rnd_match": lambda r: r == 1},
+    {"key": "semifinal",    "label": "Semi-finals",   "rnd_match": lambda r: r == 2},
+    {"key": "quarterfinal", "label": "Quarter-finals","rnd_match": lambda r: r == 3},
+    {"key": "round_of_16",  "label": "Round of 16",   "rnd_match": lambda r: r == 4},
+    {"key": "group_stage",  "label": "Group stage",   "rnd_match": lambda r: r == 5},
+    {"key": "qualifying",   "label": "Qualifying",    "rnd_match": lambda r: r is not None and r >= 6},
+]
+
+# The current European season the workbook's 2026 rows refer to.
+CURRENT_EURO_SEASON = "2025-26"
+CURRENT_EURO_YEAR = 2026
+
+
+def collect_european_tournaments(wb, slug_for_curname):
+    """Walk Eur RndbyRnd and aggregate by tournament hub instead of by club.
+    Unlike collect_european(), this does NOT filter by in_scope_curnames:
+    European tournament hubs need every club that ever participated, not
+    just the in-scope Big 5 + extensions. Clubs without canonical pages
+    are surfaced by name only; clubs with pages get a `slug` field that
+    links to /teams/football/[slug].
+
+    Returns a dict { hub_slug: {payload} } where payload includes year
+    range, editions count, all-time champions, all-time finalists, most
+    decorated, and per-club current-season records for the live bracket.
+    """
+    ws = wb["Eur RndbyRnd"]
+    hdr, _ = header_map(ws)
+    idx_season = hdr.get("Season")
+    idx_comp_name = hdr.get("Leag/Comp.")
+    idx_team_seas = hdr.get("Seas")
+    idx_cn = hdr.get("Cur. Name")
+    idx_rnd = hdr.get("Rnd#")
+    idx_comp_code = hdr.get("Comp")
+    idx_bin = hdr.get("Rnd Bin")
+    idx_trophy = hdr.get("Trophy Won")
+
+    # First pass: collect all rows with normalized fields.
+    raw_rows = []
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if not row or idx_cn is None or idx_cn >= len(row): continue
+        cn = row[idx_cn]
+        if not cn: continue
+        cn = str(cn).strip()
+        year = to_int(row[idx_team_seas]) if idx_team_seas is not None else None
+        code = row[idx_comp_code] if idx_comp_code is not None and idx_comp_code < len(row) else None
+        rnd = to_int(row[idx_rnd]) if idx_rnd is not None and idx_rnd < len(row) else None
+        trophy = row[idx_trophy] if idx_trophy is not None and idx_trophy < len(row) else None
+        comp_name = row[idx_comp_name] if idx_comp_name is not None and idx_comp_name < len(row) else None
+        season = row[idx_season] if idx_season is not None and idx_season < len(row) else None
+        bin_label = row[idx_bin] if idx_bin is not None and idx_bin < len(row) else None
+        if year is None or not code: continue
+        raw_rows.append({
+            "cur_name": cn,
+            "year": year,
+            "code": str(code),
+            "rnd": rnd,
+            "trophy": trophy == "Y",
+            "competition": str(comp_name) if comp_name else None,
+            "season": str(season) if season else None,
+            "bin": str(bin_label) if bin_label else None,
+        })
+
+    hubs = {}
+    for hub in EUROPEAN_TOURNAMENT_HUBS:
+        codes = set(hub["codes"])
+        year_min = hub.get("year_min")
+        year_max = hub.get("year_max")
+        matching = [
+            r for r in raw_rows
+            if r["code"] in codes
+            and (year_min is None or r["year"] >= year_min)
+            and (year_max is None or r["year"] <= year_max)
+        ]
+        if not matching:
+            continue
+
+        # Per (club, year) deepest-round aggregation.
+        per_club_year = {}  # (cur_name, year) -> {deepest_rnd, trophy, season, competition}
+        for r in matching:
+            key = (r["cur_name"], r["year"])
+            cur = per_club_year.get(key)
+            if cur is None:
+                per_club_year[key] = {
+                    "cur_name": r["cur_name"],
+                    "year": r["year"],
+                    "deepest_rnd": r["rnd"],
+                    "trophy": r["trophy"],
+                    "season": r["season"],
+                    "competition": r["competition"],
+                }
+            else:
+                if r["rnd"] is not None and (cur["deepest_rnd"] is None or r["rnd"] < cur["deepest_rnd"]):
+                    cur["deepest_rnd"] = r["rnd"]
+                if r["trophy"]:
+                    cur["trophy"] = True
+
+        # All-time champions and finalists.
+        champions_list = []   # list of {year, season, cur_name, slug}
+        finalists_list = []   # list of {year, season, cur_name, slug} (runner-up rows)
+        for (cn, year), v in per_club_year.items():
+            if v["trophy"]:
+                champions_list.append({
+                    "year": year,
+                    "season": v["season"],
+                    "cur_name": cn,
+                    "slug": slug_for_curname.get(cn),
+                    "competition": v["competition"],
+                })
+            elif v["deepest_rnd"] == 1:
+                finalists_list.append({
+                    "year": year,
+                    "season": v["season"],
+                    "cur_name": cn,
+                    "slug": slug_for_curname.get(cn),
+                    "competition": v["competition"],
+                })
+        champions_list.sort(key=lambda x: -(x["year"] or 0))
+        finalists_list.sort(key=lambda x: -(x["year"] or 0))
+
+        # Most decorated. The base set is every club that has ever appeared
+        # in a final of this competition (champion OR runner-up). Two
+        # consequences worth noting:
+        #  - Clubs that won at least one title surface with positive
+        #    champion_count and (usually) some finals_lost.
+        #  - Clubs that reached the final but never won surface with
+        #    champion_count = 0 and finals_lost > 0. They sit at the bottom
+        #    under the default cups-desc sort but become discoverable via the
+        #    Finals column sort on the client.
+        # Default order: champion_count desc, finals_count desc tiebreaker,
+        # then alphabetical. The client component can re-sort by any column.
+        from collections import Counter as _Counter
+        win_ctr = _Counter(c["cur_name"] for c in champions_list)
+        loss_ctr = _Counter(f["cur_name"] for f in finalists_list)
+        all_finalist_names = set(win_ctr.keys()) | set(loss_ctr.keys())
+        most_decorated = []
+        for cn in all_finalist_names:
+            wins_count = win_ctr.get(cn, 0)
+            wins = [c for c in champions_list if c["cur_name"] == cn]
+            losses = [f for f in finalists_list if f["cur_name"] == cn]
+            last_win_year = max(w["year"] for w in wins) if wins else None
+            last_final_year = max(
+                (e["year"] for e in (wins + losses) if e.get("year") is not None),
+                default=None,
+            )
+            finals_lost = loss_ctr.get(cn, 0)
+            most_decorated.append({
+                "cur_name": cn,
+                "slug": slug_for_curname.get(cn),
+                "champion_count": wins_count,
+                "finals_lost": finals_lost,
+                "finals_count": wins_count + finals_lost,
+                "last_won": last_win_year,
+                "last_final": last_final_year,
+            })
+        most_decorated.sort(key=lambda d: (
+            -d["champion_count"],
+            -d["finals_count"],
+            d["cur_name"].lower(),
+        ))
+
+        # Year range and edition count (distinct years with any matching row).
+        years_present = sorted({r["year"] for r in matching if r["year"]})
+
+        # Per-club current-season state (year = CURRENT_EURO_YEAR). Each club
+        # surfaces with its deepest round + winner flag. The page uses this
+        # to render the NBA/NHL-style "alive vs eliminated at each round"
+        # bracket. No live data emitted for hubs without a 2025-26 row.
+        current_entries = []
+        for (cn, year), v in per_club_year.items():
+            if year != CURRENT_EURO_YEAR:
+                continue
+            current_entries.append({
+                "cur_name": cn,
+                "slug": slug_for_curname.get(cn),
+                "deepest_rnd": v["deepest_rnd"],
+                "trophy": v["trophy"],
+            })
+
+        hubs[hub["slug"]] = {
+            "slug": hub["slug"],
+            "label": hub["label"],
+            "short_label": hub["short_label"],
+            "active": hub["active"],
+            "era_notes": hub["era_notes"],
+            "year_min": years_present[0] if years_present else None,
+            "year_max": years_present[-1] if years_present else None,
+            "editions": len(years_present),
+            "champions": champions_list,
+            "finalists": finalists_list,
+            "most_decorated": most_decorated,
+            "current_season": CURRENT_EURO_SEASON if current_entries else None,
+            "current_year": CURRENT_EURO_YEAR if current_entries else None,
+            "current_entries": current_entries,
+        }
+
+    return hubs
+
+
 # ---------- ETL: Totals roll-up (compact) ----------
 
 def collect_totals(wb, in_scope_curnames):
@@ -847,12 +1132,26 @@ def main():
     print("Building league hubs...")
     league_hubs = build_league_hubs(wb, standings_rows)
 
+    print("Building European tournament hubs...")
+    # slug_for_curname covers in-scope clubs only; clubs outside scope
+    # (Anderlecht, Galatasaray, etc.) surface in tournament rows with no slug
+    # so the page renders them as plain text without a broken link.
+    slug_for_curname = {cn: c["slug"] for cn, c in clubs.items()}
+    european_hubs = collect_european_tournaments(wb, slug_for_curname)
+    print(f"  {len(european_hubs)} hubs: {sorted(european_hubs.keys())}")
+    for s, h in european_hubs.items():
+        ch = len(h["champions"])
+        decorated = h["most_decorated"][0]["cur_name"] if h["most_decorated"] else "—"
+        decorated_n = h["most_decorated"][0]["champion_count"] if h["most_decorated"] else 0
+        print(f"    {s}: {ch} champions, top {decorated} ({decorated_n})")
+
     # ---------- Write outputs ----------
     index_path = OUT_DIR / "index.json"
     seasons_path = OUT_DIR / "seasons.json"
     cups_path = OUT_DIR / "cups.json"
     europe_path = OUT_DIR / "europe.json"
     leagues_path = OUT_DIR / "leagues.json"
+    european_tournaments_path = OUT_DIR / "european-tournaments.json"
 
     payload_index = {
         "generated_at": __import__("datetime").date.today().isoformat(),
@@ -879,6 +1178,10 @@ def main():
     with open(leagues_path, "w", encoding="utf-8") as f:
         json.dump(league_hubs, f, ensure_ascii=False)
     print(f"Wrote {leagues_path}  ({leagues_path.stat().st_size:,} bytes)")
+
+    with open(european_tournaments_path, "w", encoding="utf-8") as f:
+        json.dump(european_hubs, f, ensure_ascii=False)
+    print(f"Wrote {european_tournaments_path}  ({european_tournaments_path.stat().st_size:,} bytes)")
 
     # Normalized-name -> slug lookup for cross-data-source joins. Mirrors
     # build-sports-index.py's normalize_team_name (lowercase, alnum-only,

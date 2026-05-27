@@ -8,8 +8,10 @@ import {
   getFinalsForTeam,
   getRankSnapshots,
   getWorldCup2026StageForTeam,
+  getSimilarTeamsForTeam,
   type NationalTeamAppearance,
   type NationalTeamFinal,
+  type SimilarTeamNeighbor,
   type TournamentCategory,
 } from "@/lib/international";
 import {
@@ -61,6 +63,7 @@ export default async function NationalTeamPage({ params }: Props) {
   const appearances = getAppearancesForTeam(slug);
   const finals = getFinalsForTeam(slug);
   const snapshots = getRankSnapshots();
+  const similar = getSimilarTeamsForTeam(slug);
 
   // Honors strip pills.
   const honors: Array<{ label: string; count: number; lastYear?: number | null }> = [];
@@ -193,6 +196,10 @@ export default async function NationalTeamPage({ params }: Props) {
         </div>
       </section>
 
+      {similar.length > 0 && (
+        <ComparablePrograms team={team} similar={similar} />
+      )}
+
       <AppearancesTable
         appearances={appearances}
         team={{ ...team, cur_name: displayNameForTeam(team.slug, team.cur_name) }}
@@ -201,6 +208,83 @@ export default async function NationalTeamPage({ params }: Props) {
 
       {finals.length > 0 && <FinalsTable finals={finals} />}
     </main>
+  );
+}
+
+// Editorial caption per pair. The shared-axis hint from the ETL points at
+// the dimension that most defines the similarity; we map it to a short
+// english phrase. Falls back to a generic line if shared_axis is null.
+function captionForNeighbor(axis: string | null): string {
+  switch (axis) {
+    case "wc_champ": return "Multi-World-Cup-winning archetype";
+    case "wc_finals_lost": return "Reached the World Cup final without winning it";
+    case "wc_sf_only": return "Reached a World Cup semifinal but no further";
+    case "continental_champ": return "Repeated continental champions";
+    case "continental_finals_lost": return "Repeat continental finalists";
+    case "intercontinental_champ": return "Intercontinental cup pedigree";
+    case "tournament_span_years": return "Comparable historical longevity at the senior level";
+    case "decade_coverage": return "Active across a similar set of decades";
+    default: return "Closest cohort across honors profile and longevity";
+  }
+}
+
+function ComparablePrograms({
+  team,
+  similar,
+}: {
+  team: { slug: string; cur_name: string };
+  similar: SimilarTeamNeighbor[];
+}) {
+  return (
+    <section
+      className="rounded-xl border p-5 mb-6"
+      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+    >
+      <div className="flex items-baseline justify-between flex-wrap gap-2 mb-1">
+        <h2 className="text-base font-semibold">Comparable programs</h2>
+        <Link
+          href="/teams/national#methodology"
+          className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline"
+        >
+          Methodology
+        </Link>
+      </div>
+      <p className="text-xs text-[var(--text-muted)] mb-3 max-w-3xl">
+        Five national programs whose honors profile and historical footprint sit closest to {displayNameForTeam(team.slug, team.cur_name)}.
+        Scored across World Cup pedigree, continental dominance (tier-adjusted), intercontinental wins,
+        tournament span, and decade coverage. The labels describe the shared trait that drove the match.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {similar.map((n) => {
+          const flag = flagForTeam(n.slug);
+          const continentColor = n.continent ? CONTINENT_COLORS[n.continent] ?? "#525252" : "#525252";
+          return (
+            <Link
+              key={n.slug}
+              href={`/teams/national/${n.slug}`}
+              className="block rounded-lg border p-3 transition hover:border-[var(--accent)]"
+              style={{ background: "var(--bg)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center gap-2">
+                <span
+                  className="inline-block w-2 h-2 rounded-full flex-shrink-0"
+                  style={{ background: continentColor }}
+                  aria-hidden
+                />
+                {flag && <span className="text-base leading-none" aria-hidden>{flag}</span>}
+                <span className="font-medium">{displayNameForTeam(n.slug, n.cur_name)}</span>
+              </div>
+              <div className="mt-1.5 text-xs text-[var(--text-muted)]">{captionForNeighbor(n.shared_axis)}</div>
+              {typeof n.honors_index === "number" && (
+                <div className="mt-2 text-[10px] tabular-nums text-[var(--text-dim)]">
+                  Honors {n.honors_index.toFixed(2)} · distance {n.distance.toFixed(2)}
+                </div>
+              )}
+            </Link>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
