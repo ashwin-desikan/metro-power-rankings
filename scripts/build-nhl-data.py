@@ -838,7 +838,9 @@ def read_playoff_state(wb):
       - Champs Y                                                -> champion
       - Cham App Y, Champs None: in / lost Stanley Cup Final
           (lost_final if any champion exists this year, else active_final)
-      - SF/CF App Y, Cham App None                              -> active_cf
+      - SF/CF App Y, Cham App None: in / lost Conference Finals
+          (eliminated_cf if the conference's other CF entrant holds
+          Cham App = Y, else active_cf because the series is live)
       - Made playoffs, P.Wins < 4                               -> eliminated_qf
       - Made playoffs, P.Wins >= 4, SF/CF App None: still in R2.
           Use NHL bracket pairings (two R1 winners share a Division within
@@ -921,6 +923,30 @@ def read_playoff_state(wb):
             results[t["canonical"]] = "champion"
         elif (t["ch"] or "") == "Y":
             results[t["canonical"]] = "lost_final" if any_champion else "active_final"
+
+    # CF pairing: once one conference finalist has Cham App = Y, the other
+    # CF entrant in the same conference is eliminated. While neither has
+    # advanced (series live), both stay active_cf from the prior pass.
+    CONFERENCE = {
+        "Atlantic": "East",
+        "Metropolitan": "East",
+        "Central": "West",
+        "Pacific": "West",
+    }
+    cf_by_conf = defaultdict(list)
+    for t in playoff_teams:
+        if (t["sf"] or "") == "Y" and t["div"] in CONFERENCE:
+            cf_by_conf[CONFERENCE[t["div"]]].append(t)
+    for finalists in cf_by_conf.values():
+        if len(finalists) != 2:
+            continue
+        a, b = finalists
+        a_ch = (a["ch"] or "") == "Y"
+        b_ch = (b["ch"] or "") == "Y"
+        if a_ch and not b_ch:
+            results[b["canonical"]] = "eliminated_cf"
+        elif b_ch and not a_ch:
+            results[a["canonical"]] = "eliminated_cf"
 
     LABEL = {
         "champion":         "Stanley Cup Champion",

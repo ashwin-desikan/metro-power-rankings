@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-05-28",
+    headline: "NHL Conference Finals elimination fix and football refresh",
+    items: [
+      "Vegas advances to the Stanley Cup Final and Colorado correctly flips to Eliminated Conference Finals on every NHL franchise page after a sweep in the Western Final.",
+      "Patched the playoff-state builder so any Conference Finals loser is marked eliminated as soon as the opposing finalist clinches; previously the loser stayed flagged active until the next round opened.",
+      "Refreshed club football data: European tournaments, the five-plus-three league hubs, season tables, and the global club index now reflect the latest workbook state.",
+    ],
+  },
+  {
     date: "2026-05-27",
     headline: "European tournament hubs, comparable programs, and quiz",
     items: [
