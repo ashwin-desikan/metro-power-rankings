@@ -19,8 +19,9 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-30",
-    headline: "Other Tournaments hub, named intercontinental editions, NHL Final set",
+    headline: "PSG repeats as UCL champion, Other Tournaments hub, NHL Final set",
     items: [
+      "Champions League: PSG named 2026 winner, completing back-to-back after 2025. The hub's All-time champions list, the PSG club page, and Ligue 1's index all pick up the new edition.",
       "New Other Tournaments hub lists Olympic Football, Central European Cup, Pan-American Championship, Nations League Finals, King Hassan II, and European Nations Group, all named per edition.",
       "Intercontinental Tournaments table now names each edition: Mundialito 1981, Artemio Franchi 1985, King Fahd Cups 1992-1995, Confederations Cups 1997-2017, Finalissima 2022.",
       "NHL: Carolina sweeps Montreal in the Eastern Conference Final and meets Vegas in the Stanley Cup Final, Game 1 on June 4. Montreal correctly flips to Eliminated Conference Finals via yesterday's CF-pairing fix.",

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-28",
-  "source": "Champions League-201516.xlsx",
+  "generated_at": "2026-05-30",
+  "source": "Champions League-201516-275fb9cd.xlsx",
   "scope": {
     "countries": [
       "England",
@@ -35162,8 +35162,8 @@
         "last_title": 2026,
         "league_finals": 23,
         "league_t4": 29,
-        "major_cups": 42,
-        "minor_cups": 57,
+        "major_cups": 43,
+        "minor_cups": 58,
         "last_trophy": 2026
       },
       "tier_by_year": {
@@ -54232,7 +54232,7 @@
         1
       ],
       "first_year": 2023,
-      "last_year": 2025,
+      "last_year": 2027,
       "top_flight_seasons": 3,
       "lower_tier_seasons": 0,
       "league_seasons": 3,
