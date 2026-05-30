@@ -21,9 +21,9 @@ export const RELEASES: Release[] = [
     date: "2026-05-30",
     headline: "Other Tournaments hub, named intercontinental editions, NHL Final set",
     items: [
-      "New Other Tournaments hub at /teams/national/tournaments/other-tournaments. Olympic Football, Central European International Cup, Pan-American Championship, UEFA and CONCACAF Nations League Finals, the 1997 King Hassan II Tournament, and the 1960 European Nations Group all listed with per-edition names.",
-      "Intercontinental Tournaments table now carries a Tournament column so you can tell at a glance that 1981 was the Mundialito, 1985 was the Artemio Franchi Trophy, 1992-1995 were King Fahd Cups, 1997-2017 were Confederations Cups, and 2022 was the Finalissima.",
-      "NHL: Carolina advances to the Stanley Cup Final after sweeping Montreal in the Eastern Conference Finals. Montreal flips to Eliminated Conference Finals via yesterday's CF-pairing fix. Final is Vegas vs Carolina, Game 1 on June 4.",
+      "New Other Tournaments hub lists Olympic Football, Central European Cup, Pan-American Championship, Nations League Finals, King Hassan II, and European Nations Group, all named per edition.",
+      "Intercontinental Tournaments table now names each edition: Mundialito 1981, Artemio Franchi 1985, King Fahd Cups 1992-1995, Confederations Cups 1997-2017, Finalissima 2022.",
+      "NHL: Carolina sweeps Montreal in the Eastern Conference Final and meets Vegas in the Stanley Cup Final, Game 1 on June 4. Montreal correctly flips to Eliminated Conference Finals via yesterday's CF-pairing fix.",
     ],
   },
   {
