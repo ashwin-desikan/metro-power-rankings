@@ -122,11 +122,18 @@ function MostDecorated({ hub }: { hub: TournamentHub }) {
 
 function ChampionsList({ hub }: { hub: TournamentHub }) {
   if (hub.champions.length === 0) return null;
-  // Index finalists by year for "vs runner-up" rendering.
-  const finalistByYear = new Map<number, typeof hub.finalists>();
+  // Index finalists by year for "vs runner-up" rendering. Intercontinental
+  // and Other hubs need to match on (year, tournament_label) because a single
+  // year can hold multiple distinct competitions (e.g., 2021 had both the
+  // UEFA Nations League Finals and the CONCACAF Nations League Finals).
+  const showTournamentColumn = hub.category === "INTER" || hub.category === "OTHER";
+  const finalistKey = (year: number, label: string | null) =>
+    showTournamentColumn ? `${year}|${label ?? ""}` : `${year}`;
+  const finalistByKey = new Map<string, typeof hub.finalists>();
   for (const f of hub.finalists) {
-    if (!finalistByYear.has(f.year)) finalistByYear.set(f.year, []);
-    finalistByYear.get(f.year)!.push(f);
+    const k = finalistKey(f.year, f.tournament_label);
+    if (!finalistByKey.has(k)) finalistByKey.set(k, []);
+    finalistByKey.get(k)!.push(f);
   }
   return (
     <section
@@ -137,6 +144,10 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent first. Each edition&apos;s champion is listed; runners-up appear where the
         workbook records the losing finalist.
+        {showTournamentColumn && (
+          <> The Tournament column names the specific competition since this hub aggregates
+          multiple distinct events.</>
+        )}
       </p>
       <div className="mt-4 overflow-x-auto">
         <table className="w-full text-sm">
@@ -146,16 +157,24 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
               style={{ borderColor: "var(--border)" }}
             >
               <th className="py-2 text-left font-medium">Year</th>
+              {showTournamentColumn && (
+                <th className="py-2 text-left font-medium">Tournament</th>
+              )}
               <th className="py-2 text-left font-medium">Champion</th>
               <th className="py-2 text-left font-medium">Runner(s)-up</th>
             </tr>
           </thead>
           <tbody>
             {hub.champions.map((c, i) => {
-              const finalists = finalistByYear.get(c.year) ?? [];
+              const finalists = finalistByKey.get(finalistKey(c.year, c.tournament_label)) ?? [];
               return (
                 <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 tabular-nums">{c.year}</td>
+                  {showTournamentColumn && (
+                    <td className="py-1.5 text-[var(--text)]">
+                      {c.tournament_label ?? <span className="text-[var(--text-muted)]">—</span>}
+                    </td>
+                  )}
                   <td className="py-1.5">
                     <span
                       className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide mr-2"

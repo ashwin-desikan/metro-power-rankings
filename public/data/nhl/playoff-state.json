@@ -7,19 +7,19 @@
 "last_round":"In the Stanley Cup Final",
 "year":2026
 },
+"Hurricanes":{
+"state":"active_final",
+"last_round":"In the Stanley Cup Final",
+"year":2026
+},
 "Avalanche":{
 "state":"eliminated_cf",
 "last_round":"Eliminated Conference Finals",
 "year":2026
 },
 "Canadiens":{
-"state":"active_cf",
-"last_round":"Conference Finals",
-"year":2026
-},
-"Hurricanes":{
-"state":"active_cf",
-"last_round":"Conference Finals",
+"state":"eliminated_cf",
+"last_round":"Eliminated Conference Finals",
 "year":2026
 },
 "Ducks":{

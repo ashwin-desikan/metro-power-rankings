@@ -112,6 +112,18 @@ TOURNAMENT_HUBS = [
         "category": "INTER",
         "filter": lambda r: r.get("intercont_champ") == "Y",
     },
+    # Other Tournaments hub: surfaces the heterogeneous bucket the workbook
+    # lumps under the "Other Tourna" flag — Olympic Football (pre-1930),
+    # Central European International Cup, Pan-American Championship, the UEFA
+    # and CONCACAF Nations League Finals, the King Hassan II Tournament, and
+    # the 1960 European Nations Group. The OTHER_TOURNAMENT_NAMES map drives
+    # the per-edition label so the page never reads as a flat "Other 1936".
+    {
+        "slug": "other-tournaments",
+        "label": "Other Tournaments",
+        "category": "OTHER",
+        "filter": lambda r: r.get("other_tourna") == "Y",
+    },
 ]
 
 
@@ -1078,6 +1090,11 @@ def build_tournament_hubs(summary_rows, slug_for_cur_name):
         # All-time champions: one row per (year, champion). For categories
         # like Gold Cup that had both NACC and Gold Cup editions, multiple
         # champions per year can happen; we surface them all.
+        # Variable-name categories (INTER, OTHER) carry tournament_label per
+        # row because the workbook lumps several distinct competitions under
+        # one flag; fixed-name categories (WC, EUROS, etc.) leave the field
+        # null since the hub label already names the tournament.
+        variable_label = cat in ("INTER", "OTHER")
         champions_list = []
         for r in sorted(champ_rows, key=lambda x: -(x["year"] or 0)):
             slug = slug_for_cur_name.get(r["cur_name"])
@@ -1087,6 +1104,7 @@ def build_tournament_hubs(summary_rows, slug_for_cur_name):
                 "champion_slug": slug,
                 "champion_as": r["team"] if r["team"] != r["cur_name"] else None,
                 "group": r["group"],
+                "tournament_label": tournament_label_for(r["year"], cat, r["continent"]) if variable_label else None,
             })
 
         # Most decorated: count champions per Cur. Name.
@@ -1110,6 +1128,7 @@ def build_tournament_hubs(summary_rows, slug_for_cur_name):
                 "year": r["year"],
                 "cur_name": r["cur_name"],
                 "slug": slug,
+                "tournament_label": tournament_label_for(r["year"], cat, r["continent"]) if variable_label else None,
             })
 
         hubs[hub["slug"]] = {

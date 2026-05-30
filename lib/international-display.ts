@@ -20,6 +20,7 @@ export const TOURNAMENT_HUB_ORDER: string[] = [
   "gold-cup",
   "ofc-nations-cup",
   "intercontinental",
+  "other-tournaments",
 ];
 
 // Continent colors for index map markers and group section headers.

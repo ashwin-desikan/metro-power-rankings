@@ -200,11 +200,17 @@ export type TournamentHub = {
     champion_slug: string | null;
     champion_as: string | null;
     group: string | null;
+    // Per-edition tournament label, populated only for variable-name hubs
+    // (Intercontinental Tournaments, Other Tournaments) where the workbook
+    // lumps several distinct competitions under one flag. Null for hubs
+    // whose name is fixed (the hub label itself names the tournament).
+    tournament_label: string | null;
   }>;
   finalists: Array<{
     year: number;
     cur_name: string;
     slug: string | null;
+    tournament_label: string | null;
   }>;
   most_decorated: Array<{
     cur_name: string;
