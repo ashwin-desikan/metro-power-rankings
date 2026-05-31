@@ -59,7 +59,7 @@ function loadJson<T>(rel: string): T {
 //  - College Football and College Basketball are listed as coming soon.
 // The JSON builder will keep emitting the Big 5 cards until updated; the
 // override here is the single source of truth for what /sports shows.
-const REMOVED_LEAGUE_KEYS = new Set(["England", "Spain", "Italy", "Germany", "France"]);
+const REMOVED_LEAGUE_KEYS = new Set(["England", "Spain", "Italy", "Germany", "France", "IPL", "AFL", "NRL", "CFL", "NWSL", "WSL"]);
 const INJECTED_LIVE_CARDS: LeagueCard[] = [
   {
     league: "ClubFootball",
@@ -77,8 +77,24 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     page: "/teams/national",
     team_count: 0,
   },
+  {
+    league: "IPL",
+    label: "IPL",
+    sport: "Cricket",
+    status: "live",
+    page: "/teams/ipl",
+    team_count: 0,
+  },
 ];
 const INJECTED_COMING_CARDS: LeagueCard[] = [
+  {
+    league: "WomensClubFootball",
+    label: "Women's Club Football",
+    sport: "Football",
+    status: "coming",
+    page: null,
+    team_count: 0,
+  },
   {
     league: "CFB",
     label: "College Football",
@@ -89,7 +105,7 @@ const INJECTED_COMING_CARDS: LeagueCard[] = [
   },
   {
     league: "CBB",
-    label: "College Basketball",
+    label: "Men's College Basketball",
     sport: "Basketball",
     status: "coming",
     page: null,

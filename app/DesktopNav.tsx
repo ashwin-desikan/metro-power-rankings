@@ -150,6 +150,8 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/teams/football" title="Club Football" hint="European top flights plus the English pyramid." />
         <DropdownItem href="/teams/national" title="International Football" hint="National teams and tournament hubs." />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/teams/ipl" title="IPL" hint="10 franchises; all IPL seasons since 2008." />
       </Dropdown>
 
       <Dropdown id="articles" label="Articles" openId={openId} setOpenId={setOpenId}>

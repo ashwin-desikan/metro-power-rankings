@@ -5,10 +5,17 @@ import {
   getAllLeagueHubSlugs,
   getLeagueHub,
   getAllClubs,
+  getCupsForClub,
+  getEuropeForClub,
   monogramForFootball,
   europeanCompDisplayCode,
+  europeanCompSortKey,
   type FootballLeagueHub,
+  type FootballCupFinal,
+  type FootballEuropeEntry,
 } from "@/lib/football";
+
+const SEASON_COMP_INCLUDE = new Set(["CL", "CLB", "EL", "CWC", "EUCL", "OTH", "OTHC"]);
 import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -57,6 +64,25 @@ export default async function FootballLeagueHubPage({ params }: Props) {
       tier_by_year: c.tier_by_year ?? {},
     }));
 
+  // Build per-club cup and european-competition data for current_year,
+  // keyed by club slug, so CurrentStandings can render those columns.
+  const currentYear = hub.current_year;
+  const cupsBySlug = new Map<string, FootballCupFinal[]>();
+  const europeBySlug = new Map<string, FootballEuropeEntry[]>();
+  if (currentYear !== null) {
+    for (const s of hub.current_standings) {
+      const cups = getCupsForClub(s.slug).filter(
+        (c) => c.year === currentYear && c.kind !== "super"
+      );
+      if (cups.length) cupsBySlug.set(s.slug, cups);
+
+      const europe = getEuropeForClub(s.slug)
+        .filter((e) => e.year === currentYear && e.code && SEASON_COMP_INCLUDE.has(e.code))
+        .sort((a, b) => europeanCompSortKey(a.code) - europeanCompSortKey(b.code));
+      if (europe.length) europeBySlug.set(s.slug, europe);
+    }
+  }
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
@@ -74,7 +100,7 @@ export default async function FootballLeagueHubPage({ params }: Props) {
         </p>
       </header>
 
-      <CurrentStandings hub={hub} />
+      <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
       <LeagueHubMap country={hub.country} clubs={hubClubs} />
       <AllTimeChampions hub={hub} />
     </main>
@@ -102,7 +128,15 @@ function ColorBall({ slug, name }: { slug: string; name: string }) {
   );
 }
 
-function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
+function CurrentStandings({
+  hub,
+  cupsBySlug,
+  europeBySlug,
+}: {
+  hub: FootballLeagueHub;
+  cupsBySlug: Map<string, FootballCupFinal[]>;
+  europeBySlug: Map<string, FootballEuropeEntry[]>;
+}) {
   if (hub.current_standings.length === 0) {
     return null;
   }
@@ -123,6 +157,9 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
             >
               <th className="py-2 text-left font-medium">Pos</th>
               <th className="py-2 text-left font-medium">Club</th>
+              <th className="py-2 text-left font-medium">Notes</th>
+              <th className="py-2 pl-3 text-left font-medium hidden md:table-cell">Domestic Cup</th>
+              <th className="py-2 pl-2 text-left font-medium hidden md:table-cell">Eur Comp</th>
               <th className="py-2 text-right font-medium">P</th>
               <th className="py-2 text-right font-medium">W</th>
               <th className="py-2 text-right font-medium">D</th>
@@ -146,41 +183,82 @@ function CurrentStandings({ hub }: { hub: FootballLeagueHub }) {
               <tr key={s.slug} className="border-b" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1.5 tabular-nums">{s.place ?? "-"}</td>
                 <td className="py-1.5">
-                  <span className="inline-flex items-center gap-2 flex-wrap">
+                  <span className="inline-flex items-center gap-2">
                     <ColorBall slug={s.slug} name={s.cur_name} />
                     <Link href={`/teams/football/${s.slug}`} className="hover:underline font-medium">
                       {s.cur_name}
                     </Link>
+                  </span>
+                </td>
+                {/* Notes: status pills */}
+                <td className="py-1.5">
+                  <span className="inline-flex flex-wrap gap-1">
                     {isChamp && (
-                      <span
-                        className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}
-                        title="League champion this season"
-                      >
-                        Champion
-                      </span>
+                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                            style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>Champion</span>
                     )}
                     {s.promoted && (
-                      <span
-                        className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}
-                        title="Promoted this season"
-                      >
-                        Promoted
+                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                            style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
+                        {s.playoffs ? "Promoted (Playout)" : "Promoted"}
                       </span>
                     )}
                     {s.relegated && (
-                      <span
-                        className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}
-                        title="Relegated this season"
-                      >
-                        Relegated
+                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                            style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
+                        {s.playoffs ? "Relegated (Playout)" : "Relegated"}
+                      </span>
+                    )}
+                    {s.playoffs && !s.promoted && !s.relegated && (
+                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                            style={{ background: "rgba(34,197,94,0.12)", color: "#16a34a" }}>
+                        {s.playoff_final ? "Not Relegated (PO)" : "Not Relegated"}
                       </span>
                     )}
                   </span>
                 </td>
-                <td className="py-1.5 text-right tabular-nums">{s.matches ?? "-"}</td>
+                {/* Domestic Cup */}
+                <td className="py-1.5 pl-3 text-xs hidden md:table-cell">
+                  {(cupsBySlug.get(s.slug) ?? []).map((c, ci) => {
+                    const isWin = c.result === "won";
+                    const shortLabel = c.kind === "major" ? "Cup" : "Lg Cup";
+                    return (
+                      <span key={ci} className="inline-block rounded px-1.5 py-0.5 font-semibold mr-1"
+                            style={{ background: isWin ? "rgba(245,215,110,0.18)" : "transparent", color: isWin ? "#b58900" : "var(--text-muted)", boxShadow: isWin ? undefined : "inset 0 0 0 1px rgba(120,120,140,0.45)" }}>
+                        {isWin ? "★ " : "☆ "}{shortLabel}
+                      </span>
+                    );
+                  })}
+                </td>
+                {/* Eur Comp this season — full rendering matching season-by-season */}
+                <td className="py-1.5 pl-2 text-xs hidden md:table-cell">
+                  <span className="inline-flex flex-wrap gap-1">
+                    {(europeBySlug.get(s.slug) ?? []).map((e, ei) => {
+                      const isWinner = e.trophy_won;
+                      const isUcl = !!(e.code && (e.code === "CL" || e.code === "CLB"));
+                      const isFinalistLost = !isWinner && e.deepest_rnd === 1;
+                      let bg: string, fg: string, boxShadow: string | undefined, symbol: string | null = null;
+                      if (isWinner && isUcl)        { bg = "rgba(212,175,55,0.22)"; fg = "#d4af37"; symbol = "★"; }
+                      else if (isWinner)             { bg = "rgba(192,192,192,0.20)"; fg = "#c0c0c0"; symbol = "★"; }
+                      else if (isFinalistLost && isUcl) { bg = "transparent"; fg = "#d4af37"; boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)"; symbol = "☆"; }
+                      else if (isFinalistLost)        { bg = "transparent"; fg = "#c0c0c0"; boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)"; symbol = "☆"; }
+                      else                            { bg = "rgba(120,120,140,0.16)"; fg = "var(--text-muted)"; }
+                      const title = isWinner
+                        ? `${e.competition} winner this season`
+                        : isFinalistLost
+                          ? `${e.competition}: reached final, lost`
+                          : `${e.competition}: ${e.result_label}`;
+                      return (
+                        <span key={ei} className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+                              style={{ background: bg, color: fg, boxShadow }} title={title}>
+                          {symbol && <span aria-hidden className="mr-0.5">{symbol}</span>}
+                          {europeanCompDisplayCode(e.code, s.year ?? null)}
+                        </span>
+                      );
+                    })}
+                  </span>
+                </td>
+                <td className="py-1.5 text-right tabular-nums text-[var(--text-muted)]">{s.matches ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.w ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.d ?? "-"}</td>
                 <td className="py-1.5 text-right tabular-nums">{s.l ?? "-"}</td>

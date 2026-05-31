@@ -123,15 +123,15 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
       </section>
     );
   }
-  // Join finalists to champions by year so each row shows both sides of the
-  // final. A year can occasionally have multiple champion rows (rare in
-  // European competitions but possible with annulments / replays), so we
-  // accumulate runners-up into a year-keyed list and consume per row.
-  const runnersUpByYear = new Map<number, typeof hub.finalists>();
+  // Join finalists to champions by (year, competition) so each row shows both
+  // sides of the final. Keying on year alone breaks when two distinct
+  // competitions share the same year (e.g. 2025 CWC and 2025-26 Intercontinental Cup).
+  const runnersUpByKey = new Map<string, typeof hub.finalists>();
   for (const f of hub.finalists) {
-    const list = runnersUpByYear.get(f.year) ?? [];
+    const key = `${f.year}|${f.competition ?? ""}`;
+    const list = runnersUpByKey.get(key) ?? [];
     list.push(f);
-    runnersUpByYear.set(f.year, list);
+    runnersUpByKey.set(key, list);
   }
   return (
     <section
@@ -150,18 +150,19 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
               style={{ borderColor: "var(--border)" }}
             >
               <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">Season</th>
+              <th className="py-2 px-2 text-left font-medium hidden sm:table-cell">Competition</th>
               <th className="py-2 px-2 text-left font-medium">Champion</th>
               <th className="py-2 px-2 text-left font-medium">Runner-up</th>
             </tr>
           </thead>
           <tbody>
             {hub.champions.map((c, i) => {
-              // Pop a runner-up for this year from the year-keyed bucket.
-              const ruList = runnersUpByYear.get(c.year);
+              const ruList = runnersUpByKey.get(`${c.year}|${c.competition ?? ""}`);
               const runnerUp = ruList && ruList.length > 0 ? ruList.shift()! : null;
               return (
                 <tr key={`${c.year}-${i}`} className="border-b" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{c.season ?? c.year}</td>
+                  <td className="py-1.5 px-2 text-xs text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{c.competition ?? "—"}</td>
                   <td className="py-1.5 px-2">
                     <span className="inline-flex items-center gap-1.5">
                       <span aria-hidden style={{ color: "#d4af37" }}>★</span>

@@ -19,9 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-05-31",
-    headline: "Spurs reach NBA Finals after Thunder upset, face Knicks",
+    headline: "IPL hub, football overhaul, Spurs reach NBA Finals",
     items: [
-      "NBA: Spurs upset defending champion Thunder 4-3 in the Western Conference Finals; Knicks swept Cleveland 4-0 in the East. Finals matchup is Spurs vs Knicks; Thunder and Cavaliers flip to eliminated.",
+      "New IPL hub at /teams/ipl: franchise pages for all 10 active clubs and 5 defunct, all-time champions, finals history, playoff results, and metro area links.",
+      "Football league standings now match season-by-season column order; Eur Comp cells show winner and finalist badges; playoff and playout chips (CF/CG) wired across all 8 leagues.",
+      "Sports directory cleanup: AFL, NRL, CFL, NWSL, WSL removed; Women's Club Football added as coming soon; Club World Cup 2025-26 competition labels corrected.",
+      "NBA: Spurs upset Thunder 4-3 in the West; Knicks swept Cleveland 4-0 in the East. Finals matchup is Spurs vs Knicks.",
     ],
   },
   {

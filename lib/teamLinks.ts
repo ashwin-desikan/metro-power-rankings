@@ -42,12 +42,16 @@ import {
   getFootballClubByName,
   monogramForFootball,
 } from "./football";
+import {
+  getIplFranchiseByTeamName,
+  monogramFor as iplMonogramFor,
+} from "./ipl";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -62,6 +66,7 @@ const NFL_SPORT_LABELS = new Set(["American Football", "NFL"]);
 const MLB_SPORT_LABELS = new Set(["Baseball", "MLB"]);
 const NBA_SPORT_LABELS = new Set(["Basketball", "NBA"]);
 const NHL_SPORT_LABELS = new Set(["Hockey", "NHL"]);
+const IPL_SPORT_LABELS = new Set(["T20 Cricket", "Cricket", "IPL"]);
 // Workbook stores football as both "Football" (Team List, /sports markers)
 // and "Soccer" (FootballClub_Data merge in extract.py for metro detail).
 const FOOTBALL_SPORT_LABELS = new Set(["Football", "Soccer", "Football/Soccer"]);
@@ -80,6 +85,9 @@ function isNhl(sport: string, leagueHint: string): boolean {
 }
 function isFootball(sport: string): boolean {
   return FOOTBALL_SPORT_LABELS.has(sport);
+}
+function isIpl(sport: string, leagueHint: string): boolean {
+  return IPL_SPORT_LABELS.has(sport) || leagueHint === "IPL";
 }
 
 export function resolveTeamLink(
@@ -154,6 +162,19 @@ export function resolveTeamLink(
       logoUrl: null,
       monogram: monogramForFootball(f.cur_name, f.slug),
       displayName: f.cur_name,
+    };
+  }
+
+  if (isIpl(sport, leagueHint)) {
+    const f = getIplFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "ipl",
+      href: `/teams/ipl/${f.slug}`,
+      logoUrl: null,
+      monogram: iplMonogramFor(f),
+      displayName: f.name,
     };
   }
 

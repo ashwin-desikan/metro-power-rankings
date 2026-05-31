@@ -102,6 +102,9 @@ export type FootballSeason = {
   // final (was champion or runner-up). Currently unused in the UI but
   // emitted for future runner-up tagging.
   final: boolean;
+  // EFL promotion playoff flags (England levels 2-5, workbook cols CF/CG).
+  playoffs: boolean;
+  playoff_final: boolean;
 };
 
 export type FootballCupFinal = {

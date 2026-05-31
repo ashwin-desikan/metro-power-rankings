@@ -289,6 +289,7 @@ const DOMESTIC_CUP_FULL_NAMES: Record<string, { major: string; minor: string }> 
   Scotland:    { major: "Scottish Cup",    minor: "Scottish League Cup" },
 };
 
+
 function SeasonsTable({
   seasons,
   tierLabels,
@@ -370,8 +371,9 @@ function SeasonsTable({
               <th className="py-2 text-left font-medium">Team</th>
               <th className="py-2 px-2 text-right font-medium" style={POS_HIGHLIGHT}>Pos</th>
               <th className="py-2 text-left font-medium">Notes</th>
-              <th className="py-2 text-left font-medium whitespace-nowrap">Domestic Cup</th>
+              <th className="py-2 text-left font-medium">Domestic Cup</th>
               <th className="py-2 text-left font-medium">Eur Comp</th>
+              <th className="py-2 px-2 text-right font-medium">P</th>
               <th className="py-2 px-2 text-right font-medium">W</th>
               <th className="py-2 px-2 text-right font-medium">D</th>
               <th className="py-2 px-2 text-right font-medium">L</th>
@@ -432,13 +434,19 @@ function SeasonsTable({
                       {s.promoted && (
                         <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
                               style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                          promoted
+                          {s.playoffs ? "promoted (PO)" : "promoted"}
                         </span>
                       )}
                       {s.relegated && (
                         <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
                               style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                          relegated
+                          {s.playoffs ? "relegated (PO)" : "relegated"}
+                        </span>
+                      )}
+                      {s.playoffs && !s.promoted && !s.relegated && (
+                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+                              style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
+                          {s.playoff_final ? "Not Relegated (PO)" : "playoffs"}
                         </span>
                       )}
                     </span>
@@ -564,6 +572,7 @@ function SeasonsTable({
                   </td>
                   {s.format === "league" ? (
                     <>
+                      <td className="py-1.5 px-2 text-right tabular-nums text-[var(--text-muted)]">{s.matches ?? "-"}</td>
                       <td className="py-1.5 px-2 text-right tabular-nums">{s.w ?? "-"}</td>
                       <td className="py-1.5 px-2 text-right tabular-nums">{s.d ?? "-"}</td>
                       <td className="py-1.5 px-2 text-right tabular-nums">{s.l ?? "-"}</td>

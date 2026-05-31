@@ -311,11 +311,25 @@ export default function FootballIndexClient({ clubs }: Props) {
       country,
       clubs: map.get(country)!.slice().sort((a, b) => {
         // When a season is selected, sort by that year's level ascending
-        // (top flight first). When unselected, fall back to the club's
-        // highest-ever tier (lowest level number).
-        const aLvl = sy !== null ? (a.tier_by_year[String(sy)] ?? 99) : Math.min(...(a.tiers.length ? a.tiers : [99]));
-        const bLvl = sy !== null ? (b.tier_by_year[String(sy)] ?? 99) : Math.min(...(b.tiers.length ? b.tiers : [99]));
+        // (top flight first). When unselected: level of most recent recorded
+        // season, then recency descending (so Arsenal 2026 beats Accrington
+        // FC 1893 within the same tier), then A-Z.
+        const maxYear = (c: IndexClub) => {
+          const years = Object.keys(c.tier_by_year).map(Number);
+          return years.length ? Math.max(...years) : 0;
+        };
+        const currentLvl = (c: IndexClub) => {
+          const my = maxYear(c);
+          return my ? (c.tier_by_year[String(my)] ?? 99) : 99;
+        };
+        const aLvl = sy !== null ? (a.tier_by_year[String(sy)] ?? 99) : currentLvl(a);
+        const bLvl = sy !== null ? (b.tier_by_year[String(sy)] ?? 99) : currentLvl(b);
         if (aLvl !== bLvl) return aLvl - bLvl;
+        // Within same level: most recently active first
+        if (sy === null) {
+          const aYr = maxYear(a), bYr = maxYear(b);
+          if (aYr !== bYr) return bYr - aYr;
+        }
         return a.cur_name.localeCompare(b.cur_name);
       }),
     }));

@@ -101,8 +101,8 @@ LEAGUE_HUBS = [
     ("bundesliga",           "Germany",     "Bundesliga",           "Bundesliga",           1),
     ("ligue-1",              "France",      "Ligue 1",              "Ligue 1",              1),
     ("eredivisie",           "Netherlands", "Eredivisie",           "Eredivisie",           1),
-    ("primeira-liga",        "Portugal",    "Primeira Liga",        "Primeira Liga",        1),
-    ("scottish-premiership", "Scotland",    "Scottish Premiership", "Scottish Premiership", 1),
+    ("primeira-liga",        "Portugal",    "Portuguese Liga",      "Primeira Liga",        1),
+    ("scottish-premiership", "Scotland",    "Scottish Premier",     "Scottish Premiership", 1),
 ]
 
 # Standings sheets share an identical 86-column schema.
@@ -354,6 +354,11 @@ def collect_standings_rows(wb):
         # the editorial spec: Champion pill = national champion only.
         idx_champion = 75
         idx_final = 74
+        # Col CF (83) = made the promotion playoffs; CG (84) = reached the playoff final.
+        # Used for English levels 2-5 (EFL Championship, League One, League Two,
+        # National League) where playoff results are editorially populated.
+        idx_playoffs = 83
+        idx_playoff_final = 84
 
         for row in ws.iter_rows(min_row=2, values_only=True):
             if not row: continue
@@ -384,6 +389,8 @@ def collect_standings_rows(wb):
             fmt = detect_format(w, d, l, matches)
             champion = True if (idx_champion < len(row) and row[idx_champion] == "Y") else False
             runner_up_final = True if (idx_final < len(row) and row[idx_final] == "Y" and not champion) else False
+            playoff_app = True if (idx_playoffs < len(row) and row[idx_playoffs] == "Y") else False
+            playoff_final = True if (idx_playoff_final < len(row) and row[idx_playoff_final] == "Y") else False
             # Workbook's Relegated column carries richer values than just
             # 'Y': 'Reg' (relegated), 'Prom' (promoted), 'Not Prom' (lost
             # in promotion playoff). Use it directly as a seed so the
@@ -427,6 +434,9 @@ def collect_standings_rows(wb):
                 # need consistent treatment.
                 "champion": champion,
                 "final": runner_up_final,
+                # EFL promotion playoff flags (England levels 2-5, cols CF/CG).
+                "playoffs": playoff_app,
+                "playoff_final": playoff_final,
             })
             curnames.add(cn)
     return rows_out, curnames
@@ -979,6 +989,8 @@ def build_league_hubs(wb, standings_rows):
                     "champion_slug": r["slug"],
                     "league_name": r["league"],
                     "format": r["format"],
+                    "playoffs": r.get("playoffs", False),
+                    "playoff_final": r.get("playoff_final", False),
                 }
                 for r in champs
             ],
@@ -1226,6 +1238,31 @@ def main():
     with open(leagues_path, "w", encoding="utf-8") as f:
         json.dump(league_hubs, f, ensure_ascii=False)
     print(f"Wrote {leagues_path}  ({leagues_path.stat().st_size:,} bytes)")
+
+    # ---------- Editorial corrections: Club World Cup / Intercontinental Cup ----------
+    # 2025-26 Intercontinental Cup: PSG champion, Flamengo runner-up.
+    # 2024-25 FIFA Club World Cup:  Chelsea champion, PSG runner-up.
+    # The workbook tags PSG under FIFA Club World Cup (wrong); correct here so
+    # the fix survives future ETL runs without requiring workbook edits.
+    if "club-world-cup" in european_hubs:
+        _cwc = european_hubs["club-world-cup"]
+        for _c in _cwc.get("champions", []):
+            if _c.get("year") == 2025 and _c.get("cur_name") == "Paris Saint-Germain":
+                _c["competition"] = "Intercontinental Cup"
+                _c["season"] = "2025-26"
+        for _f in _cwc.get("finalists", []):
+            if (_f.get("year") == 2025
+                    and _f.get("competition") == "FIFA Club World Cup"
+                    and _f.get("cur_name") == "Flamengo"):
+                _f["cur_name"] = "Paris Saint-Germain"
+                _f["slug"] = "paris-saint-germain"
+        if not any(_f.get("year") == 2025 and _f.get("competition") == "Intercontinental Cup"
+                   for _f in _cwc.get("finalists", [])):
+            _cwc.setdefault("finalists", []).insert(1, {
+                "year": 2025, "season": "2025-26",
+                "cur_name": "Flamengo", "slug": None,
+                "competition": "Intercontinental Cup",
+            })
 
     with open(european_tournaments_path, "w", encoding="utf-8") as f:
         json.dump(european_hubs, f, ensure_ascii=False)

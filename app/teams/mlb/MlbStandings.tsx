@@ -209,13 +209,9 @@ export default async function MlbStandings() {
                                 </span>
                               )}
                               <span className="truncate">{displayShort}</span>
-                              <span className="text-[10px] text-[var(--text-dim)] ml-1 whitespace-nowrap">{pretty}</span>
                             </Link>
                           ) : (
-                            <span className="text-[var(--text-dim)]">
-                              {displayShort}
-                              <span className="text-[10px] text-[var(--text-dim)] ml-1">{pretty}</span>
-                            </span>
+                            <span className="text-[var(--text-dim)]">{displayShort}</span>
                           )}
                         </td>
                         <td className="py-1 px-1 text-right">{t.wins}</td>
