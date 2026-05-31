@@ -59,6 +59,8 @@ export type FootballClub = {
   // country filter + map color reflect where the club actually played
   // that year, not their canonical federation.
   country_by_year: Record<string, string>;
+  wikidata_qid?: string;
+  wikipedia_url?: string;
 };
 
 export type FootballSeason = {

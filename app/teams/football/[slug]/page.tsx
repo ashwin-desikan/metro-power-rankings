@@ -139,6 +139,37 @@ export default async function FootballClubPage({ params }: Props) {
         )}
       </header>
 
+      {(club.wikipedia_url || club.wikidata_qid) && (
+        <div className="mb-4 flex flex-wrap items-center gap-3 text-sm">
+          {club.wikipedia_url && (
+            <a
+              href={club.wikipedia_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 hover:opacity-80 transition-opacity"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              title="Open on Wikipedia"
+            >
+              <span>Wikipedia</span>
+              <span className="text-[var(--text-muted)]">&#8599;</span>
+            </a>
+          )}
+          {club.wikidata_qid && (
+            <a
+              href={`https://www.wikidata.org/wiki/${club.wikidata_qid}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 hover:opacity-80 transition-opacity"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              title={`Open Wikidata entity ${club.wikidata_qid}`}
+            >
+              <span style={{ fontFamily: "monospace" }}>{club.wikidata_qid}</span>
+              <span className="text-[var(--text-muted)]">&#8599;</span>
+            </a>
+          )}
+        </div>
+      )}
+
       <section
         className="rounded-xl border p-5 mb-6"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}

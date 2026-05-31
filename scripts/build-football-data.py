@@ -178,6 +178,43 @@ def detect_format(w, d, l, matches):
     return "league"
 
 
+# ---------- Wikidata QIDs from MetroAreas.xlsx ----------
+
+def load_wikidata_qids():
+    """Read Wikidata_QIDs sheet from MetroAreas.xlsx and return
+    {team_name_lower: (qid, wikipedia_url)}. Returns {} silently on any error."""
+    candidates = [
+        REPO_ROOT / "MetroAreas.xlsx",
+        Path(os.path.expanduser("~/OneDrive/Excel Files/MetroAreas.xlsx")),
+        Path("/mnt/c/Users/ashwi/OneDrive/Excel Files/MetroAreas.xlsx"),
+    ]
+    for sess in Path("/sessions").glob("*/mnt/uploads/MetroAreas.xlsx"):
+        candidates.append(sess)
+    for sess in Path("/sessions").glob("*/mnt/Excel Files/MetroAreas.xlsx"):
+        candidates.append(sess)
+    xlsx = next((p for p in candidates if p.exists()), None)
+    if not xlsx:
+        return {}
+    try:
+        wb = openpyxl.load_workbook(str(xlsx), read_only=True, data_only=True)
+    except Exception:
+        return {}
+    if "Wikidata_QIDs" not in wb.sheetnames:
+        wb.close(); return {}
+    ws = wb["Wikidata_QIDs"]
+    lookup = {}
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if not row or len(row) < 4: continue
+        team, qid, url = row[1], row[2], row[3]
+        if not team or not qid: continue
+        lookup[str(team).strip().lower()] = (
+            str(qid).strip(),
+            str(url).strip() if url else None,
+        )
+    wb.close()
+    return lookup
+
+
 # ---------- ETL: clubs from Lookup ----------
 
 def build_clubs_index(wb, in_scope_curnames, country_mode_by_cn=None):
@@ -188,6 +225,7 @@ def build_clubs_index(wb, in_scope_curnames, country_mode_by_cn=None):
     standings-row countries so wartime / cross-border clubs (Rapid Wien,
     AS Monaco, Cardiff, Swansea) sit under the country they actually played
     in within our Big 5 scope."""
+    wikidata_lookup = load_wikidata_qids()
     ws = wb["Lookup"]
     hdr, _ = header_map(ws)
     # Per Claude Notes verified col indices: Cur. Name = M (12), Team = A (0),
@@ -249,6 +287,7 @@ def build_clubs_index(wb, in_scope_curnames, country_mode_by_cn=None):
         override = CURATED_COORDINATE_OVERRIDES.get(slug)
         if override:
             lat, lng = override
+        wd = wikidata_lookup.get(cn.lower(), (None, None))
         clubs[cn] = {
             "slug": slug,
             "cur_name": cn,
@@ -260,6 +299,8 @@ def build_clubs_index(wb, in_scope_curnames, country_mode_by_cn=None):
             "continent": cell(idx_continent),
             "lat": lat,
             "lng": lng,
+            **({"wikidata_qid": wd[0]} if wd[0] else {}),
+            **({"wikipedia_url": wd[1]} if wd[1] else {}),
         }
     return clubs
 
@@ -644,8 +685,8 @@ BRACKET_ROUND_BUCKETS = [
 ]
 
 # The current European season the workbook's 2026 rows refer to.
-CURRENT_EURO_SEASON = "2025-26"
-CURRENT_EURO_YEAR = 2026
+CURRENT_EURO_SEASON = None  # 2025-26 complete; set next season string when it begins
+CURRENT_EURO_YEAR = None   # Set next season year when it begins
 
 
 def collect_european_tournaments(wb, slug_for_curname):
@@ -895,314 +936,4 @@ def build_league_hubs(wb, standings_rows):
 
     for slug, country, league_name, display, level in LEAGUE_HUBS:
         rows = by_country_level1.get(country, [])
-        # Current standings: most recent year for this exact modern league name
-        # with populated data. Skip forward-keyed placeholder rows where the
-        # workbook has carried the team list but no results yet (typical of
-        # the upcoming season before round 1 is played).
-        modern = [r for r in rows if r["league"] == league_name]
-        completed_years = sorted({r["year"] for r in modern
-                                  if r["year"] and r["pts"] is not None}, reverse=True)
-        latest_year = completed_years[0] if completed_years else None
-        current = [r for r in modern if r["year"] == latest_year]
-        current.sort(key=lambda r: (r["place"] if r["place"] is not None else 99))
-
-        # All-time champions: workbook BX (Champions) flag is the source
-        # of truth. It fires for league-format Level 1 winners AND for
-        # pre-modern playoff/knockout champions where place is null
-        # (Schalke pre-Bundesliga, the Italian Football Championship era,
-        # the French amateur era). It does NOT fire for second-division
-        # winners, so Schalke's 2.Bundesliga rows correctly drop out of
-        # the all-time list while their 7 pre-Bundesliga German titles
-        # appear regardless of their current league level.
-        champs = [r for r in rows if r.get("champion")]
-        champs.sort(key=lambda r: r["year"] or 0)
-
-        hubs[slug] = {
-            "slug": slug,
-            "country": country,
-            "league": display,
-            "current_year": latest_year,
-            "current_standings": current,
-            "all_time_champions": [
-                {
-                    "year": r["year"],
-                    "champion": r["cur_name"],
-                    "champion_team": r["team"],
-                    "champion_slug": r["slug"],
-                    "league_name": r["league"],
-                    "format": r["format"],
-                }
-                for r in champs
-            ],
-        }
-    return hubs
-
-
-# ---------- Main ----------
-
-def main():
-    src = find_source()
-    print(f"Source: {src}")
-    wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
-
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    print("Collecting in-scope standings rows...")
-    standings_rows, in_scope_curnames = collect_standings_rows(wb)
-    print(f"  {len(standings_rows)} rows, {len(in_scope_curnames)} distinct canonical clubs")
-
-    # Country mode per club, derived from the in-scope standings rows.
-    # Wartime annexations (SK Rapid Wien, First Vienna FC, FC Admira Wacker
-    # Mödling under the German playoff during 1938-1945; DFC Prag pre-WWI
-    # German Empire) and cross-border traditions (AS Monaco in Ligue 1,
-    # Cardiff and Swansea in English football, AC Libertas in early Italian
-    # football, Moghreb Tétouán during the Spanish protectorate) all put
-    # the club in a Big 5 country that differs from their Lookup federation.
-    # Use the standings-row country as the canonical for everything site-
-    # facing so the index, league hubs, and per-club page header all reflect
-    # the workbook's own country-of-play classification.
-    country_mode_by_cn = {}
-    for cn in in_scope_curnames:
-        counts = Counter(r["country"] for r in standings_rows if r["cur_name"] == cn)
-        if counts:
-            country_mode_by_cn[cn] = counts.most_common(1)[0][0]
-
-    print("Building club index from Lookup...")
-    clubs = build_clubs_index(wb, in_scope_curnames, country_mode_by_cn)
-    missing = in_scope_curnames - set(clubs.keys())
-    if missing:
-        print(f"  WARN: {len(missing)} in-scope clubs have NO Lookup entry; synthesizing minimal records")
-        for cn in missing:
-            # Infer country from the first standings row for this club.
-            country = next((r["country"] for r in standings_rows if r["cur_name"] == cn), None)
-            clubs[cn] = {
-                "slug": slugify(cn),
-                "cur_name": cn,
-                "country": country,
-                "federation_country": None,
-                "city": None, "metro": None, "county": None,
-                "continent": "Europe",
-                "lat": None, "lng": None,
-            }
-    print(f"  index has {len(clubs)} clubs")
-
-    # Slug collision check + merge. Two Cur. Names that slugify identically
-    # are treated as the same canonical club (e.g. 'SPAL' vs 'Spal'). The
-    # winning Cur. Name is the one with more standings rows. The losing
-    # Cur. Name's standings/cup/europe rows are rewritten to point at the
-    # winner's slug downstream.
-    slug_groups = defaultdict(list)
-    for cn, club in clubs.items():
-        slug_groups[club["slug"]].append(cn)
-    canonical_for_slug = {}
-    aliased_cn = {}
-    for slug, cns in slug_groups.items():
-        if len(cns) == 1:
-            canonical_for_slug[slug] = cns[0]; continue
-        # Pick the spelling with the most standings rows; tie-break alpha.
-        row_count = Counter(r["cur_name"] for r in standings_rows if r["slug"] == slug)
-        cns_sorted = sorted(cns, key=lambda x: (-row_count.get(x, 0), x))
-        winner = cns_sorted[0]
-        canonical_for_slug[slug] = winner
-        for loser in cns_sorted[1:]:
-            aliased_cn[loser] = winner
-            print(f"  merging slug-colliding Cur. Names: {loser!r} -> {winner!r} (slug={slug!r})")
-    # Drop loser clubs from the index; rewrite standings/cups to winner.
-    for loser, winner in aliased_cn.items():
-        clubs.pop(loser, None)
-    for r in standings_rows:
-        if r["cur_name"] in aliased_cn:
-            r["cur_name"] = aliased_cn[r["cur_name"]]
-            r["slug"] = slugify(r["cur_name"])
-
-    print("Collecting cup finals...")
-    cups_rows = collect_cup_finals(wb, in_scope_curnames)
-    # Rewrite slug-merged Cur. Names. (aliased_cn isn't defined yet here on
-    # first call; defer the rewrite to after the slug-merge block runs below.)
-    print(f"  {len(cups_rows)} cup-final rows")
-
-    print("Collecting European appearances...")
-    europe = collect_european(wb, in_scope_curnames)
-    print(f"  {sum(len(v) for v in europe.values())} euro entries across {len(europe)} clubs")
-
-    print("Collecting Totals roll-up...")
-    totals = collect_totals(wb, in_scope_curnames)
-    print(f"  {len(totals)} totals rows matched")
-
-    # Merge totals + tier coverage into clubs index.
-    for cn, club in clubs.items():
-        club_rows = [r for r in standings_rows if r["cur_name"] == cn]
-        tiers = sorted({r["level"] for r in club_rows if r["level"] is not None})
-        years = [r["year"] for r in club_rows if r["year"]]
-        # Exclude 2027 placeholder rows from the playoff count so non-German
-        # clubs (Chelsea, etc.) that have a 2026-27 placeholder row don't
-        # mistakenly trigger the German-era playoff label downstream.
-        playoff_only_years = {r["year"] for r in club_rows
-                              if r["format"] == "playoff" and r["year"] and r["year"] < 2027}
-        # Top-flight (Level 1) league seasons -- the only thing that should
-        # carry the "top-flight" label per editorial spec.
-        level1_league_years = {r["year"] for r in club_rows if r["format"] == "league" and r["level"] == 1}
-        lower_league_years = {r["year"] for r in club_rows if r["format"] == "league" and (r["level"] or 0) > 1}
-        # Per-year level map for the index page filter UX. Keys are year
-        # numbers as strings (JSON limitation); values are the lowest level
-        # number (highest tier) the club played that year. Empty when the
-        # club has no row for that year. Skips 2027 placeholders to match
-        # the lib/football.ts MAX_DISPLAYED_YEAR clamp.
-        tier_by_year: dict[str, int] = {}
-        # Parallel per-year country map. Mulhouse 1941 must group under
-        # Germany (Anschluss-era Alsace was annexed) even though the club's
-        # overall mode country is France. When multiple rows exist for the
-        # same year at different levels, prefer the higher-tier (lower
-        # level number) row's country, matching tier_by_year semantics.
-        country_by_year: dict[str, str] = {}
-        for r in club_rows:
-            y, lv, ctry = r["year"], r["level"], r["country"]
-            if y is None or lv is None or y >= 2027: continue
-            key = str(y)
-            cur = tier_by_year.get(key)
-            if cur is None or lv < cur:
-                tier_by_year[key] = lv
-                if ctry: country_by_year[key] = ctry
-        club["tiers"] = tiers
-        club["first_year"] = min(years) if years else None
-        club["last_year"] = max(years) if years else None
-        club["top_flight_seasons"] = len(level1_league_years)
-        club["lower_tier_seasons"] = len(lower_league_years)
-        # Kept for backwards compat with the index page filter logic.
-        club["league_seasons"] = len(level1_league_years) + len(lower_league_years)
-        club["playoff_appearances"] = len(playoff_only_years)
-        club["totals"] = totals.get(cn, {})
-        club["tier_by_year"] = tier_by_year
-        club["country_by_year"] = country_by_year
-
-    # Derive promoted / relegated per row from consecutive-season level
-    # transitions. The forward-scan finds the NEXT EXISTING year for the
-    # same club (not just y+1), which closes WWI and WWII gaps (Arsenal
-    # 1915 L2 -> 1920 L1 = promoted) and correctly handles English clubs
-    # that took a season off. When the forward-scan produces a verdict,
-    # it OVERRIDES the workbook seed (the workbook's 1915 'Reg' for
-    # Arsenal is wrong because Arsenal was actually promoted via the
-    # post-war First Division expansion). When the forward-scan finds
-    # no next year (latest completed season) OR the next year is at the
-    # same level (e.g. Villarreal 2012 -> 2014 both L1 because their
-    # 2013 Segunda season is outside our scope), the workbook seed wins.
-    seasons_by_slug = defaultdict(list)
-    for r in standings_rows:
-        seasons_by_slug[r["slug"]].append(r)
-    for slug, rows in seasons_by_slug.items():
-        rows.sort(key=lambda r: (r["year"] or 0, r["level"] or 99))
-        # Index by year, picking the lowest-tier (highest level number)
-        # row when multiple rows share a year.
-        by_year = {}
-        years_sorted = []
-        for r in rows:
-            y, lv = r["year"], r["level"]
-            if y is None or lv is None: continue
-            cur = by_year.get(y)
-            if cur is None or (cur["level"] or 0) < lv:
-                by_year[y] = r
-        years_sorted = sorted(by_year.keys())
-        for r in rows:
-            y, lv = r["year"], r["level"]
-            if y is None or lv is None: continue
-            # Find next existing year strictly greater than y.
-            nxt = None
-            for ny in years_sorted:
-                if ny > y:
-                    nxt = by_year[ny]; break
-            if not nxt or nxt["level"] is None:
-                continue  # latest season; workbook seed stands
-            if nxt["level"] < lv:
-                r["promoted"] = True
-                r["relegated"] = False  # override stale workbook seed
-            elif nxt["level"] > lv:
-                r["relegated"] = True
-                r["promoted"] = False
-            # else: same level -- keep workbook seed (Villarreal 2012 case)
-        # Final sort: descending by year (newest first), then by level so
-        # multi-tier same-year rows show the higher tier first.
-        rows.sort(key=lambda r: (-(r["year"] or 0), r["level"] or 99))
-
-    cups_by_slug = defaultdict(list)
-    for r in cups_rows:
-        cups_by_slug[r["slug"]].append(r)
-    for slug in cups_by_slug:
-        cups_by_slug[slug].sort(key=lambda r: (r["year"] or 0, r["kind"]))
-
-    print("Building league hubs...")
-    league_hubs = build_league_hubs(wb, standings_rows)
-
-    print("Building European tournament hubs...")
-    # slug_for_curname covers in-scope clubs only; clubs outside scope
-    # (Anderlecht, Galatasaray, etc.) surface in tournament rows with no slug
-    # so the page renders them as plain text without a broken link.
-    slug_for_curname = {cn: c["slug"] for cn, c in clubs.items()}
-    european_hubs = collect_european_tournaments(wb, slug_for_curname)
-    print(f"  {len(european_hubs)} hubs: {sorted(european_hubs.keys())}")
-    for s, h in european_hubs.items():
-        ch = len(h["champions"])
-        decorated = h["most_decorated"][0]["cur_name"] if h["most_decorated"] else "—"
-        decorated_n = h["most_decorated"][0]["champion_count"] if h["most_decorated"] else 0
-        print(f"    {s}: {ch} champions, top {decorated} ({decorated_n})")
-
-    # ---------- Write outputs ----------
-    index_path = OUT_DIR / "index.json"
-    seasons_path = OUT_DIR / "seasons.json"
-    cups_path = OUT_DIR / "cups.json"
-    europe_path = OUT_DIR / "europe.json"
-    leagues_path = OUT_DIR / "leagues.json"
-    european_tournaments_path = OUT_DIR / "european-tournaments.json"
-
-    payload_index = {
-        "generated_at": __import__("datetime").date.today().isoformat(),
-        "source": str(src.name),
-        "scope": {"countries": sorted(IN_SCOPE_COUNTRIES), "country_tiers": {k: sorted(v) for k, v in COUNTRY_TIERS.items()}},
-        "clubs": [c for c in sorted(clubs.values(), key=lambda x: (x["country"] or "", x["cur_name"]))],
-    }
-    with open(index_path, "w", encoding="utf-8") as f:
-        json.dump(payload_index, f, ensure_ascii=False, indent=2)
-    print(f"Wrote {index_path}  ({index_path.stat().st_size:,} bytes)")
-
-    with open(seasons_path, "w", encoding="utf-8") as f:
-        json.dump(dict(seasons_by_slug), f, ensure_ascii=False)
-    print(f"Wrote {seasons_path}  ({seasons_path.stat().st_size:,} bytes)")
-
-    with open(cups_path, "w", encoding="utf-8") as f:
-        json.dump(dict(cups_by_slug), f, ensure_ascii=False)
-    print(f"Wrote {cups_path}  ({cups_path.stat().st_size:,} bytes)")
-
-    with open(europe_path, "w", encoding="utf-8") as f:
-        json.dump(europe, f, ensure_ascii=False)
-    print(f"Wrote {europe_path}  ({europe_path.stat().st_size:,} bytes)")
-
-    with open(leagues_path, "w", encoding="utf-8") as f:
-        json.dump(league_hubs, f, ensure_ascii=False)
-    print(f"Wrote {leagues_path}  ({leagues_path.stat().st_size:,} bytes)")
-
-    with open(european_tournaments_path, "w", encoding="utf-8") as f:
-        json.dump(european_hubs, f, ensure_ascii=False)
-    print(f"Wrote {european_tournaments_path}  ({european_tournaments_path.stat().st_size:,} bytes)")
-
-    # Normalized-name -> slug lookup for cross-data-source joins. Mirrors
-    # build-sports-index.py's normalize_team_name (lowercase, alnum-only,
-    # collapsed whitespace) so the join works against the team name as it
-    # appears in MetroAreas.xlsx FootballClub_Data and Team List.
-    def _norm(s: str) -> str:
-        s = s.lower()
-        s = re.sub(r"[^a-z0-9]+", " ", s)
-        return s.strip()
-    slug_lookup = {}
-    for club in clubs.values():
-        key = _norm(club["cur_name"])
-        if key and key not in slug_lookup:
-            slug_lookup[key] = club["slug"]
-    slug_lookup_path = OUT_DIR / "slug-lookup.json"
-    with open(slug_lookup_path, "w", encoding="utf-8") as f:
-        json.dump(slug_lookup, f, ensure_ascii=False)
-    print(f"Wrote {slug_lookup_path}  ({slug_lookup_path.stat().st_size:,} bytes, {len(slug_lookup)} entries)")
-
-    print("\nDone.")
-
-
-if __name__ == "__main__":
-    main()
+        # Current standings: most recent year f
