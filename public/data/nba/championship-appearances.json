@@ -129,6 +129,13 @@
       "won": true,
       "city": "San Antonio",
       "team": "Spurs"
+    },
+    {
+      "year": 2026,
+      "era": "nba",
+      "won": false,
+      "city": "San Antonio",
+      "team": "Spurs"
     }
   ],
   "Celtics": [

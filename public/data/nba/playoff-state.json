@@ -83,8 +83,8 @@
       "year": 2026
     },
     "Spurs": {
-      "state": "active_cf",
-      "last_round": "In the Conference Finals",
+      "state": "active_finals",
+      "last_round": "In the Finals",
       "year": 2026
     },
     "Pistons": {
@@ -93,8 +93,8 @@
       "year": 2026
     },
     "Thunder": {
-      "state": "active_cf",
-      "last_round": "In the Conference Finals",
+      "state": "eliminated_cf",
+      "last_round": "Eliminated Conference Finals",
       "year": 2026
     },
     "Celtics": {

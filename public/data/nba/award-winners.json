@@ -120,6 +120,10 @@
     ],
     "MIP": [
       {
+        "year": 2026,
+        "player": "Nickeil Alexander-Walker"
+      },
+      {
         "year": 2025,
         "player": "Dyson Daniels"
       },
@@ -241,6 +245,10 @@
       }
     ],
     "COY": [
+      {
+        "year": 2026,
+        "player": "Joe Muzzulla"
+      },
       {
         "year": 1980,
         "player": "Bill Fitch"
@@ -1224,6 +1232,10 @@
   "Spurs": {
     "DPOY": [
       {
+        "year": 2026,
+        "player": "Victor Wembanyama"
+      },
+      {
         "year": 2016,
         "player": "Kawhi Leonard"
       },
@@ -1293,6 +1305,10 @@
       }
     ],
     "6MOY": [
+      {
+        "year": 2026,
+        "player": "Keldon Johnson"
+      },
       {
         "year": 2008,
         "player": "Manu Ginóbili"
@@ -1371,6 +1387,10 @@
       }
     ],
     "ROY": [
+      {
+        "year": 2026,
+        "player": "Cooper Flagg"
+      },
       {
         "year": 2019,
         "player": "Luka Dončić"
@@ -1706,6 +1726,10 @@
     ],
     "MVP": [
       {
+        "year": 2026,
+        "player": "Shai Gilgeous-Alexander"
+      },
+      {
         "year": 2025,
         "player": "Shai Gilgeous-Alexander"
       },
@@ -1716,6 +1740,12 @@
       {
         "year": 2014,
         "player": "Kevin Durant"
+      }
+    ],
+    "CPOY": [
+      {
+        "year": 2026,
+        "player": "Shai Gilgeous-Alexander"
       }
     ]
   }

@@ -357,6 +357,16 @@
   ],
   "Pistons": [
     {
+      "year": 2026,
+      "player": "Cade Cunningham",
+      "tier": "1st"
+    },
+    {
+      "year": 2026,
+      "player": "Jalen Duren",
+      "tier": "3rd"
+    },
+    {
       "year": 2025,
       "player": "Cade Cunningham",
       "tier": "3rd"
@@ -558,6 +568,11 @@
   ],
   "Hawks": [
     {
+      "year": 2026,
+      "player": "Jalen Johnson",
+      "tier": "3rd"
+    },
+    {
       "year": 2022,
       "player": "Trae Young",
       "tier": "3rd"
@@ -724,6 +739,11 @@
     }
   ],
   "Celtics": [
+    {
+      "year": 2026,
+      "player": "Jaylen Brown",
+      "tier": "2nd"
+    },
     {
       "year": 2025,
       "player": "Jayson Tatum",
@@ -1284,6 +1304,11 @@
   ],
   "Knicks": [
     {
+      "year": 2026,
+      "player": "Jalen Brunson",
+      "tier": "2nd"
+    },
+    {
       "year": 2025,
       "player": "Jalen Brunson",
       "tier": "2nd"
@@ -1732,6 +1757,11 @@
     }
   ],
   "Lakers": [
+    {
+      "year": 2026,
+      "player": "Luka Dončić",
+      "tier": "1st"
+    },
     {
       "year": 2025,
       "player": "LeBron James",
@@ -2261,6 +2291,11 @@
     }
   ],
   "76ers": [
+    {
+      "year": 2026,
+      "player": "Tyrese Maxey",
+      "tier": "3rd"
+    },
     {
       "year": 2023,
       "player": "Joel Embiid",
@@ -3204,6 +3239,11 @@
   ],
   "Clippers": [
     {
+      "year": 2026,
+      "player": "Kawhi Leonard",
+      "tier": "2nd"
+    },
+    {
       "year": 2025,
       "player": "James Harden",
       "tier": "3rd"
@@ -3513,6 +3553,16 @@
   ],
   "Nuggets": [
     {
+      "year": 2026,
+      "player": "Nikola Jokić",
+      "tier": "1st"
+    },
+    {
+      "year": 2026,
+      "player": "Jamal Murray",
+      "tier": "3rd"
+    },
+    {
       "year": 2025,
       "player": "Nikola Jokić",
       "tier": "1st"
@@ -3711,6 +3761,11 @@
     }
   ],
   "Spurs": [
+    {
+      "year": 2026,
+      "player": "Victor Wembanyama",
+      "tier": "1st"
+    },
     {
       "year": 2018,
       "player": "LaMarcus Aldridge",
@@ -3933,6 +3988,11 @@
     }
   ],
   "Rockets": [
+    {
+      "year": 2026,
+      "player": "Kevin Durant",
+      "tier": "2nd"
+    },
     {
       "year": 2020,
       "player": "James Harden",
@@ -4162,6 +4222,11 @@
     }
   ],
   "Cavaliers": [
+    {
+      "year": 2026,
+      "player": "Donovan Mitchell",
+      "tier": "2nd"
+    },
     {
       "year": 2025,
       "player": "Donovan Mitchell",
@@ -4825,6 +4890,16 @@
     }
   ],
   "Thunder": [
+    {
+      "year": 2026,
+      "player": "Shai Gilgeous-Alexander",
+      "tier": "1st"
+    },
+    {
+      "year": 2026,
+      "player": "Chet Holmgren",
+      "tier": "3rd"
+    },
     {
       "year": 2025,
       "player": "Shai Gilgeous-Alexander",

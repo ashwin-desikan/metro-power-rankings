@@ -2385,7 +2385,7 @@
       "home_arena_season": "State Farm Arena",
       "home_arena_canonical": "State Farm Arena",
       "num_all_stars": 1,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "celtics": [
@@ -4867,7 +4867,7 @@
       "home_arena_season": "TD Garden",
       "home_arena_canonical": "TD Garden",
       "num_all_stars": 1,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "nets": [
@@ -11416,7 +11416,7 @@
       "home_arena_season": "Rocket Mortgage Fieldhouse",
       "home_arena_canonical": "Rocket Mortgage Fieldhouse",
       "num_all_stars": 1,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "mavericks": [
@@ -14675,7 +14675,7 @@
       "home_arena_season": "Ball Arena",
       "home_arena_canonical": "Ball Arena",
       "num_all_stars": 2,
-      "num_all_nba": 0
+      "num_all_nba": 2
     }
   ],
   "pistons": [
@@ -17095,7 +17095,7 @@
       "home_arena_season": "Little Caesars Arena",
       "home_arena_canonical": "Little Caesars Arena",
       "num_all_stars": 2,
-      "num_all_nba": 0
+      "num_all_nba": 2
     }
   ],
   "warriors": [
@@ -21408,7 +21408,7 @@
       "home_arena_season": "Toyota Center",
       "home_arena_canonical": "Toyota Center",
       "num_all_stars": 2,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "pacers": [
@@ -24977,7 +24977,7 @@
       "home_arena_season": "Intuit Dome",
       "home_arena_canonical": "Intuit Dome",
       "num_all_stars": 1,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "lakers": [
@@ -27397,7 +27397,7 @@
       "home_arena_season": "Crypto.com Arena",
       "home_arena_canonical": "Crypto.com Arena",
       "num_all_stars": 2,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "grizzlies": [
@@ -35717,7 +35717,7 @@
       "home_arena_season": "Madison Square Garden IV",
       "home_arena_canonical": "Madison Square Garden IV",
       "num_all_stars": 2,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "thunder": [
@@ -37536,8 +37536,8 @@
       "div_title": true,
       "best_conf": true,
       "best_rec_leag": true,
-      "p_wins": 10,
-      "p_loss": 2,
+      "p_wins": 11,
+      "p_loss": 4,
       "cf_app": true,
       "champ_app": false,
       "champ": false,
@@ -37548,7 +37548,7 @@
       "home_arena_season": "Paycom Center",
       "home_arena_canonical": "Paycom Center",
       "num_all_stars": 2,
-      "num_all_nba": 0
+      "num_all_nba": 2
     }
   ],
   "magic": [
@@ -41086,7 +41086,7 @@
       "home_arena_season": "Xfinity Mobile Arena",
       "home_arena_canonical": "Xfinity Mobile Arena",
       "num_all_stars": 1,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "suns": [
@@ -48863,10 +48863,10 @@
       "div_title": true,
       "best_conf": false,
       "best_rec_leag": false,
-      "p_wins": 10,
-      "p_loss": 5,
+      "p_wins": 12,
+      "p_loss": 6,
       "cf_app": true,
-      "champ_app": false,
+      "champ_app": true,
       "champ": false,
       "playoff_seed": 2,
       "division": "Southwest",
@@ -48875,7 +48875,7 @@
       "home_arena_season": "Frost Bank Center",
       "home_arena_canonical": "Frost Bank Center",
       "num_all_stars": 2,
-      "num_all_nba": 0
+      "num_all_nba": 1
     }
   ],
   "raptors": [

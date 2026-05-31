@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-05-31",
+    headline: "Spurs reach NBA Finals after Thunder upset, face Knicks",
+    items: [
+      "NBA: Spurs upset defending champion Thunder 4-3 in the Western Conference Finals; Knicks swept Cleveland 4-0 in the East. Finals matchup is Spurs vs Knicks; Thunder and Cavaliers flip to eliminated.",
+    ],
+  },
+  {
     date: "2026-05-30",
     headline: "PSG repeats as UCL champion, Other Tournaments hub, NHL Final set",
     items: [
