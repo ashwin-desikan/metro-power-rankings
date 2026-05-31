@@ -1,0 +1,113 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Bolivia,Vaca Díez,Beni,,,146201,Province,,,#N/A,,BeniBolivia,county,2,BO-B,Antonio Vaca Díez,,,,,,,,,,,,region,1,BO-B,Beni,NONE,0.0,BO-B
+Bolivia,Cercado (Trinidad),Beni,,,136563,Province,,,#N/A,,BeniBolivia,county,2,BO-O,Provincia Cercado,,,,county,2,BO-B,Cercado,,,,,region,1,BO-B,Beni,HIGH,1.0,BO-B
+Bolivia,José Ballivián,Beni,,,94610,Province,,,#N/A,,BeniBolivia,,,,,,,,,,,,,,,,region,1,BO-B,Beni,NONE,0.0,BO-B
+Bolivia,Yacuma,Beni,,,24823,Province,,,#N/A,,BeniBolivia,county,2,BO-B,Yacuma,,,,county,2,BO-B,Yacuma,,,,,region,1,BO-B,Beni,HIGH,1.0,BO-B
+Bolivia,Iténez,Beni,,,23901,Province,,,#N/A,,BeniBolivia,county,2,BO-B,Iténez,,,,county,2,BO-B,Iténez,,,,,region,1,BO-B,Beni,HIGH,1.0,BO-B
+Bolivia,Moxos,Beni,,,22564,Province,,,#N/A,,BeniBolivia,county,2,BO-B,Moxos,,,,county,2,BO-B,Moxos,,,,,region,1,BO-B,Beni,HIGH,1.0,BO-B
+Bolivia,Marbán,Beni,,,17393,Province,,,#N/A,,BeniBolivia,county,2,BO-B,Marbán,,,,county,2,BO-B,Marbán,,,,,region,1,BO-B,Beni,HIGH,1.0,BO-B
+Bolivia,Mamoré,Beni,,,14253,Province,,,#N/A,,BeniBolivia,county,2,BO-B,Mamoré,,,,county,2,BO-B,Mamoré,,,,,region,1,BO-B,Beni,HIGH,1.0,BO-B
+Bolivia,Oropeza,Chuquisaca,,,324440,Province,Sucre,,Sucre,,ChuquisacaBolivia,county,2,BO-H,Provincia Oropeza,,,,county,2,BO-H,Provincia Oropeza,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Yamparáez,Chuquisaca,,,27956,Province,Sucre,,Sucre,,ChuquisacaBolivia,county,2,BO-H,Provincia Yamparaez,,,,locality,,BO-H,Yamparaez,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Nor Cinti,Chuquisaca,,,83466,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Provincia Nor Cinti,,,,county,2,BO-H,Provincia Nor Cinti,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Zudañez (Jaime Zudáñez),Chuquisaca,,,42753,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Provincia Jaime Zudáñez,,,,locality,,BO-H,Zudañez,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Tomina,Chuquisaca,,,37504,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Provincia Tomina,,,,locality,,BO-H,Tomina,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Hernando Siles,Chuquisaca,,,35470,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Provincia Hernando Siles,,,,county,2,BO-H,Provincia Hernando Siles,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Sud Cinti,Chuquisaca,,,27235,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Sud Cinti,,,,county,2,BO-H,Sud Cinti,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Azurduy (Juana Azurduy de Padilla),Chuquisaca,,,25636,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Provincia Azurduy,,,,county,2,BO-H,Provincia Azurduy,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Luis Calvo,Chuquisaca,,,20842,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Provincia Luis Calvo,,,,county,2,BO-H,Provincia Luis Calvo,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Belisario Boeto,Chuquisaca,,,11711,Province,,,#N/A,,ChuquisacaBolivia,county,2,BO-H,Provincia Belisario Boeto,,,,county,2,BO-H,Provincia Belisario Boeto,,,,,region,1,BO-H,Chuquisaca,HIGH,1.0,BO-H
+Bolivia,Cercado (Cochabamba),Cochabamba,,,724126,Province,Cochabamba,,Cochabamba,,CochabambaBolivia,county,2,BO-O,Provincia Cercado,,,,county,2,BO-C,Cercado,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Quillacollo,Cochabamba,,,403679,Province,Cochabamba,,Cochabamba,,CochabambaBolivia,county,2,BO-C,Quillacollo,,,,locality,,BO-C,Quillacollo,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Chapare,Cochabamba,,,310680,Province,Cochabamba,,Cochabamba,,CochabambaBolivia,county,2,BO-C,Chapare,,,,county,2,BO-C,Chapare,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Punata,Cochabamba,,,63505,Province,Cochabamba,,Cochabamba,,CochabambaBolivia,county,2,BO-C,Punata,,,,county,2,BO-C,Punata,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Esteban Arce,Cochabamba,,,44585,Province,Cochabamba,,Cochabamba,,CochabambaBolivia,county,2,BO-C,Esteban Arze,,,,county,2,BO-C,Esteban Arze,,,,,region,1,BO-C,Cochabamba,LOW,0.917,BO-C
+Bolivia,Germán Jordán,Cochabamba,,,37590,Province,Cochabamba,,Cochabamba,,CochabambaBolivia,county,2,BO-C,Germán Jordán,,,,county,2,BO-C,Germán Jordán,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Capinota,Cochabamba,,,34728,Province,Cochabamba,,Cochabamba,,CochabambaBolivia,county,2,BO-C,Capinota,,,,county,2,BO-C,Capinota,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Carrasco,Cochabamba,,,154299,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Carrasco,,,,county,2,BO-C,Carrasco,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Ayopaya,Cochabamba,,,58313,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Ayopaya,,,,county,2,BO-C,Ayopaya,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Tiraque,Cochabamba,,,46177,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Tiraque,,,,locality,,BO-C,Tiraque,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Mizque,Cochabamba,,,39196,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Mizque,,,,county,2,BO-C,Mizque,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Campero (Narciso Campero),Cochabamba,,,37810,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Campero,,,,county,2,BO-C,Campero,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Tapacarí,Cochabamba,,,25852,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Tapacarí,,,,locality,,BO-C,Tapacarí,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Arque,Cochabamba,,,21529,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Arque,,,,locality,,BO-C,Arque,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Arani,Cochabamba,,,19200,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Arani,,,,county,2,BO-C,Arani,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Bolívar,Cochabamba,,,7370,Province,,,#N/A,,CochabambaBolivia,county,2,BO-C,Bolívar,,,,locality,,BO-C,Bolivar,,,,,region,1,BO-C,Cochabamba,HIGH,1.0,BO-C
+Bolivia,Murillo (Pedro Domingo Murillo),La Paz,,,1819206,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Pedro Domingo Murillo,,,,,,,,,,,,region,1,BO-L,La Paz,NONE,0.0,BO-L
+Bolivia,Ingavi,La Paz,,,146888,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Ingavi,,,,county,2,BO-L,Ingavi,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Sud Yungas,La Paz,,,118630,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Sud Yungas,,,,county,2,BO-L,Provincia Sud Yungas,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Aroma,La Paz,,,99661,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Aroma,,,,locality,,BO-L,Aroma,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Larecaja,La Paz,,,92949,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Larecaja,,,,county,2,BO-L,Provincia Larecaja,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Omasuyos,La Paz,,,86409,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Omasuyos,,,,county,2,BO-L,Provincia Omasuyos,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Los Andes,La Paz,,,81008,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Los Andes,,,,county,2,BO-L,Provincia Los Andes,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Inquisivi,La Paz,,,71475,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Inquisivi,,,,locality,,BO-L,Inquisivi,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Caranavi,La Paz,,,65745,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Caranavi,,,,county,2,BO-L,Caranavi,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Pacajes,La Paz,,,55769,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Pacajes,,,,county,2,BO-L,Provincia Pacajes,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Camacho (Eliodoro Camacho),La Paz,,,53526,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia de Eliodoro Camacho,,,,,,,,,,,,region,1,BO-L,La Paz,NONE,0.0,BO-L
+Bolivia,Loayza,La Paz,,,49852,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Loayza,,,,county,2,BO-L,Provincia Loayza,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Nor Yungas,La Paz,,,39564,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Nor Yungas,,,,county,2,BO-L,Provincia Nor Yungas,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Franz Tamayo,La Paz,,,29127,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Franz Tamayo,,,,locality,,BO-L,Franz Tamayo,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Manco Kapac,La Paz,,,27743,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Manco Kapac,,,,county,2,BO-L,Provincia Manco Kapac,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Muñecas,La Paz,,,25720,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Muñecas,,,,county,2,BO-L,Provincia Muñecas,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Abel Iturralde,La Paz,,,19369,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Abel Iturralde,,,,county,2,BO-L,Provincia Abel Iturralde,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,Gualberto Villarroel,La Paz,,,18700,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Gualberto Villaroel,,,,,,,,,,,,region,1,BO-L,La Paz,NONE,0.0,BO-L
+Bolivia,Bautista Saavedra,La Paz,,,17242,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia Bautista Saavedra,,,,county,2,BO-L,Provincia Bautista Saavedra,,,,,region,1,BO-L,La Paz,HIGH,1.0,BO-L
+Bolivia,José Manuel Pando,La Paz,,,8413,Province,La Paz,,La Paz,,La PazBolivia,county,2,BO-L,Provincia General José Manuel Pando,,,,,,,,,,,,region,1,BO-L,La Paz,NONE,0.0,BO-L
+Bolivia,Cercado (Oruro),Oruro,,,349373,Province,Oruro,,Oruro,,OruroBolivia,county,2,BO-O,Provincia Cercado,,,,county,2,BO-O,Provincia Cercado,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Eduardo Avaroa,Oruro,,,35733,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Eduardo Abaroa,,,,county,2,BO-O,Eduardo Abaroa,,,,,region,1,BO-O,Oruro,MED,0.929,BO-O
+Bolivia,Pantaleón Dalence,Oruro,,,33057,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Pantaleón Dalence,,,,county,2,BO-O,Pantaleón Dalence,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Poopó,Oruro,,,17156,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Provincia Poopó,,,,locality,,BO-O,Poopó,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Ladislao Cabrera,Oruro,,,16872,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Ladislao Cabrera,,,,county,2,BO-O,Ladislao Cabrera,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Sebastián Pagador,Oruro,,,16633,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Provincia Sebastián Pagador,,,,county,2,BO-O,Provincia Sebastián Pagador,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Litoral de Atacama,Oruro,,,12154,Province,,,#N/A,,OruroBolivia,,,,,,,,,,,,,,,,region,1,BO-O,Oruro,NONE,0.0,BO-O
+Bolivia,Saucarí,Oruro,,,11653,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Provincia Saucarí,,,,county,2,BO-O,Provincia Saucarí,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Sabaya (Atahuallpa),Oruro,,,11502,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Provincia Sabaya,,,,locality,,BO-O,Sabaya,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Carangas,Oruro,,,11275,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Carangas,,,,county,2,BO-O,Carangas,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Sajama,Oruro,,,9247,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Sajama,,,,county,2,BO-O,Sajama,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Sud Carangas,Oruro,,,7507,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Provincia Sud Carangas,,,,county,2,BO-O,Provincia Sud Carangas,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,San Pedro de Totora,Oruro,,,5726,Province,,,#N/A,,OruroBolivia,county,2,BO-O,San Pedro de Totora,,,,locality,,BO-O,San Pedro de Totora,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Nor Carangas,Oruro,,,5715,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Nor Carangas,,,,county,2,BO-O,Nor Carangas,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Tomás Barrón,Oruro,,,4972,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Provincia Tomas Barron,,,,county,2,BO-O,Provincia Tomas Barron,,,,,region,1,BO-O,Oruro,HIGH,1.0,BO-O
+Bolivia,Puerto de Mejillones,Oruro,,,2541,Province,,,#N/A,,OruroBolivia,county,2,BO-O,Provincia Mejillones,,,,,,,,,,,,region,1,BO-O,Oruro,NONE,0.0,BO-O
+Bolivia,Nicolás Suárez,Pando,,,95982,Province,,,#N/A,,PandoBolivia,county,2,BO-N,Nicolás Suárez,,,,county,2,BO-N,Nicolás Suárez,,,,,region,1,BO-N,Pando,HIGH,1.0,BO-N
+Bolivia,Madre de Dios,Pando,,,29138,Province,,,#N/A,,PandoBolivia,county,2,BO-N,Provincia de Madre de Dios,,,,county,2,BO-N,Provincia de Madre de Dios,,,,,region,1,BO-N,Pando,HIGH,1.0,BO-N
+Bolivia,Manuripi,Pando,,,16752,Province,,,#N/A,,PandoBolivia,county,2,BO-N,Provincia de Manuripi,,,,county,2,BO-N,Provincia de Manuripi,,,,,region,1,BO-N,Pando,HIGH,1.0,BO-N
+Bolivia,Federico Román,Pando,,,8137,Province,,,#N/A,,PandoBolivia,county,2,BO-N,Provincia del General Federico Román,,,,,,,,,,,,region,1,BO-N,Pando,NONE,0.0,BO-N
+Bolivia,Abuná,Pando,,,4346,Province,,,#N/A,,PandoBolivia,county,2,BO-N,Provincia de Abuná,,,,county,2,BO-N,Provincia de Abuná,,,,,region,1,BO-N,Pando,HIGH,1.0,BO-N
+Bolivia,Tomás Frías,Potosí,,,265054,Province,Potosi,,Potosi,,PotosíBolivia,county,2,BO-P,Provincia Tomás Frías,,,,county,2,BO-P,Provincia Tomás Frías,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Chayanta,Potosí,,,103119,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Chayanta,,,,locality,,BO-P,Chayanta,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Rafael Bustillo,Potosí,,,94297,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Rafael Bustillo,,,,county,2,BO-P,Provincia Rafael Bustillo,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Antonio Quijarro,Potosí,,,67218,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Antonio Quijarro,,,,county,2,BO-P,Antonio Quijarro,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Sur Chichas (Sud Chichas),Potosí,,,61134,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Sur Chichas,,,,county,2,BO-P,Sur Chichas,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Cornelio Saavedra,Potosí,,,53307,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Cornelio Saavedra,,,,county,2,BO-P,Provincia Cornelio Saavedra,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Modesto Omiste,Potosí,,,50004,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Modesto Omiste,,,,county,2,BO-P,Provincia Modesto Omiste,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,José María Linares,Potosí,,,48053,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia José Maria Linares,,,,county,2,BO-P,Provincia José Maria Linares,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Nor Chichas,Potosí,,,44420,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Nor Chichas,,,,county,2,BO-P,Provincia Nor Chichas,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Charcas,Potosí,,,42806,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Charcas,,,,county,2,BO-P,Provincia Charcas,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Alonso de Ibáñez,Potosí,,,27621,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Alonso de Ibañez,,,,county,2,BO-P,Provincia Alonso de Ibañez,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Nor Lípez,Potosí,,,17266,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Nor Lípez,,,,county,2,BO-P,Provincia Nor Lípez,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Bernardino Bilbao Rioja,Potosí,,,10196,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia General Bernardino Bilbao Rioja,,,,,,,,,,,,region,1,BO-P,Potosí,NONE,0.0,BO-P
+Bolivia,Sur Lípez,Potosí,,,8606,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Sur Lípez,,,,county,2,BO-P,Provincia Sur Lípez,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Daniel Campos,Potosí,,,6742,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Daniel Campos,,,,county,2,BO-P,Daniel Campos,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Enrique Baldivieso,Potosí,,,1712,Province,,,#N/A,,PotosíBolivia,county,2,BO-P,Provincia Enrique Baldivieso,,,,county,2,BO-P,Provincia Enrique Baldivieso,,,,,region,1,BO-P,Potosí,HIGH,1.0,BO-P
+Bolivia,Obispo Santistevan,Santa Cruz,,,221142,Province,Montero,,Montero,,Santa CruzBolivia,county,2,BO-S,Provincia Obispo Santistevan,,,,county,2,BO-S,Provincia Obispo Santistevan,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Andrés Ibáñez,Santa Cruz,,,2035411,Province,Santa Cruz de la Sierra,,Santa Cruz de la Sierra,,Santa CruzBolivia,county,2,BO-S,Provincia Andrés Ibáñez,,,,county,2,BO-S,Provincia Andrés Ibáñez,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Warnes (Ignacio Warnes),Santa Cruz,,,228413,Province,Santa Cruz de la Sierra,,Santa Cruz de la Sierra,,Santa CruzBolivia,county,2,BO-S,Provincia Warnes,,,,locality,,BO-S,Warnes,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Ñuflo de Chávez,Santa Cruz,,,152874,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Provincia Ñuflo de Chávez,,,,county,2,BO-S,Provincia Ñuflo de Chávez,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Cordillera,Santa Cruz,,,139723,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Provincia Cordillera,,,,county,2,BO-S,Provincia Cordillera,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Ichilo,Santa Cruz,,,124657,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Provincia Ichilo,,,,county,2,BO-S,Provincia Ichilo,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Chiquitos,Santa Cruz,,,108520,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Chiquitos,,,,county,2,BO-S,Chiquitos,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Velasco (José Miguel de Velasco),Santa Cruz,,,83198,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Velasco,,,,county,2,BO-S,Velasco,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Guarayos,Santa Cruz,,,63593,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Provincia Guarayos,,,,county,2,BO-S,Provincia Guarayos,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Germán Busch,Santa Cruz,,,52533,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Germán Busch,,,,county,2,BO-S,Germán Busch,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Sara,Santa Cruz,,,49701,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Sara,,,,county,2,BO-S,Sara,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Florida,Santa Cruz,,,39578,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Provincia Florida,,,,locality,,BO-S,Florida,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Vallegrande,Santa Cruz,,,27543,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Vallegrande,,,,locality,,BO-S,Vallegrande,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Manuel María Caballero,Santa Cruz,,,27213,Province,,,#N/A,,Santa CruzBolivia,,,,,,,,,,,,,,,,region,1,BO-S,Santa Cruz,NONE,0.0,BO-S
+Bolivia,Ángel Sandoval,Santa Cruz,,,15960,Province,,,#N/A,,Santa CruzBolivia,county,2,BO-S,Provincia Ángel Sandóval,,,,county,2,BO-S,Provincia Ángel Sandóval,,,,,region,1,BO-S,Santa Cruz,HIGH,1.0,BO-S
+Bolivia,Cercado (Tarija),Tarija,,,268387,Province,Tarija,,Tarija,,TarijaBolivia,county,2,BO-O,Provincia Cercado,,,,county,2,BO-T,Provincia Cercado,,,,,region,1,BO-T,Tarija,HIGH,1.0,BO-T
+Bolivia,Gran Chaco,Tarija,,,172918,Province,Yacuíba,,Yacuíba,,TarijaBolivia,county,2,BO-T,Gran Chaco,,,,county,2,BO-T,Gran Chaco,,,,,region,1,BO-T,Tarija,HIGH,1.0,BO-T
+Bolivia,Aniceto Arce,Tarija,,,58986,Province,,,#N/A,,TarijaBolivia,,,,,,,,,,,,,,,,region,1,BO-T,Tarija,NONE,0.0,BO-T
+Bolivia,Méndez (Eustaquio Méndez),Tarija,,,37716,Province,,,#N/A,,TarijaBolivia,county,2,BO-T,Eustaquio Méndez,,,,,,,,,,,,region,1,BO-T,Tarija,NONE,0.0,BO-T
+Bolivia,Burdet O'Connor,Tarija,,,24107,Province,,,#N/A,,TarijaBolivia,county,2,BO-T,O'Connor,,,,,,,,,,,,region,1,BO-T,Tarija,NONE,0.0,BO-T
+Bolivia,Avilés (José María Avilés),Tarija,,,21216,Province,,,#N/A,,TarijaBolivia,county,2,BO-T,Provincia de José María Avilés,,,,,,,,,,,,region,1,BO-T,Tarija,NONE,0.0,BO-T

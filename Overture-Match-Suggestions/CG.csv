@@ -1,0 +1,93 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Congo,Kayes (incl. Nkayi commune),Bouenza,,,114622,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Madingou (incl. Madingou commune),Bouenza,,,81254,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Mouyondzi,Bouenza,,,37863,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Loudima,Bouenza,,,36644,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Mfouati,Bouenza,,,33017,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Kingoué,Bouenza,,,14399,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Mabombo,Bouenza,,,12145,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Boko-Songho,Bouenza,,,11563,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Yamba,Bouenza,,,11377,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Tsiaki,Bouenza,,,10966,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
+Congo,Brazzaville,Brazzaville,,,2138236,Commune,Brazzaville,,Brazzaville,,BrazzavilleCongo,,,,,,,,region,1,CG-BZV,Brazzaville (département),,,,,region,1,CG-BZV,Brazzaville (département),HIGH,1.0,CG-BZV
+Congo,Ile Mbamou,Brazzaville,,,7547,District,,,#N/A,,BrazzavilleCongo,,,,,,,,,,,,,,,,region,1,CG-BZV,Brazzaville (département),NONE,0.0,CG-BZV
+Congo,Oyo,Cuvette,,,70287,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
+Congo,Owando (incl. Owando commune),Cuvette,,,64358,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
+Congo,Mossaka,Cuvette,,,46605,District,,,#N/A,,CuvetteCongo,,,,,,,,county,2,CG-8,Mossaka,,,,,region,1,CG-8,Cuvette,HIGH,1.0,CG-8
+Congo,Loukoléla,Cuvette,,,42676,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
+Congo,Makoua,Cuvette,,,40004,District,,,#N/A,,CuvetteCongo,,,,,,,,county,2,CG-8,Makoua,,,,,region,1,CG-8,Cuvette,HIGH,1.0,CG-8
+Congo,Boundji,Cuvette,,,27577,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
+Congo,Tchikapika,Cuvette,,,9492,District,,,#N/A,,CuvetteCongo,,,,,,,,locality,,CG-8,Tchékapika,,,,,region,1,CG-8,Cuvette,LOW,0.9,CG-8
+Congo,Ntokou,Cuvette,,,5909,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
+Congo,Ngoko,Cuvette,,,5103,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
+Congo,Bokoma,Cuvette,,,4588,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
+Congo,Ewo (incl. Ewo commune),Cuvette-Ouest,,,42975,District,,,#N/A,,Cuvette-OuestCongo,,,,,,,,,,,,,,,,region,1,CG-15,Cuvette-Ouest,NONE,0.0,CG-15
+Congo,Etoumbi,Cuvette-Ouest,,,18748,District,,,#N/A,,Cuvette-OuestCongo,,,,,,,,,,,,,,,,region,1,CG-15,Cuvette-Ouest,NONE,0.0,CG-15
+Congo,Okoyo,Cuvette-Ouest,,,16041,District,,,#N/A,,Cuvette-OuestCongo,,,,,,,,,,,,,,,,region,1,CG-15,Cuvette-Ouest,NONE,0.0,CG-15
+Congo,Kéllé,Cuvette-Ouest,,,15748,District,,,#N/A,,Cuvette-OuestCongo,,,,,,,,,,,,,,,,region,1,CG-15,Cuvette-Ouest,NONE,0.0,CG-15
+Congo,Mbomo,Cuvette-Ouest,,,13197,District,,,#N/A,,Cuvette-OuestCongo,,,,,,,,,,,,,,,,region,1,CG-15,Cuvette-Ouest,NONE,0.0,CG-15
+Congo,Mbama,Cuvette-Ouest,,,12619,District,,,#N/A,,Cuvette-OuestCongo,,,,,,,,,,,,,,,,region,1,CG-15,Cuvette-Ouest,NONE,0.0,CG-15
+Congo,Loango,Kouilou,,,39531,District,,,#N/A,,KouilouCongo,,,,,,,,,,,,,,,,region,1,CG-5,Kouilou,NONE,0.0,CG-5
+Congo,Hinda,Kouilou,,,19264,District,,,#N/A,,KouilouCongo,,,,,,,,,,,,,,,,region,1,CG-5,Kouilou,NONE,0.0,CG-5
+Congo,Mvouti,Kouilou,,,19132,District,,,#N/A,,KouilouCongo,,,,,,,,,,,,,,,,region,1,CG-5,Kouilou,NONE,0.0,CG-5
+Congo,Kakamoeka,Kouilou,,,8729,District,,,#N/A,,KouilouCongo,,,,,,,,,,,,,,,,region,1,CG-5,Kouilou,NONE,0.0,CG-5
+Congo,Madingo-Kayes,Kouilou,,,8574,District,,,#N/A,,KouilouCongo,,,,,,,,,,,,,,,,region,1,CG-5,Kouilou,NONE,0.0,CG-5
+Congo,Nzambi,Kouilou,,,2132,District,,,#N/A,,KouilouCongo,,,,,,,,,,,,,,,,region,1,CG-5,Kouilou,NONE,0.0,CG-5
+Congo,Sibiti (incl. Sibiti commune),Lékoumou,,,54254,District,,,#N/A,,LékoumouCongo,,,,,,,,,,,,,,,,region,1,CG-2,Lékoumou,NONE,0.0,CG-2
+Congo,Zanaga,Lékoumou,,,16581,District,,,#N/A,,LékoumouCongo,,,,,,,,,,,,,,,,region,1,CG-2,Lékoumou,NONE,0.0,CG-2
+Congo,Mayéyé,Lékoumou,,,13239,District,,,#N/A,,LékoumouCongo,,,,,,,,locality,,CG-2,Mayéyé,,,,,region,1,CG-2,Lékoumou,HIGH,1.0,CG-2
+Congo,Komono,Lékoumou,,,12078,District,,,#N/A,,LékoumouCongo,,,,,,,,county,2,CG-2,Komono,,,,,region,1,CG-2,Lékoumou,HIGH,1.0,CG-2
+Congo,Bambama,Lékoumou,,,4407,District,,,#N/A,,LékoumouCongo,,,,,,,,,,,,,,,,region,1,CG-2,Lékoumou,NONE,0.0,CG-2
+Congo,Bétou,Likouala,,,126956,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
+Congo,Impfondo (incl. Impfondo commune),Likouala,,,54789,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
+Congo,Enyellé,Likouala,,,51188,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
+Congo,Dongou,Likouala,,,44027,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
+Congo,Epena,Likouala,,,32110,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
+Congo,Liranga,Likouala,,,30141,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
+Congo,Bouanéla,Likouala,,,16359,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
+Congo,Louvakou (incl. Dolisie commune),Niari,,,209889,District,Dolisie,,Dolisie,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Moutamba (incl. Mossendjo commune),Niari,,,22936,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Kimongo,Niari,,,18929,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Kibangou,Niari,,,13430,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Divénié,Niari,,,12268,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Makabana,Niari,,,11436,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Londéla-Kayes,Niari,,,10108,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Mayoko,Niari,,,8098,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Banda,Niari,,,7403,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Nyanga,Niari,,,6642,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Moungoundou-Sud,Niari,,,4710,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Mbinda,Niari,,,3956,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Yaya,Niari,,,3213,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Moungoundou-Nord,Niari,,,1845,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Gamboma,Plateaux,,,76073,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Makotimpoko,Plateaux,,,41242,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Ngo,Plateaux,,,34183,District,,,#N/A,,PlateauxCongo,,,,,,,,locality,,CG-14,Tongo,,,,,region,1,CG-14,Plateaux,LOW,0.8,CG-14
+Congo,Djambala (incl. Djambala commune),Plateaux,,,29583,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Ollombo,Plateaux,,,26854,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Mpouya,Plateaux,,,17603,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Ongogni,Plateaux,,,17381,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Lékana,Plateaux,,,15257,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Abala,Plateaux,,,13326,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Allembé,Plateaux,,,6208,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Mbon,Plateaux,,,5711,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
+Congo,Pointe-Noire,Pointe-Noire,,,1398812,Commune,Pointe-Noire,,Pointe-Noire,,Pointe-NoireCongo,,,,,,,,region,1,CG-16,Pointe-Noire (département),,,,,region,1,CG-16,Pointe-Noire (département),HIGH,1.0,CG-16
+Congo,Tchiamba-Nzassi,Pointe-Noire,,,21800,District,,,#N/A,,Pointe-NoireCongo,,,,,,,,,,,,,,,,region,1,CG-16,Pointe-Noire (département),NONE,0.0,CG-16
+Congo,Kimba,Pool,,,8092,District,Brazzaville,,Brazzaville,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Ignié (incl. Kintélé commune),Pool,,,108294,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Mindouli,Pool,,,63954,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Kinkala (incl. Kinkala commune),Pool,,,50528,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Ngabé,Pool,,,45442,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Goma Tsé-Tsé,Pool,,,42537,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Kindamba,Pool,,,19894,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Boko,Pool,,,15330,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Louingui,Pool,,,11933,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Mbandza-Ndounga,Pool,,,10003,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Vindza,Pool,,,7040,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Mayama,Pool,,,5893,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Loumo,Pool,,,5592,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Mokéko (incl. Ouesso commune),Sangha,,,108808,District,,,#N/A,,SanghaCongo,,,,,,,,,,,,,,,,region,1,CG-13,Sangha,NONE,0.0,CG-13
+Congo,Kabo (incl. Pokola commune),Sangha,,,38443,District,,,#N/A,,SanghaCongo,,,,,,,,,,,,,,,,region,1,CG-13,Sangha,NONE,0.0,CG-13
+Congo,Souanké,Sangha,,,25352,District,,,#N/A,,SanghaCongo,,,,,,,,,,,,,,,,region,1,CG-13,Sangha,NONE,0.0,CG-13
+Congo,Sembé,Sangha,,,18661,District,,,#N/A,,SanghaCongo,,,,,,,,,,,,,,,,region,1,CG-13,Sangha,NONE,0.0,CG-13
+Congo,Pikounda,Sangha,,,9418,District,,,#N/A,,SanghaCongo,,,,,,,,,,,,,,,,region,1,CG-13,Sangha,NONE,0.0,CG-13
+Congo,Ngbala,Sangha,,,9019,District,,,#N/A,,SanghaCongo,,,,,,,,,,,,,,,,region,1,CG-13,Sangha,NONE,0.0,CG-13

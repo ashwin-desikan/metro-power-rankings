@@ -1,0 +1,334 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Yemen,Khanfir,Abyan,,,109044,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية خنفر,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Lawdar,Abyan,,,88155,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية لودر,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Rasad,Abyan,,,54825,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية رصد,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Mudiyah,Abyan,,,34879,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية مودية,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Al Mahfad,Abyan,,,26870,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية المحفد,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Zingibar,Abyan,,,25524,District,,,#N/A,2004,AbyanYemen,,,,,,,,,,,,,,,,region,1,YE-AB,محافظة أبين,NONE,0.0,YE-AB
+Yemen,Ahwar,Abyan,,,25246,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية أحور,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Al Wade'a,Abyan,,,23400,District,,,#N/A,2004,AbyanYemen,,,,,,,,,,,,,,,,region,1,YE-AB,محافظة أبين,NONE,0.0,YE-AB
+Yemen,Sibah,Abyan,,,15996,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية سباح,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Sarar,Abyan,,,15093,District,,,#N/A,2004,AbyanYemen,,,,,,,,,,,,,,,,region,1,YE-AB,محافظة أبين,NONE,0.0,YE-AB
+Yemen,Jayshan,Abyan,,,14800,District,,,#N/A,2004,AbyanYemen,,,,,,,,locality,,YE-AB,مديرية جيشان,,,,,region,1,YE-AB,محافظة أبين,HIGH,1.0,YE-AB
+Yemen,Al Mansura,Aden,,,114931,District,,,#N/A,2004,AdenYemen,,,,,,,,locality,,YE-AD,مديرية المنصورة,,,,,region,1,YE-AD,محافظة عدن,HIGH,1.0,YE-AD
+Yemen,Ash Shaikh Outhman,Aden,,,105248,District,,,#N/A,2004,AdenYemen,,,,,,,,,,,,,,,,region,1,YE-AD,محافظة عدن,NONE,0.0,YE-AD
+Yemen,Dar Sad,Aden,,,79712,District,,,#N/A,2004,AdenYemen,,,,,,,,,,,,,,,,region,1,YE-AD,محافظة عدن,NONE,0.0,YE-AD
+Yemen,Craiter,Aden,,,76723,District,,,#N/A,2004,AdenYemen,,,,,,,,,,,,,,,,region,1,YE-AD,محافظة عدن,NONE,0.0,YE-AD
+Yemen,Al Buraiqeh,Aden,,,62405,District,,,#N/A,2004,AdenYemen,,,,,,,,,,,,,,,,region,1,YE-AD,محافظة عدن,NONE,0.0,YE-AD
+Yemen,Attawahi,Aden,,,52984,District,,,#N/A,2004,AdenYemen,,,,,,,,,,,,,,,,region,1,YE-AD,محافظة عدن,NONE,0.0,YE-AD
+Yemen,Al Mualla,Aden,,,49891,District,,,#N/A,2004,AdenYemen,,,,,,,,,,,,,,,,region,1,YE-AD,محافظة عدن,NONE,0.0,YE-AD
+Yemen,Khur Maksar,Aden,,,47044,District,,,#N/A,2004,AdenYemen,,,,,,,,,,,,,,,,region,1,YE-AD,محافظة عدن,NONE,0.0,YE-AD
+Yemen,Rada',Al Bayda,,,56382,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية رداع,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Al A'rsh,Al Bayda,,,45773,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية العرش,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,As Sawma'ah,Al Bayda,,,44873,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية الصومعة,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Mukayras,Al Bayda,,,41515,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية مكيراس,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Al Bayda,Al Bayda,,,40289,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية البيضاء,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Ash Sharyah,Al Bayda,,,33873,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية الشرية,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Al Bayda City,Al Bayda,,,29853,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية البيضاء,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Al Malagim,Al Bayda,,,29573,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية الملاجم,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Al Quraishyah,Al Bayda,,,29525,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية القريشية,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,At Taffah,Al Bayda,,,27692,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية الطفة,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Sabah,Al Bayda,,,27472,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية صباح,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,As Sawadiyah,Al Bayda,,,26763,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية السوادية,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Dhi Na'im,Al Bayda,,,25759,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية ذي ناعم,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Az Zahir,Al Bayda,,,25704,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية الزاهر,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Ar Ryashyyah,Al Bayda,,,22842,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية الرياشية,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Radman Al Awad,Al Bayda,,,20150,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,,,,,,,,,region,1,YE-BA,محافظة البيضاء,NONE,0.0,YE-BA
+Yemen,Wald Rabi',Al Bayda,,,19427,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية ولد ربيع,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Nati',Al Bayda,,,13604,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية ناطع,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Na'man,Al Bayda,,,9252,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية نعمان,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Maswarah,Al Bayda,,,7038,District,,,#N/A,2004,Al BaydaYemen,,,,,,,,locality,,YE-BA,مديرية مسورة,,,,,region,1,YE-BA,محافظة البيضاء,HIGH,1.0,YE-BA
+Yemen,Bayt Al Faqiah,Al Hudaydah,,,241300,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية بيت الفقيه,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Bajil,Al Hudaydah,,,169884,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية باجل,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Hali,Al Hudaydah,,,168071,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الحالي,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Zabid,Al Hudaydah,,,155585,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية زبيد,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Hawak,Al Hudaydah,,,155369,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الحوك,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Az Zuhrah,Al Hudaydah,,,138045,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الزهرة,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Marawi'ah,Al Hudaydah,,,129527,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية المراوعة,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Alluheyah,Al Hudaydah,,,105682,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية اللحية,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Az Zaydiyah,Al Hudaydah,,,95048,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الزيدية,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Mina,Al Hudaydah,,,91843,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الميناء,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Garrahi,Al Hudaydah,,,89163,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الجراحي,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Qanawis,Al Hudaydah,,,72336,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية القناوص,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,At Tuhayat,Al Hudaydah,,,67660,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية التحيتا,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,As Sukhnah,Al Hudaydah,,,59652,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية السخنة,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Ad Durayhimi,Al Hudaydah,,,55013,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الدريهمي,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Ad Dahi,Al Hudaydah,,,54503,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الضحي,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Hays,Al Hudaydah,,,45436,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية حيس,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Bura,Al Hudaydah,,,45116,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية برع,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Mansuriyah,Al Hudaydah,,,44744,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية المنصورية,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Jabal Ra's,Al Hudaydah,,,44674,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية جبل رأس,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Mighlaf,Al Hudaydah,,,39436,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية المغلاف,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Munirah,Al Hudaydah,,,37183,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية المنيرة,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Khawkhah,Al Hudaydah,,,33764,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الخوخة,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Al Hajjaylah,Al Hudaydah,,,9694,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الحجيلة,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,As Salif,Al Hudaydah,,,6343,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية الصليف,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Kamaran,Al Hudaydah,,,2465,District,,,#N/A,2004,Al HudaydahYemen,,,,,,,,locality,,YE-HU,مديرية كمران,,,,,region,1,YE-HU,محافظة الحديدة,HIGH,1.0,YE-HU
+Yemen,Khabb wa ash Sha'af,Al Jawf,,,80193,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية خب والشعف,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Rajuzah,Al Jawf,,,73723,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية رجوزة,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Kharab Al Marashi,Al Jawf,,,63532,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية خراب المراشي,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Bart Al Anan,Al Jawf,,,59463,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية برط العنان,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Hazm,Al Jawf,,,30952,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية الحزم,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Matammah,Al Jawf,,,28935,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية المطمة,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Maton,Al Jawf,,,28411,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية المتون,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Az Zahir,Al Jawf,,,24065,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية الزاهر,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Humaydat,Al Jawf,,,20026,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية الحميدات,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Khalq,Al Jawf,,,14123,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية الخلق,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Ghayl,Al Jawf,,,10436,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية الغيل,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Maslub,Al Jawf,,,9938,District,,,#N/A,2004,Al JawfYemen,,,,,,,,locality,,YE-JA,مديرية المصلوب,,,,,region,1,YE-JA,محافظة الجوف,HIGH,1.0,YE-JA
+Yemen,Al Ghaydah,Al Mahrah,,,27404,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,locality,,YE-MR,مديرية الغيضة,,,,,region,1,YE-MR,محافظة المهرة,HIGH,1.0,YE-MR
+Yemen,Sayhut,Al Mahrah,,,11746,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,,,,,,,,,region,1,YE-MR,محافظة المهرة,NONE,0.0,YE-MR
+Yemen,Qishn,Al Mahrah,,,11441,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,locality,,YE-MR,مديرية قشن,,,,,region,1,YE-MR,محافظة المهرة,HIGH,1.0,YE-MR
+Yemen,Huswain,Al Mahrah,,,11130,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,,,,,,,,,region,1,YE-MR,محافظة المهرة,NONE,0.0,YE-MR
+Yemen,Al Masilah,Al Mahrah,,,10404,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,,,,,,,,,region,1,YE-MR,محافظة المهرة,NONE,0.0,YE-MR
+Yemen,Man'ar,Al Mahrah,,,5388,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,,,,,,,,,region,1,YE-MR,محافظة المهرة,NONE,0.0,YE-MR
+Yemen,Hawf,Al Mahrah,,,5143,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,locality,,YE-MR,مديرية حوف,,,,,region,1,YE-MR,محافظة المهرة,HIGH,1.0,YE-MR
+Yemen,Shahan,Al Mahrah,,,3152,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,,,,,,,,,region,1,YE-MR,محافظة المهرة,NONE,0.0,YE-MR
+Yemen,Hat,Al Mahrah,,,2786,District,,,#N/A,2004,Al MahrahYemen,,,,,,,,locality,,YE-MR,مديرية حات,,,,,region,1,YE-MR,محافظة المهرة,HIGH,1.0,YE-MR
+Yemen,Milhan,Al Mahwit,,,89224,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية ملحان,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,Ar Rujum,Al Mahwit,,,75708,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية الرجم,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,Al Khabt,Al Mahwit,,,64033,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية الخبت,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,Bani Sa'd,Al Mahwit,,,59015,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية بني سعد,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,At Tawilah,Al Mahwit,,,58862,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية الطويلة,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,Al Mahwait,Al Mahwit,,,50526,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية المحويت,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,Shibam Kawkaban,Al Mahwit,,,39163,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية شبام كوكبان,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,Hufash,Al Mahwit,,,37884,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية حفاش,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,Al Mahwait City,Al Mahwit,,,20134,District,,,#N/A,2004,Al MahwitYemen,,,,,,,,locality,,YE-MW,مديرية المحويت,,,,,region,1,YE-MW,محافظة المحويت,HIGH,1.0,YE-MW
+Yemen,As Sabain,Amanat Al Asimaha,,,311203,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,locality,,YE-SA,مديرية السبعين,,,,,region,1,YE-SA,أمانة العاصمة,HIGH,1.0,YE-SA
+Yemen,Ma'ain,Amanat Al Asimaha,,,265469,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Shu'aub,Amanat Al Asimaha,,,213939,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Bani Al Harith,Amanat Al Asimaha,,,184509,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Ath'thaorah,Amanat Al Asimaha,,,170145,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Az'zal,Amanat Al Asimaha,,,115054,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Assafi'yah,Amanat Al Asimaha,,,109109,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Al Wahdah,Amanat Al Asimaha,,,99956,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,locality,,YE-SA,مديرية الوحدة,,,,,region,1,YE-SA,أمانة العاصمة,HIGH,1.0,YE-SA
+Yemen,At Tahrir,Amanat Al Asimaha,,,66898,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,locality,,YE-SA,مديرية التحرير,,,,,region,1,YE-SA,أمانة العاصمة,HIGH,1.0,YE-SA
+Yemen,Old City,Amanat Al Asimaha,,,63398,District,,,#N/A,2004,Amanat Al AsimahaYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Amran,'Amran,,,96375,District,,,#N/A,2004,'AmranYemen,,,,,,,,region,1,YE-AM,محافظة عمران,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Jabal Iyal Yazid,'Amran,,,84393,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية جبل عيال يزيد,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Khamir,'Amran,,,73225,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية قضاء خمر,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Iyal Surayh,'Amran,,,54015,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية عيال سريح,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Raydah,'Amran,,,46631,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية ريدة,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Kharif,'Amran,,,45977,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية خارف,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Al Ashah,'Amran,,,43859,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية العشة,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Shaharah,'Amran,,,43738,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية شهارة,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Harf Sufyan,'Amran,,,42480,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية حرف سفيان,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Thula,'Amran,,,40971,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية ثلاء,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Habur Zulaymah,'Amran,,,39334,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية حبور ظليمة,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Maswar,'Amran,,,38432,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية مسور,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Al Qaflah,'Amran,,,36722,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية القفلة,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Bani Suraim,'Amran,,,32698,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية بني صريم,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,As Sudah,'Amran,,,32169,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية السودة,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Dhi Bin,'Amran,,,30799,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية ذي بين,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Al Madan,'Amran,,,26955,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية المدان,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,As Sawd,'Amran,,,25892,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية السود,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Huth,'Amran,,,22267,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية حوث,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Suwayr,'Amran,,,20854,District,,,#N/A,2004,'AmranYemen,,,,,,,,locality,,YE-AM,مديرية صـوير,,,,,region,1,YE-AM,محافظة عمران,HIGH,1.0,YE-AM
+Yemen,Qa'atabah,Dhale,,,91206,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية قعطبة,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Ad Dhale'e,Dhale,,,80213,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية الضالع,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Damt,Dhale,,,60944,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية دمت,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Al Husha,Dhale,,,60178,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية الحشاء,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Juban,Dhale,,,42397,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية جبن,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Ash Shu'ayb,Dhale,,,38261,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية الشعيب,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Al Azariq,Dhale,,,37295,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية الازارق,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Al Hussein,Dhale,,,37118,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية الحصين,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Jahaf,Dhale,,,22897,District,,,#N/A,2004,DhaleYemen,,,,,,,,locality,,YE-DA,مديرية جحاف,,,,,region,1,YE-DA,محافظة الضالع,HIGH,1.0,YE-DA
+Yemen,Dhamar City,Dhamar,,,175159,District,,,#N/A,2004,DhamarYemen,,,,,,,,region,1,YE-DH,محافظة ذمار,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Wusab Al Ali,Dhamar,,,164223,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية وصاب العالي,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Wusab As Safil,Dhamar,,,149531,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية وصاب السافل,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Utmah,Dhamar,,,145284,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية عتمة,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Al Hada,Dhamar,,,143100,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية الحداء,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Dawran Aness,Dhamar,,,121553,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية ضوران اًنس,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Anss,Dhamar,,,119124,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية قضاء عنس,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Jahran,Dhamar,,,86590,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية جهران,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Jabal Ash Sharq,Dhamar,,,62034,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية جبل الشرق,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Mayfa'at Anss,Dhamar,,,60854,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية ميفعة عنس,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Maghirib Ans,Dhamar,,,53261,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية مغرب عنس,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Al Manar,Dhamar,,,49390,District,,,#N/A,2004,DhamarYemen,,,,,,,,locality,,YE-DH,مديرية المنار,,,,,region,1,YE-DH,محافظة ذمار,HIGH,1.0,YE-DH
+Yemen,Al Mukalla City,Hadramaut,,,184635,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Sayun,Hadramaut,,,102409,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Tarim,Hadramaut,,,100617,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية تريم,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Ash Shihr,Hadramaut,,,73482,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Al Qatn,Hadramaut,,,64248,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية القطن,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Ghayl Ba Wazir,Hadramaut,,,48831,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية غيل باوزير,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Shibam,Hadramaut,,,48829,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية شبام,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Ar Raydah Wa Qusayar,Hadramaut,,,45180,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Daw'an,Hadramaut,,,43836,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Wadi Al Ayn,Hadramaut,,,28474,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Ghayl Bin Yamin,Hadramaut,,,28120,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Hajr,Hadramaut,,,25566,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Sah,Hadramaut,,,24146,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية ساه,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Ad Dis,Hadramaut,,,23092,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Amd,Hadramaut,,,20052,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Huraidhah,Hadramaut,,,18684,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Adh Dhlia'ah,Hadramaut,,,18678,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Brom Mayfa,Hadramaut,,,17327,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Al Mukalla,Hadramaut,,,16748,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,As Sawm,Hadramaut,,,12666,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية السوم,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Yabuth,Hadramaut,,,9862,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية يبعث,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Rakhyah,Hadramaut,,,8715,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Rumah,Hadramaut,,,6357,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Thamud,Hadramaut,,,4402,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية ثمود,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Al Abr,Hadramaut,,,3348,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Hagr As Sai'ar,Hadramaut,,,2474,District,,,#N/A,2004,HadramautYemen,,,,,,,,,,,,,,,,region,1,YE-HD,محافظة حضرموت,NONE,0.0,YE-HD
+Yemen,Al Qaf,Hadramaut,,,2145,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية القف,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Zamakh wa Manwakh,Hadramaut,,,1505,District,,,#N/A,2004,HadramautYemen,,,,,,,,locality,,YE-HD,مديرية زمخ ومنوخ,,,,,region,1,YE-HD,محافظة حضرموت,HIGH,1.0,YE-HD
+Yemen,Abs,Hajjah,,,133824,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية عبس,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Harad,Hajjah,,,93523,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية حرض,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Kushar,Hajjah,,,74176,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية كشر,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Ku'aydinah,Hajjah,,,69332,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية كعيدنة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Khayran Al Muharraq,Hajjah,,,68707,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية خيران المحرق,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Al Maghrabah,Hajjah,,,64440,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية المغربة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Washhah,Hajjah,,,62617,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية وشحة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Bani Qa'is,Hajjah,,,54272,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية بني قيس,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Aflah Ash Shawm,Hajjah,,,54054,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية أفلح الشام,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Hajjah City,Hajjah,,,53887,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية مدينة حجة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Bani Al Awam,Hajjah,,,52222,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية بني العوام,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Al Mahabishah,Hajjah,,,50865,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية المحابشة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Mabyan,Hajjah,,,50732,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية مبين,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Qafl Shamer,Hajjah,,,50439,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية قفل شمر,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Aslem,Hajjah,,,49227,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية أسلم,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Ash Shaghadirah,Hajjah,,,48746,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية الشغادرة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Kuhlan Ash Sharaf,Hajjah,,,44760,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية كحلان الشرف,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Mustaba,Hajjah,,,42531,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية مستباء,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Al Jamimah,Hajjah,,,41211,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية الجميمة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Kuhlan Affar,Hajjah,,,40333,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية كحلان عفار,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Aflah Al Yaman,Hajjah,,,38874,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية أفلح اليمن,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Najrah,Hajjah,,,35942,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية نجرة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Ash Shahil,Hajjah,,,32548,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية الشاهل,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Al Miftah,Hajjah,,,31691,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية المفتاح,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Qarah,Hajjah,,,30641,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية قارة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Hajjah,Hajjah,,,29533,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية مدينة حجة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Bakil Al Mir,Hajjah,,,21701,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية بكيل المير,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Midi,Hajjah,,,16604,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية ميدي,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Sharas,Hajjah,,,15707,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية شرس,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Hayran,Hajjah,,,15491,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية حيران,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Wadhrah,Hajjah,,,10928,District,,,#N/A,2004,HajjahYemen,,,,,,,,locality,,YE-HJ,مديرية وضرة,,,,,region,1,YE-HJ,محافظة حجة,HIGH,1.0,YE-HJ
+Yemen,Yarim,Ibb,,,175014,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية يريم,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Dhi As Sufal,Ibb,,,163019,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية قضاء ذي السفال,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Al Dhihar,Ibb,,,154399,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية الظهار,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Ibb,Ibb,,,143641,District,,,#N/A,2004,IbbYemen,,,,,,,,region,1,YE-IB,محافظة إب,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Al Udayn,Ibb,,,143578,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية العدين,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Ba'dan,Ibb,,,116045,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية بعدان,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Al Makhadir,Ibb,,,113892,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية المخادر,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Jiblah,Ibb,,,112481,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية جبلة,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,As Sayyani,Ibb,,,110515,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية السياني,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Hubaysh,Ibb,,,105998,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية حبيش,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Al Qafr,Ibb,,,103272,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية القفر,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Al Mashannah,Ibb,,,101148,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية المشنة,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Far Al Udayn,Ibb,,,89011,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية فرع العدين,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,As Saddah,Ibb,,,82502,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية السدة,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Hazm Al Udayn,Ibb,,,79483,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية حزم العدين,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Mudhaykhirah,Ibb,,,77835,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية مذيخرة,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Ar Radmah,Ibb,,,76576,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية الرضمة,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,An Nadirah,Ibb,,,73755,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية النادرة,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,As Sabrah,Ibb,,,69872,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية السبرة,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Ash Sha'ir,Ibb,,,39805,District,,,#N/A,2004,IbbYemen,,,,,,,,locality,,YE-IB,مديرية الشعر,,,,,region,1,YE-IB,محافظة إب,HIGH,1.0,YE-IB
+Yemen,Al Qabbaytah,Lahij,,,94516,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية القبيطة,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Tuban,Lahij,,,83444,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية تبن,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Yafa'a,Lahij,,,75014,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية يافع,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Al Maqatirah,Lahij,,,54613,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية المقاطرة,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Al Had,Lahij,,,53159,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية الحد,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Tur Al Bahah,Lahij,,,47426,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية طور الباحة,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Al Madaribah Wa Al Arah,Lahij,,,45808,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية المضاربة والعارة,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Radfan,Lahij,,,45570,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية ردفان,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Habil Jabr,Lahij,,,41474,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية حبيل جبر,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Al Maflahy,Lahij,,,38524,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية المفلحي,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Yahr,Lahij,,,37148,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية يهر,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Halimayn,Lahij,,,27871,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية حالمين,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Al Milah,Lahij,,,27636,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية الملاح,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Al Musaymir,Lahij,,,26558,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية المسيمير,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Al Hawtah,Lahij,,,25881,District,,,#N/A,2004,LahijYemen,,,,,,,,locality,,YE-LA,مديرية الحوطة,,,,,region,1,YE-LA,محافظة لحج,HIGH,1.0,YE-LA
+Yemen,Marib,Ma'rib,,,39495,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية مأرب,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Harib,Ma'rib,,,33663,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية حريب,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Marib City,Ma'rib,,,32143,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية مأرب,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Al Jubah,Ma'rib,,,21093,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية الجوبة,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Sirwah,Ma'rib,,,19939,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية صرواح,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Bidbadah,Ma'rib,,,18214,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية بدبدة,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Al Abdiyah,Ma'rib,,,13000,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية العبدية,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Medghal,Ma'rib,,,10654,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية مدغل,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Majzar,Ma'rib,,,10477,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية مجزر,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Jabal Murad,Ma'rib,,,10280,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية جبل مراد,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Mahliyah,Ma'rib,,,9156,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,,,,,,,,,region,1,YE-MA,محافظة مأرب,NONE,0.0,YE-MA
+Yemen,Harib Al Qaramish,Ma'rib,,,8573,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية حريب القرامش,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Rahabah,Ma'rib,,,7441,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية رحبة,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,Raghwan,Ma'rib,,,4391,District,,,#N/A,2004,Ma'ribYemen,,,,,,,,locality,,YE-MA,مديرية رغوان,,,,,region,1,YE-MA,محافظة مأرب,HIGH,1.0,YE-MA
+Yemen,As Salafiyah,Raymah,,,82540,District,,,#N/A,2004,RaymahYemen,,,,,,,,locality,,YE-RA,مديرية السلفية,,,,,region,1,YE-RA,محافظة ريمة,HIGH,1.0,YE-RA
+Yemen,Kusmah,Raymah,,,74622,District,,,#N/A,2004,RaymahYemen,,,,,,,,locality,,YE-RA,مديرية كسمة,,,,,region,1,YE-RA,محافظة ريمة,HIGH,1.0,YE-RA
+Yemen,Al Jabin,Raymah,,,71777,District,,,#N/A,2004,RaymahYemen,,,,,,,,locality,,YE-RA,مديرية الجبين,,,,,region,1,YE-RA,محافظة ريمة,HIGH,1.0,YE-RA
+Yemen,Al Jafariyah,Raymah,,,69705,District,,,#N/A,2004,RaymahYemen,,,,,,,,locality,,YE-RA,مديرية الجعفرية,,,,,region,1,YE-RA,محافظة ريمة,HIGH,1.0,YE-RA
+Yemen,Mazhar,Raymah,,,64661,District,,,#N/A,2004,RaymahYemen,,,,,,,,locality,,YE-RA,مديرية مزهر,,,,,region,1,YE-RA,محافظة ريمة,HIGH,1.0,YE-RA
+Yemen,Bilad At Ta'am,Raymah,,,31143,District,,,#N/A,2004,RaymahYemen,,,,,,,,locality,,YE-RA,مديرية بلاد الطعام,,,,,region,1,YE-RA,محافظة ريمة,HIGH,1.0,YE-RA
+Yemen,Sahar,Sa'dah,,,133060,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية سحار,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Majz,Sa'dah,,,68598,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية مجز,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Razih,Sa'dah,,,62915,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية قضاء رازح,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Haydan,Sa'dah,,,60331,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية حيدان,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Sa'adah,Sa'dah,,,58695,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية صعدة,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Saqayn,Sa'dah,,,52521,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية ساقين,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Monabbih,Sa'dah,,,51823,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية منبة,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,As Safra,Sa'dah,,,50845,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية الصفراء,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Kitaf wa Al Boqe'e,Sa'dah,,,43034,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية كتاف,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Baqim,Sa'dah,,,22965,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية باقم,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Qatabir,Sa'dah,,,22658,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية قطابر,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Al Dhaher,Sa'dah,,,22394,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية الظهار,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Ghamr,Sa'dah,,,19718,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية غمر,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Al Hashwah,Sa'dah,,,14274,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية الحشوة,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Shada'a,Sa'dah,,,11202,District,,,#N/A,2004,Sa'dahYemen,,,,,,,,locality,,YE-SD,مديرية شداء,,,,,region,1,YE-SD,محافظة صعدة,HIGH,1.0,YE-SD
+Yemen,Bani Matar,Sana'a,,,100012,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Arhab,Sana'a,,,90038,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية أرحب,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Hamdan,Sana'a,,,85370,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية همدان,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Al Haymah Ad Dakhiliyah,Sana'a,,,83234,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Sanhan,Sana'a,,,80399,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Manakhah,Sana'a,,,78932,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية مناخة,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Bani Hushaysh,Sana'a,,,73957,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Al Haymah Al Kharijiyah,Sana'a,,,58454,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية الحيمة الخارجية,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Jihanah,Sana'a,,,50747,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية جحانة,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Nihm,Sana'a,,,41502,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية نهم,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Attyal,Sana'a,,,36253,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Sa'fan,Sana'a,,,33722,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية صعفان,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Bilad Ar Rus,Sana'a,,,31259,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Al Husn,Sana'a,,,30124,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Khwlan,Sana'a,,,28925,District,,,#N/A,2004,Sana'aYemen,,,,,,,,,,,,,,,,region,1,YE-SN,محافظة صنعاء,NONE,0.0,YE-SN
+Yemen,Bani Dhabyan,Sana'a,,,16262,District,,,#N/A,2004,Sana'aYemen,,,,,,,,locality,,YE-SN,مديرية بني ضبيان,,,,,region,1,YE-SN,محافظة صنعاء,HIGH,1.0,YE-SN
+Yemen,Bayhan,Shabwah,,,48347,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية بيحان,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Nisab,Shabwah,,,42050,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية نصاب,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Mayfa'a,Shabwah,,,41597,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية ميفعة,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Merkhah As Sufla,Shabwah,,,40635,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية مرخة السفلى,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Ataq,Shabwah,,,37315,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية عتق,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,As Said,Shabwah,,,35034,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية الصعيد,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Merkhah Al Ulya,Shabwah,,,32278,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية مرخة العليا,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Usaylan,Shabwah,,,31518,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية عسيلان,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Habban,Shabwah,,,29846,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية حبان,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Ar Rawdah,Shabwah,,,27371,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية الروضة,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Rudum,Shabwah,,,23244,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية رضوم,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Ain,Shabwah,,,22051,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية عين,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Jardan,Shabwah,,,16270,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية جردان,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Hatib,Shabwah,,,13335,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية حطيب,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Arma,Shabwah,,,10188,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية عرماء,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Dhar,Shabwah,,,9927,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية دهر,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Al Talh,Shabwah,,,9404,District,,,#N/A,2004,ShabwahYemen,,,,,,,,locality,,YE-SH,مديرية الطلح,,,,,region,1,YE-SH,محافظة شبوة,HIGH,1.0,YE-SH
+Yemen,Hidaybu,Socotrab,,,34011,District,,,#N/A,2004,SocotrabYemen,,,,,,,,locality,,YE-SU,مديرية حديبو,,,,,region,1,YE-SU,محافظة أرخبيل سقطرى,HIGH,1.0,YE-SU
+Yemen,Qulensya Wa Abd Al Kuri,Socotrab,,,10109,District,,,#N/A,2004,SocotrabYemen,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Yemen,Salh,Taiz,,,198169,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية صالة,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Shara'b Ar Rawnah,Taiz,,,186955,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية شرعب الرونة,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Hayfan,Taiz,,,171315,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية حيفان,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,As Silw,Taiz,,,152486,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية الصلو,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Al Qahirah,Taiz,,,149394,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية القاهرة,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Shara'b As Salam,Taiz,,,146650,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية شرعب السلام,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Al Mudhaffar,Taiz,,,146259,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية المظفر,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Mawiyah,Taiz,,,129765,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية قضاء ماوية,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Mawza,Taiz,,,119818,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية موزع,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Al Mawasit,Taiz,,,115857,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية المواسط,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Al Misrakh,Taiz,,,112653,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية المسراخ,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Al Ma'afer,Taiz,,,110924,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية المعافر,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,At Ta'iziyah,Taiz,,,109814,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية التعزية,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Mashra'a Wa Hadnan,Taiz,,,109533,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية مشرعة وحدنان,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Sabir Al Mawadim,Taiz,,,100254,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية صبر الموادم,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Al Wazi'iyah,Taiz,,,75288,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية الوازعية,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Maqbanah,Taiz,,,62471,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية مقبنة,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Dimnat Khadir,Taiz,,,49832,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية دمنة خدير,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Sama,Taiz,,,41464,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية سامع,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Dhubab,Taiz,,,35054,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية ذباب,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Ash Shamayatayn,Taiz,,,26790,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية الشمايتين,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Jabal Habashy,Taiz,,,24544,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية جبل حبشي,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA
+Yemen,Al Mukha,Taiz,,,18155,District,,,#N/A,2004,TaizYemen,,,,,,,,locality,,YE-TA,مديرية قضاء المخاء,,,,,region,1,YE-TA,محافظة تعز,HIGH,1.0,YE-TA

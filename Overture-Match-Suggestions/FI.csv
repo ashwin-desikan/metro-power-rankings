@@ -1,0 +1,309 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Finland,Mariehamn,Åland Islands,,,11957,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Jomala,Åland Islands,,,5817,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Finström,Åland Islands,,,2625,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Lemland,Åland Islands,,,2139,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Saltvik,Åland Islands,,,1802,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Hammarland,Åland Islands,,,1644,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Sund,Åland Islands,,,1018,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,locality,,FI-12,Sunti,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Eckerö,Åland Islands,,,961,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Geta,Åland Islands,,,512,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Föglö,Åland Islands,,,512,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Vårdö,Åland Islands,,,465,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,locality,,FI-18,Vartiosaari,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Brändö,Åland Islands,,,430,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,locality,,FI-18,Kulosaari,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Lumparland,Åland Islands,,,371,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Kumlinge,Åland Islands,,,271,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Kökar,Åland Islands,,,211,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Sottunga,Åland Islands,,,101,Municipality,Mariehamn,,Mariehamn,2025,Åland IslandsFinland,,,,,,,,,,,,,,,,,NONE,0.0,
+Finland,Jyväskylä,Central Finland,,,144473,Municipality,Jyvaskyla,,Jyvaskyla,2025,Central FinlandFinland,,,,,locality,,FI-08,Jyväskylä,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Jämsä,Central Finland,,,19767,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Jämsä,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Laukaa,Central Finland,,,18788,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Laukaa,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Äänekoski,Central Finland,,,18318,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Äänekoski,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Muurame,Central Finland,,,10426,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Muurame,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Keuruu,Central Finland,,,9443,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Keuruu,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Saarijärvi,Central Finland,,,9117,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Saarijärvi,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Viitasaari,Central Finland,,,6070,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Viitasaari,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Hankasalmi,Central Finland,,,4683,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Hankasalmi,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Joutsa,Central Finland,,,4263,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Joutsa,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Pihtipudas,Central Finland,,,3873,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Pihtipudas,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Karstula,Central Finland,,,3774,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Karstula,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Petäjävesi,Central Finland,,,3678,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Petäjävesi,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Uurainen,Central Finland,,,3634,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Uurainen,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Konnevesi,Central Finland,,,2586,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Konnevesi,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Toivakka,Central Finland,,,2387,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Toivakka,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Kinnula,Central Finland,,,1581,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Kinnula,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Multia,Central Finland,,,1488,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Multia,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Kannonkoski,Central Finland,,,1311,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Kannonkoski,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Kyyjärvi,Central Finland,,,1232,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Kyyjärvi,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Kivijärvi,Central Finland,,,1088,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Kivijärvi,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Luhanka,Central Finland,,,703,Municipality,,,#N/A,2025,Central FinlandFinland,,,,,locality,,FI-08,Luhanka,,,,,region,1,FI-08,Keski-Suomi,HIGH,1.0,FI-08
+Finland,Kokkola (Karleby),Central Ostrobothnia,,,47909,Municipality,Kokkola,,Kokkola,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Kokkola,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Kannus,Central Ostrobothnia,,,5390,Municipality,,,#N/A,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Kannus,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Kaustinen,Central Ostrobothnia,,,4196,Municipality,,,#N/A,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Kaustinen,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Veteli,Central Ostrobothnia,,,3004,Municipality,,,#N/A,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Veteli,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Toholampi,Central Ostrobothnia,,,2938,Municipality,,,#N/A,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Toholampi,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Perho,Central Ostrobothnia,,,2676,Municipality,,,#N/A,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Perho,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Halsua,Central Ostrobothnia,,,1083,Municipality,,,#N/A,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Halsua,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Lestijärvi,Central Ostrobothnia,,,719,Municipality,,,#N/A,2025,Central OstrobothniaFinland,,,,,locality,,FI-07,Lestijärvi,,,,,region,1,FI-07,Keski-Pohjanmaa,HIGH,1.0,FI-07
+Finland,Turku (Åbo),Finland Proper,,,209633,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Turku,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Kaarina,Finland Proper,,,36675,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Kaarina,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Raisio,Finland Proper,,,26036,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Raisio,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Lieto (incl. Tarvasjoki),Finland Proper,,,20732,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Lieto,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Naantali,Finland Proper,,,20390,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Naantali,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Paimio,Finland Proper,,,11284,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Paimio,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Masku,Finland Proper,,,9612,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Masku,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Mynämäki,Finland Proper,,,7424,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Mynämäki,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Rusko,Finland Proper,,,6381,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-11,Rusko,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Nousiainen,Finland Proper,,,4667,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Nousiainen,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Sauvo,Finland Proper,,,2957,Municipality,Turku,,Turku,2025,Finland ProperFinland,,,,,locality,,FI-19,Sauvo,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Salo,Finland Proper,,,50339,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Salo,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Loimaa,Finland Proper,,,15124,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Loimaa,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Uusikaupunki,Finland Proper,,,14783,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Uusikaupunki,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Pargas (Parainen),Finland Proper,,,14712,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Pargas,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Laitila,Finland Proper,,,8400,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Laitila,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Somero,Finland Proper,,,8339,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Somero,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Pöytyä,Finland Proper,,,7903,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Pöytyä,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Kimitoön (Kemiönsaari),Finland Proper,,,6340,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Kimitoön,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Aura,Finland Proper,,,3937,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Aura,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Vehmaa,Finland Proper,,,2263,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Vehmaa,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Koski Tl,Finland Proper,,,2144,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Koski Tl,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Pyhäranta,Finland Proper,,,1892,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Pyhäranta,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Marttila,Finland Proper,,,1890,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-03,Marttila,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Taivassalo,Finland Proper,,,1707,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Taivassalo,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Oripää,Finland Proper,,,1264,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Oripää,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Kustavi,Finland Proper,,,972,Municipality,,,#N/A,2025,Finland ProperFinland,,,,,locality,,FI-19,Kustavi,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Kajaani,Kainuu,,,36493,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Kajaani,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Sotkamo,Kainuu,,,10348,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Sotkamo,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Kuhmo,Kainuu,,,7928,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Kuhmo,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Suomussalmi,Kainuu,,,7508,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Suomussalmi,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Paltamo,Kainuu,,,3183,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Paltamo,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Puolanka,Kainuu,,,2446,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Puolanka,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Hyrynsalmi,Kainuu,,,2139,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Hyrynsalmi,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Ristijärvi,Kainuu,,,1210,Municipality,,,#N/A,2025,KainuuFinland,,,,,locality,,FI-05,Ristijärvi,,,,,region,1,FI-05,Kainuu,HIGH,1.0,FI-05
+Finland,Kotka,Kymenlaakso,,,51241,Municipality,Kotka,,Kotka,2025,KymenlaaksoFinland,,,,,locality,,FI-09,Kotka,,,,,region,1,FI-09,Kymenlaakso,HIGH,1.0,FI-09
+Finland,Kouvola,Kymenlaakso,,,80454,Municipality,Kouvola,,Kouvola,2025,KymenlaaksoFinland,,,,,locality,,FI-09,Kouvola,,,,,region,1,FI-09,Kymenlaakso,HIGH,1.0,FI-09
+Finland,Hamina,Kymenlaakso,,,19702,Municipality,,,#N/A,2025,KymenlaaksoFinland,,,,,locality,,FI-09,Hamina,,,,,region,1,FI-09,Kymenlaakso,HIGH,1.0,FI-09
+Finland,Pyhtää (Pyttis),Kymenlaakso,,,5119,Municipality,,,#N/A,2025,KymenlaaksoFinland,,,,,locality,,FI-09,Pyhtää,,,,,region,1,FI-09,Kymenlaakso,HIGH,1.0,FI-09
+Finland,Virolahti,Kymenlaakso,,,3040,Municipality,,,#N/A,2025,KymenlaaksoFinland,,,,,locality,,FI-09,Virolahti,,,,,region,1,FI-09,Kymenlaakso,HIGH,1.0,FI-09
+Finland,Miehikkälä,Kymenlaakso,,,1835,Municipality,,,#N/A,2025,KymenlaaksoFinland,,,,,locality,,FI-09,Miehikkälä,,,,,region,1,FI-09,Kymenlaakso,HIGH,1.0,FI-09
+Finland,Kittilä,Lapland,,,6523,Municipality,Kittilä,,Kittilä,2025,LaplandFinland,,,,,locality,,FI-10,Kittilä,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Rovaniemi,Lapland,,,64180,Municipality,Rovaniemi,,Rovaniemi,2025,LaplandFinland,,,,,locality,,FI-10,Rovaniemi,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Tornio,Lapland,,,21333,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Tornio,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Kemi,Lapland,,,19982,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Kemi,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Sodankylä,Lapland,,,8187,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Sodankylä,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Keminmaa,Lapland,,,7904,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Keminmaa,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Kemijärvi,Lapland,,,7105,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Kemijärvi,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Inari,Lapland,,,7008,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Inari,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Kolari,Lapland,,,3989,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Kolari,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Ylitornio,Lapland,,,3830,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Ylitornio,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Ranua,Lapland,,,3670,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Ranua,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Salla,Lapland,,,3416,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Salla,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Pello,Lapland,,,3296,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Pello,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Posio,Lapland,,,3066,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Posio,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Simo,Lapland,,,2904,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Simo,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Tervola,Lapland,,,2882,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Tervola,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Muonio,Lapland,,,2321,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Muonio,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Enontekiö,Lapland,,,1789,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Enontekiö,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Utsjoki,Lapland,,,1176,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Utsjoki,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Savukoski,Lapland,,,1009,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Savukoski,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Pelkosenniemi,Lapland,,,924,Municipality,,,#N/A,2025,LaplandFinland,,,,,locality,,FI-10,Pelkosenniemi,,,,,region,1,FI-10,Lappi,HIGH,1.0,FI-10
+Finland,Joensuu,North Karelia,,,77261,Municipality,Joensuu,,Joensuu,2025,North KareliaFinland,,,,,locality,,FI-13,Joensuu,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Kontiolahti,North Karelia,,,15035,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Kontiolahti,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Liperi,North Karelia,,,11979,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Liperi,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Lieksa,North Karelia,,,10543,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Lieksa,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Kitee (incl. Kesälahti),North Karelia,,,9877,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Kitee,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Nurmes (incl. Valtimo),North Karelia,,,9423,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Nurmes,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Outokumpu,North Karelia,,,6506,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Outokumpu,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Ilomantsi,North Karelia,,,4643,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Ilomantsi,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Juuka,North Karelia,,,4444,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Juuka,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Tohmajärvi,North Karelia,,,4241,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Tohmajärvi,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Polvijärvi,North Karelia,,,4161,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Polvijärvi,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Heinävesi,North Karelia,,,3136,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Heinävesi,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Rääkkylä,North Karelia,,,2032,Municipality,,,#N/A,2025,North KareliaFinland,,,,,locality,,FI-13,Rääkkylä,,,,,region,1,FI-13,Pohjois-Karjala,HIGH,1.0,FI-13
+Finland,Kuusamo,Northern Ostrobothnia,,,15165,Municipality,Kuusamo,,Kuusamo,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Kuusamo,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,"Oulu (incl. Haukipudas, Kiiminki, Oulunsalo & Yli-Ii)",Northern Ostrobothnia,,,209551,Municipality,Oulu,,Oulu,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Oulu,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Raahe (incl. Vihanti),Northern Ostrobothnia,,,24260,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Raahe,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Kempele,Northern Ostrobothnia,,,19116,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Kempele,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Ylivieska,Northern Ostrobothnia,,,15357,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Ylivieska,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Kalajoki,Northern Ostrobothnia,,,12412,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Kalajoki,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Nivala,Northern Ostrobothnia,,,10396,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Nivala,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Liminka,Northern Ostrobothnia,,,10218,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Liminka,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Ii,Northern Ostrobothnia,,,9912,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Ii,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Muhos,Northern Ostrobothnia,,,8909,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Muhos,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Pudasjärvi,Northern Ostrobothnia,,,7702,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Pudasjärvi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Oulainen,Northern Ostrobothnia,,,7102,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Oulainen,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Haapajärvi,Northern Ostrobothnia,,,6802,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Haapajärvi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Haapavesi,Northern Ostrobothnia,,,6613,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Haapavesi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Tyrnävä,Northern Ostrobothnia,,,6593,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Tyrnävä,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Siikalatva,Northern Ostrobothnia,,,5131,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Siikalatva,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Siikajoki,Northern Ostrobothnia,,,5028,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Siikajoki,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Pyhäjärvi,Northern Ostrobothnia,,,4964,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Pyhäjärvi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Sievi,Northern Ostrobothnia,,,4781,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Sievi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Taivalkoski,Northern Ostrobothnia,,,3913,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Taivalkoski,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Pyhäjoki,Northern Ostrobothnia,,,3048,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Pyhäjoki,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Reisjärvi,Northern Ostrobothnia,,,2690,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Reisjärvi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Vaala,Northern Ostrobothnia,,,2673,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-19,Vaala,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Utajärvi,Northern Ostrobothnia,,,2568,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Utajärvi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Kärsämäki,Northern Ostrobothnia,,,2533,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-19,Kärsämäki,,,,,region,1,FI-19,Varsinais-Suomi,HIGH,1.0,FI-19
+Finland,Alavieska,Northern Ostrobothnia,,,2491,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Alavieska,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Lumijoki,Northern Ostrobothnia,,,2018,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Lumijoki,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Pyhäntä,Northern Ostrobothnia,,,1631,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Pyhäntä,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Merijärvi,Northern Ostrobothnia,,,1076,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Merijärvi,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,Hailuoto,Northern Ostrobothnia,,,950,Municipality,,,#N/A,2025,Northern OstrobothniaFinland,,,,,locality,,FI-14,Hailuoto,,,,,region,1,FI-14,Pohjois-Pohjanmaa,HIGH,1.0,FI-14
+Finland,"Kuopio (incl. Juankoski, Maaninka, Nilsiä)",Northern Savonia,,,121543,Municipality,Kuopio,,Kuopio,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Kuopio,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Siilinjärvi,Northern Savonia,,,21293,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Siilinjärvi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Iisalmi,Northern Savonia,,,20958,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Iisalmi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Varkaus,Northern Savonia,,,19973,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Varkaus,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Leppävirta,Northern Savonia,,,9280,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Leppävirta,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Lapinlahti,Northern Savonia,,,9247,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Lapinlahti,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Kiuruvesi,Northern Savonia,,,7759,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Kiuruvesi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Suonenjoki,Northern Savonia,,,6891,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Suonenjoki,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Joroinen,Northern Savonia,,,4624,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Joroinen,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Pielavesi,Northern Savonia,,,4269,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Pielavesi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Sonkajärvi,Northern Savonia,,,3777,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Sonkajärvi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Vieremä,Northern Savonia,,,3490,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-18,Vieremä,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Rautalampi,Northern Savonia,,,3033,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Rautalampi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Kaavi,Northern Savonia,,,2778,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Kaavi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Tuusniemi,Northern Savonia,,,2420,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Tuusniemi,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Keitele,Northern Savonia,,,2095,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Keitele,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Vesanto,Northern Savonia,,,1941,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Vesanto,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Rautavaara,Northern Savonia,,,1513,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Rautavaara,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Tervo,Northern Savonia,,,1479,Municipality,,,#N/A,2025,Northern SavoniaFinland,,,,,locality,,FI-15,Tervo,,,,,region,1,FI-15,Pohjois-Savo,HIGH,1.0,FI-15
+Finland,Jakobstad (Pietarsaari),Ostrobothnia,,,19097,Municipality,Jakobstad,,Jakobstad,2025,OstrobothniaFinland,,,,,locality,,FI-12,Jakobstad,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Vaasa (Vasa; incl. Vähäkyrö),Ostrobothnia,,,67615,Municipality,Vaasa,,Vaasa,2025,OstrobothniaFinland,,,,,locality,,FI-12,Vaasa,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Korsholm (Mustasaari),Ostrobothnia,,,19536,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Korsholm,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Pedersöre (Pedersören kunta),Ostrobothnia,,,11172,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Pedersöre,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Närpes (Närpiö),Ostrobothnia,,,9562,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Närpes,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Laihia,Ostrobothnia,,,7916,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Laihia,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Nykarleby (Uusikaarlepyy),Ostrobothnia,,,7497,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Nykarleby,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Kronoby (Kruunupyy),Ostrobothnia,,,6442,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Kronoby,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Kristinestad (Kristiinankaupunki),Ostrobothnia,,,6380,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Kristinestad,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Vörå (Vöyri),Ostrobothnia,,,6376,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Vörå,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Larsmo (Luoto),Ostrobothnia,,,5622,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Larsmo,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Malax (Maalahti),Ostrobothnia,,,5487,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Malax,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Korsnäs,Ostrobothnia,,,2050,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Korsnäs,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Kaskinen (Kaskö),Ostrobothnia,,,1289,Municipality,,,#N/A,2025,OstrobothniaFinland,,,,,locality,,FI-12,Kaskinen,,,,,region,1,FI-12,Österbotten,HIGH,1.0,FI-12
+Finland,Lahti (incl. Nastola),Päijänne Tavastia,,,120027,Municipality,Lahti,,Lahti,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Lahti,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Hollola (incl. Hämeenkoski),Päijänne Tavastia,,,23090,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Hollola,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Heinola,Päijänne Tavastia,,,18344,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Heinola,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Orimattila,Päijänne Tavastia,,,15808,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Orimattila,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Asikkala,Päijänne Tavastia,,,8033,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Asikkala,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Iitti,Päijänne Tavastia,,,6559,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Iitti,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Kärkölä,Päijänne Tavastia,,,4245,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Kärkölä,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Sysmä,Päijänne Tavastia,,,3584,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Sysmä,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Padasjoki,Päijänne Tavastia,,,2813,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Padasjoki,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Hartola,Päijänne Tavastia,,,2621,Municipality,,,#N/A,2025,Päijänne TavastiaFinland,,,,,locality,,FI-16,Hartola,,,,,region,1,FI-16,Päijät-Häme,HIGH,1.0,FI-16
+Finland,Tampere,Pirkanmaa,,,244223,Municipality,Tampere,,Tampere,2025,PirkanmaaFinland,,,,,locality,,FI-11,Tampere,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Nokia,Pirkanmaa,,,34884,Municipality,Tampere,,Tampere,2025,PirkanmaaFinland,,,,,locality,,FI-11,Nokia,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Ylöjärvi,Pirkanmaa,,,33533,Municipality,Tampere,,Tampere,2025,PirkanmaaFinland,,,,,locality,,FI-11,Ylöjärvi,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Kangasala,Pirkanmaa,,,32622,Municipality,Tampere,,Tampere,2025,PirkanmaaFinland,,,,,locality,,FI-11,Kangasala,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Pirkkala,Pirkanmaa,,,20206,Municipality,Tampere,,Tampere,2025,PirkanmaaFinland,,,,,locality,,FI-11,Pirkkala,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Valkeakoski,Pirkanmaa,,,20695,Municipality,Valkeakoski,,Valkeakoski,2025,PirkanmaaFinland,,,,,locality,,FI-11,Valkeakoski,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Lempäälä,Pirkanmaa,,,24164,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Lempäälä,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Sastamala (incl. Kiikoinen),Pirkanmaa,,,23998,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Sastamala,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Akaa,Pirkanmaa,,,16467,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Akaa,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Hämeenkyrö,Pirkanmaa,,,10337,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Hämeenkyrö,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Mänttä-Vilppula,Pirkanmaa,,,9563,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Mänttä-Vilppula,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Orivesi,Pirkanmaa,,,8978,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Orivesi,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Ikaalinen,Pirkanmaa,,,6877,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Ikaalinen,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Virrat,Pirkanmaa,,,6465,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Virrat,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Pälkäne,Pirkanmaa,,,6439,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Pälkäne,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Parkano,Pirkanmaa,,,6286,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Parkano,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Urjala,Pirkanmaa,,,4669,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Urjala,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Vesilahti,Pirkanmaa,,,4444,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Vesilahti,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Ruovesi,Pirkanmaa,,,4155,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Ruovesi,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Punkalaidun,Pirkanmaa,,,2721,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Punkalaidun,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Kuhmoinen,Pirkanmaa,,,2158,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Kuhmoinen,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Kihniö,Pirkanmaa,,,1808,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Kihniö,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Juupajoki,Pirkanmaa,,,1786,Municipality,,,#N/A,2025,PirkanmaaFinland,,,,,locality,,FI-11,Juupajoki,,,,,region,1,FI-11,Pirkanmaa,HIGH,1.0,FI-11
+Finland,Pori (incl. Lavia),Satakunta,,,83482,Municipality,Pori,,Pori,2025,SatakuntaFinland,,,,,locality,,FI-17,Pori,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Rauma,Satakunta,,,38959,Municipality,Rauma,,Rauma,2025,SatakuntaFinland,,,,,locality,,FI-17,Rauma,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Ulvila,Satakunta,,,12669,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Ulvila,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Kankaanpää (incl. Honkajoki),Satakunta,,,12662,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Kankaanpää,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Eura,Satakunta,,,11417,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Eura,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Huittinen,Satakunta,,,9870,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Huittinen,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Eurajoki (incl. Luvia),Satakunta,,,9334,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Eurajoki,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Kokemäki,Satakunta,,,6951,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Kokemäki,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Harjavalta,Satakunta,,,6785,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Harjavalta,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Säkylä (incl. Köyliö),Satakunta,,,6588,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Säkylä,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Nakkila,Satakunta,,,5169,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Nakkila,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Merikarvia,Satakunta,,,3055,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Merikarvia,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Karvia,Satakunta,,,2290,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Karvia,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Pomarkku,Satakunta,,,2013,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Pomarkku,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Jämijärvi,Satakunta,,,1685,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Jämijärvi,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Siikainen,Satakunta,,,1352,Municipality,,,#N/A,2025,SatakuntaFinland,,,,,locality,,FI-17,Siikainen,,,,,region,1,FI-17,Satakunta,HIGH,1.0,FI-17
+Finland,Lappeenranta,South Karelia,,,73241,Municipality,Lappeenranta,,Lappeenranta,2025,South KareliaFinland,,,,,locality,,FI-02,Lappeenranta,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Imatra,South Karelia,,,24345,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Imatra,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Ruokolahti,South Karelia,,,4679,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Ruokolahti,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Taipalsaari,South Karelia,,,4574,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Taipalsaari,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Luumäki,South Karelia,,,4304,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Luumäki,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Parikkala,South Karelia,,,4235,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Parikkala,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Savitaipale,South Karelia,,,3094,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Savitaipale,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Rautjärvi,South Karelia,,,2888,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Rautjärvi,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Lemi,South Karelia,,,2878,Municipality,,,#N/A,2025,South KareliaFinland,,,,,locality,,FI-02,Lemi,,,,,region,1,FI-02,Etelä-Karjala,HIGH,1.0,FI-02
+Finland,Seinäjoki,Southern Ostrobothnia,,,64736,Municipality,Seinäjoki,,Seinäjoki,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Seinäjoki,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Kurikka (incl. Jalasjärvi),Southern Ostrobothnia,,,20197,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Kurikka,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Kauhava,Southern Ostrobothnia,,,15312,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Kauhava,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Lapua,Southern Ostrobothnia,,,14203,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Lapua,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Kauhajoki,Southern Ostrobothnia,,,12890,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Kauhajoki,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Ilmajoki,Southern Ostrobothnia,,,12366,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Ilmajoki,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Alavus (incl. Töysä),Southern Ostrobothnia,,,10634,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Alavus,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Alajärvi,Southern Ostrobothnia,,,8982,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Alajärvi,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Ähtäri,Southern Ostrobothnia,,,5121,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Ähtäri,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Teuva,Southern Ostrobothnia,,,4952,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Teuva,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Isokyrö,Southern Ostrobothnia,,,4480,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Isokyrö,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Kuortane,Southern Ostrobothnia,,,3528,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Kuortane,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Lappajärvi,Southern Ostrobothnia,,,2866,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Lappajärvi,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Vimpeli,Southern Ostrobothnia,,,2756,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Vimpeli,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Evijärvi,Southern Ostrobothnia,,,2404,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Evijärvi,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Soini,Southern Ostrobothnia,,,1997,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Soini,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Isojoki,Southern Ostrobothnia,,,1891,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Isojoki,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Karijoki,Southern Ostrobothnia,,,1192,Municipality,,,#N/A,2025,Southern OstrobothniaFinland,,,,,locality,,FI-03,Karijoki,,,,,region,1,FI-03,Etelä-Pohjanmaa,HIGH,1.0,FI-03
+Finland,Mikkeli (incl. Ristiina & Suomenniemi),Southern Savonia,,,52122,Municipality,Mikkeli,,Mikkeli,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Mikkeli,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Savonlinna (incl. Kerimäki & Punkaharju),Southern Savonia,,,32547,Municipality,Savonlinna,,Savonlinna,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Savonlinna,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Pieksämäki,Southern Savonia,,,17253,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Pieksämäki,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Juva,Southern Savonia,,,5887,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Juva,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Mäntyharju,Southern Savonia,,,5635,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Mäntyharju,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Kangasniemi,Southern Savonia,,,5230,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Kangasniemi,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Rantasalmi,Southern Savonia,,,3330,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Rantasalmi,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Sulkava,Southern Savonia,,,2430,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Sulkava,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Hirvensalmi,Southern Savonia,,,2131,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Hirvensalmi,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Puumala,Southern Savonia,,,2117,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Puumala,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Enonkoski,Southern Savonia,,,1362,Municipality,,,#N/A,2025,Southern SavoniaFinland,,,,,locality,,FI-04,Enonkoski,,,,,region,1,FI-04,Etelä-Savo,HIGH,1.0,FI-04
+Finland,Hämeenlinna,Tavastia Proper,,,67971,Municipality,Hämeenlinna,,Hämeenlinna,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Hämeenlinna,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Riihimäki,Tavastia Proper,,,28521,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Riihimäki,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Forssa,Tavastia Proper,,,16573,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Forssa,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Janakkala,Tavastia Proper,,,16340,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Janakkala,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Hattula,Tavastia Proper,,,9405,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Hattula,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Hausjärvi,Tavastia Proper,,,8143,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Hausjärvi,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Loppi,Tavastia Proper,,,7799,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Loppi,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Tammela,Tavastia Proper,,,5967,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Tammela,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Jokioinen,Tavastia Proper,,,5046,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Jokioinen,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Ypäjä,Tavastia Proper,,,2282,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Ypäjä,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Humppila,Tavastia Proper,,,2166,Municipality,,,#N/A,2025,Tavastia ProperFinland,,,,,locality,,FI-06,Humppila,,,,,region,1,FI-06,Kanta-Häme,HIGH,1.0,FI-06
+Finland,Helsinki (Helsingfors),Uusimaa,,,658457,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Helsinki,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Espoo (Esbo),Uusimaa,,,297132,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Espoo,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Vantaa (Vanda),Uusimaa,,,239206,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Vantaa,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Porvoo (Borgå),Uusimaa,,,51149,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Porvoo,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Hyvinkää,Uusimaa,,,46880,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Hyvinkää,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Lohja (Lojo; incl. Karjalohja & Nummi-Pusula),Uusimaa,,,45988,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Lohja,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Järvenpää,Uusimaa,,,45226,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Järvenpää,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Nurmijärvi,Uusimaa,,,44127,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Nurmijärvi,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Kirkkonummi (Kyrkslätt),Uusimaa,,,40433,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Kirkkonummi,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Tuusula,Uusimaa,,,39718,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Tuusula,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Kerava,Uusimaa,,,37232,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Kerava,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Vihti,Uusimaa,,,28852,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Vihti,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Raseborg (Raasepori),Uusimaa,,,27484,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Raseborg,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Sipoo (Sibbo),Uusimaa,,,22190,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Sipoo,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Mäntsälä,Uusimaa,,,20837,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Mäntsälä,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Loviisa (Lovisa),Uusimaa,,,14643,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Loviisa,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Kauniainen (Grankulla),Uusimaa,,,10396,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Kauniainen,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Karkkila,Uusimaa,,,8717,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Karkkila,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Hanko (Hangö),Uusimaa,,,7979,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Hanko,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Siuntio (Sjundeå),Uusimaa,,,6198,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Siuntio,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Ingå (Inkoo),Uusimaa,,,5353,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Ingå,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Pornainen,Uusimaa,,,5066,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Pornainen,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Askola,Uusimaa,,,4847,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Askola,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Lapinjärvi (Lappträsk),Uusimaa,,,2580,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Lapinjärvi,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Pukkila,Uusimaa,,,1848,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Pukkila,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18
+Finland,Myrskylä (Mörskom),Uusimaa,,,1816,Municipality,Helsinki,,Helsinki,2025,UusimaaFinland,,,,,locality,,FI-18,Myrskylä,,,,,region,1,FI-18,Uusimaa,HIGH,1.0,FI-18

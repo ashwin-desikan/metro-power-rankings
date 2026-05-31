@@ -1,0 +1,337 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Venezuela,Atures,Amazonas,,,144111,Municipality,,,#N/A,,AmazonasVenezuela,,,,,county,2,VE-Z,Municipio Autónomo Atures,,,,,region,1,VE-Z,Amazonas,HIGH,1.0,VE-Z
+Venezuela,Alto Orinoco,Amazonas,,,15734,Municipality,,,#N/A,,AmazonasVenezuela,,,,,county,2,VE-Z,Municipio Autónomo Alto Orinoco,,,,,region,1,VE-Z,Amazonas,HIGH,1.0,VE-Z
+Venezuela,Atabapo,Amazonas,,,11655,Municipality,,,#N/A,,AmazonasVenezuela,,,,,county,2,VE-Z,Municipio Autónomo Atabapo,,,,,region,1,VE-Z,Amazonas,HIGH,1.0,VE-Z
+Venezuela,Autana,Amazonas,,,11078,Municipality,,,#N/A,,AmazonasVenezuela,,,,,county,2,VE-Z,Municipio Autónomo Autana,,,,,region,1,VE-Z,Amazonas,HIGH,1.0,VE-Z
+Venezuela,Manapiare,Amazonas,,,9822,Municipality,,,#N/A,,AmazonasVenezuela,,,,,county,2,VE-Z,Municipio Autónomo Manapiare,,,,,region,1,VE-Z,Amazonas,HIGH,1.0,VE-Z
+Venezuela,Río Negro,Amazonas,,,2875,Municipality,,,#N/A,,AmazonasVenezuela,,,,,county,2,VE-Z,Municipio Autónomo Río Negro,,,,,region,1,VE-Z,Amazonas,HIGH,1.0,VE-Z
+Venezuela,Maroa,Amazonas,,,2578,Municipality,,,#N/A,,AmazonasVenezuela,,,,,locality,,VE-Z,Maroa,,,,,region,1,VE-Z,Amazonas,HIGH,1.0,VE-Z
+Venezuela,Juan Antonio Sotillo,Anzoátegui,,,300908,Municipality,Puerto La Cruz,,Puerto La Cruz,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Sotillo,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Diego Bautista Urbaneja,Anzoátegui,,,46887,Municipality,Puerto La Cruz,,Puerto La Cruz,,AnzoáteguiVenezuela,,,,,,,,,,,,,region,1,VE-B,Anzoátegui,NONE,0.0,VE-B
+Venezuela,Guanta,Anzoátegui,,,37907,Municipality,Puerto La Cruz,,Puerto La Cruz,,AnzoáteguiVenezuela,,,,,locality,,VE-B,Guanta,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Simón Bolívar,Anzoátegui,,,499976,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Simón Bolívar,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Simón Rodríguez,Anzoátegui,,,219622,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Simón Rodríguez,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Anaco,Anzoátegui,,,148480,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,locality,,VE-B,Anaco,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Pedro María Freites,Anzoátegui,,,85394,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Freites,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,San José de Guanipa,Anzoátegui,,,82608,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,locality,,VE-B,San José de Guanipa,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Francisco de Miranda,Anzoátegui,,,46709,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Miranda,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Fernando de Peñalver,Anzoátegui,,,43893,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Fernando de Peñalver,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Independencia,Anzoátegui,,,38249,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Independencia,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Manuel Ezequiel Bruzual,Anzoátegui,,,36352,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Bruzual,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Aragua,Anzoátegui,,,34721,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,locality,,VE-B,Aragua,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Píritu,Anzoátegui,,,28725,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,locality,,VE-B,Píritu,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,José Gregorio Monagas,Anzoátegui,,,19618,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Monagas,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Libertad,Anzoátegui,,,17858,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Libertad,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Francisco del Carmen Carvajal,Anzoátegui,,,16206,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Carvajal,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Juan Manuel Cajigal,Anzoátegui,,,15937,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio Cajigal,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,Sir Arthur Mc Gregor,Anzoátegui,,,11749,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,,,,,,,,,region,1,VE-B,Anzoátegui,NONE,0.0,VE-B
+Venezuela,Santa Ana,Anzoátegui,,,11325,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,locality,,VE-B,Santa Ana,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,San Juan de Capistrano,Anzoátegui,,,10732,Municipality,,,#N/A,,AnzoáteguiVenezuela,,,,,county,2,VE-B,Municipio San Juan de Capistrano,,,,,region,1,VE-B,Anzoátegui,HIGH,1.0,VE-B
+Venezuela,San Fernando,Apure,,,227065,Municipality,,,#N/A,,ApureVenezuela,,,,,locality,,VE-C,San Fernando,,,,,region,1,VE-C,Apure,HIGH,1.0,VE-C
+Venezuela,Páez,Apure,,,128022,Municipality,,,#N/A,,ApureVenezuela,,,,,,,,,,,,,region,1,VE-C,Apure,NONE,0.0,VE-C
+Venezuela,Achaguas,Apure,,,78979,Municipality,,,#N/A,,ApureVenezuela,,,,,locality,,VE-C,Achaguas,,,,,region,1,VE-C,Apure,HIGH,1.0,VE-C
+Venezuela,Biruaca,Apure,,,75060,Municipality,,,#N/A,,ApureVenezuela,,,,,locality,,VE-C,Biruaca,,,,,region,1,VE-C,Apure,HIGH,1.0,VE-C
+Venezuela,Pedro Camejo,Apure,,,40478,Municipality,,,#N/A,,ApureVenezuela,,,,,county,2,VE-C,Municipio Pedro Camejo,,,,,region,1,VE-C,Apure,HIGH,1.0,VE-C
+Venezuela,Muñoz,Apure,,,35069,Municipality,,,#N/A,,ApureVenezuela,,,,,county,2,VE-C,Municipio Muñoz,,,,,region,1,VE-C,Apure,HIGH,1.0,VE-C
+Venezuela,Rómulo Gallegos,Apure,,,33679,Municipality,,,#N/A,,ApureVenezuela,,,,,county,2,VE-C,Municipio Rómulo Gallegos,,,,,region,1,VE-C,Apure,HIGH,1.0,VE-C
+Venezuela,Girardot,Aragua,,,471428,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Girardot,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Santiago Mariño,Aragua,,,243890,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Mariño,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,José Félix Ribas,Aragua,,,166494,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Ribas,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Zamora,Aragua,,,161867,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Zamora,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Francisco Linares Alcántara,Aragua,,,140137,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Linares,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Sucre,Aragua,,,136439,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Sucre,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Libertador,Aragua,,,129394,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Libertador,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Mario Briceño Iragorry,Aragua,,,114919,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Iragorry,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,José Ángel Lamas,Aragua,,,36435,Municipality,Maracay,,Maracay,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Lamas,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,José Rafael Revenga,Aragua,,,56114,Municipality,,,#N/A,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Revenga,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Santos Michelena,Aragua,,,43199,Municipality,,,#N/A,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Santos Michelena,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Bolívar,Aragua,,,41710,Municipality,,,#N/A,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Bolívar,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,San Casimiro,Aragua,,,28288,Municipality,,,#N/A,,AraguaVenezuela,,,,,locality,,VE-D,San Casimiro,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,San Sebastián,Aragua,,,26363,Municipality,,,#N/A,,AraguaVenezuela,,,,,locality,,VE-D,San Sebastián,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Urdaneta,Aragua,,,23735,Municipality,,,#N/A,,AraguaVenezuela,,,,,county,2,VE-D,Municipio Urdaneta,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Camatagua,Aragua,,,19254,Municipality,,,#N/A,,AraguaVenezuela,,,,,locality,,VE-D,Camatagua,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Tovar,Aragua,,,16232,Municipality,,,#N/A,,AraguaVenezuela,,,,,locality,,VE-D,Tovar,,,,,region,1,VE-D,Aragua,HIGH,1.0,VE-D
+Venezuela,Ocumare de La Costa de Oro,Aragua,,,15005,Municipality,,,#N/A,,AraguaVenezuela,,,,,,,,,,,,,region,1,VE-D,Aragua,NONE,0.0,VE-D
+Venezuela,Barinas,Barinas,,,420241,Municipality,Barinas,,Barinas,,BarinasVenezuela,,,,,region,1,VE-E,Barinas,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Alberto Arvelo Torrealba,Barinas,,,47121,Municipality,Sabaneta,,Sabaneta,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Torrealba,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Antonio José de Sucre,Barinas,,,89401,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Sucre,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Pedraza,Barinas,,,75664,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Pedraza,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Bolívar,Barinas,,,60627,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Bolívar,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Ezequiel Zamora,Barinas,,,59890,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Zamora,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Rojas,Barinas,,,45832,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Rojas,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Obispos,Barinas,,,41545,Municipality,,,#N/A,,BarinasVenezuela,,,,,locality,,VE-E,Obispos,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Arismendi,Barinas,,,30752,Municipality,,,#N/A,,BarinasVenezuela,,,,,locality,,VE-E,Arismendi,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Cruz Paredes,Barinas,,,29186,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Cruz Paredes,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Sosa,Barinas,,,27363,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Sosa,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Andrés Eloy Blanco,Barinas,,,17761,Municipality,,,#N/A,,BarinasVenezuela,,,,,county,2,VE-E,Municipio Andrés Eloy Blanco,,,,,region,1,VE-E,Barinas,HIGH,1.0,VE-E
+Venezuela,Caroní,Bolívar,,,935786,Municipality,Ciudad Guayana,,Ciudad Guayana,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Caroní,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Heres,Bolívar,,,433939,Municipality,,,#N/A,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Heres,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Piar,Bolívar,,,130215,Municipality,,,#N/A,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Piar,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Cedeño,Bolívar,,,106310,Municipality,,,#N/A,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Cedeño,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Sifontes,Bolívar,,,65524,Municipality,,,#N/A,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Sifontes,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Bolivariano Angostura (Raúl Leoni),Bolívar,,,54412,Municipality,,,#N/A,,BolívarVenezuela,,,,,,,,,,,,,region,1,VE-F,Bolívar,NONE,0.0,VE-F
+Venezuela,Gran Sabana,Bolívar,,,39690,Municipality,,,#N/A,,BolívarVenezuela,,,,,locality,,VE-F,Gran Sabana,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Roscio,Bolívar,,,28511,Municipality,,,#N/A,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Roscio,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,El Callao,Bolívar,,,26490,Municipality,,,#N/A,,BolívarVenezuela,,,,,locality,,VE-F,El Callao,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Sucre,Bolívar,,,25382,Municipality,,,#N/A,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Sucre,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Padre Pedro Chien,Bolívar,,,19161,Municipality,,,#N/A,,BolívarVenezuela,,,,,county,2,VE-F,Municipio Padre Pedro Chién,,,,,region,1,VE-F,Bolívar,HIGH,1.0,VE-F
+Venezuela,Puerto Cabello,Carabobo,,,201424,Municipality,Puerto Cabello,,Puerto Cabello,,CaraboboVenezuela,,,,,locality,,VE-G,Puerto Cabello,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Valencia,Carabobo,,,936071,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,locality,,VE-G,Valencia,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Guacara,Carabobo,,,196917,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,locality,,VE-G,Guacara,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Libertador,Carabobo,,,190115,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,county,2,VE-G,Municipio Libertador,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Naguanagua,Carabobo,,,189358,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,locality,,VE-G,Naguanagua,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Los Guayos,Carabobo,,,167042,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,locality,,VE-G,Los Guayos,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Carlos Arvelo,Carabobo,,,163906,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,county,2,VE-G,Municipio Carlos Arvelo,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,San Diego,Carabobo,,,122925,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,locality,,VE-G,San Diego,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Diego Ibarra,Carabobo,,,114850,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,county,2,VE-G,Municipio Diego Ibarra,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,San Joaquín,Carabobo,,,69294,Municipality,Valencia (VN),,Valencia (VN),,CaraboboVenezuela,,,,,locality,,VE-G,San Joaquín,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Juan José Mora,Carabobo,,,77181,Municipality,,,#N/A,,CaraboboVenezuela,,,,,county,2,VE-G,Municipio Mora,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Bejuma,Carabobo,,,52999,Municipality,,,#N/A,,CaraboboVenezuela,,,,,locality,,VE-G,Bejuma,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Miranda,Carabobo,,,32487,Municipality,,,#N/A,,CaraboboVenezuela,,,,,locality,,VE-G,Miranda,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Montalbán,Carabobo,,,29026,Municipality,,,#N/A,,CaraboboVenezuela,,,,,locality,,VE-G,Montalbán,,,,,region,1,VE-G,Carabobo,HIGH,1.0,VE-G
+Venezuela,Ezequiel Zamora (San Carlos),Cojedes,,,124460,Municipality,,,#N/A,,CojedesVenezuela,,,,,,,,,,,,,region,1,VE-H,Cojedes,NONE,0.0,VE-H
+Venezuela,Tinaquillo (Falcón),Cojedes,,,113818,Municipality,,,#N/A,,CojedesVenezuela,,,,,locality,,VE-H,Tinaquillo,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Tinaco,Cojedes,,,37528,Municipality,,,#N/A,,CojedesVenezuela,,,,,locality,,VE-H,Tinaco,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Rómulo Gallegos,Cojedes,,,19971,Municipality,,,#N/A,,CojedesVenezuela,,,,,county,2,VE-H,Municipio Rómulo Gallegos,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Anzoátegui,Cojedes,,,18587,Municipality,,,#N/A,,CojedesVenezuela,,,,,county,2,VE-H,Municipio Anzoátegui,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Pao de San Juan Bautista,Cojedes,,,18337,Municipality,,,#N/A,,CojedesVenezuela,,,,,county,2,VE-H,Municipio El Pao,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Ricaurte,Cojedes,,,13873,Municipality,,,#N/A,,CojedesVenezuela,,,,,county,2,VE-H,Municipio Ricaurte,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Girardot,Cojedes,,,13030,Municipality,,,#N/A,,CojedesVenezuela,,,,,county,2,VE-H,Municipio Girardot,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Lima Blanco,Cojedes,,,10432,Municipality,,,#N/A,,CojedesVenezuela,,,,,county,2,VE-H,Municipio Lima Blanco,,,,,region,1,VE-H,Cojedes,HIGH,1.0,VE-H
+Venezuela,Tucupita,Delta Amacuro,,,125632,Municipality,,,#N/A,,Delta AmacuroVenezuela,,,,,county,2,VE-Y,Municipio Tucupita,,,,,region,1,VE-Y,Delta Amacuro,HIGH,1.0,VE-Y
+Venezuela,Casacoima,Delta Amacuro,,,39876,Municipality,,,#N/A,,Delta AmacuroVenezuela,,,,,county,2,VE-Y,Municipio Casacoima,,,,,region,1,VE-Y,Delta Amacuro,HIGH,1.0,VE-Y
+Venezuela,Antonio Díaz,Delta Amacuro,,,32682,Municipality,,,#N/A,,Delta AmacuroVenezuela,,,,,county,2,VE-Y,Municipio Antonio Díaz,,,,,region,1,VE-Y,Delta Amacuro,HIGH,1.0,VE-Y
+Venezuela,Pedernales,Delta Amacuro,,,7817,Municipality,,,#N/A,,Delta AmacuroVenezuela,,,,,locality,,VE-Y,Pedernales,,,,,region,1,VE-Y,Delta Amacuro,HIGH,1.0,VE-Y
+Venezuela,Dependencias Federales,Dependencias Federales,,,2298,Federal Territory,,,#N/A,,Dependencias FederalesVenezuela,,,,,region,1,VE-W,Dependencias Federales,,,,,region,1,VE-W,Dependencias Federales,HIGH,1.0,VE-W
+Venezuela,Libertador de Caracas (Bolivariano Libertador),Distrito Capital,,,2089012,Municipality,Caracas,,Caracas,,Distrito CapitalVenezuela,,,,,county,2,VE-A,Municipio Libertador,,,,,region,1,VE-A,Distrito Capital,HIGH,1.0,VE-A
+Venezuela,Carirubana,Falcón,,,288381,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Carirubana,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Miranda,Falcón,,,250567,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Miranda,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Falcón,Falcón,,,57327,Municipality,,,#N/A,,FalcónVenezuela,,,,,region,1,VE-I,Falcón,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Colina,Falcón,,,48629,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Colina,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Los Taques,Falcón,,,47593,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Los Taques,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Silva,Falcón,,,43784,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Silva,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Zamora,Falcón,,,39736,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Zamora,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Federación,Falcón,,,34822,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Federación,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Mauroa,Falcón,,,28933,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Mauroa,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Dabajuro,Falcón,,,27676,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Dabajuro,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Buchivacoa,Falcón,,,26742,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Buchivacoa,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Monseñor Iturriza,Falcón,,,23099,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Monseñor Iturriza,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Acosta,Falcón,,,22408,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Acosta,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Unión,Falcón,,,18338,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Unión,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Petit,Falcón,,,16178,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Petit,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Jacura,Falcón,,,13136,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Jacura,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,San Francisco,Falcón,,,12812,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio San Francisco,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Cacique Manaure,Falcón,,,12726,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Cacique Manaure,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Píritu,Falcón,,,12217,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Píritu,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Democracia,Falcón,,,11744,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Democracia,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Bolívar,Falcón,,,9838,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Bolívar,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Urumaco,Falcón,,,9399,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Urumaco,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Palmasola,Falcón,,,8682,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Palma Sola,,,,,region,1,VE-I,Falcón,MED,0.947,VE-I
+Venezuela,Sucre,Falcón,,,6641,Municipality,,,#N/A,,FalcónVenezuela,,,,,county,2,VE-I,Municipio Sucre,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Tocópero,Falcón,,,6268,Municipality,,,#N/A,,FalcónVenezuela,,,,,locality,,VE-I,Tocópero,,,,,region,1,VE-I,Falcón,HIGH,1.0,VE-I
+Venezuela,Sebastián Francisco de Miranda,Guárico,,,178106,Municipality,,,#N/A,,GuáricoVenezuela,,,,,,,,,,,,,region,1,VE-J,Guárico,NONE,0.0,VE-J
+Venezuela,Juan Germán Roscio,Guárico,,,165150,Municipality,,,#N/A,,GuáricoVenezuela,,,,,county,2,VE-J,Municipio Roscio,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Leonardo Infante,Guárico,,,156402,Municipality,,,#N/A,,GuáricoVenezuela,,,,,county,2,VE-J,Municipio Infante,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,José Tadeo Monagas,Guárico,,,93725,Municipality,,,#N/A,,GuáricoVenezuela,,,,,county,2,VE-J,Municipio Monagas,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Pedro Zaraza,Guárico,,,75818,Municipality,,,#N/A,,GuáricoVenezuela,,,,,county,2,VE-J,Municipio Zaraza,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,José Félix Ribas,Guárico,,,45813,Municipality,,,#N/A,,GuáricoVenezuela,,,,,county,2,VE-J,Municipio Ribas,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Las Mercedes,Guárico,,,41305,Municipality,,,#N/A,,GuáricoVenezuela,,,,,locality,,VE-J,Las Mercedes,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Julián Mellado,Guárico,,,33493,Municipality,,,#N/A,,GuáricoVenezuela,,,,,county,2,VE-J,Municipio Julián Mellado,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Camaguán,Guárico,,,30772,Municipality,,,#N/A,,GuáricoVenezuela,,,,,locality,,VE-J,Camaguán,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Ortiz,Guárico,,,29002,Municipality,,,#N/A,,GuáricoVenezuela,,,,,locality,,VE-J,Ortíz,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,San Gerónimo de Guayabal,Guárico,,,24039,Municipality,,,#N/A,,GuáricoVenezuela,,,,,county,2,VE-J,Municipio Guayabal,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,El Socorro,Guárico,,,20534,Municipality,,,#N/A,,GuáricoVenezuela,,,,,locality,,VE-J,El Socorro,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Chaguaramas,Guárico,,,17374,Municipality,,,#N/A,,GuáricoVenezuela,,,,,locality,,VE-J,Chaguaramas,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Santa María de Ipire,Guárico,,,15869,Municipality,,,#N/A,,GuáricoVenezuela,,,,,locality,,VE-J,Santa María de Ipire,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,San José de Guaribe,Guárico,,,14074,Municipality,,,#N/A,,GuáricoVenezuela,,,,,locality,,VE-J,San José de Guaribe,,,,,region,1,VE-J,Guárico,HIGH,1.0,VE-J
+Venezuela,Vargas,La Guaira,,,378981,Municipality,La Guaira,,La Guaira,,La GuairaVenezuela,,,,,county,2,VE-X,Municipio Vargas,,,,,region,1,VE-X,La Guaira,HIGH,1.0,VE-X
+Venezuela,Iribarren,Lara,,,1159062,Municipality,Barquisimeto,,Barquisimeto,,LaraVenezuela,,,,,county,2,VE-K,Municipio Iribarren,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Palavecino,Lara,,,201094,Municipality,Barquisimeto,,Barquisimeto,,LaraVenezuela,,,,,county,2,VE-K,Municipio Palavecino,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Torres,Lara,,,208981,Municipality,,,#N/A,,LaraVenezuela,,,,,locality,,VE-K,Torres,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Morán,Lara,,,139385,Municipality,,,#N/A,,LaraVenezuela,,,,,locality,,VE-K,Morán,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Jiménez,Lara,,,116211,Municipality,,,#N/A,,LaraVenezuela,,,,,county,2,VE-K,Municipio Jiménez,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Urdaneta,Lara,,,69172,Municipality,,,#N/A,,LaraVenezuela,,,,,county,2,VE-K,Municipio Urdaneta,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Crespo,Lara,,,58910,Municipality,,,#N/A,,LaraVenezuela,,,,,county,2,VE-K,Municipio Crespo,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Andrés Eloy Blanco,Lara,,,54427,Municipality,,,#N/A,,LaraVenezuela,,,,,county,2,VE-K,Municipio Andrés Eloy Blanco,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Simón Planas,Lara,,,40583,Municipality,,,#N/A,,LaraVenezuela,,,,,county,2,VE-K,Municipio Simón Planas,,,,,region,1,VE-K,Lara,HIGH,1.0,VE-K
+Venezuela,Libertador,Mérida,,,294615,Municipality,,,#N/A,,MéridaVenezuela,,,,,county,2,VE-L,Municipio Libertador,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Alberto Adriani,Mérida,,,162646,Municipality,,,#N/A,,MéridaVenezuela,,,,,county,2,VE-L,Municipio Alberto Adriani,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Campo Elías,Mérida,,,129919,Municipality,,,#N/A,,MéridaVenezuela,,,,,county,2,VE-L,Municipio Campo Elias,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Sucre,Mérida,,,70018,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Sucre,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Tovar,Mérida,,,45430,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Tovar,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Tulio Febres Cordero,Mérida,,,39570,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Tulio Febres Cordero,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Caracciolo Parra Olmedo,Mérida,,,32917,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Caracciolo Parra Olmedo,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Obispo Ramos de Lora,Mérida,,,29373,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Obispo Ramos de Lora,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Antonio Pinto Salinas,Mérida,,,28640,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Antonio Pinto Salinas,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Miranda,Mérida,,,26807,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Miranda,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Rivas Dávila,Mérida,,,24413,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Rivas Dávila,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Santos Marquina,Mérida,,,23205,Municipality,,,#N/A,,MéridaVenezuela,,,,,county,2,VE-L,Municipio Santos Marquina,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Rangel,Mérida,,,22915,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Rangel,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Julio César Salas,Mérida,,,17183,Municipality,,,#N/A,,MéridaVenezuela,,,,,county,2,VE-L,Municipio Julio César Salas,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Andrés Bello,Mérida,,,16855,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Andrés Bello,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Arzobispo Chacón,Mérida,,,15412,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Arzobispo Chacón,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Zea,Mérida,,,13358,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Zea,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Pueblo Llano,Mérida,,,12908,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Pueblo Llano,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Cardenal Quintero,Mérida,,,11307,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Cardenal Quintero,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Guaraque,Mérida,,,10698,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Guaraque,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Justo Briceño,Mérida,,,5820,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Justo Briceño,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Aricagua,Mérida,,,4989,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Aricagua,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Padre Noguera,Mérida,,,3797,Municipality,,,#N/A,,MéridaVenezuela,,,,,locality,,VE-L,Padre Noguera,,,,,region,1,VE-L,Mérida,HIGH,1.0,VE-L
+Venezuela,Sucre,Miranda,,,711885,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,locality,,VE-M,Sucre,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Baruta,Miranda,,,373965,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Baruta,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Guaicaipuro,Miranda,,,299047,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Guaicaipuro,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Plaza,Miranda,,,246263,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Plaza,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Zamora,Miranda,,,225604,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Zamora,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Lander,Miranda,,,176346,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Lander,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Urdaneta,Miranda,,,172938,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Urdaneta,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Independencia,Miranda,,,163525,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Independencia,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Cristóbal Rojas,Miranda,,,145842,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Cristóbal Rojas,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Paz Castillo,Miranda,,,128154,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Paz Castillo,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,El Hatillo,Miranda,,,93169,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,locality,,VE-M,El Hatillo,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Chacao,Miranda,,,79274,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,locality,,VE-M,Chacao,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Los Salias,Miranda,,,78344,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Los Salias,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Carrizal,Miranda,,,58305,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,locality,,VE-M,Carrizal,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Simón Bolívar,Miranda,,,49765,Municipality,Caracas,,Caracas,,MirandaVenezuela,,,,,,,,,,,,,region,1,VE-M,Miranda,NONE,0.0,VE-M
+Venezuela,Acevedo,Miranda,,,98967,Municipality,,,#N/A,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Acevedo,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Brión,Miranda,,,69326,Municipality,,,#N/A,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Brión,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Páez,Miranda,,,43309,Municipality,,,#N/A,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Páez,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Buroz,Miranda,,,30668,Municipality,,,#N/A,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Buroz,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Pedro Gual,Miranda,,,24542,Municipality,,,#N/A,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Pedro Gual,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Andrés Bello,Miranda,,,23493,Municipality,,,#N/A,,MirandaVenezuela,,,,,county,2,VE-M,Municipio Andrés Bello,,,,,region,1,VE-M,Miranda,HIGH,1.0,VE-M
+Venezuela,Maturín,Monagas,,,616138,Municipality,Maturin,,Maturin,,MonagasVenezuela,,,,,locality,,VE-N,Maturín,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Ezequiel Zamora,Monagas,,,72247,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Ezequiel Zamora,,,,,region,1,VE-N,Monagas,LOW,0.8,VE-N
+Venezuela,Piar,Monagas,,,50656,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Piar,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Libertador,Monagas,,,49412,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Libertador,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Bolívar,Monagas,,,42955,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Bolívar,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Cedeño,Monagas,,,39565,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Cedeño,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Caripe,Monagas,,,38153,Municipality,,,#N/A,,MonagasVenezuela,,,,,locality,,VE-N,Caripe,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Punceres,Monagas,,,30463,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Punceres,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Sotillo,Monagas,,,26558,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Sotillo,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Acosta,Monagas,,,19707,Municipality,,,#N/A,,MonagasVenezuela,,,,,county,2,VE-N,Municipio Acosta,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Aguasay,Monagas,,,13169,Municipality,,,#N/A,,MonagasVenezuela,,,,,locality,,VE-N,Aguasay,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Santa Bárbara,Monagas,,,10734,Municipality,,,#N/A,,MonagasVenezuela,,,,,locality,,VE-N,Santa Bárbara,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Uracoa,Monagas,,,10443,Municipality,,,#N/A,,MonagasVenezuela,,,,,locality,,VE-N,Uracoa,,,,,region,1,VE-N,Monagas,HIGH,1.0,VE-N
+Venezuela,Mariño,Nueva Esparta,,,126518,Municipality,Porlamar,,Porlamar,,Nueva EspartaVenezuela,,,,,locality,,VE-O,Mariño,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,García,Nueva Esparta,,,84010,Municipality,Porlamar,,Porlamar,,Nueva EspartaVenezuela,,,,,county,2,VE-O,Municipio García,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Maneiro,Nueva Esparta,,,63248,Municipality,Porlamar,,Porlamar,,Nueva EspartaVenezuela,,,,,locality,,VE-O,Maneiro,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Díaz,Nueva Esparta,,,88088,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,locality,,VE-O,Díaz,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Gómez,Nueva Esparta,,,50745,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,county,2,VE-O,Municipio Gómez,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Tubores,Nueva Esparta,,,45587,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,county,2,VE-O,Municipio Tubores,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Marcano,Nueva Esparta,,,44867,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,county,2,VE-O,Municipio Marcano,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Arismendi,Nueva Esparta,,,35621,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,locality,,VE-O,Arismendi,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Antolín del Campo,Nueva Esparta,,,34737,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,county,2,VE-O,Municipio Antolín del Campo,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Península de Macanao,Nueva Esparta,,,32545,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,,,,,,,,,region,1,VE-O,Nueva Esparta,NONE,0.0,VE-O
+Venezuela,Villalba (Isla de Coche),Nueva Esparta,,,11112,Municipality,,,#N/A,,Nueva EspartaVenezuela,,,,,county,2,VE-O,Municipio Villalba,,,,,region,1,VE-O,Nueva Esparta,HIGH,1.0,VE-O
+Venezuela,Páez,Portuguesa,,,212662,Municipality,Acarigua,,Acarigua,,PortuguesaVenezuela,,,,,locality,,VE-P,Páez,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Guanare,Portuguesa,,,232739,Municipality,Guanare,,Guanare,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio Guanare,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Araure,Portuguesa,,,195109,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,locality,,VE-P,Araure,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Turén,Portuguesa,,,74985,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio Turén,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Ospino,Portuguesa,,,56619,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio Ospino,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Esteller,Portuguesa,,,51377,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio Esteller,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Sucre,Portuguesa,,,48235,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,locality,,VE-P,Sucre,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Guanarito,Portuguesa,,,43587,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio Guanarito,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Monseñor José Vicente de Unda,Portuguesa,,,27520,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,,,,,,,,,region,1,VE-P,Portuguesa,NONE,0.0,VE-P
+Venezuela,San Genaro de Boconoíto,Portuguesa,,,27105,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio San Genaro de Boconoíto,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Agua Blanca,Portuguesa,,,24155,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,locality,,VE-P,Agua Blanca,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,San Rafael de Onoto,Portuguesa,,,21489,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,,,,,,,,,region,1,VE-P,Portuguesa,NONE,0.0,VE-P
+Venezuela,Santa Rosalía,Portuguesa,,,20330,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio Santa Rosalía,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Papelón,Portuguesa,,,19334,Municipality,,,#N/A,,PortuguesaVenezuela,,,,,county,2,VE-P,Municipio Papelón,,,,,region,1,VE-P,Portuguesa,HIGH,1.0,VE-P
+Venezuela,Sucre,Sucre,,,444503,Municipality,Maracay,,Maracay,,SucreVenezuela,,,,,region,1,VE-R,Sucre,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Bermúdez,Sucre,,,165059,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Bermúdez,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Ribero,Sucre,,,72035,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Ribero,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Montes,Sucre,,,63421,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Montes,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Arismendi,Sucre,,,55969,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Arismendi,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Valdez,Sucre,,,48721,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Valdez,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Cruz Salmerón Acosta,Sucre,,,41850,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Cruz Salmerón Acosta,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Benítez,Sucre,,,37062,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Benítez,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Andrés Eloy Blanco,Sucre,,,31342,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Andŕes Eloy Blanco,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Mariño,Sucre,,,28588,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Mariño,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Bolívar,Sucre,,,26131,Municipality,,,#N/A,,SucreVenezuela,,,,,locality,,VE-R,Bolívar,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Cajigal,Sucre,,,25101,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Cajigal,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Andrés Mata,Sucre,,,23466,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Andrés Mata,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Mejía,Sucre,,,16708,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Mejía,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,Libertador,Sucre,,,11372,Municipality,,,#N/A,,SucreVenezuela,,,,,county,2,VE-R,Municipio Libertador,,,,,region,1,VE-R,Sucre,HIGH,1.0,VE-R
+Venezuela,San Cristóbal,Táchira,,,288556,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio San Cristóbal,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Cárdenas,Táchira,,,137292,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,locality,,VE-S,Cárdenas,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Junín,Táchira,,,92805,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Junín,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Bolívar,Táchira,,,66081,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Bolívar,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Ayacucho,Táchira,,,62156,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Ayacucho,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Pedro María Ureña,Táchira,,,56142,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Ureña,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Torbes,Táchira,,,54313,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Torbes,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Guásimos,Táchira,,,47700,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Guásimos,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Independencia,Táchira,,,39849,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Independencia,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Libertad,Táchira,,,29369,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Libertad,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Andrés Bello,Táchira,,,21793,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Andrés Bello,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Michelena,Táchira,,,20404,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,locality,,VE-S,Michelena,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Lobatera,Táchira,,,13976,Municipality,San Cristobal,,San Cristobal,,TáchiraVenezuela,,,,,locality,,VE-S,Lobatera,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,García de Hevia,Táchira,,,51996,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio García de Hevia,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Fernández Feo,Táchira,,,48551,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Fernández Feo,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Jáuregui,Táchira,,,44405,Municipality,,,#N/A,,TáchiraVenezuela,,,,,locality,,VE-S,Jáuregui,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Córdoba,Táchira,,,35252,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Córdoba,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Panamericano,Táchira,,,33932,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Panamericano,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Libertador,Táchira,,,23552,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Libertador,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Uribante,Táchira,,,21505,Municipality,,,#N/A,,TáchiraVenezuela,,,,,locality,,VE-S,Uribante,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Samuel Darío Maldonado,Táchira,,,19791,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Maldonado,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Antonio Rómulo Costa,Táchira,,,11211,Municipality,,,#N/A,,TáchiraVenezuela,,,,,,,,,,,,,region,1,VE-S,Táchira,NONE,0.0,VE-S
+Venezuela,Seboruco,Táchira,,,11013,Municipality,,,#N/A,,TáchiraVenezuela,,,,,locality,,VE-S,Seboruco,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,José María Vargas,Táchira,,,10816,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Vargas,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,San Judas Tadeo,Táchira,,,7963,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio San Judas Tadeo,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Sucre,Táchira,,,7912,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Sucre,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Rafael Urdaneta,Táchira,,,6230,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Urdaneta,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Francisco de Miranda,Táchira,,,4337,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Miranda,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Simón Rodríguez,Táchira,,,2658,Municipality,,,#N/A,,TáchiraVenezuela,,,,,county,2,VE-S,Municipio Simón Rodríguez,,,,,region,1,VE-S,Táchira,HIGH,1.0,VE-S
+Venezuela,Valera,Trujillo,,,169946,Municipality,Valera,,Valera,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Valera,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Boconó,Trujillo,,,107347,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Boconó,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,San Rafael de Carvajal,Trujillo,,,71614,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio San Rafael de Carvajal,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Trujillo,Trujillo,,,70149,Municipality,,,#N/A,,TrujilloVenezuela,,,,,region,1,VE-T,Trujillo,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Pampán,Trujillo,,,58834,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Pampán,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Urdaneta,Trujillo,,,41949,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Urdaneta,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Sucre,Trujillo,,,37767,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Sucre,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Pampanito,Trujillo,,,35267,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Pampanito,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Candelaria,Trujillo,,,34593,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Candelaria,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Carache,Trujillo,,,34312,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Carache,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Escuque,Trujillo,,,34013,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Escuque,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Rafael Rangel,Trujillo,,,27709,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Rafael Rangel,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Miranda,Trujillo,,,27285,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Miranda,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Motatán,Trujillo,,,25070,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Motatán,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,La Ceiba,Trujillo,,,24220,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,La Ceiba,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Andrés Bello,Trujillo,,,20060,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Andrés Bello,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Bolívar,Trujillo,,,19729,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Bolívar,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Monte Carmelo,Trujillo,,,15702,Municipality,,,#N/A,,TrujilloVenezuela,,,,,locality,,VE-T,Monte Carmelo,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,Juan Vicente Campo Elías,Trujillo,,,6418,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio Juan Vicente Campo Elias,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,José Felipe Márquez Cañizales,Trujillo,,,5650,Municipality,,,#N/A,,TrujilloVenezuela,,,,,county,2,VE-T,Municipio José Felipe Márquez Cañizales,,,,,region,1,VE-T,Trujillo,HIGH,1.0,VE-T
+Venezuela,San Felipe,Yaracuy,,,128056,Municipality,San Felipe,,San Felipe,,YaracuyVenezuela,,,,,locality,,VE-U,San Felipe,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Independencia,Yaracuy,,,74657,Municipality,San Felipe,,San Felipe,,YaracuyVenezuela,,,,,locality,,VE-U,Independencia,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Cocorote,Yaracuy,,,51981,Municipality,San Felipe,,San Felipe,,YaracuyVenezuela,,,,,locality,,VE-U,Cocorote,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,La Trinidad,Yaracuy,,,21225,Municipality,San Felipe,,San Felipe,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio La Trinidad,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Peña,Yaracuy,,,124643,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Peña,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Bruzual,Yaracuy,,,84876,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Bruzual,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Nirgua,Yaracuy,,,70270,Municipality,,,#N/A,,YaracuyVenezuela,,,,,locality,,VE-U,Nirgua,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Bolívar,Yaracuy,,,37905,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Bolívar,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Veroes,Yaracuy,,,32249,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Veroes,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Urachiche,Yaracuy,,,26308,Municipality,,,#N/A,,YaracuyVenezuela,,,,,locality,,VE-U,Urachiche,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Arístides Bastidas,Yaracuy,,,25103,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Arístides Bastidas,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Sucre,Yaracuy,,,24129,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Sucre,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,José Antonio Páez,Yaracuy,,,23832,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Páez,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Manuel Monge,Yaracuy,,,15417,Municipality,,,#N/A,,YaracuyVenezuela,,,,,county,2,VE-U,Municipio Manuel Monge,,,,,region,1,VE-U,Yaracuy,HIGH,1.0,VE-U
+Venezuela,Maracaibo,Zulia,,,1752602,Municipality,Maracaibo,,Maracaibo,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Maracaibo,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,San Francisco,Zulia,,,518813,Municipality,Maracaibo,,Maracaibo,,ZuliaVenezuela,,,,,locality,,VE-V,San Francisco,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Cabimas,Zulia,,,308465,Municipality,Maracaibo,,Maracaibo,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Cabimas,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Miranda,Zulia,,,112157,Municipality,Maracaibo,,Maracaibo,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Miranda,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Santa Rita,Zulia,,,66465,Municipality,Maracaibo,,Maracaibo,,ZuliaVenezuela,,,,,locality,,VE-V,Santa Rita,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Mara,Zulia,,,228416,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Mara,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Lagunillas,Zulia,,,225745,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Lagunillas,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Colón,Zulia,,,143540,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Colón,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Machiques de Perijá,Zulia,,,140384,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Machiques,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Jesús Enrique Lossada,Zulia,,,134080,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Lossada,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Baralt,Zulia,,,104429,Municipality,,,#N/A,,ZuliaVenezuela,,,,,locality,,VE-V,Baralt,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Rosario de Perijá,Zulia,,,97838,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Rosario de Perijá,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,La Cañada de Urdaneta,Zulia,,,94046,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio La Cañada,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Guajira (Páez),Zulia,,,75784,Municipality,,,#N/A,,ZuliaVenezuela,,,,,locality,,VE-V,Alta Guajira,,,,,region,1,VE-V,Zulia,LOW,0.787,VE-V
+Venezuela,Sucre,Zulia,,,67830,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Sucre,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Valmore Rodríguez,Zulia,,,59101,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Valmore Rodríguez,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Simón Bolívar,Zulia,,,49532,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Simón Bolívar,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Catatumbo,Zulia,,,46518,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Catatumbo,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Francisco Javier Pulgar,Zulia,,,37607,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Javier Pulgar,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V
+Venezuela,Jesús María Semprún,Zulia,,,34162,Municipality,,,#N/A,,ZuliaVenezuela,,,,,,,,,,,,,region,1,VE-V,Zulia,NONE,0.0,VE-V
+Venezuela,Almirante Padilla,Zulia,,,14111,Municipality,,,#N/A,,ZuliaVenezuela,,,,,county,2,VE-V,Municipio Almirante Padilla,,,,,region,1,VE-V,Zulia,HIGH,1.0,VE-V

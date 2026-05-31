@@ -1,0 +1,361 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Cameroon,Ngaoundéré II,Adamawa,,Vina,84959,City Arrondissement,Ngaoundéré,,Ngaoundéré,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Ngaoundéré II,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Ngaoundéré I,Adamawa,,Vina,78277,City Arrondissement,Ngaoundéré,,Ngaoundéré,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Ngaoundéré I,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Ngaoundéré III,Adamawa,,Vina,17527,City Arrondissement,Ngaoundéré,,Ngaoundéré,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Ngaoundéré III,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Banyo,Adamawa,,Mayo-Banyo,93880,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Banyo,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Meiganga,Adamawa,,Mbéré,88745,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Meiganga,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Tibati,Adamawa,,Djérem,72081,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Tibati,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Bankim,Adamawa,,Mayo-Banyo,70132,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Bankim,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Ngaoundal,Adamawa,,Djérem,52867,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Ngaoundal,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Belel,Adamawa,,Vina,37663,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Bélel,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Dir,Adamawa,,Mbéré,34284,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Dir,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Tignère,Adamawa,,Faro-et-Déo,34167,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Tignère,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Nyambaka,Adamawa,,Vina,28726,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Nyambaka,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Nganha,Adamawa,,Vina,28443,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Ngan'ha,,,,,region,1,CM-AD,Adamaoua,MED,0.923,CM-AD
+Cameroon,Galim-Tignère,Adamawa,,Faro-et-Déo,25739,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Galim-Tignère,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Martap,Adamawa,,Vina,24815,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Martap,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Djohong,Adamawa,,Mbéré,24445,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Djohong,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Ngaoui,Adamawa,,Mbéré,24196,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Ngaoui,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Mayo-Darlé,Adamawa,,Mayo-Banyo,23054,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Mayo-Darlé,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Mbe,Adamawa,,Vina,17478,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Mbé,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Mayo-Baléo,Adamawa,,Faro-et-Déo,15873,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Mayo-Baléo,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Kontcha,Adamawa,,Faro-et-Déo,6938,Arrondissement,,,#N/A,2005,AdamawaCameroon,,,,,,,,locality,,CM-AD,Kontcha,,,,,region,1,CM-AD,Adamaoua,HIGH,1.0,CM-AD
+Cameroon,Bafia,Central,,Mbam-et-Inoubou,55506,Arrondissement,Bafia,,Bafia,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Bafia,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yaoundé IV,Central,,Mfoundi,477350,City Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yaoundé IV,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yaoundé I,Central,,Mfoundi,281586,City Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yaoundé I,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yaoundé VI,Central,,Mfoundi,268428,City Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yaoundé VI,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yaoundé V,Central,,Mfoundi,265087,City Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yaoundé V,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yaoundé III,Central,,Mfoundi,252501,City Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yaoundé III,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yaoundé II,Central,,Mfoundi,238927,City Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yaoundé II,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yaoundé VII,Central,,Mfoundi,97997,City Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yaoundé VII,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Obala,Central,,Lekié,78929,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Obala,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Sa'a,Central,,Lekié,53219,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Sa'a,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Okola,Central,,Lekié,41081,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Okola,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Mfou,Central,,Méfou-et-Afamba,37209,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Mfou,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Monatélé,Central,,Lekié,36933,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Monatélé,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Soa,Central,,Méfou-et-Afamba,30588,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Soa,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ebebda,Central,,Lekié,21368,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ebebda,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Evodoula,Central,,Lekié,18899,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Evodoula,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Esse,Central,,Méfou-et-Afamba,16822,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Esse,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Elig-Mfomo,Central,,Lekié,16161,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Elig-Mfomo,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Awaé,Central,,Méfou-et-Afamba,15888,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Awaé,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Nkolafamba,Central,,Méfou-et-Afamba,14494,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Nkolafamba,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Lobo,Central,,Lekié,10157,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Lobo,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Batchenga,Central,,Lekié,9303,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Batchenga,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Assamba,Central,,Méfou-et-Afamba,4801,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Cameroon,Edzendouan,Central,,Méfou-et-Afamba,4436,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Edzendouan,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Afanloum,Central,,Méfou-et-Afamba,1787,Arrondissement,Yaoundé,,Yaoundé,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Afanloum,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Mbalmayo,Central,,Nyong-et-So'o,62808,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Mbalmayo,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Akonolinga,Central,,Nyong-et-Mfoumou,47561,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Akonolinga,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Mbangassina,Central,,Mbam-et-Kim,41180,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Mbangassina,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Bokito,Central,,Mbam-et-Inoubou,40228,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Bokito,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Nanga-Eboko,Central,,Haute-Sanaga,29814,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Nanga-Eboko,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Makak,Central,,Nyong-et-Kéllé,29135,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Makak,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ombessa,Central,,Mbam-et-Inoubou,25640,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ombessa,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ntui,Central,,Mbam-et-Kim,25618,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ntui,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Éséka,Central,,Nyong-et-Kéllé,23242,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Éséka,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ayos,Central,,Nyong-et-Mfoumou,22899,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ayos,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Mbandjock,Central,,Haute-Sanaga,21076,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Mbandjock,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Mbankomo,Central,,Méfou-et-Akono,20305,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Mbankomo,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Nkoteng,Central,,Haute-Sanaga,19797,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Nkoteng,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ndikiniméki,Central,,Mbam-et-Inoubou,17462,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ndikiniméki,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ngomedzap,Central,,Nyong-et-So'o,17169,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ngomedzap,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Bot-Makak,Central,,Nyong-et-Kéllé,17089,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Bot-Makak,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Makénéné,Central,,Mbam-et-Inoubou,16564,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Makenene,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Bikok,Central,,Méfou-et-Akono,16278,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Bikok,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Endom,Central,,Nyong-et-Mfoumou,14789,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Endom,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Messondo,Central,,Nyong-et-Kéllé,14139,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Messondo,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ngoumou,Central,,Méfou-et-Akono,13923,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ngoumou,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ngoro,Central,,Mbam-et-Kim,13892,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ngoro,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Nkolmetet,Central,,Nyong-et-So'o,13647,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Cameroon,Ngambè-Tikar,Central,,Mbam-et-Kim,12489,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ngambé-Tikar,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Yoko,Central,,Mbam-et-Kim,12332,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Yoko,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Matomb,Central,,Nyong-et-Kéllé,11512,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Matomb,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Deuk,Central,,Mbam-et-Inoubou,11485,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Deuk,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Minta,Central,,Haute-Sanaga,11406,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Minta,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Nyakokombo,Central,,Nyong-et-Mfoumou,11227,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Cameroon,Dzeng,Central,,Nyong-et-So'o,9412,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Dzeng,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Ngog-Mapubi,Central,,Nyong-et-Kéllé,9137,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Ngog-Mapubi,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Dibang,Central,,Nyong-et-Kéllé,9063,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Dibang,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Kon-Yambetta,Central,,Mbam-et-Inoubou,8692,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Kon-Yambetta,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Kiiki,Central,,Mbam-et-Inoubou,8519,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Kiiki,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Akono,Central,,Méfou-et-Akono,8511,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Akono,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Bondjock,Central,,Nyong-et-Kéllé,8431,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Bondjock,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Mengang,Central,,Nyong-et-Mfoumou,8031,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Mengang,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Mengueme,Central,,Nyong-et-So'o,7527,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Mengueme,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Lembe-Yezoum,Central,,Haute-Sanaga,7207,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Cameroon,Nsem,Central,,Haute-Sanaga,6177,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Nsem,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Akoeman,Central,,Nyong-et-So'o,5397,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Akoéman,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Bibey,Central,,Haute-Sanaga,4875,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Bibey,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Nitoukou,Central,,Mbam-et-Inoubou,4831,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Nitoukou,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Nguibassal,Central,,Nyong-et-Kéllé,4685,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Nguibassal,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Biyouha,Central,,Nyong-et-Kéllé,3386,Arrondissement,,,#N/A,2005,CentralCameroon,,,,,,,,locality,,CM-CE,Biyouha,,,,,region,1,CM-CE,Centre,HIGH,1.0,CM-CE
+Cameroon,Batouri,East,,Kadey,67007,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Batouri,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Yokadouma,East,,Boumba-et-Ngoko,63962,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Yokadouma,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Bertoua I,East,,Lom-et-Djérem,52355,City Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Bertoua I,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Bertoua II,East,,Lom-et-Djérem,42534,City Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Bertoua II,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Garoua-Boulaï,East,,Lom-et-Djérem,41388,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Garoua-Boulaï,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Bétaré-Oya,East,,Lom-et-Djérem,41173,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Bétaré-Oya,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Ngoura,East,,Lom-et-Djérem,34489,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Ngoura,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Kette,East,,Kadey,31129,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Kétté,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Bélabo,East,,Lom-et-Djérem,30953,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Bélabo,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Abong-Mbang,East,,Haut-Nyong,29005,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Abong-Mbang,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Messamena,East,,Haut-Nyong,26153,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Messaména,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Ndelele,East,,Kadey,26127,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Ndélélé,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Mbang,East,,Kadey,25603,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Mbang,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Nguelemendouka,East,,Haut-Nyong,21097,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Nguelemendouka,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Lomié,East,,Haut-Nyong,18952,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Lomié,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Doumé,East,,Haut-Nyong,18429,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Doumé,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Moloundou,East,,Boumba-et-Ngoko,18174,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Mouloundou,,,,,region,1,CM-ES,Est,MED,0.947,CM-ES
+Cameroon,Salapoumbé,East,,Boumba-et-Ngoko,17240,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Salapoumbé,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Mandjou,East,,Lom-et-Djérem,17097,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Mandjou,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Bombé,East,,Kadey,16147,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,,,,,,,,,region,1,CM-ES,Est,NONE,0.0,CM-ES
+Cameroon,Gari-Gombo,East,,Boumba-et-Ngoko,15978,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Gari-Gombo,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Diang,East,,Lom-et-Djérem,15795,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Diang,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Mboanz,East,,Haut-Nyong,13608,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,,,,,,,,,region,1,CM-ES,Est,NONE,0.0,CM-ES
+Cameroon,Dimako,East,,Haut-Nyong,12894,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Dimako,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Messok,East,,Haut-Nyong,11213,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Messock,,,,,region,1,CM-ES,Est,MED,0.923,CM-ES
+Cameroon,Dja,East,,Haut-Nyong,10431,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,,,,,,,,,region,1,CM-ES,Est,NONE,0.0,CM-ES
+Cameroon,Ndem-Nam,East,,Kadey,10411,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,,,,,,,,,region,1,CM-ES,Est,NONE,0.0,CM-ES
+Cameroon,Bebend,East,,Haut-Nyong,9335,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,,,,,,,,,region,1,CM-ES,Est,NONE,0.0,CM-ES
+Cameroon,Mboma,East,,Haut-Nyong,8120,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Mboma,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Doumaintang,East,,Haut-Nyong,7956,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Doumaintang,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Mbotoro,East,,Kadey,7674,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,,,,,,,,,region,1,CM-ES,Est,NONE,0.0,CM-ES
+Cameroon,Somalomo,East,,Haut-Nyong,4902,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Somalomo,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Ngoyla,East,,Haut-Nyong,4424,Arrondissement,,,#N/A,2005,EastCameroon,,,,,,,,locality,,CM-ES,Ngoyla,,,,,region,1,CM-ES,Est,HIGH,1.0,CM-ES
+Cameroon,Maroua I,Far North,,Diamaré,134934,City Arrondissement,Maroua,,Maroua,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Maroua I,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Maroua II,Far North,,Diamaré,108902,City Arrondissement,Maroua,,Maroua,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Maroua II,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Maroua III,Far North,,Diamaré,86574,City Arrondissement,Maroua,,Maroua,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Maroua III,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Mokolo,Far North,,Mayo-Tsanaga,242274,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Mokolo,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Mora,Far North,,Mayo-Sava,179777,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Mora,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Mogode,Far North,,Mayo-Tsanaga,112905,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Mogodé,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Kaélé,Far North,,Mayo-Kani,105504,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Kaélé,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Makary,Far North,,Logone-et-Chari,104843,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Makary,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Kousséri,Far North,,Logone-et-Chari,101246,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Kousséri,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Bogo,Far North,,Diamaré,95230,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Bogo,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Yagoua,Far North,,Mayo-Danay,91979,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Yagoua,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Tokombéré,Far North,,Mayo-Sava,91256,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Tokombéré,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Bourrha,Far North,,Mayo-Tsanaga,88585,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Bourha,,,,,region,1,CM-EN,Extrême-Nord,MED,0.923,CM-EN
+Cameroon,Meri,Far North,,Diamaré,86834,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Meri,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Maga,Far North,,Mayo-Danay,85100,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Maga,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Moulvoudaye,Far North,,Mayo-Kani,82368,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Moulvoudaye,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Koza,Far North,,Mayo-Tsanaga,81076,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Koza,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Kolofata,Far North,,Mayo-Sava,77857,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Kolofata,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Mayo-Moskota,Far North,,Mayo-Tsanaga,73716,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,,,,,,,,,region,1,CM-EN,Extrême-Nord,NONE,0.0,CM-EN
+Cameroon,Goulfey,Far North,,Logone-et-Chari,58117,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Goulfey قولفي,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Soulédé-Roua,Far North,,Mayo-Tsanaga,57660,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Soulèdé-Roua,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Kaï-Kaï,Far North,,Mayo-Danay,55366,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Kai-Kai,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Gobo,Far North,,Mayo-Danay,53119,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Gobo,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Logone-Birni,Far North,,Logone-et-Chari,52589,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Logone-Birni,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Mindif,Far North,,Mayo-Kani,50530,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Mindif,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Blangoua,Far North,,Logone-et-Chari,50398,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Blangoua,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Hina,Far North,,Mayo-Tsanaga,43755,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Hina,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Guidiguis,Far North,,Mayo-Kani,43632,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Guidiguis,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Taibong,Far North,,Mayo-Kani,43606,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,,,,,,,,,region,1,CM-EN,Extrême-Nord,NONE,0.0,CM-EN
+Cameroon,Kar-Hay,Far North,,Mayo-Danay,42963,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Kar-Hay,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Vele,Far North,,Mayo-Danay,41693,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,,,,,,,,,region,1,CM-EN,Extrême-Nord,NONE,0.0,CM-EN
+Cameroon,Moutourwa,Far North,,Mayo-Kani,40197,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Moutourwa,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Porhi,Far North,,Mayo-Kani,38809,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,,,,,,,,,region,1,CM-EN,Extrême-Nord,NONE,0.0,CM-EN
+Cameroon,Guéré,Far North,,Mayo-Danay,38328,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Guéré,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Petté,Far North,,Diamaré,37125,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Pétté,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Fotokol,Far North,,Logone-et-Chari,36893,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Fotokol,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Dargala,Far North,,Diamaré,33142,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Dargala,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Ndoukoula,Far North,,Diamaré,32091,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Ndoukoula,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Tchati-Bali,Far North,,Mayo-Danay,32063,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Tchatibali,,,,,region,1,CM-EN,Extrême-Nord,MED,0.952,CM-EN
+Cameroon,Datcheka,Far North,,Mayo-Danay,31545,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Datchéka,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Wina,Far North,,Mayo-Danay,30702,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Wina,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Gazawa,Far North,,Diamaré,27395,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Gazawa,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Kalfou,Far North,,Mayo-Danay,26203,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Kalfou,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Zina,Far North,,Logone-et-Chari,25572,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Zina,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Darak,Far North,,Logone-et-Chari,23901,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Darak,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Hile-Alifa,Far North,,Logone-et-Chari,18425,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Hilé - Alifa,,,,,region,1,CM-EN,Extrême-Nord,LOW,0.909,CM-EN
+Cameroon,Waza,Far North,,Logone-et-Chari,15013,Arrondissement,,,#N/A,2005,Far NorthCameroon,,,,,,,,locality,,CM-EN,Waza,,,,,region,1,CM-EN,Extrême-Nord,HIGH,1.0,CM-EN
+Cameroon,Douala III,Littoral,,Wouri,646347,City Arrondissement,Douala,,Douala,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Douala III,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Douala V,Littoral,,Wouri,544919,City Arrondissement,Douala,,Douala,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Douala V,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Douala II,Littoral,,Wouri,261407,City Arrondissement,Douala,,Douala,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Douala II,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Douala IV,Littoral,,Wouri,250626,City Arrondissement,Douala,,Douala,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Douala IV,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Douala I,Littoral,,Wouri,223214,City Arrondissement,Douala,,Douala,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Douala I,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Douala VI,Littoral,,Wouri,5464,City Arrondissement,Douala,,Douala,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Douala VI,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Édéa II,Littoral,,Sanaga-Maritime,13539,City Arrondissement,Édéa,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Édéa II,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Loum,Littoral,,Moungo,39707,Arrondissement,Loum,,Loum,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Loum,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Melong,Littoral,,Moungo,54279,Arrondissement,Melong,,Melong,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Mélong,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Nkongsamba I,Littoral,,Moungo,52434,City Arrondissement,Nkongsamba,,Nkongsamba,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Nkongsamba I,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Nkongsamba II,Littoral,,Moungo,37154,City Arrondissement,Nkongsamba,,Nkongsamba,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Nkongsamba II,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Nkongsamba III,Littoral,,Moungo,15795,City Arrondissement,Nkongsamba,,Nkongsamba,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Nkongsamba III,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Édéa I,Littoral,,Sanaga-Maritime,64761,City Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Édéa I,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Mbanga,Littoral,,Moungo,35415,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Mbanga,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Manjo,Littoral,,Moungo,34230,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Manjo,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Njombe-Penja,Littoral,,Moungo,31792,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,,,,,,,,,region,1,CM-LT,Littoral,NONE,0.0,CM-LT
+Cameroon,Abo Fiko,Littoral,,Moungo,25018,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,,,,,,,,,region,1,CM-LT,Littoral,NONE,0.0,CM-LT
+Cameroon,Nkondjock,Littoral,,Nkam,17428,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Nkondjock,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Dibombari,Littoral,,Moungo,17141,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Dibombari,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Dizangué,Littoral,,Sanaga-Maritime,17086,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Dizangué,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Baré-Bakem,Littoral,,Moungo,16485,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,,,,,,,,,region,1,CM-LT,Littoral,NONE,0.0,CM-LT
+Cameroon,Nlonako,Littoral,,Moungo,14261,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,,,,,,,,,region,1,CM-LT,Littoral,NONE,0.0,CM-LT
+Cameroon,Pouma,Littoral,,Sanaga-Maritime,13475,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Pouma,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Yabassi,Littoral,,Nkam,12999,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Yabassi,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Nyanon,Littoral,,Sanaga-Maritime,12517,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Nyanon,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Ndom,Littoral,,Sanaga-Maritime,10340,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Ndom,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Mouanko,Littoral,,Sanaga-Maritime,9162,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Mouanko,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Ngambe,Littoral,,Sanaga-Maritime,6210,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Ngambé,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Mombo,Littoral,,Moungo,5530,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Mombo,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Dibamba,Littoral,,Sanaga-Maritime,5350,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Dibamba,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Massock-Songloulou,Littoral,,Sanaga-Maritime,5044,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,,,,,,,,,region,1,CM-LT,Littoral,NONE,0.0,CM-LT
+Cameroon,Ngwei,Littoral,,Sanaga-Maritime,4831,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Ngwei,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Nord-Makombé,Littoral,,Nkam,3999,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,,,,,,,,,region,1,CM-LT,Littoral,NONE,0.0,CM-LT
+Cameroon,Yingui,Littoral,,Nkam,2304,Arrondissement,,,#N/A,2005,LittoralCameroon,,,,,,,,locality,,CM-LT,Yingui,,,,,region,1,CM-LT,Littoral,HIGH,1.0,CM-LT
+Cameroon,Garoua I,North,,Bénoué,120232,City Arrondissement,Garoua,,Garoua,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Garoua I,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Garoua II,North,,Bénoué,117841,City Arrondissement,Garoua,,Garoua,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Garoua II,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Garoua III,North,,Bénoué,27229,City Arrondissement,Garoua,,Garoua,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Garoua III,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Guider,North,,Mayo-Louti,223503,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Guider,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Touboro,North,,Mayo-Rey,154366,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Touboro,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Lagdo,North,,Bénoué,142129,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Lagdo,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Bibemi,North,,Bénoué,133191,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Bibemi,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Rey-Bouba,North,,Mayo-Rey,116192,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Rey-Bouba,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Mayo-Oulo,North,,Mayo-Louti,99826,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Mayo-Oulo,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Tcheboa,North,,Bénoué,92658,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,,,,,,,,,region,1,CM-NO,Nord,NONE,0.0,CM-NO
+Cameroon,Pitoa,North,,Bénoué,76715,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Pitoa,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Figuil,North,,Mayo-Louti,67997,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Figuil,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Madingring,North,,Mayo-Rey,57347,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Madingring,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Tcholliré,North,,Mayo-Rey,47296,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Tcholliré,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Touroua,North,,Bénoué,40674,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Touroua,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Poli,North,,Faro,37882,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Poli,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Demsa,North,,Bénoué,37282,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,,,,,,,,,region,1,CM-NO,Nord,NONE,0.0,CM-NO
+Cameroon,Beka,North,,Faro,31595,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Béka,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Baschéo,North,,Bénoué,26743,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Baschéo,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Mayo-Hourna,North,,Bénoué,21445,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Mayo-Hourna,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Dembo,North,,Bénoué,15816,Arrondissement,,,#N/A,2005,NorthCameroon,,,,,,,,locality,,CM-NO,Dembo,,,,,region,1,CM-NO,Nord,HIGH,1.0,CM-NO
+Cameroon,Bamenda II,Northwest,,Mezam,184277,City Arrondissement,Bamenda,,Bamenda,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Bamenda I,,,,,region,1,CM-NW,Northwest,MED,0.947,CM-NW
+Cameroon,Bamenda III,Northwest,,Mezam,110253,City Arrondissement,Bamenda,,Bamenda,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Bamenda I,,,,,region,1,CM-NW,Northwest,LOW,0.9,CM-NW
+Cameroon,Bamenda I,Northwest,,Mezam,28359,City Arrondissement,Bamenda,,Bamenda,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Bamenda I,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Oku,Northwest,,Bui,87720,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Kumbo,Northwest,,Bui,83479,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Kumbo,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Ndu,Northwest,,Donga-Mantung,73955,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Ndu,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Nwa,Northwest,,Donga-Mantung,69954,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Nwa,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Ndop,Northwest,,Ngo-Ketunjia,69603,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Ndop,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Balikumbat,Northwest,,Ngo-Ketunjia,68537,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Balikumbat,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Santa,Northwest,,Mezam,64391,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Santa,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Nkambé,Northwest,,Donga-Mantung,63032,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Nkambe,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Fungom,Northwest,,Menchum,58666,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Bafut,Northwest,,Mezam,57930,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Bafut,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Menchum Valley,Northwest,,Menchum,50235,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Babessi,Northwest,,Ngo-Ketunjia,49208,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Babessi,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Tubah,Northwest,,Mezam,48542,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Tubah,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Jakiri,Northwest,,Bui,47022,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Jakiri,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Fundong,Northwest,,Boyo,45831,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Fundong,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Batibo,Northwest,,Momo,44619,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Batibo,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Nkum,Northwest,,Bui,44059,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Nkum,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Belo,Northwest,,Boyo,40757,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Belo,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Ako,Northwest,,Donga-Mantung,40349,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Ako,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Noni,Northwest,,Bui,39400,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Wum,Northwest,,Menchum,39100,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Wum,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Mbengwi,Northwest,,Momo,31591,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Mbengwi,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Bali,Northwest,,Mezam,30375,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Bali,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Widikum-Menka,Northwest,,Momo,28152,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Misaje,Northwest,,Donga-Mantung,22641,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Misaje,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Njinikom,Northwest,,Boyo,20461,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Njinikom,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Mbven,Northwest,,Bui,20289,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Bum,Northwest,,Boyo,17838,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Ngie,Northwest,,Momo,17697,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-NW,Northwest,NONE,0.0,CM-NW
+Cameroon,Njikwa,Northwest,,Momo,16634,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Nijkwa,,,,,region,1,CM-NW,Northwest,LOW,0.833,CM-NW
+Cameroon,Furu-Awa,Northwest,,Menchum,13997,Arrondissement,,,#N/A,2005,NorthwestCameroon,,,,,,,,locality,,CM-NW,Furu-Awa,,,,,region,1,CM-NW,Northwest,HIGH,1.0,CM-NW
+Cameroon,Sangmélima,South,,Dja-et-Lobo,82513,Arrondissement,Sangmélima,,Sangmélima,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Sangmélima,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Ebolowa II,South,,Mvila,55957,City Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Ebolowa II,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Ambam,South,,Vallée-du-Ntem,41089,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Ambam,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Kribi II,South,,Océan,40679,City Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Kribi II,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Ebolowa I,South,,Mvila,40538,City Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Ebolowa I,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Meyomessala,South,,Dja-et-Lobo,31366,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Meyomessala,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Zoétélé,South,,Dja-et-Lobo,30583,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Zoétélé,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Kribi I,South,,Océan,29886,City Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Kribi I,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Niete,South,,Océan,23921,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Niété,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Lokoundje,South,,Océan,22681,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Lokoundjé,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Djoum,South,,Dja-et-Lobo,18050,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Djoum,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Mvengue,South,,Océan,17757,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Mvengue,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Mengong,South,,Mvila,17222,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Mengong,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Kyé-Ossi,South,,Vallée-du-Ntem,17117,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Kyé-Ossi,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Mvangan,South,,Mvila,16114,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Mvangan,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Ngoulemakong,South,,Mvila,14675,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Ngoulémakong,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Lolodorf,South,,Océan,14326,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Lolodorf,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Bipindi,South,,Océan,14118,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Bipindi,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Biwong-Bane,South,,Mvila,13151,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Biwong-Bané,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Bengbis,South,,Dja-et-Lobo,13075,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Bengbis,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Biwong-Bulu,South,,Mvila,12867,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Biwong-Bulu,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Ma'an,South,,Vallée-du-Ntem,12448,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Ma'an,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Meyomessi,South,,Dja-et-Lobo,9227,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Meyomessi,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Efoulan,South,,Mvila,8905,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Efoulan,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Akom II,South,,Océan,8802,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Akom II,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Olamze,South,,Vallée-du-Ntem,8528,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Olamzé,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Campo,South,,Océan,6923,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Campo,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Mintom,South,,Dja-et-Lobo,6130,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Mintom,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Oveng,South,,Dja-et-Lobo,6007,Arrondissement,,,#N/A,2005,SouthCameroon,,,,,,,,locality,,CM-SU,Oveng,,,,,region,1,CM-SU,Sud,HIGH,1.0,CM-SU
+Cameroon,Buea,Southwest,,Fako,131325,Arrondissement,Douala,,Douala,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Buea,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Tiko,Southwest,,Fako,117884,Arrondissement,Douala,,Douala,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Tiko,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Limbé I,Southwest,,Fako,93255,City Arrondissement,Douala,,Douala,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Limbé I,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Muyuka,Southwest,,Fako,86268,Arrondissement,Douala,,Douala,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Muyuka,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Limbé II,Southwest,,Fako,16401,City Arrondissement,Douala,,Douala,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Limbé II,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,West Coast,Southwest,,Fako,12725,Arrondissement,Douala,,Douala,2005,SouthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-SW,Southwest,NONE,0.0,CM-SW
+Cameroon,Limbé III,Southwest,,Fako,8554,City Arrondissement,Douala,,Douala,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Limbé III,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Mbonge,Southwest,,Meme,115692,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Mbonge,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Akwaya,Southwest,,Manyu,85914,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Akwaya,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Kumba I,Southwest,,Meme,68095,City Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Kumba I,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Kumba II,Southwest,,Meme,62878,City Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Kumba II,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Tombel,Southwest,,Koupé-Manengouba,57017,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Tombel,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Ekondo-Titi,Southwest,,Ndian,56503,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Ekondo-Titi,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Konye,Southwest,,Meme,44711,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Konye,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Fontem,Southwest,,Lebialem,39706,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-SW,Southwest,NONE,0.0,CM-SW
+Cameroon,Wabane,Southwest,,Lebialem,38175,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Wabane,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Eyumodjock,Southwest,,Manyu,35999,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Eyumodjock,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Alou,Southwest,,Lebialem,35855,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Alou,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Kumba III,Southwest,,Meme,35358,City Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Kumba III,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Mamfé Central,Southwest,,Manyu,31641,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-SW,Southwest,NONE,0.0,CM-SW
+Cameroon,Upper Banyang,Southwest,,Manyu,27485,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,,,,,,,,,region,1,CM-SW,Southwest,NONE,0.0,CM-SW
+Cameroon,Nguti,Southwest,,Koupé-Manengouba,27151,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Nguti,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Bangem,Southwest,,Koupé-Manengouba,21411,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Bangem,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Bamusso,Southwest,,Ndian,19230,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Bamusso,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Mundemba,Southwest,,Ndian,14385,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Mudemba,,,,,region,1,CM-SW,Southwest,MED,0.933,CM-SW
+Cameroon,Dikome-Balue,Southwest,,Ndian,13364,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Dikome-Balue,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Toko,Southwest,,Ndian,7035,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Toko,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Idabato,Southwest,,Ndian,3482,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Idabato,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Isanguele,Southwest,,Ndian,3476,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Isanguele,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Kombo-Itindi,Southwest,,Ndian,2958,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Kombo-Itindi,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Kombo-Abedimo,Southwest,,Ndian,2146,Arrondissement,,,#N/A,2005,SouthwestCameroon,,,,,,,,locality,,CM-SW,Kombo-Abedimo,,,,,region,1,CM-SW,Southwest,HIGH,1.0,CM-SW
+Cameroon,Bafang,West,,Haut-Nkam,29821,Arrondissement,Bafang,,Bafang,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bafang,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bafoussam II,West,,Mifi,121282,City Arrondissement,Bafoussam,,Bafoussam,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bafoussam II,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bafoussam I,West,,Mifi,98339,City Arrondissement,Bafoussam,,Bafoussam,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bafoussam I,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bafoussam III,West,,Mifi,81835,City Arrondissement,Bafoussam,,Bafoussam,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bafoussam III,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bangangté,West,,Ndé,63595,Arrondissement,Bangangté,,Bangangté,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bangangté,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Dschang,West,,Menoua,101385,Arrondissement,Dschang,,Dschang,2005,WestCameroon,,,,,,,,locality,,CM-OU,Dschang,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Mbouda,West,,Bamboutos,120650,Arrondissement,Mbouda,,Mbouda,2005,WestCameroon,,,,,,,,locality,,CM-OU,Mbouda,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Foumban,West,,Noun,106309,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Foumban,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Batcham,West,,Bamboutos,83817,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Batcham,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Foumbot,West,,Noun,76486,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Foumbot,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Penka-Michel,West,,Menoua,65135,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Penka-Michel,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Nkong-Ni,West,,Menoua,53367,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,,,,,,,,,region,1,CM-OU,Ouest,NONE,0.0,CM-OU
+Cameroon,Galim,West,,Bamboutos,51014,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Galim,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Koutaba,West,,Noun,49171,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Koutaba,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Kouoptamo,West,,Noun,48772,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Kouoptamo,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Malentouen,West,,Noun,45121,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Malentouen,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Poumougne,West,,Koung-Khi,40637,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,,,,,,,,,region,1,CM-OU,Ouest,NONE,0.0,CM-OU
+Cameroon,Massangam,West,,Noun,38736,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Massangam,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Santchou,West,,Menoua,37479,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Santchou,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Babadjou,West,,Bamboutos,36929,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Babadjou,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Magba,West,,Noun,35628,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Magba,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bamendjou,West,,Hauts-Plateaux,34269,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bamendjou,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Kékem,West,,Haut-Nkam,31542,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Kékem,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bandja,West,,Haut-Nkam,30931,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bandja,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bangourain,West,,Noun,30877,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bangourain,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Banka,West,,Haut-Nkam,25290,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Banka,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Njimom,West,,Noun,23983,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Njimom,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Baham,West,,Hauts-Plateaux,19680,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Baham,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Fongo-Tongo,West,,Menoua,18822,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Fongo-Tongo,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bangou,West,,Hauts-Plateaux,15787,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bangou,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bazou,West,,Ndé,14912,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bazou,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Tonga,West,,Ndé,13528,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Tonga,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bayangam,West,,Koung-Khi,13397,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bayangam,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Banwa,West,,Haut-Nkam,11693,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Banwa,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Djebem,West,,Koung-Khi,10987,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,,,,,,,,,region,1,CM-OU,Ouest,NONE,0.0,CM-OU
+Cameroon,Batié,West,,Hauts-Plateaux,10942,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Batié,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bana,West,,Haut-Nkam,10254,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bana,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Fokoué,West,,Menoua,9576,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Fokoué,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bakou,West,,Haut-Nkam,5255,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bakou,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU
+Cameroon,Bassamba,West,,Ndé,2814,Arrondissement,,,#N/A,2005,WestCameroon,,,,,,,,locality,,CM-OU,Bassamba,,,,,region,1,CM-OU,Ouest,HIGH,1.0,CM-OU

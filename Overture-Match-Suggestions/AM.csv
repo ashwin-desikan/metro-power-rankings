@@ -1,0 +1,83 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Armenia,Ashtarak,Aragatsotn,,,66100,Municipality,Yerevan,,Yerevan,2025,AragatsotnArmenia,county,2,AM-AG,Աշտարակ համայնք,,,,locality,,AM-AG,Աշտարակ,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Talin,Aragatsotn,,,32000,Municipality,,,#N/A,2025,AragatsotnArmenia,county,2,AM-AG,Թալին համայնք,,,,locality,,AM-AG,Թալին,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Aparan,Aragatsotn,,,21800,Municipality,,,#N/A,2025,AragatsotnArmenia,county,2,AM-AG,Ապարան համայնք,,,,locality,,AM-AG,Ապարան,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Tsaghkahovit,Aragatsotn,,,9600,Municipality,,,#N/A,2025,AragatsotnArmenia,county,2,AM-AG,Ծաղկահովիտ համայնք,,,,locality,,AM-AG,Ծաղկահովիտ,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Alagyaz,Aragatsotn,,,3500,Municipality,,,#N/A,2025,AragatsotnArmenia,county,2,AM-AG,Ալագյազ համայնք,,,,locality,,AM-AG,Ալագյազ,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Shamiram,Aragatsotn,,,1400,Municipality,,,#N/A,2025,AragatsotnArmenia,county,2,AM-AG,Շամիրամ համայնք,,,,locality,,AM-AG,Շամիրամ,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Arevut,Aragatsotn,,,800,Municipality,,,#N/A,2025,AragatsotnArmenia,county,2,AM-AG,Արևուտ համայնք,,,,locality,,AM-AG,Արևուտ,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Metsadzor,Aragatsotn,,,300,Municipality,,,#N/A,2025,AragatsotnArmenia,county,2,AM-AG,Մեծաձոր համայնք,,,,locality,,AM-AG,Մեծաձոր,,,,,region,1,AM-AG,Արագածոտնի մարզ,HIGH,1.0,AM-AG
+Armenia,Ararat,Ararat,,,39500,Municipality,Ararat,,Ararat,2025,AraratArmenia,county,2,AM-AR,Արարատ համայնք,,,,locality,,AM-AR,Արարատ,,,,,region,1,AM-AR,Արարատի մարզ,HIGH,1.0,AM-AR
+Armenia,Artashat,Ararat,,,93400,Municipality,Yerevan,,Yerevan,2025,AraratArmenia,county,2,AM-AR,Արտաշատ համայնք,,,,locality,,AM-AR,Արտաշատ,,,,,region,1,AM-AR,Արարատի մարզ,HIGH,1.0,AM-AR
+Armenia,Masis,Ararat,,,84300,Municipality,Yerevan,,Yerevan,2025,AraratArmenia,county,2,AM-AR,Մասիս համայնք,,,,locality,,AM-AR,Մասիս,,,,,region,1,AM-AR,Արարատի մարզ,HIGH,1.0,AM-AR
+Armenia,Vedi,Ararat,,,48500,Municipality,,,#N/A,2025,AraratArmenia,county,2,AM-AR,Վեդի համայնք,,,,locality,,AM-AR,Վեդի,,,,,region,1,AM-AR,Արարատի մարզ,HIGH,1.0,AM-AR
+Armenia,Verin Dvin,Ararat,,,1900,Municipality,,,#N/A,2025,AraratArmenia,county,2,AM-AR,Վերին Դվին համայնք,,,,locality,,AM-AR,Վերին Դվին,,,,,region,1,AM-AR,Արարատի մարզ,HIGH,1.0,AM-AR
+Armenia,Armavir,Armavir,,,53300,Municipality,Armavir (AR),,Armavir (AR),2025,ArmavirArmenia,county,2,AM-AV,Արմավիր համայնք,,,,region,1,AM-AV,Արմավիրի մարզ,,,,,region,1,AM-AV,Արմավիրի մարզ,HIGH,1.0,AM-AV
+Armenia,Vagharshapat [Ejmiatsin],Armavir,,,51300,Municipality,Yerevan,,Yerevan,2025,ArmavirArmenia,county,2,AM-AV,Վաղարշապատ համայնք,,,,,,,,,,,,region,1,AM-AV,Արմավիրի մարզ,NONE,0.0,AM-AV
+Armenia,Khoy,Armavir,,,27500,Municipality,Yerevan,,Yerevan,2025,ArmavirArmenia,,,,,,,,,,,,,,,,region,1,AM-AV,Արմավիրի մարզ,NONE,0.0,AM-AV
+Armenia,Paraqar,Armavir,,,26600,Municipality,Yerevan,,Yerevan,2025,ArmavirArmenia,county,2,AM-AV,Փարաքար համայնք,,,,,,,,,,,,region,1,AM-AV,Արմավիրի մարզ,NONE,0.0,AM-AV
+Armenia,Metsamor,Armavir,,,67800,Municipality,,,#N/A,2025,ArmavirArmenia,county,2,AM-AV,Մեծամոր համայնք,,,,locality,,AM-AV,Մեծամոր,,,,,region,1,AM-AV,Արմավիրի մարզ,HIGH,1.0,AM-AV
+Armenia,Araks,Armavir,,,24600,Municipality,,,#N/A,2025,ArmavirArmenia,county,2,AM-AV,Արաքս համայնք,,,,locality,,AM-AV,Արաքս,,,,,region,1,AM-AV,Արմավիրի մարզ,HIGH,1.0,AM-AV
+Armenia,Baghramyan,Armavir,,,16400,Municipality,,,#N/A,2025,ArmavirArmenia,county,2,AM-AV,Բաղրամյան համայնք,,,,locality,,AM-AV,Բաղրամյան,,,,,region,1,AM-AV,Արմավիրի մարզ,HIGH,1.0,AM-AV
+Armenia,Ferik,Armavir,,,400,Municipality,,,#N/A,2025,ArmavirArmenia,county,2,AM-AV,Ֆերիկ համայնք,,,,locality,,AM-AV,Ֆերիկ,,,,,region,1,AM-AV,Արմավիրի մարզ,HIGH,1.0,AM-AV
+Armenia,Martuni,Gegharkunik,,,80300,Municipality,Martuni,,Martuni,2025,GegharkunikArmenia,county,2,AM-GR,Մարտունի համայնք,,,,locality,,AM-GR,Մարտունի,,,,,region,1,AM-GR,Գեղարքունիքի մարզ,HIGH,1.0,AM-GR
+Armenia,Gavar,Gegharkunik,,,49200,Municipality,,,#N/A,2025,GegharkunikArmenia,county,2,AM-GR,Գավառ համայնք,,,,locality,,AM-GR,Գավառ,,,,,region,1,AM-GR,Գեղարքունիքի մարզ,HIGH,1.0,AM-GR
+Armenia,Sevan,Gegharkunik,,,37900,Municipality,,,#N/A,2025,GegharkunikArmenia,county,2,AM-GR,Սևան համայնք,,,,locality,,AM-GR,Սևան,,,,,region,1,AM-GR,Գեղարքունիքի մարզ,HIGH,1.0,AM-GR
+Armenia,Vardenis,Gegharkunik,,,35500,Municipality,,,#N/A,2025,GegharkunikArmenia,county,2,AM-GR,Վարդենիս համայնք,,,,locality,,AM-GR,Վարդենիս,,,,,region,1,AM-GR,Գեղարքունիքի մարզ,HIGH,1.0,AM-GR
+Armenia,Jambarak,Gegharkunik,,,12800,Municipality,,,#N/A,2025,GegharkunikArmenia,county,2,AM-GR,Ճամբարակ համայնք,,,,,,,,,,,,region,1,AM-GR,Գեղարքունիքի մարզ,NONE,0.0,AM-GR
+Armenia,Hrazdan,Kotayk,,,58100,Municipality,Hrazdan,,Hrazdan,2025,KotaykArmenia,county,2,AM-KT,Հրազդան համայնք,,,,locality,,AM-KT,Հրազդան,,,,,region,1,AM-KT,Կոտայքի մարզ,HIGH,1.0,AM-KT
+Armenia,Abovyan,Kotayk,,,79300,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Աբովյան համայնք,,,,locality,,AM-KT,Աբովյան,,,,,region,1,AM-KT,Կոտայքի մարզ,HIGH,1.0,AM-KT
+Armenia,Nairi,Kotayk,,,37200,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Նաիրի համայնք,,,,,,,,,,,,region,1,AM-KT,Կոտայքի մարզ,NONE,0.0,AM-KT
+Armenia,Charentsavan,Kotayk,,,33800,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Չարենցավան համայնք,,,,locality,,AM-KT,Չարենցավան,,,,,region,1,AM-KT,Կոտայքի մարզ,HIGH,1.0,AM-KT
+Armenia,Nor Hachn,Kotayk,,,30100,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Նոր Հաճն համայնք,,,,,,,,,,,,region,1,AM-KT,Կոտայքի մարզ,NONE,0.0,AM-KT
+Armenia,Garni,Kotayk,,,13000,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Գառնի համայնք,,,,locality,,AM-KT,Գառնի,,,,,region,1,AM-KT,Կոտայքի մարզ,HIGH,1.0,AM-KT
+Armenia,Byureghavan,Kotayk,,,12900,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Բյուրեղավան համայնք,,,,locality,,AM-KT,Բյուրեղավան,,,,,region,1,AM-KT,Կոտայքի մարզ,HIGH,1.0,AM-KT
+Armenia,Jrvej,Kotayk,,,10500,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Ջրվեժ համայնք,,,,locality,,AM-KT,Ջրվեժ,,,,,region,1,AM-KT,Կոտայքի մարզ,HIGH,1.0,AM-KT
+Armenia,Akunq,Kotayk,,,9000,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Ակունք համայնք,,,,,,,,,,,,region,1,AM-KT,Կոտայքի մարզ,NONE,0.0,AM-KT
+Armenia,Tsaghkadzor,Kotayk,,,6200,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Ծաղկաձոր համայնք,,,,,,,,,,,,region,1,AM-KT,Կոտայքի մարզ,NONE,0.0,AM-KT
+Armenia,Arzni,Kotayk,,,3200,Municipality,,,#N/A,2025,KotaykArmenia,county,2,AM-KT,Արզնի համայնք,,,,locality,,AM-KT,Արզնի,,,,,region,1,AM-KT,Կոտայքի մարզ,HIGH,1.0,AM-KT
+Armenia,Vanadzor,Lori,,,87700,Municipality,Vanadzor,,Vanadzor,2025,LoriArmenia,county,2,AM-LO,Վանաձոր համայնք,,,,locality,,AM-LO,Վանաձոր,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Spitak,Lori,,,39000,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Սպիտակ համայնք,,,,locality,,AM-LO,Սպիտակ,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Alaverdi,Lori,,,33300,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Ալավերդի համայնք,,,,locality,,AM-LO,Ալավերդի,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Tashir,Lori,,,22300,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Տաշիր համայնք,,,,,,,,,,,,region,1,AM-LO,Լոռու մարզ,NONE,0.0,AM-LO
+Armenia,Stepanavan,Lori,,,13700,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Ստեփանավան համայնք,,,,locality,,AM-LO,Ստեփանավան,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Pambak,Lori,,,12400,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Փամբակ համայնք,,,,,,,,,,,,region,1,AM-LO,Լոռու մարզ,NONE,0.0,AM-LO
+Armenia,Gyulagarak,Lori,,,7800,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Գյուլագարակ համայնք,,,,locality,,AM-LO,Գյուլագարակ,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Tumanyan,Lori,,,5700,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Թումանյան համայնք,,,,locality,,AM-LO,Թումանյան,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Lori Berd,Lori,,,5100,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Լոռի Բերդ համայնք,,,,locality,,AM-LO,Լոռի Բերդ,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Fioletovo,Lori,,,1300,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Ֆիոլետովո համայնք,,,,,,,,,,,,region,1,AM-LO,Լոռու մարզ,NONE,0.0,AM-LO
+Armenia,Lermontovo,Lori,,,900,Municipality,,,#N/A,2025,LoriArmenia,county,2,AM-LO,Lermontovo community,,,,locality,,AM-LO,Լերմոնտովո,,,,,region,1,AM-LO,Լոռու մարզ,HIGH,1.0,AM-LO
+Armenia,Gyumri,Shirak,,,114700,Municipality,Gyumri,,Gyumri,2025,ShirakArmenia,county,2,AM-SH,Գյումրի,,,,locality,,AM-SH,Գյումրի,,,,,region,1,AM-SH,Շիրակի մարզ,HIGH,1.0,AM-SH
+Armenia,Akhuryan,Shirak,,,41100,Municipality,Gyumri,,Gyumri,2025,ShirakArmenia,county,2,AM-SH,Ախուրյան համայնք,,,,locality,,AM-SH,Ախուրյան,,,,,region,1,AM-SH,Շիրակի մարզ,HIGH,1.0,AM-SH
+Armenia,Artik,Shirak,,,50300,Municipality,,,#N/A,2025,ShirakArmenia,county,2,AM-SH,Արթիկ համայնք,,,,locality,,AM-SH,Արթիկ,,,,,region,1,AM-SH,Շիրակի մարզ,HIGH,1.0,AM-SH
+Armenia,Ani,Shirak,,,19800,Municipality,,,#N/A,2025,ShirakArmenia,county,2,AM-SH,Անի համայնք,,,,,,,,,,,,region,1,AM-SH,Շիրակի մարզ,NONE,0.0,AM-SH
+Armenia,Ashotsq,Shirak,,,10900,Municipality,,,#N/A,2025,ShirakArmenia,county,2,AM-SH,Աշոցք համայնք,,,,,,,,,,,,region,1,AM-SH,Շիրակի մարզ,NONE,0.0,AM-SH
+Armenia,Amasia,Shirak,,,5600,Municipality,,,#N/A,2025,ShirakArmenia,county,2,AM-SH,Ամասիա համայնք,,,,locality,,AM-SH,Ամասիա,,,,,region,1,AM-SH,Շիրակի մարզ,HIGH,1.0,AM-SH
+Armenia,Kapan,Syunik,,,38400,Municipality,Kapan,,Kapan,2025,SyunikArmenia,county,2,AM-SU,Կապան համայնք,,,,locality,,AM-SU,Կապան,,,,,region,1,AM-SU,Սյունիքի մարզ,HIGH,1.0,AM-SU
+Armenia,Sisian,Syunik,,,26300,Municipality,,,#N/A,2025,SyunikArmenia,county,2,AM-SU,Սիսիան համայնք,,,,locality,,AM-SU,Սիսիան,,,,,region,1,AM-SU,Սյունիքի մարզ,HIGH,1.0,AM-SU
+Armenia,Goris,Syunik,,,25100,Municipality,,,#N/A,2025,SyunikArmenia,county,2,AM-SU,Գորիս համայնք,,,,,,,,,,,,region,1,AM-SU,Սյունիքի մարզ,NONE,0.0,AM-SU
+Armenia,Meghri,Syunik,,,8500,Municipality,,,#N/A,2025,SyunikArmenia,county,2,AM-SU,Մեղրի համայնք,,,,locality,,AM-SU,Մեղրի,,,,,region,1,AM-SU,Սյունիքի մարզ,HIGH,1.0,AM-SU
+Armenia,Qajaran,Syunik,,,7700,Municipality,,,#N/A,2025,SyunikArmenia,county,2,AM-SU,Քաջարան համայնք,,,,,,,,,,,,region,1,AM-SU,Սյունիքի մարզ,NONE,0.0,AM-SU
+Armenia,Tatev,Syunik,,,5500,Municipality,,,#N/A,2025,SyunikArmenia,county,2,AM-SU,Տաթև համայնք,,,,locality,,AM-SU,Տաթև,,,,,region,1,AM-SU,Սյունիքի մարզ,HIGH,1.0,AM-SU
+Armenia,Tegh,Syunik,,,5200,Municipality,,,#N/A,2025,SyunikArmenia,county,2,AM-SU,Տեղ համայնք,,,,locality,,AM-SU,Տեղ,,,,,region,1,AM-SU,Սյունիքի մարզ,HIGH,1.0,AM-SU
+Armenia,Ijevan,Tavush,,,45100,Municipality,,,#N/A,2025,TavushArmenia,county,2,AM-TV,Իջևան համայնք,,,,locality,,AM-TV,Իջևան,,,,,region,1,AM-TV,Տավուշի մարզ,HIGH,1.0,AM-TV
+Armenia,Noyemberyan,Tavush,,,26600,Municipality,,,#N/A,2025,TavushArmenia,county,2,AM-TV,Նոյեմբերյան համայնք,,,,locality,,AM-TV,Նոյեմբերյան,,,,,region,1,AM-TV,Տավուշի մարզ,HIGH,1.0,AM-TV
+Armenia,Dilijan,Tavush,,,23100,Municipality,,,#N/A,2025,TavushArmenia,county,2,AM-TV,Դիլիջան համայնք,,,,locality,,AM-TV,Դիլիջան,,,,,region,1,AM-TV,Տավուշի մարզ,HIGH,1.0,AM-TV
+Armenia,Berd,Tavush,,,22900,Municipality,,,#N/A,2025,TavushArmenia,county,2,AM-TV,Բերդ համայնք,,,,locality,,AM-TV,Բերդ,,,,,region,1,AM-TV,Տավուշի մարզ,HIGH,1.0,AM-TV
+Armenia,Yeghegnadzor,Vayots Dzor,,,17100,Municipality,,,#N/A,2025,Vayots DzorArmenia,county,2,AM-VD,Եղեգնաձոր համայնք,,,,locality,,AM-VD,Եղեգնաձոր,,,,,region,1,AM-VD,Վայոց ձորի մարզ,HIGH,1.0,AM-VD
+Armenia,Vayq,Vayots Dzor,,,10800,Municipality,,,#N/A,2025,Vayots DzorArmenia,county,2,AM-VD,Վայք համայնք,,,,,,,,,,,,region,1,AM-VD,Վայոց ձորի մարզ,NONE,0.0,AM-VD
+Armenia,Areni,Vayots Dzor,,,9800,Municipality,,,#N/A,2025,Vayots DzorArmenia,county,2,AM-VD,Արենի համայնք,,,,locality,,AM-VD,Արենի,,,,,region,1,AM-VD,Վայոց ձորի մարզ,HIGH,1.0,AM-VD
+Armenia,Jermuk,Vayots Dzor,,,5900,Municipality,,,#N/A,2025,Vayots DzorArmenia,county,2,AM-VD,Ջերմուկ համայնք,,,,locality,,AM-VD,Ջերմուկ,,,,,region,1,AM-VD,Վայոց ձորի մարզ,HIGH,1.0,AM-VD
+Armenia,Yeghegis,Vayots Dzor,,,5500,Municipality,,,#N/A,2025,Vayots DzorArmenia,county,2,AM-VD,Եղեգիս համայնք,,,,locality,,AM-VD,Եղեգիս,,,,,region,1,AM-VD,Վայոց ձորի մարզ,HIGH,1.0,AM-VD
+Armenia,Malatia-Sebastia,Yerevan,,,150000,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Մալաթիա-Սեբաստիա,,,,county,2,AM-ER,Մալաթիա-Սեբաստիա,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Shengavit,Yerevan,,,140400,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Շենգավիթ,,,,county,2,AM-ER,Շենգավիթ,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Nor Nork,Yerevan,,,136900,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Նոր Նորք,,,,,,,,,,,,region,1,AM-ER,Երևան,NONE,0.0,AM-ER
+Armenia,Kentron,Yerevan,,,132800,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Կենտրոն,,,,county,2,AM-ER,Կենտրոն,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Erebuni,Yerevan,,,129500,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Էրեբունի,,,,county,2,AM-ER,Էրեբունի,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Ajapnyak,Yerevan,,,122300,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Աջափնյակ,,,,county,2,AM-ER,Աջափնյակ,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Arabkir,Yerevan,,,118700,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Արաբկիր,,,,county,2,AM-ER,Արաբկիր,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Kanaker-Zeytun,Yerevan,,,75000,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Քանաքեռ-Զեյթուն,,,,,,,,,,,,region,1,AM-ER,Երևան,NONE,0.0,AM-ER
+Armenia,Avan,Yerevan,,,58700,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Ավան,,,,county,2,AM-ER,Ավան,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Davtashen,Yerevan,,,51800,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Դավթաշեն,,,,county,2,AM-ER,Դավթաշեն,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER
+Armenia,Nork-Marash,Yerevan,,,13800,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Նորք Մարաշ,,,,,,,,,,,,region,1,AM-ER,Երևան,NONE,0.0,AM-ER
+Armenia,Nubarashen,Yerevan,,,11200,City District,Yerevan,,Yerevan,2025,YerevanArmenia,county,2,AM-ER,Նուբարաշեն,,,,county,2,AM-ER,Նուբարաշեն,,,,,region,1,AM-ER,Երևան,HIGH,1.0,AM-ER

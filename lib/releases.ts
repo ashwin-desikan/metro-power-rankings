@@ -1,4 +1,4 @@
-import "server-only";
+﻿import "server-only";
 
 // Shared release-notes data. Single source of truth, imported by both the
 // /updates page renderer (full list, brevity-validated) and the home-page
@@ -57,7 +57,7 @@ export const RELEASES: Release[] = [
     date: "2026-05-26",
     headline: "International Football launches; European league expansion and polish",
     items: [
-      "International Football v1: sortable ELO/FIFA team table; per-team tournament history and finals; eight tournament hubs; live 2026 World Cup standings and bracket; Czechia and Türkiye display correctly.",
+      "International Football v1: sortable ELO/FIFA team table; per-team tournament history and finals; eight tournament hubs; live 2026 World Cup standings and bracket; Czechia and T├╝rkiye display correctly.",
       "Club Football now covers the Eredivisie, Primeira Liga, and Scottish Premiership alongside the existing five top flights; Scotland is wired down to League Two.",
       "Club season tables flag Domestic Cup and European finals inline: filled pill plus star for winners, outlined pill plus open star for runners-up; major cups use country labels, secondary cups read Lg Cup.",
       "Club page polish: standings on phone hide secondary columns; desktop numeric columns space evenly; European competition pills use era-correct abbreviations (EC, UC, ICFC) and sort within a season.",
@@ -80,7 +80,7 @@ export const RELEASES: Release[] = [
       "Belgrade and other capital-district metros where Overture lacks an ISO 3166-2 sub-region tag now resolve to polygons automatically, with no manual workbook fills required.",
       "Monaco and Vatican City route through the correct sheet so their quarter and parish rows feed the polygon build instead of being silently filtered.",
       "Cache invalidation now picks up wiring changes on its own: routing maps, sheet maps, REGIONLESS membership, and sheet schemas all feed the version hash so a forgotten --force can no longer mask a rebuild.",
-      "Newly resolved to polygons: Pakistan, Vietnam, Ethiopia, Sierra Leone, North Korea, Zimbabwe, Samoa, Fiji, Niger, Congo, Côte d'Ivoire, Barbados, Bhutan, plus Cayenne in French Guiana via a sheet-routing fix.",
+      "Newly resolved to polygons: Pakistan, Vietnam, Ethiopia, Sierra Leone, North Korea, Zimbabwe, Samoa, Fiji, Niger, Congo, C├┤te d'Ivoire, Barbados, Bhutan, plus Cayenne in French Guiana via a sheet-routing fix.",
     ],
   },
   {
@@ -97,7 +97,7 @@ export const RELEASES: Release[] = [
     headline: "Mass boundary expansion across dependencies, territories, and small states",
     items: [
       "West Bank and Gaza now render after a cross-border join-key fix; Israeli West Bank settlements union into the Jerusalem metro polygon via the same route.",
-      "Dozens of newly resolved jurisdictions: Bermuda, Turks and Caicos, BVI, Gibraltar, Anguilla, Saint Helena, Montserrat, Falklands, Macau, Guam, US Virgin Islands, Jersey, Guernsey, and Åland.",
+      "Dozens of newly resolved jurisdictions: Bermuda, Turks and Caicos, BVI, Gibraltar, Anguilla, Saint Helena, Montserrat, Falklands, Macau, Guam, US Virgin Islands, Jersey, Guernsey, and ├àland.",
       "Mass mid-size country wiring: Madagascar, Mozambique, Mongolia, Kazakhstan, Tanzania, Morocco, Slovakia, Czech Republic, Lithuania, Slovenia, Iceland, and roughly thirty-five more newly resolve to polygons.",
       "Expandable Map: one combined-boundaries fetch instead of thousands, multi-select Regions on home and Expandable Map, tier toggles preserve the map viewport, and a new None button clears all tiers.",
     ],
@@ -117,7 +117,7 @@ export const RELEASES: Release[] = [
     headline: "Sweeping boundary expansion across continents and territories",
     items: [
       "A wider cohort of countries resolves to administrative polygons: Bangladesh, Chile, New Zealand, Nepal, Philippines, Senegal, Serbia, Thailand, Uruguay, and a tail of Caribbean and Pacific states.",
-      "Small territories and city-states pick up their first polygons: Hong Kong, Isle of Man, Réunion, Martinique, Guadeloupe, Mayotte, Cayman Islands, and most Pacific micronations.",
+      "Small territories and city-states pick up their first polygons: Hong Kong, Isle of Man, R├⌐union, Martinique, Guadeloupe, Mayotte, Cayman Islands, and most Pacific micronations.",
       "Greece, Indonesia, and Taiwan complete their polygon fills from the prior matcher batch and now render administrative shapes alongside their newly added peers.",
       "Per-metro detail pages refresh against the latest workbook edits to Universities, Top Sports Teams, and stadium data.",
     ],
@@ -215,9 +215,9 @@ export const RELEASES: Release[] = [
     headline: "/sports: Gold Standard, Special Filters, Federation + Level, medal badges",
     items: [
       "Four mutually exclusive Presets (Gold Standard 361 / Major League 929 / Other 7,735 / All 8,664). Power Conferences and International Teams now Special Filters, surfacing only when the relevant Sport is selected.",
-      "League chips wear 🥇 for Gold Standard (sport apex) and 🥈 for Major League non-Gold; sort gold > silver > other. Same medals now appear on metro page TeamCards next to each team's league.",
+      "League chips wear ≡ƒÑç for Gold Standard (sport apex) and ≡ƒÑê for Major League non-Gold; sort gold > silver > other. Same medals now appear on metro page TeamCards next to each team's league.",
       "Federation sub-filter (UEFA / CAF / AFC / CONCACAF / OFC / CONMEBOL) appears when the International Teams Special Filter is on; Level filter uses the workbook column (1/2/3, College, Junior, etc).",
-      "Filter chips light up when an upstream filter narrows scope; per-category Clear links. Tooltip shows team / sport · league · level / location. NBA playoff badges link to Wikipedia; ABA in slate.",
+      "Filter chips light up when an upstream filter narrows scope; per-category Clear links. Tooltip shows team / sport ┬╖ league ┬╖ level / location. NBA playoff badges link to Wikipedia; ABA in slate.",
     ],
   },
   {
@@ -227,7 +227,7 @@ export const RELEASES: Release[] = [
       "All 32 NHL franchises at /teams/nhl with Stanley Cups from 1910 in gold, WHA Avco Cups in slate, Presidents' Trophy seasons, eight major trophies per franchise, arena history, and live ESPN division standings.",
       "New essay The Sovereign City Index ranks twelve planned cities (NEOM, Nusantara, NAC, and nine more) on the announcement-to-reality gap.",
       "New /sports landing page plots 1,389 teams (Major League plus FBS football and NCAA Division I basketball) on a filterable global map, with conference-colored markers and a Power 4 cap by default.",
-      "Live league widgets refresh hourly: NBA East/West playoff ladder, MLB division standings, and NHL division grids; NFL adds 14 international venues including the Bernabéu; ABA and Avco cups in slate.",
+      "Live league widgets refresh hourly: NBA East/West playoff ladder, MLB division standings, and NHL division grids; NFL adds 14 international venues including the Bernab├⌐u; ABA and Avco cups in slate.",
     ],
   },
   {
@@ -321,7 +321,7 @@ export const RELEASES: Release[] = [
     date: "2026-05-03",
     headline: "Conurbations get proper editorial names",
     items: [
-      "60+ conurbations now display under their civic, geographic, or political names: Bodensee, Lowcountry, SIJORI Triangle, Tuscany, Côte d'Azur, Borderplex, Mälardalen, Mindong, Greater Golden Horseshoe, plus many more.",
+      "60+ conurbations now display under their civic, geographic, or political names: Bodensee, Lowcountry, SIJORI Triangle, Tuscany, C├┤te d'Azur, Borderplex, M├ñlardalen, Mindong, Greater Golden Horseshoe, plus many more.",
       "Tier B for Conurbations renamed Continental (was World); the metro tier World City likewise becomes Continental Metro to sharpen the editorial vocabulary.",
       "Davos cluster fixed: the 138 km transitive bridge-chain is replaced by Bodensee, a real cross-border Lake Constance conurbation. Davos and St. Moritz now solo.",
       "Leaflet maps embed on matchup pages (two-point derby view), metro detail pages (cluster context or single-point location pin), and the conurbations badge page (click-to-expand per cluster).",

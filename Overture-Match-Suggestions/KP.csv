@@ -1,0 +1,198 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+North Korea,Kanggye-si,Chagang-do,,,251971,City,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Hŭich'ŏn-si,Chagang-do,,,168180,City,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Manp'o-si,Chagang-do,,,116760,City,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Chŏnch'ŏn-gun,Chagang-do,,,106311,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Sŏnggan-gun,Chagang-do,,,92952,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Wiwŏn-gun,Chagang-do,,,60245,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Changgang-gun,Chagang-do,,,54601,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Chasŏng-gun,Chagang-do,,,50939,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Tongsin-gun,Chagang-do,,,47460,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Ch'osan-gun,Chagang-do,,,43614,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Usi-gun,Chagang-do,,,42919,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Hwap'yŏng-gun,Chagang-do,,,42183,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Sijung-gun,Chagang-do,,,41842,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Chunggang-gun,Chagang-do,,,41022,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Songwŏn-gun,Chagang-do,,,38051,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Rangnim-gun,Chagang-do,,,36481,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Ryongnim-gun,Chagang-do,,,32727,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Kop'ung-gun,Chagang-do,,,31572,County,,,#N/A,2008,Chagang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-04,자강도,NONE,0.0,KP-04
+North Korea,Kaesŏng-si,Kaesŏng,,,308440,City,,,#N/A,2008,KaesŏngNorth Korea,,,,,,,,,,,,,,,,region,1,KP-15,개성시,NONE,0.0,KP-15
+North Korea,Wŏnsan-si,Kangwŏn-do,,,363127,City,Wonsan,,Wonsan,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Munch'ŏn-si,Kangwŏn-do,,,122934,City,Wonsan,,Wonsan,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Kosan-gun,Kangwŏn-do,,,103579,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Anbyŏn-gun,Kangwŏn-do,,,93960,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,P'yŏnggang-gun,Kangwŏn-do,,,90425,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,T'ongch'ŏn-gun,Kangwŏn-do,,,89357,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Ch'ŏnnae-gun,Kangwŏn-do,,,85123,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Ch'ŏrwŏn-gun,Kangwŏn-do,,,62418,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Kosŏng-gun,Kangwŏn-do,,,61277,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Sep'o-gun,Kangwŏn-do,,,61113,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Ich'ŏn-gun,Kangwŏn-do,,,57563,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Kimhwa-gun,Kangwŏn-do,,,56541,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Kŭmgang-gun,Kangwŏn-do,,,54211,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Ch'angdo-gun,Kangwŏn-do,,,51319,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,P'an'gyo-gun,Kangwŏn-do,,,47031,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Hoeyang-gun,Kangwŏn-do,,,42485,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Pŏptong-gun,Kangwŏn-do,,,35119,County,,,#N/A,2008,Kangwŏn-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-07,강원도,NONE,0.0,KP-07
+North Korea,Namp'o-si,Namp'o,,,366815,City,Pyongyang,,Pyongyang,2008,Namp'oNorth Korea,,,,,,,,,,,,,,,,region,1,KP-14,남포시,NONE,0.0,KP-14
+North Korea,Kangsŏ-guyŏk,Namp'o,,,191356,City District,Pyongyang,,Pyongyang,2008,Namp'oNorth Korea,,,,,,,,,,,,,,,,region,1,KP-14,남포시,NONE,0.0,KP-14
+North Korea,Onch'ŏn-gun,Namp'o,,,149851,County,Pyongyang,,Pyongyang,2008,Namp'oNorth Korea,,,,,,,,,,,,,,,,region,1,KP-14,남포시,NONE,0.0,KP-14
+North Korea,Ch'ŏllima-guyŏk,Namp'o,,,139489,City District,Pyongyang,,Pyongyang,2008,Namp'oNorth Korea,,,,,,,,,,,,,,,,region,1,KP-14,남포시,NONE,0.0,KP-14
+North Korea,Taean-guyŏk,Namp'o,,,77219,City District,Pyongyang,,Pyongyang,2008,Namp'oNorth Korea,,,,,,,,,,,,,,,,region,1,KP-14,남포시,NONE,0.0,KP-14
+North Korea,Ryonggang-gun,Namp'o,,,58930,County,Pyongyang,,Pyongyang,2008,Namp'oNorth Korea,,,,,,,,,,,,,,,,region,1,KP-14,남포시,NONE,0.0,KP-14
+North Korea,Ch'ŏngjin-si,North Hamgyong,,,667929,City,Chongjin,,Chongjin,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Kimch'aek-si,North Hamgyong,,,207299,City,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Hoeryŏng-si,North Hamgyong,,,153532,City,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Kilju-gun,North Hamgyong,,,139932,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Onsŏng-gun,North Hamgyong,,,127893,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Musan-gun,North Hamgyong,,,123721,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Kyŏngwŏn-gun,North Hamgyong,,,107327,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Kyŏngsŏng-gun,North Hamgyong,,,105909,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Myŏnggan-gun,North Hamgyong,,,99557,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Ŭndŏk-gun,North Hamgyong,,,89244,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Ŏrang-gun,North Hamgyong,,,87757,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Hwadae-gun,North Hamgyong,,,67677,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Myŏngch'ŏn-gun,North Hamgyong,,,65797,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Puryŏng-gun,North Hamgyong,,,48958,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Yŏnsa-gun,North Hamgyong,,,37876,County,,,#N/A,2008,North HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-09,함경북도,NONE,0.0,KP-09
+North Korea,Songrim-si,North Hwanghae,,,128831,City,Pyongyang,,Pyongyang,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Sŭngho-gun,North Hwanghae,,,85624,County,Pyongyang,,Pyongyang,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Sariwŏn-si,North Hwanghae,,,307764,City,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Hwangju-gun,North Hwanghae,,,155215,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Pongsan-gun,North Hwanghae,,,124745,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,P'yŏngsan-gun,North Hwanghae,,,123646,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Koksan-gun,North Hwanghae,,,120693,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Ŭnp'a-gun,North Hwanghae,,,110988,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Sŏhŭng-gun,North Hwanghae,,,100887,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Sang'wŏn-gun,North Hwanghae,,,92831,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Sin'gye-gun,North Hwanghae,,,78573,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Chunghwa-gun,North Hwanghae,,,77367,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Suan-gun,North Hwanghae,,,76890,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Rinsan-gun,North Hwanghae,,,73626,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Yŏnt'an-gun,North Hwanghae,,,73032,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Changp'ung-gun,North Hwanghae,,,69104,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Kŭmch'ŏn-gun,North Hwanghae,,,68216,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Yŏnsan-gun,North Hwanghae,,,66568,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Sinp'yŏng-gun,North Hwanghae,,,63727,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,T'osan-gun,North Hwanghae,,,62727,County,,,#N/A,2008,North HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-06,황해북도,NONE,0.0,KP-06
+North Korea,Sinŭiju-si,North Pyongan,,,359341,City,Sinuiju,,Sinuiju,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Kusŏng-si,North Pyongan,,,196515,City,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Chŏngju-si,North Pyongan,,,189742,City,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Sakju-gun,North Pyongan,,,159707,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Kujang-gun,North Pyongan,,,139337,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Ryongch'ŏn-gun,North Pyongan,,,135634,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Sŏnch'ŏn-gun,North Pyongan,,,126350,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Nyŏngbyŏn-gun,North Pyongan,,,113852,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Yŏmju-gun,North Pyongan,,,113620,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,P'ihyŏn-gun,North Pyongan,,,110637,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Ŭiju-gun,North Pyongan,,,110018,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,T'aech'ŏn-gun,North Pyongan,,,108894,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Tongnim-gun,North Pyongan,,,104614,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Unsan-gun,North Pyongan,,,102928,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Unjŏn-gun,North Pyongan,,,101130,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Pakch'ŏn-gun,North Pyongan,,,98128,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Kwaksan-gun,North Pyongan,,,97660,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Ch'ŏlsan-gun,North Pyongan,,,85525,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Tae'gwan-gun,North Pyongan,,,69565,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Hyangsan-gun,North Pyongan,,,52350,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Ch'ŏnma-gun,North Pyongan,,,50462,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Pyŏktong-gun,North Pyongan,,,35601,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Tongch'ang-gun,North Pyongan,,,28665,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Ch'angsŏng-gun,North Pyongan,,,26577,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Sindo-gun,North Pyongan,,,11810,County,,,#N/A,2008,North PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-03,평안북도,NONE,0.0,KP-03
+North Korea,Mangyŏngdae-guyŏk,Pyongyang,,,321690,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Rakrang-guyŏk,Pyongyang,,,282681,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Kangdong-gun,Pyongyang,,,221539,County,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Taedonggang-guyŏk,Pyongyang,,,207081,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Ryongsŏng-guyŏk,Pyongyang,,,195891,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,P'yŏngch'ŏn-guyŏk,Pyongyang,,,181142,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Hyŏngjesan-guyŏk,Pyongyang,,,160032,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Sŏngyo-guyŏk,Pyongyang,,,148209,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Sŏsŏng-guyŏk,Pyongyang,,,147138,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Tongdaewŏn-guyŏk,Pyongyang,,,143561,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Moranbong-guyŏk,Pyongyang,,,143404,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Sadong-guyŏk,Pyongyang,,,140869,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Chung-guyŏk,Pyongyang,,,131333,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Taesŏng-guyŏk,Pyongyang,,,115739,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Pot'onggang-guyŏk,Pyongyang,,,105180,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Sunan-guyŏk,Pyongyang,,,91791,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Ryŏkp'o-guyŏk,Pyongyang,,,82548,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Kangnam-gun,Pyongyang,,,69279,County,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Samsŏk-guyŏk,Pyongyang,,,62790,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Ŭnjŏng-guyŏk,Pyongyang,,,47569,City District,Pyongyang,,Pyongyang,2008,PyongyangNorth Korea,,,,,,,,,,,,,,,,region,1,KP-01,평양시,NONE,0.0,KP-01
+North Korea,Rasŏn-si,Rasŏn,,,196954,City,,,#N/A,2008,RasŏnNorth Korea,,,,,,,,,,,,,,,,region,1,KP-13,라선시,NONE,0.0,KP-13
+North Korea,Hyesan-si,Ryanggang-do,,,192680,City,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Kapsan-gun,Ryanggang-do,,,70611,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Paek'am-gun,Ryanggang-do,,,67683,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Unhŭng-gun,Ryanggang-do,,,61705,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Kimhyŏngjik-gun,Ryanggang-do,,,57729,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,P'ungsŏ-gun,Ryanggang-do,,,44112,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Kimjŏngsuk-gun,Ryanggang-do,,,42618,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Samsu-gun,Ryanggang-do,,,40311,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Kimhyŏnggwŏn-gun,Ryanggang-do,,,37528,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Poch'ŏn-gun,Ryanggang-do,,,37225,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Taehongdan-gun,Ryanggang-do,,,35596,County,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Samjiyŏn-si,Ryanggang-do,,,31471,City,,,#N/A,2008,Ryanggang-doNorth Korea,,,,,,,,,,,,,,,,region,1,KP-10,량강도,NONE,0.0,KP-10
+North Korea,Hamhŭng-si,South Hamgyong,,,668557,City,Hamhung,,Hamhung,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Hŭngnam-guyŏk,South Hamgyong,,,99994,City District,Hamhung,,Hamhung,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Tanch'ŏn-si,South Hamgyong,,,345875,City,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Kŭmya-gun,South Hamgyong,,,211140,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Chŏngp'yŏng-gun,South Hamgyong,,,179114,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Pukch'ŏng-gun,South Hamgyong,,,161886,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Sinp'o-si,South Hamgyong,,,152759,City,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Hongwŏn-gun,South Hamgyong,,,142910,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Hamju-gun,South Hamgyong,,,133896,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Riwŏn-gun,South Hamgyong,,,117320,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Hŏch'ŏn-gun,South Hamgyong,,,104731,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Sinhŭng-gun,South Hamgyong,,,104002,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Yŏnggwang-gun,South Hamgyong,,,103532,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Tŏksŏng-gun,South Hamgyong,,,97617,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Sudong-gun,South Hamgyong,,,95716,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Kowŏn-gun,South Hamgyong,,,94963,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Changjin-gun,South Hamgyong,,,64681,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Rag'wŏn-gun,South Hamgyong,,,60700,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Pujŏn-gun,South Hamgyong,,,48351,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Yodŏk-gun,South Hamgyong,,,40839,County,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Kŭmho-jigu,South Hamgyong,,,37430,Area,,,#N/A,2008,South HamgyongNorth Korea,,,,,,,,,,,,,,,,region,1,KP-08,함경남도,NONE,0.0,KP-08
+North Korea,Haeju-si,South Hwanghae,,,273300,City,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Paech'ŏn-gun,South Hwanghae,,,159825,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Yŏn'an-gun,South Hwanghae,,,158845,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Ongjin-gun,South Hwanghae,,,152878,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Ch'ŏngdan-gun,South Hwanghae,,,142607,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Sinch'ŏn-gun,South Hwanghae,,,141407,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,An'ak-gun,South Hwanghae,,,125924,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Chaeryŏng-gun,South Hwanghae,,,125631,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Ŭllyul-gun,South Hwanghae,,,107997,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Kangnyŏng-gun,South Hwanghae,,,106827,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Ŭnch'ŏn-gun,South Hwanghae,,,95597,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Chang'yŏn-gun,South Hwanghae,,,91422,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Pyŏksŏng-gun,South Hwanghae,,,90753,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Ryong'yŏn-gun,South Hwanghae,,,90102,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Kwail-gun,South Hwanghae,,,89895,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Samch'ŏn-gun,South Hwanghae,,,86042,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Sinwŏn-gun,South Hwanghae,,,83161,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Pongch'ŏn-gun,South Hwanghae,,,79740,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,T'aet'an-gun,South Hwanghae,,,64258,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Songhwa-gun,South Hwanghae,,,44274,County,,,#N/A,2008,South HwanghaeNorth Korea,,,,,,,,,,,,,,,,region,1,KP-05,황해남도,NONE,0.0,KP-05
+North Korea,Kaech'ŏn-si,South Pyongan,,,319554,City,Kaechon,,Kaechon,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,P'yŏngsŏng-si,South Pyongan,,,284386,City,Pyongyang,,Pyongyang,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Sunch'ŏn-si,South Pyongan,,,297317,City,Sunchon,,Sunchon,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Anju-si,South Pyongan,,,240117,City,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Tŏkch'ŏn-si,South Pyongan,,,237133,City,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Ŭnsan-gun,South Pyongan,,,206407,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,P'yŏngwŏn-gun,South Pyongan,,,179492,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Sukch'ŏn-gun,South Pyongan,,,178509,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Sŏngch'ŏn-gun,South Pyongan,,,149809,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Mundŏk-gun,South Pyongan,,,147191,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Pukch'ang-gun,South Pyongan,,,139498,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Taedong-gun,South Pyongan,,,129761,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Chŭngsan-gun,South Pyongan,,,113613,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Hoech'ang-gun,South Pyongan,,,89959,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Ch'ŏngnam-gun,South Pyongan,,,73290,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Yangdŏk-gun,South Pyongan,,,61355,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Sin'yang-gun,South Pyongan,,,59115,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Tŭkchang-jigu,South Pyongan,,,50033,Area,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Maengsan-gun,South Pyongan,,,48155,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Taehung-gun,South Pyongan,,,32915,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02
+North Korea,Nyŏngwŏn-gun,South Pyongan,,,30427,County,,,#N/A,2008,South PyonganNorth Korea,,,,,,,,,,,,,,,,region,1,KP-02,평안남도,NONE,0.0,KP-02

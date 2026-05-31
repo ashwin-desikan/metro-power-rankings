@@ -1,0 +1,343 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Samoa,Faleasiu,A'ana Alofi 1,,,4342,Village,,,#N/A,,A'ana Alofi 1Samoa,,,,,locality,,WS-AA,Faleasiu,,,,,region,1,WS-AA,Aʻana,HIGH,1.0,WS-AA
+Samoa,Fasito'o Uta,A'ana Alofi 2,,,2192,Village,,,#N/A,,A'ana Alofi 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lepale,A'ana Alofi 2,,,171,Village,,,#N/A,,A'ana Alofi 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Nofoali'i,A'ana Alofi 3,,,2184,Village,,,#N/A,,A'ana Alofi 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Leulumoega,A'ana Alofi 3,,,1295,Village,,,#N/A,,A'ana Alofi 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Satapuala (incl. Sina),A'ana Alofi 4,,,2102,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Fasito'o Tai,A'ana Alofi 4,,,1631,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vailuutai,A'ana Alofi 4,,,953,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Faleatiu,A'ana Alofi 4,,,634,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Afia,A'ana Alofi 4,,,248,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Faleolo,A'ana Alofi 4,,,15,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Afolau,A'ana Alofi 4,,,0,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vaipapa,A'ana Alofi 4,,,0,Village,,,#N/A,,A'ana Alofi 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Manono Uta,Aiga-i-le-Tai,,,1427,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,locality,,WS-AL,Manono Uta,,,,,region,1,WS-AL,Aiga-i-le-Tai,HIGH,1.0,WS-AL
+Samoa,Fuailolo'o,Aiga-i-le-Tai,,,1119,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Satuimalufilufi,Aiga-i-le-Tai,,,575,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Lalovi,Aiga-i-le-Tai,,,457,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Apolima Fou,Aiga-i-le-Tai,,,433,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Faleu,Aiga-i-le-Tai,,,238,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,locality,,WS-AL,Faleu,,,,,region,1,WS-AL,Aiga-i-le-Tai,HIGH,1.0,WS-AL
+Samoa,Paepaeala,Aiga-i-le-Tai,,,177,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Falepuna,Aiga-i-le-Tai,,,146,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Lepuia'i,Aiga-i-le-Tai,,,144,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,locality,,WS-AL,Lepuia'i,,,,,region,1,WS-AL,Aiga-i-le-Tai,HIGH,1.0,WS-AL
+Samoa,Satoi,Aiga-i-le-Tai,,,109,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Salua,Aiga-i-le-Tai,,,106,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,locality,,WS-AL,Salua,,,,,region,1,WS-AL,Aiga-i-le-Tai,HIGH,1.0,WS-AL
+Samoa,Apai,Aiga-i-le-Tai,,,101,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,locality,,WS-AL,Apai,,,,,region,1,WS-AL,Aiga-i-le-Tai,HIGH,1.0,WS-AL
+Samoa,Samea,Aiga-i-le-Tai,,,85,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Apolima Island,Aiga-i-le-Tai,,,81,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Satuilagi,Aiga-i-le-Tai,,,52,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Tausagi,Aiga-i-le-Tai,,,51,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Olo,Aiga-i-le-Tai,,,4,Village,,,#N/A,,Aiga-i-le-TaiSamoa,,,,,,,,,,,,,region,1,WS-AL,Aiga-i-le-Tai,NONE,0.0,WS-AL
+Samoa,Neiafu Uta,Alataua i Sisifo,,,646,Village,,,#N/A,,Alataua i SisifoSamoa,,,,,locality,,WS-VS,Neiafu Uta,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Tufutafoe,Alataua i Sisifo,,,456,Village,,,#N/A,,Alataua i SisifoSamoa,,,,,locality,,WS-VS,Tufutafoe,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Falelima,Alataua i Sisifo,,,450,Village,,,#N/A,,Alataua i SisifoSamoa,,,,,locality,,WS-VS,Falelima,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Neiafu Tai,Alataua i Sisifo,,,314,Village,,,#N/A,,Alataua i SisifoSamoa,,,,,locality,,WS-VS,Neiafu Tai,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Tiavea,Aleipata Itupa-i-Lalo,,,948,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Samusu,Aleipata Itupa-i-Lalo,,,863,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Satitoa,Aleipata Itupa-i-Lalo,,,669,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Salea'aumua,Aleipata Itupa-i-Lalo,,,559,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Mutiatele,Aleipata Itupa-i-Lalo,,,367,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Amaile,Aleipata Itupa-i-Lalo,,,242,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lotopue,Aleipata Itupa-i-Lalo,,,219,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Malaela,Aleipata Itupa-i-Lalo,,,186,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Utufa'alalafa,Aleipata Itupa-i-Lalo,,,165,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Alafou,Aleipata Itupa-i-Lalo,,,22,Village,,,#N/A,,Aleipata Itupa-i-LaloSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lalomanu,Aleipata Itupa-i-Luga,,,718,Village,,,#N/A,,Aleipata Itupa-i-LugaSamoa,,,,,locality,,WS-AT,Lalomanu,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Vailoa,Aleipata Itupa-i-Luga,,,397,Village,,,#N/A,,Aleipata Itupa-i-LugaSamoa,,,,,locality,,WS-AT,Vailoa,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Ulutogia,Aleipata Itupa-i-Luga,,,175,Village,,,#N/A,,Aleipata Itupa-i-LugaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Falefa,Anoama'a 1,,,1685,Village,,,#N/A,,Anoama'a 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lufilufi,Anoama'a 1,,,980,Village,,,#N/A,,Anoama'a 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Falevao,Anoama'a 1,,,731,Village,,,#N/A,,Anoama'a 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Faleapuna,Anoama'a 1,,,668,Village,,,#N/A,,Anoama'a 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lalomauga,Anoama'a 1,,,394,Village,,,#N/A,,Anoama'a 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Manunu,Anoama'a 1,,,235,Village,,,#N/A,,Anoama'a 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sauniatu,Anoama'a 1,,,21,Village,,,#N/A,,Anoama'a 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Solosolo,Anoama'a 2,,,1792,Village,,,#N/A,,Anoama'a 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Luatuanu'u,Anoama'a 2,,,854,Village,,,#N/A,,Anoama'a 2Samoa,,,,,locality,,WS-AT,Luatuanu'u,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Saolufata,Anoama'a 2,,,820,Village,,,#N/A,,Anoama'a 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Leusoali'i,Anoama'a 2,,,449,Village,,,#N/A,,Anoama'a 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Fusi,Anoama'a 2,,,423,Village,,,#N/A,,Anoama'a 2Samoa,,,,,locality,,WS-TU,Fusi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Salelesi,Anoama'a 2,,,374,Village,,,#N/A,,Anoama'a 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Eva,Anoama'a 2,,,270,Village,,,#N/A,,Anoama'a 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Solaua,Anoama'a 2,,,6,Village,,,#N/A,,Anoama'a 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sapulu,Fa'asaleleaga 1,,,1325,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-FA,Sapulu,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Falefia,Fa'asaleleaga 1,,,464,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-FA,Falefia,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Tafua,Fa'asaleleaga 1,,,444,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-PA,Tafua,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Fataloa,Fa'asaleleaga 1,,,372,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-FA,Fataloa,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Foua,Fa'asaleleaga 1,,,342,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-FA,Foua,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Maota,Fa'asaleleaga 1,,,307,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-FA,Maota,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Saletagaloa,Fa'asaleleaga 1,,,256,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-FA,Saletagaloa,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Satalafai,Fa'asaleleaga 1,,,172,Village,,,#N/A,,Fa'asaleleaga 1Samoa,,,,,locality,,WS-FA,Satalafai,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Tino i Iva,Fa'asaleleaga 2,,,717,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,locality,,WS-FA,Tino i Iva,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Salelavalu Uta,Fa'asaleleaga 2,,,632,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Salelavalu Tai,Fa'asaleleaga 2,,,514,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,locality,,WS-FA,Salelavalu Tai,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Lalomalava,Fa'asaleleaga 2,,,408,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,locality,,WS-FA,Lalomalava,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Vaiafai,Fa'asaleleaga 2,,,376,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,locality,,WS-FA,Vaiafai,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Safua,Fa'asaleleaga 2,,,304,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,locality,,WS-FA,Safua,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Vaifou,Fa'asaleleaga 2,,,265,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,locality,,WS-FA,Vaifou,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Vaisaulu,Fa'asaleleaga 2,,,150,Village,,,#N/A,,Fa'asaleleaga 2Samoa,,,,,locality,,WS-FA,Vaisaulu,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Sapapali'i,Fa'asaleleaga 3,,,965,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Sapapali'i,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Vaimaga,Fa'asaleleaga 3,,,373,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Vaimaga,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Tapueleele,Fa'asaleleaga 3,,,324,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Tapueleele,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Fogapoa,Fa'asaleleaga 3,,,294,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Fogapoa,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Fatausi,Fa'asaleleaga 3,,,236,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Fatausi,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Fusi,Fa'asaleleaga 3,,,183,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-TU,Fusi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tuasivi,Fa'asaleleaga 3,,,165,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Tuasivi,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Eve'eve,Fa'asaleleaga 3,,,138,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Eve'eve,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Fuifatu,Fa'asaleleaga 3,,,87,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Fuifatu,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Vaiola,Fa'asaleleaga 3,,,85,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Vaiola,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Vaia'ata,Fa'asaleleaga 3,,,44,Village,,,#N/A,,Fa'asaleleaga 3Samoa,,,,,locality,,WS-FA,Vaia'ata,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Saipipi,Fa'asaleleaga 4,,,748,Village,,,#N/A,,Fa'asaleleaga 4Samoa,,,,,locality,,WS-FA,Saipipi,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Siufaga,Fa'asaleleaga 4,,,637,Village,,,#N/A,,Fa'asaleleaga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sa'asa'ai,Fa'asaleleaga 4,,,611,Village,,,#N/A,,Fa'asaleleaga 4Samoa,,,,,locality,,WS-FA,Sa'asa'ai,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Luua,Fa'asaleleaga 4,,,277,Village,,,#N/A,,Fa'asaleleaga 4Samoa,,,,,locality,,WS-FA,Luua,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Malae,Fa'asaleleaga 4,,,259,Village,,,#N/A,,Fa'asaleleaga 4Samoa,,,,,locality,,WS-FA,Malae,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Salimu,Fa'asaleleaga 4,,,253,Village,,,#N/A,,Fa'asaleleaga 4Samoa,,,,,locality,,WS-FA,Salimu,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Sapini,Fa'asaleleaga 4,,,194,Village,,,#N/A,,Fa'asaleleaga 4Samoa,,,,,locality,,WS-FA,Sapini,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Lano,Fa'asaleleaga 5,,,693,Village,,,#N/A,,Fa'asaleleaga 5Samoa,,,,,locality,,WS-FA,Lano,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Pu'apu'a,Fa'asaleleaga 5,,,586,Village,,,#N/A,,Fa'asaleleaga 5Samoa,,,,,locality,,WS-FA,Pu'apu'a,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Asaga,Fa'asaleleaga 5,,,280,Village,,,#N/A,,Fa'asaleleaga 5Samoa,,,,,locality,,WS-FA,Asaga,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Saleilua,Falealili 1,,,765,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sapunaoa,Falealili 1,,,501,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vaovai,Falealili 1,,,491,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Poutasi,Falealili 1,,,449,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Matautu,Falealili 1,,,423,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Satalo,Falealili 1,,,336,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Malaemalu,Falealili 1,,,264,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Tafatafa,Falealili 1,,,209,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Piu,Falealili 1,,,63,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Togitogiga,Falealili 1,,,24,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Ili'ili,Falealili 1,,,0,Village,,,#N/A,,Falealili 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Salani,Falealili 2,,,525,Village,,,#N/A,,Falealili 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Salesatele,Falealili 2,,,311,Village,,,#N/A,,Falealili 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Utulaelae,Falealili 2,,,239,Village,,,#N/A,,Falealili 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Siuniu,Falealili 2,,,181,Village,,,#N/A,,Falealili 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sapo'e,Falealili 2,,,77,Village,,,#N/A,,Falealili 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Falealupo,Falealupo,,,536,Village,,,#N/A,,FalealupoSamoa,,,,,locality,,WS-VS,Falealupo,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Avata,Falealupo,,,350,Village,,,#N/A,,FalealupoSamoa,,,,,locality,,WS-VS,Avata,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Vaotupua,Falealupo,,,209,Village,,,#N/A,,FalealupoSamoa,,,,,locality,,WS-VS,Vaotupua,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Vaimoso,Faleata 1,,,2541,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Vaimoso,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Lotopa,Faleata 1,,,1445,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Lotopa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Alafua,Faleata 1,,,1408,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Alafua,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Sinamoga,Faleata 1,,,1351,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Sinamoga,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Moamoa,Faleata 1,,,1259,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Moamoa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Moamoa Fou,Faleata 1,,,1237,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Moamoa Fou,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Ululoloa,Faleata 1,,,788,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Ululoloa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaitoloa,Faleata 1,,,658,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Vaitoloa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Se'esee,Faleata 1,,,655,Village,Apia,,Apia,,Faleata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lepea,Faleata 1,,,646,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Lepea,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tuanimato Sasa'e (Tuanimato East),Faleata 1,,,521,Village,Apia,,Apia,,Faleata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Tuaefu,Faleata 1,,,159,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Tuaefu,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Pesega,Faleata 1,,,72,Village,Apia,,Apia,,Faleata 1Samoa,,,,,locality,,WS-TU,Pesega,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tunaimato Sisifo (Tunaimato West),Faleata 1,,,0,Village,Apia,,Apia,,Faleata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Siusega,Faleata 2,,,3532,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Siusega,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaiusu,Faleata 2,,,2596,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Vaiusu,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vailoa,Faleata 2,,,1504,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-AT,Vailoa,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Tulaele,Faleata 2,,,763,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Tulaele,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaigaga,Faleata 2,,,680,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Vaigaga,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tanumapua,Faleata 2,,,550,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Tanumapua,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Talimatau,Faleata 2,,,536,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Talimatau,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Falelauniu,Faleata 2,,,376,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Falelauniu,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tapatapao,Faleata 2,,,250,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Tapatapao,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Elise Fou,Faleata 2,,,197,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Elise Fou,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Leaupani,Faleata 2,,,59,Village,Apia,,Apia,,Faleata 2Samoa,,,,,locality,,WS-TU,Leaupani,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaitele Fou,Faleata 3,,,4641,Village,Apia,,Apia,,Faleata 3Samoa,,,,,locality,,WS-TU,Vaitele Fou,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaitele Uta,Faleata 3,,,2740,Village,Apia,,Apia,,Faleata 3Samoa,,,,,locality,,WS-TU,Vaitele Uta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaitele Tai,Faleata 3,,,751,Village,Apia,,Apia,,Faleata 3Samoa,,,,,locality,,WS-TU,Vaitele Tai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Toamua,Faleata 4,,,2262,Village,Apia,,Apia,,Faleata 4Samoa,,,,,locality,,WS-TU,Toamua,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Puipa'a,Faleata 4,,,1413,Village,Apia,,Apia,,Faleata 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Saina,Faleata 4,,,263,Village,Apia,,Apia,,Faleata 4Samoa,,,,,locality,,WS-TU,Saina,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Safune,Faleata 4,,,252,Village,Apia,,Apia,,Faleata 4Samoa,,,,,locality,,WS-TU,Safune,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Samatau,Falelatai & Samatau,,,1107,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Siufaga,Falelatai & Samatau,,,622,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Pata,Falelatai & Samatau,,,455,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Falevai,Falelatai & Samatau,,,218,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Matautu,Falelatai & Samatau,,,201,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sama'i,Falelatai & Samatau,,,154,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Levi,Falelatai & Samatau,,,132,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,locality,,WS-TU,Levi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Nefunefu,Falelatai & Samatau,,,132,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Matanofo,Falelatai & Samatau,,,65,Village,,,#N/A,,Falelatai & SamatauSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Samalae'ulu,Gaga'emauga 1,,,981,Village,,,#N/A,,Gaga'emauga 1Samoa,,,,,locality,,WS-GE,Samalae'ulu,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Patamea,Gaga'emauga 1,,,674,Village,,,#N/A,,Gaga'emauga 1Samoa,,,,,locality,,WS-GE,Patamea,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Saleaula,Gaga'emauga 1,,,563,Village,,,#N/A,,Gaga'emauga 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Mauga,Gaga'emauga 1,,,156,Village,,,#N/A,,Gaga'emauga 1Samoa,,,,,locality,,WS-GE,Mauga,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Fagamalo,Gaga'emauga 2,,,370,Village,,,#N/A,,Gaga'emauga 2Samoa,,,,,locality,,WS-GE,Fagamalo,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Lelepa,Gaga'emauga 2,,,309,Village,,,#N/A,,Gaga'emauga 2Samoa,,,,,locality,,WS-GE,Lelepa,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Avao,Gaga'emauga 2,,,288,Village,,,#N/A,,Gaga'emauga 2Samoa,,,,,locality,,WS-GE,Avao,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Sato'alepai,Gaga'emauga 2,,,260,Village,,,#N/A,,Gaga'emauga 2Samoa,,,,,locality,,WS-GE,Sato'alepai,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Safa'i,Gaga'emauga 2,,,248,Village,,,#N/A,,Gaga'emauga 2Samoa,,,,,locality,,WS-GE,Safa'i,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Saleia,Gaga'emauga 2,,,151,Village,,,#N/A,,Gaga'emauga 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vaipouli,Gaga'emauga 2,,,33,Village,,,#N/A,,Gaga'emauga 2Samoa,,,,,locality,,WS-GE,Vaipouli,,,,,region,1,WS-GE,Gagaʻemauga,HIGH,1.0,WS-GE
+Samoa,Safotu,Gaga'ifomauga 1,,,1278,Village,,,#N/A,,Gaga'ifomauga 1Samoa,,,,,locality,,WS-GI,Safotu,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Manase,Gaga'ifomauga 1,,,96,Village,,,#N/A,,Gaga'ifomauga 1Samoa,,,,,locality,,WS-GI,Manase,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Lefagaoali'i,Gaga'ifomauga 2,,,445,Village,,,#N/A,,Gaga'ifomauga 2Samoa,,,,,locality,,WS-GI,Lefagaoali'i,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Faletagaloa,Gaga'ifomauga 2,,,392,Village,,,#N/A,,Gaga'ifomauga 2Samoa,,,,,locality,,WS-GI,Faletagaloa,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Samauga,Gaga'ifomauga 2,,,369,Village,,,#N/A,,Gaga'ifomauga 2Samoa,,,,,locality,,WS-GI,Samauga,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Paia,Gaga'ifomauga 2,,,272,Village,,,#N/A,,Gaga'ifomauga 2Samoa,,,,,locality,,WS-GI,Paia,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Leagiagi,Gaga'ifomauga 2,,,171,Village,,,#N/A,,Gaga'ifomauga 2Samoa,,,,,locality,,WS-GI,Leagiagi,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Fatuvalu,Gaga'ifomauga 2,,,149,Village,,,#N/A,,Gaga'ifomauga 2Samoa,,,,,locality,,WS-GI,Fatuvalu,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Matavai,Gaga'ifomauga 2,,,117,Village,,,#N/A,,Gaga'ifomauga 2Samoa,,,,,locality,,WS-VS,Matavai,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Sasina,Gaga'ifomauga 3,,,535,Village,,,#N/A,,Gaga'ifomauga 3Samoa,,,,,locality,,WS-GI,Sāsina,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Aopo,Gaga'ifomauga 3,,,408,Village,,,#N/A,,Gaga'ifomauga 3Samoa,,,,,locality,,WS-GI,Aopo,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Letui,Gaga'ifomauga 3,,,323,Village,,,#N/A,,Gaga'ifomauga 3Samoa,,,,,locality,,WS-GI,Letui,,,,,region,1,WS-GI,Gagaʻifomauga,HIGH,1.0,WS-GI
+Samoa,Fagaee,Gaga'ifomauga 3,,,175,Village,,,#N/A,,Gaga'ifomauga 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Matautu,Lefaga & Falease'ela,,,940,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Falese'ela,Lefaga & Falease'ela,,,919,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Gagaifo o le Vao,Lefaga & Falease'ela,,,578,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Safa'atoa,Lefaga & Falease'ela,,,529,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Savaia,Lefaga & Falease'ela,,,455,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Tafagamanu,Lefaga & Falease'ela,,,412,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Tanumalala,Lefaga & Falease'ela,,,123,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,locality,,WS-AA,Tanumalala,,,,,region,1,WS-AA,Aʻana,HIGH,1.0,WS-AA
+Samoa,Matafa'a,Lefaga & Falease'ela,,,113,Village,,,#N/A,,Lefaga & Falease'elaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lealatele,Lepa,,,496,Village,,,#N/A,,LepaSamoa,,,,,locality,,WS-AT,Lealatele,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,A'ufaga,Lepa,,,458,Village,,,#N/A,,LepaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Siupapa,Lepa,,,167,Village,,,#N/A,,LepaSamoa,,,,,locality,,WS-AT,Siupapa,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Lepā,Lepa,,,139,Village,,,#N/A,,LepaSamoa,,,,,locality,,WS-AT,Lepa,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Vaigalu,Lepa,,,106,Village,,,#N/A,,LepaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Saleapaga,Lepa,,,12,Village,,,#N/A,,LepaSamoa,,,,,locality,,WS-AT,Saleapaga,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Lotofaga,Lotofaga,,,1069,Village,,,#N/A,,LotofagaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Matatufu,Lotofaga,,,430,Village,,,#N/A,,LotofagaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vavau,Lotofaga,,,383,Village,,,#N/A,,LotofagaSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Salailua,Palauli 1,,,854,Village,,,#N/A,,Palauli 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Taga,Palauli 1,,,673,Village,,,#N/A,,Palauli 1Samoa,,,,,locality,,WS-PA,Taga,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Foailuga,Palauli 1,,,580,Village,,,#N/A,,Palauli 1Samoa,,,,,locality,,WS-PA,Foailuga,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Siutu,Palauli 1,,,420,Village,,,#N/A,,Palauli 1Samoa,,,,,locality,,WS-PA,Siutu,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Foailalo,Palauli 1,,,385,Village,,,#N/A,,Palauli 1Samoa,,,,,locality,,WS-PA,Foailalo,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Satuiatua,Palauli 1,,,243,Village,,,#N/A,,Palauli 1Samoa,,,,,locality,,WS-PA,Satuiatua,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Sili,Palauli 2,,,1010,Village,,,#N/A,,Palauli 2Samoa,,,,,locality,,WS-PA,Sili,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Gataivai,Palauli 2,,,870,Village,,,#N/A,,Palauli 2Samoa,,,,,locality,,WS-PA,Gataivai,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Papa,Palauli 2,,,336,Village,,,#N/A,,Palauli 2Samoa,,,,,locality,,WS-PA,Papa,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Puleia,Palauli 2,,,198,Village,,,#N/A,,Palauli 2Samoa,,,,,locality,,WS-PA,Puleia,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Vaiala,Palauli 2,,,169,Village,,,#N/A,,Palauli 2Samoa,,,,,locality,,WS-PA,Vaiala,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Gautavai,Palauli 2,,,150,Village,,,#N/A,,Palauli 2Samoa,,,,,locality,,WS-PA,Gautavai,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Fa'ala,Palauli 3,,,931,Village,,,#N/A,,Palauli 3Samoa,,,,,locality,,WS-PA,Fa'ala,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Vaito'omuli,Palauli 3,,,681,Village,,,#N/A,,Palauli 3Samoa,,,,,locality,,WS-PA,Vaito'omuli,,,,,region,1,WS-PA,Palauli,HIGH,1.0,WS-PA
+Samoa,Vailoa,Palauli 3,,,585,Village,,,#N/A,,Palauli 3Samoa,,,,,locality,,WS-AT,Vailoa,,,,,region,1,WS-AT,Ātua,HIGH,1.0,WS-AT
+Samoa,Sataoa Uta,Safata 1,,,1314,Village,,,#N/A,,Safata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sa'anapu Uta,Safata 1,,,1249,Village,,,#N/A,,Safata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lotofaga,Safata 1,,,716,Village,,,#N/A,,Safata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Salamumu Uta,Safata 1,,,366,Village,,,#N/A,,Safata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Sataoa Tai,Safata 1,,,208,Village,,,#N/A,,Safata 1Samoa,,,,,locality,,WS-TU,Sataoa Tai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Sa'anapu Tai,Safata 1,,,112,Village,,,#N/A,,Safata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Salamumu Tai,Safata 1,,,37,Village,,,#N/A,,Safata 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Fusi,Safata 2,,,798,Village,,,#N/A,,Safata 2Samoa,,,,,locality,,WS-TU,Fusi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaie'e,Safata 2,,,632,Village,,,#N/A,,Safata 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Tafitoala,Safata 2,,,510,Village,,,#N/A,,Safata 2Samoa,,,,,locality,,WS-TU,Tafitoala,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Niusuatia,Safata 2,,,492,Village,,,#N/A,,Safata 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Mulivai,Safata 2,,,399,Village,,,#N/A,,Safata 2Samoa,,,,,locality,,WS-TU,Mulivai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Fausaga,Safata 2,,,333,Village,,,#N/A,,Safata 2Samoa,,,,,locality,,WS-TU,Fausaga,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Fale'ula,Sagaga 1,,,3240,Village,Apia,,Apia,,Sagaga 1Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Nu'u,Sagaga 1,,,2303,Village,Apia,,Apia,,Sagaga 1Samoa,,,,,locality,,WS-TU,Nu'u,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tafaigata,Sagaga 1,,,1535,Village,Apia,,Apia,,Sagaga 1Samoa,,,,,locality,,WS-TU,Tafaigata,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Aele Fou,Sagaga 1,,,897,Village,Apia,,Apia,,Sagaga 1Samoa,,,,,locality,,WS-TU,Aele Fou,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Malie,Sagaga 2,,,2626,Village,Apia,,Apia,,Sagaga 2Samoa,,,,,locality,,WS-TU,Malie,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Afega,Sagaga 2,,,2307,Village,Apia,,Apia,,Sagaga 2Samoa,,,,,locality,,WS-TU,Afega,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tuana'i,Sagaga 2,,,1563,Village,Apia,,Apia,,Sagaga 2Samoa,,,,,locality,,WS-TU,Tuana'i,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Le'auva'a,Sagaga 3,,,3783,Village,Apia,,Apia,,Sagaga 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Aleisa Sasa'e (Aleisa East),Sagaga 3,,,1181,Village,Apia,,Apia,,Sagaga 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Aleisa Sisifo (Aleisa West),Sagaga 3,,,992,Village,Apia,,Apia,,Sagaga 3Samoa,,,,,locality,,WS-TU,Aleisa Sisifo,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tufulele,Sagaga 4,,,1440,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,locality,,WS-TU,Tufulele,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Levi,Sagaga 4,,,1128,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,locality,,WS-TU,Levi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Lotosoa,Sagaga 4,,,853,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,locality,,WS-TU,Lotosoa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Salepouae,Sagaga 4,,,723,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Utuali'i,Sagaga 4,,,540,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,locality,,WS-TU,Utuali'i,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Nonoa,Sagaga 4,,,506,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Malua,Sagaga 4,,,404,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,locality,,WS-TU,Malua,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Alamutu,Sagaga 4,,,368,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,locality,,WS-TU,Alamutu,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Fatitu,Sagaga 4,,,101,Village,Apia,,Apia,,Sagaga 4Samoa,,,,,locality,,WS-TU,Fatitu,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Samata-i-Uta,Salega 1,,,698,Village,,,#N/A,,Salega 1Samoa,,,,,locality,,WS-SA,Samata-i-Uta,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Samata-i-Tai,Salega 1,,,491,Village,,,#N/A,,Salega 1Samoa,,,,,locality,,WS-SA,Samata-i-Tai,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Fai'a'ai,Salega 1,,,370,Village,,,#N/A,,Salega 1Samoa,,,,,locality,,WS-SA,Fai'a'ai,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Fagafau,Salega 1,,,309,Village,,,#N/A,,Salega 1Samoa,,,,,locality,,WS-SA,Fagafau,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Fogatuli,Salega 1,,,236,Village,,,#N/A,,Salega 1Samoa,,,,,locality,,WS-SA,Fogatuli,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Sagone,Salega 2,,,595,Village,,,#N/A,,Salega 2Samoa,,,,,locality,,WS-SA,Sagone,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Vaipua,Salega 2,,,470,Village,,,#N/A,,Salega 2Samoa,,,,,locality,,WS-SA,Vaipua,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Fogasavai'i,Salega 2,,,332,Village,,,#N/A,,Salega 2Samoa,,,,,locality,,WS-SA,Fogasavai'i,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Vaega,Satupa'itea,,,549,Village,,,#N/A,,Satupa'iteaSamoa,,,,,locality,,WS-SA,Vaega,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Satufia,Satupa'itea,,,512,Village,,,#N/A,,Satupa'iteaSamoa,,,,,locality,,WS-SA,Satufia,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Moasula,Satupa'itea,,,485,Village,,,#N/A,,Satupa'iteaSamoa,,,,,locality,,WS-SA,Moasula,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Pitonu'u,Satupa'itea,,,223,Village,,,#N/A,,Satupa'iteaSamoa,,,,,locality,,WS-SA,Pitonu'u,,,,,region,1,WS-SA,Satupaʻitea,HIGH,1.0,WS-SA
+Samoa,Siumu,Si'umu,,,1326,Village,,,#N/A,,Si'umuSamoa,,,,,locality,,WS-TU,Siumu,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Maninoa,Si'umu,,,427,Village,,,#N/A,,Si'umuSamoa,,,,,locality,,WS-TU,Maninoa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Sa'aga,Si'umu,,,408,Village,,,#N/A,,Si'umuSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Siumu Uta,Si'umu,,,285,Village,,,#N/A,,Si'umuSamoa,,,,,locality,,WS-TU,Siumu Uta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Sauano,Va'a-o-Fonoti,,,252,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Uafato,Va'a-o-Fonoti,,,204,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Ta'elefaga,Va'a-o-Fonoti,,,192,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Saletele,Va'a-o-Fonoti,,,161,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Maasina,Va'a-o-Fonoti,,,146,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Lona,Va'a-o-Fonoti,,,131,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Musumusu,Va'a-o-Fonoti,,,80,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Samamea,Va'a-o-Fonoti,,,80,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,locality,,WS-VF,Samamea,,,,,region,1,WS-VF,Vaʻa-o-Fonoti,HIGH,1.0,WS-VF
+Samoa,Salimu,Va'a-o-Fonoti,,,49,Village,,,#N/A,,Va'a-o-FonotiSamoa,,,,,locality,,WS-FA,Salimu,,,,,region,1,WS-FA,Faʻasaleleaga,HIGH,1.0,WS-FA
+Samoa,Lauli'i,Vaimauga 1,,,2216,Village,Apia,,Apia,,Vaimauga 1Samoa,,,,,locality,,WS-TU,Lauli'i,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vailele Tai,Vaimauga 1,,,2163,Village,Apia,,Apia,,Vaimauga 1Samoa,,,,,locality,,WS-TU,Vailele Tai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Fagali'i,Vaimauga 1,,,1654,Village,Apia,,Apia,,Vaimauga 1Samoa,,,,,locality,,WS-TU,Fagali'i,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Letogo,Vaimauga 1,,,1553,Village,Apia,,Apia,,Vaimauga 1Samoa,,,,,locality,,WS-TU,Letogo,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vailele Uta,Vaimauga 1,,,1107,Village,Apia,,Apia,,Vaimauga 1Samoa,,,,,locality,,WS-TU,Vailele Uta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Moata'a,Vaimauga 2,,,1420,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,Moata'a,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaivase Uta,Vaimauga 2,,,1025,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vaivase Tai,Vaimauga 2,,,825,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,Vaivase Tai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tanoaleia,Vaimauga 2,,,658,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vaiala Tai,Vaimauga 2,,,560,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,Vaiala Tai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaipuna,Vaimauga 2,,,363,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,Vaipuna,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaiala Uta,Vaimauga 2,,,342,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,Vaiala Uta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,To'omatagi,Vaimauga 2,,,224,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,To'omatagi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Moata'a Uta,Vaimauga 2,,,218,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,Moata'a Uta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Levili,Vaimauga 2,,,64,Village,Apia,,Apia,,Vaimauga 2Samoa,,,,,locality,,WS-TU,Levili,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Magiagi Tai,Vaimauga 3,,,1797,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Magiagi Tai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaoala,Vaimauga 3,,,922,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Vaoala,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Fa'ato'ialemanu,Vaimauga 3,,,906,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Vailima,Vaimauga 3,,,837,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Vailima,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tanugamanono,Vaimauga 3,,,810,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Tanugamanono,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Matautu Uta,Vaimauga 3,,,673,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Matautu Uta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Leone,Vaimauga 3,,,626,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Leone,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Letava,Vaimauga 3,,,622,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Letava,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Avele,Vaimauga 3,,,407,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Avele,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Papauta,Vaimauga 3,,,393,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Papauta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Magiagi Uta,Vaimauga 3,,,350,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Magiagi Uta,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Malololelei,Vaimauga 3,,,344,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Malololelei,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Nafanua,Vaimauga 3,,,344,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Nafanua,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaisagano,Vaimauga 3,,,270,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Papaloloa,Vaimauga 3,,,269,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Papaloloa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Lelata,Vaimauga 3,,,198,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Lelata,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Matautu Tai,Vaimauga 3,,,192,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Matautu Tai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tiapapata,Vaimauga 3,,,185,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Tiapapata,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Afiamalu Sasa'e (Afiamalu East),Vaimauga 3,,,177,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Afiamalu Sasa'e,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vinifou,Vaimauga 3,,,81,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Tanumaleko,Vaimauga 3,,,54,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Tanumaleko,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Afiamalu Sisifo (Afiamalu West),Vaimauga 3,,,53,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Afiamalu Sisifo,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tiavi,Vaimauga 3,,,0,Village,Apia,,Apia,,Vaimauga 3Samoa,,,,,locality,,WS-TU,Tiavi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Palisi,Vaimauga 4,,,973,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Palisi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Alamagoto,Vaimauga 4,,,867,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Alamagoto,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Lalovaea Sasa'e (Lalovaea East),Vaimauga 4,,,466,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Lalovaea Sasa'e,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tufuiopa,Vaimauga 4,,,421,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Tufuiopa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Vaimea,Vaimauga 4,,,406,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Vaimea,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Moto'otua,Vaimauga 4,,,339,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Taufusi,Vaimauga 4,,,310,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Taufusi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Lalovaea Sisifo (Lalovaea West),Vaimauga 4,,,268,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Lalovaea Sisifo,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Togafuafua,Vaimauga 4,,,261,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Leufisa,Vaimauga 4,,,252,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Leufisa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,A'ai o Fiti,Vaimauga 4,,,175,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,A'ai o Fiti,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Apia,Vaimauga 4,,,174,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Apia,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Fugalei,Vaimauga 4,,,168,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Fugalei,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Malifa,Vaimauga 4,,,146,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Malifa,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,A'ai o Niue,Vaimauga 4,,,135,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,A'ai o Niue,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Sogi,Vaimauga 4,,,129,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Sogi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tauese,Vaimauga 4,,,125,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Tauese,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Tuloto,Vaimauga 4,,,102,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Tuloto,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Savalalo,Vaimauga 4,,,95,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Maluafou,Vaimauga 4,,,73,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Maluafou,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Saleufi,Vaimauga 4,,,65,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Saleufi,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Leififi,Vaimauga 4,,,34,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Mulinuu,Vaimauga 4,,,18,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,,,,,,,,,,,,,NONE,0.0,
+Samoa,Matafele,Vaimauga 4,,,6,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Matafele,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Mulivai,Vaimauga 4,,,6,Village,Apia,,Apia,,Vaimauga 4Samoa,,,,,locality,,WS-TU,Mulivai,,,,,region,1,WS-TU,Tuamasaga,HIGH,1.0,WS-TU
+Samoa,Matavai,Vaisigano 1,,,1133,Village,,,#N/A,,Vaisigano 1Samoa,,,,,locality,,WS-VS,Matavai,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Vaisala,Vaisigano 1,,,472,Village,,,#N/A,,Vaisigano 1Samoa,,,,,locality,,WS-VS,Vaisala,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Auala,Vaisigano 1,,,453,Village,,,#N/A,,Vaisigano 1Samoa,,,,,locality,,WS-VS,Auala,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Utuloa,Vaisigano 1,,,20,Village,,,#N/A,,Vaisigano 1Samoa,,,,,locality,,WS-VS,Utuloa,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Sataua,Vaisigano 2,,,852,Village,,,#N/A,,Vaisigano 2Samoa,,,,,locality,,WS-VS,Sātaua,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Papa Uta,Vaisigano 2,,,517,Village,,,#N/A,,Vaisigano 2Samoa,,,,,locality,,WS-VS,Papa Uta,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS
+Samoa,Fagasa,Vaisigano 2,,,276,Village,,,#N/A,,Vaisigano 2Samoa,,,,,locality,,WS-VS,Fagasā,,,,,region,1,WS-VS,Vaisigano,HIGH,1.0,WS-VS

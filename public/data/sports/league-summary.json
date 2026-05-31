@@ -1,15 +1,15 @@
 {
-  "total_markers": 8806,
+  "total_markers": 8803,
   "major_markers": 1144,
-  "other_markers": 7662,
+  "other_markers": 7659,
   "by_sport": {
-    "Football": 5580,
+    "Football": 5577,
     "Basketball": 741,
     "W Basketball": 454,
     "Hockey": 344,
     "Baseball": 326,
     "American Football": 321,
-    "W Football": 188,
+    "W Football": 190,
     "T20 Cricket": 115,
     "Volleyball": 108,
     "Rugby Union": 101,
@@ -36,7 +36,6 @@
     "Wrestling": 3,
     "Skiing": 2,
     "W Lacrosse": 2,
-    "W Soccer": 2,
     "W Softball": 2,
     "Rifle": 1,
     "Swimming": 1,
@@ -64,8 +63,8 @@
     "United States": 82,
     "Turkey": 78,
     "Belgium": 77,
-    "Austria": 72,
     "Poland": 72,
+    "Austria": 71,
     "Mexico": 69,
     "Scotland": 65,
     "Japan": 62,
@@ -75,9 +74,9 @@
     "Israel": 57,
     "Sweden": 56,
     "Atlantic Coast": 53,
-    "Bulgaria": 49,
     "Big 12": 48,
     "Southeastern": 48,
+    "Bulgaria": 48,
     "Egypt": 46,
     "Finland": 45,
     "Belarus": 44,
@@ -104,14 +103,14 @@
     "Portugal": 116,
     "Canada": 113
   },
-  "markers_with_team_page": 92,
+  "markers_with_team_page": 923,
   "sources": {
     "team_list": 3232,
-    "football_club_data": 5574,
+    "football_club_data": 5571,
     "team_list_excluded_no_coords": 0,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 708,
-    "football_club_data_excluded_no_coords": 4281
+    "football_club_data_excluded_no_coords": 4284
   },
   "league_cards": [
     {

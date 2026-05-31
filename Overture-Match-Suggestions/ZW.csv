@@ -1,0 +1,92 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Zimbabwe,Bulawayo,Bulawayo,,,665940,Urban District,Bulawayo,,Bulawayo,,BulawayoZimbabwe,,,,,,,,region,1,ZW-BU,Bulawayo Province,,,,,region,1,ZW-BU,Bulawayo Province,HIGH,1.0,ZW-BU
+Zimbabwe,Harare Urban,Harare,,,1491740,Urban District,Harare,,Harare,,HarareZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-HA,Harare Province,NONE,0.0,ZW-HA
+Zimbabwe,Chitungwiza,Harare,,,371244,Urban District,Harare,,Harare,,HarareZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-HA,Harare Province,NONE,0.0,ZW-HA
+Zimbabwe,Harare Rural,Harare,,,357860,District,Harare,,Harare,,HarareZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-HA,Harare Province,NONE,0.0,ZW-HA
+Zimbabwe,Epworth,Harare,,,206365,Urban District,Harare,,Harare,,HarareZimbabwe,,,,,,,,locality,,ZW-HA,Epworth,,,,,region,1,ZW-HA,Harare Province,HIGH,1.0,ZW-HA
+Zimbabwe,Mutare Rural,Manicaland,,,306760,District,Mutare,,Mutare,,ManicalandZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MA,Manicaland,NONE,0.0,ZW-MA
+Zimbabwe,Mutare Urban,Manicaland,,,224802,Urban District,Mutare,,Mutare,,ManicalandZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MA,Manicaland,NONE,0.0,ZW-MA
+Zimbabwe,Chipinge Rural,Manicaland,,,375259,District,,,#N/A,,ManicalandZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MA,Manicaland,NONE,0.0,ZW-MA
+Zimbabwe,Makoni,Manicaland,,,288444,District,,,#N/A,,ManicalandZimbabwe,,,,,,,,county,2,ZW-MA,Makoni,,,,,region,1,ZW-MA,Manicaland,HIGH,1.0,ZW-MA
+Zimbabwe,Buhera,Manicaland,,,271920,District,,,#N/A,,ManicalandZimbabwe,,,,,,,,county,2,ZW-MA,Buhera,,,,,region,1,ZW-MA,Manicaland,HIGH,1.0,ZW-MA
+Zimbabwe,Mutasa,Manicaland,,,197810,District,,,#N/A,,ManicalandZimbabwe,,,,,,,,county,2,ZW-MA,Mutasa,,,,,region,1,ZW-MA,Manicaland,HIGH,1.0,ZW-MA
+Zimbabwe,Chimanimani,Manicaland,,,153620,District,,,#N/A,,ManicalandZimbabwe,,,,,,,,county,2,ZW-MA,Chimanimani,,,,,region,1,ZW-MA,Manicaland,HIGH,1.0,ZW-MA
+Zimbabwe,Nyanga,Manicaland,,,146282,District,,,#N/A,,ManicalandZimbabwe,,,,,,,,county,2,ZW-MA,Nyanga,,,,,region,1,ZW-MA,Manicaland,HIGH,1.0,ZW-MA
+Zimbabwe,Rusape,Manicaland,,,37906,Urban District,,,#N/A,,ManicalandZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MA,Manicaland,NONE,0.0,ZW-MA
+Zimbabwe,Chipinge Urban,Manicaland,,,34959,Urban District,,,#N/A,,ManicalandZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MA,Manicaland,NONE,0.0,ZW-MA
+Zimbabwe,Mazowe,Mashonaland Central,,,293362,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,county,2,ZW-MC,Mazowe,,,,,region,1,ZW-MC,Mashonaland Central,HIGH,1.0,ZW-MC
+Zimbabwe,Mount Darwin,Mashonaland Central,,,240727,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,county,2,ZW-MC,Mount Darwin,,,,,region,1,ZW-MC,Mashonaland Central,HIGH,1.0,ZW-MC
+Zimbabwe,Bindura Rural,Mashonaland Central,,,169841,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MC,Mashonaland Central,NONE,0.0,ZW-MC
+Zimbabwe,Shamva,Mashonaland Central,,,165641,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,county,2,ZW-MC,Shamva,,,,,region,1,ZW-MC,Mashonaland Central,HIGH,1.0,ZW-MC
+Zimbabwe,Guruve,Mashonaland Central,,,153602,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,county,2,ZW-MC,Guruve,,,,,region,1,ZW-MC,Mashonaland Central,HIGH,1.0,ZW-MC
+Zimbabwe,Muzarabani (Centenary),Mashonaland Central,,,134076,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,county,2,ZW-MC,Muzarabani,,,,,region,1,ZW-MC,Mashonaland Central,HIGH,1.0,ZW-MC
+Zimbabwe,Mbire,Mashonaland Central,,,83724,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MC,Mashonaland Central,NONE,0.0,ZW-MC
+Zimbabwe,Rushinga,Mashonaland Central,,,76880,District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,county,2,ZW-MC,Rushinga,,,,,region,1,ZW-MC,Mashonaland Central,HIGH,1.0,ZW-MC
+Zimbabwe,Bindura Urban,Mashonaland Central,,,51393,Urban District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MC,Mashonaland Central,NONE,0.0,ZW-MC
+Zimbabwe,Mvurwi,Mashonaland Central,,,15645,Urban District,,,#N/A,,Mashonaland CentralZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MC,Mashonaland Central,NONE,0.0,ZW-MC
+Zimbabwe,Goromonzi,Mashonaland East,,,386199,District,Harare,,Harare,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Goromonzi,,,,,region,1,ZW-ME,Mashonaland East,HIGH,1.0,ZW-ME
+Zimbabwe,Ruwa,Mashonaland East,,,94083,Urban District,Harare,,Harare,,Mashonaland EastZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-ME,Mashonaland East,NONE,0.0,ZW-ME
+Zimbabwe,Murehwa,Mashonaland East,,,205442,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Murehwa,,,,,region,1,ZW-ME,Mashonaland East,HIGH,1.0,ZW-ME
+Zimbabwe,Seke,Mashonaland East,,,200476,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Seke,,,,,region,1,ZW-ME,Mashonaland East,HIGH,1.0,ZW-ME
+Zimbabwe,Mutoko,Mashonaland East,,,161091,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Mutoko,,,,,region,1,ZW-ME,Mashonaland East,HIGH,1.0,ZW-ME
+Zimbabwe,Mudzi,Mashonaland East,,,158483,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Mudzi,,,,,region,1,ZW-ME,Mashonaland East,HIGH,1.0,ZW-ME
+Zimbabwe,Marondera Rural,Mashonaland East,,,136173,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-ME,Mashonaland East,NONE,0.0,ZW-ME
+Zimbabwe,Uzumba-Maramba-Pfungwe (UMP),Mashonaland East,,,124225,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Uzumba-Maramba-Pfungwe,,,,,region,1,ZW-ME,Mashonaland East,HIGH,1.0,ZW-ME
+Zimbabwe,Chikomba,Mashonaland East,,,123937,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Chikomba,,,,,region,1,ZW-ME,Mashonaland East,HIGH,1.0,ZW-ME
+Zimbabwe,Hwedza (Wedza),Mashonaland East,,,74869,District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,county,2,ZW-ME,Wedza,,,,,region,1,ZW-ME,Mashonaland East,LOW,0.909,ZW-ME
+Zimbabwe,Marondera Urban,Mashonaland East,,,66203,Urban District,,,#N/A,,Mashonaland EastZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-ME,Mashonaland East,NONE,0.0,ZW-ME
+Zimbabwe,Hurungwe (Karoi Rural),Mashonaland West,,,390907,District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,county,2,ZW-MW,Hurungwe,,,,,region,1,ZW-MW,Mashonaland West,HIGH,1.0,ZW-MW
+Zimbabwe,Zvimba,Mashonaland West,,,348000,District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,county,2,ZW-MW,Zvimba,,,,,region,1,ZW-MW,Mashonaland West,HIGH,1.0,ZW-MW
+Zimbabwe,Makonde,Mashonaland West,,,209947,District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,county,2,ZW-MW,Makonde,,,,,region,1,ZW-MW,Mashonaland West,HIGH,1.0,ZW-MW
+Zimbabwe,Chegutu Rural,Mashonaland West,,,178906,District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Mhondoro-Ngezi,Mashonaland West,,,140991,District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Sanyati,Mashonaland West,,,139233,District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Kadoma Urban,Mashonaland West,,,117380,Urban District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Chinhoyi,Mashonaland West,,,103671,Urban District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Norton,Mashonaland West,,,87038,Urban District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,locality,,ZW-MW,Norton,,,,,region,1,ZW-MW,Mashonaland West,HIGH,1.0,ZW-MW
+Zimbabwe,Chegutu Urban,Mashonaland West,,,66258,Urban District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Kariba Rural,Mashonaland West,,,45774,District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Karoi,Mashonaland West,,,37564,Urban District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Kariba Urban,Mashonaland West,,,27909,Urban District,,,#N/A,,Mashonaland WestZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MW,Mashonaland West,NONE,0.0,ZW-MW
+Zimbabwe,Masvingo Urban,Masvingo,,,90286,Urban District,Masvingo,,Masvingo,,MasvingoZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MV,Masvingo,NONE,0.0,ZW-MV
+Zimbabwe,Chiredzi Rural,Masvingo,,,303503,District,,,#N/A,,MasvingoZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MV,Masvingo,NONE,0.0,ZW-MV
+Zimbabwe,Masvingo Rural,Masvingo,,,238103,District,,,#N/A,,MasvingoZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MV,Masvingo,NONE,0.0,ZW-MV
+Zimbabwe,Mwenezi,Masvingo,,,209327,District,,,#N/A,,MasvingoZimbabwe,,,,,,,,county,2,ZW-MV,Mwenezi,,,,,region,1,ZW-MV,Masvingo,HIGH,1.0,ZW-MV
+Zimbabwe,Gutu,Masvingo,,,208160,District,,,#N/A,,MasvingoZimbabwe,,,,,,,,county,2,ZW-MV,Gutu,,,,,region,1,ZW-MV,Masvingo,HIGH,1.0,ZW-MV
+Zimbabwe,Zaka,Masvingo,,,198889,District,,,#N/A,,MasvingoZimbabwe,,,,,,,,county,2,ZW-MV,Zaka,,,,,region,1,ZW-MV,Masvingo,HIGH,1.0,ZW-MV
+Zimbabwe,Bikita,Masvingo,,,176835,District,,,#N/A,,MasvingoZimbabwe,,,,,,,,county,2,ZW-MV,Bikita,,,,,region,1,ZW-MV,Masvingo,HIGH,1.0,ZW-MV
+Zimbabwe,Chivi,Masvingo,,,172979,District,,,#N/A,,MasvingoZimbabwe,,,,,,,,county,2,ZW-MV,Chivi,,,,,region,1,ZW-MV,Masvingo,HIGH,1.0,ZW-MV
+Zimbabwe,Chiredzi Urban,Masvingo,,,40457,Urban District,,,#N/A,,MasvingoZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MV,Masvingo,NONE,0.0,ZW-MV
+Zimbabwe,Umguza,Matabeleland North,,,113265,District,Bulawayo,,Bulawayo,,Matabeleland NorthZimbabwe,,,,,,,,county,2,ZW-MN,Umguza,,,,,region,1,ZW-MN,Matabeleland North,HIGH,1.0,ZW-MN
+Zimbabwe,Binga,Matabeleland North,,,159982,District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,county,2,ZW-MN,Binga,,,,,region,1,ZW-MN,Matabeleland North,HIGH,1.0,ZW-MN
+Zimbabwe,Tsholotsho,Matabeleland North,,,115782,District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,county,2,ZW-MN,Tsholotsho,,,,,region,1,ZW-MN,Matabeleland North,HIGH,1.0,ZW-MN
+Zimbabwe,Nkayi,Matabeleland North,,,112471,District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,county,2,ZW-MN,Nkayi,,,,,region,1,ZW-MN,Matabeleland North,HIGH,1.0,ZW-MN
+Zimbabwe,Lupane,Matabeleland North,,,107245,District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,county,2,ZW-MN,Lupane,,,,,region,1,ZW-MN,Matabeleland North,HIGH,1.0,ZW-MN
+Zimbabwe,Bubi,Matabeleland North,,,74084,District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,county,2,ZW-MN,Bubi,,,,,region,1,ZW-MN,Matabeleland North,HIGH,1.0,ZW-MN
+Zimbabwe,Hwange Rural,Matabeleland North,,,69357,District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MN,Matabeleland North,NONE,0.0,ZW-MN
+Zimbabwe,Hwange Urban,Matabeleland North,,,40241,Urban District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MN,Matabeleland North,NONE,0.0,ZW-MN
+Zimbabwe,Victoria Falls,Matabeleland North,,,35199,Urban District,,,#N/A,,Matabeleland NorthZimbabwe,,,,,,,,locality,,ZW-MN,Victoria Falls Municipality,,,,,region,1,ZW-MN,Matabeleland North,HIGH,1.0,ZW-MN
+Zimbabwe,Gwanda Rural,Matabeleland South,,,124548,District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MS,Matabeleland South,NONE,0.0,ZW-MS
+Zimbabwe,Insiza,Matabeleland South,,,122903,District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,county,2,ZW-MS,Insiza,,,,,region,1,ZW-MS,Matabeleland South,HIGH,1.0,ZW-MS
+Zimbabwe,Matobo,Matabeleland South,,,95696,District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,county,2,ZW-MS,Matobo,,,,,region,1,ZW-MS,Matabeleland South,HIGH,1.0,ZW-MS
+Zimbabwe,Beitbridge Rural,Matabeleland South,,,94000,District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MS,Matabeleland South,NONE,0.0,ZW-MS
+Zimbabwe,Bulilima,Matabeleland South,,,85600,District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MS,Matabeleland South,NONE,0.0,ZW-MS
+Zimbabwe,Umzingwane,Matabeleland South,,,71860,District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,county,2,ZW-MS,Umzingwane,,,,,region,1,ZW-MS,Matabeleland South,HIGH,1.0,ZW-MS
+Zimbabwe,Mangwe Rural,Matabeleland South,,,65562,District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MS,Matabeleland South,NONE,0.0,ZW-MS
+Zimbabwe,Beitbridge Urban,Matabeleland South,,,58574,Urban District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MS,Matabeleland South,NONE,0.0,ZW-MS
+Zimbabwe,Gwanda Urban,Matabeleland South,,,27143,Urban District,,,#N/A,,Matabeleland SouthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MS,Matabeleland South,NONE,0.0,ZW-MS
+Zimbabwe,Mangwe Urban (Plumtree),Matabeleland South,,,14459,Urban District,,,#N/A,2011,Matabeleland SouthZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MS,Matabeleland South,NONE,0.0,ZW-MS
+Zimbabwe,Gweru Urban,Midlands,,,161292,Urban District,Gweru,,Gweru,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Gweru Rural,Midlands,,,121712,District,Gweru,,Gweru,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Kwekwe Urban,Midlands,,,119863,Urban District,Kwekwe,,Kwekwe,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Gokwe South,Midlands,,,317553,District,,,#N/A,,MidlandsZimbabwe,,,,,,,,county,2,ZW-MI,Gokwe South,,,,,region,1,ZW-MI,Midlands,HIGH,1.0,ZW-MI
+Zimbabwe,Gokwe North,Midlands,,,249723,District,,,#N/A,,MidlandsZimbabwe,,,,,,,,county,2,ZW-MI,Gokwe North,,,,,region,1,ZW-MI,Midlands,HIGH,1.0,ZW-MI
+Zimbabwe,Mberengwa,Midlands,,,208458,District,,,#N/A,,MidlandsZimbabwe,,,,,,,,county,2,ZW-MI,Mberengwa,,,,,region,1,ZW-MI,Midlands,HIGH,1.0,ZW-MI
+Zimbabwe,Kwekwe Rural,Midlands,,,197063,District,,,#N/A,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Shurugwi Rural,Midlands,,,98315,District,,,#N/A,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Chirumhanzu,Midlands,,,95272,District,,,#N/A,,MidlandsZimbabwe,,,,,,,,county,2,ZW-MI,Chirumhanzu,,,,,region,1,ZW-MI,Midlands,HIGH,1.0,ZW-MI
+Zimbabwe,Zvishavane Rural,Midlands,,,85035,District,,,#N/A,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Zvishavane Urban,Midlands,,,59717,Urban District,,,#N/A,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Redcliff,Midlands,,,41526,Urban District,,,#N/A,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Gokwe Urban,Midlands,,,33075,Urban District,,,#N/A,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI
+Zimbabwe,Shurugwi Urban,Midlands,,,23304,Urban District,,,#N/A,,MidlandsZimbabwe,,,,,,,,,,,,,,,,region,1,ZW-MI,Midlands,NONE,0.0,ZW-MI

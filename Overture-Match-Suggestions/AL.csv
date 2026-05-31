@@ -1,0 +1,62 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Albania,Berat,Berat,,,62232,Municipality,Berat,,Berat,,BeratAlbania,county,2,AL-01,Bashkia Berat,,,,locality,,AL-01,Berat,,,,,region,1,AL-01,Qarku i Beratit,HIGH,1.0,AL-01
+Albania,Kuçovë,Berat,,,31077,Municipality,Kuçovë,,Kuçovë,,BeratAlbania,county,2,AL-01,Bashkia Kuçovë,,,,locality,,AL-01,Kuçovë,,,,,region,1,AL-01,Qarku i Beratit,HIGH,1.0,AL-01
+Albania,Dimal (Ura Vajgurore),Berat,,,28135,Municipality,,,#N/A,,BeratAlbania,locality,,AL-01,Ura Vajgurore,,,,,,,,,,,,region,1,AL-01,Qarku i Beratit,NONE,0.0,AL-01
+Albania,Skrapar,Berat,,,10750,Municipality,,,#N/A,,BeratAlbania,county,2,AL-01,Bashkia Skrapar,,,,,,,,,,,,region,1,AL-01,Qarku i Beratit,NONE,0.0,AL-01
+Albania,Poliçan,Berat,,,8762,Municipality,,,#N/A,,BeratAlbania,county,2,AL-01,Bashkia Poliçan,,,,locality,,AL-01,Poliçan,,,,,region,1,AL-01,Qarku i Beratit,HIGH,1.0,AL-01
+Albania,Dibër,Dibër,,,50775,Municipality,,,#N/A,,DibërAlbania,county,2,AL-09,Bashkia Dibër,,,,region,1,AL-09,Qarku i Dibrës,,,,,region,1,AL-09,Qarku i Dibrës,HIGH,1.0,AL-09
+Albania,Bulqizë,Dibër,,,26826,Municipality,,,#N/A,,DibërAlbania,county,2,AL-09,Bashkia Bulqizë,,,,locality,,AL-09,Bulqizë,,,,,region,1,AL-09,Qarku i Dibrës,HIGH,1.0,AL-09
+Albania,Mat,Dibër,,,17405,Municipality,,,#N/A,,DibërAlbania,county,2,AL-09,Bashkia Mat,,,,county,2,AL-09,Bashkia Mat,,,,,region,1,AL-09,Qarku i Dibrës,HIGH,1.0,AL-09
+Albania,Klos,Dibër,,,12172,Municipality,,,#N/A,,DibërAlbania,county,2,AL-09,Bashkia Klos,,,,locality,,AL-09,Klos,,,,,region,1,AL-09,Qarku i Dibrës,HIGH,1.0,AL-09
+Albania,Durrës,Durrës,,,153614,Municipality,Durrës,,Durrës,,DurrësAlbania,county,2,AL-02,Bashkia Durrës,,,,locality,,AL-02,Durrës,,,,,region,1,AL-02,Qarku i Durrësit,HIGH,1.0,AL-02
+Albania,Shijak,Durrës,,,22058,Municipality,Durrës,,Durrës,,DurrësAlbania,county,2,AL-02,Bashkia Shijak,,,,locality,,AL-02,Shijak,,,,,region,1,AL-02,Qarku i Durrësit,HIGH,1.0,AL-02
+Albania,Krujë,Durrës,,,51191,Municipality,Kruje,,Kruje,,DurrësAlbania,county,2,AL-02,Bashkia Krujë,,,,locality,,AL-02,Krujë,,,,,region,1,AL-02,Qarku i Durrësit,HIGH,1.0,AL-02
+Albania,Belsh,Elbasan,,,17123,Municipality,Ballsh,,Ballsh,,ElbasanAlbania,county,2,AL-03,Bashkia Belsh,,,,locality,,AL-03,Belsh,,,,,region,1,AL-03,Qarku i Elbasanit,HIGH,1.0,AL-03
+Albania,Elbasan,Elbasan,,,115101,Municipality,Elbasan,,Elbasan,,ElbasanAlbania,county,2,AL-03,Bashkia Elbasan,,,,locality,,AL-03,Elbasan,,,,,region,1,AL-03,Qarku i Elbasanit,HIGH,1.0,AL-03
+Albania,Peqin,Elbasan,,,16580,Municipality,Peqin,,Peqin,,ElbasanAlbania,county,2,AL-03,Bashkia Peqin,,,,locality,,AL-03,Peqin,,,,,region,1,AL-03,Qarku i Elbasanit,HIGH,1.0,AL-03
+Albania,Cërrik,Elbasan,,,25163,Municipality,,,#N/A,,ElbasanAlbania,county,2,AL-03,Bashkia Cërrik,,,,locality,,AL-03,Cërrik,,,,,region,1,AL-03,Qarku i Elbasanit,HIGH,1.0,AL-03
+Albania,Librazhd,Elbasan,,,23312,Municipality,,,#N/A,,ElbasanAlbania,county,2,AL-03,Bashkia Librazhd,,,,locality,,AL-03,Librazhd,,,,,region,1,AL-03,Qarku i Elbasanit,HIGH,1.0,AL-03
+Albania,Prrenjas (Përrenjas),Elbasan,,,18768,Municipality,,,#N/A,,ElbasanAlbania,county,2,AL-03,Bashkia Prrenjas,,,,locality,,AL-03,Përrenjas,,,,,region,1,AL-03,Qarku i Elbasanit,MED,0.941,AL-03
+Albania,Gramsh,Elbasan,,,16533,Municipality,,,#N/A,,ElbasanAlbania,county,2,AL-03,Bashkia Gramsh,,,,locality,,AL-03,Gramsh,,,,,region,1,AL-03,Qarku i Elbasanit,HIGH,1.0,AL-03
+Albania,Fier,Fier,,,101963,Municipality,Fier,,Fier,,FierAlbania,county,2,AL-04,Bashkia Fier,,,,locality,,AL-04,Fier,,,,,region,1,AL-04,Qarku i Fierit,HIGH,1.0,AL-04
+Albania,Lushnjë,Fier,,,63135,Municipality,Lushnjë,,Lushnjë,,FierAlbania,county,2,AL-04,Bashkia Lushnjë,,,,locality,,AL-04,Lushnjë,,,,,region,1,AL-04,Qarku i Fierit,HIGH,1.0,AL-04
+Albania,Patos,Fier,,,18227,Municipality,Patos (ALB),,Patos (ALB),,FierAlbania,county,2,AL-04,Bashkia Patos,,,,locality,,AL-04,Patos,,,,,region,1,AL-04,Qarku i Fierit,HIGH,1.0,AL-04
+Albania,Divjakë,Fier,,,24882,Municipality,,,#N/A,,FierAlbania,county,2,AL-04,Bashkia Divjakë,,,,locality,,AL-04,Divjakë,,,,,region,1,AL-04,Qarku i Fierit,HIGH,1.0,AL-04
+Albania,Roskovec,Fier,,,16332,Municipality,,,#N/A,,FierAlbania,county,2,AL-04,Bashkia Roskovec,,,,locality,,AL-04,Roskovec,,,,,region,1,AL-04,Qarku i Fierit,HIGH,1.0,AL-04
+Albania,Mallakastër,Fier,,,15838,Municipality,,,#N/A,,FierAlbania,county,2,AL-04,Bashkia Mallakastër,,,,county,2,AL-04,Bashkia Mallakastër,,,,,region,1,AL-04,Qarku i Fierit,LOW,0.783,AL-04
+Albania,Gjirokastër,Gjirokastër,,,23270,Municipality,Gjirokastër,,Gjirokastër,,GjirokastërAlbania,county,2,AL-05,Bashkia Gjirokastër,,,,locality,,AL-05,Gjirokastër,,,,,region,1,AL-05,Qarku i Gjirokastrës,HIGH,1.0,AL-05
+Albania,Dropull,Gjirokastër,,,8259,Municipality,,,#N/A,,GjirokastërAlbania,county,2,AL-05,Bashkia Dropull,,,,,,,,,,,,region,1,AL-05,Qarku i Gjirokastrës,NONE,0.0,AL-05
+Albania,Përmet,Gjirokastër,,,7980,Municipality,,,#N/A,,GjirokastërAlbania,county,2,AL-05,Bashkia Përmet,,,,locality,,AL-05,Përmet,,,,,region,1,AL-05,Qarku i Gjirokastrës,HIGH,1.0,AL-05
+Albania,Tepelenë,Gjirokastër,,,6761,Municipality,,,#N/A,,GjirokastërAlbania,county,2,AL-05,Bashkia Tepelenë,,,,locality,,AL-05,Tepelenë,,,,,region,1,AL-05,Qarku i Gjirokastrës,HIGH,1.0,AL-05
+Albania,Memaliaj,Gjirokastër,,,6578,Municipality,,,#N/A,,GjirokastërAlbania,county,2,AL-05,Bashkia Memaliaj,,,,locality,,AL-05,Memaliaj,,,,,region,1,AL-05,Qarku i Gjirokastrës,HIGH,1.0,AL-05
+Albania,Këlcyrë,Gjirokastër,,,4400,Municipality,,,#N/A,,GjirokastërAlbania,county,2,AL-05,Bashkia Këlcyrë,,,,locality,,AL-05,Këlcyrë,,,,,region,1,AL-05,Qarku i Gjirokastrës,HIGH,1.0,AL-05
+Albania,Libohovë,Gjirokastër,,,2765,Municipality,,,#N/A,,GjirokastërAlbania,county,2,AL-05,Bashkia Libohovë,,,,locality,,AL-05,Libohovë,,,,,region,1,AL-05,Qarku i Gjirokastrës,HIGH,1.0,AL-05
+Albania,Korçë,Korçë,,,60754,Municipality,Korce,,Korce,,KorçëAlbania,county,2,AL-06,Bashkia Korçë,,,,locality,,AL-06,Korçë,,,,,region,1,AL-06,Qarku i Korçës,HIGH,1.0,AL-06
+Albania,Pogradec,Korçë,,,46070,Municipality,Pogradec,,Pogradec,,KorçëAlbania,county,2,AL-06,Bashkia Pogradec,,,,locality,,AL-06,Pogradec,,,,,region,1,AL-06,Qarku i Korçës,HIGH,1.0,AL-06
+Albania,Maliq,Korçë,,,31008,Municipality,,,#N/A,,KorçëAlbania,county,2,AL-06,Bashkia Maliq,,,,locality,,AL-06,Maliq,,,,,region,1,AL-06,Qarku i Korçës,HIGH,1.0,AL-06
+Albania,Devoll,Korçë,,,25897,Municipality,,,#N/A,,KorçëAlbania,county,2,AL-06,Bashkia Devoll,,,,,,,,,,,,region,1,AL-06,Qarku i Korçës,NONE,0.0,AL-06
+Albania,Kolonjë,Korçë,,,7519,Municipality,,,#N/A,,KorçëAlbania,county,2,AL-06,Bashkia Kolonjë,,,,,,,,,,,,region,1,AL-06,Qarku i Korçës,NONE,0.0,AL-06
+Albania,Pustec,Korçë,,,1843,Municipality,,,#N/A,,KorçëAlbania,county,2,AL-06,Bashkia Pustec,,,,locality,,AL-06,Pustec,,,,,region,1,AL-06,Qarku i Korçës,HIGH,1.0,AL-06
+Albania,Kukës,Kukës,,,36125,Municipality,Kukës,,Kukës,,KukësAlbania,county,2,AL-07,Bashkia Kukës,,,,locality,,AL-07,Kukës,,,,,region,1,AL-07,Qarku i Kukësit,HIGH,1.0,AL-07
+Albania,Tropojë,Kukës,,,14189,Municipality,,,#N/A,,KukësAlbania,county,2,AL-07,Bashkia Tropojë,,,,locality,,AL-07,Tropojë,,,,,region,1,AL-07,Qarku i Kukësit,HIGH,1.0,AL-07
+Albania,Has,Kukës,,,11684,Municipality,,,#N/A,,KukësAlbania,county,2,AL-07,Bashkia Has,,,,,,,,,,,,region,1,AL-07,Qarku i Kukësit,NONE,0.0,AL-07
+Albania,Kurbin,Lezhë,,,34405,Municipality,Laç,,Laç,,LezhëAlbania,county,2,AL-08,Bashkia Kurbin,,,,,,,,,,,,region,1,AL-08,Qarku i Lezhës,NONE,0.0,AL-08
+Albania,Lezhë,Lezhë,,,51354,Municipality,Lezhë,,Lezhë,,LezhëAlbania,county,2,AL-08,Bashkia Lezhë,,,,locality,,AL-08,Lezhë,,,,,region,1,AL-08,Qarku i Lezhës,HIGH,1.0,AL-08
+Albania,Mirditë,Lezhë,,,13625,Municipality,,,#N/A,,LezhëAlbania,county,2,AL-08,Bashkia Mirditë,,,,,,,,,,,,region,1,AL-08,Qarku i Lezhës,NONE,0.0,AL-08
+Albania,Shkodër,Shkodër,,,102434,Municipality,Shkoder,,Shkoder,,ShkodërAlbania,county,2,AL-10,Bashkia Shkodër,,,,locality,,AL-10,Shkodër,,,,,region,1,AL-10,Qarku i Shkodrës,HIGH,1.0,AL-10
+Albania,Malësi e Madhe,Shkodër,,,21684,Municipality,,,#N/A,,ShkodërAlbania,county,2,AL-10,Bashkia Malësi e Madhe,,,,county,2,AL-10,Bashkia Malësi e Madhe,,,,,region,1,AL-10,Qarku i Shkodrës,LOW,0.828,AL-10
+Albania,Vau i Dejës,Shkodër,,,19261,Municipality,,,#N/A,,ShkodërAlbania,county,2,AL-10,Bashkia Vau-Dejës,,,,locality,,AL-10,Vau-Dejës,,,,,region,1,AL-10,Qarku i Shkodrës,LOW,0.8,AL-10
+Albania,Pukë,Shkodër,,,6222,Municipality,,,#N/A,,ShkodërAlbania,county,2,AL-10,Bashkia Pukë,,,,locality,,AL-10,Pukë,,,,,region,1,AL-10,Qarku i Shkodrës,HIGH,1.0,AL-10
+Albania,Fushë-Arrës,Shkodër,,,4878,Municipality,,,#N/A,,ShkodërAlbania,locality,,AL-09,Fushë Çidhën,,,,locality,,AL-10,Fushë-Arrëz,,,,,region,1,AL-10,Qarku i Shkodrës,LOW,0.909,AL-10
+Albania,Tiranë,Tirana,,,598176,Municipality,Tirana,,Tirana,,TiranaAlbania,county,2,AL-11,Bashkia Tiranë,,,,locality,,AL-11,Tiranë,,,,,region,1,AL-11,Qarku i Tiranës,HIGH,1.0,AL-11
+Albania,Kamëz,Tirana,,,96137,Municipality,Tirana,,Tirana,,TiranaAlbania,county,2,AL-11,Municipaliteta e Kamëz,,,,locality,,AL-11,Kamëz,,,,,region,1,AL-11,Qarku i Tiranës,HIGH,1.0,AL-11
+Albania,Kavajë,Tirana,,,30012,Municipality,Tirana,,Tirana,,TiranaAlbania,county,2,AL-11,Bashkia Kavajë,,,,locality,,AL-11,Kavajë,,,,,region,1,AL-11,Qarku i Tiranës,HIGH,1.0,AL-11
+Albania,Vorë,Tirana,,,21621,Municipality,Tirana,,Tirana,,TiranaAlbania,county,2,AL-11,Bashkia Vorë,,,,locality,,AL-11,Vorë,,,,,region,1,AL-11,Qarku i Tiranës,HIGH,1.0,AL-11
+Albania,Rrogozhinë,Tirana,,,12567,Municipality,Tirana,,Tirana,,TiranaAlbania,county,2,AL-11,Bashkia Rrogozhinë,,,,locality,,AL-11,Rrogozhinë,,,,,region,1,AL-11,Qarku i Tiranës,HIGH,1.0,AL-11
+Albania,Vlorë,Vlorë,,,83683,Municipality,Vlore,,Vlore,,VlorëAlbania,county,2,AL-12,Bashkia Vlorë,,,,locality,,AL-12,Vlorë,,,,,region,1,AL-12,Qarku i Vlorës,HIGH,1.0,AL-12
+Albania,Sarandë,Vlorë,,,22613,Municipality,,,#N/A,,VlorëAlbania,county,2,AL-12,Bashkia Sarandë,,,,locality,,AL-12,Sarandë,,,,,region,1,AL-12,Qarku i Vlorës,HIGH,1.0,AL-12
+Albania,Finiq,Vlorë,,,11413,Municipality,,,#N/A,,VlorëAlbania,county,2,AL-12,Bashkia Finiq,,,,locality,,AL-12,Finiq,,,,,region,1,AL-12,Qarku i Vlorës,HIGH,1.0,AL-12
+Albania,Selenicë,Vlorë,,,9580,Municipality,,,#N/A,,VlorëAlbania,county,2,AL-12,Bashkia Selenicë,,,,locality,,AL-12,Selenicë,,,,,region,1,AL-12,Qarku i Vlorës,HIGH,1.0,AL-12
+Albania,Himarë,Vlorë,,,8328,Municipality,,,#N/A,,VlorëAlbania,county,2,AL-12,Bashkia Himarë,,,,locality,,AL-12,Himarë,,,,,region,1,AL-12,Qarku i Vlorës,HIGH,1.0,AL-12
+Albania,Delvinë,Vlorë,,,6166,Municipality,,,#N/A,,VlorëAlbania,county,2,AL-12,Bashkia Delvinë,,,,locality,,AL-12,Delvinë,,,,,region,1,AL-12,Qarku i Vlorës,HIGH,1.0,AL-12
+Albania,Konispol,Vlorë,,,4898,Municipality,,,#N/A,,VlorëAlbania,county,2,AL-12,Bashkia Konispol,,,,locality,,AL-12,Konispol,,,,,region,1,AL-12,Qarku i Vlorës,HIGH,1.0,AL-12

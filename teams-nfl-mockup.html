@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Team Pages Mockup - NFL</title>
+<style>
+  /* Tokens lifted from app/globals.css so this matches the live site */
+  :root {
+    --bg: #08080D;
+    --bg-card: #12121A;
+    --bg-card-hover: #1A1A26;
+    --border: #1E1E2E;
+    --text: #E8E8ED;
+    --text-muted: #8888A0;
+    --text-dim: #55556A;
+    --accent: #4ECDC4;
+    --accent-dim: #2A7A74;
+    --region-na: #4ECDC4;
+    /* Editorial palettes for championship chips per the v1 decision */
+    --chip-sb: #d4af37;        /* warm gold for Super Bowl era */
+    --chip-sb-text: #1a1408;
+    --chip-pre-sb: #6e8aa6;    /* cool slate for pre-merger NFL/AAFC/AFL titles */
+    --chip-pre-sb-text: #0c1320;
+    --tier-major: #0891b2;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Mockup gutter so both pages live in one preview */
+  .mockup-shell { max-width: 1200px; margin: 0 auto; padding: 32px 28px 96px; }
+  .mockup-label {
+    text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px;
+    color: var(--text-dim); padding: 4px 0 12px;
+    border-bottom: 1px solid var(--border); margin-bottom: 28px;
+  }
+  .mockup-section { margin-bottom: 80px; }
+
+  /* --- Index page (/teams/nfl) --- */
+  .index-head { margin-bottom: 28px; }
+  .index-head h1 { font-size: 32px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .index-head .sub { color: var(--text-muted); font-size: 14px; }
+  .index-meta {
+    display: flex; gap: 24px; flex-wrap: wrap;
+    margin-top: 16px; color: var(--text-muted); font-size: 12px;
+  }
+  .index-meta strong { color: var(--text); font-size: 14px; }
+
+  .sort-row {
+    display: flex; gap: 8px; align-items: center; margin: 20px 0 16px;
+    color: var(--text-muted); font-size: 12px;
+  }
+  .sort-pill {
+    padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px;
+    background: var(--bg-card); color: var(--text-muted); cursor: pointer;
+  }
+  .sort-pill.active { background: var(--accent-dim); color: var(--text); border-color: var(--accent-dim); }
+
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;
+  }
+  .team-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px; display: flex; gap: 12px; align-items: flex-start;
+    transition: background 0.15s ease;
+  }
+  .team-card:hover { background: var(--bg-card-hover); }
+  .team-logo {
+    width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%;
+    display: grid; place-items: center; font-weight: 700; color: #fff;
+    font-size: 14px; letter-spacing: -0.02em;
+  }
+  .team-card .name { font-weight: 600; font-size: 14px; line-height: 1.2; }
+  .team-card .meta { color: var(--text-muted); font-size: 11px; margin-top: 2px; }
+  .team-card .counts { display: flex; gap: 6px; margin-top: 8px; }
+  .count-chip {
+    font-size: 10px; padding: 2px 7px; border-radius: 4px;
+    background: rgba(78,205,196,0.12); color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .count-chip.gold { background: rgba(212,175,55,0.16); color: var(--chip-sb); }
+
+  /* Logo color presets so the mockup is readable without real assets */
+  .L-packers { background: #203731; color: #FFB612; }
+  .L-steelers { background: #FFB612; color: #000; }
+  .L-patriots { background: #002244; }
+  .L-cowboys  { background: #003594; }
+  .L-49ers    { background: #AA0000; }
+  .L-giants   { background: #0B2265; }
+  .L-bears    { background: #0B162A; color: #C83803; }
+  .L-redskins { background: #5A1414; color: #FFB612; }
+  .L-raiders  { background: #000; }
+  .L-broncos  { background: #FB4F14; }
+  .L-chiefs   { background: #E31837; }
+  .L-eagles   { background: #004C54; }
+  .L-rams     { background: #003594; color: #FFA300; }
+  .L-colts    { background: #002C5F; }
+  .L-dolphins { background: #008E97; }
+  .L-ravens   { background: #241773; color: #9E7C0C; }
+  .L-saints   { background: #101820; color: #D3BC8D; }
+  .L-seahawks { background: #002244; color: #69BE28; }
+  .L-buccs    { background: #D50A0A; }
+  .L-vikings  { background: #4F2683; color: #FFC62F; }
+  .L-bills    { background: #00338D; }
+  .L-bengals  { background: #FB4F14; color: #000; }
+  .L-jets     { background: #125740; }
+  .L-browns   { background: #311D00; color: #FF3C00; }
+  .L-titans   { background: #0C2340; color: #4B92DB; }
+  .L-falcons  { background: #A71930; }
+  .L-cards    { background: #97233F; }
+  .L-chargers { background: #0080C6; color: #FFC20E; }
+  .L-lions    { background: #0076B6; color: #B0B7BC; }
+  .L-jaguars  { background: #006778; color: #D7A22A; }
+  .L-texans   { background: #03202F; }
+  .L-panthers { background: #0085CA; }
+
+  /* Historical / defunct franchise logo palettes. Slightly desaturated by
+     design so the page reads "these are no longer active" without being
+     punitive. Era-appropriate where the team's known colors are documented. */
+  .L-pottsville { background: #5e1414; color: #f1e4c5; }
+  .L-canton-b   { background: #b22222; color: #fff; }
+  .L-akron      { background: #1b3a6f; color: #e8b87c; }
+  .L-cleve-bull { background: #4a2c1a; color: #f5c75c; }
+  .L-frankford  { background: #1a1a1a; color: #f6d33a; }
+  .L-cleve-aafc { background: #311d00; color: #ff7a1a; }
+  .L-sf-aafc    { background: #8a0e0e; color: #f0c46b; }
+  .L-decatur    { background: #243a59; color: #d8b257; }
+  .L-staten     { background: #2f2f2f; color: #cccccc; }
+  .L-dayton     { background: #1f4a26; color: #d8c87b; }
+
+  /* Pottsville "Stolen Championship" badge. A gold diagonal-hatch chip
+     with a dark interior, evoking a vacated/contested trophy. Distinct
+     from the regular pre-Super Bowl championship chip so a reader can
+     see it across the table at a glance. */
+  .ch-chip.stolen {
+    background:
+      repeating-linear-gradient(
+        45deg,
+        #5e1414 0,
+        #5e1414 6px,
+        #d4af37 6px,
+        #d4af37 12px
+      );
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+    border: 1px solid #d4af37;
+    position: relative;
+    padding-right: 18px;
+  }
+  .ch-chip.stolen::after {
+    content: "★";
+    position: absolute; right: 5px; top: 50%;
+    transform: translateY(-50%);
+    color: #d4af37; text-shadow: 0 1px 0 rgba(0,0,0,0.8);
+    font-size: 11px;
+  }
+  .historical-table-logo {
+    width: 30px; height: 30px; border-radius: 50%;
+    display: inline-grid; place-items: center;
+    font-weight: 700; font-size: 10px; letter-spacing: -0.02em;
+    color: #fff;
+    vertical-align: middle; margin-right: 10px;
+    flex-shrink: 0;
+  }
+  .historical-row-cell {
+    display: flex; align-items: center; gap: 0;
+  }
+  /* Pottsville row gets a subtle marker so the eye lands on it */
+  tr.pottsville td { background: rgba(94, 20, 20, 0.08); }
+  .stolen-footnote {
+    margin-top: 14px; padding: 12px 14px; border-left: 3px solid #d4af37;
+    background: rgba(212, 175, 55, 0.08);
+    font-size: 12px; color: var(--text-muted); line-height: 1.6;
+  }
+  .stolen-footnote strong { color: #d4af37; }
+
+  /* --- Detail page (/teams/nfl/[slug]) --- */
+  .detail-shell { margin-top: 12px; }
+
+  .breadcrumb { color: var(--text-muted); font-size: 12px; margin-bottom: 18px; }
+  .breadcrumb a { color: var(--text-muted); }
+  .breadcrumb a:hover { color: var(--text); }
+
+  .hero {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px; display: grid; grid-template-columns: 96px 1fr auto; gap: 24px;
+    align-items: center;
+  }
+  .hero-logo {
+    width: 96px; height: 96px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 28px;
+    background: #203731; color: #FFB612;
+  }
+  .hero h1 {
+    font-size: 32px; margin: 0; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .hero .subtitle {
+    color: var(--text-muted); font-size: 13px; margin-top: 4px;
+  }
+  .hero .subtitle .formerly { font-style: italic; }
+  .hero-meta {
+    display: flex; gap: 22px; margin-top: 12px;
+    color: var(--text-muted); font-size: 12px; flex-wrap: wrap;
+  }
+  .hero-meta a { color: var(--text); border-bottom: 1px dotted var(--text-dim); }
+  .hero-tier-pill {
+    align-self: flex-start; padding: 6px 12px; border-radius: 999px;
+    background: rgba(8,145,178,0.16); color: #45c0d8;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+  }
+
+  /* Headline stats */
+  .stat-row {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+    margin-top: 16px;
+  }
+  .stat-cell {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px;
+  }
+  .stat-cell .v { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+  .stat-cell .v .super { font-size: 13px; color: var(--text-muted); margin-left: 6px; vertical-align: 2px; }
+  .stat-cell .k { color: var(--text-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+  /* Section blocks */
+  section.block {
+    margin-top: 28px;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px;
+  }
+  section.block h2 {
+    font-size: 18px; margin: 0 0 14px; font-weight: 600; letter-spacing: -0.005em;
+  }
+  section.block .deck { color: var(--text-muted); font-size: 12px; margin: -8px 0 16px; }
+
+  /* Championship chips */
+  .chip-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ch-chip {
+    display: inline-flex; align-items: center; padding: 5px 10px;
+    border-radius: 6px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .ch-chip.sb { background: var(--chip-sb); color: var(--chip-sb-text); }
+  .ch-chip.pre { background: var(--chip-pre-sb); color: var(--chip-pre-sb-text); }
+  .ch-legend { display: flex; gap: 16px; margin-top: 14px; font-size: 11px; color: var(--text-muted); }
+  .ch-legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+  /* Two-column inside blocks */
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 760px) { .twocol { grid-template-columns: 1fr; } }
+
+  /* All-time record table */
+  table.record { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.record td { padding: 6px 0; border-bottom: 1px solid var(--border); }
+  table.record td.k { color: var(--text-muted); }
+  table.record td.v { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* Stadium history */
+  .stadium-building {
+    border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px;
+    background: rgba(255,255,255,0.015);
+  }
+  .stadium-building h3 {
+    font-size: 14px; margin: 0; font-weight: 600;
+  }
+  .stadium-building .years { color: var(--text-muted); font-size: 12px; }
+  .stadium-building .city { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+  .era-list {
+    margin: 10px 0 0; padding-left: 16px; color: var(--text-muted); font-size: 12px;
+  }
+  .era-list li { padding: 2px 0; }
+  .era-list li .e-name { color: var(--text); }
+
+  /* Award winners */
+  .award-group { margin-bottom: 14px; }
+  .award-group h3 {
+    margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--text-muted); font-weight: 600;
+  }
+  .award-group ul { margin: 0; padding-left: 16px; }
+  .award-group li { padding: 1px 0; font-size: 13px; }
+  .award-group li .year {
+    color: var(--text-muted); font-variant-numeric: tabular-nums; margin-right: 8px;
+    display: inline-block; min-width: 36px;
+  }
+
+  /* Season table (collapsible) */
+  details.season-table {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 0; margin-top: 24px;
+  }
+  details.season-table > summary {
+    list-style: none; cursor: pointer; padding: 16px 22px;
+    font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: space-between;
+  }
+  details.season-table > summary::-webkit-details-marker { display: none; }
+  details.season-table > summary::after {
+    content: "+"; color: var(--text-muted); font-size: 18px;
+  }
+  details.season-table[open] > summary::after { content: "−"; }
+  details.season-table .body { padding: 0 22px 22px; }
+  table.seasons {
+    width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums;
+    margin-top: 6px;
+  }
+  table.seasons th, table.seasons td {
+    padding: 6px 8px; border-bottom: 1px solid var(--border); text-align: right;
+  }
+  table.seasons th { color: var(--text-muted); font-weight: 500; text-align: right; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  table.seasons th:first-child, table.seasons td:first-child { text-align: left; }
+  table.seasons td:first-child { color: var(--text-muted); }
+  table.seasons tr.champ td { background: rgba(212,175,55,0.07); }
+  table.seasons tr.champ td:first-child { color: var(--chip-sb); font-weight: 600; }
+  .legend-row { font-size: 11px; color: var(--text-muted); margin-top: 10px; }
+
+  /* Notes for me-the-reviewer */
+  .reviewer-note {
+    margin-top: 24px; padding: 14px 16px; border-left: 3px solid var(--accent);
+    background: rgba(78,205,196,0.06); color: var(--text-muted); font-size: 12px;
+  }
+  .reviewer-note strong { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="mockup-shell">
+
+  <!-- ====== MOCKUP 1: /teams/nfl index ====== -->
+  <section class="mockup-section">
+    <div class="mockup-label">Mockup 1 — /teams/nfl index page</div>
+
+    <header class="index-head">
+      <h1>NFL franchises</h1>
+      <div class="sub">All 32 active NFL franchises, sorted by championships won across the NFL, AAFC, AFL, and Super Bowl era.</div>
+      <div class="index-meta">
+        <div><strong>32</strong> active franchises</div>
+        <div><strong>13</strong> with at least one championship</div>
+        <div><strong>59</strong> Super Bowls played (1966 to present)</div>
+        <div>Defunct franchises: <a href="#historical">/teams/nfl/historical</a></div>
+      </div>
+    </header>
+
+    <div class="sort-row">
+      <span>Sort:</span>
+      <span class="sort-pill active">Championships</span>
+      <span class="sort-pill">Win pct</span>
+      <span class="sort-pill">Current ELO</span>
+      <span class="sort-pill">By metro rank</span>
+      <span class="sort-pill">A–Z</span>
+    </div>
+
+    <div class="grid">
+      <!-- Each card: logo, team name, metro link, championship counts -->
+      <a class="team-card" href="#packers">
+        <div class="team-logo L-packers">GB</div>
+        <div>
+          <div class="name">Green Bay Packers</div>
+          <div class="meta">Green Bay · NFC North</div>
+          <div class="counts"><span class="count-chip gold">13 titles</span><span class="count-chip">.572 W%</span></div>
+        </div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-bears">CHI</div>
+        <div><div class="name">Chicago Bears</div><div class="meta">Chicago · NFC North</div>
+          <div class="counts"><span class="count-chip gold">9 titles</span><span class="count-chip">.557</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-giants">NYG</div>
+        <div><div class="name">New York Giants</div><div class="meta">New York · NFC East</div>
+          <div class="counts"><span class="count-chip gold">8 titles</span><span class="count-chip">.519</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-steelers">PIT</div>
+        <div><div class="name">Pittsburgh Steelers</div><div class="meta">Pittsburgh · AFC North</div>
+          <div class="counts"><span class="count-chip gold">6 titles</span><span class="count-chip">.529</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-patriots">NE</div>
+        <div><div class="name">New England Patriots</div><div class="meta">Boston · AFC East</div>
+          <div class="counts"><span class="count-chip gold">6 titles</span><span class="count-chip">.554</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-cowboys">DAL</div>
+        <div><div class="name">Dallas Cowboys</div><div class="meta">Dallas · NFC East</div>
+          <div class="counts"><span class="count-chip gold">5 titles</span><span class="count-chip">.572</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-49ers">SF</div>
+        <div><div class="name">San Francisco 49ers</div><div class="meta">San Francisco · NFC West</div>
+          <div class="counts"><span class="count-chip gold">5 titles</span><span class="count-chip">.555</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-redskins">WAS</div>
+        <div><div class="name">Washington Commanders</div><div class="meta">Washington-Baltimore · NFC East</div>
+          <div class="counts"><span class="count-chip gold">5 titles</span><span class="count-chip">.502</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-rams">LAR</div>
+        <div><div class="name">Los Angeles Rams</div><div class="meta">Los Angeles · NFC West</div>
+          <div class="counts"><span class="count-chip gold">4 titles</span><span class="count-chip">.510</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-raiders">LV</div>
+        <div><div class="name">Las Vegas Raiders</div><div class="meta">Las Vegas · AFC West</div>
+          <div class="counts"><span class="count-chip gold">3 titles</span><span class="count-chip">.524</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-broncos">DEN</div>
+        <div><div class="name">Denver Broncos</div><div class="meta">Denver · AFC West</div>
+          <div class="counts"><span class="count-chip gold">3 titles</span><span class="count-chip">.518</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-colts">IND</div>
+        <div><div class="name">Indianapolis Colts</div><div class="meta">Indianapolis · AFC South</div>
+          <div class="counts"><span class="count-chip gold">3 titles</span><span class="count-chip">.532</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-chiefs">KC</div>
+        <div><div class="name">Kansas City Chiefs</div><div class="meta">Kansas City · AFC West</div>
+          <div class="counts"><span class="count-chip gold">3 titles</span><span class="count-chip">.527</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-ravens">BAL</div>
+        <div><div class="name">Baltimore Ravens</div><div class="meta">Washington-Baltimore · AFC North</div>
+          <div class="counts"><span class="count-chip gold">2 titles</span><span class="count-chip">.583</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-dolphins">MIA</div>
+        <div><div class="name">Miami Dolphins</div><div class="meta">Miami · AFC East</div>
+          <div class="counts"><span class="count-chip gold">2 titles</span><span class="count-chip">.554</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-eagles">PHI</div>
+        <div><div class="name">Philadelphia Eagles</div><div class="meta">Philadelphia · NFC East</div>
+          <div class="counts"><span class="count-chip gold">2 titles</span><span class="count-chip">.487</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-buccs">TB</div>
+        <div><div class="name">Tampa Bay Buccaneers</div><div class="meta">Tampa · NFC South</div>
+          <div class="counts"><span class="count-chip gold">2 titles</span><span class="count-chip">.402</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-seahawks">SEA</div>
+        <div><div class="name">Seattle Seahawks</div><div class="meta">Seattle · NFC West</div>
+          <div class="counts"><span class="count-chip gold">2 titles</span><span class="count-chip">.525</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-saints">NO</div>
+        <div><div class="name">New Orleans Saints</div><div class="meta">New Orleans · NFC South</div>
+          <div class="counts"><span class="count-chip gold">1 title</span><span class="count-chip">.483</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-jets">NYJ</div>
+        <div><div class="name">New York Jets</div><div class="meta">New York · AFC East</div>
+          <div class="counts"><span class="count-chip gold">1 title</span><span class="count-chip">.444</span></div></div>
+      </a>
+      <a class="team-card" href="#">
+        <div class="team-logo L-bills">BUF</div>
+        <div><div class="name">Buffalo Bills</div><div class="meta">Buffalo · AFC East</div>
+          <div class="counts"><span class="count-chip">No titles</span><span class="count-chip">.486</span></div></div>
+      </a>
+      <!-- ...rest of 32 elided in mockup; the production page renders all 32 ... -->
+      <div class="team-card" style="opacity:0.6;justify-content:center;align-items:center;text-align:center;">
+        <div><div class="name" style="color:var(--text-muted);">+ 11 more franchises</div><div class="meta">Vikings, Bengals, Browns, Falcons, Chargers, Cardinals, Lions, Titans, Texans, Panthers, Jaguars</div></div>
+      </div>
+    </div>
+
+    <div class="reviewer-note">
+      <strong>What to check on this section:</strong> card density, the gold "X titles" chip color (gold for total title count), the metro link in the meta line, and whether the sort pills feel right. The "No titles" zero-state appears on 9 franchises and we will want to confirm the visual treatment is honest but not punitive.
+    </div>
+  </section>
+
+
+  <!-- ====== MOCKUP 2: /teams/nfl/green-bay-packers detail ====== -->
+  <section class="mockup-section" id="packers">
+    <div class="mockup-label">Mockup 2 — /teams/nfl/green-bay-packers detail page</div>
+
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/teams/nfl">NFL</a> &rsaquo; Green Bay Packers</div>
+
+    <header class="hero">
+      <div class="hero-logo L-packers">GB</div>
+      <div>
+        <h1>Green Bay Packers</h1>
+        <div class="subtitle">
+          Founded 1921 in <a href="/metros/green-bay">Green Bay</a> · NFC North · Home: <a href="#">Lambeau Field</a><br>
+          <span class="formerly">No prior cities. Same name and location since 1921.</span>
+        </div>
+        <div class="hero-meta">
+          <span>League: NFL</span>
+          <span>Conference: NFC</span>
+          <span>Division: NFC North</span>
+          <span>Metro: <a href="/metros/green-bay">Green Bay</a></span>
+        </div>
+      </div>
+      <div class="hero-tier-pill">Major Metro Tier</div>
+    </header>
+
+    <!-- Headline stat strip -->
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="v">13<span class="super">league titles</span></div>
+        <div class="k">9 pre-Super Bowl · 4 Super Bowl era</div>
+      </div>
+      <div class="stat-cell">
+        <div class="v">22<span class="super">division titles</span></div>
+        <div class="k">NFC North / NFL Central</div>
+      </div>
+      <div class="stat-cell">
+        <div class="v">36<span class="super">playoff appearances</span></div>
+        <div class="k">Postseason record 36-26</div>
+      </div>
+      <div class="stat-cell">
+        <div class="v">.572<span class="super">all-time win pct</span></div>
+        <div class="k">Highest of any NFL franchise</div>
+      </div>
+      <div class="stat-cell">
+        <div class="v">105<span class="super">seasons</span></div>
+        <div class="k">Founded 1921</div>
+      </div>
+    </div>
+
+
+    <!-- Championships -->
+    <section class="block">
+      <h2>Championships</h2>
+      <div class="deck">Pre-merger NFL titles in slate; Super Bowl era titles in gold. Color treatment is editorial honesty about format differences, not a quality judgement.</div>
+      <div class="chip-strip">
+        <span class="ch-chip pre">1929</span>
+        <span class="ch-chip pre">1930</span>
+        <span class="ch-chip pre">1931</span>
+        <span class="ch-chip pre">1936</span>
+        <span class="ch-chip pre">1939</span>
+        <span class="ch-chip pre">1944</span>
+        <span class="ch-chip pre">1961</span>
+        <span class="ch-chip pre">1962</span>
+        <span class="ch-chip pre">1965</span>
+        <span class="ch-chip sb">SB I (1966)</span>
+        <span class="ch-chip sb">SB II (1967)</span>
+        <span class="ch-chip sb">SB XXXI (1996)</span>
+        <span class="ch-chip sb">SB XLV (2010)</span>
+      </div>
+      <div class="ch-legend">
+        <span><span class="sw" style="background:var(--chip-pre-sb)"></span>NFL Championship (1920-1965)</span>
+        <span><span class="sw" style="background:var(--chip-sb)"></span>Super Bowl (1966-present)</span>
+      </div>
+    </section>
+
+    <!-- All-time record + Stadium history side by side -->
+    <div class="twocol">
+      <section class="block">
+        <h2>All-time record</h2>
+        <table class="record">
+          <tr><td class="k">Regular season W-L-T</td><td class="v">803-617-37</td></tr>
+          <tr><td class="k">Win pct</td><td class="v">.572</td></tr>
+          <tr><td class="k">Playoff record</td><td class="v">36-26-0 (.581)</td></tr>
+          <tr><td class="k">Conference final appearances</td><td class="v">14 (8 wins)</td></tr>
+          <tr><td class="k">Championship game appearances</td><td class="v">13</td></tr>
+          <tr><td class="k">Best regular-season record</td><td class="v">15-1 (2011)</td></tr>
+          <tr><td class="k">Worst regular-season record</td><td class="v">2-13-1 (1958)</td></tr>
+          <tr><td class="k">Most recent championship</td><td class="v">SB XLV (2010 season)</td></tr>
+        </table>
+      </section>
+
+      <section class="block">
+        <h2>Stadium history</h2>
+        <div class="deck">Grouped by physical building. Naming-rights eras nested.</div>
+
+        <div class="stadium-building">
+          <h3>Lambeau Field <span class="years">1957-present</span></h3>
+          <div class="city">Green Bay, Wisconsin</div>
+          <ul class="era-list">
+            <li><span class="e-name">City Stadium</span> 1957-1964</li>
+            <li><span class="e-name">Lambeau Field</span> 1965-present</li>
+          </ul>
+        </div>
+
+        <div class="stadium-building">
+          <h3>Old City Stadium <span class="years">1925-1956</span></h3>
+          <div class="city">Green Bay, Wisconsin (Green Bay East High School site)</div>
+          <ul class="era-list">
+            <li><span class="e-name">Old City Stadium</span> 1925-1956</li>
+          </ul>
+        </div>
+
+        <div class="stadium-building">
+          <h3>Bellevue Park / Hagemeister Park <span class="years">1921-1924</span></h3>
+          <div class="city">Green Bay, Wisconsin</div>
+          <ul class="era-list">
+            <li><span class="e-name">Hagemeister Park</span> 1921-1922</li>
+            <li><span class="e-name">Bellevue Park</span> 1923-1924</li>
+          </ul>
+        </div>
+
+        <div class="stadium-building">
+          <h3>Milwaukee venues (shared home, 1933-1994) <span class="years">1933-1994</span></h3>
+          <div class="city">Milwaukee, Wisconsin</div>
+          <ul class="era-list">
+            <li><span class="e-name">Borchert Field</span> 1933</li>
+            <li><span class="e-name">State Fair Park</span> 1934-1951</li>
+            <li><span class="e-name">Milwaukee County Stadium</span> 1953-1994</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Award winners -->
+    <section class="block">
+      <h2>Award winners</h2>
+      <div class="deck">Major league-wide awards held by Packers players or coaches in their Packers seasons. Pulled from the Awards sheet plus the Hall of Fame and Pro Bowl rolls. Pro Bowl and All-Pro counts are summarized; full lists in v2.</div>
+      <div class="twocol">
+        <div>
+          <div class="award-group">
+            <h3>AP NFL MVP</h3>
+            <ul>
+              <li><span class="year">1942</span>Don Hutson</li>
+              <li><span class="year">1961</span>Paul Hornung</li>
+              <li><span class="year">1966</span>Bart Starr</li>
+              <li><span class="year">1995</span>Brett Favre</li>
+              <li><span class="year">1996</span>Brett Favre</li>
+              <li><span class="year">1997</span>Brett Favre</li>
+              <li><span class="year">2011</span>Aaron Rodgers</li>
+              <li><span class="year">2014</span>Aaron Rodgers</li>
+              <li><span class="year">2020</span>Aaron Rodgers</li>
+              <li><span class="year">2021</span>Aaron Rodgers</li>
+            </ul>
+          </div>
+          <div class="award-group">
+            <h3>Super Bowl MVP</h3>
+            <ul>
+              <li><span class="year">1966</span>Bart Starr</li>
+              <li><span class="year">1967</span>Bart Starr</li>
+              <li><span class="year">1996</span>Desmond Howard</li>
+              <li><span class="year">2010</span>Aaron Rodgers</li>
+            </ul>
+          </div>
+          <div class="award-group">
+            <h3>AP Coach of the Year</h3>
+            <ul>
+              <li><span class="year">1961</span>Vince Lombardi</li>
+              <li><span class="year">2011</span>Mike McCarthy</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="award-group">
+            <h3>AP Offensive Player of the Year</h3>
+            <ul>
+              <li><span class="year">1995</span>Brett Favre</li>
+              <li><span class="year">2011</span>Aaron Rodgers</li>
+              <li><span class="year">2014</span>Aaron Rodgers</li>
+            </ul>
+          </div>
+          <div class="award-group">
+            <h3>AP Defensive Player of the Year</h3>
+            <ul>
+              <li><span class="year">2010</span>Clay Matthews</li>
+            </ul>
+          </div>
+          <div class="award-group">
+            <h3>AP Offensive Rookie of the Year</h3>
+            <ul>
+              <li><span class="year">1956</span>Bart Starr</li>
+              <li><span class="year">1970</span>Mike McCoy</li>
+            </ul>
+          </div>
+          <div class="award-group">
+            <h3>Bert Bell Award</h3>
+            <ul>
+              <li><span class="year">1962</span>Jim Taylor</li>
+              <li><span class="year">1966</span>Bart Starr</li>
+              <li><span class="year">2011</span>Aaron Rodgers</li>
+            </ul>
+          </div>
+          <div class="award-group">
+            <h3>Hall of Fame inductees (primary team)</h3>
+            <ul>
+              <li><span class="year">1963</span>Curly Lambeau, Don Hutson, Johnny McNally, Cal Hubbard</li>
+              <li><span class="year">1966</span>Arnie Herber</li>
+              <li><span class="year">1971</span>Vince Lombardi</li>
+              <li><span class="year">1973</span>Jim Taylor</li>
+              <li><span class="year">1976</span>Forrest Gregg, Ray Nitschke</li>
+              <li><span class="year">1977</span>Bart Starr</li>
+              <li><span class="year">…</span><a href="#">12 more inductees</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Season-by-season -->
+    <details class="season-table" open>
+      <summary>Season-by-season (1921 to 2025)</summary>
+      <div class="body">
+        <div class="legend-row">Most recent seasons shown. Click any row to open the game log for that year. Championship seasons highlighted.</div>
+        <table class="seasons">
+          <thead>
+            <tr><th>Season</th><th>W</th><th>L</th><th>T</th><th>Win%</th><th>Div</th><th>Finish</th><th>Playoffs</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2025</td><td>8</td><td>9</td><td>0</td><td>.471</td><td>NFC North</td><td>3rd</td><td>Wild Card loss</td></tr>
+            <tr><td>2024</td><td>11</td><td>6</td><td>0</td><td>.647</td><td>NFC North</td><td>3rd</td><td>Wild Card loss</td></tr>
+            <tr><td>2023</td><td>9</td><td>8</td><td>0</td><td>.529</td><td>NFC North</td><td>2nd</td><td>Divisional Round loss</td></tr>
+            <tr><td>2022</td><td>8</td><td>9</td><td>0</td><td>.471</td><td>NFC North</td><td>3rd</td><td>Missed</td></tr>
+            <tr><td>2021</td><td>13</td><td>4</td><td>0</td><td>.765</td><td>NFC North</td><td>1st</td><td>Divisional Round loss</td></tr>
+            <tr><td>2020</td><td>13</td><td>3</td><td>0</td><td>.813</td><td>NFC North</td><td>1st</td><td>NFC Championship loss</td></tr>
+            <tr class="champ"><td>2010</td><td>10</td><td>6</td><td>0</td><td>.625</td><td>NFC North</td><td>2nd</td><td>Won Super Bowl XLV</td></tr>
+            <tr class="champ"><td>1996</td><td>13</td><td>3</td><td>0</td><td>.813</td><td>NFC Central</td><td>1st</td><td>Won Super Bowl XXXI</td></tr>
+            <tr class="champ"><td>1967</td><td>9</td><td>4</td><td>1</td><td>.679</td><td>NFL Central</td><td>1st</td><td>Won Super Bowl II</td></tr>
+            <tr class="champ"><td>1966</td><td>12</td><td>2</td><td>0</td><td>.857</td><td>NFL Western</td><td>1st</td><td>Won Super Bowl I</td></tr>
+            <tr><td colspan="8" style="text-align:center;color:var(--text-dim);padding:14px 0;">…99 more seasons…</td></tr>
+            <tr><td>1921</td><td>3</td><td>2</td><td>1</td><td>.583</td><td>APFA</td><td>—</td><td>n/a</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="reviewer-note">
+      <strong>What to check on this section:</strong> hero card layout (logo size, subtitle treatment, where the metro link feels right), the stat strip cell count (5 reads dense; could drop to 4), championship chip palette (gold vs slate readability), stadium grouping by building (whether the nested era list reads cleanly or feels redundant), award section density (two columns vs single column), season table default-open vs default-closed.
+    </div>
+  </section>
+
+
+  <!-- ====== MOCKUP 3: /teams/nfl/historical index ====== -->
+  <section class="mockup-section" id="historical">
+    <div class="mockup-label">Mockup 3 — /teams/nfl/historical index (defunct franchises, no individual pages in v1)</div>
+
+    <header class="index-head">
+      <h1>Historical NFL franchises</h1>
+      <div class="sub">47 franchises that played at least one season but no longer exist. APFA charter members, AAFC entries that did not survive the 1949 merger, AFL clubs absorbed in 1970, and short-lived 1920s teams.</div>
+    </header>
+
+    <section class="block">
+      <table class="seasons">
+        <thead>
+          <tr>
+            <th>Franchise</th><th>City</th><th>League</th><th>Years</th>
+            <th>Seasons</th><th>W</th><th>L</th><th>T</th><th>Win%</th><th>Titles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-cleve-bull">CLB</span>Cleveland Bulldogs (1924-25, 27)</div></td>
+            <td>Cleveland</td><td>NFL</td><td>1924-1927</td><td>3</td><td>15</td><td>10</td><td>4</td><td>.586</td>
+            <td><span class="ch-chip pre">1924</span></td>
+          </tr>
+          <tr class="pottsville">
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-pottsville">POT</span>Pottsville Maroons</div></td>
+            <td>Pottsville</td><td>NFL</td><td>1925-1928</td><td>4</td><td>27</td><td>21</td><td>4</td><td>.558</td>
+            <td><span class="ch-chip stolen" title="1925 NFL Championship — won on the field, stripped by League President Joseph Carr after Pottsville played a Notre Dame All-Stars exhibition in Frankford's territory. Pete Rozelle considered restoring it in 1963; NFL owners voted to leave the title with the Chicago Cardinals in 2003. The Maroons faithful have never accepted that ruling.">1925</span></td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-frankford">FRA</span>Frankford Yellow Jackets</div></td>
+            <td>Philadelphia</td><td>NFL</td><td>1924-1931</td><td>8</td><td>69</td><td>45</td><td>15</td><td>.595</td>
+            <td><span class="ch-chip pre">1926</span></td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-canton-b">CAN</span>Canton Bulldogs</div></td>
+            <td>Canton</td><td>APFA/NFL</td><td>1920-1926</td><td>7</td><td>40</td><td>22</td><td>13</td><td>.620</td>
+            <td><span class="ch-chip pre">1922</span> <span class="ch-chip pre">1923</span></td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-akron">AKR</span>Akron Indians/Pros</div></td>
+            <td>Akron</td><td>APFA/NFL</td><td>1920-1926</td><td>7</td><td>32</td><td>26</td><td>15</td><td>.546</td>
+            <td><span class="ch-chip pre">1920</span></td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-cleve-aafc">CLE</span>Cleveland Browns (AAFC)</div></td>
+            <td>Cleveland</td><td>AAFC</td><td>1946-1949</td><td>4</td><td>52</td><td>4</td><td>3</td><td>.929</td>
+            <td><span class="ch-chip pre">1946</span> <span class="ch-chip pre">1947</span> <span class="ch-chip pre">1948</span> <span class="ch-chip pre">1949</span></td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-sf-aafc">SF</span>San Francisco 49ers (AAFC era)</div></td>
+            <td>San Francisco</td><td>AAFC</td><td>1946-1949</td><td>4</td><td>38</td><td>14</td><td>2</td><td>.722</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-decatur">DEC</span>Decatur / Chicago Staleys</div></td>
+            <td>Decatur</td><td>APFA</td><td>1920-1921</td><td>2</td><td>20</td><td>4</td><td>2</td><td>.808</td>
+            <td><span class="ch-chip pre">1921</span></td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-staten">SI</span>Staten Island Stapletons</div></td>
+            <td>Staten Island</td><td>NFL</td><td>1929-1932</td><td>4</td><td>14</td><td>22</td><td>9</td><td>.400</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><div class="historical-row-cell"><span class="historical-table-logo L-dayton">DAY</span>Dayton Triangles</div></td>
+            <td>Dayton</td><td>APFA/NFL</td><td>1920-1929</td><td>10</td><td>18</td><td>52</td><td>10</td><td>.275</td>
+            <td>—</td>
+          </tr>
+          <tr><td colspan="10" style="text-align:center;color:var(--text-dim);padding:14px 0;">…37 more historical franchises…</td></tr>
+        </tbody>
+      </table>
+
+      <div class="stolen-footnote">
+        <strong>The Pottsville Maroons asterisk.</strong> Pottsville finished the 1925 season 10-2 and beat the 9-1-1 Chicago Cardinals 21-7 in the de facto championship game on December 6. Six days later they played a Notre Dame All-Stars exhibition at Shibe Park in Philadelphia, inside the Frankford Yellow Jackets' protected territory. League President Joseph Carr suspended the Maroons. The Cardinals, who hastily scheduled two games against the dissolved Milwaukee Badgers and Hammond Pros to pad their record, were awarded the title. Pete Rozelle reviewed the case in 1963 and again in 1972, declining to restore Pottsville. NFL owners voted 30-2 in 2003 to leave the title with the Cardinals. The asterisk stands.
+      </div>
+    </section>
+
+    <div class="reviewer-note">
+      <strong>What to check on this section:</strong> table density, whether you want each row to be a flat data row or a link out to a sparser per-franchise page (we said no individual pages in v1, but this is the natural place to revisit if you want to upgrade it later).
+    </div>
+  </section>
+
+
+  <div class="reviewer-note" style="border-color:#d4af37;background:rgba(212,175,55,0.06);">
+    <strong>Decisions captured in this mockup.</strong> Active 32 get full pages; defunct go to one combined history page. Championships shown as a single headline total with pre-SB and post-SB chips color-coded. Stadium history grouped by physical building with naming-rights eras nested. Award winners listed by award type. Season table collapsible. Logos sourced from Wikimedia Commons (mockup uses colored monograms as placeholders). Hall of Fame multi-team display deferred to v2.
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿Region (ISO 3166-2),Subtype,Admin Level,Primary (Arabic),Primary (English alias),GERS ID
+,country,0,البحرين,Bahrain,13561196-dc74-4590-af8f-0058026188bd
+,country,0,البحرين,Bahrain,36fb7634-3c14-4533-8d29-011c3cb27551
+BH-13,region,1,محافظة العاصمة,Capital Governorate,506276e3-cbba-4c2c-b5ed-0bcb11c82a26
+BH-13,region,1,محافظة العاصمة,Capital Governorate,473c3cbb-9d8e-45a3-9eff-ed0925af4db6
+BH-15,region,1,محافظة المحرق,Muharraq Governorate,fc3bc343-c46e-4ed4-b4e7-0acaf350c9ca
+BH-15,region,1,محافظة المحرق,Muharraq Governorate,26b43227-b75c-415a-af47-a4aab792268c
+BH-17,region,1,المحافظة الشمالية,Northern Governorate,d69f969c-d95a-4640-84c6-4d766412c7f0
+BH-17,region,1,المحافظة الشمالية,Northern Governorate,89a65804-5ae5-421d-9d9b-6e6338ea01a3
+BH-14,region,1,المحافظة الجنوبية,Southern Governorate,e1b16b2c-c017-4c0c-947e-9b59f92fef8f
+BH-14,region,1,المحافظة الجنوبية,Southern Governorate,1e59af20-fe8b-4507-ad92-d63a6f7a1d38
+BH-17,locality,,ساحل كرزكان,Karzakkan Beach,99de49ad-f10b-457b-9ccc-f6619014967f
+BH-14,locality,,النويدرات,Nuwaidrat,dacf0ba9-5489-4859-ac14-7f64a15448a1
+BH-13,macrohood,,بوغزال,Bu Ghazal,b8da2e75-3e4b-4de4-9fdb-8e4ac83a6e80
+BH-13,macrohood,,الواجهة البحرية,Sea Front,c623ed98-59e0-4295-80e6-bbf7d5fdaca4
+BH-13,macrohood,,Adliya,,7ee235f9-4df6-4b63-aa30-6a1d97436518
+BH-13,macrohood,,Suwayfiya,,c418671a-9eef-4c5d-a14b-f45b0c63f6d8
+BH-15,macrohood,,Galali,,3522e244-9bec-4a5a-8ceb-a95181ebff30
+BH-14,microhood,,Prayer Ground,,d45e31cd-ca56-4739-b851-6f1b8589a842
+BH-14,microhood,,Tree of Life Visitor Center,,0ea1caf6-a28a-4f18-b85e-ef21cb755930
+BH-14,microhood,,Prayer Ground,,6ab56ba5-1bba-4faf-b14e-5e7a8270f88c
+BH-13,microhood,,Pearl Roundabout,,5b177766-44b6-42ee-8999-cdbb1b26d6da
+BH-14,neighborhood,,Education Zone,Education Zone,dfe884b1-7cac-4f15-9e85-303d652d7433
+BH-17,neighborhood,,Villas Baqer,Villas Baqer,ea9f7f73-7e20-4829-af36-3b97cfb200b6
+BH-15,neighborhood,,Block 101,,e97c847f-8ef4-4b40-bf65-efe843260ddf
+BH-14,neighborhood,,Block 1056,,485d1930-04a5-48ca-a188-bf7a3c99462c

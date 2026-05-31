@@ -1,0 +1,369 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Taiwan,Fengshan [Fongshan],Gaoxiong Shi [Kaohsiung Shih],,,359576,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Sanmin,Gaoxiong Shi [Kaohsiung Shih],,,336868,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,三民區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Zuoying,Gaoxiong Shi [Kaohsiung Shih],,,197306,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,左營區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Nanzi [Nanzih],Gaoxiong Shi [Kaohsiung Shih],,,189426,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Qianzhen [Cianjhen],Gaoxiong Shi [Kaohsiung Shih],,,185828,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Lingya,Gaoxiong Shi [Kaohsiung Shih],,,167280,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,苓雅區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Xiaogang [Siaogang],Gaoxiong Shi [Kaohsiung Shih],,,157356,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Gushan,Gaoxiong Shi [Kaohsiung Shih],,,141488,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,鼓山區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Daliao,Gaoxiong Shi [Kaohsiung Shih],,,112265,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,大寮區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Gangshan,Gaoxiong Shi [Kaohsiung Shih],,,96841,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,岡山區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Renwu,Gaoxiong Shi [Kaohsiung Shih],,,91893,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,仁武區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Linyuan,Gaoxiong Shi [Kaohsiung Shih],,,69478,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,林園區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Luzhu [Lujhu],Gaoxiong Shi [Kaohsiung Shih],,,51726,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xinxing [Sinsing],Gaoxiong Shi [Kaohsiung Shih],,,50490,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Niaosong,Gaoxiong Shi [Kaohsiung Shih],,,44938,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,鳥松區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Dashu,Gaoxiong Shi [Kaohsiung Shih],,,41764,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,大樹區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Qiaotou [Ciaotou],Gaoxiong Shi [Kaohsiung Shih],,,38955,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Meinong,Gaoxiong Shi [Kaohsiung Shih],,,38611,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,美濃區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Qishan [Cishan],Gaoxiong Shi [Kaohsiung Shih],,,35764,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Ziguan [Zihguan],Gaoxiong Shi [Kaohsiung Shih],,,35517,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dashe,Gaoxiong Shi [Kaohsiung Shih],,,34324,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,大社區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Qieding [Jiading],Gaoxiong Shi [Kaohsiung Shih],,,29960,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Hunei,Gaoxiong Shi [Kaohsiung Shih],,,29882,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,湖內區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Yanchao,Gaoxiong Shi [Kaohsiung Shih],,,29493,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,燕巢區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Alian,Gaoxiong Shi [Kaohsiung Shih],,,28331,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,阿蓮區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Qijin [Cijin],Gaoxiong Shi [Kaohsiung Shih],,,27785,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Qianjin [Cianjin],Gaoxiong Shi [Kaohsiung Shih],,,26668,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Yancheng,Gaoxiong Shi [Kaohsiung Shih],,,23553,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,鹽埕區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Mituo,Gaoxiong Shi [Kaohsiung Shih],,,18872,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,彌陀區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Neimen,Gaoxiong Shi [Kaohsiung Shih],,,13976,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,內門區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Yong'an [Yongan],Gaoxiong Shi [Kaohsiung Shih],,,13705,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Liugui [Liouguei],Gaoxiong Shi [Kaohsiung Shih],,,12391,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shanlin,Gaoxiong Shi [Kaohsiung Shih],,,11541,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,杉林區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Tianliao,Gaoxiong Shi [Kaohsiung Shih],,,6919,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,田寮區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Jiaxian [Jiasian],Gaoxiong Shi [Kaohsiung Shih],,,5877,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Taoyuan,Gaoxiong Shi [Kaohsiung Shih],,,4223,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,region,1,TW-TAO,桃園市,,,,,region,1,TW-TAO,桃園市,HIGH,1.0,TW-TAO
+Taiwan,Namaxia [Namasia],Gaoxiong Shi [Kaohsiung Shih],,,3147,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Maolin,Gaoxiong Shi [Kaohsiung Shih],,,1915,City District (Qu),Kaohsiung,,Kaohsiung,,Gaoxiong Shi [Kaohsiung Shih]Taiwan,,,,,locality,,TW-KHH,茂林區,,,,,region,1,TW-KHH,高雄市,HIGH,1.0,TW-KHH
+Taiwan,Hualian [Hualien],Hualien,,,102539,City (Shi),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Ji'an [Jian],Hualien,,,83507,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Yuli,Hualien,,,23381,Urban Township (Zhen),,,#N/A,,HualienTaiwan,,,,,locality,,TW-HUA,玉里鎮,,,,,region,1,TW-HUA,花蓮縣,HIGH,1.0,TW-HUA
+Taiwan,Xincheng [Sincheng],Hualien,,,20058,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Shoufeng [Shoufong],Hualien,,,17589,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Xiulin [Sioulin],Hualien,,,16143,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Guangfu,Hualien,,,12369,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,locality,,TW-HUA,光復鄉,,,,,region,1,TW-HUA,花蓮縣,HIGH,1.0,TW-HUA
+Taiwan,Ruisui [Rueisuei],Hualien,,,11312,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Fenglin [Fonglin],Hualien,,,10821,Urban Township (Zhen),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Fuli,Hualien,,,10004,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,locality,,TW-HUA,富里鄉,,,,,region,1,TW-HUA,花蓮縣,HIGH,1.0,TW-HUA
+Taiwan,Wanrong,Hualien,,,6237,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,locality,,TW-HUA,萬榮鄉,,,,,region,1,TW-HUA,花蓮縣,HIGH,1.0,TW-HUA
+Taiwan,Zhuoxi [Jhuosi],Hualien,,,6036,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Fengbin [Fongbin],Hualien,,,4376,Rural Township (Xiang),,,#N/A,,HualienTaiwan,,,,,,,,,,,,,region,1,TW-HUA,花蓮縣,NONE,0.0,TW-HUA
+Taiwan,Minxiong [Minsyong],Jiayi [Chiayi],,,71317,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shuishang [Shueishang],Jiayi [Chiayi],,,49012,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Zhongpu [Jhongpu],Jiayi [Chiayi],,,44131,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Puzi [Puzih],Jiayi [Chiayi],,,41669,City (Shi),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Taibao,Jiayi [Chiayi],,,38536,City (Shi),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,太保市,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Zhuqi [Jhuci],Jiayi [Chiayi],,,34797,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xingang [Singang],Jiayi [Chiayi],,,31162,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dalin,Jiayi [Chiayi],,,30381,Urban Township (Zhen),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,大林鎮,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Budai,Jiayi [Chiayi],,,25990,Urban Township (Zhen),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,布袋鎮,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Dongshi [Dongshih],Jiayi [Chiayi],,,23766,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Liujiao [Lioujiao],Jiayi [Chiayi],,,22196,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Meishan,Jiayi [Chiayi],,,18687,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,梅山鄉,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Yizhu [Yijhu],Jiayi [Chiayi],,,17602,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Lucao,Jiayi [Chiayi],,,14913,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,鹿草鄉,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Xikou [Sikou],Jiayi [Chiayi],,,14055,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Fanlu,Jiayi [Chiayi],,,11180,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,番路鄉,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Alishan,Jiayi [Chiayi],,,5527,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,阿里山鄉,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Dapu,Jiayi [Chiayi],,,4560,Rural Township (Xiang),Jiayi,,Jiayi,,Jiayi [Chiayi]Taiwan,,,,,locality,,TW-CYQ,大埔鄉,,,,,region,1,TW-CYQ,嘉義縣,HIGH,1.0,TW-CYQ
+Taiwan,Xi [West],Jiayi Shi [Chiayi Shih],,,146290,City District (Qu),Jiayi,,Jiayi,,Jiayi Shi [Chiayi Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dong [East],Jiayi Shi [Chiayi Shih],,,119715,City District (Qu),Jiayi,,Jiayi,,Jiayi Shi [Chiayi Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Anle,Jilong Shi [Chilung; Keelung],,,81776,City District (Qu),Taipei,,Taipei,,Jilong Shi [Chilung; Keelung]Taiwan,,,,,locality,,TW-KEE,安樂區,,,,,region,1,TW-KEE,基隆市,HIGH,1.0,TW-KEE
+Taiwan,Qidu [Cidu],Jilong Shi [Chilung; Keelung],,,53615,City District (Qu),Taipei,,Taipei,,Jilong Shi [Chilung; Keelung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xinyi [Sinyi],Jilong Shi [Chilung; Keelung],,,53168,City District (Qu),Taipei,,Taipei,,Jilong Shi [Chilung; Keelung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Zhongzheng [Jhongjheng],Jilong Shi [Chilung; Keelung],,,51224,City District (Qu),Taipei,,Taipei,,Jilong Shi [Chilung; Keelung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Zhongshan [Jhongshan],Jilong Shi [Chilung; Keelung],,,46459,City District (Qu),Taipei,,Taipei,,Jilong Shi [Chilung; Keelung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Ren'ai [Renai],Jilong Shi [Chilung; Keelung],,,42787,City District (Qu),Taipei,,Taipei,,Jilong Shi [Chilung; Keelung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Nuannuan,Jilong Shi [Chilung; Keelung],,,38548,City District (Qu),Taipei,,Taipei,,Jilong Shi [Chilung; Keelung]Taiwan,,,,,locality,,TW-KEE,暖暖區,,,,,region,1,TW-KEE,基隆市,HIGH,1.0,TW-KEE
+Taiwan,Jincheng,Jinmen [Kinmen; Quemoy],,,43000,Urban Township (Zhen),,,#N/A,,Jinmen [Kinmen; Quemoy]Taiwan,,,,,locality,,TW-KIN,金城鎮,,,,,region,1,TW-KIN,金門縣,HIGH,1.0,TW-KIN
+Taiwan,Jinning,Jinmen [Kinmen; Quemoy],,,33070,Rural Township (Xiang),,,#N/A,,Jinmen [Kinmen; Quemoy]Taiwan,,,,,locality,,TW-KIN,金寧鄉,,,,,region,1,TW-KIN,金門縣,HIGH,1.0,TW-KIN
+Taiwan,Jinhu,Jinmen [Kinmen; Quemoy],,,30400,Urban Township (Zhen),,,#N/A,,Jinmen [Kinmen; Quemoy]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Jinsha,Jinmen [Kinmen; Quemoy],,,20732,Urban Township (Zhen),,,#N/A,,Jinmen [Kinmen; Quemoy]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Lieyu [Lesser Kinmen],Jinmen [Kinmen; Quemoy],,,12733,Rural Township (Xiang),,,#N/A,,Jinmen [Kinmen; Quemoy]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wuqiu [Wuciou],Jinmen [Kinmen; Quemoy],,,662,Rural Township (Xiang),,,#N/A,,Jinmen [Kinmen; Quemoy]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Nangan,Lianjiang [Lienchiang; Matsu Islands],,,7638,Rural Township (Xiang),,,#N/A,,Lianjiang [Lienchiang; Matsu Islands]Taiwan,,,,,locality,,TW-LIE,南竿鄉,,,,,region,1,TW-LIE,連江縣,HIGH,1.0,TW-LIE
+Taiwan,Beigan,Lianjiang [Lienchiang; Matsu Islands],,,2717,Rural Township (Xiang),,,#N/A,,Lianjiang [Lienchiang; Matsu Islands]Taiwan,,,,,locality,,TW-LIE,北竿鄉,,,,,region,1,TW-LIE,連江縣,HIGH,1.0,TW-LIE
+Taiwan,Juguang [Jyuguang],Lianjiang [Lienchiang; Matsu Islands],,,1489,Rural Township (Xiang),,,#N/A,,Lianjiang [Lienchiang; Matsu Islands]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dongyin,Lianjiang [Lienchiang; Matsu Islands],,,1435,Rural Township (Xiang),,,#N/A,,Lianjiang [Lienchiang; Matsu Islands]Taiwan,,,,,locality,,TW-LIE,東引鄉,,,,,region,1,TW-LIE,連江縣,HIGH,1.0,TW-LIE
+Taiwan,Toufen,Miaoli,,,104441,City (Shi),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,頭份市,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Miaoli,Miaoli,,,87671,City (Shi),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,苗栗市,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Zhunan [Jhunan],Miaoli,,,87190,Urban Township (Zhen),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Yuanli,Miaoli,,,44562,Urban Township (Zhen),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,苑裡鎮,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Houlong,Miaoli,,,35221,Urban Township (Zhen),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,後龍鎮,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Tongxiao [Tongsiao],Miaoli,,,33061,Urban Township (Zhen),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Gongguan,Miaoli,,,32397,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,公館鄉,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Tongluo,Miaoli,,,17279,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,銅鑼鄉,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Zhuolan [Jhuolan],Miaoli,,,16196,Urban Township (Zhen),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Sanyi,Miaoli,,,15665,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,三義鄉,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Dahu,Miaoli,,,13884,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,大湖鄉,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Zaoqiao [Zaociao],Miaoli,,,12177,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Touwu,Miaoli,,,10240,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,頭屋鄉,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Nanzhuang [Nanjhuang],Miaoli,,,9573,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Xihu [Sihu],Miaoli,,,6729,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Sanwan,Miaoli,,,6364,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,locality,,TW-MIA,三灣鄉,,,,,region,1,TW-MIA,苗栗縣,HIGH,1.0,TW-MIA
+Taiwan,Tai'an [Taian],Miaoli,,,5782,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Shitan [Shihtan],Miaoli,,,4158,Rural Township (Xiang),,,#N/A,,MiaoliTaiwan,,,,,,,,,,,,,region,1,TW-MIA,苗栗縣,NONE,0.0,TW-MIA
+Taiwan,Nantou,Nantou,,,99081,City (Shi),,,#N/A,,NantouTaiwan,,,,,region,1,TW-NAN,南投縣,,,,,region,1,TW-NAN,南投縣,HIGH,1.0,TW-NAN
+Taiwan,Caotun,Nantou,,,97489,Urban Township (Zhen),,,#N/A,,NantouTaiwan,,,,,locality,,TW-NAN,草屯鎮,,,,,region,1,TW-NAN,南投縣,HIGH,1.0,TW-NAN
+Taiwan,Puli,Nantou,,,79191,Urban Township (Zhen),,,#N/A,,NantouTaiwan,,,,,locality,,TW-NAN,埔里鎮,,,,,region,1,TW-NAN,南投縣,HIGH,1.0,TW-NAN
+Taiwan,Zhushan [Jhushan],Nantou,,,53464,Urban Township (Zhen),,,#N/A,,NantouTaiwan,,,,,,,,,,,,,region,1,TW-NAN,南投縣,NONE,0.0,TW-NAN
+Taiwan,Mingjian,Nantou,,,37507,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,locality,,TW-NAN,名間鄉,,,,,region,1,TW-NAN,南投縣,HIGH,1.0,TW-NAN
+Taiwan,Guoxing [Guosing],Nantou,,,17965,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,,,,,,,,,region,1,TW-NAN,南投縣,NONE,0.0,TW-NAN
+Taiwan,Lugu,Nantou,,,17231,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,locality,,TW-NAN,鹿谷鄉,,,,,region,1,TW-NAN,南投縣,HIGH,1.0,TW-NAN
+Taiwan,Shuili [Shueili],Nantou,,,16980,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,,,,,,,,,region,1,TW-NAN,南投縣,NONE,0.0,TW-NAN
+Taiwan,Xinyi [Sinyi],Nantou,,,15878,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,,,,,,,,,region,1,TW-NAN,南投縣,NONE,0.0,TW-NAN
+Taiwan,Ren'ai [Renai],Nantou,,,15818,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,,,,,,,,,region,1,TW-NAN,南投縣,NONE,0.0,TW-NAN
+Taiwan,Yuchi [Yuchih],Nantou,,,15466,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,,,,,,,,,region,1,TW-NAN,南投縣,NONE,0.0,TW-NAN
+Taiwan,Zhongliao [Jhongliao],Nantou,,,14301,Rural Township (Xiang),,,#N/A,,NantouTaiwan,,,,,,,,,,,,,region,1,TW-NAN,南投縣,NONE,0.0,TW-NAN
+Taiwan,Jiji,Nantou,,,10461,Urban Township (Zhen),,,#N/A,,NantouTaiwan,,,,,locality,,TW-NAN,集集鎮,,,,,region,1,TW-NAN,南投縣,HIGH,1.0,TW-NAN
+Taiwan,Magong,Penghu [Pescadores],,,63206,City (Shi),,,#N/A,,Penghu [Pescadores]Taiwan,,,,,locality,,TW-PEN,馬公市,,,,,region,1,TW-PEN,澎湖縣,HIGH,1.0,TW-PEN
+Taiwan,Huxi [Husi],Penghu [Pescadores],,,15230,Rural Township (Xiang),,,#N/A,,Penghu [Pescadores]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Baisha,Penghu [Pescadores],,,9907,Rural Township (Xiang),,,#N/A,,Penghu [Pescadores]Taiwan,,,,,locality,,TW-PEN,白沙鄉,,,,,region,1,TW-PEN,澎湖縣,HIGH,1.0,TW-PEN
+Taiwan,Xiyu [Siyu],Penghu [Pescadores],,,8353,Rural Township (Xiang),,,#N/A,,Penghu [Pescadores]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wang'an [Wangan],Penghu [Pescadores],,,5371,Rural Township (Xiang),,,#N/A,,Penghu [Pescadores]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Qimei [Cimei],Penghu [Pescadores],,,3885,Rural Township (Xiang),,,#N/A,,Penghu [Pescadores]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Pingdong [Pingtung],Pingdong [Pingtung],,,197647,City (Shi),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Chaozhou [Chaojhou],Pingdong [Pingtung],,,53842,Urban Township (Zhen),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Neipu,Pingdong [Pingtung],,,53330,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,內埔鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Wandan,Pingdong [Pingtung],,,50126,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,萬丹鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Donggang,Pingdong [Pingtung],,,46731,Urban Township (Zhen),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,東港鎮,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Xinyuan [Sinyuan],Pingdong [Pingtung],,,33939,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Hengchun,Pingdong [Pingtung],,,30414,Urban Township (Zhen),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,恆春鎮,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Changzhi [Changjhih],Pingdong [Pingtung],,,29470,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Ligang,Pingdong [Pingtung],,,25707,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,里港鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Yanpu,Pingdong [Pingtung],,,24999,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,鹽埔鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Gaoshu,Pingdong [Pingtung],,,23775,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,高樹鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Fangliao,Pingdong [Pingtung],,,23680,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,枋寮鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Jiuru [Jiouru],Pingdong [Pingtung],,,21962,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wanluan,Pingdong [Pingtung],,,20189,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,萬巒鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Jiadong,Pingdong [Pingtung],,,18620,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,佳冬鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Linbian,Pingdong [Pingtung],,,17275,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,林邊鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Zhutian [Jhutian],Pingdong [Pingtung],,,16615,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Kanding,Pingdong [Pingtung],,,15378,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,崁頂鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,"Liuqiu [Liouciou, Lamay Island]",Pingdong [Pingtung],,,12121,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Linluo,Pingdong [Pingtung],,,10770,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,麟洛鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Nanzhou [Nanjhou],Pingdong [Pingtung],,,10364,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xinpi [Sinbi],Pingdong [Pingtung],,,9561,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Checheng,Pingdong [Pingtung],,,8278,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,車城鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Sandimen,Pingdong [Pingtung],,,7689,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,三地門鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Manzhou [Manjhou],Pingdong [Pingtung],,,7471,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Laiyi,Pingdong [Pingtung],,,7448,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,來義鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Majia,Pingdong [Pingtung],,,6768,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,瑪家鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Taiwu,Pingdong [Pingtung],,,5351,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,泰武鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Fangshan,Pingdong [Pingtung],,,5240,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,枋山鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Chunri [Chunrih],Pingdong [Pingtung],,,4947,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Mudan,Pingdong [Pingtung],,,4865,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,牡丹鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Shizi [Shihzih],Pingdong [Pingtung],,,4839,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wutai,Pingdong [Pingtung],,,3247,Rural Township (Xiang),,,#N/A,,Pingdong [Pingtung]Taiwan,,,,,locality,,TW-PIF,霧臺鄉,,,,,region,1,TW-PIF,屏東縣,HIGH,1.0,TW-PIF
+Taiwan,Danan [Daan],Taibei Shi [Taipei Shih],,,302644,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Neihu,Taibei Shi [Taipei Shih],,,282525,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,locality,,TW-TPE,內湖區,,,,,region,1,TW-TPE,臺北市,HIGH,1.0,TW-TPE
+Taiwan,Shilin [Shihlin],Taibei Shi [Taipei Shih],,,278451,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wenshan [Wunshan],Taibei Shi [Taipei Shih],,,268130,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Beitou,Taibei Shi [Taipei Shih],,,250144,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,locality,,TW-TPE,北投區,,,,,region,1,TW-TPE,臺北市,HIGH,1.0,TW-TPE
+Taiwan,Zhongshan [Jhongshan],Taibei Shi [Taipei Shih],,,223876,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xinyi [Sinyi],Taibei Shi [Taipei Shih],,,215240,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Songshan,Taibei Shi [Taipei Shih],,,200316,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,locality,,TW-TPE,松山區,,,,,region,1,TW-TPE,臺北市,HIGH,1.0,TW-TPE
+Taiwan,Wanhua,Taibei Shi [Taipei Shih],,,183088,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,locality,,TW-TPE,萬華區,,,,,region,1,TW-TPE,臺北市,HIGH,1.0,TW-TPE
+Taiwan,Zhongzheng [Jhongjheng],Taibei Shi [Taipei Shih],,,155397,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Datong,Taibei Shi [Taipei Shih],,,123849,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,locality,,TW-ILA,大同鄉,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Nangang,Taibei Shi [Taipei Shih],,,118758,City District (Qu),Taipei,,Taipei,,Taibei Shi [Taipei Shih]Taiwan,,,,,locality,,TW-TPE,南港區,,,,,region,1,TW-TPE,臺北市,HIGH,1.0,TW-TPE
+Taiwan,Taidong [Taitung],Taidong [Taitung],,,104803,City (Shi),,,#N/A,,Taidong [Taitung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Beinan,Taidong [Taitung],,,16961,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,卑南鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Chenggong,Taidong [Taitung],,,13505,Urban Township (Zhen),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,成功鎮,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Taimali,Taidong [Taitung],,,10925,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,太麻里鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Guanshan,Taidong [Taitung],,,8420,Urban Township (Zhen),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,關山鎮,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Donghe,Taidong [Taitung],,,8203,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,東河鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Chishang [Chihshang],Taidong [Taitung],,,8073,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Luye,Taidong [Taitung],,,7601,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,鹿野鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Changbin,Taidong [Taitung],,,6926,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,長濱鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Dawu,Taidong [Taitung],,,5727,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,大武鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Lanyu [Orchid Island],Taidong [Taitung],,,5249,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Haiduan,Taidong [Taitung],,,4105,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,海端鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,"Lüdao [Lyudao, Green Island]",Taidong [Taitung],,,4026,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Jinfeng [Jinfong],Taidong [Taitung],,,3699,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Yanping,Taidong [Taitung],,,3549,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,延平鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Daren,Taidong [Taitung],,,3489,Rural Township (Xiang),,,#N/A,,Taidong [Taitung]Taiwan,,,,,locality,,TW-TTT,達仁鄉,,,,,region,1,TW-TTT,臺東縣,HIGH,1.0,TW-TTT
+Taiwan,Yongkang,Tainan Shi,,,235415,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,永康區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Annan,Tainan Shi,,,195623,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,安南區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Dong [East],Tainan Shi,,,184958,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Bei [North],Tainan Shi,,,130094,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Nan [South],Tainan Shi,,,123789,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Zhongxi [West Central],Tainan Shi,,,78556,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Rende,Tainan Shi,,,76385,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,仁德區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Xinying [Sinying],Tainan Shi,,,76331,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Guiren [Gueiren],Tainan Shi,,,68164,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Anping,Tainan Shi,,,67213,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,安平區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Jiali,Tainan Shi,,,58785,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,佳里區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Shanhua,Tainan Shi,,,50814,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,善化區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Madou,Tainan Shi,,,43713,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,麻豆區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Xinhua [Sinhua],Tainan Shi,,,43317,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Xinshi [Sinshih],Tainan Shi,,,37660,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Guanmiao,Tainan Shi,,,33941,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,關廟區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Anding,Tainan Shi,,,30374,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,安定區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Baihe,Tainan Shi,,,27245,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,白河區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Xuejia [Syuejia],Tainan Shi,,,25293,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Yanshui [Yanshuei],Tainan Shi,,,25001,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Xigang [Sigang],Tainan Shi,,,24522,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Xiaying [Siaying],Tainan Shi,,,23452,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Houbi,Tainan Shi,,,22755,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,後壁區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Qigu [Cigu],Tainan Shi,,,22142,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Liujia [Lioujia],Tainan Shi,,,21668,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Guantian,Tainan Shi,,,21212,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,官田區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Liuying [Liouying],Tainan Shi,,,20826,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Dongshan,Tainan Shi,,,20152,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,東山區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Jiangjun [Jiangjyun],Tainan Shi,,,19073,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Yujing,Tainan Shi,,,13602,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,玉井區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Beimen,Tainan Shi,,,10601,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,北門區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Danei,Tainan Shi,,,9200,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,大內區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Nanxi [Nansi],Tainan Shi,,,9178,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Nanhua,Tainan Shi,,,8398,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,南化區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Shanshang,Tainan Shi,,,7128,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,locality,,TW-TNN,山上區,,,,,region,1,TW-TNN,臺南市,HIGH,1.0,TW-TNN
+Taiwan,Zuozhen [Zuojhen],Tainan Shi,,,4569,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Longqi [Longci],Tainan Shi,,,3768,City District (Qu),Tainan,,Tainan,,Tainan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TNN,臺南市,NONE,0.0,TW-TNN
+Taiwan,Beitun,Taizhong Shi [Taichung Shih],,,287344,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,北屯區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Xitun [Situn],Taizhong Shi [Taichung Shih],,,231730,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dali,Taizhong Shi [Taichung Shih],,,213117,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,大里區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Taiping,Taizhong Shi [Taichung Shih],,,194970,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,太平區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Nantun,Taizhong Shi [Taichung Shih],,,176062,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,南屯區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Fengyuan [Fongyuan],Taizhong Shi [Taichung Shih],,,166053,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Bei [North],Taizhong Shi [Taichung Shih],,,146590,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Nan [South],Taizhong Shi [Taichung Shih],,,126769,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xi [West],Taizhong Shi [Taichung Shih],,,114583,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Tanzi [Tanzih],Taizhong Shi [Taichung Shih],,,109309,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Daya,Taizhong Shi [Taichung Shih],,,95693,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,大雅區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Shalu,Taizhong Shi [Taichung Shih],,,95226,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,沙鹿區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Qingshui [Cingshuei],Taizhong Shi [Taichung Shih],,,88009,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Longjing,Taizhong Shi [Taichung Shih],,,78095,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,龍井區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Wuri [Wurih],Taizhong Shi [Taichung Shih],,,76494,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dajia,Taizhong Shi [Taichung Shih],,,76130,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,大甲區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Dong [East],Taizhong Shi [Taichung Shih],,,75913,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shengang,Taizhong Shi [Taichung Shih],,,65529,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-CHA,伸港鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Wufeng [Wufong],Taizhong Shi [Taichung Shih],,,65094,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wuqi [Wuci],Taizhong Shi [Taichung Shih],,,59273,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dadu,Taizhong Shi [Taichung Shih],,,56777,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,大肚區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Houli,Taizhong Shi [Taichung Shih],,,54343,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,后里區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Dongshi [Dongshih],Taizhong Shi [Taichung Shih],,,49169,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Waipu,Taizhong Shi [Taichung Shih],,,31940,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,外埔區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Xinshe [Sinshe],Taizhong Shi [Taichung Shih],,,24064,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Danan [Daan],Taizhong Shi [Taichung Shih],,,18864,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Zhong [Central],Taizhong Shi [Taichung Shih],,,18168,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shigang [Shihgang],Taizhong Shi [Taichung Shih],,,14670,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Heping,Taizhong Shi [Taichung Shih],,,10809,City District (Qu),Taichung,,Taichung,,Taizhong Shi [Taichung Shih]Taiwan,,,,,locality,,TW-TXG,和平區,,,,,region,1,TW-TXG,臺中市,HIGH,1.0,TW-TXG
+Taiwan,Taoyuan,Taoyuan Shi,,,457245,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,region,1,TW-TAO,桃園市,,,,,region,1,TW-TAO,桃園市,HIGH,1.0,TW-TAO
+Taiwan,Zhongli [Jhongli],Taoyuan Shi,,,422471,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TAO,桃園市,NONE,0.0,TW-TAO
+Taiwan,Pingzhen [Pingjhen],Taoyuan Shi,,,228611,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TAO,桃園市,NONE,0.0,TW-TAO
+Taiwan,Bade,Taoyuan Shi,,,209202,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,locality,,TW-TAO,八德區,,,,,region,1,TW-TAO,桃園市,HIGH,1.0,TW-TAO
+Taiwan,Yangmei,Taoyuan Shi,,,175142,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,locality,,TW-TAO,楊梅區,,,,,region,1,TW-TAO,桃園市,HIGH,1.0,TW-TAO
+Taiwan,Luzhu [Lujhu],Taoyuan Shi,,,167060,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TAO,桃園市,NONE,0.0,TW-TAO
+Taiwan,Guishan [Gueishan],Taoyuan Shi,,,164398,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TAO,桃園市,NONE,0.0,TW-TAO
+Taiwan,Longtan,Taoyuan Shi,,,124408,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,locality,,TW-TAO,龍潭區,,,,,region,1,TW-TAO,桃園市,HIGH,1.0,TW-TAO
+Taiwan,Daxi [Dasi],Taoyuan Shi,,,95664,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TAO,桃園市,NONE,0.0,TW-TAO
+Taiwan,Dayuan,Taoyuan Shi,,,93887,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,locality,,TW-TAO,大園區,,,,,region,1,TW-TAO,桃園市,HIGH,1.0,TW-TAO
+Taiwan,Guanyin,Taoyuan Shi,,,69032,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,locality,,TW-TAO,觀音區,,,,,region,1,TW-TAO,桃園市,HIGH,1.0,TW-TAO
+Taiwan,Xinwu [Sinwu],Taoyuan Shi,,,49333,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TAO,桃園市,NONE,0.0,TW-TAO
+Taiwan,Fuxing [Fusing],Taoyuan Shi,,,12354,City District (Qu),Taipei,,Taipei,,Taoyuan ShiTaiwan,,,,,,,,,,,,,region,1,TW-TAO,桃園市,NONE,0.0,TW-TAO
+Taiwan,Banqiao [Banciao],Xinbei Shi [New Taipei City],,,557114,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xinzhuang [Sinjhuang],Xinbei Shi [New Taipei City],,,422653,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Zhonghe [Jhonghe],Xinbei Shi [New Taipei City],,,411214,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Sanchong,Xinbei Shi [New Taipei City],,,385328,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,三重區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Xindian [Sindian],Xinbei Shi [New Taipei City],,,303532,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Tucheng,Xinbei Shi [New Taipei City],,,238277,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,土城區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Yonghe,Xinbei Shi [New Taipei City],,,219364,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,永和區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Xizhi [Sijhih],Xinbei Shi [New Taipei City],,,205847,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Luzhou [Lujhou],Xinbei Shi [New Taipei City],,,202456,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shulin,Xinbei Shi [New Taipei City],,,183470,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,樹林區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Tamsui [Danshuei],Xinbei Shi [New Taipei City],,,183278,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Linkou,Xinbei Shi [New Taipei City],,,121192,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,林口區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Sanxia [Sansia],Xinbei Shi [New Taipei City],,,116917,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wugu,Xinbei Shi [New Taipei City],,,89470,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,五股區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Yingge,Xinbei Shi [New Taipei City],,,87674,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,鶯歌區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Taishan,Xinbei Shi [New Taipei City],,,78412,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,泰山區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Bali,Xinbei Shi [New Taipei City],,,39741,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,八里區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Ruifang [Rueifang],Xinbei Shi [New Taipei City],,,39077,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shenkeng,Xinbei Shi [New Taipei City],,,23723,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,深坑區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Sanzhi [Sanjhih],Xinbei Shi [New Taipei City],,,22540,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Wanli,Xinbei Shi [New Taipei City],,,21710,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,萬里區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Jinshan,Xinbei Shi [New Taipei City],,,21127,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,金山區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Gongliao,Xinbei Shi [New Taipei City],,,11782,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,貢寮區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Shimen [Shihmen],Xinbei Shi [New Taipei City],,,11480,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shuangxi [Shuangsi],Xinbei Shi [New Taipei City],,,8468,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Shiding [Shihding],Xinbei Shi [New Taipei City],,,7565,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Pinglin,Xinbei Shi [New Taipei City],,,6703,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,坪林區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Wulai,Xinbei Shi [New Taipei City],,,6416,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,locality,,TW-NWT,烏來區,,,,,region,1,TW-NWT,新北市,HIGH,1.0,TW-NWT
+Taiwan,Pingxi [Pingsi],Xinbei Shi [New Taipei City],,,4424,City District (Qu),Taipei,,Taipei,,Xinbei Shi [New Taipei City]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Zhubei [Jhubei],Xinzhu [Hsinchu],,,200782,City (Shi),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Zhudong [Jhudong],Xinzhu [Hsinchu],,,97100,Urban Township (Zhen),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Hukou,Xinzhu [Hsinchu],,,78971,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,locality,,TW-HSQ,湖口鄉,,,,,region,1,TW-HSQ,新竹縣,HIGH,1.0,TW-HSQ
+Taiwan,Xinfeng [Sinfong],Xinzhu [Hsinchu],,,57511,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xinpu [Sinpu],Xinzhu [Hsinchu],,,33027,Urban Township (Zhen),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Guanxi [Guansi],Xinzhu [Hsinchu],,,27775,Urban Township (Zhen),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Qionglin [Cyonglin],Xinzhu [Hsinchu],,,19872,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Baoshan,Xinzhu [Hsinchu],,,14619,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,locality,,TW-HSQ,寶山鄉,,,,,region,1,TW-HSQ,新竹縣,HIGH,1.0,TW-HSQ
+Taiwan,Hengshan,Xinzhu [Hsinchu],,,12547,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,locality,,TW-HSQ,橫山鄉,,,,,region,1,TW-HSQ,新竹縣,HIGH,1.0,TW-HSQ
+Taiwan,Jianshi [Jianshih],Xinzhu [Hsinchu],,,9646,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Beipu,Xinzhu [Hsinchu],,,9035,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,locality,,TW-HSQ,北埔鄉,,,,,region,1,TW-HSQ,新竹縣,HIGH,1.0,TW-HSQ
+Taiwan,Emei,Xinzhu [Hsinchu],,,5403,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,locality,,TW-HSQ,峨眉鄉,,,,,region,1,TW-HSQ,新竹縣,HIGH,1.0,TW-HSQ
+Taiwan,Wufeng [Wufong],Xinzhu [Hsinchu],,,4487,Rural Township (Xiang),Hsinchu,,Hsinchu,,Xinzhu [Hsinchu]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dong [East],Xinzhu Shi [Hsinchu Shih],,,220056,City District (Qu),Hsinchu,,Hsinchu,,Xinzhu Shi [Hsinchu Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Bei [North],Xinzhu Shi [Hsinchu Shih],,,152612,City District (Qu),Hsinchu,,Hsinchu,,Xinzhu Shi [Hsinchu Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xiangshan [Siangshan],Xinzhu Shi [Hsinchu Shih],,,78744,City District (Qu),Hsinchu,,Hsinchu,,Xinzhu Shi [Hsinchu Shih]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Yilan,Yilan,,,95395,City (Shi),,,#N/A,,YilanTaiwan,,,,,locality,,TW-ILA,宜蘭市,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Luodong,Yilan,,,71484,Urban Township (Zhen),,,#N/A,,YilanTaiwan,,,,,locality,,TW-ILA,羅東鎮,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Dongshan,Yilan,,,53024,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,locality,,TW-ILA,冬山鄉,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Wujie,Yilan,,,40297,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,locality,,TW-ILA,五結鄉,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Su'ao [Suao],Yilan,,,38864,Urban Township (Zhen),,,#N/A,,YilanTaiwan,,,,,,,,,,,,,region,1,TW-ILA,宜蘭縣,NONE,0.0,TW-ILA
+Taiwan,Jiaoxi [Jiaosi],Yilan,,,35274,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,,,,,,,,,region,1,TW-ILA,宜蘭縣,NONE,0.0,TW-ILA
+Taiwan,Yuanshan,Yilan,,,32258,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,locality,,TW-ILA,員山鄉,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Toucheng,Yilan,,,28819,Urban Township (Zhen),,,#N/A,,YilanTaiwan,,,,,locality,,TW-ILA,頭城鎮,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Zhuangwei [Jhuangwei],Yilan,,,24366,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,,,,,,,,,region,1,TW-ILA,宜蘭縣,NONE,0.0,TW-ILA
+Taiwan,Sanxing [Sansing],Yilan,,,21215,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,,,,,,,,,region,1,TW-ILA,宜蘭縣,NONE,0.0,TW-ILA
+Taiwan,Datong,Yilan,,,6137,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,locality,,TW-ILA,大同鄉,,,,,region,1,TW-ILA,宜蘭縣,HIGH,1.0,TW-ILA
+Taiwan,Nan'ao [Nanao],Yilan,,,5954,Rural Township (Xiang),,,#N/A,,YilanTaiwan,,,,,,,,,,,,,region,1,TW-ILA,宜蘭縣,NONE,0.0,TW-ILA
+Taiwan,Douliu [Douliou],Yunlin,,,108677,City (Shi),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Huwei,Yunlin,,,70899,Urban Township (Zhen),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,虎尾鎮,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Mailiao,Yunlin,,,47951,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,麥寮鄉,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Xiluo [Siluo],Yunlin,,,45463,Urban Township (Zhen),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Dounan,Yunlin,,,44154,Urban Township (Zhen),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,斗南鎮,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Beigang,Yunlin,,,39089,Urban Township (Zhen),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,北港鎮,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Gukeng,Yunlin,,,30868,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,古坑鄉,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Citong [Cihtong],Yunlin,,,28311,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Tuku,Yunlin,,,28305,Urban Township (Zhen),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,土庫鎮,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Kouhu,Yunlin,,,26403,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,口湖鄉,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Erlun,Yunlin,,,26029,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,二崙鄉,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Yuanchang,Yunlin,,,24694,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,元長鄉,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Shuilin [Shueilin],Yunlin,,,24177,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Lunbei,Yunlin,,,23784,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,崙背鄉,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Taixi [Taisi],Yunlin,,,23012,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Sihu [Sihhu],Yunlin,,,22387,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Dapi [Dabi],Yunlin,,,18604,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Linnei,Yunlin,,,17434,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,locality,,TW-YUN,林內鄉,,,,,region,1,TW-YUN,雲林縣,HIGH,1.0,TW-YUN
+Taiwan,Dongshi [Dongshih],Yunlin,,,14155,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Baozhong [Baojhong],Yunlin,,,12477,Rural Township (Xiang),,,#N/A,,YunlinTaiwan,,,,,,,,,,,,,region,1,TW-YUN,雲林縣,NONE,0.0,TW-YUN
+Taiwan,Zhanghua [Changhua],Zhanghua [Changhua],,,231317,City (Shi),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Yuanlin,Zhanghua [Changhua],,,124263,City (Shi),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,員林市,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Hemei,Zhanghua [Changhua],,,90095,Urban Township (Zhen),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,和美鎮,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Lugang,Zhanghua [Changhua],,,86550,Urban Township (Zhen),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,鹿港鎮,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Xihu [Sihu],Zhanghua [Changhua],,,54814,Urban Township (Zhen),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Erlin,Zhanghua [Changhua],,,49687,Urban Township (Zhen),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,二林鎮,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Fuxing [Fusing],Zhanghua [Changhua],,,46399,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Huatan,Zhanghua [Changhua],,,45232,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,花壇鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Shetou,Zhanghua [Changhua],,,42436,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,社頭鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Tianzhong [Tianjhong],Zhanghua [Changhua],,,40717,Urban Township (Zhen),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xioushui [Sioushuei],Zhanghua [Changhua],,,38872,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dacun,Zhanghua [Changhua],,,38457,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,大村鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Shen'gang [Shengang],Zhanghua [Changhua],,,37740,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Yongjing,Zhanghua [Changhua],,,36300,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,永靖鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Puxin [Pusin],Zhanghua [Changhua],,,34451,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Beidou,Zhanghua [Changhua],,,33358,Urban Township (Zhen),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,北斗鎮,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Fangyuan,Zhanghua [Changhua],,,32720,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,芳苑鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Puyan,Zhanghua [Changhua],,,31919,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,埔鹽鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Pitou [Bitou],Zhanghua [Changhua],,,30072,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Xizhou [Sijhou],Zhanghua [Changhua],,,29158,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Tianwei,Zhanghua [Changhua],,,26691,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,田尾鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Fenyuan,Zhanghua [Changhua],,,23188,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,芬園鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Xianxi [Siansi],Zhanghua [Changhua],,,16665,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Dacheng,Zhanghua [Changhua],,,16119,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,locality,,TW-CHA,大城鄉,,,,,region,1,TW-CHA,彰化縣,HIGH,1.0,TW-CHA
+Taiwan,Zhutang [Jhutang],Zhanghua [Changhua],,,14808,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,
+Taiwan,Ershui [Ershuei],Zhanghua [Changhua],,,14642,Rural Township (Xiang),Taichung,,Taichung,,Zhanghua [Changhua]Taiwan,,,,,,,,,,,,,,,,,NONE,0.0,

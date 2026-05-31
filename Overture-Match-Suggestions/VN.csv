@@ -1,0 +1,713 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Vietnam,Chợ Mới,An Giang,,,307981,District,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Xã Chợ Mới,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.874,VN-44
+Vietnam,Long Xuyên,An Giang,,,272365,District-level City,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Phường Long Xuyên,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.791,VN-44
+Vietnam,Châu Phú,An Giang,,,206676,District,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Xã Châu Phú,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.892,VN-44
+Vietnam,Phú Tân,An Giang,,,188951,District,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Xã Phú Tân,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.874,VN-44
+Vietnam,Thoại Sơn,An Giang,,,163427,District,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Xã Thoại Sơn,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.907,VN-44
+Vietnam,Châu Thành,An Giang,,,151368,District,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Xã Châu Thành,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.92,VN-44
+Vietnam,An Phú,An Giang,,,148615,District,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Xã An Phú,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.85,VN-44
+Vietnam,Tân Châu,An Giang,,,141211,District-level Town,,,#N/A,,An GiangVietnam,,,,,,,,,,,,,region,1,VN-44,Tỉnh An Giang,NONE,0.0,VN-44
+Vietnam,Tri Tôn,An Giang,,,117431,District,,,#N/A,,An GiangVietnam,,,,,locality,,VN-44,Xã Tri Tôn,,,,,region,1,VN-44,Tỉnh An Giang,LOW,0.874,VN-44
+Vietnam,Tịnh Biên,An Giang,,,108562,District,,,#N/A,,An GiangVietnam,,,,,,,,,,,,,region,1,VN-44,Tỉnh An Giang,NONE,0.0,VN-44
+Vietnam,Châu Đốc,An Giang,,,101765,District-level City,,,#N/A,,An GiangVietnam,,,,,,,,,,,,,region,1,VN-44,Tỉnh An Giang,NONE,0.0,VN-44
+Vietnam,Vũng Tàu,Bà Rịa - Vũng Tàu,,,357124,District-level City,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phú Mỹ (Tân Thành),Bà Rịa - Vũng Tàu,,,179786,District-level Town,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,locality,,VN-68,Xã Phú Mỹ,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Châu Đức,Bà Rịa - Vũng Tàu,,,143859,District,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Xuyên Mộc,Bà Rịa - Vũng Tàu,,,140723,District,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Long Điền,Bà Rịa - Vũng Tàu,,,135763,District,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bà Rịa,Bà Rịa - Vũng Tàu,,,108701,District-level City,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đất Đỏ,Bà Rịa - Vũng Tàu,,,73530,District,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Côn Đảo,Bà Rịa - Vũng Tàu,,,8827,District,Vũng Tàu,,Vũng Tàu,,Bà Rịa - Vũng TàuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hiệp Hòa,Bắc Giang,,,247460,District,,,#N/A,,Bắc GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Lục Ngạn,Bắc Giang,,,226540,District,,,#N/A,,Bắc GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Lục Nam,Bắc Giang,,,226194,District,,,#N/A,,Bắc GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Lạng Giang,Bắc Giang,,,216996,District,,,#N/A,,Bắc GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Việt Yên,Bắc Giang,,,205900,District,,,#N/A,,Bắc GiangVietnam,,,,,locality,,VN-66,Xã Việt Yên,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Tân Yên,Bắc Giang,,,177265,District,,,#N/A,,Bắc GiangVietnam,,,,,locality,,VN-05,Xã Tân Yên,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Bắc Giang,Bắc Giang,,,174229,District-level City,,,#N/A,,Bắc GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Yên Dũng,Bắc Giang,,,152125,District,,,#N/A,,Bắc GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Yên Thế,Bắc Giang,,,101135,District,,,#N/A,,Bắc GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sơn Động,Bắc Giang,,,76106,District,,,#N/A,,Bắc GiangVietnam,,,,,locality,,VN-68,Xã Sơn Đông,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Chợ Đồn,Bắc Kạn,,,49554,District,,,#N/A,,Bắc KạnVietnam,,,,,locality,,VN-69,Xã Chợ Đồn,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Ba Bể,Bắc Kạn,,,48325,District,,,#N/A,,Bắc KạnVietnam,,,,,locality,,VN-69,Xã Ba Bể,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Bắc Kạn,Bắc Kạn,,,45036,District-level City,,,#N/A,,Bắc KạnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Chợ Mới,Bắc Kạn,,,38958,District,,,#N/A,,Bắc KạnVietnam,,,,,locality,,VN-69,Xã Chợ Mới,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Na Rì,Bắc Kạn,,,38263,District,,,#N/A,,Bắc KạnVietnam,,,,,locality,,VN-69,Xã Na Rì,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Pác Nặm,Bắc Kạn,,,33439,District,,,#N/A,,Bắc KạnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bạch Thông,Bắc Kạn,,,31061,District,,,#N/A,,Bắc KạnVietnam,,,,,locality,,VN-69,Xã Bạch Thông,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Ngân Sơn,Bắc Kạn,,,29269,District,,,#N/A,,Bắc KạnVietnam,,,,,locality,,VN-69,Xã Ngân Sơn,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Bạc Liêu,Bạc Liêu,,,156110,District-level City,,,#N/A,,Bạc LiêuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đông Hải,Bạc Liêu,,,152619,District,,,#N/A,,Bạc LiêuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Giá Rai,Bạc Liêu,,,143613,District-level Town,,,#N/A,,Bạc LiêuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phước Long,Bạc Liêu,,,124268,District,,,#N/A,,Bạc LiêuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hòa Bình,Bạc Liêu,,,117753,District,,,#N/A,,Bạc LiêuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hồng Dân,Bạc Liêu,,,111848,District,,,#N/A,,Bạc LiêuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Vĩnh Lợi,Bạc Liêu,,,101025,District,,,#N/A,,Bạc LiêuVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Từ Sơn,Bắc Ninh,,,176410,District-level Town,Hanoi,,Hanoi,,Bắc NinhVietnam,,,,,,,,,,,,,region,1,VN-56,Tỉnh Bắc Ninh,NONE,0.0,VN-56
+Vietnam,Bắc Ninh,Bắc Ninh,,,247702,District-level City,,,#N/A,,Bắc NinhVietnam,,,,,region,1,VN-56,Tỉnh Bắc Ninh,,,,,region,1,VN-56,Tỉnh Bắc Ninh,HIGH,1.0,VN-56
+Vietnam,Quế Võ,Bắc Ninh,,,195666,District,,,#N/A,,Bắc NinhVietnam,,,,,,,,,,,,,region,1,VN-56,Tỉnh Bắc Ninh,NONE,0.0,VN-56
+Vietnam,Yên Phong,Bắc Ninh,,,192674,District,,,#N/A,,Bắc NinhVietnam,,,,,locality,,VN-56,Xã Yên Phong,,,,,region,1,VN-56,Tỉnh Bắc Ninh,HIGH,1.0,VN-56
+Vietnam,Tiên Du,Bắc Ninh,,,176460,District,,,#N/A,,Bắc NinhVietnam,,,,,locality,,VN-56,Xã Tiên Du,,,,,region,1,VN-56,Tỉnh Bắc Ninh,HIGH,1.0,VN-56
+Vietnam,Thuận Thành,Bắc Ninh,,,171942,District,,,#N/A,,Bắc NinhVietnam,,,,,locality,,VN-56,Phường Thuận Thành,,,,,region,1,VN-56,Tỉnh Bắc Ninh,HIGH,1.0,VN-56
+Vietnam,Lương Tài,Bắc Ninh,,,104469,District,,,#N/A,,Bắc NinhVietnam,,,,,locality,,VN-56,Xã Lương Tài,,,,,region,1,VN-56,Tỉnh Bắc Ninh,HIGH,1.0,VN-56
+Vietnam,Gia Bình,Bắc Ninh,,,103517,District,,,#N/A,,Bắc NinhVietnam,,,,,locality,,VN-56,Xã Gia Bình,,,,,region,1,VN-56,Tỉnh Bắc Ninh,HIGH,1.0,VN-56
+Vietnam,Ba Tri,Bến Tre,,,184734,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Châu Thành,Bến Tre,,,175893,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Giồng Trôm,Bến Tre,,,169987,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Mỏ Cày Nam,Bến Tre,,,143577,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bình Đại,Bến Tre,,,137304,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thạnh Phú,Bến Tre,,,127841,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bến Tre,Bến Tre,,,124499,District-level City,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Mỏ Cày Bắc,Bến Tre,,,113210,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Chợ Lách,Bến Tre,,,111418,District,,,#N/A,,Bến TreVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Quy Nhơn,Bình Định,,,290053,District-level City,Quy Nhon,,Quy Nhon,,Bình ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tuy Phước,Bình Định,,,180191,District,Quy Nhon,,Quy Nhon,,Bình ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,An Nhơn,Bình Định,,,175709,District-level Town,Quy Nhon,,Quy Nhon,,Bình ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hoài Nhơn,Bình Định,,,207995,District,,,#N/A,,Bình ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phù Cát,Bình Định,,,183440,District,,,#N/A,,Bình ĐịnhVietnam,,,,,locality,,VN-HN,Xã Phú Cát,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Phù Mỹ,Bình Định,,,161563,District,,,#N/A,,Bình ĐịnhVietnam,,,,,locality,,VN-68,Xã Phú Mỹ,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Tây Sơn,Bình Định,,,115968,District,,,#N/A,,Bình ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hoài Ân,Bình Định,,,85700,District,,,#N/A,,Bình ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Vĩnh Thạnh,Bình Định,,,30587,District,,,#N/A,,Bình ĐịnhVietnam,,,,,locality,,VN-HN,Xã Vĩnh Thanh,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Vân Canh,Bình Định,,,27875,District,,,#N/A,,Bình ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,An Lão,Bình Định,,,27837,District,,,#N/A,,Bình ĐịnhVietnam,,,,,locality,,VN-HP,Xã An Lão,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Thuận An,Bình Dương,,,596227,District-level Town,Ho Chi Minh City,,Ho Chi Minh City,,Bình DươngVietnam,,,,,locality,,VN-HN,Xã Thuận An,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Dĩ An,Bình Dương,,,474681,District-level Town,Ho Chi Minh City,,Ho Chi Minh City,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tân Uyên,Bình Dương,,,370512,District-level Town,Ho Chi Minh City,,Ho Chi Minh City,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thủ Dầu Một,Bình Dương,,,321607,District-level City,Ho Chi Minh City,,Ho Chi Minh City,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bến Cát,Bình Dương,,,302782,District-level Town,Ho Chi Minh City,,Ho Chi Minh City,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Dầu Tiếng,Bình Dương,,,112472,District,,,#N/A,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bàu Bàng,Bình Dương,,,92679,District,,,#N/A,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phú Giáo,Bình Dương,,,89741,District,,,#N/A,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bắc Tân Uyên,Bình Dương,,,65860,District,,,#N/A,,Bình DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bù Đăng,Bình Phước,,,140077,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Lộc Ninh,Bình Phước,,,114319,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đồng Xoài,Bình Phước,,,108595,District-level Town,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hớn Quản,Bình Phước,,,98817,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đồng Phú,Bình Phước,,,96481,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phú Riềng,Bình Phước,,,91450,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Chơn Thành,Bình Phước,,,91026,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bù Gia Mập,Bình Phước,,,85013,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bình Long,Bình Phước,,,57598,District-level Town,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bù Đốp,Bình Phước,,,57311,District,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phước Long,Bình Phước,,,53992,District-level Town,,,#N/A,,Bình PhướcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phan Thiết,Bình Thuận,,,226736,District-level City,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hàm Thuận Bắc,Bình Thuận,,,184131,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tuy Phong,Bình Thuận,,,144800,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bắc Bình,Bình Thuận,,,129374,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đức Linh,Bình Thuận,,,126035,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hàm Thuận Nam,Bình Thuận,,,116544,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,La Gi,Bình Thuận,,,107057,District-level Town,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tánh Linh,Bình Thuận,,,98516,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hàm Tân,Bình Thuận,,,70697,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phú Quý,Bình Thuận,,,26918,District,,,#N/A,,Bình ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Cà Mau,Cà Mau,,,226372,District-level City,,,#N/A,,Cà MauVietnam,,,,,region,1,VN-59,Tỉnh Cà Mau,,,,,region,1,VN-59,Tỉnh Cà Mau,HIGH,1.0,VN-59
+Vietnam,Trần Văn Thời,Cà Mau,,,197679,District,,,#N/A,,Cà MauVietnam,,,,,locality,,VN-59,Xã Trần Văn Thời,,,,,region,1,VN-59,Tỉnh Cà Mau,MED,0.947,VN-59
+Vietnam,Đầm Dơi,Cà Mau,,,175629,District,,,#N/A,,Cà MauVietnam,,,,,locality,,VN-59,Xã Đầm Dơi,,,,,region,1,VN-59,Tỉnh Cà Mau,LOW,0.874,VN-59
+Vietnam,Cái Nước,Cà Mau,,,136638,District,,,#N/A,,Cà MauVietnam,,,,,locality,,VN-59,Xã Cái Nước,,,,,region,1,VN-59,Tỉnh Cà Mau,LOW,0.892,VN-59
+Vietnam,Thới Bình,Cà Mau,,,135892,District,,,#N/A,,Cà MauVietnam,,,,,locality,,VN-59,Xã Thới Bình,,,,,region,1,VN-59,Tỉnh Cà Mau,LOW,0.907,VN-59
+Vietnam,U Minh,Cà Mau,,,100876,District,,,#N/A,,Cà MauVietnam,,,,,locality,,VN-59,Xã U Minh,,,,,region,1,VN-59,Tỉnh Cà Mau,LOW,0.85,VN-59
+Vietnam,Phú Tân,Cà Mau,,,97703,District,,,#N/A,,Cà MauVietnam,,,,,locality,,VN-59,Xã Phú Tân,,,,,region,1,VN-59,Tỉnh Cà Mau,LOW,0.874,VN-59
+Vietnam,Ngọc Hiển,Cà Mau,,,66874,District,,,#N/A,,Cà MauVietnam,,,,,,,,,,,,,region,1,VN-59,Tỉnh Cà Mau,NONE,0.0,VN-59
+Vietnam,Năm Căn,Cà Mau,,,56813,District,,,#N/A,,Cà MauVietnam,,,,,locality,,VN-59,Xã Năm Căn,,,,,region,1,VN-59,Tỉnh Cà Mau,LOW,0.874,VN-59
+Vietnam,Ninh Kiều,Cần Thơ,,,280494,Urban District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,,,,,,,,,region,1,VN-CT,Thành phố Cần Thơ,NONE,0.0,VN-CT
+Vietnam,Thốt Nốt,Cần Thơ,,,155360,Urban District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,,,,,,,,,region,1,VN-CT,Thành phố Cần Thơ,NONE,0.0,VN-CT
+Vietnam,Bình Thủy,Cần Thơ,,,142164,Urban District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,,,,,,,,,region,1,VN-CT,Thành phố Cần Thơ,NONE,0.0,VN-CT
+Vietnam,Ô Môn,Cần Thơ,,,128677,Urban District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,,,,,,,,,region,1,VN-CT,Thành phố Cần Thơ,NONE,0.0,VN-CT
+Vietnam,Cờ Đỏ,Cần Thơ,,,116576,District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,locality,,VN-CT,Xã Cờ Đỏ,,,,,region,1,VN-CT,Thành phố Cần Thơ,LOW,0.819,VN-CT
+Vietnam,Thới Lai,Cần Thơ,,,109684,District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,locality,,VN-CT,Xã Thới Lai,,,,,region,1,VN-CT,Thành phố Cần Thơ,LOW,0.892,VN-CT
+Vietnam,Cái Răng,Cần Thơ,,,105393,Urban District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,,,,,,,,,region,1,VN-CT,Thành phố Cần Thơ,NONE,0.0,VN-CT
+Vietnam,Phong Điền,Cần Thơ,,,98424,District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,locality,,VN-CT,Xã Phong Điền,,,,,region,1,VN-CT,Thành phố Cần Thơ,LOW,0.92,VN-CT
+Vietnam,Vĩnh Thạnh,Cần Thơ,,,98399,District,Can Tho,,Can Tho,,Cần ThơVietnam,,,,,locality,,VN-CT,Xã Vĩnh Thạnh,,,,,region,1,VN-CT,Thành phố Cần Thơ,LOW,0.92,VN-CT
+Vietnam,Cao Bằng,Cao Bằng,,,73549,District-level City,,,#N/A,,Cao BằngVietnam,,,,,region,1,VN-04,Tỉnh Cao Bằng,,,,,region,1,VN-04,Tỉnh Cao Bằng,HIGH,1.0,VN-04
+Vietnam,Bảo Lâm,Cao Bằng,,,65025,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Bảo Lâm,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.874,VN-04
+Vietnam,Bảo Lạc,Cao Bằng,,,54420,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Bảo Lạc,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.874,VN-04
+Vietnam,Hòa An,Cao Bằng,,,52762,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Hòa An,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.85,VN-04
+Vietnam,Trùng Khánh,Cao Bằng,,,48955,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Trùng Khánh,,,,,region,1,VN-04,Tỉnh Cao Bằng,MED,0.93,VN-04
+Vietnam,Nguyên Bình,Cao Bằng,,,39654,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Nguyên Bình,,,,,region,1,VN-04,Tỉnh Cao Bằng,MED,0.93,VN-04
+Vietnam,Quảng Uyên,Cao Bằng,,,38078,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Quảng Uyên,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.92,VN-04
+Vietnam,Hà Quảng,Cao Bằng,,,34157,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Hà Quảng,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.892,VN-04
+Vietnam,Thạch An,Cao Bằng,,,29820,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Thạch An,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.892,VN-04
+Vietnam,Hạ Lang,Cao Bằng,,,25439,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Hạ Lang,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.874,VN-04
+Vietnam,Thông Nông,Cao Bằng,,,23884,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Thông Nông,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.92,VN-04
+Vietnam,Phục Hòa,Cao Bằng,,,22852,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Phục Hòa,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.892,VN-04
+Vietnam,Trà Lĩnh,Cao Bằng,,,21746,District,,,#N/A,,Cao BằngVietnam,,,,,locality,,VN-04,Xã Trà Lĩnh,,,,,region,1,VN-04,Tỉnh Cao Bằng,LOW,0.892,VN-04
+Vietnam,Hải Châu,Đà Nẵng,,,201522,Urban District,Da Nang,,Da Nang,,Đà NẵngVietnam,,,,,,,,,,,,,region,1,VN-DN,Thành phố Đà Nẵng,NONE,0.0,VN-DN
+Vietnam,Liên Chiểu,Đà Nẵng,,,194913,Urban District,Da Nang,,Da Nang,,Đà NẵngVietnam,,,,,locality,,VN-DN,Phường Liên Chiểu,,,,,region,1,VN-DN,Thành phố Đà Nẵng,LOW,0.791,VN-DN
+Vietnam,Thanh Khê,Đà Nẵng,,,185064,Urban District,Da Nang,,Da Nang,,Đà NẵngVietnam,,,,,,,,,,,,,region,1,VN-DN,Thành phố Đà Nẵng,NONE,0.0,VN-DN
+Vietnam,Cẩm Lệ,Đà Nẵng,,,159295,Urban District,Da Nang,,Da Nang,,Đà NẵngVietnam,,,,,,,,,,,,,region,1,VN-DN,Thành phố Đà Nẵng,NONE,0.0,VN-DN
+Vietnam,Sơn Trà,Đà Nẵng,,,157415,Urban District,Da Nang,,Da Nang,,Đà NẵngVietnam,,,,,,,,,,,,,region,1,VN-DN,Thành phố Đà Nẵng,NONE,0.0,VN-DN
+Vietnam,Hòa Vang,Đà Nẵng,,,145749,District,Da Nang,,Da Nang,,Đà NẵngVietnam,,,,,locality,,VN-DN,Xã Hòa Vang,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Ngũ Hành Sơn,Đà Nẵng,,,90352,Urban District,Da Nang,,Da Nang,,Đà NẵngVietnam,,,,,locality,,VN-DN,Phường Ngũ Hành Sơn,,,,,region,1,VN-DN,Thành phố Đà Nẵng,LOW,0.824,VN-DN
+Vietnam,Buôn Ma Thuột,Đắk Lắk,,,375590,District-level City,Buôn Ma Thuột,,Buôn Ma Thuột,,Đắk LắkVietnam,,,,,locality,,VN-33,Phường Buôn Ma Thuột,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.838,VN-33
+Vietnam,Krông Pắc (Krông Pắk),Đắk Lắk,,,194607,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Krông Pắc,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.907,VN-33
+Vietnam,Cư M'gar,Đắk Lắk,,,177622,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Cư M'gar,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.892,VN-33
+Vietnam,Ea Kar,Đắk Lắk,,,144450,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Ea Kar,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.85,VN-33
+Vietnam,Ea H'leo,Đắk Lắk,,,136880,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Ea H'Leo,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.892,VN-33
+Vietnam,Krông Năng,Đắk Lắk,,,126366,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Krông Năng,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.92,VN-33
+Vietnam,Cư Kuin,Đắk Lắk,,,101247,District,,,#N/A,,Đắk LắkVietnam,,,,,,,,,,,,,region,1,VN-33,Tỉnh Đắk Lắk,NONE,0.0,VN-33
+Vietnam,Buôn Hồ,Đắk Lắk,,,98732,District-level Town,,,#N/A,,Đắk LắkVietnam,,,,,,,,,,,,,region,1,VN-33,Tỉnh Đắk Lắk,NONE,0.0,VN-33
+Vietnam,Krông Bông,Đắk Lắk,,,92064,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Krông Bông,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.92,VN-33
+Vietnam,Krông Ana,Đắk Lắk,,,79892,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Krông Ana,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.907,VN-33
+Vietnam,M'Drắk,Đắk Lắk,,,72153,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã M'Drắk,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.85,VN-33
+Vietnam,Ea Súp,Đắk Lắk,,,70724,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Ea Súp,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.85,VN-33
+Vietnam,Lắk,Đắk Lắk,,,69885,District,,,#N/A,,Đắk LắkVietnam,,,,,,,,,,,,,region,1,VN-33,Tỉnh Đắk Lắk,NONE,0.0,VN-33
+Vietnam,Krông Búk,Đắk Lắk,,,64859,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Krông Búk,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.907,VN-33
+Vietnam,Buôn Đôn,Đắk Lắk,,,64251,District,,,#N/A,,Đắk LắkVietnam,,,,,locality,,VN-33,Xã Buôn Đôn,,,,,region,1,VN-33,Tỉnh Đắk Lắk,LOW,0.892,VN-33
+Vietnam,Đắk Mil,Đắk Nông,,,99892,District,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Cư Jút,Đắk Nông,,,91621,District,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đắk R'Lấp,Đắk Nông,,,83555,District,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đắk Song,Đắk Nông,,,80514,District,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Krông Nô,Đắk Nông,,,74446,District,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đăk Glong,Đắk Nông,,,67782,District,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Gia Nghĩa,Đắk Nông,,,63046,District-level Town,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tuy Đức,Đắk Nông,,,61312,District,,,#N/A,,Đắk NôngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Điện Biên,Điện Biên,,,119696,District,,,#N/A,,Điện BiênVietnam,,,,,region,1,VN-71,Tỉnh Điện Biên,,,,,region,1,VN-71,Tỉnh Điện Biên,HIGH,1.0,VN-71
+Vietnam,Tuần Giáo,Điện Biên,,,87883,District,,,#N/A,,Điện BiênVietnam,,,,,locality,,VN-71,Xã Tuần Giáo,,,,,region,1,VN-71,Tỉnh Điện Biên,HIGH,1.0,VN-71
+Vietnam,Điện Biên Đông,Điện Biên,,,67080,District,,,#N/A,,Điện BiênVietnam,,,,,,,,,,,,,region,1,VN-71,Tỉnh Điện Biên,NONE,0.0,VN-71
+Vietnam,Điện Biên Phủ,Điện Biên,,,58519,District-level City,,,#N/A,,Điện BiênVietnam,,,,,locality,,VN-71,Phường Điện Biên Phủ,,,,,region,1,VN-71,Tỉnh Điện Biên,LOW,0.838,VN-71
+Vietnam,Tủa Chùa,Điện Biên,,,57460,District,,,#N/A,,Điện BiênVietnam,,,,,locality,,VN-71,Xã Tủa Chùa,,,,,region,1,VN-71,Tỉnh Điện Biên,HIGH,1.0,VN-71
+Vietnam,Nậm Pồ,Điện Biên,,,54908,District,,,#N/A,,Điện BiênVietnam,,,,,,,,,,,,,region,1,VN-71,Tỉnh Điện Biên,NONE,0.0,VN-71
+Vietnam,Mường Ảng,Điện Biên,,,48416,District,,,#N/A,,Điện BiênVietnam,,,,,locality,,VN-71,Xã Mường Ảng,,,,,region,1,VN-71,Tỉnh Điện Biên,HIGH,1.0,VN-71
+Vietnam,Mường Chà,Điện Biên,,,48005,District,,,#N/A,,Điện BiênVietnam,,,,,locality,,VN-71,Xã Mường Chà,,,,,region,1,VN-71,Tỉnh Điện Biên,HIGH,1.0,VN-71
+Vietnam,Mường Nhé,Điện Biên,,,45727,District,,,#N/A,,Điện BiênVietnam,,,,,locality,,VN-71,Xã Mường Nhé,,,,,region,1,VN-71,Tỉnh Điện Biên,HIGH,1.0,VN-71
+Vietnam,Mường Lay,Điện Biên,,,11162,District-level Town,,,#N/A,,Điện BiênVietnam,,,,,,,,,,,,,region,1,VN-71,Tỉnh Điện Biên,NONE,0.0,VN-71
+Vietnam,Biên Hòa,Đồng Nai,,,1055414,District-level City,Ho Chi Minh City,,Ho Chi Minh City,,Đồng NaiVietnam,,,,,,,,,,,,,region,1,VN-39,Tỉnh Đồng Nai,NONE,0.0,VN-39
+Vietnam,Trảng Bom,Đồng Nai,,,349279,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Trảng Bom,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.907,VN-39
+Vietnam,Nhơn Trạch,Đồng Nai,,,260592,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Nhơn Trạch,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.92,VN-39
+Vietnam,Long Thành,Đồng Nai,,,246051,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Long Thành,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.92,VN-39
+Vietnam,Xuân Lộc,Đồng Nai,,,226648,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Xuân Lộc,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.892,VN-39
+Vietnam,Định Quán,Đồng Nai,,,187306,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Định Quán,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.907,VN-39
+Vietnam,Vĩnh Cửu,Đồng Nai,,,164003,District,,,#N/A,,Đồng NaiVietnam,,,,,,,,,,,,,region,1,VN-39,Tỉnh Đồng Nai,NONE,0.0,VN-39
+Vietnam,Thống Nhất,Đồng Nai,,,163905,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Thống Nhất,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.92,VN-39
+Vietnam,Tân Phú,Đồng Nai,,,153080,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Tân Phú,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.874,VN-39
+Vietnam,Long Khánh,Đồng Nai,,,151467,District-level Town,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Phường Long Khánh,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.791,VN-39
+Vietnam,Cẩm Mỹ,Đồng Nai,,,139362,District,,,#N/A,,Đồng NaiVietnam,,,,,locality,,VN-39,Xã Cẩm Mỹ,,,,,region,1,VN-39,Tỉnh Đồng Nai,LOW,0.85,VN-39
+Vietnam,Cao Lãnh,Đồng Tháp,,,197614,District,,,#N/A,,Đồng ThápVietnam,,,,,,,,,,,,,region,1,VN-45,Tỉnh Đồng Tháp,NONE,0.0,VN-45
+Vietnam,Lấp Vò,Đồng Tháp,,,180627,District,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Xã Lấp Vò,,,,,region,1,VN-45,Tỉnh Đồng Tháp,LOW,0.85,VN-45
+Vietnam,Cao Lãnh (thành phố),Đồng Tháp,,,164835,District-level City,,,#N/A,,Đồng ThápVietnam,,,,,,,,,,,,,region,1,VN-45,Tỉnh Đồng Tháp,NONE,0.0,VN-45
+Vietnam,Lai Vung,Đồng Tháp,,,164240,District,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Xã Lai Vung,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Châu Thành,Đồng Tháp,,,146812,District,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Xã Châu Thành,,,,,region,1,VN-45,Tỉnh Đồng Tháp,LOW,0.92,VN-45
+Vietnam,Thanh Bình,Đồng Tháp,,,134903,District,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Xã Thanh Bình,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Tháp Mười,Đồng Tháp,,,131791,District,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Xã Tháp Mười,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Hồng Ngự,Đồng Tháp,,,120571,District,,,#N/A,,Đồng ThápVietnam,,,,,,,,,,,,,region,1,VN-45,Tỉnh Đồng Tháp,NONE,0.0,VN-45
+Vietnam,Sa Đéc,Đồng Tháp,,,106198,District-level City,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Phường Sa Đéc,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Tam Nông,Đồng Tháp,,,99995,District,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Xã Tam Nông,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Hồng Ngự (thị xã),Đồng Tháp,,,76462,District-level Town,,,#N/A,,Đồng ThápVietnam,,,,,,,,,,,,,region,1,VN-45,Tỉnh Đồng Tháp,NONE,0.0,VN-45
+Vietnam,Tân Hồng,Đồng Tháp,,,75456,District,,,#N/A,,Đồng ThápVietnam,,,,,locality,,VN-45,Xã Tân Hồng,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Pleiku,Gia Lai,,,254802,District-level City,Pleiku,,Pleiku,,Gia LaiVietnam,,,,,,,,,,,,,region,1,VN-30,Tỉnh Gia Lai,NONE,0.0,VN-30
+Vietnam,Đắk Đoa,Gia Lai,,,123282,District,Pleiku,,Pleiku,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Đak Đoa,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.874,VN-30
+Vietnam,Ia Grai,Gia Lai,,,105664,District,Pleiku,,Pleiku,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Ia Grai,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.874,VN-30
+Vietnam,Chư Prông,Gia Lai,,,123555,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Chư Prông,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.907,VN-30
+Vietnam,Chư Sê,Gia Lai,,,121965,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Chư Sê,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.85,VN-30
+Vietnam,Krông Pa,Gia Lai,,,86416,District,,,#N/A,,Gia LaiVietnam,,,,,,,,,,,,,region,1,VN-30,Tỉnh Gia Lai,NONE,0.0,VN-30
+Vietnam,Phú Thiện,Gia Lai,,,78627,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Phú Thiện,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.907,VN-30
+Vietnam,Chư Pưh,Gia Lai,,,77511,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Chư Pưh,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.874,VN-30
+Vietnam,Chư Păh,Gia Lai,,,77299,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Chư Păh,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.874,VN-30
+Vietnam,Đức Cơ,Gia Lai,,,75718,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Đức Cơ,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.85,VN-30
+Vietnam,Mang Yang,Gia Lai,,,68273,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Mang Yang,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.907,VN-30
+Vietnam,An Khê,Gia Lai,,,65918,District-level Town,,,#N/A,,Gia LaiVietnam,,,,,,,,,,,,,region,1,VN-30,Tỉnh Gia Lai,NONE,0.0,VN-30
+Vietnam,K'Bang,Gia Lai,,,65437,District,,,#N/A,,Gia LaiVietnam,,,,,,,,,,,,,region,1,VN-30,Tỉnh Gia Lai,NONE,0.0,VN-30
+Vietnam,Ia Pa,Gia Lai,,,56596,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Ia Pa,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.819,VN-30
+Vietnam,Kông Chro,Gia Lai,,,52406,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Kông Chro,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.907,VN-30
+Vietnam,Đak Pơ,Gia Lai,,,40442,District,,,#N/A,,Gia LaiVietnam,,,,,locality,,VN-30,Xã Đak Pơ,,,,,region,1,VN-30,Tỉnh Gia Lai,LOW,0.85,VN-30
+Vietnam,Ayun Pa,Gia Lai,,,39936,District-level Town,,,#N/A,,Gia LaiVietnam,,,,,,,,,,,,,region,1,VN-30,Tỉnh Gia Lai,NONE,0.0,VN-30
+Vietnam,Bắc Quang,Hà Giang,,,118690,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Bắc Quang,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Vị Xuyên,Hà Giang,,,110465,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Vị Xuyên,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Yên Minh,Hà Giang,,,97553,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Yên Minh,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Mèo Vạc,Hà Giang,,,86071,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Mèo Vạc,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Đồng Văn,Hà Giang,,,81880,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Đồng Văn,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Xín Mần,Hà Giang,,,67999,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Xín Mần,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Hoàng Su Phì,Hà Giang,,,66683,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Hoàng Su Phì,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Quang Bình,Hà Giang,,,61711,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-21,Xã Quảng Bình,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Hà Giang,Hà Giang,,,55559,District-level City,,,#N/A,,Hà GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bắc Mê,Hà Giang,,,54592,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Bắc Mê,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Quản Bạ,Hà Giang,,,53476,District,,,#N/A,,Hà GiangVietnam,,,,,locality,,VN-07,Xã Quản Bạ,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Lý Nhân,Hà Nam,,,180189,District,,,#N/A,,Hà NamVietnam,,,,,locality,,VN-18,Xã Lý Nhân,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Phủ Lý,Hà Nam,,,158212,District-level City,,,#N/A,,Hà NamVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Duy Tiên,Hà Nam,,,137150,District,,,#N/A,,Hà NamVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bình Lục,Hà Nam,,,133046,District,,,#N/A,,Hà NamVietnam,,,,,locality,,VN-18,Xã Bình Lục,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Kim Bảng,Hà Nam,,,125634,District,,,#N/A,,Hà NamVietnam,,,,,locality,,VN-22,Xã Kim Bảng,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Thanh Liêm,Hà Nam,,,118569,District,,,#N/A,,Hà NamVietnam,,,,,locality,,VN-18,Xã Thanh Liêm,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Cẩm Xuyên,Hà Tĩnh,,,149313,District,Ha Tinh,,Ha Tinh,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Cẩm Xuyên,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Thạch Hà,Hà Tĩnh,,,140213,District,Ha Tinh,,Ha Tinh,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Thạch Hà,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Hà Tĩnh,Hà Tĩnh,,,104037,District-level City,Ha Tinh,,Ha Tinh,,Hà TĩnhVietnam,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Lộc Hà,Hà Tĩnh,,,79178,District,Ha Tinh,,Ha Tinh,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Lộc Hà,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Can Lộc,Hà Tĩnh,,,129098,District,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Can Lộc,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Kỳ Anh,Hà Tĩnh,,,121662,District,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Kỳ Anh,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Hương Sơn,Hà Tĩnh,,,112426,District,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Hương Sơn,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Nghi Xuân,Hà Tĩnh,,,102160,District,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Nghi Xuân,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Đức Thọ,Hà Tĩnh,,,101562,District,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Đức Thọ,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Hương Khê,Hà Tĩnh,,,99307,District,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Hương Khê,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Kỳ Anh (thị xã),Hà Tĩnh,,,82955,District-level Town,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Kỳ Anh,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Hồng Lĩnh,Hà Tĩnh,,,38411,District-level Town,,,#N/A,,Hà TĩnhVietnam,,,,,,,,,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,NONE,0.0,VN-23
+Vietnam,Vũ Quang,Hà Tĩnh,,,28544,District,,,#N/A,,Hà TĩnhVietnam,,,,,locality,,VN-23,Xã Vũ Quang,,,,,region,1,VN-23,Tỉnh Hà Tĩnh,HIGH,1.0,VN-23
+Vietnam,Hải Dương,Hải Dương,,,241373,District-level City,,,#N/A,,Hải DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tứ Kỳ,Hải Dương,,,177202,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-HP,Xã Tứ Kỳ,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Kinh Môn,Hải Dương,,,172541,District,,,#N/A,,Hải DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Chí Linh,Hải Dương,,,171879,District-level Town,,,#N/A,,Hải DươngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thanh Hà,Hải Dương,,,164417,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-HP,Xã Thanh Hà,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Gia Lộc,Hải Dương,,,151298,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-HP,Xã Gia Lộc,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Cẩm Giàng,Hải Dương,,,147810,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-HP,Xã Cẩm Giàng,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Ninh Giang,Hải Dương,,,146493,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-18,Xã Ninh Giang,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Thanh Miện,Hải Dương,,,137537,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-HP,Xã Thanh Miện,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Kim Thành,Hải Dương,,,136150,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-HP,Xã Kim Thành,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Nam Sách,Hải Dương,,,126325,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-HP,Xã Nam Sách,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Bình Giang,Hải Dương,,,119229,District,,,#N/A,,Hải DươngVietnam,,,,,locality,,VN-18,Xã Bình Giang,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Thủy Nguyên,Hải Phòng,,,333810,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,locality,,VN-HP,Phường Thủy Nguyên,,,,,region,1,VN-HP,Thành phố Hải Phòng,LOW,0.809,VN-HP
+Vietnam,Lê Chân,Hải Phòng,,,219762,Urban District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,An Dương,Hải Phòng,,,195717,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,Vĩnh Bảo,Hải Phòng,,,182835,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,locality,,VN-HP,Xã Vĩnh Bảo,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Ngô Quyền,Hải Phòng,,,165309,Urban District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,Tiên Lãng,Hải Phòng,,,154789,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,locality,,VN-HP,Xã Tiên Lãng,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,An Lão,Hải Phòng,,,146712,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,locality,,VN-HP,Xã An Lão,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Kiến Thụy,Hải Phòng,,,140417,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,locality,,VN-HP,Xã Kiến Thụy,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Hải An,Hải Phòng,,,132943,Urban District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,Kiến An,Hải Phòng,,,118047,Urban District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,Hồng Bàng,Hải Phòng,,,96111,Urban District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,Dương Kinh,Hải Phòng,,,60319,Urban District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,locality,,VN-HP,Phường Dương Kinh,,,,,region,1,VN-HP,Thành phố Hải Phòng,LOW,0.791,VN-HP
+Vietnam,Đồ Sơn,Hải Phòng,,,49029,Urban District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,Cát Hải,Hải Phòng,,,32090,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,,,,,,,,,region,1,VN-HP,Thành phố Hải Phòng,NONE,0.0,VN-HP
+Vietnam,Bạch Long Vĩ,Hải Phòng,,,624,District,Haiphong,,Haiphong,,Hải PhòngVietnam,,,,,locality,,VN-HP,Đặc khu Bạch Long Vĩ,,,,,region,1,VN-HP,Thành phố Hải Phòng,LOW,0.8,VN-HP
+Vietnam,Hoàng Mai,Hanoi,,,506347,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Đông Anh,Hanoi,,,405749,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Đông Anh,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.892,VN-HN
+Vietnam,Hà Đông,Hanoi,,,397854,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Đống Đa,Hanoi,,,371606,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Sóc Sơn,Hanoi,,,343432,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Sóc Sơn,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Chương Mỹ,Hanoi,,,337326,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Bắc Từ Liêm,Hanoi,,,335110,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Long Biên,Hanoi,,,322549,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Hai Bà Trưng,Hanoi,,,303586,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Phường Hai Bà Trưng,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.824,VN-HN
+Vietnam,Thanh Xuân,Hanoi,,,293524,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Phường Thanh Xuân,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.791,VN-HN
+Vietnam,Cầu Giấy,Hanoi,,,292536,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Ba Vì,Hanoi,,,290580,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Ba Vì,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Gia Lâm,Hanoi,,,286102,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Gia Lâm,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Thanh Trì,Hanoi,,,275745,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Thanh Trì,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Nam Từ Liêm,Hanoi,,,264246,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Hoài Đức,Hanoi,,,262978,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Hoài Đức,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.892,VN-HN
+Vietnam,Thường Tín,Hanoi,,,254702,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Thường Tín,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.92,VN-HN
+Vietnam,Mê Linh,Hanoi,,,240555,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Mê Linh,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Ba Đình,Hanoi,,,221893,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Thạch Thất,Hanoi,,,216554,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Thạch Thất,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Phú Xuyên,Hanoi,,,213984,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Phú Xuyên,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Thanh Oai,Hanoi,,,211029,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Thanh Oai,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Ứng Hòa,Hanoi,,,210869,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Ứng Hòa,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Mỹ Đức,Hanoi,,,199901,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Mỹ Đức,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.85,VN-HN
+Vietnam,Quốc Oai,Hanoi,,,194412,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Quốc Oai,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.892,VN-HN
+Vietnam,Phúc Thọ,Hanoi,,,184024,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Phúc Thọ,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Đan Phượng,Hanoi,,,174501,District,Hanoi,,Hanoi,,HanoiVietnam,,,,,locality,,VN-HN,Xã Đan Phượng,,,,,region,1,VN-HN,Thành phố Hà Nội,LOW,0.92,VN-HN
+Vietnam,Tây Hồ,Hanoi,,,160495,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Sơn Tây,Hanoi,,,145856,District-level Town,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Hoàn Kiếm,Hanoi,,,135618,Urban District,Hanoi,,Hanoi,,HanoiVietnam,,,,,,,,,,,,,region,1,VN-HN,Thành phố Hà Nội,NONE,0.0,VN-HN
+Vietnam,Phụng Hiệp,Hậu Giang,,,188017,District,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Châu Thành A,Hậu Giang,,,97606,District,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Vị Thủy,Hậu Giang,,,90126,District,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Châu Thành,Hậu Giang,,,88079,District,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Long Mỹ,Hậu Giang,,,77346,District,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Vị Thanh,Hậu Giang,,,73322,District-level City,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Long Mỹ (thị xã),Hậu Giang,,,62339,District-level Town,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ngã Bảy,Hậu Giang,,,56182,District-level Town,,,#N/A,,Hậu GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bình Tân,Ho Chi Minh City,,,784173,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Bình Chánh,Ho Chi Minh City,,,705508,District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,locality,,VN-SG,Xã Bình Chánh,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,LOW,0.92,VN-SG
+Vietnam,Gò Vấp,Ho Chi Minh City,,,676899,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 12,Ho Chi Minh City,,,620146,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Thủ Đức,Ho Chi Minh City,,,592686,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Hóc Môn,Ho Chi Minh City,,,542243,District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,locality,,VN-SG,Xã Hóc Môn,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,LOW,0.874,VN-SG
+Vietnam,Bình Thạnh,Ho Chi Minh City,,,499164,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,locality,,VN-SG,Phường Bình Thạnh,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,LOW,0.791,VN-SG
+Vietnam,Tân Phú,Ho Chi Minh City,,,485348,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Tân Bình,Ho Chi Minh City,,,474792,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Củ Chi,Ho Chi Minh City,,,462047,District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,locality,,VN-SG,Xã Củ Chi,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,LOW,0.85,VN-SG
+Vietnam,Quận 8,Ho Chi Minh City,,,424667,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 9,Ho Chi Minh City,,,397006,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 7,Ho Chi Minh City,,,360155,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 10,Ho Chi Minh City,,,234819,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 6,Ho Chi Minh City,,,233561,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 11,Ho Chi Minh City,,,209867,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Nhà Bè,Ho Chi Minh City,,,206837,District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,locality,,VN-SG,Xã Nhà Bè,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,LOW,0.85,VN-SG
+Vietnam,Quận 3,Ho Chi Minh City,,,190375,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 2,Ho Chi Minh City,,,180275,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 4,Ho Chi Minh City,,,175329,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Phú Nhuận,Ho Chi Minh City,,,163961,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 5,Ho Chi Minh City,,,159073,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Quận 1,Ho Chi Minh City,,,142625,Urban District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,,,,,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,NONE,0.0,VN-SG
+Vietnam,Cần Giờ,Ho Chi Minh City,,,71526,District,Ho Chi Minh City,,Ho Chi Minh City,,Ho Chi Minh CityVietnam,,,,,locality,,VN-SG,Xã Cần Giờ,,,,,region,1,VN-SG,Thành phố Hồ Chí Minh,LOW,0.874,VN-SG
+Vietnam,Lạc Sơn,Hòa Bình,,,136652,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Lạc Sơn,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Kim Bôi,Hòa Bình,,,118767,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Kim Bôi,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Hòa Bình,Hòa Bình,,,101674,District-level City,,,#N/A,,Hòa BìnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Lương Sơn,Hòa Bình,,,99457,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-21,Xã Lương Sơn,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Tân Lạc,Hòa Bình,,,86889,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Tân Lạc,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Lạc Thủy,Hòa Bình,,,60393,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Lạc Thủy,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Yên Thủy,Hòa Bình,,,60143,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Yên Thủy,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Mai Châu,Hòa Bình,,,55640,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Mai Châu,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Đà Bắc,Hòa Bình,,,55002,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Đà Bắc,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Cao Phong,Hòa Bình,,,45470,District,,,#N/A,,Hòa BìnhVietnam,,,,,locality,,VN-68,Xã Cao Phong,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Kỳ Sơn,Hòa Bình,,,34044,District,,,#N/A,,Hòa BìnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hưng Yên,Hưng Yên,,,116356,District-level City,Hưng Yên,,Hưng Yên,,Hưng YênVietnam,,,,,region,1,VN-66,Tỉnh Hưng Yên,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Khoái Châu,Hưng Yên,,,188255,District,,,#N/A,,Hưng YênVietnam,,,,,locality,,VN-66,Xã Khoái Châu,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Yên Mỹ,Hưng Yên,,,156333,District,,,#N/A,,Hưng YênVietnam,,,,,locality,,VN-66,Xã Yên Mỹ,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Ân Thi,Hưng Yên,,,134403,District,,,#N/A,,Hưng YênVietnam,,,,,locality,,VN-66,Xã Ân Thi,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Văn Lâm,Hưng Yên,,,133027,District,,,#N/A,,Hưng YênVietnam,,,,,,,,,,,,,region,1,VN-66,Tỉnh Hưng Yên,NONE,0.0,VN-66
+Vietnam,Văn Giang,Hưng Yên,,,120799,District,,,#N/A,,Hưng YênVietnam,,,,,locality,,VN-66,Xã Văn Giang,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Kim Động,Hưng Yên,,,117734,District,,,#N/A,,Hưng YênVietnam,,,,,,,,,,,,,region,1,VN-66,Tỉnh Hưng Yên,NONE,0.0,VN-66
+Vietnam,Mỹ Hào,Hưng Yên,,,112752,District,,,#N/A,,Hưng YênVietnam,,,,,,,,,,,,,region,1,VN-66,Tỉnh Hưng Yên,NONE,0.0,VN-66
+Vietnam,Tiên Lữ,Hưng Yên,,,93118,District,,,#N/A,,Hưng YênVietnam,,,,,locality,,VN-66,Xã Tiên Lữ,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Phù Cừ,Hưng Yên,,,79954,District,,,#N/A,,Hưng YênVietnam,,,,,,,,,,,,,region,1,VN-66,Tỉnh Hưng Yên,NONE,0.0,VN-66
+Vietnam,Nha Trang,Khánh Hòa,,,422601,District-level City,Nha Trang,,Nha Trang,,Khánh HòaVietnam,,,,,,,,,,,,,region,1,VN-34,Tỉnh Khánh Hòa,NONE,0.0,VN-34
+Vietnam,Ninh Hòa,Khánh Hòa,,,230049,District-level Town,,,#N/A,,Khánh HòaVietnam,,,,,,,,,,,,,region,1,VN-34,Tỉnh Khánh Hòa,NONE,0.0,VN-34
+Vietnam,Diên Khánh,Khánh Hòa,,,143211,District,,,#N/A,,Khánh HòaVietnam,,,,,locality,,VN-34,Xã Diên Khánh,,,,,region,1,VN-34,Tỉnh Khánh Hòa,LOW,0.92,VN-34
+Vietnam,Cam Ranh,Khánh Hòa,,,130814,District-level City,,,#N/A,,Khánh HòaVietnam,,,,,,,,,,,,,region,1,VN-34,Tỉnh Khánh Hòa,NONE,0.0,VN-34
+Vietnam,Vạn Ninh,Khánh Hòa,,,130231,District,,,#N/A,,Khánh HòaVietnam,,,,,locality,,VN-34,Xã Vạn Ninh,,,,,region,1,VN-34,Tỉnh Khánh Hòa,LOW,0.892,VN-34
+Vietnam,Cam Lâm,Khánh Hòa,,,108979,District,,,#N/A,,Khánh HòaVietnam,,,,,locality,,VN-34,Xã Cam Lâm,,,,,region,1,VN-34,Tỉnh Khánh Hòa,LOW,0.874,VN-34
+Vietnam,Khánh Vĩnh,Khánh Hòa,,,39780,District,,,#N/A,,Khánh HòaVietnam,,,,,locality,,VN-34,Xã Khánh Vĩnh,,,,,region,1,VN-34,Tỉnh Khánh Hòa,LOW,0.92,VN-34
+Vietnam,Khánh Sơn,Khánh Hòa,,,25349,District,,,#N/A,,Khánh HòaVietnam,,,,,locality,,VN-34,Xã Khánh Sơn,,,,,region,1,VN-34,Tỉnh Khánh Hòa,LOW,0.907,VN-34
+Vietnam,Trường Sa [Spratly Islands],Khánh Hòa,,,93,District,,,#N/A,,Khánh HòaVietnam,,,,,,,,,,,,,region,1,VN-34,Tỉnh Khánh Hòa,NONE,0.0,VN-34
+Vietnam,Phú Quốc,Kiên Giang,,,146028,District,Phu Quoc,,Phu Quoc,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Rạch Giá,Kiên Giang,,,227527,District-level City,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Giồng Riềng,Kiên Giang,,,224655,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Châu Thành,Kiên Giang,,,159607,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hòn Đất,Kiên Giang,,,156273,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Gò Quao,Kiên Giang,,,132508,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tân Hiệp,Kiên Giang,,,125459,District,,,#N/A,,Kiên GiangVietnam,,,,,locality,,VN-DN,Xã Tân Hiệp,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,An Minh,Kiên Giang,,,115720,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,An Biên,Kiên Giang,,,115218,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Vĩnh Thuận,Kiên Giang,,,81875,District,,,#N/A,,Kiên GiangVietnam,,,,,locality,,VN-HP,Xã Vĩnh Thuận,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Kiên Lương,Kiên Giang,,,79484,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,U Minh Thượng,Kiên Giang,,,63415,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hà Tiên,Kiên Giang,,,48495,District-level City,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Giang Thành,Kiên Giang,,,29215,District,,,#N/A,,Kiên GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Kiên Hải,Kiên Giang,,,17588,District,,,#N/A,,Kiên GiangVietnam,,,,,locality,,VN-HP,Xã Kiến Hải,,,,,region,1,VN-HP,Thành phố Hải Phòng,HIGH,1.0,VN-HP
+Vietnam,Kon Tum,Kon Tum,,,168264,District-level City,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đắk Hà,Kon Tum,,,74805,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ngọc Hồi,Kon Tum,,,58913,District,,,#N/A,,Kon TumVietnam,,,,,locality,,VN-HN,Xã Ngọc Hồi,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Sa Thầy,Kon Tum,,,49914,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đắk Glei,Kon Tum,,,48761,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đắk Tô,Kon Tum,,,47544,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Kon Rẫy,Kon Tum,,,28591,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tu Mơ Rông,Kon Tum,,,27411,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Kon Plông,Kon Tum,,,26025,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ia H'Drai,Kon Tum,,,10210,District,,,#N/A,,Kon TumVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sìn Hồ,Lai Châu,,,83643,District,,,#N/A,,Lai ChâuVietnam,,,,,locality,,VN-01,Xã Sìn Hồ,,,,,region,1,VN-01,Tỉnh Lai Châu,LOW,0.85,VN-01
+Vietnam,Phong Thổ,Lai Châu,,,79645,District,,,#N/A,,Lai ChâuVietnam,,,,,locality,,VN-01,Xã Phong Thổ,,,,,region,1,VN-01,Tỉnh Lai Châu,LOW,0.907,VN-01
+Vietnam,Than Uyên,Lai Châu,,,67550,District,,,#N/A,,Lai ChâuVietnam,,,,,locality,,VN-01,Xã Than Uyên,,,,,region,1,VN-01,Tỉnh Lai Châu,LOW,0.907,VN-01
+Vietnam,Tân Uyên,Lai Châu,,,58104,District,,,#N/A,,Lai ChâuVietnam,,,,,locality,,VN-01,Xã Tân Uyên,,,,,region,1,VN-01,Tỉnh Lai Châu,LOW,0.892,VN-01
+Vietnam,Tam Đường,Lai Châu,,,56079,District,,,#N/A,,Lai ChâuVietnam,,,,,,,,,,,,,region,1,VN-01,Tỉnh Lai Châu,NONE,0.0,VN-01
+Vietnam,Mường Tè,Lai Châu,,,46143,District,,,#N/A,,Lai ChâuVietnam,,,,,locality,,VN-01,Xã Mường Tè,,,,,region,1,VN-01,Tỉnh Lai Châu,LOW,0.892,VN-01
+Vietnam,Lai Châu,Lai Châu,,,41771,District-level City,,,#N/A,,Lai ChâuVietnam,,,,,region,1,VN-01,Tỉnh Lai Châu,,,,,region,1,VN-01,Tỉnh Lai Châu,HIGH,1.0,VN-01
+Vietnam,Nậm Nhùn,Lai Châu,,,27261,District,,,#N/A,,Lai ChâuVietnam,,,,,,,,,,,,,region,1,VN-01,Tỉnh Lai Châu,NONE,0.0,VN-01
+Vietnam,Đà Lạt,Lâm Đồng,,,226578,District-level City,,,#N/A,,Lâm ĐồngVietnam,,,,,,,,,,,,,region,1,VN-35,Tỉnh Lâm Đồng,NONE,0.0,VN-35
+Vietnam,Đức Trọng,Lâm Đồng,,,186974,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Đức Trọng,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.907,VN-35
+Vietnam,Di Linh,Lâm Đồng,,,159994,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Di Linh,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.874,VN-35
+Vietnam,Bảo Lộc,Lâm Đồng,,,158684,District-level City,,,#N/A,,Lâm ĐồngVietnam,,,,,,,,,,,,,region,1,VN-35,Tỉnh Lâm Đồng,NONE,0.0,VN-35
+Vietnam,Lâm Hà,Lâm Đồng,,,144436,District,,,#N/A,,Lâm ĐồngVietnam,,,,,,,,,,,,,region,1,VN-35,Tỉnh Lâm Đồng,NONE,0.0,VN-35
+Vietnam,Bảo Lâm,Lâm Đồng,,,118090,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Bảo Lâm 3,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.787,VN-35
+Vietnam,Đơn Dương,Lâm Đồng,,,107281,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Đơn Dương,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.907,VN-35
+Vietnam,Đam Rông,Lâm Đồng,,,54217,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Đam Rông 2,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.812,VN-35
+Vietnam,Đạ Tẻh,Lâm Đồng,,,43415,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Đạ Tẻh,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.85,VN-35
+Vietnam,Cát Tiên,Lâm Đồng,,,35283,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Cát Tiên,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.892,VN-35
+Vietnam,Đạ Huoai,Lâm Đồng,,,33998,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Đạ Huoai,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.892,VN-35
+Vietnam,Lạc Dương,Lâm Đồng,,,27956,District,,,#N/A,,Lâm ĐồngVietnam,,,,,locality,,VN-35,Xã Lạc Dương,,,,,region,1,VN-35,Tỉnh Lâm Đồng,LOW,0.907,VN-35
+Vietnam,Hữu Lũng,Lạng Sơn,,,121735,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Hữu Lũng,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.892,VN-09
+Vietnam,Lạng Sơn,Lạng Sơn,,,103284,District-level City,,,#N/A,,Lạng SơnVietnam,,,,,region,1,VN-09,Tỉnh Lạng Sơn,,,,,region,1,VN-09,Tỉnh Lạng Sơn,HIGH,1.0,VN-09
+Vietnam,Lộc Bình,Lạng Sơn,,,84740,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Lộc Bình,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.892,VN-09
+Vietnam,Cao Lộc,Lạng Sơn,,,79873,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Cao Lộc,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.874,VN-09
+Vietnam,Chi Lăng,Lạng Sơn,,,75063,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Chi Lăng,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.892,VN-09
+Vietnam,Bắc Sơn,Lạng Sơn,,,71967,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Bắc Sơn,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.874,VN-09
+Vietnam,Tràng Định,Lạng Sơn,,,59827,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Tràng Định,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.92,VN-09
+Vietnam,Văn Quan,Lạng Sơn,,,54202,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Văn Quan,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.892,VN-09
+Vietnam,Bình Gia,Lạng Sơn,,,52689,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Bình Gia,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.892,VN-09
+Vietnam,Văn Lãng,Lạng Sơn,,,49696,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Văn Lãng,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.892,VN-09
+Vietnam,Đình Lập,Lạng Sơn,,,28579,District,,,#N/A,,Lạng SơnVietnam,,,,,locality,,VN-09,Xã Đình Lập,,,,,region,1,VN-09,Tỉnh Lạng Sơn,LOW,0.892,VN-09
+Vietnam,Lào Cai,Lào Cai,,,127854,District-level City,,,#N/A,,Lào CaiVietnam,,,,,region,1,VN-02,Tỉnh Lào Cai,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Bảo Thắng,Lào Cai,,,112897,District,,,#N/A,,Lào CaiVietnam,,,,,locality,,VN-02,Xã Bảo Thắng,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Văn Bàn,Lào Cai,,,89167,District,,,#N/A,,Lào CaiVietnam,,,,,locality,,VN-02,Xã Văn Bàn,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Bảo Yên,Lào Cai,,,85564,District,,,#N/A,,Lào CaiVietnam,,,,,locality,,VN-02,Xã Bảo Yên,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Bát Xát,Lào Cai,,,82733,District,,,#N/A,,Lào CaiVietnam,,,,,locality,,VN-02,Xã Bát Xát,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Sa Pa,Lào Cai,,,65695,District,,,#N/A,,Lào CaiVietnam,,,,,,,,,,,,,region,1,VN-02,Tỉnh Lào Cai,NONE,0.0,VN-02
+Vietnam,Bắc Hà,Lào Cai,,,65338,District,,,#N/A,,Lào CaiVietnam,,,,,locality,,VN-02,Xã Bắc Hà,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Mường Khương,Lào Cai,,,63682,District,,,#N/A,,Lào CaiVietnam,,,,,locality,,VN-02,Xã Mường Khương,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Si Ma Cai,Lào Cai,,,37490,District,,,#N/A,,Lào CaiVietnam,,,,,locality,,VN-02,Xã Si Ma Cai,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Tân An,Long An,,,145120,District-level City,Tân An,,Tân An,,Long AnVietnam,,,,,locality,,VN-22,Xã Tân An,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Châu Thành,Long An,,,109812,District,Tân An,,Tân An,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thủ Thừa,Long An,,,98333,District,Tân An,,Tân An,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tân Trụ,Long An,,,66502,District,Tân An,,Tân An,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đức Hòa,Long An,,,315711,District,,,#N/A,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Cần Giuộc,Long An,,,214914,District,,,#N/A,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Cần Đước,Long An,,,187359,District,,,#N/A,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bến Lức,Long An,,,181660,District,,,#N/A,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tân Thạnh,Long An,,,77537,District,,,#N/A,,Long AnVietnam,,,,,locality,,VN-21,Xã Tân Thành,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Đức Huệ,Long An,,,65961,District,,,#N/A,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thạnh Hóa,Long An,,,56074,District,,,#N/A,,Long AnVietnam,,,,,region,1,VN-21,Tỉnh Thanh Hóa,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Vĩnh Hưng,Long An,,,50074,District,,,#N/A,,Long AnVietnam,,,,,locality,,VN-68,Xã Vĩnh Hưng,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Tân Hưng,Long An,,,47651,District,,,#N/A,,Long AnVietnam,,,,,locality,,VN-66,Xã Tân Hưng,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Kiến Tường,Long An,,,43674,District-level Town,,,#N/A,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Mộc Hóa,Long An,,,28165,District,,,#N/A,,Long AnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hải Hậu,Nam Định,,,262901,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-18,Xã Hải Hậu,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Nam Định,Nam Định,,,236294,District-level City,,,#N/A,,Nam ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ý Yên,Nam Định,,,229006,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-18,Xã Ý Yên,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Nam Trực,Nam Định,,,183241,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-18,Xã Nam Trực,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Nghĩa Hưng,Nam Định,,,175786,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-22,Xã Nghĩa Hưng,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Trực Ninh,Nam Định,,,172557,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-18,Xã Trực Ninh,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Giao Thủy,Nam Định,,,167752,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-18,Xã Giao Thủy,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Xuân Trường,Nam Định,,,149480,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-18,Xã Xuân Trường,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Vụ Bản,Nam Định,,,130862,District,,,#N/A,,Nam ĐịnhVietnam,,,,,locality,,VN-18,Xã Vụ Bản,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Mỹ Lộc,Nam Định,,,72514,District,,,#N/A,,Nam ĐịnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Vinh,Nghệ An,,,339114,District-level City,Vinh,,Vinh,,Nghệ AnVietnam,,,,,,,,,,,,,region,1,VN-22,Tỉnh Nghệ An,NONE,0.0,VN-22
+Vietnam,Nghi Lộc,Nghệ An,,,218005,District,Vinh,,Vinh,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Nghi Lộc,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Hưng Nguyên,Nghệ An,,,124245,District,Vinh,,Vinh,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Hưng Nguyên,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Cửa Lò,Nghệ An,,,55668,District-level Town,Vinh,,Vinh,,Nghệ AnVietnam,,,,,,,,,,,,,region,1,VN-22,Tỉnh Nghệ An,NONE,0.0,VN-22
+Vietnam,Diễn Châu,Nghệ An,,,312506,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Diễn Châu,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Yên Thành,Nghệ An,,,301635,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Yên Thành,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Quỳnh Lưu,Nghệ An,,,276259,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Quỳnh Lưu,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Thanh Chương,Nghệ An,,,240808,District,,,#N/A,,Nghệ AnVietnam,,,,,,,,,,,,,region,1,VN-22,Tỉnh Nghệ An,NONE,0.0,VN-22
+Vietnam,Đô Lương,Nghệ An,,,213543,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Đô Lương,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Nam Đàn,Nghệ An,,,164634,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Nam Đàn,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Tân Kỳ,Nghệ An,,,147257,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Tân Kỳ,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Nghĩa Đàn,Nghệ An,,,140515,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Nghĩa Đàn,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Quỳ Hợp,Nghệ An,,,134154,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Quỳ Hợp,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Anh Sơn,Nghệ An,,,116922,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Anh Sơn,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Hoàng Mai,Nghệ An,,,113360,District-level Town,,,#N/A,,Nghệ AnVietnam,,,,,,,,,,,,,region,1,VN-22,Tỉnh Nghệ An,NONE,0.0,VN-22
+Vietnam,Kỳ Sơn,Nghệ An,,,80288,District,,,#N/A,,Nghệ AnVietnam,,,,,,,,,,,,,region,1,VN-22,Tỉnh Nghệ An,NONE,0.0,VN-22
+Vietnam,Tương Dương,Nghệ An,,,77830,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Tương Dương,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Con Cuông,Nghệ An,,,75168,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Con Cuông,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Quế Phong,Nghệ An,,,71940,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Quế Phong,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Thái Hòa,Nghệ An,,,66127,District-level Town,,,#N/A,,Nghệ AnVietnam,,,,,,,,,,,,,region,1,VN-22,Tỉnh Nghệ An,NONE,0.0,VN-22
+Vietnam,Quỳ Châu,Nghệ An,,,57813,District,,,#N/A,,Nghệ AnVietnam,,,,,locality,,VN-22,Xã Quỳ Châu,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Ninh Bình,Ninh Bình,,,128480,District-level City,Ninh Binh,,Ninh Binh,,Ninh BìnhVietnam,,,,,region,1,VN-18,Tỉnh Ninh Bình,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Kim Sơn,Ninh Bình,,,182942,District,,,#N/A,,Ninh BìnhVietnam,,,,,locality,,VN-18,Xã Kim Sơn,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Nho Quan,Ninh Bình,,,149830,District,,,#N/A,,Ninh BìnhVietnam,,,,,locality,,VN-18,Xã Nho Quan,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Yên Khánh,Ninh Bình,,,147069,District,,,#N/A,,Ninh BìnhVietnam,,,,,locality,,VN-18,Xã Yên Khánh,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Gia Viễn,Ninh Bình,,,120992,District,,,#N/A,,Ninh BìnhVietnam,,,,,locality,,VN-18,Xã Gia Viễn,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Yên Mô,Ninh Bình,,,118469,District,,,#N/A,,Ninh BìnhVietnam,,,,,locality,,VN-18,Xã Yên Mô,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Hoa Lư,Ninh Bình,,,71839,District,,,#N/A,,Ninh BìnhVietnam,,,,,,,,,,,,,region,1,VN-18,Tỉnh Ninh Bình,NONE,0.0,VN-18
+Vietnam,Tam Điệp,Ninh Bình,,,62866,District-level City,,,#N/A,,Ninh BìnhVietnam,,,,,,,,,,,,,region,1,VN-18,Tỉnh Ninh Bình,NONE,0.0,VN-18
+Vietnam,Phan Rang - Tháp Chàm,Ninh Thuận,,,167394,District-level City,,,#N/A,,Ninh ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ninh Phước,Ninh Thuận,,,128028,District,,,#N/A,,Ninh ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ninh Hải,Ninh Thuận,,,92231,District,,,#N/A,,Ninh ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ninh Sơn,Ninh Thuận,,,71888,District,,,#N/A,,Ninh ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thuận Nam,Ninh Thuận,,,57006,District,,,#N/A,,Ninh ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thuận Bắc,Ninh Thuận,,,43322,District,,,#N/A,,Ninh ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bác Ái,Ninh Thuận,,,30598,District,,,#N/A,,Ninh ThuậnVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Việt Trì,Phú Thọ,,,214777,District-level City,,,#N/A,,Phú ThọVietnam,,,,,,,,,,,,,region,1,VN-68,Tỉnh Phú Thọ,NONE,0.0,VN-68
+Vietnam,Cẩm Khê,Phú Thọ,,,139424,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Cẩm Khê,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Thanh Sơn,Phú Thọ,,,133132,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Thanh Sơn,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Thanh Ba,Phú Thọ,,,115470,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Thanh Ba,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Đoan Hùng,Phú Thọ,,,115131,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Đoan Hùng,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Phù Ninh,Phú Thọ,,,111011,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Phù Ninh,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Lâm Thao,Phú Thọ,,,107989,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Lâm Thao,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Hạ Hòa,Phú Thọ,,,104997,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Hạ Hòa,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Yên Lập,Phú Thọ,,,92858,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Yên Lập,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Tam Nông,Phú Thọ,,,87931,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Tam Nông,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Tân Sơn,Phú Thọ,,,85731,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Tân Sơn,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Thanh Thủy,Phú Thọ,,,84622,District,,,#N/A,,Phú ThọVietnam,,,,,locality,,VN-68,Xã Thanh Thủy,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Phú Thọ,Phú Thọ,,,70653,District-level Town,,,#N/A,,Phú ThọVietnam,,,,,region,1,VN-68,Tỉnh Phú Thọ,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Tuy Hòa,Phú Yên,,,155921,District-level City,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tuy An,Phú Yên,,,123167,District,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đông Hòa,Phú Yên,,,115044,District,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tây Hòa,Phú Yên,,,110983,District,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Phú Hòa,Phú Yên,,,102074,District,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sông Cầu,Phú Yên,,,99432,District-level Town,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sơn Hòa,Phú Yên,,,59497,District,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Đồng Xuân,Phú Yên,,,55030,District,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sông Hinh,Phú Yên,,,51816,District,,,#N/A,,Phú YênVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Bố Trạch,Quảng Bình,,,188375,District,,,#N/A,,Quảng BìnhVietnam,,,,,locality,,VN-25,Xã Bố Trạch,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Lệ Thủy,Quảng Bình,,,137831,District,,,#N/A,,Quảng BìnhVietnam,,,,,locality,,VN-25,Xã Lệ Thủy,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Đồng Hới,Quảng Bình,,,133672,District-level City,,,#N/A,,Quảng BìnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Quảng Trạch,Quảng Bình,,,110380,District,,,#N/A,,Quảng BìnhVietnam,,,,,locality,,VN-25,Xã Quảng Trạch,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Ba Đồn,Quảng Bình,,,106413,District-level Town,,,#N/A,,Quảng BìnhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Quảng Ninh,Quảng Bình,,,90335,District,,,#N/A,,Quảng BìnhVietnam,,,,,region,1,VN-13,Tỉnh Quảng Ninh,,,,,region,1,VN-13,Tỉnh Quảng Ninh,HIGH,1.0,VN-13
+Vietnam,Tuyên Hóa,Quảng Bình,,,77754,District,,,#N/A,,Quảng BìnhVietnam,,,,,locality,,VN-25,Xã Tuyên Hóa,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Minh Hóa,Quảng Bình,,,50670,District,,,#N/A,,Quảng BìnhVietnam,,,,,locality,,VN-25,Xã Minh Hóa,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Núi Thành,Quảng Nam,,,147721,District,Tam Kỳ,,Tam Kỳ,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Núi Thành,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Tam Kỳ,Quảng Nam,,,122374,District-level City,Tam Kỳ,,Tam Kỳ,,Quảng NamVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Điện Bàn,Quảng Nam,,,226564,District-level Town,,,#N/A,,Quảng NamVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thăng Bình,Quảng Nam,,,173726,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-21,Xã Thăng Bình,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Đại Lộc,Quảng Nam,,,141851,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Đại Lộc,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Duy Xuyên,Quảng Nam,,,126686,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Duy Xuyên,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Hội An,Quảng Nam,,,98599,District-level City,,,#N/A,,Quảng NamVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Quế Sơn,Quảng Nam,,,80821,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Quế Sơn,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Phú Ninh,Quảng Nam,,,77204,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-68,Xã Phù Ninh,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Tiên Phước,Quảng Nam,,,66239,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Tiên Phước,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Bắc Trà My,Quảng Nam,,,41335,District,,,#N/A,,Quảng NamVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hiệp Đức,Quảng Nam,,,37127,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Hiệp Đức,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Nam Trà My,Quảng Nam,,,31306,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Nam Trà My,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Nông Sơn,Quảng Nam,,,26678,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Nông Sơn,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Phước Sơn,Quảng Nam,,,26337,District,,,#N/A,,Quảng NamVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Nam Giang,Quảng Nam,,,26123,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Nam Giang,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Đông Giang,Quảng Nam,,,25116,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Đông Giang,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Tây Giang,Quảng Nam,,,20005,District,,,#N/A,,Quảng NamVietnam,,,,,locality,,VN-DN,Xã Tây Giang,,,,,region,1,VN-DN,Thành phố Đà Nẵng,HIGH,1.0,VN-DN
+Vietnam,Quảng Ngãi,Quảng Ngãi,,,261417,District-level City,,,#N/A,,Quảng NgãiVietnam,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,HIGH,1.0,VN-29
+Vietnam,Bình Sơn,Quảng Ngãi,,,181050,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Bình Sơn,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.892,VN-29
+Vietnam,Tư Nghĩa,Quảng Ngãi,,,128661,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Tư Nghĩa,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.892,VN-29
+Vietnam,Đức Phổ,Quảng Ngãi,,,120629,District,,,#N/A,,Quảng NgãiVietnam,,,,,,,,,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,NONE,0.0,VN-29
+Vietnam,Mộ Đức,Quảng Ngãi,,,112592,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Mộ Đức,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.85,VN-29
+Vietnam,Sơn Tịnh,Quảng Ngãi,,,95843,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Sơn Tịnh,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.892,VN-29
+Vietnam,Nghĩa Hành,Quảng Ngãi,,,82250,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Nghĩa Hành,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.92,VN-29
+Vietnam,Sơn Hà,Quảng Ngãi,,,78377,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Sơn Hà,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.85,VN-29
+Vietnam,Ba Tơ,Quảng Ngãi,,,59438,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Ba Tơ,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.819,VN-29
+Vietnam,Trà Bồng,Quảng Ngãi,,,32250,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Trà Bồng,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.892,VN-29
+Vietnam,Sơn Tây,Quảng Ngãi,,,21174,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Sơn Tây,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.874,VN-29
+Vietnam,Tây Trà,Quảng Ngãi,,,20744,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Tây Trà,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.874,VN-29
+Vietnam,Minh Long,Quảng Ngãi,,,18722,District,,,#N/A,,Quảng NgãiVietnam,,,,,locality,,VN-29,Xã Minh Long,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,LOW,0.907,VN-29
+Vietnam,Lý Sơn,Quảng Ngãi,,,18550,District,,,#N/A,,Quảng NgãiVietnam,,,,,,,,,,,,,region,1,VN-29,Tỉnh Quảng Ngãi,NONE,0.0,VN-29
+Vietnam,Hạ Long,Quảng Ninh,,,270054,District-level City,Hạ Long,,Hạ Long,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Cẩm Phả,Quảng Ninh,,,190232,District-level City,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Đông Triều,Quảng Ninh,,,171673,District-level Town,,,#N/A,,Quảng NinhVietnam,,,,,locality,,VN-13,Phường Đông Triều,,,,,region,1,VN-13,Tỉnh Quảng Ninh,LOW,0.791,VN-13
+Vietnam,Quảng Yên (Yên Hưng),Quảng Ninh,,,145920,District-level Town,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Uông Bí,Quảng Ninh,,,120982,District-level City,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Móng Cái,Quảng Ninh,,,108553,District-level City,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Hải Hà,Quảng Ninh,,,61566,District,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Hoành Bồ,Quảng Ninh,,,52656,District,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Tiên Yên,Quảng Ninh,,,50830,District,,,#N/A,,Quảng NinhVietnam,,,,,locality,,VN-13,Xã Tiên Yên,,,,,region,1,VN-13,Tỉnh Quảng Ninh,HIGH,1.0,VN-13
+Vietnam,Vân Đồn,Quảng Ninh,,,46616,District,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Đầm Hà,Quảng Ninh,,,41217,District,,,#N/A,,Quảng NinhVietnam,,,,,locality,,VN-13,Xã Đầm Hà,,,,,region,1,VN-13,Tỉnh Quảng Ninh,LOW,0.85,VN-13
+Vietnam,Bình Liêu,Quảng Ninh,,,31637,District,,,#N/A,,Quảng NinhVietnam,,,,,locality,,VN-13,Xã Bình Liêu,,,,,region,1,VN-13,Tỉnh Quảng Ninh,HIGH,1.0,VN-13
+Vietnam,Ba Chẽ,Quảng Ninh,,,22103,District,,,#N/A,,Quảng NinhVietnam,,,,,locality,,VN-13,Xã Ba Chẽ,,,,,region,1,VN-13,Tỉnh Quảng Ninh,HIGH,1.0,VN-13
+Vietnam,Cô Tô,Quảng Ninh,,,6285,District,,,#N/A,,Quảng NinhVietnam,,,,,,,,,,,,,region,1,VN-13,Tỉnh Quảng Ninh,NONE,0.0,VN-13
+Vietnam,Đông Hà,Quảng Trị,,,95658,District-level City,,,#N/A,,Quảng TrịVietnam,,,,,locality,,VN-25,Phường Đông Hà,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Hướng Hóa,Quảng Trị,,,90918,District,,,#N/A,,Quảng TrịVietnam,,,,,,,,,,,,,region,1,VN-25,Tỉnh Quảng Trị,NONE,0.0,VN-25
+Vietnam,Triệu Phong,Quảng Trị,,,88852,District,,,#N/A,,Quảng TrịVietnam,,,,,locality,,VN-25,Xã Triệu Phong,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Vĩnh Linh,Quảng Trị,,,87451,District,,,#N/A,,Quảng TrịVietnam,,,,,locality,,VN-25,Xã Vĩnh Linh,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Hải Lăng,Quảng Trị,,,79533,District,,,#N/A,,Quảng TrịVietnam,,,,,locality,,VN-25,Xã Hải Lăng,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Gio Linh,Quảng Trị,,,75276,District,,,#N/A,,Quảng TrịVietnam,,,,,locality,,VN-25,Xã Gio Linh,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Cam Lộ,Quảng Trị,,,47777,District,,,#N/A,,Quảng TrịVietnam,,,,,locality,,VN-25,Xã Cam Lộ,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Đa Krông,Quảng Trị,,,43208,District,,,#N/A,,Quảng TrịVietnam,,,,,,,,,,,,,region,1,VN-25,Tỉnh Quảng Trị,NONE,0.0,VN-25
+Vietnam,Quảng Trị,Quảng Trị,,,23356,District-level Town,,,#N/A,,Quảng TrịVietnam,,,,,region,1,VN-25,Tỉnh Quảng Trị,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Cồn Cỏ,Quảng Trị,,,346,District,,,#N/A,,Quảng TrịVietnam,,,,,locality,,VN-25,Đặc khu Cồn Cỏ,,,,,region,1,VN-25,Tỉnh Quảng Trị,HIGH,1.0,VN-25
+Vietnam,Vĩnh Châu,Sóc Trăng,,,164680,District-level Town,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Mỹ Xuyên,Sóc Trăng,,,150067,District,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Kế Sách,Sóc Trăng,,,149156,District,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sóc Trăng,Sóc Trăng,,,137305,District-level City,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Trần Đề,Sóc Trăng,,,112463,District,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Châu Thành,Sóc Trăng,,,95188,District,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Long Phú,Sóc Trăng,,,94255,District,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Mỹ Tú,Sóc Trăng,,,90524,District,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Ngã Năm,Sóc Trăng,,,74115,District-level Town,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thạnh Trị,Sóc Trăng,,,73596,District,,,#N/A,,Sóc TrăngVietnam,,,,,locality,,VN-HN,Xã Thanh Trì,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Cù Lao Dung,Sóc Trăng,,,58304,District,,,#N/A,,Sóc TrăngVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Thuận Châu,Sơn La,,,172763,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Thuận Châu,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Mai Sơn,Sơn La,,,163881,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Mai Sơn,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Sông Mã,Sơn La,,,154224,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Sông Mã,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Phù Yên,Sơn La,,,114974,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Phù Yên,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Mộc Châu,Sơn La,,,114460,District,,,#N/A,,Sơn LaVietnam,,,,,,,,,,,,,region,1,VN-05,Tỉnh Sơn La,NONE,0.0,VN-05
+Vietnam,Sơn La,Sơn La,,,106052,District-level City,,,#N/A,,Sơn LaVietnam,,,,,region,1,VN-05,Tỉnh Sơn La,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Mường La,Sơn La,,,99534,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Mường La,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Yên Châu,Sơn La,,,79295,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Yên Châu,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Bắc Yên,Sơn La,,,66784,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Bắc Yên,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Quỳnh Nhai,Sơn La,,,64045,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Quỳnh Nhai,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Vân Hồ,Sơn La,,,62188,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Vân Hồ,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Sốp Cộp,Sơn La,,,50215,District,,,#N/A,,Sơn LaVietnam,,,,,locality,,VN-05,Xã Sốp Cộp,,,,,region,1,VN-05,Tỉnh Sơn La,HIGH,1.0,VN-05
+Vietnam,Trảng Bàng,Tây Ninh,,,178148,District,,,#N/A,,Tây NinhVietnam,,,,,locality,,VN-37,Phường Trảng Bàng,,,,,region,1,VN-37,Tỉnh Tây Ninh,LOW,0.791,VN-37
+Vietnam,Gò Dầu,Tây Ninh,,,152757,District,,,#N/A,,Tây NinhVietnam,,,,,,,,,,,,,region,1,VN-37,Tỉnh Tây Ninh,NONE,0.0,VN-37
+Vietnam,Châu Thành,Tây Ninh,,,140769,District,,,#N/A,,Tây NinhVietnam,,,,,locality,,VN-37,Xã Châu Thành,,,,,region,1,VN-37,Tỉnh Tây Ninh,LOW,0.92,VN-37
+Vietnam,Hòa Thành,Tây Ninh,,,137746,District,,,#N/A,,Tây NinhVietnam,,,,,,,,,,,,,region,1,VN-37,Tỉnh Tây Ninh,NONE,0.0,VN-37
+Vietnam,Tân Châu,Tây Ninh,,,134743,District,,,#N/A,,Tây NinhVietnam,,,,,locality,,VN-37,Xã Tân Châu,,,,,region,1,VN-37,Tỉnh Tây Ninh,LOW,0.892,VN-37
+Vietnam,Tây Ninh,Tây Ninh,,,133805,District-level City,,,#N/A,,Tây NinhVietnam,,,,,region,1,VN-37,Tỉnh Tây Ninh,,,,,region,1,VN-37,Tỉnh Tây Ninh,HIGH,1.0,VN-37
+Vietnam,Dương Minh Châu,Tây Ninh,,,119158,District,,,#N/A,,Tây NinhVietnam,,,,,locality,,VN-37,Xã Dương Minh Châu,,,,,region,1,VN-37,Tỉnh Tây Ninh,MED,0.959,VN-37
+Vietnam,Tân Biên,Tây Ninh,,,102190,District,,,#N/A,,Tây NinhVietnam,,,,,locality,,VN-37,Xã Tân Biên,,,,,region,1,VN-37,Tỉnh Tây Ninh,LOW,0.892,VN-37
+Vietnam,Bến Cầu,Tây Ninh,,,69849,District,,,#N/A,,Tây NinhVietnam,,,,,locality,,VN-37,Xã Bến Cầu,,,,,region,1,VN-37,Tỉnh Tây Ninh,LOW,0.874,VN-37
+Vietnam,Thái Thụy,Thái Bình,,,255222,District,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-66,Xã Thái Thụy,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Hưng Hà,Thái Bình,,,253272,District,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-66,Xã Hưng Hà,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Đông Hưng,Thái Bình,,,244838,District,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-66,Xã Đông Hưng,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Quỳnh Phụ,Thái Bình,,,240940,District,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-22,Xã Quỳnh Phú,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Vũ Thư,Thái Bình,,,227921,District,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-66,Xã Vũ Thư,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Kiến Xương,Thái Bình,,,216682,District,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-66,Xã Kiến Xương,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Tiền Hải,Thái Bình,,,215535,District,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-66,Xã Tiền Hải,,,,,region,1,VN-66,Tỉnh Hưng Yên,HIGH,1.0,VN-66
+Vietnam,Thái Bình,Thái Bình,,,206037,District-level City,,,#N/A,,Thái BìnhVietnam,,,,,locality,,VN-07,Xã Thái Bình,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Thái Nguyên,Thái Nguyên,,,340403,District-level City,Hanoi,,Hanoi,,Thái NguyênVietnam,,,,,region,1,VN-69,Tỉnh Thái Nguyên,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Phổ Yên,Thái Nguyên,,,196378,District-level Town,Hanoi,,Hanoi,,Thái NguyênVietnam,,,,,,,,,,,,,region,1,VN-69,Tỉnh Thái Nguyên,NONE,0.0,VN-69
+Vietnam,Phú Bình,Thái Nguyên,,,156804,District,Hanoi,,Hanoi,,Thái NguyênVietnam,,,,,locality,,VN-69,Xã Phú Bình,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Sông Công,Thái Nguyên,,,69382,District-level City,Hanoi,,Hanoi,,Thái NguyênVietnam,,,,,,,,,,,,,region,1,VN-69,Tỉnh Thái Nguyên,NONE,0.0,VN-69
+Vietnam,Đại Từ,Thái Nguyên,,,171703,District,,,#N/A,,Thái NguyênVietnam,,,,,locality,,VN-69,Xã Đại Từ,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Phú Lương,Thái Nguyên,,,102292,District,,,#N/A,,Thái NguyênVietnam,,,,,locality,,VN-69,Xã Phú Lương,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Đồng Hỷ,Thái Nguyên,,,92421,District,,,#N/A,,Thái NguyênVietnam,,,,,locality,,VN-69,Xã Đồng Hỷ,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Định Hóa,Thái Nguyên,,,89288,District,,,#N/A,,Thái NguyênVietnam,,,,,locality,,VN-69,Xã Định Hóa,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Võ Nhai,Thái Nguyên,,,68080,District,,,#N/A,,Thái NguyênVietnam,,,,,locality,,VN-69,Xã Võ Nhai,,,,,region,1,VN-69,Tỉnh Thái Nguyên,HIGH,1.0,VN-69
+Vietnam,Thanh Hóa,Thanh Hóa,,,359910,District-level City,Thanh Hoa,,Thanh Hoa,,Thanh HóaVietnam,,,,,region,1,VN-21,Tỉnh Thanh Hóa,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Hoằng Hóa,Thanh Hóa,,,233043,District,Thanh Hoa,,Thanh Hoa,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Hoằng Hóa,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Sầm Sơn,Thanh Hóa,,,109208,District-level City,Thanh Hoa,,Thanh Hoa,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Tĩnh Gia,Thanh Hóa,,,251116,District,,,#N/A,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Triệu Sơn,Thanh Hóa,,,202386,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Triệu Sơn,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Quảng Xương,Thanh Hóa,,,199943,District,,,#N/A,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Thọ Xuân,Thanh Hóa,,,195998,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Thọ Xuân,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Nông Cống,Thanh Hóa,,,182801,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Nông Cống,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Hậu Lộc,Thanh Hóa,,,176418,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Hậu Lộc,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Yên Định,Thanh Hóa,,,165830,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Yên Định,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Thiệu Hóa,Thanh Hóa,,,160732,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Thiệu Hóa,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Thạch Thành,Thanh Hóa,,,144343,District,,,#N/A,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Nga Sơn,Thanh Hóa,,,141114,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Nga Sơn,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Ngọc Lặc,Thanh Hóa,,,136611,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Ngọc Lặc,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Hà Trung,Thanh Hóa,,,118826,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Hà Trung,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Cẩm Thủy,Thanh Hóa,,,110091,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Cẩm Thủy,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Bá Thước,Thanh Hóa,,,100834,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Bá Thước,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Như Thanh,Thanh Hóa,,,94906,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Như Thanh,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Thường Xuân,Thanh Hóa,,,89131,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Thường Xuân,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Vĩnh Lộc,Thanh Hóa,,,86362,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Vĩnh Lộc,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Đông Sơn,Thanh Hóa,,,76923,District,,,#N/A,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Như Xuân,Thanh Hóa,,,66240,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Như Xuân,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Bỉm Sơn,Thanh Hóa,,,58378,District-level Town,,,#N/A,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Lang Chánh,Thanh Hóa,,,49654,District,,,#N/A,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Quan Hóa,Thanh Hóa,,,48856,District,,,#N/A,,Thanh HóaVietnam,,,,,,,,,,,,,region,1,VN-21,Tỉnh Thanh Hóa,NONE,0.0,VN-21
+Vietnam,Quan Sơn,Thanh Hóa,,,40526,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Quan Sơn,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Mường Lát,Thanh Hóa,,,39948,District,,,#N/A,,Thanh HóaVietnam,,,,,locality,,VN-21,Xã Mường Lát,,,,,region,1,VN-21,Tỉnh Thanh Hóa,HIGH,1.0,VN-21
+Vietnam,Huế,Thừa Thiên-Huế,,,351456,District-level City,Huế,,Huế,,Thừa Thiên-HuếVietnam,,,,,region,1,VN-26,Thành phố Huế,,,,,region,1,VN-26,Thành phố Huế,HIGH,1.0,VN-26
+Vietnam,Phú Vang,Thừa Thiên-Huế,,,179589,District,Huế,,Huế,,Thừa Thiên-HuếVietnam,,,,,locality,,VN-26,Xã Phú Vang,,,,,region,1,VN-26,Thành phố Huế,HIGH,1.0,VN-26
+Vietnam,Hương Trà,Thừa Thiên-Huế,,,115088,District-level Town,Huế,,Huế,,Thừa Thiên-HuếVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Hương Thủy,Thừa Thiên-Huế,,,113964,District-level Town,Huế,,Huế,,Thừa Thiên-HuếVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Quảng Điền,Thừa Thiên-Huế,,,77178,District,Huế,,Huế,,Thừa Thiên-HuếVietnam,,,,,locality,,VN-26,Xã Quảng Điền,,,,,region,1,VN-26,Thành phố Huế,HIGH,1.0,VN-26
+Vietnam,Phú Lộc,Thừa Thiên-Huế,,,129846,District,,,#N/A,,Thừa Thiên-HuếVietnam,,,,,locality,,VN-26,Xã Phú Lộc,,,,,region,1,VN-26,Thành phố Huế,HIGH,1.0,VN-26
+Vietnam,Phong Điền,Thừa Thiên-Huế,,,87781,District,,,#N/A,,Thừa Thiên-HuếVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,A Lưới,Thừa Thiên-Huế,,,49418,District,,,#N/A,,Thừa Thiên-HuếVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Nam Đông,Thừa Thiên-Huế,,,24300,District,,,#N/A,,Thừa Thiên-HuếVietnam,,,,,locality,,VN-18,Xã Nam Đồng,,,,,region,1,VN-18,Tỉnh Ninh Bình,HIGH,1.0,VN-18
+Vietnam,Cái Bè,Tiền Giang,,,292738,District,,,#N/A,,Tiền GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Châu Thành,Tiền Giang,,,263426,District,,,#N/A,,Tiền GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Mỹ Tho,Tiền Giang,,,228109,District-level City,,,#N/A,,Tiền GiangVietnam,,,,,locality,,VN-45,Xã Mỹ Thọ,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Cai Lậy,Tiền Giang,,,193328,District,,,#N/A,,Tiền GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Chợ Gạo,Tiền Giang,,,187711,District,,,#N/A,,Tiền GiangVietnam,,,,,locality,,VN-45,Xã Chợ Gạo,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Gò Công Đông,Tiền Giang,,,139060,District,,,#N/A,,Tiền GiangVietnam,,,,,locality,,VN-45,Xã Gò Công Đông,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Gò Công Tây,Tiền Giang,,,127132,District,,,#N/A,,Tiền GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Cai Lậy (thị xã),Tiền Giang,,,125615,District-level Town,,,#N/A,,Tiền GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Gò Công,Tiền Giang,,,99657,District-level Town,,,#N/A,,Tiền GiangVietnam,,,,,locality,,VN-45,Phường Gò Công,,,,,region,1,VN-45,Tỉnh Đồng Tháp,HIGH,1.0,VN-45
+Vietnam,Tân Phước,Tiền Giang,,,65331,District,,,#N/A,,Tiền GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tân Phú Đông,Tiền Giang,,,42078,District,,,#N/A,,Tiền GiangVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Càng Long,Trà Vinh,,,147694,District,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Trà Cú,Trà Vinh,,,146329,District,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Châu Thành,Trà Vinh,,,144040,District,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Cầu Ngang,Trà Vinh,,,121254,District,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Trà Vinh,Trà Vinh,,,112584,District-level City,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tiểu Cần,Trà Vinh,,,107846,District,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Cầu Kè,Trà Vinh,,,102767,District,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Duyên Hải,Trà Vinh,,,78444,District,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Duyên Hải (thị xã),Trà Vinh,,,48210,District-level Town,,,#N/A,,Trà VinhVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sơn Dương,Tuyên Quang,,,183600,District,,,#N/A,,Tuyên QuangVietnam,,,,,locality,,VN-07,Xã Sơn Dương,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Yên Sơn,Tuyên Quang,,,173766,District,,,#N/A,,Tuyên QuangVietnam,,,,,locality,,VN-07,Xã Yên Sơn,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Chiêm Hóa,Tuyên Quang,,,127073,District,,,#N/A,,Tuyên QuangVietnam,,,,,locality,,VN-07,Xã Chiêm Hóa,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Hàm Yên,Tuyên Quang,,,121342,District,,,#N/A,,Tuyên QuangVietnam,,,,,locality,,VN-07,Xã Hàm Yên,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Tuyên Quang,Tuyên Quang,,,104645,District-level City,,,#N/A,,Tuyên QuangVietnam,,,,,region,1,VN-07,Tỉnh Tuyên Quang,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Nà Hang,Tuyên Quang,,,43248,District,,,#N/A,,Tuyên QuangVietnam,,,,,locality,,VN-07,Xã Nà Hang,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Lâm Bình,Tuyên Quang,,,31137,District,,,#N/A,,Tuyên QuangVietnam,,,,,locality,,VN-07,Xã Lâm Bình,,,,,region,1,VN-07,Tỉnh Tuyên Quang,HIGH,1.0,VN-07
+Vietnam,Long Hồ,Vĩnh Long,,,167698,District,,,#N/A,,Vĩnh LongVietnam,,,,,locality,,VN-49,Xã Long Hồ,,,,,region,1,VN-49,Tỉnh Vĩnh Long,LOW,0.874,VN-49
+Vietnam,Tam Bình,Vĩnh Long,,,151520,District,,,#N/A,,Vĩnh LongVietnam,,,,,locality,,VN-49,Xã Tam Bình,,,,,region,1,VN-49,Tỉnh Vĩnh Long,LOW,0.892,VN-49
+Vietnam,Vũng Liêm,Vĩnh Long,,,149371,District,,,#N/A,,Vĩnh LongVietnam,,,,,,,,,,,,,region,1,VN-49,Tỉnh Vĩnh Long,NONE,0.0,VN-49
+Vietnam,Vĩnh Long,Vĩnh Long,,,137870,District-level City,,,#N/A,,Vĩnh LongVietnam,,,,,region,1,VN-49,Tỉnh Vĩnh Long,,,,,region,1,VN-49,Tỉnh Vĩnh Long,HIGH,1.0,VN-49
+Vietnam,Trà Ôn,Vĩnh Long,,,129589,District,,,#N/A,,Vĩnh LongVietnam,,,,,locality,,VN-49,Xã Trà Ôn,,,,,region,1,VN-49,Tỉnh Vĩnh Long,LOW,0.85,VN-49
+Vietnam,Mang Thít,Vĩnh Long,,,96172,District,,,#N/A,,Vĩnh LongVietnam,,,,,,,,,,,,,region,1,VN-49,Tỉnh Vĩnh Long,NONE,0.0,VN-49
+Vietnam,Bình Tân,Vĩnh Long,,,95709,District,,,#N/A,,Vĩnh LongVietnam,,,,,,,,,,,,,region,1,VN-49,Tỉnh Vĩnh Long,NONE,0.0,VN-49
+Vietnam,Bình Minh,Vĩnh Long,,,94862,District-level Town,,,#N/A,,Vĩnh LongVietnam,,,,,,,,,,,,,region,1,VN-49,Tỉnh Vĩnh Long,NONE,0.0,VN-49
+Vietnam,Vĩnh Tường,Vĩnh Phúc,,,205345,District,,,#N/A,,Vĩnh PhúcVietnam,,,,,locality,,VN-22,Xã Vĩnh Tường,,,,,region,1,VN-22,Tỉnh Nghệ An,HIGH,1.0,VN-22
+Vietnam,Yên Lạc,Vĩnh Phúc,,,156456,District,,,#N/A,,Vĩnh PhúcVietnam,,,,,locality,,VN-68,Xã Yên Lạc,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Lập Thạch,Vĩnh Phúc,,,136150,District,,,#N/A,,Vĩnh PhúcVietnam,,,,,locality,,VN-68,Xã Lập Thạch,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Bình Xuyên,Vĩnh Phúc,,,131013,District,,,#N/A,,Vĩnh PhúcVietnam,,,,,locality,,VN-68,Xã Bình Xuyên,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Vĩnh Yên,Vĩnh Phúc,,,119128,District-level City,,,#N/A,,Vĩnh PhúcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Tam Dương,Vĩnh Phúc,,,114391,District,,,#N/A,,Vĩnh PhúcVietnam,,,,,locality,,VN-68,Xã Tam Dương,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Phúc Yên,Vĩnh Phúc,,,106002,District-level City,,,#N/A,,Vĩnh PhúcVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Sông Lô,Vĩnh Phúc,,,98738,District,,,#N/A,,Vĩnh PhúcVietnam,,,,,locality,,VN-68,Xã Sông Lô,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Tam Đảo,Vĩnh Phúc,,,83931,District,,,#N/A,,Vĩnh PhúcVietnam,,,,,locality,,VN-68,Xã Tam Đảo,,,,,region,1,VN-68,Tỉnh Phú Thọ,HIGH,1.0,VN-68
+Vietnam,Văn Chấn,Yên Bái,,,155473,District,,,#N/A,,Yên BáiVietnam,,,,,locality,,VN-02,Xã Văn Chấn,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Văn Yên,Yên Bái,,,129679,District,,,#N/A,,Yên BáiVietnam,,,,,,,,,,,,,,,,,NONE,0.0,
+Vietnam,Yên Bình,Yên Bái,,,112046,District,,,#N/A,,Yên BáiVietnam,,,,,locality,,VN-02,Xã Yên Bình,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Lục Yên,Yên Bái,,,108817,District,,,#N/A,,Yên BáiVietnam,,,,,locality,,VN-02,Xã Lục Yên,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Yên Bái,Yên Bái,,,100631,District-level City,,,#N/A,,Yên BáiVietnam,,,,,locality,,VN-HN,Xã Yên Bài,,,,,region,1,VN-HN,Thành phố Hà Nội,HIGH,1.0,VN-HN
+Vietnam,Trấn Yên,Yên Bái,,,84675,District,,,#N/A,,Yên BáiVietnam,,,,,locality,,VN-02,Xã Trấn Yên,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Mù Cang Chải,Yên Bái,,,63961,District,,,#N/A,,Yên BáiVietnam,,,,,locality,,VN-02,Xã Mù Cang Chải,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Trạm Tấu,Yên Bái,,,33962,District,,,#N/A,,Yên BáiVietnam,,,,,locality,,VN-02,Xã Trạm Tấu,,,,,region,1,VN-02,Tỉnh Lào Cai,HIGH,1.0,VN-02
+Vietnam,Nghĩa Lộ,Yên Bái,,,31786,District-level Town,,,#N/A,,Yên BáiVietnam,,,,,,,,,,,,,,,,,NONE,0.0,

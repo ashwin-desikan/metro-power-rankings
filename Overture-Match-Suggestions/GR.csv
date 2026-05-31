@@ -1,0 +1,334 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Greece,Athens,Attica,,,637798,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Αθηναίων,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Piraeus,Attica,,,163572,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Πειραιώς,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Peristeri,Attica,,,132123,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Περιστερίου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Acharnae,Attica,,,108130,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Nikaia-Agios Ioannis Rentis,Attica,,,103355,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Νίκαιας - Αγίου Ιωάννη Ρέντη,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Kallithea,Attica,,,96118,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Καλλιθέας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Glyfada,Attica,,,89605,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Γλυφάδας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Keratsini-Drapetsona,Attica,,,89386,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Κερατσινίου - Δραπετσώνας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Ilion,Attica,,,83523,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Ιλίου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Chalandri,Attica,,,77118,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Χαλανδρίου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Ilioupoli,Attica,,,76708,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Ηλιούπολης,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Kifisia,Attica,,,72860,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Κηφισιάς,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Nea Smyrni,Attica,,,72546,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Νέας Σμύρνης,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Agios Dimitrios,Attica,,,71747,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Αγίου Δημητρίου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Marousi,Attica,,,70519,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Αμαρουσίου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Zografos,Attica,,,69857,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Ζωγράφου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Palaio Faliro,Attica,,,64879,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Παλαιού Φαλήρου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Egaleo,Attica,,,64828,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Nea Ionia,Attica,,,64107,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Νέας Ιωνίας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Agia Paraskevi,Attica,,,62157,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Αγίας Παρασκευής,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Agii Anargyri,Attica,,,61427,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Korydallos,Attica,,,61247,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Κορυδαλλού,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Pallini,Attica,,,60435,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Παλλήνης,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Petroupoli,Attica,,,60166,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Πετρούπολης,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Vyronas,Attica,,,59134,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Βύρωνα,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Galatsi,Attica,,,57917,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Γαλατσίου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Vari-Voula-Vouliagmeni,Attica,,,50585,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Irakleio,Attica,,,50495,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Elliniko-Argyroupoli,Attica,,,49722,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Fyli,Attica,,,48255,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Φυλής,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Chaidari,Attica,,,46983,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Χαϊδαρίου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Papagou-Cholargos,Attica,,,45164,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Παπάγου - Χολαργού,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Alimos,Attica,,,42872,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Αλίμου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Dionysos,Attica,,,41748,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Διονύσου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Moschato-Tavros,Attica,,,39507,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Μοσχάτου-Ταύρου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Megara,Attica,,,38046,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Μεγαρέων,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Salamis,Attica,,,37175,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Penteli,Attica,,,35439,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Πεντέλης,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Filadelfeia-Chalkidona,Attica,,,34759,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Spata-Artemida,Attica,,,34053,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Oropos,Attica,,,33977,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Ωρωπού,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Dafni-Ymittos,Attica,,,33850,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Vrilissia,Attica,,,32422,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Βριλησσίων,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Marathon,Attica,,,31448,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Aspropyrgos,Attica,,,31420,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Ασπροπύργου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Lykovrysi-Pefki,Attica,,,30996,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Metamorfosi,Attica,,,30170,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Μεταμορφώσεως,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Saronikos,Attica,,,29703,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Σαρωνικού,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Eleusina,Attica,,,29619,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Kropia,Attica,,,29432,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Κρωπίας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Paiania,Attica,,,27916,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Παιανίας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Filothei-Psychiko,Attica,,,27400,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Agia Varvara,Attica,,,26759,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Αγίας Βαρβάρας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Kessariani,Attica,,,26260,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Perama,Attica,,,25636,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Περάματος,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Lavreotiki,Attica,,,25608,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Λαυρεωτικής,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Rafina-Pikermi,Attica,,,22230,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Markopoulo Mesogaias,Attica,,,21284,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Μαρκόπουλου Μεσογαίας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Mandra-Eidyllia,Attica,,,17524,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Μάνδρας - Ειδυλλίας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Aegina,Attica,,,12938,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Αίγινας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Troizinia,Attica,,,6118,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Spetses,Attica,,,3680,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Σπετσών,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Cythera,Attica,,,3659,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Poros,Attica,,,3237,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Πόρου,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,Hydra,Attica,,,2011,Municipality,Athens,,Athens,,AtticaGreece,,,,,county,2,GR-I,Δήμος Ύδρας,,,,,region,1,GR-I,Αττικής,HIGH,1.0,GR-I
+Greece,"Angistri, Agistri",Attica,,,1107,Municipality,Athens,,Athens,,AtticaGreece,,,,,,,,,,,,,region,1,GR-I,Αττικής,NONE,0.0,GR-I
+Greece,Chalcis,Central Greece,,,108313,Municipality,Chalcis,,Chalcis,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Lamia,Central Greece,,,66472,Municipality,Lamia,,Lamia,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Λαμιέων,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Livadeia,Central Greece,,,29393,Municipality,Livadeia,,Livadeia,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Thebes,Central Greece,,,32521,Municipality,,,#N/A,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Kymi-Aliveri,Central Greece,,,26359,Municipality,,,#N/A,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Delphi,Central Greece,,,24160,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Δελφών,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Istiaia-Aidipsos,Central Greece,,,18460,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Ιστιαίας-Αιδηψού,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Tanagra,Central Greece,,,18427,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Τανάγρας,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Lokroi,Central Greece,,,17854,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Λοκρών,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Dirfys-Messapia,Central Greece,,,15435,Municipality,,,#N/A,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Makrakomi,Central Greece,,,13553,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Μακρακώμης,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Eretria,Central Greece,,,12676,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Ερέτριας,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Dorida,Central Greece,,,12050,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Δωρίδος,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Mantoudi-Limni-Agia Anna,Central Greece,,,11986,Municipality,,,#N/A,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Karystos,Central Greece,,,11593,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Καρύστου,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Karpenisi,Central Greece,,,11477,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Καρπενησίου,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Stylida,Central Greece,,,11417,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Στυλίδας,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Molos-Agios Konstantinos,Central Greece,,,10901,Municipality,,,#N/A,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Orchomenos,Central Greece,,,9386,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Ορχομενού,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Domokos,Central Greece,,,9178,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Δομοκού,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Aliartos,Central Greece,,,8778,Municipality,,,#N/A,,Central GreeceGreece,,,,,,,,,,,,,region,1,GR-H,Στερεάς Ελλάδας,NONE,0.0,GR-H
+Greece,Amfikleia-Elateia,Central Greece,,,8381,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Αμφίκλειας - Ελάτειας,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Distomo-Arachova-Antikyra,Central Greece,,,7602,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Διστόμου-Αράχοβας-Αντίκυρας,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Agrafa,Central Greece,,,5984,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Αγράφων,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Skyros,Central Greece,,,2913,Municipality,,,#N/A,,Central GreeceGreece,,,,,county,2,GR-H,Δήμος Σκύρου,,,,,region,1,GR-H,Στερεάς Ελλάδας,HIGH,1.0,GR-H
+Greece,Pella,Central Macedonia,,,56918,Municipality,Aridaia,,Aridaia,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Πέλλας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Katerini,Central Macedonia,,,82971,Municipality,Katerini,,Katerini,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Κατερίνης,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Dio-Olympos,Central Macedonia,,,23984,Municipality,Katerini,,Katerini,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Serres,Central Macedonia,,,73847,Municipality,Serres,,Serres,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Σερρών,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Emmanouil Pappas,Central Macedonia,,,11574,Municipality,Serres,,Serres,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Thessaloniki,Central Macedonia,,,317778,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Θεσσαλονίκης,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Kordelio-Evosmos,Central Macedonia,,,105426,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Pavlos Melas,Central Macedonia,,,99969,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Παύλου Μελά,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Kalamaria,Central Macedonia,,,92238,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Καλαμαριάς,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Neapoli-Sykies,Central Macedonia,,,80851,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Νεάπολης - Συκεών,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Pylea,Central Macedonia,,,72223,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Thermi,Central Macedonia,,,55238,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Θέρμης,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Abelokipi,Central Macedonia,,,49674,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Delta,Central Macedonia,,,45628,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Δέλτα,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Thermaikos,Central Macedonia,,,45450,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Θερμαϊκού,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Oraiokastro,Central Macedonia,,,40114,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Langadas,Central Macedonia,,,37072,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Chalkidona,Central Macedonia,,,29951,Municipality,Thessaloniki,,Thessaloniki,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Χαλκηδόνας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Veria,Central Macedonia,,,62064,Municipality,Veria,,Veria,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Βέροιας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Kilkis,Central Macedonia,,,45489,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Κιλκίς,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Alexandreia,Central Macedonia,,,38293,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Nea Propontida,Central Macedonia,,,34391,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Νέας Προποντίδας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Naousa,Central Macedonia,,,29669,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Ηρωικής Πόλεως Νάουσας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Edessa,Central Macedonia,,,26336,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Έδεσσας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Paionia,Central Macedonia,,,25159,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Παιονίας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Almopia,Central Macedonia,,,24924,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Αλμωπίας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Polygyros,Central Macedonia,,,21350,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Πολυγύρου,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Volvi,Central Macedonia,,,19812,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Βόλβης,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Sintiki,Central Macedonia,,,18532,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Σιντικής,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Skydra,Central Macedonia,,,18080,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Σκύδρας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Aristotelis,Central Macedonia,,,16994,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Αριστοτέλη,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Kassandra,Central Macedonia,,,16958,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Κασσάνδρας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Visaltia,Central Macedonia,,,16032,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Βισαλτίας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Irakleia,Central Macedonia,,,15711,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Ηρακλείας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Pydna-Kolindros,Central Macedonia,,,12531,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Sithonia,Central Macedonia,,,11631,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Σιθωνίας,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Nea Zichni,Central Macedonia,,,8259,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,county,2,GR-B,Δήμος Νέας Ζίχνης,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,HIGH,1.0,GR-B
+Greece,Amfipoli,Central Macedonia,,,7169,Municipality,,,#N/A,,Central MacedoniaGreece,,,,,,,,,,,,,region,1,GR-B,Κεντρικής Μακεδονίας,NONE,0.0,GR-B
+Greece,Chania,Crete,,,110646,Municipality,Chania,,Chania,,CreteGreece,,,,,county,2,GR-M,Δήμος Χανίων,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Heraklion,Crete,,,177064,Municipality,Heraklion,,Heraklion,,CreteGreece,,,,,county,2,GR-M,Δήμος Ηρακλείου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Chersonisos,Crete,,,27229,Municipality,Heraklion,,Heraklion,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Malevizi,Crete,,,25750,Municipality,Heraklion,,Heraklion,,CreteGreece,,,,,county,2,GR-M,Δήμος Μαλεβιζίου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Ierapetra,Crete,,,26410,Municipality,Ierapetra,,Ierapetra,,CreteGreece,,,,,county,2,GR-M,Δήμος Ιεράπετρας,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Rethymno,Crete,,,55636,Municipality,Rethymno,,Rethymno,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Agios Nikolaos,Crete,,,26937,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Αγίου Νικολάου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Faistos,Crete,,,23994,Municipality,,,#N/A,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Sitia,Crete,,,20268,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Σητείας,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Archanes-Asterousia,Crete,,,16002,Municipality,,,#N/A,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Platanias,Crete,,,15320,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Πλατανιά,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Minoa Pediada,Crete,,,14161,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Μινώα Πεδιάδος,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Gortyn,Crete,,,13936,Municipality,,,#N/A,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Mylopotamos,Crete,,,12890,Municipality,,,#N/A,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Apokoronas,Crete,,,11771,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Αποκορώνου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Kissamos,Crete,,,10632,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Κισσάμου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Agios Vasileios,Crete,,,7194,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Αγίου Βασιλείου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Amari,Crete,,,5607,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Αμάριου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Kantanos-Selino,Crete,,,4931,Municipality,,,#N/A,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Viannos,Crete,,,4314,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Βιάννου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Lasithi Plateau,Crete,,,2285,Municipality,,,#N/A,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Anogeia,Crete,,,2240,Municipality,,,#N/A,,CreteGreece,,,,,,,,,,,,,region,1,GR-M,Κρήτης,NONE,0.0,GR-M
+Greece,Sfakia,Crete,,,1992,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Σφακίων,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Gavdos,Crete,,,151,Municipality,,,#N/A,,CreteGreece,,,,,county,2,GR-M,Δήμος Γαύδου,,,,,region,1,GR-M,Κρήτης,HIGH,1.0,GR-M
+Greece,Alexandroupoli,East Macedonia and Thrace,,,71601,Municipality,Alexandroupoli,,Alexandroupoli,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Αλεξανδρούπολης,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Drama,East Macedonia and Thrace,,,55593,Municipality,Drama,,Drama,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Δράμας,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Kavala,East Macedonia and Thrace,,,65857,Municipality,Kavala,,Kavala,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Καβάλας,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Pangaio,East Macedonia and Thrace,,,29592,Municipality,Kavala,,Kavala,,East Macedonia and ThraceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Komotini,East Macedonia and Thrace,,,65107,Municipality,Komotini,,Komotini,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Κομοτηνής,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Iasmos,East Macedonia and Thrace,,,12346,Municipality,Komotini,,Komotini,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Ιάσμου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Nestos,East Macedonia and Thrace,,,20525,Municipality,Nestos,,Nestos,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Νέστου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Xanthi,East Macedonia and Thrace,,,66162,Municipality,Xanthi,,Xanthi,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Ξάνθης,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Abdera,East Macedonia and Thrace,,,17860,Municipality,Xanthi,,Xanthi,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Αβδήρων,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Orestiada,East Macedonia and Thrace,,,31694,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Ορεστιάδας,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Didymoteicho,East Macedonia and Thrace,,,16161,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Arriana,East Macedonia and Thrace,,,14944,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Αρριανών,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Myki,East Macedonia and Thrace,,,14521,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Μύκης,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Thasos,East Macedonia and Thrace,,,13055,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Θάσου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Doxato,East Macedonia and Thrace,,,12109,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Δοξάτου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Maroneia-Sapes,East Macedonia and Thrace,,,11983,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Soufli,East Macedonia and Thrace,,,11784,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Σουφλίου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Prosotsani,East Macedonia and Thrace,,,10744,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Topeiros,East Macedonia and Thrace,,,9634,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Τοπείρου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Kato Nevrokopi,East Macedonia and Thrace,,,5323,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Κάτω Νευροκοπίου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Paranesti,East Macedonia and Thrace,,,2852,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,county,2,GR-A,Δήμος Παρανεστίου,,,,,region,1,GR-A,Ανατολικής Μακεδονίας και Θράκης,HIGH,1.0,GR-A
+Greece,Samothrace,East Macedonia and Thrace,,,2622,Municipality,,,#N/A,,East Macedonia and ThraceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Igoumenitsa,Epirus,,,25709,Municipality,Igoumenitsa,,Igoumenitsa,,EpirusGreece,,,,,county,2,GR-D,Δήμος Ηγουμενίτσας,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Ioannina,Epirus,,,113094,Municipality,Ioannina,,Ioannina,,EpirusGreece,,,,,county,2,GR-D,Δήμος Ιωαννιτών,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Preveza,Epirus,,,30893,Municipality,Preveza,,Preveza,,EpirusGreece,,,,,county,2,GR-D,Δήμος Πρέβεζας,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Arta,Epirus,,,41633,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Αρταίων,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Zitsa,Epirus,,,13630,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Ζίτσας,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Ziros,Epirus,,,13071,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Ζηρού,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Nikolaos Skoufas,Epirus,,,11411,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Νικολάου Σκουφά,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Parga,Epirus,,,10771,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Πάργας,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Souli,Epirus,,,8767,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Σουλίου,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Dodoni,Epirus,,,7258,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Δωδώνης,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Pogoni,Epirus,,,6859,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Πωγωνίου,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Filiates,Epirus,,,6351,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Φιλιατών,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Central Tzoumerka,Epirus,,,5562,Municipality,,,#N/A,,EpirusGreece,,,,,,,,,,,,,region,1,GR-D,Ηπείρου,NONE,0.0,GR-D
+Greece,Metsovo,Epirus,,,5429,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Μετσόβου,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Konitsa,Epirus,,,5325,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Κόνιτσας,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Georgios Karaiskakis,Epirus,,,5321,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Γεωργίου Καραϊσκάκη,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,North Tzoumerka,Epirus,,,5075,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Βορείων Τζουμέρκων,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Zagori,Epirus,,,3384,Municipality,,,#N/A,,EpirusGreece,,,,,county,2,GR-D,Δήμος Ζαγορίου,,,,,region,1,GR-D,Ηπείρου,HIGH,1.0,GR-D
+Greece,Argostoli,Ionian Islands,,,22388,Municipality,Argostoli,,Argostoli,,Ionian IslandsGreece,,,,,county,2,GR-F,Δήμος Αργοστολίου,,,,,region,1,GR-F,Ιονίων Νήσων,HIGH,1.0,GR-F
+Greece,Central Corfu and Diapontian Islands,Ionian Islands,,,65237,Municipality,Corfu,,Corfu,,Ionian IslandsGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,North Corfu,Ionian Islands,,,17455,Municipality,Corfu,,Corfu,,Ionian IslandsGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,South Corfu,Ionian Islands,,,14772,Municipality,Corfu,,Corfu,,Ionian IslandsGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Zakynthos,Ionian Islands,,,40508,Municipality,Zakynthos,,Zakynthos,,Ionian IslandsGreece,,,,,county,2,GR-F,Δήμος Ζακύνθου,,,,,region,1,GR-F,Ιονίων Νήσων,HIGH,1.0,GR-F
+Greece,Lefkada,Ionian Islands,,,21759,Municipality,,,#N/A,,Ionian IslandsGreece,,,,,county,2,GR-F,Δήμος Λευκάδας,,,,,region,1,GR-F,Ιονίων Νήσων,HIGH,1.0,GR-F
+Greece,Lixouri,Ionian Islands,,,7025,Municipality,,,#N/A,,Ionian IslandsGreece,,,,,county,2,GR-F,Δήμος Ληξουρίου,,,,,region,1,GR-F,Ιονίων Νήσων,HIGH,1.0,GR-F
+Greece,Sami,Ionian Islands,,,5511,Municipality,,,#N/A,,Ionian IslandsGreece,,,,,county,2,GR-F,Δήμος Σάμης,,,,,region,1,GR-F,Ιονίων Νήσων,HIGH,1.0,GR-F
+Greece,Ithaca,Ionian Islands,,,2774,Municipality,,,#N/A,,Ionian IslandsGreece,,,,,county,2,GR-F,Δήμος Ιθάκης,,,,,region,1,GR-F,Ιονίων Νήσων,HIGH,1.0,GR-F
+Greece,Paxi,Ionian Islands,,,2383,Municipality,,,#N/A,,Ionian IslandsGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Meganisi,Ionian Islands,,,914,Municipality,,,#N/A,,Ionian IslandsGreece,,,,,county,2,GR-F,Δήμος Μεγανησίου,,,,,region,1,GR-F,Ιονίων Νήσων,HIGH,1.0,GR-F
+Greece,Mount Athos,Mount Athos,,,1779,Autonomous Monastic State,,,#N/A,,Mount AthosGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Chios,North Aegean,,,50483,Municipality,Chios,,Chios,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Χίου,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,Mytilene,North Aegean,,,58285,Municipality,Mytilene,,Mytilene,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Μυτιλήνης,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,West Lesbos,North Aegean,,,24783,Municipality,Mytilene,,Mytilene,,North AegeanGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,East Samos,North Aegean,,,20025,Municipality,Samos,,Samos,,North AegeanGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,West Samos,North Aegean,,,12608,Municipality,Samos,,Samos,,North AegeanGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Lemnos,North Aegean,,,16458,Municipality,,,#N/A,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Λήμνου,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,Icaria,North Aegean,,,8555,Municipality,,,#N/A,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Ικαρίας,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,Fournoi Korseon,North Aegean,,,1346,Municipality,,,#N/A,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Φούρνων Κορσεών,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,Oinousses,North Aegean,,,916,Municipality,,,#N/A,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Οινουσσών,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,Psara,North Aegean,,,420,Municipality,,,#N/A,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Ηρωικής Νήσου Ψαρών,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,Agios Efstratios,North Aegean,,,257,Municipality,,,#N/A,,North AegeanGreece,,,,,county,2,GR-K,Δήμος Αγίου Ευστρατίου,,,,,region,1,GR-K,Βόρειου Αιγαίου,HIGH,1.0,GR-K
+Greece,Argos-Mykines,Peloponnese,,,40009,Municipality,Argos-Mykines,,Argos-Mykines,,PeloponneseGreece,,,,,,,,,,,,,region,1,GR-J,Πελοποννήσου,NONE,0.0,GR-J
+Greece,Corinth,Peloponnese,,,56437,Municipality,Corinth,,Corinth,,PeloponneseGreece,,,,,locality,,GR-J,Κόρινθος,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Loutraki-Agioi Theodoroi,Peloponnese,,,21925,Municipality,Corinth,,Corinth,,PeloponneseGreece,,,,,,,,,,,,,region,1,GR-J,Πελοποννήσου,NONE,0.0,GR-J
+Greece,Kalamata,Peloponnese,,,71894,Municipality,Kalamata,,Kalamata,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Καλαμάτας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Messini,Peloponnese,,,19200,Municipality,Kalamata,,Kalamata,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Μεσσήνης,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Tripoli,Peloponnese,,,43944,Municipality,Tripoli (GRE),,Tripoli (GRE),,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Τρίπολης,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Sparta,Peloponnese,,,32918,Municipality,,,#N/A,,PeloponneseGreece,,,,,locality,,GR-J,Σπάρτη,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Nafplio,Peloponnese,,,32586,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Ναυπλιέων,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Trifylia,Peloponnese,,,22367,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Τριφυλίας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Monemvasia,Peloponnese,,,21815,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Μονεμβασίας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Sikyona,Peloponnese,,,20983,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Σικυωνίων,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Velo-Vocha,Peloponnese,,,17836,Municipality,,,#N/A,,PeloponneseGreece,,,,,,,,,,,,,region,1,GR-J,Πελοποννήσου,NONE,0.0,GR-J
+Greece,Pylos-Nestor,Peloponnese,,,17179,Municipality,,,#N/A,,PeloponneseGreece,,,,,,,,,,,,,region,1,GR-J,Πελοποννήσου,NONE,0.0,GR-J
+Greece,Evrotas,Peloponnese,,,16018,Municipality,,,#N/A,,PeloponneseGreece,,,,,,,,,,,,,region,1,GR-J,Πελοποννήσου,NONE,0.0,GR-J
+Greece,Xylokastro-Evrostina,Peloponnese,,,15295,Municipality,,,#N/A,,PeloponneseGreece,,,,,,,,,,,,,region,1,GR-J,Πελοποννήσου,NONE,0.0,GR-J
+Greece,Ermionida,Peloponnese,,,13598,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Ερμιονίδας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,East Mani,Peloponnese,,,12805,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Ανατολικής Μάνης,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,North Kynouria,Peloponnese,,,9538,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Βόρειας Κυνουρίας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Megalopolis,Peloponnese,,,8791,Municipality,,,#N/A,,PeloponneseGreece,,,,,,,,,,,,,region,1,GR-J,Πελοποννήσου,NONE,0.0,GR-J
+Greece,Oichalia,Peloponnese,,,8508,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Οιχαλίας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Gortynia,Peloponnese,,,8015,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Γορτυνίας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,South Kynouria,Peloponnese,,,7263,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Νότιας Κυνουρίας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Epidaurus,Peloponnese,,,7089,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Επιδαύρου,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,West Mani,Peloponnese,,,5772,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Δυτικής Μάνης,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Nemea,Peloponnese,,,5668,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Νεμέας,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Elafonisos,Peloponnese,,,913,Municipality,,,#N/A,,PeloponneseGreece,,,,,county,2,GR-J,Δήμος Ελαφονήσου,,,,,region,1,GR-J,Πελοποννήσου,HIGH,1.0,GR-J
+Greece,Syros-Ermoupoli,South Aegean,,,20791,Municipality,Ermoupoli,,Ermoupoli,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Σύρου-Ερμούπολης,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Karpathos,South Aegean,,,6416,Municipality,Karpathos,,Karpathos,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Καρπάθου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Kos,South Aegean,,,36986,Municipality,Kos,,Kos,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Κω,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Mykonos,South Aegean,,,9802,Municipality,Mykonos,,Mykonos,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Μυκόνου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Rhodes,South Aegean,,,124851,Municipality,Rhodes,,Rhodes,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Ρόδου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Santorini,South Aegean,,,15457,Municipality,Santorini,,Santorini,,South AegeanGreece,,,,,,,,,,,,,region,1,GR-L,Νοτίου Αιγαίου,NONE,0.0,GR-L
+Greece,Naxos and Lesser Cyclades,South Aegean,,,19812,Municipality,,,#N/A,,South AegeanGreece,,,,,,,,,,,,,region,1,GR-L,Νοτίου Αιγαίου,NONE,0.0,GR-L
+Greece,Kalymnos,South Aegean,,,17797,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Καλυμνίων,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Paros,South Aegean,,,14290,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Πάρου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Andros,South Aegean,,,8883,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Άνδρου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Tinos,South Aegean,,,8611,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Τήνου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Leros,South Aegean,,,7988,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Λέρου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Milos,South Aegean,,,5193,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Μήλου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Patmos,South Aegean,,,3217,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Πάτμου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Sifnos,South Aegean,,,2755,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Σίφνου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Symi,South Aegean,,,2495,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Σύμης,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Kea,South Aegean,,,2394,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Κέας,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Ios,South Aegean,,,2297,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Ιητών,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Amorgos,South Aegean,,,1965,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Αμοργού,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Kythnos,South Aegean,,,1492,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Κύθνου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Astypalaia,South Aegean,,,1399,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Αστυπαλαίας,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Antiparos,South Aegean,,,1264,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Αντιπάρου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Serifos,South Aegean,,,1258,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Σερίφου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Kasos,South Aegean,,,1224,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Ηρωικής Νήσου Κάσου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Nisyros,South Aegean,,,1043,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Νισύρου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Kimolos,South Aegean,,,817,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Κιμώλου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Leipsoi,South Aegean,,,778,Municipality,,,#N/A,,South AegeanGreece,,,,,,,,,,,,,region,1,GR-L,Νοτίου Αιγαίου,NONE,0.0,GR-L
+Greece,Tilos,South Aegean,,,745,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Τήλου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Folegandros,South Aegean,,,715,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Φολεγάνδρου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Kastellorizo,South Aegean,,,584,Municipality,,,#N/A,,South AegeanGreece,,,,,,,,,,,,,region,1,GR-L,Νοτίου Αιγαίου,NONE,0.0,GR-L
+Greece,Halki,South Aegean,,,476,Municipality,,,#N/A,,South AegeanGreece,,,,,,,,,,,,,region,1,GR-L,Νοτίου Αιγαίου,NONE,0.0,GR-L
+Greece,Anafi,South Aegean,,,291,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Ανάφης,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Sikinos,South Aegean,,,253,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Σικίνου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Agathonisi,South Aegean,,,203,Municipality,,,#N/A,,South AegeanGreece,,,,,county,2,GR-L,Δήμος Αγαθονησίου,,,,,region,1,GR-L,Νοτίου Αιγαίου,HIGH,1.0,GR-L
+Greece,Karditsa,Thessaly,,,56641,Municipality,Karditsa,,Karditsa,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Καρδίτσας,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Larissa,Thessaly,,,164381,Municipality,Larisa,,Larisa,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Λαρισαίων,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Kileler,Thessaly,,,18068,Municipality,Larisa,,Larisa,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Κιλελέρ,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Skiathos,Thessaly,,,5499,Municipality,Skiathos,,Skiathos,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Σκιάθου,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Trikala,Thessaly,,,78508,Municipality,Trikala,,Trikala,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Τρικκαίων,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Volos,Thessaly,,,138865,Municipality,Volos,,Volos,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Βόλου,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Elassona,Thessaly,,,25441,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Ελασσόνας,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Tyrnavos,Thessaly,,,22252,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Τυρνάβου,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Kalabaka,Thessaly,,,19290,Municipality,,,#N/A,,ThessalyGreece,,,,,,,,,,,,,region,1,GR-E,Θεσσαλίας,NONE,0.0,GR-E
+Greece,Sofades,Thessaly,,,16577,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Σοφάδων,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Farsala,Thessaly,,,16310,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Φαρσάλων,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Almyros,Thessaly,,,16004,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Αλμυρού,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Palamas,Thessaly,,,13416,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Παλαμά,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Pyli,Thessaly,,,12915,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Πύλης,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Tempi,Thessaly,,,11994,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Τεμπών,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Farkadona,Thessaly,,,11348,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Φαρκαδόνας,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Mouzaki,Thessaly,,,11264,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Μουζακίου,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Agia,Thessaly,,,10705,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Αγιάς,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Rigas Feraios,Thessaly,,,8841,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Ρήγα Φεραίου,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,South Pelion,Thessaly,,,8322,Municipality,,,#N/A,,ThessalyGreece,,,,,,,,,,,,,region,1,GR-E,Θεσσαλίας,NONE,0.0,GR-E
+Greece,Lake Plastiras,Thessaly,,,5285,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Λίμνης Πλαστήρα,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Zagora-Mouresi,Thessaly,,,4556,Municipality,,,#N/A,,ThessalyGreece,,,,,,,,,,,,,region,1,GR-E,Θεσσαλίας,NONE,0.0,GR-E
+Greece,Skopelos,Thessaly,,,4377,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Σκοπέλου,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Argithea,Thessaly,,,3515,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Αργιθέας,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Alonnisos,Thessaly,,,3153,Municipality,,,#N/A,,ThessalyGreece,,,,,county,2,GR-E,Δήμος Αλοννήσου,,,,,region,1,GR-E,Θεσσαλίας,HIGH,1.0,GR-E
+Greece,Agrinio,West Greece,,,88971,Municipality,Agrinio,,Agrinio,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Αγρινίου,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Aigialeia,West Greece,,,47225,Municipality,Aigio,,Aigio,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Αιγιαλείας,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Patras,West Greece,,,211593,Municipality,Patras,,Patras,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Πατρέων,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Pyrgos,West Greece,,,44482,Municipality,Pyrgos,,Pyrgos,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Πύργου,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Ilida,West Greece,,,29409,Municipality,Pyrgos,,Pyrgos,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Ήλιδας,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Missolonghi,West Greece,,,31944,Municipality,,,#N/A,,West GreeceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,West Achaea,West Greece,,,25900,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Δυτικής Αχαΐας,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Nafpaktia,West Greece,,,25121,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Ναυπακτίας,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Andravida-Kyllini,West Greece,,,22615,Municipality,,,#N/A,,West GreeceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Pineios,West Greece,,,21658,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Πηνειού,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Amfilochia,West Greece,,,15073,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Αμφιλοχίας,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Aktio-Vonitsa,West Greece,,,14656,Municipality,,,#N/A,,West GreeceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Olympia,West Greece,,,11307,Municipality,,,#N/A,,West GreeceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Andritsaina-Krestena,West Greece,,,11273,Municipality,,,#N/A,,West GreeceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Xiromero,West Greece,,,10220,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Ξηρομέρου,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Kalavryta,West Greece,,,9281,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Καλαβρύτων,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Zacharo,West Greece,,,8606,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Ζαχάρως,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Erymanthos,West Greece,,,8273,Municipality,,,#N/A,,West GreeceGreece,,,,,county,2,GR-G,Δήμος Ερυμάνθου,,,,,region,1,GR-G,Δυτικής Ελλάδας,HIGH,1.0,GR-G
+Greece,Thermo,West Greece,,,5742,Municipality,,,#N/A,,West GreeceGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Kastoria,West Macedonia,,,33227,Municipality,Kastoria,,Kastoria,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Καστοριάς,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Orestida,West Macedonia,,,10633,Municipality,Kastoria,,Kastoria,,West MacedoniaGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Kozani,West Macedonia,,,67161,Municipality,Kozani,,Kozani,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Κοζάνης,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Eordaia,West Macedonia,,,42414,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Εορδαίας,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Florina,West Macedonia,,,29611,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Φλώρινας,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Grevena,West Macedonia,,,21440,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Γρεβενών,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Voio,West Macedonia,,,15080,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Βοϊου,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Amyntaio,West Macedonia,,,14331,Municipality,,,#N/A,,West MacedoniaGreece,,,,,,,,,,,,,,,,,NONE,0.0,
+Greece,Servia,West Macedonia,,,9486,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Σερβίων,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Deskati,West Macedonia,,,5205,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Δεσκάτης,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Velventos,West Macedonia,,,3060,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Βελβεντού,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Nestorio,West Macedonia,,,2188,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Νεστορίου,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C
+Greece,Prespes,West Macedonia,,,1220,Municipality,,,#N/A,,West MacedoniaGreece,,,,,county,2,GR-C,Δήμος Πρεσπών,,,,,region,1,GR-C,Δυτικής Μακεδονίας,HIGH,1.0,GR-C

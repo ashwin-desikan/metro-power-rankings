@@ -1,0 +1,566 @@
+﻿me,Country,Municipality,Distri rrondissement/County,State/Region (ISO 3166-2),Population,Metro Area,Type,Lookup,Metro Area Check,Code,Part,Township,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+,Belgium,Antwerpen (Anvers) [Antwerp],Antwerp,Antwerp,562002,Antwerp,Municipality,,Antwerp,,,,,,,,,,county,2,BE-VLG,Antwerpen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Brasschaat,Antwerp,Antwerp,38416,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Brasschaat,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Schoten,Antwerp,Antwerp,34926,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Schoten,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Brecht,Antwerp,Antwerp,30664,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Brecht,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kapellen,Antwerp,Antwerp,27976,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Kapellen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Mortsel,Antwerp,Antwerp,26736,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Mortsel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Edegem,Antwerp,Antwerp,23502,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Edegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zoersel,Antwerp,Antwerp,22770,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Zoersel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wuustwezel,Antwerp,Antwerp,21941,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Wuustwezel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kontich,Antwerp,Antwerp,21801,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Kontich,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Schilde,Antwerp,Antwerp,20508,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Schilde,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ranst,Antwerp,Antwerp,19755,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Ranst,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kalmthout,Antwerp,Antwerp,19712,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Kalmthout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Boom,Antwerp,Antwerp,19699,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Boom,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Essen,Antwerp,Antwerp,19606,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Essen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Stabroek,Antwerp,Antwerp,18970,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Stabroek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Malle,Antwerp,Antwerp,16248,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Malle,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Rumst,Antwerp,Antwerp,15692,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Rumst,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Aartselaar,Antwerp,Antwerp,15093,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Aartselaar,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Boechout,Antwerp,Antwerp,14084,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Boechout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wommelgem,Antwerp,Antwerp,13564,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Wommelgem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zandhoven,Antwerp,Antwerp,13423,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Zandhoven,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hemiksem,Antwerp,Antwerp,12428,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Hemiksem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Niel,Antwerp,Antwerp,11032,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Niel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wijnegem,Antwerp,Antwerp,10650,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Wijnegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Schelle,Antwerp,Antwerp,8682,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Schelle,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lint,Antwerp,Antwerp,8499,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Lint,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hove,Antwerp,Antwerp,8366,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-WAL,Hoves,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Mechelen (Malines),Mechelen,Antwerp,89655,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Mechelen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Heist-op-den-Berg,Mechelen,Antwerp,44723,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Heist-op-den-Berg,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lier (Lierre),Mechelen,Antwerp,38517,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Lier,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Willebroek,Mechelen,Antwerp,28620,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Willebroek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Puurs-Sint-Amands,Mechelen,Antwerp,27066,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Puurs-Sint-Amands,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Nijlen,Mechelen,Antwerp,23747,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Nijlen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bornem,Mechelen,Antwerp,22232,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Bornem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Katelijne-Waver,Mechelen,Antwerp,21917,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Sint-Katelijne-Waver,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Putte,Mechelen,Antwerp,19091,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Putte,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Duffel,Mechelen,Antwerp,18100,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Duffel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bonheiden,Mechelen,Antwerp,15641,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Bonheiden,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Berlaar,Mechelen,Antwerp,12115,Mechelen,Municipality,,Mechelen,,,,,,,,,,locality,,BE-VLG,Berlaar,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Turnhout,Turnhout,Antwerp,47965,Antwerp,Municipality,,Antwerp,,,,,,,,,,localadmin,,BE-VLG,Turnhout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Geel,Turnhout,Antwerp,42427,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Geel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Mol,Turnhout,Antwerp,38701,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Mol,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Herentals,Turnhout,Antwerp,29001,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Herentals,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Westerlo,Turnhout,Antwerp,25691,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Westerlo,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Balen,Turnhout,Antwerp,23777,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-WAL,Baelen,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hoogstraten,Turnhout,Antwerp,22403,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Hoogstraten,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kasterlee,Turnhout,Antwerp,19802,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Kasterlee,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Beerse,Turnhout,Antwerp,18710,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Beerse,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lille,Turnhout,Antwerp,17130,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Lille,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Laakdal,Turnhout,Antwerp,16935,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Laakdal,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ravels,Turnhout,Antwerp,15712,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Ravels,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oud-Turnhout,Turnhout,Antwerp,15045,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Oud-Turnhout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Herselt,Turnhout,Antwerp,14829,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Herselt,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Arendonk,Turnhout,Antwerp,13323,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Arendonk,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Olen,Turnhout,Antwerp,12915,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Olen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Rijkevorsel,Turnhout,Antwerp,12560,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Rijkevorsel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Retie,Turnhout,Antwerp,11995,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Retie,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Vosselaar,Turnhout,Antwerp,11816,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Vosselaar,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Grobbendonk,Turnhout,Antwerp,11609,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Grobbendonk,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hulshout,Turnhout,Antwerp,10634,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Hulshout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Meerhout,Turnhout,Antwerp,10377,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Meerhout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Dessel,Turnhout,Antwerp,10076,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Dessel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Herenthout,Turnhout,Antwerp,9504,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Herenthout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Merksplas,Turnhout,Antwerp,8921,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Merksplas,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Vorselaar,Turnhout,Antwerp,8079,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Vorselaar,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Baarle-Hertog (Baerle-Duc),Turnhout,Antwerp,3083,Antwerp,Municipality,,Antwerp,,,,,,,,,,locality,,BE-VLG,Baarle-Hertog,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bruxelles (Brussel) [Brussels],Bruxelles-Capitale,Brussels,198314,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Bruxelles - Brussel,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Schaerbeek (Schaarbeek),Bruxelles-Capitale,Brussels,129775,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Schaerbeek - Schaarbeek,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Anderlecht,Bruxelles-Capitale,Brussels,128724,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Anderlecht,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Molenbeek-Saint-Jean (Sint-Jans-Molenbeek),Bruxelles-Capitale,Brussels,98713,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Molenbeek-Saint-Jean - Sint-Jans-Molenbeek,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Ixelles (Elsene),Bruxelles-Capitale,Brussels,89897,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Ixelles - Elsene,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Uccle (Ukkel),Bruxelles-Capitale,Brussels,87194,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Uccle - Ukkel,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Woluwe-Saint-Lambert (Sint-Lambrechts-Woluwe),Bruxelles-Capitale,Brussels,60956,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Woluwe-Saint-Lambert - Sint-Lambrechts-Woluwe,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Forest (Vorst),Bruxelles-Capitale,Brussels,58675,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Forest,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Jette,Bruxelles-Capitale,Brussels,54390,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Jette,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Etterbeek,Bruxelles-Capitale,Brussels,49131,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Etterbeek,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Saint-Gilles (Sint-Gillis),Bruxelles-Capitale,Brussels,48827,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Saint-Gilles - Sint-Gillis,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Evere,Bruxelles-Capitale,Brussels,45892,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Evere,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Woluwe-Saint-Pierre (Sint-Pieters-Woluwe),Bruxelles-Capitale,Brussels,42549,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Woluwe-Saint-Pierre - Sint-Pieters-Woluwe,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Auderghem (Oudergem),Bruxelles-Capitale,Brussels,35698,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Auderghem - Oudergem,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Saint-Josse-ten-Noode (Sint-Joost-ten-Node),Bruxelles-Capitale,Brussels,27258,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Saint-Josse-ten-Noode - Sint-Joost-ten-Node,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Berchem-Sainte-Agathe (Sint-Agatha-Berchem),Bruxelles-Capitale,Brussels,25803,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Berchem-Sainte-Agathe - Sint-Agatha-Berchem,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Ganshoren,Bruxelles-Capitale,Brussels,25693,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Ganshoren,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Watermael-Boitsfort (Watermaal-Bosvoorde),Bruxelles-Capitale,Brussels,25327,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Watermael-Boitsfort - Watermaal-Bosvoorde,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Koekelberg,Bruxelles-Capitale,Brussels,22979,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-BRU,Koekelberg,,,,,region,1,BE-BRU,Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest,HIGH,1.0,BE-BRU
+,Belgium,Aalst (Alost),Aalst,East Flanders,92131,Aalst,Municipality,,Aalst,,,,,,,,,,localadmin,,BE-VLG,Aalst,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ninove,Aalst,East Flanders,40580,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Ninove,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Geraardsbergen (Grammont),Aalst,East Flanders,35236,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Geraardsbergen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zottegem,Aalst,East Flanders,28236,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Zottegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Denderleeuw,Aalst,East Flanders,21257,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Denderleeuw,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Erpe-Mere,Aalst,East Flanders,21117,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Erpe-Mere,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Haaltert,Aalst,East Flanders,19517,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Haaltert,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lede,Aalst,East Flanders,19425,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Lede,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Herzele,Aalst,East Flanders,19179,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Herzele,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Lievens-Houtem,Aalst,East Flanders,10748,Aalst,Municipality,,Aalst,,,,,,,,,,locality,,BE-VLG,Sint-Lievens-Houtem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Dendermonde (Termonde),Dendermonde,East Flanders,47539,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,localadmin,,BE-VLG,Dendermonde,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wetteren,Dendermonde,East Flanders,26926,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Wetteren,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hamme,Dendermonde,East Flanders,25706,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Hamme,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zele,Dendermonde,East Flanders,21521,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Zele,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lebbeke,Dendermonde,East Flanders,20298,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Lebbeke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Berlare,Dendermonde,East Flanders,15425,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Berlare,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Buggenhout,Dendermonde,East Flanders,15079,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Buggenhout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Laarne,Dendermonde,East Flanders,12496,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Laarne,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wichelen,Dendermonde,East Flanders,12050,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Wichelen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Waasmunster,Dendermonde,East Flanders,11395,Dendermonde,Municipality,,Dendermonde,,,,,,,,,,locality,,BE-VLG,Waasmunster,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Maldegem,Eeklo,East Flanders,24883,Eeklo,Municipality,,Eeklo,,,,,,,,,,locality,,BE-VLG,Maldegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Eeklo,Eeklo,East Flanders,22733,Eeklo,Municipality,,Eeklo,,,,,,,,,,locality,,BE-VLG,Eeklo,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Assenede,Eeklo,East Flanders,14617,Eeklo,Municipality,,Eeklo,,,,,,,,,,locality,,BE-VLG,Assenede,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zelzate,Eeklo,East Flanders,13653,Eeklo,Municipality,,Eeklo,,,,,,,,,,locality,,BE-VLG,Zelzate,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Laureins,Eeklo,East Flanders,6941,Eeklo,Municipality,,Eeklo,,,,,,,,,,locality,,BE-VLG,Sint-Laureins,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kaprijke,Eeklo,East Flanders,6638,Eeklo,Municipality,,Eeklo,,,,,,,,,,locality,,BE-VLG,Kaprijke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Gent (Gand) [Ghent],Gent,East Flanders,272657,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Gent,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Deinze,Gent,East Flanders,46026,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Deinze,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Merelbeke-Melle,Gent,East Flanders,37369,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Merelbeke-Melle,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Evergem,Gent,East Flanders,37254,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Evergem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lochristi,Gent,East Flanders,30916,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Lochristi,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Aalter,Gent,East Flanders,29830,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Aalter,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lievegem,Gent,East Flanders,27350,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Lievegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Nazareth-De Pinte,Gent,East Flanders,23574,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Nazareth-De Pinte,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Destelbergen,Gent,East Flanders,19088,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Destelbergen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zulte,Gent,East Flanders,16233,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Zulte,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oosterzele,Gent,East Flanders,14088,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Oosterzele,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Gavere,Gent,East Flanders,13353,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Gavere,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Martens-Latem,Gent,East Flanders,8149,Gent,Municipality,,Gent,,,,,,,,,,locality,,BE-VLG,Sint-Martens-Latem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oudenaarde (Audenarde),Oudenaarde,East Flanders,32930,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Oudenaarde,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ronse (Renaix),Oudenaarde,East Flanders,27577,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Ronse,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kruisem,Oudenaarde,East Flanders,16006,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Kruisem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Brakel,Oudenaarde,East Flanders,15127,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Brakel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zwalm,Oudenaarde,East Flanders,8348,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Zwalm,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kluisbergen,Oudenaarde,East Flanders,6869,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Kluisbergen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lierde,Oudenaarde,East Flanders,6858,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Lierde,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wortegem-Petegem,Oudenaarde,East Flanders,6545,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Wortegem-Petegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Maarkedal,Oudenaarde,East Flanders,6320,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Maarkedal,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Horebeke,Oudenaarde,East Flanders,2026,Oudenaarde,Municipality,,Oudenaarde,,,,,,,,,,locality,,BE-VLG,Horebeke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Beveren-Kruibeke-Zwijndrecht,Sint-Niklaas,East Flanders,87927,Sint-Niklaas,Municipality,,Sint-Niklaas,,,,,,,,,,locality,,BE-VLG,Beveren-Kruibeke-Zwijndrecht,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Niklaas (Saint-Nicolas),Sint-Niklaas,East Flanders,82661,Sint-Niklaas,Municipality,,Sint-Niklaas,,,,,,,,,,localadmin,,BE-VLG,Sint-Niklaas,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lokeren,Sint-Niklaas,East Flanders,50606,Sint-Niklaas,Municipality,,Sint-Niklaas,,,,,,,,,,locality,,BE-VLG,Lokeren,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Temse (Tamise),Sint-Niklaas,East Flanders,31613,Sint-Niklaas,Municipality,,Sint-Niklaas,,,,,,,,,,locality,,BE-VLG,Temse,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Gillis-Waas,Sint-Niklaas,East Flanders,20139,Sint-Niklaas,Municipality,,Sint-Niklaas,,,,,,,,,,locality,,BE-VLG,Sint-Gillis-Waas,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Stekene,Sint-Niklaas,East Flanders,19767,Sint-Niklaas,Municipality,,Sint-Niklaas,,,,,,,,,,locality,,BE-VLG,Stekene,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Vilvoorde (Vilvorde),Halle-Vilvoorde,Flemish Brabant,48040,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Vilvoorde,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Dilbeek,Halle-Vilvoorde,Flemish Brabant,45069,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Dilbeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Halle (Hal),Halle-Vilvoorde,Flemish Brabant,42884,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Halle,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Grimbergen,Halle-Vilvoorde,Flemish Brabant,40062,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Grimbergen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zaventem,Halle-Vilvoorde,Flemish Brabant,37271,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Zaventem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Pieters-Leeuw,Halle-Vilvoorde,Flemish Brabant,36732,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Sint-Pieters-Leeuw,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Asse,Halle-Vilvoorde,Flemish Brabant,35882,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Asse,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Beersel,Halle-Vilvoorde,Flemish Brabant,26593,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Beersel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Overijse,Halle-Vilvoorde,Flemish Brabant,26250,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Overijse,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Pajottegem,Halle-Vilvoorde,Flemish Brabant,25287,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Pajottegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zemst,Halle-Vilvoorde,Flemish Brabant,23369,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Zemst,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Meise,Halle-Vilvoorde,Flemish Brabant,20392,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Meise,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Londerzeel,Halle-Vilvoorde,Flemish Brabant,19491,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Londerzeel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Genesius-Rode (Rhode-Saint-Genèse),Halle-Vilvoorde,Flemish Brabant,18700,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Sint-Genesius-Rode - Rhode-Saint-Genèse,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Merchtem,Halle-Vilvoorde,Flemish Brabant,18361,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Merchtem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wemmel,Halle-Vilvoorde,Flemish Brabant,18292,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Wemmel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Machelen,Halle-Vilvoorde,Flemish Brabant,16784,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Machelen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ternat,Halle-Vilvoorde,Flemish Brabant,16691,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Ternat,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Opwijk,Halle-Vilvoorde,Flemish Brabant,15006,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Opwijk,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wezembeek-Oppem,Halle-Vilvoorde,Flemish Brabant,14760,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Wezembeek-Oppem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Liedekerke,Halle-Vilvoorde,Flemish Brabant,14155,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Liedekerke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kraainem,Halle-Vilvoorde,Flemish Brabant,13940,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Kraainem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Affligem,Halle-Vilvoorde,Flemish Brabant,13770,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Affligem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Steenokkerzeel,Halle-Vilvoorde,Flemish Brabant,12727,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Steenokkerzeel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kampenhout,Halle-Vilvoorde,Flemish Brabant,12606,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Kampenhout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Roosdaal,Halle-Vilvoorde,Flemish Brabant,12021,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Roosdaal,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hoeilaart,Halle-Vilvoorde,Flemish Brabant,11565,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Hoeilaart,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kapelle-op-den-Bos,Halle-Vilvoorde,Flemish Brabant,9806,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Kapelle-op-den-Bos,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lennik,Halle-Vilvoorde,Flemish Brabant,9481,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Lennik,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Drogenbos,Halle-Vilvoorde,Flemish Brabant,6040,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Drogenbos,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Linkebeek,Halle-Vilvoorde,Flemish Brabant,4646,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Linkebeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Pepingen,Halle-Vilvoorde,Flemish Brabant,4564,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Pepingen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bever (Biévène),Halle-Vilvoorde,Flemish Brabant,2266,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Bever,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Leuven (Louvain),Leuven,Flemish Brabant,104906,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Leuven,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Tienen (Tirlemont),Leuven,Flemish Brabant,36890,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Tienen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Aarschot,Leuven,Flemish Brabant,31514,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Aarschot,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Diest,Leuven,Flemish Brabant,25141,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Diest,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Scherpenheuvel-Zichem (Montaigu-Zichem),Leuven,Flemish Brabant,24200,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Scherpenheuvel-Zichem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Tervuren,Leuven,Flemish Brabant,23246,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Tervuren,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Herent,Leuven,Flemish Brabant,23081,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Herent,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kortenberg,Leuven,Flemish Brabant,21386,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Kortenberg,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Rotselaar,Leuven,Flemish Brabant,17689,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Rotselaar,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Landen,Leuven,Flemish Brabant,16375,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Landen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Haacht,Leuven,Flemish Brabant,15671,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Haacht,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Tremelo,Leuven,Flemish Brabant,15418,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Tremelo,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lubbeek,Leuven,Flemish Brabant,15236,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Lubbeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Boortmeerbeek,Leuven,Flemish Brabant,13400,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Boortmeerbeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Keerbergen,Leuven,Flemish Brabant,13355,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Keerbergen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Tielt-Winge,Leuven,Flemish Brabant,11568,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Tielt-Winge,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oud-Heverlee,Leuven,Flemish Brabant,11406,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Oud-Heverlee,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bierbeek,Leuven,Flemish Brabant,10778,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Bierbeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Begijnendijk,Leuven,Flemish Brabant,10642,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Begijnendijk,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bertem,Leuven,Flemish Brabant,10342,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Bertem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Holsbeek,Leuven,Flemish Brabant,10234,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Holsbeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Huldenberg,Leuven,Flemish Brabant,10071,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Huldenberg,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zoutleeuw (Léau),Leuven,Flemish Brabant,8766,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Zoutleeuw,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Boutersem,Leuven,Flemish Brabant,8709,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Boutersem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kortenaken,Leuven,Flemish Brabant,7984,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Kortenaken,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Linter,Leuven,Flemish Brabant,7354,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Linter,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hoegaarden,Leuven,Flemish Brabant,6963,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Hoegaarden,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bekkevoort,Leuven,Flemish Brabant,6922,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Bekkevoort,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Geetbets,Leuven,Flemish Brabant,6342,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Geetbets,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Glabbeek,Leuven,Flemish Brabant,5449,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-VLG,Glabbeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ath (Aat),Ath,Hainaut,30123,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Ath,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Lessines (Lessen),Ath,Hainaut,18853,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Lessines,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Enghien (Edingen),Ath,Hainaut,14567,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Enghien - Edingen,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Belœil,Ath,Hainaut,14232,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Belœil,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Frasnes-lez-Anvaing,Ath,Hainaut,12256,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Frasnes-lez-Anvaing,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Bernissart,Ath,Hainaut,11894,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Bernissart,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Silly (Opzullik),Ath,Hainaut,8422,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Silly,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Chièvres,Ath,Hainaut,7145,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Chièvres,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ellezelles (Elzele),Ath,Hainaut,5948,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Ellezelles,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Brugelette,Ath,Hainaut,3878,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Brugelette (section),,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Flobecq (Vloesberg),Ath,Hainaut,3441,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Flobecq,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Charleroi,Charleroi,Hainaut,205763,Charleroi,Municipality,,Charleroi,,,,,,,,,,localadmin,,BE-WAL,Charleroi,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Châtelet,Charleroi,Hainaut,35979,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Châtelet,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Courcelles,Charleroi,Hainaut,31436,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Courcelles,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Fleurus,Charleroi,Hainaut,22922,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Fleurus,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Fontaine-l'Évêque,Charleroi,Hainaut,17985,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Fontaine-l'Évêque,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Pont-à-Celles,Charleroi,Hainaut,17662,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Pont-à-Celles,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Chapelle-lez-Herlaimont,Charleroi,Hainaut,15030,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Chapelle-lez-Herlaimont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Gerpinnes,Charleroi,Hainaut,12900,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Gerpinnes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Farciennes,Charleroi,Hainaut,11471,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Farciennes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Aiseau-Presles,Charleroi,Hainaut,10956,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Aiseau-Presles,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Montigny-le-Tilleul,Charleroi,Hainaut,10170,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Montigny-le-Tilleul,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Les Bons Villers,Charleroi,Hainaut,9705,Charleroi,Municipality,,Charleroi,,,,,,,,,,locality,,BE-WAL,Les Bons Villers,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,La Louvière,La Louvière,Hainaut,81674,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,La Louvière,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Binche,La Louvière,Hainaut,33784,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Binche,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Morlanwelz,La Louvière,Hainaut,19113,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Morlanwelz,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Estinnes,La Louvière,Hainaut,7947,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Estinnes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Mons (Bergen),Mons,Hainaut,97120,Mons,Municipality,,Mons,,,,,,,,,,localadmin,,BE-WAL,Mons,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Saint-Ghislain,Mons,Hainaut,23756,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Saint-Ghislain,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Frameries,Mons,Hainaut,21630,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Frameries,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Colfontaine,Mons,Hainaut,20813,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Colfontaine,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Boussu,Mons,Hainaut,20401,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Boussu,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Quaregnon,Mons,Hainaut,19022,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Quaregnon,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Dour,Mons,Hainaut,16559,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Dour,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Jurbise (Jurbeke),Mons,Hainaut,10912,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Jurbise,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Quévy,Mons,Hainaut,8194,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Quévy,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Quiévrain,Mons,Hainaut,6861,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Quiévrain,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hensies,Mons,Hainaut,6776,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Hensies,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Honnelles,Mons,Hainaut,5104,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Honnelles,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Lens,Mons,Hainaut,4677,Mons,Municipality,,Mons,,,,,,,,,,locality,,BE-WAL,Lens,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Soignies (Zinnik),Soignies,Hainaut,29249,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Soignies,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Manage,Soignies,Hainaut,24202,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Manage,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Braine-le-Comte ('s Gravenbrakel),Soignies,Hainaut,23604,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Braine-le-Comte,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Seneffe,Soignies,Hainaut,11631,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Seneffe,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Écaussinnes,Soignies,Hainaut,11622,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Écaussinnes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Le Rœulx,Soignies,Hainaut,8709,La Louvière,Municipality,,La Louvière,,,,,,,,,,locality,,BE-WAL,Le Rœulx,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Thuin,Thuin,Hainaut,14864,,Municipality,,#N/A,,,,,,,,,,localadmin,,BE-WAL,Thuin,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ham-sur-Heure-Nalinnes,Thuin,Hainaut,13838,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Ham-sur-Heure-Nalinnes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Anderlues,Thuin,Hainaut,12955,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Anderlues,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Erquelinnes,Thuin,Hainaut,9983,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Erquelinnes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Chimay,Thuin,Hainaut,9673,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Chimay,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Beaumont,Thuin,Hainaut,7096,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Beaumont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Lobbes,Thuin,Hainaut,5958,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Lobbes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Momignies,Thuin,Hainaut,5213,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Momignies,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Sivry-Rance,Thuin,Hainaut,4862,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Sivry-Rance,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Merbes-le-Château,Thuin,Hainaut,4137,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Merbes-le-Château,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Froidchapelle,Thuin,Hainaut,4067,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Froidchapelle,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Tournai (Doornik),Tournai-Mouscron,Hainaut,68991,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Tournai,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Mouscron (Moeskroen),Tournai-Mouscron,Hainaut,60304,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Mouscron,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Comines-Warneton (Komen-Waasten),Tournai-Mouscron,Hainaut,18337,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Comines-Warneton - Komen-Waasten,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Péruwelz,Tournai-Mouscron,Hainaut,17350,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Péruwelz,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Leuze-en-Hainaut,Tournai-Mouscron,Hainaut,14200,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Leuze-en-Hainaut,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Estaimpuis,Tournai-Mouscron,Hainaut,10878,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Estaimpuis,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Brunehaut,Tournai-Mouscron,Hainaut,8129,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Brunehaut,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Antoing,Tournai-Mouscron,Hainaut,7538,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Antoing,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Pecq,Tournai-Mouscron,Hainaut,5899,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Pecq,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Celles,Tournai-Mouscron,Hainaut,5775,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Celles,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Rumes,Tournai-Mouscron,Hainaut,5345,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Rumes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Mont-de-l'Enclus,Tournai-Mouscron,Hainaut,3838,Tournai,Municipality,,Tournai,,,,,,,,,,locality,,BE-WAL,Mont-de-l'Enclus,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Huy (Hoei),Huy,Liège,21850,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Huy,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Amay,Huy,Liège,14494,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Amay,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Wanze,Huy,Liège,14005,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Wanze,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Villers-le-Bouillet,Huy,Liège,6869,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Villers-le-Bouillet,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Engis,Huy,Liège,6391,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Engis,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Nandrin,Huy,Liège,5755,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Nandrin,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Marchin,Huy,Liège,5636,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Marchin,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Héron,Huy,Liège,5599,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Héron,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ferrières,Huy,Liège,5156,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Ferrières,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Clavier,Huy,Liège,4989,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Clavier,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Verlaine,Huy,Liège,4414,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Verlaine,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Anthisnes,Huy,Liège,4204,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Anthisnes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Modave,Huy,Liège,4169,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Modave,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hamoir,Huy,Liège,3776,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Hamoir,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Burdinne,Huy,Liège,3334,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Burdinne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ouffet,Huy,Liège,2822,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Ouffet,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Tinlot,Huy,Liège,2782,Huy,Municipality,,Huy,,,,,,,,,,locality,,BE-WAL,Tinlot,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Liège (Luik),Liège,Liège,197323,Liege,Municipality,,Liege,,,,,,,,,,county,2,BE-WAL,Liège,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Seraing,Liège,Liège,64609,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Seraing,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Herstal,Liège,Liège,40834,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Herstal,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ans,Liège,Liège,29110,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Ans,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Flémalle,Liège,Liège,27045,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Flémalle,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Oupeye,Liège,Liège,25846,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Oupeye,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Saint-Nicolas,Liège,Liège,24517,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Saint-Nicolas,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Grâce-Hollogne,Liège,Liège,23416,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Grâce-Hollogne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Chaudfontaine,Liège,Liège,20523,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Chaudfontaine,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Visé (Wezet),Liège,Liège,18110,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Visé,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Soumagne,Liège,Liège,17265,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Soumagne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Fléron,Liège,Liège,16374,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Fléron,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Sprimont,Liège,Liège,15171,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Sprimont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Blegny,Liège,Liège,13579,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Blegny,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Aywaille,Liège,Liège,12969,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Aywaille,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Esneux,Liège,Liège,12794,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Esneux,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Beyne-Heusay,Liège,Liège,11977,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Beyne-Heusay,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Neupré,Liège,Liège,9952,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Neupré,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Juprelle,Liège,Liège,9906,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Juprelle,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Awans,Liège,Liège,9373,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Awans,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Bassenge (Bitsingen),Liège,Liège,9053,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Bassenge,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Trooz,Liège,Liège,8200,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Trooz,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Dalhem,Liège,Liège,7711,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Dalhem,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Comblain-au-Pont,Liège,Liège,5366,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Comblain-au-Pont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Verviers,Verviers,Liège,56127,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Verviers,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Eupen,Verviers,Liège,20053,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Eupen,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Herve,Verviers,Liège,17784,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Herve,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Dison,Verviers,Liège,15226,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Dison,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Malmedy,Verviers,Liège,12991,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Malmedy,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Theux,Verviers,Liège,12144,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Theux,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Kelmis (La Calamine),Verviers,Liège,11338,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Kelmis - La Calamine,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Raeren,Verviers,Liège,11185,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Raeren,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Plombières,Verviers,Liège,10814,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Plombières,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Welkenraedt,Verviers,Liège,10521,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Welkenraedt,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Sankt Vith (Saint-Vith),Verviers,Liège,10180,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Sankt Vith,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Spa,Verviers,Liège,9806,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Spa,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Pepinster,Verviers,Liège,9294,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Pepinster,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Jalhay,Verviers,Liège,8770,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Jalhay,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Waimes (Weismes),Verviers,Liège,7560,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Waimes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Stavelot,Verviers,Liège,7279,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Stavelot,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Lontzen,Verviers,Liège,6092,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Lontzen,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Limbourg (Limburg),Verviers,Liège,5689,Liege,Municipality,,Liege,,,,,,,,,,county,2,BE-VLG,Limburg,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Amel (Amblève),Verviers,Liège,5608,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Amel,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Bütgenbach (Butgenbach),Verviers,Liège,5586,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Bütgenbach,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Thimister-Clermont,Verviers,Liège,5584,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Thimister-Clermont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Büllingen (Bullange),Verviers,Liège,5533,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Büllingen,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Baelen,Verviers,Liège,4529,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Baelen,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Aubel,Verviers,Liège,4288,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Aubel,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Olne,Verviers,Liège,4172,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Olne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Burg-Reuland,Verviers,Liège,3962,Eupen,Municipality,,Eupen,,,,,,,,,,locality,,BE-WAL,Burg-Reuland,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Lierneux,Verviers,Liège,3611,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Lierneux,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Stoumont,Verviers,Liège,3233,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Stoumont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Trois-Ponts,Verviers,Liège,2566,Liege,Municipality,,Liege,,,,,,,,,,locality,,BE-WAL,Trois-Ponts,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hannut (Hannuit),Waremme,Liège,17202,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Hannut,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Waremme (Borgworm),Waremme,Liège,15366,Waremme,Municipality,,Waremme,,,,,,,,,,localadmin,,BE-WAL,Waremme,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Saint-Georges-sur-Meuse,Waremme,Liège,7184,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Saint-Georges-sur-Meuse,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Braives,Waremme,Liège,6476,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Braives,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Remicourt,Waremme,Liège,6023,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Remicourt,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Faimes,Waremme,Liège,4192,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Faimes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Oreye (Oerle),Waremme,Liège,4062,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Oreye,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Crisnée,Waremme,Liège,3573,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Crisnée,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Geer,Waremme,Liège,3571,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Geer,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Fexhe-le-Haut-Clocher,Waremme,Liège,3399,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Fexhe-le-Haut-Clocher,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Berloz,Waremme,Liège,3394,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Berloz,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Lincent (Lijsem),Waremme,Liège,3375,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Lincent,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Wasseiges,Waremme,Liège,3187,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Wasseiges,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Donceel,Waremme,Liège,3128,Waremme,Municipality,,Waremme,,,,,,,,,,locality,,BE-WAL,Donceel,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hasselt,Hasselt,Limburg,90249,Genk,Municipality,,Genk,,,,,,,,,,localadmin,,BE-VLG,Hasselt,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Genk,Hasselt,Limburg,68058,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Genk,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Beringen,Hasselt,Limburg,48755,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Beringen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Sint-Truiden (Saint-Trond),Hasselt,Limburg,41743,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Sint-Truiden,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Heusden-Zolder,Hasselt,Limburg,34985,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Heusden-Zolder,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Tessenderlo-Ham,Hasselt,Limburg,30645,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Tessenderlo-Ham,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zonhoven,Hasselt,Limburg,21923,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Zonhoven,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Diepenbeek,Hasselt,Limburg,19788,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Diepenbeek,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Leopoldsburg (Bourg-Léopold),Hasselt,Limburg,16858,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Leopoldsburg,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lummen,Hasselt,Limburg,15347,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Lummen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Herk-de-Stad (Herck-la-Ville),Hasselt,Limburg,12927,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Herk-de-Stad,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Halen,Hasselt,Limburg,9490,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Halen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Gingelom,Hasselt,Limburg,8788,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Gingelom,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,As,Hasselt,Limburg,8298,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,As,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zutendaal,Hasselt,Limburg,7404,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Zutendaal,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Nieuwerkerken,Hasselt,Limburg,7328,Genk,Municipality,,Genk,,,,,,,,,,locality,,BE-VLG,Nieuwerkerken,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lommel,Maaseik,Limburg,35208,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Lommel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Pelt,Maaseik,Limburg,34635,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Pelt,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Houthalen-Helchteren,Maaseik,Limburg,30945,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Houthalen-Helchteren,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Maaseik,Maaseik,Limburg,25828,Maaseik,Municipality,,Maaseik,,,,,,,,,,localadmin,,BE-VLG,Maaseik,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oudsbergen,Maaseik,Limburg,23871,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Oudsbergen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Dilsen-Stokkem,Maaseik,Limburg,21486,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Dilsen-Stokkem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bree,Maaseik,Limburg,17210,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Bree,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Peer,Maaseik,Limburg,16685,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Peer,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hamont-Achel,Maaseik,Limburg,14568,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Hamont-Achel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bocholt,Maaseik,Limburg,13875,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Bocholt,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hechtel-Eksel,Maaseik,Limburg,13105,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Hechtel-Eksel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kinrooi,Maaseik,Limburg,12527,Maaseik,Municipality,,Maaseik,,,,,,,,,,locality,,BE-VLG,Kinrooi,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Tongeren-Borgloon (Tongres-Looz),Tongeren,Limburg,43980,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Tongeren-Borgloon,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bilzen-Hoeselt,Tongeren,Limburg,43052,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Bilzen-Hoeselt,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Maasmechelen,Tongeren,Limburg,40486,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Maasmechelen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lanaken,Tongeren,Limburg,26457,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Lanaken,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Riemst,Tongeren,Limburg,16938,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Riemst,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Alken,Tongeren,Limburg,11937,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Alken,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Heers,Tongeren,Limburg,7574,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Heers,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wellen,Tongeren,Limburg,7479,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Wellen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Voeren (Fourons),Tongeren,Limburg,4412,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Voeren - Fourons,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Herstappe,Tongeren,Limburg,75,Tongeren,Municipality,,Tongeren,,,,,,,,,,locality,,BE-VLG,Herstappe,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Arlon (Aarlen),Arlon,Luxembourg,31492,Arlon,Municipality,,Arlon,,,,,,,,,,locality,,BE-WAL,Arlon,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Aubange,Arlon,Luxembourg,17871,Arlon,Municipality,,Arlon,,,,,,,,,,locality,,BE-WAL,Aubange,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Messancy,Arlon,Luxembourg,8627,Arlon,Municipality,,Arlon,,,,,,,,,,locality,,BE-WAL,Messancy,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Attert,Arlon,Luxembourg,5788,Arlon,Municipality,,Arlon,,,,,,,,,,locality,,BE-WAL,Attert,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Martelange,Arlon,Luxembourg,2124,Arlon,Municipality,,Arlon,,,,,,,,,,locality,,BE-WAL,Martelange,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Bastogne (Bastenaken),Bastogne,Luxembourg,20940,Bastogne,Municipality,,Bastogne,,,,,,,,,,localadmin,,BE-WAL,Bastogne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Vielsalm,Bastogne,Luxembourg,7853,Bastogne,Municipality,,Bastogne,,,,,,,,,,locality,,BE-WAL,Vielsalm,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Vaux-sur-Sûre,Bastogne,Luxembourg,6352,Bastogne,Municipality,,Bastogne,,,,,,,,,,locality,,BE-WAL,Vaux-sur-Sûre,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Gouvy,Bastogne,Luxembourg,5452,Bastogne,Municipality,,Bastogne,,,,,,,,,,locality,,BE-WAL,Gouvy,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Houffalize,Bastogne,Luxembourg,5336,Bastogne,Municipality,,Bastogne,,,,,,,,,,locality,,BE-WAL,Houffalize,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Sainte-Ode,Bastogne,Luxembourg,2687,Bastogne,Municipality,,Bastogne,,,,,,,,,,locality,,BE-WAL,Sainte-Ode,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Fauvillers,Bastogne,Luxembourg,2512,Bastogne,Municipality,,Bastogne,,,,,,,,,,locality,,BE-WAL,Fauvillers,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Marche-en-Famenne,Marche-en-Famenne,Luxembourg,17946,,Municipality,,#N/A,,,,,,,,,,localadmin,,BE-WAL,Marche-en-Famenne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Durbuy,Marche-en-Famenne,Luxembourg,11511,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Durbuy,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Nassogne,Marche-en-Famenne,Luxembourg,5716,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Nassogne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hotton,Marche-en-Famenne,Luxembourg,5682,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Hotton,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,La Roche-en-Ardenne,Marche-en-Famenne,Luxembourg,4067,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,La Roche-en-Ardenne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Manhay,Marche-en-Famenne,Luxembourg,3762,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Manhay,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Érezée,Marche-en-Famenne,Luxembourg,3356,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Érezée,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Tenneville,Marche-en-Famenne,Luxembourg,2876,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Tenneville,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Rendeux,Marche-en-Famenne,Luxembourg,2717,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Rendeux,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Libramont-Chevigny,Neufchâteau,Luxembourg,12033,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Libramont-Chevigny,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Bertrix,Neufchâteau,Luxembourg,9057,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Bertrix,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Neufchâteau,Neufchâteau,Luxembourg,8350,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Neufchâteau,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Léglise,Neufchâteau,Luxembourg,5868,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Léglise,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Saint-Hubert,Neufchâteau,Luxembourg,5691,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Saint-Hubert,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Paliseul,Neufchâteau,Luxembourg,5530,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Paliseul,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Libin,Neufchâteau,Luxembourg,5367,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Libin,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Bouillon,Neufchâteau,Luxembourg,5351,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Bouillon,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Wellin,Neufchâteau,Luxembourg,3207,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Wellin,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Tellin,Neufchâteau,Luxembourg,2519,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Tellin,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Herbeumont,Neufchâteau,Luxembourg,1743,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Herbeumont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Daverdisse,Neufchâteau,Luxembourg,1416,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Daverdisse,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Virton,Virton,Luxembourg,11466,Virton,Municipality,,Virton,,,,,,,,,,localadmin,,BE-WAL,Virton,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Habay,Virton,Luxembourg,8668,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Habay,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Étalle,Virton,Luxembourg,6035,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Étalle,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Florenville,Virton,Luxembourg,5705,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Florenville,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Chiny,Virton,Luxembourg,5265,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Chiny,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Musson,Virton,Luxembourg,4708,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Musson,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Tintigny,Virton,Luxembourg,4593,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Tintigny,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Saint-Léger,Virton,Luxembourg,3809,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Saint-Léger,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Meix-devant-Virton,Virton,Luxembourg,2849,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Meix-devant-Virton,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Rouvroy,Virton,Luxembourg,2111,Virton,Municipality,,Virton,,,,,,,,,,locality,,BE-WAL,Rouvroy,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ciney,Dinant,Namur,17220,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Ciney,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Dinant,Dinant,Namur,13261,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Dinant,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Rochefort,Dinant,Namur,12772,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Rochefort,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Beauraing,Dinant,Namur,9496,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Beauraing,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Yvoir,Dinant,Namur,9210,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Yvoir,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hamois,Dinant,Namur,7438,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Hamois,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Anhée,Dinant,Namur,7109,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Anhée,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Somme-Leuze,Dinant,Namur,6191,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Somme-Leuze,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hastière,Dinant,Namur,6081,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Hastière,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Havelange,Dinant,Namur,5461,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Havelange,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Houyet,Dinant,Namur,5215,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Houyet,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Gedinne,Dinant,Namur,4661,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Gedinne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Bièvre,Dinant,Namur,3467,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Bièvre,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Onhaye,Dinant,Namur,3243,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Onhaye,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Vresse-sur-Semois,Dinant,Namur,2549,Dinant,Municipality,,Dinant,,,,,,,,,,locality,,BE-WAL,Vresse-sur-Semois,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Namur (Namen),Namur,Namur,115029,Namur,Municipality,,Namur,,,,,,,,,,county,2,BE-WAL,Namur,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Sambreville,Namur,Namur,28638,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Sambreville,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Andenne,Namur,Namur,28231,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Andenne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Gembloux,Namur,Namur,26550,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Gembloux,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Jemeppe-sur-Sambre,Namur,Namur,19225,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Jemeppe-sur-Sambre,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Éghezée,Namur,Namur,16954,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Éghezée,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Mettet,Namur,Namur,13613,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Mettet,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Profondeville,Namur,Namur,12322,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Profondeville,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Fosses-la-Ville,Namur,Namur,10436,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Fosses-la-Ville,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,La Bruyère,Namur,Namur,9397,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,La Bruyère,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Sombreffe,Namur,Namur,8384,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Sombreffe,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Fernelmont,Namur,Namur,8175,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Fernelmont,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Floreffe,Namur,Namur,8083,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Floreffe,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Gesves,Namur,Namur,7445,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Gesves,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Assesse,Namur,Namur,7343,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Assesse,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ohey,Namur,Namur,5316,Namur,Municipality,,Namur,,,,,,,,,,locality,,BE-WAL,Ohey,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Walcourt,Philippeville,Namur,18353,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Walcourt,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Couvin,Philippeville,Namur,13919,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Couvin,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Florennes,Philippeville,Namur,11394,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Florennes,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Philippeville,Philippeville,Namur,9589,,Municipality,,#N/A,,,,,,,,,,localadmin,,BE-WAL,Philippeville,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Viroinval,Philippeville,Namur,5616,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Viroinval,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Cerfontaine,Philippeville,Namur,4989,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Cerfontaine,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Doische,Philippeville,Namur,2973,,Municipality,,#N/A,,,,,,,,,,locality,,BE-WAL,Doische,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Braine-l'Alleud (Eigenbrakel),Nivelles,Walloon Brabant,40756,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Braine-l'Alleud,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Wavre (Waver),Nivelles,Walloon Brabant,35581,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Wavre,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ottignies-Louvain-la-Neuve,Nivelles,Walloon Brabant,31766,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Ottignies-Louvain-la-Neuve,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Waterloo,Nivelles,Walloon Brabant,30389,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Waterloo,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Nivelles (Nijvel),Nivelles,Walloon Brabant,29429,Brussels,Municipality,,Brussels,,,,,,,,,,localadmin,,BE-WAL,Nivelles,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Tubize (Tubeke),Nivelles,Walloon Brabant,28716,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Tubize,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Rixensart,Nivelles,Walloon Brabant,23052,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Rixensart,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Genappe (Genepien),Nivelles,Walloon Brabant,16160,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Genappe,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Jodoigne (Geldenaken),Nivelles,Walloon Brabant,14935,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Jodoigne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Lasne,Nivelles,Walloon Brabant,14175,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Lasne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Grez-Doiceau (Graven),Nivelles,Walloon Brabant,14014,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Grez-Doiceau,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Chaumont-Gistoux,Nivelles,Walloon Brabant,11894,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Chaumont-Gistoux,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Rebecq,Nivelles,Walloon Brabant,11185,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Rebecq,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Villers-la-Ville,Nivelles,Walloon Brabant,11059,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Villers-la-Ville,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Court-Saint-Étienne,Nivelles,Walloon Brabant,10927,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Court-Saint-Étienne,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Braine-le-Château (Kasteelbrakel),Nivelles,Walloon Brabant,10638,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Braine-le-Château,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Perwez (Perwijs),Nivelles,Walloon Brabant,9844,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Perwez,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Orp-Jauche,Nivelles,Walloon Brabant,9092,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Orp-Jauche,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Mont-Saint-Guibert,Nivelles,Walloon Brabant,8451,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Mont-Saint-Guibert,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Chastre,Nivelles,Walloon Brabant,7813,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Chastre,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Walhain,Nivelles,Walloon Brabant,7556,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Walhain,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,La Hulpe (Terhulpen),Nivelles,Walloon Brabant,7482,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,La Hulpe,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Beauvechain (Bevekom),Nivelles,Walloon Brabant,7242,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Beauvechain,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ittre (Itter),Nivelles,Walloon Brabant,6963,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Ittre,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Ramillies,Nivelles,Walloon Brabant,6710,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Ramillies,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Incourt,Nivelles,Walloon Brabant,5658,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Incourt,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Hélécine,Nivelles,Walloon Brabant,3894,Brussels,Municipality,,Brussels,,,,,,,,,,locality,,BE-WAL,Hélécine,,,,,region,1,BE-WAL,Wallonie,HIGH,1.0,BE-WAL
+,Belgium,Brugge (Bruges),Bruges,West Flanders,120283,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Brugge,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Knokke-Heist,Bruges,West Flanders,32415,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Knokke-Heist,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oostkamp,Bruges,West Flanders,24142,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Oostkamp,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zedelgem,Bruges,West Flanders,23635,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Zedelgem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Torhout,Bruges,West Flanders,21159,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Torhout,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Blankenberge,Bruges,West Flanders,20654,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Blankenberge,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Beernem,Bruges,West Flanders,16318,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Beernem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Jabbeke,Bruges,West Flanders,14932,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Jabbeke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Damme,Bruges,West Flanders,11278,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Damme,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zuienkerke,Bruges,West Flanders,2657,Bruges,Municipality,,Bruges,,,,,,,,,,locality,,BE-VLG,Zuienkerke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Diksmuide (Dixmude),Diksmuide,West Flanders,17337,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Diksmuide,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kortemark,Diksmuide,West Flanders,12882,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Kortemark,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Houthulst,Diksmuide,West Flanders,10525,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Houthulst,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Koekelare,Diksmuide,West Flanders,8801,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Koekelare,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lo-Reninge,Diksmuide,West Flanders,3183,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Lo-Reninge,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kortrijk (Courtrai),Kortrijk,West Flanders,80776,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,localadmin,,BE-VLG,Kortrijk,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Waregem,Kortrijk,West Flanders,40436,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Waregem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Menen (Menin),Kortrijk,West Flanders,34585,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Menen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wevelgem,Kortrijk,West Flanders,31940,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Wevelgem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Harelbeke,Kortrijk,West Flanders,30311,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Harelbeke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zwevegem,Kortrijk,West Flanders,25870,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Zwevegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Anzegem,Kortrijk,West Flanders,15246,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Anzegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Kuurne,Kortrijk,West Flanders,14244,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Kuurne,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Deerlijk,Kortrijk,West Flanders,12690,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Deerlijk,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Avelgem,Kortrijk,West Flanders,10450,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Avelgem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lendelede,Kortrijk,West Flanders,5849,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Lendelede,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Spiere-Helkijn (Espierres-Helchin),Kortrijk,West Flanders,2053,Kortrijk,Municipality,,Kortrijk,,,,,,,,,,locality,,BE-VLG,Spiere-Helkijn,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oostende (Ostende) [Ostend],Oostende,West Flanders,72817,Ostend,Municipality,,Ostend,,,,,,,,,,localadmin,,BE-VLG,Oostende,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Middelkerke,Oostende,West Flanders,20023,Ostend,Municipality,,Ostend,,,,,,,,,,locality,,BE-VLG,Middelkerke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Bredene,Oostende,West Flanders,18196,Ostend,Municipality,,Ostend,,,,,,,,,,locality,,BE-VLG,Bredene,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ichtegem,Oostende,West Flanders,14622,Ostend,Municipality,,Ostend,,,,,,,,,,locality,,BE-VLG,Ichtegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,De Haan,Oostende,West Flanders,12627,Ostend,Municipality,,Ostend,,,,,,,,,,locality,,BE-VLG,De Haan,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Gistel,Oostende,West Flanders,12117,Ostend,Municipality,,Ostend,,,,,,,,,,locality,,BE-VLG,Gistel,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oudenburg,Oostende,West Flanders,10231,Ostend,Municipality,,Ostend,,,,,,,,,,locality,,BE-VLG,Oudenburg,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Roeselare (Roulers),Roeselare,West Flanders,66888,Roeselare,Municipality,,Roeselare,,,,,,,,,,localadmin,,BE-VLG,Roeselare,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Izegem,Roeselare,West Flanders,29427,Roeselare,Municipality,,Roeselare,,,,,,,,,,locality,,BE-VLG,Izegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Staden,Roeselare,West Flanders,11696,Roeselare,Municipality,,Roeselare,,,,,,,,,,locality,,BE-VLG,Staden,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ingelmunster,Roeselare,West Flanders,11597,Roeselare,Municipality,,Roeselare,,,,,,,,,,locality,,BE-VLG,Ingelmunster,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Moorslede,Roeselare,West Flanders,11504,Roeselare,Municipality,,Roeselare,,,,,,,,,,locality,,BE-VLG,Moorslede,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Hooglede,Roeselare,West Flanders,10312,Roeselare,Municipality,,Roeselare,,,,,,,,,,locality,,BE-VLG,Hooglede,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ledegem,Roeselare,West Flanders,9775,Roeselare,Municipality,,Roeselare,,,,,,,,,,locality,,BE-VLG,Ledegem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Lichtervelde,Roeselare,West Flanders,9437,Roeselare,Municipality,,Roeselare,,,,,,,,,,locality,,BE-VLG,Lichtervelde,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Tielt,Tielt,West Flanders,31908,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Tielt,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wingene,Tielt,West Flanders,20781,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Wingene,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wielsbeke,Tielt,West Flanders,10256,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Wielsbeke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ardooie,Tielt,West Flanders,9514,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Ardooie,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Dentergem,Tielt,West Flanders,8673,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Dentergem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Oostrozebeke,Tielt,West Flanders,8013,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Oostrozebeke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Pittem,Tielt,West Flanders,6971,,Municipality,,#N/A,,,,,,,,,,locality,,BE-VLG,Pittem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Koksijde,Veurne,West Flanders,21344,Veurne,Municipality,,Veurne,,,,,,,,,,locality,,BE-VLG,Koksijde,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Veurne (Furnes),Veurne,West Flanders,12564,Veurne,Municipality,,Veurne,,,,,,,,,,locality,,BE-VLG,Veurne,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Nieuwpoort (Nieuport),Veurne,West Flanders,11399,Veurne,Municipality,,Veurne,,,,,,,,,,locality,,BE-VLG,Nieuwpoort,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,De Panne (La Panne),Veurne,West Flanders,10874,Veurne,Municipality,,Veurne,,,,,,,,,,locality,,BE-VLG,De Panne,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Alveringem,Veurne,West Flanders,4966,Veurne,Municipality,,Veurne,,,,,,,,,,locality,,BE-VLG,Alveringem,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Ieper (Ypres),Ypres,West Flanders,35587,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Ieper,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Poperinge,Ypres,West Flanders,19962,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Poperinge,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Wervik,Ypres,West Flanders,19207,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Wervik,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Zonnebeke,Ypres,West Flanders,12769,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Zonnebeke,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Langemark-Poelkapelle,Ypres,West Flanders,8202,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Langemark-Poelkapelle,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Heuvelland,Ypres,West Flanders,8021,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Heuvelland,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Vleteren,Ypres,West Flanders,3583,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Vleteren,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
+,Belgium,Mesen (Messines),Ypres,West Flanders,1071,Ypres,Municipality,,Ypres,,,,,,,,,,locality,,BE-VLG,Mesen,,,,,region,1,BE-VLG,Vlaanderen,HIGH,1.0,BE-VLG
