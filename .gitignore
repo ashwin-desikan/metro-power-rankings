@@ -103,3 +103,6 @@ public/data/stale-boundaries-to-delete.txt
 
 # League workbooks staged from OneDrive by scripts/stage-leagues.py
 workbooks/
+
+Champions League-201516.xlsx
+Overture-Per-Country-Raw/overture-combined.csv
