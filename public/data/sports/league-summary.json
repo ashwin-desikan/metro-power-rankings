@@ -1,9 +1,9 @@
 {
-  "total_markers": 8803,
+  "total_markers": 8807,
   "major_markers": 1144,
-  "other_markers": 7659,
+  "other_markers": 7663,
   "by_sport": {
-    "Football": 5577,
+    "Football": 5581,
     "Basketball": 741,
     "W Basketball": 454,
     "Hockey": 344,
@@ -63,8 +63,8 @@
     "United States": 82,
     "Turkey": 78,
     "Belgium": 77,
+    "Austria": 72,
     "Poland": 72,
-    "Austria": 71,
     "Mexico": 69,
     "Scotland": 65,
     "Japan": 62,
@@ -74,9 +74,9 @@
     "Israel": 57,
     "Sweden": 56,
     "Atlantic Coast": 53,
+    "Bulgaria": 49,
     "Big 12": 48,
     "Southeastern": 48,
-    "Bulgaria": 48,
     "Egypt": 46,
     "Finland": 45,
     "Belarus": 44,
@@ -106,11 +106,11 @@
   "markers_with_team_page": 923,
   "sources": {
     "team_list": 3232,
-    "football_club_data": 5571,
+    "football_club_data": 5575,
     "team_list_excluded_no_coords": 0,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 708,
-    "football_club_data_excluded_no_coords": 4284
+    "football_club_data_excluded_no_coords": 4281
   },
   "league_cards": [
     {
