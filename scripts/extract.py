@@ -321,6 +321,27 @@ def extract_gold_standard_leagues(wb):
     the workbook.
     """
     ws = wb["Team List"]
+    # Display-league re-bucketing. MUST stay in sync with the identical
+    # MAIN_DIV_LABEL_LEAGUES / Int'l Basketball logic in
+    # scripts/build-sports-index.py, which relabels these broad workbook
+    # 'League' buckets to their Main Division (col D) when it emits each
+    # team's `league` field. lib/goldStandard.isGoldStandardLeague compares
+    # the gold key against that emitted league string, so the gold key must
+    # use the same display label or it will never match (e.g. Rugby Union
+    # clubs ship as 'Top 14', not the 'Dom. Rugby Union' bucket).
+    MAIN_DIV_LABEL_LEAGUES = {
+        "Minor Lg Base",
+        "Int'l Volleyball",
+        "Int'l Handball",
+        "Minor/Jr/Int'l Hockey",
+        "Dom. Rugby Union",
+        "FBS",
+        "FCS",
+        "NCAA W",
+        "College Hockey",
+        "Other Sports",
+        "Other Women Sports",
+    }
     by_sport = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
         v = list(row)
@@ -331,8 +352,18 @@ def extract_gold_standard_leagues(wb):
             continue
         sport = safe_str(v[0])
         league_raw = _normalize_league(v[1])
+        main_div = safe_str(v[3])
         ml_marker = safe_str(v[12])
-        league = ml_marker if (ml_marker and ml_marker != 'Y') else league_raw
+        # Mirror build-sports-index.py's display_league resolution so the
+        # gold key equals the team's emitted league string.
+        if league_raw == "Int'l Basketball":
+            league = "EuroLeague" if ml_marker == "Euroleague" else (main_div or league_raw)
+        elif league_raw == "Int'l W Basketball":
+            league = "EuroLeague Women" if ml_marker == "Euroleague" else (main_div or league_raw)
+        elif league_raw in MAIN_DIV_LABEL_LEAGUES or (sport == "Basketball" and league_raw == "NCAA"):
+            league = main_div or league_raw
+        else:
+            league = league_raw
         if not sport or not league:
             continue
         by_sport.setdefault(sport, set()).add(league)

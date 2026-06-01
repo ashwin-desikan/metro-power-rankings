@@ -85,16 +85,16 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     page: "/teams/ipl",
     team_count: 0,
   },
-];
-const INJECTED_COMING_CARDS: LeagueCard[] = [
   {
     league: "WomensClubFootball",
-    label: "Women's Club Football",
+    label: "Women's Football",
     sport: "Football",
-    status: "coming",
-    page: null,
+    status: "live",
+    page: "/teams/wfootball",
     team_count: 0,
   },
+];
+const INJECTED_COMING_CARDS: LeagueCard[] = [
   {
     league: "CFB",
     label: "College Football",

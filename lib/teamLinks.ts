@@ -46,12 +46,16 @@ import {
   getIplFranchiseByTeamName,
   monogramFor as iplMonogramFor,
 } from "./ipl";
+import {
+  getWClubByName,
+  wMonogram,
+} from "./wfootball";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -67,6 +71,8 @@ const MLB_SPORT_LABELS = new Set(["Baseball", "MLB"]);
 const NBA_SPORT_LABELS = new Set(["Basketball", "NBA"]);
 const NHL_SPORT_LABELS = new Set(["Hockey", "NHL"]);
 const IPL_SPORT_LABELS = new Set(["T20 Cricket", "Cricket", "IPL"]);
+// Women's club football markers carry the distinct "W Football" sport label.
+const W_FOOTBALL_SPORT_LABELS = new Set(["W Football"]);
 // Workbook stores football as both "Football" (Team List, /sports markers)
 // and "Soccer" (FootballClub_Data merge in extract.py for metro detail).
 const FOOTBALL_SPORT_LABELS = new Set(["Football", "Soccer", "Football/Soccer"]);
@@ -88,6 +94,9 @@ function isFootball(sport: string): boolean {
 }
 function isIpl(sport: string, leagueHint: string): boolean {
   return IPL_SPORT_LABELS.has(sport) || leagueHint === "IPL";
+}
+function isWFootball(sport: string, leagueHint: string): boolean {
+  return W_FOOTBALL_SPORT_LABELS.has(sport) || leagueHint === "W Football";
 }
 
 export function resolveTeamLink(
@@ -175,6 +184,19 @@ export function resolveTeamLink(
       logoUrl: null,
       monogram: iplMonogramFor(f),
       displayName: f.name,
+    };
+  }
+
+  if (isWFootball(sport, leagueHint)) {
+    const c = getWClubByName(cleanName);
+    if (!c) return null;
+    return {
+      slug: c.slug,
+      league: "wfootball",
+      href: `/teams/wfootball/clubs/${c.slug}`,
+      logoUrl: null,
+      monogram: wMonogram(c),
+      displayName: c.name,
     };
   }
 

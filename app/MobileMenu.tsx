@@ -34,6 +34,7 @@ const ITEMS: Item[] = [
   { href: '/teams/football', label: 'Club Football', hint: 'Top European league hubs plus the full English pyramid; canonical club pages and league hubs', group: 'Sports' },
   { href: '/teams/national', label: 'International Football', hint: 'National-team pages and tournament hubs: World Cup, continental cups, intercontinental tournaments', group: 'Sports' },
   { href: '/teams/ipl', label: 'IPL', hint: 'All 10 IPL franchises, season standings, playoffs, and finals history since 2008', group: 'Sports' },
+  { href: '/teams/wfootball', label: "Women's Football", hint: 'Honors and finals history: UWCL, FIFA Champions Cup, WSL, Women\'s FA Cup, Liga F, NWSL Championship and Shield', group: 'Sports' },
 
   {
     href: 'https://citizenofnowhere.substack.com',

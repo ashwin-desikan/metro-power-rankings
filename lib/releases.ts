@@ -18,12 +18,22 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-01",
+    headline: "Women's Football portal and Gold Standard fixes",
+    items: [
+      "New Women's Football portal at /teams/wfootball: tournament hubs for the UWCL and FIFA Women's Champions Cup, league hubs for England, the United States, and Spain, plus per-competition and per-club honors pages.",
+      "Each club page links to its metro area where available, and NWSL and WSL clubs on the All Sports map and metro rosters now deep-link into the portal.",
+      "Gold Standard fix: Rugby Union, Volleyball, Handball, and Women's Basketball clubs now surface under the Gold Standard filter (Top 14, Superlega, Handball-Bundesliga, WNBA), where none matched before.",
+      "New FIFA Women's World Cup hub at /teams/national/womens-world-cup: every edition from 1991 to 2023 with champions and finals, plus a per-nation team page carrying each country's full World Cup record.",
+    ],
+  },
+  {
     date: "2026-05-31",
     headline: "IPL hub, football overhaul, Spurs reach NBA Finals",
     items: [
       "New IPL hub at /teams/ipl: franchise pages for all 10 active clubs and 5 defunct, all-time champions, finals history, playoff results, and metro area links.",
       "Football league standings now match season-by-season column order; Eur Comp cells show winner and finalist badges; playoff and playout chips (CF/CG) wired across all 8 leagues.",
-      "Sports directory cleanup: AFL, NRL, CFL, NWSL, WSL removed; Women's Club Football added as coming soon; Club World Cup 2025-26 competition labels corrected.",
+      "Sports directory cleanup: AFL, NRL, CFL, NWSL, WSL removed; Women's Football added as coming soon; Club World Cup 2025-26 competition labels corrected.",
       "NBA: Spurs upset Thunder 4-3 in the West; Knicks swept Cleveland 4-0 in the East. Finals matchup is Spurs vs Knicks.",
     ],
   },

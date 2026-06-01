@@ -37,6 +37,8 @@ const SERVER_ONLY_MODULES = [
   "@/lib/substack",
   "@/lib/data",
   "@/lib/teamLinks",
+  "@/lib/wfootball",
+  "@/lib/wnational",
   "@/lib/standings",
   "@/lib/mlb-standings",
   "@/lib/nba-standings",

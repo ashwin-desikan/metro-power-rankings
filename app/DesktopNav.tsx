@@ -152,6 +152,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/teams/national" title="International Football" hint="National teams and tournament hubs." />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/teams/ipl" title="IPL" hint="10 franchises; all IPL seasons since 2008." />
+        <DropdownItem href="/teams/wfootball" title="Women's Football" hint="Honors history: UWCL, WSL, Liga F, NWSL and more." />
       </Dropdown>
 
       <Dropdown id="articles" label="Articles" openId={openId} setOpenId={setOpenId}>
