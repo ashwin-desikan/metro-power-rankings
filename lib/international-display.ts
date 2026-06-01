@@ -134,6 +134,33 @@ export const COUNTRY_FLAGS: Record<string, string> = {
 export function flagForTeam(slug: string): string {
   return COUNTRY_FLAGS[slug] ?? "";
 }
+// Subdivision emoji need explicit CDN code overrides (no ISO 3166-1 alpha-2).
+const SUBDIVISION_CDN_CODES: Record<string, string> = {
+  england: "gb-eng",
+  scotland: "gb-sct",
+  wales: "gb-wls",
+  "northern-ireland": "gb-nir",
+};
+
+// Convert a team slug to a flagcdn.com PNG URL.
+// size: "20x15" for table rows, "40x30" for headers.
+// Returns null for defunct / unmapped / subdivision-flag teams.
+export function flagCdnUrl(slug: string, size: "20x15" | "40x30" = "20x15"): string | null {
+  if (SUBDIVISION_CDN_CODES[slug]) {
+    return `https://flagcdn.com/${size}/${SUBDIVISION_CDN_CODES[slug]}.png`;
+  }
+  const emoji = COUNTRY_FLAGS[slug];
+  if (!emoji) return null;
+  // Regional indicator pairs encode the ISO alpha-2 code in their codepoints.
+  // U+1F1E6 (🇦) = A, ..., U+1F1FF (🇿) = Z.
+  const cps = [...emoji].map(c => c.codePointAt(0)!);
+  if (cps.length >= 2 && cps[0] >= 0x1F1E6 && cps[0] <= 0x1F1FF) {
+    const a = String.fromCharCode(cps[0] - 0x1F1E6 + 65);
+    const b = String.fromCharCode(cps[1] - 0x1F1E6 + 65);
+    return `https://flagcdn.com/${size}/${(a + b).toLowerCase()}.png`;
+  }
+  return null; // Subdivision tag sequence or blank (historical teams)
+}
 
 // Generic historical-entity marker shown next to predecessor identities
 // (Soviet Union, Yugoslavia, Czechoslovakia, etc.) in attribution columns.

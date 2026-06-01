@@ -338,6 +338,21 @@ export function getEuropeForClub(slug: string): FootballEuropeEntry[] {
   return getEuropeMap()[slug] ?? [];
 }
 
+// Competitions that count as CL/EC titles. Covers the three naming
+// conventions used in the workbook across different eras.
+const CL_EC_COMPETITIONS = new Set([
+  "Champions League",
+  "European Cup",
+  "European Cup / Champions League",
+]);
+
+// Count CL/European Cup titles won by a club.
+export function getClTitlesForClub(slug: string): number {
+  return getEuropeForClub(slug).filter(
+    (e) => e.trophy_won && e.competition !== null && CL_EC_COMPETITIONS.has(e.competition)
+  ).length;
+}
+
 export function getAllLeagueHubs(): FootballLeagueHub[] {
   return Object.values(getLeaguesMap());
 }

@@ -19,6 +19,7 @@ import {
   appearanceCategorySortKey,
   CONTINENT_COLORS,
   flagForTeam,
+  flagCdnUrl,
   displayNameForTeam,
   HISTORICAL_FLAG,
 } from "@/lib/international-display";
@@ -115,8 +116,8 @@ export default async function NationalTeamPage({ params }: Props) {
             style={{ background: continentColor }}
             aria-hidden
           />
-          {flagForTeam(team.slug) && (
-            <span className="text-3xl leading-none" aria-hidden>{flagForTeam(team.slug)}</span>
+          {flagCdnUrl(team.slug, "40x30") && (
+            <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{displayNameForTeam(team.slug, team.cur_name)}</h1>
           {!team.active && (
@@ -256,7 +257,7 @@ function ComparablePrograms({
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {similar.map((n) => {
-          const flag = flagForTeam(n.slug);
+          const flag = flagCdnUrl(n.slug);
           const continentColor = n.continent ? CONTINENT_COLORS[n.continent] ?? "#525252" : "#525252";
           return (
             <Link
@@ -271,7 +272,7 @@ function ComparablePrograms({
                   style={{ background: continentColor }}
                   aria-hidden
                 />
-                {flag && <span className="text-base leading-none" aria-hidden>{flag}</span>}
+                {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />}
                 <span className="font-medium">{displayNameForTeam(n.slug, n.cur_name)}</span>
               </div>
               <div className="mt-1.5 text-xs text-[var(--text-muted)]">{captionForNeighbor(n.shared_axis)}</div>
@@ -476,8 +477,8 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
                   <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{f.year}</td>
                   <td className="py-1.5">{f.competition}</td>
                   <td className="py-1.5">
-                    {f.opp_slug && flagForTeam(f.opp_slug) && (
-                      <span className="mr-1.5" aria-hidden>{flagForTeam(f.opp_slug)}</span>
+                    {f.opp_slug && flagCdnUrl(f.opp_slug) && (
+                      <img src={flagCdnUrl(f.opp_slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1.5" />
                     )}
                     {f.opp_slug ? (
                       <Link href={`/teams/national/${f.opp_slug}`} className="hover:underline">

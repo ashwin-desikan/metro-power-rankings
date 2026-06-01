@@ -707,10 +707,10 @@ export default async function FranchisePage({ params }: Props) {
         )}
       </Block>
 
-      {/* Top playoff games (Game Score column blank for v1) */}
+      {/* Top games by Game Score */}
       <Block
-        title="Top playoff games"
-        deck={`Up to 12 of this franchise's most consequential playoff games. Ordering by round depth and recency for v1 since the Game Score formula is still being finalized in the source workbook.`}
+        title="Top games"
+        deck={`The franchise's top ${topGames.length > 0 ? Math.min(topGames.length, 10) : 10} games ranked by Game Score — a composite of stakes, quality, and ELO-weighted matchup strength.`}
       >
         {topGames.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No playoff games recorded.</p>
@@ -725,13 +725,8 @@ export default async function FranchisePage({ params }: Props) {
                   <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Result</th>
                   <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Score</th>
                   <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Arena</th>
-                  <th
-                    className="text-right py-2 pr-5 font-medium uppercase tracking-wider text-[10px]"
-                    title="Game Score column. Formula in progress in the source workbook; renders once values land."
-                  >
+                  <th className="text-right py-2 pr-5 font-medium uppercase tracking-wider text-[10px]">
                     Game Score
-                    <span className="ml-1 text-[var(--text-dim)]">·</span>
-                    <span className="ml-1 text-[8px] text-[var(--text-dim)] normal-case tracking-normal">Coming soon</span>
                   </th>
                 </tr>
               </thead>
@@ -762,7 +757,9 @@ export default async function FranchisePage({ params }: Props) {
                         {g.arena_canonical || g.arena_as_of}
                         {g.arena_metro ? ` · ${g.arena_metro}` : ""}
                       </td>
-                      <td className="py-2 pr-5 text-right text-[var(--text-dim)]">—</td>
+                      <td className="py-2 pr-5 text-right font-semibold">
+                        {g.game_score != null ? g.game_score.toFixed(3) : "—"}
+                      </td>
                     </tr>
                   );
                 })}

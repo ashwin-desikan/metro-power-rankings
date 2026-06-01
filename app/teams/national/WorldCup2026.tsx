@@ -13,7 +13,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { WorldCup2026Bundle } from "@/lib/international";
-import { flagForTeam, displayNameForTeam } from "@/lib/international-display";
+import { flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
 
 type Props = {
   wc: WorldCup2026Bundle;
@@ -132,8 +132,8 @@ function GroupStage({ groups }: { groups: WorldCup2026Bundle["group_stage"] }) {
                     <tr key={t.cur_name} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1 pr-1">
                         <span className="inline-flex items-center gap-1">
-                          {t.slug && flagForTeam(t.slug) && (
-                            <span className="text-sm leading-none" aria-hidden>{flagForTeam(t.slug)}</span>
+                          {t.slug && flagCdnUrl(t.slug) && (
+                            <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />
                           )}
                           {t.slug ? (
                             <Link href={`/teams/national/${t.slug}`} className="hover:text-[var(--accent)] transition-colors">
@@ -194,8 +194,8 @@ function MatchCard({ m }: { m: WorldCup2026Bundle["knockout"][string][number] })
   const dateDisplay = m.date
     ? new Date(m.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })
     : null;
-  const teamFlag = m.team_slug ? flagForTeam(m.team_slug) : "";
-  const oppFlag = m.opp_slug ? flagForTeam(m.opp_slug) : "";
+  const teamFlag = m.team_slug ? flagCdnUrl(m.team_slug) : null;
+  const oppFlag = m.opp_slug ? flagCdnUrl(m.opp_slug) : null;
   const showScores = m.played && m.team_score !== null && m.opp_score !== null;
   return (
     <div
@@ -247,7 +247,7 @@ function Row({
   score,
   win,
 }: {
-  flag: string;
+  flag: string | null;
   name: string;
   slug: string | null;
   score: number | null;
@@ -256,7 +256,7 @@ function Row({
   return (
     <div className="flex items-center justify-between gap-2 py-0.5">
       <span className="flex items-center gap-1.5 min-w-0">
-        {flag && <span className="text-sm leading-none flex-shrink-0" aria-hidden>{flag}</span>}
+        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />}
         {slug ? (
           <Link href={`/teams/national/${slug}`} className="truncate hover:text-[var(--accent)] transition-colors">
             <span style={{ fontWeight: win ? 600 : 400 }}>{name}</span>

@@ -7,7 +7,7 @@
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { CONTINENT_COLORS, flagForTeam, displayNameForTeam } from "@/lib/international-display";
+import { CONTINENT_COLORS, flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
 import type { NationalMapPoint } from "./NationalMapInner";
 
 const NationalMap = dynamic(() => import("./NationalMapInner"), {
@@ -299,7 +299,7 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
                     <td className="py-1.5 px-2">
                       <span className="inline-flex items-center gap-2">
                         {continentDot}
-                        {flag && <span className="text-base leading-none" aria-hidden>{flag}</span>}
+                        {flagCdnUrl(t.slug) && <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />}
                         <Link href={`/teams/national/${t.slug}`} className="hover:underline font-medium">
                           {displayNameForTeam(t.slug, t.cur_name)}
                         </Link>

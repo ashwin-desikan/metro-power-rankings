@@ -23,8 +23,13 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport } from "@/lib/sportLabels";
+import { isGoldStandardLeague } from "@/lib/goldStandard";
 import { getNflFranchiseByTeamName } from "@/lib/nfl";
 import { getMlbFranchiseByTeamName } from "@/lib/mlb";
+import { getNbaFranchiseByTeamName } from "@/lib/nba";
+import { getNhlFranchiseByTeamName } from "@/lib/nhl";
+import { getIplFranchiseByTeamName } from "@/lib/ipl";
+import { getFootballClubByName, getClTitlesForClub } from "@/lib/football";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
@@ -830,15 +835,25 @@ export default async function MetroDetailPage({ params }: PageProps) {
               type: "Sporting Event",
               annual: true,
             }));
-          const mergedSportingEvents = [
+          // Deduplicate by name — Tennis Majors and similar events can appear
+          // in both the Culture-Infra "Sporting Event" rows and Team List annual
+          // entries. Keep the first occurrence (Culture-Infra wins as authoritative).
+          const _merged = [
             ...(detail.culture?.[sportsEventType] || []),
             ...annualTeamEvents,
           ];
+          const _seen = new Set<string>();
+          const mergedSportingEvents = _merged.filter((e) => {
+            const key = e.name.trim().toLowerCase();
+            if (_seen.has(key)) return false;
+            _seen.add(key);
+            return true;
+          });
           return (
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
               {detail.teams && detail.teams.length > 0 && (
-                <TeamsSection teams={detail.teams} />
+                <TeamsSection teams={detail.teams} topTeamPick={topTeamPick} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -1312,6 +1327,7 @@ function normalizeTeamSport(sport: string): string {
 
 function TeamsSection({
   teams,
+  topTeamPick,
 }: {
   teams: Array<{
     sport: string;
@@ -1322,6 +1338,7 @@ function TeamsSection({
     level?: string;
     annual?: boolean;
   }>;
+  topTeamPick?: import("@/lib/topTeams").TopTeamPick | null;
 }) {
   // Teams flagged Annual=Y in Team List (col O) are recurring-event entries
   // (F1 Grands Prix, NASCAR races, Sailing regattas, Powerboat races). They
@@ -1334,8 +1351,114 @@ function TeamsSection({
   const historicVenuesRaw = teamsForBucketing.filter((t) => t.league === "Historic Venues");
   const nonHistoricForBucketing = teamsForBucketing.filter((t) => t.league !== "Historic Venues");
 
-  // Major League Teams/Venues: Teams stays expanded; Notable Venues collapses by default.
-  const majorTeamsRaw = sortTeamsFootballFirst(nonHistoricForBucketing.filter((t) => t.major));
+  // Precompute level + major_cups for every football team so the sort
+  // comparators don't call getFootballClubByName() on every comparison.
+  const FOOTBALL_SPORT_SET = new Set(["Soccer", "Football/Soccer", "Football"]);
+  type FootballSortKey = { level: number; majorCups: number };
+  const footballSortKeys = new Map<string, FootballSortKey>();
+  for (const t of nonHistoricForBucketing) {
+    if (FOOTBALL_SPORT_SET.has(t.sport)) {
+      const club = getFootballClubByName(t.team);
+      footballSortKeys.set(t.team, {
+        level: parseInt(t.level ?? "99") || 99,
+        majorCups: club?.totals.major_cups ?? 0,
+      });
+    }
+  }
+
+  // Identify which team(s) are the Top Team for this metro.
+  // topTeamPick.team may be slash-separated for co-equal picks.
+  const topTeamNames = topTeamPick
+    ? topTeamPick.team.split("/").map((n) => n.trim().toLowerCase()).filter(Boolean)
+    : [];
+  const isTopTeamFn = (teamName: string): boolean =>
+    topTeamNames.some((tn) => {
+      const t = teamName.toLowerCase();
+      return tn === t || t.endsWith(" " + tn) || tn.endsWith(" " + t);
+    });
+
+  // Precompute sort keys for American major sports (NFL, MLB, NBA, NHL).
+  // Sport order: NFL first, then MLB, NBA, NHL, other.
+  const AMERICAN_SPORT_ORDER: Record<string, number> = {
+    "American Football": 0,
+    "Baseball": 1,
+    "Basketball": 2,
+    "Hockey": 3,
+  };
+  // foundedYear: older franchise sorts first (ascending) as tiebreaker when
+  // two teams share the same championship count. Resolves Rangers > Islanders
+  // (1927 vs 1973), Knicks > Nets (1947 vs 1968), Giants > Jets, etc.
+  type AmericanSortKey = { sportOrder: number; champs: number; foundedYear: number };
+  const americanSortKeys = new Map<string, AmericanSortKey>();
+  for (const t of nonHistoricForBucketing) {
+    const order = AMERICAN_SPORT_ORDER[t.sport];
+    if (order !== undefined) {
+      let champs = 0;
+      let foundedYear = 9999;
+      if (t.sport === "American Football") {
+        const f = getNflFranchiseByTeamName(t.team);
+        champs = f?.championships ?? 0;
+        foundedYear = f?.founding_year ?? 9999;
+      } else if (t.sport === "Baseball") {
+        const f = getMlbFranchiseByTeamName(t.team);
+        champs = f?.championships ?? 0;
+        foundedYear = f?.founding_year ?? 9999;
+      } else if (t.sport === "Basketball") {
+        const f = getNbaFranchiseByTeamName(t.team);
+        champs = f?.championships ?? 0;
+        foundedYear = f?.founding_year ?? 9999;
+      } else if (t.sport === "Hockey") {
+        const f = getNhlFranchiseByTeamName(t.team);
+        champs = f?.championships ?? 0;
+        foundedYear = f?.founded ?? 9999;
+      }
+      americanSortKeys.set(t.team, { sportOrder: order, champs, foundedYear });
+    }
+  }
+
+  // Full priority sort for major-league teams:
+  //  0: Top Team for this metro (pinned first)
+  //  1: Gold Standard American (NFL/MLB/NBA/NHL): sport order, then champs desc
+  //  2: Gold Standard Football (Big 5 Lv1): level asc, trophies desc
+  //  3: Other Gold Standard
+  //  4: Non-Gold American sports: sport order, champs desc
+  //  5: Non-Gold Football: level asc, trophies desc
+  //  6: Everything else
+  function majorSortScore(t: { sport: string; league: string; team: string; level?: string }): number {
+    const isFoot = FOOTBALL_SPORT_SET.has(t.sport);
+    const isGold = isGoldStandardLeague(t.sport, t.league) && (!isFoot || t.level === "1");
+    const isAmerican = AMERICAN_SPORT_ORDER[t.sport] !== undefined;
+    if (isTopTeamFn(t.team)) return 0;
+    if (isGold && isAmerican) return 1;
+    if (isGold && isFoot) return 2;
+    if (isGold) return 3;
+    if (isAmerican) return 4;
+    if (isFoot) return 5;
+    return 6;
+  }
+  const majorTeamsRaw = [...nonHistoricForBucketing.filter((t) => t.major)].sort((a, b) => {
+    const as_ = majorSortScore(a);
+    const bs_ = majorSortScore(b);
+    if (as_ !== bs_) return as_ - bs_;
+    const aIsFootball = FOOTBALL_SPORT_SET.has(a.sport);
+    const bIsFootball = FOOTBALL_SPORT_SET.has(b.sport);
+    // Gold/non-Gold American: sport order → champs desc → founded asc
+    if (as_ === 1 || as_ === 4) {
+      const ak = americanSortKeys.get(a.team) ?? { sportOrder: 9, champs: 0, foundedYear: 9999 };
+      const bk = americanSortKeys.get(b.team) ?? { sportOrder: 9, champs: 0, foundedYear: 9999 };
+      if (ak.sportOrder !== bk.sportOrder) return ak.sportOrder - bk.sportOrder;
+      if (ak.champs !== bk.champs) return bk.champs - ak.champs;
+      return ak.foundedYear - bk.foundedYear; // older franchise first on champ tie
+    }
+    // Gold/non-Gold Football: level asc then trophies desc
+    if (aIsFootball && bIsFootball) {
+      const ak = footballSortKeys.get(a.team) ?? { level: 99, majorCups: 0 };
+      const bk = footballSortKeys.get(b.team) ?? { level: 99, majorCups: 0 };
+      if (ak.level !== bk.level) return ak.level - bk.level;
+      return bk.majorCups - ak.majorCups;
+    }
+    return 0;
+  });
   const majorTeamsOnly = majorTeamsRaw.filter((t) => t.league !== "Notable Venues");
   const majorVenues = majorTeamsRaw.filter((t) => t.league === "Notable Venues");
 
@@ -1354,8 +1477,12 @@ function TeamsSection({
 
   const otherTeamsRaw = nonHistoricForBucketing.filter((t) => !t.major);
   const otherCollege = otherTeamsRaw.filter((t) => isCollege(t));
-  const otherFootball = sortTeamsFootballFirst(
-    otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))
+  const otherFootball = [...otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))].sort((a, b) => {
+    const ak = footballSortKeys.get(a.team) ?? { level: 99, majorCups: 0 };
+    const bk = footballSortKeys.get(b.team) ?? { level: 99, majorCups: 0 };
+    if (ak.level !== bk.level) return ak.level - bk.level;
+    return bk.majorCups - ak.majorCups;
+  }
   );
   const otherWomen = otherTeamsRaw.filter(
     (t) => !isCollege(t) && !isFootball(t.sport) && isWomen(t.sport)
@@ -1380,7 +1507,7 @@ function TeamsSection({
       </summary>
       <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
         {items.map((team, idx) => (
-          <TeamCard key={idx} team={team} />
+          <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team)} />
         ))}
       </div>
     </details>
@@ -1396,7 +1523,7 @@ function TeamsSection({
           {majorTeamsOnly.length > 0 && (
             <div className={`${majorVenues.length > 0 ? "mb-3" : ""} ${gridClass}`}>
               {majorTeamsOnly.map((team, idx) => (
-                <TeamCard key={idx} team={team} />
+                <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team)} />
               ))}
             </div>
           )}
@@ -1516,6 +1643,7 @@ function TeamsSection({
 
 function TeamCard({
   team,
+  isTopTeam = false,
 }: {
   team: {
     sport: string;
@@ -1526,6 +1654,7 @@ function TeamCard({
     level?: string;
     wikipediaUrl?: string;
   };
+  isTopTeam?: boolean;
 }) {
   const isFootball = team.sport === "Soccer" || team.sport === "Football/Soccer";
 
@@ -1543,6 +1672,16 @@ function TeamCard({
   // on which league this team belongs to; both null for unsupported leagues.
   const nflFranchise = link?.league === "nfl" ? getNflFranchiseByTeamName(team.team) : undefined;
   const mlbFranchise = link?.league === "mlb" ? getMlbFranchiseByTeamName(team.team) : undefined;
+  const nbaFranchise = link?.league === "nba" ? getNbaFranchiseByTeamName(team.team) : undefined;
+  const nhlFranchise = link?.league === "nhl" ? getNhlFranchiseByTeamName(team.team) : undefined;
+  const iplFranchise = link?.league === "ipl" ? getIplFranchiseByTeamName(team.team) : undefined;
+  const footballClub  = link?.league === "football" ? getFootballClubByName(team.team) : undefined;
+  const clTitles = footballClub ? getClTitlesForClub(footballClub.slug) : 0;
+  // For football, Gold Standard only applies to Level 1 (Big 5 top flight).
+  // Lower-tier clubs in England/Spain/etc. share the same league label but
+  // are not Gold — gate on level === "Major" (the ETL value for tier 1).
+  const isGold = isGoldStandardLeague(team.sport, team.league) &&
+    (!isFootball || team.level === "1");
 
   return (
     <div
@@ -1553,7 +1692,7 @@ function TeamCard({
       }`}
     >
       <p className="text-xs text-[var(--text-muted)] mb-1">
-        {normalizeTeamSport(team.sport)} • {team.league}
+        {normalizeTeamSport(team.sport)} • {team.league}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
       <div className="flex items-center gap-2.5">
         {link ? (
@@ -1601,6 +1740,7 @@ function TeamCard({
               W
             </a>
           )}
+
         </p>
       </div>
       <p className="text-xs text-[var(--text-dim)] mt-1">
@@ -1673,6 +1813,156 @@ function TeamCard({
           >
             {mlbFranchise.win_pct.toFixed(3)} W%
           </span>
+        </div>
+      )}
+      {nbaFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{
+              background: nbaFranchise.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+              color: nbaFranchise.championships > 0 ? "#d4af37" : "var(--text-dim)",
+            }}
+            title="NBA championships (BAA + NBA + ABA era)"
+          >
+            {nbaFranchise.championships === 0
+              ? "No titles"
+              : nbaFranchise.championships === 1
+              ? "1 title"
+              : `${nbaFranchise.championships} titles`}
+          </span>
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+            title="All-time regular-season win percentage"
+          >
+            {nbaFranchise.win_pct.toFixed(3)} W%
+          </span>
+          {nbaFranchise.division_titles > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
+              title="Division titles"
+            >
+              {nbaFranchise.division_titles} div
+            </span>
+          )}
+        </div>
+      )}
+      {nhlFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{
+              background: nhlFranchise.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+              color: nhlFranchise.championships > 0 ? "#d4af37" : "var(--text-dim)",
+            }}
+            title="Stanley Cup championships"
+          >
+            {nhlFranchise.championships === 0
+              ? "No Cups"
+              : nhlFranchise.championships === 1
+              ? "1 Cup"
+              : `${nhlFranchise.championships} Cups`}
+          </span>
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+            title="All-time points percentage (pts / 2×GP)"
+          >
+            {nhlFranchise.pts_pct.toFixed(3)} Pts%
+          </span>
+          {nhlFranchise.division_titles > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
+              title="Division titles"
+            >
+              {nhlFranchise.division_titles} div
+            </span>
+          )}
+        </div>
+      )}
+      {iplFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{
+              background: iplFranchise.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+              color: iplFranchise.titles > 0 ? "#d4af37" : "var(--text-dim)",
+            }}
+            title="IPL titles"
+          >
+            {iplFranchise.titles === 0
+              ? "No titles"
+              : iplFranchise.titles === 1
+              ? "1 title"
+              : `${iplFranchise.titles} titles`}
+          </span>
+          {iplFranchise.finals > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}
+              title="Final appearances (won or lost)"
+            >
+              {iplFranchise.finals} final{iplFranchise.finals === 1 ? "" : "s"}
+            </span>
+          )}
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+            title="Seasons played"
+          >
+            {iplFranchise.seasons} seasons
+          </span>
+        </div>
+      )}
+      {footballClub && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          {(footballClub.totals.titles ?? 0) > 0 ? (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+              style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+              title="Top-flight league titles"
+            >
+              {footballClub.totals.titles} title{footballClub.totals.titles === 1 ? "" : "s"}
+            </span>
+          ) : (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+              style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }}
+              title="Top-flight league titles"
+            >
+              No titles
+            </span>
+          )}
+          {clTitles > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+              style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+              title="European Cup / Champions League titles"
+            >
+              {clTitles} CL
+            </span>
+          )}
+          {(footballClub.totals.major_cups ?? 0) > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
+              title="Major trophies (domestic cups + continental trophies)"
+            >
+              {footballClub.totals.major_cups} maj. trophies
+            </span>
+          )}
+          {footballClub.top_flight_seasons > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+              title="Top-flight seasons"
+            >
+              {footballClub.top_flight_seasons} yrs top-flight
+            </span>
+          )}
         </div>
       )}
     </div>

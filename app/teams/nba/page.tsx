@@ -3,6 +3,9 @@ import Link from "next/link";
 import {
   getAllFranchises,
   getPlayoffState,
+  getTopGamesAllTime,
+  getTopGamesByDecade,
+  getFranchiseByCanonical,
   logoUrlFor,
   monogramFor,
   TITLE_COLORS,
@@ -12,6 +15,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import PlayoffBracket from "./PlayoffBracket";
+import TopGamesTable from "./TopGamesTable";
 
 export const dynamicParams = false;
 
@@ -38,6 +42,18 @@ export const metadata: Metadata = {
   },
 };
 
+// Enrich league-wide top-game rows with current franchise slugs at build time
+// so the client component never has to touch server data.
+function enrichSlugs<T extends { winner_canonical: string; loser_canonical: string }>(
+  rows: T[]
+): T[] {
+  return rows.map((g) => ({
+    ...g,
+    winner_slug: getFranchiseByCanonical(g.winner_canonical)?.slug ?? null,
+    loser_slug: getFranchiseByCanonical(g.loser_canonical)?.slug ?? null,
+  }));
+}
+
 export default function NbaIndexPage() {
   const franchises = getAllFranchises();
   const totalChamps = franchises.reduce((s, f) => s + f.championships, 0);
@@ -48,9 +64,11 @@ export default function NbaIndexPage() {
     ([, st]) => st.state.startsWith("active_")
   ).length;
 
-  // Build map markers from franchise + arena coordinates.
-  // For v1, lat/lng comes from the rankings-side Team List via metro page wiring.
-  // The LeagueMap component reads its own data layer.
+  const topGamesAllTime = enrichSlugs(getTopGamesAllTime());
+  const topGamesByDecade = Object.fromEntries(
+    Object.entries(getTopGamesByDecade()).map(([k, v]) => [k, enrichSlugs(v)])
+  );
+
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <header className="mb-8">
@@ -110,10 +128,11 @@ export default function NbaIndexPage() {
         monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
       />
 
+      <TopGamesTable allTime={topGamesAllTime} byDecade={topGamesByDecade} />
+
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <Link href="/methodology" className="hover:text-[var(--text-muted)]">methodology</Link>.
-        Franchise totals from the NBA workbook (Year by Year + Totals sheets). Top playoff games by DU Game Score coming once the
-        scoring formula is finalized in the source workbook.
+        Franchise totals from the NBA workbook. Game Score is a composite of stakes, quality, and ELO-weighted matchup strength.
       </p>
     </main>
   );
