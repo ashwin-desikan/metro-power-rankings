@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { leagueStatusFor, LeagueStatusTag } from '@/lib/leagueStatus';
 
 // Mobile-only disclosure menu. The desktop nav in SiteNav.tsx is hidden
 // below md (768px); this component fills that gap so phone users can reach
@@ -27,14 +28,15 @@ const ITEMS: Item[] = [
   { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Data' },
 
   { href: '/sports', label: 'All sports', hint: 'Every Major League team across every sport, on one filterable map', group: 'Sports' },
+  { href: '/teams/football', label: 'Club Football', hint: 'Top European league hubs plus the full English pyramid; canonical club pages and league hubs', group: 'Sports' },
+  { href: '/teams/national', label: 'International Football', hint: 'National-team pages and tournament hubs: World Cup, continental cups, intercontinental tournaments', group: 'Sports' },
   { href: '/teams/nfl', label: 'NFL', hint: 'All 32 active franchises; defunct franchises link from inside', group: 'Sports' },
   { href: '/teams/mlb', label: 'MLB', hint: 'All 30 active franchises; defunct franchises link from inside', group: 'Sports' },
   { href: '/teams/nba', label: 'NBA', hint: 'All 30 active franchises; ABA cups in slate; live 2026 playoff status', group: 'Sports' },
   { href: '/teams/nhl', label: 'NHL', hint: 'All 32 active franchises; Stanley Cups from 1910 in gold, WHA Avco in slate', group: 'Sports' },
-  { href: '/teams/football', label: 'Club Football', hint: 'Top European league hubs plus the full English pyramid; canonical club pages and league hubs', group: 'Sports' },
-  { href: '/teams/national', label: 'International Football', hint: 'National-team pages and tournament hubs: World Cup, continental cups, intercontinental tournaments', group: 'Sports' },
   { href: '/teams/ipl', label: 'IPL', hint: 'All 10 IPL franchises, season standings, playoffs, and finals history since 2008', group: 'Sports' },
   { href: '/teams/wfootball', label: "Women's Football", hint: 'Honors and finals history: UWCL, FIFA Champions Cup, WSL, Women\'s FA Cup, Liga F, NWSL Championship and Shield', group: 'Sports' },
+  { href: '/teams/wnba', label: 'WNBA', hint: 'Every WNBA franchise current and defunct, all-time records, champions since 1997', group: 'Sports' },
 
   {
     href: 'https://citizenofnowhere.substack.com',
@@ -163,16 +165,19 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
                     onClick={() => setOpen(false)}
                     className="block rounded-md px-3 py-2 hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
                   >
-                    <div className="text-sm font-medium text-[var(--text)]">
-                      {it.label}
-                      {it.external ? (
-                        <span
-                          className="ml-1 text-[var(--text-dim)]"
-                          aria-hidden="true"
-                        >
-                          ↗
-                        </span>
-                      ) : null}
+                    <div className="text-sm font-medium text-[var(--text)] flex items-center gap-2 flex-wrap">
+                      <span>
+                        {it.label}
+                        {it.external ? (
+                          <span
+                            className="ml-1 text-[var(--text-dim)]"
+                            aria-hidden="true"
+                          >
+                            ↗
+                          </span>
+                        ) : null}
+                      </span>
+                      <LeagueStatusTag status={leagueStatusFor(it.href)} />
                     </div>
                     {it.hint ? (
                       <div

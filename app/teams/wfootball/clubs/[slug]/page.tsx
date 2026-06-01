@@ -75,6 +75,9 @@ export default async function WClubPage({ params }: Props) {
             {club.metro && club.country ? " · " : null}
             {club.country ?? null}
           </div>
+          {club.current_league && (
+            <span className="inline-block mt-1.5 rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold" style={{ background: "rgba(78,205,196,0.14)", color: "var(--accent)" }}>{club.current_league}</span>
+          )}
         </div>
       </header>
 
@@ -87,6 +90,9 @@ export default async function WClubPage({ params }: Props) {
 
       <section className="rounded-xl border p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <h2 className="text-base font-semibold">Honors by competition</h2>
+        {club.honors.length === 0 ? (
+          <p className="mt-2 text-sm text-[var(--text-muted)]">No major honors recorded yet.</p>
+        ) : (
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -109,6 +115,7 @@ export default async function WClubPage({ params }: Props) {
             </tbody>
           </table>
         </div>
+        )}
       </section>
     </main>
   );

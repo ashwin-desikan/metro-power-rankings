@@ -30,6 +30,8 @@ import { getNbaFranchiseByTeamName } from "@/lib/nba";
 import { getNhlFranchiseByTeamName } from "@/lib/nhl";
 import { getIplFranchiseByTeamName } from "@/lib/ipl";
 import { getFootballClubByName, getClTitlesForClub } from "@/lib/football";
+import { getWnbaFranchiseByTeamName } from "@/lib/wnba";
+import { getWClubByName } from "@/lib/wfootball";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
@@ -1653,6 +1655,7 @@ function TeamCard({
     major: boolean;
     level?: string;
     wikipediaUrl?: string;
+    gold?: boolean;
   };
   isTopTeam?: boolean;
 }) {
@@ -1677,10 +1680,17 @@ function TeamCard({
   const iplFranchise = link?.league === "ipl" ? getIplFranchiseByTeamName(team.team) : undefined;
   const footballClub  = link?.league === "football" ? getFootballClubByName(team.team) : undefined;
   const clTitles = footballClub ? getClTitlesForClub(footballClub.slug) : 0;
+  const wnbaFranchise = link?.league === "wnba" ? getWnbaFranchiseByTeamName(team.team) : undefined;
+  const wfootballClub = link?.league === "wfootball" ? getWClubByName(team.team) : undefined;
+  const wHonor = (slug: string) => wfootballClub?.honors.find((h) => h.competition_slug === slug);
+  const displayLeague = wnbaFranchise ? "WNBA" : team.league;
   // For football, Gold Standard only applies to Level 1 (Big 5 top flight).
   // Lower-tier clubs in England/Spain/etc. share the same league label but
   // are not Gold — gate on level === "Major" (the ETL value for tier 1).
-  const isGold = isGoldStandardLeague(team.sport, team.league) &&
+  // team.gold is the workbook-precomputed flag; it rescues umbrella-league
+  // sports (e.g. WNBA stored as "Int'l W Basketball") whose display league
+  // does not match the gold set.
+  const isGold = (team.gold === true || isGoldStandardLeague(team.sport, team.league)) &&
     (!isFootball || team.level === "1");
 
   return (
@@ -1692,7 +1702,7 @@ function TeamCard({
       }`}
     >
       <p className="text-xs text-[var(--text-muted)] mb-1">
-        {normalizeTeamSport(team.sport)} • {team.league}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
+        {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
       <div className="flex items-center gap-2.5">
         {link ? (
@@ -1965,6 +1975,68 @@ function TeamCard({
           )}
         </div>
       )}
+      {wnbaFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{ background: wnbaFranchise.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: wnbaFranchise.titles > 0 ? "#d4af37" : "var(--text-dim)" }}
+            title="WNBA championships"
+          >
+            {wnbaFranchise.titles === 0 ? "No titles" : wnbaFranchise.titles === 1 ? "1 title" : `${wnbaFranchise.titles} titles`}
+          </span>
+          {wnbaFranchise.win_pct != null && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="All-time regular-season win percentage">
+              {wnbaFranchise.win_pct.toFixed(3)} W%
+            </span>
+          )}
+          {wnbaFranchise.division_titles > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Conference titles">
+              {wnbaFranchise.division_titles} div
+            </span>
+          )}
+        </div>
+      )}
+      {wfootballClub && (() => {
+        const goldPill = (n: number, tip: string) => (
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{ background: n > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: n > 0 ? "#d4af37" : "var(--text-dim)" }}
+            title={tip}
+          >
+            {n === 0 ? "No titles" : n === 1 ? "1 title" : `${n} titles`}
+          </span>
+        );
+        if (team.league === "NWSL") {
+          const champ = wHonor("nwsl-championship");
+          const titles = champ?.titles ?? 0;
+          const finals = (champ?.titles ?? 0) + (champ?.runner_ups ?? 0);
+          return (
+            <div className="flex gap-1.5 mt-2 flex-wrap">
+              {goldPill(titles, "NWSL Championships")}
+              {finals > 0 && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }} title="NWSL Championship final appearances (won or lost)">
+                  {finals} final{finals === 1 ? "" : "s"}
+                </span>
+              )}
+            </div>
+          );
+        }
+        if (team.league === "WSL" || team.league === "Liga F") {
+          const lt = wHonor(team.league === "WSL" ? "wsl" : "liga-f")?.titles ?? 0;
+          const wcl = wHonor("uwcl")?.titles ?? 0;
+          return (
+            <div className="flex gap-1.5 mt-2 flex-wrap">
+              {goldPill(lt, "League titles")}
+              {wcl > 0 && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title="UEFA Women's Champions League titles">
+                  {wcl} WCL
+                </span>
+              )}
+            </div>
+          );
+        }
+        return null;
+      })()}
     </div>
   );
 }

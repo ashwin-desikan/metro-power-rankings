@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { leagueStatusFor, LeagueStatusTag } from "@/lib/leagueStatus";
 
 // Client-side desktop nav. Replaces the pure-CSS hover dropdowns that were
 // failing on touch and slow-hover environments. Each dropdown is now a
@@ -99,7 +100,10 @@ function DropdownItem({
       rel={external ? "noopener noreferrer" : undefined}
       className="block px-4 py-3 text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
     >
-      <div className="font-medium">{title}{external ? <span className="ml-1 text-[var(--text-dim)]" aria-hidden>↗</span> : null}</div>
+      <div className="font-medium flex items-center gap-2 flex-wrap">
+        <span>{title}{external ? <span className="ml-1 text-[var(--text-dim)]" aria-hidden>↗</span> : null}</span>
+        <LeagueStatusTag status={leagueStatusFor(href)} />
+      </div>
       {hint && (
         <div className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>{hint}</div>
       )}
@@ -143,16 +147,17 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Dropdown id="sports" label="Sports" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/sports" title="All sports" hint="Every top-flight team on one map." />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/teams/football" title="Club Football" hint="European top flights plus the English pyramid." />
+        <DropdownItem href="/teams/national" title="International Football" hint="National teams and tournament hubs." />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/teams/nfl" title="NFL" hint="32 franchises, sortable." />
         <DropdownItem href="/teams/mlb" title="MLB" hint="30 franchises, sortable." />
         <DropdownItem href="/teams/nba" title="NBA" hint="30 franchises; live 2026 playoffs." />
         <DropdownItem href="/teams/nhl" title="NHL" hint="32 franchises; Stanley Cups since 1910." />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/teams/football" title="Club Football" hint="European top flights plus the English pyramid." />
-        <DropdownItem href="/teams/national" title="International Football" hint="National teams and tournament hubs." />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/teams/ipl" title="IPL" hint="10 franchises; all IPL seasons since 2008." />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/teams/wfootball" title="Women's Football" hint="Honors history: UWCL, WSL, Liga F, NWSL and more." />
+        <DropdownItem href="/teams/wnba" title="WNBA" hint="Current and defunct franchises; champions since 1997." />
       </Dropdown>
 
       <Dropdown id="articles" label="Articles" openId={openId} setOpenId={setOpenId}>

@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import SportsExplorer, { type TeamMarker } from "./SportsExplorer";
+import { leagueStatusFor, LeagueStatusTag } from "@/lib/leagueStatus";
 
 export const dynamicParams = false;
 
@@ -91,6 +92,14 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     sport: "Football",
     status: "live",
     page: "/teams/wfootball",
+    team_count: 0,
+  },
+  {
+    league: "WNBA",
+    label: "WNBA",
+    sport: "Basketball",
+    status: "live",
+    page: "/teams/wnba",
     team_count: 0,
   },
 ];
@@ -193,13 +202,16 @@ export default function SportsPage() {
               >
                 <div className="flex items-baseline justify-between gap-2 mb-1">
                   <div className="font-semibold text-base tracking-tight">{c.label}</div>
-                  {isLive ? (
-                    <span className="text-[10px] uppercase tracking-widest font-semibold text-emerald-400">Live</span>
-                  ) : (
+                  {!isLive && (
                     <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">Soon</span>
                   )}
                 </div>
                 <div className="text-xs text-[var(--text-muted)]">{c.sport}</div>
+                {isLive && (
+                  <div className="mt-1.5">
+                    <LeagueStatusTag status={leagueStatusFor(c.page) ?? { label: "Live", tone: "regular" }} />
+                  </div>
+                )}
                 {showTeamCount && (
                   <div className="text-xs text-[var(--text-dim)] mt-1 tabular-nums">{c.team_count} teams</div>
                 )}

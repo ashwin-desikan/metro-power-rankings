@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-01",
-    headline: "Women's Football portal and Gold Standard fixes",
+    headline: "Women's Football portal, WNBA hub, and live standings",
     items: [
-      "New Women's Football portal at /teams/wfootball: tournament hubs for the UWCL and FIFA Women's Champions Cup, league hubs for England, the United States, and Spain, plus per-competition and per-club honors pages.",
-      "Each club page links to its metro area where available, and NWSL and WSL clubs on the All Sports map and metro rosters now deep-link into the portal.",
-      "Gold Standard fix: Rugby Union, Volleyball, Handball, and Women's Basketball clubs now surface under the Gold Standard filter (Top 14, Superlega, Handball-Bundesliga, WNBA), where none matched before.",
-      "New FIFA Women's World Cup hub at /teams/national/womens-world-cup: every edition from 1991 to 2023 with champions and finals, plus a per-nation team page carrying each country's full World Cup record.",
+      "New Women's Football portal at /teams/wfootball: tournament and league hubs (UWCL, FIFA Women's Champions Cup, WSL, Women's FA Cup, Liga F, NWSL) plus a page for every current NWSL, WSL, and Liga F club.",
+      "New WNBA hub at /teams/wnba with every current and defunct franchise, all-time records, champions since 1997, per-team pages, and the live 2026 standings from ESPN.",
+      "New FIFA Women's World Cup hub at /teams/national/womens-world-cup: all nine editions from 1991 to 2023 with champions and finals, plus a per-nation team page for each country.",
+      "Live NWSL and WNBA standings on their hubs; the All Sports directory and menu now tag each league's season state; Gold Standard now covers Rugby Union, Volleyball, Handball, and WNBA.",
     ],
   },
   {

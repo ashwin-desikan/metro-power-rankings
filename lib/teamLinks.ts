@@ -50,12 +50,15 @@ import {
   getWClubByName,
   wMonogram,
 } from "./wfootball";
+import {
+  getWnbaFranchiseByTeamName,
+} from "./wnba";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -73,6 +76,7 @@ const NHL_SPORT_LABELS = new Set(["Hockey", "NHL"]);
 const IPL_SPORT_LABELS = new Set(["T20 Cricket", "Cricket", "IPL"]);
 // Women's club football markers carry the distinct "W Football" sport label.
 const W_FOOTBALL_SPORT_LABELS = new Set(["W Football"]);
+const W_BASKETBALL_SPORT_LABELS = new Set(["W Basketball", "WNBA"]);
 // Workbook stores football as both "Football" (Team List, /sports markers)
 // and "Soccer" (FootballClub_Data merge in extract.py for metro detail).
 const FOOTBALL_SPORT_LABELS = new Set(["Football", "Soccer", "Football/Soccer"]);
@@ -97,6 +101,9 @@ function isIpl(sport: string, leagueHint: string): boolean {
 }
 function isWFootball(sport: string, leagueHint: string): boolean {
   return W_FOOTBALL_SPORT_LABELS.has(sport) || leagueHint === "W Football";
+}
+function isWnba(sport: string, leagueHint: string): boolean {
+  return W_BASKETBALL_SPORT_LABELS.has(sport) || leagueHint === "WNBA";
 }
 
 export function resolveTeamLink(
@@ -197,6 +204,19 @@ export function resolveTeamLink(
       logoUrl: null,
       monogram: wMonogram(c),
       displayName: c.name,
+    };
+  }
+
+  if (isWnba(sport, leagueHint)) {
+    const f = getWnbaFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "wnba",
+      href: `/teams/wnba/${f.slug}`,
+      logoUrl: null,
+      monogram: { bg: f.color, fg: "#FFFFFF", mono: f.abbr },
+      displayName: f.name,
     };
   }
 

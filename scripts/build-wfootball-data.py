@@ -110,9 +110,10 @@ def safe_str(v):
 
 def _valid_metro_slugs():
     path = os.path.join(ROOT, "public", "data", "metros.json")
-    if not os.path.exists(path):
-        return None  # cannot validate; accept all
-    md = json.load(open(path, encoding="utf-8"))
+    try:
+        md = json.load(open(path, encoding="utf-8"))
+    except Exception:
+        return None  # unreadable (missing or mount truncation); accept all
     rows = md if isinstance(md, list) else md.get("metros", md)
     return {r.get("slug") for r in rows if isinstance(r, dict)}
 
@@ -120,7 +121,10 @@ def build_metro_index():
     if not os.path.exists(ALL_TEAMS):
         return {}
     valid = _valid_metro_slugs()
-    data = json.load(open(ALL_TEAMS, encoding="utf-8"))
+    try:
+        data = json.load(open(ALL_TEAMS, encoding="utf-8"))
+    except Exception:
+        return {}  # all-teams.json unreadable (e.g. mount truncation)
     rows = data if isinstance(data, list) else data.get("teams", data)
     idx = {}
     for r in rows:
@@ -134,6 +138,31 @@ def build_metro_index():
             slug = None  # do not link to a metro page that does not exist
         idx[key] = {"metro_slug": slug, "metro": r.get("metro")}
     return idx
+
+
+def current_rosters():
+    """Current NWSL / WSL / Liga F clubs so every active club gets a page even
+    without honors. Primary source is all-teams.json (auto-syncs with Team
+    List); falls back to the committed womens-current-clubs.json snapshot when
+    all-teams.json is unreadable."""
+    LEAGUES = {"NWSL", "WSL", "Liga F"}
+    COUNTRY = {"NWSL": "United States", "WSL": "England", "Liga F": "Spain"}
+    try:
+        d = json.load(open(ALL_TEAMS, encoding="utf-8"))
+        rows = d if isinstance(d, list) else d.get("teams", d)
+        out = [{"name": r.get("team"), "league": r.get("league"),
+                "metro_slug": r.get("metro_slug"), "metro": r.get("metro"),
+                "country": COUNTRY[r.get("league")]}
+               for r in rows if r.get("sport") == "W Football" and r.get("league") in LEAGUES]
+        if out:
+            return out
+    except Exception:
+        pass
+    snap = os.path.join(ROOT, "public", "data", "football", "womens-current-clubs.json")
+    try:
+        return json.load(open(snap, encoding="utf-8"))
+    except Exception:
+        return []
 
 # ---- load source ------------------------------------------------------------
 
@@ -167,10 +196,12 @@ def main():
     # domestic-competition country.
     metro_country = {}
     _mp = os.path.join(ROOT, "public", "data", "metros.json")
-    if os.path.exists(_mp):
+    try:
         _md = json.load(open(_mp, encoding="utf-8"))
         _mrows = _md if isinstance(_md, list) else _md.get("metros", _md)
         metro_country = {r.get("slug"): r.get("country") for r in _mrows if isinstance(r, dict)}
+    except Exception:
+        metro_country = {}  # metros.json unreadable (missing or mount truncation)
 
     def metro_for(name):
         return metro_idx.get(norm_name(name), {"metro_slug": None, "metro": None})
@@ -298,6 +329,24 @@ def main():
             "current": current,
         })
 
+    # merge current rosters so every active NWSL/WSL/Liga F club gets a page,
+    # even without honors. Honored clubs keep their data; new clubs get empty
+    # honors plus their current league.
+    rosters = current_rosters()
+    roster_by_slug = {slugify(r["name"]): r for r in rosters if r.get("name")}
+    for slug, r in roster_by_slug.items():
+        if slug not in clubs:
+            clubs[slug] = {"slug": slug, "name": r["name"], "metro_slug": None,
+                           "metro": None, "country": None, "honors": {},
+                           "total_titles": 0, "total_finals": 0}
+    for slug, c in clubs.items():
+        r = roster_by_slug.get(slug)
+        c["current_league"] = r["league"] if r else None
+        if r:
+            c["metro_slug"] = c.get("metro_slug") or r.get("metro_slug")
+            c["metro"] = c.get("metro") or r.get("metro")
+            c["country"] = c.get("country") or r.get("country")
+
     # finalize clubs
     club_list = []
     for c in clubs.values():
@@ -314,6 +363,7 @@ def main():
             "total_titles": c["total_titles"], "total_finals": c["total_finals"],
             "first_title": min(all_years) if all_years else None,
             "last_title": max(all_years) if all_years else None,
+            "current_league": c.get("current_league"),
             "honors": honors,
         }
         club_list.append(c2)

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getWClubs, getWMeta, getWTournamentCompetitions, getWLeagueHubs, decoratedRows, WCOLS_DEFAULT } from "@/lib/wfootball";
+import { getWClubs, getWMeta, getWTournamentCompetitions, getWLeagueHubs, decoratedRows, WCOLS_DEFAULT, getWClubByName } from "@/lib/wfootball";
 import { getWWCMeta, getWWCNations } from "@/lib/wnational";
+import { getNwslStandings } from "@/lib/nwsl-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
-export default function WFootballHubPage() {
+export default async function WFootballHubPage() {
   const tournaments = getWTournamentCompetitions();
   const leagueHubs = getWLeagueHubs();
   const clubs = getWClubs();
@@ -27,6 +28,9 @@ export default function WFootballHubPage() {
   const rows = decoratedRows(clubs.slice(0, 25));
   const wwc = getWWCMeta();
   const wwcTop = getWWCNations()[0];
+  const nwsl = await getNwslStandings();
+  const nwslAsOf = new Date(nwsl.fetched_at).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  const nwslRows = nwsl.rows.map((r) => ({ ...r, slug: getWClubByName(r.name)?.slug ?? null }));
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -115,6 +119,50 @@ export default function WFootballHubPage() {
           })}
         </div>
       </section>
+
+      {nwsl.rows.length > 0 && (
+        <section className="mb-10">
+          <div className="flex items-center gap-2 mb-1">
+            <h2 className="text-lg font-semibold">{nwsl.source_label} standings</h2>
+            <span className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold" style={{ background: "rgba(16,185,129,0.16)", color: "#10b981" }}>Live · ESPN</span>
+          </div>
+          <p className="text-xs text-[var(--text-muted)] mb-3">Current as of {nwslAsOf}, via ESPN (refreshed hourly).</p>
+          <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <table className="w-full text-sm tabular-nums">
+              <thead>
+                <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
+                  <th className="py-2 pr-2 pl-3 text-right font-medium w-8">#</th>
+                  <th className="py-2 px-2 text-left font-medium">Club</th>
+                  <th className="py-2 px-2 text-right font-medium">P</th>
+                  <th className="py-2 px-2 text-right font-medium">W</th>
+                  <th className="py-2 px-2 text-right font-medium">D</th>
+                  <th className="py-2 px-2 text-right font-medium">L</th>
+                  <th className="py-2 px-2 text-right font-medium hidden sm:table-cell">GF</th>
+                  <th className="py-2 px-2 text-right font-medium hidden sm:table-cell">GA</th>
+                  <th className="py-2 px-2 text-right font-medium hidden sm:table-cell">GD</th>
+                  <th className="py-2 px-3 text-right font-medium">Pts</th>
+                </tr>
+              </thead>
+              <tbody>
+                {nwslRows.map((r, i) => (
+                  <tr key={(r.slug ?? r.name) + i} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                    <td className="py-1.5 pr-2 pl-3 text-right text-[var(--text-dim)]">{i + 1}</td>
+                    <td className="py-1.5 px-2">{r.slug ? <Link href={`/teams/wfootball/clubs/${r.slug}`} className="hover:underline font-medium">{r.name}</Link> : <span className="font-medium">{r.name}</span>}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.played}</td>
+                    <td className="py-1.5 px-2 text-right">{r.wins}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.draws}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.losses}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{r.gf}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{r.ga}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{r.gd > 0 ? "+" : ""}{r.gd}</td>
+                    <td className="py-1.5 px-3 text-right font-semibold">{r.points}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
 
       <MostDecoratedClubsTable
         title="Most decorated clubs"

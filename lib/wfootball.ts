@@ -68,6 +68,7 @@ export type WClub = {
   metro_slug: string | null;
   metro: string | null;
   country: string | null;
+  current_league: string | null;   // NWSL / WSL / Liga F if the club is a current top-flight side
   total_titles: number;
   total_finals: number;
   first_title: number | null;
@@ -272,7 +273,7 @@ export type WDecoratedRow = {
   country: string | null;
   metro: string | null;
   metro_slug: string | null;
-  leagueTitles: number;   // titles in league-kind competitions (WSL, Liga F, NWSL Shield)
+  leagueTitles: number;   // top-flight league titles (WSL, Liga F, NWSL Championship)
   faCups: number;         // Women's FA Cup wins
   faCupFinals: number;    // Women's FA Cup final appearances
   wclChamps: number;      // UEFA Women's Champions League titles
@@ -293,7 +294,7 @@ export function decoratedRows(clubs: WClub[]): WDecoratedRow[] {
     let nwslChampionship = 0;
     let nwslShield = 0;
     for (const h of c.honors) {
-      if (h.kind === "league") leagueTitles += h.titles;
+      if (h.competition_slug === "wsl" || h.competition_slug === "liga-f" || h.competition_slug === "nwsl-championship") leagueTitles += h.titles;
       if (h.competition_slug === "womens-fa-cup") {
         faCups += h.titles;
         faCupFinals += h.titles + h.runner_ups;
