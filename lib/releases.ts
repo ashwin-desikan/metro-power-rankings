@@ -19,13 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-02",
-    headline: "Live WNBA and NFL standings, compact metro dimensions, a rankings refresh, plus mobile and label fixes",
+    headline: "Live WNBA and NFL standings, compact metro dimensions, plus a rankings refresh",
     items: [
-      "WNBA team pages now pin the live 2026 season at the top of Season by Season, pulled hourly from ESPN, matching the MLB team pages.",
+      "Live 2026 standings: WNBA team pages now pin the current season atop Season by Season, and the NFL hub gains a Standings board across all eight divisions, both live from ESPN and refreshed hourly.",
       "Metro pages get a redesigned Dimension Breakdown: all 16 dimensions with their global rank in a compact two-column grid, replacing the separate Key Statistics block.",
-      "Football season tables now read \"Not Promoted (PO)\" for promotion-playoff final losses and tag semifinal exits as \"Playoffs\", correcting the old \"Not Relegated\" wording.",
-      "NWSL Gotham FC and OL Reign rows now deep-link to their club pages, and MLB, NBA, and NFL season tables scroll cleanly on mobile.",
-      "New 2026 NFL Standings on the NFL hub: all eight divisions live from ESPN, refreshed hourly. It sits in place now and fills in automatically once the season kicks off.",
+      "Football tables now read \"Not Promoted (PO)\" and tag semifinal exits \"Playoffs\"; NWSL Gotham FC and OL Reign deep-link to their clubs; MLB, NBA, NFL season tables scroll cleanly on mobile.",
       "Refreshed metro rankings from the latest workbook: corrected football and basketball team counts shifted scores and rankings for a set of metros, with the largest moves across Brazil and the Nordics.",
     ],
   },
