@@ -1,9 +1,9 @@
 {
-  "total_markers": 8807,
-  "major_markers": 1144,
-  "other_markers": 7663,
+  "total_markers": 8855,
+  "major_markers": 1143,
+  "other_markers": 7712,
   "by_sport": {
-    "Football": 5581,
+    "Football": 5629,
     "Basketball": 741,
     "W Basketball": 454,
     "Hockey": 344,
@@ -49,10 +49,10 @@
     "Germany": 317,
     "Spain": 307,
     "International Teams": 239,
-    "Italy": 204,
+    "Italy": 206,
+    "Brazil": 192,
     "France": 166,
     "Russia": 154,
-    "Brazil": 150,
     "Netherlands": 148,
     "Portugal": 115,
     "Romania": 107,
@@ -78,9 +78,9 @@
     "Big 12": 48,
     "Southeastern": 48,
     "Egypt": 46,
+    "Belarus": 45,
     "Finland": 45,
-    "Belarus": 44,
-    "Georgia": 43,
+    "Georgia": 44,
     "Serbia": 42,
     "American Athletic": 41,
     "Sun Belt": 41,
@@ -92,9 +92,9 @@
     "Spain": 395,
     "Germany": 393,
     "France": 262,
-    "Italy": 244,
+    "Italy": 246,
+    "Brazil": 231,
     "Russia": 213,
-    "Brazil": 189,
     "Netherlands": 184,
     "Poland": 140,
     "Japan": 138,
@@ -106,11 +106,11 @@
   "markers_with_team_page": 923,
   "sources": {
     "team_list": 3232,
-    "football_club_data": 5575,
+    "football_club_data": 5623,
     "team_list_excluded_no_coords": 0,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 708,
-    "football_club_data_excluded_no_coords": 4281
+    "football_club_data_excluded_no_coords": 4252
   },
   "league_cards": [
     {
@@ -175,7 +175,7 @@
       "sport": "Football",
       "status": "coming",
       "page": null,
-      "team_count": 204
+      "team_count": 206
     },
     {
       "league": "Germany",

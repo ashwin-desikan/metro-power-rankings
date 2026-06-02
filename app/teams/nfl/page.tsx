@@ -4,6 +4,7 @@ import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, 
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
+import NflStandings from "./NflStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -57,6 +58,10 @@ export default function NflIndexPage() {
           </div>
         </div>
       </header>
+
+      <div className="mx-auto max-w-3xl">
+        <NflStandings />
+      </div>
 
       {/* 32-team sortable table. Logo and monogram maps are computed
           server-side so the client component never has to touch the
