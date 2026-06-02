@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "Live 2026 standings: WNBA team pages now pin the current season atop Season by Season, and the NFL hub gains a Standings board across all eight divisions, both live from ESPN and refreshed hourly.",
       "Club Football adds Copa Libertadores with a live 2026 bracket, Other Continental, and a full MLS hub, plus club pages, colors, season history, and metro trophy badges for 400+ continental and MLS teams.",
       "Football tables now read \"Not Promoted (PO)\" and tag semifinal exits \"Playoffs\"; NWSL Gotham FC and OL Reign deep-link to their clubs; MLB, NBA, NFL season tables scroll cleanly on mobile.",
-      "Metro pages get a compact Dimension Breakdown (all 16 dimensions with global rank, replacing Key Statistics) and refreshed rankings from the latest workbook, moving Brazil and the Nordics most.",
+      "Metro pages get a compact Dimension Breakdown (16 dimensions with global rank, replacing Key Statistics), refreshed rankings from the latest workbook, and updated top-team picks (LA now Lakers and Dodgers).",
     ],
   },
   {
