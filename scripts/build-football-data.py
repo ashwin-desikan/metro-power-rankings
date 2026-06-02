@@ -690,8 +690,10 @@ EUROPEAN_TOURNAMENT_HUBS = [
     {
         "slug": "copa-libertadores",
         "label": "Copa Libertadores",
-        "short_label": "Libertadores",
+        "short_label": "Copa Libertadores",
         "calendar_year": True,
+        "current_year": 2026,
+        "current_season": "2026",
         "codes": ["CLB"],
         "year_min": None,
         "year_max": None,
@@ -871,9 +873,10 @@ def collect_european_tournaments(wb, slug_for_curname):
         # surfaces with its deepest round + winner flag. The page uses this
         # to render the NBA/NHL-style "alive vs eliminated at each round"
         # bracket. No live data emitted for hubs without a 2025-26 row.
+        _cur_year = hub.get("current_year", CURRENT_EURO_YEAR)
         current_entries = []
         for (cn, year), v in per_club_year.items():
-            if year != CURRENT_EURO_YEAR:
+            if year != _cur_year:
                 continue
             current_entries.append({
                 "cur_name": cn,
@@ -895,8 +898,8 @@ def collect_european_tournaments(wb, slug_for_curname):
             "champions": champions_list,
             "finalists": finalists_list,
             "most_decorated": most_decorated,
-            "current_season": CURRENT_EURO_SEASON if current_entries else None,
-            "current_year": CURRENT_EURO_YEAR if current_entries else None,
+            "current_season": hub.get("current_season", CURRENT_EURO_SEASON) if current_entries else None,
+            "current_year": _cur_year if current_entries else None,
             "current_entries": current_entries,
         }
 
@@ -1115,7 +1118,7 @@ def collect_continental_tournament(wb, slug_for_curname):
     return {
         "slug": "other-continental",
         "label": "Other Continental Tournaments",
-        "short_label": "Continental",
+        "short_label": "Other Continental Tournaments",
         "active": True,
         "era_notes": "The premier club competitions of the other four confederations: CONCACAF (North America), CAF (Africa), AFC (Asia), and OFC (Oceania).",
         "grouped_by_confederation": True,
@@ -1145,7 +1148,7 @@ def build_mls_hub(wb, slug_for_curname):
     hdr, _ = header_map(ws)
     i_country = hdr.get("Country (Leag)", 1)
     i_league = hdr.get("League", 2)
-    i_div = hdr.get("Division", 3)
+    i_div = hdr.get("Group", 56)
     i_team = hdr.get("Team", 7)
     i_w, i_d, i_l = hdr.get("W", 9), hdr.get("D", 10), hdr.get("L", 11)
     i_pts = hdr.get("Points", 12)
@@ -1214,6 +1217,30 @@ def build_mls_hub(wb, slug_for_curname):
         ({"year": r["year"], "winner": r["cur_name"], "winner_slug": r["slug"]} for r in rows if r["supporters_shield"]),
         key=lambda x: x["year"] or 0,
     )
+    agg = {}
+    for r in rows:
+        cn = r["cur_name"]
+        a = agg.get(cn)
+        if a is None:
+            a = {"cur_name": cn, "slug": r["slug"], "mls_cups": 0, "supporters_shields": 0,
+                 "finals": 0, "playoffs": 0, "seasons": 0, "last_title": None}
+            agg[cn] = a
+        if (r["pts"] is not None) or r["w"] or r["d"] or r["l"]:
+            a["seasons"] += 1
+        if r["mls_cup"]:
+            a["mls_cups"] += 1
+            if r["year"]:
+                a["last_title"] = max(a["last_title"] or 0, r["year"]) or None
+        if r["supporters_shield"]:
+            a["supporters_shields"] += 1
+        if r["mls_cup_app"]:
+            a["finals"] += 1
+        if r["playoffs"]:
+            a["playoffs"] += 1
+    most_decorated = sorted(
+        agg.values(),
+        key=lambda d: (-d["mls_cups"], -d["supporters_shields"], -d["finals"], -d["playoffs"], d["cur_name"].lower()),
+    )
     return {
         "slug": "mls",
         "country": "United States",
@@ -1225,6 +1252,7 @@ def build_mls_hub(wb, slug_for_curname):
         "all_time_champions": champions,
         "mls_cup_finals": mls_cup_finals,
         "supporters_shield_winners": shields,
+        "most_decorated": most_decorated,
     }
 
 def collect_extended_scope(wb):
@@ -1248,6 +1276,110 @@ def collect_extended_scope(wb):
                     and str(row[wl]).strip() == "Major League Soccer" and wn < len(row) and row[wn]):
                 out.add(str(row[wn]).strip())
     return out
+
+def collect_continental_trophy_counts(wb):
+    """Per-club count of premier continental championship wins: UEFA Champions
+    League / European Cup (CL), Copa Libertadores (CLB), and the four OTHC
+    confederation champions cups (CONCACAF/CAF/AFC/OFC). Keyed by Cur. Name."""
+    from collections import Counter
+    ws = wb["Eur RndbyRnd"]; hdr, _ = header_map(ws)
+    i_code = hdr.get("Comp"); i_cn = hdr.get("Cur. Name")
+    i_tr = hdr.get("Trophy Won"); i_year = hdr.get("Seas")
+    out = Counter(); seen = set()
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if i_code is None or i_code >= len(row) or row[i_code] not in ("CL", "CLB", "OTHC"):
+            continue
+        if i_tr is None or i_tr >= len(row) or row[i_tr] != "Y":
+            continue
+        cn = row[i_cn] if i_cn is not None and i_cn < len(row) else None
+        if not cn:
+            continue
+        cn = str(cn).strip()
+        yr = to_int(row[i_year]) if i_year is not None and i_year < len(row) else None
+        key = (cn, row[i_code], yr)
+        if key in seen:
+            continue
+        seen.add(key)
+        out[cn] += 1
+    return out
+
+
+def collect_mls_honor_counts(wb):
+    """Per-MLS-club counts of MLS Cups (BX Champions) and Supporters' Shields
+    (CH). Returns {cups, shields, clubs}."""
+    from collections import Counter
+    cups = Counter(); shields = Counter(); clubs = set()
+    if "World" not in wb.sheetnames:
+        return {"cups": {}, "shields": {}, "clubs": clubs}
+    ws = wb["World"]; hdr, _ = header_map(ws)
+    i_country = hdr.get("Country (Leag)", 1); i_league = hdr.get("League", 2)
+    i_cn = hdr.get("Cur. Name", 73); i_cup = hdr.get("Champions", 75); i_sh = hdr.get("Supporters Shield", 85)
+    yes = lambda v: str(v).strip().upper() == "Y" if v is not None else False
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if i_country >= len(row) or row[i_country] != "United States":
+            continue
+        if i_league >= len(row) or str(row[i_league]).strip() != "Major League Soccer":
+            continue
+        cn = row[i_cn] if i_cn < len(row) and row[i_cn] else None
+        if not cn:
+            continue
+        cn = str(cn).strip(); clubs.add(cn)
+        if i_cup < len(row) and yes(row[i_cup]): cups[cn] += 1
+        if i_sh < len(row) and yes(row[i_sh]): shields[cn] += 1
+    return {"cups": dict(cups), "shields": dict(shields), "clubs": clubs}
+
+def build_mls_club_seasons(wb, slug_for_curname):
+    """Per-club MLS season-by-season rows from the World sheet, keyed by club
+    slug, newest first. Carries the same honor flags as the MLS hub."""
+    if "World" not in wb.sheetnames:
+        return {}
+    ws = wb["World"]; hdr, _ = header_map(ws)
+    i_country = hdr.get("Country (Leag)", 1); i_league = hdr.get("League", 2); i_div = hdr.get("Group", 56)
+    i_w, i_d, i_l = hdr.get("W", 9), hdr.get("D", 10), hdr.get("L", 11); i_pts = hdr.get("Points", 12)
+    i_gs, i_ga = hdr.get("GS", 14), hdr.get("GA", 15); i_season = hdr.get("Season", 72); i_cn = hdr.get("Cur. Name", 73)
+    i_final = hdr.get("Final", 74); i_champ = hdr.get("Champions", 75); i_top4 = hdr.get("Top 4", 78)
+    i_playoff = hdr.get("Champ Play. App", 82); i_shield = hdr.get("Supporters Shield", 85)
+    yes = lambda v: str(v).strip().upper() == "Y" if v is not None else False
+    by_slug = defaultdict(list)
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if i_country >= len(row) or row[i_country] != "United States":
+            continue
+        if i_league >= len(row) or str(row[i_league]).strip() != "Major League Soccer":
+            continue
+        cn = row[i_cn] if i_cn < len(row) and row[i_cn] else None
+        if not cn:
+            continue
+        slug = slug_for_curname.get(str(cn).strip())
+        if not slug:
+            continue
+        key0 = str(row[0]).strip() if len(row) > 0 and row[0] else ""
+        yr = to_int(key0[:4]) if key0[:4].isdigit() else None
+        gs = to_int(row[i_gs]) or 0; ga = to_int(row[i_ga]) or 0
+        w_ = to_int(row[i_w]) or 0; d_ = to_int(row[i_d]) or 0; l_ = to_int(row[i_l]) or 0; pts_ = to_int(row[i_pts])
+        pos_ = to_int(row[8]) if len(row) > 8 else None
+        confpos_ = to_int(row[57]) if len(row) > 57 else None
+        if w_ == 0 and d_ == 0 and l_ == 0 and not pts_:
+            continue  # unplayed/placeholder season (e.g. the upcoming 2026 row)
+        mls_cup = yes(row[i_champ]) if i_champ < len(row) else False
+        mls_cup_app = yes(row[i_final]) if i_final < len(row) else False
+        playoff_sf = yes(row[i_top4]) if i_top4 < len(row) else False
+        playoffs = yes(row[i_playoff]) if i_playoff < len(row) else False
+        shield = yes(row[i_shield]) if i_shield < len(row) else False
+        finish = ("MLS Cup" if mls_cup else "MLS Cup Final" if mls_cup_app
+                  else "Conf Final" if playoff_sf else "Playoffs" if playoffs else "Missed playoffs")
+        by_slug[slug].append({
+            "year": yr,
+            "season": str(row[i_season]).strip() if i_season < len(row) and row[i_season] else None,
+            "conference": str(row[i_div]).strip() if i_div < len(row) and row[i_div] else None,
+            "overall_pos": pos_, "conf_pos": confpos_,
+            "w": w_, "d": d_, "l": l_,
+            "pts": pts_, "gs": gs, "ga": ga, "gd": gs - ga,
+            "supporters_shield": shield, "playoffs": playoffs, "playoff_sf": playoff_sf,
+            "mls_cup_app": mls_cup_app, "mls_cup": mls_cup, "finish": finish,
+        })
+    for slug in by_slug:
+        by_slug[slug].sort(key=lambda r: -(r["year"] or 0))
+    return dict(by_slug)
 
 # ---------- Main ----------
 
@@ -1475,6 +1607,22 @@ def main():
     leagues_path = OUT_DIR / "leagues.json"
     european_tournaments_path = OUT_DIR / "european-tournaments.json"
 
+
+    # Honor counts for metro-page team badges (4b). Placed after the totals
+    # merge so club["totals"] exists; setdefault guards synthesized clubs.
+    cont_counts = collect_continental_trophy_counts(wb)
+    mls_honors = collect_mls_honor_counts(wb)
+    mls_clubs = mls_honors["clubs"]
+    for _cn, _club in clubs.items():
+        _ct = cont_counts.get(_cn, 0)
+        if _ct:
+            _club.setdefault("totals", {})["cont_trophies"] = _ct
+        if _cn in mls_clubs:
+            _club["is_mls"] = True
+            _t = _club.setdefault("totals", {})
+            _t["mls_cups"] = mls_honors["cups"].get(_cn, 0)
+            _t["supporters_shields"] = mls_honors["shields"].get(_cn, 0)
+
     payload_index = {
         "generated_at": __import__("datetime").date.today().isoformat(),
         "source": str(src.name),
@@ -1500,6 +1648,12 @@ def main():
     with open(leagues_path, "w", encoding="utf-8") as f:
         json.dump(league_hubs, f, ensure_ascii=False)
     print(f"Wrote {leagues_path}  ({leagues_path.stat().st_size:,} bytes)")
+
+    mls_club_seasons = build_mls_club_seasons(wb, slug_for_curname)
+    mls_seasons_path = OUT_DIR / "mls-seasons.json"
+    with open(mls_seasons_path, "w", encoding="utf-8") as f:
+        json.dump(mls_club_seasons, f, ensure_ascii=False)
+    print(f"Wrote {mls_seasons_path}  ({len(mls_club_seasons)} clubs)")
 
     # ---------- Editorial corrections: Club World Cup / Intercontinental Cup ----------
     # 2025-26 Intercontinental Cup: PSG champion, Flamengo runner-up.

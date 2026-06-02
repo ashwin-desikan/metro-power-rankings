@@ -5,6 +5,8 @@ import {
   getAllClubSlugs,
   getClubBySlug,
   getSeasonsForClub,
+  getMlsSeasonsForClub,
+  getFootballClubByName,
   getCupsForClub,
   getEuropeForClub,
   monogramForFootball,
@@ -14,10 +16,12 @@ import {
   COUNTRY_TIER_LABELS,
   COUNTRY_TOP_FLIGHT,
   type FootballSeason,
+  type MlsClubSeason,
   type FootballCupFinal,
   type FootballEuropeEntry,
 } from "@/lib/football";
 import { slugify } from "@/lib/shared";
+import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -57,6 +61,24 @@ export default async function FootballClubPage({ params }: Props) {
   if (!club) notFound();
 
   const seasons = getSeasonsForClub(slug);
+  let mlsSeasons = club.is_mls ? getMlsSeasonsForClub(slug) : [];
+  if (club.is_mls) {
+    const live = await getCurrentMlsStandings();
+    const currentYear = new Date().getFullYear();
+    const liveRow = live.season_year === currentYear
+      ? live.rows.find((r) => getFootballClubByName(r.name)?.slug === slug)
+      : undefined;
+    if (liveRow && liveRow.played > 0) {
+      const liveSeason: MlsClubSeason = {
+        year: live.season_year, season: null, conference: liveRow.conf || null, overall_pos: null, conf_pos: null,
+        w: liveRow.wins, d: liveRow.draws, l: liveRow.losses, pts: liveRow.points,
+        gs: liveRow.gf, ga: liveRow.ga, gd: liveRow.gd,
+        supporters_shield: false, playoffs: false, playoff_sf: false,
+        mls_cup_app: false, mls_cup: false, finish: "In progress", is_live: true,
+      };
+      mlsSeasons = [liveSeason, ...mlsSeasons.filter((s) => s.year !== live.season_year)];
+    }
+  }
   const cups = getCupsForClub(slug);
   const europe = getEuropeForClub(slug);
   const tierLabels = COUNTRY_TIER_LABELS[club.country] ?? {};
@@ -189,13 +211,17 @@ export default async function FootballClubPage({ params }: Props) {
         </div>
       </section>
 
-      <SeasonsTable
-        seasons={seasons}
-        tierLabels={tierLabels}
-        country={club.country}
-        europe={europe}
-        cups={cups}
-      />
+      {club.is_mls ? (
+        <MlsClubSeasonsTable seasons={mlsSeasons} />
+      ) : (
+        <SeasonsTable
+          seasons={seasons}
+          tierLabels={tierLabels}
+          country={club.country}
+          europe={europe}
+          cups={cups}
+        />
+      )}
 
       {cups.length > 0 && <CupsBlock cups={cups} country={club.country} />}
 
@@ -290,6 +316,67 @@ const DOMESTIC_CUP_FULL_NAMES: Record<string, { major: string; minor: string }> 
 };
 
 
+function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
+  if (seasons.length === 0) {
+    return (
+      <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <h2 className="text-base font-semibold">Season-by-season</h2>
+        <p className="mt-2 text-sm text-[var(--text-muted)]">No season data on file.</p>
+      </section>
+    );
+  }
+  const finishStyle = (f: string): { bg: string; color: string } => {
+    if (f === "MLS Cup") return { bg: "rgba(245,215,110,0.18)", color: "#b58900" };
+    if (f === "MLS Cup Final") return { bg: "rgba(245,215,110,0.10)", color: "#b58900" };
+    if (f === "Conf Final") return { bg: "rgba(99,102,241,0.12)", color: "#818cf8" };
+    if (f === "Playoffs") return { bg: "transparent", color: "var(--text-muted)" };
+    return { bg: "transparent", color: "var(--text-dim)" };
+  };
+  return (
+    <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      <h2 className="text-base font-semibold">Season-by-season</h2>
+      <p className="mt-1 text-xs text-[var(--text-muted)]">Major League Soccer. No promotion or relegation; the Supporters&apos; Shield (&#9733;) marks the best regular-season record and the MLS Cup is the playoff title.</p>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full text-sm tabular-nums min-w-[560px]">
+          <thead>
+            <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
+              <th className="py-2 pr-3 text-left font-medium">Year</th>
+              <th className="py-2 px-2 text-left font-medium">Conf</th>
+              <th className="py-2 px-2 text-right font-medium">Pos</th>
+              <th className="py-2 px-2 text-right font-medium hidden sm:table-cell">Conf Pos</th>
+              <th className="py-2 px-2 text-right font-medium">W</th>
+              <th className="py-2 px-2 text-right font-medium">D</th>
+              <th className="py-2 px-2 text-right font-medium">L</th>
+              <th className="py-2 px-2 text-right font-medium">Pts</th>
+              <th className="py-2 px-2 text-right font-medium hidden sm:table-cell">GD</th>
+              <th className="py-2 px-2 text-left font-medium">Finish</th>
+            </tr>
+          </thead>
+          <tbody>
+            {seasons.map((s) => {
+              const fs = finishStyle(s.finish);
+              const isLive = s.is_live === true;
+              return (
+                <tr key={`${s.year}-${s.conference}${isLive ? "-live" : ""}`} className="border-b" style={{ borderColor: "var(--border)", background: s.supporters_shield ? "rgba(245,215,110,0.06)" : isLive ? "rgba(78,205,196,0.06)" : undefined, fontStyle: isLive ? "italic" : undefined }}>
+                  <td className="py-1.5 pr-3 font-medium" style={{ fontWeight: isLive ? 600 : undefined }}>{s.year}</td>
+                  <td className="py-1.5 px-2 text-[var(--text-muted)]">{s.conference ?? "—"}</td>
+                  <td className="py-1.5 px-2 text-right">{s.overall_pos ?? "—"}</td>
+                  <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{s.conf_pos ?? "—"}</td>
+                  <td className="py-1.5 px-2 text-right">{s.w}</td>
+                  <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.d}</td>
+                  <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.l}</td>
+                  <td className="py-1.5 px-2 text-right font-semibold">{s.pts ?? "—"}</td>
+                  <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{s.gd > 0 ? `+${s.gd}` : s.gd}</td>
+                  <td className="py-1.5 px-2">{isLive ? (<span className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full font-semibold border not-italic" style={{ borderColor: "var(--border)", color: "var(--text-muted)", background: "var(--bg-card)" }} title="Live record from ESPN, refreshed hourly"><span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />In progress &middot; ESPN</span>) : (<span className="inline-flex flex-wrap items-center gap-1">{s.supporters_shield && <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }} title="Supporters' Shield (best regular-season record)">&#9733; Shield</span>}{s.finish !== "Missed playoffs" && <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: fs.bg, color: fs.color }}>{s.finish}</span>}</span>)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
 function SeasonsTable({
   seasons,
   tierLabels,

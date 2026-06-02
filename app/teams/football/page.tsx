@@ -23,6 +23,8 @@ export default function FootballIndex() {
   const clubs = getAllClubs();
   const hubs = getAllLeagueHubs();
   const tournamentHubs = getAllEuropeanTournamentHubs();
+  // One-off finals and the continental aggregate have no in-season/offseason cycle.
+  const NO_SEASON_STATE = new Set(["uefa-super-cup", "club-world-cup", "other-continental"]);
 
   // Trim to the fields the client component needs (keeps the bundle compact).
   const clientClubs: IndexClub[] = clubs.map((c) => ({
@@ -93,6 +95,14 @@ export default function FootballIndex() {
                       Live
                     </span>
                   )}
+                  {t.active && !isLive && !NO_SEASON_STATE.has(t.slug) && (
+                    <span
+                      className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold"
+                      style={{ background: "rgba(120,120,140,0.12)", color: "var(--text-dim)" }}
+                    >
+                      Offseason
+                    </span>
+                  )}
                 </div>
                 <div className="text-xs text-[var(--text-muted)] mt-1 tabular-nums">
                   {t.editions} edition{t.editions === 1 ? "" : "s"}
@@ -119,7 +129,10 @@ export default function FootballIndex() {
               className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
-              <div className="text-base font-semibold">{h.league}</div>
+              <div className="flex items-baseline justify-between gap-2">
+                <div className="text-base font-semibold">{h.league}</div>
+                <span className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={h.is_mls ? { background: "rgba(16,185,129,0.18)", color: "#10b981" } : { background: "rgba(120,120,140,0.12)", color: "var(--text-dim)" }}>{h.is_mls ? "Live" : "Offseason"}</span>
+              </div>
               <div className="text-xs text-[var(--text-muted)] mt-1">{h.country}</div>
               <div className="text-xs text-[var(--text-muted)] mt-2 tabular-nums">
                 {h.all_time_champions.length} all-time Level 1 champion entries

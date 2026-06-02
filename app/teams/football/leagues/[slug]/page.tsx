@@ -21,6 +21,7 @@ import {
 const SEASON_COMP_INCLUDE = new Set(["CL", "CLB", "EL", "CWC", "EUCL", "OTH", "OTHC"]);
 import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
 import MlsStandings from "./MlsStandings";
+import MlsMostDecorated from "./MlsMostDecorated";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -122,11 +123,14 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
   const live = await getCurrentMlsStandings();
   const currentYear = new Date().getFullYear();
   const useLive = live.rows.length > 0 && live.season_year === currentYear;
-  const liveStandings: MlsStanding[] = live.rows.map((r, i) => ({
-    place: i + 1, cur_name: r.name, team: r.name, slug: getFootballClubByName(r.name)?.slug ?? null,
-    conference: r.conf || null, w: r.wins, d: r.draws, l: r.losses, pts: r.points, gs: r.gf, ga: r.ga, gd: r.gd,
-    supporters_shield: false, playoffs: false, playoff_sf: false, mls_cup_app: false, mls_cup: false,
-  }));
+  const liveStandings: MlsStanding[] = live.rows.map((r, i) => {
+    const lc = getFootballClubByName(r.name);
+    return {
+      place: i + 1, cur_name: lc?.cur_name ?? r.name, team: lc?.cur_name ?? r.name, slug: lc?.slug ?? null,
+      conference: r.conf || null, w: r.wins, d: r.draws, l: r.losses, pts: r.points, gs: r.gf, ga: r.ga, gd: r.gd,
+      supporters_shield: false, playoffs: false, playoff_sf: false, mls_cup_app: false, mls_cup: false,
+    };
+  });
   const standings = useLive ? liveStandings : hub.current_standings;
   const conferences = useLive
     ? Array.from(new Set(liveStandings.map((r) => r.conference).filter((c): c is string => !!c))).sort()
@@ -147,6 +151,7 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
         </p>
       </header>
       <MlsStandings standings={standings} conferences={conferences} showHonors={!useLive} />
+      <MlsMostDecorated rows={hub.most_decorated} />
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <div>
           <h2 className="text-lg font-semibold mb-3">MLS Cup champions</h2>

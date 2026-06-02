@@ -26,6 +26,9 @@ export type FootballClubTotals = {
   minor_cups?: number;
   last_trophy?: number | null;
   career_years?: number;
+  cont_trophies?: number;
+  mls_cups?: number;
+  supporters_shields?: number;
 };
 
 export type FootballClub = {
@@ -59,6 +62,7 @@ export type FootballClub = {
   // country filter + map color reflect where the club actually played
   // that year, not their canonical federation.
   country_by_year: Record<string, string>;
+  is_mls?: boolean;
   wikidata_qid?: string;
   wikipedia_url?: string;
 };
@@ -176,6 +180,7 @@ export type MlsLeagueHub = {
   all_time_champions: Array<{ year: number | null; champion: string; champion_slug: string | null }>;
   mls_cup_finals: Array<{ year: number | null; champion: string; champion_slug: string | null; runner_up: string | null; runner_up_slug: string | null }>;
   supporters_shield_winners: Array<{ year: number | null; winner: string; winner_slug: string | null }>;
+  most_decorated: Array<{ cur_name: string; slug: string | null; mls_cups: number; supporters_shields: number; finals: number; playoffs: number; seasons: number; last_title: number | null }>;
 };
 
 // ---------- European tournament hubs ----------
@@ -387,6 +392,32 @@ export function getSeasonsForClub(slug: string): FootballSeason[] {
   return getSeasonsMap()[slug] ?? [];
 }
 
+export type MlsClubSeason = {
+  year: number | null;
+  season: string | null;
+  conference: string | null;
+  overall_pos: number | null;
+  conf_pos: number | null;
+  w: number; d: number; l: number;
+  pts: number | null;
+  gs: number; ga: number; gd: number;
+  supporters_shield: boolean;
+  playoffs: boolean;
+  playoff_sf: boolean;
+  mls_cup_app: boolean;
+  mls_cup: boolean;
+  finish: string;
+  is_live?: boolean;
+};
+
+let _mlsSeasonsCache: Record<string, MlsClubSeason[]> | null = null;
+export function getMlsSeasonsForClub(slug: string): MlsClubSeason[] {
+  if (!_mlsSeasonsCache) {
+    _mlsSeasonsCache = loadJson<Record<string, MlsClubSeason[]>>("mls-seasons.json", {});
+  }
+  return _mlsSeasonsCache[slug] ?? [];
+}
+
 export function getCupsForClub(slug: string): FootballCupFinal[] {
   return getCupsMap()[slug] ?? [];
 }
@@ -521,9 +552,26 @@ function normalizeTeamName(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
+// ESPN MLS standings use display names that differ from the workbook's
+// canonical club names. Map ESPN displayName -> canonical name so live MLS
+// rows resolve to the right club page (slug, colors, link) and display the
+// canonical name.
+const MLS_ESPN_TO_CANONICAL: Record<string, string> = {
+  "Chicago Fire FC": "Chicago Fire",
+  "Red Bull New York": "New York Red Bulls",
+  "Orlando City SC": "Orlando City",
+  "Atlanta United FC": "Atlanta United",
+  "LA Galaxy": "Los Angeles Galaxy",
+  "Houston Dynamo FC": "Houston Dynamo",
+  "Vancouver Whitecaps": "Vancouver Whitecaps FC",
+  "Minnesota United FC": "Minnesota United",
+  "LAFC": "Los Angeles FC",
+};
+
 export function getFootballClubByName(teamName: string): FootballClub | null {
   if (!teamName) return null;
-  const slug = getSlugLookup()[normalizeTeamName(teamName)];
+  const canonical = MLS_ESPN_TO_CANONICAL[teamName] ?? teamName;
+  const slug = getSlugLookup()[normalizeTeamName(canonical)];
   if (!slug) return null;
   return getClubBySlug(slug);
 }

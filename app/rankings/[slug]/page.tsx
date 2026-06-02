@@ -1833,49 +1833,47 @@ function TeamCard({
       )}
       {footballClub && (
         <div className="flex gap-1.5 mt-2 flex-wrap">
-          {(footballClub.totals.titles ?? 0) > 0 ? (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
-              style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
-              title="Top-flight league titles"
-            >
-              {footballClub.totals.titles} title{footballClub.totals.titles === 1 ? "" : "s"}
-            </span>
+          {footballClub.is_mls ? (
+            <>
+              <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title="MLS Cup titles">
+                {footballClub.totals.mls_cups ?? 0} {(footballClub.totals.mls_cups ?? 0) === 1 ? "Cup" : "Cups"}
+              </span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(99,102,241,0.16)", color: "#818cf8" }} title="Supporters' Shields (best regular-season record)">
+                {footballClub.totals.supporters_shields ?? 0} Sup. Shield{(footballClub.totals.supporters_shields ?? 0) === 1 ? "" : "s"}
+              </span>
+              {(footballClub.totals.cont_trophies ?? 0) > 0 && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Continental trophies (CONCACAF Champions Cup / League)">
+                  {footballClub.totals.cont_trophies} Cont.
+                </span>
+              )}
+            </>
           ) : (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
-              style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }}
-              title="Top-flight league titles"
-            >
-              No titles
-            </span>
-          )}
-          {clTitles > 0 && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
-              style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
-              title="European Cup / Champions League titles"
-            >
-              {clTitles} CL
-            </span>
-          )}
-          {(footballClub.totals.major_cups ?? 0) > 0 && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded"
-              style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
-              title="Major trophies (domestic cups + continental trophies)"
-            >
-              {footballClub.totals.major_cups} maj. trophies
-            </span>
-          )}
-          {footballClub.top_flight_seasons > 0 && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded"
-              style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
-              title="Top-flight seasons"
-            >
-              {footballClub.top_flight_seasons} yrs top-flight
-            </span>
+            <>
+              {(footballClub.totals.titles ?? 0) > 0 ? (
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title="Top-flight league titles">
+                  {footballClub.totals.titles} title{footballClub.totals.titles === 1 ? "" : "s"}
+                </span>
+              ) : (
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }} title="Top-flight league titles">
+                  No titles
+                </span>
+              )}
+              {(footballClub.totals.cont_trophies ?? 0) > 0 && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title="Continental trophies (Champions League / Copa Libertadores / continental champions cups)">
+                  {footballClub.totals.cont_trophies} Cont.
+                </span>
+              )}
+              {(footballClub.totals.major_cups ?? 0) > 0 && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Major trophies (domestic cups + continental trophies)">
+                  {footballClub.totals.major_cups} maj. trophies
+                </span>
+              )}
+              {footballClub.top_flight_seasons > 0 && (
+                <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Top-flight seasons">
+                  {footballClub.top_flight_seasons} yrs top-flight
+                </span>
+              )}
+            </>
           )}
         </div>
       )}
