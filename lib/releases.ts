@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-02",
-    headline: "Live WNBA and NFL standings, compact metro dimensions, plus a rankings refresh",
+    headline: "Club Football hubs, live WNBA/NFL/MLS standings, compact metro dimensions, and fixes",
     items: [
       "Live 2026 standings: WNBA team pages now pin the current season atop Season by Season, and the NFL hub gains a Standings board across all eight divisions, both live from ESPN and refreshed hourly.",
-      "Metro pages get a redesigned Dimension Breakdown: all 16 dimensions with their global rank in a compact two-column grid, replacing the separate Key Statistics block.",
+      "Club Football adds three hubs: Copa Libertadores, an Other Continental tournaments table (CONCACAF, CAF, AFC, OFC), and an MLS league hub with live 2026 standings, a conference toggle, and MLS Cup history.",
       "Football tables now read \"Not Promoted (PO)\" and tag semifinal exits \"Playoffs\"; NWSL Gotham FC and OL Reign deep-link to their clubs; MLB, NBA, NFL season tables scroll cleanly on mobile.",
-      "Refreshed metro rankings from the latest workbook: corrected football and basketball team counts shifted scores and rankings for a set of metros, with the largest moves across Brazil and the Nordics.",
+      "Metro pages get a compact Dimension Breakdown (all 16 dimensions with global rank, replacing Key Statistics) and refreshed rankings from the latest workbook, moving Brazil and the Nordics most.",
     ],
   },
   {

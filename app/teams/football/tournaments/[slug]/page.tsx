@@ -4,10 +4,12 @@ import { notFound } from "next/navigation";
 import {
   getAllEuropeanTournamentHubSlugs,
   getEuropeanTournamentHub,
+  monogramForFootball,
   type EuropeanCurrentEntry,
 } from "@/lib/football";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedTable from "./MostDecoratedTable";
+import ContinentalTable from "./ContinentalTable";
 
 export const dynamicParams = false;
 
@@ -42,6 +44,10 @@ export default async function ClubTournamentHubPage({ params }: Props) {
   const { slug } = await params;
   const hub = getEuropeanTournamentHub(slug);
   if (!hub) notFound();
+
+  if (hub.grouped_by_confederation && hub.sections) {
+    return <ContinentalHubView hub={hub} />;
+  }
 
   const hasCurrent = hub.active && hub.current_entries.length > 0;
 
@@ -111,6 +117,39 @@ export default async function ClubTournamentHubPage({ params }: Props) {
 
 // ---------- Sub-components ----------
 
+function ColorBall({ slug, name }: { slug: string | null; name: string }) {
+  const m = monogramForFootball(name, slug ?? undefined);
+  return (
+    <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 8, fontWeight: 700 }} aria-hidden>{m.mono}</span>
+  );
+}
+
+
+function ContinentalHubView({ hub }: { hub: NonNullable<ReturnType<typeof getEuropeanTournamentHub>> }) {
+  const sections = hub.sections ?? [];
+  return (
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mb-3">
+        <Link href="/teams/football/tournaments" className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border hover:border-[var(--accent)] hover:text-[var(--accent)] transition" style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}>
+          <span aria-hidden>&larr;</span>
+          Back to Tournaments
+        </Link>
+      </div>
+      <nav className="text-xs text-[var(--text-muted)] mb-4">
+        <Link href="/" className="hover:underline">Home</Link>{" / "}
+        <Link href="/teams/football" className="hover:underline">Club Football</Link>{" / "}
+        <Link href="/teams/football/tournaments" className="hover:underline">Tournaments</Link>{" / "}
+        <span>{hub.short_label}</span>
+      </nav>
+      <header className="mb-6">
+        <h1 className="text-3xl font-semibold tracking-tight">{hub.label}</h1>
+        <p className="mt-1 text-sm text-[var(--text-muted)] max-w-3xl">{hub.era_notes}</p>
+      </header>
+      <ContinentalTable sections={sections} />
+    </main>
+  );
+}
+
 function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropeanTournamentHub>> }) {
   if (hub.champions.length === 0) {
     return (
@@ -149,7 +188,7 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
               className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
               style={{ borderColor: "var(--border)" }}
             >
-              <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">Season</th>
+              <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">{hub.calendar_year ? "Year" : "Season"}</th>
               <th className="py-2 px-2 text-left font-medium hidden sm:table-cell">Competition</th>
               <th className="py-2 px-2 text-left font-medium">Champion</th>
               <th className="py-2 px-2 text-left font-medium">Runner-up</th>
@@ -161,11 +200,11 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
               const runnerUp = ruList && ruList.length > 0 ? ruList.shift()! : null;
               return (
                 <tr key={`${c.year}-${i}`} className="border-b" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{c.season ?? c.year}</td>
+                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{hub.calendar_year ? c.year : (c.season ?? c.year)}</td>
                   <td className="py-1.5 px-2 text-xs text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{c.competition ?? "—"}</td>
                   <td className="py-1.5 px-2">
                     <span className="inline-flex items-center gap-1.5">
-                      <span aria-hidden style={{ color: "#d4af37" }}>★</span>
+                      <ColorBall slug={c.slug} name={c.cur_name} />
                       {c.slug ? (
                         <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
                           {c.cur_name}
@@ -177,13 +216,16 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
                   </td>
                   <td className="py-1.5 px-2 text-[var(--text-muted)]">
                     {runnerUp ? (
-                      runnerUp.slug ? (
+                      <span className="inline-flex items-center gap-1.5">
+                      <ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />
+                      {runnerUp.slug ? (
                         <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
                           {runnerUp.cur_name}
                         </Link>
                       ) : (
                         <span>{runnerUp.cur_name}</span>
-                      )
+                      )}
+                      </span>
                     ) : (
                       <span className="text-[var(--text-dim)]">—</span>
                     )}

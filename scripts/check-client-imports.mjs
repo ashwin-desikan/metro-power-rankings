@@ -42,6 +42,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/wnba",
   "@/lib/wnba-standings",
   "@/lib/nwsl-standings",
+  "@/lib/mls-standings",
   "@/lib/standings",
   "@/lib/mlb-standings",
   "@/lib/nba-standings",

@@ -7,16 +7,21 @@ import {
   getAllClubs,
   getCupsForClub,
   getEuropeForClub,
+  getFootballClubByName,
   monogramForFootball,
   europeanCompDisplayCode,
   europeanCompSortKey,
   type FootballLeagueHub,
   type FootballCupFinal,
   type FootballEuropeEntry,
+  type MlsLeagueHub,
+  type MlsStanding,
 } from "@/lib/football";
 
 const SEASON_COMP_INCLUDE = new Set(["CL", "CLB", "EL", "CWC", "EUCL", "OTH", "OTHC"]);
 import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
+import MlsStandings from "./MlsStandings";
+import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -48,6 +53,10 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   const { slug } = await params;
   const hub = getLeagueHub(slug);
   if (!hub) notFound();
+
+  if (hub.is_mls) {
+    return <MlsHubView hub={hub as unknown as MlsLeagueHub} />;
+  }
 
   // All in-scope clubs for this hub's country, slimmed to the fields the
   // map needs. tier_by_year drives the year filter and tier coloring.
@@ -103,6 +112,81 @@ export default async function FootballLeagueHubPage({ params }: Props) {
       <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
       <LeagueHubMap country={hub.country} clubs={hubClubs} />
       <AllTimeChampions hub={hub} />
+    </main>
+  );
+}
+
+async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
+  const finals = [...(hub.mls_cup_finals ?? [])].filter((c) => c.year).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+  const shields = [...(hub.supporters_shield_winners ?? [])].filter((s) => s.year).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+  const live = await getCurrentMlsStandings();
+  const currentYear = new Date().getFullYear();
+  const useLive = live.rows.length > 0 && live.season_year === currentYear;
+  const liveStandings: MlsStanding[] = live.rows.map((r, i) => ({
+    place: i + 1, cur_name: r.name, team: r.name, slug: getFootballClubByName(r.name)?.slug ?? null,
+    conference: r.conf || null, w: r.wins, d: r.draws, l: r.losses, pts: r.points, gs: r.gf, ga: r.ga, gd: r.gd,
+    supporters_shield: false, playoffs: false, playoff_sf: false, mls_cup_app: false, mls_cup: false,
+  }));
+  const standings = useLive ? liveStandings : hub.current_standings;
+  const conferences = useLive
+    ? Array.from(new Set(liveStandings.map((r) => r.conference).filter((c): c is string => !!c))).sort()
+    : hub.conferences;
+  const standingsYear = useLive ? live.season_year : hub.current_year;
+  return (
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <nav className="text-xs text-[var(--text-muted)] mb-4">
+        <Link href="/" className="hover:underline">Home</Link>{" / "}
+        <Link href="/teams/football" className="hover:underline">Football clubs</Link>{" / "}
+        <span>{hub.league}</span>
+      </nav>
+      <header className="mb-8">
+        <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>
+        <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
+          {hub.country}. No promotion or relegation: the Supporters&apos; Shield goes to the best regular-season record across both conferences, and the MLS Cup is decided in the playoffs.
+          {standingsYear ? (useLive ? <> Live {standingsYear} standings from ESPN, refreshed hourly.</> : <> Standings shown for {standingsYear}.</>) : null}
+        </p>
+      </header>
+      <MlsStandings standings={standings} conferences={conferences} showHonors={!useLive} />
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div>
+          <h2 className="text-lg font-semibold mb-3">MLS Cup champions</h2>
+          <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+                  <th className="text-left py-2 px-3 font-medium w-14">Year</th>
+                  <th className="text-left py-2 px-3 font-medium">Champion</th>
+                  <th className="text-left py-2 px-3 font-medium">Runner-up</th>
+                </tr>
+              </thead>
+              <tbody>
+                {finals.map((c) => (
+                  <tr key={`${c.year}-${c.champion}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                    <td className="py-1.5 px-3 tabular-nums text-[var(--text-muted)]">{c.year}</td>
+                    <td className="py-1.5 px-3"><span className="inline-flex items-center gap-1.5"><ColorBall slug={c.champion_slug ?? ""} name={c.champion} />{c.champion_slug ? <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline font-medium">{c.champion}</Link> : <span className="font-medium">{c.champion}</span>}</span></td>
+                    <td className="py-1.5 px-3 text-[var(--text-muted)]">{c.runner_up ? <span className="inline-flex items-center gap-1.5"><ColorBall slug={c.runner_up_slug ?? ""} name={c.runner_up} />{c.runner_up_slug ? <Link href={`/teams/football/${c.runner_up_slug}`} className="hover:underline">{c.runner_up}</Link> : <span>{c.runner_up}</span>}</span> : <span className="text-[var(--text-dim)]">—</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-lg font-semibold mb-3">Supporters&apos; Shield winners</h2>
+          <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <table className="w-full text-sm">
+              <tbody>
+                {shields.map((s) => (
+                  <tr key={`${s.year}-${s.winner}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                    <td className="py-1.5 px-3 tabular-nums text-[var(--text-muted)] w-16">{s.year}</td>
+                    <td className="py-1.5 px-3">{s.winner_slug ? <Link href={`/teams/football/${s.winner_slug}`} className="hover:underline font-medium">{s.winner}</Link> : <span className="font-medium">{s.winner}</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

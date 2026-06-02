@@ -687,6 +687,17 @@ EUROPEAN_TOURNAMENT_HUBS = [
         "active": True,
         "era_notes": "Intercontinental Cup 1960-2004; FIFA Club World Cup since 2000. The two competitions overlapped, then merged after 2004 into a unified FIFA tournament.",
     },
+    {
+        "slug": "copa-libertadores",
+        "label": "Copa Libertadores",
+        "short_label": "Libertadores",
+        "calendar_year": True,
+        "codes": ["CLB"],
+        "year_min": None,
+        "year_max": None,
+        "active": True,
+        "era_notes": "CONMEBOL's premier club competition, contested since 1960. South America's counterpart to the European Cup / Champions League.",
+    },
 ]
 
 # What deepest-round bucket a Rnd# belongs to, for the live-bracket widget.
@@ -876,6 +887,7 @@ def collect_european_tournaments(wb, slug_for_curname):
             "label": hub["label"],
             "short_label": hub["short_label"],
             "active": hub["active"],
+            "calendar_year": hub.get("calendar_year", False),
             "era_notes": hub["era_notes"],
             "year_min": years_present[0] if years_present else None,
             "year_max": years_present[-1] if years_present else None,
@@ -998,6 +1010,245 @@ def build_league_hubs(wb, standings_rows):
     return hubs
 
 
+# ---------- ETL: Other Continental Tournaments hub ----------
+
+# Confederations surfaced by the Other Continental hub. South America is
+# intentionally excluded — Copa Libertadores has its own hub.
+CONTINENTAL_SECTIONS = [
+    ("North America", "CONCACAF"),
+    ("Africa", "CAF"),
+    ("Asia", "AFC"),
+    ("Oceania", "OFC"),
+]
+
+
+def collect_continental_tournament(wb, slug_for_curname):
+    """Aggregate the OTHC code in Eur RndbyRnd (the premier continental club
+    cups of CONCACAF, CAF, AFC, OFC) into one hub sectioned by confederation.
+    Each section lists finals (champion + runner-up) across that confederation's
+    competition lineage."""
+    from collections import defaultdict, Counter
+    ws = wb["Eur RndbyRnd"]
+    hdr, _ = header_map(ws)
+    i_cont = hdr.get("Continent")
+    i_year = hdr.get("Seas")
+    i_cn = hdr.get("Cur. Name")
+    i_rnd = hdr.get("Rnd#")
+    i_code = hdr.get("Comp")
+    i_trophy = hdr.get("Trophy Won")
+    i_comp = hdr.get("Leag/Comp.")
+    i_season = hdr.get("Season")
+
+    agg = {}  # (cont, year, comp, club) -> deepest round + trophy
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if i_code is None or i_code >= len(row) or row[i_code] != "OTHC":
+            continue
+        cn = row[i_cn] if i_cn is not None and i_cn < len(row) else None
+        if not cn:
+            continue
+        cn = str(cn).strip()
+        cont = str(row[i_cont]).strip() if i_cont is not None and i_cont < len(row) and row[i_cont] else None
+        year = to_int(row[i_year]) if i_year is not None and i_year < len(row) else None
+        if not cont or year is None:
+            continue
+        comp = str(row[i_comp]).strip() if i_comp is not None and i_comp < len(row) and row[i_comp] else None
+        season = str(row[i_season]).strip() if i_season is not None and i_season < len(row) and row[i_season] else None
+        rnd = to_int(row[i_rnd]) if i_rnd is not None and i_rnd < len(row) else None
+        trophy = (row[i_trophy] == "Y") if i_trophy is not None and i_trophy < len(row) else False
+        key = (cont, year, comp, cn)
+        cur = agg.get(key)
+        if cur is None:
+            agg[key] = {"cont": cont, "year": year, "comp": comp, "season": season, "cn": cn, "rnd": rnd, "trophy": trophy}
+        else:
+            if rnd is not None and (cur["rnd"] is None or rnd < cur["rnd"]):
+                cur["rnd"] = rnd
+            if trophy:
+                cur["trophy"] = True
+
+    finals_by_cont = defaultdict(dict)  # cont -> {(year,comp): final}
+    for v in agg.values():
+        slot = finals_by_cont[v["cont"]].setdefault((v["year"], v["comp"]), {
+            "year": v["year"], "season": v["season"], "competition": v["comp"],
+            "champion": None, "champion_slug": None, "runner_up": None, "runner_up_slug": None,
+        })
+        if v["trophy"]:
+            slot["champion"] = v["cn"]; slot["champion_slug"] = slug_for_curname.get(v["cn"])
+        elif v["rnd"] == 1 and slot["runner_up"] is None:
+            slot["runner_up"] = v["cn"]; slot["runner_up_slug"] = slug_for_curname.get(v["cn"])
+
+    sections = []
+    all_years = []
+    for cont, conf in CONTINENTAL_SECTIONS:
+        finals = [f for f in finals_by_cont.get(cont, {}).values() if f["champion"] or f["runner_up"]]
+        finals.sort(key=lambda f: -(f["year"] or 0))
+        if not finals:
+            continue
+        comps = []
+        for f in finals:
+            if f["competition"] and f["competition"] not in comps:
+                comps.append(f["competition"])
+        win_ctr = Counter(f["champion"] for f in finals if f["champion"])
+        most_decorated = sorted(
+            ({"cur_name": cn, "slug": slug_for_curname.get(cn), "champion_count": c} for cn, c in win_ctr.items()),
+            key=lambda d: (-d["champion_count"], d["cur_name"].lower()),
+        )
+        years = [f["year"] for f in finals if f["year"]]
+        all_years += years
+        sections.append({
+            "continent": cont, "confederation": conf, "competitions": comps,
+            "finals": finals, "most_decorated": most_decorated,
+            "editions": len(set(years)), "year_min": min(years) if years else None, "year_max": max(years) if years else None,
+        })
+
+    glob = Counter()
+    glob_slug = {}
+    for s in sections:
+        for d in s["most_decorated"]:
+            glob[d["cur_name"]] += d["champion_count"]
+            glob_slug[d["cur_name"]] = d["slug"]
+    global_decorated = sorted(
+        ({"cur_name": cn, "slug": glob_slug.get(cn), "champion_count": c,
+          "finals_count": c, "finals_lost": 0, "last_won": None, "last_final": None}
+         for cn, c in glob.items()),
+        key=lambda d: (-d["champion_count"], d["cur_name"].lower()),
+    )
+    return {
+        "slug": "other-continental",
+        "label": "Other Continental Tournaments",
+        "short_label": "Continental",
+        "active": True,
+        "era_notes": "The premier club competitions of the other four confederations: CONCACAF (North America), CAF (Africa), AFC (Asia), and OFC (Oceania).",
+        "grouped_by_confederation": True,
+        "champions": [],
+        "finalists": [],
+        "most_decorated": global_decorated,
+        "current_season": None,
+        "current_year": None,
+        "current_entries": [],
+        "sections": sections,
+        "year_min": min(all_years) if all_years else None,
+        "year_max": max(all_years) if all_years else None,
+        "editions": len(set(all_years)),
+    }
+
+
+# ---------- ETL: MLS league hub (from the World sheet) ----------
+
+def build_mls_hub(wb, slug_for_curname):
+    """Build the MLS league hub from the World sheet (Major League Soccer rows).
+    No promotion/relegation; Eastern/Western conferences via the Division col.
+    Honor columns: CH Supporters Shield, CE made-playoffs, CA Top-4 (conf final),
+    BW MLS Cup final, BX MLS Cup champion."""
+    if "World" not in wb.sheetnames:
+        return None
+    ws = wb["World"]
+    hdr, _ = header_map(ws)
+    i_country = hdr.get("Country (Leag)", 1)
+    i_league = hdr.get("League", 2)
+    i_div = hdr.get("Division", 3)
+    i_team = hdr.get("Team", 7)
+    i_w, i_d, i_l = hdr.get("W", 9), hdr.get("D", 10), hdr.get("L", 11)
+    i_pts = hdr.get("Points", 12)
+    i_gs, i_ga = hdr.get("GS", 14), hdr.get("GA", 15)
+    i_season = hdr.get("Season", 72)
+    i_cn = hdr.get("Cur. Name", 73)
+    i_final = hdr.get("Final", 74)
+    i_champ = hdr.get("Champions", 75)
+    i_top4 = hdr.get("Top 4", 78)
+    i_playoff = hdr.get("Champ Play. App", 82)
+    i_shield = hdr.get("Supporters Shield", 85)
+
+    def yes(v):
+        return str(v).strip().upper() == "Y" if v is not None else False
+
+    rows = []
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if i_country >= len(row) or row[i_country] != "United States":
+            continue
+        if i_league >= len(row) or str(row[i_league]).strip() != "Major League Soccer":
+            continue
+        cn = row[i_cn] if i_cn < len(row) and row[i_cn] else (row[i_team] if i_team < len(row) else None)
+        if not cn:
+            continue
+        cn = str(cn).strip()
+        key0 = str(row[0]).strip() if len(row) > 0 and row[0] else ""
+        _yr = to_int(key0[:4]) if key0[:4].isdigit() else None
+        gs = to_int(row[i_gs]) or 0; ga = to_int(row[i_ga]) or 0
+        rows.append({
+            "year": _yr,
+            "season": str(row[i_season]).strip() if i_season < len(row) and row[i_season] else None,
+            "conference": str(row[i_div]).strip() if i_div < len(row) and row[i_div] else None,
+            "cur_name": cn,
+            "team": str(row[i_team]).strip() if i_team < len(row) and row[i_team] else cn,
+            "slug": slug_for_curname.get(cn),
+            "w": to_int(row[i_w]) or 0, "d": to_int(row[i_d]) or 0, "l": to_int(row[i_l]) or 0,
+            "pts": to_int(row[i_pts]), "gs": gs, "ga": ga, "gd": gs - ga,
+            "supporters_shield": yes(row[i_shield]) if i_shield < len(row) else False,
+            "playoffs": yes(row[i_playoff]) if i_playoff < len(row) else False,
+            "playoff_sf": yes(row[i_top4]) if i_top4 < len(row) else False,
+            "mls_cup_app": yes(row[i_final]) if i_final < len(row) else False,
+            "mls_cup": yes(row[i_champ]) if i_champ < len(row) else False,
+        })
+
+    years_with_pts = sorted({r["year"] for r in rows if r["year"] and r["pts"] is not None}, reverse=True)
+    latest = years_with_pts[0] if years_with_pts else None
+    current = [r for r in rows if r["year"] == latest]
+    current.sort(key=lambda r: (-(r["pts"] or 0), -(r["gd"] or 0), -(r["w"] or 0), r["cur_name"].lower()))
+    for i, r in enumerate(current, 1):
+        r["place"] = i
+
+    champions = sorted(
+        ({"year": r["year"], "champion": r["cur_name"], "champion_slug": r["slug"]} for r in rows if r["mls_cup"]),
+        key=lambda x: x["year"] or 0,
+    )
+    champ_by_year = {r["year"]: r for r in rows if r["mls_cup"]}
+    ru_by_year = {r["year"]: r for r in rows if r["mls_cup_app"] and not r["mls_cup"]}
+    mls_cup_finals = []
+    for y in sorted(champ_by_year.keys(), key=lambda v: v or 0):
+        ch = champ_by_year[y]; ru = ru_by_year.get(y)
+        mls_cup_finals.append({
+            "year": y, "champion": ch["cur_name"], "champion_slug": ch["slug"],
+            "runner_up": ru["cur_name"] if ru else None, "runner_up_slug": ru["slug"] if ru else None,
+        })
+    shields = sorted(
+        ({"year": r["year"], "winner": r["cur_name"], "winner_slug": r["slug"]} for r in rows if r["supporters_shield"]),
+        key=lambda x: x["year"] or 0,
+    )
+    return {
+        "slug": "mls",
+        "country": "United States",
+        "league": "Major League Soccer",
+        "is_mls": True,
+        "conferences": sorted({r["conference"] for r in current if r["conference"]}),
+        "current_year": latest,
+        "current_standings": current,
+        "all_time_champions": champions,
+        "mls_cup_finals": mls_cup_finals,
+        "supporters_shield_winners": shields,
+    }
+
+def collect_extended_scope(wb):
+    """Cur. Names of every club in Copa Libertadores (CLB) or the other
+    continental cups (OTHC) in Eur RndbyRnd, plus every MLS club in the World
+    sheet. Merged into in_scope so these clubs get index entries and pages."""
+    out = set()
+    ws = wb["Eur RndbyRnd"]
+    hdr, _ = header_map(ws)
+    i_code = hdr.get("Comp"); i_cn = hdr.get("Cur. Name")
+    if i_code is not None and i_cn is not None:
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            if i_code < len(row) and row[i_code] in ("CLB", "OTHC") and i_cn < len(row) and row[i_cn]:
+                out.add(str(row[i_cn]).strip())
+    if "World" in wb.sheetnames:
+        w = wb["World"]
+        wh, _ = header_map(w)
+        wc, wl, wn = wh.get("Country (Leag)", 1), wh.get("League", 2), wh.get("Cur. Name", 73)
+        for row in w.iter_rows(min_row=2, values_only=True):
+            if (wc < len(row) and row[wc] == "United States" and wl < len(row)
+                    and str(row[wl]).strip() == "Major League Soccer" and wn < len(row) and row[wn]):
+                out.add(str(row[wn]).strip())
+    return out
+
 # ---------- Main ----------
 
 def main():
@@ -1010,6 +1261,9 @@ def main():
     print("Collecting in-scope standings rows...")
     standings_rows, in_scope_curnames = collect_standings_rows(wb)
     print(f"  {len(standings_rows)} rows, {len(in_scope_curnames)} distinct canonical clubs")
+    extended_scope = collect_extended_scope(wb)
+    in_scope_curnames = in_scope_curnames | extended_scope
+    print(f"  + {len(extended_scope)} extended-scope clubs (Libertadores / continental / MLS)")
 
     # Country mode per club, derived from the in-scope standings rows.
     # Wartime annexations (SK Rapid Wien, First Vienna FC, FC Admira Wacker
@@ -1198,6 +1452,14 @@ def main():
     # so the page renders them as plain text without a broken link.
     slug_for_curname = {cn: c["slug"] for cn, c in clubs.items()}
     european_hubs = collect_european_tournaments(wb, slug_for_curname)
+    other_continental = collect_continental_tournament(wb, slug_for_curname)
+    if other_continental and other_continental.get("sections"):
+        european_hubs[other_continental["slug"]] = other_continental
+        print(f"  + other-continental: {len(other_continental['sections'])} confederations")
+    mls_hub = build_mls_hub(wb, slug_for_curname)
+    if mls_hub:
+        league_hubs[mls_hub["slug"]] = mls_hub
+        print(f"  + MLS hub: {len(mls_hub['current_standings'])} teams, {len(mls_hub['all_time_champions'])} MLS Cups")
     print(f"  {len(european_hubs)} hubs: {sorted(european_hubs.keys())}")
     for s, h in european_hubs.items():
         ch = len(h["champions"])
