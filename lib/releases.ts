@@ -19,13 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-02",
-    headline: "Live WNBA standings on team pages, compact metro dimensions, plus mobile and label fixes",
+    headline: "Live WNBA standings, compact metro dimensions, plus mobile and label fixes",
     items: [
       "WNBA team pages now pin the live 2026 season at the top of Season by Season, pulled hourly from ESPN, matching the MLB team pages.",
       "Metro pages get a redesigned Dimension Breakdown: all 16 dimensions with their global rank in a compact two-column grid, replacing the separate Key Statistics block.",
       "Football season tables now read \"Not Promoted (PO)\" for promotion-playoff final losses and tag semifinal exits as \"Playoffs\", correcting the old \"Not Relegated\" wording.",
-      "NWSL standings rows for NJ/NY Gotham FC and OL Reign now link through to their club pages.",
-      "MLB, NBA, and NFL season-by-season tables scroll cleanly on mobile instead of squishing.",
+      "NWSL Gotham FC and OL Reign rows now deep-link to their club pages, and MLB, NBA, and NFL season tables scroll cleanly on mobile.",
     ],
   },
   {
