@@ -200,19 +200,19 @@ function CurrentStandings({
                     {s.promoted && (
                       <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
                             style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                        {s.playoffs ? "Promoted (Playout)" : "Promoted"}
+                        {s.playoffs ? "Promoted (PO)" : "Promoted"}
                       </span>
                     )}
                     {s.relegated && (
                       <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
                             style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                        {s.playoffs ? "Relegated (Playout)" : "Relegated"}
+                        {s.playoffs ? "Relegated (PO)" : "Relegated"}
                       </span>
                     )}
                     {s.playoffs && !s.promoted && !s.relegated && (
                       <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                            style={{ background: "rgba(34,197,94,0.12)", color: "#16a34a" }}>
-                        {s.playoff_final ? "Not Relegated (PO)" : "Not Relegated"}
+                            style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
+                        {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
                       </span>
                     )}
                   </span>

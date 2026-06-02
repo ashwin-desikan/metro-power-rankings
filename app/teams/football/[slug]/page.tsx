@@ -446,7 +446,7 @@ function SeasonsTable({
                       {s.playoffs && !s.promoted && !s.relegated && (
                         <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
                               style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
-                          {s.playoff_final ? "Not Relegated (PO)" : "playoffs"}
+                          {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
                         </span>
                       )}
                     </span>

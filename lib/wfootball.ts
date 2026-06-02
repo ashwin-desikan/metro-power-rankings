@@ -159,6 +159,15 @@ function normName(s: string): string {
 // lib/teamLinks so NWSL / WSL map markers and metro rosters deep-link in.
 // Only clubs present in the honors data (i.e. title or final winners) have a
 // page, so non-decorated current clubs correctly return null.
+// ESPN / broadcast display names that do not normalize to the canonical
+// club name (e.g. ESPN's "Gotham FC" or "Seattle Reign FC"). Maps
+// normName(alias) -> canonical club slug so live NWSL standings rows
+// deep-link to the correct club page.
+const W_CLUB_NAME_ALIASES: Record<string, string> = {
+  gotham: "nj-ny-gotham-fc",
+  seattlereign: "ol-reign",
+};
+
 let _nameIndex: Map<string, WClub> | null = null;
 export function getWClubByName(name: string): WClub | null {
   if (!name) return null;
@@ -169,7 +178,12 @@ export function getWClubByName(name: string): WClub | null {
       if (k && !_nameIndex.has(k)) _nameIndex.set(k, c);
     }
   }
-  return _nameIndex.get(normName(name)) ?? null;
+  const key = normName(name);
+  const direct = _nameIndex.get(key);
+  if (direct) return direct;
+  const aliasSlug = W_CLUB_NAME_ALIASES[key];
+  if (aliasSlug) return getWClub(aliasSlug);
+  return null;
 }
 
 // Deterministic monogram (initials + color) for clubs lacking a crest asset.

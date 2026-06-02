@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllFranchiseSlugs, getFranchiseBySlug, getFranchiseSeasons, type WnbaFranchise } from "@/lib/wnba";
+import { getAllFranchiseSlugs, getFranchiseBySlug, getFranchiseSeasons, getWnbaFranchiseByTeamName, type WnbaFranchise, type WnbaSeason } from "@/lib/wnba";
+import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -46,12 +47,64 @@ function FinishChip({ finish }: { finish: string }) {
   return <span className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold border whitespace-nowrap" style={{ background: c.bg, color: c.color, borderColor: c.border }}>{c.label}</span>;
 }
 
+function formatAsOf(iso: string | undefined): string | null {
+  if (!iso) return null;
+  try {
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return null;
+    const y = new Date(d.getTime() - 24 * 60 * 60 * 1000);
+    return y.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  } catch {
+    return null;
+  }
+}
+
 export default async function WnbaFranchisePage({ params }: Props) {
   const { slug } = await params;
   const f = getFranchiseBySlug(slug);
   if (!f) notFound();
   const seasons = getFranchiseSeasons(slug);
   const pct = f.win_pct != null ? f.win_pct.toFixed(3).replace(/^0/, "") : "—";
+  // Live current-season standings from ESPN (mirrors the MLB team page).
+  // Gate: ESPN must return this franchise with games_played > 0 and a
+  // season.year equal to the current calendar year, so a finished prior
+  // season or a 0-0 preseason roster never surfaces as a live row.
+  const liveSnapshot = await getCurrentWnbaStandings();
+  const currentYear = new Date().getFullYear();
+  const liveRow =
+    liveSnapshot.season_year === currentYear
+      ? liveSnapshot.rows.find((r) => getWnbaFranchiseByTeamName(r.name)?.slug === slug) ?? null
+      : null;
+  const liveSeason: (WnbaSeason & { is_live: true }) | null =
+    liveRow && liveRow.games_played > 0
+      ? {
+          year: liveSnapshot.season_year,
+          team: f.name,
+          canonical: seasons[0]?.canonical ?? "",
+          slug,
+          conference: liveRow.conf || seasons[0]?.conference || null,
+          w: liveRow.wins,
+          l: liveRow.losses,
+          win_pct: liveRow.win_pct,
+          gb: null,
+          ps_g: null,
+          pf_g: null,
+          playoffs: false,
+          div_title: false,
+          p_wins: 0,
+          p_losses: 0,
+          sf_app: false,
+          finals_app: false,
+          champion: false,
+          finish: "",
+          finish_rank: 0,
+          is_live: true,
+        }
+      : null;
+  const asOfDate = formatAsOf(liveSnapshot.fetched_at);
+  const displayRows: Array<WnbaSeason & { is_live?: boolean }> = liveSeason
+    ? [liveSeason, ...seasons.filter((s) => s.year !== liveSeason.year)]
+    : seasons;
 
   return (
     <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -98,7 +151,7 @@ export default async function WnbaFranchisePage({ params }: Props) {
         </p>
       )}
 
-      {seasons.length > 0 ? (
+      {displayRows.length > 0 ? (
         <section>
           <h2 className="text-lg font-bold mb-4">Season by Season</h2>
           <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -115,20 +168,40 @@ export default async function WnbaFranchisePage({ params }: Props) {
                 </tr>
               </thead>
               <tbody>
-                {seasons.map((s) => (
-                  <tr key={s.year} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: s.champion ? "rgba(251,191,36,0.06)" : undefined }}>
-                    <td className="py-2 px-4 font-medium">{s.year}</td>
+                {displayRows.map((s) => {
+                  const isLive = (s as { is_live?: boolean }).is_live === true;
+                  return (
+                  <tr key={`${s.year}${isLive ? "-live" : ""}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: s.champion ? "rgba(251,191,36,0.06)" : isLive ? "rgba(78,205,196,0.06)" : undefined, fontStyle: isLive ? "italic" : undefined }}>
+                    <td className="py-2 px-4 font-medium" style={{ fontWeight: isLive ? 600 : undefined }}>{s.year}</td>
                     <td className="py-2 px-3 text-[var(--text-muted)] hidden sm:table-cell">{s.conference ?? "—"}</td>
-                    <td className="py-2 px-3 text-[var(--text-muted)] text-xs">{s.team}</td>
+                    <td className="py-2 px-3 text-[var(--text-muted)] text-xs">
+                      <div className="leading-tight">{s.team}</div>
+                      {isLive && asOfDate ? <div className="text-[9px] mt-0.5 not-italic text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>as of {asOfDate}</div> : null}
+                    </td>
                     <td className="py-2 px-2 text-right">{s.w}</td>
                     <td className="py-2 px-2 text-right text-[var(--text-muted)]">{s.l}</td>
                     <td className="py-2 px-3 text-right">{s.win_pct != null ? s.win_pct.toFixed(3).replace(/^0/, "") : "—"}</td>
-                    <td className="py-2 px-3"><FinishChip finish={s.finish} /></td>
+                    <td className="py-2 px-3">
+                      {isLive ? (
+                        <span className="inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider border whitespace-nowrap not-italic" style={{ borderColor: "var(--border)", color: "var(--text-muted)", background: "var(--bg-card)" }} title="Live record from ESPN, refreshed hourly">
+                          <span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />
+                          In progress · ESPN
+                        </span>
+                      ) : (
+                        <FinishChip finish={s.finish} />
+                      )}
+                    </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>
+          {liveSeason ? (
+            <p className="text-[10px] mt-3" style={{ color: "var(--text-dim)" }}>
+              In-progress {liveSeason.year} row pulled from ESPN public standings{asOfDate ? `, as of ${asOfDate}` : ""}. Refreshed hourly via Next ISR.
+            </p>
+          ) : null}
         </section>
       ) : (
         <p className="text-sm text-[var(--text-muted)]">No seasons played yet. This franchise is scheduled to debut as a WNBA expansion team.</p>

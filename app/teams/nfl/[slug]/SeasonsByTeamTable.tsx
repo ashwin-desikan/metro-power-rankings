@@ -101,7 +101,7 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
   return (
     <>
       <div className="overflow-x-auto">
-        <table className="w-full text-xs tabular-nums">
+        <table className="w-full min-w-[680px] text-xs tabular-nums">
           <thead>
             <tr className="text-[var(--text-muted)]">
               <Th label="Season" k="year" cur={sortKey} dir={sortDir} onClick={toggle} />

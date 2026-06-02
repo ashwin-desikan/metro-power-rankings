@@ -518,7 +518,7 @@ export default async function FranchisePage({ params }: Props) {
         </summary>
         <div className="px-5 pb-5">
         <div className="overflow-x-auto">
-          <table className="w-full text-xs tabular-nums">
+          <table className="w-full min-w-[720px] text-xs tabular-nums">
             <thead className="text-[var(--text-muted)]">
               <tr className="border-b" style={{ borderColor: "var(--border)" }}>
                 <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Season</th>

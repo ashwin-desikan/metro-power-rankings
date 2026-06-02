@@ -679,145 +679,62 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Stats Grid */}
-        {hasStatsToShow(detail) && (
-          <section>
-            <h2 id="stats" className="text-2xl font-bold mb-6">Key Statistics</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {metro.dims.majorLeagueTeams > 0 && (
-                <StatCard
-                  label="Major Teams"
-                  value={Math.round(metro.dims.majorLeagueTeams)}
-                />
-              )}
-              {metro.dims.totalTeams > 0 && (
-                <StatCard
-                  label="Total Teams"
-                  value={Math.round(metro.dims.totalTeams)}
-                />
-              )}
-              {metro.dims.companies > 0 && (
-                <StatCard
-                  label="Major Companies"
-                  value={Math.round(metro.dims.companies)}
-                />
-              )}
-              {detail.marketCap && detail.marketCap.total > 0 && (
-                <StatCard
-                  label="Market Cap"
-                  value={formatMarketCap(detail.marketCap.total)}
-                />
-              )}
-              {detail.skyscrapers && detail.skyscrapers.over150m > 0 && (
-                <StatCard
-                  label="Skyscrapers (150m+)"
-                  value={detail.skyscrapers.over150m}
-                />
-              )}
-              {detail.skyscrapers && detail.skyscrapers.over300m > 0 && (
-                <StatCard
-                  label="Supertall (300m+)"
-                  value={detail.skyscrapers.over300m}
-                />
-              )}
-              {metro.dims.metroStations > 0 && (
-                <StatCard
-                  label="Metro Stations"
-                  value={Math.round(metro.dims.metroStations)}
-                />
-              )}
-              {metro.dims.suburbStations > 0 && (
-                <StatCard
-                  label="Commuter Rail"
-                  value={Math.round(metro.dims.suburbStations)}
-                />
-              )}
-              {metro.dims.universities > 0 && (
-                <StatCard
-                  label="Universities"
-                  value={Math.round(metro.dims.universities)}
-                />
-              )}
-              {metro.dims.luxuryStars > 0 && (
-                <StatCard
-                  label="Michelin Stars"
-                  value={Math.round(metro.dims.luxuryStars)}
-                />
-              )}
-              {metro.dims.culturalEvents > 0 && (
-                <StatCard
-                  label="Cultural Events"
-                  value={Math.round(metro.dims.culturalEvents)}
-                />
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* Dimensions Table */}
+        {/* Dimension Breakdown — consolidated value + global rank. Replaces
+            the former Key Statistics grid, whose metrics duplicated these
+            dimensions (Market Cap also appears under Top Companies; skyscraper
+            counts under Skyline). All 16 dimensions render; empties recede. */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Dimension Breakdown</h2>
-          <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
-            <table className="w-full text-sm">
-              <thead className="border-b border-[var(--border)]">
-                <tr className="bg-[var(--bg-card-hover)]">
-                  <th className="text-left px-6 py-3 font-semibold text-[var(--text)]">
-                    Dimension
-                  </th>
-                  <th className="text-right px-6 py-3 font-semibold text-[var(--text)]">
-                    Value
-                  </th>
-                  <th
-                    className="text-right px-6 py-3 font-semibold text-[var(--text)]"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
-                    Rank
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(metro.dims).map(([key, value], idx) => {
-                  const anchor = getDimensionAnchor(key);
-                  const rankStr = detail.dimRanks?.[key];
-                  return (
-                    <tr
-                      key={key}
-                      className={`border-t border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition ${
-                        idx % 2 === 0 ? "bg-[var(--bg-card)]" : ""
-                      }`}
-                    >
-                      <td className="px-6 py-3">
-                        {anchor ? (
-                          <a href={`#${anchor}`} className="text-[var(--text)] hover:text-[var(--accent)] transition">
-                            {formatDimensionName(key)} <span className="text-xs text-[var(--text-muted)]">&#8599;</span>
-                          </a>
-                        ) : (
-                          <span className="text-[var(--text)]">{formatDimensionName(key)}</span>
-                        )}
-                      </td>
-                      <td
-                        className="px-6 py-3 text-right text-[var(--accent)] font-mono"
+          <div className="flex items-baseline justify-between gap-3 mb-4 flex-wrap">
+            <h2 id="stats" className="text-2xl font-bold">Dimension Breakdown</h2>
+            <span className="text-xs text-[var(--text-muted)]">Value and global rank across all 16 dimensions</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {Object.entries(metro.dims).map(([key, value]) => {
+              const anchor = getDimensionAnchor(key);
+              const rankStr = detail.dimRanks?.[key];
+              const isEmpty = !(typeof value === "number" && value > 0);
+              const rankNum = rankStr ? parseInt(rankStr.replace(/^T-/, ""), 10) : NaN;
+              const rankClass =
+                rankStr === "1"
+                  ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                  : Number.isFinite(rankNum) && rankNum <= 5
+                  ? "text-[var(--accent)] border-[var(--accent)]"
+                  : "text-[var(--text-muted)] border-[var(--border)]";
+              const inner = (
+                <div
+                  className={`flex items-center justify-between gap-3 px-3 py-2 rounded-lg border border-[var(--border)] transition ${anchor ? "hover:border-[var(--accent)]" : ""} ${isEmpty ? "opacity-40" : ""}`}
+                  style={{ background: "var(--bg-card)" }}
+                >
+                  <span className="text-sm text-[var(--text)] leading-snug pr-2">
+                    {formatDimensionName(key)}
+                    {anchor && <span className="text-xs text-[var(--text-muted)] ml-1">&#8599;</span>}
+                  </span>
+                  <span className="flex items-center gap-2 flex-shrink-0">
+                    <span className="text-sm text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                      {typeof value === "number" ? formatDimValue(key, value) : "—"}
+                    </span>
+                    {rankStr && (
+                      <span
+                        className={`inline-flex items-center rounded px-1.5 py-0.5 text-xs border ${rankClass}`}
                         style={{ fontFamily: "'JetBrains Mono', monospace" }}
                       >
-                        {typeof value === "number" ? formatDimValue(key, value) : "\u2014"}
-                      </td>
-                      <td
-                        className="px-6 py-3 text-right font-mono text-[var(--text-muted)]"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                      >
-                        {rankStr ? (
-                          <span className={rankStr.startsWith("T-") ? "text-[var(--text-muted)]" : "text-[var(--text)]"}>
-                            #{rankStr}
-                          </span>
-                        ) : (
-                          "\u2014"
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                        #{rankStr}
+                      </span>
+                    )}
+                  </span>
+                </div>
+              );
+              return anchor ? (
+                <a key={key} href={`#${anchor}`} className="block">{inner}</a>
+              ) : (
+                <div key={key}>{inner}</div>
+              );
+            })}
+          </div>
+          <div className="flex flex-wrap gap-4 mt-3 text-xs text-[var(--text-muted)]">
+            <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2 h-2 rounded-sm bg-emerald-400"></span>World #1</span>
+            <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2 h-2 rounded-sm" style={{ background: "var(--accent)" }}></span>Top 5</span>
+            <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2 h-2 rounded-sm bg-[var(--text-muted)]"></span>Outside top 5</span>
           </div>
         </section>
 
@@ -1296,19 +1213,6 @@ export default async function MetroDetailPage({ params }: PageProps) {
 }
 
 // Helper Components
-function StatCard({ label, value }: { label: string; value: string | number }) {
-  return (
-    <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-4">
-      <p className="text-xs text-[var(--text-muted)] mb-2">{label}</p>
-      <p
-        className="text-2xl font-bold text-[var(--accent)]"
-        style={{ fontFamily: "'JetBrains Mono', monospace" }}
-      >
-        {value}
-      </p>
-    </div>
-  );
-}
 
 function sortTeamsFootballFirst(
   teams: Array<{ sport: string; league: string; team: string; city: string; major: boolean; level?: string }>
@@ -2290,20 +2194,6 @@ function getStatLabel(key: string): string {
     skyscrapers: "Skyscrapers",
   };
   return names[key] || key.replace(/([A-Z])/g, " $1").trim();
-}
-function hasStatsToShow(detail: any): boolean {
-  const statsToCheck = [
-    detail.metro?.dims?.majorLeagueTeams,
-    detail.metro?.dims?.totalTeams,
-    detail.metro?.dims?.companies,
-    detail.marketCap?.total,
-    detail.skyscrapers?.over150m,
-    detail.metro?.dims?.metroStations,
-    detail.metro?.dims?.universities,
-    detail.metro?.dims?.luxuryStars,
-    detail.metro?.dims?.culturalEvents,
-  ];
-  return statsToCheck.some((stat) => stat && stat > 0);
 }
 
 function formatDimensionName(key: string): string {
