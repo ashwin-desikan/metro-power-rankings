@@ -1225,7 +1225,15 @@ def build_top_games_by_decade(all_games, top_n_per_decade=10):
 # -------- Main --------
 
 def main():
-    cli_path = sys.argv[1] if len(sys.argv) > 1 else None
+    # FREEZE POLICY: NBA Game Scores are frozen by user instruction. The
+    # top-games JSON is regenerated ONLY when explicitly requested (after the
+    # NBA Finals, then again no earlier than ~April 2027). A routine rebuild
+    # must never touch the committed Game Scores.
+    flags = {a for a in sys.argv[1:] if a.startswith("--")}
+    pos = [a for a in sys.argv[1:] if not a.startswith("--")]
+    cli_path = pos[0] if pos else None
+    refresh_game_scores = ("--refresh-game-scores" in flags
+                           or os.environ.get("NBA_REFRESH_GAME_SCORES") == "1")
     src = find_source(cli_path)
     print(f"Reading: {src}")
     wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
@@ -1257,12 +1265,17 @@ def main():
     print(f"  {len(all_star_counts)} franchises with All-Star selections, "
           f"{sum(all_star_counts.values())} total player-seasons")
 
-    print("Reading top games from NBA_RegSeason.xlsx (Game Score col BU)...")
-    rs_src = find_regseason_source()
-    rs_wb = openpyxl.load_workbook(rs_src, read_only=True, data_only=True)
-    print(f"  Game-score source: {rs_src}")
-    all_games, games_by_team = read_top_games(rs_wb)
-    print(f"  {len(all_games)} unique scored games, {len(games_by_team)} franchises with game data")
+    all_games, games_by_team = None, None
+    if refresh_game_scores:
+        print("Reading top games from NBA_RegSeason.xlsx (Game Score col BU)...")
+        rs_src = find_regseason_source()
+        rs_wb = openpyxl.load_workbook(rs_src, read_only=True, data_only=True)
+        print(f"  Game-score source: {rs_src}")
+        all_games, games_by_team = read_top_games(rs_wb)
+        print(f"  {len(all_games)} unique scored games, {len(games_by_team)} franchises with game data")
+    else:
+        print("FROZEN: NBA Game Scores untouched; top-games JSON preserved as committed.")
+        print("        Pass --refresh-game-scores (or NBA_REFRESH_GAME_SCORES=1) to regenerate.")
 
     print("Reading playoff state (current postseason)...")
     playoff_state, latest_playoff_year, postseason_complete = read_playoff_state(wb, yby)
@@ -1310,14 +1323,17 @@ def main():
     seasons_out = build_seasons_by_team(franchises, yby)
     (OUT_DIR / "seasons-by-team.json").write_text(json.dumps(seasons_out, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    top_by_team = build_top_games_by_team(games_by_team, franchises, top_n=12)
-    (OUT_DIR / "top-games-by-team.json").write_text(json.dumps(top_by_team, indent=2, ensure_ascii=False), encoding="utf-8")
+    if refresh_game_scores:
+        top_by_team = build_top_games_by_team(games_by_team, franchises, top_n=12)
+        (OUT_DIR / "top-games-by-team.json").write_text(json.dumps(top_by_team, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    top_all_time = build_top_games_all_time(all_games, top_n=50)
-    (OUT_DIR / "top-games-all-time.json").write_text(json.dumps(top_all_time, indent=2, ensure_ascii=False), encoding="utf-8")
+        top_all_time = build_top_games_all_time(all_games, top_n=50)
+        (OUT_DIR / "top-games-all-time.json").write_text(json.dumps(top_all_time, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    top_by_decade = build_top_games_by_decade(all_games, top_n_per_decade=10)
-    (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False), encoding="utf-8")
+        top_by_decade = build_top_games_by_decade(all_games, top_n_per_decade=10)
+        (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False), encoding="utf-8")
+    else:
+        print("Skipped top-games JSON writes (NBA Game Scores frozen).")
 
     (OUT_DIR / "playoff-state.json").write_text(
         json.dumps({"year": latest_playoff_year, "is_postseason_complete": postseason_complete, "by_franchise": playoff_state}, indent=2, ensure_ascii=False),
