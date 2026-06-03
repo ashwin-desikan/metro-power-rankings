@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -39,6 +40,11 @@ export default async function TournamentHubPage({ params }: Props) {
   const hub = getTournamentHub(slug);
   if (!hub) notFound();
 
+  const navItems = [
+    ...(hub.most_decorated.length > 0 ? [{ label: "Most Decorated", href: "#most-decorated" }] : []),
+    { label: "All-Time Champions", href: "#champions" },
+  ];
+
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <div className="mb-3">
@@ -72,8 +78,13 @@ export default async function TournamentHubPage({ params }: Props) {
         </p>
       </header>
 
-      <MostDecorated hub={hub} />
-      <ChampionsList hub={hub} />
+      {navItems.length > 1 && <HubNav items={navItems} />}
+      <div id="most-decorated">
+        <MostDecorated hub={hub} />
+      </div>
+      <div id="champions">
+        <ChampionsList hub={hub} />
+      </div>
     </main>
   );
 }

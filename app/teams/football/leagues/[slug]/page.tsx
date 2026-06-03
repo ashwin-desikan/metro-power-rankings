@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -110,9 +111,22 @@ export default async function FootballLeagueHubPage({ params }: Props) {
         </p>
       </header>
 
-      <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
-      <LeagueHubMap country={hub.country} clubs={hubClubs} />
-      <AllTimeChampions hub={hub} />
+      <HubNav
+        items={[
+          { label: "Current Standings", href: "#standings" },
+          { label: "Map", href: "#map" },
+          { label: "All-Time Champions", href: "#champions" },
+        ]}
+      />
+      <div id="standings">
+        <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
+      </div>
+      <div id="map">
+        <LeagueHubMap country={hub.country} clubs={hubClubs} />
+      </div>
+      <div id="champions">
+        <AllTimeChampions hub={hub} />
+      </div>
     </main>
   );
 }
@@ -150,9 +164,20 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
           {standingsYear ? (useLive ? <> Live {standingsYear} standings from ESPN, refreshed hourly.</> : <> Standings shown for {standingsYear}.</>) : null}
         </p>
       </header>
-      <MlsStandings standings={standings} conferences={conferences} showHonors={!useLive} />
-      <MlsMostDecorated rows={hub.most_decorated} />
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <HubNav
+        items={[
+          { label: "Current Standings", href: "#standings" },
+          { label: "Most Decorated", href: "#most-decorated" },
+          { label: "Cup & Shield", href: "#honors" },
+        ]}
+      />
+      <div id="standings">
+        <MlsStandings standings={standings} conferences={conferences} showHonors={!useLive} />
+      </div>
+      <div id="most-decorated">
+        <MlsMostDecorated rows={hub.most_decorated} />
+      </div>
+      <section id="honors" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <div>
           <h2 className="text-lg font-semibold mb-3">MLS Cup champions</h2>
           <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

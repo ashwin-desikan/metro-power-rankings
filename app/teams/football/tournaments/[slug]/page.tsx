@@ -10,6 +10,7 @@ import {
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedTable from "./MostDecoratedTable";
 import ContinentalTable from "./ContinentalTable";
+import HubNav from "@/app/teams/HubNav";
 
 export const dynamicParams = false;
 
@@ -50,6 +51,12 @@ export default async function ClubTournamentHubPage({ params }: Props) {
   }
 
   const hasCurrent = hub.active && hub.current_entries.length > 0;
+
+  const navItems = [
+    ...(hasCurrent ? [{ label: "Current Season", href: "#current" }] : []),
+    { label: "All-Time Finals", href: "#finals" },
+    ...(hub.most_decorated.length > 0 ? [{ label: "Most Decorated", href: "#most-decorated" }] : []),
+  ];
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -100,17 +107,27 @@ export default async function ClubTournamentHubPage({ params }: Props) {
         </p>
       </header>
 
+      {navItems.length > 1 && <HubNav items={navItems} />}
+
       {hasCurrent && (
-        <CurrentSeasonBracket
-          entries={hub.current_entries}
-          season={hub.current_season}
-          label={hub.short_label}
-        />
+        <div id="current">
+          <CurrentSeasonBracket
+            entries={hub.current_entries}
+            season={hub.current_season}
+            label={hub.short_label}
+          />
+        </div>
       )}
 
-      <ChampionsTable hub={hub} />
+      <div id="finals">
+        <ChampionsTable hub={hub} />
+      </div>
 
-      {hub.most_decorated.length > 0 && <MostDecoratedTable rows={hub.most_decorated} />}
+      {hub.most_decorated.length > 0 && (
+        <div id="most-decorated">
+          <MostDecoratedTable rows={hub.most_decorated} />
+        </div>
+      )}
     </main>
   );
 }
