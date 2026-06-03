@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import {
   getAllNationalTeams,
@@ -91,10 +92,18 @@ export default function NationalIndexPage() {
         </p>
       </header>
 
+      <HubNav
+        items={[
+          { label: "Tournament Hubs", href: "#tournaments" },
+          { label: "National Teams", href: "#national-teams" },
+          { label: "Methodology", href: "#methodology" },
+        ]}
+      />
+
       {wc2026 && <WorldCup2026 wc={wc2026} />}
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold mb-3">Tournament hubs</h2>
+        <h2 id="tournaments" className="text-lg font-semibold mb-3">Tournament hubs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {orderedHubs.map((h) => (
             <Link
@@ -119,7 +128,7 @@ export default function NationalIndexPage() {
       </section>
 
       <section className="mb-6">
-        <h2 className="text-lg font-semibold mb-3">National teams</h2>
+        <h2 id="national-teams" className="text-lg font-semibold mb-3">National teams</h2>
         <NationalIndexClient teams={clientTeams} snapshots={snapshots} />
       </section>
 

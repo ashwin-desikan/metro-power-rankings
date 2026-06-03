@@ -15,6 +15,7 @@ type SortKey =
   | "division"
   | "founding_year"
   | "championships"
+  | "champ_app"
   | "division_titles"
   | "win_pct"
   | "record"
@@ -28,6 +29,7 @@ type Props = {
   franchises: Franchise[];
   logoMap: Record<string, string | null>;
   monoMap: Record<string, Mono>;
+  champAppMap: Record<string, number>;
 };
 
 const TITLE_GOLD = "#d4af37";
@@ -39,6 +41,7 @@ function compare(a: Franchise, b: Franchise, key: SortKey): number {
     case "division": return (a.division || "").localeCompare(b.division || "");
     case "founding_year": return (a.founding_year ?? 0) - (b.founding_year ?? 0);
     case "championships": return a.championships - b.championships;
+    case "champ_app": return 0; // resolved in the sort closure via champAppMap
     case "division_titles": return a.division_titles - b.division_titles;
     case "win_pct": return a.win_pct - b.win_pct;
     case "record": return a.all_time_w - b.all_time_w;
@@ -46,20 +49,22 @@ function compare(a: Franchise, b: Franchise, key: SortKey): number {
   }
 }
 
-export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) {
+export default function FranchiseTable({ franchises, logoMap, monoMap, champAppMap }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>("championships");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
 
   const sorted = useMemo(() => {
     const arr = [...franchises];
     arr.sort((a, b) => {
-      const cmp = compare(a, b, sortKey);
+      const cmp = sortKey === "champ_app"
+        ? (champAppMap[a.slug] ?? 0) - (champAppMap[b.slug] ?? 0)
+        : compare(a, b, sortKey);
       const tiebreak = sortKey === "championships" ? (a.win_pct - b.win_pct) : 0;
       const combined = cmp !== 0 ? cmp : tiebreak;
       return sortDir === "asc" ? combined : -combined;
     });
     return arr;
-  }, [franchises, sortKey, sortDir]);
+  }, [franchises, sortKey, sortDir, champAppMap]);
 
   function toggle(key: SortKey) {
     if (key === sortKey) {
@@ -68,7 +73,7 @@ export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) 
       setSortKey(key);
       // Numeric columns default to desc on first click (most champs first),
       // text columns default to asc.
-      const numeric: SortKey[] = ["championships", "division_titles", "win_pct", "record", "playoff_appearances", "founding_year"];
+      const numeric: SortKey[] = ["championships", "champ_app", "division_titles", "win_pct", "record", "playoff_appearances", "founding_year"];
       setSortDir(numeric.includes(key) ? "desc" : "asc");
     }
   }
@@ -86,6 +91,7 @@ export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) 
             <Th label="Division"             k="division"            cur={sortKey} dir={sortDir} onClick={toggle} />
             <Th label="Founded"              k="founding_year"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="Titles"               k="championships"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+            <Th label="Champ App"            k="champ_app"           cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="Div"                  k="division_titles"     cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="Playoffs"             k="playoff_appearances" cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
             <Th label="All-time"             k="record"              cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
@@ -139,6 +145,7 @@ export default function FranchiseTable({ franchises, logoMap, monoMap }: Props) 
                     {f.championships}
                   </span>
                 </td>
+                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{champAppMap[f.slug] ?? 0}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.division_titles}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.playoff_appearances}</td>
                 <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.all_time_w}-{f.all_time_l}-{f.all_time_t}</td>

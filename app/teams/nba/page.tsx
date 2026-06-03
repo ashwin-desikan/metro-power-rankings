@@ -16,6 +16,7 @@ import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import PlayoffBracket from "./PlayoffBracket";
 import TopGamesTable from "./TopGamesTable";
+import HubNav from "@/app/teams/HubNav";
 
 export const dynamicParams = false;
 
@@ -96,13 +97,26 @@ export default function NbaIndexPage() {
         </div>
       </header>
 
-      <PlayoffBracket
-        franchises={franchises}
-        playoffBundle={playoffState}
-        logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+      <HubNav
+        items={[
+          { label: "Playoffs", href: "#bracket" },
+          { label: "Map", href: "#map" },
+          { label: "All-Time Table", href: "#all-time" },
+          { label: "Top Games", href: "#top-games" },
+        ]}
       />
 
-      <LeagueMap franchises={franchises} playoffState={isPostseasonOver ? {} : playoffState.by_franchise} />
+      <div id="bracket">
+        <PlayoffBracket
+          franchises={franchises}
+          playoffBundle={playoffState}
+          logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+        />
+      </div>
+
+      <div id="map">
+        <LeagueMap franchises={franchises} playoffState={isPostseasonOver ? {} : playoffState.by_franchise} />
+      </div>
 
       <div className="flex flex-wrap gap-4 text-xs text-[var(--text-muted)] mb-6 mt-8">
         <span className="flex items-center gap-2">
@@ -121,14 +135,18 @@ export default function NbaIndexPage() {
         )}
       </div>
 
-      <FranchiseTable
-        franchises={franchises}
-        playoffState={isPostseasonOver ? {} : playoffState.by_franchise}
-        logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
-        monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
-      />
+      <div id="all-time">
+        <FranchiseTable
+          franchises={franchises}
+          playoffState={isPostseasonOver ? {} : playoffState.by_franchise}
+          logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+          monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
+        />
+      </div>
 
-      <TopGamesTable allTime={topGamesAllTime} byDecade={topGamesByDecade} />
+      <div id="top-games">
+        <TopGamesTable allTime={topGamesAllTime} byDecade={topGamesByDecade} />
+      </div>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <Link href="/methodology" className="hover:text-[var(--text-muted)]">methodology</Link>.

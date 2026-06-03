@@ -25,6 +25,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* Anchor targets (hub section ids) clear the sticky site header when jumped to. */
+[id] { scroll-margin-top: 5rem; }
+
 body {
   background: var(--bg);
   color: var(--text);

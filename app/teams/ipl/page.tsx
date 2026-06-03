@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import {
   getAllFranchises,
@@ -96,9 +97,18 @@ export default function IplPage() {
         </div>
       </header>
 
+      <HubNav
+        items={[
+          { label: "Season", href: "#standings" },
+          { label: "All-Time Champions", href: "#champions" },
+          { label: "Finals History", href: "#finals" },
+          { label: "Defunct", href: "#defunct" },
+        ]}
+      />
+
       {/* ── Latest season ──────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4">{latest.year} Season</h2>
+        <h2 id="standings" className="text-xl font-bold mb-4">{latest.year} Season</h2>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
 
           {/* Standings */}
@@ -195,7 +205,7 @@ export default function IplPage() {
 
       {/* ── All-time champions ─────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4">All-Time Champions</h2>
+        <h2 id="champions" className="text-xl font-bold mb-4">All-Time Champions</h2>
         <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm">
             <thead>
@@ -245,7 +255,7 @@ export default function IplPage() {
 
       {/* ── Finals History ─────────────────────────────────────────────── */}
       <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4">Finals History</h2>
+        <h2 id="finals" className="text-xl font-bold mb-4">Finals History</h2>
         <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm tabular-nums">
             <thead>
@@ -293,7 +303,7 @@ export default function IplPage() {
       {/* ── Defunct franchises ─────────────────────────────────────────── */}
       {defunct.length > 0 && (
         <section className="mb-6">
-          <h2 className="text-sm font-semibold text-[var(--text-muted)] mb-2 uppercase tracking-wider">Defunct Franchises</h2>
+          <h2 id="defunct" className="text-sm font-semibold text-[var(--text-muted)] mb-2 uppercase tracking-wider">Defunct Franchises</h2>
           <div className="flex flex-wrap gap-2">
             {defunct.map(f => (
               <Link

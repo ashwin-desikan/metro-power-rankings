@@ -12,6 +12,7 @@ import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import MlbStandings from "./MlbStandings";
+import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -86,22 +87,37 @@ export default async function MlbIndexPage() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-3xl">
+      <HubNav
+        items={[
+          { label: "Current Standings", href: "#standings" },
+          { label: "Map", href: "#map" },
+          { label: "All-Time Table", href: "#all-time" },
+          { label: "Top Games", href: "#top-games" },
+        ]}
+      />
+
+      <div id="standings">
         <MlbStandings />
       </div>
 
-      <LeagueMap franchises={franchises} />
+      <div id="map">
+        <LeagueMap franchises={franchises} />
+      </div>
 
-      <FranchiseTable
-        franchises={franchises}
-        logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
-        monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
-      />
+      <div id="all-time">
+        <FranchiseTable
+          franchises={franchises}
+          logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+          monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
+        />
+      </div>
 
-      <TopGamesTable
-        allTime={allTimeRows}
-        byDecade={byDecadeEnriched}
-      />
+      <div id="top-games">
+        <TopGamesTable
+          allTime={allTimeRows}
+          byDecade={byDecadeEnriched}
+        />
+      </div>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <a href="/methodology" className="hover:text-[var(--text-muted)]">methodology</a>.

@@ -19,10 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-03",
-    headline: "Fixes: NBA top-games ranking and NFL offseason standings",
+    headline: "NBA Game Score, NFL standings and table fixes, hub navigation",
     items: [
       "NBA top games are now ranked by the workbook's documented Game Score (team strength, competitiveness, stakes, seeding), surfacing the real all-time classics.",
       "NFL standings zero out during the offseason instead of displaying last season's final records as if they were live.",
+      "Every sports hub gains an on-this-page nav (for the NFL: Current Standings, Map, All-Time Table, Top Games) so you can jump straight to any section.",
+      "NFL standings now span full width instead of a cramped column, and the franchise table adds a Champ App (championship appearances) column.",
     ],
   },
   {

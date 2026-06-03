@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import { getWClubs, getWMeta, getWTournamentCompetitions, getWLeagueHubs, decoratedRows, WCOLS_DEFAULT, getWClubByName } from "@/lib/wfootball";
 import { getWWCMeta, getWWCNations } from "@/lib/wnational";
@@ -54,8 +55,17 @@ export default async function WFootballHubPage() {
         </p>
       </header>
 
+      <HubNav
+        items={[
+          { label: "International", href: "#international" },
+          { label: "Club Tournaments", href: "#club-tournaments" },
+          { label: "League Hubs", href: "#leagues" },
+          { label: "NWSL Standings", href: "#standings" },
+        ]}
+      />
+
       <section className="mb-10">
-        <h2 className="text-lg font-semibold mb-3">International tournament hubs</h2>
+        <h2 id="international" className="text-lg font-semibold mb-3">International tournament hubs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           <Link href="/teams/national/womens-world-cup" className="block rounded-xl border p-4 transition hover:border-[var(--accent)]" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <div className="flex items-baseline justify-between gap-2">
@@ -75,7 +85,7 @@ export default async function WFootballHubPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold mb-3">European &amp; world club tournament hubs</h2>
+        <h2 id="club-tournaments" className="text-lg font-semibold mb-3">European &amp; world club tournament hubs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {tournaments.map((c) => {
             const top = c.most_decorated[0];
@@ -101,7 +111,7 @@ export default async function WFootballHubPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold mb-3">League hubs</h2>
+        <h2 id="leagues" className="text-lg font-semibold mb-3">League hubs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {leagueHubs.map((h) => {
             const top = h.most_decorated[0];
@@ -123,7 +133,7 @@ export default async function WFootballHubPage() {
       {nwsl.rows.length > 0 && (
         <section className="mb-10">
           <div className="flex items-center gap-2 mb-1">
-            <h2 className="text-lg font-semibold">{nwsl.source_label} standings</h2>
+            <h2 id="standings" className="text-lg font-semibold">{nwsl.source_label} standings</h2>
             <span className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold" style={{ background: "rgba(16,185,129,0.16)", color: "#10b981" }}>Live · ESPN</span>
           </div>
           <p className="text-xs text-[var(--text-muted)] mb-3">Current as of {nwslAsOf}, via ESPN (refreshed hourly).</p>

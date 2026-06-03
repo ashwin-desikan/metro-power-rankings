@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, withStadiumLocations, withTeamSlugs } from "@/lib/nfl";
+import { getAllFranchises, getChampionshipAppearances, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, withStadiumLocations, withTeamSlugs } from "@/lib/nfl";
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import NflStandings from "./NflStandings";
+import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -37,6 +38,9 @@ export default function NflIndexPage() {
   // Pre-sorted by champs desc, then win pct desc, in the ETL.
   const totalChamps = franchises.reduce((s, f) => s + f.championships, 0);
   const withChamps = franchises.filter(f => f.championships > 0).length;
+  const champAppMap = Object.fromEntries(
+    franchises.map(f => [f.slug, getChampionshipAppearances(f.canonical).length])
+  );
   const sbEra = totalChamps; // approximate; the page is for context, not stat-checking
 
   return (
@@ -59,30 +63,46 @@ export default function NflIndexPage() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-3xl">
+      <HubNav
+        items={[
+          { label: "Current Standings", href: "#standings" },
+          { label: "Map", href: "#map" },
+          { label: "All-Time Table", href: "#all-time" },
+          { label: "Top Games", href: "#top-games" },
+        ]}
+      />
+
+      <div id="standings">
         <NflStandings />
       </div>
 
       {/* 32-team sortable table. Logo and monogram maps are computed
           server-side so the client component never has to touch the
           filesystem; sorting state lives entirely in the client. */}
-      <LeagueMap franchises={franchises} />
+      <div id="map">
+        <LeagueMap franchises={franchises} />
+      </div>
 
-      <FranchiseTable
-        franchises={franchises}
-        logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
-        monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
-      />
+      <div id="all-time">
+        <FranchiseTable
+          franchises={franchises}
+          logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+          monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
+          champAppMap={champAppMap}
+        />
+      </div>
 
-      <TopGamesTable
-        allTime={withTeamSlugs(withStadiumLocations(getTopGamesAllTime()))}
-        byDecade={Object.fromEntries(
-          Object.entries(getTopGamesByDecade()).map(([k, v]) => [
-            k,
-            withTeamSlugs(withStadiumLocations(v)),
-          ])
-        )}
-      />
+      <div id="top-games">
+        <TopGamesTable
+          allTime={withTeamSlugs(withStadiumLocations(getTopGamesAllTime()))}
+          byDecade={Object.fromEntries(
+            Object.entries(getTopGamesByDecade()).map(([k, v]) => [
+              k,
+              withTeamSlugs(withStadiumLocations(v)),
+            ])
+          )}
+        />
+      </div>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <a href="/methodology" className="hover:text-[var(--text-muted)]">methodology</a>.

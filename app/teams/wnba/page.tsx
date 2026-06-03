@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import { getWnbaMeta, getAllFranchises, getDefunctFranchises, getChampions, getLatestStandings, type WnbaFranchise } from "@/lib/wnba";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
@@ -90,9 +91,18 @@ export default async function WnbaPage() {
         </div>
       </header>
 
+      <HubNav
+        items={[
+          { label: "Standings", href: "#standings" },
+          { label: "All-Time Franchises", href: "#all-time" },
+          { label: "Champions", href: "#champions" },
+          { label: "Defunct", href: "#defunct" },
+        ]}
+      />
+
       <section className="mb-10">
         <div className="flex items-center gap-2 mb-4">
-          <h2 className="text-xl font-bold">{standingsLabel}</h2>
+          <h2 id="standings" className="text-xl font-bold">{standingsLabel}</h2>
           {liveActive && <span className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold" style={{ background: "rgba(16,185,129,0.16)", color: "#10b981" }}>Live · ESPN</span>}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -139,13 +149,13 @@ export default async function WnbaPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-bold mb-1">All-Time Franchises</h2>
+        <h2 id="all-time" className="text-xl font-bold mb-1">All-Time Franchises</h2>
         <p className="text-xs text-[var(--text-muted)] mb-4">Current and defunct franchises, sorted by championships. Click any column to sort.</p>
         <WnbaFranchiseTable franchises={franchises} />
       </section>
 
       <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4">Champions</h2>
+        <h2 id="champions" className="text-xl font-bold mb-4">Champions</h2>
         <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm tabular-nums">
             <thead>
@@ -176,7 +186,7 @@ export default async function WnbaPage() {
 
       {defunct.length > 0 && (
         <section className="mb-6">
-          <h2 className="text-sm font-semibold text-[var(--text-muted)] mb-2 uppercase tracking-wider">Defunct Franchises</h2>
+          <h2 id="defunct" className="text-sm font-semibold text-[var(--text-muted)] mb-2 uppercase tracking-wider">Defunct Franchises</h2>
           <div className="flex flex-wrap gap-2">
             {defunct.map((f) => (
               <Link key={f.slug} href={`/teams/wnba/${f.slug}`} className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs border hover:border-[var(--accent)] hover:text-[var(--text)] transition-colors" style={{ borderColor: "var(--border)", color: "var(--text-dim)", background: "var(--bg-card)" }}>

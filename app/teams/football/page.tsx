@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import { getAllClubs, getAllLeagueHubs, getAllEuropeanTournamentHubs } from "@/lib/football";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -64,8 +65,15 @@ export default function FootballIndex() {
         </p>
       </header>
 
+      <HubNav
+        items={[
+          { label: "Tournament Hubs", href: "#tournaments" },
+          { label: "League Hubs", href: "#leagues" },
+        ]}
+      />
+
       <section className="mb-10">
-        <h2 className="text-lg font-semibold mb-3">European & world tournament hubs</h2>
+        <h2 id="tournaments" className="text-lg font-semibold mb-3">European & world tournament hubs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {tournamentHubs.map((t) => {
             const topClub = t.most_decorated[0];
@@ -120,7 +128,7 @@ export default function FootballIndex() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-lg font-semibold mb-3">League hubs</h2>
+        <h2 id="leagues" className="text-lg font-semibold mb-3">League hubs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {hubs.map((h) => (
             <Link

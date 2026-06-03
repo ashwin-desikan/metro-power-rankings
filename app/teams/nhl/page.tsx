@@ -11,6 +11,7 @@ import { getNhlPlayoffState } from "@/lib/nhl-playoffs";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import NhlPlayoffBracket from "./NhlPlayoffBracket";
+import HubNav from "@/app/teams/HubNav";
 
 export const dynamicParams = false;
 
@@ -76,7 +77,15 @@ export default function NhlIndexPage() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-3xl">
+      <HubNav
+        items={[
+          { label: "Playoffs", href: "#bracket" },
+          { label: "Map", href: "#map" },
+          { label: "All-Time Table", href: "#all-time" },
+        ]}
+      />
+
+      <div id="bracket">
         <NhlPlayoffBracket
           franchises={franchises}
           playoffBundle={playoffBundle}
@@ -84,7 +93,9 @@ export default function NhlIndexPage() {
         />
       </div>
 
-      <LeagueMap franchises={franchises} />
+      <div id="map">
+        <LeagueMap franchises={franchises} />
+      </div>
 
       <div className="flex flex-wrap gap-4 text-xs text-[var(--text-muted)] mb-6 mt-8">
         <span className="flex items-center gap-2">
@@ -93,12 +104,14 @@ export default function NhlIndexPage() {
         </span>
       </div>
 
-      <FranchiseTable
-        franchises={franchises}
-        logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
-        monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
-        originalSix={ORIGINAL_SIX}
-      />
+      <div id="all-time">
+        <FranchiseTable
+          franchises={franchises}
+          logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
+          monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
+          originalSix={ORIGINAL_SIX}
+        />
+      </div>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
         Source: <Link href="/methodology" className="hover:text-[var(--text-muted)]">methodology</Link>.
