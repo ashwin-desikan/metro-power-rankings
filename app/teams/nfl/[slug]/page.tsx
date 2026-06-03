@@ -17,7 +17,13 @@ import {
   lookupStadiumLocation,
   abbreviateState,
   getFranchiseByCanonical,
+  getHistoricalSlugs,
+  getHistoricalBySlug,
+  getHistoricalSeasonsFor,
+  getHistoricalChampionshipsFor,
   type Season,
+  type HistoricalFranchise,
+  type Championship,
 } from "@/lib/nfl";
 import { getCurrentNflStandings } from "@/lib/standings";
 import SeasonsByTeamTable from "./SeasonsByTeamTable";
@@ -29,23 +35,50 @@ export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getAllFranchiseSlugs().map((slug) => ({ slug }));
+  // Union of the 32 active franchise slugs and every defunct franchise's
+  // derived slug. dynamicParams is false, so any slug not listed here 404s.
+  const active = getAllFranchiseSlugs();
+  const defunct = getHistoricalSlugs();
+  return [...active, ...defunct].map((slug) => ({ slug }));
+}
+
+// Years-active label for a defunct franchise, e.g. "1920–1926" or "1921".
+function defunctYears(h: HistoricalFranchise): string {
+  if (h.first_year && h.last_year && h.first_year !== h.last_year) {
+    return `${h.first_year}–${h.last_year}`;
+  }
+  return `${h.first_year ?? h.last_year ?? "—"}`;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const f = getFranchiseBySlug(slug);
-  if (!f) return { title: "Franchise not found" };
-  const url = `${BASE_URL}/teams/nfl/${f.slug}`;
-  const desc =
-    `${f.name}: ${f.championships} league championships, all-time record ${f.all_time_w}-${f.all_time_l}-${f.all_time_t} (${f.win_pct.toFixed(3)}), founded ${f.founding_year}. Plays in ${f.stadium}, ${f.metro}.`;
-  return {
-    title: f.name,
-    description: desc,
-    alternates: { canonical: `/teams/nfl/${f.slug}` },
-    openGraph: { title: `${f.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
-  };
+  if (f) {
+    const url = `${BASE_URL}/teams/nfl/${f.slug}`;
+    const desc =
+      `${f.name}: ${f.championships} league championships, all-time record ${f.all_time_w}-${f.all_time_l}-${f.all_time_t} (${f.win_pct.toFixed(3)}), founded ${f.founding_year}. Plays in ${f.stadium}, ${f.metro}.`;
+    return {
+      title: f.name,
+      description: desc,
+      alternates: { canonical: `/teams/nfl/${f.slug}` },
+      openGraph: { title: `${f.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
+    };
+  }
+  const h = getHistoricalBySlug(slug);
+  if (h) {
+    const url = `${BASE_URL}/teams/nfl/${slug}`;
+    const desc =
+      `${h.name} (defunct, ${defunctYears(h)}): ${h.league}, all-time record ${h.w}-${h.l}-${h.t} (${h.win_pct.toFixed(3)}), ${h.championships} league championship${h.championships === 1 ? "" : "s"} over ${h.seasons} season${h.seasons === 1 ? "" : "s"}. Last based in ${h.city}.`;
+    return {
+      title: `${h.name} (defunct)`,
+      description: desc,
+      alternates: { canonical: `/teams/nfl/${slug}` },
+      openGraph: { title: `${h.name} (defunct) | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { card: "summary", title: `${h.name} (defunct) | ${SITE_NAME}`, description: desc },
+    };
+  }
+  return { title: "Franchise not found" };
 }
 
 // Curated list of major awards to surface on each team page in v1.
@@ -86,7 +119,13 @@ function priorCitySummary(f: ReturnType<typeof getFranchiseBySlug>): string | nu
 export default async function FranchisePage({ params }: Props) {
   const { slug } = await params;
   const f = getFranchiseBySlug(slug);
-  if (!f) notFound();
+  if (!f) {
+    // Not one of the 32 active franchises. Try to resolve a defunct
+    // franchise by its derived slug; render the historical page if found.
+    const h = getHistoricalBySlug(slug);
+    if (h) return <DefunctFranchisePage h={h} slug={slug} />;
+    notFound();
+  }
 
   const champs = getChampionships(f.canonical);
   const champAppearances = getChampionshipAppearances(f.canonical);
@@ -654,6 +693,214 @@ export default async function FranchisePage({ params }: Props) {
       </Block>
 
 
+    </main>
+  );
+}
+
+// ---------- Defunct franchise page ----------
+
+// Render path for a defunct franchise resolved from historical.json. Reuses
+// the active page's container, breadcrumb, hero shell, stat strip, all-time
+// record card, Championships section (when data exists), and the shared
+// SeasonsByTeamTable. Sections with no historical data — stadium history,
+// awards, top games, live standings, map — are omitted by design.
+function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: string }) {
+  const seasons = getHistoricalSeasonsFor(h.canonical);
+  const champs: Championship[] = getHistoricalChampionshipsFor(h.canonical);
+  const mono = monogramFor(slug); // falls through to the generic NFL monogram
+  const franchiseCount = getAllFranchiseSlugs().length;
+  // Most-recent-first to match the active page's season ordering.
+  const seasonRows: Season[] = [...seasons].sort((a, b) => b.year - a.year);
+  const yearsLabel = defunctYears(h);
+
+  return (
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Breadcrumb */}
+      <nav className="text-xs text-[var(--text-muted)] mb-4">
+        <Link href="/" className="hover:text-[var(--text)]">Home</Link>
+        <span className="mx-1">&rsaquo;</span>
+        <Link href="/teams/nfl" className="hover:text-[var(--text)]">NFL</Link>
+        <span className="mx-1">&rsaquo;</span>
+        <Link href="/teams/nfl/historical" className="hover:text-[var(--text)]">Defunct</Link>
+        <span className="mx-1">&rsaquo;</span>
+        <span className="text-[var(--text-dim)]">{h.name}</span>
+      </nav>
+
+      {/* Back-to chips */}
+      <div className="mb-4 flex flex-wrap gap-2">
+        <Link
+          href="/teams/nfl/historical"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+        >
+          <span aria-hidden>&larr;</span>
+          <span>All defunct franchises</span>
+        </Link>
+        <Link
+          href="/teams/nfl"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+        >
+          <span aria-hidden>&larr;</span>
+          <span>All {franchiseCount} NFL franchises</span>
+        </Link>
+      </div>
+
+      {/* Hero */}
+      <header
+        className="rounded-2xl border p-7 flex flex-col sm:flex-row gap-6 items-start"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      >
+        <div
+          className="w-20 h-20 rounded-full grid place-items-center font-extrabold flex-shrink-0"
+          style={{ background: mono.bg, color: mono.fg, fontSize: "24px" }}
+          aria-hidden
+        >
+          {mono.mono}
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-3 flex-wrap">
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{h.name}</h1>
+            <span
+              className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded"
+              style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}
+            >
+              Defunct
+            </span>
+          </div>
+          <p className="text-sm text-[var(--text-muted)] mt-1">
+            <span className="text-[var(--text-dim)]">Active:</span>{" "}
+            <span className="text-[var(--text)]">{yearsLabel}</span>
+            {" · "}
+            <span className="text-[var(--text-dim)]">Last based in:</span>{" "}
+            <span className="text-[var(--text)]">{h.city}</span>
+            {" · "}
+            <span className="text-[var(--text-dim)]">Leagues:</span>{" "}
+            <span className="text-[var(--text)]">{h.league}</span>
+          </p>
+          {h.team_historical && (
+            <p className="text-xs text-[var(--text-muted)] mt-2 italic">
+              {h.team_historical}
+            </p>
+          )}
+        </div>
+      </header>
+
+      {/* Headline stat strip */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
+        <StatCell
+          v={h.championships.toString()}
+          k="League titles"
+          sub={h.stolen_championships > 0 ? "incl. disputed" : undefined}
+        />
+        <StatCell v={`${h.w}-${h.l}-${h.t}`} k="All-time record" />
+        <StatCell v={h.win_pct.toFixed(3)} k="All-time win pct" />
+        <StatCell v={h.seasons.toString()} k="Seasons" />
+        <StatCell v={yearsLabel} k="Years active" />
+      </div>
+
+      {/* Championships timeline — only when this franchise won (or has a
+          disputed) title in historical-championships.json. */}
+      {champs.length > 0 && (
+        <Block title="Championships" deck="Pre-Super Bowl titles in slate; Super Bowl era titles in gold.">
+          <>
+            <div className="flex flex-wrap gap-2">
+              {champs.map((c) => {
+                const colors = TITLE_COLORS[c.era];
+                const label = c.era === "sb" ? `SB ${superBowlRoman(c.year)} (${c.year})` : `${c.year}`;
+                return (
+                  <span
+                    key={c.year}
+                    className="text-xs font-semibold px-2.5 py-1 rounded inline-flex items-center gap-1"
+                    style={c.stolen
+                      ? { background: "transparent", color: colors.bg, border: `1px dashed ${colors.bg}` }
+                      : { background: colors.bg, color: colors.text }
+                    }
+                    title={c.stolen ? c.stolen_note || "Disputed championship" : undefined}
+                  >
+                    {label}
+                    {c.stolen ? <span className="opacity-80">· disputed</span> : null}
+                  </span>
+                );
+              })}
+            </div>
+            <div className="flex flex-wrap gap-4 mt-3 text-xs text-[var(--text-muted)]">
+              <span className="flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.pre_sb.bg }} />
+                NFL / AAFC / AFL Championship (1920-1965)
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.sb.bg }} />
+                Super Bowl (1966-present)
+              </span>
+            </div>
+          </>
+        </Block>
+      )}
+
+      {/* All-time record card */}
+      <Block title="All-time record" deck={null}>
+        <table className="w-full text-sm">
+          <tbody>
+            <Row k="Regular-season W-L-T" v={`${h.w}-${h.l}-${h.t}`} />
+            <Row k="Win pct" v={h.win_pct.toFixed(3)} />
+            <Row k="League championships" v={h.championships.toString()} />
+            <Row k="Total seasons" v={h.seasons.toString()} />
+            <Row k="Years active" v={yearsLabel} />
+            <Row k="Last city" v={h.city} />
+            <Row k="Leagues" v={h.league} />
+          </tbody>
+        </table>
+      </Block>
+
+      {/* Season-by-season — reuses the shared SeasonsByTeamTable. No live
+          row for a defunct franchise, so no standings source is passed. */}
+      {seasonRows.length > 0 && (
+        <details
+          className="group mt-6 border-l-4 border-y border-r rounded-xl shadow-sm"
+          style={{
+            background: "var(--bg-card)",
+            borderTopColor: "var(--border)",
+            borderRightColor: "var(--border)",
+            borderBottomColor: "var(--border)",
+            borderLeftColor: "var(--accent)",
+          }}
+        >
+          <summary className="cursor-pointer px-5 sm:px-6 py-5 list-none flex items-center justify-between gap-4 hover:bg-[var(--bg-card-hover)] transition-colors rounded-xl">
+            <div className="flex items-center gap-3 min-w-0">
+              <span
+                aria-hidden
+                className="inline-flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold transition-transform group-open:rotate-90"
+                style={{ background: "rgba(78,205,196,0.16)", color: "var(--accent)" }}
+              >
+                ›
+              </span>
+              <div className="min-w-0">
+                <div className="text-base sm:text-lg font-semibold tracking-tight">Season-by-season</div>
+                <div className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] mt-0.5">
+                  {yearsLabel} · {seasonRows.length} seasons · click to expand
+                </div>
+              </div>
+            </div>
+            <span
+              className="hidden sm:inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold px-2 py-1 rounded"
+              style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)", fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              <span className="group-open:hidden">Show table</span>
+              <span className="hidden group-open:inline">Hide table</span>
+            </span>
+          </summary>
+          <div className="px-5 pb-5">
+            <SeasonsByTeamTable rows={seasonRows} />
+          </div>
+        </details>
+      )}
+
+      <p className="text-xs text-[var(--text-dim)] mt-8">
+        Defunct franchise. Source: <a href="/methodology" className="hover:text-[var(--text-muted)]">methodology</a>.
+        See all defunct franchises at{" "}
+        <Link href="/teams/nfl/historical" className="text-[var(--accent)] hover:underline">/teams/nfl/historical</Link>.
+      </p>
     </main>
   );
 }

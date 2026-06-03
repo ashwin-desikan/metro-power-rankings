@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   getAllFranchises,
+  getHistoricalFranchises,
   getPlayoffState,
   getTopGamesAllTime,
   getTopGamesByDecade,
@@ -138,6 +139,7 @@ export default function NbaIndexPage() {
       <div id="all-time">
         <FranchiseTable
           franchises={franchises}
+          historical={getHistoricalFranchises()}
           playoffState={isPostseasonOver ? {} : playoffState.by_franchise}
           logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
           monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}

@@ -298,6 +298,43 @@ export function getHistoricalSeasons(): Record<string, Season[]> {
   return _historicalSeasons;
 }
 
+// Stable URL slug for a defunct franchise. Slugifies the canonical name
+// (lowercase, non-alphanumeric → "-", collapse runs, trim ends). Defunct
+// canonicals carry disambiguating suffixes like "(1)" / "(2)" which become
+// "-1" / "-2", so the result is unique within the historical set and — by
+// inspection — never collides with an active franchise slug.
+export function defunctSlug(h: HistoricalFranchise): string {
+  return h.canonical
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+let _historicalBySlug: Map<string, HistoricalFranchise> | null = null;
+
+export function getHistoricalBySlug(slug: string): HistoricalFranchise | undefined {
+  if (!_historicalBySlug) {
+    _historicalBySlug = new Map();
+    for (const h of getHistoricalFranchises()) {
+      _historicalBySlug.set(defunctSlug(h), h);
+    }
+  }
+  return _historicalBySlug.get(slug);
+}
+
+// All defunct-franchise URL slugs, for generateStaticParams unions.
+export function getHistoricalSlugs(): string[] {
+  return getHistoricalFranchises().map(defunctSlug);
+}
+
+// Season-by-season rows for one defunct franchise. historical-seasons.json
+// is keyed by canonical name, so resolve canonical first.
+export function getHistoricalSeasonsForSlug(slug: string): Season[] {
+  const h = getHistoricalBySlug(slug);
+  if (!h) return [];
+  return getHistoricalSeasons()[h.canonical] || [];
+}
+
 // ---------- Display helpers ----------
 
 // Editorial palette mirroring NFL. Slate/bronze for pre-1903 cup wins

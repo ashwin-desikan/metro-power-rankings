@@ -2,18 +2,19 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import type { Franchise } from "@/lib/nfl";
+import type { Franchise, HistoricalFranchise } from "@/lib/nfl";
 
-// Sortable franchise table for /teams/nfl. The page server-renders a logo
-// URL map (via logoUrlFor in lib/nfl.ts) so the client never has to do
-// filesystem checks. Initial sort matches the prior cards order:
-// championships desc, then all-time win pct desc.
+// Sortable all-time franchise table for /teams/nfl. Current franchises plus
+// (when the filter is set to "All") defunct franchises from historical.json,
+// tagged Defunct. Defunct rows show their last city in the Metro column and
+// dashes where per-team data isn't tracked. Logo/monogram maps are computed
+// server-side so the client never touches the filesystem.
 
 type SortKey =
   | "name"
   | "metro"
   | "division"
-  | "founding_year"
+  | "founded"
   | "championships"
   | "champ_app"
   | "division_titles"
@@ -22,155 +23,211 @@ type SortKey =
   | "playoff_appearances";
 
 type SortDir = "asc" | "desc";
-
+type View = "current" | "all";
 type Mono = { bg: string; fg: string; mono: string };
+
+type Row = {
+  key: string;
+  slug: string | null;
+  name: string;
+  defunct: boolean;
+  metroLabel: string | null;
+  metroSlug: string | null;
+  division: string | null;
+  founded: number | null;
+  ended: number | null;
+  championships: number;
+  champApp: number | null;
+  divisionTitles: number | null;
+  playoffApps: number | null;
+  wlt: string;
+  allTimeW: number;
+  winPct: number;
+};
 
 type Props = {
   franchises: Franchise[];
+  historical: HistoricalFranchise[];
   logoMap: Record<string, string | null>;
   monoMap: Record<string, Mono>;
   champAppMap: Record<string, number>;
+  // Server-computed slug per defunct franchise, keyed by canonical name.
+  // lib/nfl is server-only, so this client component cannot derive the slug
+  // itself; the index page (a server component) precomputes it via defunctSlug.
+  defunctSlugMap: Record<string, string>;
 };
 
 const TITLE_GOLD = "#d4af37";
 
-function compare(a: Franchise, b: Franchise, key: SortKey): number {
+function activeRow(f: Franchise, champApp: number): Row {
+  return {
+    key: f.slug, slug: f.slug, name: f.name, defunct: false,
+    metroLabel: f.metro, metroSlug: f.metro_slug,
+    division: f.division, founded: f.founding_year, ended: null,
+    championships: f.championships, champApp,
+    divisionTitles: f.division_titles, playoffApps: f.playoff_appearances,
+    wlt: `${f.all_time_w}-${f.all_time_l}-${f.all_time_t}`,
+    allTimeW: f.all_time_w, winPct: f.win_pct,
+  };
+}
+
+function defunctRow(h: HistoricalFranchise, slug: string): Row {
+  return {
+    key: `def-${h.canonical}`, slug, name: h.name, defunct: true,
+    metroLabel: h.city, metroSlug: null,
+    division: null, founded: h.first_year, ended: h.last_year,
+    championships: h.championships, champApp: null,
+    divisionTitles: null, playoffApps: null,
+    wlt: `${h.w}-${h.l}-${h.t}`, allTimeW: h.w, winPct: h.win_pct,
+  };
+}
+
+function compare(a: Row, b: Row, key: SortKey): number {
   switch (key) {
     case "name": return a.name.localeCompare(b.name);
-    case "metro": return (a.metro || "").localeCompare(b.metro || "");
+    case "metro": return (a.metroLabel || "").localeCompare(b.metroLabel || "");
     case "division": return (a.division || "").localeCompare(b.division || "");
-    case "founding_year": return (a.founding_year ?? 0) - (b.founding_year ?? 0);
+    case "founded": return (a.founded ?? 0) - (b.founded ?? 0);
     case "championships": return a.championships - b.championships;
-    case "champ_app": return 0; // resolved in the sort closure via champAppMap
-    case "division_titles": return a.division_titles - b.division_titles;
-    case "win_pct": return a.win_pct - b.win_pct;
-    case "record": return a.all_time_w - b.all_time_w;
-    case "playoff_appearances": return a.playoff_appearances - b.playoff_appearances;
+    case "champ_app": return (a.champApp ?? -1) - (b.champApp ?? -1);
+    case "division_titles": return (a.divisionTitles ?? -1) - (b.divisionTitles ?? -1);
+    case "playoff_appearances": return (a.playoffApps ?? -1) - (b.playoffApps ?? -1);
+    case "win_pct": return a.winPct - b.winPct;
+    case "record": return a.allTimeW - b.allTimeW;
   }
 }
 
-export default function FranchiseTable({ franchises, logoMap, monoMap, champAppMap }: Props) {
+export default function FranchiseTable({ franchises, historical, logoMap, monoMap, champAppMap, defunctSlugMap }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>("championships");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [view, setView] = useState<View>("current");
 
   const sorted = useMemo(() => {
-    const arr = [...franchises];
-    arr.sort((a, b) => {
-      const cmp = sortKey === "champ_app"
-        ? (champAppMap[a.slug] ?? 0) - (champAppMap[b.slug] ?? 0)
-        : compare(a, b, sortKey);
-      const tiebreak = sortKey === "championships" ? (a.win_pct - b.win_pct) : 0;
+    const base = franchises.map((f) => activeRow(f, champAppMap[f.slug] ?? 0));
+    const rows = view === "all"
+      ? [...base, ...historical.map((h) => defunctRow(h, defunctSlugMap[h.canonical]))]
+      : base;
+    rows.sort((a, b) => {
+      const cmp = compare(a, b, sortKey);
+      const tiebreak = sortKey === "championships" ? (a.winPct - b.winPct) : 0;
       const combined = cmp !== 0 ? cmp : tiebreak;
       return sortDir === "asc" ? combined : -combined;
     });
-    return arr;
-  }, [franchises, sortKey, sortDir, champAppMap]);
+    return rows;
+  }, [franchises, historical, sortKey, sortDir, view, champAppMap, defunctSlugMap]);
 
   function toggle(key: SortKey) {
     if (key === sortKey) {
       setSortDir(sortDir === "asc" ? "desc" : "asc");
     } else {
       setSortKey(key);
-      // Numeric columns default to desc on first click (most champs first),
-      // text columns default to asc.
-      const numeric: SortKey[] = ["championships", "champ_app", "division_titles", "win_pct", "record", "playoff_appearances", "founding_year"];
+      const numeric: SortKey[] = ["championships", "champ_app", "division_titles", "win_pct", "record", "playoff_appearances", "founded"];
       setSortDir(numeric.includes(key) ? "desc" : "asc");
     }
   }
 
+  const dash = <span className="text-[var(--text-dim)]">—</span>;
+
   return (
-    <section
-      className="rounded-xl border overflow-x-auto"
-      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-    >
-      <table className="w-full text-xs sm:text-sm tabular-nums">
-        <thead>
-          <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
-            <Th label="Franchise"            k="name"                cur={sortKey} dir={sortDir} onClick={toggle} className="pl-4" />
-            <Th label="Metro"                k="metro"               cur={sortKey} dir={sortDir} onClick={toggle} />
-            <Th label="Division"             k="division"            cur={sortKey} dir={sortDir} onClick={toggle} />
-            <Th label="Founded"              k="founding_year"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Titles"               k="championships"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Champ App"            k="champ_app"           cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Div"                  k="division_titles"     cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Playoffs"             k="playoff_appearances" cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="All-time"             k="record"              cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
-            <Th label="Win%"                 k="win_pct"             cur={sortKey} dir={sortDir} onClick={toggle} align="right" className="pr-4" />
-          </tr>
-        </thead>
-        <tbody>
-          {sorted.map((f) => {
-            const logo = logoMap[f.slug];
-            const mono = monoMap[f.slug];
-            return (
-              <tr key={f.slug} className="border-b last:border-b-0 hover:bg-[var(--bg-card-hover)] transition-colors" style={{ borderColor: "var(--border)" }}>
-                <td className="py-2.5 pl-4 pr-3">
-                  <Link href={`/teams/nfl/${f.slug}`} className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors">
-                    {logo ? (
-                      <img src={logo} alt="" className="w-8 h-8 flex-shrink-0 object-contain" />
-                    ) : (
-                      <span
-                        className="inline-grid place-items-center rounded-full flex-shrink-0"
-                        style={{
-                          background: mono?.bg, color: mono?.fg,
-                          width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em",
-                        }}
-                        aria-hidden
-                      >
-                        {mono?.mono}
+    <section className="mt-2">
+      <header className="mb-3 flex items-center justify-between gap-4 flex-wrap">
+        <h2 className="text-lg font-bold tracking-tight">All-time table</h2>
+        <ViewToggle view={view} setView={setView} defunctCount={historical.length} />
+      </header>
+
+      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <table className="w-full text-xs sm:text-sm tabular-nums">
+          <thead>
+            <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
+              <Th label="Franchise"  k="name"                cur={sortKey} dir={sortDir} onClick={toggle} className="pl-4" />
+              <Th label="Metro"      k="metro"               cur={sortKey} dir={sortDir} onClick={toggle} />
+              <Th label="Division"   k="division"            cur={sortKey} dir={sortDir} onClick={toggle} />
+              <Th label="Founded"    k="founded"             cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+              <Th label="Titles"     k="championships"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+              <Th label="Champ App"  k="champ_app"           cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+              <Th label="Div"        k="division_titles"     cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+              <Th label="Playoffs"   k="playoff_appearances" cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+              <Th label="All-time"   k="record"              cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+              <Th label="Win%"       k="win_pct"             cur={sortKey} dir={sortDir} onClick={toggle} align="right" className="pr-4" />
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((r) => {
+              const logo = r.slug ? logoMap[r.slug] : null;
+              const mono = r.slug ? monoMap[r.slug] : null;
+              return (
+                <tr key={r.key} className="border-b last:border-b-0 hover:bg-[var(--bg-card-hover)] transition-colors" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-2.5 pl-4 pr-3">
+                    {r.defunct ? (
+                      <span className="flex items-center gap-2">
+                        {r.slug ? (
+                          <Link href={`/teams/nfl/${r.slug}`} className="font-semibold text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{r.name}</Link>
+                        ) : (
+                          <span className="font-semibold text-[var(--text-muted)]">{r.name}</span>
+                        )}
+                        <span className="text-[9px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>Defunct</span>
                       </span>
+                    ) : (
+                      <Link href={`/teams/nfl/${r.slug}`} className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors">
+                        {logo ? (
+                          <img src={logo} alt="" className="w-8 h-8 flex-shrink-0 object-contain" />
+                        ) : (
+                          <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono?.bg, color: mono?.fg, width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em" }} aria-hidden>{mono?.mono}</span>
+                        )}
+                        <span className="font-semibold">{r.name}</span>
+                      </Link>
                     )}
-                    <span className="font-semibold">{f.name}</span>
-                  </Link>
-                </td>
-                <td className="py-2.5 pr-3 text-[var(--text-muted)]">
-                  {f.metro_slug ? (
-                    <Link href={`/rankings/${f.metro_slug}`} className="hover:text-[var(--accent)] transition-colors">
-                      {f.metro}
-                    </Link>
-                  ) : (
-                    f.metro
-                  )}
-                </td>
-                <td className="py-2.5 pr-3 text-[var(--text-muted)]">{f.division}</td>
-                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.founding_year ?? "—"}</td>
-                <td className="py-2.5 pr-3 text-right">
-                  <span
-                    className="text-[11px] font-semibold px-1.5 py-0.5 rounded"
-                    style={{
-                      background: f.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
-                      color: f.championships > 0 ? TITLE_GOLD : "var(--text-dim)",
-                    }}
-                  >
-                    {f.championships}
-                  </span>
-                </td>
-                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{champAppMap[f.slug] ?? 0}</td>
-                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.division_titles}</td>
-                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.playoff_appearances}</td>
-                <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{f.all_time_w}-{f.all_time_l}-{f.all_time_t}</td>
-                <td className="py-2.5 pr-4 text-right">{f.win_pct.toFixed(3)}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+                  </td>
+                  <td className="py-2.5 pr-3 text-[var(--text-muted)]">
+                    {r.metroSlug ? (
+                      <Link href={`/rankings/${r.metroSlug}`} className="hover:text-[var(--accent)] transition-colors">{r.metroLabel}</Link>
+                    ) : (r.metroLabel || dash)}
+                  </td>
+                  <td className="py-2.5 pr-3 text-[var(--text-muted)]">{r.division || dash}</td>
+                  <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]" title={r.defunct && r.founded && r.ended ? `${r.founded}-${r.ended}` : undefined}>{r.founded ?? dash}</td>
+                  <td className="py-2.5 pr-3 text-right">
+                    <span className="text-[11px] font-semibold px-1.5 py-0.5 rounded" style={{ background: r.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: r.championships > 0 ? TITLE_GOLD : "var(--text-dim)" }}>{r.championships}</span>
+                  </td>
+                  <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{r.champApp ?? dash}</td>
+                  <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{r.divisionTitles ?? dash}</td>
+                  <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{r.playoffApps ?? dash}</td>
+                  <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{r.wlt}</td>
+                  <td className="py-2.5 pr-4 text-right">{r.winPct.toFixed(3)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }
 
-// Sortable column header. Renders the label, a direction indicator when
-// active, and a hover state to advertise interactivity.
+function ViewToggle({ view, setView, defunctCount }: { view: View; setView: (v: View) => void; defunctCount: number }) {
+  return (
+    <div className="flex items-center gap-1.5 text-xs">
+      {(["current", "all"] as View[]).map((v) => (
+        <button
+          key={v}
+          type="button"
+          onClick={() => setView(v)}
+          className="px-3 py-1 rounded-full border transition-colors"
+          style={view === v
+            ? { background: "var(--accent-dim)", color: "var(--text)", borderColor: "var(--accent-dim)" }
+            : { background: "var(--bg-card)", color: "var(--text-muted)", borderColor: "var(--border)" }}
+        >
+          {v === "current" ? "Current" : `All (incl. ${defunctCount} defunct)`}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function Th({
   label, k, cur, dir, onClick, align, className,
 }: {
-  label: string;
-  k: SortKey;
-  cur: SortKey;
-  dir: SortDir;
-  onClick: (k: SortKey) => void;
-  align?: "right";
-  className?: string;
+  label: string; k: SortKey; cur: SortKey; dir: SortDir;
+  onClick: (k: SortKey) => void; align?: "right"; className?: string;
 }) {
   const isActive = cur === k;
   return (
@@ -181,11 +238,7 @@ function Th({
     >
       <span className="inline-flex items-center gap-1">
         {label}
-        {isActive && (
-          <span aria-hidden style={{ color: "var(--accent)" }}>
-            {dir === "asc" ? "▲" : "▼"}
-          </span>
-        )}
+        {isActive && (<span aria-hidden style={{ color: "var(--accent)" }}>{dir === "asc" ? "▲" : "▼"}</span>)}
       </span>
     </th>
   );

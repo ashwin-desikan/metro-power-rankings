@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import {
   getAllFranchiseSlugs,
   getFranchiseBySlug,
+  getAllHistoricalSlugs,
+  getHistoricalBySlug,
+  getHistoricalSeasons,
   getChampionships,
   getChampionshipAppearances,
   getStadiumHistory,
@@ -20,6 +23,7 @@ import {
   lossColumnsForYear,
   type Season,
   type AwardWinner,
+  type HistoricalFranchise,
 } from "@/lib/nhl";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
 import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
@@ -31,13 +35,35 @@ export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getAllFranchiseSlugs().map((slug) => ({ slug }));
+  const active = getAllFranchiseSlugs();
+  const activeSet = new Set(active);
+  // Union active + defunct slugs. Active slugs win on any collision so the
+  // live franchise page is never shadowed by a historical entry.
+  const defunct = getAllHistoricalSlugs().filter((slug) => !activeSet.has(slug));
+  return [...active, ...defunct].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const f = getFranchiseBySlug(slug);
-  if (!f) return { title: "Franchise not found" };
+  if (!f) {
+    const h = getHistoricalBySlug(slug);
+    if (!h) return { title: "Franchise not found" };
+    const games = h.all_time_w + h.all_time_l + h.all_time_t + h.all_time_otl;
+    const ptsPct = games > 0 ? (h.all_time_pts / (2 * games)).toFixed(3) : "—";
+    const yrs = h.founded && h.ended ? `${h.founded}–${h.ended}` : (h.founded ? `${h.founded}` : "");
+    const name = `${h.last_city} ${h.last_team}`.trim() || h.name;
+    const hUrl = `${BASE_URL}/teams/nhl/${h.slug}`;
+    const hDesc =
+      `${name} (defunct${yrs ? `, ${yrs}` : ""}): ${h.championships} Stanley Cup${h.championships === 1 ? "" : "s"}, ${h.champ_appearances} Cup Final apps, all-time pts pct ${ptsPct} over ${h.seasons} seasons. Leagues: ${h.league_history}.`;
+    return {
+      title: `${name} (defunct)`,
+      description: hDesc,
+      alternates: { canonical: `/teams/nhl/${h.slug}` },
+      openGraph: { title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc, url: hUrl, type: "website" },
+      twitter: { card: "summary", title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc },
+    };
+  }
   const url = `${BASE_URL}/teams/nhl/${f.slug}`;
   const desc =
     `${f.display_name}: ${f.championships} Stanley Cup${f.championships === 1 ? "" : "s"}, ${f.best_record_seasons} Presidents' Trophy / Best-Record seasons, all-time pts pct ${f.pts_pct.toFixed(3)}, founded ${f.founded}. Plays at ${f.current_arena_canonical || f.current_arena_season}, ${f.metro}.`;
@@ -58,7 +84,11 @@ const AWARD_ORDER: string[] = [
 export default async function NhlTeamPage({ params }: Props) {
   const { slug } = await params;
   const f = getFranchiseBySlug(slug);
-  if (!f) notFound();
+  if (!f) {
+    const h = getHistoricalBySlug(slug);
+    if (!h) notFound();
+    return <DefunctFranchisePage h={h} />;
+  }
 
   const championships = getChampionships(slug);
   const champApps = getChampionshipAppearances(slug);
@@ -367,6 +397,143 @@ export default async function NhlTeamPage({ params }: Props) {
         {liveSeasonYear > 0 && (
           <> Live standings refresh from ESPN every hour. The static build refreshes daily at 08:00 UTC.</>
         )}
+      </p>
+    </main>
+  );
+}
+
+// ---------- Defunct franchise page ----------
+// Reuses the active page's container, breadcrumb, hero, all-time record card
+// and season-by-season table. Omits sections with no data for defunct
+// franchises (live status, arena history, awards, map, top games).
+function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
+  const seasons: Season[] = getHistoricalSeasons()[h.slug] ?? [];
+  const games = h.all_time_w + h.all_time_l + h.all_time_t + h.all_time_otl;
+  const ptsPct = games > 0 ? h.all_time_pts / (2 * games) : null;
+  const name = `${h.last_city} ${h.last_team}`.trim() || h.name;
+  const yearsActive =
+    h.founded && h.ended ? `${h.founded}–${h.ended}` : h.founded ? `${h.founded}–?` : "—";
+
+  const stats: { label: string; value: string }[] = [
+    { label: "Record (W-L-T-OTL)", value: `${h.all_time_w}-${h.all_time_l}-${h.all_time_t}-${h.all_time_otl}` },
+    { label: "Points", value: `${h.all_time_pts}` },
+    { label: "Points %", value: ptsPct != null ? ptsPct.toFixed(3).replace(/^0/, "") : "—" },
+    { label: "Seasons", value: `${h.seasons}` },
+    { label: "Stanley Cups", value: `${h.championships}` },
+    { label: "Cup Final apps", value: `${h.champ_appearances}` },
+    { label: "Conference / SF apps", value: `${h.sf_appearances}` },
+    { label: "Last Cup", value: h.last_championship ? `${h.last_championship}` : "—" },
+  ];
+
+  return (
+    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-3 flex items-center gap-3 flex-wrap">
+        <Link href="/teams/nhl" className="hover:text-[var(--accent)]">← All NHL franchises</Link>
+        <Link href="/teams/nhl/historical" className="hover:text-[var(--accent)]">Defunct franchises →</Link>
+      </div>
+
+      {/* Hero */}
+      <header className="mb-8">
+        <div className="flex items-start gap-4 flex-wrap">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap mb-2">
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{name}</h1>
+              <span
+                className="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded"
+                style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}
+              >
+                Defunct
+              </span>
+            </div>
+            <div className="text-sm text-[var(--text-muted)] mb-2">
+              {yearsActive !== "—" && <>Active {yearsActive}</>}
+              {h.last_city && <> · {h.last_city}</>}
+              {h.league_history && <> · {h.league_history}</>}
+            </div>
+
+            {/* Trophy chip ladder */}
+            {h.championships > 0 ? (
+              <div className="flex flex-wrap gap-2 items-center mb-2">
+                {Array.from({ length: h.championships }).map((_, i) => (
+                  <span
+                    key={`cup-${i}`}
+                    title="Stanley Cup"
+                    className="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded"
+                    style={{ background: TITLE_COLORS.stanley.bg, color: TITLE_COLORS.stanley.text }}
+                  >
+                    Cup
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-wrap gap-2 items-center mb-2">
+                <span className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">No Stanley Cup wins</span>
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[var(--text-muted)]">
+              <span>
+                <strong className="text-[var(--text)]">{h.champ_appearances}</strong> Stanley Cup Final apps
+              </span>
+              <span>
+                <strong className="text-[var(--text)]">{h.sf_appearances}</strong> Conference / SF apps
+              </span>
+              <span>
+                <strong className="text-[var(--text)]">{h.seasons}</strong> seasons
+              </span>
+            </div>
+
+            {h.team_history && (
+              <div className="text-[11px] text-[var(--text-dim)] mt-2">
+                History: {h.team_history}
+                {h.city_history && <> · {h.city_history}</>}
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
+
+      {/* All-time record card */}
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-2">All-time record</h2>
+        <p className="text-xs text-[var(--text-muted)] mb-3">
+          Aggregated across every season and league this franchise played, from the NHL workbook. Points % is points
+          over the maximum available (2 per game played).
+        </p>
+        <div
+          className="grid gap-3"
+          style={{ gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))" }}
+        >
+          {stats.map((s) => (
+            <div
+              key={s.label}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-1">{s.label}</div>
+              <div className="text-xl font-semibold tabular-nums">{s.value}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Season-by-season */}
+      {seasons.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-lg font-semibold mb-2">Season-by-season</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            Reverse chronological. Ties column visible through the 2004-05 lockout; OTL absorbs shootout losses
+            post-2005 (workbook convention).
+          </p>
+          <SeasonsByTeamTable seasons={seasons} liveRow={null} />
+        </section>
+      )}
+
+      <p className="text-xs text-[var(--text-dim)] mt-10">
+        Source: <Link href="/methodology" className="hover:text-[var(--text-muted)]">methodology</Link>.
+        Workbook canonical key: <code className="text-[10px]">{h.canonical}</code>.
+        Defunct franchise — see all of them at{" "}
+        <Link href="/teams/nhl/historical" className="hover:text-[var(--text-muted)]">/teams/nhl/historical</Link>.
       </p>
     </main>
   );

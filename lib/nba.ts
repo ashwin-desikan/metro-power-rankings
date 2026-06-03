@@ -351,6 +351,19 @@ export function getHistoricalFranchises(): HistoricalFranchise[] {
   return _historical;
 }
 
+let _historicalBySlug: Map<string, HistoricalFranchise> | null = null;
+export function getHistoricalBySlug(slug: string): HistoricalFranchise | undefined {
+  if (!_historicalBySlug) {
+    _historicalBySlug = new Map();
+    for (const h of getHistoricalFranchises()) _historicalBySlug.set(h.slug, h);
+  }
+  return _historicalBySlug.get(slug);
+}
+
+export function getHistoricalSlugs(): string[] {
+  return getHistoricalFranchises().map((h) => h.slug);
+}
+
 export function getHistoricalSeasons(): Record<string, Season[]> {
   if (!_historicalSeasons) _historicalSeasons = read<Record<string, Season[]>>("historical-seasons.json");
   return _historicalSeasons;

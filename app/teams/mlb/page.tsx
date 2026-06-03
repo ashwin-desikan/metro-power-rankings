@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   getAllFranchises,
+  getHistoricalFranchises,
   getTopGamesAllTime,
   getTopGamesByDecade,
   getAllFranchiseSlugs,
+  defunctSlug,
   logoUrlFor,
   monogramFor,
 } from "@/lib/mlb";
@@ -107,6 +109,7 @@ export default async function MlbIndexPage() {
       <div id="all-time">
         <FranchiseTable
           franchises={franchises}
+          historical={getHistoricalFranchises().map(h => ({ ...h, slug: defunctSlug(h) }))}
           logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
           monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
         />

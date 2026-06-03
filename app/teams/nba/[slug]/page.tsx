@@ -14,6 +14,9 @@ import {
   getTopGamesForTeam,
   getPlayoffState,
   getPlayoffStateForCanonical,
+  getHistoricalSlugs,
+  getHistoricalBySlug,
+  getHistoricalSeasons,
   logoUrlFor,
   monogramFor,
   TITLE_COLORS,
@@ -23,6 +26,7 @@ import {
   seasonLabel,
   nbaRoundLabel,
   type Season,
+  type HistoricalFranchise,
 } from "@/lib/nba";
 import { BASE_URL, SITE_NAME, serializeJsonLd, sportsTeamJsonLd } from "@/lib/seo";
 import { findTopTeamForName, topTeamAnchorId } from "@/lib/topTeams";
@@ -32,22 +36,46 @@ export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getAllFranchiseSlugs().map((slug) => ({ slug }));
+  const active = getAllFranchiseSlugs();
+  const activeSet = new Set(active);
+  // Union active + defunct slugs. Guard against a defunct slug colliding with
+  // an active one (active wins; defunct rendering is unreachable for it).
+  const defunct = getHistoricalSlugs().filter((s) => !activeSet.has(s));
+  return [...active, ...defunct].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const f = getFranchiseBySlug(slug);
-  if (!f) return { title: "Franchise not found" };
-  const url = `${BASE_URL}/teams/nba/${f.slug}`;
+  if (f) {
+    const url = `${BASE_URL}/teams/nba/${f.slug}`;
+    const desc =
+      `${f.display_name}: ${f.championships} championships, all-time record ${f.all_time_w}-${f.all_time_l} (${f.win_pct.toFixed(3)}), founded ${f.founding_year}. Plays in ${f.arena}, ${f.metro}.`;
+    return {
+      title: f.display_name,
+      description: desc,
+      alternates: { canonical: `/teams/nba/${f.slug}` },
+      openGraph: { title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
+    };
+  }
+  const h = getHistoricalBySlug(slug);
+  if (!h) return { title: "Franchise not found" };
+  const yearsLabel =
+    h.first_year && h.last_year
+      ? h.first_year === h.last_year
+        ? `${h.first_year}`
+        : `${h.first_year}–${h.last_year}`
+      : "";
+  const url = `${BASE_URL}/teams/nba/${h.slug}`;
   const desc =
-    `${f.display_name}: ${f.championships} championships, all-time record ${f.all_time_w}-${f.all_time_l} (${f.win_pct.toFixed(3)}), founded ${f.founding_year}. Plays in ${f.arena}, ${f.metro}.`;
+    `${h.display_name} (defunct${yearsLabel ? `, ${yearsLabel}` : ""}): ${h.championships} championships, all-time record ${h.all_time_w}-${h.all_time_l} (${h.win_pct.toFixed(3)}) across ${h.seasons} season${h.seasons === 1 ? "" : "s"} in the ${h.league_history}.`;
   return {
-    title: f.display_name,
+    title: `${h.display_name} (defunct)`,
     description: desc,
-    alternates: { canonical: `/teams/nba/${f.slug}` },
-    openGraph: { title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
+    alternates: { canonical: `/teams/nba/${h.slug}` },
+    openGraph: { title: `${h.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+    twitter: { card: "summary", title: `${h.display_name} | ${SITE_NAME}`, description: desc },
   };
 }
 
@@ -81,7 +109,11 @@ function priorCitySummary(f: ReturnType<typeof getFranchiseBySlug>): string | nu
 export default async function FranchisePage({ params }: Props) {
   const { slug } = await params;
   const f = getFranchiseBySlug(slug);
-  if (!f) notFound();
+  if (!f) {
+    const h = getHistoricalBySlug(slug);
+    if (!h) notFound();
+    return <DefunctFranchisePage h={h} />;
+  }
 
   const champs = getChampionships(f.canonical);
   const champAppearances = getChampionshipAppearances(f.canonical);
@@ -768,6 +800,353 @@ export default async function FranchisePage({ params }: Props) {
           </div>
         )}
       </Block>
+    </main>
+  );
+}
+
+// ---------- Defunct franchise page ----------
+
+function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
+  const seasonsMap = getHistoricalSeasons();
+  const rawSeasons: Season[] = seasonsMap[h.slug] ?? [];
+  const seasonRows = [...rawSeasons].reverse();
+
+  const yearsLabel =
+    h.first_year && h.last_year
+      ? h.first_year === h.last_year
+        ? `${h.first_year}`
+        : `${h.first_year}–${h.last_year}`
+      : h.first_year
+        ? `${h.first_year}`
+        : "—";
+
+  // Title championships from the season rows we have (era-aware chips).
+  const champSeasons = rawSeasons.filter((s) => s.champ);
+  const finalsSeasons = rawSeasons.filter((s) => s.champ_app);
+  const cfSeasons = rawSeasons.filter((s) => s.cf_app);
+
+  const lastCity = (h.city_history || "").split("/").pop()?.trim() || null;
+
+  return (
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Breadcrumb */}
+      <nav className="text-xs text-[var(--text-muted)] mb-4">
+        <Link href="/" className="hover:text-[var(--text)]">Home</Link>
+        <span className="mx-1">&rsaquo;</span>
+        <Link href="/teams/nba" className="hover:text-[var(--text)]">NBA</Link>
+        <span className="mx-1">&rsaquo;</span>
+        <Link href="/teams/nba/historical" className="hover:text-[var(--text)]">Defunct</Link>
+        <span className="mx-1">&rsaquo;</span>
+        <span className="text-[var(--text-dim)]">{h.display_name}</span>
+      </nav>
+
+      {/* Back chip */}
+      <div className="mb-4">
+        <Link
+          href="/teams/nba/historical"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+        >
+          <span aria-hidden>&larr;</span>
+          <span>All defunct NBA franchises</span>
+        </Link>
+      </div>
+
+      {/* Hero */}
+      <header
+        className="rounded-2xl border p-7 flex flex-col sm:flex-row gap-6 items-start"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      >
+        <div
+          className="w-20 h-20 rounded-full grid place-items-center font-extrabold flex-shrink-0"
+          style={{ background: "#222", color: "#fff", fontSize: "22px" }}
+          aria-hidden
+        >
+          NBA
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{h.display_name}</h1>
+            <span
+              className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded"
+              style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}
+            >
+              Defunct
+            </span>
+            {h.aba_only && (
+              <span
+                className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded"
+                style={{ background: TITLE_COLORS.aba.bg, color: TITLE_COLORS.aba.text }}
+                title="ABA-only franchise (rival league, 1968-76)"
+              >
+                ABA
+              </span>
+            )}
+          </div>
+          <p className="text-sm text-[var(--text-muted)] mt-1">
+            <span className="text-[var(--text-dim)]">Years active:</span>{" "}
+            <span className="text-[var(--text)]">{yearsLabel}</span>
+            {lastCity && (
+              <>
+                {" · "}
+                <span className="text-[var(--text-dim)]">Last city:</span>{" "}
+                <span className="text-[var(--text)]">{lastCity}</span>
+              </>
+            )}
+            {h.league_history && (
+              <>
+                {" · "}
+                <span className="text-[var(--text-dim)]">Leagues:</span>{" "}
+                <span className="text-[var(--text)]">{h.league_history}</span>
+              </>
+            )}
+          </p>
+          {h.team_history && (
+            <p className="text-xs text-[var(--text-muted)] mt-2 italic">{h.team_history}</p>
+          )}
+        </div>
+      </header>
+
+      {/* Headline stat strip */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">
+        <StatCell
+          v={h.championships.toString()}
+          k="Championships"
+          sub={`${h.championship_appearances} Finals Appearances`}
+        />
+        <StatCell
+          v={h.championship_appearances.toString()}
+          k="Finals Appearances"
+          sub={`${h.cf_appearances} Conf. Finals`}
+        />
+        <StatCell v={h.playoff_appearances.toString()} k="Playoff Appearances" />
+        <StatCell v={h.win_pct.toFixed(3)} k="All-time Win%" sub={`${h.all_time_w}-${h.all_time_l}`} />
+        <StatCell v={h.seasons.toString()} k="Seasons" sub={yearsLabel} />
+      </div>
+
+      {/* Championships */}
+      {champSeasons.length > 0 && (
+        <Block
+          title="Championships"
+          deck="ABA cups in slate (1968-76, rival league merged into NBA in 1976), BAA + NBA titles in gold."
+        >
+          <div className="flex flex-wrap gap-2">
+            {champSeasons.map((s) => {
+              const era = s.league === "ABA" ? "aba" : "nba";
+              const colors = TITLE_COLORS[era];
+              return (
+                <span
+                  key={s.year}
+                  className="text-xs font-semibold px-2.5 py-1 rounded"
+                  style={{ background: colors.bg, color: colors.text }}
+                  title={`${s.year} ${s.league} Champion`}
+                >
+                  {seasonLabel(s.year)}
+                  <span className="ml-1 opacity-70 text-[10px]">{s.league === "ABA" ? "ABA" : ""}</span>
+                </span>
+              );
+            })}
+          </div>
+        </Block>
+      )}
+
+      {/* Finals appearances */}
+      {finalsSeasons.length > 0 && (
+        <Block
+          title="Finals Appearances"
+          deck="Solid chip = won the championship; outlined chip = lost the Finals."
+        >
+          <div className="flex flex-wrap gap-2">
+            {finalsSeasons.map((s) => {
+              const era = s.league === "ABA" ? "aba" : "nba";
+              const colors = TITLE_COLORS[era];
+              return (
+                <span
+                  key={s.year}
+                  className="text-xs font-semibold px-2.5 py-1 rounded inline-flex items-center gap-1"
+                  style={s.champ
+                    ? { background: colors.bg, color: colors.text }
+                    : { background: "transparent", color: colors.bg, border: `1px solid ${colors.bg}` }
+                  }
+                  title={`${s.champ ? "Won" : "Lost"} ${s.league} Finals ${s.year}`}
+                >
+                  {seasonLabel(s.year)}
+                  {s.champ ? <span aria-hidden style={{ fontSize: "9px" }}>●</span> : null}
+                </span>
+              );
+            })}
+          </div>
+        </Block>
+      )}
+
+      {/* Conference Finals appearances */}
+      {cfSeasons.length > 0 && (
+        <Block
+          title="Conference Finals"
+          deck="Every season the franchise reached the conference / division finals."
+        >
+          <div className="flex flex-wrap gap-2">
+            {cfSeasons.map((s) => (
+              <span
+                key={s.year}
+                className="text-xs font-medium px-2.5 py-1 rounded border"
+                style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+                title={`${seasonLabel(s.year)} Conference Finals${s.champ_app ? " (advanced to Finals)" : ""}`}
+              >
+                {seasonLabel(s.year)}
+                {s.champ_app ? <span className="ml-1 opacity-70" style={{ fontSize: "9px" }}>↑</span> : null}
+              </span>
+            ))}
+          </div>
+        </Block>
+      )}
+
+      {/* All-time record */}
+      <Block title="All-time record" deck={null}>
+        <table className="w-full text-sm">
+          <tbody>
+            <Row k="Regular-season W-L" v={`${h.all_time_w}-${h.all_time_l}`} />
+            <Row k="Win pct" v={h.win_pct.toFixed(3)} />
+            <Row k="Championships" v={`${h.championships}`} />
+            <Row k="Finals appearances" v={`${h.championship_appearances}`} />
+            <Row k="Conference Finals appearances" v={`${h.cf_appearances}`} />
+            <Row k="Playoff appearances" v={`${h.playoff_appearances}`} />
+            <Row k="Total seasons" v={h.seasons.toString()} />
+            <Row k="Years active" v={yearsLabel} />
+            <Row k="Leagues" v={h.league_history || "—"} />
+          </tbody>
+        </table>
+      </Block>
+
+      {/* Season-by-season */}
+      {seasonRows.length > 0 && (
+        <details
+          className="group mt-4 border-l-4 border-y border-r rounded-xl shadow-sm"
+          style={{
+            background: "var(--bg-card)",
+            borderTopColor: "var(--border)",
+            borderRightColor: "var(--border)",
+            borderBottomColor: "var(--border)",
+            borderLeftColor: "var(--accent)",
+          }}
+          open
+        >
+          <summary className="cursor-pointer px-5 sm:px-6 py-5 list-none flex items-center justify-between gap-4 hover:bg-[var(--bg-card-hover)] transition-colors rounded-xl">
+            <div className="flex items-center gap-3 min-w-0">
+              <span
+                aria-hidden
+                className="inline-flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold transition-transform group-open:rotate-90"
+                style={{ background: "rgba(78,205,196,0.16)", color: "var(--accent)" }}
+              >
+                ›
+              </span>
+              <div className="min-w-0">
+                <div className="text-base sm:text-lg font-semibold tracking-tight">Season-by-season</div>
+                <div className="text-[11px] uppercase tracking-widest text-[var(--text-muted)] mt-0.5">
+                  {h.first_year} to {h.last_year} · {seasonRows.length} season{seasonRows.length === 1 ? "" : "s"} · click to toggle
+                </div>
+              </div>
+            </div>
+          </summary>
+          <div className="px-5 pb-5">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[720px] text-xs tabular-nums">
+                <thead className="text-[var(--text-muted)]">
+                  <tr className="border-b" style={{ borderColor: "var(--border)" }}>
+                    <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Season</th>
+                    <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Team</th>
+                    <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">League</th>
+                    <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Division</th>
+                    <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">W</th>
+                    <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">L</th>
+                    <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Win%</th>
+                    <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PF/G</th>
+                    <th className="text-right py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">PA/G</th>
+                    <th className="text-left py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Place</th>
+                    <th className="text-left py-2 font-medium uppercase tracking-wider text-[10px]">Postseason</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {seasonRows.map((s) => (
+                    <tr key={s.year} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                      <td className="py-1.5 pr-3">
+                        <a
+                          href={brefYearUrl(s.year, s.league)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[var(--text)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2"
+                          title={`${s.league} ${seasonLabel(s.year)} season on Basketball-Reference`}
+                        >
+                          {seasonLabel(s.year)}
+                        </a>
+                      </td>
+                      <td className="py-1.5 pr-3 whitespace-nowrap">
+                        <span className="text-[var(--text)]">{s.city}</span>{" "}
+                        <span className="text-[var(--text-muted)]">{s.team}</span>
+                      </td>
+                      <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.league || "—"}</td>
+                      <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.division || "—"}</td>
+                      <td className="py-1.5 pr-3 text-right">{s.w || ""}</td>
+                      <td className="py-1.5 pr-3 text-right">{s.l || ""}</td>
+                      <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">
+                        {s.win_pct ? s.win_pct.toFixed(3).replace(/^0/, "") : "—"}
+                      </td>
+                      <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pf_g ? s.pf_g.toFixed(1) : ""}</td>
+                      <td className="py-1.5 pr-3 text-right text-[var(--text-muted)]">{s.pa_g ? s.pa_g.toFixed(1) : ""}</td>
+                      <td className="py-1.5 pr-3 text-[var(--text-muted)]">{s.place || "—"}</td>
+                      <td className="py-1.5">
+                        {s.champ ? (
+                          <span
+                            className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                            style={s.league === "ABA"
+                              ? { background: TITLE_COLORS.aba.bg, color: TITLE_COLORS.aba.text }
+                              : { background: TITLE_COLORS.nba.bg, color: TITLE_COLORS.nba.text }}
+                          >
+                            {s.league === "ABA" ? "ABA Champion" : s.league === "BAA" ? "BAA Champion" : "NBA Champion"}
+                          </span>
+                        ) : s.champ_app ? (
+                          <span
+                            className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap border"
+                            style={{ borderColor: "#a07a30", color: "#a07a30" }}
+                          >
+                            Lost Finals
+                          </span>
+                        ) : s.cf_app ? (
+                          <span
+                            className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap border"
+                            style={{ borderColor: "var(--text-muted)", color: "var(--text-muted)" }}
+                          >
+                            Lost Conf. Finals
+                          </span>
+                        ) : s.playoff ? (
+                          <span
+                            className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+                            style={{ background: "var(--bg-card-hover)", color: "var(--text-muted)" }}
+                          >
+                            Playoffs
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      )}
+
+      {/* Footer nav */}
+      <div className="mt-6 flex flex-wrap gap-3 text-sm">
+        <Link href="/teams/nba/historical" className="text-[var(--accent)] hover:underline">
+          ← All defunct NBA franchises
+        </Link>
+        <Link href="/teams/nba" className="text-[var(--accent)] hover:underline">
+          All NBA franchises
+        </Link>
+      </div>
     </main>
   );
 }

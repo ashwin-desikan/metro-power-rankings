@@ -331,6 +331,54 @@ export function getHistoricalSeasons(): Record<string, Season[]> {
   return _historicalSeasons;
 }
 
+// ---------- Defunct-franchise routing ----------
+
+// Slugify a defunct franchise's canonical name into a URL-safe token used
+// for its detail page at /teams/nfl/{slug}. Lowercase, non-alphanumeric
+// runs collapse to single dashes, ends trimmed. If the bare slug would
+// collide with one of the 32 active franchise slugs, a "-defunct" token is
+// appended so the two never resolve to the same route. The same function is
+// used for route params, the page lookup, and the all-time table link, so
+// they always agree.
+export function defunctSlug(h: HistoricalFranchise): string {
+  const base = h.canonical
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+  const active = indices().bySlug;
+  return active.has(base) ? `${base}-defunct` : base;
+}
+
+// All defunct slugs (one per historical franchise). Order matches
+// getHistoricalFranchises().
+export function getHistoricalSlugs(): string[] {
+  return getHistoricalFranchises().map(defunctSlug);
+}
+
+// Resolve a defunct franchise by its derived slug, or undefined. Built once
+// and memoized so repeated lookups (generateMetadata + page render) are cheap.
+let _historicalBySlug: Map<string, HistoricalFranchise> | null = null;
+export function getHistoricalBySlug(slug: string): HistoricalFranchise | undefined {
+  if (!_historicalBySlug) {
+    _historicalBySlug = new Map();
+    for (const h of getHistoricalFranchises()) {
+      _historicalBySlug.set(defunctSlug(h), h);
+    }
+  }
+  return _historicalBySlug.get(slug);
+}
+
+// Season-by-season rows for one defunct franchise, keyed by canonical name.
+export function getHistoricalSeasonsFor(canonical: string): Season[] {
+  return getHistoricalSeasons()[canonical] || [];
+}
+
+// Championship rows for one defunct franchise, keyed by canonical name.
+export function getHistoricalChampionshipsFor(canonical: string): Championship[] {
+  return getHistoricalChampionships()[canonical] || [];
+}
+
 // ---------- Display helpers ----------
 
 // Editorial palette per scope memory. Slate for pre-Super Bowl titles

@@ -150,6 +150,13 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
     ? Array.from(new Set(liveStandings.map((r) => r.conference).filter((c): c is string => !!c))).sort()
     : hub.conferences;
   const standingsYear = useLive ? live.season_year : hub.current_year;
+  const currentSlugs = new Set(hub.current_standings.map((s) => s.slug).filter((x): x is string => !!x));
+  const metroBySlug = new Map(getAllClubs().map((c) => [c.slug, c.metro] as const));
+  const allTimeRows = hub.most_decorated.map((r) => ({
+    ...r,
+    metro: r.slug ? (metroBySlug.get(r.slug) ?? null) : null,
+    defunct: r.slug ? !currentSlugs.has(r.slug) : true,
+  }));
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
@@ -167,15 +174,15 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
       <HubNav
         items={[
           { label: "Current Standings", href: "#standings" },
-          { label: "Most Decorated", href: "#most-decorated" },
+          { label: "All-time table", href: "#all-time" },
           { label: "Cup & Shield", href: "#honors" },
         ]}
       />
       <div id="standings">
         <MlsStandings standings={standings} conferences={conferences} showHonors={!useLive} />
       </div>
-      <div id="most-decorated">
-        <MlsMostDecorated rows={hub.most_decorated} />
+      <div id="all-time">
+        <MlsMostDecorated rows={allTimeRows} />
       </div>
       <section id="honors" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <div>

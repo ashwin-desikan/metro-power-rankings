@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllFranchises, getChampionshipAppearances, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, withStadiumLocations, withTeamSlugs } from "@/lib/nfl";
+import { getAllFranchises, getChampionshipAppearances, getHistoricalFranchises, getTopGamesAllTime, getTopGamesByDecade, logoUrlFor, monogramFor, withStadiumLocations, withTeamSlugs, defunctSlug } from "@/lib/nfl";
 import TopGamesTable from "./TopGamesTable";
 import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
@@ -86,9 +86,11 @@ export default function NflIndexPage() {
       <div id="all-time">
         <FranchiseTable
           franchises={franchises}
+          historical={getHistoricalFranchises()}
           logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
           monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
           champAppMap={champAppMap}
+          defunctSlugMap={Object.fromEntries(getHistoricalFranchises().map(h => [h.canonical, defunctSlug(h)]))}
         />
       </div>
 

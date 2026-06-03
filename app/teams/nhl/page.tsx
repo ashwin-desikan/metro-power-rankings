@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   getAllFranchises,
+  getAllHistorical,
   logoUrlFor,
   monogramFor,
   ORIGINAL_SIX,
@@ -107,6 +108,7 @@ export default function NhlIndexPage() {
       <div id="all-time">
         <FranchiseTable
           franchises={franchises}
+          historical={getAllHistorical()}
           logoMap={Object.fromEntries(franchises.map(f => [f.slug, logoUrlFor(f.slug)]))}
           monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
           originalSix={ORIGINAL_SIX}

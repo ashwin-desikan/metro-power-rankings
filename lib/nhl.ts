@@ -188,6 +188,19 @@ export function getAllHistorical(): HistoricalFranchise[] {
   return _historical;
 }
 
+let _histBySlug: Map<string, HistoricalFranchise> | null = null;
+export function getHistoricalBySlug(slug: string): HistoricalFranchise | undefined {
+  if (!_histBySlug) {
+    _histBySlug = new Map();
+    for (const h of getAllHistorical()) _histBySlug.set(h.slug, h);
+  }
+  return _histBySlug.get(slug);
+}
+
+export function getAllHistoricalSlugs(): string[] {
+  return getAllHistorical().map(h => h.slug);
+}
+
 function indices() {
   if (_bySlug && _byCanonical) return { bySlug: _bySlug, byCanonical: _byCanonical };
   const bySlug = new Map<string, Franchise>();
