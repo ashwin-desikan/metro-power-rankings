@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-03",
+    headline: "Fixes: NBA top-games ranking and NFL offseason standings",
+    items: [
+      "NBA top games are now ranked by the workbook's documented Game Score (team strength, competitiveness, stakes, seeding), surfacing the real all-time classics.",
+      "NFL standings zero out during the offseason instead of displaying last season's final records as if they were live.",
+    ],
+  },
+  {
     date: "2026-06-02",
     headline: "Club Football hubs, live WNBA/NFL/MLS standings, compact metro dimensions, and fixes",
     items: [

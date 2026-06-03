@@ -21,9 +21,17 @@ function fmtPct(p: number | null | undefined): string {
 
 export default async function NflStandings() {
   const standings = await getCurrentNflStandings();
-  const currentYear = new Date().getFullYear();
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  // The NFL season runs early September through early February. In the
+  // offseason (roughly March–August) ESPN rolls season.year forward to the
+  // upcoming season while still serving the prior season's final standings,
+  // so we guard on the calendar too: outside the season window all records are
+  // zeroed out (blank) rather than rendering stale data as if it were live.
+  const month = now.getMonth(); // 0 = January
+  const inSeasonWindow = month >= 8 || month <= 1; // Sep–Dec or Jan–Feb
   const isCurrentYear = standings.season_year === currentYear;
-  const live: Record<string, TeamStanding> = isCurrentYear ? standings.by_canonical : {};
+  const live: Record<string, TeamStanding> = inSeasonWindow && isCurrentYear ? standings.by_canonical : {};
   const hasLive = Object.values(live).some((t) => t.games_played > 0);
 
   const byDivision = new Map<string, Franchise[]>();

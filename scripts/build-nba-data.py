@@ -73,7 +73,16 @@ DEFAULT_SOURCE_CANDIDATES = [
     REPO_ROOT / "data" / "nba-source" / "NBA.xlsx",
 ]
 
-OUT_DIR = REPO_ROOT / "public" / "data" / "nba"
+# Game-level data and the documented Game Score (col BU) come from a SEPARATE
+# workbook (NBA_RegSeason.xlsx, "Regular Season" sheet) — NOT the Detailed
+# Playoffs sheet in NBA.xlsx. Override with NBA_REGSEASON_PATH if needed.
+REGSEASON_SOURCE_CANDIDATES = [
+    Path(os.path.expanduser("~/OneDrive/Excel Files/NBA_RegSeason.xlsx")),
+    REPO_ROOT / "NBA_RegSeason.xlsx",
+    REPO_ROOT / "data" / "nba-source" / "NBA_RegSeason.xlsx",
+]
+
+OUT_DIR = Path(os.environ.get("NBA_OUT_DIR") or (REPO_ROOT / "public" / "data" / "nba"))
 
 # Curated award list. Order mirrors NFL/MLB convention: career-arc awards
 # first (MVP, DPOY, ROY), then leadership (COY), then improvement/specialty
@@ -243,6 +252,24 @@ def find_source(cli_path=None):
     print("Could not find NBA.xlsx in any default location. Pass a path:",
           file=sys.stderr)
     print("  python scripts/build-nba-data.py /path/to/NBA.xlsx", file=sys.stderr)
+    sys.exit(1)
+
+
+def find_regseason_source():
+    """Locate NBA_RegSeason.xlsx (the Game Score source for top games)."""
+    env = os.environ.get("NBA_REGSEASON_PATH")
+    if env:
+        p = Path(env)
+        if p.exists():
+            return p
+        print(f"NBA_REGSEASON_PATH not found: {p}", file=sys.stderr)
+        sys.exit(1)
+    for cand in REGSEASON_SOURCE_CANDIDATES:
+        if cand.exists():
+            return cand
+    print("Could not find NBA_RegSeason.xlsx (Game Score source). Place it in",
+          "~/OneDrive/Excel Files/ or the repo root, or set NBA_REGSEASON_PATH.",
+          file=sys.stderr)
     sys.exit(1)
 
 
@@ -580,15 +607,16 @@ def read_all_star_counts(wb):
 
 
 def read_top_games(wb):
-    """Read Detailed Playoffs and emit game-level rows.
+    """Read the Regular Season sheet of NBA_RegSeason.xlsx and emit game-level
+    rows ranked by Game Score.
 
-    NBA workbook does NOT yet have a Game Score column (user is finishing
-    the formula in another workbook). For v1 we emit rows with
-    game_score = None and rank ordering by (round_number_ascending,
-    year_descending, date_descending). When Game Score lands, the
-    sort key changes to game_score desc.
+    Game data and the documented Game Score live in NBA_RegSeason.xlsx, NOT in
+    the Detailed Playoffs sheet of NBA.xlsx. Game Score is column BU (index 72):
+    a composite of team strength, competitiveness, stakes, and seeding. Rows
+    with a blank Game Score (All-Star games, no-ELO rows, unplayed/scheduled
+    games) are skipped, and rows are ranked by Game Score descending.
 
-    Detailed Playoffs column map (0-indexed) per Claude Notes row 18:
+    Column map (0-indexed) — same layout as the legacy Detailed Playoffs sheet:
       1 Lge, 2 Season (end year), 6 Round, 7 Gm#, 8 Date,
       9 Seed, 10 City, 11 Team, 12 W/L, 13 OppSeed, 14 OtherCity,
       15 OtherTeam, 16 PF, 17 PA, 18 OT, 19 Arena (as-of),
@@ -597,7 +625,7 @@ def read_top_games(wb):
       50 Round# (1=Finals, 2=CF, 3=Semis, 4=QF, 4.5=play-in 8-seed,
                  5=play-in), 53 Final/Current Arena Name (canonical)
     """
-    ws = wb["Detailed Playoffs"]
+    ws = wb["Regular Season"]
     # Build the home-team selection: each game has two rows (away then home,
     # by host venue). Group by (year, round, gm#, own city pair) and dedupe.
     games_by_team = defaultdict(list)
@@ -643,8 +671,21 @@ def read_top_games(wb):
         except (ValueError, TypeError):
             round_num_val = None
         arena_canonical = safe_str(row[53]) if len(row) > 53 else ""
+        gs_raw = row[72] if len(row) > 72 else None
+        try:
+            game_score = float(gs_raw) if gs_raw not in (None, "") else None
+        except (ValueError, TypeError):
+            game_score = None
 
         if not canonical_own:
+            continue
+
+        # Skip rows without a Game Score: All-Star games, rows with no ELO, and
+        # unplayed/scheduled games (e.g. future Finals) all have a blank BU and
+        # must never surface in the top-games lists.
+        if game_score is None:
+            continue
+        if (pf or 0) == 0 and (pa or 0) == 0:
             continue
 
         # Dedupe key: pair-symmetric (year, round, gm#, canonical pair sorted)
@@ -673,7 +714,7 @@ def read_top_games(wb):
             "arena_metro": arena_metro,
             "arena_state": arena_state,
             "league": league,
-            "game_score": None,  # populated when user finishes the formula
+            "game_score": game_score,
         }
         games_by_team[canonical_own].append(per_team_row)
 
@@ -700,7 +741,7 @@ def read_top_games(wb):
                     "arena_metro": arena_metro,
                     "arena_state": arena_state,
                     "league": league,
-                    "game_score": None,
+                    "game_score": game_score,
                 }
 
     all_games = list(all_games_keyed.values())
@@ -1137,13 +1178,17 @@ def build_historical_seasons(historical, year_by_year):
     return out
 
 
-# Game Score is not yet populated. For v1, rank top games per team and
-# leaguewide by (round_num asc, year desc, date desc). When user finishes
-# Game Score formula, switch the key. The frontend already shows the
-# Game Score column with a "Coming soon" tooltip in the header.
+# Rank top games per team, per decade, and leaguewide by Game Score (col BU)
+# descending, read from NBA_RegSeason.xlsx. Ties break by round, then recency.
 def _game_sort_key(g):
-    rn = g.get("round_num") if g.get("round_num") is not None else 99
-    return (rn, -g.get("year", 0), -(int(g.get("date", "0").replace("-", "")) if g.get("date") else 0))
+    # Primary: Game Score (BU) descending. Rows without a score sink to the
+    # bottom; ties break by round importance, then recency.
+    gs = g.get("game_score")
+    gs_key = -gs if isinstance(gs, (int, float)) else float("inf")
+    rn = g.get("round_num")
+    if rn is None or rn <= 0:
+        rn = 99
+    return (gs_key, rn, -g.get("year", 0), -(int(g.get("date", "0").replace("-", "")) if g.get("date") else 0))
 
 
 def build_top_games_by_team(games_by_team, franchises, top_n=12):
@@ -1212,9 +1257,12 @@ def main():
     print(f"  {len(all_star_counts)} franchises with All-Star selections, "
           f"{sum(all_star_counts.values())} total player-seasons")
 
-    print("Reading Detailed Playoffs top games (Game Score column blank for v1)...")
-    all_games, games_by_team = read_top_games(wb)
-    print(f"  {len(all_games)} unique games scanned, {len(games_by_team)} franchises with game data")
+    print("Reading top games from NBA_RegSeason.xlsx (Game Score col BU)...")
+    rs_src = find_regseason_source()
+    rs_wb = openpyxl.load_workbook(rs_src, read_only=True, data_only=True)
+    print(f"  Game-score source: {rs_src}")
+    all_games, games_by_team = read_top_games(rs_wb)
+    print(f"  {len(all_games)} unique scored games, {len(games_by_team)} franchises with game data")
 
     print("Reading playoff state (current postseason)...")
     playoff_state, latest_playoff_year, postseason_complete = read_playoff_state(wb, yby)
@@ -1278,7 +1326,11 @@ def main():
 
     print("\nWrote:")
     for f in sorted(OUT_DIR.glob("*.json")):
-        print(f"  {f.relative_to(REPO_ROOT)}  ({f.stat().st_size:,} bytes)")
+        try:
+            shown = f.relative_to(REPO_ROOT)
+        except ValueError:
+            shown = f  # OUT_DIR overridden outside the repo (e.g. QA temp dir)
+        print(f"  {shown}  ({f.stat().st_size:,} bytes)")
 
 
 if __name__ == "__main__":
