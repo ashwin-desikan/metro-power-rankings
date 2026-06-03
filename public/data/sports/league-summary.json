@@ -1,9 +1,9 @@
 {
-  "total_markers": 8855,
+  "total_markers": 8862,
   "major_markers": 1143,
-  "other_markers": 7712,
+  "other_markers": 7719,
   "by_sport": {
-    "Football": 5629,
+    "Football": 5636,
     "Basketball": 741,
     "W Basketball": 454,
     "Hockey": 344,
@@ -56,7 +56,7 @@
     "Netherlands": 148,
     "Portugal": 115,
     "Romania": 107,
-    "Argentina": 97,
+    "Argentina": 100,
     "Ukraine": 95,
     "Greece": 90,
     "China": 85,
@@ -103,14 +103,14 @@
     "Portugal": 116,
     "Canada": 113
   },
-  "markers_with_team_page": 923,
+  "markers_with_team_page": 1308,
   "sources": {
     "team_list": 3232,
-    "football_club_data": 5623,
+    "football_club_data": 5630,
     "team_list_excluded_no_coords": 0,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 708,
-    "football_club_data_excluded_no_coords": 4252
+    "football_club_data_excluded_no_coords": 4251
   },
   "league_cards": [
     {
