@@ -4,12 +4,9 @@
 // Live in-progress row pinned to top when the workbook hasn't yet absorbed
 // the current season. Era-aware columns: T column rendered for pre-2005
 // rows, OTL absorbs shootout losses for post-2005 rows (workbook
-// convention).
-//
-// Collapsible after the first N rows to keep the long historic tail from
-// overwhelming the page. The user can expand to see everything.
+// convention). Full history is shown (no row cap), matching the other leagues.
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import type { Season } from "@/lib/nhl";
 
 type LiveRow = {
@@ -29,8 +26,6 @@ type Props = {
   seasons: Season[];
   liveRow: LiveRow | null;
 };
-
-const DEFAULT_VISIBLE = 20;
 
 function seasonLabel(year: number): string {
   const start = year - 1;
@@ -59,17 +54,12 @@ function postseasonChip(s: Season): { label: string; color?: string; bg?: string
 }
 
 export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
-  const [expanded, setExpanded] = useState(false);
-
   // Reverse-chronological for display.
   const sorted = useMemo(() => [...seasons].sort((a, b) => b.year - a.year), [seasons]);
 
-  const visible = expanded ? sorted : sorted.slice(0, DEFAULT_VISIBLE);
-  const remaining = sorted.length - visible.length;
-
   // Whether the row set spans any pre-2005 ties era; if so, show T column.
-  const showT = visible.some(s => s.t > 0 || s.year <= 1998);
-  const showOtl = visible.some(s => s.otl > 0 || s.year >= 1999) || !!liveRow;
+  const showT = sorted.some(s => s.t > 0 || s.year <= 1998);
+  const showOtl = sorted.some(s => s.otl > 0 || s.year >= 1999) || !!liveRow;
 
   return (
     <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -117,7 +107,7 @@ export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
               <td className="py-2 pr-4 text-[10px] uppercase tracking-widest text-[var(--text-dim)]">As of {liveRow.asOf}</td>
             </tr>
           )}
-          {visible.map((s) => {
+          {sorted.map((s) => {
             const chip = postseasonChip(s);
             return (
               <tr key={s.year} className="border-b last:border-b-0 hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
@@ -157,24 +147,6 @@ export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
           })}
         </tbody>
       </table>
-      {!expanded && remaining > 0 && (
-        <button
-          onClick={() => setExpanded(true)}
-          className="w-full py-2 text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] hover:text-[var(--accent)] border-t"
-          style={{ borderColor: "var(--border)" }}
-        >
-          Show {remaining} more {remaining === 1 ? "season" : "seasons"}
-        </button>
-      )}
-      {expanded && sorted.length > DEFAULT_VISIBLE && (
-        <button
-          onClick={() => setExpanded(false)}
-          className="w-full py-2 text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] hover:text-[var(--accent)] border-t"
-          style={{ borderColor: "var(--border)" }}
-        >
-          Collapse
-        </button>
-      )}
     </div>
   );
 }
