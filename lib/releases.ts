@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-04",
-    headline: "Team Valuations board, sports deep-dives, per-team value chips",
+    headline: "Team Valuations board, International ratings refresh, sports polish",
     items: [
-      "New Team Valuations board at /sports/valuations: 187 teams across the NFL, NBA, MLB, NHL and global football on one sortable, filterable list, each linking to its team page and league hub.",
-      "Every team in the valuations set now shows a clickable valuation in its page header that deep-links to the board and highlights its row.",
+      "New Team Valuations board at /sports/valuations: 187 teams across the NFL, NBA, MLB, NHL and global football, sortable and filterable, each also surfaced as a clickable valuation chip in its team page header.",
       "The Sports hub is reordered with a Deep-Dives section (Team Valuations and The Team That Wins the City) and on-this-page nav up top, then the league directory, then the team map.",
       "International Football ELO and FIFA rankings and their as-of dates are refreshed from the latest workbook, and the 1997 Other Tournaments edition is now correctly labeled the Tournoi de France.",
+      "NHL Stanley Cup presentation games now show which game of the series clinched the Cup; the NBA all-time top games flag overtime, including the multi-OT classics (2OT, 3OT).",
     ],
   },
   {

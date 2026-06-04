@@ -39,6 +39,11 @@ function roundLabel(round: string, gameNum: number | null | undefined): string {
   return gameNum ? `${label} G${gameNum}` : label;
 }
 
+function otLabel(ot: boolean, count: number | null | undefined): string {
+  if (!ot) return "";
+  return (count ?? 1) > 1 ? ` · ${count}OT` : " · OT";
+}
+
 function decadeKeys(byDecade: Record<string, TopGameLeagueRow[]>): string[] {
   return Object.keys(byDecade)
     .filter((k) => /^\d{4}$/.test(k))
@@ -128,7 +133,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                 <td className="py-2 pr-3 text-[var(--text-muted)]">
                   {g.year}
                   {g.round ? ` · ${roundLabel(g.round, g.game_num)}` : ""}
-                  {g.ot ? " · OT" : ""}
+                  {otLabel(g.ot, g.ot_count)}
                 </td>
                 <td className="py-2 pr-3">
                   <div className="leading-tight">

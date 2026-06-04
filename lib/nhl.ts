@@ -422,6 +422,7 @@ export type CupPresentationGame = {
   au: number;
   date: string | null;
   round: string;
+  game_num: number | null;
   winner_canonical: string;
   winner_slug: string | null;
   winner_city: string;

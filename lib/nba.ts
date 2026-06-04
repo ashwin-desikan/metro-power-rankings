@@ -145,6 +145,7 @@ export type TopGameTeamRow = {
   team_pts: number;
   opp_pts: number;
   ot: boolean;
+  ot_count: number;
   arena_as_of: string;
   arena_canonical: string;
   arena_metro: string;
@@ -169,6 +170,7 @@ export type TopGameLeagueRow = {
   winner_pts: number;
   loser_pts: number;
   ot: boolean;
+  ot_count: number;
   arena_as_of: string;
   arena_canonical: string;
   arena_metro: string;

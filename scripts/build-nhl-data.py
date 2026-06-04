@@ -1124,6 +1124,7 @@ def read_cup_presentation_games(wb):
             "au": au,
             "date": _format_au(au),
             "round": safe_str(row[4]),
+            "game_num": safe_int(row[5]) if len(row) > 5 else None,  # col F
             "winner_canonical": safe_str(row[34]),
             "winner_city": safe_str(row[8]),
             "winner_team": safe_str(row[9]),

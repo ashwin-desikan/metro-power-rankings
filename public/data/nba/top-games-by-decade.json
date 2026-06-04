@@ -19,7 +19,8 @@
       "arena_metro": "Washington-Baltimore",
       "arena_state": "DC",
       "league": "BAA",
-      "game_score": 1.3072278184230446
+      "game_score": 1.3072278184230446,
+      "ot_count": 0
     },
     {
       "year": 1949,
@@ -40,7 +41,8 @@
       "arena_metro": "Washington-Baltimore",
       "arena_state": "DC",
       "league": "BAA",
-      "game_score": 1.2957658207918687
+      "game_score": 1.2957658207918687,
+      "ot_count": 0
     },
     {
       "year": 1949,
@@ -61,7 +63,8 @@
       "arena_metro": "Rochester",
       "arena_state": "New York",
       "league": "BAA",
-      "game_score": 1.281713623327728
+      "game_score": 1.281713623327728,
+      "ot_count": 0
     },
     {
       "year": 1949,
@@ -82,7 +85,8 @@
       "arena_metro": "Minneapolis",
       "arena_state": "Minnesota",
       "league": "BAA",
-      "game_score": 1.1674227906516388
+      "game_score": 1.1674227906516388,
+      "ot_count": 0
     },
     {
       "year": 1949,
@@ -103,7 +107,8 @@
       "arena_metro": "Chicago",
       "arena_state": "Illinois",
       "league": "BAA",
-      "game_score": 1.1067546480392239
+      "game_score": 1.1067546480392239,
+      "ot_count": 0
     },
     {
       "year": 1948,
@@ -124,7 +129,8 @@
       "arena_metro": "Philadelphia",
       "arena_state": "Pennsylvania",
       "league": "BAA",
-      "game_score": 1.0495080254515075
+      "game_score": 1.0495080254515075,
+      "ot_count": 0
     },
     {
       "year": 1947,
@@ -145,7 +151,8 @@
       "arena_metro": "Chicago",
       "arena_state": "Illinois",
       "league": "BAA",
-      "game_score": 0.9795583177950359
+      "game_score": 0.9795583177950359,
+      "ot_count": 0
     },
     {
       "year": 1949,
@@ -166,7 +173,8 @@
       "arena_metro": "Minneapolis",
       "arena_state": "Minnesota",
       "league": "BAA",
-      "game_score": 0.9766406504622526
+      "game_score": 0.9766406504622526,
+      "ot_count": 0
     },
     {
       "year": 1948,
@@ -187,7 +195,8 @@
       "arena_metro": "Washington-Baltimore",
       "arena_state": "Maryland",
       "league": "BAA",
-      "game_score": 0.9740572758606373
+      "game_score": 0.9740572758606373,
+      "ot_count": 0
     },
     {
       "year": 1948,
@@ -208,7 +217,8 @@
       "arena_metro": "Philadelphia",
       "arena_state": "Pennsylvania",
       "league": "BAA",
-      "game_score": 0.9659974818644984
+      "game_score": 0.9659974818644984,
+      "ot_count": 0
     }
   ],
   "1950": [
@@ -231,7 +241,8 @@
       "arena_metro": "New York",
       "arena_state": "New York",
       "league": "NBA",
-      "game_score": 1.601886569134667
+      "game_score": 1.601886569134667,
+      "ot_count": 0
     },
     {
       "year": 1953,
@@ -252,7 +263,8 @@
       "arena_metro": "New York",
       "arena_state": "New York",
       "league": "NBA",
-      "game_score": 1.5741087913568894
+      "game_score": 1.5741087913568894,
+      "ot_count": 0
     },
     {
       "year": 1950,
@@ -273,7 +285,8 @@
       "arena_metro": "Syracuse",
       "arena_state": "New York",
       "league": "NBA",
-      "game_score": 1.5468276785022808
+      "game_score": 1.5468276785022808,
+      "ot_count": 0
     },
     {
       "year": 1958,
@@ -294,7 +307,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.5353993501845211
+      "game_score": 1.5353993501845211,
+      "ot_count": 0
     },
     {
       "year": 1959,
@@ -315,7 +329,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.5350010312518076
+      "game_score": 1.5350010312518076,
+      "ot_count": 0
     },
     {
       "year": 1959,
@@ -336,7 +351,8 @@
       "arena_metro": "Syracuse",
       "arena_state": "New York",
       "league": "NBA",
-      "game_score": 1.5223507302753614
+      "game_score": 1.5223507302753614,
+      "ot_count": 0
     },
     {
       "year": 1951,
@@ -357,7 +373,8 @@
       "arena_metro": "Rochester",
       "arena_state": "New York",
       "league": "NBA",
-      "game_score": 1.5194347394536052
+      "game_score": 1.5194347394536052,
+      "ot_count": 0
     },
     {
       "year": 1954,
@@ -378,7 +395,8 @@
       "arena_metro": "Minneapolis",
       "arena_state": "Minnesota",
       "league": "NBA",
-      "game_score": 1.5105627061717664
+      "game_score": 1.5105627061717664,
+      "ot_count": 0
     },
     {
       "year": 1957,
@@ -399,7 +417,8 @@
       "arena_metro": "St. Louis",
       "arena_state": "Missouri",
       "league": "NBA",
-      "game_score": 1.49727457042042
+      "game_score": 1.49727457042042,
+      "ot_count": 0
     },
     {
       "year": 1954,
@@ -420,7 +439,8 @@
       "arena_metro": "Minneapolis",
       "arena_state": "Minnesota",
       "league": "NBA",
-      "game_score": 1.49128142873223
+      "game_score": 1.49128142873223,
+      "ot_count": 0
     }
   ],
   "1960": [
@@ -443,7 +463,8 @@
       "arena_metro": "Philadelphia",
       "arena_state": "Pennsylvania",
       "league": "NBA",
-      "game_score": 1.8296641842764239
+      "game_score": 1.8296641842764239,
+      "ot_count": 0
     },
     {
       "year": 1963,
@@ -464,7 +485,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.7150955174696956
+      "game_score": 1.7150955174696956,
+      "ot_count": 0
     },
     {
       "year": 1960,
@@ -485,7 +507,8 @@
       "arena_metro": "Philadelphia",
       "arena_state": "Pennsylvania",
       "league": "NBA",
-      "game_score": 1.6872834780047474
+      "game_score": 1.6872834780047474,
+      "ot_count": 0
     },
     {
       "year": 1967,
@@ -506,7 +529,8 @@
       "arena_metro": "San Francisco-San Jose",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.6713109320776367
+      "game_score": 1.6713109320776367,
+      "ot_count": 0
     },
     {
       "year": 1966,
@@ -527,7 +551,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.6620037637861844
+      "game_score": 1.6620037637861844,
+      "ot_count": 0
     },
     {
       "year": 1967,
@@ -548,7 +573,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.6570979829679462
+      "game_score": 1.6570979829679462,
+      "ot_count": 0
     },
     {
       "year": 1963,
@@ -569,7 +595,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.653228283797952
+      "game_score": 1.653228283797952,
+      "ot_count": 0
     },
     {
       "year": 1962,
@@ -590,7 +617,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.6258199537506277
+      "game_score": 1.6258199537506277,
+      "ot_count": 0
     },
     {
       "year": 1969,
@@ -611,7 +639,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.6162096947660483
+      "game_score": 1.6162096947660483,
+      "ot_count": 0
     },
     {
       "year": 1960,
@@ -632,7 +661,8 @@
       "arena_metro": "St. Louis",
       "arena_state": "Missouri",
       "league": "NBA",
-      "game_score": 1.6084122723893035
+      "game_score": 1.6084122723893035,
+      "ot_count": 0
     }
   ],
   "1970": [
@@ -655,7 +685,8 @@
       "arena_metro": "Milwaukee",
       "arena_state": "Wisconsin",
       "league": "NBA",
-      "game_score": 1.882363223701751
+      "game_score": 1.882363223701751,
+      "ot_count": 0
     },
     {
       "year": 1974,
@@ -671,12 +702,13 @@
       "loser_team": "Celtics",
       "winner_pts": 102,
       "loser_pts": 101,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Boston Garden",
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.7707500646997136
+      "game_score": 1.7707500646997136,
+      "ot_count": 2
     },
     {
       "year": 1974,
@@ -697,7 +729,8 @@
       "arena_metro": "Milwaukee",
       "arena_state": "Wisconsin",
       "league": "NBA",
-      "game_score": 1.7398379595976998
+      "game_score": 1.7398379595976998,
+      "ot_count": 0
     },
     {
       "year": 1972,
@@ -718,7 +751,8 @@
       "arena_metro": "Milwaukee",
       "arena_state": "Wisconsin",
       "league": "NBA",
-      "game_score": 1.6499299706466495
+      "game_score": 1.6499299706466495,
+      "ot_count": 0
     },
     {
       "year": 1979,
@@ -739,7 +773,8 @@
       "arena_metro": "Phoenix",
       "arena_state": "Arizona",
       "league": "NBA",
-      "game_score": 1.6470471603979502
+      "game_score": 1.6470471603979502,
+      "ot_count": 0
     },
     {
       "year": 1974,
@@ -760,7 +795,8 @@
       "arena_metro": "Milwaukee",
       "arena_state": "Wisconsin",
       "league": "NBA",
-      "game_score": 1.6419238143018957
+      "game_score": 1.6419238143018957,
+      "ot_count": 0
     },
     {
       "year": 1972,
@@ -781,7 +817,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.6133780328259892
+      "game_score": 1.6133780328259892,
+      "ot_count": 0
     },
     {
       "year": 1973,
@@ -802,7 +839,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.5858006982307329
+      "game_score": 1.5858006982307329,
+      "ot_count": 0
     },
     {
       "year": 1977,
@@ -823,7 +861,8 @@
       "arena_metro": "Portland",
       "arena_state": "Oregon",
       "league": "NBA",
-      "game_score": 1.5845069894522459
+      "game_score": 1.5845069894522459,
+      "ot_count": 0
     },
     {
       "year": 1975,
@@ -844,7 +883,8 @@
       "arena_metro": "Washington-Baltimore",
       "arena_state": "DC",
       "league": "NBA",
-      "game_score": 1.5750764728895221
+      "game_score": 1.5750764728895221,
+      "ot_count": 0
     }
   ],
   "1980": [
@@ -867,7 +907,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.8658770148080113
+      "game_score": 1.8658770148080113,
+      "ot_count": 0
     },
     {
       "year": 1982,
@@ -888,7 +929,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.7939754236294723
+      "game_score": 1.7939754236294723,
+      "ot_count": 0
     },
     {
       "year": 1985,
@@ -909,7 +951,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.7428507630964944
+      "game_score": 1.7428507630964944,
+      "ot_count": 0
     },
     {
       "year": 1981,
@@ -930,7 +973,8 @@
       "arena_metro": "Philadelphia",
       "arena_state": "Pennsylvania",
       "league": "NBA",
-      "game_score": 1.7409504143548251
+      "game_score": 1.7409504143548251,
+      "ot_count": 0
     },
     {
       "year": 1989,
@@ -951,7 +995,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.7293100910392203
+      "game_score": 1.7293100910392203,
+      "ot_count": 0
     },
     {
       "year": 1982,
@@ -972,7 +1017,8 @@
       "arena_metro": "Philadelphia",
       "arena_state": "Pennsylvania",
       "league": "NBA",
-      "game_score": 1.7096585916566247
+      "game_score": 1.7096585916566247,
+      "ot_count": 0
     },
     {
       "year": 1988,
@@ -993,7 +1039,8 @@
       "arena_metro": "Detroit",
       "arena_state": "Michigan",
       "league": "NBA",
-      "game_score": 1.6966486096373241
+      "game_score": 1.6966486096373241,
+      "ot_count": 0
     },
     {
       "year": 1988,
@@ -1014,7 +1061,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.6909586978736015
+      "game_score": 1.6909586978736015,
+      "ot_count": 0
     },
     {
       "year": 1980,
@@ -1035,7 +1083,8 @@
       "arena_metro": "Philadelphia",
       "arena_state": "Pennsylvania",
       "league": "NBA",
-      "game_score": 1.6829268640312445
+      "game_score": 1.6829268640312445,
+      "ot_count": 0
     },
     {
       "year": 1984,
@@ -1051,12 +1100,13 @@
       "loser_team": "Lakers",
       "winner_pts": 129,
       "loser_pts": 125,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Great Western Forum",
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.682036519205306
+      "game_score": 1.682036519205306,
+      "ot_count": 1
     }
   ],
   "1990": [
@@ -1079,7 +1129,8 @@
       "arena_metro": "Salt Lake City-Provo",
       "arena_state": "Utah",
       "league": "NBA",
-      "game_score": 1.9284551426565024
+      "game_score": 1.9284551426565024,
+      "ot_count": 0
     },
     {
       "year": 1998,
@@ -1100,7 +1151,8 @@
       "arena_metro": "Chicago",
       "arena_state": "Illinois",
       "league": "NBA",
-      "game_score": 1.8993317358755357
+      "game_score": 1.8993317358755357,
+      "ot_count": 0
     },
     {
       "year": 1993,
@@ -1121,7 +1173,8 @@
       "arena_metro": "Chicago",
       "arena_state": "Illinois",
       "league": "NBA",
-      "game_score": 1.8298772762086817
+      "game_score": 1.8298772762086817,
+      "ot_count": 0
     },
     {
       "year": 1996,
@@ -1142,7 +1195,8 @@
       "arena_metro": "Seattle",
       "arena_state": "Washington",
       "league": "NBA",
-      "game_score": 1.8236536306222055
+      "game_score": 1.8236536306222055,
+      "ot_count": 0
     },
     {
       "year": 1997,
@@ -1163,7 +1217,8 @@
       "arena_metro": "Chicago",
       "arena_state": "Illinois",
       "league": "NBA",
-      "game_score": 1.8179658545840025
+      "game_score": 1.8179658545840025,
+      "ot_count": 0
     },
     {
       "year": 1997,
@@ -1184,7 +1239,8 @@
       "arena_metro": "Salt Lake City-Provo",
       "arena_state": "Utah",
       "league": "NBA",
-      "game_score": 1.7973726257393954
+      "game_score": 1.7973726257393954,
+      "ot_count": 0
     },
     {
       "year": 1993,
@@ -1205,7 +1261,8 @@
       "arena_metro": "Phoenix",
       "arena_state": "Arizona",
       "league": "NBA",
-      "game_score": 1.795692207682224
+      "game_score": 1.795692207682224,
+      "ot_count": 0
     },
     {
       "year": 1992,
@@ -1221,12 +1278,13 @@
       "loser_team": "Bulls",
       "winner_pts": 115,
       "loser_pts": 104,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Chicago Stadium",
       "arena_metro": "Chicago",
       "arena_state": "Illinois",
       "league": "NBA",
-      "game_score": 1.7734527379927074
+      "game_score": 1.7734527379927074,
+      "ot_count": 1
     },
     {
       "year": 1996,
@@ -1242,12 +1300,13 @@
       "loser_team": "Supersonics",
       "winner_pts": 98,
       "loser_pts": 95,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Climate Pledge Arena",
       "arena_metro": "Seattle",
       "arena_state": "Washington",
       "league": "NBA",
-      "game_score": 1.7663058089835424
+      "game_score": 1.7663058089835424,
+      "ot_count": 1
     },
     {
       "year": 1992,
@@ -1268,7 +1327,8 @@
       "arena_metro": "Chicago",
       "arena_state": "Illinois",
       "league": "NBA",
-      "game_score": 1.7395781421245318
+      "game_score": 1.7395781421245318,
+      "ot_count": 0
     }
   ],
   "2000": [
@@ -1286,12 +1346,13 @@
       "loser_team": "Kings",
       "winner_pts": 112,
       "loser_pts": 106,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Sleep Train Arena",
       "arena_metro": "Sacramento",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.8846741221135082
+      "game_score": 1.8846741221135082,
+      "ot_count": 1
     },
     {
       "year": 2003,
@@ -1312,7 +1373,8 @@
       "arena_metro": "San Antonio",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.837351023519612
+      "game_score": 1.837351023519612,
+      "ot_count": 0
     },
     {
       "year": 2006,
@@ -1333,7 +1395,8 @@
       "arena_metro": "Dallas",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.8117815310263687
+      "game_score": 1.8117815310263687,
+      "ot_count": 0
     },
     {
       "year": 2006,
@@ -1349,12 +1412,13 @@
       "loser_team": "Spurs",
       "winner_pts": 119,
       "loser_pts": 111,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Frost Bank Center",
       "arena_metro": "San Antonio",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.8001652052381942
+      "game_score": 1.8001652052381942,
+      "ot_count": 1
     },
     {
       "year": 2005,
@@ -1370,12 +1434,13 @@
       "loser_team": "Mavericks",
       "winner_pts": 130,
       "loser_pts": 126,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "American Airlines Center",
       "arena_metro": "Dallas",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.755319016364132
+      "game_score": 1.755319016364132,
+      "ot_count": 1
     },
     {
       "year": 2003,
@@ -1396,7 +1461,8 @@
       "arena_metro": "Dallas",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.750531675915197
+      "game_score": 1.750531675915197,
+      "ot_count": 0
     },
     {
       "year": 2000,
@@ -1417,7 +1483,8 @@
       "arena_metro": "Los Angeles",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.7396767988410013
+      "game_score": 1.7396767988410013,
+      "ot_count": 0
     },
     {
       "year": 2005,
@@ -1438,7 +1505,8 @@
       "arena_metro": "San Antonio",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.733452594386726
+      "game_score": 1.733452594386726,
+      "ot_count": 0
     },
     {
       "year": 2005,
@@ -1459,7 +1527,8 @@
       "arena_metro": "San Antonio",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.722046456681564
+      "game_score": 1.722046456681564,
+      "ot_count": 0
     },
     {
       "year": 2009,
@@ -1480,7 +1549,8 @@
       "arena_metro": "Orlando",
       "arena_state": "Florida",
       "league": "NBA",
-      "game_score": 1.7138074052888816
+      "game_score": 1.7138074052888816,
+      "ot_count": 0
     }
   ],
   "2010": [
@@ -1503,7 +1573,8 @@
       "arena_metro": "San Francisco-San Jose",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.9559408144183805
+      "game_score": 1.9559408144183805,
+      "ot_count": 0
     },
     {
       "year": 2016,
@@ -1524,7 +1595,8 @@
       "arena_metro": "Oklahoma City",
       "arena_state": "Oklahoma",
       "league": "NBA",
-      "game_score": 1.9080076834040287
+      "game_score": 1.9080076834040287,
+      "ot_count": 0
     },
     {
       "year": 2016,
@@ -1545,7 +1617,8 @@
       "arena_metro": "San Francisco-San Jose",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.8999115723709494
+      "game_score": 1.8999115723709494,
+      "ot_count": 0
     },
     {
       "year": 2011,
@@ -1566,7 +1639,8 @@
       "arena_metro": "Miami",
       "arena_state": "Florida",
       "league": "NBA",
-      "game_score": 1.8760644103520867
+      "game_score": 1.8760644103520867,
+      "ot_count": 0
     },
     {
       "year": 2013,
@@ -1582,12 +1656,13 @@
       "loser_team": "Spurs",
       "winner_pts": 103,
       "loser_pts": 100,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Kaseya Center",
       "arena_metro": "Miami",
       "arena_state": "Florida",
       "league": "NBA",
-      "game_score": 1.8225165153155423
+      "game_score": 1.8225165153155423,
+      "ot_count": 1
     },
     {
       "year": 2015,
@@ -1608,7 +1683,8 @@
       "arena_metro": "Cleveland",
       "arena_state": "Ohio",
       "league": "NBA",
-      "game_score": 1.7965539497335712
+      "game_score": 1.7965539497335712,
+      "ot_count": 0
     },
     {
       "year": 2014,
@@ -1624,12 +1700,13 @@
       "loser_team": "Thunder",
       "winner_pts": 112,
       "loser_pts": 107,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Paycom Center",
       "arena_metro": "Oklahoma City",
       "arena_state": "Oklahoma",
       "league": "NBA",
-      "game_score": 1.7887846292562275
+      "game_score": 1.7887846292562275,
+      "ot_count": 1
     },
     {
       "year": 2018,
@@ -1650,7 +1727,8 @@
       "arena_metro": "Houston",
       "arena_state": "Texas",
       "league": "NBA",
-      "game_score": 1.764883159559376
+      "game_score": 1.764883159559376,
+      "ot_count": 0
     },
     {
       "year": 2015,
@@ -1666,12 +1744,13 @@
       "loser_team": "Warriors",
       "winner_pts": 95,
       "loser_pts": 93,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Oracle Arena",
       "arena_metro": "San Francisco-San Jose",
       "arena_state": "California",
       "league": "NBA",
-      "game_score": 1.760694142584803
+      "game_score": 1.760694142584803,
+      "ot_count": 1
     },
     {
       "year": 2016,
@@ -1692,7 +1771,8 @@
       "arena_metro": "Cleveland",
       "arena_state": "Ohio",
       "league": "NBA",
-      "game_score": 1.7483613576791235
+      "game_score": 1.7483613576791235,
+      "ot_count": 0
     }
   ],
   "2020": [
@@ -1715,7 +1795,8 @@
       "arena_metro": "Oklahoma City",
       "arena_state": "Oklahoma",
       "league": "NBA",
-      "game_score": 1.9808098846711475
+      "game_score": 1.9808098846711475,
+      "ot_count": 0
     },
     {
       "year": 2022,
@@ -1736,7 +1817,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.8119814916069852
+      "game_score": 1.8119814916069852,
+      "ot_count": 0
     },
     {
       "year": 2026,
@@ -1752,12 +1834,13 @@
       "loser_team": "Thunder",
       "winner_pts": 122,
       "loser_pts": 115,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "Paycom Center",
       "arena_metro": "Oklahoma City",
       "arena_state": "Oklahoma",
       "league": "NBA",
-      "game_score": 1.7816803012377214
+      "game_score": 1.7816803012377214,
+      "ot_count": 2
     },
     {
       "year": 2022,
@@ -1778,7 +1861,8 @@
       "arena_metro": "Boston",
       "arena_state": "Massachusetts",
       "league": "NBA",
-      "game_score": 1.7739973392876551
+      "game_score": 1.7739973392876551,
+      "ot_count": 0
     },
     {
       "year": 2021,
@@ -1799,7 +1883,8 @@
       "arena_metro": "Phoenix",
       "arena_state": "Arizona",
       "league": "NBA",
-      "game_score": 1.771689846816189
+      "game_score": 1.771689846816189,
+      "ot_count": 0
     },
     {
       "year": 2021,
@@ -1820,7 +1905,8 @@
       "arena_metro": "Milwaukee",
       "arena_state": "Wisconsin",
       "league": "NBA",
-      "game_score": 1.7109500709502967
+      "game_score": 1.7109500709502967,
+      "ot_count": 0
     },
     {
       "year": 2025,
@@ -1841,7 +1927,8 @@
       "arena_metro": "Minneapolis",
       "arena_state": "Minnesota",
       "league": "NBA",
-      "game_score": 1.7094568477026988
+      "game_score": 1.7094568477026988,
+      "ot_count": 0
     },
     {
       "year": 2020,
@@ -1857,12 +1944,13 @@
       "loser_team": "Celtics",
       "winner_pts": 125,
       "loser_pts": 122,
-      "ot": false,
+      "ot": true,
       "arena_canonical": "The Field House",
       "arena_metro": "Orlando",
       "arena_state": "Florida",
       "league": "NBA",
-      "game_score": 1.7016480415142976
+      "game_score": 1.7016480415142976,
+      "ot_count": 2
     },
     {
       "year": 2025,
@@ -1883,7 +1971,8 @@
       "arena_metro": "Oklahoma City",
       "arena_state": "Oklahoma",
       "league": "NBA",
-      "game_score": 1.6832808268637598
+      "game_score": 1.6832808268637598,
+      "ot_count": 0
     },
     {
       "year": 2022,
@@ -1904,7 +1993,8 @@
       "arena_metro": "Miami",
       "arena_state": "Florida",
       "league": "NBA",
-      "game_score": 1.6505975073891341
+      "game_score": 1.6505975073891341,
+      "ot_count": 0
     }
   ]
 }

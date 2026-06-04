@@ -98,6 +98,7 @@ export default function CupPresentationTable({ allTime, byDecade }: Props) {
                   <td className="py-2 pr-3 text-[var(--text-muted)] whitespace-nowrap">
                     {g.year}
                     {g.round ? ` · ${roundLabel(g.round)}` : ""}
+                    {g.game_num ? ` · Game ${g.game_num}` : ""}
                     {g.ot ? " · OT" : ""}
                   </td>
                   <td className="py-2 pr-3">

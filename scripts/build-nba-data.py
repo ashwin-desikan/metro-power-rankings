@@ -252,6 +252,26 @@ def is_truthy_yn(val):
     return s in ("Y", "YES", "1", "TRUE")
 
 
+def ot_count_from(val):
+    """Overtimes played, from the OT column (col S / index 18). Handles a
+    blank/regulation value, a Y/N flag, a bare count (1/2/3), or a label like
+    'OT' / '2OT' / '3OT'. Returns 0 for a regulation game."""
+    if val is None or val == "":
+        return 0
+    if isinstance(val, bool):
+        return 1 if val else 0
+    if isinstance(val, (int, float)):
+        n = int(val)
+        return n if n > 0 else 0
+    s = str(val).strip().upper()
+    if not s or s in ("N", "NO", "FALSE", "0"):
+        return 0
+    if s in ("Y", "YES", "TRUE", "OT"):
+        return 1
+    m = re.search(r"(\d+)", s)
+    return int(m.group(1)) if m else 1
+
+
 def normalize_award_name(raw):
     if not raw:
         return None
@@ -694,7 +714,8 @@ def read_top_games(wb):
         opp_team = safe_str(row[15])
         pf = safe_int(row[16])
         pa = safe_int(row[17])
-        ot_flag = is_truthy_yn(row[18])
+        ot_count = ot_count_from(row[18])
+        ot_flag = ot_count > 0
         arena_as_of = safe_str(row[19])
         arena_metro = safe_str(row[20])
         arena_state = safe_str(row[21])
@@ -744,6 +765,7 @@ def read_top_games(wb):
             "team_pts": pf,
             "opp_pts": pa,
             "ot": ot_flag,
+            "ot_count": ot_count,
             "arena_as_of": arena_as_of,
             "arena_canonical": arena_canonical,
             "arena_metro": arena_metro,
@@ -772,6 +794,7 @@ def read_top_games(wb):
                     "winner_pts": pf if wl == "W" else pa,
                     "loser_pts": pa if wl == "W" else pf,
                     "ot": ot_flag,
+                    "ot_count": ot_count,
                     "arena_canonical": arena_canonical,
                     "arena_metro": arena_metro,
                     "arena_state": arena_state,
@@ -1261,6 +1284,53 @@ def build_top_games_by_decade(all_games, top_n_per_decade=10):
     return out
 
 
+def enrich_top_games_ot():
+    """Patch ot/ot_count into the already-frozen top-games JSON in place,
+    WITHOUT re-ranking. Lets the OT indicator ship while the Game Score
+    ranking stays frozen until after the Finals. Reads NBA_RegSeason.xlsx."""
+    rs_src = find_regseason_source()
+    rs_wb = openpyxl.load_workbook(rs_src, read_only=True, data_only=True)
+    all_games, _ = read_top_games(rs_wb)
+
+    def key(y, d, a, b):
+        return (y, d, frozenset((a or "", b or "")))
+
+    otmap = {}
+    for g in all_games:
+        otmap[key(g["year"], g["date"], g["winner_canonical"], g["loser_canonical"])] = g.get("ot_count", 0)
+
+    def setot(rec, a, b):
+        n = otmap.get(key(rec.get("year"), rec.get("date"), a, b))
+        if n is None:
+            return 0
+        rec["ot_count"] = n
+        rec["ot"] = n > 0
+        return 1
+
+    patched = 0
+    p = OUT_DIR / "top-games-all-time.json"
+    if p.exists():
+        data = json.loads(p.read_text(encoding="utf-8"))
+        for rec in data:
+            patched += setot(rec, rec.get("winner_canonical"), rec.get("loser_canonical"))
+        p.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    p = OUT_DIR / "top-games-by-decade.json"
+    if p.exists():
+        data = json.loads(p.read_text(encoding="utf-8"))
+        for arr in data.values():
+            for rec in arr:
+                patched += setot(rec, rec.get("winner_canonical"), rec.get("loser_canonical"))
+        p.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    p = OUT_DIR / "top-games-by-team.json"
+    if p.exists():
+        data = json.loads(p.read_text(encoding="utf-8"))
+        for arr in data.values():
+            for rec in arr:
+                patched += setot(rec, rec.get("team_canonical"), rec.get("opp_canonical"))
+        p.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"  OT enrichment: patched {patched} game rows across top-games JSON")
+
+
 # -------- Main --------
 
 def main():
@@ -1273,6 +1343,8 @@ def main():
     cli_path = pos[0] if pos else None
     refresh_game_scores = ("--refresh-game-scores" in flags
                            or os.environ.get("NBA_REFRESH_GAME_SCORES") == "1")
+    enrich_ot = ("--enrich-ot" in flags
+                 or os.environ.get("NBA_ENRICH_OT") == "1")
     src = find_source(cli_path)
     print(f"Reading: {src}")
     wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
@@ -1373,6 +1445,10 @@ def main():
         (OUT_DIR / "top-games-by-decade.json").write_text(json.dumps(top_by_decade, indent=2, ensure_ascii=False), encoding="utf-8")
     else:
         print("Skipped top-games JSON writes (NBA Game Scores frozen).")
+
+    if enrich_ot and not refresh_game_scores:
+        print("Enriching frozen top-games JSON with OT counts (no re-ranking)...")
+        enrich_top_games_ot()
 
     (OUT_DIR / "playoff-state.json").write_text(
         json.dumps({"year": latest_playoff_year, "is_postseason_complete": postseason_complete, "by_franchise": playoff_state}, indent=2, ensure_ascii=False),
