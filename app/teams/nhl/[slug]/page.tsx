@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ValuationChip from "@/app/teams/ValuationChip";
 import { notFound } from "next/navigation";
 import {
   getAllFranchiseSlugs,
@@ -185,6 +186,7 @@ export default async function NhlTeamPage({ params }: Props) {
           </div>
           <div className="flex-1 min-w-0">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">{f.display_name}</h1>
+            <ValuationChip league="nhl" slug={f.slug} className="mb-2" />
             <div className="text-sm text-[var(--text-muted)] mb-2">
               Founded {f.founded ?? "—"}
               {f.metro && (
