@@ -68,15 +68,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const h = getHistoricalBySlug(slug);
   if (h) {
+    const hName = h.display_name ?? h.name;
     const url = `${BASE_URL}/teams/nfl/${slug}`;
     const desc =
-      `${h.name} (defunct, ${defunctYears(h)}): ${h.league}, all-time record ${h.w}-${h.l}-${h.t} (${h.win_pct.toFixed(3)}), ${h.championships} league championship${h.championships === 1 ? "" : "s"} over ${h.seasons} season${h.seasons === 1 ? "" : "s"}. Last based in ${h.city}.`;
+      `${hName} (defunct, ${defunctYears(h)}): ${h.league}, all-time record ${h.w}-${h.l}-${h.t} (${h.win_pct.toFixed(3)}), ${h.championships} league championship${h.championships === 1 ? "" : "s"} over ${h.seasons} season${h.seasons === 1 ? "" : "s"}. Last based in ${h.city}.`;
     return {
-      title: `${h.name} (defunct)`,
+      title: `${hName} (defunct)`,
       description: desc,
       alternates: { canonical: `/teams/nfl/${slug}` },
-      openGraph: { title: `${h.name} (defunct) | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { card: "summary", title: `${h.name} (defunct) | ${SITE_NAME}`, description: desc },
+      openGraph: { title: `${hName} (defunct) | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { card: "summary", title: `${hName} (defunct) | ${SITE_NAME}`, description: desc },
     };
   }
   return { title: "Franchise not found" };
@@ -707,6 +708,7 @@ export default async function FranchisePage({ params }: Props) {
 // SeasonsByTeamTable. Sections with no historical data — stadium history,
 // awards, top games, live standings, map — are omitted by design.
 function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: string }) {
+  const hName = h.display_name ?? h.name;
   const seasons = getHistoricalSeasonsFor(h.canonical);
   const champs: Championship[] = getHistoricalChampionshipsFor(h.canonical);
   const mono = monogramFor(slug); // falls through to the generic NFL monogram
@@ -725,7 +727,7 @@ function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: strin
         <span className="mx-1">&rsaquo;</span>
         <Link href="/teams/nfl/historical" className="hover:text-[var(--text)]">Defunct</Link>
         <span className="mx-1">&rsaquo;</span>
-        <span className="text-[var(--text-dim)]">{h.name}</span>
+        <span className="text-[var(--text-dim)]">{hName}</span>
       </nav>
 
       {/* Back-to chips */}
@@ -762,7 +764,7 @@ function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: strin
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 flex-wrap">
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{h.name}</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{hName}</h1>
             <span
               className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded"
               style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}

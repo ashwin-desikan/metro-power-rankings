@@ -31,6 +31,9 @@ Usage:
 """
 
 import json
+import os as _ometro, sys as _smetro
+_smetro.path.insert(0, _ometro.path.dirname(_ometro.path.abspath(__file__)))
+from _defunct_metro import resolve_city as _rmcity, resolve_nba as _rmnba
 import os
 import re
 import sys
@@ -935,9 +938,18 @@ def build_historical(totals, year_by_year):
         years = [s["year"] for s in seasons if s.get("year")]
         first_year = min(years) if years else None
         last_year = max(years) if years else None
+        nickname = re.sub(r"\s*\([^)]*\)\s*$", "", canonical).strip()
+        if first_year and last_year:
+            year_label = str(first_year) if first_year == last_year else f"{first_year}\u2013{last_year}"
+            display_name = f"{t['city_history']} {nickname} ({t['league_history']}, {year_label})".strip()
+        else:
+            display_name = f"{t['city_history']} {nickname}".strip()
         rows.append({
             "canonical": canonical,
             "name": canonical,
+            "display_name": display_name,
+            "metro": _rmcity(t["city_history"])[0],
+            "metro_slug": _rmcity(t["city_history"])[1],
             "city": t["city_history"],
             "team_historical": t["team_history"],
             "league": t["league_history"],

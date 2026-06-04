@@ -26,6 +26,9 @@ Usage:
 """
 
 import json
+import os as _ometro, sys as _smetro
+_smetro.path.insert(0, _ometro.path.dirname(_ometro.path.abspath(__file__)))
+from _defunct_metro import resolve_city as _rmcity, resolve_nba as _rmnba, resolve_nfl as _rmnfl
 import os
 import re
 import sys
@@ -778,6 +781,60 @@ def build_championship_appearances(year_by_year):
     return {k: sorted(v, key=lambda r: r["year"]) for k, v in out.items()}
 
 
+# Approved display names for defunct NFL franchises. Keyed by the franchise
+# canonical/`name` as it appears in public/data/nfl/historical.json. Maps the
+# terse workbook short name (e.g. "Bulldogs (Canton)") to the city/team identity
+# each club is most commonly known by. Slugs are unchanged.
+DEFUNCT_DISPLAY_NAMES = {
+    "Bulldogs (Canton)": "Canton Bulldogs",
+    "Indians (Akron)": "Akron Pros",
+    "Wolverines": "Detroit Wolverines",
+    "Yellow Jackets": "Frankford Yellow Jackets",
+    "Steam Roller": "Providence Steam Roller",
+    "Bulldogs (Boston)": "Pottsville Maroons",
+    "Colts (D)": "Baltimore Colts (1950)",
+    "Texans (D)": "Dallas Texans (1952)",
+    "Dodgers": "Brooklyn Dodgers (NFL)",
+    "Stapletons": "Staten Island Stapletons",
+    "Bills (D)": "Buffalo Bills (AAFC)",
+    "Bisons": "Buffalo Bisons",
+    "Hornets": "Chicago Hornets",
+    "Tigers (Chi)": "Chicago Tigers",
+    "Carpitts": "Card-Pitt (1944)",
+    "Celts": "Cincinnati Celts",
+    "Gunners": "Cincinnati Reds",
+    "Tigers (Clev)": "Cleveland Tigers",
+    "Indians (Clev)": "Cleveland Indians (NFL)",
+    "Tigers (Colm)": "Columbus Panhandles",
+    "Tigers": "Dayton Triangles",
+    "Panthers (Det)": "Detroit Panthers",
+    "Heralds": "Detroit Heralds",
+    "Tornadoes (NJ)": "Duluth Eskimos",
+    "Crimson Giants": "Evansville Crimson Giants",
+    "Pros": "Hammond Pros",
+    "Blues": "Hartford Blues",
+    "Cowboys (KC)": "Kansas City Cowboys",
+    "Buccaneers (LA)": "Los Angeles Buccaneers",
+    "Dons": "Los Angeles Dons (AAFC)",
+    "Colonels": "Louisville Colonels",
+    "Seahawks (Mia)": "Miami Seahawks (AAFC)",
+    "Badgers": "Milwaukee Badgers",
+    "Redjackets": "Minneapolis Red Jackets",
+    "Flyers": "Muncie Flyers",
+    "Brickley's Giants": "New York Brickley's Giants",
+    "Yankees": "New York Yankees (AAFC)",
+    "Indians (Marion)": "Oorang Indians",
+    "Steagles": "Phil-Pitt Steagles",
+    "Tornadoes": "Racine Tornadoes",
+    "Jeffersons": "Rochester Jeffersons",
+    "Independents": "Rock Island Independents",
+    "All-Stars": "St. Louis All-Stars",
+    "Maroons": "Toledo Maroons",
+    "Kardex": "Tonawanda Kardex",
+    "Senators (W)": "Washington Senators (NFL)",
+}
+
+
 def build_historical(totals, year_by_year):
     """Defunct franchises for /teams/nfl/historical.
 
@@ -800,6 +857,9 @@ def build_historical(totals, year_by_year):
         rows.append({
             "canonical": canonical,
             "name": canonical,
+            "display_name": DEFUNCT_DISPLAY_NAMES.get(canonical) or (f"{city} {canonical}".strip() or canonical),
+            "metro": _rmnfl(canonical, city)[0],
+            "metro_slug": _rmnfl(canonical, city)[1],
             "city": city,
             "team_historical": tot["team_history"],
             "league": tot["league"],

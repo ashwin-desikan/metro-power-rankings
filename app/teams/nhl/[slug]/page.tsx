@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const games = h.all_time_w + h.all_time_l + h.all_time_t + h.all_time_otl;
     const ptsPct = games > 0 ? (h.all_time_pts / (2 * games)).toFixed(3) : "—";
     const yrs = h.founded && h.ended ? `${h.founded}–${h.ended}` : (h.founded ? `${h.founded}` : "");
-    const name = `${h.last_city} ${h.last_team}`.trim() || h.name;
+    const name = h.display_name || `${h.last_city} ${h.last_team}`.trim() || h.name;
     const hUrl = `${BASE_URL}/teams/nhl/${h.slug}`;
     const hDesc =
       `${name} (defunct${yrs ? `, ${yrs}` : ""}): ${h.championships} Stanley Cup${h.championships === 1 ? "" : "s"}, ${h.champ_appearances} Cup Final apps, all-time pts pct ${ptsPct} over ${h.seasons} seasons. Leagues: ${h.league_history}.`;
@@ -221,6 +221,18 @@ export default async function NhlTeamPage({ params }: Props) {
                 <span className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">No Stanley Cup wins</span>
               )}
             </div>
+
+            {(f.other_championships ?? 0) > 0 && (
+              <div className="flex flex-wrap gap-2 items-center mb-2">
+                <span
+                  title="Other major titles: WHA Avco Cups and/or pre-NHL league championships"
+                  className="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded"
+                  style={{ background: "#21303f", color: "#9ec5e8" }}
+                >
+                  {f.other_championships} other major {f.other_championships === 1 ? "title" : "titles"}
+                </span>
+              </div>
+            )}
 
             {/* Secondary chip row: Cup Finals losses + Presidents' Trophy */}
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[var(--text-muted)]">
@@ -412,7 +424,7 @@ function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
   const seasons: Season[] = getHistoricalSeasons()[h.slug] ?? [];
   const games = h.all_time_w + h.all_time_l + h.all_time_t + h.all_time_otl;
   const ptsPct = games > 0 ? h.all_time_pts / (2 * games) : null;
-  const name = `${h.last_city} ${h.last_team}`.trim() || h.name;
+  const name = h.display_name || `${h.last_city} ${h.last_team}`.trim() || h.name;
   const yearsActive =
     h.founded && h.ended ? `${h.founded}–${h.ended}` : h.founded ? `${h.founded}–?` : "—";
 
@@ -449,7 +461,14 @@ function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
             </div>
             <div className="text-sm text-[var(--text-muted)] mb-2">
               {yearsActive !== "—" && <>Active {yearsActive}</>}
-              {h.last_city && <> · {h.last_city}</>}
+              {h.metros && h.metros.length > 0 ? (
+                <> · {h.metros.map((m, i) => (
+                  <span key={(m.slug ?? m.name) + i}>
+                    {i > 0 ? " / " : ""}
+                    {m.slug ? <Link href={`/rankings/${m.slug}`} className="hover:text-[var(--accent)]">{m.name}</Link> : m.name}
+                  </span>
+                ))}</>
+              ) : (h.last_city ? <> · {h.last_city}</> : null)}
               {h.league_history && <> · {h.league_history}</>}
             </div>
 
@@ -470,6 +489,18 @@ function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
             ) : (
               <div className="flex flex-wrap gap-2 items-center mb-2">
                 <span className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">No Stanley Cup wins</span>
+              </div>
+            )}
+
+            {(h.other_championships ?? 0) > 0 && (
+              <div className="flex flex-wrap gap-2 items-center mb-2">
+                <span
+                  title="Other major titles: WHA Avco Cups and/or pre-NHL league championships"
+                  className="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded"
+                  style={{ background: "#21303f", color: "#9ec5e8" }}
+                >
+                  {h.other_championships} other major {h.other_championships === 1 ? "title" : "titles"}
+                </span>
               </div>
             )}
 

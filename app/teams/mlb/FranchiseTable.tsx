@@ -50,8 +50,8 @@ function activeRow(f: Franchise): Row {
 
 function defunctRow(h: HistoricalWithSlug): Row {
   return {
-    key: `def-${h.canonical}`, slug: h.slug, name: h.name, defunct: true,
-    metroLabel: h.city, metroSlug: null, division: null,
+    key: `def-${h.canonical}`, slug: h.slug, name: h.display_name ?? h.name, defunct: true,
+    metroLabel: h.metro || h.city, metroSlug: h.metro_slug ?? null, division: null,
     founded: h.first_year, ended: h.last_year, championships: h.championships,
     wsTitle: `${h.championships} World Series`,
     pennants: null, playoffApps: null,

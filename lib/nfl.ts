@@ -174,6 +174,12 @@ export type TopGameLeagueRow = {
 export type HistoricalFranchise = {
   canonical: string;
   name: string;
+  // Approved public display name for the defunct franchise (e.g. "Canton
+  // Bulldogs" rather than the terse workbook short name "Bulldogs (Canton)").
+  // Set in the ETL via DEFUNCT_DISPLAY_NAMES; prefer it at render points.
+  display_name?: string;
+  metro?: string;
+  metro_slug?: string | null;
   city: string;
   team_historical: string;
   league: string;

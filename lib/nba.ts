@@ -183,6 +183,8 @@ export type HistoricalFranchise = {
   slug: string;
   canonical: string;
   display_name: string;
+  metro?: string;
+  metro_slug?: string | null;
   city_history: string;
   team_history: string;
   league_history: string;

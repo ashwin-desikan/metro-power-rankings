@@ -403,7 +403,13 @@ def main():
 # World Cup competition. Emits public/data/football/womens-world-cup.json with
 # editions and per-nation records, mirroring the men's international data shape.
 
-WC_SRC = os.path.join(ROOT, "Champions League-201516.xlsx")
+WC_SRC = next(
+    (p for p in (
+        os.path.join(ROOT, "workbooks", "Champions League-201516.xlsx"),
+        os.path.join(ROOT, "Champions League-201516.xlsx"),
+    ) if os.path.exists(p)),
+    os.path.join(ROOT, "Champions League-201516.xlsx"),
+)
 WC_OUT = os.path.join(ROOT, "public", "data", "football", "womens-world-cup.json")
 _WC_RANK = {"Group Stage": 1, "Round of 16": 2, "Quarterfinals": 3, "Semifinals": 4, "Third Place Match": 5, "Final": 6}
 

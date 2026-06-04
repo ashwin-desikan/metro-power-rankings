@@ -7,16 +7,21 @@ the workbook-sync skill) can compress 7-9 commands into one invocation.
 
 Sequence (each step blocks on the previous one's success):
 
-  1. sync_source_xlsx.py            Pull MetroAreas.xlsx master from OneDrive
-  2. extract.py                     metros.json, regions.json, details/*.json
-  3. build-nfl-data.py              public/data/nfl/*.json
-  4. build-nba-data.py              public/data/nba/*.json
-  5. build-mlb-data.py              public/data/mlb/*.json
-  6. build-nhl-data.py              public/data/nhl/*.json
-  7. build-sports-index.py          public/data/sports/all-teams.json + summary
-  8. build-metro-boundaries.py      public/data/boundaries/*.geojson (cached)
-  9. (verify)  npm run check:client-imports
- 10. (verify)  npx tsc --noEmit
+  1.  sync_source_xlsx.py           Pull MetroAreas.xlsx master from OneDrive
+  2.  stage-leagues.py              Stage NFL/NBA/NHL/MLB + Champions League workbooks
+  3.  extract.py                    metros.json, regions.json, details/*.json
+  4.  build-nfl-data.py             public/data/nfl/*.json
+  5.  build-nba-data.py             public/data/nba/*.json
+  6.  build-mlb-data.py             public/data/mlb/*.json
+  7.  build-nhl-data.py             public/data/nhl/*.json
+  8.  build-international-data.py    public/data/international/*.json (national teams, ELO/FIFA)
+  9.  build-football-data.py        public/data/football/*.json (clubs)
+  10. build-wfootball-data.py       public/data/football/womens-*.json
+  11. build-wnba-data.py            public/data/wnba/*.json
+  12. build-sports-index.py         public/data/sports/all-teams.json + summary
+  13. build-metro-boundaries.py     public/data/boundaries/*.geojson (cached)
+  14. (verify)  check-client-imports.mjs
+  15. (verify)  tsc --noEmit
 
 Flags:
   --dry-run             Print the plan, exit 0 without running.
@@ -29,8 +34,9 @@ Flags:
   --log-dir PATH        Where to write the run log. Default .workbook-sync-log/.
   -h / --help           This help.
 
-Step short names: sync, extract, nfl, nba, mlb, nhl, sports-index, boundaries,
-                  check-imports, tsc
+Step short names: sync, stage-leagues, extract, nfl, nba, mlb, nhl,
+                  international, football, wfootball, wnba, sports-index,
+                  boundaries, check-imports, tsc
 
 Exit codes:
   0  full pipeline succeeded (or no-op via --dry-run)
@@ -95,49 +101,64 @@ def steps_plan(args) -> List[Step]:
     nba_path = str(WORKBOOKS_DIR / "NBA.xlsx")
     nhl_path = str(WORKBOOKS_DIR / "NHL.xlsx")
     mlb_path = str(WORKBOOKS_DIR / "MLB.xlsx")
+    cl_path = str(WORKBOOKS_DIR / "Champions League-201516.xlsx")
+    otherleagues_path = str(PROJECT_ROOT / "OtherLeagues.xlsx")
 
     plan = [
-        Step("sync",          "1/11  sync MetroAreas.xlsx",
+        Step("sync",          "1/15  sync MetroAreas.xlsx",
              sync_cmd,
              output_globs=["MetroAreas.xlsx"]),
-        Step("stage-leagues", "2/11  stage NFL/NBA/NHL/MLB workbooks",
+        Step("stage-leagues", "2/15  stage NFL/NBA/NHL/MLB + Champions League workbooks",
              stage_cmd,
              output_globs=["workbooks/NFL_all.xlsx",
                            "workbooks/NBA.xlsx",
                            "workbooks/NHL.xlsx",
-                           "workbooks/MLB.xlsx"]),
-        Step("extract",       "3/11  extract metros + regions + details",
+                           "workbooks/MLB.xlsx",
+                           "workbooks/Champions League-201516.xlsx"]),
+        Step("extract",       "3/15  extract metros + regions + details",
              ["python3", str(SCRIPTS / "extract.py")],
              output_globs=["public/data/metros.json",
                            "public/data/regions.json"]),
-        Step("nfl",           "4/11  build NFL data",
+        Step("nfl",           "4/15  build NFL data",
              ["python3", str(SCRIPTS / "build-nfl-data.py"), nfl_path],
              output_globs=["public/data/nfl/franchises.json"]),
-        Step("nba",           "5/11  build NBA data",
+        Step("nba",           "5/15  build NBA data",
              ["python3", str(SCRIPTS / "build-nba-data.py"), nba_path],
              output_globs=["public/data/nba/franchises.json"]),
-        Step("mlb",           "6/11  build MLB data",
+        Step("mlb",           "6/15  build MLB data",
              ["python3", str(SCRIPTS / "build-mlb-data.py"), mlb_path],
              output_globs=["public/data/mlb/franchises.json"]),
-        Step("nhl",           "7/11  build NHL data",
+        Step("nhl",           "7/15  build NHL data",
              ["python3", str(SCRIPTS / "build-nhl-data.py"), nhl_path],
              output_globs=["public/data/nhl/franchises.json"]),
-        Step("sports-index",  "8/11  build cross-league sports index",
+        Step("international", "8/15  build international (national teams, ELO/FIFA)",
+             ["python3", str(SCRIPTS / "build-international-data.py"), cl_path],
+             output_globs=["public/data/international/index.json"]),
+        Step("football",      "9/15  build club football",
+             ["python3", str(SCRIPTS / "build-football-data.py"), cl_path],
+             output_globs=["public/data/football/index.json"]),
+        Step("wfootball",     "10/15 build women's football",
+             ["python3", str(SCRIPTS / "build-wfootball-data.py")],
+             output_globs=["public/data/football/womens-football.json"]),
+        Step("wnba",          "11/15 build WNBA",
+             ["python3", str(SCRIPTS / "build-wnba-data.py"), otherleagues_path],
+             output_globs=["public/data/wnba/data.json"]),
+        Step("sports-index",  "12/15  build cross-league sports index",
              ["python3", str(SCRIPTS / "build-sports-index.py")],
              output_globs=["public/data/sports/all-teams.json",
                            "public/data/sports/league-summary.json"]),
-        Step("boundaries",    "9/11  refresh metro boundaries (cached)",
+        Step("boundaries",    "13/15  refresh metro boundaries (cached)",
              boundary_cmd,
              output_globs=["public/data/boundaries/.build-cache.json"]),
     ]
 
     if not args.skip_verify:
         plan.append(Step(
-            "check-imports", "10/11 verify client-import boundaries",
+            "check-imports", "14/15 verify client-import boundaries",
             ["node", str(SCRIPTS / "check-client-imports.mjs")]))
         # tsc is the slowest of the lot; run it last
         plan.append(Step(
-            "tsc",           "11/11 typecheck (tsc --noEmit)",
+            "tsc",           "15/15 typecheck (tsc --noEmit)",
             # Invoke tsc via node directly (node_modules/typescript/bin/tsc).
             # Avoids npx.cmd on Windows, which subprocess.run cannot resolve
             # without shell=True.

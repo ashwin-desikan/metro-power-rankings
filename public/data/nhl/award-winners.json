@@ -1,5 +1,5 @@
 {
-"eagles":[
+"senators-org":[
 {
 "year":1924,
 "player":"Frank Nighbor",
@@ -7,35 +7,11 @@
 "position":""
 }
 ],
-"americans":[
-{
-"year":1942,
-"player":"Tom Anderson",
-"trophy":"Hart",
-"position":""
-},
-{
-"year":1929,
-"player":"Roy Worters",
-"trophy":"Hart",
-"position":""
-},
+"tigers-ham":[
 {
 "year":1925,
 "player":"Billy Burch",
 "trophy":"Hart",
-"position":""
-},
-{
-"year":1931,
-"player":"Roy Worters",
-"trophy":"Vezina",
-"position":"G"
-},
-{
-"year":1935,
-"player":"Dave Schriner",
-"trophy":"Calder",
 "position":""
 }
 ],
@@ -598,6 +574,32 @@
 "year":1978,
 "player":"Bob Gainey",
 "trophy":"Selke",
+"position":""
+}
+],
+"americans":[
+{
+"year":1942,
+"player":"Tom Anderson",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1929,
+"player":"Roy Worters",
+"trophy":"Hart",
+"position":""
+},
+{
+"year":1931,
+"player":"Roy Worters",
+"trophy":"Vezina",
+"position":"G"
+},
+{
+"year":1935,
+"player":"Dave Schriner",
+"trophy":"Calder",
 "position":""
 }
 ],
@@ -2767,7 +2769,7 @@
 "position":""
 }
 ],
-"mammoth":[
+"coyotes":[
 {
 "year":1993,
 "player":"Teemu Selanne",

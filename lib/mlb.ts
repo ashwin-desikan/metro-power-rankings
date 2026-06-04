@@ -165,6 +165,9 @@ export type TopGameLeagueRow = {
 export type HistoricalFranchise = {
   canonical: string;
   name: string;
+  display_name?: string;
+  metro?: string;
+  metro_slug?: string | null;
   city: string;
   team_historical: string;
   league: string;

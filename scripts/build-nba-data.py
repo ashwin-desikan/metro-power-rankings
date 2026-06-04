@@ -47,6 +47,9 @@ Usage:
 """
 
 import json
+import os as _ometro, sys as _smetro
+_smetro.path.insert(0, _ometro.path.dirname(_ometro.path.abspath(__file__)))
+from _defunct_metro import resolve_city as _rmcity, resolve_nba as _rmnba
 import os
 import re
 import sys
@@ -142,6 +145,38 @@ ALL_NBA_TIER_NORMALIZE = {
 DISPLAY_NAME_OVERRIDES = {
     "Warriors": ("Golden State", "Warriors"),
     "Pelicans": ("New Orleans", "Pelicans"),
+}
+
+# Approved display-name overrides for DEFUNCT/historical franchises
+# (keyed by the computed display_name in build_historical; falls back to the
+# computed value when a key is absent). See outputs/defunct_display_names.md.
+DEFUNCT_DISPLAY_NAMES = {
+    # ABA
+    "San Diego Conquistadors/Sails": "San Diego Conquistadors",
+    "Anaheim/Los Angeles/Utah Amigos/Stars": "Utah Stars",
+    "Houston/Carolina/St. Louis Mavericks/Cougars/Spirits": "Spirits of St. Louis",
+    "Kentucky Colonels": "Kentucky Colonels",
+    "Minnesota/Miami/(Florida) Muskies/Floridians/The Floridians": "The Floridians",
+    "New Orleans/Memphis Buccaneers/Pros/Tams/Sounds": "New Orleans Buccaneers",
+    "Oakland/Washington/Virginia Oaks/Capitals/Squires": "Virginia Squires",
+    "Pittsburgh/Minnesota/Pittsburgh Pipers/Condors": "Pittsburgh Pipers",
+    # NBA (early defunct)
+    "Anderson Packers (1950)": "Anderson Packers",
+    "Denver Nuggets (1950)": "Denver Nuggets (1949–50)",
+    "Indianapolis Olympians": "Indianapolis Olympians",
+    "Sheboygan Redskins (1950)": "Sheboygan Red Skins",
+    "Waterloo Hawks (1950)": "Waterloo Hawks",
+    "Baltimore Bullets": "Baltimore Bullets (1947–54)",
+    "Chicago Stags": "Chicago Stags",
+    "St. Louis Bombers": "St. Louis Bombers",
+    "Washington Capitols": "Washington Capitols",
+    # BAA
+    "Indianapolis Jets (1949)": "Indianapolis Jets",
+    "Cleveland Rebels (1947)": "Cleveland Rebels",
+    "Detroit Falcons (1947)": "Detroit Falcons",
+    "Pittsburgh Ironmen (1947)": "Pittsburgh Ironmen",
+    "Providence Steamrollers": "Providence Steamrollers",
+    "Toronto Huskies (1947)": "Toronto Huskies",
 }
 
 # Championship era classifier (League column on the championship-year row).
@@ -1147,10 +1182,14 @@ def build_historical(totals, year_by_year):
             display_name = f"{ch} {canonical}"
         else:
             display_name = canonical
+        # Override with the approved defunct display name when present.
+        display_name = DEFUNCT_DISPLAY_NAMES.get(display_name, display_name)
         out.append({
             "slug": franchise_slug(canonical),
             "canonical": canonical,
             "display_name": display_name,
+            "metro": _rmnba(display_name)[0],
+            "metro_slug": _rmnba(display_name)[1],
             "city_history": t.get("city_history", ""),
             "team_history": t.get("team_history", ""),
             "league_history": t.get("league_history", ""),

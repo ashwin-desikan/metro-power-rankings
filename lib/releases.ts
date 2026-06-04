@@ -24,6 +24,7 @@ export const RELEASES: Release[] = [
       "New Team Valuations board at /sports/valuations: 187 teams across the NFL, NBA, MLB, NHL and global football on one sortable, filterable list, each linking to its team page and league hub.",
       "Every team in the valuations set now shows a clickable valuation in its page header that deep-links to the board and highlights its row.",
       "The Sports hub is reordered with a Deep-Dives section (Team Valuations and The Team That Wins the City) and on-this-page nav up top, then the league directory, then the team map.",
+      "International Football ELO and FIFA rankings and their as-of dates are refreshed from the latest workbook, and the 1997 Other Tournaments edition is now correctly labeled the Tournoi de France.",
     ],
   },
   {

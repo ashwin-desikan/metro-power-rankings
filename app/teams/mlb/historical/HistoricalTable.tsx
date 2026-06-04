@@ -189,7 +189,7 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
                     >
                       {mono.mono}
                     </span>
-                    <span className="truncate">{r.name}</span>
+                    <span className="truncate">{r.display_name ?? r.name}</span>
                   </div>
                   <div className="text-[var(--text-muted)] truncate">{r.city}</div>
                   <div className="text-[var(--text-muted)]">{r.league}</div>

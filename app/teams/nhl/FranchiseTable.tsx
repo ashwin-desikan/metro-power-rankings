@@ -45,8 +45,8 @@ function activeRow(f: Franchise, originalSix: Set<string>): Row {
 function defunctRow(h: HistoricalFranchise): Row {
   const games = h.all_time_w + h.all_time_l + h.all_time_t + h.all_time_otl;
   return {
-    key: `def-${h.slug}`, slug: h.slug, name: h.name, defunct: true, isO6: false,
-    metroLabel: h.last_city, metroSlug: null, division: null,
+    key: `def-${h.slug}`, slug: h.slug, name: h.display_name ?? h.name, defunct: true, isO6: false,
+    metroLabel: h.metro || h.last_city, metroSlug: h.metro_slug ?? null, division: null,
     founded: h.founded, ended: h.ended, championships: h.championships,
     champApps: h.champ_appearances, presidents: null, playoffApps: null,
     ptsPct: games > 0 ? h.all_time_pts / (2 * games) : null, lastCup: h.last_championship,

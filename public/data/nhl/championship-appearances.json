@@ -1,6 +1,18 @@
 {
-"wanderers":[],
-"eagles":[
+"victorias-m":[],
+"crystals":[],
+"montreal-hc":[
+{
+"year":1894,
+"league":"AHAC",
+"era":"stanley",
+"result":"Won",
+"city":"Montreal",
+"team":"Hockey Club"
+}
+],
+"mcgill-university":[],
+"senators-org":[
 {
 "year":1927,
 "league":"NHL",
@@ -40,12 +52,54 @@
 "result":"Lost",
 "city":"Ottawa",
 "team":"Senators"
+},
+{
+"year":1906,
+"league":"ECAHA",
+"era":"stanley",
+"result":"Won",
+"city":"Ottawa",
+"team":"Hockey Club"
+},
+{
+"year":1894,
+"league":"AHAC",
+"era":"stanley",
+"result":"Lost",
+"city":"Ottawa",
+"team":"Hockey Club"
 }
 ],
+"chebuctos":[],
+"tigers-ham":[],
+"shamrocks-m":[],
+"britannias-m":[],
+"winnipeg-victorias":[],
+"wanderers":[
+{
+"year":1906,
+"league":"ECAHA",
+"era":"stanley",
+"result":"Won",
+"city":"Montreal",
+"team":"Wanderers"
+}
+],
+"le-national":[],
+"cornwall":[],
+"capitals-o":[],
+"westmount-m":[],
+"brockville":[],
+"montagnards":[],
+"seniors-sf":[],
+"victorias-o":[],
+"morrisburg":[],
+"thistles":[],
 "creamery-kings":[],
+"senators-fhl":[],
+"all-montreal":[],
 "haileybury":[],
 "silver-kings":[],
-"shamrocks-m":[],
 "canadiens":[
 {
 "year":2021,
@@ -328,7 +382,6 @@
 "team":"Canadiens"
 }
 ],
-"americans":[],
 "red-wings":[
 {
 "year":2009,
@@ -1115,6 +1168,7 @@
 }
 ],
 "quakers":[],
+"americans":[],
 "rangers":[
 {
 "year":2014,
@@ -1547,7 +1601,7 @@
 "year":1973,
 "league":"WHA",
 "era":"avco",
-"result":"Won",
+"result":"Lost",
 "city":"New England",
 "team":"Whalers"
 }
@@ -1584,7 +1638,7 @@
 "year":1977,
 "league":"WHA",
 "era":"avco",
-"result":"Won",
+"result":"Lost",
 "city":"Quebec",
 "team":"Nordiques"
 },
@@ -1624,12 +1678,12 @@
 "team":"Flames"
 }
 ],
-"mammoth":[
+"coyotes":[
 {
 "year":1979,
 "league":"WHA",
 "era":"avco",
-"result":"Won",
+"result":"Lost",
 "city":"Winnipeg",
 "team":"Jets"
 },
@@ -1637,7 +1691,7 @@
 "year":1978,
 "league":"WHA",
 "era":"avco",
-"result":"Won",
+"result":"Lost",
 "city":"Winnipeg",
 "team":"Jets"
 },
@@ -1653,7 +1707,7 @@
 "year":1976,
 "league":"WHA",
 "era":"avco",
-"result":"Won",
+"result":"Lost",
 "city":"Winnipeg",
 "team":"Jets"
 },
@@ -1679,7 +1733,7 @@
 "year":1975,
 "league":"WHA",
 "era":"avco",
-"result":"Won",
+"result":"Lost",
 "city":"Houston",
 "team":"Aeros"
 },
@@ -1687,7 +1741,7 @@
 "year":1974,
 "league":"WHA",
 "era":"avco",
-"result":"Won",
+"result":"Lost",
 "city":"Houston",
 "team":"Aeros"
 }
@@ -2006,5 +2060,6 @@
 "team":"Golden Knights"
 }
 ],
-"kraken":[]
+"kraken":[],
+"mammoth":[]
 }

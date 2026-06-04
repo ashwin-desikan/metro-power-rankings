@@ -9,7 +9,7 @@ const PAGE_PATH = "/teams/nhl/historical";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "Defunct NHL & pre-NHL franchises";
 const PAGE_DESCRIPTION =
-  "Defunct hockey franchises that played in the NHL or its predecessors (NHA, PCHA, WCHL) plus the rival WHA. Includes the original Ottawa Senators / St. Louis Eagles lineage, the Montreal Maroons, and pre-NHL Stanley Cup winners from 1910 onwards.";
+  "Defunct hockey franchises from the NHL and its predecessors (NHA, PCHA, WCHL) plus the rival WHA, reaching back to the pre-NHL amateur era and the Stanley Cup Challenges from 1893. Includes the original Ottawa Senators / St. Louis Eagles dynasty (canonical Senators (Org)), the Quebec Bulldogs / Hamilton Tigers, the Montreal Maroons, and the relocated Arizona Coyotes.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -49,10 +49,11 @@ export default function NhlHistoricalPage() {
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Defunct hockey franchises</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
           Franchises that played in the NHL or one of its predecessor / rival leagues but no longer exist as continuing
-          operations. Includes the original Ottawa Senators / St. Louis Eagles lineage (folded as the Eagles after the 1934-35
-          season), the Montreal Maroons, the Montreal Wanderers, and the WHA-era and pre-NHL Stanley Cup winners.
-          Workbook canonical name treats the Senators / Eagles lineage as one franchise; the modern Ottawa Senators (1992+) are listed
-          separately under the active franchises.
+          operations, now reaching back to the pre-NHL amateur era and the Stanley Cup Challenge years (1893 onwards).
+          Includes the original Ottawa Senators / St. Louis Eagles dynasty (one franchise, canonical &ldquo;Senators (Org)&rdquo;,
+          ended 1935), the Quebec Bulldogs / Hamilton Tigers, the Montreal Maroons and Wanderers, the relocated Arizona Coyotes,
+          the WHA clubs, and the early amateur Stanley Cup challengers. The modern Ottawa Senators (1992+) and Utah Mammoth
+          (2025+) are listed separately under the active franchises.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4">
           <div><strong className="text-[var(--text)] text-sm">{historical.length}</strong> defunct franchises</div>
@@ -82,7 +83,7 @@ export default function NhlHistoricalPage() {
             {historical.map((h) => (
               <tr key={h.slug} className="border-b last:border-b-0 hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
                 <td className="pl-4 py-2 font-medium">{h.canonical}</td>
-                <td className="py-2 px-2 text-[var(--text-muted)]">{h.last_city} {h.last_team}</td>
+                <td className="py-2 px-2 text-[var(--text-muted)]">{h.display_name || `${h.last_city} ${h.last_team}`}</td>
                 <td className="py-2 px-2 text-[var(--text-dim)]">{h.league_history}</td>
                 <td className="py-2 px-2 text-right">
                   {h.championships > 0 ? (

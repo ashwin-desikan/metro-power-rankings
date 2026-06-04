@@ -9,7 +9,6 @@ import {
   getFranchiseByCanonical,
   logoUrlFor,
   monogramFor,
-  TITLE_COLORS,
   PLAYOFF_STATE_COLORS,
 } from "@/lib/nba";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -120,14 +119,6 @@ export default function NbaIndexPage() {
       </div>
 
       <div className="flex flex-wrap gap-4 text-xs text-[var(--text-muted)] mb-6 mt-8">
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.nba.bg }} />
-          BAA + NBA championships (1947-49 BAA folded into NBA gold)
-        </span>
-        <span className="flex items-center gap-2">
-          <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: TITLE_COLORS.aba.bg }} />
-          ABA championships (1968-76)
-        </span>
         {playoffState.year && !isPostseasonOver && (
           <span className="flex items-center gap-2">
             <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: PLAYOFF_STATE_COLORS.active_cf.bg }} />

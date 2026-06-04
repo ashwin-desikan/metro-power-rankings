@@ -39,7 +39,7 @@ export async function generateStaticParams() {
 }
 
 function defunctDisplayName(h: HistoricalFranchise): string {
-  return `${h.city} ${h.name}`.trim();
+  return h.display_name ?? `${h.city} ${h.name}`.trim();
 }
 
 function defunctYears(h: HistoricalFranchise): string {

@@ -2,6 +2,9 @@
   {
     "canonical": "Orioles (1)",
     "name": "Orioles (1)",
+    "display_name": "Baltimore Orioles (AA/NL, 1882–1899)",
+    "metro": "Washington-Baltimore",
+    "metro_slug": "washington-baltimore",
     "city": "Baltimore",
     "team_historical": "Orioles (1882-99)",
     "league": "AA/NL",
@@ -17,6 +20,9 @@
   {
     "canonical": "Grays",
     "name": "Grays",
+    "display_name": "Providence Grays (NL, 1878–1885)",
+    "metro": "Providence",
+    "metro_slug": "providence",
     "city": "Providence",
     "team_historical": "Grays (1878-85)",
     "league": "NL",
@@ -32,6 +38,9 @@
   {
     "canonical": "Spiders",
     "name": "Spiders",
+    "display_name": "Cleveland Spiders (AA/NL, 1887–1899)",
+    "metro": "Cleveland",
+    "metro_slug": "cleveland",
     "city": "Cleveland",
     "team_historical": "Spiders (1887-99)",
     "league": "AA/NL",
@@ -47,6 +56,9 @@
   {
     "canonical": "Colonels",
     "name": "Colonels",
+    "display_name": "Louisville Colonels (AA/NL, 1882–1899)",
+    "metro": "Louisville",
+    "metro_slug": "louisville",
     "city": "Louisville",
     "team_historical": "Eclipse/Colonels (1882-99)",
     "league": "AA/NL",
@@ -62,6 +74,9 @@
   {
     "canonical": "Red Stockings",
     "name": "Red Stockings",
+    "display_name": "Boston Red Stockings (AA, 1891)",
+    "metro": "Boston",
+    "metro_slug": "boston",
     "city": "Boston",
     "team_historical": "Red Stockings (1891)",
     "league": "AA",
@@ -77,6 +92,9 @@
   {
     "canonical": "Athletics (2)",
     "name": "Athletics (2)",
+    "display_name": "Philadelphia Athletics (AA, 1882–1890)",
+    "metro": "Philadelphia",
+    "metro_slug": "philadelphia",
     "city": "Philadelphia",
     "team_historical": "Athletics (1882-90)",
     "league": "AA",
@@ -92,6 +110,9 @@
   {
     "canonical": "Wolverines",
     "name": "Wolverines",
+    "display_name": "Detroit Wolverines (NL, 1881–1888)",
+    "metro": "Detroit",
+    "metro_slug": "detroit",
     "city": "Detroit",
     "team_historical": "Wolverines (1881-88)",
     "league": "NL",
@@ -107,6 +128,9 @@
   {
     "canonical": "Senators",
     "name": "Senators",
+    "display_name": "Washington Senators (AA/NL, 1891–1899)",
+    "metro": "Washington-Baltimore",
+    "metro_slug": "washington-baltimore",
     "city": "Washington",
     "team_historical": "Statesmen/Senators (1891-99)",
     "league": "AA/NL",
@@ -122,6 +146,9 @@
   {
     "canonical": "Kelly's Killers",
     "name": "Kelly's Killers",
+    "display_name": "Cincinnati Kelly's Killers (AA, 1891)",
+    "metro": "Cincinnati",
+    "metro_slug": "cincinnati",
     "city": "Cincinnati",
     "team_historical": "Kelly's Killers (1891)",
     "league": "AA",
@@ -137,6 +164,9 @@
   {
     "canonical": "Solons",
     "name": "Solons",
+    "display_name": "Columbus Solons (AA, 1889–1891)",
+    "metro": "Columbus",
+    "metro_slug": "columbus",
     "city": "Columbus",
     "team_historical": "Blues (1889-91)",
     "league": "AA",
@@ -152,6 +182,9 @@
   {
     "canonical": "Brewers (1)",
     "name": "Brewers (1)",
+    "display_name": "Milwaukee Brewers (AA, 1891)",
+    "metro": "Milwaukee",
+    "metro_slug": "milwaukee",
     "city": "Milwaukee",
     "team_historical": "Brewers (1891)",
     "league": "AA",
@@ -167,6 +200,9 @@
   {
     "canonical": "Quakers",
     "name": "Quakers",
+    "display_name": "Philadelphia Quakers (AA, 1891)",
+    "metro": "Philadelphia",
+    "metro_slug": "philadelphia",
     "city": "Philadelphia",
     "team_historical": "Quakers (1891)",
     "league": "AA",
@@ -182,6 +218,9 @@
   {
     "canonical": "Gladiators",
     "name": "Gladiators",
+    "display_name": "Brooklyn Gladiators (AA, 1890)",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "Brooklyn",
     "team_historical": "Gladiators (1890)",
     "league": "AA",
@@ -197,6 +236,9 @@
   {
     "canonical": "Hop Bitters",
     "name": "Hop Bitters",
+    "display_name": "Rochester Hop Bitters (AA, 1890)",
+    "metro": "Rochester",
+    "metro_slug": "rochester",
     "city": "Rochester",
     "team_historical": "Hop Bitters (1890)",
     "league": "AA",
@@ -212,6 +254,9 @@
   {
     "canonical": "Stars (2)",
     "name": "Stars (2)",
+    "display_name": "Syracuse Stars (AA, 1890)",
+    "metro": "Syracuse",
+    "metro_slug": "syracuse",
     "city": "Syracuse",
     "team_historical": "Stars (1890)",
     "league": "AA",
@@ -227,6 +272,9 @@
   {
     "canonical": "Maumees",
     "name": "Maumees",
+    "display_name": "Toledo Maumees (AA, 1890)",
+    "metro": "Toledo",
+    "metro_slug": "toledo",
     "city": "Toledo",
     "team_historical": "Maumees (1890)",
     "league": "AA",
@@ -242,6 +290,9 @@
   {
     "canonical": "Hoosiers",
     "name": "Hoosiers",
+    "display_name": "Indianapolis Hoosiers (NL, 1887–1889)",
+    "metro": "Indianapolis",
+    "metro_slug": "indianapolis",
     "city": "Indianapolis",
     "team_historical": "Hoosiers (1887-89)",
     "league": "NL",
@@ -257,6 +308,9 @@
   {
     "canonical": "Blues (K)",
     "name": "Blues (K)",
+    "display_name": "Kansas City Blues (AA, 1888–1889)",
+    "metro": "Kansas City",
+    "metro_slug": "kansas-city",
     "city": "Kansas City",
     "team_historical": "Blues (1888-1889)",
     "league": "AA",
@@ -272,6 +326,9 @@
   {
     "canonical": "Nationals (2)",
     "name": "Nationals (2)",
+    "display_name": "Washington Nationals (NL, 1886–1889)",
+    "metro": "Washington-Baltimore",
+    "metro_slug": "washington-baltimore",
     "city": "Washington",
     "team_historical": "Senators (1886-89)",
     "league": "NL",
@@ -287,6 +344,9 @@
   {
     "canonical": "Metropolitans",
     "name": "Metropolitans",
+    "display_name": "New York Metropolitans (AA, 1883–1887)",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "New York",
     "team_historical": "Metropolitans (1883-87)",
     "league": "AA",
@@ -302,6 +362,9 @@
   {
     "canonical": "Cowboys",
     "name": "Cowboys",
+    "display_name": "Kansas City Cowboys (NL, 1886)",
+    "metro": "Kansas City",
+    "metro_slug": "kansas-city",
     "city": "Kansas City",
     "team_historical": "Cowboys (1886)",
     "league": "NL",
@@ -317,6 +380,9 @@
   {
     "canonical": "Maroons",
     "name": "Maroons",
+    "display_name": "St. Louis Maroons (NL, 1885–1886)",
+    "metro": "St. Louis",
+    "metro_slug": "st-louis",
     "city": "St. Louis",
     "team_historical": "Maroons (1885-86)",
     "league": "NL",
@@ -332,6 +398,9 @@
   {
     "canonical": "Bisons",
     "name": "Bisons",
+    "display_name": "Buffalo Bisons (NL, 1879–1885)",
+    "metro": "Buffalo",
+    "metro_slug": "buffalo",
     "city": "Buffalo",
     "team_historical": "Bisons (1879-85)",
     "league": "NL",
@@ -347,6 +416,9 @@
   {
     "canonical": "Blues (C)",
     "name": "Blues (C)",
+    "display_name": "Cleveland Blues (NL, 1879–1884)",
+    "metro": "Cleveland",
+    "metro_slug": "cleveland",
     "city": "Cleveland",
     "team_historical": "Blues (1879-84)",
     "league": "NL",
@@ -362,6 +434,9 @@
   {
     "canonical": "Colts (1)",
     "name": "Colts (1)",
+    "display_name": "Columbus Colts (AA, 1883–1884)",
+    "metro": "Columbus",
+    "metro_slug": "columbus",
     "city": "Columbus",
     "team_historical": "Colts (1883-84)",
     "league": "AA",
@@ -377,6 +452,9 @@
   {
     "canonical": "Blues (I)",
     "name": "Blues (I)",
+    "display_name": "Indianapolis Blues (AA, 1884)",
+    "metro": "Indianapolis",
+    "metro_slug": "indianapolis",
     "city": "Indianapolis",
     "team_historical": "Blues (1884)",
     "league": "AA",
@@ -392,6 +470,9 @@
   {
     "canonical": "Virginians",
     "name": "Virginians",
+    "display_name": "Richmond Virginians (AA, 1884)",
+    "metro": "Richmond",
+    "metro_slug": "richmond",
     "city": "Richmond",
     "team_historical": "Virginians (1884)",
     "league": "AA",
@@ -407,6 +488,9 @@
   {
     "canonical": "Blue Stockings",
     "name": "Blue Stockings",
+    "display_name": "Toledo Blue Stockings (AA, 1884)",
+    "metro": "Toledo",
+    "metro_slug": "toledo",
     "city": "Toledo",
     "team_historical": "Blue Stockings (1884)",
     "league": "AA",
@@ -422,6 +506,9 @@
   {
     "canonical": "Nationals (1)",
     "name": "Nationals (1)",
+    "display_name": "Washington Nationals (AA, 1884)",
+    "metro": "Washington-Baltimore",
+    "metro_slug": "washington-baltimore",
     "city": "Washington",
     "team_historical": "Nationals (1884)",
     "league": "AA",
@@ -437,6 +524,9 @@
   {
     "canonical": "Trojans",
     "name": "Trojans",
+    "display_name": "Troy Trojans (NL, 1879–1882)",
+    "metro": "Troy",
+    "metro_slug": "troy",
     "city": "Troy",
     "team_historical": "Trojans (1879-82)",
     "league": "NL",
@@ -452,6 +542,9 @@
   {
     "canonical": "Brown Stockings (W)",
     "name": "Brown Stockings (W)",
+    "display_name": "Worcester Brown Stockings (NL, 1880–1882)",
+    "metro": "Worcester",
+    "metro_slug": "worcester",
     "city": "Worcester",
     "team_historical": "Brown Stockings (1880-82)",
     "league": "NL",
@@ -467,6 +560,9 @@
   {
     "canonical": "Reds (1)",
     "name": "Reds (1)",
+    "display_name": "Cincinnati Reds (NL, 1876–1880)",
+    "metro": "Cincinnati",
+    "metro_slug": "cincinnati",
     "city": "Cincinnati",
     "team_historical": "Red Stockings (1876-80)",
     "league": "NL",
@@ -482,6 +578,9 @@
   {
     "canonical": "Stars (1)",
     "name": "Stars (1)",
+    "display_name": "Syracuse Stars (NL, 1879)",
+    "metro": "Syracuse",
+    "metro_slug": "syracuse",
     "city": "Syracuse",
     "team_historical": "Stars (1879)",
     "league": "NL",
@@ -497,6 +596,9 @@
   {
     "canonical": "Browns",
     "name": "Browns",
+    "display_name": "Indianapolis Browns (NL, 1878)",
+    "metro": "Indianapolis",
+    "metro_slug": "indianapolis",
     "city": "Indianapolis",
     "team_historical": "Browns (1878)",
     "league": "NL",
@@ -512,6 +614,9 @@
   {
     "canonical": "Grays (M)",
     "name": "Grays (M)",
+    "display_name": "Milwaukee Grays (NL, 1878)",
+    "metro": "Milwaukee",
+    "metro_slug": "milwaukee",
     "city": "Milwaukee",
     "team_historical": "Grays (1878)",
     "league": "NL",
@@ -527,6 +632,9 @@
   {
     "canonical": "Hartfords",
     "name": "Hartfords",
+    "display_name": "Hartford/Brooklyn Hartfords (NL, 1876–1877)",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "Hartford/Brooklyn",
     "team_historical": "Dark Blues/Hartfords (1876-77)",
     "league": "NL",
@@ -542,6 +650,9 @@
   {
     "canonical": "Grays (L)",
     "name": "Grays (L)",
+    "display_name": "Louisville Grays (NL, 1876–1877)",
+    "metro": "Louisville",
+    "metro_slug": "louisville",
     "city": "Louisville",
     "team_historical": "Grays (1876-77)",
     "league": "NL",
@@ -557,6 +668,9 @@
   {
     "canonical": "Brown Stockings (S)",
     "name": "Brown Stockings (S)",
+    "display_name": "St. Louis Brown Stockings (NL, 1876–1877)",
+    "metro": "St. Louis",
+    "metro_slug": "st-louis",
     "city": "St. Louis",
     "team_historical": "Brown Stockings (1876-77)",
     "league": "NL",
@@ -572,6 +686,9 @@
   {
     "canonical": "Mutuals",
     "name": "Mutuals",
+    "display_name": "New York Mutuals (NL, 1876)",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "New York",
     "team_historical": "Mutuals (1876)",
     "league": "NL",
@@ -587,6 +704,9 @@
   {
     "canonical": "Athletics (1)",
     "name": "Athletics (1)",
+    "display_name": "Philadelphia Athletics (NL, 1876)",
+    "metro": "Philadelphia",
+    "metro_slug": "philadelphia",
     "city": "Philadelphia",
     "team_historical": "Athletics (1876)",
     "league": "NL",

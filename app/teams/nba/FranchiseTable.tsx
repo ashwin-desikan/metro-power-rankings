@@ -72,7 +72,7 @@ function defunctRow(h: HistoricalFranchise): Row {
   const lastCity = (h.city_history || "").split("/").pop() || null;
   return {
     key: `def-${h.canonical}`, slug: h.slug, canonical: h.canonical, name: h.display_name, defunct: true,
-    metroLabel: lastCity, metroSlug: null, conf: null,
+    metroLabel: h.metro || lastCity, metroSlug: h.metro_slug ?? null, conf: null,
     founded: h.first_year, ended: h.last_year, championships: h.championships,
     champApps: h.championship_appearances, cfApps: h.cf_appearances,
     playoffApps: h.playoff_appearances, allStars: null,

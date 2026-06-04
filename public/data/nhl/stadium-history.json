@@ -1,25 +1,49 @@
 {
-"wanderers":[
+"victorias-m":[
 {
-"arena":"Montreal Arena",
-"arena_canonical":"Montreal Arena",
-"start_year":1911,
-"end_year":1918,
-"city":"Montreal",
-"state":"Quebec",
-"metro":"Montreal"
-},
-{
-"arena":"Jubilee Arena",
-"arena_canonical":"Jubilee Arena",
-"start_year":1910,
-"end_year":1910,
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1887,
+"end_year":1908,
 "city":"Montreal",
 "state":"Quebec",
 "metro":"Montreal"
 }
 ],
-"eagles":[
+"crystals":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1887,
+"end_year":1894,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"montreal-hc":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1887,
+"end_year":1908,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"mcgill-university":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1887,
+"end_year":1889,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"senators-org":[
 {
 "arena":"St. Louis Arena",
 "arena_canonical":"St. Louis Arena",
@@ -46,6 +70,236 @@
 "city":"Ottawa",
 "state":"Ontario",
 "metro":"Ottawa"
+},
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1887,
+"end_year":1910,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+}
+],
+"chebuctos":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1889,
+"end_year":1889,
+"city":"Halifax",
+"state":"Nova Scotia",
+"metro":"Halifax"
+}
+],
+"tigers-ham":[
+{
+"arena":"Hamilton Arena",
+"arena_canonical":"Hamilton Arena",
+"start_year":1921,
+"end_year":1925,
+"city":"Hamilton",
+"state":"Ontario",
+"metro":"Hamilton"
+},
+{
+"arena":"Le Colisee de Quebec",
+"arena_canonical":"Le Colisee de Quebec",
+"start_year":1911,
+"end_year":1920,
+"city":"Quebec City",
+"state":"Quebec",
+"metro":"Quebec City"
+},
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1889,
+"end_year":1910,
+"city":"Quebec",
+"state":"Quebec",
+"metro":"Quebec"
+}
+],
+"shamrocks-m":[
+{
+"arena":"Montreal Arena",
+"arena_canonical":"Montreal Arena",
+"start_year":1910,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1891,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"britannias-m":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1892,
+"end_year":1892,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"winnipeg-victorias":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1896,
+"end_year":1902,
+"city":"Winnipeg",
+"state":"Manitoba",
+"metro":"Winnipeg"
+}
+],
+"wanderers":[
+{
+"arena":"Montreal Arena",
+"arena_canonical":"Montreal Arena",
+"start_year":1911,
+"end_year":1918,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"Jubilee Arena",
+"arena_canonical":"Jubilee Arena",
+"start_year":1910,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+},
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1904,
+"end_year":1909,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"le-national":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1904,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"cornwall":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1904,
+"end_year":1909,
+"city":"Cornwall",
+"state":"Ontario",
+"metro":"Cornwall"
+}
+],
+"capitals-o":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1904,
+"end_year":1904,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+}
+],
+"westmount-m":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1905,
+"end_year":1905,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"brockville":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1905,
+"end_year":1908,
+"city":"Brockville",
+"state":"Ontario",
+"metro":"Brockville"
+}
+],
+"montagnards":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1905,
+"end_year":1907,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
+}
+],
+"seniors-sf":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1906,
+"end_year":1909,
+"city":"Smiths Falls",
+"state":"Ontario",
+"metro":"Smiths Falls"
+}
+],
+"victorias-o":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1906,
+"end_year":1908,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+}
+],
+"morrisburg":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1907,
+"end_year":1907,
+"city":"Morrisburg",
+"state":"Ontario",
+"metro":"Morrisburg"
+}
+],
+"thistles":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1907,
+"end_year":1907,
+"city":"Kenora",
+"state":"Ontario",
+"metro":"Kenora"
 }
 ],
 "creamery-kings":[
@@ -57,6 +311,37 @@
 "city":"Renfrew",
 "state":"Ontario",
 "metro":"Renfrew"
+},
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1909,
+"end_year":1909,
+"city":"Renfrew",
+"state":"Ontario",
+"metro":"Renfrew"
+}
+],
+"senators-fhl":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1909,
+"end_year":1909,
+"city":"Ottawa",
+"state":"Ontario",
+"metro":"Ottawa"
+}
+],
+"all-montreal":[
+{
+"arena":"(unknown)",
+"arena_canonical":"(unknown)",
+"start_year":1910,
+"end_year":1910,
+"city":"Montreal",
+"state":"Quebec",
+"metro":"Montreal"
 }
 ],
 "haileybury":[
@@ -79,17 +364,6 @@
 "city":"Cobalt",
 "state":"Ontario",
 "metro":"Haileybury"
-}
-],
-"shamrocks-m":[
-{
-"arena":"Montreal Arena",
-"arena_canonical":"Montreal Arena",
-"start_year":1910,
-"end_year":1910,
-"city":"Montreal",
-"state":"Quebec",
-"metro":"Montreal"
 }
 ],
 "canadiens":[
@@ -173,35 +447,6 @@
 "city":"Montreal",
 "state":"Quebec",
 "metro":"Montreal"
-}
-],
-"americans":[
-{
-"arena":"Madison Square Garden III",
-"arena_canonical":"Madison Square Garden III",
-"start_year":1926,
-"end_year":1942,
-"city":"New York",
-"state":"New York",
-"metro":"New York"
-},
-{
-"arena":"Hamilton Arena",
-"arena_canonical":"Hamilton Arena",
-"start_year":1921,
-"end_year":1925,
-"city":"Hamilton",
-"state":"Ontario",
-"metro":"Hamilton"
-},
-{
-"arena":"Le Colisee de Quebec",
-"arena_canonical":"Le Colisee de Quebec",
-"start_year":1911,
-"end_year":1920,
-"city":"Quebec City",
-"state":"Quebec",
-"metro":"Quebec City"
 }
 ],
 "red-wings":[
@@ -574,6 +819,17 @@
 "city":"Pittsburgh",
 "state":"Pennsylvania",
 "metro":"Pittsburgh"
+}
+],
+"americans":[
+{
+"arena":"Madison Square Garden III",
+"arena_canonical":"Madison Square Garden III",
+"start_year":1926,
+"end_year":1942,
+"city":"New York",
+"state":"New York",
+"metro":"New York"
 }
 ],
 "rangers":[
@@ -1294,16 +1550,7 @@
 "metro":"Atlanta"
 }
 ],
-"mammoth":[
-{
-"arena":"Delta Center",
-"arena_canonical":"Delta Center",
-"start_year":2025,
-"end_year":2026,
-"city":"Salt Lake City",
-"state":"Utah",
-"metro":"Salt Lake City-Provo"
-},
+"coyotes":[
 {
 "arena":"Mullett Arena",
 "arena_canonical":"Mullett Arena",
@@ -2019,6 +2266,17 @@
 "city":"Seattle",
 "state":"Washington",
 "metro":"Seattle"
+}
+],
+"mammoth":[
+{
+"arena":"Delta Center",
+"arena_canonical":"Delta Center",
+"start_year":2025,
+"end_year":2026,
+"city":"Salt Lake City",
+"state":"Utah",
+"metro":"Salt Lake City-Provo"
 }
 ]
 }

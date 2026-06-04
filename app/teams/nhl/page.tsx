@@ -6,6 +6,7 @@ import {
   logoUrlFor,
   monogramFor,
   ORIGINAL_SIX,
+  getCupPresentationGames,
 } from "@/lib/nhl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getNhlPlayoffState } from "@/lib/nhl-playoffs";
@@ -13,6 +14,7 @@ import FranchiseTable from "./FranchiseTable";
 import LeagueMap from "./LeagueMap";
 import NhlPlayoffBracket from "./NhlPlayoffBracket";
 import HubNav from "@/app/teams/HubNav";
+import CupPresentationTable from "./CupPresentationTable";
 
 export const dynamicParams = false;
 
@@ -45,6 +47,7 @@ export default function NhlIndexPage() {
   const withChamps = franchises.filter(f => f.championships > 0).length;
   const totalPresidents = franchises.reduce((s, f) => s + f.best_record_seasons, 0);
   const playoffBundle = getNhlPlayoffState();
+  const cup = getCupPresentationGames();
   const inPlayoffs = Object.values(playoffBundle.by_franchise).filter(
     (st) => st.state.startsWith("active_"),
   ).length;
@@ -83,6 +86,7 @@ export default function NhlIndexPage() {
           { label: "Playoffs", href: "#bracket" },
           { label: "Map", href: "#map" },
           { label: "All-Time Table", href: "#all-time" },
+          { label: "Stanley Cup Games", href: "#cup-games" },
         ]}
       />
 
@@ -113,6 +117,10 @@ export default function NhlIndexPage() {
           monoMap={Object.fromEntries(franchises.map(f => [f.slug, monogramFor(f.slug)]))}
           originalSix={ORIGINAL_SIX}
         />
+      </div>
+
+      <div id="cup-games">
+        <CupPresentationTable allTime={cup.allTime} byDecade={cup.byDecade} />
       </div>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">

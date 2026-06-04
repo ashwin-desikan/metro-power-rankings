@@ -47,6 +47,9 @@ Usage:
 """
 
 import json
+import os as _ometro, sys as _smetro
+_smetro.path.insert(0, _ometro.path.dirname(_ometro.path.abspath(__file__)))
+from _defunct_metro import resolve_city as _rmcity, resolve_nba as _rmnba, resolve_nhl as _rmnhl, resolve_nhl_metros as _rmnhl_metros
 import os
 import re
 import sys
@@ -112,6 +115,82 @@ DISPLAY_NAME_OVERRIDES = {
     # canonical -> (display_city, display_team)
     # Most NHL franchises display as (workbook city, canonical team name).
     # Add overrides only when the marketing name diverges meaningfully.
+}
+
+# Approved display names for defunct franchises (canonical Name -> the city/
+# team identity each franchise is most commonly known by). Slugs are unchanged.
+DEFUNCT_DISPLAY_NAMES = {
+    "Coyotes": "Arizona Coyotes",
+    "Stingers": "Cincinnati Stingers",
+    "Bulls (B)": "Birmingham Bulls",
+    "Racers": "Indianapolis Racers",
+    "All-Stars": "Soviet All-Stars",
+    "National Team (C)": "Czechoslovakia National Team",
+    "National Team (F)": "Finland National Team",
+    "Aeros": "Houston Aeros",
+    "Barons": "California Golden Seals",
+    "Mariners": "San Diego Mariners",
+    "Cowboys (Cal)": "Calgary Cowboys",
+    "Fighting Saints (2)": "Cleveland Crusaders",
+    "Roadrunners": "Phoenix Roadrunners",
+    "Fighting Saints (1)": "Minnesota Fighting Saints",
+    "Civics": "Denver Spurs/Ottawa Civics",
+    "Cougars": "Chicago Cougars",
+    "Blades": "Los Angeles Sharks",
+    "Americans": "New York Americans",
+    "Maroons": "Montreal Maroons",
+    "Senators (Org)": "Ottawa Senators (original)",
+    "Quakers": "Pittsburgh Pirates (NHL)",
+    "Eskimos": "Edmonton Eskimos",
+    "Crescents": "Saskatoon Crescents",
+    "Tigers (Cal)": "Calgary Tigers",
+    "Maroons (V)": "Vancouver Millionaires",
+    "Tigers (Ham)": "Quebec Bulldogs/Hamilton Tigers",
+    "Metropolitans": "Seattle Metropolitans",
+    "Wanderers": "Montreal Wanderers",
+    "Blueshirts": "Toronto Blueshirts",
+    "Canaries": "Victoria Aristocrats",
+    "228th Batallion": "Toronto 228th Battalion",
+    "Shamrocks (T)": "Toronto Shamrocks",
+    "Millionaires (MaPHL)": "Sydney Millionaires",
+    "Moncton Victorias": "Moncton Victorias",
+    "Creamery Kings": "Renfrew Creamery Kings",
+    "Galt Pros": "Galt Professionals",
+    "Port Arthur": "Port Arthur Bearcats",
+    "Haileybury": "Haileybury Comets",
+    "Silver Kings": "Cobalt Silver Kings",
+    "All-Montreal": "All-Montreal HC",
+    "Dutchmen": "Berlin Dutchmen",
+    "Edmonton HC": "Edmonton HC",
+    "Le National": "Montreal National (Le National)",
+    "Shamrocks (M)": "Montreal Shamrocks",
+    "Cornwall": "Cornwall HC",
+    "Senators (FHL)": "Ottawa Senators (FAHL)",
+    "Seniors (SF)": "Smiths Falls Seniors",
+    "Montreal HC": "Montreal Hockey Club (Montreal AAA)",
+    "Victorias (M)": "Montreal Victorias",
+    "Brockville": "Brockville HC",
+    "Toronto Pros": "Toronto Professionals",
+    "Victorias (O)": "Ottawa Victorias",
+    "Winnipeg ML": "Winnipeg Maple Leafs",
+    "Montagnards": "Montreal Montagnards",
+    "Morrisburg": "Morrisburg HC",
+    "New Glasgow": "New Glasgow Cubs",
+    "Wheat City": "Brandon Wheat City",
+    "Thistles": "Kenora Thistles",
+    "Queen's University": "Queen's University",
+    "Dawson City": "Dawson City Nuggets",
+    "Westmount (M)": "Montreal Westmount",
+    "Capitals (O)": "Ottawa Capitals",
+    "Marlboros": "Toronto Marlboros",
+    "Winnipeg RC": "Winnipeg Rowing Club",
+    "Winnipeg Victorias": "Winnipeg Victorias",
+    "Wellingtons": "Toronto Wellingtons",
+    "Crescents (H)": "Halifax Crescents",
+    "Crystals": "Montreal Crystals",
+    "Britannias (M)": "Montreal Britannias",
+    "Chebuctos": "Halifax Chebuctos",
+    "McGill University": "McGill University",
 }
 
 
@@ -222,7 +301,10 @@ def read_totals(wb):
     for i, row in enumerate(ws.iter_rows(values_only=True)):
         if i == 0 or not row:
             continue
-        canonical = safe_str(row[37]) if len(row) > 37 else ""
+        # NEW Totals layout (June 2026): a new "Oth Champ" col was inserted at
+        # index 25 and "Last Sea.", "Current", "Defunct" added, shifting the
+        # canonical Name to 38 and status flags to 40/41.
+        canonical = safe_str(row[38]) if len(row) > 38 else ""
         if not canonical:
             continue
         out[canonical] = {
@@ -251,20 +333,22 @@ def read_totals(wb):
             "sf_appearances": safe_int(row[22]),
             "champ_appearances": safe_int(row[23]),
             "championships": safe_int(row[24]),
-            "last_championship": safe_int(row[25]) or None,
-            "last_champ_app": safe_int(row[26]) or None,
-            "last_sf_app": safe_int(row[27]) or None,
-            "last_series_win": safe_int(row[28]) or None,
-            "last_best_rec": safe_int(row[29]) or None,
-            "last_best_main_div": safe_int(row[30]) or None,
-            "last_division_title": safe_int(row[31]) or None,
-            "last_playoff_app": safe_int(row[32]) or None,
-            "last_500_season": safe_int(row[33]) or None,
-            "reg_games": safe_int(row[34]),
-            "play_games": safe_int(row[35]),
-            "total_games": safe_int(row[36]),
-            "is_current": is_truthy_yn(row[38]) if len(row) > 38 else False,
-            "is_defunct": is_truthy_yn(row[39]) if len(row) > 39 else False,
+            "other_championships": safe_int(row[25]),
+            "last_championship": safe_int(row[26]) or None,
+            "last_champ_app": safe_int(row[27]) or None,
+            "last_sf_app": safe_int(row[28]) or None,
+            "last_series_win": safe_int(row[29]) or None,
+            "last_best_rec": safe_int(row[30]) or None,
+            "last_best_main_div": safe_int(row[31]) or None,
+            "last_division_title": safe_int(row[32]) or None,
+            "last_playoff_app": safe_int(row[33]) or None,
+            "last_500_season": safe_int(row[34]) or None,
+            "reg_games": safe_int(row[35]),
+            "play_games": safe_int(row[36]),
+            "total_games": safe_int(row[37]),
+            "last_season": safe_int(row[39]) or None,
+            "is_current": is_truthy_yn(row[40]) if len(row) > 40 else False,
+            "is_defunct": is_truthy_yn(row[41]) if len(row) > 41 else False,
         }
     return out
 
@@ -510,8 +594,14 @@ def read_metro_team_list():
     metro_wb_path = REPO_ROOT / "MetroAreas.xlsx"
     if not metro_wb_path.exists():
         return {}
-    wb = openpyxl.load_workbook(metro_wb_path, read_only=True, data_only=True)
-    ws = wb["Team List"]
+    try:
+        wb = openpyxl.load_workbook(metro_wb_path, read_only=True, data_only=True)
+        ws = wb["Team List"]
+    except Exception as e:
+        print(f"  WARN: could not read MetroAreas.xlsx Team List ({e}); "
+              "skipping metro/lat-lng enrichment for current franchises",
+              file=sys.stderr)
+        return {}
     out = {}
     # Cols shifted 2026-05-17: Gold Standard inserted at col L pushed Major
     # League to col M (idx 12), Wikidata QID to col Q (idx 16), Wikipedia
@@ -684,6 +774,7 @@ def build_franchises(totals, latest_meta, year_by_year, earliest_year,
             "sf_appearances": t["sf_appearances"],
             "champ_appearances": t["champ_appearances"],
             "championships": t["championships"],
+            "other_championships": t["other_championships"],
             "last_championship": t["last_championship"],
             "last_champ_app": t["last_champ_app"],
             "last_sf_app": t["last_sf_app"],
@@ -705,25 +796,38 @@ def build_franchises(totals, latest_meta, year_by_year, earliest_year,
 
 
 def build_historical(totals, year_by_year, earliest_year):
-    """Defunct franchises. Includes pre-NHL league teams as well as defunct
-    NHL franchises. Sorted by championship count desc, then by latest year
-    desc."""
+    """Defunct franchises: pre-NHL league teams, Stanley Cup challengers, and
+    defunct NHL/WHA franchises. Sorted by championship count desc, then by
+    latest year desc. Season-less challenge-only franchises (whose record
+    lives only in Detailed Playoffs) are still included as stubs."""
     out = []
     for canonical, t in totals.items():
         if t["is_current"]:
             continue
         seasons = year_by_year.get(canonical, [])
-        if not seasons:
-            continue
-        last = seasons[-1]
+        if seasons:
+            last = seasons[-1]
+            last_city = last["city"]
+            last_team = last["team"]
+            ended = last["year"]
+        else:
+            last_city = (t["city_history"].split("/")[-1].strip()
+                         if t["city_history"] else "")
+            last_team = (t["team_history"].split("/")[-1].strip()
+                         if t["team_history"] else canonical)
+            ended = t["last_season"]
         founded = earliest_year.get(canonical)
-        ended = last["year"]
+        _mm = _rmnhl_metros(canonical, t["city_history"])
         out.append({
             "slug": franchise_slug(canonical),
             "canonical": canonical,
             "name": canonical,
-            "last_city": last["city"],
-            "last_team": last["team"],
+            "display_name": DEFUNCT_DISPLAY_NAMES.get(canonical) or (f"{last_city} {last_team}".strip() or canonical),
+            "metro": _mm[0][0] if _mm else "",
+            "metro_slug": _mm[0][1] if _mm else None,
+            "metros": [{"name": _n, "slug": _s} for _n, _s in _mm],
+            "last_city": last_city,
+            "last_team": last_team,
             "founded": founded,
             "ended": ended,
             "league_history": t["league_history"],
@@ -735,6 +839,7 @@ def build_historical(totals, year_by_year, earliest_year):
             "all_time_otl": t["all_time_otl"],
             "all_time_pts": t["all_time_pts"],
             "championships": t["championships"],
+            "other_championships": t["other_championships"],
             "champ_appearances": t["champ_appearances"],
             "sf_appearances": t["sf_appearances"],
             "seasons": t["seasons"],
@@ -974,6 +1079,83 @@ def read_playoff_state(wb):
 
 # -------- Main --------
 
+_MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+def _cup_num(v):
+    try:
+        if v is None or str(v).strip() in ("", "-"):
+            return None
+        return int(float(v))
+    except Exception:
+        return None
+
+def _format_au(au):
+    """YYYYMMDD int -> 'Mon D, YYYY' (handles pre-1900 dates that Excel cannot)."""
+    if not au:
+        return None
+    sd = str(int(au))
+    if len(sd) != 8:
+        return sd
+    y, m, d = int(sd[:4]), int(sd[4:6]), int(sd[6:8])
+    if 1 <= m <= 12 and 1 <= d <= 31:
+        return f"{_MONTHS[m]} {d}, {y}"
+    return str(y)
+
+def _clean_arena(a):
+    a = (a or "").strip()
+    return "" if (not a or "#REF" in a) else a
+
+def read_cup_presentation_games(wb):
+    """Detailed Playoffs rows where Cup Awarded (col AT / 45) == 'Y'. One row
+    per Cup presentation (the champion's perspective). Date uses Sort Date
+    (col AU / 46, YYYYMMDD) so 1800s challenge games sort/display correctly."""
+    ws = wb["Detailed Playoffs"]
+    out = []
+    for i, row in enumerate(ws.iter_rows(values_only=True)):
+        if i == 0:
+            continue
+        if safe_str(row[45] if len(row) > 45 else "").strip().upper() != "Y":
+            continue
+        au = safe_int(row[46]) if len(row) > 46 else 0
+        _ha = safe_str(row[17] if len(row) > 17 else "").strip()
+        _lw = _ha.lower() == "league winner"
+        out.append({
+            "year": safe_int(row[2]),
+            "au": au,
+            "date": _format_au(au),
+            "round": safe_str(row[4]),
+            "winner_canonical": safe_str(row[34]),
+            "winner_city": safe_str(row[8]),
+            "winner_team": safe_str(row[9]),
+            "loser_canonical": safe_str(row[35]),
+            "loser_city": safe_str(row[12]),
+            "loser_team": safe_str(row[13]),
+            "winner_score": _cup_num(row[14] if len(row) > 14 else None),
+            "loser_score": _cup_num(row[15] if len(row) > 15 else None),
+            "ot": bool(safe_str(row[16]).strip()),
+            "arena": "" if _lw else _clean_arena(_ha),
+            "league_winner": _lw,
+            "arena_city": "" if _lw else safe_str(row[18] if len(row) > 18 else ""),
+            "arena_state": "" if _lw else safe_str(row[19] if len(row) > 19 else ""),
+        })
+    return out
+
+def build_cup_presentation(games, franchises, historical):
+    slug_by_canon = {f["canonical"]: f["slug"] for f in franchises}
+    slug_by_canon.update({h["canonical"]: h["slug"] for h in historical})
+    for g in games:
+        g["winner_slug"] = slug_by_canon.get(g["winner_canonical"]) or None
+        g["loser_slug"] = slug_by_canon.get(g["loser_canonical"]) or None
+    all_time = sorted(games, key=lambda x: (x["au"] or 0), reverse=True)
+    by_decade = {}
+    for g in all_time:
+        y = g["year"]
+        if not y:
+            continue
+        by_decade.setdefault(str((y // 10) * 10), []).append(g)
+    return {"allTime": all_time, "byDecade": by_decade}
+
+
 def main():
     cli_path = sys.argv[1] if len(sys.argv) > 1 else None
     src = find_source(cli_path)
@@ -1005,6 +1187,9 @@ def main():
 
     historical = build_historical(totals, year_by_year, earliest_year)
     print(f"  Defunct franchises: {len(historical)}")
+
+    cup_presentation = build_cup_presentation(read_cup_presentation_games(wb), franchises, historical)
+    print(f"  Cup presentation games: {len(cup_presentation['allTime'])}")
 
     championships = build_championships(year_by_year)
     championship_appearances = build_championship_appearances(year_by_year)
@@ -1047,6 +1232,7 @@ def main():
         "stadium-history.json": stadium_history_slug,
         "seasons-by-team.json": seasons_by_team,
         "historical-seasons.json": historical_seasons,
+        "cup-presentation-games.json": cup_presentation,
         "playoff-state.json": playoff_bundle,
     }
 

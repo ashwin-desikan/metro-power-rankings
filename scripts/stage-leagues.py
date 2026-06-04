@@ -9,10 +9,11 @@ The contract is intentionally the same so the workbook-sync skill can treat
 them as siblings.
 
 Targets:
-  NFL_all.xlsx        -> workbooks/NFL_all.xlsx
-  NBA.xlsx            -> workbooks/NBA.xlsx
-  NHL.xlsx            -> workbooks/NHL.xlsx
-  MLB.xlsx            -> workbooks/MLB.xlsx
+  NFL_all.xlsx               -> workbooks/NFL_all.xlsx
+  NBA.xlsx                   -> workbooks/NBA.xlsx
+  NHL.xlsx                   -> workbooks/NHL.xlsx
+  MLB.xlsx                   -> workbooks/MLB.xlsx
+  Champions League-201516.xlsx -> workbooks/Champions League-201516.xlsx
 
 Behavior:
   - Detects Excel's '~$NAME.xlsx' lockfile in the source dir and aborts with
@@ -70,6 +71,9 @@ WORKBOOKS = {
     "nba": "NBA.xlsx",
     "nhl": "NHL.xlsx",
     "mlb": "MLB.xlsx",
+    # Global football/international database (legacy filename). Feeds
+    # build-international-data.py + build-football-data.py + women's WC.
+    "football": "Champions League-201516.xlsx",
 }
 
 

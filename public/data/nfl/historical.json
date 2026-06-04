@@ -2,6 +2,9 @@
   {
     "canonical": "Bulldogs (Canton)",
     "name": "Bulldogs (Canton)",
+    "display_name": "Canton Bulldogs",
+    "metro": "Cleveland",
+    "metro_slug": "cleveland",
     "city": "Canton",
     "team_historical": "Bulldogs (1920-23,25-26)",
     "league": "APFA/NFL",
@@ -18,6 +21,9 @@
   {
     "canonical": "Indians (Akron)",
     "name": "Indians (Akron)",
+    "display_name": "Akron Pros",
+    "metro": "Cleveland",
+    "metro_slug": "cleveland",
     "city": "Akron",
     "team_historical": "Pros/Indians (1920-26)",
     "league": "APFA/NFL",
@@ -34,6 +40,9 @@
   {
     "canonical": "Wolverines",
     "name": "Wolverines",
+    "display_name": "Detroit Wolverines",
+    "metro": "Detroit",
+    "metro_slug": "detroit",
     "city": "Cleveland/Detroit",
     "team_historical": "Indians/Bulldogs/Wolverines (1923-25,27-28)",
     "league": "NFL",
@@ -50,6 +59,9 @@
   {
     "canonical": "Yellow Jackets",
     "name": "Yellow Jackets",
+    "display_name": "Frankford Yellow Jackets",
+    "metro": "Philadelphia",
+    "metro_slug": "philadelphia",
     "city": "Frankford",
     "team_historical": "Yellow Jackets (1924-31)",
     "league": "NFL",
@@ -66,6 +78,9 @@
   {
     "canonical": "Steam Roller",
     "name": "Steam Roller",
+    "display_name": "Providence Steam Roller",
+    "metro": "Providence",
+    "metro_slug": "providence",
     "city": "Providence",
     "team_historical": "Steam Roller (1925-31)",
     "league": "NFL",
@@ -82,6 +97,9 @@
   {
     "canonical": "Bulldogs (Boston)",
     "name": "Bulldogs (Boston)",
+    "display_name": "Pottsville Maroons",
+    "metro": "Pottsville",
+    "metro_slug": "pottsville",
     "city": "Pottsville/Boston",
     "team_historical": "Maroons/Bulldogs (1925-29)",
     "league": "NFL",
@@ -98,6 +116,9 @@
   {
     "canonical": "Colts (D)",
     "name": "Colts (D)",
+    "display_name": "Baltimore Colts (1950)",
+    "metro": "Washington-Baltimore",
+    "metro_slug": "washington-baltimore",
     "city": "Baltimore",
     "team_historical": "Colts (1947-50)",
     "league": "AAFC/NFL",
@@ -114,6 +135,9 @@
   {
     "canonical": "Texans (D)",
     "name": "Texans (D)",
+    "display_name": "Dallas Texans (1952)",
+    "metro": "Dallas",
+    "metro_slug": "dallas",
     "city": "Boston/New York/Dallas",
     "team_historical": "Yanks/Bulldogs/Texans (1944-52)",
     "league": "NFL",
@@ -130,6 +154,9 @@
   {
     "canonical": "Dodgers",
     "name": "Dodgers",
+    "display_name": "Brooklyn Dodgers (NFL)",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "Brooklyn",
     "team_historical": "Dodgers (1946-1948)",
     "league": "AAFC",
@@ -146,6 +173,9 @@
   {
     "canonical": "Stapletons",
     "name": "Stapletons",
+    "display_name": "Staten Island Stapletons",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "Brooklyn/New York/Staten Island",
     "team_historical": "Lions/Yankees/Stapletons (1926-32)",
     "league": "NFL",
@@ -162,6 +192,9 @@
   {
     "canonical": "Bills (D)",
     "name": "Bills (D)",
+    "display_name": "Buffalo Bills (AAFC)",
+    "metro": "Buffalo",
+    "metro_slug": "buffalo",
     "city": "Buffalo",
     "team_historical": "Bisons/Bills (1946-1949)",
     "league": "AAFC",
@@ -178,6 +211,9 @@
   {
     "canonical": "Bisons",
     "name": "Bisons",
+    "display_name": "Buffalo Bisons",
+    "metro": "Buffalo",
+    "metro_slug": "buffalo",
     "city": "Buffalo",
     "team_historical": "All-Americans/Rangers/Bisons (1920-27,29)",
     "league": "APFA/NFL",
@@ -194,6 +230,9 @@
   {
     "canonical": "Hornets",
     "name": "Hornets",
+    "display_name": "Chicago Hornets",
+    "metro": "Chicago",
+    "metro_slug": "chicago",
     "city": "Chicago",
     "team_historical": "Rockets/Hornets (1946-1949)",
     "league": "AAFC",
@@ -210,6 +249,9 @@
   {
     "canonical": "Tigers (Chi)",
     "name": "Tigers (Chi)",
+    "display_name": "Chicago Tigers",
+    "metro": "Chicago",
+    "metro_slug": "chicago",
     "city": "Chicago",
     "team_historical": "Tigers (1920)",
     "league": "APFA",
@@ -226,6 +268,9 @@
   {
     "canonical": "Carpitts",
     "name": "Carpitts",
+    "display_name": "Card-Pitt (1944)",
+    "metro": "Pittsburgh",
+    "metro_slug": "pittsburgh",
     "city": "Chicago-Pittsburgh",
     "team_historical": "Car-Pitts (1944)",
     "league": "NFL",
@@ -242,6 +287,9 @@
   {
     "canonical": "Celts",
     "name": "Celts",
+    "display_name": "Cincinnati Celts",
+    "metro": "Cincinnati",
+    "metro_slug": "cincinnati",
     "city": "Cincinnati",
     "team_historical": "Celts (1921)",
     "league": "APFA",
@@ -258,6 +306,9 @@
   {
     "canonical": "Gunners",
     "name": "Gunners",
+    "display_name": "Cincinnati Reds",
+    "metro": "Cincinnati",
+    "metro_slug": "cincinnati",
     "city": "Cincinnati/St.Louis",
     "team_historical": "Reds/Gunners (1933-34)",
     "league": "NFL",
@@ -274,6 +325,9 @@
   {
     "canonical": "Tigers (Clev)",
     "name": "Tigers (Clev)",
+    "display_name": "Cleveland Tigers",
+    "metro": "Cleveland",
+    "metro_slug": "cleveland",
     "city": "Cleveland",
     "team_historical": "Tigers/Indians (1920-21)",
     "league": "APFA",
@@ -290,6 +344,9 @@
   {
     "canonical": "Indians (Clev)",
     "name": "Indians (Clev)",
+    "display_name": "Cleveland Indians (NFL)",
+    "metro": "Cleveland",
+    "metro_slug": "cleveland",
     "city": "Cleveland",
     "team_historical": "Indians (1931)",
     "league": "NFL",
@@ -306,6 +363,9 @@
   {
     "canonical": "Tigers (Colm)",
     "name": "Tigers (Colm)",
+    "display_name": "Columbus Panhandles",
+    "metro": "Columbus",
+    "metro_slug": "columbus",
     "city": "Columbus",
     "team_historical": "Panhandles/Tigers (1920-26)",
     "league": "APFA/NFL",
@@ -322,6 +382,9 @@
   {
     "canonical": "Tigers",
     "name": "Tigers",
+    "display_name": "Dayton Triangles",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "Dayton/Brooklyn",
     "team_historical": "Triangles/Dodgers/Tigers (1920-44)",
     "league": "APFA/NFL",
@@ -338,6 +401,9 @@
   {
     "canonical": "Panthers (Det)",
     "name": "Panthers (Det)",
+    "display_name": "Detroit Panthers",
+    "metro": "Detroit",
+    "metro_slug": "detroit",
     "city": "Detroit",
     "team_historical": "Panthers (1925-26)",
     "league": "NFL",
@@ -354,6 +420,9 @@
   {
     "canonical": "Heralds",
     "name": "Heralds",
+    "display_name": "Detroit Heralds",
+    "metro": "Detroit",
+    "metro_slug": "detroit",
     "city": "Detroit",
     "team_historical": "Heralds (1920-21)",
     "league": "APFA",
@@ -370,6 +439,9 @@
   {
     "canonical": "Tornadoes (NJ)",
     "name": "Tornadoes (NJ)",
+    "display_name": "Duluth Eskimos",
+    "metro": "Duluth",
+    "metro_slug": "duluth",
     "city": "Duluth/Orange/Newark",
     "team_historical": "Kelleys/Eskimos/Tornadoes (1923-27,29-30)",
     "league": "NFL",
@@ -386,6 +458,9 @@
   {
     "canonical": "Crimson Giants",
     "name": "Crimson Giants",
+    "display_name": "Evansville Crimson Giants",
+    "metro": "Evansville",
+    "metro_slug": "evansville",
     "city": "Evansville",
     "team_historical": "Crimson Giants (1921-22)",
     "league": "APFA/NFL",
@@ -402,6 +477,9 @@
   {
     "canonical": "Pros",
     "name": "Pros",
+    "display_name": "Hammond Pros",
+    "metro": "Chicago",
+    "metro_slug": "chicago",
     "city": "Hammond",
     "team_historical": "Pros (1920-26)",
     "league": "APFA/NFL",
@@ -418,6 +496,9 @@
   {
     "canonical": "Blues",
     "name": "Blues",
+    "display_name": "Hartford Blues",
+    "metro": "Hartford",
+    "metro_slug": "hartford",
     "city": "Hartford",
     "team_historical": "Blues (1926)",
     "league": "NFL",
@@ -434,6 +515,9 @@
   {
     "canonical": "Cowboys (KC)",
     "name": "Cowboys (KC)",
+    "display_name": "Kansas City Cowboys",
+    "metro": "Kansas City",
+    "metro_slug": "kansas-city",
     "city": "Kansas City",
     "team_historical": "Blues/Cowboys (1924-26)",
     "league": "NFL",
@@ -450,6 +534,9 @@
   {
     "canonical": "Buccaneers (LA)",
     "name": "Buccaneers (LA)",
+    "display_name": "Los Angeles Buccaneers",
+    "metro": "Los Angeles",
+    "metro_slug": "los-angeles",
     "city": "Los Angeles",
     "team_historical": "Buccaneers (1926)",
     "league": "NFL",
@@ -466,6 +553,9 @@
   {
     "canonical": "Dons",
     "name": "Dons",
+    "display_name": "Los Angeles Dons (AAFC)",
+    "metro": "Los Angeles",
+    "metro_slug": "los-angeles",
     "city": "Los Angeles",
     "team_historical": "Dons (1946-49)",
     "league": "AAFC",
@@ -482,6 +572,9 @@
   {
     "canonical": "Colonels",
     "name": "Colonels",
+    "display_name": "Louisville Colonels",
+    "metro": "Louisville",
+    "metro_slug": "louisville",
     "city": "Louisville",
     "team_historical": "Brecks/Colonels (1921-23, 26)",
     "league": "APFA/NFL",
@@ -498,6 +591,9 @@
   {
     "canonical": "Seahawks (Mia)",
     "name": "Seahawks (Mia)",
+    "display_name": "Miami Seahawks (AAFC)",
+    "metro": "Miami",
+    "metro_slug": "miami",
     "city": "Miami",
     "team_historical": "Seahawks (1946)",
     "league": "AAFC",
@@ -514,6 +610,9 @@
   {
     "canonical": "Badgers",
     "name": "Badgers",
+    "display_name": "Milwaukee Badgers",
+    "metro": "Milwaukee",
+    "metro_slug": "milwaukee",
     "city": "Milwaukee",
     "team_historical": "Badgers (1922-26)",
     "league": "NFL",
@@ -530,6 +629,9 @@
   {
     "canonical": "Redjackets",
     "name": "Redjackets",
+    "display_name": "Minneapolis Red Jackets",
+    "metro": "Minneapolis",
+    "metro_slug": "minneapolis",
     "city": "Minneapolis",
     "team_historical": "Marines/Redjackets (1921-24,29-30)",
     "league": "APFA/NFL",
@@ -546,6 +648,9 @@
   {
     "canonical": "Flyers",
     "name": "Flyers",
+    "display_name": "Muncie Flyers",
+    "metro": "Indianapolis",
+    "metro_slug": "indianapolis",
     "city": "Muncie",
     "team_historical": "Flyers (1920-21)",
     "league": "APFA",
@@ -562,6 +667,9 @@
   {
     "canonical": "Brickley's Giants",
     "name": "Brickley's Giants",
+    "display_name": "New York Brickley's Giants",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "New York",
     "team_historical": "Brickley's Giants (1921)",
     "league": "APFA",
@@ -578,6 +686,9 @@
   {
     "canonical": "Yankees",
     "name": "Yankees",
+    "display_name": "New York Yankees (AAFC)",
+    "metro": "New York",
+    "metro_slug": "new-york",
     "city": "New York/Brk-New York",
     "team_historical": "Yankees (1946-1949)",
     "league": "AAFC",
@@ -594,6 +705,9 @@
   {
     "canonical": "Indians (Marion)",
     "name": "Indians (Marion)",
+    "display_name": "Oorang Indians",
+    "metro": "Columbus",
+    "metro_slug": "columbus",
     "city": "Oorang",
     "team_historical": "Indians (1922-23)",
     "league": "NFL",
@@ -610,6 +724,9 @@
   {
     "canonical": "Steagles",
     "name": "Steagles",
+    "display_name": "Phil-Pitt Steagles",
+    "metro": "Pittsburgh",
+    "metro_slug": "pittsburgh",
     "city": "Philadelphia-Pittsburgh",
     "team_historical": "Steagles (1943)",
     "league": "NFL",
@@ -626,6 +743,9 @@
   {
     "canonical": "Tornadoes",
     "name": "Tornadoes",
+    "display_name": "Racine Tornadoes",
+    "metro": "Milwaukee",
+    "metro_slug": "milwaukee",
     "city": "Racine",
     "team_historical": "Legion/Tornadoes (1922-24, 26)",
     "league": "NFL",
@@ -642,6 +762,9 @@
   {
     "canonical": "Jeffersons",
     "name": "Jeffersons",
+    "display_name": "Rochester Jeffersons",
+    "metro": "Rochester",
+    "metro_slug": "rochester",
     "city": "Rochester",
     "team_historical": "Jeffersons (1920-25)",
     "league": "APFA/NFL",
@@ -658,6 +781,9 @@
   {
     "canonical": "Independents",
     "name": "Independents",
+    "display_name": "Rock Island Independents",
+    "metro": "Davenport",
+    "metro_slug": "davenport",
     "city": "Rock Island",
     "team_historical": "Independents (1920-25)",
     "league": "APFA/NFL",
@@ -674,6 +800,9 @@
   {
     "canonical": "All-Stars",
     "name": "All-Stars",
+    "display_name": "St. Louis All-Stars",
+    "metro": "St. Louis",
+    "metro_slug": "st-louis",
     "city": "St. Louis",
     "team_historical": "All-Stars (1923)",
     "league": "NFL",
@@ -690,6 +819,9 @@
   {
     "canonical": "Maroons",
     "name": "Maroons",
+    "display_name": "Toledo Maroons",
+    "metro": "Toledo",
+    "metro_slug": "toledo",
     "city": "Toledo/Kenosha",
     "team_historical": "Maroons (1922-24)",
     "league": "NFL",
@@ -706,6 +838,9 @@
   {
     "canonical": "Kardex",
     "name": "Kardex",
+    "display_name": "Tonawanda Kardex",
+    "metro": "Buffalo",
+    "metro_slug": "buffalo",
     "city": "Tonawanda",
     "team_historical": "Kardex (1921)",
     "league": "APFA",
@@ -722,6 +857,9 @@
   {
     "canonical": "Senators (W)",
     "name": "Senators (W)",
+    "display_name": "Washington Senators (NFL)",
+    "metro": "Washington-Baltimore",
+    "metro_slug": "washington-baltimore",
     "city": "Washington",
     "team_historical": "Senators (1921)",
     "league": "APFA",

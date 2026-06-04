@@ -115,7 +115,7 @@ TOURNAMENT_HUBS = [
     # Other Tournaments hub: surfaces the heterogeneous bucket the workbook
     # lumps under the "Other Tourna" flag — Olympic Football (pre-1930),
     # Central European International Cup, Pan-American Championship, the UEFA
-    # and CONCACAF Nations League Finals, the King Hassan II Tournament, and
+    # and CONCACAF Nations League Finals, the Tournoi de France, and
     # the 1960 European Nations Group. The OTHER_TOURNAMENT_NAMES map drives
     # the per-edition label so the page never reads as a flat "Other 1936".
     {
@@ -280,6 +280,38 @@ def read_int_totals(wb):
     return teams
 
 
+# Last-known ELO/FIFA snapshot dates. Used only as a per-field fallback when
+# the workbook header cell is empty, so the "as of" caption never goes blank.
+FALLBACK_RANK_SNAPSHOTS = {"elo": "2026-05-14", "fifa": "2026-04-01"}
+
+
+def _fmt_snapshot_date(v):
+    """Normalize an Int Totals 'as of' date cell to YYYY-MM-DD. Returns None
+    for empty/unparseable cells so the caller can fall back."""
+    if v is None:
+        return None
+    if hasattr(v, "strftime"):
+        return v.strftime("%Y-%m-%d")
+    s = str(v).strip()
+    return s or None
+
+
+def read_rank_snapshots(wb):
+    """ELO (D1) and FIFA (E1) snapshot dates from the Int Totals header row.
+    Falls back per-field to the last-known dates so a blank cell never blanks
+    the 'as of' caption on /teams/national and the team pages."""
+    ws = wb["Int Totals"]
+    first = ()
+    for r in ws.iter_rows(min_row=1, max_row=1, values_only=True):
+        first = r
+        break
+    cell = lambda i: first[i] if i < len(first) else None
+    return {
+        "elo": _fmt_snapshot_date(cell(3)) or FALLBACK_RANK_SNAPSHOTS["elo"],   # D1
+        "fifa": _fmt_snapshot_date(cell(4)) or FALLBACK_RANK_SNAPSHOTS["fifa"],  # E1
+    }
+
+
 def read_int_summary(wb):
     """Per-team-per-tournament-edition appearances. One row per (Team, Year,
     tournament-category) tuple."""
@@ -438,7 +470,7 @@ def tournament_label_for(year, category, continent=None):
 #    (also called Coppa Internazionale / Dr. Gero Cup), the de facto
 #    European championship before the Euros launched in 1960.
 #  - 1952-1960 mixed-continent rows are the Pan-American Championship era.
-#  - 1997 World-flagged is the King Hassan II Tournament (Morocco invitational).
+#  - 1997 World-flagged is the Tournoi de France (France invitational).
 #  - 2019-2025 Europe/North America rows are the UEFA / CONCACAF Nations
 #    League Finals.
 OTHER_TOURNAMENT_NAMES = {
@@ -457,7 +489,7 @@ OTHER_TOURNAMENT_NAMES = {
     (1956, "World"): "1956 Pan-American Championship",
     (1960, "World"): "1960 Pan-American Championship",
     (1960, "Europe"): "1960 European Nations Group",
-    (1997, "World"): "1997 King Hassan II Tournament",
+    (1997, "World"): "1997 Tournoi de France",
     (2019, "Europe"): "2019 UEFA Nations League Finals",
     (2021, "Europe"): "2021 UEFA Nations League Finals",
     (2021, "North America"): "2021 CONCACAF Nations League Finals",
@@ -1327,6 +1359,10 @@ def main():
     totals_rows = read_int_totals(wb)
     print(f"  {len(totals_rows)} active team rows")
 
+    print("\nReading rank snapshot dates (Int Totals D1/E1)...")
+    rank_snapshots = read_rank_snapshots(wb)
+    print(f"  ELO as of {rank_snapshots['elo']}, FIFA as of {rank_snapshots['fifa']}")
+
     print("\nReading Int Summary...")
     summary_rows = read_int_summary(wb)
     print(f"  {len(summary_rows)} appearance rows")
@@ -1404,10 +1440,7 @@ def main():
     payload = {
         "generated_at": __import__("datetime").datetime.now().isoformat(timespec="seconds"),
         "source": str(src),
-        "rank_snapshots": {
-            "elo": "2026-05-14",
-            "fifa": "2026-04-01",
-        },
+        "rank_snapshots": rank_snapshots,
         "teams": teams,
     }
 

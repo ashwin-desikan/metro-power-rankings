@@ -37,7 +37,8 @@ export type Franchise = {
   best_main_div_seasons: number;
   sf_appearances: number;
   champ_appearances: number;         // Stanley Cup Final apps
-  championships: number;
+  championships: number;            // Stanley Cups
+  other_championships?: number;     // WHA Avco + pre-NHL league titles
   last_championship: number | null;
   last_champ_app: number | null;
   last_sf_app: number | null;
@@ -58,6 +59,10 @@ export type HistoricalFranchise = {
   slug: string;
   canonical: string;
   name: string;
+  display_name?: string;
+  metro?: string;
+  metro_slug?: string | null;
+  metros?: { name: string; slug: string | null }[];
   last_city: string;
   last_team: string;
   founded: number | null;
@@ -71,6 +76,7 @@ export type HistoricalFranchise = {
   all_time_otl: number;
   all_time_pts: number;
   championships: number;
+  other_championships?: number;
   champ_appearances: number;
   sf_appearances: number;
   seasons: number;
@@ -408,4 +414,38 @@ export function seasonLabel(year: number): string {
   // 2024 = '2023-24', 2026 = '2025-26'.
   const start = year - 1;
   return `${start}-${String(year).slice(-2)}`;
+}
+
+// --- Stanley Cup presentation games (Detailed Playoffs, Cup Awarded col) ---
+export type CupPresentationGame = {
+  year: number;
+  au: number;
+  date: string | null;
+  round: string;
+  winner_canonical: string;
+  winner_slug: string | null;
+  winner_city: string;
+  winner_team: string;
+  loser_canonical: string;
+  loser_slug: string | null;
+  loser_city: string;
+  loser_team: string;
+  winner_score: number | null;
+  loser_score: number | null;
+  ot: boolean;
+  arena: string;
+  arena_city: string;
+  arena_state: string;
+  league_winner: boolean;
+};
+
+type CupPresentationData = {
+  allTime: CupPresentationGame[];
+  byDecade: Record<string, CupPresentationGame[]>;
+};
+
+let _cupGames: CupPresentationData | null = null;
+export function getCupPresentationGames(): CupPresentationData {
+  if (!_cupGames) _cupGames = read<CupPresentationData>("cup-presentation-games.json");
+  return _cupGames;
 }
