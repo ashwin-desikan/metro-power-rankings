@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/mlb";
+import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
+
+type Row = TopGameLeagueRow & { video?: GameVideo };
 
 type Props = {
-  allTime: TopGameLeagueRow[];
-  byDecade: Record<string, TopGameLeagueRow[]>;
+  allTime: Row[];
+  byDecade: Record<string, Row[]>;
 };
 
 function decadeKeys(byDecade: Record<string, TopGameLeagueRow[]>): string[] {
@@ -121,6 +124,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                       </div>
                     );
                   })() : null}
+                  {g.video ? <WatchButton video={g.video} /> : null}
                 </td>
                 <td className="py-2 text-right font-semibold">{g.game_score.toFixed(3)}</td>
               </tr>

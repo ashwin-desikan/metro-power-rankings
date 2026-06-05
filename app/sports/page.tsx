@@ -60,6 +60,12 @@ function loadJson<T>(rel: string): T {
 // across leagues rather than belonging to any one of them.
 const DEEP_DIVES: DeepDive[] = [
   {
+    href: "/sports/games",
+    title: "The Greatest Games",
+    tag: "Cross-sport",
+    desc: "The top games of all-time by Game Score across the NFL, NBA and MLB, plus every Stanley Cup presentation game.",
+  },
+  {
     href: "/sports/valuations",
     title: "Team Valuations",
     tag: "Cross-sport",

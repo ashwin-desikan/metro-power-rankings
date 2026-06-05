@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/nfl";
+import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
 
 // Replace the bare "Super Bowl" round label with a numbered one ("SB 50"
 // for the 2015 season, "SB " + roman for every other Super Bowl). Other
@@ -53,9 +54,11 @@ function toRoman(num: number): string {
 }
 
 
+type Row = TopGameLeagueRow & { video?: GameVideo };
+
 type Props = {
-  allTime: TopGameLeagueRow[];
-  byDecade: Record<string, TopGameLeagueRow[]>;
+  allTime: Row[];
+  byDecade: Record<string, Row[]>;
 };
 
 // Decade keys are integer-strings like "1920", "1930", ..., "2020".
@@ -171,6 +174,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                       ) : null}
                     </div>
                   ) : null}
+                  {g.video ? <WatchButton video={g.video} /> : null}
                 </td>
                 <td className="py-2 text-right font-semibold">{g.du.toFixed(3)}</td>
               </tr>

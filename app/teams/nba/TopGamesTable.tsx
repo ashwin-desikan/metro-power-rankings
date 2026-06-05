@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/nba";
+import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
 
 const US_STATE_ABBR: Record<string, string> = {
   Alabama: "AL", Alaska: "AK", Arizona: "AZ", Arkansas: "AR",
@@ -50,9 +51,11 @@ function decadeKeys(byDecade: Record<string, TopGameLeagueRow[]>): string[] {
     .sort((a, b) => Number(b) - Number(a));
 }
 
+type Row = TopGameLeagueRow & { video?: GameVideo };
+
 type Props = {
-  allTime: TopGameLeagueRow[];
-  byDecade: Record<string, TopGameLeagueRow[]>;
+  allTime: Row[];
+  byDecade: Record<string, Row[]>;
 };
 
 export default function TopGamesTable({ allTime, byDecade }: Props) {
@@ -192,6 +195,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                       ) : null}
                     </div>
                   ) : null}
+                  {g.video ? <WatchButton video={g.video} /> : null}
                 </td>
                 <td className="py-2 text-right font-semibold">
                   {g.game_score != null ? g.game_score.toFixed(3) : "—"}

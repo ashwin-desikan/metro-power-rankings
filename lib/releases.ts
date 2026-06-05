@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-05",
+    headline: "The Greatest Games hub in Sports Deep-Dives",
+    items: [
+      "New Greatest Games hub at /sports/games gathers the top NFL, NBA and MLB games by Game Score plus every Stanley Cup presentation game, each filterable by decade and linked to its franchise.",
+      "It sits in the Sports Deep-Dives section with a by-sport view live now; a unified cross-sport ranking is flagged as coming, with club, international, and college games next on the roadmap.",
+      "Marquee rows in the NFL, NBA and MLB top-games tables now carry an inline Watch button (official, channel-verified clips; embedding-disabled ones link out), plus the NHL's 30-years-of-Cup-presentations reel.",
+    ],
+  },
+  {
     date: "2026-06-04",
     headline: "Team Valuations board, International ratings refresh, sports polish",
     items: [
