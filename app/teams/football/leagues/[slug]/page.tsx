@@ -113,11 +113,26 @@ export default async function FootballLeagueHubPage({ params }: Props) {
 
       <HubNav
         items={[
+          ...(hub.country === "England" ? [{ label: "Domestic Cups", href: "#domestic-cups" }] : []),
           { label: "Current Standings", href: "#standings" },
           { label: "Map", href: "#map" },
           { label: "All-Time Champions", href: "#champions" },
         ]}
       />
+      {hub.country === "England" && (
+        <section id="domestic-cups" className="mb-8">
+          <h2 className="text-lg font-semibold mb-3">Domestic cups</h2>
+          <Link
+            href="/teams/football/cups"
+            className="block rounded-xl border p-4 transition hover:border-[var(--accent)] max-w-md"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="font-semibold">FA Cup &amp; League Cup</div>
+            <div className="text-xs text-[var(--text-muted)] mt-1">Every semifinal and final, season by season, plus the all-time SF / final / trophy table.</div>
+            <div className="text-xs text-[var(--text-muted)] mt-2 tabular-nums">FA Cup from 1871-72 &middot; League Cup from 1960-61</div>
+          </Link>
+        </section>
+      )}
       <div id="standings">
         <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
       </div>

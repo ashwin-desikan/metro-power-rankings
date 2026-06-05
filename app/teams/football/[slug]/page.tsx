@@ -10,6 +10,7 @@ import {
   getMlsSeasonsForClub,
   getFootballClubByName,
   getCupsForClub,
+  getCupSemifinalsForClub,
   getEuropeForClub,
   monogramForFootball,
   EUROPEAN_COMP_NAMES,
@@ -82,6 +83,7 @@ export default async function FootballClubPage({ params }: Props) {
     }
   }
   const cups = getCupsForClub(slug);
+  const cupSemis = getCupSemifinalsForClub(slug);
   const europe = getEuropeForClub(slug);
   const tierLabels = COUNTRY_TIER_LABELS[club.country] ?? {};
 
@@ -224,6 +226,7 @@ export default async function FootballClubPage({ params }: Props) {
           country={club.country}
           europe={europe}
           cups={cups}
+          semifinals={cupSemis}
         />
       )}
 
@@ -387,12 +390,14 @@ function SeasonsTable({
   country,
   europe,
   cups,
+  semifinals,
 }: {
   seasons: FootballSeason[];
   tierLabels: Record<number, string>;
   country: string;
   europe: FootballEuropeEntry[];
   cups: FootballCupFinal[];
+  semifinals: { year: number; kind: "major" | "minor" }[];
 }) {
   // Index European entries by year for O(1) lookup per season row.
   // Within a single season, sort by competition tier so the row reads
@@ -423,6 +428,14 @@ function SeasonsTable({
   // League when both exist.
   for (const arr of cupsByYear.values()) {
     arr.sort((a, b) => (a.kind === "major" ? -1 : 1) - (b.kind === "major" ? -1 : 1));
+  }
+  // Semifinal appearances (FA Cup / League Cup) that did NOT reach the final
+  // that season, from domestic-cups.json. Rendered as a muted "FA SF" / "Lg
+  // Cup SF" marker alongside any final result.
+  const sfByYear = new Map<number, Set<"major" | "minor">>();
+  for (const sf of semifinals) {
+    if (!sfByYear.has(sf.year)) sfByYear.set(sf.year, new Set());
+    sfByYear.get(sf.year)!.add(sf.kind);
   }
   const cupShortLabels = DOMESTIC_CUP_SHORT_LABELS[country] ?? DOMESTIC_CUP_FALLBACK;
   const cupFullNames = DOMESTIC_CUP_FULL_NAMES[country];
@@ -545,7 +558,10 @@ function SeasonsTable({
                   <td className="py-1.5 text-xs">
                     {(() => {
                       const entries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];
-                      if (entries.length === 0) return null;
+                      const sfKinds = (s.year !== null ? sfByYear.get(s.year) : null) ?? new Set<"major" | "minor">();
+                      const finalKinds = new Set(entries.map((e) => e.kind));
+                      const sfOnly = Array.from(sfKinds).filter((k) => !finalKinds.has(k));
+                      if (entries.length === 0 && sfOnly.length === 0) return null;
                       return (
                         <span className="inline-flex flex-wrap gap-1">
                           {entries.map((c, ci) => {
@@ -586,6 +602,20 @@ function SeasonsTable({
                                   <span aria-hidden className="mr-0.5">☆</span>
                                 )}
                                 {shortLabel}
+                              </span>
+                            );
+                          })}
+                          {sfOnly.map((k, ki) => {
+                            const label = k === "major" ? cupShortLabels.major : (cupShortLabels.minor ?? "Cup");
+                            const full = cupFullNames ? (k === "major" ? cupFullNames.major : cupFullNames.minor) : "Domestic cup";
+                            return (
+                              <span
+                                key={"sf" + ki}
+                                className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+                                style={{ background: "transparent", color: "var(--text-dim)", boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.30)" }}
+                                title={`${full}: reached the semifinal`}
+                              >
+                                {label} SF
                               </span>
                             );
                           })}

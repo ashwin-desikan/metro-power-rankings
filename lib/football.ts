@@ -381,15 +381,24 @@ export function getAllClubs(): FootballClub[] {
 }
 
 export function getAllClubSlugs(): string[] {
-  return getIndex().clubs.map((c) => c.slug);
+  return [
+    ...getIndex().clubs.map((c) => c.slug),
+    ...getDomesticCups().new_clubs.map((n) => n.slug),
+  ];
 }
 
 export function getClubBySlug(slug: string): FootballClub | null {
-  return getIndex().clubs.find((c) => c.slug === slug) ?? null;
+  const c = getIndex().clubs.find((c) => c.slug === slug);
+  if (c) return c;
+  const n = newClubsBySlug()[slug];
+  return n ? synthCupClub(n) : null;
 }
 
 export function getSeasonsForClub(slug: string): FootballSeason[] {
-  return getSeasonsMap()[slug] ?? [];
+  const rows = getSeasonsMap()[slug];
+  if (rows && rows.length) return rows;
+  const n = newClubsBySlug()[slug];
+  return n ? synthCupSeasons(slug, n) : (rows ?? []);
 }
 
 export type MlsClubSeason = {
@@ -419,11 +428,125 @@ export function getMlsSeasonsForClub(slug: string): MlsClubSeason[] {
 }
 
 export function getCupsForClub(slug: string): FootballCupFinal[] {
-  return getCupsMap()[slug] ?? [];
+  const c = getCupsMap()[slug];
+  if (c && c.length) return c;
+  const n = newClubsBySlug()[slug];
+  return n ? synthCupFinals(slug, n) : (c ?? []);
 }
 
 export function getEuropeForClub(slug: string): FootballEuropeEntry[] {
   return getEuropeMap()[slug] ?? [];
+}
+
+// ---------- Domestic cups (FA Cup / League Cup) ----------
+// Sourced from domestic-cups.json (built by scripts/build-domestic-cups-data.py
+// from the FACup-LgCup SF sheet). Powers the /teams/football/cups hub, the
+// per-season semifinal markers in the club season table, and the 14 cup-only
+// club pages (Victorian amateurs) that have no canonical index entry.
+export type DomesticCupMatch = {
+  round: string; date: string | null; team: string; team_slug: string | null;
+  opp: string | null; opp_slug: string | null; for: number | null; ag: number | null;
+  wdl: string | null; trophy: boolean; note: string | null; venue: string | null; metro: string | null;
+};
+export type DomesticCupSeason = {
+  season: string; year: number | null;
+  champion: string | null; champion_slug: string | null;
+  runner_up: string | null; runner_up_slug: string | null;
+  matches: DomesticCupMatch[];
+};
+export type DomesticCupCompetition = {
+  name: string; kind: "major" | "minor"; first_year: number; last_year: number;
+  seasons: DomesticCupSeason[];
+};
+export type DomesticCupRun = {
+  year: number | null; season: string; comp: string; comp_id: string;
+  kind: "major" | "minor"; stage: "winner" | "runner_up" | "semifinal";
+};
+export type DomesticCupNewClub = {
+  slug: string; cur_name: string; country: string; metro: string | null;
+  county: string | null; continent: string | null;
+  first_year: number | null; last_year: number | null;
+  fa_titles: number; lg_titles: number;
+};
+export type DomesticCupAggregateRow = {
+  slug: string; cur_name: string;
+  fa_sf: number; fa_f: number; fa_cups: number;
+  lg_sf: number; lg_f: number; lg_cups: number;
+  sf: number; f: number; cups: number;
+  fa_sf_last: number | null; fa_f_last: number | null; fa_cups_last: number | null;
+  lg_sf_last: number | null; lg_f_last: number | null; lg_cups_last: number | null;
+  sf_last: number | null; f_last: number | null; cups_last: number | null;
+};
+type DomesticCupsFile = {
+  competitions: Record<string, DomesticCupCompetition>;
+  by_club: Record<string, DomesticCupRun[]>;
+  new_clubs: DomesticCupNewClub[];
+  aggregate: DomesticCupAggregateRow[];
+};
+let _domCupsCache: DomesticCupsFile | null = null;
+function getDomesticCups(): DomesticCupsFile {
+  if (!_domCupsCache) {
+    _domCupsCache = loadJson<DomesticCupsFile>("domestic-cups.json", { competitions: {}, by_club: {}, new_clubs: [], aggregate: [] });
+  }
+  return _domCupsCache;
+}
+export function getDomesticCupCompetitions(): Record<string, DomesticCupCompetition> {
+  return getDomesticCups().competitions;
+}
+export function getDomesticCupCompetition(id: string): DomesticCupCompetition | null {
+  return getDomesticCups().competitions[id] ?? null;
+}
+export function getDomesticCupAggregate(): DomesticCupAggregateRow[] {
+  return getDomesticCups().aggregate;
+}
+export function getCupRunsForClub(slug: string): DomesticCupRun[] {
+  return getDomesticCups().by_club[slug] ?? [];
+}
+export function getCupSemifinalsForClub(slug: string): { year: number; kind: "major" | "minor" }[] {
+  return getCupRunsForClub(slug)
+    .filter((r) => r.stage === "semifinal" && r.year !== null)
+    .map((r) => ({ year: r.year as number, kind: r.kind }));
+}
+let _newClubsBySlug: Record<string, DomesticCupNewClub> | null = null;
+function newClubsBySlug(): Record<string, DomesticCupNewClub> {
+  if (!_newClubsBySlug) {
+    _newClubsBySlug = {};
+    for (const n of getDomesticCups().new_clubs) _newClubsBySlug[n.slug] = n;
+  }
+  return _newClubsBySlug;
+}
+export function isCupOnlyClub(slug: string): boolean {
+  return slug in newClubsBySlug();
+}
+function synthCupClub(n: DomesticCupNewClub): FootballClub {
+  const runs = getCupRunsForClub(n.slug);
+  const lastTrophy = runs.filter((r) => r.stage === "winner").reduce((m, r) => Math.max(m, r.year ?? 0), 0) || null;
+  return {
+    slug: n.slug, cur_name: n.cur_name, country: n.country, city: null,
+    metro: n.metro, county: n.county, continent: n.continent, lat: null, lng: null,
+    tiers: [], first_year: n.first_year, last_year: n.last_year,
+    top_flight_seasons: 0, lower_tier_seasons: 0, league_seasons: 0, playoff_appearances: 0,
+    totals: { major_cups: n.fa_titles || undefined, minor_cups: n.lg_titles || undefined, last_trophy: lastTrophy },
+    tier_by_year: {}, country_by_year: {},
+  };
+}
+function synthCupSeasons(slug: string, n: DomesticCupNewClub): FootballSeason[] {
+  const years = Array.from(new Set(getCupRunsForClub(slug).map((r) => r.year).filter((y): y is number => y !== null)));
+  years.sort((a, b) => b - a);
+  return years.map((y) => ({
+    slug, cur_name: n.cur_name, year: y, country: n.country, league: null, division: null,
+    level: null, team: n.cur_name, place: null, w: null, d: null, l: null, pts: null,
+    gf: null, ga: null, gd: null, matches: null, format: "league" as const, eur_qual: null,
+    promoted: false, relegated: false, champion: false, final: false, playoffs: false, playoff_final: false,
+  }));
+}
+function synthCupFinals(slug: string, n: DomesticCupNewClub): FootballCupFinal[] {
+  return getCupRunsForClub(slug)
+    .filter((r) => r.stage === "winner" || r.stage === "runner_up")
+    .map((r) => ({
+      slug, cur_name: n.cur_name, year: r.year, country: n.country,
+      kind: r.kind, result: (r.stage === "winner" ? "won" : "lost") as "won" | "lost",
+    }));
 }
 
 // Competitions that count as CL/EC titles. Covers the three naming

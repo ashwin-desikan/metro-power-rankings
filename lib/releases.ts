@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-05",
-    headline: "New Sports Deep-Dives: Greatest Games and Geography of Erasure",
+    headline: "Greatest Games, Geography of Erasure, and English Domestic Cups hubs",
     items: [
       "New Greatest Games hub at /sports/games gathers the top NFL, NBA and MLB games by Game Score plus every Stanley Cup presentation game, each filterable by decade and linked to its franchise.",
-      "It sits in the Sports Deep-Dives section with a by-sport view live now; a unified cross-sport ranking is flagged as coming, with club, international, and college games next on the roadmap.",
-      "Marquee rows in the NFL, NBA and MLB top-games tables now carry an inline Watch button (official, channel-verified clips; embedding-disabled ones link out), plus the NHL's 30-years-of-Cup-presentations reel.",
+      "The Greatest Games hub launches with a by-sport view (a unified cross-sport ranking is coming) and inline Watch buttons of channel-verified clips on the NFL/NBA/MLB top-games rows and the NHL Cup-presentation reel.",
       "New Sports Deep-Dive 'The Geography of Erasure' at /sports/geography-of-erasure: 18 ghost franchises, champions erased when their metro was outgrown, grouped by how they died and each tagged on its own team page.",
+      "New English Domestic Cups hub at /teams/football/cups: every FA Cup (from 1871-72) and League Cup (from 1960-61) semifinal and final, with semifinal markers on club season tables and pages for 14 Victorian cup clubs.",
     ],
   },
   {
