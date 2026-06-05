@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
+import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
 import { notFound } from "next/navigation";
 import {
   getAllFranchiseSlugs,
@@ -229,6 +230,7 @@ export default async function FranchisePage({ params }: Props) {
         <div className="flex-1 min-w-0">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.display_name}</h1>
           <ValuationChip league="nba" slug={f.slug} className="mt-2" />
+          <GhostFranchiseTag league="nba" slug={f.slug} className="mt-2" />
           <p className="text-sm text-[var(--text-muted)] mt-1">
             <span className="text-[var(--text-dim)]">Founded:</span>{" "}
             <span className="text-[var(--text)]">{f.founding_year ?? "—"}</span>

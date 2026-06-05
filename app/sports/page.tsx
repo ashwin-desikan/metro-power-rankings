@@ -60,6 +60,12 @@ function loadJson<T>(rel: string): T {
 // across leagues rather than belonging to any one of them.
 const DEEP_DIVES: DeepDive[] = [
   {
+    href: "/sports/geography-of-erasure",
+    title: "The Geography of Erasure",
+    tag: "Ghost franchises",
+    desc: "The champions the map forgot: dominant clubs erased when the metro behind them was outgrown by the modern league.",
+  },
+  {
     href: "/sports/games",
     title: "The Greatest Games",
     tag: "Cross-sport",
