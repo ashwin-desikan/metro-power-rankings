@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 
 // A clip attached to a single game row. videoId plays inline (embeddable,
 // privacy-mode). When a clip has embedding disabled, leave videoId undefined
@@ -82,45 +81,42 @@ export function WatchButton({ video }: { video: GameVideo }) {
         </a>
       ) : null}
 
-      {open && typeof document !== "undefined"
-        ? createPortal(
+      {open ? (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          style={{ background: "rgba(0,0,0,0.82)" }}
+          onClick={() => setOpen(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
             <div
-              className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-              style={{ background: "rgba(0,0,0,0.82)" }}
-              onClick={() => setOpen(false)}
-              role="dialog"
-              aria-modal="true"
+              className="relative w-full overflow-hidden rounded-lg"
+              style={{ aspectRatio: "16 / 9", background: "#000" }}
             >
-              <div className="w-full max-w-3xl" onClick={(e) => e.stopPropagation()}>
-                <div
-                  className="relative w-full overflow-hidden rounded-lg"
-                  style={{ aspectRatio: "16 / 9", background: "#000" }}
-                >
-                  <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src={`https://www.youtube-nocookie.com/embed/${video.videoId}?autoplay=1&rel=0`}
-                    title={video.title}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </div>
-                <div className="mt-2 flex items-center justify-between gap-3 text-xs text-white/85">
-                  <span className="truncate">{video.title}</span>
-                  <button
-                    type="button"
-                    onClick={() => setOpen(false)}
-                    className="rounded border border-white/30 px-2 py-0.5 hover:bg-white/10 whitespace-nowrap"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            </div>,
-            document.body,
-          )
-        : null}
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src={`https://www.youtube-nocookie.com/embed/${video.videoId}?autoplay=1&rel=0`}
+                title={video.title}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <div className="mt-2 flex items-center justify-between gap-3 text-xs text-white/85">
+              <span className="truncate">{video.title}</span>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="rounded border border-white/30 px-2 py-0.5 hover:bg-white/10 whitespace-nowrap"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
