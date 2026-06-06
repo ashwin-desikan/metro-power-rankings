@@ -67,7 +67,7 @@ def bipartite_match(slots, qualified_groups):
     """Assign each third-slot a distinct qualified group from its candidate set."""
     match = {}  # group -> slot
     def try_assign(slot, seen):
-        for g in THIRD_SLOTS[slot]:
+        for g in sorted(THIRD_SLOTS[slot]):
             if g in qualified_groups and g not in seen:
                 seen.add(g)
                 if g not in match or try_assign(match[g], seen):
@@ -81,7 +81,7 @@ def bipartite_match(slots, qualified_groups):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--sims", type=int, default=20000)
+    ap.add_argument("--sims", type=int, default=40000)
     ap.add_argument("--beta", type=float, default=0.50, help="strength->goals sensitivity")
     ap.add_argument("--mu", type=float, default=1.33, help="baseline goals per team")
     ap.add_argument("--blend-market", type=float, default=0.72, help="weight on market vs elo")
@@ -276,7 +276,31 @@ def main():
         "deep_runs": deep,
     }
     outpath = os.path.join(INTL, "wc2026-sim.json")
-    json.dump(out, open(outpath, "w"), indent=1)
+    # Idempotent write: if only the wall-clock timestamps would change, keep the
+    # previous ones so the file stays byte-identical. This lets the CI commit
+    # gate (git diff on this file) correctly skip no-op runs and avoid a
+    # needless full rebuild + deploy.
+    if os.path.exists(outpath):
+        try:
+            old = json.load(open(outpath))
+            def _strip(d):
+                d = json.loads(json.dumps(d))
+                m = d.get("meta", {})
+                m.pop("generated_at", None)
+                m.pop("results_as_of", None)
+                return d
+            if _strip(old) == _strip(out):
+                om = old.get("meta", {})
+                out["meta"]["generated_at"] = om.get("generated_at", out["meta"]["generated_at"])
+                out["meta"]["results_as_of"] = om.get("results_as_of", out["meta"].get("results_as_of"))
+        except Exception:
+            pass
+    tmp = outpath + ".tmp"
+    with open(tmp, "w") as fh:
+        json.dump(out, fh, indent=1)
+        fh.flush()
+        os.fsync(fh.fileno())
+    os.replace(tmp, outpath)
     print("wrote", outpath, "bytes", os.path.getsize(outpath))
     chk = sum(r["p_title"] for r in deep)
     print("sum title %% = %.1f  sum advance = %.1f (target 3200)" %
