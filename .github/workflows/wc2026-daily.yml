@@ -1,0 +1,69 @@
+name: WC2026 daily simulation refresh
+
+# Fetches the latest World Cup 2026 results from ESPN's public feed, reconditions
+# the Monte Carlo simulator, and commits the refreshed JSON. The commit triggers
+# Vercel's normal deploy, so the live numbers update with no manual step.
+# The simulator uses a fixed RNG seed, so output only changes when results
+# change: pre-tournament and on quiet days this produces no commit.
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # 09:00 UTC daily (after late North American kickoffs finish)
+  workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write          # let the built-in GITHUB_TOKEN push the refreshed data
+
+concurrency:
+  group: wc2026-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install numpy
+
+      - name: Fetch ESPN results (day by day across the tournament window)
+        run: |
+          mkdir -p /tmp/espn
+          start=20260611
+          end=20260719
+          today=$(date -u +%Y%m%d)
+          if [ "$today" -lt "$end" ]; then end=$today; fi
+          d=$start
+          while [ "$d" -le "$end" ]; do
+            iso=$(echo "$d" | sed 's/\(....\)\(..\)\(..\)/\1-\2-\3/')
+            curl -sf "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=$d" \
+              -o "/tmp/espn/espn-$d.json" || echo "no data for $d"
+            d=$(date -u -d "$iso +1 day" +%Y%m%d)
+          done
+          ls -la /tmp/espn || true
+
+      - name: Parse results into wc2026-results.json
+        run: python3 scripts/parse-espn-wc2026.py /tmp/espn/*.json
+
+      - name: Rebuild the simulation
+        run: python3 scripts/build-wc2026-simulation.py
+
+      - name: Commit and push only if the projections changed
+        run: |
+          if git diff --quiet -- public/data/international/wc2026-sim.json; then
+            echo "No change in simulation output; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "wc2026-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/international/wc2026-results.json \
+                  public/data/international/wc2026-sim.json
+          git commit -m "Auto: refresh WC2026 projections from latest results"
+          git push
