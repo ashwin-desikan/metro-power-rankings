@@ -1,10 +1,11 @@
 name: WC2026 daily simulation refresh
 
-# Fetches the latest World Cup 2026 results from ESPN's public feed, reconditions
-# the Monte Carlo simulator, and commits the refreshed JSON. The commit triggers
-# Vercel's normal deploy, so the live numbers update with no manual step.
-# The simulator uses a fixed RNG seed, so output only changes when results
-# change: pre-tournament and on quiet days this produces no commit.
+# Pulls the latest World Cup 2026 results, reconditions the Monte Carlo
+# simulator, and commits the refreshed JSON. The commit triggers Vercel's
+# normal deploy, so the live numbers update with no manual step.
+# Primary results source is API-Football (api-sports.io); ESPN's public feed
+# is an automatic fallback if that call fails. The simulator uses a fixed RNG
+# seed, so output only changes when results change: quiet days produce no commit.
 
 on:
   schedule:
@@ -33,24 +34,40 @@ jobs:
       - name: Install dependencies
         run: pip install numpy
 
-      - name: Fetch ESPN results (day by day across the tournament window)
+      - name: Refresh results (api-sports primary, ESPN fallback)
+        env:
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
         run: |
-          mkdir -p /tmp/espn
-          start=20260611
-          end=20260719
-          today=$(date -u +%Y%m%d)
-          if [ "$today" -lt "$end" ]; then end=$today; fi
-          d=$start
-          while [ "$d" -le "$end" ]; do
-            iso=$(echo "$d" | sed 's/\(....\)\(..\)\(..\)/\1-\2-\3/')
-            curl -sf "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=$d" \
-              -o "/tmp/espn/espn-$d.json" || echo "no data for $d"
-            d=$(date -u -d "$iso +1 day" +%Y%m%d)
-          done
-          ls -la /tmp/espn || true
-
-      - name: Parse results into wc2026-results.json
-        run: python3 scripts/parse-espn-wc2026.py /tmp/espn/*.json
+          set -e
+          ok=0
+          if [ -n "$APISPORTS_KEY" ]; then
+            if curl -s --fail -H "x-apisports-key: $APISPORTS_KEY" \
+                 "https://v3.football.api-sports.io/fixtures?league=1&season=2026" \
+                 -o /tmp/apisports.json; then
+              if python3 scripts/parse-apisports-wc2026.py /tmp/apisports.json; then
+                ok=1
+                echo "Results sourced from api-sports."
+              fi
+            fi
+          else
+            echo "APISPORTS_KEY not set; using ESPN."
+          fi
+          if [ "$ok" -ne 1 ]; then
+            echo "Falling back to ESPN public feed."
+            mkdir -p /tmp/espn
+            start=20260611
+            end=20260719
+            today=$(date -u +%Y%m%d)
+            if [ "$today" -lt "$end" ]; then end=$today; fi
+            d=$start
+            while [ "$d" -le "$end" ]; do
+              iso=$(echo "$d" | sed 's/\(....\)\(..\)\(..\)/\1-\2-\3/')
+              curl -sf "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=$d" \
+                -o "/tmp/espn/espn-$d.json" || echo "no data for $d"
+              d=$(date -u -d "$iso +1 day" +%Y%m%d)
+            done
+            python3 scripts/parse-espn-wc2026.py /tmp/espn/*.json
+          fi
 
       - name: Rebuild the simulation
         run: python3 scripts/build-wc2026-simulation.py
