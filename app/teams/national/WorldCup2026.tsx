@@ -1,18 +1,18 @@
 "use client";
 
-// WorldCup2026 — live (well, pre-tournament-static) standings + bracket
-// widget for the International Football index page. Driven by
-// public/data/international/wc2026.json which the ETL refreshes from
-// Int Tournaments. Group Stage layout mirrors MlbStandings (mini-tables
-// per group). Knockout bracket renders per round in horizontal cards
-// rather than a tree view; tree-of-pairings is a v1.1 polish item.
+// WorldCup2026 — standings + bracket widget for the International Football
+// index page. Driven by public/data/international/wc2026.json (real W/D/L/Pts,
+// ETL-refreshed from Int Tournaments) augmented with our Monte Carlo
+// projections from wc2026-sim.json (merged onto the bundle as `sim`). The
+// Group Stage tables carry projected points and round-of-32 odds; a Title
+// Odds table in the same section gives semifinal/final/win probabilities.
 //
-// Collapsed by default to keep the index page concise. Auto-expands when
-// the URL hash is #wc2026 (the deep link from the per-team WC2026 row).
+// Collapsed by default. Auto-expands when the URL hash is #wc2026 (the deep
+// link from the per-team WC2026 row).
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import type { WorldCup2026Bundle } from "@/lib/international";
+import type { WorldCup2026Bundle, WorldCup2026Sim } from "@/lib/international";
 import { flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
 
 type Props = {
@@ -28,17 +28,19 @@ const KNOCKOUT_ROUND_ORDER = [
   "Final",
 ];
 
+function fmtDate(iso: string): string {
+  const d = new Date(iso);
+  return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
 export default function WorldCup2026({ wc }: Props) {
   const startsDate = new Date(wc.tournament.starts_iso);
   const today = new Date();
   const preTournament = today < startsDate;
+  const sim = wc.sim ?? null;
 
   const [open, setOpen] = useState(false);
 
-  // Auto-expand when the URL hash targets this section (e.g. a team page
-  // links to /teams/national#wc2026 from their WC 2026 row). Listening to
-  // hashchange too so an in-page hash update opens the section without a
-  // reload.
   useEffect(() => {
     function syncFromHash() {
       if (typeof window === "undefined") return;
@@ -69,7 +71,7 @@ export default function WorldCup2026({ wc }: Props) {
               {wc.tournament.name}
             </h2>
             <p className="text-xs text-[var(--text-muted)] mt-0.5 truncate">
-              {summaryNote} Group standings and knockout bracket {open ? "below" : "available on expand"}.
+              {summaryNote} Projected points, advancement and title odds {open ? "below" : "available on expand"}.
             </p>
           </div>
           <span
@@ -89,7 +91,8 @@ export default function WorldCup2026({ wc }: Props) {
 
       {open && (
         <div id="wc2026-body" className="mt-4">
-          <GroupStage groups={wc.group_stage} />
+          <GroupStage groups={wc.group_stage} sim={sim} />
+          {sim && sim.deep_runs.length > 0 && <TitleOdds sim={sim} />}
           <Bracket knockout={wc.knockout} />
         </div>
       )}
@@ -97,15 +100,26 @@ export default function WorldCup2026({ wc }: Props) {
   );
 }
 
-function GroupStage({ groups }: { groups: WorldCup2026Bundle["group_stage"] }) {
+function GroupStage({
+  groups,
+  sim,
+}: {
+  groups: WorldCup2026Bundle["group_stage"];
+  sim: WorldCup2026Sim | null;
+}) {
   const groupKeys = Object.keys(groups).sort();
   if (groupKeys.length === 0) return null;
+  const by = sim?.by_slug ?? {};
   return (
     <div className="mb-6">
       <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)] uppercase tracking-wider">Group stage</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3">
         {groupKeys.map((key) => {
-          const teams = groups[key];
+          const teams = [...groups[key]].sort((a, b) => {
+            const av = by[a.slug ?? ""]?.exp_points ?? 0;
+            const bv = by[b.slug ?? ""]?.exp_points ?? 0;
+            return b.pts - a.pts || bv - av || b.gd - a.gd;
+          });
           return (
             <div
               key={key}
@@ -116,55 +130,136 @@ function GroupStage({ groups }: { groups: WorldCup2026Bundle["group_stage"] }) {
                 <span>Group {key}</span>
                 <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{teams.length} teams</span>
               </h4>
-              <table className="w-full text-xs tabular-nums">
-                <thead className="text-[var(--text-muted)]">
-                  <tr className="border-b" style={{ borderColor: "var(--border)" }}>
-                    <th className="text-left py-1 pr-1 font-medium text-[9px] uppercase tracking-wider">Team</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">W</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">D</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">L</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider hidden xs:table-cell">GD</th>
-                    <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider">Pts</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {teams.map((t) => (
-                    <tr key={t.cur_name} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-                      <td className="py-1 pr-1">
-                        <span className="inline-flex items-center gap-1">
-                          {t.slug && flagCdnUrl(t.slug) && (
-                            <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />
-                          )}
-                          {t.slug ? (
-                            <Link href={`/teams/national/${t.slug}`} className="hover:text-[var(--accent)] transition-colors">
-                              {displayNameForTeam(t.slug, t.cur_name)}
-                            </Link>
-                          ) : (
-                            <span>{t.cur_name}</span>
-                          )}
-                        </span>
-                      </td>
-                      <td className="py-1 px-1 text-right">{t.w}</td>
-                      <td className="py-1 px-1 text-right">{t.d}</td>
-                      <td className="py-1 px-1 text-right">{t.l}</td>
-                      <td className="py-1 px-1 text-right hidden xs:table-cell">
-                        {t.gd > 0 ? `+${t.gd}` : t.gd}
-                      </td>
-                      <td className="py-1 pl-1 text-right font-semibold">{t.pts}</td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs tabular-nums">
+                  <thead className="text-[var(--text-muted)]">
+                    <tr className="border-b" style={{ borderColor: "var(--border)" }}>
+                      <th className="text-left py-1 pr-1 font-medium text-[9px] uppercase tracking-wider">Team</th>
+                      <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">W</th>
+                      <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">D</th>
+                      <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">L</th>
+                      <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider hidden xs:table-cell">GD</th>
+                      <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">Pts</th>
+                      <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider" title="Projected final points (model average)">xPts</th>
+                      <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider" title="Chance of reaching the round of 32">Adv</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {teams.map((t, i) => {
+                      const s = t.slug ? by[t.slug] : undefined;
+                      return (
+                        <tr
+                          key={t.cur_name}
+                          className="border-b last:border-b-0"
+                          style={{
+                            borderColor: "var(--border)",
+                            borderLeft: i < 2 ? "3px solid var(--accent)" : "3px solid transparent",
+                          }}
+                        >
+                          <td className="py-1 pr-1">
+                            <span className="inline-flex items-center gap-1">
+                              {t.slug && flagCdnUrl(t.slug) && (
+                                <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />
+                              )}
+                              {t.slug ? (
+                                <Link href={`/teams/national/${t.slug}`} className="hover:text-[var(--accent)] transition-colors">
+                                  {displayNameForTeam(t.slug, t.cur_name)}
+                                </Link>
+                              ) : (
+                                <span>{t.cur_name}</span>
+                              )}
+                            </span>
+                          </td>
+                          <td className="py-1 px-1 text-right">{t.w}</td>
+                          <td className="py-1 px-1 text-right">{t.d}</td>
+                          <td className="py-1 px-1 text-right">{t.l}</td>
+                          <td className="py-1 px-1 text-right hidden xs:table-cell">
+                            {t.gd > 0 ? `+${t.gd}` : t.gd}
+                          </td>
+                          <td className="py-1 px-1 text-right font-semibold">{t.pts}</td>
+                          <td className="py-1 px-1 text-right text-[var(--text-muted)]">
+                            {s ? s.exp_points.toFixed(1) : "—"}
+                          </td>
+                          <td className="py-1 pl-1 text-right font-semibold" style={{ color: s ? "var(--accent)" : "var(--text-dim)" }}>
+                            {s ? `${s.p_advance.toFixed(0)}%` : "—"}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           );
         })}
       </div>
+      {sim && (
+        <p className="text-[10px] text-[var(--text-dim)] mt-2">
+          xPts = projected final points (model average). Adv = chance of reaching the round of 32 (top two or one of
+          the eight best third-placed teams). The two highlighted rows are the projected automatic qualifiers.
+        </p>
+      )}
+    </div>
+  );
+}
+
+function TitleOdds({ sim }: { sim: WorldCup2026Sim }) {
+  const rows = [...sim.deep_runs].sort((a, b) => b.p_title - a.p_title);
+  return (
+    <div className="mb-6">
+      <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)] uppercase tracking-wider">Title odds</h3>
+      <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <div className="overflow-x-auto">
+          <table className="w-full text-xs tabular-nums">
+            <thead className="text-[var(--text-muted)]">
+              <tr className="border-b" style={{ borderColor: "var(--border)" }}>
+                <th className="text-left py-2 px-3 font-medium text-[9px] uppercase tracking-wider">#</th>
+                <th className="text-left py-2 px-2 font-medium text-[9px] uppercase tracking-wider">Team</th>
+                <th className="text-left py-2 px-2 font-medium text-[9px] uppercase tracking-wider hidden sm:table-cell">Grp</th>
+                <th className="text-right py-2 px-2 font-medium text-[9px] uppercase tracking-wider" title="Reaches the semifinals">Semifinal</th>
+                <th className="text-right py-2 px-2 font-medium text-[9px] uppercase tracking-wider" title="Reaches the final">Final</th>
+                <th className="text-right py-2 px-3 font-medium text-[9px] uppercase tracking-wider" title="Wins the tournament">Win</th>
+                <th className="text-right py-2 px-3 font-medium text-[9px] uppercase tracking-wider hidden md:table-cell" title="De-vigged market title odds">Market</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={r.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-1.5 px-3 text-[var(--text-dim)]">{i + 1}</td>
+                  <td className="py-1.5 px-2 whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1.5">
+                      {flagCdnUrl(r.slug) ? (
+                        <img src={flagCdnUrl(r.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />
+                      ) : (
+                        <span aria-hidden>{flagForTeam(r.slug)}</span>
+                      )}
+                      <Link href={`/teams/national/${r.slug}`} className="hover:text-[var(--accent)] transition-colors">
+                        {displayNameForTeam(r.slug, r.name)}
+                      </Link>
+                    </span>
+                  </td>
+                  <td className="py-1.5 px-2 text-[var(--text-dim)] hidden sm:table-cell">{r.group}</td>
+                  <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.p_sf.toFixed(1)}%</td>
+                  <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.p_final.toFixed(1)}%</td>
+                  <td className="py-1.5 px-3 text-right font-semibold" style={{ color: "var(--accent)" }}>{r.p_title.toFixed(1)}%</td>
+                  <td className="py-1.5 px-3 text-right text-[var(--text-dim)] hidden md:table-cell">{r.market_prob.toFixed(1)}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p className="text-[10px] text-[var(--text-dim)] mt-2">
+        {sim.meta.sims.toLocaleString()} Monte Carlo simulations. Team strength blends market odds
+        ({Math.round(sim.meta.blend_market_weight * 100)}%) with our Elo ranking
+        ({Math.round((1 - sim.meta.blend_market_weight) * 100)}%). Market column from {sim.meta.odds_source}, as of
+        {" "}{fmtDate(sim.meta.odds_as_of)}. Updated {fmtDate(sim.meta.generated_at)}. Informational, not betting advice.
+      </p>
     </div>
   );
 }
 
 function Bracket({ knockout }: { knockout: WorldCup2026Bundle["knockout"] }) {
-  // Filter to rounds that have matches.
   const populatedRounds = KNOCKOUT_ROUND_ORDER.filter(
     (rn) => knockout[rn] && knockout[rn].length > 0
   );

@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-06",
+    headline: "World Cup 2026 projections: group odds and title odds",
+    items: [
+      "The World Cup 2026 section now shows projected points and round-of-32 odds for every team.",
+      "A new Title Odds table gives each nation's chance of the semifinals, the final, and lifting the trophy.",
+      "Built from tens of thousands of Monte Carlo simulations blending market odds with our Elo ranking; refreshed daily.",
+    ],
+  },
+  {
     date: "2026-06-05",
     headline: "Greatest Games, Geography of Erasure, and English Domestic Cups hubs",
     items: [

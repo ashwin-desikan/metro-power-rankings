@@ -181,10 +181,41 @@ export type WorldCup2026KnockoutMatch = {
   played: boolean;
 };
 
+export type WorldCup2026SimRow = {
+  exp_points: number;
+  p_advance: number;
+  p_win_group: number;
+};
+
+export type WorldCup2026DeepRow = {
+  slug: string;
+  name: string;
+  group: string;
+  p_r16: number;
+  p_qf: number;
+  p_sf: number;
+  p_final: number;
+  p_title: number;
+  market_prob: number;
+};
+
+export type WorldCup2026Sim = {
+  meta: {
+    sims: number;
+    generated_at: string;
+    blend_market_weight: number;
+    odds_source: string;
+    odds_as_of: string;
+  };
+  by_slug: Record<string, WorldCup2026SimRow>;
+  deep_runs: WorldCup2026DeepRow[];
+};
+
 export type WorldCup2026Bundle = {
   tournament: { name: string; year: number; starts_iso: string };
   group_stage: Record<string, WorldCup2026GroupRow[]>;
   knockout: Record<string, WorldCup2026KnockoutMatch[]>;
+  sim?: WorldCup2026Sim | null;
 };
 
 export type TournamentHub = {
@@ -340,10 +371,35 @@ export function getSimilarTeamsForTeam(slug: string): SimilarTeamNeighbor[] {
   return _similarCache[slug] ?? [];
 }
 
+type RawWc2026Sim = {
+  meta: WorldCup2026Sim["meta"];
+  groups: Record<string, Array<{ slug: string; exp_points: number; p_advance: number; p_win_group: number }>>;
+  deep_runs: WorldCup2026DeepRow[];
+};
+
+function buildWc2026Sim(): WorldCup2026Sim | null {
+  const raw = loadJson<RawWc2026Sim | null>("wc2026-sim.json", null);
+  if (!raw || !raw.groups) return null;
+  const by_slug: Record<string, WorldCup2026SimRow> = {};
+  for (const g of Object.keys(raw.groups)) {
+    for (const r of raw.groups[g]) {
+      by_slug[r.slug] = {
+        exp_points: r.exp_points,
+        p_advance: r.p_advance,
+        p_win_group: r.p_win_group,
+      };
+    }
+  }
+  return { meta: raw.meta, by_slug, deep_runs: raw.deep_runs ?? [] };
+}
+
 export function getWorldCup2026(): WorldCup2026Bundle | null {
   if (!_wc2026Checked) {
     const candidate = loadJson<WorldCup2026Bundle | null>("wc2026.json", null);
     _wc2026Cache = candidate && candidate.tournament ? candidate : null;
+    if (_wc2026Cache) {
+      _wc2026Cache.sim = buildWc2026Sim();
+    }
     _wc2026Checked = true;
   }
   return _wc2026Cache;
