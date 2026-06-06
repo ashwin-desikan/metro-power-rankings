@@ -7,6 +7,13 @@ import { join } from 'path';
 import { datasetJsonLd, itemListJsonLd, serializeJsonLd } from '@/lib/seo';
 import { getSubstackPosts, type SubstackPost } from '@/lib/substack';
 
+// ISR: regenerate the home page in the background every hour so the live
+// Substack feed (lib/substack fetches it with its own hourly revalidate)
+// refreshes without rebuilding the whole site. This replaces the daily
+// 'daily-substack-refresh' deploy hook, which forced a full production build
+// just to surface new posts.
+export const revalidate = 3600;
+
 // Internal evergreen pieces that should always appear in the Featured Articles
 // strip alongside the latest Substack posts. Order matters: pinned items
 // render first, then RSS items fill remaining slots up to FEATURED_LIMIT.
