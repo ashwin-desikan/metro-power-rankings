@@ -114,7 +114,7 @@ def main():
     if not metros_json.exists():
         print(f"ERROR: {metros_json} missing. Run scripts/extract.py first.")
         sys.exit(1)
-    metros = json.loads(metros_json.read_text())
+    metros = json.loads(metros_json.read_text(encoding="utf-8"))
     metro_by = {norm(m["name"]): m for m in metros}
 
     ranked = []
@@ -151,7 +151,7 @@ def main():
     array_body = ",\n".join(entry_blocks)
 
     target_ts = project / "lib" / "topTeams.ts"
-    src = target_ts.read_text()
+    src = target_ts.read_text(encoding="utf-8")
     start_marker = "export const TOP_TEAMS: TopTeamPick[] = ["
     end_marker = "\n];"
     i0 = src.find(start_marker)
@@ -168,7 +168,7 @@ def main():
         + src[i1 + len(end_marker):]
     )
 
-    target_ts.write_text(new_src)
+    target_ts.write_text(new_src, encoding="utf-8")
     print(f"Wrote {target_ts} ({len(new_src):,} bytes)")
     print("Done. Run `npx tsc --noEmit` to verify.")
 
