@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-07",
+    headline: "Relocated and defunct teams on metro pages",
+    items: [
+      "Each metro now lists the teams that once played there, relocated or folded, with the era name, the years, and a link to its current or final page.",
+      "Added more international tournament finals to the national-team history.",
+      "Refreshed each metro's teams, venues, and events from the latest source workbook.",
+    ],
+  },
+  {
     date: "2026-06-06",
     headline: "World Cup 2026 projections: group odds and title odds",
     items: [

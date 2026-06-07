@@ -794,7 +794,7 @@ DEFUNCT_DISPLAY_NAMES = {
     "Bulldogs (Boston)": "Pottsville Maroons",
     "Colts (D)": "Baltimore Colts (1950)",
     "Texans (D)": "Dallas Texans (1952)",
-    "Dodgers": "Brooklyn Dodgers (NFL)",
+    "Dodgers": "Brooklyn Dodgers (AAFC)",
     "Stapletons": "Staten Island Stapletons",
     "Bills (D)": "Buffalo Bills (AAFC)",
     "Bisons": "Buffalo Bisons",

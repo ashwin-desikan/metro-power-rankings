@@ -1,0 +1,20 @@
+[
+  {
+    "league": "nfl",
+    "name": "Duluth Eskimos",
+    "city": "Orange",
+    "reason": "no metro match"
+  },
+  {
+    "league": "nhl",
+    "name": "California Golden Seals",
+    "city": "California",
+    "reason": "no metro match"
+  },
+  {
+    "league": "mlb",
+    "name": "California Angels",
+    "city": "California",
+    "reason": "no metro match"
+  }
+]

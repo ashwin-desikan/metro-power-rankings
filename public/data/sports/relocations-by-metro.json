@@ -1,0 +1,2974 @@
+{
+"atlanta": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Atlanta Thrashers",
+"years": "2000–2011",
+"href": "/teams/nhl/jets",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Atlanta Flames",
+"years": "1973–1980",
+"href": "/teams/nhl/flames",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"birmingham": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Birmingham Bulls",
+"years": "1973–1979",
+"href": "/teams/nhl/bulls-b",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"boston": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "New England Whalers",
+"years": "1973–1979",
+"href": "/teams/nhl/hurricanes",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Boston Red Stockings (AA, 1891)",
+"years": "1891–1891",
+"href": "/teams/mlb/red-stockings",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"brandon": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Brandon Wheat City",
+"years": "1907",
+"href": "/teams/nhl/wheat-city",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"buffalo": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Buffalo Braves",
+"years": "1971–1978",
+"href": "/teams/nba/clippers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Buffalo Bills (AAFC)",
+"years": "1946–1949",
+"href": "/teams/nfl/bills-d",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Buffalo Bisons",
+"years": "1920–1929",
+"href": "/teams/nfl/bisons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Tonawanda Kardex",
+"years": "1921–1921",
+"href": "/teams/nfl/kardex",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Buffalo Bisons",
+"years": "1879–1885",
+"href": "/teams/mlb/bisons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"calgary": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Calgary Cowboys",
+"years": "1973–1977",
+"href": "/teams/nhl/cowboys-cal",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Calgary Tigers",
+"years": "1922–1926",
+"href": "/teams/nhl/tigers-cal",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"cape-breton": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Sydney Millionaires",
+"years": "1913",
+"href": "/teams/nhl/millionaires-maphl",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"charlotte": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Carolina Hurricanes",
+"years": "1998–2026",
+"href": "/teams/nhl/hurricanes",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "wnba",
+"sport": "W Basketball",
+"name": "Charlotte Sting",
+"years": "1997–2006",
+"href": "/teams/wnba/charlotte-sting",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Carolina Cougars",
+"years": "1968–1976",
+"href": "/teams/nba/spirits",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+}
+],
+"chicago": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Chicago Cougars",
+"years": "1973–1975",
+"href": "/teams/nhl/cougars",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Chicago Zephyrs",
+"years": "1962–1963",
+"href": "/teams/nba/wizards",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Chicago Cardinals",
+"years": "1920–1959",
+"href": "/teams/nfl/arizona-cardinals",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Chicago Stags",
+"years": "1947–1950",
+"href": "/teams/nba/stags",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Chicago Hornets",
+"years": "1946–1949",
+"href": "/teams/nfl/hornets",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Hammond Pros",
+"years": "1920–1926",
+"href": "/teams/nfl/pros",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Toledo Maroons",
+"years": "1922–1924",
+"href": "/teams/nfl/maroons",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Chicago Tigers",
+"years": "1920–1920",
+"href": "/teams/nfl/tigers-chi",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"cincinnati": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Cincinnati Stingers",
+"years": "1976–1979",
+"href": "/teams/nhl/stingers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Cincinnati Royals",
+"years": "1958–1972",
+"href": "/teams/nba/kings",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Cincinnati Reds",
+"years": "1933–1934",
+"href": "/teams/nfl/gunners",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Cincinnati Celts",
+"years": "1921–1921",
+"href": "/teams/nfl/celts",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Cincinnati Kelly's Killers",
+"years": "1891–1891",
+"href": "/teams/mlb/kelly-s-killers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Cincinnati Red Stockings",
+"years": "1876–1880",
+"href": "/teams/mlb/reds-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"cleveland": [
+{
+"league": "wnba",
+"sport": "W Basketball",
+"name": "Cleveland Rockers",
+"years": "1997–2003",
+"href": "/teams/wnba/cleveland-rockers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Cleveland Barons",
+"years": "1968–1978",
+"href": "/teams/nhl/barons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Cleveland Crusaders",
+"years": "1973–1977",
+"href": "/teams/nhl/fighting-saints-2",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Cleveland Rebels",
+"years": "1947–1947",
+"href": "/teams/nba/rebels",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Cleveland Rams",
+"years": "1937–1945",
+"href": "/teams/nfl/los-angeles-rams",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Cleveland Indians",
+"years": "1931–1931",
+"href": "/teams/nfl/indians-clev",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Cleveland Wolverines",
+"years": "1923–1928",
+"href": "/teams/nfl/wolverines",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Akron Pros",
+"years": "1920–1926",
+"href": "/teams/nfl/indians-akron",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Canton Bulldogs",
+"years": "1920–1926",
+"href": "/teams/nfl/bulldogs-canton",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Cleveland Tigers",
+"years": "1920–1921",
+"href": "/teams/nfl/tigers-clev",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Cleveland Spiders",
+"years": "1887–1899",
+"href": "/teams/mlb/spiders",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Cleveland Blues",
+"years": "1879–1884",
+"href": "/teams/mlb/blues-c",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"columbus": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Columbus Panhandles",
+"years": "1920–1926",
+"href": "/teams/nfl/tigers-colm",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Oorang Indians",
+"years": "1922–1923",
+"href": "/teams/nfl/indians-marion",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Columbus Blues",
+"years": "1889–1891",
+"href": "/teams/mlb/solons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Columbus Colts",
+"years": "1883–1884",
+"href": "/teams/mlb/colts-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"cornwall-on": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Cornwall Hockey Club",
+"years": "1904–1909",
+"href": "/teams/nhl/cornwall",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Morrisburg Hockey Club",
+"years": "1907–1907",
+"href": "/teams/nhl/morrisburg",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"dallas": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Boston Bruins",
+"years": "1925–2026",
+"href": "/teams/nhl/bruins",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Boston Celtics",
+"years": "1947–2026",
+"href": "/teams/nba/celtics",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Boston Red Sox",
+"years": "1901–2026",
+"href": "/teams/mlb/red-sox",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Texas Chaparrals",
+"years": "1971–1971",
+"href": "/teams/nba/spurs",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Boston Patriots",
+"years": "1960–1970",
+"href": "/teams/nfl/new-england-patriots",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Dallas Texans",
+"years": "1960–1962",
+"href": "/teams/nfl/kansas-city-chiefs",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Boston Braves",
+"years": "1876–1952",
+"href": "/teams/mlb/braves",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Boston Yanks",
+"years": "1944–1952",
+"href": "/teams/nfl/texans-d",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Boston Redskins",
+"years": "1932–1936",
+"href": "/teams/nfl/washington-commanders",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Boston Bulldogs",
+"years": "1925–1929",
+"href": "/teams/nfl/bulldogs-boston",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Boston Red Stockings",
+"years": "1891–1891",
+"href": "/teams/mlb/red-stockings",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+}
+],
+"davenport": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Tri-Cities Blackhawks",
+"years": "1950–1951",
+"href": "/teams/nba/hawks",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Rock Island Independents",
+"years": "1920–1925",
+"href": "/teams/nfl/independents",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"decatur": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Decatur Staleys",
+"years": "1920–1920",
+"href": "/teams/nfl/chicago-bears",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"denver": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Colorado Rockies",
+"years": "1977–1982",
+"href": "/teams/nhl/devils",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Denver Spurs",
+"years": "1976–1976",
+"href": "/teams/nhl/civics",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Denver Nuggets",
+"years": "1950–1950",
+"href": "/teams/nba/nuggets-def",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"detroit": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Detroit Falcons",
+"years": "1947–1947",
+"href": "/teams/nba/falcons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Detroit Wolverines",
+"years": "1923–1928",
+"href": "/teams/nfl/wolverines",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Detroit Panthers",
+"years": "1925–1926",
+"href": "/teams/nfl/panthers-det",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Detroit Heralds",
+"years": "1920–1921",
+"href": "/teams/nfl/heralds",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Detroit Wolverines",
+"years": "1881–1888",
+"href": "/teams/mlb/wolverines",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"duluth": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Duluth Kelleys",
+"years": "1923–1930",
+"href": "/teams/nfl/tornadoes-nj",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"edmonton": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Edmonton Eskimos",
+"years": "1922–1926",
+"href": "/teams/nhl/eskimos",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Edmonton Hockey Club",
+"years": "1910",
+"href": "/teams/nhl/edmonton-hc",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"evansville": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Evansville Crimson Giants",
+"years": "1921–1922",
+"href": "/teams/nfl/crimson-giants",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"fort-wayne": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Fort Wayne Pistons",
+"years": "1949–1957",
+"href": "/teams/nba/pistons",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"halifax-ns": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Halifax Crescents",
+"years": "1900",
+"href": "/teams/nhl/crescents-h",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Halifax Chebuctos",
+"years": "1889–1889",
+"href": "/teams/nhl/chebuctos",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"hartford": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Hartford Whalers",
+"years": "1980–1997",
+"href": "/teams/nhl/hurricanes",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Hartford Blues",
+"years": "1926–1926",
+"href": "/teams/nfl/blues",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Hartford Dark Blues",
+"years": "1876–1877",
+"href": "/teams/mlb/hartfords",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+}
+],
+"houston": [
+{
+"league": "wnba",
+"sport": "W Basketball",
+"name": "Houston Comets",
+"years": "1997–2008",
+"href": "/teams/wnba/houston-comets",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Houston Oilers",
+"years": "1960–1996",
+"href": "/teams/nfl/tennessee-titans",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Houston Aeros",
+"years": "1973–1978",
+"href": "/teams/nhl/aeros",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Houston Mavericks",
+"years": "1968–1976",
+"href": "/teams/nba/spirits",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+}
+],
+"hyderabad": [
+{
+"league": "ipl",
+"sport": "Cricket",
+"name": "Deccan Chargers",
+"years": "",
+"href": "/teams/ipl/deccan-chargers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"indianapolis": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Indianapolis Racers",
+"years": "1975–1979",
+"href": "/teams/nhl/racers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Indianapolis Olympians",
+"years": "1950–1953",
+"href": "/teams/nba/olympians",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Anderson Packers",
+"years": "1950–1950",
+"href": "/teams/nba/packers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Indianapolis Jets",
+"years": "1949–1949",
+"href": "/teams/nba/jets",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Muncie Flyers",
+"years": "1920–1921",
+"href": "/teams/nfl/flyers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Indianapolis Hoosiers",
+"years": "1887–1889",
+"href": "/teams/mlb/hoosiers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Indianapolis Blues",
+"years": "1884–1884",
+"href": "/teams/mlb/blues-i",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Indianapolis Browns",
+"years": "1878–1878",
+"href": "/teams/mlb/browns",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"kansas-city": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Kansas City Kings",
+"years": "1973–1985",
+"href": "/teams/nba/kings",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Kansas City Scouts",
+"years": "1975–1976",
+"href": "/teams/nhl/devils",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Kansas City Athletics",
+"years": "1955–1967",
+"href": "/teams/mlb/athletics",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Kansas City Cowboys",
+"years": "1924–1926",
+"href": "/teams/nfl/cowboys-kc",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Kansas City Blues",
+"years": "1888–1889",
+"href": "/teams/mlb/blues-k",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Kansas City Cowboys",
+"years": "1886–1886",
+"href": "/teams/mlb/cowboys",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"kenora-on": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Kenora Thistles",
+"years": "1907–1907",
+"href": "/teams/nhl/thistles",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"kingston-on": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Queen's University",
+"years": "1906",
+"href": "/teams/nhl/queens-university",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"kitchener-waterloo": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Galt Professionals",
+"years": "1911",
+"href": "/teams/nhl/galt-pros",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Berlin Dutchmen",
+"years": "1910",
+"href": "/teams/nhl/dutchmen",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"kochi": [
+{
+"league": "ipl",
+"sport": "Cricket",
+"name": "Kochi Tuskers Kerala",
+"years": "",
+"href": "/teams/ipl/kochi-tuskers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"london": [
+{
+"league": "football",
+"sport": "Football/Soccer",
+"name": "Wimbledon F.C.",
+"years": "1889–2004",
+"href": "/teams/football/milton-keynes-dons",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"los-angeles": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Los Angeles Raiders",
+"years": "1982–1994",
+"href": "/teams/nfl/las-vegas-raiders",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Los Angeles Stars",
+"years": "1968–1976",
+"href": "/teams/nba/stars",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Los Angeles Sharks",
+"years": "1973–1975",
+"href": "/teams/nhl/blades",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Los Angeles Dons",
+"years": "1946–1949",
+"href": "/teams/nfl/dons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Los Angeles Buccaneers",
+"years": "1926–1926",
+"href": "/teams/nfl/buccaneers-la",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"louisville": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Kentucky Colonels",
+"years": "1968–1976",
+"href": "/teams/nba/colonels-aba",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Louisville Colonels",
+"years": "1921–1926",
+"href": "/teams/nfl/colonels",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Louisville Colonels (AA/NL, 1882–1899)",
+"years": "1882–1899",
+"href": "/teams/mlb/colonels",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Louisville Grays",
+"years": "1876–1877",
+"href": "/teams/mlb/grays-l",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"memphis": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Memphis Sounds",
+"years": "1968–1975",
+"href": "/teams/nba/sounds",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+}
+],
+"miami": [
+{
+"league": "wnba",
+"sport": "W Basketball",
+"name": "Miami Sol",
+"years": "2000–2002",
+"href": "/teams/wnba/miami-sol",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Miami Floridians",
+"years": "1968–1972",
+"href": "/teams/nba/the-floridians",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Miami Seahawks",
+"years": "1946–1946",
+"href": "/teams/nfl/seahawks-mia",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"milwaukee": [
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Milwaukee Braves",
+"years": "1953–1965",
+"href": "/teams/mlb/braves",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Milwaukee Hawks",
+"years": "1952–1955",
+"href": "/teams/nba/hawks",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Milwaukee Badgers",
+"years": "1922–1926",
+"href": "/teams/nfl/badgers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Racine Tornadoes",
+"years": "1922–1926",
+"href": "/teams/nfl/tornadoes",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Milwaukee Brewers",
+"years": "1901–1901",
+"href": "/teams/mlb/orioles",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Milwaukee Brewers",
+"years": "1891–1891",
+"href": "/teams/mlb/brewers-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Milwaukee Grays",
+"years": "1878–1878",
+"href": "/teams/mlb/grays-m",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"minneapolis": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Minnesota North Stars",
+"years": "1968–1993",
+"href": "/teams/nhl/stars",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Minnesota Fighting Saints",
+"years": "1973–1977",
+"href": "/teams/nhl/fighting-saints-2",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Minnesota Fighting Saints",
+"years": "1973–1976",
+"href": "/teams/nhl/fighting-saints-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Minnesota Condors",
+"years": "1968–1972",
+"href": "/teams/nba/condors",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Minnesota Muskies",
+"years": "1968–1972",
+"href": "/teams/nba/the-floridians",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Minneapolis Lakers",
+"years": "1949–1960",
+"href": "/teams/nba/lakers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Minneapolis Red Jackets",
+"years": "1921–1930",
+"href": "/teams/nfl/redjackets",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"moncton": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Moncton Victorias",
+"years": "1912",
+"href": "/teams/nhl/moncton-victorias",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"montreal": [
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Montreal Expos",
+"years": "1969–2004",
+"href": "/teams/mlb/nationals",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Maroons",
+"years": "1925–1938",
+"href": "/teams/nhl/maroons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Wanderers",
+"years": "1904–1918",
+"href": "/teams/nhl/wanderers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "All-Montreal Hockey Club",
+"years": "1910–1910",
+"href": "/teams/nhl/all-montreal",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Le National",
+"years": "1904–1910",
+"href": "/teams/nhl/le-national",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Shamrocks",
+"years": "1891–1910",
+"href": "/teams/nhl/shamrocks-m",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Hockey Club",
+"years": "1887–1908",
+"href": "/teams/nhl/montreal-hc",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Victorias",
+"years": "1887–1908",
+"href": "/teams/nhl/victorias-m",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Montagnards",
+"years": "1905–1907",
+"href": "/teams/nhl/montagnards",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Westmount",
+"years": "1905–1905",
+"href": "/teams/nhl/westmount-m",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Crystals",
+"years": "1887–1894",
+"href": "/teams/nhl/crystals",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Montreal Britannias",
+"years": "1892–1892",
+"href": "/teams/nhl/britannias-m",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "McGill University",
+"years": "1887–1889",
+"href": "/teams/nhl/mcgill-university",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"new-orleans": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "New Orleans Jazz",
+"years": "1975–1979",
+"href": "/teams/nba/jazz",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "New Orleans Buccaneers",
+"years": "1968–1975",
+"href": "/teams/nba/sounds",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"new-york": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "New York Mariners",
+"years": "1973–1977",
+"href": "/teams/nhl/mariners",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Brooklyn Dodgers",
+"years": "1884–1957",
+"href": "/teams/mlb/dodgers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "New York Giants",
+"years": "1883–1957",
+"href": "/teams/mlb/giants",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "New York Yanks",
+"years": "1950–1951",
+"href": "/teams/nfl/texans-d",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "New York Yankees (AAFC)",
+"years": "1946–1949",
+"href": "/teams/nfl/yankees",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Brooklyn Dodgers",
+"years": "1946–1948",
+"href": "/teams/nfl/dodgers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Brooklyn Dodgers / Brooklyn Tigers",
+"years": "1930–1944",
+"href": "/teams/nfl/tigers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "New York Americans",
+"years": "1926–1942",
+"href": "/teams/nhl/americans",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Brooklyn Lions",
+"years": "1926–1932",
+"href": "/teams/nfl/stapletons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Newark Tornadoes",
+"years": "1923–1930",
+"href": "/teams/nfl/tornadoes-nj",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "New York Brickley's Giants",
+"years": "1921–1921",
+"href": "/teams/nfl/brickley-s-giants",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Brooklyn Gladiators",
+"years": "1890–1890",
+"href": "/teams/mlb/gladiators",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "New York Metropolitans",
+"years": "1883–1887",
+"href": "/teams/mlb/metropolitans",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Brooklyn Hartfords",
+"years": "1876–1877",
+"href": "/teams/mlb/hartfords",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "New York Mutuals",
+"years": "1876–1876",
+"href": "/teams/mlb/mutuals",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"norfolk": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Virginia Squires",
+"years": "1968–1976",
+"href": "/teams/nba/squires",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"oklahoma-city": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Oklahoma City Hornets",
+"years": "2006–2007",
+"href": "/teams/nba/pelicans",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"omaha-lincoln": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Omaha Kings",
+"years": "1973–1975",
+"href": "/teams/nba/kings",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"ottawa": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Ottawa Nationals",
+"years": "1973–1979",
+"href": "/teams/nhl/bulls-b",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Ottawa Civics",
+"years": "1976–1976",
+"href": "/teams/nhl/civics",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Ottawa Senators (original)",
+"years": "1887–1935",
+"href": "/teams/nhl/senators-org",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Ottawa Senators",
+"years": "1909–1909",
+"href": "/teams/nhl/senators-fhl",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Smiths Falls Seniors",
+"years": "1906–1909",
+"href": "/teams/nhl/seniors-sf",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Brockville Hockey Club",
+"years": "1905–1908",
+"href": "/teams/nhl/brockville",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Ottawa Victorias",
+"years": "1906–1908",
+"href": "/teams/nhl/victorias-o",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Ottawa Capitals",
+"years": "1904–1904",
+"href": "/teams/nhl/capitals-o",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"philadelphia": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Philadelphia Cowboys (Cal)",
+"years": "1973–1977",
+"href": "/teams/nhl/cowboys-cal",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "San Diego Mariners",
+"years": "1973–1977",
+"href": "/teams/nhl/mariners",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Philadelphia Warriors",
+"years": "1947–1962",
+"href": "/teams/nba/warriors",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Philadelphia Athletics",
+"years": "1901–1954",
+"href": "/teams/mlb/athletics",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Frankford Yellow Jackets",
+"years": "1924–1931",
+"href": "/teams/nfl/yellow-jackets",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Philadelphia Quakers",
+"years": "1926–1931",
+"href": "/teams/nhl/quakers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Philadelphia Quakers",
+"years": "1891–1891",
+"href": "/teams/mlb/quakers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Philadelphia Athletics",
+"years": "1882–1890",
+"href": "/teams/mlb/athletics-2",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Philadelphia Athletics",
+"years": "1876–1876",
+"href": "/teams/mlb/athletics-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"phoenix": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Arizona Coyotes",
+"years": "1973–2024",
+"href": "/teams/nhl/coyotes",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Phoenix Roadrunners",
+"years": "1975–1977",
+"href": "/teams/nhl/roadrunners",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"pittsburgh": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Pittsburgh Pipers",
+"years": "1968–1972",
+"href": "/teams/nba/condors",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Pittsburgh Ironmen",
+"years": "1947–1947",
+"href": "/teams/nba/ironmen",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Chicago-Pittsburgh Car-Pitts",
+"years": "1944–1944",
+"href": "/teams/nfl/carpitts",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Philadelphia-Pittsburgh Steagles",
+"years": "1943–1943",
+"href": "/teams/nfl/steagles",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Pittsburgh Pirates",
+"years": "1926–1931",
+"href": "/teams/nhl/quakers",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+}
+],
+"portland": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Portland Rosebuds",
+"years": "1926–1926",
+"href": "/teams/nhl/blackhawks",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Portland Rosebuds",
+"years": "1915–1918",
+"href": "/teams/nhl/red-wings",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"portsmouth": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Portsmouth Spartans",
+"years": "1930–1933",
+"href": "/teams/nfl/detroit-lions",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"pottsville": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Pottsville Maroons",
+"years": "1925–1929",
+"href": "/teams/nfl/bulldogs-boston",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"providence": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Providence Steamrollers",
+"years": "1947–1949",
+"href": "/teams/nba/steamrollers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Providence Steam Roller",
+"years": "1925–1931",
+"href": "/teams/nfl/steam-roller",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Providence Grays",
+"years": "1878–1885",
+"href": "/teams/mlb/grays",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"pune": [
+{
+"league": "ipl",
+"sport": "Cricket",
+"name": "Pune Warriors",
+"years": "",
+"href": "/teams/ipl/pune-warriors",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "ipl",
+"sport": "Cricket",
+"name": "Rising Pune Supergiant",
+"years": "",
+"href": "/teams/ipl/rising-pune-supergiant",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"quebec-city": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Quebec Nordiques",
+"years": "1973–1995",
+"href": "/teams/nhl/avalanche",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Quebec Bulldogs/Hamilton Tigers",
+"years": "1889–1925",
+"href": "/teams/nhl/tigers-ham",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"rajkot": [
+{
+"league": "ipl",
+"sport": "Cricket",
+"name": "Gujarat Lions",
+"years": "",
+"href": "/teams/ipl/gujarat-lions",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"regina": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Regina Capitals",
+"years": "1922–1925",
+"href": "/teams/nhl/blackhawks",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"renfrew": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Renfrew Creamery Kings",
+"years": "1909–1911",
+"href": "/teams/nhl/creamery-kings",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Cobalt Silver Kings",
+"years": "1910–1910",
+"href": "/teams/nhl/silver-kings",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"richmond": [
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Richmond Virginians",
+"years": "1884–1884",
+"href": "/teams/mlb/virginians",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"rochester": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Rochester Royals",
+"years": "1949–1957",
+"href": "/teams/nba/kings",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Rochester Jeffersons",
+"years": "1920–1925",
+"href": "/teams/nfl/jeffersons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Rochester Hop Bitters",
+"years": "1890–1890",
+"href": "/teams/mlb/hop-bitters",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"sacramento": [
+{
+"league": "wnba",
+"sport": "W Basketball",
+"name": "Sacramento Monarchs",
+"years": "1997–2009",
+"href": "/teams/wnba/sacramento-monarchs",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"salt-lake-city-provo": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Anaheim Ducks",
+"years": "1994–2026",
+"href": "/teams/nhl/ducks",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Anaheim Angels",
+"years": "1997–2004",
+"href": "/teams/mlb/angels",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Utah Stars",
+"years": "1968–1976",
+"href": "/teams/nba/stars",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"san-diego": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "San Diego Chargers",
+"years": "1961–2016",
+"href": "/teams/nfl/los-angeles-chargers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "San Diego Clippers",
+"years": "1979–1984",
+"href": "/teams/nba/clippers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "San Diego Mariners",
+"years": "1973–1977",
+"href": "/teams/nhl/mariners",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "San Diego Conquistadors",
+"years": "1973–1976",
+"href": "/teams/nba/sails",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "San Diego Rockets",
+"years": "1968–1971",
+"href": "/teams/nba/rockets",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"san-francisco-san-jose": [
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Oakland Athletics",
+"years": "1968–2024",
+"href": "/teams/mlb/athletics",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Oakland Raiders",
+"years": "1960–2019",
+"href": "/teams/nfl/las-vegas-raiders",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Oakland Seals",
+"years": "1968–1978",
+"href": "/teams/nhl/barons",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Oakland Oaks",
+"years": "1968–1976",
+"href": "/teams/nba/squires",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+}
+],
+"saskatoon": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Saskatoon Crescents",
+"years": "1922–1926",
+"href": "/teams/nhl/crescents",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"seattle": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Seattle Supersonics",
+"years": "1968–2008",
+"href": "/teams/nba/thunder",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Seattle Pilots",
+"years": "1969–1969",
+"href": "/teams/mlb/brewers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Seattle Metropolitans",
+"years": "1916–1924",
+"href": "/teams/nhl/metropolitans",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"sheboygan": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Sheboygan Redskins",
+"years": "1950–1950",
+"href": "/teams/nba/redskins",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"spokane": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Victoria Aristocrats",
+"years": "1912–1917",
+"href": "/teams/nhl/canaries",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"st-louis": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "St. Louis Rams",
+"years": "1995–2015",
+"href": "/teams/nfl/los-angeles-rams",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "St. Louis Cardinals",
+"years": "1960–1987",
+"href": "/teams/nfl/arizona-cardinals",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "St. Louis Spirits",
+"years": "1968–1976",
+"href": "/teams/nba/spirits",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "St. Louis Hawks",
+"years": "1956–1968",
+"href": "/teams/nba/hawks",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "St. Louis Browns",
+"years": "1902–1953",
+"href": "/teams/mlb/orioles",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "St. Louis Bombers",
+"years": "1947–1950",
+"href": "/teams/nba/bombers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "St. Louis Senators (Org)",
+"years": "1887–1935",
+"href": "/teams/nhl/senators-org",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "St.Louis Gunners",
+"years": "1933–1934",
+"href": "/teams/nfl/gunners",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "St. Louis All-Stars",
+"years": "1923–1923",
+"href": "/teams/nfl/all-stars",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "St. Louis Maroons",
+"years": "1885–1886",
+"href": "/teams/mlb/maroons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "St. Louis Brown Stockings",
+"years": "1876–1877",
+"href": "/teams/mlb/brown-stockings-s",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"syracuse": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Syracuse Nationals",
+"years": "1950–1963",
+"href": "/teams/nba/76ers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Syracuse Stars",
+"years": "1890–1890",
+"href": "/teams/mlb/stars-2",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Syracuse Stars",
+"years": "1879–1879",
+"href": "/teams/mlb/stars-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"thunder-bay": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Port Arthur Bearcats",
+"years": "1911",
+"href": "/teams/nhl/port-arthur",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"toledo": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Toledo Maroons",
+"years": "1922–1924",
+"href": "/teams/nfl/maroons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Toledo Maumees",
+"years": "1890–1890",
+"href": "/teams/mlb/maumees",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Toledo Blue Stockings",
+"years": "1884–1884",
+"href": "/teams/mlb/blue-stockings",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"toronto": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Toronto Toros",
+"years": "1973–1979",
+"href": "/teams/nhl/bulls-b",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Toronto Huskies",
+"years": "1947–1947",
+"href": "/teams/nba/huskies",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Toronto 228th Batallion",
+"years": "1917–1917",
+"href": "/teams/nhl/228th-batallion",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Toronto Blueshirts",
+"years": "1913–1917",
+"href": "/teams/nhl/blueshirts",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Toronto Shamrocks",
+"years": "1913–1915",
+"href": "/teams/nhl/shamrocks-t",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Toronto Pros",
+"years": "1908",
+"href": "/teams/nhl/toronto-pros",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Toronto Marlboros",
+"years": "1904",
+"href": "/teams/nhl/marlboros",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Toronto Wellingtons",
+"years": "1902",
+"href": "/teams/nhl/wellingtons",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"troy": [
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Troy Trojans",
+"years": "1879–1882",
+"href": "/teams/mlb/trojans",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"vancouver": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Vancouver Grizzlies",
+"years": "1996–2001",
+"href": "/teams/nba/grizzlies",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Vancouver Cowboys (Cal)",
+"years": "1973–1977",
+"href": "/teams/nhl/cowboys-cal",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Vancouver Millionaires",
+"years": "1912–1926",
+"href": "/teams/nhl/maroons-v",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "New Westminster Royals",
+"years": "1912–1914",
+"href": "/teams/nhl/red-wings",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"victoria": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Victoria Cougars",
+"years": "1919–1926",
+"href": "/teams/nhl/red-wings",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+}
+],
+"washington-baltimore": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Baltimore Colts",
+"years": "1953–1983",
+"href": "/teams/nfl/indianapolis-colts",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Washington Capitals",
+"years": "1968–1976",
+"href": "/teams/nba/squires",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Baltimore Blades",
+"years": "1973–1975",
+"href": "/teams/nhl/blades",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Washington Senators",
+"years": "1961–1971",
+"href": "/teams/mlb/rangers",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Washington Senators",
+"years": "1901–1960",
+"href": "/teams/mlb/twins",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Baltimore Bullets",
+"years": "1948–1954",
+"href": "/teams/nba/bullets",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Washington Capitols",
+"years": "1947–1951",
+"href": "/teams/nba/capitols",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Baltimore Colts",
+"years": "1947–1950",
+"href": "/teams/nfl/colts-d",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Washington Senators",
+"years": "1921–1921",
+"href": "/teams/nfl/senators-w",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Baltimore Orioles",
+"years": "1901–1902",
+"href": "/teams/mlb/yankees",
+"kind": "relocated",
+"relocated": true,
+"defunct": false
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Baltimore Orioles",
+"years": "1882–1899",
+"href": "/teams/mlb/orioles-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Washington Senators (AA/NL, 1891–1899)",
+"years": "1891–1899",
+"href": "/teams/mlb/senators",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Washington Senators",
+"years": "1886–1889",
+"href": "/teams/mlb/nationals-2",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Washington Nationals",
+"years": "1884–1884",
+"href": "/teams/mlb/nationals-1",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"waterloo-ia": [
+{
+"league": "nba",
+"sport": "Basketball",
+"name": "Waterloo Hawks",
+"years": "1950–1950",
+"href": "/teams/nba/hawks-wat",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"winnipeg": [
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Winnipeg Coyotes",
+"years": "1973–2024",
+"href": "/teams/nhl/coyotes",
+"kind": "relocated",
+"relocated": true,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Winnipeg Maple Leafs",
+"years": "1908",
+"href": "/teams/nhl/winnipeg-ml",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Winnipeg Rowing Club",
+"years": "1904",
+"href": "/teams/nhl/winnipeg-rc",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+},
+{
+"league": "nhl",
+"sport": "Hockey",
+"name": "Winnipeg Victorias",
+"years": "1896–1902",
+"href": "/teams/nhl/winnipeg-victorias",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+],
+"worcester": [
+{
+"league": "mlb",
+"sport": "Baseball",
+"name": "Worcester Brown Stockings",
+"years": "1880–1882",
+"href": "/teams/mlb/brown-stockings-w",
+"kind": "defunct",
+"relocated": false,
+"defunct": true
+}
+]
+}

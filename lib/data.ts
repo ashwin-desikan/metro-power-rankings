@@ -68,6 +68,31 @@ export function getRegions() {
   return JSON.parse(raw) as import("./shared").Region[];
 }
 
+export type RelocationCard = {
+  league: string;
+  sport: string;
+  name: string;
+  years: string;
+  href: string;
+  kind: "relocated" | "defunct";
+  relocated?: boolean;
+  defunct?: boolean;
+};
+
+let _relocations: Record<string, RelocationCard[]> | null = null;
+export function getRelocationsForMetro(slug: string): RelocationCard[] {
+  if (_relocations === null) {
+    try {
+      _relocations = JSON.parse(
+        readFileSync(join(dataDir, "sports", "relocations-by-metro.json"), "utf-8")
+      );
+    } catch {
+      _relocations = {};
+    }
+  }
+  return (_relocations ?? {})[slug] ?? [];
+}
+
 export function getMetroDetail(slug: string): MetroDetail | null {
   try {
     const raw = readFileSync(join(dataDir, "details", `${slug}.json`), "utf-8");

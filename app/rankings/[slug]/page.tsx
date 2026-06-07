@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import {
   getAllMetros,
   getMetroDetail,
+  getRelocationsForMetro,
   formatPop,
   formatMarketCap,
   formatGdp,
@@ -779,7 +780,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
               {detail.teams && detail.teams.length > 0 && (
-                <TeamsSection teams={detail.teams} topTeamPick={topTeamPick} />
+                <TeamsSection teams={detail.teams} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -1241,6 +1242,7 @@ function normalizeTeamSport(sport: string): string {
 function TeamsSection({
   teams,
   topTeamPick,
+  relocations = [],
 }: {
   teams: Array<{
     sport: string;
@@ -1252,6 +1254,7 @@ function TeamsSection({
     annual?: boolean;
   }>;
   topTeamPick?: import("@/lib/topTeams").TopTeamPick | null;
+  relocations?: import("@/lib/data").RelocationCard[];
 }) {
   // Teams flagged Annual=Y in Team List (col O) are recurring-event entries
   // (F1 Grands Prix, NASCAR races, Sailing regattas, Powerboat races). They
@@ -1537,7 +1540,7 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherCollege.length > 0 || otherMen.length > 0 || otherWomen.length > 0) && (
+      {(otherFootball.length > 0 || otherCollege.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
@@ -1547,6 +1550,31 @@ function TeamsSection({
             {otherCollege.length > 0 && collapsible("College/University Teams", otherCollege)}
             {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
             {otherWomen.length > 0 && collapsible("Other Women\u2019s Teams", otherWomen)}
+            {relocations.length > 0 && (
+              <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
+                <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
+                  <span className="font-semibold text-[var(--text)]">Defunct/Relocated Teams</span>
+                  <span className="text-sm text-[var(--text-muted)]">
+                    {relocations.length} team{relocations.length !== 1 ? "s" : ""}
+                  </span>
+                </summary>
+                <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
+                  {relocations.map((r, idx) => (
+                    <Link
+                      key={idx}
+                      href={r.href}
+                      className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block"
+                    >
+                      <p className="text-xs text-[var(--text-muted)] mb-1">
+                        {r.sport}{[r.relocated ? "Relocated" : null, r.defunct ? "Defunct" : null].filter(Boolean).map((t) => " \u2022 " + t).join("")}
+                      </p>
+                      <p className="font-semibold text-[var(--text)]">{r.name}</p>
+                      <p className="text-xs text-[var(--text-dim)]">{r.years}</p>
+                    </Link>
+                  ))}
+                </div>
+              </details>
+            )}
           </div>
         </div>
       )}
