@@ -3,7 +3,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import {
   getAllMetros,
-  getAllSlugs,
   getMetroDetail,
   formatPop,
   formatMarketCap,
@@ -36,7 +35,8 @@ import { resolveTeamLink } from "@/lib/teamLinks";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = 86400;
 
 const infrastructureTypes = new Set([
   "Airport", "Bridge/Tunnel/Dam/Canal", "Central Bank", "Data Center Hub",
@@ -119,10 +119,17 @@ function formatAssetHeading(
   }
 }
 
+// Pre-render only the top metros by score at build; the long tail (~4,000
+// pages plus their OG cards) renders on demand via ISR and is cached. The
+// per-metro pages were ~63% of build prerenders, removed without changing
+// what readers see. dynamicParams=true above allows any valid slug on demand.
+const PRERENDER_TOP_N = 250;
+
 export async function generateStaticParams() {
-  // Generate static pages for all metros
-  const slugs = getAllSlugs();
-  return slugs.map((slug) => ({ slug }));
+  return [...getAllMetros()]
+    .sort((a, b) => b.score - a.score)
+    .slice(0, PRERENDER_TOP_N)
+    .map((m) => ({ slug: m.slug }));
 }
 
 export async function generateMetadata({

@@ -1,25 +1,27 @@
 import { ImageResponse } from "next/og";
-import { getMetroDetail, getAllSlugs } from "@/lib/data";
+import { getMetroDetail } from "@/lib/data";
 import { computeTier } from "@/lib/tiers";
 
 // Per-metro Open Graph share card. Next.js auto-discovers this file by name
 // and wires it into openGraph.images / twitter.images for /rankings/[slug],
 // so we do not need to set anything in generateMetadata.
 //
-// Pre-rendered at build time for every slug via generateStaticParams below.
+// Generated on demand (not at build) and cached at the edge.
 // Runtime is Node (default) because lib/data uses readFileSync.
 
 export const alt = "Global Metro Power Rankings share card";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Render share cards ON DEMAND instead of pre-building ~4,290 PNGs at build
+// time (the dominant Build CPU cost). No static params + dynamicParams=true
+// makes Next generate each card on first request and cache it at the edge;
+// the /rankings/[slug] pages themselves stay statically generated.
+export const dynamicParams = true;
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+  return [];
 }
 
-// Reader-facing labels for dimension keys. The dimension card on the OG image
-// shows "{label} #{rank}" so each metro tells its own story without manual
-// curation. Keys must match the dimRanks object produced by extract.py.
 const DIM_LABELS: Record<string, string> = {
   majorLeagueTeams: "Major league teams",
   totalTeams: "Total teams",
@@ -39,10 +41,6 @@ const DIM_LABELS: Record<string, string> = {
   skyscrapers: "Skyscrapers",
 };
 
-// Pick the three best dimensions for the metro by numeric rank. Tied ranks
-// (e.g. "T-3") strip to 3 for sorting. Empty / null ranks are skipped so a
-// metro with only a few populated dimensions does not pad the card with
-// blanks. Returns up to three; fewer is fine.
 function pickTopThree(
   dimRanks: Record<string, string | null> | undefined,
 ): Array<{ key: string; rankDisplay: string }> {
@@ -67,8 +65,6 @@ export default async function Image({
   const { slug } = params;
   const detail = getMetroDetail(slug);
 
-  // Fall back to a neutral card if the slug somehow doesn't resolve.
-  // Should never happen given generateStaticParams covers every slug.
   if (!detail) {
     return new ImageResponse(
       (
@@ -111,9 +107,6 @@ export default async function Image({
           fontFamily: "system-ui, sans-serif",
         }}
       >
-        {/* Tier accent stripe down the left edge. The single colored element
-            on the card; tier color is the only colored ink so the metro's
-            tier reads at thumbnail size. */}
         <div
           style={{
             position: "absolute",
@@ -126,7 +119,6 @@ export default async function Image({
           }}
         />
 
-        {/* Top bar: brand wordmark left, canonical URL right. */}
         <div
           style={{
             display: "flex",
@@ -144,7 +136,6 @@ export default async function Image({
           </div>
         </div>
 
-        {/* Main split: editorial slab on the left, data slab on the right. */}
         <div
           style={{
             display: "flex",
@@ -152,7 +143,6 @@ export default async function Image({
             padding: "0 48px",
           }}
         >
-          {/* Left zone */}
           <div
             style={{
               display: "flex",
@@ -184,7 +174,6 @@ export default async function Image({
               {metro.country}
             </div>
 
-            {/* Tier pill */}
             <div
               style={{
                 display: "flex",
@@ -204,7 +193,6 @@ export default async function Image({
               {tier.name.toUpperCase()}
             </div>
 
-            {/* Divider */}
             <div
               style={{
                 height: 1,
@@ -266,7 +254,6 @@ export default async function Image({
             </div>
           </div>
 
-          {/* Vertical divider */}
           <div
             style={{
               width: 1,
@@ -279,7 +266,6 @@ export default async function Image({
             }}
           />
 
-          {/* Right zone: rank and score */}
           <div
             style={{
               display: "flex",
