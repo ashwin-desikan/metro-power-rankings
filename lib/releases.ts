@@ -19,10 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-08",
-    headline: "Sharper defunct-team history and sticky filters",
+    headline: "CFL portal and richer defunct-team history",
     items: [
-      "Relocated and defunct teams now carry the exact name, years, and tags for each city they played in, rebuilt season by season so a franchise's separate eras stay separate.",
-      "Added MLS, early-era clubs, and wartime merger sides like Card-Pitt and the Steagles, and corrected stops like the original Ottawa Senators and the WHA Stags.",
+      "New CFL portal: every franchise, live standings from CFL.ca, full season-by-season records, and the complete Grey Cup history back to 1909.",
+      "Defunct and relocated team cards now show a franchise's titles, finals, and record for only the years it spent in that city, across the NFL, MLB, NBA, NHL, CFL, WNBA, and MLS.",
+      "Relocated and defunct teams carry the exact name, years, and tags for each city, rebuilt season by season so a franchise's separate eras stay separate.",
       "The main rankings filters (Top 25/100, region, continent, search) now persist as you browse and reset only on a new session.",
     ],
   },

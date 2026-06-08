@@ -8,7 +8,13 @@
 "href": "/teams/mlb/trojans",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.412
+}
 }
 ],
 "atlanta": [
@@ -20,7 +26,13 @@
 "href": "/teams/nhl/jets",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.429
+}
 },
 {
 "league": "nhl",
@@ -30,7 +42,13 @@
 "href": "/teams/nhl/flames",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.506
+}
 }
 ],
 "baton-rouge": [
@@ -47,6 +65,22 @@
 ],
 "birmingham": [
 {
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Birmingham Barracudas",
+"years": "1995–1995",
+"href": "/teams/cfl/birmingham-barracudas",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.556
+}
+},
+{
 "league": "nhl",
 "sport": "Hockey",
 "name": "Birmingham Bulls",
@@ -54,7 +88,13 @@
 "href": "/teams/nhl/bulls-b",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.438
+}
 }
 ],
 "boston": [
@@ -66,17 +106,31 @@
 "href": "/teams/nhl/hurricanes",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 1,
+"pct": 0.59,
+"other": 1
+}
 },
 {
 "league": "mlb",
 "sport": "Baseball",
-"name": "Boston Red Caps",
+"name": "Boston Braves",
 "years": "1876–1952",
 "href": "/teams/mlb/braves",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 10,
+"finals": 9,
+"pct": 0.478,
+"other": 2
+}
 },
 {
 "league": "nfl",
@@ -86,17 +140,29 @@
 "href": "/teams/nfl/texans-d",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.282
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Boston Braves",
+"name": "Boston Redskins",
 "years": "1932–1936",
 "href": "/teams/nfl/washington-commanders",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.465
+}
 },
 {
 "league": "nfl",
@@ -106,7 +172,13 @@
 "href": "/teams/nfl/bulldogs-boston",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 },
 {
 "league": "mlb",
@@ -116,7 +188,13 @@
 "href": "/teams/mlb/red-stockings",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.689
+}
 },
 {
 "league": "mlb",
@@ -126,7 +204,13 @@
 "href": "/teams/mlb/brown-stockings-w",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.361
+}
 }
 ],
 "buffalo": [
@@ -138,7 +222,13 @@
 "href": "/teams/mlb/blue-jays",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.533
+}
 },
 {
 "league": "nba",
@@ -148,27 +238,45 @@
 "href": "/teams/nba/clippers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.395
+}
+},
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Buffalo Bills",
+"years": "1946–1949",
+"href": "/teams/nfl/bills-d",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.472
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
 "name": "Buffalo Bisons",
-"years": "1946–1949",
-"href": "/teams/nfl/bills-d",
-"kind": "defunct",
-"relocated": false,
-"defunct": true
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"name": "Buffalo All-Americans",
 "years": "1920–1929",
 "href": "/teams/nfl/bisons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.488
+}
 },
 {
 "league": "nfl",
@@ -178,7 +286,13 @@
 "href": "/teams/nfl/kardex",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 },
 {
 "league": "mlb",
@@ -188,7 +302,13 @@
 "href": "/teams/mlb/bisons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.485
+}
 }
 ],
 "calgary": [
@@ -200,7 +320,13 @@
 "href": "/teams/nhl/cowboys-cal",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.481
+}
 },
 {
 "league": "nhl",
@@ -210,7 +336,13 @@
 "href": "/teams/nhl/tigers-cal",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 1,
+"pct": 0.514
+}
 }
 ],
 "champaign": [
@@ -222,7 +354,13 @@
 "href": "/teams/nfl/chicago-bears",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.25
+}
 }
 ],
 "charlotte": [
@@ -234,7 +372,13 @@
 "href": "/teams/wnba/charlotte-sting",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.444
+}
 },
 {
 "league": "nba",
@@ -244,7 +388,13 @@
 "href": "/teams/nba/spirits",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.512
+}
 }
 ],
 "chicago": [
@@ -256,17 +406,29 @@
 "href": "/teams/nhl/cougars",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 1,
+"pct": 0.419
+}
 },
 {
 "league": "nba",
 "sport": "Basketball",
-"name": "Chicago Packers",
+"name": "Chicago Zephyrs",
 "years": "1962–1963",
 "href": "/teams/nba/wizards",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.269
+}
 },
 {
 "league": "nfl",
@@ -276,7 +438,13 @@
 "href": "/teams/nfl/arizona-cardinals",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 2,
+"div": 3,
+"finals": 2,
+"pct": 0.401
+}
 },
 {
 "league": "nba",
@@ -286,17 +454,29 @@
 "href": "/teams/nba/stags",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.612
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Chicago Rockets",
+"name": "Chicago Hornets",
 "years": "1946–1949",
 "href": "/teams/nfl/hornets",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.231
+}
 },
 {
 "league": "nfl",
@@ -306,7 +486,13 @@
 "href": "/teams/nfl/carpitts",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 },
 {
 "league": "nfl",
@@ -316,7 +502,13 @@
 "href": "/teams/nfl/pros",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.2
+}
 },
 {
 "league": "nfl",
@@ -326,7 +518,13 @@
 "href": "/teams/nfl/maroons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.1
+}
 },
 {
 "league": "nfl",
@@ -336,7 +534,13 @@
 "href": "/teams/nfl/tigers-chi",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.214
+}
 }
 ],
 "cincinnati": [
@@ -348,7 +552,13 @@
 "href": "/teams/nhl/stingers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.466
+}
 },
 {
 "league": "nba",
@@ -358,17 +568,29 @@
 "href": "/teams/nba/kings",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.467
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Cincinnati Reds",
+"name": "Cincy Reds",
 "years": "1933–1934",
 "href": "/teams/nfl/gunners",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.214
+}
 },
 {
 "league": "nfl",
@@ -378,7 +600,13 @@
 "href": "/teams/nfl/celts",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.25
+}
 },
 {
 "league": "mlb",
@@ -388,7 +616,13 @@
 "href": "/teams/mlb/kelly-s-killers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.43
+}
 },
 {
 "league": "mlb",
@@ -398,7 +632,13 @@
 "href": "/teams/mlb/reds-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.365
+}
 }
 ],
 "cleveland": [
@@ -410,7 +650,13 @@
 "href": "/teams/wnba/cleveland-rockers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 0,
+"pct": 0.491
+}
 },
 {
 "league": "nhl",
@@ -420,7 +666,13 @@
 "href": "/teams/nhl/barons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.375
+}
 },
 {
 "league": "nhl",
@@ -430,7 +682,13 @@
 "href": "/teams/nhl/fighting-saints-2",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.51
+}
 },
 {
 "league": "nba",
@@ -440,7 +698,13 @@
 "href": "/teams/nba/rebels",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 },
 {
 "league": "nfl",
@@ -450,7 +714,13 @@
 "href": "/teams/nfl/los-angeles-rams",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 1,
+"pct": 0.407
+}
 },
 {
 "league": "nfl",
@@ -460,27 +730,45 @@
 "href": "/teams/nfl/indians-clev",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.2
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Cleveland Indians",
+"name": "Cleveland Bulldogs",
 "years": "1923–1927",
 "href": "/teams/nfl/wolverines",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 0,
+"pct": 0.605
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Akron Pros",
+"name": "Akron Indians",
 "years": "1920–1926",
 "href": "/teams/nfl/indians-akron",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 0,
+"pct": 0.492
+}
 },
 {
 "league": "nfl",
@@ -490,17 +778,29 @@
 "href": "/teams/nfl/bulldogs-canton",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 2,
+"div": 2,
+"finals": 0,
+"pct": 0.635
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Cleveland Tigers",
+"name": "Cleveland Indians",
 "years": "1920–1921",
 "href": "/teams/nfl/tigers-clev",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.333
+}
 },
 {
 "league": "mlb",
@@ -510,7 +810,14 @@
 "href": "/teams/mlb/spiders",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 1,
+"pct": 0.469,
+"other": 3
+}
 },
 {
 "league": "mlb",
@@ -520,19 +827,31 @@
 "href": "/teams/mlb/blues-c",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.447
+}
 }
 ],
 "columbus": [
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Columbus Panhandles",
+"name": "Columbus Tigers",
 "years": "1920–1926",
 "href": "/teams/nfl/tigers-colm",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.205
+}
 },
 {
 "league": "nfl",
@@ -542,17 +861,29 @@
 "href": "/teams/nfl/indians-marion",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.2
+}
 },
 {
 "league": "mlb",
 "sport": "Baseball",
-"name": "Columbus Colts",
+"name": "Columbus Solons",
 "years": "1889–1891",
 "href": "/teams/mlb/solons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.489
+}
 },
 {
 "league": "mlb",
@@ -562,7 +893,13 @@
 "href": "/teams/mlb/colts-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.493
+}
 }
 ],
 "cornwall-on": [
@@ -574,7 +911,13 @@
 "href": "/teams/nhl/cornwall",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.392
+}
 },
 {
 "league": "nhl",
@@ -584,7 +927,13 @@
 "href": "/teams/nhl/morrisburg",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 }
 ],
 "dallas": [
@@ -596,7 +945,13 @@
 "href": "/teams/nba/spurs",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.472
+}
 },
 {
 "league": "nfl",
@@ -606,7 +961,13 @@
 "href": "/teams/nfl/kansas-city-chiefs",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 1,
+"pct": 0.595
+}
 },
 {
 "league": "nfl",
@@ -616,7 +977,13 @@
 "href": "/teams/nfl/texans-d",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.083
+}
 }
 ],
 "davenport": [
@@ -628,7 +995,13 @@
 "href": "/teams/nba/hawks",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.409
+}
 },
 {
 "league": "nfl",
@@ -638,7 +1011,13 @@
 "href": "/teams/nfl/independents",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.602
+}
 }
 ],
 "dayton": [
@@ -650,7 +1029,13 @@
 "href": "/teams/nfl/tigers",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.276
+}
 }
 ],
 "denver": [
@@ -662,7 +1047,13 @@
 "href": "/teams/nhl/devils",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.325
+}
 },
 {
 "league": "nhl",
@@ -672,7 +1063,13 @@
 "href": "/teams/nhl/civics",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.354
+}
 },
 {
 "league": "nba",
@@ -682,7 +1079,13 @@
 "href": "/teams/nba/nuggets-def",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.177
+}
 }
 ],
 "detroit": [
@@ -694,7 +1097,13 @@
 "href": "/teams/nhl/blades",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.295
+}
 },
 {
 "league": "nba",
@@ -704,7 +1113,13 @@
 "href": "/teams/nba/falcons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.333
+}
 },
 {
 "league": "nfl",
@@ -714,7 +1129,13 @@
 "href": "/teams/nfl/wolverines",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.75
+}
 },
 {
 "league": "nfl",
@@ -724,7 +1145,13 @@
 "href": "/teams/nfl/panthers-det",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.583
+}
 },
 {
 "league": "nfl",
@@ -734,7 +1161,13 @@
 "href": "/teams/nfl/heralds",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.227
+}
 },
 {
 "league": "mlb",
@@ -744,19 +1177,32 @@
 "href": "/teams/mlb/wolverines",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.494,
+"other": 1
+}
 }
 ],
 "duluth": [
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Duluth Kelleys",
+"name": "Duluth Eskimos",
 "years": "1923–1927",
 "href": "/teams/nfl/tornadoes-nj",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.449
+}
 }
 ],
 "edmonton": [
@@ -768,7 +1214,13 @@
 "href": "/teams/nhl/eskimos",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 3,
+"finals": 1,
+"pct": 0.57
+}
 }
 ],
 "evansville": [
@@ -780,7 +1232,13 @@
 "href": "/teams/nfl/crimson-giants",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.375
+}
 }
 ],
 "fort-wayne": [
@@ -792,7 +1250,13 @@
 "href": "/teams/nba/pistons",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 2,
+"pct": 0.506
+}
 }
 ],
 "greensboro-winston-salem": [
@@ -804,7 +1268,13 @@
 "href": "/teams/nhl/hurricanes",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.488
+}
 }
 ],
 "halifax-ns": [
@@ -816,10 +1286,48 @@
 "href": "/teams/nhl/chebuctos",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 }
 ],
 "hamilton": [
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Hamilton Tigers",
+"years": "1945–1949",
+"href": "/teams/cfl/hamilton-tigers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 5,
+"div": 0,
+"finals": 8,
+"pct": 0.15
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Hamilton Wildcats",
+"years": "1948–1949",
+"href": "/teams/cfl/hamilton-wildcats",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 1,
+"pct": 0.062
+}
+},
 {
 "league": "nhl",
 "sport": "Hockey",
@@ -828,19 +1336,31 @@
 "href": "/teams/nhl/tigers-ham",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.377
+}
 }
 ],
 "hartford": [
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "New England Whalers",
+"name": "Hartford Whalers",
 "years": "1975–1997",
 "href": "/teams/nhl/hurricanes",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 1,
+"pct": 0.454
+}
 },
 {
 "league": "nfl",
@@ -850,7 +1370,13 @@
 "href": "/teams/nfl/blues",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.3
+}
 },
 {
 "league": "mlb",
@@ -860,7 +1386,13 @@
 "href": "/teams/mlb/hartfords",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.691
+}
 }
 ],
 "houston": [
@@ -872,7 +1404,13 @@
 "href": "/teams/wnba/houston-comets",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 4,
+"div": 3,
+"finals": 4,
+"pct": 0.618
+}
 },
 {
 "league": "nfl",
@@ -882,7 +1420,13 @@
 "href": "/teams/nfl/tennessee-titans",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 2,
+"div": 6,
+"finals": 3,
+"pct": 0.464
+}
 },
 {
 "league": "nhl",
@@ -892,7 +1436,14 @@
 "href": "/teams/nhl/aeros",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 4,
+"finals": 3,
+"pct": 0.621,
+"other": 2
+}
 },
 {
 "league": "nba",
@@ -902,7 +1453,13 @@
 "href": "/teams/nba/spirits",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.333
+}
 }
 ],
 "hyderabad": [
@@ -926,7 +1483,13 @@
 "href": "/teams/nhl/racers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.378
+}
 },
 {
 "league": "nba",
@@ -936,7 +1499,13 @@
 "href": "/teams/nba/olympians",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.491
+}
 },
 {
 "league": "nba",
@@ -946,7 +1515,13 @@
 "href": "/teams/nba/packers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.578
+}
 },
 {
 "league": "nba",
@@ -956,7 +1531,13 @@
 "href": "/teams/nba/jets",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.3
+}
 },
 {
 "league": "nfl",
@@ -966,7 +1547,13 @@
 "href": "/teams/nfl/flyers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 },
 {
 "league": "mlb",
@@ -976,7 +1563,13 @@
 "href": "/teams/mlb/hoosiers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.37
+}
 },
 {
 "league": "mlb",
@@ -986,7 +1579,13 @@
 "href": "/teams/mlb/blues-i",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.271
+}
 },
 {
 "league": "mlb",
@@ -996,19 +1595,31 @@
 "href": "/teams/mlb/browns",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.4
+}
 }
 ],
 "kansas-city": [
 {
 "league": "nba",
 "sport": "Basketball",
-"name": "KC Kings",
+"name": "Kansas City Kings",
 "years": "1973–1985",
 "href": "/teams/nba/kings",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.463
+}
 },
 {
 "league": "nhl",
@@ -1018,7 +1629,13 @@
 "href": "/teams/nhl/devils",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.241
+}
 },
 {
 "league": "mlb",
@@ -1028,17 +1645,29 @@
 "href": "/teams/mlb/athletics",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.404
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Kansas City Blues",
+"name": "Kansas City Cowboys",
 "years": "1924–1926",
 "href": "/teams/nfl/cowboys-kc",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.446
+}
 },
 {
 "league": "mlb",
@@ -1048,7 +1677,13 @@
 "href": "/teams/mlb/blues-k",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.364
+}
 },
 {
 "league": "mlb",
@@ -1058,7 +1693,13 @@
 "href": "/teams/mlb/cowboys",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.248
+}
 }
 ],
 "kenora-on": [
@@ -1070,7 +1711,31 @@
 "href": "/teams/nhl/thistles",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
+}
+],
+"kitchener-waterloo": [
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Kitchener-Waterloo Dutchmen",
+"years": "1954–1954",
+"href": "/teams/cfl/kitchener-waterloo-dutchmen",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 }
 ],
 "kochi": [
@@ -1085,6 +1750,24 @@
 "defunct": true
 }
 ],
+"las-vegas": [
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Las Vegas Posse",
+"years": "1994–1994",
+"href": "/teams/cfl/las-vegas-posse",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.278
+}
+}
+],
 "london": [
 {
 "league": "football",
@@ -1094,7 +1777,20 @@
 "href": "/teams/football/milton-keynes-dons",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0,
+"is_mls": false,
+"mls_cups": 0,
+"supporters_shields": 0,
+"cont_trophies": 0,
+"titles": 0,
+"major_cups": 1,
+"top_flight_seasons": 14
+}
 }
 ],
 "los-angeles": [
@@ -1106,7 +1802,20 @@
 "href": "/teams/football/chivas-usa",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0,
+"is_mls": true,
+"mls_cups": 0,
+"supporters_shields": 0,
+"cont_trophies": 0,
+"titles": 0,
+"major_cups": 0,
+"top_flight_seasons": 0
+}
 },
 {
 "league": "nfl",
@@ -1116,7 +1825,13 @@
 "href": "/teams/nfl/las-vegas-raiders",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 4,
+"finals": 1,
+"pct": 0.59
+}
 },
 {
 "league": "nhl",
@@ -1126,7 +1841,13 @@
 "href": "/teams/nhl/blades",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.417
+}
 },
 {
 "league": "nba",
@@ -1136,7 +1857,13 @@
 "href": "/teams/nba/stars",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 1,
+"pct": 0.421
+}
 },
 {
 "league": "nfl",
@@ -1146,7 +1873,13 @@
 "href": "/teams/nfl/dons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.481
+}
 },
 {
 "league": "nfl",
@@ -1156,7 +1889,13 @@
 "href": "/teams/nfl/buccaneers-la",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.65
+}
 }
 ],
 "louisville": [
@@ -1168,27 +1907,46 @@
 "href": "/teams/nba/colonels-aba",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 2,
+"finals": 3,
+"pct": 0.602
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Louisville Brecks",
+"name": "Louisville Colonels",
 "years": "1921–1926",
 "href": "/teams/nfl/colonels",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.077
+}
 },
 {
 "league": "mlb",
 "sport": "Baseball",
-"name": "Louisville Eclipse",
+"name": "Louisville Colonels",
 "years": "1882–1899",
 "href": "/teams/mlb/colonels",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.429,
+"other": 1
+}
 },
 {
 "league": "mlb",
@@ -1198,7 +1956,13 @@
 "href": "/teams/mlb/grays-l",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.516
+}
 }
 ],
 "memphis": [
@@ -1210,17 +1974,45 @@
 "href": "/teams/nfl/tennessee-titans",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Memphis Mad Dogs",
+"years": "1995–1995",
+"href": "/teams/cfl/memphis-mad-dogs",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 },
 {
 "league": "nba",
 "sport": "Basketball",
-"name": "Memphis Pros",
+"name": "Memphis Sounds",
 "years": "1971–1975",
 "href": "/teams/nba/sounds",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.331
+}
 }
 ],
 "miami": [
@@ -1232,7 +2024,13 @@
 "href": "/teams/wnba/miami-sol",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 },
 {
 "league": "football",
@@ -1242,17 +2040,36 @@
 "href": "/teams/football/miami-fusion",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0,
+"is_mls": true,
+"mls_cups": 0,
+"supporters_shields": 1,
+"cont_trophies": 0,
+"titles": 0,
+"major_cups": 0,
+"top_flight_seasons": 0
+}
 },
 {
 "league": "nba",
 "sport": "Basketball",
-"name": "Miami Floridians",
+"name": "(Florida) The Floridians",
 "years": "1969–1972",
 "href": "/teams/nba/the-floridians",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.421
+}
 },
 {
 "league": "nfl",
@@ -1262,7 +2079,13 @@
 "href": "/teams/nfl/seahawks-mia",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.214
+}
 }
 ],
 "milwaukee": [
@@ -1274,7 +2097,13 @@
 "href": "/teams/mlb/braves",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 2,
+"finals": 2,
+"pct": 0.563
+}
 },
 {
 "league": "nba",
@@ -1284,7 +2113,13 @@
 "href": "/teams/nba/hawks",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.324
+}
 },
 {
 "league": "nfl",
@@ -1294,17 +2129,29 @@
 "href": "/teams/nfl/badgers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.388
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Racine Legion",
+"name": "Racine Tornadoes",
 "years": "1922–1926",
 "href": "/teams/nfl/tornadoes",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 },
 {
 "league": "mlb",
@@ -1314,7 +2161,13 @@
 "href": "/teams/mlb/orioles",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.35
+}
 },
 {
 "league": "mlb",
@@ -1324,7 +2177,13 @@
 "href": "/teams/mlb/brewers-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.583
+}
 },
 {
 "league": "mlb",
@@ -1334,7 +2193,13 @@
 "href": "/teams/mlb/grays-m",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.25
+}
 }
 ],
 "minneapolis": [
@@ -1346,7 +2211,13 @@
 "href": "/teams/nhl/stars",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 2,
+"pct": 0.449
+}
 },
 {
 "league": "nhl",
@@ -1356,7 +2227,13 @@
 "href": "/teams/nhl/fighting-saints-2",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.512
+}
 },
 {
 "league": "nhl",
@@ -1366,7 +2243,13 @@
 "href": "/teams/nhl/fighting-saints-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.546
+}
 },
 {
 "league": "nba",
@@ -1376,7 +2259,13 @@
 "href": "/teams/nba/condors",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.462
+}
 },
 {
 "league": "nba",
@@ -1386,7 +2275,13 @@
 "href": "/teams/nba/the-floridians",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.641
+}
 },
 {
 "league": "nba",
@@ -1396,17 +2291,29 @@
 "href": "/teams/nba/lakers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 5,
+"div": 4,
+"finals": 6,
+"pct": 0.545
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Minneapolis Marines",
+"name": "Minneapolis Redjackets",
 "years": "1921–1930",
 "href": "/teams/nfl/redjackets",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.179
+}
 }
 ],
 "montreal": [
@@ -1418,7 +2325,29 @@
 "href": "/teams/mlb/nationals",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.484
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Montreal Hornets",
+"years": "1945–1945",
+"href": "/teams/cfl/montreal-hornets",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.167
+}
 },
 {
 "league": "nhl",
@@ -1428,7 +2357,13 @@
 "href": "/teams/nhl/maroons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 2,
+"div": 2,
+"finals": 3,
+"pct": 0.509
+}
 },
 {
 "league": "nhl",
@@ -1438,7 +2373,13 @@
 "href": "/teams/nhl/wanderers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 5,
+"div": 2,
+"finals": 1,
+"pct": 0.575
+}
 },
 {
 "league": "nhl",
@@ -1448,7 +2389,13 @@
 "href": "/teams/nhl/all-montreal",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.25
+}
 },
 {
 "league": "nhl",
@@ -1458,7 +2405,13 @@
 "href": "/teams/nhl/le-national",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.15
+}
 },
 {
 "league": "nhl",
@@ -1468,7 +2421,13 @@
 "href": "/teams/nhl/shamrocks-m",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 2,
+"div": 0,
+"finals": 0,
+"pct": 0.292
+}
 },
 {
 "league": "nhl",
@@ -1478,7 +2437,14 @@
 "href": "/teams/nhl/montreal-hc",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 4,
+"div": 0,
+"finals": 1,
+"pct": 0.55,
+"other": 4
+}
 },
 {
 "league": "nhl",
@@ -1488,7 +2454,14 @@
 "href": "/teams/nhl/victorias-m",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 4,
+"div": 0,
+"finals": 0,
+"pct": 0.627,
+"other": 1
+}
 },
 {
 "league": "nhl",
@@ -1498,7 +2471,13 @@
 "href": "/teams/nhl/montagnards",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.391
+}
 },
 {
 "league": "nhl",
@@ -1508,7 +2487,13 @@
 "href": "/teams/nhl/westmount-m",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.3
+}
 },
 {
 "league": "nhl",
@@ -1518,7 +2503,13 @@
 "href": "/teams/nhl/crystals",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.263
+}
 },
 {
 "league": "nhl",
@@ -1528,7 +2519,13 @@
 "href": "/teams/nhl/britannias-m",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 },
 {
 "league": "nhl",
@@ -1538,7 +2535,13 @@
 "href": "/teams/nhl/mcgill-university",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 }
 ],
 "moose-jaw": [
@@ -1562,7 +2565,13 @@
 "href": "/teams/nba/jazz",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.393
+}
 },
 {
 "league": "nba",
@@ -1572,39 +2581,65 @@
 "href": "/teams/nba/sounds",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.567
+}
 }
 ],
 "new-york": [
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "New York Raiders",
+"name": "New York Golden Blades",
 "years": "1973–1974",
 "href": "/teams/nhl/mariners",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.436
+}
 },
 {
 "league": "mlb",
 "sport": "Baseball",
-"name": "Brooklyn Atlantics",
+"name": "Brooklyn Dodgers",
 "years": "1884–1957",
 "href": "/teams/mlb/dodgers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 13,
+"finals": 12,
+"pct": 0.516,
+"other": 3
+}
 },
 {
 "league": "mlb",
 "sport": "Baseball",
-"name": "New York Gothams",
+"name": "New York Giants",
 "years": "1883–1957",
 "href": "/teams/mlb/giants",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 5,
+"div": 17,
+"finals": 18,
+"pct": 0.553,
+"other": 3
+}
 },
 {
 "league": "nfl",
@@ -1624,7 +2659,13 @@
 "href": "/teams/nfl/yankees",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 2,
+"pct": 0.667
+}
 },
 {
 "league": "nfl",
@@ -1634,7 +2675,13 @@
 "href": "/teams/nfl/dodgers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.214
+}
 },
 {
 "league": "nfl",
@@ -1644,37 +2691,61 @@
 "href": "/teams/nfl/tigers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.382
+}
 },
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "New York Americans",
+"name": "Brooklyn Americans",
 "years": "1926–1942",
 "href": "/teams/nhl/americans",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.406
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Brooklyn Lions",
+"name": "Staten Island Stapletons",
 "years": "1926–1932",
 "href": "/teams/nfl/stapletons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.394
+}
 },
 {
 "league": "nfl",
 "sport": "American Football",
-"name": "Orange Tornadoes",
+"name": "Newark Tornadoes",
 "years": "1929–1930",
 "href": "/teams/nfl/tornadoes-nj",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.271
+}
 },
 {
 "league": "nfl",
@@ -1684,7 +2755,13 @@
 "href": "/teams/nfl/brickley-s-giants",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 },
 {
 "league": "mlb",
@@ -1694,7 +2771,13 @@
 "href": "/teams/mlb/gladiators",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.265
+}
 },
 {
 "league": "mlb",
@@ -1704,7 +2787,14 @@
 "href": "/teams/mlb/metropolitans",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.466,
+"other": 1
+}
 },
 {
 "league": "mlb",
@@ -1714,7 +2804,13 @@
 "href": "/teams/mlb/hartfords",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.534
+}
 },
 {
 "league": "mlb",
@@ -1724,7 +2820,13 @@
 "href": "/teams/mlb/mutuals",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.375
+}
 }
 ],
 "norfolk": [
@@ -1736,22 +2838,66 @@
 "href": "/teams/nba/squires",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.398
+}
 }
 ],
 "oklahoma-city": [
 {
 "league": "nba",
 "sport": "Basketball",
-"name": "NO Hornets",
+"name": "Oklahoma City Hornets",
 "years": "2006–2007",
 "href": "/teams/nba/pelicans",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.47
+}
 }
 ],
 "ottawa": [
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Ottawa Renegades",
+"years": "2002–2005",
+"href": "/teams/cfl/ottawa-renegades",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.319
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Ottawa Rough Riders",
+"years": "1945–1996",
+"href": "/teams/cfl/ottawa-rough-riders",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 9,
+"div": 0,
+"finals": 15,
+"pct": 0.464
+}
+},
 {
 "league": "nhl",
 "sport": "Hockey",
@@ -1770,7 +2916,29 @@
 "href": "/teams/nhl/bulls-b",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.474
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Ottawa Trojans",
+"years": "1947–1947",
+"href": "/teams/cfl/ottawa-trojans",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 },
 {
 "league": "nhl",
@@ -1780,7 +2948,14 @@
 "href": "/teams/nhl/senators-org",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 11,
+"div": 11,
+"finals": 7,
+"pct": 0.577,
+"other": 1
+}
 },
 {
 "league": "nhl",
@@ -1790,7 +2965,13 @@
 "href": "/teams/nhl/senators-fhl",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 },
 {
 "league": "nhl",
@@ -1800,7 +2981,13 @@
 "href": "/teams/nhl/seniors-sf",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.692
+}
 },
 {
 "league": "nhl",
@@ -1810,7 +2997,13 @@
 "href": "/teams/nhl/brockville",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.467
+}
 },
 {
 "league": "nhl",
@@ -1820,7 +3013,13 @@
 "href": "/teams/nhl/victorias-o",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.553
+}
 },
 {
 "league": "nhl",
@@ -1830,7 +3029,13 @@
 "href": "/teams/nhl/capitals-o",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.167
+}
 }
 ],
 "philadelphia": [
@@ -1852,7 +3057,13 @@
 "href": "/teams/nhl/cowboys-cal",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.487
+}
 },
 {
 "league": "nba",
@@ -1862,7 +3073,13 @@
 "href": "/teams/nba/warriors",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 2,
+"div": 3,
+"finals": 3,
+"pct": 0.506
+}
 },
 {
 "league": "mlb",
@@ -1872,7 +3089,13 @@
 "href": "/teams/mlb/athletics",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 5,
+"div": 9,
+"finals": 9,
+"pct": 0.478
+}
 },
 {
 "league": "nfl",
@@ -1882,7 +3105,13 @@
 "href": "/teams/nfl/steagles",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.55
+}
 },
 {
 "league": "nfl",
@@ -1892,7 +3121,13 @@
 "href": "/teams/nfl/yellow-jackets",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 0,
+"pct": 0.596
+}
 },
 {
 "league": "nhl",
@@ -1902,7 +3137,13 @@
 "href": "/teams/nhl/quakers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.136
+}
 },
 {
 "league": "mlb",
@@ -1912,7 +3153,13 @@
 "href": "/teams/mlb/quakers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.525
+}
 },
 {
 "league": "mlb",
@@ -1922,7 +3169,13 @@
 "href": "/teams/mlb/athletics-2",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.529
+}
 },
 {
 "league": "mlb",
@@ -1932,19 +3185,31 @@
 "href": "/teams/mlb/athletics-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.237
+}
 }
 ],
 "phoenix": [
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "Phoenix Coyotes",
+"name": "Arizona Coyotes",
 "years": "1997–2024",
 "href": "/teams/nhl/coyotes",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.487
+}
 },
 {
 "league": "nhl",
@@ -1954,7 +3219,13 @@
 "href": "/teams/nhl/roadrunners",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.483
+}
 }
 ],
 "pittsburgh": [
@@ -1966,7 +3237,13 @@
 "href": "/teams/nba/condors",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 1,
+"pct": 0.436
+}
 },
 {
 "league": "nba",
@@ -1976,7 +3253,13 @@
 "href": "/teams/nba/ironmen",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.25
+}
 },
 {
 "league": "nfl",
@@ -2006,7 +3289,13 @@
 "href": "/teams/nhl/quakers",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.37
+}
 }
 ],
 "portland": [
@@ -2018,7 +3307,13 @@
 "href": "/teams/nhl/blackhawks",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.433
+}
 },
 {
 "league": "nhl",
@@ -2028,7 +3323,13 @@
 "href": "/teams/nhl/red-wings",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.487
+}
 }
 ],
 "portsmouth": [
@@ -2040,7 +3341,13 @@
 "href": "/teams/nfl/detroit-lions",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 1,
+"pct": 0.618
+}
 }
 ],
 "pottsville": [
@@ -2052,7 +3359,14 @@
 "href": "/teams/nfl/bulldogs-boston",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 0,
+"finals": 0,
+"pct": 0.571,
+"stolen": 1
+}
 }
 ],
 "providence": [
@@ -2064,7 +3378,13 @@
 "href": "/teams/nba/steamrollers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.274
+}
 },
 {
 "league": "nfl",
@@ -2074,7 +3394,13 @@
 "href": "/teams/nfl/steam-roller",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 0,
+"pct": 0.554
+}
 },
 {
 "league": "mlb",
@@ -2084,7 +3410,14 @@
 "href": "/teams/mlb/grays",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 2,
+"pct": 0.612,
+"other": 1
+}
 }
 ],
 "pune": [
@@ -2118,7 +3451,14 @@
 "href": "/teams/nhl/avalanche",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 4,
+"finals": 2,
+"pct": 0.488,
+"other": 1
+}
 },
 {
 "league": "nhl",
@@ -2128,7 +3468,13 @@
 "href": "/teams/nhl/tigers-ham",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 2,
+"div": 2,
+"finals": 0,
+"pct": 0.481
+}
 }
 ],
 "rajkot": [
@@ -2152,7 +3498,13 @@
 "href": "/teams/nhl/blackhawks",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 }
 ],
 "renfrew": [
@@ -2164,7 +3516,13 @@
 "href": "/teams/nhl/creamery-kings",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.662
+}
 }
 ],
 "richmond": [
@@ -2176,7 +3534,13 @@
 "href": "/teams/mlb/virginians",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.286
+}
 }
 ],
 "rochester": [
@@ -2188,7 +3552,13 @@
 "href": "/teams/nba/kings",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 2,
+"finals": 1,
+"pct": 0.576
+}
 },
 {
 "league": "nfl",
@@ -2198,7 +3568,13 @@
 "href": "/teams/nfl/jeffersons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.103
+}
 },
 {
 "league": "mlb",
@@ -2208,7 +3584,13 @@
 "href": "/teams/mlb/hop-bitters",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.5
+}
 }
 ],
 "sacramento": [
@@ -2220,7 +3602,29 @@
 "href": "/teams/wnba/sacramento-monarchs",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 2,
+"pct": 0.528
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Sacramento Gold Miners",
+"years": "1993–1994",
+"href": "/teams/cfl/sacramento-gold-miners",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.431
+}
 }
 ],
 "salt-lake-city-provo": [
@@ -2232,7 +3636,13 @@
 "href": "/teams/nba/stars",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 3,
+"finals": 2,
+"pct": 0.608
+}
 }
 ],
 "san-antonio": [
@@ -2244,7 +3654,29 @@
 "href": "/teams/nfl/new-orleans-saints",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.188
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "San Antonio Texans",
+"years": "1995–1995",
+"href": "/teams/cfl/san-antonio-texans",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.667
+}
 }
 ],
 "san-diego": [
@@ -2256,7 +3688,13 @@
 "href": "/teams/nfl/los-angeles-chargers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 14,
+"finals": 5,
+"pct": 0.494
+}
 },
 {
 "league": "nba",
@@ -2266,7 +3704,13 @@
 "href": "/teams/nba/clippers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.378
+}
 },
 {
 "league": "nhl",
@@ -2276,17 +3720,29 @@
 "href": "/teams/nhl/mariners",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.527
+}
 },
 {
 "league": "nba",
 "sport": "Basketball",
-"name": "San Diego Conquistadors",
+"name": "San Diego Sails",
 "years": "1973–1976",
 "href": "/teams/nba/sails",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.384
+}
 },
 {
 "league": "nba",
@@ -2296,7 +3752,13 @@
 "href": "/teams/nba/rockets",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.363
+}
 }
 ],
 "san-francisco-san-jose": [
@@ -2308,7 +3770,13 @@
 "href": "/teams/mlb/athletics",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 4,
+"div": 17,
+"finals": 6,
+"pct": 0.513
+}
 },
 {
 "league": "nfl",
@@ -2318,17 +3786,29 @@
 "href": "/teams/nfl/las-vegas-raiders",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 2,
+"div": 12,
+"finals": 4,
+"pct": 0.503
+}
 },
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "Oakland Seals",
+"name": "California Golden Seals",
 "years": "1968–1976",
 "href": "/teams/nhl/barons",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.343
+}
 },
 {
 "league": "nba",
@@ -2338,7 +3818,13 @@
 "href": "/teams/nba/squires",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 1,
+"pct": 0.526
+}
 }
 ],
 "san-juan": [
@@ -2353,16 +3839,40 @@
 "defunct": false
 }
 ],
+"sarnia": [
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Sarnia Imperials",
+"years": "1951–1952",
+"href": "/teams/cfl/sarnia-imperials",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 2,
+"div": 0,
+"finals": 3,
+"pct": 0.0
+}
+}
+],
 "saskatoon": [
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "Saskatoon Shieks",
+"name": "Saskatoon Crescents",
 "years": "1922–1926",
 "href": "/teams/nhl/crescents",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.461
+}
 }
 ],
 "seattle": [
@@ -2374,7 +3884,13 @@
 "href": "/teams/nba/thunder",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 6,
+"finals": 3,
+"pct": 0.524
+}
 },
 {
 "league": "mlb",
@@ -2384,7 +3900,13 @@
 "href": "/teams/mlb/brewers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.395
+}
 },
 {
 "league": "nhl",
@@ -2394,7 +3916,13 @@
 "href": "/teams/nhl/metropolitans",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 5,
+"finals": 3,
+"pct": 0.538
+}
 }
 ],
 "sheboygan": [
@@ -2406,7 +3934,31 @@
 "href": "/teams/nba/redskins",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.355
+}
+}
+],
+"shreveport": [
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Shreveport Pirates",
+"years": "1994–1995",
+"href": "/teams/cfl/shreveport-pirates",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.222
+}
 }
 ],
 "spokane": [
@@ -2418,7 +3970,13 @@
 "href": "/teams/nhl/canaries",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.348
+}
 }
 ],
 "springfield": [
@@ -2430,7 +3988,13 @@
 "href": "/teams/nhl/hurricanes",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.519
+}
 },
 {
 "league": "nfl",
@@ -2440,7 +4004,13 @@
 "href": "/teams/nfl/chicago-bears",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.75
+}
 }
 ],
 "st-louis": [
@@ -2452,7 +4022,13 @@
 "href": "/teams/nfl/los-angeles-rams",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 3,
+"finals": 2,
+"pct": 0.424
+}
 },
 {
 "league": "nfl",
@@ -2462,7 +4038,13 @@
 "href": "/teams/nfl/arizona-cardinals",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 0,
+"pct": 0.48
+}
 },
 {
 "league": "nba",
@@ -2472,7 +4054,13 @@
 "href": "/teams/nba/spirits",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.399
+}
 },
 {
 "league": "nba",
@@ -2482,7 +4070,13 @@
 "href": "/teams/nba/hawks",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 6,
+"finals": 4,
+"pct": 0.55
+}
 },
 {
 "league": "mlb",
@@ -2492,7 +4086,13 @@
 "href": "/teams/mlb/orioles",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 1,
+"pct": 0.433
+}
 },
 {
 "league": "nba",
@@ -2502,7 +4102,13 @@
 "href": "/teams/nba/bombers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.515
+}
 },
 {
 "league": "nhl",
@@ -2512,7 +4118,13 @@
 "href": "/teams/nhl/senators-org",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.292
+}
 },
 {
 "league": "nfl",
@@ -2532,7 +4144,13 @@
 "href": "/teams/nfl/all-stars",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.286
+}
 },
 {
 "league": "mlb",
@@ -2542,7 +4160,13 @@
 "href": "/teams/mlb/maroons",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.343
+}
 },
 {
 "league": "mlb",
@@ -2552,7 +4176,13 @@
 "href": "/teams/mlb/brown-stockings-s",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.589
+}
 }
 ],
 "syracuse": [
@@ -2564,7 +4194,13 @@
 "href": "/teams/nba/76ers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 3,
+"finals": 3,
+"pct": 0.569
+}
 },
 {
 "league": "mlb",
@@ -2574,7 +4210,13 @@
 "href": "/teams/mlb/stars-2",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.433
+}
 },
 {
 "league": "mlb",
@@ -2584,7 +4226,13 @@
 "href": "/teams/mlb/stars-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.314
+}
 }
 ],
 "tampa": [
@@ -2596,7 +4244,13 @@
 "href": "/teams/nba/raptors",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.375
+}
 },
 {
 "league": "football",
@@ -2606,7 +4260,20 @@
 "href": "/teams/football/tampa-bay-mutiny",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0,
+"is_mls": true,
+"mls_cups": 0,
+"supporters_shields": 1,
+"cont_trophies": 0,
+"titles": 0,
+"major_cups": 0,
+"top_flight_seasons": 0
+}
 }
 ],
 "toledo": [
@@ -2618,7 +4285,13 @@
 "href": "/teams/nfl/maroons",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.588
+}
 },
 {
 "league": "mlb",
@@ -2628,7 +4301,13 @@
 "href": "/teams/mlb/maumees",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.515
+}
 },
 {
 "league": "mlb",
@@ -2638,7 +4317,13 @@
 "href": "/teams/mlb/blue-stockings",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.442
+}
 }
 ],
 "toronto": [
@@ -2650,7 +4335,29 @@
 "href": "/teams/nhl/bulls-b",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.479
+}
+},
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Toronto Balmy Beach",
+"years": "1945–1953",
+"href": "/teams/cfl/toronto-balmy-beach",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 2,
+"div": 0,
+"finals": 4,
+"pct": 0.0
+}
 },
 {
 "league": "nba",
@@ -2660,7 +4367,13 @@
 "href": "/teams/nba/huskies",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.367
+}
 },
 {
 "league": "nhl",
@@ -2670,7 +4383,13 @@
 "href": "/teams/nhl/228th-batallion",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.6
+}
 },
 {
 "league": "nhl",
@@ -2680,17 +4399,29 @@
 "href": "/teams/nhl/blueshirts",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 1,
+"finals": 1,
+"pct": 0.473
+}
 },
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "Toronto Tecumsehs",
+"name": "Toronto Shamrocks",
 "years": "1913–1915",
 "href": "/teams/nhl/shamrocks-t",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.3
+}
 }
 ],
 "vancouver": [
@@ -2702,7 +4433,13 @@
 "href": "/teams/nba/grizzlies",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.22
+}
 },
 {
 "league": "nhl",
@@ -2712,17 +4449,29 @@
 "href": "/teams/nhl/cowboys-cal",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.42
+}
 },
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "Vancouver Millionaires",
+"name": "Vancouver Maroons",
 "years": "1912–1926",
 "href": "/teams/nhl/maroons-v",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 4,
+"finals": 4,
+"pct": 0.511
+}
 },
 {
 "league": "nhl",
@@ -2732,32 +4481,68 @@
 "href": "/teams/nhl/red-wings",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 1,
+"finals": 0,
+"pct": 0.455,
+"other": 1
+}
 }
 ],
 "victoria": [
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "Victoria Aristocrats",
+"name": "Victoria Cougars",
 "years": "1919–1926",
 "href": "/teams/nhl/red-wings",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 0,
+"finals": 2,
+"pct": 0.478
+}
 },
 {
 "league": "nhl",
 "sport": "Hockey",
-"name": "Victoria Senators",
+"name": "Victoria Aristocrats",
 "years": "1912–1916",
 "href": "/teams/nhl/canaries",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 1,
+"pct": 0.439,
+"other": 1
+}
 }
 ],
 "washington-baltimore": [
+{
+"league": "cfl",
+"sport": "Canadian Football",
+"name": "Baltimore CFLs",
+"years": "1994–1995",
+"href": "/teams/cfl/baltimore-cfls",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 0,
+"finals": 2,
+"pct": 0.75
+}
+},
 {
 "league": "nfl",
 "sport": "American Football",
@@ -2766,7 +4551,13 @@
 "href": "/teams/nfl/indianapolis-colts",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 3,
+"div": 8,
+"finals": 5,
+"pct": 0.533
+}
 },
 {
 "league": "nhl",
@@ -2786,7 +4577,13 @@
 "href": "/teams/mlb/rangers",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.418
+}
 },
 {
 "league": "nba",
@@ -2796,7 +4593,13 @@
 "href": "/teams/nba/squires",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.524
+}
 },
 {
 "league": "mlb",
@@ -2806,7 +4609,13 @@
 "href": "/teams/mlb/twins",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 1,
+"div": 3,
+"finals": 3,
+"pct": 0.465
+}
 },
 {
 "league": "nba",
@@ -2816,7 +4625,13 @@
 "href": "/teams/nba/bullets",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"div": 0,
+"finals": 1,
+"pct": 0.351
+}
 },
 {
 "league": "nba",
@@ -2826,7 +4641,13 @@
 "href": "/teams/nba/capitols",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 2,
+"finals": 1,
+"pct": 0.579
+}
 },
 {
 "league": "nfl",
@@ -2836,7 +4657,13 @@
 "href": "/teams/nfl/colts-d",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.221
+}
 },
 {
 "league": "nfl",
@@ -2846,7 +4673,13 @@
 "href": "/teams/nfl/senators-w",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.333
+}
 },
 {
 "league": "mlb",
@@ -2856,7 +4689,13 @@
 "href": "/teams/mlb/yankees",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.435
+}
 },
 {
 "league": "mlb",
@@ -2866,17 +4705,30 @@
 "href": "/teams/mlb/orioles-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 3,
+"finals": 2,
+"pct": 0.519,
+"other": 4
+}
 },
 {
 "league": "mlb",
 "sport": "Baseball",
-"name": "Washington Statesmen",
+"name": "Washington Senators",
 "years": "1891–1899",
 "href": "/teams/mlb/senators",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.366
+}
 },
 {
 "league": "mlb",
@@ -2886,7 +4738,13 @@
 "href": "/teams/mlb/nationals-2",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.326
+}
 },
 {
 "league": "mlb",
@@ -2896,7 +4754,13 @@
 "href": "/teams/mlb/nationals-1",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.19
+}
 }
 ],
 "waterloo-ia": [
@@ -2908,7 +4772,13 @@
 "href": "/teams/nba/hawks-wat",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.306
+}
 }
 ],
 "winnipeg": [
@@ -2920,7 +4790,14 @@
 "href": "/teams/nhl/coyotes",
 "kind": "relocated",
 "relocated": true,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 3,
+"finals": 5,
+"pct": 0.479,
+"other": 3
+}
 },
 {
 "league": "nhl",
@@ -2930,7 +4807,13 @@
 "href": "/teams/nhl/winnipeg-victorias",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 3,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
 }
 ]
 }

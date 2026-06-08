@@ -111,6 +111,7 @@ export type Season = {
   conf_final: boolean;
   champ_app: boolean;
   champ: boolean;
+  stolen?: boolean;  // editorial: title won then revoked (1925 Pottsville Maroons)
 };
 
 export type TopGameTeamRow = {

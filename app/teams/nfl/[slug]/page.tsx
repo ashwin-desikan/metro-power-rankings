@@ -716,7 +716,10 @@ function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: strin
   const mono = monogramFor(slug); // falls through to the generic NFL monogram
   const franchiseCount = getAllFranchiseSlugs().length;
   // Most-recent-first to match the active page's season ordering.
-  const seasonRows: Season[] = [...seasons].sort((a, b) => b.year - a.year);
+  const _stolenYears = new Set(champs.filter((c) => c.stolen).map((c) => c.year));
+  const seasonRows: Season[] = [...seasons]
+    .sort((a, b) => b.year - a.year)
+    .map((s) => (_stolenYears.has(s.year) ? { ...s, stolen: true } : s));
   const yearsLabel = defunctYears(h);
 
   return (

@@ -77,6 +77,10 @@ export type RelocationCard = {
   kind: "relocated" | "defunct";
   relocated?: boolean;
   defunct?: boolean;
+  // Per-stint stats, summed only over the franchise's years in THIS metro.
+  // Populated for BIG4 tiles by scripts/build-relocations.py. pct is win%
+  // for NFL/NBA/MLB and points% for NHL. finals = WS appearances (MLB pennants).
+  stats?: { champ: number; div: number; finals: number; pct: number; stolen?: number; other?: number; is_mls?: boolean; mls_cups?: number; supporters_shields?: number; cont_trophies?: number; titles?: number; major_cups?: number; top_flight_seasons?: number };
 };
 
 let _relocations: Record<string, RelocationCard[]> | null = null;

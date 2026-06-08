@@ -130,6 +130,14 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     page: "/teams/wnba",
     team_count: 0,
   },
+  {
+    league: "CFL",
+    label: "CFL",
+    sport: "Canadian Football",
+    status: "live",
+    page: "/teams/cfl",
+    team_count: 0,
+  },
 ];
 const INJECTED_COMING_CARDS: LeagueCard[] = [
   {

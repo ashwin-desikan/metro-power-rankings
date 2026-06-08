@@ -31,6 +31,7 @@ import { getNhlFranchiseByTeamName } from "@/lib/nhl";
 import { getIplFranchiseByTeamName } from "@/lib/ipl";
 import { getFootballClubByName, getClTitlesForClub } from "@/lib/football";
 import { getWnbaFranchiseByTeamName } from "@/lib/wnba";
+import { getCflFranchiseByTeamName } from "@/lib/cfl";
 import { getWClubByName } from "@/lib/wfootball";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import BadgeChips from "./BadgeChips";
@@ -747,7 +748,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         </section>
 
         {/* Sports Section */}
-        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType])) && (() => {
+        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0) && (() => {
           // Teams flagged Annual=Y in Team List (F1 Grands Prix, NASCAR races,
           // Sailing regattas, Powerboat races) are recurring events, not
           // standing team entries. Lift them out of detail.teams and inject
@@ -779,8 +780,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
           return (
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
-              {detail.teams && detail.teams.length > 0 && (
-                <TeamsSection teams={detail.teams} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} />
+              {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0) && (
+                <TeamsSection teams={detail.teams || []} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -1570,6 +1571,118 @@ function TeamsSection({
                       </p>
                       <p className="font-semibold text-[var(--text)]">{r.name}</p>
                       <p className="text-xs text-[var(--text-dim)]">{r.years}</p>
+                      {r.stats && (r.league === "nfl" || r.league === "nba" || r.league === "nhl" || r.league === "mlb") && (
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                            style={{
+                              background: r.stats.champ > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+                              color: r.stats.champ > 0 ? "#d4af37" : "var(--text-dim)",
+                            }}
+                            title={r.stats.stolen ? "Pro football’s “stolen championship”: Pottsville won the 1925 NFL title on the field, then was stripped and the league awarded it to the Chicago Cardinals." : "Titles won during the years this franchise played in this metro"}
+                          >
+                            {r.stats.stolen
+                              ? `${r.stats.champ} stolen title${r.stats.champ === 1 ? "" : "s"}`
+                              : r.league === "mlb"
+                              ? (r.stats.champ === 0 ? "No WS" : r.stats.champ === 1 ? "1 WS" : `${r.stats.champ} WS`)
+                              : r.league === "nhl"
+                              ? (r.stats.champ === 0 ? "No Cups" : r.stats.champ === 1 ? "1 Cup" : `${r.stats.champ} Cups`)
+                              : (r.stats.champ === 0 ? "No titles" : r.stats.champ === 1 ? "1 title" : `${r.stats.champ} titles`)}
+                          </span>
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded"
+                            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+                            title={r.league === "nhl" ? "Points percentage during the years in this metro" : "Regular-season win percentage during the years in this metro"}
+                          >
+                            {r.stats.pct.toFixed(3)} {r.league === "nhl" ? "Pts%" : "W%"}
+                          </span>
+                          {(r.league === "nhl" || r.league === "mlb") && (r.stats.other ?? 0) > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(110,138,166,0.30)", color: "#a9b8cc" }} title={r.league === "mlb" ? "Other major titles won in this metro (pre-1903 championships / 19th-century World’s Series)" : "Non-Stanley-Cup major titles won in this metro (WHA Avco Cups / pre-NHL league championships)"}>
+                              {r.stats.other ?? 0} other title{(r.stats.other ?? 0) === 1 ? "" : "s"}
+                            </span>
+                          )}
+                          {r.league === "mlb" && r.stats.finals > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }} title="Pennants (World Series appearances) won in this metro">
+                              {r.stats.finals} pennant{r.stats.finals === 1 ? "" : "s"}
+                            </span>
+                          )}
+                          {r.league !== "mlb" && r.stats.div > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Division titles won in this metro">
+                              {r.stats.div} div
+                            </span>
+                          )}
+                        </div>
+                      )}
+                      {r.stats && r.league === "wnba" && (
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                            style={{ background: r.stats.champ > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: r.stats.champ > 0 ? "#d4af37" : "var(--text-dim)" }}
+                            title="WNBA championships won while in this metro"
+                          >
+                            {r.stats.champ === 0 ? "No titles" : r.stats.champ === 1 ? "1 title" : `${r.stats.champ} titles`}
+                          </span>
+                          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="All-time regular-season win percentage in this metro">
+                            {r.stats.pct.toFixed(3)} W%
+                          </span>
+                          {r.stats.div > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Conference titles">
+                              {r.stats.div} div
+                            </span>
+                          )}
+                        </div>
+                      )}
+                      {r.stats && r.league === "cfl" && (
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                            style={{ background: r.stats.champ > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: r.stats.champ > 0 ? "#d4af37" : "var(--text-dim)" }}
+                            title="Grey Cup championships won while in this metro"
+                          >
+                            {r.stats.champ === 0 ? "No Grey Cups" : r.stats.champ === 1 ? "1 Grey Cup" : `${r.stats.champ} Grey Cups`}
+                          </span>
+                          {r.stats.finals > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }} title="Grey Cup final appearances (won or lost)">
+                              {r.stats.finals} final{r.stats.finals === 1 ? "" : "s"}
+                            </span>
+                          )}
+                          {r.stats.pct > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Regular-season win percentage (1945–) while in this metro">
+                              {r.stats.pct.toFixed(3)} W%
+                            </span>
+                          )}
+                        </div>
+                      )}
+                      {r.stats && r.league === "football" && (
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          {r.stats.is_mls ? (
+                            <>
+                              <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: (r.stats.mls_cups ?? 0) > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: (r.stats.mls_cups ?? 0) > 0 ? "#d4af37" : "var(--text-dim)" }} title="MLS Cup titles">
+                                {(r.stats.mls_cups ?? 0)} {(r.stats.mls_cups ?? 0) === 1 ? "Cup" : "Cups"}
+                              </span>
+                              <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(99,102,241,0.16)", color: "#818cf8" }} title="Supporters’ Shields (best regular-season record)">
+                                {(r.stats.supporters_shields ?? 0)} Sup. Shield{(r.stats.supporters_shields ?? 0) === 1 ? "" : "s"}
+                              </span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: (r.stats.titles ?? 0) > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: (r.stats.titles ?? 0) > 0 ? "#d4af37" : "var(--text-dim)" }} title="Top-flight league titles">
+                                {(r.stats.titles ?? 0) === 0 ? "No titles" : (r.stats.titles ?? 0) === 1 ? "1 title" : `${r.stats.titles} titles`}
+                              </span>
+                              {(r.stats.major_cups ?? 0) > 0 && (
+                                <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Major trophies (domestic cups + continental)">
+                                  {r.stats.major_cups} maj. trophies
+                                </span>
+                              )}
+                            </>
+                          )}
+                          {(r.stats.cont_trophies ?? 0) > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Continental trophies">
+                              {r.stats.cont_trophies} Cont.
+                            </span>
+                          )}
+                        </div>
+                      )}
                     </Link>
                   ))}
                 </div>
@@ -1620,6 +1733,7 @@ function TeamCard({
   const footballClub  = link?.league === "football" ? getFootballClubByName(team.team) : undefined;
   const clTitles = footballClub ? getClTitlesForClub(footballClub.slug) : 0;
   const wnbaFranchise = link?.league === "wnba" ? getWnbaFranchiseByTeamName(team.team) : undefined;
+  const cflFranchise = link?.league === "cfl" ? getCflFranchiseByTeamName(team.team) : undefined;
   const wfootballClub = link?.league === "wfootball" ? getWClubByName(team.team) : undefined;
   const wHonor = (slug: string) => wfootballClub?.honors.find((h) => h.competition_slug === slug);
   const displayLeague = wnbaFranchise ? "WNBA" : team.league;
@@ -1929,6 +2043,25 @@ function TeamCard({
           {wnbaFranchise.division_titles > 0 && (
             <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Conference titles">
               {wnbaFranchise.division_titles} div
+            </span>
+          )}
+        </div>
+      )}
+      {cflFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{ background: cflFranchise.grey_cups > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: cflFranchise.grey_cups > 0 ? "#d4af37" : "var(--text-dim)" }}
+            title="Grey Cup championships"
+          >
+            {cflFranchise.grey_cups === 0 ? "No Grey Cups" : cflFranchise.grey_cups === 1 ? "1 Grey Cup" : `${cflFranchise.grey_cups} Grey Cups`}
+          </span>
+          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="All-time regular-season win percentage (1945–)">
+            {cflFranchise.win_pct.toFixed(3)} W%
+          </span>
+          {cflFranchise.gc_finals > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }} title="Grey Cup final appearances (won or lost)">
+              {cflFranchise.gc_finals} final{cflFranchise.gc_finals === 1 ? "" : "s"}
             </span>
           )}
         </div>

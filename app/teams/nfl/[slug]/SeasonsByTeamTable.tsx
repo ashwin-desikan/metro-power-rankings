@@ -202,6 +202,7 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
                         confFinal={s.conf_final}
                         champApp={s.champ_app}
                         champ={s.champ}
+                        stolen={s.stolen === true}
                         year={s.year}
                       />
                     )}
@@ -267,6 +268,7 @@ function SeasonBadges({
   confFinal,
   champApp,
   champ,
+  stolen,
   year,
 }: {
   playoff: boolean;
@@ -274,13 +276,25 @@ function SeasonBadges({
   confFinal: boolean;
   champApp: boolean;
   champ: boolean;
+  stolen?: boolean;
   year: number;
 }) {
   const isSb = year >= 1966;
   const eraBg = isSb ? TITLE_GOLD : PRE_SB_BRONZE;
   const eraTextOnBg = isSb ? "#1a1a1a" : "#fff";
   const badges: React.ReactNode[] = [];
-  if (champ) {
+  if (stolen) {
+    badges.push(
+      <span
+        key="stolen"
+        className="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide"
+        style={{ background: TITLE_GOLD, color: "#1a1a1a" }}
+        title="Won the 1925 NFL title on the field, then stripped by the league — pro football’s ‘stolen championship.’"
+      >
+        Stolen Championship
+      </span>,
+    );
+  } else if (champ) {
     badges.push(
       <span
         key="champ"
@@ -326,7 +340,7 @@ function SeasonBadges({
       </span>,
     );
   }
-  if (playoff && !divTitle && !confFinal && !champApp && !champ) {
+  if (playoff && !divTitle && !confFinal && !champApp && !champ && !stolen) {
     badges.push(
       <span
         key="po"

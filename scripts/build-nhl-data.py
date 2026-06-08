@@ -426,6 +426,7 @@ def read_year_by_year(wb):
         sf_cf_app_yn = is_truthy_yn(row[21])
         cham_app_yn = is_truthy_yn(row[22])
         champ_yn = is_truthy_yn(row[23])
+        other_champ_yn = safe_str(row[23]).strip().upper() == "OTH"  # non-SC title won (WHA Avco Cup, pre-NHL league titles)
         playoff_seed = safe_str(row[24]) or None
         division = safe_str(row[25])
         place_raw = row[26]
@@ -470,6 +471,7 @@ def read_year_by_year(wb):
             "sf_cf_app": sf_cf_app_yn,
             "champ_app": cham_app_yn,
             "champ": champ_yn,
+            "other_champ": other_champ_yn,
             "playoff_seed": playoff_seed,
             "division": division,
             "main_div": main_div,

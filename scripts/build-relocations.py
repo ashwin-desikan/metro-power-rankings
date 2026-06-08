@@ -30,7 +30,7 @@ def read_csv(name):
     p=os.path.join(ROOT,'scripts','relocations',name)
     return list(csv.DictReader(open(p,encoding='utf-8-sig'))) if os.path.exists(p) else []
 
-SPORT={'nfl':'American Football','nba':'Basketball','nhl':'Hockey','mlb':'Baseball','wnba':'W Basketball','ipl':'Cricket','football':'Football/Soccer'}
+SPORT={'nfl':'American Football','nba':'Basketball','nhl':'Hockey','mlb':'Baseball','wnba':'W Basketball','ipl':'Cricket','football':'Football/Soccer','cfl':'Canadian Football'}
 BIG4=['nfl','nba','nhl','mlb']
 EN='–'
 
@@ -50,6 +50,47 @@ SRC={
  'nfl': (find_wb('NFL_all.xlsx','NFL_all_backup.xlsx','NFL_all - Copy.xlsx'), 2,3,4,117,36),
  'mlb': (find_wb('MLB.xlsx','MLB - Copy.xlsx','MLB_backup.xlsx'), 3,4,5,86,125),
 }
+# Per-season stat columns in each league's Year by Year sheet (0-indexed), pulled from
+# the league builders. champ/div/finals are Y/blank flags; pct='pts' => points% (NHL),
+# pct='win' => (W + 0.5T)/(W+L+T). finals = WS appearances (MLB pennants); div = division titles.
+# champ/div/finals are LISTS of Y/blank flag columns (summed). MLB carries the
+# pre-1903 'other championship' cols so 19th-century clubs show their honors:
+# col 30 = pre-1903 title (World's Series win), col 31 = pre-1903 pennant.
+# Verified on the Providence Grays -> 1 title (1884) / 2 pennants (1879, 1884).
+STAT={
+ 'nhl':{'w':5,'l':6,'t':7,'otl':8,'pts':9,'champ':[23],'div':[15],'finals':[22],'pct':'pts','other_oth':23},  # other_oth: col 23 == "OTH" -> non-SC title (Avco/pre-NHL)
+ 'nba':{'w':5,'l':6,'champ':[23],'div':[16],'finals':[22],'pct':'win'},
+ 'nfl':{'w':5,'l':6,'t':7,'champ':[19],'div':[12],'finals':[18],'pct':'win'},
+ 'mlb':{'w':6,'l':7,'champ':[17],'div':[12],'finals':[16,31],'pct':'win','other':[30]},  # champ=modern WS only; other=pre-1903 World's Series titles (col30)
+}
+def _yn(v):
+    if v is None: return False
+    s=str(v).strip().lower()
+    if s in ('y','yes','true'): return True
+    try: return float(s)>0
+    except (TypeError,ValueError): return False
+def _gi(row,i):
+    if i is None or i>=len(row) or row[i] in (None,''): return 0
+    try: return int(float(row[i]))
+    except (TypeError,ValueError): return 0
+def _flags(row,cols):
+    return sum(1 for c in cols if c<len(row) and _yn(row[c]))
+def rowstats(lg,row):
+    sc=STAT[lg]
+    return {'w':_gi(row,sc.get('w')),'l':_gi(row,sc.get('l')),'t':_gi(row,sc.get('t')),
+            'otl':_gi(row,sc.get('otl')),'pts':_gi(row,sc.get('pts')),
+            'champ':_flags(row,sc['champ']),'div':_flags(row,sc['div']),'finals':_flags(row,sc['finals']),
+            'other':_flags(row,sc.get('other',[]))+(1 if sc.get('other_oth') is not None and sc['other_oth']<len(row) and str(row[sc['other_oth']]).strip().upper()=='OTH' else 0)}
+def finalize_stats(lg,a):
+    gp=a['w']+a['l']+a['t']+a['otl']
+    if STAT[lg]['pct']=='pts':
+        pct=round(a['pts']/(2*gp),3) if gp>0 else 0.0
+    else:
+        den=a['w']+a['l']+a['t']
+        pct=round((a['w']+0.5*a['t'])/den,3) if den>0 else 0.0
+    res={'champ':a['champ'],'div':a['div'],'finals':a['finals'],'pct':pct}
+    if a.get('other'): res['other']=a['other']
+    return res
 
 metros=load('public/data/metros.json')
 EXACT={m['name'].strip().lower():m['slug'] for m in metros}
@@ -78,22 +119,47 @@ for lg in BIG4:
 
 EXCLUDE={r['city'].lower() for r in read_csv('exclude.csv')}
 CURATED=read_csv('curated.csv')
+# Honor data for non-BIG4 defunct tiles. WNBA from its franchise JSON; club football
+# (incl. MLS) from football/index.json totals, looked up by the href slug.
+try: _FBIDX=load('public/data/football/index.json'); FBYSLUG={c['slug']:c for c in _FBIDX.get('clubs',[]) if isinstance(c,dict) and c.get('slug')}
+except Exception: FBYSLUG={}
+def football_stats(slug):
+    c=FBYSLUG.get(slug)
+    if not c: return None
+    t=c.get('totals') or {}
+    return {'champ':0,'div':0,'finals':0,'pct':0.0,'is_mls':bool(c.get('is_mls')),
+            'mls_cups':int(t.get('mls_cups') or 0),'supporters_shields':int(t.get('supporters_shields') or 0),
+            'cont_trophies':int(t.get('cont_trophies') or 0),'titles':int(t.get('titles') or 0),
+            'major_cups':int(t.get('major_cups') or 0),'top_flight_seasons':int(c.get('top_flight_seasons') or 0)}
+def wnba_stats(f):
+    return {'champ':int(f.get('titles') or 0),'div':int(f.get('division_titles') or 0),
+            'finals':int(f.get('finals') or 0),'pct':round(float(f.get('win_pct') or 0),3)}
 OVERRIDES={(r['metro_slug'],r['href']):r for r in read_csv('overrides.csv')}
+# Editorial: a title won on the field then revoked by the league. Surfaced as a title
+# but flagged 'stolen' so the card can label it. The 1925 Pottsville Maroons (canonical
+# 'Bulldogs (Boston)') are the case. Keyed (metro_slug, href) -> count.
+STOLEN_TITLES={('pottsville','/teams/nfl/bulldogs-boston'):1}
 
 skipped=[]
 cards={}
-def add(ms, league, name, years, href, kind, sport=None):
+def add(ms, league, name, years, href, kind, sport=None, stats=None):
     if not ms: return
-    cards[(ms,href)]={'metro':ms,'league':league,'sport':sport or SPORT.get(league,''),'name':name,'years':years,'href':href,'kind':kind}
+    e={'metro':ms,'league':league,'sport':sport or SPORT.get(league,''),'name':name,'years':years,'href':href,'kind':kind}
+    if stats is not None: e['stats']=stats
+    cards[(ms,href)]=e
 def yspan(rows):
+    # Era name uses the DEPARTURE identity (city+team of the final season in this
+    # metro), e.g. Brooklyn Dodgers / New York Giants, not the archaic arrival name
+    # (Atlantics / Gothams). Year span still covers first..last season.
     rows=sorted(rows); lo,hi=rows[0][0],rows[-1][0]
-    return (f"{lo}" if lo==hi else f"{lo}{EN}{hi}"), rows[0][1], rows[0][2]
+    return (f"{lo}" if lo==hi else f"{lo}{EN}{hi}"), rows[-1][1], rows[-1][2]
 
 def _league(lg):
     wbpath,yc,cc,tc,ncol,mcol=SRC[lg]
     if not wbpath:
         print(f"WARN: {lg} workbook not found; skipping {lg}", file=sys.stderr); return
     stints=defaultdict(lambda: defaultdict(list))   # canon -> metro_name -> [(year,city,team)]
+    statacc=defaultdict(lambda: defaultdict(Counter))   # canon -> metro_name -> Counter of per-stint stat sums
     fyr={}; fmetro={}                               # canon -> latest year, and its last in-season metro (true final home)
     ws=openpyxl.load_workbook(wbpath, read_only=True, data_only=True)["Year by Year"]
     for i,row in enumerate(ws.iter_rows(values_only=True)):
@@ -105,12 +171,17 @@ def _league(lg):
         cities=str(row[cc]).split('/'); teams=str(row[tc]).split('/')
         metro_str=str(row[mcol] or ''); metro_str=COMBINED_METRO_EXPAND.get(metro_str.strip().lower(), metro_str)
         ms_list=metro_str.split('/')
+        st=rowstats(lg,row); attributed=False
         for k in range(max(len(cities),len(teams),len(ms_list))):
             mt=(ms_list[k] if k<len(ms_list) else ms_list[-1]).strip()
             ct=(cities[k] if k<len(cities) else cities[-1]).strip()
             tm=(teams[k] if k<len(teams) else teams[-1]).strip()
             if not mt or mt.lower()=='none': continue
             stints[canon][mt].append((yr,ct,tm))
+            if not attributed:   # season-level flags accrue once, to the first city played that year
+                acc=statacc[canon][mt]
+                for _k in ('w','l','t','otl','pts','champ','div','finals','other'): acc[_k]+=st[_k]
+                attributed=True
         raw_ms=[x.strip() for x in ms_list if x.strip() and x.strip().lower()!='none']
         if raw_ms and yr>fyr.get(canon,-1): fyr[canon]=yr; fmetro[canon]=raw_ms[-1]
     active={}; defunct={}; bylast={}; founded_by={}
@@ -153,11 +224,12 @@ def _league(lg):
             if mt==first_metro and founded and founded<metro_min[mt]:   # sheet omits pre-major-league seasons -> start at founding
                 hi=max(x[0] for x in rws)
                 years=f"{founded}" if founded==hi else f"{founded}{EN}{hi}"
+            stv=finalize_stats(lg,statacc[canon][mt]) if statacc[canon].get(mt) else None
             ovn=TEAM_NAME_OVERRIDE.get(team0.lower())
             if ovn:
-                add(ms,lg,ovn,years,href,"defunct")
+                add(ms,lg,ovn,years,href,"defunct",stats=stv)
             else:
-                add(ms,lg,f"{city0} {team0}",years,href,"defunct" if (is_def and is_home) else "relocated")
+                add(ms,lg,f"{city0} {team0}",years,href,"defunct" if (is_def and is_home) else "relocated",stats=stv)
     if secjoin: print(f"  {lg}: joined by final-name fallback -> {secjoin[:12]}", file=sys.stderr)
     if nojoin: print(f"  {lg}: {len(nojoin)} canon(s) still unjoined -> {nojoin[:12]}", file=sys.stderr)
 
@@ -167,16 +239,21 @@ for _lg in BIG4:
 
 for f in load('public/data/wnba/data.json')['franchises']:
     if f.get('defunct') and f.get('metro_slug'):
-        add(f['metro_slug'],'wnba',f['name'],f"{f.get('first_season') or ''}{EN}{f.get('last_season') or ''}".strip(EN),f"/teams/wnba/{f['slug']}","defunct")
+        add(f['metro_slug'],'wnba',f['name'],f"{f.get('first_season') or ''}{EN}{f.get('last_season') or ''}".strip(EN),f"/teams/wnba/{f['slug']}","defunct",stats=wnba_stats(f))
 for f in load('public/data/ipl/data.json')['franchises']:
     if not f.get('active'):
         ms=f.get('metro') and (city2slug.get(f['metro'].lower()) or name2slug.get(f['metro'].lower()))
         if not ms: skipped.append({'league':'ipl','name':f['name'],'city':f.get('metro'),'reason':'no metro match'}); continue
         add(ms,'ipl',f['name'],'',f"/teams/ipl/{f['slug']}","defunct")
+for f in load('public/data/cfl/data.json')['franchises']:
+    if (not f.get('active')) and f.get('metro_slug'):
+        _cst={'champ':f.get('grey_cups',0),'div':0,'finals':f.get('gc_finals',0),'pct':f.get('win_pct',0.0)}
+        add(f['metro_slug'],'cfl',f['name'],f"{f.get('first_year','')}{EN}{f.get('last_year','')}",f"/teams/cfl/{f['slug']}","defunct",stats=_cst)
 
 for r in CURATED:
     if r.get('metro_slug') and r.get('href'):
-        add(r['metro_slug'],r.get('league','football'),r['name'],r.get('years',''),r['href'],r.get('kind','relocated'),r.get('sport'))
+        _lg=r.get('league','football'); _fst=football_stats(r['href'].rsplit('/',1)[-1]) if _lg=='football' else None
+        add(r['metro_slug'],_lg,r['name'],r.get('years',''),r['href'],r.get('kind','relocated'),r.get('sport'),stats=_fst)
 
 defunct_hrefs=set()
 for lg in BIG4:
@@ -188,18 +265,26 @@ for f in load('public/data/wnba/data.json')['franchises']:
     if f.get('defunct'): defunct_hrefs.add(f"/teams/wnba/{f['slug']}")
 for f in load('public/data/ipl/data.json')['franchises']:
     if not f.get('active'): defunct_hrefs.add(f"/teams/ipl/{f['slug']}")
+for f in load('public/data/cfl/data.json')['franchises']:
+    if not f.get('active'): defunct_hrefs.add(f"/teams/cfl/{f['slug']}")
 for (ms,href),c in cards.items():
     ov=OVERRIDES.get((ms,href))
     if ov:
         if ov.get('name'): c['name']=ov['name']
         if ov.get('years'): c['years']=ov['years']
     c['relocated']=(c['kind']=='relocated'); c['defunct']=(href in defunct_hrefs) or (c['kind']=='defunct')
+    sct=STOLEN_TITLES.get((ms,href))
+    if sct and isinstance(c.get('stats'),dict):
+        c['stats']['champ']=c['stats'].get('champ',0)+sct
+        c['stats']['stolen']=c['stats'].get('stolen',0)+sct
 
 def _ly(c):
     ys=re.findall(r'\d{4}', c.get('years','') or ''); return int(ys[-1]) if ys else 0
 out=defaultdict(list)
 for c in cards.values():
-    out[c['metro']].append({k:c[k] for k in ('league','sport','name','years','href','kind','relocated','defunct')})
+    d={k:c[k] for k in ('league','sport','name','years','href','kind','relocated','defunct')}
+    if 'stats' in c: d['stats']=c['stats']
+    out[c['metro']].append(d)
 for ms in out: out[ms].sort(key=lambda c:(-_ly(c), c['name']))
 out={k:out[k] for k in sorted(out)}
 open(OUT,'w',encoding='utf-8').write(json.dumps(out,ensure_ascii=False,indent=0))

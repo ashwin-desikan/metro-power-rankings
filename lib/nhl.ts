@@ -123,6 +123,7 @@ export type Season = {
   sf_cf_app: boolean;
   champ_app: boolean;
   champ: boolean;
+  other_champ?: boolean;        // non-SC title won (WHA Avco Cup / pre-NHL league title), col Champs = "OTH"
   playoff_seed: string | null;
   division: string;
   main_div: string;
@@ -403,7 +404,7 @@ export function lossColumnsForYear(year: number): { showT: boolean; showOtl: boo
 // earlier round > Made playoffs > Missed. League-aware: WHA seasons get
 // the Avco Cup label instead of Stanley Cup.
 export function postseasonResult(s: Season): string {
-  if (s.champ) return s.league === "WHA" ? "Avco Cup" : "Stanley Cup";
+  if (s.champ || s.other_champ) return s.league === "WHA" ? "Avco Cup" : (s.champ ? "Stanley Cup" : "League Title");
   if (s.champ_app) return s.league === "WHA" ? "Lost Avco Final" : "Lost Final";
   if (s.sf_cf_app) return "Lost CF";
   if (s.playoff) return "Made playoffs";

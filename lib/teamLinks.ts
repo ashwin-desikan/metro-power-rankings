@@ -53,12 +53,16 @@ import {
 import {
   getWnbaFranchiseByTeamName,
 } from "./wnba";
+import {
+  getCflFranchiseByTeamName,
+  monogramFor as cflMonogramFor,
+} from "./cfl";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -104,6 +108,9 @@ function isWFootball(sport: string, leagueHint: string): boolean {
 }
 function isWnba(sport: string, leagueHint: string): boolean {
   return W_BASKETBALL_SPORT_LABELS.has(sport) || leagueHint === "WNBA";
+}
+function isCfl(sport: string, leagueHint: string): boolean {
+  return sport === "Canadian Football" || leagueHint === "CFL";
 }
 
 export function resolveTeamLink(
@@ -216,6 +223,19 @@ export function resolveTeamLink(
       href: `/teams/wnba/${f.slug}`,
       logoUrl: null,
       monogram: { bg: f.color, fg: "#FFFFFF", mono: f.abbr },
+      displayName: f.name,
+    };
+  }
+
+  if (isCfl(sport, leagueHint)) {
+    const f = getCflFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "cfl",
+      href: `/teams/cfl/${f.slug}`,
+      logoUrl: null,
+      monogram: cflMonogramFor(f),
       displayName: f.name,
     };
   }
