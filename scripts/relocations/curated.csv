@@ -1,3 +1,6 @@
 metro_slug,league,sport,name,years,href,kind
-london,football,Football/Soccer,Wimbledon F.C.,1889–2004,/teams/football/milton-keynes-dons,relocated
+london,football,Football/Soccer,Wimbledon F.C.,1889–2003,/teams/football/milton-keynes-dons,relocated
 new-york,nfl,American Football,New York Yanks,1950–1951,/teams/nfl/texans-d,relocated
+los-angeles,football,Football/Soccer,Chivas USA,2005–2014,/teams/football/chivas-usa,defunct
+miami,football,Football/Soccer,Miami Fusion,1998–2001,/teams/football/miami-fusion,defunct
+tampa,football,Football/Soccer,Tampa Bay Mutiny,1996–2001,/teams/football/tampa-bay-mutiny,defunct

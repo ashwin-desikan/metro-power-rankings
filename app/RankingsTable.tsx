@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef } from 'react';
+import { useSessionState } from '@/lib/useSessionState';
 import Link from 'next/link';
 import { Metro, formatPop, regionColors } from '@/lib/shared';
 import MetroMap, { type MapPoint } from './MetroMap';
@@ -65,11 +66,11 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
-  const [view, setView] = useState<'top25' | 'top100'>('top25');
-  const [selectedContinent, setSelectedContinent] = useState('All');
-  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchScope, setSearchScope] = useState<SearchScope>('all');
+  const [view, setView] = useSessionState<'top25' | 'top100'>('mpr.rank.view', 'top25');
+  const [selectedContinent, setSelectedContinent] = useSessionState('mpr.rank.continent', 'All');
+  const [selectedRegions, setSelectedRegions] = useSessionState<string[]>('mpr.rank.regions', []);
+  const [searchTerm, setSearchTerm] = useSessionState('mpr.rank.search', '');
+  const [searchScope, setSearchScope] = useSessionState<SearchScope>('mpr.rank.scope', 'all');
 
   // Top score in the full dataset (the #1 metro). Drives the width of every
   // rank bar so updates to MetroAreas.xlsx stay in sync without hardcoding.

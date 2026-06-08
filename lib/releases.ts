@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-08",
+    headline: "Sharper defunct-team history and sticky filters",
+    items: [
+      "Relocated and defunct teams now carry the exact name, years, and tags for each city they played in, rebuilt season by season so a franchise's separate eras stay separate.",
+      "Added MLS, early-era clubs, and wartime merger sides like Card-Pitt and the Steagles, and corrected stops like the original Ottawa Senators and the WHA Stags.",
+      "The main rankings filters (Top 25/100, region, continent, search) now persist as you browse and reset only on a new session.",
+    ],
+  },
+  {
     date: "2026-06-07",
     headline: "Relocated and defunct teams on metro pages",
     items: [
