@@ -82,7 +82,7 @@ export default function FootyAllTimeTable({ franchises, league }: { franchises: 
                 <td className="py-2 px-2 text-right text-[var(--text-muted)]">{f.minor_premierships}</td>
                 <td className="py-2 px-2 text-right text-[var(--text-muted)]">{f.gf_apps}</td>
                 <td className="py-2 px-2 text-right text-[var(--text-muted)]">{f.seasons}</td>
-                <td className="py-2 px-2 text-right text-[var(--text-muted)] text-xs hidden md:table-cell">{f.w}-{f.d}-{f.l}</td>
+                <td className="py-2 px-2 text-right text-[var(--text-muted)] text-xs hidden md:table-cell">{league === "afl" ? `${f.w}-${f.l}-${f.d}` : `${f.w}-${f.d}-${f.l}`}</td>
                 <td className="py-2 px-3 text-right">{f.win_pct.toFixed(3)}</td>
               </tr>
             ))}

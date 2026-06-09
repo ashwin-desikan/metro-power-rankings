@@ -65,8 +65,8 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
                   <th className="text-left py-2 px-2 font-medium">Club</th>
                   <th className="text-right py-2 px-2 font-medium">P</th>
                   <th className="text-right py-2 px-2 font-medium">W</th>
-                  <th className="text-right py-2 px-2 font-medium">D</th>
-                  <th className="text-right py-2 px-2 font-medium">L</th>
+                  <th className="text-right py-2 px-2 font-medium">{lg === "afl" ? "L" : "D"}</th>
+                  <th className="text-right py-2 px-2 font-medium">{lg === "afl" ? "D" : "L"}</th>
                   <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">For</th>
                   <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">Agst</th>
                   <th className="text-right py-2 px-3 font-medium">Pts</th>
@@ -86,8 +86,8 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
                       </td>
                       <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.played}</td>
                       <td className="py-2 px-2 text-right">{r.w}</td>
-                      <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.d}</td>
-                      <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
+                      <td className="py-2 px-2 text-right text-[var(--text-muted)]">{lg === "afl" ? r.l : r.d}</td>
+                      <td className="py-2 px-2 text-right text-[var(--text-muted)]">{lg === "afl" ? r.d : r.l}</td>
                       <td className="py-2 px-2 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pf}</td>
                       <td className="py-2 px-2 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pa}</td>
                       <td className="py-2 px-2 text-right font-semibold">{r.pts}</td>

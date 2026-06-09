@@ -73,7 +73,7 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
           </div>
           <p className="text-sm text-[var(--text-muted)] mt-2">
             <span className="text-[var(--text-dim)]">Seasons:</span> <span className="text-[var(--text)]">{yearsLabel}</span>
-            {" · "}<span className="text-[var(--text-dim)]">Record:</span> <span className="text-[var(--text)]">{f.w}-{f.d}-{f.l}</span>
+            {" · "}<span className="text-[var(--text-dim)]">Record:</span> <span className="text-[var(--text)]">{lg === "afl" ? `${f.w}-${f.l}-${f.d}` : `${f.w}-${f.d}-${f.l}`}</span>
             {f.metro_slug && <> {" · "}<Link href={`/rankings/${f.metro_slug}`} className="text-[var(--accent)] hover:underline">{titleCase(f.metro_slug)} metro →</Link></>}
           </p>
           {live && (
@@ -81,7 +81,7 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
               <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full" style={{ background: "rgba(34,197,94,0.14)", color: "rgb(34,197,94)" }}>
                 <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />Live {liveYear}
               </span>
-              <span className="text-[var(--text)] font-semibold">{live.w}-{live.d}-{live.l}</span>
+              <span className="text-[var(--text)] font-semibold">{lg === "afl" ? `${live.w}-${live.l}-${live.d}` : `${live.w}-${live.d}-${live.l}`}</span>
               <span className="text-[var(--text-dim)]">· {live.pts} pts · ladder position {live.rank}</span>
             </p>
           )}
@@ -113,8 +113,8 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
                   <th className="text-right py-2 px-2 font-medium">Pos</th>
                   <th className="text-right py-2 px-2 font-medium">P</th>
                   <th className="text-right py-2 px-2 font-medium">W</th>
-                  <th className="text-right py-2 px-2 font-medium">D</th>
-                  <th className="text-right py-2 px-2 font-medium">L</th>
+                  <th className="text-right py-2 px-2 font-medium">{lg === "afl" ? "L" : "D"}</th>
+                  <th className="text-right py-2 px-2 font-medium">{lg === "afl" ? "D" : "L"}</th>
                   <th className="text-right py-2 px-2 font-medium">Pts</th>
                   <th className="text-right py-2 px-2 font-medium hidden md:table-cell">For</th>
                   <th className="text-right py-2 px-2 font-medium hidden md:table-cell">Agst</th>
@@ -130,8 +130,8 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
                     <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{live.rank ?? "—"}</td>
                     <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{live.played ?? "—"}</td>
                     <td className="py-1.5 px-2 text-right">{live.w ?? "—"}</td>
-                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{live.d ?? "—"}</td>
-                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{live.l ?? "—"}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{(lg === "afl" ? live.l : live.d) ?? "—"}</td>
+                    <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{(lg === "afl" ? live.d : live.l) ?? "—"}</td>
                     <td className="py-1.5 px-2 text-right">{live.pts ?? "—"}</td>
                     <td className="py-1.5 px-2 text-right text-[var(--text-dim)] text-xs hidden md:table-cell">{live.pf ?? "—"}</td>
                     <td className="py-1.5 px-2 text-right text-[var(--text-dim)] text-xs hidden md:table-cell">{live.pa ?? "—"}</td>
@@ -150,8 +150,8 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
                       <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.rank ?? "—"}</td>
                       <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.played ?? "—"}</td>
                       <td className="py-1.5 px-2 text-right">{s.w ?? "—"}</td>
-                      <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.d ?? "—"}</td>
-                      <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.l ?? "—"}</td>
+                      <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{(lg === "afl" ? s.l : s.d) ?? "—"}</td>
+                      <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{(lg === "afl" ? s.d : s.l) ?? "—"}</td>
                       <td className="py-1.5 px-2 text-right">{s.pts ?? "—"}</td>
                       <td className="py-1.5 px-2 text-right text-[var(--text-dim)] text-xs hidden md:table-cell">{s.pf ?? "—"}</td>
                       <td className="py-1.5 px-2 text-right text-[var(--text-dim)] text-xs hidden md:table-cell">{s.pa ?? "—"}</td>
