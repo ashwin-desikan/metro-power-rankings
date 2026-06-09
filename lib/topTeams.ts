@@ -750,7 +750,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rank: 105,
     metro: "Perth",
     sport: "Aussie Rules",
-    team: "West Coast Eagles",
+    team: "West Coast",
     rationale: "4 AFL premierships (1992, 1994, 2006, 2018) , Perth's flagship AFL franchise and the most successful non-Victorian club in league history. Perth Stadium sellouts. Fremantle Dockers remain flagless. Perth Scorchers (5 BBL titles, most ever) is the cricket alternative.",
   },
   {
@@ -1422,7 +1422,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rank: 201,
     metro: "Adelaide",
     sport: "Aussie Rules",
-    team: "Adelaide Crows / Port Adelaide Power",
+    team: "Adelaide / Port Adelaide",
     rationale: "Adelaide Crows: 2 AFL premierships (1997, 1998 back-to-back). Port Adelaide Power: 1 AFL premiership (2004) plus 36 SANFL flags pre-AFL , Australia's most successful football club by total premierships across leagues. Showdown derby is one of AFL's biggest fixtures.",
   },
   {
