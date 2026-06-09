@@ -437,35 +437,39 @@ export default function TopTeamsPage() {
                         style={{ color: "var(--text-muted)" }}
                       >
                         {(() => {
-                          // resolveTeamLink returns null for sports that have no team-page
-                          // wired up yet (NBA/NHL/MLB today), or for co-equal "A / B" rows
-                          // we have not split. In those cases we fall back to plain text.
-                          const link = resolveTeamLink(t.sport, t.team);
-                          if (!link) {
-                            return (
-                              <span style={{ color: "var(--text)" }} className="font-semibold">
-                                {t.team}
-                              </span>
-                            );
-                          }
+                          // Split co-equal "A / B" picks so each named team links to
+                          // its own page. The sport is split in parallel for cross-sport
+                          // split cities (e.g. "Basketball / Baseball" -> Lakers, Dodgers);
+                          // a single sport applies to every part otherwise. resolveTeamLink
+                          // returns null where no page exists, so those parts stay text.
+                          const teamParts = t.team.split("/").map((p) => p.trim()).filter(Boolean);
+                          const sportParts = t.sport.split("/").map((s) => s.trim()).filter(Boolean);
                           return (
-                            <Link
-                              href={link.href}
-                              className="inline-flex items-center gap-2 font-semibold hover:text-[var(--accent)] transition-colors"
-                              style={{ color: "var(--text)" }}
-                            >
-                              {link.logoUrl ? (
-                                <img
-                                  src={link.logoUrl}
-                                  alt=""
-                                  width={20}
-                                  height={20}
-                                  className="inline-block flex-shrink-0 object-contain"
-                                  aria-hidden
-                                />
-                              ) : null}
-                              <span>{t.team}</span>
-                            </Link>
+                            <span className="inline-flex flex-wrap items-center gap-x-1.5 gap-y-1 font-semibold" style={{ color: "var(--text)" }}>
+                              {teamParts.map((part, idx) => {
+                                const partSport = sportParts.length === teamParts.length ? sportParts[idx] : (sportParts[0] ?? t.sport);
+                                const link = resolveTeamLink(partSport, part);
+                                return (
+                                  <span key={part} className="inline-flex items-center gap-1.5">
+                                    {idx > 0 ? <span className="text-[var(--text-dim)]">/</span> : null}
+                                    {link ? (
+                                      <Link
+                                        href={link.href}
+                                        className="inline-flex items-center gap-1.5 underline decoration-dotted underline-offset-2 hover:opacity-80 transition-opacity"
+                                        style={{ color: "var(--accent)" }}
+                                      >
+                                        {link.logoUrl ? (
+                                          <img src={link.logoUrl} alt="" width={18} height={18} className="inline-block flex-shrink-0 object-contain" aria-hidden />
+                                        ) : null}
+                                        <span>{part}</span>
+                                      </Link>
+                                    ) : (
+                                      <span style={{ color: "var(--text)" }}>{part}</span>
+                                    )}
+                                  </span>
+                                );
+                              })}
+                            </span>
                           );
                         })()}
                         {t.sport && (

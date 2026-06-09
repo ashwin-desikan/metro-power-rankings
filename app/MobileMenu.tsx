@@ -18,14 +18,13 @@ type Item = {
 
 const ITEMS: Item[] = [
   { href: '/#rankings', label: 'Rankings', hint: 'Top metros by composite score' },
-  { href: '/#regions', label: 'Regions', hint: 'Group view by world region' },
 
-  { href: '/expandable-map', label: 'Expandable Map', hint: 'Full-corpus interactive map; resizable, persistent filters and viewport', group: 'Data' },
-  { href: '/compare', label: 'Compare', hint: 'Side-by-side any 2 to 4 metros', group: 'Data' },
-  { href: '/countries', label: 'Countries', hint: 'Population, metros, and composite score by country', group: 'Data' },
-  { href: '/badges', label: 'Badges', hint: 'Categorical lenses over the dataset', group: 'Data' },
-  { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Data' },
-  { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Data' },
+  { href: '/expandable-map', label: 'Expandable Map', hint: 'Full-corpus interactive map; resizable, persistent filters and viewport', group: 'Geography' },
+  { href: '/compare', label: 'Compare', hint: 'Side-by-side any 2 to 4 metros', group: 'Geography' },
+  { href: '/countries', label: 'Countries', hint: 'Population, metros, and composite score by country', group: 'Geography' },
+  { href: '/badges', label: 'Badges', hint: 'Categorical lenses over the dataset', group: 'Geography' },
+  { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Geography' },
+  { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Geography' },
 
   { href: '/sports', label: 'All sports', hint: 'Every Major League team across every sport, on one filterable map', group: 'Sports' },
   { href: '/teams/football', label: 'Club Football', hint: 'Top European league hubs plus the full English pyramid; canonical club pages and league hubs', group: 'Sports' },

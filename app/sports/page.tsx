@@ -6,6 +6,7 @@ import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import SportsExplorer, { type TeamMarker } from "./SportsExplorer";
+import SportsConsole from "./SportsConsole";
 import { leagueStatusFor, LeagueStatusTag } from "@/lib/leagueStatus";
 
 export const dynamicParams = false;
@@ -84,6 +85,17 @@ const DEEP_DIVES: DeepDive[] = [
     desc: "One crest per metro: the club whose disappearance would change what the metro is, not the one with the most trophies.",
   },
 ];
+
+// Editorial accent per deep dive (no cover images yet; color + type carry it).
+const DEEP_DIVE_ACCENTS: Record<string, string> = {
+  "/sports/geography-of-erasure": "#4ECDC4",
+  "/sports/games": "#a855f7",
+  "/sports/valuations": "#f59e0b",
+  "/top-teams": "#D4537E",
+};
+const DEFAULT_DEEP_DIVE_ACCENT = "#4ECDC4";
+// The pinned spotlight piece shown as the large featured card.
+const FEATURED_DEEP_DIVE = "/sports/geography-of-erasure";
 
 // Editorial overrides for the league directory: drop the Big 5 country cards
 // (Club Football covers them), inject the live Football/IPL/Women's/WNBA hubs,
@@ -190,6 +202,14 @@ export default function SportsPage() {
   const liveCount = composedCards.filter((c) => c.status === "live").length;
   const comingCount = composedCards.filter((c) => c.status === "coming").length;
 
+  // Sidebar hub links: every live league card that resolves to a real page.
+  const hubs = composedCards
+    .filter((c) => c.status === "live" && c.page)
+    .map((c) => ({ label: c.label, sport: c.sport, href: c.page as string }));
+
+  const featuredDeepDive = DEEP_DIVES.find((d) => d.href === FEATURED_DEEP_DIVE) ?? DEEP_DIVES[0];
+  const restDeepDives = DEEP_DIVES.filter((d) => d.href !== featuredDeepDive.href);
+
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Hub header */}
@@ -197,44 +217,117 @@ export default function SportsPage() {
         <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">All Sports</div>
         <h1 className="text-4xl font-bold tracking-tight mb-2">Sports</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Cross-sport deep-dives, a directory of every tracked league, and an interactive map of every
-          top-flight team across the world.
+          Every top-flight team on one interactive map. Filter by sport, league, or country, then jump
+          to any league hub or cross-sport deep-dive from the console alongside.
         </p>
       </header>
 
       <HubNav
         items={[
-          { label: "Deep-Dives", href: "#deep-dives" },
+          { label: "The map", href: "#map" },
+          { label: "Deep dives", href: "#deep-dives" },
           { label: "League directory", href: "#league-directory" },
-          { label: "Team map", href: "#map" },
         ]}
       />
 
-      {/* Sports Deep-Dives */}
-      <section id="deep-dives" className="mb-12">
-        <h2 className="text-lg font-semibold mb-1">Sports Deep-Dives</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-4">Cross-sport features that cut across leagues.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {DEEP_DIVES.map((d) => (
-            <Link
-              key={d.href}
-              href={d.href}
-              className="group block rounded-xl border p-5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      {/* Map-forward primary: interactive explorer (8 cols) + sticky console (4 cols).
+          At lg+ the map leads and the console stays in view; below lg the console
+          wraps underneath so mobile readers still see every hub in sequence. */}
+      <section id="map" className="mb-12 scroll-mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-8 min-w-0">
+            <h2 className="text-2xl font-bold tracking-tight mb-2">Every top-flight team, on one map</h2>
+            <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
+              Every top-flight team across the tracked sports and countries, on one map.
+              Filter by sport, league, or country, or jump straight to a per-franchise page where one exists.
+              Per-team pages are live for NFL, MLB, NBA, and NHL.
+            </p>
+            <p className="text-[var(--text-dim)] max-w-3xl text-xs mt-2">
+              Rosters and divisions current as of Feb 2026. Level + division changes happen during each sport&apos;s offseason and are noted in <Link href="/updates" className="underline hover:text-[var(--accent)]">/updates</Link>.
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4 mb-4">
+              <div><strong className="text-[var(--text)] text-sm">{summary.major_markers.toLocaleString()}</strong> Major League &middot; <strong className="text-[var(--text)] text-sm">{summary.other_markers.toLocaleString()}</strong> College & second flight</div>
+              <div><strong className="text-[var(--text)] text-sm">{summary.markers_with_team_page}</strong> with per-franchise pages</div>
+              <div><strong className="text-[var(--text)] text-sm">{liveCount}</strong> leagues live &middot; {comingCount} coming</div>
+            </div>
+
+            <Suspense
+              fallback={
+                <div
+                  className="rounded-lg border h-[540px] flex items-center justify-center text-xs"
+                  style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  Loading explorer&hellip;
+                </div>
+              }
             >
-              <div className="flex items-baseline justify-between gap-2 mb-1.5">
-                <div className="font-semibold text-lg tracking-tight group-hover:text-[var(--accent)]">{d.title}</div>
-                <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] whitespace-nowrap">{d.tag}</span>
-              </div>
-              <p className="text-sm text-[var(--text-muted)]">{d.desc}</p>
-              <div className="mt-3 text-xs font-semibold text-[var(--accent)]">Explore &rarr;</div>
-            </Link>
-          ))}
+              <SportsExplorer teams={teams} />
+            </Suspense>
+          </div>
+
+          <div className="lg:col-span-4">
+            <SportsConsole hubs={hubs} deepDives={DEEP_DIVES} />
+          </div>
         </div>
       </section>
 
-      {/* League directory */}
-      <section id="league-directory" className="mb-12">
+      {/* Deep Dives - editorial features get a full-width band below the map,
+          with one pinned spotlight, ahead of the league reference grid. */}
+      <section id="deep-dives" className="mb-12 scroll-mt-20">
+        <h2 className="text-lg font-semibold mb-1">Deep Dives</h2>
+        <p className="text-xs text-[var(--text-muted)] mb-4">Cross-sport features that cut across leagues.</p>
+
+        <Link
+          href={featuredDeepDive.href}
+          className="group block rounded-xl border p-6 mb-3 transition-colors hover:bg-[var(--bg-card-hover)]"
+          style={{
+            background: "var(--bg-card)",
+            borderColor: "var(--border)",
+            borderLeftWidth: "4px",
+            borderLeftColor: DEEP_DIVE_ACCENTS[featuredDeepDive.href] ?? DEFAULT_DEEP_DIVE_ACCENT,
+          }}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <span
+              className="text-[10px] uppercase tracking-widest font-semibold"
+              style={{ color: DEEP_DIVE_ACCENTS[featuredDeepDive.href] ?? DEFAULT_DEEP_DIVE_ACCENT }}
+            >
+              {featuredDeepDive.tag}
+            </span>
+            <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">Featured</span>
+          </div>
+          <div className="text-2xl font-bold tracking-tight mb-2 group-hover:text-[var(--accent)]">{featuredDeepDive.title}</div>
+          <p className="text-sm text-[var(--text-muted)] max-w-2xl">{featuredDeepDive.desc}</p>
+          <div
+            className="mt-3 text-xs font-semibold"
+            style={{ color: DEEP_DIVE_ACCENTS[featuredDeepDive.href] ?? DEFAULT_DEEP_DIVE_ACCENT }}
+          >
+            Explore &rarr;
+          </div>
+        </Link>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {restDeepDives.map((d) => {
+            const accent = DEEP_DIVE_ACCENTS[d.href] ?? DEFAULT_DEEP_DIVE_ACCENT;
+            return (
+              <Link
+                key={d.href}
+                href={d.href}
+                className="group block rounded-xl border p-5 transition-colors hover:bg-[var(--bg-card-hover)]"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftWidth: "3px", borderLeftColor: accent }}
+              >
+                <div className="text-[10px] uppercase tracking-widest font-semibold mb-1.5" style={{ color: accent }}>{d.tag}</div>
+                <div className="font-semibold text-lg tracking-tight mb-1 group-hover:text-[var(--accent)]">{d.title}</div>
+                <p className="text-sm text-[var(--text-muted)]">{d.desc}</p>
+                <div className="mt-3 text-xs font-semibold" style={{ color: accent }}>Explore &rarr;</div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Full league directory: the complete reference grid, below the fold. */}
+      <section id="league-directory" className="mb-12 scroll-mt-20">
         <h2 className="text-lg font-semibold mb-1">League directory</h2>
         <p className="text-xs text-[var(--text-muted)] mb-4">
           Live cards link straight to the per-franchise pages. Coming-soon cards stay on this page until that league ships.
@@ -274,37 +367,6 @@ export default function SportsPage() {
             );
           })}
         </div>
-      </section>
-
-      {/* Team map */}
-      <section id="map">
-        <h2 className="text-2xl font-bold tracking-tight mb-2">Every top-flight team, on one map</h2>
-        <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Every top-flight team across the tracked sports and countries, on one map.
-          Filter by sport, league, or country, or jump straight to a per-franchise page where one exists.
-          Per-team pages are live for NFL, MLB, NBA, and NHL.
-        </p>
-        <p className="text-[var(--text-dim)] max-w-3xl text-xs mt-2">
-          Rosters and divisions current as of Feb 2026. Level + division changes happen during each sport&apos;s offseason and are noted in <Link href="/updates" className="underline hover:text-[var(--accent)]">/updates</Link>.
-        </p>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4 mb-4">
-          <div><strong className="text-[var(--text)] text-sm">{summary.major_markers.toLocaleString()}</strong> Major League · <strong className="text-[var(--text)] text-sm">{summary.other_markers.toLocaleString()}</strong> College & second flight</div>
-          <div><strong className="text-[var(--text)] text-sm">{summary.markers_with_team_page}</strong> with per-franchise pages</div>
-          <div><strong className="text-[var(--text)] text-sm">{liveCount}</strong> leagues live · {comingCount} coming</div>
-        </div>
-
-        <Suspense
-          fallback={
-            <div
-              className="rounded-lg border h-[540px] flex items-center justify-center text-xs"
-              style={{ borderColor: "var(--border)", color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
-            >
-              Loading explorer…
-            </div>
-          }
-        >
-          <SportsExplorer teams={teams} />
-        </Suspense>
       </section>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">

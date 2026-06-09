@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { fgFor, type FootyFranchise, type FootySeason, type FootyGrandFinal } from "@/lib/_footy";
-import { TOP_TEAMS } from "@/lib/topTeams";
+import { TOP_TEAMS, topTeamAnchorId } from "@/lib/topTeams";
 import type { FootyStandingRow } from "@/lib/_footyStandings";
 import type { FootyCopy } from "./config";
 
@@ -66,9 +66,9 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
               {f.active ? "Active" : "Defunct"}
             </span>
             {topMetro && (
-              <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded" style={{ background: "rgba(245,158,11,0.16)", color: "#fbbf24" }} title={`Top sporting team of ${topMetro}`}>
+              <Link href={`/top-teams#${topTeamAnchorId(topMetro)}`} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded hover:brightness-110 transition" style={{ background: "rgba(245,158,11,0.16)", color: "#fbbf24" }} title={`Top sporting team of ${topMetro} — see The Team That Wins the City`}>
                 <span aria-hidden>{"\u2654"}</span> Top Team · {topMetro}
-              </span>
+              </Link>
             )}
           </div>
           <p className="text-sm text-[var(--text-muted)] mt-2">

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllFranchiseSlugs, getFranchiseBySlug, getFranchiseSeasons, getWnbaFranchiseByTeamName, type WnbaFranchise, type WnbaSeason } from "@/lib/wnba";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import TopTeamChip from "@/app/teams/TopTeamChip";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -121,6 +122,7 @@ export default async function WnbaFranchisePage({ params }: Props) {
         <div className="min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <h1 className="text-3xl font-bold tracking-tight">{f.name}</h1>
+            <TopTeamChip names={[f.name]} metro={f.city} />
             {f.defunct && <span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)] border rounded px-1.5 py-0.5" style={{ borderColor: "var(--border)" }}>Defunct</span>}
             {f.seasons === 0 && <span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)] border rounded px-1.5 py-0.5" style={{ borderColor: "var(--border)" }}>Expansion</span>}
           </div>

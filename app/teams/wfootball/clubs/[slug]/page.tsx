@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWClubSlugs, getWClub, wMonogram } from "@/lib/wfootball";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import TopTeamChip from "@/app/teams/TopTeamChip";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -66,6 +67,7 @@ export default async function WClubPage({ params }: Props) {
         <span className="inline-flex items-center justify-center rounded-xl font-bold text-lg w-14 h-14 shrink-0" style={{ background: mono.bg, color: mono.fg }} aria-hidden>{mono.mono}</span>
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">{club.name}</h1>
+          <TopTeamChip names={[club.name]} metro={club.metro} />
           <div className="mt-1 text-sm text-[var(--text-muted)]">
             {club.metro_slug ? (
               <Link href={`/rankings/${club.metro_slug}`} className="hover:underline">{club.metro}</Link>

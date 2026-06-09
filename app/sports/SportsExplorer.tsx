@@ -8,6 +8,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import FilterDropdown from "./FilterDropdown";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
@@ -647,73 +648,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       </div>
 
-      {/* Map. Mobile gets a viewport-height ceiling so the filter chips
-          stay on screen; tablets and up keep the original fixed 540px. */}
-      <div className="rounded-lg overflow-hidden border h-[60vh] sm:h-[540px]">
-        {visible.length === 0 ? (
-          <div className="h-full w-full flex items-center justify-center text-center px-6">
-            <div>
-              <p className="text-sm text-[var(--text)] mb-2">
-                No teams match these filters.
-              </p>
-              {hasFilters && (
-                <button
-                  onClick={clearAll}
-                  className="text-xs underline decoration-dotted text-[var(--text-muted)] hover:text-[var(--accent)]"
-                >
-                  Clear all filters
-                </button>
-              )}
-            </div>
-          </div>
-        ) : (
-          <SportsMapInner markers={visible} />
-        )}
-      </div>
-
-      {/* Tier definitions — expandable native disclosure so the page
-          stays compact on first paint but the semantics of each Preset
-          chip are one click away. Counts come from the same useMemos
-          that drive the chips, so they stay in sync as the data evolves. */}
-      <details className="group rounded-lg border border-[var(--border)] bg-[var(--bg-card)]/30">
-        <summary className="cursor-pointer list-none px-3 py-2 text-[11px] font-medium text-[var(--text-muted)] hover:text-[var(--accent)] flex items-center gap-2">
-          <span className="text-[10px] transition-transform group-open:rotate-90" aria-hidden>▶</span>
-          What do these tiers mean?
-        </summary>
-        <div className="grid sm:grid-cols-3 gap-4 px-4 pb-4 pt-1 text-[12px] leading-relaxed">
-          <div>
-            <div className="font-semibold text-[var(--text)] mb-1">
-              <span aria-hidden>🥇</span> Gold Standard{" "}
-              <span className="text-[var(--text-dim)] font-normal tabular-nums">({goldStandardCount.toLocaleString()})</span>
-            </div>
-            <p className="text-[var(--text-muted)]">
-              The apex top-flight in each sport. Football's top-five European leagues (Premier League / La Liga / Serie A / Bundesliga / Ligue 1) plus WSL and NWSL on the women's side. NFL, MLB, NBA, NHL, Top 14, Superlega, NRL, AFL, Handball-Bundesliga, WNBA, IPL elsewhere. The leagues a global sports fan names first.
-            </p>
-          </div>
-          <div>
-            <div className="font-semibold text-[var(--text)] mb-1">
-              <span aria-hidden>🥈</span> Major League{" "}
-              <span className="text-[var(--text-dim)] font-normal tabular-nums">({majorCount.toLocaleString()})</span>
-            </div>
-            <p className="text-[var(--text-muted)]">
-              Every workbook-flagged Major League team. Includes the Gold Standard as a strict subset plus other top flights: KHL hockey, CBA basketball, EuroLeague, NPB baseball, CFL, Brasileirão, Argentine Primera, Liga F, and country-level top-flight football outside the European top five.
-            </p>
-          </div>
-          <div>
-            <div className="font-semibold text-[var(--text)] mb-1">
-              Other Teams{" "}
-              <span className="text-[var(--text-dim)] font-normal tabular-nums">({otherCount.toLocaleString()})</span>
-            </div>
-            <p className="text-[var(--text-muted)]">
-              Everything else with a place on the map: US college (FBS, NCAA Division I, NCAA W, FCS, College Hockey), Minor League Baseball, junior hockey, lower-flight football across every footballing nation, second-tier international competitions. Plus 250 national football teams via the Special Filter when Sport=Football is selected.
-            </p>
-          </div>
-        </div>
-      </details>
-
-      {/* Preset row — mutually exclusive. Gold Standard = top-flight per sport;
-          Major League = workbook 'Major League' = Y; Other = everything else
-          (college, minor, junior, lower-flight football); All = both combined. */}
+      {/* Preset row — mutually exclusive. */}
       <div>
         <div className="flex items-baseline gap-2 mb-1.5">
           <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">Preset</span>
@@ -752,7 +687,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       </div>
 
-      {/* Sport filter — primary discriminator. */}
+      {/* Sport filter — primary discriminator, kept as inline chips. */}
       <FilterRow
         label="Sport"
         facets={sportFacets}
@@ -763,11 +698,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         renderDot={(name) => SPORT_COLORS[name] || DEFAULT_SPORT_COLOR}
       />
 
-      {/* Football league hub callout — when sport filter includes Football,
-          surface the five canonical /teams/football/leagues/[slug] hubs so
-          a reader can jump straight into the all-time-champions + current-
-          standings view for any Big 5 top flight without hunting through
-          the nav. Mirrors the way the Sports dropdown links them. */}
+      {/* Football league hub callout. */}
       {filters.sports.has("Football") && (
         <div>
           <div className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] mb-1.5">
@@ -801,10 +732,7 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       )}
 
-      {/* Special Filters — sport-conditional opt-in additives. Hidden
-          entirely unless the user has selected a sport that exposes a
-          special filter. Power Conferences appears for American Football /
-          Basketball; International Teams appears for Football. */}
+      {/* Special Filters — sport-conditional opt-in additives. */}
       {(showPowerSpecial || showInternationalSpecial) && (
         <div>
           <div className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] mb-1.5">Special Filters</div>
@@ -835,93 +763,152 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       )}
 
-      {/* League filter — appears once Sport or Country is selected.
-          Crown leagues prefixed with 👑, non-crown Major League leagues
-          with 🥈. Sort tier: crown > major > other, then count desc.
-          International Teams is excluded from this row (it lives in
-          Special Filters above). */}
-      {(filters.sports.size > 0 || filters.countries.size > 0) && leagueFacets.length > 0 && !addInternational && (
-        <FilterRow
-          label="League"
-          facets={leagueFacets}
-          active={filters.leagues}
-          onToggle={(v) => toggle("leagues", v)}
-          onClearGroup={() => clearGroup("leagues")}
-          litWhenUnselected={leagueRowLit}
-          renderCrown={(name) => goldStandardLeagueFlags.has(name)}
-          renderMajor={(name) => majorLeagueFlags.has(name)}
-        />
-      )}
+      {/* Refine — long facets collapse into dropdown popovers so the map below
+          stays visible. Country is uncapped and searchable. */}
+      <div className="flex flex-wrap gap-2 items-center">
+        <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] mr-1">Refine</span>
+        {(filters.sports.size > 0 || filters.countries.size > 0) && leagueFacets.length > 0 && !addInternational && (
+          <FilterDropdown label="League" count={filters.leagues.size}>
+            <FilterRow
+              label="League"
+              facets={leagueFacets}
+              active={filters.leagues}
+              onToggle={(v) => toggle("leagues", v)}
+              onClearGroup={() => clearGroup("leagues")}
+              litWhenUnselected={leagueRowLit}
+              renderCrown={(name) => goldStandardLeagueFlags.has(name)}
+              renderMajor={(name) => majorLeagueFlags.has(name)}
+              searchable
+              hideLabel
+            />
+          </FilterDropdown>
+        )}
+        <FilterDropdown label="Country" count={filters.countries.size}>
+          <FilterRow
+            label="Country"
+            facets={countryFacets}
+            active={filters.countries}
+            onToggle={(v) => toggle("countries", v)}
+            onClearGroup={() => clearGroup("countries")}
+            litWhenUnselected={countryRowLit}
+            searchable
+            hideLabel
+          />
+        </FilterDropdown>
+        {addInternational && federationFacets.length > 0 && (
+          <FilterDropdown label="Federation" count={filters.federations.size}>
+            <FilterRow
+              label="Federation"
+              facets={federationFacets}
+              active={filters.federations}
+              onToggle={(v) => toggle("federations", v)}
+              onClearGroup={() => clearGroup("federations")}
+              litWhenUnselected={federationRowLit}
+              hideLabel
+            />
+          </FilterDropdown>
+        )}
+        {addInternational && fifaFacets.length > 0 && (
+          <FilterDropdown label="FIFA" count={filters.fifa.size}>
+            <FilterRow
+              label="FIFA"
+              facets={fifaFacets}
+              active={filters.fifa}
+              onToggle={(v) => toggle("fifa", v)}
+              onClearGroup={() => clearGroup("fifa")}
+              litWhenUnselected={federationRowLit}
+              hideLabel
+            />
+          </FilterDropdown>
+        )}
+        {addInternational && activeFacets.length > 0 && (
+          <FilterDropdown label="Active" count={filters.active.size}>
+            <FilterRow
+              label="Active"
+              facets={activeFacets}
+              active={filters.active}
+              onToggle={(v) => toggle("active", v)}
+              onClearGroup={() => clearGroup("active")}
+              litWhenUnselected={federationRowLit}
+              hideLabel
+            />
+          </FilterDropdown>
+        )}
+        {levelFacets.length >= 2 && (
+          <FilterDropdown label="Level" count={filters.levels.size}>
+            <FilterRow
+              label="Level"
+              facets={levelFacets}
+              active={filters.levels}
+              onToggle={(v) => toggle("levels", v)}
+              onClearGroup={() => clearGroup("levels")}
+              litWhenUnselected={levelRowLit}
+              hideLabel
+            />
+          </FilterDropdown>
+        )}
+      </div>
 
-      {/* Country filter — now placed after League per the discriminator
-          hierarchy (Sport > League > Country). Cross-scoped to whatever
-          the preset + Special Filters + Sport + League leave behind. */}
-      <FilterRow
-        label="Country"
-        facets={countryFacets.slice(0, 30)}
-        active={filters.countries}
-        onToggle={(v) => toggle("countries", v)}
-        onClearGroup={() => clearGroup("countries")}
-        litWhenUnselected={countryRowLit}
-      />
+      {/* Map. Mobile gets a viewport-height ceiling so the toolbar stays on
+          screen; tablets and up keep the original fixed 540px. */}
+      <div className="rounded-lg overflow-hidden border h-[60vh] sm:h-[540px]">
+        {visible.length === 0 ? (
+          <div className="h-full w-full flex items-center justify-center text-center px-6">
+            <div>
+              <p className="text-sm text-[var(--text)] mb-2">
+                No teams match these filters.
+              </p>
+              {hasFilters && (
+                <button
+                  onClick={clearAll}
+                  className="text-xs underline decoration-dotted text-[var(--text-muted)] hover:text-[var(--accent)]"
+                >
+                  Clear all filters
+                </button>
+              )}
+            </div>
+          </div>
+        ) : (
+          <SportsMapInner markers={visible} />
+        )}
+      </div>
 
-      {/* Federation filter — only when the International Teams Special
-          Filter is on. Maps to FIFA confederations using workbook
-          continent (Israel/Kazakhstan -> UEFA, Australia -> AFC, Suriname
-          -> CONCACAF). */}
-      {addInternational && federationFacets.length > 0 && (
-        <FilterRow
-          label="Federation"
-          facets={federationFacets}
-          active={filters.federations}
-          onToggle={(v) => toggle("federations", v)}
-          onClearGroup={() => clearGroup("federations")}
-          litWhenUnselected={federationRowLit}
-        />
-      )}
-
-      {/* FIFA filter — appears when International Teams is on. Splits
-          national teams into FIFA members (211 today) and Non-FIFA (38). */}
-      {addInternational && fifaFacets.length > 0 && (
-        <FilterRow
-          label="FIFA"
-          facets={fifaFacets}
-          active={filters.fifa}
-          onToggle={(v) => toggle("fifa", v)}
-          onClearGroup={() => clearGroup("fifa")}
-          litWhenUnselected={federationRowLit}
-        />
-      )}
-
-      {/* Active filter — informational chip row. Defunct teams are
-          excluded from data entirely so this is currently a single-chip
-          row showing the active count. */}
-      {addInternational && activeFacets.length > 0 && (
-        <FilterRow
-          label="Active"
-          facets={activeFacets}
-          active={filters.active}
-          onToggle={(v) => toggle("active", v)}
-          onClearGroup={() => clearGroup("active")}
-          litWhenUnselected={federationRowLit}
-        />
-      )}
-
-      {/* Level filter — reflects the workbook Level column (Team List col J,
-          FootballClub_Data col G). Values include '1' / '2' / '3' (tiered
-          numeric divisions), 'College', 'Junior', 'Independent', 'NASCAR',
-          'F1', and the baseball minor-league letters. Only renders when 2+
-          values survive the upstream filters. */}
-      {levelFacets.length >= 2 && (
-        <FilterRow
-          label="Level"
-          facets={levelFacets}
-          active={filters.levels}
-          onToggle={(v) => toggle("levels", v)}
-          onClearGroup={() => clearGroup("levels")}
-          litWhenUnselected={levelRowLit}
-        />
-      )}
+      {/* Tier definitions — expandable native disclosure. */}
+      <details className="group rounded-lg border border-[var(--border)] bg-[var(--bg-card)]/30">
+        <summary className="cursor-pointer list-none px-3 py-2 text-[11px] font-medium text-[var(--text-muted)] hover:text-[var(--accent)] flex items-center gap-2">
+          <span className="text-[10px] transition-transform group-open:rotate-90" aria-hidden>▶</span>
+          What do these tiers mean?
+        </summary>
+        <div className="grid sm:grid-cols-3 gap-4 px-4 pb-4 pt-1 text-[12px] leading-relaxed">
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              <span aria-hidden>🥇</span> Gold Standard{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({goldStandardCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              The apex top-flight in each sport. Football's top-five European leagues (Premier League / La Liga / Serie A / Bundesliga / Ligue 1) plus WSL and NWSL on the women's side. NFL, MLB, NBA, NHL, Top 14, Superlega, NRL, AFL, Handball-Bundesliga, WNBA, IPL elsewhere. The leagues a global sports fan names first.
+            </p>
+          </div>
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              <span aria-hidden>🥈</span> Major League{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({majorCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              Every workbook-flagged Major League team. Includes the Gold Standard as a strict subset plus other top flights: KHL hockey, CBA basketball, EuroLeague, NPB baseball, CFL, Brasileirão, Argentine Primera, Liga F, and country-level top-flight football outside the European top five.
+            </p>
+          </div>
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              Other Teams{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({otherCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              Everything else with a place on the map: US college (FBS, NCAA Division I, NCAA W, FCS, College Hockey), Minor League Baseball, junior hockey, lower-flight football across every footballing nation, second-tier international competitions. Plus 250 national football teams via the Special Filter when Sport=Football is selected.
+            </p>
+          </div>
+        </div>
+      </details>
     </section>
   );
 }
@@ -1019,6 +1006,8 @@ function FilterRow({
   renderDot,
   renderCrown,
   renderMajor,
+  searchable,
+  hideLabel,
 }: {
   label: string;
   facets: [string, number][];
@@ -1029,13 +1018,22 @@ function FilterRow({
   renderDot?: (name: string) => string;
   renderCrown?: (name: string) => boolean;
   renderMajor?: (name: string) => boolean;
+  searchable?: boolean;
+  hideLabel?: boolean;
 }) {
+  const [q, setQ] = useState("");
   if (facets.length === 0) return null;
   const hasSelection = active.size > 0;
+  const shown =
+    searchable && q.trim()
+      ? facets.filter(([n]) => n.toLowerCase().includes(q.trim().toLowerCase()))
+      : facets;
   return (
     <div>
       <div className="flex items-baseline gap-2 mb-1.5">
-        <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">{label}</span>
+        {!hideLabel && (
+          <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">{label}</span>
+        )}
         {/* Clear link is always rendered while the row is visible. When the
             group has no selections the button is dimmed and a no-op, but
             it stays visible so users can find it consistently across all
@@ -1054,8 +1052,19 @@ function FilterRow({
           Clear
         </button>
       </div>
+      {searchable && (
+        <input
+          type="search"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder={`Filter ${label.toLowerCase()}…`}
+          className="w-full mb-2 px-2 py-1.5 rounded-md border bg-transparent text-[12px] focus:outline-none focus:border-[var(--accent)]"
+          style={{ borderColor: "var(--border)" }}
+          aria-label={`Filter ${label.toLowerCase()}`}
+        />
+      )}
       <div className="flex flex-wrap gap-1.5">
-        {facets.map(([name, count]) => {
+        {shown.map(([name, count]) => {
           const isActive = active.has(name);
           const isCrown = renderCrown?.(name) ?? false;
           // Major-only badge shows for non-crown leagues that still carry

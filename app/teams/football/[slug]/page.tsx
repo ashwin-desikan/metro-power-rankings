@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
+import TopTeamChip from "@/app/teams/TopTeamChip";
 import { notFound } from "next/navigation";
 import {
   getAllClubSlugs,
@@ -136,6 +137,7 @@ export default async function FootballClubPage({ params }: Props) {
           <h1 className="text-3xl font-semibold tracking-tight">{club.cur_name}</h1>
           <ValuationChip league="football" slug={club.slug} className="ml-1" />
           <GhostFranchiseTag league="football" slug={club.slug} className="ml-1" />
+          <TopTeamChip names={[club.cur_name]} metro={club.metro} className="ml-1" />
         </div>
         <p className="mt-1 text-sm text-[var(--text-muted)]">
           {club.city && <>{club.city}, </>}

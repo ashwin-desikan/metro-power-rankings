@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { leagueStatusFor, LeagueStatusTag } from "@/lib/leagueStatus";
+import { leagueStatusFor, clubFootballStatus, LeagueStatusTag, type LeagueStatus } from "@/lib/leagueStatus";
 
 // Client-side desktop nav. Replaces the pure-CSS hover dropdowns that were
 // failing on touch and slow-hover environments. Each dropdown is now a
@@ -111,6 +111,47 @@ function DropdownItem({
   );
 }
 
+const NAV_TONE_COLOR: Record<string, string> = {
+  regular: "#10b981",
+  playoffs: "#f59e0b",
+  worldcup: "#a855f7",
+  offseason: "#55556A",
+};
+
+function navShortStatus(label: string): string {
+  return label.replace(/^Live\s*-\s*/, "");
+}
+
+// Compact Sports-menu item: a status dot + name + sport + short live-status,
+// mirroring the /sports League hubs list. Replaces the wordy hint lines.
+function SportsNavItem({ href, name, sport }: { href: string; name: string; sport: string }) {
+  const status: LeagueStatus | null =
+    href === "/teams/football" ? clubFootballStatus() : leagueStatusFor(href);
+  const tone = status?.tone ?? "offseason";
+  const color = NAV_TONE_COLOR[tone];
+  return (
+    <a
+      href={href}
+      className="flex items-center gap-2.5 px-4 py-2 hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+    >
+      <span
+        className="inline-block rounded-full flex-shrink-0"
+        style={{ width: 7, height: 7, background: color }}
+        aria-hidden="true"
+      />
+      <span className="flex-1 min-w-0">
+        <span className="block text-sm leading-tight">{name}</span>
+        <span className="block text-[11px] leading-tight" style={{ color: "var(--text-dim)" }}>{sport}</span>
+      </span>
+      {status && (
+        <span className="text-[10px] whitespace-nowrap" style={{ color }}>
+          {navShortStatus(status.label)}
+        </span>
+      )}
+    </a>
+  );
+}
+
 export default function DesktopNav({ updated }: { updated: string | null }) {
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -130,7 +171,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         Rankings
       </a>
 
-      <Dropdown id="data" label="Data" openId={openId} setOpenId={setOpenId}>
+      <Dropdown id="data" label="Geography" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/expandable-map" title="Expandable Map" hint="Full-corpus interactive map; resizable canvas, persistent filters and viewport" />
         <DropdownItem href="/compare" title="Compare" hint="Side-by-side any 2 to 4 metros" />
         <DropdownItem href="/countries" title="Countries" hint="Population, metros, and composite score by country" />
@@ -140,31 +181,38 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/random" title="🎲 Random metro" hint="Tier-weighted random pick" />
       </Dropdown>
 
-      <a href="/#regions" className="text-sm hover:text-[var(--accent)] transition-colors">
-        Regions
-      </a>
-
       <Dropdown id="sports" label="Sports" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/sports" title="All sports" hint="Every top-flight team on one map." />
+        <a
+          href="/sports"
+          className="block px-4 py-2.5 text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+        >
+          All sports <span aria-hidden className="text-[var(--text-dim)]">→</span>
+        </a>
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/teams/football" title="Club Football" hint="European top flights plus the English pyramid." />
-        <DropdownItem href="/teams/national" title="International Football" hint="National teams and tournament hubs." />
+        <SportsNavItem href="/teams/football" name="Club Football" sport="Football" />
+        <SportsNavItem href="/teams/national" name="International Football" sport="Football" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/teams/nfl" title="NFL" hint="32 franchises, sortable." />
-        <DropdownItem href="/teams/mlb" title="MLB" hint="30 franchises, sortable." />
-        <DropdownItem href="/teams/nba" title="NBA" hint="30 franchises; live 2026 playoffs." />
-        <DropdownItem href="/teams/nhl" title="NHL" hint="32 franchises; Stanley Cups since 1910." />
-        <DropdownItem href="/teams/ipl" title="IPL" hint="10 franchises; all IPL seasons since 2008." />
+        <SportsNavItem href="/teams/nfl" name="NFL" sport="American Football" />
+        <SportsNavItem href="/teams/mlb" name="MLB" sport="Baseball" />
+        <SportsNavItem href="/teams/nba" name="NBA" sport="Basketball" />
+        <SportsNavItem href="/teams/nhl" name="NHL" sport="Ice Hockey" />
+        <SportsNavItem href="/teams/ipl" name="IPL" sport="Cricket" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/teams/wfootball" title="Women's Football" hint="Honors history: UWCL, WSL, Liga F, NWSL and more." />
-        <DropdownItem href="/teams/wnba" title="WNBA" hint="Current and defunct franchises; champions since 1997." />
+        <SportsNavItem href="/teams/wfootball" name="Women's Football" sport="Football" />
+        <SportsNavItem href="/teams/wnba" name="WNBA" sport="Basketball" />
       </Dropdown>
 
-      <Dropdown id="articles" label="Articles" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="https://citizenofnowhere.substack.com" external title="Citizen of Nowhere" hint="All essays on Substack" />
+      <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>
+        <DropdownItem href="/deep-dives" title="All deep dives →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/neighborhoods" title="The Last of the Marylebones" hint="Global neighborhoods reference" />
-        <DropdownItem href="/top-teams" title="The Team That Wins the City" hint="Top sports team by metro" />
+        <DropdownItem href="/sports/geography-of-erasure" title="The Geography of Erasure" />
+        <DropdownItem href="/sports/games" title="The Greatest Games" />
+        <DropdownItem href="/sports/valuations" title="Team Valuations" />
+        <DropdownItem href="/top-teams" title="The Team That Wins the City" />
+        <DropdownItem href="/neighborhoods" title="The Last of the Marylebones" />
+        <DropdownItem href="/badges/velvet-rock-capital" title="Velvet Rock Capital" />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="https://citizenofnowhere.substack.com" external title="On Substack" />
       </Dropdown>
 
       <Link href="/methodology" className="text-sm hover:text-[var(--accent)] transition-colors">

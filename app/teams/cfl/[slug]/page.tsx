@@ -12,6 +12,7 @@ import {
 } from "@/lib/cfl";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import TopTeamChip from "@/app/teams/TopTeamChip";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -122,6 +123,7 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 flex-wrap">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>
+            <TopTeamChip names={[f.name]} metro={null} />
             <span className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded" style={{ background: f.active ? "rgba(78,205,196,0.16)" : "rgba(120,120,140,0.18)", color: f.active ? "var(--accent)" : "var(--text-dim)" }}>
               {f.active ? "Active" : "Defunct"}
             </span>

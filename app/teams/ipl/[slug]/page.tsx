@@ -10,6 +10,7 @@ import {
   type FranchiseSeason,
 } from "@/lib/ipl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import TopTeamChip from "@/app/teams/TopTeamChip";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -128,6 +129,7 @@ export default async function IplFranchisePage({ params }: Props) {
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-1">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">{f.name}</h1>
+            <TopTeamChip names={[f.name]} metro={f.city} />
             {!f.active && (
               <span className="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium border"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text-dim)" }}>
