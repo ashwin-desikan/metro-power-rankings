@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-09",
+    headline: "AFL and NRL portals",
+    items: [
+      "New AFL and NRL portals: every club across VFL/AFL (1897+) and NSWRL/NRL (1908+), with all-time premierships and minor premierships, the latest-season ladder, an honours table, and the full Grand Final roll.",
+      "Current and defunct clubs each get their own page; defunct clubs like Fitzroy, Newtown, Balmain and St George also surface as cards in their metro areas.",
+      "Metro cards now show premierships, minor premierships, and seasons for the Australian rules and rugby league clubs based there.",
+      "Australian football and rugby league histories sourced from afltables.com.",
+    ],
+  },
+  {
     date: "2026-06-08",
     headline: "CFL portal and richer defunct-team history",
     items: [

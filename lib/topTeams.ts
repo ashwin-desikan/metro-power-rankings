@@ -204,7 +204,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rank: 27,
     metro: "Melbourne",
     sport: "Aussie Rules",
-    team: "Collingwood Magpies",
+    team: "Collingwood",
     rationale: "16 VFL/AFL premierships (tied for most ever with Essendon and Carlton), 2023 AFL premiers. The most supported club in Australian sports , Collingwood membership and fan base dwarfs every other AFL team, and the Magpies are the defining cultural institution of Melbourne sport. Essendon (16 flags) and Carlton (16 flags) are historic equals on trophies but trail in modern fanbase. Melbourne Storm (NRL, 4 premierships) are the cross-code alternative.",
   },
   {

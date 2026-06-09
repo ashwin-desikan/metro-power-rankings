@@ -32,6 +32,8 @@ import { getIplFranchiseByTeamName } from "@/lib/ipl";
 import { getFootballClubByName, getClTitlesForClub } from "@/lib/football";
 import { getWnbaFranchiseByTeamName } from "@/lib/wnba";
 import { getCflFranchiseByTeamName } from "@/lib/cfl";
+import { getAflFranchiseByTeamName } from "@/lib/afl";
+import { getNrlFranchiseByTeamName } from "@/lib/nrl";
 import { getWClubByName } from "@/lib/wfootball";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import BadgeChips from "./BadgeChips";
@@ -1632,6 +1634,27 @@ function TeamsSection({
                           )}
                         </div>
                       )}
+                      {r.stats && (r.league === "afl" || r.league === "nrl") && (
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                            style={{ background: (r.stats.prem ?? 0) > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: (r.stats.prem ?? 0) > 0 ? "#d4af37" : "var(--text-dim)" }}
+                            title="Premierships won"
+                          >
+                            {(r.stats.prem ?? 0) === 0 ? "No premierships" : (r.stats.prem ?? 0) === 1 ? "1 premiership" : `${r.stats.prem} premierships`}
+                          </span>
+                          {(r.stats.minor ?? 0) > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }} title="Minor premierships (finished top of the ladder)">
+                              {r.stats.minor} minor prem
+                            </span>
+                          )}
+                          {(r.stats.seasons ?? 0) > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Seasons in the competition">
+                              {r.stats.seasons} seasons
+                            </span>
+                          )}
+                        </div>
+                      )}
                       {r.stats && r.league === "cfl" && (
                         <div className="flex gap-1.5 mt-2 flex-wrap">
                           <span
@@ -1734,6 +1757,9 @@ function TeamCard({
   const clTitles = footballClub ? getClTitlesForClub(footballClub.slug) : 0;
   const wnbaFranchise = link?.league === "wnba" ? getWnbaFranchiseByTeamName(team.team) : undefined;
   const cflFranchise = link?.league === "cfl" ? getCflFranchiseByTeamName(team.team) : undefined;
+  const aflFranchise = link?.league === "afl" ? getAflFranchiseByTeamName(team.team) : undefined;
+  const nrlFranchise = link?.league === "nrl" ? getNrlFranchiseByTeamName(team.team) : undefined;
+  const footyFranchise = aflFranchise ?? nrlFranchise;
   const wfootballClub = link?.league === "wfootball" ? getWClubByName(team.team) : undefined;
   const wHonor = (slug: string) => wfootballClub?.honors.find((h) => h.competition_slug === slug);
   const displayLeague = wnbaFranchise ? "WNBA" : team.league;
@@ -2045,6 +2071,25 @@ function TeamCard({
               {wnbaFranchise.division_titles} div
             </span>
           )}
+        </div>
+      )}
+      {footyFranchise && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{ background: footyFranchise.premierships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: footyFranchise.premierships > 0 ? "#d4af37" : "var(--text-dim)" }}
+            title="Premierships"
+          >
+            {footyFranchise.premierships === 0 ? "No premierships" : footyFranchise.premierships === 1 ? "1 premiership" : `${footyFranchise.premierships} premierships`}
+          </span>
+          {footyFranchise.minor_premierships > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }} title="Minor premierships (finished top of the ladder)">
+              {footyFranchise.minor_premierships} minor prem
+            </span>
+          )}
+          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Seasons in the competition">
+            {footyFranchise.seasons} seasons
+          </span>
         </div>
       )}
       {cflFranchise && (

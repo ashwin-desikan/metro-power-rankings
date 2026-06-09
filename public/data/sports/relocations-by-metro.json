@@ -1,4 +1,23 @@
 {
+"adelaide": [
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Adelaide Rams",
+"years": "1997–1998",
+"href": "/teams/nrl/adelaide-rams",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 2,
+"gf": 0,
+"pct": 0.321
+}
+}
+],
 "albany": [
 {
 "league": "mlb",
@@ -210,6 +229,42 @@
 "div": 0,
 "finals": 0,
 "pct": 0.361
+}
+}
+],
+"brisbane": [
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "South Queensland",
+"years": "1995–1997",
+"href": "/teams/nrl/south-queensland",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 3,
+"gf": 0,
+"pct": 0.208
+}
+},
+{
+"league": "afl",
+"sport": "Aussie Rules",
+"name": "Brisbane Bears",
+"years": "1987–1996",
+"href": "/teams/afl/brisbane-bears",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 10,
+"gf": 0,
+"pct": 0.326
 }
 }
 ],
@@ -1259,6 +1314,25 @@
 }
 }
 ],
+"gold-coast": [
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Gold Coast Chargers",
+"years": "1988–1998",
+"href": "/teams/nrl/gold-coast-chargers",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 11,
+"gf": 0,
+"pct": 0.232
+}
+}
+],
 "greensboro-winston-salem": [
 {
 "league": "nhl",
@@ -1962,6 +2036,42 @@
 "div": 0,
 "finals": 0,
 "pct": 0.516
+}
+}
+],
+"melbourne": [
+{
+"league": "afl",
+"sport": "Aussie Rules",
+"name": "Fitzroy",
+"years": "1897–1996",
+"href": "/teams/afl/fitzroy",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 8,
+"minor": 4,
+"seasons": 100,
+"gf": 13,
+"pct": 0.447
+}
+},
+{
+"league": "afl",
+"sport": "Aussie Rules",
+"name": "University",
+"years": "1908–1914",
+"href": "/teams/afl/university",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 7,
+"gf": 0,
+"pct": 0.222
 }
 }
 ],
@@ -2829,6 +2939,42 @@
 }
 }
 ],
+"newcastle-maitland": [
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Hunter",
+"years": "1997–1997",
+"href": "/teams/nrl/hunter",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 1,
+"gf": 0,
+"pct": 0.389
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Newcastle (08-09)",
+"years": "1908–1909",
+"href": "/teams/nrl/newcastle-08-09",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 2,
+"gf": 1,
+"pct": 0.474
+}
+}
+],
 "norfolk": [
 {
 "league": "nba",
@@ -3035,6 +3181,25 @@
 "div": 0,
 "finals": 0,
 "pct": 0.167
+}
+}
+],
+"perth": [
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Western Reds",
+"years": "1995–1997",
+"href": "/teams/nrl/western-reds",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 3,
+"gf": 0,
+"pct": 0.402
 }
 }
 ],
@@ -4185,6 +4350,178 @@
 }
 }
 ],
+"sydney": [
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Northern Eagles",
+"years": "2000–2002",
+"href": "/teams/nrl/northern-eagles",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 3,
+"gf": 0,
+"pct": 0.401
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Balmain",
+"years": "1908–1999",
+"href": "/teams/nrl/balmain",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 11,
+"minor": 7,
+"seasons": 92,
+"gf": 15,
+"pct": 0.53
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "North Sydney",
+"years": "1908–1999",
+"href": "/teams/nrl/north-sydney",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 2,
+"minor": 2,
+"seasons": 92,
+"gf": 2,
+"pct": 0.432
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Western Suburbs",
+"years": "1908–1999",
+"href": "/teams/nrl/western-suburbs",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 4,
+"minor": 5,
+"seasons": 92,
+"gf": 10,
+"pct": 0.45
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "St George",
+"years": "1921–1998",
+"href": "/teams/nrl/st-george",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 15,
+"minor": 15,
+"seasons": 78,
+"gf": 27,
+"pct": 0.61
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Newtown",
+"years": "1908–1983",
+"href": "/teams/nrl/newtown",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 3,
+"minor": 6,
+"seasons": 76,
+"gf": 8,
+"pct": 0.472
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Sydney University",
+"years": "1920–1937",
+"href": "/teams/nrl/sydney-university",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 18,
+"gf": 1,
+"pct": 0.202
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Glebe",
+"years": "1908–1929",
+"href": "/teams/nrl/glebe",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 1,
+"seasons": 22,
+"gf": 2,
+"pct": 0.568
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Annandale",
+"years": "1910–1920",
+"href": "/teams/nrl/annandale",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 11,
+"gf": 0,
+"pct": 0.183
+}
+},
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Cumberland",
+"years": "1908–1908",
+"href": "/teams/nrl/cumberland",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 1,
+"gf": 0,
+"pct": 0.125
+}
+}
+],
 "syracuse": [
 {
 "league": "nba",
@@ -4813,6 +5150,25 @@
 "div": 0,
 "finals": 0,
 "pct": 0.0
+}
+}
+],
+"wollongong": [
+{
+"league": "nrl",
+"sport": "Rugby League",
+"name": "Illawarra",
+"years": "1982–1998",
+"href": "/teams/nrl/illawarra",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"prem": 0,
+"minor": 0,
+"seasons": 17,
+"gf": 0,
+"pct": 0.404
 }
 }
 ]

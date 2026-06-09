@@ -57,12 +57,20 @@ import {
   getCflFranchiseByTeamName,
   monogramFor as cflMonogramFor,
 } from "./cfl";
+import {
+  getAflFranchiseByTeamName,
+  aflMonogramFor,
+} from "./afl";
+import {
+  getNrlFranchiseByTeamName,
+  nrlMonogramFor,
+} from "./nrl";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl" | "afl" | "nrl";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -111,6 +119,14 @@ function isWnba(sport: string, leagueHint: string): boolean {
 }
 function isCfl(sport: string, leagueHint: string): boolean {
   return sport === "Canadian Football" || leagueHint === "CFL";
+}
+const AFL_SPORT_LABELS = new Set(["Aussie Rules", "Australian Rules", "AFL"]);
+const NRL_SPORT_LABELS = new Set(["Rugby League", "NRL"]);
+function isAfl(sport: string, leagueHint: string): boolean {
+  return AFL_SPORT_LABELS.has(sport) || leagueHint === "AFL";
+}
+function isNrl(sport: string, leagueHint: string): boolean {
+  return NRL_SPORT_LABELS.has(sport) || leagueHint === "NRL";
 }
 
 export function resolveTeamLink(
@@ -236,6 +252,32 @@ export function resolveTeamLink(
       href: `/teams/cfl/${f.slug}`,
       logoUrl: null,
       monogram: cflMonogramFor(f),
+      displayName: f.name,
+    };
+  }
+
+  if (isAfl(sport, leagueHint)) {
+    const f = getAflFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "afl",
+      href: `/teams/afl/${f.slug}`,
+      logoUrl: null,
+      monogram: aflMonogramFor(f),
+      displayName: f.name,
+    };
+  }
+
+  if (isNrl(sport, leagueHint)) {
+    const f = getNrlFranchiseByTeamName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "nrl",
+      href: `/teams/nrl/${f.slug}`,
+      logoUrl: null,
+      monogram: nrlMonogramFor(f),
       displayName: f.name,
     };
   }

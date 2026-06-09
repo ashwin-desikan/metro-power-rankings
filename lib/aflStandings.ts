@@ -1,0 +1,4 @@
+import "server-only";
+import { getFootyLiveStandings, type FootyStandingsView, type FootyStandingRow } from "@/lib/_footyStandings";
+export type { FootyStandingsView, FootyStandingRow };
+export const getAflLiveStandings = (): Promise<FootyStandingsView> => getFootyLiveStandings("afl");

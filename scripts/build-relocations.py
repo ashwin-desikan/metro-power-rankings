@@ -30,7 +30,7 @@ def read_csv(name):
     p=os.path.join(ROOT,'scripts','relocations',name)
     return list(csv.DictReader(open(p,encoding='utf-8-sig'))) if os.path.exists(p) else []
 
-SPORT={'nfl':'American Football','nba':'Basketball','nhl':'Hockey','mlb':'Baseball','wnba':'W Basketball','ipl':'Cricket','football':'Football/Soccer','cfl':'Canadian Football'}
+SPORT={'nfl':'American Football','nba':'Basketball','nhl':'Hockey','mlb':'Baseball','wnba':'W Basketball','ipl':'Cricket','football':'Football/Soccer','cfl':'Canadian Football','afl':'Aussie Rules','nrl':'Rugby League'}
 BIG4=['nfl','nba','nhl','mlb']
 EN='–'
 
@@ -249,6 +249,11 @@ for f in load('public/data/cfl/data.json')['franchises']:
     if (not f.get('active')) and f.get('metro_slug'):
         _cst={'champ':f.get('grey_cups',0),'div':0,'finals':f.get('gc_finals',0),'pct':f.get('win_pct',0.0)}
         add(f['metro_slug'],'cfl',f['name'],f"{f.get('first_year','')}{EN}{f.get('last_year','')}",f"/teams/cfl/{f['slug']}","defunct",stats=_cst)
+for _lg in ('afl','nrl'):
+    for f in load(f'public/data/{_lg}/data.json')['franchises']:
+        if (not f.get('active')) and f.get('metro_slug'):
+            _fst={'prem':f.get('premierships',0),'minor':f.get('minor_premierships',0),'seasons':f.get('seasons',0),'gf':f.get('gf_apps',0),'pct':f.get('win_pct',0.0)}
+            add(f['metro_slug'],_lg,f['name'],f"{f.get('first_year','')}{EN}{f.get('last_year','')}",f"/teams/{_lg}/{f['slug']}","defunct",stats=_fst)
 
 for r in CURATED:
     if r.get('metro_slug') and r.get('href'):
@@ -267,6 +272,9 @@ for f in load('public/data/ipl/data.json')['franchises']:
     if not f.get('active'): defunct_hrefs.add(f"/teams/ipl/{f['slug']}")
 for f in load('public/data/cfl/data.json')['franchises']:
     if not f.get('active'): defunct_hrefs.add(f"/teams/cfl/{f['slug']}")
+for _lg in ('afl','nrl'):
+    for f in load(f'public/data/{_lg}/data.json')['franchises']:
+        if not f.get('active'): defunct_hrefs.add(f"/teams/{_lg}/{f['slug']}")
 for (ms,href),c in cards.items():
     ov=OVERRIDES.get((ms,href))
     if ov:

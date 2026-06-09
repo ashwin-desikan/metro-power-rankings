@@ -138,6 +138,22 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     page: "/teams/cfl",
     team_count: 0,
   },
+  {
+    league: "AFL",
+    label: "AFL",
+    sport: "Aussie Rules",
+    status: "live",
+    page: "/teams/afl",
+    team_count: 0,
+  },
+  {
+    league: "NRL",
+    label: "NRL",
+    sport: "Rugby League",
+    status: "live",
+    page: "/teams/nrl",
+    team_count: 0,
+  },
 ];
 const INJECTED_COMING_CARDS: LeagueCard[] = [
   {
