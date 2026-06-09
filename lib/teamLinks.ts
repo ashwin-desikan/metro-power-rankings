@@ -65,12 +65,13 @@ import {
   getNrlFranchiseByTeamName,
   nrlMonogramFor,
 } from "./nrl";
+import { getCfbTeamForName, cfbMonogram } from "./cfb";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl" | "afl" | "nrl";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl" | "afl" | "nrl" | "cfb";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -127,6 +128,10 @@ function isAfl(sport: string, leagueHint: string): boolean {
 }
 function isNrl(sport: string, leagueHint: string): boolean {
   return NRL_SPORT_LABELS.has(sport) || leagueHint === "NRL";
+}
+const CFB_SPORT_LABELS = new Set(["American Football (NCAA)", "College Football", "CFB"]);
+function isCfb(sport: string, leagueHint: string): boolean {
+  return CFB_SPORT_LABELS.has(sport) || leagueHint === "CFB" || leagueHint === "FBS";
 }
 
 export function resolveTeamLink(
@@ -278,6 +283,19 @@ export function resolveTeamLink(
       href: `/teams/nrl/${f.slug}`,
       logoUrl: null,
       monogram: nrlMonogramFor(f),
+      displayName: f.name,
+    };
+  }
+
+  if (isCfb(sport, leagueHint)) {
+    const f = getCfbTeamForName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "cfb",
+      href: `/teams/cfb/${f.slug}`,
+      logoUrl: null,
+      monogram: { bg: f.color, fg: "#ffffff", mono: cfbMonogram(f.name) },
       displayName: f.name,
     };
   }

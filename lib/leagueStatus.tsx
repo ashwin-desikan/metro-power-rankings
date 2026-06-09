@@ -20,6 +20,7 @@ const STATUS_BY_PAGE: Record<string, LeagueStatus> = {
   "/teams/nba":        { label: "Live - Playoffs", tone: "playoffs" },
   "/teams/nhl":        { label: "Live - Playoffs", tone: "playoffs" },
   "/teams/nfl":        { label: "Offseason", tone: "offseason" },
+  "/teams/cfb":        { label: "Starts late Aug", tone: "offseason" },
   "/teams/football":   { label: "Offseason", tone: "offseason" },
   "/teams/ipl":        { label: "Offseason", tone: "offseason" },
   "/teams/cfl":        { label: "Live - Regular Season", tone: "regular" },

@@ -146,6 +146,34 @@ export const FEATURED: FeaturedGame[] = [
     note: "Every Stanley Cup presentation across three decades.",
     clipLabel: "Official - NHL",
   },
+  // College Football (clips supplied for the top Game Score entries)
+  {
+    leagueTag: "CFB",
+    videoId: "WitAjwWY6EQ",
+    title: "2006 Rose Bowl",
+    matchup: "Texas 41-38 USC",
+    note: "Vince Young runs in the title on fourth down.",
+    clipLabel: "Game video",
+    rank: 1,
+  },
+  {
+    leagueTag: "CFB",
+    videoId: "TvSXwaNCJKs",
+    title: "2003 Fiesta Bowl",
+    matchup: "Ohio State 31-24 (2OT) Miami (FL)",
+    note: "A double-overtime upset ends the Hurricanes' reign.",
+    clipLabel: "Game video",
+    rank: 2,
+  },
+  {
+    leagueTag: "CFB",
+    videoId: "saOJL6m70G0",
+    title: "1987 Fiesta Bowl",
+    matchup: "Penn State 14-10 Miami (FL)",
+    note: "A goal-line stand seals the national championship.",
+    clipLabel: "Game video",
+    rank: 6,
+  },
 ];
 
 export function clipForRow(

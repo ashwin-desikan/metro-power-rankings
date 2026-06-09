@@ -193,6 +193,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <SportsNavItem href="/teams/national" name="International Football" sport="Football" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <SportsNavItem href="/teams/nfl" name="NFL" sport="American Football" />
+        <SportsNavItem href="/teams/cfb" name="College Football" sport="American Football" />
         <SportsNavItem href="/teams/mlb" name="MLB" sport="Baseball" />
         <SportsNavItem href="/teams/nba" name="NBA" sport="Basketball" />
         <SportsNavItem href="/teams/nhl" name="NHL" sport="Ice Hockey" />

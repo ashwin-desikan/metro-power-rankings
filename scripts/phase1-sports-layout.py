@@ -1,4 +1,169 @@
-import type { Metadata } from "next";
+#!/usr/bin/env python3
+"""
+Phase 1 — Sports hub map-forward reorg.
+
+Run from the repo root (the folder that contains app/sports/page.tsx):
+
+    python phase1-sports-layout.py
+
+What it does:
+  1. Creates app/sports/SportsConsole.tsx (sticky sidebar: hub links + deep-dives).
+  2. Rewrites app/sports/page.tsx into the map-forward, two-pane layout
+     (map in 8 cols, SportsConsole in 4 cols, full league directory below).
+
+Safety:
+  - Asserts a set of unique anchors exist in the current page.tsx; aborts if any
+    is missing (your working copy has drifted -- send me the current file).
+  - Aborts if it looks already applied (SportsConsole import present).
+  - Backs up both files to *.phase1.bak before writing.
+
+Nothing is committed. Run your TS type check after, then preview locally.
+"""
+
+import os
+import sys
+import shutil
+
+PAGE = os.path.join("app", "sports", "page.tsx")
+CONSOLE = os.path.join("app", "sports", "SportsConsole.tsx")
+
+ANCHORS = [
+    'import SportsExplorer, { type TeamMarker } from "./SportsExplorer";',
+    "const DEEP_DIVES: DeepDive[] = [",
+    '<section id="deep-dives" className="mb-12">',
+    '<section id="league-directory" className="mb-12">',
+    '<section id="map">',
+    "export default function SportsPage() {",
+    '{ label: "Deep-Dives", href: "#deep-dives" },',
+]
+
+CONSOLE_TSX = r'''import Link from "next/link";
+
+// Sticky sidebar for /sports, the cross-sport analogue of app/HomeSidebar.
+// Lives beside the map at lg+ (col-span-4) and stacks below on mobile.
+// Two blocks plus a CTA foot:
+//   1. Jump to a hub  - every live league hub, one click away.
+//   2. Deep-dives     - the cross-sport feature pages.
+//   3. Methodology / What's new CTAs.
+// Server component. Data is passed in from page.tsx (no new fetch).
+
+export type ConsoleHub = { label: string; sport: string; href: string };
+export type ConsoleDeepDive = { href: string; title: string; tag: string; desc: string };
+
+export default function SportsConsole({
+  hubs,
+  deepDives,
+}: {
+  hubs: ConsoleHub[];
+  deepDives: ConsoleDeepDive[];
+}) {
+  return (
+    <aside
+      id="console"
+      className="space-y-5 lg:sticky lg:top-20 scroll-mt-20"
+      style={{ alignSelf: "start" }}
+    >
+      <Section title="Jump to a hub">
+        <div className="grid grid-cols-1 gap-2">
+          {hubs.map((h) => (
+            <Link
+              key={h.href}
+              href={h.href}
+              className="group block rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)]"
+              style={{
+                backgroundColor: "var(--bg-card)",
+                borderColor: "var(--border)",
+                borderLeftWidth: "3px",
+                borderLeftColor: "var(--accent)",
+              }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="min-w-0">
+                  <div
+                    className="text-[10px] tracking-widest uppercase"
+                    style={{ color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    {h.sport}
+                  </div>
+                  <div className="text-sm font-medium truncate" style={{ color: "var(--text)" }}>
+                    {h.label}
+                  </div>
+                </div>
+                <span
+                  className="text-xs transition-transform group-hover:translate-x-0.5"
+                  style={{ color: "var(--text-muted)" }}
+                  aria-hidden="true"
+                >
+                  &rarr;
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Deep-dives">
+        <ul className="space-y-2">
+          {deepDives.map((d) => (
+            <li key={d.href}>
+              <Link
+                href={d.href}
+                className="group block rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+                style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <div
+                    className="text-sm font-medium group-hover:text-[var(--accent)]"
+                    style={{ color: "var(--text)" }}
+                  >
+                    {d.title}
+                  </div>
+                  <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)] whitespace-nowrap">
+                    {d.tag}
+                  </span>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <div className="flex items-center gap-2 text-[11px]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+        <Link
+          href="/methodology"
+          className="flex-1 text-center rounded-md border px-3 py-2 transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+        >
+          Methodology &rarr;
+        </Link>
+        <Link
+          href="/updates"
+          className="flex-1 text-center rounded-md border px-3 py-2 transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
+        >
+          What&apos;s new &rarr;
+        </Link>
+      </div>
+    </aside>
+  );
+}
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <div
+        className="text-[10px] tracking-widest uppercase mb-2"
+        style={{ color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
+      >
+        {title}
+      </div>
+      {children}
+    </div>
+  );
+}
+'''
+
+PAGE_TSX = r'''import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
 import { Suspense } from "react";
@@ -86,17 +251,6 @@ const DEEP_DIVES: DeepDive[] = [
   },
 ];
 
-// Editorial accent per deep dive (no cover images yet; color + type carry it).
-const DEEP_DIVE_ACCENTS: Record<string, string> = {
-  "/sports/geography-of-erasure": "#4ECDC4",
-  "/sports/games": "#a855f7",
-  "/sports/valuations": "#f59e0b",
-  "/top-teams": "#D4537E",
-};
-const DEFAULT_DEEP_DIVE_ACCENT = "#4ECDC4";
-// The pinned spotlight piece shown as the large featured card.
-const FEATURED_DEEP_DIVE = "/sports/geography-of-erasure";
-
 // Editorial overrides for the league directory: drop the Big 5 country cards
 // (Club Football covers them), inject the live Football/IPL/Women's/WNBA hubs,
 // and list the two college hubs as coming soon.
@@ -166,16 +320,16 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     page: "/teams/nrl",
     team_count: 0,
   },
+];
+const INJECTED_COMING_CARDS: LeagueCard[] = [
   {
     league: "CFB",
     label: "College Football",
     sport: "American Football",
-    status: "live",
-    page: "/teams/cfb",
+    status: "coming",
+    page: null,
     team_count: 0,
   },
-];
-const INJECTED_COMING_CARDS: LeagueCard[] = [
   {
     league: "CBB",
     label: "Men's College Basketball",
@@ -207,9 +361,6 @@ export default function SportsPage() {
     .filter((c) => c.status === "live" && c.page)
     .map((c) => ({ label: c.label, sport: c.sport, href: c.page as string }));
 
-  const featuredDeepDive = DEEP_DIVES.find((d) => d.href === FEATURED_DEEP_DIVE) ?? DEEP_DIVES[0];
-  const restDeepDives = DEEP_DIVES.filter((d) => d.href !== featuredDeepDive.href);
-
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Hub header */}
@@ -225,7 +376,7 @@ export default function SportsPage() {
       <HubNav
         items={[
           { label: "The map", href: "#map" },
-          { label: "Deep dives", href: "#deep-dives" },
+          { label: "Hubs & deep-dives", href: "#console" },
           { label: "League directory", href: "#league-directory" },
         ]}
       />
@@ -268,61 +419,6 @@ export default function SportsPage() {
           <div className="lg:col-span-4">
             <SportsConsole hubs={hubs} deepDives={DEEP_DIVES} />
           </div>
-        </div>
-      </section>
-
-      {/* Deep Dives - editorial features get a full-width band below the map,
-          with one pinned spotlight, ahead of the league reference grid. */}
-      <section id="deep-dives" className="mb-12 scroll-mt-20">
-        <h2 className="text-lg font-semibold mb-1">Deep Dives</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-4">Cross-sport features that cut across leagues.</p>
-
-        <Link
-          href={featuredDeepDive.href}
-          className="group block rounded-xl border p-6 mb-3 transition-colors hover:bg-[var(--bg-card-hover)]"
-          style={{
-            background: "var(--bg-card)",
-            borderColor: "var(--border)",
-            borderLeftWidth: "4px",
-            borderLeftColor: DEEP_DIVE_ACCENTS[featuredDeepDive.href] ?? DEFAULT_DEEP_DIVE_ACCENT,
-          }}
-        >
-          <div className="flex items-center gap-2 mb-2">
-            <span
-              className="text-[10px] uppercase tracking-widest font-semibold"
-              style={{ color: DEEP_DIVE_ACCENTS[featuredDeepDive.href] ?? DEFAULT_DEEP_DIVE_ACCENT }}
-            >
-              {featuredDeepDive.tag}
-            </span>
-            <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">Featured</span>
-          </div>
-          <div className="text-2xl font-bold tracking-tight mb-2 group-hover:text-[var(--accent)]">{featuredDeepDive.title}</div>
-          <p className="text-sm text-[var(--text-muted)] max-w-2xl">{featuredDeepDive.desc}</p>
-          <div
-            className="mt-3 text-xs font-semibold"
-            style={{ color: DEEP_DIVE_ACCENTS[featuredDeepDive.href] ?? DEFAULT_DEEP_DIVE_ACCENT }}
-          >
-            Explore &rarr;
-          </div>
-        </Link>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {restDeepDives.map((d) => {
-            const accent = DEEP_DIVE_ACCENTS[d.href] ?? DEFAULT_DEEP_DIVE_ACCENT;
-            return (
-              <Link
-                key={d.href}
-                href={d.href}
-                className="group block rounded-xl border p-5 transition-colors hover:bg-[var(--bg-card-hover)]"
-                style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftWidth: "3px", borderLeftColor: accent }}
-              >
-                <div className="text-[10px] uppercase tracking-widest font-semibold mb-1.5" style={{ color: accent }}>{d.tag}</div>
-                <div className="font-semibold text-lg tracking-tight mb-1 group-hover:text-[var(--accent)]">{d.title}</div>
-                <p className="text-sm text-[var(--text-muted)]">{d.desc}</p>
-                <div className="mt-3 text-xs font-semibold" style={{ color: accent }}>Explore &rarr;</div>
-              </Link>
-            );
-          })}
         </div>
       </section>
 
@@ -376,3 +472,48 @@ export default function SportsPage() {
     </main>
   );
 }
+'''
+
+
+def fail(msg):
+    print("ABORTED: " + msg)
+    sys.exit(1)
+
+
+def main():
+    if not os.path.isfile(PAGE):
+        fail(f"{PAGE} not found. Run this from the repo root (the folder containing app/sports/page.tsx).")
+
+    with open(PAGE, "r", encoding="utf-8") as f:
+        current = f.read()
+
+    if "SportsConsole" in current:
+        fail("page.tsx already references SportsConsole -- looks already applied. Nothing changed.")
+
+    missing = [a for a in ANCHORS if a not in current]
+    if missing:
+        print("Could not find these expected anchors in app/sports/page.tsx:")
+        for a in missing:
+            print("  - " + a)
+        fail("Working copy has drifted from the version this patch was built for. Send me the current page.tsx.")
+
+    # Back up and write.
+    shutil.copyfile(PAGE, PAGE + ".phase1.bak")
+    if os.path.isfile(CONSOLE):
+        shutil.copyfile(CONSOLE, CONSOLE + ".phase1.bak")
+
+    with open(CONSOLE, "w", encoding="utf-8", newline="\n") as f:
+        f.write(CONSOLE_TSX)
+    with open(PAGE, "w", encoding="utf-8", newline="\n") as f:
+        f.write(PAGE_TSX)
+
+    print("Phase 1 applied.")
+    print(f"  wrote   {CONSOLE}")
+    print(f"  rewrote {PAGE}")
+    print(f"  backups {PAGE}.phase1.bak" + (f" , {CONSOLE}.phase1.bak" if os.path.isfile(CONSOLE + '.phase1.bak') else ""))
+    print()
+    print("Next: run your TS type check, then preview locally before committing.")
+
+
+if __name__ == "__main__":
+    main()

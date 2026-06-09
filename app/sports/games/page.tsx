@@ -28,6 +28,8 @@ import NhlCupGames from "@/app/teams/nhl/CupPresentationTable";
 import FeaturedGames from "./FeaturedGames";
 import { FEATURED, clipForRow, type FeaturedGame } from "./featured";
 import type { GameVideo } from "@/app/teams/_shared/GameVideo";
+import { getCfbTopGames, getCfbGamesByDecade, getAllCfbSlugs } from "@/lib/cfb";
+import CfbGames from "@/app/teams/cfb/CfbGames";
 
 export const dynamicParams = false;
 
@@ -169,6 +171,10 @@ export default function GamesHubPage() {
   const nbaCards = rankedCards("NBA", rankMapOf(nbaAllTime));
   const mlbCards = rankedCards("MLB", rankMapOf(mlbAllTime));
   const nhlCards = FEATURED.filter((g) => g.leagueTag === "NHL");
+  const cfbTop = getCfbTopGames();
+  const cfbByDecade = getCfbGamesByDecade();
+  const cfbSlugs = getAllCfbSlugs();
+  const cfbCards = FEATURED.filter((g) => g.leagueTag === "CFB").sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -219,6 +225,7 @@ export default function GamesHubPage() {
           { label: "NBA", href: "#nba" },
           { label: "MLB", href: "#mlb" },
           { label: "NHL", href: "#nhl" },
+          { label: "College Football", href: "#cfb" },
           { label: "What's next", href: "#whats-next" },
         ]}
       />
@@ -269,6 +276,19 @@ export default function GamesHubPage() {
         <NhlCupGames allTime={nhlCup.allTime} byDecade={nhlCup.byDecade} />
       </section>
 
+      {/* College Football */}
+      <section id="cfb" className="mb-12 scroll-mt-24">
+        <div className="flex items-baseline justify-between gap-3 mb-3 flex-wrap">
+          <div>
+            <h2 className="text-xl font-bold tracking-tight">College Football</h2>
+            <p className="text-sm text-[var(--text-muted)] max-w-3xl">The greatest games in college football history, ranked by Game Score, with the bowl, stage and rivalry of each. Filter to a decade.</p>
+          </div>
+          <a href="/teams/cfb#games" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full College Football hub &rarr;</a>
+        </div>
+        <FeaturedClips games={cfbCards} />
+        <CfbGames topOverall={cfbTop} byDecade={cfbByDecade} linkSlugs={cfbSlugs} />
+      </section>
+
       {/* What's next */}
       <section id="whats-next" className="mb-6 scroll-mt-24">
         <h2 className="text-lg font-semibold mb-2">What&apos;s next</h2>
@@ -283,7 +303,7 @@ export default function GamesHubPage() {
           </li>
           <li>
             <span className="text-[var(--text)] font-medium">More sports.</span> Club Football, International
-            Football, College Football and Men&apos;s College Basketball are next; the game data is already in hand
+            Football and Men&apos;s College Basketball are next; the game data is already in hand
             and slots into the same model.
           </li>
         </ul>

@@ -76,8 +76,8 @@ export default function CupPresentationTable({ allTime, byDecade }: Props) {
         </button>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-xs tabular-nums">
+      <div className="max-h-[70vh] overflow-auto">
+        <table className="w-full text-xs tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg)]">
           <thead>
             <tr className="text-[var(--text-muted)]">
               <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px] pr-3">#</th>

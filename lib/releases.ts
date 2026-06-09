@@ -19,11 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-09",
-    headline: "AFL and NRL portals",
+    headline: "College Football hub, AFL and NRL portals",
     items: [
-      "New AFL and NRL portals: every club across VFL/AFL (1897+) and NSWRL/NRL (1908+), with all-time premierships and minor premierships, the latest-season ladder, an honours table, and the full Grand Final roll.",
-      "Current and defunct clubs each get their own page; defunct clubs like Fitzroy, Newtown, Balmain and St George also surface as cards in their metro areas.",
-      "Metro cards now show premierships, minor premierships, and seasons for the Australian rules and rugby league clubs based there.",
+      "New College Football hub at /teams/cfb: every major program through history with national titles, conference championships, and the greatest games by Game Score, filterable by decade with video for the classics.",
+      "FBS programs now lead each metro's college teams with team colors, national titles, conference titles, and major seasons; once-major FCS schools carry the same detail in College/University.",
+      "New AFL and NRL portals: every VFL/AFL (1897+) and NSWRL/NRL (1908+) club with all-time premierships, the latest ladder, an honours table, and the full Grand Final roll; defunct clubs get pages and metro cards.",
       "Australian football and rugby league histories sourced from afltables.com.",
     ],
   },

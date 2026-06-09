@@ -107,3 +107,8 @@ workbooks/
 Champions League-201516.xlsx
 MetroAreas.xlsx
 Overture-Per-Country-Raw/overture-combined.csv
+
+# College Football source workbook (71MB) - committed JSON lives in public/data/cfb
+CFB.xlsx
+# patch-script backups
+*.bak

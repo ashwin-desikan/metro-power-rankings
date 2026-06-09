@@ -35,7 +35,8 @@ import { getCflFranchiseByTeamName } from "@/lib/cfl";
 import { getAflFranchiseByTeamName } from "@/lib/afl";
 import { getNrlFranchiseByTeamName } from "@/lib/nrl";
 import { getWClubByName } from "@/lib/wfootball";
-import { resolveTeamLink } from "@/lib/teamLinks";
+import { resolveTeamLink, type TeamLink } from "@/lib/teamLinks";
+import { getCfbTeamForName, cfbMonogram } from "@/lib/cfb";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -1395,7 +1396,12 @@ function TeamsSection({
   const isWomen = (sport: string) => /^W\s/.test(sport);
 
   const otherTeamsRaw = nonHistoricForBucketing.filter((t) => !t.major);
-  const otherCollege = otherTeamsRaw.filter((t) => isCollege(t));
+  // College Football (FBS) is lifted into its own group above Football/Soccer.
+  // Everything else college (FCS, basketball, hockey, ...) stays in College/University.
+  const isFbsFootball = (t: { sport: string; league: string }) =>
+    t.sport === "American Football" && t.league === "FBS";
+  const otherFbs = otherTeamsRaw.filter((t) => isFbsFootball(t));
+  const otherCollege = otherTeamsRaw.filter((t) => isCollege(t) && !isFbsFootball(t));
   const otherFootball = [...otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))].sort((a, b) => {
     const ak = footballSortKeys.get(a.team) ?? { level: 99, majorCups: 0 };
     const bk = footballSortKeys.get(b.team) ?? { level: 99, majorCups: 0 };
@@ -1543,12 +1549,13 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherCollege.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0) && (
+      {(otherFbs.length > 0 || otherFootball.length > 0 || otherCollege.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
           </h3>
           <div className="space-y-3">
+            {otherFbs.length > 0 && collapsible("College Football (FBS)", otherFbs)}
             {otherFootball.length > 0 && collapsible("Football/Soccer Teams", otherFootball)}
             {otherCollege.length > 0 && collapsible("College/University Teams", otherCollege)}
             {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
@@ -1744,7 +1751,23 @@ function TeamCard({
   // it up. The chip block below uses the league discriminator to surface
   // sport-appropriate stats (NFL: titles + div titles; MLB: WS titles +
   // pennants).
-  const link = resolveTeamLink(team.sport, team.team, team.league);
+  // College Football (FBS now, or once-major FCS) resolves to the CFB hub with a
+  // team-colored monogram. resolveTeamLink returns null for these (its NFL branch
+  // short-circuits on sport "American Football"), so the link is built here.
+  const cfbTeam =
+    team.sport === "American Football" && (team.league === "FBS" || team.league === "FCS")
+      ? getCfbTeamForName(team.team)
+      : undefined;
+  const link: TeamLink | null = cfbTeam
+    ? {
+        slug: cfbTeam.slug,
+        league: "cfb",
+        href: `/teams/cfb/${cfbTeam.slug}`,
+        logoUrl: null,
+        monogram: { bg: cfbTeam.color || "#444", fg: "#ffffff", mono: cfbMonogram(cfbTeam.name) },
+        displayName: cfbTeam.name,
+      }
+    : resolveTeamLink(team.sport, team.team, team.league);
 
   // Pull franchise records for chip rendering. Either may resolve depending
   // on which league this team belongs to; both null for unsupported leagues.
@@ -1781,6 +1804,7 @@ function TeamCard({
       }`}
     >
       <p className="text-xs text-[var(--text-muted)] mb-1">
+        {cfbTeam && <span aria-hidden className="mr-1">🏈</span>}
         {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
       <div className="flex items-center gap-2.5">
@@ -2152,6 +2176,33 @@ function TeamCard({
         }
         return null;
       })()}
+      {cfbTeam && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{ background: cfbTeam.nat_champ_count > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: cfbTeam.nat_champ_count > 0 ? "#d4af37" : "var(--text-dim)" }}
+            title="National championships"
+          >
+            {cfbTeam.nat_champ_count === 0 ? "No titles" : `${cfbTeam.nat_champ_count} Natl Champ${cfbTeam.nat_champ_count === 1 ? "" : "s"}`}
+          </span>
+          {cfbTeam.maj_conf_champ > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }}
+              title="Conference championships"
+            >
+              {cfbTeam.maj_conf_champ} Conf
+            </span>
+          )}
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+            title="Major (top-division) seasons"
+          >
+            {cfbTeam.maj_seasons} maj season{cfbTeam.maj_seasons === 1 ? "" : "s"}
+          </span>
+        </div>
+      )}
     </div>
   );
 }
