@@ -51,3 +51,47 @@ body {
   isolation: isolate;
   z-index: 0 !important;
 }
+
+/* === Sticky table headers — site-wide standard ===
+   Any wrapper that directly holds a <table> becomes a height-capped scroll
+   box so the header can stick within it. The top nav is fixed, so sticking
+   to the viewport would hide the header behind it; sticking within an
+   in-flow scroll box avoids that. Tables that already opt in with their own
+   max-height + [&_thead_th] utilities keep working (their classes win). */
+.overflow-x-auto:has(> table),
+.overflow-auto:has(> table),
+.overflow-hidden:has(> table) {
+  max-height: 80vh;
+  overflow: auto;
+}
+table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg-card);
+}
+
+/* === Mobile: freeze first column + momentum for table scroll boxes ===
+   On phones, keep the first column (row label) visible while swiping a wide
+   table sideways. Relies on the site-wide header rule for the top-sticky
+   part; this adds the left-sticky part. Desktop is unaffected. */
+@media (max-width: 640px) {
+  .overflow-x-auto:has(> table),
+  .overflow-auto:has(> table),
+  .overflow-hidden:has(> table) {
+    -webkit-overflow-scrolling: touch;
+  }
+  table tbody td:first-child,
+  table tfoot td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 15;
+    background: var(--bg-card);
+    box-shadow: inset -1px 0 0 var(--border);
+  }
+  table thead th:first-child {
+    left: 0;
+    z-index: 30;
+    box-shadow: inset -1px 0 0 var(--border);
+  }
+}

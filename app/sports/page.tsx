@@ -202,10 +202,20 @@ export default function SportsPage() {
   const liveCount = composedCards.filter((c) => c.status === "live").length;
   const comingCount = composedCards.filter((c) => c.status === "coming").length;
 
-  // Sidebar hub links: every live league card that resolves to a real page.
-  const hubs = composedCards
-    .filter((c) => c.status === "live" && c.page)
-    .map((c) => ({ label: c.label, sport: c.sport, href: c.page as string }));
+  // Sidebar hub links, ordered to match the Sports nav dropdown.
+  const HUB_ORDER = [
+    "/teams/football", "/teams/national", "/teams/nfl", "/teams/cfb", "/teams/mlb",
+    "/teams/nba", "/teams/nhl", "/teams/ipl", "/teams/afl", "/teams/nrl", "/teams/cfl",
+    "/teams/wfootball", "/teams/wnba",
+  ];
+  const liveHubByPage = new Map(
+    composedCards.filter((c) => c.status === "live" && c.page).map((c) => [c.page as string, c]),
+  );
+  const orderedHubCards = HUB_ORDER.map((p) => liveHubByPage.get(p)).filter((c): c is LeagueCard => !!c);
+  const hubs = [
+    ...orderedHubCards,
+    ...Array.from(liveHubByPage.values()).filter((c) => !HUB_ORDER.includes(c.page as string)),
+  ].map((c) => ({ label: c.label, sport: c.sport, href: c.page as string }));
 
   const featuredDeepDive = DEEP_DIVES.find((d) => d.href === FEATURED_DEEP_DIVE) ?? DEEP_DIVES[0];
   const restDeepDives = DEEP_DIVES.filter((d) => d.href !== featuredDeepDive.href);

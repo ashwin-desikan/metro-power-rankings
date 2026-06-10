@@ -52,6 +52,14 @@ CFB_VIDEOS={
 def datestr(x):
     if isinstance(x,(datetime.datetime,datetime.date)): return x.strftime("%Y-%m-%d")
     return str(x) if x not in (None,"") else None
+def ymd_date(y,mo,da,fallback=None):
+    # Build an ISO date from the Month/Day/Year columns. The Date column is
+    # Excel-limited and is blank for pre-1900 games, so prefer Y/M/D.
+    try:
+        yi=int(round(float(y))); mi=int(round(float(mo))); di=int(round(float(da)))
+        if yi>0 and 1<=mi<=12 and 1<=di<=31: return f"{yi:04d}-{mi:02d}-{di:02d}"
+    except Exception: pass
+    return fallback
 
 def read_sheet(path,name):
     try:
@@ -171,7 +179,7 @@ def main():
     gi=G.get("Game Score")
     def rec(r):
         cfp=str(g(r,"CFP/BCS/BA/BC Bowl") or "").strip().upper()
-        return {"season":inti(g(r,"Season")),"date":datestr(g(r,"Date")),
+        return {"season":inti(g(r,"Season")),"date":ymd_date(g(r,"Year"),g(r,"Month"),g(r,"Day"),datestr(g(r,"Date"))),
             "team":g(r,"Cur. Name"),"opp":g(r,"Opp. Name"),"team_slug":slugify(g(r,"Cur. Name"))+"-cfb","opp_slug":slugify(g(r,"Opp. Name"))+"-cfb",
             "rank":inti(g(r,"Rank")) or None,"opp_rank":inti(g(r,"Opp. Rank")) or None,
             "pf":inti(g(r,"PF")),"pa":inti(g(r,"PA")),"ot":g(r,"OT"),
@@ -206,8 +214,39 @@ def main():
 
     od=os.path.join(out,"cfb"); os.makedirs(od,exist_ok=True)
     team_list=sorted(teams.values(),key=lambda d:(-len(d["nat_champ_years"]),-d["pct"],d["name"]))
+    # National champions (curated TSV: Year, National Champion(s) w/ selectors, Heisman).
+    _ncslug={norm_name(d["name"]):d["slug"] for d in team_list}
+    _ncalias={"brigham young":"byu"}  # curated-name -> our Cur. Name (normalised)
+    natchamps=[]
+    _ncp=os.path.join(os.path.dirname(os.path.abspath(__file__)),"cfb-national-champions.tsv")
+    if os.path.exists(_ncp):
+        def _splittop(s):
+            out=[];depth=0;cur=""
+            for ch in s:
+                if ch=="(":depth+=1;cur+=ch
+                elif ch==")":depth-=1;cur+=ch
+                elif ch=="," and depth==0:out.append(cur.strip());cur=""
+                else:cur+=ch
+            if cur.strip():out.append(cur.strip())
+            return out
+        def _pc(tok):
+            m=list(re.finditer(r"\(([^()]*)\)\s*$",tok))
+            if m:return tok[:m[-1].start()].strip(),m[-1].group(1).strip()
+            return tok.strip(),""
+        _nl=[l.rstrip("\n") for l in open(_ncp,encoding="utf-8")]
+        for line in _nl[1:]:
+            if not line.strip():continue
+            p=line.split("\t");yr=inti(p[0])
+            if yr<=0:continue
+            champs=[]
+            for c in _splittop(p[1] if len(p)>1 else ""):
+                nm,sel=_pc(c);key=norm_name(nm)
+                champs.append({"name":nm,"slug":_ncslug.get(_ncalias.get(key,key)),"sel":sel})
+            natchamps.append({"year":yr,"heisman":(p[2].strip() if len(p)>2 else ""),"champs":champs})
+        natchamps.sort(key=lambda x:-x["year"])
+    print(f"national_champions:{len(natchamps)} unmatched:{sorted({c['name'] for nc in natchamps for c in nc['champs'] if not c['slug']})}")
     json.dump({"teams":team_list,"seasons_by_team":{k:sorted(v,key=lambda x:-x["year"]) for k,v in seasons.items()},
-               "awards_by_team":awards,"rivalries_by_team":rivalries},
+               "awards_by_team":awards,"rivalries_by_team":rivalries,"national_champions":natchamps},
               open(os.path.join(od,"data.json"),"w",encoding="utf-8"),ensure_ascii=False)
     json.dump({norm_name(d["name"]):d["slug"] for d in team_list},open(os.path.join(od,"slug-lookup.json"),"w",encoding="utf-8"),ensure_ascii=False)
     json.dump({"top_overall":top_overall,"by_decade":{str(k):v for k,v in sorted(by_decade.items())},"by_team":top_by_team},

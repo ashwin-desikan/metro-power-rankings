@@ -22,7 +22,7 @@ import {
   topTeamAnchorId,
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
-import { normalizeSport } from "@/lib/sportLabels";
+import { normalizeSport, sportIcon, leagueIcon } from "@/lib/sportLabels";
 import { isGoldStandardLeague } from "@/lib/goldStandard";
 import { getNflFranchiseByTeamName } from "@/lib/nfl";
 import { getMlbFranchiseByTeamName } from "@/lib/mlb";
@@ -36,7 +36,7 @@ import { getAflFranchiseByTeamName } from "@/lib/afl";
 import { getNrlFranchiseByTeamName } from "@/lib/nrl";
 import { getWClubByName } from "@/lib/wfootball";
 import { resolveTeamLink, type TeamLink } from "@/lib/teamLinks";
-import { getCfbTeamForName, cfbMonogram } from "@/lib/cfb";
+import { getCfbTeamForName, cfbMonogram, getFormerMajorCfbForMetro, type FormerCfbCard } from "@/lib/cfb";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -784,7 +784,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
               {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0) && (
-                <TeamsSection teams={detail.teams || []} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} />
+                <TeamsSection teams={detail.teams || []} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -1243,10 +1243,17 @@ function normalizeTeamSport(sport: string): string {
   return normalizeSport(sport);
 }
 
+function lastYearOf(years: string | null | undefined): number {
+  if (!years) return 0;
+  const m = String(years).match(/\d{4}/g);
+  return m ? Math.max(...m.map(Number)) : 0;
+}
+
 function TeamsSection({
   teams,
   topTeamPick,
   relocations = [],
+  formerCfb = [],
 }: {
   teams: Array<{
     sport: string;
@@ -1259,6 +1266,7 @@ function TeamsSection({
   }>;
   topTeamPick?: import("@/lib/topTeams").TopTeamPick | null;
   relocations?: import("@/lib/data").RelocationCard[];
+  formerCfb?: FormerCfbCard[];
 }) {
   // Teams flagged Annual=Y in Team List (col O) are recurring-event entries
   // (F1 Grands Prix, NASCAR races, Sailing regattas, Powerboat races). They
@@ -1549,7 +1557,7 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFbs.length > 0 || otherFootball.length > 0 || otherCollege.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0) && (
+      {(otherFbs.length > 0 || otherFootball.length > 0 || otherCollege.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
@@ -1560,23 +1568,24 @@ function TeamsSection({
             {otherCollege.length > 0 && collapsible("College/University Teams", otherCollege)}
             {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
             {otherWomen.length > 0 && collapsible("Other Women\u2019s Teams", otherWomen)}
-            {relocations.length > 0 && (
+            {(relocations.length > 0 || formerCfb.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                   <span className="font-semibold text-[var(--text)]">Defunct/Relocated Teams</span>
                   <span className="text-sm text-[var(--text-muted)]">
-                    {relocations.length} team{relocations.length !== 1 ? "s" : ""}
+                    {relocations.length + formerCfb.length} team{relocations.length + formerCfb.length !== 1 ? "s" : ""}
                   </span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
-                  {relocations.map((r, idx) => (
+                  {[
+                    ...relocations.map((r, idx) => ({ y: lastYearOf(r.years), el: (
                     <Link
                       key={idx}
                       href={r.href}
                       className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block"
                     >
                       <p className="text-xs text-[var(--text-muted)] mb-1">
-                        {r.sport}{[r.relocated ? "Relocated" : null, r.defunct ? "Defunct" : null].filter(Boolean).map((t) => " \u2022 " + t).join("")}
+                        {leagueIcon(r.league) ? <span aria-hidden className="mr-1">{leagueIcon(r.league)}</span> : null}{r.sport}{[r.relocated ? "Relocated" : null, r.defunct ? "Defunct" : null].filter(Boolean).map((t) => " \u2022 " + t).join("")}
                       </p>
                       <p className="font-semibold text-[var(--text)]">{r.name}</p>
                       <p className="text-xs text-[var(--text-dim)]">{r.years}</p>
@@ -1714,7 +1723,34 @@ function TeamsSection({
                         </div>
                       )}
                     </Link>
-                  ))}
+                    ) })),
+                    ...formerCfb.map((f) => ({ y: f.lastYear, el: (
+                    <Link key={f.slug} href={f.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
+                      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏈</span>College Football &bull; Former FBS</p>
+                      <div className="flex items-center gap-2">
+                        <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: f.color, width: 24, height: 24 }} aria-hidden>{f.mono}</span>
+                        <p className="font-semibold text-[var(--text)]">{f.name}</p>
+                      </div>
+                      {f.years && <p className="text-xs text-[var(--text-dim)] mt-1">{f.years}</p>}
+                      <div className="flex gap-1.5 mt-2 flex-wrap">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: f.nat_champ > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: f.nat_champ > 0 ? "#d4af37" : "var(--text-dim)" }} title="National championships won as a major program">
+                          {f.nat_champ === 0 ? "No titles" : `${f.nat_champ} Natl Champ${f.nat_champ === 1 ? "" : "s"}`}
+                        </span>
+                        {f.conf > 0 && (
+                          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Major conference championships">
+                            {f.conf} Conf
+                          </span>
+                        )}
+                        <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Major (top-division) seasons">
+                          {f.maj_seasons} maj season{f.maj_seasons === 1 ? "" : "s"}
+                        </span>
+                        <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }} title="All-time win percentage as a major program">
+                          {f.pct.toFixed(3)} W%
+                        </span>
+                      </div>
+                    </Link>
+                    ) })),
+                  ].sort((a, b) => b.y - a.y).map((e) => e.el)}
                 </div>
               </details>
             )}
@@ -1804,7 +1840,7 @@ function TeamCard({
       }`}
     >
       <p className="text-xs text-[var(--text-muted)] mb-1">
-        {cfbTeam && <span aria-hidden className="mr-1">🏈</span>}
+        {sportIcon(team.sport) && <span aria-hidden className="mr-1">{sportIcon(team.sport)}</span>}
         {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
       <div className="flex items-center gap-2.5">

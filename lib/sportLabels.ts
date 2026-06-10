@@ -31,3 +31,44 @@ export function uniqueDisplaySports(rawSports: Iterable<string>): string[] {
   }
   return Array.from(set).sort((a, b) => a.localeCompare(b));
 }
+
+// Emoji icon per sport for team-card meta lines. Women's ("W ...") variants
+// reuse the base sport. Returns "" when there is no good match.
+const SPORT_ICONS: Record<string, string> = {
+  "Basketball": "🏀", "Hockey": "🏒", "American Football": "🏈",
+  "Canadian Football": "🏈", "Baseball": "⚾", "Football": "⚽", "Soccer": "⚽",
+  "Rugby Union": "🏉", "Rugby League": "🏉", "Rugby": "🏉",
+  "Aussie Rules": "🦘", "T20 Cricket": "🏏", "Test Cricket": "🏏", "Cricket": "🏏",
+  "Volleyball": "🏐", "Auto Racing": "🏎️", "Motor Racing": "🏎️", "Speedway": "🏁",
+  "Powerboat Racing": "🚤", "Handball": "🤾", "Golf": "⛳", "Field Hockey": "🏑",
+  "Tennis": "🎾", "Table Tennis": "🏓", "Badminton": "🏸",
+  "Athletics": "🏃", "Olympics/Athletics": "🏃", "Track & Field": "🏃",
+  "Horse Racing": "🐇", "Lacrosse": "🥍", "Combat Sports": "🥊",
+  "Wrestling": "🤼", "Sailing": "⛵", "Surfing": "🏄", "Esports": "🎮",
+  "Swimming": "🏊", "Cycling": "🚴", "Skiing": "⛷️", "Softball": "🥎",
+  "Gymnastics": "🤸", "Water Polo": "🤽",
+  // No natural emoji; closest-guess (pending review):
+  "Netball": "🏐", "Kabaddi": "🤼", "Irish Sports": "☘️",
+  "Japanese Sports": "🥋", "Rifle": "🎯", "Hall of Fame": "🏆",
+};
+export function sportIcon(sport: string | undefined): string {
+  if (!sport) return "";
+  let s = sport.trim();
+  if (s.startsWith("W ")) s = s.slice(2).trim();
+  if (s === "Soccer" || s === "Football") return "⚽";
+  return SPORT_ICONS[s] ?? "";
+}
+
+// Icon for a league code (used by defunct/relocated cards keyed on league).
+export function leagueIcon(league: string | undefined): string {
+  switch ((league || "").toLowerCase()) {
+    case "nfl": case "cfl": case "cfb": return "🏈";
+    case "nba": case "wnba": return "🏀";
+    case "nhl": return "🏒";
+    case "mlb": return "⚾";
+    case "afl": return "🦘";
+    case "nrl": return "🏉";
+    case "football": case "mls": return "⚽";
+    default: return "";
+  }
+}

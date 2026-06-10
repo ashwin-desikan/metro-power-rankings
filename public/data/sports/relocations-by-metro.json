@@ -1093,6 +1093,24 @@
 }
 }
 ],
+"decatur": [
+{
+"league": "nfl",
+"sport": "American Football",
+"name": "Decatur Staleys",
+"years": "1920",
+"href": "/teams/nfl/chicago-bears",
+"kind": "relocated",
+"relocated": true,
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.75
+}
+}
+],
 "denver": [
 {
 "league": "nhl",
@@ -4159,22 +4177,6 @@
 "div": 0,
 "finals": 0,
 "pct": 0.519
-}
-},
-{
-"league": "nfl",
-"sport": "American Football",
-"name": "Decatur Staleys",
-"years": "1920",
-"href": "/teams/nfl/chicago-bears",
-"kind": "relocated",
-"relocated": true,
-"defunct": false,
-"stats": {
-"champ": 0,
-"div": 0,
-"finals": 0,
-"pct": 0.75
 }
 }
 ],

@@ -23,6 +23,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+function bowlEra(year: number): string | null {
+  if (year >= 2014) return "CFP";
+  if (year >= 1998) return "BCS";
+  if (year >= 1995) return "BA";
+  if (year >= 1992) return "BC";
+  return null;
+}
+function bowlEraName(year: number): string {
+  if (year >= 2014) return "College Football Playoff era";
+  if (year >= 1998) return "Bowl Championship Series era";
+  if (year >= 1995) return "Bowl Alliance era";
+  if (year >= 1992) return "Bowl Coalition era";
+  return "";
+}
 function Stat({ k, v }: { k: string; v: string | number }) {
   return (
     <div className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -41,7 +55,7 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
   const awards = getCfbAwards(slug);
   const rivalries = getCfbRivalries(slug);
   const slugs = new Set(getAllCfbSlugs());
-  const heismanCount = awards.filter((a) => /heisman/i.test(a.award)).length;
+  const heismanCount = awards.filter((a) => /^\s*heisman trophy\s*$/i.test(a.award)).length;
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -120,13 +134,13 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
                 <th className="px-2 py-2">Conference</th><th className="px-2 py-2 hidden sm:table-cell">Div</th>
                 <th className="px-2 py-2 text-right hidden md:table-cell">Conf</th><th className="px-2 py-2 text-center hidden lg:table-cell">Champ App</th><th className="px-2 py-2 text-center">Conf Champ</th>
                 <th className="px-2 py-2 text-right">AP</th><th className="px-2 py-2 text-right hidden md:table-cell">Coach</th><th className="px-2 py-2 text-right hidden lg:table-cell">High</th>
-                <th className="px-2 py-2 hidden md:table-cell">Bowl</th><th className="px-2 py-2 text-center">Maj Bowl</th><th className="px-2 py-2 text-center">Natl</th>
+                <th className="px-2 py-2">Bowl</th><th className="px-2 py-2 text-center">Natl</th>
               </tr>
             </thead>
             <tbody>
               {seasons.map((sn) => (
                 <tr key={sn.year} className="border-b last:border-0 hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
-                  <td className="px-2 py-1.5">{sn.year}</td>
+                  <td className="px-2 py-1.5"><a href={`https://www.sports-reference.com/cfb/years/${sn.year}.html`} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] hover:underline" title={`${sn.year} college football season on Sports Reference`}>{sn.year}</a></td>
                   <td className="px-2 py-1.5 text-[var(--text-muted)]">{sn.school}</td>
                   <td className="px-2 py-1.5 text-right">{sn.w}-{sn.l}{sn.t ? `-${sn.t}` : ""}</td>
                   <td className="px-2 py-1.5 text-[var(--text-muted)]">{sn.conference}</td>
@@ -137,9 +151,18 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
                   <td className="px-2 py-1.5 text-right text-[var(--text-muted)]">{sn.fin_ap ? `#${sn.fin_ap}` : ""}</td>
                   <td className="px-2 py-1.5 text-right text-[var(--text-muted)] hidden md:table-cell">{sn.fin_coach ? `#${sn.fin_coach}` : ""}</td>
                   <td className="px-2 py-1.5 text-right text-[var(--text-dim)] hidden lg:table-cell">{sn.high_ap ? `#${sn.high_ap}` : ""}</td>
-                  <td className="px-2 py-1.5 text-[var(--text-muted)] hidden md:table-cell">{sn.bowl}{sn.bowl_res ? ` (${sn.bowl_res})` : ""}</td>
-                  <td className="px-2 py-1.5 text-center">{sn.major_bowl ? <span className={sn.playoff ? "text-amber-300" : "text-[var(--text-muted)]"} title={sn.playoff ? "Playoff" : "Major bowl"}>{sn.playoff ? "CFP" : "✓"}</span> : ""}</td>
-                  <td className="px-2 py-1.5 text-center">{sn.nat_champ ? <span className="text-[var(--accent)] font-semibold">★</span> : ""}</td>
+                  <td className="px-2 py-1.5">
+                    {(sn.bowl || sn.major_bowl) ? (
+                      <span className="inline-flex items-center gap-1.5 flex-wrap">
+                        {sn.bowl
+                          ? <span className="text-[var(--text-muted)]">{sn.bowl}{sn.bowl_res ? ` (${sn.bowl_res})` : ""}</span>
+                          : <span className="text-[var(--accent)]" title="Made a bowl game">✓</span>}
+                        {sn.major_bowl && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}>Major</span>}
+                        {sn.major_bowl && bowlEra(sn.year) && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded font-semibold" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title={bowlEraName(sn.year)}>{bowlEra(sn.year)}</span>}
+                      </span>
+                    ) : ""}
+                  </td>
+                  <td className="px-2 py-1.5 text-center">{sn.nat_champ ? <span className="text-[9px] uppercase tracking-wide px-1.5 py-0.5 rounded font-semibold" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}>National</span> : ""}</td>
                 </tr>
               ))}
             </tbody>
@@ -151,8 +174,8 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
         <section className="mb-6">
           <h2 className="text-lg font-semibold mb-1">Award winners</h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">{awards.length} major award winners and consensus All-Americans.</p>
-          <div className="overflow-x-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
-            <table className="w-full text-sm">
+          <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+            <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
                   <th className="px-2 py-2 w-14">Year</th><th className="px-2 py-2">Player</th><th className="px-2 py-2 w-12 hidden sm:table-cell">Pos</th><th className="px-2 py-2">Award</th>
@@ -164,7 +187,7 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
                     <td className="px-2 py-1.5 tabular-nums text-[var(--text-muted)]">{a.year}</td>
                     <td className="px-2 py-1.5 font-medium">{a.player}</td>
                     <td className="px-2 py-1.5 text-[var(--text-muted)] hidden sm:table-cell">{a.pos}</td>
-                    <td className="px-2 py-1.5 text-[var(--text-muted)]">{a.award}{/heisman/i.test(a.award) ? <span className="ml-1 text-[var(--accent)]">★</span> : null}</td>
+                    <td className="px-2 py-1.5 text-[var(--text-muted)]">{a.award}{/^\s*heisman trophy\s*$/i.test(a.award) ? <span className="ml-1" style={{ color: "#d4af37" }} title="Heisman winner">★</span> : null}</td>
                   </tr>
                 ))}
               </tbody>

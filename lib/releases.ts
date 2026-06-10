@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-10",
+    headline: "College Football: bowls, champions, former programs",
+    items: [
+      "Season tables now show a clearer Bowl column (a check for a bowl, a Major tag, and the era: Bowl Coalition, Bowl Alliance, BCS, or CFP) and link each season to Sports Reference.",
+      "National-title seasons get a gold champion tag, Heisman counts now reflect winners only (not finalists), and the Award winners table has a sticky header.",
+      "New National Champions table on the College Football hub: every season with its Heisman winner, each school linking to its program page.",
+      "Season tables now have sticky headers site-wide and open by default on NFL, NBA and MLB; metro cards gain a per-sport icon, former FBS programs appear under Defunct Teams, and pre-1900 games show dates.",
+    ],
+  },
+  {
     date: "2026-06-09",
     headline: "College Football hub, AFL and NRL portals",
     items: [

@@ -490,7 +490,7 @@ export default async function FranchisePage({ params }: Props) {
       {/* Season-by-season — visually emphasised so it doesn't get lost when
           scrolling. Left accent border, bumped vertical padding, bigger
           summary type, and a chevron that flips on open. */}
-      <details
+      <details open
         className="group mt-6 border-l-4 border-y border-r rounded-xl shadow-sm"
         style={{
           background: "var(--bg-card)",
@@ -866,7 +866,7 @@ function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: strin
       {/* Season-by-season — reuses the shared SeasonsByTeamTable. No live
           row for a defunct franchise, so no standings source is passed. */}
       {seasonRows.length > 0 && (
-        <details
+        <details open
           className="group mt-6 border-l-4 border-y border-r rounded-xl shadow-sm"
           style={{
             background: "var(--bg-card)",

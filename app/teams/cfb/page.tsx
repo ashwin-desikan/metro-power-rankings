@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
-import { getAllCfbTeams, getAllCfbSlugs, getCfbTopGames, getCfbGamesByDecade, type CfbTeam } from "@/lib/cfb";
+import { getAllCfbTeams, getAllCfbSlugs, getCfbTopGames, getCfbGamesByDecade, getCfbNationalChampions, type CfbTeam } from "@/lib/cfb";
 import CfbAllTimeTable from "./CfbAllTimeTable";
 import CfbGames from "./CfbGames";
 
@@ -40,6 +40,7 @@ export default function CfbHubPage() {
   const slugs = getAllCfbSlugs();
   const topGames = getCfbTopGames();
   const byDecade = getCfbGamesByDecade();
+  const natChamps = getCfbNationalChampions();
   const totalNat = teams.reduce((n, t) => n + t.nat_champ_years.length, 0);
   const lead = (key: (t: CfbTeam) => number, n = 15) =>
     [...teams].sort((a, b) => key(b) - key(a)).slice(0, n).map((t) => ({ name: t.name, slug: t.slug, val: key(t) }));
@@ -60,13 +61,48 @@ export default function CfbHubPage() {
         </div>
       </header>
 
-      <HubNav items={[{ label: "All-time", href: "#all-time" }, { label: "Greatest games", href: "#games" }, { label: "AP polls", href: "#polls" }]} />
+      <HubNav items={[{ label: "All-time", href: "#all-time" }, { label: "National champions", href: "#champions" }, { label: "Greatest games", href: "#games" }, { label: "AP polls", href: "#polls" }]} />
 
       <section id="all-time" className="mb-12 scroll-mt-20">
         <h2 className="text-lg font-semibold mb-1">All-time programs</h2>
         <p className="text-xs text-[var(--text-muted)] mb-4">Current FBS by default; switch to all major programs in history. Click a column to sort.</p>
         <CfbAllTimeTable teams={teams} />
       </section>
+
+      {natChamps.length > 0 && (
+        <section id="champions" className="mb-12 scroll-mt-20">
+          <h2 className="text-lg font-semibold mb-1">National champions</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-4">Recognized national champions by season, with the selectors in parentheses and the Heisman winner. Tap a school to open its program page.</p>
+          <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+            <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
+              <thead>
+                <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
+                  <th className="px-3 py-2 w-16">Year</th>
+                  <th className="px-3 py-2">National champion</th>
+                  <th className="px-3 py-2 hidden sm:table-cell">Heisman</th>
+                </tr>
+              </thead>
+              <tbody>
+                {natChamps.map((nc) => (
+                  <tr key={nc.year} className="border-b last:border-0 hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
+                    <td className="px-3 py-1.5 tabular-nums text-[var(--text-muted)]"><a href={`https://www.sports-reference.com/cfb/years/${nc.year}.html`} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] hover:underline" title={`${nc.year} season on Sports Reference`}>{nc.year}</a></td>
+                    <td className="px-3 py-1.5">
+                      {nc.champs.map((c, i) => (
+                        <span key={i}>
+                          {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
+                          {c.slug ? <Link href={`/teams/cfb/${c.slug}`} className="font-medium hover:text-[var(--accent)]">{c.name}</Link> : <span className="font-medium">{c.name}</span>}
+                          {c.sel ? <span className="text-[10px] text-[var(--text-dim)]"> ({c.sel})</span> : null}
+                        </span>
+                      ))}
+                    </td>
+                    <td className="px-3 py-1.5 text-[var(--text-muted)] hidden sm:table-cell">{nc.heisman}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
 
       <section id="games" className="mb-12 scroll-mt-20">
         <h2 className="text-lg font-semibold mb-1">The greatest games</h2>

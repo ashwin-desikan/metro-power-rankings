@@ -518,7 +518,7 @@ export default async function FranchisePage({ params }: Props) {
       </div>
 
       {/* Season-by-season — collapsed by default to mirror MLB/NFL */}
-      <details
+      <details open
         className="group mt-4 border-l-4 border-y border-r rounded-xl shadow-sm"
         style={{
           background: "var(--bg-card)",

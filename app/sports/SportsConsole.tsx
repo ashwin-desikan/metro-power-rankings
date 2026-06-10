@@ -27,7 +27,6 @@ const TONE_COLOR: Record<string, string> = {
   worldcup: "#a855f7",
   offseason: "#55556A",
 };
-const TONE_RANK: Record<string, number> = { worldcup: 0, playoffs: 1, regular: 2, offseason: 3 };
 
 function shortStatus(s: LeagueStatus): string {
   return s.label.replace(/^Live\s*-\s*/, "");
@@ -44,13 +43,9 @@ export default function SportsConsole({
   hubs: ConsoleHub[];
   deepDives: ConsoleDeepDive[];
 }) {
+  // Rendered in the order passed in (matches the Sports nav dropdown).
+  // Per-row status colours are preserved; offseason rows are dimmed.
   const ranked: RankedHub[] = hubs.map((h) => ({ ...h, status: statusFor(h.href) }));
-  const inSeason = ranked
-    .filter((h) => h.status && h.status.tone !== "offseason")
-    .sort((a, b) => TONE_RANK[a.status!.tone] - TONE_RANK[b.status!.tone] || a.label.localeCompare(b.label));
-  const offseason = ranked
-    .filter((h) => !h.status || h.status.tone === "offseason")
-    .sort((a, b) => a.label.localeCompare(b.label));
 
   const renderRow = (h: RankedHub, dim: boolean) =>
     h.href === CLUB_FOOTBALL_HREF ? (
@@ -76,10 +71,7 @@ export default function SportsConsole({
           className="rounded-lg border overflow-hidden"
           style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
         >
-          <GroupLabel>In season &middot; {inSeason.length}</GroupLabel>
-          {inSeason.map((h) => renderRow(h, false))}
-          {offseason.length > 0 && <GroupLabel>Offseason &middot; {offseason.length}</GroupLabel>}
-          {offseason.map((h) => renderRow(h, true))}
+          {ranked.map((h) => renderRow(h, !h.status || h.status.tone === "offseason"))}
         </div>
       </div>
 
@@ -119,17 +111,6 @@ export default function SportsConsole({
         </Link>
       </div>
     </aside>
-  );
-}
-
-function GroupLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      className="px-2.5 py-1.5 text-[9px] tracking-widest uppercase border-t first:border-t-0"
-      style={{ background: "var(--bg)", color: "var(--text-dim)", borderColor: "var(--border)", fontFamily: "'JetBrains Mono', monospace" }}
-    >
-      {children}
-    </div>
   );
 }
 

@@ -35,6 +35,9 @@ const ITEMS: Item[] = [
   { href: '/teams/nba', label: 'NBA', hint: 'All 30 active franchises; ABA cups in slate; live 2026 playoff status', group: 'Sports' },
   { href: '/teams/nhl', label: 'NHL', hint: 'All 32 active franchises; Stanley Cups from 1910 in gold, WHA Avco in slate', group: 'Sports' },
   { href: '/teams/ipl', label: 'IPL', hint: 'All 10 IPL franchises, season standings, playoffs, and finals history since 2008', group: 'Sports' },
+  { href: '/teams/afl', label: 'AFL', hint: 'Every VFL/AFL club since 1897, premierships, ladders, and the full Grand Final roll', group: 'Sports' },
+  { href: '/teams/nrl', label: 'NRL', hint: 'Every NSWRL/NRL club since 1908, premierships, ladders, and the full Grand Final roll', group: 'Sports' },
+  { href: '/teams/cfl', label: 'CFL', hint: 'Every CFL franchise, live standings, season records, and Grey Cup history since 1909', group: 'Sports' },
   { href: '/teams/wfootball', label: "Women's Football", hint: 'Honors and finals history: UWCL, FIFA Champions Cup, WSL, Women\'s FA Cup, Liga F, NWSL Championship and Shield', group: 'Sports' },
   { href: '/teams/wnba', label: 'WNBA', hint: 'Every WNBA franchise current and defunct, all-time records, champions since 1997', group: 'Sports' },
 
