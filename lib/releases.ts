@@ -19,10 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-11",
-    headline: "National Teams arrive on country hubs",
+    headline: "National teams: football, cricket, rugby union",
     items: [
       "Every country page now has a National Teams section: a men's football card with federation, FIFA and ELO ranks, World Cup appearances and major trophies, plus a women's card with World Cup history.",
       "Cards link straight to each team's full tournament record, covering 230 men's national teams and all 44 Women's World Cup nations.",
+      "New International Cricket portal: every men's international since 1877 for all 110 nations, with recomputed monthly ICC rankings, number-one reigns, major honours, and the named series trophies.",
+      "New Rugby Union portal: test rugby since 1871, every Six Nations and Rugby Championship season, all ten World Cup finals, and weekly world rankings since 2003; both sports join the country-hub cards.",
     ],
   },
   {

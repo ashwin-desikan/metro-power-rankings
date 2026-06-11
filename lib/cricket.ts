@@ -1,0 +1,185 @@
+﻿import "server-only";
+
+// International Cricket portal data layer (/teams/cricket).
+//
+// Source: scripts/cricket/build_cricket_portal_data.py reads the OneDrive
+// InternationalCricket.xlsx workbook (the user-curated source of truth:
+// Matches, Other Internationals, Number Ones, the recomputed monthly
+// Test/ODI/T20I ranking tables, Honours, Series Trophies) and emits the
+// JSONs under public/data/cricket consumed here.
+//
+// Server-only. Listed in scripts/check-client-imports.mjs SERVER_ONLY_MODULES.
+
+import { existsSync, readFileSync } from "fs";
+import { join } from "path";
+
+export type CricketFormat = "Test" | "ODI" | "T20I";
+export const CRICKET_FORMATS: CricketFormat[] = ["Test", "ODI", "T20I"];
+
+export type FormatRecord = {
+  m: number; w: number; l: number; d: number; t: number; nr: number;
+  first: string | null; last: string | null;
+};
+
+export type HonourLine = { titles: number; title_years: string; ru: number; ru_years: string };
+export type TeamHonours = { wc: HonourLine; t20wc: HonourLine; ct: HonourLine; wtc: HonourLine; asia: HonourLine };
+
+export type FormatRanking = {
+  current_rank: number | null;
+  current_rating: number | null;
+  peak_rank: number;
+  peak_rank_first: string;
+  peak_rating: number;
+};
+
+export type CricketTeam = {
+  slug: string;
+  name: string;
+  full_member: boolean;
+  composite: boolean;
+  formats: Partial<Record<CricketFormat, FormatRecord>>;
+  overall: FormatRecord;
+  other_internationals: FormatRecord | null;
+  honours: TeamHonours | null;
+  rankings: Partial<Record<CricketFormat, FormatRanking>>;
+  months_at_1: Record<CricketFormat, number>;
+  trophies_held: string[];
+  trophies_contested: string[];
+};
+
+export type CricketMatch = {
+  date: string | null; format: CricketFormat; opp: string | null; result: string;
+  detail: string; tournament: string; venue: string; city: string; country: string;
+};
+
+export type CricketFinal = {
+  year: number | null; date: string | null; major: string; format: CricketFormat;
+  tournament: string; opp: string | null; won: boolean;
+  // "Won" | "Lost" | "Shared" | "Tied" | "No result" — tie/no-result finals
+  // (2019 CWC, CT 2002) are resolved against the Honours title-year lists.
+  outcome: string; detail: string;
+};
+
+export type CricketTeamDetail = {
+  slug: string;
+  name: string;
+  recent: CricketMatch[];
+  finals: CricketFinal[];
+  h2h: Record<string, Partial<Record<CricketFormat, FormatRecord>>>;
+};
+
+export type RankingTable = {
+  month: string;
+  rows: { rank: number; team: string; rating: number }[];
+};
+
+export type NumberOneReign = {
+  team: string; months: number; reigns: number; longest: number; last: string | null;
+};
+
+export type SeriesTrophy = {
+  trophy: string; contested_by: string; format: string; first: string; last: string;
+  holder: string; series: number; notes: string;
+};
+
+export type CricketHub = {
+  as_of: string;
+  totals: { matches: number; teams: number; first: string; last: string; full_members: number };
+  current_rankings: Record<CricketFormat, RankingTable>;
+  number_ones: Record<CricketFormat, NumberOneReign[]>;
+  honours: ({ team: string } & TeamHonours)[];
+  honours_note: string;
+  series_trophies: SeriesTrophy[];
+};
+
+const DATA_DIR = join(process.cwd(), "public", "data", "cricket");
+
+function loadJson<T>(rel: string): T | null {
+  const p = join(DATA_DIR, rel);
+  if (!existsSync(p)) return null;
+  return JSON.parse(readFileSync(p, "utf-8")) as T;
+}
+
+let _teams: CricketTeam[] | null = null;
+let _hub: CricketHub | null = null;
+let _bySlug: Map<string, CricketTeam> | null = null;
+
+export function getAllCricketTeams(): CricketTeam[] {
+  if (!_teams) _teams = loadJson<CricketTeam[]>("teams.json") ?? [];
+  return _teams;
+}
+
+export function getCricketHub(): CricketHub | null {
+  if (!_hub) _hub = loadJson<CricketHub>("hub.json");
+  return _hub;
+}
+
+export function getCricketTeamBySlug(slug: string): CricketTeam | null {
+  if (!_bySlug) {
+    _bySlug = new Map(getAllCricketTeams().map((t) => [t.slug, t]));
+  }
+  return _bySlug.get(slug) ?? null;
+}
+
+export function getAllCricketSlugs(): string[] {
+  return getAllCricketTeams().map((t) => t.slug);
+}
+
+export function getCricketTeamDetail(slug: string): CricketTeamDetail | null {
+  return loadJson<CricketTeamDetail>(join("team-detail", `${slug}.json`));
+}
+
+// ---------- Country-hub join ----------
+
+// West Indies is a combined team of the cricket-playing Caribbean. Every
+// member country's hub shows the West Indies card (user decision 2026-06-11).
+const WEST_INDIES_MEMBERS = new Set([
+  "antigua and barbuda", "anguilla", "barbados", "british virgin islands",
+  "dominica", "grenada", "guyana", "jamaica", "montserrat",
+  "saint kitts and nevis", "st kitts and nevis", "saint lucia", "st lucia",
+  "saint vincent and the grenadines", "st vincent and the grenadines",
+  "sint maarten", "trinidad and tobago", "us virgin islands",
+  "united states virgin islands",
+]);
+
+const COUNTRY_ALIASES: Record<string, string> = {
+  "united states of america": "united states",
+  "czechia": "czech republic",
+};
+
+function norm(s: string): string {
+  // Strip combining diacritics (U+0300-U+036F) after NFKD decomposition.
+  // Code-point filter instead of a regex so the source stays pure ASCII.
+  let out = "";
+  for (const ch of s.normalize("NFKD")) {
+    const cp = ch.codePointAt(0);
+    if (cp === undefined || cp < 0x0300 || cp > 0x036f) out += ch;
+  }
+  return out.toLowerCase().trim();
+}
+
+let _byName: Map<string, CricketTeam> | null = null;
+
+function teamsByName(): Map<string, CricketTeam> {
+  if (_byName) return _byName;
+  _byName = new Map();
+  for (const t of getAllCricketTeams()) {
+    if (!t.composite) _byName.set(norm(t.name), t);
+  }
+  return _byName;
+}
+
+export function getCricketTeamForCountry(countryName: string): CricketTeam | null {
+  const key = COUNTRY_ALIASES[norm(countryName)] ?? norm(countryName);
+  if (WEST_INDIES_MEMBERS.has(key)) {
+    return teamsByName().get("west indies") ?? null;
+  }
+  return teamsByName().get(key) ?? null;
+}
+
+// Display helper shared by hub and team pages: wins over completed matches.
+export function winPct(rec: FormatRecord): number | null {
+  const decided = rec.m - rec.nr;
+  if (decided <= 0) return null;
+  return Math.round((rec.w / decided) * 1000) / 10;
+}

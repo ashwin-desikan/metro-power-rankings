@@ -49,6 +49,8 @@ const SERVER_ONLY_MODULES = [
   "@/lib/nba-standings",
   "@/lib/nhl",
   "@/lib/nhl-standings",
+  "@/lib/cricket",
+  "@/lib/rugbyUnion",
 ];
 
 const SCAN_DIRS = ["app", "components"];

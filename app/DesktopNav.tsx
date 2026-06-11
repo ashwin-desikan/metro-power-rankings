@@ -157,6 +157,8 @@ const OTHER_SPORTS = [
   { href: "/teams/afl", name: "AFL", sport: "Aussie Rules" },
   { href: "/teams/nrl", name: "NRL", sport: "Rugby League" },
   { href: "/teams/cfl", name: "CFL", sport: "Canadian Football" },
+  { href: "/teams/cricket", name: "Cricket", sport: "Cricket" },
+  { href: "/teams/rugby-union", name: "Rugby Union", sport: "Rugby Union" },
 ];
 
 function otherSportsAggregate(): { color: string; label: string } {
@@ -185,7 +187,7 @@ function SportsNavGroup() {
         <span className="inline-block rounded-full flex-shrink-0" style={{ width: 7, height: 7, background: agg.color }} aria-hidden="true" />
         <span className="flex-1 min-w-0">
           <span className="block text-sm leading-tight">Other Sports</span>
-          <span className="block text-[11px] leading-tight" style={{ color: "var(--text-dim)" }}>IPL &middot; AFL &middot; NRL &middot; CFL</span>
+          <span className="block text-[11px] leading-tight" style={{ color: "var(--text-dim)" }}>IPL &middot; AFL &middot; NRL &middot; CFL &middot; Cricket &middot; Rugby</span>
         </span>
         <svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style={{ transform: open ? "rotate(180deg)" : "none", transition: "transform 0.15s" }}>
           <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z" clipRule="evenodd" />

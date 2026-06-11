@@ -1,0 +1,52 @@
+name: Rugby rankings weekly refresh
+
+# Pulls the weekly Men's World Rugby rankings from the Wikimedia Commons
+# dataset (CC-BY-4.0), rebuilds the /teams/rugby-union JSONs, and commits only
+# when the output actually changed. World Rugby publishes on Mondays after
+# test weekends; off-weeks produce no diff, no commit, and no Vercel build
+# (the ETL is deterministic: as_of derives from the rankings date).
+
+on:
+  schedule:
+    - cron: "0 6 * * 2"   # 06:00 UTC Tuesdays, after Monday's ranking release
+  workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rugby-rankings-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Fetch latest rankings from Wikimedia Commons
+        run: python3 scripts/rugby/fetch_wru_rankings.py scripts/rugby/wrurankings.txt
+
+      - name: Rebuild rugby-union portal data
+        run: python3 scripts/rugby/build_rugby_union_data.py OtherLeagues.xlsx scripts/rugby/wrurankings.txt public/data/rugby-union
+
+      - name: Commit and push only if the data changed
+        run: |
+          if git diff --quiet -- public/data/rugby-union scripts/rugby/wrurankings.txt; then
+            echo "No ranking change this week; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "rugby-rankings-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/rugby-union scripts/rugby/wrurankings.txt
+          git commit -m "Auto: refresh World Rugby rankings"
+          git push

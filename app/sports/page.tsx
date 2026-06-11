@@ -167,6 +167,22 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     team_count: 0,
   },
   {
+    league: "CRICKET",
+    label: "International Cricket",
+    sport: "Cricket",
+    status: "live",
+    page: "/teams/cricket",
+    team_count: 0,
+  },
+  {
+    league: "RUGBY",
+    label: "Rugby Union",
+    sport: "Rugby Union",
+    status: "live",
+    page: "/teams/rugby-union",
+    team_count: 0,
+  },
+  {
     league: "CFB",
     label: "College Football",
     sport: "American Football",
@@ -206,6 +222,7 @@ export default function SportsPage() {
   const HUB_ORDER = [
     "/teams/football", "/teams/national", "/teams/nfl", "/teams/cfb", "/teams/mlb",
     "/teams/nba", "/teams/nhl", "/teams/ipl", "/teams/afl", "/teams/nrl", "/teams/cfl",
+    "/teams/cricket", "/teams/rugby-union",
     "/teams/wfootball", "/teams/wnba",
   ];
   const liveHubByPage = new Map(

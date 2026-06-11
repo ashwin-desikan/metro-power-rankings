@@ -26,6 +26,8 @@ const STATUS_BY_PAGE: Record<string, LeagueStatus> = {
   "/teams/cfl":        { label: "Live - Regular Season", tone: "regular" },
   "/teams/afl":        { label: "Live - Regular Season", tone: "regular" },
   "/teams/nrl":        { label: "Live - Regular Season", tone: "regular" },
+  "/teams/cricket":    { label: "Year-round", tone: "regular" },
+  "/teams/rugby-union": { label: "July tests ahead", tone: "offseason" },
   // Club football competitions (seasonal - update each year)
   "/teams/football/tournaments/champions-league":  { label: "Offseason", tone: "offseason" },
   "/teams/football/tournaments/europa-league":     { label: "Offseason", tone: "offseason" },
