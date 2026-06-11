@@ -9,6 +9,7 @@ import {
 } from "@/lib/countries";
 import { getStatesForCountry } from "@/lib/states";
 import CountryMap from "./CountryMap";
+import NationalTeamsSection from "./NationalTeamsSection";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
 import {
@@ -435,6 +436,8 @@ export default async function CountryDetailPage({ params }: Props) {
               </div>
             )}
           </section>
+
+          <NationalTeamsSection countryName={country.name} />
 
           <footer className="mt-12 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
             <p>

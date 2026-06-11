@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-11",
+    headline: "National Teams arrive on country hubs",
+    items: [
+      "Every country page now has a National Teams section: a men's football card with federation, FIFA and ELO ranks, World Cup appearances and major trophies, plus a women's card with World Cup history.",
+      "Cards link straight to each team's full tournament record, covering 230 men's national teams and all 44 Women's World Cup nations.",
+    ],
+  },
+  {
     date: "2026-06-10",
     headline: "College Football: bowls, champions, former programs",
     items: [
