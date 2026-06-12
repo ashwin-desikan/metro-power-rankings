@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-12",
+    headline: "World Cup group tables go live",
+    items: [
+      "World Cup 2026 group tables now update live from ESPN between deploys, joining the other live league tables; bracket projections still refresh daily with the simulation.",
+    ],
+  },
+  {
     date: "2026-06-11",
     headline: "National teams: football, cricket, rugby union",
     items: [

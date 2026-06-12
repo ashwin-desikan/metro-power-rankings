@@ -13,6 +13,7 @@ import {
   countryPageSlugFor,
 } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
+import { getWc2026LiveStandings, mergeWc2026Live } from "@/lib/wc2026Standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import NationalIndexClient, { type IndexTeam } from "./NationalIndexClient";
 import WorldCup2026 from "./WorldCup2026";
@@ -31,10 +32,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NationalIndexPage() {
+export default async function NationalIndexPage() {
   const teams = getAllNationalTeams();
   const hubs = getAllTournamentHubs();
   const wc2026 = getWorldCup2026();
+  const wc2026Live = wc2026 ? await getWc2026LiveStandings() : null;
   const snapshots = getRankSnapshots();
   const countrySlugSet = new Set(getAllCountrySlugs());
 
@@ -100,7 +102,7 @@ export default function NationalIndexPage() {
         ]}
       />
 
-      {wc2026 && <WorldCup2026 wc={wc2026} />}
+      {wc2026 && <WorldCup2026 wc={mergeWc2026Live(wc2026, wc2026Live)} />}
 
       <section className="mb-10">
         <h2 id="tournaments" className="text-lg font-semibold mb-3">Tournament hubs</h2>

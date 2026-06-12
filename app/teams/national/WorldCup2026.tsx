@@ -53,7 +53,9 @@ export default function WorldCup2026({ wc }: Props) {
 
   const summaryNote = preTournament
     ? `Group stage opens ${startsDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}.`
-    : "Live standings from workbook. Refreshes on next deploy.";
+    : wc.live
+      ? "Live group standings via ESPN's public feed, refreshed every half hour. Projections update with the daily simulation."
+      : "Live standings from workbook. Refreshes on next deploy.";
 
   return (
     <section className="mb-10" id="wc2026">

@@ -216,6 +216,9 @@ export type WorldCup2026Bundle = {
   group_stage: Record<string, WorldCup2026GroupRow[]>;
   knockout: Record<string, WorldCup2026KnockoutMatch[]>;
   sim?: WorldCup2026Sim | null;
+  // Set server-side when ESPN live group standings were merged over the
+  // workbook rows (lib/wc2026Standings.ts).
+  live?: { source: "espn" } | null;
 };
 
 export type TournamentHub = {
