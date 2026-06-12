@@ -135,11 +135,24 @@ export function flagForTeam(slug: string): string {
   return COUNTRY_FLAGS[slug] ?? "";
 }
 // Subdivision emoji need explicit CDN code overrides (no ISO 3166-1 alpha-2).
+// Also carries direct flagcdn codes for cricket/rugby nations whose slugs
+// have no COUNTRY_FLAGS entry (crown dependencies, territories, variants).
 const SUBDIVISION_CDN_CODES: Record<string, string> = {
   england: "gb-eng",
   scotland: "gb-sct",
   wales: "gb-wls",
   "northern-ireland": "gb-nir",
+  gibraltar: "gi",
+  guernsey: "gg",
+  "isle-of-man": "im",
+  jersey: "je",
+  "st-helena": "sh",
+  "timor-leste": "tl",
+  "ivory-coast": "ci",
+  // Baseball/WBC entities. Chinese Taipei is intentionally absent: the team
+  // competes under the Chinese Taipei Olympic flag, which flagcdn lacks.
+  "great-britain": "gb",
+  czechia: "cz",
 };
 
 // Convert a team slug to a flagcdn.com PNG URL.

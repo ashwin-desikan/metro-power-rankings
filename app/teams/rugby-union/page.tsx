@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { getAllRugbyTeams, getRugbyHub, rugbyWinPct } from "@/lib/rugbyUnion";
+import { getRugbyClubRolls } from "@/lib/rugbyClubs";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -76,6 +77,37 @@ export default function RugbyUnionHubPage() {
           { label: "Methodology", href: "#methodology" },
         ]}
       />
+
+      {/* ---------------- Domestic Rugby hub card ---------------- */}
+      {(() => {
+        const clubs = getRugbyClubRolls();
+        if (!clubs) return null;
+        const comps = ["european", "top14", "premiership", "urc", "super", "currie", "japan"]
+          .filter((k) => clubs.rolls[k]);
+        const latest = clubs.rolls["european"] && clubs.rolls["european"][0];
+        return (
+          <Link
+            href="/teams/rugby-union/clubs"
+            className="block rounded-xl border p-4 mb-8 transition hover:border-[var(--accent)]"
+            style={card}
+          >
+            <div className="flex items-center justify-between gap-3 flex-wrap">
+              <div>
+                <div className="font-semibold text-base">Domestic Rugby →</div>
+                <div className="text-xs text-[var(--text-muted)] mt-1">
+                  The club game&apos;s honours boards: {comps.map((k) => clubs.labels[k]).join(", ")} —
+                  every champion since 1892, linked to their metros.
+                </div>
+              </div>
+              {latest ? (
+                <div className="text-xs text-[var(--text-dim)]" style={mono}>
+                  Latest Champions Cup: {latest.winner} {latest.season}
+                </div>
+              ) : null}
+            </div>
+          </Link>
+        );
+      })()}
 
       {/* ---------------- World rankings ---------------- */}
       <section className="mb-10">

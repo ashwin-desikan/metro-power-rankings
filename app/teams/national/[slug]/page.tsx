@@ -18,11 +18,13 @@ import {
   CATEGORY_SHORT_LABEL,
   appearanceCategorySortKey,
   CONTINENT_COLORS,
+  countryPageSlugFor,
   flagForTeam,
   flagCdnUrl,
   displayNameForTeam,
   HISTORICAL_FLAG,
 } from "@/lib/international-display";
+import { getAllCountrySlugs } from "@/lib/countries";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -135,6 +137,16 @@ export default async function NationalTeamPage({ params }: Props) {
           {team.federation && <> · {team.federation}</>}
           {team.subdivision && <> · {team.subdivision}</>}
         </p>
+        {(() => {
+          const cs = countryPageSlugFor(team.slug);
+          return getAllCountrySlugs().includes(cs) ? (
+            <div className="mt-2 text-xs">
+              <Link href={`/countries/${cs}`} className="underline hover:text-[var(--accent)]">
+                Country profile →
+              </Link>
+            </div>
+          ) : null;
+        })()}
         {(team.elo_rank || team.fifa_rank) && (
           <div className="mt-3 flex flex-wrap gap-2">
             {team.elo_rank && (

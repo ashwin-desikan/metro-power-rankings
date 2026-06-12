@@ -13,7 +13,7 @@ export const dynamicParams = false;
 const PATH = "/teams/cricket";
 const TITLE = "International Cricket";
 const DESC =
-  "Every men's cricket international since 1877: Tests, ODIs and T20Is for all twelve full members and every associate nation, with recomputed monthly ICC rankings, number-one reigns, major-tournament honours, and the named series trophies from the Ashes on down.";
+  "Every men's cricket international since 1877: Tests, ODIs and T20Is for all twelve full members and every associate nation, with the recomputed monthly Citizen of Nowhere rankings, number-one reigns, major-tournament honours, and the named series trophies from the Ashes on down.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -91,14 +91,15 @@ export default function CricketHubPage() {
           Every men&apos;s international on file from the first Test in 1877 to this
           week&apos;s fixtures: {hub.totals.matches.toLocaleString()} matches across Tests,
           ODIs and T20Is, all {hub.totals.full_members} full members and every associate
-          nation, with monthly ICC rankings recomputed from first principles, the
-          all-time number-one reigns, major-tournament honours, and the named series
-          trophies from the Ashes on down.
+          nation, with the Citizen of Nowhere rankings recomputed monthly from first
+          principles, the all-time number-one reigns, major-tournament honours, and the
+          named series trophies from the Ashes on down.
         </p>
       </header>
 
       <HubNav
         items={[
+          { label: "Domestic T20", href: "#domestic-t20" },
           { label: "Rankings", href: "#rankings" },
           { label: "No. 1 Reigns", href: "#number-ones" },
           { label: "Honours", href: "#honours" },
@@ -109,11 +110,38 @@ export default function CricketHubPage() {
         ]}
       />
 
+      {/* ---------------- Domestic hubs ---------------- */}
+      <div id="domestic-t20" className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+        <Link
+          href="/teams/cricket/t20"
+          className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+          style={card}
+        >
+          <div className="font-semibold text-base">Domestic T20 →</div>
+          <div className="text-xs text-[var(--text-muted)] mt-1">
+            The franchise game&apos;s honours boards: champions of the IPL, Big Bash,
+            PSL, CPL, BPL, T20 Blast, Super Smash, The Hundred, SA20, ILT20 and LPL.
+          </div>
+        </Link>
+        <Link
+          href="/teams/ipl"
+          className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+          style={card}
+        >
+          <div className="font-semibold text-base">IPL →</div>
+          <div className="text-xs text-[var(--text-muted)] mt-1">
+            The full Indian Premier League portal: all 10 franchises, season
+            standings, playoffs and finals history since 2008.
+          </div>
+        </Link>
+      </div>
+
       {/* ---------------- Current rankings ---------------- */}
       <section className="mb-10">
-        <h2 id="rankings" className="text-lg font-semibold mb-1">Current ICC rankings</h2>
+        <h2 id="rankings" className="text-lg font-semibold mb-1">Current Citizen of Nowhere Rankings</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
-          Recomputed monthly from full match results; latest table {hub.current_rankings.Test.month}.
+          Our own tables, recomputed monthly from full match results with the official
+          rating algorithm; latest table {hub.current_rankings.Test.month}.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {CRICKET_FORMATS.map((fmt) => (
@@ -359,12 +387,25 @@ export default function CricketHubPage() {
           Tests run from 1877, ODIs from 1971, T20Is from 2005, with the post-2018
           expansion of T20I status reflected for associate nations.
         </p>
-        <p className="text-[var(--text-muted)]">
+        <p className="text-[var(--text-muted)] mb-2">
           Rankings are not scraped: the monthly Test, ODI and T20I tables are recomputed
           from full results with the official rating algorithm and validated against the
           published number-one reigns. Major honours follow the workbook&apos;s curated
           tagging of World Cup, T20 World Cup, Champions Trophy, World Test Championship
           and Asia Cup editions.
+        </p>
+        <p className="text-[var(--text-muted)]">
+          These are our own ratings, not the ICC&apos;s, and they own their differences.
+          A windowed recomputation can anchor a team&apos;s level only through its
+          opponents, so sides that play almost entirely inside a closed regional pool
+          can&apos;t be placed on the same scale as the global circuit — the main T20I
+          table therefore covers full members and circuit-connected nations, while
+          regional-pool sides are ranked in the separate associate run. And in the
+          crossover band where strong associates meet the full-member tail, our order
+          and the official order can differ by two or three places: the official scale
+          inherits historical levels that no match window can reconstruct. The head of
+          each table is robust, and the all-time number-one reigns validate against the
+          published record.
         </p>
       </section>
     </main>

@@ -19,9 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-12",
-    headline: "World Cup group tables go live",
+    headline: "Baseball and the Olympics arrive",
     items: [
-      "World Cup 2026 group tables now update live from ESPN between deploys, joining the other live league tables; bracket projections still refresh daily with the simulation.",
+      "Three new international portals: the Olympics (every Games since 1896, lineages folded into modern nations), the World Baseball Classic, and basketball with FIBA World Cup and Olympic podium history.",
+      "The EuroLeague joins as basketball's club crown: 69 seasons of champions, Final Four history, the all-time table, and gold title chips on metro cards.",
+      "Domestic honours arrive for club rugby and franchise T20 cricket: winners-only hubs for 7 rugby and 11 T20 competitions, gold title chips and club colors on metro cards, and defunct clubs on their metros.",
+      "World Cup 2026 group tables now update live from ESPN, cricket rankings carry the Citizen of Nowhere name, and country pages lead with National Teams cards linking countries, teams, and sport hubs.",
     ],
   },
   {

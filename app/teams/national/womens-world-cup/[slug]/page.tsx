@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWWCNationSlugs, getWWCNation, getWWCMeta } from "@/lib/wnational";
+import { countryPageSlugFor, flagCdnUrl } from "@/lib/international-display";
+import { getAllCountrySlugs } from "@/lib/countries";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -66,11 +68,26 @@ export default async function WWCNationPage({ params }: Props) {
       </nav>
 
       <header className="mb-6">
-        <h1 className="text-3xl font-semibold tracking-tight">{n.name}</h1>
+        <div className="flex items-center gap-3 flex-wrap">
+          {flagCdnUrl(n.slug, "40x30") && (
+            <img src={flagCdnUrl(n.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
+          )}
+          <h1 className="text-3xl font-semibold tracking-tight">{n.name}</h1>
+        </div>
         <p className="mt-1 text-sm text-[var(--text-muted)]">
           FIFA Women&apos;s World Cup record{n.continent ? <> · {n.continent}</> : null}
           {n.title_years.length > 0 ? <> · Champions {n.title_years.join(", ")}</> : null}
         </p>
+        {(() => {
+          const cs = countryPageSlugFor(n.slug);
+          return getAllCountrySlugs().includes(cs) ? (
+            <div className="mt-2 text-xs">
+              <Link href={`/countries/${cs}`} className="underline hover:text-[var(--accent)]">
+                Country profile →
+              </Link>
+            </div>
+          ) : null;
+        })()}
       </header>
 
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">

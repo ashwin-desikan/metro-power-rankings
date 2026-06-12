@@ -1,0 +1,50 @@
+# URC / Pro14 / Pro12 / Celtic League + Japan Top League / League One winners.
+# Compiled from the public record 2026-06-12; reviewed and confirmed by the user
+# (incl. Japan 2009-10: Toshiba 6-0 Sanyo Wild Knights, Microsoft Cup final).
+# Format: comp<TAB>season<TAB>winner<TAB>runner_up
+urc	2001–02	Leinster
+urc	2002–03	Munster
+urc	2003–04	Llanelli Scarlets
+urc	2004–05	Ospreys
+urc	2005–06	Ulster
+urc	2006–07	Ospreys
+urc	2007–08	Leinster
+urc	2008–09	Munster
+urc	2009–10	Ospreys
+urc	2010–11	Munster
+urc	2011–12	Ospreys	Leinster
+urc	2012–13	Leinster	Ulster
+urc	2013–14	Leinster	Glasgow Warriors
+urc	2014–15	Glasgow Warriors	Munster
+urc	2015–16	Connacht	Leinster
+urc	2016–17	Scarlets	Munster
+urc	2017–18	Leinster	Scarlets
+urc	2018–19	Leinster	Glasgow Warriors
+urc	2019–20	Leinster	Ulster
+urc	2020–21	Leinster	Munster
+urc	2021–22	Stormers	Bulls
+urc	2022–23	Munster	Stormers
+urc	2023–24	Glasgow Warriors	Bulls
+urc	2024–25	Leinster	Bulls
+japan	2003–04	Kobe Steelers
+japan	2004–05	Toshiba Brave Lupus
+japan	2005–06	Toshiba Brave Lupus
+japan	2006–07	Toshiba Brave Lupus
+japan	2007–08	Suntory Sungoliath
+japan	2008–09	Toshiba Brave Lupus
+japan	2009–10	Toshiba Brave Lupus	Sanyo Wild Knights
+japan	2010–11	Sanyo Wild Knights
+japan	2011–12	Suntory Sungoliath
+japan	2012–13	Suntory Sungoliath
+japan	2013–14	Panasonic Wild Knights
+japan	2014–15	Panasonic Wild Knights
+japan	2015–16	Panasonic Wild Knights
+japan	2016–17	Suntory Sungoliath
+japan	2017–18	Suntory Sungoliath
+japan	2018–19	Kobe Steelers
+japan	2020–21	Panasonic Wild Knights
+japan	2021–22	Wild Knights
+japan	2022–23	Kubota Spears
+japan	2023–24	Brave Lupus
+japan	2024–25	Brave Lupus
+japan	2025–26	Kobe Steelers	Kubota Spears

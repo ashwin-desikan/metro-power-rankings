@@ -38,8 +38,11 @@ const ITEMS: Item[] = [
   { href: '/teams/afl', label: 'AFL', hint: 'Every VFL/AFL club since 1897, premierships, ladders, and the full Grand Final roll', group: 'Sports' },
   { href: '/teams/nrl', label: 'NRL', hint: 'Every NSWRL/NRL club since 1908, premierships, ladders, and the full Grand Final roll', group: 'Sports' },
   { href: '/teams/cfl', label: 'CFL', hint: 'Every CFL franchise, live standings, season records, and Grey Cup history since 1909', group: 'Sports' },
-  { href: '/teams/cricket', label: 'Cricket', hint: 'Every cricket international since 1877: ICC rankings, number-one reigns, honours, and all 110 nations', group: 'Sports' },
+  { href: '/teams/cricket', label: 'Cricket', hint: 'Every cricket international since 1877: our own recomputed rankings, number-one reigns, honours, and all 110 nations', group: 'Sports' },
   { href: '/teams/rugby-union', label: 'Rugby Union', hint: 'Test rugby since 1871: Six Nations, Rugby Championship, World Cup finals, and world rankings since 2003', group: 'Sports' },
+  { href: '/teams/baseball', label: 'Baseball', hint: 'The complete World Baseball Classic: every edition, game and final since 2006, all 23 nations', group: 'Sports' },
+  { href: '/teams/olympics', label: 'Olympics', hint: 'Every Summer and Winter Games since 1896: all-time medal table with lineages folded into modern nations', group: 'Sports' },
+  { href: '/teams/basketball', label: 'Int\'l Basketball', hint: 'FIBA World Cup finals, every Olympic podium since 1936, and the EuroLeague club crown', group: 'Sports' },
   { href: '/teams/wfootball', label: "Women's Football", hint: 'Honors and finals history: UWCL, FIFA Champions Cup, WSL, Women\'s FA Cup, Liga F, NWSL Championship and Shield', group: 'Sports' },
   { href: '/teams/wnba', label: 'WNBA', hint: 'Every WNBA franchise current and defunct, all-time records, champions since 1997', group: 'Sports' },
 

@@ -3,11 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getAllRugbySlugs,
+  getCountrySlugForRugbyTeam,
   getRugbyTeamBySlug,
   getRugbyTeamDetail,
   rugbyWinPct,
 } from "@/lib/rugbyUnion";
-import { getAllCountrySlugs } from "@/lib/countries";
+import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -57,8 +58,7 @@ export default async function RugbyTeamPage(
   const detail = getRugbyTeamDetail(slug);
   if (!team || !detail) notFound();
 
-  const countrySlugs = new Set(getAllCountrySlugs());
-  const countrySlug = countrySlugs.has(slug) ? slug : null;
+  const countrySlug = getCountrySlugForRugbyTeam(team);
   const rec = team.record;
   const pct = rec ? rugbyWinPct(rec) : null;
   const c = team.championships;
@@ -67,6 +67,16 @@ export default async function RugbyTeamPage(
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mb-3">
+        <Link
+          href="/teams/rugby-union"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          <span aria-hidden>←</span>
+          Back to International Rugby Union
+        </Link>
+      </div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}
@@ -77,6 +87,9 @@ export default async function RugbyTeamPage(
 
       <header className="mb-8">
         <div className="flex items-center gap-3 flex-wrap">
+          {flagCdnUrl(team.slug, "40x30") && (
+            <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
+          )}
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
           {team.six_nations ? <Chip>Six Nations</Chip> : null}
           {team.sanzaar ? <Chip>SANZAAR</Chip> : null}

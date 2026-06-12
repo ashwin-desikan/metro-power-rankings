@@ -28,6 +28,9 @@ const STATUS_BY_PAGE: Record<string, LeagueStatus> = {
   "/teams/nrl":        { label: "Live - Regular Season", tone: "regular" },
   "/teams/cricket":    { label: "Year-round", tone: "regular" },
   "/teams/rugby-union": { label: "July tests ahead", tone: "offseason" },
+  "/teams/baseball":   { label: "Next WBC 2029", tone: "offseason" },
+  "/teams/olympics":   { label: "Next: LA 2028", tone: "offseason" },
+  "/teams/basketball": { label: "Next WC 2027", tone: "offseason" },
   // Club football competitions (seasonal - update each year)
   "/teams/football/tournaments/champions-league":  { label: "Offseason", tone: "offseason" },
   "/teams/football/tournaments/europa-league":     { label: "Offseason", tone: "offseason" },

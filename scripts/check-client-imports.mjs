@@ -52,6 +52,11 @@ const SERVER_ONLY_MODULES = [
   "@/lib/cricket",
   "@/lib/rugbyUnion",
   "@/lib/wc2026Standings",
+  "@/lib/baseball",
+  "@/lib/olympics",
+  "@/lib/rugbyClubs",
+  "@/lib/cricketClubs",
+  "@/lib/basketball",
 ];
 
 const SCAN_DIRS = ["app", "components"];

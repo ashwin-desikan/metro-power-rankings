@@ -23,6 +23,11 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport, sportIcon, leagueIcon } from "@/lib/sportLabels";
+import { getRugbyClubHonours } from "@/lib/rugbyClubs";
+import { getT20Honours } from "@/lib/cricketClubs";
+import { getEuroleagueHonours } from "@/lib/basketball";
+import { rugbyClubColor, rugbyMonogram } from "@/lib/rugby-colors";
+import { cricketClubColor } from "@/lib/cricket-colors";
 import { isGoldStandardLeague } from "@/lib/goldStandard";
 import { getNflFranchiseByTeamName } from "@/lib/nfl";
 import { getMlbFranchiseByTeamName } from "@/lib/mlb";
@@ -1831,6 +1836,24 @@ function TeamCard({
   const isGold = (team.gold === true || isGoldStandardLeague(team.sport, team.league)) &&
     (!isFootball || team.level === "1");
 
+  // Club rugby honours (winners-only layer): gold title chips per competition.
+  const sportLower = (team.sport || "").toLowerCase();
+  const isRugbyUnionClub = sportLower.includes("rugby") && !sportLower.includes("league");
+  const rugbyHonours = isRugbyUnionClub
+    ? getRugbyClubHonours(team.team, team.league)
+    : [];
+  const t20Honours = sportLower.includes("cricket")
+    ? getT20Honours(team.team)
+    : [];
+  const rugbyColor = isRugbyUnionClub ? rugbyClubColor(team.team) : null;
+  const cricketColor = sportLower.includes("cricket") && t20Honours.length >= 0
+    ? cricketClubColor(team.team)
+    : null;
+  const clubColor = rugbyColor ?? (cricketColor && cricketColor.known ? cricketColor : null);
+  const elHonours = sportLower.includes("basket")
+    ? getEuroleagueHonours(team.team)
+    : null;
+
   return (
     <div
       className={`border rounded-lg p-4 hover:border-[var(--accent)] transition ${
@@ -1843,7 +1866,52 @@ function TeamCard({
         {sportIcon(team.sport) && <span aria-hidden className="mr-1">{sportIcon(team.sport)}</span>}
         {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
+      {elHonours && (
+        <div className="flex gap-1.5 mb-1.5 flex-wrap">
+          <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+                title={`EuroLeague: ${elHonours.years.join(", ")}`}>
+            {elHonours.titles}× EuroLeague
+          </span>
+        </div>
+      )}
+      {t20Honours.length > 0 && (
+        <div className="flex gap-1.5 mb-1.5 flex-wrap">
+          {t20Honours.slice(0, 2).map((h) => (
+            <span key={h.league} className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                  style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+                  title={`${h.league}: ${h.years.join(", ")}`}>
+              {h.titles}× {h.league} title{h.titles === 1 ? "" : "s"}
+            </span>
+          ))}
+        </div>
+      )}
+      {rugbyHonours.length > 0 && (
+        <div className="flex gap-1.5 mb-1.5 flex-wrap">
+          {rugbyHonours.slice(0, 3).map((h) => (
+            <span key={h.comp} className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                  style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+                  title={`${h.comp}: ${h.years.join(", ")}`}>
+              {h.titles}× {h.comp}
+            </span>
+          ))}
+        </div>
+      )}
       <div className="flex items-center gap-2.5">
+        {!link && clubColor ? (
+          <span
+            className="inline-grid place-items-center rounded-full flex-shrink-0"
+            style={{
+              background: clubColor.bg,
+              color: clubColor.fg,
+              width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em",
+            }}
+            title={clubColor.known ? undefined : "Club colors pending"}
+            aria-hidden
+          >
+            {rugbyMonogram(team.team)}
+          </span>
+        ) : null}
         {link ? (
           link.logoUrl ? (
             <img

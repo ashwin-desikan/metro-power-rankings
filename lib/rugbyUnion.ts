@@ -13,6 +13,7 @@ import "server-only";
 
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import { getAllCountries } from "@/lib/countries";
 
 export type RugbyRecord = {
   m: number; w: number; l: number; d: number; pf: number; pa: number;
@@ -123,6 +124,9 @@ const COUNTRY_ALIASES: Record<string, string> = {
   "united states of america": "united states",
   "ivory coast": "ivory coast",
   "cote d'ivoire": "ivory coast",
+  // Rugby's Ireland is an all-island team; Northern Ireland's country page
+  // shows it too (user decision 2026-06-12).
+  "northern ireland": "ireland",
 };
 
 function norm(s: string): string {
@@ -133,7 +137,13 @@ function norm(s: string): string {
     const cp = ch.codePointAt(0);
     if (cp === undefined || cp < 0x0300 || cp > 0x036f) out += ch;
   }
-  return out.toLowerCase().trim();
+  // Fold "&" and "St." spellings, matching lib/cricket.ts norm().
+  return out
+    .replace(/&/g, " and ")
+    .replace(/\./g, " ")
+    .replace(/\s+/g, " ")
+    .toLowerCase()
+    .trim();
 }
 
 let _byName: Map<string, RugbyTeam> | null = null;
@@ -148,6 +158,32 @@ function teamsByName(): Map<string, RugbyTeam> {
 export function getRugbyTeamForCountry(countryName: string): RugbyTeam | null {
   const key = COUNTRY_ALIASES[norm(countryName)] ?? norm(countryName);
   return teamsByName().get(key) ?? null;
+}
+
+let _countryByNorm: Map<string, string> | null = null;
+
+function countryByNorm(): Map<string, string> {
+  if (_countryByNorm) return _countryByNorm;
+  _countryByNorm = new Map();
+  for (const c of getAllCountries()) {
+    const key = norm(c.name);
+    if (key && !_countryByNorm.has(key)) _countryByNorm.set(key, c.slug);
+  }
+  return _countryByNorm;
+}
+
+// Reverse of getRugbyTeamForCountry: the country page a team links back to.
+export function getCountrySlugForRugbyTeam(team: RugbyTeam): string | null {
+  const key = norm(team.name);
+  const direct = countryByNorm().get(key);
+  if (direct) return direct;
+  for (const [countryName, teamName] of Object.entries(COUNTRY_ALIASES)) {
+    if (teamName === key) {
+      const s = countryByNorm().get(norm(countryName));
+      if (s) return s;
+    }
+  }
+  return null;
 }
 
 export function rugbyWinPct(rec: RugbyRecord): number | null {

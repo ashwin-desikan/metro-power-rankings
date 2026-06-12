@@ -183,6 +183,30 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     team_count: 0,
   },
   {
+    league: "WBC",
+    label: "International Baseball",
+    sport: "Baseball",
+    status: "live",
+    page: "/teams/baseball",
+    team_count: 0,
+  },
+  {
+    league: "OLY",
+    label: "Olympics",
+    sport: "Olympics",
+    status: "live",
+    page: "/teams/olympics",
+    team_count: 0,
+  },
+  {
+    league: "FIBA",
+    label: "International Basketball",
+    sport: "Basketball",
+    status: "live",
+    page: "/teams/basketball",
+    team_count: 0,
+  },
+  {
     league: "CFB",
     label: "College Football",
     sport: "American Football",
@@ -222,7 +246,7 @@ export default function SportsPage() {
   const HUB_ORDER = [
     "/teams/football", "/teams/national", "/teams/nfl", "/teams/cfb", "/teams/mlb",
     "/teams/nba", "/teams/nhl", "/teams/ipl", "/teams/afl", "/teams/nrl", "/teams/cfl",
-    "/teams/cricket", "/teams/rugby-union",
+    "/teams/cricket", "/teams/rugby-union", "/teams/baseball", "/teams/olympics", "/teams/basketball",
     "/teams/wfootball", "/teams/wnba",
   ];
   const liveHubByPage = new Map(

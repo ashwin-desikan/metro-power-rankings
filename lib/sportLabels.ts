@@ -46,7 +46,7 @@ const SPORT_ICONS: Record<string, string> = {
   "Horse Racing": "🐇", "Lacrosse": "🥍", "Combat Sports": "🥊",
   "Wrestling": "🤼", "Sailing": "⛵", "Surfing": "🏄", "Esports": "🎮",
   "Swimming": "🏊", "Cycling": "🚴", "Skiing": "⛷️", "Softball": "🥎",
-  "Gymnastics": "🤸", "Water Polo": "🤽",
+  "Gymnastics": "🤸", "Water Polo": "🤽", "Olympics": "🏅",
   // No natural emoji; closest-guess (pending review):
   "Netball": "🏐", "Kabaddi": "🤼", "Irish Sports": "☘️",
   "Japanese Sports": "🥋", "Rifle": "🎯", "Hall of Fame": "🏆",
@@ -67,7 +67,8 @@ export function leagueIcon(league: string | undefined): string {
     case "nhl": return "🏒";
     case "mlb": return "⚾";
     case "afl": return "🦘";
-    case "nrl": return "🏉";
+    case "nrl": case "rugby-union": return "🏉";
+    case "cricket-t20": return "🏏";
     case "football": case "mls": return "⚽";
     default: return "";
   }

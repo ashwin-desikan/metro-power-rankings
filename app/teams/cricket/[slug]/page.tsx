@@ -7,10 +7,11 @@ import {
   getCricketHub,
   getCricketTeamBySlug,
   getCricketTeamDetail,
+  getCountrySlugForCricketTeam,
   winPct,
   type FormatRecord,
 } from "@/lib/cricket";
-import { getAllCountrySlugs } from "@/lib/countries";
+import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -26,7 +27,7 @@ export async function generateMetadata(
   const team = getCricketTeamBySlug(slug);
   if (!team) return {};
   const path = `/teams/cricket/${slug}`;
-  const desc = `${team.name} men's international cricket: all-time Test, ODI and T20I records, ICC ranking history, major-tournament honours, head-to-head ledgers and recent results.`;
+  const desc = `${team.name} men's international cricket: all-time Test, ODI and T20I records, recomputed ranking history, major-tournament honours, head-to-head ledgers and recent results.`;
   return {
     title: `${team.name} — International Cricket`,
     description: desc,
@@ -70,13 +71,22 @@ export default async function CricketTeamPage(
   const hub = getCricketHub();
   if (!team || !detail) notFound();
 
-  const countrySlugs = new Set(getAllCountrySlugs());
-  const countrySlug = !team.composite && team.name !== "West Indies" && countrySlugs.has(slug) ? slug : null;
+  const countrySlug = getCountrySlugForCricketTeam(team);
   const trophies = hub ? hub.series_trophies.filter((t) => team.trophies_contested.includes(t.trophy)) : [];
   const h2hEntries = Object.entries(detail.h2h);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
+      <div className="mb-3">
+        <Link
+          href="/teams/cricket"
+          className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          <span aria-hidden>←</span>
+          Back to International Cricket
+        </Link>
+      </div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}
@@ -87,6 +97,9 @@ export default async function CricketTeamPage(
 
       <header className="mb-8">
         <div className="flex items-center gap-3 flex-wrap">
+          {flagCdnUrl(team.slug, "40x30") && (
+            <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
+          )}
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
           {team.full_member ? <Chip>Full Member</Chip> : null}
           {!team.full_member && !team.composite ? <Chip>Associate</Chip> : null}
@@ -165,7 +178,7 @@ export default async function CricketTeamPage(
       {/* ---------------- Rankings ---------------- */}
       {Object.keys(team.rankings).length > 0 ? (
         <section className="mb-10">
-          <h2 className="text-lg font-semibold mb-3">ICC ranking</h2>
+          <h2 className="text-lg font-semibold mb-3">Citizen of Nowhere ranking</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {CRICKET_FORMATS.map((f) => {
               const rk = team.rankings[f];

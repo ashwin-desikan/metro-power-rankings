@@ -63,7 +63,27 @@ COMP_RULES = [
     ("tri nations", "{y} Tri Nations Series", "TRC"),
     ("rugby world cup", "{y} Rugby World Cup", "RWC"),
     ("nations championship", "{y} Nations Championship", "NC"),
+    # SA v NZ standalone series in NC years (replaces their paused Rugby
+    # Championship meetings; user-approved in scope 2026-06-12).
+    ("greatest rivalry", "{y} Rugby's Greatest Rivalry", "TEST"),
 ]
+
+# Tracked competitions only (user scope, 2026-06-12): Six Nations, Rugby
+# Championship / Tri Nations, summer tours, autumn internationals, Rugby World
+# Cup (incl. warm-ups), and the Nations Championship. Everything else (Rugby
+# Europe Championship, World Rugby Nations Cup, Pacific Nations Cup, ...) is
+# reported as skipped, never staged.
+IN_SCOPE = [
+    "six nations", "rugby championship", "tri nations", "rugby world cup",
+    "nations championship", "men's internationals", "autumn", "summer",
+    "end-of-year", "tour of", "greatest rivalry",
+]
+
+
+def comp_in_scope(label):
+    low = (label or "").lower()
+    return any(p in low for p in IN_SCOPE)
+
 
 # Sheet columns (23): date, Team, W/L/D(formula), Opp, PF, PA, Diff(formula),
 # competition, Stage, Pool, stadium, city, country, Home/Away, HN, TriRC, NC,
@@ -204,9 +224,15 @@ def main():
     completed_ms = fetch_matches("C", start, today)
     upcoming_ms = fetch_matches("U", today, horizon)
 
-    new_rows, update_rows, reviews, candidates = [], [], 0, []
+    new_rows, update_rows, reviews, candidates, out_of_scope = [], [], 0, [], []
     seen = set()
     for m in completed_ms + upcoming_ms:
+        if not comp_in_scope(m.get("competition")):
+            names_ = [canon(t.get("name")) for t in (m.get("teams") or [])]
+            if all(n in tracked for n in names_) and len(names_) == 2:
+                out_of_scope.append(f"  {to_date(m) or '?'}  {' v '.join(names_)}"
+                                    f"  [{m.get('competition')}]")
+            continue
         res, names = match_rows(m, tracked)
         if not res:
             if sum(1 for t in names if t in tracked) == 1:
@@ -252,6 +278,10 @@ def main():
         print("Candidates involving one tracked nation (not staged; add the "
               "opponent to the sheet first if you want them):")
         for c in candidates[:20]:
+            print(c)
+    if out_of_scope:
+        print("Skipped (tracked nations, but competition out of scope):")
+        for c in out_of_scope[:20]:
             print(c)
     print("Paste into the OneDrive master Results sheet, copy the W/L/D, "
           "Diff and LBP formulas down, set Home/Away for neutral venues, "

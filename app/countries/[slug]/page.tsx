@@ -273,6 +273,8 @@ export default async function CountryDetailPage({ params }: Props) {
             </div>
           </header>
 
+          <NationalTeamsSection countryName={country.name} />
+
           {children.length > 0 ? (
             <section className="mb-12">
               <h2 className="text-xl font-bold mb-3">Constituents and territories</h2>
@@ -436,8 +438,6 @@ export default async function CountryDetailPage({ params }: Props) {
               </div>
             )}
           </section>
-
-          <NationalTeamsSection countryName={country.name} />
 
           <footer className="mt-12 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
             <p>

@@ -1559,7 +1559,7 @@
 "league": "ipl",
 "sport": "Cricket",
 "name": "Deccan Chargers",
-"years": "",
+"years": "2008–2012",
 "href": "/teams/ipl/deccan-chargers",
 "kind": "defunct",
 "relocated": false,
@@ -1882,6 +1882,22 @@
 "titles": 0,
 "major_cups": 1,
 "top_flight_seasons": 14
+}
+},
+{
+"league": "rugby-union",
+"sport": "Rugby Union",
+"name": "Wasps",
+"years": "1867–2014",
+"href": "/teams/rugby-union/clubs#premiership",
+"kind": "relocated",
+"relocated": true,
+"defunct": false,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
 }
 }
 ],
@@ -5171,6 +5187,114 @@
 "seasons": 17,
 "gf": 0,
 "pct": 0.404
+}
+}
+],
+"coventry": [
+{
+"league": "rugby-union",
+"sport": "Rugby Union",
+"name": "Wasps",
+"years": "2014–2022",
+"href": "/teams/rugby-union/clubs#premiership",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
+}
+],
+"bordeaux": [
+{
+"league": "rugby-union",
+"sport": "Rugby Union",
+"name": "Stade Bordelais",
+"years": "1899–1911",
+"href": "/teams/rugby-union/clubs#top14",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
+}
+],
+"lyon": [
+{
+"league": "rugby-union",
+"sport": "Rugby Union",
+"name": "FC Lyon",
+"years": "1910",
+"href": "/teams/rugby-union/clubs#top14",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
+}
+],
+"paris": [
+{
+"league": "rugby-union",
+"sport": "Rugby Union",
+"name": "Olympique",
+"years": "1896",
+"href": "/teams/rugby-union/clubs#top14",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
+}
+],
+"cumilla": [
+{
+"league": "cricket-t20",
+"sport": "T20 Cricket",
+"name": "Comilla Victorians",
+"years": "2015–2024",
+"href": "/teams/cricket/t20#bpl",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
+}
+}
+],
+"kingston": [
+{
+"league": "cricket-t20",
+"sport": "T20 Cricket",
+"name": "Jamaica Tallawahs",
+"years": "2013–2023",
+"href": "/teams/cricket/t20#cpl",
+"kind": "defunct",
+"relocated": false,
+"defunct": true,
+"stats": {
+"champ": 0,
+"div": 0,
+"finals": 0,
+"pct": 0.0
 }
 }
 ]

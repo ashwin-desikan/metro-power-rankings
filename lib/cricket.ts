@@ -12,6 +12,7 @@
 
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import { getAllCountries } from "@/lib/countries";
 
 export type CricketFormat = "Test" | "ODI" | "T20I";
 export const CRICKET_FORMATS: CricketFormat[] = ["Test", "ODI", "T20I"];
@@ -145,6 +146,9 @@ const WEST_INDIES_MEMBERS = new Set([
 const COUNTRY_ALIASES: Record<string, string> = {
   "united states of america": "united states",
   "czechia": "czech republic",
+  // Cricket's Ireland is an all-island team; Northern Ireland's country page
+  // shows it too (user decision 2026-06-12).
+  "northern ireland": "ireland",
 };
 
 function norm(s: string): string {
@@ -155,7 +159,14 @@ function norm(s: string): string {
     const cp = ch.codePointAt(0);
     if (cp === undefined || cp < 0x0300 || cp > 0x036f) out += ch;
   }
-  return out.toLowerCase().trim();
+  // Workbook country names use "&" and "St." (e.g. "Antigua & Barbuda",
+  // "St. Kitts & Nevis"); fold both so the West Indies member join holds.
+  return out
+    .replace(/&/g, " and ")
+    .replace(/\./g, " ")
+    .replace(/\s+/g, " ")
+    .toLowerCase()
+    .trim();
 }
 
 let _byName: Map<string, CricketTeam> | null = null;
@@ -175,6 +186,36 @@ export function getCricketTeamForCountry(countryName: string): CricketTeam | nul
     return teamsByName().get("west indies") ?? null;
   }
   return teamsByName().get(key) ?? null;
+}
+
+let _countryByNorm: Map<string, string> | null = null;
+
+function countryByNorm(): Map<string, string> {
+  if (_countryByNorm) return _countryByNorm;
+  _countryByNorm = new Map();
+  for (const c of getAllCountries()) {
+    const key = norm(c.name);
+    if (key && !_countryByNorm.has(key)) _countryByNorm.set(key, c.slug);
+  }
+  return _countryByNorm;
+}
+
+// Reverse of getCricketTeamForCountry: the country page a team links back to.
+// Composite XIs and West Indies (a 15-member combined side) resolve to null.
+export function getCountrySlugForCricketTeam(team: CricketTeam): string | null {
+  if (team.composite || team.name === "West Indies") return null;
+  const key = norm(team.name);
+  const direct = countryByNorm().get(key);
+  if (direct) return direct;
+  // A country whose page name differs from the team name (e.g. Czechia)
+  // appears as an alias key pointing at the team name; invert it.
+  for (const [countryName, teamName] of Object.entries(COUNTRY_ALIASES)) {
+    if (teamName === key) {
+      const s = countryByNorm().get(norm(countryName));
+      if (s) return s;
+    }
+  }
+  return null;
 }
 
 // Display helper shared by hub and team pages: wins over completed matches.
