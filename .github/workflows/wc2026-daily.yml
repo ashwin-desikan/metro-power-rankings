@@ -9,7 +9,7 @@ name: WC2026 daily simulation refresh
 
 on:
   schedule:
-    - cron: "0 9 * * *"   # 09:00 UTC daily (after late North American kickoffs finish)
+    - cron: "0 7 * * *"   # 07:00 UTC daily
   workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
 
 permissions:
