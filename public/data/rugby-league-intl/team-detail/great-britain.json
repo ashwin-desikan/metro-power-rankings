@@ -1,0 +1,51 @@
+{
+  "slug": "great-britain",
+  "name": "Great Britain",
+  "results": [
+    {
+      "year": "1989-1992",
+      "finish": "Runners-up",
+      "host": "Home-and-away"
+    },
+    {
+      "year": "1985-1988",
+      "finish": "Semi-finalist",
+      "host": "Home-and-away"
+    },
+    {
+      "year": "1977",
+      "finish": "Runners-up",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1972",
+      "finish": "Champions",
+      "host": "France"
+    },
+    {
+      "year": "1970",
+      "finish": "Runners-up",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1968",
+      "finish": "Semi-finalist",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1960",
+      "finish": "Champions",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1957",
+      "finish": "Runners-up",
+      "host": "Australia"
+    },
+    {
+      "year": "1954",
+      "finish": "Champions",
+      "host": "France"
+    }
+  ]
+}

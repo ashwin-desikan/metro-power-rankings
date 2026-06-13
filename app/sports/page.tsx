@@ -8,6 +8,7 @@ import HubNav from "@/app/teams/HubNav";
 import SportsExplorer, { type TeamMarker } from "./SportsExplorer";
 import SportsConsole from "./SportsConsole";
 import { leagueStatusFor, LeagueStatusTag } from "@/lib/leagueStatus";
+import { catalogByFamily } from "@/lib/sportsCatalog";
 
 export const dynamicParams = false;
 
@@ -97,198 +98,21 @@ const DEFAULT_DEEP_DIVE_ACCENT = "#4ECDC4";
 // The pinned spotlight piece shown as the large featured card.
 const FEATURED_DEEP_DIVE = "/sports/geography-of-erasure";
 
-// Editorial overrides for the league directory: drop the Big 5 country cards
-// (Club Football covers them), inject the live Football/IPL/Women's/WNBA hubs,
-// and list the two college hubs as coming soon.
-const REMOVED_LEAGUE_KEYS = new Set(["England", "Spain", "Italy", "Germany", "France", "IPL", "AFL", "NRL", "CFL", "NWSL", "WSL"]);
-const INJECTED_LIVE_CARDS: LeagueCard[] = [
-  {
-    league: "ClubFootball",
-    label: "Club Football",
-    sport: "Football",
-    status: "live",
-    page: "/teams/football",
-    team_count: 0,
-  },
-  {
-    league: "InternationalFootball",
-    label: "International Football",
-    sport: "Football",
-    status: "live",
-    page: "/teams/national",
-    team_count: 0,
-  },
-  {
-    league: "IPL",
-    label: "IPL",
-    sport: "Cricket",
-    status: "live",
-    page: "/teams/ipl",
-    team_count: 0,
-  },
-  {
-    league: "WomensClubFootball",
-    label: "Women's Football",
-    sport: "Football",
-    status: "live",
-    page: "/teams/wfootball",
-    team_count: 0,
-  },
-  {
-    league: "WNBA",
-    label: "WNBA",
-    sport: "Basketball",
-    status: "live",
-    page: "/teams/wnba",
-    team_count: 0,
-  },
-  {
-    league: "CFL",
-    label: "CFL",
-    sport: "Canadian Football",
-    status: "live",
-    page: "/teams/cfl",
-    team_count: 0,
-  },
-  {
-    league: "AFL",
-    label: "AFL",
-    sport: "Aussie Rules",
-    status: "live",
-    page: "/teams/afl",
-    team_count: 0,
-  },
-  {
-    league: "NRL",
-    label: "NRL",
-    sport: "Rugby League",
-    status: "live",
-    page: "/teams/nrl",
-    team_count: 0,
-  },
-  {
-    league: "CRICKET",
-    label: "International Cricket",
-    sport: "Cricket",
-    status: "live",
-    page: "/teams/cricket",
-    team_count: 0,
-  },
-  {
-    league: "RUGBY",
-    label: "Rugby Union",
-    sport: "Rugby Union",
-    status: "live",
-    page: "/teams/rugby-union",
-    team_count: 0,
-  },
-  {
-    league: "WBC",
-    label: "International Baseball",
-    sport: "Baseball",
-    status: "live",
-    page: "/teams/baseball",
-    team_count: 0,
-  },
-  {
-    league: "OLY",
-    label: "Olympics",
-    sport: "Olympics",
-    status: "live",
-    page: "/teams/olympics",
-    team_count: 0,
-  },
-  {
-    league: "FIBA",
-    label: "International Basketball",
-    sport: "Basketball",
-    status: "live",
-    page: "/teams/basketball",
-    team_count: 0,
-  },
-  {
-    league: "IIHF",
-    label: "International Ice Hockey",
-    sport: "Hockey",
-    status: "live",
-    page: "/teams/hockey",
-    team_count: 0,
-  },
-  {
-    league: "IHF",
-    label: "International Handball",
-    sport: "Handball",
-    status: "live",
-    page: "/teams/handball",
-    team_count: 0,
-  },
-  {
-    league: "FIVB",
-    label: "International Volleyball",
-    sport: "Volleyball",
-    status: "live",
-    page: "/teams/volleyball",
-    team_count: 0,
-  },
-  {
-    league: "RFL",
-    label: "Rugby League — Britain",
-    sport: "Rugby League",
-    status: "live",
-    page: "/teams/rugby-league",
-    team_count: 0,
-  },
-  {
-    league: "CFB",
-    label: "College Football",
-    sport: "American Football",
-    status: "live",
-    page: "/teams/cfb",
-    team_count: 0,
-  },
-];
-const INJECTED_COMING_CARDS: LeagueCard[] = [
-  {
-    league: "CBB",
-    label: "Men's College Basketball",
-    sport: "Basketball",
-    status: "coming",
-    page: null,
-    team_count: 0,
-  },
-];
-
 export default function SportsPage() {
   const teams = loadJson<TeamMarker[]>("all-teams.json");
   const summary = loadJson<Summary>("league-summary.json");
 
-  const baseCards = summary.league_cards.filter((c) => !REMOVED_LEAGUE_KEYS.has(c.league));
-  const liveCards = baseCards.filter((c) => c.status === "live");
-  const comingCards = baseCards.filter((c) => c.status === "coming");
-  const composedCards: LeagueCard[] = [
-    ...liveCards,
-    ...INJECTED_LIVE_CARDS,
-    ...comingCards,
-    ...INJECTED_COMING_CARDS,
-  ];
-  const liveCount = composedCards.filter((c) => c.status === "live").length;
-  const comingCount = composedCards.filter((c) => c.status === "coming").length;
-
-  // Sidebar hub links, ordered to match the Sports nav dropdown.
-  const HUB_ORDER = [
-    "/teams/football", "/teams/national", "/teams/nfl", "/teams/cfb", "/teams/mlb",
-    "/teams/nba", "/teams/nhl", "/teams/ipl", "/teams/afl", "/teams/nrl", "/teams/cfl",
-    "/teams/cricket", "/teams/rugby-union", "/teams/baseball", "/teams/olympics", "/teams/basketball",
-    "/teams/hockey", "/teams/handball", "/teams/volleyball", "/teams/rugby-league", "/teams/wfootball", "/teams/wnba",
-  ];
-  const liveHubByPage = new Map(
-    composedCards.filter((c) => c.status === "live" && c.page).map((c) => [c.page as string, c]),
-  );
-  const orderedHubCards = HUB_ORDER.map((p) => liveHubByPage.get(p)).filter((c): c is LeagueCard => !!c);
-  const hubs = [
-    ...orderedHubCards,
-    ...Array.from(liveHubByPage.values()).filter((c) => !HUB_ORDER.includes(c.page as string)),
-  ].map((c) => ({ label: c.label, sport: c.sport, href: c.page as string }));
+  // The league directory is now driven entirely by lib/sportsCatalog, grouped
+  // by sport family. Team counts (where a per-franchise league has them) are
+  // merged in from the ETL summary by href; portal hubs have no count.
+  const directoryGroups = catalogByFamily(true);
+  const allEntries = directoryGroups.flatMap((g) => g.entries);
+  const liveCount = allEntries.filter((c) => c.status !== "coming").length;
+  const comingCount = allEntries.filter((c) => c.status === "coming").length;
+  const countByHref = new Map<string, number>();
+  for (const c of summary.league_cards) {
+    if (c.page) countByHref.set(c.page, c.team_count);
+  }
 
   const featuredDeepDive = DEEP_DIVES.find((d) => d.href === FEATURED_DEEP_DIVE) ?? DEEP_DIVES[0];
   const restDeepDives = DEEP_DIVES.filter((d) => d.href !== featuredDeepDive.href);
@@ -349,7 +173,7 @@ export default function SportsPage() {
           </div>
 
           <div className="lg:col-span-4">
-            <SportsConsole hubs={hubs} deepDives={DEEP_DIVES} />
+            <SportsConsole deepDives={DEEP_DIVES} />
           </div>
         </div>
       </section>
@@ -409,46 +233,59 @@ export default function SportsPage() {
         </div>
       </section>
 
-      {/* Full league directory: the complete reference grid, below the fold. */}
+      {/* Full league directory: the complete reference grid, grouped by sport
+          family, below the fold. */}
       <section id="league-directory" className="mb-12 scroll-mt-20">
         <h2 className="text-lg font-semibold mb-1">League directory</h2>
         <p className="text-xs text-[var(--text-muted)] mb-4">
-          Live cards link straight to the per-franchise pages. Coming-soon cards stay on this page until that league ships.
+          Grouped by sport. Live cards link straight to the per-franchise hubs; coming-soon cards stay on this page until that league ships.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-          {composedCards.map((c) => {
-            const isLive = c.status === "live" && c.page;
-            const showTeamCount = c.team_count > 0;
-            const inner = (
-              <div
-                className={`rounded-xl border p-4 h-full transition-colors ${
-                  isLive ? "hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" : "opacity-65"
-                }`}
-                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        <div className="space-y-6">
+          {directoryGroups.map((g) => (
+            <div key={g.family}>
+              <h3
+                className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                <div className="flex items-baseline justify-between gap-2 mb-1">
-                  <div className="font-semibold text-base tracking-tight">{c.label}</div>
-                  {!isLive && (
-                    <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">Soon</span>
-                  )}
-                </div>
-                <div className="text-xs text-[var(--text-muted)]">{c.sport}</div>
-                {isLive && (
-                  <div className="mt-1.5">
-                    <LeagueStatusTag status={leagueStatusFor(c.page) ?? { label: "Live", tone: "regular" }} />
-                  </div>
-                )}
-                {showTeamCount && (
-                  <div className="text-xs text-[var(--text-dim)] mt-1 tabular-nums">{c.team_count} teams</div>
-                )}
+                {g.family}
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                {g.entries.map((c) => {
+                  const isLive = c.status !== "coming";
+                  const count = countByHref.get(c.href) ?? 0;
+                  const inner = (
+                    <div
+                      className={`rounded-xl border p-4 h-full transition-colors ${
+                        isLive ? "hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" : "opacity-65"
+                      }`}
+                      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                    >
+                      <div className="flex items-baseline justify-between gap-2 mb-1">
+                        <div className="font-semibold text-base tracking-tight">{c.label}</div>
+                        {!isLive && (
+                          <span className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-dim)]">Soon</span>
+                        )}
+                      </div>
+                      <div className="text-xs text-[var(--text-muted)]">{c.sport}</div>
+                      {isLive && (
+                        <div className="mt-1.5">
+                          <LeagueStatusTag status={leagueStatusFor(c.href) ?? { label: "Live", tone: "regular" }} />
+                        </div>
+                      )}
+                      {count > 0 && (
+                        <div className="text-xs text-[var(--text-dim)] mt-1 tabular-nums">{count} teams</div>
+                      )}
+                    </div>
+                  );
+                  return isLive ? (
+                    <Link key={c.href} href={c.href} className="block">{inner}</Link>
+                  ) : (
+                    <div key={c.href}>{inner}</div>
+                  );
+                })}
               </div>
-            );
-            return isLive ? (
-              <Link key={c.league} href={c.page!} className="block">{inner}</Link>
-            ) : (
-              <div key={c.league}>{inner}</div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </section>
 

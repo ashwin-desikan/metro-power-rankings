@@ -26,6 +26,7 @@ import { normalizeSport, sportIcon, leagueIcon } from "@/lib/sportLabels";
 import { getRugbyClubHonours } from "@/lib/rugbyClubs";
 import { getT20Honours } from "@/lib/cricketClubs";
 import { getEuroleagueHonours } from "@/lib/basketball";
+import { getDomesticHonours } from "@/lib/domesticHonours";
 import { rugbyClubColor, rugbyMonogram } from "@/lib/rugby-colors";
 import { cricketClubColor } from "@/lib/cricket-colors";
 import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
@@ -1899,6 +1900,9 @@ function TeamCard({
   const elHonours = sportLower.includes("basket")
     ? getEuroleagueHonours(team.team)
     : null;
+  // Domestic winners-roll honours for rugby league / volleyball / handball /
+  // KHL hockey / CBA / county cricket clubs (lib/domesticHonours).
+  const domesticHonours = getDomesticHonours(team.sport, team.team);
 
   return (
     <div
@@ -1949,6 +1953,20 @@ function TeamCard({
                   title={`${h.comp}: ${h.years.join(", ")}`}>
               {h.titles}× {h.comp}
             </span>
+          ))}
+        </div>
+      )}
+      {domesticHonours.length > 0 && (
+        <div className="flex gap-1.5 mb-1.5 flex-wrap">
+          {domesticHonours.map((h) => (
+            <Link key={h.label} href={h.href}
+                  className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide hover:opacity-80 transition-opacity"
+                  style={h.count > 0
+                    ? { background: "rgba(212,175,55,0.16)", color: "#d4af37" }
+                    : { background: "rgba(120,120,140,0.16)", color: "var(--text-dim)" }}
+                  title={h.count > 0 ? `${h.count}× ${h.label}` : `No ${h.label} titles — connected to the roll, none yet`}>
+              {h.count > 0 ? `${h.count}× ${h.label}` : `No ${h.label} titles`}
+            </Link>
           ))}
         </div>
       )}

@@ -1,0 +1,224 @@
+[
+  {
+    "slug": "australia",
+    "name": "Australia",
+    "apps": 16,
+    "titles": 12,
+    "title_years": [
+      "1957",
+      "1968",
+      "1970",
+      "1975",
+      "1977",
+      "1985-1988",
+      "1989-1992",
+      "1995",
+      "2000",
+      "2013",
+      "2017",
+      "2021"
+    ],
+    "runner_ups": 3,
+    "ru_years": [
+      "1960",
+      "1972",
+      "2008"
+    ],
+    "semis": 1,
+    "semi_years": [
+      "1954"
+    ],
+    "best_finish": "Champions",
+    "first": 1954,
+    "last": 2021
+  },
+  {
+    "slug": "great-britain",
+    "name": "Great Britain",
+    "apps": 9,
+    "titles": 3,
+    "title_years": [
+      "1954",
+      "1960",
+      "1972"
+    ],
+    "runner_ups": 4,
+    "ru_years": [
+      "1957",
+      "1970",
+      "1977",
+      "1989-1992"
+    ],
+    "semis": 2,
+    "semi_years": [
+      "1968",
+      "1985-1988"
+    ],
+    "best_finish": "Champions",
+    "first": 1954,
+    "last": 1989
+  },
+  {
+    "slug": "new-zealand",
+    "name": "New Zealand",
+    "apps": 15,
+    "titles": 1,
+    "title_years": [
+      "2008"
+    ],
+    "runner_ups": 3,
+    "ru_years": [
+      "1985-1988",
+      "2000",
+      "2013"
+    ],
+    "semis": 11,
+    "semi_years": [
+      "1954",
+      "1957",
+      "1960",
+      "1968",
+      "1970",
+      "1972",
+      "1975",
+      "1977",
+      "1989-1992",
+      "1995",
+      "2021"
+    ],
+    "best_finish": "Champions",
+    "first": 1954,
+    "last": 2021
+  },
+  {
+    "slug": "england",
+    "name": "England",
+    "apps": 7,
+    "titles": 0,
+    "title_years": [],
+    "runner_ups": 3,
+    "ru_years": [
+      "1975",
+      "1995",
+      "2017"
+    ],
+    "semis": 4,
+    "semi_years": [
+      "2000",
+      "2008",
+      "2013",
+      "2021"
+    ],
+    "best_finish": "Runners-up",
+    "first": 1975,
+    "last": 2021
+  },
+  {
+    "slug": "france",
+    "name": "France",
+    "apps": 8,
+    "titles": 0,
+    "title_years": [],
+    "runner_ups": 2,
+    "ru_years": [
+      "1954",
+      "1968"
+    ],
+    "semis": 6,
+    "semi_years": [
+      "1957",
+      "1960",
+      "1970",
+      "1972",
+      "1977",
+      "1989-1992"
+    ],
+    "best_finish": "Runners-up",
+    "first": 1954,
+    "last": 1989
+  },
+  {
+    "slug": "samoa",
+    "name": "Samoa",
+    "apps": 1,
+    "titles": 0,
+    "title_years": [],
+    "runner_ups": 1,
+    "ru_years": [
+      "2021"
+    ],
+    "semis": 0,
+    "semi_years": [],
+    "best_finish": "Runners-up",
+    "first": 2021,
+    "last": 2021
+  },
+  {
+    "slug": "fiji",
+    "name": "Fiji",
+    "apps": 3,
+    "titles": 0,
+    "title_years": [],
+    "runner_ups": 0,
+    "ru_years": [],
+    "semis": 3,
+    "semi_years": [
+      "2008",
+      "2013",
+      "2017"
+    ],
+    "best_finish": "Semi-finalist",
+    "first": 2008,
+    "last": 2017
+  },
+  {
+    "slug": "wales",
+    "name": "Wales",
+    "apps": 3,
+    "titles": 0,
+    "title_years": [],
+    "runner_ups": 0,
+    "ru_years": [],
+    "semis": 3,
+    "semi_years": [
+      "1975",
+      "1995",
+      "2000"
+    ],
+    "best_finish": "Semi-finalist",
+    "first": 1975,
+    "last": 2000
+  },
+  {
+    "slug": "papua-new-guinea",
+    "name": "Papua New Guinea",
+    "apps": 1,
+    "titles": 0,
+    "title_years": [],
+    "runner_ups": 0,
+    "ru_years": [],
+    "semis": 1,
+    "semi_years": [
+      "1985-1988"
+    ],
+    "best_finish": "Semi-finalist",
+    "first": 1985,
+    "last": 1985
+  },
+  {
+    "slug": "tonga",
+    "name": "Tonga",
+    "apps": 1,
+    "titles": 0,
+    "title_years": [],
+    "runner_ups": 0,
+    "ru_years": [],
+    "semis": 1,
+    "semi_years": [
+      "2017"
+    ],
+    "best_finish": "Semi-finalist",
+    "first": 2017,
+    "last": 2017
+  }
+]

@@ -1,0 +1,816 @@
+{
+  "meta": {
+    "label": "UEFA Women's Championship",
+    "slug": "womens-euros",
+    "editions": 14,
+    "nations": 11,
+    "year_min": "1984",
+    "year_max": "2025"
+  },
+  "editions": [
+    {
+      "year": "1984",
+      "host": "No official host",
+      "champion": "Sweden",
+      "runner_up": "England",
+      "score": "1-1 (4-3 p)",
+      "semifinalists": [
+        "Denmark",
+        "Italy"
+      ]
+    },
+    {
+      "year": "1987",
+      "host": "Norway",
+      "champion": "Norway",
+      "runner_up": "Sweden",
+      "score": "2-1",
+      "semifinalists": [
+        "Italy",
+        "England"
+      ]
+    },
+    {
+      "year": "1989",
+      "host": "West Germany",
+      "champion": "West Germany",
+      "runner_up": "Norway",
+      "score": "4-1",
+      "semifinalists": [
+        "Sweden",
+        "Italy"
+      ]
+    },
+    {
+      "year": "1991",
+      "host": "Denmark",
+      "champion": "Germany",
+      "runner_up": "Norway",
+      "score": "3-1 (a.e.t.)",
+      "semifinalists": [
+        "Denmark",
+        "Italy"
+      ]
+    },
+    {
+      "year": "1993",
+      "host": "Italy",
+      "champion": "Norway",
+      "runner_up": "Italy",
+      "score": "1-0",
+      "semifinalists": [
+        "Denmark",
+        "Germany"
+      ]
+    },
+    {
+      "year": "1995",
+      "host": "No official host",
+      "champion": "Germany",
+      "runner_up": "Sweden",
+      "score": "3-2",
+      "semifinalists": [
+        "England",
+        "Norway"
+      ]
+    },
+    {
+      "year": "1997",
+      "host": "Norway & Sweden",
+      "champion": "Germany",
+      "runner_up": "Italy",
+      "score": "2-0",
+      "semifinalists": [
+        "Spain",
+        "Sweden"
+      ]
+    },
+    {
+      "year": "2001",
+      "host": "Germany",
+      "champion": "Germany",
+      "runner_up": "Sweden",
+      "score": "1-0 (g.g.)",
+      "semifinalists": [
+        "Denmark",
+        "Norway"
+      ]
+    },
+    {
+      "year": "2005",
+      "host": "England",
+      "champion": "Germany",
+      "runner_up": "Norway",
+      "score": "3-1",
+      "semifinalists": [
+        "Finland",
+        "Sweden"
+      ]
+    },
+    {
+      "year": "2009",
+      "host": "Finland",
+      "champion": "Germany",
+      "runner_up": "England",
+      "score": "6-2",
+      "semifinalists": [
+        "Netherlands",
+        "Norway"
+      ]
+    },
+    {
+      "year": "2013",
+      "host": "Sweden",
+      "champion": "Germany",
+      "runner_up": "Norway",
+      "score": "1-0",
+      "semifinalists": [
+        "Denmark",
+        "Sweden"
+      ]
+    },
+    {
+      "year": "2017",
+      "host": "Netherlands",
+      "champion": "Netherlands",
+      "runner_up": "Denmark",
+      "score": "4-2",
+      "semifinalists": [
+        "Austria",
+        "England"
+      ]
+    },
+    {
+      "year": "2022",
+      "host": "England",
+      "champion": "England",
+      "runner_up": "Germany",
+      "score": "2-1 (a.e.t.)",
+      "semifinalists": [
+        "France",
+        "Sweden"
+      ]
+    },
+    {
+      "year": "2025",
+      "host": "Switzerland",
+      "champion": "England",
+      "runner_up": "Spain",
+      "score": "1-1 (3-1 p)",
+      "semifinalists": [
+        "Germany",
+        "Italy"
+      ]
+    }
+  ],
+  "finals": [
+    {
+      "year": "1984",
+      "champion": "Sweden",
+      "runner_up": "England",
+      "score": "1-1 (4-3 p)",
+      "host": "No official host"
+    },
+    {
+      "year": "1987",
+      "champion": "Norway",
+      "runner_up": "Sweden",
+      "score": "2-1",
+      "host": "Norway"
+    },
+    {
+      "year": "1989",
+      "champion": "West Germany",
+      "runner_up": "Norway",
+      "score": "4-1",
+      "host": "West Germany"
+    },
+    {
+      "year": "1991",
+      "champion": "Germany",
+      "runner_up": "Norway",
+      "score": "3-1 (a.e.t.)",
+      "host": "Denmark"
+    },
+    {
+      "year": "1993",
+      "champion": "Norway",
+      "runner_up": "Italy",
+      "score": "1-0",
+      "host": "Italy"
+    },
+    {
+      "year": "1995",
+      "champion": "Germany",
+      "runner_up": "Sweden",
+      "score": "3-2",
+      "host": "No official host"
+    },
+    {
+      "year": "1997",
+      "champion": "Germany",
+      "runner_up": "Italy",
+      "score": "2-0",
+      "host": "Norway & Sweden"
+    },
+    {
+      "year": "2001",
+      "champion": "Germany",
+      "runner_up": "Sweden",
+      "score": "1-0 (g.g.)",
+      "host": "Germany"
+    },
+    {
+      "year": "2005",
+      "champion": "Germany",
+      "runner_up": "Norway",
+      "score": "3-1",
+      "host": "England"
+    },
+    {
+      "year": "2009",
+      "champion": "Germany",
+      "runner_up": "England",
+      "score": "6-2",
+      "host": "Finland"
+    },
+    {
+      "year": "2013",
+      "champion": "Germany",
+      "runner_up": "Norway",
+      "score": "1-0",
+      "host": "Sweden"
+    },
+    {
+      "year": "2017",
+      "champion": "Netherlands",
+      "runner_up": "Denmark",
+      "score": "4-2",
+      "host": "Netherlands"
+    },
+    {
+      "year": "2022",
+      "champion": "England",
+      "runner_up": "Germany",
+      "score": "2-1 (a.e.t.)",
+      "host": "England"
+    },
+    {
+      "year": "2025",
+      "champion": "England",
+      "runner_up": "Spain",
+      "score": "1-1 (3-1 p)",
+      "host": "Switzerland"
+    }
+  ],
+  "nations": [
+    {
+      "slug": "germany",
+      "name": "Germany",
+      "apps": 11,
+      "titles": 8,
+      "title_years": [
+        "1989",
+        "1991",
+        "1995",
+        "1997",
+        "2001",
+        "2005",
+        "2009",
+        "2013"
+      ],
+      "runner_ups": 1,
+      "ru_years": [
+        "2022"
+      ],
+      "semis": 2,
+      "semi_years": [
+        "1993",
+        "2025"
+      ],
+      "best_finish": "Champions",
+      "first": 1989,
+      "last": 2025,
+      "lineage": [
+        "West Germany"
+      ],
+      "results": [
+        {
+          "year": "2025",
+          "finish": "Semi-finalist",
+          "host": "Switzerland"
+        },
+        {
+          "year": "2022",
+          "finish": "Runners-up",
+          "host": "England"
+        },
+        {
+          "year": "2013",
+          "finish": "Champions",
+          "host": "Sweden"
+        },
+        {
+          "year": "2009",
+          "finish": "Champions",
+          "host": "Finland"
+        },
+        {
+          "year": "2005",
+          "finish": "Champions",
+          "host": "England"
+        },
+        {
+          "year": "2001",
+          "finish": "Champions",
+          "host": "Germany"
+        },
+        {
+          "year": "1997",
+          "finish": "Champions",
+          "host": "Norway & Sweden"
+        },
+        {
+          "year": "1995",
+          "finish": "Champions",
+          "host": "No official host"
+        },
+        {
+          "year": "1993",
+          "finish": "Semi-finalist",
+          "host": "Italy"
+        },
+        {
+          "year": "1991",
+          "finish": "Champions",
+          "host": "Denmark"
+        },
+        {
+          "year": "1989",
+          "finish": "Champions",
+          "host": "West Germany"
+        }
+      ]
+    },
+    {
+      "slug": "norway",
+      "name": "Norway",
+      "apps": 9,
+      "titles": 2,
+      "title_years": [
+        "1987",
+        "1993"
+      ],
+      "runner_ups": 4,
+      "ru_years": [
+        "1989",
+        "1991",
+        "2005",
+        "2013"
+      ],
+      "semis": 3,
+      "semi_years": [
+        "1995",
+        "2001",
+        "2009"
+      ],
+      "best_finish": "Champions",
+      "first": 1987,
+      "last": 2013,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2013",
+          "finish": "Runners-up",
+          "host": "Sweden"
+        },
+        {
+          "year": "2009",
+          "finish": "Semi-finalist",
+          "host": "Finland"
+        },
+        {
+          "year": "2005",
+          "finish": "Runners-up",
+          "host": "England"
+        },
+        {
+          "year": "2001",
+          "finish": "Semi-finalist",
+          "host": "Germany"
+        },
+        {
+          "year": "1995",
+          "finish": "Semi-finalist",
+          "host": "No official host"
+        },
+        {
+          "year": "1993",
+          "finish": "Champions",
+          "host": "Italy"
+        },
+        {
+          "year": "1991",
+          "finish": "Runners-up",
+          "host": "Denmark"
+        },
+        {
+          "year": "1989",
+          "finish": "Runners-up",
+          "host": "West Germany"
+        },
+        {
+          "year": "1987",
+          "finish": "Champions",
+          "host": "Norway"
+        }
+      ]
+    },
+    {
+      "slug": "england",
+      "name": "England",
+      "apps": 7,
+      "titles": 2,
+      "title_years": [
+        "2022",
+        "2025"
+      ],
+      "runner_ups": 2,
+      "ru_years": [
+        "1984",
+        "2009"
+      ],
+      "semis": 3,
+      "semi_years": [
+        "1987",
+        "1995",
+        "2017"
+      ],
+      "best_finish": "Champions",
+      "first": 1984,
+      "last": 2025,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2025",
+          "finish": "Champions",
+          "host": "Switzerland"
+        },
+        {
+          "year": "2022",
+          "finish": "Champions",
+          "host": "England"
+        },
+        {
+          "year": "2017",
+          "finish": "Semi-finalist",
+          "host": "Netherlands"
+        },
+        {
+          "year": "2009",
+          "finish": "Runners-up",
+          "host": "Finland"
+        },
+        {
+          "year": "1995",
+          "finish": "Semi-finalist",
+          "host": "No official host"
+        },
+        {
+          "year": "1987",
+          "finish": "Semi-finalist",
+          "host": "Norway"
+        },
+        {
+          "year": "1984",
+          "finish": "Runners-up",
+          "host": "No official host"
+        }
+      ]
+    },
+    {
+      "slug": "sweden",
+      "name": "Sweden",
+      "apps": 9,
+      "titles": 1,
+      "title_years": [
+        "1984"
+      ],
+      "runner_ups": 3,
+      "ru_years": [
+        "1987",
+        "1995",
+        "2001"
+      ],
+      "semis": 5,
+      "semi_years": [
+        "1989",
+        "1997",
+        "2005",
+        "2013",
+        "2022"
+      ],
+      "best_finish": "Champions",
+      "first": 1984,
+      "last": 2022,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2022",
+          "finish": "Semi-finalist",
+          "host": "England"
+        },
+        {
+          "year": "2013",
+          "finish": "Semi-finalist",
+          "host": "Sweden"
+        },
+        {
+          "year": "2005",
+          "finish": "Semi-finalist",
+          "host": "England"
+        },
+        {
+          "year": "2001",
+          "finish": "Runners-up",
+          "host": "Germany"
+        },
+        {
+          "year": "1997",
+          "finish": "Semi-finalist",
+          "host": "Norway & Sweden"
+        },
+        {
+          "year": "1995",
+          "finish": "Runners-up",
+          "host": "No official host"
+        },
+        {
+          "year": "1989",
+          "finish": "Semi-finalist",
+          "host": "West Germany"
+        },
+        {
+          "year": "1987",
+          "finish": "Runners-up",
+          "host": "Norway"
+        },
+        {
+          "year": "1984",
+          "finish": "Champions",
+          "host": "No official host"
+        }
+      ]
+    },
+    {
+      "slug": "netherlands",
+      "name": "Netherlands",
+      "apps": 2,
+      "titles": 1,
+      "title_years": [
+        "2017"
+      ],
+      "runner_ups": 0,
+      "ru_years": [],
+      "semis": 1,
+      "semi_years": [
+        "2009"
+      ],
+      "best_finish": "Champions",
+      "first": 2009,
+      "last": 2017,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2017",
+          "finish": "Champions",
+          "host": "Netherlands"
+        },
+        {
+          "year": "2009",
+          "finish": "Semi-finalist",
+          "host": "Finland"
+        }
+      ]
+    },
+    {
+      "slug": "italy",
+      "name": "Italy",
+      "apps": 7,
+      "titles": 0,
+      "title_years": [],
+      "runner_ups": 2,
+      "ru_years": [
+        "1993",
+        "1997"
+      ],
+      "semis": 5,
+      "semi_years": [
+        "1984",
+        "1987",
+        "1989",
+        "1991",
+        "2025"
+      ],
+      "best_finish": "Runners-up",
+      "first": 1984,
+      "last": 2025,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2025",
+          "finish": "Semi-finalist",
+          "host": "Switzerland"
+        },
+        {
+          "year": "1997",
+          "finish": "Runners-up",
+          "host": "Norway & Sweden"
+        },
+        {
+          "year": "1993",
+          "finish": "Runners-up",
+          "host": "Italy"
+        },
+        {
+          "year": "1991",
+          "finish": "Semi-finalist",
+          "host": "Denmark"
+        },
+        {
+          "year": "1989",
+          "finish": "Semi-finalist",
+          "host": "West Germany"
+        },
+        {
+          "year": "1987",
+          "finish": "Semi-finalist",
+          "host": "Norway"
+        },
+        {
+          "year": "1984",
+          "finish": "Semi-finalist",
+          "host": "No official host"
+        }
+      ]
+    },
+    {
+      "slug": "denmark",
+      "name": "Denmark",
+      "apps": 6,
+      "titles": 0,
+      "title_years": [],
+      "runner_ups": 1,
+      "ru_years": [
+        "2017"
+      ],
+      "semis": 5,
+      "semi_years": [
+        "1984",
+        "1991",
+        "1993",
+        "2001",
+        "2013"
+      ],
+      "best_finish": "Runners-up",
+      "first": 1984,
+      "last": 2017,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2017",
+          "finish": "Runners-up",
+          "host": "Netherlands"
+        },
+        {
+          "year": "2013",
+          "finish": "Semi-finalist",
+          "host": "Sweden"
+        },
+        {
+          "year": "2001",
+          "finish": "Semi-finalist",
+          "host": "Germany"
+        },
+        {
+          "year": "1993",
+          "finish": "Semi-finalist",
+          "host": "Italy"
+        },
+        {
+          "year": "1991",
+          "finish": "Semi-finalist",
+          "host": "Denmark"
+        },
+        {
+          "year": "1984",
+          "finish": "Semi-finalist",
+          "host": "No official host"
+        }
+      ]
+    },
+    {
+      "slug": "spain",
+      "name": "Spain",
+      "apps": 2,
+      "titles": 0,
+      "title_years": [],
+      "runner_ups": 1,
+      "ru_years": [
+        "2025"
+      ],
+      "semis": 1,
+      "semi_years": [
+        "1997"
+      ],
+      "best_finish": "Runners-up",
+      "first": 1997,
+      "last": 2025,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2025",
+          "finish": "Runners-up",
+          "host": "Switzerland"
+        },
+        {
+          "year": "1997",
+          "finish": "Semi-finalist",
+          "host": "Norway & Sweden"
+        }
+      ]
+    },
+    {
+      "slug": "austria",
+      "name": "Austria",
+      "apps": 1,
+      "titles": 0,
+      "title_years": [],
+      "runner_ups": 0,
+      "ru_years": [],
+      "semis": 1,
+      "semi_years": [
+        "2017"
+      ],
+      "best_finish": "Semi-finalist",
+      "first": 2017,
+      "last": 2017,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2017",
+          "finish": "Semi-finalist",
+          "host": "Netherlands"
+        }
+      ]
+    },
+    {
+      "slug": "finland",
+      "name": "Finland",
+      "apps": 1,
+      "titles": 0,
+      "title_years": [],
+      "runner_ups": 0,
+      "ru_years": [],
+      "semis": 1,
+      "semi_years": [
+        "2005"
+      ],
+      "best_finish": "Semi-finalist",
+      "first": 2005,
+      "last": 2005,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2005",
+          "finish": "Semi-finalist",
+          "host": "England"
+        }
+      ]
+    },
+    {
+      "slug": "france",
+      "name": "France",
+      "apps": 1,
+      "titles": 0,
+      "title_years": [],
+      "runner_ups": 0,
+      "ru_years": [],
+      "semis": 1,
+      "semi_years": [
+        "2022"
+      ],
+      "best_finish": "Semi-finalist",
+      "first": 2022,
+      "last": 2022,
+      "lineage": null,
+      "results": [
+        {
+          "year": "2022",
+          "finish": "Semi-finalist",
+          "host": "England"
+        }
+      ]
+    }
+  ]
+}

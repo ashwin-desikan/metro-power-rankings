@@ -1,0 +1,81 @@
+{
+  "slug": "new-zealand",
+  "name": "New Zealand",
+  "results": [
+    {
+      "year": "2021",
+      "finish": "Semi-finalist",
+      "host": "England"
+    },
+    {
+      "year": "2013",
+      "finish": "Runners-up",
+      "host": "England & Wales"
+    },
+    {
+      "year": "2008",
+      "finish": "Champions",
+      "host": "Australia"
+    },
+    {
+      "year": "2000",
+      "finish": "Runners-up",
+      "host": "British Isles"
+    },
+    {
+      "year": "1995",
+      "finish": "Semi-finalist",
+      "host": "England & Wales"
+    },
+    {
+      "year": "1989-1992",
+      "finish": "Semi-finalist",
+      "host": "Home-and-away"
+    },
+    {
+      "year": "1985-1988",
+      "finish": "Runners-up",
+      "host": "Home-and-away"
+    },
+    {
+      "year": "1977",
+      "finish": "Semi-finalist",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1975",
+      "finish": "Semi-finalist",
+      "host": "Australia, NZ, France & UK"
+    },
+    {
+      "year": "1972",
+      "finish": "Semi-finalist",
+      "host": "France"
+    },
+    {
+      "year": "1970",
+      "finish": "Semi-finalist",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1968",
+      "finish": "Semi-finalist",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1960",
+      "finish": "Semi-finalist",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1957",
+      "finish": "Semi-finalist",
+      "host": "Australia"
+    },
+    {
+      "year": "1954",
+      "finish": "Semi-finalist",
+      "host": "France"
+    }
+  ]
+}

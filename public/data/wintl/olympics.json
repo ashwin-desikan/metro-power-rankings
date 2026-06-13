@@ -1,0 +1,415 @@
+{
+  "meta": {
+    "label": "Olympic Women's Football",
+    "slug": "womens-olympics",
+    "editions": 8,
+    "nations": 8,
+    "year_min": "1996",
+    "year_max": "2024"
+  },
+  "editions": [
+    {
+      "year": "1996",
+      "host": "United States",
+      "gold": "United States",
+      "silver": "China",
+      "bronze": "Norway",
+      "fourth": "Brazil"
+    },
+    {
+      "year": "2000",
+      "host": "Australia",
+      "gold": "Norway",
+      "silver": "United States",
+      "bronze": "Germany",
+      "fourth": "Brazil"
+    },
+    {
+      "year": "2004",
+      "host": "Greece",
+      "gold": "United States",
+      "silver": "Brazil",
+      "bronze": "Germany",
+      "fourth": "Sweden"
+    },
+    {
+      "year": "2008",
+      "host": "China",
+      "gold": "United States",
+      "silver": "Brazil",
+      "bronze": "Germany",
+      "fourth": "Japan"
+    },
+    {
+      "year": "2012",
+      "host": "Great Britain",
+      "gold": "United States",
+      "silver": "Japan",
+      "bronze": "Canada",
+      "fourth": "France"
+    },
+    {
+      "year": "2016",
+      "host": "Brazil",
+      "gold": "Germany",
+      "silver": "Sweden",
+      "bronze": "Canada",
+      "fourth": "Brazil"
+    },
+    {
+      "year": "2020",
+      "host": "Japan",
+      "gold": "Canada",
+      "silver": "Sweden",
+      "bronze": "United States",
+      "fourth": "Australia"
+    },
+    {
+      "year": "2024",
+      "host": "France",
+      "gold": "United States",
+      "silver": "Brazil",
+      "bronze": "Germany",
+      "fourth": "Spain"
+    }
+  ],
+  "nations": [
+    {
+      "slug": "united-states",
+      "name": "United States",
+      "apps": 7,
+      "gold": 5,
+      "gold_years": [
+        "1996",
+        "2004",
+        "2008",
+        "2012",
+        "2024"
+      ],
+      "silver": 1,
+      "bronze": 1,
+      "medals": 7,
+      "best_finish": "Gold",
+      "first": 1996,
+      "last": 2024,
+      "results": [
+        {
+          "year": "2024",
+          "medal": "Gold",
+          "host": "France"
+        },
+        {
+          "year": "2020",
+          "medal": "Bronze",
+          "host": "Japan"
+        },
+        {
+          "year": "2012",
+          "medal": "Gold",
+          "host": "Great Britain"
+        },
+        {
+          "year": "2008",
+          "medal": "Gold",
+          "host": "China"
+        },
+        {
+          "year": "2004",
+          "medal": "Gold",
+          "host": "Greece"
+        },
+        {
+          "year": "2000",
+          "medal": "Silver",
+          "host": "Australia"
+        },
+        {
+          "year": "1996",
+          "medal": "Gold",
+          "host": "United States"
+        }
+      ]
+    },
+    {
+      "slug": "germany",
+      "name": "Germany",
+      "apps": 5,
+      "gold": 1,
+      "gold_years": [
+        "2016"
+      ],
+      "silver": 0,
+      "bronze": 4,
+      "medals": 5,
+      "best_finish": "Gold",
+      "first": 2000,
+      "last": 2024,
+      "results": [
+        {
+          "year": "2024",
+          "medal": "Bronze",
+          "host": "France"
+        },
+        {
+          "year": "2016",
+          "medal": "Gold",
+          "host": "Brazil"
+        },
+        {
+          "year": "2008",
+          "medal": "Bronze",
+          "host": "China"
+        },
+        {
+          "year": "2004",
+          "medal": "Bronze",
+          "host": "Greece"
+        },
+        {
+          "year": "2000",
+          "medal": "Bronze",
+          "host": "Australia"
+        }
+      ]
+    },
+    {
+      "slug": "canada",
+      "name": "Canada",
+      "apps": 3,
+      "gold": 1,
+      "gold_years": [
+        "2020"
+      ],
+      "silver": 0,
+      "bronze": 2,
+      "medals": 3,
+      "best_finish": "Gold",
+      "first": 2012,
+      "last": 2020,
+      "results": [
+        {
+          "year": "2020",
+          "medal": "Gold",
+          "host": "Japan"
+        },
+        {
+          "year": "2016",
+          "medal": "Bronze",
+          "host": "Brazil"
+        },
+        {
+          "year": "2012",
+          "medal": "Bronze",
+          "host": "Great Britain"
+        }
+      ]
+    },
+    {
+      "slug": "norway",
+      "name": "Norway",
+      "apps": 2,
+      "gold": 1,
+      "gold_years": [
+        "2000"
+      ],
+      "silver": 0,
+      "bronze": 1,
+      "medals": 2,
+      "best_finish": "Gold",
+      "first": 1996,
+      "last": 2000,
+      "results": [
+        {
+          "year": "2000",
+          "medal": "Gold",
+          "host": "Australia"
+        },
+        {
+          "year": "1996",
+          "medal": "Bronze",
+          "host": "United States"
+        }
+      ]
+    },
+    {
+      "slug": "brazil",
+      "name": "Brazil",
+      "apps": 6,
+      "gold": 0,
+      "gold_years": [],
+      "silver": 3,
+      "bronze": 0,
+      "medals": 3,
+      "best_finish": "Silver",
+      "first": 1996,
+      "last": 2024,
+      "results": [
+        {
+          "year": "2024",
+          "medal": "Silver",
+          "host": "France"
+        },
+        {
+          "year": "2016",
+          "medal": "Fourth",
+          "host": "Brazil"
+        },
+        {
+          "year": "2008",
+          "medal": "Silver",
+          "host": "China"
+        },
+        {
+          "year": "2004",
+          "medal": "Silver",
+          "host": "Greece"
+        },
+        {
+          "year": "2000",
+          "medal": "Fourth",
+          "host": "Australia"
+        },
+        {
+          "year": "1996",
+          "medal": "Fourth",
+          "host": "United States"
+        }
+      ]
+    },
+    {
+      "slug": "sweden",
+      "name": "Sweden",
+      "apps": 3,
+      "gold": 0,
+      "gold_years": [],
+      "silver": 2,
+      "bronze": 0,
+      "medals": 2,
+      "best_finish": "Silver",
+      "first": 2004,
+      "last": 2020,
+      "results": [
+        {
+          "year": "2020",
+          "medal": "Silver",
+          "host": "Japan"
+        },
+        {
+          "year": "2016",
+          "medal": "Silver",
+          "host": "Brazil"
+        },
+        {
+          "year": "2004",
+          "medal": "Fourth",
+          "host": "Greece"
+        }
+      ]
+    },
+    {
+      "slug": "china",
+      "name": "China",
+      "apps": 1,
+      "gold": 0,
+      "gold_years": [],
+      "silver": 1,
+      "bronze": 0,
+      "medals": 1,
+      "best_finish": "Silver",
+      "first": 1996,
+      "last": 1996,
+      "results": [
+        {
+          "year": "1996",
+          "medal": "Silver",
+          "host": "United States"
+        }
+      ]
+    },
+    {
+      "slug": "japan",
+      "name": "Japan",
+      "apps": 2,
+      "gold": 0,
+      "gold_years": [],
+      "silver": 1,
+      "bronze": 0,
+      "medals": 1,
+      "best_finish": "Silver",
+      "first": 2008,
+      "last": 2012,
+      "results": [
+        {
+          "year": "2012",
+          "medal": "Silver",
+          "host": "Great Britain"
+        },
+        {
+          "year": "2008",
+          "medal": "Fourth",
+          "host": "China"
+        }
+      ]
+    },
+    {
+      "slug": "australia",
+      "name": "Australia",
+      "apps": 1,
+      "gold": 0,
+      "gold_years": [],
+      "silver": 0,
+      "bronze": 0,
+      "medals": 0,
+      "best_finish": "4th",
+      "first": 2020,
+      "last": 2020,
+      "results": [
+        {
+          "year": "2020",
+          "medal": "Fourth",
+          "host": "Japan"
+        }
+      ]
+    },
+    {
+      "slug": "france",
+      "name": "France",
+      "apps": 1,
+      "gold": 0,
+      "gold_years": [],
+      "silver": 0,
+      "bronze": 0,
+      "medals": 0,
+      "best_finish": "4th",
+      "first": 2012,
+      "last": 2012,
+      "results": [
+        {
+          "year": "2012",
+          "medal": "Fourth",
+          "host": "Great Britain"
+        }
+      ]
+    },
+    {
+      "slug": "spain",
+      "name": "Spain",
+      "apps": 1,
+      "gold": 0,
+      "gold_years": [],
+      "silver": 0,
+      "bronze": 0,
+      "medals": 0,
+      "best_finish": "4th",
+      "first": 2024,
+      "last": 2024,
+      "results": [
+        {
+          "year": "2024",
+          "medal": "Fourth",
+          "host": "France"
+        }
+      ]
+    }
+  ]
+}

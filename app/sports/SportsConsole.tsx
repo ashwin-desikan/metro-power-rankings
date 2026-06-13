@@ -1,85 +1,115 @@
 import Link from "next/link";
 import { leagueStatusFor, clubFootballStatus, type LeagueStatus } from "@/lib/leagueStatus";
-import ClubFootballRow from "./ClubFootballRow";
+import { catalogByFamily, boardLabelFor, type CatalogEntry } from "@/lib/sportsCatalog";
 
-// Sticky sidebar for /sports, the cross-sport analogue of app/HomeSidebar.
-// Lives beside the map at lg+ (col-span-4) and stacks below on mobile.
-//   1. League hubs - dense list of every live hub, grouped into "In season"
-//      (regular / playoffs / world cup) and "Offseason", each row carrying a
-//      color-coded dot + short live-status label from lib/leagueStatus. The
-//      Club Football row is expandable (ClubFootballRow) and uses an aggregate
-//      status so it sorts into In-season whenever any competition or league is
-//      active.
-//   2. Deep-dives  - the cross-sport feature pages.
-//   3. Methodology / What's new CTAs.
-// Server component. Hub data is passed in from page.tsx (no new fetch).
+// Sticky sidebar for /sports. One row per sport (canonical workbook names),
+// the sport label anchored on the left and its leagues as status-dot chips on
+// the right, so a chip like "International" is never orphaned. Breadth is the
+// point, so nothing collapses; colour tells you what is live. The two special
+// states (playoffs = amber, World Cup = purple) are also spelled out on the
+// chip, since colour alone is not obvious. Wraps to one column on mobile.
+// Server component: status is computed at render, chips are plain links.
+// Domestic winners-roll sub-portals (subRoll) are kept off this board.
 
-const CLUB_FOOTBALL_HREF = "/teams/football";
-
-export type ConsoleHub = { label: string; sport: string; href: string };
 export type ConsoleDeepDive = { href: string; title: string; tag: string; desc: string };
 
-type RankedHub = ConsoleHub & { status: LeagueStatus | null };
-
-const TONE_COLOR: Record<string, string> = {
-  regular: "#10b981",
-  playoffs: "#f59e0b",
-  worldcup: "#a855f7",
+const CLUB_FOOTBALL_HREF = "/teams/football";
+const DOT: Record<string, string> = {
+  regular: "#1D9E75",
+  playoffs: "#EF9F27",
+  worldcup: "#7F77DD",
   offseason: "#55556A",
 };
-
-function shortStatus(s: LeagueStatus): string {
-  return s.label.replace(/^Live\s*-\s*/, "");
-}
+const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 
 function statusFor(href: string): LeagueStatus | null {
   return href === CLUB_FOOTBALL_HREF ? clubFootballStatus() : leagueStatusFor(href);
 }
+function shortStatus(s: LeagueStatus): string {
+  return s.label.replace(/^Live\s*-\s*/, "");
+}
 
-export default function SportsConsole({
-  hubs,
-  deepDives,
-}: {
-  hubs: ConsoleHub[];
-  deepDives: ConsoleDeepDive[];
-}) {
-  // Rendered in the order passed in (matches the Sports nav dropdown).
-  // Per-row status colours are preserved; offseason rows are dimmed.
-  const ranked: RankedHub[] = hubs.map((h) => ({ ...h, status: statusFor(h.href) }));
+function Chip({ entry, text }: { entry: CatalogEntry; text: string }) {
+  const s = statusFor(entry.href);
+  const tone = s?.tone ?? "offseason";
+  const color = DOT[tone];
+  const special = tone === "playoffs" || tone === "worldcup";
+  return (
+    <Link
+      href={entry.href}
+      title={s?.label ?? "Offseason"}
+      className="inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-[12px] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+      style={{ borderColor: "var(--border)", color: "var(--text)" }}
+    >
+      <span className="inline-block rounded-full flex-shrink-0" style={{ width: 7, height: 7, background: color }} aria-hidden="true" />
+      {text}
+      {special && s && (
+        <span className="text-[10px] font-medium whitespace-nowrap" style={{ color }}>{shortStatus(s)}</span>
+      )}
+    </Link>
+  );
+}
 
-  const renderRow = (h: RankedHub, dim: boolean) =>
-    h.href === CLUB_FOOTBALL_HREF ? (
-      <ClubFootballRow key={h.href} href={h.href} label={h.label} sport={h.sport} dim={dim} />
-    ) : (
-      <HubRow key={h.href} hub={h} dim={dim} />
-    );
+export default function SportsConsole({ deepDives }: { deepDives: ConsoleDeepDive[] }) {
+  const groups = catalogByFamily(false)
+    .map((g) => ({ family: g.family, entries: g.entries.filter((e) => !e.subRoll) }))
+    .filter((g) => g.entries.length > 0);
+  const liveCount = groups.reduce(
+    (n, g) =>
+      n +
+      g.entries.filter((e) => {
+        const s = statusFor(e.href);
+        return !!s && s.tone !== "offseason";
+      }).length,
+    0,
+  );
 
   return (
-    <aside
-      id="console"
-      className="space-y-5 lg:sticky lg:top-20 scroll-mt-20"
-      style={{ alignSelf: "start" }}
-    >
-      <div>
-        <div
-          className="text-[10px] tracking-widest uppercase mb-2"
-          style={{ color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
-        >
-          League hubs
+    <aside id="console" className="space-y-5 lg:sticky lg:top-20 scroll-mt-20" style={{ alignSelf: "start" }}>
+      <div className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <div className="flex items-center justify-between mb-2">
+          <div className="text-[10px] tracking-widest uppercase" style={{ color: "var(--text-muted)", ...mono }}>
+            League hubs
+          </div>
+          <span
+            className="inline-flex items-center gap-1.5 text-[10px] rounded-full border px-2 py-0.5"
+            style={{ borderColor: "var(--border)", color: "var(--text-muted)", ...mono }}
+          >
+            <span className="inline-block rounded-full" style={{ width: 6, height: 6, background: DOT.regular }} aria-hidden="true" />
+            {liveCount} live now
+          </span>
         </div>
-        <div
-          className="rounded-lg border overflow-hidden"
-          style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
-        >
-          {ranked.map((h) => renderRow(h, !h.status || h.status.tone === "offseason"))}
+
+        <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2 text-[10px]" style={{ color: "var(--text-dim)" }}>
+          <Legend color={DOT.regular} label="In season" />
+          <Legend color={DOT.playoffs} label="Playoffs" />
+          <Legend color={DOT.worldcup} label="World Cup" />
+          <Legend color={DOT.offseason} label="Offseason" />
+        </div>
+
+        <div>
+          {groups.map((g) => {
+            const isSelf = g.entries.length === 1 && boardLabelFor(g.entries[0]) === g.family;
+            return (
+              <div key={g.family} className="flex items-start gap-2.5 py-1.5 border-t" style={{ borderColor: "var(--border)" }}>
+                <div className="flex-none text-[10px] tracking-widest uppercase pt-1.5" style={{ width: 84, color: "var(--text-dim)", ...mono }}>
+                  {isSelf ? "" : g.family}
+                </div>
+                <div className="flex flex-wrap gap-1.5 flex-1 min-w-0">
+                  {isSelf ? (
+                    <Chip entry={g.entries[0]} text={g.family} />
+                  ) : (
+                    g.entries.map((e) => <Chip key={e.href} entry={e} text={boardLabelFor(e)} />)
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
       <div>
-        <div
-          className="text-[10px] tracking-widest uppercase mb-2"
-          style={{ color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
-        >
+        <div className="text-[10px] tracking-widest uppercase mb-2" style={{ color: "var(--text-muted)", ...mono }}>
           Deep-dives
         </div>
         <a
@@ -94,7 +124,7 @@ export default function SportsConsole({
         </a>
       </div>
 
-      <div className="flex items-center gap-2 text-[11px]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+      <div className="flex items-center gap-2 text-[11px]" style={mono}>
         <Link
           href="/methodology"
           className="flex-1 text-center rounded-md border px-3 py-2 transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
@@ -114,29 +144,11 @@ export default function SportsConsole({
   );
 }
 
-function HubRow({ hub, dim = false }: { hub: RankedHub; dim?: boolean }) {
-  const tone = hub.status?.tone ?? "offseason";
-  const color = TONE_COLOR[tone];
+function Legend({ color, label }: { color: string; label: string }) {
   return (
-    <Link
-      href={hub.href}
-      className="flex items-center gap-2 px-2.5 py-1.5 border-t text-[13px] transition-colors hover:bg-[var(--bg-card-hover)]"
-      style={{ borderColor: "var(--border)", color: dim ? "var(--text-muted)" : "var(--text)" }}
-    >
-      <span
-        className="inline-block rounded-full flex-shrink-0"
-        style={{ width: 7, height: 7, background: color }}
-        aria-hidden="true"
-      />
-      <span className="flex-1 min-w-0">
-        <span className="block truncate leading-tight">{hub.label}</span>
-        <span className="block truncate leading-tight text-[10px] text-[var(--text-dim)]">{hub.sport}</span>
-      </span>
-      {hub.status && (
-        <span className="text-[10px] whitespace-nowrap" style={{ color }}>
-          {shortStatus(hub.status)}
-        </span>
-      )}
-    </Link>
+    <span className="inline-flex items-center gap-1.5">
+      <span className="inline-block rounded-full" style={{ width: 7, height: 7, background: color }} aria-hidden="true" />
+      {label}
+    </span>
   );
 }

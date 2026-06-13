@@ -2,11 +2,16 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { leagueStatusFor, LeagueStatusTag } from '@/lib/leagueStatus';
+import { SPORTS_CATALOG, FAMILY_ORDER } from '@/lib/sportsCatalog';
 
 // Mobile-only disclosure menu. The desktop nav in SiteNav.tsx is hidden
 // below md (768px); this component fills that gap so phone users can reach
 // every page that lives in the top nav. Flat list rather than nested
 // dropdowns because nested menus on mobile feel cramped on a thumb.
+//
+// The Sports section is derived from lib/sportsCatalog (the same registry the
+// desktop nav and /sports use), ordered by sport family, so the three surfaces
+// never drift apart.
 
 type Item = {
   href: string;
@@ -15,6 +20,19 @@ type Item = {
   external?: boolean;
   group?: string;
 };
+
+// Sports entries from the shared catalog, ordered by family, shipped hubs only.
+const SPORTS_ITEMS: Item[] = [
+  { href: '/sports', label: 'All sports', hint: 'Every Major League team across every sport, on one filterable map', group: 'Sports' },
+  ...FAMILY_ORDER.flatMap((fam) =>
+    SPORTS_CATALOG.filter((e) => e.family === fam && e.status !== 'coming' && !e.subRoll).map((e) => ({
+      href: e.href,
+      label: e.label,
+      hint: e.hint,
+      group: 'Sports',
+    })),
+  ),
+];
 
 const ITEMS: Item[] = [
   { href: '/#rankings', label: 'Rankings', hint: 'Top metros by composite score' },
@@ -26,28 +44,7 @@ const ITEMS: Item[] = [
   { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Geography' },
   { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Geography' },
 
-  { href: '/sports', label: 'All sports', hint: 'Every Major League team across every sport, on one filterable map', group: 'Sports' },
-  { href: '/teams/football', label: 'Club Football', hint: 'Top European league hubs plus the full English pyramid; canonical club pages and league hubs', group: 'Sports' },
-  { href: '/teams/national', label: 'International Football', hint: 'National-team pages and tournament hubs: World Cup, continental cups, intercontinental tournaments', group: 'Sports' },
-  { href: '/teams/nfl', label: 'NFL', hint: 'All 32 active franchises; defunct franchises link from inside', group: 'Sports' },
-  { href: '/teams/cfb', label: 'College Football', hint: 'FBS programs through history: national titles, conference championships, and greatest games by Game Score', group: 'Sports' },
-  { href: '/teams/mlb', label: 'MLB', hint: 'All 30 active franchises; defunct franchises link from inside', group: 'Sports' },
-  { href: '/teams/nba', label: 'NBA', hint: 'All 30 active franchises; ABA cups in slate; live 2026 playoff status', group: 'Sports' },
-  { href: '/teams/nhl', label: 'NHL', hint: 'All 32 active franchises; Stanley Cups from 1910 in gold, WHA Avco in slate', group: 'Sports' },
-  { href: '/teams/ipl', label: 'IPL', hint: 'All 10 IPL franchises, season standings, playoffs, and finals history since 2008', group: 'Sports' },
-  { href: '/teams/afl', label: 'AFL', hint: 'Every VFL/AFL club since 1897, premierships, ladders, and the full Grand Final roll', group: 'Sports' },
-  { href: '/teams/nrl', label: 'NRL', hint: 'Every NSWRL/NRL club since 1908, premierships, ladders, and the full Grand Final roll', group: 'Sports' },
-  { href: '/teams/cfl', label: 'CFL', hint: 'Every CFL franchise, live standings, season records, and Grey Cup history since 1909', group: 'Sports' },
-  { href: '/teams/cricket', label: 'Cricket', hint: 'Every cricket international since 1877: our own recomputed rankings, number-one reigns, honours, and all 110 nations', group: 'Sports' },
-  { href: '/teams/rugby-union', label: 'Rugby Union', hint: 'Test rugby since 1871: Six Nations, Rugby Championship, World Cup finals, and world rankings since 2003', group: 'Sports' },
-  { href: '/teams/baseball', label: 'Baseball', hint: 'The complete World Baseball Classic: every edition, game and final since 2006, all 23 nations', group: 'Sports' },
-  { href: '/teams/olympics', label: 'Olympics', hint: 'Every Summer and Winter Games since 1896: all-time medal table with lineages folded into modern nations', group: 'Sports' },
-  { href: '/teams/basketball', label: 'Int\'l Basketball', hint: 'FIBA World Cup finals, every Olympic podium since 1936, and the EuroLeague club crown', group: 'Sports' },
-  { href: '/teams/hockey', label: 'Int\'l Ice Hockey', hint: 'Olympic ice hockey (the ultimate trophy) since 1920, the Canada Cup / World Cup of Hockey, and the annual IIHF World Championship', group: 'Sports' },
-  { href: '/teams/handball', label: 'Int\'l Handball', hint: 'Olympic men\'s handball (the ultimate trophy) and the IHF World Championship since 1938', group: 'Sports' },
-  { href: '/teams/volleyball', label: 'Int\'l Volleyball', hint: 'Olympic men\'s volleyball (the ultimate trophy) since 1964 and the FIVB World Championship since 1949', group: 'Sports' },
-  { href: '/teams/wfootball', label: "Women's Football", hint: 'Honors and finals history: UWCL, FIFA Champions Cup, WSL, Women\'s FA Cup, Liga F, NWSL Championship and Shield', group: 'Sports' },
-  { href: '/teams/wnba', label: 'WNBA', hint: 'Every WNBA franchise current and defunct, all-time records, champions since 1997', group: 'Sports' },
+  ...SPORTS_ITEMS,
 
   {
     href: 'https://citizenofnowhere.substack.com',

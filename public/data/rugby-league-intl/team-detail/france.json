@@ -1,0 +1,46 @@
+{
+  "slug": "france",
+  "name": "France",
+  "results": [
+    {
+      "year": "1989-1992",
+      "finish": "Semi-finalist",
+      "host": "Home-and-away"
+    },
+    {
+      "year": "1977",
+      "finish": "Semi-finalist",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1972",
+      "finish": "Semi-finalist",
+      "host": "France"
+    },
+    {
+      "year": "1970",
+      "finish": "Semi-finalist",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1968",
+      "finish": "Runners-up",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1960",
+      "finish": "Semi-finalist",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1957",
+      "finish": "Semi-finalist",
+      "host": "Australia"
+    },
+    {
+      "year": "1954",
+      "finish": "Runners-up",
+      "host": "France"
+    }
+  ]
+}

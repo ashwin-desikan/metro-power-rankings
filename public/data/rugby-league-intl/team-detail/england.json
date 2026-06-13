@@ -1,0 +1,41 @@
+{
+  "slug": "england",
+  "name": "England",
+  "results": [
+    {
+      "year": "2021",
+      "finish": "Semi-finalist",
+      "host": "England"
+    },
+    {
+      "year": "2017",
+      "finish": "Runners-up",
+      "host": "Australia, NZ & PNG"
+    },
+    {
+      "year": "2013",
+      "finish": "Semi-finalist",
+      "host": "England & Wales"
+    },
+    {
+      "year": "2008",
+      "finish": "Semi-finalist",
+      "host": "Australia"
+    },
+    {
+      "year": "2000",
+      "finish": "Semi-finalist",
+      "host": "British Isles"
+    },
+    {
+      "year": "1995",
+      "finish": "Runners-up",
+      "host": "England & Wales"
+    },
+    {
+      "year": "1975",
+      "finish": "Runners-up",
+      "host": "Australia, NZ, France & UK"
+    }
+  ]
+}

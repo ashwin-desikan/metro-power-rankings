@@ -1,0 +1,328 @@
+{
+  "editions": [
+    {
+      "ed": 1,
+      "year": "1954",
+      "host": "France",
+      "teams": 4,
+      "champion": "Great Britain",
+      "runner_up": "France",
+      "score": "16-12",
+      "semifinalists": [
+        "Australia",
+        "New Zealand"
+      ]
+    },
+    {
+      "ed": 2,
+      "year": "1957",
+      "host": "Australia",
+      "teams": 4,
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "round-robin",
+      "semifinalists": [
+        "New Zealand",
+        "France"
+      ]
+    },
+    {
+      "ed": 3,
+      "year": "1960",
+      "host": "United Kingdom",
+      "teams": 4,
+      "champion": "Great Britain",
+      "runner_up": "Australia",
+      "score": "round-robin",
+      "semifinalists": [
+        "New Zealand",
+        "France"
+      ]
+    },
+    {
+      "ed": 4,
+      "year": "1968",
+      "host": "Australia & New Zealand",
+      "teams": 4,
+      "champion": "Australia",
+      "runner_up": "France",
+      "score": "20-2",
+      "semifinalists": [
+        "Great Britain",
+        "New Zealand"
+      ]
+    },
+    {
+      "ed": 5,
+      "year": "1970",
+      "host": "United Kingdom",
+      "teams": 4,
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "12-7",
+      "semifinalists": [
+        "France",
+        "New Zealand"
+      ]
+    },
+    {
+      "ed": 6,
+      "year": "1972",
+      "host": "France",
+      "teams": 4,
+      "champion": "Great Britain",
+      "runner_up": "Australia",
+      "score": "10-10 (a.e.t.)",
+      "semifinalists": [
+        "France",
+        "New Zealand"
+      ]
+    },
+    {
+      "ed": 7,
+      "year": "1975",
+      "host": "Australia, NZ, France & UK",
+      "teams": 5,
+      "champion": "Australia",
+      "runner_up": "England",
+      "score": "round-robin",
+      "semifinalists": [
+        "Wales",
+        "New Zealand"
+      ]
+    },
+    {
+      "ed": 8,
+      "year": "1977",
+      "host": "Australia & New Zealand",
+      "teams": 4,
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "13-12",
+      "semifinalists": [
+        "New Zealand",
+        "France"
+      ]
+    },
+    {
+      "ed": 9,
+      "year": "1985-1988",
+      "host": "Home-and-away",
+      "teams": 5,
+      "champion": "Australia",
+      "runner_up": "New Zealand",
+      "score": "25-12",
+      "semifinalists": [
+        "Great Britain",
+        "Papua New Guinea"
+      ]
+    },
+    {
+      "ed": 10,
+      "year": "1989-1992",
+      "host": "Home-and-away",
+      "teams": 5,
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "10-6",
+      "semifinalists": [
+        "New Zealand",
+        "France"
+      ]
+    },
+    {
+      "ed": 11,
+      "year": "1995",
+      "host": "England & Wales",
+      "teams": 10,
+      "champion": "Australia",
+      "runner_up": "England",
+      "score": "16-8",
+      "semifinalists": [
+        "New Zealand",
+        "Wales"
+      ]
+    },
+    {
+      "ed": 12,
+      "year": "2000",
+      "host": "British Isles",
+      "teams": 16,
+      "champion": "Australia",
+      "runner_up": "New Zealand",
+      "score": "40-12",
+      "semifinalists": [
+        "England",
+        "Wales"
+      ]
+    },
+    {
+      "ed": 13,
+      "year": "2008",
+      "host": "Australia",
+      "teams": 10,
+      "champion": "New Zealand",
+      "runner_up": "Australia",
+      "score": "34-20",
+      "semifinalists": [
+        "England",
+        "Fiji"
+      ]
+    },
+    {
+      "ed": 14,
+      "year": "2013",
+      "host": "England & Wales",
+      "teams": 14,
+      "champion": "Australia",
+      "runner_up": "New Zealand",
+      "score": "34-2",
+      "semifinalists": [
+        "England",
+        "Fiji"
+      ]
+    },
+    {
+      "ed": 15,
+      "year": "2017",
+      "host": "Australia, NZ & PNG",
+      "teams": 14,
+      "champion": "Australia",
+      "runner_up": "England",
+      "score": "6-0",
+      "semifinalists": [
+        "Fiji",
+        "Tonga"
+      ]
+    },
+    {
+      "ed": 16,
+      "year": "2021",
+      "host": "England",
+      "teams": 16,
+      "champion": "Australia",
+      "runner_up": "Samoa",
+      "score": "30-10",
+      "semifinalists": [
+        "England",
+        "New Zealand"
+      ]
+    }
+  ],
+  "finals": [
+    {
+      "year": "1954",
+      "champion": "Great Britain",
+      "runner_up": "France",
+      "score": "16-12",
+      "host": "France"
+    },
+    {
+      "year": "1957",
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "round-robin",
+      "host": "Australia"
+    },
+    {
+      "year": "1960",
+      "champion": "Great Britain",
+      "runner_up": "Australia",
+      "score": "round-robin",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1968",
+      "champion": "Australia",
+      "runner_up": "France",
+      "score": "20-2",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1970",
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "12-7",
+      "host": "United Kingdom"
+    },
+    {
+      "year": "1972",
+      "champion": "Great Britain",
+      "runner_up": "Australia",
+      "score": "10-10 (a.e.t.)",
+      "host": "France"
+    },
+    {
+      "year": "1975",
+      "champion": "Australia",
+      "runner_up": "England",
+      "score": "round-robin",
+      "host": "Australia, NZ, France & UK"
+    },
+    {
+      "year": "1977",
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "13-12",
+      "host": "Australia & New Zealand"
+    },
+    {
+      "year": "1985-1988",
+      "champion": "Australia",
+      "runner_up": "New Zealand",
+      "score": "25-12",
+      "host": "Home-and-away"
+    },
+    {
+      "year": "1989-1992",
+      "champion": "Australia",
+      "runner_up": "Great Britain",
+      "score": "10-6",
+      "host": "Home-and-away"
+    },
+    {
+      "year": "1995",
+      "champion": "Australia",
+      "runner_up": "England",
+      "score": "16-8",
+      "host": "England & Wales"
+    },
+    {
+      "year": "2000",
+      "champion": "Australia",
+      "runner_up": "New Zealand",
+      "score": "40-12",
+      "host": "British Isles"
+    },
+    {
+      "year": "2008",
+      "champion": "New Zealand",
+      "runner_up": "Australia",
+      "score": "34-20",
+      "host": "Australia"
+    },
+    {
+      "year": "2013",
+      "champion": "Australia",
+      "runner_up": "New Zealand",
+      "score": "34-2",
+      "host": "England & Wales"
+    },
+    {
+      "year": "2017",
+      "champion": "Australia",
+      "runner_up": "England",
+      "score": "6-0",
+      "host": "Australia, NZ & PNG"
+    },
+    {
+      "year": "2021",
+      "champion": "Australia",
+      "runner_up": "Samoa",
+      "score": "30-10",
+      "host": "England"
+    }
+  ],
+  "total_editions": 16,
+  "total_nations": 10
+}

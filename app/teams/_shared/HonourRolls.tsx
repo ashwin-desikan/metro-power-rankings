@@ -18,9 +18,13 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 export default function HonourRolls({
   portal,
   order,
+  links,
 }: {
   portal: Portal;
   order?: string[];
+  // Optional winner/runner-up name -> href map. When a club has a page (e.g. a
+  // Below the Line club), its name in the roll renders as a link.
+  links?: Record<string, string>;
 }) {
   const keys = (order ?? Object.keys(portal.rolls)).filter((k) => portal.rolls[k]?.length);
   const multi = keys.length > 1;
@@ -47,11 +51,21 @@ export default function HonourRolls({
           <div className="overflow-y-auto max-h-[340px]">
             <table className="w-full text-xs">
               <tbody>
-                {portal.rolls[k].map((r, i) => (
-                  <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
+                {/* Rolls are stored oldest-first in the ETL; render newest-first
+                    to match every other season-by-season table on the site. */}
+                {[...portal.rolls[k]].reverse().map((r, i) => (
+                  <tr key={`${r.season}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1 pr-2 tabular-nums whitespace-nowrap align-top" style={mono}>{r.season}</td>
-                    <td className="py-1 pr-2 font-medium">{r.winner}</td>
-                    <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell">{r.ru ?? ""}</td>
+                    <td className="py-1 pr-2 font-medium">
+                      {links?.[r.winner] ? (
+                        <Link href={links[r.winner]} className="hover:text-[var(--accent)] hover:underline">{r.winner}</Link>
+                      ) : r.winner}
+                    </td>
+                    <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell">
+                      {r.ru ? (links?.[r.ru] ? (
+                        <Link href={links[r.ru]} className="hover:text-[var(--accent)] hover:underline">{r.ru}</Link>
+                      ) : r.ru) : ""}
+                    </td>
                   </tr>
                 ))}
               </tbody>

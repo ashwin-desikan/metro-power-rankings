@@ -6,9 +6,9 @@ import { belowLineLinksForPortal } from "@/lib/belowTheLine";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
-const PATH = "/teams/volleyball/domestic";
-const TITLE = "Domestic Volleyball";
-const DESC = "Club volleyball's honours boards: Italy's SuperLega, Poland's PlusLiga, and Japan's SV.League. Winners only, by design.";
+const PATH = "/teams/rugby-league/british";
+const TITLE = "British Rugby League";
+const DESC = "British rugby league's top-flight champions: the Northern Union, RFL Championship and Super League lineage since 1895. Winners only, by design.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -18,31 +18,33 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
-export default function DomesticVolleyballPage() {
-  const portal = getHonourPortal("volleyball-domestic");
+export default function BritishRugbyLeaguePage() {
+  const portal = getHonourPortal("rugby-league");
   if (!portal) return null;
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <div className="mb-3">
-        <Link href="/teams/volleyball"
+        <Link href="/teams/rugby-league"
           className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border hover:border-[var(--accent)] hover:text-[var(--accent)] transition"
           style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}>
-          <span aria-hidden>←</span> Back to International Volleyball
+          <span aria-hidden>←</span> Back to International Rugby League
         </Link>
       </div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>{" / "}
-        <Link href="/teams/volleyball" className="hover:underline">Volleyball</Link>{" / "}
-        <span>Domestic</span>
+        <Link href="/sports" className="hover:underline">Sports</Link>{" / "}
+        <Link href="/teams/rugby-league" className="hover:underline">Rugby League</Link>{" / "}
+        <span>Britain</span>
       </nav>
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Domestic Volleyball</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">British Rugby League</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          Club volleyball&apos;s honours boards: Italy&apos;s SuperLega, Poland&apos;s PlusLiga,
-          and Japan&apos;s SV.League. Winners only, by design.
+          British rugby league&apos;s top-flight champions in one unbroken line: the Northern
+          Union Championship (1895), the Rugby Football League Championship, and the Super
+          League since 1996. Winners only, by design. Distinct from the rugby union game.
         </p>
       </header>
-      <HonourRolls portal={portal} order={["superlega", "plusliga", "svleague"]} links={belowLineLinksForPortal("volleyball-domestic")} />
+      <HonourRolls portal={portal} links={belowLineLinksForPortal("rugby-league")} />
     </main>
   );
 }

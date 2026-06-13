@@ -63,6 +63,10 @@ const SERVER_ONLY_MODULES = [
   "@/lib/handball",
   "@/lib/volleyball",
   "@/lib/honourRolls",
+  "@/lib/belowTheLine",
+  "@/lib/rugbyLeagueIntl",
+  "@/lib/wintl",
+  "@/lib/domesticHonours",
 ];
 
 const SCAN_DIRS = ["app", "components"];

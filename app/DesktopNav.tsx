@@ -3,12 +3,18 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { leagueStatusFor, clubFootballStatus, LeagueStatusTag, type LeagueStatus } from "@/lib/leagueStatus";
+import { MARQUEE_HUBS } from "@/lib/sportsCatalog";
 
 // Client-side desktop nav. Replaces the pure-CSS hover dropdowns that were
 // failing on touch and slow-hover environments. Each dropdown is now a
 // proper React state toggle: click opens, click outside closes, escape
 // closes. Hover still works on desktop (mouseenter opens; the menu does
 // not close on mouseleave because click-to-open users expect it to stay).
+//
+// The Sports dropdown is a curated shortcut, not the full catalog: it shows
+// the marquee hubs (see lib/sportsCatalog) and routes to /sports for the
+// complete, family-grouped league directory. That keeps the menu short as the
+// number of league portals grows.
 
 type DropdownProps = {
   id: string;
@@ -152,66 +158,6 @@ function SportsNavItem({ href, name, sport }: { href: string; name: string; spor
   );
 }
 
-const OTHER_SPORTS = [
-  { href: "/teams/ipl", name: "IPL", sport: "Cricket" },
-  { href: "/teams/afl", name: "AFL", sport: "Aussie Rules" },
-  { href: "/teams/nrl", name: "NRL", sport: "Rugby League" },
-  { href: "/teams/cfl", name: "CFL", sport: "Canadian Football" },
-  { href: "/teams/cricket", name: "Cricket", sport: "Cricket" },
-  { href: "/teams/rugby-union", name: "Rugby Union", sport: "Rugby Union" },
-  { href: "/teams/baseball", name: "Baseball", sport: "Baseball" },
-  { href: "/teams/olympics", name: "Olympics", sport: "Olympics" },
-  { href: "/teams/basketball", name: "Int'l Basketball", sport: "Basketball" },
-  { href: "/teams/hockey", name: "Int'l Ice Hockey", sport: "Hockey" },
-  { href: "/teams/handball", name: "Int'l Handball", sport: "Handball" },
-  { href: "/teams/volleyball", name: "Int'l Volleyball", sport: "Volleyball" },
-];
-
-function otherSportsAggregate(): { color: string; label: string } {
-  const live = OTHER_SPORTS.map((s) => leagueStatusFor(s.href)).filter(
-    (s): s is LeagueStatus => !!s && s.tone !== "offseason",
-  );
-  if (live.length === 0) return { color: NAV_TONE_COLOR.offseason, label: "Offseason" };
-  const order = ["worldcup", "playoffs", "regular"];
-  const tone = order.find((t) => live.some((s) => s.tone === t)) ?? "regular";
-  return { color: NAV_TONE_COLOR[tone], label: live.length + " live" };
-}
-
-// Expandable "Other Sports" row inside the Sports dropdown. Click to reveal the
-// minor league hubs. stopPropagation keeps the parent dropdown from closing.
-function SportsNavGroup() {
-  const [open, setOpen] = useState(false);
-  const agg = otherSportsAggregate();
-  return (
-    <div>
-      <button
-        type="button"
-        onClick={(e) => { e.stopPropagation(); setOpen((v) => !v); }}
-        aria-expanded={open}
-        className="w-full text-left flex items-center gap-2.5 px-4 py-2 hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-      >
-        <span className="inline-block rounded-full flex-shrink-0" style={{ width: 7, height: 7, background: agg.color }} aria-hidden="true" />
-        <span className="flex-1 min-w-0">
-          <span className="block text-sm leading-tight">Other Sports</span>
-          <span className="block text-[11px] leading-tight" style={{ color: "var(--text-dim)" }}>IPL &middot; AFL &middot; NRL &middot; CFL &middot; Cricket &middot; Rugby &middot; Baseball &middot; Olympics</span>
-        </span>
-        <svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" style={{ transform: open ? "rotate(180deg)" : "none", transition: "transform 0.15s" }}>
-          <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-        </svg>
-      </button>
-      {open && (
-        <div>
-          {OTHER_SPORTS.map((s) => (
-            <div key={s.href} className="pl-3">
-              <SportsNavItem href={s.href} name={s.name} sport={s.sport} />
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function DesktopNav({ updated }: { updated: string | null }) {
   const [openId, setOpenId] = useState<string | null>(null);
 
@@ -249,18 +195,17 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
           All sports <span aria-hidden className="text-[var(--text-dim)]">→</span>
         </a>
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <SportsNavItem href="/teams/football" name="Club Football" sport="Football" />
-        <SportsNavItem href="/teams/national" name="International Football" sport="Football" />
+        {MARQUEE_HUBS.map((e) => (
+          <SportsNavItem key={e.href} href={e.href} name={e.label} sport={e.sport} />
+        ))}
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <SportsNavItem href="/teams/nfl" name="NFL" sport="American Football" />
-        <SportsNavItem href="/teams/cfb" name="College Football" sport="American Football" />
-        <SportsNavItem href="/teams/mlb" name="MLB" sport="Baseball" />
-        <SportsNavItem href="/teams/nba" name="NBA" sport="Basketball" />
-        <SportsNavItem href="/teams/nhl" name="NHL" sport="Ice Hockey" />
-        <SportsNavGroup />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <SportsNavItem href="/teams/wfootball" name="Women's Football" sport="Football" />
-        <SportsNavItem href="/teams/wnba" name="WNBA" sport="Basketball" />
+        <a
+          href="/sports#league-directory"
+          className="block px-4 py-2.5 text-xs hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+          style={{ color: "var(--text-muted)" }}
+        >
+          Browse all leagues <span aria-hidden>→</span>
+        </a>
       </Dropdown>
 
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>

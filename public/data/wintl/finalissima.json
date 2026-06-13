@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "label": "Women's Finalissima",
+    "slug": "womens-finalissima",
+    "editions": 1,
+    "nations": 2,
+    "year_min": "2023",
+    "year_max": "2023"
+  },
+  "editions": [
+    {
+      "year": "2023",
+      "host": "England",
+      "champion": "England",
+      "runner_up": "Brazil",
+      "score": "1-1 (4-2 p)",
+      "venue": "Wembley Stadium, London"
+    }
+  ],
+  "finals": [
+    {
+      "year": "2023",
+      "champion": "England",
+      "runner_up": "Brazil",
+      "score": "1-1 (4-2 p)",
+      "host": "England"
+    }
+  ],
+  "nations": [
+    {
+      "slug": "england",
+      "name": "England",
+      "titles": 1,
+      "best_finish": "Champions"
+    },
+    {
+      "slug": "brazil",
+      "name": "Brazil",
+      "titles": 0,
+      "best_finish": "Runners-up"
+    }
+  ]
+}

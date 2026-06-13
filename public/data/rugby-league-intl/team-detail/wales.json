@@ -1,0 +1,21 @@
+{
+  "slug": "wales",
+  "name": "Wales",
+  "results": [
+    {
+      "year": "2000",
+      "finish": "Semi-finalist",
+      "host": "British Isles"
+    },
+    {
+      "year": "1995",
+      "finish": "Semi-finalist",
+      "host": "England & Wales"
+    },
+    {
+      "year": "1975",
+      "finish": "Semi-finalist",
+      "host": "Australia, NZ, France & UK"
+    }
+  ]
+}

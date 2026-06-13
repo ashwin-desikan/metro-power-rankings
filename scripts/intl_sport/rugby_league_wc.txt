@@ -1,0 +1,17 @@
+ed|year|host|champion|score|runner_up|sf1|sf2|teams
+1|1954|France|Great Britain|16-12|France|Australia|New Zealand|4
+2|1957|Australia|Australia|round-robin|Great Britain|New Zealand|France|4
+3|1960|United Kingdom|Great Britain|round-robin|Australia|New Zealand|France|4
+4|1968|Australia & New Zealand|Australia|20-2|France|Great Britain|New Zealand|4
+5|1970|United Kingdom|Australia|12-7|Great Britain|France|New Zealand|4
+6|1972|France|Great Britain|10-10 (a.e.t.)|Australia|France|New Zealand|4
+7|1975|Australia, NZ, France & UK|Australia|round-robin|England|Wales|New Zealand|5
+8|1977|Australia & New Zealand|Australia|13-12|Great Britain|New Zealand|France|4
+9|1985-1988|Home-and-away|Australia|25-12|New Zealand|Great Britain|Papua New Guinea|5
+10|1989-1992|Home-and-away|Australia|10-6|Great Britain|New Zealand|France|5
+11|1995|England & Wales|Australia|16-8|England|New Zealand|Wales|10
+12|2000|British Isles|Australia|40-12|New Zealand|England|Wales|16
+13|2008|Australia|New Zealand|34-20|Australia|England|Fiji|10
+14|2013|England & Wales|Australia|34-2|New Zealand|England|Fiji|14
+15|2017|Australia, NZ & PNG|Australia|6-0|England|Fiji|Tonga|14
+16|2021|England|Australia|30-10|Samoa|England|New Zealand|16

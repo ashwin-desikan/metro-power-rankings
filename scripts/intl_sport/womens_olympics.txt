@@ -1,0 +1,9 @@
+year|host|gold|silver|bronze|fourth
+1996|United States|United States|China|Norway|Brazil
+2000|Australia|Norway|United States|Germany|Brazil
+2004|Greece|United States|Brazil|Germany|Sweden
+2008|China|United States|Brazil|Germany|Japan
+2012|Great Britain|United States|Japan|Canada|France
+2016|Brazil|Germany|Sweden|Canada|Brazil
+2020|Japan|Canada|Sweden|United States|Australia
+2024|France|United States|Brazil|Germany|Spain

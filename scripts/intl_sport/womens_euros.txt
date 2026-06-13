@@ -1,0 +1,15 @@
+year|host|champion|score|runner_up|sf1|sf2
+1984|No official host|Sweden|1-1 (4-3 p)|England|Denmark|Italy
+1987|Norway|Norway|2-1|Sweden|Italy|England
+1989|West Germany|West Germany|4-1|Norway|Sweden|Italy
+1991|Denmark|Germany|3-1 (a.e.t.)|Norway|Denmark|Italy
+1993|Italy|Norway|1-0|Italy|Denmark|Germany
+1995|No official host|Germany|3-2|Sweden|England|Norway
+1997|Norway & Sweden|Germany|2-0|Italy|Spain|Sweden
+2001|Germany|Germany|1-0 (g.g.)|Sweden|Denmark|Norway
+2005|England|Germany|3-1|Norway|Finland|Sweden
+2009|Finland|Germany|6-2|England|Netherlands|Norway
+2013|Sweden|Germany|1-0|Norway|Denmark|Sweden
+2017|Netherlands|Netherlands|4-2|Denmark|Austria|England
+2022|England|England|2-1 (a.e.t.)|Germany|France|Sweden
+2025|Switzerland|England|1-1 (3-1 p)|Spain|Germany|Italy

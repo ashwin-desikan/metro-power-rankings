@@ -8,6 +8,7 @@ import { getBasketballTeamForCountry } from "@/lib/basketball";
 import { getHockeyTeamForCountry } from "@/lib/hockey";
 import { getHandballTeamForCountry } from "@/lib/handball";
 import { getVolleyballTeamForCountry } from "@/lib/volleyball";
+import { getRlTeamForCountry } from "@/lib/rugbyLeagueIntl";
 import { sportIcon } from "@/lib/sportLabels";
 
 // "National Teams" section on country hub pages: men's football, women's
@@ -35,7 +36,7 @@ import { sportIcon } from "@/lib/sportLabels";
 
 type SportKey =
   | "olympics" | "football" | "wfootball" | "cricket"
-  | "rugby" | "baseball" | "basketball" | "hockey" | "handball" | "volleyball";
+  | "rugby" | "baseball" | "basketball" | "hockey" | "handball" | "volleyball" | "rl";
 
 // Country (by lowercased country-page name) → its most popular national team,
 // for any country whose #2 card is NOT men's football. Everything else defaults
@@ -61,6 +62,8 @@ const PRIMARY_SPORT: Record<string, SportKey> = {
   canada: "hockey", finland: "hockey", sweden: "hockey",
   "czech republic": "hockey", slovakia: "hockey", latvia: "hockey",
   russia: "hockey", belarus: "hockey",
+  // Rugby league nations
+  "papua new guinea": "rl",
 };
 
 const chipStyle = {
@@ -148,7 +151,8 @@ export function countryHasNationalTeams(countryName: string): boolean {
     getBasketballTeamForCountry(countryName) ||
     getHockeyTeamForCountry(countryName) ||
     getHandballTeamForCountry(countryName) ||
-    getVolleyballTeamForCountry(countryName)
+    getVolleyballTeamForCountry(countryName) ||
+    getRlTeamForCountry(countryName)
   );
 }
 
@@ -162,7 +166,8 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
   const hockey = getHockeyTeamForCountry(countryName);
   const handball = getHandballTeamForCountry(countryName);
   const volleyball = getVolleyballTeamForCountry(countryName);
-  if (!men && !women && !cricket && !rugby && !baseball && !olympics && !basketball && !hockey && !handball && !volleyball) return null;
+  const rl = getRlTeamForCountry(countryName);
+  if (!men && !women && !cricket && !rugby && !baseball && !olympics && !basketball && !hockey && !handball && !volleyball && !rl) return null;
 
   const cricketMajors = cricket && cricket.honours
     ? cricket.honours.wc.titles + cricket.honours.t20wc.titles + cricket.honours.ct.titles +
@@ -188,11 +193,12 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
     hockey: hockey ? 35 + hockey.oly_gold * 120 + (hockey.wc_titles ?? 0) * 30 + (hockey.worlds_gold ?? 0) * 15 + rankBonus(hockey.oly_alltime_rank) : 0,
     handball: handball ? 30 + handball.oly_gold * 120 + handball.worlds_gold * 30 + rankBonus(handball.oly_alltime_rank) : 0,
     volleyball: volleyball ? 30 + volleyball.oly_gold * 120 + volleyball.worlds_gold * 30 + rankBonus(volleyball.oly_alltime_rank) : 0,
+    rl: rl ? 28 + rl.titles * 120 + rl.runner_ups * 20 + rl.semis * 6 : 0,
   };
 
   const primary: SportKey = PRIMARY_SPORT[countryName.toLowerCase()] ?? "football";
   const DEFAULT_PRIORITY: Record<SportKey, number> = {
-    olympics: 0, football: 1, wfootball: 2, basketball: 3, cricket: 4, rugby: 5, handball: 6, volleyball: 7, hockey: 8, baseball: 9,
+    olympics: 0, football: 1, wfootball: 2, basketball: 3, cricket: 4, rugby: 5, handball: 6, volleyball: 7, hockey: 8, baseball: 9, rl: 10,
   };
   const slot = (k: SportKey) => (k === "olympics" ? 0 : k === primary ? 1 : 2);
 
@@ -421,6 +427,22 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
         <Stat label="Worlds golds" value={`${volleyball.worlds_gold}`} />
       ) : null}
       <Stat label="Worlds medals" value={`${volleyball.worlds_medals}`} />
+    </Card>
+  ) });
+
+  if (rl) entries.push({ key: "rl", node: (
+    <Card key="rl" href={`/teams/rugby-league/${rl.slug}`} chip="Rugby League" sport="Rugby League"
+          name={rl.name}
+          chips={[{
+            label: plural(rl.titles, "World Cup"),
+            gold: rl.titles > 0,
+            title: "Rugby League World Cup titles",
+          }]}
+          note={rl.name === "Great Britain" && countryName !== "United Kingdom"
+            ? "Competed as Great Britain" : null}>
+      {rl.runner_ups > 0 ? <Stat label="Runner-up" value={`${rl.runner_ups}`} /> : null}
+      <Stat label="Semis" value={`${rl.semis}`} />
+      <Stat label="Best" value={rl.best_finish} />
     </Card>
   ) });
 

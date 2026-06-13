@@ -73,7 +73,7 @@ export const LEAGUE_HUBS: LeagueHub[] = [
   { key: "basketball-domestic", label: "Chinese Basketball Association", short: "CBA", icon: "🏀", sport: "Basketball", href: "/teams/basketball/domestic", countrySlugs: ["china"] },
   { key: "hockey-domestic", label: "KHL (Gagarin Cup)", short: "KHL", icon: "🏒", sport: "Ice Hockey", href: "/teams/hockey/domestic", countrySlugs: ["russia"] },
   { key: "county-championship", label: "County Championship", short: "County", icon: "🏏", sport: "Cricket", href: "/teams/cricket/county", countrySlugs: ["england", "wales"] },
-  { key: "rugby-league", label: "Rugby League (Super League)", short: "Super League", icon: "🏉", sport: "Rugby League", href: "/teams/rugby-league", countrySlugs: ["england", "france"] },
+  { key: "rugby-league", label: "Rugby League (Super League)", short: "Super League", icon: "🏉", sport: "Rugby League", href: "/teams/rugby-league/british", countrySlugs: ["england", "france"] },
 ];
 
 // Per-country display order (most popular league first). Only countries with

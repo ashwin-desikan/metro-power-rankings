@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HonourRolls from "@/app/teams/_shared/HonourRolls";
 import { getHonourPortal } from "@/lib/honourRolls";
+import { belowLineLinksForPortal } from "@/lib/belowTheLine";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -41,7 +42,7 @@ export default function DomesticHandballPage() {
           the strongest league in the world. Winners only, by design.
         </p>
       </header>
-      <HonourRolls portal={portal} />
+      <HonourRolls portal={portal} links={belowLineLinksForPortal("handball-domestic")} />
     </main>
   );
 }
