@@ -91,7 +91,11 @@ export function getBaseballTeamDetail(slug: string): BaseballTeamDetail | null {
 // Country page name -> team name where they diverge.
 const COUNTRY_ALIASES: Record<string, string> = {
   "taiwan": "chinese taipei",
+  // Great Britain national teams also surface on the home nations.
   "united kingdom": "great britain",
+  "england": "great britain",
+  "scotland": "great britain",
+  "wales": "great britain",
   "czech republic": "czechia",
   "united states of america": "united states",
 };

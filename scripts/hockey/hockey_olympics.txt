@@ -1,0 +1,27 @@
+Year	Gold	Silver	Bronze
+1920	Canada	United States	Czechoslovakia
+1924	Canada	United States	Great Britain
+1928	Canada	Sweden	Switzerland
+1932	Canada	United States	Germany
+1936	Great Britain	Canada	United States
+1948	Canada	Czechoslovakia	Switzerland
+1952	Canada	United States	Sweden
+1956	Soviet Union	United States	Canada
+1960	United States	Canada	Soviet Union
+1964	Soviet Union	Sweden	Czechoslovakia
+1968	Soviet Union	Czechoslovakia	Canada
+1972	Soviet Union	United States	Czechoslovakia
+1976	Soviet Union	Czechoslovakia	West Germany
+1980	United States	Soviet Union	Sweden
+1984	Soviet Union	Czechoslovakia	Sweden
+1988	Soviet Union	Finland	Sweden
+1992	Unified Team	Canada	Czechoslovakia
+1994	Sweden	Canada	Finland
+1998	Czech Republic	Russia	Finland
+2002	Canada	United States	Russia
+2006	Sweden	Finland	Czech Republic
+2010	Canada	United States	Finland
+2014	Canada	Sweden	Finland
+2018	Olympic Athletes from Russia	Germany	Canada
+2022	Finland	ROC	Slovakia
+2026	United States	Canada	Finland

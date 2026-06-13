@@ -3,6 +3,7 @@ import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { getAllRugbyTeams, getRugbyHub, rugbyWinPct } from "@/lib/rugbyUnion";
 import { getRugbyClubRolls } from "@/lib/rugbyClubs";
+import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -277,7 +278,10 @@ export default function RugbyUnionHubPage() {
                 style={card}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="font-semibold">{t.name}</span>
+                  <span className="font-semibold inline-flex items-center gap-1.5">
+                    {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" /> : null}
+                    {t.name}
+                  </span>
                   <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border"
                         style={{ ...card, ...mono }}>
                     {t.six_nations ? "Six Nations" : "SANZAAR"}
@@ -324,7 +328,8 @@ export default function RugbyUnionHubPage() {
                 return (
                   <tr key={t.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1.5 px-3">
-                      <Link href={`/teams/rugby-union/${t.slug}`} className="hover:text-[var(--accent)] font-medium">
+                      <Link href={`/teams/rugby-union/${t.slug}`} className="hover:text-[var(--accent)] font-medium inline-flex items-center gap-1.5">
+                        {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" /> : null}
                         {t.name}
                       </Link>
                     </td>

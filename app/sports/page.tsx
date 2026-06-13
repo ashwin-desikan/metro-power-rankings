@@ -207,6 +207,14 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     team_count: 0,
   },
   {
+    league: "IIHF",
+    label: "International Ice Hockey",
+    sport: "Hockey",
+    status: "live",
+    page: "/teams/hockey",
+    team_count: 0,
+  },
+  {
     league: "CFB",
     label: "College Football",
     sport: "American Football",
@@ -247,7 +255,7 @@ export default function SportsPage() {
     "/teams/football", "/teams/national", "/teams/nfl", "/teams/cfb", "/teams/mlb",
     "/teams/nba", "/teams/nhl", "/teams/ipl", "/teams/afl", "/teams/nrl", "/teams/cfl",
     "/teams/cricket", "/teams/rugby-union", "/teams/baseball", "/teams/olympics", "/teams/basketball",
-    "/teams/wfootball", "/teams/wnba",
+    "/teams/hockey", "/teams/wfootball", "/teams/wnba",
   ];
   const liveHubByPage = new Map(
     composedCards.filter((c) => c.status === "live" && c.page).map((c) => [c.page as string, c]),

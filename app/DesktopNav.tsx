@@ -162,6 +162,7 @@ const OTHER_SPORTS = [
   { href: "/teams/baseball", name: "Baseball", sport: "Baseball" },
   { href: "/teams/olympics", name: "Olympics", sport: "Olympics" },
   { href: "/teams/basketball", name: "Int'l Basketball", sport: "Basketball" },
+  { href: "/teams/hockey", name: "Int'l Ice Hockey", sport: "Hockey" },
 ];
 
 function otherSportsAggregate(): { color: string; label: string } {

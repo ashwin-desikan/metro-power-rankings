@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
-import { getAllBasketballNations, getBasketballHub, getEuroleague } from "@/lib/basketball";
-import { flagCdnUrl } from "@/lib/international-display";
+import { getAllBasketballNations, getBasketballHub, getEuroleague, getFibaRanking } from "@/lib/basketball";
+import { flagCdnUrl, HISTORICAL_FLAG } from "@/lib/international-display";
+import FibaRankingTable from "./FibaRankingTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -27,17 +28,34 @@ export default function BasketballHubPage() {
   const hub = getBasketballHub();
   const nations = getAllBasketballNations();
   const el = getEuroleague();
+  const fiba = getFibaRanking();
   if (!hub) return null;
 
   const slugByName = new Map(nations.map((t) => [t.name, t.slug]));
+  // Former names (Soviet Union, Yugoslavia, Formosa, ...) link to the modern
+  // node they fold into (Russia, Serbia, Chinese Taipei, ...).
+  const lineageSlug = new Map<string, string>();
+  for (const t of nations) {
+    for (const former of t.lineage ?? []) lineageSlug.set(former, t.slug);
+  }
+  const flagFor = (name: string) => {
+    // Current nations get their flag; predecessor names (only in lineage) get
+    // the historical-entity marker, since flagcdn has no historical flags.
+    const ownSlug = slugByName.get(name);
+    const url = ownSlug ? flagCdnUrl(ownSlug) : null;
+    if (url) return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" />;
+    if (lineageSlug.has(name)) return <span aria-hidden className="mr-1">{HISTORICAL_FLAG}</span>;
+    return null;
+  };
   const teamLink = (name: string, className?: string) => {
-    const slug = slugByName.get(name);
+    const slug = slugByName.get(name) ?? lineageSlug.get(name);
+    const label = <>{flagFor(name)}{name}</>;
     return slug ? (
       <Link href={`/teams/basketball/${slug}`} className={`hover:text-[var(--accent)] ${className ?? ""}`}>
-        {name}
+        {label}
       </Link>
     ) : (
-      <span className={className}>{name}</span>
+      <span className={className}>{label}</span>
     );
   };
 
@@ -63,12 +81,33 @@ export default function BasketballHubPage() {
 
       <HubNav
         items={[
-          { label: "World Cup", href: "#world-cup" },
+          ...(fiba ? [{ label: "FIBA Ranking", href: "#fiba-ranking" }] : []),
           { label: "Olympic Podiums", href: "#olympics" },
+          { label: "World Cup", href: "#world-cup" },
           { label: "Nations", href: "#nations" },
           { label: "Methodology", href: "#methodology" },
         ]}
       />
+
+      {/* ---------------- NBA card ---------------- */}
+      <Link
+        href="/teams/nba"
+        className="block rounded-xl border p-4 mb-4 transition hover:border-[var(--accent)]"
+        style={card}
+      >
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="font-semibold text-base">National Basketball Association →</div>
+            <div className="text-xs text-[var(--text-muted)] mt-1">
+              The world&apos;s top club league: every NBA (and BAA/ABA) champion and the
+              all-time record of all 30 franchises, by metro.
+            </div>
+          </div>
+          <div className="text-xs text-[var(--text-dim)]" style={mono}>
+            United States &amp; Canada
+          </div>
+        </div>
+      </Link>
 
       {/* ---------------- EuroLeague card ---------------- */}
       {el ? (
@@ -94,35 +133,18 @@ export default function BasketballHubPage() {
         </Link>
       ) : null}
 
-      {/* ---------------- World Cup ---------------- */}
-      <section className="mb-10">
-        <h2 id="world-cup" className="text-lg font-semibold mb-1">FIBA World Cup finals</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-3">
-          Editions on file: {hub.wc_editions_on_file.join(", ")}.
-        </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
-          <table className="w-full text-sm min-w-[560px]">
-            <thead>
-              <tr className="text-left text-xs text-[var(--text-muted)]">
-                <th className="py-2 px-3 font-medium">Year</th>
-                <th className="py-2 px-3 font-medium">Champion</th>
-                <th className="py-2 px-3 font-medium">Score</th>
-                <th className="py-2 px-3 font-medium">Runner-up</th>
-              </tr>
-            </thead>
-            <tbody>
-              {hub.wc_finals.map((f) => (
-                <tr key={f.year} className="border-t" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-2 px-3 tabular-nums" style={mono}>{f.year}</td>
-                  <td className="py-2 px-3 font-semibold">{teamLink(f.champion)}</td>
-                  <td className="py-2 px-3 tabular-nums" style={mono}>{f.score}</td>
-                  <td className="py-2 px-3">{teamLink(f.ru)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+      {/* ---------------- FIBA World Ranking ---------------- */}
+      {fiba ? (
+        <section className="mb-10">
+          <h2 id="fiba-ranking" className="text-lg font-semibold mb-1">FIBA World Ranking</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            The current FIBA World Ranking for Men, presented by Nike — all{" "}
+            {fiba.teams.length} ranked nations, filterable by FIBA zone. Updated as
+            new rankings are published (as of {fiba.label}).
+          </p>
+          <FibaRankingTable ranking={fiba} />
+        </section>
+      ) : null}
 
       {/* ---------------- Olympics ---------------- */}
       <section className="mb-10">
@@ -147,6 +169,36 @@ export default function BasketballHubPage() {
                   <td className="py-1.5 px-3 font-semibold" style={{ color: GOLD }}>{teamLink(p.gold)}</td>
                   <td className="py-1.5 px-3">{p.silver ? teamLink(p.silver) : ""}</td>
                   <td className="py-1.5 px-3">{p.bronze ? teamLink(p.bronze) : ""}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* ---------------- World Cup ---------------- */}
+      <section className="mb-10">
+        <h2 id="world-cup" className="text-lg font-semibold mb-1">FIBA World Cup finals</h2>
+        <p className="text-xs text-[var(--text-muted)] mb-3">
+          Editions on file: {hub.wc_editions_on_file.join(", ")}.
+        </p>
+        <div className="rounded-xl border overflow-x-auto" style={card}>
+          <table className="w-full text-sm min-w-[560px]">
+            <thead>
+              <tr className="text-left text-xs text-[var(--text-muted)]">
+                <th className="py-2 px-3 font-medium">Year</th>
+                <th className="py-2 px-3 font-medium">Champion</th>
+                <th className="py-2 px-3 font-medium">Score</th>
+                <th className="py-2 px-3 font-medium">Runner-up</th>
+              </tr>
+            </thead>
+            <tbody>
+              {hub.wc_finals.map((f) => (
+                <tr key={f.year} className="border-t" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-2 px-3 tabular-nums" style={mono}>{f.year}</td>
+                  <td className="py-2 px-3 font-semibold">{teamLink(f.champion)}</td>
+                  <td className="py-2 px-3 tabular-nums" style={mono}>{f.score}</td>
+                  <td className="py-2 px-3">{teamLink(f.ru)}</td>
                 </tr>
               ))}
             </tbody>

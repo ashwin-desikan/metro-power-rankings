@@ -26,8 +26,15 @@ from openpyxl import load_workbook
 SIX_NATIONS = {"England", "France", "Ireland", "Italy", "Scotland", "Wales"}
 SANZAAR = {"New Zealand", "Australia", "South Africa", "Argentina"}
 
-# Western Samoa rebranded to Samoa in 1997; merge under Samoa.
-NAME_CANON = {"Western Samoa": "Samoa"}
+# Western Samoa rebranded to Samoa in 1997; merge under Samoa. The others are
+# the user's canonical countries.json display names.
+NAME_CANON = {
+    "Western Samoa": "Samoa",
+    "Ivory Coast": "Côte d'Ivoire",
+    "Bosnia and Herzegovina": "Bosnia-Herzegovina",
+}
+# Keep existing URLs stable when the canonical name would change the slug.
+SLUG_OVERRIDE = {"Côte d'Ivoire": "ivory-coast", "Bosnia-Herzegovina": "bosnia-and-herzegovina"}
 
 
 def canon(n):
@@ -237,7 +244,7 @@ def main(xlsx_path, rank_path, out_dir):
 
     # ---------------- Assemble teams ----------------
     all_names = sorted(set(rec) | set(seasons_by_team))
-    slugs = {n: slugify(n) for n in all_names}
+    slugs = {n: SLUG_OVERRIDE.get(n, slugify(n)) for n in all_names}
     teams = []
     for name in all_names:
         t = rec.get(name)

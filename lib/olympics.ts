@@ -33,6 +33,7 @@ export type OlympicTeam = {
   summer: MedalLine;
   winter: MedalLine;
   best_rank: number;
+  alltime_rank: number | null;
   // Times this lineage topped a Games medal table, by golds and by total
   // medals, split Summer (1906 included) / Winter.
   no1: {

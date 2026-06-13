@@ -49,7 +49,9 @@ DISPLAY = {
     "Syrian Arab Republic": "Syria",
     "The Bahamas": "Bahamas",
     "Cabo Verde": "Cape Verde",
-    "Côte d'Ivoire": "Ivory Coast",
+    "Côte d'Ivoire": "Côte d'Ivoire",
+    "Ivory Coast": "Côte d'Ivoire",
+    "Bosnia and Herzegovina": "Bosnia-Herzegovina",
     "Türkiye": "Turkey",
     "Hong Kong, China": "Hong Kong",
     "Russian Federation": "Russia",
@@ -59,6 +61,9 @@ DISPLAY = {
 
 # Special entities: never joined to a single country card.
 SPECIAL = {"GDR", "ANZ", "WIF", "AHO", "MIX", "EOR", "IOA", "AIN"}
+
+# Keep existing page URLs stable when a canonical rename would shift the slug.
+SLUG_OVERRIDE = {"Côte d'Ivoire": "ivory-coast"}
 
 # Entity -> related modern teams (for team-page cross-links) and the country
 # pages that show the entity's card because they lack a modern team of their own.
@@ -167,7 +172,7 @@ def main(path, out_dir):
         summer = [r for r in rows if r["season"] in ("Summer", "Intercalated")]
         winter = [r for r in rows if r["season"] == "Winter"]
         teams.append({
-            "slug": slugify(name), "code": ent, "name": name,
+            "slug": SLUG_OVERRIDE.get(name, slugify(name)), "code": ent, "name": name,
             "special": ent in SPECIAL,
             "lineage": sorted({display(c) for c in LINEAGE if LINEAGE[c] == ent}) or None,
             "apps": len(rows), "summer_apps": len(summer), "winter_apps": len(winter),
@@ -187,6 +192,16 @@ def main(path, out_dir):
             "related_countries": RELATED.get(ent, {}).get("countries", []),
         })
     teams.sort(key=lambda t: (-t["g"], -t["s"], -t["b"]))
+
+    # All-time medal-table rank (gold, then silver, then bronze ordering, our
+    # lineage-folded version). Only medal-winning NOCs are ranked.
+    rank = 0
+    for t in teams:
+        if t["total"] > 0:
+            rank += 1
+            t["alltime_rank"] = rank
+        else:
+            t["alltime_rank"] = None
 
     slug_by_name = {t["name"]: t["slug"] for t in teams}
 

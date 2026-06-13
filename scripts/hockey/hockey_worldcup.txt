@@ -1,0 +1,10 @@
+# Canada Cup (1976-1991) + World Cup of Hockey (1996-2016). Champion, Runner-up.
+Year	Event	Champion	Runner-up
+1976	Canada Cup	Canada	Czechoslovakia
+1981	Canada Cup	Soviet Union	Canada
+1984	Canada Cup	Canada	Sweden
+1987	Canada Cup	Canada	Soviet Union
+1991	Canada Cup	Canada	United States
+1996	World Cup of Hockey	United States	Canada
+2004	World Cup of Hockey	Canada	Finland
+2016	World Cup of Hockey	Canada	Team Europe

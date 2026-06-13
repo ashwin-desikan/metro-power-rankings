@@ -73,6 +73,25 @@ export default async function BasketballNationPage(
             <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
+          {team.fiba_rank ? (
+            <Link
+              href="/teams/basketball#fiba-ranking"
+              className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs hover:border-[var(--accent)] transition"
+              style={card}
+              title={`FIBA World Ranking, as of the latest release`}
+            >
+              <span className="font-semibold">FIBA #{team.fiba_rank}</span>
+              <span className="text-[var(--text-muted)] tabular-nums" style={mono}>{team.fiba_pts?.toFixed(1)} pts</span>
+              {team.fiba_zone ? (
+                <span className="text-[var(--text-dim)]">{team.fiba_zone} #{team.fiba_zone_rank}</span>
+              ) : null}
+              {typeof team.fiba_delta === "number" && team.fiba_delta !== 0 ? (
+                <span style={{ color: team.fiba_delta > 0 ? "#16a34a" : "#dc2626" }}>
+                  {team.fiba_delta > 0 ? `▲${team.fiba_delta}` : `▼${Math.abs(team.fiba_delta)}`}
+                </span>
+              ) : null}
+            </Link>
+          ) : null}
         </div>
         {team.lineage ? (
           <p className="mt-1 text-sm text-[var(--text-muted)]">

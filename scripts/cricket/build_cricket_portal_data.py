@@ -46,6 +46,8 @@ HONOUR_KEY_BY_MAJOR = {
 NAME_CANON = {
     "United States of America": "United States",
     "Turks and Caicos Island": "Turks and Caicos Islands",
+    "Ivory Coast": "Côte d'Ivoire",
+    "Bosnia and Herzegovina": "Bosnia-Herzegovina",
 }
 
 

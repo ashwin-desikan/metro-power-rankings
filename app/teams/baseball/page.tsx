@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { getAllBaseballTeams, getBaseballHub } from "@/lib/baseball";
+import { getNpbHub } from "@/lib/npb";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -24,6 +25,7 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 
 export default function BaseballHubPage() {
   const hub = getBaseballHub();
+  const npb = getNpbHub();
   const teams = getAllBaseballTeams();
   if (!hub) return null;
 
@@ -71,6 +73,46 @@ export default function BaseballHubPage() {
           { label: "Methodology", href: "#methodology" },
         ]}
       />
+
+      {/* ---------------- Domestic league hubs ---------------- */}
+      <Link href="/teams/mlb"
+        className="block rounded-xl border p-4 mb-4 transition hover:border-[var(--accent)]"
+        style={card}>
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="font-semibold text-base">Major League Baseball →</div>
+            <div className="text-xs text-[var(--text-muted)] mt-1">
+              North America&apos;s top league: every World Series champion, pennants, and the
+              all-time record of all 30 franchises, by metro.
+            </div>
+          </div>
+          <div className="text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+            United States &amp; Canada
+          </div>
+        </div>
+      </Link>
+
+      {/* ---------------- NPB card ---------------- */}
+      {npb ? (
+        <Link href="/teams/baseball/npb"
+          className="block rounded-xl border p-4 mb-8 transition hover:border-[var(--accent)]"
+          style={card}>
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div>
+              <div className="font-semibold text-base">Nippon Professional Baseball →</div>
+              <div className="text-xs text-[var(--text-muted)] mt-1">
+                Japan&apos;s top league: every Japan Series champion since 1950, Central and
+                Pacific pennants, and the all-time record of the 12 clubs.
+              </div>
+            </div>
+            {npb.japan_series[0] ? (
+              <div className="text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                {npb.japan_series[0].year} Japan Series: {npb.japan_series[0].champion}
+              </div>
+            ) : null}
+          </div>
+        </Link>
+      ) : null}
 
       {/* ---------------- Champions ---------------- */}
       <section className="mb-10">

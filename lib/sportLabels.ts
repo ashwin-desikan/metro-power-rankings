@@ -35,7 +35,7 @@ export function uniqueDisplaySports(rawSports: Iterable<string>): string[] {
 // Emoji icon per sport for team-card meta lines. Women's ("W ...") variants
 // reuse the base sport. Returns "" when there is no good match.
 const SPORT_ICONS: Record<string, string> = {
-  "Basketball": "🏀", "Hockey": "🏒", "American Football": "🏈",
+  "Basketball": "🏀", "Hockey": "🏒", "Ice Hockey": "🏒", "American Football": "🏈",
   "Canadian Football": "🏈", "Baseball": "⚾", "Football": "⚽", "Soccer": "⚽",
   "Rugby Union": "🏉", "Rugby League": "🏉", "Rugby": "🏉",
   "Aussie Rules": "🦘", "T20 Cricket": "🏏", "Test Cricket": "🏏", "Cricket": "🏏",

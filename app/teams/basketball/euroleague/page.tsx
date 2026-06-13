@@ -3,6 +3,7 @@ import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { getEuroleague } from "@/lib/basketball";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import EuroleagueClubsTable from "./EuroleagueClubsTable";
 
 export const dynamicParams = false;
 const PATH = "/teams/basketball/euroleague";
@@ -20,13 +21,10 @@ export const metadata: Metadata = {
 
 const card = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
-const GOLD = "#d4af37";
 
 export default function EuroleaguePage() {
   const el = getEuroleague();
   if (!el) return null;
-
-  const clubs = [...el.clubs].sort((a, b) => b.titles - a.titles || b.w - a.w);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -78,6 +76,11 @@ export default function EuroleaguePage() {
             </span>
           ))}
         </p>
+        <p className="text-[11px] text-[var(--text-dim)] mb-3">
+          The Final Four column lists the two beaten semi-finalists, alongside the champion and
+          runner-up shown here. Final Four data begins with the 1987&ndash;88 season; earlier
+          seasons were decided without a Final Four.
+        </p>
         <div className="rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto" style={card}>
           <table className="w-full text-sm min-w-[480px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
@@ -85,6 +88,7 @@ export default function EuroleaguePage() {
                 <th className="py-2 px-3 font-medium">Season</th>
                 <th className="py-2 px-3 font-medium">Champion</th>
                 <th className="py-2 px-3 font-medium">Runner-up</th>
+                <th className="py-2 px-3 font-medium">Final Four</th>
               </tr>
             </thead>
             <tbody>
@@ -93,6 +97,7 @@ export default function EuroleaguePage() {
                   <td className="py-1.5 px-3 tabular-nums whitespace-nowrap" style={mono}>{r.season}</td>
                   <td className="py-1.5 px-3 font-semibold">{r.champion}</td>
                   <td className="py-1.5 px-3 text-[var(--text-muted)]">{r.ru}</td>
+                  <td className="py-1.5 px-3 text-xs text-[var(--text-dim)]">{r.f4_others.join(", ")}</td>
                 </tr>
               ))}
             </tbody>
@@ -104,44 +109,10 @@ export default function EuroleaguePage() {
       <section className="mb-10">
         <h2 id="clubs" className="text-lg font-semibold mb-1">All-time clubs</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
-          Every club in the workbook&apos;s record, ordered by titles then wins.
+          Every club in the workbook&apos;s record. Filter to the current EuroLeague
+          (this season&apos;s clubs) or show all teams.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
-          <table className="w-full text-sm min-w-[680px]">
-            <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
-              <tr className="text-left text-xs text-[var(--text-muted)]">
-                <th className="py-2 px-3 font-medium">Club</th>
-                <th className="py-2 px-3 font-medium">Country</th>
-                <th className="py-2 px-3 text-right font-medium">Seasons</th>
-                <th className="py-2 px-3 text-right font-medium">W</th>
-                <th className="py-2 px-3 text-right font-medium">L</th>
-                <th className="py-2 px-3 text-right font-medium">F4s</th>
-                <th className="py-2 px-3 text-right font-medium" style={{ color: GOLD }}>Titles</th>
-              </tr>
-            </thead>
-            <tbody>
-              {clubs.map((c) => (
-                <tr key={c.name} className="border-t" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1.5 px-3 font-medium">
-                    {c.name}
-                    {!c.in_team_list && c.titles > 0 ? (
-                      <span className="text-[10px] text-[var(--text-dim)]"> · historic</span>
-                    ) : null}
-                  </td>
-                  <td className="py-1.5 px-3 text-xs text-[var(--text-muted)]">{c.country}</td>
-                  <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{c.seasons}</td>
-                  <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{c.w}</td>
-                  <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{c.l}</td>
-                  <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{c.f4}</td>
-                  <td className="py-1.5 px-3 text-right tabular-nums font-semibold"
-                      style={{ ...mono, color: c.titles > 0 ? GOLD : "var(--text-dim)" }}>
-                    {c.titles}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <EuroleagueClubsTable clubs={el.clubs} />
       </section>
     </main>
   );

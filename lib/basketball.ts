@@ -21,12 +21,25 @@ export type BasketballNation = {
   gold: number; gold_years: number[];
   silver: number; bronze: number; medals: number;
   lineage: string[] | null;
+  fiba_rank?: number; fiba_pts?: number; fiba_zone?: string;
+  fiba_zone_rank?: number; fiba_delta?: number;
+};
+
+export type FibaTeam = {
+  rank: number; country: string; ioc: string; zone: string | null;
+  zoneRank: number; pts: number; delta: number;
+  slug: string | null; country_slug: string | null;
+};
+
+export type FibaRanking = {
+  date: string; label: string; source: string; teams: FibaTeam[];
 };
 
 export type BasketballNationDetail = {
   slug: string; name: string;
   campaigns: { year: number; w: number; l: number; finish: string | null; as: string | null }[];
   podium_years: { gold: number[]; silver: number[]; bronze: number[] };
+  fiba?: FibaTeam | null;
 };
 
 export type BasketballHub = {
@@ -37,11 +50,11 @@ export type BasketballHub = {
 };
 
 export type EuroleagueData = {
-  roll: { season: string; champion: string; ru: string }[];
+  roll: { season: string; champion: string; ru: string; f4_others: string[] }[];
   clubs: {
     name: string; country: string; w: number; l: number; seasons: number;
     f4: number; finals: number; titles: number; title_years: string[];
-    in_team_list: boolean;
+    in_team_list: boolean; metro: string | null; metro_slug: string | null;
   }[];
   most_titled: { name: string; titles: number }[];
   seasons: number;
@@ -75,6 +88,13 @@ export function getEuroleague(): EuroleagueData | null {
   return _el;
 }
 
+let _fiba: FibaRanking | null = null;
+
+export function getFibaRanking(): FibaRanking | null {
+  if (!_fiba) _fiba = loadJson<FibaRanking>("fiba_ranking.json");
+  return _fiba;
+}
+
 export function getBasketballNationBySlug(slug: string): BasketballNation | null {
   if (!_bySlug) _bySlug = new Map(getAllBasketballNations().map((t) => [t.slug, t]));
   return _bySlug.get(slug) ?? null;
@@ -93,9 +113,11 @@ export function getBasketballNationDetail(slug: string): BasketballNationDetail 
 const COUNTRY_ALIASES: Record<string, string> = {
   "united states of america": "united states",
   "taiwan": "chinese taipei",
+  // Great Britain national teams also surface on the home nations.
   "united kingdom": "great britain",
-  "czech republic": "czechia",
-  "turkiye": "turkey",
+  "england": "great britain",
+  "scotland": "great britain",
+  "wales": "great britain",
 };
 
 function norm(s: string): string {
@@ -148,13 +170,14 @@ export function getCountrySlugForBasketballNation(team: BasketballNation): strin
 }
 
 // Metro-card chips: EuroLeague titles by club name.
-let _elByName: Map<string, { titles: number; years: string[] }> | null = null;
+let _elByName: Map<string, { titles: number; years: string[]; f4: number }> | null = null;
 
-export function getEuroleagueHonours(name: string): { titles: number; years: string[] } | null {
+export function getEuroleagueHonours(name: string): { titles: number; years: string[]; f4: number } | null {
   if (!_elByName) {
     _elByName = new Map();
     for (const c of getEuroleague()?.clubs ?? []) {
-      if (c.titles > 0) _elByName.set(c.name, { titles: c.titles, years: c.title_years });
+      if (c.titles > 0 || c.f4 > 0)
+        _elByName.set(c.name, { titles: c.titles, years: c.title_years, f4: c.f4 });
     }
   }
   return _elByName.get(name) ?? null;

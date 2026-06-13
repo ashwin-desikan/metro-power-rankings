@@ -28,6 +28,8 @@ import { getT20Honours } from "@/lib/cricketClubs";
 import { getEuroleagueHonours } from "@/lib/basketball";
 import { rugbyClubColor, rugbyMonogram } from "@/lib/rugby-colors";
 import { cricketClubColor } from "@/lib/cricket-colors";
+import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
+import { getNpbTeamByName } from "@/lib/npb";
 import { isGoldStandardLeague } from "@/lib/goldStandard";
 import { getNflFranchiseByTeamName } from "@/lib/nfl";
 import { getMlbFranchiseByTeamName } from "@/lib/mlb";
@@ -1636,6 +1638,32 @@ function TeamsSection({
                           )}
                         </div>
                       )}
+                      {r.stats && r.league === "npb" && (
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                            style={{
+                              background: r.stats.champ > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+                              color: r.stats.champ > 0 ? "#d4af37" : "var(--text-dim)",
+                            }}
+                            title="Japan Series titles won during the years this franchise played in this metro"
+                          >
+                            {r.stats.champ === 0 ? "No JS" : r.stats.champ === 1 ? "1 Japan Series" : `${r.stats.champ} Japan Series`}
+                          </span>
+                          <span
+                            className="text-[10px] px-1.5 py-0.5 rounded"
+                            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+                            title="Regular-season win percentage during the years in this metro"
+                          >
+                            {r.stats.pct.toFixed(3)} W%
+                          </span>
+                          {r.stats.finals > 0 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }} title="League pennants won in this metro">
+                              {r.stats.finals} pennant{r.stats.finals === 1 ? "" : "s"}
+                            </span>
+                          )}
+                        </div>
+                      )}
                       {r.stats && r.league === "wnba" && (
                         <div className="flex gap-1.5 mt-2 flex-wrap">
                           <span
@@ -1799,6 +1827,9 @@ function TeamCard({
     team.sport === "American Football" && (team.league === "FBS" || team.league === "FCS")
       ? getCfbTeamForName(team.team)
       : undefined;
+  // NPB clubs come through the workbook tagged "Minor Lg Base"; resolve them to
+  // the NPB hub so metro cards link correctly and show the right division.
+  const npbTeam = team.sport === "Baseball" ? getNpbTeamByName(team.team) : null;
   const link: TeamLink | null = cfbTeam
     ? {
         slug: cfbTeam.slug,
@@ -1807,6 +1838,15 @@ function TeamCard({
         logoUrl: null,
         monogram: { bg: cfbTeam.color || "#444", fg: "#ffffff", mono: cfbMonogram(cfbTeam.name) },
         displayName: cfbTeam.name,
+      }
+    : npbTeam
+    ? {
+        slug: npbTeam.slug,
+        league: "npb",
+        href: `/teams/baseball/npb/${npbTeam.slug}`,
+        logoUrl: null,
+        monogram: { bg: "#444", fg: "#ffffff", mono: rugbyMonogram(npbTeam.name) },
+        displayName: npbTeam.name,
       }
     : resolveTeamLink(team.sport, team.team, team.league);
 
@@ -1826,7 +1866,7 @@ function TeamCard({
   const footyFranchise = aflFranchise ?? nrlFranchise;
   const wfootballClub = link?.league === "wfootball" ? getWClubByName(team.team) : undefined;
   const wHonor = (slug: string) => wfootballClub?.honors.find((h) => h.competition_slug === slug);
-  const displayLeague = wnbaFranchise ? "WNBA" : team.league;
+  const displayLeague = wnbaFranchise ? "WNBA" : npbTeam ? "NPB" : team.league;
   // For football, Gold Standard only applies to Level 1 (Big 5 top flight).
   // Lower-tier clubs in England/Spain/etc. share the same league label but
   // are not Gold — gate on level === "Major" (the ETL value for tier 1).
@@ -1849,7 +1889,13 @@ function TeamCard({
   const cricketColor = sportLower.includes("cricket") && t20Honours.length >= 0
     ? cricketClubColor(team.team)
     : null;
-  const clubColor = rugbyColor ?? (cricketColor && cricketColor.known ? cricketColor : null);
+  const elColor = sportLower.includes("basket") ? euroleagueClubColor(team.team) : null;
+  const clubColor = rugbyColor
+    ?? (elColor && elColor.known ? elColor : null)
+    ?? (cricketColor && cricketColor.known ? cricketColor : null);
+  const cardMono = sportLower.includes("basket")
+    ? euroleagueMonogram(team.team)
+    : rugbyMonogram(team.team);
   const elHonours = sportLower.includes("basket")
     ? getEuroleagueHonours(team.team)
     : null;
@@ -1866,13 +1912,22 @@ function TeamCard({
         {sportIcon(team.sport) && <span aria-hidden className="mr-1">{sportIcon(team.sport)}</span>}
         {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
-      {elHonours && (
+      {elHonours && (elHonours.titles > 0 || elHonours.f4 > 0) && (
         <div className="flex gap-1.5 mb-1.5 flex-wrap">
-          <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
-                style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
-                title={`EuroLeague: ${elHonours.years.join(", ")}`}>
-            {elHonours.titles}× EuroLeague
-          </span>
+          {elHonours.titles > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+                  style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+                  title={`EuroLeague titles: ${elHonours.years.join(", ")}`}>
+              {elHonours.titles}× EuroLeague
+            </span>
+          )}
+          {elHonours.f4 > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded font-medium tracking-wide"
+                  style={{ background: "rgba(120,140,170,0.16)", color: "var(--text-muted)" }}
+                  title="EuroLeague Final Four appearances">
+              {elHonours.f4} Final Four{elHonours.f4 === 1 ? "" : "s"}
+            </span>
+          )}
         </div>
       )}
       {t20Honours.length > 0 && (
@@ -1909,7 +1964,7 @@ function TeamCard({
             title={clubColor.known ? undefined : "Club colors pending"}
             aria-hidden
           >
-            {rugbyMonogram(team.team)}
+            {cardMono}
           </span>
         ) : null}
         {link ? (
@@ -2029,6 +2084,40 @@ function TeamCard({
             title="All-time regular-season win pct"
           >
             {mlbFranchise.win_pct.toFixed(3)} W%
+          </span>
+        </div>
+      )}
+      {npbTeam && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide"
+            style={{
+              background: npbTeam.js_titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)",
+              color: npbTeam.js_titles > 0 ? "#d4af37" : "var(--text-dim)",
+            }}
+            title="Japan Series titles (includes earlier franchise identities)"
+          >
+            {npbTeam.js_titles === 0
+              ? "No JS"
+              : npbTeam.js_titles === 1
+              ? "1 Japan Series"
+              : `${npbTeam.js_titles} Japan Series`}
+          </span>
+          {npbTeam.pennants > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}
+              title="Central/Pacific League pennants"
+            >
+              {npbTeam.pennants} pennant{npbTeam.pennants === 1 ? "" : "s"}
+            </span>
+          )}
+          <span
+            className="text-[10px] px-1.5 py-0.5 rounded"
+            style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
+            title="All-time regular-season win pct"
+          >
+            {npbTeam.win_pct.toFixed(3)} W%
           </span>
         </div>
       )}

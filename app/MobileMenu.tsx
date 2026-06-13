@@ -43,6 +43,7 @@ const ITEMS: Item[] = [
   { href: '/teams/baseball', label: 'Baseball', hint: 'The complete World Baseball Classic: every edition, game and final since 2006, all 23 nations', group: 'Sports' },
   { href: '/teams/olympics', label: 'Olympics', hint: 'Every Summer and Winter Games since 1896: all-time medal table with lineages folded into modern nations', group: 'Sports' },
   { href: '/teams/basketball', label: 'Int\'l Basketball', hint: 'FIBA World Cup finals, every Olympic podium since 1936, and the EuroLeague club crown', group: 'Sports' },
+  { href: '/teams/hockey', label: 'Int\'l Ice Hockey', hint: 'Olympic ice hockey (the ultimate trophy) since 1920, the Canada Cup / World Cup of Hockey, and the annual IIHF World Championship', group: 'Sports' },
   { href: '/teams/wfootball', label: "Women's Football", hint: 'Honors and finals history: UWCL, FIFA Champions Cup, WSL, Women\'s FA Cup, Liga F, NWSL Championship and Shield', group: 'Sports' },
   { href: '/teams/wnba', label: 'WNBA', hint: 'Every WNBA franchise current and defunct, all-time records, champions since 1997', group: 'Sports' },
 

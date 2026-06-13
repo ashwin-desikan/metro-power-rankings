@@ -2,8 +2,8 @@
 """International Basketball + EuroLeague data.
 
 Inputs (committed beside this script): basketballwc.txt (FIBA World Cup,
-7 editions on file: 1990, 1994, 2006, 2010, 2014, 2019, 2023 — pools +
-knockouts), basketballolympics.txt (Olympic podiums, all 21 editions),
+all editions 1950-2023 — pools + knockouts; 1950-1974 were round-robin
+finals), basketballolympics.txt (Olympic podiums, all 21 editions),
 plus the Euroleague Table sheet in OtherLeagues.xlsx.
 
 Lineages follow the user's Olympic rules: Soviet Union/Unified Team ->
@@ -37,6 +37,13 @@ LINEAGE = {
     "Soviet Union": "Russia", "Unified Team": "Russia",
     "Yugoslavia": "Serbia", "FR Yugoslavia": "Serbia",
     "Serbia and Montenegro": "Serbia",
+    # 1950-1986 predecessor/defunct entities, folded by the user's Olympic
+    # rules. Czechoslovakia folds into the modern node the WC data already
+    # labels "Czech Republic"; Formosa (1959) is the ROC, now Chinese Taipei.
+    "West Germany": "Germany",
+    "Czechoslovakia": "Czech Republic",
+    "Formosa": "Chinese Taipei",
+    "United Arab Republic": "Egypt",
 }
 
 # Canonical championship-game results for the editions on file. The dump's
@@ -44,6 +51,19 @@ LINEAGE = {
 # block with no header), so finals come from this reviewed table; the
 # parser's findings are printed as validation only.
 FINALS_CANON = {
+    # 1950-1974 were decided by a final round-robin (no championship game);
+    # the score shown is the decisive top-two meeting where the champion won
+    # it, or "round-robin" for 1974 where the title went on overall record.
+    1950: {"champion": "Argentina", "ru": "United States", "score": "64-50"},
+    1954: {"champion": "United States", "ru": "Brazil", "score": "62-41"},
+    1959: {"champion": "Brazil", "ru": "United States", "score": "81-67"},
+    1963: {"champion": "Brazil", "ru": "Yugoslavia", "score": "90-71"},
+    1967: {"champion": "Soviet Union", "ru": "Yugoslavia", "score": "71-59"},
+    1970: {"champion": "Yugoslavia", "ru": "Brazil", "score": "80-55"},
+    1974: {"champion": "Soviet Union", "ru": "Yugoslavia", "score": "round-robin"},
+    1978: {"champion": "Yugoslavia", "ru": "Soviet Union", "score": "82-81 (OT)"},
+    1982: {"champion": "Soviet Union", "ru": "United States", "score": "95-94"},
+    1986: {"champion": "United States", "ru": "Soviet Union", "score": "87-85"},
     1990: {"champion": "Yugoslavia", "ru": "Soviet Union", "score": "92-75"},
     1994: {"champion": "United States", "ru": "Russia", "score": "137-91"},
     1998: {"champion": "Yugoslavia", "ru": "Russia", "score": "64-62"},
@@ -58,6 +78,8 @@ FINALS_CANON = {
 
 def canon(name):
     name = re.sub(r"\(H\)", "", name.replace(" ", " ")).strip()
+    # Strip championship/host markers: (C), (H), (C, H), (H, C).
+    name = re.sub(r"\s*\((?:C|H)(?:\s*,\s*(?:C|H))*\)", "", name)
     name = re.sub(r"\[\w+\]", "", name).strip()
     return name
 
@@ -82,12 +104,16 @@ def parse_wc():
             continue
         # Sparse year markers: blocks can hold several editions. Any
         # "<year> FIBA World ..." title line re-anchors the current edition.
-        ym = re.search(r"\b((?:19|20)\d{2}) FIBA World", s)
-        if ym:
-            year, rnd = int(ym.group(1)), rnd if "final" in s.lower() else ""
-            if "final" in s.lower():
-                rnd = "Final"
-            continue
+        # A title or lede line re-anchors the edition year. Qualification
+        # tables reference prior editions ("1959 FIBA World Championship /
+        # host nation ...") as tab-delimited rows, so never let a table row
+        # (any line with a tab, or a "/ host nation" cell) re-anchor.
+        if "\t" not in raw and "/" not in s:
+            ym = re.search(r"\b((?:19|20)\d{2}) FIBA "
+                           r"(?:World Championship|Basketball World Cup)\b", s)
+            if ym:
+                year, rnd = int(ym.group(1)), ""
+                continue
         if s in ROUNDS or s.startswith("Classification"):
             rnd = s
             continue
@@ -153,6 +179,116 @@ def parse_euroleague():
     return out
 
 
+FIBA = os.path.join(HERE, "fiba_ranking.json")
+COUNTRIES = os.path.join(ROOT, "public", "data", "countries.json")
+
+# Geographic continent -> FIBA ranking zone. FIBA folds Oceania into Asia.
+_CONT_ZONE = {
+    "North America": "Americas", "South America": "Americas",
+    "Africa": "Africa", "Europe": "Europe", "Asia": "Asia", "Oceania": "Asia",
+}
+# Federations FIBA places in Europe despite a non-European geography.
+_FIBA_EUROPE = {"israel", "turkiye", "georgia", "armenia", "azerbaijan", "cyprus"}
+# FIBA name-slug -> countries.json slug, where slug/name matching would miss.
+_FIBA_TO_COUNTRY = {
+    "usa": "united-states", "turkiye": "turkey", "korea": "south-korea",
+    "uae": "united-arab-emirates", "czechia": "czech-republic",
+    "bosnia-and-herzegovina": "bosnia-herzegovina",
+    "virgin-islands": "us-virgin-islands",
+    "st-vincent-and-the-grenadines": "st-vincent-the-grenadines",
+    "brunei-darussalam": "brunei", "hong-kong-china": "hong-kong",
+    "chinese-taipei": "taiwan", "great-britain": "united-kingdom",
+    "central-african-rep": "central-african-republic", "st-lucia": "saint-lucia",
+    "cote-d-ivoire": "cote-divoire",
+}
+# FIBA name-slug -> portal basketball node slug, for the per-nation rank chip.
+_FIBA_TO_NODE = {
+    "usa": "united-states", "turkiye": "turkey", "korea": "south-korea",
+    "czechia": "czech-republic", "cote-d-ivoire": "ivory-coast",
+    "central-african-rep": "central-african-republic",
+}
+# FIBA slugs to leave as their FIBA team name (not the countries.json name).
+_FIBA_KEEP_NAME = {"chinese-taipei"}
+
+# Portal node display name -> countries.json slug, so the shown name is the
+# user's canonical country name. Slugs and internal keys are unchanged.
+NODE_CANON_SLUG = {"Ivory Coast": "cote-divoire"}
+
+
+def _country_names():
+    countries = json.load(io.open(COUNTRIES, encoding="utf-8"))
+    return {c["slug"]: c["name"] for c in countries}
+
+
+# Current country + metro for EuroLeague clubs NOT in the Team List. The
+# workbook stores the historical country (CSKA Moscow -> "Soviet Union"); we
+# show the modern country and link the metro. Clubs whose city is not yet a
+# metro in the corpus get a country but no metro (metro_slug stays None).
+EL_CLUB_META = {
+    "PBC CSKA Moscow": ("Russia", "Moscow", "moscow"),
+    "KK Split": ("Croatia", "Split", "split"),
+    "Rīgas ASK": ("Latvia", "Riga", "riga"),
+    "KK Cibona": ("Croatia", "Zagreb", "zagreb"),
+    "KK Bosna": ("Bosnia-Herzegovina", "Sarajevo", "sarajevo"),
+    "BC Dinamo Tbilisi": ("Georgia", "Tbilisi", "tbilisi"),
+    "KK Budućnost": ("Montenegro", "Podgorica", "podgorica"),
+    "BC Budivelnyk": ("Ukraine", "Kyiv", "kyiv"),
+    "BC Brno": ("Czech Republic", "Brno", "brno"),
+    "Basket Brno": ("Czech Republic", "Brno", "brno"),
+    "USK Praha": ("Czech Republic", "Prague", "prague"),
+    "BC Prievidza": ("Slovakia", None, None),
+    "AdW Berlin": ("Germany", "Berlin", "berlin"),
+    "Limoges CSP": ("France", "Limoges", "limoges"),
+    "Virtus Roma": ("Italy", "Rome", "rome"),
+    "Mens Sana Basketball Siena": ("Italy", "Siena", "siena"),
+    "Aris BC": ("Greece", "Thessaloniki", "thessaloniki"),
+    "AEK BC": ("Greece", "Athens", "athens"),
+    "CB Estudiantes": ("Spain", "Madrid", "madrid"),
+    "Fortitudo Bologna": ("Italy", "Bologna", "bologna"),
+    # Cities that aren't their own metro -> the parent metro (user decision).
+    "Pallacanestro Varese": ("Italy", "Milan", "milan"),
+    "Pallacanestro Cantù": ("Italy", "Milan", "milan"),
+    "Joventut Badalona": ("Spain", "Barcelona", "barcelona"),
+    "Benetton Treviso": ("Italy", "Padua-Venice", "padua-venice"),
+}
+
+
+def parse_fiba(node_slugs):
+    """Current FIBA World Ranking (Men), enriched with FIBA zone and a portal
+    node slug. Returns (hub_doc, {node_slug: record}); ([], {}) if absent."""
+    if not os.path.exists(FIBA):
+        return None, {}
+    doc = json.load(io.open(FIBA, encoding="utf-8"))
+    countries = json.load(io.open(COUNTRIES, encoding="utf-8"))
+    cont_slug = {c["slug"]: c.get("continent") for c in countries}
+    cont_name = {slugify(c["name"]): c.get("continent") for c in countries}
+    name_slug = {c["slug"]: c["name"] for c in countries}
+    teams, by_node = [], {}
+    for t in doc["teams"]:
+        sl = slugify(t["country"])
+        cs = _FIBA_TO_COUNTRY.get(sl, sl)
+        cont = (cont_slug.get(cs) or cont_name.get(cs)
+                or cont_slug.get(sl) or cont_name.get(sl))
+        zone = "Europe" if sl in _FIBA_EUROPE else _CONT_ZONE.get(cont)
+        node = _FIBA_TO_NODE.get(sl, sl)
+        node = node if node in node_slugs else None
+        # Display the user's canonical countries.json name (Cote d'Ivoire,
+        # Bosnia-Herzegovina, ...); keep FIBA's own name for Chinese Taipei.
+        canon = name_slug.get(cs) or name_slug.get(sl)
+        display = t["country"] if sl in _FIBA_KEEP_NAME else (canon or t["country"])
+        # Country-profile slug, so every ranked nation can link somewhere.
+        country_slug = cs if cs in name_slug else (sl if sl in name_slug else None)
+        rec = {"rank": t["rank"], "country": display, "ioc": t["ioc"],
+               "zone": zone, "zoneRank": t["zoneRank"], "pts": t["pts"],
+               "delta": t["delta"], "slug": node, "country_slug": country_slug}
+        teams.append(rec)
+        if node:
+            by_node[node] = rec
+    hub = {"date": doc["date"], "label": doc.get("label", doc["date"]),
+           "source": doc["source"], "teams": teams}
+    return hub, by_node
+
+
 def main():
     import sys
     try:
@@ -207,10 +343,14 @@ def main():
             if name != e:
                 nations[e]["as"][p["year"]].append(name)
 
+    country_names = _country_names()
     nation_rows = []
+    ent_by_slug = {}
     for name, n in nations.items():
+        sl = slugify(name)
+        ent_by_slug[sl] = name
         nation_rows.append({
-            "slug": slugify(name), "name": name,
+            "slug": sl, "name": country_names.get(NODE_CANON_SLUG.get(name, ""), name),
             "wc_apps": len(set(n["wc_apps"])),
             "wc_titles": len(n["wc_titles"]), "wc_title_years": sorted(n["wc_titles"]),
             "wc_ru": len(n["wc_ru"]), "wc_ru_years": sorted(n["wc_ru"]),
@@ -220,6 +360,18 @@ def main():
             "lineage": sorted({a for ys in n["as"].values() for a in ys}) or None,
         })
     nation_rows.sort(key=lambda x: (-x["gold"], -x["wc_titles"], -x["medals"], x["name"]))
+
+    # ---------------- FIBA World Ranking ----------------
+    node_slugs = {nr["slug"] for nr in nation_rows}
+    fiba_hub, fiba_by_node = parse_fiba(node_slugs)
+    for nr in nation_rows:
+        r = fiba_by_node.get(nr["slug"])
+        if r:
+            nr["fiba_rank"] = r["rank"]
+            nr["fiba_pts"] = r["pts"]
+            nr["fiba_zone"] = r["zone"]
+            nr["fiba_zone_rank"] = r["zoneRank"]
+            nr["fiba_delta"] = r["delta"]
 
     # ---------------- EuroLeague aggregates ----------------
     by_club = defaultdict(lambda: {"w": 0, "l": 0, "seasons": 0, "f4": 0,
@@ -233,25 +385,43 @@ def main():
         c["country"] = r["country"] or c["country"]
         if r["champs"]:
             c["champs"].append(r["season"])
-    seasons = defaultdict(dict)
+    seasons = defaultdict(lambda: {"f4": []})
     for r in el:
         if r["champs"]:
             seasons[r["season"]]["champion"] = r["team"]
         elif r["final"]:
             seasons[r["season"]]["ru"] = r["team"]
+        if r["f4"]:
+            seasons[r["season"]]["f4"].append(r["team"])
     for s in sorted(seasons, reverse=True):
-        roll.append({"season": s, "champion": seasons[s].get("champion", ""),
-                     "ru": seasons[s].get("ru", "")})
+        sd = seasons[s]
+        champ, ru = sd.get("champion", ""), sd.get("ru", "")
+        # The two beaten semi-finalists (Final Four era, 1987-88 onward).
+        others = [t for t in sd["f4"] if t not in (champ, ru)]
+        roll.append({"season": s, "champion": champ, "ru": ru,
+                     "f4_others": others})
 
     teams_doc = json.load(io.open(ALL_TEAMS, encoding="utf-8"))
     teams_doc = teams_doc if isinstance(teams_doc, list) else teams_doc.get("teams", [])
-    tl_el = {(t.get("team") or t.get("name")) for t in teams_doc
-             if t.get("league") == "EuroLeague"}
+    # Team List carries the modern country + metro for current clubs.
+    tl_meta = {(t.get("team") or t.get("name")):
+               (t.get("country"), t.get("metro"), t.get("metro_slug"))
+               for t in teams_doc if t.get("league") == "EuroLeague"}
+    tl_el = set(tl_meta)
 
-    clubs = [{"name": k, **v,
-              "titles": len(v["champs"]), "title_years": v.pop("champs"),
-              "in_team_list": k in tl_el}
-             for k, v in sorted(by_club.items(), key=lambda kv: -len(kv[1]["champs"]))]
+    clubs = []
+    for k, v in sorted(by_club.items(), key=lambda kv: -len(kv[1]["champs"])):
+        tl, cur = tl_meta.get(k), EL_CLUB_META.get(k)
+        country = (tl and tl[0]) or (cur and cur[0]) or v["country"]
+        metro = (tl and tl[1]) or (cur and cur[1])
+        metro_slug = (tl and tl[2]) or (cur and cur[2])
+        clubs.append({
+            "name": k, "w": v["w"], "l": v["l"], "seasons": v["seasons"],
+            "f4": v["f4"], "finals": v["finals"],
+            "titles": len(v["champs"]), "title_years": v["champs"],
+            "country": country, "metro": metro, "metro_slug": metro_slug,
+            "in_team_list": k in tl_el,
+        })
 
     euroleague = {
         "roll": roll,
@@ -275,15 +445,19 @@ def main():
               encoding="utf-8", newline=""), separators=(",", ":"), ensure_ascii=False)
     json.dump(euroleague, io.open(os.path.join(OUT, "euroleague.json"), "w",
               encoding="utf-8", newline=""), separators=(",", ":"), ensure_ascii=False)
+    if fiba_hub:
+        json.dump(fiba_hub, io.open(os.path.join(OUT, "fiba_ranking.json"), "w",
+                  encoding="utf-8", newline=""), separators=(",", ":"), ensure_ascii=False)
     for nr in nation_rows:
-        e = nr["name"]
+        ent = ent_by_slug[nr["slug"]]
         json.dump({
-            "slug": nr["slug"], "name": e,
-            "campaigns": sorted(wc_campaigns.get(e, []), key=lambda c: -c["year"]),
+            "slug": nr["slug"], "name": nr["name"],
+            "campaigns": sorted(wc_campaigns.get(ent, []), key=lambda c: -c["year"]),
             "podium_years": {
-                "gold": nations[e]["gold"], "silver": nations[e]["silver"],
-                "bronze": nations[e]["bronze"],
+                "gold": nations[ent]["gold"], "silver": nations[ent]["silver"],
+                "bronze": nations[ent]["bronze"],
             },
+            "fiba": fiba_by_node.get(nr["slug"]),
         }, io.open(os.path.join(OUT, "nation-detail", nr["slug"] + ".json"), "w",
                    encoding="utf-8", newline=""), separators=(",", ":"), ensure_ascii=False)
 

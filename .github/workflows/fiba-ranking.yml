@@ -1,0 +1,53 @@
+name: FIBA ranking weekly refresh
+
+# Pulls the current FIBA World Ranking (Men) presented by Nike from
+# fiba.basketball, rebuilds the /teams/basketball JSONs, and commits only when
+# the output actually changed. FIBA publishes a few times a year (after
+# qualifier windows and major events), so most weeks produce no diff, no
+# commit, and no Vercel build. The fetch + ETL are deterministic (the ranking
+# date drives everything; no fetch timestamp is written).
+
+on:
+  schedule:
+    - cron: "0 7 * * 3"   # 07:00 UTC Wednesdays
+  workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fiba-ranking-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Fetch current FIBA ranking
+        run: python3 scripts/basketball/fetch_fiba_ranking.py scripts/basketball/fiba_ranking.json
+
+      - name: Rebuild basketball portal data
+        run: python3 scripts/basketball/build_intl_basketball.py
+
+      - name: Commit and push only if the data changed
+        run: |
+          if git diff --quiet -- public/data/basketball scripts/basketball/fiba_ranking.json; then
+            echo "No ranking change this week; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "fiba-ranking-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/basketball scripts/basketball/fiba_ranking.json
+          git commit -m "Auto: refresh FIBA World Ranking"
+          git push

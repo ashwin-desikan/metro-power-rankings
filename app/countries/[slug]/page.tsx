@@ -9,7 +9,10 @@ import {
 } from "@/lib/countries";
 import { getStatesForCountry } from "@/lib/states";
 import CountryMap from "./CountryMap";
-import NationalTeamsSection from "./NationalTeamsSection";
+import NationalTeamsSection, { countryHasNationalTeams } from "./NationalTeamsSection";
+import LeagueHubsSection from "./LeagueHubsSection";
+import HubNav from "@/app/teams/HubNav";
+import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
 import {
@@ -273,10 +276,23 @@ export default async function CountryDetailPage({ params }: Props) {
             </div>
           </header>
 
+          {(() => {
+            const navItems = [
+              ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams" }] : []),
+              ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs" }] : []),
+              ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents" }] : []),
+              ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions" }] : []),
+              ...(metros.length > 0 ? [{ label: "Geography", href: "#geography" }, { label: "Metros", href: "#metros" }] : []),
+            ];
+            return navItems.length > 1 ? <HubNav items={navItems} /> : null;
+          })()}
+
           <NationalTeamsSection countryName={country.name} />
 
+          <LeagueHubsSection countrySlug={slug} countryName={country.name} />
+
           {children.length > 0 ? (
-            <section className="mb-12">
+            <section className="mb-12" id="constituents">
               <h2 className="text-xl font-bold mb-3">Constituents and territories</h2>
               <p className="text-sm text-[var(--text-muted)] mb-4">{children.length} entries listed under {country.name}. Click any to see its own metros.</p>
               <div className="flex flex-wrap gap-2">
@@ -293,7 +309,7 @@ export default async function CountryDetailPage({ params }: Props) {
           ) : null}
 
           {stateGroups.length > 0 ? (
-            <section className="mb-12">
+            <section className="mb-12" id="subdivisions">
               <h2 className="text-xl font-bold mb-3">{stateSectionTitle}</h2>
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 {states.length} {states.length === 1 ? "entry" : "entries"} listed under {country.name}
@@ -348,10 +364,12 @@ export default async function CountryDetailPage({ params }: Props) {
           ) : null}
 
           {metros.length > 0 ? (
-            <CountryMap slug={country.slug} countryName={country.name} />
+            <div id="geography" className="scroll-mt-20">
+              <CountryMap slug={country.slug} countryName={country.name} />
+            </div>
           ) : null}
 
-          <section className="mb-12">
+          <section className="mb-12" id="metros">
             <h2 className="text-xl font-bold mb-3">
               {metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet"}
             </h2>
