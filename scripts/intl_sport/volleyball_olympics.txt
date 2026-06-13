@@ -1,0 +1,17 @@
+Year	Gold	Silver	Bronze
+1964	Soviet Union	Czechoslovakia	Japan
+1968	Soviet Union	Japan	Czechoslovakia
+1972	Japan	East Germany	Soviet Union
+1976	Poland	Soviet Union	Cuba
+1980	Soviet Union	Bulgaria	Romania
+1984	United States	Brazil	Italy
+1988	United States	Soviet Union	Argentina
+1992	Brazil	Netherlands	United States
+1996	Netherlands	Italy	Yugoslavia
+2000	Yugoslavia	Russia	Italy
+2004	Brazil	Italy	Russia
+2008	United States	Brazil	Russia
+2012	Russia	Brazil	Italy
+2016	Brazil	Italy	United States
+2020	France	ROC	Argentina
+2024	France	Poland	United States

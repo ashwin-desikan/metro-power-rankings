@@ -65,6 +65,15 @@ export const LEAGUE_HUBS: LeagueHub[] = [
   // Club Rugby (/teams/rugby-union/clubs): Champions Cup, Top 14, Premiership,
   // URC, Super Rugby, Currie Cup, Japan League One.
   { key: "rugby-clubs", label: "Club Rugby", short: "Club Rugby", icon: "🏉", sport: "Rugby Union", href: "/teams/rugby-union/clubs", countrySlugs: ["france", "england", "wales", "scotland", "ireland", "italy", "south-africa", "new-zealand", "australia", "fiji", "japan"] },
+
+  // Domestic winners-roll portals for the newer sports (handball, volleyball,
+  // domestic basketball/hockey, county cricket, British rugby league).
+  { key: "handball-domestic", label: "Handball-Bundesliga", short: "HBL", icon: "🤾", sport: "Handball", href: "/teams/handball/domestic", countrySlugs: ["germany"] },
+  { key: "volleyball-domestic", label: "Domestic Volleyball", short: "Volley", icon: "🏐", sport: "Volleyball", href: "/teams/volleyball/domestic", countrySlugs: ["italy", "poland", "japan"] },
+  { key: "basketball-domestic", label: "Chinese Basketball Association", short: "CBA", icon: "🏀", sport: "Basketball", href: "/teams/basketball/domestic", countrySlugs: ["china"] },
+  { key: "hockey-domestic", label: "KHL (Gagarin Cup)", short: "KHL", icon: "🏒", sport: "Ice Hockey", href: "/teams/hockey/domestic", countrySlugs: ["russia"] },
+  { key: "county-championship", label: "County Championship", short: "County", icon: "🏏", sport: "Cricket", href: "/teams/cricket/county", countrySlugs: ["england", "wales"] },
+  { key: "rugby-league", label: "Rugby League (Super League)", short: "Super League", icon: "🏉", sport: "Rugby League", href: "/teams/rugby-league", countrySlugs: ["england", "france"] },
 ];
 
 // Per-country display order (most popular league first). Only countries with
@@ -75,17 +84,17 @@ export const LEAGUE_HUBS: LeagueHub[] = [
 const LEAGUE_ORDER: Record<string, string[]> = {
   "united-states": ["nfl", "cfb", "nba", "mlb", "nhl", "mls", "wnba", "nwsl"],
   canada: ["nhl", "cfl", "nba", "mlb", "mls"],
-  england: ["premier-league", "wsl", "t20-leagues", "rugby-clubs"],
-  wales: ["rugby-clubs", "premier-league", "t20-leagues"],
+  england: ["premier-league", "wsl", "t20-leagues", "county-championship", "rugby-clubs", "rugby-league"],
+  wales: ["rugby-clubs", "premier-league", "t20-leagues", "county-championship"],
   scotland: ["scottish-premiership", "rugby-clubs"],
   australia: ["afl", "nrl", "t20-leagues", "rugby-clubs"],
   "new-zealand": ["rugby-clubs", "nrl", "t20-leagues"],
   india: ["ipl", "t20-leagues"],
-  japan: ["npb", "rugby-clubs"],
-  france: ["ligue-1", "rugby-clubs", "euroleague"],
+  japan: ["npb", "rugby-clubs", "volleyball-domestic"],
+  france: ["ligue-1", "rugby-clubs", "euroleague", "rugby-league"],
   spain: ["la-liga", "euroleague", "liga-f"],
-  italy: ["serie-a", "euroleague"],
-  germany: ["bundesliga", "euroleague"],
+  italy: ["serie-a", "volleyball-domestic", "euroleague"],
+  germany: ["bundesliga", "handball-domestic", "euroleague"],
   monaco: ["ligue-1", "euroleague"],
   "south-africa": ["rugby-clubs", "t20-leagues"],
   "united-arab-emirates": ["t20-leagues", "euroleague"],

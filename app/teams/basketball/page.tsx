@@ -133,6 +133,23 @@ export default function BasketballHubPage() {
         </Link>
       ) : null}
 
+      {/* ---------------- Domestic Basketball card ---------------- */}
+      <Link
+        href="/teams/basketball/domestic"
+        className="block rounded-xl border p-4 mb-8 transition hover:border-[var(--accent)]"
+        style={card}
+      >
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="font-semibold text-base">Domestic Basketball →</div>
+            <div className="text-xs text-[var(--text-muted)] mt-1">
+              Club basketball beyond the NBA and EuroLeague: the Chinese Basketball
+              Association champions roll.
+            </div>
+          </div>
+        </div>
+      </Link>
+
       {/* ---------------- FIBA World Ranking ---------------- */}
       {fiba ? (
         <section className="mb-10">

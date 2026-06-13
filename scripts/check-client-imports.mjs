@@ -59,6 +59,10 @@ const SERVER_ONLY_MODULES = [
   "@/lib/basketball",
   "@/lib/hockey",
   "@/lib/npb",
+  "@/lib/worldsPortal",
+  "@/lib/handball",
+  "@/lib/volleyball",
+  "@/lib/honourRolls",
 ];
 
 const SCAN_DIRS = ["app", "components"];

@@ -12,6 +12,13 @@ import "server-only";
 //   3. The Top Teams sheet doesn't need to change — it already carries a
 //      `sport` column whose value drives the routing.
 //
+// IMPORTANT (standard protocol): when you ship ANY new league/group of teams
+// that has its own /teams/<league>/<slug> pages, wire it in HERE too, or its
+// Top Team picks render as plain text on /top-teams (and any future cross-sport
+// summary). If the new league shares a generic sport label with an existing one
+// (e.g. NPB and MLB both use "Baseball"), add it as a FALLBACK inside that
+// branch: try the existing league first, then the new one, then return null.
+//
 // This file is server-only because it transitively imports lib/nfl, which
 // reads from disk at module load. The `import "server-only"` directive
 // gives a clear, early error if a client component ever tries to pull it
@@ -66,6 +73,7 @@ import {
   nrlMonogramFor,
 } from "./nrl";
 import { getCfbTeamForName, cfbMonogram } from "./cfb";
+import { getNpbTeamByName } from "./npb";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
@@ -134,6 +142,12 @@ function isCfb(sport: string, leagueHint: string): boolean {
   return CFB_SPORT_LABELS.has(sport) || leagueHint === "CFB" || leagueHint === "FBS";
 }
 
+// Initials monogram fallback for leagues without a logo/color source (NPB).
+function npbMonogram(name: string): Monogram {
+  const mono = name.split(/\s+/).map((w) => w[0]).filter(Boolean).join("").slice(0, 3).toUpperCase();
+  return { bg: "#1f2937", fg: "#ffffff", mono: mono || "NPB" };
+}
+
 export function resolveTeamLink(
   sport: string,
   teamName: string,
@@ -157,15 +171,30 @@ export function resolveTeamLink(
 
   if (isMlb(sport, leagueHint)) {
     const f = getMlbFranchiseByTeamName(cleanName);
-    if (!f) return null;
-    return {
-      slug: f.slug,
-      league: "mlb",
-      href: `/teams/mlb/${f.slug}`,
-      logoUrl: mlbLogoUrlFor(f.slug),
-      monogram: mlbMonogramFor(f.slug),
-      displayName: f.display_name,
-    };
+    if (f) {
+      return {
+        slug: f.slug,
+        league: "mlb",
+        href: `/teams/mlb/${f.slug}`,
+        logoUrl: mlbLogoUrlFor(f.slug),
+        monogram: mlbMonogramFor(f.slug),
+        displayName: f.display_name,
+      };
+    }
+    // Japanese clubs share the "Baseball" sport label but live in the NPB
+    // portal (/teams/baseball/npb), so fall back to NPB before giving up.
+    const n = getNpbTeamByName(cleanName);
+    if (n) {
+      return {
+        slug: n.slug,
+        league: "npb",
+        href: `/teams/baseball/npb/${n.slug}`,
+        logoUrl: null,
+        monogram: npbMonogram(n.name),
+        displayName: n.name,
+      };
+    }
+    return null;
   }
 
   if (isNba(sport, leagueHint)) {

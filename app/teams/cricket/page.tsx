@@ -135,6 +135,17 @@ export default function CricketHubPage() {
             standings, playoffs and finals history since 2008.
           </div>
         </Link>
+        <Link
+          href="/teams/cricket/county"
+          className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+          style={card}
+        >
+          <div className="font-semibold text-base">County Championship →</div>
+          <div className="text-xs text-[var(--text-muted)] mt-1">
+            England&apos;s first-class domestic competition, the oldest in the sport:
+            every champion since 1890.
+          </div>
+        </Link>
       </div>
 
       {/* ---------------- Current rankings ---------------- */}

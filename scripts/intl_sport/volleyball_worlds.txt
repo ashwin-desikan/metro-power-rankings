@@ -1,0 +1,22 @@
+Year	Gold	Silver	Bronze
+1949	Soviet Union	Czechoslovakia	Bulgaria
+1952	Soviet Union	Czechoslovakia	Bulgaria
+1956	Czechoslovakia	Romania	Soviet Union
+1960	Soviet Union	Czechoslovakia	Romania
+1962	Soviet Union	Czechoslovakia	Romania
+1966	Czechoslovakia	Romania	Soviet Union
+1970	East Germany	Bulgaria	Japan
+1974	Poland	Soviet Union	Japan
+1978	Soviet Union	Italy	Cuba
+1982	Soviet Union	Brazil	Argentina
+1986	United States	Soviet Union	Bulgaria
+1990	Italy	Cuba	Soviet Union
+1994	Italy	Netherlands	United States
+1998	Italy	Yugoslavia	Cuba
+2002	Brazil	Russia	France
+2006	Brazil	Poland	Bulgaria
+2010	Brazil	Cuba	Serbia
+2014	Poland	Brazil	Germany
+2018	Poland	Brazil	United States
+2022	Italy	Poland	Brazil
+2025	Italy	Bulgaria	Poland

@@ -39,7 +39,11 @@ export default function WorldCup2026({ wc }: Props) {
   const preTournament = today < startsDate;
   const sim = wc.sim ?? null;
 
-  const [open, setOpen] = useState(false);
+  // Keep the section open by default through the tournament, then collapse it
+  // once it is over (the 2026 final is 19 Jul; use the 20th as the cutoff).
+  const tournamentEnds = new Date("2026-07-20T00:00:00Z");
+  const tournamentOver = today >= tournamentEnds;
+  const [open, setOpen] = useState(!tournamentOver);
 
   useEffect(() => {
     function syncFromHash() {

@@ -1,0 +1,16 @@
+Year	Gold	Silver	Bronze
+1936	Germany	Austria	Switzerland
+1972	Yugoslavia	Czechoslovakia	Romania
+1976	Soviet Union	Romania	Poland
+1980	East Germany	Soviet Union	Romania
+1984	Yugoslavia	West Germany	Romania
+1988	Soviet Union	South Korea	Yugoslavia
+1992	Unified Team	Sweden	France
+1996	Croatia	Sweden	Spain
+2000	Russia	Sweden	Spain
+2004	Croatia	Germany	Russia
+2008	France	Iceland	Spain
+2012	France	Sweden	Croatia
+2016	Denmark	France	Germany
+2020	France	Denmark	Spain
+2024	Denmark	Germany	Spain

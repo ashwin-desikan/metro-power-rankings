@@ -97,6 +97,22 @@ export default function HockeyHubPage() {
         </div>
       </Link>
 
+      {/* ---------------- Domestic Hockey card ---------------- */}
+      <Link
+        href="/teams/hockey/domestic"
+        className="block rounded-xl border p-4 mb-8 transition hover:border-[var(--accent)]"
+        style={card}
+      >
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="font-semibold text-base">Domestic Hockey →</div>
+            <div className="text-xs text-[var(--text-muted)] mt-1">
+              Club ice hockey beyond the NHL: the KHL&apos;s Gagarin Cup winners.
+            </div>
+          </div>
+        </div>
+      </Link>
+
       {/* ---------------- Olympics (ultimate) ---------------- */}
       <section className="mb-10">
         <h2 id="olympics" className="text-lg font-semibold mb-1">Olympic podiums</h2>

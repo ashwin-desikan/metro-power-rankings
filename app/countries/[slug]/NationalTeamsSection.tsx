@@ -6,6 +6,8 @@ import { getBaseballTeamForCountry } from "@/lib/baseball";
 import { getOlympicTeamForCountry } from "@/lib/olympics";
 import { getBasketballTeamForCountry } from "@/lib/basketball";
 import { getHockeyTeamForCountry } from "@/lib/hockey";
+import { getHandballTeamForCountry } from "@/lib/handball";
+import { getVolleyballTeamForCountry } from "@/lib/volleyball";
 import { sportIcon } from "@/lib/sportLabels";
 
 // "National Teams" section on country hub pages: men's football, women's
@@ -33,7 +35,7 @@ import { sportIcon } from "@/lib/sportLabels";
 
 type SportKey =
   | "olympics" | "football" | "wfootball" | "cricket"
-  | "rugby" | "baseball" | "basketball" | "hockey";
+  | "rugby" | "baseball" | "basketball" | "hockey" | "handball" | "volleyball";
 
 // Country (by lowercased country-page name) → its most popular national team,
 // for any country whose #2 card is NOT men's football. Everything else defaults
@@ -144,7 +146,9 @@ export function countryHasNationalTeams(countryName: string): boolean {
     getBaseballTeamForCountry(countryName) ||
     getOlympicTeamForCountry(countryName) ||
     getBasketballTeamForCountry(countryName) ||
-    getHockeyTeamForCountry(countryName)
+    getHockeyTeamForCountry(countryName) ||
+    getHandballTeamForCountry(countryName) ||
+    getVolleyballTeamForCountry(countryName)
   );
 }
 
@@ -156,7 +160,9 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
   const olympics = getOlympicTeamForCountry(countryName);
   const basketball = getBasketballTeamForCountry(countryName);
   const hockey = getHockeyTeamForCountry(countryName);
-  if (!men && !women && !cricket && !rugby && !baseball && !olympics && !basketball && !hockey) return null;
+  const handball = getHandballTeamForCountry(countryName);
+  const volleyball = getVolleyballTeamForCountry(countryName);
+  if (!men && !women && !cricket && !rugby && !baseball && !olympics && !basketball && !hockey && !handball && !volleyball) return null;
 
   const cricketMajors = cricket && cricket.honours
     ? cricket.honours.wc.titles + cricket.honours.t20wc.titles + cricket.honours.ct.titles +
@@ -180,11 +186,13 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
     baseball: baseball ? 25 + baseball.titles * 120 + (baseball.apps ?? 0) * 6 : 0,
     basketball: basketball ? 45 + basketball.gold * 120 + basketball.wc_titles * 45 + rankBonus(basketball.fiba_rank) : 0,
     hockey: hockey ? 35 + hockey.oly_gold * 120 + (hockey.wc_titles ?? 0) * 30 + (hockey.worlds_gold ?? 0) * 15 + rankBonus(hockey.oly_alltime_rank) : 0,
+    handball: handball ? 30 + handball.oly_gold * 120 + handball.worlds_gold * 30 + rankBonus(handball.oly_alltime_rank) : 0,
+    volleyball: volleyball ? 30 + volleyball.oly_gold * 120 + volleyball.worlds_gold * 30 + rankBonus(volleyball.oly_alltime_rank) : 0,
   };
 
   const primary: SportKey = PRIMARY_SPORT[countryName.toLowerCase()] ?? "football";
   const DEFAULT_PRIORITY: Record<SportKey, number> = {
-    olympics: 0, football: 1, wfootball: 2, basketball: 3, cricket: 4, rugby: 5, hockey: 6, baseball: 7,
+    olympics: 0, football: 1, wfootball: 2, basketball: 3, cricket: 4, rugby: 5, handball: 6, volleyball: 7, hockey: 8, baseball: 9,
   };
   const slot = (k: SportKey) => (k === "olympics" ? 0 : k === primary ? 1 : 2);
 
@@ -371,6 +379,48 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
       {hockey.worlds_gold > 0 ? (
         <Stat label="Worlds golds" value={`${hockey.worlds_gold}`} />
       ) : null}
+    </Card>
+  ) });
+
+  if (handball) entries.push({ key: "handball", node: (
+    <Card key="handball" href={`/teams/handball/${handball.slug}`} chip="Handball" sport="Handball"
+          tag={handball.lineage ? `incl. ${handball.lineage.join(", ")}` : null}
+          name={handball.name}
+          chips={[{
+            label: handball.oly_gold === 0 ? "No Olympic golds"
+              : handball.oly_gold === 1 ? "1 Olympic gold" : `${handball.oly_gold} Olympic golds`,
+            gold: handball.oly_gold > 0,
+            title: "Olympic handball gold medals",
+          }]}>
+      {handball.oly_alltime_rank != null ? (
+        <Stat label="All-time" value={`#${handball.oly_alltime_rank}`} />
+      ) : null}
+      <Stat label="Oly medals" value={`${handball.oly_medals}`} />
+      {handball.worlds_gold > 0 ? (
+        <Stat label="Worlds golds" value={`${handball.worlds_gold}`} />
+      ) : null}
+      <Stat label="Worlds medals" value={`${handball.worlds_medals}`} />
+    </Card>
+  ) });
+
+  if (volleyball) entries.push({ key: "volleyball", node: (
+    <Card key="volleyball" href={`/teams/volleyball/${volleyball.slug}`} chip="Volleyball" sport="Volleyball"
+          tag={volleyball.lineage ? `incl. ${volleyball.lineage.join(", ")}` : null}
+          name={volleyball.name}
+          chips={[{
+            label: volleyball.oly_gold === 0 ? "No Olympic golds"
+              : volleyball.oly_gold === 1 ? "1 Olympic gold" : `${volleyball.oly_gold} Olympic golds`,
+            gold: volleyball.oly_gold > 0,
+            title: "Olympic volleyball gold medals",
+          }]}>
+      {volleyball.oly_alltime_rank != null ? (
+        <Stat label="All-time" value={`#${volleyball.oly_alltime_rank}`} />
+      ) : null}
+      <Stat label="Oly medals" value={`${volleyball.oly_medals}`} />
+      {volleyball.worlds_gold > 0 ? (
+        <Stat label="Worlds golds" value={`${volleyball.worlds_gold}`} />
+      ) : null}
+      <Stat label="Worlds medals" value={`${volleyball.worlds_medals}`} />
     </Card>
   ) });
 

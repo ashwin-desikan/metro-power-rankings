@@ -1,0 +1,30 @@
+Year	Gold	Silver	Bronze
+1938	Germany	Austria	Sweden
+1954	Sweden	Germany	Czechoslovakia
+1958	Sweden	Czechoslovakia	Germany
+1961	Romania	Czechoslovakia	Sweden
+1964	Romania	Sweden	Czechoslovakia
+1967	Czechoslovakia	Denmark	Romania
+1970	Romania	East Germany	Yugoslavia
+1974	Romania	East Germany	Yugoslavia
+1978	West Germany	Soviet Union	East Germany
+1982	Soviet Union	Yugoslavia	Poland
+1986	Yugoslavia	Hungary	East Germany
+1990	Sweden	Soviet Union	Romania
+1993	Russia	France	Sweden
+1995	France	Croatia	Sweden
+1997	Russia	Sweden	France
+1999	Sweden	Russia	FR Yugoslavia
+2001	France	Sweden	FR Yugoslavia
+2003	Croatia	Germany	France
+2005	Spain	Croatia	France
+2007	Germany	Poland	Denmark
+2009	France	Croatia	Poland
+2011	France	Denmark	Spain
+2013	Spain	Denmark	Croatia
+2015	France	Qatar	Poland
+2017	France	Norway	Slovenia
+2019	Denmark	Norway	France
+2021	Denmark	Sweden	Spain
+2023	Denmark	France	Spain
+2025	Denmark	Croatia	France

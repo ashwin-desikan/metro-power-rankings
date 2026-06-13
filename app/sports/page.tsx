@@ -215,6 +215,30 @@ const INJECTED_LIVE_CARDS: LeagueCard[] = [
     team_count: 0,
   },
   {
+    league: "IHF",
+    label: "International Handball",
+    sport: "Handball",
+    status: "live",
+    page: "/teams/handball",
+    team_count: 0,
+  },
+  {
+    league: "FIVB",
+    label: "International Volleyball",
+    sport: "Volleyball",
+    status: "live",
+    page: "/teams/volleyball",
+    team_count: 0,
+  },
+  {
+    league: "RFL",
+    label: "Rugby League — Britain",
+    sport: "Rugby League",
+    status: "live",
+    page: "/teams/rugby-league",
+    team_count: 0,
+  },
+  {
     league: "CFB",
     label: "College Football",
     sport: "American Football",
@@ -255,7 +279,7 @@ export default function SportsPage() {
     "/teams/football", "/teams/national", "/teams/nfl", "/teams/cfb", "/teams/mlb",
     "/teams/nba", "/teams/nhl", "/teams/ipl", "/teams/afl", "/teams/nrl", "/teams/cfl",
     "/teams/cricket", "/teams/rugby-union", "/teams/baseball", "/teams/olympics", "/teams/basketball",
-    "/teams/hockey", "/teams/wfootball", "/teams/wnba",
+    "/teams/hockey", "/teams/handball", "/teams/volleyball", "/teams/rugby-league", "/teams/wfootball", "/teams/wnba",
   ];
   const liveHubByPage = new Map(
     composedCards.filter((c) => c.status === "live" && c.page).map((c) => [c.page as string, c]),
