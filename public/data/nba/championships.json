@@ -226,6 +226,13 @@
       "league": "NBA",
       "city": "New York",
       "team": "Knicks"
+    },
+    {
+      "year": 2026,
+      "era": "nba",
+      "league": "NBA",
+      "city": "New York",
+      "team": "Knicks"
     }
   ],
   "Rockets": [

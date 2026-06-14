@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-14",
+    headline: "Knicks crowned 2026 NBA champions",
+    items: [
+      "The New York Knicks are 2026 NBA champions, their third title and first since 1973; team pages, all-time tables and metro cards now reflect the crown.",
+      "The Sports menu and league sidebar show a gold Knicks - NBA Champions tag through June 22, then revert to offseason; the NHL gets the same once the Stanley Cup is awarded.",
+      "A-League clubs across Sydney, Melbourne and other Australian and New Zealand metros are promoted to major-team status.",
+      "Market capitalization data refreshed across hundreds of metros, updating economic ranks.",
+    ],
+  },
+  {
     date: "2026-06-12",
     headline: "Baseball and the Olympics arrive",
     items: [

@@ -7,7 +7,9 @@
 // "World Cup" tag auto-expires after the 2026 final on 2026-07-19; once past
 // that date the league falls back to Offseason.
 
-export type LeagueStatusTone = "regular" | "playoffs" | "worldcup" | "offseason";
+import { CHAMPION_STATUS } from "./championStatus.generated";
+
+export type LeagueStatusTone = "regular" | "playoffs" | "worldcup" | "champion" | "offseason";
 export type LeagueStatus = { label: string; tone: LeagueStatusTone };
 
 // End of the 2026 FIFA Women's World Cup (final: 19 July 2026).
@@ -51,6 +53,12 @@ const STATUS_BY_PAGE: Record<string, LeagueStatus> = {
 
 export function leagueStatusFor(page: string | null | undefined): LeagueStatus | null {
   if (!page) return null;
+  const champ = CHAMPION_STATUS[page];
+  if (champ) {
+    return Date.now() <= champ.until
+      ? { label: champ.label, tone: "champion" }
+      : { label: "Offseason", tone: "offseason" };
+  }
   if (page === "/teams/national") {
     return Date.now() <= WORLD_CUP_END
       ? { label: "Live - World Cup", tone: "worldcup" }
@@ -97,6 +105,7 @@ export function clubFootballStatus(): LeagueStatus {
 const TONE: Record<LeagueStatusTone, { bg: string; color: string }> = {
   regular:   { bg: "rgba(16,185,129,0.16)", color: "#10b981" },
   playoffs:  { bg: "rgba(245,158,11,0.16)", color: "#f59e0b" },
+  champion:  { bg: "rgba(212,175,55,0.18)", color: "#d4af37" },
   worldcup:  { bg: "rgba(168,85,247,0.16)", color: "#a855f7" },
   offseason: { bg: "rgba(120,120,140,0.18)", color: "var(--text-muted)" },
 };

@@ -377,7 +377,7 @@
     {
       "year": 2026,
       "era": "nba",
-      "won": false,
+      "won": true,
       "city": "New York",
       "team": "Knicks"
     }

@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "is_postseason_complete": false,
+  "is_postseason_complete": true,
   "by_franchise": {
     "Trail Blazers": {
       "state": "eliminated_qf",
@@ -68,8 +68,8 @@
       "year": 2026
     },
     "Knicks": {
-      "state": "active_finals",
-      "last_round": "In the Finals",
+      "state": "champion",
+      "last_round": "NBA Champion",
       "year": 2026
     },
     "Raptors": {
@@ -83,8 +83,8 @@
       "year": 2026
     },
     "Spurs": {
-      "state": "active_finals",
-      "last_round": "In the Finals",
+      "state": "lost_finals",
+      "last_round": "Lost Finals",
       "year": 2026
     },
     "Pistons": {
