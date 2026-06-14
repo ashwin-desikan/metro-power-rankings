@@ -192,7 +192,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
           href="/sports"
           className="block px-4 py-2.5 text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
         >
-          All sports <span aria-hidden className="text-[var(--text-dim)]">→</span>
+          Zone Zero Sports Hub <span aria-hidden className="text-[var(--text-dim)]">→</span>
         </a>
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         {MARQUEE_HUBS.map((e) => (

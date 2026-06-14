@@ -14,9 +14,9 @@ export const dynamicParams = false;
 
 const PAGE_PATH = "/sports";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
-const PAGE_TITLE = "Sports";
+const PAGE_TITLE = "Zone Zero Sports Hub";
 const PAGE_DESCRIPTION =
-  "Every Major League team across every sport, on one map. Filter by sport, league, or country, then click through to per-franchise pages.";
+  "Citizen of Nowhere's sports hub. Every top-flight team in the world on one interactive map, ranked against the metro behind it rather than the trophy cabinet.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -118,15 +118,22 @@ export default function SportsPage() {
   const restDeepDives = DEEP_DIVES.filter((d) => d.href !== featuredDeepDive.href);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
       {/* Hub header */}
       <header className="mb-6">
-        <div className="text-xs uppercase tracking-widest text-[var(--text-dim)] mb-2">All Sports</div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Sports</h1>
+        <div className="flex items-center gap-3 mb-3">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/zone-zero-seal.svg" alt="Zone Zero" width={46} height={46} />
+          <div className="text-xs uppercase tracking-widest text-[var(--text-dim)]">Citizen of Nowhere&rsquo;s</div>
+        </div>
+        <h1 className="text-4xl font-bold tracking-tight mb-2">Zone Zero Sports Hub</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Every top-flight team on one interactive map. Filter by sport, league, or country, then jump
+          Citizen of Nowhere&rsquo;s sports hub. Every top-flight team in the world on one interactive map, ranked
+          against the metro behind it rather than the trophy cabinet. Filter by sport, league, or country, then jump
           to any league hub or cross-sport deep-dive from the console alongside.
         </p>
+        <p className="text-[var(--text-dim)] text-xs italic mt-2">Leave the suburbs to the old heads. The world is our outfield.</p>
+        <a href="/sports/about" className="inline-block mt-3 text-sm text-[var(--accent)] hover:underline">What Zone Zero is &rarr;</a>
       </header>
 
       <HubNav

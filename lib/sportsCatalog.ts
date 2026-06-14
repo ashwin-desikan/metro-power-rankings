@@ -102,7 +102,6 @@ export const SPORTS_CATALOG: CatalogEntry[] = [
   // Rugby League
   { href: "/teams/rugby-league", label: "International Rugby League", boardLabel: "International", sport: "Rugby League", family: "Rugby League", scope: "international", hint: "The Rugby League World Cup since 1954: 16 editions, every final, and the all-time national honour table." },
   { href: "/teams/nrl", label: "NRL", sport: "Rugby League", family: "Rugby League", scope: "club", hint: "Every NSWRL/NRL club since 1908, premierships, ladders, and the full Grand Final roll" },
-  { href: "/teams/rugby-league/british", label: "British Rugby League", sport: "Rugby League", family: "Rugby League", scope: "club", subRoll: true, hint: "British rugby league champions: the Northern Union, the RFL Championship and the Super League." },
 
   // Aussie Rules
   { href: "/teams/afl", label: "AFL", sport: "Aussie Rules", family: "Aussie Rules", scope: "club", hint: "Every VFL/AFL club since 1897, premierships, ladders, and the full Grand Final roll" },

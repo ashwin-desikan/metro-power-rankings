@@ -23,7 +23,7 @@ type Item = {
 
 // Sports entries from the shared catalog, ordered by family, shipped hubs only.
 const SPORTS_ITEMS: Item[] = [
-  { href: '/sports', label: 'All sports', hint: 'Every Major League team across every sport, on one filterable map', group: 'Sports' },
+  { href: '/sports', label: 'Zone Zero Sports Hub', hint: "Citizen of Nowhere's sports club: every top-flight team on one filterable map", group: 'Sports' },
   ...FAMILY_ORDER.flatMap((fam) =>
     SPORTS_CATALOG.filter((e) => e.family === fam && e.status !== 'coming' && !e.subRoll).map((e) => ({
       href: e.href,

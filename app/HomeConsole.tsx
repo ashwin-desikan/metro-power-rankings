@@ -38,10 +38,10 @@ export default async function HomeConsole() {
       accent: '#7c3aed',
     },
     {
-      eyebrow: 'Sports',
-      title: 'Every team on one map',
+      eyebrow: 'Zone Zero',
+      title: 'Every metro keeps score',
       subtitle:
-        'Cartography across the tracked sports, with per-franchise pages for NFL, NBA, MLB, and NHL.',
+        "Citizen of Nowhere's sports club: every top-flight team on one map, ranked against the metro behind it.",
       href: '/sports',
       accent: '#2563eb',
     },
