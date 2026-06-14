@@ -82,7 +82,7 @@ export const SPORTS_CATALOG: CatalogEntry[] = [
   { href: "/teams/nba", label: "NBA", sport: "Basketball", family: "Basketball", scope: "club", marquee: true, hint: "All 30 active franchises; ABA cups in slate; live 2026 playoff status" },
   { href: "/teams/wnba", label: "WNBA", sport: "Basketball", family: "Basketball", scope: "club", hint: "Every WNBA franchise current and defunct, all-time records, champions since 1997" },
   { href: "/teams/basketball", label: "International Basketball", boardLabel: "International", sport: "Basketball", family: "Basketball", scope: "international", hint: "FIBA World Cup finals, every Olympic podium since 1936, and the EuroLeague club crown" },
-  { href: "/teams/cbb", label: "Men's College Basketball", sport: "Basketball", family: "Basketball", scope: "college", status: "coming" },
+  { href: "/teams/cbb", label: "Men's College Basketball", boardLabel: "College (M)", sport: "Basketball", family: "Basketball", scope: "college", hint: "Every Division I program in history: all-time records, NCAA titles, the 15-year dynasties, the greatest tournament games, and the NBA pipeline." },
 
   // Baseball
   { href: "/teams/mlb", label: "MLB", sport: "Baseball", family: "Baseball", scope: "club", marquee: true, hint: "All 30 active franchises; defunct franchises link from inside" },
