@@ -73,13 +73,15 @@ import {
   nrlMonogramFor,
 } from "./nrl";
 import { getCfbTeamForName, cfbMonogram } from "./cfb";
+import { getCbbTeamForName } from "./cbb";
+import { cbbMonogram } from "./cbbShared";
 import { getNpbTeamByName } from "./npb";
 
 export type Monogram = { bg: string; fg: string; mono: string };
 
 export type TeamLink = {
   slug: string;                    // league-internal slug
-  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl" | "afl" | "nrl" | "cfb" | "npb";   // discriminator for future leagues
+  league: "nfl" | "mlb" | "nba" | "nhl" | "football" | "ipl" | "wfootball" | "wnba" | "cfl" | "afl" | "nrl" | "cfb" | "npb" | "cbb";   // discriminator for future leagues
   href: string;                    // /teams/<league>/<slug>
   logoUrl: string | null;          // /data/<league>/logos/<slug>.svg or null
   monogram: Monogram;              // colored monogram fallback when logoUrl is null
@@ -142,6 +144,15 @@ function isCfb(sport: string, leagueHint: string): boolean {
   return CFB_SPORT_LABELS.has(sport) || leagueHint === "CFB" || leagueHint === "FBS";
 }
 
+// Men's college basketball is tagged sport "Basketball" + league "NCAA" in
+// the metro Team List (women's college is "NCAA W"; the NBA is "NBA"). The
+// NBA matcher keys on the bare "Basketball" sport, so isCbb must be
+// league-gated and checked before the NBA branch in resolveTeamLink.
+const CBB_LEAGUE_LABELS = new Set(["NCAA", "NCAAM", "CBB"]);
+function isCbb(sport: string, leagueHint: string): boolean {
+  return (sport === "Basketball" || sport === "College Basketball") && CBB_LEAGUE_LABELS.has(leagueHint);
+}
+
 // Initials monogram fallback for leagues without a logo/color source (NPB).
 function npbMonogram(name: string): Monogram {
   const mono = name.split(/\s+/).map((w) => w[0]).filter(Boolean).join("").slice(0, 3).toUpperCase();
@@ -155,6 +166,21 @@ export function resolveTeamLink(
 ): TeamLink | null {
   if (!teamName) return null;
   const cleanName = teamName.trim();
+
+  // College basketball is checked before the NBA, which matches the bare
+  // "Basketball" sport label, so NCAA men's teams route to their -ncaam pages.
+  if (isCbb(sport, leagueHint)) {
+    const f = getCbbTeamForName(cleanName);
+    if (!f) return null;
+    return {
+      slug: f.slug,
+      league: "cbb",
+      href: `/teams/cbb/${f.slug}`,
+      logoUrl: null,
+      monogram: { bg: f.color || "#444", fg: "#ffffff", mono: cbbMonogram(f.name) },
+      displayName: f.name,
+    };
+  }
 
   if (isNfl(sport, leagueHint)) {
     const f = getNflFranchiseByTeamName(cleanName);

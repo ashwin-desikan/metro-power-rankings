@@ -26,6 +26,7 @@ export const LEAGUE_HUBS: LeagueHub[] = [
   { key: "mlb", label: "Major League Baseball", short: "MLB", icon: "⚾", sport: "Baseball", href: "/teams/mlb", countrySlugs: ["united-states", "canada"] },
   { key: "nba", label: "National Basketball Association", short: "NBA", icon: "🏀", sport: "Basketball", href: "/teams/nba", countrySlugs: ["united-states", "canada"] },
   { key: "wnba", label: "WNBA", short: "WNBA", icon: "🏀", sport: "Basketball", href: "/teams/wnba", countrySlugs: ["united-states"] },
+  { key: "cbb", label: "College Basketball (NCAA D-I)", short: "CBB", icon: "🏀", sport: "Basketball", href: "/teams/cbb", countrySlugs: ["united-states"] },
   { key: "nhl", label: "National Hockey League", short: "NHL", icon: "🏒", sport: "Ice Hockey", href: "/teams/nhl", countrySlugs: ["united-states", "canada"] },
   { key: "mls", label: "Major League Soccer", short: "MLS", icon: "⚽", sport: "Football", href: "/teams/football/leagues/mls", countrySlugs: ["united-states", "canada"] },
   { key: "cfl", label: "Canadian Football League", short: "CFL", icon: "🏈", sport: "Canadian Football", href: "/teams/cfl", countrySlugs: ["canada"] },
@@ -82,7 +83,7 @@ export const LEAGUE_HUBS: LeagueHub[] = [
 // (US NHL after MLB; Canada NHL/CFL/NBA/MLB/MLS; club rugby first in the
 // rugby nations NZ/Wales/South Africa).
 const LEAGUE_ORDER: Record<string, string[]> = {
-  "united-states": ["nfl", "cfb", "nba", "mlb", "nhl", "mls", "wnba", "nwsl"],
+  "united-states": ["nfl", "cfb", "nba", "cbb", "mlb", "nhl", "mls", "wnba", "nwsl"],
   canada: ["nhl", "cfl", "nba", "mlb", "mls"],
   england: ["premier-league", "wsl", "t20-leagues", "county-championship", "rugby-clubs", "rugby-league"],
   wales: ["rugby-clubs", "premier-league", "t20-leagues", "county-championship"],

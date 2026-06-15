@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-15",
+    headline: "College basketball reaches the metros",
+    items: [
+      "Men's college basketball now appears on metro pages: former and defunct Division I programs get cards with national titles, Final Fours and NCAA appearances, from CCNY in New York to dozens of metros.",
+      "Active NCAA programs link straight to their team pages from metro rosters and the top-teams board, and College Basketball joins the League Hubs on the United States page.",
+    ],
+  },
+  {
     date: "2026-06-14",
     headline: "Knicks crowned 2026 NBA champions",
     items: [
