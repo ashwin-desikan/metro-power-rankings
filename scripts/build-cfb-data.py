@@ -80,6 +80,20 @@ def main():
     if os.path.exists(_cp):
         for row in _csv.DictReader(open(_cp,encoding="utf-8")):
             CSV_COLORS[(row.get("Cur. Name") or "").strip()]=(hexcol(row.get("Primary")),hexcol(row.get("Secondary")))
+    # Fallback brand colors for non-FBS (FCS / D-I) schools that aren't in
+    # cfb-colors.csv but ARE in the college-basketball color file (same schools).
+    # cfb-colors keeps precedence; a normalized key handles minor name drift.
+    import re as _re
+    def _cnorm(s): return _re.sub(r"[^a-z0-9]","",(s or "").lower())
+    CSV_COLORS_NORM={_cnorm(k):v for k,v in CSV_COLORS.items()}
+    _cbp=os.path.join(os.path.dirname(os.path.abspath(__file__)),"cbb-colors.csv")
+    if os.path.exists(_cbp):
+        for row in _csv.DictReader(open(_cbp,encoding="utf-8-sig")):
+            _nm=(row.get("Cur. Name") or "").strip()
+            if not _nm: continue
+            _cols=(hexcol(row.get("Primary")),hexcol(row.get("Secondary")))
+            CSV_COLORS.setdefault(_nm,_cols)
+            CSV_COLORS_NORM.setdefault(_cnorm(_nm),_cols)
 
     # Totals
     T,rows=read_sheet(src,"Totals")
@@ -89,7 +103,7 @@ def main():
         cur=t(r,"Cur. Name")
         if not cur or (fnum(t(r,"Maj Seas")) or 0)<=0: continue
         slug=slugify(cur)+"-cfb"
-        _cc=CSV_COLORS.get(str(cur), (None,None))
+        _cc=CSV_COLORS.get(str(cur)) or CSV_COLORS_NORM.get(_cnorm(cur)) or (None,None)
         prim=next((hexcol(t(r,c)) for c in PRIMARY_COLS if hexcol(t(r,c))), None) or _cc[0]
         sec=next((hexcol(t(r,c)) for c in SECONDARY_COLS if hexcol(t(r,c))), None) or _cc[1]
         d=teams.setdefault(slug,{"slug":slug,"name":str(cur),"conference":t(r,"Conference (Cur.)"),
