@@ -45,7 +45,7 @@ import { getNrlFranchiseByTeamName } from "@/lib/nrl";
 import { getWClubByName } from "@/lib/wfootball";
 import { resolveTeamLink, type TeamLink } from "@/lib/teamLinks";
 import { getCfbTeamForName, cfbMonogram, getFormerMajorCfbForMetro, type FormerCfbCard } from "@/lib/cfb";
-import { getFormerMajorCbbForMetro, type FormerCbbCard } from "@/lib/cbb";
+import { getFormerMajorCbbForMetro, getCbbTeamForName, cbbMonogram, type FormerCbbCard, type CbbTeam } from "@/lib/cbb";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -1310,11 +1310,27 @@ function TeamsSection({
   const topTeamNames = topTeamPick
     ? topTeamPick.team.split("/").map((n) => n.trim().toLowerCase()).filter(Boolean)
     : [];
-  const isTopTeamFn = (teamName: string): boolean =>
-    topTeamNames.some((tn) => {
+  const topPickSport = (topTeamPick?.sport ?? "").trim();
+  const topPickIsCollege = /\(NCAA/.test(topPickSport);
+  const baseSportKey = (s: string) =>
+    s.toLowerCase().replace(/\(ncaa[^)]*\)/g, "").replace(/[^a-z]/g, "")
+      .replace("soccer", "football").replace("icehockey", "hockey");
+  const topPickSportKey = baseSportKey(topPickSport);
+  const TOP_COLLEGE_LEAGUES = new Set(["FBS", "FCS", "NCAA", "NCAA W", "College Hockey"]);
+  // Match by name, then (when sport context exists) require the card's sport to
+  // match the Top Team pick's sport so e.g. Texas football is the Top Team in
+  // Austin without also flagging Texas basketball/baseball.
+  const isTopTeamFn = (teamName: string, teamSport?: string, teamLeague?: string): boolean => {
+    const nameHit = topTeamNames.some((tn) => {
       const t = teamName.toLowerCase();
       return tn === t || t.endsWith(" " + tn) || tn.endsWith(" " + t);
     });
+    if (!nameHit) return false;
+    if (!topPickSport || teamSport === undefined) return true;
+    if (baseSportKey(teamSport) !== topPickSportKey) return false;
+    const teamIsCollege = teamLeague !== undefined && TOP_COLLEGE_LEAGUES.has(teamLeague);
+    return topPickIsCollege ? teamIsCollege : !teamIsCollege;
+  };
 
   // Precompute sort keys for American major sports (NFL, MLB, NBA, NHL).
   // Sport order: NFL first, then MLB, NBA, NHL, other.
@@ -1367,7 +1383,7 @@ function TeamsSection({
     const isFoot = FOOTBALL_SPORT_SET.has(t.sport);
     const isGold = isGoldStandardLeague(t.sport, t.league) && (!isFoot || t.level === "1");
     const isAmerican = AMERICAN_SPORT_ORDER[t.sport] !== undefined;
-    if (isTopTeamFn(t.team)) return 0;
+    if (isTopTeamFn(t.team, t.sport, t.league)) return 0;
     if (isGold && isAmerican) return 1;
     if (isGold && isFoot) return 2;
     if (isGold) return 3;
@@ -1420,7 +1436,25 @@ function TeamsSection({
   const isFbsFootball = (t: { sport: string; league: string }) =>
     t.sport === "American Football" && t.league === "FBS";
   const otherFbs = otherTeamsRaw.filter((t) => isFbsFootball(t));
-  const otherCollege = otherTeamsRaw.filter((t) => isCollege(t) && !isFbsFootball(t));
+  // D-I men's basketball programs with at least one Sweet 16, Elite Eight, or
+  // Final Four are promoted into "Major College Teams" alongside FBS football;
+  // the rest stay in "Other College Teams". The same gate is intended for
+  // women's college basketball once that data is added.
+  const cbbCardCache = new Map<string, CbbTeam | null>();
+  const cbbForName = (n: string): CbbTeam | null => {
+    if (!cbbCardCache.has(n)) cbbCardCache.set(n, getCbbTeamForName(n));
+    return cbbCardCache.get(n) ?? null;
+  };
+  const isDiMensHoops = (t: { sport: string; league: string }) =>
+    t.sport === "Basketball" && t.league === "NCAA";
+  const hoopsQualifies = (t: { team: string }) => {
+    const cc = cbbForName(t.team);
+    return !!cc && (cc.sweet16 > 0 || cc.elite8 > 0 || cc.final4 > 0);
+  };
+  const majorCollegeHoops = otherTeamsRaw.filter((t) => isDiMensHoops(t) && hoopsQualifies(t));
+  const otherCollege = otherTeamsRaw.filter(
+    (t) => isCollege(t) && !isFbsFootball(t) && !(isDiMensHoops(t) && hoopsQualifies(t))
+  );
   const otherFootball = [...otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))].sort((a, b) => {
     const ak = footballSortKeys.get(a.team) ?? { level: 99, majorCups: 0 };
     const bk = footballSortKeys.get(b.team) ?? { level: 99, majorCups: 0 };
@@ -1434,6 +1468,36 @@ function TeamsSection({
   const otherMen = otherTeamsRaw.filter(
     (t) => !isCollege(t) && !isFootball(t.sport) && !isWomen(t.sport)
   );
+
+  type MajorCollegeCard = {
+    key: string; sport: "football" | "basketball"; name: string; href: string | null;
+    color: string; mono: string; titles: number; secondLabel: string; secondVal: number;
+    seasons: number; pct: number; isTop: boolean;
+  };
+  const majorCollegeCards: MajorCollegeCard[] = [
+    ...otherFbs.map((t): MajorCollegeCard => {
+      const cf = getCfbTeamForName(t.team);
+      return {
+        key: "f-" + t.team, sport: "football", name: cf?.name ?? t.team,
+        href: cf ? `/teams/cfb/${cf.slug}` : null, color: cf?.color || "#444",
+        mono: cfbMonogram(cf?.name ?? t.team), titles: cf?.nat_champ_count ?? 0,
+        secondLabel: "Conf", secondVal: cf?.conf_titles ?? 0,
+        seasons: cf?.maj_seasons || cf?.seasons || 0, pct: cf?.pct ?? 0,
+        isTop: isTopTeamFn(t.team, t.sport, t.league),
+      };
+    }),
+    ...majorCollegeHoops.map((t): MajorCollegeCard => {
+      const cb = cbbForName(t.team)!;
+      return {
+        key: "b-" + t.team, sport: "basketball", name: cb.name,
+        href: `/teams/cbb/${cb.slug}`, color: cb.color || "#444",
+        mono: cbbMonogram(cb.name), titles: cb.titles,
+        secondLabel: "Final Four", secondVal: cb.final4,
+        seasons: cb.seasons, pct: cb.pct,
+        isTop: isTopTeamFn(t.team, t.sport, t.league),
+      };
+    }),
+  ].sort((a, b) => b.titles - a.titles || b.seasons - a.seasons || a.name.localeCompare(b.name));
 
   const gridClass = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
 
@@ -1451,7 +1515,7 @@ function TeamsSection({
       </summary>
       <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
         {items.map((team, idx) => (
-          <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team)} />
+          <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
         ))}
       </div>
     </details>
@@ -1467,7 +1531,7 @@ function TeamsSection({
           {majorTeamsOnly.length > 0 && (
             <div className={`${majorVenues.length > 0 ? "mb-3" : ""} ${gridClass}`}>
               {majorTeamsOnly.map((team, idx) => (
-                <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team)} />
+                <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
               ))}
             </div>
           )}
@@ -1574,9 +1638,40 @@ function TeamsSection({
             Other Teams
           </h3>
           <div className="space-y-3">
-            {otherFbs.length > 0 && collapsible("College Football (FBS)", otherFbs)}
+            {majorCollegeCards.length > 0 && (
+              <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
+                <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
+                  <span className="font-semibold text-[var(--text)]">Major College Teams</span>
+                  <span className="text-sm text-[var(--text-muted)]">{majorCollegeCards.length} team{majorCollegeCards.length !== 1 ? "s" : ""}</span>
+                </summary>
+                <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
+                  {majorCollegeCards.map((m) => {
+                    const body = (
+                      <>
+                        <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">{m.sport === "football" ? "🏈" : "🏀"}</span>{m.sport === "football" ? "College Football" : "College Basketball"}{m.isTop ? <span className="text-[var(--accent)]"> &bull; Top Team</span> : null}</p>
+                        <div className="flex items-center gap-2">
+                          <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
+                          <p className="font-semibold text-[var(--text)]">{m.name}</p>
+                        </div>
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: m.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: m.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="National championships">{m.titles === 0 ? "No titles" : `${m.titles} Nat'l Champ${m.titles === 1 ? "" : "s"}`}</span>
+                          {m.secondVal > 0 && (<span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title={m.sport === "football" ? "Conference titles" : "Final Four appearances"}>{m.secondVal} {m.secondLabel}{m.sport === "football" ? "" : (m.secondVal === 1 ? "" : "s")}</span>)}
+                          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Seasons">{m.seasons} season{m.seasons === 1 ? "" : "s"}</span>
+                          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }} title="All-time win percentage">{m.pct.toFixed(3)} W%</span>
+                        </div>
+                      </>
+                    );
+                    return m.href ? (
+                      <Link key={m.key} href={m.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">{body}</Link>
+                    ) : (
+                      <div key={m.key} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">{body}</div>
+                    );
+                  })}
+                </div>
+              </details>
+            )}
             {otherFootball.length > 0 && collapsible("Football/Soccer Teams", otherFootball)}
-            {otherCollege.length > 0 && collapsible("College/University Teams", otherCollege)}
+            {otherCollege.length > 0 && collapsible("Other College Teams", otherCollege)}
             {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
             {otherWomen.length > 0 && collapsible("Other Women\u2019s Teams", otherWomen)}
             {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0) && (
@@ -1796,19 +1891,15 @@ function TeamsSection({
                       </div>
                       {f.years && <p className="text-xs text-[var(--text-dim)] mt-1">{f.years}</p>}
                       <div className="flex gap-1.5 mt-2 flex-wrap">
-                        <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: f.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: f.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="NCAA championships won">
-                          {f.titles === 0 ? "No titles" : `${f.titles} Title${f.titles === 1 ? "" : "s"}`}
+                        <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: f.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: f.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="National championships">
+                          {f.titles === 0 ? "No titles" : `${f.titles} Nat'l Champ${f.titles === 1 ? "" : "s"}`}
                         </span>
-                        {f.final4 > 0 && (
-                          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Final Four appearances">
-                            {f.final4} Final Four{f.final4 === 1 ? "" : "s"}
-                          </span>
-                        )}
-                        {f.tour_app > 0 && (
-                          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="NCAA Tournament appearances">
-                            {f.tour_app} NCAA app{f.tour_app === 1 ? "" : "s"}
-                          </span>
-                        )}
+                        <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Final Four appearances">
+                          {f.final4} Final Four{f.final4 === 1 ? "" : "s"}
+                        </span>
+                        <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Seasons as a Division I program">
+                          {f.seasons} season{f.seasons === 1 ? "" : "s"}
+                        </span>
                         <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }} title="All-time win percentage as a Division I program">
                           {f.pct.toFixed(3)} W%
                         </span>

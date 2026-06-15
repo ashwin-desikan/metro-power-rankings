@@ -897,6 +897,13 @@
 ],
 "hurricanes":[
 {
+"year":2026,
+"league":"NHL",
+"era":"stanley",
+"city":"Carolina",
+"team":"Hurricanes"
+},
+{
 "year":2006,
 "league":"NHL",
 "era":"stanley",

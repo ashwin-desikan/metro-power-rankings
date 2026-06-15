@@ -1,15 +1,15 @@
 {
 "year":2026,
-"is_postseason_complete":false,
+"is_postseason_complete":true,
 "by_franchise":{
-"Golden Knights":{
-"state":"active_final",
-"last_round":"In the Stanley Cup Final",
+"Hurricanes":{
+"state":"champion",
+"last_round":"Stanley Cup Champion",
 "year":2026
 },
-"Hurricanes":{
-"state":"active_final",
-"last_round":"In the Stanley Cup Final",
+"Golden Knights":{
+"state":"lost_final",
+"last_round":"Lost Stanley Cup Final",
 "year":2026
 },
 "Avalanche":{

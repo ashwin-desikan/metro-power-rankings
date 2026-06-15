@@ -4,4 +4,5 @@
 export type ChampionBanner = { label: string; until: number };
 export const CHAMPION_STATUS: Record<string, ChampionBanner> = {
   "/teams/nba": { label: "Knicks - NBA Champions", until: 1782172799000 },
+  "/teams/nhl": { label: "Hurricanes - Stanley Cup Champions", until: 1782311020068 },
 };

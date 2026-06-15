@@ -47,6 +47,35 @@ def read_sheet(path,name):
     if not rows: return {},[]
     return {str(c).strip():i for i,c in enumerate(rows[0]) if c is not None}, rows[1:]
 
+def _load_team_colors():
+    """Real brand colors: cfb-colors.csv (shared FBS schools) then
+    cbb-colors.csv (basketball additions, takes precedence). Keyed by
+    norm_name. Falls back to pyhue() for any program in neither file."""
+    import csv as _csv
+    here = os.path.dirname(os.path.abspath(__file__))
+    out = {}
+    for fn in ("cfb-colors.csv", "cbb-colors.csv"):
+        fp = os.path.join(here, fn)
+        if not os.path.exists(fp):
+            continue
+        with open(fp, encoding="utf-8-sig", newline="") as f:
+            for row in _csv.DictReader(f):
+                key = norm_name(row.get("Cur. Name") or "")
+                prim = (row.get("Primary") or "").strip() or None
+                sec = (row.get("Secondary") or "").strip() or None
+                if key:
+                    out[key] = (prim, sec)
+    return out
+
+_TEAM_COLORS = None
+def team_color(name):
+    global _TEAM_COLORS
+    if _TEAM_COLORS is None:
+        _TEAM_COLORS = _load_team_colors()
+    prim, sec = _TEAM_COLORS.get(norm_name(name), (None, None))
+    return (prim or pyhue(name), sec or prim or pyhue(name))
+
+
 def main():
     src,out=sys.argv[1],sys.argv[2]
     SUF="-ncaam"
@@ -65,7 +94,7 @@ def main():
             "current_d1":str(t(r,"Div-I (Current)") or "").strip().upper()=="Y",
             "city":t(r,"City"),"metro":metro,"metro_slug":slugify(metro) or None,
             "state":t(r,"State"),"lat":fnum(t(r,"Lat")),"long":fnum(t(r,"Long")),
-            "region":t(r,"Region"),"color":pyhue(cur),"color2":pyhue(cur),
+            "region":t(r,"Region"),"color":team_color(cur)[0],"color2":team_color(cur)[1],
             "games":inti(t(r,"Tot W"))+inti(t(r,"Tot L")),"w":inti(t(r,"Tot W")),"l":inti(t(r,"Tot L")),
             "pct":round(fnum(t(r,"Tot Win%")) or 0.0,4),"seasons":inti(t(r,"# Yrs Tot")),
             "tour_app":inti(t(r,"App.")),"seed1":inti(t(r,"# 1 Seed")),"top4_seed":inti(t(r,"Top 4 Seed")),
@@ -81,7 +110,7 @@ def main():
     # ---- Conf_Teams -> seasons; enrich name2slug with historical names ----
     C,rows=read_sheet(src,"Conf_Teams")
     def c(r,k): i=C.get(k); return r[i] if i is not None and i<len(r) else None
-    seasons=defaultdict(list); natchamp_rows=[]
+    seasons=defaultdict(list); natchamp_rows=[]; ru_by_year=defaultdict(list); f4_by_year=defaultdict(list)
     for r in rows:
         cur=c(r,"Cur. Name")
         if not cur: continue
@@ -92,6 +121,9 @@ def main():
         if slug not in teams: continue
         yr=inti(c(r,"Year"))
         champ=yn(c(r,"Chm.")); helms=yn(c(r,"Helms Chmp")); premo=yn(c(r,"Premo-Porretta Chmp"))
+        _chapp=yn(c(r,"Ch. App")); _fin4=yn(c(r,"Fin. 4"))
+        if yr>0 and _fin4: f4_by_year[yr].append(cur)
+        if yr>0 and _chapp and not champ: ru_by_year[yr].append(cur)
         seasons[slug].append({"year":yr,"school":hist,"w":inti(c(r,"Fin W")),"l":inti(c(r,"Fin L")),
             "conference":c(r,"Conference"),"conf_w":inti(c(r,"Conf W")),"conf_l":inti(c(r,"Conf L")),
             "ap_high":inti(c(r,"AP High Rank")) or None,"ap_final":inti(c(r,"AP Final")) or None,
@@ -113,7 +145,15 @@ def main():
     for yr,cur,sel in natchamp_rows:
         if yr<=0: continue
         byyear[yr].append({"name":cur,"slug":name2slug.get(norm_name(cur)),"sel":("" if sel=="NCAA" else sel)})
-    national_champions=[{"year":y,"champs":byyear[y]} for y in sorted(byyear,reverse=True)]
+    def _mk(nm): return {"name":nm,"slug":name2slug.get(norm_name(nm))}
+    national_champions=[]
+    for y in sorted(byyear,reverse=True):
+        champs=byyear[y]
+        cset={x["name"] for x in champs}
+        runner_up=[_mk(n) for n in dict.fromkeys(ru_by_year.get(y,[])) if n not in cset]
+        ruset={x["name"] for x in runner_up}
+        final_four=[_mk(n) for n in dict.fromkeys(f4_by_year.get(y,[])) if n not in cset and n not in ruset]
+        national_champions.append({"year":y,"champs":champs,"runner_up":runner_up,"final_four":final_four})
 
     # ---- AP All-American -> awards per team ----
     A,rows=read_sheet(src,"AP All-American")

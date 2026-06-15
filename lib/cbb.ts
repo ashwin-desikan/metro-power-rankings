@@ -8,7 +8,8 @@ export type { CbbTeam, CbbSeason, CbbGame, CbbAward, CbbNba } from "./cbbShared"
 export { cbbColor, cbbMonogram } from "./cbbShared";
 
 export type CbbNatChampSchool = { name: string; slug: string | null; sel: string };
-export type CbbNatChamp = { year: number; champs: CbbNatChampSchool[] };
+export type CbbNatChampPair = { name: string; slug: string | null };
+export type CbbNatChamp = { year: number; champs: CbbNatChampSchool[]; runner_up?: CbbNatChampPair[]; final_four?: CbbNatChampPair[] };
 
 type DataFile = {
   teams: CbbTeam[]; seasons_by_team: Record<string, CbbSeason[]>;
@@ -48,7 +49,7 @@ export function getCbbTeamForName(name: string): CbbTeam | null {
 // the former-FBS cards.
 export type FormerCbbCard = {
   slug: string; name: string; href: string; color: string; mono: string; years: string; lastYear: number;
-  titles: number; final4: number; tour_app: number; pct: number; w: number; l: number;
+  titles: number; final4: number; tour_app: number; pct: number; w: number; l: number; seasons: number;
 };
 let _formerByMetro: Map<string, FormerCbbCard[]> | null = null;
 export function getFormerMajorCbbForMetro(metroSlug: string): FormerCbbCard[] {
@@ -65,7 +66,7 @@ export function getFormerMajorCbbForMetro(metroSlug: string): FormerCbbCard[] {
       const card: FormerCbbCard = {
         slug: t.slug, name: t.name, href: `/teams/cbb/${t.slug}`, color: t.color || "#444",
         mono: monogram(t.name), years, lastYear: yrs.length ? Math.max(...yrs) : (t.last_year || 0),
-        titles: t.titles, final4: t.final4, tour_app: t.tour_app, pct: t.pct, w: t.w, l: t.l,
+        titles: t.titles, final4: t.final4, tour_app: t.tour_app, pct: t.pct, w: t.w, l: t.l, seasons: t.seasons,
       };
       const arr = _formerByMetro.get(t.metro_slug);
       if (arr) arr.push(card); else _formerByMetro.set(t.metro_slug, [card]);

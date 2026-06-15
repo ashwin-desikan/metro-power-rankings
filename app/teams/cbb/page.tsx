@@ -72,13 +72,15 @@ export default function CbbHubPage() {
       {natChamps.length > 0 && (
         <section id="champions" className="mb-12 scroll-mt-20">
           <h2 className="text-lg font-semibold mb-1">National champions</h2>
-          <p className="text-xs text-[var(--text-muted)] mb-4">NCAA tournament champions from 1939, with the retroactive pre-tournament selections (Helms, Premo-Porretta) labeled. Tap a school to open its program page.</p>
+          <p className="text-xs text-[var(--text-muted)] mb-4">NCAA tournament champions from 1939, with the retroactive pre-tournament selections (Helms, Premo-Porretta) labeled. Each row also shows the title-game runner-up and the other two Final Four teams. Tap a school to open its program page.</p>
           <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
             <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
                   <th className="px-3 py-2 w-16">Year</th>
                   <th className="px-3 py-2">National champion</th>
+                  <th className="px-3 py-2">Runner-up</th>
+                  <th className="px-3 py-2">Final Four</th>
                 </tr>
               </thead>
               <tbody>
@@ -91,6 +93,22 @@ export default function CbbHubPage() {
                           {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
                           {c.slug ? <Link href={`/teams/cbb/${c.slug}`} className="font-medium hover:text-[var(--accent)]">{c.name}</Link> : <span className="font-medium">{c.name}</span>}
                           {c.sel ? <span className="text-[10px] text-[var(--text-dim)]"> ({c.sel})</span> : null}
+                        </span>
+                      ))}
+                    </td>
+                    <td className="px-3 py-1.5">
+                      {(nc.runner_up ?? []).length === 0 ? <span className="text-[var(--text-dim)]">&mdash;</span> : (nc.runner_up ?? []).map((r, i) => (
+                        <span key={i}>
+                          {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
+                          {r.slug ? <Link href={`/teams/cbb/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link> : <span>{r.name}</span>}
+                        </span>
+                      ))}
+                    </td>
+                    <td className="px-3 py-1.5 text-[var(--text-muted)]">
+                      {(nc.final_four ?? []).length === 0 ? <span className="text-[var(--text-dim)]">&mdash;</span> : (nc.final_four ?? []).map((f, i) => (
+                        <span key={i}>
+                          {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
+                          {f.slug ? <Link href={`/teams/cbb/${f.slug}`} className="hover:text-[var(--accent)]">{f.name}</Link> : <span>{f.name}</span>}
                         </span>
                       ))}
                     </td>

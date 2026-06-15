@@ -19,10 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-15",
-    headline: "College basketball reaches the metros",
+    headline: "Hurricanes lift the Cup, college hoops grows",
     items: [
-      "Men's college basketball now appears on metro pages: former and defunct Division I programs get cards with national titles, Final Fours and NCAA appearances, from CCNY in New York to dozens of metros.",
-      "Active NCAA programs link straight to their team pages from metro rosters and the top-teams board, and College Basketball joins the League Hubs on the United States page.",
+      "The Carolina Hurricanes are 2026 Stanley Cup champions; NHL pages, all-time tables and metro cards reflect the title, and the Sports nav shows a gold Hurricanes banner for the week.",
+      "Men's college basketball reaches metro pages: a Major College Teams group merges FBS football and tournament-pedigree Division I programs ranked by national titles, with championships, Final Fours, seasons and win pct.",
+      "Every Division I program now carries its real brand colors, and the National Champions table adds the title-game runner-up and the other two Final Four teams for each year.",
+      "College Top Team picks are now sport-specific, so a metro's pick highlights only the right sport (Texas football in Austin, not every Longhorns team).",
     ],
   },
   {
