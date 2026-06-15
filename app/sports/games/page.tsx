@@ -30,6 +30,8 @@ import { FEATURED, clipForRow, type FeaturedGame } from "./featured";
 import type { GameVideo } from "@/app/teams/_shared/GameVideo";
 import { getCfbTopGames, getCfbGamesByDecade, getAllCfbSlugs } from "@/lib/cfb";
 import CfbGames from "@/app/teams/cfb/CfbGames";
+import { getCbbTopGames, getCbbGamesByDecade, getAllCbbSlugs } from "@/lib/cbb";
+import CbbGames from "@/app/teams/cbb/CbbGames";
 
 export const dynamicParams = false;
 
@@ -175,6 +177,10 @@ export default function GamesHubPage() {
   const cfbByDecade = getCfbGamesByDecade();
   const cfbSlugs = getAllCfbSlugs();
   const cfbCards = FEATURED.filter((g) => g.leagueTag === "CFB").sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
+  const cbbTop = getCbbTopGames();
+  const cbbByDecade = getCbbGamesByDecade();
+  const cbbSlugs = getAllCbbSlugs();
+  const cbbCards = FEATURED.filter((g) => g.leagueTag === "CBB").sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -226,6 +232,7 @@ export default function GamesHubPage() {
           { label: "MLB", href: "#mlb" },
           { label: "NHL", href: "#nhl" },
           { label: "College Football", href: "#cfb" },
+          { label: "College Basketball", href: "#cbb" },
           { label: "What's next", href: "#whats-next" },
         ]}
       />
@@ -289,6 +296,19 @@ export default function GamesHubPage() {
         <CfbGames topOverall={cfbTop} byDecade={cfbByDecade} linkSlugs={cfbSlugs} />
       </section>
 
+      {/* Men's College Basketball */}
+      <section id="cbb" className="mb-12 scroll-mt-24">
+        <div className="flex items-baseline justify-between gap-3 mb-3 flex-wrap">
+          <div>
+            <h2 className="text-xl font-bold tracking-tight">Men&apos;s College Basketball</h2>
+            <p className="text-sm text-[var(--text-muted)] max-w-3xl">The greatest games in NCAA tournament history, ranked by Game Score, with the round, venue and result of each. Filter to a decade.</p>
+          </div>
+          <a href="/teams/cbb#games" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full College Basketball hub &rarr;</a>
+        </div>
+        <FeaturedClips games={cbbCards} />
+        <CbbGames topOverall={cbbTop} byDecade={cbbByDecade} linkSlugs={cbbSlugs} />
+      </section>
+
       {/* What's next */}
       <section id="whats-next" className="mb-6 scroll-mt-24">
         <h2 className="text-lg font-semibold mb-2">What&apos;s next</h2>
@@ -302,8 +322,8 @@ export default function GamesHubPage() {
             be ranked head to head rather than league by league.
           </li>
           <li>
-            <span className="text-[var(--text)] font-medium">More sports.</span> Club Football, International
-            Football and Men&apos;s College Basketball are next; the game data is already in hand
+            <span className="text-[var(--text)] font-medium">More sports.</span> Club Football and International
+            Football are next; the game data is already in hand
             and slots into the same model.
           </li>
         </ul>
