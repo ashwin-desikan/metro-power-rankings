@@ -83,4 +83,12 @@ jobs:
           git add public/data/international/wc2026-results.json \
                   public/data/international/wc2026-sim.json
           git commit -m "Auto: refresh WC2026 projections from latest results"
-          git push
+          # Integrate anything that landed on main during the run, then push.
+          # Retry so a concurrent push (e.g. a human commit) cannot fail the job.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying after fetch/rebase..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
