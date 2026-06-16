@@ -99,6 +99,68 @@ export function getAllOlympicSlugs(): string[] {
   return getAllOlympicTeams().map((t) => t.slug);
 }
 
+// ---------- Per-edition Games (/teams/olympics/games/[slug]) ----------
+
+export type EditionMedal = { medal: "Gold" | "Silver" | "Bronze"; name: string; noc: string; country: string };
+export type EditionEvent = { event: string; medals: EditionMedal[] };
+export type EditionSport = { sport: string; events: EditionEvent[] };
+export type EditionTableRow = { rank: number; noc: string; name: string; g: number; s: number; b: number; total: number };
+export type OlympicEditionIndexEntry = {
+  slug: string; year: number; season: string; name: string;
+  hostCity: string; hostMetro: string; hostMetroSlug: string;
+  nations: number; events: number; medalsTotal: number;
+};
+export type OlympicEdition = OlympicEditionIndexEntry & {
+  table: EditionTableRow[]; sports: EditionSport[];
+};
+
+let _editionsIndex: OlympicEditionIndexEntry[] | null = null;
+export function getOlympicEditionsIndex(): OlympicEditionIndexEntry[] {
+  if (!_editionsIndex) _editionsIndex = loadJson<OlympicEditionIndexEntry[]>("editions-index.json") ?? [];
+  return _editionsIndex;
+}
+export function getOlympicEdition(slug: string): OlympicEdition | null {
+  return loadJson<OlympicEdition>(join("editions", `${slug}.json`));
+}
+
+// Map a Culture-Infra event label ("2021 Summer Olympics", "1906 Intercalated
+// Games") to an edition slug, or null when we have no data for it. Tokyo 2020
+// was held in 2021, so the metro data says "2021"; alias it back.
+const EDITION_SLUG_ALIAS: Record<string, string> = { "summer-2021": "summer-2020" };
+let _editionSlugSet: Set<string> | null = null;
+export function olympicEditionSlugFromName(name: string): string | null {
+  if (!_editionSlugSet) _editionSlugSet = new Set(getOlympicEditionsIndex().map((e) => e.slug));
+  const ym = name.match(/(?:18|19|20)\d\d/);
+  if (!ym) return null;
+  const season = /winter/i.test(name)
+    ? "winter"
+    : /intercalated/i.test(name)
+    ? "intercalated"
+    : /summer/i.test(name)
+    ? "summer"
+    : null;
+  if (!season) return null;
+  let slug = `${season}-${ym[0]}`;
+  if (EDITION_SLUG_ALIAS[slug]) slug = EDITION_SLUG_ALIAS[slug];
+  return _editionSlugSet.has(slug) ? slug : null;
+}
+
+// Resolve an edition NOC code (e.g. "USA", "URS", "GDR") to its Olympic team
+// page slug, folding historical codes into the modern lineage exactly as
+// build_olympics_data.py does. Returns null for codes with no team page.
+const NOC_LINEAGE: Record<string, string> = {
+  URS: "RUS", EUN: "RUS", ROC: "RUS",
+  YUG: "SRB", SCG: "SRB",
+  TCH: "CZE", BOH: "CZE",
+  FRG: "GER",
+  UAR: "EGY",
+};
+let _slugByCode: Map<string, string> | null = null;
+export function olympicSlugForNoc(noc: string): string | null {
+  if (!_slugByCode) _slugByCode = new Map(getAllOlympicTeams().map((t) => [t.code, t.slug]));
+  return _slugByCode.get(NOC_LINEAGE[noc] ?? noc) ?? null;
+}
+
 export function getOlympicTeamDetail(slug: string): OlympicTeamDetail | null {
   return loadJson<OlympicTeamDetail>(join("team-detail", `${slug}.json`));
 }

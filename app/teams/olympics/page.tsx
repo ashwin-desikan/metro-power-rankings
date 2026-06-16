@@ -102,8 +102,10 @@ export default function OlympicsHubPage() {
               {hub.editions.slice().reverse().map((e) => (
                 <tr key={`${e.year}-${e.season}`} className="border-t" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 px-3 whitespace-nowrap">
-                    <span className="tabular-nums font-medium" style={mono}>{e.year}</span>
-                    <span className="text-xs text-[var(--text-muted)]"> {e.season}</span>
+                    <Link href={`/teams/olympics/games/${e.season.toLowerCase()}-${e.year}`} className="hover:text-[var(--accent)]">
+                      <span className="tabular-nums font-medium" style={mono}>{e.year}</span>
+                      <span className="text-xs text-[var(--text-muted)]"> {e.season}</span>
+                    </Link>
                   </td>
                   <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{e.nations}</td>
                   <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{e.medals.toLocaleString()}</td>

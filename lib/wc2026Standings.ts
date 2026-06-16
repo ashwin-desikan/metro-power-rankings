@@ -37,6 +37,7 @@ const NAME_ALIASES: Record<string, string> = {
   "Korea Republic": "South Korea",
   "IR Iran": "Iran",
   "Cabo Verde": "Cape Verde",
+  "Ivory Coast": "Côte d'Ivoire",
 };
 
 type EspnStat = { name?: string; value?: number };
@@ -54,7 +55,7 @@ function norm(s: string): string {
     const cp = ch.codePointAt(0);
     if (cp === undefined || cp < 0x0300 || cp > 0x036f) out += ch;
   }
-  return out.toLowerCase().trim();
+  return out.replace(/['’]/g, "").toLowerCase().trim();
 }
 
 export async function getWc2026LiveStandings(): Promise<Wc2026LiveStandings> {

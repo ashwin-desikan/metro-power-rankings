@@ -8,6 +8,7 @@ import { getAllFranchiseSlugs as getNbaSlugs } from "@/lib/nba";
 import { getAllFranchiseSlugs as getMlbSlugs } from "@/lib/mlb";
 import { getAllFranchiseSlugs as getNhlSlugs } from "@/lib/nhl";
 import { BASE_URL } from "@/lib/seo";
+import { getOlympicEditionsIndex } from "@/lib/olympics";
 
 // Read lastUpdate from meta.json to stamp sitemap entries.
 import { readFileSync } from "fs";
@@ -241,8 +242,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  const olympicsEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/teams/olympics`,
+      lastModified: stamp,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    ...getOlympicEditionsIndex().map((e) => ({
+      url: `${BASE_URL}/teams/olympics/games/${e.slug}`,
+      lastModified: stamp,
+      changeFrequency: "yearly" as const,
+      priority: 0.55,
+    })),
+  ];
+
   return [
     ...staticEntries,
+    ...olympicsEntries,
     ...badgeEntries,
     ...countryEntries,
     ...stateEntries,

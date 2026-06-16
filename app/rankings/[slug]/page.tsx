@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { olympicEditionSlugFromName } from "@/lib/olympics";
 import {
   getAllMetros,
   getMetroDetail,
@@ -2791,17 +2792,36 @@ function EventsSection({
               </span>
             </summary>
             <div className="border-t border-[var(--border)] px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-3">
-              {grouped[category].map((ev, idx) => (
-                <div key={idx} className="py-2">
-                  <p className="font-medium text-[var(--text)]">{ev.event}</p>
-                  {ev.type && (
-                    <p className="text-xs text-[var(--accent)]">{ev.type}</p>
-                  )}
-                  <p className="text-xs text-[var(--text-muted)]">
-                    {ev.year} {"\u2022"} {ev.venue}
-                  </p>
-                </div>
-              ))}
+              {grouped[category].map((ev, idx) => {
+                const olySlug =
+                  category === "Multi-Sport Events"
+                    ? olympicEditionSlugFromName(ev.event)
+                    : null;
+                const inner = (
+                  <>
+                    <p className="font-medium text-[var(--text)]">{ev.event}</p>
+                    {ev.type && (
+                      <p className="text-xs text-[var(--accent)]">{ev.type}</p>
+                    )}
+                    <p className="text-xs text-[var(--text-muted)]">
+                      {ev.year} {"\u2022"} {ev.venue}
+                    </p>
+                  </>
+                );
+                return olySlug ? (
+                  <Link
+                    key={idx}
+                    href={`/teams/olympics/games/${olySlug}`}
+                    className="block py-2 rounded-md transition hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)]"
+                  >
+                    {inner}
+                  </Link>
+                ) : (
+                  <div key={idx} className="py-2">
+                    {inner}
+                  </div>
+                );
+              })}
             </div>
           </details>
         ))}

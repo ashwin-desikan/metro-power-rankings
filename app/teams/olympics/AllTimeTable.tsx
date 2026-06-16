@@ -1,10 +1,16 @@
 "use client";
 
-// Filterable all-time Olympic medal table: Total / Summer / Winter scope
-// toggle, re-sorted by gold within the selected scope. Client component fed
-// plain rows by the server hub page.
+// All-time Olympic medal table with linked filters.
+//   Scope:  Total / Summer / Winter
+//   Year:   multi-select, limited to years held in the chosen scope
+//   Sport:  multi-select, limited to sports held in the chosen scope AND the
+//           selected years (and vice versa)
+// Default (all years, all sports) reproduces the precomputed teams.json totals
+// exactly. When a filter is active the table re-aggregates from the per-team /
+// year / sport breakdown (public/data/olympics/medals-breakdown.json), which
+// folds to the same lineage entities and the same grand totals.
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { flagCdnUrl } from "@/lib/international-display";
 
@@ -19,6 +25,7 @@ export type AllTimeRow = {
 };
 
 type Scope = "total" | "summer" | "winter";
+type Breakdown = { slugs: string[]; sports: string[]; rows: number[][] }; // [si,year,seas,spi,g,s,b]
 const GOLD = "#d4af37";
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const card = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
@@ -30,48 +37,164 @@ const SCOPES: { key: Scope; label: string }[] = [
 ];
 
 function view(row: AllTimeRow, scope: Scope) {
-  if (scope === "summer") {
+  if (scope === "summer")
     return { g: row.summer.g, s: row.summer.s, b: row.summer.b,
              total: row.summer.g + row.summer.s + row.summer.b,
              apps: row.summer_apps, first: row.summer.first, last: row.summer.last };
-  }
-  if (scope === "winter") {
+  if (scope === "winter")
     return { g: row.winter.g, s: row.winter.s, b: row.winter.b,
              total: row.winter.g + row.winter.s + row.winter.b,
              apps: row.winter_apps, first: row.winter.first, last: row.winter.last };
-  }
   return { g: row.g, s: row.s, b: row.b, total: row.total,
            apps: row.apps, first: row.first, last: row.last };
 }
 
+const SEAS_OK = (seas: number, scope: Scope) =>
+  scope === "total" || (scope === "summer" ? seas === 0 : seas === 1);
+
+function MultiSelect<T extends string | number>({
+  label, options, selected, onToggle, onAll, onClear, render,
+}: {
+  label: string; options: T[]; selected: Set<T>;
+  onToggle: (v: T) => void; onAll: () => void; onClear: () => void;
+  render: (v: T) => string;
+}) {
+  const summary = selected.size === 0 ? `All ${label.toLowerCase()}s` : `${selected.size} ${label.toLowerCase()}${selected.size !== 1 ? "s" : ""}`;
+  return (
+    <details className="relative">
+      <summary className="text-xs px-3 py-1.5 rounded-md border cursor-pointer select-none list-none"
+               style={{ ...card, color: "var(--text)" }}>
+        {label}: <span className="font-semibold">{summary}</span>
+      </summary>
+      <div className="absolute z-20 mt-1 w-56 max-h-72 overflow-y-auto rounded-md border p-2 shadow-lg"
+           style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <div className="flex gap-3 mb-2 text-xs">
+          <button type="button" onClick={onAll} className="hover:text-[var(--accent)] underline">All</button>
+          <button type="button" onClick={onClear} className="hover:text-[var(--accent)] underline">Clear</button>
+        </div>
+        <ul className="space-y-0.5">
+          {options.map((o) => (
+            <li key={String(o)}>
+              <label className="flex items-center gap-2 text-xs px-1 py-0.5 rounded cursor-pointer hover:bg-[var(--bg-card-hover)]">
+                <input type="checkbox" checked={selected.has(o)} onChange={() => onToggle(o)} />
+                <span>{render(o)}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </details>
+  );
+}
+
 export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
   const [scope, setScope] = useState<Scope>("total");
+  const [bd, setBd] = useState<Breakdown | null>(null);
+  const [years, setYears] = useState<Set<number>>(new Set());
+  const [sports, setSports] = useState<Set<string>>(new Set());
 
-  const visible = rows
-    .map((r) => ({ row: r, v: view(r, scope) }))
-    .filter(({ v }) => v.apps > 0)
-    .sort((a, b) => b.v.g - a.v.g || b.v.s - a.v.s || b.v.b - a.v.b);
+  useEffect(() => {
+    fetch("/data/olympics/medals-breakdown.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => setBd(d))
+      .catch(() => setBd(null));
+  }, []);
+
+  const rowBySlug = useMemo(() => new Map(rows.map((r) => [r.slug, r])), [rows]);
+
+  const availYears = useMemo(() => {
+    if (!bd) return [] as number[];
+    const set = new Set<number>();
+    for (const r of bd.rows) if (SEAS_OK(r[2], scope)) set.add(r[1]);
+    return Array.from(set).sort((a, b) => b - a);
+  }, [bd, scope]);
+
+  const availSports = useMemo(() => {
+    if (!bd) return [] as string[];
+    const set = new Set<string>();
+    for (const r of bd.rows)
+      if (SEAS_OK(r[2], scope) && (years.size === 0 || years.has(r[1]))) set.add(bd.sports[r[3]]);
+    return Array.from(set).sort();
+  }, [bd, scope, years]);
+
+  // Switching scope clears year/sport (the year sets differ by season).
+  useEffect(() => { setYears(new Set()); setSports(new Set()); }, [scope]);
+  // Prune sport selections the current year selection no longer allows.
+  useEffect(() => {
+    setSports((prev) => {
+      if (prev.size === 0) return prev;
+      const ok = new Set(availSports);
+      const next = new Set([...prev].filter((s) => ok.has(s)));
+      return next.size === prev.size ? prev : next;
+    });
+  }, [availSports]);
+
+  const filtersActive = years.size > 0 || sports.size > 0;
+
+  const visible = useMemo(() => {
+    if (!filtersActive || !bd) {
+      return rows
+        .map((r) => ({ row: r, v: view(r, scope) }))
+        .filter(({ v }) => v.apps > 0)
+        .sort((a, b) => b.v.g - a.v.g || b.v.s - a.v.s || b.v.b - a.v.b);
+    }
+    type Agg = { g: number; s: number; b: number; eds: Set<string>; min: number; max: number };
+    const agg = new Map<string, Agg>();
+    for (const r of bd.rows) {
+      const [si, year, seas, spi, g, s, b] = r;
+      if (!SEAS_OK(seas, scope)) continue;
+      if (years.size > 0 && !years.has(year)) continue;
+      if (sports.size > 0 && !sports.has(bd.sports[spi])) continue;
+      const slug = bd.slugs[si];
+      let a = agg.get(slug);
+      if (!a) { a = { g: 0, s: 0, b: 0, eds: new Set(), min: year, max: year }; agg.set(slug, a); }
+      a.g += g; a.s += s; a.b += b; a.eds.add(`${year}-${seas}`);
+      a.min = Math.min(a.min, year); a.max = Math.max(a.max, year);
+    }
+    const out: { row: AllTimeRow; v: ReturnType<typeof view> }[] = [];
+    for (const [slug, a] of agg) {
+      const row = rowBySlug.get(slug);
+      if (!row || a.g + a.s + a.b === 0) continue;
+      out.push({ row, v: { g: a.g, s: a.s, b: a.b, total: a.g + a.s + a.b, apps: a.eds.size, first: a.min, last: a.max } });
+    }
+    return out.sort((x, y) => y.v.g - x.v.g || y.v.s - x.v.s || y.v.b - x.v.b);
+  }, [filtersActive, bd, rows, scope, years, sports, rowBySlug]);
 
   return (
     <div>
-      <div className="flex gap-1.5 mb-3">
+      <div className="flex flex-wrap items-center gap-1.5 mb-3">
         {SCOPES.map((s) => (
-          <button
-            key={s.key}
-            type="button"
-            onClick={() => setScope(s.key)}
+          <button key={s.key} type="button" onClick={() => setScope(s.key)}
             className="text-xs px-3 py-1.5 rounded-md border transition-colors"
             style={{
               backgroundColor: scope === s.key ? "var(--accent)" : "var(--bg-card)",
               borderColor: scope === s.key ? "var(--accent)" : "var(--border)",
               color: scope === s.key ? "var(--bg)" : "var(--text)",
               fontWeight: scope === s.key ? 600 : 400,
-            }}
-          >
+            }}>
             {s.label}
           </button>
         ))}
+        <span className="mx-1 text-[var(--border)]">|</span>
+        <MultiSelect<number>
+          label="Year" options={availYears} selected={years}
+          onToggle={(y) => setYears((p) => { const n = new Set(p); if (n.has(y)) n.delete(y); else n.add(y); return n; })}
+          onAll={() => setYears(new Set())} onClear={() => setYears(new Set())}
+          render={(y) => String(y)} />
+        <MultiSelect<string>
+          label="Sport" options={availSports} selected={sports}
+          onToggle={(s) => setSports((p) => { const n = new Set(p); if (n.has(s)) n.delete(s); else n.add(s); return n; })}
+          onAll={() => setSports(new Set())} onClear={() => setSports(new Set())}
+          render={(s) => s} />
+        {filtersActive && (
+          <button type="button" onClick={() => { setYears(new Set()); setSports(new Set()); }}
+            className="text-xs px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] underline">
+            Reset
+          </button>
+        )}
+        {!bd && <span className="text-xs text-[var(--text-dim)]">loading filters…</span>}
       </div>
+
       <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
         <table className="w-full text-sm min-w-[680px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
@@ -116,6 +239,14 @@ export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
           </tbody>
         </table>
       </div>
+      {filtersActive && (
+        <p className="mt-2 text-xs text-[var(--text-muted)]">
+          Filtered: {visible.length} team{visible.length !== 1 ? "s" : ""} ·{" "}
+          {years.size === 0 ? "all years" : `${years.size} year${years.size !== 1 ? "s" : ""}`} ·{" "}
+          {sports.size === 0 ? "all sports" : `${sports.size} sport${sports.size !== 1 ? "s" : ""}`}.
+          Totals re-aggregated from medal-level data.
+        </p>
+      )}
     </div>
   );
 }
