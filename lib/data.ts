@@ -97,6 +97,32 @@ export function getRelocationsForMetro(slug: string): RelocationCard[] {
   return (_relocations ?? {})[slug] ?? [];
 }
 
+export type SimilarMetro = {
+  slug: string;
+  name: string;
+  country: string;
+  region: string;
+  rank: number;
+};
+export type MetroSimilarity = { neighbors: SimilarMetro[]; signature: string[] };
+
+let _similar: Record<string, MetroSimilarity> | null = null;
+// Nearest metros by 16-dimension profile + distinctive signature, precomputed by
+// scripts/build-similar-metros.py (value-based: log-z neighbors, raw-z signature).
+// Single slug-keyed file, loaded once and cached.
+export function getSimilarMetrosForMetro(slug: string): MetroSimilarity | null {
+  if (_similar === null) {
+    try {
+      _similar = JSON.parse(
+        readFileSync(join(dataDir, "similar-metros.json"), "utf-8")
+      );
+    } catch {
+      _similar = {};
+    }
+  }
+  return (_similar ?? {})[slug] ?? null;
+}
+
 export function getMetroDetail(slug: string): MetroDetail | null {
   try {
     const raw = readFileSync(join(dataDir, "details", `${slug}.json`), "utf-8");

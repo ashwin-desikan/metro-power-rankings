@@ -5,6 +5,7 @@ import {
   getAllMetros,
   getMetroDetail,
   getRelocationsForMetro,
+  getSimilarMetrosForMetro,
   formatPop,
   formatMarketCap,
   formatGdp,
@@ -203,12 +204,6 @@ export default async function MetroDetailPage({ params }: PageProps) {
   const allMetros = getAllMetros();
   const currentIndex = allMetros.findIndex((m) => m.slug === slug);
   const bestScore = Math.max(...allMetros.map((m) => m.score));
-
-  // Get similar metros (5 with adjacent ranks)
-  const similarMetros = allMetros
-    .filter((m) => Math.abs(m.rank - metro.rank) <= 10 && m.slug !== slug)
-    .sort((a, b) => a.rank - b.rank)
-    .slice(0, 5);
 
   // Structured data: Place with aggregateRating, plus BreadcrumbList.
   // qid/wikipediaUrl expand Place.sameAs so entity resolvers (Google, LLM
@@ -709,9 +704,25 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <h2 id="stats" className="text-2xl font-bold">Dimension Breakdown</h2>
             <span className="text-xs text-[var(--text-muted)]">Value and global rank across all 16 dimensions</span>
           </div>
+          {(() => {
+            const sig = getSimilarMetrosForMetro(slug)?.signature ?? [];
+            if (sig.length === 0) return null;
+            return (
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                Stands out for{" "}
+                <span className="text-[var(--text)]">
+                  {sig.map((k) => formatDimensionName(k)).join(", ")}
+                </span>
+                .
+              </p>
+            );
+          })()}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {Object.entries(metro.dims).map(([key, value]) => {
-              const anchor = getDimensionAnchor(key);
+              const anchor =
+                key === "skyscrapers"
+                  ? ((detail.supertallStructures?.length ?? 0) > 0 ? "skyline" : null)
+                  : getDimensionAnchor(key);
               const rankStr = detail.dimRanks?.[key];
               const isEmpty = !(typeof value === "number" && value > 0);
               const rankNum = rankStr ? parseInt(rankStr.replace(/^T-/, ""), 10) : NaN;
@@ -758,6 +769,44 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2 h-2 rounded-sm bg-[var(--text-muted)]"></span>Outside top 5</span>
           </div>
         </section>
+
+        {/* Most similar metros — nearest profiles across all 16 dimensions,
+            precomputed by scripts/build-similar-metros.py. Mirrors everynoise's
+            "click a place to sort by similarity" idea. */}
+        {(() => {
+          const similar = getSimilarMetrosForMetro(slug);
+          if (!similar || !similar.neighbors || similar.neighbors.length === 0) return null;
+          return (
+            <section>
+              <div className="flex items-baseline justify-between gap-3 mb-4 flex-wrap">
+                <h2 id="similar" className="text-2xl font-bold">Most similar metros</h2>
+                <span className="text-xs text-[var(--text-muted)]">Closest profiles across all 16 dimensions</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                {similar.neighbors.map((n) => (
+                  <Link
+                    key={n.slug}
+                    href={`/rankings/${n.slug}`}
+                    className="flex items-center justify-between gap-3 px-3 py-2 rounded-lg border border-[var(--border)] transition hover:border-[var(--accent)]"
+                    style={{ background: "var(--bg-card)" }}
+                  >
+                    <span className="flex items-center gap-2 min-w-0">
+                      <span
+                        className="inline-block w-2 h-2 rounded-full flex-shrink-0"
+                        style={{ background: regionColors[n.region] || "var(--accent)" }}
+                      />
+                      <span className="flex flex-col min-w-0">
+                        <span className="text-sm text-[var(--text)] truncate">{n.name}</span>
+                        <span className="text-xs text-[var(--text-muted)] truncate">{n.country}</span>
+                      </span>
+                    </span>
+                    <span className="text-xs text-[var(--text-muted)] flex-shrink-0" style={{ fontFamily: "'JetBrains Mono', monospace" }}>#{n.rank}</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
 
         {/* Sports Section */}
         {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0) && (() => {
@@ -1006,7 +1055,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                           );
                         })}
                         {towers.length > 0 && (
-                          <details className={COLLAPSIBLE_CARD_CLASS}>
+                          <details id="skyline" className={COLLAPSIBLE_CARD_CLASS}>
                             <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
                               <span className="font-semibold text-[var(--text)]">Supertall Structures (350m+)</span>
                               <span className="text-sm text-[var(--text-muted)]">
@@ -1194,40 +1243,6 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Similar Metros Section */}
-        {similarMetros.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Similar Metros by Rank</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-              {similarMetros.map((sim) => (
-                <a
-                  key={sim.slug}
-                  href={`/rankings/${sim.slug}`}
-                  className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg p-4 hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] transition group"
-                >
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span
-                      className="text-2xl font-bold text-[var(--accent)]"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                    >
-                      #{sim.rank}
-                    </span>
-                  </div>
-                  <p className="font-semibold text-[var(--text)] group-hover:text-[var(--accent)] transition mb-1">
-                    {sim.name}
-                  </p>
-                  <p className="text-xs text-[var(--text-muted)] mb-3">{sim.country}</p>
-                  <p
-                    className="text-sm text-[var(--accent)] font-mono"
-                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                  >
-                    {sim.score.toFixed(1)} pts
-                  </p>
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
       </div>
     </main>
   );
@@ -2809,10 +2824,11 @@ function getDimensionAnchor(key: string): string | null {
     portsExchangesInfra: "infrastructure",
     airportScore: "infrastructure",
     luxuryStars: "luxury",
-    metroStations: "transit",
-    suburbStations: "transit",
-    trainHubs: "transit",
-    skyscrapers: "skyline",
+    metroStations: "infrastructure",
+    suburbStations: "infrastructure",
+    trainHubs: "infrastructure",
+    // skyscrapers is handled inline in the Dimension Breakdown: it links to the
+    // Supertall Structures block (#skyline) only when the metro has 350m+ towers.
   };
   return anchors[key] || null;
 }

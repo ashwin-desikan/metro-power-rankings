@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-16",
+    headline: "Most similar metros, plus Stanley Cup games return",
+    items: [
+      "Every metro page now lists its most similar metros by overall profile across the 16 dimensions, with a Stands out for line flagging the dimensions where it most leads the field.",
+      "Every Stanley Cup presentation game is back on the Greatest Games hub, alongside the NFL, NBA and MLB top games.",
+      "Men's college basketball joins the Greatest Games hub, with its classic tournament games filterable by decade.",
+      "Each metro's college teams now sit in one Major League Teams and Venues group for a cleaner profile.",
+    ],
+  },
+  {
     date: "2026-06-15",
     headline: "Hurricanes lift the Cup, college hoops grows",
     items: [
