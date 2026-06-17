@@ -33,6 +33,8 @@ import { rugbyClubColor, rugbyMonogram } from "@/lib/rugby-colors";
 import { cricketClubColor } from "@/lib/cricket-colors";
 import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
 import { getNpbTeamByName } from "@/lib/npb";
+import { getCurrentChampionships } from "@/lib/champions";
+import ChampionBadge from "@/app/teams/ChampionBadge";
 import { isGoldStandardLeague } from "@/lib/goldStandard";
 import { getNflFranchiseByTeamName } from "@/lib/nfl";
 import { getMlbFranchiseByTeamName } from "@/lib/mlb";
@@ -2166,6 +2168,11 @@ function TeamCard({
   // KHL hockey / CBA / county cricket clubs (lib/domesticHonours).
   const domesticHonours = getDomesticHonours(team.sport, team.team);
 
+  // Reigning-champion pill (lib/champions). Matched on team name: champion club
+  // names are unique across the ledger, so this avoids the workbook's sport-label
+  // quirks (Soccer vs Football, WNBA stored as "Int'l W Basketball", etc.).
+  const cardChamps = getCurrentChampionships(team.team);
+
   return (
     <div
       className={`border rounded-lg p-4 hover:border-[var(--accent)] transition ${
@@ -2178,6 +2185,7 @@ function TeamCard({
         {sportIcon(team.sport) && <span aria-hidden className="mr-1">{sportIcon(team.sport)}</span>}
         {normalizeTeamSport(team.sport)} • {displayLeague}{isGold && <span className="ml-1 cursor-default" title="Gold Standard league — the apex competition in its sport on this site" aria-label="Gold Standard league">🥇</span>}{isTopTeam && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}
       </p>
+      <ChampionBadge items={cardChamps} />
       {elHonours && (elHonours.titles > 0 || elHonours.f4 > 0) && (
         <div className="flex gap-1.5 mb-1.5 flex-wrap">
           {elHonours.titles > 0 && (

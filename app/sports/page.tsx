@@ -247,6 +247,23 @@ export default function SportsPage() {
         <p className="text-xs text-[var(--text-muted)] mb-4">
           Grouped by sport. Live cards link straight to the per-franchise hubs; coming-soon cards stay on this page until that league ships.
         </p>
+        <Link
+          href="/sports/champions"
+          className="group flex items-center gap-3 rounded-xl border p-4 mb-6 transition-colors hover:bg-[var(--bg-card-hover)]"
+          style={{ background: "rgba(212,175,55,0.08)", borderColor: "rgba(212,175,55,0.4)" }}
+        >
+          <span aria-hidden className="text-2xl leading-none">🏆</span>
+          <span className="min-w-0">
+            <span className="block font-semibold text-base tracking-tight" style={{ color: "#d4af37" }}>
+              Current Champions
+            </span>
+            <span className="block text-xs text-[var(--text-muted)]">
+              Every reigning Gold Standard champion across the world, one board.
+            </span>
+          </span>
+          <span aria-hidden className="ml-auto text-[var(--text-dim)] transition-transform group-hover:translate-x-0.5">→</span>
+        </Link>
+
         <div className="space-y-6">
           {directoryGroups.map((g) => (
             <div key={g.family}>

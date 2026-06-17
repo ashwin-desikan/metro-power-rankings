@@ -10,6 +10,8 @@ import { getHandballTeamForCountry } from "@/lib/handball";
 import { getVolleyballTeamForCountry } from "@/lib/volleyball";
 import { getRlTeamForCountry } from "@/lib/rugbyLeagueIntl";
 import { sportIcon } from "@/lib/sportLabels";
+import { getCurrentChampionships } from "@/lib/champions";
+import ChampionBadge from "@/app/teams/ChampionBadge";
 
 // "National Teams" section on country hub pages: men's football, women's
 // football (WWC nations), plus cricket and rugby union cards joined by name
@@ -105,11 +107,15 @@ function plural(n: number, noun: string): string {
 }
 
 function Card({
-  href, chip, sport, tag, name, note, chips, children,
+  href, chip, sport, tag, name, note, chips, champSport, children,
 }: {
   href: string; chip: string; sport: string; tag?: string | null; name: string;
-  note?: string | null; chips?: TrophyChip[]; children: React.ReactNode;
+  note?: string | null; chips?: TrophyChip[]; champSport?: string; children: React.ReactNode;
 }) {
+  // Reigning-champion pill. Match on (name, champSport) where champSport is the
+  // champions-ledger sport label (which differs from the card's display sport
+  // for women's football and ice hockey); defaults to the card sport.
+  const champs = getCurrentChampionships(name, champSport ?? sport);
   return (
     <Link href={href}
           className="block border rounded-lg p-3 transition-colors hover:border-[var(--accent)]"
@@ -127,6 +133,7 @@ function Card({
         ) : null}
       </div>
       <div className="font-semibold text-sm mb-1.5">{name}</div>
+      <ChampionBadge items={champs} />
       <div className="flex flex-wrap gap-x-3 gap-y-0.5">{children}</div>
       {chips && chips.length > 0 ? (
         <div className="flex gap-1.5 mt-1.5 flex-wrap">
@@ -259,7 +266,7 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
 
   if (women) entries.push({ key: "wfootball", node: (
     <Card key="wfootball" href={`/teams/national/womens-world-cup/${women.slug}`} chip="Women's Football"
-          sport="Football" name={women.name}
+          sport="Football" champSport="W Football" name={women.name}
           chips={[{
             label: plural(women.titles, "World Cup"),
             gold: women.titles > 0,
@@ -364,7 +371,7 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
   ) });
 
   if (hockey) entries.push({ key: "hockey", node: (
-    <Card key="hockey" href={`/teams/hockey/${hockey.slug}`} chip="Ice Hockey" sport="Ice Hockey"
+    <Card key="hockey" href={`/teams/hockey/${hockey.slug}`} chip="Ice Hockey" sport="Ice Hockey" champSport="Hockey"
           tag={hockey.lineage ? `incl. ${hockey.lineage.join(", ")}` : null}
           name={hockey.name}
           chips={[{

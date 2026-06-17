@@ -98,7 +98,8 @@ export const SPORTS_CATALOG: CatalogEntry[] = [
   { href: "/teams/ipl", label: "IPL", sport: "Cricket", family: "Cricket", scope: "club", hint: "All 10 IPL franchises, season standings, playoffs, and finals history since 2008" },
 
   // Rugby Union
-  { href: "/teams/rugby-union", label: "Rugby Union", sport: "Rugby Union", family: "Rugby Union", scope: "international", hint: "Test rugby since 1871: Six Nations, Rugby Championship, World Cup finals, and world rankings since 2003" },
+  { href: "/teams/rugby-union", label: "International Rugby", boardLabel: "International", sport: "Rugby Union", family: "Rugby Union", scope: "international", hint: "Test rugby since 1871: Six Nations, Rugby Championship, World Cup finals, and world rankings since 2003" },
+  { href: "/teams/rugby-union/clubs", label: "Domestic Rugby", boardLabel: "Domestic", sport: "Rugby Union", family: "Rugby Union", scope: "club", hint: "Club rugby's honours boards: the Champions Cup, the Top 14 back to 1892, the Premiership, the URC, Super Rugby, the Currie Cup, and Japan's League One" },
 
   // Rugby League
   { href: "/teams/rugby-league", label: "International Rugby League", boardLabel: "International", sport: "Rugby League", family: "Rugby League", scope: "international", hint: "The Rugby League World Cup since 1954: 16 editions, every final, and the all-time national honour table." },
@@ -114,7 +115,7 @@ export const SPORTS_CATALOG: CatalogEntry[] = [
   { href: "/teams/volleyball", label: "International Volleyball", boardLabel: "International", sport: "Volleyball", family: "Volleyball", scope: "international", hint: "Olympic men's volleyball (the ultimate trophy) since 1964 and the FIVB World Championship since 1949" },
 
   // Olympics (multi-sport portal; its own section)
-  { href: "/teams/olympics", label: "Olympics", sport: "Olympics", family: "Olympics", scope: "international", hint: "Every Summer and Winter Games since 1896: all-time medal table with lineages folded into modern nations" },
+  { href: "/teams/olympics", label: "Olympics", boardLabel: "Medal Table", sport: "Olympics", family: "Olympics", scope: "international", hint: "Every Summer and Winter Games since 1896: all-time medal table with lineages folded into modern nations" },
 ];
 
 // Helpers -------------------------------------------------------------------

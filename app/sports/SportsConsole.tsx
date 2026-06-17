@@ -87,6 +87,16 @@ export default function SportsConsole({ deepDives }: { deepDives: ConsoleDeepDiv
           <Legend color={DOT.offseason} label="Offseason" />
         </div>
 
+        <Link
+          href="/sports/champions"
+          className="flex items-center gap-2 rounded-md border px-2.5 py-2 mb-1 transition-colors hover:bg-[var(--bg-card-hover)]"
+          style={{ borderColor: "rgba(212,175,55,0.4)", background: "rgba(212,175,55,0.08)" }}
+        >
+          <span aria-hidden className="text-sm leading-none">🏆</span>
+          <span className="text-[12px] font-semibold" style={{ color: "#d4af37" }}>Current Champions</span>
+          <span aria-hidden className="ml-auto text-[var(--text-dim)]">→</span>
+        </Link>
+
         <div>
           {groups.map((g) => {
             const isSelf = g.entries.length === 1 && boardLabelFor(g.entries[0]) === g.family;

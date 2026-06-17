@@ -30,10 +30,17 @@ function all(): Championship[] {
 function norm(s: string): string {
   return s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
-// Map a page's sport label to the workbook's. The "W " (women's) prefix is
-// significant and preserved so men's/women's titles never cross-match.
+// Normalize a sport label so the workbook's Team List labels match the
+// champions sheet's. The "W " (women's) prefix stays significant so men's and
+// women's titles never cross-match (e.g. Spain men's Euro vs Spain women's WC).
+// Cricket formats (Test/T20) collapse to "cricket"; soccer -> football.
 function sportNorm(s: string): string {
-  return norm(s).replace(/\bsoccer\b/, "football").replace(/^mens?\s+/, "");
+  const n = norm(s);
+  const w = /^w\b/.test(n) || /\bwomen/.test(n);
+  let base = n.replace(/^w\s+/, "").replace(/\bwomen'?s?\b/g, "").replace(/^mens?\s+/, "").trim();
+  base = base.replace(/\bsoccer\b/, "football");
+  if (base.includes("cricket")) base = "cricket";
+  return w ? "w " + base : base;
 }
 
 let _idx: Map<string, Championship[]> | null = null;
