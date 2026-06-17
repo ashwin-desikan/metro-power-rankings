@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -101,6 +103,7 @@ export default async function CricketTeamPage(
             <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
+        <ChampionBadge items={getCurrentChampionships(team.name, "Cricket")} />
           {team.full_member ? <Chip>Full Member</Chip> : null}
           {!team.full_member && !team.composite ? <Chip>Associate</Chip> : null}
           {team.composite ? <Chip>Composite XI</Chip> : null}

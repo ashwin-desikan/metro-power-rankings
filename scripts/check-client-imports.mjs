@@ -31,6 +31,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/audience",
   "@/lib/wcbb",
   "@/lib/collegeHockey",
+  "@/lib/champions",
   "@/lib/nfl",
   "@/lib/mlb",
   "@/lib/nba",

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import { notFound } from "next/navigation";
 import {
   getAllRlSlugs,
@@ -70,6 +72,7 @@ export default async function RlNationPage({ params }: { params: Promise<{ slug:
             )}
             {t.name}
           </h1>
+          <ChampionBadge items={getCurrentChampionships(t.name, "Rugby League")} />
           {t.titles > 0 ? (
             <span className="text-[11px] px-2 py-0.5 rounded font-semibold tracking-wide"
                   style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}>

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getAflFranchiseBySlug, getAllAflSlugs, getAflSeasons, getAflGrandFinals } from "@/lib/afl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import FootyTeam from "@/app/teams/_footy/FootyTeam";
+import { getCurrentChampionships } from "@/lib/champions";
 import { FOOTY } from "@/app/teams/_footy/config";
 import { getAflLiveStandings } from "@/lib/aflStandings";
 
@@ -29,5 +30,5 @@ export default async function AflTeamPage({ params }: { params: Promise<{ slug: 
   if (!f) notFound();
   const live = await getAflLiveStandings();
   const liveRow = live?.rows.find((r) => r.slug === slug) ?? null;
-  return <FootyTeam copy={FOOTY.afl} f={f} seasons={getAflSeasons(slug)} grandFinals={getAflGrandFinals(slug)} live={liveRow} liveYear={live?.year ?? null} />;
+  return <FootyTeam copy={FOOTY.afl} f={f} seasons={getAflSeasons(slug)} grandFinals={getAflGrandFinals(slug)} live={liveRow} liveYear={live?.year ?? null} champions={getCurrentChampionships(f.name, "Aussie Rules")} />;
 }

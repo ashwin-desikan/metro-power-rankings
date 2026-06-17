@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
@@ -187,6 +189,7 @@ export default async function NhlTeamPage({ params }: Props) {
           </div>
           <div className="flex-1 min-w-0">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">{f.display_name}</h1>
+        <ChampionBadge items={getCurrentChampionships(f.display_name, "Hockey")} />
             <ValuationChip league="nhl" slug={f.slug} className="mb-2" />
             <GhostFranchiseTag league="nhl" slug={f.slug} className="mb-2" />
             <div className="text-sm text-[var(--text-muted)] mb-2">

@@ -4,6 +4,7 @@ import { getNrlFranchiseBySlug, getAllNrlSlugs, getNrlSeasons, getNrlGrandFinals
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import FootyTeam from "@/app/teams/_footy/FootyTeam";
 import { FOOTY } from "@/app/teams/_footy/config";
+import { getCurrentChampionships } from "@/lib/champions";
 import { getNrlLiveStandings } from "@/lib/nrlStandings";
 
 export const dynamicParams = false;
@@ -29,5 +30,5 @@ export default async function NrlTeamPage({ params }: { params: Promise<{ slug: 
   if (!f) notFound();
   const live = await getNrlLiveStandings();
   const liveRow = live?.rows.find((r) => r.slug === slug) ?? null;
-  return <FootyTeam copy={FOOTY.nrl} f={f} seasons={getNrlSeasons(slug)} grandFinals={getNrlGrandFinals(slug)} live={liveRow} liveYear={live?.year ?? null} />;
+  return <FootyTeam copy={FOOTY.nrl} f={f} seasons={getNrlSeasons(slug)} grandFinals={getNrlGrandFinals(slug)} live={liveRow} liveYear={live?.year ?? null} champions={getCurrentChampionships(f.name, "Rugby League")} />;
 }

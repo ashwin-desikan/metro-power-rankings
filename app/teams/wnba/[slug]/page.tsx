@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllFranchiseSlugs, getFranchiseBySlug, getFranchiseSeasons, getWnbaFranchiseByTeamName, type WnbaFranchise, type WnbaSeason } from "@/lib/wnba";
@@ -122,6 +124,7 @@ export default async function WnbaFranchisePage({ params }: Props) {
         <div className="min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <h1 className="text-3xl font-bold tracking-tight">{f.name}</h1>
+        <ChampionBadge items={getCurrentChampionships(f.name, "Basketball")} />
             <TopTeamChip names={[f.name]} metro={f.city} />
             {f.defunct && <span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)] border rounded px-1.5 py-0.5" style={{ borderColor: "var(--border)" }}>Defunct</span>}
             {f.seasons === 0 && <span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)] border rounded px-1.5 py-0.5" style={{ borderColor: "var(--border)" }}>Expansion</span>}

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllNpbSlugs, getNpbTeamBySlug, getNpbTeamDetail } from "@/lib/npb";
@@ -63,6 +65,7 @@ export default async function NpbTeamPage(
       <header className="mb-8">
         <div className="flex items-center gap-3 flex-wrap">
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
+        <ChampionBadge items={getCurrentChampionships(team.name, "Baseball")} />
           <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs" style={card}>
             <span className="text-[var(--text-muted)]">{team.division} League</span>
             {team.js_titles > 0 ? (

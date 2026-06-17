@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -65,6 +67,7 @@ export default async function WcbbTeamPage({ params }: { params: Promise<{ slug:
         </span>
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">{t.name}</h1>
+        <ChampionBadge items={getCurrentChampionships(t.name, "W Basketball")} />
           <p className="text-sm text-[var(--text-muted)]">
             Women's College Basketball{t.conference ? ` · ${t.conference}` : ""}
             {t.metro && t.metro_slug ? (<>{" · "}<Link href={`/rankings/${t.metro_slug}`} className="underline hover:text-[var(--accent)]">{t.metro} metro</Link></>) : null}

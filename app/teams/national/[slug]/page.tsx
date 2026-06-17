@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -122,6 +124,7 @@ export default async function NationalTeamPage({ params }: Props) {
             <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{displayNameForTeam(team.slug, team.cur_name)}</h1>
+        <ChampionBadge items={getCurrentChampionships(team.cur_name, "Football")} />
           {!team.active && (
             <span
               className="inline-block rounded px-2 py-0.5 text-[10px] uppercase tracking-wide font-semibold"

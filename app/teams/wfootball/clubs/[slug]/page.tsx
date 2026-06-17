@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWClubSlugs, getWClub, wMonogram } from "@/lib/wfootball";
@@ -67,6 +69,7 @@ export default async function WClubPage({ params }: Props) {
         <span className="inline-flex items-center justify-center rounded-xl font-bold text-lg w-14 h-14 shrink-0" style={{ background: mono.bg, color: mono.fg }} aria-hidden>{mono.mono}</span>
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">{club.name}</h1>
+        <ChampionBadge items={getCurrentChampionships(club.name, "W Football")} />
           <TopTeamChip names={[club.name]} metro={club.metro} />
           <div className="mt-1 text-sm text-[var(--text-muted)]">
             {club.metro_slug ? (

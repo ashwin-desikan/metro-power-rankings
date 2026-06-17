@@ -3,6 +3,8 @@ import { fgFor, type FootyFranchise, type FootySeason, type FootyGrandFinal } fr
 import { TOP_TEAMS, topTeamAnchorId } from "@/lib/topTeams";
 import type { FootyStandingRow } from "@/lib/_footyStandings";
 import type { FootyCopy } from "./config";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import type { Championship } from "@/lib/champions";
 
 function titleCase(slug: string): string {
   return slug.split("-").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
@@ -26,9 +28,9 @@ function seasonBadge(s: FootySeason, copy: FootyCopy) {
   return null;
 }
 
-export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYear }: {
+export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYear, champions = [] }: {
   copy: FootyCopy; f: FootyFranchise; seasons: FootySeason[]; grandFinals: FootyGrandFinal[];
-  live?: FootyStandingRow | null; liveYear?: number | null;
+  live?: FootyStandingRow | null; liveYear?: number | null; champions?: Championship[];
 }) {
   const lg = copy.league;
   const fg = f.color.startsWith("#") ? fgFor(f.color) : "#ffffff";
@@ -62,6 +64,7 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 flex-wrap">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>
+            <ChampionBadge items={champions} />
             <span className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded" style={{ background: f.active ? "rgba(78,205,196,0.16)" : "rgba(120,120,140,0.18)", color: f.active ? "var(--accent)" : "var(--text-dim)" }}>
               {f.active ? "Active" : "Defunct"}
             </span>

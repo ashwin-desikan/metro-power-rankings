@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
@@ -276,6 +278,7 @@ export default async function FranchisePage({ params }: Props) {
         )}
         <div className="flex-1 min-w-0">
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>
+        <ChampionBadge items={getCurrentChampionships(f.name, "American Football")} />
           <ValuationChip league="nfl" slug={f.slug} className="mt-2" />
           <GhostFranchiseTag league="nfl" slug={f.slug} className="mt-2" />
           <p className="text-sm text-[var(--text-muted)] mt-1">

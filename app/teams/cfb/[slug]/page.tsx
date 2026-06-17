@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ChampionBadge from "@/app/teams/ChampionBadge";
+import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -72,6 +74,7 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-1">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">{t.name}</h1>
+        <ChampionBadge items={getCurrentChampionships(t.name, "American Football")} />
             {t.fbs_fcs && <span className="text-[10px] uppercase tracking-wide font-semibold px-2 py-0.5 rounded border" style={{ borderColor: "var(--border)", color: "var(--text-dim)" }}>{t.current_fbs ? "FBS" : t.fbs_fcs}</span>}
             <TopTeamChip names={[t.name]} metro={t.metro} className="ml-1" />
           </div>
