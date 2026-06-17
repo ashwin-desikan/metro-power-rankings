@@ -1548,9 +1548,9 @@ function TeamsSection({
     );
   };
   // Women's College Basketball card: titles (gold), Final Fours, tournament apps.
-  const renderWcbbCard = (m: WcbbCard) => (
+  const renderWcbbCard = (m: WcbbCard, isTop = false) => (
     <Link key={"w-" + m.slug} href={m.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
-      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>Women&apos;s College Basketball{m.conference ? ` (${m.conference})` : ""}</p>
+      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>Women&apos;s College Basketball{m.conference ? ` (${m.conference})` : ""}{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
       <div className="flex items-center gap-2">
         <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
         <p className="font-semibold text-[var(--text)]">{m.name}</p>
@@ -1563,9 +1563,9 @@ function TeamsSection({
     </Link>
   );
   // College Hockey card: titles (gold), Frozen Fours. No team page in v1 (no link).
-  const renderHockeyCard = (m: CollegeHockeyCard) => (
+  const renderHockeyCard = (m: CollegeHockeyCard, isTop = false) => (
     <div key={"h-" + m.name} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">
-      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏒</span>College Hockey</p>
+      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏒</span>College Hockey{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
       <div className="flex items-center gap-2">
         <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
         <p className="font-semibold text-[var(--text)]">{m.name}</p>
@@ -1580,6 +1580,15 @@ function TeamsSection({
   // of the pro major-league teams; the rest of the college programs trail them.
   const topCollegeCards = majorCollegeCards.filter((m) => m.isTop);
   const restCollegeCards = majorCollegeCards.filter((m) => !m.isTop);
+  // Women's basketball / college hockey programs can also be a metro Top Team
+  // (e.g. UConn women in Hartford, co-equal with the men). Match by name with
+  // the sport/league the Top Team pick uses ("Basketball (NCAA)" / hockey).
+  const wcbbIsTop = (m: WcbbCard) => isTopTeamFn(m.name, "Basketball", "NCAA W");
+  const hockeyIsTop = (m: CollegeHockeyCard) => isTopTeamFn(m.name, "Hockey", "College Hockey");
+  const wcbbMajorTop = wcbb.major.filter(wcbbIsTop);
+  const wcbbMajorRest = wcbb.major.filter((m) => !wcbbIsTop(m));
+  const hockeyMajorTop = collegeHockey.major.filter(hockeyIsTop);
+  const hockeyMajorRest = collegeHockey.major.filter((m) => !hockeyIsTop(m));
   const fcsFootballCards: MajorCollegeCard[] = otherTeamsRaw
     .filter((t) => t.sport === "American Football" && t.league === "FCS")
     .map((t): MajorCollegeCard => {
@@ -1648,12 +1657,14 @@ function TeamsSection({
           {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || wcbb.major.length > 0 || collegeHockey.major.length > 0) && (
             <div className={`${majorVenues.length > 0 ? "mb-3" : ""} ${gridClass}`}>
               {topCollegeCards.map(renderCollegeCard)}
+              {wcbbMajorTop.map((m) => renderWcbbCard(m, true))}
+              {hockeyMajorTop.map((m) => renderHockeyCard(m, true))}
               {majorTeamsOnly.map((team, idx) => (
                 <TeamCard key={"m" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
               ))}
               {restCollegeCards.map(renderCollegeCard)}
-              {wcbb.major.map(renderWcbbCard)}
-              {collegeHockey.major.map(renderHockeyCard)}
+              {wcbbMajorRest.map((m) => renderWcbbCard(m, false))}
+              {hockeyMajorRest.map((m) => renderHockeyCard(m, false))}
             </div>
           )}
           {majorVenues.length > 0 && (() => {
@@ -1781,8 +1792,8 @@ function TeamsSection({
                   <span className="text-sm text-[var(--text-muted)]">{wcbb.other.length + collegeHockey.other.length} team{wcbb.other.length + collegeHockey.other.length !== 1 ? "s" : ""}</span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
-                  {wcbb.other.map(renderWcbbCard)}
-                  {collegeHockey.other.map(renderHockeyCard)}
+                  {wcbb.other.map((m) => renderWcbbCard(m))}
+                  {collegeHockey.other.map((m) => renderHockeyCard(m))}
                 </div>
               </details>
             )}
