@@ -38,7 +38,6 @@ export default function OlympicsHubPage() {
       <span className={className}>{name}</span>
     );
   };
-  const nations = teams.filter((t) => !t.special);
   const specials = teams.filter((t) => t.special);
 
   return (
@@ -75,10 +74,11 @@ export default function OlympicsHubPage() {
       <section className="mb-10">
         <h2 id="all-time" className="text-lg font-semibold mb-1">All-time medal table</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
-          Lineages folded into modern nations; ordered by gold within the selected
-          scope. 1906 counts within Summer.
+          Every team ever to win a medal, ordered by gold within the selected scope.
+          Lineages fold into modern nations; dissolved states kept whole and combined
+          or neutral teams are included and marked ‡. 1906 counts within Summer.
         </p>
-        <AllTimeTable rows={nations} />
+        <AllTimeTable rows={teams} />
       </section>
 
       {/* ---------------- Editions ---------------- */}

@@ -17,6 +17,7 @@ import { flagCdnUrl } from "@/lib/international-display";
 export type AllTimeRow = {
   slug: string;
   name: string;
+  special?: boolean; // dissolved state kept whole, or a combined/neutral team
   g: number; s: number; b: number; total: number;
   apps: number; summer_apps: number; winter_apps: number;
   first: number; last: number;
@@ -221,6 +222,10 @@ export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
                     <Link href={`/teams/olympics/${row.slug}`} className="hover:text-[var(--accent)]">
                       {row.name}
                     </Link>
+                    {row.special && (
+                      <span className="text-[var(--text-dim)]" style={mono}
+                            title="Dissolved state kept whole, or a combined/neutral team">‡</span>
+                    )}
                   </span>
                 </td>
                 <td className="py-1.5 px-3 text-right tabular-nums font-semibold"
@@ -239,6 +244,11 @@ export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
           </tbody>
         </table>
       </div>
+      <p className="mt-2 text-xs text-[var(--text-dim)]">
+        ‡ Dissolved state kept whole (East Germany) or a combined / neutral team
+        (Australasia, the West Indies Federation, the Netherlands Antilles, the Mixed,
+        Refugee, Independent and Neutral Athlete delegations).
+      </p>
       {filtersActive && (
         <p className="mt-2 text-xs text-[var(--text-muted)]">
           Filtered: {visible.length} team{visible.length !== 1 ? "s" : ""} ·{" "}

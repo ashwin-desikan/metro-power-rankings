@@ -18,7 +18,7 @@ export async function generateMetadata(
   const ed = getOlympicEdition(slug);
   if (!ed) return {};
   const path = `/teams/olympics/games/${slug}`;
-  const desc = `Complete medal table and every medalist from the ${ed.name}${ed.hostCity ? ` in ${ed.hostCity}` : ""}: ${ed.nations} nations, ${ed.events} events and ${ed.medalsTotal.toLocaleString()} medals.`;
+  const desc = `Complete medal table and a medal table by sport for the ${ed.name}${ed.hostCity ? ` in ${ed.hostCity}` : ""}: ${ed.nations} nations, ${ed.events} events and ${ed.medalsTotal.toLocaleString()} medals.`;
   return {
     title: `${ed.name} — Medals`,
     description: desc,
@@ -31,17 +31,6 @@ export async function generateMetadata(
 const card = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const MEDAL_COLOR: Record<string, string> = { Gold: "#d4af37", Silver: "#9aa0a6", Bronze: "#a97142" };
-
-// A NOC code linked to its Olympic team page when one exists, else plain text.
-function NocLink({ noc, className }: { noc: string; className?: string }) {
-  const slug = olympicSlugForNoc(noc);
-  const cls = `text-[var(--text-dim)] ${className ?? ""}`;
-  return slug ? (
-    <Link href={`/teams/olympics/${slug}`} className={`${cls} hover:text-[var(--accent)]`} style={mono}>{noc}</Link>
-  ) : (
-    <span className={cls} style={mono}>{noc}</span>
-  );
-}
 
 export default async function OlympicEditionPage(
   { params }: { params: Promise<{ slug: string }> },
@@ -80,7 +69,7 @@ export default async function OlympicEditionPage(
       <HubNav
         items={[
           { label: "Medal table", href: "#table" },
-          { label: "Every medal", href: "#medals" },
+          { label: "By sport", href: "#by-sport" },
         ]}
       />
 
@@ -131,9 +120,10 @@ export default async function OlympicEditionPage(
       </section>
 
       <section className="mb-10">
-        <h2 id="medals" className="text-lg font-semibold mb-1">Every medal</h2>
+        <h2 id="by-sport" className="text-lg font-semibold mb-1">Medals by sport</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
-          All {ed.events} events grouped by sport. Tied places list every medalist.
+          Each sport&apos;s medal table by nation. Expand a sport to see which nations
+          medaled and how many.
         </p>
         <div className="space-y-3">
           {ed.sports.map((sp) => (
@@ -141,24 +131,43 @@ export default async function OlympicEditionPage(
               <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                 <span className="font-semibold text-[var(--text)]">{sp.sport}</span>
                 <span className="text-xs text-[var(--text-muted)]">
-                  {sp.events.length} event{sp.events.length !== 1 ? "s" : ""}
+                  {sp.events} event{sp.events !== 1 ? "s" : ""} {"·"} {sp.table.length} nation{sp.table.length !== 1 ? "s" : ""}
                 </span>
               </summary>
-              <div className="border-t divide-y" style={{ borderColor: "var(--border)" }}>
-                {sp.events.map((ev, i) => (
-                  <div key={i} className="px-4 py-3">
-                    <p className="text-sm font-medium mb-1.5">{ev.event}</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5">
-                      {ev.medals.map((m, j) => (
-                        <div key={j} className="text-xs">
-                          <span className="font-semibold" style={{ color: MEDAL_COLOR[m.medal] }}>{m.medal}</span>{" "}
-                          <span className="text-[var(--text)]">{m.name}</span>{" "}
-                          <NocLink noc={m.noc} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+              <div className="border-t overflow-x-auto" style={{ borderColor: "var(--border)" }}>
+                <table className="w-full text-sm min-w-[360px]">
+                  <thead>
+                    <tr className="text-left text-xs text-[var(--text-muted)]">
+                      <th className="py-2 px-4 font-medium">Nation</th>
+                      <th className="py-2 px-3 font-medium text-right" style={{ color: MEDAL_COLOR.Gold }}>G</th>
+                      <th className="py-2 px-3 font-medium text-right">S</th>
+                      <th className="py-2 px-3 font-medium text-right">B</th>
+                      <th className="py-2 px-3 font-medium text-right">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sp.table.map((r) => {
+                      const teamSlug = olympicSlugForNoc(r.noc);
+                      return (
+                        <tr key={r.noc} className="border-t" style={{ borderColor: "var(--border)" }}>
+                          <td className="py-1.5 px-4">
+                            {teamSlug ? (
+                              <Link href={`/teams/olympics/${teamSlug}`} className="hover:text-[var(--accent)]">
+                                {r.name} <span className="text-[var(--text-dim)]" style={mono}>{r.noc}</span>
+                              </Link>
+                            ) : (
+                              <>{r.name} <span className="text-[var(--text-dim)]" style={mono}>{r.noc}</span></>
+                            )}
+                          </td>
+                          <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.g}</td>
+                          <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.s}</td>
+                          <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{r.b}</td>
+                          <td className="py-1.5 px-3 text-right tabular-nums font-medium" style={mono}>{r.total}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
               </div>
             </details>
           ))}

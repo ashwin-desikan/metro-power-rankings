@@ -101,9 +101,11 @@ export function getAllOlympicSlugs(): string[] {
 
 // ---------- Per-edition Games (/teams/olympics/games/[slug]) ----------
 
-export type EditionMedal = { medal: "Gold" | "Silver" | "Bronze"; name: string; noc: string; country: string };
-export type EditionEvent = { event: string; medals: EditionMedal[] };
-export type EditionSport = { sport: string; events: EditionEvent[] };
+// Per-sport medal table by nation (medal counts only; no named athletes — the
+// edition pages let readers browse by year and sport without reproducing the
+// full medalist database).
+export type EditionSportRow = { noc: string; name: string; g: number; s: number; b: number; total: number };
+export type EditionSport = { sport: string; events: number; table: EditionSportRow[] };
 export type EditionTableRow = { rank: number; noc: string; name: string; g: number; s: number; b: number; total: number };
 export type OlympicEditionIndexEntry = {
   slug: string; year: number; season: string; name: string;

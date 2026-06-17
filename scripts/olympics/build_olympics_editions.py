@@ -97,12 +97,19 @@ def main():
     for ed in country.values():
         for noc,(nm,g,s,b) in ed.items(): NOCNAME.setdefault(noc,DISPLAY.get(nm,nm))
     cname=lambda noc: NOCNAME.get(noc,noc)
+    # Per-sport nation medal table: count medals by NOC within each sport, with
+    # no athlete names (readers browse by year and sport; we don't reproduce the
+    # full named-medalist database). Event-level medals reconcile to the
+    # medals-by-country totals, so per-sport counts sum to each nation's total.
+    MEDAL_IDX={"Gold":0,"Silver":1,"Bronze":2}
     detail=defaultdict(lambda: OrderedDict())
     for r in rows:
         ed=(r["year"],r["season"])
-        sp=detail[ed].setdefault(r["sport"],OrderedDict())
-        sp.setdefault(r["event"],[]).append(
-            {"medal":r["medal"],"name":r["name"],"noc":r["noc"],"country":cname(r["noc"])})
+        sp=detail[ed].setdefault(r["sport"],{"events":set(),"nocs":OrderedDict()})
+        sp["events"].add(r["event"])
+        mi=MEDAL_IDX.get(r["medal"])
+        if mi is None: continue
+        sp["nocs"].setdefault(r["noc"],[0,0,0])[mi]+=1
     os.makedirs(os.path.join(out_dir,"editions"),exist_ok=True)
     index=[]
     for ed in sorted(country.keys(),key=lambda k:(k[0],SEASON_ORDER.get(k[1],9))):
@@ -110,20 +117,25 @@ def main():
         ranked=sorted(tbl.items(),key=lambda kv:(-kv[1][1],-kv[1][2],-kv[1][3]))
         table=[{"rank":i+1,"noc":noc,"name":cname(noc),"g":v[1],"s":v[2],"b":v[3],
                 "total":v[1]+v[2]+v[3]} for i,(noc,v) in enumerate(ranked)]
-        sports=[{"sport":sp,"events":[{"event":en,"medals":md} for en,md in evs.items()]}
-                for sp,evs in detail.get(ed,{}).items()]
+        sports=[]
+        for sp,info in detail.get(ed,{}).items():
+            ranked=sorted(info["nocs"].items(),
+                          key=lambda kv:(-kv[1][0],-kv[1][1],-kv[1][2],cname(kv[0])))
+            sptable=[{"noc":noc,"name":cname(noc),"g":c[0],"s":c[1],"b":c[2],
+                      "total":c[0]+c[1]+c[2]} for noc,c in ranked]
+            sports.append({"sport":sp,"events":len(info["events"]),"table":sptable})
         city_raw=next((r["city"] for r in rows if (r["year"],r["season"])==ed),"")
         rec={"slug":edition_slug(yr,sn),"year":yr,"season":sn,
              "name":("%d Intercalated Games"%yr) if sn=="Intercalated" else "%d %s Olympics"%(yr,sn),
              "hostCity":HOSTCITY.get(ed,CITY_RENAME.get(city_raw,city_raw)),
              "hostMetro":METRO.get(ed,""),"hostMetroSlug":slugify(METRO.get(ed,"")),
-             "nations":len(table),"events":sum(len(s["events"]) for s in sports),
+             "nations":len(table),"events":sum(s["events"] for s in sports),
              "medalsTotal":sum(t["total"] for t in table),"table":table,"sports":sports}
-        json.dump(rec,open(os.path.join(out_dir,"editions",rec["slug"]+".json"),"w"),
+        json.dump(rec,open(os.path.join(out_dir,"editions",rec["slug"]+".json"),"w",encoding="utf-8"),
                   ensure_ascii=False,separators=(",",":"))
         index.append({k:rec[k] for k in ("slug","year","season","name","hostCity",
                       "hostMetro","hostMetroSlug","nations","events","medalsTotal")})
-    json.dump(index,open(os.path.join(out_dir,"editions-index.json"),"w"),
+    json.dump(index,open(os.path.join(out_dir,"editions-index.json"),"w",encoding="utf-8"),
               ensure_ascii=False,separators=(",",":"))
     print("wrote %d editions to %s"%(len(index),out_dir))
 
