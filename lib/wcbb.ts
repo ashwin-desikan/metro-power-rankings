@@ -67,9 +67,10 @@ function normName(s: string): string {
   return s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 export function wcbbMonogram(name: string): string {
-  const w = name.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean);
+  const n = name.replace(/\s*\(W\)\s*$/, "");
+  const w = n.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean);
   if (w.length >= 2) return (w[0][0] + w[1][0]).toUpperCase();
-  return (name.slice(0, 2)).toUpperCase();
+  return n.slice(0, 2).toUpperCase();
 }
 
 export function getAllWcbbTeams(): WcbbTeam[] { return data().teams; }

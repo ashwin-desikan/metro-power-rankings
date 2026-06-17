@@ -96,20 +96,22 @@ def main():
     for r in rows:
         full=t(r,"School")
         if not full: continue
-        name=strip_w(full); slug=slugify(name)+SUF
+        # Keep the canonical " (W)" suffix in the display name (it distinguishes
+        # the women's program from the men's); derive the slug from the base name.
+        base=strip_w(full); slug=slugify(base)+SUF
         # Metro priority: Team List (site-canonical for current programs) ->
         # Conf_Teams (W) Metro Area (women's-native, covers defunct) -> own row.
-        tlh=tl_map.get(norm_name(full)) or tl_map.get(norm_name(name)) or {}
+        tlh=tl_map.get(norm_name(full)) or tl_map.get(norm_name(base)) or {}
         cw=cw_metro.get(norm_name(full)) or {}
         metro=tlh.get("metro") or cw.get("metro") or t(r,"Metro Area")
         city=tlh.get("city") or t(r,"City")
         state=tlh.get("state") or cw.get("state") or t(r,"State")
-        teams[slug]={"slug":slug,"name":name,
+        teams[slug]={"slug":slug,"name":str(full),
             "conference":t(r,"Present Conf./Div") or t(r,"2027 Conf."),
             "current_d1":str(t(r,"Div-I (Current)") or "").strip().upper()=="Y",
             "city":city,"metro":metro,"metro_slug":slugify(metro) or None,
             "state":state,"lat":tlh.get("lat"),"long":tlh.get("long"),"region":None,
-            "color":team_color(name)[0],"color2":team_color(name)[1],
+            "color":team_color(base)[0],"color2":team_color(base)[1],
             "games":inti(t(r,"Tot W"))+inti(t(r,"Tot L")),"w":inti(t(r,"Tot W")),"l":inti(t(r,"Tot L")),
             "pct":round(fnum(t(r,"Tot Win%")) or 0.0,4),"seasons":inti(t(r,"# Yrs Tot")),
             "tour_app":inti(t(r,"App.")),"seed1":inti(t(r,"# 1 Seed")),"top4_seed":inti(t(r,"Top 4 Seed")),
@@ -119,7 +121,10 @@ def main():
             "weeks_ranked":inti(t(r,"# AP Rank Wks")),"weeks_t5":inti(t(r,"# AP T5 Rank Wk")),"weeks_at_1":inti(t(r,"# AP T1 Rank Wk")),
             "last_year":inti(t(r,"Last Yr.")),"last_app":inti(t(r,"Last App.")),"last_title":inti(t(r,"Last Chmp.")),
             "title_years":[]}
-    name2slug={norm_name(d["name"]):d["slug"] for d in teams.values()}
+    name2slug={}
+    for d in teams.values():
+        name2slug[norm_name(d["name"])]=d["slug"]            # "connecticut w"
+        name2slug[norm_name(strip_w(d["name"]))]=d["slug"]   # "connecticut"
 
     # ---- Conf_Teams (W) -> seasons ----
     C,crows=read_sheet(src,"Conf_Teams (W)")
@@ -144,14 +149,14 @@ def main():
     for r in wrows:
         sch=w(r,"School")
         if not sch: continue
-        name=strip_w(sch); slug=slugify(name)+SUF; yr=inti(w(r,"Year"))
+        slug=slugify(strip_w(sch))+SUF; yr=inti(w(r,"Year"))
         chm=yn(w(r,"Chm.")); chapp=yn(w(r,"Ch. App")); f4=yn(w(r,"Fin. 4"))
         if slug in teams:
             tour[slug].append({"year":yr,"seed":inti(w(r,"Seed")) or None,"w":inti(w(r,"Tourney W")),"l":inti(w(r,"Tourney L")),
                 "sweet16":yn(w(r,"Sw 16")),"elite8":yn(w(r,"El. 8")),"final4":f4,"champ_app":chapp,"champ":chm})
-        if yr>0 and chm: champ_by_year[yr].append(name)
-        elif yr>0 and chapp: ru_by_year[yr].append(name)
-        if yr>0 and f4 and not chm: f4_by_year[yr].append(name)
+        if yr>0 and chm: champ_by_year[yr].append(str(sch))
+        elif yr>0 and chapp: ru_by_year[yr].append(str(sch))
+        if yr>0 and f4 and not chm: f4_by_year[yr].append(str(sch))
     # Totals (W) leaves all-time W/L/Win%/seasons blank; derive from the season log.
     for slug,d in teams.items():
         d["title_years"]=sorted({x["year"] for x in tour.get(slug,[]) if x["champ"]})

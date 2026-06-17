@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { getAllWcbbSlugs, getWcbbTeamBySlug, getWcbbTournament, type WcbbTourYear } from "@/lib/wcbb";
+import { getAllWcbbSlugs, getWcbbTeamBySlug, getWcbbTournament, wcbbMonogram, type WcbbTourYear } from "@/lib/wcbb";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -61,7 +61,7 @@ export default async function WcbbTeamPage({ params }: { params: Promise<{ slug:
 
       <header className="mb-6 flex items-center gap-3">
         <span className="rounded-md grid place-items-center font-bold text-white text-sm flex-shrink-0" style={{ background: t.color, width: 40, height: 40 }} aria-hidden>
-          {t.name.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase()}
+          {wcbbMonogram(t.name)}
         </span>
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">{t.name}</h1>
