@@ -48,6 +48,8 @@ import { getWClubByName } from "@/lib/wfootball";
 import { resolveTeamLink, type TeamLink } from "@/lib/teamLinks";
 import { getCfbTeamForName, cfbMonogram, getFormerMajorCfbForMetro, type FormerCfbCard } from "@/lib/cfb";
 import { getFormerMajorCbbForMetro, getCbbTeamForName, cbbMonogram, type FormerCbbCard, type CbbTeam } from "@/lib/cbb";
+import { getWcbbForMetro, getFormerWcbbForMetro, type WcbbCard, type FormerWcbbCard } from "@/lib/wcbb";
+import { getCollegeHockeyForMetro, type CollegeHockeyCard } from "@/lib/collegeHockey";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
 
@@ -843,7 +845,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
               {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0) && (
-                <TeamsSection teams={detail.teams || []} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} />
+                <TeamsSection teams={detail.teams || []} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -1280,6 +1282,9 @@ function TeamsSection({
   relocations = [],
   formerCfb = [],
   formerCbb = [],
+  wcbb = { major: [], other: [] },
+  collegeHockey = { major: [], other: [] },
+  formerWcbb = [],
 }: {
   teams: Array<{
     sport: string;
@@ -1294,6 +1299,9 @@ function TeamsSection({
   relocations?: import("@/lib/data").RelocationCard[];
   formerCfb?: FormerCfbCard[];
   formerCbb?: FormerCbbCard[];
+  wcbb?: { major: WcbbCard[]; other: WcbbCard[] };
+  collegeHockey?: { major: CollegeHockeyCard[]; other: CollegeHockeyCard[] };
+  formerWcbb?: FormerWcbbCard[];
 }) {
   // Teams flagged Annual=Y in Team List (col O) are recurring-event entries
   // (F1 Grands Prix, NASCAR races, Sailing regattas, Powerboat races). They
@@ -1539,6 +1547,35 @@ function TeamsSection({
       <div key={m.key} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">{body}</div>
     );
   };
+  // Women's College Basketball card: titles (gold), Final Fours, tournament apps.
+  const renderWcbbCard = (m: WcbbCard) => (
+    <Link key={"w-" + m.slug} href={m.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
+      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>Women&apos;s College Basketball{m.conference ? ` (${m.conference})` : ""}</p>
+      <div className="flex items-center gap-2">
+        <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
+        <p className="font-semibold text-[var(--text)]">{m.name}</p>
+      </div>
+      <div className="flex gap-1.5 mt-2 flex-wrap">
+        <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: m.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: m.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="National championships">{m.titles === 0 ? "No titles" : `${m.titles} Nat'l Champ${m.titles === 1 ? "" : "s"}`}</span>
+        {m.finalFours > 0 && (<span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Final Four appearances">{m.finalFours} Final Four{m.finalFours === 1 ? "" : "s"}</span>)}
+        <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="NCAA tournament appearances">{m.tourApps} Tour App{m.tourApps === 1 ? "" : "s"}</span>
+      </div>
+    </Link>
+  );
+  // College Hockey card: titles (gold), Frozen Fours. No team page in v1 (no link).
+  const renderHockeyCard = (m: CollegeHockeyCard) => (
+    <div key={"h-" + m.name} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">
+      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏒</span>College Hockey</p>
+      <div className="flex items-center gap-2">
+        <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
+        <p className="font-semibold text-[var(--text)]">{m.name}</p>
+      </div>
+      <div className="flex gap-1.5 mt-2 flex-wrap">
+        <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: m.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: m.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="National championships">{m.titles === 0 ? "No titles" : `${m.titles} Nat'l Champ${m.titles === 1 ? "" : "s"}`}</span>
+        {m.frozenFours > 0 && (<span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Frozen Four appearances">{m.frozenFours} Frozen Four{m.frozenFours === 1 ? "" : "s"}</span>)}
+      </div>
+    </div>
+  );
   // A college program that is the metro Top Team leads the whole grid, ahead
   // of the pro major-league teams; the rest of the college programs trail them.
   const topCollegeCards = majorCollegeCards.filter((m) => m.isTop);
@@ -1603,18 +1640,20 @@ function TeamsSection({
 
   return (
     <div className="space-y-6">
-      {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || majorVenues.length > 0 || historicVenuesRaw.length > 0) && (
+      {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || wcbb.major.length > 0 || collegeHockey.major.length > 0 || majorVenues.length > 0 || historicVenuesRaw.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">
             Major League Teams/Venues
           </h3>
-          {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0) && (
+          {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || wcbb.major.length > 0 || collegeHockey.major.length > 0) && (
             <div className={`${majorVenues.length > 0 ? "mb-3" : ""} ${gridClass}`}>
               {topCollegeCards.map(renderCollegeCard)}
               {majorTeamsOnly.map((team, idx) => (
                 <TeamCard key={"m" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
               ))}
               {restCollegeCards.map(renderCollegeCard)}
+              {wcbb.major.map(renderWcbbCard)}
+              {collegeHockey.major.map(renderHockeyCard)}
             </div>
           )}
           {majorVenues.length > 0 && (() => {
@@ -1714,7 +1753,7 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0) && (
+      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
@@ -1735,14 +1774,26 @@ function TeamsSection({
                 </div>
               </details>
             )}
+            {(wcbb.other.length > 0 || collegeHockey.other.length > 0) && (
+              <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
+                <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
+                  <span className="font-semibold text-[var(--text)]">Other College Sports</span>
+                  <span className="text-sm text-[var(--text-muted)]">{wcbb.other.length + collegeHockey.other.length} team{wcbb.other.length + collegeHockey.other.length !== 1 ? "s" : ""}</span>
+                </summary>
+                <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
+                  {wcbb.other.map(renderWcbbCard)}
+                  {collegeHockey.other.map(renderHockeyCard)}
+                </div>
+              </details>
+            )}
             {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
             {otherWomen.length > 0 && collapsible("Other Women\u2019s Teams", otherWomen)}
-            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0) && (
+            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                   <span className="font-semibold text-[var(--text)]">Defunct/Relocated Teams</span>
                   <span className="text-sm text-[var(--text-muted)]">
-                    {relocations.length + formerCfb.length + formerCbb.length} team{relocations.length + formerCfb.length + formerCbb.length !== 1 ? "s" : ""}
+                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length !== 1 ? "s" : ""}
                   </span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
@@ -1966,6 +2017,21 @@ function TeamsSection({
                         <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }} title="All-time win percentage as a Division I program">
                           {f.pct.toFixed(3)} W%
                         </span>
+                      </div>
+                    </Link>
+                    ) })),
+                    ...formerWcbb.map((f) => ({ y: f.lastYear, el: (
+                    <Link key={f.slug} href={f.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
+                      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>Women&apos;s Basketball &bull; Former D-I</p>
+                      <div className="flex items-center gap-2">
+                        <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: f.color, width: 24, height: 24 }} aria-hidden>{f.mono}</span>
+                        <p className="font-semibold text-[var(--text)]">{f.name}</p>
+                      </div>
+                      {f.years && <p className="text-xs text-[var(--text-dim)] mt-1">{f.years}</p>}
+                      <div className="flex gap-1.5 mt-2 flex-wrap">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: f.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: f.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="National championships">{f.titles === 0 ? "No titles" : `${f.titles} Nat'l Champ${f.titles === 1 ? "" : "s"}`}</span>
+                        {f.finalFours > 0 && (<span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Final Four appearances">{f.finalFours} Final Four{f.finalFours === 1 ? "" : "s"}</span>)}
+                        <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="NCAA tournament appearances">{f.tourApps} Tour App{f.tourApps === 1 ? "" : "s"}</span>
                       </div>
                     </Link>
                     ) })),
