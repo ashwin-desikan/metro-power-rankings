@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-17T08:36:54Z",
+ "as_of": "2026-06-18T07:17:44Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -170,6 +170,42 @@
    "a_score": 3,
    "b_slug": "jordan",
    "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1539003": {
+   "round": "Group",
+   "a_slug": "portugal",
+   "a_score": 1,
+   "b_slug": "congo-dr",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489384": {
+   "round": "Group",
+   "a_slug": "england",
+   "a_score": 4,
+   "b_slug": "croatia",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489385": {
+   "round": "Group",
+   "a_slug": "ghana",
+   "a_score": 1,
+   "b_slug": "panama",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489386": {
+   "round": "Group",
+   "a_slug": "uzbekistan",
+   "a_score": 1,
+   "b_slug": "colombia",
+   "b_score": 3,
    "winner_slug": null,
    "completed": true
   }
