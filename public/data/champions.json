@@ -1,170 +1,26 @@
 [
 {
-"sport": "Hockey",
-"competition": "World Cup of Hockey",
-"team": "Canada",
-"year": 2016,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Rugby League",
-"competition": "Rugby League World Cup",
-"team": "Australia",
-"year": 2021,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Football",
-"competition": "FIFA World Cup",
-"team": "Argentina",
-"year": 2022,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "W Football",
-"competition": "FIFA Women's World Cup",
-"team": "Spain",
-"year": 2023,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Basketball",
-"competition": "FIBA World Cup",
-"team": "Germany",
-"year": 2023,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Cricket",
-"competition": "Cricket World Cup",
-"team": "Australia",
-"year": 2023,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Cricket",
-"competition": "World Test Championship",
-"team": "Australia",
-"year": 2023,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Rugby Union",
-"competition": "Rugby World Cup",
-"team": "South Africa",
-"year": 2023,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Football",
-"competition": "AFC Asian Cup",
-"team": "Qatar",
-"year": 2024,
-"scope": "Asia",
-"scopeType": "International"
-},
-{
-"sport": "Football",
-"competition": "Copa América",
-"team": "Argentina",
-"year": 2024,
-"scope": "South America",
-"scopeType": "International"
-},
-{
-"sport": "Football",
-"competition": "OFC Nations Cup",
-"team": "New Zealand",
-"year": 2024,
-"scope": "Oceania",
-"scopeType": "International"
-},
-{
-"sport": "Football",
-"competition": "UEFA European Championship",
-"team": "Spain",
-"year": 2024,
-"scope": "Europe",
-"scopeType": "International"
-},
-{
-"sport": "W Football",
-"competition": "Olympic women's football",
-"team": "United States",
-"year": 2024,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Basketball",
-"competition": "Olympic men's basketball",
-"team": "United States",
-"year": 2024,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Handball",
-"competition": "Olympic men's handball",
-"team": "Denmark",
-"year": 2024,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Volleyball",
-"competition": "Olympic men's volleyball",
-"team": "France",
-"year": 2024,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Football",
-"competition": "Major League Soccer",
-"team": "Inter Miami CF",
+"sport": "American Football",
+"competition": "NFL",
+"team": "Seattle Seahawks",
 "year": 2025,
 "scope": "United States",
 "scopeType": "Domestic"
 },
 {
-"sport": "Football",
-"competition": "CONCACAF Championship / Gold Cup",
-"team": "Mexico",
-"year": 2025,
-"scope": "North America",
-"scopeType": "International"
-},
-{
-"sport": "W Football",
-"competition": "NWSL",
-"team": "NJ/NY Gotham FC",
+"sport": "American Football",
+"competition": "College Football",
+"team": "Indiana",
 "year": 2025,
 "scope": "United States",
 "scopeType": "Domestic"
 },
 {
-"sport": "W Football",
-"competition": "UEFA Women's Championship",
-"team": "England",
+"sport": "Aussie Rules",
+"competition": "AFL",
+"team": "Brisbane Lions",
 "year": 2025,
-"scope": "Europe",
-"scopeType": "International"
-},
-{
-"sport": "Basketball",
-"competition": "WNBA",
-"team": "Las Vegas Aces",
-"year": 2025,
-"scope": "United States",
+"scope": "Australia",
 "scopeType": "Domestic"
 },
 {
@@ -184,49 +40,9 @@
 "scopeType": "Domestic"
 },
 {
-"sport": "Rugby League",
-"competition": "NRL",
-"team": "Brisbane Broncos",
-"year": 2025,
-"scope": "Australia",
-"scopeType": "Domestic"
-},
-{
-"sport": "Aussie Rules",
-"competition": "AFL",
-"team": "Brisbane Lions",
-"year": 2025,
-"scope": "Australia",
-"scopeType": "Domestic"
-},
-{
-"sport": "Handball",
-"competition": "IHF World Championship",
-"team": "Denmark",
-"year": 2025,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Volleyball",
-"competition": "FIVB World Championship",
-"team": "Italy",
-"year": 2025,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "American Football",
-"competition": "NFL",
-"team": "Seattle Seahawks",
-"year": 2025,
-"scope": "United States",
-"scopeType": "Domestic"
-},
-{
-"sport": "American Football",
-"competition": "College Football",
-"team": "Indiana",
+"sport": "Baseball",
+"competition": "College World Series",
+"team": "LSU",
 "year": 2025,
 "scope": "United States",
 "scopeType": "Domestic"
@@ -241,34 +57,178 @@
 },
 {
 "sport": "Football",
+"competition": "FIFA World Cup",
+"team": "Argentina",
+"year": 2022,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Football",
+"competition": "Major League Soccer",
+"team": "Inter Miami CF",
+"year": 2025,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "Football",
+"competition": "OFC Champions League",
+"team": "Auckland City",
+"year": 2025,
+"scope": "Oceania",
+"scopeType": "International"
+},
+{
+"sport": "Football",
+"competition": "Liga MX",
+"team": "Cruz Azul",
+"year": 2026,
+"scope": "Mexico",
+"scopeType": "Domestic"
+},
+{
+"sport": "Football",
+"competition": "Brasileiro Série A",
+"team": "Flamengo",
+"year": 2025,
+"scope": "Brazil",
+"scopeType": "Domestic"
+},
+{
+"sport": "Football",
+"competition": "Argentina Primera División",
+"team": "Belgrano de Córdoba",
+"year": 2026,
+"scope": "Argentina",
+"scopeType": "Domestic"
+},
+{
+"sport": "Rugby League",
+"competition": "Rugby League World Cup",
+"team": "Australia",
+"year": 2021,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Rugby League",
+"competition": "NRL",
+"team": "Brisbane Broncos",
+"year": 2025,
+"scope": "Australia",
+"scopeType": "Domestic"
+},
+{
+"sport": "Rugby Union",
+"competition": "PREM Rugby",
+"team": "Bath",
+"year": 2025,
+"scope": "England",
+"scopeType": "Domestic"
+},
+{
+"sport": "W Basketball",
+"competition": "WNBA",
+"team": "Las Vegas Aces",
+"year": 2025,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "W Football",
+"competition": "NWSL",
+"team": "NJ/NY Gotham FC",
+"year": 2025,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "Basketball",
+"competition": "FIBA World Cup",
+"team": "Germany",
+"year": 2023,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Basketball",
+"competition": "NBA",
+"team": "New York Knicks",
+"year": 2026,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "Basketball",
+"competition": "NCAA Champions",
+"team": "Michigan",
+"year": 2026,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "Basketball",
+"competition": "EuroLeague",
+"team": "Olympiacos BC",
+"year": 2026,
+"scope": "Europe",
+"scopeType": "Continental"
+},
+{
+"sport": "Basketball",
+"competition": "CBA",
+"team": "Shanghai Sharks",
+"year": 2026,
+"scope": "China",
+"scopeType": "Domestic"
+},
+{
+"sport": "Cricket",
+"competition": "Cricket World Cup",
+"team": "Australia",
+"year": 2023,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Cricket",
+"competition": "World Test Championship",
+"team": "South Africa",
+"year": 2025,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Cricket",
+"competition": "IPL",
+"team": "Royal Challengers Bengaluru",
+"year": 2026,
+"scope": "India",
+"scopeType": "Domestic"
+},
+{
+"sport": "Football",
+"competition": "AFC Asian Cup",
+"team": "Qatar",
+"year": 2024,
+"scope": "Asia",
+"scopeType": "International"
+},
+{
+"sport": "Football",
+"competition": "CONCACAF Championship / Gold Cup",
+"team": "Mexico",
+"year": 2025,
+"scope": "North America",
+"scopeType": "International"
+},
+{
+"sport": "Football",
 "competition": "Champions League",
 "team": "Paris Saint-Germain",
 "year": 2026,
 "scope": "Europe",
-"scopeType": "Continental"
-},
-{
-"sport": "Football",
-"competition": "Europa League",
-"team": "Aston Villa",
-"year": 2026,
-"scope": "Europe",
-"scopeType": "Continental"
-},
-{
-"sport": "Football",
-"competition": "Conference League",
-"team": "Crystal Palace",
-"year": 2026,
-"scope": "Europe",
-"scopeType": "Continental"
-},
-{
-"sport": "Football",
-"competition": "Club World Cup",
-"team": "Chelsea",
-"year": 2025,
-"scope": "World",
 "scopeType": "Continental"
 },
 {
@@ -352,6 +312,142 @@
 "scopeType": "International"
 },
 {
+"sport": "Football",
+"competition": "CONCACAF Champions Cup",
+"team": "CD Toluca",
+"year": 2026,
+"scope": "North America",
+"scopeType": "International"
+},
+{
+"sport": "Football",
+"competition": "CAF Champions League",
+"team": "Mamelodi Sundowns",
+"year": 2026,
+"scope": "Africa",
+"scopeType": "International"
+},
+{
+"sport": "Football",
+"competition": "AFC Champions League Elite",
+"team": "Al-Ahli Jeddah",
+"year": 2026,
+"scope": "Asia",
+"scopeType": "International"
+},
+{
+"sport": "Handball",
+"competition": "IHF World Championship",
+"team": "Denmark",
+"year": 2025,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Handball",
+"competition": "Handball-Bundesliga",
+"team": "SC Magdeburg",
+"year": 2026,
+"scope": "Germany",
+"scopeType": "Domestic"
+},
+{
+"sport": "Hockey",
+"competition": "World Cup of Hockey",
+"team": "Canada",
+"year": 2016,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Hockey",
+"competition": "NHL",
+"team": "Carolina Hurricanes",
+"year": 2026,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "Hockey",
+"competition": "KHL",
+"team": "Lokomotiv Yaroslavl",
+"year": 2026,
+"scope": "Russia",
+"scopeType": "Domestic"
+},
+{
+"sport": "Hockey",
+"competition": "Frozen Four",
+"team": "Denver",
+"year": 2026,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "Rugby Union",
+"competition": "Rugby World Cup",
+"team": "South Africa",
+"year": 2023,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Rugby Union",
+"competition": "Top 14",
+"team": "Stade Toulousain",
+"year": 2026,
+"scope": "France",
+"scopeType": "Domestic"
+},
+{
+"sport": "Rugby Union",
+"competition": "Champions Cup",
+"team": "Union Bordeaux Bègles",
+"year": 2026,
+"scope": "Europe",
+"scopeType": "Continental"
+},
+{
+"sport": "Rugby Union",
+"competition": "Six Nations Tournament",
+"team": "France",
+"year": 2026,
+"scope": "Europe",
+"scopeType": "International"
+},
+{
+"sport": "Volleyball",
+"competition": "FIVB World Championship",
+"team": "Italy",
+"year": 2025,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Volleyball",
+"competition": "SuperLega",
+"team": "Sir Safety Susa Perugia",
+"year": 2026,
+"scope": "Italy",
+"scopeType": "Domestic"
+},
+{
+"sport": "W Basketball",
+"competition": "NCAA W Champions",
+"team": "UCLA (W)",
+"year": 2026,
+"scope": "United States",
+"scopeType": "Domestic"
+},
+{
+"sport": "W Football",
+"competition": "FIFA Women's World Cup",
+"team": "Spain",
+"year": 2023,
+"scope": "World",
+"scopeType": "International"
+},
+{
 "sport": "W Football",
 "competition": "UEFA Women's Champions League",
 "team": "FC Barcelona Femeni",
@@ -377,83 +473,11 @@
 },
 {
 "sport": "Basketball",
-"competition": "NBA",
-"team": "New York Knicks",
-"year": 2026,
-"scope": "United States",
-"scopeType": "Domestic"
-},
-{
-"sport": "Basketball",
-"competition": "NCAA Champions",
-"team": "Michigan",
-"year": 2026,
-"scope": "United States",
-"scopeType": "Domestic"
-},
-{
-"sport": "Basketball",
-"competition": "EuroLeague",
-"team": "Olympiacos BC",
-"year": 2026,
-"scope": "Europe",
-"scopeType": "Continental"
-},
-{
-"sport": "Basketball",
-"competition": "CBA",
-"team": "Shanghai Sharks",
-"year": 2026,
-"scope": "China",
-"scopeType": "Domestic"
-},
-{
-"sport": "W Basketball",
-"competition": "NCAA W Champions",
-"team": "UCLA (W)",
-"year": 2026,
-"scope": "United States",
-"scopeType": "Domestic"
-},
-{
-"sport": "Baseball",
-"competition": "World Baseball Classic",
-"team": "Venezuela",
-"year": 2026,
-"scope": "World",
-"scopeType": "International"
-},
-{
-"sport": "Hockey",
-"competition": "NHL",
-"team": "Carolina Hurricanes",
-"year": 2026,
-"scope": "United States",
-"scopeType": "Domestic"
-},
-{
-"sport": "Hockey",
-"competition": "Olympic men's hockey",
+"competition": "Olympic men's basketball",
 "team": "United States",
-"year": 2026,
+"year": 2024,
 "scope": "World",
 "scopeType": "International"
-},
-{
-"sport": "Hockey",
-"competition": "KHL",
-"team": "Lokomotiv Yaroslavl",
-"year": 2026,
-"scope": "Russia",
-"scopeType": "Domestic"
-},
-{
-"sport": "Cricket",
-"competition": "IPL",
-"team": "Royal Challengers Bengaluru",
-"year": 2026,
-"scope": "India",
-"scopeType": "Domestic"
 },
 {
 "sport": "Cricket",
@@ -464,35 +488,107 @@
 "scopeType": "International"
 },
 {
-"sport": "Rugby Union",
-"competition": "Top 14",
-"team": "Stade Toulousain",
-"year": 2026,
-"scope": "France",
-"scopeType": "Domestic"
+"sport": "Football",
+"competition": "Copa América",
+"team": "Argentina",
+"year": 2024,
+"scope": "South America",
+"scopeType": "International"
 },
 {
-"sport": "Rugby Union",
-"competition": "Champions Cup",
-"team": "Union Bordeaux Bègles",
-"year": 2026,
+"sport": "Football",
+"competition": "OFC Nations Cup",
+"team": "New Zealand",
+"year": 2024,
+"scope": "Oceania",
+"scopeType": "International"
+},
+{
+"sport": "Football",
+"competition": "UEFA European Championship",
+"team": "Spain",
+"year": 2024,
 "scope": "Europe",
-"scopeType": "Continental"
+"scopeType": "International"
 },
 {
 "sport": "Handball",
-"competition": "Handball-Bundesliga",
-"team": "SC Magdeburg",
-"year": 2026,
-"scope": "Germany",
-"scopeType": "Domestic"
+"competition": "Olympic men's handball",
+"team": "Denmark",
+"year": 2024,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Olympics",
+"competition": "Summer Olympics Top Medalist",
+"team": "United States",
+"year": 2024,
+"scope": "World",
+"scopeType": "International"
 },
 {
 "sport": "Volleyball",
-"competition": "SuperLega",
-"team": "Sir Safety Susa Perugia",
+"competition": "Olympic men's volleyball",
+"team": "France",
+"year": 2024,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "W Basketball",
+"competition": "Olympic women's basketball",
+"team": "United States",
+"year": 2024,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "W Football",
+"competition": "Olympic women's football",
+"team": "United States",
+"year": 2024,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Baseball",
+"competition": "World Baseball Classic",
+"team": "Venezuela",
 "year": 2026,
-"scope": "Italy",
-"scopeType": "Domestic"
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Football",
+"competition": "Club World Cup",
+"team": "Chelsea",
+"year": 2025,
+"scope": "World",
+"scopeType": "Continental"
+},
+{
+"sport": "W Football",
+"competition": "UEFA Women's Championship",
+"team": "England",
+"year": 2025,
+"scope": "Europe",
+"scopeType": "International"
+},
+{
+"sport": "Hockey",
+"competition": "Olympic men's hockey",
+"team": "United States",
+"year": 2026,
+"scope": "World",
+"scopeType": "International"
+},
+{
+"sport": "Olympics",
+"competition": "Winter Olympics Top Medalist",
+"team": "Norway",
+"year": 2026,
+"scope": "World",
+"scopeType": "International"
 }
 ]

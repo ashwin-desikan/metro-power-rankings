@@ -25,6 +25,7 @@ export type ChampionRow = Championship & {
   leagueHref: string | null;
   leagueLabel: string;
   geo: string;
+  region: string;
   gold: boolean;
 };
 
@@ -137,6 +138,18 @@ const COMP_GEO: Record<string, string> = {
   "Top 14": "France",
   "Handball-Bundesliga": "Germany",
   SuperLega: "Italy",
+  "Liga MX": "Mexico",
+  "Brasileiro Série A": "Brazil",
+  "Argentina Primera División": "Argentina",
+  "College World Series": "United States",
+  "Frozen Four": "United States",
+  "PREM Rugby": "England",
+  // Continental club / national (newly added competitions)
+  "AFC Champions League Elite": "Asia",
+  "CAF Champions League": "Africa",
+  "CONCACAF Champions Cup": "North America",
+  "OFC Champions League": "Oceania",
+  "Six Nations Tournament": "Europe",
 };
 
 function geoFor(c: Championship): string {
@@ -146,6 +159,46 @@ function geoFor(c: Championship): string {
   if (comp.includes("world") || comp.includes("olympic")) return "World";
   if (comp.includes("uefa") || comp.includes("europ")) return "Europe";
   return c.scopeType === "International" ? "World" : "—";
+}
+
+// Continent-level region for the hub's Region filter. World stays World; a
+// continent passes through; a country folds into its continent. Keep the
+// country map in step with the country values used in COMP_GEO above.
+const REGION_CONTINENTS = new Set([
+  "Africa",
+  "Asia",
+  "Europe",
+  "North America",
+  "Oceania",
+  "South America",
+]);
+
+const COUNTRY_CONTINENT: Record<string, string> = {
+  "United States": "North America",
+  "United States & Canada": "North America",
+  Canada: "North America",
+  Mexico: "North America",
+  Brazil: "South America",
+  Argentina: "South America",
+  Japan: "Asia",
+  China: "Asia",
+  India: "Asia",
+  Russia: "Europe",
+  Australia: "Oceania",
+  England: "Europe",
+  Scotland: "Europe",
+  Spain: "Europe",
+  Italy: "Europe",
+  Germany: "Europe",
+  France: "Europe",
+  Netherlands: "Europe",
+  Portugal: "Europe",
+};
+
+function regionFor(geo: string): string {
+  if (geo === "World") return "World";
+  if (REGION_CONTINENTS.has(geo)) return geo;
+  return COUNTRY_CONTINENT[geo] ?? "Other";
 }
 
 function norm(s: string): string {
@@ -280,6 +333,7 @@ export function getChampionsWithLinks(): ChampionRow[] {
       leagueHref: hub.href,
       leagueLabel: hub.label,
       geo: geoFor(c),
+      region: regionFor(geoFor(c)),
       gold: GOLD_COMPETITIONS.has(c.competition),
     };
   });
