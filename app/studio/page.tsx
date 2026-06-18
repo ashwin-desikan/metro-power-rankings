@@ -69,7 +69,7 @@ const SURFACES: Surface[] = [
     href: "/studio/audience-builder",
     serviceLine: "Audience, Activation & Commerce Media",
     status: "Live",
-    blurb: "Compose a cohort across 16 dimensions, size it live, expand with lookalikes, save and share.",
+    blurb: "Describe a cohort in plain English or compose it across 16 dimensions and fan-level scores, size it live, read its signature, expand with lookalikes, save and share.",
     note: "The everyday segmentation workflow a marketer lives in, on governed first-party data.",
   },
   {
@@ -84,9 +84,9 @@ const SURFACES: Surface[] = [
   {
     stage: "7 · Measure",
     title: "Lift & incrementality",
-    href: null,
+    href: "/studio/measurement",
     serviceLine: "Audience, Activation & Commerce Media",
-    status: "Planned",
+    status: "Live",
     blurb: "Exposed-versus-holdout lift on a KPI, so a campaign proves it moved the number.",
     note: "Measurement that an executive and an agent can both trust because the foundation is governed.",
   },

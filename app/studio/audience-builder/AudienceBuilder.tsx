@@ -1,9 +1,10 @@
 "use client";
 
 // Audience Builder. Compose AND-joined rules over dimension percentiles,
-// attributes, and categoricals; size the cohort live; expand it with lookalikes;
-// preview the consent/suppression gate; then save, share, or activate. Metros
-// are the stand-in first-party audience; the consent state is synthetic.
+// attributes, categoricals, and synthetic fan-level scores; describe a segment
+// in plain English; size it live; read its distinctive signature; expand with
+// lookalikes; preview the consent gate; then save, share, or activate. Metros
+// are the stand-in first-party audience; consent and scores are synthetic.
 
 import { useEffect, useMemo, useState } from "react";
 import ActivationModal, { type ActProfile } from "./ActivationModal";
@@ -21,12 +22,17 @@ type Profile = {
   governance: { consent: Consent; suppressed: boolean };
 };
 
+type ValueTier = "High" | "Mid" | "Low";
+type Scores = { propensity: number; churn: number; valueTier: ValueTier };
+
 type AttrField = "rank" | "pop" | "gdpPerCapita" | "majorTeams" | "companies" | "skyscrapers" | "marketCap";
 type Rule =
   | { id: number; kind: "dim"; dim: string; pct: number }
   | { id: number; kind: "attr"; field: AttrField; op: ">=" | "<="; value: number }
   | { id: number; kind: "cat"; field: "region" | "continent"; values: string[] }
-  | { id: number; kind: "capital" };
+  | { id: number; kind: "capital" }
+  | { id: number; kind: "score"; metric: "propensity" | "churn"; op: ">=" | "<="; value: number }
+  | { id: number; kind: "value"; tiers: ValueTier[] };
 
 type SavedSegment = { name: string; rules: Rule[]; lookalikeN: number };
 
@@ -36,6 +42,11 @@ const ACCENT = "#4ECDC4";
 const GOLD = "#d4af37";
 const SEG_KEY = "studio-audience-segments";
 const LOOKALIKE_STEPS = [0, 50, 100, 250, 500];
+const SCORE_METRICS: { key: "propensity" | "churn"; label: string }[] = [
+  { key: "propensity", label: "Propensity" },
+  { key: "churn", label: "Churn risk" },
+];
+const VALUE_TIERS: ValueTier[] = ["High", "Mid", "Low"];
 
 const DIMENSIONS: { key: string; label: string; group: string }[] = [
   { key: "majorLeagueTeams", label: "Major League Teams", group: "Sports" },
@@ -82,17 +93,42 @@ function fmt(field: AttrField, v: number): string {
   return v.toLocaleString();
 }
 
-function matches(p: Profile, r: Rule): boolean {
+const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
+function hashSlug(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+  return h;
+}
+// SYNTHETIC fan-level scores, derived deterministically from a metro's profile
+// so they are stable and explainable: propensity leans on engagement-like
+// dimensions, value tier on the economic ones, churn is the inverse of
+// propensity. A per-slug jitter spreads them. Labeled synthetic in the UI.
+function scoresFor(p: Profile): Scores {
+  const d = p.dims;
+  const eng = (d.culturalEvents ?? 0) * 0.35 + (d.majorSportingEvents ?? 0) * 0.35 + (d.majorLeagueTeams ?? 0) * 0.3;
+  const j1 = (hashSlug(p.slug) % 25) - 12;
+  const propensity = clamp(Math.round(eng * 0.75 + 15 + j1), 1, 99);
+  const econ = (d.marketCap ?? 0) * 0.5 + (d.companies ?? 0) * 0.5;
+  const valueTier: ValueTier = econ >= 78 ? "High" : econ >= 48 ? "Mid" : "Low";
+  const j2 = (hashSlug(p.slug + "c") % 25) - 12;
+  const churn = clamp(Math.round(100 - propensity * 0.65 + j2), 1, 99);
+  return { propensity, churn, valueTier };
+}
+
+function matches(p: Profile, r: Rule, sc: Scores): boolean {
   if (r.kind === "dim") return (p.dims[r.dim] ?? 0) >= r.pct;
   if (r.kind === "capital") return p.capital;
   if (r.kind === "cat") return r.values.length === 0 || r.values.includes(p[r.field]);
+  if (r.kind === "score") {
+    const v = r.metric === "propensity" ? sc.propensity : sc.churn;
+    return r.op === ">=" ? v >= r.value : v <= r.value;
+  }
+  if (r.kind === "value") return r.tiers.length === 0 || r.tiers.includes(sc.valueTier);
   const v = p.attrs[r.field];
   if (v == null) return false;
   return r.op === ">=" ? v >= r.value : v <= r.value;
 }
 
-// Lookalike expansion: build a centroid over the 16 dimension percentiles of
-// the rule-matched seed, then rank non-members by Euclidean nearness to it.
 function centroid(ms: Profile[]): Record<string, number> {
   const c: Record<string, number> = {};
   for (const k of DIM_KEYS) {
@@ -122,6 +158,51 @@ function decodeSeg(s: string): { rules: Rule[]; lookalikeN: number } | null {
 let _id = 100;
 const nextId = () => ++_id;
 
+// Parse a plain-English brief into builder rules. Deterministic keyword
+// mapping, grounded in the same dimensions and attributes the UI exposes, so
+// the result is always an editable, governed segment rather than a black box.
+function parseNL(text: string, regions: string[], continents: string[]): { rules: Rule[]; lookalikeN: number; hits: string[] } {
+  const t = ` ${text.toLowerCase()} `;
+  const rules: Rule[] = [];
+  const hits: string[] = [];
+  let lookalikeN = 0;
+
+  const topM = t.match(/top\s+(\d+)/);
+  if (topM) { rules.push({ id: nextId(), kind: "attr", field: "rank", op: "<=", value: Number(topM[1]) }); hits.push(`top ${topM[1]} by rank`); }
+
+  const dimKw: [RegExp, string][] = [
+    [/cultur|arts|music|festival/, "culturalEvents"],
+    [/sport|matchday|stadium/, "majorSportingEvents"],
+    [/\bteams?\b|franchise/, "majorLeagueTeams"],
+    [/universit|academ|college|student/, "universities"],
+    [/financ|market|econom|wealth|business/, "marketCap"],
+    [/transit|rail|metro|airport|connect/, "airportScore"],
+    [/museum|landmark|herit/, "museumsLandmarks"],
+    [/luxur|fine.?dining|michelin/, "luxuryStars"],
+  ];
+  for (const [re, key] of dimKw) {
+    if (re.test(t) && !rules.some((r) => r.kind === "dim" && r.dim === key)) {
+      rules.push({ id: nextId(), kind: "dim", dim: key, pct: 75 });
+      hits.push(`high ${DIM_LABEL[key]}`);
+    }
+  }
+
+  const contHit = continents.filter((c) => t.includes(` ${c.toLowerCase()} `) || t.includes(c.toLowerCase()));
+  if (contHit.length) { rules.push({ id: nextId(), kind: "cat", field: "continent", values: contHit }); hits.push(contHit.join(", ")); }
+  const regHit = regions.filter((r) => r.length > 3 && t.includes(r.toLowerCase()));
+  if (regHit.length) { rules.push({ id: nextId(), kind: "cat", field: "region", values: regHit }); hits.push(regHit.join(", ")); }
+
+  if (/capital/.test(t)) { rules.push({ id: nextId(), kind: "capital" }); hits.push("capital metros"); }
+
+  if (/churn|laps|at.?risk|about to lose|lapsing|win.?back/.test(t)) { rules.push({ id: nextId(), kind: "score", metric: "churn", op: ">=", value: 60 }); hits.push("high churn risk"); }
+  if (/loyal|renew|engaged|high.?propensity|likely/.test(t)) { rules.push({ id: nextId(), kind: "score", metric: "propensity", op: ">=", value: 70 }); hits.push("high propensity"); }
+  if (/high.?value|premium|vip|big.?spend/.test(t)) { rules.push({ id: nextId(), kind: "value", tiers: ["High"] }); hits.push("high value tier"); }
+
+  if (/lookalike|similar to|like our|like my|seed/.test(t)) { lookalikeN = 100; hits.push("expand with lookalikes"); }
+
+  return { rules, lookalikeN, hits };
+}
+
 export default function AudienceBuilder({ total: totalProp }: { total: number }) {
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [loaded, setLoaded] = useState(false);
@@ -139,12 +220,14 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
   const [lookalikeN, setLookalikeN] = useState(0);
   const [dimToAdd, setDimToAdd] = useState("");
   const [attrToAdd, setAttrToAdd] = useState("");
+  const [scoreToAdd, setScoreToAdd] = useState("");
   const [saved, setSaved] = useState<SavedSegment[]>([]);
   const [segName, setSegName] = useState("");
   const [showActivate, setShowActivate] = useState(false);
   const [shareMsg, setShareMsg] = useState("");
+  const [nlText, setNlText] = useState("");
+  const [nlHits, setNlHits] = useState<string[] | null>(null);
 
-  // Hydrate a shared segment from the URL and the saved library from storage.
   useEffect(() => {
     try {
       const seg = new URL(window.location.href).searchParams.get("seg");
@@ -159,12 +242,29 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
     try { window.localStorage.setItem(SEG_KEY, JSON.stringify(next)); } catch { /* ignore */ }
   }
 
+  const scoreOf = useMemo(() => {
+    const m = new Map<string, Scores>();
+    for (const p of profiles) m.set(p.slug, scoresFor(p));
+    return m;
+  }, [profiles]);
+
+  // Universe mean per dimension, for the distinctive-signature panel.
+  const universeMean = useMemo(() => {
+    const c: Record<string, number> = {};
+    for (const k of DIM_KEYS) {
+      let s = 0;
+      for (const p of profiles) s += p.dims[k] ?? 0;
+      c[k] = profiles.length ? s / profiles.length : 0;
+    }
+    return c;
+  }, [profiles]);
+
   const regions = useMemo(() => Array.from(new Set(profiles.map((p) => p.region))).sort(), [profiles]);
   const continents = useMemo(() => Array.from(new Set(profiles.map((p) => p.continent))).sort(), [profiles]);
 
   const members = useMemo(
-    () => profiles.filter((p) => rules.every((r) => matches(p, r))),
-    [profiles, rules],
+    () => profiles.filter((p) => { const sc = scoreOf.get(p.slug)!; return rules.every((r) => matches(p, r, sc)); }),
+    [profiles, rules, scoreOf],
   );
 
   const lookalikes = useMemo(() => {
@@ -196,6 +296,21 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
     return { addressable, optOut, unknown, suppressed, region };
   }, [effective]);
 
+  // Distinctive signature: dimensions where the segment most over-indexes the
+  // universe, in percentile points.
+  const signature = useMemo(() => {
+    if (effective.length === 0) return [];
+    return DIM_KEYS
+      .map((k) => {
+        let s = 0;
+        for (const p of effective) s += p.dims[k] ?? 0;
+        return { key: k, delta: Math.round(s / effective.length - (universeMean[k] ?? 0)) };
+      })
+      .filter((x) => x.delta > 0)
+      .sort((a, b) => b.delta - a.delta)
+      .slice(0, 5);
+  }, [effective, universeMean]);
+
   const update = (id: number, patch: Partial<Rule>) =>
     setRules((rs) => rs.map((r) => (r.id === id ? ({ ...r, ...patch } as Rule) : r)));
   const remove = (id: number) => setRules((rs) => rs.filter((r) => r.id !== id));
@@ -204,6 +319,12 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
   const pctOfTotal = total ? Math.round((effective.length / total) * 1000) / 10 : 0;
   const canLookalike = members.length > 0 && members.length < profiles.length;
 
+  function runNL() {
+    if (!nlText.trim()) return;
+    const { rules: r, lookalikeN: l, hits } = parseNL(nlText, regions, continents);
+    if (r.length || l) { setRules(r); setLookalikeN(l); }
+    setNlHits(hits);
+  }
   function saveSegment() {
     const name = segName.trim() || `Segment ${saved.length + 1}`;
     persist([{ name, rules, lookalikeN }, ...saved.filter((s) => s.name !== name)].slice(0, 20));
@@ -225,10 +346,32 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
       {/* ---------------- Builder ---------------- */}
       <section className="lg:col-span-3">
+        {/* Natural-language query */}
+        <div className="rounded-xl border p-3 mb-4" style={{ ...card, borderColor: ACCENT }}>
+          <label className="text-xs font-semibold" style={{ color: ACCENT }}>Describe your audience</label>
+          <div className="flex flex-wrap gap-2 mt-1.5">
+            <input value={nlText} onChange={(e) => setNlText(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") runNL(); }}
+              placeholder="e.g. high-value fans like our renewers in lapsed European markets"
+              className="rounded-md border px-2.5 py-2 text-sm flex-1 min-w-[200px] bg-transparent" style={card} />
+            <button type="button" onClick={runNL}
+              className="rounded-md px-3 py-2 text-sm font-semibold" style={{ backgroundColor: ACCENT, color: "var(--bg)" }}>
+              Build
+            </button>
+          </div>
+          {nlHits && (
+            <p className="text-[11px] text-[var(--text-dim)] mt-2">
+              {nlHits.length
+                ? <>Understood: {nlHits.join(" · ")}. Edit the rules below to refine.</>
+                : <>No rules recognized. Try terms like top 100, cultural, European, high churn risk, lookalike.</>}
+            </p>
+          )}
+        </div>
+
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-sm font-semibold text-[var(--text-muted)]">Segment rules</h2>
           {(rules.length > 0 || lookalikeN > 0) && (
-            <button type="button" onClick={() => { setRules([]); setLookalikeN(0); }}
+            <button type="button" onClick={() => { setRules([]); setLookalikeN(0); setNlHits(null); }}
               className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] underline">
               Clear all
             </button>
@@ -249,7 +392,7 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
 
         {rules.length === 0 && (
           <p className="text-xs text-[var(--text-dim)] rounded-lg border px-3 py-3 mb-3" style={card}>
-            No rules yet. Your audience is all {total.toLocaleString()} metros. Add a rule to narrow it.
+            No rules yet. Your audience is all {total.toLocaleString()} metros. Add a rule, or describe one above.
           </p>
         )}
 
@@ -265,6 +408,41 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
                     </div>
                     <input type="range" min={0} max={100} value={r.pct} className="w-full accent-[var(--accent)]"
                       onChange={(e) => update(r.id, { pct: Number(e.target.value) })} />
+                  </div>
+                )}
+                {r.kind === "score" && (
+                  <div>
+                    <div className="flex items-center justify-between text-xs mb-1">
+                      <span className="font-medium">{r.metric === "propensity" ? "Propensity" : "Churn risk"} score</span>
+                      <span className="tabular-nums" style={{ ...mono, color: ACCENT }}>{r.op} {r.value}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <select value={r.op} onChange={(e) => update(r.id, { op: e.target.value as ">=" | "<=" })}
+                        className="rounded border px-1.5 py-1 bg-transparent text-xs" style={card}>
+                        <option value=">=">{"≥"}</option>
+                        <option value="<=">{"≤"}</option>
+                      </select>
+                      <input type="range" min={0} max={100} value={r.value} className="flex-1 accent-[var(--accent)]"
+                        onChange={(e) => update(r.id, { value: Number(e.target.value) })} />
+                    </div>
+                  </div>
+                )}
+                {r.kind === "value" && (
+                  <div>
+                    <div className="text-xs font-medium mb-1.5">Value tier</div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {VALUE_TIERS.map((v) => {
+                        const on = r.tiers.includes(v);
+                        return (
+                          <button key={v} type="button"
+                            onClick={() => update(r.id, { tiers: on ? r.tiers.filter((x) => x !== v) : [...r.tiers, v] })}
+                            className="text-xs px-2 py-0.5 rounded-full border transition"
+                            style={{ backgroundColor: on ? ACCENT : "transparent", color: on ? "var(--bg)" : "var(--text-muted)", borderColor: on ? ACCENT : "var(--border)" }}>
+                            {v}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
                 {r.kind === "attr" && (
@@ -336,6 +514,20 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
             {ATTRS.map((a) => <option key={a.field} value={a.field}>{a.label}</option>)}
           </select>
 
+          <select value={scoreToAdd} style={card} className="rounded-md border px-2 py-1.5 bg-transparent"
+            onChange={(e) => {
+              const m = e.target.value as "propensity" | "churn";
+              if (m) { setRules((rs) => [...rs, { id: nextId(), kind: "score", metric: m, op: ">=", value: m === "churn" ? 60 : 70 }]); setScoreToAdd(""); }
+            }}>
+            <option value="">+ Score</option>
+            {SCORE_METRICS.map((s) => <option key={s.key} value={s.key}>{s.label}</option>)}
+          </select>
+
+          <button type="button" style={card} className="rounded-md border px-2.5 py-1.5 hover:border-[var(--accent)]"
+            disabled={rules.some((r) => r.kind === "value")}
+            onClick={() => setRules((rs) => [...rs, { id: nextId(), kind: "value", tiers: ["High"] }])}>
+            + Value tier
+          </button>
           <button type="button" style={card} className="rounded-md border px-2.5 py-1.5 hover:border-[var(--accent)]"
             onClick={() => setRules((rs) => [...rs, { id: nextId(), kind: "cat", field: "region", values: [] }])}>
             + Region
@@ -383,34 +575,37 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
             Sample members <span className="text-[var(--text-dim)]">(first {Math.min(effective.length, 14)})</span>
           </h2>
           <div className="rounded-xl border overflow-x-auto" style={card}>
-            <table className="w-full text-sm min-w-[420px]">
+            <table className="w-full text-sm min-w-[460px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
                   <th className="py-2 px-3 font-medium">Metro</th>
                   <th className="py-2 px-3 font-medium">Country</th>
-                  <th className="py-2 px-3 font-medium text-right">Rank</th>
+                  <th className="py-2 px-3 font-medium text-right">Propensity</th>
                   <th className="py-2 px-3 font-medium text-right">Consent</th>
                 </tr>
               </thead>
               <tbody>
-                {effective.slice(0, 14).map((p) => (
-                  <tr key={p.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
-                    <td className="py-1.5 px-3 font-medium">
-                      {p.name}
-                      {lookalikeSlugs.has(p.slug) && (
-                        <span className="ml-1.5 text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded-full border align-middle"
-                          style={{ borderColor: ACCENT, color: ACCENT }}>lookalike</span>
-                      )}
-                    </td>
-                    <td className="py-1.5 px-3 text-xs text-[var(--text-muted)]">{p.country}</td>
-                    <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{p.attrs.rank ?? ""}</td>
-                    <td className="py-1.5 px-3 text-right text-xs" style={mono}>
-                      <span style={{ color: p.governance.suppressed ? "#e74c3c" : p.governance.consent === "opted_in" ? ACCENT : "var(--text-dim)" }}>
-                        {p.governance.suppressed ? "suppressed" : p.governance.consent.replace("_", " ")}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
+                {effective.slice(0, 14).map((p) => {
+                  const sc = scoreOf.get(p.slug)!;
+                  return (
+                    <tr key={p.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
+                      <td className="py-1.5 px-3 font-medium">
+                        {p.name}
+                        {lookalikeSlugs.has(p.slug) && (
+                          <span className="ml-1.5 text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded-full border align-middle"
+                            style={{ borderColor: ACCENT, color: ACCENT }}>lookalike</span>
+                        )}
+                      </td>
+                      <td className="py-1.5 px-3 text-xs text-[var(--text-muted)]">{p.country}</td>
+                      <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{sc.propensity}</td>
+                      <td className="py-1.5 px-3 text-right text-xs" style={mono}>
+                        <span style={{ color: p.governance.suppressed ? "#e74c3c" : p.governance.consent === "opted_in" ? ACCENT : "var(--text-dim)" }}>
+                          {p.governance.suppressed ? "suppressed" : p.governance.consent.replace("_", " ")}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
                 {effective.length === 0 && (
                   <tr><td colSpan={4} className="py-4 px-3 text-xs text-[var(--text-dim)]">No metros match these rules.</td></tr>
                 )}
@@ -439,6 +634,27 @@ export default function AudienceBuilder({ total: totalProp }: { total: number })
               </div>
             )}
           </div>
+
+          {/* Distinctive signature */}
+          {signature.length > 0 && (
+            <div className="rounded-xl border p-4" style={card}>
+              <div className="text-xs text-[var(--text-muted)] mb-2">Distinctive signature</div>
+              <p className="text-[11px] text-[var(--text-dim)] mb-2">Where this audience over-indexes the universe, in percentile points.</p>
+              <div className="space-y-1.5">
+                {signature.map((s) => (
+                  <div key={s.key} className="text-xs">
+                    <div className="flex justify-between mb-0.5">
+                      <span className="text-[var(--text-muted)]">{DIM_LABEL[s.key]}</span>
+                      <span className="tabular-nums" style={{ ...mono, color: ACCENT }}>+{s.delta}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "var(--border)" }}>
+                      <div className="h-full rounded-full" style={{ width: `${Math.min(s.delta * 2, 100)}%`, backgroundColor: ACCENT }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="rounded-xl border p-4" style={card}>
             <div className="text-xs text-[var(--text-muted)] mb-2">Governance gate</div>
