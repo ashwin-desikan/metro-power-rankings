@@ -48,13 +48,13 @@ export default function ChampionsHubPage() {
   const rows = getChampionsWithLinks();
   const linked = rows.filter((r) => r.teamHref).length;
 
-  // One merged board, default order: Gold Standard first, then by sport, then
-  // competition name. The client table layers scope / sport / region filters
-  // and column sorting on top.
+  // One merged board, default order: the workbook's tier rank (lowest first;
+  // not shown), then by sport, then competition name. The client table layers
+  // scope / sport / region filters and column sorting on top.
   const tableRows = [...rows]
     .sort(
       (a, b) =>
-        Number(b.gold) - Number(a.gold) ||
+        (a.tier ?? 99) - (b.tier ?? 99) ||
         sportRank(a.sport) - sportRank(b.sport) ||
         a.competition.localeCompare(b.competition),
     )
@@ -68,6 +68,7 @@ export default function ChampionsHubPage() {
       geo: c.geo,
       region: c.region,
       year: c.year,
+      nextAwarded: c.nextAwarded,
       gold: c.gold,
     }));
 

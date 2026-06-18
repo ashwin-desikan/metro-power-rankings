@@ -17,6 +17,8 @@ export type Championship = {
   year: number | null;
   scope: string;
   scopeType: "International" | "Continental" | "Domestic" | null;
+  nextAwarded: number | null;
+  tier: number | null;
 };
 
 let _data: Championship[] | null = null;

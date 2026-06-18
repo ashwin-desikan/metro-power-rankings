@@ -27,6 +27,7 @@ def main():
         return None
     iSport=col("sport"); iComp=col("competiton","competition"); iTeam=col("team")
     iYear=col("year"); iIntl=col("international"); iCont=col("continental"); iDom=col("domestic")
+    iNext=col("next awarded","nextawarded","next"); iTier=col("my tier rank","tier","my tier","rank")
     out=[]
     for r in rows[1:]:
         def g(i): return r[i] if i is not None and i<len(r) else None
@@ -41,6 +42,8 @@ def main():
             "year":int(g(iYear)) if g(iYear) is not None else None,
             "scope":str(intl or cont or dom or "").strip(),
             "scopeType":scope_type,
+            "nextAwarded":int(g(iNext)) if g(iNext) is not None else None,
+            "tier":int(g(iTier)) if g(iTier) is not None else None,
         })
     os.makedirs(os.path.dirname(OUT),exist_ok=True)
     json.dump(out,open(OUT,"w",encoding="utf-8"),ensure_ascii=False,indent=0)
