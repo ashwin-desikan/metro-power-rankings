@@ -163,7 +163,11 @@ export function countryHasNationalTeams(countryName: string): boolean {
   );
 }
 
-export default function NationalTeamsSection({ countryName }: { countryName: string }) {
+function buildEntries(
+  countryName: string,
+  opts: { includeOlympics?: boolean; excludeGreatBritain?: boolean } = {},
+): { key: SportKey; node: React.ReactNode }[] {
+  const { includeOlympics = true, excludeGreatBritain = false } = opts;
   const { men, women } = getNationalTeamsForCountry(countryName);
   const cricket = getCricketTeamForCountry(countryName);
   const rugby = getRugbyTeamForCountry(countryName);
@@ -174,7 +178,7 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
   const handball = getHandballTeamForCountry(countryName);
   const volleyball = getVolleyballTeamForCountry(countryName);
   const rl = getRlTeamForCountry(countryName);
-  if (!men && !women && !cricket && !rugby && !baseball && !olympics && !basketball && !hockey && !handball && !volleyball && !rl) return null;
+  if (!men && !women && !cricket && !rugby && !baseball && !olympics && !basketball && !hockey && !handball && !volleyball && !rl) return [];
 
   const cricketMajors = cricket && cricket.honours
     ? cricket.honours.wc.titles + cricket.honours.t20wc.titles + cricket.honours.ct.titles +
@@ -211,7 +215,7 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
 
   const entries: { key: SportKey; node: React.ReactNode }[] = [];
 
-  if (olympics) entries.push({ key: "olympics", node: (
+  if (olympics && includeOlympics) entries.push({ key: "olympics", node: (
     <Card key="olympics" href={`/teams/olympics/${olympics.slug}`} chip="Olympics" sport="Olympics"
           tag={olympics.lineage ? `incl. ${olympics.lineage.join(", ")}` : null}
           name={olympics.name}
@@ -331,7 +335,7 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
     </Card>
   ) });
 
-  if (baseball) entries.push({ key: "baseball", node: (
+  if (baseball && !(excludeGreatBritain && baseball.name === "Great Britain")) entries.push({ key: "baseball", node: (
     <Card key="baseball" href={`/teams/baseball/${baseball.slug}`} chip="Baseball" sport="Baseball"
           name={baseball.name}
           chips={[{
@@ -370,7 +374,7 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
     </Card>
   ) });
 
-  if (hockey) entries.push({ key: "hockey", node: (
+  if (hockey && !(excludeGreatBritain && hockey.name === "Great Britain")) entries.push({ key: "hockey", node: (
     <Card key="hockey" href={`/teams/hockey/${hockey.slug}`} chip="Ice Hockey" sport="Ice Hockey" champSport="Hockey"
           tag={hockey.lineage ? `incl. ${hockey.lineage.join(", ")}` : null}
           name={hockey.name}
@@ -437,7 +441,7 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
     </Card>
   ) });
 
-  if (rl) entries.push({ key: "rl", node: (
+  if (rl && !(excludeGreatBritain && rl.name === "Great Britain")) entries.push({ key: "rl", node: (
     <Card key="rl" href={`/teams/rugby-league/${rl.slug}`} chip="Rugby League" sport="Rugby League"
           name={rl.name}
           chips={[{
@@ -459,15 +463,51 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
     DEFAULT_PRIORITY[a.key] - DEFAULT_PRIORITY[b.key]
   );
 
+  return entries;
+}
+
+// The four UK constituents field their own national sides in football, rugby
+// union, cricket and more (Ireland's all-island teams cover Northern Ireland).
+// On the United Kingdom hub they appear as sub-blocks beneath the Great Britain
+// umbrella cards; Olympics and other GB-only sports are not repeated per nation.
+const UK_HOME_NATIONS = ["England", "Scotland", "Wales", "Northern Ireland"];
+
+const NT_GRID = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5";
+
+export default function NationalTeamsSection({ countryName }: { countryName: string }) {
+  const main = buildEntries(countryName);
+  const homeBlocks =
+    countryName === "United Kingdom"
+      ? UK_HOME_NATIONS.map((n) => ({
+          name: n,
+          nodes: buildEntries(n, { includeOlympics: false, excludeGreatBritain: true }),
+        })).filter((b) => b.nodes.length > 0)
+      : [];
+
+  if (main.length === 0 && homeBlocks.length === 0) return null;
+
   return (
     <section className="mb-8" id="national-teams">
       <h2 className="text-xl font-bold mb-3">National Teams</h2>
       <p className="text-sm text-[var(--text-muted)] mb-4">
-        {countryName} on the international stage. Click a card for the full record.
+        {countryName === "United Kingdom"
+          ? "Great Britain competes as one at the Olympics and in a handful of other sports, while England, Scotland, Wales, and Northern Ireland field separate sides in football, rugby and more (Ireland's all-island teams cover Northern Ireland)."
+          : `${countryName} on the international stage. Click a card for the full record.`}
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-        {entries.map((e) => e.node)}
-      </div>
+      {main.length > 0 ? (
+        <div className={NT_GRID}>{main.map((e) => e.node)}</div>
+      ) : null}
+      {homeBlocks.map((b) => (
+        <div key={b.name} className="mt-5">
+          <h3
+            className="text-sm font-bold mb-2 text-[var(--text-muted)] uppercase tracking-wider"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            {b.name}
+          </h3>
+          <div className={NT_GRID}>{b.nodes.map((e) => e.node)}</div>
+        </div>
+      ))}
     </section>
   );
 }

@@ -77,14 +77,12 @@ export const FEATURED: FeaturedGame[] = [
   },
   {
     leagueTag: "NBA",
-    videoId: "oon6XxSQh-U",
-    title: "1985 NBA Finals, Game 6",
-    matchup: "Lakers 111-100 Celtics",
-    note: "The Lakers clinch the title on the Boston Garden parquet.",
-    clipLabel: "Fan upload",
-    href: "https://www.youtube.com/watch?v=itMgj0UhYC8",
-    hrefLabel: "Full game",
-    match: { date: "1985-06-09", winnerCanonical: "Lakers" },
+    videoId: "d4qo99eZ9Tc",
+    title: "1988 NBA Finals, Game 7",
+    matchup: "Lakers 108-105 Pistons",
+    note: "The Lakers complete the repeat at the Forum.",
+    clipLabel: "Game video",
+    match: { date: "1988-06-21", winnerCanonical: "Lakers" },
   },
   // NBA (row-only; fan uploads, no official clip exists for these classics)
   {
@@ -173,6 +171,34 @@ export const FEATURED: FeaturedGame[] = [
     note: "A goal-line stand seals the national championship.",
     clipLabel: "Game video",
     rank: 6,
+  },
+  // Men's College Basketball (clips supplied for the top Game Score entries)
+  {
+    leagueTag: "CBB",
+    videoId: "FDNhnZb6hJA",
+    title: "1992 East Regional Final",
+    matchup: "Duke 104-103 (OT) Kentucky",
+    note: "Laettner's turnaround beats the buzzer.",
+    clipLabel: "Game video",
+    rank: 1,
+  },
+  {
+    leagueTag: "CBB",
+    videoId: "DlG7oSYL3Os",
+    title: "1979 NCAA Championship",
+    matchup: "Michigan State 75-64 Indiana State",
+    note: "Magic vs. Bird; the game that launched the sport.",
+    clipLabel: "Game video",
+    rank: 3,
+  },
+  {
+    leagueTag: "CBB",
+    videoId: "Q6fflHD73sw",
+    title: "2016 NCAA Championship",
+    matchup: "Villanova 77-74 North Carolina",
+    note: "Jenkins' buzzer-beater answers Paige's miracle.",
+    clipLabel: "Game video",
+    rank: 5,
   },
 ];
 

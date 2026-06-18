@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-18",
-    headline: "Filterable champions board and the Studio launches",
+    headline: "Champions board, the Studio, and country economic profiles",
     items: [
       "Current Champions is now one board you can filter by scope, sport and region, sort by any column and reset in a click, ordered by a curated tier, with a column for when each title is next awarded.",
-      "New Studio at /studio: a martech reference implementation that runs the whole fan-data lifecycle on the metro dataset as a stand-in first-party audience, with every synthetic element labeled.",
-      "Its Audience Builder composes a cohort across 16 dimensions and fan-level scores, or in plain English, sizes it live, expands with lookalikes, then activates through a consent gate.",
-      "More Studio surfaces: a source and pipeline view, an identity graph, a consent console, reverse-ETL activation, and exposed-versus-holdout lift measurement.",
+      "New Studio at /studio: a martech reference implementation running the full first-party fan-data lifecycle, from audience building and identity to consent, activation and lift, on the metro dataset, labeled synthetic.",
+      "Every country page gains an Economy and development panel: GDP, income tier, HDI, life expectancy, urbanization and more, each with its global rank and a gold mark for top-5% finishes.",
+      "The UK page now lists its England, Scotland, Wales and Northern Ireland teams; national-team ELO and the post-Finals NBA top games are refreshed, with new featured clips on the Games hub.",
     ],
   },
   {

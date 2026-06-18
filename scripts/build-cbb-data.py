@@ -187,7 +187,10 @@ def main():
     G,rows=read_sheet(src,"Detailed Playoffs")
     def g(r,k): i=G.get(k); return r[i] if i is not None and i<len(r) else None
     gsi=G.get("Game Score")
-    ARENA=next((k for k in G if str(k).startswith("Final/Current Arena")),None)
+    # Name of the arena AT THE TIME OF THE GAME (the "Arena" column), not the
+    # modern "Final/Current Arena Name". Exact match so "Arena Area"/"Arena
+    # State"/"Arena Lat" are not picked up.
+    ARENA=next((k for k in G if str(k).strip()=="Arena"),None)
     def rec(r):
         tm=g(r,"Cur. Name"); op=g(r,"Opp. Name")
         return {"season":inti(g(r,"Season")),"date":datestr(g(r,"Date")),"round":g(r,"Round"),

@@ -1773,34 +1773,24 @@ function TeamsSection({
           </h3>
           <div className="space-y-3">
             {otherFootball.length > 0 && collapsible("Football/Soccer Teams", otherFootball)}
-            {(otherCollegeCards.length > 0 || otherCollege.length > 0) && (
+            {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
+            {otherWomen.length > 0 && collapsible("Other Women\u2019s Teams", otherWomen)}
+            {(otherCollegeCards.length > 0 || otherCollege.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                   <span className="font-semibold text-[var(--text)]">Other College Teams</span>
-                  <span className="text-sm text-[var(--text-muted)]">{otherCollegeCards.length + otherCollege.length} team{otherCollegeCards.length + otherCollege.length !== 1 ? "s" : ""}</span>
+                  <span className="text-sm text-[var(--text-muted)]">{otherCollegeCards.length + otherCollege.length + wcbb.other.length + collegeHockey.other.length} team{otherCollegeCards.length + otherCollege.length + wcbb.other.length + collegeHockey.other.length !== 1 ? "s" : ""}</span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
                   {otherCollegeCards.map(renderCollegeCard)}
                   {otherCollege.map((team, idx) => (
                     <TeamCard key={"oc" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
                   ))}
-                </div>
-              </details>
-            )}
-            {(wcbb.other.length > 0 || collegeHockey.other.length > 0) && (
-              <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
-                <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
-                  <span className="font-semibold text-[var(--text)]">Other College Sports</span>
-                  <span className="text-sm text-[var(--text-muted)]">{wcbb.other.length + collegeHockey.other.length} team{wcbb.other.length + collegeHockey.other.length !== 1 ? "s" : ""}</span>
-                </summary>
-                <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
                   {wcbb.other.map((m) => renderWcbbCard(m))}
                   {collegeHockey.other.map((m) => renderHockeyCard(m))}
                 </div>
               </details>
             )}
-            {otherMen.length > 0 && collapsible("Other Men\u2019s Teams", otherMen)}
-            {otherWomen.length > 0 && collapsible("Other Women\u2019s Teams", otherWomen)}
             {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">

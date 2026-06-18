@@ -5,7 +5,11 @@ import {
   getAllCountrySlugs,
   getChildrenOf,
   getCountry,
+  getCountryIndicators,
+  getIndicatorRank,
   getMetrosForCountry,
+  isTop5pct,
+  type CountryIndicators,
 } from "@/lib/countries";
 import { getStatesForCountry } from "@/lib/states";
 import CountryMap from "./CountryMap";
@@ -122,15 +126,64 @@ function fmtPercent(n: number | null): string {
   return `${(n * 100).toFixed(0)}%`;
 }
 
-function StatCard({ label, value, sub }: { label: string; value: string; sub?: string }) {
+function fmtUsd(n: number): string {
+  if (n >= 1000) return `$${(n / 1000).toFixed(1)}k`;
+  return `$${n.toFixed(0)}`;
+}
+
+function fmtUsdLarge(n: number): string {
+  if (n >= 1e12) return `$${(n / 1e12).toFixed(2)}T`;
+  if (n >= 1e9) return `$${(n / 1e9).toFixed(1)}B`;
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(0)}M`;
+  return `$${n.toFixed(0)}`;
+}
+
+function IncomeBadge({ level }: { level: string }) {
+  return (
+    <span
+      className="inline-flex items-center text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded"
+      style={{ backgroundColor: "rgba(52, 211, 153, 0.16)", color: "#34d399", fontFamily: "'JetBrains Mono', monospace" }}
+      title="World Bank income classification"
+    >
+      {level}
+    </span>
+  );
+}
+
+function StatCard({ label, value, sub, rank, gold }: { label: string; value: string; sub?: string; rank?: string; gold?: boolean }) {
   return (
     <div className="border rounded-lg p-4" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-      <div className="text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{label}</div>
+      <div className="flex items-start justify-between gap-2">
+        <div className="text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{label}</div>
+        {rank ? (
+          <span className="text-[10px] whitespace-nowrap" style={{ color: gold ? "#f59e0b" : "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }} title={gold ? "Top 5% globally in this category" : "Global rank in this category"}>
+            {gold ? "★ " : ""}{rank}
+          </span>
+        ) : null}
+      </div>
       <div className="text-2xl font-bold mt-1 text-[var(--text)]">{value}</div>
       {sub ? <div className="text-xs text-[var(--text-muted)] mt-1">{sub}</div> : null}
     </div>
   );
 }
+
+const ECON_INDICATORS: { key: keyof CountryIndicators["indicators"]; label: string; fmt: (n: number) => string }[] = [
+  { key: "hdi", label: "Human Dev. Index", fmt: (n) => n.toFixed(3) },
+  { key: "gdpUsd", label: "GDP", fmt: (n) => fmtUsdLarge(n) },
+  { key: "gdpPerCapitaUsd", label: "GDP per capita", fmt: (n) => fmtUsd(n) },
+  { key: "gdpPerCapitaPpp", label: "GDP/capita (PPP)", fmt: (n) => fmtUsd(n) },
+  { key: "gniPerCapitaAtlas", label: "GNI/capita (Atlas)", fmt: (n) => fmtUsd(n) },
+  { key: "lifeExpectancy", label: "Life expectancy", fmt: (n) => `${n.toFixed(1)} yrs` },
+  { key: "medianAge", label: "Median age", fmt: (n) => `${n.toFixed(1)} yrs` },
+  { key: "urbanPopPct", label: "Urban population", fmt: (n) => `${n.toFixed(0)}%` },
+  { key: "popGrowthPct", label: "Pop. growth", fmt: (n) => `${n.toFixed(1)}%` },
+  { key: "popDensity", label: "Pop. density", fmt: (n) => `${n.toFixed(0)}/km²` },
+  { key: "migrantStockPct", label: "Foreign-born", fmt: (n) => `${n.toFixed(1)}%` },
+  { key: "ruleOfLaw", label: "Rule of law", fmt: (n) => n.toFixed(2) },
+  { key: "giniIndex", label: "Gini index", fmt: (n) => n.toFixed(1) },
+  { key: "internetPct", label: "Internet users", fmt: (n) => `${n.toFixed(0)}%` },
+  { key: "inflationPct", label: "Inflation", fmt: (n) => `${n.toFixed(1)}%` },
+];
 
 function CapitalBadge() {
   return (
@@ -154,6 +207,8 @@ export default async function CountryDetailPage({ params }: Props) {
   if (!country) notFound();
 
   const metros = getMetrosForCountry(slug);
+  const indicators = getCountryIndicators(slug);
+  const metroSlugByName = new Map(metros.map((m) => [m.name, m.slug] as const));
   const children = getChildrenOf(country.name);
   // States listed under this country in the States sheet (col 4 = Country
   // exact match). UK gets zero hits because UK subdivisions live under
@@ -248,9 +303,28 @@ export default async function CountryDetailPage({ params }: Props) {
                   {country.continent}
                 </span>
               ) : null}
-              {country.capital ? (<span><span className="text-[var(--text-dim)]">Capital:</span> {country.capital}</span>) : null}
+              {indicators?.wbCapital ? (
+                <span><span className="text-[var(--text-dim)]">Capital city:</span> {indicators.wbCapital}</span>
+              ) : null}
+              {country.capital ? (
+                <span>
+                  <span className="text-[var(--text-dim)]">Capital metro:</span>{" "}
+                  {metroSlugByName.has(country.capital) ? (
+                    <Link href={`/rankings/${metroSlugByName.get(country.capital)}`} className="text-[var(--accent)] hover:underline">{country.capital}</Link>
+                  ) : (
+                    country.capital
+                  )}
+                </span>
+              ) : null}
               {country.mostImportantMetro && country.mostImportantMetro !== country.capital ? (
-                <span><span className="text-[var(--text-dim)]">Most important metro:</span> {country.mostImportantMetro}</span>
+                <span>
+                  <span className="text-[var(--text-dim)]">Most important metro:</span>{" "}
+                  {metroSlugByName.has(country.mostImportantMetro) ? (
+                    <Link href={`/rankings/${metroSlugByName.get(country.mostImportantMetro)}`} className="text-[var(--accent)] hover:underline">{country.mostImportantMetro}</Link>
+                  ) : (
+                    country.mostImportantMetro
+                  )}
+                </span>
               ) : null}
             </div>
 
@@ -278,6 +352,7 @@ export default async function CountryDetailPage({ params }: Props) {
 
           {(() => {
             const navItems = [
+              ...(indicators ? [{ label: "Economy", href: "#economy" }] : []),
               ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams" }] : []),
               ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs" }] : []),
               ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents" }] : []),
@@ -286,6 +361,44 @@ export default async function CountryDetailPage({ params }: Props) {
             ];
             return navItems.length > 1 ? <HubNav items={navItems} /> : null;
           })()}
+
+          {indicators ? (
+            <section className="mb-12" id="economy">
+              <div className="flex items-baseline gap-3 mb-3">
+                <h2 className="text-xl font-bold">Economy and development</h2>
+                {indicators.incomeLevel ? <IncomeBadge level={indicators.incomeLevel} /> : null}
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {ECON_INDICATORS.map(({ key, label, fmt }) => {
+                  const iv = indicators.indicators[key];
+                  if (!iv) return null;
+                  const r = getIndicatorRank(country.slug, key);
+                  const gold = isTop5pct(r);
+                  return (
+                    <StatCard
+                      key={key}
+                      label={label}
+                      value={fmt(iv.value)}
+                      sub={`World Bank · ${iv.year}`}
+                      rank={r ? `#${r.rank} / ${r.total}` : undefined}
+                      gold={gold}
+                    />
+                  );
+                })}
+              </div>
+              <p className="text-xs text-[var(--text-dim)] mt-3">
+                Ranks are among sovereign countries with data; ★ marks a top-5% finish. Sources:{" "}
+                <a href="https://data.worldbank.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)]">
+                  World Bank Open Data
+                </a>{" "}
+                and{" "}
+                <a href="https://ourworldindata.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)]">
+                  Our World in Data
+                </a>{" "}
+                (UNDP, UN, V-Dem; CC BY 4.0). Each figure is the most recent year available.
+              </p>
+            </section>
+          ) : null}
 
           <NationalTeamsSection countryName={country.name} />
 

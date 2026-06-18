@@ -36,6 +36,36 @@ export type Country = {
   disputed?: boolean;
 };
 
+// World Bank Open Data block, sourced from public/data/country-indicators.json
+// (built by scripts/build-country-indicators.py). Additive and namespaced: the
+// workbook stays ground truth for pop/area/coords/continent.
+export type IndicatorValue = { value: number; year: string };
+
+export type CountryIndicators = {
+  iso3: string;
+  iso2: string;
+  incomeLevel: string | null;
+  incomeLevelId: string | null;
+  wbCapital: string | null;
+  indicators: {
+    gdpUsd?: IndicatorValue;
+    gdpPerCapitaUsd?: IndicatorValue;
+    gdpPerCapitaPpp?: IndicatorValue;
+    gniPerCapitaAtlas?: IndicatorValue;
+    urbanPopPct?: IndicatorValue;
+    popDensity?: IndicatorValue;
+    lifeExpectancy?: IndicatorValue;
+    giniIndex?: IndicatorValue;
+    internetPct?: IndicatorValue;
+    inflationPct?: IndicatorValue;
+    hdi?: IndicatorValue;
+    medianAge?: IndicatorValue;
+    popGrowthPct?: IndicatorValue;
+    migrantStockPct?: IndicatorValue;
+    ruleOfLaw?: IndicatorValue;
+  };
+};
+
 // ---------- Memoized loaders ----------
 
 let _countries: Country[] | null = null;
@@ -71,6 +101,95 @@ export function getCountry(slug: string): Country | undefined {
 
 export function getCountryByName(name: string): Country | undefined {
   return indices().byName.get(name);
+}
+
+// World Bank indicators keyed by country slug. Tolerant of a missing file so
+// the build never breaks before build-country-indicators.py has been run;
+// returns null for any slug the World Bank does not publish.
+let _indicators: Record<string, CountryIndicators> | null = null;
+let _indicatorsTried = false;
+
+function loadIndicators(): Record<string, CountryIndicators> {
+  if (!_indicatorsTried) {
+    _indicatorsTried = true;
+    try {
+      const raw = readFileSync(
+        join(process.cwd(), "public", "data", "country-indicators.json"),
+        "utf-8",
+      );
+      const parsed = JSON.parse(raw) as {
+        countries?: Record<string, CountryIndicators>;
+      };
+      _indicators = parsed.countries ?? {};
+    } catch {
+      _indicators = {};
+    }
+  }
+  return _indicators ?? {};
+}
+
+export function getCountryIndicators(slug: string): CountryIndicators | null {
+  return loadIndicators()[slug] ?? null;
+}
+
+// Per-indicator global ranking. Direction encodes the "rank #1 is notable"
+// reading: bigger is rank 1 for magnitude/attainment indicators; smaller is
+// rank 1 for Gini (less inequality) and inflation (more price stability), so a
+// top-5% gold mark always denotes the favourable end of the scale. Ranks are
+// computed only among top-level (sovereign) countries that have the value.
+export type IndicatorRank = { rank: number; total: number };
+
+const INDICATOR_RANK_DIR: Record<string, "asc" | "desc"> = {
+  gdpUsd: "desc",
+  gdpPerCapitaUsd: "desc",
+  gdpPerCapitaPpp: "desc",
+  gniPerCapitaAtlas: "desc",
+  urbanPopPct: "desc",
+  popDensity: "desc",
+  lifeExpectancy: "desc",
+  internetPct: "desc",
+  giniIndex: "asc",
+  inflationPct: "asc",
+  hdi: "desc",
+  migrantStockPct: "desc",
+  ruleOfLaw: "desc",
+};
+
+let _indicatorRanks: Record<string, Map<string, IndicatorRank>> | null = null;
+
+function indicatorRanks(): Record<string, Map<string, IndicatorRank>> {
+  if (_indicatorRanks) return _indicatorRanks;
+  const all = loadIndicators();
+  const topLevel = new Set(getTopLevelCountries().map((c) => c.slug));
+  const out: Record<string, Map<string, IndicatorRank>> = {};
+  for (const key of Object.keys(INDICATOR_RANK_DIR)) {
+    const rows: { slug: string; value: number }[] = [];
+    for (const [slug, block] of Object.entries(all)) {
+      if (!topLevel.has(slug)) continue;
+      const iv = (block.indicators as Record<string, IndicatorValue | undefined>)[
+        key
+      ];
+      if (iv && typeof iv.value === "number") rows.push({ slug, value: iv.value });
+    }
+    rows.sort((a, b) =>
+      INDICATOR_RANK_DIR[key] === "desc" ? b.value - a.value : a.value - b.value,
+    );
+    const m = new Map<string, IndicatorRank>();
+    rows.forEach((row, i) => m.set(row.slug, { rank: i + 1, total: rows.length }));
+    out[key] = m;
+  }
+  _indicatorRanks = out;
+  return out;
+}
+
+export function getIndicatorRank(slug: string, key: string): IndicatorRank | null {
+  const m = indicatorRanks()[key];
+  return m ? m.get(slug) ?? null : null;
+}
+
+export function isTop5pct(r: IndicatorRank | null): boolean {
+  if (!r || r.total === 0) return false;
+  return r.rank <= Math.max(1, Math.ceil(r.total * 0.05));
 }
 
 // Children of a parent country (constituents, territories, disputed regions).
