@@ -227,6 +227,9 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Link href="/about" className="text-sm hover:text-[var(--accent)] transition-colors">
         About
       </Link>
+      <Link href="/studio" className="text-sm hover:text-[var(--accent)] transition-colors">
+        Studio
+      </Link>
 
       {updated && (
         <a

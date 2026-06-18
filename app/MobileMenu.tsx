@@ -56,6 +56,8 @@ const ITEMS: Item[] = [
   { href: '/neighborhoods', label: 'The Last of the Marylebones', hint: 'Global neighborhoods reference', group: 'Articles' },
   { href: '/top-teams', label: 'The Team That Wins the City', hint: 'Top sports team by metro', group: 'Articles' },
 
+  { href: '/studio', label: 'Studio', hint: 'A martech reference implementation', group: 'Studio' },
+
   { href: '/methodology', label: 'Methodology' },
   { href: '/about', label: 'About' },
   { href: '/updates', label: 'Release notes' },
