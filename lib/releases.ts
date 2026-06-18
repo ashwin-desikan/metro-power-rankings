@@ -18,6 +18,26 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-18",
+    headline: "Filterable champions board and the Studio launches",
+    items: [
+      "Current Champions is now one board you can filter by scope, sport and region, sort by any column and reset in a click, ordered by a curated tier, with a column for when each title is next awarded.",
+      "New Studio at /studio: a martech reference implementation that runs the whole fan-data lifecycle on the metro dataset as a stand-in first-party audience, with every synthetic element labeled.",
+      "Its Audience Builder composes a cohort across 16 dimensions and fan-level scores, or in plain English, sizes it live, expands with lookalikes, then activates through a consent gate.",
+      "More Studio surfaces: a source and pipeline view, an identity graph, a consent console, reverse-ETL activation, and exposed-versus-holdout lift measurement.",
+    ],
+  },
+  {
+    date: "2026-06-17",
+    headline: "Current Champions hub, women's college hoops, college hockey",
+    items: [
+      "New Current Champions hub at /sports/champions: every reigning champion across the Gold Standard and selected leagues, each linked to its team page and league hub.",
+      "Gold Standard champion badges now appear on metro and country cards wherever a current title-holder is based.",
+      "New Women's College Basketball hub at /teams/cbb-w with team pages, and college hockey now appears on metro cards.",
+      "Lokomotiv Yaroslavl added as 2026 KHL Gagarin Cup champion; Olympic edition pages now show per-sport nation medal tables.",
+    ],
+  },
+  {
     date: "2026-06-16",
     headline: "Most similar metros, plus Stanley Cup games return",
     items: [
