@@ -1,0 +1,727 @@
+#!/usr/bin/env python3
+"""
+Zone Zero Cup — v1 unified multi-pillar engine (INTERNAL VALIDATION).
+
+Merges the Olympic pillar with team-sport pillars on a single common scale,
+applies exponential recency decay, a Summer/Winter weight, per-sport prestige
+multipliers, a tiered competition-value table with a tunable FLAGSHIP boost,
+and a best-N per-sport cap. Writes internal/zzc-v1-output.md.
+
+Competition tiers (champion / runner-up / third), boostable flagship:
+    flagship      : the quadrennial world title (Football WC, Cricket ODI WC,
+                    Rugby WC, FIBA WC, World Cup of Hockey). x FLAGSHIP_BOOST.
+    world         : other / annual world championships (T20 WC, WTC, IIHF Worlds,
+                    Handball & Volleyball Worlds).
+    continental   : Euros, Copa, Asian Cup, Six Nations, Rugby Championship, etc.
+    intercontinental: Confederations Cup, Nations League.
+Olympic medals use gold/silver/bronze = 4/2/1 on the same scale (Winter x0.5).
+Prestige multiplier scales the merged canonical sport. All knobs are tunable
+and would be published on the methodology page.
+"""
+import json
+import os
+import re
+import unicodedata
+from collections import defaultdict
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+D = os.path.join(ROOT, "public", "data")
+OUT_MD = os.path.join(ROOT, "internal", "zzc-v1-output.md")
+OUT_JSON = os.path.join(ROOT, "public", "data", "zone-zero-cup.json")
+
+NOW = 2026
+HALFLIFE = 8                  # years; very harsh decay, current-era index (user-locked)
+HALFLIFE_LOCKED = 8           # restore point after the sensitivity sweep mutates HALFLIFE
+CAP = 10
+WINTER_WEIGHT = 0.5
+PERCAP_MIN = 20
+FLAGSHIP_BOOST = 7.0          # the calibration lever the user is choosing
+
+# Nations under blanket international suspension -> last eligible year.
+# Their standing takes an inactivity decay for every cycle missed (factual
+# competitive-status adjustment; published on the methodology page).
+SUSPENDED = {"russia": 2022, "belarus": 2022}
+SUSPEND_HALFLIFE = 3.0        # years; sharper than normal decay (user-locked)
+
+# Diminishing returns within a sport: a sport's raw total is raised to GAMMA
+# (concave, <1) so high-event Olympic sports (swimming ~35 golds/Games) don't
+# run away on event count. Applied to pre-prestige raw, then prestige scales.
+DIMINISH_GAMMA = 0.6
+
+# Current-standing layer: live world ranking -> present-day strength, so a
+# nation strong RIGHT NOW (high Elo/rating) is rewarded even without a recent
+# title, and a side coasting on stale titles (Italy: 4 WCs but missed the last
+# three + mid Elo) is corrected. Treated as a NOW-dated contribution (no decay).
+RANK_TOP = 16.0               # strength awarded to a current world #1
+RANK_HL_POSITIONS = 8.0       # halves every N ranking positions
+
+W_G, W_S, W_B = 4, 2, 1
+TIER = {                      # (champion, runner_up, third)  [pre-boost]
+    "flagship": (6.0, 3.0, 1.5),
+    "world": (4.0, 2.0, 1.0),
+    "continental": (2.0, 1.0, 0.0),
+    "intercontinental": (1.0, 0.0, 0.0),
+}
+
+PRESTIGE = {
+    "Football": 3.0, "Cricket": 2.0, "Basketball": 2.0,
+    "Rugby Union": 1.5, "Ice Hockey": 1.5, "Baseball": 1.5,
+    "Women's Football": 1.5,   # own pillar, parallel to men's Football (x3)
+    "Volleyball": 1.2, "Handball": 1.2,
+    "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
+}
+
+# Default prestige for Olympic-programme sports (everything not in PRESTIGE):
+# a downweight lever so the many individual Olympic disciplines don't collectively
+# outweigh the major globally-followed team sports. (user-set)
+OLYMPIC_PRESTIGE = 0.5
+
+OLY_CANON = {
+    "3x3 Basketball": "Basketball", "Basketball": "Basketball",
+    "Beach Volleyball": "Volleyball", "Volleyball": "Volleyball",
+    "Football": "Football", "Handball": "Handball", "Ice Hockey": "Ice Hockey",
+    "Rugby": "Rugby Union", "Rugby sevens": "Rugby Union", "Rugby Sevens": "Rugby Union",
+    "Baseball": "Baseball",
+}
+
+FOLD = {
+    "england": "great-britain", "scotland": "great-britain",
+    "wales": "great-britain", "northern-ireland": "great-britain",
+    "ireland": "ireland",
+    "czech-republic": "czechia", "cote-d-ivoire": "ivory-coast",
+}
+COMPOSITE = {"west-indies"}   # multi-nation team, kept as its own flagged entry
+
+_DC = {}
+def decay(year):
+    if year not in _DC:
+        _DC[year] = 0.5 ** ((NOW - year) / HALFLIFE)
+    return _DC[year]
+
+
+def years(v):
+    if not v:
+        return []
+    if isinstance(v, list):
+        return [int(y) for y in v]
+    return [int(x) for x in re.findall(r"(19\d{2}|20\d{2})", str(v))]
+
+
+def fold(slug):
+    return FOLD.get(slug, slug)
+
+
+def tier_pts(tier, finish, boost):
+    c, r, t = TIER[tier]
+    val = {"champion": c, "runner_up": r, "third": t}[finish]
+    if tier == "flagship":
+        val *= boost
+    return val
+
+
+# ---------------------------------------------------------------- pillars
+def olympic_contribs(boost):
+    bd = json.load(open(os.path.join(D, "olympics", "medals-breakdown.json"), encoding="utf-8"))
+    slugs, sports, rows = bd["slugs"], bd["sports"], bd["rows"]
+    out = []
+    for si, year, season, spi, g, s, b in rows:
+        base = W_G * g + W_S * s + W_B * b
+        if base == 0:
+            continue
+        sw = WINTER_WEIGHT if season == 1 else 1.0
+        canon = OLY_CANON.get(sports[spi], sports[spi])
+        out.append((fold(slugs[si]), canon, base * decay(year) * sw))
+    return out
+
+
+def _titles(out, slug, sport, ylist, finish, tier, boost):
+    pts = tier_pts(tier, finish, boost)
+    if pts == 0:
+        return
+    s = fold(slug)
+    for y in ylist:
+        out.append((s, sport, pts * decay(y)))
+
+
+def _conf_strength(comp):
+    """Confederation strength for a continental football title — not all
+    continental crowns are equal (a CONCACAF Gold Cup is not a Euros)."""
+    c = (comp or "").lower()
+    if "european championship" in c or "copa" in c:
+        return 1.0                      # UEFA, CONMEBOL
+    if "nations league" in c:
+        return 0.35 if "uefa" in c else 0.15
+    if "confederations" in c:
+        return 0.5                      # featured continental champions globally
+    if "gold cup" in c or "asian cup" in c or "africa cup" in c:
+        return 0.35                     # CONCACAF, AFC, CAF: weaker confederations
+    if "oceania" in c or "ofc" in c:
+        return 0.2                      # OFC
+    return 0.5                          # unknown continental: conservative
+
+
+def football_contribs(boost):
+    f = json.load(open(os.path.join(D, "international", "finals.json"), encoding="utf-8"))
+    cat_tier = {"WC": "flagship", "CON": "continental",
+                "INTER": "intercontinental", "OTHER": "intercontinental"}
+    out = []
+    for slug, lst in f.items():
+        for e in lst:
+            if e.get("competition") == "Olympic Games":
+                continue
+            tier = cat_tier.get(e.get("category"))
+            yr = e.get("year")
+            if not tier or not yr:
+                continue
+            finish = "champion" if e.get("result") == "W" else "runner_up"
+            pts = tier_pts(tier, finish, boost)
+            if tier != "flagship":      # weight non-World-Cup titles by confederation
+                pts *= _conf_strength(e.get("competition"))
+            if pts:
+                out.append((fold(slug), "Football", pts * decay(int(yr))))
+    return out
+
+
+def womensfootball_contribs(boost):
+    """Women's Football pillar: WWC (flagship), Women's Euros (continental),
+    Finalissima (intercontinental). Olympic women's football is excluded (it
+    lives in the Olympic backbone, exactly as men's Olympic football is)."""
+    out = []
+    wwc = json.load(open(os.path.join(D, "football", "womens-world-cup.json"), encoding="utf-8"))
+    for e in wwc.get("editions", []):
+        y = int(e["year"])
+        if e.get("champion_slug"):
+            _titles(out, e["champion_slug"], "Women's Football", [y], "champion", "flagship", boost)
+        if e.get("runner_up_slug"):
+            _titles(out, e["runner_up_slug"], "Women's Football", [y], "runner_up", "flagship", boost)
+    eu = json.load(open(os.path.join(D, "wintl", "euros.json"), encoding="utf-8"))
+    enames = {n["name"]: n["slug"] for n in eu.get("nations", [])}
+    for f in eu.get("finals", []):
+        y = int(re.match(r"(\d{4})", str(f.get("year"))).group(1))
+        cs, rs = enames.get(f.get("champion")), enames.get(f.get("runner_up"))
+        if cs:
+            _titles(out, cs, "Women's Football", [y], "champion", "continental", boost)
+        if rs:
+            _titles(out, rs, "Women's Football", [y], "runner_up", "continental", boost)
+    fi = json.load(open(os.path.join(D, "wintl", "finalissima.json"), encoding="utf-8"))
+    fnames = {n["name"]: n["slug"] for n in fi.get("nations", [])}
+    for f in fi.get("finals", []):
+        y = int(re.match(r"(\d{4})", str(f.get("year"))).group(1))
+        cs = fnames.get(f.get("champion"))
+        if cs:
+            _titles(out, cs, "Women's Football", [y], "champion", "intercontinental", boost)
+    return out
+
+
+def cricket_contribs(boost):
+    teams = json.load(open(os.path.join(D, "cricket", "teams.json"), encoding="utf-8"))
+    comp_tier = {"wc": "flagship", "t20wc": "world", "wtc": "world",
+                 "ct": "continental", "asia": "continental"}
+    out = []
+    for t in teams:
+        hon = t.get("honours") or {}
+        for comp, tier in comp_tier.items():
+            blk = hon.get(comp) or {}
+            _titles(out, t["slug"], "Cricket", years(blk.get("title_years")), "champion", tier, boost)
+            _titles(out, t["slug"], "Cricket", years(blk.get("ru_years")), "runner_up", tier, boost)
+    return out
+
+
+def rugby_contribs(boost):
+    teams = json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8"))
+    out = []
+    for t in teams:
+        rwc = t.get("rwc") or {}
+        _titles(out, t["slug"], "Rugby Union", years(rwc.get("title_years")), "champion", "flagship", boost)
+        ch = t.get("championships") or {}
+        # Six Nations + The Rugby Championship / Tri-Nations = continental tier
+        _titles(out, t["slug"], "Rugby Union", years(ch.get("five_six_years")), "champion", "continental", boost)
+        _titles(out, t["slug"], "Rugby Union", years(ch.get("trc_years")), "champion", "continental", boost)
+    return out
+
+
+def _medal_years(path, sport, fields, boost):
+    data = json.load(open(path, encoding="utf-8"))
+    out = []
+    for rec in data:
+        for key, (tier, finish) in fields.items():
+            _titles(out, rec.get("slug"), sport, years(rec.get(key)), finish, tier, boost)
+    return out
+
+
+def basketball_contribs(boost):
+    return _medal_years(os.path.join(D, "basketball", "nations.json"), "Basketball",
+                        {"wc_title_years": ("flagship", "champion"),
+                         "wc_ru_years": ("flagship", "runner_up")}, boost)
+
+
+def hockey_contribs(boost):
+    return _medal_years(os.path.join(D, "hockey", "nations.json"), "Ice Hockey",
+                        {"wc_title_years": ("flagship", "champion"), "wc_ru_years": ("flagship", "runner_up"),
+                         "worlds_gold_years": ("world", "champion"), "worlds_silver_years": ("world", "runner_up"),
+                         "worlds_bronze_years": ("world", "third")}, boost)
+
+
+def handball_contribs(boost):
+    return _medal_years(os.path.join(D, "handball", "nations.json"), "Handball",
+                        {"worlds_gold_years": ("world", "champion"), "worlds_silver_years": ("world", "runner_up"),
+                         "worlds_bronze_years": ("world", "third")}, boost)
+
+
+def volleyball_contribs(boost):
+    return _medal_years(os.path.join(D, "volleyball", "nations.json"), "Volleyball",
+                        {"worlds_gold_years": ("world", "champion"), "worlds_silver_years": ("world", "runner_up"),
+                         "worlds_bronze_years": ("world", "third")}, boost)
+
+
+def baseball_contribs(boost):
+    d = json.load(open(os.path.join(D, "baseball", "teams.json"), encoding="utf-8"))
+    out = []
+    for t in d:
+        _titles(out, t["slug"], "Baseball", years(t.get("title_years")), "champion", "flagship", boost)
+        _titles(out, t["slug"], "Baseball", years(t.get("ru_years")), "runner_up", "flagship", boost)
+    return out
+
+
+def rugby_league_contribs(boost):
+    d = json.load(open(os.path.join(D, "rugby-league-intl", "teams.json"), encoding="utf-8"))
+    out = []
+    for t in d:
+        # title_years entries can be reign ranges ('1985-1988'); take the first year (one title)
+        # NOT flagship tier: the RL World Cup is not a globally contested marquee
+        for entry in (t.get("title_years") or []):
+            m = re.match(r"(\d{4})", str(entry))
+            if m:
+                _titles(out, t["slug"], "Rugby League", [int(m.group(1))], "champion", "world", boost)
+        for entry in (t.get("ru_years") or []):
+            m = re.match(r"(\d{4})", str(entry))
+            if m:
+                _titles(out, t["slug"], "Rugby League", [int(m.group(1))], "runner_up", "world", boost)
+    return out
+
+
+def rank_strength(rank):
+    if not rank or rank < 1:
+        return 0.0
+    return RANK_TOP * (0.5 ** ((rank - 1) / RANK_HL_POSITIONS))
+
+
+def ranking_contribs(boost):
+    """Current-standing layer: live world rankings -> present-day strength (no decay)."""
+    out = []
+    # football Elo
+    idx = json.load(open(os.path.join(D, "international", "index.json"), encoding="utf-8"))["teams"]
+    for t in idx:
+        v = rank_strength(t.get("elo_rank"))
+        if v:
+            out.append((fold(t["slug"]), "Football", v))
+    # basketball FIBA
+    for t in json.load(open(os.path.join(D, "basketball", "nations.json"), encoding="utf-8")):
+        v = rank_strength(t.get("fiba_rank"))
+        if v:
+            out.append((fold(t["slug"]), "Basketball", v))
+    # rugby union World Rugby ranking
+    for t in json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8")):
+        v = rank_strength((t.get("ranking") or {}).get("current"))
+        if v:
+            out.append((fold(t["slug"]), "Rugby Union", v))
+    # cricket: ONE ranking signal per nation = best (lowest) rank across the
+    # three formats, so cricket is not triple-counted vs single-ranking sports
+    cteams = json.load(open(os.path.join(D, "cricket", "teams.json"), encoding="utf-8"))
+    name2slug = {t["name"]: t["slug"] for t in cteams}
+    cr = json.load(open(os.path.join(D, "cricket", "hub.json"), encoding="utf-8")).get("current_rankings", {})
+    cbest = {}
+    for fmt, blk in cr.items():
+        for row in (blk.get("rows") or []):
+            slug = name2slug.get(row.get("team"))
+            rk = row.get("rank")
+            if slug and rk and (slug not in cbest or rk < cbest[slug]):
+                cbest[slug] = rk
+    for slug, rk in cbest.items():
+        v = rank_strength(rk)
+        if v:
+            out.append((fold(slug), "Cricket", v))
+    # ice hockey (IIHF) + baseball (WBSC) current world rankings -> engine slug
+    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball")):
+        rk = json.load(open(os.path.join(D, "rankings", fn + ".json"), encoding="utf-8"))
+        for row in rk["rows"]:
+            es = row.get("engineSlug")
+            v = rank_strength(row.get("rank"))
+            if es and v:
+                out.append((fold(es), sport, v))
+    # women's football (FIFA) -> best rank per folded slug (home nations fold to GB)
+    wbest = {}
+    for row in json.load(open(os.path.join(D, "rankings", "womens-football.json"), encoding="utf-8"))["rows"]:
+        es = row.get("engineSlug")
+        if not es:
+            continue
+        s = fold(es)
+        if s not in wbest or row["rank"] < wbest[s]:
+            wbest[s] = row["rank"]
+    for s, r in wbest.items():
+        v = rank_strength(r)
+        if v:
+            out.append((s, "Women's Football", v))
+    return out
+
+
+PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
+           ("womens_football", womensfootball_contribs),
+           ("cricket", cricket_contribs), ("rugby", rugby_contribs),
+           ("basketball", basketball_contribs), ("hockey", hockey_contribs),
+           ("handball", handball_contribs), ("volleyball", volleyball_contribs),
+           ("baseball", baseball_contribs), ("rugby_league", rugby_league_contribs),
+           ("ranking", ranking_contribs)]
+
+
+def activity_factor(slug, suspend_hl):
+    """Inactivity decay for nations under blanket international suspension."""
+    last = SUSPENDED.get(slug)
+    if not last:
+        return 1.0
+    return 0.5 ** ((NOW - last) / suspend_hl)
+
+
+def compute(boost, suspend_hl=None, gamma=None, olyp=None):
+    if suspend_hl is None:
+        suspend_hl = SUSPEND_HALFLIFE
+    if gamma is None:
+        gamma = DIMINISH_GAMMA
+    if olyp is None:
+        olyp = OLYMPIC_PRESTIGE
+    sport_pts = defaultdict(float)
+    counts = {}
+    for nm, fn in PILLARS:
+        c = fn(boost)
+        counts[nm] = len(c)
+        for slug, sport, pts in c:
+            sport_pts[(slug, sport)] += pts
+    # diminishing returns on pre-prestige raw, then prestige multiplier
+    for k in sport_pts:
+        sport_pts[k] = (sport_pts[k] ** gamma) * PRESTIGE.get(k[1], olyp)
+    by_nation = defaultdict(list)
+    for (slug, sport), pts in sport_pts.items():
+        by_nation[slug].append((sport, pts))
+    merit, tops, sportmap = {}, {}, {}
+    for slug, lst in by_nation.items():
+        lst.sort(key=lambda x: x[1], reverse=True)
+        af = activity_factor(slug, suspend_hl)
+        merit[slug] = sum(p for _, p in lst[:CAP]) * af
+        tops[slug] = lst[:5]
+        sportmap[slug] = {sp: p * af for sp, p in lst}
+    return merit, tops, counts, sportmap
+
+
+def major_titles():
+    """Count world-level titles per nation across the team sports (flagship +
+    secondary world championships; continental crowns and Olympics excluded)."""
+    t = defaultdict(int)
+    # football: FIFA World Cup wins
+    f = json.load(open(os.path.join(D, "international", "finals.json"), encoding="utf-8"))
+    for slug, lst in f.items():
+        for e in lst:
+            if e.get("category") == "WC" and e.get("result") == "W" and e.get("competition") != "Olympic Games":
+                t[fold(slug)] += 1
+    # cricket: ODI WC + T20 WC + World Test Championship
+    for tm in json.load(open(os.path.join(D, "cricket", "teams.json"), encoding="utf-8")):
+        hon = tm.get("honours") or {}
+        for comp in ("wc", "t20wc", "wtc"):
+            t[fold(tm["slug"])] += len(years((hon.get(comp) or {}).get("title_years")))
+    # rugby union: Rugby World Cup
+    for tm in json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8")):
+        t[fold(tm["slug"])] += len(years((tm.get("rwc") or {}).get("title_years")))
+    # basketball: FIBA World Cup
+    for tm in json.load(open(os.path.join(D, "basketball", "nations.json"), encoding="utf-8")):
+        t[fold(tm["slug"])] += len(years(tm.get("wc_title_years")))
+    # ice hockey: World Cup of Hockey + IIHF World Championships
+    for tm in json.load(open(os.path.join(D, "hockey", "nations.json"), encoding="utf-8")):
+        t[fold(tm["slug"])] += len(years(tm.get("wc_title_years"))) + len(years(tm.get("worlds_gold_years")))
+    # handball + volleyball: World Championships
+    for s in ("handball", "volleyball"):
+        for tm in json.load(open(os.path.join(D, s, "nations.json"), encoding="utf-8")):
+            t[fold(tm["slug"])] += len(years(tm.get("worlds_gold_years")))
+    # baseball: World Baseball Classic
+    for tm in json.load(open(os.path.join(D, "baseball", "teams.json"), encoding="utf-8")):
+        t[fold(tm["slug"])] += len(years(tm.get("title_years")))
+    # rugby league: World Cup (each title entry = one reign; ranges count once)
+    for tm in json.load(open(os.path.join(D, "rugby-league-intl", "teams.json"), encoding="utf-8")):
+        t[fold(tm["slug"])] += len(tm.get("title_years") or [])
+    return t
+
+
+def best_world_ranking():
+    """Best (lowest) current world ranking per nation across ranked sports -> (rank, sport)."""
+    best = {}
+
+    def consider(slug, rank, sport):
+        s = fold(slug)
+        if rank and rank >= 1 and (s not in best or rank < best[s][0]):
+            best[s] = (rank, sport)
+
+    for tm in json.load(open(os.path.join(D, "international", "index.json"), encoding="utf-8"))["teams"]:
+        consider(tm["slug"], tm.get("elo_rank"), "Football")
+    for tm in json.load(open(os.path.join(D, "basketball", "nations.json"), encoding="utf-8")):
+        consider(tm["slug"], tm.get("fiba_rank"), "Basketball")
+    for tm in json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8")):
+        consider(tm["slug"], (tm.get("ranking") or {}).get("current"), "Rugby Union")
+    cteams = json.load(open(os.path.join(D, "cricket", "teams.json"), encoding="utf-8"))
+    n2s = {tm["name"]: tm["slug"] for tm in cteams}
+    cr = json.load(open(os.path.join(D, "cricket", "hub.json"), encoding="utf-8")).get("current_rankings", {})
+    for fmt, blk in cr.items():
+        for row in (blk.get("rows") or []):
+            if row.get("team") in n2s:
+                consider(n2s[row["team"]], row.get("rank"), "Cricket")
+    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball")):
+        rk = json.load(open(os.path.join(D, "rankings", fn + ".json"), encoding="utf-8"))
+        for row in rk["rows"]:
+            if row.get("engineSlug"):
+                consider(fold(row["engineSlug"]), row.get("rank"), sport)
+    for row in json.load(open(os.path.join(D, "rankings", "womens-football.json"), encoding="utf-8"))["rows"]:
+        if row.get("engineSlug"):
+            consider(fold(row["engineSlug"]), row.get("rank"), "Women's Football")
+    return best
+
+
+def all_world_rankings():
+    """Current world ranking per nation per sport (where a ranking exists)."""
+    out = defaultdict(dict)
+
+    def put(slug, sport, rank):
+        s = fold(slug)
+        if rank and rank >= 1 and (sport not in out[s] or rank < out[s][sport]):
+            out[s][sport] = rank
+
+    for tm in json.load(open(os.path.join(D, "international", "index.json"), encoding="utf-8"))["teams"]:
+        put(tm["slug"], "Football", tm.get("elo_rank"))
+    for tm in json.load(open(os.path.join(D, "basketball", "nations.json"), encoding="utf-8")):
+        put(tm["slug"], "Basketball", tm.get("fiba_rank"))
+    for tm in json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8")):
+        put(tm["slug"], "Rugby Union", (tm.get("ranking") or {}).get("current"))
+    cteams = json.load(open(os.path.join(D, "cricket", "teams.json"), encoding="utf-8"))
+    n2s = {tm["name"]: tm["slug"] for tm in cteams}
+    cr = json.load(open(os.path.join(D, "cricket", "hub.json"), encoding="utf-8")).get("current_rankings", {})
+    for fmt, blk in cr.items():
+        for row in (blk.get("rows") or []):
+            if row.get("team") in n2s:
+                put(n2s[row["team"]], "Cricket", row.get("rank"))
+    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball")):
+        rk = json.load(open(os.path.join(D, "rankings", fn + ".json"), encoding="utf-8"))
+        for row in rk["rows"]:
+            if row.get("engineSlug"):
+                put(fold(row["engineSlug"]), sport, row.get("rank"))
+    for row in json.load(open(os.path.join(D, "rankings", "womens-football.json"), encoding="utf-8"))["rows"]:
+        if row.get("engineSlug"):
+            put(fold(row["engineSlug"]), "Women's Football", row.get("rank"))
+    return out
+
+
+def emit_json(merit, tops, special, name, sportmap):
+    countries = json.load(open(os.path.join(D, "countries.json"), encoding="utf-8"))
+    cmap = {c["slug"]: c for c in countries}
+    # cup slug -> countries.json slug for genuine name divergences (no name match)
+    ALIAS = {
+        "great-britain": "united-kingdom",
+        "czechia": "czech-republic",
+        "chinese-taipei": "taiwan",
+        "united-states-virgin-islands": "us-virgin-islands",
+    }
+
+    def _norm(s):
+        s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+        s = re.sub(r"\b(?:and|the)\b", " ", s)  # "&"/"and"/"the" differences
+        return re.sub(r"[^a-z0-9]+", "", s)
+
+    byname = {_norm(c["name"]): c["slug"] for c in countries}
+
+    def resolve(slug):
+        # cup slug -> the countries.json slug for the /countries/[slug] route, or None
+        if slug in cmap:
+            return slug
+        a = ALIAS.get(slug)
+        if a in cmap:
+            return a
+        return byname.get(_norm(name.get(slug) or slug.replace("-", " ")))
+
+    rslug = {s: resolve(s) for s in merit}
+
+    def cget(slug, field):
+        c = cmap.get(rslug.get(slug) or "")
+        return c.get(field) if c else None
+
+    continent = {s: cget(s, "continent") for s in merit}
+    realpop = {}
+    cname = {}
+    for s in merit:
+        p = cget(s, "pop")
+        if p:
+            realpop[s] = p
+        n = cget(s, "name")
+        if n:
+            cname[s] = n
+    indic = json.load(open(os.path.join(D, "country-indicators.json"), encoding="utf-8"))["countries"]
+    gdp = {}
+    for slug, ci in indic.items():
+        v = (ci.get("indicators", {}).get("gdpUsd") or {}).get("value")
+        if v:
+            gdp[slug] = v
+    titles = major_titles()
+    bestrank = best_world_ranking()
+    sportRanks = all_world_rankings()
+
+    overall = sorted(merit.items(), key=lambda kv: kv[1], reverse=True)
+    orank = {s: i for i, (s, _) in enumerate(overall, 1)}
+    pc = sorted(((s, merit[s] / (realpop[s] / 1e6)) for s in merit
+                 if realpop.get(s) and not special.get(s) and s not in COMPOSITE),
+                key=lambda x: x[1], reverse=True)
+    pcrank = {s: i for i, (s, _) in enumerate(pc, 1)}
+    pcval = dict(pc)
+    pg = sorted(((s, merit[s] / (gdp[s] / 1e12)) for s in merit
+                 if gdp.get(s) and not special.get(s) and s not in COMPOSITE),
+                key=lambda x: x[1], reverse=True)
+    pgrank = {s: i for i, (s, _) in enumerate(pg, 1)}
+    pgval = dict(pg)
+
+    rows = []
+    for slug, mt in overall:
+        br = bestrank.get(slug)
+        rows.append({
+            "slug": slug,
+            "countrySlug": rslug.get(slug),
+            "name": name.get(slug) or cname.get(slug) or slug.replace("-", " ").title(),
+            "continent": continent.get(slug),
+            "merit": round(mt, 1),
+            "rank": orank[slug],
+            "meritPerCapita": round(pcval[slug], 3) if slug in pcval else None,
+            "rankPerCapita": pcrank.get(slug),
+            "meritPerGdp": round(pgval[slug], 2) if slug in pgval else None,
+            "rankPerGdp": pgrank.get(slug),
+            "population": realpop.get(slug),
+            "majorTitles": titles.get(slug, 0),
+            "bestRank": (br[0] if br else None),
+            "bestRankSport": (br[1] if br else None),
+            "topSports": [{"sport": sp, "pts": round(p, 1)} for sp, p in tops.get(slug, [])],
+            "sportMerit": {sp: round(p, 1) for sp, p in sorted(
+                sportmap.get(slug, {}).items(), key=lambda kv: kv[1], reverse=True) if p > 0},
+            "sportRank": dict(sportRanks.get(slug, {})),
+            "suspended": slug in SUSPENDED,
+            "defunct": bool(special.get(slug)),
+        })
+
+    out = {
+        "_meta": {
+            "title": "Zone Zero Cup",
+            "generated": NOW,
+            "method": {
+                "halflife": HALFLIFE_LOCKED, "cap": CAP, "winterWeight": WINTER_WEIGHT,
+                "flagshipBoost": FLAGSHIP_BOOST, "diminishGamma": DIMINISH_GAMMA,
+                "suspendHalflife": SUSPEND_HALFLIFE, "rankTop": RANK_TOP,
+                "prestige": PRESTIGE, "suspended": SUSPENDED,
+            },
+            "count": len(rows),
+        },
+        "nations": rows,
+    }
+    json.dump(out, open(OUT_JSON, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    return len(rows)
+
+
+def main():
+    teams = json.load(open(os.path.join(D, "olympics", "teams.json"), encoding="utf-8"))
+    name = {t["slug"]: t["name"] for t in teams}
+    special = {t["slug"]: bool(t.get("special")) for t in teams}
+    tmed = {t["slug"]: t.get("total", 0) for t in teams}
+    indic = json.load(open(os.path.join(D, "country-indicators.json"), encoding="utf-8"))["countries"]
+    pop = {}
+    for slug, ci in indic.items():
+        ind = ci.get("indicators", {})
+        gdp = (ind.get("gdpUsd") or {}).get("value")
+        gpc = (ind.get("gdpPerCapitaUsd") or {}).get("value")
+        if gdp and gpc:
+            pop[slug] = gdp / gpc
+
+    def nm_(s):
+        return name.get(s, s.replace("-", " ").title() + ("*" if s in COMPOSITE else " (non-Oly)"))
+
+    merit, tops, counts, sportmap = compute(FLAGSHIP_BOOST)
+    absolute = sorted(merit.items(), key=lambda kv: kv[1], reverse=True)
+    rank = {s: i for i, (s, _) in enumerate(absolute, 1)}
+
+    pc = []
+    for slug, mt in merit.items():
+        if special.get(slug) or slug in COMPOSITE or tmed.get(slug, 0) < PERCAP_MIN or not pop.get(slug):
+            continue
+        pc.append((slug, mt, pop[slug], mt / (pop[slug] / 1e6)))
+    pc.sort(key=lambda x: x[3], reverse=True)
+
+    # half-life sensitivity: where East Germany (last active 1988) lands, + top 10
+    def set_hl(h):
+        global HALFLIFE
+        HALFLIFE = h
+        _DC.clear()
+
+    hl_sens = {}
+    for h in (20, 15, 12, 10, 8):
+        set_hl(h)
+        m = compute(FLAGSHIP_BOOST)[0]
+        order = sorted(m.items(), key=lambda kv: kv[1], reverse=True)
+        rk = {s: i for i, (s, _) in enumerate(order, 1)}
+        hl_sens[h] = (rk.get("east-germany"), m.get("east-germany", 0), [s for s, _ in order[:10]])
+    set_hl(HALFLIFE_LOCKED)
+    _DC.clear()
+
+    L = []
+    L.append("# Zone Zero Cup — v1 multi-pillar proof (recalibrated)\n")
+    L.append(f"Half-life {HALFLIFE}y, cap best {CAP}, Winter {WINTER_WEIGHT}, FLAGSHIP boost x{FLAGSHIP_BOOST}. "
+             f"Prestige: " + ", ".join(f"{k} x{v}" for k, v in PRESTIGE.items()) + ".\n")
+    L.append("Tiers: flagship world title (boosted) > annual/secondary worlds > continental > intercontinental.\n")
+    L.append(f"Current-standing layer ON: live ranking -> present strength (RANK_TOP {RANK_TOP}, "
+             f"halving every {RANK_HL_POSITIONS} places). Pillars now include Baseball (WBC) + Rugby League (RLWC).\n")
+    L.append("Pillar rows: " + ", ".join(f"{k} {v}" for k, v in counts.items()) + ".\n")
+
+    spot = ["australia", "new-zealand", "papua-new-guinea", "italy", "great-britain"]
+    L.append("\n## Spotlight (does current standing temper stale titles?)\n")
+    L.append("| Nation | Merit | Rank | Top sports |")
+    L.append("|---|---|---|---|")
+    for s in spot:
+        if s in merit:
+            ts = "; ".join(f"{sp} {p:.0f}" for sp, p in tops[s])
+            L.append(f"| {nm_(s)} | {merit[s]:.0f} | #{rank[s]} | {ts} |")
+
+    L.append("\n## Absolute merit (top 30) at x%g\n" % FLAGSHIP_BOOST)
+    L.append("| # | Nation | Merit | Top sports |")
+    L.append("|---|---|---|---|")
+    for i, (slug, mt) in enumerate(absolute[:30], 1):
+        mark = " ‡" if special.get(slug) else ""
+        if slug in SUSPENDED:
+            mark += " §"
+        ts = "; ".join(f"{sp} {p:.0f}" for sp, p in tops[slug])
+        L.append(f"| {i} | {nm_(slug)}{mark} | {mt:.0f} | {ts} |")
+
+    L.append("\n## Per-capita merit (top 25, per million)\n")
+    L.append("| # | Nation | Merit | Pop | Merit / M |")
+    L.append("|---|---|---|---|---|")
+    for i, (slug, mt, p, pm) in enumerate(pc[:25], 1):
+        pf = f"{p/1e6:.1f}M" if p >= 1e6 else f"{p/1e3:.0f}k"
+        L.append(f"| {i} | {nm_(slug)} | {mt:.0f} | {pf} | {pm:.2f} |")
+
+    L.append("\n## Decay half-life sensitivity (East Germany, dissolved 1990, last active 1988)\n")
+    L.append(f"Lower half-life = harsher decay, deep history fades faster. Locked: {HALFLIFE_LOCKED}y.\n")
+    L.append("| Half-life | East Germany | Top 10 |")
+    L.append("|---|---|---|")
+    for h in (20, 15, 12, 10, 8):
+        rk, mt, top = hl_sens[h]
+        tag = " (locked)" if h == HALFLIFE_LOCKED else ""
+        L.append(f"| {h}y{tag} | #{rk} ({mt:.0f}) | " + ", ".join(nm_(s) for s in top) + " |")
+
+    open(OUT_MD, "w", encoding="utf-8").write("\n".join(L) + "\n")
+    nrows = emit_json(merit, tops, special, name, sportmap)
+    print("Emitted %s (%d nations)" % (OUT_JSON, nrows))
+    print("Boost x%g, suspend %gy, gamma %g, half-life %gy | Top 8:" %
+          (FLAGSHIP_BOOST, SUSPEND_HALFLIFE, DIMINISH_GAMMA, HALFLIFE_LOCKED),
+          ", ".join(f"{nm_(s)}={v:.0f}" for s, v in absolute[:8]))
+    print("East Germany rank by half-life:", {h: hl_sens[h][0] for h in (20, 15, 12, 10, 8)})
+    print("Wrote", OUT_MD)
+
+
+if __name__ == "__main__":
+    main()

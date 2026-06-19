@@ -1,0 +1,1340 @@
+{
+ "_meta": {
+  "sport": "womens-football",
+  "source": "FIFA/Coca-Cola Women's World Ranking",
+  "asOf": "2026-04-21",
+  "count": 190
+ },
+ "rows": [
+  {
+   "rank": 1,
+   "name": "Spain",
+   "points": 2105.36,
+   "slug": "spain",
+   "engineSlug": "spain"
+  },
+  {
+   "rank": 2,
+   "name": "USA",
+   "points": 2057.92,
+   "slug": "united-states",
+   "engineSlug": "united-states"
+  },
+  {
+   "rank": 3,
+   "name": "Germany",
+   "points": 2028.99,
+   "slug": "germany",
+   "engineSlug": "germany"
+  },
+  {
+   "rank": 4,
+   "name": "England",
+   "points": 2027.13,
+   "slug": "england",
+   "engineSlug": "england"
+  },
+  {
+   "rank": 5,
+   "name": "Japan",
+   "points": 1998.83,
+   "slug": "japan",
+   "engineSlug": "japan"
+  },
+  {
+   "rank": 6,
+   "name": "France",
+   "points": 1983.84,
+   "slug": "france",
+   "engineSlug": "france"
+  },
+  {
+   "rank": 7,
+   "name": "Brazil",
+   "points": 1976.73,
+   "slug": "brazil",
+   "engineSlug": "brazil"
+  },
+  {
+   "rank": 8,
+   "name": "Sweden",
+   "points": 1937.94,
+   "slug": "sweden",
+   "engineSlug": "sweden"
+  },
+  {
+   "rank": 9,
+   "name": "Canada",
+   "points": 1936.9,
+   "slug": "canada",
+   "engineSlug": "canada"
+  },
+  {
+   "rank": 10,
+   "name": "Netherlands",
+   "points": 1911.75,
+   "slug": "netherlands",
+   "engineSlug": "netherlands"
+  },
+  {
+   "rank": 11,
+   "name": "Korea DPR",
+   "points": 1910.63,
+   "slug": "north-korea",
+   "engineSlug": "north-korea"
+  },
+  {
+   "rank": 12,
+   "name": "Denmark",
+   "points": 1910.2,
+   "slug": "denmark",
+   "engineSlug": "denmark"
+  },
+  {
+   "rank": 13,
+   "name": "Italy",
+   "points": 1891.83,
+   "slug": "italy",
+   "engineSlug": "italy"
+  },
+  {
+   "rank": 14,
+   "name": "Norway",
+   "points": 1878.52,
+   "slug": "norway",
+   "engineSlug": "norway"
+  },
+  {
+   "rank": 15,
+   "name": "Australia",
+   "points": 1830.66,
+   "slug": "australia",
+   "engineSlug": "australia"
+  },
+  {
+   "rank": 16,
+   "name": "China PR",
+   "points": 1799.13,
+   "slug": "china",
+   "engineSlug": "china"
+  },
+  {
+   "rank": 17,
+   "name": "Iceland",
+   "points": 1792.32,
+   "slug": "iceland",
+   "engineSlug": "iceland"
+  },
+  {
+   "rank": 18,
+   "name": "Belgium",
+   "points": 1786.01,
+   "slug": "belgium",
+   "engineSlug": "belgium"
+  },
+  {
+   "rank": 19,
+   "name": "Korea Republic",
+   "points": 1780.68,
+   "slug": "south-korea",
+   "engineSlug": "south-korea"
+  },
+  {
+   "rank": 20,
+   "name": "Colombia",
+   "points": 1775.96,
+   "slug": "colombia",
+   "engineSlug": "colombia"
+  },
+  {
+   "rank": 21,
+   "name": "Republic of Ireland",
+   "points": 1769.74,
+   "slug": "ireland",
+   "engineSlug": "ireland"
+  },
+  {
+   "rank": 22,
+   "name": "Portugal",
+   "points": 1751.11,
+   "slug": "portugal",
+   "engineSlug": "portugal"
+  },
+  {
+   "rank": 23,
+   "name": "Austria",
+   "points": 1749.66,
+   "slug": "austria",
+   "engineSlug": "austria"
+  },
+  {
+   "rank": 24,
+   "name": "Finland",
+   "points": 1744.99,
+   "slug": "finland",
+   "engineSlug": "finland"
+  },
+  {
+   "rank": 25,
+   "name": "Scotland",
+   "points": 1743.49,
+   "slug": "scotland",
+   "engineSlug": "scotland"
+  },
+  {
+   "rank": 26,
+   "name": "Switzerland",
+   "points": 1734.18,
+   "slug": "switzerland",
+   "engineSlug": "switzerland"
+  },
+  {
+   "rank": 27,
+   "name": "Russia",
+   "points": 1718.14,
+   "slug": "russia",
+   "engineSlug": "russia"
+  },
+  {
+   "rank": 28,
+   "name": "Mexico",
+   "points": 1715.13,
+   "slug": "mexico",
+   "engineSlug": "mexico"
+  },
+  {
+   "rank": 29,
+   "name": "Poland",
+   "points": 1694.17,
+   "slug": "poland",
+   "engineSlug": "poland"
+  },
+  {
+   "rank": 30,
+   "name": "Argentina",
+   "points": 1683.0,
+   "slug": "argentina",
+   "engineSlug": "argentina"
+  },
+  {
+   "rank": 31,
+   "name": "Wales",
+   "points": 1668.82,
+   "slug": "wales",
+   "engineSlug": "wales"
+  },
+  {
+   "rank": 32,
+   "name": "New Zealand",
+   "points": 1645.41,
+   "slug": "new-zealand",
+   "engineSlug": "new-zealand"
+  },
+  {
+   "rank": 33,
+   "name": "Czechia",
+   "points": 1641.0,
+   "slug": "czech-republic",
+   "engineSlug": "czechia"
+  },
+  {
+   "rank": 34,
+   "name": "Ukraine",
+   "points": 1634.21,
+   "slug": "ukraine",
+   "engineSlug": "ukraine"
+  },
+  {
+   "rank": 35,
+   "name": "Serbia",
+   "points": 1633.9,
+   "slug": "serbia",
+   "engineSlug": "serbia"
+  },
+  {
+   "rank": 36,
+   "name": "Nigeria",
+   "points": 1601.56,
+   "slug": "nigeria",
+   "engineSlug": "nigeria"
+  },
+  {
+   "rank": 37,
+   "name": "Vietnam",
+   "points": 1593.71,
+   "slug": "vietnam",
+   "engineSlug": "vietnam"
+  },
+  {
+   "rank": 38,
+   "name": "Slovenia",
+   "points": 1579.19,
+   "slug": "slovenia",
+   "engineSlug": "slovenia"
+  },
+  {
+   "rank": 39,
+   "name": "Philippines",
+   "points": 1566.44,
+   "slug": "philippines",
+   "engineSlug": "philippines"
+  },
+  {
+   "rank": 40,
+   "name": "Chinese Taipei",
+   "points": 1565.81,
+   "slug": "taiwan",
+   "engineSlug": "chinese-taipei"
+  },
+  {
+   "rank": 41,
+   "name": "Jamaica",
+   "points": 1550.17,
+   "slug": "jamaica",
+   "engineSlug": "jamaica"
+  },
+  {
+   "rank": 42,
+   "name": "Venezuela",
+   "points": 1527.0,
+   "slug": "venezuela",
+   "engineSlug": "venezuela"
+  },
+  {
+   "rank": 43,
+   "name": "Costa Rica",
+   "points": 1523.57,
+   "slug": "costa-rica",
+   "engineSlug": "costa-rica"
+  },
+  {
+   "rank": 44,
+   "name": "Paraguay",
+   "points": 1511.01,
+   "slug": "paraguay",
+   "engineSlug": "paraguay"
+  },
+  {
+   "rank": 45,
+   "name": "Hungary",
+   "points": 1506.51,
+   "slug": "hungary",
+   "engineSlug": "hungary"
+  },
+  {
+   "rank": 46,
+   "name": "Turkiye",
+   "points": 1497.3,
+   "slug": "turkey",
+   "engineSlug": "turkey"
+  },
+  {
+   "rank": 47,
+   "name": "Haiti",
+   "points": 1490.83,
+   "slug": "haiti",
+   "engineSlug": "haiti"
+  },
+  {
+   "rank": 48,
+   "name": "Chile",
+   "points": 1487.0,
+   "slug": "chile",
+   "engineSlug": "chile"
+  },
+  {
+   "rank": 49,
+   "name": "Thailand",
+   "points": 1485.04,
+   "slug": "thailand",
+   "engineSlug": "thailand"
+  },
+  {
+   "rank": 50,
+   "name": "Northern Ireland",
+   "points": 1481.66,
+   "slug": "northern-ireland",
+   "engineSlug": "northern-ireland"
+  },
+  {
+   "rank": 51,
+   "name": "Uzbekistan",
+   "points": 1474.15,
+   "slug": "uzbekistan",
+   "engineSlug": "uzbekistan"
+  },
+  {
+   "rank": 52,
+   "name": "Belarus",
+   "points": 1473.09,
+   "slug": "belarus",
+   "engineSlug": "belarus"
+  },
+  {
+   "rank": 53,
+   "name": "Romania",
+   "points": 1472.28,
+   "slug": "romania",
+   "engineSlug": "romania"
+  },
+  {
+   "rank": 54,
+   "name": "Slovakia",
+   "points": 1467.43,
+   "slug": "slovakia",
+   "engineSlug": "slovakia"
+  },
+  {
+   "rank": 55,
+   "name": "Myanmar",
+   "points": 1460.7,
+   "slug": "myanmar",
+   "engineSlug": "myanmar"
+  },
+  {
+   "rank": 56,
+   "name": "Panama",
+   "points": 1457.45,
+   "slug": "panama",
+   "engineSlug": "panama"
+  },
+  {
+   "rank": 57,
+   "name": "South Africa",
+   "points": 1451.15,
+   "slug": "south-africa",
+   "engineSlug": "south-africa"
+  },
+  {
+   "rank": 58,
+   "name": "Papua New Guinea",
+   "points": 1450.33,
+   "slug": "papua-new-guinea",
+   "engineSlug": "papua-new-guinea"
+  },
+  {
+   "rank": 59,
+   "name": "Greece",
+   "points": 1430.17,
+   "slug": "greece",
+   "engineSlug": "greece"
+  },
+  {
+   "rank": 60,
+   "name": "Ghana",
+   "points": 1429.23,
+   "slug": "ghana",
+   "engineSlug": "ghana"
+  },
+  {
+   "rank": 61,
+   "name": "Ecuador",
+   "points": 1418.82,
+   "slug": "ecuador",
+   "engineSlug": "ecuador"
+  },
+  {
+   "rank": 62,
+   "name": "Uruguay",
+   "points": 1418.66,
+   "slug": "uruguay",
+   "engineSlug": "uruguay"
+  },
+  {
+   "rank": 63,
+   "name": "Croatia",
+   "points": 1406.0,
+   "slug": "croatia",
+   "engineSlug": "croatia"
+  },
+  {
+   "rank": 64,
+   "name": "Morocco",
+   "points": 1402.24,
+   "slug": "morocco",
+   "engineSlug": "morocco"
+  },
+  {
+   "rank": 65,
+   "name": "Zambia",
+   "points": 1390.14,
+   "slug": "zambia",
+   "engineSlug": "zambia"
+  },
+  {
+   "rank": 66,
+   "name": "Israel",
+   "points": 1382.64,
+   "slug": "israel",
+   "engineSlug": "israel"
+  },
+  {
+   "rank": 67,
+   "name": "Albania",
+   "points": 1376.23,
+   "slug": "albania",
+   "engineSlug": "albania"
+  },
+  {
+   "rank": 68,
+   "name": "IR Iran",
+   "points": 1370.37,
+   "slug": "iran",
+   "engineSlug": "iran"
+  },
+  {
+   "rank": 69,
+   "name": "India",
+   "points": 1368.7,
+   "slug": "india",
+   "engineSlug": "india"
+  },
+  {
+   "rank": 70,
+   "name": "Bosnia and Herzegovina",
+   "points": 1361.08,
+   "slug": "bosnia-herzegovina",
+   "engineSlug": "bosnia-herzegovina"
+  },
+  {
+   "rank": 71,
+   "name": "Cameroon",
+   "points": 1358.15,
+   "slug": "cameroon",
+   "engineSlug": "cameroon"
+  },
+  {
+   "rank": 72,
+   "name": "Cote d'Ivoire",
+   "points": 1338.92,
+   "slug": "cote-divoire",
+   "engineSlug": "ivory-coast"
+  },
+  {
+   "rank": 73,
+   "name": "Peru",
+   "points": 1331.32,
+   "slug": "peru",
+   "engineSlug": "peru"
+  },
+  {
+   "rank": 74,
+   "name": "Algeria",
+   "points": 1318.95,
+   "slug": "algeria",
+   "engineSlug": "algeria"
+  },
+  {
+   "rank": 75,
+   "name": "Azerbaijan",
+   "points": 1317.93,
+   "slug": "azerbaijan",
+   "engineSlug": "azerbaijan"
+  },
+  {
+   "rank": 76,
+   "name": "Jordan",
+   "points": 1299.21,
+   "slug": "jordan",
+   "engineSlug": "jordan"
+  },
+  {
+   "rank": 77,
+   "name": "Puerto Rico",
+   "points": 1294.95,
+   "slug": "puerto-rico",
+   "engineSlug": "puerto-rico"
+  },
+  {
+   "rank": 78,
+   "name": "El Salvador",
+   "points": 1294.4,
+   "slug": "el-salvador",
+   "engineSlug": "el-salvador"
+  },
+  {
+   "rank": 79,
+   "name": "Senegal",
+   "points": 1286.33,
+   "slug": "senegal",
+   "engineSlug": "senegal"
+  },
+  {
+   "rank": 80,
+   "name": "Fiji",
+   "points": 1282.2,
+   "slug": "fiji",
+   "engineSlug": "fiji"
+  },
+  {
+   "rank": 81,
+   "name": "Hong Kong, China",
+   "points": 1280.53,
+   "slug": "hong-kong",
+   "engineSlug": "hong-kong"
+  },
+  {
+   "rank": 82,
+   "name": "Trinidad and Tobago",
+   "points": 1269.08,
+   "slug": "trinidad-tobago",
+   "engineSlug": "trinidad-and-tobago"
+  },
+  {
+   "rank": 83,
+   "name": "Guatemala",
+   "points": 1267.25,
+   "slug": "guatemala",
+   "engineSlug": "guatemala"
+  },
+  {
+   "rank": 84,
+   "name": "Mali",
+   "points": 1263.53,
+   "slug": "mali",
+   "engineSlug": "mali"
+  },
+  {
+   "rank": 85,
+   "name": "Kosovo",
+   "points": 1262.78,
+   "slug": "kosovo",
+   "engineSlug": "kosovo"
+  },
+  {
+   "rank": 86,
+   "name": "Montenegro",
+   "points": 1250.2,
+   "slug": "montenegro",
+   "engineSlug": "montenegro"
+  },
+  {
+   "rank": 87,
+   "name": "Samoa",
+   "points": 1246.84,
+   "slug": "samoa",
+   "engineSlug": "samoa"
+  },
+  {
+   "rank": 88,
+   "name": "Nepal",
+   "points": 1238.74,
+   "slug": "nepal",
+   "engineSlug": "nepal"
+  },
+  {
+   "rank": 89,
+   "name": "Solomon Islands",
+   "points": 1234.03,
+   "slug": "solomon-islands",
+   "engineSlug": "solomon-islands"
+  },
+  {
+   "rank": 90,
+   "name": "Equatorial Guinea",
+   "points": 1229.6,
+   "slug": "equatorial-guinea",
+   "engineSlug": "equatorial-guinea"
+  },
+  {
+   "rank": 91,
+   "name": "Guyana",
+   "points": 1217.37,
+   "slug": "guyana",
+   "engineSlug": "guyana"
+  },
+  {
+   "rank": 92,
+   "name": "Malta",
+   "points": 1216.36,
+   "slug": "malta",
+   "engineSlug": "malta"
+  },
+  {
+   "rank": 93,
+   "name": "Dominican Republic",
+   "points": 1211.22,
+   "slug": "dominican-republic",
+   "engineSlug": "dominican-republic"
+  },
+  {
+   "rank": 94,
+   "name": "Lithuania",
+   "points": 1208.47,
+   "slug": "lithuania",
+   "engineSlug": "lithuania"
+  },
+  {
+   "rank": 95,
+   "name": "Malaysia",
+   "points": 1208.12,
+   "slug": "malaysia",
+   "engineSlug": "malaysia"
+  },
+  {
+   "rank": 96,
+   "name": "Nicaragua",
+   "points": 1205.13,
+   "slug": "nicaragua",
+   "engineSlug": "nicaragua"
+  },
+  {
+   "rank": 97,
+   "name": "Cuba",
+   "points": 1204.21,
+   "slug": "cuba",
+   "engineSlug": "cuba"
+  },
+  {
+   "rank": 98,
+   "name": "Guam",
+   "points": 1201.73,
+   "slug": "guam",
+   "engineSlug": "guam"
+  },
+  {
+   "rank": 99,
+   "name": "Egypt",
+   "points": 1199.25,
+   "slug": "egypt",
+   "engineSlug": "egypt"
+  },
+  {
+   "rank": 100,
+   "name": "Kazakhstan",
+   "points": 1199.11,
+   "slug": "kazakhstan",
+   "engineSlug": "kazakhstan"
+  },
+  {
+   "rank": 101,
+   "name": "Estonia",
+   "points": 1198.56,
+   "slug": "estonia",
+   "engineSlug": "estonia"
+  },
+  {
+   "rank": 102,
+   "name": "Tunisia",
+   "points": 1197.5,
+   "slug": "tunisia",
+   "engineSlug": "tunisia"
+  },
+  {
+   "rank": 103,
+   "name": "Faroe Islands",
+   "points": 1187.0,
+   "slug": "faroe-islands",
+   "engineSlug": "faroe-islands"
+  },
+  {
+   "rank": 104,
+   "name": "New Caledonia",
+   "points": 1184.36,
+   "slug": "new-caledonia",
+   "engineSlug": "new-caledonia"
+  },
+  {
+   "rank": 105,
+   "name": "Latvia",
+   "points": 1179.91,
+   "slug": "latvia",
+   "engineSlug": "latvia"
+  },
+  {
+   "rank": 106,
+   "name": "Congo DR",
+   "points": 1179.6,
+   "slug": "congo",
+   "engineSlug": "congo"
+  },
+  {
+   "rank": 107,
+   "name": "Bangladesh",
+   "points": 1171.05,
+   "slug": "bangladesh",
+   "engineSlug": "bangladesh"
+  },
+  {
+   "rank": 108,
+   "name": "Vanuatu",
+   "points": 1168.1,
+   "slug": "vanuatu",
+   "engineSlug": "vanuatu"
+  },
+  {
+   "rank": 109,
+   "name": "Bulgaria",
+   "points": 1166.44,
+   "slug": "bulgaria",
+   "engineSlug": "bulgaria"
+  },
+  {
+   "rank": 110,
+   "name": "Indonesia",
+   "points": 1162.58,
+   "slug": "indonesia",
+   "engineSlug": "indonesia"
+  },
+  {
+   "rank": 111,
+   "name": "Congo",
+   "points": 1161.03,
+   "slug": "congo",
+   "engineSlug": "congo"
+  },
+  {
+   "rank": 112,
+   "name": "Bolivia",
+   "points": 1153.64,
+   "slug": "bolivia",
+   "engineSlug": "bolivia"
+  },
+  {
+   "rank": 113,
+   "name": "Cambodia",
+   "points": 1153.44,
+   "slug": "cambodia",
+   "engineSlug": "cambodia"
+  },
+  {
+   "rank": 114,
+   "name": "Luxembourg",
+   "points": 1152.87,
+   "slug": "luxembourg",
+   "engineSlug": "luxembourg"
+  },
+  {
+   "rank": 115,
+   "name": "Tonga",
+   "points": 1152.53,
+   "slug": "tonga",
+   "engineSlug": "tonga"
+  },
+  {
+   "rank": 116,
+   "name": "Bahrain",
+   "points": 1146.97,
+   "slug": "bahrain",
+   "engineSlug": "bahrain"
+  },
+  {
+   "rank": 117,
+   "name": "Laos",
+   "points": 1143.0,
+   "slug": "laos",
+   "engineSlug": "laos"
+  },
+  {
+   "rank": 118,
+   "name": "Burkina Faso",
+   "points": 1140.68,
+   "slug": "burkina-faso",
+   "engineSlug": "burkina-faso"
+  },
+  {
+   "rank": 119,
+   "name": "Moldova",
+   "points": 1137.64,
+   "slug": "moldova",
+   "engineSlug": "moldova"
+  },
+  {
+   "rank": 120,
+   "name": "Cabo Verde",
+   "points": 1131.67,
+   "slug": "cape-verde",
+   "engineSlug": "cape-verde"
+  },
+  {
+   "rank": 121,
+   "name": "American Samoa",
+   "points": 1130.42,
+   "slug": "american-samoa",
+   "engineSlug": "american-samoa"
+  },
+  {
+   "rank": 122,
+   "name": "Tanzania",
+   "points": 1129.13,
+   "slug": "tanzania",
+   "engineSlug": "tanzania"
+  },
+  {
+   "rank": 123,
+   "name": "Tahiti",
+   "points": 1127.92,
+   "slug": "tahiti",
+   "engineSlug": "tahiti"
+  },
+  {
+   "rank": 124,
+   "name": "United Arab Emirates",
+   "points": 1126.67,
+   "slug": "united-arab-emirates",
+   "engineSlug": "united-arab-emirates"
+  },
+  {
+   "rank": 125,
+   "name": "Namibia",
+   "points": 1124.29,
+   "slug": "namibia",
+   "engineSlug": "namibia"
+  },
+  {
+   "rank": 126,
+   "name": "Honduras",
+   "points": 1115.28,
+   "slug": "honduras",
+   "engineSlug": "honduras"
+  },
+  {
+   "rank": 127,
+   "name": "Zimbabwe",
+   "points": 1114.75,
+   "slug": "zimbabwe",
+   "engineSlug": "zimbabwe"
+  },
+  {
+   "rank": 128,
+   "name": "Kenya",
+   "points": 1111.84,
+   "slug": "kenya",
+   "engineSlug": "kenya"
+  },
+  {
+   "rank": 129,
+   "name": "Palestine",
+   "points": 1111.4,
+   "slug": "palestine",
+   "engineSlug": "palestine"
+  },
+  {
+   "rank": 130,
+   "name": "Lebanon",
+   "points": 1100.95,
+   "slug": "lebanon",
+   "engineSlug": "lebanon"
+  },
+  {
+   "rank": 131,
+   "name": "Cook Islands",
+   "points": 1099.76,
+   "slug": "cook-islands",
+   "engineSlug": "cook-islands"
+  },
+  {
+   "rank": 132,
+   "name": "Georgia",
+   "points": 1098.68,
+   "slug": "georgia",
+   "engineSlug": "georgia"
+  },
+  {
+   "rank": 133,
+   "name": "Togo",
+   "points": 1092.99,
+   "slug": "togo",
+   "engineSlug": "togo"
+  },
+  {
+   "rank": 134,
+   "name": "The Gambia",
+   "points": 1082.47,
+   "slug": "gambia",
+   "engineSlug": "gambia"
+  },
+  {
+   "rank": 135,
+   "name": "Cyprus",
+   "points": 1076.22,
+   "slug": "cyprus",
+   "engineSlug": "cyprus"
+  },
+  {
+   "rank": 136,
+   "name": "North Macedonia",
+   "points": 1075.2,
+   "slug": "north-macedonia",
+   "engineSlug": "north-macedonia"
+  },
+  {
+   "rank": 137,
+   "name": "Kyrgyz Republic",
+   "points": 1070.63,
+   "slug": "kyrgyzstan",
+   "engineSlug": "kyrgyzstan"
+  },
+  {
+   "rank": 138,
+   "name": "Ethiopia",
+   "points": 1068.12,
+   "slug": "ethiopia",
+   "engineSlug": "ethiopia"
+  },
+  {
+   "rank": 139,
+   "name": "Benin",
+   "points": 1066.55,
+   "slug": "benin",
+   "engineSlug": "benin"
+  },
+  {
+   "rank": 140,
+   "name": "Suriname",
+   "points": 1065.77,
+   "slug": "suriname",
+   "engineSlug": "suriname"
+  },
+  {
+   "rank": 141,
+   "name": "Turkmenistan",
+   "points": 1063.88,
+   "slug": "turkmenistan",
+   "engineSlug": "turkmenistan"
+  },
+  {
+   "rank": 142,
+   "name": "Bermuda",
+   "points": 1053.17,
+   "slug": "bermuda",
+   "engineSlug": "bermuda"
+  },
+  {
+   "rank": 143,
+   "name": "Guinea",
+   "points": 1048.64,
+   "slug": "guinea",
+   "engineSlug": "guinea"
+  },
+  {
+   "rank": 144,
+   "name": "Central African Republic",
+   "points": 1045.87,
+   "slug": "central-african-republic",
+   "engineSlug": "central-african-republic"
+  },
+  {
+   "rank": 145,
+   "name": "Uganda",
+   "points": 1036.27,
+   "slug": "uganda",
+   "engineSlug": "uganda"
+  },
+  {
+   "rank": 146,
+   "name": "Mongolia",
+   "points": 1035.67,
+   "slug": "mongolia",
+   "engineSlug": "mongolia"
+  },
+  {
+   "rank": 147,
+   "name": "Armenia",
+   "points": 1030.03,
+   "slug": "armenia",
+   "engineSlug": "armenia"
+  },
+  {
+   "rank": 148,
+   "name": "Botswana",
+   "points": 1029.2,
+   "slug": "botswana",
+   "engineSlug": "botswana"
+  },
+  {
+   "rank": 149,
+   "name": "Gabon",
+   "points": 1028.74,
+   "slug": "gabon",
+   "engineSlug": "gabon"
+  },
+  {
+   "rank": 150,
+   "name": "St Kitts and Nevis",
+   "points": 1026.93,
+   "slug": "st-kitts-nevis",
+   "engineSlug": "st-kitts-nevis"
+  },
+  {
+   "rank": 151,
+   "name": "Singapore",
+   "points": 1025.38,
+   "slug": "singapore",
+   "engineSlug": "singapore"
+  },
+  {
+   "rank": 152,
+   "name": "Sierra Leone",
+   "points": 1021.39,
+   "slug": "sierra-leone",
+   "engineSlug": "sierra-leone"
+  },
+  {
+   "rank": 153,
+   "name": "Malawi",
+   "points": 1018.89,
+   "slug": "malawi",
+   "engineSlug": "malawi"
+  },
+  {
+   "rank": 154,
+   "name": "Pakistan",
+   "points": 1008.65,
+   "slug": "pakistan",
+   "engineSlug": "pakistan"
+  },
+  {
+   "rank": 155,
+   "name": "Angola",
+   "points": 989.68,
+   "slug": "angola",
+   "engineSlug": "angola"
+  },
+  {
+   "rank": 156,
+   "name": "Chad",
+   "points": 985.55,
+   "slug": "chad",
+   "engineSlug": "chad"
+  },
+  {
+   "rank": 157,
+   "name": "Saudi Arabia",
+   "points": 971.11,
+   "slug": "saudi-arabia",
+   "engineSlug": "saudi-arabia"
+  },
+  {
+   "rank": 158,
+   "name": "Timor-Leste",
+   "points": 965.35,
+   "slug": "east-timor",
+   "engineSlug": "east-timor"
+  },
+  {
+   "rank": 159,
+   "name": "Tajikistan",
+   "points": 954.78,
+   "slug": "tajikistan",
+   "engineSlug": "tajikistan"
+  },
+  {
+   "rank": 160,
+   "name": "St Vincent and the Grenadines",
+   "points": 947.14,
+   "slug": "st-vincent-the-grenadines",
+   "engineSlug": "st-vincent-the-grenadines"
+  },
+  {
+   "rank": 161,
+   "name": "Bhutan",
+   "points": 933.09,
+   "slug": "bhutan",
+   "engineSlug": "bhutan"
+  },
+  {
+   "rank": 162,
+   "name": "Syria",
+   "points": 931.42,
+   "slug": "syria",
+   "engineSlug": "syria"
+  },
+  {
+   "rank": 163,
+   "name": "Barbados",
+   "points": 924.87,
+   "slug": "barbados",
+   "engineSlug": "barbados"
+  },
+  {
+   "rank": 164,
+   "name": "St Lucia",
+   "points": 923.18,
+   "slug": "saint-lucia",
+   "engineSlug": "saint-lucia"
+  },
+  {
+   "rank": 165,
+   "name": "Sri Lanka",
+   "points": 915.58,
+   "slug": "sri-lanka",
+   "engineSlug": "sri-lanka"
+  },
+  {
+   "rank": 166,
+   "name": "Iraq",
+   "points": 910.49,
+   "slug": "iraq",
+   "engineSlug": "iraq"
+  },
+  {
+   "rank": 167,
+   "name": "Maldives",
+   "points": 906.97,
+   "slug": "maldives",
+   "engineSlug": "maldives"
+  },
+  {
+   "rank": 168,
+   "name": "Belize",
+   "points": 903.05,
+   "slug": "belize",
+   "engineSlug": "belize"
+  },
+  {
+   "rank": 169,
+   "name": "Rwanda",
+   "points": 892.39,
+   "slug": "rwanda",
+   "engineSlug": "rwanda"
+  },
+  {
+   "rank": 170,
+   "name": "Dominica",
+   "points": 884.73,
+   "slug": "dominica",
+   "engineSlug": "dominica"
+  },
+  {
+   "rank": 171,
+   "name": "Liberia",
+   "points": 882.37,
+   "slug": "liberia",
+   "engineSlug": "liberia"
+  },
+  {
+   "rank": 172,
+   "name": "Grenada",
+   "points": 878.19,
+   "slug": "grenada",
+   "engineSlug": "grenada"
+  },
+  {
+   "rank": 173,
+   "name": "Mozambique",
+   "points": 874.79,
+   "slug": "mozambique",
+   "engineSlug": "mozambique"
+  },
+  {
+   "rank": 174,
+   "name": "Niger",
+   "points": 863.94,
+   "slug": "niger",
+   "engineSlug": "niger"
+  },
+  {
+   "rank": 175,
+   "name": "Seychelles",
+   "points": 849.52,
+   "slug": "seychelles",
+   "engineSlug": "seychelles"
+  },
+  {
+   "rank": 176,
+   "name": "Macau",
+   "points": 846.53,
+   "slug": "macau",
+   "engineSlug": "macau"
+  },
+  {
+   "rank": 177,
+   "name": "Guinea-Bissau",
+   "points": 838.58,
+   "slug": "guinea-bissau",
+   "engineSlug": "guinea-bissau"
+  },
+  {
+   "rank": 178,
+   "name": "Lesotho",
+   "points": 836.43,
+   "slug": "lesotho",
+   "engineSlug": "lesotho"
+  },
+  {
+   "rank": 179,
+   "name": "Burundi",
+   "points": 822.1,
+   "slug": "burundi",
+   "engineSlug": "burundi"
+  },
+  {
+   "rank": 180,
+   "name": "Curacao",
+   "points": 821.91,
+   "slug": "curacao",
+   "engineSlug": "curacao"
+  },
+  {
+   "rank": 181,
+   "name": "Andorra",
+   "points": 816.8,
+   "slug": "andorra",
+   "engineSlug": "andorra"
+  },
+  {
+   "rank": 182,
+   "name": "Antigua and Barbuda",
+   "points": 807.2,
+   "slug": "antigua-barbuda",
+   "engineSlug": "antigua-barbuda"
+  },
+  {
+   "rank": 183,
+   "name": "Aruba",
+   "points": 801.27,
+   "slug": "aruba",
+   "engineSlug": "aruba"
+  },
+  {
+   "rank": 184,
+   "name": "Eswatini",
+   "points": 797.06,
+   "slug": "eswatini",
+   "engineSlug": "eswatini"
+  },
+  {
+   "rank": 185,
+   "name": "US Virgin Islands",
+   "points": 790.28,
+   "slug": "us-virgin-islands",
+   "engineSlug": "us-virgin-islands"
+  },
+  {
+   "rank": 186,
+   "name": "Cayman Islands",
+   "points": 777.07,
+   "slug": "cayman-islands",
+   "engineSlug": "cayman-islands"
+  },
+  {
+   "rank": 187,
+   "name": "Comoros",
+   "points": 745.47,
+   "slug": "comoros",
+   "engineSlug": "comoros"
+  },
+  {
+   "rank": 188,
+   "name": "Libya",
+   "points": 739.94,
+   "slug": "libya",
+   "engineSlug": "libya"
+  },
+  {
+   "rank": 189,
+   "name": "Gibraltar",
+   "points": 734.15,
+   "slug": "gibraltar",
+   "engineSlug": "gibraltar"
+  },
+  {
+   "rank": 190,
+   "name": "Liechtenstein",
+   "points": 725.35,
+   "slug": "liechtenstein",
+   "engineSlug": "liechtenstein"
+  }
+ ]
+}

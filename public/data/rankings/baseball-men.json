@@ -1,0 +1,690 @@
+{
+ "_meta": {
+  "sport": "baseball-men",
+  "source": "WBSC World Ranking",
+  "asOf": "2026-03-26",
+  "count": 85
+ },
+ "rows": [
+  {
+   "rank": 1,
+   "code": "JPN",
+   "name": "Japan",
+   "points": 6337.0,
+   "slug": "japan",
+   "engineSlug": "japan"
+  },
+  {
+   "rank": 2,
+   "code": "TPE",
+   "name": "Taiwan",
+   "points": 5302.0,
+   "slug": "taiwan",
+   "engineSlug": "chinese-taipei"
+  },
+  {
+   "rank": 3,
+   "code": "USA",
+   "name": "United States",
+   "points": 4357.0,
+   "slug": "united-states",
+   "engineSlug": "united-states"
+  },
+  {
+   "rank": 4,
+   "code": "KOR",
+   "name": "South Korea",
+   "points": 4239.0,
+   "slug": "south-korea",
+   "engineSlug": "south-korea"
+  },
+  {
+   "rank": 5,
+   "code": "VEN",
+   "name": "Venezuela",
+   "points": 3992.0,
+   "slug": "venezuela",
+   "engineSlug": "venezuela"
+  },
+  {
+   "rank": 6,
+   "code": "PUR",
+   "name": "Puerto Rico",
+   "points": 3298.0,
+   "slug": "puerto-rico",
+   "engineSlug": "puerto-rico"
+  },
+  {
+   "rank": 7,
+   "code": "MEX",
+   "name": "Mexico",
+   "points": 3227.0,
+   "slug": "mexico",
+   "engineSlug": "mexico"
+  },
+  {
+   "rank": 8,
+   "code": "PAN",
+   "name": "Panama",
+   "points": 2744.0,
+   "slug": "panama",
+   "engineSlug": "panama"
+  },
+  {
+   "rank": 9,
+   "code": "AUS",
+   "name": "Australia",
+   "points": 2425.0,
+   "slug": "australia",
+   "engineSlug": "australia"
+  },
+  {
+   "rank": 10,
+   "code": "NED",
+   "name": "Netherlands",
+   "points": 2358.0,
+   "slug": "netherlands",
+   "engineSlug": "netherlands"
+  },
+  {
+   "rank": 11,
+   "code": "DOM",
+   "name": "Dominican Republic",
+   "points": 2334.0,
+   "slug": "dominican-republic",
+   "engineSlug": "dominican-republic"
+  },
+  {
+   "rank": 12,
+   "code": "CUB",
+   "name": "Cuba",
+   "points": 2291.0,
+   "slug": "cuba",
+   "engineSlug": "cuba"
+  },
+  {
+   "rank": 13,
+   "code": "COL",
+   "name": "Colombia",
+   "points": 1973.0,
+   "slug": "colombia",
+   "engineSlug": "colombia"
+  },
+  {
+   "rank": 14,
+   "code": "ITA",
+   "name": "Italy",
+   "points": 1776.0,
+   "slug": "italy",
+   "engineSlug": "italy"
+  },
+  {
+   "rank": 15,
+   "code": "NCA",
+   "name": "Nicaragua",
+   "points": 1283.0,
+   "slug": "nicaragua",
+   "engineSlug": "nicaragua"
+  },
+  {
+   "rank": 16,
+   "code": "CZE",
+   "name": "Czech Republic",
+   "points": 1255.0,
+   "slug": "czech-republic",
+   "engineSlug": "czechia"
+  },
+  {
+   "rank": 17,
+   "code": "GER",
+   "name": "Germany",
+   "points": 996.0,
+   "slug": "germany",
+   "engineSlug": "germany"
+  },
+  {
+   "rank": 18,
+   "code": "CHN",
+   "name": "China",
+   "points": 894.0,
+   "slug": "china",
+   "engineSlug": "china"
+  },
+  {
+   "rank": 19,
+   "code": "CAN",
+   "name": "Canada",
+   "points": 886.0,
+   "slug": "canada",
+   "engineSlug": "canada"
+  },
+  {
+   "rank": 20,
+   "code": "GBR",
+   "name": "United Kingdom",
+   "points": 880.0,
+   "slug": "united-kingdom",
+   "engineSlug": "great-britain"
+  },
+  {
+   "rank": 21,
+   "code": "ISR",
+   "name": "Israel",
+   "points": 709.0,
+   "slug": "israel",
+   "engineSlug": "israel"
+  },
+  {
+   "rank": 22,
+   "code": "BRA",
+   "name": "Brazil",
+   "points": 693.0,
+   "slug": "brazil",
+   "engineSlug": "brazil"
+  },
+  {
+   "rank": 23,
+   "code": "RSA",
+   "name": "South Africa",
+   "points": 479.0,
+   "slug": "south-africa",
+   "engineSlug": "south-africa"
+  },
+  {
+   "rank": 24,
+   "code": "PHI",
+   "name": "Philippines",
+   "points": 465.0,
+   "slug": "philippines",
+   "engineSlug": "philippines"
+  },
+  {
+   "rank": 25,
+   "code": "FRA",
+   "name": "France",
+   "points": 388.0,
+   "slug": "france",
+   "engineSlug": "france"
+  },
+  {
+   "rank": 26,
+   "code": "ESP",
+   "name": "Spain",
+   "points": 359.0,
+   "slug": "spain",
+   "engineSlug": "spain"
+  },
+  {
+   "rank": 27,
+   "code": "AUT",
+   "name": "Austria",
+   "points": 358.0,
+   "slug": "austria",
+   "engineSlug": "austria"
+  },
+  {
+   "rank": 28,
+   "code": "HKG",
+   "name": "Hong Kong",
+   "points": 319.0,
+   "slug": "hong-kong",
+   "engineSlug": "hong-kong"
+  },
+  {
+   "rank": 29,
+   "code": "CUW",
+   "name": "Curaçao",
+   "points": 252.0,
+   "slug": "curacao",
+   "engineSlug": "curacao"
+  },
+  {
+   "rank": 30,
+   "code": "THA",
+   "name": "Thailand",
+   "points": 216.0,
+   "slug": "thailand",
+   "engineSlug": "thailand"
+  },
+  {
+   "rank": 31,
+   "code": "PER",
+   "name": "Peru",
+   "points": 183.0,
+   "slug": "peru",
+   "engineSlug": "peru"
+  },
+  {
+   "rank": 32,
+   "code": "CRO",
+   "name": "Croatia",
+   "points": 176.0,
+   "slug": "croatia",
+   "engineSlug": "croatia"
+  },
+  {
+   "rank": 33,
+   "code": "ARG",
+   "name": "Argentina",
+   "points": 175.0,
+   "slug": "argentina",
+   "engineSlug": "argentina"
+  },
+  {
+   "rank": 34,
+   "code": "SWE",
+   "name": "Sweden",
+   "points": 172.0,
+   "slug": "sweden",
+   "engineSlug": "sweden"
+  },
+  {
+   "rank": 35,
+   "code": "SUI",
+   "name": "Switzerland",
+   "points": 167.0,
+   "slug": "switzerland",
+   "engineSlug": "switzerland"
+  },
+  {
+   "rank": 36,
+   "code": "GUM",
+   "name": "Guam",
+   "points": 159.0,
+   "slug": "guam",
+   "engineSlug": "guam"
+  },
+  {
+   "rank": 37,
+   "code": "PLE",
+   "name": "Palestine",
+   "points": 159.0,
+   "slug": "palestine",
+   "engineSlug": "palestine"
+  },
+  {
+   "rank": 38,
+   "code": "BEL",
+   "name": "Belgium",
+   "points": 148.0,
+   "slug": "belgium",
+   "engineSlug": "belgium"
+  },
+  {
+   "rank": 39,
+   "code": "CRC",
+   "name": "Costa Rica",
+   "points": 136.0,
+   "slug": "costa-rica",
+   "engineSlug": "costa-rica"
+  },
+  {
+   "rank": 40,
+   "code": "BAH",
+   "name": "Bahamas",
+   "points": 128.0,
+   "slug": "bahamas",
+   "engineSlug": "bahamas"
+  },
+  {
+   "rank": 41,
+   "code": "ISV",
+   "name": "US Virgin Islands",
+   "points": 112.0,
+   "slug": "us-virgin-islands",
+   "engineSlug": "united-states-virgin-islands"
+  },
+  {
+   "rank": 42,
+   "code": "GUA",
+   "name": "Guatemala",
+   "points": 108.0,
+   "slug": "guatemala",
+   "engineSlug": "guatemala"
+  },
+  {
+   "rank": 43,
+   "code": "PAK",
+   "name": "Pakistan",
+   "points": 97.0,
+   "slug": "pakistan",
+   "engineSlug": "pakistan"
+  },
+  {
+   "rank": 44,
+   "code": "LTU",
+   "name": "Lithuania",
+   "points": 90.0,
+   "slug": "lithuania",
+   "engineSlug": "lithuania"
+  },
+  {
+   "rank": 45,
+   "code": "HON",
+   "name": "Honduras",
+   "points": 90.0,
+   "slug": "honduras",
+   "engineSlug": "honduras"
+  },
+  {
+   "rank": 46,
+   "code": "SGP",
+   "name": "Singapore",
+   "points": 87.0,
+   "slug": "singapore",
+   "engineSlug": "singapore"
+  },
+  {
+   "rank": 47,
+   "code": "LAO",
+   "name": "Laos",
+   "points": 84.0,
+   "slug": "laos",
+   "engineSlug": "laos"
+  },
+  {
+   "rank": 48,
+   "code": "HUN",
+   "name": "Hungary",
+   "points": 83.0,
+   "slug": "hungary",
+   "engineSlug": "hungary"
+  },
+  {
+   "rank": 49,
+   "code": "UGA",
+   "name": "Uganda",
+   "points": 81.0,
+   "slug": "uganda",
+   "engineSlug": "uganda"
+  },
+  {
+   "rank": 50,
+   "code": "GRE",
+   "name": "Greece",
+   "points": 80.0,
+   "slug": "greece",
+   "engineSlug": "greece"
+  },
+  {
+   "rank": 51,
+   "code": "CHI",
+   "name": "Chile",
+   "points": 71.0,
+   "slug": "chile",
+   "engineSlug": "chile"
+  },
+  {
+   "rank": 52,
+   "code": "ECU",
+   "name": "Ecuador",
+   "points": 58.0,
+   "slug": "ecuador",
+   "engineSlug": "ecuador"
+  },
+  {
+   "rank": 53,
+   "code": "SRI",
+   "name": "Sri Lanka",
+   "points": 55.0,
+   "slug": "sri-lanka",
+   "engineSlug": "sri-lanka"
+  },
+  {
+   "rank": 54,
+   "code": "INA",
+   "name": "Indonesia",
+   "points": 50.0,
+   "slug": "indonesia",
+   "engineSlug": "indonesia"
+  },
+  {
+   "rank": 55,
+   "code": "ESA",
+   "name": "El Salvador",
+   "points": 50.0,
+   "slug": "el-salvador",
+   "engineSlug": "el-salvador"
+  },
+  {
+   "rank": 56,
+   "code": "POL",
+   "name": "Poland",
+   "points": 50.0,
+   "slug": "poland",
+   "engineSlug": "poland"
+  },
+  {
+   "rank": 57,
+   "code": "ZIM",
+   "name": "Zimbabwe",
+   "points": 43.0,
+   "slug": "zimbabwe",
+   "engineSlug": "zimbabwe"
+  },
+  {
+   "rank": 58,
+   "code": "ARU",
+   "name": "Aruba",
+   "points": 39.0,
+   "slug": "aruba",
+   "engineSlug": "aruba"
+  },
+  {
+   "rank": 59,
+   "code": "MNP",
+   "name": "Northern Mariana Islands",
+   "points": 34.0,
+   "slug": "northern-mariana-islands",
+   "engineSlug": "northern-mariana-islands"
+  },
+  {
+   "rank": 60,
+   "code": "NZL",
+   "name": "New Zealand",
+   "points": 33.0,
+   "slug": "new-zealand",
+   "engineSlug": "new-zealand"
+  },
+  {
+   "rank": 61,
+   "code": "SVK",
+   "name": "Slovakia",
+   "points": 32.0,
+   "slug": "slovakia",
+   "engineSlug": "slovakia"
+  },
+  {
+   "rank": 62,
+   "code": "PLW",
+   "name": "Palau",
+   "points": 30.0,
+   "slug": "palau",
+   "engineSlug": "palau"
+  },
+  {
+   "rank": 63,
+   "code": "KEN",
+   "name": "Kenya",
+   "points": 26.0,
+   "slug": "kenya",
+   "engineSlug": "kenya"
+  },
+  {
+   "rank": 64,
+   "code": "IND",
+   "name": "India",
+   "points": 25.0,
+   "slug": "india",
+   "engineSlug": "india"
+  },
+  {
+   "rank": 65,
+   "code": "IRI",
+   "name": "Iran",
+   "points": 25.0,
+   "slug": "iran",
+   "engineSlug": "iran"
+  },
+  {
+   "rank": 66,
+   "code": "SXM",
+   "name": "Sint Maarten",
+   "points": 25.0,
+   "slug": "sint-maarten",
+   "engineSlug": "sint-maarten"
+  },
+  {
+   "rank": 67,
+   "code": "SSD",
+   "name": "South Sudan",
+   "points": 25.0,
+   "slug": "south-sudan",
+   "engineSlug": "south-sudan"
+  },
+  {
+   "rank": 68,
+   "code": "NOR",
+   "name": "Norway",
+   "points": 22.0,
+   "slug": "norway",
+   "engineSlug": "norway"
+  },
+  {
+   "rank": 69,
+   "code": "SRB",
+   "name": "Serbia",
+   "points": 20.0,
+   "slug": "serbia",
+   "engineSlug": "serbia"
+  },
+  {
+   "rank": 70,
+   "code": "IRL",
+   "name": "Ireland",
+   "points": 18.0,
+   "slug": "ireland",
+   "engineSlug": "ireland"
+  },
+  {
+   "rank": 71,
+   "code": "MAS",
+   "name": "Malaysia",
+   "points": 17.0,
+   "slug": "malaysia",
+   "engineSlug": "malaysia"
+  },
+  {
+   "rank": 72,
+   "code": "SLO",
+   "name": "Slovenia",
+   "points": 14.0,
+   "slug": "slovenia",
+   "engineSlug": "slovenia"
+  },
+  {
+   "rank": 73,
+   "code": "UKR",
+   "name": "Ukraine",
+   "points": 14.0,
+   "slug": "ukraine",
+   "engineSlug": "ukraine"
+  },
+  {
+   "rank": 74,
+   "code": "VIE",
+   "name": "Vietnam",
+   "points": 12.0,
+   "slug": "vietnam",
+   "engineSlug": "vietnam"
+  },
+  {
+   "rank": 75,
+   "code": "FSM",
+   "name": "FSM",
+   "points": 10.0,
+   "slug": "micronesia",
+   "engineSlug": "micronesia"
+  },
+  {
+   "rank": 76,
+   "code": "BAN",
+   "name": "Bangladesh",
+   "points": 9.0,
+   "slug": "bangladesh",
+   "engineSlug": "bangladesh"
+  },
+  {
+   "rank": 77,
+   "code": "ROU",
+   "name": "Romania",
+   "points": 8.0,
+   "slug": "romania",
+   "engineSlug": "romania"
+  },
+  {
+   "rank": 78,
+   "code": "BEN",
+   "name": "Benin",
+   "points": 7.0,
+   "slug": "benin",
+   "engineSlug": "benin"
+  },
+  {
+   "rank": 79,
+   "code": "FIN",
+   "name": "Finland",
+   "points": 5.0,
+   "slug": "finland",
+   "engineSlug": "finland"
+  },
+  {
+   "rank": 80,
+   "code": "CAM",
+   "name": "Cambodia",
+   "points": 5.0,
+   "slug": "cambodia",
+   "engineSlug": "cambodia"
+  },
+  {
+   "rank": 81,
+   "code": "AFG",
+   "name": "Afghanistan",
+   "points": 4.0,
+   "slug": "afghanistan",
+   "engineSlug": "afghanistan"
+  },
+  {
+   "rank": 82,
+   "code": "TAN",
+   "name": "Tanzania",
+   "points": 4.0,
+   "slug": "tanzania",
+   "engineSlug": "tanzania"
+  },
+  {
+   "rank": 83,
+   "code": "BUL",
+   "name": "Bulgaria",
+   "points": 3.0,
+   "slug": "bulgaria",
+   "engineSlug": "bulgaria"
+  },
+  {
+   "rank": 84,
+   "code": "FIJ",
+   "name": "Fiji",
+   "points": 3.0,
+   "slug": "fiji",
+   "engineSlug": "fiji"
+  },
+  {
+   "rank": 85,
+   "code": "TUR",
+   "name": "Turkey",
+   "points": 3.0,
+   "slug": "turkey",
+   "engineSlug": "turkey"
+  }
+ ]
+}

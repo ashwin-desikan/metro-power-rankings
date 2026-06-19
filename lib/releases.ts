@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-19",
+    headline: "The Zone Zero Cup: a national sporting-merit ranking",
+    items: [
+      "New Zone Zero Cup at /sports/zone-zero-cup ranks every nation's sporting merit across twelve sport pillars, blending decayed achievement with live world rankings, in overall, per-capita and per-GDP views.",
+      "Built like a Directors' Cup for nations: each country's best ten sports, recency weighted hard, flagship World Cups boosted, Winter discounted, and suspended nations decayed. Sortable, filterable, methodology published.",
+      "Current world rankings added to their hubs: IIHF men's ice hockey, WBSC baseball, and the FIFA Women's World Ranking, with the hockey and baseball rankings also feeding the Zone Zero Cup's live-standing layer.",
+      "The Cup adds a twelfth pillar, Women's Football (the World Cup, Euros, Finalissima and the FIFA ranking), and now weights men's continental titles by confederation strength, so a CONCACAF Gold Cup counts below a European Championship.",
+    ],
+  },
+  {
     date: "2026-06-18",
     headline: "Champions board, the Studio, and country economic profiles",
     items: [

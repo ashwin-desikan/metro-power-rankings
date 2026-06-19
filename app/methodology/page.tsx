@@ -730,6 +730,95 @@ export default function MethodologyPage() {
               </p>
             </section>
 
+            <section id="zone-zero-cup">
+              <h2 className="text-2xl font-bold mb-4">The Zone Zero Cup</h2>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                The{" "}
+                <Link href="/sports/zone-zero-cup" className="text-[var(--accent)] hover:underline">
+                  Zone Zero Cup
+                </Link>{" "}
+                is a national sporting-merit ranking, modelled on the NACDA
+                Directors&apos; Cup but built for nations rather than university
+                athletic departments. It scores every country across twelve sport
+                pillars: the full Olympic programme (Summer and Winter) plus
+                men&apos;s football, women&apos;s football, cricket, rugby union, basketball,
+                ice hockey, handball, volleyball, baseball, and rugby league. It is
+                deliberately a current-era index, not an all-time honour roll.
+              </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">One common scale</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Every medal, title and final is converted to points on a single
+                scale anchored on the Olympic podium, where a gold is worth 4, a
+                silver 2, and a bronze 1. A sport&apos;s flagship world title sits
+                at the top of that scale. Continental and secondary titles score
+                proportionally below it, and in football continental crowns are
+                further weighted by the strength of their confederation, so a
+                European Championship or Copa Am&eacute;rica counts well above a
+                CONCACAF Gold Cup or an OFC title. A nation&apos;s score is the sum of
+                its best ten sports, which rewards both breadth and depth while
+                stopping any one sport from deciding the table.
+              </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">Recency decay</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Every result is weighted by recency on an exponential decay with
+                an eight-year half-life, so a result from roughly fifteen years
+                ago is worth about a quarter of a current one, and deep history
+                fades quickly. This is what keeps the Cup a measure of how nations
+                stand now: a dissolved state like East Germany, or a power coasting
+                on mid-century glory, falls down the table as its results age.
+              </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">Five calibrations</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                The flagship world titles of the globally contested team sports
+                carry a seven-times weight, because a World Cup is a single
+                winner-take-all event rather than one of dozens of Olympic golds.
+                Winter Olympic results are weighted at half their summer
+                equivalents, reflecting a smaller and less global field.
+                High-volume Olympic sports face diminishing returns (each
+                sport&apos;s raw total is raised to the power 0.6) so medal count
+                alone cannot run away, which is why a swimming superpower no longer
+                dwarfs a football nation. A prestige multiplier encodes each
+                sport&apos;s global following and competitive depth, so football
+                counts for three, cricket and basketball for two, and a sport
+                contested seriously by only two to four nations, such as rugby
+                league, is discounted well below one. And nations under blanket
+                international suspension take a sharp inactivity decay for every
+                cycle they miss.
+              </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">Current standing, not just titles</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Discrete titles do not capture a nation that is consistently
+                excellent without quite winning, so a present-day strength signal
+                from live world rankings (football Elo, the ICC cricket ratings,
+                the FIBA and World Rugby rankings) feeds each sport. This is what
+                corrects a side like Italy, propped up on old World Cups but
+                currently mid-table on Elo and absent from recent tournaments.
+              </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">Three views</h3>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                The table is published overall, per capita (merit per million
+                people), and per GDP. The efficiency views are where small nations
+                surface: New Zealand, Norway, Jamaica, Slovenia and Croatia punch
+                far above their size. Defunct and composite entities (East Germany,
+                the West Indies cricket side) are scored but excluded from the
+                per-capita and per-GDP views, since they have no current
+                denominator, and are marked accordingly. The United Kingdom is the
+                ranked unit, carrying both its Olympic medals and the home
+                nations&apos; team-sport titles.
+              </p>
+              <h3 className="text-lg font-semibold mt-6 mb-2">Sources and caveats</h3>
+              <p className="text-[var(--text)] leading-relaxed">
+                Results come from this project&apos;s own validated source-of-truth
+                workbooks and ranking engines: the Olympic medal database, the
+                international football and cricket records, World Rugby and the
+                Rugby and FIBA World Cups, IIHF and the World Cup of Hockey, the
+                handball and volleyball World Championships, the World Baseball
+                Classic, and the Rugby League World Cup. Every parameter above is
+                an editorial judgment, calibrated to make the table read true, and
+                the Cup is a model rather than an official record.
+              </p>
+            </section>
+
             <section id="vintage">
               <h2 className="text-2xl font-bold mb-4">Data vintage and refresh cadence</h2>
               <p className="text-[var(--text)] leading-relaxed mb-3">

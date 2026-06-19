@@ -1,0 +1,430 @@
+{
+ "_meta": {
+  "sport": "hockey-men",
+  "source": "IIHF World Ranking",
+  "asOf": "2026-06-03",
+  "count": 58
+ },
+ "rows": [
+  {
+   "rank": 1,
+   "name": "Switzerland",
+   "points": 5335.0,
+   "slug": "switzerland",
+   "engineSlug": "switzerland"
+  },
+  {
+   "rank": 2,
+   "name": "Canada",
+   "points": 5305.0,
+   "slug": "canada",
+   "engineSlug": "canada"
+  },
+  {
+   "rank": 3,
+   "name": "United States",
+   "points": 5305.0,
+   "slug": "united-states",
+   "engineSlug": "united-states"
+  },
+  {
+   "rank": 4,
+   "name": "Finland",
+   "points": 5240.0,
+   "slug": "finland",
+   "engineSlug": "finland"
+  },
+  {
+   "rank": 5,
+   "name": "Sweden",
+   "points": 5100.0,
+   "slug": "sweden",
+   "engineSlug": "sweden"
+  },
+  {
+   "rank": 6,
+   "name": "Czechia",
+   "points": 5090.0,
+   "slug": "czech-republic",
+   "engineSlug": "czechia"
+  },
+  {
+   "rank": 7,
+   "name": "Germany",
+   "points": 4910.0,
+   "slug": "germany",
+   "engineSlug": "germany"
+  },
+  {
+   "rank": 8,
+   "name": "Slovakia",
+   "points": 4900.0,
+   "slug": "slovakia",
+   "engineSlug": "slovakia"
+  },
+  {
+   "rank": 9,
+   "name": "Latvia",
+   "points": 4845.0,
+   "slug": "latvia",
+   "engineSlug": "latvia"
+  },
+  {
+   "rank": 10,
+   "name": "Denmark",
+   "points": 4760.0,
+   "slug": "denmark",
+   "engineSlug": "denmark"
+  },
+  {
+   "rank": 11,
+   "name": "Norway",
+   "points": 4755.0,
+   "slug": "norway",
+   "engineSlug": "norway"
+  },
+  {
+   "rank": 12,
+   "name": "Austria",
+   "points": 4555.0,
+   "slug": "austria",
+   "engineSlug": "austria"
+  },
+  {
+   "rank": 13,
+   "name": "Slovenia",
+   "points": 4375.0,
+   "slug": "slovenia",
+   "engineSlug": "slovenia"
+  },
+  {
+   "rank": 14,
+   "name": "Kazakhstan",
+   "points": 4370.0,
+   "slug": "kazakhstan",
+   "engineSlug": "kazakhstan"
+  },
+  {
+   "rank": 15,
+   "name": "France",
+   "points": 4350.0,
+   "slug": "france",
+   "engineSlug": "france"
+  },
+  {
+   "rank": 16,
+   "name": "Italy",
+   "points": 4295.0,
+   "slug": "italy",
+   "engineSlug": "italy"
+  },
+  {
+   "rank": 17,
+   "name": "Hungary",
+   "points": 4275.0,
+   "slug": "hungary",
+   "engineSlug": "hungary"
+  },
+  {
+   "rank": 18,
+   "name": "Great Britain",
+   "points": 4260.0,
+   "slug": "united-kingdom",
+   "engineSlug": "great-britain"
+  },
+  {
+   "rank": 19,
+   "name": "Ukraine",
+   "points": 3995.0,
+   "slug": "ukraine",
+   "engineSlug": "ukraine"
+  },
+  {
+   "rank": 20,
+   "name": "Poland",
+   "points": 3965.0,
+   "slug": "poland",
+   "engineSlug": "poland"
+  },
+  {
+   "rank": 21,
+   "name": "Japan",
+   "points": 3965.0,
+   "slug": "japan",
+   "engineSlug": "japan"
+  },
+  {
+   "rank": 22,
+   "name": "Romania",
+   "points": 3835.0,
+   "slug": "romania",
+   "engineSlug": "romania"
+  },
+  {
+   "rank": 23,
+   "name": "Lithuania",
+   "points": 3795.0,
+   "slug": "lithuania",
+   "engineSlug": "lithuania"
+  },
+  {
+   "rank": 24,
+   "name": "South Korea",
+   "points": 3750.0,
+   "slug": "south-korea",
+   "engineSlug": "south-korea"
+  },
+  {
+   "rank": 25,
+   "name": "Estonia",
+   "points": 3655.0,
+   "slug": "estonia",
+   "engineSlug": "estonia"
+  },
+  {
+   "rank": 26,
+   "name": "China",
+   "points": 3635.0,
+   "slug": "china",
+   "engineSlug": "china"
+  },
+  {
+   "rank": 27,
+   "name": "Spain",
+   "points": 3490.0,
+   "slug": "spain",
+   "engineSlug": "spain"
+  },
+  {
+   "rank": 28,
+   "name": "Netherlands",
+   "points": 3400.0,
+   "slug": "netherlands",
+   "engineSlug": "netherlands"
+  },
+  {
+   "rank": 29,
+   "name": "Croatia",
+   "points": 3350.0,
+   "slug": "croatia",
+   "engineSlug": "croatia"
+  },
+  {
+   "rank": 30,
+   "name": "Serbia",
+   "points": 3340.0,
+   "slug": "serbia",
+   "engineSlug": "serbia"
+  },
+  {
+   "rank": 31,
+   "name": "Iceland",
+   "points": 2985.0,
+   "slug": "iceland",
+   "engineSlug": "iceland"
+  },
+  {
+   "rank": 32,
+   "name": "Georgia",
+   "points": 2790.0,
+   "slug": "georgia",
+   "engineSlug": "georgia"
+  },
+  {
+   "rank": 33,
+   "name": "Bulgaria",
+   "points": 2775.0,
+   "slug": "bulgaria",
+   "engineSlug": "bulgaria"
+  },
+  {
+   "rank": 34,
+   "name": "Chinese Taipei",
+   "points": 2750.0,
+   "slug": "taiwan",
+   "engineSlug": "chinese-taipei"
+  },
+  {
+   "rank": 35,
+   "name": "Turkiye",
+   "points": 2630.0,
+   "slug": "turkey",
+   "engineSlug": "turkey"
+  },
+  {
+   "rank": 36,
+   "name": "Thailand",
+   "points": 2520.0,
+   "slug": "thailand",
+   "engineSlug": "thailand"
+  },
+  {
+   "rank": 37,
+   "name": "South Africa",
+   "points": 2505.0,
+   "slug": "south-africa",
+   "engineSlug": "south-africa"
+  },
+  {
+   "rank": 38,
+   "name": "United Arab Emirates",
+   "points": 2280.0,
+   "slug": "united-arab-emirates",
+   "engineSlug": "united-arab-emirates"
+  },
+  {
+   "rank": 39,
+   "name": "Australia",
+   "points": 2210.0,
+   "slug": "australia",
+   "engineSlug": "australia"
+  },
+  {
+   "rank": 40,
+   "name": "Belgium",
+   "points": 2200.0,
+   "slug": "belgium",
+   "engineSlug": "belgium"
+  },
+  {
+   "rank": 41,
+   "name": "Israel",
+   "points": 2160.0,
+   "slug": "israel",
+   "engineSlug": "israel"
+  },
+  {
+   "rank": 42,
+   "name": "New Zealand",
+   "points": 2025.0,
+   "slug": "new-zealand",
+   "engineSlug": "new-zealand"
+  },
+  {
+   "rank": 43,
+   "name": "Kyrgyzstan",
+   "points": 1800.0,
+   "slug": "kyrgyzstan",
+   "engineSlug": "kyrgyzstan"
+  },
+  {
+   "rank": 44,
+   "name": "Turkmenistan",
+   "points": 1650.0,
+   "slug": "turkmenistan",
+   "engineSlug": "turkmenistan"
+  },
+  {
+   "rank": 45,
+   "name": "Mexico",
+   "points": 1645.0,
+   "slug": "mexico",
+   "engineSlug": "mexico"
+  },
+  {
+   "rank": 46,
+   "name": "Bosnia and Herzegovina",
+   "points": 1605.0,
+   "slug": "bosnia-herzegovina",
+   "engineSlug": "bosnia-herzegovina"
+  },
+  {
+   "rank": 47,
+   "name": "Luxembourg",
+   "points": 1505.0,
+   "slug": "luxembourg",
+   "engineSlug": "luxembourg"
+  },
+  {
+   "rank": 48,
+   "name": "Hong Kong, China",
+   "points": 1400.0,
+   "slug": "hong-kong",
+   "engineSlug": "hong-kong"
+  },
+  {
+   "rank": 49,
+   "name": "DPR Korea",
+   "points": 1305.0,
+   "slug": "north-korea",
+   "engineSlug": "north-korea"
+  },
+  {
+   "rank": 50,
+   "name": "Mongolia",
+   "points": 1280.0,
+   "slug": "mongolia",
+   "engineSlug": "mongolia"
+  },
+  {
+   "rank": 51,
+   "name": "Philippines",
+   "points": 1280.0,
+   "slug": "philippines",
+   "engineSlug": "philippines"
+  },
+  {
+   "rank": 52,
+   "name": "Singapore",
+   "points": 1250.0,
+   "slug": "singapore",
+   "engineSlug": "singapore"
+  },
+  {
+   "rank": 53,
+   "name": "Kuwait",
+   "points": 1110.0,
+   "slug": "kuwait",
+   "engineSlug": "kuwait"
+  },
+  {
+   "rank": 54,
+   "name": "Iran",
+   "points": 1080.0,
+   "slug": "iran",
+   "engineSlug": "iran"
+  },
+  {
+   "rank": 55,
+   "name": "Indonesia",
+   "points": 1060.0,
+   "slug": "indonesia",
+   "engineSlug": "indonesia"
+  },
+  {
+   "rank": 56,
+   "name": "Malaysia",
+   "points": 1000.0,
+   "slug": "malaysia",
+   "engineSlug": "malaysia"
+  },
+  {
+   "rank": 57,
+   "name": "Uzbekistan",
+   "points": 960.0,
+   "slug": "uzbekistan",
+   "engineSlug": "uzbekistan"
+  },
+  {
+   "rank": 58,
+   "name": "Armenia",
+   "points": 805.0,
+   "slug": "armenia",
+   "engineSlug": "armenia"
+  }
+ ],
+ "suspended": [
+  {
+   "name": "Russia",
+   "points": 5510.0,
+   "slug": "russia",
+   "engineSlug": "russia"
+  },
+  {
+   "name": "Belarus",
+   "points": 4270.0,
+   "slug": "belarus",
+   "engineSlug": "belarus"
+  }
+ ]
+}

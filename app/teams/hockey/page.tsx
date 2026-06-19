@@ -3,6 +3,8 @@ import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { getAllHockeyTeams, getHockeyHub } from "@/lib/hockey";
 import { flagCdnUrl, HISTORICAL_FLAG } from "@/lib/international-display";
+import { getWorldRanking } from "@/lib/worldRankings";
+import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -72,6 +74,7 @@ export default function HockeyHubPage() {
           { label: "Olympics", href: "#olympics" },
           { label: "World Cup", href: "#world-cup" },
           { label: "World Championship", href: "#worlds" },
+          { label: "World ranking", href: "#world-ranking" },
           { label: "Nations", href: "#nations" },
           { label: "Methodology", href: "#methodology" },
         ]}
@@ -204,6 +207,14 @@ export default function HockeyHubPage() {
           </table>
         </div>
       </section>
+
+      {/* ---------------- Current world ranking ---------------- */}
+      <WorldRankingSection
+        id="world-ranking"
+        heading="Current world ranking"
+        blurb="The live IIHF men's ranking by points."
+        ranking={getWorldRanking("hockey-men")}
+      />
 
       {/* ---------------- Nations ---------------- */}
       <section className="mb-10">

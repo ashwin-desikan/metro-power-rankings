@@ -4,6 +4,8 @@ import HubNav from "@/app/teams/HubNav";
 import { getAllBaseballTeams, getBaseballHub } from "@/lib/baseball";
 import { getNpbHub } from "@/lib/npb";
 import { flagCdnUrl } from "@/lib/international-display";
+import { getWorldRanking } from "@/lib/worldRankings";
+import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -68,6 +70,7 @@ export default function BaseballHubPage() {
         items={[
           { label: "Champions", href: "#champions" },
           { label: "All-time Table", href: "#all-time" },
+          { label: "World ranking", href: "#world-ranking" },
           { label: "Editions", href: "#editions" },
           { label: "Teams", href: "#teams" },
           { label: "Methodology", href: "#methodology" },
@@ -195,6 +198,14 @@ export default function BaseballHubPage() {
           </table>
         </div>
       </section>
+
+      {/* ---------------- Current world ranking ---------------- */}
+      <WorldRankingSection
+        id="world-ranking"
+        heading="Current world ranking"
+        blurb="The live WBSC men's baseball ranking by points."
+        ranking={getWorldRanking("baseball-men")}
+      />
 
       {/* ---------------- Editions ---------------- */}
       <section className="mb-10">

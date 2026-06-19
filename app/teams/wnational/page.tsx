@@ -5,6 +5,8 @@ import { getWEuros, getWOlympics, getWFinalissima } from "@/lib/wintl";
 import { getWWCEditions, getWWCNations, getWWCMeta } from "@/lib/wnational";
 import { getAllCountries } from "@/lib/countries";
 import { flagCdnUrl } from "@/lib/international-display";
+import { getWorldRanking } from "@/lib/worldRankings";
+import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -117,6 +119,7 @@ export default function WomensInternationalPage() {
       <HubNav
         items={[
           { label: "World Cup", href: "#world-cup" },
+          { label: "World ranking", href: "#world-ranking" },
           { label: "All-time Table", href: "#all-time" },
           { label: "Olympics", href: "#olympics" },
           { label: "Euros", href: "#euros" },
@@ -155,6 +158,14 @@ export default function WomensInternationalPage() {
           </table>
         </div>
       </section>
+
+      {/* ---------------- Current world ranking ---------------- */}
+      <WorldRankingSection
+        id="world-ranking"
+        heading="Current world ranking"
+        blurb="The live FIFA/Coca-Cola Women's World Ranking by points."
+        ranking={getWorldRanking("womens-football")}
+      />
 
       {/* ---------------- All-time table ---------------- */}
       <section id="all-time" className="mb-10 scroll-mt-20">
