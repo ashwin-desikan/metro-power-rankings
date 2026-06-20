@@ -767,6 +767,18 @@ export default function MethodologyPage() {
                 stand now: a dissolved state like East Germany, or a power coasting
                 on mid-century glory, falls down the table as its results age.
               </p>
+              <p className="text-[var(--text)] leading-relaxed mb-3">
+                Football is the one deliberate exception. Winning the World Cup is
+                treated as near-permanent pedigree and decays far more slowly, because
+                it is the sport where heritage is the defining measure: this is what
+                keeps Brazil, with five World Cups, at the head of the football order
+                despite none since 2002. Everything else in football, including
+                continental titles and runner-up finishes, stays on the normal recency
+                clock. Olympic football is excluded from the men&apos;s football pillar
+                entirely, since the medal record cannot separate the men&apos;s and
+                women&apos;s tournaments and the men&apos;s event is a minor under-23
+                competition; women&apos;s football is scored in its own pillar.
+              </p>
               <h3 className="text-lg font-semibold mt-6 mb-2">Five calibrations</h3>
               <p className="text-[var(--text)] leading-relaxed mb-3">
                 The flagship world titles of the globally contested team sports

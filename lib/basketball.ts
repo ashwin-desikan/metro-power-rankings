@@ -23,6 +23,7 @@ export type BasketballNation = {
   lineage: string[] | null;
   fiba_rank?: number; fiba_pts?: number; fiba_zone?: string;
   fiba_zone_rank?: number; fiba_delta?: number;
+  rankingOnly?: boolean; // FIBA-ranked but no medal/World-Cup honours (no team page)
 };
 
 export type FibaTeam = {
@@ -139,9 +140,39 @@ function nationsByName(): Map<string, BasketballNation> {
   return _byName;
 }
 
+let _fibaByName: Map<string, FibaTeam> | null = null;
+
+function fibaByName(): Map<string, FibaTeam> {
+  if (_fibaByName) return _fibaByName;
+  _fibaByName = new Map();
+  for (const t of getFibaRanking()?.teams ?? []) _fibaByName.set(norm(t.country), t);
+  return _fibaByName;
+}
+
 export function getBasketballTeamForCountry(countryName: string): BasketballNation | null {
-  const key = COUNTRY_ALIASES[norm(countryName)] ?? norm(countryName);
-  return nationsByName().get(key) ?? null;
+  const n = norm(countryName);
+  const key = COUNTRY_ALIASES[n] ?? n;
+  const honoured = nationsByName().get(key);
+  if (honoured) return honoured;
+  // Fallback: a FIBA-ranked side with no medal/World-Cup honours, built from the
+  // full FIBA ranking so the team still appears (with its current rank) even
+  // without an honours record or team page. Great Britain competes as one side
+  // (FIBA lists it as "United Kingdom"); like Olympics/baseball/hockey it must
+  // surface on the UK page AND on each home nation it represents.
+  const isGB = key === "great britain";
+  const ft = isGB
+    ? fibaByName().get("united kingdom")
+    : (fibaByName().get(n) ?? fibaByName().get(key));
+  if (!ft) return null;
+  return {
+    slug: isGB ? "great-britain" : (ft.country_slug ?? norm(ft.country).replace(/ /g, "-")),
+    name: isGB ? "Great Britain" : ft.country,
+    wc_apps: 0, wc_titles: 0, wc_title_years: [], wc_ru: 0, wc_ru_years: [],
+    gold: 0, gold_years: [], silver: 0, bronze: 0, medals: 0, lineage: null,
+    fiba_rank: ft.rank, fiba_pts: ft.pts, fiba_zone: ft.zone ?? undefined,
+    fiba_zone_rank: ft.zoneRank, fiba_delta: ft.delta,
+    rankingOnly: true,
+  };
 }
 
 let _countryByNorm: Map<string, string> | null = null;

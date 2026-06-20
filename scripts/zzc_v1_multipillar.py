@@ -89,14 +89,44 @@ FOLD = {
     "wales": "great-britain", "northern-ireland": "great-britain",
     "ireland": "ireland",
     "czech-republic": "czechia", "cote-d-ivoire": "ivory-coast",
+    "united-kingdom": "great-britain",
 }
 COMPOSITE = {"west-indies"}   # multi-nation team, kept as its own flagged entry
+
+# Codified national sports: domestically major, internationally negligible. They
+# do NOT compete for cap slots; instead each grants a small fixed recognition
+# bonus added on top of a nation's best-10 international sports. Tiered by global
+# footprint: American football highest, Aussie rules a notch below, the rest a
+# common token. (Lacrosse, speedway and the women's competitions are deferred.)
+NATIONAL_SPORTS = [
+    # (sport label, token, [nation slugs])
+    ("American Football", 8.0, ["united-states"]),
+    ("Australian Rules Football", 5.0, ["australia"]),
+    ("Kabaddi", 2.5, ["india", "bangladesh"]),
+    ("Canadian Football", 2.5, ["canada"]),
+    ("Gaelic Football", 2.5, ["ireland"]),
+    ("Hurling", 2.5, ["ireland"]),
+    ("Sumo", 2.5, ["japan"]),
+    ("Bandy", 2.5, ["russia", "sweden", "finland"]),
+]
 
 _DC = {}
 def decay(year):
     if year not in _DC:
         _DC[year] = 0.5 ** ((NOW - year) / HALFLIFE)
     return _DC[year]
+
+
+# Football uses a much gentler, heritage-style decay: it is the one sport where
+# all-time World Cup pedigree is the defining measure, so a 1970 or 1994 title
+# should still count heavily. This is what keeps Brazil (five World Cups, the
+# most ever) at the head of the football order despite none since 2002.
+FOOTBALL_HALFLIFE = 45
+_FBDC = {}
+def fb_decay(year):
+    if year not in _FBDC:
+        _FBDC[year] = 0.5 ** ((NOW - year) / FOOTBALL_HALFLIFE)
+    return _FBDC[year]
 
 
 def years(v):
@@ -130,6 +160,13 @@ def olympic_contribs(boost):
             continue
         sw = WINTER_WEIGHT if season == 1 else 1.0
         canon = OLY_CANON.get(sports[spi], sports[spi])
+        # Olympic football is excluded from the men's Football pillar: the medal
+        # breakdown can't separate genders, so it would credit nations' women's
+        # Olympic football (e.g. the USA's golds) to men's Football, and men's
+        # Olympic football is a minor U-23 event. Football is scored via its own
+        # men's and women's pillars instead.
+        if canon == "Football":
+            continue
         out.append((fold(slugs[si]), canon, base * decay(year) * sw))
     return out
 
@@ -177,8 +214,14 @@ def football_contribs(boost):
             pts = tier_pts(tier, finish, boost)
             if tier != "flagship":      # weight non-World-Cup titles by confederation
                 pts *= _conf_strength(e.get("competition"))
-            if pts:
-                out.append((fold(slug), "Football", pts * decay(int(yr))))
+            if not pts:
+                continue
+            # Only WINNING the World Cup gets the gentle heritage decay; runner-up
+            # finishes and all continental titles stay on the normal recency clock,
+            # so eternal World-Cup pedigree (Brazil's five) leads without rewarding
+            # ancient losing finalists.
+            d = fb_decay(int(yr)) if (tier == "flagship" and finish == "champion") else decay(int(yr))
+            out.append((fold(slug), "Football", pts * d))
     return out
 
 
@@ -300,6 +343,12 @@ def rugby_league_contribs(boost):
     return out
 
 
+# Depth discount on the current-ranking layer for narrow sports: being roughly
+# 10th in a ~12-nation sport is not worth being 10th in 200-nation football, so
+# cricket and baseball associates with no titles don't bank a large ranking bonus.
+RANK_SPORT_WEIGHT = {"Cricket": 0.35, "Baseball": 0.35}
+
+
 def rank_strength(rank):
     if not rank or rank < 1:
         return 0.0
@@ -315,11 +364,13 @@ def ranking_contribs(boost):
         v = rank_strength(t.get("elo_rank"))
         if v:
             out.append((fold(t["slug"]), "Football", v))
-    # basketball FIBA
-    for t in json.load(open(os.path.join(D, "basketball", "nations.json"), encoding="utf-8")):
-        v = rank_strength(t.get("fiba_rank"))
-        if v:
-            out.append((fold(t["slug"]), "Basketball", v))
+    # basketball FIBA — full ranking file (160 nations) so ranking-only sides
+    # like Great Britain are included, not just the medal/World-Cup honour list
+    for t in json.load(open(os.path.join(D, "basketball", "fiba_ranking.json"), encoding="utf-8"))["teams"]:
+        sl = t.get("country_slug") or t.get("slug")
+        v = rank_strength(t.get("rank"))
+        if sl and v:
+            out.append((fold(sl), "Basketball", v))
     # rugby union World Rugby ranking
     for t in json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8")):
         v = rank_strength((t.get("ranking") or {}).get("current"))
@@ -338,7 +389,7 @@ def ranking_contribs(boost):
             if slug and rk and (slug not in cbest or rk < cbest[slug]):
                 cbest[slug] = rk
     for slug, rk in cbest.items():
-        v = rank_strength(rk)
+        v = rank_strength(rk) * RANK_SPORT_WEIGHT.get("Cricket", 1.0)
         if v:
             out.append((fold(slug), "Cricket", v))
     # ice hockey (IIHF) + baseball (WBSC) current world rankings -> engine slug
@@ -346,7 +397,7 @@ def ranking_contribs(boost):
         rk = json.load(open(os.path.join(D, "rankings", fn + ".json"), encoding="utf-8"))
         for row in rk["rows"]:
             es = row.get("engineSlug")
-            v = rank_strength(row.get("rank"))
+            v = rank_strength(row.get("rank")) * RANK_SPORT_WEIGHT.get(sport, 1.0)
             if es and v:
                 out.append((fold(es), sport, v))
     # women's football (FIFA) -> best rank per folded slug (home nations fold to GB)
@@ -460,8 +511,8 @@ def best_world_ranking():
 
     for tm in json.load(open(os.path.join(D, "international", "index.json"), encoding="utf-8"))["teams"]:
         consider(tm["slug"], tm.get("elo_rank"), "Football")
-    for tm in json.load(open(os.path.join(D, "basketball", "nations.json"), encoding="utf-8")):
-        consider(tm["slug"], tm.get("fiba_rank"), "Basketball")
+    for t in json.load(open(os.path.join(D, "basketball", "fiba_ranking.json"), encoding="utf-8"))["teams"]:
+        consider(t.get("country_slug") or t.get("slug"), t.get("rank"), "Basketball")
     for tm in json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8")):
         consider(tm["slug"], (tm.get("ranking") or {}).get("current"), "Rugby Union")
     cteams = json.load(open(os.path.join(D, "cricket", "teams.json"), encoding="utf-8"))
@@ -493,8 +544,8 @@ def all_world_rankings():
 
     for tm in json.load(open(os.path.join(D, "international", "index.json"), encoding="utf-8"))["teams"]:
         put(tm["slug"], "Football", tm.get("elo_rank"))
-    for tm in json.load(open(os.path.join(D, "basketball", "nations.json"), encoding="utf-8")):
-        put(tm["slug"], "Basketball", tm.get("fiba_rank"))
+    for t in json.load(open(os.path.join(D, "basketball", "fiba_ranking.json"), encoding="utf-8"))["teams"]:
+        put(t.get("country_slug") or t.get("slug"), "Basketball", t.get("rank"))
     for tm in json.load(open(os.path.join(D, "rugby-union", "teams.json"), encoding="utf-8")):
         put(tm["slug"], "Rugby Union", (tm.get("ranking") or {}).get("current"))
     cteams = json.load(open(os.path.join(D, "cricket", "teams.json"), encoding="utf-8"))
@@ -568,6 +619,14 @@ def emit_json(merit, tops, special, name, sportmap):
     bestrank = best_world_ranking()
     sportRanks = all_world_rankings()
 
+    # National-sport recognition bonus: additive on top of the capped best-10,
+    # so it isn't squeezed out of the cap for nations rich in international sports.
+    nat_by_nation = defaultdict(list)
+    for sp, token, slugs in NATIONAL_SPORTS:
+        for sl in slugs:
+            nat_by_nation[fold(sl)].append((sp, token))
+    merit = {s: merit[s] + sum(t for _, t in nat_by_nation.get(s, [])) for s in merit}
+
     overall = sorted(merit.items(), key=lambda kv: kv[1], reverse=True)
     orank = {s: i for i, (s, _) in enumerate(overall, 1)}
     pc = sorted(((s, merit[s] / (realpop[s] / 1e6)) for s in merit
@@ -603,6 +662,7 @@ def emit_json(merit, tops, special, name, sportmap):
             "sportMerit": {sp: round(p, 1) for sp, p in sorted(
                 sportmap.get(slug, {}).items(), key=lambda kv: kv[1], reverse=True) if p > 0},
             "sportRank": dict(sportRanks.get(slug, {})),
+            "nationalSports": [{"sport": sp, "pts": t} for sp, t in nat_by_nation.get(slug, [])],
             "suspended": slug in SUSPENDED,
             "defunct": bool(special.get(slug)),
         })

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 
 // Interactive Zone Zero Cup table. Plain serializable rows come from the server
 // page. A view toggle switches the ranking basis (overall merit / per capita /
@@ -26,6 +26,7 @@ export type ZzcRow = {
   topSports: { sport: string; pts: number }[];
   sportMerit: Record<string, number>;
   sportRank: Record<string, number>;
+  nationalSports: { sport: string; pts: number }[];
   suspended: boolean;
   defunct: boolean;
 };
@@ -50,6 +51,68 @@ function rowMerit(r: ZzcRow, v: View): number | null {
   return v === "percapita" ? r.meritPerCapita : v === "pergdp" ? r.meritPerGdp : r.merit;
 }
 
+// Expandable per-sport breakdown of a nation's score: every sport it scores in,
+// split into the best-N that are counted toward the (capped) total and the rest
+// that fall outside it, each with the nation's world ranking where one exists.
+function Breakdown({ row, cap }: { row: ZzcRow; cap: number }) {
+  const entries = Object.entries(row.sportMerit).sort((a, b) => b[1] - a[1]);
+  const counted = entries.slice(0, cap);
+  const rest = entries.slice(cap);
+
+  function Line({ n, sport, merit, gold }: { n: number; sport: string; merit: number; gold: boolean }) {
+    const wr = row.sportRank[sport];
+    return (
+      <div className="flex items-baseline justify-between gap-2 py-0.5 border-b" style={{ borderColor: "var(--border)" }}>
+        <span className="text-[13px] truncate">
+          <span className="text-[var(--text-dim)] tabular-nums" style={mono}>{n}. </span>
+          {sport}
+          {wr ? <span className="text-[11px] text-[var(--text-dim)]"> #{wr}</span> : null}
+        </span>
+        <span className="text-[13px] tabular-nums flex-shrink-0" style={{ ...mono, color: gold ? GOLD : "var(--text-dim)" }}>
+          {merit.toFixed(1)}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="text-[11px] uppercase tracking-wide text-[var(--text-dim)] mb-1.5">
+        Best {Math.min(cap, entries.length)} international sports — counted toward {row.name}&apos;s score
+        {row.suspended ? ", after the suspension penalty" : ""}
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5">
+        {counted.map(([sp, m], idx) => <Line key={sp} n={idx + 1} sport={sp} merit={m} gold />)}
+      </div>
+      {row.nationalSports.length > 0 && (
+        <>
+          <div className="text-[11px] uppercase tracking-wide text-[var(--text-dim)] mt-3 mb-1.5">
+            National sports — recognition bonus, added on top
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5">
+            {row.nationalSports.map((ns) => (
+              <div key={ns.sport} className="flex items-baseline justify-between gap-2 py-0.5 border-b" style={{ borderColor: "var(--border)" }}>
+                <span className="text-[13px] truncate">{ns.sport}</span>
+                <span className="text-[13px] tabular-nums flex-shrink-0" style={{ ...mono, color: "var(--accent)" }}>+{ns.pts.toFixed(1)}</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+      {rest.length > 0 && (
+        <>
+          <div className="text-[11px] uppercase tracking-wide text-[var(--text-dim)] mt-3 mb-1.5">
+            Other sports — not counted (beyond the best {cap})
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5">
+            {rest.map(([sp, m], idx) => <Line key={sp} n={cap + idx + 1} sport={sp} merit={m} gold={false} />)}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function ZoneZeroTable({
   rows,
   regions,
@@ -64,8 +127,19 @@ export default function ZoneZeroTable({
   const [sport, setSport] = useState<string>(ALL);
   const [sortKey, setSortKey] = useState<SortKey>("rank");
   const [dir, setDir] = useState<1 | -1>(1);
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
 
   const sportMode = sport !== ALL;
+  const CAP = 10; // best-N sports that count toward a nation's score
+
+  function toggleExpand(slug: string) {
+    setExpanded((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
+  }
 
   // global standing within the selected sport (by that sport's merit), so the
   // # column is a true world position regardless of the region filter or sort
@@ -127,6 +201,7 @@ export default function ZoneZeroTable({
     setSport(ALL);
     setSortKey("rank");
     setDir(1);
+    setExpanded(new Set());
   }
 
   const arrow = (key: SortKey) => (sortKey === key ? (dir === 1 ? " ▲" : " ▼") : "");
@@ -236,13 +311,15 @@ export default function ZoneZeroTable({
         {sportMode
           ? `Each nation's merit contribution in ${sport} and its current world ranking in that sport, where one exists.`
           : VIEWS.find((v) => v.key === view)?.blurb}{" "}
-        Click any column to sort. § currently suspended from international competition; ‡ defunct or composite state.
+        Click any column to sort, or the + on a row to see a nation&apos;s full per-sport breakdown.
+        § currently suspended from international competition; ‡ defunct or composite state.
       </p>
 
       <div className="rounded-xl border overflow-x-auto" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm">
           <thead>
             <tr className="text-xs">
+              <th className="w-7" scope="col" aria-label="Expand row" />
               <Th label="#" k="rank" right />
               <Th label="Nation" k="name" />
               <Th label={meritLabel} k="merit" right />
@@ -261,8 +338,22 @@ export default function ZoneZeroTable({
               const mt = sportMode ? r.sportMerit[sport] : rowMerit(r, view);
               const wr = sportMode ? r.sportRank[sport] : r.bestRank;
               const wrSport = sportMode ? sport : r.bestRankSport;
+              const isOpen = expanded.has(r.slug);
               return (
-                <tr key={r.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
+                <Fragment key={r.slug}>
+                <tr className="border-t" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-2 pl-3 pr-0 align-top">
+                    <button
+                      type="button"
+                      onClick={() => toggleExpand(r.slug)}
+                      aria-expanded={isOpen}
+                      aria-label={`${isOpen ? "Hide" : "Show"} ${r.name} sport breakdown`}
+                      className="leading-none text-[var(--text-dim)] hover:text-[var(--accent)] tabular-nums"
+                      style={mono}
+                    >
+                      {isOpen ? "−" : "+"}
+                    </button>
+                  </td>
                   <td className="py-2 px-3 align-top text-right tabular-nums" style={{ ...mono, color: "var(--text-dim)" }}>
                     {rk ?? i + 1}
                   </td>
@@ -308,6 +399,14 @@ export default function ZoneZeroTable({
                     </td>
                   )}
                 </tr>
+                {isOpen && (
+                  <tr style={{ borderColor: "var(--border)" }} className="border-t">
+                    <td colSpan={sportMode ? 5 : 7} className="px-3 pt-1 pb-3" style={{ backgroundColor: "var(--bg)" }}>
+                      <Breakdown row={r} cap={CAP} />
+                    </td>
+                  </tr>
+                )}
+                </Fragment>
               );
             })}
           </tbody>

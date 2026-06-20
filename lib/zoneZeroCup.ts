@@ -22,6 +22,7 @@ export type ZzcNation = {
   topSports: ZzcTopSport[];
   sportMerit: Record<string, number>;
   sportRank: Record<string, number>;
+  nationalSports: ZzcTopSport[];
   suspended: boolean;
   defunct: boolean;
 };

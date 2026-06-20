@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-20",
+    headline: "Zone Zero Cup: per-sport breakdowns and national sports",
+    items: [
+      "The Zone Zero Cup table now expands: click any nation to see its per-sport merit contribution and current world rank, so you can read exactly which sports build each country's score.",
+      "Domestically major but globally narrow sports now earn a small recognition score: American and Canadian football, Australian rules, Gaelic football, hurling, kabaddi, sumo and bandy.",
+      "Recalibrated football and associate-nation scoring: Brazil sits first, the USA settles in the mid-twenties, and emerging cricket and baseball nations no longer over-score.",
+      "Great Britain's basketball side now appears on the United Kingdom page and on each home nation it represents, matching how its Olympic, baseball and hockey teams already show.",
+    ],
+  },
+  {
     date: "2026-06-19",
     headline: "The Zone Zero Cup: a national sporting-merit ranking",
     items: [

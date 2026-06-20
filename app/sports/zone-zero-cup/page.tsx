@@ -45,6 +45,7 @@ export default function ZoneZeroCupPage() {
     topSports: n.topSports,
     sportMerit: n.sportMerit,
     sportRank: n.sportRank,
+    nationalSports: n.nationalSports,
     suspended: n.suspended,
     defunct: n.defunct,
   }));

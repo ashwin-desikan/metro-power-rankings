@@ -9,6 +9,8 @@ import { getHockeyTeamForCountry } from "@/lib/hockey";
 import { getHandballTeamForCountry } from "@/lib/handball";
 import { getVolleyballTeamForCountry } from "@/lib/volleyball";
 import { getRlTeamForCountry } from "@/lib/rugbyLeagueIntl";
+import { getCountryByName } from "@/lib/countries";
+import { currentRank } from "@/lib/currentRankings";
 import { sportIcon } from "@/lib/sportLabels";
 import { getCurrentChampionships } from "@/lib/champions";
 import ChampionBadge from "@/app/teams/ChampionBadge";
@@ -180,6 +182,13 @@ function buildEntries(
   const rl = getRlTeamForCountry(countryName);
   if (!men && !women && !cricket && !rugby && !baseball && !olympics && !basketball && !hockey && !handball && !volleyball && !rl) return [];
 
+  // Current world rankings that live in standalone federation files (keyed by
+  // the country's slug): IIHF ice hockey, WBSC baseball, FIFA women's football.
+  const cSlug = getCountryByName(countryName)?.slug ?? null;
+  const hockeyWorldRank = currentRank("hockey-men", cSlug);
+  const baseballWorldRank = currentRank("baseball-men", cSlug);
+  const wfootballWorldRank = currentRank("womens-football", cSlug);
+
   const cricketMajors = cricket && cricket.honours
     ? cricket.honours.wc.titles + cricket.honours.t20wc.titles + cricket.honours.ct.titles +
       cricket.honours.wtc.titles + cricket.honours.asia.titles
@@ -276,6 +285,7 @@ function buildEntries(
             gold: women.titles > 0,
             title: "FIFA Women's World Cup titles",
           }]}>
+      {wfootballWorldRank ? <Stat label="FIFA" value={`#${wfootballWorldRank}`} /> : null}
       <Stat label="WWC apps" value={`${women.appearances}`} />
       {women.best_finish ? <Stat label="Best" value={women.best_finish} /> : null}
     </Card>
@@ -347,16 +357,24 @@ function buildEntries(
             ? "Competes as Chinese Taipei"
             : baseball.name === "Great Britain" && countryName !== "United Kingdom"
               ? "Competes as Great Britain" : null}>
+      {baseballWorldRank ? <Stat label="WBSC" value={`#${baseballWorldRank}`} /> : null}
       <Stat label="WBC apps" value={`${baseball.apps}`} />
       <Stat label="Record" value={`${baseball.w}-${baseball.l}`} />
       {baseball.best_finish ? <Stat label="Best" value={baseball.best_finish} /> : null}
     </Card>
   ) });
 
-  if (basketball) entries.push({ key: "basketball", node: (
-    <Card key="basketball" href={`/teams/basketball/${basketball.slug}`} chip="Basketball" sport="Basketball"
+  if (basketball && !(excludeGreatBritain && basketball.name === "Great Britain")) entries.push({ key: "basketball", node: (
+    <Card key="basketball"
+          href={basketball.rankingOnly ? "/teams/basketball" : `/teams/basketball/${basketball.slug}`}
+          chip="Basketball" sport="Basketball"
           tag={basketball.lineage ? `incl. ${basketball.lineage.join(", ")}` : null}
           name={basketball.name}
+          note={basketball.name === "Great Britain" && countryName !== "United Kingdom"
+            ? "Competes as Great Britain"
+            : basketball.rankingOnly
+              ? "FIBA-ranked; no Olympic or World Cup honours yet"
+              : null}
           chips={[{
             label: basketball.gold === 0 ? "No Olympic golds"
               : basketball.gold === 1 ? "1 Olympic gold" : `${basketball.gold} Olympic golds`,
@@ -386,6 +404,7 @@ function buildEntries(
           }]}
           note={hockey.name === "Great Britain" && countryName !== "United Kingdom"
             ? "Competes as Great Britain" : null}>
+      {hockeyWorldRank ? <Stat label="IIHF" value={`#${hockeyWorldRank}`} /> : null}
       {hockey.oly_alltime_rank != null ? (
         <Stat label="All-time" value={`#${hockey.oly_alltime_rank}`} />
       ) : null}
