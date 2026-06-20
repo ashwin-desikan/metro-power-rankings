@@ -69,6 +69,11 @@ PRESTIGE = {
     "Women's Football": 1.5,   # own pillar, parallel to men's Football (x3)
     "Volleyball": 1.2, "Handball": 1.2,
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
+    "Women's Basketball": 1.0, "Women's Volleyball": 0.6, "Women's Handball": 0.6,  # ~half the men's, like Women's Football
+    "Tennis": 0.45, "Golf": 0.35,   # individual majors, merged into the canonical
+    # Tennis/Golf slots alongside their Olympic medals. Held deliberately low:
+    # four majors a year accumulate far more title-events than a one-a-year world
+    # championship, so a modest multiplier keeps even the USA in single digits.
 }
 
 # Default prestige for Olympic-programme sports (everything not in PRESTIGE):
@@ -76,12 +81,38 @@ PRESTIGE = {
 # outweigh the major globally-followed team sports. (user-set)
 OLYMPIC_PRESTIGE = 0.5
 
+# Country-specific prestige overrides: a sport that is globally shallow (low
+# PRESTIGE) but culturally major in a particular country gets a higher effective
+# prestige for THAT nation only, so its domestic stature is reflected without
+# inflating the sport everywhere. Keyed by (folded slug, canonical sport);
+# overrides PRESTIGE for that one nation-sport pair. (user-curated)
+COUNTRY_SPORT_PRESTIGE = {
+    ("australia", "Rugby League"): 1.5,      # ~Aussie Rules stature; AUS dominate the RLWC
+    ("new-zealand", "Rugby League"): 1.5,    # the Kiwis, a genuine RL nation
+    ("great-britain", "Rugby League"): 1.5,  # northern England's game (folds England)
+    ("india", "Hockey"): 2.5,                # field hockey, the historic national sport (8 Olympic golds)
+    ("pakistan", "Hockey"): 2.5,             # field hockey, national sport (most World Cups)
+    ("cuba", "Baseball"): 2.0,               # baseball, the national sport
+    ("chinese-taipei", "Baseball"): 2.0,     # baseball, the national sport of Taiwan
+    ("netherlands", "Hockey"): 1.5,          # field hockey, elite men's & women's program
+}
+
 OLY_CANON = {
     "3x3 Basketball": "Basketball", "Basketball": "Basketball",
     "Beach Volleyball": "Volleyball", "Volleyball": "Volleyball",
     "Football": "Football", "Handball": "Handball", "Ice Hockey": "Ice Hockey",
     "Rugby": "Rugby Union", "Rugby sevens": "Rugby Union", "Rugby Sevens": "Rugby Union",
     "Baseball": "Baseball",
+}
+
+# Women's Olympic team-sport medals are split out of the gender-mixed breakdown
+# into their own canonical slots (the men's/mixed slot becomes men's-only). Source:
+# public/data/olympics/womens-team-medals.json (scripts/olympics/build_womens_team_medals.py).
+WOMENS_TEAM_CANON = {
+    "Basketball": "Women's Basketball", "3x3 Basketball": "Women's Basketball",
+    "Volleyball": "Women's Volleyball", "Beach Volleyball": "Women's Volleyball",
+    "Handball": "Women's Handball", "Field Handball": "Women's Handball",
+    "Hockey": "Women's Hockey", "Water Polo": "Women's Water Polo",
 }
 
 FOLD = {
@@ -100,14 +131,17 @@ COMPOSITE = {"west-indies"}   # multi-nation team, kept as its own flagged entry
 # common token. (Lacrosse, speedway and the women's competitions are deferred.)
 NATIONAL_SPORTS = [
     # (sport label, token, [nation slugs])
-    ("American Football", 8.0, ["united-states"]),
+    ("American Football", 12.0, ["united-states"]),
     ("Australian Rules Football", 5.0, ["australia"]),
     ("Kabaddi", 2.5, ["india", "bangladesh"]),
     ("Canadian Football", 2.5, ["canada"]),
     ("Gaelic Football", 2.5, ["ireland"]),
     ("Hurling", 2.5, ["ireland"]),
-    ("Sumo", 2.5, ["japan"]),
-    ("Bandy", 2.5, ["russia", "sweden", "finland"]),
+    ("Sumo", 6.0, ["japan"]),
+    ("Bandy", 2.5, ["russia", "sweden"]),
+    ("Pesäpallo", 2.5, ["finland"]),   # Finnish baseball, the national sport
+    ("Speedway", 3.0, ["poland"]),     # motorcycle speedway, a major sport in Poland
+    ("Rugby League", 2.5, ["papua-new-guinea"]),   # the one nation where RL is THE national sport
 ]
 
 _DC = {}
@@ -153,21 +187,37 @@ def tier_pts(tier, finish, boost):
 def olympic_contribs(boost):
     bd = json.load(open(os.path.join(D, "olympics", "medals-breakdown.json"), encoding="utf-8"))
     slugs, sports, rows = bd["slugs"], bd["sports"], bd["rows"]
+    # women's team-sport medals, keyed identically to the mixed breakdown, so the
+    # men's contribution is exactly (mixed - women's). Same lineage fold + slugs.
+    wm = {}
+    wpath = os.path.join(D, "olympics", "womens-team-medals.json")
+    if os.path.exists(wpath):
+        wd = json.load(open(wpath, encoding="utf-8"))
+        wsl, wsp = wd["slugs"], wd["sports"]
+        for si, year, season, spi, g, s, b in wd["rows"]:
+            wm[(wsl[si], year, season, wsp[spi])] = (g, s, b)
     out = []
     for si, year, season, spi, g, s, b in rows:
         base = W_G * g + W_S * s + W_B * b
         if base == 0:
             continue
         sw = WINTER_WEIGHT if season == 1 else 1.0
-        canon = OLY_CANON.get(sports[spi], sports[spi])
-        # Olympic football is excluded from the men's Football pillar: the medal
-        # breakdown can't separate genders, so it would credit nations' women's
-        # Olympic football (e.g. the USA's golds) to men's Football, and men's
-        # Olympic football is a minor U-23 event. Football is scored via its own
-        # men's and women's pillars instead.
-        if canon == "Football":
+        spname = sports[spi]
+        # Olympic football excluded from the men's Football pillar (mixed-gender;
+        # scored via the dedicated men's/women's football pillars instead).
+        if OLY_CANON.get(spname, spname) == "Football":
             continue
-        out.append((fold(slugs[si]), canon, base * decay(year) * sw))
+        if spname in WOMENS_TEAM_CANON:
+            wg, ws, wb = wm.get((slugs[si], year, season, spname), (0, 0, 0))
+            men_base = W_G * (g - wg) + W_S * (s - ws) + W_B * (b - wb)
+            wom_base = W_G * wg + W_S * ws + W_B * wb
+            slug = fold(slugs[si]); dk = decay(year) * sw
+            if men_base != 0:
+                out.append((slug, OLY_CANON.get(spname, spname), men_base * dk))
+            if wom_base != 0:
+                out.append((slug, WOMENS_TEAM_CANON[spname], wom_base * dk))
+            continue
+        out.append((fold(slugs[si]), OLY_CANON.get(spname, spname), base * decay(year) * sw))
     return out
 
 
@@ -346,6 +396,31 @@ def rugby_league_contribs(boost):
 # Depth discount on the current-ranking layer for narrow sports: being roughly
 # 10th in a ~12-nation sport is not worth being 10th in 200-nation football, so
 # cricket and baseball associates with no titles don't bank a large ranking bonus.
+def golf_contribs(boost):
+    # Men's majors (The Open, U.S. Open, PGA, Masters) as world-tier titles, one
+    # per championship per year, 8y decay. Non-Olympic, so merges cleanly with the
+    # Olympic golf medals already in the canonical "Golf" slot. Ryder Cup is
+    # excluded: it is USA vs Europe, a continent, not a nation.
+    recs = json.load(open(os.path.join(D, "majors", "zzc-titles.json"), encoding="utf-8"))["nations"]
+    out = []
+    for r in recs:
+        _titles(out, r["slug"], "Golf", r.get("golf_years") or [], "champion", "world", boost)
+    return out
+
+
+def tennis_contribs(boost):
+    # Grand Slam singles titles (men's + women's) plus the Davis Cup, all world
+    # tier, 8y decay; merges with Olympic tennis medals in the "Tennis" slot.
+    # Occupation-era unrecognized titles are excluded upstream in the feed.
+    recs = json.load(open(os.path.join(D, "majors", "zzc-titles.json"), encoding="utf-8"))["nations"]
+    out = []
+    for r in recs:
+        _titles(out, r["slug"], "Tennis", r.get("slam_years") or [], "champion", "world", boost)
+        _titles(out, r["slug"], "Tennis", r.get("davis_title_years") or [], "champion", "world", boost)
+        _titles(out, r["slug"], "Tennis", r.get("davis_ru_years") or [], "runner_up", "world", boost)
+    return out
+
+
 RANK_SPORT_WEIGHT = {"Cricket": 0.35, "Baseball": 0.35}
 
 
@@ -416,13 +491,34 @@ def ranking_contribs(boost):
     return out
 
 
+# Extra ranking-only sports: water polo, futsal, table tennis, badminton. No
+# title pillar and not in the League hubs; they contribute solely via the
+# current-standing layer (snapshot in public/data/rankings/zzc-extra.json, built
+# by scripts/build_extra_rankings.py). Water polo / table tennis / badminton are
+# Olympic, so this merges into their existing canonical slots; Futsal is new.
+EXTRA_RANK_WEIGHT = 1.0
+def extra_ranking_contribs(boost):
+    path = os.path.join(D, "rankings", "zzc-extra.json")
+    if not os.path.exists(path):
+        return []
+    data = json.load(open(path, encoding="utf-8"))
+    out = []
+    for sport, blk in data["sports"].items():
+        for slug, rank in blk["ranks"]:
+            if slug in SUSPENDED:
+                continue
+            out.append((fold(slug), sport, rank_strength(rank) * EXTRA_RANK_WEIGHT))
+    return out
+
+
 PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
            ("womens_football", womensfootball_contribs),
            ("cricket", cricket_contribs), ("rugby", rugby_contribs),
            ("basketball", basketball_contribs), ("hockey", hockey_contribs),
            ("handball", handball_contribs), ("volleyball", volleyball_contribs),
            ("baseball", baseball_contribs), ("rugby_league", rugby_league_contribs),
-           ("ranking", ranking_contribs)]
+           ("golf", golf_contribs), ("tennis", tennis_contribs),
+           ("ranking", ranking_contribs), ("extra_ranking", extra_ranking_contribs)]
 
 
 def activity_factor(slug, suspend_hl):
@@ -449,7 +545,8 @@ def compute(boost, suspend_hl=None, gamma=None, olyp=None):
             sport_pts[(slug, sport)] += pts
     # diminishing returns on pre-prestige raw, then prestige multiplier
     for k in sport_pts:
-        sport_pts[k] = (sport_pts[k] ** gamma) * PRESTIGE.get(k[1], olyp)
+        pr = COUNTRY_SPORT_PRESTIGE.get(k, PRESTIGE.get(k[1], olyp))
+        sport_pts[k] = (sport_pts[k] ** gamma) * pr
     by_nation = defaultdict(list)
     for (slug, sport), pts in sport_pts.items():
         by_nation[slug].append((sport, pts))

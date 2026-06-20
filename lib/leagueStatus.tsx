@@ -51,6 +51,34 @@ const STATUS_BY_PAGE: Record<string, LeagueStatus> = {
   "/teams/football/leagues/mls":                   { label: "Live - Regular Season", tone: "regular" },
 };
 
+// Golf and tennis light green while a major is in play. 2026 windows (UTC);
+// update these date ranges each season, like the other seasonal entries above.
+type MajorWindow = { label: string; start: number; end: number };
+const GOLF_MAJORS_2026: MajorWindow[] = [
+  { label: "Live - The Masters", start: Date.UTC(2026, 3, 9), end: Date.UTC(2026, 3, 12, 23, 59, 59) },
+  { label: "Live - PGA Championship", start: Date.UTC(2026, 4, 14), end: Date.UTC(2026, 4, 17, 23, 59, 59) },
+  { label: "Live - U.S. Open", start: Date.UTC(2026, 5, 18), end: Date.UTC(2026, 5, 21, 23, 59, 59) },
+  { label: "Live - The Open", start: Date.UTC(2026, 6, 16), end: Date.UTC(2026, 6, 19, 23, 59, 59) },
+];
+const TENNIS_SLAMS_2026: MajorWindow[] = [
+  { label: "Live - Australian Open", start: Date.UTC(2026, 0, 12), end: Date.UTC(2026, 0, 25, 23, 59, 59) },
+  { label: "Live - Roland-Garros", start: Date.UTC(2026, 4, 24), end: Date.UTC(2026, 5, 7, 23, 59, 59) },
+  { label: "Live - Wimbledon", start: Date.UTC(2026, 5, 29), end: Date.UTC(2026, 6, 12, 23, 59, 59) },
+  { label: "Live - US Open", start: Date.UTC(2026, 7, 25), end: Date.UTC(2026, 8, 7, 23, 59, 59) },
+];
+function majorsSeasonStatus(windows: MajorWindow[]): LeagueStatus {
+  const now = Date.now();
+  for (const w of windows) {
+    if (now >= w.start && now <= w.end) return { label: w.label, tone: "regular" };
+  }
+  const next = windows.filter((w) => w.start > now).sort((a, b) => a.start - b.start)[0];
+  if (next) {
+    const m = new Date(next.start).toLocaleString("en-US", { month: "short", timeZone: "UTC" });
+    return { label: `Next: ${next.label.replace("Live - ", "")} ${m}`, tone: "offseason" };
+  }
+  return { label: "Offseason", tone: "offseason" };
+}
+
 export function leagueStatusFor(page: string | null | undefined): LeagueStatus | null {
   if (!page) return null;
   const champ = CHAMPION_STATUS[page];
@@ -64,6 +92,8 @@ export function leagueStatusFor(page: string | null | undefined): LeagueStatus |
       ? { label: "Live - World Cup", tone: "worldcup" }
       : { label: "Offseason", tone: "offseason" };
   }
+  if (page === "/teams/golf") return majorsSeasonStatus(GOLF_MAJORS_2026);
+  if (page === "/teams/tennis") return majorsSeasonStatus(TENNIS_SLAMS_2026);
   return STATUS_BY_PAGE[page] ?? null;
 }
 

@@ -10,7 +10,7 @@ export const dynamicParams = false;
 const PATH = "/sports/zone-zero-cup";
 const TITLE = "Zone Zero Cup";
 const DESC =
-  "A single ranking of national sporting merit across twelve sport pillars, modelled on the NACDA Directors' Cup but built for nations. It blends decayed achievement with current world rankings, weights recency hard, and is published in overall, per-capita and per-GDP views.";
+  "A single ranking of national sporting merit across fourteen sport pillars, modelled on the NACDA Directors' Cup but built for nations. It blends decayed achievement with current world rankings, weights recency hard, and is published in overall, per-capita and per-GDP views.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -94,7 +94,7 @@ export default function ZoneZeroCupPage() {
             <strong className="text-[var(--text)] text-sm tabular-nums" style={mono}>{meta.count}</strong> nations ranked
           </div>
           <div>
-            <strong className="text-[var(--text)] text-sm tabular-nums" style={mono}>12</strong> sport pillars
+            <strong className="text-[var(--text)] text-sm tabular-nums" style={mono}>14</strong> sport pillars
           </div>
           <div>
             recency half-life <strong className="text-[var(--text)] text-sm tabular-nums" style={mono}>{meta.method.halflife}y</strong>

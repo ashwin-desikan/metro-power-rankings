@@ -23,7 +23,9 @@ export type SportFamily =
   | "Aussie Rules"
   | "Handball"
   | "Volleyball"
-  | "Olympics";
+  | "Olympics"
+  | "Golf"
+  | "Tennis";
 
 // Display order for family groupings across every surface.
 export const FAMILY_ORDER: SportFamily[] = [
@@ -39,6 +41,8 @@ export const FAMILY_ORDER: SportFamily[] = [
   "Aussie Rules",
   "Handball",
   "Volleyball",
+  "Golf",
+  "Tennis",
 ];
 
 export type LeagueScope = "club" | "international" | "college";
@@ -116,6 +120,8 @@ export const SPORTS_CATALOG: CatalogEntry[] = [
 
   // Olympics (multi-sport portal; its own section)
   { href: "/teams/olympics", label: "Olympics", boardLabel: "Medal Table", sport: "Olympics", family: "Olympics", scope: "international", hint: "Every Summer and Winter Games since 1896: all-time medal table with lineages folded into modern nations" },
+  { href: "/teams/golf", label: "Golf Majors", boardLabel: "Majors", sport: "Golf", family: "Golf", scope: "international", hint: "Every men's major champion since 1860: The Open, U.S. Open, PGA and the Masters, plus the Ryder Cup, all-time leaders, and host metros" },
+  { href: "/teams/tennis", label: "Tennis Grand Slams", boardLabel: "Grand Slams", sport: "Tennis", family: "Tennis", scope: "international", hint: "Every men's and women's singles Grand Slam champion, the Davis Cup, all-time leaders, and the four host metros" },
 ];
 
 // Helpers -------------------------------------------------------------------

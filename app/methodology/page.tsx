@@ -739,7 +739,7 @@ export default function MethodologyPage() {
                 </Link>{" "}
                 is a national sporting-merit ranking, modelled on the NACDA
                 Directors&apos; Cup but built for nations rather than university
-                athletic departments. It scores every country across twelve sport
+                athletic departments. It scores every country across fourteen sport
                 pillars: the full Olympic programme (Summer and Winter) plus
                 men&apos;s football, women&apos;s football, cricket, rugby union, basketball,
                 ice hockey, handball, volleyball, baseball, and rugby league. It is

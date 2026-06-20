@@ -149,6 +149,9 @@ const COUNTRY_ALIASES: Record<string, string> = {
   // Cricket's Ireland is an all-island team; Northern Ireland's country page
   // shows it too (user decision 2026-06-12).
   "northern ireland": "ireland",
+  // The ECB side is the England and Wales team, so Wales shows the England
+  // cricket card (user decision 2026-06-20).
+  "wales": "england",
 };
 
 function norm(s: string): string {

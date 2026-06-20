@@ -131,3 +131,6 @@ scripts/npb/npb_source.xlsx
 /Zone_Zero_Sports_Club_Brand_Bible.docx
 /Zone_Zero_Visual_Identity_Starter.docx
 *.zip
+
+# Tennis/Golf majors source workbook (auto-updated); committed JSON lives in public/data/majors
+Majors.xlsx

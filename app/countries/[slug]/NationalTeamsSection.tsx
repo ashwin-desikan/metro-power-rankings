@@ -309,7 +309,9 @@ function buildEntries(
           note={cricket.name === "West Indies" && countryName !== "West Indies"
             ? "Combined side of the cricket-playing Caribbean"
             : cricket.name === "Ireland" && countryName === "Northern Ireland"
-              ? "All-island team for Ireland and Northern Ireland" : null}>
+              ? "All-island team for Ireland and Northern Ireland"
+              : cricket.name === "England" && countryName === "Wales"
+                ? "England & Wales (ECB) represents both nations" : null}>
       {CRICKET_FORMATS.map((f) => {
         const rk = cricket.rankings[f];
         return rk && rk.current_rank != null

@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-20",
-    headline: "Zone Zero Cup: per-sport breakdowns and national sports",
+    headline: "New golf and tennis hubs, and a broader Zone Zero Cup",
     items: [
-      "The Zone Zero Cup table now expands: click any nation to see its per-sport merit contribution and current world rank, so you can read exactly which sports build each country's score.",
-      "Domestically major but globally narrow sports now earn a small recognition score: American and Canadian football, Australian rules, Gaelic football, hurling, kabaddi, sumo and bandy.",
-      "Recalibrated football and associate-nation scoring: Brazil sits first, the USA settles in the mid-twenties, and emerging cricket and baseball nations no longer over-score.",
-      "Great Britain's basketball side now appears on the United Kingdom page and on each home nation it represents, matching how its Olympic, baseball and hockey teams already show.",
+      "New golf and tennis hubs: every major champion, the Ryder and Davis Cups, all-time leaders, and men's and women's Grand Slam winners, each linked to the metro that hosted the title.",
+      "The Zone Zero Cup now scores golf and tennis, water polo, futsal, table tennis, badminton, lacrosse, and a women's layer with women's basketball built from Olympic medal history.",
+      "Sports that loom large in one country now weigh more there: rugby league in Australia, field hockey in India and Pakistan, baseball in Cuba and Taiwan, plus Papua New Guinea and Poland tokens.",
+      "The golf and tennis hubs light up live during each major, and the Wales page now shows the England and Wales cricket team.",
     ],
   },
   {
