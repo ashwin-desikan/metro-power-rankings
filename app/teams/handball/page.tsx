@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { getAllHandballTeams, getHandballHub } from "@/lib/handball";
+import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
+import { getWorldRanking } from "@/lib/worldRankings";
 import { flagCdnUrl, HISTORICAL_FLAG } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -95,6 +97,7 @@ export default function HandballHubPage() {
         items={[
           { label: "Olympics", href: "#olympics" },
           { label: "World Championship", href: "#worlds" },
+          { label: "World ranking", href: "#world-ranking" },
           { label: "Nations", href: "#nations" },
           { label: "Methodology", href: "#methodology" },
         ]}
@@ -127,6 +130,13 @@ export default function HandballHubPage() {
         </p>
         {podiumTable(hub.worlds)}
       </section>
+
+      <WorldRankingSection
+        id="world-ranking"
+        heading="Current world ranking"
+        blurb="The live world ranking by points (handballranking.com)."
+        ranking={getWorldRanking("handball-men")}
+      />
 
       <section className="mb-10">
         <h2 id="nations" className="text-lg font-semibold mb-3">Nations</h2>

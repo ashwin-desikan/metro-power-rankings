@@ -70,10 +70,11 @@ PRESTIGE = {
     "Volleyball": 1.2, "Handball": 1.2,
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
     "Women's Basketball": 1.0, "Women's Volleyball": 0.6, "Women's Handball": 0.6,  # ~half the men's, like Women's Football
-    "Tennis": 0.45, "Golf": 0.35,   # individual majors, merged into the canonical
-    # Tennis/Golf slots alongside their Olympic medals. Held deliberately low:
-    # four majors a year accumulate far more title-events than a one-a-year world
-    # championship, so a modest multiplier keeps even the USA in single digits.
+    # Racquet / precision individual sports, hugely popular across large-population
+    # regions (golf worldwide; tennis global; badminton & table tennis across Asia).
+    # Lifted from their earlier suppressed levels so they are not collectively
+    # underweighted, while still below the major team sports.
+    "Tennis": 0.7, "Golf": 0.6, "Badminton": 0.6, "Table Tennis": 0.6,
 }
 
 # Default prestige for Olympic-programme sports (everything not in PRESTIGE):
@@ -122,7 +123,27 @@ FOLD = {
     "czech-republic": "czechia", "cote-d-ivoire": "ivory-coast",
     "united-kingdom": "great-britain",
 }
-COMPOSITE = {"west-indies"}   # multi-nation team, kept as its own flagged entry
+COMPOSITE = {"west-indies", "team-europe"}   # multi-nation teams (distributed, see below)
+# West Indies cricket (a multi-nation side) is distributed equally across its core
+# cricketing member nations rather than parked on a composite entry, so the islands
+# that supply the players get the credit and appear in the per-capita view. The
+# non-cricketing micro-territories (Anguilla, Montserrat, BVI, USVI) are excluded.
+# West Indies cricket merit is split across member territories in proportion to
+# how many West Indies Test cricketers each has produced (the fairest measure of
+# contribution to the team's success). Big three from the player-production data
+# (of 385 men 1928-2022: Barbados 98, Jamaica 83, Trinidad 83); Guyana the clear
+# fourth; the small Windwards minor (approximate).
+WI_DISTRIBUTE = {"barbados": 98, "jamaica": 83, "trinidad-tobago": 83, "guyana": 50,
+                 "antigua-barbuda": 18, "grenada": 4, "saint-lucia": 3, "dominica": 2}
+# Team Europe (2016 World Cup of Hockey) was an ad-hoc all-star side of European
+# nations not otherwise represented; split evenly across them (equal weights)
+# rather than standing as a "country" of its own.
+EUROPE_DISTRIBUTE = {n: 1 for n in ["germany", "switzerland", "denmark", "slovakia",
+                                    "slovenia", "france", "norway", "austria"]}
+COMPOSITE_DISTRIBUTE = {"west-indies": WI_DISTRIBUTE, "team-europe": EUROPE_DISTRIBUTE}
+# On top of the proportional split, every West Indies cricketing member gets a flat
+# cricket upweight so each has a meaningful score (smallest floored at ~2.1). (user-set)
+WI_CRICKET_FLOOR_BONUS = 1.8
 
 # Codified national sports: domestically major, internationally negligible. They
 # do NOT compete for cap slots; instead each grants a small fixed recognition
@@ -131,9 +152,10 @@ COMPOSITE = {"west-indies"}   # multi-nation team, kept as its own flagged entry
 # common token. (Lacrosse, speedway and the women's competitions are deferred.)
 NATIONAL_SPORTS = [
     # (sport label, token, [nation slugs])
-    ("American Football", 12.0, ["united-states"]),
-    ("Australian Rules Football", 5.0, ["australia"]),
-    ("Kabaddi", 2.5, ["india", "bangladesh"]),
+    ("American Football", 25.0, ["united-states"]),
+    ("Australian Rules Football", 9.0, ["australia"]),
+    ("Kabaddi", 5.5, ["india"]),
+    ("Kabaddi", 2.5, ["bangladesh"]),
     ("Canadian Football", 2.5, ["canada"]),
     ("Gaelic Football", 2.5, ["ireland"]),
     ("Hurling", 2.5, ["ireland"]),
@@ -142,6 +164,20 @@ NATIONAL_SPORTS = [
     ("Pesäpallo", 2.5, ["finland"]),   # Finnish baseball, the national sport
     ("Speedway", 3.0, ["poland"]),     # motorcycle speedway, a major sport in Poland
     ("Rugby League", 2.5, ["papua-new-guinea"]),   # the one nation where RL is THE national sport
+]
+
+# Domestic-strength / foundational boosts: additive to merit like the national
+# sports above, BUT for sports the nation ALREADY scores in. They are NOT shown
+# as a separate "national sports" recognition line (that would visually duplicate
+# the sport's existing pillar). Credits domestic-league strength / historic role
+# the international title-and-ranking model misses.
+DOMESTIC_BOOST = [
+    ("Handball", 5.0, ["germany"]),            # the Bundesliga is the world's strongest handball league
+    ("Football", 7.0, ["great-britain"]),      # home of the modern game + the strongest domestic league
+    ("Rugby League", 2.0, ["great-britain"]),  # the sport's heartland (Super League, Challenge Cup)
+    ("Rugby League", 4.0, ["australia"]),      # the dominant RL nation; the NRL is the premier league
+    ("Futsal", 3.0, ["spain"]),                # a hugely popular sport in Spain
+    ("Basketball", 4.0, ["china"]),             # basketball is enormously popular in China
 ]
 
 _DC = {}
@@ -468,7 +504,7 @@ def ranking_contribs(boost):
         if v:
             out.append((fold(slug), "Cricket", v))
     # ice hockey (IIHF) + baseball (WBSC) current world rankings -> engine slug
-    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball")):
+    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball"), ("volleyball-men", "Volleyball"), ("handball-men", "Handball")):
         rk = json.load(open(os.path.join(D, "rankings", fn + ".json"), encoding="utf-8"))
         for row in rk["rows"]:
             es = row.get("engineSlug")
@@ -502,12 +538,56 @@ def extra_ranking_contribs(boost):
     if not os.path.exists(path):
         return []
     data = json.load(open(path, encoding="utf-8"))
-    out = []
+    # Fold home nations (England/Scotland/Wales/NI -> Great Britain) by BEST
+    # rank rather than summing each member, so a multi-home-nation side such as
+    # GB netball is credited with its strongest member (England), not an
+    # inflated stack of all four. Matches the best-per-folded-slug rule the
+    # other current-ranking layers use.
+    best = {}
     for sport, blk in data["sports"].items():
         for slug, rank in blk["ranks"]:
             if slug in SUSPENDED:
                 continue
-            out.append((fold(slug), sport, rank_strength(rank) * EXTRA_RANK_WEIGHT))
+            k = (fold(slug), sport)
+            if k not in best or rank < best[k]:
+                best[k] = rank
+    out = [(slug, sport, rank_strength(rank) * EXTRA_RANK_WEIGHT)
+           for (slug, sport), rank in best.items()]
+    return out
+
+
+# --- Netball: title pillar (Netball World Cup) -----------------------------
+# Netball is women's-only and off the Olympic programme, so its world title is
+# its definitive achievement. Scored as a world championship (no x7 flagship
+# boost, which is reserved for globally-contested sports) on the standard
+# 8-year recency decay, paired with the current-standing rank from
+# zzc-extra.json. Placement bases: champion 4, runner-up 2, third 1, fourth
+# 0.5. Source: Netball World Cup results 1963-2023 (user-supplied).
+NETBALL_BASE = {"C": 4.0, "R": 2.0, "3": 1.0, "4": 0.5}
+NETBALL_WC = {
+    "australia":       {"C": [1963, 1971, 1975, 1979, 1983, 1991, 1995, 1999,
+                              2007, 2011, 2015, 2023],
+                        "R": [1967, 1987, 2003, 2019]},
+    "new-zealand":     {"C": [1967, 1979, 1987, 2003, 2019],
+                        "R": [1963, 1971, 1983, 1991, 1999, 2007, 2011, 2015],
+                        "3": [1975], "4": [2023]},
+    "trinidad-tobago": {"C": [1979], "R": [1987], "3": [1983],
+                        "4": [1963, 1971, 1975]},
+    "england":         {"R": [1975, 2023],
+                        "3": [1963, 1971, 1999, 2011, 2015, 2019],
+                        "4": [1967, 1979, 1983, 1987, 1991, 1995]},
+    "south-africa":    {"R": [1995], "3": [1967], "4": [2019]},
+    "jamaica":         {"3": [1991, 2003, 2007, 2023],
+                        "4": [1971, 1999, 2011, 2015]},
+}
+
+
+def netball_titles_contribs(boost):
+    out = []
+    for slug, places in NETBALL_WC.items():
+        v = sum(NETBALL_BASE[p] * decay(y) for p, years in places.items() for y in years)
+        if v > 0:
+            out.append((fold(slug), "Netball", v))
     return out
 
 
@@ -518,6 +598,7 @@ PILLARS = [("olympics", olympic_contribs), ("football", football_contribs),
            ("handball", handball_contribs), ("volleyball", volleyball_contribs),
            ("baseball", baseball_contribs), ("rugby_league", rugby_league_contribs),
            ("golf", golf_contribs), ("tennis", tennis_contribs),
+           ("netball", netball_titles_contribs),
            ("ranking", ranking_contribs), ("extra_ranking", extra_ranking_contribs)]
 
 
@@ -543,18 +624,42 @@ def compute(boost, suspend_hl=None, gamma=None, olyp=None):
         counts[nm] = len(c)
         for slug, sport, pts in c:
             sport_pts[(slug, sport)] += pts
+    # distribute composite all-star teams (West Indies, Team Europe) across their
+    # constituent nations so neither stands as a country of its own
+    for comp, weights in COMPOSITE_DISTRIBUTE.items():
+        tot = sum(weights.values())
+        for key in [k for k in sport_pts if k[0] == comp]:
+            v = sport_pts.pop(key)
+            for m, w in weights.items():
+                sport_pts[(m, key[1])] += v * w / tot
     # diminishing returns on pre-prestige raw, then prestige multiplier
     for k in sport_pts:
         pr = COUNTRY_SPORT_PRESTIGE.get(k, PRESTIGE.get(k[1], olyp))
         sport_pts[k] = (sport_pts[k] ** gamma) * pr
+    # Domestic-strength boosts: a flat addition to the sport's OWN contribution, so
+    # it shows up ON that sport in the breakdown (no separate recognition line) and
+    # counts toward the capped merit. Credits domestic-league strength / historic
+    # role the international title-and-ranking model misses.
+    for sp, token, slugs in DOMESTIC_BOOST:
+        for sl in slugs:
+            sport_pts[(fold(sl), sp)] += token
+    # West Indies members: flat cricket upweight on top of the proportional split.
+    for m in WI_DISTRIBUTE:
+        sport_pts[(m, "Cricket")] += WI_CRICKET_FLOOR_BONUS
     by_nation = defaultdict(list)
     for (slug, sport), pts in sport_pts.items():
         by_nation[slug].append((sport, pts))
+    # A domestically-boosted sport is culturally core, so it ALWAYS counts toward
+    # merit even if it falls outside the best-CAP sports.
+    dom_keys = {(fold(sl), sp) for sp, _tok, slugs in DOMESTIC_BOOST for sl in slugs}
     merit, tops, sportmap = {}, {}, {}
     for slug, lst in by_nation.items():
         lst.sort(key=lambda x: x[1], reverse=True)
         af = activity_factor(slug, suspend_hl)
-        merit[slug] = sum(p for _, p in lst[:CAP]) * af
+        capped = lst[:CAP]
+        capped_sports = {sp for sp, _ in capped}
+        extra = sum(p for sp, p in lst[CAP:] if (slug, sp) in dom_keys and sp not in capped_sports)
+        merit[slug] = (sum(p for _, p in capped) + extra) * af
         tops[slug] = lst[:5]
         sportmap[slug] = {sp: p * af for sp, p in lst}
     return merit, tops, counts, sportmap
@@ -619,7 +724,7 @@ def best_world_ranking():
         for row in (blk.get("rows") or []):
             if row.get("team") in n2s:
                 consider(n2s[row["team"]], row.get("rank"), "Cricket")
-    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball")):
+    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball"), ("volleyball-men", "Volleyball"), ("handball-men", "Handball")):
         rk = json.load(open(os.path.join(D, "rankings", fn + ".json"), encoding="utf-8"))
         for row in rk["rows"]:
             if row.get("engineSlug"):
@@ -652,7 +757,7 @@ def all_world_rankings():
         for row in (blk.get("rows") or []):
             if row.get("team") in n2s:
                 put(n2s[row["team"]], "Cricket", row.get("rank"))
-    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball")):
+    for fn, sport in (("hockey-men", "Ice Hockey"), ("baseball-men", "Baseball"), ("volleyball-men", "Volleyball"), ("handball-men", "Handball")):
         rk = json.load(open(os.path.join(D, "rankings", fn + ".json"), encoding="utf-8"))
         for row in rk["rows"]:
             if row.get("engineSlug"):

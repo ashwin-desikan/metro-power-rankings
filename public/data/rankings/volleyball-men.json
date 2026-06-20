@@ -1,0 +1,220 @@
+{
+ "_meta": {
+  "sport": "volleyball-men",
+  "source": "FIVB Senior World Ranking",
+  "asOf": "2025-10-05",
+  "count": 30
+ },
+ "rows": [
+  {
+   "rank": 1,
+   "name": "Poland",
+   "points": 390.96,
+   "slug": "poland",
+   "engineSlug": "poland"
+  },
+  {
+   "rank": 2,
+   "name": "Italy",
+   "points": 385.02,
+   "slug": "italy",
+   "engineSlug": "italy"
+  },
+  {
+   "rank": 3,
+   "name": "Brazil",
+   "points": 338.4,
+   "slug": "brazil",
+   "engineSlug": "brazil"
+  },
+  {
+   "rank": 4,
+   "name": "France",
+   "points": 328.22,
+   "slug": "france",
+   "engineSlug": "france"
+  },
+  {
+   "rank": 5,
+   "name": "United States",
+   "points": 324.35,
+   "slug": "united-states",
+   "engineSlug": "united-states"
+  },
+  {
+   "rank": 6,
+   "name": "Slovenia",
+   "points": 303.61,
+   "slug": "slovenia",
+   "engineSlug": "slovenia"
+  },
+  {
+   "rank": 7,
+   "name": "Japan",
+   "points": 294.77,
+   "slug": "japan",
+   "engineSlug": "japan"
+  },
+  {
+   "rank": 8,
+   "name": "Argentina",
+   "points": 269.0,
+   "slug": "argentina",
+   "engineSlug": "argentina"
+  },
+  {
+   "rank": 9,
+   "name": "Bulgaria",
+   "points": 261.3,
+   "slug": "bulgaria",
+   "engineSlug": "bulgaria"
+  },
+  {
+   "rank": 10,
+   "name": "Canada",
+   "points": 252.99,
+   "slug": "canada",
+   "engineSlug": "canada"
+  },
+  {
+   "rank": 11,
+   "name": "Germany",
+   "points": 247.4,
+   "slug": "germany",
+   "engineSlug": "germany"
+  },
+  {
+   "rank": 12,
+   "name": "Cuba",
+   "points": 243.14,
+   "slug": "cuba",
+   "engineSlug": "cuba"
+  },
+  {
+   "rank": 13,
+   "name": "Serbia",
+   "points": 233.34,
+   "slug": "serbia",
+   "engineSlug": "serbia"
+  },
+  {
+   "rank": 14,
+   "name": "Turkey",
+   "points": 230.09,
+   "slug": "turkey",
+   "engineSlug": "turkey"
+  },
+  {
+   "rank": 15,
+   "name": "Belgium",
+   "points": 225.86,
+   "slug": "belgium",
+   "engineSlug": "belgium"
+  },
+  {
+   "rank": 16,
+   "name": "Iran",
+   "points": 209.02,
+   "slug": "iran",
+   "engineSlug": "iran"
+  },
+  {
+   "rank": 17,
+   "name": "Ukraine",
+   "points": 202.85,
+   "slug": "ukraine",
+   "engineSlug": "ukraine"
+  },
+  {
+   "rank": 18,
+   "name": "Czech Republic",
+   "points": 201.25,
+   "slug": "czech-republic",
+   "engineSlug": "czech-republic"
+  },
+  {
+   "rank": 19,
+   "name": "Finland",
+   "points": 188.93,
+   "slug": "finland",
+   "engineSlug": "finland"
+  },
+  {
+   "rank": 20,
+   "name": "Netherlands",
+   "points": 180.95,
+   "slug": "netherlands",
+   "engineSlug": "netherlands"
+  },
+  {
+   "rank": 21,
+   "name": "Qatar",
+   "points": 164.99,
+   "slug": "qatar",
+   "engineSlug": "qatar"
+  },
+  {
+   "rank": 22,
+   "name": "Puerto Rico",
+   "points": 147.9,
+   "slug": "puerto-rico",
+   "engineSlug": "puerto-rico"
+  },
+  {
+   "rank": 23,
+   "name": "Portugal",
+   "points": 145.04,
+   "slug": "portugal",
+   "engineSlug": "portugal"
+  },
+  {
+   "rank": 24,
+   "name": "Romania",
+   "points": 141.7,
+   "slug": "romania",
+   "engineSlug": "romania"
+  },
+  {
+   "rank": 25,
+   "name": "Greece",
+   "points": 137.44,
+   "slug": "greece",
+   "engineSlug": "greece"
+  },
+  {
+   "rank": 26,
+   "name": "South Korea",
+   "points": 137.28,
+   "slug": "south-korea",
+   "engineSlug": "south-korea"
+  },
+  {
+   "rank": 27,
+   "name": "Egypt",
+   "points": 136.56,
+   "slug": "egypt",
+   "engineSlug": "egypt"
+  },
+  {
+   "rank": 28,
+   "name": "China",
+   "points": 129.01,
+   "slug": "china",
+   "engineSlug": "china"
+  },
+  {
+   "rank": 29,
+   "name": "Chile",
+   "points": 125.32,
+   "slug": "chile",
+   "engineSlug": "chile"
+  },
+  {
+   "rank": 30,
+   "name": "Mexico",
+   "points": 121.91,
+   "slug": "mexico",
+   "engineSlug": "mexico"
+  }
+ ]
+}

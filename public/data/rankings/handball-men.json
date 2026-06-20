@@ -1,0 +1,262 @@
+{
+ "_meta": {
+  "sport": "handball-men",
+  "source": "handballranking.com World Ranking",
+  "asOf": "2026-05-17",
+  "count": 36
+ },
+ "rows": [
+  {
+   "rank": 1,
+   "name": "Denmark",
+   "points": 2290.9,
+   "slug": "denmark",
+   "engineSlug": "denmark"
+  },
+  {
+   "rank": 2,
+   "name": "France",
+   "points": 2016.0,
+   "slug": "france",
+   "engineSlug": "france"
+  },
+  {
+   "rank": 3,
+   "name": "Germany",
+   "points": 1991.0,
+   "slug": "germany",
+   "engineSlug": "germany"
+  },
+  {
+   "rank": 4,
+   "name": "Egypt",
+   "points": 1937.6,
+   "slug": "egypt",
+   "engineSlug": "egypt"
+  },
+  {
+   "rank": 5,
+   "name": "Croatia",
+   "points": 1931.2,
+   "slug": "croatia",
+   "engineSlug": "croatia"
+  },
+  {
+   "rank": 6,
+   "name": "Portugal",
+   "points": 1905.4,
+   "slug": "portugal",
+   "engineSlug": "portugal"
+  },
+  {
+   "rank": 7,
+   "name": "Iceland",
+   "points": 1894.8,
+   "slug": "iceland",
+   "engineSlug": "iceland"
+  },
+  {
+   "rank": 8,
+   "name": "Norway",
+   "points": 1890.9,
+   "slug": "norway",
+   "engineSlug": "norway"
+  },
+  {
+   "rank": 9,
+   "name": "Sweden",
+   "points": 1872.4,
+   "slug": "sweden",
+   "engineSlug": "sweden"
+  },
+  {
+   "rank": 10,
+   "name": "Spain",
+   "points": 1868.4,
+   "slug": "spain",
+   "engineSlug": "spain"
+  },
+  {
+   "rank": 11,
+   "name": "Slovenia",
+   "points": 1797.1,
+   "slug": "slovenia",
+   "engineSlug": "slovenia"
+  },
+  {
+   "rank": 12,
+   "name": "Hungary",
+   "points": 1750.3,
+   "slug": "hungary",
+   "engineSlug": "hungary"
+  },
+  {
+   "rank": 13,
+   "name": "Brazil",
+   "points": 1746.6,
+   "slug": "brazil",
+   "engineSlug": "brazil"
+  },
+  {
+   "rank": 14,
+   "name": "Serbia",
+   "points": 1703.5,
+   "slug": "serbia",
+   "engineSlug": "serbia"
+  },
+  {
+   "rank": 15,
+   "name": "Russia",
+   "points": 1668.0,
+   "slug": "russia",
+   "engineSlug": "russia"
+  },
+  {
+   "rank": 16,
+   "name": "Belarus",
+   "points": 1608.8,
+   "slug": "belarus",
+   "engineSlug": "belarus"
+  },
+  {
+   "rank": 17,
+   "name": "Argentina",
+   "points": 1603.8,
+   "slug": "argentina",
+   "engineSlug": "argentina"
+  },
+  {
+   "rank": 18,
+   "name": "Austria",
+   "points": 1586.1,
+   "slug": "austria",
+   "engineSlug": "austria"
+  },
+  {
+   "rank": 19,
+   "name": "Switzerland",
+   "points": 1561.5,
+   "slug": "switzerland",
+   "engineSlug": "switzerland"
+  },
+  {
+   "rank": 20,
+   "name": "Poland",
+   "points": 1545.5,
+   "slug": "poland",
+   "engineSlug": "poland"
+  },
+  {
+   "rank": 21,
+   "name": "Czechia",
+   "points": 1543.5,
+   "slug": "czech-republic",
+   "engineSlug": "czechia"
+  },
+  {
+   "rank": 22,
+   "name": "Netherlands",
+   "points": 1542.6,
+   "slug": "netherlands",
+   "engineSlug": "netherlands"
+  },
+  {
+   "rank": 23,
+   "name": "North Macedonia",
+   "points": 1532.0,
+   "slug": "north-macedonia",
+   "engineSlug": "north-macedonia"
+  },
+  {
+   "rank": 24,
+   "name": "Bahrain",
+   "points": 1497.4,
+   "slug": "bahrain",
+   "engineSlug": "bahrain"
+  },
+  {
+   "rank": 25,
+   "name": "Tunisia",
+   "points": 1480.0,
+   "slug": "tunisia",
+   "engineSlug": "tunisia"
+  },
+  {
+   "rank": 26,
+   "name": "Qatar",
+   "points": 1478.0,
+   "slug": "qatar",
+   "engineSlug": "qatar"
+  },
+  {
+   "rank": 27,
+   "name": "Italy",
+   "points": 1455.4,
+   "slug": "italy",
+   "engineSlug": "italy"
+  },
+  {
+   "rank": 28,
+   "name": "Chile",
+   "points": 1411.5,
+   "slug": "chile",
+   "engineSlug": "chile"
+  },
+  {
+   "rank": 29,
+   "name": "South Korea",
+   "points": 1372.7,
+   "slug": "south-korea",
+   "engineSlug": "south-korea"
+  },
+  {
+   "rank": 30,
+   "name": "Cape Verde",
+   "points": 1367.8,
+   "slug": "cape-verde",
+   "engineSlug": "cape-verde"
+  },
+  {
+   "rank": 31,
+   "name": "Greece",
+   "points": 1356.5,
+   "slug": "greece",
+   "engineSlug": "greece"
+  },
+  {
+   "rank": 32,
+   "name": "Montenegro",
+   "points": 1352.5,
+   "slug": "montenegro",
+   "engineSlug": "montenegro"
+  },
+  {
+   "rank": 33,
+   "name": "Japan",
+   "points": 1352.0,
+   "slug": "japan",
+   "engineSlug": "japan"
+  },
+  {
+   "rank": 34,
+   "name": "Romania",
+   "points": 1345.8,
+   "slug": "romania",
+   "engineSlug": "romania"
+  },
+  {
+   "rank": 35,
+   "name": "Saudi Arabia",
+   "points": 1341.7,
+   "slug": "saudi-arabia",
+   "engineSlug": "saudi-arabia"
+  },
+  {
+   "rank": 36,
+   "name": "United States",
+   "points": 1339.8,
+   "slug": "united-states",
+   "engineSlug": "united-states"
+  }
+ ]
+}

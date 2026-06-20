@@ -167,8 +167,6 @@ export default function ZoneZeroTable({
       let cmp = 0;
       if (sortKey === "name") {
         cmp = a.name.localeCompare(b.name);
-      } else if (sortKey === "titles") {
-        cmp = a.majorTitles - b.majorTitles;
       } else if (sortKey === "best") {
         const ar = sportMode ? a.sportRank[sport] : a.bestRank;
         const br = sportMode ? b.sportRank[sport] : b.bestRank;
@@ -323,7 +321,6 @@ export default function ZoneZeroTable({
               <Th label="#" k="rank" right />
               <Th label="Nation" k="name" />
               <Th label={meritLabel} k="merit" right />
-              {!sportMode && <Th label="Major titles" k="titles" right />}
               <Th label="World rank" k="best" />
               {!sportMode && (
                 <th className="py-2 px-3 font-medium text-left" style={{ color: "var(--text-muted)" }} scope="col">
@@ -378,11 +375,6 @@ export default function ZoneZeroTable({
                   <td className="py-2 px-3 align-top text-right tabular-nums" style={{ ...mono, color: GOLD }}>
                     {mt == null ? "" : view === "percapita" && !sportMode ? mt.toFixed(2) : view === "pergdp" && !sportMode ? mt.toFixed(1) : mt.toFixed(sportMode ? 1 : 0)}
                   </td>
-                  {!sportMode && (
-                    <td className="py-2 px-3 align-top text-right tabular-nums text-[var(--text-muted)]" style={mono}>
-                      {r.majorTitles || ""}
-                    </td>
-                  )}
                   <td className="py-2 px-3 align-top text-[var(--text-muted)] whitespace-nowrap">
                     {wr ? (
                       <span>
@@ -395,7 +387,11 @@ export default function ZoneZeroTable({
                   </td>
                   {!sportMode && (
                     <td className="py-2 px-3 align-top text-[var(--text-muted)] text-[13px]">
-                      {r.topSports.slice(0, 3).map((s) => s.sport).join(", ")}
+                      {[...r.topSports, ...r.nationalSports]
+                        .sort((a, b) => b.pts - a.pts)
+                        .slice(0, 4)
+                        .map((s) => s.sport)
+                        .join(", ")}
                     </td>
                   )}
                 </tr>

@@ -143,7 +143,7 @@ export default function ZoneZeroCupPage() {
         <h2 className="text-lg font-semibold mb-1">The ranking</h2>
         <p className="text-[var(--text-muted)] text-sm mb-4 max-w-3xl">
           The full table of every ranked nation. Switch the ranking basis, filter by region, and sort
-          by merit, major titles or current world ranking.
+          by merit or current world ranking.
         </p>
         <ZoneZeroTable rows={rows} regions={regions} sports={sports} />
       </section>

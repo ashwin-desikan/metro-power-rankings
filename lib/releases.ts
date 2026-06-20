@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-21",
+    headline: "Zone Zero Cup: netball titles and blended strongest sports",
+    items: [
+      "The Netball World Cup now scores as its own pillar, so Australia's record twelve titles place it first in netball, ahead of New Zealand and England.",
+      "A nation's strongest sports now blend its international and national sports and show the top four, so American football, Aussie rules and kabaddi sit alongside Olympic and World Cup strengths.",
+      "Tuned national-sport weight: kabaddi counts more for India, and Australian rules and rugby league count more for Australia.",
+      "Men's volleyball and handball world rankings now feed the Cup and show on their hubs and country cards.",
+    ],
+  },
+  {
     date: "2026-06-20",
     headline: "New golf and tennis hubs, and a broader Zone Zero Cup",
     items: [

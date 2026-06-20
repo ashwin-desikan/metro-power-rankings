@@ -77,10 +77,13 @@ const chipStyle = {
 } as const;
 
 function Stat({ label, value }: { label: string; value: string }) {
+  // Rankings (current world rankings, all-time positions) are #-prefixed; show
+  // them in green so they stand out from medal counts and titles.
+  const isRank = value.startsWith("#");
   return (
     <div className="text-xs">
       <span className="text-[var(--text-dim)]">{label} </span>
-      <span className="font-bold" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{value}</span>
+      <span className="font-bold" style={{ fontFamily: "'JetBrains Mono', monospace", color: isRank ? "#10b981" : undefined }}>{value}</span>
     </div>
   );
 }
@@ -188,6 +191,8 @@ function buildEntries(
   const hockeyWorldRank = currentRank("hockey-men", cSlug);
   const baseballWorldRank = currentRank("baseball-men", cSlug);
   const wfootballWorldRank = currentRank("womens-football", cSlug);
+  const volleyballWorldRank = currentRank("volleyball-men", cSlug);
+  const handballWorldRank = currentRank("handball-men", cSlug);
 
   const cricketMajors = cricket && cricket.honours
     ? cricket.honours.wc.titles + cricket.honours.t20wc.titles + cricket.honours.ct.titles +
@@ -438,6 +443,7 @@ function buildEntries(
         <Stat label="Worlds golds" value={`${handball.worlds_gold}`} />
       ) : null}
       <Stat label="Worlds medals" value={`${handball.worlds_medals}`} />
+      {handballWorldRank ? <Stat label="World" value={`#${handballWorldRank}`} /> : null}
     </Card>
   ) });
 
@@ -459,6 +465,7 @@ function buildEntries(
         <Stat label="Worlds golds" value={`${volleyball.worlds_gold}`} />
       ) : null}
       <Stat label="Worlds medals" value={`${volleyball.worlds_medals}`} />
+      {volleyballWorldRank ? <Stat label="FIVB" value={`#${volleyballWorldRank}`} /> : null}
     </Card>
   ) });
 
