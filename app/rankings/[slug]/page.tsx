@@ -1417,7 +1417,7 @@ function TeamsSection({
     if (isFoot) return 5;
     return 6;
   }
-  const majorTeamsRaw = [...nonHistoricForBucketing.filter((t) => t.major)].sort((a, b) => {
+  const majorTeamsRaw = [...nonHistoricForBucketing.filter((t) => t.major && t.level !== "College")].sort((a, b) => {
     const as_ = majorSortScore(a);
     const bs_ = majorSortScore(b);
     if (as_ !== bs_) return as_ - bs_;
@@ -1456,7 +1456,9 @@ function TeamsSection({
   const isFootball = (sport: string) => FOOTBALL_SPORTS.has(sport);
   const isWomen = (sport: string) => /^W\s/.test(sport);
 
-  const otherTeamsRaw = nonHistoricForBucketing.filter((t) => !t.major);
+  // College-level teams always flow through the college-card pipeline below,
+  // even when flagged major, so they render as college cards behind the pros.
+  const otherTeamsRaw = nonHistoricForBucketing.filter((t) => !t.major || t.level === "College");
   // College Football (FBS) is lifted into its own group above Football/Soccer.
   // Everything else college (FCS, basketball, hockey, ...) stays in College/University.
   const isFbsFootball = (t: { sport: string; league: string }) =>
@@ -1481,6 +1483,10 @@ function TeamsSection({
   const majorCollegeHoops = otherTeamsRaw.filter((t) => isDiMensHoops(t) && hoopsQualifies(t));
   const otherCollege = otherTeamsRaw.filter(
     (t) => isCollege(t) && !isFbsFootball(t) && !isDiMensHoops(t) && !(t.sport === "American Football" && t.league === "FCS")
+      // Women's college basketball ("NCAA W") renders via the dedicated
+      // WcbbCard system (wcbb.major / wcbb.other), so exclude it here to
+      // avoid a second, duplicate plain card per program.
+      && t.league !== "NCAA W"
   );
   const otherFootball = [...otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))].sort((a, b) => {
     const ak = footballSortKeys.get(a.team) ?? { level: 99, majorCups: 0 };
