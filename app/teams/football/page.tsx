@@ -69,6 +69,7 @@ export default function FootballIndex() {
         items={[
           { label: "Tournament Hubs", href: "#tournaments" },
           { label: "League Hubs", href: "#leagues" },
+          { label: "Domestic Leagues Worldwide", href: "#domestic" },
         ]}
       />
 
@@ -148,6 +149,24 @@ export default function FootballIndex() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 id="domestic" className="text-lg font-semibold mb-3">Domestic Leagues Worldwide</h2>
+        <Link
+          href="/teams/football/domestic"
+          className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        >
+          <div className="text-base font-semibold">Every first-division club, all leagues together</div>
+          <div className="text-sm text-[var(--text-muted)] mt-1 max-w-3xl">
+            One master table of clubs that have ever played a tracked top flight, the marquee leagues
+            above and the long tail beyond them, across 76 countries, with league titles, domestic cups,
+            continental and Champions League pedigree, current standing and home metro. Filter by
+            confederation, country or league.
+          </div>
+          <div className="text-xs text-[var(--accent)] mt-2">Open the master table →</div>
+        </Link>
       </section>
 
       <FootballIndexClient clubs={clientClubs} />
