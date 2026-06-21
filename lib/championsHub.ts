@@ -37,7 +37,6 @@ export type ChampionRow = Championship & {
 const GOLD_COMPETITIONS = new Set<string>([
   // Domestic apex (workbook Gold Standard + football Big Five)
   "NFL",
-  "World Series",
   "NBA",
   "NHL",
   "AFL",
@@ -65,6 +64,23 @@ const GOLD_COMPETITIONS = new Set<string>([
   "Olympic men's hockey",
   "Rugby World Cup",
   "Cricket World Cup",
+  // Baseball apex + individual-sport apexes (2026-06-21)
+  "MLB",
+  "World Drivers' Championship",
+  "Masters Tournament",
+  "PGA Championship",
+  "US Open Championship",
+  "The Open Championship",
+  "Australian Open Men's",
+  "Australian Open Women's",
+  "French Open Men's",
+  "French Open Women's",
+  "Wimbledon Men's",
+  "Wimbledon Women's",
+  "US Open Men's",
+  "US Open Women's",
+  "Summer Olympics Top Medalist",
+  "Winter Olympics Top Medalist",
 ]);
 
 // Geographic footprint of each competition: World, a continent, or a country.
@@ -111,7 +127,7 @@ const COMP_GEO: Record<string, string> = {
   "Major League Soccer": "United States",
   NWSL: "United States",
   WNBA: "United States",
-  "World Series": "United States",
+  "MLB": "United States",
   "Japan Series": "Japan",
   NRL: "Australia",
   AFL: "Australia",
@@ -270,7 +286,7 @@ function clubTeamHref(c: Championship): string | null {
 // everything else falls back to the sport portal by scope.
 const DIRECT_HUB: Record<string, [string, string]> = {
   NFL: ["/teams/nfl", "NFL"],
-  "World Series": ["/teams/mlb", "MLB"],
+  "MLB": ["/teams/mlb", "MLB"],
   "Japan Series": ["/teams/baseball/npb", "NPB"],
   NBA: ["/teams/nba", "NBA"],
   WNBA: ["/teams/wnba", "WNBA"],
@@ -316,6 +332,14 @@ function leagueHub(c: Championship): { href: string | null; label: string } {
       return { href: "/teams/handball", label: "Handball" };
     case "Volleyball":
       return { href: "/teams/volleyball", label: "Volleyball" };
+    case "Olympics":
+      return { href: "/teams/olympics", label: "Olympics" };
+    case "F1":
+      return { href: "/teams/f1", label: "Formula 1" };
+    case "Golf":
+      return { href: "/teams/golf", label: "Golf" };
+    case "Tennis":
+      return { href: "/teams/tennis", label: "Tennis" };
     default:
       return { href: null, label: c.competition };
   }

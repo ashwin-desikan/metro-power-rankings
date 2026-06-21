@@ -342,6 +342,15 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
                 </kbd>
               )}
             </div>
+            <button
+              type="button"
+              onClick={() => { setSearchTerm(''); setSearchScope('all'); searchInputRef.current?.focus(); }}
+              disabled={!searchTerm && searchScope === 'all'}
+              className="px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] enabled:hover:border-[var(--accent)] enabled:hover:text-[var(--accent)] disabled:opacity-40 disabled:cursor-default transition-colors"
+              aria-label="Reset search"
+            >
+              Reset
+            </button>
           </div>
         </div>
       </div>

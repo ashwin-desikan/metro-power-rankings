@@ -15,9 +15,11 @@ export type Championship = {
   competition: string;
   team: string;
   year: number | null;
+  dateAwarded: string | null;
   scope: string;
   scopeType: "International" | "Continental" | "Domestic" | null;
   nextAwarded: number | null;
+  nextAwardedDate: string | null;
   tier: number | null;
 };
 

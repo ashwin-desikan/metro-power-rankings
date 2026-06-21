@@ -25,12 +25,16 @@ export type SportFamily =
   | "Volleyball"
   | "Olympics"
   | "Golf"
-  | "Tennis";
+  | "Tennis"
+  | "Motorsport";
 
 // Display order for family groupings across every surface.
 export const FAMILY_ORDER: SportFamily[] = [
   "Olympics",
   "Football",
+  "Motorsport",
+  "Golf",
+  "Tennis",
   "Gridiron",
   "Basketball",
   "Baseball",
@@ -41,8 +45,6 @@ export const FAMILY_ORDER: SportFamily[] = [
   "Aussie Rules",
   "Handball",
   "Volleyball",
-  "Golf",
-  "Tennis",
 ];
 
 export type LeagueScope = "club" | "international" | "college";
@@ -81,6 +83,9 @@ export const SPORTS_CATALOG: CatalogEntry[] = [
   { href: "/teams/cfb", label: "College Football", sport: "American Football", family: "Gridiron", scope: "college", marquee: true, hint: "FBS programs through history: national titles, conference championships, and greatest games by Game Score" },
 
   { href: "/teams/cfl", label: "CFL", sport: "Canadian Football", family: "Gridiron", scope: "club", hint: "Every CFL franchise, live standings, season records, and Grey Cup history since 1909" },
+
+  // Motorsport
+  { href: "/teams/f1", label: "Formula 1", sport: "Formula 1", family: "Motorsport", scope: "international", marquee: true, status: "live", hint: "Live drivers' and constructors' standings, World Champions since 1950, all-time wins, and the metros that host every Grand Prix" },
 
   // Basketball
   { href: "/teams/nba", label: "NBA", sport: "Basketball", family: "Basketball", scope: "club", marquee: true, hint: "All 30 active franchises; ABA cups in slate; live 2026 playoff status" },

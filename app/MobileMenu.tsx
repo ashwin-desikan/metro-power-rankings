@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { leagueStatusFor, LeagueStatusTag } from '@/lib/leagueStatus';
-import { SPORTS_CATALOG, FAMILY_ORDER } from '@/lib/sportsCatalog';
+import { MARQUEE_HUBS } from '@/lib/sportsCatalog';
 
 // Mobile-only disclosure menu. The desktop nav in SiteNav.tsx is hidden
 // below md (768px); this component fills that gap so phone users can reach
@@ -23,15 +23,17 @@ type Item = {
 
 // Sports entries from the shared catalog, ordered by family, shipped hubs only.
 const SPORTS_ITEMS: Item[] = [
-  { href: '/sports', label: 'Zone Zero Sports Hub', hint: "Citizen of Nowhere's sports club: every top-flight team on one filterable map", group: 'Sports' },
-  ...FAMILY_ORDER.flatMap((fam) =>
-    SPORTS_CATALOG.filter((e) => e.family === fam && e.status !== 'coming' && !e.subRoll).map((e) => ({
-      href: e.href,
-      label: e.label,
-      hint: e.hint,
-      group: 'Sports',
-    })),
-  ),
+  { href: '/sports', label: 'Zone Zero Sports Hub', group: 'Sports' },
+  // Marquee hubs only, mirroring the desktop Sports dropdown (DesktopNav).
+  // Both surfaces read MARQUEE_HUBS so they stay in sync; sport shown as a
+  // short sub-label instead of the long hint. Full directory lives at /sports.
+  ...MARQUEE_HUBS.map((e) => ({
+    href: e.href,
+    label: e.label,
+    hint: e.sport,
+    group: 'Sports',
+  })),
+  { href: '/sports#league-directory', label: 'Browse all leagues \u2192', group: 'Sports' },
 ];
 
 const ITEMS: Item[] = [

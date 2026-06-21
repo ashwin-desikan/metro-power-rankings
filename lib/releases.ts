@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-21",
-    headline: "Domestic Leagues Worldwide, World Cup tiebreaker, and card upgrades",
+    headline: "Domestic Leagues and F1 hubs, champions tiers, and UI polish",
     items: [
-      "New Domestic Leagues Worldwide hub: every club that has ever played a tracked first division across 76 countries, with titles, cups and continental pedigree split by country era, and links to club pages.",
-      "Metro team cards add football-club honours, defunct NASL clubs, NFL/NBA/NHL title and finals appearances, college bowl-game and tournament counts, and co-equal top teams now lead their metro.",
-      "World Cup group tables and projections now apply FIFA's 2026 head-to-head tiebreaker, correctly eliminating sides like Türkiye and Haiti.",
-      "Zone Zero Cup: a Netball World Cup pillar, Great Britain football and Athletics weighted up, and strongest sports that blend international and national sports.",
+      "New Domestic Leagues Worldwide hub: every club to play a tracked first division across 76 countries (all UEFA associations plus selected leagues elsewhere), with titles, cups and continental pedigree.",
+      "New Formula 1 hub: live drivers' and constructors' standings, every World Champion since 1950, all-time wins, per-circuit history, and host-metro links from every Grand Prix card.",
+      "The Current Champions board adds a sortable tier column and full award dates, and fixes the Gold Standard badges and regions for MLB, F1, golf, tennis and the Olympics.",
+      "Plus richer metro team cards, a home-search reset, a streamlined mobile sports menu with reordered families, and a World Cup head-to-head tiebreaker.",
     ],
   },
   {

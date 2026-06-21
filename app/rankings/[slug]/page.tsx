@@ -45,6 +45,7 @@ import { getFootballClubByName, getClTitlesForClub } from "@/lib/football";
 import { getDomesticClubByName, getDefunctNaslForMetro } from "@/lib/domesticFootball";
 import { getWnbaFranchiseByTeamName } from "@/lib/wnba";
 import { getCflFranchiseByTeamName } from "@/lib/cfl";
+import { getF1RaceResultByName } from "@/lib/f1";
 import { getAflFranchiseByTeamName } from "@/lib/afl";
 import { getNrlFranchiseByTeamName } from "@/lib/nrl";
 import { getWClubByName } from "@/lib/wfootball";
@@ -2964,6 +2965,10 @@ function EventsSection({
                   category === "Multi-Sport Events"
                     ? olympicEditionSlugFromName(ev.event)
                     : null;
+                const f1r =
+                  ev.type === "F1 Race" || category === "F1 Races"
+                    ? getF1RaceResultByName(ev.event, ev.year)
+                    : null;
                 const inner = (
                   <>
                     <p className="font-medium text-[var(--text)]">{ev.event}</p>
@@ -2973,12 +2978,26 @@ function EventsSection({
                     <p className="text-xs text-[var(--text-muted)]">
                       {ev.year} {"\u2022"} {ev.venue}
                     </p>
+                    {f1r && f1r.winner && (
+                      <p className="text-xs text-[var(--text-muted)]">
+                        Won by <span className="text-[var(--text)]">{f1r.winner}</span>
+                        {f1r.constructor ? ` (${f1r.constructor})` : ""}
+                      </p>
+                    )}
                   </>
                 );
                 return olySlug ? (
                   <Link
                     key={idx}
                     href={`/teams/olympics/games/${olySlug}`}
+                    className="block py-2 rounded-md transition hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)]"
+                  >
+                    {inner}
+                  </Link>
+                ) : f1r ? (
+                  <Link
+                    key={idx}
+                    href={`/teams/f1/${f1r.circuit_id}`}
                     className="block py-2 rounded-md transition hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)]"
                   >
                     {inner}

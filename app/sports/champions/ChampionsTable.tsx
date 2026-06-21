@@ -19,11 +19,14 @@ export type ChampRow = {
   geo: string;
   region: string;
   year: number | null;
+  dateAwarded: string | null;
   nextAwarded: number | null;
+  nextAwardedDate: string | null;
+  tier: number | null;
   gold: boolean;
 };
 
-type SortKey = "team" | "competition" | "scope" | "geo" | "year" | "next";
+type SortKey = "team" | "competition" | "scope" | "geo" | "year" | "next" | "tier";
 
 const GOLD = "#d4af37";
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
@@ -66,6 +69,14 @@ const SCOPE_RANK: Record<string, number> = {
 
 function sportDisplay(s: string): string {
   return s.replace(/^W /, "Women's ");
+}
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+function fmtDate(iso: string | null): string {
+  if (!iso) return "";
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return iso;
+  return `${parseInt(m[3], 10)} ${MONTHS[parseInt(m[2], 10) - 1]} ${m[1]}`;
 }
 
 export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
@@ -127,10 +138,12 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
     const out = [...filtered];
     out.sort((a, b) => {
       let cmp = 0;
-      if (sortKey === "year") {
-        cmp = (a.year ?? 0) - (b.year ?? 0);
+      if (sortKey === "tier") {
+        cmp = (a.tier ?? 99) - (b.tier ?? 99);
+      } else if (sortKey === "year") {
+        cmp = (a.dateAwarded ?? "").localeCompare(b.dateAwarded ?? "") || (a.year ?? 0) - (b.year ?? 0);
       } else if (sortKey === "next") {
-        cmp = (a.nextAwarded ?? 0) - (b.nextAwarded ?? 0);
+        cmp = (a.nextAwardedDate ?? "").localeCompare(b.nextAwardedDate ?? "") || (a.nextAwarded ?? 0) - (b.nextAwarded ?? 0);
       } else if (sortKey === "geo") {
         cmp = geoRank(a.geo) - geoRank(b.geo) || a.geo.localeCompare(b.geo);
       } else if (sortKey === "scope") {
@@ -237,6 +250,7 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
         <table className="w-full text-sm">
           <thead>
             <tr className="text-xs">
+              <Th label="Tier" k="tier" />
               <Th label="Champion" k="team" />
               <Th label="Competition" k="competition" />
               <Th label="Scope" k="scope" />
@@ -248,6 +262,7 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
           <tbody>
             {sorted.map((c, i) => (
               <tr key={`${c.team}-${c.competition}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                <td className="py-2 px-3 align-top tabular-nums text-[var(--text-muted)]" style={mono}>{c.tier ?? ""}</td>
                 <td className="py-2 px-3 align-top">
                   <div className="font-medium text-sm leading-tight">
                     {c.teamHref ? (
@@ -281,10 +296,10 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
                 <td className="py-2 px-3 align-top text-[var(--text-muted)]">{c.scopeType ?? "—"}</td>
                 <td className="py-2 px-3 align-top text-[var(--text-muted)]">{c.geo}</td>
                 <td className="py-2 px-3 align-top text-right tabular-nums" style={{ ...mono, color: GOLD }}>
-                  {c.year ?? ""}
+                  {fmtDate(c.dateAwarded) || (c.year ?? "")}
                 </td>
                 <td className="py-2 px-3 align-top text-right tabular-nums text-[var(--text-muted)]" style={mono}>
-                  {c.nextAwarded ?? ""}
+                  {fmtDate(c.nextAwardedDate) || (c.nextAwarded ?? "")}
                 </td>
               </tr>
             ))}

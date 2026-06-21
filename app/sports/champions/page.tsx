@@ -68,7 +68,10 @@ export default function ChampionsHubPage() {
       geo: c.geo,
       region: c.region,
       year: c.year,
+      dateAwarded: c.dateAwarded,
       nextAwarded: c.nextAwarded,
+      nextAwardedDate: c.nextAwardedDate,
+      tier: c.tier,
       gold: c.gold,
     }));
 

@@ -8,9 +8,10 @@ import DomesticLeaguesTable from "./DomesticLeaguesTable";
 export const metadata: Metadata = {
   title: "Domestic Leagues Worldwide",
   description:
-    "Every club that has ever played a tracked first division, marquee leagues and the long tail: " +
-    "league titles, domestic cups, and continental and Champions League pedigree, split by country " +
-    "era, across 76 countries in one sortable, filterable master table.",
+    "Every club that has ever played a tracked first division: every UEFA association in full, plus " +
+    "selected leagues from the other confederations (CONMEBOL, CONCACAF, AFC, CAF, OFC). League titles, " +
+    "domestic cups, and continental and Champions League pedigree, split by country era, in one " +
+    "sortable, filterable master table.",
   alternates: { canonical: "/teams/football/domestic" },
   openGraph: {
     title: `Domestic Leagues Worldwide | ${SITE_NAME}`,
@@ -41,7 +42,7 @@ export default function DomesticLeaguesPage() {
           Every tracked first-division league in one place, the nine marquee leagues with dedicated hubs
           and the long tail beyond them: every club that has ever played in a tracked top flight across
           {" "}{facets.countries.length} countries, with all-time league titles, domestic cups, and
-          continental and Champions League pedigree, plus home metro. Honours are split by country era,
+          continental and Champions League pedigree, plus home metro. Coverage includes every UEFA association in full, plus selected leagues from the other confederations (CONMEBOL, CONCACAF, AFC, CAF, OFC). Honours are split by country era,
           so filtering to a former state (Soviet Union, Yugoslavia) shows only the trophies won under
           that flag. The dedicated league hubs remain for depth; clubs with their own page are linked in
           colour. Use the Ever first division toggle to include clubs no longer in their top flight.
