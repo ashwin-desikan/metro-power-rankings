@@ -135,9 +135,74 @@ def main():
     exp_pts = {s: 0.0 for s in slugs}
     win_group_ct = {s: 0 for s in slugs}
     fixtures = [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
+
+    # FIFA 2026 group ranking. From this World Cup onward FIFA breaks teams level on
+    # points by HEAD-TO-HEAD first (head-to-head points, then head-to-head goal
+    # difference, then head-to-head goals scored among the tied teams), and only
+    # then by overall group goal difference and goals scored. This replaced the old
+    # group-goal-difference-first rule, and it is what eliminates a side like
+    # Turkiye that lost to both rivals it is level with. Applied per simulation over
+    # the four teams. Cross-group best-third ranking below stays on overall
+    # points/GD/GF, since third-placed teams from different groups never met.
+    def fifa_rank4(n, P, GD, GF, RV, MG):
+        pv = (P[0][n], P[1][n], P[2][n], P[3][n])
+        if len(set(pv)) == 4:  # all on distinct points: no tiebreak needed
+            return sorted((0, 1, 2, 3), key=lambda t: pv[t], reverse=True)
+
+        def hh(i, j):
+            if i < j:
+                gi, gj = MG[(i, j)][0][n], MG[(i, j)][1][n]
+            else:
+                gj, gi = MG[(j, i)][0][n], MG[(j, i)][1][n]
+            pr = (3, 0) if gi > gj else (0, 3) if gi < gj else (1, 1)
+            return pr, gi, gj
+
+        def resolve(sub):
+            if len(sub) == 1:
+                return sub
+            mp = {t: 0 for t in sub}; mgd = {t: 0 for t in sub}; mgf = {t: 0 for t in sub}
+            for x in range(len(sub)):
+                for y in range(x + 1, len(sub)):
+                    i, j = sub[x], sub[y]
+                    (pi, pj), gi, gj = hh(i, j)
+                    mp[i] += pi; mp[j] += pj
+                    mgd[i] += gi - gj; mgd[j] += gj - gi
+                    mgf[i] += gi; mgf[j] += gj
+            order = sorted(sub, key=lambda t: (mp[t], mgd[t], mgf[t]), reverse=True)
+            out = []
+            i = 0
+            while i < len(order):
+                key_i = (mp[order[i]], mgd[order[i]], mgf[order[i]])
+                j = i + 1
+                while j < len(order) and (mp[order[j]], mgd[order[j]], mgf[order[j]]) == key_i:
+                    j += 1
+                run = order[i:j]
+                if len(run) == 1:
+                    out.append(run[0])
+                elif len(run) == len(sub):
+                    # no separation among the tied set: fall to overall GD, GF, random
+                    out.extend(sorted(run, key=lambda t: (GD[t][n], GF[t][n], RV[t][n]), reverse=True))
+                else:
+                    out.extend(resolve(run))  # re-apply criteria to the still-tied subset
+                i = j
+            return out
+
+        bypoints = sorted((0, 1, 2, 3), key=lambda t: pv[t], reverse=True)
+        result = []
+        i = 0
+        while i < len(bypoints):
+            j = i + 1
+            while j < len(bypoints) and pv[bypoints[j]] == pv[bypoints[i]]:
+                j += 1
+            tied = bypoints[i:j]
+            result.extend(resolve(tied) if len(tied) > 1 else tied)
+            i = j
+        return result
+
     for g in GROUPS:
         ts = group_team_slugs[g]
         pts = np.zeros((4, N)); gf = np.zeros((4, N)); ga = np.zeros((4, N))
+        mg = {}
         for a, b in fixtures:
             la, lb = lambdas(ts[a], ts[b])
             gk = frozenset((ts[a], ts[b]))
@@ -145,13 +210,25 @@ def main():
                 xa = np.full(N, group_goals[gk][ts[a]]); xb = np.full(N, group_goals[gk][ts[b]])
             else:
                 xa = rng.poisson(la, N); xb = rng.poisson(lb, N)
+            mg[(a, b)] = (xa, xb)
             gf[a] += xa; ga[a] += xb; gf[b] += xb; ga[b] += xa
             pts[a] += np.where(xa > xb, 3, np.where(xa == xb, 1, 0))
             pts[b] += np.where(xb > xa, 3, np.where(xb == xa, 1, 0))
         gd = gf - ga
+        # Cross-group best-third comparison uses overall pts/GD/GF (those teams
+        # never played each other, so head-to-head cannot apply).
         score = pts * 1e6 + gd * 1e3 + gf + rng.random((4, N)) * 1e-2
-        order = np.argsort(-score, axis=0)
-        win_idx[g] = order[0]; run_idx[g] = order[1]; third_idx[g] = order[2]
+        # Within-group order uses the FIFA 2026 head-to-head tiebreakers.
+        Pl = [pts[i].tolist() for i in range(4)]
+        GDl = [gd[i].tolist() for i in range(4)]
+        GFl = [gf[i].tolist() for i in range(4)]
+        RVl = [rng.random(N).tolist() for _ in range(4)]
+        MGl = {ab: (xa.tolist(), xb.tolist()) for ab, (xa, xb) in mg.items()}
+        o0 = [0] * N; o1 = [0] * N; o2 = [0] * N
+        for n in range(N):
+            r = fifa_rank4(n, Pl, GDl, GFl, RVl, MGl)
+            o0[n] = r[0]; o1[n] = r[1]; o2[n] = r[2]
+        win_idx[g] = np.array(o0); run_idx[g] = np.array(o1); third_idx[g] = np.array(o2)
         rows = np.arange(N)
         third_score[g] = score[third_idx[g], rows]
         for li in range(4):
