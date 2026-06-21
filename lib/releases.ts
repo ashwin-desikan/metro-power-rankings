@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-21",
-    headline: "World Cup tiebreaker, Zone Zero Cup tuning, and metro fixes",
+    headline: "Domestic Leagues Worldwide, World Cup tiebreaker, and card upgrades",
     items: [
-      "World Cup group tables and projections now apply FIFA's 2026 head-to-head tiebreaker, correctly eliminating sides like Türkiye and Haiti, and show every team's live record.",
-      "The Netball World Cup is now a Zone Zero Cup pillar (Australia leads it), with Great Britain's football and Athletics weighted up and the nation order shifting accordingly.",
-      "Strongest sports now blend international and national sports and show the top four, with tuned weighting for kabaddi, Australian rules, rugby league, volleyball and handball.",
-      "Metro pages: women's college basketball no longer duplicates, college teams sit behind the pro teams, and company market caps were refreshed.",
+      "New Domestic Leagues Worldwide hub: every club that has ever played a tracked first division across 76 countries, with titles, cups and continental pedigree split by country era, and links to club pages.",
+      "Metro team cards add football-club honours, defunct NASL clubs, NFL/NBA/NHL title and finals appearances, college bowl-game and tournament counts, and co-equal top teams now lead their metro.",
+      "World Cup group tables and projections now apply FIFA's 2026 head-to-head tiebreaker, correctly eliminating sides like Türkiye and Haiti.",
+      "Zone Zero Cup: a Netball World Cup pillar, Great Britain football and Athletics weighted up, and strongest sports that blend international and national sports.",
     ],
   },
   {

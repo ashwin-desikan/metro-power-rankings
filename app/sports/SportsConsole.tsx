@@ -109,7 +109,7 @@ export default function SportsConsole({ deepDives }: { deepDives: ConsoleDeepDiv
         </Link>
 
         <div>
-          {groups.map((g) => {
+          {groups.filter((g) => g.family !== "Golf" && g.family !== "Tennis").map((g) => {
             const isSelf = g.entries.length === 1 && boardLabelFor(g.entries[0]) === g.family;
             return (
               <div key={g.family} className="flex items-start gap-2.5 py-1.5 border-t" style={{ borderColor: "var(--border)" }}>
@@ -126,6 +126,19 @@ export default function SportsConsole({ deepDives }: { deepDives: ConsoleDeepDiv
               </div>
             );
           })}
+          {/* Golf and Tennis share one label-less row; the links carry the full name. */}
+          {(() => {
+            const gt = groups.filter((g) => g.family === "Golf" || g.family === "Tennis").flatMap((g) => g.entries);
+            if (gt.length === 0) return null;
+            return (
+              <div className="flex items-start gap-2.5 py-1.5 border-t" style={{ borderColor: "var(--border)" }}>
+                <div className="flex-none pt-1.5" style={{ width: 84 }} aria-hidden />
+                <div className="flex flex-wrap gap-1.5 flex-1 min-w-0">
+                  {gt.map((e) => <Chip key={e.href} entry={e} text={e.label} />)}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
 
