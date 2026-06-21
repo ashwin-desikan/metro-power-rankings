@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-21",
-    headline: "Zone Zero Cup: netball titles and blended strongest sports",
+    headline: "World Cup tiebreaker, Zone Zero Cup tuning, and metro fixes",
     items: [
-      "The Netball World Cup now scores as its own pillar, so Australia's record twelve titles place it first in netball, ahead of New Zealand and England.",
-      "A nation's strongest sports now blend its international and national sports and show the top four, so American football, Aussie rules and kabaddi sit alongside Olympic and World Cup strengths.",
-      "Tuned national-sport weighting (India's kabaddi, Australia's rules football and rugby league), and men's volleyball and handball world rankings now feed the Cup, hubs and country cards.",
-      "Fixed the World Cup group tables so Türkiye and other teams whose feed name differs show their live record, and refreshed company market caps across metros.",
+      "World Cup group tables and projections now apply FIFA's 2026 head-to-head tiebreaker, correctly eliminating sides like Türkiye and Haiti, and show every team's live record.",
+      "The Netball World Cup is now a Zone Zero Cup pillar (Australia leads it), with Great Britain's football and Athletics weighted up and the nation order shifting accordingly.",
+      "Strongest sports now blend international and national sports and show the top four, with tuned weighting for kabaddi, Australian rules, rugby league, volleyball and handball.",
+      "Metro pages: women's college basketball no longer duplicates, college teams sit behind the pro teams, and company market caps were refreshed.",
     ],
   },
   {

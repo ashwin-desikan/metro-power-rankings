@@ -68,6 +68,7 @@ PRESTIGE = {
     "Rugby Union": 1.5, "Ice Hockey": 1.5, "Baseball": 1.5,
     "Women's Football": 1.5,   # own pillar, parallel to men's Football (x3)
     "Volleyball": 1.2, "Handball": 1.2,
+    "Athletics": 1.0,   # the foundational Olympic sport (track & field); lifted above the 0.5 Olympic default
     "Rugby League": 0.4,   # contested at a high level by ~2-4 nations; low depth
     "Women's Basketball": 1.0, "Women's Volleyball": 0.6, "Women's Handball": 0.6,  # ~half the men's, like Women's Football
     # Racquet / precision individual sports, hugely popular across large-population
@@ -173,7 +174,7 @@ NATIONAL_SPORTS = [
 # the international title-and-ranking model misses.
 DOMESTIC_BOOST = [
     ("Handball", 5.0, ["germany"]),            # the Bundesliga is the world's strongest handball league
-    ("Football", 7.0, ["great-britain"]),      # home of the modern game + the strongest domestic league
+    ("Football", 14.0, ["great-britain"]),     # home of the modern game + the strongest domestic league (Premier League)
     ("Rugby League", 2.0, ["great-britain"]),  # the sport's heartland (Super League, Challenge Cup)
     ("Rugby League", 4.0, ["australia"]),      # the dominant RL nation; the NRL is the premier league
     ("Futsal", 3.0, ["spain"]),                # a hugely popular sport in Spain
