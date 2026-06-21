@@ -36,12 +36,13 @@ import { getNpbTeamByName } from "@/lib/npb";
 import { getCurrentChampionships } from "@/lib/champions";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { isGoldStandardLeague } from "@/lib/goldStandard";
-import { getNflFranchiseByTeamName } from "@/lib/nfl";
+import { getNflFranchiseByTeamName, getChampionshipAppearances as getNflChampApps } from "@/lib/nfl";
 import { getMlbFranchiseByTeamName } from "@/lib/mlb";
 import { getNbaFranchiseByTeamName } from "@/lib/nba";
 import { getNhlFranchiseByTeamName } from "@/lib/nhl";
 import { getIplFranchiseByTeamName } from "@/lib/ipl";
 import { getFootballClubByName, getClTitlesForClub } from "@/lib/football";
+import { getDomesticClubByName, getDefunctNaslForMetro } from "@/lib/domesticFootball";
 import { getWnbaFranchiseByTeamName } from "@/lib/wnba";
 import { getCflFranchiseByTeamName } from "@/lib/cfl";
 import { getAflFranchiseByTeamName } from "@/lib/afl";
@@ -847,7 +848,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
               {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0) && (
-                <TeamsSection teams={detail.teams || []} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} />
+                <TeamsSection teams={detail.teams || []} metroName={metro.name} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -1280,6 +1281,7 @@ function lastYearOf(years: string | null | undefined): number {
 
 function TeamsSection({
   teams,
+  metroName,
   topTeamPick,
   relocations = [],
   formerCfb = [],
@@ -1297,6 +1299,7 @@ function TeamsSection({
     level?: string;
     annual?: boolean;
   }>;
+  metroName?: string;
   topTeamPick?: import("@/lib/topTeams").TopTeamPick | null;
   relocations?: import("@/lib/data").RelocationCard[];
   formerCfb?: FormerCfbCard[];
@@ -1341,7 +1344,9 @@ function TeamsSection({
   const baseSportKey = (s: string) =>
     s.toLowerCase().replace(/\(ncaa[^)]*\)/g, "").replace(/[^a-z]/g, "")
       .replace("soccer", "football").replace("icehockey", "hockey");
-  const topPickSportKey = baseSportKey(topPickSport);
+  // Co-equal Top Team picks can span two sports ("Basketball / Baseball" for
+  // New York's Knicks/Yankees), so match a team if its sport is ANY of them.
+  const topPickSportKeys = topPickSport.split("/").map((s) => baseSportKey(s)).filter(Boolean);
   const TOP_COLLEGE_LEAGUES = new Set(["FBS", "FCS", "NCAA", "NCAA W", "College Hockey"]);
   // Match by name, then (when sport context exists) require the card's sport to
   // match the Top Team pick's sport so e.g. Texas football is the Top Team in
@@ -1352,8 +1357,8 @@ function TeamsSection({
       return tn === t || t.endsWith(" " + tn) || tn.endsWith(" " + t);
     });
     if (!nameHit) return false;
-    if (!topPickSport || teamSport === undefined) return true;
-    if (baseSportKey(teamSport) !== topPickSportKey) return false;
+    if (topPickSportKeys.length === 0 || teamSport === undefined) return true;
+    if (!topPickSportKeys.includes(baseSportKey(teamSport))) return false;
     const teamIsCollege = teamLeague !== undefined && TOP_COLLEGE_LEAGUES.has(teamLeague);
     return topPickIsCollege ? teamIsCollege : !teamIsCollege;
   };
@@ -1505,7 +1510,7 @@ function TeamsSection({
   type MajorCollegeCard = {
     key: string; sport: "football" | "basketball"; name: string; href: string | null;
     color: string; mono: string; titles: number; secondLabel: string; secondVal: number;
-    seasons: number; pct: number; isTop: boolean; division: string; conference: string; hasStats: boolean;
+    seasons: number; appStat: number; pct: number; isTop: boolean; division: string; conference: string; hasStats: boolean;
   };
   const majorCollegeCards: MajorCollegeCard[] = [
     ...otherFbs.map((t): MajorCollegeCard => {
@@ -1515,7 +1520,7 @@ function TeamsSection({
         href: cf ? `/teams/cfb/${cf.slug}` : null, color: cf?.color || "#444",
         mono: cfbMonogram(cf?.name ?? t.team), titles: cf?.nat_champ_count ?? 0,
         secondLabel: "Conf", secondVal: cf?.conf_titles ?? 0,
-        seasons: cf?.maj_seasons || cf?.seasons || 0, pct: cf?.pct ?? 0,
+        seasons: cf?.maj_seasons || cf?.seasons || 0, appStat: cf?.bowl_app ?? 0, pct: cf?.pct ?? 0,
         isTop: isTopTeamFn(t.team, t.sport, t.league),
         division: "FBS", conference: cf?.conference ?? "", hasStats: true,
       };
@@ -1527,7 +1532,7 @@ function TeamsSection({
         href: `/teams/cbb/${cb.slug}`, color: cb.color || "#444",
         mono: cbbMonogram(cb.name), titles: cb.titles,
         secondLabel: "Final Four", secondVal: cb.final4,
-        seasons: cb.seasons, pct: cb.pct,
+        seasons: cb.seasons, appStat: cb.tour_app ?? 0, pct: cb.pct,
         isTop: isTopTeamFn(t.team, t.sport, t.league),
         division: "", conference: cb.conference ?? "", hasStats: true,
       };
@@ -1544,7 +1549,7 @@ function TeamsSection({
         {m.hasStats && (<div className="flex gap-1.5 mt-2 flex-wrap">
           <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: m.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: m.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="National championships">{m.titles === 0 ? "No titles" : `${m.titles} Nat'l Champ${m.titles === 1 ? "" : "s"}`}</span>
           {m.secondVal > 0 && (<span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title={m.sport === "football" ? "Conference titles" : "Final Four appearances"}>{m.secondVal} {m.secondLabel}{m.sport === "football" ? "" : (m.secondVal === 1 ? "" : "s")}</span>)}
-          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Seasons">{m.seasons} season{m.seasons === 1 ? "" : "s"}</span>
+          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title={m.sport === "football" ? "Bowl games" : "NCAA tournament appearances"}>{m.sport === "football" ? `${m.appStat} bowl${m.appStat === 1 ? "" : "s"}` : `${m.appStat} Tour App${m.appStat === 1 ? "" : "s"}`}</span>
           <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }} title="All-time win percentage">{m.pct.toFixed(3)} W%</span>
         </div>)}
       </>
@@ -1607,7 +1612,7 @@ function TeamsSection({
         href: cf ? `/teams/cfb/${cf.slug}` : null, color: cf?.color || cb?.color || "#444",
         mono: cfbMonogram(cf?.name ?? cb?.name ?? t.team), titles: cf?.nat_champ_count ?? 0,
         secondLabel: "Conf", secondVal: cf?.conf_titles ?? 0,
-        seasons: cf?.maj_seasons || cf?.seasons || 0, pct: cf?.pct ?? 0,
+        seasons: cf?.maj_seasons || cf?.seasons || 0, appStat: cf?.bowl_app ?? 0, pct: cf?.pct ?? 0,
         isTop: isTopTeamFn(t.team, t.sport, t.league),
         division: "FCS", conference: cf?.conference ?? "", hasStats: !!cf,
       };
@@ -1625,7 +1630,7 @@ function TeamsSection({
         href: cb ? `/teams/cbb/${cb.slug}` : null, color: cb?.color || "#444",
         mono: cbbMonogram(cb?.name ?? t.team), titles: cb?.titles ?? 0,
         secondLabel: "Final Four", secondVal: cb?.final4 ?? 0,
-        seasons: cb?.seasons ?? 0, pct: cb?.pct ?? 0,
+        seasons: cb?.seasons ?? 0, appStat: cb?.tour_app ?? 0, pct: cb?.pct ?? 0,
         isTop: isTopTeamFn(t.team, t.sport, t.league),
         division: "", conference: cb?.conference ?? "", hasStats: !!cb,
       };
@@ -1634,6 +1639,9 @@ function TeamsSection({
     .sort((a, b) => b.titles - a.titles || b.seasons - a.seasons || a.name.localeCompare(b.name));
 
   const gridClass = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+
+  // Defunct pre-1985 NASL clubs based in this metro (rendered as defunct cards).
+  const defunctNasl = getDefunctNaslForMetro(metroName);
 
   const collapsible = (
     label: string,
@@ -1649,7 +1657,7 @@ function TeamsSection({
       </summary>
       <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
         {items.map((team, idx) => (
-          <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
+          <TeamCard key={idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} metroName={metroName} />
         ))}
       </div>
     </details>
@@ -1668,7 +1676,7 @@ function TeamsSection({
               {wcbbMajorTop.map((m) => renderWcbbCard(m, true))}
               {hockeyMajorTop.map((m) => renderHockeyCard(m, true))}
               {majorTeamsOnly.map((team, idx) => (
-                <TeamCard key={"m" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
+                <TeamCard key={"m" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} metroName={metroName} />
               ))}
               {restCollegeCards.map(renderCollegeCard)}
               {wcbbMajorRest.map((m) => renderWcbbCard(m, false))}
@@ -1772,7 +1780,7 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0) && (
+      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
@@ -1790,19 +1798,19 @@ function TeamsSection({
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
                   {otherCollegeCards.map(renderCollegeCard)}
                   {otherCollege.map((team, idx) => (
-                    <TeamCard key={"oc" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} />
+                    <TeamCard key={"oc" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} metroName={metroName} />
                   ))}
                   {wcbb.other.map((m) => renderWcbbCard(m))}
                   {collegeHockey.other.map((m) => renderHockeyCard(m))}
                 </div>
               </details>
             )}
-            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0) && (
+            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                   <span className="font-semibold text-[var(--text)]">Defunct/Relocated Teams</span>
                   <span className="text-sm text-[var(--text-muted)]">
-                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length !== 1 ? "s" : ""}
+                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length !== 1 ? "s" : ""}
                   </span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
@@ -2044,6 +2052,23 @@ function TeamsSection({
                       </div>
                     </Link>
                     ) })),
+                    ...defunctNasl.map((n, idx) => ({ y: n.lastYear ?? 0, el: (() => {
+                      const body = (
+                        <>
+                          <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">{"⚽"}</span>Soccer &bull; NASL &bull; Defunct</p>
+                          <p className="font-semibold text-[var(--text)]">{n.name}</p>
+                          <p className="text-xs text-[var(--text-dim)]">{n.firstYear && n.lastYear && n.firstYear !== n.lastYear ? `${n.firstYear}–${n.lastYear}` : (n.lastYear ?? n.firstYear ?? "")}</p>
+                          <div className="flex gap-1.5 mt-2 flex-wrap">
+                            <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: n.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: n.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="NASL championships (Soccer Bowl / league title) won in this metro">{n.titles === 0 ? "No titles" : n.titles === 1 ? "1 title" : `${n.titles} titles`}</span>
+                          </div>
+                        </>
+                      );
+                      return n.slug ? (
+                        <Link key={"nasl-" + idx} href={`/teams/football/${n.slug}`} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">{body}</Link>
+                      ) : (
+                        <div key={"nasl-" + idx} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">{body}</div>
+                      );
+                    })() })),
                   ].sort((a, b) => b.y - a.y).map((e) => e.el)}
                 </div>
               </details>
@@ -2058,6 +2083,7 @@ function TeamsSection({
 function TeamCard({
   team,
   isTopTeam = false,
+  metroName,
 }: {
   team: {
     sport: string;
@@ -2070,6 +2096,7 @@ function TeamCard({
     gold?: boolean;
   };
   isTopTeam?: boolean;
+  metroName?: string;
 }) {
   const isFootball = team.sport === "Soccer" || team.sport === "Football/Soccer";
 
@@ -2114,12 +2141,18 @@ function TeamCard({
   // Pull franchise records for chip rendering. Either may resolve depending
   // on which league this team belongs to; both null for unsupported leagues.
   const nflFranchise = link?.league === "nfl" ? getNflFranchiseByTeamName(team.team) : undefined;
+  // NFL title-game appearances (pre-Super Bowl championship games + Super Bowls),
+  // one entry per appearance in the championship-appearances ledger.
+  const nflTitleApps = nflFranchise ? getNflChampApps(team.team).length : 0;
   const mlbFranchise = link?.league === "mlb" ? getMlbFranchiseByTeamName(team.team) : undefined;
   const nbaFranchise = link?.league === "nba" ? getNbaFranchiseByTeamName(team.team) : undefined;
   const nhlFranchise = link?.league === "nhl" ? getNhlFranchiseByTeamName(team.team) : undefined;
   const iplFranchise = link?.league === "ipl" ? getIplFranchiseByTeamName(team.team) : undefined;
   const footballClub  = link?.league === "football" ? getFootballClubByName(team.team) : undefined;
   const clTitles = footballClub ? getClTitlesForClub(footballClub.slug) : 0;
+  // Long-tail football clubs (those without a dedicated league-hub page) get
+  // honour chips from the Domestic Leagues data, joined by name + metro.
+  const domesticClub = isFootball && !footballClub ? getDomesticClubByName(team.team, metroName) : undefined;
   const wnbaFranchise = link?.league === "wnba" ? getWnbaFranchiseByTeamName(team.team) : undefined;
   const cflFranchise = link?.league === "cfl" ? getCflFranchiseByTeamName(team.team) : undefined;
   const aflFranchise = link?.league === "afl" ? getAflFranchiseByTeamName(team.team) : undefined;
@@ -2319,6 +2352,15 @@ function TeamCard({
               ? "1 title"
               : `${nflFranchise.championships} titles`}
           </span>
+          {nflTitleApps > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}
+              title="Title-game appearances (NFL Championship + Super Bowl, won or lost)"
+            >
+              {nflTitleApps} Title App{nflTitleApps === 1 ? "" : "s"}
+            </span>
+          )}
           <span
             className="text-[10px] px-1.5 py-0.5 rounded"
             style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
@@ -2421,6 +2463,15 @@ function TeamCard({
               ? "1 title"
               : `${nbaFranchise.championships} titles`}
           </span>
+          {nbaFranchise.championship_appearances > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}
+              title="NBA Finals appearances (won or lost)"
+            >
+              {nbaFranchise.championship_appearances} Finals App{nbaFranchise.championship_appearances === 1 ? "" : "s"}
+            </span>
+          )}
           <span
             className="text-[10px] px-1.5 py-0.5 rounded"
             style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
@@ -2455,6 +2506,15 @@ function TeamCard({
               ? "1 Cup"
               : `${nhlFranchise.championships} Cups`}
           </span>
+          {nhlFranchise.champ_appearances > 0 && (
+            <span
+              className="text-[10px] px-1.5 py-0.5 rounded"
+              style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}
+              title="Stanley Cup Final appearances (won or lost)"
+            >
+              {nhlFranchise.champ_appearances} Finals App{nhlFranchise.champ_appearances === 1 ? "" : "s"}
+            </span>
+          )}
           <span
             className="text-[10px] px-1.5 py-0.5 rounded"
             style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}
@@ -2551,6 +2611,32 @@ function TeamCard({
               )}
             </>
           )}
+        </div>
+      )}
+      {domesticClub && (
+        <div className="flex gap-1.5 mt-2 flex-wrap">
+          {domesticClub.allTime.titles > 0 ? (
+            <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title="Top-flight league titles (all-time)">
+              {domesticClub.allTime.titles} title{domesticClub.allTime.titles === 1 ? "" : "s"}
+            </span>
+          ) : (
+            <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(85,85,106,0.16)", color: "var(--text-dim)" }} title="Top-flight league titles (all-time)">
+              No titles
+            </span>
+          )}
+          {domesticClub.allTime.contTitles > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title="Continental trophies (Champions League / Copa Libertadores / continental champions cups)">
+              {domesticClub.allTime.contTitles} Cont.
+            </span>
+          )}
+          {domesticClub.allTime.cups > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title="Domestic cups (all-time)">
+              {domesticClub.allTime.cups} cup{domesticClub.allTime.cups === 1 ? "" : "s"}
+            </span>
+          )}
+          <Link href="/teams/football/domestic" className="text-[10px] px-1.5 py-0.5 rounded hover:opacity-80 transition-opacity" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="Open the Domestic Leagues Worldwide table">
+            Domestic leagues →
+          </Link>
         </div>
       )}
       {wnbaFranchise && (
