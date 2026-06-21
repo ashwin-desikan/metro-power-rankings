@@ -23,8 +23,8 @@ export const RELEASES: Release[] = [
     items: [
       "The Netball World Cup now scores as its own pillar, so Australia's record twelve titles place it first in netball, ahead of New Zealand and England.",
       "A nation's strongest sports now blend its international and national sports and show the top four, so American football, Aussie rules and kabaddi sit alongside Olympic and World Cup strengths.",
-      "Tuned national-sport weight: kabaddi counts more for India, and Australian rules and rugby league count more for Australia.",
-      "Men's volleyball and handball world rankings now feed the Cup and show on their hubs and country cards.",
+      "Tuned national-sport weighting (India's kabaddi, Australia's rules football and rugby league), and men's volleyball and handball world rankings now feed the Cup, hubs and country cards.",
+      "Fixed the World Cup group tables so Türkiye and other teams whose feed name differs show their live record, and refreshed company market caps across metros.",
     ],
   },
   {

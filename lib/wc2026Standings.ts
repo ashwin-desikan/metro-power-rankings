@@ -38,6 +38,10 @@ const NAME_ALIASES: Record<string, string> = {
   "IR Iran": "Iran",
   "Cabo Verde": "Cape Verde",
   "Ivory Coast": "Côte d'Ivoire",
+  "Türkiye": "Turkey",
+  "Turkiye": "Turkey",
+  "Bosnia and Herzegovina": "Bosnia-Herzegovina",
+  "DR Congo": "Congo DR",
 };
 
 type EspnStat = { name?: string; value?: number };
@@ -55,7 +59,16 @@ function norm(s: string): string {
     const cp = ch.codePointAt(0);
     if (cp === undefined || cp < 0x0300 || cp > 0x036f) out += ch;
   }
-  return out.replace(/['’]/g, "").toLowerCase().trim();
+  // Drop punctuation/separators and connector words, then sort the
+  // remaining tokens so word order and hyphen-vs-"and" differences match.
+  const drop = new Set(["and", "the", "of"]);
+  return out
+    .replace(/['’.\-]/g, " ")
+    .toLowerCase()
+    .split(/\s+/)
+    .filter((t) => t && !drop.has(t))
+    .sort()
+    .join(" ");
 }
 
 export async function getWc2026LiveStandings(): Promise<Wc2026LiveStandings> {
