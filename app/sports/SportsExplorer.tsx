@@ -687,6 +687,43 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
         </div>
       </div>
 
+      {/* Tier definitions — expandable native disclosure (under the Preset row). */}
+      <details className="group rounded-lg border border-[var(--border)] bg-[var(--bg-card)]/30">
+        <summary className="cursor-pointer list-none px-3 py-2 text-[11px] font-medium text-[var(--text-muted)] hover:text-[var(--accent)] flex items-center gap-2">
+          <span className="text-[10px] transition-transform group-open:rotate-90" aria-hidden>▶</span>
+          What do these tiers mean?
+        </summary>
+        <div className="grid sm:grid-cols-3 gap-4 px-4 pb-4 pt-1 text-[12px] leading-relaxed">
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              <span aria-hidden>🥇</span> Gold Standard{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({goldStandardCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              The apex top-flight in each sport. Football's top-five European leagues (Premier League / La Liga / Serie A / Bundesliga / Ligue 1) plus WSL and NWSL on the women's side. NFL, MLB, NBA, NHL, Top 14, Superlega, NRL, AFL, Handball-Bundesliga, WNBA, IPL elsewhere. The leagues a global sports fan names first.
+            </p>
+          </div>
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              <span aria-hidden>🥈</span> Major League{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({majorCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              Every workbook-flagged Major League team. Includes the Gold Standard as a strict subset plus other top flights: KHL hockey, CBA basketball, EuroLeague, NPB baseball, CFL, Brasileirão, Argentine Primera, Liga F, and country-level top-flight football outside the European top five.
+            </p>
+          </div>
+          <div>
+            <div className="font-semibold text-[var(--text)] mb-1">
+              Other Teams{" "}
+              <span className="text-[var(--text-dim)] font-normal tabular-nums">({otherCount.toLocaleString()})</span>
+            </div>
+            <p className="text-[var(--text-muted)]">
+              Everything else with a place on the map: US college (FBS, NCAA Division I, NCAA W, FCS, College Hockey), Minor League Baseball, junior hockey, lower-flight football across every footballing nation, second-tier international competitions. Plus 250 national football teams via the Special Filter when Sport=Football is selected.
+            </p>
+          </div>
+        </div>
+      </details>
+
       {/* Sport filter — primary discriminator, kept as inline chips. */}
       <FilterRow
         label="Sport"
@@ -872,43 +909,6 @@ export default function SportsExplorer({ teams }: { teams: TeamMarker[] }) {
           <SportsMapInner markers={visible} />
         )}
       </div>
-
-      {/* Tier definitions — expandable native disclosure. */}
-      <details className="group rounded-lg border border-[var(--border)] bg-[var(--bg-card)]/30">
-        <summary className="cursor-pointer list-none px-3 py-2 text-[11px] font-medium text-[var(--text-muted)] hover:text-[var(--accent)] flex items-center gap-2">
-          <span className="text-[10px] transition-transform group-open:rotate-90" aria-hidden>▶</span>
-          What do these tiers mean?
-        </summary>
-        <div className="grid sm:grid-cols-3 gap-4 px-4 pb-4 pt-1 text-[12px] leading-relaxed">
-          <div>
-            <div className="font-semibold text-[var(--text)] mb-1">
-              <span aria-hidden>🥇</span> Gold Standard{" "}
-              <span className="text-[var(--text-dim)] font-normal tabular-nums">({goldStandardCount.toLocaleString()})</span>
-            </div>
-            <p className="text-[var(--text-muted)]">
-              The apex top-flight in each sport. Football's top-five European leagues (Premier League / La Liga / Serie A / Bundesliga / Ligue 1) plus WSL and NWSL on the women's side. NFL, MLB, NBA, NHL, Top 14, Superlega, NRL, AFL, Handball-Bundesliga, WNBA, IPL elsewhere. The leagues a global sports fan names first.
-            </p>
-          </div>
-          <div>
-            <div className="font-semibold text-[var(--text)] mb-1">
-              <span aria-hidden>🥈</span> Major League{" "}
-              <span className="text-[var(--text-dim)] font-normal tabular-nums">({majorCount.toLocaleString()})</span>
-            </div>
-            <p className="text-[var(--text-muted)]">
-              Every workbook-flagged Major League team. Includes the Gold Standard as a strict subset plus other top flights: KHL hockey, CBA basketball, EuroLeague, NPB baseball, CFL, Brasileirão, Argentine Primera, Liga F, and country-level top-flight football outside the European top five.
-            </p>
-          </div>
-          <div>
-            <div className="font-semibold text-[var(--text)] mb-1">
-              Other Teams{" "}
-              <span className="text-[var(--text-dim)] font-normal tabular-nums">({otherCount.toLocaleString()})</span>
-            </div>
-            <p className="text-[var(--text-muted)]">
-              Everything else with a place on the map: US college (FBS, NCAA Division I, NCAA W, FCS, College Hockey), Minor League Baseball, junior hockey, lower-flight football across every footballing nation, second-tier international competitions. Plus 250 national football teams via the Special Filter when Sport=Football is selected.
-            </p>
-          </div>
-        </div>
-      </details>
     </section>
   );
 }

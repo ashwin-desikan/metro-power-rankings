@@ -134,3 +134,4 @@ scripts/npb/npb_source.xlsx
 
 # Tennis/Golf majors source workbook (auto-updated); committed JSON lives in public/data/majors
 Majors.xlsx
+Rivalries.xlsx

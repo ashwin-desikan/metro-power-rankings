@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
@@ -366,6 +368,8 @@ export default async function FranchisePage({ params }: Props) {
           )}
         </div>
       </header>
+
+      <RivalriesSection rivals={getRivalries(f.canonical, "Baseball", "MLB")} />
 
       {/* Headline stat strip — 5 cells, mirrors NFL */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mt-4">

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -112,6 +114,8 @@ export default async function RugbyTeamPage(
           </div>
         ) : null}
       </header>
+
+      <RivalriesSection rivals={getRivalries(team.name, "Rugby Union")} />
 
       {/* ---------------- Record + ranking ---------------- */}
       <section className="mb-10">

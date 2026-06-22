@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -150,6 +152,8 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
           )}
         </div>
       </header>
+
+      <RivalriesSection rivals={getRivalries(f.name, "Canadian Football", "CFL")} />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mt-4">
         <StatCell v={f.grey_cups.toString()} k="Grey Cups" sub={f.title_years.length ? `Last ${f.title_years[f.title_years.length - 1]}` : undefined} />

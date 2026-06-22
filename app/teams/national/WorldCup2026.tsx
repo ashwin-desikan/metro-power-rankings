@@ -153,6 +153,19 @@ function GroupStage({
                   <tbody>
                     {teams.map((t, i) => {
                       const s = t.slug ? by[t.slug] : undefined;
+                      // Clamp the projected points to what the visible live
+                      // record still allows. The W/D/L/Pts columns come from
+                      // ESPN's live feed, while xPts comes from the once-daily
+                      // simulation snapshot; when the two feeds disagree on games
+                      // played, the raw projection can exceed the real ceiling
+                      // (e.g. 7.8 xPts for a side that can now reach at most 7).
+                      // Bound it by [pts, pts + 3 * gamesRemaining] so the column
+                      // can never contradict the table beside it.
+                      const gamesPlayed = (t.w ?? 0) + (t.d ?? 0) + (t.l ?? 0);
+                      const maxFinalPts = t.pts + 3 * Math.max(0, 3 - gamesPlayed);
+                      const xpts = s
+                        ? Math.min(Math.max(s.exp_points, t.pts), maxFinalPts)
+                        : null;
                       return (
                         <tr
                           key={t.cur_name}
@@ -184,7 +197,7 @@ function GroupStage({
                           </td>
                           <td className="py-1 px-1 text-right font-semibold">{t.pts}</td>
                           <td className="py-1 px-1 text-right text-[var(--text-muted)]">
-                            {s ? s.exp_points.toFixed(1) : "—"}
+                            {xpts !== null ? xpts.toFixed(1) : "—"}
                           </td>
                           <td className="py-1 pl-1 text-right font-semibold" style={{ color: s ? "var(--accent)" : "var(--text-dim)" }}>
                             {s ? `${s.p_advance.toFixed(0)}%` : "—"}

@@ -5,6 +5,8 @@ import type { FootyStandingRow } from "@/lib/_footyStandings";
 import type { FootyCopy } from "./config";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import type { Championship } from "@/lib/champions";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import type { ResolvedRival } from "@/lib/rivalries";
 
 function titleCase(slug: string): string {
   return slug.split("-").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
@@ -28,9 +30,9 @@ function seasonBadge(s: FootySeason, copy: FootyCopy) {
   return null;
 }
 
-export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYear, champions = [] }: {
+export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYear, champions = [], rivals = [] }: {
   copy: FootyCopy; f: FootyFranchise; seasons: FootySeason[]; grandFinals: FootyGrandFinal[];
-  live?: FootyStandingRow | null; liveYear?: number | null; champions?: Championship[];
+  live?: FootyStandingRow | null; liveYear?: number | null; champions?: Championship[]; rivals?: ResolvedRival[];
 }) {
   const lg = copy.league;
   const fg = f.color.startsWith("#") ? fgFor(f.color) : "#ffffff";
@@ -93,6 +95,8 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
           )}
         </div>
       </header>
+
+      <RivalriesSection rivals={rivals} />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 mt-4">
         <StatCell v={f.premierships.toString()} k={copy.premierWord + "s"} sub={f.stripped_premierships > 0 ? `${f.stripped_premierships} stripped (${f.stripped_years.join(", ")})` : (f.title_years.length ? `Last ${f.title_years[f.title_years.length - 1]}` : undefined)} />

@@ -70,6 +70,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/handball",
   "@/lib/volleyball",
   "@/lib/honourRolls",
+  "@/lib/rivalries",
   "@/lib/belowTheLine",
   "@/lib/rugbyLeagueIntl",
   "@/lib/wintl",

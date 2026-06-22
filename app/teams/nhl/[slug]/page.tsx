@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
@@ -290,6 +292,8 @@ export default async function NhlTeamPage({ params }: Props) {
           </div>
         </div>
       </header>
+
+      <RivalriesSection rivals={getRivalries(f.canonical, "Hockey", "NHL")} />
 
       {/* Awards block */}
       {Object.keys(awardsByType).length > 0 && (

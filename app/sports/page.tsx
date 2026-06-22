@@ -68,6 +68,12 @@ const DEEP_DIVES: DeepDive[] = [
     desc: "The champions the map forgot: dominant clubs erased when the metro behind them was outgrown by the modern league.",
   },
   {
+    href: "/sports/rivalries",
+    title: "Sports Rivalries",
+    tag: "Cross-sport",
+    desc: "The derbies, classics and grudge matches that define cities and nations, each side linked to its team page.",
+  },
+  {
     href: "/sports/games",
     title: "The Greatest Games",
     tag: "Cross-sport",
@@ -92,6 +98,7 @@ const DEEP_DIVE_ACCENTS: Record<string, string> = {
   "/sports/geography-of-erasure": "#4ECDC4",
   "/sports/games": "#a855f7",
   "/sports/valuations": "#f59e0b",
+  "/sports/rivalries": "#d4af37",
   "/top-teams": "#D4537E",
 };
 const DEFAULT_DEEP_DIVE_ACCENT = "#4ECDC4";

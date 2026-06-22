@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
@@ -65,6 +67,7 @@ export default async function FootballClubPage({ params }: Props) {
   const { slug } = await params;
   const club = getClubBySlug(slug);
   if (!club) notFound();
+  const rivalries = getRivalries(club.cur_name, "Football");
 
   const seasons = getSeasonsForClub(slug);
   let mlsSeasons = club.is_mls ? getMlsSeasonsForClub(slug) : [];
@@ -221,6 +224,8 @@ export default async function FootballClubPage({ params }: Props) {
           <Stat label="Most recent season" value={club.last_year ? String(club.last_year) : "-"} />
         </div>
       </section>
+
+      <RivalriesSection rivals={rivalries} />
 
       {club.is_mls ? (
         <MlsClubSeasonsTable seasons={mlsSeasons} />

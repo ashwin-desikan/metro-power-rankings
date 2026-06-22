@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-22",
+    headline: "Sports Rivalries across every league",
+    items: [
+      "New Sports Rivalries hub at /sports/rivalries: a filterable, sortable board of 300+ named rivalries across 13 sports, each linked to its team page and flagged Top Rivalry, two-way or one-way.",
+      "Every team page now carries a Rivalries badge row: its biggest rivals, named (Iron Bowl, El Clásico, The Ashes), marked mutual or one-sided and linked to the rival.",
+      "Covers the Gold Standard leagues, College Football and basketball, cricket and rugby nations, plus AFL, NRL, CFL, WNBA and the Americas football derbies.",
+      "Fixed the World Cup 2026 projected-points column so it never exceeds the maximum a team can still reach from the live group standings.",
+    ],
+  },
+  {
     date: "2026-06-21",
     headline: "Domestic Leagues and F1 hubs, champions tiers, and UI polish",
     items: [

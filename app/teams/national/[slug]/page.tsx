@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -64,6 +66,7 @@ export default async function NationalTeamPage({ params }: Props) {
   const { slug } = await params;
   const team = getNationalTeamBySlug(slug);
   if (!team) notFound();
+  const rivalries = getRivalries(team.cur_name, "Football");
 
   const appearances = getAppearancesForTeam(slug);
   const finals = getFinalsForTeam(slug);
@@ -194,6 +197,8 @@ export default async function NationalTeamPage({ params }: Props) {
           </div>
         )}
       </header>
+
+      <RivalriesSection rivals={rivalries} />
 
       <section
         className="rounded-xl border p-5 mb-6"

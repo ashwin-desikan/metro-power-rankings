@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -76,6 +78,8 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
           )}
         </div>
       </header>
+
+      <RivalriesSection rivals={getRivalries(t.name, "Basketball", "NCAAM")} />
 
       <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 mb-10">
         <Stat k="All-time" v={`${t.w}-${t.l}`} />

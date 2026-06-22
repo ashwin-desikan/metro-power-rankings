@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
+import { getRivalries } from "@/lib/rivalries";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllFranchiseSlugs, getFranchiseBySlug, getFranchiseSeasons, getWnbaFranchiseByTeamName, type WnbaFranchise, type WnbaSeason } from "@/lib/wnba";
@@ -137,6 +139,8 @@ export default async function WnbaFranchisePage({ params }: Props) {
           {f.aka.length > 0 && <div className="text-xs text-[var(--text-dim)] mt-1">Formerly: {f.aka.join(", ")}</div>}
         </div>
       </header>
+
+      <RivalriesSection rivals={getRivalries(f.name, "W Basketball", "WNBA")} />
 
       <section className="flex flex-wrap gap-2.5 mb-8">
         <StatChip label="Titles" value={f.titles} />
