@@ -6,6 +6,8 @@ import { notFound } from "next/navigation";
 import { getAllWClubSlugs, getWClub, wMonogram } from "@/lib/wfootball";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import { getRivalries } from "@/lib/rivalries";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -85,6 +87,8 @@ export default async function WClubPage({ params }: Props) {
           )}
         </div>
       </header>
+
+      <RivalriesSection rivals={getRivalries(club.name, "Women's Football", "WFOOTBALL")} />
 
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
         <Stat label="Titles" value={club.total_titles} />

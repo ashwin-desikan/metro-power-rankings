@@ -27,11 +27,12 @@ CAP = 2
 URL_SEG = {"nfl": "nfl", "nba": "nba", "nhl": "nhl", "mlb": "mlb", "cbb": "cbb",
            "college-football": "cfb", "football": "football", "cricket": "cricket",
            "rugby-union": "rugby-union", "nrl": "nrl", "afl": "afl", "cfl": "cfl",
-           "wnba": "wnba"}
+           "wnba": "wnba", "cbb-w": "cbb-w", "wfootball": "wfootball/clubs"}
 
 LEAGUE_COUNTRY = {"nfl": "United States", "nba": "United States", "nhl": "United States",
                   "mlb": "United States", "cbb": "United States", "college-football": "United States",
-                  "wnba": "United States", "afl": "Australia", "nrl": "Australia", "cfl": "Canada"}
+                  "wnba": "United States", "afl": "Australia", "nrl": "Australia", "cfl": "Canada",
+                  "cbb-w": "United States"}
 
 # Canonical sport names (match lib/sportsCatalog.ts `sport`): college and pro
 # share one sport name.
@@ -39,7 +40,8 @@ SPORT_LABEL = {"nfl": "American Football", "college-football": "American Footbal
                "cfl": "Canadian Football", "nba": "Basketball", "wnba": "Basketball",
                "cbb": "Basketball", "mlb": "Baseball", "nhl": "Hockey",
                "football": "Football", "cricket": "Cricket", "rugby-union": "Rugby Union",
-               "nrl": "Rugby League", "afl": "Aussie Rules"}
+               "nrl": "Rugby League", "afl": "Aussie Rules",
+               "cbb-w": "Women's Basketball", "wfootball": "Women's Football"}
 
 CRICKET_EXCLUDE = {("australia", "westindies")}  # directed (nation, rival) to drop
 
@@ -54,6 +56,8 @@ CBB_ALIAS = {"Carolina": "North Carolina", "NC State": "North Carolina State",
              "UConn": "Connecticut", "Penn": "Pennsylvania", "UMass": "Massachusetts",
              "VCU": "Virginia Commonwealth", "Saint Mary's": "Saint Mary's (CA)",
              "St. John's": "St. John's (NY)", "Ole Miss": "Mississippi"}
+
+WCBB_ALIAS = {"UConn": "Connecticut"}
 
 # Marquee named series the pageview pass misses (their articles aren't "A-B
 # rivalry"). Added both ways (two-sided) and allowed past the cap.
@@ -84,6 +88,9 @@ TOP_RIVALRIES = [
     ("nrl", "South Sydney", "Sydney Roosters"),
     ("cfl", "Saskatchewan Roughriders", "Winnipeg Blue Bombers"),
     ("wnba", "New York Liberty", "Las Vegas Aces"),
+    ("cbb-w", "Connecticut", "Tennessee"), ("cbb-w", "South Carolina", "Connecticut"),
+    ("wfootball", "Arsenal Women", "Tottenham Hotspur Women"), ("wfootball", "Arsenal Women", "Chelsea Women"),
+    ("wfootball", "FC Barcelona Femeni", "Real Madrid Femenino"), ("wfootball", "Portland Thorns FC", "OL Reign"),
     # association football — the fiercest, so more qualify
     ("football", "FC Barcelona", "Real Madrid"), ("football", "Rangers", "Celtic"),
     ("football", "Boca Juniors", "River Plate"), ("football", "Liverpool", "Everton"),
@@ -188,6 +195,36 @@ def data_franchise_resolver(lg):
     return by
 
 
+def wcbb_resolver():
+    """Women's CBB names carry a " (W)" suffix (slug e.g. connecticut-ncaaw).
+    Register both the stripped display and the full name so a page passing
+    either spelling resolves; alias UConn -> Connecticut."""
+    d = jload("wcbb/data.json")
+    teams = d.get("teams") if isinstance(d, dict) else d
+    by = {}
+    for t in teams:
+        if t.get("name") and t.get("slug"):
+            disp = re.sub(r"\s*\(W\)\s*$", "", t["name"]).strip()
+            keys = list(dict.fromkeys([disp, t["name"]]))
+            rec = {"display": disp, "slug": t["slug"], "keys": keys}
+            for k in keys:
+                by[norm(k)] = rec
+    for a, tgt in WCBB_ALIAS.items():
+        if norm(tgt) in by:
+            by[norm(a)] = by[norm(tgt)]
+    return by
+
+
+def wfootball_resolver():
+    d = jload("football/womens-football.json")
+    by = {}
+    for c in d.get("clubs", []):
+        if c.get("name") and c.get("slug"):
+            by[norm(c["name"])] = {"display": c["name"], "slug": c["slug"],
+                                   "keys": [c["name"]], "country": c.get("country")}
+    return by
+
+
 RES = {}
 
 
@@ -202,6 +239,7 @@ def res(lg):
                    "afl": lambda: data_franchise_resolver("afl"),
                    "cfl": lambda: data_franchise_resolver("cfl"),
                    "wnba": lambda: data_franchise_resolver("wnba"),
+                   "cbb-w": wcbb_resolver, "wfootball": wfootball_resolver,
                    "national": national_resolver}[lg]()
     return RES[lg]
 

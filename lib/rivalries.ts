@@ -91,6 +91,7 @@ const HINT_KEY: Record<string, string> = {
   NFL: "nfl", NBA: "nba", NHL: "nhl", MLB: "mlb",
   CBB: "cbb", NCAAM: "cbb", NCAA: "cbb", CFB: "college-football",
   NRL: "nrl", AFL: "afl", CFL: "cfl", WNBA: "wnba",
+  WCBB: "cbb-w", NCAAW: "cbb-w", WFOOTBALL: "wfootball",
 };
 
 function sportKeyFor(sport: string, leagueHint: string): string {

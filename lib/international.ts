@@ -24,6 +24,45 @@ export type TournamentCategory = "WC" | "EUROS" | "COPA" | "AFCON" | "ASIAN"
 
 export type FinalsCategory = "WC" | "CON" | "INTER" | "OTHER" | null;
 
+export type TopGameNationalRow = {
+  year: number;
+  date: string | null;
+  competition: string;
+  round: string;
+  winner_name: string;
+  winner_slug: string | null;
+  loser_name: string;
+  loser_slug: string | null;
+  winner_score: number;
+  loser_score: number;
+  is_draw: boolean;
+  pens: string | null;
+  stadium: string | null;
+  stadium_metro: string | null;
+  stadium_country: string | null;
+  game_score: number;
+};
+
+export type TopGameNationalTeamRow = {
+  year: number;
+  date: string | null;
+  competition: string;
+  round: string;
+  team_name: string;
+  team_slug: string;
+  opp_name: string;
+  opp_slug: string | null;
+  for_score: number;
+  against_score: number;
+  result: string;
+  pens: string | null;
+  is_home: boolean;
+  stadium: string | null;
+  stadium_metro: string | null;
+  stadium_country: string | null;
+  game_score: number;
+};
+
 export type ContinentTournamentCode = "EUROS" | "COPA" | "AFCON" | "ASIAN" | "GOLD" | "OFC";
 
 export type HonorsBreakdown = {
@@ -284,6 +323,9 @@ let _wc2026Cache: WorldCup2026Bundle | null = null;
 let _wc2026Checked = false;
 let _honorsCache: HonorsLeaderboardPayload | null = null;
 let _similarCache: Record<string, SimilarTeamNeighbor[]> | null = null;
+let _tgAllCache: TopGameNationalRow[] | null = null;
+let _tgDecadeCache: Record<string, TopGameNationalRow[]> | null = null;
+let _tgTeamCache: Record<string, TopGameNationalTeamRow[]> | null = null;
 
 function getIndex(): IndexPayload {
   if (!_indexCache) {
@@ -354,6 +396,21 @@ export function getTournamentHub(slug: string): TournamentHub | null {
 
 export function getRankSnapshots(): { elo: string; fifa: string } {
   return getIndex().rank_snapshots;
+}
+
+export function getTopGamesAllTime(): TopGameNationalRow[] {
+  if (!_tgAllCache) _tgAllCache = loadJson<TopGameNationalRow[]>("top-games-all-time.json", []);
+  return _tgAllCache;
+}
+
+export function getTopGamesByDecade(): Record<string, TopGameNationalRow[]> {
+  if (!_tgDecadeCache) _tgDecadeCache = loadJson("top-games-by-decade.json", {});
+  return _tgDecadeCache;
+}
+
+export function getTopGamesForTeam(slug: string): TopGameNationalTeamRow[] {
+  if (!_tgTeamCache) _tgTeamCache = loadJson("top-games-by-team.json", {});
+  return _tgTeamCache[slug] ?? [];
 }
 
 export function getHonorsLeaderboard(): HonorsLeaderboardPayload {

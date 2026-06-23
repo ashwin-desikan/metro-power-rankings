@@ -32,6 +32,11 @@ import { getCfbTopGames, getCfbGamesByDecade, getAllCfbSlugs } from "@/lib/cfb";
 import CfbGames from "@/app/teams/cfb/CfbGames";
 import { getCbbTopGames, getCbbGamesByDecade, getAllCbbSlugs } from "@/lib/cbb";
 import CbbGames from "@/app/teams/cbb/CbbGames";
+import {
+  getTopGamesAllTime as intlTopAll,
+  getTopGamesByDecade as intlTopDec,
+} from "@/lib/international";
+import NationalTopGames from "@/app/teams/national/TopGamesTable";
 
 export const dynamicParams = false;
 
@@ -181,6 +186,11 @@ export default function GamesHubPage() {
   const cbbByDecade = getCbbGamesByDecade();
   const cbbSlugs = getAllCbbSlugs();
   const cbbCards = FEATURED.filter((g) => g.leagueTag === "CBB").sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
+  const intlAllTime = attachVideos("INTFB", intlTopAll().map((r) => ({ ...r, winner_canonical: r.winner_name })));
+  const intlByDecade = Object.fromEntries(
+    Object.entries(intlTopDec()).map(([k, v]) => [k, attachVideos("INTFB", v.map((r) => ({ ...r, winner_canonical: r.winner_name })))]),
+  );
+  const intlCards = rankedCards("INTFB", rankMapOf(intlAllTime));
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -227,6 +237,7 @@ export default function GamesHubPage() {
       <HubNav
         items={[
           { label: "How it works", href: "#how" },
+          { label: "International Football", href: "#intfb" },
           { label: "NFL", href: "#nfl" },
           { label: "NBA", href: "#nba" },
           { label: "MLB", href: "#mlb" },
@@ -253,6 +264,19 @@ export default function GamesHubPage() {
           </Link>
           .
         </p>
+      </section>
+
+      {/* International Football */}
+      <section id="intfb" className="mb-12 scroll-mt-24">
+        <div className="flex items-baseline justify-between gap-3 mb-3 flex-wrap">
+          <div>
+            <h2 className="text-xl font-bold tracking-tight">International Football</h2>
+            <p className="text-sm text-[var(--text-muted)] max-w-3xl">The greatest men&apos;s international tournament matches, ranked by Game Score, with the competition, stage and venue of each. Filter to a decade.</p>
+          </div>
+          <a href="/teams/national#top-games" className="text-xs text-[var(--accent)] hover:underline whitespace-nowrap">Full International hub &rarr;</a>
+        </div>
+        <FeaturedClips games={intlCards} />
+        <NationalTopGames allTime={intlAllTime} byDecade={intlByDecade} />
       </section>
 
       {/* NFL */}

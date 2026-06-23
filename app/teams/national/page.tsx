@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import HubNav from "@/app/teams/HubNav";
+import NationalTopGames from "@/app/teams/national/TopGamesTable";
 import Link from "next/link";
 import {
   getAllNationalTeams,
   getAllTournamentHubs,
   getWorldCup2026,
   getRankSnapshots,
+  getTopGamesAllTime,
+  getTopGamesByDecade,
 } from "@/lib/international";
 import {
   centroidForTeam,
@@ -98,6 +101,7 @@ export default async function NationalIndexPage() {
         items={[
           { label: "Tournament Hubs", href: "#tournaments" },
           { label: "National Teams", href: "#national-teams" },
+          { label: "Top Games", href: "#top-games" },
           { label: "Methodology", href: "#methodology" },
         ]}
       />
@@ -132,6 +136,11 @@ export default async function NationalIndexPage() {
       <section className="mb-6">
         <h2 id="national-teams" className="text-lg font-semibold mb-3">National teams</h2>
         <NationalIndexClient teams={clientTeams} snapshots={snapshots} />
+      </section>
+
+      <section id="top-games" className="mb-10">
+        <h2 className="text-lg font-semibold mb-3">Greatest games</h2>
+        <NationalTopGames allTime={getTopGamesAllTime()} byDecade={getTopGamesByDecade()} />
       </section>
 
       <section

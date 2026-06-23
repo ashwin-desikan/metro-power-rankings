@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-23",
+    headline: "Rivalries reach women's basketball and football",
+    items: [
+      "New International Football greatest games: a top-25 board with decade filter on the international hub, a top-10 list on every national team page, and the section leading the cross-sport Greatest Games page.",
+      "Women's College Basketball team pages now carry the Rivalries row, with UConn–Tennessee and UConn–South Carolina flagged Top Rivalry alongside Stanford, Notre Dame and the SEC ties.",
+      "Women's Football club pages gain rivalries too: the North London Derby, El Clásico, the Manchester, Merseyside and Madrid derbies, and the NWSL's Cascadia rivalry.",
+      "Both new sports join the /sports/rivalries board, sortable and filterable alongside the existing thirteen.",
+    ],
+  },
+  {
     date: "2026-06-22",
     headline: "Sports Rivalries across every league",
     items: [

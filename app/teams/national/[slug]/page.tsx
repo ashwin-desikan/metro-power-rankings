@@ -3,6 +3,7 @@ import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import TeamTopGames from "@/app/teams/national/TeamTopGames";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -10,6 +11,7 @@ import {
   getNationalTeamBySlug,
   getAppearancesForTeam,
   getFinalsForTeam,
+  getTopGamesForTeam,
   getRankSnapshots,
   getWorldCup2026StageForTeam,
   getSimilarTeamsForTeam,
@@ -70,6 +72,7 @@ export default async function NationalTeamPage({ params }: Props) {
 
   const appearances = getAppearancesForTeam(slug);
   const finals = getFinalsForTeam(slug);
+  const topGames = getTopGamesForTeam(slug);
   const snapshots = getRankSnapshots();
   const similar = getSimilarTeamsForTeam(slug);
 
@@ -199,6 +202,8 @@ export default async function NationalTeamPage({ params }: Props) {
       </header>
 
       <RivalriesSection rivals={rivalries} />
+
+      <TeamTopGames rows={topGames} teamName={team.cur_name ?? team.name} />
 
       <section
         className="rounded-xl border p-5 mb-6"

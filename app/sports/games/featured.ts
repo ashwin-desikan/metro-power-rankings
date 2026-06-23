@@ -22,6 +22,10 @@ export type FeaturedGame = {
 };
 
 export const FEATURED: FeaturedGame[] = [
+  // International Football (men's; clips supplied by Ashwin)
+  { leagueTag: "INTFB", videoId: "2qCZe6Ki-zk", title: "1954 World Cup Final", matchup: "West Germany 3-2 Hungary", note: "The Miracle of Bern.", clipLabel: "Watch", href: "https://www.youtube.com/watch?v=2qCZe6Ki-zk", hrefLabel: "YouTube", match: { date: "1954-07-04", winnerCanonical: "Germany" } },
+  { leagueTag: "INTFB", videoId: "VPQvekloS8U", title: "1966 World Cup Final", matchup: "England 4-2 West Germany", note: "They think it is all over.", clipLabel: "Watch", href: "https://www.youtube.com/watch?v=VPQvekloS8U", hrefLabel: "YouTube", match: { date: "1966-07-30", winnerCanonical: "England" } },
+  { leagueTag: "INTFB", videoId: "zhEWqfP6V_w", title: "2022 World Cup Final", matchup: "Argentina 3-3 France", note: "Messi crowned; decided on penalties.", clipLabel: "Watch", href: "https://www.youtube.com/watch?v=zhEWqfP6V_w", hrefLabel: "YouTube", match: { date: "2022-12-18", winnerCanonical: "Argentina" } },
   // NFL
   {
     leagueTag: "NFL",

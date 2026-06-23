@@ -175,18 +175,18 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                       </span>
                     )}
                   </div>
-                  {g.arena_as_of ? (
+                  {(g.arena_as_of || g.arena_canonical) ? (
                     <div
                       className="text-[10px] mt-0.5 truncate font-medium tracking-wide"
                       style={{
                         color: "var(--text-dim)",
                         fontFamily: "'JetBrains Mono', monospace",
                       }}
-                      title={[g.arena_as_of, g.arena_metro, g.arena_state]
+                      title={[(g.arena_as_of || g.arena_canonical), g.arena_metro, g.arena_state]
                         .filter(Boolean)
                         .join(" — ")}
                     >
-                      {g.arena_as_of}
+                      {g.arena_as_of || g.arena_canonical}
                       {g.arena_metro ? (
                         <span className="ml-1 opacity-80">
                           · {g.arena_metro}

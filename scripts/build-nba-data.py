@@ -795,6 +795,7 @@ def read_top_games(wb):
                     "loser_pts": pa if wl == "W" else pf,
                     "ot": ot_flag,
                     "ot_count": ot_count,
+                    "arena_as_of": arena_as_of,
                     "arena_canonical": arena_canonical,
                     "arena_metro": arena_metro,
                     "arena_state": arena_state,

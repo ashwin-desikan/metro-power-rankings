@@ -797,8 +797,8 @@ export default async function FranchisePage({ params }: Props) {
                         {g.ot && <span className="ml-1 text-amber-400 text-[10px] font-bold">{g.ot_count && g.ot_count > 1 ? `${g.ot_count}OT` : "OT"}</span>}
                       </td>
                       <td className="py-2 pr-3 text-[var(--text-dim)] text-[10px]">
-                        {g.arena_canonical || g.arena_as_of}
-                        {g.arena_metro ? ` · ${g.arena_metro}` : ""}
+                        {g.arena_as_of || g.arena_canonical}
+                        {g.arena_metro ? ` · ${g.arena_metro}${g.arena_state ? `, ${g.arena_state}` : ""}` : ""}
                       </td>
                       <td className="py-2 pr-5 text-right font-semibold">
                         {g.game_score != null ? g.game_score.toFixed(3) : "—"}

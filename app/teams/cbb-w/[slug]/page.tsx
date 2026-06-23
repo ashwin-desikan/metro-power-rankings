@@ -5,6 +5,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllWcbbSlugs, getWcbbTeamBySlug, getWcbbTournament, wcbbMonogram, type WcbbTourYear } from "@/lib/wcbb";
+import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import { getRivalries } from "@/lib/rivalries";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -74,6 +76,8 @@ export default async function WcbbTeamPage({ params }: { params: Promise<{ slug:
           </p>
         </div>
       </header>
+
+      <RivalriesSection rivals={getRivalries(t.name, "Women's Basketball", "WCBB")} />
 
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
         <Stat label="National titles" value={t.titles} gold />
