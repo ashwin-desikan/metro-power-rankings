@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { notFound } from "next/navigation";
 import {
   getAllLeagueHubSlugs,
@@ -215,8 +216,8 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
                 {finals.map((c) => (
                   <tr key={`${c.year}-${c.champion}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1.5 px-3 tabular-nums text-[var(--text-muted)]">{c.year}</td>
-                    <td className="py-1.5 px-3"><span className="inline-flex items-center gap-1.5"><ColorBall slug={c.champion_slug ?? ""} name={c.champion} />{c.champion_slug ? <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline font-medium">{c.champion}</Link> : <span className="font-medium">{c.champion}</span>}</span></td>
-                    <td className="py-1.5 px-3 text-[var(--text-muted)]">{c.runner_up ? <span className="inline-flex items-center gap-1.5"><ColorBall slug={c.runner_up_slug ?? ""} name={c.runner_up} />{c.runner_up_slug ? <Link href={`/teams/football/${c.runner_up_slug}`} className="hover:underline">{c.runner_up}</Link> : <span>{c.runner_up}</span>}</span> : <span className="text-[var(--text-dim)]">—</span>}</td>
+                    <td className="py-1.5 px-3"><span className="inline-flex items-center gap-1.5"><TeamCrest name={c.champion} size={22} fallback={<ColorBall slug={c.champion_slug ?? ""} name={c.champion} />} />{c.champion_slug ? <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline font-medium">{c.champion}</Link> : <span className="font-medium">{c.champion}</span>}</span></td>
+                    <td className="py-1.5 px-3 text-[var(--text-muted)]">{c.runner_up ? <span className="inline-flex items-center gap-1.5"><TeamCrest name={c.runner_up} size={22} fallback={<ColorBall slug={c.runner_up_slug ?? ""} name={c.runner_up} />} />{c.runner_up_slug ? <Link href={`/teams/football/${c.runner_up_slug}`} className="hover:underline">{c.runner_up}</Link> : <span>{c.runner_up}</span>}</span> : <span className="text-[var(--text-dim)]">—</span>}</td>
                   </tr>
                 ))}
               </tbody>
@@ -320,7 +321,7 @@ function CurrentStandings({
                 <td className="py-1.5 tabular-nums">{s.place ?? "-"}</td>
                 <td className="py-1.5">
                   <span className="inline-flex items-center gap-2">
-                    <ColorBall slug={s.slug} name={s.cur_name} />
+                    <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug} name={s.cur_name} />} />
                     <Link href={`/teams/football/${s.slug}`} className="hover:underline font-medium">
                       {s.cur_name}
                     </Link>
@@ -477,7 +478,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
             {topClubs.slice(0, 12).map((c) => (
               <li key={c.slug} className="flex items-center justify-between border-b py-1" style={{ borderColor: "var(--border)" }}>
                 <span className="inline-flex items-center gap-2">
-                  <ColorBall slug={c.slug} name={c.name} />
+                  <TeamCrest name={c.name} size={22} fallback={<ColorBall slug={c.slug} name={c.name} />} />
                   <Link href={`/teams/football/${c.slug}`} className="hover:underline">{c.name}</Link>
                 </span>
                 <span className="text-[var(--text-muted)] tabular-nums">
@@ -524,7 +525,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
                       <td className="py-1.5 tabular-nums">{ch.year ?? "-"}</td>
                       <td className="py-1.5">
                         <span className="inline-flex items-center gap-2">
-                          <ColorBall slug={ch.champion_slug} name={ch.champion} />
+                          <TeamCrest name={ch.champion} size={22} fallback={<ColorBall slug={ch.champion_slug} name={ch.champion} />} />
                           <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline font-medium">
                             {ch.champion}
                           </Link>

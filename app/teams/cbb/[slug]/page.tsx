@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
@@ -57,7 +58,7 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
       </nav>
 
       <header className="flex gap-5 items-start mb-8">
-        <div className="rounded-2xl grid place-items-center font-extrabold flex-shrink-0 text-xl text-white" style={{ background: t.color, width: 72, height: 72, boxShadow: `inset 0 0 0 3px ${t.color2}` }} aria-hidden>{cbbMonogram(t.name)}</div>
+        <TeamCrest name={t.name} size={72} fallback={<div className="rounded-2xl grid place-items-center font-extrabold flex-shrink-0 text-xl text-white" style={{ background: t.color, width: 72, height: 72, boxShadow: `inset 0 0 0 3px ${t.color2}` }} aria-hidden>{cbbMonogram(t.name)}</div>} />
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-1">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">{t.name}</h1>

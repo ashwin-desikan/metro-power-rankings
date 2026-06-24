@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { fgFor, type FootyFranchise, type FootySeason, type FootyGrandFinal } from "@/lib/_footy";
 import { TOP_TEAMS, topTeamAnchorId } from "@/lib/topTeams";
 import type { FootyStandingRow } from "@/lib/_footyStandings";
@@ -60,9 +61,9 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
       </div>
 
       <header className="rounded-2xl border p-7 flex flex-col sm:flex-row gap-6 items-start" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-        <div className="rounded-full grid place-items-center font-extrabold flex-shrink-0" style={{ background: f.color, color: fg, width: 80, height: 80, fontSize: 22, boxShadow: `inset 0 0 0 3px ${f.color2}` }} aria-hidden>
+        <TeamCrest name={f.name} size={80} fallback={<div className="rounded-full grid place-items-center font-extrabold flex-shrink-0" style={{ background: f.color, color: fg, width: 80, height: 80, fontSize: 22, boxShadow: `inset 0 0 0 3px ${f.color2}` }} aria-hidden>
           {f.abbr}
-        </div>
+        </div>} />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-3 flex-wrap">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{f.name}</h1>

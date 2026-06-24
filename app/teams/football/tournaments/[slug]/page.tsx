@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { notFound } from "next/navigation";
 import {
   getAllEuropeanTournamentHubSlugs,
@@ -221,7 +222,7 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
                   <td className="py-1.5 px-2 text-xs text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{c.competition ?? "—"}</td>
                   <td className="py-1.5 px-2">
                     <span className="inline-flex items-center gap-1.5">
-                      <ColorBall slug={c.slug} name={c.cur_name} />
+                      <TeamCrest name={c.cur_name} size={18} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
                       {c.slug ? (
                         <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
                           {c.cur_name}
@@ -234,7 +235,7 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
                   <td className="py-1.5 px-2 text-[var(--text-muted)]">
                     {runnerUp ? (
                       <span className="inline-flex items-center gap-1.5">
-                      <ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />
+                      <TeamCrest name={runnerUp.cur_name} size={18} fallback={<ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />} />
                       {runnerUp.slug ? (
                         <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
                           {runnerUp.cur_name}

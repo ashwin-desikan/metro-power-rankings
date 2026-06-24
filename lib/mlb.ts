@@ -393,8 +393,9 @@ export function monogramFor(slug: string): { bg: string; fg: string; mono: strin
 // public/data/mlb/logos/{slug}.svg once we ship the fetch script; until
 // then returns null so the page falls back to the colored monogram.
 export function logoUrlFor(slug: string): string | null {
-  const localPath = join(process.cwd(), "public", "data", "mlb", "logos", `${slug}.svg`);
-  if (existsSync(localPath)) return `/data/mlb/logos/${slug}.svg`;
+  const dir = join(process.cwd(), "public", "data", "mlb", "logos");
+  if (existsSync(join(dir, `${slug}.svg`))) return `/data/mlb/logos/${slug}.svg`;
+  if (existsSync(join(dir, `${slug}.png`))) return `/data/mlb/logos/${slug}.png`;
   return null;
 }
 

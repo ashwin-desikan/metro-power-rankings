@@ -378,7 +378,9 @@ export const MONOGRAM_BY_SLUG: Record<string, { bg: string; fg: string; mono: st
 };
 
 export function logoUrlFor(slug: string): string | null {
-  // Logos are not bundled yet. Return null and fall through to monogram.
+  const dir = join(process.cwd(), "public", "data", "nhl", "logos");
+  if (existsSync(join(dir, `${slug}.svg`))) return `/data/nhl/logos/${slug}.svg`;
+  if (existsSync(join(dir, `${slug}.png`))) return `/data/nhl/logos/${slug}.png`;
   return null;
 }
 

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { monogramForFootball } from "@/lib/football-colors";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { ContinentalSection } from "@/lib/football";
 
 type Row = {
@@ -27,7 +28,7 @@ function ClubCell({ name, slug }: { name: string | null; slug: string | null }) 
   if (!name) return <span className="text-[var(--text-dim)]">—</span>;
   return (
     <span className="inline-flex items-center gap-1.5">
-      <ColorBall slug={slug} name={name} />
+      <TeamCrest name={name} size={18} fallback={<ColorBall slug={slug} name={name} />} />
       {slug ? <Link href={`/teams/football/${slug}`} className="hover:underline font-medium">{name}</Link> : <span className="font-medium">{name}</span>}
     </span>
   );

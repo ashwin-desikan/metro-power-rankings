@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { monogramForFootball } from "@/lib/football-colors";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 
 // MLS all-time table: every franchise by honors, including defunct clubs.
 // A Current/All filter toggles defunct clubs; defunct clubs are tagged.
@@ -63,7 +64,7 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
               <tr key={r.cur_name} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1.5 px-3">
                   <span className="inline-flex items-center gap-1.5">
-                    <ColorBall slug={r.slug} name={r.cur_name} />
+                    <TeamCrest name={r.cur_name} size={18} fallback={<ColorBall slug={r.slug} name={r.cur_name} />} />
                     {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:underline font-medium">{r.cur_name}</Link> : <span className="font-medium">{r.cur_name}</span>}
                     {r.defunct && <span className="text-[9px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>Defunct</span>}
                   </span>

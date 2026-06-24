@@ -456,8 +456,9 @@ export function monogramFor(slug: string): { bg: string; fg: string; mono: strin
 }
 
 export function logoUrlFor(slug: string): string | null {
-  const localPath = join(process.cwd(), "public", "data", "nba", "logos", `${slug}.svg`);
-  if (existsSync(localPath)) return `/data/nba/logos/${slug}.svg`;
+  const dir = join(process.cwd(), "public", "data", "nba", "logos");
+  if (existsSync(join(dir, `${slug}.svg`))) return `/data/nba/logos/${slug}.svg`;
+  if (existsSync(join(dir, `${slug}.png`))) return `/data/nba/logos/${slug}.png`;
   return null;
 }
 

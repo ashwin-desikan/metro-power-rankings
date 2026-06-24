@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
@@ -127,7 +128,7 @@ export default async function IplFranchisePage({ params }: Props) {
 
       {/* Header */}
       <header className="flex gap-5 items-start mb-8">
-        <BigMonogram f={f} size={72} />
+        <TeamCrest name={f.name} size={72} fallback={<BigMonogram f={f} size={72} />} />
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-1">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">{f.name}</h1>

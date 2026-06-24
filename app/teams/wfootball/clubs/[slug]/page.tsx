@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
@@ -68,7 +69,7 @@ export default async function WClubPage({ params }: Props) {
       </nav>
 
       <header className="mb-6 flex items-center gap-4">
-        <span className="inline-flex items-center justify-center rounded-xl font-bold text-lg w-14 h-14 shrink-0" style={{ background: mono.bg, color: mono.fg }} aria-hidden>{mono.mono}</span>
+        <TeamCrest name={club.name} size={56} fallback={<span className="inline-flex items-center justify-center rounded-xl font-bold text-lg w-14 h-14 shrink-0" style={{ background: mono.bg, color: mono.fg }} aria-hidden>{mono.mono}</span>} />
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">{club.name}</h1>
         <ChampionBadge items={getCurrentChampionships(club.name, "W Football")} />

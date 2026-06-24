@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-24",
-    headline: "Play & Learn, the Rules Labs, and the Games arcade",
+    headline: "Club crests sitewide, plus Play & Learn and the arcade",
     items: [
-      "New /play hub for younger fans: eight Trivia games plus a Be the Ref set teaching offside, LBW and the strike zone through real football, cricket and baseball situations.",
-      "Three adults Rules Labs (football, cricket, baseball), each with a kids/adults toggle: an interactive offside, LBW or strike-zone lab, the key laws explained, real officiating calls, and how the rules changed.",
-      "New Games arcade: Beat the Model scores your World Cup 2026 call against the simulator's odds, plus Metro Higher or Lower, a daily Metro Globle on a world map, and daily Metro and Sports immaculate grids.",
-      "Navigation: a Play menu (Kids Games and Games), Methodology folded under About, and Rules Lab links on the international and club football pages.",
+      "Team pages now show real club crests instead of monograms, across English and European football, MLS, the US majors, the AFL, NRL, IPL, WNBA, women's football and college sport, with a monogram fallback.",
+      "Crests render on club pages and on the league, tournament and franchise tables, and the NBA, MLB and NHL logos now resolve alongside the NFL.",
+      "New /play hub: kids Trivia and Be the Ref games, plus three adults Rules Labs for football, cricket and baseball that teach each sport's rules through real moments.",
+      "New Games arcade: Beat the Model against the World Cup simulator, Metro Higher or Lower, a daily Metro Globle map, and daily Metro and Sports immaculate grids.",
     ],
   },
   {

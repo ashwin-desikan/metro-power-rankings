@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
@@ -122,7 +123,7 @@ export default async function WnbaFranchisePage({ params }: Props) {
       </nav>
 
       <header className="flex items-start gap-4 mb-6 flex-wrap">
-        <span className="inline-flex items-center justify-center font-bold rounded-xl flex-shrink-0" style={{ background: f.color, color: "#fff", width: 64, height: 64, fontSize: f.abbr.length > 3 ? 18 : 22, letterSpacing: "0.04em", opacity: f.defunct ? 0.7 : 1 }} aria-hidden>{f.abbr}</span>
+        <TeamCrest name={f.name} size={64} fallback={<span className="inline-flex items-center justify-center font-bold rounded-xl flex-shrink-0" style={{ background: f.color, color: "#fff", width: 64, height: 64, fontSize: f.abbr.length > 3 ? 18 : 22, letterSpacing: "0.04em", opacity: f.defunct ? 0.7 : 1 }} aria-hidden>{f.abbr}</span>} />
         <div className="min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <h1 className="text-3xl font-bold tracking-tight">{f.name}</h1>

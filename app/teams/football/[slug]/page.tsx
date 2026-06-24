@@ -7,6 +7,7 @@ import Link from "next/link";
 import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
 import TopTeamChip from "@/app/teams/TopTeamChip";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { notFound } from "next/navigation";
 import {
   getAllClubSlugs,
@@ -138,7 +139,7 @@ export default async function FootballClubPage({ params }: Props) {
 
       <header className="mb-6">
         <div className="flex items-center gap-3">
-          <ColorBall slug={club.slug} name={club.cur_name} size={40} fontSize={14} />
+          <TeamCrest name={club.cur_name} size={40} fallback={<ColorBall slug={club.slug} name={club.cur_name} size={40} fontSize={14} />} />
           <h1 className="text-3xl font-semibold tracking-tight">{club.cur_name}</h1>
         <ChampionBadge items={getCurrentChampionships(club.cur_name, "Football")} />
           <ValuationChip league="football" slug={club.slug} className="ml-1" />
