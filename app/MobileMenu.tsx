@@ -60,6 +60,8 @@ const ITEMS: Item[] = [
 
   { href: '/studio', label: 'Studio', hint: 'A martech reference implementation', group: 'Studio' },
 
+  { href: '/play', label: '🎮 Play & Learn', hint: 'Free learning games for kids', group: 'Play' },
+
   { href: '/methodology', label: 'Methodology' },
   { href: '/about', label: 'About' },
   { href: '/updates', label: 'Release notes' },

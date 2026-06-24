@@ -221,6 +221,10 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="https://citizenofnowhere.substack.com" external title="On Substack" />
       </Dropdown>
 
+      <Link href="/play" className="text-sm hover:text-[var(--accent)] transition-colors">
+        Play
+      </Link>
+
       <Link href="/methodology" className="text-sm hover:text-[var(--accent)] transition-colors">
         Methodology
       </Link>
