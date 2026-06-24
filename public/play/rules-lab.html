@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Rules Lab — /play prototype</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel-2:#1c2330; --line:#2a3340;
+    --ink:#e6edf3; --muted:#9aa7b4; --accent:#4ea1ff; --gold:#e6b34a;
+    --onside:#36c46a; --offside:#ff5d5d; --att:#4ea1ff; --def:#f0f3f6; --ball:#e6b34a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1060px;margin:0 auto;padding:24px 20px 72px;}
+  a{color:var(--accent);text-decoration:none;}
+  .crumb{color:var(--muted);font-size:12.5px;letter-spacing:.04em;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .crumb b{color:var(--ink);font-weight:600;}
+  .crumb .kidlink{font-weight:600;color:var(--gold);}
+  .kicker{color:var(--accent);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:14px;}
+  h1{font-size:30px;line-height:1.12;margin:6px 0 6px;letter-spacing:-.02em;}
+  .lede{color:var(--muted);max-width:70ch;margin:0 0 18px;}
+  /* mode toggle */
+  .modebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 18px;}
+  .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;}
+  .seg button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:13px;
+    padding:7px 16px;border-radius:999px;cursor:pointer;letter-spacing:.02em;}
+  .seg button.on{background:var(--accent);color:#06121f;}
+  .modehint{color:var(--muted);font-size:13px;}
+  /* tabs */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:6px 0 22px;}
+  .tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);
+    font-weight:600;font-size:14px;padding:10px 12px;cursor:pointer;}
+  .tab:hover{color:var(--ink);}
+  .tab.on{color:var(--ink);border-bottom-color:var(--accent);}
+  .tab .n{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;
+    background:var(--panel-2);font-size:11px;margin-right:7px;color:var(--muted);}
+  .tab.on .n{background:var(--accent);color:#06121f;}
+  section.game{display:none;}
+  section.game.on{display:block;}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start;}
+  @media(max-width:880px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;}
+  .card+.card{margin-top:16px;}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:2px 0 12px;}
+  h3{font-size:18px;margin:0 0 6px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);max-width:66ch;}
+  svg.pitch{width:100%;height:auto;display:block;touch-action:none;user-select:none;border-radius:10px;}
+  .verdict{display:flex;align-items:center;gap:12px;margin-top:12px;}
+  .tag{font-weight:800;font-size:19px;letter-spacing:.02em;padding:6px 14px;border-radius:999px;}
+  .tag.onside{background:rgba(54,196,106,.15);color:var(--onside);border:1px solid rgba(54,196,106,.4);}
+  .tag.offside{background:rgba(255,93,93,.13);color:var(--offside);border:1px solid rgba(255,93,93,.4);}
+  .why{color:var(--muted);font-size:14px;flex:1;}.why b{color:var(--ink);font-weight:600;}
+  .eras{display:flex;flex-direction:column;gap:8px;}
+  .era-btn{text-align:left;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:10px 12px;cursor:pointer;transition:border-color .15s,background .15s;}
+  .era-btn:hover{border-color:#3a4654;}
+  .era-btn.active{border-color:var(--accent);background:rgba(78,161,255,.10);}
+  .era-btn .yr{font-weight:700;font-size:14px;}
+  .era-btn .rule{color:var(--muted);font-size:12.5px;margin-top:2px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);font-size:13px;
+    padding:7px 11px;border-radius:999px;cursor:pointer;}
+  .chip:hover{border-color:var(--accent);}
+  .chip.real{border-color:rgba(230,179,74,.5);}
+  .chip.real::before{content:"●";color:var(--gold);font-size:9px;margin-right:6px;vertical-align:1px;}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+  .involve{margin-top:10px;font-size:13px;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .involve b{color:var(--ink);}
+  .moment{margin-top:10px;font-size:13.5px;color:var(--ink);background:rgba(230,179,74,.08);border:1px solid rgba(230,179,74,.35);border-radius:10px;padding:11px 13px;display:none;}
+  .moment.show{display:block;}
+  .moment .m-t{font-weight:700;}
+  .moment .m-src{color:var(--muted);font-size:12px;margin-top:5px;}
+  .soul{margin-top:18px;border-left:2px solid var(--gold);padding:2px 0 2px 16px;}
+  .soul p{color:var(--muted);font-size:14px;margin:0 0 10px;}.soul b{color:var(--ink);font-weight:600;}
+  .note{font-size:12px;color:var(--muted);margin-top:12px;}
+  /* laws */
+  .laws{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+  .law{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer;}
+  .law:hover{border-color:var(--accent);}
+  .law.on{border-color:var(--accent);background:rgba(78,161,255,.10);}
+  .law .ln{font-size:11px;color:var(--muted);}
+  .law .lt{font-weight:600;font-size:13.5px;margin-top:2px;}
+  .lawbody h3{margin-bottom:8px;}
+  .lawbody .txt{color:var(--ink);}
+  .xlink{margin-top:12px;font-size:13px;color:var(--muted);}
+  .xlink a{font-weight:600;}
+  /* decisions */
+  .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .opt{flex:1;min-width:140px;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:11px;cursor:pointer;font-size:14px;text-align:left;}
+  .opt:hover{border-color:var(--accent);}
+  .opt.right{border-color:var(--onside);background:rgba(54,196,106,.12);}
+  .opt.wrong{border-color:var(--offside);background:rgba(255,93,93,.12);}
+  .ruling{margin-top:12px;font-size:14px;color:var(--muted);display:none;}
+  .ruling.show{display:block;}.ruling b{color:var(--ink);}
+  .navbtn{display:inline-flex;gap:8px;margin-top:14px;}
+  .navbtn button{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;}
+  .navbtn button:hover{border-color:var(--accent);}
+  /* penalties */
+  .barrow{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px;}
+  .barrow .lab{width:130px;color:var(--ink);}
+  .bartrack{flex:1;height:14px;background:var(--panel-2);border-radius:999px;overflow:hidden;border:1px solid var(--line);}
+  .barfill{height:100%;background:linear-gradient(90deg,#3a7bd5,#36c46a);}
+  .barrow .v{width:48px;text-align:right;color:var(--muted);font-size:13px;}
+  /* timeline */
+  .tl{position:relative;margin-top:8px;padding-left:22px;}
+  .tl::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:var(--line);}
+  .tlitem{position:relative;padding:0 0 18px 6px;cursor:pointer;}
+  .tlitem::before{content:"";position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;
+    background:var(--panel);border:2px solid var(--accent);}
+  .tlitem.on::before{background:var(--accent);}
+  .tlitem .yr{font-weight:700;font-size:14px;color:var(--gold);}
+  .tlitem .ti{font-weight:600;}
+  .tldetail{color:var(--muted);font-size:13.5px;margin-top:4px;display:none;}
+  .tlitem.on .tldetail{display:block;}
+  footer{margin-top:34px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;}
+  footer b{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><span><a href="/">Citizen of Nowhere</a> · <a href="/play">Play &amp; Learn</a> · <b>The Rules Lab</b></span>
+    <a class="kidlink" href="/play/games/offside-or-onside.html">Younger fans? Play “Offside or Onside?” →</a></div>
+  <div class="kicker">Rules Lab · Football</div>
+  <h1>The Rules Lab</h1>
+  <p class="lede" id="lede"></p>
+
+  <div class="modebar">
+    <div class="seg" id="modeSeg">
+      <button data-mode="kids">Kids</button>
+      <button data-mode="adults">Adults</button>
+    </div>
+    <span class="modehint" id="modehint"></span>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <!-- 1. OFFSIDE LAB -->
+  <section class="game" data-game="offside">
+    <div class="grid">
+      <div class="card" style="padding:12px;">
+        <svg class="pitch" id="pitch" viewBox="0 0 720 460" aria-label="Attacking half, top-down">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#218049"/><stop offset="1" stop-color="#1a6b3b"/></linearGradient></defs>
+          <rect width="720" height="460" fill="url(#g)"/>
+          <g opacity="0.08" fill="#fff"><rect x="0" width="120" height="460"/><rect x="240" width="120" height="460"/><rect x="480" width="120" height="460"/></g>
+          <g stroke="#dfe9e2" stroke-width="2" fill="none" opacity="0.85">
+            <line x1="20" y1="20" x2="20" y2="440"/>
+            <rect x="600" y="80" width="100" height="300"/>
+            <rect x="672" y="170" width="28" height="120"/>
+            <line x1="700" y1="180" x2="700" y2="280" stroke-width="5"/>
+            <circle cx="630" cy="230" r="2.5" fill="#dfe9e2" stroke="none"/>
+          </g>
+          <text x="28" y="36" fill="#dfe9e2" opacity="0.7" font-size="11">HALFWAY</text>
+          <text x="612" y="72" fill="#dfe9e2" opacity="0.7" font-size="11">GOAL →</text>
+          <g id="offsideLine"></g>
+          <g id="tokens"></g>
+        </svg>
+        <div class="verdict"><span id="tag" class="tag onside">ONSIDE</span><span id="why" class="why"></span></div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--att)"></i>Receiver</span>
+          <span><i class="dot" style="background:var(--ball)"></i>Ball / passer</span>
+          <span><i class="dot" style="background:var(--def)"></i>Defenders</span>
+          <span><i class="dot" style="background:var(--gold)"></i>Offside line</span>
+        </div>
+        <div class="involve" id="involve"></div>
+        <div class="moment" id="moment"></div>
+      </div>
+      <div>
+        <div class="card"><h2>Rewrite the law</h2><div class="eras" id="eras"></div></div>
+        <div class="card"><h2>Scenarios</h2><div class="chips" id="presets"></div>
+          <p class="note" id="offNote"></p></div>
+      </div>
+    </div>
+    <div class="soul" id="offSoul"></div>
+  </section>
+
+  <!-- 2. LAWS EXPLORER -->
+  <section class="game" data-game="laws">
+    <div class="grid">
+      <div class="card"><h2>The 17 Laws</h2><div class="laws" id="lawList"></div></div>
+      <div class="card lawbody" id="lawBody"></div>
+    </div>
+  </section>
+
+  <!-- 3. YOU MAKE THE CALL -->
+  <section class="game" data-game="decisions">
+    <div class="card" id="decCard"></div>
+  </section>
+
+  <!-- 4. PENALTY GEOGRAPHY -->
+  <section class="game" data-game="penalties">
+    <div class="card" id="penCard"></div>
+  </section>
+
+  <!-- 5. RULES THAT CHANGED -->
+  <section class="game" data-game="timeline">
+    <div class="card" id="tlCard"></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+"use strict";
+/* ============ GLOBAL STATE ============ */
+const APP = { mode: "adults", game: "offside" };
+
+const COPY = {
+  lede: {
+    kids: "Every sport has a most-confusing rule. In football it is offside. Play with it below, learn the 17 Laws, judge real moments from history, and see how the rules have changed the game.",
+    adults: "Offside is a line of belonging: it decides who may score from where. Explore the Laws, re-adjudicate real moments, and trace how each rule change reshaped the sport. Every game here is a door into the project's data."
+  },
+  modehint: {
+    kids: "Kids mode: plain language, simple scenarios.",
+    adults: "Adults mode: full IFAB phrasing and historical nuance."
+  }
+};
+
+const GAMES = [
+  { id:"offside",    label:"Offside Lab" },
+  { id:"laws",       label:"Laws Explorer" },
+  { id:"decisions",  label:"You Make the Call" },
+  { id:"penalties",  label:"Penalty Geography" },
+  { id:"timeline",   label:"Rules That Changed" }
+];
+
+/* ============ TAB + MODE WIRING ============ */
+const tabsEl = document.getElementById("tabs");
+GAMES.forEach((g,i)=>{
+  const b=document.createElement("button");
+  b.className="tab"+(g.id===APP.game?" on":"");
+  b.dataset.game=g.id;
+  b.innerHTML=`<span class="n">${i+1}</span>${g.label}`;
+  b.addEventListener("click",()=>switchGame(g.id));
+  tabsEl.appendChild(b);
+});
+function switchGame(id){
+  APP.game=id;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.game===id));
+  document.querySelectorAll("section.game").forEach(s=>s.classList.toggle("on",s.dataset.game===id));
+}
+const modeSeg=document.getElementById("modeSeg");
+modeSeg.querySelectorAll("button").forEach(b=>{
+  b.classList.toggle("on",b.dataset.mode===APP.mode);
+  b.addEventListener("click",()=>{
+    APP.mode=b.dataset.mode;
+    modeSeg.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.mode===APP.mode));
+    renderAll();
+  });
+});
+
+/* ============ OFFSIDE LAB ============ */
+const GOAL_X=700,HALFWAY_X=20,LEVEL_TOL=6;
+const ERAS=[
+  {id:"pre1925",yr:"1866 – 1925",opp:3,levelOnside:false,
+    rule:{kids:"You needed THREE defenders nearer the goal than you.",adults:"Needed three opponents (usually incl. the keeper) between you and the goal line."},
+    involve:{kids:"Just standing in an offside spot was enough to be caught.",adults:"Offside position alone was penalised; involvement was not yet a test."}},
+  {id:"mid",yr:"1925 – 1990",opp:2,levelOnside:false,
+    rule:{kids:"Changed to TWO defenders. Being exactly level still counted as offside.",adults:"Reduced to two opponents. Level with the second-last opponent was OFFSIDE."},
+    involve:{kids:"Standing in an offside spot was still enough.",adults:"Offside position alone was penalised."}},
+  {id:"modern",yr:"1990 – present",opp:2,levelOnside:true,
+    rule:{kids:"Two defenders, and being level is now ONSIDE. Tech checks the tightest calls.",adults:"Two opponents, and level with the second-last opponent is onside. Semi-automated tech (2022) judges the margins."},
+    involve:{kids:"Now you are only caught if you are actually part of the play.",adults:"Since 2005, offside position is punished only if the player is actively involved: interfering with play or an opponent, or gaining an advantage."}}
+];
+const offState={eraId:"modern",tokens:{
+  ball:{x:250,y:230,kind:"ball"},receiver:{x:540,y:200,kind:"att"},
+  d1:{x:690,y:230,kind:"def"},d2:{x:560,y:300,kind:"def"},d3:{x:470,y:140,kind:"def"}}};
+const PRESETS={
+  "Classic poacher":{real:false,ball:[250,230],receiver:[565,210],d1:[690,230],d2:[545,300],d3:[470,150]},
+  "Level with the last man":{real:false,ball:[250,230],receiver:[560,200],d1:[690,230],d2:[560,300],d3:[470,150]},
+  "Three at the back (1900s)":{real:false,ball:[250,230],receiver:[505,210],d1:[690,230],d2:[560,300],d3:[470,150]},
+  "Behind the ball":{real:false,ball:[420,230],receiver:[330,210],d1:[690,230],d2:[560,300],d3:[470,150]},
+  "Tevez, 2010":{real:true,ball:[250,235],receiver:[585,205],d1:[690,230],d2:[540,300],d3:[470,150],
+    moment:{t:"Tevez vs Mexico, 2010 World Cup, Johannesburg",
+      kids:"Carlos Tevez was clearly past the defence, but there was no video help yet, so the goal counted. Everyone could see it was wrong.",
+      adults:"Carlos Tevez was clearly offside, but the goal stood. This was the pre-VAR era: officials had only their eyes, and they missed it. A landmark argument for video review.",
+      src:"FIFA / Sports Illustrated"}},
+  "Argentina v Saudi Arabia, 2022":{real:true,ball:[250,232],receiver:[572,210],d1:[690,230],d2:[560,300],d3:[470,150],
+    moment:{t:"Argentina vs Saudi Arabia, 2022 World Cup, Qatar",
+      kids:"Argentina scored three times but a computer with special cameras spotted they were offside by tiny amounts you could not see.",
+      adults:"Semi-automated offside technology (12 cameras, 29 data points per player, a sensor in the ball) ruled out three Argentina goals for margins invisible to the eye. The precision era.",
+      src:"FIFA / Slate"}}
+};
+const REASONS={
+  behindBall:{kids:"Onside: level with or behind the ball. You can never be offside from there.",adults:"Onside: level with or behind the ball, so offside cannot apply."},
+  enough:{kids:"Onside: enough defenders are between the receiver and the goal.",adults:n=>`Onside: at least ${n} opponents are goal-side of the receiver.`},
+  level:{kids:"Onside: exactly level with the last defender, which today counts as onside.",adults:"Onside: level with the second-last opponent, which this era treats as onside."},
+  off:{kids:"Offside: past the defence and nearer the goal than the ball when the pass was played.",adults:n=>`Offside position: nearer the goal than the ball and than the ${n===3?"third":"second"}-last opponent.`},
+  tooFew:{kids:"Offside: not enough defenders between the receiver and the goal.",adults:n=>`Offside position: fewer than ${n} opponents between the receiver and the goal.`}
+};
+function rtext(node,n){const v=node[APP.mode];return typeof v==="function"?v(n):v;}
+
+const svg=document.getElementById("pitch"),tokensG=document.getElementById("tokens"),
+  lineG=document.getElementById("offsideLine"),tagEl=document.getElementById("tag"),
+  whyEl=document.getElementById("why"),involveEl=document.getElementById("involve"),
+  momentEl=document.getElementById("moment");
+function curEra(){return ERAS.find(e=>e.id===offState.eraId);}
+function offDefs(){return ["d1","d2","d3"].map(k=>offState.tokens[k]);}
+function offJudge(){
+  const e=curEra(),recv=offState.tokens.receiver,ball=offState.tokens.ball;
+  const defs=offDefs().slice().sort((a,b)=>b.x-a.x);
+  const need=e.opp,lineDef=defs[need-1],lineX=lineDef?lineDef.x:GOAL_X+9999;
+  const inOppHalf=recv.x>HALFWAY_X,aheadOfBall=recv.x>ball.x+LEVEL_TOL;
+  const beyondLine=e.levelOnside?recv.x>lineX+LEVEL_TOL:recv.x>lineX-LEVEL_TOL;
+  const offside=inOppHalf&&aheadOfBall&&beyondLine;
+  let key,n=need;
+  if(!aheadOfBall)key="behindBall";
+  else if(!beyondLine)key=(Math.abs(recv.x-lineX)<=LEVEL_TOL)?"level":"enough";
+  else key=(defs.length>=need)?"off":"tooFew";
+  return {lineX,offside,reason:rtext(REASONS[key],n)};
+}
+function offRender(){
+  const e=curEra(),j=offJudge();
+  lineG.innerHTML="";
+  if(j.lineX<=GOAL_X){
+    const ln=document.createElementNS("http://www.w3.org/2000/svg","line");
+    ln.setAttribute("x1",j.lineX);ln.setAttribute("y1",20);ln.setAttribute("x2",j.lineX);ln.setAttribute("y2",440);
+    ln.setAttribute("stroke","var(--gold)");ln.setAttribute("stroke-width","2.5");
+    ln.setAttribute("stroke-dasharray","7 6");ln.setAttribute("opacity","0.95");lineG.appendChild(ln);
+    const lab=document.createElementNS("http://www.w3.org/2000/svg","text");
+    lab.setAttribute("x",Math.min(j.lineX+6,GOAL_X-4));lab.setAttribute("y",446);
+    lab.setAttribute("fill","var(--gold)");lab.setAttribute("font-size","11");lab.textContent="offside line";lineG.appendChild(lab);
+  }
+  tokensG.innerHTML="";
+  for(const [key,t] of Object.entries(offState.tokens)){
+    const isRecv=key==="receiver",r=t.kind==="ball"?9:15;
+    const g=document.createElementNS("http://www.w3.org/2000/svg","g");
+    g.setAttribute("class","token");g.setAttribute("data-key",key);g.setAttribute("transform",`translate(${t.x},${t.y})`);g.style.cursor="grab";
+    const c=document.createElementNS("http://www.w3.org/2000/svg","circle");c.setAttribute("r",r);
+    let fill="var(--def)";if(t.kind==="ball")fill="var(--ball)";if(t.kind==="att")fill=j.offside?"var(--offside)":"var(--onside)";
+    c.setAttribute("fill",fill);c.setAttribute("stroke",isRecv?"#fff":"rgba(0,0,0,.35)");c.setAttribute("stroke-width",isRecv?3:1.5);g.appendChild(c);
+    if(t.kind!=="ball"){const txt=document.createElementNS("http://www.w3.org/2000/svg","text");
+      txt.setAttribute("text-anchor","middle");txt.setAttribute("dy","4.5");txt.setAttribute("font-size","11");txt.setAttribute("font-weight","700");
+      txt.setAttribute("fill",t.kind==="att"?"#06210f":"#1a2230");txt.textContent=t.kind==="att"?"R":"D";g.appendChild(txt);}
+    tokensG.appendChild(g);
+  }
+  tagEl.textContent=j.offside?"OFFSIDE":"ONSIDE";tagEl.className="tag "+(j.offside?"offside":"onside");
+  whyEl.innerHTML=j.reason;
+  involveEl.innerHTML="<b>"+e.yr+":</b> "+rtext(e.involve);
+}
+let drag=null;
+function svgPt(evt){const p=svg.createSVGPoint();p.x=evt.clientX;p.y=evt.clientY;return p.matrixTransform(svg.getScreenCTM().inverse());}
+svg.addEventListener("pointerdown",e=>{const g=e.target.closest(".token");if(!g)return;drag=g.dataset.key;svg.setPointerCapture(e.pointerId);});
+svg.addEventListener("pointermove",e=>{if(!drag)return;const p=svgPt(e);const t=offState.tokens[drag];
+  t.x=Math.max(24,Math.min(GOAL_X,p.x));t.y=Math.max(24,Math.min(436,p.y));offRender();});
+function endDrag(e){if(drag){try{svg.releasePointerCapture(e.pointerId);}catch(_){}drag=null;}}
+svg.addEventListener("pointerup",endDrag);svg.addEventListener("pointercancel",endDrag);
+
+const erasEl=document.getElementById("eras"),presetsEl=document.getElementById("presets");
+function buildOffControls(){
+  erasEl.innerHTML="";
+  ERAS.forEach(e=>{const b=document.createElement("button");
+    b.className="era-btn"+(e.id===offState.eraId?" active":"");b.dataset.era=e.id;
+    b.innerHTML=`<div class="yr">${e.yr}</div><div class="rule">${rtext(e.rule)}</div>`;
+    b.addEventListener("click",()=>{offState.eraId=e.id;
+      [...erasEl.children].forEach(c=>c.classList.toggle("active",c.dataset.era===e.id));offRender();});
+    erasEl.appendChild(b);});
+  presetsEl.innerHTML="";
+  Object.keys(PRESETS).forEach(name=>{const p=PRESETS[name];
+    const c=document.createElement("button");c.className="chip"+(p.real?" real":"");c.textContent=name;
+    c.addEventListener("click",()=>{
+      for(const k of ["ball","receiver","d1","d2","d3"]){offState.tokens[k].x=p[k][0];offState.tokens[k].y=p[k][1];}
+      if(p.real&&p.moment){momentEl.classList.add("show");
+        momentEl.innerHTML=`<div class="m-t">${p.moment.t}</div><div>${p.moment[APP.mode]}</div><div class="m-src">Researched moment · ${p.moment.src}</div>`;}
+      else momentEl.classList.remove("show");
+      offRender();});
+    presetsEl.appendChild(c);});
+}
+
+/* ============ LAWS EXPLORER ============ */
+const LAWS=[
+ {n:1,t:"The Field of Play",k:"Where football is played: a big grass (or turf) rectangle with goals at each end and lines that mark it out.",a:"Defines pitch dimensions, markings, goals, and surface. The boundary lines are part of the areas they enclose.",x:["Every pitch sits in a metro","/sports"]},
+ {n:2,t:"The Ball",k:"The ball must be round and the right size and weight, so every game is fair.",a:"Circumference, weight, pressure and replacement procedure for a defective ball.",x:null},
+ {n:3,t:"The Players",k:"Each team has up to eleven players, including one goalkeeper, plus subs on the bench.",a:"Team size, substitutions, and the consequences of fielding too many or ineligible players.",x:["See every club's roster history","/teams/football"]},
+ {n:4,t:"The Players' Equipment",k:"What players wear: shirt, shorts, socks, shinguards and boots. Nothing dangerous.",a:"Compulsory kit, prohibition of dangerous items, and rules on slogans and undergarments.",x:null},
+ {n:5,t:"The Referee",k:"The referee is the boss of the match and makes the final decisions.",a:"The referee's full authority, powers, and duties, including the use of replays where permitted.",x:null},
+ {n:6,t:"The Other Match Officials",k:"The helpers: assistant referees on the lines and others who support the referee.",a:"Roles of assistant referees, the fourth official, VAR and the AVAR.",x:null},
+ {n:7,t:"The Duration of the Match",k:"Two halves of 45 minutes, with extra time added on for stoppages.",a:"Periods of play, half-time, and allowance for time lost (added time).",x:null},
+ {n:8,t:"The Start and Restart of Play",k:"How play begins and begins again: kick-offs and dropped balls.",a:"Kick-off and dropped-ball procedures that start and restart the match.",x:null},
+ {n:9,t:"The Ball In and Out of Play",k:"The ball is out when it fully crosses a line; otherwise it is still in play.",a:"The ball is out of play only when it wholly crosses a boundary line, on the ground or in the air.",x:["A rule about boundaries","/sports/rivalries"]},
+ {n:10,t:"Determining the Outcome",k:"You score by getting the whole ball over the goal line. Most goals wins.",a:"Method of scoring, the winner, and tie-breaks: extra time, away goals (where used), and kicks from the penalty mark.",x:["How ties are broken on our hubs","/sports/zone-zero-cup"]},
+ {n:11,t:"Offside",k:"You cannot be nearer the goal than the ball and the last defenders when a teammate passes to you.",a:"Offside position, offence (active involvement), and the restart. The most contested spatial law in the sport.",x:["Open the Offside Lab","#offside"]},
+ {n:12,t:"Fouls and Misconduct",k:"No kicking, pushing, or dangerous play. Bad fouls get yellow or red cards.",a:"Direct and indirect free-kick offences, handball, and the yellow/red card framework.",x:["Open You Make the Call","#decisions"]},
+ {n:13,t:"Free Kicks",k:"A free kick restarts play after a foul. Opponents must stand back.",a:"Direct vs indirect free kicks, the required distance, and the wall.",x:null},
+ {n:14,t:"The Penalty Kick",k:"A one-on-one shot from the spot, given for a foul inside the box.",a:"Award, procedure, and encroachment for a kick from the penalty mark during play.",x:["Open Penalty Geography","#penalties"]},
+ {n:15,t:"The Throw-in",k:"When the ball goes out at the side, you throw it back in with both hands.",a:"Procedure for the two-handed throw and the restrictions on the thrower.",x:null},
+ {n:16,t:"The Goal Kick",k:"A restart from the goal area when the attacking team puts it out behind the goal.",a:"Procedure for the goal kick and when the ball is back in play.",x:null},
+ {n:17,t:"The Corner Kick",k:"A kick from the corner when the defending team puts it out behind their own goal.",a:"Procedure for the corner kick, a frequent source of goals.",x:null}
+];
+let curLaw=11;
+const lawListEl=document.getElementById("lawList"),lawBodyEl=document.getElementById("lawBody");
+function renderLaws(){
+  lawListEl.innerHTML="";
+  LAWS.forEach(L=>{const d=document.createElement("div");
+    d.className="law"+(L.n===curLaw?" on":"");
+    d.innerHTML=`<div class="ln">Law ${L.n}</div><div class="lt">${L.t}</div>`;
+    d.addEventListener("click",()=>{curLaw=L.n;renderLaws();});lawListEl.appendChild(d);});
+  const L=LAWS.find(x=>x.n===curLaw);
+  let xl="";
+  if(L.x){const goesTab=L.x[1].startsWith("#");
+    xl=`<div class="xlink">↳ ${L.x[0]}: <a href="${L.x[1]}"${goesTab?' data-tab="'+L.x[1].slice(1)+'"':''}>${goesTab?"open":L.x[1]}</a></div>`;}
+  lawBodyEl.innerHTML=`<div class="ln" style="color:var(--gold);font-weight:700;">LAW ${L.n}</div>
+    <h3>${L.t}</h3><div class="txt">${APP.mode==="kids"?L.k:L.a}</div>${xl}`;
+  lawBodyEl.querySelectorAll("a[data-tab]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();switchGame(a.dataset.tab);}));
+}
+
+/* ============ YOU MAKE THE CALL ============ */
+const SCENARIOS=[
+ {real:true,src:"FIFA / Sports Illustrated",
+  prompt:{kids:"A striker heads in a cross, but he was clearly past the last defender when the ball was played. It is 2010 and there is no video review. What is the CORRECT call?",
+          adults:"Argentina v Mexico, 2010. Tevez heads home but is clearly beyond the last defender at the moment the ball is played. By the Law, what is the correct decision?"},
+  opts:[{l:"Goal stands",ok:false},{l:"Offside, no goal",ok:true}],
+  ruling:{kids:"Correct call: OFFSIDE. In real life the goal was given because there was no video help, and everyone agreed it was wrong. It helped push football toward VAR.",
+          adults:"By Law 11 this is offside. In reality the goal stood: pre-VAR, the officials had only their eyes and missed it. A landmark argument for video review."}},
+ {real:true,src:"FIFA / Slate",
+  prompt:{kids:"A striker scores, and he looked level. Special cameras show his shoulder was a tiny bit past the last defender. What does the technology rule?",
+          adults:"Argentina v Saudi Arabia, 2022. The striker scores; semi-automated tracking shows a marginal shoulder offside invisible to the eye. The call?"},
+  opts:[{l:"Goal",ok:false},{l:"Offside, no goal",ok:true}],
+  ruling:{kids:"OFFSIDE. Cameras and a sensor in the ball measured a margin too small to see. Argentina had three goals ruled out this way.",
+          adults:"Offside. Semi-automated technology (12 cameras, 29 points per player, a ball sensor) ruled out three Argentina goals for margins invisible to the naked eye."}},
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"The last defender pulls down a striker who is running clean through on goal, just outside the box. No one else can catch him. What should the referee do?",
+          adults:"A striker is clean through with only the goalkeeper to beat, outside the area, and the last defender hauls him down. No covering defender. Sanction?"},
+  opts:[{l:"No card",ok:false},{l:"Yellow card",ok:false},{l:"Red card",ok:true}],
+  ruling:{kids:"RED CARD. Stopping a clear goal-scoring chance by fouling is the most serious kind, so the player is sent off.",
+          adults:"Red. This is DOGSO (denying an obvious goal-scoring opportunity) by an offence; outside the area with no genuine attempt-for-the-ball defence, it is a sending-off."}},
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"Inside the box, a defender sticks an arm out away from their body and blocks a shot heading for goal. What is the call?",
+          adults:"In the penalty area, a defender blocks a goal-bound shot with an arm extended away from the body, making it unnaturally bigger. The call?"},
+  opts:[{l:"Play on",ok:false},{l:"Penalty",ok:true},{l:"Goal kick",ok:false}],
+  ruling:{kids:"PENALTY. The arm made the body bigger, so it counts as handball in the box.",
+          adults:"Penalty. The arm makes the body unnaturally larger, so it is a handball offence; had it denied a certain goal, a red card would follow too."}}
+];
+let scIdx=0,scAnswered=false;
+const decCard=document.getElementById("decCard");
+function renderDecisions(){
+  const s=SCENARIOS[scIdx];
+  decCard.innerHTML=`<h3>You Make the Call <span style="color:var(--muted);font-weight:400;font-size:14px;">· ${scIdx+1} / ${SCENARIOS.length}</span></h3>
+    <p class="sub">${s.prompt[APP.mode]}</p>
+    <div class="opts" id="opts"></div>
+    <div class="ruling" id="ruling"><b>${s.real?"Real moment":"Teaching scenario"}${s.real?" · "+s.src:""}.</b> ${s.ruling[APP.mode]}</div>
+    <div class="navbtn"><button id="nextSc">Next scenario →</button></div>`;
+  const optsEl=document.getElementById("opts");
+  s.opts.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.l;
+    b.addEventListener("click",()=>{if(scAnswered)return;scAnswered=true;
+      document.querySelectorAll("#opts .opt").forEach(x=>{if(x.textContent===o.l)x.classList.add(o.ok?"right":"wrong");
+        if(s.opts.find(z=>z.l===x.textContent).ok)x.classList.add("right");});
+      document.getElementById("ruling").classList.add("show");});
+    optsEl.appendChild(b);});
+  document.getElementById("nextSc").addEventListener("click",()=>{scIdx=(scIdx+1)%SCENARIOS.length;scAnswered=false;renderDecisions();});
+}
+
+/* ============ PENALTY GEOGRAPHY ============ */
+const penCard=document.getElementById("penCard");
+function renderPenalties(){
+  const intro=APP.mode==="kids"
+    ? "A penalty is a one-on-one shot from the spot. When a knockout match is tied, teams take a shootout. Some countries have a reputation for being cool under that pressure, and others less so."
+    : "Law 14 governs the kick from the penalty mark. In knockouts, shootouts decide tied ties, and shootout temperament maps onto geography and football culture in ways worth exploring.";
+  const rows=[
+    {l:"Stronger shootout reputation",w:82},
+    {l:"Mixed record",w:58},
+    {l:"Painful history",w:34}
+  ];
+  penCard.innerHTML=`<h3>Penalty Geography</h3><p class="sub">${intro}</p>
+    <div style="margin-top:14px;">${rows.map(r=>`<div class="barrow"><span class="lab">${r.l}</span>
+      <span class="bartrack"><span class="barfill" style="width:${r.w}%"></span></span></div>`).join("")}</div>
+    <p class="note"><b>Illustrative bands only, not actual figures.</b> Per the project's content rules, real outputs use sourced records rather than invented numbers. In production this reads national-team data behind <a href="#" data-tab="penalties">/teams/national</a> and is scored in the Zone Zero Cup register, so a metro or nation's penalty character becomes another geographic signal.</p>`;
+}
+
+/* ============ RULES THAT CHANGED ============ */
+const TIMELINE=[
+ {yr:"1925",t:"Offside cut from three opponents to two",
+  k:"Suddenly you only needed two defenders ahead of you, not three. Goals poured in and teams invented new defensive shapes.",
+  a:"The two-opponent rule opened the diagonal pass and triggered a scoring surge in 1925/26, prompting Herbert Chapman's WM formation at Arsenal. The first great tactical revolution.",src:"Wikipedia / StatsUltra"},
+ {yr:"1990",t:"Level is now onside",
+  k:"Being exactly level with the last defender changed from offside to onside, giving attackers a small edge.",
+  a:"Prompted by the dour 1990 World Cup, the change handed attackers the benefit of the doubt and reshaped how high defensive lines are coached.",src:"Wikipedia"},
+ {yr:"1992",t:"The back-pass rule",
+  k:"Goalkeepers could no longer pick up a deliberate pass from a teammate's foot, so time-wasting got much harder.",
+  a:"Introduced after the time-wasting of Italia 90 and first used at the 1992 Olympics, it forced keepers to play with their feet and quietly created the ball-playing goalkeeper.",src:"Wikipedia / ESPN"},
+ {yr:"1994–95",t:"Three points for a win",
+  k:"Winning became worth three points instead of two, so teams attacked more instead of settling for draws.",
+  a:"FIFA adopted three-points-for-a-win for the 1994 World Cup and it spread worldwide by 1995, tilting incentives toward attacking play.",src:"GiveMeSport"},
+ {yr:"1993–2004",t:"The golden goal, and its end",
+  k:"For about a decade, the first goal in extra time won instantly. It made for drama but also fear, so it was scrapped.",
+  a:"The golden (then silver) goal aimed to enliven extra time but often induced caution; IFAB abolished it in 2004.",src:"These Football Times"},
+ {yr:"2018",t:"VAR enters the game",
+  k:"Video referees started checking goals, penalties and red cards on a screen.",
+  a:"IFAB wrote VAR into the Laws in 2018, debuting at that summer's World Cup; the Premier League adopted it for 2019/20.",src:"GiveMeSport"},
+ {yr:"2022",t:"Semi-automated offside",
+  k:"Cameras and a sensor in the ball began measuring offside to the centimetre, faster than a human could.",
+  a:"At Qatar 2022, twelve cameras tracking 29 points per player plus a ball sensor delivered offside calls invisible to the eye, the precision era's arrival.",src:"FIFA / Slate"}
+];
+let tlOpen=0;
+const tlCard=document.getElementById("tlCard");
+function renderTimeline(){
+  const intro=APP.mode==="kids"
+    ? "Football's rules are not fixed. Each change here reshaped how the game is played. Tap any moment."
+    : "Each hinge below measurably changed the sport. In production these pair with results and Elo data to show the before/after, and which leagues and metros adopted each change first.";
+  tlCard.innerHTML=`<h3>Rules That Changed the Game</h3><p class="sub">${intro}</p>
+    <div class="tl">${TIMELINE.map((e,i)=>`<div class="tlitem${i===tlOpen?" on":""}" data-i="${i}">
+      <div class="yr">${e.yr}</div><div class="ti">${e.t}</div>
+      <div class="tldetail">${APP.mode==="kids"?e.k:e.a}<div class="m-src" style="color:var(--muted);font-size:12px;margin-top:5px;">Researched · ${e.src}</div></div></div>`).join("")}</div>`;
+  tlCard.querySelectorAll(".tlitem").forEach(it=>it.addEventListener("click",()=>{tlOpen=+it.dataset.i;renderTimeline();}));
+}
+
+/* renderAll defined after later sections load */
+function renderAll(){
+  document.getElementById("lede").textContent=COPY.lede[APP.mode];
+  document.getElementById("modehint").textContent=COPY.modehint[APP.mode];
+  document.getElementById("offNote").textContent=APP.mode==="kids"
+    ? "Gold dots are REAL moments from football history. Drag any player to try your own."
+    : "Gold-dotted scenarios are real, researched moments. Judged at the instant the ball is played.";
+  document.getElementById("offSoul").innerHTML=
+    "<p><b>Why this lives here.</b> In production each real moment loads from the match database, tagged to club, metro, and date, then re-adjudicated across every era. A goal that stands today might have been offside in 1924, and vice versa. The line of belonging is not fixed; it moves.</p>";
+  buildOffControls();offRender();
+  if(window.renderLaws)renderLaws();
+  if(window.renderDecisions)renderDecisions();
+  if(window.renderPenalties)renderPenalties();
+  if(window.renderTimeline)renderTimeline();
+  document.getElementById("foot").innerHTML=
+    "The Offside Lab judges offside <i>position</i> from a freeze, not the active/passive involvement referees weigh live. Law text and dates follow the IFAB Laws of the Game and their historical revisions; real moments are researched and sourced. &nbsp;·&nbsp; <a href=\"/play\">Play &amp; Learn</a> &nbsp;·&nbsp; <a href=\"/teams/national\">National teams</a> &nbsp;·&nbsp; <a href=\"/updates\">Site updates</a>";
+}
+
+/* ============ INIT ============ */
+renderAll();
+switchGame("offside");
+</script>
+</body>
+</html>

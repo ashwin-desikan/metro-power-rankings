@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Play and Learn</title>
+<style>
+  :root{--navy:#16324f;--mint:#34d3b0;--sun:#ffd23f;--coral:#ff6b6b;--sky1:#7fd1ff;--sky2:#bff0e6;--ink:#13293d;--card:#fff;--grass:#2f9e54}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:linear-gradient(180deg,var(--sky1),var(--sky2));color:var(--ink);min-height:100%;overflow-x:hidden;display:flex;flex-direction:column;align-items:center}
+  header{width:100%;max-width:640px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+  .logo{font-size:1.2rem;font-weight:800;color:var(--navy)}
+  .logo .ball{display:inline-block;animation:spin 6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .sound{border:none;background:#ffffffcc;border-radius:999px;width:46px;height:46px;font-size:1.3rem;cursor:pointer;box-shadow:0 3px 0 #0002}
+  .passport{width:100%;max-width:640px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 16px 6px}
+  .stamp{width:32px;height:32px;border-radius:50%;background:#ffffff80;border:2px dashed #16324f55;display:flex;align-items:center;justify-content:center;font-size:1rem}
+  .stamp.got{background:var(--sun);border-style:solid;animation:pop .4s}
+  main{width:100%;max-width:640px;padding:8px 16px 28px;flex:1;display:flex;flex-direction:column}
+  .card{background:var(--card);border-radius:26px;box-shadow:0 12px 0 #16324f22,0 18px 30px #16324f33;padding:20px;text-align:center;position:relative;overflow:hidden}
+  .pitchwrap{border-radius:18px;margin-bottom:12px;overflow:hidden;background:var(--grass)}
+  svg.pitch{display:block;width:100%;height:auto}
+  .q{font-size:1.3rem;font-weight:800;line-height:1.3;margin:10px 6px 4px;color:var(--navy)}
+  .hint{font-size:.95rem;font-weight:600;color:#5b7b97;margin:0 6px 6px}
+  .readbtn{border:none;background:#eaf6ff;color:#1d6fb8;font-weight:700;border-radius:999px;padding:7px 14px;font-size:.95rem;cursor:pointer;margin-bottom:6px}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .opt{border:none;border-radius:18px;padding:16px;font-size:1.35rem;font-weight:800;color:var(--navy);cursor:pointer;box-shadow:0 5px 0 #c9d8e6;background:#f3f7fb;transition:transform .08s;display:flex;align-items:center;justify-content:center;gap:10px;min-height:62px}
+  .opt:active{transform:translateY(3px);box-shadow:0 2px 0 #c9d8e6}
+  .opt .em{font-size:1.7rem}
+  .opt.wrong{animation:shake .4s;background:#ffe3e3;box-shadow:0 5px 0 #f3b6b6}
+  .opt.right{background:var(--mint);color:#06372c;box-shadow:0 5px 0 #1f9e82}
+  .opt.dim{opacity:.45}
+  @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  @keyframes pop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .toast{min-height:26px;font-weight:800;font-size:1.1rem;margin-top:12px;color:var(--navy)}
+  .reveal{background:#fff7e6;border-radius:18px;padding:14px;margin-top:12px;display:none;animation:pop .35s}
+  .reveal.show{display:block}
+  .reveal .fact{font-size:1.05rem;font-weight:700;color:#7a5b00;line-height:1.35}
+  .reveal .real{display:inline-block;background:var(--coral);color:#fff;font-size:.7rem;font-weight:800;border-radius:999px;padding:3px 9px;letter-spacing:.04em;margin-bottom:7px;text-transform:uppercase}
+  .golink{display:inline-block;margin-top:10px;background:#eaf6ff;color:#1d6fb8;font-weight:800;text-decoration:none;border-radius:12px;padding:9px 14px;font-size:.95rem}
+  .next{margin-top:14px;border:none;background:var(--coral);color:#fff;font-weight:800;font-size:1.25rem;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 6px 0 #d2453f;display:none}
+  .next.show{display:inline-block;animation:pop .35s}
+  .next:active{transform:translateY(3px);box-shadow:0 3px 0 #d2453f}
+  .finale{text-align:center;display:none}
+  .finale.show{display:block;animation:pop .4s}
+  .finale h2{font-size:1.8rem;color:var(--navy);margin:.2em 0}
+  .finale .stamps{font-size:1.8rem;letter-spacing:3px;margin:10px 0;line-height:1.6}
+  .grown{font-size:.8rem;color:#5b7b97;margin-top:18px;text-align:center;max-width:640px;padding:0 16px}
+  .grown a{color:#1d6fb8}
+  .confetti{position:fixed;top:-20px;width:12px;height:12px;z-index:99;border-radius:2px;pointer-events:none}
+  @keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="ball" id="logoEmoji">🚩</span> <span id="logoText">Offside or Onside?</span></div>
+  <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+</header>
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="pitchwrap">
+      <svg class="pitch" id="pitch" viewBox="0 0 480 230" aria-label="A football pitch seen from above"></svg>
+    </div>
+    <div class="q" id="q">Loading…</div>
+    <div class="hint" id="hint"></div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts">
+      <button class="opt" id="optOn"><span class="em">✅</span> Onside</button>
+      <button class="opt" id="optOff"><span class="em">🚩</span> Offside</button>
+    </div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div id="realTag"></div><div class="fact" id="fact"></div><a class="golink" id="golink" target="_blank" rel="noopener">See on the site →</a></div>
+    <button class="next" id="next">Next →</button>
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏆 Offside expert!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">You read the lines like a referee.</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText"></p>
+<script>
+"use strict";
+const BASE="https://rankings.citizenofnowhere.org";
+const HEADER={logoEmoji:"🚩",logoText:"Offside or Onside?",title:"Offside or Onside? — Play and Learn",
+  grown:"For grown-ups: offside is football's most misunderstood rule, so this game teaches it visually. The RED player is the attacker; a teammate has just passed the ball. A player is offside if, at that moment, they are nearer the goal than the ball AND nearer than the second-last defender (the gold line). Level counts as onside. Two rounds are real World Cup moments. Each links back to the site. Ages 7 to 10.",
+  finaleH:"🏆 Offside expert!",finaleP:"You read the lines like a referee.",again:"Play again 🔁"};
+
+// Pitch coords: x grows toward the goal on the RIGHT. Larger x = nearer goal.
+// Onside if behind/level with the ball, OR behind/level with the 2nd-last defender.
+const TOL=4;
+function judge(r){
+  const defs=r.def.slice().sort((a,b)=>b-a);     // x desc, nearest goal first
+  const line=defs[1]!=null?defs[1]:999;           // second-last defender
+  const ahead=r.recv> r.ball+TOL;                 // nearer goal than the ball
+  const beyond=r.recv> line+TOL;                  // nearer goal than the line (level=onside)
+  return (ahead&&beyond)?"off":"on";
+}
+
+const ROUNDS=[
+  {ball:120,recv:150,def:[430,250,300], stamp:"⚽",
+   q:"Is the red player onside?",
+   hint:"There are lots of defenders ahead of them.",
+   fact:"Onside! The red player is behind plenty of defenders, so they are allowed to be there."},
+  {ball:120,recv:380,def:[430,250,300], stamp:"🏃",
+   q:"Onside or offside?",
+   hint:"The red player has run past nearly everyone.",
+   fact:"Offside! Only the keeper is closer to the goal. You need at least two defenders between you and the goal."},
+  {ball:120,recv:300,def:[430,300,250], stamp:"📏",
+   q:"This one is close. Onside or offside?",
+   hint:"The red player is exactly level with the gold line.",
+   fact:"Onside! Being level with the second-last defender counts as onside. The rule changed to this in 1990 to help attackers."},
+  {ball:340,recv:300,def:[430,250,200], stamp:"🔙",
+   q:"The red player is past the defenders. Offside?",
+   hint:"But look where the ball is.",
+   fact:"Onside! You can never be offside if you are level with or behind the ball when it is played."},
+  {ball:120,recv:395,def:[430,260,300], stamp:"🇦🇷", real:"Really happened",
+   q:"World Cup 2010. Is the red player onside?",
+   hint:"Argentina's Carlos Tevez against Mexico.",
+   fact:"Offside! Tevez was clearly past the defence, but in 2010 there were no video replays, so the goal was given by mistake. It helped football bring in VAR.",
+   link:"/teams/national"},
+  {ball:120,recv:312,def:[430,300,260], stamp:"📷", real:"Really happened",
+   q:"World Cup 2022. Special cameras checked this. Onside?",
+   hint:"Argentina again, against Saudi Arabia.",
+   fact:"Offside, by a tiny bit! Cameras and a chip in the ball spotted a margin too small for your eyes. Argentina had three goals ruled out this way.",
+   link:"/teams/national"}
+];
+
+const $=id=>document.getElementById(id);
+let i=0,answered=false,soundOn=true,got=[];
+
+function drawPitch(r,result){
+  const W=480,H=230;
+  let s=`<rect width="${W}" height="${H}" fill="#2f9e54"/>`;
+  for(let k=0;k<6;k++) if(k%2) s+=`<rect x="${k*W/6}" width="${W/6}" height="${H}" fill="#34a85c"/>`;
+  s+=`<g stroke="#eafff2" stroke-width="2" fill="none" opacity=".85">
+      <rect x="392" y="55" width="84" height="120"/><rect x="450" y="90" width="26" height="50"/>
+      <line x1="476" y1="95" x2="476" y2="135" stroke-width="5"/></g>`;
+  s+=`<text x="455" y="30" fill="#eafff2" font-size="12" opacity=".8">GOAL</text>`;
+  // second-last defender line (gold)
+  const defs=r.def.slice().sort((a,b)=>b-a); const line=defs[1];
+  if(line!=null) s+=`<line x1="${line}" y1="12" x2="${line}" y2="218" stroke="#ffd23f" stroke-width="3" stroke-dasharray="7 6"/>
+    <text x="${Math.min(line+5,440)}" y="222" fill="#ffd23f" font-size="11" font-weight="700">last defender</text>`;
+  // ball
+  s+=`<circle cx="${r.ball}" cy="160" r="6" fill="#fff" stroke="#16324f" stroke-width="2"/>`;
+  // defenders (white)
+  const ys=[70,110,150,190];
+  r.def.forEach((x,n)=>{s+=token(x,ys[n%ys.length],"#f4f8fb","#16324f","D");});
+  // receiver (red, or green/red after answer)
+  let rc="#ff6b6b"; if(result) rc=(result==="on")?"#34d3b0":"#ff5252";
+  s+=token(r.recv,128,rc,"#fff","R",true);
+  return s;
+}
+function token(x,y,fill,stroke,letter,big){
+  const rad=big?13:11;
+  return `<g><circle cx="${x}" cy="${y}" r="${rad}" fill="${fill}" stroke="${stroke}" stroke-width="${big?3:2}"/>
+    <text x="${x}" y="${y+4}" text-anchor="middle" font-size="12" font-weight="800" fill="${big?'#fff':'#16324f'}">${letter}</text></g>`;
+}
+
+function render(){
+  const r=ROUNDS[i];
+  $("pitch").innerHTML=drawPitch(r,null);
+  $("q").textContent=r.q;
+  $("hint").textContent=r.hint||"";
+  $("toast").textContent="";
+  $("reveal").className="reveal";
+  $("next").className="next";
+  answered=false;
+  ["optOn","optOff"].forEach(id=>{$(id).className="opt";});
+  buildPassport();
+}
+function buildPassport(){
+  $("passport").innerHTML=ROUNDS.map((r,n)=>
+    `<div class="stamp ${got[n]?'got':''}">${got[n]?r.stamp:''}</div>`).join("");
+}
+function answer(pick){
+  if(answered)return; answered=true;
+  const r=ROUNDS[i], truth=judge(r);
+  const correct=(pick===truth);
+  got[i]=correct;
+  $("pitch").innerHTML=drawPitch(r,truth);
+  const rightId=truth==="on"?"optOn":"optOff", pickId=pick==="on"?"optOn":"optOff";
+  const wrongId=rightId==="optOn"?"optOff":"optOn";
+  $(rightId).classList.add("right");
+  if(correct){ $(wrongId).classList.add("dim"); }
+  else { $(pickId).classList.add("wrong"); }
+  $("toast").textContent=correct?"✅ Correct!":(truth==="on"?"It was onside.":"It was offside.");
+  $("realTag").innerHTML=r.real?`<span class="real">${r.real}</span><br>`:"";
+  $("fact").textContent=r.fact;
+  if(r.link){$("golink").style.display="";$("golink").href=BASE+r.link;}
+  else $("golink").style.display="none";
+  $("reveal").className="reveal show";
+  $("next").className="next show";
+  speak((correct?"Correct! ":"")+r.fact);
+  if(correct)confetti(14);
+}
+$("optOn").onclick=()=>answer("on");
+$("optOff").onclick=()=>answer("off");
+$("next").onclick=()=>{i++; if(i>=ROUNDS.length){finale();return;} render(); window.scrollTo({top:0,behavior:"smooth"});};
+$("read").onclick=()=>{const r=ROUNDS[i];speak(r.q+" "+(r.hint||""));};
+$("snd").onclick=()=>{soundOn=!soundOn;$("snd").textContent=soundOn?"🔊":"🔇";if(!soundOn&&"speechSynthesis"in window)speechSynthesis.cancel();};
+function speak(t){if(!soundOn||!("speechSynthesis"in window))return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.96;u.pitch=1.05;speechSynthesis.speak(u);}catch(e){}}
+function finale(){
+  $("pitch").parentElement.style.display="none";
+  ["q","hint","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="none");
+  const score=got.filter(Boolean).length;
+  $("finaleP").textContent=`You got ${score} of ${ROUNDS.length} right. You read the lines like a referee.`;
+  $("finale").className="finale show";
+  $("finalStamps").textContent=ROUNDS.map((r,n)=>got[n]?r.stamp:"⚪").join(" ");
+  confetti(40);
+}
+$("again").onclick=()=>{
+  i=0;got=[];
+  $("pitch").parentElement.style.display="";
+  ["q","hint","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="");
+  $("finale").className="finale";render();window.scrollTo({top:0});
+};
+function confetti(n){const cs=["#34d3b0","#ffd23f","#ff6b6b","#7fd1ff","#16324f"];
+  for(let k=0;k<n;k++){const d=document.createElement("div");d.className="confetti";
+    d.style.left=Math.random()*100+"vw";d.style.background=cs[k%cs.length];
+    d.style.animation=`fall ${1+Math.random()*1.4}s ease-in ${Math.random()*0.3}s forwards`;
+    document.body.appendChild(d);setTimeout(()=>d.remove(),2800);}}
+
+document.title=HEADER.title;
+$("logoEmoji").textContent=HEADER.logoEmoji;$("logoText").textContent=HEADER.logoText;
+$("grownText").textContent=HEADER.grown;$("finaleH").textContent=HEADER.finaleH;$("again").textContent=HEADER.again;
+render();
+</script>
+</body>
+</html>
+                 

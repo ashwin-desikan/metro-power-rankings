@@ -1,4 +1,4 @@
-﻿import "server-only";
+import "server-only";
 
 // Shared release-notes data. Single source of truth, imported by both the
 // /updates page renderer (full list, brevity-validated) and the home-page
@@ -21,9 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-06-24",
     headline: "Play & Learn games for younger fans",
     items: [
-      "New /play section: eight free kids’ learning games built from the rankings — geography, reading and maths through real teams, cities and standings, for ages 5 to 10.",
+      "New /play section: nine free kids’ learning games built from the rankings — geography, reading and maths through real teams, cities and standings, for ages 5 to 10.",
       "Games span World Sports Tour, Find the Team’s Home, League Table Detective on real NFL standings, Bigger City, Trophy Count, North or South, Odd One Out and Match Day Money.",
       "Each blends UK (KS1/KS2) and US Grade 2 curricula, and every reveal links back to the team or metro page on the site.",
+      "New Rules Lab in /play: an Offside or Onside? game for younger fans, plus a deeper portal for older fans covering offside across eras, the 17 Laws, real refereeing calls and how rule changes reshaped the game.",
     ],
   },
   {
