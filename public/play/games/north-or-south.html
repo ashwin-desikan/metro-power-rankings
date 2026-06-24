@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Play and Learn</title>
+<style>
+  :root{--navy:#16324f;--mint:#34d3b0;--sun:#ffd23f;--coral:#ff6b6b;--sky1:#7fd1ff;--sky2:#bff0e6;--ink:#13293d;--card:#fff}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:linear-gradient(180deg,var(--sky1),var(--sky2));color:var(--ink);min-height:100%;overflow-x:hidden;display:flex;flex-direction:column;align-items:center}
+  header{width:100%;max-width:640px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+  .logo{font-size:1.2rem;font-weight:800;color:var(--navy)}
+  .logo .ball{display:inline-block;animation:spin 6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .sound{border:none;background:#ffffffcc;border-radius:999px;width:46px;height:46px;font-size:1.3rem;cursor:pointer;box-shadow:0 3px 0 #0002}
+  .passport{width:100%;max-width:640px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 16px 6px}
+  .stamp{width:32px;height:32px;border-radius:50%;background:#ffffff80;border:2px dashed #16324f55;display:flex;align-items:center;justify-content:center;font-size:1rem}
+  .stamp.got{background:var(--sun);border-style:solid;animation:pop .4s}
+  main{width:100%;max-width:640px;padding:8px 16px 28px;flex:1;display:flex;flex-direction:column}
+  .card{background:var(--card);border-radius:26px;box-shadow:0 12px 0 #16324f22,0 18px 30px #16324f33;padding:20px;text-align:center;position:relative;overflow:hidden}
+  .scene{height:140px;border-radius:18px;margin-bottom:12px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(180deg,#cdeafe,#eaf6ff)}
+  .scene .city{font-size:4rem;filter:drop-shadow(0 4px 6px #0003);z-index:2}
+  .scene .flag{position:absolute;top:10px;right:12px;font-size:2rem;z-index:3}
+  .scene .pip{position:absolute;left:10px;bottom:6px;width:58px;height:58px;z-index:3;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-8px)}}
+  .place{font-size:1.45rem;font-weight:800;color:var(--navy);margin:2px 0}
+  .place small{display:block;font-size:.95rem;font-weight:600;color:#5b7b97}
+  .q{font-size:1.3rem;font-weight:800;line-height:1.3;margin:10px 6px 4px}
+  .readbtn{border:none;background:#eaf6ff;color:#1d6fb8;font-weight:700;border-radius:999px;padding:7px 14px;font-size:.95rem;cursor:pointer;margin-bottom:6px}
+  .opts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+  .opt{border:none;background:#f3f7fb;border-radius:18px;padding:16px;font-size:1.35rem;font-weight:800;color:var(--navy);cursor:pointer;box-shadow:0 5px 0 #c9d8e6;transition:transform .08s;display:flex;align-items:center;justify-content:center;gap:10px;min-height:62px}
+  .opt:active{transform:translateY(3px);box-shadow:0 2px 0 #c9d8e6}
+  .opt .em{font-size:1.7rem}
+  .opt.wrong{animation:shake .4s;background:#ffe3e3;box-shadow:0 5px 0 #f3b6b6}
+  .opt.right{background:var(--mint);color:#06372c;box-shadow:0 5px 0 #1f9e82}
+  .opt.dim{opacity:.45}
+  @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  @keyframes pop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .toast{min-height:26px;font-weight:800;font-size:1.1rem;margin-top:12px;color:var(--navy)}
+  .reveal{background:#fff7e6;border-radius:18px;padding:14px;margin-top:12px;display:none;animation:pop .35s}
+  .reveal.show{display:block}
+  .reveal .fact{font-size:1.1rem;font-weight:700;color:#7a5b00;line-height:1.35}
+  .golink{display:inline-block;margin-top:10px;background:#eaf6ff;color:#1d6fb8;font-weight:800;text-decoration:none;border-radius:12px;padding:9px 14px;font-size:.95rem}
+  .next{margin-top:14px;border:none;background:var(--coral);color:#fff;font-weight:800;font-size:1.25rem;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 6px 0 #d2453f;display:none}
+  .next.show{display:inline-block;animation:pop .35s}
+  .next:active{transform:translateY(3px);box-shadow:0 3px 0 #d2453f}
+  .finale{text-align:center;display:none}
+  .finale.show{display:block;animation:pop .4s}
+  .finale h2{font-size:1.8rem;color:var(--navy);margin:.2em 0}
+  .finale .stamps{font-size:1.8rem;letter-spacing:3px;margin:10px 0;line-height:1.6}
+  .grown{font-size:.8rem;color:#5b7b97;margin-top:18px;text-align:center;max-width:640px;padding:0 16px}
+  .grown a{color:#1d6fb8}
+  .confetti{position:fixed;top:-20px;width:12px;height:12px;z-index:99;border-radius:2px;pointer-events:none}
+  @keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="ball" id="logoEmoji">🎮</span> <span id="logoText">Play and Learn</span></div>
+  <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+</header>
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="scene" id="scene">
+      <span class="flag" id="flag"></span>
+      <span class="city" id="city">🏙️</span>
+      <svg class="pip" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#34d3b0" stroke="#16324f" stroke-width="4"/><path d="M14 50h72M50 8c16 14 16 70 0 84M50 8c-16 14-16 70 0 84" fill="none" stroke="#16324f" stroke-width="3" opacity=".5"/><circle cx="38" cy="46" r="6" fill="#16324f"/><circle cx="62" cy="46" r="6" fill="#16324f"/><circle cx="40" cy="44" r="2" fill="#fff"/><circle cx="64" cy="44" r="2" fill="#fff"/><path d="M36 64q14 14 28 0" fill="none" stroke="#16324f" stroke-width="4" stroke-linecap="round"/></svg>
+    </div>
+    <div class="place" id="place">—<small id="sub">—</small></div>
+    <div class="q" id="q">Loading…</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div><a class="golink" id="golink" target="_blank" rel="noopener">See on the site →</a></div>
+    <button class="next" id="next">Next →</button>
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏆 You did it!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">Great playing!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText"></p>
+<script>
+const BASE="https://rankings.citizenofnowhere.org";
+const HEADER={logoEmoji:"🧭",logoText:"North or South?",title:"North or South? — Play and Learn",
+  grown:"For grown-ups: a geography game from the Citizen of Nowhere rankings. Decide whether a real team's city is north or south of the equator, using the real map coordinates the site stores. Teaches the equator, hemispheres and latitude (KS2). Each reveal links to that city. Ages 6–10.",
+  finaleH:"🧭 Master explorer!",finaleP:"You found every hemisphere!",again:"Play again 🔁"};
+const STOPS=[
+ {city:"🌏",flag:"🇦🇺",place:"Sydney",sub:"Home of the Swans 🏉",bg:"linear-gradient(180deg,#cdeafe,#eaf6ff)",stamp:"🔽",slug:"sydney",
+  q:"Sydney is home to big sports teams. Is Sydney NORTH or SOUTH of the equator?",
+  opts:[{t:"South",e:"🔽"},{t:"North",e:"🔼"}],ans:0,
+  fact:"South! Sydney is below the equator. When it's winter in London, it's summer in Sydney!"},
+ {city:"🏯",flag:"🇯🇵",place:"Tokyo",sub:"Home of the Giants ⚾",bg:"linear-gradient(180deg,#ffe6ec,#fff2f6)",stamp:"🔼",slug:"tokyo",
+  q:"Tokyo is home to the Yomiuri Giants. Is Tokyo NORTH or SOUTH of the equator?",
+  opts:[{t:"North",e:"🔼"},{t:"South",e:"🔽"}],ans:0,
+  fact:"North! Tokyo is above the equator, in the northern half of the world."},
+ {city:"⛰️",flag:"🇧🇷",place:"Rio de Janeiro",sub:"Home of Flamengo ⚽",bg:"linear-gradient(180deg,#dff7e1,#eefbef)",stamp:"🔽",slug:"rio-de-janeiro",
+  q:"Rio de Janeiro is home to Flamengo. Is Rio NORTH or SOUTH of the equator?",
+  opts:[{t:"South",e:"🔽"},{t:"North",e:"🔼"}],ans:0,
+  fact:"South! Rio is below the equator, in South America."},
+ {city:"🎡",flag:"🇬🇧",place:"London",sub:"Lots of football clubs ⚽",bg:"linear-gradient(180deg,#d7e8ff,#eef4ff)",stamp:"🔼",slug:"london",
+  q:"London has more big sports teams than any city. Is London NORTH or SOUTH of the equator?",
+  opts:[{t:"North",e:"🔼"},{t:"South",e:"🔽"}],ans:0,
+  fact:"North! London is well above the equator, in Europe."},
+ {city:"🟦",flag:"🇦🇷",place:"Buenos Aires",sub:"Home of Boca Juniors ⚽",bg:"linear-gradient(180deg,#e3edff,#f2f6ff)",stamp:"🔽",slug:"buenos-aires",
+  q:"Buenos Aires is home to Boca Juniors. Is it NORTH or SOUTH of the equator?",
+  opts:[{t:"South",e:"🔽"},{t:"North",e:"🔼"}],ans:0,
+  fact:"South! Buenos Aires is below the equator, in South America."},
+ {city:"🐫",flag:"🇪🇬",place:"Cairo",sub:"Home of Al Ahly ⚽",bg:"linear-gradient(180deg,#fff3cf,#fffae6)",stamp:"🔼",slug:"cairo",
+  q:"Cairo is home to Al Ahly. Is Cairo NORTH or SOUTH of the equator?",
+  opts:[{t:"North",e:"🔼"},{t:"South",e:"🔽"}],ans:0,
+  fact:"North! Cairo is above the equator, in the north of Africa."},
+ {city:"🏏",flag:"🇦🇺",place:"Melbourne",sub:"Cricket city 🏏",bg:"linear-gradient(180deg,#ffeccc,#fff6e6)",stamp:"🔽",slug:"melbourne",
+  q:"Melbourne has a giant cricket ground. Is Melbourne NORTH or SOUTH of the equator?",
+  opts:[{t:"South",e:"🔽"},{t:"North",e:"🔼"}],ans:0,
+  fact:"South! Melbourne is far below the equator, in Australia."},
+ {city:"🗽",flag:"🇺🇸",place:"New York",sub:"Home of the Knicks 🏀",bg:"linear-gradient(180deg,#a7c5ff,#e3edff)",stamp:"🔼",slug:"new-york",
+  q:"New York is home to the Knicks. Is New York NORTH or SOUTH of the equator?",
+  opts:[{t:"North",e:"🔼"},{t:"South",e:"🔽"}],ans:0,
+  fact:"North! New York is above the equator, in North America."}
+];
+STOPS.forEach(s=>{s.url=BASE+"/rankings/"+s.slug;s.linkLabel="See "+s.place+" on the site →";});
+
+let i=0, soundOn=true, locked=false;
+const $=id=>document.getElementById(id);
+let actx;
+function tone(freq,dur,type,when,gain){
+  if(!soundOn) return;
+  try{
+    actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+    const o=actx.createOscillator(),g=actx.createGain();
+    o.type=type||"sine";o.frequency.value=freq;
+    g.gain.value=gain||0.12;o.connect(g);g.connect(actx.destination);
+    const t=actx.currentTime+(when||0);
+    o.start(t);g.gain.setValueAtTime(g.gain.value,t);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.stop(t+dur);
+  }catch(e){}
+}
+const cheer=()=>{[523,659,784,1047].forEach((f,k)=>tone(f,0.25,"triangle",k*0.09,0.14));};
+const nope=()=>tone(180,0.25,"sine",0,0.12);
+function speak(txt){
+  if(!("speechSynthesis"in window)) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(txt);u.rate=0.92;u.pitch=1.12;speechSynthesis.speak(u);
+}
+function confetti(){
+  const cols=["#ffd23f","#34d3b0","#ff6b6b","#7fd1ff","#a7f0a0"];
+  for(let k=0;k<26;k++){
+    const c=document.createElement("div");c.className="confetti";
+    c.style.left=Math.random()*100+"vw";c.style.background=cols[k%cols.length];
+    c.style.animation="fall "+(1.1+Math.random()*0.9)+"s ease-in "+(Math.random()*0.2)+"s forwards";
+    c.style.opacity=0;document.body.appendChild(c);setTimeout(()=>c.remove(),2400);
+  }
+}
+function buildPassport(){
+  const p=$("passport");p.innerHTML="";
+  STOPS.forEach((s,k)=>{
+    const d=document.createElement("div");
+    d.className="stamp"+(k<i?" got":"");d.id="stamp"+k;d.textContent=k<i?s.stamp:"";p.appendChild(d);
+  });
+}
+function render(){
+  locked=false;
+  const s=STOPS[i];
+  $("scene").style.background=s.bg;
+  $("city").textContent=s.city;
+  $("flag").textContent=s.flag||"";
+  $("place").firstChild.textContent=s.place;
+  $("sub").textContent=s.sub;
+  $("q").textContent=s.q;
+  $("toast").textContent="";
+  $("reveal").className="reveal";
+  $("next").className="next";
+  const o=$("opts");o.innerHTML="";
+  const order=s.opts.map((x,k)=>k);
+  for(let a=order.length-1;a>0;a--){const b=Math.floor(Math.random()*(a+1));[order[a],order[b]]=[order[b],order[a]];}
+  order.forEach(idx=>{
+    const opt=s.opts[idx];
+    const btn=document.createElement("button");btn.className="opt";
+    btn.innerHTML=(opt.e?'<span class="em">'+opt.e+'</span>':'')+'<span>'+opt.t+'</span>';
+    btn.onclick=()=>choose(btn,idx===s.ans);
+    o.appendChild(btn);
+  });
+  buildPassport();
+}
+function choose(btn,correct){
+  if(locked) return;
+  if(correct){
+    locked=true;btn.classList.add("right");
+    document.querySelectorAll(".opt").forEach(b=>{if(b!==btn)b.classList.add("dim")});
+    $("toast").textContent="🌟 Well done!";
+    cheer();confetti();
+    const s=STOPS[i];
+    $("fact").textContent=s.fact;
+    if(s.url){$("golink").style.display="inline-block";$("golink").href=s.url;$("golink").textContent=s.linkLabel||"See on the site →";}
+    else{$("golink").style.display="none";}
+    $("reveal").className="reveal show";
+    const st=$("stamp"+i);if(st){st.textContent=s.stamp;st.className="stamp got";}
+    $("next").textContent = i===STOPS.length-1 ? "See my stamps →" : "Next →";
+    $("next").className="next show";
+  }else{
+    btn.classList.add("wrong");$("toast").textContent="Not quite — try again! 💪";
+    nope();setTimeout(()=>btn.classList.remove("wrong"),450);
+  }
+}
+$("next").onclick=()=>{
+  i++;
+  if(i>=STOPS.length){finale();return;}
+  render();window.scrollTo({top:0,behavior:"smooth"});
+};
+function finale(){
+  $("scene").style.display="none";
+  ["place","q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="none");
+  $("finale").className="finale show";
+  $("finalStamps").textContent=STOPS.map(s=>s.stamp).join(" ");
+  buildPassport();cheer();confetti();
+}
+$("again").onclick=()=>{
+  i=0;$("scene").style.display="";
+  ["place","q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="");
+  $("finale").className="finale";render();window.scrollTo({top:0});
+};
+$("read").onclick=()=>{const s=STOPS[i];speak(s.place+". "+s.q);};
+$("snd").onclick=()=>{soundOn=!soundOn;$("snd").textContent=soundOn?"🔊":"🔇";if(!soundOn&&"speechSynthesis"in window)speechSynthesis.cancel();};
+if(typeof HEADER!=="undefined"){
+  document.title=HEADER.title;
+  $("logoEmoji").textContent=HEADER.logoEmoji;
+  $("logoText").textContent=HEADER.logoText;
+  $("grownText").textContent=HEADER.grown;
+  $("finaleH").textContent=HEADER.finaleH;
+  $("finaleP").textContent=HEADER.finaleP;
+  $("again").textContent=HEADER.again;
+}
+render();
+</script>
+</body>
+</html>

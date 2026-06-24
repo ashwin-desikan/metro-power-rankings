@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Find the Team's Home — Play and Learn</title>
+<style>
+  :root{--navy:#16324f;--mint:#34d3b0;--sun:#ffd23f;--coral:#ff6b6b;--sky1:#7fd1ff;--sky2:#bff0e6;--ink:#13293d;--card:#fff}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:linear-gradient(180deg,var(--sky1),var(--sky2));color:var(--ink);min-height:100%;overflow-x:hidden;display:flex;flex-direction:column;align-items:center}
+  header{width:100%;max-width:640px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+  .logo{font-size:1.2rem;font-weight:800;color:var(--navy)}
+  .logo .mag{display:inline-block;animation:wob 3s ease-in-out infinite}
+  @keyframes wob{50%{transform:rotate(-16deg)}}
+  .sound{border:none;background:#ffffffcc;border-radius:999px;width:46px;height:46px;font-size:1.3rem;cursor:pointer;box-shadow:0 3px 0 #0002}
+  .passport{width:100%;max-width:640px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 16px 6px}
+  .stamp{width:32px;height:32px;border-radius:50%;background:#ffffff80;border:2px dashed #16324f55;display:flex;align-items:center;justify-content:center;font-size:1rem}
+  .stamp.got{background:var(--sun);border-style:solid;animation:pop .4s}
+  main{width:100%;max-width:640px;padding:8px 16px 28px;flex:1;display:flex;flex-direction:column}
+  .card{background:var(--card);border-radius:26px;box-shadow:0 12px 0 #16324f22,0 18px 30px #16324f33;padding:20px;text-align:center;position:relative;overflow:hidden}
+  .scene{height:150px;border-radius:18px;margin-bottom:10px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(180deg,#cdeafe,#eaf6ff)}
+  .scene .em{font-size:4.6rem;filter:drop-shadow(0 4px 6px #0003);z-index:2}
+  .scene .flag{position:absolute;top:10px;right:12px;font-size:2rem;z-index:3;opacity:0;transition:opacity .3s}
+  .scene .flag.show{opacity:1}
+  .team{font-size:1.5rem;font-weight:800;color:var(--navy);margin:2px 0}
+  .team small{display:block;font-size:.95rem;font-weight:600;color:#5b7b97}
+  .q{font-size:1.25rem;font-weight:800;line-height:1.3;margin:10px 6px 4px}
+  .readbtn{border:none;background:#eaf6ff;color:#1d6fb8;font-weight:700;border-radius:999px;padding:7px 14px;font-size:.95rem;cursor:pointer;margin-bottom:6px}
+  .opts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+  .opt{border:none;background:#f3f7fb;border-radius:18px;padding:16px;font-size:1.35rem;font-weight:800;color:var(--navy);cursor:pointer;box-shadow:0 5px 0 #c9d8e6;transition:transform .08s;display:flex;align-items:center;justify-content:center;gap:10px;min-height:62px}
+  .opt:active{transform:translateY(3px);box-shadow:0 2px 0 #c9d8e6}
+  .opt .em{font-size:1.6rem}
+  .opt.wrong{animation:shake .4s;background:#ffe3e3;box-shadow:0 5px 0 #f3b6b6}
+  .opt.right{background:var(--mint);color:#06372c;box-shadow:0 5px 0 #1f9e82}
+  .opt.dim{opacity:.45}
+  @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  @keyframes pop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .toast{min-height:24px;font-weight:800;font-size:1.05rem;margin-top:12px;color:var(--navy)}
+  .reveal{background:#fff7e6;border-radius:18px;padding:14px;margin-top:12px;display:none;animation:pop .35s}
+  .reveal.show{display:block}
+  .reveal .fact{font-size:1.05rem;font-weight:700;color:#7a5b00;line-height:1.35}
+  .golink{display:inline-block;margin-top:10px;background:#eaf6ff;color:#1d6fb8;font-weight:800;text-decoration:none;border-radius:12px;padding:9px 14px;font-size:.95rem}
+  .next{margin-top:14px;border:none;background:var(--coral);color:#fff;font-weight:800;font-size:1.2rem;border-radius:999px;padding:13px 24px;cursor:pointer;box-shadow:0 6px 0 #d2453f;display:none}
+  .next.show{display:inline-block;animation:pop .35s}
+  .next:active{transform:translateY(3px);box-shadow:0 3px 0 #d2453f}
+  .finale{text-align:center;display:none}
+  .finale.show{display:block;animation:pop .4s}
+  .finale h2{font-size:1.7rem;color:var(--navy);margin:.2em 0}
+  .finale .stamps{font-size:1.7rem;letter-spacing:3px;margin:8px 0;line-height:1.6}
+  .grown{font-size:.8rem;color:#5b7b97;margin-top:18px;text-align:center;max-width:640px;padding:0 16px}
+  .grown a{color:#1d6fb8}
+  .confetti{position:fixed;top:-20px;width:12px;height:12px;z-index:99;border-radius:2px;pointer-events:none}
+  @keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="mag">🔎</span> Find the Team's Home</div>
+  <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+</header>
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="scene" id="scene">
+      <span class="flag" id="flag"></span>
+      <span class="em" id="emoji">⚽</span>
+    </div>
+    <div class="team" id="team">—<small id="sub">—</small></div>
+    <div class="q" id="q">Loading…</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div><a class="golink" id="golink" target="_blank" rel="noopener">See this city on the site →</a></div>
+    <button class="next" id="next">Next team →</button>
+    <div class="finale" id="finale">
+      <h2>🌍 Brilliant scouting!</h2>
+      <p style="font-size:1.1rem;font-weight:700;color:#16324f">You found every team's home!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown">For grown-ups: a geography game using REAL clubs from the Citizen of Nowhere sports rankings. Match each team to its home city, country or continent; every reveal links to that metro on the site. Ages 5–9.</p>
+<script>
+const BASE="https://rankings.citizenofnowhere.org";
+const TEAMS=[
+ {emoji:"⚽",team:"Manchester United",sub:"Football",flag:"🏴",slug:"manchester",stamp:"⚽",
+  q:"Manchester United are a famous football club. Which CITY is their home?",
+  opts:[{t:"Manchester"},{t:"London"},{t:"Madrid"}],ans:0,
+  fact:"Manchester, in England (Europe). One of the most famous football clubs in the world!"},
+ {emoji:"🏀",team:"New York Knicks",sub:"Basketball · NBA",flag:"🇺🇸",slug:"new-york",stamp:"🏀",
+  q:"The Knicks play basketball. Which CITY is their home?",
+  opts:[{t:"New York"},{t:"Los Angeles"},{t:"Chicago"}],ans:0,
+  fact:"New York, USA (North America). They play at Madison Square Garden!"},
+ {emoji:"⚽",team:"Flamengo",sub:"Football",flag:"🇧🇷",slug:"rio-de-janeiro",stamp:"⚽",
+  q:"Flamengo are a huge football club. Which COUNTRY is their home in?",
+  opts:[{t:"Brazil",em:"🇧🇷"},{t:"Spain",em:"🇪🇸"},{t:"Egypt",em:"🇪🇬"}],ans:0,
+  fact:"Brazil! Flamengo play in Rio de Janeiro, in South America."},
+ {emoji:"🏏",team:"Mumbai Indians",sub:"Cricket · IPL",flag:"🇮🇳",slug:"mumbai",stamp:"🏏",
+  q:"The Mumbai Indians play cricket. Which CONTINENT is their home in?",
+  opts:[{t:"Asia"},{t:"Africa"},{t:"Europe"}],ans:0,
+  fact:"Asia! Mumbai is in India. The IPL is a famous cricket league."},
+ {emoji:"⚽",team:"Boca Juniors",sub:"Football",flag:"🇦🇷",slug:"buenos-aires",stamp:"⚽",
+  q:"Boca Juniors play football. Which CITY is their home?",
+  opts:[{t:"Buenos Aires"},{t:"Rio de Janeiro"},{t:"Madrid"}],ans:0,
+  fact:"Buenos Aires, Argentina (South America). Their stadium is nicknamed 'La Bombonera'."},
+ {emoji:"⚾",team:"Yomiuri Giants",sub:"Baseball · NPB",flag:"🇯🇵",slug:"tokyo",stamp:"⚾",
+  q:"The Yomiuri Giants play baseball. Which COUNTRY is their home?",
+  opts:[{t:"Japan",em:"🇯🇵"},{t:"China",em:"🇨🇳"},{t:"USA",em:"🇺🇸"}],ans:0,
+  fact:"Japan! The Giants play in Tokyo. Baseball is hugely popular in Japan."},
+ {emoji:"🏀",team:"Los Angeles Lakers",sub:"Basketball · NBA",flag:"🇺🇸",slug:"los-angeles",stamp:"🏀",
+  q:"The Lakers play basketball. Which CITY is their home?",
+  opts:[{t:"Los Angeles"},{t:"New York"},{t:"Miami"}],ans:0,
+  fact:"Los Angeles, USA (North America), on the Pacific coast."},
+ {emoji:"⚽",team:"Liverpool",sub:"Football",flag:"🏴",slug:"liverpool",stamp:"⚽",
+  q:"Liverpool FC play football. Which CONTINENT is their home in?",
+  opts:[{t:"Europe"},{t:"North America"},{t:"Asia"}],ans:0,
+  fact:"Europe! Liverpool is a city in England, famous for football and music."}
+];
+
+let i=0, soundOn=true, locked=false;
+const $=id=>document.getElementById(id);
+let actx;
+function tone(freq,dur,type,when,gain){
+  if(!soundOn) return;
+  try{
+    actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+    const o=actx.createOscillator(),g=actx.createGain();
+    o.type=type||"sine";o.frequency.value=freq;
+    g.gain.value=gain||0.12;o.connect(g);g.connect(actx.destination);
+    const t=actx.currentTime+(when||0);
+    o.start(t);g.gain.setValueAtTime(g.gain.value,t);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.stop(t+dur);
+  }catch(e){}
+}
+const cheer=()=>{[523,659,784,1047].forEach((f,k)=>tone(f,0.25,"triangle",k*0.09,0.14));};
+const nope=()=>tone(180,0.25,"sine",0,0.12);
+function speak(txt){
+  if(!("speechSynthesis"in window)) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(txt);u.rate=0.92;u.pitch=1.1;speechSynthesis.speak(u);
+}
+function confetti(){
+  const cols=["#ffd23f","#34d3b0","#ff6b6b","#7fd1ff","#a7f0a0"];
+  for(let k=0;k<26;k++){
+    const c=document.createElement("div");c.className="confetti";
+    c.style.left=Math.random()*100+"vw";c.style.background=cols[k%cols.length];
+    c.style.animation="fall "+(1.1+Math.random()*0.9)+"s ease-in "+(Math.random()*0.2)+"s forwards";
+    c.style.opacity=0;document.body.appendChild(c);setTimeout(()=>c.remove(),2400);
+  }
+}
+function buildPassport(){
+  const p=$("passport");p.innerHTML="";
+  TEAMS.forEach((s,k)=>{
+    const d=document.createElement("div");
+    d.className="stamp"+(k<i?" got":"");d.id="stamp"+k;d.textContent=k<i?s.stamp:"";p.appendChild(d);
+  });
+}
+function render(){
+  locked=false;
+  const s=TEAMS[i];
+  $("emoji").textContent=s.emoji;
+  $("flag").textContent=s.flag;$("flag").className="flag";
+  $("team").firstChild.textContent=s.team;
+  $("sub").textContent=s.sub;
+  $("q").textContent=s.q;
+  $("toast").textContent="";
+  $("reveal").className="reveal";
+  $("next").className="next";
+  const o=$("opts");o.innerHTML="";
+  const order=s.opts.map((x,k)=>k);
+  for(let a=order.length-1;a>0;a--){const b=Math.floor(Math.random()*(a+1));[order[a],order[b]]=[order[b],order[a]];}
+  order.forEach(idx=>{
+    const opt=s.opts[idx];
+    const btn=document.createElement("button");btn.className="opt";
+    btn.innerHTML=(opt.em?'<span class="em">'+opt.em+'</span>':'')+'<span>'+opt.t+'</span>';
+    btn.onclick=()=>choose(btn,idx===s.ans);
+    o.appendChild(btn);
+  });
+  buildPassport();
+}
+function choose(btn,correct){
+  if(locked) return;
+  if(correct){
+    locked=true;btn.classList.add("right");
+    document.querySelectorAll(".opt").forEach(b=>{if(b!==btn)b.classList.add("dim")});
+    $("toast").textContent="🌟 You found them!";
+    cheer();confetti();
+    const s=TEAMS[i];
+    $("flag").className="flag show";
+    $("fact").textContent=s.fact;
+    $("golink").href=BASE+"/rankings/"+s.slug;
+    $("golink").textContent="See "+s.team.replace(/^(The )?/,"")+"'s city on the site →";
+    $("reveal").className="reveal show";
+    const st=$("stamp"+i);if(st){st.textContent=s.stamp;st.className="stamp got";}
+    $("next").textContent = i===TEAMS.length-1 ? "See my stamps →" : "Next team →";
+    $("next").className="next show";
+  }else{
+    btn.classList.add("wrong");$("toast").textContent="Not quite — try again! 🔎";
+    nope();setTimeout(()=>btn.classList.remove("wrong"),450);
+  }
+}
+$("next").onclick=()=>{
+  i++;
+  if(i>=TEAMS.length){finale();return;}
+  render();window.scrollTo({top:0,behavior:"smooth"});
+};
+function finale(){
+  $("scene").style.display="none";
+  ["team","q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="none");
+  $("finale").className="finale show";
+  $("finalStamps").textContent=TEAMS.map(s=>s.stamp).join(" ");
+  buildPassport();cheer();confetti();
+}
+$("again").onclick=()=>{
+  i=0;$("scene").style.display="";
+  ["team","q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="");
+  $("finale").className="finale";render();window.scrollTo({top:0});
+};
+$("read").onclick=()=>{const s=TEAMS[i];speak(s.team+". "+s.q);};
+$("snd").onclick=()=>{soundOn=!soundOn;$("snd").textContent=soundOn?"🔊":"🔇";if(!soundOn&&"speechSynthesis"in window)speechSynthesis.cancel();};
+render();
+</script>
+</body>
+</html>

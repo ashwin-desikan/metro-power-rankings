@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-24",
+    headline: "Play & Learn games for younger fans",
+    items: [
+      "New /play section: eight free kids’ learning games built from the rankings — geography, reading and maths through real teams, cities and standings, for ages 5 to 10.",
+      "Games span World Sports Tour, Find the Team’s Home, League Table Detective on real NFL standings, Bigger City, Trophy Count, North or South, Odd One Out and Match Day Money.",
+      "Each blends UK (KS1/KS2) and US Grade 2 curricula, and every reveal links back to the team or metro page on the site.",
+    ],
+  },
+  {
     date: "2026-06-23",
     headline: "Rivalries reach women's basketball and football",
     items: [

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>League Table Detective — Play and Learn</title>
+<style>
+  :root{--navy:#16324f;--mint:#34d3b0;--sun:#ffd23f;--coral:#ff6b6b;--sky1:#7fd1ff;--sky2:#bff0e6;--ink:#13293d;--card:#fff}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:linear-gradient(180deg,var(--sky1),var(--sky2));color:var(--ink);min-height:100%;overflow-x:hidden;display:flex;flex-direction:column;align-items:center}
+  header{width:100%;max-width:660px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+  .logo{font-size:1.15rem;font-weight:800;color:var(--navy)}
+  .logo .mag{display:inline-block;animation:wob 3s ease-in-out infinite}
+  @keyframes wob{50%{transform:rotate(-18deg)}}
+  .sound{border:none;background:#ffffffcc;border-radius:999px;width:46px;height:46px;font-size:1.3rem;cursor:pointer;box-shadow:0 3px 0 #0002}
+  .progress{width:100%;max-width:660px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 16px 6px}
+  .dot{width:26px;height:26px;border-radius:50%;background:#ffffff80;border:2px dashed #16324f55;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;color:#16324f88}
+  .dot.got{background:var(--sun);border-style:solid;color:#16324f;animation:pop .4s}
+  main{width:100%;max-width:660px;padding:8px 16px 28px;flex:1}
+  .card{background:var(--card);border-radius:26px;box-shadow:0 12px 0 #16324f22,0 18px 30px #16324f33;padding:18px;text-align:center;position:relative;overflow:hidden}
+  .title{font-size:1.1rem;font-weight:800;color:var(--navy);margin:0 0 2px}
+  .src{font-size:.72rem;color:#5b7b97;margin:0 0 10px}
+  .src a{color:#1d6fb8}
+  .lt{width:100%;border-collapse:collapse;font-size:1rem}
+  .lt th,.lt td{padding:7px 3px;border-bottom:2px solid #eef4f9;text-align:center}
+  .lt th{background:var(--navy);color:#fff;font-size:.74rem;letter-spacing:.5px;border-bottom:none}
+  .lt th:first-child{border-radius:10px 0 0 0}.lt th:last-child{border-radius:0 10px 0 0}
+  .lt td.tm{text-align:left;font-weight:800;white-space:nowrap}
+  .lt td.tm .em{font-size:1.2rem;margin-right:4px}
+  .lt tr.hl td{background:#fff3c4}
+  .neg{color:#d2453f;font-weight:800}.posn{color:#1f9e82;font-weight:800}
+  .bars{display:flex;align-items:flex-end;gap:16px;height:170px;justify-content:center;margin:18px 0 34px}
+  .bar{width:52px;background:var(--mint);border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;color:#06372c;font-weight:800;padding-top:4px;position:relative;transition:height .5s}
+  .bar .lab{position:absolute;bottom:-28px;font-size:.78rem;font-weight:800;color:var(--navy);width:80px;left:-14px}
+  .legend{font-size:.78rem;color:#5b7b97;margin-top:-4px}
+  .q{font-size:1.25rem;font-weight:800;line-height:1.3;margin:14px 6px 4px}
+  .readbtn{border:none;background:#eaf6ff;color:#1d6fb8;font-weight:700;border-radius:999px;padding:7px 14px;font-size:.95rem;cursor:pointer;margin-bottom:6px}
+  .opts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px}
+  .opt{border:none;background:#f3f7fb;border-radius:16px;padding:16px 6px;font-size:1.3rem;font-weight:800;color:var(--navy);cursor:pointer;box-shadow:0 5px 0 #c9d8e6;transition:transform .08s;min-height:60px;display:flex;align-items:center;justify-content:center;gap:6px}
+  .opt:active{transform:translateY(3px);box-shadow:0 2px 0 #c9d8e6}
+  .opt .em{font-size:1.4rem}
+  .opt.wrong{animation:shake .4s;background:#ffe3e3;box-shadow:0 5px 0 #f3b6b6}
+  .opt.right{background:var(--mint);color:#06372c;box-shadow:0 5px 0 #1f9e82}
+  .opt.dim{opacity:.45}
+  @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  @keyframes pop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .toast{min-height:24px;font-weight:800;font-size:1.05rem;margin-top:12px;color:var(--navy)}
+  .reveal{background:#fff7e6;border-radius:16px;padding:13px;margin-top:12px;display:none;animation:pop .35s}
+  .reveal.show{display:block}
+  .reveal .fact{font-size:1.05rem;font-weight:700;color:#7a5b00;line-height:1.35}
+  .next{margin-top:14px;border:none;background:var(--coral);color:#fff;font-weight:800;font-size:1.2rem;border-radius:999px;padding:13px 24px;cursor:pointer;box-shadow:0 6px 0 #d2453f;display:none}
+  .next.show{display:inline-block;animation:pop .35s}
+  .next:active{transform:translateY(3px);box-shadow:0 3px 0 #d2453f}
+  .finale{text-align:center;display:none}
+  .finale.show{display:block;animation:pop .4s}
+  .finale h2{font-size:1.6rem;color:var(--navy);margin:.2em 0}
+  .sitelinks{display:flex;flex-direction:column;gap:8px;margin:14px 0}
+  .sitelinks a{background:#eaf6ff;color:#1d6fb8;font-weight:800;text-decoration:none;border-radius:14px;padding:11px;font-size:1rem}
+  .grown{font-size:.8rem;color:#5b7b97;margin-top:18px;text-align:center;max-width:660px;padding:0 16px}
+  .grown a{color:#1d6fb8}
+  .confetti{position:fixed;top:-20px;width:12px;height:12px;z-index:99;border-radius:2px;pointer-events:none}
+  @keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="mag">🔍</span> League Table Detective</div>
+  <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+</header>
+<div class="progress" id="progress"></div>
+<main>
+  <div class="card" id="card">
+    <p class="title">🏈 NFL · AFC East · 2025 final standings</p>
+    <p class="src">Real results from the Citizen of Nowhere sports rankings</p>
+    <div id="view"></div>
+    <div class="q" id="q">Loading…</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div></div>
+    <button class="next" id="next">Next clue →</button>
+    <div class="finale" id="finale">
+      <h2>🕵️ Case solved!</h2>
+      <p style="font-size:1.1rem;font-weight:700;color:#16324f">You are a League Table Detective!</p>
+      <p style="font-size:.95rem;color:#5b7b97">Explore these real teams on the site:</p>
+      <div class="sitelinks" id="sitelinks"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown">For grown-ups: a KS2 / US Grade 2 data and maths game using the REAL 2025 AFC East NFL standings from the Citizen of Nowhere sports rankings. Reading a table, addition (games played), place value to 1,000, three-digit subtraction and negative numbers (points difference), comparing and ordering, and reading a bar chart. Every figure is real. Ages 6–10.</p>
+<script>
+const BASE="https://rankings.citizenofnowhere.org";
+const TEAMS=[
+ {name:"Patriots",full:"New England Patriots",em:"🏈",W:14,L:3,PF:490,PA:320,slug:"new-england-patriots",metro:"Boston"},
+ {name:"Bills",full:"Buffalo Bills",em:"🏈",W:12,L:5,PF:481,PA:365,slug:"buffalo-bills",metro:"Buffalo"},
+ {name:"Dolphins",full:"Miami Dolphins",em:"🐬",W:7,L:10,PF:347,PA:424,slug:"miami-dolphins",metro:"Miami"},
+ {name:"Jets",full:"New York Jets",em:"🛩️",W:3,L:14,PF:300,PA:503,slug:"new-york-jets",metro:"New York"}
+];
+TEAMS.forEach(t=>{t.P=t.W+t.L; t.Diff=t.PF-t.PA; t.WP=t.W/t.P;});
+TEAMS.sort((a,b)=> b.WP-a.WP || b.Diff-a.Diff);
+
+const QUESTIONS=[
+ {view:"table",hl:"Patriots",
+  q:"This is the real 2025 AFC East table. Which team finished TOP?",
+  opts:[{t:"Patriots"},{t:"Bills"},{t:"Jets"}],ans:0,
+  fact:"The Patriots! They won the most games (14) and sit at the top of the table."},
+ {view:"table",hl:"Patriots",
+  q:"The Patriots won 14 games and lost 3. How many games did they play in total? (14 + 3)",
+  opts:[{t:"17"},{t:"16"},{t:"18"}],ans:0,
+  fact:"14 + 3 = 17 games. Every NFL team plays 17 games in a season."},
+ {view:"table",hl:"Patriots",
+  q:"The Patriots scored 490 points. Which digit is in the HUNDREDS place?",
+  opts:[{t:"4"},{t:"9"},{t:"0"}],ans:0,
+  fact:"In 490, the 4 is in the hundreds place, the 9 is tens, the 0 is ones. That is 400 + 90 + 0."},
+ {view:"table",hl:"Jets",
+  q:"The Jets scored 300 points and let in 503. What is their points difference? (300 − 503)",
+  opts:[{t:"−203"},{t:"+203"},{t:"−103"}],ans:0,
+  fact:"300 − 503 = −203. The minus sign means the Jets let in many more points than they scored."},
+ {view:"table",hl:"Patriots",
+  q:"Which team has the BEST points difference?",
+  opts:[{t:"Patriots"},{t:"Dolphins"},{t:"Jets"}],ans:0,
+  fact:"The Patriots: +170 (490 scored − 320 let in). The biggest points difference is best."},
+ {view:"table",hl:"Jets",
+  q:"How many games did the Jets WIN? Read along their row to the W column.",
+  opts:[{t:"3"},{t:"4"},{t:"14"}],ans:0,
+  fact:"The Jets won just 3 games. You found it by reading across their row to the W (Won) column."},
+ {view:"bars",
+  q:"The bars show how many games each team WON. Which team won the FEWEST?",
+  opts:[{t:"Jets"},{t:"Dolphins"},{t:"Bills"}],ans:0,
+  fact:"The Jets — the shortest bar, just 3 wins. A bar chart shows numbers as heights so you can compare fast."},
+ {view:"table",hl:"Dolphins",
+  q:"The Dolphins won 7 games. If they had won 3 more, how many would they have? (7 + 3)",
+  opts:[{t:"10"},{t:"9"},{t:"11"}],ans:0,
+  fact:"7 + 3 = 10 wins. That would have lifted the Dolphins higher, but still below the Bills' 12."}
+];
+
+let i=0, soundOn=true, locked=false;
+const $=id=>document.getElementById(id);
+
+let actx;
+function tone(freq,dur,type,when,gain){
+  if(!soundOn) return;
+  try{
+    actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+    const o=actx.createOscillator(),g=actx.createGain();
+    o.type=type||"sine";o.frequency.value=freq;
+    g.gain.value=gain||0.12;o.connect(g);g.connect(actx.destination);
+    const t=actx.currentTime+(when||0);
+    o.start(t);g.gain.setValueAtTime(g.gain.value,t);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.stop(t+dur);
+  }catch(e){}
+}
+const cheer=()=>{[523,659,784,1047].forEach((f,k)=>tone(f,0.25,"triangle",k*0.09,0.14));};
+const nope=()=>tone(180,0.25,"sine",0,0.12);
+function speak(txt){
+  if(!("speechSynthesis"in window)) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(txt);u.rate=0.92;u.pitch=1.1;speechSynthesis.speak(u);
+}
+function confetti(){
+  const cols=["#ffd23f","#34d3b0","#ff6b6b","#7fd1ff","#a7f0a0"];
+  for(let k=0;k<26;k++){
+    const c=document.createElement("div");c.className="confetti";
+    c.style.left=Math.random()*100+"vw";c.style.background=cols[k%cols.length];
+    c.style.animation="fall "+(1.1+Math.random()*0.9)+"s ease-in "+(Math.random()*0.2)+"s forwards";
+    c.style.opacity=0;document.body.appendChild(c);setTimeout(()=>c.remove(),2400);
+  }
+}
+function sgn(n){return (n>0?"+":"")+n;}
+function tableHTML(hl){
+  let r='<table class="lt"><tr><th>Team</th><th>P</th><th>W</th><th>L</th><th>PF</th><th>PA</th><th>Diff</th></tr>';
+  TEAMS.forEach(t=>{
+    const cls=t.Diff<0?"neg":"posn";
+    r+='<tr'+(hl===t.name?' class="hl"':'')+'><td class="tm"><span class="em">'+t.em+'</span>'+t.name+'</td>'+
+      '<td>'+t.P+'</td><td>'+t.W+'</td><td>'+t.L+'</td><td>'+t.PF+'</td><td>'+t.PA+'</td>'+
+      '<td class="'+cls+'">'+sgn(t.Diff)+'</td></tr>';
+  });
+  r+='</table><div class="legend">P=Played · W=Won · L=Lost · PF=Points For · PA=Points Against · Diff=Points Difference</div>';
+  return r;
+}
+function barsHTML(){
+  const max=Math.max.apply(null,TEAMS.map(t=>t.W));
+  let r='<div class="bars">';
+  TEAMS.forEach(t=>{
+    const h=Math.round(t.W/max*150)+10;
+    r+='<div class="bar" style="height:'+h+'px">'+t.W+'<span class="lab">'+t.em+' '+t.name+'</span></div>';
+  });
+  r+='</div><div class="legend">Each bar shows a team\'s number of wins.</div>';
+  return r;
+}
+function buildProgress(){
+  const p=$("progress");p.innerHTML="";
+  QUESTIONS.forEach((s,k)=>{
+    const d=document.createElement("div");
+    d.className="dot"+(k<i?" got":"");d.textContent=k<i?"★":(k+1);p.appendChild(d);
+  });
+}
+function render(){
+  locked=false;
+  const s=QUESTIONS[i];
+  $("view").innerHTML = s.view==="bars" ? barsHTML() : tableHTML(null);
+  $("q").textContent=s.q;
+  $("toast").textContent="";
+  $("reveal").className="reveal";
+  $("next").className="next";
+  const o=$("opts");o.innerHTML="";
+  const order=s.opts.map((x,k)=>k);
+  for(let a=order.length-1;a>0;a--){const b=Math.floor(Math.random()*(a+1));[order[a],order[b]]=[order[b],order[a]];}
+  order.forEach(idx=>{
+    const opt=s.opts[idx];
+    const btn=document.createElement("button");btn.className="opt";
+    btn.innerHTML=(opt.em?'<span class="em">'+opt.em+'</span>':'')+'<span>'+opt.t+'</span>';
+    btn.onclick=()=>choose(btn,idx===s.ans);
+    o.appendChild(btn);
+  });
+  buildProgress();
+}
+function choose(btn,correct){
+  if(locked) return;
+  if(correct){
+    locked=true;btn.classList.add("right");
+    document.querySelectorAll(".opt").forEach(b=>{if(b!==btn)b.classList.add("dim")});
+    $("toast").textContent="🌟 Great detective work!";
+    cheer();confetti();
+    const s=QUESTIONS[i];
+    if(s.view!=="bars" && s.hl) $("view").innerHTML=tableHTML(s.hl);
+    $("fact").textContent=s.fact;$("reveal").className="reveal show";
+    $("next").textContent = i===QUESTIONS.length-1 ? "Finish →" : "Next clue →";
+    $("next").className="next show";
+  }else{
+    btn.classList.add("wrong");$("toast").textContent="Not quite — look again! 🔍";
+    nope();setTimeout(()=>btn.classList.remove("wrong"),450);
+  }
+}
+$("next").onclick=()=>{
+  i++;
+  if(i>=QUESTIONS.length){finale();return;}
+  render();window.scrollTo({top:0,behavior:"smooth"});
+};
+function finale(){
+  ["q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="none");
+  $("view").innerHTML=tableHTML(null);
+  const sl=$("sitelinks");sl.innerHTML="";
+  TEAMS.slice().sort((a,b)=>b.WP-a.WP).forEach(t=>{
+    const a=document.createElement("a");
+    a.href=BASE+"/teams/nfl/"+t.slug;a.target="_blank";a.rel="noopener";
+    a.textContent=t.em+" "+t.full+" — "+t.metro+" →";sl.appendChild(a);
+  });
+  $("finale").className="finale show";buildProgress();cheer();confetti();
+}
+$("again").onclick=()=>{
+  i=0;["q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="");
+  $("finale").className="finale";render();window.scrollTo({top:0});
+};
+$("read").onclick=()=>{speak(QUESTIONS[i].q);};
+$("snd").onclick=()=>{soundOn=!soundOn;$("snd").textContent=soundOn?"🔊":"🔇";if(!soundOn&&"speechSynthesis"in window)speechSynthesis.cancel();};
+render();
+</script>
+</body>
+</html>

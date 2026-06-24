@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>World Sports Tour — Play and Learn</title>
+<style>
+  :root{--navy:#16324f;--mint:#34d3b0;--sun:#ffd23f;--coral:#ff6b6b;--sky1:#7fd1ff;--sky2:#bff0e6;--ink:#13293d;--card:#fff}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;background:linear-gradient(180deg,var(--sky1),var(--sky2));color:var(--ink);min-height:100%;overflow-x:hidden;display:flex;flex-direction:column;align-items:center}
+  header{width:100%;max-width:640px;display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+  .logo{font-size:1.2rem;font-weight:800;color:var(--navy)}
+  .logo .ball{display:inline-block;animation:spin 6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .sound{border:none;background:#ffffffcc;border-radius:999px;width:46px;height:46px;font-size:1.3rem;cursor:pointer;box-shadow:0 3px 0 #0002}
+  .passport{width:100%;max-width:640px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:0 16px 6px}
+  .stamp{width:32px;height:32px;border-radius:50%;background:#ffffff80;border:2px dashed #16324f55;display:flex;align-items:center;justify-content:center;font-size:1rem}
+  .stamp.got{background:var(--sun);border-style:solid;animation:pop .4s}
+  main{width:100%;max-width:640px;padding:8px 16px 28px;flex:1;display:flex;flex-direction:column}
+  .card{background:var(--card);border-radius:26px;box-shadow:0 12px 0 #16324f22,0 18px 30px #16324f33;padding:20px;text-align:center;position:relative;overflow:hidden}
+  .scene{height:150px;border-radius:18px;margin-bottom:12px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .scene .city{font-size:4.2rem;filter:drop-shadow(0 4px 6px #0003);z-index:2}
+  .scene .flag{position:absolute;top:10px;right:12px;font-size:2rem;z-index:3}
+  .scene .pip{position:absolute;left:10px;bottom:6px;width:62px;height:62px;z-index:3;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-8px)}}
+  .place{font-size:1.5rem;font-weight:800;color:var(--navy);margin:2px 0}
+  .place small{display:block;font-size:.95rem;font-weight:600;color:#5b7b97}
+  .q{font-size:1.3rem;font-weight:800;line-height:1.3;margin:10px 6px 4px}
+  .readbtn{border:none;background:#eaf6ff;color:#1d6fb8;font-weight:700;border-radius:999px;padding:7px 14px;font-size:.95rem;cursor:pointer;margin-bottom:6px}
+  .opts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
+  .opt{border:none;background:#f3f7fb;border-radius:18px;padding:16px;font-size:1.4rem;font-weight:800;color:var(--navy);cursor:pointer;box-shadow:0 5px 0 #c9d8e6;transition:transform .08s;display:flex;align-items:center;justify-content:center;gap:10px;min-height:64px}
+  .opt:active{transform:translateY(3px);box-shadow:0 2px 0 #c9d8e6}
+  .opt .em{font-size:1.8rem}
+  .opt.wrong{animation:shake .4s;background:#ffe3e3;box-shadow:0 5px 0 #f3b6b6}
+  .opt.right{background:var(--mint);color:#06372c;box-shadow:0 5px 0 #1f9e82}
+  .opt.dim{opacity:.45}
+  @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  @keyframes pop{0%{transform:scale(.4)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .toast{min-height:26px;font-weight:800;font-size:1.1rem;margin-top:12px;color:var(--navy)}
+  .reveal{background:#fff7e6;border-radius:18px;padding:14px;margin-top:12px;display:none;animation:pop .35s}
+  .reveal.show{display:block}
+  .reveal .fact{font-size:1.1rem;font-weight:700;color:#7a5b00;line-height:1.35}
+  .golink{display:inline-block;margin-top:10px;background:#eaf6ff;color:#1d6fb8;font-weight:800;text-decoration:none;border-radius:12px;padding:9px 14px;font-size:.95rem}
+  .next{margin-top:14px;border:none;background:var(--coral);color:#fff;font-weight:800;font-size:1.25rem;border-radius:999px;padding:14px 26px;cursor:pointer;box-shadow:0 6px 0 #d2453f;display:none}
+  .next.show{display:inline-block;animation:pop .35s}
+  .next:active{transform:translateY(3px);box-shadow:0 3px 0 #d2453f}
+  .finale{text-align:center;display:none}
+  .finale.show{display:block;animation:pop .4s}
+  .finale h2{font-size:1.8rem;color:var(--navy);margin:.2em 0}
+  .finale .stamps{font-size:1.8rem;letter-spacing:3px;margin:10px 0;line-height:1.6}
+  .grown{font-size:.8rem;color:#5b7b97;margin-top:18px;text-align:center;max-width:640px;padding:0 16px}
+  .grown a{color:#1d6fb8}
+  .confetti{position:fixed;top:-20px;width:12px;height:12px;z-index:99;border-radius:2px;pointer-events:none}
+  @keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="ball">⚽</span> World Sports Tour</div>
+  <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+</header>
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="scene" id="scene">
+      <span class="flag" id="flag">🏳️</span>
+      <span class="city" id="city">🏙️</span>
+      <svg class="pip" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#34d3b0" stroke="#16324f" stroke-width="4"/><path d="M14 50h72M50 8c16 14 16 70 0 84M50 8c-16 14-16 70 0 84" fill="none" stroke="#16324f" stroke-width="3" opacity=".5"/><circle cx="38" cy="46" r="6" fill="#16324f"/><circle cx="62" cy="46" r="6" fill="#16324f"/><circle cx="40" cy="44" r="2" fill="#fff"/><circle cx="64" cy="44" r="2" fill="#fff"/><path d="M36 64q14 14 28 0" fill="none" stroke="#16324f" stroke-width="4" stroke-linecap="round"/></svg>
+    </div>
+    <div class="place" id="place">—<small id="sub">—</small></div>
+    <div class="q" id="q">Loading…</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div><a class="golink" id="golink" target="_blank" rel="noopener">See this city on the site →</a></div>
+    <button class="next" id="next">Next stop →</button>
+    <div class="finale" id="finale">
+      <h2>🏆 You did it!</h2>
+      <p style="font-size:1.2rem;font-weight:700;color:#16324f">You are a World Sports Explorer!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown">For grown-ups: a learning game built from the Citizen of Nowhere sports rankings, using real clubs and cities. Geography, reading and maths through sport, blending UK (KS1/KS2) and US (Grade 2) curricula. Each reveal links to that city on the site. Ages 5–8.</p>
+<script>
+const BASE="https://rankings.citizenofnowhere.org";
+const STOPS=[
+ {city:"🏟️",flag:"🏴",place:"Manchester",sub:"England · Football ⚽",bg:"linear-gradient(180deg,#9bd3ff,#d7e8ff)",stamp:"⚽",slug:"manchester",
+  q:"Manchester United play football here. Which continent is Manchester in?",
+  opts:[{t:"Europe"},{t:"Africa"},{t:"Asia"}],ans:0,
+  fact:"Manchester is in Europe! It is home to Manchester United and Manchester City."},
+ {city:"⚽",flag:"🇪🇸",place:"Barcelona",sub:"Spain · Football ⚽",bg:"linear-gradient(180deg,#ffd98a,#fff0cf)",stamp:"🏆",slug:"barcelona",
+  q:"One team won 5 cups. The other won 3 cups. Which number is MORE?",
+  opts:[{t:"5",e:"🏆"},{t:"3",e:"🏆"},{t:"1",e:"🏆"}],ans:0,
+  fact:"5 is more than 3! FC Barcelona play in Spain, in Europe."},
+ {city:"🗽",flag:"🇺🇸",place:"New York",sub:"USA · Basketball 🏀",bg:"linear-gradient(180deg,#a7c5ff,#e3edff)",stamp:"🏀",slug:"new-york",
+  q:"The New York Knicks play this sport. Which one is it?",
+  opts:[{t:"Basketball",e:"🏀"},{t:"Football",e:"⚽"},{t:"Cricket",e:"🏏"}],ans:0,
+  fact:"Basketball! The New York Knicks play in New York, in North America."},
+ {city:"🏙️",flag:"🇺🇸",place:"Houston",sub:"USA · Communities 🧭",bg:"linear-gradient(180deg,#a7c5ff,#e3edff)",stamp:"🏙️",slug:"houston",
+  q:"Houston has tall buildings, busy roads and lots of people. What do we call a big city like this?",
+  opts:[{t:"Urban",e:"🏙️"},{t:"Rural",e:"🌾"},{t:"Suburban",e:"🏡"}],ans:0,
+  fact:"Urban means a big city! Houston, home of the Rockets, is urban. Rural is countryside; suburban is in between."},
+ {city:"🏯",flag:"🇯🇵",place:"Tokyo",sub:"Japan · Olympics 🥇",bg:"linear-gradient(180deg,#ffc1cf,#ffe6ec)",stamp:"🥇",slug:"tokyo",
+  q:"Tokyo held the Olympic Games! Which continent is Tokyo in?",
+  opts:[{t:"Asia"},{t:"Europe"},{t:"South America"}],ans:0,
+  fact:"Tokyo is in Asia. It held the Olympics, and the Yomiuri Giants play baseball here!"},
+ {city:"⚾",flag:"🇺🇸",place:"Chicago",sub:"USA · Baseball ⚾",bg:"linear-gradient(180deg,#ffd98a,#fff0cf)",stamp:"💵",slug:"chicago",
+  q:"A baseball cap costs $7. You pay with a $10 note. How much change do you get back?",
+  opts:[{t:"$3",e:"💵"},{t:"$2",e:"💵"},{t:"$4",e:"💵"}],ans:0,
+  fact:"$10 − $7 = $3 change! The Chicago Cubs play baseball in Chicago, USA."},
+ {city:"⛰️",flag:"🇧🇷",place:"Rio de Janeiro",sub:"Brazil · Football ⚽",bg:"linear-gradient(180deg,#9be7a0,#dff7e1)",stamp:"⚽",slug:"rio-de-janeiro",
+  q:"Brazil scored 2 goals, then 3 more goals! How many goals in total?",
+  opts:[{t:"5",e:"⚽"},{t:"4",e:"⚽"},{t:"6",e:"⚽"}],ans:0,
+  fact:"2 + 3 = 5 goals! Flamengo play in Rio de Janeiro, in South America."},
+ {city:"🌴",flag:"🇺🇸",place:"Los Angeles",sub:"USA · Basketball 🏀",bg:"linear-gradient(180deg,#ffc1a8,#ffe6d6)",stamp:"🧭",slug:"los-angeles",
+  q:"Los Angeles is on the west coast of the USA. On a compass, which way is WEST?",
+  opts:[{t:"West",e:"⬅️"},{t:"East",e:"➡️"},{t:"North",e:"⬆️"}],ans:0,
+  fact:"West points to the sunset! The LA Lakers play in Los Angeles, by the Pacific Ocean."},
+ {city:"🏏",flag:"🇦🇺",place:"Melbourne",sub:"Australia · Cricket 🏏",bg:"linear-gradient(180deg,#ffd08a,#ffeccc)",stamp:"🏏",slug:"melbourne",
+  q:"Melbourne has a giant cricket ground. Which continent is it in?",
+  opts:[{t:"Oceania"},{t:"Africa"},{t:"Europe"}],ans:0,
+  fact:"Melbourne is in Australia (Oceania). The MCG cricket ground holds 100,000 fans!"},
+ {city:"⚽",flag:"🇬🇧",place:"Liverpool",sub:"England · Football ⚽",bg:"linear-gradient(180deg,#9bd3ff,#d7e8ff)",stamp:"📖",slug:"liverpool",
+  q:"In Liverpool, they call the game FOOTBALL. In America, what do they call the same game?",
+  opts:[{t:"Soccer",e:"⚽"},{t:"Baseball",e:"⚾"},{t:"Rugby",e:"🏉"}],ans:0,
+  fact:"Football and soccer are two names for one game! Liverpool FC play in Liverpool, England."},
+ {city:"🐫",flag:"🇪🇬",place:"Cairo",sub:"Egypt · Football ⚽",bg:"linear-gradient(180deg,#ffe08a,#fff3cf)",stamp:"⚽",slug:"cairo",
+  q:"Al Ahly are a famous football team in Cairo. Which country is Cairo in?",
+  opts:[{t:"Egypt",e:"🇪🇬"},{t:"Brazil",e:"🇧🇷"},{t:"Japan",e:"🇯🇵"}],ans:0,
+  fact:"Cairo is in Egypt, in Africa — home of Al Ahly, a giant African club, near the pyramids!"},
+ {city:"🏏",flag:"🇮🇳",place:"Mumbai",sub:"India · Cricket 🏏",bg:"linear-gradient(180deg,#a7c5ff,#e3edff)",stamp:"🏏",slug:"mumbai",
+  q:"Count the cricket bats! 🏏 🏏 🏏 🏏  How many are there?",
+  opts:[{t:"4",e:"🏏"},{t:"3",e:"🏏"},{t:"5",e:"🏏"}],ans:0,
+  fact:"4 bats! The Mumbai Indians play cricket in Mumbai, India (Asia)."}
+];
+
+let i=0, soundOn=true, locked=false;
+const $=id=>document.getElementById(id);
+let actx;
+function tone(freq,dur,type,when,gain){
+  if(!soundOn) return;
+  try{
+    actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+    const o=actx.createOscillator(),g=actx.createGain();
+    o.type=type||"sine";o.frequency.value=freq;
+    g.gain.value=gain||0.12;o.connect(g);g.connect(actx.destination);
+    const t=actx.currentTime+(when||0);
+    o.start(t);g.gain.setValueAtTime(g.gain.value,t);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.stop(t+dur);
+  }catch(e){}
+}
+const cheer=()=>{[523,659,784,1047].forEach((f,k)=>tone(f,0.25,"triangle",k*0.09,0.14));};
+const nope=()=>tone(180,0.25,"sine",0,0.12);
+function speak(txt){
+  if(!("speechSynthesis"in window)) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(txt);u.rate=0.92;u.pitch=1.12;speechSynthesis.speak(u);
+}
+function confetti(){
+  const cols=["#ffd23f","#34d3b0","#ff6b6b","#7fd1ff","#a7f0a0"];
+  for(let k=0;k<26;k++){
+    const c=document.createElement("div");c.className="confetti";
+    c.style.left=Math.random()*100+"vw";c.style.background=cols[k%cols.length];
+    c.style.animation="fall "+(1.1+Math.random()*0.9)+"s ease-in "+(Math.random()*0.2)+"s forwards";
+    c.style.opacity=0;document.body.appendChild(c);setTimeout(()=>c.remove(),2400);
+  }
+}
+function buildPassport(){
+  const p=$("passport");p.innerHTML="";
+  STOPS.forEach((s,k)=>{
+    const d=document.createElement("div");
+    d.className="stamp"+(k<i?" got":"");d.id="stamp"+k;d.textContent=k<i?s.stamp:"";p.appendChild(d);
+  });
+}
+function render(){
+  locked=false;
+  const s=STOPS[i];
+  $("scene").style.background=s.bg;
+  $("city").textContent=s.city;
+  $("flag").textContent=s.flag;
+  $("place").firstChild.textContent=s.place;
+  $("sub").textContent=s.sub;
+  $("q").textContent=s.q;
+  $("toast").textContent="";
+  $("reveal").className="reveal";
+  $("next").className="next";
+  const o=$("opts");o.innerHTML="";
+  const order=s.opts.map((x,k)=>k);
+  for(let a=order.length-1;a>0;a--){const b=Math.floor(Math.random()*(a+1));[order[a],order[b]]=[order[b],order[a]];}
+  order.forEach(idx=>{
+    const opt=s.opts[idx];
+    const btn=document.createElement("button");btn.className="opt";
+    btn.innerHTML=(opt.e?'<span class="em">'+opt.e+'</span>':'')+'<span>'+opt.t+'</span>';
+    btn.onclick=()=>choose(btn,idx===s.ans);
+    o.appendChild(btn);
+  });
+  buildPassport();
+}
+function choose(btn,correct){
+  if(locked) return;
+  if(correct){
+    locked=true;btn.classList.add("right");
+    document.querySelectorAll(".opt").forEach(b=>{if(b!==btn)b.classList.add("dim")});
+    $("toast").textContent="🌟 Well done!";
+    cheer();confetti();
+    const s=STOPS[i];
+    $("fact").textContent=s.fact;
+    $("golink").href=BASE+"/rankings/"+s.slug;
+    $("golink").textContent="See "+s.place+" on the site →";
+    $("reveal").className="reveal show";
+    const st=$("stamp"+i);if(st){st.textContent=s.stamp;st.className="stamp got";}
+    $("next").textContent = i===STOPS.length-1 ? "See my passport →" : "Next stop →";
+    $("next").className="next show";
+  }else{
+    btn.classList.add("wrong");$("toast").textContent="Not quite — try again! 💪";
+    nope();setTimeout(()=>btn.classList.remove("wrong"),450);
+  }
+}
+$("next").onclick=()=>{
+  i++;
+  if(i>=STOPS.length){finale();return;}
+  render();window.scrollTo({top:0,behavior:"smooth"});
+};
+function finale(){
+  $("scene").style.display="none";
+  ["place","q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="none");
+  $("finale").className="finale show";
+  $("finalStamps").textContent=STOPS.map(s=>s.stamp).join(" ");
+  buildPassport();cheer();confetti();
+}
+$("again").onclick=()=>{
+  i=0;$("scene").style.display="";
+  ["place","q","read","opts","toast","reveal","next"].forEach(id=>$(id).style.display="");
+  $("finale").className="finale";render();window.scrollTo({top:0});
+};
+$("read").onclick=()=>{const s=STOPS[i];speak(s.place+". "+s.q);};
+$("snd").onclick=()=>{soundOn=!soundOn;$("snd").textContent=soundOn?"🔊":"🔇";if(!soundOn&&"speechSynthesis"in window)speechSynthesis.cancel();};
+render();
+</script>
+</body>
+</html>
