@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { flagCdnUrl } from "@/lib/international-display";
 import { useMemo, useState } from "react";
 
 // Single merged, filterable champions board for /sports/champions. Plain
@@ -77,6 +79,35 @@ function fmtDate(iso: string | null): string {
   const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (!m) return iso;
   return `${parseInt(m[3], 10)} ${MONTHS[parseInt(m[2], 10) - 1]} ${m[1]}`;
+}
+
+// National-team champions store a country name in `team`. Show its flag, gated to
+// non-Domestic scope so a domestic club/college that happens to share a country
+// name (e.g. "Georgia") never gets one. Clubs and individuals return no flag.
+function nationSlug(name: string): string {
+  return name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function NationFlag({ team, scopeType }: { team: string; scopeType: ChampRow["scopeType"] }) {
+  if (scopeType === "Domestic") return null;
+  const url = flagCdnUrl(nationSlug(team));
+  if (!url) return null;
+  // eslint-disable-next-line @next/next/no-img-element
+  return (
+    <img
+      src={url}
+      alt=""
+      aria-hidden
+      width={18}
+      height={13}
+      className="inline-block rounded-sm object-contain flex-shrink-0 align-middle"
+    />
+  );
 }
 
 export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
@@ -264,7 +295,9 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
               <tr key={`${c.team}-${c.competition}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
                 <td className="py-2 px-3 align-top tabular-nums text-[var(--text-muted)]" style={mono}>{c.tier ?? ""}</td>
                 <td className="py-2 px-3 align-top">
-                  <div className="font-medium text-sm leading-tight">
+                  <div className="font-medium text-sm leading-tight flex items-center gap-1.5">
+                    <CrestIcon name={c.team} />
+                    <NationFlag team={c.team} scopeType={c.scopeType} />
                     {c.teamHref ? (
                       <Link href={c.teamHref} className="hover:text-[var(--accent)] hover:underline">
                         {c.team}

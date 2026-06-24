@@ -9,6 +9,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import type { WDecoratedRow, WColumn, WStatField } from "@/lib/wfootball";
 
 type SortKey = "total" | "club" | "country" | "metro" | WStatField;
@@ -114,7 +115,7 @@ export default function MostDecoratedClubsTable({
             {sorted.map((c, i) => (
               <tr key={c.slug} className="border-b" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1.5 pr-2 text-right tabular-nums text-[var(--text-muted)]">{i + 1}</td>
-                <td className="py-1.5 px-2"><Link href={`/teams/wfootball/clubs/${c.slug}`} className="hover:underline font-medium">{c.name}</Link></td>
+                <td className="py-1.5 px-2"><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.name} size={18} /><Link href={`/teams/wfootball/clubs/${c.slug}`} className="hover:underline font-medium">{c.name}</Link></span></td>
                 <td className="py-1.5 px-2 hidden md:table-cell text-[var(--text-muted)]">{c.country ?? <span className="text-[var(--text-dim)]">—</span>}</td>
                 <td className="py-1.5 px-2 hidden sm:table-cell text-[var(--text-muted)]">
                   {c.metro_slug ? <Link href={`/rankings/${c.metro_slug}`} className="hover:underline">{c.metro}</Link> : <span className="text-[var(--text-dim)]">—</span>}

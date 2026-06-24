@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-24",
-    headline: "Club crests sitewide, plus Play & Learn and the arcade",
+    headline: "Club crests sitewide and national-team flags, plus Play & Learn",
     items: [
-      "Team pages now show real club crests instead of monograms, across English and European football, MLS, the US majors, the AFL, NRL, IPL, WNBA, women's football and college sport, with a monogram fallback.",
-      "Crests render on club pages and on the league, tournament and franchise tables, and the NBA, MLB and NHL logos now resolve alongside the NFL.",
-      "New /play hub: kids Trivia and Be the Ref games, plus three adults Rules Labs for football, cricket and baseball that teach each sport's rules through real moments.",
-      "New Games arcade: Beat the Model against the World Cup simulator, Metro Higher or Lower, a daily Metro Globle map, and daily Metro and Sports immaculate grids.",
+      "Real club crests now appear wherever a team is listed: club pages, league ladders, hub and all-time tables, the Current Champions board and metro team lists, each with a monogram fallback.",
+      "Crest coverage spans the US majors, European and English football, AFL, NRL, CFL, IPL and domestic T20, WNBA, NWSL, EuroLeague, CBA, handball and college sport, plus new F1 constructor logos.",
+      "Current Champions now shows a flag for every national-team title, metro team lists group by sport then titles, and women's college programs reuse their school crest.",
+      "Also new: a /play hub of kids and adults rules games, plus a Games arcade with Beat the Model, Metro Globle and the daily Metro and Sports grids.",
     ],
   },
   {

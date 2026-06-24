@@ -27,5 +27,11 @@ const crests: Map<string, Crest> = (() => {
 })();
 
 export function getCrest(name: string): Crest | null {
-  return crests.get(norm(name)) ?? null;
+  const direct = crests.get(norm(name));
+  if (direct) return direct;
+  // Women's college programs are stored as the men's school name + " (W)".
+  // Reuse the men's crest when the women's program has no badge of its own.
+  const menName = name.replace(/\s*\(w\)\s*$/i, "");
+  if (menName !== name) return crests.get(norm(menName)) ?? null;
+  return null;
 }

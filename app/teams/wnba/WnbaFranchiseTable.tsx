@@ -6,6 +6,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { WnbaFranchise } from "@/lib/wnba";
 
 type SortKey = "default" | "franchise" | "seasons" | "wl" | "pct" | "playoffs" | "finals" | "titles";
@@ -71,7 +72,7 @@ export default function WnbaFranchiseTable({ franchises }: { franchises: WnbaFra
               <td className="py-2.5 pr-2 pl-3 text-right text-[var(--text-dim)] text-xs tabular-nums">{i + 1}</td>
               <td className="py-2.5 px-3">
                 <Link href={`/teams/wnba/${f.slug}`} className="flex items-center gap-2.5 hover:text-[var(--accent)] transition-colors">
-                  <span className="inline-flex items-center justify-center font-bold rounded flex-shrink-0" style={{ background: f.color, color: "#fff", width: 30, height: 19, fontSize: f.abbr.length > 3 ? 8 : 10, opacity: f.defunct ? 0.6 : 1 }} aria-hidden>{f.abbr}</span>
+                  <TeamCrest name={f.name} size={26} fallback={<span className="inline-flex items-center justify-center font-bold rounded flex-shrink-0" style={{ background: f.color, color: "#fff", width: 30, height: 19, fontSize: f.abbr.length > 3 ? 8 : 10, opacity: f.defunct ? 0.6 : 1 }} aria-hidden>{f.abbr}</span>} />
                   <span>
                     <span className="font-medium leading-tight inline-flex items-center gap-1.5">
                       {f.name}

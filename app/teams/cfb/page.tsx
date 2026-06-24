@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import { getAllCfbTeams, getAllCfbSlugs, getCfbTopGames, getCfbGamesByDecade, getCfbNationalChampions, type CfbTeam } from "@/lib/cfb";
@@ -26,7 +27,7 @@ function Leader({ title, rows }: { title: string; rows: { name: string; slug: st
         {rows.map((r, i) => (
           <li key={r.slug} className="flex items-baseline gap-2 text-sm">
             <span className="w-5 text-[11px] tabular-nums text-[var(--text-dim)]">{i + 1}</span>
-            <Link href={`/teams/cfb/${r.slug}`} className="flex-1 truncate hover:text-[var(--accent)]">{r.name}</Link>
+            <CrestIcon name={r.name} size={16} className="mr-1" /><Link href={`/teams/cfb/${r.slug}`} className="flex-1 truncate hover:text-[var(--accent)]">{r.name}</Link>
             <span className="tabular-nums text-[var(--text-muted)]">{r.val}</span>
           </li>
         ))}
@@ -90,7 +91,7 @@ export default function CfbHubPage() {
                       {nc.champs.map((c, i) => (
                         <span key={i}>
                           {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
-                          {c.slug ? <Link href={`/teams/cfb/${c.slug}`} className="font-medium hover:text-[var(--accent)]">{c.name}</Link> : <span className="font-medium">{c.name}</span>}
+                          <CrestIcon name={c.name} size={14} className="mr-1 align-[-2px]" />{c.slug ? <Link href={`/teams/cfb/${c.slug}`} className="font-medium hover:text-[var(--accent)]">{c.name}</Link> : <span className="font-medium">{c.name}</span>}
                           {c.sel ? <span className="text-[10px] text-[var(--text-dim)]"> ({c.sel})</span> : null}
                         </span>
                       ))}

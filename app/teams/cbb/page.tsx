@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import { getAllCbbTeams, getAllCbbSlugs, getCbbTopGames, getCbbGamesByDecade, getCbbNationalChampions, getCbbDynastyLeaders, type CbbTeam } from "@/lib/cbb";
@@ -26,7 +27,7 @@ function Leader({ title, rows }: { title: string; rows: { name: string; slug: st
         {rows.map((r, i) => (
           <li key={r.slug} className="flex items-baseline gap-2 text-sm">
             <span className="w-5 text-[11px] tabular-nums text-[var(--text-dim)]">{i + 1}</span>
-            <Link href={`/teams/cbb/${r.slug}`} className="flex-1 truncate hover:text-[var(--accent)]">{r.name}</Link>
+            <CrestIcon name={r.name} size={16} className="mr-1" /><Link href={`/teams/cbb/${r.slug}`} className="flex-1 truncate hover:text-[var(--accent)]">{r.name}</Link>
             <span className="tabular-nums text-[var(--text-muted)]">{r.val}</span>
           </li>
         ))}
@@ -91,7 +92,7 @@ export default function CbbHubPage() {
                       {nc.champs.map((c, i) => (
                         <span key={i}>
                           {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
-                          {c.slug ? <Link href={`/teams/cbb/${c.slug}`} className="font-medium hover:text-[var(--accent)]">{c.name}</Link> : <span className="font-medium">{c.name}</span>}
+                          <CrestIcon name={c.name} size={14} className="mr-1 align-[-2px]" />{c.slug ? <Link href={`/teams/cbb/${c.slug}`} className="font-medium hover:text-[var(--accent)]">{c.name}</Link> : <span className="font-medium">{c.name}</span>}
                           {c.sel ? <span className="text-[10px] text-[var(--text-dim)]"> ({c.sel})</span> : null}
                         </span>
                       ))}
@@ -100,7 +101,7 @@ export default function CbbHubPage() {
                       {(nc.runner_up ?? []).length === 0 ? <span className="text-[var(--text-dim)]">&mdash;</span> : (nc.runner_up ?? []).map((r, i) => (
                         <span key={i}>
                           {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
-                          {r.slug ? <Link href={`/teams/cbb/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link> : <span>{r.name}</span>}
+                          <CrestIcon name={r.name} size={13} className="mr-1 align-[-2px]" />{r.slug ? <Link href={`/teams/cbb/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link> : <span>{r.name}</span>}
                         </span>
                       ))}
                     </td>
@@ -108,7 +109,7 @@ export default function CbbHubPage() {
                       {(nc.final_four ?? []).length === 0 ? <span className="text-[var(--text-dim)]">&mdash;</span> : (nc.final_four ?? []).map((f, i) => (
                         <span key={i}>
                           {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
-                          {f.slug ? <Link href={`/teams/cbb/${f.slug}`} className="hover:text-[var(--accent)]">{f.name}</Link> : <span>{f.name}</span>}
+                          <CrestIcon name={f.name} size={13} className="mr-1 align-[-2px]" />{f.slug ? <Link href={`/teams/cbb/${f.slug}`} className="hover:text-[var(--accent)]">{f.name}</Link> : <span>{f.name}</span>}
                         </span>
                       ))}
                     </td>

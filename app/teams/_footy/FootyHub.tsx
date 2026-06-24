@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import HubNav from "@/app/teams/HubNav";
 import { fgFor, type FootyFranchise, type FootyMeta, type FootyLadder, type FootyGFResult } from "@/lib/_footy";
 import type { FootyStandingsView } from "@/lib/_footyStandings";
@@ -80,7 +81,7 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
                       <td className="py-2 px-3 text-right text-[var(--text-muted)]">{r.rank ?? i + 1}</td>
                       <td className="py-2 px-2">
                         <div className="flex items-center gap-2">
-                          {lf && <Badge color={lf.color} color2={lf.color2} abbr={lf.abbr} />}
+                          {lf && <TeamCrest name={lf.name} size={20} fallback={<Badge color={lf.color} color2={lf.color2} abbr={lf.abbr} />} />}
                           {lf ? <Link href={`/teams/${lg}/${lf.slug}`} className="hover:text-[var(--accent)] transition-colors">{lf.name}</Link> : <span>{r.name}</span>}
                         </div>
                       </td>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import {
   getAllFranchises,
   getIplMeta,
@@ -144,7 +145,7 @@ export default function IplPage() {
                         <td className="py-2 px-3 text-[var(--text-dim)] text-xs">{st.pos}</td>
                         <td className="py-2 px-3">
                           <div className="flex items-center gap-2">
-                            {fr && <Monogram abbr={fr.abbr} color={fr.color} size="xs" />}
+                            {fr && <TeamCrest name={st.name} size={20} fallback={<Monogram abbr={fr.abbr} color={fr.color} size="xs" />} />}
                             <Link href={`/teams/ipl/${st.slug}`} className={`hover:text-[var(--accent)] transition-colors ${st.champion ? "font-semibold" : ""}`}>{st.name}</Link>
                             {st.champion  && <span className="text-yellow-400 text-xs leading-none">★</span>}
                             {st.finalist && !st.champion && <span className="text-[var(--text-dim)] text-[10px] leading-none">F</span>}
@@ -223,7 +224,7 @@ export default function IplPage() {
                 <tr key={f.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
                   <td className="py-2.5 px-4">
                     <Link href={`/teams/ipl/${f.slug}`} className="flex items-center gap-2.5 hover:text-[var(--accent)] transition-colors">
-                      <Monogram abbr={f.abbr} color={f.color} />
+                      <TeamCrest name={f.name} size={24} fallback={<Monogram abbr={f.abbr} color={f.color} />} />
                       <div>
                         <div className="font-medium leading-tight flex items-center gap-1.5">
                           {f.name}
@@ -275,7 +276,7 @@ export default function IplPage() {
                     <td className="py-2 px-4 font-medium">{h.year}</td>
                     <td className="py-2 px-3">
                       <div className="flex items-center gap-2">
-                        {cf && <Monogram abbr={cf.abbr} color={cf.color} size="xs" />}
+                        {cf && <TeamCrest name={h.champion} size={18} fallback={<Monogram abbr={cf.abbr} color={cf.color} size="xs" />} />}
                         {h.champion_slug
                           ? <Link href={`/teams/ipl/${h.champion_slug}`} className="font-medium hover:text-[var(--accent)] transition-colors">{h.champion}</Link>
                           : <span className="font-medium">{h.champion}</span>}
@@ -283,7 +284,7 @@ export default function IplPage() {
                     </td>
                     <td className="py-2 px-3 text-[var(--text-muted)] hidden sm:table-cell">
                       <div className="flex items-center gap-2">
-                        {rf && <Monogram abbr={rf.abbr} color={rf.color} size="xs" />}
+                        {rf && <TeamCrest name={h.runner_up} size={18} fallback={<Monogram abbr={rf.abbr} color={rf.color} size="xs" />} />}
                         {h.runner_up_slug
                           ? <Link href={`/teams/ipl/${h.runner_up_slug}`} className="hover:text-[var(--accent)] transition-colors">{h.runner_up}</Link>
                           : <span>{h.runner_up ?? "—"}</span>}

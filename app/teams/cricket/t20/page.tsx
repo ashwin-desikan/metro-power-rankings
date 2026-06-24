@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import { getT20Leagues } from "@/lib/cricketClubs";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -88,7 +89,7 @@ export default function DomesticT20Page() {
               {data.most_titled[k].slice(0, 3).map((m, i) => (
                 <span key={m.winner}>
                   {i > 0 ? " · " : ""}
-                  <span className="font-medium text-[var(--text)]">{m.winner}</span>
+                  <span className="font-medium text-[var(--text)]"><CrestIcon name={m.winner} size={14} className="mr-1 align-[-2px]" />{m.winner}</span>
                   <span style={mono}> {m.titles}</span>
                 </span>
               ))}
@@ -99,8 +100,8 @@ export default function DomesticT20Page() {
                   {data.rolls[k].map((r, i) => (
                     <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1 pr-2 tabular-nums whitespace-nowrap" style={mono}>{r.season}</td>
-                      <td className="py-1 font-medium">{r.winner}</td>
-                      <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell">{r.ru}</td>
+                      <td className="py-1 font-medium"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.winner} size={16} />{r.winner}</span></td>
+                      <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.ru} size={16} />{r.ru}</span></td>
                     </tr>
                   ))}
                 </tbody>

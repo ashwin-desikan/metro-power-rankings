@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 // Shared winners-only honour-roll renderer for domestic competitions tracked as
 // champions lists only (handball/volleyball/basketball/hockey domestic, cricket
@@ -43,7 +44,7 @@ export default function HonourRolls({
             {(portal.most_titled[k] ?? []).slice(0, 3).map((m, i) => (
               <span key={m.winner}>
                 {i > 0 ? " · " : ""}
-                <span className="font-medium text-[var(--text)]">{m.winner}</span>
+                <span className="font-medium text-[var(--text)]"><CrestIcon name={m.winner} size={13} className="mr-1 align-[-2px]" />{m.winner}</span>
                 <span style={mono}> {m.titles}</span>
               </span>
             ))}
@@ -57,14 +58,22 @@ export default function HonourRolls({
                   <tr key={`${r.season}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1 pr-2 tabular-nums whitespace-nowrap align-top" style={mono}>{r.season}</td>
                     <td className="py-1 pr-2 font-medium">
-                      {links?.[r.winner] ? (
-                        <Link href={links[r.winner]} className="hover:text-[var(--accent)] hover:underline">{r.winner}</Link>
-                      ) : r.winner}
+                      <span className="inline-flex items-center gap-1.5">
+                        <CrestIcon name={r.winner} size={16} />
+                        {links?.[r.winner] ? (
+                          <Link href={links[r.winner]} className="hover:text-[var(--accent)] hover:underline">{r.winner}</Link>
+                        ) : r.winner}
+                      </span>
                     </td>
                     <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell">
-                      {r.ru ? (links?.[r.ru] ? (
-                        <Link href={links[r.ru]} className="hover:text-[var(--accent)] hover:underline">{r.ru}</Link>
-                      ) : r.ru) : ""}
+                      {r.ru ? (
+                        <span className="inline-flex items-center gap-1.5">
+                          <CrestIcon name={r.ru} size={16} />
+                          {links?.[r.ru] ? (
+                            <Link href={links[r.ru]} className="hover:text-[var(--accent)] hover:underline">{r.ru}</Link>
+                          ) : r.ru}
+                        </span>
+                      ) : ""}
                     </td>
                   </tr>
                 ))}

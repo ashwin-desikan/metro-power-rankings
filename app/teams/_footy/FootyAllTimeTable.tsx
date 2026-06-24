@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 
 type Row = {
   slug: string; name: string; active: boolean;
@@ -72,7 +73,7 @@ export default function FootyAllTimeTable({ franchises, league }: { franchises: 
               <tr key={f.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: f.premierships > 0 ? "rgba(212,175,55,0.05)" : undefined }}>
                 <td className="py-2 px-3">
                   <div className="flex items-center gap-2">
-                    <Badge r={f} />
+                    <TeamCrest name={f.name} size={20} fallback={<Badge r={f} />} />
                     <Link href={`/teams/${league}/${f.slug}`} className="hover:text-[var(--accent)] transition-colors">{f.name}</Link>
                     {!f.active && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>defunct</span>}
                   </div>

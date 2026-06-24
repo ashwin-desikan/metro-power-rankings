@@ -55,13 +55,20 @@ export default function CricketHubPage() {
   const slugByName = new Map(teams.map((t) => [t.name, t.slug]));
   const teamLink = (name: string, className?: string) => {
     const slug = slugByName.get(name);
-    return slug ? (
+    const flag = slug ? flagCdnUrl(slug) : null;
+    const inner = slug ? (
       <Link href={`/teams/cricket/${slug}`} className={`hover:text-[var(--accent)] ${className ?? ""}`}>
         {name}
       </Link>
     ) : (
       <span className={className}>{name}</span>
     );
+    return flag ? (
+      <span className="inline-flex items-center gap-1.5">
+        <img src={flag} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" />
+        {inner}
+      </span>
+    ) : inner;
   };
   // "Contested by" strings are "Team A v Team B": link both sides.
   const contestedBy = (s: string) => {

@@ -25,6 +25,7 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport, sportIcon, leagueIcon } from "@/lib/sportLabels";
+import { getCrest } from "@/lib/teamCrest";
 import { getRugbyClubHonours } from "@/lib/rugbyClubs";
 import { getT20Honours } from "@/lib/cricketClubs";
 import { getEuroleagueHonours } from "@/lib/basketball";
@@ -1280,6 +1281,28 @@ function lastYearOf(years: string | null | undefined): number {
   return m ? Math.max(...m.map(Number)) : 0;
 }
 
+// Best-available championship count for non-American, non-football major sports
+// (Aussie Rules, Rugby League/Union, cricket, EuroLeague basketball, NPB, CFL,
+// and any winners-roll domestic club). Used only to order metro team cards
+// within a sport; returns 0 when no honours source resolves.
+function otherTitleCount(t: { sport: string; league: string; team: string }): number {
+  const afl = getAflFranchiseByTeamName(t.team); if (afl) return afl.premierships ?? 0;
+  const nrl = getNrlFranchiseByTeamName(t.team); if (nrl) return nrl.premierships ?? 0;
+  const cfl = getCflFranchiseByTeamName(t.team); if (cfl) return cfl.grey_cups ?? 0;
+  const wnba = getWnbaFranchiseByTeamName(t.team); if (wnba) return wnba.titles ?? 0;
+  const ipl = getIplFranchiseByTeamName(t.team); if (ipl) return ipl.titles ?? 0;
+  const s = (t.sport || "").toLowerCase();
+  if (s.includes("baseball")) { const n = getNpbTeamByName(t.team); if (n) return n.js_titles ?? 0; }
+  if (s.includes("rugby") && !s.includes("league")) {
+    return getRugbyClubHonours(t.team, t.league).reduce((a, h) => a + (h.titles || 0), 0);
+  }
+  if (s.includes("cricket")) {
+    return getT20Honours(t.team).reduce((a, h) => a + (h.titles || 0), 0);
+  }
+  if (s.includes("basket")) { const el = getEuroleagueHonours(t.team); if (el) return el.titles ?? 0; }
+  return (getDomesticHonours(t.sport, t.team) || []).reduce((a, h) => a + (h.count || 0), 0);
+}
+
 function TeamsSection({
   teams,
   metroName,
@@ -1403,6 +1426,14 @@ function TeamsSection({
     }
   }
 
+  // Sort keys for every other major sport: group by sport label, then titles desc.
+  const otherSortKeys = new Map<string, { sportKey: string; titles: number }>();
+  for (const t of nonHistoricForBucketing) {
+    if (AMERICAN_SPORT_ORDER[t.sport] === undefined && !FOOTBALL_SPORT_SET.has(t.sport)) {
+      otherSortKeys.set(t.team, { sportKey: normalizeSport(t.sport), titles: otherTitleCount(t) });
+    }
+  }
+
   // Full priority sort for major-league teams:
   //  0: Top Team for this metro (pinned first)
   //  1: Gold Standard American (NFL/MLB/NBA/NHL): sport order, then champs desc
@@ -1443,6 +1474,15 @@ function TeamsSection({
       const bk = footballSortKeys.get(b.team) ?? { level: 99, majorCups: 0 };
       if (ak.level !== bk.level) return ak.level - bk.level;
       return bk.majorCups - ak.majorCups;
+    }
+    // Every other sport (Aussie Rules, rugby, cricket, etc.): group by sport,
+    // then most titles first, so e.g. the Swans/Rabbitohs lead their codes.
+    if (as_ === 3 || as_ === 6) {
+      const ak = otherSortKeys.get(a.team) ?? { sportKey: normalizeSport(a.sport), titles: 0 };
+      const bk = otherSortKeys.get(b.team) ?? { sportKey: normalizeSport(b.sport), titles: 0 };
+      if (ak.sportKey !== bk.sportKey) return ak.sportKey.localeCompare(bk.sportKey);
+      if (ak.titles !== bk.titles) return bk.titles - ak.titles;
+      return a.team.localeCompare(b.team);
     }
     return 0;
   });
@@ -2202,6 +2242,7 @@ function TeamCard({
   // names are unique across the ledger, so this avoids the workbook's sport-label
   // quirks (Soccer vs Football, WNBA stored as "Int'l W Basketball", etc.).
   const cardChamps = getCurrentChampionships(team.team);
+  const cardCrest = getCrest(team.team);
 
   return (
     <div
@@ -2271,7 +2312,8 @@ function TeamCard({
         </div>
       )}
       <div className="flex items-center gap-2.5">
-        {!link && clubColor ? (
+        {cardCrest ? <img src={cardCrest.src} alt="" className="w-8 h-8 flex-shrink-0 object-contain" loading="lazy" /> : null}
+        {!cardCrest && !link && clubColor ? (
           <span
             className="inline-grid place-items-center rounded-full flex-shrink-0"
             style={{
@@ -2285,7 +2327,7 @@ function TeamCard({
             {cardMono}
           </span>
         ) : null}
-        {link ? (
+        {!cardCrest && link ? (
           link.logoUrl ? (
             <img
               src={link.logoUrl}

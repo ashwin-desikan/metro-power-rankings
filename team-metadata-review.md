@@ -15,6 +15,36 @@
 - **wsl**: matched 12/12
 - **cfb**: matched 264/267
 - **cbb**: matched 363/365
+- **t20blast**: matched 18/18
+- **hundred**: matched 8/8
+- **bbl**: matched 8/8
+- **hundredw**: matched 8/8
+- **premrugby**: matched 10/10
+- **superleague**: matched 14/14
+- **top14**: matched 14/14
+- **urc**: matched 16/16
+- **superrugby**: matched 11/11
+- **npb**: matched 12/12
+- **khl**: matched 22/22
+- **superlega**: matched 11/12
+- **plusliga**: matched 13/14
+- **cpl**: matched 6/6
+- **sa20**: matched 6/6
+- **bpl**: matched 6/6
+- **ilt20**: matched 6/6
+- **lpl**: matched 5/5
+- **psl**: matched 6/6
+- **zimt20**: matched 5/5
+- **mlc**: matched 6/6
+- **nepalt20**: matched 8/8
+- **supersmash**: matched 6/6
+- **apl**: matched 2/5
+- **euroleague**: matched 20/20
+- **aleague**: matched 16/19
+- **ligaf**: matched 16/16
+- **cfl**: matched 9/9
+- **cba**: matched 20/20
+- **handball-bundesliga**: matched 18/18
 
 ## Unmatched (pin a TheSportsDB id in OVERRIDES, or accept the monogram)
 
@@ -23,3 +53,11 @@
 - [cfb] **West Florida** - no-candidate
 - [cbb] **New Haven** - no-candidate
 - [cbb] **Texas A&M-Commerce** - no-candidate
+- [aleague] **New Zealand Knights** - no-candidate
+- [aleague] **North Queensland Fury** - no-candidate
+- [aleague] **Queensland Roar** - no-candidate
+- [apl] **Kandahar Knights** - no-candidate
+- [apl] **Nangarhar Leopards** - no-candidate
+- [apl] **Paktia Panthers** - no-candidate
+- [plusliga] **ChKS Chełm** - no-candidate
+- [superlega] **Cuneo Volley** - no-candidate

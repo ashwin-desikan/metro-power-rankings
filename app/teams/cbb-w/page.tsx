@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllWcbbTeams, getWcbbNationalChampions } from "@/lib/wcbb";
@@ -32,7 +33,10 @@ export default function WcbbHubPage() {
   const byTitles = teams.filter((t) => t.titles > 0).sort((a, b) => b.titles - a.titles || a.name.localeCompare(b.name)).slice(0, 10);
   const byF4 = teams.filter((t) => t.final4 > 0).sort((a, b) => b.final4 - a.final4 || a.name.localeCompare(b.name)).slice(0, 10);
   const link = (slug: string, name: string) => (
-    <Link href={`/teams/cbb-w/${slug}`} className="hover:text-[var(--accent)]">{name}</Link>
+    <span className="inline-flex items-center gap-1.5">
+      <CrestIcon name={name} size={16} />
+      <Link href={`/teams/cbb-w/${slug}`} className="hover:text-[var(--accent)]">{name}</Link>
+    </span>
   );
 
   return (

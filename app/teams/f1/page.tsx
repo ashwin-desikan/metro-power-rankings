@@ -8,6 +8,7 @@ import {
   getF1LatestSeasonRaces,
 } from "@/lib/f1";
 import { getLiveF1Standings } from "@/lib/f1Standings";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 export const dynamicParams = false;
 export const revalidate = 3600;
@@ -124,7 +125,7 @@ export default async function F1Page() {
               {standings.constructors.map((c, i) => (
                 <tr key={`${c.constructor}-${i}`} style={rowBorder}>
                   <td className={td} style={{ color: "var(--text-dim)" }}>{c.pos ?? i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}>{c.constructor}</td>
+                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.constructor} />{c.constructor}</span></td>
                   <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.points ?? 0}</td>
                 </tr>
               ))}
@@ -155,7 +156,7 @@ export default async function F1Page() {
                     : <span style={{ color: "var(--text-muted)" }}>{r.metro}</span>}
                 </td>
                 <td className={td} style={{ color: "var(--text)" }}>{r.winner ?? "—"}</td>
-                <td className={td} style={{ color: "var(--text-muted)" }}>{r.winner_constructor ?? "—"}</td>
+                <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.winner_constructor} />{r.winner_constructor ?? "—"}</span></td>
               </tr>
             ))}
           </tbody>
@@ -210,7 +211,7 @@ export default async function F1Page() {
                   <td className={td} style={{ color: "var(--text)" }}>
                     {c.driver ?? "—"}{c.driver_nat ? <span style={{ color: "var(--text-dim)" }}> · {c.driver_nat}</span> : null}
                   </td>
-                  <td className={td} style={{ color: "var(--text-muted)" }}>{c.constructor ?? "—"}</td>
+                  <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.constructor} />{c.constructor ?? "—"}</span></td>
                 </tr>
               ))}
             </tbody>
@@ -264,7 +265,7 @@ export default async function F1Page() {
               {constructorWins.slice(0, 15).map((c, i) => (
                 <tr key={c.constructor} style={rowBorder}>
                   <td className={td} style={{ color: "var(--text-dim)" }}>{i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}>{c.constructor}</td>
+                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.constructor} />{c.constructor}</span></td>
                   <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.wins}</td>
                 </tr>
               ))}

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { CbbTeam } from "@/lib/cbbShared";
 
 type Col = { key: string; label: string; get: (t: CbbTeam) => number | string; num: boolean; hide?: string };
@@ -79,7 +80,7 @@ export default function CbbAllTimeTable({ teams }: { teams: CbbTeam[] }) {
             {rows.map((t) => (
               <tr key={t.slug} className="border-b last:border-0 hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
                 <td className="px-2 py-1.5">
-                  <span className="inline-block w-2.5 h-2.5 rounded-full mr-2 align-middle" style={{ background: t.color }} aria-hidden />
+                  <TeamCrest name={t.name} size={18} fallback={<span className="inline-block w-2.5 h-2.5 rounded-full mr-2 align-middle" style={{ background: t.color }} aria-hidden />} />
                   <Link href={`/teams/cbb/${t.slug}`} className="font-medium hover:text-[var(--accent)] align-middle">{t.name}</Link>
                   {!t.current_d1 && <span className="ml-1.5 text-[9px] uppercase text-[var(--text-dim)]">former</span>}
                 </td>

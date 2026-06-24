@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { getWnbaMeta, getAllFranchises, getDefunctFranchises, getChampions, getLatestStandings, type WnbaFranchise } from "@/lib/wnba";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -123,7 +124,7 @@ export default async function WnbaPage() {
                     <tr key={(st.slug ?? st.team) + i} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: st.champion ? "rgba(251,191,36,0.07)" : undefined }}>
                       <td className="py-2 px-3">
                         <span className="flex items-center gap-2">
-                          {st.abbr && st.color && <Mono abbr={st.abbr} color={st.color} />}
+                          <TeamCrest name={st.team} size={20} fallback={st.abbr && st.color ? <Mono abbr={st.abbr} color={st.color} /> : null} />
                           {st.slug ? (
                             <Link href={`/teams/wnba/${st.slug}`} className={`hover:text-[var(--accent)] transition-colors ${st.champion ? "font-semibold" : ""}`}>{st.team}</Link>
                           ) : (
@@ -172,7 +173,7 @@ export default async function WnbaPage() {
                     <td className="py-2 px-4 font-medium">{h.year}</td>
                     <td className="py-2 px-3">
                       <span className="flex items-center gap-2">
-                        {cf && <Mono abbr={cf.abbr} color={cf.color} />}
+                        <TeamCrest name={h.champion} size={20} fallback={cf ? <Mono abbr={cf.abbr} color={cf.color} /> : null} />
                         <Link href={`/teams/wnba/${h.champion_slug}`} className="font-medium hover:text-[var(--accent)] transition-colors">{h.champion}</Link>
                       </span>
                     </td>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getWClubs, getWMeta, getWTournamentCompetitions, getWLeagueHubs, decoratedRows, WCOLS_DEFAULT, getWClubByName } from "@/lib/wfootball";
 import { getNwslStandings } from "@/lib/nwsl-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -146,7 +147,7 @@ export default async function WFootballHubPage() {
                 {nwslRows.map((r, i) => (
                   <tr key={(r.slug ?? r.name) + i} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1.5 pr-2 pl-3 text-right text-[var(--text-dim)]">{i + 1}</td>
-                    <td className="py-1.5 px-2">{r.slug ? <Link href={`/teams/wfootball/clubs/${r.slug}`} className="hover:underline font-medium">{r.name}</Link> : <span className="font-medium">{r.name}</span>}</td>
+                    <td className="py-1.5 px-2"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.name} size={18} />{r.slug ? <Link href={`/teams/wfootball/clubs/${r.slug}`} className="hover:underline font-medium">{r.name}</Link> : <span className="font-medium">{r.name}</span>}</span></td>
                     <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.played}</td>
                     <td className="py-1.5 px-2 text-right">{r.wins}</td>
                     <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.draws}</td>

@@ -1,12 +1,20 @@
 {
   "generated": "2026-06-24",
-  "matched": 766,
+  "matched": 1227,
   "unmatched": [
     "New Haven",
     "East Texas A&M",
     "West Florida",
     "New Haven",
-    "Texas A&M-Commerce"
+    "Texas A&M-Commerce",
+    "New Zealand Knights",
+    "North Queensland Fury",
+    "Queensland Roar",
+    "Kandahar Knights",
+    "Nangarhar Leopards",
+    "Paktia Panthers",
+    "ChKS Chełm",
+    "Cuneo Volley"
   ],
   "teams": {
     "Army": {
@@ -1917,6 +1925,134 @@
       "idAPIfootball": "48",
       "sdb_league": "NCAA Division 1"
     },
+    "Arizona Cardinals": {
+      "badge": "/data/nfl/logos/arizona-cardinals.png",
+      "sport": "nfl"
+    },
+    "Atlanta Falcons": {
+      "badge": "/data/nfl/logos/atlanta-falcons.png",
+      "sport": "nfl"
+    },
+    "Baltimore Ravens": {
+      "badge": "/data/nfl/logos/baltimore-ravens.png",
+      "sport": "nfl"
+    },
+    "Buffalo Bills": {
+      "badge": "/data/nfl/logos/buffalo-bills.png",
+      "sport": "nfl"
+    },
+    "Carolina Panthers": {
+      "badge": "/data/nfl/logos/carolina-panthers.png",
+      "sport": "nfl"
+    },
+    "Chicago Bears": {
+      "badge": "/data/nfl/logos/chicago-bears.png",
+      "sport": "nfl"
+    },
+    "Cincinnati Bengals": {
+      "badge": "/data/nfl/logos/cincinnati-bengals.png",
+      "sport": "nfl"
+    },
+    "Cleveland Browns": {
+      "badge": "/data/nfl/logos/cleveland-browns.png",
+      "sport": "nfl"
+    },
+    "Dallas Cowboys": {
+      "badge": "/data/nfl/logos/dallas-cowboys.png",
+      "sport": "nfl"
+    },
+    "Denver Broncos": {
+      "badge": "/data/nfl/logos/denver-broncos.png",
+      "sport": "nfl"
+    },
+    "Detroit Lions": {
+      "badge": "/data/nfl/logos/detroit-lions.png",
+      "sport": "nfl"
+    },
+    "Green Bay Packers": {
+      "badge": "/data/nfl/logos/green-bay-packers.png",
+      "sport": "nfl"
+    },
+    "Houston Texans": {
+      "badge": "/data/nfl/logos/houston-texans.png",
+      "sport": "nfl"
+    },
+    "Indianapolis Colts": {
+      "badge": "/data/nfl/logos/indianapolis-colts.png",
+      "sport": "nfl"
+    },
+    "Jacksonville Jaguars": {
+      "badge": "/data/nfl/logos/jacksonville-jaguars.png",
+      "sport": "nfl"
+    },
+    "Kansas City Chiefs": {
+      "badge": "/data/nfl/logos/kansas-city-chiefs.png",
+      "sport": "nfl"
+    },
+    "Las Vegas Raiders": {
+      "badge": "/data/nfl/logos/las-vegas-raiders.png",
+      "sport": "nfl"
+    },
+    "Los Angeles Chargers": {
+      "badge": "/data/nfl/logos/los-angeles-chargers.png",
+      "sport": "nfl"
+    },
+    "Los Angeles Rams": {
+      "badge": "/data/nfl/logos/los-angeles-rams.png",
+      "sport": "nfl"
+    },
+    "Miami Dolphins": {
+      "badge": "/data/nfl/logos/miami-dolphins.png",
+      "sport": "nfl"
+    },
+    "Minnesota Vikings": {
+      "badge": "/data/nfl/logos/minnesota-vikings.png",
+      "sport": "nfl"
+    },
+    "New England Patriots": {
+      "badge": "/data/nfl/logos/new-england-patriots.png",
+      "sport": "nfl"
+    },
+    "New Orleans Saints": {
+      "badge": "/data/nfl/logos/new-orleans-saints.png",
+      "sport": "nfl"
+    },
+    "New York Giants": {
+      "badge": "/data/nfl/logos/new-york-giants.png",
+      "sport": "nfl"
+    },
+    "New York Jets": {
+      "badge": "/data/nfl/logos/new-york-jets.png",
+      "sport": "nfl"
+    },
+    "Philadelphia Eagles": {
+      "badge": "/data/nfl/logos/philadelphia-eagles.png",
+      "sport": "nfl"
+    },
+    "Pittsburgh Steelers": {
+      "badge": "/data/nfl/logos/pittsburgh-steelers.png",
+      "sport": "nfl"
+    },
+    "San Francisco 49ers": {
+      "badge": "/data/nfl/logos/san-francisco-49ers.png",
+      "sport": "nfl"
+    },
+    "Seattle Seahawks": {
+      "badge": "/data/nfl/logos/seattle-seahawks.png",
+      "sport": "nfl"
+    },
+    "Tampa Bay Buccaneers": {
+      "badge": "/data/nfl/logos/tampa-bay-buccaneers.png",
+      "sport": "nfl"
+    },
+    "Tennessee Titans": {
+      "badge": "/data/nfl/logos/tennessee-titans.png",
+      "sport": "nfl"
+    },
+    "Washington Commanders": {
+      "badge": "/data/nfl/logos/washington-commanders.png",
+      "sport": "nfl"
+    },
     "Central Connecticut State": {
       "sdb_name": "Central Connecticut State",
       "sdb_id": "138644",
@@ -3381,6 +3517,270 @@
       "idAPIfootball": "16",
       "sdb_league": "Australian AFL"
     },
+    "Arizona Diamondbacks": {
+      "badge": "/data/mlb/logos/diamondbacks.png",
+      "sport": "mlb"
+    },
+    "Athletics": {
+      "badge": "/data/mlb/logos/athletics.png",
+      "sport": "mlb"
+    },
+    "Atlanta Braves": {
+      "badge": "/data/mlb/logos/braves.png",
+      "sport": "mlb"
+    },
+    "Baltimore Orioles": {
+      "badge": "/data/mlb/logos/orioles.png",
+      "sport": "mlb"
+    },
+    "Boston Red Sox": {
+      "badge": "/data/mlb/logos/red-sox.png",
+      "sport": "mlb"
+    },
+    "Chicago Cubs": {
+      "badge": "/data/mlb/logos/cubs.png",
+      "sport": "mlb"
+    },
+    "Chicago White Sox": {
+      "badge": "/data/mlb/logos/white-sox.png",
+      "sport": "mlb"
+    },
+    "Cincinnati Reds": {
+      "badge": "/data/mlb/logos/reds.png",
+      "sport": "mlb"
+    },
+    "Cleveland Guardians": {
+      "badge": "/data/mlb/logos/guardians.png",
+      "sport": "mlb"
+    },
+    "Colorado Rockies": {
+      "badge": "/data/mlb/logos/rockies.png",
+      "sport": "mlb"
+    },
+    "Detroit Tigers": {
+      "badge": "/data/mlb/logos/tigers.png",
+      "sport": "mlb"
+    },
+    "Houston Astros": {
+      "badge": "/data/mlb/logos/astros.png",
+      "sport": "mlb"
+    },
+    "Kansas City Royals": {
+      "badge": "/data/mlb/logos/royals.png",
+      "sport": "mlb"
+    },
+    "Los Angeles Angels": {
+      "badge": "/data/mlb/logos/angels.png",
+      "sport": "mlb"
+    },
+    "Los Angeles Dodgers": {
+      "badge": "/data/mlb/logos/dodgers.png",
+      "sport": "mlb"
+    },
+    "Miami Marlins": {
+      "badge": "/data/mlb/logos/marlins.png",
+      "sport": "mlb"
+    },
+    "Milwaukee Brewers": {
+      "badge": "/data/mlb/logos/brewers.png",
+      "sport": "mlb"
+    },
+    "Minnesota Twins": {
+      "badge": "/data/mlb/logos/twins.png",
+      "sport": "mlb"
+    },
+    "New York Mets": {
+      "badge": "/data/mlb/logos/mets.png",
+      "sport": "mlb"
+    },
+    "New York Yankees": {
+      "badge": "/data/mlb/logos/yankees.png",
+      "sport": "mlb"
+    },
+    "Philadelphia Phillies": {
+      "badge": "/data/mlb/logos/phillies.png",
+      "sport": "mlb"
+    },
+    "Pittsburgh Pirates": {
+      "badge": "/data/mlb/logos/pirates.png",
+      "sport": "mlb"
+    },
+    "San Diego Padres": {
+      "badge": "/data/mlb/logos/padres.png",
+      "sport": "mlb"
+    },
+    "San Francisco Giants": {
+      "badge": "/data/mlb/logos/giants.png",
+      "sport": "mlb"
+    },
+    "Seattle Mariners": {
+      "badge": "/data/mlb/logos/mariners.png",
+      "sport": "mlb"
+    },
+    "St. Louis Cardinals": {
+      "badge": "/data/mlb/logos/cardinals.png",
+      "sport": "mlb"
+    },
+    "Tampa Bay Rays": {
+      "badge": "/data/mlb/logos/rays.png",
+      "sport": "mlb"
+    },
+    "Texas Rangers": {
+      "badge": "/data/mlb/logos/rangers.png",
+      "sport": "mlb"
+    },
+    "Toronto Blue Jays": {
+      "badge": "/data/mlb/logos/blue-jays.png",
+      "sport": "mlb"
+    },
+    "Washington Nationals": {
+      "badge": "/data/mlb/logos/nationals.png",
+      "sport": "mlb"
+    },
+    "Chiba Lotte Marines": {
+      "sdb_name": "Chiba Lotte Marines",
+      "sdb_id": "137511",
+      "badge": "/team-badges/chiba-lotte-marines.png",
+      "logo": "/team-logos/chiba-lotte-marines.png",
+      "stadium": "ZOZO Marine Stadium",
+      "capacity": 30000,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "55",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Chunichi Dragons": {
+      "sdb_name": "Chunichi Dragons",
+      "sdb_id": "137505",
+      "badge": "/team-badges/chunichi-dragons.png",
+      "logo": "/team-logos/chunichi-dragons.png",
+      "stadium": "Vantelin Dome Nagoya",
+      "capacity": 49000,
+      "founded": 1936,
+      "idESPN": "0",
+      "idAPIfootball": "56",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Fukuoka SoftBank Hawks": {
+      "sdb_name": "Fukuoka SoftBank Hawks",
+      "sdb_id": "137512",
+      "badge": "/team-badges/fukuoka-softbank-hawks.png",
+      "logo": "/team-logos/fukuoka-softbank-hawks.png",
+      "stadium": "Mizuho PayPay Dome Fukuoka",
+      "capacity": 40178,
+      "founded": 1938,
+      "idESPN": "0",
+      "idAPIfootball": "57",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Hanshin Tigers": {
+      "sdb_name": "Hanshin Tigers",
+      "sdb_id": "137506",
+      "badge": "/team-badges/hanshin-tigers.png",
+      "logo": "/team-logos/hanshin-tigers.png",
+      "stadium": "Koshien Stadium",
+      "capacity": 55000,
+      "founded": 1935,
+      "idESPN": "0",
+      "idAPIfootball": "58",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Hiroshima Toyo Carp": {
+      "sdb_name": "Hiroshima Toyo Carp",
+      "sdb_id": "137507",
+      "badge": "/team-badges/hiroshima-toyo-carp.png",
+      "logo": "/team-logos/hiroshima-toyo-carp.png",
+      "stadium": "Mazda Stadium Hiroshima",
+      "capacity": 32000,
+      "founded": 1949,
+      "idESPN": "0",
+      "idAPIfootball": "59",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Hokkaido Nippon-Ham Fighters": {
+      "sdb_name": "Hokkaido Nippon-Ham Fighters",
+      "sdb_id": "137513",
+      "badge": "/team-badges/hokkaido-nippon-ham-fighters.png",
+      "logo": "/team-logos/hokkaido-nippon-ham-fighters.png",
+      "stadium": "Es Con Field Hokkaido",
+      "capacity": 42270,
+      "founded": 1946,
+      "idESPN": "0",
+      "idAPIfootball": "60",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Orix Buffaloes": {
+      "sdb_name": "Orix Buffaloes",
+      "sdb_id": "137514",
+      "badge": "/team-badges/orix-buffaloes.png",
+      "logo": "/team-logos/orix-buffaloes.png",
+      "stadium": "Kyocera Dome Osaka",
+      "capacity": 36627,
+      "founded": 1936,
+      "idESPN": "0",
+      "idAPIfootball": "61",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Saitama Seibu Lions": {
+      "sdb_name": "Saitama Seibu Lions",
+      "sdb_id": "137515",
+      "badge": "/team-badges/saitama-seibu-lions.png",
+      "logo": "/team-logos/saitama-seibu-lions.png",
+      "stadium": "Belluna Dome",
+      "capacity": 33921,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "63",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Tohoku Rakuten Golden Eagles": {
+      "sdb_name": "Tohoku Rakuten Golden Eagles",
+      "sdb_id": "137516",
+      "badge": "/team-badges/tohoku-rakuten-golden-eagles.png",
+      "logo": "/team-logos/tohoku-rakuten-golden-eagles.png",
+      "stadium": "Rakuten Mobile Park Miyagi",
+      "capacity": 30508,
+      "founded": 2005,
+      "idESPN": "0",
+      "idAPIfootball": "62",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Tokyo Yakult Swallows": {
+      "sdb_name": "Tokyo Yakult Swallows",
+      "sdb_id": "137508",
+      "badge": "/team-badges/tokyo-yakult-swallows.png",
+      "logo": "/team-logos/tokyo-yakult-swallows.png",
+      "stadium": "Meiji Jingu Stadium",
+      "capacity": 37933,
+      "founded": 1950,
+      "idESPN": null,
+      "idAPIfootball": "64",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Yokohama DeNA BayStars": {
+      "sdb_name": "Yokohama DeNA BayStars",
+      "sdb_id": "137509",
+      "badge": "/team-badges/yokohama-dena-baystars.png",
+      "logo": "/team-logos/yokohama-dena-baystars.png",
+      "stadium": "Yokohama Stadium",
+      "capacity": 72327,
+      "founded": 1949,
+      "idESPN": "0",
+      "idAPIfootball": "65",
+      "sdb_league": "Nippon Baseball League"
+    },
+    "Yomiuri Giants": {
+      "sdb_name": "Yomiuri Giants",
+      "sdb_id": "137510",
+      "badge": "/team-badges/yomiuri-giants.png",
+      "logo": "/team-logos/yomiuri-giants.png",
+      "stadium": "Tokyo Dome",
+      "capacity": 45600,
+      "founded": 1934,
+      "idESPN": null,
+      "idAPIfootball": "66",
+      "sdb_league": "Nippon Baseball League"
+    },
     "Binghamton": {
       "sdb_name": "Binghamton",
       "sdb_id": "138523",
@@ -3873,6 +4273,246 @@
       "idAPIfootball": "2164",
       "sdb_league": "NCAA Division I Basketball Mens"
     },
+    "Beijing Ducks": {
+      "sdb_name": "Beijing Ducks",
+      "sdb_id": "135435",
+      "badge": "/team-badges/beijing-ducks.png",
+      "logo": "/team-logos/beijing-ducks.png",
+      "stadium": "Shougang Basketball Center",
+      "capacity": 6000,
+      "founded": 1995,
+      "idESPN": null,
+      "idAPIfootball": "422",
+      "sdb_league": "Chinese CBA"
+    },
+    "Beijing Royal Fighters": {
+      "sdb_name": "Beijing Royal Fighters",
+      "sdb_id": "137339",
+      "badge": "/team-badges/beijing-royal-fighters.png",
+      "logo": "/team-logos/beijing-royal-fighters.png",
+      "stadium": "Beijing National Indoor Stadium",
+      "capacity": 6000,
+      "founded": 2009,
+      "idESPN": null,
+      "idAPIfootball": "423",
+      "sdb_league": "Chinese CBA"
+    },
+    "Fujian Sturgeons": {
+      "sdb_name": "Fujian Sturgeons",
+      "sdb_id": "135439",
+      "badge": "/team-badges/fujian-sturgeons.png",
+      "logo": "/team-logos/fujian-sturgeons.png",
+      "stadium": "",
+      "capacity": 6000,
+      "founded": 1999,
+      "idESPN": "0",
+      "idAPIfootball": "424",
+      "sdb_league": "Chinese CBA"
+    },
+    "Guangdong Southern Tigers": {
+      "sdb_name": "Guangdong Southern Tigers",
+      "sdb_id": "135440",
+      "badge": "/team-badges/guangdong-southern-tigers.png",
+      "logo": "/team-logos/guangdong-southern-tigers.png",
+      "stadium": "Dongguan Basketball Center",
+      "capacity": 14730,
+      "founded": 1993,
+      "idESPN": null,
+      "idAPIfootball": "425",
+      "sdb_league": "Chinese CBA"
+    },
+    "Guangzhou Loong Lions": {
+      "sdb_name": "Guangzhou Long-Lions",
+      "sdb_id": "135438",
+      "badge": "/team-badges/guangzhou-loong-lions.png",
+      "logo": "/team-logos/guangzhou-loong-lions.png",
+      "stadium": "Tianhe Gymnasium",
+      "capacity": 0,
+      "founded": 2000,
+      "idESPN": null,
+      "idAPIfootball": "426",
+      "sdb_league": "Chinese CBA"
+    },
+    "Jiangsu Dragons": {
+      "sdb_name": "Jiangsu Dragons",
+      "sdb_id": "135441",
+      "badge": "/team-badges/jiangsu-dragons.png",
+      "logo": "/team-logos/jiangsu-dragons.png",
+      "stadium": "Wutaishan Gymnasium",
+      "capacity": 10000,
+      "founded": 1995,
+      "idESPN": null,
+      "idAPIfootball": "427",
+      "sdb_league": "Chinese CBA"
+    },
+    "Jilin Northeast Tigers": {
+      "sdb_name": "Jilin Northeast Tigers",
+      "sdb_id": "135443",
+      "badge": "/team-badges/jilin-northeast-tigers.png",
+      "logo": "/team-logos/jilin-northeast-tigers.png",
+      "stadium": "Changchun Gymnasium",
+      "capacity": 4299,
+      "founded": 1956,
+      "idESPN": null,
+      "idAPIfootball": "428",
+      "sdb_league": "Chinese CBA"
+    },
+    "Liaoning Flying Leopards": {
+      "sdb_name": "Liaoning Flying Leopards",
+      "sdb_id": "135444",
+      "badge": "/team-badges/liaoning-flying-leopards.png",
+      "logo": "/team-logos/liaoning-flying-leopards.png",
+      "stadium": "Liaoning Gymnasium",
+      "capacity": 4500,
+      "founded": 1995,
+      "idESPN": null,
+      "idAPIfootball": "429",
+      "sdb_league": "Chinese CBA"
+    },
+    "Nanjing Monkey Kings": {
+      "sdb_name": "Nanjing Monkey Kings",
+      "sdb_id": "137340",
+      "badge": "/team-badges/nanjing-monkey-kings.png",
+      "logo": "/team-logos/nanjing-monkey-kings.png",
+      "stadium": "Nanjing, Jiangsu, China",
+      "capacity": 20000,
+      "founded": 2007,
+      "idESPN": null,
+      "idAPIfootball": "430",
+      "sdb_league": "Chinese CBA"
+    },
+    "Ningbo Rockets": {
+      "sdb_name": "Ningbo Rockets",
+      "sdb_id": "144935",
+      "badge": "/team-badges/ningbo-rockets.png",
+      "logo": null,
+      "stadium": "Ningbo Youngor Gynmasium",
+      "capacity": 5000,
+      "founded": 2021,
+      "idESPN": null,
+      "idAPIfootball": "3187",
+      "sdb_league": "Chinese CBA"
+    },
+    "Qingdao Eagles": {
+      "sdb_name": "Qingdao Eagles",
+      "sdb_id": "135445",
+      "badge": "/team-badges/qingdao-eagles.png",
+      "logo": "/team-logos/qingdao-eagles.png",
+      "stadium": "Guoxin Gymnasium",
+      "capacity": 12500,
+      "founded": 2003,
+      "idESPN": null,
+      "idAPIfootball": "431",
+      "sdb_league": "Chinese CBA"
+    },
+    "Shandong Hi-Speed Kirin": {
+      "sdb_name": "Shandong Hi-Speed Kirin",
+      "sdb_id": "135446",
+      "badge": "/team-badges/shandong-hi-speed-kirin.png",
+      "logo": "/team-logos/shandong-hi-speed-kirin.png",
+      "stadium": "Shandong Arena",
+      "capacity": 8800,
+      "founded": 1995,
+      "idESPN": null,
+      "idAPIfootball": "432",
+      "sdb_league": "Chinese CBA"
+    },
+    "Shanghai Sharks": {
+      "sdb_name": "Shanghai Sharks",
+      "sdb_id": "135447",
+      "badge": "/team-badges/shanghai-sharks.png",
+      "logo": "/team-logos/shanghai-sharks.png",
+      "stadium": "Shanghai Indoor Stadium",
+      "capacity": 5000,
+      "founded": 1996,
+      "idESPN": "0",
+      "idAPIfootball": "433",
+      "sdb_league": "Chinese CBA"
+    },
+    "Shanxi Loongs": {
+      "sdb_name": "Shanxi Loongs",
+      "sdb_id": "135448",
+      "badge": "/team-badges/shanxi-loongs.png",
+      "logo": "/team-logos/shanxi-loongs.png",
+      "stadium": "Riverside Sports Arena",
+      "capacity": 5331,
+      "founded": 2001,
+      "idESPN": null,
+      "idAPIfootball": "434",
+      "sdb_league": "Chinese CBA"
+    },
+    "Shenzhen Leopards": {
+      "sdb_name": "Shenzhen Leopards",
+      "sdb_id": "135437",
+      "badge": "/team-badges/shenzhen-leopards.png",
+      "logo": "/team-logos/shenzhen-leopards.png",
+      "stadium": "Shenzhen Universiade Sports Centre",
+      "capacity": 18000,
+      "founded": 2003,
+      "idESPN": null,
+      "idAPIfootball": "435",
+      "sdb_league": "Chinese CBA"
+    },
+    "Sichuan Blue Whales": {
+      "sdb_name": "Sichuan Blue Whales",
+      "sdb_id": "135449",
+      "badge": "/team-badges/sichuan-blue-whales.png",
+      "logo": "/team-logos/sichuan-blue-whales.png",
+      "stadium": "Sichuan Provincial Stadium",
+      "capacity": 9200,
+      "founded": 2009,
+      "idESPN": null,
+      "idAPIfootball": "436",
+      "sdb_league": "Chinese CBA"
+    },
+    "Tianjin Pioneers": {
+      "sdb_name": "Tianjin Pioneers",
+      "sdb_id": "135450",
+      "badge": "/team-badges/tianjin-pioneers.png",
+      "logo": "/team-logos/tianjin-pioneers.png",
+      "stadium": "",
+      "capacity": 10000,
+      "founded": 2007,
+      "idESPN": "0",
+      "idAPIfootball": "437",
+      "sdb_league": "Chinese CBA"
+    },
+    "Xinjiang Flying Tigers": {
+      "sdb_name": "Xinjiang Flying Tigers",
+      "sdb_id": "135451",
+      "badge": "/team-badges/xinjiang-flying-tigers.png",
+      "logo": "/team-logos/xinjiang-flying-tigers.png",
+      "stadium": "Hongshan Arena",
+      "capacity": 3800,
+      "founded": 1999,
+      "idESPN": null,
+      "idAPIfootball": "438",
+      "sdb_league": "Chinese CBA"
+    },
+    "Zhejiang Golden Bulls": {
+      "sdb_name": "Zhejiang Golden Bulls",
+      "sdb_id": "135452",
+      "badge": "/team-badges/zhejiang-golden-bulls.png",
+      "logo": "/team-logos/zhejiang-golden-bulls.png",
+      "stadium": "",
+      "capacity": 6000,
+      "founded": 1995,
+      "idESPN": "0",
+      "idAPIfootball": "439",
+      "sdb_league": "Chinese CBA"
+    },
+    "Zhejiang Guangsha Lions": {
+      "sdb_name": "Zhejiang Lions",
+      "sdb_id": "135453",
+      "badge": "/team-badges/zhejiang-guangsha-lions.png",
+      "logo": "/team-logos/zhejiang-guangsha-lions.png",
+      "stadium": "",
+      "capacity": 5136,
+      "founded": 2005,
+      "idESPN": "0",
+      "idAPIfootball": "440",
+      "sdb_league": "Chinese CBA"
+    },
     "College of Charleston": {
       "sdb_name": "College of Charleston",
       "sdb_id": "138747",
@@ -3932,6 +4572,246 @@
       "idESPN": null,
       "idAPIfootball": "2045",
       "sdb_league": "NCAA Division I Basketball Mens"
+    },
+    "AS Monaco Basket": {
+      "sdb_name": "AS Monaco Basket",
+      "sdb_id": "136263",
+      "badge": "/team-badges/as-monaco-basket.png",
+      "logo": null,
+      "stadium": "Salle Gaston Médecin",
+      "capacity": 3700,
+      "founded": 1928,
+      "idESPN": null,
+      "idAPIfootball": "16",
+      "sdb_league": "French LNB"
+    },
+    "ASVEL Basket": {
+      "sdb_name": "Lyon-Villeurbanne",
+      "sdb_id": "135243",
+      "badge": "/team-badges/asvel-basket.png",
+      "logo": "/team-logos/asvel-basket.png",
+      "stadium": "LDLC Arena",
+      "capacity": 12523,
+      "founded": 1948,
+      "idESPN": null,
+      "idAPIfootball": "26",
+      "sdb_league": "French LNB"
+    },
+    "Anadolu Efes": {
+      "sdb_name": "Anadolu Efes SK",
+      "sdb_id": "136066",
+      "badge": "/team-badges/anadolu-efes.png",
+      "logo": null,
+      "stadium": "Basketbol Gelişim Merkezi",
+      "capacity": 16000,
+      "founded": 1976,
+      "idESPN": null,
+      "idAPIfootball": "1263",
+      "sdb_league": "Turkish Basketbol Super Ligi"
+    },
+    "BC Žalgiris": {
+      "sdb_name": "BC Žalgiris",
+      "sdb_id": "136113",
+      "badge": "/team-badges/bc-zalgiris.png",
+      "logo": null,
+      "stadium": "Žalgiris Arena",
+      "capacity": 15708,
+      "founded": 1944,
+      "idESPN": null,
+      "idAPIfootball": "796",
+      "sdb_league": "Lithuanian LKL"
+    },
+    "Dubai Basketball": {
+      "sdb_name": "Dubai Basketball",
+      "sdb_id": "148701",
+      "badge": "/team-badges/dubai-basketball.png",
+      "logo": "/team-logos/dubai-basketball.png",
+      "stadium": "Coca-Cola Arena",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "6496",
+      "sdb_league": "Adriatic ABA League"
+    },
+    "FC Barcelona Basquet": {
+      "sdb_name": "FC Barcelona Basquet",
+      "sdb_id": "135082",
+      "badge": "/team-badges/fc-barcelona-basquet.png",
+      "logo": "/team-logos/fc-barcelona-basquet.png",
+      "stadium": "Palau Blaugrana",
+      "capacity": 7600,
+      "founded": 1926,
+      "idESPN": "0",
+      "idAPIfootball": "2329",
+      "sdb_league": "Spanish Liga ACB"
+    },
+    "FC Bayern München Basketball": {
+      "sdb_name": "Bayern München Basketball",
+      "sdb_id": "135424",
+      "badge": "/team-badges/fc-bayern-munchen-basketball.png",
+      "logo": null,
+      "stadium": "BMW Park",
+      "capacity": 6700,
+      "founded": 1946,
+      "idESPN": "0",
+      "idAPIfootball": "522",
+      "sdb_league": "German BBL"
+    },
+    "Fenerbahçe Basketball": {
+      "sdb_name": "Fenerbahçe Basketbol",
+      "sdb_id": "136071",
+      "badge": "/team-badges/fenerbahce-basketball.png",
+      "logo": null,
+      "stadium": "Ülker Sports Arena",
+      "capacity": 13059,
+      "founded": 1913,
+      "idESPN": null,
+      "idAPIfootball": "1270",
+      "sdb_league": "Turkish Basketbol Super Ligi"
+    },
+    "Hapoel Tel Aviv BC": {
+      "sdb_name": "Hapoel Tel Aviv BC",
+      "sdb_id": "136059",
+      "badge": "/team-badges/hapoel-tel-aviv-bc.png",
+      "logo": null,
+      "stadium": "Menora Mivtachim Arena",
+      "capacity": 3504,
+      "founded": 1935,
+      "idESPN": "0",
+      "idAPIfootball": "682",
+      "sdb_league": "Israeli Basketball Premier League"
+    },
+    "KK Crvena zvezda": {
+      "sdb_name": "KK Crvena zvezda",
+      "sdb_id": "136096",
+      "badge": "/team-badges/kk-crvena-zvezda.png",
+      "logo": "/team-logos/kk-crvena-zvezda.png",
+      "stadium": "Belgrade Arena",
+      "capacity": 5878,
+      "founded": 1945,
+      "idESPN": "0",
+      "idAPIfootball": "1065",
+      "sdb_league": "Basketball League of Serbia"
+    },
+    "KK Partizan": {
+      "sdb_name": "KK Partizan",
+      "sdb_id": "136102",
+      "badge": "/team-badges/kk-partizan.png",
+      "logo": "/team-logos/kk-partizan.png",
+      "stadium": "Belgrade Arena",
+      "capacity": 5878,
+      "founded": 1945,
+      "idESPN": "0",
+      "idAPIfootball": "1068",
+      "sdb_league": "Basketball League of Serbia"
+    },
+    "Maccabi Tel Aviv BC": {
+      "sdb_name": "Maccabi Tel Aviv BC",
+      "sdb_id": "136065",
+      "badge": "/team-badges/maccabi-tel-aviv-bc.png",
+      "logo": null,
+      "stadium": "Menora Mivtachim Arena",
+      "capacity": 11060,
+      "founded": 1932,
+      "idESPN": "0",
+      "idAPIfootball": "687",
+      "sdb_league": "Israeli Basketball Premier League"
+    },
+    "Olimpia Milano": {
+      "sdb_name": "Olimpia Milano",
+      "sdb_id": "135383",
+      "badge": "/team-badges/olimpia-milano.png",
+      "logo": null,
+      "stadium": "Forum di Milano",
+      "capacity": 12331,
+      "founded": 1936,
+      "idESPN": "0",
+      "idAPIfootball": "722",
+      "sdb_league": "Italian Lega Basket"
+    },
+    "Olympiacos BC": {
+      "sdb_name": "Olympiacos BC",
+      "sdb_id": "135635",
+      "badge": "/team-badges/olympiacos-bc.png",
+      "logo": "/team-logos/olympiacos-bc.png",
+      "stadium": "Peace and Friendship Stadium",
+      "capacity": 11600,
+      "founded": 1931,
+      "idESPN": null,
+      "idAPIfootball": "1542",
+      "sdb_league": "Greek Basket League"
+    },
+    "Panathinaikos BC": {
+      "sdb_name": "Panathinaikos BC",
+      "sdb_id": "135636",
+      "badge": "/team-badges/panathinaikos-bc.png",
+      "logo": null,
+      "stadium": "Olympic Indoor Hall",
+      "capacity": 18500,
+      "founded": 1908,
+      "idESPN": null,
+      "idAPIfootball": "614",
+      "sdb_league": "Greek Basket League"
+    },
+    "Paris Basketball": {
+      "sdb_name": "Paris Basketball",
+      "sdb_id": "141489",
+      "badge": "/team-badges/paris-basketball.png",
+      "logo": null,
+      "stadium": "Halle Georges Carpentier",
+      "capacity": 5000,
+      "founded": 2018,
+      "idESPN": null,
+      "idAPIfootball": "108",
+      "sdb_league": "French LNB"
+    },
+    "Real Madrid Baloncesto": {
+      "sdb_name": "Real Madrid Baloncesto",
+      "sdb_id": "135092",
+      "badge": "/team-badges/real-madrid-baloncesto.png",
+      "logo": "/team-logos/real-madrid-baloncesto.png",
+      "stadium": "Palacio de Deportes de la Comunidad de Madrid",
+      "capacity": 15000,
+      "founded": 1931,
+      "idESPN": "0",
+      "idAPIfootball": "2338",
+      "sdb_league": "Spanish Liga ACB"
+    },
+    "Saski Baskonia": {
+      "sdb_name": "Baskonia",
+      "sdb_id": "135088",
+      "badge": "/team-badges/saski-baskonia.png",
+      "logo": "/team-logos/saski-baskonia.png",
+      "stadium": "Fernando Buesa Arena",
+      "capacity": 15504,
+      "founded": 1959,
+      "idESPN": "0",
+      "idAPIfootball": "2331",
+      "sdb_league": "Spanish Liga ACB"
+    },
+    "Valencia Basket": {
+      "sdb_name": "Valencia Basket",
+      "sdb_id": "135097",
+      "badge": "/team-badges/valencia-basket.png",
+      "logo": "/team-logos/valencia-basket.png",
+      "stadium": "Roig Arena",
+      "capacity": 9000,
+      "founded": 1986,
+      "idESPN": "0",
+      "idAPIfootball": "2341",
+      "sdb_league": "Spanish Liga ACB"
+    },
+    "Virtus Bologna": {
+      "sdb_name": "Virtus Pallacanestro Bologna",
+      "sdb_id": "135386",
+      "badge": "/team-badges/virtus-bologna.png",
+      "logo": null,
+      "stadium": "Virtus Segafredo Arena",
+      "capacity": 9980,
+      "founded": 1927,
+      "idESPN": null,
+      "idAPIfootball": "732",
+      "sdb_league": "Italian Lega Basket"
     },
     "Cleveland State": {
       "sdb_name": "Cleveland State",
@@ -4232,6 +5112,126 @@
       "idESPN": null,
       "idAPIfootball": "5767",
       "sdb_league": "NCAA Division I Basketball Mens"
+    },
+    "Atlanta Hawks": {
+      "badge": "/data/nba/logos/hawks.png",
+      "sport": "nba"
+    },
+    "Boston Celtics": {
+      "badge": "/data/nba/logos/celtics.png",
+      "sport": "nba"
+    },
+    "Brooklyn Nets": {
+      "badge": "/data/nba/logos/nets.png",
+      "sport": "nba"
+    },
+    "Charlotte Hornets": {
+      "badge": "/data/nba/logos/hornets.png",
+      "sport": "nba"
+    },
+    "Chicago Bulls": {
+      "badge": "/data/nba/logos/bulls.png",
+      "sport": "nba"
+    },
+    "Cleveland Cavaliers": {
+      "badge": "/data/nba/logos/cavaliers.png",
+      "sport": "nba"
+    },
+    "Dallas Mavericks": {
+      "badge": "/data/nba/logos/mavericks.png",
+      "sport": "nba"
+    },
+    "Denver Nuggets": {
+      "badge": "/data/nba/logos/nuggets.png",
+      "sport": "nba"
+    },
+    "Detroit Pistons": {
+      "badge": "/data/nba/logos/pistons.png",
+      "sport": "nba"
+    },
+    "Golden State Warriors": {
+      "badge": "/data/nba/logos/warriors.png",
+      "sport": "nba"
+    },
+    "Houston Rockets": {
+      "badge": "/data/nba/logos/rockets.png",
+      "sport": "nba"
+    },
+    "Indiana Pacers": {
+      "badge": "/data/nba/logos/pacers.png",
+      "sport": "nba"
+    },
+    "Los Angeles Clippers": {
+      "badge": "/data/nba/logos/clippers.png",
+      "sport": "nba"
+    },
+    "Los Angeles Lakers": {
+      "badge": "/data/nba/logos/lakers.png",
+      "sport": "nba"
+    },
+    "Memphis Grizzlies": {
+      "badge": "/data/nba/logos/grizzlies.png",
+      "sport": "nba"
+    },
+    "Miami Heat": {
+      "badge": "/data/nba/logos/heat.png",
+      "sport": "nba"
+    },
+    "Milwaukee Bucks": {
+      "badge": "/data/nba/logos/bucks.png",
+      "sport": "nba"
+    },
+    "Minnesota Timberwolves": {
+      "badge": "/data/nba/logos/timberwolves.png",
+      "sport": "nba"
+    },
+    "New Orleans Pelicans": {
+      "badge": "/data/nba/logos/pelicans.png",
+      "sport": "nba"
+    },
+    "New York Knicks": {
+      "badge": "/data/nba/logos/knicks.png",
+      "sport": "nba"
+    },
+    "Oklahoma City Thunder": {
+      "badge": "/data/nba/logos/thunder.png",
+      "sport": "nba"
+    },
+    "Orlando Magic": {
+      "badge": "/data/nba/logos/magic.png",
+      "sport": "nba"
+    },
+    "Philadelphia 76ers": {
+      "badge": "/data/nba/logos/76ers.png",
+      "sport": "nba"
+    },
+    "Phoenix Suns": {
+      "badge": "/data/nba/logos/suns.png",
+      "sport": "nba"
+    },
+    "Portland Trail Blazers": {
+      "badge": "/data/nba/logos/trail-blazers.png",
+      "sport": "nba"
+    },
+    "Sacramento Kings": {
+      "badge": "/data/nba/logos/kings.png",
+      "sport": "nba"
+    },
+    "San Antonio Spurs": {
+      "badge": "/data/nba/logos/spurs.png",
+      "sport": "nba"
+    },
+    "Toronto Raptors": {
+      "badge": "/data/nba/logos/raptors.png",
+      "sport": "nba"
+    },
+    "Utah Jazz": {
+      "badge": "/data/nba/logos/jazz.png",
+      "sport": "nba"
+    },
+    "Washington Wizards": {
+      "badge": "/data/nba/logos/wizards.png",
+      "sport": "nba"
     },
     "Fairleigh Dickinson": {
       "sdb_name": "Fairleigh Dickinson",
@@ -4568,6 +5568,114 @@
       "idESPN": "0",
       "idAPIfootball": "222",
       "sdb_league": "NCAA Division I Basketball Mens"
+    },
+    "BC Lions": {
+      "sdb_name": "BC Lions",
+      "sdb_id": "135006",
+      "badge": "/team-badges/bc-lions.png",
+      "logo": "/team-logos/bc-lions.png",
+      "stadium": "BC Place",
+      "capacity": 54320,
+      "founded": 1954,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Calgary Stampeders": {
+      "sdb_name": "Calgary Stampeders",
+      "sdb_id": "135007",
+      "badge": "/team-badges/calgary-stampeders.png",
+      "logo": "/team-logos/calgary-stampeders.png",
+      "stadium": "McMahon Stadium",
+      "capacity": 37317,
+      "founded": 1935,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Edmonton Elks": {
+      "sdb_name": "Edmonton Elks",
+      "sdb_id": "135008",
+      "badge": "/team-badges/edmonton-elks.png",
+      "logo": "/team-logos/edmonton-elks.png",
+      "stadium": "Commonwealth Stadium",
+      "capacity": 56302,
+      "founded": 1949,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Hamilton Tiger-Cats": {
+      "sdb_name": "Hamilton Tiger-Cats",
+      "sdb_id": "135002",
+      "badge": "/team-badges/hamilton-tiger-cats.png",
+      "logo": "/team-logos/hamilton-tiger-cats.png",
+      "stadium": "Hamilton Stadium",
+      "capacity": 24000,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Montreal Alouettes": {
+      "sdb_name": "Montreal Alouettes",
+      "sdb_id": "135003",
+      "badge": "/team-badges/montreal-alouettes.png",
+      "logo": "/team-logos/montreal-alouettes.png",
+      "stadium": "Percival Molson Memorial Stadium",
+      "capacity": 25012,
+      "founded": 1946,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Ottawa Redblacks": {
+      "sdb_name": "Ottawa Redblacks",
+      "sdb_id": "135004",
+      "badge": "/team-badges/ottawa-redblacks.png",
+      "logo": "/team-logos/ottawa-redblacks.png",
+      "stadium": "TD Place Stadium",
+      "capacity": 24000,
+      "founded": 2010,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Saskatchewan Roughriders": {
+      "sdb_name": "Saskatchewan Roughriders",
+      "sdb_id": "135009",
+      "badge": "/team-badges/saskatchewan-roughriders.png",
+      "logo": "/team-logos/saskatchewan-roughriders.png",
+      "stadium": "Mosaic Stadium",
+      "capacity": 33427,
+      "founded": 1910,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Toronto Argonauts": {
+      "sdb_name": "Toronto Argonauts",
+      "sdb_id": "135005",
+      "badge": "/team-badges/toronto-argonauts.png",
+      "logo": "/team-logos/toronto-argonauts.png",
+      "stadium": "BMO Field",
+      "capacity": 25000,
+      "founded": 1873,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
+    },
+    "Winnipeg Blue Bombers": {
+      "sdb_name": "Winnipeg Blue Bombers",
+      "sdb_id": "135010",
+      "badge": "/team-badges/winnipeg-blue-bombers.png",
+      "logo": "/team-logos/winnipeg-blue-bombers.png",
+      "stadium": "Princess Auto Stadium",
+      "capacity": 33000,
+      "founded": 1930,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "CFL"
     },
     "Argentinos Juniors": {
       "sdb_name": "Argentinos Juniors",
@@ -4928,6 +6036,198 @@
       "idESPN": "0",
       "idAPIfootball": "438",
       "sdb_league": "Argentinian Primera Division"
+    },
+    "Adelaide United": {
+      "sdb_name": "Adelaide United",
+      "sdb_id": "134472",
+      "badge": "/team-badges/adelaide-united.png",
+      "logo": "/team-logos/adelaide-united.png",
+      "stadium": "Hindmarsh Stadium",
+      "capacity": 17000,
+      "founded": 2003,
+      "idESPN": "0",
+      "idAPIfootball": "948",
+      "sdb_league": "Australian A-League"
+    },
+    "Auckland FC": {
+      "sdb_name": "Auckland FC",
+      "sdb_id": "149411",
+      "badge": "/team-badges/auckland.png",
+      "logo": "/team-logos/auckland.png",
+      "stadium": "Mount Smart Stadium",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "24608",
+      "sdb_league": "Australian A-League"
+    },
+    "Brisbane Roar": {
+      "sdb_name": "Brisbane Roar",
+      "sdb_id": "134476",
+      "badge": "/team-badges/brisbane-roar.png",
+      "logo": "/team-logos/brisbane-roar.png",
+      "stadium": "Suncorp Stadium",
+      "capacity": 52500,
+      "founded": 1957,
+      "idESPN": "0",
+      "idAPIfootball": "947",
+      "sdb_league": "Australian A-League"
+    },
+    "Central Coast Mariners": {
+      "sdb_name": "Central Coast Mariners",
+      "sdb_id": "134479",
+      "badge": "/team-badges/central-coast-mariners.png",
+      "logo": "/team-logos/central-coast-mariners.png",
+      "stadium": "Central Coast Stadium",
+      "capacity": 20059,
+      "founded": 2004,
+      "idESPN": "0",
+      "idAPIfootball": "941",
+      "sdb_league": "Australian A-League"
+    },
+    "Gold Coast United": {
+      "sdb_name": "Gold Coast United",
+      "sdb_id": "141691",
+      "badge": "/team-badges/gold-coast-united.png",
+      "logo": null,
+      "stadium": "Coplick Family Sports Park Tallebudgera",
+      "capacity": 0,
+      "founded": 2008,
+      "idESPN": "0",
+      "idAPIfootball": "10216",
+      "sdb_league": "Australia Queensland NPL"
+    },
+    "Macarthur FC": {
+      "sdb_name": "Macarthur FC",
+      "sdb_id": "138063",
+      "badge": "/team-badges/macarthur.png",
+      "logo": "/team-logos/macarthur.png",
+      "stadium": "Campbelltown Stadium",
+      "capacity": 20000,
+      "founded": 2017,
+      "idESPN": "19340",
+      "idAPIfootball": "15550",
+      "sdb_league": "Australian A-League"
+    },
+    "Melbourne City": {
+      "sdb_name": "Melbourne City",
+      "sdb_id": "134634",
+      "badge": "/team-badges/melbourne-city.png",
+      "logo": "/team-logos/melbourne-city.png",
+      "stadium": "AAMI Park",
+      "capacity": 30050,
+      "founded": 2009,
+      "idESPN": "11143",
+      "idAPIfootball": "945",
+      "sdb_league": "Australian A-League"
+    },
+    "Melbourne Heart": {
+      "sdb_name": "Melbourne Heart",
+      "sdb_id": "134478",
+      "badge": "/team-badges/melbourne-heart.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 0,
+      "founded": 2009,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "_Defunct Soccer Teams"
+    },
+    "Melbourne Victory": {
+      "sdb_name": "Melbourne Victory",
+      "sdb_id": "134477",
+      "badge": "/team-badges/melbourne-victory.png",
+      "logo": "/team-logos/melbourne-victory.png",
+      "stadium": "AAMI Park",
+      "capacity": 30050,
+      "founded": 2004,
+      "idESPN": "5328",
+      "idAPIfootball": "944",
+      "sdb_league": "Australian A-League"
+    },
+    "Newcastle United Jets": {
+      "sdb_name": "Newcastle Jets",
+      "sdb_id": "134474",
+      "badge": "/team-badges/newcastle-united-jets.png",
+      "logo": "/team-logos/newcastle-united-jets.png",
+      "stadium": "McDonald Jones Stadium",
+      "capacity": 33000,
+      "founded": 2000,
+      "idESPN": "5323",
+      "idAPIfootball": "946",
+      "sdb_league": "Australian A-League"
+    },
+    "Perth Glory": {
+      "sdb_name": "Perth Glory",
+      "sdb_id": "134481",
+      "badge": "/team-badges/perth-glory.png",
+      "logo": "/team-logos/perth-glory.png",
+      "stadium": "HBF Park",
+      "capacity": 20441,
+      "founded": 1995,
+      "idESPN": "5322",
+      "idAPIfootball": "940",
+      "sdb_league": "Australian A-League"
+    },
+    "South Melbourne": {
+      "sdb_name": "South Melbourne",
+      "sdb_id": "141638",
+      "badge": "/team-badges/south-melbourne.png",
+      "logo": null,
+      "stadium": "Lakeside Stadium",
+      "capacity": 0,
+      "founded": 1959,
+      "idESPN": "0",
+      "idAPIfootball": "3811",
+      "sdb_league": "Australian Championship"
+    },
+    "Sydney FC": {
+      "sdb_name": "Sydney FC",
+      "sdb_id": "134473",
+      "badge": "/team-badges/sydney.png",
+      "logo": "/team-logos/sydney.png",
+      "stadium": "Allianz Stadium Sydney",
+      "capacity": 45500,
+      "founded": 2004,
+      "idESPN": "5327",
+      "idAPIfootball": "943",
+      "sdb_league": "Australian A-League"
+    },
+    "Wellington Phoenix": {
+      "sdb_name": "Wellington Phoenix",
+      "sdb_id": "134475",
+      "badge": "/team-badges/wellington-phoenix.png",
+      "logo": "/team-logos/wellington-phoenix.png",
+      "stadium": "Westpac Stadium",
+      "capacity": 34500,
+      "founded": 2007,
+      "idESPN": "8352",
+      "idAPIfootball": "942",
+      "sdb_league": "Australian A-League"
+    },
+    "Western Sydney Wanderers": {
+      "sdb_name": "Western Sydney Wanderers",
+      "sdb_id": "134480",
+      "badge": "/team-badges/western-sydney-wanderers.png",
+      "logo": "/team-logos/western-sydney-wanderers.png",
+      "stadium": "CommBank Stadium",
+      "capacity": 30000,
+      "founded": 2012,
+      "idESPN": "13696",
+      "idAPIfootball": "939",
+      "sdb_league": "Australian A-League"
+    },
+    "Western United": {
+      "sdb_name": "Western United",
+      "sdb_id": "137542",
+      "badge": "/team-badges/western-united.png",
+      "logo": "/team-logos/western-united.png",
+      "stadium": "AAMI Park",
+      "capacity": 30000,
+      "founded": 2017,
+      "idESPN": "0",
+      "idAPIfootball": "7573",
+      "sdb_league": "_No League Soccer"
     },
     "Atlético Mineiro": {
       "sdb_name": "Atlético Mineiro",
@@ -8361,6 +9661,614 @@
       "idAPIfootball": "1603",
       "sdb_league": "American Major League Soccer"
     },
+    "Bergischer HC": {
+      "sdb_name": "Bergischer HC",
+      "sdb_id": "137196",
+      "badge": "/team-badges/bergischer-hc.png",
+      "logo": "/team-logos/bergischer-hc.png",
+      "stadium": "",
+      "capacity": 3200,
+      "founded": 2006,
+      "idESPN": "0",
+      "idAPIfootball": "312",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "Frisch Auf Göppingen": {
+      "sdb_name": "TPSG Frisch Auf Göppingen",
+      "sdb_id": "137202",
+      "badge": "/team-badges/frisch-auf-goppingen.png",
+      "logo": "/team-logos/frisch-auf-goppingen.png",
+      "stadium": "EWS Arena",
+      "capacity": 5600,
+      "founded": 1896,
+      "idESPN": null,
+      "idAPIfootball": "316",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "Füchse Berlin": {
+      "sdb_name": "Füchse Berlin",
+      "sdb_id": "137197",
+      "badge": "/team-badges/fuchse-berlin.png",
+      "logo": "/team-logos/fuchse-berlin.png",
+      "stadium": "Max-Schmeling-Halle",
+      "capacity": 9000,
+      "founded": 1891,
+      "idESPN": "0",
+      "idAPIfootball": "315",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "GWD Minden": {
+      "sdb_name": "GWD Minden",
+      "sdb_id": "137210",
+      "badge": "/team-badges/gwd-minden.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 4059,
+      "founded": 1924,
+      "idESPN": "0",
+      "idAPIfootball": "325",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "HC Erlangen": {
+      "sdb_name": "HC Erlangen",
+      "sdb_id": "137199",
+      "badge": "/team-badges/hc-erlangen.png",
+      "logo": "/team-logos/hc-erlangen.png",
+      "stadium": "Arena Nürnberger Versicherung",
+      "capacity": 11000,
+      "founded": 2001,
+      "idESPN": null,
+      "idAPIfootball": "313",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "HSG Wetzlar": {
+      "sdb_name": "HSG Wetzlar",
+      "sdb_id": "137213",
+      "badge": "/team-badges/hsg-wetzlar.png",
+      "logo": "/team-logos/hsg-wetzlar.png",
+      "stadium": "Buderus Arena",
+      "capacity": 5000,
+      "founded": 1904,
+      "idESPN": null,
+      "idAPIfootball": "318",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "HSV Hamburg": {
+      "sdb_name": "Handball Sport Verein Hamburg",
+      "sdb_id": "142808",
+      "badge": "/team-badges/hsv-hamburg.png",
+      "logo": "/team-logos/hsv-hamburg.png",
+      "stadium": "Alsterdorfer Sporthalle",
+      "capacity": 7000,
+      "founded": 1999,
+      "idESPN": "0",
+      "idAPIfootball": "319",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "MT Melsungen": {
+      "sdb_name": "MT Melsungen",
+      "sdb_id": "137209",
+      "badge": "/team-badges/mt-melsungen.png",
+      "logo": "/team-logos/mt-melsungen.png",
+      "stadium": "Rothenbach-Halle",
+      "capacity": 4300,
+      "founded": 1861,
+      "idESPN": null,
+      "idAPIfootball": "324",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "Rhein-Neckar Löwen": {
+      "sdb_name": "Rhein-Neckar Löwen",
+      "sdb_id": "137211",
+      "badge": "/team-badges/rhein-neckar-lowen.png",
+      "logo": "/team-logos/rhein-neckar-lowen.png",
+      "stadium": "SAP Arena",
+      "capacity": 14500,
+      "founded": 2002,
+      "idESPN": null,
+      "idAPIfootball": "327",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "SC DHfK Leipzig": {
+      "sdb_name": "SC DHfK Leipzig",
+      "sdb_id": "137206",
+      "badge": "/team-badges/sc-dhfk-leipzig.png",
+      "logo": "/team-logos/sc-dhfk-leipzig.png",
+      "stadium": "Arena Leipzig",
+      "capacity": 12000,
+      "founded": 1954,
+      "idESPN": null,
+      "idAPIfootball": "322",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "SC Magdeburg": {
+      "sdb_name": "SC Magdeburg",
+      "sdb_id": "137208",
+      "badge": "/team-badges/sc-magdeburg.png",
+      "logo": "/team-logos/sc-magdeburg.png",
+      "stadium": "GETEC Arena",
+      "capacity": 8071,
+      "founded": 1955,
+      "idESPN": null,
+      "idAPIfootball": "328",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "SG Flensburg-Handewitt": {
+      "sdb_name": "SG Flensburg-Handewitt",
+      "sdb_id": "137200",
+      "badge": "/team-badges/sg-flensburg-handewitt.png",
+      "logo": "/team-logos/sg-flensburg-handewitt.png",
+      "stadium": "Flens-Arena",
+      "capacity": 6300,
+      "founded": 1990,
+      "idESPN": null,
+      "idAPIfootball": "314",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "TBV Lemgo": {
+      "sdb_name": "TBV Lemgo",
+      "sdb_id": "137207",
+      "badge": "/team-badges/tbv-lemgo.png",
+      "logo": "/team-logos/tbv-lemgo.png",
+      "stadium": "Lipperlandhalle",
+      "capacity": 5000,
+      "founded": 1911,
+      "idESPN": null,
+      "idAPIfootball": "323",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "THW Kiel": {
+      "sdb_name": "THW Kiel",
+      "sdb_id": "137205",
+      "badge": "/team-badges/thw-kiel.png",
+      "logo": "/team-logos/thw-kiel.png",
+      "stadium": "Sparkassen-Arena Kiel",
+      "capacity": 10250,
+      "founded": 1904,
+      "idESPN": "0",
+      "idAPIfootball": "321",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "TSV Hannover-Burgdorf": {
+      "sdb_name": "TSV Hannover-Burgdorf",
+      "sdb_id": "137204",
+      "badge": "/team-badges/tsv-hannover-burgdorf.png",
+      "logo": "/team-logos/tsv-hannover-burgdorf.png",
+      "stadium": "ZAG-Arena",
+      "capacity": 4460,
+      "founded": 1912,
+      "idESPN": "0",
+      "idAPIfootball": "320",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "TVB Stuttgart": {
+      "sdb_name": "TVB 1898 Stuttgart",
+      "sdb_id": "137212",
+      "badge": "/team-badges/tvb-stuttgart.png",
+      "logo": "/team-logos/tvb-stuttgart.png",
+      "stadium": "Porsche-Arena",
+      "capacity": 2050,
+      "founded": 1898,
+      "idESPN": "0",
+      "idAPIfootball": "329",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "ThSV Eisenach": {
+      "sdb_name": "ThSV Eisenach",
+      "sdb_id": "143291",
+      "badge": "/team-badges/thsv-eisenach.png",
+      "logo": "/team-logos/thsv-eisenach.png",
+      "stadium": "Werner-Aßmann-Halle",
+      "capacity": 3100,
+      "founded": 1949,
+      "idESPN": null,
+      "idAPIfootball": "335",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "VfL Gummersbach": {
+      "sdb_name": "VfL Gummersbach",
+      "sdb_id": "137203",
+      "badge": "/team-badges/vfl-gummersbach.png",
+      "logo": "/team-logos/vfl-gummersbach.png",
+      "stadium": "Schwalbe-Arena",
+      "capacity": 4132,
+      "founded": 1861,
+      "idESPN": null,
+      "idAPIfootball": "339",
+      "sdb_league": "German Handball-Bundesliga"
+    },
+    "Admiral Vladivostok": {
+      "sdb_name": "Admiral Vladivostok",
+      "sdb_id": "141414",
+      "badge": "/team-badges/admiral-vladivostok.png",
+      "logo": "/team-logos/admiral-vladivostok.png",
+      "stadium": "Fetisov Arena",
+      "capacity": 5500,
+      "founded": 2013,
+      "idESPN": "0",
+      "idAPIfootball": "831",
+      "sdb_league": "Russian KHL"
+    },
+    "Ak Bars Kazan": {
+      "sdb_name": "Ak Bars Kazan",
+      "sdb_id": "140881",
+      "badge": "/team-badges/ak-bars-kazan.png",
+      "logo": "/team-logos/ak-bars-kazan.png",
+      "stadium": "TatNeft Arena",
+      "capacity": 8895,
+      "founded": 1956,
+      "idESPN": null,
+      "idAPIfootball": "369",
+      "sdb_league": "Russian KHL"
+    },
+    "Amur Khabarovsk": {
+      "sdb_name": "Amur Khabarovsk",
+      "sdb_id": "140882",
+      "badge": "/team-badges/amur-khabarovsk.png",
+      "logo": "/team-logos/amur-khabarovsk.png",
+      "stadium": "Platinum Arena",
+      "capacity": 7100,
+      "founded": 1966,
+      "idESPN": "0",
+      "idAPIfootball": "1486",
+      "sdb_league": "Russian KHL"
+    },
+    "Avangard Omsk": {
+      "sdb_name": "Avangard Omsk",
+      "sdb_id": "140883",
+      "badge": "/team-badges/avangard-omsk.png",
+      "logo": "/team-logos/avangard-omsk.png",
+      "stadium": "G-Drive Arena",
+      "capacity": 5678,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "368",
+      "sdb_league": "Russian KHL"
+    },
+    "Avtomobilist Yekaterinburg": {
+      "sdb_name": "Avtomobilist Yekaterinburg",
+      "sdb_id": "140884",
+      "badge": "/team-badges/avtomobilist-yekaterinburg.png",
+      "logo": "/team-logos/avtomobilist-yekaterinburg.png",
+      "stadium": "KRK Uralets",
+      "capacity": 5545,
+      "founded": 2006,
+      "idESPN": null,
+      "idAPIfootball": "388",
+      "sdb_league": "Russian KHL"
+    },
+    "Barys Astana": {
+      "sdb_name": "Barys Nur-Sultan",
+      "sdb_id": "140885",
+      "badge": "/team-badges/barys-astana.png",
+      "logo": "/team-logos/barys-astana.png",
+      "stadium": "Barys Arena",
+      "capacity": 11502,
+      "founded": 1999,
+      "idESPN": "0",
+      "idAPIfootball": "370",
+      "sdb_league": "Russian KHL"
+    },
+    "Dynamo Moscow": {
+      "sdb_name": "Dynamo Moscow",
+      "sdb_id": "140889",
+      "badge": "/team-badges/dynamo-moscow.png",
+      "logo": "/team-logos/dynamo-moscow.png",
+      "stadium": "Universal VTB Arena",
+      "capacity": 10495,
+      "founded": 1946,
+      "idESPN": "0",
+      "idAPIfootball": "1485",
+      "sdb_league": "Russian KHL"
+    },
+    "HC CSKA Moscow": {
+      "sdb_name": "CSKA Moscow",
+      "sdb_id": "140886",
+      "badge": "/team-badges/hc-cska-moscow.png",
+      "logo": "/team-logos/hc-cska-moscow.png",
+      "stadium": "CSKA Arena",
+      "capacity": 12100,
+      "founded": 1946,
+      "idESPN": null,
+      "idAPIfootball": "371",
+      "sdb_league": "Russian KHL"
+    },
+    "HC Dinamo Minsk": {
+      "sdb_name": "Dinamo Minsk",
+      "sdb_id": "140887",
+      "badge": "/team-badges/hc-dinamo-minsk.png",
+      "logo": "/team-logos/hc-dinamo-minsk.png",
+      "stadium": "Minsk Arena",
+      "capacity": 15086,
+      "founded": 2004,
+      "idESPN": "0",
+      "idAPIfootball": "16",
+      "sdb_league": "Russian KHL"
+    },
+    "HC Lada Togliatti": {
+      "sdb_name": "HC Lada Togliatti",
+      "sdb_id": "141461",
+      "badge": "/team-badges/hc-lada-togliatti.png",
+      "logo": "/team-logos/hc-lada-togliatti.png",
+      "stadium": "Lada Arena",
+      "capacity": 6000,
+      "founded": 1976,
+      "idESPN": "0",
+      "idAPIfootball": "451",
+      "sdb_league": "Russian KHL"
+    },
+    "HC Sibir Novosibirsk": {
+      "sdb_name": "Sibir Novosibirsk",
+      "sdb_id": "140898",
+      "badge": "/team-badges/hc-sibir-novosibirsk.png",
+      "logo": "/team-logos/hc-sibir-novosibirsk.png",
+      "stadium": "Sibir Arena",
+      "capacity": 7420,
+      "founded": 1962,
+      "idESPN": "0",
+      "idAPIfootball": "1488",
+      "sdb_league": "Russian KHL"
+    },
+    "HC Sochi": {
+      "sdb_name": "HC Sochi",
+      "sdb_id": "140890",
+      "badge": "/team-badges/hc-sochi.png",
+      "logo": "/team-logos/hc-sochi.png",
+      "stadium": "Bolshoy Ice Dome",
+      "capacity": 12000,
+      "founded": 2014,
+      "idESPN": null,
+      "idAPIfootball": "385",
+      "sdb_league": "Russian KHL"
+    },
+    "Lokomotiv Yaroslavl": {
+      "sdb_name": "Lokomotiv Yaroslavl",
+      "sdb_id": "140893",
+      "badge": "/team-badges/lokomotiv-yaroslavl.png",
+      "logo": "/team-logos/lokomotiv-yaroslavl.png",
+      "stadium": "Arena 2000 Lokomotiv",
+      "capacity": 7704,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "377",
+      "sdb_league": "Russian KHL"
+    },
+    "Metallurg Magnitogorsk (ice hockey)": {
+      "sdb_name": "Metallurg Magnitogorsk",
+      "sdb_id": "140894",
+      "badge": "/team-badges/metallurg-magnitogorsk-ice-hockey.png",
+      "logo": "/team-logos/metallurg-magnitogorsk-ice-hockey.png",
+      "stadium": "Arena Metallurg",
+      "capacity": 5500,
+      "founded": 1968,
+      "idESPN": "0",
+      "idAPIfootball": "1487",
+      "sdb_league": "Russian KHL"
+    },
+    "Neftekhimik Nizhnekamsk": {
+      "sdb_name": "Neftekhimik Nizhnekamsk",
+      "sdb_id": "140895",
+      "badge": "/team-badges/neftekhimik-nizhnekamsk.png",
+      "logo": "/team-logos/neftekhimik-nizhnekamsk.png",
+      "stadium": "Neftekhimik Arena",
+      "capacity": 7000,
+      "founded": 2016,
+      "idESPN": "0",
+      "idAPIfootball": "380",
+      "sdb_league": "Russian KHL"
+    },
+    "SKA Saint Petersburg": {
+      "sdb_name": "SKA Saint Petersburg",
+      "sdb_id": "140899",
+      "badge": "/team-badges/ska-saint-petersburg.png",
+      "logo": "/team-logos/ska-saint-petersburg.png",
+      "stadium": "SKA Arena",
+      "capacity": 12300,
+      "founded": 1946,
+      "idESPN": "0",
+      "idAPIfootball": "382",
+      "sdb_league": "Russian KHL"
+    },
+    "Salavat Yulaev Ufa": {
+      "sdb_name": "Salavat Yulaev Ufa",
+      "sdb_id": "140896",
+      "badge": "/team-badges/salavat-yulaev-ufa.png",
+      "logo": "/team-logos/salavat-yulaev-ufa.png",
+      "stadium": "Ufa Arena",
+      "capacity": 8070,
+      "founded": 1957,
+      "idESPN": null,
+      "idAPIfootball": "383",
+      "sdb_league": "Russian KHL"
+    },
+    "Severstal Cherepovets": {
+      "sdb_name": "Severstal Cherepovets",
+      "sdb_id": "140897",
+      "badge": "/team-badges/severstal-cherepovets.png",
+      "logo": "/team-logos/severstal-cherepovets.png",
+      "stadium": "Ice Palace Cherepovets",
+      "capacity": 5583,
+      "founded": 1956,
+      "idESPN": "0",
+      "idAPIfootball": "372",
+      "sdb_league": "Russian KHL"
+    },
+    "Shanghai Dragons": {
+      "sdb_name": "Shanghai Dragons",
+      "sdb_id": "140892",
+      "badge": "/team-badges/shanghai-dragons.png",
+      "logo": "/team-logos/shanghai-dragons.png",
+      "stadium": "SKA Arena",
+      "capacity": 9070,
+      "founded": 2025,
+      "idESPN": "0",
+      "idAPIfootball": "376",
+      "sdb_league": "Russian KHL"
+    },
+    "Spartak Moscow": {
+      "sdb_name": "Spartak Moscow",
+      "sdb_id": "140900",
+      "badge": "/team-badges/spartak-moscow.png",
+      "logo": "/team-logos/spartak-moscow.png",
+      "stadium": "Megasport Sport Palace",
+      "capacity": 12100,
+      "founded": 1946,
+      "idESPN": "0",
+      "idAPIfootball": "386",
+      "sdb_league": "Russian KHL"
+    },
+    "Torpedo Nizhny Novgorod": {
+      "sdb_name": "Torpedo Nizhny Novgorod",
+      "sdb_id": "140901",
+      "badge": "/team-badges/torpedo-nizhny-novgorod.png",
+      "logo": "/team-logos/torpedo-nizhny-novgorod.png",
+      "stadium": "Nagorny Culture and Entertainment Complex",
+      "capacity": 5500,
+      "founded": 1947,
+      "idESPN": "0",
+      "idAPIfootball": "379",
+      "sdb_league": "Russian KHL"
+    },
+    "Traktor Chelyabinsk": {
+      "sdb_name": "Traktor Chelyabinsk",
+      "sdb_id": "140902",
+      "badge": "/team-badges/traktor-chelyabinsk.png",
+      "logo": "/team-logos/traktor-chelyabinsk.png",
+      "stadium": "Traktor Ice Arena",
+      "capacity": 7500,
+      "founded": 1947,
+      "idESPN": "0",
+      "idAPIfootball": "387",
+      "sdb_league": "Russian KHL"
+    },
+    "Anaheim Ducks": {
+      "badge": "/data/nhl/logos/ducks.png",
+      "sport": "nhl"
+    },
+    "Boston Bruins": {
+      "badge": "/data/nhl/logos/bruins.png",
+      "sport": "nhl"
+    },
+    "Buffalo Sabres": {
+      "badge": "/data/nhl/logos/sabres.png",
+      "sport": "nhl"
+    },
+    "Calgary Flames": {
+      "badge": "/data/nhl/logos/flames.png",
+      "sport": "nhl"
+    },
+    "Carolina Hurricanes": {
+      "badge": "/data/nhl/logos/hurricanes.png",
+      "sport": "nhl"
+    },
+    "Chicago Blackhawks": {
+      "badge": "/data/nhl/logos/blackhawks.png",
+      "sport": "nhl"
+    },
+    "Colorado Avalanche": {
+      "badge": "/data/nhl/logos/avalanche.png",
+      "sport": "nhl"
+    },
+    "Columbus Blue Jackets": {
+      "badge": "/data/nhl/logos/blue-jackets.png",
+      "sport": "nhl"
+    },
+    "Dallas Stars": {
+      "badge": "/data/nhl/logos/stars.png",
+      "sport": "nhl"
+    },
+    "Detroit Red Wings": {
+      "badge": "/data/nhl/logos/red-wings.png",
+      "sport": "nhl"
+    },
+    "Edmonton Oilers": {
+      "badge": "/data/nhl/logos/oilers.png",
+      "sport": "nhl"
+    },
+    "Florida Panthers": {
+      "badge": "/data/nhl/logos/panthers.png",
+      "sport": "nhl"
+    },
+    "Los Angeles Kings": {
+      "badge": "/data/nhl/logos/kings.png",
+      "sport": "nhl"
+    },
+    "Minnesota Wild": {
+      "badge": "/data/nhl/logos/wild.png",
+      "sport": "nhl"
+    },
+    "Montreal Canadiens": {
+      "badge": "/data/nhl/logos/canadiens.png",
+      "sport": "nhl"
+    },
+    "Nashville Predators": {
+      "badge": "/data/nhl/logos/predators.png",
+      "sport": "nhl"
+    },
+    "New Jersey Devils": {
+      "badge": "/data/nhl/logos/devils.png",
+      "sport": "nhl"
+    },
+    "New York Islanders": {
+      "badge": "/data/nhl/logos/islanders.png",
+      "sport": "nhl"
+    },
+    "New York Rangers": {
+      "badge": "/data/nhl/logos/rangers.png",
+      "sport": "nhl"
+    },
+    "Ottawa Senators": {
+      "badge": "/data/nhl/logos/senators.png",
+      "sport": "nhl"
+    },
+    "Philadelphia Flyers": {
+      "badge": "/data/nhl/logos/flyers.png",
+      "sport": "nhl"
+    },
+    "Pittsburgh Penguins": {
+      "badge": "/data/nhl/logos/penguins.png",
+      "sport": "nhl"
+    },
+    "San Jose Sharks": {
+      "badge": "/data/nhl/logos/sharks.png",
+      "sport": "nhl"
+    },
+    "Seattle Kraken": {
+      "badge": "/data/nhl/logos/kraken.png",
+      "sport": "nhl"
+    },
+    "St. Louis Blues": {
+      "badge": "/data/nhl/logos/blues.png",
+      "sport": "nhl"
+    },
+    "Tampa Bay Lightning": {
+      "badge": "/data/nhl/logos/lightning.png",
+      "sport": "nhl"
+    },
+    "Toronto Maple Leafs": {
+      "badge": "/data/nhl/logos/maple-leafs.png",
+      "sport": "nhl"
+    },
+    "Utah Mammoth": {
+      "badge": "/data/nhl/logos/mammoth.png",
+      "sport": "nhl"
+    },
+    "Vancouver Canucks": {
+      "badge": "/data/nhl/logos/canucks.png",
+      "sport": "nhl"
+    },
+    "Vegas Golden Knights": {
+      "badge": "/data/nhl/logos/golden-knights.png",
+      "sport": "nhl"
+    },
+    "Washington Capitals": {
+      "badge": "/data/nhl/logos/capitals.png",
+      "sport": "nhl"
+    },
+    "Winnipeg Jets": {
+      "badge": "/data/nhl/logos/jets.png",
+      "sport": "nhl"
+    },
     "Brisbane Broncos": {
       "sdb_name": "Brisbane Broncos",
       "sdb_id": "135191",
@@ -8565,6 +10473,1050 @@
       "idAPIfootball": "0",
       "sdb_league": "Australian National Rugby League"
     },
+    "Bradford Bulls": {
+      "sdb_name": "Bradford Bulls",
+      "sdb_id": "137398",
+      "badge": "/team-badges/bradford-bulls.png",
+      "logo": "/team-logos/bradford-bulls.png",
+      "stadium": "Bartercard Odsal Stadium",
+      "capacity": 5100,
+      "founded": 1907,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Castleford Tigers": {
+      "sdb_name": "Castleford Tigers",
+      "sdb_id": "135211",
+      "badge": "/team-badges/castleford-tigers.png",
+      "logo": "/team-logos/castleford-tigers.png",
+      "stadium": "OneBore Stadium",
+      "capacity": 12000,
+      "founded": 1926,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Catalans Dragons": {
+      "sdb_name": "Catalans Dragons",
+      "sdb_id": "135212",
+      "badge": "/team-badges/catalans-dragons.png",
+      "logo": "/team-logos/catalans-dragons.png",
+      "stadium": "Stade Gilbert Brutus",
+      "capacity": 13000,
+      "founded": 2000,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Huddersfield Giants": {
+      "sdb_name": "Huddersfield Giants",
+      "sdb_id": "135213",
+      "badge": "/team-badges/huddersfield-giants.png",
+      "logo": "/team-logos/huddersfield-giants.png",
+      "stadium": "Accu Stadium",
+      "capacity": 24500,
+      "founded": 1895,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Hull FC": {
+      "sdb_name": "Hull F.C.",
+      "sdb_id": "135214",
+      "badge": "/team-badges/hull.png",
+      "logo": "/team-logos/hull.png",
+      "stadium": "The MKM Stadium",
+      "capacity": 25404,
+      "founded": 1865,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Hull Kingston Rovers": {
+      "sdb_name": "Hull Kingston Rovers",
+      "sdb_id": "135215",
+      "badge": "/team-badges/hull-kingston-rovers.png",
+      "logo": "/team-logos/hull-kingston-rovers.png",
+      "stadium": "Sewell Group Craven Park",
+      "capacity": 12225,
+      "founded": 1882,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Leeds Rhinos": {
+      "sdb_name": "Leeds Rhinos",
+      "sdb_id": "135216",
+      "badge": "/team-badges/leeds-rhinos.png",
+      "logo": "/team-logos/leeds-rhinos.png",
+      "stadium": "Headingley Stadium",
+      "capacity": 21200,
+      "founded": 1865,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Leigh Leopards": {
+      "sdb_name": "Leigh Leopards",
+      "sdb_id": "137396",
+      "badge": "/team-badges/leigh-leopards.png",
+      "logo": "/team-logos/leigh-leopards.png",
+      "stadium": "Leigh Sports Village",
+      "capacity": 12000,
+      "founded": 1878,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "St Helens": {
+      "sdb_name": "St Helens",
+      "sdb_id": "135218",
+      "badge": "/team-badges/st-helens.png",
+      "logo": "/team-logos/st-helens.png",
+      "stadium": "BrewDog Stadium",
+      "capacity": 18000,
+      "founded": 1873,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Toulouse Olympique": {
+      "sdb_name": "Toulouse Olympique",
+      "sdb_id": "137395",
+      "badge": "/team-badges/toulouse-olympique.png",
+      "logo": "/team-logos/toulouse-olympique.png",
+      "stadium": "Stade Ernest-Wallon",
+      "capacity": 4000,
+      "founded": 1937,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Wakefield Trinity": {
+      "sdb_name": "Wakefield Trinity Wildcats",
+      "sdb_id": "135219",
+      "badge": "/team-badges/wakefield-trinity.png",
+      "logo": "/team-logos/wakefield-trinity.png",
+      "stadium": "The DIY Kitchens Stadium",
+      "capacity": 12000,
+      "founded": 1873,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Warrington Wolves": {
+      "sdb_name": "Warrington Wolves",
+      "sdb_id": "135220",
+      "badge": "/team-badges/warrington-wolves.png",
+      "logo": "/team-logos/warrington-wolves.png",
+      "stadium": "Halliwell Jones Stadium",
+      "capacity": 15000,
+      "founded": 1876,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Wigan Warriors": {
+      "sdb_name": "Wigan Warriors",
+      "sdb_id": "135222",
+      "badge": "/team-badges/wigan-warriors.png",
+      "logo": "/team-logos/wigan-warriors.png",
+      "stadium": "The Brick Community Stadium",
+      "capacity": 25100,
+      "founded": 1872,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "York Knights": {
+      "sdb_name": "York City Knights",
+      "sdb_id": "137541",
+      "badge": "/team-badges/york-knights.png",
+      "logo": "/team-logos/york-knights.png",
+      "stadium": "LNER Community Stadium",
+      "capacity": 8256,
+      "founded": 2002,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English Rugby League Super League"
+    },
+    "Bath": {
+      "sdb_name": "Bath Rugby",
+      "sdb_id": "135199",
+      "badge": "/team-badges/bath.png",
+      "logo": "/team-logos/bath.png",
+      "stadium": "The Recreation Ground Bath",
+      "capacity": 14509,
+      "founded": 1865,
+      "idESPN": "0",
+      "idAPIfootball": "58",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Bristol Bears": {
+      "sdb_name": "Bristol Bears",
+      "sdb_id": "135740",
+      "badge": "/team-badges/bristol-bears.png",
+      "logo": "/team-logos/bristol-bears.png",
+      "stadium": "Ashton Gate",
+      "capacity": 27000,
+      "founded": 1888,
+      "idESPN": "0",
+      "idAPIfootball": "59",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Exeter Chiefs": {
+      "sdb_name": "Exeter Chiefs",
+      "sdb_id": "135200",
+      "badge": "/team-badges/exeter-chiefs.png",
+      "logo": "/team-logos/exeter-chiefs.png",
+      "stadium": "Sandy Park",
+      "capacity": 12600,
+      "founded": 1871,
+      "idESPN": "0",
+      "idAPIfootball": "60",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Gloucester": {
+      "sdb_name": "Gloucester",
+      "sdb_id": "135201",
+      "badge": "/team-badges/gloucester.png",
+      "logo": "/team-logos/gloucester.png",
+      "stadium": "Kingsholm Stadium",
+      "capacity": 16115,
+      "founded": 1873,
+      "idESPN": "0",
+      "idAPIfootball": "61",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Harlequins": {
+      "sdb_name": "Harlequins",
+      "sdb_id": "135202",
+      "badge": "/team-badges/harlequins.png",
+      "logo": "/team-logos/harlequins.png",
+      "stadium": "Twickenham Stoop",
+      "capacity": 14800,
+      "founded": 1866,
+      "idESPN": "0",
+      "idAPIfootball": "62",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Leicester Tigers": {
+      "sdb_name": "Leicester Tigers",
+      "sdb_id": "135180",
+      "badge": "/team-badges/leicester-tigers.png",
+      "logo": "/team-logos/leicester-tigers.png",
+      "stadium": "Welford Road",
+      "capacity": 25849,
+      "founded": 1880,
+      "idESPN": "0",
+      "idAPIfootball": "63",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Newcastle Red Bulls": {
+      "sdb_name": "Newcastle Red Bulls",
+      "sdb_id": "135205",
+      "badge": "/team-badges/newcastle-red-bulls.png",
+      "logo": "/team-logos/newcastle-red-bulls.png",
+      "stadium": "Kingston Park",
+      "capacity": 10200,
+      "founded": 1877,
+      "idESPN": "0",
+      "idAPIfootball": "927",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Northampton Saints": {
+      "sdb_name": "Northampton Saints",
+      "sdb_id": "135206",
+      "badge": "/team-badges/northampton-saints.png",
+      "logo": "/team-logos/northampton-saints.png",
+      "stadium": "Franklin's Gardens",
+      "capacity": 15249,
+      "founded": 1880,
+      "idESPN": "0",
+      "idAPIfootball": "65",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Sale Sharks": {
+      "sdb_name": "Sale Sharks",
+      "sdb_id": "135207",
+      "badge": "/team-badges/sale-sharks.png",
+      "logo": "/team-logos/sale-sharks.png",
+      "stadium": "Salford Community Stadium",
+      "capacity": 12000,
+      "founded": 1861,
+      "idESPN": "0",
+      "idAPIfootball": "66",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Saracens": {
+      "sdb_name": "Saracens",
+      "sdb_id": "135208",
+      "badge": "/team-badges/saracens.png",
+      "logo": "/team-logos/saracens.png",
+      "stadium": "Barnet Copthall",
+      "capacity": 10000,
+      "founded": 1976,
+      "idESPN": "0",
+      "idAPIfootball": "67",
+      "sdb_league": "English Prem Rugby"
+    },
+    "Blues": {
+      "sdb_name": "Blues Super Rugby",
+      "sdb_id": "136661",
+      "badge": "/team-badges/blues.png",
+      "logo": "/team-logos/blues.png",
+      "stadium": "Eden Park",
+      "capacity": 50000,
+      "founded": 1996,
+      "idESPN": null,
+      "idAPIfootball": "46",
+      "sdb_league": "Super Rugby"
+    },
+    "Brumbies": {
+      "sdb_name": "ACT Brumbies",
+      "sdb_id": "136656",
+      "badge": "/team-badges/brumbies.png",
+      "logo": "/team-logos/brumbies.png",
+      "stadium": "GIO Stadium",
+      "capacity": 25011,
+      "founded": 1996,
+      "idESPN": "0",
+      "idAPIfootball": "478",
+      "sdb_league": "Super Rugby"
+    },
+    "Chiefs": {
+      "sdb_name": "Chiefs Super Rugby",
+      "sdb_id": "136662",
+      "badge": "/team-badges/chiefs.png",
+      "logo": "/team-logos/chiefs.png",
+      "stadium": "FMG Stadium Waikato",
+      "capacity": 25800,
+      "founded": 1996,
+      "idESPN": "0",
+      "idAPIfootball": "296",
+      "sdb_league": "Super Rugby"
+    },
+    "Crusaders": {
+      "sdb_name": "Crusaders Super Rugby",
+      "sdb_id": "136663",
+      "badge": "/team-badges/crusaders.png",
+      "logo": "/team-logos/crusaders.png",
+      "stadium": "Apollo Projects Stadium",
+      "capacity": 18000,
+      "founded": 1996,
+      "idESPN": "0",
+      "idAPIfootball": "479",
+      "sdb_league": "Super Rugby"
+    },
+    "Drua": {
+      "sdb_name": "Fijian Drua",
+      "sdb_id": "137390",
+      "badge": "/team-badges/drua.png",
+      "logo": "/team-logos/drua.png",
+      "stadium": "HFC Bank Stadium",
+      "capacity": 15000,
+      "founded": 2017,
+      "idESPN": null,
+      "idAPIfootball": "821",
+      "sdb_league": "Super Rugby"
+    },
+    "Force": {
+      "sdb_name": "Western Force",
+      "sdb_id": "137391",
+      "badge": "/team-badges/force.png",
+      "logo": "/team-logos/force.png",
+      "stadium": "HBF Park",
+      "capacity": 20500,
+      "founded": 2005,
+      "idESPN": "0",
+      "idAPIfootball": "33",
+      "sdb_league": "Super Rugby"
+    },
+    "Highlanders (rugby union)": {
+      "sdb_name": "Highlanders Super Rugby",
+      "sdb_id": "136664",
+      "badge": "/team-badges/highlanders-rugby-union.png",
+      "logo": "/team-logos/highlanders-rugby-union.png",
+      "stadium": "Forsyth Barr Stadium",
+      "capacity": 30748,
+      "founded": 1996,
+      "idESPN": "0",
+      "idAPIfootball": "480",
+      "sdb_league": "Super Rugby"
+    },
+    "Hurricanes": {
+      "sdb_name": "Hurricanes Super Rugby",
+      "sdb_id": "136665",
+      "badge": "/team-badges/hurricanes.png",
+      "logo": "/team-logos/hurricanes.png",
+      "stadium": "Westpac Stadium",
+      "capacity": 34500,
+      "founded": 1996,
+      "idESPN": "0",
+      "idAPIfootball": "201",
+      "sdb_league": "Super Rugby"
+    },
+    "Moana Pasifika": {
+      "sdb_name": "Moana Pasifika",
+      "sdb_id": "144952",
+      "badge": "/team-badges/moana-pasifika.png",
+      "logo": "/team-logos/moana-pasifika.png",
+      "stadium": "North Harbour Stadium",
+      "capacity": 30000,
+      "founded": 2020,
+      "idESPN": "0",
+      "idAPIfootball": "618",
+      "sdb_league": "Super Rugby"
+    },
+    "Reds": {
+      "sdb_name": "Queensland Reds",
+      "sdb_id": "136658",
+      "badge": "/team-badges/reds.png",
+      "logo": "/team-logos/reds.png",
+      "stadium": "Suncorp Stadium",
+      "capacity": 52500,
+      "founded": 1882,
+      "idESPN": "0",
+      "idAPIfootball": "482",
+      "sdb_league": "Super Rugby"
+    },
+    "Waratahs": {
+      "sdb_name": "New South Wales Waratahs",
+      "sdb_id": "136660",
+      "badge": "/team-badges/waratahs.png",
+      "logo": "/team-logos/waratahs.png",
+      "stadium": "Allianz Stadium Sydney",
+      "capacity": 30000,
+      "founded": 1882,
+      "idESPN": "0",
+      "idAPIfootball": "483",
+      "sdb_league": "Super Rugby"
+    },
+    "ASM Clermont": {
+      "sdb_name": "ASM Clermont Auvergne",
+      "sdb_id": "135332",
+      "badge": "/team-badges/asm-clermont.png",
+      "logo": "/team-logos/asm-clermont.png",
+      "stadium": "Stade Marcel-Michelin",
+      "capacity": 18030,
+      "founded": 1911,
+      "idESPN": null,
+      "idAPIfootball": "99",
+      "sdb_league": "French Top 14"
+    },
+    "Aviron Bayonnais": {
+      "sdb_name": "Aviron Bayonnais",
+      "sdb_id": "135328",
+      "badge": "/team-badges/aviron-bayonnais.png",
+      "logo": "/team-logos/aviron-bayonnais.png",
+      "stadium": "Stade Jean-Dauger",
+      "capacity": 16934,
+      "founded": 1904,
+      "idESPN": "0",
+      "idAPIfootball": "95",
+      "sdb_league": "French Top 14"
+    },
+    "Castres Olympique": {
+      "sdb_name": "Castres Olympique",
+      "sdb_id": "135331",
+      "badge": "/team-badges/castres-olympique.png",
+      "logo": "/team-logos/castres-olympique.png",
+      "stadium": "Stade Pierre-Fabre",
+      "capacity": 11500,
+      "founded": 1906,
+      "idESPN": "0",
+      "idAPIfootball": "98",
+      "sdb_league": "French Top 14"
+    },
+    "Lyon OU": {
+      "sdb_name": "Lyon OU",
+      "sdb_id": "135341",
+      "badge": "/team-badges/lyon-ou.png",
+      "logo": "/team-logos/lyon-ou.png",
+      "stadium": "Stade de Gerland",
+      "capacity": 8000,
+      "founded": 1896,
+      "idESPN": "0",
+      "idAPIfootball": "101",
+      "sdb_league": "French Top 14"
+    },
+    "Montpellier HR": {
+      "sdb_name": "Montpellier Hérault Rugby",
+      "sdb_id": "135334",
+      "badge": "/team-badges/montpellier-hr.png",
+      "logo": "/team-logos/montpellier-hr.png",
+      "stadium": "Stade Yves-du-Manoir",
+      "capacity": 14700,
+      "founded": 1986,
+      "idESPN": "0",
+      "idAPIfootball": "102",
+      "sdb_league": "French Top 14"
+    },
+    "RC Toulon": {
+      "sdb_name": "RC Toulonnais",
+      "sdb_id": "135338",
+      "badge": "/team-badges/rc-toulon.png",
+      "logo": "/team-logos/rc-toulon.png",
+      "stadium": "Stade Mayol",
+      "capacity": 15800,
+      "founded": 1908,
+      "idESPN": "0",
+      "idAPIfootball": "103",
+      "sdb_league": "French Top 14"
+    },
+    "Racing 92": {
+      "sdb_name": "Racing Métro 92",
+      "sdb_id": "135336",
+      "badge": "/team-badges/racing-92.png",
+      "logo": "/team-logos/racing-92.png",
+      "stadium": "Paris La Défense Arena",
+      "capacity": 14000,
+      "founded": 1882,
+      "idESPN": "0",
+      "idAPIfootball": "104",
+      "sdb_league": "French Top 14"
+    },
+    "Section Paloise": {
+      "sdb_name": "Section Paloise",
+      "sdb_id": "137384",
+      "badge": "/team-badges/section-paloise.png",
+      "logo": "/team-logos/section-paloise.png",
+      "stadium": "Stade du Hameau",
+      "capacity": 18324,
+      "founded": 1902,
+      "idESPN": null,
+      "idAPIfootball": "105",
+      "sdb_league": "French Top 14"
+    },
+    "Stade Français Paris": {
+      "sdb_name": "Stade Français Paris",
+      "sdb_id": "135337",
+      "badge": "/team-badges/stade-francais-paris.png",
+      "logo": "/team-logos/stade-francais-paris.png",
+      "stadium": "Stade Jean-Bouin",
+      "capacity": 20000,
+      "founded": 1883,
+      "idESPN": null,
+      "idAPIfootball": "106",
+      "sdb_league": "French Top 14"
+    },
+    "Stade Rochelais": {
+      "sdb_name": "Stade Rochelais",
+      "sdb_id": "135340",
+      "badge": "/team-badges/stade-rochelais.png",
+      "logo": "/team-logos/stade-rochelais.png",
+      "stadium": "Stade Marcel-Deflandre",
+      "capacity": 12500,
+      "founded": 1898,
+      "idESPN": null,
+      "idAPIfootball": "100",
+      "sdb_league": "French Top 14"
+    },
+    "Stade Toulousain": {
+      "sdb_name": "Stade Toulousain",
+      "sdb_id": "135339",
+      "badge": "/team-badges/stade-toulousain.png",
+      "logo": "/team-logos/stade-toulousain.png",
+      "stadium": "Stade Ernest-Wallon",
+      "capacity": 19500,
+      "founded": 1907,
+      "idESPN": "0",
+      "idAPIfootball": "107",
+      "sdb_league": "French Top 14"
+    },
+    "US Montauban": {
+      "sdb_name": "US Montauban",
+      "sdb_id": "141952",
+      "badge": "/team-badges/us-montauban.png",
+      "logo": "/team-logos/us-montauban.png",
+      "stadium": "Stade de Sapiac",
+      "capacity": 12600,
+      "founded": 1903,
+      "idESPN": "0",
+      "idAPIfootball": "116",
+      "sdb_league": "French Top 14"
+    },
+    "USA Perpignan": {
+      "sdb_name": "USA Perpignan",
+      "sdb_id": "137386",
+      "badge": "/team-badges/usa-perpignan.png",
+      "logo": null,
+      "stadium": "Stade Aimé-Giral",
+      "capacity": 14593,
+      "founded": 1902,
+      "idESPN": "0",
+      "idAPIfootball": "120",
+      "sdb_league": "French Top 14"
+    },
+    "Union Bordeaux Bègles": {
+      "sdb_name": "Union Bordeaux Bègles",
+      "sdb_id": "135329",
+      "badge": "/team-badges/union-bordeaux-begles.png",
+      "logo": "/team-logos/union-bordeaux-begles.png",
+      "stadium": "Stade Chaban-Delmas",
+      "capacity": 34700,
+      "founded": 2006,
+      "idESPN": "0",
+      "idAPIfootball": "96",
+      "sdb_league": "French Top 14"
+    },
+    "Benetton": {
+      "sdb_name": "Benetton",
+      "sdb_id": "135595",
+      "badge": "/team-badges/benetton.png",
+      "logo": "/team-logos/benetton.png",
+      "stadium": "Stadio di Monigo",
+      "capacity": 6700,
+      "founded": 1932,
+      "idESPN": "0",
+      "idAPIfootball": "392",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Bulls": {
+      "sdb_name": "Bulls",
+      "sdb_id": "136666",
+      "badge": "/team-badges/bulls.png",
+      "logo": "/team-logos/bulls.png",
+      "stadium": "Loftus Versfeld Stadium",
+      "capacity": 51762,
+      "founded": 1997,
+      "idESPN": "0",
+      "idAPIfootball": "294",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Cardiff Rugby": {
+      "sdb_name": "Cardiff Rugby",
+      "sdb_id": "135596",
+      "badge": "/team-badges/cardiff-rugby.png",
+      "logo": "/team-logos/cardiff-rugby.png",
+      "stadium": "Cardiff Arms Park",
+      "capacity": 12125,
+      "founded": 2003,
+      "idESPN": null,
+      "idAPIfootball": "611",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Connacht": {
+      "sdb_name": "Connacht",
+      "sdb_id": "135597",
+      "badge": "/team-badges/connacht.png",
+      "logo": "/team-logos/connacht.png",
+      "stadium": "Dexcom Stadium",
+      "capacity": 9500,
+      "founded": 1885,
+      "idESPN": "0",
+      "idAPIfootball": "398",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Dragons RFC": {
+      "sdb_name": "Dragons",
+      "sdb_id": "135602",
+      "badge": "/team-badges/dragons-rfc.png",
+      "logo": "/team-logos/dragons-rfc.png",
+      "stadium": "Rodney Parade",
+      "capacity": 8800,
+      "founded": 2003,
+      "idESPN": null,
+      "idAPIfootball": "396",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Edinburgh Rugby": {
+      "sdb_name": "Edinburgh",
+      "sdb_id": "135598",
+      "badge": "/team-badges/edinburgh-rugby.png",
+      "logo": "/team-logos/edinburgh-rugby.png",
+      "stadium": "The Hive Stadium Edinburgh",
+      "capacity": 67144,
+      "founded": 1872,
+      "idESPN": "0",
+      "idAPIfootball": "279",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Glasgow Warriors": {
+      "sdb_name": "Glasgow",
+      "sdb_id": "135600",
+      "badge": "/team-badges/glasgow-warriors.png",
+      "logo": "/team-logos/glasgow-warriors.png",
+      "stadium": "Scotstoun Stadium",
+      "capacity": 10000,
+      "founded": 1872,
+      "idESPN": null,
+      "idAPIfootball": "406",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Leinster": {
+      "sdb_name": "Leinster",
+      "sdb_id": "135599",
+      "badge": "/team-badges/leinster.png",
+      "logo": "/team-logos/leinster.png",
+      "stadium": "Aviva Stadium",
+      "capacity": 51700,
+      "founded": 1879,
+      "idESPN": null,
+      "idAPIfootball": "407",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Lions": {
+      "sdb_name": "Lions",
+      "sdb_id": "136668",
+      "badge": "/team-badges/lions.png",
+      "logo": "/team-logos/lions.png",
+      "stadium": "Emirates Airline Park",
+      "capacity": 62567,
+      "founded": 1996,
+      "idESPN": "0",
+      "idAPIfootball": "297",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Munster": {
+      "sdb_name": "Munster",
+      "sdb_id": "135601",
+      "badge": "/team-badges/munster.png",
+      "logo": "/team-logos/munster.png",
+      "stadium": "Thomond Park",
+      "capacity": 25600,
+      "founded": 1879,
+      "idESPN": null,
+      "idAPIfootball": "408",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Ospreys": {
+      "sdb_name": "Ospreys",
+      "sdb_id": "135603",
+      "badge": "/team-badges/ospreys.png",
+      "logo": "/team-logos/ospreys.png",
+      "stadium": "Swansea.com Stadium",
+      "capacity": 20827,
+      "founded": 2003,
+      "idESPN": "0",
+      "idAPIfootball": "394",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Scarlets": {
+      "sdb_name": "Scarlets",
+      "sdb_id": "135604",
+      "badge": "/team-badges/scarlets.png",
+      "logo": "/team-logos/scarlets.png",
+      "stadium": "Parc y Scarlets",
+      "capacity": 14870,
+      "founded": 2003,
+      "idESPN": null,
+      "idAPIfootball": "397",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Sharks": {
+      "sdb_name": "The Sharks",
+      "sdb_id": "136669",
+      "badge": "/team-badges/sharks.png",
+      "logo": "/team-logos/sharks.png",
+      "stadium": "Hollywoodbets Kings Park Stadium",
+      "capacity": 52000,
+      "founded": 1995,
+      "idESPN": "0",
+      "idAPIfootball": "302",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Stormers": {
+      "sdb_name": "Stormers",
+      "sdb_id": "136670",
+      "badge": "/team-badges/stormers.png",
+      "logo": "/team-logos/stormers.png",
+      "stadium": "DHL Stadium",
+      "capacity": 51900,
+      "founded": 1997,
+      "idESPN": "0",
+      "idAPIfootball": "621",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Ulster": {
+      "sdb_name": "Ulster",
+      "sdb_id": "135605",
+      "badge": "/team-badges/ulster.png",
+      "logo": "/team-logos/ulster.png",
+      "stadium": "Affidea Stadium",
+      "capacity": 18196,
+      "founded": 1879,
+      "idESPN": "0",
+      "idAPIfootball": "409",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Zebre Parma": {
+      "sdb_name": "Zebre",
+      "sdb_id": "135606",
+      "badge": "/team-badges/zebre-parma.png",
+      "logo": "/team-logos/zebre-parma.png",
+      "stadium": "Stadio Sergio Lanfranchi",
+      "capacity": 5000,
+      "founded": 1973,
+      "idESPN": null,
+      "idAPIfootball": "395",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Balkh Legends": {
+      "sdb_name": "Balkh Legends",
+      "sdb_id": "146015",
+      "badge": "/team-badges/balkh-legends.png",
+      "logo": null,
+      "stadium": "Sharjah Cricket Stadium",
+      "capacity": 16000,
+      "founded": 2018,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "_Defunct Cricket Teams"
+    },
+    "Kabul Zwanan": {
+      "sdb_name": "Kabul Zwanan",
+      "sdb_id": "146018",
+      "badge": "/team-badges/kabul-zwanan.png",
+      "logo": null,
+      "stadium": "Sharjah Cricket Stadium",
+      "capacity": 16000,
+      "founded": 2018,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "_Defunct Cricket Teams"
+    },
+    "Chattogram Royals": {
+      "sdb_name": "Chattogram Royals",
+      "sdb_id": "150056",
+      "badge": "/team-badges/chattogram-royals.png",
+      "logo": "/team-logos/chattogram-royals.png",
+      "stadium": "Zahur Ahmed Chowdhury Stadium",
+      "capacity": null,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Bangladesh Premier League"
+    },
+    "Dhaka Capitals": {
+      "sdb_name": "Dhaka Capitals",
+      "sdb_id": "150057",
+      "badge": "/team-badges/dhaka-capitals.png",
+      "logo": null,
+      "stadium": "Sher-e-Bangla National Cricket Stadium",
+      "capacity": null,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Bangladesh Premier League"
+    },
+    "Noakhali Express": {
+      "sdb_name": "Noakhali Express",
+      "sdb_id": "154145",
+      "badge": "/team-badges/noakhali-express.png",
+      "logo": "/team-logos/noakhali-express.png",
+      "stadium": "",
+      "capacity": null,
+      "founded": 2025,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Bangladesh Premier League"
+    },
+    "Rajshahi Warriors": {
+      "sdb_name": "Rajshahi Warriors",
+      "sdb_id": "150058",
+      "badge": "/team-badges/rajshahi-warriors.png",
+      "logo": "/team-logos/rajshahi-warriors.png",
+      "stadium": "",
+      "capacity": null,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Bangladesh Premier League"
+    },
+    "Rangpur Riders": {
+      "sdb_name": "Rangpur Riders",
+      "sdb_id": "150059",
+      "badge": "/team-badges/rangpur-riders.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Bangladesh Premier League"
+    },
+    "Sylhet Titans": {
+      "sdb_name": "Sylhet Titans",
+      "sdb_id": "146016",
+      "badge": "/team-badges/sylhet-titans.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 0,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Bangladesh Premier League"
+    },
+    "Adelaide Strikers": {
+      "sdb_name": "Adelaide Strikers",
+      "sdb_id": "135748",
+      "badge": "/team-badges/adelaide-strikers.png",
+      "logo": "/team-logos/adelaide-strikers.png",
+      "stadium": "Adelaide Oval",
+      "capacity": 53698,
+      "founded": 2011,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Brisbane Heat": {
+      "sdb_name": "Brisbane Heat",
+      "sdb_id": "135749",
+      "badge": "/team-badges/brisbane-heat.png",
+      "logo": "/team-logos/brisbane-heat.png",
+      "stadium": "The Gabba",
+      "capacity": 42000,
+      "founded": 2011,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Hobart Hurricanes": {
+      "sdb_name": "Hobart Hurricanes",
+      "sdb_id": "135750",
+      "badge": "/team-badges/hobart-hurricanes.png",
+      "logo": "/team-logos/hobart-hurricanes.png",
+      "stadium": "Ninja Stadium",
+      "capacity": 19500,
+      "founded": 2011,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Melbourne Renegades": {
+      "sdb_name": "Melbourne Renegades",
+      "sdb_id": "135751",
+      "badge": "/team-badges/melbourne-renegades.png",
+      "logo": "/team-logos/melbourne-renegades.png",
+      "stadium": "Marvel Stadium",
+      "capacity": 47000,
+      "founded": 2011,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Melbourne Stars": {
+      "sdb_name": "Melbourne Stars",
+      "sdb_id": "135752",
+      "badge": "/team-badges/melbourne-stars.png",
+      "logo": "/team-logos/melbourne-stars.png",
+      "stadium": "Melbourne Cricket Ground",
+      "capacity": 100024,
+      "founded": 2011,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Perth Scorchers": {
+      "sdb_name": "Perth Scorchers",
+      "sdb_id": "135753",
+      "badge": "/team-badges/perth-scorchers.png",
+      "logo": "/team-logos/perth-scorchers.png",
+      "stadium": "Optus Stadium",
+      "capacity": 60000,
+      "founded": 2011,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Sydney Sixers": {
+      "sdb_name": "Sydney Sixers",
+      "sdb_id": "135754",
+      "badge": "/team-badges/sydney-sixers.png",
+      "logo": "/team-logos/sydney-sixers.png",
+      "stadium": "Sydney Cricket Ground",
+      "capacity": 48601,
+      "founded": 2011,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Sydney Thunder": {
+      "sdb_name": "Sydney Thunder",
+      "sdb_id": "135755",
+      "badge": "/team-badges/sydney-thunder.png",
+      "logo": "/team-logos/sydney-thunder.png",
+      "stadium": "ENGIE Stadium",
+      "capacity": 22000,
+      "founded": 2011,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Australian Big Bash League"
+    },
+    "Antigua & Barbuda Falcons": {
+      "sdb_name": "Antigua and Barbuda Falcons",
+      "sdb_id": "148126",
+      "badge": "/team-badges/antigua-and-barbuda-falcons.png",
+      "logo": null,
+      "stadium": "Sir Vivian Richards Stadium",
+      "capacity": 10000,
+      "founded": 2024,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Caribbean Premier League"
+    },
+    "Barbados Royals": {
+      "sdb_name": "Barbados Royals",
+      "sdb_id": "144887",
+      "badge": "/team-badges/barbados-royals.png",
+      "logo": null,
+      "stadium": "Kensington Oval",
+      "capacity": 11000,
+      "founded": 2013,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Caribbean Premier League"
+    },
+    "Guyana Amazon Warriors": {
+      "sdb_name": "Guyana Amazon Warriors",
+      "sdb_id": "144888",
+      "badge": "/team-badges/guyana-amazon-warriors.png",
+      "logo": null,
+      "stadium": "Providence Stadium",
+      "capacity": 15000,
+      "founded": 2013,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Caribbean Premier League"
+    },
+    "Saint Lucia Kings": {
+      "sdb_name": "Saint Lucia Kings",
+      "sdb_id": "144891",
+      "badge": "/team-badges/saint-lucia-kings.png",
+      "logo": null,
+      "stadium": "Daren Sammy Cricket Ground",
+      "capacity": 15000,
+      "founded": 2013,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Caribbean Premier League"
+    },
+    "St Kitts & Nevis Patriots": {
+      "sdb_name": "St Kitts and Nevis Patriots",
+      "sdb_id": "144890",
+      "badge": "/team-badges/st-kitts-and-nevis-patriots.png",
+      "logo": null,
+      "stadium": "Warner Park Sporting Complex",
+      "capacity": 10000,
+      "founded": 2015,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Caribbean Premier League"
+    },
+    "Trinbago Knight Riders": {
+      "sdb_name": "Trinbago Knight Riders",
+      "sdb_id": "144892",
+      "badge": "/team-badges/trinbago-knight-riders.png",
+      "logo": null,
+      "stadium": "Brian Lara Cricket Academy",
+      "capacity": 20000,
+      "founded": 2013,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Caribbean Premier League"
+    },
     "Chennai Super Kings": {
       "sdb_name": "Chennai Super Kings",
       "sdb_id": "135800",
@@ -8684,6 +11636,1182 @@
       "idESPN": "0",
       "idAPIfootball": "0",
       "sdb_league": "Indian Premier League"
+    },
+    "Abu Dhabi Knight Riders": {
+      "sdb_name": "Abu Dhabi Knight Riders",
+      "sdb_id": "149053",
+      "badge": "/team-badges/abu-dhabi-knight-riders.png",
+      "logo": "/team-logos/abu-dhabi-knight-riders.png",
+      "stadium": null,
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "International League T20"
+    },
+    "Desert Vipers": {
+      "sdb_name": "Desert Vipers",
+      "sdb_id": "149056",
+      "badge": "/team-badges/desert-vipers.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "International League T20"
+    },
+    "Dubai Capitals": {
+      "sdb_name": "Dubai Capitals",
+      "sdb_id": "149051",
+      "badge": "/team-badges/dubai-capitals.png",
+      "logo": "/team-logos/dubai-capitals.png",
+      "stadium": "",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "International League T20"
+    },
+    "Gulf Giants": {
+      "sdb_name": "Gulf Giants",
+      "sdb_id": "149055",
+      "badge": "/team-badges/gulf-giants.png",
+      "logo": "/team-logos/gulf-giants.png",
+      "stadium": null,
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "International League T20"
+    },
+    "MI Emirates": {
+      "sdb_name": "MI Emirates",
+      "sdb_id": "149052",
+      "badge": "/team-badges/mi-emirates.png",
+      "logo": null,
+      "stadium": null,
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "International League T20"
+    },
+    "Sharjah Warriorz": {
+      "sdb_name": "Sharjah Warriorz",
+      "sdb_id": "149054",
+      "badge": "/team-badges/sharjah-warriorz.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "International League T20"
+    },
+    "Colombo Kaps": {
+      "sdb_name": "Colombo Kaps",
+      "sdb_id": "144882",
+      "badge": "/team-badges/colombo-kaps.png",
+      "logo": null,
+      "stadium": "R. Premadasa Stadium",
+      "capacity": 0,
+      "founded": 2020,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Lanka Premier League"
+    },
+    "Dambulla Sixers": {
+      "sdb_name": "Dambulla Sixers",
+      "sdb_id": "144883",
+      "badge": "/team-badges/dambulla-sixers.png",
+      "logo": null,
+      "stadium": "Rangiri Dambulla International Stadium",
+      "capacity": 0,
+      "founded": 2020,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Lanka Premier League"
+    },
+    "Galle Marvels": {
+      "sdb_name": "Galle Marvels",
+      "sdb_id": "144884",
+      "badge": "/team-badges/galle-marvels.png",
+      "logo": null,
+      "stadium": "Galle International Stadium",
+      "capacity": 0,
+      "founded": 2020,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Lanka Premier League"
+    },
+    "Jaffna": {
+      "sdb_name": "Jaffna Kings",
+      "sdb_id": "144885",
+      "badge": "/team-badges/jaffna.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 0,
+      "founded": 2020,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Lanka Premier League"
+    },
+    "Kandy Falcons": {
+      "sdb_name": "Kandy Royals",
+      "sdb_id": "144886",
+      "badge": "/team-badges/kandy-falcons.png",
+      "logo": null,
+      "stadium": "Pallekele International Cricket Stadium",
+      "capacity": 0,
+      "founded": 2020,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Lanka Premier League"
+    },
+    "Los Angeles Knight Riders": {
+      "sdb_name": "Los Angeles Knight Riders",
+      "sdb_id": "147491",
+      "badge": "/team-badges/los-angeles-knight-riders.png",
+      "logo": "/team-logos/los-angeles-knight-riders.png",
+      "stadium": "Knight Riders Cricket Field",
+      "capacity": 10000,
+      "founded": 2023,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Major League Cricket"
+    },
+    "MI New York": {
+      "sdb_name": "MI New York",
+      "sdb_id": "147492",
+      "badge": "/team-badges/mi-new-york.png",
+      "logo": "/team-logos/mi-new-york.png",
+      "stadium": "Marine Park Cricket Stadium",
+      "capacity": 10000,
+      "founded": 2023,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Major League Cricket"
+    },
+    "San Francisco Unicorns": {
+      "sdb_name": "San Francisco Unicorns",
+      "sdb_id": "147493",
+      "badge": "/team-badges/san-francisco-unicorns.png",
+      "logo": "/team-logos/san-francisco-unicorns.png",
+      "stadium": "Oakland-Alameda County Coliseum",
+      "capacity": 15000,
+      "founded": 2023,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Major League Cricket"
+    },
+    "Seattle Orcas": {
+      "sdb_name": "Seattle Orcas",
+      "sdb_id": "147494",
+      "badge": "/team-badges/seattle-orcas.png",
+      "logo": "/team-logos/seattle-orcas.png",
+      "stadium": "Marymoor Cricket Community Park",
+      "capacity": 6000,
+      "founded": 2023,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Major League Cricket"
+    },
+    "Texas Super Kings": {
+      "sdb_name": "Texas Super Kings",
+      "sdb_id": "147495",
+      "badge": "/team-badges/texas-super-kings.png",
+      "logo": "/team-logos/texas-super-kings.png",
+      "stadium": "Grand Prairie Stadium",
+      "capacity": 7200,
+      "founded": 2023,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Major League Cricket"
+    },
+    "Washington Freedom": {
+      "sdb_name": "Washington Freedom",
+      "sdb_id": "147496",
+      "badge": "/team-badges/washington-freedom.png",
+      "logo": "/team-logos/washington-freedom.png",
+      "stadium": "George Mason Cricket Stadium",
+      "capacity": 12000,
+      "founded": 2023,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Major League Cricket"
+    },
+    "Biratnagar Kings": {
+      "sdb_name": "Biratnagar Kings",
+      "sdb_id": "150070",
+      "badge": "/team-badges/biratnagar-kings.png",
+      "logo": "/team-logos/biratnagar-kings.png",
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Chitwan Rhinos": {
+      "sdb_name": "Chitwan Rhinos",
+      "sdb_id": "150071",
+      "badge": "/team-badges/chitwan-rhinos.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Janakpur Bolts": {
+      "sdb_name": "Janakpur Bolts",
+      "sdb_id": "150072",
+      "badge": "/team-badges/janakpur-bolts.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Karnali Yaks": {
+      "sdb_name": "Karnali Yaks",
+      "sdb_id": "150073",
+      "badge": "/team-badges/karnali-yaks.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Kathmandu Gorkhas": {
+      "sdb_name": "Kathmandu Gurkhas",
+      "sdb_id": "150074",
+      "badge": "/team-badges/kathmandu-gorkhas.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Lumbini Lions": {
+      "sdb_name": "Lumbini Lions",
+      "sdb_id": "150075",
+      "badge": "/team-badges/lumbini-lions.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Pokhara Avengers": {
+      "sdb_name": "Pokhara Avengers",
+      "sdb_id": "150076",
+      "badge": "/team-badges/pokhara-avengers.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Sudurpaschim Royals": {
+      "sdb_name": "Sudurpaschim Royals",
+      "sdb_id": "150077",
+      "badge": "/team-badges/sudurpaschim-royals.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2024,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Nepal Premier League"
+    },
+    "Islamabad United": {
+      "sdb_name": "Islamabad United",
+      "sdb_id": "142102",
+      "badge": "/team-badges/islamabad-united.png",
+      "logo": null,
+      "stadium": "Rawalpindi Cricket Stadium",
+      "capacity": 15000,
+      "founded": 2015,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Pakistan Super League"
+    },
+    "Karachi Kings": {
+      "sdb_name": "Karachi Kings",
+      "sdb_id": "142103",
+      "badge": "/team-badges/karachi-kings.png",
+      "logo": null,
+      "stadium": "National Stadium Karachi",
+      "capacity": 34228,
+      "founded": 2015,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Pakistan Super League"
+    },
+    "Lahore Qalandars": {
+      "sdb_name": "Lahore Qalandars",
+      "sdb_id": "142104",
+      "badge": "/team-badges/lahore-qalandars.png",
+      "logo": null,
+      "stadium": "Gaddafi Stadium",
+      "capacity": 27000,
+      "founded": 2015,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Pakistan Super League"
+    },
+    "Multan Sultans": {
+      "sdb_name": "Multan Sultans",
+      "sdb_id": "142105",
+      "badge": "/team-badges/multan-sultans.png",
+      "logo": null,
+      "stadium": "Multan Cricket Stadium",
+      "capacity": 30000,
+      "founded": 2017,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "Pakistan Super League"
+    },
+    "Peshawar Zalmi": {
+      "sdb_name": "Peshawar Zalmi",
+      "sdb_id": "142106",
+      "badge": "/team-badges/peshawar-zalmi.png",
+      "logo": null,
+      "stadium": "Imran Khan Cricket Stadium",
+      "capacity": 35000,
+      "founded": 2015,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Pakistan Super League"
+    },
+    "Quetta Gladiators": {
+      "sdb_name": "Quetta Gladiators",
+      "sdb_id": "142107",
+      "badge": "/team-badges/quetta-gladiators.png",
+      "logo": null,
+      "stadium": "Bugti Stadium",
+      "capacity": 0,
+      "founded": 2015,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Pakistan Super League"
+    },
+    "Durban's Super Giants": {
+      "sdb_name": "Durban's Super Giants",
+      "sdb_id": "150064",
+      "badge": "/team-badges/durban-s-super-giants.png",
+      "logo": null,
+      "stadium": "Kingsmead Cricket Ground",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "SA20"
+    },
+    "Joburg Super Kings": {
+      "sdb_name": "Joburg Super Kings",
+      "sdb_id": "150065",
+      "badge": "/team-badges/joburg-super-kings.png",
+      "logo": null,
+      "stadium": "Wanderers Stadium",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "SA20"
+    },
+    "MI Cape Town": {
+      "sdb_name": "MI Cape Town",
+      "sdb_id": "150066",
+      "badge": "/team-badges/mi-cape-town.png",
+      "logo": null,
+      "stadium": "Newlands",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "SA20"
+    },
+    "Paarl Royals": {
+      "sdb_name": "Paarl Royals",
+      "sdb_id": "150067",
+      "badge": "/team-badges/paarl-royals.png",
+      "logo": null,
+      "stadium": "Boland Park",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "SA20"
+    },
+    "Pretoria Capitals": {
+      "sdb_name": "Pretoria Capitals",
+      "sdb_id": "150068",
+      "badge": "/team-badges/pretoria-capitals.png",
+      "logo": null,
+      "stadium": "Centurion Park",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "SA20"
+    },
+    "Sunrisers Eastern Cape": {
+      "sdb_name": "Sunrisers Eastern Cape",
+      "sdb_id": "150069",
+      "badge": "/team-badges/sunrisers-eastern-cape.png",
+      "logo": null,
+      "stadium": "St George's Park Cricket Ground",
+      "capacity": null,
+      "founded": 2022,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "SA20"
+    },
+    "Auckland Aces": {
+      "sdb_name": "Auckland Aces",
+      "sdb_id": "144876",
+      "badge": "/team-badges/auckland-aces.png",
+      "logo": null,
+      "stadium": "Eden Park Outer Oval",
+      "capacity": 4000,
+      "founded": 1873,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "New Zealand Super Smash"
+    },
+    "Canterbury Kings": {
+      "sdb_name": "Canterbury Kings",
+      "sdb_id": "144877",
+      "badge": "/team-badges/canterbury-kings.png",
+      "logo": null,
+      "stadium": "Hagley Oval",
+      "capacity": 8000,
+      "founded": 1864,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "New Zealand Super Smash"
+    },
+    "Central Stags": {
+      "sdb_name": "Central Stags",
+      "sdb_id": "144878",
+      "badge": "/team-badges/central-stags.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 19700,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "New Zealand Super Smash"
+    },
+    "Northern Brave": {
+      "sdb_name": "Northern Brave",
+      "sdb_id": "144879",
+      "badge": "/team-badges/northern-brave.png",
+      "logo": null,
+      "stadium": "Seddon Park",
+      "capacity": 10000,
+      "founded": 1955,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "New Zealand Super Smash"
+    },
+    "Otago Volts": {
+      "sdb_name": "Otago Volts",
+      "sdb_id": "144880",
+      "badge": "/team-badges/otago-volts.png",
+      "logo": null,
+      "stadium": "University Oval",
+      "capacity": 3500,
+      "founded": 1864,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "New Zealand Super Smash"
+    },
+    "Wellington Firebirds": {
+      "sdb_name": "Wellington Firebirds",
+      "sdb_id": "144881",
+      "badge": "/team-badges/wellington-firebirds.png",
+      "logo": null,
+      "stadium": "Basin Reserve",
+      "capacity": 11600,
+      "founded": 1873,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "New Zealand Super Smash"
+    },
+    "Derbyshire Falcons": {
+      "sdb_name": "Derbyshire Falcons",
+      "sdb_id": "135775",
+      "badge": "/team-badges/derbyshire-falcons.png",
+      "logo": "/team-logos/derbyshire-falcons.png",
+      "stadium": "County Ground Derby",
+      "capacity": 9500,
+      "founded": 1870,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Durham": {
+      "sdb_name": "Durham Jets",
+      "sdb_id": "135776",
+      "badge": "/team-badges/durham.png",
+      "logo": "/team-logos/durham.png",
+      "stadium": "Riverside Ground",
+      "capacity": 15000,
+      "founded": 1882,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Essex": {
+      "sdb_name": "Essex Eagles",
+      "sdb_id": "135777",
+      "badge": "/team-badges/essex.png",
+      "logo": "/team-logos/essex.png",
+      "stadium": "County Ground Chelmsford",
+      "capacity": 6500,
+      "founded": 1876,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Glamorgan": {
+      "sdb_name": "Glamorgan t20",
+      "sdb_id": "135778",
+      "badge": "/team-badges/glamorgan.png",
+      "logo": "/team-logos/glamorgan.png",
+      "stadium": "Sophia Gardens",
+      "capacity": 15643,
+      "founded": 1888,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Gloucestershire": {
+      "sdb_name": "Gloucestershire t20",
+      "sdb_id": "135779",
+      "badge": "/team-badges/gloucestershire.png",
+      "logo": "/team-logos/gloucestershire.png",
+      "stadium": "Bristol County Ground",
+      "capacity": 17500,
+      "founded": 1870,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Hampshire Hawks": {
+      "sdb_name": "Hampshire t20",
+      "sdb_id": "135780",
+      "badge": "/team-badges/hampshire-hawks.png",
+      "logo": "/team-logos/hampshire-hawks.png",
+      "stadium": "Rose Bowl",
+      "capacity": 16500,
+      "founded": 1863,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Kent Spitfires": {
+      "sdb_name": "Kent Spitfires",
+      "sdb_id": "135781",
+      "badge": "/team-badges/kent-spitfires.png",
+      "logo": "/team-logos/kent-spitfires.png",
+      "stadium": "St Lawrence Ground",
+      "capacity": 7000,
+      "founded": 1842,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Lancashire Lightning": {
+      "sdb_name": "Lancashire Lightning",
+      "sdb_id": "135782",
+      "badge": "/team-badges/lancashire-lightning.png",
+      "logo": "/team-logos/lancashire-lightning.png",
+      "stadium": "Old Trafford",
+      "capacity": 19000,
+      "founded": 1864,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Leicestershire Foxes": {
+      "sdb_name": "Leicestershire Foxes",
+      "sdb_id": "135783",
+      "badge": "/team-badges/leicestershire-foxes.png",
+      "logo": "/team-logos/leicestershire-foxes.png",
+      "stadium": "Grace Road",
+      "capacity": 12000,
+      "founded": 1879,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Middlesex": {
+      "sdb_name": "Middlesex t20",
+      "sdb_id": "135784",
+      "badge": "/team-badges/middlesex.png",
+      "logo": "/team-logos/middlesex.png",
+      "stadium": "Lord's",
+      "capacity": 28000,
+      "founded": 1864,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Northamptonshire Steelbacks": {
+      "sdb_name": "Northants Steelbacks",
+      "sdb_id": "135785",
+      "badge": "/team-badges/northamptonshire-steelbacks.png",
+      "logo": "/team-logos/northamptonshire-steelbacks.png",
+      "stadium": "County Ground Northampton",
+      "capacity": 7000,
+      "founded": 1878,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Notts Outlaws": {
+      "sdb_name": "Notts Outlaws",
+      "sdb_id": "135786",
+      "badge": "/team-badges/notts-outlaws.png",
+      "logo": "/team-logos/notts-outlaws.png",
+      "stadium": "Trent Bridge",
+      "capacity": 17500,
+      "founded": 1841,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Somerset": {
+      "sdb_name": "Somerset t20",
+      "sdb_id": "135787",
+      "badge": "/team-badges/somerset.png",
+      "logo": "/team-logos/somerset.png",
+      "stadium": "County Ground Taunton",
+      "capacity": 8500,
+      "founded": 1875,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Surrey": {
+      "sdb_name": "Surrey t20",
+      "sdb_id": "135788",
+      "badge": "/team-badges/surrey.png",
+      "logo": "/team-logos/surrey.png",
+      "stadium": "The Oval",
+      "capacity": 26000,
+      "founded": 1845,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Sussex Sharks": {
+      "sdb_name": "Sussex Sharks",
+      "sdb_id": "135789",
+      "badge": "/team-badges/sussex-sharks.png",
+      "logo": "/team-logos/sussex-sharks.png",
+      "stadium": "County Ground Hove",
+      "capacity": 7000,
+      "founded": 1839,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Warwickshire Bears": {
+      "sdb_name": "Birmingham Bears",
+      "sdb_id": "135774",
+      "badge": "/team-badges/warwickshire-bears.png",
+      "logo": "/team-logos/warwickshire-bears.png",
+      "stadium": "Edgbaston",
+      "capacity": 25000,
+      "founded": 1882,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Worcestershire Rapids": {
+      "sdb_name": "Worcestershire Rapids",
+      "sdb_id": "135790",
+      "badge": "/team-badges/worcestershire-rapids.png",
+      "logo": "/team-logos/worcestershire-rapids.png",
+      "stadium": "New Road",
+      "capacity": 5500,
+      "founded": 1865,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Yorkshire": {
+      "sdb_name": "Yorkshire Vikings",
+      "sdb_id": "135791",
+      "badge": "/team-badges/yorkshire.png",
+      "logo": "/team-logos/yorkshire.png",
+      "stadium": "Headingley",
+      "capacity": 20000,
+      "founded": 1863,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "English t20 Blast"
+    },
+    "Birmingham Phoenix": {
+      "sdb_name": "Birmingham Phoenix",
+      "sdb_id": "144895",
+      "badge": "/team-badges/birmingham-phoenix.png",
+      "logo": "/team-logos/birmingham-phoenix.png",
+      "stadium": "Edgbaston",
+      "capacity": 25000,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "London Spirit": {
+      "sdb_name": "London Spirit",
+      "sdb_id": "144898",
+      "badge": "/team-badges/london-spirit.png",
+      "logo": "/team-logos/london-spirit.png",
+      "stadium": "Lord's",
+      "capacity": 30000,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "MI London": {
+      "sdb_name": "MI London",
+      "sdb_id": "144899",
+      "badge": "/team-badges/mi-london.png",
+      "logo": "/team-logos/mi-london.png",
+      "stadium": "The Oval",
+      "capacity": 25500,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "Manchester Super Giants": {
+      "sdb_name": "Manchester Super Giants",
+      "sdb_id": "144893",
+      "badge": "/team-badges/manchester-super-giants.png",
+      "logo": "/team-logos/manchester-super-giants.png",
+      "stadium": "Old Trafford Cricket Ground",
+      "capacity": 25000,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "Southern Brave": {
+      "sdb_name": "Southern Brave",
+      "sdb_id": "144900",
+      "badge": "/team-badges/southern-brave.png",
+      "logo": "/team-logos/southern-brave.png",
+      "stadium": "Rose Bowl",
+      "capacity": 15000,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "Sunrisers Leeds": {
+      "sdb_name": "Sunrisers Leeds",
+      "sdb_id": "144894",
+      "badge": "/team-badges/sunrisers-leeds.png",
+      "logo": "/team-logos/sunrisers-leeds.png",
+      "stadium": "Headingley",
+      "capacity": 18350,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "Trent Rockets": {
+      "sdb_name": "Trent Rockets",
+      "sdb_id": "144896",
+      "badge": "/team-badges/trent-rockets.png",
+      "logo": "/team-logos/trent-rockets.png",
+      "stadium": "Trent Bridge",
+      "capacity": 17500,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "Welsh Fire": {
+      "sdb_name": "Welsh Fire",
+      "sdb_id": "144897",
+      "badge": "/team-badges/welsh-fire.png",
+      "logo": "/team-logos/welsh-fire.png",
+      "stadium": "Sophia Gardens",
+      "capacity": 16000,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred"
+    },
+    "Mashonaland Eagles": {
+      "sdb_name": "Mashonaland Eagles",
+      "sdb_id": "150081",
+      "badge": "/team-badges/mashonaland-eagles.png",
+      "logo": null,
+      "stadium": "Harare Sports Club",
+      "capacity": null,
+      "founded": 2009,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Zimbabwean Domestic Twenty20"
+    },
+    "Matabeleland Tuskers": {
+      "sdb_name": "Matabeleland Tuskers",
+      "sdb_id": "150084",
+      "badge": "/team-badges/matabeleland-tuskers.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 2009,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Zimbabwean Domestic Twenty20"
+    },
+    "Mid West Rhinos": {
+      "sdb_name": "Mid West Rhinos",
+      "sdb_id": "147092",
+      "badge": "/team-badges/mid-west-rhinos.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 1400,
+      "founded": 2009,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Zimbabwean Domestic Twenty20"
+    },
+    "Mountaineers": {
+      "sdb_name": "Mountaineers",
+      "sdb_id": "150082",
+      "badge": "/team-badges/mountaineers.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Zimbabwean Domestic Twenty20"
+    },
+    "Southern Rocks": {
+      "sdb_name": "Southern Rocks",
+      "sdb_id": "150083",
+      "badge": "/team-badges/southern-rocks.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Zimbabwean Domestic Twenty20"
+    },
+    "AZS Olsztyn": {
+      "sdb_name": "AZS Olsztyn",
+      "sdb_id": "152039",
+      "badge": null,
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "904",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Asseco Resovia": {
+      "sdb_name": "Asseco Resovia",
+      "sdb_id": "152038",
+      "badge": "/team-badges/asseco-resovia.png",
+      "logo": null,
+      "stadium": "Hala Podpromie",
+      "capacity": null,
+      "founded": 1937,
+      "idESPN": "0",
+      "idAPIfootball": "906",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Barkom-Kazhany Lviv": {
+      "sdb_name": "Barkom-Kazhany Lviv",
+      "sdb_id": "152040",
+      "badge": null,
+      "logo": "/team-logos/barkom-kazhany-lviv.png",
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "1349",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Cuprum Stilon Gorzów": {
+      "sdb_name": "Cuprum Stilon Gorzów",
+      "sdb_id": "152042",
+      "badge": null,
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "3946",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Jastrzębski Węgiel": {
+      "sdb_name": "Jastrzębski Węgiel",
+      "sdb_id": "152001",
+      "badge": "/team-badges/jastrzebski-wegiel.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 1961,
+      "idESPN": "0",
+      "idAPIfootball": "902",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "LUK Lublin": {
+      "sdb_name": "Bogdanka LUK Lublin",
+      "sdb_id": "152041",
+      "badge": "/team-badges/luk-lublin.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "3814",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Norwid Częstochowa": {
+      "sdb_name": "Norwid Częstochowa",
+      "sdb_id": "152045",
+      "badge": null,
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "945",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Projekt Warsaw": {
+      "sdb_name": "Projekt Warsaw",
+      "sdb_id": "152002",
+      "badge": "/team-badges/projekt-warsaw.png",
+      "logo": "/team-logos/projekt-warsaw.png",
+      "stadium": "",
+      "capacity": null,
+      "founded": 1954,
+      "idESPN": "0",
+      "idAPIfootball": "2099",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Skra Bełchatów": {
+      "sdb_name": "Skra Bełchatów",
+      "sdb_id": "152046",
+      "badge": null,
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "897",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Trefl Gdańsk": {
+      "sdb_name": "Trefl Gdańsk",
+      "sdb_id": "152049",
+      "badge": null,
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "901",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Warta Zawiercie": {
+      "sdb_name": "Aluron CMC Warta Zawiercie",
+      "sdb_id": "151124",
+      "badge": "/team-badges/warta-zawiercie.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 1972,
+      "idESPN": "0",
+      "idAPIfootball": "910",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "ZAKSA Kędzierzyn-Koźle": {
+      "sdb_name": "ZAKSA Kędzierzyn-Koźle",
+      "sdb_id": "152050",
+      "badge": null,
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "903",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Ślepsk Suwałki": {
+      "sdb_name": "Ślepsk Suwałki",
+      "sdb_id": "152047",
+      "badge": null,
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "907",
+      "sdb_league": "Polish PlusLiga"
+    },
+    "Allianz Milano": {
+      "sdb_name": "Powervolley Milano",
+      "sdb_id": "136636",
+      "badge": "/team-badges/allianz-milano.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 6700,
+      "founded": 2010,
+      "idESPN": "0",
+      "idAPIfootball": "742",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Cucine Lube Civitanova": {
+      "sdb_name": "Volley Lube",
+      "sdb_id": "136632",
+      "badge": "/team-badges/cucine-lube-civitanova.png",
+      "logo": null,
+      "stadium": "Eurosuole Forum",
+      "capacity": 0,
+      "founded": 2018,
+      "idESPN": null,
+      "idAPIfootball": "737",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Gas Sales Bluenergy Piacenza": {
+      "sdb_name": "You Energy Volley",
+      "sdb_id": "136633",
+      "badge": "/team-badges/gas-sales-bluenergy-piacenza.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 3800,
+      "founded": 1982,
+      "idESPN": "0",
+      "idAPIfootball": "745",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Modena Volley": {
+      "sdb_name": "Modena Volley",
+      "sdb_id": "136631",
+      "badge": "/team-badges/modena-volley.png",
+      "logo": null,
+      "stadium": "PalaPanini",
+      "capacity": 4968,
+      "founded": 1966,
+      "idESPN": null,
+      "idAPIfootball": "738",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Pallavolo Padova": {
+      "sdb_name": "Pallavolo Padova",
+      "sdb_id": "137437",
+      "badge": "/team-badges/pallavolo-padova.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 3916,
+      "founded": 1970,
+      "idESPN": "0",
+      "idAPIfootball": "744",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Powervolley Milano": {
+      "sdb_name": "Powervolley Milano",
+      "sdb_id": "136636",
+      "badge": "/team-badges/powervolley-milano.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 6700,
+      "founded": 2010,
+      "idESPN": "0",
+      "idAPIfootball": "742",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Sir Safety Susa Perugia": {
+      "sdb_name": "Volley Perugia",
+      "sdb_id": "136629",
+      "badge": "/team-badges/sir-safety-susa-perugia.png",
+      "logo": null,
+      "stadium": "PalaEvangelisti",
+      "capacity": 5300,
+      "founded": 2001,
+      "idESPN": "0",
+      "idAPIfootball": "739",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Top Volley Cisterna": {
+      "sdb_name": "Cisterna Volley",
+      "sdb_id": "137435",
+      "badge": "/team-badges/top-volley-cisterna.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 2350,
+      "founded": 1972,
+      "idESPN": "0",
+      "idAPIfootball": "741",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Trentino Volley": {
+      "sdb_name": "Trentino Volley",
+      "sdb_id": "136630",
+      "badge": "/team-badges/trentino-volley.png",
+      "logo": "/team-logos/trentino-volley.png",
+      "stadium": "PalaTrento",
+      "capacity": 4360,
+      "founded": 2000,
+      "idESPN": null,
+      "idAPIfootball": "740",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "WithU Verona": {
+      "sdb_name": "Verona Volley",
+      "sdb_id": "137441",
+      "badge": "/team-badges/withu-verona.png",
+      "logo": null,
+      "stadium": "Palasport",
+      "capacity": 5350,
+      "founded": 2001,
+      "idESPN": "0",
+      "idAPIfootball": "747",
+      "sdb_league": "Italian Volleyball League"
+    },
+    "Yuasa Battery Grottazzolina": {
+      "sdb_name": "M&G Scuola Pallavolo",
+      "sdb_id": "151634",
+      "badge": "/team-badges/yuasa-battery-grottazzolina.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 0,
+      "idESPN": "0",
+      "idAPIfootball": "1794",
+      "sdb_league": "Italian Volleyball League"
     },
     "Atlanta Dream": {
       "sdb_name": "Atlanta Dream",
@@ -8864,6 +12992,198 @@
       "idESPN": "0",
       "idAPIfootball": "175",
       "sdb_league": "WNBA"
+    },
+    "Alhama CF ElPozo": {
+      "sdb_name": "Alhama",
+      "sdb_id": "146806",
+      "badge": "/team-badges/alhama-cf-elpozo.png",
+      "logo": null,
+      "stadium": "Complejo Deportivo del Guadalentín",
+      "capacity": 1500,
+      "founded": 2004,
+      "idESPN": "0",
+      "idAPIfootball": "19895",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Athletic Bilbao Femenino": {
+      "sdb_name": "Athletic Club Women",
+      "sdb_id": "144772",
+      "badge": "/team-badges/athletic-bilbao-femenino.png",
+      "logo": null,
+      "stadium": "Instalaciones de Lezama Campo 2",
+      "capacity": 3250,
+      "founded": 2002,
+      "idESPN": "0",
+      "idAPIfootball": "1905",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Atlético de Madrid Femenino": {
+      "sdb_name": "Atlético Madrid Femenino",
+      "sdb_id": "144773",
+      "badge": "/team-badges/atletico-de-madrid-femenino.png",
+      "logo": "/team-logos/atletico-de-madrid-femenino.png",
+      "stadium": "Centro Deportivo Alcalá de Henares",
+      "capacity": 2000,
+      "founded": 2001,
+      "idESPN": "0",
+      "idAPIfootball": "1910",
+      "sdb_league": "Spanish Liga F"
+    },
+    "CD Tenerife Femenino": {
+      "sdb_name": "Tenerife Femenino",
+      "sdb_id": "144776",
+      "badge": "/team-badges/cd-tenerife-femenino.png",
+      "logo": "/team-logos/cd-tenerife-femenino.png",
+      "stadium": "Estadio Heliodoro Rodríguez López",
+      "capacity": 2000,
+      "founded": 2013,
+      "idESPN": "0",
+      "idAPIfootball": "1913",
+      "sdb_league": "Spanish Liga F"
+    },
+    "DUX Logroño": {
+      "sdb_name": "DUX Logroño",
+      "sdb_id": "146759",
+      "badge": "/team-badges/dux-logrono.png",
+      "logo": null,
+      "stadium": "La Isla",
+      "capacity": 16000,
+      "founded": 2008,
+      "idESPN": "0",
+      "idAPIfootball": "1923",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Deportivo de La Coruña Femenino": {
+      "sdb_name": "Deportivo de La Coruña Women",
+      "sdb_id": "146411",
+      "badge": "/team-badges/deportivo-de-la-coruna-femenino.png",
+      "logo": null,
+      "stadium": "Ciudad Deportiva de Abegondo",
+      "capacity": 1000,
+      "founded": 2016,
+      "idESPN": "0",
+      "idAPIfootball": "6376",
+      "sdb_league": "Spanish Liga F"
+    },
+    "FC Barcelona Femeni": {
+      "sdb_name": "Barcelona Femení",
+      "sdb_id": "144766",
+      "badge": "/team-badges/fc-barcelona-femeni.png",
+      "logo": "/team-logos/fc-barcelona-femeni.png",
+      "stadium": "Estadi Johan Cruyff",
+      "capacity": 6000,
+      "founded": 1988,
+      "idESPN": "0",
+      "idAPIfootball": "1918",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Granada CF Femenino": {
+      "sdb_name": "Granada Femenino",
+      "sdb_id": "147383",
+      "badge": "/team-badges/granada-cf-femenino.png",
+      "logo": null,
+      "stadium": "Ciudad Deportiva del Granada CF",
+      "capacity": 0,
+      "founded": 2003,
+      "idESPN": "0",
+      "idAPIfootball": "22018",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Levante Badalona": {
+      "sdb_name": "Badalona Women",
+      "sdb_id": "146807",
+      "badge": "/team-badges/levante-badalona.png",
+      "logo": null,
+      "stadium": "Estadi Municipal de Badalona",
+      "capacity": 0,
+      "founded": 1998,
+      "idESPN": "0",
+      "idAPIfootball": "19896",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Levante UD Femenino": {
+      "sdb_name": "Levante Femenino",
+      "sdb_id": "143654",
+      "badge": "/team-badges/levante-ud-femenino.png",
+      "logo": null,
+      "stadium": "Ciudad Deportiva Levante UD",
+      "capacity": 600,
+      "founded": 1993,
+      "idESPN": "0",
+      "idAPIfootball": "1911",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Madrid CFF": {
+      "sdb_name": "Madrid CFF",
+      "sdb_id": "144777",
+      "badge": "/team-badges/madrid-cff.png",
+      "logo": null,
+      "stadium": "Estadio Fernando Torres",
+      "capacity": 3500,
+      "founded": 2010,
+      "idESPN": "0",
+      "idAPIfootball": "1921",
+      "sdb_league": "Spanish Liga F"
+    },
+    "RCD Espanyol Femeni": {
+      "sdb_name": "Espanyol Femení",
+      "sdb_id": "144784",
+      "badge": "/team-badges/rcd-espanyol-femeni.png",
+      "logo": null,
+      "stadium": "Ciutat Esportiva Dani Jarque",
+      "capacity": 1520,
+      "founded": 1970,
+      "idESPN": null,
+      "idAPIfootball": "1919",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Real Madrid Femenino": {
+      "sdb_name": "Real Madrid Femenino",
+      "sdb_id": "143688",
+      "badge": "/team-badges/real-madrid-femenino.png",
+      "logo": null,
+      "stadium": "Estadio Alfredo Di Stéfano",
+      "capacity": 400,
+      "founded": 2014,
+      "idESPN": "0",
+      "idAPIfootball": "15224",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Real Sociedad Femenino": {
+      "sdb_name": "Real Sociedad Femenino",
+      "sdb_id": "144779",
+      "badge": "/team-badges/real-sociedad-femenino.png",
+      "logo": null,
+      "stadium": "Campo José Luis Orbegozo",
+      "capacity": 1500,
+      "founded": 2004,
+      "idESPN": "0",
+      "idAPIfootball": "1912",
+      "sdb_league": "Spanish Liga F"
+    },
+    "SD Eibar Femenino": {
+      "sdb_name": "Eibar Women",
+      "sdb_id": "144775",
+      "badge": "/team-badges/sd-eibar-femenino.png",
+      "logo": null,
+      "stadium": "Estadio Municipal de Ipurúa",
+      "capacity": 500,
+      "founded": 1991,
+      "idESPN": "0",
+      "idAPIfootball": "15225",
+      "sdb_league": "Spanish Liga F"
+    },
+    "Sevilla FC Femenino": {
+      "sdb_name": "Sevilla Women",
+      "sdb_id": "144780",
+      "badge": "/team-badges/sevilla-fc-femenino.png",
+      "logo": null,
+      "stadium": "Estadio Jesús Navas",
+      "capacity": 8000,
+      "founded": 2008,
+      "idESPN": "0",
+      "idAPIfootball": "1920",
+      "sdb_league": "Spanish Liga F"
     },
     "Angel City FC": {
       "sdb_name": "Angel City",
@@ -9200,6 +13520,179 @@
       "idESPN": "0",
       "idAPIfootball": "1856",
       "sdb_league": "English Womens Super League"
+    },
+    "Birmingham Phoenix Women": {
+      "sdb_name": "Birmingham Phoenix Women",
+      "sdb_id": "152791",
+      "badge": "/team-badges/birmingham-phoenix-women.png",
+      "logo": null,
+      "stadium": "Edgbaston",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "London Spirit Women": {
+      "sdb_name": "London Spirit Women",
+      "sdb_id": "152792",
+      "badge": "/team-badges/london-spirit-women.png",
+      "logo": "/team-logos/london-spirit-women.png",
+      "stadium": "Lord's",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "MI London Women": {
+      "sdb_name": "MI London Women",
+      "sdb_id": "152795",
+      "badge": "/team-badges/mi-london-women.png",
+      "logo": null,
+      "stadium": "The Oval",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "Manchester Super Giants Women": {
+      "sdb_name": "Manchester Super Giants Women",
+      "sdb_id": "152793",
+      "badge": "/team-badges/manchester-super-giants-women.png",
+      "logo": "/team-logos/manchester-super-giants-women.png",
+      "stadium": "Old Trafford Cricket Ground",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "Southern Brave Women": {
+      "sdb_name": "Southern Brave Women",
+      "sdb_id": "152796",
+      "badge": "/team-badges/southern-brave-women.png",
+      "logo": null,
+      "stadium": "Rose Bowl",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "Sunrisers Leeds Women": {
+      "sdb_name": "Sunrisers Leeds Women",
+      "sdb_id": "152794",
+      "badge": "/team-badges/sunrisers-leeds-women.png",
+      "logo": "/team-logos/sunrisers-leeds-women.png",
+      "stadium": "Headingley",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "Trent Rockets Women": {
+      "sdb_name": "Trent Rockets Women",
+      "sdb_id": "152797",
+      "badge": "/team-badges/trent-rockets-women.png",
+      "logo": null,
+      "stadium": "Trent Bridge",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "Welsh Fire Women": {
+      "sdb_name": "Welsh Fire Women",
+      "sdb_id": "152798",
+      "badge": "/team-badges/welsh-fire-women.png",
+      "logo": null,
+      "stadium": "Sophia Gardens",
+      "capacity": null,
+      "founded": 2019,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "The Hundred Women"
+    },
+    "Mercedes": {
+      "sdb_name": "Mercedes-AMG PETRONAS Formula One Team",
+      "sdb_id": "134812",
+      "badge": "/team-badges/mercedes.png",
+      "logo": "/team-logos/mercedes.png",
+      "sport": "f1"
+    },
+    "Ferrari": {
+      "sdb_name": "Scuderia Ferrari HP",
+      "sdb_id": "134806",
+      "badge": "/team-badges/ferrari.png",
+      "logo": "/team-logos/ferrari.png",
+      "sport": "f1"
+    },
+    "McLaren": {
+      "sdb_name": "McLaren Formula 1 Team",
+      "sdb_id": "134811",
+      "badge": "/team-badges/mclaren.png",
+      "logo": "/team-logos/mclaren.png",
+      "sport": "f1"
+    },
+    "Red Bull": {
+      "sdb_name": "Oracle Red Bull Racing",
+      "sdb_id": "134813",
+      "badge": "/team-badges/red-bull.png",
+      "logo": "/team-logos/red-bull.png",
+      "sport": "f1"
+    },
+    "Alpine F1 Team": {
+      "sdb_name": "BWT Alpine Formula One Team",
+      "sdb_id": "135706",
+      "badge": "/team-badges/alpine-f1-team.png",
+      "logo": "/team-logos/alpine-f1-team.png",
+      "sport": "f1"
+    },
+    "RB F1 Team": {
+      "sdb_name": "Visa Cash App Racing Bulls Formula One Team",
+      "sdb_id": "139631",
+      "badge": "/team-badges/rb-f1-team.png",
+      "logo": "/team-logos/rb-f1-team.png",
+      "sport": "f1"
+    },
+    "Haas F1 Team": {
+      "sdb_name": "MoneyGram Haas F1 Team",
+      "sdb_id": "135705",
+      "badge": "/team-badges/haas-f1-team.png",
+      "logo": "/team-logos/haas-f1-team.png",
+      "sport": "f1"
+    },
+    "Williams": {
+      "sdb_name": "Williams Racing",
+      "sdb_id": "134816",
+      "badge": "/team-badges/williams.png",
+      "logo": "/team-logos/williams.png",
+      "sport": "f1"
+    },
+    "Audi": {
+      "sdb_name": "Audi Revolut F1 Team",
+      "sdb_id": "137569",
+      "badge": "/team-badges/audi.png",
+      "logo": "/team-logos/audi.png",
+      "sport": "f1"
+    },
+    "Aston Martin": {
+      "sdb_name": "Aston Martin Aramco Formula One Team",
+      "sdb_id": "135126",
+      "badge": "/team-badges/aston-martin.png",
+      "logo": "/team-logos/aston-martin.png",
+      "sport": "f1"
+    },
+    "Cadillac F1 Team": {
+      "sdb_name": "Cadillac Formula 1 Team",
+      "sdb_id": "154529",
+      "badge": "/team-badges/cadillac-f1-team.png",
+      "logo": "/team-logos/cadillac-f1-team.png",
+      "sport": "f1"
     }
   }
 }
