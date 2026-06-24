@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Metro Globle — daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<style>
+  :root{--bg:#08080D;--bg-card:#12121A;--border:#1E1E2E;--text:#E8E8ED;--text-muted:#8888A0;--text-dim:#55556A;--accent:#4ECDC4;--accent-dim:#2A7A74;--hot:#4ECDC4;--warm:#E6B34A;--cool:#E08A4E;--cold:#E2628B;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+  .wrap{max-width:620px;margin:0 auto;padding:20px 18px 64px;}
+  a{color:var(--accent);text-decoration:none;}
+  .topbar{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted);}
+  .kicker{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+  h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:6px 0 6px;}
+  .sub{color:var(--text-muted);font-size:14px;margin:0 0 16px;}
+  .inrow{display:flex;gap:8px;margin-bottom:12px;}
+  input{flex:1;background:var(--bg-card);color:var(--text);border:1px solid var(--border);border-radius:9px;padding:12px;font-size:15px;font-family:inherit;}
+  input:focus{outline:none;border-color:var(--accent-dim);}
+  .gbtn{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:9px;padding:0 18px;font-weight:700;cursor:pointer;}
+  .gbtn:hover{background:var(--accent);color:#06201e;}
+  #map{height:360px;width:100%;border:1px solid var(--border);border-radius:11px;background:#0b0b12;z-index:1;}
+  .leaflet-container{background:#0b0b12;font-family:'Inter',sans-serif;}
+  .leaflet-tooltip{background:var(--bg-card);border:1px solid var(--border);color:var(--text);font-size:12px;box-shadow:none;}
+  .leaflet-tooltip:before{display:none;}
+  .leaflet-control-attribution{background:rgba(8,8,13,.7)!important;color:var(--text-dim)!important;font-size:9px;}
+  .leaflet-control-attribution a{color:var(--text-muted)!important;}
+  .left{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);margin:10px 0 8px;}
+  .guess{display:flex;align-items:center;gap:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:9px;padding:9px 12px;margin-bottom:6px;}
+  .guess .dot{width:11px;height:11px;border-radius:50%;flex:none;}
+  .guess .nm{flex:1;font-weight:600;font-size:14px;}
+  .guess .di{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-muted);}
+  .guess .ar{font-size:16px;width:22px;text-align:center;}
+  .guess .px{font-family:'JetBrains Mono',monospace;font-size:12.5px;width:42px;text-align:right;font-weight:700;}
+  .end{background:var(--bg-card);border:1px solid var(--border);border-radius:11px;padding:18px;margin-top:14px;text-align:center;display:none;}
+  .end.show{display:block;}
+  .end h2{margin:.2em 0;}
+  .pill{display:inline-block;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:9px;padding:9px 16px;font-weight:700;cursor:pointer;margin-top:10px;}
+  .pill:hover{background:var(--accent);color:#06201e;}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--bg-card);border:1px solid var(--accent);color:var(--text);padding:10px 16px;border-radius:9px;opacity:0;transition:opacity .2s;font-size:13px;z-index:1000;}
+  .toast.show{opacity:1;}
+  footer{color:var(--text-dim);font-size:12px;margin-top:22px;border-top:1px solid var(--border);padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a href="/play/arcade">← Games</a><span id="date"></span></div>
+  <div class="kicker">Daily · Geography</div>
+  <h1>Metro Globle</h1>
+  <p class="sub">Guess the mystery metro. Each guess drops a pin coloured by how close it is, with a line pointing toward the target. Six tries.</p>
+  <div class="inrow"><input id="inp" list="metros" placeholder="Type a metro and guess…" autocomplete="off" /><button class="gbtn" id="go">Guess</button></div>
+  <datalist id="metros"></datalist>
+  <div id="map"></div>
+  <div class="left" id="left"></div>
+  <div id="guesses"></div>
+  <div class="end" id="end"></div>
+  <footer>Pins, distances and directions are computed from the metro coordinates in the Citizen of Nowhere rankings. A teaching tool for world geography.</footer>
+</div>
+<div class="toast" id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const MAXG=6;
+let POOL=[], byname={}, target=null, guesses=[], done=false, map=null, layer=null;
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function dayKey(){const d=new Date();return d.getUTCFullYear()+"-"+String(d.getUTCMonth()+1).padStart(2,"0")+"-"+String(d.getUTCDate()).padStart(2,"0");}
+function toRad(x){return x*Math.PI/180;}function toDeg(x){return x*180/Math.PI;}
+function dist(a,b){const R=6371,dLat=toRad(b.lat-a.lat),dLon=toRad(b.lon-a.lon);const s=Math.sin(dLat/2)**2+Math.cos(toRad(a.lat))*Math.cos(toRad(b.lat))*Math.sin(dLon/2)**2;return Math.round(R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s)));}
+function bearing(a,b){const dLon=toRad(b.lon-a.lon),y=Math.sin(dLon)*Math.cos(toRad(b.lat)),x=Math.cos(toRad(a.lat))*Math.sin(toRad(b.lat))-Math.sin(toRad(a.lat))*Math.cos(toRad(b.lat))*Math.cos(dLon);return (toDeg(Math.atan2(y,x))+360)%360;}
+function dest(a,brg,d){const R=6371,δ=d/R,θ=toRad(brg),φ1=toRad(a.lat),λ1=toRad(a.lon);const φ2=Math.asin(Math.sin(φ1)*Math.cos(δ)+Math.cos(φ1)*Math.sin(δ)*Math.cos(θ));const λ2=λ1+Math.atan2(Math.sin(θ)*Math.sin(δ)*Math.cos(φ1),Math.cos(δ)-Math.sin(φ1)*Math.sin(φ2));return [toDeg(φ2),((toDeg(λ2)+540)%360)-180];}
+const ARROWS=["⬆️","↗️","➡️","↘️","⬇️","↙️","⬅️","↖️"];
+function arrow(deg){return ARROWS[Math.round(deg/45)%8];}
+function prox(d){return Math.max(0,Math.round((1-d/20000)*100));}
+function pcol(p){return p>=80?"#4ECDC4":p>=50?"#E6B34A":p>=20?"#E08A4E":"#E2628B";}
+function psq(p,win){return win?"🎯":p>=80?"🟩":p>=50?"🟨":p>=20?"🟧":"🟥";}
+function save(){localStorage.setItem("globle-"+dayKey(),JSON.stringify({g:guesses.map(x=>x.slug),done}));}
+function load(){try{const s=JSON.parse(localStorage.getItem("globle-"+dayKey()));if(s){s.g.forEach(sl=>{const m=POOL.find(x=>x.slug===sl);if(m)guesses.push(m);});done=s.done;}}catch(e){}}
+function initMap(){
+  map=L.map("map",{worldCopyJump:true,minZoom:1,attributionControl:true}).setView([20,5],1);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:19,attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(map);
+  layer=L.layerGroup().addTo(map);
+}
+function drawMap(){
+  if(!map)return;layer.clearLayers();const pts=[];
+  guesses.forEach(m=>{
+    const win=m.slug===target.slug;const d=win?0:dist(m,target);const p=win?100:prox(d);const c=pcol(p);
+    L.circleMarker([m.lat,m.lon],{radius:7,color:"#fff",weight:1.5,fillColor:c,fillOpacity:.9}).addTo(layer).bindTooltip(m.name+(win?" 🎯":" · "+d.toLocaleString()+" km"),{direction:"top"});
+    pts.push([m.lat,m.lon]);
+    if(!win&&!done){const e=dest(m,bearing(m,target),900);L.polyline([[m.lat,m.lon],e],{color:c,weight:2,opacity:.8}).addTo(layer);}
+  });
+  if(done){
+    L.circleMarker([target.lat,target.lon],{radius:9,color:"#4ECDC4",weight:3,fillColor:"#08080D",fillOpacity:1}).addTo(layer).bindTooltip(target.name+" (answer)",{permanent:true,direction:"top"});
+    guesses.forEach(m=>{if(m.slug!==target.slug)L.polyline([[m.lat,m.lon],[target.lat,target.lon]],{color:"#55556A",weight:1,dashArray:"4 5",opacity:.6}).addTo(layer);});
+    pts.push([target.lat,target.lon]);
+  }
+  if(pts.length){try{map.fitBounds(pts,{padding:[40,40],maxZoom:5});}catch(e){}}
+}
+function render(){
+  $("guesses").innerHTML=guesses.map(m=>{const win=m.slug===target.slug;const d=win?0:dist(m,target);const p=win?100:prox(d);
+    return `<div class="guess"><span class="dot" style="background:${pcol(p)}"></span><span class="nm">${m.name}<span style="color:var(--text-dim);font-weight:400;"> · ${m.country}</span></span><span class="di">${win?"":d.toLocaleString()+" km"}</span><span class="ar">${win?"🎯":arrow(bearing(m,target))}</span><span class="px" style="color:${pcol(p)}">${p}%</span></div>`;}).join("");
+  $("left").textContent=done?"":(MAXG-guesses.length)+" guesses left";
+  drawMap();if(done)showEnd();
+}
+function showEnd(){
+  const won=guesses.some(m=>m.slug===target.slug);const e=$("end");e.className="end show";
+  const sq=guesses.map(m=>psq(m.slug===target.slug?100:prox(dist(m,target)),m.slug===target.slug)).join("");
+  const sh="Metro Globle "+dayKey()+" "+(won?guesses.length:"X")+"/"+MAXG+"\n"+sq+"\n/play/arcade";
+  e.innerHTML=`<h2>${won?"Solved in "+guesses.length+" 🎯":"Out of guesses"}</h2><p class="sub" style="margin:.4em 0;">The metro was <b style="color:var(--text);">${target.name}, ${target.country}</b>.</p><div class="mono" style="font-size:20px;letter-spacing:2px;">${sq}</div><span class="pill" id="share">Copy result</span>`;
+  $("share").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(sh);toast("Result copied");};
+  $("inp").disabled=true;$("go").disabled=true;
+}
+function toast(t){const e=$("toast");e.textContent=t;e.className="toast show";setTimeout(()=>e.className="toast",1600);}
+function guess(){
+  if(done)return;const v=$("inp").value.trim().toLowerCase();const m=byname[v];
+  if(!m){toast("Pick a metro from the list");return;}
+  if(guesses.some(g=>g.slug===m.slug)){toast("Already guessed");return;}
+  guesses.push(m);$("inp").value="";
+  if(m.slug===target.slug||guesses.length>=MAXG)done=true;
+  save();render();
+}
+fetch("/data/metros.json").then(r=>r.json()).then(d=>{
+  POOL=d.filter(m=>typeof m.lat==="number"&&typeof m.lon==="number").slice(0,250);
+  POOL.forEach(m=>byname[m.name.toLowerCase()]=m);
+  $("metros").innerHTML=POOL.map(m=>`<option value="${m.name}">${m.country}</option>`).join("");
+  target=POOL[hash(dayKey())%POOL.length];$("date").textContent=dayKey();
+  if(typeof L!=="undefined")initMap();
+  load();render();
+  $("go").onclick=guess;$("inp").addEventListener("keydown",e=>{if(e.key==="Enter")guess();});
+}).catch(()=>{$("sub").textContent="Could not load metro data. Open from the site, not as a local file.";});
+</script>
+</body>
+</html>

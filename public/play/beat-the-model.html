@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Beat the Model — World Cup 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#08080D;--bg-card:#12121A;--bg-card-hover:#1A1A26;--border:#1E1E2E;--text:#E8E8ED;--text-muted:#8888A0;--text-dim:#55556A;--accent:#4ECDC4;--accent-dim:#2A7A74;--win:#4ECDC4;--lose:#E2628B;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+  .wrap{max-width:880px;margin:0 auto;padding:20px 18px 64px;}
+  a{color:var(--accent);text-decoration:none;}
+  .topbar{display:flex;justify-content:space-between;font-size:12px;font-family:'JetBrains Mono',monospace;color:var(--text-muted);letter-spacing:.02em;}
+  .kicker{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+  h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:6px 0 6px;}
+  .sub{color:var(--text-muted);max-width:62ch;margin:0 0 22px;font-size:14.5px;}
+  .cols{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:start;}
+  @media(max-width:720px){.cols{grid-template-columns:1fr;}}
+  .secthead{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin:0 0 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
+  .meta{color:var(--text-dim);font-size:10.5px;letter-spacing:.02em;text-transform:none;}
+  .board{width:100%;border-collapse:collapse;}
+  .board td{padding:9px 0;border-bottom:1px solid var(--border);vertical-align:middle;}
+  .board .rk{width:28px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;font-size:13px;}
+  .board .tm{font-weight:600;font-size:14.5px;}
+  .board .od{width:160px;text-align:right;position:relative;}
+  .board .bar{display:inline-block;height:6px;border-radius:3px;background:var(--accent-dim);vertical-align:middle;margin-right:8px;min-width:2px;opacity:.65;}
+  .board .num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);font-weight:700;}
+  .board tr.modelpick td{color:var(--text-muted);font-size:12px;border:none;padding-top:12px;}
+  .callcard{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:18px;}
+  .pickrow{padding:12px 0;border-bottom:1px solid var(--border);}
+  .pickrow:first-of-type{padding-top:2px;}
+  .plabel{font-weight:600;font-size:14px;margin-bottom:3px;}
+  .pnote{color:var(--text-dim);font-size:12px;margin-bottom:8px;}
+  select{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:8px;padding:10px;font-size:14px;font-family:inherit;}
+  select:focus{outline:none;border-color:var(--accent-dim);}
+  .feed{font-size:12.5px;margin-top:7px;min-height:16px;line-height:1.45;}
+  .feed .agree{color:var(--text-muted);}.feed .fade{color:var(--accent);}
+  .feed .up{font-family:'JetBrains Mono',monospace;color:var(--text-dim);}
+  .upside{display:flex;align-items:baseline;gap:10px;margin:16px 0 12px;}
+  .upside b{font-family:'JetBrains Mono',monospace;font-size:30px;color:var(--accent);font-weight:700;}
+  .upside .lbl{color:var(--text-muted);font-size:12.5px;}
+  .lockbtn{width:100%;border:1px solid var(--accent);border-radius:9px;padding:12px;font-size:14px;font-weight:700;background:transparent;color:var(--accent);cursor:pointer;letter-spacing:.02em;transition:background .15s,color .15s;}
+  .lockbtn:hover:not(:disabled){background:var(--accent);color:#06201e;}
+  .lockbtn:disabled{opacity:.4;cursor:default;border-color:var(--border);color:var(--text-dim);}
+  .locked{margin-top:14px;border-top:1px solid var(--border);padding-top:12px;display:none;font-size:13.5px;}
+  .locked.show{display:block;}
+  .locked .row{display:flex;justify-content:space-between;gap:10px;padding:4px 0;}
+  .res{font-family:'JetBrains Mono',monospace;font-size:12.5px;}
+  .res.out{color:var(--lose);}.res.alive{color:var(--text-muted);}.res.won{color:var(--win);}
+  .pill{display:inline-block;border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;margin-top:10px;color:var(--text);}
+  .pill:hover{border-color:var(--accent);color:var(--accent);}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--bg-card);border:1px solid var(--accent);color:var(--text);padding:10px 16px;border-radius:9px;opacity:0;transition:opacity .2s;font-size:13px;}
+  .toast.show{opacity:1;}
+  footer{color:var(--text-dim);font-size:12px;margin-top:24px;border-top:1px solid var(--border);padding-top:14px;line-height:1.6;}
+  footer b{color:var(--text-muted);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a href="/play/arcade">← Games</a><a href="/teams/national#wc2026">The simulator →</a></div>
+  <div class="kicker">World Cup 2026 · Model Challenge</div>
+  <h1>Beat the Model</h1>
+  <p class="sub" id="sub">Loading the simulator…</p>
+  <div class="cols">
+    <section>
+      <div class="secthead"><span>The model's board · title odds</span><span class="meta" id="meta"></span></div>
+      <table class="board"><tbody id="modelBoard"></tbody></table>
+    </section>
+    <aside class="callcard">
+      <div class="secthead"><span>Your call</span></div>
+      <div class="pickrow"><div class="plabel">Champion</div><div class="pnote">Who lifts the trophy. Longer model odds, bigger upside.</div><select id="champ"></select><div class="feed" id="champF"></div></div>
+      <div class="pickrow"><div class="plabel">Dark horse to the semi-finals</div><div class="pnote">An outsider for the last four.</div><select id="horse"></select><div class="feed" id="horseF"></div></div>
+      <div class="pickrow"><div class="plabel">Favourite to fall</div><div class="pnote">A team the model loves that misses the final.</div><select id="fall"></select><div class="feed" id="fallF"></div></div>
+      <div class="upside"><b id="upside" class="mono">0</b><span class="lbl">upside if your card lands</span></div>
+      <button class="lockbtn" id="lock" disabled>Lock my card</button>
+      <div class="locked" id="lockedBox"></div>
+    </aside>
+  </div>
+  <footer><b>How it scores.</b> The simulator runs tens of thousands of tournaments and publishes each team's odds at every stage. Your upside rises when you back calls the model rates unlikely. Your card locks now and resolves as the knockouts play out, the live model marking each pick alive, out, or hit. A teaching tool for probability, not betting advice.</footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let DR=[], byslug={};
+function pct(x){return (Math.round(x*10)/10)+"%";}
+function opt(sel,teams,blank){sel.innerHTML='<option value="">'+blank+'</option>'+teams.map(t=>`<option value="${t.slug}">${t.name}</option>`).join("");}
+function feedFor(slug,field,invert){
+  const t=byslug[slug];if(!t)return "";const p=t[field];
+  const fade = invert ? p>=40 : p<25;
+  const where = field==="p_title"?"win it":(field==="p_final"?"reach the final":"reach the semis");
+  const up = Math.round(invert?p:(100-p));
+  return `<span class="${fade?'fade':'agree'}">Model: ${pct(p)} to ${where}. ${fade?"You're fading the model.":"You're with the model."}</span> <span class="up">+${up}</span>`;
+}
+function upsideFor(slug,field,invert){const t=byslug[slug];if(!t)return 0;const p=t[field];return Math.round(invert?p:(100-p));}
+function recompute(){
+  const c=$("champ").value,h=$("horse").value,f=$("fall").value;
+  $("champF").innerHTML=c?feedFor(c,"p_title",false):"";
+  $("horseF").innerHTML=h?feedFor(h,"p_sf",false):"";
+  $("fallF").innerHTML=f?feedFor(f,"p_final",true):"";
+  let up=0; if(c)up+=upsideFor(c,"p_title",false); if(h)up+=upsideFor(h,"p_sf",false); if(f)up+=upsideFor(f,"p_final",true);
+  $("upside").textContent=up;
+  $("lock").disabled=!(c&&h&&f);
+}
+function modelBoard(){
+  const top=DR.slice().sort((a,b)=>b.p_title-a.p_title).slice(0,10);
+  const max=top[0].p_title||1;
+  $("modelBoard").innerHTML=top.map((t,i)=>`<tr><td class="rk">${i+1}</td><td class="tm">${t.name}</td><td class="od"><span class="bar" style="width:${Math.max(2,Math.round(t.p_title/max*70))}px"></span><span class="num">${pct(t.p_title)}</span></td></tr>`).join("")
+    +`<tr class="modelpick"><td></td><td>The model's pick</td><td class="od mono">${top[0].name}</td></tr>`;
+}
+function resolve(card){
+  function status(slug,field){const t=byslug[slug];if(!t)return ["alive","still alive"];if(t.p_title>=100)return["won","won it ✓"];if(t[field]<=0)return["out","eliminated ✕"];return["alive","still alive"];}
+  const c=status(card.c,"p_title"),h=status(card.h,"p_sf");
+  const ft=byslug[card.f];const fOut=ft?(ft.p_final<=0):false;
+  $("lockedBox").className="locked show";
+  $("lockedBox").innerHTML=`<div class="row"><span>Champion · ${byslug[card.c].name}</span><span class="res ${c[0]}">${c[1]}</span></div>
+   <div class="row"><span>Dark horse · ${byslug[card.h].name}</span><span class="res ${h[0]}">${h[1]}</span></div>
+   <div class="row"><span>Fall · ${byslug[card.f].name}</span><span class="res ${fOut?'won':'alive'}">${fOut?"fell ✓":"still in"}</span></div>
+   <span class="pill" id="share">Copy my card</span>`;
+  const sh=`My WC2026 Beat-the-Model card\nChampion: ${byslug[card.c].name} (model ${pct(byslug[card.c].p_title)})\nDark horse to the semis: ${byslug[card.h].name} (${pct(byslug[card.h].p_sf)})\nFavourite to fall: ${byslug[card.f].name}\nupside ${card.up} · beat the sim at /play/arcade`;
+  $("share").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(sh);toast("Card copied");};
+}
+function toast(t){const e=$("toast");e.textContent=t;e.className="toast show";setTimeout(()=>e.className="toast",1600);}
+function init(sim){
+  DR=(sim.deep_runs||[]).filter(t=>t.p_r16>0);
+  DR.forEach(t=>byslug[t.slug]=t);
+  const champs=DR.filter(t=>t.p_title>0).sort((a,b)=>b.p_title-a.p_title);
+  const horses=DR.filter(t=>t.p_sf>0&&t.p_sf<25).sort((a,b)=>b.p_sf-a.p_sf);
+  const favs=DR.slice().sort((a,b)=>b.p_final-a.p_final).slice(0,12);
+  opt($("champ"),champs,"Pick your champion…");
+  opt($("horse"),horses.length?horses:champs,"Pick a dark horse…");
+  opt($("fall"),favs,"Pick a favourite to fall…");
+  ["champ","horse","fall"].forEach(id=>$(id).onchange=recompute);
+  modelBoard();recompute();
+  const m=sim.meta||{};
+  $("sub").textContent="The simulator ran "+(m.sims?m.sims.toLocaleString():"tens of thousands of")+" tournaments. Make the calls it is least sure about, and try to beat it.";
+  $("meta").textContent=(m.generated_at?"updated "+m.generated_at.slice(0,10):"");
+  $("lock").onclick=()=>{const card={c:$("champ").value,h:$("horse").value,f:$("fall").value,up:parseInt($("upside").textContent,10)};localStorage.setItem("wc2026-btm-card",JSON.stringify(card));resolve(card);toast("Card locked");};
+  const saved=localStorage.getItem("wc2026-btm-card");
+  if(saved){try{const card=JSON.parse(saved);if(byslug[card.c]&&byslug[card.h]&&byslug[card.f]){$("champ").value=card.c;$("horse").value=card.h;$("fall").value=card.f;recompute();resolve(card);}}catch(e){}}
+}
+fetch("/data/international/wc2026-sim.json").then(r=>r.json()).then(init).catch(()=>{$("sub").textContent="Could not load the simulator data. Open this from the site, not as a local file.";});
+</script>
+</body>
+</html>

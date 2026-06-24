@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Baseball Rules Lab</title>
+<style>
+
+  :root{
+    --bg:#08080D; --panel:#12121A; --panel-2:#1A1A26; --line:#1E1E2E;
+    --ink:#E8E8ED; --muted:#8888A0; --accent:#4ECDC4; --gold:#e6b34a;
+    --onside:#4ECDC4; --offside:#E2628B; --att:#4ECDC4; --def:#f0f3f6; --ball:#e6b34a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1060px;margin:0 auto;padding:24px 20px 72px;}
+  a{color:var(--accent);text-decoration:none;}
+  .crumb{color:var(--muted);font-size:12.5px;letter-spacing:.04em;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .crumb b{color:var(--ink);font-weight:600;}
+  .crumb .kidlink{font-weight:600;color:var(--gold);}
+  .kicker{color:var(--accent);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:14px;}
+  h1{font-size:30px;line-height:1.12;margin:6px 0 6px;letter-spacing:-.02em;}
+  .lede{color:var(--muted);max-width:70ch;margin:0 0 18px;}
+  /* mode toggle */
+  .modebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 18px;}
+  .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;}
+  .seg button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:13px;
+    padding:7px 16px;border-radius:999px;cursor:pointer;letter-spacing:.02em;}
+  .seg button.on{background:var(--accent);color:#06121f;}
+  .modehint{color:var(--muted);font-size:13px;}
+  /* tabs */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:6px 0 22px;}
+  .tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);
+    font-weight:600;font-size:14px;padding:10px 12px;cursor:pointer;}
+  .tab:hover{color:var(--ink);}
+  .tab.on{color:var(--ink);border-bottom-color:var(--accent);}
+  .tab .n{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;
+    background:var(--panel-2);font-size:11px;margin-right:7px;color:var(--muted);}
+  .tab.on .n{background:var(--accent);color:#06121f;}
+  section.game{display:none;}
+  section.game.on{display:block;}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start;}
+  @media(max-width:880px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;}
+  .card+.card{margin-top:16px;}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:2px 0 12px;}
+  h3{font-size:18px;margin:0 0 6px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);max-width:66ch;}
+  svg.pitch{width:100%;height:auto;display:block;touch-action:none;user-select:none;border-radius:10px;}
+  .verdict{display:flex;align-items:center;gap:12px;margin-top:12px;}
+  .tag{font-weight:800;font-size:19px;letter-spacing:.02em;padding:6px 14px;border-radius:999px;}
+  .tag.onside{background:rgba(78,205,196,.15);color:var(--onside);border:1px solid rgba(78,205,196,.4);}
+  .tag.offside{background:rgba(226,98,139,.13);color:var(--offside);border:1px solid rgba(226,98,139,.4);}
+  .why{color:var(--muted);font-size:14px;flex:1;}.why b{color:var(--ink);font-weight:600;}
+  .eras{display:flex;flex-direction:column;gap:8px;}
+  .era-btn{text-align:left;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:10px 12px;cursor:pointer;transition:border-color .15s,background .15s;}
+  .era-btn:hover{border-color:#3a4654;}
+  .era-btn.active{border-color:var(--accent);background:rgba(78,205,196,.10);}
+  .era-btn .yr{font-weight:700;font-size:14px;}
+  .era-btn .rule{color:var(--muted);font-size:12.5px;margin-top:2px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);font-size:13px;
+    padding:7px 11px;border-radius:999px;cursor:pointer;}
+  .chip:hover{border-color:var(--accent);}
+  .chip.real{border-color:rgba(230,179,74,.5);}
+  .chip.real::before{content:"●";color:var(--gold);font-size:9px;margin-right:6px;vertical-align:1px;}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+  .involve{margin-top:10px;font-size:13px;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .involve b{color:var(--ink);}
+  .moment{margin-top:10px;font-size:13.5px;color:var(--ink);background:rgba(230,179,74,.08);border:1px solid rgba(230,179,74,.35);border-radius:10px;padding:11px 13px;display:none;}
+  .moment.show{display:block;}
+  .moment .m-t{font-weight:700;}
+  .moment .m-src{color:var(--muted);font-size:12px;margin-top:5px;}
+  .soul{margin-top:18px;border-left:2px solid var(--gold);padding:2px 0 2px 16px;}
+  .soul p{color:var(--muted);font-size:14px;margin:0 0 10px;}.soul b{color:var(--ink);font-weight:600;}
+  .note{font-size:12px;color:var(--muted);margin-top:12px;}
+  /* laws */
+  .laws{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+  .law{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer;}
+  .law:hover{border-color:var(--accent);}
+  .law.on{border-color:var(--accent);background:rgba(78,205,196,.10);}
+  .law .ln{font-size:11px;color:var(--muted);}
+  .law .lt{font-weight:600;font-size:13.5px;margin-top:2px;}
+  .lawbody h3{margin-bottom:8px;}
+  .lawbody .txt{color:var(--ink);}
+  .lawpoints{margin:0;padding-left:18px;color:var(--ink);}
+  .lawpoints li{margin:0 0 7px;}
+  .lawlinks{margin-top:14px;display:flex;flex-wrap:wrap;gap:14px;font-size:13px;align-items:center;}
+  .lawlinks a{font-weight:600;}
+  .lawsrc{color:var(--muted)!important;}
+  .xlink{margin-top:12px;font-size:13px;color:var(--muted);}
+  .xlink a{font-weight:600;}
+  /* decisions */
+  .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .opt{flex:1;min-width:140px;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:11px;cursor:pointer;font-size:14px;text-align:left;}
+  .opt:hover{border-color:var(--accent);}
+  .opt.right{border-color:var(--onside);background:rgba(78,205,196,.12);}
+  .opt.wrong{border-color:var(--offside);background:rgba(226,98,139,.12);}
+  .ruling{margin-top:12px;font-size:14px;color:var(--muted);display:none;}
+  .ruling.show{display:block;}.ruling b{color:var(--ink);}
+  .navbtn{display:inline-flex;gap:8px;margin-top:14px;}
+  .navbtn button{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;}
+  .navbtn button:hover{border-color:var(--accent);}
+  /* penalties */
+  .barrow{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px;}
+  .barrow .lab{width:130px;color:var(--ink);}
+  .bartrack{flex:1;height:14px;background:var(--panel-2);border-radius:999px;overflow:hidden;border:1px solid var(--line);}
+  .barfill{height:100%;background:linear-gradient(90deg,#3a7bd5,#4ECDC4);}
+  .barrow .v{width:48px;text-align:right;color:var(--muted);font-size:13px;}
+  /* timeline */
+  .tl{position:relative;margin-top:8px;padding-left:22px;}
+  .tl::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:var(--line);}
+  .tlitem{position:relative;padding:0 0 18px 6px;cursor:pointer;}
+  .tlitem::before{content:"";position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;
+    background:var(--panel);border:2px solid var(--accent);}
+  .tlitem.on::before{background:var(--accent);}
+  .tlitem .yr{font-weight:700;font-size:14px;color:var(--gold);}
+  .tlitem .ti{font-weight:600;}
+  .tldetail{color:var(--muted);font-size:13.5px;margin-top:4px;display:none;}
+  .tlitem.on .tldetail{display:block;}
+  footer{margin-top:34px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;}
+  footer b{color:var(--ink);}
+
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.rb{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);font-size:13px;padding:7px 11px;border-radius:8px;cursor:pointer;}
+.rb.on{border-color:var(--accent);background:rgba(78,205,196,.12);color:#fff;}
+.ctl{margin:0 0 10px;}.ctl .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.zonesvg{width:100%;height:auto;background:#0d1b2a;border-radius:10px;display:block;touch-action:none;user-select:none;}
+.gate{font-size:13px;color:var(--muted);margin-top:8px;}.gate b{color:var(--ink);}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><span><a href="/">Citizen of Nowhere</a> · <a href="/play">Play &amp; Learn</a> · <b>The Baseball Rules Lab</b></span>
+    <a class="kidlink" href="/play/games/ball-or-strike.html">Younger fans? Play “Ball or Strike?” →</a></div>
+  <div class="kicker">Rules Lab · Baseball</div>
+  <h1>The Baseball Rules Lab</h1>
+  <p class="lede" id="lede"></p>
+  <div class="modebar"><div class="seg" id="modeSeg"><button data-mode="kids">Kids</button><button data-mode="adults">Adults</button></div><span class="modehint" id="modehint"></span></div>
+  <div class="tabs" id="tabs"></div>
+
+  <section class="game" data-game="zone">
+    <div class="grid">
+      <div class="card" style="padding:12px;">
+        <svg class="zonesvg" id="zsvg" viewBox="0 0 300 320" aria-label="Catcher's view of the strike zone"></svg>
+        <div class="verdict"><span id="zTag" class="tag onside">STRIKE</span><span class="why" id="zWhy"></span></div>
+        <div class="gate" id="zGate"></div>
+      </div>
+      <div>
+        <div class="card"><h2>The batter</h2><div class="ctl"><div class="lbl">Batter height (sets the zone)</div><div class="radios" id="zHeight"></div></div>
+          <p class="note">Drag the ball over the plate. The strike zone runs from the hollow below the knee up to the midpoint between the shoulders and the belt, and it is different for every batter.</p></div>
+        <div class="card"><h2>Try a pitch</h2><div class="chips" id="zPresets"></div></div>
+      </div>
+    </div>
+    <div class="soul" id="zSoul"></div>
+  </section>
+
+  <section class="game" data-game="rules"><div class="grid"><div class="card"><h2>Key Rules &amp; Terms</h2><div class="laws" id="lawList"></div></div><div class="card lawbody" id="lawBody"></div></div></section>
+  <section class="game" data-game="decisions"><div class="card" id="decCard"></div></section>
+  <section class="game" data-game="timeline"><div class="card" id="tlCard"></div></section>
+  <footer id="foot"></footer>
+</div>
+<script>
+"use strict";
+const APP={mode:"adults",game:"zone"};
+const COPY={lede:{kids:"Baseball's trickiest call is the strike zone. Try the Strike Zone Lab, learn the key rules, make the call, and see how the game changed.",adults:"Baseball's signature judgement is the strike zone, a per-batter box. Explore it in the Strike Zone Lab, read the key rules, make the call on real situations, and trace how the game changed. Adapted from the Official Baseball Rules."},modehint:{kids:"Kids mode: plain language.",adults:"Adults mode: full rule wording and nuance."}};
+const GAMES=[{id:"zone",label:"Strike Zone Lab"},{id:"rules",label:"Key Rules"},{id:"decisions",label:"You Make the Call"},{id:"timeline",label:"Rules That Changed"}];
+const tabsEl=document.getElementById("tabs");
+GAMES.forEach((g,i)=>{const b=document.createElement("button");b.className="tab"+(g.id===APP.game?" on":"");b.dataset.game=g.id;b.innerHTML=`<span class="n">${i+1}</span>${g.label}`;b.addEventListener("click",()=>switchGame(g.id));tabsEl.appendChild(b);});
+function switchGame(id){APP.game=id;document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.game===id));document.querySelectorAll("section.game").forEach(s=>s.classList.toggle("on",s.dataset.game===id));}
+const modeSeg=document.getElementById("modeSeg");
+modeSeg.querySelectorAll("button").forEach(b=>{b.classList.toggle("on",b.dataset.mode===APP.mode);b.addEventListener("click",()=>{APP.mode=b.dataset.mode;modeSeg.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.mode===APP.mode));renderAll();});});
+
+/* ===== STRIKE ZONE LAB ===== */
+const PLATE=[112,188];
+const ZONES={short:[150,242],avg:[128,252],tall:[108,262]};
+const SZ={bx:150,by:188,height:"avg"};
+function zone(){return ZONES[SZ.height];}
+function zJudge(){const z=zone();const inX=SZ.bx>=PLATE[0]&&SZ.bx<=PLATE[1];const inY=SZ.by>=z[0]&&SZ.by<=z[1];return inX&&inY?"STRIKE":"BALL";}
+function zDiagram(){
+  const z=zone();const v=zJudge();const col=v==="STRIKE"?"#E2628B":"#4ECDC4";
+  return `
+   <rect width="300" height="320" fill="#0d1b2a"/>
+   <polygon points="112,300 188,300 188,288 150,276 112,288" fill="#e9eef2" stroke="#16324f"/>
+   <text x="150" y="314" fill="#8888A0" font-size="10" text-anchor="middle">home plate (catcher's view)</text>
+   <rect x="${PLATE[0]}" y="${z[0]}" width="${PLATE[1]-PLATE[0]}" height="${z[1]-z[0]}" fill="rgba(78,205,196,.10)" stroke="#4ECDC4" stroke-width="2" stroke-dasharray="6 5"/>
+   <text x="${PLATE[1]+6}" y="${z[0]+12}" fill="#4ECDC4" font-size="10">strike zone</text>
+   <circle id="zball" cx="${SZ.bx}" cy="${SZ.by}" r="11" fill="${col}" stroke="#fff" stroke-width="2" style="cursor:grab"/>
+   <text x="${SZ.bx}" y="${SZ.by+4}" fill="#06210f" font-size="10" font-weight="800" text-anchor="middle">●</text>
+  `;
+}
+const zsvg=document.getElementById("zsvg");
+function zRender(){
+  document.getElementById("zHeight").innerHTML="";
+  [["short","Short"],["avg","Average"],["tall","Tall"]].forEach(([v,l])=>{const b=document.createElement("button");b.className="rb"+(SZ.height===v?" on":"");b.textContent=l;
+    b.addEventListener("click",()=>{SZ.height=v;zRender();});document.getElementById("zHeight").appendChild(b);});
+  const presets={"Right down the middle":[150,188],"High heat":[150,95],"In the dirt":[150,300],"Outside corner":[186,200],"Way inside":[96,180]};
+  const pe=document.getElementById("zPresets");pe.innerHTML="";
+  Object.keys(presets).forEach(n=>{const c=document.createElement("button");c.className="chip";c.textContent=n;
+    c.addEventListener("click",()=>{SZ.bx=presets[n][0];SZ.by=presets[n][1];zRender();});pe.appendChild(c);});
+  zsvg.innerHTML=zDiagram();
+  const v=zJudge();const tag=document.getElementById("zTag");tag.textContent=v;tag.className="tag "+(v==="STRIKE"?"offside":"onside");
+  document.getElementById("zWhy").innerHTML=v==="STRIKE"?"Over the plate and within the zone.":"Outside the strike zone, so it's a ball.";
+  document.getElementById("zGate").innerHTML="<b>The rule:</b> a strike is a pitch in the zone; four balls is a walk, three strikes is an out.";
+}
+let zdrag=false;
+function zpt(evt){const p=zsvg.createSVGPoint();p.x=evt.clientX;p.y=evt.clientY;return p.matrixTransform(zsvg.getScreenCTM().inverse());}
+zsvg.addEventListener("pointerdown",e=>{if(e.target.id==="zball"){zdrag=true;zsvg.setPointerCapture(e.pointerId);}});
+zsvg.addEventListener("pointermove",e=>{if(!zdrag)return;const p=zpt(e);SZ.bx=Math.max(40,Math.min(260,p.x));SZ.by=Math.max(40,Math.min(300,p.y));zRender();});
+function zend(e){if(zdrag){try{zsvg.releasePointerCapture(e.pointerId);}catch(_){ }zdrag=false;}}
+zsvg.addEventListener("pointerup",zend);zsvg.addEventListener("pointercancel",zend);
+
+/* ===== KEY RULES ===== */
+const LAWS=[
+ {n:"5.04",t:"The Strike Zone",k:"The box over the plate from the knees to the middle of the chest. It is different for every batter.",a:"Over home plate, upper limit at the midpoint between the top of the shoulders and the top of the pants, lower limit at the hollow beneath the kneecap, judged from the batter's stance.",lab:"zone"},
+ {n:"Def",t:"A Ball",k:"A pitch outside the strike zone that the batter does not swing at.",a:"A pitch which does not enter the strike zone in flight and is not struck at by the batter."},
+ {n:"Def",t:"A Strike",k:"A pitch in the zone, or one the batter swings at and misses or fouls off.",a:"A legal pitch in the strike zone, or one swung at and missed, or fouled (with limits on foul strikes)."},
+ {n:"5.05",t:"Three Strikes, Four Balls",k:"Three strikes and the batter is out; four balls and they walk to first base.",a:"The batter is out on a third strike (the strikeout); a fourth ball entitles the batter to first base (the base on balls)."},
+ {n:"Def",t:"Fair Ball",k:"A batted ball that stays inside the foul lines.",a:"A batted ball that settles or passes over the infield/outfield in fair territory between first and third base, judged by where it is, not where it was hit."},
+ {n:"Def",t:"Foul Ball",k:"A batted ball that goes outside the foul lines.",a:"A batted ball settling in foul territory or passing first/third base in foul ground; a foul is a strike unless the batter already has two strikes."},
+ {n:"Def",t:"Force Play",k:"A runner MUST run; touching the base with the ball before they arrive is the out.",a:"A play where a runner loses the right to a base because the batter becomes a runner; the fielder need only tag the base, not the runner."},
+ {n:"Def",t:"A Tag",k:"Touching the runner with the ball (or the base) while holding it securely.",a:"Touching a base, or a runner, with the ball securely held; on a non-force play the runner must be tagged to be out."},
+ {n:"5.09",t:"Tagging Up",k:"On a caught fly ball, a runner must touch their base again before running on.",a:"After a fair or foul fly is caught, a runner must retouch the original base before advancing, or be subject to appeal."},
+ {n:"Def",t:"The Infield Fly Rule",k:"On an easy infield pop-up with runners on, the batter is out at once, so fielders can't drop it to trick the runners.",a:"With first-and-second (or bases loaded) and fewer than two out, an easy fair fly to the infield makes the batter out immediately; runners advance at their own risk."},
+ {n:"6.02",t:"The Balk",k:"An illegal move by the pitcher with runners on base. Each runner moves up one base.",a:"An illegal act by the pitcher with runners on (e.g. faking to home, not stopping in the set); each runner is awarded one base."},
+ {n:"5.11",t:"The Designated Hitter",k:"A player who bats in place of the pitcher, so the pitcher does not have to hit.",a:"The DH bats for the pitcher and never plays the field; universal across both leagues since 2022."}
+];
+let curLaw=0;
+const lawListEl=document.getElementById("lawList"),lawBodyEl=document.getElementById("lawBody");
+function renderLaws(){
+  lawListEl.innerHTML="";
+  LAWS.forEach((L,i)=>{const d=document.createElement("div");d.className="law"+(i===curLaw?" on":"");
+    d.innerHTML=`<div class="ln">${L.n}</div><div class="lt">${L.t}</div>`;
+    d.addEventListener("click",()=>{curLaw=i;renderLaws();});lawListEl.appendChild(d);});
+  const L=LAWS[curLaw];
+  const body=(APP.mode==="kids")?`<p class="txt">${L.k}</p>`:`<p class="txt">${L.a}</p>`;
+  let links=`<div class="lawlinks">`;
+  if(L.lab) links+=`<a href="#" data-tab="${L.lab}">&#9654; Open the Strike Zone Lab</a>`;
+  links+=`<a class="lawsrc" href="https://rankings.citizenofnowhere.org/teams/baseball" target="_blank" rel="noopener">Baseball on the site &#8599;</a></div>`;
+  lawBodyEl.innerHTML=`<h3>${L.t}</h3>${body}${links}<p class="note">Source: Official Baseball Rules.</p>`;
+  lawBodyEl.querySelectorAll("a[data-tab]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();switchGame(a.dataset.tab);}));
+}
+
+/* ===== DECISIONS ===== */
+const SCEN=[
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"Runners on first and second, one out. The batter pops up an easy catch to the shortstop. What does the umpire call?",adults:"First and second occupied, one out, an easy fair fly to an infielder. The call?"},
+  opts:[{l:"Infield fly, batter out",ok:true},{l:"Live ball, no call",ok:false}],
+  ruling:{kids:"Infield fly! The batter is out right away so the fielders can't drop it on purpose to get a double play.",adults:"Infield fly: the batter is out immediately, runners advance at their own risk. It removes the incentive to drop the ball for a cheap double play."}},
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"A runner on first MUST run when the ball is hit on the ground. The fielder steps on second base with the ball before the runner gets there. Out?",adults:"Ground ball with a runner forced from first; the fielder touches second while holding the ball before the runner arrives. The call?"},
+  opts:[{l:"Out, force play",ok:true},{l:"Safe, needs a tag",ok:false}],
+  ruling:{kids:"Out! On a force, just touching the base in time is enough.",adults:"Out. On a force play the fielder need only touch the base with possession; no tag of the runner is required."}},
+ {real:true,src:"2010, Detroit",
+  prompt:{kids:"In 2010 a pitcher had retired 26 batters in a row, one out from a perfect game. The last call at first base was wrong. What happened?",adults:"Armando Galarraga is one out from a perfect game; the runner is clearly out at first but is called safe. What followed?"},
+  opts:[{l:"The umpire apologised",ok:true},{l:"The call was reversed",ok:false}],
+  ruling:{kids:"The umpire, Jim Joyce, said sorry in tears. The call was not changed, but it helped baseball bring in replay.",adults:"Jim Joyce tearfully apologised; the call stood (replay did not yet cover it), but the incident accelerated MLB's expanded replay review."}}
+];
+let scIdx=0,scAns=false;
+const decCard=document.getElementById("decCard");
+function renderDecisions(){
+  const s=SCEN[scIdx];
+  decCard.innerHTML=`<h3>You Make the Call <span style="color:var(--muted);font-weight:400;font-size:14px;">· ${scIdx+1} / ${SCEN.length}</span></h3>
+   <p class="sub">${s.prompt[APP.mode]}</p><div class="opts" id="opts"></div>
+   <div class="ruling" id="ruling"><b>${s.real?"Real moment":"Teaching scenario"}${s.real?" · "+s.src:""}.</b> ${s.ruling[APP.mode]}</div>
+   <div class="navbtn"><button id="nextSc">Next →</button></div>`;
+  const oe=document.getElementById("opts");
+  s.opts.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.l;
+    b.addEventListener("click",()=>{if(scAns)return;scAns=true;
+      document.querySelectorAll("#opts .opt").forEach(x=>{const oo=s.opts.find(z=>z.l===x.textContent);if(oo.ok)x.classList.add("right");if(x===b&&!o.ok)x.classList.add("wrong");});
+      document.getElementById("ruling").classList.add("show");});oe.appendChild(b);});
+  document.getElementById("nextSc").addEventListener("click",()=>{scIdx=(scIdx+1)%SCEN.length;scAns=false;renderDecisions();});
+}
+
+/* ===== TIMELINE ===== */
+const TL=[
+ {yr:"1969",t:"The mound is lowered",k:"After pitchers got too dominant, the pitching mound was made lower to help batters.",a:"Following the 1968 'Year of the Pitcher', the mound was lowered from 15 to 10 inches and the strike zone tightened to revive offence."},
+ {yr:"1973",t:"The designated hitter",k:"The American League let a player bat for the pitcher. The National League finally joined in 2022.",a:"The AL adopted the DH in 1973; the NL held out until the universal DH arrived in 2022."},
+ {yr:"2014",t:"Expanded instant replay",k:"Managers could challenge calls and umpires reviewed them on video.",a:"MLB introduced manager challenges and expanded replay review in 2014, partly spurred by high-profile blown calls like Galarraga's in 2010."},
+ {yr:"2023",t:"Pitch clock, shift ban, bigger bases",k:"A clock to speed up the game, no more loading one side of the infield, and slightly bigger bases.",a:"2023 brought a pitch timer, defensive-shift restrictions (two infielders each side of second), 18-inch bases, and pickoff limits, sharply cutting game times."},
+ {yr:"2026",t:"Automated ball-strike challenges",k:"Players can now tap their helmet to ask a computer to check a close ball-or-strike call.",a:"The ABS challenge system went live across MLB in 2026: two challenges a team, initiated by the batter, pitcher or catcher tapping their head, checked against the tracked zone."}
+];
+let tlOpen=0;
+const tlCard=document.getElementById("tlCard");
+function renderTimeline(){
+  tlCard.innerHTML=`<h3>Rules That Changed the Game</h3><p class="sub">${APP.mode==="kids"?"Baseball's rules keep changing. Tap a moment.":"Each hinge reshaped the game, from the mound to the machines."}</p>
+   <div class="tl">${TL.map((e,i)=>`<div class="tlitem${i===tlOpen?" on":""}" data-i="${i}"><div class="yr">${e.yr}</div><div class="ti">${e.t}</div><div class="tldetail">${APP.mode==="kids"?e.k:e.a}<div class="m-src" style="color:var(--muted);font-size:12px;margin-top:5px;">Researched and verified.</div></div></div>`).join("")}</div>`;
+  tlCard.querySelectorAll(".tlitem").forEach(it=>it.addEventListener("click",()=>{tlOpen=+it.dataset.i;renderTimeline();}));
+}
+
+function renderAll(){
+  document.getElementById("lede").textContent=COPY.lede[APP.mode];
+  document.getElementById("modehint").textContent=COPY.modehint[APP.mode];
+  document.getElementById("zSoul").innerHTML="<p><b>Why this lives here.</b> The strike zone is baseball's offside line: a boundary in space that humans judged for 150 years and that, since 2026, a tracking system can check to the inch. The same pitch is a strike to one batter and a ball to a taller one.</p>";
+  zRender();renderLaws();renderDecisions();renderTimeline();
+  document.getElementById("foot").innerHTML="<b>Prototype.</b> The Strike Zone Lab models the zone as a per-batter box; real tracking is three-dimensional over the plate. Rule text adapted from the Official Baseball Rules. Real moments researched and verified.";
+}
+renderAll();switchGame("zone");
+</script>
+</body>
+</html>

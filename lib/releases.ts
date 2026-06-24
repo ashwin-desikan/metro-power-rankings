@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-24",
-    headline: "Play & Learn games for younger fans",
+    headline: "Play & Learn, the Rules Labs, and the Games arcade",
     items: [
-      "New /play section: nine free kids’ learning games built from the rankings — geography, reading and maths through real teams, cities and standings, for ages 5 to 10.",
-      "Games span World Sports Tour, Find the Team’s Home, League Table Detective on real NFL standings, Bigger City, Trophy Count, North or South, Odd One Out and Match Day Money.",
-      "Each blends UK (KS1/KS2) and US Grade 2 curricula, and every reveal links back to the team or metro page on the site.",
-      "New Rules Lab in /play: an Offside or Onside? game for younger fans, plus a deeper portal for older fans covering offside across eras, the 17 Laws, real refereeing calls and how rule changes reshaped the game.",
+      "New /play hub for younger fans: eight Trivia games plus a Be the Ref set teaching offside, LBW and the strike zone through real football, cricket and baseball situations.",
+      "Three adults Rules Labs (football, cricket, baseball), each with a kids/adults toggle: an interactive offside, LBW or strike-zone lab, the key laws explained, real officiating calls, and how the rules changed.",
+      "New Games arcade: Beat the Model scores your World Cup 2026 call against the simulator's odds, plus Metro Higher or Lower, a daily Metro Globle on a world map, and daily Metro and Sports immaculate grids.",
+      "Navigation: a Play menu (Kids Games and Games), Methodology folded under About, and Rules Lab links on the international and club football pages.",
     ],
   },
   {

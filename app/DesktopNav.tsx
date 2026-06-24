@@ -221,16 +221,15 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="https://citizenofnowhere.substack.com" external title="On Substack" />
       </Dropdown>
 
-      <Link href="/play" className="text-sm hover:text-[var(--accent)] transition-colors">
-        Play
-      </Link>
+      <Dropdown id="play" label="Play" openId={openId} setOpenId={setOpenId}>
+        <DropdownItem href="/play" title="Kids Games" hint="Free learning games for younger fans" />
+        <DropdownItem href="/play/arcade" title="Games" hint="Bigger games: random metro, quizzes and more" />
+      </Dropdown>
 
-      <Link href="/methodology" className="text-sm hover:text-[var(--accent)] transition-colors">
-        Methodology
-      </Link>
-      <Link href="/about" className="text-sm hover:text-[var(--accent)] transition-colors">
-        About
-      </Link>
+      <Dropdown id="about" label="About" openId={openId} setOpenId={setOpenId}>
+        <DropdownItem href="/about" title="About" hint="The project, the author, and the why" />
+        <DropdownItem href="/methodology" title="Methodology" hint="How the rankings are built" />
+      </Dropdown>
       <Link href="/studio" className="text-sm hover:text-[var(--accent)] transition-colors">
         Studio
       </Link>

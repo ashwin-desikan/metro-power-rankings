@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Sports Grid — daily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#08080D;--bg-card:#12121A;--border:#1E1E2E;--text:#E8E8ED;--text-muted:#8888A0;--text-dim:#55556A;--accent:#4ECDC4;--accent-dim:#2A7A74;--gold:#E6B34A;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+  .wrap{max-width:560px;margin:0 auto;padding:20px 18px 64px;}
+  a{color:var(--accent);text-decoration:none;}
+  .topbar{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted);}
+  .kicker{margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+  h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:6px 0 6px;}
+  .sub{color:var(--text-muted);font-size:14px;margin:0 0 16px;}
+  .gridwrap{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:6px;}
+  .hd{display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:600;color:var(--text-muted);padding:6px;min-height:54px;line-height:1.25;}
+  .hd.col{align-items:flex-end;}
+  .corner{display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);text-align:center;}
+  .cell{aspect-ratio:1;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4px;transition:border-color .12s;}
+  .cell:hover{border-color:var(--accent-dim);}
+  .cell.sel{border-color:var(--accent);}
+  .cell.filled{cursor:default;}
+  .cell .plus{font-size:24px;color:var(--text-dim);}
+  .cell .nm{font-size:11.5px;font-weight:600;line-height:1.2;}
+  .cell .rar{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);margin-top:3px;}
+  .cell.miss{opacity:.55;}.cell.miss .plus{font-size:14px;}
+  .bar{display:flex;justify-content:space-between;align-items:center;margin:14px 0 10px;}
+  .bar .g{font-family:'JetBrains Mono',monospace;color:var(--text-dim);font-size:13px;}
+  .inwrap{display:none;gap:8px;margin-bottom:8px;}
+  .inwrap.show{display:flex;}
+  input{flex:1;background:var(--bg-card);color:var(--text);border:1px solid var(--accent-dim);border-radius:9px;padding:11px;font-size:15px;font-family:inherit;}
+  input:focus{outline:none;border-color:var(--accent);}
+  .gbtn{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:9px;padding:0 16px;font-weight:700;cursor:pointer;}
+  .gbtn:hover{background:var(--accent);color:#06201e;}
+  .prompt{font-size:12.5px;color:var(--text-muted);margin-bottom:6px;min-height:16px;}
+  .end{background:var(--bg-card);border:1px solid var(--border);border-radius:11px;padding:18px;margin-top:14px;text-align:center;display:none;}
+  .end.show{display:block;}
+  .pill{display:inline-block;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:9px;padding:9px 16px;font-weight:700;cursor:pointer;margin-top:10px;}
+  .pill:hover{background:var(--accent);color:#06201e;}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--bg-card);border:1px solid var(--accent);color:var(--text);padding:10px 16px;border-radius:9px;opacity:0;transition:opacity .2s;font-size:13px;z-index:50;}
+  .toast.show{opacity:1;}
+  footer{color:var(--text-dim);font-size:12px;margin-top:22px;border-top:1px solid var(--border);padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a href="/play/arcade">← Games</a><span id="date"></span></div>
+  <div class="kicker">Daily · Immaculate Grid</div>
+  <h1>Sports Grid</h1>
+  <p class="sub">Name a team for each square that plays the row's sport in the column's country. Each team once. Nine guesses.</p>
+  <div class="prompt" id="prompt"></div>
+  <div class="inwrap" id="inwrap"><input id="inp" list="teams" placeholder="Name a team…" autocomplete="off" /><button class="gbtn" id="go">Enter</button></div>
+  <datalist id="teams"></datalist>
+  <div class="gridwrap" id="grid"></div>
+  <div class="bar"><span class="g" id="left"></span><span class="g" id="score"></span></div>
+  <div class="end" id="end"></div>
+  <footer>Teams, sports and locations come from the Zone Zero Sports hub. The number on a filled square is how many teams could have answered it.</footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function dayKey(){const d=new Date();return d.getUTCFullYear()+"-"+String(d.getUTCMonth()+1).padStart(2,"0")+"-"+String(d.getUTCDate()).padStart(2,"0");}
+function shuffle(a,rnd){for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const SPORTS=[
+ {id:"fb",label:"Football (soccer)",t:t=>t.sport==="Football"},{id:"af",label:"American Football",t:t=>t.sport==="American Football"},
+ {id:"bk",label:"Basketball",t:t=>t.sport==="Basketball"},{id:"hk",label:"Ice Hockey",t:t=>t.sport==="Hockey"},
+ {id:"bb",label:"Baseball",t:t=>t.sport==="Baseball"},{id:"cr",label:"Cricket",t:t=>t.sport==="T20 Cricket"},
+ {id:"ru",label:"Rugby Union",t:t=>t.sport==="Rugby Union"},
+ {id:"vb",label:"Volleyball",t:t=>t.sport==="Volleyball"},{id:"hb",label:"Handball",t:t=>t.sport==="Handball"}
+];
+const PLACES=[
+ {id:"us",label:"United States",cont:"North America",t:t=>t.country==="United States"},
+ {id:"uk",label:"United Kingdom",cont:"Europe",t:t=>t.country==="United Kingdom"},
+ {id:"es",label:"Spain",cont:"Europe",t:t=>t.country==="Spain"},
+ {id:"au",label:"Australia",cont:"Oceania",t:t=>t.country==="Australia"},
+ {id:"jp",label:"Japan",cont:"Asia",t:t=>t.country==="Japan"},
+ {id:"it",label:"Italy",cont:"Europe",t:t=>t.country==="Italy"},
+ {id:"fr",label:"France",cont:"Europe",t:t=>t.country==="France"},
+ {id:"de",label:"Germany",cont:"Europe",t:t=>t.country==="Germany"},
+ {id:"br",label:"Brazil",cont:"South America",t:t=>t.country==="Brazil"},
+ {id:"eu",label:"Europe",cont:null,t:t=>t.continent==="Europe"},
+ {id:"nam",label:"North America",cont:null,t:t=>t.continent==="North America"},
+ {id:"as",label:"Asia",cont:null,t:t=>t.continent==="Asia"},
+ {id:"sam",label:"South America",cont:null,t:t=>t.continent==="South America"}
+];
+let POOL=[], byname={}, rows=[], cols=[], cells={}, used=new Set(), guessesLeft=9, sel=null, selRi, selCi, done=false;
+function cellCount(r,c){let n=0;for(const t of POOL)if(r.t(t)&&c.t(t))n++;return n;}
+function genGrid(){
+  const rnd=mulberry32(hash(dayKey()+"|sportsgrid"));
+  const ps=PLACES.map(p=>new Set(SPORTS.filter(s=>cellCount(s,p)>=1).map(s=>s.id)));
+  for(let att=0;att<500;att++){
+    const idx=shuffle([...Array(PLACES.length).keys()],rnd).slice(0,3);
+    const labs=idx.map(i=>PLACES[i].label);
+    let red=false;idx.forEach(i=>{const co=PLACES[i].cont;if(co&&labs.includes(co))red=true;});
+    if(red)continue;
+    let inter=new Set(ps[idx[0]]);idx.slice(1).forEach(i=>inter=new Set([...inter].filter(x=>ps[i].has(x))));
+    if(inter.size>=3){
+      const si=shuffle([...inter],rnd).slice(0,3);
+      rows=si.map(id=>SPORTS.find(s=>s.id===id));cols=idx.map(i=>PLACES[i]);return true;
+    }
+  }
+  rows=[SPORTS[0],SPORTS[2],SPORTS[8]];cols=[PLACES.find(p=>p.id==="eu"),PLACES.find(p=>p.id==="nam"),PLACES.find(p=>p.id==="as")];return false;
+}
+function key(r,c){return r+"-"+c;}
+function save(){localStorage.setItem("sportsgrid-"+dayKey(),JSON.stringify({cells,used:[...used],guessesLeft,done}));}
+function load(){try{const s=JSON.parse(localStorage.getItem("sportsgrid-"+dayKey()));if(s){cells=s.cells||{};used=new Set(s.used||[]);guessesLeft=s.guessesLeft;done=s.done;}}catch(e){}}
+function el(cls,html){const d=document.createElement("div");d.className=cls;d.innerHTML=html;return d;}
+function render(){
+  const g=$("grid");g.innerHTML="";
+  g.appendChild(el("corner","SPORTS<br>GRID"));
+  cols.forEach(c=>g.appendChild(el("hd col",c.label)));
+  rows.forEach((r,ri)=>{
+    g.appendChild(el("hd",r.label));
+    cols.forEach((c,ci)=>{
+      const k=key(ri,ci),f=cells[k];const d=document.createElement("div");
+      d.className="cell"+(f?" filled":"")+(sel===k?" sel":"");
+      if(f){d.innerHTML=`<div class="nm">${f.name}</div><div class="rar">${f.rar} fit</div>`;}
+      else if(done){d.className+=" miss";d.innerHTML='<span class="plus">·</span>';}
+      else{d.innerHTML='<span class="plus">+</span>';d.onclick=()=>selectCell(k,ri,ci);}
+      g.appendChild(d);
+    });
+  });
+  $("left").textContent=done?"":guessesLeft+" guesses left";
+  $("score").textContent=Object.keys(cells).length+"/9 filled";
+  if(done)showEnd();else save();
+}
+function selectCell(k,ri,ci){if(done||cells[k])return;sel=k;selRi=ri;selCi=ci;$("inwrap").className="inwrap show";
+  $("prompt").innerHTML=`Name a <b style="color:var(--text)">${rows[ri].label}</b> team in <b style="color:var(--text)">${cols[ci].label}</b>`;
+  $("inp").value="";$("inp").focus();render();}
+function submit(){
+  if(!sel||done)return;const v=$("inp").value.trim().toLowerCase();const list=byname[v];
+  if(!list){toast("Pick a team from the list");return;}
+  if(used.has(v)){toast("Already used that team");return;}
+  guessesLeft--;const r=rows[selRi],c=cols[selCi];
+  const m=list.find(t=>r.t(t)&&c.t(t));
+  if(m){cells[sel]={name:m.team,rar:cellCount(r,c)};used.add(v);toast("✓ "+m.team);}
+  else{toast("✗ doesn't fit that square");}
+  sel=null;$("inwrap").className="inwrap";$("prompt").textContent="";
+  if(guessesLeft<=0||Object.keys(cells).length>=9)done=true;
+  render();
+}
+function showEnd(){
+  const e=$("end");e.className="end show";const n=Object.keys(cells).length;
+  let sq="";for(let ri=0;ri<3;ri++){for(let ci=0;ci<3;ci++)sq+=cells[key(ri,ci)]?"🟩":"⬜";sq+="\n";}
+  const sh="Sports Grid "+dayKey()+" — "+n+"/9\n"+sq+"/play/arcade";
+  e.innerHTML=`<h2>${n}/9 squares</h2><p class="sub" style="margin:.4em 0;">${n===9?"Immaculate!":"A lower fit count means a bolder answer."}</p><div class="mono" style="font-size:18px;line-height:1.2;white-space:pre;">${sq}</div><span class="pill" id="share">Copy result</span>`;
+  $("share").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(sh);toast("Copied");};
+}
+function toast(t){const e=$("toast");e.textContent=t;e.className="toast show";setTimeout(()=>e.className="toast",1500);}
+fetch("/data/play/grid-teams.json").then(r=>r.json()).then(d=>{
+  POOL=d.filter(t=>t.team&&t.sport);
+  POOL.forEach(t=>{const k=t.team.toLowerCase();(byname[k]=byname[k]||[]).push(t);});
+  const names=[...new Set(POOL.map(t=>t.team))].sort();
+  $("teams").innerHTML=names.map(n=>`<option value="${n}"></option>`).join("");
+  $("date").textContent=dayKey();
+  genGrid();load();render();
+  $("go").onclick=submit;$("inp").addEventListener("keydown",e=>{if(e.key==="Enter")submit();});
+}).catch(()=>{$("sub").textContent="Could not load teams data. Open from the site, not as a local file.";});
+</script>
+</body>
+</html>

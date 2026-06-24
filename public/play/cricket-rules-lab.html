@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Cricket Rules Lab</title>
+<style>
+
+  :root{
+    --bg:#08080D; --panel:#12121A; --panel-2:#1A1A26; --line:#1E1E2E;
+    --ink:#E8E8ED; --muted:#8888A0; --accent:#4ECDC4; --gold:#e6b34a;
+    --onside:#4ECDC4; --offside:#E2628B; --att:#4ECDC4; --def:#f0f3f6; --ball:#e6b34a;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1060px;margin:0 auto;padding:24px 20px 72px;}
+  a{color:var(--accent);text-decoration:none;}
+  .crumb{color:var(--muted);font-size:12.5px;letter-spacing:.04em;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .crumb b{color:var(--ink);font-weight:600;}
+  .crumb .kidlink{font-weight:600;color:var(--gold);}
+  .kicker{color:var(--accent);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:14px;}
+  h1{font-size:30px;line-height:1.12;margin:6px 0 6px;letter-spacing:-.02em;}
+  .lede{color:var(--muted);max-width:70ch;margin:0 0 18px;}
+  /* mode toggle */
+  .modebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 18px;}
+  .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;}
+  .seg button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:13px;
+    padding:7px 16px;border-radius:999px;cursor:pointer;letter-spacing:.02em;}
+  .seg button.on{background:var(--accent);color:#06121f;}
+  .modehint{color:var(--muted);font-size:13px;}
+  /* tabs */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:6px 0 22px;}
+  .tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);
+    font-weight:600;font-size:14px;padding:10px 12px;cursor:pointer;}
+  .tab:hover{color:var(--ink);}
+  .tab.on{color:var(--ink);border-bottom-color:var(--accent);}
+  .tab .n{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;
+    background:var(--panel-2);font-size:11px;margin-right:7px;color:var(--muted);}
+  .tab.on .n{background:var(--accent);color:#06121f;}
+  section.game{display:none;}
+  section.game.on{display:block;}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start;}
+  @media(max-width:880px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;}
+  .card+.card{margin-top:16px;}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:2px 0 12px;}
+  h3{font-size:18px;margin:0 0 6px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);max-width:66ch;}
+  svg.pitch{width:100%;height:auto;display:block;touch-action:none;user-select:none;border-radius:10px;}
+  .verdict{display:flex;align-items:center;gap:12px;margin-top:12px;}
+  .tag{font-weight:800;font-size:19px;letter-spacing:.02em;padding:6px 14px;border-radius:999px;}
+  .tag.onside{background:rgba(78,205,196,.15);color:var(--onside);border:1px solid rgba(78,205,196,.4);}
+  .tag.offside{background:rgba(226,98,139,.13);color:var(--offside);border:1px solid rgba(226,98,139,.4);}
+  .why{color:var(--muted);font-size:14px;flex:1;}.why b{color:var(--ink);font-weight:600;}
+  .eras{display:flex;flex-direction:column;gap:8px;}
+  .era-btn{text-align:left;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:10px 12px;cursor:pointer;transition:border-color .15s,background .15s;}
+  .era-btn:hover{border-color:#3a4654;}
+  .era-btn.active{border-color:var(--accent);background:rgba(78,205,196,.10);}
+  .era-btn .yr{font-weight:700;font-size:14px;}
+  .era-btn .rule{color:var(--muted);font-size:12.5px;margin-top:2px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);font-size:13px;
+    padding:7px 11px;border-radius:999px;cursor:pointer;}
+  .chip:hover{border-color:var(--accent);}
+  .chip.real{border-color:rgba(230,179,74,.5);}
+  .chip.real::before{content:"●";color:var(--gold);font-size:9px;margin-right:6px;vertical-align:1px;}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
+  .involve{margin-top:10px;font-size:13px;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;}
+  .involve b{color:var(--ink);}
+  .moment{margin-top:10px;font-size:13.5px;color:var(--ink);background:rgba(230,179,74,.08);border:1px solid rgba(230,179,74,.35);border-radius:10px;padding:11px 13px;display:none;}
+  .moment.show{display:block;}
+  .moment .m-t{font-weight:700;}
+  .moment .m-src{color:var(--muted);font-size:12px;margin-top:5px;}
+  .soul{margin-top:18px;border-left:2px solid var(--gold);padding:2px 0 2px 16px;}
+  .soul p{color:var(--muted);font-size:14px;margin:0 0 10px;}.soul b{color:var(--ink);font-weight:600;}
+  .note{font-size:12px;color:var(--muted);margin-top:12px;}
+  /* laws */
+  .laws{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+  .law{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer;}
+  .law:hover{border-color:var(--accent);}
+  .law.on{border-color:var(--accent);background:rgba(78,205,196,.10);}
+  .law .ln{font-size:11px;color:var(--muted);}
+  .law .lt{font-weight:600;font-size:13.5px;margin-top:2px;}
+  .lawbody h3{margin-bottom:8px;}
+  .lawbody .txt{color:var(--ink);}
+  .lawpoints{margin:0;padding-left:18px;color:var(--ink);}
+  .lawpoints li{margin:0 0 7px;}
+  .lawlinks{margin-top:14px;display:flex;flex-wrap:wrap;gap:14px;font-size:13px;align-items:center;}
+  .lawlinks a{font-weight:600;}
+  .lawsrc{color:var(--muted)!important;}
+  .xlink{margin-top:12px;font-size:13px;color:var(--muted);}
+  .xlink a{font-weight:600;}
+  /* decisions */
+  .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .opt{flex:1;min-width:140px;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:11px;cursor:pointer;font-size:14px;text-align:left;}
+  .opt:hover{border-color:var(--accent);}
+  .opt.right{border-color:var(--onside);background:rgba(78,205,196,.12);}
+  .opt.wrong{border-color:var(--offside);background:rgba(226,98,139,.12);}
+  .ruling{margin-top:12px;font-size:14px;color:var(--muted);display:none;}
+  .ruling.show{display:block;}.ruling b{color:var(--ink);}
+  .navbtn{display:inline-flex;gap:8px;margin-top:14px;}
+  .navbtn button{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;}
+  .navbtn button:hover{border-color:var(--accent);}
+  /* penalties */
+  .barrow{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px;}
+  .barrow .lab{width:130px;color:var(--ink);}
+  .bartrack{flex:1;height:14px;background:var(--panel-2);border-radius:999px;overflow:hidden;border:1px solid var(--line);}
+  .barfill{height:100%;background:linear-gradient(90deg,#3a7bd5,#4ECDC4);}
+  .barrow .v{width:48px;text-align:right;color:var(--muted);font-size:13px;}
+  /* timeline */
+  .tl{position:relative;margin-top:8px;padding-left:22px;}
+  .tl::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:var(--line);}
+  .tlitem{position:relative;padding:0 0 18px 6px;cursor:pointer;}
+  .tlitem::before{content:"";position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;
+    background:var(--panel);border:2px solid var(--accent);}
+  .tlitem.on::before{background:var(--accent);}
+  .tlitem .yr{font-weight:700;font-size:14px;color:var(--gold);}
+  .tlitem .ti{font-weight:600;}
+  .tldetail{color:var(--muted);font-size:13.5px;margin-top:4px;display:none;}
+  .tlitem.on .tldetail{display:block;}
+  footer{margin-top:34px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;}
+  footer b{color:var(--ink);}
+
+/* extra */
+.radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.rb{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);font-size:13px;padding:7px 11px;border-radius:8px;cursor:pointer;}
+.rb.on{border-color:var(--accent);background:rgba(78,205,196,.12);color:#fff;}
+.ctl{margin:0 0 10px;}.ctl .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.pitchsvg{width:100%;height:auto;background:#1a6b3b;border-radius:10px;display:block;}
+.gate{font-size:13px;color:var(--muted);margin-top:8px;}.gate b{color:var(--ink);}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><span><a href="/">Citizen of Nowhere</a> · <a href="/play">Play &amp; Learn</a> · <b>The Cricket Rules Lab</b></span>
+    <a class="kidlink" href="/play/games/hows-that.html">Younger fans? Play “How's That?” →</a></div>
+  <div class="kicker">Rules Lab · Cricket</div>
+  <h1>The Cricket Rules Lab</h1>
+  <p class="lede" id="lede"></p>
+  <div class="modebar"><div class="seg" id="modeSeg"><button data-mode="kids">Kids</button><button data-mode="adults">Adults</button></div><span class="modehint" id="modehint"></span></div>
+  <div class="tabs" id="tabs"></div>
+
+  <section class="game" data-game="lbw">
+    <div class="grid">
+      <div class="card" style="padding:12px;">
+        <svg class="pitchsvg" id="lbwsvg" viewBox="0 0 360 240" aria-label="Top-down view of an LBW decision"></svg>
+        <div class="verdict"><span id="lbwTag" class="tag onside">NOT OUT</span><span class="why" id="lbwWhy"></span></div>
+        <div class="gate" id="lbwGate"></div>
+      </div>
+      <div>
+        <div class="card">
+          <h2>Set the delivery</h2>
+          <div class="ctl"><div class="lbl">Was it a legal ball?</div><div class="radios" data-key="legal"></div></div>
+          <div class="ctl"><div class="lbl">Where did it pitch?</div><div class="radios" data-key="pitch"></div></div>
+          <div class="ctl"><div class="lbl">Where did it hit the pad?</div><div class="radios" data-key="impact"></div></div>
+          <div class="ctl"><div class="lbl">Did the batter offer a shot?</div><div class="radios" data-key="shot"></div></div>
+          <div class="ctl"><div class="lbl">Was it going to hit the stumps?</div><div class="radios" data-key="hit"></div></div>
+        </div>
+        <div class="card"><h2>Try a verdict</h2><div class="chips" id="lbwPresets"></div></div>
+      </div>
+    </div>
+    <div class="soul" id="lbwSoul"></div>
+  </section>
+
+  <section class="game" data-game="laws"><div class="grid"><div class="card"><h2>Key Laws of Cricket</h2><div class="laws" id="lawList"></div></div><div class="card lawbody" id="lawBody"></div></div></section>
+  <section class="game" data-game="decisions"><div class="card" id="decCard"></div></section>
+  <section class="game" data-game="timeline"><div class="card" id="tlCard"></div></section>
+  <footer id="foot"></footer>
+</div>
+<script>
+"use strict";
+const APP={mode:"adults",game:"lbw"};
+const COPY={lede:{kids:"Cricket has its own most-confusing rule: LBW (Leg Before Wicket). Try the LBW Lab, learn the key Laws, judge real situations, and see how the rules changed.",adults:"Cricket's signature judgement call is LBW, a five-gate test. Work the gates in the LBW Lab, explore the Laws, make the call on real situations, and trace how the rules changed. Adapted from the MCC Laws of Cricket."},modehint:{kids:"Kids mode: plain language.",adults:"Adults mode: full Law wording and nuance."}};
+const GAMES=[{id:"lbw",label:"LBW Lab"},{id:"laws",label:"Key Laws"},{id:"decisions",label:"How's That?"},{id:"timeline",label:"Rules That Changed"}];
+const tabsEl=document.getElementById("tabs");
+GAMES.forEach((g,i)=>{const b=document.createElement("button");b.className="tab"+(g.id===APP.game?" on":"");b.dataset.game=g.id;b.innerHTML=`<span class="n">${i+1}</span>${g.label}`;b.addEventListener("click",()=>switchGame(g.id));tabsEl.appendChild(b);});
+function switchGame(id){APP.game=id;document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.game===id));document.querySelectorAll("section.game").forEach(s=>s.classList.toggle("on",s.dataset.game===id));}
+const modeSeg=document.getElementById("modeSeg");
+modeSeg.querySelectorAll("button").forEach(b=>{b.classList.toggle("on",b.dataset.mode===APP.mode);b.addEventListener("click",()=>{APP.mode=b.dataset.mode;modeSeg.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.mode===APP.mode));renderAll();});});
+
+/* ===== LBW LAB ===== */
+const LBW={legal:"legal",pitch:"line",impact:"line",shot:"yes",hit:"hit"};
+const LBW_OPTS={
+  legal:[["legal","Legal ball"],["noball","No ball"]],
+  pitch:[["line","In line / off side"],["leg","Outside leg"]],
+  impact:[["line","In line"],["off","Outside off"],["leg","Outside leg"]],
+  shot:[["yes","Yes, played a shot"],["no","No shot offered"]],
+  hit:[["hit","Hitting stumps"],["clip","Clipping (umpire's call)"],["miss","Missing stumps"]]
+};
+function lbwJudge(){
+  // returns {verdict, why, gate}
+  if(LBW.legal==="noball") return {v:"NOT OUT",why:"You cannot be out LBW off a No ball.",gate:"Law 36.1.1 — the delivery must be legal."};
+  if(LBW.pitch==="leg") return {v:"NOT OUT",why:"The ball pitched outside leg stump, so it can never be LBW.",gate:"Law 36.1.2 — must pitch in line or on the off side."};
+  if(LBW.impact==="leg") return {v:"NOT OUT",why:"The impact was outside leg stump.",gate:"Law 36.1.4 — impact must be in line (or outside off with no shot)."};
+  if(LBW.impact==="off" && LBW.shot==="yes") return {v:"NOT OUT",why:"Struck outside off while playing a shot.",gate:"Law 36.1.4 — outside-off impact is only out if NO genuine shot was offered."};
+  if(LBW.hit==="miss") return {v:"NOT OUT",why:"The ball was going to miss the stumps.",gate:"Law 36.1.5 — but for the pad, it must have hit the wicket."};
+  if(LBW.hit==="clip") return {v:"UMPIRE'S CALL",why:"The ball only clips the stumps. On review the on-field decision stands.",gate:"Umpire's Call — the DRS tolerance band, from the playing conditions, not the Laws themselves."};
+  return {v:"OUT",why:"All five gates are satisfied: legal ball, pitched in line, struck in line (or outside off with no shot), going on to hit the stumps.",gate:"Law 36.1 — Out LBW."};
+}
+function lbwDiagram(){
+  const j=lbwJudge();
+  const stumpX=300, legLineY=150, offLineY=90; // top-down: ball travels left->right toward stumps on right
+  let pitchY = LBW.pitch==="leg"?170:120;
+  let impY = LBW.impact==="leg"?165:(LBW.impact==="off"?80:120);
+  const recvCol = j.v==="OUT"?"#E2628B":(j.v==="UMPIRE'S CALL"?"#e6b34a":"#4ECDC4");
+  return `
+    <rect width="360" height="240" fill="#1f7a44"/>
+    <g opacity="0.5" stroke="#dfe9e2" stroke-width="1.5" fill="none">
+      <line x1="20" y1="${offLineY}" x2="340" y2="${offLineY}" stroke-dasharray="5 5"/>
+      <line x1="20" y1="${legLineY}" x2="340" y2="${legLineY}" stroke-dasharray="5 5"/>
+    </g>
+    <text x="24" y="${offLineY-5}" fill="#dfe9e2" font-size="10">off stump line</text>
+    <text x="24" y="${legLineY+13}" fill="#dfe9e2" font-size="10">leg stump line</text>
+    <g stroke="#f3e6c0" stroke-width="4"><line x1="${stumpX}" y1="92" x2="${stumpX}" y2="148"/></g>
+    <text x="${stumpX-6}" y="166" fill="#f3e6c0" font-size="10" text-anchor="middle">stumps</text>
+    <circle cx="120" cy="${pitchY}" r="7" fill="#fff" stroke="#16324f"/><text x="120" y="${pitchY-11}" fill="#fff" font-size="10" text-anchor="middle">pitch</text>
+    <circle cx="230" cy="${impY}" r="8" fill="${recvCol}" stroke="#fff" stroke-width="2"/><text x="230" y="${impY-12}" fill="#fff" font-size="10" text-anchor="middle">impact</text>
+  `;
+}
+function buildLbwControls(){
+  document.querySelectorAll('.radios[data-key]').forEach(box=>{
+    const key=box.dataset.key; box.innerHTML="";
+    LBW_OPTS[key].forEach(([val,lab])=>{const b=document.createElement("button");b.className="rb"+(LBW[key]===val?" on":"");b.textContent=lab;
+      b.addEventListener("click",()=>{LBW[key]=val;renderLbw();});box.appendChild(b);});
+  });
+  const presets={
+    "Plumb in front":{legal:"legal",pitch:"line",impact:"line",shot:"yes",hit:"hit"},
+    "Pitched outside leg":{legal:"legal",pitch:"leg",impact:"line",shot:"yes",hit:"hit"},
+    "Missing leg (clip)":{legal:"legal",pitch:"line",impact:"line",shot:"yes",hit:"clip"},
+    "Pad outside off, no shot":{legal:"legal",pitch:"line",impact:"off",shot:"no",hit:"hit"}
+  };
+  const pe=document.getElementById("lbwPresets");pe.innerHTML="";
+  Object.keys(presets).forEach(n=>{const c=document.createElement("button");c.className="chip";c.textContent=n;
+    c.addEventListener("click",()=>{Object.assign(LBW,presets[n]);renderLbw();});pe.appendChild(c);});
+}
+function renderLbw(){
+  buildLbwControls();
+  document.getElementById("lbwsvg").innerHTML=lbwDiagram();
+  const j=lbwJudge();
+  const tag=document.getElementById("lbwTag");tag.textContent=j.v;
+  tag.className="tag "+(j.v==="OUT"?"offside":"onside");
+  document.getElementById("lbwWhy").innerHTML=j.why;
+  document.getElementById("lbwGate").innerHTML="<b>Deciding Law:</b> "+j.gate;
+}
+
+/* ===== KEY LAWS ===== */
+const LAWS=[
+ {n:5,t:"The Bat",k:"The bat is the only thing you can hit the ball with. It must not be too big.",a:"Defines the bat's permitted dimensions, materials and the edge/depth limits introduced to curb oversized bats."},
+ {n:6,t:"The Pitch",k:"The strip in the middle is 22 yards long, where the bowler bowls to the batter.",a:"The pitch is a rectangle 22 yards (20.12 m) long and 10 ft wide, prepared and maintained under Laws 8 to 10."},
+ {n:7,t:"The Creases",k:"The white lines that decide if you are safely 'in' your ground for a run-out or stumping.",a:"The popping, bowling and return creases. A batter is in their ground only if bat or person is grounded behind the popping crease."},
+ {n:8,t:"The Wickets",k:"Three stumps with two little bails on top. Knock the bails off to break the wicket.",a:"Two sets of three stumps with two bails; the wicket is broken when a bail is completely removed or a stump struck out of the ground."},
+ {n:17,t:"The Over",k:"An over is six fair balls bowled in a row by one bowler.",a:"Six balls constitute an over; no bowler may bowl two overs in succession, and Wides and No balls do not count as one of the six."},
+ {n:18,t:"Scoring Runs",k:"You score by running between the wickets, or by hitting the ball to the boundary.",a:"Runs are scored by the batters crossing and grounding behind the creases, plus boundary allowances and penalties under Law 19 and others."},
+ {n:19,t:"Boundaries",k:"Reaching the rope on the bounce is four; clearing it without bouncing is six.",a:"Four for the ball reaching the boundary, six for clearing it on the full. Overthrows add the boundary to runs already completed at the instant of the throw (the 2019 final flashpoint)."},
+ {n:20,t:"Dead Ball",k:"When the ball is 'dead', nothing can happen: no runs, no wickets.",a:"Defines when the ball is dead (settled, boundary, dismissal, etc.); no runs are scored nor batters dismissed from a dead ball."},
+ {n:21,t:"No Ball",k:"An illegal ball, often when the bowler's front foot lands fully over the line. You can't be bowled or LBW off it.",a:"Covers front-foot, back-foot, height and fielding-position No balls. A No ball costs a penalty run, cannot dismiss the striker by most methods, and brings a free hit in white-ball cricket."},
+ {n:22,t:"Wide Ball",k:"A ball too far from the batter to hit. It gives the batting side an extra run.",a:"A delivery passing out of reach of the striker in a normal position is a Wide: one penalty run and the ball is re-bowled."},
+ {n:30,t:"Batter Out of Their Ground",k:"You are 'out' of your ground unless your bat or foot is grounded behind the crease line.",a:"A batter is in their ground only if some part of bat (in hand) or person is grounded behind the popping crease; the basis of run-outs and stumpings."},
+ {n:32,t:"Bowled",k:"The bowler's ball knocks your stumps. The simplest way out.",a:"The striker is out Bowled if the wicket is broken by a delivery, even via bat or person, and takes precedence over other modes."},
+ {n:33,t:"Caught",k:"A fielder catches the ball off the bat before it bounces. Out.",a:"Out Caught if a fair delivery touches the bat and is caught before it touches the ground; not out if it was a No ball."},
+ {n:35,t:"Hit Wicket",k:"You break your own stumps with the bat or body while playing. Out.",a:"The striker is out Hit wicket if they break the wicket with bat or person in playing the ball or setting off for a run."},
+ {n:36,t:"Leg Before Wicket (LBW)",k:"The ball hits your pad in front of the stumps and would have hit them. The five-gate test.",a:"Five gates: legal ball; pitches in line or off side (not leg); intercepts the batter without first hitting the bat; impact in line (or outside off with no shot); and would have hit the stumps. Open the LBW Lab.",lab:"lbw"},
+ {n:38,t:"Run Out",k:"The fielding side breaks the wicket while you are out of your ground running.",a:"A batter is Run out if, while the ball is in play, they are out of their ground and the wicket is fairly broken by the fielding side."},
+ {n:39,t:"Stumped",k:"You leave your crease, miss, and the wicket-keeper breaks the wicket.",a:"Out Stumped if the striker is out of their ground (not attempting a run) and the wicket-keeper breaks the wicket with the ball."},
+ {n:41,t:"Unfair Play",k:"The rules that keep the game fair: ball-tampering, dangerous bowling, time-wasting and more.",a:"The omnibus fair-play Law: ball condition, dangerous and short-pitched bowling, distraction, and time-wasting. The non-striker run-out (Mankad) moved OUT of here to Law 38 (Run out) in 2022."}
+];
+let curLaw=36;
+const lawListEl=document.getElementById("lawList"),lawBodyEl=document.getElementById("lawBody");
+function renderLaws(){
+  lawListEl.innerHTML="";
+  LAWS.forEach(L=>{const d=document.createElement("div");d.className="law"+(L.n===curLaw?" on":"");
+    d.innerHTML=`<div class="ln">Law ${L.n}</div><div class="lt">${L.t}</div>`;
+    d.addEventListener("click",()=>{curLaw=L.n;renderLaws();});lawListEl.appendChild(d);});
+  const L=LAWS.find(x=>x.n===curLaw);
+  const body=(APP.mode==="kids")?`<p class="txt">${L.k}</p>`:`<p class="txt">${L.a}</p>`;
+  let links=`<div class="lawlinks">`;
+  if(L.lab) links+=`<a href="#" data-tab="${L.lab}">&#9654; Open the LBW Lab</a>`;
+  links+=`<a class="lawsrc" href="https://rankings.citizenofnowhere.org/teams/cricket" target="_blank" rel="noopener">Cricket on the site &#8599;</a></div>`;
+  lawBodyEl.innerHTML=`<div class="ln" style="color:var(--gold);font-weight:700;">LAW ${L.n}</div><h3>${L.t}</h3>${body}${links}<p class="note">Source: MCC Laws of Cricket (2017 Code).</p>`;
+  lawBodyEl.querySelectorAll("a[data-tab]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();switchGame(a.dataset.tab);}));
+}
+
+/* ===== HOW'S THAT (decisions) ===== */
+const SCEN=[
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"The ball hits the batter's pad right in front of the stumps and would have hit them. The bat did not touch it first, and the ball pitched in line. Out?",adults:"Legal ball, pitched in line, struck in line in front of the stumps with no inside edge, ball-tracking shows it crashing into middle. The appeal?"},
+  opts:[{l:"Out LBW",ok:true},{l:"Not out",ok:false}],
+  ruling:{kids:"Out LBW! All the boxes are ticked.",adults:"Out. All five gates of Law 36.1 are satisfied."}},
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"Same ball, but it pitched just OUTSIDE leg stump first. Out?",adults:"Identical line of impact, but the ball pitched outside leg stump. The appeal?"},
+  opts:[{l:"Out LBW",ok:false},{l:"Not out",ok:true}],
+  ruling:{kids:"Not out! A ball pitching outside leg can never be LBW.",adults:"Not out. Law 36.1.2 fails: pitching outside leg is an automatic reprieve, however plumb it looks."}},
+ {real:true,src:"2019 World Cup final",
+  prompt:{kids:"The 2019 World Cup final tied, and the Super Over also tied. How was the winner decided?",adults:"England and New Zealand tied the match and tied the Super Over. Under the rules then in force, how was the title decided?"},
+  opts:[{l:"Boundary count",ok:true},{l:"A bowl-out",ok:false}],
+  ruling:{kids:"Boundary count! England hit more boundaries (26 to 17). The rule was changed afterwards.",adults:"Boundary count-back, 26 to 17 to England. The rule was so contentious that the ICC replaced it with repeated Super Overs."}},
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"The batter is out of their crease, misses the ball, and the keeper whips off the bails. Which dismissal?",adults:"Striker overbalances outside the popping crease, not attempting a run; the keeper gathers and breaks the wicket. The mode?"},
+  opts:[{l:"Stumped",ok:true},{l:"Run out",ok:false}],
+  ruling:{kids:"Stumped! The keeper does it when you have left your ground and are not running.",adults:"Stumped (Law 39). Had the batter been attempting a run, it would be a Run out (Law 38)."}}
+];
+let scIdx=0,scAns=false;
+const decCard=document.getElementById("decCard");
+function renderDecisions(){
+  const s=SCEN[scIdx];
+  decCard.innerHTML=`<h3>How's That? <span style="color:var(--muted);font-weight:400;font-size:14px;">· ${scIdx+1} / ${SCEN.length}</span></h3>
+   <p class="sub">${s.prompt[APP.mode]}</p><div class="opts" id="opts"></div>
+   <div class="ruling" id="ruling"><b>${s.real?"Real moment":"Teaching scenario"}${s.real?" · "+s.src:""}.</b> ${s.ruling[APP.mode]}</div>
+   <div class="navbtn"><button id="nextSc">Next →</button></div>`;
+  const oe=document.getElementById("opts");
+  s.opts.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.l;
+    b.addEventListener("click",()=>{if(scAns)return;scAns=true;
+      document.querySelectorAll("#opts .opt").forEach(x=>{const oo=s.opts.find(z=>z.l===x.textContent);if(oo.ok)x.classList.add("right");if(x===b&&!o.ok)x.classList.add("wrong");});
+      document.getElementById("ruling").classList.add("show");});oe.appendChild(b);});
+  document.getElementById("nextSc").addEventListener("click",()=>{scIdx=(scIdx+1)%SCEN.length;scAns=false;renderDecisions();});
+}
+
+/* ===== TIMELINE ===== */
+const TL=[
+ {yr:"1981",t:"Underarm bowling banned",k:"After a famous underarm ball rolled along the ground to deny a six, it was banned as not within the spirit of the game.",a:"Trevor Chappell's underarm delivery to deny New Zealand a tying six prompted a ban on underarm bowling as not within the spirit of the game."},
+ {yr:"2007",t:"The free hit arrives",k:"For a front-foot no ball, the next ball became a 'free hit' where you cannot be bowled or caught out.",a:"The free hit was introduced in ODIs in October 2007 for foot-fault No balls; from 2015 every No ball brings a free hit."},
+ {yr:"2009",t:"DRS and ball-tracking",k:"Teams could now ask a TV review, using ball-tracking cameras to judge tight LBWs.",a:"The Decision Review System's player reviews were launched in Tests in 2009, bringing Hawk-Eye ball-tracking and the Umpire's Call tolerance into LBW adjudication."},
+ {yr:"2019",t:"A World Cup on boundary count",k:"A tied final AND a tied Super Over were settled by who hit more boundaries. It was so odd the rule was scrapped.",a:"The 2019 final was decided on boundary count-back (England 26, New Zealand 17). The ICC then abolished it, replacing it with repeated Super Overs."},
+ {yr:"2022",t:"The Mankad becomes a run-out",k:"Running out a non-striker who leaves early stopped being called 'unfair' and became a normal run-out.",a:"The MCC moved the non-striker run-out from Law 41 (Unfair play) to Law 38 (Run out), removing the stigma from a legitimate dismissal."},
+ {yr:"2024",t:"The stop clock",k:"A 60-second clock between overs to stop slow play.",a:"The ICC's stop clock requires the bowling side to be ready within 60 seconds of the previous over, first in white-ball cricket and then extended to Tests."}
+];
+let tlOpen=0;
+const tlCard=document.getElementById("tlCard");
+function renderTimeline(){
+  tlCard.innerHTML=`<h3>Rules That Changed the Game</h3><p class="sub">${APP.mode==="kids"?"Cricket's rules keep changing. Tap a moment.":"Each hinge reshaped the game. These pair naturally with the international cricket record on the site."}</p>
+   <div class="tl">${TL.map((e,i)=>`<div class="tlitem${i===tlOpen?" on":""}" data-i="${i}"><div class="yr">${e.yr}</div><div class="ti">${e.t}</div><div class="tldetail">${APP.mode==="kids"?e.k:e.a}<div class="m-src" style="color:var(--muted);font-size:12px;margin-top:5px;">Researched and verified.</div></div></div>`).join("")}</div>`;
+  tlCard.querySelectorAll(".tlitem").forEach(it=>it.addEventListener("click",()=>{tlOpen=+it.dataset.i;renderTimeline();}));
+}
+
+function renderAll(){
+  document.getElementById("lede").textContent=COPY.lede[APP.mode];
+  document.getElementById("modehint").textContent=COPY.modehint[APP.mode];
+  document.getElementById("lbwSoul").innerHTML="<p><b>Why this lives here.</b> LBW is cricket's offside: a spatial judgement that technology now measures to the millimetre, yet a tolerance band (Umpire's Call) still decides the closest ones. The line of belonging again, drawn through the stumps.</p>";
+  renderLbw();renderLaws();renderDecisions();renderTimeline();
+  document.getElementById("foot").innerHTML="<b>Prototype.</b> The LBW Lab models the five gates of Law 36 plus Umpire's Call; it is a teaching tool, not ball-tracking. Law text adapted from the MCC Laws of Cricket (2017 Code). Real moments researched and verified.";
+}
+renderAll();switchGame("lbw");
+</script>
+</body>
+</html>

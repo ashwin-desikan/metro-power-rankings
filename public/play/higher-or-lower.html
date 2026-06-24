@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Metro Higher or Lower</title>
+<style>
+  :root{--bg:#08080D;--panel:#12121A;--panel2:#1A1A26;--line:#1E1E2E;--ink:#E8E8ED;--muted:#8888A0;--accent:#4ECDC4;--gold:#e6b34a;--win:#4ECDC4;--lose:#E2628B;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px;}
+  a{color:var(--accent);text-decoration:none;}
+  .crumb{color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+  h1{font-size:26px;margin:10px 0 2px;letter-spacing:-.02em;}
+  .sub{color:var(--muted);margin:0 0 14px;font-size:14px;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
+  .chip{background:var(--panel2);border:1px solid var(--line);color:var(--ink);font-size:13px;padding:7px 12px;border-radius:999px;cursor:pointer;}
+  .chip.on{border-color:var(--accent);background:rgba(78,205,196,.14);color:#fff;}
+  .score{display:flex;gap:18px;align-items:baseline;margin-bottom:10px;}
+  .score b{font-size:30px;color:var(--gold);}.score .lbl{color:var(--muted);font-size:13px;}
+  .board{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:560px){.board{grid-template-columns:1fr;}}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;min-height:210px;display:flex;flex-direction:column;justify-content:center;gap:6px;position:relative;overflow:hidden;}
+  .mname{font-size:1.5rem;font-weight:800;letter-spacing:-.01em;}
+  .mctry{color:var(--muted);font-size:.9rem;}
+  .mval{font-size:1.9rem;font-weight:800;color:var(--gold);margin-top:6px;}
+  .munit{color:var(--muted);font-size:.85rem;}
+  .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--panel2);border:1px solid var(--line);border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--muted);z-index:3;}
+  @media(max-width:560px){.vs{top:auto;bottom:-6px;}}
+  .ask{font-size:.95rem;color:var(--muted);margin-bottom:8px;}
+  .btns{display:flex;gap:10px;justify-content:center;margin-top:8px;}
+  .btn{flex:1;border:none;border-radius:12px;padding:14px;font-size:1.05rem;font-weight:800;cursor:pointer;color:#06121f;}
+  .btn.hi{background:var(--win);}.btn.lo{background:#ff9d57;}
+  .btn:active{transform:translateY(2px);}
+  .panel.win{border-color:var(--win);}.panel.lose{border-color:var(--lose);}
+  .over{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center;margin-top:14px;display:none;}
+  .over.show{display:block;}
+  .over h2{margin:.2em 0;}
+  .pill{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:800;cursor:pointer;margin:6px 6px 0;color:var(--ink);}
+  .pill.share{background:var(--accent);color:#06121f;border:none;}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--panel2);border:1px solid var(--accent);color:var(--ink);padding:10px 16px;border-radius:10px;opacity:0;transition:opacity .2s;}
+  .toast.show{opacity:1;}
+  footer{color:var(--muted);font-size:12px;margin-top:18px;border-top:1px solid var(--line);padding-top:12px;}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><span><a href="/play/arcade">← Games</a></span><a href="/">Citizen of Nowhere</a></div>
+  <h1>Metro Higher or Lower</h1>
+  <p class="sub">Which metro has more? Tap Higher or Lower. One wrong answer ends the run.</p>
+  <div class="chips" id="dims"></div>
+  <div class="score"><span><b id="streak">0</b> <span class="lbl">streak</span></span><span><b id="best" style="color:var(--ink);font-size:20px;">0</b> <span class="lbl">best today</span></span></div>
+  <div class="board" id="board"></div>
+  <div class="over" id="over"></div>
+  <footer>Real figures from the Citizen of Nowhere metro rankings. <span id="dimsrc"></span></footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+"use strict";
+const DIMS=[
+  {key:"pop",label:"Population",unit:"people",fmt:v=>Math.round(v).toLocaleString()},
+  {key:"majorTeams",label:"Pro teams",unit:"major pro teams",fmt:v=>v.toLocaleString()},
+  {key:"skyscrapers",label:"Skyscrapers",unit:"skyscrapers",fmt:v=>v.toLocaleString()},
+  {key:"universities",label:"Universities",unit:"universities",fmt:v=>v.toLocaleString()},
+  {key:"gdp",label:"GDP",unit:"GDP",fmt:v=>"$"+v.toLocaleString(undefined,{maximumFractionDigits:0})+"B"},
+  {key:"companies",label:"Big companies",unit:"large companies",fmt:v=>v.toLocaleString()}
+];
+let METROS=[], dim=DIMS[0], left=null, right=null, streak=0, best=0, busy=false, seqIdx=0, seq=[];
+const $=id=>document.getElementById(id);
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function todaySeed(){const d=new Date();return d.getUTCFullYear()+"-"+(d.getUTCMonth()+1)+"-"+d.getUTCDate();}
+function buildSeq(){
+  const rnd=mulberry32(hash(todaySeed()+"|"+dim.key));
+  const pool=METROS.filter(m=>typeof m[dim.key]==="number"&&m[dim.key]>0);
+  // deterministic shuffle
+  const a=pool.slice();
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  seq=a; seqIdx=0;
+}
+function bestKey(){return "metro-hol-best-"+dim.key+"-"+todaySeed();}
+function loadBest(){best=parseInt(localStorage.getItem(bestKey())||"0",10)||0;$("best").textContent=best;}
+function saveBest(){if(streak>best){best=streak;localStorage.setItem(bestKey(),String(best));}$("best").textContent=best;}
+function nextMetro(){if(seqIdx>=seq.length)buildSeq();return seq[seqIdx++];}
+function start(){streak=0;$("streak").textContent="0";$("over").className="over";buildSeq();left=nextMetro();right=nextMetro();render();}
+function render(){
+  busy=false;
+  const L=dim.fmt(left[dim.key]);
+  $("board").innerHTML=`
+   <div class="panel" id="pL"><div class="mname">${left.name}</div><div class="mctry">${left.country}</div><div class="mval">${L}</div><div class="munit">${dim.unit}</div></div>
+   <div class="vs">vs</div>
+   <div class="panel" id="pR"><div class="mname">${right.name}</div><div class="mctry">${right.country}</div>
+     <div class="ask">has <b>${dim.label}</b>...</div>
+     <div class="btns"><button class="btn hi" id="bHi">Higher ⬆</button><button class="btn lo" id="bLo">Lower ⬇</button></div></div>`;
+  $("bHi").onclick=()=>guess("hi");$("bLo").onclick=()=>guess("lo");
+}
+function guess(g){
+  if(busy)return;busy=true;
+  const lv=left[dim.key], rv=right[dim.key];
+  const correct=(g==="hi")?(rv>=lv):(rv<=lv);
+  const pR=$("pR");
+  pR.querySelector(".btns").remove();pR.querySelector(".ask").remove();
+  const mv=document.createElement("div");mv.className="mval";mv.textContent=dim.fmt(rv);pR.appendChild(mv);
+  const mu=document.createElement("div");mu.className="munit";mu.textContent=dim.unit;pR.appendChild(mu);
+  pR.classList.add(correct?"win":"lose");
+  if(correct){streak++;$("streak").textContent=streak;saveBest();results.push("🟩");
+    setTimeout(()=>{left=right;right=nextMetro();render();},850);
+  }else{results.push("🟥");setTimeout(gameOver,900);}
+}
+let results=[];
+function gameOver(){
+  const o=$("over");o.className="over show";
+  const sh="Metro Higher or Lower ("+dim.label+") · streak "+streak+"\n"+results.slice(-12).join("")+"\nplay at /play/arcade";
+  o.innerHTML=`<h2>Run over — streak ${streak}</h2><p class="sub">Best today: ${best}. ${left.name} had ${dim.fmt(left[dim.key])} ${dim.unit}; ${right.name} had ${dim.fmt(right[dim.key])}.</p>
+    <span class="pill" id="again">Play again 🔁</span><span class="pill share" id="share">Share 📋</span>`;
+  $("again").onclick=()=>{results=[];start();};
+  $("share").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(sh);toast("Copied your result");};
+}
+function toast(t){const e=$("toast");e.textContent=t;e.className="toast show";setTimeout(()=>e.className="toast",1600);}
+function buildDims(){$("dims").innerHTML="";DIMS.forEach(d=>{const c=document.createElement("button");c.className="chip"+(d.key===dim.key?" on":"");c.textContent=d.label;
+  c.onclick=()=>{dim=d;[...$("dims").children].forEach(x=>x.classList.toggle("on",x.textContent===d.label));$("dimsrc").textContent="Comparing: "+d.label+".";results=[];loadBest();start();};$("dims").appendChild(c);});}
+fetch("/data/metros.json").then(r=>r.json()).then(d=>{
+  METROS=d.slice(0,170);
+  buildDims();$("dimsrc").textContent="Comparing: "+dim.label+".";loadBest();start();
+}).catch(()=>{document.getElementById("board").innerHTML='<div class="panel">Could not load metro data. Open this from the site, not as a local file.</div>';});
+</script>
+</body>
+</html>

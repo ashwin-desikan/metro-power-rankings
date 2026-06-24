@@ -80,13 +80,22 @@ export default async function NationalIndexPage() {
       <header className="mb-8">
         <div className="flex items-baseline justify-between flex-wrap gap-3">
           <h1 className="text-3xl font-semibold tracking-tight">International Football</h1>
-          <Link
-            href="/teams/national/quiz"
-            className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
-          >
-            Try the honors quiz →
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/teams/national/quiz"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+            >
+              Try the honors quiz →
+            </Link>
+            <a
+              href="/play/rules-lab.html"
+              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+            >
+              Football rules →
+            </a>
+          </div>
         </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           National-team coverage as a sibling product to the metro-anchored Club Football pages.

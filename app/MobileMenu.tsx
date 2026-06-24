@@ -60,10 +60,11 @@ const ITEMS: Item[] = [
 
   { href: '/studio', label: 'Studio', hint: 'A martech reference implementation', group: 'Studio' },
 
-  { href: '/play', label: '🎮 Play & Learn', hint: 'Free learning games for kids', group: 'Play' },
+  { href: '/play', label: '🎮 Kids Games', hint: 'Free learning games for younger fans', group: 'Play' },
+  { href: '/play/arcade', label: '🕹️ Games', hint: 'Bigger games: random metro, quizzes and more', group: 'Play' },
 
-  { href: '/methodology', label: 'Methodology' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About', group: 'About' },
+  { href: '/methodology', label: 'Methodology', group: 'About' },
   { href: '/updates', label: 'Release notes' },
 ];
 

@@ -52,7 +52,16 @@ export default function FootballIndex() {
       </nav>
 
       <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">Football</h1>
+        <div className="flex items-baseline justify-between flex-wrap gap-3">
+          <h1 className="text-3xl font-semibold tracking-tight">Football</h1>
+          <a
+            href="/play/rules-lab.html"
+            className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            Football rules →
+          </a>
+        </div>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Three layers of club football on one product surface. UEFA and FIFA tournament hubs
           carry every Champions League, Europa League, Conference League, Cup Winners&apos; Cup,

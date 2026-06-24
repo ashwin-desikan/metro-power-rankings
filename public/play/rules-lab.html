@@ -6,13 +6,13 @@
 <title>The Rules Lab — /play prototype</title>
 <style>
   :root{
-    --bg:#0d1117; --panel:#161b22; --panel-2:#1c2330; --line:#2a3340;
-    --ink:#e6edf3; --muted:#9aa7b4; --accent:#4ea1ff; --gold:#e6b34a;
-    --onside:#36c46a; --offside:#ff5d5d; --att:#4ea1ff; --def:#f0f3f6; --ball:#e6b34a;
+    --bg:#08080D; --panel:#12121A; --panel-2:#1A1A26; --line:#1E1E2E;
+    --ink:#E8E8ED; --muted:#8888A0; --accent:#4ECDC4; --gold:#e6b34a;
+    --onside:#4ECDC4; --offside:#E2628B; --att:#4ECDC4; --def:#f0f3f6; --ball:#e6b34a;
   }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);
-    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font:16px/1.55 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     -webkit-font-smoothing:antialiased;}
   .wrap{max-width:1060px;margin:0 auto;padding:24px 20px 72px;}
   a{color:var(--accent);text-decoration:none;}
@@ -50,14 +50,14 @@
   svg.pitch{width:100%;height:auto;display:block;touch-action:none;user-select:none;border-radius:10px;}
   .verdict{display:flex;align-items:center;gap:12px;margin-top:12px;}
   .tag{font-weight:800;font-size:19px;letter-spacing:.02em;padding:6px 14px;border-radius:999px;}
-  .tag.onside{background:rgba(54,196,106,.15);color:var(--onside);border:1px solid rgba(54,196,106,.4);}
-  .tag.offside{background:rgba(255,93,93,.13);color:var(--offside);border:1px solid rgba(255,93,93,.4);}
+  .tag.onside{background:rgba(78,205,196,.15);color:var(--onside);border:1px solid rgba(78,205,196,.4);}
+  .tag.offside{background:rgba(226,98,139,.13);color:var(--offside);border:1px solid rgba(226,98,139,.4);}
   .why{color:var(--muted);font-size:14px;flex:1;}.why b{color:var(--ink);font-weight:600;}
   .eras{display:flex;flex-direction:column;gap:8px;}
   .era-btn{text-align:left;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
     border-radius:10px;padding:10px 12px;cursor:pointer;transition:border-color .15s,background .15s;}
   .era-btn:hover{border-color:#3a4654;}
-  .era-btn.active{border-color:var(--accent);background:rgba(78,161,255,.10);}
+  .era-btn.active{border-color:var(--accent);background:rgba(78,205,196,.10);}
   .era-btn .yr{font-weight:700;font-size:14px;}
   .era-btn .rule{color:var(--muted);font-size:12.5px;margin-top:2px;}
   .chips{display:flex;flex-wrap:wrap;gap:8px;}
@@ -82,7 +82,7 @@
   .laws{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
   .law{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer;}
   .law:hover{border-color:var(--accent);}
-  .law.on{border-color:var(--accent);background:rgba(78,161,255,.10);}
+  .law.on{border-color:var(--accent);background:rgba(78,205,196,.10);}
   .law .ln{font-size:11px;color:var(--muted);}
   .law .lt{font-weight:600;font-size:13.5px;margin-top:2px;}
   .lawbody h3{margin-bottom:8px;}
@@ -99,8 +99,8 @@
   .opt{flex:1;min-width:140px;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
     border-radius:10px;padding:11px;cursor:pointer;font-size:14px;text-align:left;}
   .opt:hover{border-color:var(--accent);}
-  .opt.right{border-color:var(--onside);background:rgba(54,196,106,.12);}
-  .opt.wrong{border-color:var(--offside);background:rgba(255,93,93,.12);}
+  .opt.right{border-color:var(--onside);background:rgba(78,205,196,.12);}
+  .opt.wrong{border-color:var(--offside);background:rgba(226,98,139,.12);}
   .ruling{margin-top:12px;font-size:14px;color:var(--muted);display:none;}
   .ruling.show{display:block;}.ruling b{color:var(--ink);}
   .navbtn{display:inline-flex;gap:8px;margin-top:14px;}
@@ -110,7 +110,7 @@
   .barrow{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:14px;}
   .barrow .lab{width:130px;color:var(--ink);}
   .bartrack{flex:1;height:14px;background:var(--panel-2);border-radius:999px;overflow:hidden;border:1px solid var(--line);}
-  .barfill{height:100%;background:linear-gradient(90deg,#3a7bd5,#36c46a);}
+  .barfill{height:100%;background:linear-gradient(90deg,#3a7bd5,#4ECDC4);}
   .barrow .v{width:48px;text-align:right;color:var(--muted);font-size:13px;}
   /* timeline */
   .tl{position:relative;margin-top:8px;padding-left:22px;}
@@ -126,6 +126,7 @@
   footer{margin-top:34px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;}
   footer b{color:var(--ink);}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <div class="wrap">
