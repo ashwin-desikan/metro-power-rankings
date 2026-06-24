@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Play & Learn",
   description:
-    "Eight free learning games for younger fans, built from the Citizen of Nowhere sports rankings. Geography, reading and maths through real teams, cities and standings, for ages 5 to 10.",
+    "Nine free learning games for younger fans, built from the Citizen of Nowhere sports rankings. Geography, reading and maths through real teams, cities and standings, for ages 5 to 10.",
   alternates: { canonical: "/play" },
 };
 
@@ -18,6 +18,7 @@ const GAMES: Game[] = [
   { title: "Trophy Count", emoji: "\u{1F3C6}", file: "trophy-count.html", ages: "6–10", blurb: "Compare and add up real championship totals." },
   { title: "North or South?", emoji: "\u{1F9ED}", file: "north-or-south.html", ages: "6–10", blurb: "Is this team's city north or south of the equator?" },
   { title: "Odd One Out", emoji: "\u{1F914}", file: "odd-one-out.html", ages: "6–10", blurb: "Spot the team that does not belong." },
+  { title: "Offside or Onside?", emoji: "\u{1F6A9}", file: "offside-or-onside.html", ages: "7–10", blurb: "Spot the offside, and see how the offside rule changed over time." },
 ];
 
 export default function PlayHub() {
@@ -63,6 +64,25 @@ export default function PlayHub() {
           </a>
         ))}
       </div>
+      <a
+        href="/play/rules-lab.html"
+        style={{
+          display: "block",
+          marginTop: 24,
+          textDecoration: "none",
+          background: "#16324f",
+          color: "#fff",
+          borderRadius: 18,
+          padding: "18px 20px",
+          boxShadow: "0 6px 16px #16324f22",
+        }}
+      >
+        <div style={{ fontSize: "1.15rem", fontWeight: 800 }}>For older fans: The Rules Lab &rarr;</div>
+        <div style={{ fontSize: ".95rem", color: "#bcd4e6", marginTop: 4 }}>
+          Offside across eras, the 17 Laws, real refereeing calls, and how rule changes reshaped the
+          game. Kids and adults modes.
+        </div>
+      </a>
     </main>
   );
 }
