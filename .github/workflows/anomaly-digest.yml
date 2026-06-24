@@ -1,0 +1,65 @@
+# Weekly anomaly digest for rankings.citizenofnowhere.org.
+#
+# Why
+#   scripts/mine_anomalies.py deterministically mines the metros dataset for
+#   candidate editorial stories (polarity anomalies, outliers, and so on) and
+#   writes digests/<date>.md + .json. It only ever ran when invoked by hand.
+#   This workflow runs it on a weekly clock so the editorial pipeline always
+#   has a fresh slate of candidate angles waiting.
+#
+# Why an artifact, not a commit
+#   digests/ is gitignored (internal editorial scratch, same posture as
+#   BACKLOG / CONTENT / docs). Rather than force-add past the ignore, the digest
+#   is uploaded as a downloadable workflow artifact, retained 90 days. Pull it
+#   from the Actions run summary. To switch to a pushed-at-you model later,
+#   replace the upload step with a GitHub Issue create/update like the other
+#   monitors (updates-drift-watcher.yml, external-url-monitor.yml).
+#
+# Cost / footprint
+#   One stdlib-only Python run on a free GitHub-hosted runner. No build, no
+#   deploy, no secret. Mechanical work on GitHub Actions per the cost philosophy.
+
+name: Weekly anomaly digest
+
+on:
+  schedule:
+    # Monday 06:00 UTC. Weekly is the right floor given editorial cadence;
+    # bump to daily only if the pipeline can absorb it.
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}
+
+# Only one run in flight at a time.
+concurrency:
+  group: anomaly-digest
+  cancel-in-progress: true
+
+# Read-only: we never push from this workflow.
+permissions:
+  contents: read
+
+jobs:
+  mine:
+    name: Mine candidate stories
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run anomaly miner
+        run: python scripts/mine_anomalies.py
+
+      - name: Upload digest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: anomaly-digest
+          path: digests/
+          retention-days: 90
+          if-no-files-found: error

@@ -64,7 +64,7 @@ const CANONICAL_OVERRIDE: Record<string, string> = {
 const ESPN_STANDINGS_URL =
   "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings";
 
-const REVALIDATE_SECONDS = 3600;
+const REVALIDATE_SECONDS = 1800;
 
 export async function getCurrentNhlStandings(): Promise<StandingsSnapshot> {
   let raw: unknown = null;

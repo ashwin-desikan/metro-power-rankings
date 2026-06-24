@@ -59,7 +59,7 @@ export type StandingsSnapshot = {
 const ESPN_STANDINGS_URL =
   "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings";
 
-const REVALIDATE_SECONDS = 3600;
+const REVALIDATE_SECONDS = 1800;
 
 // ESPN team name -> workbook canonical. ESPN's `name` matches the workbook
 // canonical for the modern 30 almost everywhere; overrides for edge cases.

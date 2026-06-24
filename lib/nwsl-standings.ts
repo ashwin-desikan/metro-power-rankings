@@ -28,7 +28,7 @@ export type NwslStandingsSnapshot = {
 };
 
 const ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/soccer/usa.nwsl/standings";
-const REVALIDATE_SECONDS = 3600;
+const REVALIDATE_SECONDS = 1800;
 
 export async function getNwslStandings(): Promise<NwslStandingsSnapshot> {
   let raw: unknown = null;

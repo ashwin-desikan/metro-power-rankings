@@ -29,7 +29,7 @@ export type MlsStandingsSnapshot = {
 };
 
 const ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/soccer/usa.1/standings";
-const REVALIDATE_SECONDS = 3600;
+const REVALIDATE_SECONDS = 1800;
 
 export async function getCurrentMlsStandings(): Promise<MlsStandingsSnapshot> {
   let raw: unknown = null;

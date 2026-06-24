@@ -29,7 +29,7 @@ export type WnbaStandingsSnapshot = {
 };
 
 const ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/basketball/wnba/standings";
-const REVALIDATE_SECONDS = 3600;
+const REVALIDATE_SECONDS = 1800;
 
 export async function getCurrentWnbaStandings(): Promise<WnbaStandingsSnapshot> {
   let raw: unknown = null;

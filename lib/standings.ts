@@ -82,7 +82,7 @@ const ESPN_STANDINGS_URL =
 
 // Hourly ISR. NFL games at most 3-4x a week (Thu/Sun/Mon), so an hour gap
 // between revalidations is fine. The 24h daily rebuild handles the floor.
-const REVALIDATE_SECONDS = 3600;
+const REVALIDATE_SECONDS = 1800;
 
 export async function getCurrentNflStandings(): Promise<StandingsSnapshot> {
   let raw: unknown = null;
