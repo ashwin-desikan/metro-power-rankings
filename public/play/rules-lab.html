@@ -87,6 +87,11 @@
   .law .lt{font-weight:600;font-size:13.5px;margin-top:2px;}
   .lawbody h3{margin-bottom:8px;}
   .lawbody .txt{color:var(--ink);}
+  .lawpoints{margin:0;padding-left:18px;color:var(--ink);}
+  .lawpoints li{margin:0 0 7px;}
+  .lawlinks{margin-top:14px;display:flex;flex-wrap:wrap;gap:14px;font-size:13px;align-items:center;}
+  .lawlinks a{font-weight:600;}
+  .lawsrc{color:var(--muted)!important;}
   .xlink{margin-top:12px;font-size:13px;color:var(--muted);}
   .xlink a{font-weight:600;}
   /* decisions */
@@ -374,27 +379,80 @@ function buildOffControls(){
 }
 
 /* ============ LAWS EXPLORER ============ */
+const IFAB="https://www.theifab.com/laws-of-the-game-documents/";
 const LAWS=[
- {n:1,t:"The Field of Play",k:"Where football is played: a big grass (or turf) rectangle with goals at each end and lines that mark it out.",a:"Defines pitch dimensions, markings, goals, and surface. The boundary lines are part of the areas they enclose.",x:["Every pitch sits in a metro","/sports"]},
- {n:2,t:"The Ball",k:"The ball must be round and the right size and weight, so every game is fair.",a:"Circumference, weight, pressure and replacement procedure for a defective ball.",x:null},
- {n:3,t:"The Players",k:"Each team has up to eleven players, including one goalkeeper, plus subs on the bench.",a:"Team size, substitutions, and the consequences of fielding too many or ineligible players.",x:["See every club's roster history","/teams/football"]},
- {n:4,t:"The Players' Equipment",k:"What players wear: shirt, shorts, socks, shinguards and boots. Nothing dangerous.",a:"Compulsory kit, prohibition of dangerous items, and rules on slogans and undergarments.",x:null},
- {n:5,t:"The Referee",k:"The referee is the boss of the match and makes the final decisions.",a:"The referee's full authority, powers, and duties, including the use of replays where permitted.",x:null},
- {n:6,t:"The Other Match Officials",k:"The helpers: assistant referees on the lines and others who support the referee.",a:"Roles of assistant referees, the fourth official, VAR and the AVAR.",x:null},
- {n:7,t:"The Duration of the Match",k:"Two halves of 45 minutes, with extra time added on for stoppages.",a:"Periods of play, half-time, and allowance for time lost (added time).",x:null},
- {n:8,t:"The Start and Restart of Play",k:"How play begins and begins again: kick-offs and dropped balls.",a:"Kick-off and dropped-ball procedures that start and restart the match.",x:null},
- {n:9,t:"The Ball In and Out of Play",k:"The ball is out when it fully crosses a line; otherwise it is still in play.",a:"The ball is out of play only when it wholly crosses a boundary line, on the ground or in the air.",x:["A rule about boundaries","/sports/rivalries"]},
- {n:10,t:"Determining the Outcome",k:"You score by getting the whole ball over the goal line. Most goals wins.",a:"Method of scoring, the winner, and tie-breaks: extra time, away goals (where used), and kicks from the penalty mark.",x:["How ties are broken on our hubs","/sports/zone-zero-cup"]},
- {n:11,t:"Offside",k:"You cannot be nearer the goal than the ball and the last defenders when a teammate passes to you.",a:"Offside position, offence (active involvement), and the restart. The most contested spatial law in the sport.",x:["Open the Offside Lab","#offside"]},
- {n:12,t:"Fouls and Misconduct",k:"No kicking, pushing, or dangerous play. Bad fouls get yellow or red cards.",a:"Direct and indirect free-kick offences, handball, and the yellow/red card framework.",x:["Open You Make the Call","#decisions"]},
- {n:13,t:"Free Kicks",k:"A free kick restarts play after a foul. Opponents must stand back.",a:"Direct vs indirect free kicks, the required distance, and the wall.",x:null},
- {n:14,t:"The Penalty Kick",k:"A one-on-one shot from the spot, given for a foul inside the box.",a:"Award, procedure, and encroachment for a kick from the penalty mark during play.",x:["Open Penalty Geography","#penalties"]},
- {n:15,t:"The Throw-in",k:"When the ball goes out at the side, you throw it back in with both hands.",a:"Procedure for the two-handed throw and the restrictions on the thrower.",x:null},
- {n:16,t:"The Goal Kick",k:"A restart from the goal area when the attacking team puts it out behind the goal.",a:"Procedure for the goal kick and when the ball is back in play.",x:null},
- {n:17,t:"The Corner Kick",k:"A kick from the corner when the defending team puts it out behind their own goal.",a:"Procedure for the corner kick, a frequent source of goals.",x:null}
+ {n:1,t:"The Field of Play",
+  kids:"The pitch is a big green rectangle. The long sides are touchlines, the short sides are goal lines, and a halfway line splits it in two. The lines count as part of the area they border.",
+  adults:["Play is on a wholly natural, artificial or hybrid surface; artificial surfaces must be green.","Rectangular, marked with continuous non-dangerous lines; each line belongs to the area it bounds.","The longer boundaries are touchlines, the shorter are goal lines; the halfway line joins their midpoints, with a centre mark and a 9.15 m (10 yd) centre circle."],
+  ifab:IFAB},
+ {n:2,t:"The Ball",
+  kids:"The ball must be round, about 68 to 70 cm around, and the right weight, so every game is played fairly.",
+  adults:["Spherical, suitable material, circumference 68 to 70 cm (27 to 28 in), weight 410 to 450 g at kick-off.","Pressure 0.6 to 1.1 atmosphere at sea level.","In official FIFA or confederation competition the ball must carry a FIFA Quality Programme mark; no commercial advertising beyond competition, organiser and manufacturer marks."],
+  ifab:IFAB},
+ {n:3,t:"The Players",
+  kids:"Each team has up to eleven players, and one must be the goalkeeper. If a team drops below seven players, the match cannot go on.",
+  adults:["Two teams of up to eleven players, one a goalkeeper; a match may not start or continue with fewer than seven.","Up to five substitutes in official competition, at the discretion of FIFA, the confederation or the FA.","Top-division and senior international teams using five subs get a maximum of three substitution opportunities, plus changes at half-time."],
+  ifab:IFAB},
+ {n:4,t:"The Players' Equipment",
+  kids:"Players wear a shirt with sleeves, shorts, socks, shinguards and boots. Nothing dangerous is allowed, and the referee checks before kick-off.",
+  adults:["Nothing dangerous may be worn; accessories must be safe and securely covered, and the referee inspects players before play.","Compulsory: a sleeved shirt, shorts, socks, shinguards (suitable material, covered by the socks) and footwear.","The captain must wear the issued or authorised armband."],
+  ifab:IFAB},
+ {n:5,t:"The Referee",
+  kids:"The referee is in charge and makes the final decisions. Video, goal-line and offside technology can help the referee get the big calls right.",
+  adults:["The referee has full authority to enforce the Laws; decisions on facts connected with play, including whether a goal is scored, are final.","Calls are made on the referee's opinion in the spirit of the game.","Technology may assist: the VAR protocol, goal-line technology (GLT) and semi-automated offside (SAOT). A restart decision cannot be changed once play has restarted."],
+  ifab:IFAB},
+ {n:6,t:"The Other Match Officials",
+  kids:"The referee has helpers: assistant referees on the lines and video officials watching replays. The referee still makes the final call.",
+  adults:["Assistant referees, a fourth official, additional and reserve assistants, plus the VAR and at least one AVAR (the video match officials) may be appointed.","On-field officials assist when they have a clearer view than the referee.","The final decision always rests with the referee."],
+  ifab:IFAB},
+ {n:7,t:"The Duration of the Match",
+  kids:"A match is two halves of 45 minutes. The referee adds extra time at the end of each half for stoppages like injuries and celebrations.",
+  adults:["Two equal halves of 45 minutes, reducible only by pre-match agreement within competition rules.","Half-time interval of up to 15 minutes.","The referee adds time lost to substitutions, injuries, time-wasting, sanctions, VAR checks, goal celebrations and other delays."],
+  ifab:IFAB},
+ {n:8,t:"The Start and Restart of Play",
+  kids:"Each half, and play after every goal, begins with a kick-off from the centre. When the referee stops play for no specific reason, a dropped ball restarts it.",
+  adults:["A kick-off starts each half and restarts play after a goal; other restarts are free kicks, penalties, throw-ins, goal kicks and corner kicks.","A dropped ball restarts play when the referee stops it and no other restart applies.","At kick-off all players are in their own half, opponents at least 9.15 m (10 yd) away, ball stationary on the centre mark; a goal may be scored directly."],
+  ifab:IFAB},
+ {n:9,t:"The Ball In and Out of Play",
+  kids:"The ball is out only when the whole of it crosses a line. If it bounces off a post or the crossbar and stays on the pitch, it is still in play.",
+  adults:["Out of play when it wholly crosses a goal line or touchline, on the ground or in the air, or when the referee stops play.","If it strikes a match official and a promising attack starts, a goal results, or possession changes, play restarts with a dropped ball.","Otherwise it is in play, including when it rebounds off the goalposts, crossbar or corner flagpost and stays on the field."],
+  ifab:IFAB},
+ {n:10,t:"Determining the Outcome of a Match",
+  kids:"You score when the whole ball crosses the line between the posts and under the bar. Most goals wins; a tied knockout can go to extra time and penalties.",
+  adults:["A goal is scored when the whole ball passes over the goal line, between the posts and under the bar, with no offence by the scoring team.","The team scoring more goals wins; otherwise the match is drawn.","When a winner is required: the away-goals rule, two 15-minute periods of extra time, and/or kicks from the penalty mark (shoot-out)."],
+  lab:"penalties", ifab:IFAB},
+ {n:11,t:"Offside",
+  kids:"You are offside if, when a teammate plays the ball, you are in the other team's half and nearer their goal than both the ball and the second-to-last defender, and then you get involved. Being level with that defender is onside.",
+  adults:["It is not an offence merely to be in an offside position.","Offside position: any part of the head, body or feet in the opponents' half and nearer the goal line than both the ball and the second-last opponent. Arms and hands do not count (the arm boundary is the bottom of the armpit); level with the second-last opponent is onside.","It becomes an offence only on active involvement, judged at the moment a team-mate plays the ball: interfering with play, interfering with an opponent, or gaining an advantage. The restart is an indirect free kick."],
+  lab:"offside", ifab:"https://www.theifab.com/laws/latest/offside/"},
+ {n:12,t:"Fouls and Misconduct",
+  kids:"No kicking, pushing, tripping or dangerous play. A careless foul is just a free kick; a reckless one is a yellow card; a really dangerous one is a red card.",
+  adults:["A direct free kick is given for offences against an opponent that are careless, reckless or use excessive force: charging, jumping at, kicking, pushing, striking, tackling or tripping, and for handball.","Careless = no card; reckless = caution (yellow); excessive force = sending-off (red).","Indirect free kicks cover offences such as dangerous play and impeding without contact."],
+  lab:"decisions", ifab:"https://www.theifab.com/laws/latest/fouls-and-misconduct/"},
+ {n:13,t:"Free Kicks",
+  kids:"A free kick restarts play after a foul. From a direct free kick you can score straight away; from an indirect one (referee's arm raised) someone else must touch it first.",
+  adults:["Two types: direct (a goal may be scored straight from it) and indirect (the referee raises an arm; another touch is needed before a goal counts).","Taken from where the offence occurred, with exceptions inside the goal area.","A direct free kick into your own goal awards a corner; an indirect free kick into a goal awards a goal kick or corner accordingly."],
+  ifab:IFAB},
+ {n:14,t:"The Penalty Kick",
+  kids:"A penalty is a shot from the spot, given for a direct-free-kick foul inside the box. The goalkeeper must stay on the line until the ball is kicked, and everyone else waits outside the area.",
+  adults:["Awarded for a direct-free-kick offence committed inside the offender's own penalty area; a goal may be scored directly.","The ball is on the penalty mark; the goalkeeper stays on the goal line between the posts, facing the kicker, until the ball is kicked.","All other players stand at least 9.15 m (10 yd) behind the mark, outside the area; the kicker must play the ball forward (backheeling is allowed if it moves forward)."],
+  lab:"penalties", ifab:"https://www.theifab.com/laws/latest/the-penalty-kick/"},
+ {n:15,t:"The Throw-in",
+  kids:"When the ball goes out at the side, the other team throws it back in with both hands, from behind and over the head, keeping both feet on the ground.",
+  adults:["Awarded to the opponents of the player who last touched the ball when it wholly crosses the touchline; a goal cannot be scored directly.","The thrower faces the field, keeps part of each foot on or behind the touchline, and delivers with both hands from behind and over the head.","Opponents stand at least 2 m (2 yd) away; an incorrectly taken throw is awarded to the opposing team."],
+  ifab:IFAB},
+ {n:16,t:"The Goal Kick",
+  kids:"A goal kick restarts play when the attacking team sends the ball out behind the goal. A defender or the keeper kicks it from the goal area.",
+  adults:["Awarded when the attacking team last touches the ball before it wholly crosses the goal line without a goal; a goal may be scored directly against opponents.","Ball stationary, kicked from anywhere in the goal area, in play once kicked and clearly moving; opponents stay outside the penalty area until then.","A five-second countdown now discourages delay, with a corner awarded if the kick is not taken in time."],
+  ifab:IFAB},
+ {n:17,t:"The Corner Kick",
+  kids:"A corner is given when a defender puts the ball out behind their own goal. It is taken from the corner of the pitch, and you can score straight from it.",
+  adults:["Awarded when the defending team last touches the ball before it wholly crosses its own goal line without a goal; a goal may be scored directly against opponents.","Also awarded if the goalkeeper controls the ball with the hands or arms for more than eight seconds (a 2025/26 change).","Taken from the corner area nearest to where the ball left the field."],
+  ifab:IFAB}
 ];
 let curLaw=11;
 const lawListEl=document.getElementById("lawList"),lawBodyEl=document.getElementById("lawBody");
+const LAB_LABELS={offside:"Offside Lab",decisions:"You Make the Call",penalties:"Penalty Geography"};
 function renderLaws(){
   lawListEl.innerHTML="";
   LAWS.forEach(L=>{const d=document.createElement("div");
@@ -402,11 +460,14 @@ function renderLaws(){
     d.innerHTML=`<div class="ln">Law ${L.n}</div><div class="lt">${L.t}</div>`;
     d.addEventListener("click",()=>{curLaw=L.n;renderLaws();});lawListEl.appendChild(d);});
   const L=LAWS.find(x=>x.n===curLaw);
-  let xl="";
-  if(L.x){const goesTab=L.x[1].startsWith("#");
-    xl=`<div class="xlink">↳ ${L.x[0]}: <a href="${L.x[1]}"${goesTab?' data-tab="'+L.x[1].slice(1)+'"':''}>${goesTab?"open":L.x[1]}</a></div>`;}
+  const body=(APP.mode==="kids")
+    ? `<p class="txt">${L.kids}</p>`
+    : `<ul class="lawpoints">${L.adults.map(p=>`<li>${p}</li>`).join("")}</ul>`;
+  let links=`<div class="lawlinks">`;
+  if(L.lab) links+=`<a href="#" data-tab="${L.lab}">&#9654; Try it in the ${LAB_LABELS[L.lab]}</a>`;
+  links+=`<a class="lawsrc" href="${L.ifab}" target="_blank" rel="noopener">Official Law text at The IFAB &#8599;</a></div>`;
   lawBodyEl.innerHTML=`<div class="ln" style="color:var(--gold);font-weight:700;">LAW ${L.n}</div>
-    <h3>${L.t}</h3><div class="txt">${APP.mode==="kids"?L.k:L.a}</div>${xl}`;
+    <h3>${L.t}</h3>${body}${links}`;
   lawBodyEl.querySelectorAll("a[data-tab]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();switchGame(a.dataset.tab);}));
 }
 

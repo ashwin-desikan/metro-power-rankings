@@ -1,4 +1,4 @@
-import "server-only";
+﻿import "server-only";
 
 // Shared release-notes data. Single source of truth, imported by both the
 // /updates page renderer (full list, brevity-validated) and the home-page
