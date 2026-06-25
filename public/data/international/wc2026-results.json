@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-24T05:56:40Z",
+ "as_of": "2026-06-25T09:27:51Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -412,6 +412,60 @@
    "a_slug": "colombia",
    "a_score": 1,
    "b_slug": "congo-dr",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489408": {
+   "round": "Group",
+   "a_slug": "switzerland",
+   "a_score": 2,
+   "b_slug": "canada",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1539009": {
+   "round": "Group",
+   "a_slug": "bosnia-herzegovina",
+   "a_score": 3,
+   "b_slug": "qatar",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489405": {
+   "round": "Group",
+   "a_slug": "morocco",
+   "a_score": 4,
+   "b_slug": "haiti",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489406": {
+   "round": "Group",
+   "a_slug": "scotland",
+   "a_score": 0,
+   "b_slug": "brazil",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1539010": {
+   "round": "Group",
+   "a_slug": "czech-republic",
+   "a_score": 0,
+   "b_slug": "mexico",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489407": {
+   "round": "Group",
+   "a_slug": "south-africa",
+   "a_score": 1,
+   "b_slug": "south-korea",
    "b_score": 0,
    "winner_slug": null,
    "completed": true
