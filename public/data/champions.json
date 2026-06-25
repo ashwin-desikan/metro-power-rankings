@@ -1,17 +1,5 @@
 [
 {
-"sport": "Baseball",
-"competition": "College World Series",
-"team": "LSU",
-"year": 2025,
-"dateAwarded": "2025-06-22",
-"scope": "United States",
-"scopeType": "Domestic",
-"nextAwarded": 2026,
-"nextAwardedDate": "2026-06-21",
-"tier": 4
-},
-{
 "sport": "Rugby Union",
 "competition": "Top 14",
 "team": "Stade Toulousain",
@@ -741,6 +729,30 @@
 "scopeType": "Domestic",
 "nextAwarded": 2027,
 "nextAwardedDate": "2027-06-19",
+"tier": 4
+},
+{
+"sport": "Golf",
+"competition": "US Open Championship",
+"team": "Wyndham Clark",
+"year": 2026,
+"dateAwarded": "2026-06-21",
+"scope": "World",
+"scopeType": "International",
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-06-20",
+"tier": 3
+},
+{
+"sport": "Baseball",
+"competition": "College World Series",
+"team": "Oklahoma",
+"year": 2026,
+"dateAwarded": "2026-06-22",
+"scope": "United States",
+"scopeType": "Domestic",
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-06-21",
 "tier": 4
 },
 {

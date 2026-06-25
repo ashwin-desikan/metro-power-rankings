@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import type { NpbTeam, NpbDefunct } from "@/lib/npb";
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
@@ -107,6 +108,7 @@ export default function ClubsTable({
             {rows.map((r) => (
               <tr key={r.key} className="border-t" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1.5 px-3 font-medium">
+                  <CrestIcon name={r.name} size={18} className="mr-1.5 align-middle" />
                   {r.slug ? (
                     <Link href={`/teams/baseball/npb/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link>
                   ) : (

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { euroleagueClubColor, euroleagueMonogram } from "@/lib/euroleague-colors";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 
 type Club = {
   name: string; country: string; w: number; l: number; seasons: number;
@@ -68,17 +69,23 @@ export default function EuroleagueClubsTable({ clubs }: { clubs: Club[] }) {
                 <tr key={c.name} className="border-t" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 px-3 font-medium">
                     <span className="inline-flex items-center gap-2 min-w-0">
-                      {col.known ? (
-                        <span
-                          className="inline-grid place-items-center rounded-full flex-shrink-0"
-                          style={{ background: col.bg, color: col.fg, width: 20, height: 20, fontSize: 8, fontWeight: 700 }}
-                          aria-hidden
-                        >
-                          {euroleagueMonogram(c.name)}
-                        </span>
-                      ) : (
-                        <span className="inline-block flex-shrink-0" style={{ width: 20 }} aria-hidden />
-                      )}
+                      <TeamCrest
+                        name={c.name}
+                        size={20}
+                        fallback={
+                          col.known ? (
+                            <span
+                              className="inline-grid place-items-center rounded-full flex-shrink-0"
+                              style={{ background: col.bg, color: col.fg, width: 20, height: 20, fontSize: 8, fontWeight: 700 }}
+                              aria-hidden
+                            >
+                              {euroleagueMonogram(c.name)}
+                            </span>
+                          ) : (
+                            <span className="inline-block flex-shrink-0" style={{ width: 20 }} aria-hidden />
+                          )
+                        }
+                      />
                       <span className="truncate">{c.name}</span>
                       {!c.in_team_list && c.titles > 0 ? (
                         <span className="text-[10px] text-[var(--text-dim)]">· historic</span>

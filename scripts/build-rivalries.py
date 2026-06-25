@@ -27,12 +27,13 @@ CAP = 2
 URL_SEG = {"nfl": "nfl", "nba": "nba", "nhl": "nhl", "mlb": "mlb", "cbb": "cbb",
            "college-football": "cfb", "football": "football", "cricket": "cricket",
            "rugby-union": "rugby-union", "nrl": "nrl", "afl": "afl", "cfl": "cfl",
-           "wnba": "wnba", "cbb-w": "cbb-w", "wfootball": "wfootball/clubs"}
+           "wnba": "wnba", "cbb-w": "cbb-w", "wfootball": "wfootball/clubs",
+           "npb": "baseball/npb"}
 
 LEAGUE_COUNTRY = {"nfl": "United States", "nba": "United States", "nhl": "United States",
                   "mlb": "United States", "cbb": "United States", "college-football": "United States",
                   "wnba": "United States", "afl": "Australia", "nrl": "Australia", "cfl": "Canada",
-                  "cbb-w": "United States"}
+                  "cbb-w": "United States", "npb": "Japan"}
 
 # Canonical sport names (match lib/sportsCatalog.ts `sport`): college and pro
 # share one sport name.
@@ -41,7 +42,7 @@ SPORT_LABEL = {"nfl": "American Football", "college-football": "American Footbal
                "cbb": "Basketball", "mlb": "Baseball", "nhl": "Hockey",
                "football": "Football", "cricket": "Cricket", "rugby-union": "Rugby Union",
                "nrl": "Rugby League", "afl": "Aussie Rules",
-               "cbb-w": "Women's Basketball", "wfootball": "Women's Football"}
+               "cbb-w": "Women's Basketball", "wfootball": "Women's Football", "npb": "Baseball"}
 
 CRICKET_EXCLUDE = {("australia", "westindies")}  # directed (nation, rival) to drop
 
@@ -67,6 +68,9 @@ NAMED_SERIES = [  # added both ways (mutual)
     ("cbb", "Kansas", "Kansas State", "Sunflower Showdown"),
     ("cbb", "Kansas", "Missouri", "Border War"),
     ("cbb", "Duke", "Kentucky", ""),
+    ("npb", "Yomiuri Giants", "Hanshin Tigers", "Giants–Tigers rivalry"),
+    ("npb", "Hanshin Tigers", "Orix Buffaloes", "Kansai Derby"),
+    ("npb", "Yomiuri Giants", "Tokyo Yakult Swallows", "Tokyo Series"),
 ]
 NAMED_ONESIDED = [  # added one way only: (lg, from, to, name)
     ("nhl", "Senators", "Maple Leafs", "Battle of Ontario"),
@@ -100,6 +104,8 @@ TOP_RIVALRIES = [
     ("football", "Borussia Dortmund", "Bayern Munich"), ("football", "Internazionale", "Juventus"),
     ("football", "Manchester United", "Liverpool"),
     ("football", "Brazil", "Argentina"), ("football", "England", "Germany"), ("football", "United States", "Mexico"),
+    ("football", "Peñarol", "Nacional"), ("football", "Newcastle United", "Sunderland"),
+    ("football", "Lazio", "AS Roma"), ("football", "Ajax", "Feyenoord"),
 ]
 TOP_SET = set()
 
@@ -240,6 +246,7 @@ def res(lg):
                    "cfl": lambda: data_franchise_resolver("cfl"),
                    "wnba": lambda: data_franchise_resolver("wnba"),
                    "cbb-w": wcbb_resolver, "wfootball": wfootball_resolver,
+                   "npb": lambda: simple_resolver("npb/teams.json"),
                    "national": national_resolver}[lg]()
     return RES[lg]
 

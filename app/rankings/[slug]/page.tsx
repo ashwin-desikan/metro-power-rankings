@@ -25,6 +25,7 @@ import {
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport, sportIcon, leagueIcon } from "@/lib/sportLabels";
+import { getBaseballLeagueByName } from "@/lib/allTeams";
 import { getCrest } from "@/lib/teamCrest";
 import { getRugbyClubHonours } from "@/lib/rugbyClubs";
 import { getT20Honours } from "@/lib/cricketClubs";
@@ -1579,12 +1580,21 @@ function TeamsSection({
       };
     }),
   ].sort((a, b) => b.titles - a.titles || b.seasons - a.seasons || a.name.localeCompare(b.name));
+  // College cards: prefer the self-hosted crest (getCrest), falling back to the
+  // team-colored monogram when no badge exists (defunct/minor programs).
+  const collegeLogo = (name: string, mono: string, color: string) =>
+    getCrest(name) ? (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={getCrest(name)!.src} alt="" className="w-6 h-6 flex-shrink-0 object-contain" loading="lazy" />
+    ) : (
+      <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: color, width: 24, height: 24 }} aria-hidden>{mono}</span>
+    );
   const renderCollegeCard = (m: MajorCollegeCard) => {
     const body = (
       <>
         <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">{m.sport === "football" ? "🏈" : "🏀"}</span>{m.sport === "football" ? `College Football${m.division ? ` (${m.division})` : ""}` : "College Basketball"}{m.conference ? ` (${m.conference})` : ""}{m.isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
         <div className="flex items-center gap-2">
-          <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
+          {collegeLogo(m.name, m.mono, m.color)}
           <p className="font-semibold text-[var(--text)]">{m.name}</p>
         </div>
         {m.hasStats && (<div className="flex gap-1.5 mt-2 flex-wrap">
@@ -1606,7 +1616,7 @@ function TeamsSection({
     <Link key={"w-" + m.slug} href={m.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
       <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>Women&apos;s College Basketball{m.conference ? ` (${m.conference})` : ""}{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
       <div className="flex items-center gap-2">
-        <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
+        {collegeLogo(m.name, m.mono, m.color)}
         <p className="font-semibold text-[var(--text)]">{m.name}</p>
       </div>
       <div className="flex gap-1.5 mt-2 flex-wrap">
@@ -1621,7 +1631,7 @@ function TeamsSection({
     <div key={"h-" + m.name} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">
       <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏒</span>College Hockey{isTop && <span className="ml-1 cursor-default" title="Top Team for this metro — the franchise that most defines this city's sports identity" aria-label="Top Team">👑</span>}</p>
       <div className="flex items-center gap-2">
-        <span className="rounded-md grid place-items-center font-bold text-white text-[10px] flex-shrink-0" style={{ background: m.color, width: 24, height: 24 }} aria-hidden>{m.mono}</span>
+        {collegeLogo(m.name, m.mono, m.color)}
         <p className="font-semibold text-[var(--text)]">{m.name}</p>
       </div>
       <div className="flex gap-1.5 mt-2 flex-wrap">
@@ -2201,7 +2211,10 @@ function TeamCard({
   const footyFranchise = aflFranchise ?? nrlFranchise;
   const wfootballClub = link?.league === "wfootball" ? getWClubByName(team.team) : undefined;
   const wHonor = (slug: string) => wfootballClub?.honors.find((h) => h.competition_slug === slug);
-  const displayLeague = wnbaFranchise ? "WNBA" : npbTeam ? "NPB" : team.league;
+  // Foreign/minor baseball arrives tagged "Minor Lg Base" from the workbook;
+  // restore the real league (KBO, NPB, International League, ...) from all-teams.json.
+  const baseballLeague = team.sport === "Baseball" ? getBaseballLeagueByName(team.team) : null;
+  const displayLeague = wnbaFranchise ? "WNBA" : npbTeam ? "NPB" : (baseballLeague ?? team.league);
   // For football, Gold Standard only applies to Level 1 (Big 5 top flight).
   // Lower-tier clubs in England/Spain/etc. share the same league label but
   // are not Gold — gate on level === "Major" (the ETL value for tier 1).

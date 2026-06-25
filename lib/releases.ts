@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-25",
+    headline: "Crests and flags expand worldwide, richer rivalries board, F1 upgrades",
+    items: [
+      "Club crests and country flags now render across far more of the site: NPB, CFL, rugby and football honour rolls, the rivalries board, the cross-sport Greatest Games tables, and metro team cards.",
+      "New crest coverage for Japan's J.League, the K League and Chinese Super League, the Gulf, Egyptian and South African top flights, NPB and KBO baseball, Triple-A, and the English National League.",
+      "The Sports Rivalries board adds a League column, full team names with correct logos, flags for every national rivalry, and four new Top Rivalries; college metro cards now show their crests.",
+      "Formula 1 gains constructor logos across the standings and Greatest Games, the full 2026 race calendar with dates for upcoming rounds, and sport emojis for golf and tennis major champions.",
+    ],
+  },
+  {
     date: "2026-06-24",
     headline: "Club crests sitewide and national-team flags, plus Play & Learn",
     items: [

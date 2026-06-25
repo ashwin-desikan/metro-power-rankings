@@ -12,6 +12,8 @@ import {
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import CflAllTimeTable from "./CflAllTimeTable";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 export const dynamicParams = false;
 
@@ -126,7 +128,7 @@ export default async function CflPage() {
                     <tr key={r.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.grey_cup ? "rgba(212,175,55,0.07)" : undefined }}>
                       <td className="py-2 px-3">
                         <div className="flex items-center gap-2">
-                          <Monogram f={bySlug.get(r.slug) ?? { slug: r.slug, name: r.team }} />
+                          <TeamCrest name={bySlug.get(r.slug)?.name ?? r.team} size={22} fallback={<Monogram f={bySlug.get(r.slug) ?? { slug: r.slug, name: r.team }} />} />
                           <Link href={`/teams/cfl/${r.slug}`} className={`hover:text-[var(--accent)] transition-colors ${r.grey_cup ? "font-semibold" : ""}`}>{bySlug.get(r.slug)?.name ?? r.team}</Link>
                           {r.grey_cup ? <span className="text-yellow-400 text-xs leading-none" title="Grey Cup champion">★</span>
                             : r.gc_final ? <span className="text-[var(--text-dim)] text-[11px] leading-none" title="Reached the Grey Cup">⊳</span>
@@ -179,10 +181,12 @@ export default async function CflPage() {
                 <tr key={`${g.year}-${g.game}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 px-3 text-[var(--text-muted)]">{g.year}</td>
                   <td className="py-1.5 px-2 font-medium">
+                    <CrestIcon name={g.champion} size={16} className="mr-1.5 align-middle" />
                     {g.champion_slug ? <Link href={`/teams/cfl/${g.champion_slug}`} className="hover:text-[var(--accent)] transition-colors">{g.champion}</Link> : g.champion}
                   </td>
                   <td className="py-1.5 px-2 text-right text-xs">{g.score}{g.ot ? " (OT)" : ""}</td>
                   <td className="py-1.5 px-2 text-[var(--text-muted)]">
+                    <CrestIcon name={g.runner_up} size={16} className="mr-1.5 align-middle" />
                     {g.runner_up_slug ? <Link href={`/teams/cfl/${g.runner_up_slug}`} className="hover:text-[var(--accent)] transition-colors">{g.runner_up}</Link> : g.runner_up}
                   </td>
                   <td className="py-1.5 px-3 text-[var(--text-dim)] text-xs hidden sm:table-cell">{g.city}</td>

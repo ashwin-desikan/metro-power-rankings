@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import ClubsTable from "./ClubsTable";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getAllNpbTeams, getNpbDefunct, getNpbHub } from "@/lib/npb";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -33,9 +34,14 @@ export default function NpbHubPage() {
   const teamLink = (name: string | null) => {
     if (!name) return <span className="text-[var(--text-dim)]">—</span>;
     const slug = slugByName.get(name);
-    return slug
-      ? <Link href={`/teams/baseball/npb/${slug}`} className="hover:text-[var(--accent)]">{name}</Link>
-      : <span>{name}</span>;
+    return (
+      <span className="inline-flex items-center">
+        <CrestIcon name={name} size={18} className="mr-1.5 align-middle" />
+        {slug
+          ? <Link href={`/teams/baseball/npb/${slug}`} className="hover:text-[var(--accent)]">{name}</Link>
+          : <span>{name}</span>}
+      </span>
+    );
   };
 
   return (

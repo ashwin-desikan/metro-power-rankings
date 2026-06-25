@@ -19,9 +19,13 @@ import { getAllVolleyballTeams } from "./volleyball";
 import { getAllBaseballTeams } from "./baseball";
 import { getWcbbTeamForName } from "./wcbb";
 import { getWnbaFranchiseByTeamName } from "./wnba";
+import { getF1Champions } from "./f1";
 
 export type ChampionRow = Championship & {
   teamHref: string | null;
+  // For individual sports with no club crest: the F1 champion's constructor
+  // (so the board can show the constructor logo). Null otherwise.
+  crestName: string | null;
   leagueHref: string | null;
   leagueLabel: string;
   geo: string;
@@ -345,6 +349,15 @@ function leagueHub(c: Championship): { href: string | null; label: string } {
   }
 }
 
+// The F1 Drivers' champion is an individual; surface the constructor they drove
+// for that season so the hub can render the constructor crest.
+function f1ConstructorFor(c: Championship): string | null {
+  if (c.sport !== "F1") return null;
+  const champs = getF1Champions();
+  const byYear = champs.find((x) => Number(x.season) === Number(c.year) && x.driver === c.team);
+  return (byYear ?? champs.find((x) => x.driver === c.team))?.constructor ?? null;
+}
+
 let _rows: ChampionRow[] | null = null;
 export function getChampionsWithLinks(): ChampionRow[] {
   if (_rows) return _rows;
@@ -359,6 +372,7 @@ export function getChampionsWithLinks(): ChampionRow[] {
       geo: geoFor(c),
       region: regionFor(geoFor(c)),
       gold: GOLD_COMPETITIONS.has(c.competition),
+      crestName: f1ConstructorFor(c),
     };
   });
   return _rows;

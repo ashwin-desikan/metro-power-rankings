@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 // Local structural type (kept independent of the server-only lib/valuations
 // module so this client component never pulls a server import).
@@ -123,11 +124,14 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
                 >
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-dim)]">{i + 1}</td>
                   <td className="px-3 py-2">
-                    {r.href ? (
-                      <Link href={r.href} className="font-medium hover:text-[var(--accent)] hover:underline">{r.displayName}</Link>
-                    ) : (
-                      <span className="font-medium" title="No team page yet">{r.displayName}</span>
-                    )}
+                    <span className="inline-flex items-center min-w-0">
+                      <CrestIcon name={r.team} size={18} className="mr-1.5 align-middle" />
+                      {r.href ? (
+                        <Link href={r.href} className="font-medium hover:text-[var(--accent)] hover:underline truncate">{r.displayName}</Link>
+                      ) : (
+                        <span className="font-medium truncate" title="No team page yet">{r.displayName}</span>
+                      )}
+                    </span>
                   </td>
                   <td className="px-3 py-2">
                     <Link href={r.leagueHref} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{r.league}</Link>

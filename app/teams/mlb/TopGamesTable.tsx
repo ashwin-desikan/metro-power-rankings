@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/mlb";
 import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 type Row = TopGameLeagueRow & { video?: GameVideo };
 
@@ -90,6 +91,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                 </td>
                 <td className="py-2 pr-3">
                   <div className="leading-tight">
+                    <CrestIcon name={`${g.winner_city} ${g.winner_team}`} size={18} className="mr-1.5 align-middle" />
                     {g.winner_slug ? (
                       <Link href={`/teams/mlb/${g.winner_slug}`} className="font-semibold hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">
                         {g.winner_city} {g.winner_team}
@@ -100,6 +102,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                     <span className="tabular-nums font-semibold" style={{ color: "var(--accent)" }}>{g.winner_score}</span>
                     <span className="mx-1 text-[var(--text-dim)]">{g.is_tie ? "=" : "-"}</span>
                     <span className="tabular-nums text-[var(--text-muted)]">{g.loser_score}</span>{" "}
+                    <CrestIcon name={`${g.loser_city} ${g.loser_team}`} size={18} className="mr-1.5 align-middle" />
                     {g.loser_slug ? (
                       <Link href={`/teams/mlb/${g.loser_slug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">
                         {g.loser_city} {g.loser_team}

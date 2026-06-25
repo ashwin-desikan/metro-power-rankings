@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { TopGameLeagueRow } from "@/lib/nba";
 import { WatchButton, type GameVideo } from "@/app/teams/_shared/GameVideo";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 const US_STATE_ABBR: Record<string, string> = {
   Alabama: "AL", Alaska: "AK", Arizona: "AZ", Arkansas: "AR",
@@ -140,6 +141,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                 </td>
                 <td className="py-2 pr-3">
                   <div className="leading-tight">
+                    <CrestIcon name={`${g.winner_city} ${g.winner_team}`} size={18} className="mr-1.5 align-middle" />
                     {g.winner_slug ? (
                       <Link
                         href={`/teams/nba/${g.winner_slug}`}
@@ -162,6 +164,7 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
                     <span className="tabular-nums text-[var(--text-muted)]">
                       {g.loser_pts}
                     </span>{" "}
+                    <CrestIcon name={`${g.loser_city} ${g.loser_team}`} size={18} className="mr-1.5 align-middle" />
                     {g.loser_slug ? (
                       <Link
                         href={`/teams/nba/${g.loser_slug}`}

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllWLeagueHubSlugs, getWLeagueHub, getWLeagueHubClubs, decoratedRows, columnsForHub } from "@/lib/wfootball";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -55,7 +56,7 @@ export default async function WLeagueHubPage({ params }: Props) {
         <h1 className="text-3xl font-semibold tracking-tight">{hub.country}</h1>
         <p className="mt-1 text-sm text-[var(--text-muted)] max-w-3xl">
           Women&apos;s club competitions in {hub.country}: {hub.competitions.map((c) => c.short_label).join(", ")}.
-          {top ? <> Most decorated: <span className="text-[var(--text)] font-medium">{top.name}</span> ({top.titles}).</> : null}
+          {top ? <> Most decorated: <span className="text-[var(--text)] font-medium"><CrestIcon name={top.name} size={18} className="mr-1.5 align-middle" />{top.name}</span> ({top.titles}).</> : null}
         </p>
       </header>
 
@@ -76,7 +77,7 @@ export default async function WLeagueHubPage({ params }: Props) {
                 </div>
                 {cur && cur.decided && (
                   <div className="text-xs text-[var(--text-muted)] mt-2">
-                    {cur.year} champion: <span className="font-medium text-[var(--text)]">{cur.champion}</span>
+                    {cur.year} champion: <span className="font-medium text-[var(--text)]"><CrestIcon name={cur.champion} size={18} className="mr-1.5 align-middle" />{cur.champion}</span>
                   </div>
                 )}
                 {cur && !cur.decided && (

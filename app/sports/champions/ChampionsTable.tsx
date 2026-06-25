@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { flagCdnUrl } from "@/lib/international-display";
 import { useMemo, useState } from "react";
 
@@ -14,6 +15,7 @@ import { useMemo, useState } from "react";
 export type ChampRow = {
   team: string;
   teamHref: string | null;
+  crestName: string | null;
   sport: string;
   competition: string;
   leagueHref: string | null;
@@ -32,6 +34,9 @@ type SortKey = "team" | "competition" | "scope" | "geo" | "year" | "next" | "tie
 
 const GOLD = "#d4af37";
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
+// Individual sports have no club crest; show the sport's emoji instead.
+const SPORT_EMOJI: Record<string, string> = { Golf: "⛳", Tennis: "🎾" };
+
 const ALL = "All";
 
 const SCOPE_OPTS = ["International", "Continental", "Domestic"];
@@ -296,7 +301,13 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
                 <td className="py-2 px-3 align-top tabular-nums text-[var(--text-muted)]" style={mono}>{c.tier ?? ""}</td>
                 <td className="py-2 px-3 align-top">
                   <div className="font-medium text-sm leading-tight flex items-center gap-1.5">
-                    <CrestIcon name={c.team} />
+                    {c.sport === "F1" ? (
+                      <CrestIcon name={f1ConstructorCrestName(c.crestName ?? c.team)} />
+                    ) : SPORT_EMOJI[c.sport] ? (
+                      <span className="text-base leading-none flex-shrink-0" aria-hidden>{SPORT_EMOJI[c.sport]}</span>
+                    ) : (
+                      <CrestIcon name={c.team} />
+                    )}
                     <NationFlag team={c.team} scopeType={c.scopeType} />
                     {c.teamHref ? (
                       <Link href={c.teamHref} className="hover:text-[var(--accent)] hover:underline">

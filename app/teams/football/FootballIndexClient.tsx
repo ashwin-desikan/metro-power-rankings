@@ -9,6 +9,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import type { FootballMapPoint } from "./FootballMapInner";
 
 // Leaflet is browser-only; SSR import would crash on window access.
@@ -593,6 +594,7 @@ export default function FootballIndexClient({ clubs }: Props) {
                   <li key={c.slug} className="flex items-baseline gap-2">
                     <Dot slug={c.slug} />
                     <Link href={`/teams/football/${c.slug}`} className="hover:underline">
+                      <CrestIcon name={c.cur_name} size={16} className="mr-1.5 align-middle" />
                       {c.cur_name}
                     </Link>
                     {lvl !== undefined && (

@@ -5,10 +5,19 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import {
   getF1Meta, getF1Champions, getF1DriverTitles, getF1ConstructorTitles,
   getF1AllTimeDriverWins, getF1AllTimeConstructorWins, getF1HostMetros,
-  getF1LatestSeasonRaces,
+  getF1LatestSeasonRaces, getF1CurrentStandingsFallback,
 } from "@/lib/f1";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { f1ConstructorCrestName } from "@/lib/f1Crest";
+
+// "2026-06-28" -> "28 Jun" for upcoming races (shown in place of a winner).
+const F1_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmtRaceDate(iso: string | null): string {
+  if (!iso) return "TBC";
+  const [, m, d] = iso.split("-").map(Number);
+  return m && d ? `${d} ${F1_MONTHS[m - 1]}` : iso;
+}
 
 export const dynamicParams = false;
 export const revalidate = 3600;
@@ -50,6 +59,9 @@ export default async function F1Page() {
   const hostMetros = getF1HostMetros();
   const season = getF1LatestSeasonRaces();
   const standings = await getLiveF1Standings();
+  // ESPN's live driver table omits the constructor; backfill it from the
+  // fallback snapshot so the Team column (and its crest) renders in both modes.
+  const fallbackDriverTeam = new Map(getF1CurrentStandingsFallback().drivers.map((d) => [d.driver, d.team]));
   const isLive = standings.source === "espn";
 
   const td = "px-3 py-1.5 text-sm";
@@ -109,7 +121,10 @@ export default async function F1Page() {
                 <tr key={`${d.driver}-${i}`} style={rowBorder}>
                   <td className={td} style={{ color: "var(--text-dim)" }}>{d.pos ?? i + 1}</td>
                   <td className={td} style={{ color: "var(--text)" }}>{d.driver}</td>
-                  <td className={td} style={{ color: "var(--text-muted)" }}>{d.team ?? "—"}</td>
+                  <td className={td} style={{ color: "var(--text-muted)" }}>{(() => {
+                    const team = d.team ?? fallbackDriverTeam.get(d.driver) ?? null;
+                    return team ? <span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(team)} />{team}</span> : "—";
+                  })()}</td>
                   <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{d.points ?? 0}</td>
                 </tr>
               ))}
@@ -125,7 +140,7 @@ export default async function F1Page() {
               {standings.constructors.map((c, i) => (
                 <tr key={`${c.constructor}-${i}`} style={rowBorder}>
                   <td className={td} style={{ color: "var(--text-dim)" }}>{c.pos ?? i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.constructor} />{c.constructor}</span></td>
+                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
                   <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.points ?? 0}</td>
                 </tr>
               ))}
@@ -155,8 +170,8 @@ export default async function F1Page() {
                     ? <Link href={`/rankings/${r.metro_slug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{r.metro}</Link>
                     : <span style={{ color: "var(--text-muted)" }}>{r.metro}</span>}
                 </td>
-                <td className={td} style={{ color: "var(--text)" }}>{r.winner ?? "—"}</td>
-                <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.winner_constructor} />{r.winner_constructor ?? "—"}</span></td>
+                <td className={td} style={{ color: r.winner ? "var(--text)" : "var(--text-dim)" }}>{r.winner ?? fmtRaceDate(r.date)}</td>
+                <td className={td} style={{ color: "var(--text-muted)" }}>{r.winner_constructor ? <span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(r.winner_constructor)} />{r.winner_constructor}</span> : "—"}</td>
               </tr>
             ))}
           </tbody>
@@ -211,7 +226,7 @@ export default async function F1Page() {
                   <td className={td} style={{ color: "var(--text)" }}>
                     {c.driver ?? "—"}{c.driver_nat ? <span style={{ color: "var(--text-dim)" }}> · {c.driver_nat}</span> : null}
                   </td>
-                  <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.constructor} />{c.constructor ?? "—"}</span></td>
+                  <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor ?? "—"}</span></td>
                 </tr>
               ))}
             </tbody>
@@ -265,7 +280,7 @@ export default async function F1Page() {
               {constructorWins.slice(0, 15).map((c, i) => (
                 <tr key={c.constructor} style={rowBorder}>
                   <td className={td} style={{ color: "var(--text-dim)" }}>{i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={c.constructor} />{c.constructor}</span></td>
+                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
                   <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.wins}</td>
                 </tr>
               ))}

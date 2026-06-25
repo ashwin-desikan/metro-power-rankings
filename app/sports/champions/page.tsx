@@ -61,6 +61,7 @@ export default function ChampionsHubPage() {
     .map<ChampRow>((c) => ({
       team: c.team,
       teamHref: c.teamHref,
+      crestName: c.crestName,
       sport: c.sport,
       competition: c.competition,
       leagueHref: c.leagueHref,

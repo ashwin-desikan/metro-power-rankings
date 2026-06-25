@@ -34,8 +34,10 @@ export default function BaseballHubPage() {
   const slugByName = new Map(teams.map((t) => [t.name, t.slug]));
   const teamLink = (name: string, className?: string) => {
     const slug = slugByName.get(name);
+    const flag = slug && flagCdnUrl(slug);
     return slug ? (
       <Link href={`/teams/baseball/${slug}`} className={`hover:text-[var(--accent)] ${className ?? ""}`}>
+        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block mr-1 align-middle flex-shrink-0" />}
         {name}
       </Link>
     ) : (

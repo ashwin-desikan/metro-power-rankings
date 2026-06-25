@@ -65,9 +65,10 @@ export default function WomensInternationalPage() {
     if (!name) return <span className="text-[var(--text-dim)]">—</span>;
     const k = norm(name);
     const w = wwcSlugByName.get(k);
-    if (w) return <Link href={`/teams/national/womens-world-cup/${w}`} className="hover:text-[var(--accent)]">{name}</Link>;
     const c = countrySlugByName.get(k);
-    if (c) return <Link href={`/countries/${c}`} className="hover:text-[var(--accent)]">{name}</Link>;
+    const flagSlug = w ?? c ?? null;
+    if (w) return <span className="inline-flex items-center gap-1.5"><Flag slug={flagSlug} /><Link href={`/teams/national/womens-world-cup/${w}`} className="hover:text-[var(--accent)]">{name}</Link></span>;
+    if (c) return <span className="inline-flex items-center gap-1.5"><Flag slug={flagSlug} /><Link href={`/countries/${c}`} className="hover:text-[var(--accent)]">{name}</Link></span>;
     return <span>{name}</span>;
   }
 
@@ -191,7 +192,7 @@ export default function WomensInternationalPage() {
               {allTime.map((r) => (
                 <tr key={r.name} className="border-t" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 px-3 font-medium">
-                    <span className="inline-flex items-center gap-1.5"><Flag slug={r.wwcSlug} />{nationLink(r.name)}</span>
+                    {nationLink(r.name)}
                   </td>
                   <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{r.wwcApps || "—"}</td>
                   <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{tf(r.wwcT, r.wwcF)}</td>

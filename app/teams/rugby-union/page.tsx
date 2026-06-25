@@ -41,11 +41,15 @@ export default function RugbyUnionHubPage() {
 
   const teamLink = (name: string) => {
     const slug = slugByName.get(name);
-    return slug ? (
+    const flag = slug ? flagCdnUrl(slug) : null;
+    const inner = slug ? (
       <Link href={`/teams/rugby-union/${slug}`} className="hover:text-[var(--accent)]">{name}</Link>
     ) : (
       <span>{name}</span>
     );
+    return flag ? (
+      <span className="inline-flex items-center gap-1.5"><img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />{inner}</span>
+    ) : inner;
   };
 
   return (

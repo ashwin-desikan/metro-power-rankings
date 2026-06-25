@@ -28,7 +28,7 @@ export type ClubRollRow = {
 
 export type ClubRolls = {
   rolls: Record<string, ClubRollRow[]>;
-  most_titled: Record<string, { winner: string; titles: number }[]>;
+  most_titled: Record<string, { winner: string; titles: number; team?: string | null }[]>;
   labels: Record<string, string>;
 };
 

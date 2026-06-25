@@ -11,6 +11,7 @@ import {
 import { TOP_TEAMS, topTeamAnchorId } from "@/lib/topTeams";
 import { resolveTeamLink } from "@/lib/teamLinks";
 import { normalizeSport } from "@/lib/sportLabels";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 export const dynamicParams = false;
 
@@ -460,11 +461,16 @@ export default function TopTeamsPage() {
                                       >
                                         {link.logoUrl ? (
                                           <img src={link.logoUrl} alt="" width={18} height={18} className="inline-block flex-shrink-0 object-contain" aria-hidden />
-                                        ) : null}
+                                        ) : (
+                                          <CrestIcon name={part} size={18} className="flex-shrink-0" />
+                                        )}
                                         <span>{part}</span>
                                       </Link>
                                     ) : (
-                                      <span style={{ color: "var(--text)" }}>{part}</span>
+                                      <span className="inline-flex items-center" style={{ color: "var(--text)" }}>
+                                        <CrestIcon name={part} size={18} className="mr-1.5 align-middle" />
+                                        <span>{part}</span>
+                                      </span>
                                     )}
                                   </span>
                                 );

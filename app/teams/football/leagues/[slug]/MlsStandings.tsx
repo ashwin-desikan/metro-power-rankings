@@ -9,14 +9,21 @@
 import { useState } from "react";
 import Link from "next/link";
 import { monogramForFootball } from "@/lib/football-colors";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { MlsStanding } from "@/lib/football";
+
+const MLS_CREST_ALIAS: Record<string, string> = { "LA Galaxy": "Los Angeles Galaxy" };
 
 function TeamCell({ row }: { row: MlsStanding }) {
   const name = row.cur_name;
   const m = monogramForFootball(name, row.slug ?? undefined);
   return (
     <span className="inline-flex items-center gap-1.5">
-      <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 8, fontWeight: 700 }} aria-hidden>{m.mono}</span>
+      <TeamCrest
+        name={MLS_CREST_ALIAS[name] ?? name}
+        size={18}
+        fallback={<span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 8, fontWeight: 700 }} aria-hidden>{m.mono}</span>}
+      />
       {row.slug ? <Link href={`/teams/football/${row.slug}`} className="hover:underline font-medium">{name}</Link> : <span className="font-medium">{name}</span>}
     </span>
   );

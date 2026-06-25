@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-24",
-  "matched": 1227,
+  "generated": "2026-06-25",
+  "matched": 1432,
   "unmatched": [
     "New Haven",
     "East Texas A&M",
@@ -13693,6 +13693,1031 @@
       "badge": "/team-badges/cadillac-f1-team.png",
       "logo": "/team-logos/cadillac-f1-team.png",
       "sport": "f1"
+    },
+    "Al Feiha": {
+      "badge": "/team-badges/al-feiha.png",
+      "sdb_name": "Al Feiha",
+      "logo": null
+    },
+    "Al Hazm": {
+      "badge": "/team-badges/al-hazm.png",
+      "sdb_name": "Al Hazm",
+      "logo": null
+    },
+    "Al Kholood Club": {
+      "badge": "/team-badges/al-kholood-club.png",
+      "sdb_name": "Al Kholood Club",
+      "logo": null
+    },
+    "Al Riyadh SC": {
+      "badge": "/team-badges/al-riyadh-sc.png",
+      "sdb_name": "Al Riyadh SC",
+      "logo": null
+    },
+    "Al-Ahli Jeddah": {
+      "badge": "/team-badges/al-ahli-jeddah.png",
+      "sdb_name": "Al-Ahli Jeddah",
+      "logo": null
+    },
+    "Al-Ettifaq": {
+      "badge": "/team-badges/al-ettifaq.png",
+      "sdb_name": "Al-Ettifaq",
+      "logo": null
+    },
+    "Al-Fateh": {
+      "badge": "/team-badges/al-fateh.png",
+      "sdb_name": "Al-Fateh",
+      "logo": null
+    },
+    "Al-Hilal": {
+      "badge": "/team-badges/al-hilal.png",
+      "sdb_name": "Al-Hilal",
+      "logo": null
+    },
+    "Al-Ittihad": {
+      "badge": "/team-badges/al-ittihad.png",
+      "sdb_name": "Al-Ittihad",
+      "logo": null
+    },
+    "Al-Najma SC": {
+      "badge": "/team-badges/al-najma-sc.png",
+      "sdb_name": "Al-Najma SC",
+      "logo": null
+    },
+    "Al-Nassr": {
+      "badge": "/team-badges/al-nassr.png",
+      "sdb_name": "Al-Nassr",
+      "logo": null
+    },
+    "Al-Okhdood Club": {
+      "badge": "/team-badges/al-okhdood-club.png",
+      "sdb_name": "Al-Okhdood Club",
+      "logo": null
+    },
+    "Al-Qadisiyah FC": {
+      "badge": "/team-badges/al-qadisiyah.png",
+      "sdb_name": "Al-Qadisiyah FC",
+      "logo": null
+    },
+    "Al-Shabab": {
+      "badge": "/team-badges/al-shabab.png",
+      "sdb_name": "Al-Shabab",
+      "logo": null
+    },
+    "Al-Taawoun FC": {
+      "badge": "/team-badges/al-taawoun.png",
+      "sdb_name": "Al-Taawoun FC",
+      "logo": null
+    },
+    "Damac FC": {
+      "badge": "/team-badges/damac.png",
+      "sdb_name": "Damac FC",
+      "logo": null
+    },
+    "Khaleej FC": {
+      "badge": "/team-badges/khaleej.png",
+      "sdb_name": "Khaleej FC",
+      "logo": null
+    },
+    "Neom SC": {
+      "badge": "/team-badges/neom-sc.png",
+      "sdb_name": "Neom SC",
+      "logo": null
+    },
+    "Ajman Club": {
+      "badge": "/team-badges/ajman-club.png",
+      "sdb_name": "Ajman Club",
+      "logo": null
+    },
+    "Al Ain FC": {
+      "badge": "/team-badges/al-ain.png",
+      "sdb_name": "Al Ain FC",
+      "logo": null
+    },
+    "Al Bataeh Club": {
+      "badge": "/team-badges/al-bataeh-club.png",
+      "sdb_name": "Al Bataeh Club",
+      "logo": null
+    },
+    "Al Dhafra": {
+      "badge": "/team-badges/al-dhafra.png",
+      "sdb_name": "Al Dhafra",
+      "logo": null
+    },
+    "Al Wasl": {
+      "badge": "/team-badges/al-wasl.png",
+      "sdb_name": "Al Wasl",
+      "logo": null
+    },
+    "Al-Ittihad Kalba": {
+      "badge": "/team-badges/al-ittihad-kalba.png",
+      "sdb_name": "Al-Ittihad Kalba",
+      "logo": null
+    },
+    "Al-Jazira": {
+      "badge": "/team-badges/al-jazira.png",
+      "sdb_name": "Al-Jazira",
+      "logo": null
+    },
+    "Al-Nasr": {
+      "badge": "/team-badges/al-nasr.png",
+      "sdb_name": "Al-Nasr",
+      "logo": null
+    },
+    "Al-Wahda": {
+      "badge": "/team-badges/al-wahda.png",
+      "sdb_name": "Al-Wahda",
+      "logo": null
+    },
+    "Baniyas": {
+      "badge": "/team-badges/baniyas.png",
+      "sdb_name": "Baniyas",
+      "logo": null
+    },
+    "Dibba Al-Fujairah": {
+      "badge": "/team-badges/dibba-al-fujairah.png",
+      "sdb_name": "Dibba Al-Fujairah",
+      "logo": null
+    },
+    "Khor Fakkan Club": {
+      "badge": "/team-badges/khor-fakkan-club.png",
+      "sdb_name": "Khor Fakkan Club",
+      "logo": null
+    },
+    "Shabab Al Ahli Dubai": {
+      "badge": "/team-badges/shabab-al-ahli-dubai.png",
+      "sdb_name": "Shabab Al Ahli Dubai",
+      "logo": null
+    },
+    "Sharjah FC": {
+      "badge": "/team-badges/sharjah.png",
+      "sdb_name": "Sharjah FC",
+      "logo": null
+    },
+    "Al Ahli SC Doha": {
+      "badge": "/team-badges/al-ahli-sc-doha.png",
+      "sdb_name": "Al Ahli SC Doha",
+      "logo": null
+    },
+    "Al Sailiya": {
+      "badge": "/team-badges/al-sailiya.png",
+      "sdb_name": "Al Sailiya",
+      "logo": null
+    },
+    "Al-Arabi SC": {
+      "badge": "/team-badges/al-arabi-sc.png",
+      "sdb_name": "Al-Arabi SC",
+      "logo": null
+    },
+    "Al-Duhail SC": {
+      "badge": "/team-badges/al-duhail-sc.png",
+      "sdb_name": "Al-Duhail SC",
+      "logo": null
+    },
+    "Al-Gharafa": {
+      "badge": "/team-badges/al-gharafa.png",
+      "sdb_name": "Al-Gharafa",
+      "logo": null
+    },
+    "Al-Rayyan": {
+      "badge": "/team-badges/al-rayyan.png",
+      "sdb_name": "Al-Rayyan",
+      "logo": null
+    },
+    "Al-Sadd": {
+      "badge": "/team-badges/al-sadd.png",
+      "sdb_name": "Al-Sadd",
+      "logo": null
+    },
+    "Al-Shahania SC": {
+      "badge": "/team-badges/al-shahania-sc.png",
+      "sdb_name": "Al-Shahania SC",
+      "logo": null
+    },
+    "Al-Shamal": {
+      "badge": "/team-badges/al-shamal.png",
+      "sdb_name": "Al-Shamal",
+      "logo": null
+    },
+    "Al-Wakrah SC": {
+      "badge": "/team-badges/al-wakrah-sc.png",
+      "sdb_name": "Al-Wakrah SC",
+      "logo": null
+    },
+    "Qatar SC": {
+      "badge": "/team-badges/qatar-sc.png",
+      "sdb_name": "Qatar SC",
+      "logo": null
+    },
+    "Umm-Salal": {
+      "badge": "/team-badges/umm-salal.png",
+      "sdb_name": "Umm-Salal",
+      "logo": null
+    },
+    "Bengaluru FC": {
+      "badge": "/team-badges/bengaluru.png",
+      "sdb_name": "Bengaluru FC",
+      "logo": null
+    },
+    "Chennaiyin FC": {
+      "badge": "/team-badges/chennaiyin.png",
+      "sdb_name": "Chennaiyin FC",
+      "logo": null
+    },
+    "East Bengal": {
+      "badge": "/team-badges/east-bengal.png",
+      "sdb_name": "East Bengal",
+      "logo": null
+    },
+    "FC Goa": {
+      "badge": "/team-badges/fc-goa.png",
+      "sdb_name": "FC Goa",
+      "logo": null
+    },
+    "Inter Kashi FC": {
+      "badge": "/team-badges/inter-kashi.png",
+      "sdb_name": "Inter Kashi FC",
+      "logo": null
+    },
+    "Jamshedpur FC": {
+      "badge": "/team-badges/jamshedpur.png",
+      "sdb_name": "Jamshedpur FC",
+      "logo": null
+    },
+    "Kerala Blasters": {
+      "badge": "/team-badges/kerala-blasters.png",
+      "sdb_name": "Kerala Blasters",
+      "logo": null
+    },
+    "Mohammedan SC": {
+      "badge": "/team-badges/mohammedan-sc.png",
+      "sdb_name": "Mohammedan SC",
+      "logo": null
+    },
+    "Mohun Bagan": {
+      "badge": "/team-badges/mohun-bagan.png",
+      "sdb_name": "Mohun Bagan",
+      "logo": null
+    },
+    "Mumbai City FC": {
+      "badge": "/team-badges/mumbai-city.png",
+      "sdb_name": "Mumbai City FC",
+      "logo": null
+    },
+    "NorthEast United": {
+      "badge": "/team-badges/northeast-united.png",
+      "sdb_name": "NorthEast United",
+      "logo": null
+    },
+    "Odisha FC": {
+      "badge": "/team-badges/odisha.png",
+      "sdb_name": "Odisha FC",
+      "logo": null
+    },
+    "Punjab FC": {
+      "badge": "/team-badges/punjab.png",
+      "sdb_name": "Punjab FC",
+      "logo": null
+    },
+    "SC Delhi": {
+      "badge": "/team-badges/sc-delhi.png",
+      "sdb_name": "SC Delhi",
+      "logo": null
+    },
+    "Al-Ahly": {
+      "badge": "/team-badges/al-ahly.png",
+      "sdb_name": "Al-Ahly",
+      "logo": null
+    },
+    "Al-Ittihad Al-Sakndary": {
+      "badge": "/team-badges/al-ittihad-al-sakndary.png",
+      "sdb_name": "Al-Ittihad Al-Sakndary",
+      "logo": null
+    },
+    "Al-Masry": {
+      "badge": "/team-badges/al-masry.png",
+      "sdb_name": "Al-Masry",
+      "logo": null
+    },
+    "Al-Mokawloon Al-Arab": {
+      "badge": "/team-badges/al-mokawloon-al-arab.png",
+      "sdb_name": "Al-Mokawloon Al-Arab",
+      "logo": null
+    },
+    "Ceramica Cleopatra": {
+      "badge": "/team-badges/ceramica-cleopatra.png",
+      "sdb_name": "Ceramica Cleopatra",
+      "logo": null
+    },
+    "ENPPI": {
+      "badge": "/team-badges/enppi.png",
+      "sdb_name": "ENPPI",
+      "logo": null
+    },
+    "El Gouna": {
+      "badge": "/team-badges/el-gouna.png",
+      "sdb_name": "El Gouna",
+      "logo": null
+    },
+    "Ghazl Al-Mehalla": {
+      "badge": "/team-badges/ghazl-al-mehalla.png",
+      "sdb_name": "Ghazl Al-Mehalla",
+      "logo": null
+    },
+    "Haras Al Hodoud": {
+      "badge": "/team-badges/haras-al-hodoud.png",
+      "sdb_name": "Haras Al Hodoud",
+      "logo": null
+    },
+    "Ismaily SC": {
+      "badge": "/team-badges/ismaily-sc.png",
+      "sdb_name": "Ismaily SC",
+      "logo": null
+    },
+    "Kahraba Ismailia SC": {
+      "badge": "/team-badges/kahraba-ismailia-sc.png",
+      "sdb_name": "Kahraba Ismailia SC",
+      "logo": null
+    },
+    "Modern Sport FC": {
+      "badge": "/team-badges/modern-sport.png",
+      "sdb_name": "Modern Sport FC",
+      "logo": null
+    },
+    "National Bank of Egypt SC": {
+      "badge": "/team-badges/national-bank-of-egypt-sc.png",
+      "sdb_name": "National Bank of Egypt SC",
+      "logo": null
+    },
+    "Petrojet": {
+      "badge": "/team-badges/petrojet.png",
+      "sdb_name": "Petrojet",
+      "logo": null
+    },
+    "Pharco FC": {
+      "badge": "/team-badges/pharco.png",
+      "sdb_name": "Pharco FC",
+      "logo": null
+    },
+    "Pyramids FC": {
+      "badge": "/team-badges/pyramids.png",
+      "sdb_name": "Pyramids FC",
+      "logo": null
+    },
+    "Semouha Club": {
+      "badge": "/team-badges/semouha-club.png",
+      "sdb_name": "Semouha Club",
+      "logo": null
+    },
+    "Talaea Al-Geish": {
+      "badge": "/team-badges/talaea-al-geish.png",
+      "sdb_name": "Talaea Al-Geish",
+      "logo": null
+    },
+    "Wadi Degla SC": {
+      "badge": "/team-badges/wadi-degla-sc.png",
+      "sdb_name": "Wadi Degla SC",
+      "logo": null
+    },
+    "ZED FC": {
+      "badge": "/team-badges/zed.png",
+      "sdb_name": "ZED FC",
+      "logo": null
+    },
+    "Zamalek SC": {
+      "badge": "/team-badges/zamalek-sc.png",
+      "sdb_name": "Zamalek SC",
+      "logo": null
+    },
+    "AmaZulu": {
+      "badge": "/team-badges/amazulu.png",
+      "sdb_name": "AmaZulu",
+      "logo": null
+    },
+    "Chippa United": {
+      "badge": "/team-badges/chippa-united.png",
+      "sdb_name": "Chippa United",
+      "logo": null
+    },
+    "Durban City FC": {
+      "badge": "/team-badges/durban-city.png",
+      "sdb_name": "Durban City FC",
+      "logo": null
+    },
+    "Golden Arrows": {
+      "badge": "/team-badges/golden-arrows.png",
+      "sdb_name": "Golden Arrows",
+      "logo": null
+    },
+    "Kaizer Chiefs": {
+      "badge": "/team-badges/kaizer-chiefs.png",
+      "sdb_name": "Kaizer Chiefs",
+      "logo": null
+    },
+    "Magesi FC": {
+      "badge": "/team-badges/magesi.png",
+      "sdb_name": "Magesi FC",
+      "logo": null
+    },
+    "Mamelodi Sundowns": {
+      "badge": "/team-badges/mamelodi-sundowns.png",
+      "sdb_name": "Mamelodi Sundowns",
+      "logo": null
+    },
+    "Marumo Gallants FC": {
+      "badge": "/team-badges/marumo-gallants.png",
+      "sdb_name": "Marumo Gallants FC",
+      "logo": null
+    },
+    "Orbit College FC": {
+      "badge": "/team-badges/orbit-college.png",
+      "sdb_name": "Orbit College FC",
+      "logo": null
+    },
+    "Orlando Pirates": {
+      "badge": "/team-badges/orlando-pirates.png",
+      "sdb_name": "Orlando Pirates",
+      "logo": null
+    },
+    "Polokwane City": {
+      "badge": "/team-badges/polokwane-city.png",
+      "sdb_name": "Polokwane City",
+      "logo": null
+    },
+    "Richards Bay FC": {
+      "badge": "/team-badges/richards-bay.png",
+      "sdb_name": "Richards Bay FC",
+      "logo": null
+    },
+    "Sekhukhune United": {
+      "badge": "/team-badges/sekhukhune-united.png",
+      "sdb_name": "Sekhukhune United",
+      "logo": null
+    },
+    "Siwelele FC": {
+      "badge": "/team-badges/siwelele.png",
+      "sdb_name": "Siwelele FC",
+      "logo": null
+    },
+    "Stellenbosch FC": {
+      "badge": "/team-badges/stellenbosch.png",
+      "sdb_name": "Stellenbosch FC",
+      "logo": null
+    },
+    "TS Galaxy FC": {
+      "badge": "/team-badges/ts-galaxy.png",
+      "sdb_name": "TS Galaxy FC",
+      "logo": null
+    },
+    "Albirex Niigata": {
+      "badge": "/team-badges/albirex-niigata.png",
+      "sdb_name": "Albirex Niigata",
+      "logo": null
+    },
+    "Avispa Fukuoka": {
+      "badge": "/team-badges/avispa-fukuoka.png",
+      "sdb_name": "Avispa Fukuoka",
+      "logo": null
+    },
+    "Cerezo Osaka": {
+      "badge": "/team-badges/cerezo-osaka.png",
+      "sdb_name": "Cerezo Osaka",
+      "logo": null
+    },
+    "FC Tokyo": {
+      "badge": "/team-badges/fc-tokyo.png",
+      "sdb_name": "FC Tokyo",
+      "logo": null
+    },
+    "Fagiano Okayama": {
+      "badge": "/team-badges/fagiano-okayama.png",
+      "sdb_name": "Fagiano Okayama",
+      "logo": null
+    },
+    "Gamba Osaka": {
+      "badge": "/team-badges/gamba-osaka.png",
+      "sdb_name": "Gamba Osaka",
+      "logo": null
+    },
+    "Kashima Antlers": {
+      "badge": "/team-badges/kashima-antlers.png",
+      "sdb_name": "Kashima Antlers",
+      "logo": null
+    },
+    "Kashiwa Reysol": {
+      "badge": "/team-badges/kashiwa-reysol.png",
+      "sdb_name": "Kashiwa Reysol",
+      "logo": null
+    },
+    "Kawasaki Frontale": {
+      "badge": "/team-badges/kawasaki-frontale.png",
+      "sdb_name": "Kawasaki Frontale",
+      "logo": null
+    },
+    "Kyoto Sanga": {
+      "badge": "/team-badges/kyoto-sanga.png",
+      "sdb_name": "Kyoto Sanga",
+      "logo": null
+    },
+    "Machida Zelvia": {
+      "badge": "/team-badges/machida-zelvia.png",
+      "sdb_name": "Machida Zelvia",
+      "logo": null
+    },
+    "Nagoya Grampus": {
+      "badge": "/team-badges/nagoya-grampus.png",
+      "sdb_name": "Nagoya Grampus",
+      "logo": null
+    },
+    "Sanfrecce Hiroshima": {
+      "badge": "/team-badges/sanfrecce-hiroshima.png",
+      "sdb_name": "Sanfrecce Hiroshima",
+      "logo": null
+    },
+    "Shimizu S-Pulse": {
+      "badge": "/team-badges/shimizu-s-pulse.png",
+      "sdb_name": "Shimizu S-Pulse",
+      "logo": null
+    },
+    "Shonan Bellmare": {
+      "badge": "/team-badges/shonan-bellmare.png",
+      "sdb_name": "Shonan Bellmare",
+      "logo": null
+    },
+    "Tokyo Verdy": {
+      "badge": "/team-badges/tokyo-verdy.png",
+      "sdb_name": "Tokyo Verdy",
+      "logo": null
+    },
+    "Urawa Red Diamonds": {
+      "badge": "/team-badges/urawa-red-diamonds.png",
+      "sdb_name": "Urawa Red Diamonds",
+      "logo": null
+    },
+    "Vissel Kobe": {
+      "badge": "/team-badges/vissel-kobe.png",
+      "sdb_name": "Vissel Kobe",
+      "logo": null
+    },
+    "Yokohama F. Marinos": {
+      "badge": "/team-badges/yokohama-f-marinos.png",
+      "sdb_name": "Yokohama F. Marinos",
+      "logo": null
+    },
+    "Yokohama FC": {
+      "badge": "/team-badges/yokohama.png",
+      "sdb_name": "Yokohama FC",
+      "logo": null
+    },
+    "Beijing Guoan": {
+      "badge": "/team-badges/beijing-guoan.png",
+      "sdb_name": "Beijing Guoan",
+      "logo": null
+    },
+    "Changchun YaTai": {
+      "badge": "/team-badges/changchun-yatai.png",
+      "sdb_name": "Changchun YaTai",
+      "logo": null
+    },
+    "Chengdu Rongcheng": {
+      "badge": "/team-badges/chengdu-rongcheng.png",
+      "sdb_name": "Chengdu Rongcheng",
+      "logo": null
+    },
+    "Dalian Yingbo": {
+      "badge": "/team-badges/dalian-yingbo.png",
+      "sdb_name": "Dalian Yingbo",
+      "logo": null
+    },
+    "Henan Songshan Longmen": {
+      "badge": "/team-badges/henan-songshan-longmen.png",
+      "sdb_name": "Henan Songshan Longmen",
+      "logo": null
+    },
+    "Meizhou Hakka": {
+      "badge": "/team-badges/meizhou-hakka.png",
+      "sdb_name": "Meizhou Hakka",
+      "logo": null
+    },
+    "Qingdao Hainiu": {
+      "badge": "/team-badges/qingdao-hainiu.png",
+      "sdb_name": "Qingdao Hainiu",
+      "logo": null
+    },
+    "Qingdao West Coast": {
+      "badge": "/team-badges/qingdao-west-coast.png",
+      "sdb_name": "Qingdao West Coast",
+      "logo": null
+    },
+    "Shandong Taishan": {
+      "badge": "/team-badges/shandong-taishan.png",
+      "sdb_name": "Shandong Taishan",
+      "logo": null
+    },
+    "Shanghai Port": {
+      "badge": "/team-badges/shanghai-port.png",
+      "sdb_name": "Shanghai Port",
+      "logo": null
+    },
+    "Shanghai Shenhua": {
+      "badge": "/team-badges/shanghai-shenhua.png",
+      "sdb_name": "Shanghai Shenhua",
+      "logo": null
+    },
+    "Shenzhen Peng City": {
+      "badge": "/team-badges/shenzhen-peng-city.png",
+      "sdb_name": "Shenzhen Peng City",
+      "logo": null
+    },
+    "Tianjin Tigers": {
+      "badge": "/team-badges/tianjin-tigers.png",
+      "sdb_name": "Tianjin Tigers",
+      "logo": null
+    },
+    "Wuhan Three Towns": {
+      "badge": "/team-badges/wuhan-three-towns.png",
+      "sdb_name": "Wuhan Three Towns",
+      "logo": null
+    },
+    "Yunnan Yukun": {
+      "badge": "/team-badges/yunnan-yukun.png",
+      "sdb_name": "Yunnan Yukun",
+      "logo": null
+    },
+    "Zhejiang Professional FC": {
+      "badge": "/team-badges/zhejiang-professional.png",
+      "sdb_name": "Zhejiang Professional FC",
+      "logo": null
+    },
+    "Daegu FC": {
+      "badge": "/team-badges/daegu.png",
+      "sdb_name": "Daegu FC",
+      "logo": null
+    },
+    "Daejeon Citizen": {
+      "badge": "/team-badges/daejeon-citizen.png",
+      "sdb_name": "Daejeon Citizen",
+      "logo": null
+    },
+    "FC Anyang": {
+      "badge": "/team-badges/fc-anyang.png",
+      "sdb_name": "FC Anyang",
+      "logo": null
+    },
+    "FC Seoul": {
+      "badge": "/team-badges/fc-seoul.png",
+      "sdb_name": "FC Seoul",
+      "logo": null
+    },
+    "Gangwon FC": {
+      "badge": "/team-badges/gangwon.png",
+      "sdb_name": "Gangwon FC",
+      "logo": null
+    },
+    "Gimcheon Sangmu": {
+      "badge": "/team-badges/gimcheon-sangmu.png",
+      "sdb_name": "Gimcheon Sangmu",
+      "logo": null
+    },
+    "Gwangju FC": {
+      "badge": "/team-badges/gwangju.png",
+      "sdb_name": "Gwangju FC",
+      "logo": null
+    },
+    "Jeju United": {
+      "badge": "/team-badges/jeju-united.png",
+      "sdb_name": "Jeju United",
+      "logo": null
+    },
+    "Jeonbuk Hyundai Motors": {
+      "badge": "/team-badges/jeonbuk-hyundai-motors.png",
+      "sdb_name": "Jeonbuk Hyundai Motors",
+      "logo": null
+    },
+    "Pohang Steelers": {
+      "badge": "/team-badges/pohang-steelers.png",
+      "sdb_name": "Pohang Steelers",
+      "logo": null
+    },
+    "Suwon FC": {
+      "badge": "/team-badges/suwon.png",
+      "sdb_name": "Suwon FC",
+      "logo": null
+    },
+    "Ulsan Hyundai Horang-i": {
+      "badge": "/team-badges/ulsan-hyundai-horang-i.png",
+      "sdb_name": "Ulsan Hyundai Horang-i",
+      "logo": null
+    },
+    "Aldershot Town": {
+      "badge": "/team-badges/aldershot-town.png",
+      "sdb_name": "Aldershot Town",
+      "logo": null
+    },
+    "Altrincham": {
+      "badge": "/team-badges/altrincham.png",
+      "sdb_name": "Altrincham",
+      "logo": null
+    },
+    "Boreham Wood": {
+      "badge": "/team-badges/boreham-wood.png",
+      "sdb_name": "Boreham Wood",
+      "logo": null
+    },
+    "Boston United": {
+      "badge": "/team-badges/boston-united.png",
+      "sdb_name": "Boston United",
+      "logo": null
+    },
+    "Brackley Town": {
+      "badge": "/team-badges/brackley-town.png",
+      "sdb_name": "Brackley Town",
+      "logo": null
+    },
+    "Braintree Town": {
+      "badge": "/team-badges/braintree-town.png",
+      "sdb_name": "Braintree Town",
+      "logo": null
+    },
+    "Carlisle United": {
+      "badge": "/team-badges/carlisle-united.png",
+      "sdb_name": "Carlisle United",
+      "logo": null
+    },
+    "Eastleigh": {
+      "badge": "/team-badges/eastleigh.png",
+      "sdb_name": "Eastleigh",
+      "logo": null
+    },
+    "FC Halifax Town": {
+      "badge": "/team-badges/fc-halifax-town.png",
+      "sdb_name": "FC Halifax Town",
+      "logo": null
+    },
+    "Forest Green Rovers": {
+      "badge": "/team-badges/forest-green-rovers.png",
+      "sdb_name": "Forest Green Rovers",
+      "logo": null
+    },
+    "Gateshead": {
+      "badge": "/team-badges/gateshead.png",
+      "sdb_name": "Gateshead",
+      "logo": null
+    },
+    "Hartlepool United": {
+      "badge": "/team-badges/hartlepool-united.png",
+      "sdb_name": "Hartlepool United",
+      "logo": null
+    },
+    "Morecambe": {
+      "badge": "/team-badges/morecambe.png",
+      "sdb_name": "Morecambe",
+      "logo": null
+    },
+    "Scunthorpe United": {
+      "badge": "/team-badges/scunthorpe-united.png",
+      "sdb_name": "Scunthorpe United",
+      "logo": null
+    },
+    "Solihull Moors": {
+      "badge": "/team-badges/solihull-moors.png",
+      "sdb_name": "Solihull Moors",
+      "logo": null
+    },
+    "Southend United": {
+      "badge": "/team-badges/southend-united.png",
+      "sdb_name": "Southend United",
+      "logo": null
+    },
+    "Sutton United": {
+      "badge": "/team-badges/sutton-united.png",
+      "sdb_name": "Sutton United",
+      "logo": null
+    },
+    "Tamworth": {
+      "badge": "/team-badges/tamworth.png",
+      "sdb_name": "Tamworth",
+      "logo": null
+    },
+    "Truro City": {
+      "badge": "/team-badges/truro-city.png",
+      "sdb_name": "Truro City",
+      "logo": null
+    },
+    "Wealdstone": {
+      "badge": "/team-badges/wealdstone.png",
+      "sdb_name": "Wealdstone",
+      "logo": null
+    },
+    "Woking": {
+      "badge": "/team-badges/woking.png",
+      "sdb_name": "Woking",
+      "logo": null
+    },
+    "Yeovil Town": {
+      "badge": "/team-badges/yeovil-town.png",
+      "sdb_name": "Yeovil Town",
+      "logo": null
+    },
+    "Doosan Bears": {
+      "badge": "/team-badges/doosan-bears.png",
+      "sdb_name": "Doosan Bears",
+      "logo": null
+    },
+    "Hanwha Eagles": {
+      "badge": "/team-badges/hanwha-eagles.png",
+      "sdb_name": "Hanwha Eagles",
+      "logo": null
+    },
+    "KT Wiz": {
+      "badge": "/team-badges/kt-wiz.png",
+      "sdb_name": "KT Wiz",
+      "logo": null
+    },
+    "Kia Tigers": {
+      "badge": "/team-badges/kia-tigers.png",
+      "sdb_name": "Kia Tigers",
+      "logo": null
+    },
+    "Kiwoom Heroes": {
+      "badge": "/team-badges/kiwoom-heroes.png",
+      "sdb_name": "Kiwoom Heroes",
+      "logo": null
+    },
+    "LG Twins": {
+      "badge": "/team-badges/lg-twins.png",
+      "sdb_name": "LG Twins",
+      "logo": null
+    },
+    "Lotte Giants": {
+      "badge": "/team-badges/lotte-giants.png",
+      "sdb_name": "Lotte Giants",
+      "logo": null
+    },
+    "NC Dinos": {
+      "badge": "/team-badges/nc-dinos.png",
+      "sdb_name": "NC Dinos",
+      "logo": null
+    },
+    "SSG Landers": {
+      "badge": "/team-badges/ssg-landers.png",
+      "sdb_name": "SSG Landers",
+      "logo": null
+    },
+    "Samsung Lions": {
+      "badge": "/team-badges/samsung-lions.png",
+      "sdb_name": "Samsung Lions",
+      "logo": null
+    },
+    "Buffalo Bisons": {
+      "badge": "/team-badges/buffalo-bisons.png",
+      "sdb_name": "Buffalo Bisons",
+      "logo": null
+    },
+    "Charlotte Knights": {
+      "badge": "/team-badges/charlotte-knights.png",
+      "sdb_name": "Charlotte Knights",
+      "logo": null
+    },
+    "Columbus Clippers": {
+      "badge": "/team-badges/columbus-clippers.png",
+      "sdb_name": "Columbus Clippers",
+      "logo": null
+    },
+    "Durham Bulls": {
+      "badge": "/team-badges/durham-bulls.png",
+      "sdb_name": "Durham Bulls",
+      "logo": null
+    },
+    "Gwinnett Stripers": {
+      "badge": "/team-badges/gwinnett-stripers.png",
+      "sdb_name": "Gwinnett Stripers",
+      "logo": null
+    },
+    "Indianapolis Indians": {
+      "badge": "/team-badges/indianapolis-indians.png",
+      "sdb_name": "Indianapolis Indians",
+      "logo": null
+    },
+    "Iowa Cubs": {
+      "badge": "/team-badges/iowa-cubs.png",
+      "sdb_name": "Iowa Cubs",
+      "logo": null
+    },
+    "Jacksonville Jumbo Shrimp": {
+      "badge": "/team-badges/jacksonville-jumbo-shrimp.png",
+      "sdb_name": "Jacksonville Jumbo Shrimp",
+      "logo": null
+    },
+    "Lehigh Valley IronPigs": {
+      "badge": "/team-badges/lehigh-valley-ironpigs.png",
+      "sdb_name": "Lehigh Valley IronPigs",
+      "logo": null
+    },
+    "Louisville Bats": {
+      "badge": "/team-badges/louisville-bats.png",
+      "sdb_name": "Louisville Bats",
+      "logo": null
+    },
+    "Memphis Redbirds": {
+      "badge": "/team-badges/memphis-redbirds.png",
+      "sdb_name": "Memphis Redbirds",
+      "logo": null
+    },
+    "Nashville Sounds": {
+      "badge": "/team-badges/nashville-sounds.png",
+      "sdb_name": "Nashville Sounds",
+      "logo": null
+    },
+    "Norfolk Tides": {
+      "badge": "/team-badges/norfolk-tides.png",
+      "sdb_name": "Norfolk Tides",
+      "logo": null
+    },
+    "Omaha Storm Chasers": {
+      "badge": "/team-badges/omaha-storm-chasers.png",
+      "sdb_name": "Omaha Storm Chasers",
+      "logo": null
+    },
+    "Rochester Red Wings": {
+      "badge": "/team-badges/rochester-red-wings.png",
+      "sdb_name": "Rochester Red Wings",
+      "logo": null
+    },
+    "Scranton/Wilkes-Barre RailRiders": {
+      "badge": "/team-badges/scranton-wilkes-barre-railriders.png",
+      "sdb_name": "Scranton/Wilkes-Barre RailRiders",
+      "logo": null
+    },
+    "St. Paul Saints": {
+      "badge": "/team-badges/st-paul-saints.png",
+      "sdb_name": "St. Paul Saints",
+      "logo": null
+    },
+    "Syracuse Mets": {
+      "badge": "/team-badges/syracuse-mets.png",
+      "sdb_name": "Syracuse Mets",
+      "logo": null
+    },
+    "Toledo Mud Hens": {
+      "badge": "/team-badges/toledo-mud-hens.png",
+      "sdb_name": "Toledo Mud Hens",
+      "logo": null
+    },
+    "Worcester Red Sox": {
+      "badge": "/team-badges/worcester-red-sox.png",
+      "sdb_name": "Worcester Red Sox",
+      "logo": null
+    },
+    "Albuquerque Isotopes": {
+      "badge": "/team-badges/albuquerque-isotopes.png",
+      "sdb_name": "Albuquerque Isotopes",
+      "logo": null
+    },
+    "El Paso Chihuahuas": {
+      "badge": "/team-badges/el-paso-chihuahuas.png",
+      "sdb_name": "El Paso Chihuahuas",
+      "logo": null
+    },
+    "Las Vegas Aviators": {
+      "badge": "/team-badges/las-vegas-aviators.png",
+      "sdb_name": "Las Vegas Aviators",
+      "logo": null
+    },
+    "Oklahoma City Comets": {
+      "badge": "/team-badges/oklahoma-city-comets.png",
+      "sdb_name": "Oklahoma City Comets",
+      "logo": null
+    },
+    "Reno Aces": {
+      "badge": "/team-badges/reno-aces.png",
+      "sdb_name": "Reno Aces",
+      "logo": null
+    },
+    "Round Rock Express": {
+      "badge": "/team-badges/round-rock-express.png",
+      "sdb_name": "Round Rock Express",
+      "logo": null
+    },
+    "Sacramento River Cats": {
+      "badge": "/team-badges/sacramento-river-cats.png",
+      "sdb_name": "Sacramento River Cats",
+      "logo": null
+    },
+    "Salt Lake Bees": {
+      "badge": "/team-badges/salt-lake-bees.png",
+      "sdb_name": "Salt Lake Bees",
+      "logo": null
+    },
+    "Sugar Land Space Cowboys": {
+      "badge": "/team-badges/sugar-land-space-cowboys.png",
+      "sdb_name": "Sugar Land Space Cowboys",
+      "logo": null
+    },
+    "Tacoma Rainiers": {
+      "badge": "/team-badges/tacoma-rainiers.png",
+      "sdb_name": "Tacoma Rainiers",
+      "logo": null
     }
   }
 }

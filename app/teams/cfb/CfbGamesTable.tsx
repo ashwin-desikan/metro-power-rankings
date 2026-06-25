@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { CfbGame } from "@/lib/cfbShared";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 function fmtDate(d: string | null): string | null {
@@ -24,7 +25,12 @@ export default function CfbGamesTable({ games, linkSlugs = [] }: { games: CfbGam
   const has = new Set(linkSlugs);
   const name = (n: string, slug: string, bold: boolean) => {
     const cls = bold ? "font-semibold" : "text-[var(--text-muted)]";
-    return has.has(slug) ? <Link href={`/teams/cfb/${slug}`} className={`${cls} hover:text-[var(--accent)]`}>{n}</Link> : <span className={cls}>{n}</span>;
+    return (
+      <span className="inline-flex items-center">
+        <CrestIcon name={n} size={18} className="mr-1.5 align-middle" />
+        {has.has(slug) ? <Link href={`/teams/cfb/${slug}`} className={`${cls} hover:text-[var(--accent)]`}>{n}</Link> : <span className={cls}>{n}</span>}
+      </span>
+    );
   };
   return (
     <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>

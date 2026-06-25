@@ -80,6 +80,49 @@ function data(): RivalriesFile {
   return _data;
 }
 
+// Full-name resolution for the US majors. The rivalries data stores short
+// nicknames ("49ers", "Mets", "Avalanche") for these leagues, which read oddly
+// beside the full names every other sport uses and break the name-keyed crest
+// lookup (short names miss or collide, e.g. "Chiefs"). The baked href carries
+// the franchise slug, so we map it back to the full display name.
+const MAJOR_LEAGUES = ["nfl", "nba", "mlb", "nhl"] as const;
+type FranchiseName = { slug?: string; display_name?: string; name?: string };
+let _majorNames: Record<string, Record<string, string>> | null = null;
+function majorNames(): Record<string, Record<string, string>> {
+  if (_majorNames) return _majorNames;
+  _majorNames = {};
+  for (const lg of MAJOR_LEAGUES) {
+    const map: Record<string, string> = {};
+    try {
+      const p = join(process.cwd(), "public", "data", lg, "franchises.json");
+      if (existsSync(p)) {
+        const j = JSON.parse(readFileSync(p, "utf-8")) as
+          | FranchiseName[]
+          | { franchises?: FranchiseName[]; teams?: FranchiseName[] };
+        const arr: FranchiseName[] = Array.isArray(j) ? j : (j.franchises ?? j.teams ?? []);
+        for (const f of arr) {
+          const full = f.display_name || f.name;
+          if (f.slug && full) map[f.slug] = full;
+        }
+      }
+    } catch {
+      // leave empty; callers fall back to the stored name
+    }
+    _majorNames[lg] = map;
+  }
+  return _majorNames;
+}
+
+// Given a baked team href, return the full franchise name for the US majors;
+// otherwise the supplied fallback (already a full/proper name for every other
+// sport).
+function displayName(href: string | null | undefined, fallback: string): string {
+  if (!href) return fallback;
+  const m = /^\/teams\/(nfl|nba|mlb|nhl)\/([^/?#]+)/.exec(href);
+  if (!m) return fallback;
+  return majorNames()[m[1]]?.[m[2]] ?? fallback;
+}
+
 // Must match norm() in scripts/build-rivalries.py exactly.
 function norm(s: string): string {
   return s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -115,10 +158,12 @@ export function getRivalries(teamName: string, sport: string, leagueHint = ""): 
   const bucket = data().by_team[sportKeyFor(sport, leagueHint)];
   if (!bucket) return [];
   const list = bucket[norm(teamName)] ?? [];
-  return list.map((e) => ({
+  return list.map((e) => {
+    const href = e.href || fallbackHref(e.scope, e.rival, sport, e.leagueHint || leagueHint);
+    return {
     rivalry: e.rivalry,
-    rivalName: e.rival,
-    href: e.href || fallbackHref(e.scope, e.rival, sport, e.leagueHint || leagueHint),
+    rivalName: displayName(href, e.rival),
+    href,
     scope: e.scope,
     trophy: e.trophy,
     type: e.type,
@@ -127,15 +172,16 @@ export function getRivalries(teamName: string, sport: string, leagueHint = ""): 
     wikipedia: e.wikipedia,
     mutual: e.mutual ?? true,
     top: e.top ?? false,
-  }));
+    };
+  });
 }
 
 export function getAllRivalries(): ResolvedRivalryRow[] {
   return data().all.map((r) => ({
     sport: r.sport,
     rivalry: r.rivalry,
-    team: { name: r.team.name, href: r.team.href || null },
-    rival: { name: r.rival.name, href: r.rival.href || null },
+    team: { name: displayName(r.team.href, r.team.name), href: r.team.href || null },
+    rival: { name: displayName(r.rival.href, r.rival.name), href: r.rival.href || null },
     country: r.country ?? "",
     twoWay: r.twoWay ?? true,
     top: r.top ?? false,

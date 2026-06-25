@@ -205,7 +205,7 @@ for mslug, rs in metro_rows.items():
 host_metros.sort(key=lambda x: (-x["races"], x["metro"] or ""))
 
 # ---- this (latest) season ----
-season_rows = [r for r in races if r["season"] == THIS_YEAR and r["winner"]]
+season_rows = [r for r in races if r["season"] == THIS_YEAR]  # include upcoming (winner-less) races
 season_latest = sorted(season_rows, key=lambda x: x["round"])
 
 # ---- current-season standings (fallback for the ESPN live table) ----

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import TeamCrest from "@/app/teams/_shared/TeamCrest";
 
 // Filterable CFL all-time table. Client component so the current / current+defunct
 // toggle works without a round trip. Monogram logic is inlined (lib/cfl is server-only).
@@ -86,7 +87,7 @@ export default function CflAllTimeTable({ franchises }: { franchises: Row[] }) {
                 <tr key={f.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: f.grey_cups > 0 ? "rgba(212,175,55,0.05)" : undefined }}>
                   <td className="py-2 px-3">
                     <div className="flex items-center gap-2">
-                      <span className="inline-flex items-center justify-center font-bold rounded flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 26, height: 16, fontSize: m.mono.length > 2 ? 9 : 11, letterSpacing: "0.02em" }}>{m.mono}</span>
+                      <TeamCrest name={f.name} size={22} fallback={<span className="inline-flex items-center justify-center font-bold rounded flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 26, height: 16, fontSize: m.mono.length > 2 ? 9 : 11, letterSpacing: "0.02em" }}>{m.mono}</span>} />
                       <Link href={`/teams/cfl/${f.slug}`} className="hover:text-[var(--accent)] transition-colors">{f.name}</Link>
                       {!f.active && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>defunct</span>}
                     </div>

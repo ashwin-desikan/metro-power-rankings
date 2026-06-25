@@ -333,12 +333,17 @@ def main():
     rolls = {comp: [r for r in rows if r["winner"]] for comp, rows in rolls.items()}
     roll_out = {comp: sorted(rows, key=lambda r: -(season_year(r["season"]) or 0))
                 for comp, rows in rolls.items()}
-    most = {comp: sorted(
-        [{"winner": w, "titles": n} for w, n in
-         defaultdict(int, {w: sum(1 for r in rows if r["winner"] == w)
-                           for w in {r["winner"] for r in rows}}).items()],
-        key=lambda x: -x["titles"])[:8]
-        for comp, rows in rolls.items()}
+    most = {}
+    for comp, rows in rolls.items():
+        counts = defaultdict(int)
+        wt = {}  # winner short name -> resolved Team List name (for crest lookup)
+        for r in rows:
+            counts[r["winner"]] += 1
+            if r.get("team") and r["winner"] not in wt:
+                wt[r["winner"]] = r["team"]
+        most[comp] = sorted(
+            [{"winner": w, "titles": n, "team": wt.get(w)} for w, n in counts.items()],
+            key=lambda x: -x["titles"])[:8]
 
     os.makedirs(OUT_DIR, exist_ok=True)
     json.dump(clubs, io.open(os.path.join(OUT_DIR, "clubs.json"), "w", encoding="utf-8"),

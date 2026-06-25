@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getRugbyClubRolls } from "@/lib/rugbyClubs";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -79,6 +80,7 @@ export default function DomesticRugbyPage() {
               {clubs.most_titled[k].slice(0, 3).map((m, i) => (
                 <span key={m.winner}>
                   {i > 0 ? " · " : ""}
+                  <CrestIcon name={m.team ?? m.winner} size={14} className="mr-1 align-middle" />
                   <span className="font-medium text-[var(--text)]">{m.winner}</span>
                   <span style={mono}> {m.titles}</span>
                 </span>
@@ -91,6 +93,7 @@ export default function DomesticRugbyPage() {
                     <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1 pr-2 tabular-nums whitespace-nowrap" style={mono}>{r.season}</td>
                       <td className="py-1 font-medium">
+                        <CrestIcon name={r.team ?? r.winner} size={16} className="mr-1.5 align-middle" />
                         {r.metro_slug ? (
                           <Link href={`/rankings/${r.metro_slug}`} className="hover:text-[var(--accent)]">
                             {r.winner}

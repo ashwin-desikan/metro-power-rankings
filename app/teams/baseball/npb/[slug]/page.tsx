@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
@@ -64,6 +65,7 @@ export default async function NpbTeamPage(
 
       <header className="mb-8">
         <div className="flex items-center gap-3 flex-wrap">
+          <CrestIcon name={team.name} size={40} className="flex-shrink-0" />
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
         <ChampionBadge items={getCurrentChampionships(team.name, "Baseball")} />
           <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs" style={card}>
