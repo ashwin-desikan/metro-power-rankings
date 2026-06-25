@@ -22,7 +22,7 @@ export const RELEASES: Release[] = [
     headline: "Live Standings hub, live golf, tennis, cricket, and an NFL Rules Lab",
     items: [
       "New Live Standings page: every league we track on one page, the four majors, MLS, NWSL, WNBA, CFL, NPB, AFL, NRL, F1 and the World Cup, grouped by sport and refreshed in season.",
-      "Live golf and tennis majors join it during The Open and the Slams, alongside the ICC World Test Championship table (now also on the cricket hub) and live NPB standings.",
+      "Live golf and tennis majors join it during The Open and the Slams, alongside the ICC World Test Championship table (now also on the cricket hub), live NPB standings, plus an NHL offseason display fix.",
       "New NFL Rules Lab with a Catch Lab, key rules, real calls and a rules timeline, plus a kids Catch or No Catch game, joining the football, cricket and baseball labs.",
       "Club crests and flags expanded sitewide, a new College Baseball hub on the College World Series, ABA titles split out on NBA pages, and a State of Origin table on the NRL hub.",
     ],

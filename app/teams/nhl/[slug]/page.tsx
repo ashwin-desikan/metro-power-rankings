@@ -132,7 +132,18 @@ export default async function NhlTeamPage({ params }: Props) {
   // Workbook may already carry a row for the current season. If yes, the
   // workbook row wins (matches the convention from NBA/MLB).
   const currentInWorkbook = seasons.find(s => s.year === liveSeasonYear);
-  const showLiveRow = liveSeasonYear > 0 &&
+  // Only treat ESPN data as a live in-progress row when the league is genuinely
+  // mid-season. ESPN rolls season_year forward right after the Stanley Cup while
+  // still serving the completed regular season, so without this guard a finished
+  // 82-game season surfaces as a phantom future "In progress" row (e.g. 2026-27
+  // shown in June). Mirrors the /sports/standings hub's inSeasonFromGames(_, 82).
+  const leagueGamesPlayed = Object.values(standings.by_canonical).map((t) => t.games_played);
+  const leagueInSeason =
+    leagueGamesPlayed.length > 0 &&
+    Math.max(...leagueGamesPlayed) > 0 &&
+    Math.min(...leagueGamesPlayed) < 82;
+  const showLiveRow = leagueInSeason &&
+    liveSeasonYear > 0 &&
     liveRow &&
     liveRow.games_played > 0 &&
     !currentInWorkbook;
