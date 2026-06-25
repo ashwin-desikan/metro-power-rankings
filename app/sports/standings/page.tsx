@@ -393,12 +393,12 @@ async function f1Block(): Promise<Block | null> {
   const drivers: SubTable = {
     title: "Drivers",
     columns: ["Team", "Pts", "Wins"],
-    rows: s.drivers.map((d): SRow => ({ rank: d.pos, name: d.driver, crestName: f1ConstructorCrestName(d.team), cells: [d.team ?? DASH, d.points, num(d.wins)] })),
+    rows: s.drivers.map((d): SRow => ({ rank: d.pos, name: d.driver, crestName: f1ConstructorCrestName(d.team), cells: [d.team ?? DASH, num(d.points), num(d.wins)] })),
   };
   const constructors: SubTable = {
     title: "Constructors",
     columns: ["Pts", "Wins"],
-    rows: s.constructors.map((c): SRow => ({ rank: c.pos, name: c.constructor, crestName: f1ConstructorCrestName(c.constructor), cells: [c.points, num(c.wins)] })),
+    rows: s.constructors.map((c): SRow => ({ rank: c.pos, name: c.constructor, crestName: f1ConstructorCrestName(c.constructor), cells: [num(c.points), num(c.wins)] })),
   };
   return { league: "Formula 1", href: "/teams/f1", note: s.source === "espn" ? "live" : `${s.season}`, open: true, cols: true, subTables: [drivers, constructors] };
 }
