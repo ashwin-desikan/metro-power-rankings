@@ -669,4 +669,22 @@ export const RELEASES: Release[] = [
     date: "2026-04-14",
     headline: "Bug fixes",
     items: [
-      "Tea
+      "Team badges, percentage displays, events aggregation, and football team naming corrected.",
+    ],
+  },
+  {
+    date: "2026-04-13",
+    headline: "Launch",
+    items: [
+      "Initial release: 4,200+ metros, 16 dimensions, ranked by composite score.",
+      "Metro profile pages with company names, sources, market cap, GDP, and dimension breakdowns.",
+    ],
+  },
+  {
+    date: "2026-04-12",
+    headline: "Series opener Substack published",
+    items: [
+      "Inaugural essay The Global Metro Power Rankings: Measuring What Makes a City Matter published on Substack, introducing the dimension-based composite framework one day before the site went live.",
+    ],
+  },
+];
