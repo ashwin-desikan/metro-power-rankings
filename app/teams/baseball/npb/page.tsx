@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import ClubsTable from "./ClubsTable";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getAllNpbTeams, getNpbDefunct, getNpbHub } from "@/lib/npb";
+import { getNpbStandings, type NpbStandingRow } from "@/lib/npbStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
+// Live standings are fetched at request time from SPAIA and cached by ISR, so
+// they refresh hourly with no rebuild. Same mechanism as the F1 hub.
+export const revalidate = 3600;
 const PATH = "/teams/baseball/npb";
 const TITLE = "Nippon Professional Baseball (NPB)";
 const DESC =
@@ -24,10 +29,55 @@ const card = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const GOLD = "#d4af37";
 
-export default function NpbHubPage() {
+function StandingsTable({
+  title,
+  rows,
+  teamLink,
+}: {
+  title: string;
+  rows: NpbStandingRow[];
+  teamLink: (name: string | null) => ReactNode;
+}) {
+  if (rows.length === 0) return null;
+  return (
+    <div className="rounded-xl border overflow-x-auto" style={card}>
+      <div className="px-3 pt-3 pb-1 text-xs font-semibold text-[var(--text-muted)]">{title}</div>
+      <table className="w-full text-sm min-w-[360px]">
+        <thead>
+          <tr className="text-left text-xs text-[var(--text-muted)]">
+            <th className="py-2 px-3 font-medium">#</th>
+            <th className="py-2 px-3 font-medium">Club</th>
+            <th className="py-2 px-2 font-medium text-right">W</th>
+            <th className="py-2 px-2 font-medium text-right">L</th>
+            <th className="py-2 px-2 font-medium text-right">T</th>
+            <th className="py-2 px-2 font-medium text-right">PCT</th>
+            <th className="py-2 px-3 font-medium text-right">GB</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.slug ?? r.name} className="border-t" style={{ borderColor: "var(--border)" }}>
+              <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank}</td>
+              <td className="py-1.5 px-3 font-medium">{teamLink(r.name)}</td>
+              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.win}</td>
+              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.lose}</td>
+              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.draw}</td>
+              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.pct}</td>
+              <td className="py-1.5 px-3 tabular-nums text-right text-[var(--text-muted)]" style={mono}>{r.gamesBehind}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default async function NpbHubPage() {
   const hub = getNpbHub();
   const teams = getAllNpbTeams();
   const defunct = getNpbDefunct();
+  const standings = await getNpbStandings();
+  const hasStandings = !!standings && (standings.central.length > 0 || standings.pacific.length > 0);
   if (!hub) return null;
 
   const slugByName = new Map(teams.map((t) => [t.name, t.slug]));
@@ -76,11 +126,29 @@ export default function NpbHubPage() {
 
       <HubNav
         items={[
+          ...(hasStandings ? [{ label: `${standings!.year} Standings`, href: "#standings" }] : []),
           { label: "Japan Series", href: "#japan-series" },
           { label: "All-time Clubs", href: "#clubs" },
           { label: "Methodology", href: "#methodology" },
         ]}
       />
+
+      {/* ---------------- Live standings (SPAIA, ISR) ---------------- */}
+      {hasStandings && (
+        <section className="mb-10">
+          <h2 id="standings" className="text-lg font-semibold mb-1">
+            {standings!.year} Standings
+          </h2>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            Current Central and Pacific League tables, refreshed through the season.
+            Live data from SPAIA.
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+            <StandingsTable title="Central League" rows={standings!.central} teamLink={teamLink} />
+            <StandingsTable title="Pacific League" rows={standings!.pacific} teamLink={teamLink} />
+          </div>
+        </section>
+      )}
 
       {/* ---------------- Japan Series roll ---------------- */}
       <section className="mb-10">

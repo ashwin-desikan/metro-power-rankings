@@ -10,6 +10,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { getCrest } from "@/lib/teamCrest";
 import type { FootballMapPoint } from "./FootballMapInner";
 
 // Leaflet is browser-only; SSR import would crash on window access.
@@ -590,11 +591,14 @@ export default function FootballIndexClient({ clubs }: Props) {
                 // for that year (club in a tier outside scope or dormant),
                 // leave the parenthetical blank per editorial spec.
                 const lvl = sy !== null ? c.tier_by_year[String(sy)] : undefined;
+                // One marker per club: show the real crest when we have one,
+                // otherwise fall back to the colored dot. Never both.
+                const hasCrest = !!getCrest(c.cur_name);
                 return (
                   <li key={c.slug} className="flex items-baseline gap-2">
-                    <Dot slug={c.slug} />
+                    {!hasCrest && <Dot slug={c.slug} />}
                     <Link href={`/teams/football/${c.slug}`} className="hover:underline">
-                      <CrestIcon name={c.cur_name} size={16} className="mr-1.5 align-middle" />
+                      {hasCrest && <CrestIcon name={c.cur_name} size={16} className="mr-1.5 align-middle" />}
                       {c.cur_name}
                     </Link>
                     {lvl !== undefined && (
