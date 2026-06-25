@@ -59,7 +59,7 @@
   <div class="gridwrap" id="grid"></div>
   <div class="bar"><span class="g" id="left"></span><span class="g" id="score"></span></div>
   <div class="end" id="end"></div>
-  <footer>Teams, sports and locations come from the Zone Zero Sports hub. The number on a filled square is how many teams could have answered it.</footer>
+  <footer>Eligible teams are the top divisions, major leagues and major college programs tracked on the Zone Zero Sports hub — only teams that appear in the autocomplete count. The number on a filled square is how many teams could have answered it.</footer>
 </div>
 <div class="toast" id="toast"></div>
 <script>
@@ -134,6 +134,11 @@ function render(){
 }
 function selectCell(k,ri,ci){if(done||cells[k])return;sel=k;selRi=ri;selCi=ci;$("inwrap").className="inwrap show";
   $("prompt").innerHTML=`Name a <b style="color:var(--text)">${rows[ri].label}</b> team in <b style="color:var(--text)">${cols[ci].label}</b>`;
+  // Narrow the autocomplete to this row's sport so look-alike names from other
+  // sports (AS Monaco football vs AS Monaco Basket) don't collide. Country is
+  // never hinted, so the column answer stays hidden.
+  const opts=[...new Set(POOL.filter(t=>rows[ri].t(t)).map(t=>t.team))].sort();
+  $("teams").innerHTML=opts.map(n=>`<option value="${n}"></option>`).join("");
   $("inp").value="";$("inp").focus();render();}
 function submit(){
   if(!sel||done)return;const v=$("inp").value.trim().toLowerCase();const list=byname[v];

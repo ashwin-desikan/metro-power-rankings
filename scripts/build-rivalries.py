@@ -94,7 +94,7 @@ TOP_RIVALRIES = [
     ("wnba", "New York Liberty", "Las Vegas Aces"),
     ("cbb-w", "Connecticut", "Tennessee"), ("cbb-w", "South Carolina", "Connecticut"),
     ("wfootball", "Arsenal Women", "Tottenham Hotspur Women"), ("wfootball", "Arsenal Women", "Chelsea Women"),
-    ("wfootball", "FC Barcelona Femeni", "Real Madrid Femenino"), ("wfootball", "Portland Thorns FC", "OL Reign"),
+    ("wfootball", "FC Barcelona Femeni", "Real Madrid Femenino"), ("wfootball", "Portland Thorns FC", "Seattle Reign FC"),
     # association football — the fiercest, so more qualify
     ("football", "FC Barcelona", "Real Madrid"), ("football", "Rangers", "Celtic"),
     ("football", "Boca Juniors", "River Plate"), ("football", "Liverpool", "Everton"),

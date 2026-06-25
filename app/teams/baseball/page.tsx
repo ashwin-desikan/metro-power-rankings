@@ -3,6 +3,7 @@ import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
 import { getAllBaseballTeams, getBaseballHub } from "@/lib/baseball";
 import { getNpbHub } from "@/lib/npb";
+import { getCwsData } from "@/lib/cws";
 import { flagCdnUrl } from "@/lib/international-display";
 import { getWorldRanking } from "@/lib/worldRankings";
 import WorldRankingSection from "@/app/teams/_shared/WorldRankingSection";
@@ -28,6 +29,7 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 export default function BaseballHubPage() {
   const hub = getBaseballHub();
   const npb = getNpbHub();
+  const cws = getCwsData();
   const teams = getAllBaseballTeams();
   if (!hub) return null;
 
@@ -119,6 +121,26 @@ export default function BaseballHubPage() {
         </Link>
       ) : null}
 
+      {/* ---------------- College Baseball card ---------------- */}
+      <Link href="/teams/baseball/college"
+        className="block rounded-xl border p-4 mb-8 transition hover:border-[var(--accent)]"
+        style={card}>
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="font-semibold text-base">College Baseball &rarr;</div>
+            <div className="text-xs text-[var(--text-muted)] mt-1">
+              The College World Series: every champion and runner-up since {cws.first_year}, and an
+              all-time table of CWS titles and trips to Omaha.
+            </div>
+          </div>
+          {cws.champions[0] ? (
+            <div className="text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              {cws.champions[0].year} CWS: {cws.champions[0].champion}
+            </div>
+          ) : null}
+        </div>
+      </Link>
+
       {/* ---------------- Champions ---------------- */}
       <section className="mb-10">
         <h2 id="champions" className="text-lg font-semibold mb-1">World Baseball Classic finals</h2>
@@ -175,14 +197,7 @@ export default function BaseballHubPage() {
             <tbody>
               {allTime.map((t) => (
                 <tr key={t.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1.5 px-3 font-medium">
-                    <span className="inline-flex items-center gap-1.5">
-                      {flagCdnUrl(t.slug) && (
-                        <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" />
-                      )}
-                      {teamLink(t.name)}
-                    </span>
-                  </td>
+                  <td className="py-1.5 px-3 font-medium">{teamLink(t.name)}</td>
                   <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{t.apps}</td>
                   <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{t.pld}</td>
                   <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{t.w}</td>

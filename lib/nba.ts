@@ -31,6 +31,7 @@ export type Franchise = {
   wikipedia_url?: string | null;
   wikidata_qid?: string | null;
   championships: number;
+  aba_titles: number;
   championship_appearances: number;
   cf_appearances: number;
   division_titles: number;
@@ -194,6 +195,7 @@ export type HistoricalFranchise = {
   first_year: number | null;
   last_year: number | null;
   championships: number;
+  aba_titles: number;
   championship_appearances: number;
   cf_appearances: number;
   playoff_appearances: number;

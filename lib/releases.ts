@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-25",
-    headline: "Crests and flags expand worldwide, richer rivalries board, F1 upgrades",
+    headline: "Worldwide crest and flag expansion, new College Baseball hub",
     items: [
-      "Club crests and country flags now render across far more of the site: NPB, CFL, rugby and football honour rolls, the rivalries board, the cross-sport Greatest Games tables, and metro team cards.",
-      "New crest coverage for Japan's J.League, the K League and Chinese Super League, the Gulf, Egyptian and South African top flights, NPB and KBO baseball, Triple-A, and the English National League.",
-      "The Sports Rivalries board adds a League column, full team names with correct logos, flags for every national rivalry, and four new Top Rivalries; college metro cards now show their crests.",
-      "Formula 1 gains constructor logos across the standings and Greatest Games, the full 2026 race calendar with dates for upcoming rounds, and sport emojis for golf and tennis major champions.",
+      "Club crests and country flags now render across far more of the site: NPB, CFL, honour rolls, the rivalries and Greatest Games boards, the Domestic Leagues table, and metro team cards.",
+      "New crest coverage for the J.League, K League and Chinese Super League, the Gulf, Egyptian, South African and KBO leagues, Triple-A, and a dozen new European and South American top flights.",
+      "New College Baseball hub built on the College World Series, with a champions roll and all-time titles, and CWS titles and appearances now shown on the relevant metro team cards.",
+      "NBA pages split ABA titles into their own Oth Titles column, the NRL hub gains a State of Origin series table, and the rivalries board and F1 hub carry the prior crest expansion.",
     ],
   },
   {
@@ -669,22 +669,4 @@ export const RELEASES: Release[] = [
     date: "2026-04-14",
     headline: "Bug fixes",
     items: [
-      "Team badges, percentage displays, events aggregation, and football team naming corrected.",
-    ],
-  },
-  {
-    date: "2026-04-13",
-    headline: "Launch",
-    items: [
-      "Initial release: 4,200+ metros, 16 dimensions, ranked by composite score.",
-      "Metro profile pages with company names, sources, market cap, GDP, and dimension breakdowns.",
-    ],
-  },
-  {
-    date: "2026-04-12",
-    headline: "Series opener Substack published",
-    items: [
-      "Inaugural essay The Global Metro Power Rankings: Measuring What Makes a City Matter published on Substack, introducing the dimension-based composite framework one day before the site went live.",
-    ],
-  },
-];
+      "Tea

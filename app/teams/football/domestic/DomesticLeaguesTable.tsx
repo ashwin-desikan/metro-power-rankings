@@ -2,6 +2,7 @@
 
 import { Fragment, useMemo, useState } from "react";
 import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import type { DomesticClub, EraHonours } from "@/lib/domesticFootball";
 
 type SortKey = "name" | "country" | "titles" | "majorTrophies" | "cups" | "contTitles" | "clTitles";
@@ -146,6 +147,7 @@ export default function DomesticLeaguesTable({
                   <tr className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] cursor-pointer" onClick={() => toggle(id)}>
                     <td className="px-2 py-2 text-[var(--text-dim)]">{isOpen ? "−" : "+"}</td>
                     <td className="px-3 py-2">
+                      <CrestIcon name={c.name} size={18} className="mr-1.5 align-middle" />
                       {c.slug ? (
                         <Link href={`/teams/football/${c.slug}`} className="font-medium text-[var(--accent)] hover:underline" onClick={(e) => e.stopPropagation()}>
                           {c.name}

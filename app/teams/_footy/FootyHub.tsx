@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import HubNav from "@/app/teams/HubNav";
 import { fgFor, type FootyFranchise, type FootyMeta, type FootyLadder, type FootyGFResult } from "@/lib/_footy";
@@ -15,9 +16,10 @@ function Badge({ color, color2, abbr, size = 26 }: { color: string; color2: stri
   );
 }
 
-export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, live }: {
+export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, live, extra, extraNav }: {
   copy: FootyCopy; meta: FootyMeta; ladder: FootyLadder;
   franchises: FootyFranchise[]; gfHistory: FootyGFResult[]; live?: FootyStandingsView;
+  extra?: ReactNode; extraNav?: { label: string; href: string };
 }) {
   const lg = copy.league;
   const bySlug = new Map(franchises.map((f) => [f.slug, f]));
@@ -46,6 +48,7 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
         ...(live && live.rows.length ? [{ label: `${live.year} Live`, href: "#live" }] : []),
         { label: "All-Time Table", href: "#alltime" },
         { label: "Grand Finals", href: "#finals" },
+        ...(extraNav ? [extraNav] : []),
       ]} />
 
       {/* ── Latest-season ladder ─────────────────────────────────────────── */}
@@ -147,6 +150,8 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
           </table>
         </div>
       </section>
+
+      {extra}
 
       <p className="text-[10px] text-[var(--text-dim)]">
         Data sourced from <a href={meta.source_url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text-muted)] underline">{meta.source}</a>,

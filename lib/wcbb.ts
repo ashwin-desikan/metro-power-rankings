@@ -102,8 +102,8 @@ export function getWcbbForMetro(metroSlug: string): { major: WcbbCard[]; other: 
   const sortFn = (a: WcbbCard, b: WcbbCard) =>
     b.titles - a.titles || b.finalFours - a.finalFours || b.tourApps - a.tourApps || a.name.localeCompare(b.name);
   return {
-    major: inMetro.filter((t) => t.final4 >= 5).map(card).sort(sortFn),
-    other: inMetro.filter((t) => t.final4 < 5).map(card).sort(sortFn),
+    major: inMetro.filter((t) => t.titles >= 1).map(card).sort(sortFn),
+    other: inMetro.filter((t) => t.titles < 1).map(card).sort(sortFn),
   };
 }
 

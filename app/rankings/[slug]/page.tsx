@@ -26,6 +26,7 @@ import {
 import { computeTier } from "@/lib/tiers";
 import { normalizeSport, sportIcon, leagueIcon } from "@/lib/sportLabels";
 import { getBaseballLeagueByName } from "@/lib/allTeams";
+import { getCwsForSchool } from "@/lib/cws";
 import { getCrest } from "@/lib/teamCrest";
 import { getRugbyClubHonours } from "@/lib/rugbyClubs";
 import { getT20Honours } from "@/lib/cricketClubs";
@@ -1488,7 +1489,7 @@ function TeamsSection({
     return 0;
   });
   const majorTeamsOnly = majorTeamsRaw.filter((t) => t.league !== "Notable Venues");
-  const majorVenues = majorTeamsRaw.filter((t) => t.league === "Notable Venues");
+  const majorVenues = nonHistoricForBucketing.filter((t) => t.major && t.league === "Notable Venues");
 
   // Other Teams: four sub-groupings, all collapsible. Priority order when sport + level
   // overlap: College first (pulls out NCAA/FBS/FCS/College Hockey regardless of sport),
@@ -1528,12 +1529,22 @@ function TeamsSection({
     return !!cc && (cc.sweet16 > 0 || cc.elite8 > 0 || cc.final4 > 0);
   };
   const majorCollegeHoops = otherTeamsRaw.filter((t) => isDiMensHoops(t) && hoopsQualifies(t));
+  // College baseball with 4+ College World Series titles is lifted into the
+  // Major League section; the rest stay in Other College Teams.
+  const cwsTitlesFor = (name: string) => getCwsForSchool(name)?.titles ?? 0;
+  const isCollegeBaseball = (t: { sport: string; level?: string }) =>
+    t.sport === "Baseball" && t.level === "College";
+  const majorCollegeBaseball = otherTeamsRaw.filter((t) => isCollegeBaseball(t) && cwsTitlesFor(t.team) >= 4);
   const otherCollege = otherTeamsRaw.filter(
     (t) => isCollege(t) && !isFbsFootball(t) && !isDiMensHoops(t) && !(t.sport === "American Football" && t.league === "FCS")
       // Women's college basketball ("NCAA W") renders via the dedicated
       // WcbbCard system (wcbb.major / wcbb.other), so exclude it here to
       // avoid a second, duplicate plain card per program.
       && t.league !== "NCAA W"
+      // Notable Venues (incl. college stadiums) render in the Notable Venues section.
+      && t.league !== "Notable Venues"
+      // College baseball with 4+ CWS titles is promoted to the Major section above.
+      && !(isCollegeBaseball(t) && cwsTitlesFor(t.team) >= 4)
   );
   const otherFootball = [...otherTeamsRaw.filter((t) => !isCollege(t) && isFootball(t.sport))].sort((a, b) => {
     const ak = footballSortKeys.get(a.team) ?? { level: 99, majorCups: 0 };
@@ -1716,18 +1727,21 @@ function TeamsSection({
 
   return (
     <div className="space-y-6">
-      {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || wcbb.major.length > 0 || collegeHockey.major.length > 0 || majorVenues.length > 0 || historicVenuesRaw.length > 0) && (
+      {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || wcbb.major.length > 0 || collegeHockey.major.length > 0 || majorCollegeBaseball.length > 0 || majorVenues.length > 0 || historicVenuesRaw.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--accent)] mb-4">
             Major League Teams/Venues
           </h3>
-          {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || wcbb.major.length > 0 || collegeHockey.major.length > 0) && (
+          {(majorTeamsOnly.length > 0 || majorCollegeCards.length > 0 || wcbb.major.length > 0 || collegeHockey.major.length > 0 || majorCollegeBaseball.length > 0) && (
             <div className={`${majorVenues.length > 0 ? "mb-3" : ""} ${gridClass}`}>
               {topCollegeCards.map(renderCollegeCard)}
               {wcbbMajorTop.map((m) => renderWcbbCard(m, true))}
               {hockeyMajorTop.map((m) => renderHockeyCard(m, true))}
               {majorTeamsOnly.map((team, idx) => (
                 <TeamCard key={"m" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} metroName={metroName} />
+              ))}
+              {majorCollegeBaseball.map((team, idx) => (
+                <TeamCard key={"mcb" + idx} team={team} isTopTeam={isTopTeamFn(team.team, team.sport, team.league)} metroName={metroName} />
               ))}
               {restCollegeCards.map(renderCollegeCard)}
               {wcbbMajorRest.map((m) => renderWcbbCard(m, false))}
@@ -2214,7 +2228,10 @@ function TeamCard({
   // Foreign/minor baseball arrives tagged "Minor Lg Base" from the workbook;
   // restore the real league (KBO, NPB, International League, ...) from all-teams.json.
   const baseballLeague = team.sport === "Baseball" ? getBaseballLeagueByName(team.team) : null;
-  const displayLeague = wnbaFranchise ? "WNBA" : npbTeam ? "NPB" : (baseballLeague ?? team.league);
+  // College baseball: label the card "College Baseball" and surface its CWS record.
+  const collegeBaseball = team.sport === "Baseball" && team.level === "College";
+  const cwsRec = collegeBaseball ? getCwsForSchool(team.team) : null;
+  const displayLeague = wnbaFranchise ? "WNBA" : npbTeam ? "NPB" : collegeBaseball ? "College Baseball" : (baseballLeague ?? team.league);
   // For football, Gold Standard only applies to Level 1 (Big 5 top flight).
   // Lower-tier clubs in England/Spain/etc. share the same league label but
   // are not Gold — gate on level === "Major" (the ETL value for tier 1).
@@ -2322,6 +2339,22 @@ function TeamCard({
               {h.count > 0 ? `${h.count}× ${h.label}` : `No ${h.label} titles`}
             </Link>
           ))}
+        </div>
+      )}
+      {cwsRec && (cwsRec.titles > 0 || cwsRec.apps > 0) && (
+        <div className="flex gap-1.5 mb-1.5 flex-wrap">
+          {cwsRec.titles > 0 && (
+            <Link href="/teams/baseball/college" className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide hover:opacity-80 transition-opacity"
+                  style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+                  title={`College World Series titles${cwsRec.last_title ? ` — last in ${cwsRec.last_title}` : ""}`}>
+              {cwsRec.titles}× CWS title{cwsRec.titles === 1 ? "" : "s"}
+            </Link>
+          )}
+          <Link href="/teams/baseball/college" className="text-[10px] px-1.5 py-0.5 rounded font-medium tracking-wide hover:opacity-80 transition-opacity"
+                style={{ background: "rgba(120,140,170,0.16)", color: "var(--text-muted)" }}
+                title="College World Series appearances">
+            {cwsRec.apps} CWS appearance{cwsRec.apps === 1 ? "" : "s"}
+          </Link>
         </div>
       )}
       <div className="flex items-center gap-2.5">

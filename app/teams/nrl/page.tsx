@@ -4,6 +4,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import FootyHub from "@/app/teams/_footy/FootyHub";
 import { FOOTY } from "@/app/teams/_footy/config";
 import { getNrlLiveStandings } from "@/lib/nrlStandings";
+import StateOfOrigin from "./StateOfOrigin";
 
 export const dynamicParams = false;
 const PATH = "/teams/nrl";
@@ -17,5 +18,5 @@ export const metadata: Metadata = {
 
 export default async function NrlPage() {
   const live = await getNrlLiveStandings();
-  return <FootyHub copy={FOOTY.nrl} meta={getNrlMeta()} ladder={getNrlLatestLadder()} franchises={getAllNrlFranchises()} gfHistory={getNrlGrandFinalHistory()} live={live} />;
+  return <FootyHub copy={FOOTY.nrl} meta={getNrlMeta()} ladder={getNrlLatestLadder()} franchises={getAllNrlFranchises()} gfHistory={getNrlGrandFinalHistory()} live={live} extra={<StateOfOrigin />} extraNav={{ label: "State of Origin", href: "#origin" }} />;
 }

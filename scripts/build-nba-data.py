@@ -1334,6 +1334,17 @@ def enrich_top_games_ot():
 
 # -------- Main --------
 
+def _apply_aba_split(records, champs):
+    """ABA titles render separately as "Oth Titles", not in the NBA championship
+    total. Set aba_titles from the era-tagged championships and subtract them."""
+    for r in records:
+        canon = r.get("canonical") or r.get("name")
+        aba = sum(1 for t in champs.get(canon, []) if t.get("era") == "aba")
+        r["aba_titles"] = aba
+        if aba:
+            r["championships"] = max(0, (r.get("championships") or 0) - aba)
+
+
 def main():
     # FREEZE POLICY: NBA Game Scores are frozen by user instruction. The
     # top-games JSON is regenerated ONLY when explicitly requested (after the
@@ -1406,9 +1417,9 @@ def main():
                                   external_links, all_star_counts, arenas=arenas,
                                   metroareas_team_list=metro_team_list)
     print(f"Built franchises: {len(franchises)}")
-    (OUT_DIR / "franchises.json").write_text(json.dumps(franchises, indent=2, ensure_ascii=False), encoding="utf-8")
-
     champs = build_championships(yby)
+    _apply_aba_split(franchises, champs)
+    (OUT_DIR / "franchises.json").write_text(json.dumps(franchises, indent=2, ensure_ascii=False), encoding="utf-8")
     (OUT_DIR / "championships.json").write_text(json.dumps(champs, indent=2, ensure_ascii=False), encoding="utf-8")
 
     champ_apps = build_championship_appearances(yby)
@@ -1424,6 +1435,7 @@ def main():
     (OUT_DIR / "all-star-counts.json").write_text(json.dumps(all_star_counts, indent=2, ensure_ascii=False), encoding="utf-8")
 
     historical = build_historical(totals, yby)
+    _apply_aba_split(historical, champs)
     print(f"Built historical: {len(historical)}")
     (OUT_DIR / "historical.json").write_text(json.dumps(historical, indent=2, ensure_ascii=False), encoding="utf-8")
 

@@ -24,7 +24,7 @@ const PLAYOFF_STATE_COLORS: Record<PlayoffStateRecord["state"], { bg: string; te
 // the live postseason column applies to current teams only.
 
 type SortKey =
-  | "name" | "metro" | "conf" | "founding_year" | "championships"
+  | "name" | "metro" | "conf" | "founding_year" | "championships" | "aba_titles"
   | "champ_apps" | "cf_apps" | "win_pct" | "record" | "playoff_appearances"
   | "all_stars" | "postseason";
 type SortDir = "asc" | "desc";
@@ -35,7 +35,7 @@ type Row = {
   key: string; slug: string | null; canonical: string; name: string; defunct: boolean;
   metroLabel: string | null; metroSlug: string | null;
   conf: string | null; founded: number | null; ended: number | null;
-  championships: number; champApps: number | null; cfApps: number | null;
+  championships: number; abaTitles: number; champApps: number | null; cfApps: number | null;
   playoffApps: number | null; allStars: number | null;
   wlt: string; allTimeW: number; winPct: number;
 };
@@ -62,7 +62,7 @@ function activeRow(f: Franchise): Row {
   return {
     key: f.slug, slug: f.slug, canonical: f.canonical, name: f.display_name, defunct: false,
     metroLabel: f.metro, metroSlug: f.metro_slug, conf: f.conf,
-    founded: f.founding_year, ended: null, championships: f.championships,
+    founded: f.founding_year, ended: null, championships: f.championships, abaTitles: f.aba_titles ?? 0,
     champApps: f.championship_appearances, cfApps: f.cf_appearances,
     playoffApps: f.playoff_appearances, allStars: f.all_star_count,
     wlt: `${f.all_time_w}-${f.all_time_l}`, allTimeW: f.all_time_w, winPct: f.win_pct,
@@ -73,7 +73,7 @@ function defunctRow(h: HistoricalFranchise): Row {
   return {
     key: `def-${h.canonical}`, slug: h.slug, canonical: h.canonical, name: h.display_name, defunct: true,
     metroLabel: h.metro || lastCity, metroSlug: h.metro_slug ?? null, conf: null,
-    founded: h.first_year, ended: h.last_year, championships: h.championships,
+    founded: h.first_year, ended: h.last_year, championships: h.championships, abaTitles: h.aba_titles ?? 0,
     champApps: h.championship_appearances, cfApps: h.cf_appearances,
     playoffApps: h.playoff_appearances, allStars: null,
     wlt: `${h.all_time_w}-${h.all_time_l}`, allTimeW: h.all_time_w, winPct: h.win_pct,
@@ -87,6 +87,7 @@ function compare(a: Row, b: Row, key: SortKey, state: Record<string, PlayoffStat
     case "conf": return (a.conf || "").localeCompare(b.conf || "");
     case "founding_year": return (a.founded ?? 0) - (b.founded ?? 0);
     case "championships": return a.championships - b.championships;
+    case "aba_titles": return a.abaTitles - b.abaTitles;
     case "champ_apps": return (a.champApps ?? -1) - (b.champApps ?? -1);
     case "cf_apps": return (a.cfApps ?? -1) - (b.cfApps ?? -1);
     case "win_pct": return a.winPct - b.winPct;
@@ -119,7 +120,7 @@ export default function FranchiseTable({ franchises, historical, playoffState, l
     if (key === sortKey) { setSortDir(sortDir === "asc" ? "desc" : "asc"); }
     else {
       setSortKey(key);
-      const numeric: SortKey[] = ["championships", "champ_apps", "cf_apps", "win_pct", "record", "playoff_appearances", "founding_year", "all_stars", "postseason"];
+      const numeric: SortKey[] = ["championships", "aba_titles", "champ_apps", "cf_apps", "win_pct", "record", "playoff_appearances", "founding_year", "all_stars", "postseason"];
       setSortDir(numeric.includes(key) ? "desc" : "asc");
     }
   }
@@ -141,6 +142,7 @@ export default function FranchiseTable({ franchises, historical, playoffState, l
               <Th label="Conf"      k="conf"                cur={sortKey} dir={sortDir} onClick={toggle} />
               <Th label="Founded"   k="founding_year"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
               <Th label="Titles"    k="championships"       cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
+              <Th label="Oth Titles" k="aba_titles" cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
               <Th label="Finals"    k="champ_apps"          cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
               <Th label="CF"        k="cf_apps"             cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
               <Th label="Playoffs"  k="playoff_appearances" cur={sortKey} dir={sortDir} onClick={toggle} align="right" />
@@ -191,6 +193,11 @@ export default function FranchiseTable({ franchises, historical, playoffState, l
                   <td className="py-2.5 pr-3 text-right">
                     {r.championships > 0 ? (
                       <span className="inline-block rounded px-1.5 py-0.5 text-[11px] font-bold tabular-nums" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title={`${r.championships} championship${r.championships === 1 ? "" : "s"}`}>{r.championships}</span>
+                    ) : dash}
+                  </td>
+                  <td className="py-2.5 pr-3 text-right">
+                    {r.abaTitles > 0 ? (
+                      <span className="inline-block rounded px-1.5 py-0.5 text-[11px] font-bold tabular-nums" style={{ background: "rgba(120,140,170,0.18)", color: "#aab4c4" }} title={`${r.abaTitles} ABA championship${r.abaTitles === 1 ? "" : "s"}`}>{r.abaTitles}</span>
                     ) : dash}
                   </td>
                   <td className="py-2.5 pr-3 text-right text-[var(--text-muted)]">{r.champApps ?? dash}</td>

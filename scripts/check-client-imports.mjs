@@ -28,6 +28,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..");
 
 const SERVER_ONLY_MODULES = [
+  "@/lib/cws",
   "@/lib/allTeams",
   "@/lib/audience",
   "@/lib/wcbb",
