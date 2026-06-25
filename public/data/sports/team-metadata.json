@@ -1,6 +1,6 @@
 {
   "generated": "2026-06-25",
-  "matched": 1432,
+  "matched": 1656,
   "unmatched": [
     "New Haven",
     "East Texas A&M",
@@ -10,6 +10,7 @@
     "New Zealand Knights",
     "North Queensland Fury",
     "Queensland Roar",
+    "Falcons",
     "Kandahar Knights",
     "Nangarhar Leopards",
     "Paktia Panthers",
@@ -3517,6 +3518,156 @@
       "idAPIfootball": "16",
       "sdb_league": "Australian AFL"
     },
+    "Buffalo Bisons": {
+      "badge": "/team-badges/buffalo-bisons.png",
+      "sdb_name": "Buffalo Bisons",
+      "logo": null
+    },
+    "Charlotte Knights": {
+      "badge": "/team-badges/charlotte-knights.png",
+      "sdb_name": "Charlotte Knights",
+      "logo": null
+    },
+    "Columbus Clippers": {
+      "badge": "/team-badges/columbus-clippers.png",
+      "sdb_name": "Columbus Clippers",
+      "logo": null
+    },
+    "Durham Bulls": {
+      "badge": "/team-badges/durham-bulls.png",
+      "sdb_name": "Durham Bulls",
+      "logo": null
+    },
+    "Gwinnett Stripers": {
+      "badge": "/team-badges/gwinnett-stripers.png",
+      "sdb_name": "Gwinnett Stripers",
+      "logo": null
+    },
+    "Indianapolis Indians": {
+      "badge": "/team-badges/indianapolis-indians.png",
+      "sdb_name": "Indianapolis Indians",
+      "logo": null
+    },
+    "Iowa Cubs": {
+      "badge": "/team-badges/iowa-cubs.png",
+      "sdb_name": "Iowa Cubs",
+      "logo": null
+    },
+    "Jacksonville Jumbo Shrimp": {
+      "badge": "/team-badges/jacksonville-jumbo-shrimp.png",
+      "sdb_name": "Jacksonville Jumbo Shrimp",
+      "logo": null
+    },
+    "Lehigh Valley IronPigs": {
+      "badge": "/team-badges/lehigh-valley-ironpigs.png",
+      "sdb_name": "Lehigh Valley IronPigs",
+      "logo": null
+    },
+    "Louisville Bats": {
+      "badge": "/team-badges/louisville-bats.png",
+      "sdb_name": "Louisville Bats",
+      "logo": null
+    },
+    "Memphis Redbirds": {
+      "badge": "/team-badges/memphis-redbirds.png",
+      "sdb_name": "Memphis Redbirds",
+      "logo": null
+    },
+    "Nashville Sounds": {
+      "badge": "/team-badges/nashville-sounds.png",
+      "sdb_name": "Nashville Sounds",
+      "logo": null
+    },
+    "Norfolk Tides": {
+      "badge": "/team-badges/norfolk-tides.png",
+      "sdb_name": "Norfolk Tides",
+      "logo": null
+    },
+    "Omaha Storm Chasers": {
+      "badge": "/team-badges/omaha-storm-chasers.png",
+      "sdb_name": "Omaha Storm Chasers",
+      "logo": null
+    },
+    "Rochester Red Wings": {
+      "badge": "/team-badges/rochester-red-wings.png",
+      "sdb_name": "Rochester Red Wings",
+      "logo": null
+    },
+    "Scranton/Wilkes-Barre RailRiders": {
+      "badge": "/team-badges/scranton-wilkes-barre-railriders.png",
+      "sdb_name": "Scranton/Wilkes-Barre RailRiders",
+      "logo": null
+    },
+    "St. Paul Saints": {
+      "badge": "/team-badges/st-paul-saints.png",
+      "sdb_name": "St. Paul Saints",
+      "logo": null
+    },
+    "Syracuse Mets": {
+      "badge": "/team-badges/syracuse-mets.png",
+      "sdb_name": "Syracuse Mets",
+      "logo": null
+    },
+    "Toledo Mud Hens": {
+      "badge": "/team-badges/toledo-mud-hens.png",
+      "sdb_name": "Toledo Mud Hens",
+      "logo": null
+    },
+    "Worcester Red Sox": {
+      "badge": "/team-badges/worcester-red-sox.png",
+      "sdb_name": "Worcester Red Sox",
+      "logo": null
+    },
+    "Doosan Bears": {
+      "badge": "/team-badges/doosan-bears.png",
+      "sdb_name": "Doosan Bears",
+      "logo": null
+    },
+    "Hanwha Eagles": {
+      "badge": "/team-badges/hanwha-eagles.png",
+      "sdb_name": "Hanwha Eagles",
+      "logo": null
+    },
+    "KT Wiz": {
+      "badge": "/team-badges/kt-wiz.png",
+      "sdb_name": "KT Wiz",
+      "logo": null
+    },
+    "Kia Tigers": {
+      "badge": "/team-badges/kia-tigers.png",
+      "sdb_name": "Kia Tigers",
+      "logo": null
+    },
+    "Kiwoom Heroes": {
+      "badge": "/team-badges/kiwoom-heroes.png",
+      "sdb_name": "Kiwoom Heroes",
+      "logo": null
+    },
+    "LG Twins": {
+      "badge": "/team-badges/lg-twins.png",
+      "sdb_name": "LG Twins",
+      "logo": null
+    },
+    "Lotte Giants": {
+      "badge": "/team-badges/lotte-giants.png",
+      "sdb_name": "Lotte Giants",
+      "logo": null
+    },
+    "NC Dinos": {
+      "badge": "/team-badges/nc-dinos.png",
+      "sdb_name": "NC Dinos",
+      "logo": null
+    },
+    "SSG Landers": {
+      "badge": "/team-badges/ssg-landers.png",
+      "sdb_name": "SSG Landers",
+      "logo": null
+    },
+    "Samsung Lions": {
+      "badge": "/team-badges/samsung-lions.png",
+      "sdb_name": "Samsung Lions",
+      "logo": null
+    },
     "Arizona Diamondbacks": {
       "badge": "/data/mlb/logos/diamondbacks.png",
       "sport": "mlb"
@@ -3780,6 +3931,56 @@
       "idESPN": null,
       "idAPIfootball": "66",
       "sdb_league": "Nippon Baseball League"
+    },
+    "Albuquerque Isotopes": {
+      "badge": "/team-badges/albuquerque-isotopes.png",
+      "sdb_name": "Albuquerque Isotopes",
+      "logo": null
+    },
+    "El Paso Chihuahuas": {
+      "badge": "/team-badges/el-paso-chihuahuas.png",
+      "sdb_name": "El Paso Chihuahuas",
+      "logo": null
+    },
+    "Las Vegas Aviators": {
+      "badge": "/team-badges/las-vegas-aviators.png",
+      "sdb_name": "Las Vegas Aviators",
+      "logo": null
+    },
+    "Oklahoma City Comets": {
+      "badge": "/team-badges/oklahoma-city-comets.png",
+      "sdb_name": "Oklahoma City Comets",
+      "logo": null
+    },
+    "Reno Aces": {
+      "badge": "/team-badges/reno-aces.png",
+      "sdb_name": "Reno Aces",
+      "logo": null
+    },
+    "Round Rock Express": {
+      "badge": "/team-badges/round-rock-express.png",
+      "sdb_name": "Round Rock Express",
+      "logo": null
+    },
+    "Sacramento River Cats": {
+      "badge": "/team-badges/sacramento-river-cats.png",
+      "sdb_name": "Sacramento River Cats",
+      "logo": null
+    },
+    "Salt Lake Bees": {
+      "badge": "/team-badges/salt-lake-bees.png",
+      "sdb_name": "Salt Lake Bees",
+      "logo": null
+    },
+    "Sugar Land Space Cowboys": {
+      "badge": "/team-badges/sugar-land-space-cowboys.png",
+      "sdb_name": "Sugar Land Space Cowboys",
+      "logo": null
+    },
+    "Tacoma Rainiers": {
+      "badge": "/team-badges/tacoma-rainiers.png",
+      "sdb_name": "Tacoma Rainiers",
+      "logo": null
     },
     "Binghamton": {
       "sdb_name": "Binghamton",
@@ -6229,6 +6430,342 @@
       "idAPIfootball": "7573",
       "sdb_league": "_No League Soccer"
     },
+    "FC Blau-Weiß Linz": {
+      "sdb_name": "Blau-Weiß Linz",
+      "sdb_id": "139412",
+      "badge": "/team-badges/fc-blau-wei-linz.png",
+      "logo": null,
+      "stadium": "Hofmann Personal Stadion",
+      "capacity": 21005,
+      "founded": 1997,
+      "idESPN": "0",
+      "idAPIfootball": "1394",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "FC Red Bull Salzburg": {
+      "sdb_name": "Red Bull Salzburg",
+      "sdb_id": "133970",
+      "badge": "/team-badges/fc-red-bull-salzburg.png",
+      "logo": null,
+      "stadium": "Red Bull Arena Salzburg",
+      "capacity": 31000,
+      "founded": 1933,
+      "idESPN": "0",
+      "idAPIfootball": "571",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "FK Austria Wien": {
+      "sdb_name": "Austria Vienna",
+      "sdb_id": "134390",
+      "badge": "/team-badges/fk-austria-wien.png",
+      "logo": "/team-logos/fk-austria-wien.png",
+      "stadium": "Generali Arena",
+      "capacity": 17565,
+      "founded": 1911,
+      "idESPN": "0",
+      "idAPIfootball": "601",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "Grazer AK": {
+      "sdb_name": "Grazer AK",
+      "sdb_id": "139415",
+      "badge": "/team-badges/grazer-ak.png",
+      "logo": null,
+      "stadium": "Merkur Arena Graz",
+      "capacity": 2500,
+      "founded": 1902,
+      "idESPN": "0",
+      "idAPIfootball": "4256",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "LASK Linz": {
+      "sdb_name": "LASK",
+      "sdb_id": "137261",
+      "badge": "/team-badges/lask-linz.png",
+      "logo": "/team-logos/lask-linz.png",
+      "stadium": "Raiffeisen Arena Linz",
+      "capacity": 6009,
+      "founded": 1908,
+      "idESPN": "0",
+      "idAPIfootball": "1026",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "SC Rheindorf Altach": {
+      "sdb_name": "SCR Altach",
+      "sdb_id": "137742",
+      "badge": "/team-badges/sc-rheindorf-altach.png",
+      "logo": null,
+      "stadium": "Cashpoint-Arena",
+      "capacity": 8500,
+      "founded": 1929,
+      "idESPN": "0",
+      "idAPIfootball": "618",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "SK Rapid Wien": {
+      "sdb_name": "Rapid Vienna",
+      "sdb_id": "134021",
+      "badge": "/team-badges/sk-rapid-wien.png",
+      "logo": null,
+      "stadium": "Allianz Stadion Vienna",
+      "capacity": 28345,
+      "founded": 1899,
+      "idESPN": "0",
+      "idAPIfootball": "781",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "SK Sturm Graz": {
+      "sdb_name": "Sturm Graz",
+      "sdb_id": "137743",
+      "badge": "/team-badges/sk-sturm-graz.png",
+      "logo": null,
+      "stadium": "Merkur Arena Graz",
+      "capacity": 16364,
+      "founded": 1909,
+      "idESPN": "0",
+      "idAPIfootball": "637",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "SV Ried": {
+      "sdb_name": "SV Ried",
+      "sdb_id": "133993",
+      "badge": "/team-badges/sv-ried.png",
+      "logo": null,
+      "stadium": "Innviertel Arena",
+      "capacity": 7680,
+      "founded": 1912,
+      "idESPN": "0",
+      "idAPIfootball": "1028",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "TSV Hartberg": {
+      "sdb_name": "TSV Hartberg",
+      "sdb_id": "137805",
+      "badge": "/team-badges/tsv-hartberg.png",
+      "logo": "/team-logos/tsv-hartberg.png",
+      "stadium": "Profertil Arena Hartberg",
+      "capacity": 4500,
+      "founded": 4500,
+      "idESPN": "0",
+      "idAPIfootball": "1072",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "WSG Tirol": {
+      "sdb_name": "WSG Tirol",
+      "sdb_id": "137807",
+      "badge": "/team-badges/wsg-tirol.png",
+      "logo": null,
+      "stadium": "Tivoli Stadion Tirol",
+      "capacity": 16008,
+      "founded": 1930,
+      "idESPN": "0",
+      "idAPIfootball": "1398",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "Wolfsberger AC": {
+      "sdb_name": "Wolfsberger AC",
+      "sdb_id": "137252",
+      "badge": "/team-badges/wolfsberger-ac.png",
+      "logo": null,
+      "stadium": "Lavanttal-Arena",
+      "capacity": 7300,
+      "founded": 1931,
+      "idESPN": "0",
+      "idAPIfootball": "1025",
+      "sdb_league": "Austrian Bundesliga"
+    },
+    "Cercle Brugge": {
+      "sdb_name": "Cercle Brugge",
+      "sdb_id": "133782",
+      "badge": "/team-badges/cercle-brugge.png",
+      "logo": "/team-logos/cercle-brugge.png",
+      "stadium": "Jan Breydel Stadium",
+      "capacity": 29472,
+      "founded": 1899,
+      "idESPN": "0",
+      "idAPIfootball": "741",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Charleroi": {
+      "sdb_name": "Charleroi",
+      "sdb_id": "133826",
+      "badge": "/team-badges/charleroi.png",
+      "logo": "/team-logos/charleroi.png",
+      "stadium": "Stade du Pays de Charleroi",
+      "capacity": 14000,
+      "founded": 1904,
+      "idESPN": "0",
+      "idAPIfootball": "736",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Club Brugge": {
+      "sdb_name": "Club Brugge",
+      "sdb_id": "133789",
+      "badge": "/team-badges/club-brugge.png",
+      "logo": "/team-logos/club-brugge.png",
+      "stadium": "Jan Breydel Stadium",
+      "capacity": 29062,
+      "founded": 1891,
+      "idESPN": "0",
+      "idAPIfootball": "569",
+      "sdb_league": "Belgian Pro League"
+    },
+    "FCV Dender EH": {
+      "sdb_name": "Dender",
+      "sdb_id": "133863",
+      "badge": "/team-badges/fcv-dender-eh.png",
+      "logo": "/team-logos/fcv-dender-eh.png",
+      "stadium": "Dender Football Complex",
+      "capacity": 6429,
+      "founded": 1935,
+      "idESPN": "0",
+      "idAPIfootball": "6215",
+      "sdb_league": "Belgian First Division B"
+    },
+    "KAA Gent": {
+      "sdb_name": "Gent",
+      "sdb_id": "133781",
+      "badge": "/team-badges/kaa-gent.png",
+      "logo": "/team-logos/kaa-gent.png",
+      "stadium": "Planet Group Arena",
+      "capacity": 20000,
+      "founded": 1900,
+      "idESPN": "0",
+      "idAPIfootball": "631",
+      "sdb_league": "Belgian Pro League"
+    },
+    "KV Mechelen": {
+      "sdb_name": "Mechelen",
+      "sdb_id": "133787",
+      "badge": "/team-badges/kv-mechelen.png",
+      "logo": "/team-logos/kv-mechelen.png",
+      "stadium": "AFAS Stadion Mechelen",
+      "capacity": 16672,
+      "founded": 1904,
+      "idESPN": "0",
+      "idAPIfootball": "266",
+      "sdb_league": "Belgian Pro League"
+    },
+    "KVC Westerlo": {
+      "sdb_name": "Westerlo",
+      "sdb_id": "133790",
+      "badge": "/team-badges/kvc-westerlo.png",
+      "logo": "/team-logos/kvc-westerlo.png",
+      "stadium": "Het Kuipje",
+      "capacity": 8035,
+      "founded": 1933,
+      "idESPN": "0",
+      "idAPIfootball": "261",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Oud Heverlee Leuven": {
+      "sdb_name": "Oud-Heverlee Leuven",
+      "sdb_id": "133775",
+      "badge": "/team-badges/oud-heverlee-leuven.png",
+      "logo": "/team-logos/oud-heverlee-leuven.png",
+      "stadium": "King Power at Den Dreef Stadion",
+      "capacity": 10020,
+      "founded": 2002,
+      "idESPN": "0",
+      "idAPIfootball": "260",
+      "sdb_league": "Belgian Pro League"
+    },
+    "RAA Louviéroise": {
+      "sdb_name": "RAAL La Louvière",
+      "sdb_id": "148488",
+      "badge": "/team-badges/raa-louvieroise.png",
+      "logo": "/team-logos/raa-louvieroise.png",
+      "stadium": "Stade du Tivoli",
+      "capacity": 12500,
+      "founded": 2017,
+      "idESPN": "0",
+      "idAPIfootball": "5902",
+      "sdb_league": "Belgian Pro League"
+    },
+    "RSC Anderlecht": {
+      "sdb_name": "Anderlecht",
+      "sdb_id": "133776",
+      "badge": "/team-badges/rsc-anderlecht.png",
+      "logo": "/team-logos/rsc-anderlecht.png",
+      "stadium": "Lotto Park",
+      "capacity": 22500,
+      "founded": 1908,
+      "idESPN": "0",
+      "idAPIfootball": "554",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Racing Genk": {
+      "sdb_name": "Genk",
+      "sdb_id": "133779",
+      "badge": "/team-badges/racing-genk.png",
+      "logo": "/team-logos/racing-genk.png",
+      "stadium": "Cegeka Arena",
+      "capacity": 25000,
+      "founded": 1923,
+      "idESPN": "0",
+      "idAPIfootball": "742",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Royal Antwerp FC": {
+      "sdb_name": "Antwerp",
+      "sdb_id": "134245",
+      "badge": "/team-badges/royal-antwerp.png",
+      "logo": null,
+      "stadium": "Bosuilstadion",
+      "capacity": 16649,
+      "founded": 1880,
+      "idESPN": "0",
+      "idAPIfootball": "740",
+      "sdb_league": "Belgian Pro League"
+    },
+    "SV Zulte-Waregem": {
+      "sdb_name": "Zulte Waregem",
+      "sdb_id": "133786",
+      "badge": "/team-badges/sv-zulte-waregem.png",
+      "logo": "/team-logos/sv-zulte-waregem.png",
+      "stadium": "Elindus Arena",
+      "capacity": 11000,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "600",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Sint-Truidense VV": {
+      "sdb_name": "Sint-Truiden",
+      "sdb_id": "135461",
+      "badge": "/team-badges/sint-truidense-vv.png",
+      "logo": "/team-logos/sint-truidense-vv.png",
+      "stadium": "Daio Wasabi Stayen Stadium",
+      "capacity": 14600,
+      "founded": 1924,
+      "idESPN": "0",
+      "idAPIfootball": "735",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Standard Liège": {
+      "sdb_name": "Standard Liège",
+      "sdb_id": "133778",
+      "badge": "/team-badges/standard-liege.png",
+      "logo": "/team-logos/standard-liege.png",
+      "stadium": "Stade Maurice Dufrasne",
+      "capacity": 28272,
+      "founded": 1898,
+      "idESPN": "0",
+      "idAPIfootball": "733",
+      "sdb_league": "Belgian Pro League"
+    },
+    "Union St. Gilloise": {
+      "sdb_name": "Union Saint-Gilloise",
+      "sdb_id": "138141",
+      "badge": "/team-badges/union-st-gilloise.png",
+      "logo": "/team-logos/union-st-gilloise.png",
+      "stadium": "Joseph Marien Stadium",
+      "capacity": 8000,
+      "founded": 1897,
+      "idESPN": "0",
+      "idAPIfootball": "1393",
+      "sdb_league": "Belgian Pro League"
+    },
     "Atlético Mineiro": {
       "sdb_name": "Atlético Mineiro",
       "sdb_id": "134299",
@@ -6469,6 +7006,767 @@
       "idAPIfootball": "136",
       "sdb_league": "Brazilian Serie A"
     },
+    "Beijing Guoan": {
+      "badge": "/team-badges/beijing-guoan.png",
+      "sdb_name": "Beijing Guoan",
+      "logo": null
+    },
+    "Changchun YaTai": {
+      "badge": "/team-badges/changchun-yatai.png",
+      "sdb_name": "Changchun YaTai",
+      "logo": null
+    },
+    "Chengdu Rongcheng": {
+      "badge": "/team-badges/chengdu-rongcheng.png",
+      "sdb_name": "Chengdu Rongcheng",
+      "logo": null
+    },
+    "Dalian Yingbo": {
+      "badge": "/team-badges/dalian-yingbo.png",
+      "sdb_name": "Dalian Yingbo",
+      "logo": null
+    },
+    "Henan Songshan Longmen": {
+      "badge": "/team-badges/henan-songshan-longmen.png",
+      "sdb_name": "Henan Songshan Longmen",
+      "logo": null
+    },
+    "Meizhou Hakka": {
+      "badge": "/team-badges/meizhou-hakka.png",
+      "sdb_name": "Meizhou Hakka",
+      "logo": null
+    },
+    "Qingdao Hainiu": {
+      "badge": "/team-badges/qingdao-hainiu.png",
+      "sdb_name": "Qingdao Hainiu",
+      "logo": null
+    },
+    "Qingdao West Coast": {
+      "badge": "/team-badges/qingdao-west-coast.png",
+      "sdb_name": "Qingdao West Coast",
+      "logo": null
+    },
+    "Shandong Taishan": {
+      "badge": "/team-badges/shandong-taishan.png",
+      "sdb_name": "Shandong Taishan",
+      "logo": null
+    },
+    "Shanghai Port": {
+      "badge": "/team-badges/shanghai-port.png",
+      "sdb_name": "Shanghai Port",
+      "logo": null
+    },
+    "Shanghai Shenhua": {
+      "badge": "/team-badges/shanghai-shenhua.png",
+      "sdb_name": "Shanghai Shenhua",
+      "logo": null
+    },
+    "Shenzhen Peng City": {
+      "badge": "/team-badges/shenzhen-peng-city.png",
+      "sdb_name": "Shenzhen Peng City",
+      "logo": null
+    },
+    "Tianjin Tigers": {
+      "badge": "/team-badges/tianjin-tigers.png",
+      "sdb_name": "Tianjin Tigers",
+      "logo": null
+    },
+    "Wuhan Three Towns": {
+      "badge": "/team-badges/wuhan-three-towns.png",
+      "sdb_name": "Wuhan Three Towns",
+      "logo": null
+    },
+    "Yunnan Yukun": {
+      "badge": "/team-badges/yunnan-yukun.png",
+      "sdb_name": "Yunnan Yukun",
+      "logo": null
+    },
+    "Zhejiang Professional FC": {
+      "badge": "/team-badges/zhejiang-professional.png",
+      "sdb_name": "Zhejiang Professional FC",
+      "logo": null
+    },
+    "Alianza FC": {
+      "sdb_name": "Alianza de Valledupar",
+      "sdb_id": "137605",
+      "badge": "/team-badges/alianza.png",
+      "logo": "/team-logos/alianza.png",
+      "stadium": "Estadio Armando Maestre Pavajeau",
+      "capacity": 11000,
+      "founded": 1991,
+      "idESPN": "0",
+      "idAPIfootball": "1141",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "América de Cali": {
+      "sdb_name": "América de Cali",
+      "sdb_id": "137604",
+      "badge": "/team-badges/america-de-cali.png",
+      "logo": "/team-logos/america-de-cali.png",
+      "stadium": "Estadio Olímpico Pascual Guerrero",
+      "capacity": 35405,
+      "founded": 1927,
+      "idESPN": "0",
+      "idAPIfootball": "1138",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Atlético Bucaramanga": {
+      "sdb_name": "Atlético Bucaramanga",
+      "sdb_id": "137606",
+      "badge": "/team-badges/atletico-bucaramanga.png",
+      "logo": "/team-logos/atletico-bucaramanga.png",
+      "stadium": "Estadio Américo Montanini",
+      "capacity": 28000,
+      "founded": 1949,
+      "idESPN": "0",
+      "idAPIfootball": "1131",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Atlético Nacional": {
+      "sdb_name": "Atlético Nacional",
+      "sdb_id": "137607",
+      "badge": "/team-badges/atletico-nacional.png",
+      "logo": "/team-logos/atletico-nacional.png",
+      "stadium": "Estadio Atanasio Girardot",
+      "capacity": 0,
+      "founded": 1947,
+      "idESPN": "0",
+      "idAPIfootball": "1137",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Boyacá Chicó": {
+      "sdb_name": "Boyacá Chicó",
+      "sdb_id": "137622",
+      "badge": "/team-badges/boyaca-chico.png",
+      "logo": "/team-logos/boyaca-chico.png",
+      "stadium": "Estadio La Independencia",
+      "capacity": 20630,
+      "founded": 2002,
+      "idESPN": "0",
+      "idAPIfootball": "1132",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Deportes Tolima": {
+      "sdb_name": "Deportes Tolima",
+      "sdb_id": "137609",
+      "badge": "/team-badges/deportes-tolima.png",
+      "logo": "/team-logos/deportes-tolima.png",
+      "stadium": "Estadio Manuel Murillo Toro",
+      "capacity": 28100,
+      "founded": 1954,
+      "idESPN": "0",
+      "idAPIfootball": "1142",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Deportivo Cali": {
+      "sdb_name": "Deportivo Cali",
+      "sdb_id": "137610",
+      "badge": "/team-badges/deportivo-cali.png",
+      "logo": "/team-logos/deportivo-cali.png",
+      "stadium": "Estadio Deportivo Cali",
+      "capacity": 44000,
+      "founded": 1912,
+      "idESPN": null,
+      "idAPIfootball": "1127",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Deportivo Pasto": {
+      "sdb_name": "Deportivo Pasto",
+      "sdb_id": "137611",
+      "badge": "/team-badges/deportivo-pasto.png",
+      "logo": "/team-logos/deportivo-pasto.png",
+      "stadium": "Estadio Departamental Libertad",
+      "capacity": 20665,
+      "founded": 1949,
+      "idESPN": null,
+      "idAPIfootball": "1126",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Deportivo Pereira": {
+      "sdb_name": "Deportivo Pereira",
+      "sdb_id": "137623",
+      "badge": "/team-badges/deportivo-pereira.png",
+      "logo": "/team-logos/deportivo-pereira.png",
+      "stadium": "Estadio Hernán Ramírez Villegas",
+      "capacity": 30297,
+      "founded": 1944,
+      "idESPN": null,
+      "idAPIfootball": "1462",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Envigado FC": {
+      "sdb_name": "Envigado",
+      "sdb_id": "137612",
+      "badge": "/team-badges/envigado.png",
+      "logo": "/team-logos/envigado.png",
+      "stadium": "Estadio Polideportivo Sur",
+      "capacity": 14000,
+      "founded": 1989,
+      "idESPN": "0",
+      "idAPIfootball": "1129",
+      "sdb_league": "Colombian Categoría Primera B"
+    },
+    "Fortaleza CEIF": {
+      "sdb_name": "Fortaleza FC",
+      "sdb_id": "141065",
+      "badge": "/team-badges/fortaleza-ceif.png",
+      "logo": "/team-logos/fortaleza-ceif.png",
+      "stadium": "Estadio Metropolitano de Techo",
+      "capacity": 4000,
+      "founded": 2010,
+      "idESPN": "0",
+      "idAPIfootball": "1147",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Independiente Medellín": {
+      "sdb_name": "Independiente Medellín",
+      "sdb_id": "137613",
+      "badge": "/team-badges/independiente-medellin.png",
+      "logo": "/team-logos/independiente-medellin.png",
+      "stadium": "Estadio Atanasio Girardot",
+      "capacity": 40043,
+      "founded": 1913,
+      "idESPN": "0",
+      "idAPIfootball": "1128",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Independiente Santa Fe": {
+      "sdb_name": "Independiente Santa Fe",
+      "sdb_id": "137621",
+      "badge": "/team-badges/independiente-santa-fe.png",
+      "logo": "/team-logos/independiente-santa-fe.png",
+      "stadium": "Estadio El Campín",
+      "capacity": 36343,
+      "founded": 1941,
+      "idESPN": "0",
+      "idAPIfootball": "1139",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Internacional de Bogotá": {
+      "sdb_name": "Internacional de Bogotá",
+      "sdb_id": "137616",
+      "badge": "/team-badges/internacional-de-bogota.png",
+      "logo": "/team-logos/internacional-de-bogota.png",
+      "stadium": "Estadio Metropolitano de Techo",
+      "capacity": 10000,
+      "founded": 1982,
+      "idESPN": "0",
+      "idAPIfootball": "1134",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Junior": {
+      "sdb_name": "Atlético Junior",
+      "sdb_id": "137615",
+      "badge": "/team-badges/junior.png",
+      "logo": "/team-logos/junior.png",
+      "stadium": "Estadio Metropolitano Roberto Meléndez",
+      "capacity": 60788,
+      "founded": 1924,
+      "idESPN": "0",
+      "idAPIfootball": "1135",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Llaneros FC": {
+      "sdb_name": "Llaneros",
+      "sdb_id": "141067",
+      "badge": "/team-badges/llaneros.png",
+      "logo": null,
+      "stadium": "Estadio Bello Horizonte",
+      "capacity": 15000,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "1464",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Millonarios": {
+      "sdb_name": "Millonarios",
+      "sdb_id": "137617",
+      "badge": "/team-badges/millonarios.png",
+      "logo": "/team-logos/millonarios.png",
+      "stadium": "Estadio El Campín",
+      "capacity": 36343,
+      "founded": 1946,
+      "idESPN": "0",
+      "idAPIfootball": "1125",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Once Caldas": {
+      "sdb_name": "Once Caldas",
+      "sdb_id": "137618",
+      "badge": "/team-badges/once-caldas.png",
+      "logo": "/team-logos/once-caldas.png",
+      "stadium": "Estadio Palogrande",
+      "capacity": 28678,
+      "founded": 1947,
+      "idESPN": "0",
+      "idAPIfootball": "1136",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "Unión Magdalena": {
+      "sdb_name": "Unión Magdalena",
+      "sdb_id": "139042",
+      "badge": "/team-badges/union-magdalena.png",
+      "logo": null,
+      "stadium": "Estadio Sierra Nevada",
+      "capacity": 16162,
+      "founded": 1953,
+      "idESPN": "0",
+      "idAPIfootball": "1465",
+      "sdb_league": "Colombian Categoría Primera B"
+    },
+    "Águilas Doradas": {
+      "sdb_name": "Rionegro Águilas",
+      "sdb_id": "137620",
+      "badge": "/team-badges/aguilas-doradas.png",
+      "logo": "/team-logos/aguilas-doradas.png",
+      "stadium": "Estadio Cincuentenario",
+      "capacity": 14000,
+      "founded": 2008,
+      "idESPN": "0",
+      "idAPIfootball": "1144",
+      "sdb_league": "Colombia Categoría Primera A"
+    },
+    "AC Sparta Praha": {
+      "sdb_name": "Sparta Prague",
+      "sdb_id": "134007",
+      "badge": "/team-badges/ac-sparta-praha.png",
+      "logo": null,
+      "stadium": "epet ARENA",
+      "capacity": 19416,
+      "founded": 1893,
+      "idESPN": "0",
+      "idAPIfootball": "628",
+      "sdb_league": "Czech First League"
+    },
+    "Bohemians 1905": {
+      "sdb_name": "Bohemians 1905",
+      "sdb_id": "136681",
+      "badge": "/team-badges/bohemians-1905.png",
+      "logo": null,
+      "stadium": "Ďolíček",
+      "capacity": 6100,
+      "founded": 1905,
+      "idESPN": "0",
+      "idAPIfootball": "3714",
+      "sdb_league": "Czech First League"
+    },
+    "FC Baník Ostrava": {
+      "sdb_name": "Baník Ostrava",
+      "sdb_id": "136684",
+      "badge": "/team-badges/fc-banik-ostrava.png",
+      "logo": null,
+      "stadium": "Městský stadion v Ostravě-Vítkovicích",
+      "capacity": 15123,
+      "founded": 1922,
+      "idESPN": "0",
+      "idAPIfootball": "3713",
+      "sdb_league": "Czech First League"
+    },
+    "FC Slovan Liberec": {
+      "sdb_name": "Slovan Liberec",
+      "sdb_id": "133954",
+      "badge": "/team-badges/fc-slovan-liberec.png",
+      "logo": null,
+      "stadium": "Stadion U Nisy",
+      "capacity": 9900,
+      "founded": 1958,
+      "idESPN": "0",
+      "idAPIfootball": "782",
+      "sdb_league": "Czech First League"
+    },
+    "FC Slovácko": {
+      "sdb_name": "Slovácko",
+      "sdb_id": "136685",
+      "badge": "/team-badges/fc-slovacko.png",
+      "logo": null,
+      "stadium": "Městský fotbalový stadion Miroslava Valenty",
+      "capacity": 8121,
+      "founded": 1927,
+      "idESPN": "0",
+      "idAPIfootball": "3719",
+      "sdb_league": "Czech First League"
+    },
+    "FC Viktoria Plzeň": {
+      "sdb_name": "Viktoria Plzeň",
+      "sdb_id": "134015",
+      "badge": "/team-badges/fc-viktoria-plzen.png",
+      "logo": "/team-logos/fc-viktoria-plzen.png",
+      "stadium": "Doosan Aréna",
+      "capacity": 11700,
+      "founded": 1911,
+      "idESPN": "0",
+      "idAPIfootball": "567",
+      "sdb_league": "Czech First League"
+    },
+    "FC Zlín": {
+      "sdb_name": "Zlín",
+      "sdb_id": "137810",
+      "badge": "/team-badges/fc-zlin.png",
+      "logo": null,
+      "stadium": "Stadion Letná Zlín",
+      "capacity": 5898,
+      "founded": 1919,
+      "idESPN": "0",
+      "idAPIfootball": "603",
+      "sdb_league": "Czech First League"
+    },
+    "FK Dukla Prague": {
+      "sdb_name": "Dukla Praha",
+      "sdb_id": "136682",
+      "badge": "/team-badges/fk-dukla-prague.png",
+      "logo": null,
+      "stadium": "Stadion Juliska",
+      "capacity": 8150,
+      "founded": 1948,
+      "idESPN": "0",
+      "idAPIfootball": "3715",
+      "sdb_league": "Czech National Football League"
+    },
+    "FK Jablonec 97": {
+      "sdb_name": "Jablonec",
+      "sdb_id": "134395",
+      "badge": "/team-badges/fk-jablonec-97.png",
+      "logo": null,
+      "stadium": "Stadion Střelnice",
+      "capacity": 6108,
+      "founded": 1945,
+      "idESPN": null,
+      "idAPIfootball": "1122",
+      "sdb_league": "Czech First League"
+    },
+    "FK Mladá Boleslav": {
+      "sdb_name": "Mladá Boleslav",
+      "sdb_id": "134000",
+      "badge": "/team-badges/fk-mlada-boleslav.png",
+      "logo": null,
+      "stadium": "Lokotrans Aréna",
+      "capacity": 5000,
+      "founded": 640,
+      "idESPN": "0",
+      "idAPIfootball": "640",
+      "sdb_league": "Czech First League"
+    },
+    "FK Pardubice": {
+      "sdb_name": "Pardubice",
+      "sdb_id": "140093",
+      "badge": "/team-badges/fk-pardubice.png",
+      "logo": "/team-logos/fk-pardubice.png",
+      "stadium": "CFIG Arena",
+      "capacity": 3000,
+      "founded": 2008,
+      "idESPN": "0",
+      "idAPIfootball": "3724",
+      "sdb_league": "Czech First League"
+    },
+    "FK Teplice": {
+      "sdb_name": "Teplice",
+      "sdb_id": "136680",
+      "badge": "/team-badges/fk-teplice.png",
+      "logo": null,
+      "stadium": "AGC Aréna Na Stínadlech",
+      "capacity": 18221,
+      "founded": 1945,
+      "idESPN": "0",
+      "idAPIfootball": "3720",
+      "sdb_league": "Czech First League"
+    },
+    "Hradec Králové FC": {
+      "sdb_name": "Hradec Králové",
+      "sdb_id": "141109",
+      "badge": "/team-badges/hradec-kralove.png",
+      "logo": null,
+      "stadium": "Malšovická Aréna",
+      "capacity": 7220,
+      "founded": 1905,
+      "idESPN": "0",
+      "idAPIfootball": "3723",
+      "sdb_league": "Czech First League"
+    },
+    "MFK Karviná": {
+      "sdb_name": "Karviná",
+      "sdb_id": "136679",
+      "badge": "/team-badges/mfk-karvina.png",
+      "logo": null,
+      "stadium": "Městský stadion v Karviné",
+      "capacity": 4833,
+      "founded": 2003,
+      "idESPN": "0",
+      "idAPIfootball": "3716",
+      "sdb_league": "Czech First League"
+    },
+    "SK Sigma Olomouc": {
+      "sdb_name": "Sigma Olomouc",
+      "sdb_id": "136677",
+      "badge": "/team-badges/sk-sigma-olomouc.png",
+      "logo": null,
+      "stadium": "Andrův stadion",
+      "capacity": 12566,
+      "founded": 1919,
+      "idESPN": "0",
+      "idAPIfootball": "2250",
+      "sdb_league": "Czech First League"
+    },
+    "SK Slavia Praha": {
+      "sdb_name": "Slavia Prague",
+      "sdb_id": "136036",
+      "badge": "/team-badges/sk-slavia-praha.png",
+      "logo": "/team-logos/sk-slavia-praha.png",
+      "stadium": "Fortuna Arena",
+      "capacity": 21000,
+      "founded": 1892,
+      "idESPN": "0",
+      "idAPIfootball": "560",
+      "sdb_league": "Czech First League"
+    },
+    "AGF Århus": {
+      "sdb_name": "AGF Aarhus",
+      "sdb_id": "133899",
+      "badge": "/team-badges/agf-arhus.png",
+      "logo": "/team-logos/agf-arhus.png",
+      "stadium": "Vejlby Stadion",
+      "capacity": 19433,
+      "founded": 1880,
+      "idESPN": "0",
+      "idAPIfootball": "406",
+      "sdb_league": "Danish Superliga"
+    },
+    "Brøndby IF": {
+      "sdb_name": "Brøndby",
+      "sdb_id": "133893",
+      "badge": "/team-badges/brndby-if.png",
+      "logo": "/team-logos/brndby-if.png",
+      "stadium": "Brøndby Stadion",
+      "capacity": 28000,
+      "founded": 1964,
+      "idESPN": "0",
+      "idAPIfootball": "407",
+      "sdb_league": "Danish Superliga"
+    },
+    "FC Fredericia": {
+      "sdb_name": "Fredericia",
+      "sdb_id": "138451",
+      "badge": "/team-badges/fc-fredericia.png",
+      "logo": "/team-logos/fc-fredericia.png",
+      "stadium": "Monjasa Park",
+      "capacity": 4000,
+      "founded": 1991,
+      "idESPN": "0",
+      "idAPIfootball": "2061",
+      "sdb_league": "Danish 1st Division"
+    },
+    "FC København": {
+      "sdb_name": "FC Copenhagen",
+      "sdb_id": "133898",
+      "badge": "/team-badges/fc-kbenhavn.png",
+      "logo": "/team-logos/fc-kbenhavn.png",
+      "stadium": "Parken",
+      "capacity": 38065,
+      "founded": 1992,
+      "idESPN": "0",
+      "idAPIfootball": "400",
+      "sdb_league": "Danish Superliga"
+    },
+    "FC Midtjylland": {
+      "sdb_name": "FC Midtjylland",
+      "sdb_id": "133891",
+      "badge": "/team-badges/fc-midtjylland.png",
+      "logo": "/team-logos/fc-midtjylland.png",
+      "stadium": "MCH Arena",
+      "capacity": 11432,
+      "founded": 1999,
+      "idESPN": "0",
+      "idAPIfootball": "397",
+      "sdb_league": "Danish Superliga"
+    },
+    "FC Nordsjælland": {
+      "sdb_name": "FC Nordsjælland",
+      "sdb_id": "133890",
+      "badge": "/team-badges/fc-nordsjlland.png",
+      "logo": "/team-logos/fc-nordsjlland.png",
+      "stadium": "Right to Dream Park",
+      "capacity": 10100,
+      "founded": 1991,
+      "idESPN": "0",
+      "idAPIfootball": "398",
+      "sdb_league": "Danish Superliga"
+    },
+    "Odense BK": {
+      "sdb_name": "Odense BK",
+      "sdb_id": "133889",
+      "badge": "/team-badges/odense-bk.png",
+      "logo": "/team-logos/odense-bk.png",
+      "stadium": "Nature Energy Park",
+      "capacity": 15790,
+      "founded": 1887,
+      "idESPN": "0",
+      "idAPIfootball": "405",
+      "sdb_league": "Danish Superliga"
+    },
+    "Randers FC": {
+      "sdb_name": "Randers FC",
+      "sdb_id": "133938",
+      "badge": "/team-badges/randers.png",
+      "logo": "/team-logos/randers.png",
+      "stadium": "Cepheus Park Randers",
+      "capacity": 12000,
+      "founded": 2003,
+      "idESPN": "0",
+      "idAPIfootball": "401",
+      "sdb_league": "Danish Superliga"
+    },
+    "Silkeborg IF": {
+      "sdb_name": "Silkeborg IF",
+      "sdb_id": "133892",
+      "badge": "/team-badges/silkeborg-if.png",
+      "logo": "/team-logos/silkeborg-if.png",
+      "stadium": "Jysk Park",
+      "capacity": 10000,
+      "founded": 1917,
+      "idESPN": "0",
+      "idAPIfootball": "2073",
+      "sdb_league": "Danish Superliga"
+    },
+    "SønderjyskE": {
+      "sdb_name": "Sønderjyske",
+      "sdb_id": "133897",
+      "badge": "/team-badges/snderjyske.png",
+      "logo": "/team-logos/snderjyske.png",
+      "stadium": "Sydbank Park",
+      "capacity": 10000,
+      "founded": 2004,
+      "idESPN": "0",
+      "idAPIfootball": "396",
+      "sdb_league": "Danish Superliga"
+    },
+    "Vejle Boldklub": {
+      "sdb_name": "Vejle",
+      "sdb_id": "136188",
+      "badge": "/team-badges/vejle-boldklub.png",
+      "logo": "/team-logos/vejle-boldklub.png",
+      "stadium": "Vejle Stadion",
+      "capacity": 11060,
+      "founded": 1891,
+      "idESPN": "0",
+      "idAPIfootball": "395",
+      "sdb_league": "Danish 1st Division"
+    },
+    "Viborg FF": {
+      "sdb_name": "Viborg",
+      "sdb_id": "134307",
+      "badge": "/team-badges/viborg-ff.png",
+      "logo": "/team-logos/viborg-ff.png",
+      "stadium": "Energi Viborg Arena",
+      "capacity": 9566,
+      "founded": 1896,
+      "idESPN": "0",
+      "idAPIfootball": "2070",
+      "sdb_league": "Danish Superliga"
+    },
+    "Al-Ahly": {
+      "badge": "/team-badges/al-ahly.png",
+      "sdb_name": "Al-Ahly",
+      "logo": null
+    },
+    "Al-Ittihad Al-Sakndary": {
+      "badge": "/team-badges/al-ittihad-al-sakndary.png",
+      "sdb_name": "Al-Ittihad Al-Sakndary",
+      "logo": null
+    },
+    "Al-Masry": {
+      "badge": "/team-badges/al-masry.png",
+      "sdb_name": "Al-Masry",
+      "logo": null
+    },
+    "Al-Mokawloon Al-Arab": {
+      "badge": "/team-badges/al-mokawloon-al-arab.png",
+      "sdb_name": "Al-Mokawloon Al-Arab",
+      "logo": null
+    },
+    "Ceramica Cleopatra": {
+      "badge": "/team-badges/ceramica-cleopatra.png",
+      "sdb_name": "Ceramica Cleopatra",
+      "logo": null
+    },
+    "ENPPI": {
+      "badge": "/team-badges/enppi.png",
+      "sdb_name": "ENPPI",
+      "logo": null
+    },
+    "El Gouna": {
+      "badge": "/team-badges/el-gouna.png",
+      "sdb_name": "El Gouna",
+      "logo": null
+    },
+    "Ghazl Al-Mehalla": {
+      "badge": "/team-badges/ghazl-al-mehalla.png",
+      "sdb_name": "Ghazl Al-Mehalla",
+      "logo": null
+    },
+    "Haras Al Hodoud": {
+      "badge": "/team-badges/haras-al-hodoud.png",
+      "sdb_name": "Haras Al Hodoud",
+      "logo": null
+    },
+    "Ismaily SC": {
+      "badge": "/team-badges/ismaily-sc.png",
+      "sdb_name": "Ismaily SC",
+      "logo": null
+    },
+    "Kahraba Ismailia SC": {
+      "badge": "/team-badges/kahraba-ismailia-sc.png",
+      "sdb_name": "Kahraba Ismailia SC",
+      "logo": null
+    },
+    "Modern Sport FC": {
+      "badge": "/team-badges/modern-sport.png",
+      "sdb_name": "Modern Sport FC",
+      "logo": null
+    },
+    "National Bank of Egypt SC": {
+      "badge": "/team-badges/national-bank-of-egypt-sc.png",
+      "sdb_name": "National Bank of Egypt SC",
+      "logo": null
+    },
+    "Petrojet": {
+      "badge": "/team-badges/petrojet.png",
+      "sdb_name": "Petrojet",
+      "logo": null
+    },
+    "Pharco FC": {
+      "badge": "/team-badges/pharco.png",
+      "sdb_name": "Pharco FC",
+      "logo": null
+    },
+    "Pyramids FC": {
+      "badge": "/team-badges/pyramids.png",
+      "sdb_name": "Pyramids FC",
+      "logo": null
+    },
+    "Semouha Club": {
+      "badge": "/team-badges/semouha-club.png",
+      "sdb_name": "Semouha Club",
+      "logo": null
+    },
+    "Talaea Al-Geish": {
+      "badge": "/team-badges/talaea-al-geish.png",
+      "sdb_name": "Talaea Al-Geish",
+      "logo": null
+    },
+    "Wadi Degla SC": {
+      "badge": "/team-badges/wadi-degla-sc.png",
+      "sdb_name": "Wadi Degla SC",
+      "logo": null
+    },
+    "ZED FC": {
+      "badge": "/team-badges/zed.png",
+      "sdb_name": "ZED FC",
+      "logo": null
+    },
+    "Zamalek SC": {
+      "badge": "/team-badges/zamalek-sc.png",
+      "sdb_name": "Zamalek SC",
+      "logo": null
+    },
     "AFC Bournemouth": {
       "sdb_name": "Bournemouth",
       "sdb_id": "134301",
@@ -6504,6 +7802,16 @@
       "idESPN": "2731",
       "idAPIfootball": "1360",
       "sdb_league": "English League 2"
+    },
+    "Aldershot Town": {
+      "badge": "/team-badges/aldershot-town.png",
+      "sdb_name": "Aldershot Town",
+      "logo": null
+    },
+    "Altrincham": {
+      "badge": "/team-badges/altrincham.png",
+      "sdb_name": "Altrincham",
+      "logo": null
     },
     "Arsenal": {
       "sdb_name": "Arsenal",
@@ -6613,6 +7921,21 @@
       "idAPIfootball": "68",
       "sdb_league": "English League Championship"
     },
+    "Boreham Wood": {
+      "badge": "/team-badges/boreham-wood.png",
+      "sdb_name": "Boreham Wood",
+      "logo": null
+    },
+    "Boston United": {
+      "badge": "/team-badges/boston-united.png",
+      "sdb_name": "Boston United",
+      "logo": null
+    },
+    "Brackley Town": {
+      "badge": "/team-badges/brackley-town.png",
+      "sdb_name": "Brackley Town",
+      "logo": null
+    },
     "Bradford City": {
       "sdb_name": "Bradford City",
       "sdb_id": "134189",
@@ -6624,6 +7947,11 @@
       "idESPN": "387",
       "idAPIfootball": "1343",
       "sdb_league": "English League 1"
+    },
+    "Braintree Town": {
+      "badge": "/team-badges/braintree-town.png",
+      "sdb_name": "Braintree Town",
+      "logo": null
     },
     "Brentford": {
       "sdb_name": "Brentford",
@@ -6732,6 +8060,11 @@
       "idESPN": "347",
       "idAPIfootball": "43",
       "sdb_league": "English League Championship"
+    },
+    "Carlisle United": {
+      "badge": "/team-badges/carlisle-united.png",
+      "sdb_name": "Carlisle United",
+      "logo": null
     },
     "Charlton Athletic": {
       "sdb_name": "Charlton Athletic",
@@ -6865,6 +8198,11 @@
       "idAPIfootball": "1354",
       "sdb_league": "English League 1"
     },
+    "Eastleigh": {
+      "badge": "/team-badges/eastleigh.png",
+      "sdb_name": "Eastleigh",
+      "logo": null
+    },
     "Everton": {
       "sdb_name": "Everton",
       "sdb_id": "133615",
@@ -6889,6 +8227,11 @@
       "idAPIfootball": "1364",
       "sdb_league": "English League 2"
     },
+    "FC Halifax Town": {
+      "badge": "/team-badges/fc-halifax-town.png",
+      "sdb_name": "FC Halifax Town",
+      "logo": null
+    },
     "Fleetwood Town": {
       "sdb_name": "Fleetwood Town",
       "sdb_id": "134374",
@@ -6901,6 +8244,11 @@
       "idAPIfootball": "1336",
       "sdb_league": "English League 2"
     },
+    "Forest Green Rovers": {
+      "badge": "/team-badges/forest-green-rovers.png",
+      "sdb_name": "Forest Green Rovers",
+      "logo": null
+    },
     "Fulham": {
       "sdb_name": "Fulham",
       "sdb_id": "133600",
@@ -6912,6 +8260,11 @@
       "idESPN": "370",
       "idAPIfootball": "36",
       "sdb_league": "English Premier League"
+    },
+    "Gateshead": {
+      "badge": "/team-badges/gateshead.png",
+      "sdb_name": "Gateshead",
+      "logo": null
     },
     "Gillingham": {
       "sdb_name": "Gillingham",
@@ -6948,6 +8301,11 @@
       "idESPN": "19262",
       "idAPIfootball": "1842",
       "sdb_league": "English National League"
+    },
+    "Hartlepool United": {
+      "badge": "/team-badges/hartlepool-united.png",
+      "sdb_name": "Hartlepool United",
+      "logo": null
     },
     "Huddersfield Town": {
       "sdb_name": "Huddersfield Town",
@@ -7128,6 +8486,11 @@
       "idESPN": "390",
       "idAPIfootball": "1348",
       "sdb_league": "English League 1"
+    },
+    "Morecambe": {
+      "badge": "/team-badges/morecambe.png",
+      "sdb_name": "Morecambe",
+      "logo": null
     },
     "Newcastle United": {
       "sdb_name": "Newcastle United",
@@ -7345,6 +8708,11 @@
       "idAPIfootball": "1844",
       "sdb_league": "English League 2"
     },
+    "Scunthorpe United": {
+      "badge": "/team-badges/scunthorpe-united.png",
+      "sdb_name": "Scunthorpe United",
+      "logo": null
+    },
     "Sheffield United": {
       "sdb_name": "Sheffield United",
       "sdb_id": "133811",
@@ -7381,6 +8749,11 @@
       "idAPIfootball": "1352",
       "sdb_league": "English League 2"
     },
+    "Solihull Moors": {
+      "badge": "/team-badges/solihull-moors.png",
+      "sdb_name": "Solihull Moors",
+      "logo": null
+    },
     "Southampton": {
       "sdb_name": "Southampton",
       "sdb_id": "134778",
@@ -7392,6 +8765,11 @@
       "idESPN": "376",
       "idAPIfootball": "41",
       "sdb_league": "English League Championship"
+    },
+    "Southend United": {
+      "badge": "/team-badges/southend-united.png",
+      "sdb_name": "Southend United",
+      "logo": null
     },
     "Stevenage": {
       "sdb_name": "Stevenage",
@@ -7441,6 +8819,11 @@
       "idAPIfootball": "746",
       "sdb_league": "English Premier League"
     },
+    "Sutton United": {
+      "badge": "/team-badges/sutton-united.png",
+      "sdb_name": "Sutton United",
+      "logo": null
+    },
     "Swansea City": {
       "sdb_name": "Swansea City",
       "sdb_id": "133614",
@@ -7464,6 +8847,11 @@
       "idESPN": "341",
       "idAPIfootball": "1353",
       "sdb_league": "English League 2"
+    },
+    "Tamworth": {
+      "badge": "/team-badges/tamworth.png",
+      "sdb_name": "Tamworth",
+      "logo": null
     },
     "Tottenham Hotspur": {
       "sdb_name": "Tottenham Hotspur",
@@ -7489,6 +8877,11 @@
       "idAPIfootball": "1381",
       "sdb_league": "English League 2"
     },
+    "Truro City": {
+      "badge": "/team-badges/truro-city.png",
+      "sdb_name": "Truro City",
+      "logo": null
+    },
     "Walsall": {
       "sdb_name": "Walsall",
       "sdb_id": "134240",
@@ -7512,6 +8905,11 @@
       "idESPN": "395",
       "idAPIfootball": "38",
       "sdb_league": "English League Championship"
+    },
+    "Wealdstone": {
+      "badge": "/team-badges/wealdstone.png",
+      "sdb_name": "Wealdstone",
+      "logo": null
     },
     "West Bromwich Albion": {
       "sdb_name": "West Bromwich Albion",
@@ -7549,6 +8947,11 @@
       "idAPIfootball": "61",
       "sdb_league": "English League 1"
     },
+    "Woking": {
+      "badge": "/team-badges/woking.png",
+      "sdb_name": "Woking",
+      "logo": null
+    },
     "Wolverhampton Wanderers": {
       "sdb_name": "Wolverhampton Wanderers",
       "sdb_id": "133599",
@@ -7584,6 +8987,11 @@
       "idESPN": "344",
       "idAPIfootball": "1358",
       "sdb_league": "English League 1"
+    },
+    "Yeovil Town": {
+      "badge": "/team-badges/yeovil-town.png",
+      "sdb_name": "Yeovil Town",
+      "logo": null
     },
     "York City": {
       "sdb_name": "York City",
@@ -8029,6 +9437,244 @@
       "idAPIfootball": "162",
       "sdb_league": "German Bundesliga"
     },
+    "AE Kifisia": {
+      "sdb_name": "Kifisia",
+      "sdb_id": "144147",
+      "badge": "/team-badges/ae-kifisia.png",
+      "logo": "/team-logos/ae-kifisia.png",
+      "stadium": "Olympic Stadium Athens",
+      "capacity": 4851,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "5050",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "AEK Athens": {
+      "sdb_name": "AEK Athens",
+      "sdb_id": "133753",
+      "badge": "/team-badges/aek-athens.png",
+      "logo": "/team-logos/aek-athens.png",
+      "stadium": "OPAP Arena",
+      "capacity": 32500,
+      "founded": 1924,
+      "idESPN": "0",
+      "idAPIfootball": "575",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "AEL 1964": {
+      "sdb_name": "AEL",
+      "sdb_id": "135709",
+      "badge": "/team-badges/ael-1964.png",
+      "logo": null,
+      "stadium": "AEL Arena",
+      "capacity": 16118,
+      "founded": 1964,
+      "idESPN": "0",
+      "idAPIfootball": "953",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Aris Thessaloniki": {
+      "sdb_name": "Aris",
+      "sdb_id": "133742",
+      "badge": "/team-badges/aris-thessaloniki.png",
+      "logo": null,
+      "stadium": "Kleanthis Vikelidis Stadium",
+      "capacity": 23400,
+      "founded": 1914,
+      "idESPN": "0",
+      "idAPIfootball": "1123",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Asteras Tripolis": {
+      "sdb_name": "Asteras Tripolis",
+      "sdb_id": "133752",
+      "badge": "/team-badges/asteras-tripolis.png",
+      "logo": null,
+      "stadium": "Theodoros Kolokotronis Stadium",
+      "capacity": 7616,
+      "founded": 1931,
+      "idESPN": "0",
+      "idAPIfootball": "955",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Atromitos": {
+      "sdb_name": "Atromitos",
+      "sdb_id": "133744",
+      "badge": "/team-badges/atromitos.png",
+      "logo": null,
+      "stadium": "Peristeri Stadium",
+      "capacity": 9050,
+      "founded": 1923,
+      "idESPN": "0",
+      "idAPIfootball": "12260",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Levadiakos FC": {
+      "sdb_name": "Levadiakos",
+      "sdb_id": "133755",
+      "badge": "/team-badges/levadiakos.png",
+      "logo": null,
+      "stadium": "Levadia Municipal Stadium",
+      "capacity": 65000,
+      "founded": 1961,
+      "idESPN": "0",
+      "idAPIfootball": "957",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "OFI Crete": {
+      "sdb_name": "OFI",
+      "sdb_id": "133743",
+      "badge": "/team-badges/ofi-crete.png",
+      "logo": null,
+      "stadium": "Pankritio Stadium",
+      "capacity": 9088,
+      "founded": 1925,
+      "idESPN": "0",
+      "idAPIfootball": "1124",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Olympiakos CFP": {
+      "sdb_name": "Olympiacos",
+      "sdb_id": "133754",
+      "badge": "/team-badges/olympiakos-cfp.png",
+      "logo": null,
+      "stadium": "Karaiskakis Stadium",
+      "capacity": 32115,
+      "founded": 1925,
+      "idESPN": "0",
+      "idAPIfootball": "553",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "PAOK Thessaloniki": {
+      "sdb_name": "PAOK",
+      "sdb_id": "133749",
+      "badge": "/team-badges/paok-thessaloniki.png",
+      "logo": "/team-logos/paok-thessaloniki.png",
+      "stadium": "Toumba Stadium",
+      "capacity": 28703,
+      "founded": 1926,
+      "idESPN": "0",
+      "idAPIfootball": "619",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Panathinaikos": {
+      "sdb_name": "Panathinaikos",
+      "sdb_id": "133746",
+      "badge": "/team-badges/panathinaikos.png",
+      "logo": null,
+      "stadium": "Apostolos Nikolaidis Stadium",
+      "capacity": 16003,
+      "founded": 1908,
+      "idESPN": "0",
+      "idAPIfootball": "617",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Panetolikos FC": {
+      "sdb_name": "Panetolikos",
+      "sdb_id": "133751",
+      "badge": "/team-badges/panetolikos.png",
+      "logo": "/team-logos/panetolikos.png",
+      "stadium": "Panetolikos Stadium",
+      "capacity": 7000,
+      "founded": 1926,
+      "idESPN": "0",
+      "idAPIfootball": "949",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Panserraikos FC": {
+      "sdb_name": "Panserraikos",
+      "sdb_id": "133832",
+      "badge": "/team-badges/panserraikos.png",
+      "logo": null,
+      "stadium": "Serres Municipal Stadium",
+      "capacity": 9500,
+      "founded": 1964,
+      "idESPN": "0",
+      "idAPIfootball": "2099",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Volos NFC": {
+      "sdb_name": "Volos",
+      "sdb_id": "136853",
+      "badge": "/team-badges/volos-nfc.png",
+      "logo": null,
+      "stadium": "Panthessaliko Stadium",
+      "capacity": 22700,
+      "founded": 2017,
+      "idESPN": "0",
+      "idAPIfootball": "2110",
+      "sdb_league": "Greek Superleague Greece"
+    },
+    "Bengaluru FC": {
+      "badge": "/team-badges/bengaluru.png",
+      "sdb_name": "Bengaluru FC",
+      "logo": null
+    },
+    "Chennaiyin FC": {
+      "badge": "/team-badges/chennaiyin.png",
+      "sdb_name": "Chennaiyin FC",
+      "logo": null
+    },
+    "East Bengal": {
+      "badge": "/team-badges/east-bengal.png",
+      "sdb_name": "East Bengal",
+      "logo": null
+    },
+    "FC Goa": {
+      "badge": "/team-badges/fc-goa.png",
+      "sdb_name": "FC Goa",
+      "logo": null
+    },
+    "Inter Kashi FC": {
+      "badge": "/team-badges/inter-kashi.png",
+      "sdb_name": "Inter Kashi FC",
+      "logo": null
+    },
+    "Jamshedpur FC": {
+      "badge": "/team-badges/jamshedpur.png",
+      "sdb_name": "Jamshedpur FC",
+      "logo": null
+    },
+    "Kerala Blasters": {
+      "badge": "/team-badges/kerala-blasters.png",
+      "sdb_name": "Kerala Blasters",
+      "logo": null
+    },
+    "Mohammedan SC": {
+      "badge": "/team-badges/mohammedan-sc.png",
+      "sdb_name": "Mohammedan SC",
+      "logo": null
+    },
+    "Mohun Bagan": {
+      "badge": "/team-badges/mohun-bagan.png",
+      "sdb_name": "Mohun Bagan",
+      "logo": null
+    },
+    "Mumbai City FC": {
+      "badge": "/team-badges/mumbai-city.png",
+      "sdb_name": "Mumbai City FC",
+      "logo": null
+    },
+    "NorthEast United": {
+      "badge": "/team-badges/northeast-united.png",
+      "sdb_name": "NorthEast United",
+      "logo": null
+    },
+    "Odisha FC": {
+      "badge": "/team-badges/odisha.png",
+      "sdb_name": "Odisha FC",
+      "logo": null
+    },
+    "Punjab FC": {
+      "badge": "/team-badges/punjab.png",
+      "sdb_name": "Punjab FC",
+      "logo": null
+    },
+    "SC Delhi": {
+      "badge": "/team-badges/sc-delhi.png",
+      "sdb_name": "SC Delhi",
+      "logo": null
+    },
     "AC Milan": {
       "sdb_name": "AC Milan",
       "sdb_id": "133667",
@@ -8268,6 +9914,106 @@
       "idESPN": "118",
       "idAPIfootball": "494",
       "sdb_league": "Italian Serie A"
+    },
+    "Albirex Niigata": {
+      "badge": "/team-badges/albirex-niigata.png",
+      "sdb_name": "Albirex Niigata",
+      "logo": null
+    },
+    "Avispa Fukuoka": {
+      "badge": "/team-badges/avispa-fukuoka.png",
+      "sdb_name": "Avispa Fukuoka",
+      "logo": null
+    },
+    "Cerezo Osaka": {
+      "badge": "/team-badges/cerezo-osaka.png",
+      "sdb_name": "Cerezo Osaka",
+      "logo": null
+    },
+    "FC Tokyo": {
+      "badge": "/team-badges/fc-tokyo.png",
+      "sdb_name": "FC Tokyo",
+      "logo": null
+    },
+    "Fagiano Okayama": {
+      "badge": "/team-badges/fagiano-okayama.png",
+      "sdb_name": "Fagiano Okayama",
+      "logo": null
+    },
+    "Gamba Osaka": {
+      "badge": "/team-badges/gamba-osaka.png",
+      "sdb_name": "Gamba Osaka",
+      "logo": null
+    },
+    "Kashima Antlers": {
+      "badge": "/team-badges/kashima-antlers.png",
+      "sdb_name": "Kashima Antlers",
+      "logo": null
+    },
+    "Kashiwa Reysol": {
+      "badge": "/team-badges/kashiwa-reysol.png",
+      "sdb_name": "Kashiwa Reysol",
+      "logo": null
+    },
+    "Kawasaki Frontale": {
+      "badge": "/team-badges/kawasaki-frontale.png",
+      "sdb_name": "Kawasaki Frontale",
+      "logo": null
+    },
+    "Kyoto Sanga": {
+      "badge": "/team-badges/kyoto-sanga.png",
+      "sdb_name": "Kyoto Sanga",
+      "logo": null
+    },
+    "Machida Zelvia": {
+      "badge": "/team-badges/machida-zelvia.png",
+      "sdb_name": "Machida Zelvia",
+      "logo": null
+    },
+    "Nagoya Grampus": {
+      "badge": "/team-badges/nagoya-grampus.png",
+      "sdb_name": "Nagoya Grampus",
+      "logo": null
+    },
+    "Sanfrecce Hiroshima": {
+      "badge": "/team-badges/sanfrecce-hiroshima.png",
+      "sdb_name": "Sanfrecce Hiroshima",
+      "logo": null
+    },
+    "Shimizu S-Pulse": {
+      "badge": "/team-badges/shimizu-s-pulse.png",
+      "sdb_name": "Shimizu S-Pulse",
+      "logo": null
+    },
+    "Shonan Bellmare": {
+      "badge": "/team-badges/shonan-bellmare.png",
+      "sdb_name": "Shonan Bellmare",
+      "logo": null
+    },
+    "Tokyo Verdy": {
+      "badge": "/team-badges/tokyo-verdy.png",
+      "sdb_name": "Tokyo Verdy",
+      "logo": null
+    },
+    "Urawa Red Diamonds": {
+      "badge": "/team-badges/urawa-red-diamonds.png",
+      "sdb_name": "Urawa Red Diamonds",
+      "logo": null
+    },
+    "Vissel Kobe": {
+      "badge": "/team-badges/vissel-kobe.png",
+      "sdb_name": "Vissel Kobe",
+      "logo": null
+    },
+    "Yokohama F. Marinos": {
+      "badge": "/team-badges/yokohama-f-marinos.png",
+      "sdb_name": "Yokohama F. Marinos",
+      "logo": null
+    },
+    "Yokohama FC": {
+      "badge": "/team-badges/yokohama.png",
+      "sdb_name": "Yokohama FC",
+      "logo": null
     },
     "Atlas": {
       "sdb_name": "Atlas",
@@ -8701,6 +10447,222 @@
       "idAPIfootball": "426",
       "sdb_league": "Dutch Eredivisie"
     },
+    "Arka Gdynia": {
+      "sdb_name": "Arka Gdynia",
+      "sdb_id": "135660",
+      "badge": "/team-badges/arka-gdynia.png",
+      "logo": null,
+      "stadium": "Stadion GOSiR",
+      "capacity": 15139,
+      "founded": 1929,
+      "idESPN": "0",
+      "idAPIfootball": "344",
+      "sdb_league": "Polish I liga"
+    },
+    "GKS Katowice": {
+      "sdb_name": "GKS Katowice",
+      "sdb_id": "142467",
+      "badge": "/team-badges/gks-katowice.png",
+      "logo": "/team-logos/gks-katowice.png",
+      "stadium": "Stadion Miejski w Katowicach",
+      "capacity": 6710,
+      "founded": 1964,
+      "idESPN": "0",
+      "idAPIfootball": "3484",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Górnik Zabrze": {
+      "sdb_name": "Górnik Zabrze",
+      "sdb_id": "135296",
+      "badge": "/team-badges/gornik-zabrze.png",
+      "logo": null,
+      "stadium": "Stadion im Ernesta Pohla",
+      "capacity": 31871,
+      "founded": 1948,
+      "idESPN": "0",
+      "idAPIfootball": "340",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Jagiellonia Białystok": {
+      "sdb_name": "Jagiellonia Białystok",
+      "sdb_id": "135297",
+      "badge": "/team-badges/jagiellonia-biaystok.png",
+      "logo": null,
+      "stadium": "Chorten Arena",
+      "capacity": 22386,
+      "founded": 1920,
+      "idESPN": "0",
+      "idAPIfootball": "336",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "KS Cracovia": {
+      "sdb_name": "Cracovia",
+      "sdb_id": "135294",
+      "badge": "/team-badges/ks-cracovia.png",
+      "logo": null,
+      "stadium": "Stadion Cracovii im Józefa Piłsudskiego",
+      "capacity": 15016,
+      "founded": 1906,
+      "idESPN": "0",
+      "idAPIfootball": "350",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Korona Kielce": {
+      "sdb_name": "Korona Kielce",
+      "sdb_id": "135298",
+      "badge": "/team-badges/korona-kielce.png",
+      "logo": null,
+      "stadium": "EXBUD Arena",
+      "capacity": 15550,
+      "founded": 1973,
+      "idESPN": "0",
+      "idAPIfootball": "346",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "LKS Nieciecza": {
+      "sdb_name": "Bruk-Bet Termalica Nieciecza",
+      "sdb_id": "135495",
+      "badge": "/team-badges/lks-nieciecza.png",
+      "logo": "/team-logos/lks-nieciecza.png",
+      "stadium": "Stadion Sportowy Bruk-Bet Termalica",
+      "capacity": 2262,
+      "founded": 1916,
+      "idESPN": "0",
+      "idAPIfootball": "3487",
+      "sdb_league": "Polish I liga"
+    },
+    "Lech Poznan": {
+      "sdb_name": "Lech Poznań",
+      "sdb_id": "134010",
+      "badge": "/team-badges/lech-poznan.png",
+      "logo": null,
+      "stadium": "ENEA Stadion",
+      "capacity": 43269,
+      "founded": 1922,
+      "idESPN": "0",
+      "idAPIfootball": "347",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Lechia Gdansk": {
+      "sdb_name": "Lechia Gdańsk",
+      "sdb_id": "135299",
+      "badge": "/team-badges/lechia-gdansk.png",
+      "logo": null,
+      "stadium": "Polsat Plus Arena Gdańsk",
+      "capacity": 43615,
+      "founded": 1945,
+      "idESPN": "0",
+      "idAPIfootball": "343",
+      "sdb_league": "Polish I liga"
+    },
+    "Legia Warszawa": {
+      "sdb_name": "Legia Warsaw",
+      "sdb_id": "133992",
+      "badge": "/team-badges/legia-warszawa.png",
+      "logo": "/team-logos/legia-warszawa.png",
+      "stadium": "Polish Army Stadium",
+      "capacity": 31800,
+      "founded": 1916,
+      "idESPN": "0",
+      "idAPIfootball": "339",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Motor Lublin": {
+      "sdb_name": "Motor Lublin",
+      "sdb_id": "147435",
+      "badge": "/team-badges/motor-lublin.png",
+      "logo": "/team-logos/motor-lublin.png",
+      "stadium": "Motor Lublin Arena",
+      "capacity": 15247,
+      "founded": 1950,
+      "idESPN": "0",
+      "idAPIfootball": "14562",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Piast Gliwice": {
+      "sdb_name": "Piast Gliwice",
+      "sdb_id": "135300",
+      "badge": "/team-badges/piast-gliwice.png",
+      "logo": null,
+      "stadium": "Stadion Miejski im Piotra Wieczorka",
+      "capacity": 10037,
+      "founded": 1945,
+      "idESPN": "0",
+      "idAPIfootball": "349",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Pogon Szczecin": {
+      "sdb_name": "Pogoń Szczecin",
+      "sdb_id": "135302",
+      "badge": "/team-badges/pogon-szczecin.png",
+      "logo": null,
+      "stadium": "Stadion Miejski im Floriana Krygiera",
+      "capacity": 18027,
+      "founded": 1948,
+      "idESPN": "0",
+      "idAPIfootball": "348",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Radomiak Radom": {
+      "sdb_name": "Radomiak Radom",
+      "sdb_id": "138916",
+      "badge": "/team-badges/radomiak-radom.png",
+      "logo": null,
+      "stadium": "Stadion im Braci Czachorów",
+      "capacity": 5000,
+      "founded": 1910,
+      "idESPN": "0",
+      "idAPIfootball": "4248",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Rakow Czestochowa": {
+      "sdb_name": "Raków Częstochowa",
+      "sdb_id": "137670",
+      "badge": "/team-badges/rakow-czestochowa.png",
+      "logo": null,
+      "stadium": "zondacrypto Arena",
+      "capacity": 4200,
+      "founded": 1921,
+      "idESPN": "0",
+      "idAPIfootball": "3491",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Widzew Łódź": {
+      "sdb_name": "Widzew Łódź",
+      "sdb_id": "134489",
+      "badge": "/team-badges/widzew-odz.png",
+      "logo": null,
+      "stadium": "Stadion Widzewa",
+      "capacity": 18008,
+      "founded": 1910,
+      "idESPN": "0",
+      "idAPIfootball": "6962",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Wisła Płock": {
+      "sdb_name": "Wisła Płock",
+      "sdb_id": "135659",
+      "badge": "/team-badges/wisa-pock.png",
+      "logo": null,
+      "stadium": "Orlen Stadion",
+      "capacity": 10978,
+      "founded": 1947,
+      "idESPN": "0",
+      "idAPIfootball": "341",
+      "sdb_league": "Polish Ekstraklasa"
+    },
+    "Zaglebie Lubin": {
+      "sdb_name": "Zagłębie Lubin",
+      "sdb_id": "135496",
+      "badge": "/team-badges/zaglebie-lubin.png",
+      "logo": "/team-logos/zaglebie-lubin.png",
+      "stadium": "KGHM Zagłębie Arena",
+      "capacity": 16300,
+      "founded": 1945,
+      "idESPN": "0",
+      "idAPIfootball": "345",
+      "sdb_league": "Polish Ekstraklasa"
+    },
     "AVS Futebol SAD": {
       "sdb_name": "AVS",
       "sdb_id": "147479",
@@ -8917,6 +10879,348 @@
       "idAPIfootball": "224",
       "sdb_league": "Portuguese Primeira Liga"
     },
+    "Al Ahli SC Doha": {
+      "badge": "/team-badges/al-ahli-sc-doha.png",
+      "sdb_name": "Al Ahli SC Doha",
+      "logo": null
+    },
+    "Al Sailiya": {
+      "badge": "/team-badges/al-sailiya.png",
+      "sdb_name": "Al Sailiya",
+      "logo": null
+    },
+    "Al-Arabi SC": {
+      "badge": "/team-badges/al-arabi-sc.png",
+      "sdb_name": "Al-Arabi SC",
+      "logo": null
+    },
+    "Al-Duhail SC": {
+      "badge": "/team-badges/al-duhail-sc.png",
+      "sdb_name": "Al-Duhail SC",
+      "logo": null
+    },
+    "Al-Gharafa": {
+      "badge": "/team-badges/al-gharafa.png",
+      "sdb_name": "Al-Gharafa",
+      "logo": null
+    },
+    "Al-Rayyan": {
+      "badge": "/team-badges/al-rayyan.png",
+      "sdb_name": "Al-Rayyan",
+      "logo": null
+    },
+    "Al-Sadd": {
+      "badge": "/team-badges/al-sadd.png",
+      "sdb_name": "Al-Sadd",
+      "logo": null
+    },
+    "Al-Shahania SC": {
+      "badge": "/team-badges/al-shahania-sc.png",
+      "sdb_name": "Al-Shahania SC",
+      "logo": null
+    },
+    "Al-Shamal": {
+      "badge": "/team-badges/al-shamal.png",
+      "sdb_name": "Al-Shamal",
+      "logo": null
+    },
+    "Al-Wakrah SC": {
+      "badge": "/team-badges/al-wakrah-sc.png",
+      "sdb_name": "Al-Wakrah SC",
+      "logo": null
+    },
+    "Qatar SC": {
+      "badge": "/team-badges/qatar-sc.png",
+      "sdb_name": "Qatar SC",
+      "logo": null
+    },
+    "Umm-Salal": {
+      "badge": "/team-badges/umm-salal.png",
+      "sdb_name": "Umm-Salal",
+      "logo": null
+    },
+    "CSKA Moscow": {
+      "sdb_name": "CSKA Moscow",
+      "sdb_id": "134120",
+      "badge": "/team-badges/cska-moscow.png",
+      "logo": "/team-logos/cska-moscow.png",
+      "stadium": "VEB Arena",
+      "capacity": 30457,
+      "founded": 1911,
+      "idESPN": "0",
+      "idAPIfootball": "555",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "Dinamo Moscow": {
+      "sdb_name": "Dynamo Moscow",
+      "sdb_id": "133985",
+      "badge": "/team-badges/dinamo-moscow.png",
+      "logo": null,
+      "stadium": "VTB Arena",
+      "capacity": 26319,
+      "founded": 1923,
+      "idESPN": "0",
+      "idAPIfootball": "1088",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Akhmat Grozny": {
+      "sdb_name": "Akhmat Grozny",
+      "sdb_id": "134434",
+      "badge": "/team-badges/fc-akhmat-grozny.png",
+      "logo": null,
+      "stadium": "Akhmat Arena",
+      "capacity": 30597,
+      "founded": 1958,
+      "idESPN": "0",
+      "idAPIfootball": "1085",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Akron Tolyatti": {
+      "sdb_name": "Akron Tolyatti",
+      "sdb_id": "140083",
+      "badge": "/team-badges/fc-akron-tolyatti.png",
+      "logo": "/team-logos/fc-akron-tolyatti.png",
+      "stadium": "Solidarnost Samara Arena",
+      "capacity": 1550,
+      "founded": 2018,
+      "idESPN": "0",
+      "idAPIfootball": "6786",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Baltika Kaliningrad": {
+      "sdb_name": "Baltika Kaliningrad",
+      "sdb_id": "138146",
+      "badge": "/team-badges/fc-baltika-kaliningrad.png",
+      "logo": null,
+      "stadium": "Rostec Arena",
+      "capacity": 35212,
+      "founded": 1954,
+      "idESPN": "0",
+      "idAPIfootball": "2006",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Dynamo Makhachkala": {
+      "sdb_name": "Dynamo Makhachkala",
+      "sdb_id": "143113",
+      "badge": "/team-badges/fc-dynamo-makhachkala.png",
+      "logo": "/team-logos/fc-dynamo-makhachkala.png",
+      "stadium": "Anzhi Arena",
+      "capacity": 15200,
+      "founded": 1991,
+      "idESPN": "0",
+      "idAPIfootball": "6813",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Krasnodar": {
+      "sdb_name": "Krasnodar",
+      "sdb_id": "134433",
+      "badge": "/team-badges/fc-krasnodar.png",
+      "logo": null,
+      "stadium": "Ozon Arena",
+      "capacity": 35074,
+      "founded": 2008,
+      "idESPN": "0",
+      "idAPIfootball": "621",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Orenburg": {
+      "sdb_name": "Orenburg",
+      "sdb_id": "135661",
+      "badge": "/team-badges/fc-orenburg.png",
+      "logo": null,
+      "stadium": "Stadion Gazovik",
+      "capacity": 7500,
+      "founded": 1976,
+      "idESPN": "0",
+      "idAPIfootball": "1080",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Pari Nizhny Novgorod": {
+      "sdb_name": "Nizhny Novgorod",
+      "sdb_id": "138153",
+      "badge": "/team-badges/fc-pari-nizhny-novgorod.png",
+      "logo": null,
+      "stadium": "Nizhny Novgorod Stadium",
+      "capacity": 44899,
+      "founded": 2015,
+      "idESPN": "0",
+      "idAPIfootball": "2011",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Rostov": {
+      "sdb_name": "Rostov",
+      "sdb_id": "134438",
+      "badge": "/team-badges/fc-rostov.png",
+      "logo": null,
+      "stadium": "Rostov Arena",
+      "capacity": 45000,
+      "founded": 1930,
+      "idESPN": "0",
+      "idAPIfootball": "779",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Rubin Kazan": {
+      "sdb_name": "Rubin Kazan",
+      "sdb_id": "134127",
+      "badge": "/team-badges/fc-rubin-kazan.png",
+      "logo": null,
+      "stadium": "Ak Bars Arena",
+      "capacity": 45105,
+      "founded": 1958,
+      "idESPN": "0",
+      "idAPIfootball": "1083",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "FC Spartak Moscow": {
+      "sdb_name": "Spartak Moscow",
+      "sdb_id": "134097",
+      "badge": "/team-badges/fc-spartak-moscow.png",
+      "logo": null,
+      "stadium": "Lukoil Arena",
+      "capacity": 45360,
+      "founded": 1922,
+      "idESPN": "0",
+      "idAPIfootball": "558",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "Krylya Sovetov Samara": {
+      "sdb_name": "Krylia Sovetov Samara",
+      "sdb_id": "134432",
+      "badge": "/team-badges/krylya-sovetov-samara.png",
+      "logo": "/team-logos/krylya-sovetov-samara.png",
+      "stadium": "Solidarnost Samara Arena",
+      "capacity": 44918,
+      "founded": 1942,
+      "idESPN": "0",
+      "idAPIfootball": "1079",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "Lokomotiv Moscow": {
+      "sdb_name": "Lokomotiv Moscow",
+      "sdb_id": "134440",
+      "badge": "/team-badges/lokomotiv-moscow.png",
+      "logo": "/team-logos/lokomotiv-moscow.png",
+      "stadium": "RZD Arena",
+      "capacity": 27320,
+      "founded": 1922,
+      "idESPN": "0",
+      "idAPIfootball": "597",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "PFC Sochi": {
+      "sdb_name": "Sochi",
+      "sdb_id": "136859",
+      "badge": "/team-badges/pfc-sochi.png",
+      "logo": null,
+      "stadium": "Fisht Olympic Stadium",
+      "capacity": 47659,
+      "founded": 2018,
+      "idESPN": "0",
+      "idAPIfootball": "2012",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "Zenit St. Petersburg": {
+      "sdb_name": "Zenit Saint Petersburg",
+      "sdb_id": "134125",
+      "badge": "/team-badges/zenit-st-petersburg.png",
+      "logo": "/team-logos/zenit-st-petersburg.png",
+      "stadium": "Gazprom Arena",
+      "capacity": 68134,
+      "founded": 1925,
+      "idESPN": "0",
+      "idAPIfootball": "596",
+      "sdb_league": "Russian Football Premier League"
+    },
+    "Al Feiha": {
+      "badge": "/team-badges/al-feiha.png",
+      "sdb_name": "Al Feiha",
+      "logo": null
+    },
+    "Al Hazm": {
+      "badge": "/team-badges/al-hazm.png",
+      "sdb_name": "Al Hazm",
+      "logo": null
+    },
+    "Al Kholood Club": {
+      "badge": "/team-badges/al-kholood-club.png",
+      "sdb_name": "Al Kholood Club",
+      "logo": null
+    },
+    "Al Riyadh SC": {
+      "badge": "/team-badges/al-riyadh-sc.png",
+      "sdb_name": "Al Riyadh SC",
+      "logo": null
+    },
+    "Al-Ahli Jeddah": {
+      "badge": "/team-badges/al-ahli-jeddah.png",
+      "sdb_name": "Al-Ahli Jeddah",
+      "logo": null
+    },
+    "Al-Ettifaq": {
+      "badge": "/team-badges/al-ettifaq.png",
+      "sdb_name": "Al-Ettifaq",
+      "logo": null
+    },
+    "Al-Fateh": {
+      "badge": "/team-badges/al-fateh.png",
+      "sdb_name": "Al-Fateh",
+      "logo": null
+    },
+    "Al-Hilal": {
+      "badge": "/team-badges/al-hilal.png",
+      "sdb_name": "Al-Hilal",
+      "logo": null
+    },
+    "Al-Ittihad": {
+      "badge": "/team-badges/al-ittihad.png",
+      "sdb_name": "Al-Ittihad",
+      "logo": null
+    },
+    "Al-Najma SC": {
+      "badge": "/team-badges/al-najma-sc.png",
+      "sdb_name": "Al-Najma SC",
+      "logo": null
+    },
+    "Al-Nassr": {
+      "badge": "/team-badges/al-nassr.png",
+      "sdb_name": "Al-Nassr",
+      "logo": null
+    },
+    "Al-Okhdood Club": {
+      "badge": "/team-badges/al-okhdood-club.png",
+      "sdb_name": "Al-Okhdood Club",
+      "logo": null
+    },
+    "Al-Qadisiyah FC": {
+      "badge": "/team-badges/al-qadisiyah.png",
+      "sdb_name": "Al-Qadisiyah FC",
+      "logo": null
+    },
+    "Al-Shabab": {
+      "badge": "/team-badges/al-shabab.png",
+      "sdb_name": "Al-Shabab",
+      "logo": null
+    },
+    "Al-Taawoun FC": {
+      "badge": "/team-badges/al-taawoun.png",
+      "sdb_name": "Al-Taawoun FC",
+      "logo": null
+    },
+    "Damac FC": {
+      "badge": "/team-badges/damac.png",
+      "sdb_name": "Damac FC",
+      "logo": null
+    },
+    "Khaleej FC": {
+      "badge": "/team-badges/khaleej.png",
+      "sdb_name": "Khaleej FC",
+      "logo": null
+    },
+    "Neom SC": {
+      "badge": "/team-badges/neom-sc.png",
+      "sdb_name": "Neom SC",
+      "logo": null
+    },
     "Aberdeen": {
       "sdb_name": "Aberdeen",
       "sdb_id": "133638",
@@ -9060,6 +11364,146 @@
       "idESPN": "250",
       "idAPIfootball": "251",
       "sdb_league": "Scottish Premier League"
+    },
+    "AmaZulu": {
+      "badge": "/team-badges/amazulu.png",
+      "sdb_name": "AmaZulu",
+      "logo": null
+    },
+    "Chippa United": {
+      "badge": "/team-badges/chippa-united.png",
+      "sdb_name": "Chippa United",
+      "logo": null
+    },
+    "Durban City FC": {
+      "badge": "/team-badges/durban-city.png",
+      "sdb_name": "Durban City FC",
+      "logo": null
+    },
+    "Golden Arrows": {
+      "badge": "/team-badges/golden-arrows.png",
+      "sdb_name": "Golden Arrows",
+      "logo": null
+    },
+    "Kaizer Chiefs": {
+      "badge": "/team-badges/kaizer-chiefs.png",
+      "sdb_name": "Kaizer Chiefs",
+      "logo": null
+    },
+    "Magesi FC": {
+      "badge": "/team-badges/magesi.png",
+      "sdb_name": "Magesi FC",
+      "logo": null
+    },
+    "Mamelodi Sundowns": {
+      "badge": "/team-badges/mamelodi-sundowns.png",
+      "sdb_name": "Mamelodi Sundowns",
+      "logo": null
+    },
+    "Marumo Gallants FC": {
+      "badge": "/team-badges/marumo-gallants.png",
+      "sdb_name": "Marumo Gallants FC",
+      "logo": null
+    },
+    "Orbit College FC": {
+      "badge": "/team-badges/orbit-college.png",
+      "sdb_name": "Orbit College FC",
+      "logo": null
+    },
+    "Orlando Pirates": {
+      "badge": "/team-badges/orlando-pirates.png",
+      "sdb_name": "Orlando Pirates",
+      "logo": null
+    },
+    "Polokwane City": {
+      "badge": "/team-badges/polokwane-city.png",
+      "sdb_name": "Polokwane City",
+      "logo": null
+    },
+    "Richards Bay FC": {
+      "badge": "/team-badges/richards-bay.png",
+      "sdb_name": "Richards Bay FC",
+      "logo": null
+    },
+    "Sekhukhune United": {
+      "badge": "/team-badges/sekhukhune-united.png",
+      "sdb_name": "Sekhukhune United",
+      "logo": null
+    },
+    "Siwelele FC": {
+      "badge": "/team-badges/siwelele.png",
+      "sdb_name": "Siwelele FC",
+      "logo": null
+    },
+    "Stellenbosch FC": {
+      "badge": "/team-badges/stellenbosch.png",
+      "sdb_name": "Stellenbosch FC",
+      "logo": null
+    },
+    "TS Galaxy FC": {
+      "badge": "/team-badges/ts-galaxy.png",
+      "sdb_name": "TS Galaxy FC",
+      "logo": null
+    },
+    "Daegu FC": {
+      "badge": "/team-badges/daegu.png",
+      "sdb_name": "Daegu FC",
+      "logo": null
+    },
+    "Daejeon Citizen": {
+      "badge": "/team-badges/daejeon-citizen.png",
+      "sdb_name": "Daejeon Citizen",
+      "logo": null
+    },
+    "FC Anyang": {
+      "badge": "/team-badges/fc-anyang.png",
+      "sdb_name": "FC Anyang",
+      "logo": null
+    },
+    "FC Seoul": {
+      "badge": "/team-badges/fc-seoul.png",
+      "sdb_name": "FC Seoul",
+      "logo": null
+    },
+    "Gangwon FC": {
+      "badge": "/team-badges/gangwon.png",
+      "sdb_name": "Gangwon FC",
+      "logo": null
+    },
+    "Gimcheon Sangmu": {
+      "badge": "/team-badges/gimcheon-sangmu.png",
+      "sdb_name": "Gimcheon Sangmu",
+      "logo": null
+    },
+    "Gwangju FC": {
+      "badge": "/team-badges/gwangju.png",
+      "sdb_name": "Gwangju FC",
+      "logo": null
+    },
+    "Jeju United": {
+      "badge": "/team-badges/jeju-united.png",
+      "sdb_name": "Jeju United",
+      "logo": null
+    },
+    "Jeonbuk Hyundai Motors": {
+      "badge": "/team-badges/jeonbuk-hyundai-motors.png",
+      "sdb_name": "Jeonbuk Hyundai Motors",
+      "logo": null
+    },
+    "Pohang Steelers": {
+      "badge": "/team-badges/pohang-steelers.png",
+      "sdb_name": "Pohang Steelers",
+      "logo": null
+    },
+    "Suwon FC": {
+      "badge": "/team-badges/suwon.png",
+      "sdb_name": "Suwon FC",
+      "logo": null
+    },
+    "Ulsan Hyundai Horang-i": {
+      "badge": "/team-badges/ulsan-hyundai-horang-i.png",
+      "sdb_name": "Ulsan Hyundai Horang-i",
+      "logo": null
     },
     "Athletic Bilbao": {
       "sdb_name": "Athletic Bilbao",
@@ -9300,6 +11744,796 @@
       "idESPN": "102",
       "idAPIfootball": "533",
       "sdb_league": "Spanish La Liga"
+    },
+    "AIK Fotboll": {
+      "sdb_name": "AIK",
+      "sdb_id": "134011",
+      "badge": "/team-badges/aik-fotboll.png",
+      "logo": "/team-logos/aik-fotboll.png",
+      "stadium": "Strawberry Arena",
+      "capacity": 50622,
+      "founded": 1891,
+      "idESPN": "0",
+      "idAPIfootball": "377",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "BK Hacken": {
+      "sdb_name": "Häcken",
+      "sdb_id": "134160",
+      "badge": "/team-badges/bk-hacken.png",
+      "logo": "/team-logos/bk-hacken.png",
+      "stadium": "Bravida Arena",
+      "capacity": 6500,
+      "founded": 1940,
+      "idESPN": "0",
+      "idAPIfootball": "367",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Degerfors IF": {
+      "sdb_name": "Degerfors",
+      "sdb_id": "134728",
+      "badge": "/team-badges/degerfors-if.png",
+      "logo": null,
+      "stadium": "Stora Valla",
+      "capacity": 12500,
+      "founded": 1907,
+      "idESPN": "0",
+      "idAPIfootball": "2172",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Djurgårdens IF": {
+      "sdb_name": "Djurgården",
+      "sdb_id": "134162",
+      "badge": "/team-badges/djurgardens-if.png",
+      "logo": "/team-logos/djurgardens-if.png",
+      "stadium": "Tele2 Arena",
+      "capacity": 30000,
+      "founded": 1891,
+      "idESPN": "0",
+      "idAPIfootball": "364",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "GAIS Gothenburg": {
+      "sdb_name": "GAIS",
+      "sdb_id": "134725",
+      "badge": "/team-badges/gais-gothenburg.png",
+      "logo": "/team-logos/gais-gothenburg.png",
+      "stadium": "Gamla Ullevi",
+      "capacity": 18416,
+      "founded": 1897,
+      "idESPN": "0",
+      "idAPIfootball": "2170",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Halmstads BK": {
+      "sdb_name": "Halmstad",
+      "sdb_id": "134167",
+      "badge": "/team-badges/halmstads-bk.png",
+      "logo": "/team-logos/halmstads-bk.png",
+      "stadium": "Örjans Vall",
+      "capacity": 15500,
+      "founded": 1914,
+      "idESPN": null,
+      "idAPIfootball": "766",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Hammarby IF": {
+      "sdb_name": "Hammarby",
+      "sdb_id": "134731",
+      "badge": "/team-badges/hammarby-if.png",
+      "logo": "/team-logos/hammarby-if.png",
+      "stadium": "Tele2 Arena",
+      "capacity": 33000,
+      "founded": 1915,
+      "idESPN": "0",
+      "idAPIfootball": "363",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "IF Brommapojkarna": {
+      "sdb_name": "Brommapojkarna",
+      "sdb_id": "134170",
+      "badge": "/team-badges/if-brommapojkarna.png",
+      "logo": "/team-logos/if-brommapojkarna.png",
+      "stadium": "Grimsta IP",
+      "capacity": 5500,
+      "founded": 1942,
+      "idESPN": null,
+      "idAPIfootball": "371",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "IF Elfsborg": {
+      "sdb_name": "Elfsborg",
+      "sdb_id": "133984",
+      "badge": "/team-badges/if-elfsborg.png",
+      "logo": "/team-logos/if-elfsborg.png",
+      "stadium": "Borås Arena",
+      "capacity": 16899,
+      "founded": 1904,
+      "idESPN": "0",
+      "idAPIfootball": "372",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "IFK Göteborg": {
+      "sdb_name": "IFK Göteborg",
+      "sdb_id": "134161",
+      "badge": "/team-badges/ifk-goteborg.png",
+      "logo": "/team-logos/ifk-goteborg.png",
+      "stadium": "Gamla Ullevi",
+      "capacity": 18416,
+      "founded": 1904,
+      "idESPN": "0",
+      "idAPIfootball": "366",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Kalmar FF": {
+      "sdb_name": "Kalmar",
+      "sdb_id": "134002",
+      "badge": "/team-badges/kalmar-ff.png",
+      "logo": "/team-logos/kalmar-ff.png",
+      "stadium": "Guldfågeln Arena",
+      "capacity": 12000,
+      "founded": 1910,
+      "idESPN": "0",
+      "idAPIfootball": "374",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Malmö FF": {
+      "sdb_name": "Malmö FF Women",
+      "sdb_id": "150703",
+      "badge": "/team-badges/malmo-ff.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": null,
+      "founded": 1970,
+      "idESPN": "0",
+      "idAPIfootball": "21698",
+      "sdb_league": "Sweden Damallsvenskan"
+    },
+    "Mjällby AIF": {
+      "sdb_name": "Mjällby",
+      "sdb_id": "134164",
+      "badge": "/team-badges/mjallby-aif.png",
+      "logo": "/team-logos/mjallby-aif.png",
+      "stadium": "Strandvallen",
+      "capacity": 6750,
+      "founded": 1939,
+      "idESPN": "0",
+      "idAPIfootball": "2240",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Sirius IK": {
+      "sdb_name": "Sirius",
+      "sdb_id": "134724",
+      "badge": "/team-badges/sirius-ik.png",
+      "logo": "/team-logos/sirius-ik.png",
+      "stadium": "Studenternas IP",
+      "capacity": 7200,
+      "founded": 1907,
+      "idESPN": null,
+      "idAPIfootball": "370",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "Örgryte IS": {
+      "sdb_name": "Örgryte",
+      "sdb_id": "135668",
+      "badge": "/team-badges/orgryte-is.png",
+      "logo": null,
+      "stadium": "Gamla Ullevi",
+      "capacity": 18416,
+      "founded": 1887,
+      "idESPN": "0",
+      "idAPIfootball": "2166",
+      "sdb_league": "Swedish Allsvenskan"
+    },
+    "AC Lugano": {
+      "sdb_name": "Lugano",
+      "sdb_id": "136037",
+      "badge": "/team-badges/ac-lugano.png",
+      "logo": null,
+      "stadium": "Stadio di Cornaredo",
+      "capacity": 6330,
+      "founded": 1908,
+      "idESPN": "0",
+      "idAPIfootball": "606",
+      "sdb_league": "Swiss Super League"
+    },
+    "BSC Young Boys": {
+      "sdb_name": "Young Boys",
+      "sdb_id": "134001",
+      "badge": "/team-badges/bsc-young-boys.png",
+      "logo": null,
+      "stadium": "Wankdorf Stadium",
+      "capacity": 32000,
+      "founded": 1898,
+      "idESPN": "0",
+      "idAPIfootball": "565",
+      "sdb_league": "Swiss Super League"
+    },
+    "FC Basel": {
+      "sdb_name": "Basel",
+      "sdb_id": "133957",
+      "badge": "/team-badges/fc-basel.png",
+      "logo": "/team-logos/fc-basel.png",
+      "stadium": "St. Jakob-Park",
+      "capacity": 37500,
+      "founded": 1893,
+      "idESPN": "0",
+      "idAPIfootball": "551",
+      "sdb_league": "Swiss Super League"
+    },
+    "FC Lucerne": {
+      "sdb_name": "Luzern",
+      "sdb_id": "134123",
+      "badge": "/team-badges/fc-lucerne.png",
+      "logo": null,
+      "stadium": "swissporarena",
+      "capacity": 17000,
+      "founded": 1901,
+      "idESPN": "0",
+      "idAPIfootball": "644",
+      "sdb_league": "Swiss Super League"
+    },
+    "FC Sion": {
+      "sdb_name": "Sion",
+      "sdb_id": "135947",
+      "badge": "/team-badges/fc-sion.png",
+      "logo": "/team-logos/fc-sion.png",
+      "stadium": "Stade de Tourbillon",
+      "capacity": 14500,
+      "founded": 1909,
+      "idESPN": "0",
+      "idAPIfootball": "630",
+      "sdb_league": "Swiss Super League"
+    },
+    "FC St. Gallen": {
+      "sdb_name": "St. Gallen",
+      "sdb_id": "134406",
+      "badge": "/team-badges/fc-st-gallen.png",
+      "logo": null,
+      "stadium": "Kybunpark",
+      "capacity": 19694,
+      "founded": 1879,
+      "idESPN": "0",
+      "idAPIfootball": "1011",
+      "sdb_league": "Swiss Super League"
+    },
+    "FC Thun": {
+      "sdb_name": "Thun",
+      "sdb_id": "134394",
+      "badge": "/team-badges/fc-thun.png",
+      "logo": null,
+      "stadium": "Stockhorn Arena",
+      "capacity": 10000,
+      "founded": 1898,
+      "idESPN": "0",
+      "idAPIfootball": "1012",
+      "sdb_league": "Swiss Super League"
+    },
+    "FC Winterthur": {
+      "sdb_name": "Winterthur",
+      "sdb_id": "138984",
+      "badge": "/team-badges/fc-winterthur.png",
+      "logo": null,
+      "stadium": "Stadion Schützenwiese",
+      "capacity": 8550,
+      "founded": 1896,
+      "idESPN": "0",
+      "idAPIfootball": "2180",
+      "sdb_league": "Swiss Challenge League"
+    },
+    "FC Zürich": {
+      "sdb_name": "Zürich",
+      "sdb_id": "134396",
+      "badge": "/team-badges/fc-zurich.png",
+      "logo": "/team-logos/fc-zurich.png",
+      "stadium": "Letzigrund",
+      "capacity": 26104,
+      "founded": 1896,
+      "idESPN": "0",
+      "idAPIfootball": "783",
+      "sdb_league": "Swiss Super League"
+    },
+    "Grasshopper-Club Zürich": {
+      "sdb_name": "Grasshoppers",
+      "sdb_id": "134391",
+      "badge": "/team-badges/grasshopper-club-zurich.png",
+      "logo": null,
+      "stadium": "Letzigrund",
+      "capacity": 26104,
+      "founded": 1886,
+      "idESPN": null,
+      "idAPIfootball": "1013",
+      "sdb_league": "Swiss Super League"
+    },
+    "Lausanne-Sports": {
+      "sdb_name": "Lausanne-Sport",
+      "sdb_id": "138990",
+      "badge": "/team-badges/lausanne-sports.png",
+      "logo": null,
+      "stadium": "Stade de la Tuilière",
+      "capacity": 15850,
+      "founded": 1896,
+      "idESPN": "0",
+      "idAPIfootball": "1014",
+      "sdb_league": "Swiss Super League"
+    },
+    "Servette FC": {
+      "sdb_name": "Servette",
+      "sdb_id": "133991",
+      "badge": "/team-badges/servette.png",
+      "logo": null,
+      "stadium": "Stade de Genève",
+      "capacity": 30084,
+      "founded": 1890,
+      "idESPN": "0",
+      "idAPIfootball": "2184",
+      "sdb_league": "Swiss Super League"
+    },
+    "Alanyaspor": {
+      "sdb_name": "Alanyaspor",
+      "sdb_id": "135676",
+      "badge": "/team-badges/alanyaspor.png",
+      "logo": null,
+      "stadium": "Gain Park Stadyumu",
+      "capacity": 0,
+      "founded": 1948,
+      "idESPN": "0",
+      "idAPIfootball": "996",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Antalyaspor": {
+      "sdb_name": "Antalyaspor",
+      "sdb_id": "133799",
+      "badge": "/team-badges/antalyaspor.png",
+      "logo": null,
+      "stadium": "Corendon Airlines Park",
+      "capacity": 41703,
+      "founded": 1966,
+      "idESPN": "0",
+      "idAPIfootball": "1005",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Besiktas JK": {
+      "sdb_name": "Beşiktaş",
+      "sdb_id": "133794",
+      "badge": "/team-badges/besiktas-jk.png",
+      "logo": null,
+      "stadium": "Tüpraş Stadyumu",
+      "capacity": 41903,
+      "founded": 1903,
+      "idESPN": "0",
+      "idAPIfootball": "549",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Eyüpspor": {
+      "sdb_name": "Eyüpspor",
+      "sdb_id": "138977",
+      "badge": "/team-badges/eyupspor.png",
+      "logo": "/team-logos/eyupspor.png",
+      "stadium": "Recep Tayyip Erdoğan Stadyumu",
+      "capacity": 2500,
+      "founded": 1919,
+      "idESPN": "0",
+      "idAPIfootball": "3588",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Fatih Karagümrük": {
+      "sdb_name": "Fatih Karagümrük",
+      "sdb_id": "138983",
+      "badge": "/team-badges/fatih-karagumruk.png",
+      "logo": null,
+      "stadium": "Atatürk Olimpiyat Stadı",
+      "capacity": 6500,
+      "founded": 1926,
+      "idESPN": "0",
+      "idAPIfootball": "3589",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Fenerbahçe SK": {
+      "sdb_name": "Fenerbahçe",
+      "sdb_id": "133807",
+      "badge": "/team-badges/fenerbahce-sk.png",
+      "logo": "/team-logos/fenerbahce-sk.png",
+      "stadium": "Ülker Stadium",
+      "capacity": 53715,
+      "founded": 1907,
+      "idESPN": "0",
+      "idAPIfootball": "611",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Galatasaray SK": {
+      "sdb_name": "Galatasaray",
+      "sdb_id": "133804",
+      "badge": "/team-badges/galatasaray-sk.png",
+      "logo": "/team-logos/galatasaray-sk.png",
+      "stadium": "Rams Park",
+      "capacity": 52652,
+      "founded": 1905,
+      "idESPN": "0",
+      "idAPIfootball": "645",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Gaziantep FK": {
+      "sdb_name": "Gaziantep",
+      "sdb_id": "138092",
+      "badge": "/team-badges/gaziantep-fk.png",
+      "logo": null,
+      "stadium": "Gaziantep Stadyumu",
+      "capacity": 33502,
+      "founded": 1988,
+      "idESPN": "0",
+      "idAPIfootball": "3573",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Gençlerbirliği": {
+      "sdb_name": "Gençlerbirliği",
+      "sdb_id": "133798",
+      "badge": "/team-badges/genclerbirligi.png",
+      "logo": null,
+      "stadium": "Eryaman Stadyumu",
+      "capacity": 20560,
+      "founded": 1923,
+      "idESPN": "0",
+      "idAPIfootball": "997",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Göztepe AS": {
+      "sdb_name": "Göztepe",
+      "sdb_id": "135891",
+      "badge": "/team-badges/goztepe-as.png",
+      "logo": null,
+      "stadium": "Gürsel Aksel Stadyumu",
+      "capacity": 12500,
+      "founded": 1925,
+      "idESPN": "789",
+      "idAPIfootball": "994",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Istanbul Basaksehir FK": {
+      "sdb_name": "İstanbul Başakşehir",
+      "sdb_id": "134589",
+      "badge": "/team-badges/istanbul-basaksehir-fk.png",
+      "logo": null,
+      "stadium": "Başakşehir Fatih Terim Stadyumu",
+      "capacity": 17800,
+      "founded": 2014,
+      "idESPN": "0",
+      "idAPIfootball": "564",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Kasımpaşa SK": {
+      "sdb_name": "Kasımpaşa",
+      "sdb_id": "133834",
+      "badge": "/team-badges/kasmpasa-sk.png",
+      "logo": null,
+      "stadium": "Recep Tayyip Erdoğan Stadyumu",
+      "capacity": 14234,
+      "founded": 1921,
+      "idESPN": "0",
+      "idAPIfootball": "1004",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Kayserispor": {
+      "sdb_name": "Kayserispor",
+      "sdb_id": "133802",
+      "badge": "/team-badges/kayserispor.png",
+      "logo": "/team-logos/kayserispor.png",
+      "stadium": "RHG Enertürk Enerji Stadyumu",
+      "capacity": 32864,
+      "founded": 1966,
+      "idESPN": "0",
+      "idAPIfootball": "1001",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Kocaelispor": {
+      "sdb_name": "Kocaelispor",
+      "sdb_id": "133870",
+      "badge": "/team-badges/kocaelispor.png",
+      "logo": null,
+      "stadium": "Kocaeli Stadyumu",
+      "capacity": 34712,
+      "founded": 1966,
+      "idESPN": "0",
+      "idAPIfootball": "7411",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Konyaspor": {
+      "sdb_name": "Konyaspor",
+      "sdb_id": "133835",
+      "badge": "/team-badges/konyaspor.png",
+      "logo": null,
+      "stadium": "Konya Büyükşehir Belediye Stadyumu",
+      "capacity": 42276,
+      "founded": 1981,
+      "idESPN": "0",
+      "idAPIfootball": "607",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Samsunspor": {
+      "sdb_name": "Samsunspor",
+      "sdb_id": "133797",
+      "badge": "/team-badges/samsunspor.png",
+      "logo": null,
+      "stadium": "Samsun 19 Mayıs Stadyumu",
+      "capacity": 16480,
+      "founded": 1965,
+      "idESPN": "0",
+      "idAPIfootball": "3603",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Trabzonspor": {
+      "sdb_name": "Trabzonspor",
+      "sdb_id": "133796",
+      "badge": "/team-badges/trabzonspor.png",
+      "logo": "/team-logos/trabzonspor.png",
+      "stadium": "Papara Park",
+      "capacity": 40782,
+      "founded": 1967,
+      "idESPN": "0",
+      "idAPIfootball": "998",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Çaykur Rizespor": {
+      "sdb_name": "Rizespor",
+      "sdb_id": "133885",
+      "badge": "/team-badges/caykur-rizespor.png",
+      "logo": null,
+      "stadium": "Çaykur Didi Stadyumu",
+      "capacity": 15558,
+      "founded": 1953,
+      "idESPN": "0",
+      "idAPIfootball": "1007",
+      "sdb_league": "Turkish Super Lig"
+    },
+    "Dynamo Kyiv": {
+      "sdb_name": "Dynamo Kyiv",
+      "sdb_id": "133944",
+      "badge": "/team-badges/dynamo-kyiv.png",
+      "logo": null,
+      "stadium": "Stadion Dynamo im Valeriy Lobanovskyi",
+      "capacity": 70050,
+      "founded": 1927,
+      "idESPN": "0",
+      "idAPIfootball": "572",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "FC Epitsentr Dunaivtsi": {
+      "sdb_name": "Epitsentr Kamianets-Podilsky",
+      "sdb_id": "146857",
+      "badge": "/team-badges/fc-epitsentr-dunaivtsi.png",
+      "logo": null,
+      "stadium": "Ternopilskyi Miskyi Stadion im Romana Shukhevycha",
+      "capacity": 2500,
+      "founded": 1960,
+      "idESPN": "0",
+      "idAPIfootball": "14434",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "FC Obolon Kyiv": {
+      "sdb_name": "Obolon Kyiv",
+      "sdb_id": "138447",
+      "badge": "/team-badges/fc-obolon-kyiv.png",
+      "logo": "/team-logos/fc-obolon-kyiv.png",
+      "stadium": "Obolon Arena",
+      "capacity": 5100,
+      "founded": 1992,
+      "idESPN": "0",
+      "idAPIfootball": "3630",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "FC Polissya Zhytomyr": {
+      "sdb_name": "Polissya Zhytomyr",
+      "sdb_id": "140180",
+      "badge": "/team-badges/fc-polissya-zhytomyr.png",
+      "logo": "/team-logos/fc-polissya-zhytomyr.png",
+      "stadium": "Tsentralʹnyy Misʹkyy Stadion Polissya",
+      "capacity": 3500,
+      "founded": 2016,
+      "idESPN": "0",
+      "idAPIfootball": "6496",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "FC Rukh Lviv": {
+      "sdb_name": "Rukh Lviv",
+      "sdb_id": "138449",
+      "badge": "/team-badges/fc-rukh-lviv.png",
+      "logo": "/team-logos/fc-rukh-lviv.png",
+      "stadium": "Arena Lviv",
+      "capacity": 3742,
+      "founded": 2003,
+      "idESPN": "0",
+      "idAPIfootball": "3632",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "FC Shakhtar Donetsk": {
+      "sdb_name": "Shakhtar Donetsk",
+      "sdb_id": "134126",
+      "badge": "/team-badges/fc-shakhtar-donetsk.png",
+      "logo": "/team-logos/fc-shakhtar-donetsk.png",
+      "stadium": "Arena Lviv",
+      "capacity": 40003,
+      "founded": 1936,
+      "idESPN": "0",
+      "idAPIfootball": "550",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "FK Kudrivka": {
+      "sdb_name": "Kudrivka",
+      "sdb_id": "149227",
+      "badge": "/team-badges/fk-kudrivka.png",
+      "logo": null,
+      "stadium": "Stadion Yuvileynyy Bucha",
+      "capacity": null,
+      "founded": 1982,
+      "idESPN": "0",
+      "idAPIfootball": "21953",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "Karpaty Lviv": {
+      "sdb_name": "Karpaty Lviv",
+      "sdb_id": "134426",
+      "badge": "/team-badges/karpaty-lviv.png",
+      "logo": "/team-logos/karpaty-lviv.png",
+      "stadium": "Stadion Ukraina",
+      "capacity": 27925,
+      "founded": 1963,
+      "idESPN": "0",
+      "idAPIfootball": "3617",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "Kolos Kovalivka": {
+      "sdb_name": "Kolos Kovalivka",
+      "sdb_id": "136858",
+      "badge": "/team-badges/kolos-kovalivka.png",
+      "logo": null,
+      "stadium": "Stadion Kolos Kovalivka",
+      "capacity": 1850,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "3627",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "Kryvbas": {
+      "sdb_name": "Kryvbas Kryvyi Rih",
+      "sdb_id": "142826",
+      "badge": "/team-badges/kryvbas.png",
+      "logo": null,
+      "stadium": "Stadion Hirnyk",
+      "capacity": 2500,
+      "founded": 2020,
+      "idESPN": "0",
+      "idAPIfootball": "6489",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "LNZ Cherkasy": {
+      "sdb_name": "LNZ Cherkasy",
+      "sdb_id": "146860",
+      "badge": "/team-badges/lnz-cherkasy.png",
+      "logo": null,
+      "stadium": "Cherkasy Arena",
+      "capacity": 10321,
+      "founded": 2006,
+      "idESPN": "0",
+      "idAPIfootball": "17161",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "NK Veres Rivne": {
+      "sdb_name": "Veres Rivne",
+      "sdb_id": "135911",
+      "badge": "/team-badges/nk-veres-rivne.png",
+      "logo": null,
+      "stadium": "Stadion Avanhard Rivne",
+      "capacity": 1000,
+      "founded": 1957,
+      "idESPN": "0",
+      "idAPIfootball": "6501",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "PFC Olexandria": {
+      "sdb_name": "Oleksandriya",
+      "sdb_id": "135483",
+      "badge": "/team-badges/pfc-olexandria.png",
+      "logo": null,
+      "stadium": "CSC Nika Stadion",
+      "capacity": 7000,
+      "founded": 1948,
+      "idESPN": "0",
+      "idAPIfootball": "3619",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "SC Poltava": {
+      "sdb_name": "Poltava",
+      "sdb_id": "146861",
+      "badge": "/team-badges/sc-poltava.png",
+      "logo": "/team-logos/sc-poltava.png",
+      "stadium": "Stadion Molodizhnyy Poltava",
+      "capacity": 3700,
+      "founded": 2011,
+      "idESPN": "0",
+      "idAPIfootball": "17165",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "Zorya Luhansk": {
+      "sdb_name": "Zorya Luhansk",
+      "sdb_id": "134422",
+      "badge": "/team-badges/zorya-luhansk.png",
+      "logo": null,
+      "stadium": "Stadion Dynamo im Valeriy Lobanovskyi",
+      "capacity": 12000,
+      "founded": 1923,
+      "idESPN": "0",
+      "idAPIfootball": "599",
+      "sdb_league": "Ukrainian Premier League"
+    },
+    "Ajman Club": {
+      "badge": "/team-badges/ajman-club.png",
+      "sdb_name": "Ajman Club",
+      "logo": null
+    },
+    "Al Ain FC": {
+      "badge": "/team-badges/al-ain.png",
+      "sdb_name": "Al Ain FC",
+      "logo": null
+    },
+    "Al Bataeh Club": {
+      "badge": "/team-badges/al-bataeh-club.png",
+      "sdb_name": "Al Bataeh Club",
+      "logo": null
+    },
+    "Al Dhafra": {
+      "badge": "/team-badges/al-dhafra.png",
+      "sdb_name": "Al Dhafra",
+      "logo": null
+    },
+    "Al Wasl": {
+      "badge": "/team-badges/al-wasl.png",
+      "sdb_name": "Al Wasl",
+      "logo": null
+    },
+    "Al-Ittihad Kalba": {
+      "badge": "/team-badges/al-ittihad-kalba.png",
+      "sdb_name": "Al-Ittihad Kalba",
+      "logo": null
+    },
+    "Al-Jazira": {
+      "badge": "/team-badges/al-jazira.png",
+      "sdb_name": "Al-Jazira",
+      "logo": null
+    },
+    "Al-Nasr": {
+      "badge": "/team-badges/al-nasr.png",
+      "sdb_name": "Al-Nasr",
+      "logo": null
+    },
+    "Al-Wahda": {
+      "badge": "/team-badges/al-wahda.png",
+      "sdb_name": "Al-Wahda",
+      "logo": null
+    },
+    "Baniyas": {
+      "badge": "/team-badges/baniyas.png",
+      "sdb_name": "Baniyas",
+      "logo": null
+    },
+    "Dibba Al-Fujairah": {
+      "badge": "/team-badges/dibba-al-fujairah.png",
+      "sdb_name": "Dibba Al-Fujairah",
+      "logo": null
+    },
+    "Khor Fakkan Club": {
+      "badge": "/team-badges/khor-fakkan-club.png",
+      "sdb_name": "Khor Fakkan Club",
+      "logo": null
+    },
+    "Shabab Al Ahli Dubai": {
+      "badge": "/team-badges/shabab-al-ahli-dubai.png",
+      "sdb_name": "Shabab Al Ahli Dubai",
+      "logo": null
+    },
+    "Sharjah FC": {
+      "badge": "/team-badges/sharjah.png",
+      "sdb_name": "Sharjah FC",
+      "logo": null
     },
     "Atlanta United": {
       "sdb_name": "Atlanta United",
@@ -9660,6 +12894,198 @@
       "idESPN": "0",
       "idAPIfootball": "1603",
       "sdb_league": "American Major League Soccer"
+    },
+    "Boston River": {
+      "sdb_name": "Boston River",
+      "sdb_id": "136051",
+      "badge": "/team-badges/boston-river.png",
+      "logo": null,
+      "stadium": "Estadio Campeones Olímpicos",
+      "capacity": 12000,
+      "founded": 1939,
+      "idESPN": "0",
+      "idAPIfootball": "2361",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "CA Cerro": {
+      "sdb_name": "Cerro",
+      "sdb_id": "135363",
+      "badge": "/team-badges/ca-cerro.png",
+      "logo": null,
+      "stadium": "Estadio Monumental Luis Tróccoli",
+      "capacity": 25000,
+      "founded": 1922,
+      "idESPN": "0",
+      "idAPIfootball": "2362",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "CA Juventud": {
+      "sdb_name": "Juventud Las Piedras",
+      "sdb_id": "135368",
+      "badge": "/team-badges/ca-juventud.png",
+      "logo": null,
+      "stadium": "Estadio Parque Artigas Las Piedras",
+      "capacity": 12000,
+      "founded": 1935,
+      "idESPN": "0",
+      "idAPIfootball": "2353",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "CA River Plate": {
+      "sdb_name": "River Plate Montevideo",
+      "sdb_id": "135373",
+      "badge": "/team-badges/ca-river-plate.png",
+      "logo": null,
+      "stadium": "Parque Federico Omar Saroldi",
+      "capacity": 6000,
+      "founded": 1932,
+      "idESPN": "0",
+      "idAPIfootball": "2351",
+      "sdb_league": "Uruguayan Segunda División"
+    },
+    "Cerro Largo": {
+      "sdb_name": "Cerro Largo",
+      "sdb_id": "138817",
+      "badge": "/team-badges/cerro-largo.png",
+      "logo": null,
+      "stadium": "Estadio Municipal Arquitecto Antonio Eleuterio Ubilla",
+      "capacity": 9000,
+      "founded": 2002,
+      "idESPN": "0",
+      "idAPIfootball": "2369",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Danubio": {
+      "sdb_name": "Danubio",
+      "sdb_id": "135365",
+      "badge": "/team-badges/danubio.png",
+      "logo": null,
+      "stadium": "Estadio Jardines del Hipódromo",
+      "capacity": 18000,
+      "founded": 1932,
+      "idESPN": "0",
+      "idAPIfootball": "2352",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Defensor Sporting": {
+      "sdb_name": "Defensor Sporting",
+      "sdb_id": "135366",
+      "badge": "/team-badges/defensor-sporting.png",
+      "logo": null,
+      "stadium": "Estadio Luis Franzini",
+      "capacity": 18000,
+      "founded": 1913,
+      "idESPN": "0",
+      "idAPIfootball": "2350",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Liverpool FC Montevideo": {
+      "sdb_name": "Liverpool Montevideo",
+      "sdb_id": "136052",
+      "badge": "/team-badges/liverpool-fc-montevideo.png",
+      "logo": null,
+      "stadium": "Estadio Belvedere",
+      "capacity": 10000,
+      "founded": 1915,
+      "idESPN": "0",
+      "idAPIfootball": "2358",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Miramar Misiones": {
+      "sdb_name": "Miramar Misiones",
+      "sdb_id": "145844",
+      "badge": "/team-badges/miramar-misiones.png",
+      "logo": null,
+      "stadium": "Parque Luis Méndez Piana",
+      "capacity": 6500,
+      "founded": 1980,
+      "idESPN": "0",
+      "idAPIfootball": "2373",
+      "sdb_league": "Uruguayan Segunda División"
+    },
+    "Montevideo City Torque": {
+      "sdb_name": "Montevideo City Torque",
+      "sdb_id": "138818",
+      "badge": "/team-badges/montevideo-city-torque.png",
+      "logo": null,
+      "stadium": "Estadio Charrúa",
+      "capacity": 60235,
+      "founded": 2007,
+      "idESPN": "0",
+      "idAPIfootball": "2365",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Montevideo Wanderers": {
+      "sdb_name": "Montevideo Wanderers",
+      "sdb_id": "135377",
+      "badge": "/team-badges/montevideo-wanderers.png",
+      "logo": null,
+      "stadium": "Parque Alfredo Víctor Viera",
+      "capacity": 7527,
+      "founded": 1902,
+      "idESPN": "0",
+      "idAPIfootball": "2360",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Nacional": {
+      "sdb_name": "Nacional Montevideo",
+      "sdb_id": "135364",
+      "badge": "/team-badges/nacional.png",
+      "logo": null,
+      "stadium": "Estadio Gran Parque Central",
+      "capacity": 28000,
+      "founded": 1899,
+      "idESPN": "0",
+      "idAPIfootball": "2356",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Peñarol": {
+      "sdb_name": "Peñarol",
+      "sdb_id": "135369",
+      "badge": "/team-badges/penarol.png",
+      "logo": null,
+      "stadium": "Estadio Campeón del Siglo",
+      "capacity": 40000,
+      "founded": 1891,
+      "idESPN": "0",
+      "idAPIfootball": "2348",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Plaza Colonia": {
+      "sdb_name": "Plaza Colonia",
+      "sdb_id": "136053",
+      "badge": "/team-badges/plaza-colonia.png",
+      "logo": null,
+      "stadium": "Estadio Juan Gaspar Prandi",
+      "capacity": 12000,
+      "founded": 1917,
+      "idESPN": "0",
+      "idAPIfootball": "2355",
+      "sdb_league": "Uruguayan Segunda División"
+    },
+    "Progreso": {
+      "sdb_name": "Progreso",
+      "sdb_id": "138815",
+      "badge": "/team-badges/progreso.png",
+      "logo": "/team-logos/progreso.png",
+      "stadium": "Parque Abraham Paladino",
+      "capacity": 8000,
+      "founded": 1917,
+      "idESPN": "0",
+      "idAPIfootball": "2363",
+      "sdb_league": "Uruguayan Primera Division"
+    },
+    "Racing Club de Montevideo": {
+      "sdb_name": "Racing Montevideo",
+      "sdb_id": "135370",
+      "badge": "/team-badges/racing-club-de-montevideo.png",
+      "logo": null,
+      "stadium": "Parque Osvaldo Roberto",
+      "capacity": 8500,
+      "founded": 1919,
+      "idESPN": "0",
+      "idAPIfootball": "2359",
+      "sdb_league": "Uruguayan Primera Division"
     },
     "Bergischer HC": {
       "sdb_name": "Bergischer HC",
@@ -10641,6 +14067,306 @@
       "idAPIfootball": "0",
       "sdb_league": "English Rugby League Super League"
     },
+    "Blue Bulls": {
+      "sdb_name": "Blue Bulls",
+      "sdb_id": "142062",
+      "badge": "/team-badges/blue-bulls.png",
+      "logo": "/team-logos/blue-bulls.png",
+      "stadium": "Loftus Versfeld Stadium",
+      "capacity": 51762,
+      "founded": 1938,
+      "idESPN": "0",
+      "idAPIfootball": "0",
+      "sdb_league": "Currie Cup"
+    },
+    "Boland Cavaliers": {
+      "sdb_name": "Boland Cavaliers",
+      "sdb_id": "142063",
+      "badge": "/team-badges/boland-cavaliers.png",
+      "logo": null,
+      "stadium": "Boland Stadium",
+      "capacity": 11000,
+      "founded": 1939,
+      "idESPN": "0",
+      "idAPIfootball": "293",
+      "sdb_league": "Currie Cup"
+    },
+    "Border Bulldogs": {
+      "sdb_name": "Border Bulldogs",
+      "sdb_id": "142064",
+      "badge": "/team-badges/border-bulldogs.png",
+      "logo": null,
+      "stadium": "Buffalo City Stadium",
+      "capacity": 16000,
+      "founded": 1891,
+      "idESPN": null,
+      "idAPIfootball": "311",
+      "sdb_league": "_No League"
+    },
+    "Eastern Province Elephants": {
+      "sdb_name": "Eastern Province Elephants",
+      "sdb_id": "142065",
+      "badge": "/team-badges/eastern-province-elephants.png",
+      "logo": null,
+      "stadium": "Nelson Mandela Bay Stadium",
+      "capacity": 46000,
+      "founded": 1888,
+      "idESPN": "0",
+      "idAPIfootball": "313",
+      "sdb_league": "_No League Rugby"
+    },
+    "Free State Cheetahs": {
+      "sdb_name": "Free State Cheetahs",
+      "sdb_id": "142067",
+      "badge": "/team-badges/free-state-cheetahs.png",
+      "logo": "/team-logos/free-state-cheetahs.png",
+      "stadium": "Toyota Stadium South Africa",
+      "capacity": 46000,
+      "founded": 1895,
+      "idESPN": "0",
+      "idAPIfootball": "295",
+      "sdb_league": "Currie Cup"
+    },
+    "Golden Lions": {
+      "sdb_name": "Golden Lions",
+      "sdb_id": "142068",
+      "badge": "/team-badges/golden-lions.png",
+      "logo": null,
+      "stadium": "Ellis Park Stadium",
+      "capacity": 62567,
+      "founded": 1889,
+      "idESPN": "0",
+      "idAPIfootball": "315",
+      "sdb_league": "Currie Cup"
+    },
+    "Griffons": {
+      "sdb_name": "Griffons",
+      "sdb_id": "142069",
+      "badge": "/team-badges/griffons.png",
+      "logo": "/team-logos/griffons.png",
+      "stadium": "",
+      "capacity": 8500,
+      "founded": 1968,
+      "idESPN": "0",
+      "idAPIfootball": "316",
+      "sdb_league": "_No League Rugby"
+    },
+    "Griquas": {
+      "sdb_name": "Griquas",
+      "sdb_id": "142070",
+      "badge": "/team-badges/griquas.png",
+      "logo": "/team-logos/griquas.png",
+      "stadium": "Griqua Park",
+      "capacity": 11000,
+      "founded": 1886,
+      "idESPN": "0",
+      "idAPIfootball": "304",
+      "sdb_league": "Currie Cup"
+    },
+    "Leopards": {
+      "sdb_name": "Leopards",
+      "sdb_id": "146991",
+      "badge": "/team-badges/leopards.png",
+      "logo": null,
+      "stadium": "Absa Puk Oval",
+      "capacity": 0,
+      "founded": 1920,
+      "idESPN": null,
+      "idAPIfootball": "317",
+      "sdb_league": "_No League"
+    },
+    "Pumas": {
+      "sdb_name": "Pumas",
+      "sdb_id": "142072",
+      "badge": "/team-badges/pumas.png",
+      "logo": "/team-logos/pumas.png",
+      "stadium": "Mbombela Stadium",
+      "capacity": 40929,
+      "founded": 1969,
+      "idESPN": "0",
+      "idAPIfootball": "305",
+      "sdb_league": "Currie Cup"
+    },
+    "SWD Eagles": {
+      "sdb_name": "SWD Eagles",
+      "sdb_id": "142074",
+      "badge": "/team-badges/swd-eagles.png",
+      "logo": null,
+      "stadium": "Outeniqua Park",
+      "capacity": 7500,
+      "founded": 1899,
+      "idESPN": null,
+      "idAPIfootball": "0",
+      "sdb_league": "_No League"
+    },
+    "Sharks": {
+      "sdb_name": "The Sharks",
+      "sdb_id": "136669",
+      "badge": "/team-badges/sharks.png",
+      "logo": "/team-logos/sharks.png",
+      "stadium": "Hollywoodbets Kings Park Stadium",
+      "capacity": 52000,
+      "founded": 1995,
+      "idESPN": "0",
+      "idAPIfootball": "302",
+      "sdb_league": "United Rugby Championship"
+    },
+    "Stormers XXIII": {
+      "sdb_name": "Western Province",
+      "sdb_id": "142075",
+      "badge": "/team-badges/stormers-xxiii.png",
+      "logo": "/team-logos/stormers-xxiii.png",
+      "stadium": "DHL Stadium",
+      "capacity": 55000,
+      "founded": 1883,
+      "idESPN": "0",
+      "idAPIfootball": "303",
+      "sdb_league": "Currie Cup"
+    },
+    "Black Rams Tokyo": {
+      "sdb_name": "Black Rams Tokyo",
+      "sdb_id": "144807",
+      "badge": "/team-badges/black-rams-tokyo.png",
+      "logo": "/team-logos/black-rams-tokyo.png",
+      "stadium": "",
+      "capacity": 0,
+      "founded": 1953,
+      "idESPN": null,
+      "idAPIfootball": "193",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Brave Lupus Tokyo": {
+      "sdb_name": "Toshiba Brave Lupus Tokyo",
+      "sdb_id": "144816",
+      "badge": "/team-badges/brave-lupus-tokyo.png",
+      "logo": null,
+      "stadium": "Chichibunomiya Rugby Stadium",
+      "capacity": 27188,
+      "founded": 1948,
+      "idESPN": null,
+      "idAPIfootball": "205",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Kobe Steelers": {
+      "sdb_name": "Kobelco Kobe Steelers",
+      "sdb_id": "144809",
+      "badge": "/team-badges/kobe-steelers.png",
+      "logo": null,
+      "stadium": "Noevir Stadium Kobe",
+      "capacity": 30132,
+      "founded": 1928,
+      "idESPN": null,
+      "idAPIfootball": "198",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Mie Honda Heat": {
+      "sdb_name": "Mie Honda Heat",
+      "sdb_id": "145709",
+      "badge": "/team-badges/mie-honda-heat.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 0,
+      "founded": 1960,
+      "idESPN": "0",
+      "idAPIfootball": "197",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Sagamihara DynaBoars": {
+      "sdb_name": "Mitsubishi Sagamihara DynaBoars",
+      "sdb_id": "145712",
+      "badge": "/team-badges/sagamihara-dynaboars.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 0,
+      "founded": 1981,
+      "idESPN": "0",
+      "idAPIfootball": "199",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Saitama Wild Knights": {
+      "sdb_name": "Saitama Wild Knights",
+      "sdb_id": "144812",
+      "badge": "/team-badges/saitama-wild-knights.png",
+      "logo": null,
+      "stadium": "Kumagaya Rugby Ground",
+      "capacity": 24000,
+      "founded": 1960,
+      "idESPN": null,
+      "idAPIfootball": "207",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Shizuoka Blue Revs": {
+      "sdb_name": "Shizuoka Blue Revs",
+      "sdb_id": "144814",
+      "badge": "/team-badges/shizuoka-blue-revs.png",
+      "logo": null,
+      "stadium": "Yamaha Stadium",
+      "capacity": 15165,
+      "founded": 1984,
+      "idESPN": null,
+      "idAPIfootball": "619",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Spears Funabashi": {
+      "sdb_name": "Kubota Spears Funabashi Tokyo Bay",
+      "sdb_id": "144810",
+      "badge": "/team-badges/spears-funabashi.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 0,
+      "founded": 1978,
+      "idESPN": null,
+      "idAPIfootball": "203",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Tokyo Sungoliath": {
+      "sdb_name": "Tokyo Sungoliath",
+      "sdb_id": "144815",
+      "badge": "/team-badges/tokyo-sungoliath.png",
+      "logo": null,
+      "stadium": "Chichibunomiya Rugby Stadium",
+      "capacity": 27188,
+      "founded": 1980,
+      "idESPN": "0",
+      "idAPIfootball": "204",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Toyota Verblitz": {
+      "sdb_name": "Toyota Verblitz",
+      "sdb_id": "144817",
+      "badge": "/team-badges/toyota-verblitz.png",
+      "logo": null,
+      "stadium": "Toyota Stadium Japan",
+      "capacity": 15000,
+      "founded": 1941,
+      "idESPN": "0",
+      "idAPIfootball": "206",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Urayasu D-Rocks": {
+      "sdb_name": "Urayasu D-Rocks",
+      "sdb_id": "144813",
+      "badge": "/team-badges/urayasu-d-rocks.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 27188,
+      "founded": 1976,
+      "idESPN": "0",
+      "idAPIfootball": "795",
+      "sdb_league": "Japan Rugby League One"
+    },
+    "Yokohama Eagles": {
+      "sdb_name": "Yokohama Canon Eagles",
+      "sdb_id": "144818",
+      "badge": "/team-badges/yokohama-eagles.png",
+      "logo": null,
+      "stadium": "",
+      "capacity": 0,
+      "founded": 1980,
+      "idESPN": null,
+      "idAPIfootball": "194",
+      "sdb_league": "Japan Rugby League One"
+    },
     "Bath": {
       "sdb_name": "Bath Rugby",
       "sdb_id": "135199",
@@ -11203,18 +14929,6 @@
       "founded": 2003,
       "idESPN": null,
       "idAPIfootball": "397",
-      "sdb_league": "United Rugby Championship"
-    },
-    "Sharks": {
-      "sdb_name": "The Sharks",
-      "sdb_id": "136669",
-      "badge": "/team-badges/sharks.png",
-      "logo": "/team-logos/sharks.png",
-      "stadium": "Hollywoodbets Kings Park Stadium",
-      "capacity": 52000,
-      "founded": 1995,
-      "idESPN": "0",
-      "idAPIfootball": "302",
       "sdb_league": "United Rugby Championship"
     },
     "Stormers": {
@@ -13293,18 +17007,6 @@
       "idAPIfootball": "2999",
       "sdb_league": "American NWSL"
     },
-    "OL Reign": {
-      "sdb_name": "Seattle Reign",
-      "sdb_id": "136424",
-      "badge": "/team-badges/ol-reign.png",
-      "logo": "/team-logos/ol-reign.png",
-      "stadium": "Lumen Field",
-      "capacity": 10000,
-      "founded": 2012,
-      "idESPN": "0",
-      "idAPIfootball": "3002",
-      "sdb_league": "American NWSL"
-    },
     "Orlando Pride": {
       "sdb_name": "Orlando Pride",
       "sdb_id": "136425",
@@ -13351,6 +17053,18 @@
       "founded": 2021,
       "idESPN": "0",
       "idAPIfootball": "18451",
+      "sdb_league": "American NWSL"
+    },
+    "Seattle Reign FC": {
+      "sdb_name": "Seattle Reign",
+      "sdb_id": "136424",
+      "badge": "/team-badges/seattle-reign.png",
+      "logo": "/team-logos/seattle-reign.png",
+      "stadium": "Lumen Field",
+      "capacity": 10000,
+      "founded": 2012,
+      "idESPN": "0",
+      "idAPIfootball": "3002",
       "sdb_league": "American NWSL"
     },
     "Utah Royals": {
@@ -13693,1031 +17407,6 @@
       "badge": "/team-badges/cadillac-f1-team.png",
       "logo": "/team-logos/cadillac-f1-team.png",
       "sport": "f1"
-    },
-    "Al Feiha": {
-      "badge": "/team-badges/al-feiha.png",
-      "sdb_name": "Al Feiha",
-      "logo": null
-    },
-    "Al Hazm": {
-      "badge": "/team-badges/al-hazm.png",
-      "sdb_name": "Al Hazm",
-      "logo": null
-    },
-    "Al Kholood Club": {
-      "badge": "/team-badges/al-kholood-club.png",
-      "sdb_name": "Al Kholood Club",
-      "logo": null
-    },
-    "Al Riyadh SC": {
-      "badge": "/team-badges/al-riyadh-sc.png",
-      "sdb_name": "Al Riyadh SC",
-      "logo": null
-    },
-    "Al-Ahli Jeddah": {
-      "badge": "/team-badges/al-ahli-jeddah.png",
-      "sdb_name": "Al-Ahli Jeddah",
-      "logo": null
-    },
-    "Al-Ettifaq": {
-      "badge": "/team-badges/al-ettifaq.png",
-      "sdb_name": "Al-Ettifaq",
-      "logo": null
-    },
-    "Al-Fateh": {
-      "badge": "/team-badges/al-fateh.png",
-      "sdb_name": "Al-Fateh",
-      "logo": null
-    },
-    "Al-Hilal": {
-      "badge": "/team-badges/al-hilal.png",
-      "sdb_name": "Al-Hilal",
-      "logo": null
-    },
-    "Al-Ittihad": {
-      "badge": "/team-badges/al-ittihad.png",
-      "sdb_name": "Al-Ittihad",
-      "logo": null
-    },
-    "Al-Najma SC": {
-      "badge": "/team-badges/al-najma-sc.png",
-      "sdb_name": "Al-Najma SC",
-      "logo": null
-    },
-    "Al-Nassr": {
-      "badge": "/team-badges/al-nassr.png",
-      "sdb_name": "Al-Nassr",
-      "logo": null
-    },
-    "Al-Okhdood Club": {
-      "badge": "/team-badges/al-okhdood-club.png",
-      "sdb_name": "Al-Okhdood Club",
-      "logo": null
-    },
-    "Al-Qadisiyah FC": {
-      "badge": "/team-badges/al-qadisiyah.png",
-      "sdb_name": "Al-Qadisiyah FC",
-      "logo": null
-    },
-    "Al-Shabab": {
-      "badge": "/team-badges/al-shabab.png",
-      "sdb_name": "Al-Shabab",
-      "logo": null
-    },
-    "Al-Taawoun FC": {
-      "badge": "/team-badges/al-taawoun.png",
-      "sdb_name": "Al-Taawoun FC",
-      "logo": null
-    },
-    "Damac FC": {
-      "badge": "/team-badges/damac.png",
-      "sdb_name": "Damac FC",
-      "logo": null
-    },
-    "Khaleej FC": {
-      "badge": "/team-badges/khaleej.png",
-      "sdb_name": "Khaleej FC",
-      "logo": null
-    },
-    "Neom SC": {
-      "badge": "/team-badges/neom-sc.png",
-      "sdb_name": "Neom SC",
-      "logo": null
-    },
-    "Ajman Club": {
-      "badge": "/team-badges/ajman-club.png",
-      "sdb_name": "Ajman Club",
-      "logo": null
-    },
-    "Al Ain FC": {
-      "badge": "/team-badges/al-ain.png",
-      "sdb_name": "Al Ain FC",
-      "logo": null
-    },
-    "Al Bataeh Club": {
-      "badge": "/team-badges/al-bataeh-club.png",
-      "sdb_name": "Al Bataeh Club",
-      "logo": null
-    },
-    "Al Dhafra": {
-      "badge": "/team-badges/al-dhafra.png",
-      "sdb_name": "Al Dhafra",
-      "logo": null
-    },
-    "Al Wasl": {
-      "badge": "/team-badges/al-wasl.png",
-      "sdb_name": "Al Wasl",
-      "logo": null
-    },
-    "Al-Ittihad Kalba": {
-      "badge": "/team-badges/al-ittihad-kalba.png",
-      "sdb_name": "Al-Ittihad Kalba",
-      "logo": null
-    },
-    "Al-Jazira": {
-      "badge": "/team-badges/al-jazira.png",
-      "sdb_name": "Al-Jazira",
-      "logo": null
-    },
-    "Al-Nasr": {
-      "badge": "/team-badges/al-nasr.png",
-      "sdb_name": "Al-Nasr",
-      "logo": null
-    },
-    "Al-Wahda": {
-      "badge": "/team-badges/al-wahda.png",
-      "sdb_name": "Al-Wahda",
-      "logo": null
-    },
-    "Baniyas": {
-      "badge": "/team-badges/baniyas.png",
-      "sdb_name": "Baniyas",
-      "logo": null
-    },
-    "Dibba Al-Fujairah": {
-      "badge": "/team-badges/dibba-al-fujairah.png",
-      "sdb_name": "Dibba Al-Fujairah",
-      "logo": null
-    },
-    "Khor Fakkan Club": {
-      "badge": "/team-badges/khor-fakkan-club.png",
-      "sdb_name": "Khor Fakkan Club",
-      "logo": null
-    },
-    "Shabab Al Ahli Dubai": {
-      "badge": "/team-badges/shabab-al-ahli-dubai.png",
-      "sdb_name": "Shabab Al Ahli Dubai",
-      "logo": null
-    },
-    "Sharjah FC": {
-      "badge": "/team-badges/sharjah.png",
-      "sdb_name": "Sharjah FC",
-      "logo": null
-    },
-    "Al Ahli SC Doha": {
-      "badge": "/team-badges/al-ahli-sc-doha.png",
-      "sdb_name": "Al Ahli SC Doha",
-      "logo": null
-    },
-    "Al Sailiya": {
-      "badge": "/team-badges/al-sailiya.png",
-      "sdb_name": "Al Sailiya",
-      "logo": null
-    },
-    "Al-Arabi SC": {
-      "badge": "/team-badges/al-arabi-sc.png",
-      "sdb_name": "Al-Arabi SC",
-      "logo": null
-    },
-    "Al-Duhail SC": {
-      "badge": "/team-badges/al-duhail-sc.png",
-      "sdb_name": "Al-Duhail SC",
-      "logo": null
-    },
-    "Al-Gharafa": {
-      "badge": "/team-badges/al-gharafa.png",
-      "sdb_name": "Al-Gharafa",
-      "logo": null
-    },
-    "Al-Rayyan": {
-      "badge": "/team-badges/al-rayyan.png",
-      "sdb_name": "Al-Rayyan",
-      "logo": null
-    },
-    "Al-Sadd": {
-      "badge": "/team-badges/al-sadd.png",
-      "sdb_name": "Al-Sadd",
-      "logo": null
-    },
-    "Al-Shahania SC": {
-      "badge": "/team-badges/al-shahania-sc.png",
-      "sdb_name": "Al-Shahania SC",
-      "logo": null
-    },
-    "Al-Shamal": {
-      "badge": "/team-badges/al-shamal.png",
-      "sdb_name": "Al-Shamal",
-      "logo": null
-    },
-    "Al-Wakrah SC": {
-      "badge": "/team-badges/al-wakrah-sc.png",
-      "sdb_name": "Al-Wakrah SC",
-      "logo": null
-    },
-    "Qatar SC": {
-      "badge": "/team-badges/qatar-sc.png",
-      "sdb_name": "Qatar SC",
-      "logo": null
-    },
-    "Umm-Salal": {
-      "badge": "/team-badges/umm-salal.png",
-      "sdb_name": "Umm-Salal",
-      "logo": null
-    },
-    "Bengaluru FC": {
-      "badge": "/team-badges/bengaluru.png",
-      "sdb_name": "Bengaluru FC",
-      "logo": null
-    },
-    "Chennaiyin FC": {
-      "badge": "/team-badges/chennaiyin.png",
-      "sdb_name": "Chennaiyin FC",
-      "logo": null
-    },
-    "East Bengal": {
-      "badge": "/team-badges/east-bengal.png",
-      "sdb_name": "East Bengal",
-      "logo": null
-    },
-    "FC Goa": {
-      "badge": "/team-badges/fc-goa.png",
-      "sdb_name": "FC Goa",
-      "logo": null
-    },
-    "Inter Kashi FC": {
-      "badge": "/team-badges/inter-kashi.png",
-      "sdb_name": "Inter Kashi FC",
-      "logo": null
-    },
-    "Jamshedpur FC": {
-      "badge": "/team-badges/jamshedpur.png",
-      "sdb_name": "Jamshedpur FC",
-      "logo": null
-    },
-    "Kerala Blasters": {
-      "badge": "/team-badges/kerala-blasters.png",
-      "sdb_name": "Kerala Blasters",
-      "logo": null
-    },
-    "Mohammedan SC": {
-      "badge": "/team-badges/mohammedan-sc.png",
-      "sdb_name": "Mohammedan SC",
-      "logo": null
-    },
-    "Mohun Bagan": {
-      "badge": "/team-badges/mohun-bagan.png",
-      "sdb_name": "Mohun Bagan",
-      "logo": null
-    },
-    "Mumbai City FC": {
-      "badge": "/team-badges/mumbai-city.png",
-      "sdb_name": "Mumbai City FC",
-      "logo": null
-    },
-    "NorthEast United": {
-      "badge": "/team-badges/northeast-united.png",
-      "sdb_name": "NorthEast United",
-      "logo": null
-    },
-    "Odisha FC": {
-      "badge": "/team-badges/odisha.png",
-      "sdb_name": "Odisha FC",
-      "logo": null
-    },
-    "Punjab FC": {
-      "badge": "/team-badges/punjab.png",
-      "sdb_name": "Punjab FC",
-      "logo": null
-    },
-    "SC Delhi": {
-      "badge": "/team-badges/sc-delhi.png",
-      "sdb_name": "SC Delhi",
-      "logo": null
-    },
-    "Al-Ahly": {
-      "badge": "/team-badges/al-ahly.png",
-      "sdb_name": "Al-Ahly",
-      "logo": null
-    },
-    "Al-Ittihad Al-Sakndary": {
-      "badge": "/team-badges/al-ittihad-al-sakndary.png",
-      "sdb_name": "Al-Ittihad Al-Sakndary",
-      "logo": null
-    },
-    "Al-Masry": {
-      "badge": "/team-badges/al-masry.png",
-      "sdb_name": "Al-Masry",
-      "logo": null
-    },
-    "Al-Mokawloon Al-Arab": {
-      "badge": "/team-badges/al-mokawloon-al-arab.png",
-      "sdb_name": "Al-Mokawloon Al-Arab",
-      "logo": null
-    },
-    "Ceramica Cleopatra": {
-      "badge": "/team-badges/ceramica-cleopatra.png",
-      "sdb_name": "Ceramica Cleopatra",
-      "logo": null
-    },
-    "ENPPI": {
-      "badge": "/team-badges/enppi.png",
-      "sdb_name": "ENPPI",
-      "logo": null
-    },
-    "El Gouna": {
-      "badge": "/team-badges/el-gouna.png",
-      "sdb_name": "El Gouna",
-      "logo": null
-    },
-    "Ghazl Al-Mehalla": {
-      "badge": "/team-badges/ghazl-al-mehalla.png",
-      "sdb_name": "Ghazl Al-Mehalla",
-      "logo": null
-    },
-    "Haras Al Hodoud": {
-      "badge": "/team-badges/haras-al-hodoud.png",
-      "sdb_name": "Haras Al Hodoud",
-      "logo": null
-    },
-    "Ismaily SC": {
-      "badge": "/team-badges/ismaily-sc.png",
-      "sdb_name": "Ismaily SC",
-      "logo": null
-    },
-    "Kahraba Ismailia SC": {
-      "badge": "/team-badges/kahraba-ismailia-sc.png",
-      "sdb_name": "Kahraba Ismailia SC",
-      "logo": null
-    },
-    "Modern Sport FC": {
-      "badge": "/team-badges/modern-sport.png",
-      "sdb_name": "Modern Sport FC",
-      "logo": null
-    },
-    "National Bank of Egypt SC": {
-      "badge": "/team-badges/national-bank-of-egypt-sc.png",
-      "sdb_name": "National Bank of Egypt SC",
-      "logo": null
-    },
-    "Petrojet": {
-      "badge": "/team-badges/petrojet.png",
-      "sdb_name": "Petrojet",
-      "logo": null
-    },
-    "Pharco FC": {
-      "badge": "/team-badges/pharco.png",
-      "sdb_name": "Pharco FC",
-      "logo": null
-    },
-    "Pyramids FC": {
-      "badge": "/team-badges/pyramids.png",
-      "sdb_name": "Pyramids FC",
-      "logo": null
-    },
-    "Semouha Club": {
-      "badge": "/team-badges/semouha-club.png",
-      "sdb_name": "Semouha Club",
-      "logo": null
-    },
-    "Talaea Al-Geish": {
-      "badge": "/team-badges/talaea-al-geish.png",
-      "sdb_name": "Talaea Al-Geish",
-      "logo": null
-    },
-    "Wadi Degla SC": {
-      "badge": "/team-badges/wadi-degla-sc.png",
-      "sdb_name": "Wadi Degla SC",
-      "logo": null
-    },
-    "ZED FC": {
-      "badge": "/team-badges/zed.png",
-      "sdb_name": "ZED FC",
-      "logo": null
-    },
-    "Zamalek SC": {
-      "badge": "/team-badges/zamalek-sc.png",
-      "sdb_name": "Zamalek SC",
-      "logo": null
-    },
-    "AmaZulu": {
-      "badge": "/team-badges/amazulu.png",
-      "sdb_name": "AmaZulu",
-      "logo": null
-    },
-    "Chippa United": {
-      "badge": "/team-badges/chippa-united.png",
-      "sdb_name": "Chippa United",
-      "logo": null
-    },
-    "Durban City FC": {
-      "badge": "/team-badges/durban-city.png",
-      "sdb_name": "Durban City FC",
-      "logo": null
-    },
-    "Golden Arrows": {
-      "badge": "/team-badges/golden-arrows.png",
-      "sdb_name": "Golden Arrows",
-      "logo": null
-    },
-    "Kaizer Chiefs": {
-      "badge": "/team-badges/kaizer-chiefs.png",
-      "sdb_name": "Kaizer Chiefs",
-      "logo": null
-    },
-    "Magesi FC": {
-      "badge": "/team-badges/magesi.png",
-      "sdb_name": "Magesi FC",
-      "logo": null
-    },
-    "Mamelodi Sundowns": {
-      "badge": "/team-badges/mamelodi-sundowns.png",
-      "sdb_name": "Mamelodi Sundowns",
-      "logo": null
-    },
-    "Marumo Gallants FC": {
-      "badge": "/team-badges/marumo-gallants.png",
-      "sdb_name": "Marumo Gallants FC",
-      "logo": null
-    },
-    "Orbit College FC": {
-      "badge": "/team-badges/orbit-college.png",
-      "sdb_name": "Orbit College FC",
-      "logo": null
-    },
-    "Orlando Pirates": {
-      "badge": "/team-badges/orlando-pirates.png",
-      "sdb_name": "Orlando Pirates",
-      "logo": null
-    },
-    "Polokwane City": {
-      "badge": "/team-badges/polokwane-city.png",
-      "sdb_name": "Polokwane City",
-      "logo": null
-    },
-    "Richards Bay FC": {
-      "badge": "/team-badges/richards-bay.png",
-      "sdb_name": "Richards Bay FC",
-      "logo": null
-    },
-    "Sekhukhune United": {
-      "badge": "/team-badges/sekhukhune-united.png",
-      "sdb_name": "Sekhukhune United",
-      "logo": null
-    },
-    "Siwelele FC": {
-      "badge": "/team-badges/siwelele.png",
-      "sdb_name": "Siwelele FC",
-      "logo": null
-    },
-    "Stellenbosch FC": {
-      "badge": "/team-badges/stellenbosch.png",
-      "sdb_name": "Stellenbosch FC",
-      "logo": null
-    },
-    "TS Galaxy FC": {
-      "badge": "/team-badges/ts-galaxy.png",
-      "sdb_name": "TS Galaxy FC",
-      "logo": null
-    },
-    "Albirex Niigata": {
-      "badge": "/team-badges/albirex-niigata.png",
-      "sdb_name": "Albirex Niigata",
-      "logo": null
-    },
-    "Avispa Fukuoka": {
-      "badge": "/team-badges/avispa-fukuoka.png",
-      "sdb_name": "Avispa Fukuoka",
-      "logo": null
-    },
-    "Cerezo Osaka": {
-      "badge": "/team-badges/cerezo-osaka.png",
-      "sdb_name": "Cerezo Osaka",
-      "logo": null
-    },
-    "FC Tokyo": {
-      "badge": "/team-badges/fc-tokyo.png",
-      "sdb_name": "FC Tokyo",
-      "logo": null
-    },
-    "Fagiano Okayama": {
-      "badge": "/team-badges/fagiano-okayama.png",
-      "sdb_name": "Fagiano Okayama",
-      "logo": null
-    },
-    "Gamba Osaka": {
-      "badge": "/team-badges/gamba-osaka.png",
-      "sdb_name": "Gamba Osaka",
-      "logo": null
-    },
-    "Kashima Antlers": {
-      "badge": "/team-badges/kashima-antlers.png",
-      "sdb_name": "Kashima Antlers",
-      "logo": null
-    },
-    "Kashiwa Reysol": {
-      "badge": "/team-badges/kashiwa-reysol.png",
-      "sdb_name": "Kashiwa Reysol",
-      "logo": null
-    },
-    "Kawasaki Frontale": {
-      "badge": "/team-badges/kawasaki-frontale.png",
-      "sdb_name": "Kawasaki Frontale",
-      "logo": null
-    },
-    "Kyoto Sanga": {
-      "badge": "/team-badges/kyoto-sanga.png",
-      "sdb_name": "Kyoto Sanga",
-      "logo": null
-    },
-    "Machida Zelvia": {
-      "badge": "/team-badges/machida-zelvia.png",
-      "sdb_name": "Machida Zelvia",
-      "logo": null
-    },
-    "Nagoya Grampus": {
-      "badge": "/team-badges/nagoya-grampus.png",
-      "sdb_name": "Nagoya Grampus",
-      "logo": null
-    },
-    "Sanfrecce Hiroshima": {
-      "badge": "/team-badges/sanfrecce-hiroshima.png",
-      "sdb_name": "Sanfrecce Hiroshima",
-      "logo": null
-    },
-    "Shimizu S-Pulse": {
-      "badge": "/team-badges/shimizu-s-pulse.png",
-      "sdb_name": "Shimizu S-Pulse",
-      "logo": null
-    },
-    "Shonan Bellmare": {
-      "badge": "/team-badges/shonan-bellmare.png",
-      "sdb_name": "Shonan Bellmare",
-      "logo": null
-    },
-    "Tokyo Verdy": {
-      "badge": "/team-badges/tokyo-verdy.png",
-      "sdb_name": "Tokyo Verdy",
-      "logo": null
-    },
-    "Urawa Red Diamonds": {
-      "badge": "/team-badges/urawa-red-diamonds.png",
-      "sdb_name": "Urawa Red Diamonds",
-      "logo": null
-    },
-    "Vissel Kobe": {
-      "badge": "/team-badges/vissel-kobe.png",
-      "sdb_name": "Vissel Kobe",
-      "logo": null
-    },
-    "Yokohama F. Marinos": {
-      "badge": "/team-badges/yokohama-f-marinos.png",
-      "sdb_name": "Yokohama F. Marinos",
-      "logo": null
-    },
-    "Yokohama FC": {
-      "badge": "/team-badges/yokohama.png",
-      "sdb_name": "Yokohama FC",
-      "logo": null
-    },
-    "Beijing Guoan": {
-      "badge": "/team-badges/beijing-guoan.png",
-      "sdb_name": "Beijing Guoan",
-      "logo": null
-    },
-    "Changchun YaTai": {
-      "badge": "/team-badges/changchun-yatai.png",
-      "sdb_name": "Changchun YaTai",
-      "logo": null
-    },
-    "Chengdu Rongcheng": {
-      "badge": "/team-badges/chengdu-rongcheng.png",
-      "sdb_name": "Chengdu Rongcheng",
-      "logo": null
-    },
-    "Dalian Yingbo": {
-      "badge": "/team-badges/dalian-yingbo.png",
-      "sdb_name": "Dalian Yingbo",
-      "logo": null
-    },
-    "Henan Songshan Longmen": {
-      "badge": "/team-badges/henan-songshan-longmen.png",
-      "sdb_name": "Henan Songshan Longmen",
-      "logo": null
-    },
-    "Meizhou Hakka": {
-      "badge": "/team-badges/meizhou-hakka.png",
-      "sdb_name": "Meizhou Hakka",
-      "logo": null
-    },
-    "Qingdao Hainiu": {
-      "badge": "/team-badges/qingdao-hainiu.png",
-      "sdb_name": "Qingdao Hainiu",
-      "logo": null
-    },
-    "Qingdao West Coast": {
-      "badge": "/team-badges/qingdao-west-coast.png",
-      "sdb_name": "Qingdao West Coast",
-      "logo": null
-    },
-    "Shandong Taishan": {
-      "badge": "/team-badges/shandong-taishan.png",
-      "sdb_name": "Shandong Taishan",
-      "logo": null
-    },
-    "Shanghai Port": {
-      "badge": "/team-badges/shanghai-port.png",
-      "sdb_name": "Shanghai Port",
-      "logo": null
-    },
-    "Shanghai Shenhua": {
-      "badge": "/team-badges/shanghai-shenhua.png",
-      "sdb_name": "Shanghai Shenhua",
-      "logo": null
-    },
-    "Shenzhen Peng City": {
-      "badge": "/team-badges/shenzhen-peng-city.png",
-      "sdb_name": "Shenzhen Peng City",
-      "logo": null
-    },
-    "Tianjin Tigers": {
-      "badge": "/team-badges/tianjin-tigers.png",
-      "sdb_name": "Tianjin Tigers",
-      "logo": null
-    },
-    "Wuhan Three Towns": {
-      "badge": "/team-badges/wuhan-three-towns.png",
-      "sdb_name": "Wuhan Three Towns",
-      "logo": null
-    },
-    "Yunnan Yukun": {
-      "badge": "/team-badges/yunnan-yukun.png",
-      "sdb_name": "Yunnan Yukun",
-      "logo": null
-    },
-    "Zhejiang Professional FC": {
-      "badge": "/team-badges/zhejiang-professional.png",
-      "sdb_name": "Zhejiang Professional FC",
-      "logo": null
-    },
-    "Daegu FC": {
-      "badge": "/team-badges/daegu.png",
-      "sdb_name": "Daegu FC",
-      "logo": null
-    },
-    "Daejeon Citizen": {
-      "badge": "/team-badges/daejeon-citizen.png",
-      "sdb_name": "Daejeon Citizen",
-      "logo": null
-    },
-    "FC Anyang": {
-      "badge": "/team-badges/fc-anyang.png",
-      "sdb_name": "FC Anyang",
-      "logo": null
-    },
-    "FC Seoul": {
-      "badge": "/team-badges/fc-seoul.png",
-      "sdb_name": "FC Seoul",
-      "logo": null
-    },
-    "Gangwon FC": {
-      "badge": "/team-badges/gangwon.png",
-      "sdb_name": "Gangwon FC",
-      "logo": null
-    },
-    "Gimcheon Sangmu": {
-      "badge": "/team-badges/gimcheon-sangmu.png",
-      "sdb_name": "Gimcheon Sangmu",
-      "logo": null
-    },
-    "Gwangju FC": {
-      "badge": "/team-badges/gwangju.png",
-      "sdb_name": "Gwangju FC",
-      "logo": null
-    },
-    "Jeju United": {
-      "badge": "/team-badges/jeju-united.png",
-      "sdb_name": "Jeju United",
-      "logo": null
-    },
-    "Jeonbuk Hyundai Motors": {
-      "badge": "/team-badges/jeonbuk-hyundai-motors.png",
-      "sdb_name": "Jeonbuk Hyundai Motors",
-      "logo": null
-    },
-    "Pohang Steelers": {
-      "badge": "/team-badges/pohang-steelers.png",
-      "sdb_name": "Pohang Steelers",
-      "logo": null
-    },
-    "Suwon FC": {
-      "badge": "/team-badges/suwon.png",
-      "sdb_name": "Suwon FC",
-      "logo": null
-    },
-    "Ulsan Hyundai Horang-i": {
-      "badge": "/team-badges/ulsan-hyundai-horang-i.png",
-      "sdb_name": "Ulsan Hyundai Horang-i",
-      "logo": null
-    },
-    "Aldershot Town": {
-      "badge": "/team-badges/aldershot-town.png",
-      "sdb_name": "Aldershot Town",
-      "logo": null
-    },
-    "Altrincham": {
-      "badge": "/team-badges/altrincham.png",
-      "sdb_name": "Altrincham",
-      "logo": null
-    },
-    "Boreham Wood": {
-      "badge": "/team-badges/boreham-wood.png",
-      "sdb_name": "Boreham Wood",
-      "logo": null
-    },
-    "Boston United": {
-      "badge": "/team-badges/boston-united.png",
-      "sdb_name": "Boston United",
-      "logo": null
-    },
-    "Brackley Town": {
-      "badge": "/team-badges/brackley-town.png",
-      "sdb_name": "Brackley Town",
-      "logo": null
-    },
-    "Braintree Town": {
-      "badge": "/team-badges/braintree-town.png",
-      "sdb_name": "Braintree Town",
-      "logo": null
-    },
-    "Carlisle United": {
-      "badge": "/team-badges/carlisle-united.png",
-      "sdb_name": "Carlisle United",
-      "logo": null
-    },
-    "Eastleigh": {
-      "badge": "/team-badges/eastleigh.png",
-      "sdb_name": "Eastleigh",
-      "logo": null
-    },
-    "FC Halifax Town": {
-      "badge": "/team-badges/fc-halifax-town.png",
-      "sdb_name": "FC Halifax Town",
-      "logo": null
-    },
-    "Forest Green Rovers": {
-      "badge": "/team-badges/forest-green-rovers.png",
-      "sdb_name": "Forest Green Rovers",
-      "logo": null
-    },
-    "Gateshead": {
-      "badge": "/team-badges/gateshead.png",
-      "sdb_name": "Gateshead",
-      "logo": null
-    },
-    "Hartlepool United": {
-      "badge": "/team-badges/hartlepool-united.png",
-      "sdb_name": "Hartlepool United",
-      "logo": null
-    },
-    "Morecambe": {
-      "badge": "/team-badges/morecambe.png",
-      "sdb_name": "Morecambe",
-      "logo": null
-    },
-    "Scunthorpe United": {
-      "badge": "/team-badges/scunthorpe-united.png",
-      "sdb_name": "Scunthorpe United",
-      "logo": null
-    },
-    "Solihull Moors": {
-      "badge": "/team-badges/solihull-moors.png",
-      "sdb_name": "Solihull Moors",
-      "logo": null
-    },
-    "Southend United": {
-      "badge": "/team-badges/southend-united.png",
-      "sdb_name": "Southend United",
-      "logo": null
-    },
-    "Sutton United": {
-      "badge": "/team-badges/sutton-united.png",
-      "sdb_name": "Sutton United",
-      "logo": null
-    },
-    "Tamworth": {
-      "badge": "/team-badges/tamworth.png",
-      "sdb_name": "Tamworth",
-      "logo": null
-    },
-    "Truro City": {
-      "badge": "/team-badges/truro-city.png",
-      "sdb_name": "Truro City",
-      "logo": null
-    },
-    "Wealdstone": {
-      "badge": "/team-badges/wealdstone.png",
-      "sdb_name": "Wealdstone",
-      "logo": null
-    },
-    "Woking": {
-      "badge": "/team-badges/woking.png",
-      "sdb_name": "Woking",
-      "logo": null
-    },
-    "Yeovil Town": {
-      "badge": "/team-badges/yeovil-town.png",
-      "sdb_name": "Yeovil Town",
-      "logo": null
-    },
-    "Doosan Bears": {
-      "badge": "/team-badges/doosan-bears.png",
-      "sdb_name": "Doosan Bears",
-      "logo": null
-    },
-    "Hanwha Eagles": {
-      "badge": "/team-badges/hanwha-eagles.png",
-      "sdb_name": "Hanwha Eagles",
-      "logo": null
-    },
-    "KT Wiz": {
-      "badge": "/team-badges/kt-wiz.png",
-      "sdb_name": "KT Wiz",
-      "logo": null
-    },
-    "Kia Tigers": {
-      "badge": "/team-badges/kia-tigers.png",
-      "sdb_name": "Kia Tigers",
-      "logo": null
-    },
-    "Kiwoom Heroes": {
-      "badge": "/team-badges/kiwoom-heroes.png",
-      "sdb_name": "Kiwoom Heroes",
-      "logo": null
-    },
-    "LG Twins": {
-      "badge": "/team-badges/lg-twins.png",
-      "sdb_name": "LG Twins",
-      "logo": null
-    },
-    "Lotte Giants": {
-      "badge": "/team-badges/lotte-giants.png",
-      "sdb_name": "Lotte Giants",
-      "logo": null
-    },
-    "NC Dinos": {
-      "badge": "/team-badges/nc-dinos.png",
-      "sdb_name": "NC Dinos",
-      "logo": null
-    },
-    "SSG Landers": {
-      "badge": "/team-badges/ssg-landers.png",
-      "sdb_name": "SSG Landers",
-      "logo": null
-    },
-    "Samsung Lions": {
-      "badge": "/team-badges/samsung-lions.png",
-      "sdb_name": "Samsung Lions",
-      "logo": null
-    },
-    "Buffalo Bisons": {
-      "badge": "/team-badges/buffalo-bisons.png",
-      "sdb_name": "Buffalo Bisons",
-      "logo": null
-    },
-    "Charlotte Knights": {
-      "badge": "/team-badges/charlotte-knights.png",
-      "sdb_name": "Charlotte Knights",
-      "logo": null
-    },
-    "Columbus Clippers": {
-      "badge": "/team-badges/columbus-clippers.png",
-      "sdb_name": "Columbus Clippers",
-      "logo": null
-    },
-    "Durham Bulls": {
-      "badge": "/team-badges/durham-bulls.png",
-      "sdb_name": "Durham Bulls",
-      "logo": null
-    },
-    "Gwinnett Stripers": {
-      "badge": "/team-badges/gwinnett-stripers.png",
-      "sdb_name": "Gwinnett Stripers",
-      "logo": null
-    },
-    "Indianapolis Indians": {
-      "badge": "/team-badges/indianapolis-indians.png",
-      "sdb_name": "Indianapolis Indians",
-      "logo": null
-    },
-    "Iowa Cubs": {
-      "badge": "/team-badges/iowa-cubs.png",
-      "sdb_name": "Iowa Cubs",
-      "logo": null
-    },
-    "Jacksonville Jumbo Shrimp": {
-      "badge": "/team-badges/jacksonville-jumbo-shrimp.png",
-      "sdb_name": "Jacksonville Jumbo Shrimp",
-      "logo": null
-    },
-    "Lehigh Valley IronPigs": {
-      "badge": "/team-badges/lehigh-valley-ironpigs.png",
-      "sdb_name": "Lehigh Valley IronPigs",
-      "logo": null
-    },
-    "Louisville Bats": {
-      "badge": "/team-badges/louisville-bats.png",
-      "sdb_name": "Louisville Bats",
-      "logo": null
-    },
-    "Memphis Redbirds": {
-      "badge": "/team-badges/memphis-redbirds.png",
-      "sdb_name": "Memphis Redbirds",
-      "logo": null
-    },
-    "Nashville Sounds": {
-      "badge": "/team-badges/nashville-sounds.png",
-      "sdb_name": "Nashville Sounds",
-      "logo": null
-    },
-    "Norfolk Tides": {
-      "badge": "/team-badges/norfolk-tides.png",
-      "sdb_name": "Norfolk Tides",
-      "logo": null
-    },
-    "Omaha Storm Chasers": {
-      "badge": "/team-badges/omaha-storm-chasers.png",
-      "sdb_name": "Omaha Storm Chasers",
-      "logo": null
-    },
-    "Rochester Red Wings": {
-      "badge": "/team-badges/rochester-red-wings.png",
-      "sdb_name": "Rochester Red Wings",
-      "logo": null
-    },
-    "Scranton/Wilkes-Barre RailRiders": {
-      "badge": "/team-badges/scranton-wilkes-barre-railriders.png",
-      "sdb_name": "Scranton/Wilkes-Barre RailRiders",
-      "logo": null
-    },
-    "St. Paul Saints": {
-      "badge": "/team-badges/st-paul-saints.png",
-      "sdb_name": "St. Paul Saints",
-      "logo": null
-    },
-    "Syracuse Mets": {
-      "badge": "/team-badges/syracuse-mets.png",
-      "sdb_name": "Syracuse Mets",
-      "logo": null
-    },
-    "Toledo Mud Hens": {
-      "badge": "/team-badges/toledo-mud-hens.png",
-      "sdb_name": "Toledo Mud Hens",
-      "logo": null
-    },
-    "Worcester Red Sox": {
-      "badge": "/team-badges/worcester-red-sox.png",
-      "sdb_name": "Worcester Red Sox",
-      "logo": null
-    },
-    "Albuquerque Isotopes": {
-      "badge": "/team-badges/albuquerque-isotopes.png",
-      "sdb_name": "Albuquerque Isotopes",
-      "logo": null
-    },
-    "El Paso Chihuahuas": {
-      "badge": "/team-badges/el-paso-chihuahuas.png",
-      "sdb_name": "El Paso Chihuahuas",
-      "logo": null
-    },
-    "Las Vegas Aviators": {
-      "badge": "/team-badges/las-vegas-aviators.png",
-      "sdb_name": "Las Vegas Aviators",
-      "logo": null
-    },
-    "Oklahoma City Comets": {
-      "badge": "/team-badges/oklahoma-city-comets.png",
-      "sdb_name": "Oklahoma City Comets",
-      "logo": null
-    },
-    "Reno Aces": {
-      "badge": "/team-badges/reno-aces.png",
-      "sdb_name": "Reno Aces",
-      "logo": null
-    },
-    "Round Rock Express": {
-      "badge": "/team-badges/round-rock-express.png",
-      "sdb_name": "Round Rock Express",
-      "logo": null
-    },
-    "Sacramento River Cats": {
-      "badge": "/team-badges/sacramento-river-cats.png",
-      "sdb_name": "Sacramento River Cats",
-      "logo": null
-    },
-    "Salt Lake Bees": {
-      "badge": "/team-badges/salt-lake-bees.png",
-      "sdb_name": "Salt Lake Bees",
-      "logo": null
-    },
-    "Sugar Land Space Cowboys": {
-      "badge": "/team-badges/sugar-land-space-cowboys.png",
-      "sdb_name": "Sugar Land Space Cowboys",
-      "logo": null
-    },
-    "Tacoma Rainiers": {
-      "badge": "/team-badges/tacoma-rainiers.png",
-      "sdb_name": "Tacoma Rainiers",
-      "logo": null
     }
   }
 }

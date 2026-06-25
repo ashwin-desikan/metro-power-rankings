@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21",
+  "generated_at": "2026-06-25",
   "source": "Champions League-201516.xlsx",
   "scope": {
     "countries": [
@@ -768,8 +768,8 @@
         "league_finals": 0,
         "league_t4": 1,
         "major_cups": 5,
-        "minor_cups": 6,
-        "last_trophy": 2025
+        "minor_cups": 7,
+        "last_trophy": 2026
       },
       "tier_by_year": {},
       "country_by_year": {}
