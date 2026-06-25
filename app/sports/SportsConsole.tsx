@@ -88,6 +88,17 @@ export default function SportsConsole({ deepDives }: { deepDives: ConsoleDeepDiv
         </div>
 
         <Link
+          href="/sports/standings"
+          className="flex items-center gap-2 rounded-md border px-2.5 py-2 mb-1 transition-colors hover:bg-[var(--bg-card-hover)]"
+          style={{ borderColor: "rgba(16,185,129,0.4)", background: "rgba(16,185,129,0.08)" }}
+        >
+          <span aria-hidden className="inline-block rounded-full flex-shrink-0" style={{ width: 9, height: 9, background: "#10b981" }} />
+          <span className="text-[12px] font-semibold" style={{ color: "#10b981" }}>Live Standings</span>
+          <span className="text-[10px]" style={{ color: "var(--text-dim)" }}>every live table, one page</span>
+          <span aria-hidden className="ml-auto text-[var(--text-dim)]">→</span>
+        </Link>
+
+        <Link
           href="/sports/zone-zero-cup"
           className="flex items-center gap-2 rounded-md border px-2.5 py-2 mb-1 transition-colors hover:bg-[var(--bg-card-hover)]"
           style={{ borderColor: "rgba(212,175,55,0.4)", background: "rgba(212,175,55,0.08)" }}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Play and Learn</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header>
+  <div class="logo"><span class="ball" id="logoEmoji">🏈</span> <span id="logoText">Catch or No Catch?</span></div>
+  <div class="hgroup">
+    <a class="back" id="back" href="/play">← All games</a>
+    <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+  </div>
+</header>
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="scene" id="scene">
+      <span class="flag" id="flag"></span>
+      <span class="city" id="city">🏈</span>
+      <svg class="pip" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#34d3b0" stroke="#16324f" stroke-width="4"/><path d="M14 50h72M50 8c16 14 16 70 0 84M50 8c-16 14-16 70 0 84" fill="none" stroke="#16324f" stroke-width="3" opacity=".5"/><circle cx="38" cy="46" r="6" fill="#16324f"/><circle cx="62" cy="46" r="6" fill="#16324f"/><circle cx="40" cy="44" r="2" fill="#fff"/><circle cx="64" cy="44" r="2" fill="#fff"/><path d="M36 64q14 14 28 0" fill="none" stroke="#16324f" stroke-width="4" stroke-linecap="round"/></svg>
+    </div>
+    <div class="place" id="place">—<small id="sub">—</small></div>
+    <div class="q" id="q">Loading…</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div><a class="golink" id="golink" target="_blank" rel="noopener">See on the site →</a></div>
+    <button class="next" id="next">Next →</button>
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏈 You did it!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">Great playing!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText"></p>
+<script src="pools/catch-or-no-catch.js"></script>
+<script src="assets/engine.js"></script>
+</body>
+</html>

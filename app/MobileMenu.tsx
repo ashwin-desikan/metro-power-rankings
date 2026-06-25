@@ -24,6 +24,7 @@ type Item = {
 // Sports entries from the shared catalog, ordered by family, shipped hubs only.
 const SPORTS_ITEMS: Item[] = [
   { href: '/sports', label: 'Zone Zero Sports Hub', group: 'Sports' },
+  { href: '/sports/standings', label: 'Live Standings', group: 'Sports' },
   // Marquee hubs only, mirroring the desktop Sports dropdown (DesktopNav).
   // Both surfaces read MARQUEE_HUBS so they stay in sync; sport shown as a
   // short sub-label instead of the long hint. Full directory lives at /sports.

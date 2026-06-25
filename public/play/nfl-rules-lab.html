@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The NFL Rules Lab</title>
+<style>
+  :root{
+    --bg:#08080D; --panel:#12121A; --panel-2:#1A1A26; --line:#1E1E2E;
+    --ink:#E8E8ED; --muted:#8888A0; --accent:#4ECDC4; --gold:#e6b34a;
+    --onside:#4ECDC4; --offside:#E2628B;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1060px;margin:0 auto;padding:24px 20px 72px;}
+  a{color:var(--accent);text-decoration:none;}
+  .crumb{color:var(--muted);font-size:12.5px;letter-spacing:.04em;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .crumb b{color:var(--ink);font-weight:600;}
+  .crumb .kidlink{font-weight:600;color:var(--gold);}
+  .kicker{color:var(--accent);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:14px;}
+  h1{font-size:30px;line-height:1.12;margin:6px 0 6px;letter-spacing:-.02em;}
+  .lede{color:var(--muted);max-width:70ch;margin:0 0 18px;}
+  .modebar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 18px;}
+  .seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;}
+  .seg button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:13px;
+    padding:7px 16px;border-radius:999px;cursor:pointer;letter-spacing:.02em;}
+  .seg button.on{background:var(--accent);color:#06121f;}
+  .modehint{color:var(--muted);font-size:13px;}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:6px 0 22px;}
+  .tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);
+    font-weight:600;font-size:14px;padding:10px 12px;cursor:pointer;}
+  .tab:hover{color:var(--ink);}
+  .tab.on{color:var(--ink);border-bottom-color:var(--accent);}
+  .tab .n{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;
+    background:var(--panel-2);font-size:11px;margin-right:7px;color:var(--muted);}
+  .tab.on .n{background:var(--accent);color:#06121f;}
+  section.game{display:none;}
+  section.game.on{display:block;}
+  .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start;}
+  @media(max-width:880px){.grid{grid-template-columns:1fr;}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;}
+  .card+.card{margin-top:16px;}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:2px 0 12px;}
+  h3{font-size:18px;margin:0 0 6px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);max-width:66ch;}
+  .verdict{display:flex;align-items:center;gap:12px;margin-top:12px;}
+  .tag{font-weight:800;font-size:19px;letter-spacing:.02em;padding:6px 14px;border-radius:999px;}
+  .tag.onside{background:rgba(78,205,196,.15);color:var(--onside);border:1px solid rgba(78,205,196,.4);}
+  .tag.offside{background:rgba(226,98,139,.13);color:var(--offside);border:1px solid rgba(226,98,139,.4);}
+  .why{color:var(--muted);font-size:14px;flex:1;}.why b{color:var(--ink);font-weight:600;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);font-size:13px;
+    padding:7px 11px;border-radius:999px;cursor:pointer;}
+  .chip:hover{border-color:var(--accent);}
+  .chip.real::before{content:"\25CF";color:var(--gold);font-size:9px;margin-right:6px;vertical-align:1px;}
+  .note{font-size:12px;color:var(--muted);margin-top:12px;}
+  .soul{margin-top:18px;border-left:2px solid var(--gold);padding:2px 0 2px 16px;}
+  .soul p{color:var(--muted);font-size:14px;margin:0 0 10px;}.soul b{color:var(--ink);font-weight:600;}
+  .laws{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;}
+  .law{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;cursor:pointer;}
+  .law:hover{border-color:var(--accent);}
+  .law.on{border-color:var(--accent);background:rgba(78,205,196,.10);}
+  .law .ln{font-size:11px;color:var(--muted);}
+  .law .lt{font-weight:600;font-size:13.5px;margin-top:2px;}
+  .lawbody h3{margin-bottom:8px;}
+  .lawbody .txt{color:var(--ink);}
+  .lawlinks{margin-top:14px;display:flex;flex-wrap:wrap;gap:14px;font-size:13px;align-items:center;}
+  .lawlinks a{font-weight:600;}
+  .lawsrc{color:var(--muted)!important;}
+  .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+  .opt{flex:1;min-width:140px;background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:11px;cursor:pointer;font-size:14px;text-align:left;}
+  .opt:hover{border-color:var(--accent);}
+  .opt.right{border-color:var(--onside);background:rgba(78,205,196,.12);}
+  .opt.wrong{border-color:var(--offside);background:rgba(226,98,139,.12);}
+  .ruling{margin-top:12px;font-size:14px;color:var(--muted);display:none;}
+  .ruling.show{display:block;}.ruling b{color:var(--ink);}
+  .navbtn{display:inline-flex;gap:8px;margin-top:14px;}
+  .navbtn button{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:13px;}
+  .navbtn button:hover{border-color:var(--accent);}
+  .tl{position:relative;margin-top:8px;padding-left:22px;}
+  .tl::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:var(--line);}
+  .tlitem{position:relative;padding:0 0 18px 6px;cursor:pointer;}
+  .tlitem::before{content:"";position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;
+    background:var(--panel);border:2px solid var(--accent);}
+  .tlitem.on::before{background:var(--accent);}
+  .tlitem .yr{font-weight:700;font-size:14px;color:var(--gold);}
+  .tlitem .ti{font-weight:600;}
+  .tldetail{color:var(--muted);font-size:13.5px;margin-top:4px;display:none;}
+  .tlitem.on .tldetail{display:block;}
+  footer{margin-top:34px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;}
+  footer b{color:var(--ink);}
+  .radios{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+  .rb{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);font-size:13px;padding:8px 12px;border-radius:8px;cursor:pointer;}
+  .rb.on{border-color:var(--accent);background:rgba(78,205,196,.12);color:#fff;}
+  .rb .mk{font-weight:800;margin-right:6px;}
+  .ctl{margin:0 0 10px;}.ctl .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+  .zonesvg{width:100%;height:auto;background:#0a2417;border-radius:10px;display:block;}
+  .gate{font-size:13px;color:var(--muted);margin-top:8px;}.gate b{color:var(--ink);}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><span><a href="/">Citizen of Nowhere</a> &middot; <a href="/play">Play &amp; Learn</a> &middot; <b>The NFL Rules Lab</b></span>
+    <a class="kidlink" href="/play/games/catch-or-no-catch.html">Younger fans? Play &ldquo;Catch or No Catch?&rdquo; &rarr;</a></div>
+  <div class="kicker">Rules Lab &middot; American Football</div>
+  <h1>The NFL Rules Lab</h1>
+  <p class="lede" id="lede"></p>
+  <div class="modebar"><div class="seg" id="modeSeg"><button data-mode="kids">Kids</button><button data-mode="adults">Adults</button></div><span class="modehint" id="modehint"></span></div>
+  <div class="tabs" id="tabs"></div>
+
+  <section class="game" data-game="catch">
+    <div class="grid">
+      <div class="card" style="padding:12px;">
+        <svg class="zonesvg" id="csvg" viewBox="0 0 320 200" aria-label="A receiver making a catch near the sideline"></svg>
+        <div class="verdict"><span id="cTag" class="tag onside">CATCH</span><span class="why" id="cWhy"></span></div>
+        <div class="gate" id="cGate"></div>
+      </div>
+      <div>
+        <div class="card"><h2>The three steps to a catch</h2>
+          <div class="ctl"><div class="lbl">Tap each step the receiver completed</div><div class="radios" id="cToggles"></div></div>
+          <p class="note">A pass is only a catch when the receiver controls the ball, gets both feet (or another body part) down in bounds, and then makes a football move or survives going to the ground with the ball still secure. Miss any one and it&rsquo;s incomplete.</p></div>
+        <div class="card"><h2>Try a famous play</h2><div class="chips" id="cPresets"></div></div>
+      </div>
+    </div>
+    <div class="soul" id="cSoul"></div>
+  </section>
+
+  <section class="game" data-game="rules"><div class="grid"><div class="card"><h2>Key Rules &amp; Terms</h2><div class="laws" id="lawList"></div></div><div class="card lawbody" id="lawBody"></div></div></section>
+  <section class="game" data-game="decisions"><div class="card" id="decCard"></div></section>
+  <section class="game" data-game="timeline"><div class="card" id="tlCard"></div></section>
+  <footer id="foot"></footer>
+</div>
+<script>
+"use strict";
+const APP={mode:"adults",game:"catch"};
+const COPY={lede:{kids:"American football's hardest call is simple to ask and tricky to answer: was it a catch? Try the Catch Lab, learn the key rules, make the call, and see how the game changed.",adults:"The NFL's signature judgement is the completed catch, a three-part test that decides games. Work through it in the Catch Lab, read the key rules, make the call on real moments, and trace how the rulebook changed. Adapted from the Official NFL Rules."},modehint:{kids:"Kids mode: plain language.",adults:"Adults mode: full rule wording and nuance."}};
+const GAMES=[{id:"catch",label:"Catch Lab"},{id:"rules",label:"Key Rules"},{id:"decisions",label:"You Make the Call"},{id:"timeline",label:"Rules That Changed"}];
+const tabsEl=document.getElementById("tabs");
+GAMES.forEach((g,i)=>{const b=document.createElement("button");b.className="tab"+(g.id===APP.game?" on":"");b.dataset.game=g.id;b.innerHTML=`<span class="n">${i+1}</span>${g.label}`;b.addEventListener("click",()=>switchGame(g.id));tabsEl.appendChild(b);});
+function switchGame(id){APP.game=id;document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on",t.dataset.game===id));document.querySelectorAll("section.game").forEach(s=>s.classList.toggle("on",s.dataset.game===id));}
+const modeSeg=document.getElementById("modeSeg");
+modeSeg.querySelectorAll("button").forEach(b=>{b.classList.toggle("on",b.dataset.mode===APP.mode);b.addEventListener("click",()=>{APP.mode=b.dataset.mode;modeSeg.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.mode===APP.mode));renderAll();});});
+
+/* ===== CATCH LAB ===== */
+const CATCH={control:true,feet:true,survive:true};
+const CSTEPS=[["control","Secured control"],["feet","Both feet down in bounds"],["survive","Football move / survived the ground"]];
+function cJudge(){return (CATCH.control&&CATCH.feet&&CATCH.survive)?"CATCH":"INCOMPLETE";}
+function cWhy(){
+  if(!CATCH.control)return "No secure control of the ball, so it never becomes a catch.";
+  if(!CATCH.feet)return "He didn't get both feet (or another body part) down in bounds.";
+  if(!CATCH.survive)return "He didn't make a football move or survive the ground with control, so it's incomplete.";
+  return "Control, both feet in bounds, and then a football move or surviving the ground.";
+}
+function cDiagram(){
+  const v=cJudge();const ball=v==="CATCH"?"#4ECDC4":"#E2628B";const inb=CATCH.feet;
+  return `
+   <rect width="320" height="200" fill="#0a2417"/>
+   <line x1="0" y1="40" x2="320" y2="40" stroke="#2c5d3f" stroke-width="1"/>
+   <line x1="0" y1="100" x2="320" y2="100" stroke="#2c5d3f" stroke-width="1"/>
+   <line x1="0" y1="160" x2="320" y2="160" stroke="#2c5d3f" stroke-width="1"/>
+   <rect x="246" y="0" width="74" height="200" fill="rgba(226,98,139,.10)"/>
+   <line x1="246" y1="0" x2="246" y2="200" stroke="#E2628B" stroke-width="3"/>
+   <text x="283" y="18" fill="#E2628B" font-size="10" text-anchor="middle">out of bounds</text>
+   <circle cx="170" cy="92" r="20" fill="#16324f" stroke="#e9eef2" stroke-width="2"/>
+   <text x="170" y="96" fill="#e9eef2" font-size="11" font-weight="800" text-anchor="middle">WR</text>
+   <ellipse cx="${inb?150:262}" cy="70" rx="13" ry="8" fill="${ball}" stroke="#fff" stroke-width="2"/>
+   <line x1="160" y1="120" x2="${inb?165:230}" y2="150" stroke="#e9eef2" stroke-width="3" stroke-linecap="round"/>
+   <line x1="178" y1="120" x2="${inb?182:240}" y2="150" stroke="#e9eef2" stroke-width="3" stroke-linecap="round"/>
+   <circle cx="${inb?165:230}" cy="152" r="4" fill="${inb?'#4ECDC4':'#E2628B'}"/>
+   <circle cx="${inb?182:240}" cy="152" r="4" fill="${inb?'#4ECDC4':'#E2628B'}"/>
+  `;
+}
+const csvg=document.getElementById("csvg");
+function cRender(){
+  const tg=document.getElementById("cToggles");tg.innerHTML="";
+  CSTEPS.forEach(([key,label])=>{const b=document.createElement("button");b.className="rb"+(CATCH[key]?" on":"");
+    b.innerHTML=`<span class="mk">${CATCH[key]?"✓":"✗"}</span>${label}`;
+    b.addEventListener("click",()=>{CATCH[key]=!CATCH[key];cRender();});tg.appendChild(b);});
+  const presets={"Clean sideline toe-tap":[1,1,1],"Calvin Johnson, 2010":[1,1,0],"Dez Bryant, 2014":[1,1,0],"Bobbled it, no control":[0,1,1],"One foot only":[1,0,1]};
+  const pe=document.getElementById("cPresets");pe.innerHTML="";
+  Object.keys(presets).forEach(n=>{const c=document.createElement("button");c.className="chip"+(/\d{4}/.test(n)?" real":"");c.textContent=n;
+    c.addEventListener("click",()=>{const p=presets[n];CATCH.control=!!p[0];CATCH.feet=!!p[1];CATCH.survive=!!p[2];cRender();});pe.appendChild(c);});
+  csvg.innerHTML=cDiagram();
+  const v=cJudge();const tag=document.getElementById("cTag");tag.textContent=v;tag.className="tag "+(v==="CATCH"?"onside":"offside");
+  document.getElementById("cWhy").innerHTML=cWhy();
+  document.getElementById("cGate").innerHTML="<b>The rule:</b> a catch needs control, both feet (or a body part) down in bounds, and then a football move or surviving contact with the ground. All three, in order.";
+}
+
+/* ===== KEY RULES ===== */
+const LAWS=[
+ {n:"Rule 8",t:"Completing a Catch",k:"To catch a pass you must control the ball, get both feet down in bounds, and then make a move or hold on as you hit the ground.",a:"A catch requires control of the ball, two feet (or another body part) touching in bounds, and then either a football act (a third step, a reach, a tuck) or, if going to the ground, retaining control throughout contact with the ground.",lab:"catch"},
+ {n:"Rule 7",t:"Downs & the Line to Gain",k:"The offence gets four tries to move the ball ten yards. Make it and you get four fresh tries; fail and the other team takes over.",a:"The offence has four downs to advance the ball to the line to gain (ten yards). Reaching it resets to first-and-ten; failing on fourth down surrenders possession at the spot of the ball (a turnover on downs)."},
+ {n:"Rule 11",t:"Scoring",k:"A touchdown is six points, a field goal three, a safety two, and the kick after a touchdown is worth one (or two if you score again).",a:"Touchdown 6; try after touchdown 1 by kick or 2 by run/pass from scrimmage; field goal 3; safety 2 (and possession via free kick to the team that scored it)."},
+ {n:"Rule 7",t:"The Neutral Zone & Pre-Snap",k:"Before the snap the lines can't cross into each other's space. Jumping early is a false start (offence) or offside (defence).",a:"The neutral zone spans the length of the ball before the snap. Offensive movement after the set is a false start (5 yards, dead ball); a defender in the zone at the snap is offside or encroachment (5 yards)."},
+ {n:"Rule 8",t:"Pass Interference",k:"You can't grab or shove a receiver while the ball is in the air. On the defence it gives the offence the ball where the foul happened.",a:"Significant hindrance of an eligible player's chance to catch a pass. Defensive PI is a spot foul with an automatic first down; offensive PI is 10 yards from the previous spot."},
+ {n:"Rule 12",t:"Roughing the Passer",k:"Once the quarterback throws, you can't hit him low, high, or late. It's a 15-yard penalty and a first down.",a:"Forcible or late contact to the passer, hits to the head/neck or below the knee, or driving him to the ground with body weight: 15 yards and an automatic first down."},
+ {n:"Rule 12",t:"Holding",k:"You can block, but you can't grab and hold a player. Offensive holding costs ten yards; defensive holding five and a first down.",a:"Grasping or restricting an opponent illegally. Offensive holding is 10 yards from the spot; defensive holding is 5 yards and an automatic first down."},
+ {n:"Rule 8",t:"Intentional Grounding",k:"A quarterback can't just throw the ball away to nowhere to avoid a sack while standing in the pocket.",a:"Throwing an incomplete pass with no realistic chance of completion to avoid a sack, while in the pocket: loss of down and the penalty spot, unless outside the pocket and past the line of scrimmage."},
+ {n:"Rule 12",t:"Lowering the Helmet",k:"Players can't lower their head to ram an opponent with the top of the helmet. It's dangerous and a 15-yard penalty.",a:"Lowering the head to initiate and make contact with the helmet against an opponent: 15 yards, and possible disqualification for a flagrant act."},
+ {n:"Rule 7",t:"Down by Contact",k:"A ball-carrier is down when his knee or elbow touches the ground while a defender is touching him. In the NFL he isn't down if no one touches him.",a:"A runner is down when any part of his body other than hands or feet touches the ground while in the grasp or contact of a defender. Unlike college, a player who falls untouched may rise and continue."},
+ {n:"Rule 16",t:"Overtime",k:"If the score is tied, both teams now get a chance with the ball. In the playoffs they keep playing until someone wins.",a:"Both teams are guaranteed a possession (a 2010 playoff rule extended to the regular season in 2025) unless the first team scores a touchdown then a defensive score; postseason continues until a winner emerges."},
+ {n:"Rule 6",t:"The Dynamic Kickoff",k:"Kickoffs now line most players up close together so there are more returns and fewer big collisions.",a:"Introduced 2024 and refined since: coverage and return teams set up near the receiving 35/40, only the kicker and returner may move until the ball is fielded, encouraging returns while cutting high-speed collisions."}
+];
+let curLaw=0;
+const lawListEl=document.getElementById("lawList"),lawBodyEl=document.getElementById("lawBody");
+function renderLaws(){
+  lawListEl.innerHTML="";
+  LAWS.forEach((L,i)=>{const d=document.createElement("div");d.className="law"+(i===curLaw?" on":"");
+    d.innerHTML=`<div class="ln">${L.n}</div><div class="lt">${L.t}</div>`;
+    d.addEventListener("click",()=>{curLaw=i;renderLaws();});lawListEl.appendChild(d);});
+  const L=LAWS[curLaw];
+  const body=(APP.mode==="kids")?`<p class="txt">${L.k}</p>`:`<p class="txt">${L.a}</p>`;
+  let links=`<div class="lawlinks">`;
+  if(L.lab) links+=`<a href="#" data-tab="${L.lab}">&#9654; Open the Catch Lab</a>`;
+  links+=`<a class="lawsrc" href="https://rankings.citizenofnowhere.org/teams/nfl" target="_blank" rel="noopener">NFL on the site &#8599;</a></div>`;
+  lawBodyEl.innerHTML=`<h3>${L.t}</h3>${body}${links}<p class="note">Source: adapted from the Official NFL Rules.</p>`;
+  lawBodyEl.querySelectorAll("a[data-tab]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();switchGame(a.dataset.tab);}));
+}
+
+/* ===== DECISIONS ===== */
+const SCEN=[
+ {real:true,src:"2010, Chicago",
+  prompt:{kids:"A receiver catches the ball with both feet down in the end zone, then puts the ball on the ground as he lands and lets go. Touchdown?",adults:"Calvin Johnson controls the ball with two feet and a knee down in the end zone, then, completing the fall, places the ball on the turf and it comes loose. Catch and touchdown?"},
+  opts:[{l:"Incomplete, no touchdown",ok:true},{l:"Touchdown",ok:false}],
+  ruling:{kids:"Incomplete. Because he was going to the ground, he had to hold the ball all the way through, and he didn't.",adults:"Incomplete. Going to the ground, the receiver must retain control throughout the landing; releasing the ball as part of the fall defeats the catch. This became known as the Calvin Johnson rule."}},
+ {real:true,src:"2001 playoffs, Foxborough",
+  prompt:{kids:"A quarterback pulls the ball back toward his body, then loses it as he's hit. Fumble, or an incomplete pass?",adults:"Tom Brady brings his arm forward, begins to tuck the ball, and loses it when hit. Under the rule of the day, fumble or incomplete pass?"},
+  opts:[{l:"Incomplete pass",ok:true},{l:"Fumble, defence ball",ok:false}],
+  ruling:{kids:"Incomplete, because of the old 'tuck rule'. The NFL later got rid of that rule in 2013.",adults:"Incomplete under the tuck rule: any forward arm motion was a pass until the ball was fully tucked. The rule was abolished in 2013."}},
+ {real:true,src:"2019 NFC title game, New Orleans",
+  prompt:{kids:"Late in a playoff game a defender clearly crashed into a receiver early, before the ball arrived, and no flag was thrown. Was it pass interference?",adults:"A defender arrives well before the ball and lands a clear early hit on the receiver; officials throw no flag. Should it have been defensive pass interference?"},
+  opts:[{l:"Yes, that's interference",ok:true},{l:"No, clean play",ok:false}],
+  ruling:{kids:"Yes, it should have been a flag. The missed call was so big the NFL briefly let coaches challenge pass interference.",adults:"Yes, textbook defensive pass interference. The non-call cost the Saints a Super Bowl trip and led the NFL to make PI reviewable for the 2019 season (a one-year experiment)."}},
+ {real:false,src:"Teaching scenario",
+  prompt:{kids:"It's fourth down and the offence needs ten yards. They run the ball but only gain nine. What happens?",adults:"Fourth-and-ten; the run gains nine yards, short of the line to gain. The result?"},
+  opts:[{l:"Other team takes over there",ok:true},{l:"Offence keeps the ball",ok:false}],
+  ruling:{kids:"Turnover on downs! Come up short on fourth down and the other team gets the ball right where you stopped.",adults:"Turnover on downs: failing to reach the line to gain on fourth down gives the opponent possession at the dead-ball spot."}}
+];
+let scIdx=0,scAns=false;
+const decCard=document.getElementById("decCard");
+function renderDecisions(){
+  const s=SCEN[scIdx];
+  decCard.innerHTML=`<h3>You Make the Call <span style="color:var(--muted);font-weight:400;font-size:14px;">&middot; ${scIdx+1} / ${SCEN.length}</span></h3>
+   <p class="sub">${s.prompt[APP.mode]}</p><div class="opts" id="opts"></div>
+   <div class="ruling" id="ruling"><b>${s.real?"Real moment":"Teaching scenario"}${s.real?" &middot; "+s.src:""}.</b> ${s.ruling[APP.mode]}</div>
+   <div class="navbtn"><button id="nextSc">Next &rarr;</button></div>`;
+  const oe=document.getElementById("opts");
+  s.opts.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o.l;
+    b.addEventListener("click",()=>{if(scAns)return;scAns=true;
+      document.querySelectorAll("#opts .opt").forEach(x=>{const oo=s.opts.find(z=>z.l===x.textContent);if(oo.ok)x.classList.add("right");if(x===b&&!o.ok)x.classList.add("wrong");});
+      document.getElementById("ruling").classList.add("show");});oe.appendChild(b);});
+  document.getElementById("nextSc").addEventListener("click",()=>{scIdx=(scIdx+1)%SCEN.length;scAns=false;renderDecisions();});
+}
+
+/* ===== TIMELINE ===== */
+const TL=[
+ {yr:"1906",t:"The forward pass is legalised",k:"For the first time you were allowed to throw the ball forward, opening up the whole game.",a:"Amid a crisis over deadly mass-momentum play, the forward pass was legalised in 1906, slowly transforming football from a running scrum into an aerial game."},
+ {yr:"1978",t:"The passing era is unlocked",k:"New rules stopped defenders from bumping receivers downfield and let blockers use their hands, so teams started throwing far more.",a:"The 'Mel Blount rule' limited contact on receivers to within five yards of the line, and offensive linemen were allowed to extend their arms to pass-block. Scoring and passing surged."},
+ {yr:"2013",t:"The tuck rule is abolished",k:"The confusing rule from the 2001 Patriots-Raiders game was finally scrapped.",a:"After more than a decade of controversy dating to the 2001 'Tuck Rule Game', owners voted the rule out: a quarterback who loses the ball while trying to bring it back to his body now fumbles."},
+ {yr:"2018",t:"The catch rule is simplified",k:"After years of 'was it a catch?' arguments, the NFL made the rule clearer, ending the strictest 'survive the ground' calls.",a:"Reacting to the Calvin Johnson and Dez Bryant non-catches, the league rewrote the catch: control, two feet down, and a football act, removing the harshest going-to-the-ground reversals."},
+ {yr:"2024",t:"The dynamic kickoff",k:"Kickoffs were redesigned so most players line up close together, creating more returns and fewer dangerous high-speed hits.",a:"Borrowing from the XFL, the dynamic kickoff lined up coverage and return units near the receiving 35/40 with movement frozen until the ball is fielded, reviving returns while cutting injuries."},
+ {yr:"2025",t:"Overtime evens up",k:"In the regular season too, both teams now get a turn with the ball if the game is tied.",a:"The guarantee that both teams get a possession in overtime, previously a postseason-only rule, was extended to the regular season for 2025."},
+ {yr:"2026",t:"Kickoff, replay and conduct tweaks",k:"The new kickoff was kept and fine-tuned, video review was widened, and rules for sending players off for dangerous fouls were tightened.",a:"The 2026 rules package retained and refined the dynamic kickoff, expanded replay assist, and tightened disqualification procedures for flagrant unsportsmanlike and dangerous fouls."}
+];
+let tlOpen=0;
+const tlCard=document.getElementById("tlCard");
+function renderTimeline(){
+  tlCard.innerHTML=`<h3>Rules That Changed the Game</h3><p class="sub">${APP.mode==="kids"?"Football's rules keep changing. Tap a moment.":"Each hinge bent the sport toward the passing, made-for-TV game we watch now."}</p>
+   <div class="tl">${TL.map((e,i)=>`<div class="tlitem${i===tlOpen?" on":""}" data-i="${i}"><div class="yr">${e.yr}</div><div class="ti">${e.t}</div><div class="tldetail">${APP.mode==="kids"?e.k:e.a}<div style="color:var(--muted);font-size:12px;margin-top:5px;">Researched and verified.</div></div></div>`).join("")}</div>`;
+  tlCard.querySelectorAll(".tlitem").forEach(it=>it.addEventListener("click",()=>{tlOpen=+it.dataset.i;renderTimeline();}));
+}
+
+function renderAll(){
+  document.getElementById("lede").textContent=COPY.lede[APP.mode];
+  document.getElementById("modehint").textContent=COPY.modehint[APP.mode];
+  document.getElementById("cSoul").innerHTML="<p><b>Why this lives here.</b> The catch is football's offside: a moment everyone sees and no two people agree on. The same falling grab is a touchdown in one decade and an incomplete pass in the next, because the rulebook keeps redrawing the line between a catch and the ground.</p>";
+  cRender();renderLaws();renderDecisions();renderTimeline();
+  document.getElementById("foot").innerHTML="<b>Prototype.</b> The Catch Lab models the three-part completion test as a set of switches; a real ruling weighs control, timing and the ground as one continuous act. Rule text adapted from the Official NFL Rules. Real moments researched and verified.";
+}
+renderAll();switchGame("catch");
+</script>
+</body>
+</html>

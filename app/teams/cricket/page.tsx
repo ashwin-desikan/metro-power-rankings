@@ -8,9 +8,13 @@ import {
   winPct,
 } from "@/lib/cricket";
 import { flagCdnUrl } from "@/lib/international-display";
+import { getWtcStandings } from "@/lib/wtcStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
+// Live WTC standings are fetched at request time and cached by ISR, refreshing
+// hourly with no rebuild (same mechanism as the F1 and live-standings pages).
+export const revalidate = 3600;
 const PATH = "/teams/cricket";
 const TITLE = "International Cricket";
 const DESC =
@@ -40,9 +44,11 @@ function fmtSpan(first: string | null, last: string | null): string {
   return `${first.slice(0, 4)}–${last.slice(0, 4)}`;
 }
 
-export default function CricketHubPage() {
+export default async function CricketHubPage() {
   const hub = getCricketHub();
   const teams = getAllCricketTeams();
+  const wtc = await getWtcStandings();
+  const hasWtc = !!wtc && wtc.rows.length > 0;
   if (!hub) return null;
 
   const fullMembers = teams.filter((t) => t.full_member);
@@ -108,6 +114,7 @@ export default function CricketHubPage() {
       <HubNav
         items={[
           { label: "Domestic T20", href: "#domestic-t20" },
+          ...(hasWtc ? [{ label: "Test Championship", href: "#wtc" }] : []),
           { label: "Rankings", href: "#rankings" },
           { label: "No. 1 Reigns", href: "#number-ones" },
           { label: "Honours", href: "#honours" },
@@ -156,6 +163,49 @@ export default function CricketHubPage() {
       </div>
 
       {/* ---------------- Current rankings ---------------- */}
+      {/* ---------------- World Test Championship (live, ICC) ---------------- */}
+      {hasWtc && (
+        <section className="mb-10">
+          <h2 id="wtc" className="text-lg font-semibold mb-1">{wtc!.title}</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            The current cycle&apos;s table, live from the ICC, ranked by percentage of points won (PCT).
+          </p>
+          <div className="rounded-xl border overflow-x-auto" style={card}>
+            <table className="w-full text-sm min-w-[480px]">
+              <thead>
+                <tr className="text-left text-xs text-[var(--text-muted)]">
+                  <th className="py-2 px-3 font-medium text-right">#</th>
+                  <th className="py-2 px-3 font-medium">Team</th>
+                  <th className="py-2 px-2 font-medium text-right">P</th>
+                  <th className="py-2 px-2 font-medium text-right">W</th>
+                  <th className="py-2 px-2 font-medium text-right">L</th>
+                  <th className="py-2 px-2 font-medium text-right">D</th>
+                  <th className="py-2 px-2 font-medium text-right">Pts</th>
+                  <th className="py-2 px-3 font-medium text-right">PCT</th>
+                </tr>
+              </thead>
+              <tbody>
+                {wtc!.rows.map((r) => (
+                  <tr key={r.name} className="border-t" style={{ borderColor: "var(--border)" }}>
+                    <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.position}</td>
+                    <td className="py-1.5 px-3 font-medium">{teamLink(r.name)}</td>
+                    <td className="py-1.5 px-2 text-right tabular-nums" style={mono}>{r.played}</td>
+                    <td className="py-1.5 px-2 text-right tabular-nums" style={mono}>{r.won}</td>
+                    <td className="py-1.5 px-2 text-right tabular-nums" style={mono}>{r.lost}</td>
+                    <td className="py-1.5 px-2 text-right tabular-nums" style={mono}>{r.drawn}</td>
+                    <td className="py-1.5 px-2 text-right tabular-nums" style={mono}>
+                      {r.points}{r.penalty > 0 ? <span className="text-[var(--text-dim)]"> (&minus;{r.penalty})</span> : null}
+                    </td>
+                    <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={mono}>{r.pct}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[10px] text-[var(--text-dim)] mt-2">Source: ICC. Pts shown net of any penalty (deduction in brackets).</p>
+        </section>
+      )}
+
       <section className="mb-10">
         <h2 id="rankings" className="text-lg font-semibold mb-1">Current Citizen of Nowhere Rankings</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">

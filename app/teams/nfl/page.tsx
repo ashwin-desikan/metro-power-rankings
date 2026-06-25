@@ -107,6 +107,9 @@ export default function NflIndexPage() {
       </div>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
+        New: <a href="/play/nfl-rules-lab.html" className="text-[var(--accent)] hover:underline">the NFL Rules Lab &rarr;</a> the Catch Lab, key rules, real calls and how the rules changed (kids and adults modes).
+      </p>
+      <p className="text-xs text-[var(--text-dim)] mt-2">
         Source: <a href="/methodology" className="hover:text-[var(--text-muted)]">methodology</a>.
         Franchise totals from NFL_all workbook, last refreshed 2026-05-12.
       </p>

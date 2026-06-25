@@ -135,9 +135,7 @@ export default function SportsPage() {
         </div>
         <h1 className="text-4xl font-bold tracking-tight mb-2">Zone Zero Sports Hub</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Citizen of Nowhere&rsquo;s sports hub. Every top-flight team in the world on one interactive map, ranked
-          against the metro behind it rather than the trophy cabinet. Filter by sport, league, or country, then jump
-          to any league hub or cross-sport deep-dive from the console alongside.
+          Every top-flight team in the world on one map, ranked by the metro behind it rather than the trophy cabinet.
         </p>
         <p className="text-[var(--text-dim)] text-xs italic mt-2">Leave the suburbs to the old heads. The world is our outfield.</p>
         <a href="/sports/about" className="inline-block mt-3 text-sm text-[var(--accent)] hover:underline">What Zone Zero is &rarr;</a>
@@ -159,12 +157,10 @@ export default function SportsPage() {
           <div className="lg:col-span-8 min-w-0">
             <h2 className="text-2xl font-bold tracking-tight mb-2">Every top-flight team, on one map</h2>
             <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-              Every top-flight team across the tracked sports and countries, on one map.
-              Filter by sport, league, or country, or jump straight to a per-franchise page where one exists.
-              Per-team pages are live for NFL, MLB, NBA, and NHL.
+              Filter by sport, league, or country, or jump to a per-franchise page where one exists (NFL, MLB, NBA, NHL).
             </p>
             <p className="text-[var(--text-dim)] max-w-3xl text-xs mt-2">
-              Rosters and divisions current as of Feb 2026. Level + division changes happen during each sport&apos;s offseason and are noted in <Link href="/updates" className="underline hover:text-[var(--accent)]">/updates</Link>.
+              Rosters current to Feb 2026; changes land in <Link href="/updates" className="underline hover:text-[var(--accent)]">/updates</Link>.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-[var(--text-muted)] mt-4 mb-4">
               <div><strong className="text-[var(--text)] text-sm">{summary.major_markers.toLocaleString()}</strong> Major League &middot; <strong className="text-[var(--text)] text-sm">{summary.other_markers.toLocaleString()}</strong> College & second flight</div>
@@ -252,8 +248,25 @@ export default function SportsPage() {
       <section id="league-directory" className="mb-12 scroll-mt-20">
         <h2 className="text-lg font-semibold mb-1">League directory</h2>
         <p className="text-xs text-[var(--text-muted)] mb-4">
-          Grouped by sport. Live cards link straight to the per-franchise hubs; coming-soon cards stay on this page until that league ships.
+          Grouped by sport. Coming-soon leagues stay on this page until they ship.
         </p>
+        <Link
+          href="/sports/standings"
+          className="group flex items-center gap-3 rounded-xl border p-4 mb-3 transition-colors hover:bg-[var(--bg-card-hover)]"
+          style={{ background: "rgba(16,185,129,0.08)", borderColor: "rgba(16,185,129,0.4)" }}
+        >
+          <span aria-hidden className="inline-block rounded-full" style={{ width: 13, height: 13, background: "#10b981" }} />
+          <span className="min-w-0">
+            <span className="block font-semibold text-base tracking-tight" style={{ color: "#10b981" }}>
+              Live Standings
+            </span>
+            <span className="block text-xs text-[var(--text-muted)]">
+              Every live league table on one page, grouped by sport and refreshed through each season.
+            </span>
+          </span>
+          <span aria-hidden className="ml-auto text-[var(--text-dim)] transition-transform group-hover:translate-x-0.5">→</span>
+        </Link>
+
         <Link
           href="/sports/champions"
           className="group flex items-center gap-3 rounded-xl border p-4 mb-6 transition-colors hover:bg-[var(--bg-card-hover)]"
@@ -321,8 +334,7 @@ export default function SportsPage() {
       </section>
 
       <p className="text-xs text-[var(--text-dim)] mt-8">
-        Data from <Link href="/methodology" className="hover:text-[var(--text-muted)]">MetroAreas.xlsx</Link> Team List and FootballClub_Data.
-        Gold markers are the Major League scope; slate markers are NCAA Division I, FBS, and second-flight or international competitions.
+        Gold markers are Major League scope; slate markers are college and second-flight. <Link href="/methodology" className="hover:text-[var(--text-muted)]">Methodology &rarr;</Link>
       </p>
     </main>
   );

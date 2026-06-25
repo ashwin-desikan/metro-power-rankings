@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-25",
-    headline: "Worldwide crest and flag expansion, new College Baseball hub",
+    headline: "Live Standings hub, live golf, tennis, cricket, and an NFL Rules Lab",
     items: [
-      "Club crests and country flags now render across far more of the site: NPB, CFL, honour rolls, the rivalries and Greatest Games boards, the Domestic Leagues table, and metro team cards.",
-      "New crest coverage for the J.League, K League and Chinese Super League, the Gulf, Egyptian, South African and KBO leagues, Triple-A, and a dozen new European and South American top flights.",
-      "New College Baseball hub built on the College World Series, with a champions roll and all-time titles, and CWS titles and appearances now shown on the relevant metro team cards.",
-      "NBA pages split ABA titles into their own Oth Titles column, the NRL hub gains a State of Origin series table, and the rivalries board and F1 hub carry the prior crest expansion.",
+      "New Live Standings page: every league we track on one page, the four majors, MLS, NWSL, WNBA, CFL, NPB, AFL, NRL, F1 and the World Cup, grouped by sport and refreshed in season.",
+      "Live golf and tennis majors join it during The Open and the Slams, alongside the ICC World Test Championship table (now also on the cricket hub) and live NPB standings.",
+      "New NFL Rules Lab with a Catch Lab, key rules, real calls and a rules timeline, plus a kids Catch or No Catch game, joining the football, cricket and baseball labs.",
+      "Club crests and flags expanded sitewide, a new College Baseball hub on the College World Series, ABA titles split out on NBA pages, and a State of Origin table on the NRL hub.",
     ],
   },
   {

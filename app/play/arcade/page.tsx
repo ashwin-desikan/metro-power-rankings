@@ -5,7 +5,7 @@ import TodayStrip from "./TodayStrip";
 export const metadata: Metadata = {
   title: "Games",
   description:
-    "Daily and endless games built from the Citizen of Nowhere data: Beat the Model against the World Cup 2026 simulator, Metro Globle, Metro and Sports immaculate grids, Metro Higher or Lower, and the football, cricket and baseball Rules Labs.",
+    "Daily and endless games built from the Citizen of Nowhere data: Beat the Model against the World Cup 2026 simulator, Metro Globle, Metro and Sports immaculate grids, Metro Higher or Lower, and the football, cricket, baseball and NFL Rules Labs.",
   alternates: { canonical: "/play/arcade" },
 };
 
@@ -22,6 +22,7 @@ const GAMES: Game[] = [
   { href: "/play/rules-lab.html", title: "Football Rules Lab", emoji: "\u{1F6A9}", section: "rules", blurb: "Offside across eras, the 17 Laws, real refereeing calls, and how the rules changed.", static: true },
   { href: "/play/cricket-rules-lab.html", title: "Cricket Rules Lab", emoji: "\u{1F3CF}", section: "rules", blurb: "The LBW Lab, the key Laws, real situations, and how cricket's rules changed.", static: true },
   { href: "/play/baseball-rules-lab.html", title: "Baseball Rules Lab", emoji: "\u{26BE}", section: "rules", blurb: "The Strike Zone Lab, the key rules, real calls, and how baseball's rules changed.", static: true },
+  { href: "/play/nfl-rules-lab.html", title: "NFL Rules Lab", emoji: "\u{1F3C8}", section: "rules", blurb: "The Catch Lab, the key rules, real officiating calls, and how the NFL's rules changed.", static: true },
   { href: "/teams/national/quiz", title: "International Football Honours Quiz", emoji: "\u{1F3C6}", section: "rules", blurb: "Test yourself on national-team trophies and tournament history." },
 ];
 

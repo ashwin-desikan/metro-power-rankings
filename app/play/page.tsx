@@ -22,6 +22,7 @@ const GAMES: Game[] = [
   { title: "Offside or Onside?", emoji: "\u{1F6A9}", file: "offside-or-onside.html", ages: "7–10", blurb: "Football: spot the offside, and see how the rule changed.", group: "rules" },
   { title: "How's That?", emoji: "\u{1F3CF}", file: "hows-that.html", ages: "7–10", blurb: "Cricket: spot the dismissal and learn LBW.", group: "rules" },
   { title: "Ball or Strike?", emoji: "\u{26BE}", file: "ball-or-strike.html", ages: "7–10", blurb: "Baseball: call the strike zone and the basics.", group: "rules" },
+  { title: "Catch or No Catch?", emoji: "\u{1F3C8}", file: "catch-or-no-catch.html", ages: "7–10", blurb: "NFL: make the catch ruling and learn the basics.", group: "rules" },
 ];
 
 function Grid({ games }: { games: Game[] }) {
@@ -105,8 +106,8 @@ export default function PlayHub() {
       >
         <div style={{ fontSize: "1.15rem", fontWeight: 800 }}>For older fans: The Rules Labs &rarr;</div>
         <div style={{ fontSize: ".95rem", color: "#bcd4e6", marginTop: 4 }}>
-          Go deeper on football, cricket and baseball: the signature-rule labs, the full laws, real
-          officiating calls, and how the rules changed. Kids and adults modes.
+          Go deeper on football, the NFL, cricket and baseball: the signature-rule labs, the full laws,
+          real officiating calls, and how the rules changed. Kids and adults modes.
         </div>
       </a>
     </main>
