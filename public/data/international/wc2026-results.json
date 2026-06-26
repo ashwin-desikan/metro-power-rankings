@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-25T09:27:51Z",
+ "as_of": "2026-06-26T08:29:49Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -466,6 +466,60 @@
    "a_slug": "south-africa",
    "a_score": 1,
    "b_slug": "south-korea",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489410": {
+   "round": "Group",
+   "a_slug": "ecuador",
+   "a_score": 2,
+   "b_slug": "germany",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489409": {
+   "round": "Group",
+   "a_slug": "curacao",
+   "a_score": 0,
+   "b_slug": "cote-d-ivoire",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1539011": {
+   "round": "Group",
+   "a_slug": "japan",
+   "a_score": 1,
+   "b_slug": "sweden",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489412": {
+   "round": "Group",
+   "a_slug": "tunisia",
+   "a_score": 1,
+   "b_slug": "netherlands",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1539012": {
+   "round": "Group",
+   "a_slug": "turkey",
+   "a_score": 3,
+   "b_slug": "united-states",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489411": {
+   "round": "Group",
+   "a_slug": "paraguay",
+   "a_score": 0,
+   "b_slug": "australia",
    "b_score": 0,
    "winner_slug": null,
    "completed": true
