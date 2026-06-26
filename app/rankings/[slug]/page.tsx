@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { olympicEditionSlugFromName } from "@/lib/olympics";
 import { getMetroTitles, getFormerTopFlightForMetro, type FormerTopFlight } from "@/lib/championsHistory";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
+import { competitionHref } from "@/lib/competitionLinks";
 import HubNav from "@/app/teams/HubNav";
 import {
   getAllMetros,
@@ -923,7 +924,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                           </td>
                           <td className="px-4 py-2 text-xs">
                             {sportIcon(t.sport) ? <span aria-hidden className="mr-1">{sportIcon(t.sport)}</span> : null}
-                            <Link href={`/sports/champions/${t.compSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
+                            <Link href={competitionHref(t.compSlug)} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
                           </td>
                         </tr>
                       ))}

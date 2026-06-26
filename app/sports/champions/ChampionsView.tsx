@@ -6,6 +6,7 @@ import { useSessionState } from "@/lib/useSessionState";
 import ChampionsTable, { type ChampRow } from "./ChampionsTable";
 import { sportIcon } from "@/lib/sportLabels";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
+import { competitionHref } from "@/lib/competitionLinks";
 
 // Client wrapper for /sports/champions: a Current | All-Time toggle. Current is
 // the existing reigning-holders board; All-Time is a competition index ordered
@@ -133,7 +134,7 @@ function AllTimeIndex({ index }: { index: CompIndexEntry[] }) {
       <div className="divide-y divide-[var(--border)] border border-[var(--border)] rounded-lg overflow-hidden">
         {rows.map((e) => (
           <div key={e.compSlug} className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3 hover:bg-[var(--bg-card)] transition">
-            <Link href={`/sports/champions/${e.compSlug}`} className={`text-[var(--text)] hover:text-[var(--accent)] hover:underline ${e.tier != null && e.tier <= 2 ? "font-bold text-lg" : "font-semibold"}`}>
+            <Link href={competitionHref(e.compSlug)} className={`text-[var(--text)] hover:text-[var(--accent)] hover:underline ${e.tier != null && e.tier <= 2 ? "font-bold text-lg" : "font-semibold"}`}>
               {sportIcon(e.sport) && <span aria-hidden className="mr-1">{sportIcon(e.sport)}</span>}
               {e.competition}
             </Link>

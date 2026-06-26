@@ -17,6 +17,7 @@ import NationalTeamsSection, { countryHasNationalTeams } from "./NationalTeamsSe
 import LeagueHubsSection from "./LeagueHubsSection";
 import HubNav from "@/app/teams/HubNav";
 import { getCountryTitles } from "@/lib/championsHistory";
+import { competitionHref } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
@@ -442,7 +443,7 @@ export default async function CountryDetailPage({ params }: Props) {
                           </td>
                           <td className="px-4 py-2 text-xs">
                             {sportIcon(t.sport) ? <span aria-hidden className="mr-1">{sportIcon(t.sport)}</span> : null}
-                            <Link href={`/sports/champions/${t.compSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
+                            <Link href={competitionHref(t.compSlug)} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
                           </td>
                         </tr>
                       ))}
