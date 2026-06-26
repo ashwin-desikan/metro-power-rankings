@@ -300,7 +300,7 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
               <tr key={`${c.team}-${c.competition}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
                 <td className="py-2 px-3 align-top tabular-nums text-[var(--text-muted)]" style={mono}>{c.tier ?? ""}</td>
                 <td className="py-2 px-3 align-top">
-                  <div className="font-medium text-sm leading-tight flex items-center gap-1.5">
+                  <div className={`leading-tight flex items-center gap-1.5 ${c.tier != null && c.tier <= 2 ? "font-bold text-base" : "font-medium text-sm"}`}>
                     {c.sport === "F1" ? (
                       <CrestIcon name={f1ConstructorCrestName(c.crestName ?? c.team)} />
                     ) : SPORT_EMOJI[c.sport] ? (

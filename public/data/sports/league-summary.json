@@ -107,7 +107,7 @@
   "sources": {
     "team_list": 3239,
     "football_club_data": 5661,
-    "team_list_excluded_no_coords": 0,
+    "team_list_excluded_no_coords": 21,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 709,
     "football_club_data_excluded_no_coords": 4229

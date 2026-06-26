@@ -21,7 +21,7 @@ export const RELEASES: Release[] = [
     date: "2026-06-26",
     headline: "All-Time Champions honour rolls, plus an NFL Europe hub",
     items: [
-      "Current Champions gains an All-Time toggle: full honour rolls for every competition we track, each champion linked to its team and home metro, plus a Championship History timeline on every metro page.",
+      "Current Champions gains an All-Time toggle: full honour rolls for every competition we track, each champion linked to its team and home metro, plus a Championship History on every metro and country page.",
       "New NFL International hub documents NFL Europe / WLAF (1991-2007) in full: every World Bowl, every franchise ranked by titles, and season-by-season standings, linked from the NFL page.",
       "Every franchise now appears as a defunct team on its host metro pages, from Frankfurt to Sacramento; relocations like Birmingham to Rhein and Edinburgh to Glasgow show under both metros.",
       "The hub also maps the modern NFL International Series, every regular-season game played abroad since 2007, each linked to its host metro and country.",

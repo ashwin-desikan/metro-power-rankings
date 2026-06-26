@@ -38,6 +38,27 @@ def _metro_lookup():
         byname.setdefault(_normname(m.get("name") or ""), set()).add(m.get("slug"))
     return slugset, byname
 
+# Confirmed metro corrections the workbook still carries wrong (audited
+# 2026-06-26, user-confirmed). Keyed (competition, year, canonical) -> slug.
+# Durable: the build corrects these cells even if the workbook lags.
+# Canonical-name unifications: franchise lineages the workbook still carries
+# under two names. Applied to the canonical column so the club is one entity
+# everywhere (one honour-roll entry, one defunct card). Era (champion) name is
+# left untouched for era-correct display.
+CANONICAL_ALIAS = {
+    "London Wasps": "Wasps",
+    "Oklahoma A&M": "Oklahoma State",
+}
+
+METRO_OVERRIDE = {
+    ("MLB", 1992, "Toronto Blue Jays"): "toronto",
+    ("MLB", 1993, "Toronto Blue Jays"): "toronto",
+    ("NBA", 2019, "Toronto Raptors"): "toronto",
+    ("NFL", 1983, "Las Vegas Raiders"): "los-angeles",
+    ("MLB", 1896, "Baltimore Orioles"): "washington-baltimore",
+    ("MLB", 1897, "Baltimore Orioles"): "washington-baltimore",
+}
+
 def _fix_slug(slugset, byname, slug, name):
     if slug and slug in slugset:
         return slug
@@ -83,9 +104,9 @@ def main():
             "season": cell(r[ix["Season"]]),
             "year": yr,
             "champion": cell(r[ix["Champion"]]),
-            "canonical": cell(r[ix["Champion (Canonical)"]]),
+            "canonical": CANONICAL_ALIAS.get(cell(r[ix["Champion (Canonical)"]]), cell(r[ix["Champion (Canonical)"]])),
             "metro": cell(r[ix["Metro"]]),
-            "metroSlug": _fix_slug(slugset, byname, cell(r[ix["Metro Slug"]]), cell(r[ix["Metro"]])),
+            "metroSlug": METRO_OVERRIDE.get((comp, yr, cell(r[ix["Champion (Canonical)"]])), _fix_slug(slugset, byname, cell(r[ix["Metro Slug"]]), cell(r[ix["Metro"]]))),
             "date": date,
             "scopeType": cell(r[ix["Scope Type"]]),
         })

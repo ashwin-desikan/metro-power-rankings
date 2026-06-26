@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { useSessionState } from "@/lib/useSessionState";
 import ChampionsTable, { type ChampRow } from "./ChampionsTable";
 import { sportIcon } from "@/lib/sportLabels";
+import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 
 // Client wrapper for /sports/champions: a Current | All-Time toggle. Current is
 // the existing reigning-holders board; All-Time is a competition index ordered
@@ -132,7 +133,7 @@ function AllTimeIndex({ index }: { index: CompIndexEntry[] }) {
       <div className="divide-y divide-[var(--border)] border border-[var(--border)] rounded-lg overflow-hidden">
         {rows.map((e) => (
           <div key={e.compSlug} className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3 hover:bg-[var(--bg-card)] transition">
-            <Link href={`/sports/champions/${e.compSlug}`} className="font-semibold text-[var(--text)] hover:text-[var(--accent)] hover:underline">
+            <Link href={`/sports/champions/${e.compSlug}`} className={`text-[var(--text)] hover:text-[var(--accent)] hover:underline ${e.tier != null && e.tier <= 2 ? "font-bold text-lg" : "font-semibold"}`}>
               {sportIcon(e.sport) && <span aria-hidden className="mr-1">{sportIcon(e.sport)}</span>}
               {e.competition}
             </Link>
@@ -146,12 +147,13 @@ function AllTimeIndex({ index }: { index: CompIndexEntry[] }) {
             {e.current && (
               <span className="text-xs text-[var(--text-muted)] ml-auto">
                 Current:{" "}
+                <ChampionLogo name={e.current.champion} canonical={e.current.canonical} size={e.tier != null && e.tier <= 2 ? 20 : 16} />
                 {e.current.teamHref ? (
-                  <Link href={e.current.teamHref} className="text-[var(--text)] hover:text-[var(--accent)] hover:underline">
+                  <Link href={e.current.teamHref} className={`hover:text-[var(--accent)] hover:underline text-[var(--text)] ${e.tier != null && e.tier <= 2 ? "font-bold text-sm" : ""}`}>
                     {e.current.canonical || e.current.champion}
                   </Link>
                 ) : (
-                  <span className="text-[var(--text)]">{e.current.canonical || e.current.champion}</span>
+                  <span className={`text-[var(--text)] ${e.tier != null && e.tier <= 2 ? "font-bold text-sm" : ""}`}>{e.current.canonical || e.current.champion}</span>
                 )}
                 {e.current.year != null && <span className="text-[var(--text-dim)]"> ({e.current.year})</span>}
               </span>

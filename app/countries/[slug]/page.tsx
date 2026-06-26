@@ -16,6 +16,9 @@ import CountryMap from "./CountryMap";
 import NationalTeamsSection, { countryHasNationalTeams } from "./NationalTeamsSection";
 import LeagueHubsSection from "./LeagueHubsSection";
 import HubNav from "@/app/teams/HubNav";
+import { getCountryTitles } from "@/lib/championsHistory";
+import { sportIcon } from "@/lib/sportLabels";
+import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
@@ -210,6 +213,11 @@ export default async function CountryDetailPage({ params }: Props) {
   const indicators = getCountryIndicators(slug);
   const metroSlugByName = new Map(metros.map((m) => [m.name, m.slug] as const));
   const children = getChildrenOf(country.name);
+  // Championship history for this country: club / domestic titles join by the
+  // country's metros; national-team titles attribute by nation name, rolling up
+  // constituents (UK -> England/Scotland/Wales/Northern Ireland + Great Britain).
+  const champNations = [country.name, ...children.map((c) => c.name), ...(country.name === "United Kingdom" ? ["Great Britain"] : [])];
+  const champTitles = getCountryTitles([], champNations); // national-team titles only
   // States listed under this country in the States sheet (col 4 = Country
   // exact match). UK gets zero hits because UK subdivisions live under
   // England / Scotland / Wales / Northern Ireland; those constituent
@@ -402,6 +410,49 @@ export default async function CountryDetailPage({ params }: Props) {
 
           <NationalTeamsSection countryName={country.name} />
 
+          {champTitles.length > 0 ? (
+            <section className="mb-12" id="championships">
+              <h2 className="text-xl font-bold mb-2">National Teams Champions</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                Every major championship won by {country.name}&apos;s national teams, newest first. {champTitles.length} in total.
+              </p>
+              <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div className="max-h-[32rem] overflow-y-auto">
+                  <table className="w-full text-sm">
+                    <thead className="sticky top-0 border-b" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                      <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">
+                        <th className="px-4 py-2 font-semibold">Year</th>
+                        <th className="px-4 py-2 font-semibold">Date</th>
+                        <th className="px-4 py-2 font-semibold">Champion</th>
+                        <th className="px-4 py-2 font-semibold">Competition</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {champTitles.map((t, i) => (
+                        <tr key={`${t.compSlug}-${t.year}-${t.champion}-${i}`} className="border-b last:border-0 hover:bg-[var(--bg-card-hover)] transition" style={{ borderColor: "var(--border)" }}>
+                          <td className="px-4 py-2 tabular-nums whitespace-nowrap" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{t.year ?? "\u2014"}</td>
+                          <td className="px-4 py-2 tabular-nums whitespace-nowrap text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{t.date || "\u2014"}</td>
+                          <td className="px-4 py-2">
+                            <ChampionLogo name={t.champion} canonical={t.canonical} size={t.tier != null && t.tier <= 2 ? 22 : 16} />
+                            {t.teamHref ? (
+                              <Link href={t.teamHref} className={`hover:text-[var(--accent)] hover:underline text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : ""}`}>{t.champion}</Link>
+                            ) : (
+                              <span className={`text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : ""}`}>{t.champion}</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-2 text-xs">
+                            {sportIcon(t.sport) ? <span aria-hidden className="mr-1">{sportIcon(t.sport)}</span> : null}
+                            <Link href={`/sports/champions/${t.compSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          ) : null}
+
           <LeagueHubsSection countrySlug={slug} countryName={country.name} />
 
           {children.length > 0 ? (
@@ -569,6 +620,7 @@ export default async function CountryDetailPage({ params }: Props) {
               </div>
             )}
           </section>
+
 
           <footer className="mt-12 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
             <p>

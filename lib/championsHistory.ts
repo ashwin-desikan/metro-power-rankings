@@ -138,9 +138,12 @@ export type MetroTitle = {
   date: string;
   sport: string;
   competition: string;
+  eraName: string;
   compSlug: string;
   champion: string;
   canonical: string;
+  scopeType: string;
+  tier: number | null;
   teamHref: string | null;
 };
 export function getMetroTitles(metroSlug: string): MetroTitle[] {
@@ -153,9 +156,127 @@ export function getMetroTitles(metroSlug: string): MetroTitle[] {
       date: r.date,
       sport: r.sport,
       competition: r.competition,
+      eraName: r.eraName,
       compSlug: r.compSlug,
       champion: r.champion,
       canonical: r.canonical,
+      scopeType: r.scopeType,
+      tier: metaFor(r.competition).tier,
       teamHref: hrefFor(r),
     }));
+}
+
+// Country championship history. Pass the country's metro slugs (club / domestic
+// titles join by metro) and the set of national-team names to attribute
+// (the country plus its constituents, e.g. UK -> England/Scotland/Wales/
+// Northern Ireland/Great Britain, so the home nations roll up to the UK page).
+export function getCountryTitles(metroSlugs: string[], nationNames: string[]): MetroTitle[] {
+  const metros = new Set(metroSlugs.filter(Boolean));
+  const nations = new Set(nationNames.map((n) => n.toLowerCase().trim()).filter(Boolean));
+  const seen = new Set<string>();
+  const out: ChampHistoryRow[] = [];
+  for (const r of all()) {
+    const byMetro = r.metroSlug && metros.has(r.metroSlug);
+    const isIntl = r.scopeType === "International" || r.scopeType === "Continental";
+    const byNation = isIntl && (nations.has(r.champion.toLowerCase().trim()) || nations.has(r.canonical.toLowerCase().trim()));
+    if (!byMetro && !byNation) continue;
+    const key = `${r.competition}|${r.year}|${r.champion}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(r);
+  }
+  out.sort(byYearDesc);
+  return out.map((r) => ({
+    year: r.year,
+    date: r.date,
+    sport: r.sport,
+    competition: r.competition,
+    eraName: r.eraName,
+    compSlug: r.compSlug,
+    champion: r.champion,
+    canonical: r.canonical,
+    scopeType: r.scopeType,
+    tier: metaFor(r.competition).tier,
+    teamHref: hrefFor(r),
+  }));
+}
+
+// Former top-flight rugby clubs: defunct clubs that won a top rugby competition
+// (Top 14 / Premiership / Champions Cup) and no longer field a side, surfaced as
+// "Former Top 14 club" cards on their metro page (mirrors the NCAA Former D-I
+// pattern). A club counts as "former" when its name is not among the active
+// rugby clubs in the Team List. Driven by champions-history so the era-correct
+// metro the user assigned (e.g. Vienne -> Lyon, Narbonne -> Beziers) is used.
+const RUGBY_TOPFLIGHT: Record<string, string> = {
+  "Top 14": "Top 14",
+  "PREM Rugby": "Premiership",
+  "Champions Cup": "Champions Cup",
+};
+const TOPFLIGHT_RANK = ["Top 14", "PREM Rugby", "Champions Cup"];
+function chNorm(x: string): string {
+  return x.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+let _activeRugby: Set<string> | null = null;
+function activeRugby(): Set<string> {
+  if (_activeRugby) return _activeRugby;
+  _activeRugby = new Set();
+  const p = join(process.cwd(), "public", "data", "sports", "all-teams.json");
+  if (existsSync(p)) {
+    const at = JSON.parse(readFileSync(p, "utf-8")) as Array<{ team?: string; name?: string; sport?: string }>;
+    for (const t of at) {
+      if ((t.sport ?? "").toLowerCase().includes("rugby")) _activeRugby.add(chNorm(t.team ?? t.name ?? ""));
+    }
+  }
+  return _activeRugby;
+}
+
+export type FormerTopFlight = {
+  club: string;
+  comp: string;                                 // primary comp label for the card header
+  comps: { comp: string; titles: number; years: string[] }[]; // one chip per competition won
+  firstYear: number | null;
+  lastYear: number | null;
+  href: string | null;
+};
+
+export function getFormerTopFlightForMetro(metroSlug: string): FormerTopFlight[] {
+  if (!metroSlug) return [];
+  const act = activeRugby();
+  const byClub = new Map<string, ChampHistoryRow[]>();
+  for (const r of all()) {
+    if (r.metroSlug !== metroSlug) continue;
+    if (!RUGBY_TOPFLIGHT[r.competition]) continue;
+    if (act.has(chNorm(r.canonical)) || act.has(chNorm(r.champion))) continue; // still active -> not "former"
+    const k = r.canonical || r.champion;
+    const a = byClub.get(k);
+    if (a) a.push(r); else byClub.set(k, [r]);
+  }
+  const out: FormerTopFlight[] = [];
+  for (const [club, rows] of byClub) {
+    const present = new Set(rows.map((r) => r.competition));
+    const primary = TOPFLIGHT_RANK.find((c) => present.has(c)) ?? rows[0].competition;
+    // one chip per competition won, ranked (Top 14 / Premiership / Champions Cup)
+    const yearsByComp = new Map<string, string[]>();
+    for (const r of rows) {
+      const a = yearsByComp.get(r.competition) ?? [];
+      a.push(r.season || String(r.year ?? ""));
+      yearsByComp.set(r.competition, a);
+    }
+    const comps = TOPFLIGHT_RANK.filter((c) => yearsByComp.has(c)).map((c) => ({
+      comp: RUGBY_TOPFLIGHT[c] ?? c,
+      titles: yearsByComp.get(c)!.length,
+      years: yearsByComp.get(c)!,
+    }));
+    const yrs = rows.map((r) => r.year).filter((y): y is number => y != null);
+    out.push({
+      club,
+      comp: RUGBY_TOPFLIGHT[primary] ?? primary,
+      comps,
+      firstYear: yrs.length ? Math.min(...yrs) : null,
+      lastYear: yrs.length ? Math.max(...yrs) : null,
+      href: championTeamHref({ sport: "Rugby Union", team: club, competition: primary, scopeType: "Domestic", year: null }),
+    });
+  }
+  out.sort((a, b) => (b.lastYear ?? 0) - (a.lastYear ?? 0) || a.club.localeCompare(b.club));
+  return out;
 }

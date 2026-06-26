@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllCompSlugs, getRoll } from "@/lib/championsHistory";
+import { sportIcon } from "@/lib/sportLabels";
+import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 
 export const dynamicParams = false;
 
@@ -58,7 +60,7 @@ export default async function ChampionRollPage(
         <div className="flex items-center gap-2 mb-2">
           <span aria-hidden className="text-2xl">🏆</span>
           <span className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: GOLD }}>
-            {sport} · All-time honour roll
+            {sportIcon(sport) ? `${sportIcon(sport)} ` : ""}{sport} · All-time honour roll
           </span>
         </div>
         <h1 className="text-4xl font-bold tracking-tight mb-2">{competition}</h1>
@@ -89,6 +91,7 @@ export default async function ChampionRollPage(
                   </td>
                 )}
                 <td className="px-3 py-2">
+                  <ChampionLogo name={r.champion} canonical={r.canonical} size={16} />
                   {r.teamHref ? (
                     <Link href={r.teamHref} className="text-[var(--text)] hover:text-[var(--accent)] hover:underline">{r.champion}</Link>
                   ) : (

@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { olympicEditionSlugFromName } from "@/lib/olympics";
-import { getMetroTitles } from "@/lib/championsHistory";
+import { getMetroTitles, getFormerTopFlightForMetro, type FormerTopFlight } from "@/lib/championsHistory";
+import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
+import HubNav from "@/app/teams/HubNav";
 import {
   getAllMetros,
   getMetroDetail,
@@ -599,6 +601,22 @@ export default async function MetroDetailPage({ params }: PageProps) {
           </section>
         )}
 
+        {(() => {
+          const navItems = [
+            { label: "Map", href: "#map" },
+            { label: "Dimensions", href: "#stats" },
+            ...((getSimilarMetrosForMetro(slug)?.neighbors?.length ?? 0) > 0 ? [{ label: "Similar Metros", href: "#similar" }] : []),
+            ...(((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0) ? [{ label: "Sports", href: "#sports" }] : []),
+            ...(getMetroTitles(slug).length > 0 ? [{ label: "Championships", href: "#championships" }] : []),
+            ...(detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 ? [{ label: "Companies", href: "#companies" }] : []),
+            ...(((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) || (detail.supertallStructures && detail.supertallStructures.length > 0)) ? [{ label: "Culture", href: "#culture" }] : []),
+            ...(((detail.universities && detail.universities.length > 0) || (detail.culture && (((detail.culture["Hospital"]?.length ?? 0) > 0) || ((detail.culture["Research Institution"]?.length ?? 0) > 0)))) ? [{ label: "Education", href: "#education" }] : []),
+            ...((detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) ? [{ label: "Infrastructure", href: "#infrastructure" }] : []),
+            ...(detail.luxury && detail.luxury.length > 0 ? [{ label: "Luxury", href: "#luxury" }] : []),
+          ];
+          return <HubNav items={navItems} />;
+        })()}
+
         {/* Map: cluster context for any metro that's part of a multi-metro
             conurbation, single-point Location pin otherwise. Returns null
             for the handful of zero-coord workbook entries. The #map id is
@@ -821,7 +839,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         })()}
 
         {/* Sports Section */}
-        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0) && (() => {
+        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0) && (() => {
           // Teams flagged Annual=Y in Team List (F1 Grands Prix, NASCAR races,
           // Sailing regattas, Powerboat races) are recurring events, not
           // standing team entries. Lift them out of detail.teams and inject
@@ -853,8 +871,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
           return (
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
-              {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0) && (
-                <TeamsSection teams={detail.teams || []} metroName={metro.name} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} />
+              {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0) && (
+                <TeamsSection teams={detail.teams || []} metroName={metro.name} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} formerRugby={getFormerTopFlightForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -881,6 +899,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                     <thead className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)]">
                       <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">
                         <th className="px-4 py-2 font-semibold">Year</th>
+                        <th className="px-4 py-2 font-semibold">Date</th>
                         <th className="px-4 py-2 font-semibold">Champion</th>
                         <th className="px-4 py-2 font-semibold">Competition</th>
                       </tr>
@@ -889,17 +908,22 @@ export default async function MetroDetailPage({ params }: PageProps) {
                       {titles.map((t, i) => (
                         <tr key={`${t.compSlug}-${t.year}-${i}`} className="border-b border-[var(--border)] last:border-0 hover:bg-[var(--bg-card-hover)] transition">
                           <td className="px-4 py-2 tabular-nums whitespace-nowrap" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                            {t.date || t.year || "\u2014"}
+                            {t.year ?? "\u2014"}
+                          </td>
+                          <td className="px-4 py-2 tabular-nums whitespace-nowrap text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                            {t.date || "\u2014"}
                           </td>
                           <td className="px-4 py-2">
+                            <ChampionLogo name={t.champion} canonical={t.canonical} size={t.tier != null && t.tier <= 2 ? 22 : 16} />
                             {t.teamHref ? (
-                              <Link href={t.teamHref} className="text-[var(--text)] hover:text-[var(--accent)] hover:underline">{t.champion}</Link>
+                              <Link href={t.teamHref} className={`hover:text-[var(--accent)] hover:underline text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : ""}`}>{t.champion}</Link>
                             ) : (
-                              <span className="text-[var(--text)]">{t.champion}</span>
+                              <span className={`text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : ""}`}>{t.champion}</span>
                             )}
                           </td>
                           <td className="px-4 py-2 text-xs">
-                            <Link href={`/sports/champions/${t.compSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.competition}</Link>
+                            {sportIcon(t.sport) ? <span aria-hidden className="mr-1">{sportIcon(t.sport)}</span> : null}
+                            <Link href={`/sports/champions/${t.compSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
                           </td>
                         </tr>
                       ))}
@@ -1365,6 +1389,7 @@ function TeamsSection({
   wcbb = { major: [], other: [] },
   collegeHockey = { major: [], other: [] },
   formerWcbb = [],
+  formerRugby = [],
 }: {
   teams: Array<{
     sport: string;
@@ -1383,11 +1408,22 @@ function TeamsSection({
   wcbb?: { major: WcbbCard[]; other: WcbbCard[] };
   collegeHockey?: { major: CollegeHockeyCard[]; other: CollegeHockeyCard[] };
   formerWcbb?: FormerWcbbCard[];
+  formerRugby?: FormerTopFlight[];
 }) {
   // Teams flagged Annual=Y in Team List (col O) are recurring-event entries
   // (F1 Grands Prix, NASCAR races, Sailing regattas, Powerboat races). They
   // render under Annual Sporting Events in EventsSection, not in any team
   // bucket here, so we strip them before bucketing.
+  // A club already carded as a rugby-union relocation (which carries the proper
+  // founded-ended lifespan, e.g. Wasps 1867-2014) wins; drop it from formerRugby
+  // so it shows once. formerRugby only fills former top-flight clubs that have no
+  // relocation card (FC Lourdes, Stadoceste Tarbais, ...).
+  if (formerRugby.length && relocations.length) {
+    const _relRugby = new Set(
+      relocations.filter((r) => r.league === "rugby-union").map((r) => (r.name || "").toLowerCase().trim()),
+    );
+    formerRugby = formerRugby.filter((f) => !_relRugby.has(f.club.toLowerCase().trim()));
+  }
   const teamsForBucketing = teams.filter((t) => t.annual !== true);
 
   // Historic Venues (col B = "Historic Venues" in Team List) get their own
@@ -1900,7 +1936,7 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0) && (
+      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0 || formerRugby.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
@@ -1925,12 +1961,12 @@ function TeamsSection({
                 </div>
               </details>
             )}
-            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0) && (
+            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0 || formerRugby.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                   <span className="font-semibold text-[var(--text)]">Defunct/Relocated Teams</span>
                   <span className="text-sm text-[var(--text-muted)]">
-                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length !== 1 ? "s" : ""}
+                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length + formerRugby.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length + formerRugby.length !== 1 ? "s" : ""}
                   </span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
@@ -2140,6 +2176,29 @@ function TeamsSection({
                       </div>
                     </Link>
                     ) })),
+                    ...formerRugby.map((f) => ({ y: f.lastYear ?? 0, el: (() => {
+                      const inner = (
+                        <>
+                          <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏉</span>Rugby Union &bull; Former {f.comp}</p>
+                          <div className="flex items-center gap-2">
+                            <ChampionLogo name={f.club} size={24} />
+                            <p className="font-semibold text-[var(--text)]">{f.club}</p>
+                          </div>
+                          <div className="flex gap-1.5 mt-2 flex-wrap">
+                            {f.comps.map((c) => (
+                              <span key={c.comp} className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title={`${c.comp} titles: ${c.years.join(", ")}`}>
+                                {c.titles} {c.comp} title{c.titles === 1 ? "" : "s"}
+                              </span>
+                            ))}
+                          </div>
+                        </>
+                      );
+                      return f.href ? (
+                        <Link key={`fr-${f.club}`} href={f.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">{inner}</Link>
+                      ) : (
+                        <div key={`fr-${f.club}`} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">{inner}</div>
+                      );
+                    })() })),
                     ...formerCbb.map((f) => ({ y: f.lastYear, el: (
                     <Link key={f.slug} href={f.href} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
                       <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏀</span>College Basketball &bull; Former D-I</p>
