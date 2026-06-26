@@ -1,0 +1,7 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+British Virgin Islands,Anegada,Anegada,,,285,Island,,,#N/A,,AnegadaBritish Virgin Islands,region,2,,Anegada,,,,region,2,nan,Anegada,,,,,,,,,HIGH,1.0,nan
+British Virgin Islands,Cooper Island,Cooper Island,,,26,Island,,,#N/A,,Cooper IslandBritish Virgin Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+British Virgin Islands,Great Camanoe,Great Camanoe,,,6,Island,,,#N/A,,Great CamanoeBritish Virgin Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+British Virgin Islands,Jost Van Dyke,Jost Van Dyke,,,298,Island,,,#N/A,,Jost Van DykeBritish Virgin Islands,region,2,,Jost Van Dyke,,,,region,2,nan,Jost Van Dyke,,,,,,,,,HIGH,1.0,nan
+British Virgin Islands,Tortola,Tortola,,,23419,Island,Road Town,,Road Town,,TortolaBritish Virgin Islands,region,2,,Tortola,,,,region,2,nan,Tortola,,,,,,,,,HIGH,1.0,nan
+British Virgin Islands,Virgin Gorda,Virgin Gorda,,,3930,Island,,,#N/A,,Virgin GordaBritish Virgin Islands,region,2,,Virgin Gorda,,,,region,2,nan,Virgin Gorda,,,,,,,,,HIGH,1.0,nan

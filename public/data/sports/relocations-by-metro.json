@@ -82,7 +82,7 @@
 "defunct": false
 }
 ],
-"birmingham": [
+"birmingham-al": [
 {
 "league": "cfl",
 "sport": "Canadian Football",
@@ -125,7 +125,13 @@
 "href": "/teams/rugby-union/clubs#top14",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 7,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "boston": [
@@ -1012,7 +1018,13 @@
 "href": "/teams/rugby-union/clubs#premiership",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "cumilla": [
@@ -1024,7 +1036,13 @@
 "href": "/teams/cricket/t20#bpl",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 4,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "dallas": [
@@ -1599,7 +1617,13 @@
 "href": "/teams/ipl/deccan-chargers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "indianapolis": [
@@ -1857,7 +1881,13 @@
 "href": "/teams/cricket/t20#cpl",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 3,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "kitchener-waterloo": [
@@ -1887,7 +1917,13 @@
 "href": "/teams/ipl/kochi-tuskers",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "las-vegas": [
@@ -1917,7 +1953,13 @@
 "href": "/teams/rugby-union/clubs#premiership",
 "kind": "relocated",
 "relocated": true,
-"defunct": false
+"defunct": false,
+"stats": {
+"champ": 8,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 },
 {
 "league": "football",
@@ -2124,7 +2166,13 @@
 "href": "/teams/rugby-union/clubs#top14",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "melbourne": [
@@ -3293,7 +3341,13 @@
 "href": "/teams/rugby-union/clubs#top14",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 1,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "perth": [
@@ -3706,7 +3760,13 @@
 "href": "/teams/ipl/pune-warriors",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 },
 {
 "league": "ipl",
@@ -3716,7 +3776,13 @@
 "href": "/teams/ipl/rising-pune-supergiant",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "quebec-city": [
@@ -3763,7 +3829,13 @@
 "href": "/teams/ipl/gujarat-lions",
 "kind": "defunct",
 "relocated": false,
-"defunct": true
+"defunct": true,
+"stats": {
+"champ": 0,
+"pct": 0.0,
+"div": 0,
+"finals": 0
+}
 }
 ],
 "regina": [

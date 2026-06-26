@@ -1,0 +1,65 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Bangladesh,Barisal,Barisal,,,2570450,District,Barisal,,Barisal,,BarisalBangladesh,county,2,BD-A,বরিশাল জেলা,,,,region,1,BD-A,বরিশাল বিভাগ,,,,,region,1,BD-A,বরিশাল বিভাগ,HIGH,1.0,BD-A
+Bangladesh,Bhola,Barisal,,,1932514,District,,,#N/A,,BarisalBangladesh,county,2,BD-A,ভোলা জেলা,,,,county,2,BD-A,ভোলা জেলা,,,,,region,1,BD-A,বরিশাল বিভাগ,HIGH,1.0,BD-A
+Bangladesh,Patuakhali,Barisal,,,1727254,District,,,#N/A,,BarisalBangladesh,county,2,BD-A,পটুয়াখালী জেলা,,,,county,2,BD-A,পটুয়াখালী জেলা,,,,,region,1,BD-A,বরিশাল বিভাগ,HIGH,1.0,BD-A
+Bangladesh,Pirojpur,Barisal,,,1198193,District,,,#N/A,,BarisalBangladesh,county,2,BD-A,পিরোজপুর জেলা,,,,county,2,BD-A,পিরোজপুর জেলা,,,,,region,1,BD-A,বরিশাল বিভাগ,HIGH,1.0,BD-A
+Bangladesh,Barguna,Barisal,,,1010530,District,,,#N/A,,BarisalBangladesh,county,2,BD-A,বরগুনা জেলা,,,,locality,,BD-A,Barguna,,,,,region,1,BD-A,বরিশাল বিভাগ,HIGH,1.0,BD-A
+Bangladesh,Jhalakati [Jhalokati],Barisal,,,661161,District,,,#N/A,,BarisalBangladesh,county,2,BD-A,ঝালকাঠি জেলা,,,,,,,,,,,,region,1,BD-A,বরিশাল বিভাগ,NONE,0.0,BD-A
+Bangladesh,Chittagong,Chittagong,,,9169464,District,Chittagong,,Chittagong,,ChittagongBangladesh,county,2,BD-B,চট্টগ্রাম জেলা,,,,county,2,BD-B,চট্টগ্রাম জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Comilla,Chittagong,,,6212216,District,Cumilla,,Cumilla,,ChittagongBangladesh,county,2,BD-B,কুমিল্লা জেলা,,,,county,2,BD-B,কুমিল্লা জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Noakhali,Chittagong,,,3625252,District,Noakhali,,Noakhali,,ChittagongBangladesh,county,2,BD-B,নোয়াখালী জেলা,,,,county,2,BD-B,নোয়াখালী জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Brahmanbaria,Chittagong,,,3306559,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,ব্রাহ্মণবাড়িয়া জেলা,,,,county,2,BD-B,ব্রাহ্মণবাড়িয়া জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Cox's Bazar,Chittagong,,,2823265,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,কক্সবাজার জেলা,,,,county,2,BD-B,কক্সবাজার জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Chandpur,Chittagong,,,2635748,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,চাঁদপুর জেলা,,,,county,2,BD-B,চাঁদপুর জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Lakshmipur,Chittagong,,,1938111,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,লক্ষ্মীপুর জেলা,,,,county,2,BD-B,লক্ষ্মীপুর জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Feni,Chittagong,,,1648896,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,ফেনী জেলা,,,,county,2,BD-B,ফেনী জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Khagrachhari,Chittagong,,,714119,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,খাগড়াছড়ি পার্বত্য জেলা,,,,,,,,,,,,,,,,NONE,0.0,
+Bangladesh,Rangamati,Chittagong,,,647587,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,রাঙ্গামাটি পার্বত্য জেলা,,,,,,,,,,,,,,,,NONE,0.0,
+Bangladesh,Bandarban,Chittagong,,,481109,District,,,#N/A,,ChittagongBangladesh,county,2,BD-B,বান্দরবান পার্বত্য জেলা,,,,county,2,BD-B,বান্দরবান পার্বত্য জেলা,,,,,region,1,BD-B,চট্টগ্রাম বিভাগ,HIGH,1.0,BD-B
+Bangladesh,Dhaka,Dhaka,,,14734025,District,Dhaka,,Dhaka,,DhakaBangladesh,county,2,BD-C,ঢাকা জেলা,,,,locality,,BD-C,dhaka,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Gazipur,Dhaka,,,5263474,District,Dhaka,,Dhaka,,DhakaBangladesh,county,2,BD-C,গাজীপুর জেলা,,,,county,2,BD-C,গাজীপুর জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Narayanganj,Dhaka,,,3909138,District,Dhaka,,Dhaka,,DhakaBangladesh,county,2,BD-C,নারায়নগঞ্জ জেলা,,,,county,2,BD-C,নারায়নগঞ্জ জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Narsingdi,Dhaka,,,2584452,District,Dhaka,,Dhaka,,DhakaBangladesh,county,2,BD-C,নরসিংদী জেলা,,,,county,2,BD-C,নরসিংদী জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Tangail,Dhaka,,,4037608,District,Tangail,,Tangail,,DhakaBangladesh,county,2,BD-C,টাঙ্গাইল জেলা,,,,county,2,BD-C,টাঙ্গাইল জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Kishoreganj,Dhaka,,,3267630,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,কিশোরগঞ্জ জেলা,,,,county,2,BD-C,কিশোরগঞ্জ জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Faridpur,Dhaka,,,2162876,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,ফরিদপুর জেলা,,,,county,2,BD-C,ফরিদপুর জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Munshiganj,Dhaka,,,1625418,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,মুন্সিগঞ্জ জেলা,,,,county,2,BD-C,মুন্সিগঞ্জ জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Manikganj,Dhaka,,,1558024,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,মানিকগঞ্জ জেলা,,,,county,2,BD-C,মানিকগঞ্জ জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Gopalganj,Dhaka,,,1295053,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,গোপালগঞ্জ জেলা,,,,county,2,BD-C,গোপালগঞ্জ জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Shariatpur,Dhaka,,,1294561,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,শরিয়তপুর জেলা,,,,county,2,BD-C,শরিয়তপুর জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Madaripur,Dhaka,,,1293027,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,মাদারীপুর জেলা,,,,county,2,BD-C,মাদারীপুর জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Rajbari,Dhaka,,,1189821,District,,,#N/A,,DhakaBangladesh,county,2,BD-C,রাজবাড়ী জেলা,,,,county,2,BD-C,রাজবাড়ী জেলা,,,,,region,1,BD-C,ঢাকা বিভাগ,HIGH,1.0,BD-C
+Bangladesh,Jessore,Khulna,,,3076849,District,Jessore,,Jessore,,KhulnaBangladesh,county,2,BD-D,যশোর জেলা,,,,county,2,BD-D,যশোর জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Khulna,Khulna,,,2613385,District,Khulna,,Khulna,,KhulnaBangladesh,county,2,BD-D,খুলনা জেলা,,,,county,2,BD-D,খুলনা জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Satkhira,Khulna,,,2196581,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,সাতক্ষীরা জেলা,,,,county,2,BD-D,সাতক্ষীরা জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Kushtia,Khulna,,,2149692,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,কুষ্টিয়া জেলা,,,,county,2,BD-D,কুষ্টিয়া জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Jhenaidah,Khulna,,,2005849,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,ঝিনাইদহ জেলা,,,,county,2,BD-D,ঝিনাইদহ জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Bagerhat,Khulna,,,1613079,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,বাগেরহাট জেলা,,,,county,2,BD-D,বাগেরহাট জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Chuadanga,Khulna,,,1234066,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,চুয়াডাঙ্গা জেলা,,,,county,2,BD-D,চুয়াডাঙ্গা জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Magura,Khulna,,,1033115,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,মাগুরা জেলা,,,,county,2,BD-D,মাগুরা জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Narail,Khulna,,,788673,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,নড়াইল জেলা,,,,county,2,BD-D,নড়াইল জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Meherpur,Khulna,,,705356,District,,,#N/A,,KhulnaBangladesh,county,2,BD-D,মেহেরপুর জেলা,,,,county,2,BD-D,মেহেরপুর জেলা,,,,,region,1,BD-D,খুলনা বিভাগ,HIGH,1.0,BD-D
+Bangladesh,Mymensingh,Mymensingh,,,5899052,District,Mymensingh,,Mymensingh,,MymensinghBangladesh,county,2,BD-H,ময়মনসিংহ জেলা,,,,county,2,BD-H,ময়মনসিংহ জেলা,,,,,region,1,BD-H,ময়মনসিংহ বিভাগ,HIGH,1.0,BD-H
+Bangladesh,Jamalpur,Mymensingh,,,2499737,District,,,#N/A,,MymensinghBangladesh,county,2,BD-H,জামালপুর জেলা,,,,county,2,BD-H,জামালপুর জেলা,,,,,region,1,BD-H,ময়মনসিংহ বিভাগ,HIGH,1.0,BD-H
+Bangladesh,Netrakona [Netrokona],Mymensingh,,,2324856,District,,,#N/A,,MymensinghBangladesh,county,2,BD-H,নেত্রকোনা জেলা,,,,,,,,,,,,region,1,BD-H,ময়মনসিংহ বিভাগ,NONE,0.0,BD-H
+Bangladesh,Sherpur,Mymensingh,,,1501853,District,,,#N/A,,MymensinghBangladesh,county,2,BD-H,শেরপুর জেলা,,,,county,2,BD-H,শেরপুর জেলা,,,,,region,1,BD-H,ময়মনসিংহ বিভাগ,HIGH,1.0,BD-H
+Bangladesh,Bogra,Rajshahi,,,3734300,District,Bogra,,Bogra,,RajshahiBangladesh,county,2,BD-E,বগুড়া জেলা,,,,county,2,BD-E,বগুড়া জেলা,,,,,region,1,BD-E,রাজশাহী বিভাগ,HIGH,1.0,BD-E
+Bangladesh,Rajshahi,Rajshahi,,,2915013,District,Rajshahi,,Rajshahi,,RajshahiBangladesh,county,2,BD-E,রাজশাহী জেলা,,,,county,2,BD-E,রাজশাহী জেলা,,,,,region,1,BD-E,রাজশাহী বিভাগ,HIGH,1.0,BD-E
+Bangladesh,Sirajganj,Rajshahi,,,3357708,District,,,#N/A,,RajshahiBangladesh,county,2,BD-E,সিরাজগঞ্জ জেলা,,,,county,2,BD-E,সিরাজগঞ্জ জেলা,,,,,region,1,BD-E,রাজশাহী বিভাগ,HIGH,1.0,BD-E
+Bangladesh,Pabna,Rajshahi,,,2909622,District,,,#N/A,,RajshahiBangladesh,county,2,BD-E,পাবনা জেলা,,,,county,2,BD-E,পাবনা জেলা,,,,,region,1,BD-E,রাজশাহী বিভাগ,HIGH,1.0,BD-E
+Bangladesh,Naogaon,Rajshahi,,,2784598,District,,,#N/A,,RajshahiBangladesh,county,2,BD-E,নওগাঁ জেলা,,,,county,2,BD-E,নওগাঁ জেলা,,,,,region,1,BD-E,রাজশাহী বিভাগ,HIGH,1.0,BD-E
+Bangladesh,Natore,Rajshahi,,,1859921,District,,,#N/A,,RajshahiBangladesh,county,2,BD-E,নাটোর জেলা,,,,county,2,BD-E,নাটোর জেলা,,,,,region,1,BD-E,রাজশাহী বিভাগ,HIGH,1.0,BD-E
+Bangladesh,Chapai Nawabganj,Rajshahi,,,1835527,District,,,#N/A,,RajshahiBangladesh,county,2,BD-E,চাঁপাইনবাবগঞ্জ জেলা,,,,county,2,BD-E,চাঁপাইনবাবগঞ্জ জেলা,,,,,region,1,BD-E,রাজশাহী বিভাগ,HIGH,1.0,BD-E
+Bangladesh,Jaipurhat [Joypurhat],Rajshahi,,,956430,District,,,#N/A,,RajshahiBangladesh,county,2,BD-E,জয়পুরহাট জেলা,,,,,,,,,,,,region,1,BD-E,রাজশাহী বিভাগ,NONE,0.0,BD-E
+Bangladesh,Rangpur,Rangpur,,,3169615,District,Rangpur,,Rangpur,,RangpurBangladesh,county,2,BD-F,রংপুর জেলা,,,,region,1,BD-F,রংপুর বিভাগ,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Dinajpur,Rangpur,,,3315238,District,,,#N/A,,RangpurBangladesh,county,2,BD-F,দিনাজপুর জেলা,,,,county,2,BD-F,দিনাজপুর জেলা,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Gaibandha,Rangpur,,,2562232,District,,,#N/A,,RangpurBangladesh,county,2,BD-F,গাইবান্ধা জেলা,,,,county,2,BD-F,গাইবান্ধা জেলা,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Kurigram,Rangpur,,,2329161,District,,,#N/A,,RangpurBangladesh,county,2,BD-F,কুড়িগ্রাম জেলা,,,,county,2,BD-F,কুড়িগ্রাম জেলা,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Nilphamari,Rangpur,,,2092567,District,,,#N/A,,RangpurBangladesh,county,2,BD-F,নীলফামারী জেলা,,,,county,2,BD-F,নীলফামারী জেলা,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Thakurgaon,Rangpur,,,1533894,District,,,#N/A,,RangpurBangladesh,county,2,BD-F,ঠাকুরগাঁও জেলা,,,,county,2,BD-F,ঠাকুরগাঁও জেলা,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Lalmonirhat,Rangpur,,,1428406,District,,,#N/A,,RangpurBangladesh,county,2,BD-F,লালমনিরহাট জেলা,,,,county,2,BD-F,লালমনিরহাট জেলা,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Panchagarh,Rangpur,,,1179843,District,,,#N/A,,RangpurBangladesh,county,2,BD-F,পঞ্চগড় জেলা,,,,county,2,BD-F,পঞ্চগড় জেলা,,,,,region,1,BD-F,রংপুর বিভাগ,HIGH,1.0,BD-F
+Bangladesh,Sylhet,Sylhet,,,3857037,District,Sylhet,,Sylhet,,SylhetBangladesh,county,2,BD-G,সিলেট জেলা,,,,county,2,BD-G,সিলেট জেলা,,,,,region,1,BD-G,সিলেট বিভাগ,HIGH,1.0,BD-G
+Bangladesh,Sunamganj,Sylhet,,,2695495,District,,,#N/A,,SylhetBangladesh,county,2,BD-G,সুনামগঞ্জ জেলা,,,,county,2,BD-G,সুনামগঞ্জ জেলা,,,,,region,1,BD-G,সিলেট বিভাগ,HIGH,1.0,BD-G
+Bangladesh,Habiganj,Sylhet,,,2358886,District,,,#N/A,,SylhetBangladesh,county,2,BD-G,হবিগঞ্জ জেলা,,,,county,2,BD-G,হবিগঞ্জ জেলা,,,,,region,1,BD-G,সিলেট বিভাগ,HIGH,1.0,BD-G
+Bangladesh,Maulvi Bazar [Moulvibazar],Sylhet,,,2123445,District,,,#N/A,,SylhetBangladesh,county,2,BD-G,মৌলভীবাজার জেলা,,,,,,,,,,,,,,,,NONE,0.0,

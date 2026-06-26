@@ -1,0 +1,87 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Azerbaijan,Sumqayıt [Sumgayit],Absheron-Khizi,,,491068,City,Baku,,Baku,,Absheron-KhiziAzerbaijan,region,1,AZ-SM,Sumqayıt İnzibati Ərazisi,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Abşeron [Absheron],Absheron-Khizi,,,475819,District,Baku,,Baku,,Absheron-KhiziAzerbaijan,region,1,AZ-ABS,Abşeron rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Xızı [Khyzi],Absheron-Khizi,,,17903,District,Baku,,Baku,,Absheron-KhiziAzerbaijan,region,1,AZ-XIZ,Xızı rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Sabunçu [Sabunchu],Baku,,,393304,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Binəqədi [Binagadi],Baku,,,343769,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Xətai [Khatai],Baku,,,303650,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Nəsimi [Nasimi],Baku,,,231227,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Suraxanı [Surakhany],Baku,,,229552,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Xəzər [Khazar],Baku,,,228298,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Yasamal [Yasamal],Baku,,,214705,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Nizami [Nizami],Baku,,,208288,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Nərimanov [Narimanov],Baku,,,193159,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Qaradağ [Garadagh],Baku,,,141552,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Səbail [Sabayel],Baku,,,108901,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Pirallahı [Pirallahi],Baku,,,20543,District,Baku,,Baku,,BakuAzerbaijan,region,1,AZ-BA,Bakı İnzibati Ərazisi,,,,,,,,,,,,region,1,AZ-BA,Bakı İnzibati Ərazisi,NONE,0.0,AZ-BA
+Azerbaijan,Mingəçevir [Mingechevir],Central Aran,,,119977,City,Mingechevir,,Mingechevir,,Central AranAzerbaijan,region,1,AZ-MI,Mingəçevir İnzibati Ərazisi,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Yevlax [Yevlakh],Central Aran,,,130741,District,Yevlakh,,Yevlakh,,Central AranAzerbaijan,region,1,AZ-YEV,Yevlax rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Göyçay [Goychay],Central Aran,,,115213,District,,,#N/A,,Central AranAzerbaijan,region,1,AZ-GOY,Göyçay rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Kürdəmir [Kurdamir],Central Aran,,,111483,District,,,#N/A,,Central AranAzerbaijan,region,1,AZ-KUR,Kürdəmir rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Ağdaş [Agdash],Central Aran,,,103267,District,,,#N/A,,Central AranAzerbaijan,region,1,AZ-AGS,Ağdaş rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Ucar [Ujar],Central Aran,,,82949,District,,,#N/A,,Central AranAzerbaijan,region,1,AZ-UCA,Ucar rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Zərdab [Zardab],Central Aran,,,57022,District,,,#N/A,,Central AranAzerbaijan,region,1,AZ-ZAR,Zərdab rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Cəbrayıl [Jabrail],East Zangazur,,,420,District,,,#N/A,,East ZangazurAzerbaijan,region,1,AZ-CAB,Cəbrayıl rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Gəncə [Ganja],Ganja-Dashkasan,,,352196,City,Ganja,,Ganja,,Ganja-DashkasanAzerbaijan,region,1,AZ-GA,Gəncə İnzibati Ərazisi,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Göygöl [Goygol],Ganja-Dashkasan,,,66774,District,Ganja,,Ganja,,Ganja-DashkasanAzerbaijan,region,1,AZ-GYG,Göygöl rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Goranboy [Goranboy],Ganja-Dashkasan,,,104916,District,,,#N/A,,Ganja-DashkasanAzerbaijan,region,1,AZ-GOR,Goranboy rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Samux [Samukh],Ganja-Dashkasan,,,56696,District,,,#N/A,,Ganja-DashkasanAzerbaijan,region,1,AZ-SMX,Samux rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Daşkəsən [Dashkasan],Ganja-Dashkasan,,,33797,District,,,#N/A,,Ganja-DashkasanAzerbaijan,region,1,AZ-DAS,Daşkəsən rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Naftalan [Naftalan],Ganja-Dashkasan,,,9291,City,,,#N/A,,Ganja-DashkasanAzerbaijan,region,1,AZ-NA,Naftalan İnzibati Ərazisi,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Şəmkir [Shamkir],Gazakh-Tovuz,,,212427,District,Shamkir,,Shamkir,,Gazakh-TovuzAzerbaijan,region,1,AZ-SKR,Şəmkir rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Tovuz [Tovuz],Gazakh-Tovuz,,,164119,District,Tovuz,,Tovuz,,Gazakh-TovuzAzerbaijan,region,1,AZ-TOV,Tovuz rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Gədəbəy [Gadabay],Gazakh-Tovuz,,,95756,District,,,#N/A,,Gazakh-TovuzAzerbaijan,region,1,AZ-GAD,Gədəbəy rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Qazax [Gazakh],Gazakh-Tovuz,,,92912,District,,,#N/A,,Gazakh-TovuzAzerbaijan,region,1,AZ-QAZ,Qazax rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Ağstafa [Aghstafa],Gazakh-Tovuz,,,84918,District,,,#N/A,,Gazakh-TovuzAzerbaijan,region,1,AZ-AGA,Ağstafa rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Qusar [Gusar],Guba-Khachmaz ,,,98307,District,Qusar,,Qusar,,Guba-Khachmaz Azerbaijan,region,1,AZ-QUS,Qusar rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Xaçmaz [Khachmaz],Guba-Khachmaz ,,,170022,District,,,#N/A,,Guba-Khachmaz Azerbaijan,region,1,AZ-XAC,Xaçmaz rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Quba [Guba],Guba-Khachmaz ,,,161631,District,,,#N/A,,Guba-Khachmaz Azerbaijan,region,1,AZ-QBA,Quba rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Şabran [Shabran],Guba-Khachmaz ,,,56482,District,,,#N/A,,Guba-Khachmaz Azerbaijan,region,1,AZ-SBN,Şabran rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Siyəzən [Siyazan],Guba-Khachmaz ,,,40896,District,,,#N/A,,Guba-Khachmaz Azerbaijan,region,1,AZ-SIY,Siyəzən rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Bərdə [Barda],Karabakh,,,182633,District,,,#N/A,,KarabakhAzerbaijan,region,1,AZ-BAR,Bərdə rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Ağcabədi [Agdjabadi],Karabakh,,,149660,District,,,#N/A,,KarabakhAzerbaijan,region,1,AZ-AGC,Ağcabədi rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Tərtər [Tartar],Karabakh,,,85426,District,,,#N/A,,KarabakhAzerbaijan,region,1,AZ-TAR,Tərtər rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Ağdam [Aghdam],Karabakh,,,78323,District,,,#N/A,,KarabakhAzerbaijan,region,1,AZ-AGM,Ağdam rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Füzuli [Fuzuli],Karabakh,,,63582,District,,,#N/A,,KarabakhAzerbaijan,region,1,AZ-FUZ,Füzuli rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Xocavənd [Khojavand],Karabakh,,,0,District,,,#N/A,,KarabakhAzerbaijan,region,1,AZ-XVD,Xocavənd rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Lənkəran [Lankaran],Lankaran-Astara,,,220413,District,Lankaran,,Lankaran,,Lankaran-AstaraAzerbaijan,region,1,AZ-LAN,Lənkəran rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Masallı [Masally],Lankaran-Astara,,,219607,District,Masally,,Masally,,Lankaran-AstaraAzerbaijan,region,1,AZ-MAS,Masallı rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Cəlilabad [Jalilabad],Lankaran-Astara,,,207565,District,,,#N/A,,Lankaran-AstaraAzerbaijan,region,1,AZ-CAL,Cəlilabad rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Astara [Astara],Lankaran-Astara,,,105083,District,,,#N/A,,Lankaran-AstaraAzerbaijan,region,1,AZ-AST,Astara rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Lerik [Lerik],Lankaran-Astara,,,80735,District,,,#N/A,,Lankaran-AstaraAzerbaijan,region,1,AZ-LER,Lerik rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Yardımlı [Yardimly],Lankaran-Astara,,,64027,District,,,#N/A,,Lankaran-AstaraAzerbaijan,region,1,AZ-YAR,Yardımlı rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,İmişli [Imishli],Mil-Mughan,,,129259,District,Imishli,,Imishli,,Mil-MughanAzerbaijan,region,1,AZ-IMI,İmişli rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Sabirabad [Sabirabad],Mil-Mughan,,,177137,District,,,#N/A,,Mil-MughanAzerbaijan,region,1,AZ-SAB,Sabirabad rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Beyləqan [Beylagan],Mil-Mughan,,,107870,District,,,#N/A,,Mil-MughanAzerbaijan,region,1,AZ-BEY,Beyləqan rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Saatlı [Saatly],Mil-Mughan,,,104801,District,,,#N/A,,Mil-MughanAzerbaijan,region,1,AZ-SAT,Saatlı rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Şamaxı [Shamakhy],Mountainous Shirvan,,,102494,District,,,#N/A,,Mountainous ShirvanAzerbaijan,region,1,AZ-SMI,Şamaxı rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,İsmayıllı [Ismayilly],Mountainous Shirvan,,,79223,District,,,#N/A,,Mountainous ShirvanAzerbaijan,region,1,AZ-ISM,İsmayıllı rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Ağsu [Aghsu],Mountainous Shirvan,,,77712,District,,,#N/A,,Mountainous ShirvanAzerbaijan,region,1,AZ-AGU,Ağsu rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Qobustan [Gobustan],Mountainous Shirvan,,,44348,District,,,#N/A,,Mountainous ShirvanAzerbaijan,region,1,AZ-QOB,Qobustan rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Stepanakert (Ստեփանակերտ, Xankəndi)",Nagorno-Karabakh,,,58322,City,,,#N/A,,Nagorno-KarabakhAzerbaijan,region,1,AZ-XA,Xankəndi,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Martuni (Մարտունի, Xocavənd)",Nagorno-Karabakh,,,21276,Province,,,#N/A,,Nagorno-KarabakhAzerbaijan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Martakert (Մարտակերտ, Kəlbəcər)",Nagorno-Karabakh,,,19818,Province,,,#N/A,,Nagorno-KarabakhAzerbaijan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Askeran (Ասկերան, Xocalı)",Nagorno-Karabakh,,,17050,Province,,,#N/A,,Nagorno-KarabakhAzerbaijan,region,1,AZ-XCI,Xocalı rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Hadrut (Հադրութի, Cəbrayıl)",Nagorno-Karabakh,,,11998,Province,,,#N/A,,Nagorno-KarabakhAzerbaijan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Kashatagh (Քաշաթաղ, Laçın, Qubadlı, Zəngilan)",Nagorno-Karabakh,,,11673,Province,,,#N/A,,Nagorno-KarabakhAzerbaijan,region,1,AZ-QBI,Qubadlı Rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Shushi (Շուշի, Şuşa)",Nagorno-Karabakh,,,5396,Province,,,#N/A,,Nagorno-KarabakhAzerbaijan,region,1,AZ-SUS,Şuşa rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,"Shahumyan (Շահումյան, Kəlbəcər)",Nagorno-Karabakh,,,3262,Province,,,#N/A,,Nagorno-KarabakhAzerbaijan,region,1,AZ-KAL,Kəlbəcər rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Naxçıvan [Nakhchivan],Nakhchivan,,,94318,City,Nakhchivan,,Nakhchivan,,NakhchivanAzerbaijan,region,1,AZ-NV,Naxçıvan,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Şərur [Sharur],Nakhchivan,,,117263,District,,,#N/A,,NakhchivanAzerbaijan,region,1,AZ-SAR,Şərur rayonu,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Babək [Babek],Nakhchivan,,,76002,District,,,#N/A,,NakhchivanAzerbaijan,region,1,AZ-BAB,Babək rayonu,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Ordubad [Ordubad],Nakhchivan,,,50156,District,,,#N/A,,NakhchivanAzerbaijan,region,1,AZ-ORD,Ordubad rayonu,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Culfa [Julfa],Nakhchivan,,,46970,District,,,#N/A,,NakhchivanAzerbaijan,region,1,AZ-CUL,Culfa rayonu,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Kəngərli [Kengerli],Nakhchivan,,,32621,District,,,#N/A,,NakhchivanAzerbaijan,region,1,AZ-KAN,Kəngərli rayonu,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Şahbuz [Shahbuz],Nakhchivan,,,25233,District,,,#N/A,,NakhchivanAzerbaijan,region,1,AZ-SAH,Şahbuz rayonu,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Sədərək [Sadarak],Nakhchivan,,,16036,District,,,#N/A,,NakhchivanAzerbaijan,region,1,AZ-SAD,Sədərək rayonu,,,,,,,,,,,,region,1,AZ-NV,Naxçıvan,NONE,0.0,AZ-NV
+Azerbaijan,Qəbələ [Gabala],Shaki-Zagatala,,,101580,District,Qabala,,Qabala,,Shaki-ZagatalaAzerbaijan,region,1,AZ-QAB,Qəbələ rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Zaqatala [Zagatala],Shaki-Zagatala,,,125831,District,Zaqatala,,Zaqatala,,Shaki-ZagatalaAzerbaijan,region,1,AZ-ZAQ,Zaqatala rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Şəki [Shaki],Shaki-Zagatala,,,178648,District,,,#N/A,,Shaki-ZagatalaAzerbaijan,region,1,AZ-SAK,Şəki rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Balakən [Balakan],Shaki-Zagatala,,,91619,District,,,#N/A,,Shaki-ZagatalaAzerbaijan,region,1,AZ-BAL,Balakən rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Qax [Gakh],Shaki-Zagatala,,,51519,District,,,#N/A,,Shaki-ZagatalaAzerbaijan,region,1,AZ-QAX,Qax rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Oğuz [Oguz],Shaki-Zagatala,,,42424,District,,,#N/A,,Shaki-ZagatalaAzerbaijan,region,1,AZ-OGU,Oğuz rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Şirvan [Shirvan],Shirvan-Salyan,,,82135,City,Shirvan,,Shirvan,,Shirvan-SalyanAzerbaijan,region,1,AZ-SR,Şirvan İnzibati Ərazisi,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Salyan [Salyan],Shirvan-Salyan,,,136917,District,,,#N/A,,Shirvan-SalyanAzerbaijan,region,1,AZ-SAL,Salyan rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Biləsuvar [Bilasuvar],Shirvan-Salyan,,,113412,District,,,#N/A,,Shirvan-SalyanAzerbaijan,region,1,AZ-BIL,Biləsuvar rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Neftçala [Neftchala],Shirvan-Salyan,,,83792,District,,,#N/A,,Shirvan-SalyanAzerbaijan,region,1,AZ-NEF,Neftçala rayonu,,,,,,,,,,,,,,,,NONE,0.0,
+Azerbaijan,Hacıqabul [Hajigabul],Shirvan-Salyan,,,73634,District,,,#N/A,,Shirvan-SalyanAzerbaijan,region,1,AZ-HAC,Hacıqabul rayonu,,,,,,,,,,,,,,,,NONE,0.0,

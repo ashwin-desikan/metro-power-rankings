@@ -1,0 +1,80 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Slovakia,Banská Bystrica,Banská Bystrica,,,108120,District,Banská Bystrica,,Banská Bystrica,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Banská Bystrica,,,,locality,,SK-BC,Banská Bystrica,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Brezno,Banská Bystrica,,,58965,District,Brezno,,Brezno,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Brezno,,,,localadmin,,SK-BC,Brezno,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Rimavská Sobota,Banská Bystrica,,,80359,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Rimavská Sobota,,,,localadmin,,SK-BC,Rimavská Sobota,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Lučenec,Banská Bystrica,,,69788,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Lučenec,,,,locality,,SK-BC,Lučenec,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Zvolen,Banská Bystrica,,,66294,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Zvolen,,,,locality,,SK-BC,Zvolen,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Žiar nad Hronom,Banská Bystrica,,,44424,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Žiar nad Hronom,,,,localadmin,,SK-BC,Žiar nad Hronom,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Veľký Krtíš,Banská Bystrica,,,41605,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Veľký Krtíš,,,,locality,,SK-BC,Veľký Krtíš,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Revúca,Banská Bystrica,,,38242,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Revúca,,,,locality,,SK-BC,Revúca,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Detva,Banská Bystrica,,,30854,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Detva,,,,localadmin,,SK-BC,Detva,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Žarnovica,Banská Bystrica,,,24991,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Žarnovica,,,,locality,,SK-BC,Žarnovica,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Krupina,Banská Bystrica,,,21366,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Krupina,,,,localadmin,,SK-BC,Krupina,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Poltár,Banská Bystrica,,,20427,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Poltár,,,,localadmin,,SK-BC,Poltár,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Banská Štiavnica,Banská Bystrica,,,15551,District,,,#N/A,2021,Banská BystricaSlovakia,county,2,SK-BC,okres Banská Štiavnica,,,,localadmin,,SK-BC,Banská Štiavnica,,,,,region,1,SK-BC,Banskobystrický kraj,HIGH,1.0,SK-BC
+Slovakia,Bratislava II,Bratislava,,,125001,City District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Bratislava II,,,,locality,,SK-BL,Bratislava,,,,,region,1,SK-BL,Bratislavský kraj,LOW,0.87,SK-BL
+Slovakia,Bratislava V,Bratislava,,,122296,City District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Bratislava V,,,,locality,,SK-BL,Bratislava,,,,,region,1,SK-BL,Bratislavský kraj,LOW,0.909,SK-BL
+Slovakia,Bratislava IV,Bratislava,,,105154,City District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Bratislava IV,,,,locality,,SK-BL,Bratislava,,,,,region,1,SK-BL,Bratislavský kraj,LOW,0.87,SK-BL
+Slovakia,Senec,Bratislava,,,99705,District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Senec,,,,locality,,SK-BL,Senec,,,,,region,1,SK-BL,Bratislavský kraj,HIGH,1.0,SK-BL
+Slovakia,Malacky,Bratislava,,,78809,District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Malacky,,,,locality,,SK-BL,Malacky,,,,,region,1,SK-BL,Bratislavský kraj,HIGH,1.0,SK-BL
+Slovakia,Bratislava III,Bratislava,,,76694,City District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Bratislava III,,,,county,2,SK-BL,okres Bratislava III,,,,,region,1,SK-BL,Bratislavský kraj,LOW,0.874,SK-BL
+Slovakia,Pezinok,Bratislava,,,69623,District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Pezinok,,,,locality,,SK-BL,Pezinok,,,,,region,1,SK-BL,Bratislavský kraj,HIGH,1.0,SK-BL
+Slovakia,Bratislava I,Bratislava,,,46432,City District,Bratislava,,Bratislava,2021,BratislavaSlovakia,county,2,SK-BL,okres Bratislava I,,,,locality,,SK-BL,Bratislava,,,,,region,1,SK-BL,Bratislavský kraj,LOW,0.909,SK-BL
+Slovakia,Košice-okolie,Košice,,,129237,District,Kocise,,Kocise,2021,KošiceSlovakia,county,2,SK-KI,okres Košice - okolie,,,,,,,,,,,,region,1,SK-KI,Košický kraj,NONE,0.0,SK-KI
+Slovakia,Košice II,Košice,,,79034,City District,Kocise,,Kocise,2021,KošiceSlovakia,county,2,SK-KI,okres Košice II,,,,locality,,SK-KI,Košice,,,,,region,1,SK-KI,Košický kraj,LOW,0.8,SK-KI
+Slovakia,Košice I,Košice,,,63904,City District,Kocise,,Kocise,2021,KošiceSlovakia,county,2,SK-KI,okres Košice I,,,,locality,,SK-KI,Košice,,,,,region,1,SK-KI,Košický kraj,LOW,0.857,SK-KI
+Slovakia,Košice IV,Košice,,,56596,City District,Kocise,,Kocise,2021,KošiceSlovakia,county,2,SK-KI,okres Košice IV,,,,county,2,SK-KI,okres Košice IV,,,,,region,1,SK-KI,Košický kraj,LOW,0.8,SK-KI
+Slovakia,Košice III,Košice,,,27924,City District,Kocise,,Kocise,2021,KošiceSlovakia,county,2,SK-KI,okres Košice III,,,,county,2,SK-KI,okres Košice III,,,,,region,1,SK-KI,Košický kraj,LOW,0.819,SK-KI
+Slovakia,Michalovce,Košice,,,108520,District,Michalovce,,Michalovce,2021,KošiceSlovakia,county,2,SK-KI,okres Michalovce,,,,locality,,SK-KI,Michalovce,,,,,region,1,SK-KI,Košický kraj,HIGH,1.0,SK-KI
+Slovakia,Trebišov,Košice,,,103377,District,,,#N/A,2021,KošiceSlovakia,county,2,SK-KI,okres Trebišov,,,,localadmin,,SK-KI,Trebišov,,,,,region,1,SK-KI,Košický kraj,HIGH,1.0,SK-KI
+Slovakia,Spišská Nová Ves,Košice,,,98656,District,,,#N/A,2021,KošiceSlovakia,county,2,SK-KI,okres Spišská Nová Ves,,,,locality,,SK-KI,Spišská Nová Ves,,,,,region,1,SK-KI,Košický kraj,HIGH,1.0,SK-KI
+Slovakia,Rožňava,Košice,,,58995,District,,,#N/A,2021,KošiceSlovakia,county,2,SK-KI,okres Rožňava,,,,localadmin,,SK-KI,Rožňava,,,,,region,1,SK-KI,Košický kraj,HIGH,1.0,SK-KI
+Slovakia,Gelnica,Košice,,,31668,District,,,#N/A,2021,KošiceSlovakia,county,2,SK-KI,okres Gelnica,,,,locality,,SK-KI,Gelnica,,,,,region,1,SK-KI,Košický kraj,HIGH,1.0,SK-KI
+Slovakia,Sobrance,Košice,,,22377,District,,,#N/A,2021,KošiceSlovakia,county,2,SK-KI,okres Sobrance,,,,locality,,SK-KI,Sobrance,,,,,region,1,SK-KI,Košický kraj,HIGH,1.0,SK-KI
+Slovakia,Komárno,Nitra,,,100212,District,Komárno,,Komárno,2021,NitraSlovakia,county,2,SK-NI,okres Komárno,,,,localadmin,,SK-NI,Komárno,,,,,region,1,SK-NI,Nitriansky kraj,HIGH,1.0,SK-NI
+Slovakia,Nitra,Nitra,,,164580,District,Nitra,,Nitra,2021,NitraSlovakia,county,2,SK-NI,okres Nitra,,,,localadmin,,SK-NI,Nitra,,,,,region,1,SK-NI,Nitriansky kraj,HIGH,1.0,SK-NI
+Slovakia,Zlaté Moravce,Nitra,,,40881,District,Zlate Moravce,,Zlate Moravce,2021,NitraSlovakia,county,2,SK-NI,okres Zlaté Moravce,,,,localadmin,,SK-NI,Zlaté Moravce,,,,,region,1,SK-NI,Nitriansky kraj,HIGH,1.0,SK-NI
+Slovakia,Nové Zámky,Nitra,,,137001,District,,,#N/A,2021,NitraSlovakia,county,2,SK-NI,okres Nové Zámky,,,,localadmin,,SK-NI,Nové Zámky,,,,,region,1,SK-NI,Nitriansky kraj,HIGH,1.0,SK-NI
+Slovakia,Levice,Nitra,,,109588,District,,,#N/A,2021,NitraSlovakia,county,2,SK-NI,okres Levice,,,,locality,,SK-NI,Levice,,,,,region,1,SK-NI,Nitriansky kraj,HIGH,1.0,SK-NI
+Slovakia,Topoľčany,Nitra,,,70313,District,,,#N/A,2021,NitraSlovakia,county,2,SK-NI,okres Topoľčany,,,,locality,,SK-NI,Topoľčany,,,,,region,1,SK-NI,Nitriansky kraj,HIGH,1.0,SK-NI
+Slovakia,Šaľa,Nitra,,,50972,District,,,#N/A,2021,NitraSlovakia,county,2,SK-NI,okres Šaľa,,,,localadmin,,SK-NI,Šaľa,,,,,region,1,SK-NI,Nitriansky kraj,HIGH,1.0,SK-NI
+Slovakia,Humenné,Prešov,,,59535,District,Humenne,,Humenne,2021,PrešovSlovakia,county,2,SK-PV,okres Humenné,,,,localadmin,,SK-PV,Humenné,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Poprad,Prešov,,,102469,District,Poprad,,Poprad,2021,PrešovSlovakia,county,2,SK-PV,okres Poprad,,,,localadmin,,SK-PV,Poprad,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Prešov,Prešov,,,173187,District,Presov,,Presov,2021,PrešovSlovakia,county,2,SK-PV,okres Prešov,,,,localadmin,,SK-PV,Prešov,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Vranov nad Topľou,Prešov,,,79181,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Vranov nad Topľou,,,,locality,,SK-PV,Vranov nad Topľou,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Bardejov,Prešov,,,75786,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Bardejov,,,,locality,,SK-PV,Bardejov,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Kežmarok,Prešov,,,74232,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Kežmarok,,,,locality,,SK-PV,Kežmarok,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Sabinov,Prešov,,,60607,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Sabinov,,,,locality,,SK-PV,Sabinov,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Stará Ľubovňa,Prešov,,,52867,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Stará Ľubovňa,,,,locality,,SK-PV,Stará Ľubovňa,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Snina,Prešov,,,34655,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Snina,,,,locality,,SK-PV,Snina,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Levoča,Prešov,,,33127,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Levoča,,,,localadmin,,SK-PV,Levoča,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Svidník,Prešov,,,31397,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Svidník,,,,locality,,SK-PV,Svidník,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Stropkov,Prešov,,,19744,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Stropkov,,,,localadmin,,SK-PV,Stropkov,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Medzilaborce,Prešov,,,10870,District,,,#N/A,2021,PrešovSlovakia,county,2,SK-PV,okres Medzilaborce,,,,locality,,SK-PV,Medzilaborce,,,,,region,1,SK-PV,Prešovský kraj,HIGH,1.0,SK-PV
+Slovakia,Ilava,Trenčín,,,57511,District,Dubnica nad Váhom,,Dubnica nad Váhom,2021,TrenčínSlovakia,county,2,SK-TC,okres Ilava,,,,locality,,SK-TC,Ilava,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Myjava,Trenčín,,,25363,District,Myjava,,Myjava,2021,TrenčínSlovakia,county,2,SK-TC,okres Myjava,,,,localadmin,,SK-TC,Myjava,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Považská Bystrica,Trenčín,,,61211,District,Považská Bystrica,,Považská Bystrica,2021,TrenčínSlovakia,county,2,SK-TC,okres Považská Bystrica,,,,locality,,SK-TC,Považská Bystrica,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Púchov,Trenčín,,,44133,District,Puchov,,Puchov,2021,TrenčínSlovakia,county,2,SK-TC,okres Púchov,,,,locality,,SK-TC,Púchov,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Trenčín,Trenčín,,,113516,District,Trencín,,Trencín,2021,TrenčínSlovakia,county,2,SK-TC,okres Trenčín,,,,localadmin,,SK-TC,Trenčín,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Prievidza,Trenčín,,,130616,District,,,#N/A,2021,TrenčínSlovakia,county,2,SK-TC,okres Prievidza,,,,localadmin,,SK-TC,Prievidza,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Nové Mesto nad Váhom,Trenčín,,,61512,District,,,#N/A,2021,TrenčínSlovakia,county,2,SK-TC,okres Nové Mesto nad Váhom,,,,locality,,SK-TC,Nové Mesto nad Váhom,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Partizánske,Trenčín,,,44179,District,,,#N/A,2021,TrenčínSlovakia,county,2,SK-TC,okres Partizánske,,,,localadmin,,SK-TC,Partizánske,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Bánovce nad Bebravou,Trenčín,,,35658,District,,,#N/A,2021,TrenčínSlovakia,county,2,SK-TC,okres Bánovce nad Bebravou,,,,localadmin,,SK-TC,Bánovce nad Bebravou,,,,,region,1,SK-TC,Trenčiansky kraj,HIGH,1.0,SK-TC
+Slovakia,Dunajská Streda,Trnava,,,125238,District,Dunajska Streda,,Dunajska Streda,2021,TrnavaSlovakia,county,2,SK-TA,okres Dunajská Streda,,,,localadmin,,SK-TA,Dunajská Streda,,,,,region,1,SK-TA,Trnavský kraj,HIGH,1.0,SK-TA
+Slovakia,Senica,Trnava,,,59347,District,Senica,,Senica,2021,TrnavaSlovakia,county,2,SK-TA,okres Senica,,,,localadmin,,SK-TA,Senica,,,,,region,1,SK-TA,Trnavský kraj,HIGH,1.0,SK-TA
+Slovakia,Skalica,Trnava,,,47313,District,Skalica,,Skalica,2021,TrnavaSlovakia,county,2,SK-TA,okres Skalica,,,,locality,,SK-TA,Skalica,,,,,region,1,SK-TA,Trnavský kraj,HIGH,1.0,SK-TA
+Slovakia,Trnava,Trnava,,,131940,District,Trnava,,Trnava,2021,TrnavaSlovakia,county,2,SK-TA,okres Trnava,,,,localadmin,,SK-TA,Trnava,,,,,region,1,SK-TA,Trnavský kraj,HIGH,1.0,SK-TA
+Slovakia,Galanta,Trnava,,,95027,District,,,#N/A,2021,TrnavaSlovakia,county,2,SK-TA,okres Galanta,,,,locality,,SK-TA,Galanta,,,,,region,1,SK-TA,Trnavský kraj,HIGH,1.0,SK-TA
+Slovakia,Piešťany,Trnava,,,62662,District,,,#N/A,2021,TrnavaSlovakia,county,2,SK-TA,okres Piešťany,,,,localadmin,,SK-TA,Piešťany,,,,,region,1,SK-TA,Trnavský kraj,HIGH,1.0,SK-TA
+Slovakia,Hlohovec,Trnava,,,43769,District,,,#N/A,2021,TrnavaSlovakia,county,2,SK-TA,okres Hlohovec,,,,locality,,SK-TA,Hlohovec,,,,,region,1,SK-TA,Trnavský kraj,HIGH,1.0,SK-TA
+Slovakia,Liptovský Mikuláš,Žilina,,,71685,District,Liptovský Mikuláš,,Liptovský Mikuláš,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Liptovský Mikuláš,,,,localadmin,,SK-ZI,Liptovský Mikuláš,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Ružomberok,Žilina,,,57036,District,Ružomberok,,Ružomberok,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Ružomberok,,,,localadmin,,SK-ZI,Ružomberok,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Žilina,Žilina,,,161052,District,Zilina,,Zilina,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Žilina,,,,locality,,SK-ZI,Žilina,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Martin,Žilina,,,93816,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Martin,,,,localadmin,,SK-ZI,Martin,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Čadca,Žilina,,,87969,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Čadca,,,,localadmin,,SK-ZI,Čadca,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Námestovo,Žilina,,,63563,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Námestovo,,,,localadmin,,SK-ZI,Námestovo,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Dolný Kubín,Žilina,,,38937,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Dolný Kubín,,,,locality,,SK-ZI,Dolný Kubín,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Tvrdošín,Žilina,,,35802,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Tvrdošín,,,,localadmin,,SK-ZI,Tvrdošín,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Kysucké Nové Mesto,Žilina,,,32654,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Kysucké Nové Mesto,,,,locality,,SK-ZI,Kysucké Nové Mesto,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Bytča,Žilina,,,31163,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Bytča,,,,localadmin,,SK-ZI,Bytča,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI
+Slovakia,Turčianske Teplice,Žilina,,,15848,District,,,#N/A,2021,ŽilinaSlovakia,county,2,SK-ZI,okres Turčianske Teplice,,,,locality,,SK-ZI,Turčianske Teplice,,,,,region,1,SK-ZI,Žilinský kraj,HIGH,1.0,SK-ZI

@@ -1,0 +1,24 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Trinidad & Tobago,St. Andrew,Tobago,,,17536,Parish,Scarborough (Tobago),,Scarborough (Tobago),,TobagoTrinidad & Tobago,region,1,TT-MRC,Mayaro-Rio Claro,,,,,,,,,,,,region,1,TT-TOB,Tobago,NONE,0.0,TT-TOB
+Trinidad & Tobago,St. Patrick,Tobago,,,15560,Parish,Scarborough (Tobago),,Scarborough (Tobago),,TobagoTrinidad & Tobago,region,1,TT-MRC,Mayaro-Rio Claro,,,,,,,,,,,,region,1,TT-TOB,Tobago,NONE,0.0,TT-TOB
+Trinidad & Tobago,St. David,Tobago,,,8733,Parish,Scarborough (Tobago),,Scarborough (Tobago),,TobagoTrinidad & Tobago,region,1,TT-MRC,Mayaro-Rio Claro,,,,,,,,,,,,region,1,TT-TOB,Tobago,NONE,0.0,TT-TOB
+Trinidad & Tobago,St. George,Tobago,,,6875,Parish,,,#N/A,,TobagoTrinidad & Tobago,,,,,,,,,,,,,,,,region,1,TT-TOB,Tobago,NONE,0.0,TT-TOB
+Trinidad & Tobago,St. Paul,Tobago,,,6048,Parish,,,#N/A,,TobagoTrinidad & Tobago,,,,,,,,,,,,,,,,region,1,TT-TOB,Tobago,NONE,0.0,TT-TOB
+Trinidad & Tobago,St. Mary,Tobago,,,3297,Parish,,,#N/A,,TobagoTrinidad & Tobago,,,,,,,,,,,,,,,,region,1,TT-TOB,Tobago,NONE,0.0,TT-TOB
+Trinidad & Tobago,St. John,Tobago,,,2825,Parish,,,#N/A,,TobagoTrinidad & Tobago,,,,,,,,,,,,,,,,region,1,TT-TOB,Tobago,NONE,0.0,TT-TOB
+Trinidad & Tobago,Tunapuna/Piarco,Trinidad,,,215119,Region,Arima,,Arima,,TrinidadTrinidad & Tobago,region,1,TT-ARI,Arima,,,,,,,,,,,,,,,,NONE,0.0,
+Trinidad & Tobago,Arima,Trinidad,,,33606,Borough,Arima,,Arima,,TrinidadTrinidad & Tobago,region,1,TT-ARI,Arima,,,,region,1,TT-ARI,Arima,,,,,region,1,TT-ARI,Arima,HIGH,1.0,TT-ARI
+Trinidad & Tobago,Chaguanas,Trinidad,,,83516,Borough,Chaguanas,,Chaguanas,,TrinidadTrinidad & Tobago,region,1,TT-CHA,Chaguanas,,,,region,1,TT-CHA,Chaguanas,,,,,region,1,TT-CHA,Chaguanas,HIGH,1.0,TT-CHA
+Trinidad & Tobago,San Juan/Laventille,Trinidad,,,157258,Region,Port of Spain,,Port of Spain,,TrinidadTrinidad & Tobago,region,1,TT-POS,Port of Spain,,,,,,,,,,,,,,,,NONE,0.0,
+Trinidad & Tobago,Diego Martin,Trinidad,,,102957,Region,Port of Spain,,Port of Spain,,TrinidadTrinidad & Tobago,region,1,TT-DMN,Diego Martin,,,,region,1,TT-DMN,Diego Martin,,,,,region,1,TT-DMN,Diego Martin,HIGH,1.0,TT-DMN
+Trinidad & Tobago,Port of Spain,Trinidad,,,37074,City,Port of Spain,,Port of Spain,,TrinidadTrinidad & Tobago,region,1,TT-POS,Port of Spain,,,,region,1,TT-POS,Port of Spain,,,,,region,1,TT-POS,Port of Spain,HIGH,1.0,TT-POS
+Trinidad & Tobago,Penal/Debe,Trinidad,,,89392,Region,San Fernando (TT),,San Fernando (TT),,TrinidadTrinidad & Tobago,region,1,TT-SFO,San Fernando,,,,,,,,,,,,,,,,NONE,0.0,
+Trinidad & Tobago,San Fernando,Trinidad,,,48838,City,San Fernando (TT),,San Fernando (TT),,TrinidadTrinidad & Tobago,region,1,TT-SFO,San Fernando,,,,region,1,TT-SFO,San Fernando,,,,,region,1,TT-SFO,San Fernando,HIGH,1.0,TT-SFO
+Trinidad & Tobago,Couva/Tabaquite/Talparo,Trinidad,,,178410,Region,,,#N/A,,TrinidadTrinidad & Tobago,locality,,TT-CTT,Couva,,,,,,,,,,,,,,,,NONE,0.0,
+Trinidad & Tobago,Princes Town,Trinidad,,,102375,Region,,,#N/A,,TrinidadTrinidad & Tobago,region,1,TT-PRT,Princes Town,,,,region,1,TT-PRT,Princes Town,,,,,region,1,TT-PRT,Princes Town,HIGH,1.0,TT-PRT
+Trinidad & Tobago,Siparia,Trinidad,,,86949,Region,,,#N/A,,TrinidadTrinidad & Tobago,region,1,TT-SIP,Siparia,,,,region,1,TT-SIP,Siparia,,,,,region,1,TT-SIP,Siparia,HIGH,1.0,TT-SIP
+Trinidad & Tobago,Sangre Grande,Trinidad,,,75766,Region,,,#N/A,,TrinidadTrinidad & Tobago,region,1,TT-SGE,Sangre Grande,,,,region,1,TT-SGE,Sangre Grande,,,,,region,1,TT-SGE,Sangre Grande,HIGH,1.0,TT-SGE
+Trinidad & Tobago,Mayaro/Rio Claro,Trinidad,,,35650,Region,,,#N/A,,TrinidadTrinidad & Tobago,region,1,TT-MRC,Mayaro-Rio Claro,,,,,,,,,,,,,,,,NONE,0.0,
+Trinidad & Tobago,Point Fortin,Trinidad,,,20235,Borough,,,#N/A,,TrinidadTrinidad & Tobago,region,1,TT-PTF,Point Fortin,,,,region,1,TT-PTF,Point Fortin,,,,,region,1,TT-PTF,Point Fortin,HIGH,1.0,TT-PTF
+Trinidad & Tobago,Carrera Island,Trinidad,,,301,Islands,,,#N/A,,TrinidadTrinidad & Tobago,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Trinidad & Tobago,Off-Shore Islands,Trinidad,,,50,Islands,,,#N/A,,TrinidadTrinidad & Tobago,,,,,,,,,,,,,,,,,,,,NONE,0.0,

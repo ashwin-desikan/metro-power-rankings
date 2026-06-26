@@ -1,0 +1,23 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Cape Verde,Boa Vista,Boa Vista,,,12613,Municipality,,,#N/A,,Boa VistaCape Verde,region,1,CV-BV,Boa Vista,,,,region,1,CV-BV,Boa Vista,,,,,region,1,CV-BV,Boa Vista,HIGH,1.0,CV-BV
+Cape Verde,Brava,Brava,,,5594,Municipality,,,#N/A,,BravaCape Verde,region,1,CV-BR,Brava,,,,region,1,CV-BR,Brava,,,,,region,1,CV-BR,Brava,HIGH,1.0,CV-BR
+Cape Verde,São Filipe,Fogo,,,20732,Municipality,,,#N/A,,FogoCape Verde,region,1,CV-SF,São Filipe,,,,region,1,CV-SF,São Filipe,,,,,region,1,CV-SF,São Filipe,HIGH,1.0,CV-SF
+Cape Verde,Mosteiros,Fogo,,,8062,Municipality,,,#N/A,,FogoCape Verde,region,1,CV-MO,Mosteiros,,,,region,1,CV-MO,Mosteiros,,,,,region,1,CV-MO,Mosteiros,HIGH,1.0,CV-MO
+Cape Verde,Santa Catarina do Fogo,Fogo,,,4725,Municipality,,,#N/A,,FogoCape Verde,region,1,CV-CF,Santa Catarina do Fogo,,,,region,1,CV-CF,Santa Catarina do Fogo,,,,,region,1,CV-CF,Santa Catarina do Fogo,HIGH,1.0,CV-CF
+Cape Verde,Maio,Maio,,,6298,Municipality,,,#N/A,,MaioCape Verde,region,1,CV-MA,Maio,,,,region,1,CV-MA,Maio,,,,,region,1,CV-MA,Maio,HIGH,1.0,CV-MA
+Cape Verde,Sal,Sal,,,33347,Municipality,,,#N/A,,SalCape Verde,region,1,CV-SL,Sal,,,,region,1,CV-SL,Sal,,,,,region,1,CV-SL,Sal,HIGH,1.0,CV-SL
+Cape Verde,Praia,Santiago,,,142009,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-PR,Praia,,,,region,1,CV-PR,Praia,,,,,region,1,CV-PR,Praia,HIGH,1.0,CV-PR
+Cape Verde,Santa Catarina,Santiago,,,37472,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-CA,Santa Catarina,,,,region,1,CV-CA,Santa Catarina,,,,,region,1,CV-CA,Santa Catarina,HIGH,1.0,CV-CA
+Cape Verde,Santa Cruz,Santiago,,,25004,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-CR,Santa Cruz,,,,region,1,CV-CR,Santa Cruz,,,,,region,1,CV-CR,Santa Cruz,HIGH,1.0,CV-CR
+Cape Verde,Tarrafal,Santiago,,,16620,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-TA,Tarrafal,,,,region,1,CV-TA,Tarrafal,,,,,region,1,CV-TA,Tarrafal,HIGH,1.0,CV-TA
+Cape Verde,São Domingos,Santiago,,,13958,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-SD,São Domingos,,,,region,1,CV-SD,São Domingos,,,,,region,1,CV-SD,São Domingos,HIGH,1.0,CV-SD
+Cape Verde,São Miguel,Santiago,,,12906,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-SM,São Miguel,,,,region,1,CV-SM,São Miguel,,,,,region,1,CV-SM,São Miguel,HIGH,1.0,CV-SM
+Cape Verde,Ribeira Grande de Santiago,Santiago,,,7632,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-RS,Ribeira Grande de Santiago,,,,region,1,CV-RS,Ribeira Grande de Santiago,,,,,region,1,CV-RS,Ribeira Grande de Santiago,HIGH,1.0,CV-RS
+Cape Verde,São Salvador do Mundo,Santiago,,,7452,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-SS,São Salvador do Mundo,,,,region,1,CV-SS,São Salvador do Mundo,,,,,region,1,CV-SS,São Salvador do Mundo,HIGH,1.0,CV-SS
+Cape Verde,São Lourenço dos Órgãos,Santiago,,,6317,Municipality,Praia (CV),,Praia (CV),,SantiagoCape Verde,region,1,CV-SO,São Lourenço dos Órgãos,,,,region,1,CV-SO,São Lourenço dos Órgãos,,,,,region,1,CV-SO,São Lourenço dos Órgãos,HIGH,1.0,CV-SO
+Cape Verde,Porto Novo,Santo Antão,,,15914,Municipality,,,#N/A,,Santo AntãoCape Verde,region,1,CV-PN,Porto Novo,,,,region,1,CV-PN,Porto Novo,,,,,region,1,CV-PN,Porto Novo,HIGH,1.0,CV-PN
+Cape Verde,Ribeira Grande,Santo Antão,,,15022,Municipality,,,#N/A,,Santo AntãoCape Verde,region,1,CV-RG,Ribeira Grande,,,,region,1,CV-RG,Ribeira Grande,,,,,region,1,CV-RG,Ribeira Grande,HIGH,1.0,CV-RG
+Cape Verde,Paúl,Santo Antão,,,5696,Municipality,,,#N/A,,Santo AntãoCape Verde,region,1,CV-PA,Paul,,,,region,1,CV-PA,Paul,,,,,region,1,CV-PA,Paul,HIGH,1.0,CV-PA
+Cape Verde,Ribeira Brava,São Nicolau,,,6978,Municipality,,,#N/A,,São NicolauCape Verde,region,1,CV-RB,Ribeira Brava,,,,region,1,CV-RB,Ribeira Brava,,,,,region,1,CV-RB,Ribeira Brava,HIGH,1.0,CV-RB
+Cape Verde,Tarrafal de São Nicolau,São Nicolau,,,5261,Municipality,,,#N/A,,São NicolauCape Verde,region,1,CV-TS,Tarrafal de São Nicolau,,,,region,1,CV-TS,Tarrafal de São Nicolau,,,,,region,1,CV-TS,Tarrafal de São Nicolau,HIGH,1.0,CV-TS
+Cape Verde,São Vicente,"São Vicente (incl. Santa Luzia, Branco & Raso)",,,74016,Municipality,,,#N/A,,"São Vicente (incl. Santa Luzia, Branco & Raso)Cape Verde",region,1,CV-SV,São Vicente,,,,region,1,CV-SV,São Vicente,,,,,region,1,CV-SV,São Vicente,HIGH,1.0,CV-SV

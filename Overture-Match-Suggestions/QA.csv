@@ -1,88 +1,88 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Qatar,Ad-Dawḥah al-Minṭaqah aṣ-Ṣinā'iyah [Doha Industrial Area],Ad-Dawḥah [Doha],,,313754,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Maṭār al-'Tīq [Old Airport Doha],Ad-Dawḥah [Doha],,,76774,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Manṣūrah / Farīj Bin Dirham [Al Mansoura / Fereej Bin Dirham],Ad-Dawḥah [Doha],,,65493,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Madīnat Khalīfat al-Janūbiyah [Madinat Khalifa South],Ad-Dawḥah [Doha],,,44459,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Najmah [Najma],Ad-Dawḥah [Doha],,,43695,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,'Unaīzah / Liqṭaīfiyah / Al-Qaṣār [Onaiza / Leqtaifiya / Al Qassar],Ad-Dawḥah [Doha],,,39761,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Umm Ghuwaīlīnah [Umm Ghuwailina],Ad-Dawḥah [Doha],,,39457,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,As-Sad / Al-Mirqāb al-Jadīdah / Farīj an-Naṣr [Al Sadd / New Al Mirqab / Fereej Al Nasr],Ad-Dawḥah [Doha],,,36077,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Nu'aījah [Nuaija],Ad-Dawḥah [Doha],,,33906,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Farīj Bin 'Umrān [Fereej Bin Omran / New Al Hitmi / Hamad Medical City],Ad-Dawḥah [Doha],,,33263,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,As-Sad [Al Sadd],Ad-Dawḥah [Doha],,,33138,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Rawḍat al-Khaīl [Rawdat Al Khail],Ad-Dawḥah [Doha],,,27569,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Farīj 'Abdal 'Azīz [Fereej Abdel Aziz],Ad-Dawḥah [Doha],,,27515,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Farīj Bin Maḥmūd [Fereej Bin Mahmoud],Ad-Dawḥah [Doha],,,25053,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,As-Salaṭah al-Jadīdah [New Salata],Ad-Dawḥah [Doha],,,23432,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ath-Thumāmah [Al Thumama],Ad-Dawḥah [Doha],,,22284,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ad-Dawḥah al-Jadīdah [New Doha],Ad-Dawḥah [Doha],,,22019,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ath-Thumāmah [Al Thumama],Ad-Dawḥah [Doha],,,20181,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Nu'aījah [Nuaija],Ad-Dawḥah [Doha],,,19975,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Ghānim at-'Tīq [Old Al Ghanim],Ad-Dawḥah [Doha],,,19010,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Farīj Bin Maḥmūd [Fereej Bin Mahmoud],Ad-Dawḥah [Doha],,,18850,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Madīnat Khalīfah ash-Shamaliyah / Daḥl al-Ḥamām [Madinat Khalifa North / Dahl Al Hamam],Ad-Dawḥah [Doha],,,18644,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Umm Lakhbā [Umm Lekhba],Ad-Dawḥah [Doha],,,16933,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Hilāl [Al Hilal],Ad-Dawḥah [Doha],,,15461,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Mushaīreb [Mushayreb],Ad-Dawḥah [Doha],,,15188,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Farīj Kulaīb [Fereej Kulaib],Ad-Dawḥah [Doha],,,11794,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ḥazm al-Markhiyah [Hazm Al Markhiya],Ad-Dawḥah [Doha],,,11272,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Markhiyah [Al Markhiya],Ad-Dawḥah [Doha],,,11248,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Misīlah [Al Messila],Ad-Dawḥah [Doha],,,9544,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Jilaī'ah / Aṭ-Ṭarfah / Jiryān Nijaīmah [Jelaiah / Al Tarfa / Jeryan Nejaima],Ad-Dawḥah [Doha],,,8882,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ar-Rufā' / Al-Hitmī al-'Tīq [Al Rufaa / Old Al Hitmi],Ad-Dawḥah [Doha],,,8386,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Duḥaīl [Duhail],Ad-Dawḥah [Doha],,,7942,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,'Unaīzah [Onaiza],Ad-Dawḥah [Doha],,,7917,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Nu'aījah [Nuaija],Ad-Dawḥah [Doha],,,7848,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ad-Dafnah / Al-Qaṣār [Al Dafna / Al Qassar],Ad-Dawḥah [Doha],,,7776,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,'Unaīzah [Onaiza],Ad-Dawḥah [Doha],,,7510,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Rās Abū 'Abūd [Ras Abu Aboud],Ad-Dawḥah [Doha],,,4915,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Lijbaīlāt [Lejbailat],Ad-Dawḥah [Doha],,,4847,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,An-Najādah / Brāḥat al-Jufaīry / Farīj al-'Aṣmakh [Al Najada / Brahat Al Jufairy / Fereej Al Asmakh],Ad-Dawḥah [Doha],,,3592,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Mushaīreb [Mushayreb],Ad-Dawḥah [Doha],,,3293,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Ghānim at-'Tīq [Old Al Ghanim],Ad-Dawḥah [Doha],,,3155,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Minṭaqat 50,Ad-Dawḥah [Doha],,,3025,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Khulaīfāt / Rās Abū 'Abūd [Al Khulaifat / Ras Abu Abboud],Ad-Dawḥah [Doha],,,2346,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Maṭār ad-Dawḥah ad-Duwalī [Doha International Airport],Ad-Dawḥah [Doha],,,2297,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,As-Salaṭah / Al-Mirqāb [Salata / Al Mirqab],Ad-Dawḥah [Doha],,,2170,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Rumaīlah [Rumaila],Ad-Dawḥah [Doha],,,1981,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Maṭār ad-Dawḥah ad-Duwalī [Doha International Airport],Ad-Dawḥah [Doha],,,929,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Wādī as-Saīl [Wadi Al Sail],Ad-Dawḥah [Doha],,,846,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Minṭaqat 58,Ad-Dawḥah [Doha],,,221,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Farīj Moḥammed Bin Jāsim / Mushaīreb [Fereej Mohammed Bin Jasim / Mushayreb],Ad-Dawḥah [Doha],,,166,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Jasrah [Al Jasra],Ad-Dawḥah [Doha],,,132,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,As-Sūq [Al Souq],Ad-Dawḥah [Doha],,,52,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,"Al-Bida' [Al Bidda; incl. Rumaila, Wadi Al Sail]",Ad-Dawḥah [Doha],,,24,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Bida' [Al Bidda],Ad-Dawḥah [Doha],,,22,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Li'abaīb [Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen],Aḍ-Ḍ'āyan [Al Daayen],,,91247,Zone,Doha,,Doha,,Aḍ-Ḍ'āyan [Al Daayen]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Jabal Thu'aīlab [Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat],Aḍ-Ḍ'āyan [Al Daayen],,,8836,Zone,Doha,,Doha,,Aḍ-Ḍ'āyan [Al Daayen]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Simaīsmah / Al-Jiryān / Al-Khawr [Simaisma / Al Jeryan / Al Khor],Al-Khawr & Adh-Dhakhīrah  [Al Khor],,,91585,Zone,Al Khor,,Al Khor,,Al-Khawr & Adh-Dhakhīrah  [Al Khor]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Adh-Dhakhīrah / Rās Lafān / Umm Birkah [Al Thakhira / Rass Laffan / Umm Birka],Al-Khawr & Adh-Dhakhīrah  [Al Khor],,,42662,Zone,Al Khor,,Al Khor,,Al-Khawr & Adh-Dhakhīrah  [Al Khor]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Ghuwaīriyah [Al Ghuwairiya],Al-Khawr & Adh-Dhakhīrah  [Al Khor],,,6206,Zone,Al Khor,,Al Khor,,Al-Khawr & Adh-Dhakhīrah  [Al Khor]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ath-Thumāmah / Al-Wukaīr / Al-Mashāf [Al Thumama / Al Wukair / Al Mashaf],Al-Wakrah,,,134481,Zone,Doha,,Doha,,Al-WakrahQatar,,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
-Qatar,Al-Wakrah [Al Wakra],Al-Wakrah,,,94272,Zone,Doha,,Doha,,Al-WakrahQatar,,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
-Qatar,Musaī'īd [Mesaieed],Al-Wakrah,,,29330,Zone,Doha,,Doha,,Al-WakrahQatar,,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
-Qatar,Al-Kharārah [Al Kharrara],Al-Wakrah,,,6458,Zone,Doha,,Doha,,Al-WakrahQatar,,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
-Qatar,Shaqrā [Shagra],Al-Wakrah,,,385,Zone,Doha,,Doha,,Al-WakrahQatar,,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
-Qatar,Minṭaqat Musaī'īd aṣ-Ṣinā'iyah [Mesaieed Industrial Area],Al-Wakrah,,,172,Zone,Doha,,Doha,,Al-WakrahQatar,,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
-Qatar,Al-'Udaīd [Al Adaid],Al-Wakrah,,,4,Zone,Doha,,Doha,,Al-WakrahQatar,,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
-Qatar,Farīj al-'Asīrī [Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra / Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled],Ar-Rayyān,,,255135,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Farīj as-Sūdān [Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad],Ar-Rayyān,,,226747,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Al-Gharāfah [Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid],Ar-Rayyān,,,129960,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Ar-Rayān al-Jadīdah / Al-Wajbah / Mu'aīdhir [New Al Rayyan / Al Wajba / Muaither],Ar-Rayyān,,,116195,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Farīj al-'Amīr [Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan],Ar-Rayyān,,,43703,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Al-Luqṭah [Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem],Ar-Rayyān,,,28193,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Mubaīrīk [Mebaireek],Ar-Rayyān,,,19982,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Al-Kar'ānah [Al Karaana],Ar-Rayyān,,,3375,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Abū Samrah [Abu Samra],Ar-Rayyān,,,3260,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Sawdā Nathīl [Sawda Natheel],Ar-Rayyān,,,236,Zone,Doha,,Doha,,Ar-RayyānQatar,,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
-Qatar,Rawḍat Rāshid [Rawdat Rashed],Ash-Shaḥāniyah [Al Shahaniya],,,74576,Zone,Doha,,Doha,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ash-Shaḥāniyah [Al Shahaniya],Ash-Shaḥāniyah [Al Shahaniya],,,67181,Zone,Doha,,Doha,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Dukhān [Dukhan],Ash-Shaḥāniyah [Al Shahaniya],,,10202,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,An-Naṣrāniyah [Al Nasraniya],Ash-Shaḥāniyah [Al Shahaniya],,,3331,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Jumayliyah [Al Jemailiya],Ash-Shaḥāniyah [Al Shahaniya],,,2573,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Umm Bāb [Umm Bab],Ash-Shaḥāniyah [Al Shahaniya],,,1769,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-'Uṭūriyah [Al Utouriya],Ash-Shaḥāniyah [Al Shahaniya],,,1608,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Ar-Ruwaīs / Madīnat ash-Shamāl [Ar Ru'ays / Madinat Al Shamal],Ash-Shamāl,,,12585,Zone,Al Khor,,Al Khor,,Ash-ShamālQatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Abū Ẓalūf / Az-Zubārah [Abu Dhalouf / Al Zubara],Ash-Shamāl,,,2635,Zone,Al Khor,,Al Khor,,Ash-ShamālQatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Fuwayriṭ / 'Aīn Sinān / Madīnat al-Ka'abān [Fuwayrit / Ain Sinan / Madinat Al Kaaban],Ash-Shamāl,,,1510,Zone,Al Khor,,Al Khor,,Ash-ShamālQatar,,,,,,,,,,,,,,,,,NONE,0.0,
-Qatar,Al-Kharaīṭiyāt [Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi],Umm Ṣalāl,,,149701,Zone,Doha,,Doha,,Umm ṢalālQatar,,,,,,,,,,,,,region,1,QA-US,أم صلال,NONE,0.0,QA-US
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Qatar,Ad-Dawḥah al-Minṭaqah aṣ-Ṣinā'iyah [Doha Industrial Area],Ad-Dawḥah [Doha],,,313754,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Maṭār al-'Tīq [Old Airport Doha],Ad-Dawḥah [Doha],,,76774,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Manṣūrah / Farīj Bin Dirham [Al Mansoura / Fereej Bin Dirham],Ad-Dawḥah [Doha],,,65493,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Madīnat Khalīfat al-Janūbiyah [Madinat Khalifa South],Ad-Dawḥah [Doha],,,44459,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Najmah [Najma],Ad-Dawḥah [Doha],,,43695,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,'Unaīzah / Liqṭaīfiyah / Al-Qaṣār [Onaiza / Leqtaifiya / Al Qassar],Ad-Dawḥah [Doha],,,39761,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Umm Ghuwaīlīnah [Umm Ghuwailina],Ad-Dawḥah [Doha],,,39457,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,As-Sad / Al-Mirqāb al-Jadīdah / Farīj an-Naṣr [Al Sadd / New Al Mirqab / Fereej Al Nasr],Ad-Dawḥah [Doha],,,36077,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Nu'aījah [Nuaija],Ad-Dawḥah [Doha],,,33906,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Farīj Bin 'Umrān [Fereej Bin Omran / New Al Hitmi / Hamad Medical City],Ad-Dawḥah [Doha],,,33263,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,As-Sad [Al Sadd],Ad-Dawḥah [Doha],,,33138,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Rawḍat al-Khaīl [Rawdat Al Khail],Ad-Dawḥah [Doha],,,27569,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Farīj 'Abdal 'Azīz [Fereej Abdel Aziz],Ad-Dawḥah [Doha],,,27515,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Farīj Bin Maḥmūd [Fereej Bin Mahmoud],Ad-Dawḥah [Doha],,,25053,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,As-Salaṭah al-Jadīdah [New Salata],Ad-Dawḥah [Doha],,,23432,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ath-Thumāmah [Al Thumama],Ad-Dawḥah [Doha],,,22284,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ad-Dawḥah al-Jadīdah [New Doha],Ad-Dawḥah [Doha],,,22019,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ath-Thumāmah [Al Thumama],Ad-Dawḥah [Doha],,,20181,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Nu'aījah [Nuaija],Ad-Dawḥah [Doha],,,19975,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Ghānim at-'Tīq [Old Al Ghanim],Ad-Dawḥah [Doha],,,19010,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Farīj Bin Maḥmūd [Fereej Bin Mahmoud],Ad-Dawḥah [Doha],,,18850,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Madīnat Khalīfah ash-Shamaliyah / Daḥl al-Ḥamām [Madinat Khalifa North / Dahl Al Hamam],Ad-Dawḥah [Doha],,,18644,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Umm Lakhbā [Umm Lekhba],Ad-Dawḥah [Doha],,,16933,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Hilāl [Al Hilal],Ad-Dawḥah [Doha],,,15461,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Mushaīreb [Mushayreb],Ad-Dawḥah [Doha],,,15188,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Farīj Kulaīb [Fereej Kulaib],Ad-Dawḥah [Doha],,,11794,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ḥazm al-Markhiyah [Hazm Al Markhiya],Ad-Dawḥah [Doha],,,11272,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Markhiyah [Al Markhiya],Ad-Dawḥah [Doha],,,11248,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Misīlah [Al Messila],Ad-Dawḥah [Doha],,,9544,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Jilaī'ah / Aṭ-Ṭarfah / Jiryān Nijaīmah [Jelaiah / Al Tarfa / Jeryan Nejaima],Ad-Dawḥah [Doha],,,8882,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ar-Rufā' / Al-Hitmī al-'Tīq [Al Rufaa / Old Al Hitmi],Ad-Dawḥah [Doha],,,8386,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Duḥaīl [Duhail],Ad-Dawḥah [Doha],,,7942,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,'Unaīzah [Onaiza],Ad-Dawḥah [Doha],,,7917,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Nu'aījah [Nuaija],Ad-Dawḥah [Doha],,,7848,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ad-Dafnah / Al-Qaṣār [Al Dafna / Al Qassar],Ad-Dawḥah [Doha],,,7776,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,'Unaīzah [Onaiza],Ad-Dawḥah [Doha],,,7510,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Rās Abū 'Abūd [Ras Abu Aboud],Ad-Dawḥah [Doha],,,4915,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Lijbaīlāt [Lejbailat],Ad-Dawḥah [Doha],,,4847,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,An-Najādah / Brāḥat al-Jufaīry / Farīj al-'Aṣmakh [Al Najada / Brahat Al Jufairy / Fereej Al Asmakh],Ad-Dawḥah [Doha],,,3592,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Mushaīreb [Mushayreb],Ad-Dawḥah [Doha],,,3293,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Ghānim at-'Tīq [Old Al Ghanim],Ad-Dawḥah [Doha],,,3155,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Minṭaqat 50,Ad-Dawḥah [Doha],,,3025,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Khulaīfāt / Rās Abū 'Abūd [Al Khulaifat / Ras Abu Abboud],Ad-Dawḥah [Doha],,,2346,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Maṭār ad-Dawḥah ad-Duwalī [Doha International Airport],Ad-Dawḥah [Doha],,,2297,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,As-Salaṭah / Al-Mirqāb [Salata / Al Mirqab],Ad-Dawḥah [Doha],,,2170,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Rumaīlah [Rumaila],Ad-Dawḥah [Doha],,,1981,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Maṭār ad-Dawḥah ad-Duwalī [Doha International Airport],Ad-Dawḥah [Doha],,,929,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Wādī as-Saīl [Wadi Al Sail],Ad-Dawḥah [Doha],,,846,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Minṭaqat 58,Ad-Dawḥah [Doha],,,221,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Farīj Moḥammed Bin Jāsim / Mushaīreb [Fereej Mohammed Bin Jasim / Mushayreb],Ad-Dawḥah [Doha],,,166,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Jasrah [Al Jasra],Ad-Dawḥah [Doha],,,132,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,As-Sūq [Al Souq],Ad-Dawḥah [Doha],,,52,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,"Al-Bida' [Al Bidda; incl. Rumaila, Wadi Al Sail]",Ad-Dawḥah [Doha],,,24,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Bida' [Al Bidda],Ad-Dawḥah [Doha],,,22,Zone,Doha,,Doha,,Ad-Dawḥah [Doha]Qatar,region,1,QA-DA,الدوحة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Li'abaīb [Leabaib / Al Ebb / Jeryan Jenaihat / Al Kheesa / Rawdat Al Hamama / Wadi Al Wasaah / Al Sakhama / Al Masrouhiya / Wadi Lusail / Lusail / Umm Garn / Al Daayen],Aḍ-Ḍ'āyan [Al Daayen],,,91247,Zone,Doha,,Doha,,Aḍ-Ḍ'āyan [Al Daayen]Qatar,region,1,QA-ZA,الضعاين,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Jabal Thu'aīlab [Jabal Thuaileb / Al Kharayej / Lusail / Al Egla / Wadi Al Banat],Aḍ-Ḍ'āyan [Al Daayen],,,8836,Zone,Doha,,Doha,,Aḍ-Ḍ'āyan [Al Daayen]Qatar,region,1,QA-ZA,الضعاين,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Simaīsmah / Al-Jiryān / Al-Khawr [Simaisma / Al Jeryan / Al Khor],Al-Khawr & Adh-Dhakhīrah  [Al Khor],,,91585,Zone,Al Khor,,Al Khor,,Al-Khawr & Adh-Dhakhīrah  [Al Khor]Qatar,region,1,QA-KH,الخور والذخيرة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Adh-Dhakhīrah / Rās Lafān / Umm Birkah [Al Thakhira / Rass Laffan / Umm Birka],Al-Khawr & Adh-Dhakhīrah  [Al Khor],,,42662,Zone,Al Khor,,Al Khor,,Al-Khawr & Adh-Dhakhīrah  [Al Khor]Qatar,region,1,QA-KH,الخور والذخيرة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Ghuwaīriyah [Al Ghuwairiya],Al-Khawr & Adh-Dhakhīrah  [Al Khor],,,6206,Zone,Al Khor,,Al Khor,,Al-Khawr & Adh-Dhakhīrah  [Al Khor]Qatar,region,1,QA-KH,الخور والذخيرة,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ath-Thumāmah / Al-Wukaīr / Al-Mashāf [Al Thumama / Al Wukair / Al Mashaf],Al-Wakrah,,,134481,Zone,Doha,,Doha,,Al-WakrahQatar,region,1,QA-WA,الوكرة,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
+Qatar,Al-Wakrah [Al Wakra],Al-Wakrah,,,94272,Zone,Doha,,Doha,,Al-WakrahQatar,region,1,QA-WA,الوكرة,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
+Qatar,Musaī'īd [Mesaieed],Al-Wakrah,,,29330,Zone,Doha,,Doha,,Al-WakrahQatar,region,1,QA-WA,الوكرة,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
+Qatar,Al-Kharārah [Al Kharrara],Al-Wakrah,,,6458,Zone,Doha,,Doha,,Al-WakrahQatar,region,1,QA-WA,الوكرة,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
+Qatar,Shaqrā [Shagra],Al-Wakrah,,,385,Zone,Doha,,Doha,,Al-WakrahQatar,region,1,QA-WA,الوكرة,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
+Qatar,Minṭaqat Musaī'īd aṣ-Ṣinā'iyah [Mesaieed Industrial Area],Al-Wakrah,,,172,Zone,Doha,,Doha,,Al-WakrahQatar,region,1,QA-WA,الوكرة,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
+Qatar,Al-'Udaīd [Al Adaid],Al-Wakrah,,,4,Zone,Doha,,Doha,,Al-WakrahQatar,region,1,QA-WA,الوكرة,,,,,,,,,,,,region,1,QA-WA,الوكرة,NONE,0.0,QA-WA
+Qatar,Farīj al-'Asīrī [Fereej Al Asiri / New Fereej Al Khulaifat / Bu Samra / Al Maamoura / Bu Hamour / Mesaimeer / Ain Khaled],Ar-Rayyān,,,255135,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Farīj as-Sūdān [Fereej Al Soudan / Al Waab / Al Aziziya / New Fereej Al Ghanim / Fereej Al Murra / Fereej Al Manaseer / Bu Sidra / Muaither / Al Sailiya / Al Mearad],Ar-Rayyān,,,226747,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Al-Gharāfah [Al Gharrafa / Gharrafat Al Rayyan / Izghawa / Bani Hajer / Al Seej / Rawdat Egdaim / Al Themaid],Ar-Rayyān,,,129960,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Ar-Rayān al-Jadīdah / Al-Wajbah / Mu'aīdhir [New Al Rayyan / Al Wajba / Muaither],Ar-Rayyān,,,116195,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Farīj al-'Amīr [Fereej Al Amir / Luaib / Muraikh / Baaya / Mehairja / Fereej Al Soudan],Ar-Rayyān,,,43703,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Al-Luqṭah [Al Luqta / Lebday / Old Al Rayyan / Al Shagub / Fereej Al Zaeem],Ar-Rayyān,,,28193,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Mubaīrīk [Mebaireek],Ar-Rayyān,,,19982,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Al-Kar'ānah [Al Karaana],Ar-Rayyān,,,3375,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Abū Samrah [Abu Samra],Ar-Rayyān,,,3260,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Sawdā Nathīl [Sawda Natheel],Ar-Rayyān,,,236,Zone,Doha,,Doha,,Ar-RayyānQatar,region,1,QA-RA,الريان,,,,,,,,,,,,region,1,QA-RA,الريان,NONE,0.0,QA-RA
+Qatar,Rawḍat Rāshid [Rawdat Rashed],Ash-Shaḥāniyah [Al Shahaniya],,,74576,Zone,Doha,,Doha,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,region,1,QA-SH,الشحانية,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ash-Shaḥāniyah [Al Shahaniya],Ash-Shaḥāniyah [Al Shahaniya],,,67181,Zone,Doha,,Doha,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,region,1,QA-SH,الشحانية,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Dukhān [Dukhan],Ash-Shaḥāniyah [Al Shahaniya],,,10202,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,region,1,QA-SH,الشحانية,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,An-Naṣrāniyah [Al Nasraniya],Ash-Shaḥāniyah [Al Shahaniya],,,3331,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,region,1,QA-SH,الشحانية,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Jumayliyah [Al Jemailiya],Ash-Shaḥāniyah [Al Shahaniya],,,2573,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,region,1,QA-SH,الشحانية,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Umm Bāb [Umm Bab],Ash-Shaḥāniyah [Al Shahaniya],,,1769,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,region,1,QA-SH,الشحانية,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-'Uṭūriyah [Al Utouriya],Ash-Shaḥāniyah [Al Shahaniya],,,1608,Zone,,,#N/A,,Ash-Shaḥāniyah [Al Shahaniya]Qatar,region,1,QA-SH,الشحانية,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Ar-Ruwaīs / Madīnat ash-Shamāl [Ar Ru'ays / Madinat Al Shamal],Ash-Shamāl,,,12585,Zone,Al Khor,,Al Khor,,Ash-ShamālQatar,region,1,QA-MS,الشمال,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Abū Ẓalūf / Az-Zubārah [Abu Dhalouf / Al Zubara],Ash-Shamāl,,,2635,Zone,Al Khor,,Al Khor,,Ash-ShamālQatar,region,1,QA-MS,الشمال,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Fuwayriṭ / 'Aīn Sinān / Madīnat al-Ka'abān [Fuwayrit / Ain Sinan / Madinat Al Kaaban],Ash-Shamāl,,,1510,Zone,Al Khor,,Al Khor,,Ash-ShamālQatar,region,1,QA-MS,الشمال,,,,,,,,,,,,,,,,NONE,0.0,
+Qatar,Al-Kharaīṭiyāt [Al Kharaitiyat / Izghawa / Umm Slal Mohammed / Bu Fesseela / Umm Slal Ali / Umm Al Amad / Umm Obairiya / Lekhshaina / Sunay Lehmaidi],Umm Ṣalāl,,,149701,Zone,Doha,,Doha,,Umm ṢalālQatar,region,1,QA-US,أم صلال,,,,,,,,,,,,region,1,QA-US,أم صلال,NONE,0.0,QA-US

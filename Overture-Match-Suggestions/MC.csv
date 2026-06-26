@@ -1,0 +1,9 @@
+﻿me,Country,Municipality,Distri rrondissement/County,State/Region (ISO 3166-2),Population,Metro Area,Type,Lookup,Metro Area Check,Code,Part,Township,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+,Monaco,Condamine,Condamine,Condamine,5141,Monaco,Quarter,,Monaco,,,,macrohood,,,La Condamine,,,,,,,,,,,,,,,NONE,0.0,
+,Monaco,Jardin Exotique,Condamine,Condamine,5117,Monaco,Quarter,,Monaco,,,,macrohood,,,La Condamine,,,,,,,,,,,,,,,NONE,0.0,
+,Monaco,Les Moneghetti (incl. Ravin de Sainte-Dévote),Condamine,Condamine,4195,Monaco,Quarter,,Monaco,,,,macrohood,,,La Condamine,,,,,,,,,,,,,,,NONE,0.0,
+,Monaco,Fontvielle,Fontvielle,Fontvielle,4420,Monaco,Quarter,,Monaco,,,,macrohood,,,Fontvieille,,,,,,,,,,,,,,,NONE,0.0,
+,Monaco,Monaco-Ville,Monaco-Ville,Monaco-Ville,1064,Monaco,Quarter,,Monaco,,,,macrohood,,,Monaco-Ville,,,,,,,,,,,,,,,NONE,0.0,
+,Monaco,Monte-Carlo,Monte-Carlo,Monte-Carlo,8259,Monaco,Quarter,,Monaco,,,,macrohood,,,Monte-Carlo,,,,,,,,,,,,,,,NONE,0.0,
+,Monaco,La Rousse,Monte-Carlo,Monte-Carlo,7087,Monaco,Quarter,,Monaco,,,,macrohood,,,Monte-Carlo,,,,,,,,,,,,,,,NONE,0.0,
+,Monaco,Larvotto,Monte-Carlo,Monte-Carlo,2026,Monaco,Quarter,,Monaco,,,,macrohood,,,Monte-Carlo,,,,,,,,,,,,,,,NONE,0.0,

@@ -380,3 +380,18 @@ export function getChampionsWithLinks(): ChampionRow[] {
 
 // Scope ordering for the hub's grouped layout.
 export const SCOPE_ORDER: ChampionRow["scopeType"][] = ["International", "Continental", "Domestic"];
+
+// Resolve a champion's team page from minimal fields, reusing the same intl /
+// club routing as the current-champions board. Used by lib/championsHistory to
+// link every all-time roll row. Pass the CANONICAL team name (it resolves to
+// franchise/national pages); the era name often will not.
+export function championTeamHref(row: {
+  sport: string;
+  team: string;
+  competition: string;
+  scopeType: string | null;
+  year: number | null;
+}): string | null {
+  const c = row as unknown as Championship;
+  return row.scopeType === "International" ? intlTeamHref(c) : clubTeamHref(c);
+}

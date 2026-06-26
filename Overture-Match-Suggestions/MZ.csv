@@ -1,0 +1,162 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Mozambique,Pemba,Cabo Delgado,,,200529,City,Pemba,,Pemba,,Cabo DelgadoMozambique,county,2,MZ-P,Cidade de Pemba,,,,,,,,,,,,region,1,MZ-P,Cabo Delgado,NONE,0.0,MZ-P
+Mozambique,Chiúre,Cabo Delgado,,,299235,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Chiúre,,,,county,2,MZ-P,Chiúre,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Montepuez,Cabo Delgado,,,272069,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Montepuez,,,,county,2,MZ-P,Montepuez,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Namuno,Cabo Delgado,,,245248,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Namuno,,,,county,2,MZ-P,Namuno,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Balama,Cabo Delgado,,,175733,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Balama,,,,county,2,MZ-P,Balama,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Mueda,Cabo Delgado,,,170347,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Mueda,,,,county,2,MZ-P,Mueda,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Ancuabe,Cabo Delgado,,,159340,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Ancuabe,,,,county,2,MZ-P,Ancuabe,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Mocímboa da Praia,Cabo Delgado,,,127705,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Mocimboa da Praia,,,,county,2,MZ-P,Mocimboa da Praia,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Macomia,Cabo Delgado,,,114345,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Macomia,,,,county,2,MZ-P,Macomia,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Muidumbe,Cabo Delgado,,,98864,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Muidumbe,,,,county,2,MZ-P,Muidumbe,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Nangade,Cabo Delgado,,,89714,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Nangade,,,,county,2,MZ-P,Nangade,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Metuge,Cabo Delgado,,,86866,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Metuge,,,,county,2,MZ-P,Metuge,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Palma,Cabo Delgado,,,67025,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Palma,,,,county,2,MZ-P,Palma,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Mecúfi,Cabo Delgado,,,61531,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Mecúfi,,,,county,2,MZ-P,Mecúfi,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Quissanga,Cabo Delgado,,,50259,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Quissanga,,,,county,2,MZ-P,Quissanga,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Meluco,Cabo Delgado,,,36700,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Meluco,,,,county,2,MZ-P,Meluco,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Ibo,Cabo Delgado,,,12205,District,,,#N/A,,Cabo DelgadoMozambique,county,2,MZ-P,Ibo,,,,county,2,MZ-P,Ibo,,,,,region,1,MZ-P,Cabo Delgado,HIGH,1.0,MZ-P
+Mozambique,Chibuto,Gaza,,,217155,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Chibuto,,,,county,2,MZ-G,Chibuto,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Chókwè,Gaza,,,217019,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Chókwè,,,,county,2,MZ-G,Chókwè,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Limpopo (← Xai-Xai Distrito),Gaza,,,150394,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Limpopo,,,,county,2,MZ-G,Limpopo,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Xai-Xai,Gaza,,,141963,City,,,#N/A,,GazaMozambique,county,2,MZ-G,Cidade de Xai-Xai,,,,locality,,MZ-G,Xai-Xai,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Bilene,Gaza,,,140972,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Bilene-Macia,,,,,,,,,,,,region,1,MZ-G,Gaza,NONE,0.0,MZ-G
+Mozambique,Mandlakaze (Manjacaze),Gaza,,,137068,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Manjacaze,,,,,,,,,,,,region,1,MZ-G,Gaza,NONE,0.0,MZ-G
+Mozambique,Chongoene (← Xai-Xai Distrito),Gaza,,,118911,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Chongoene,,,,locality,,MZ-G,Chongoene,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Guijá,Gaza,,,89996,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Guija,,,,county,2,MZ-G,Guija,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Mabalane,Gaza,,,38644,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Mabalane,,,,county,2,MZ-G,Mabalane,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Massingir,Gaza,,,36750,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Massingir,,,,county,2,MZ-G,Massingir,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Mapai (← Chicualacuala),Gaza,,,28441,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Mapai,,,,county,2,MZ-G,Mapai,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Chicualacuala,Gaza,,,27084,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Chicualacuala,,,,county,2,MZ-G,Chicualacuala,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Chigubo,Gaza,,,22080,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Chigubo,,,,county,2,MZ-G,Chigubo,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Massangena,Gaza,,,21562,District,,,#N/A,,GazaMozambique,county,2,MZ-G,Massangena,,,,county,2,MZ-G,Massangena,,,,,region,1,MZ-G,Gaza,HIGH,1.0,MZ-G
+Mozambique,Maxixe,Inhambane,,,129993,City,Inhambane,,Inhambane,,InhambaneMozambique,county,2,MZ-I,Maxixe,,,,county,2,MZ-I,Maxixe,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Jangamo,Inhambane,,,105306,District,Inhambane,,Inhambane,,InhambaneMozambique,county,2,MZ-I,Jangamo,,,,county,2,MZ-I,Jangamo,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Inhambane,Inhambane,,,82119,City,Inhambane,,Inhambane,,InhambaneMozambique,county,2,MZ-I,Cidade de Inhambane,,,,region,1,MZ-I,Inhambane,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Vilankulo (Vilanculos),Inhambane,,,151709,District,Vilankulo,,Vilankulo,,InhambaneMozambique,county,2,MZ-I,Vilankulo,,,,county,2,MZ-I,Vilankulo,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Massinga,Inhambane,,,236939,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Massinga,,,,county,2,MZ-I,Massinga,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Zavala,Inhambane,,,151308,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Zavala,,,,county,2,MZ-I,Zavala,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Morrumbene,Inhambane,,,136980,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Morrumbene,,,,county,2,MZ-I,Morrumbene,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Homoine,Inhambane,,,114877,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Homoine,,,,county,2,MZ-I,Homoine,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Inharrime,Inhambane,,,113288,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Inharrime,,,,county,2,MZ-I,Inharrime,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Inhassoro,Inhambane,,,57037,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Inhassoro,,,,county,2,MZ-I,Inhassoro,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Mabote,Inhambane,,,51046,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Mabote,,,,county,2,MZ-I,Mabote,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Funhalouro,Inhambane,,,44140,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Funhalouro,,,,county,2,MZ-I,Funhalouro,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Panda,Inhambane,,,43968,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Panda,,,,county,2,MZ-I,Panda,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Govuro,Inhambane,,,36094,District,,,#N/A,,InhambaneMozambique,county,2,MZ-I,Govuro,,,,county,2,MZ-I,Govuro,,,,,region,1,MZ-I,Inhambane,HIGH,1.0,MZ-I
+Mozambique,Chimoio,Manica,,,363336,City,Chimoio,,Chimoio,,ManicaMozambique,county,2,MZ-B,Cidade de Chimoio,,,,,,,,,,,,region,1,MZ-B,Manica,NONE,0.0,MZ-B
+Mozambique,Manica,Manica,,,215239,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Manica,,,,county,2,MZ-B,Manica,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Mossurize,Manica,,,203738,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Mossurize,,,,county,2,MZ-B,Mossurize,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Gondola,Manica,,,192314,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Gondola,,,,county,2,MZ-B,Gondola,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Báruè,Manica,,,185641,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Barue,,,,county,2,MZ-B,Barue,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Sussundenga,Manica,,,168442,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Sussundenga,,,,county,2,MZ-B,Sussundenga,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Machaze,Manica,,,126488,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Machaze,,,,county,2,MZ-B,Machaze,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Vanduzi (← Manica),Manica,,,115532,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Vanduzi,,,,county,2,MZ-B,Vanduzi,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Guro,Manica,,,97141,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Guro,,,,county,2,MZ-B,Guro,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Macate (← Gondola),Manica,,,84429,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Macate,,,,locality,,MZ-B,Macate,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Tambara,Manica,,,53499,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Tambara,,,,county,2,MZ-B,Tambara,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Macossa,Manica,,,46132,District,,,#N/A,,ManicaMozambique,county,2,MZ-B,Macossa,,,,county,2,MZ-B,Macossa,,,,,region,1,MZ-B,Manica,HIGH,1.0,MZ-B
+Mozambique,Matola,Maputo,,,1032197,City,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Matola,,,,county,2,MZ-L,Matola,,,,,region,1,MZ-L,Maputo,HIGH,1.0,MZ-L
+Mozambique,Marracuene,Maputo,,,218788,District,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Marracuene,,,,county,2,MZ-L,Marracuene,,,,,region,1,MZ-L,Maputo,HIGH,1.0,MZ-L
+Mozambique,Boane,Maputo,,,210367,District,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Boane,,,,county,2,MZ-L,Boane,,,,,region,1,MZ-L,Maputo,HIGH,1.0,MZ-L
+Mozambique,Manhiça,Maputo,,,205053,District,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Manhiça,,,,county,2,MZ-L,Manhiça,,,,,region,1,MZ-L,Maputo,HIGH,1.0,MZ-L
+Mozambique,Moamba,Maputo,,,88583,District,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Moamba,,,,county,2,MZ-L,Moamba,,,,,region,1,MZ-L,Maputo,HIGH,1.0,MZ-L
+Mozambique,Magude,Maputo,,,62297,District,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Magude,,,,county,2,MZ-L,Magude,,,,,region,1,MZ-L,Maputo,HIGH,1.0,MZ-L
+Mozambique,Namaacha,Maputo,,,47129,District,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Naamacha,,,,county,2,MZ-L,Naamacha,,,,,region,1,MZ-L,Maputo,LOW,0.875,MZ-L
+Mozambique,Matutuíne,Maputo,,,43664,District,Maputo,,Maputo,,MaputoMozambique,county,2,MZ-L,Matutuíne,,,,county,2,MZ-L,Matutuíne,,,,,region,1,MZ-L,Maputo,HIGH,1.0,MZ-L
+Mozambique,KaMavota (Distrito Urbano 4),Maputo City,,,326771,City District,Maputo,,Maputo,,Maputo CityMozambique,region,1,MZ-MPM,Cidade de Maputo,,,,,,,,,,,,region,1,MZ-L,Maputo,NONE,0.0,MZ-L
+Mozambique,KaMubukwana (Distrito Urbano 5),Maputo City,,,319968,City District,Maputo,,Maputo,,Maputo CityMozambique,region,1,MZ-MPM,Cidade de Maputo,,,,,,,,,,,,region,1,MZ-L,Maputo,NONE,0.0,MZ-L
+Mozambique,KaMaxakeni (Distrito Urbano 3),Maputo City,,,195556,City District,Maputo,,Maputo,,Maputo CityMozambique,region,1,MZ-MPM,Cidade de Maputo,,,,,,,,,,,,region,1,MZ-L,Maputo,NONE,0.0,MZ-L
+Mozambique,Nlhamankulu (Distrito Urbano 2),Maputo City,,,127079,City District,Maputo,,Maputo,,Maputo CityMozambique,region,1,MZ-MPM,Cidade de Maputo,,,,,,,,,,,,region,1,MZ-L,Maputo,NONE,0.0,MZ-L
+Mozambique,KaMphumu (Distrito Urbano 1),Maputo City,,,76157,City District,Maputo,,Maputo,,Maputo CityMozambique,region,1,MZ-MPM,Cidade de Maputo,,,,,,,,,,,,region,1,MZ-L,Maputo,NONE,0.0,MZ-L
+Mozambique,KaTembe (Catembe),Maputo City,,,28788,City District,Maputo,,Maputo,,Maputo CityMozambique,region,1,MZ-MPM,Cidade de Maputo,,,,,,,,,,,,region,1,MZ-L,Maputo,NONE,0.0,MZ-L
+Mozambique,KaNyaka (Inhaca),Maputo City,,,5958,City District,Maputo,,Maputo,,Maputo CityMozambique,region,1,MZ-MPM,Cidade de Maputo,,,,,,,,,,,,region,1,MZ-L,Maputo,NONE,0.0,MZ-L
+Mozambique,Nacala (Nacala Porto),Nampula,,,287536,City,Nacala,,Nacala,,NampulaMozambique,county,2,MZ-N,Cidade de Nacala,,,,,,,,,,,,region,1,MZ-N,Nampula,NONE,0.0,MZ-N
+Mozambique,Nampula,Nampula,,,760214,City,Nampula,,Nampula,,NampulaMozambique,county,2,MZ-N,Cidade de Nampula,,,,region,1,MZ-N,Nampula,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Rapale (Nampula Distrito),Nampula,,,166327,District,Nampula,,Nampula,,NampulaMozambique,county,2,MZ-N,Rapale,,,,county,2,MZ-N,Rapale,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Monapo,Nampula,,,393813,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Monapo,,,,county,2,MZ-N,Monapo,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Eráti,Nampula,,,387713,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Eráti,,,,county,2,MZ-N,Eráti,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Mogovolas,Nampula,,,368905,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Mogovolas,,,,county,2,MZ-N,Mogovolas,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Angoche,Nampula,,,347176,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Angoche,,,,county,2,MZ-N,Angoche,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Memba,Nampula,,,328460,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Memba,,,,county,2,MZ-N,Memba,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Moma,Nampula,,,324442,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Moma,,,,county,2,MZ-N,Moma,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Ribáuè,Nampula,,,256144,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Ribaué,,,,county,2,MZ-N,Ribaué,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Meconta,Nampula,,,223760,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Meconta,,,,county,2,MZ-N,Meconta,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Malema,Nampula,,,213011,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Malema,,,,county,2,MZ-N,Malema,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Mecubúri,Nampula,,,207285,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Mecuburi,,,,county,2,MZ-N,Mecuburi,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Murrupula,Nampula,,,184732,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Murrupula,,,,county,2,MZ-N,Murrupula,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Mossuril,Nampula,,,174641,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Mossuril,,,,county,2,MZ-N,Mossuril,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Nacarôa,Nampula,,,145450,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Nacarôa,,,,county,2,MZ-N,Nacarôa,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Muecate,Nampula,,,134280,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Muecate,,,,county,2,MZ-N,Muecate,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Nacala-a-Velha,Nampula,,,121726,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Nacala-a-Velha,,,,county,2,MZ-N,Nacala-a-Velha,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Lalaua,Nampula,,,107369,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Lalaua,,,,county,2,MZ-N,Lalaua,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Larde (← Moma),Nampula,,,98385,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Larde,,,,county,2,MZ-N,Larde,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Mogincual,Nampula,,,98177,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Mogincual,,,,county,2,MZ-N,Mogincual,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Liúpo (← Mogincual),Nampula,,,89259,District,,,#N/A,,NampulaMozambique,county,2,MZ-N,Liúpo,,,,county,2,MZ-N,Liúpo,,,,,region,1,MZ-N,Nampula,HIGH,1.0,MZ-N
+Mozambique,Ilha de Mocambique [Island of Mozambique],Nampula,,,64577,City,,,#N/A,,NampulaMozambique,county,2,MZ-N,Ilha de Moçambique,,,,,,,,,,,,region,1,MZ-N,Nampula,NONE,0.0,MZ-N
+Mozambique,Mecanhelas,Niassa,,,269619,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Mecanhelas,,,,county,2,MZ-A,Mecanhelas,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Cuamba,Niassa,,,267928,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Cuamba,,,,county,2,MZ-A,Cuamba,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Lichinga,Niassa,,,242204,City,,,#N/A,,NiassaMozambique,county,2,MZ-A,Cidade de Lichinga,,,,,,,,,,,,region,1,MZ-A,Niassa,NONE,0.0,MZ-A
+Mozambique,Mandimba,Niassa,,,211979,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Mandimba,,,,county,2,MZ-A,Mandimba,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Lago,Niassa,,,106968,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Lago,,,,county,2,MZ-A,Lago,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,N'gauma,Niassa,,,95823,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,N'gauma,,,,county,2,MZ-A,N'gauma,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Marrupa,Niassa,,,77808,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Marrupa,,,,county,2,MZ-A,Marrupa,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Sanga,Niassa,,,75658,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Sanga,,,,county,2,MZ-A,Sanga,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Chimbonila (Lichinga Distrito),Niassa,,,72503,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Chimbonila,,,,county,2,MZ-A,Chimbonila,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Maúa,Niassa,,,68260,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Maúa,,,,county,2,MZ-A,Maúa,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Metarica,Niassa,,,45303,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Metarica,,,,county,2,MZ-A,Metarica,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Nipepe,Niassa,,,45086,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Nipepe,,,,county,2,MZ-A,Nipepe,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Muembe,Niassa,,,43787,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Muembe,,,,county,2,MZ-A,Muembe,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Majune,Niassa,,,40004,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Majune,,,,county,2,MZ-A,Majune,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Mavago,Niassa,,,29933,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Mavago,,,,locality,,MZ-A,Mavago,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Mecula,Niassa,,,20888,District,,,#N/A,,NiassaMozambique,county,2,MZ-A,Mecula,,,,county,2,MZ-A,Mecula,,,,,region,1,MZ-A,Niassa,HIGH,1.0,MZ-A
+Mozambique,Beira,Sofala,,,592090,City,Beira,,Beira,,SofalaMozambique,county,2,MZ-S,Cidade da Beira,,,,,,,,,,,,region,1,MZ-S,Sofala,NONE,0.0,MZ-S
+Mozambique,Dondo,Sofala,,,193382,District,Beira,,Beira,,SofalaMozambique,county,2,MZ-S,Dondo,,,,county,2,MZ-S,Dondo,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Nhamatanda,Sofala,,,279081,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Nhamatanda,,,,county,2,MZ-S,Nhamatanda,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Búzi,Sofala,,,177415,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Buzi,,,,county,2,MZ-S,Buzi,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Gorongosa,Sofala,,,176845,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Gorongosa,,,,county,2,MZ-S,Gorongosa,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Caia,Sofala,,,158256,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Caia,,,,county,2,MZ-S,Caia,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Marromeu,Sofala,,,154361,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Marromeu,,,,county,2,MZ-S,Marromeu,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Chibabava,Sofala,,,135202,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Chibabava,,,,county,2,MZ-S,Chibabava,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Maringué,Sofala,,,95362,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Maringué,,,,county,2,MZ-S,Maringué,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Chemba,Sofala,,,83257,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Chemba,,,,county,2,MZ-S,Chemba,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Cheringoma,Sofala,,,57572,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Cheringoma,,,,county,2,MZ-S,Cheringoma,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Machanga,Sofala,,,55848,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Machanga,,,,county,2,MZ-S,Machanga,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Muanza,Sofala,,,38174,District,,,#N/A,,SofalaMozambique,county,2,MZ-S,Muanza,,,,county,2,MZ-S,Muanza,,,,,region,1,MZ-S,Sofala,HIGH,1.0,MZ-S
+Mozambique,Tete,Tete,,,307338,City,Tete,,Tete,,TeteMozambique,county,2,MZ-T,Cidade de Tete,,,,region,1,MZ-T,Tete,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Angónia,Tete,,,472164,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Angónia,,,,county,2,MZ-T,Angónia,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Moatize,Tete,,,260843,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Moatize,,,,county,2,MZ-T,Moatize,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Tsangano,Tete,,,214560,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Tsangano,,,,county,2,MZ-T,Tsangano,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Mutarara,Tete,,,168058,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Mutarara,,,,county,2,MZ-T,Mutarara,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Macanga,Tete,,,158881,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Macanga,,,,county,2,MZ-T,Macanga,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Chifunde,Tete,,,157647,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Chifunde,,,,county,2,MZ-T,Chifunde,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Cahora-Bassa,Tete,,,128768,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Cahora-Bassa,,,,county,2,MZ-T,Cahora-Bassa,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Marávia,Tete,,,126630,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Marávia,,,,county,2,MZ-T,Marávia,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Changara,Tete,,,123056,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Changara,,,,county,2,MZ-T,Changara,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Chiuta,Tete,,,101341,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Chiuta,,,,county,2,MZ-T,Chiuta,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Magoé,Tete,,,89273,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Magoé,,,,county,2,MZ-T,Magoé,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Dôa (← Mutarara),Tete,,,87077,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Dôa,,,,county,2,MZ-T,Dôa,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Zumbo,Tete,,,83144,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Zumbu,,,,county,2,MZ-T,Zumbu,,,,,region,1,MZ-T,Tete,LOW,0.8,MZ-T
+Mozambique,Marara (← Changara),Tete,,,73044,District,,,#N/A,,TeteMozambique,county,2,MZ-T,Marara,,,,county,2,MZ-T,Marara,,,,,region,1,MZ-T,Tete,HIGH,1.0,MZ-T
+Mozambique,Quelimane,Zambézia,,,349842,City,Quelimane,,Quelimane,,ZambéziaMozambique,county,2,MZ-Q,Cidade de Quelimane,,,,,,,,,,,,region,1,MZ-Q,Zambézia,NONE,0.0,MZ-Q
+Mozambique,Milange,Zambézia,,,619275,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Milange,,,,county,2,MZ-Q,Milange,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Mocuba,Zambézia,,,422681,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Mocuba,,,,county,2,MZ-Q,Mocuba,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Gurué,Zambézia,,,420869,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Gurué,,,,county,2,MZ-Q,Gurué,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Morrumbala,Zambézia,,,380189,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Morrumbala,,,,county,2,MZ-Q,Morrumbala,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Alto Molócuè,Zambézia,,,341184,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Alto Molocue,,,,county,2,MZ-Q,Alto Molocue,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Molumbo (← Milange),Zambézia,,,331980,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Molumbo,,,,county,2,MZ-Q,Molumbo,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Namacurra,Zambézia,,,242126,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Namacurra,,,,county,2,MZ-Q,Namacurra,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Gilé,Zambézia,,,222387,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Gile,,,,county,2,MZ-Q,Gile,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Pebane,Zambézia,,,195857,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Pebane,,,,county,2,MZ-Q,Pebane,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Ile,Zambézia,,,188787,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Ile,,,,county,2,MZ-Q,Ile,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Lugela,Zambézia,,,188659,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Lugela,,,,county,2,MZ-Q,Lugela,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Maganja da Costa,Zambézia,,,183504,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Maganja da Costa,,,,county,2,MZ-Q,Maganja da Costa,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Nicoadala,Zambézia,,,180686,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Nicoadala,,,,county,2,MZ-Q,Nicoadala,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Namarroi,Zambézia,,,149898,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Namarroi,,,,county,2,MZ-Q,Namarroi,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Mopeia,Zambézia,,,136520,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Mopeia,,,,county,2,MZ-Q,Mopeia,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Mocubela (← Maganja da Costa),Zambézia,,,110857,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Mocubela,,,,county,2,MZ-Q,Mocubela,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Derre (← Morrumbala),Zambézia,,,107980,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Derre,,,,county,2,MZ-Q,Derre,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Mulevala (← Ile),Zambézia,,,106192,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Mulevala,,,,county,2,MZ-Q,Mulevala,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Inhassunge,Zambézia,,,91653,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Inhassunge,,,,county,2,MZ-Q,Inhassunge,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Chinde,Zambézia,,,85408,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Chinde,,,,county,2,MZ-Q,Chinde,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q
+Mozambique,Luabo (← Chinde),Zambézia,,,54253,District,,,#N/A,,ZambéziaMozambique,county,2,MZ-Q,Luabo,,,,county,2,MZ-Q,Luabo,,,,,region,1,MZ-Q,Zambézia,HIGH,1.0,MZ-Q

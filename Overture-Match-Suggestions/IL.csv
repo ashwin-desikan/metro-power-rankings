@@ -1,256 +1,256 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Israel,Gan Yavne,Center,,,23869,Local Council Area,Ashdod,,Ashdod,,CenterIsrael,,,,,locality,,IL-M,גן יבנה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Hevel Yavne,Center,,,7000,Regional Council Area,Ashdod,,Ashdod,,CenterIsrael,,,,,locality,,IL-M,מועצה אזורית חבל יבנה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Gederot,Center,,,5200,Regional Council Area,Ashdod,,Ashdod,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Netanya,Center,,,221353,City,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,נתניה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Tayibe,Center,,,43957,City,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,الطيبة,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Hefer Valley,Center,,,42600,Regional Council Area,Netanya,,Netanya,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Tira,Center,,,26552,City,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,الطيرة,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Kfar Yona,Center,,,24778,City,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,כפר יונה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Lev HaSharon,Center,,,23600,Regional Council Area,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,מועצה אזורית לב השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Qalansawe,Center,,,23143,City,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,قلنسوة,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Kadima-Tzoran,Center,,,22683,Local Council Area,Netanya,,Netanya,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Hof HaSharon,Center,,,14400,Regional Council Area,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,מועצה אזורית חוף השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Even Yehuda,Center,,,13826,Local Council Area,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,אבן יהודה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Tel Mond,Center,,,13144,Local Council Area,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,תל מונד,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Zemer,Center,,,7094,Local Council Area,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,زيمر‎,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Pardesiya,Center,,,5930,Local Council Area,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,פרדסיה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Elyakhin,Center,,,3415,Local Council Area,Netanya,,Netanya,,CenterIsrael,,,,,locality,,IL-M,אליכין,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Rishon LeZion,Center,,,254384,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,ראשון לציון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Petah Tikva,Center,,,247956,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,פתח תקווה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Rehovot,Center,,,143904,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,רחובות,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Kfar Saba,Center,,,101432,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,כפר סבא,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Maccabim,Center,,,93277,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Lod,Center,,,77223,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,לוד,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Ramla,Center,,,76246,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,רמלה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Ra'anana,Center,,,75421,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,רעננה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Hod HaSharon,Center,,,63175,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,הוד השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Rosh HaAyin,Center,,,61801,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,ראש העין,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Ness Ziona,Center,,,50351,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,נס ציונה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,El'ad,Center,,,48763,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,אלעד,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Yavne,Center,,,47585,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,יבנה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Drom HaSharon,Center,,,33900,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,מועצה אזורית דרום השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Yehud,Center,,,29928,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Gedera,Center,,,28313,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,גדרה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Be'er Ya'akov,Center,,,27768,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,באר יעקב,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Gezer,Center,,,27200,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,גזר,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Giv'at Shmuel,Center,,,26578,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,גבעת שמואל,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Kafr Qasim,Center,,,23823,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,كفر قاسم‎,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Hevel Modi'in,Center,,,23800,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Shoham,Center,,,21045,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,שוהם,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Ganei Tikva,Center,,,20398,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,גני תקווה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,"Emeq Lod, Lod Valley",Center,,,15700,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Mazkeret Batya,Center,,,14837,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,מזכרת בתיה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Kiryat Ekron,Center,,,11001,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,קרית עקרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Jaljulia,Center,,,10148,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,جلجولية,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Nahal Sorek,Center,,,9800,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,מועצה אזורית נחל שורק,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Kokhav Ya'ir,Center,,,8702,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Brenner,Center,,,8100,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
-Israel,Beit Dagan,Center,,,7285,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,בית דגן,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Bnei Ayish,Center,,,6978,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,"בני עי""ש",,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Gan Raveh,Center,,,6500,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,מועצה אזורית גן רווה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Savyon,Center,,,4036,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,סביון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Kafr Bara,Center,,,3678,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,,,,,locality,,IL-M,كفر برا,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
-Israel,Haifa,Haifa,,,285316,City,Haifa,,Haifa,,HaifaIsrael,,,,,region,1,IL-HA,מחוז חיפה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Hadera,Haifa,,,97335,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,חדרה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Kiryat Ata,Haifa,,,59030,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,קרית אתא,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Umm al-Fahm,Haifa,,,56109,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,أم الفحم,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Kiryat Motzkin,Haifa,,,43303,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,קריית מוצקין,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Pardes Hanna-Karkur,Haifa,,,43011,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,פרדס חנה-כרכור,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Kiryat Bialik,Haifa,,,40231,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,קרית ביאליק,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Kiryat Yam,Haifa,,,39897,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,קריית ים,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Hof HaCarmel,Haifa,,,33100,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,מועצה אזורית חוף הכרמל,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Baqa al-Gharbiyye,Haifa,,,29950,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,باقة الغربية,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Ar'ara,Haifa,,,25245,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,عرعرة,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Nesher,Haifa,,,24148,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,נשר,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Zikhron Ya'akov,Haifa,,,23206,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,,,,,,,,,region,1,IL-HA,מחוז חיפה,NONE,0.0,IL-HA
-Israel,Tirat Carmel,Haifa,,,23112,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,טירת הכרמל,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Menashe,Haifa,,,20800,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,מועצה אזורית מנשה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Kafr Qara,Haifa,,,19018,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,كفر قرع,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Or Akiva,Haifa,,,18972,City,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,אור עקיבא,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Kiryat Tiv'on,Haifa,,,18130,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,קריית טבעון,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Carmel City,Haifa,,,17653,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,רובע הכרמל,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Binyamina-Giv'at Ada,Haifa,,,15847,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,בנימינה - גבעת עדה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Ma'ale Iron,Haifa,,,15065,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,طلعة عارة,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Jisr Az-Zarqa,Haifa,,,14930,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,جسر الزرقاء,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Zevulun,Haifa,,,13600,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,,,,,,,,,region,1,IL-HA,מחוז חיפה,NONE,0.0,IL-HA
-Israel,Fureidis,Haifa,,,13247,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,الفريديس,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Harish,Haifa,,,13232,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,חריש,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Rekhasim,Haifa,,,12668,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,רכסים,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Isfiya,Haifa,,,12503,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,عسفيا,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Jatt,Haifa,,,12100,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,جت,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Basma,Haifa,,,10010,Local Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,بسمة,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Alona,Haifa,,,2300,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,,,,,locality,,IL-HA,מועצה אזורית אלונה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
-Israel,Jerusalem,Jerusalem,,,936425,City,Jerusalem,,Jerusalem,,JerusalemIsrael,,,,,region,1,IL-JM,מחוז ירושלים,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
-Israel,Beit Shemesh,Jerusalem,,,124957,City,Jerusalem,,Jerusalem,,JerusalemIsrael,,,,,locality,,IL-JM,בית שמש,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
-Israel,Mateh Yehuda,Jerusalem,,,60700,Regional Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,,,,,locality,,IL-JM,מועצה אזורית מטה יהודה,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
-Israel,Mevaseret Zion,Jerusalem,,,24052,Local Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,,,,,locality,,IL-JM,מבשרת ציון,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
-Israel,Abu Ghosh,Jerusalem,,,7698,Local Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,,,,,locality,,IL-JM,أبو غوش‎,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
-Israel,Kiryat Ye'arim,Jerusalem,,,6128,Local Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,,,,,,,,,,,,,region,1,IL-JM,מחוז ירושלים,NONE,0.0,IL-JM
-Israel,Acre,North,,,49380,City,Acre,,Acre,,NorthIsrael,,,,,locality,,IL-Z,עכו,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Afula,North,,,54250,City,Afula,,Afula,,NorthIsrael,,,,,locality,,IL-Z,עפולה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Bustan al-Marj,North,,,7900,Regional Council Area,Afula,,Afula,,NorthIsrael,,,,,locality,,IL-Z,مجلس إقليمي بستان المرج,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Gilboa,North,,,30800,Regional Council Area,Gilboa,,Gilboa,,NorthIsrael,,,,,locality,,IL-Z,מועצה אזורית גלבוע,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kiryat Shmona,North,,,22512,City,Kiryat Shmona,,Kiryat Shmona,,NorthIsrael,,,,,locality,,IL-Z,קרית שמונה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Nahariya,North,,,58096,City,Nahariya,,Nahariya,,NorthIsrael,,,,,locality,,IL-Z,נהריה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Mazra'a,North,,,3929,Local Council Area,Nahariya,,Nahariya,,NorthIsrael,,,,,locality,,IL-Z,المزرعة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Nazareth,North,,,77445,City,Nazareth,,Nazareth,,NorthIsrael,,,,,locality,,IL-Z,الناصرة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Nazerat Illit,North,,,41734,City,Nazareth,,Nazareth,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Migdal HaEmek,North,,,25675,City,Nazareth,,Nazareth,,NorthIsrael,,,,,locality,,IL-Z,מגדל העמק,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Yafa an-Naseriyye,North,,,19151,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,,,,,locality,,IL-Z,يافة الناصرة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Reine,North,,,19001,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,,,,,locality,,IL-Z,الرينة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Ein Mahil,North,,,13335,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,,,,,locality,,IL-Z,عين ماهل,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Ilut,North,,,8356,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,,,,,locality,,IL-Z,عيلوط,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Sakhnin,North,,,31702,City,Sakhnin,,Sakhnin,,NorthIsrael,,,,,locality,,IL-Z,سخنين,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Arraba,North,,,25833,Local Council Area,Sakhnin,,Sakhnin,,NorthIsrael,,,,,locality,,IL-Z,عرابة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Tiberias,North,,,44779,City,Tiberias,,Tiberias,,NorthIsrael,,,,,locality,,IL-Z,טבריה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Karmi'el,North,,,46252,City,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Shefa-'Amr,North,,,42137,City,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,شفا عمرو,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Jezreel Valley,North,,,39000,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מועצה אזורית עמק יזרעאל,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Safed,North,,,36094,City,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,צפת,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Tamra,North,,,34392,City,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,טמרה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Mateh Asher,North,,,29700,Regional Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Misgav,North,,,29100,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מועצה אזורית משגב,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Yokneam Illit,North,,,23796,City,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,יוקנעם עילית,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Maghar,North,,,22957,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,المغار,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kafr Kanna,North,,,22751,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Ma'alot-Tarshiha,North,,,21836,City,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מעלות תרשיחא,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Jadeidi-Makr,North,,,21163,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,جديدة-المكر,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kafr Manda,North,,,20188,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,كفر مندا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Upper Galilee,North,,,18600,Regional Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Beit She'an,North,,,18464,City,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,בית שאן,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Golan,North,,,18000,Regional Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Yarka,North,,,17171,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,يركا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Merom HaGalil,North,,,15500,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מועצה אזורית מרום הגליל,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Majd al-Krum,North,,,15455,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,مجد الكروم,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Iksal,North,,,14784,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,إكسال,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Tur'an,North,,,14240,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,طرعان,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Abu Snan,North,,,14099,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,أبو سنان,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kabul,North,,,14095,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,كابول,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Emek HaYarden,North,,,13900,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מועצה אזורית עמק הירדן,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Valley of Springs,North,,,13700,Regional Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,I'billin,North,,,13305,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,إعبلين,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Nahf,North,,,13113,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,نحف,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Deir al-Asad,North,,,12514,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,دير الأسد,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Lower Galilee,North,,,12500,Regional Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Beit Jann,North,,,12001,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,بيت جن,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Megiddo,North,,,11900,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מגידו,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Majdal Shams,North,,,11180,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Ma'ale Yosef,North,,,10800,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מועצה אזורית מעלה יוסף,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Daburiyya,North,,,10510,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,دبورية,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Deir Hanna,North,,,10339,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,دير حنا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kafr Yasif,North,,,10133,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,كفر ياسيف,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Bu'eine-Nujeidat,North,,,9812,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Bir al-Maksur,North,,,9522,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,بئر المكسور,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Hatzor HaGlilit,North,,,9272,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,חצור הגלילית,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kisra-Sumei,North,,,8818,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,كيسرى-كفر سميع,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Bi'ina,North,,,8381,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,البعنة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Mashhad,North,,,8373,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,المشهد,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Zarzir,North,,,8119,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,زرزير,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Al-Batuf,North,,,8000,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,مجلس إقليمي البطوف,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Basmat Tab'un,North,,,7916,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,بسمة طبعون,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Ramat Yishai,North,,,7785,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,רמת ישי,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Rame,North,,,7728,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Mevo'ot HaHermon,North,,,7400,Regional Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מועצה אזורית מבואות החרמון,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Katzrin,North,,,7297,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Sha'ab,North,,,7061,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,شعب‎,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Tuba-Zangariyye,North,,,6776,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,طوبا الزنغرية,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Yanuh-Jat,North,,,6679,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,يانوح جت,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Buq'ata,North,,,6610,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Shlomi,North,,,6511,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,שלומי,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Julis,North,,,6465,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,جولس,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Hurfeish,North,,,6410,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,حرفيش,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Shibli - Umm al-Ghanam,North,,,6053,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Peki'in,North,,,5893,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,البقيعة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Eilabun,North,,,5752,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,عيلبون,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Ka'abiyye-Tabbash-Hajajre,North,,,5504,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,كعبية طباش حجاجرة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kfar Vradim,North,,,5486,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,כפר ורדים,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kfar Tavor,North,,,4311,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,כפר תבור,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Sajur,North,,,4270,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,ساجور,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Yavne'el,North,,,4243,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Mas'ade,North,,,3714,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Kaukab Abu al-Hija,North,,,3589,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,كوكب أبو الهيجاء,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Kfar Kama,North,,,3373,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,Кфар Кама,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Mi'ilya,North,,,3244,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,معليا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Fassuta,North,,,3172,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,فسوطة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Rosh Pinna,North,,,3148,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Jish (Gush Halav),North,,,3105,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,الجش,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Ghajar,North,,,2659,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Ein Qiniyye,North,,,2098,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Migdal,North,,,1952,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מגדל,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Yesud HaMa'ala,North,,,1730,Local Council Area,,,#N/A,,NorthIsrael,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
-Israel,Metula,North,,,1615,Local Council Area,,,#N/A,,NorthIsrael,,,,,locality,,IL-Z,מטולה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
-Israel,Ashdod,South,,,225939,City,Ashdod,,Ashdod,,SouthIsrael,,,,,locality,,IL-D,אשדוד,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Ashkelon,South,,,144073,City,Ashkelon,,Ashkelon,,SouthIsrael,,,,,locality,,IL-D,אשקלון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Hof Ashkelon,South,,,18000,Regional Council Area,Ashkelon,,Ashkelon,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית חוף אשקלון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Beersheba,South,,,209687,City,Beer Sheva,,Beer Sheva,,SouthIsrael,,,,,locality,,IL-D,באר שבע,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Tel as-Sabi,South,,,20808,Local Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,,,,,locality,,IL-D,تل السبع,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Al-Kasom,South,,,15700,Regional Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,,,,,locality,,IL-D,مجلس إقليمي القيصوم,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Shaqib al-Salam,South,,,10936,Local Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,,,,,locality,,IL-D,شقيب السلام,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Bnei Shimon,South,,,10900,Regional Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית בני שמעון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Omer,South,,,7530,Local Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,,,,,locality,,IL-D,עומר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Eilat,South,,,52299,City,Eilat,,Eilat,,SouthIsrael,,,,,locality,,IL-D,אילת,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Rahat,South,,,71437,City,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,رهط,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Kiryat Gat,South,,,57105,City,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,קרית גת,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Netivot,South,,,37542,City,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,נתיבות,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Dimona,South,,,34500,City,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,דימונה,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Ofakim,South,,,30662,City,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,אופקים,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Sderot,South,,,27635,City,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,שדרות,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Arad,South,,,26756,City,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,ערד,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Kiryat Malakhi,South,,,23819,City,,,#N/A,,SouthIsrael,,,,,,,,,,,,,region,1,IL-D,מחוז הדרום,NONE,0.0,IL-D
-Israel,Be'er Tuvia,South,,,23700,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית באר טוביה,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Hura,South,,,22337,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,حورة,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Kuseife,South,,,21866,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,كسيفة,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Ar'arat an-Naqab,South,,,18332,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,عرعرة النقب,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Eshkol,South,,,14500,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית אשכול,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Merhavim,South,,,14200,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית מרחבים,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Lakiya,South,,,14075,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,اللقية,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Lakhish,South,,,12700,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,לכיש,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Neve Midbar,South,,,12300,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,مجلس إقليمي واحة الصحراء,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Shafir,South,,,11200,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,שפיר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Sdot Negev,South,,,10800,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית שדות נגב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Yeruham,South,,,10294,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,ירוחם,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Meitar,South,,,9418,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מיתר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Yoav,South,,,9000,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית יואב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Sha'ar HaNegev,South,,,8400,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית שער הנגב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Ramat Negev,South,,,8100,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית רמת נגב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Lehavim,South,,,6415,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,להבים,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Mitzpe Ramon,South,,,5211,Local Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מצפה רמון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Hevel Eilot,South,,,4400,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית חבל אילות,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Central Arava,South,,,3600,Regional Council Area,,,#N/A,,SouthIsrael,,,,,,,,,,,,,region,1,IL-D,מחוז הדרום,NONE,0.0,IL-D
-Israel,Tamar,South,,,1600,Regional Council Area,,,#N/A,,SouthIsrael,,,,,locality,,IL-D,מועצה אזורית תמר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
-Israel,Tel Aviv-Jaffa,Tel-Aviv,,,460613,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,תל־אביב–יפו,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Bnei Brak,Tel-Aviv,,,204639,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,בני ברק,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Holon,Tel-Aviv,,,196282,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,חולון,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Ramat Gan,Tel-Aviv,,,163480,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,רמת גן,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Bat Yam,Tel-Aviv,,,129013,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,בת ים,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Herzliya,Tel-Aviv,,,97470,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,הרצליה,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Giv'atayim,Tel-Aviv,,,60644,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,,,,,,,,,region,1,IL-TA,מחוז תל אביב,NONE,0.0,IL-TA
-Israel,Ramat HaSharon,Tel-Aviv,,,47245,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,רמת השרון,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Kiryat Ono,Tel-Aviv,,,40409,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,קרית אונו,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Or Yehuda,Tel-Aviv,,,36813,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,אור יהודה,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Azor,Tel-Aviv,,,12957,Local Council Area,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,אזור,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Kfar Shmaryahu,Tel-Aviv,,,1938,Local Council Area,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,,,,,locality,,IL-TA,כפר שמריהו,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
-Israel,Beitar Illit,West Bank,,,59270,City,Jerusalem,,Jerusalem,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Ma'ale Adumim,West Bank,,,38155,City,Jerusalem,,Jerusalem,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Giv'at Ze'ev,West Bank,,,18420,Local Council Area,Jerusalem,,Jerusalem,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Efrat,West Bank,,,10806,Local Council Area,Jerusalem,,Jerusalem,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Har Adar,West Bank,,,4088,Local Council Area,Jerusalem,,Jerusalem,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Modi'in Illit,West Bank,,,76374,City,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Mateh Binyamin,West Bank,,,69300,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Shomron,West Bank,,,45800,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Gush Etzion,West Bank,,,24400,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Ari'el,West Bank,,,20540,City,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Har Hevron,West Bank,,,9200,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Oranit,West Bank,,,8955,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Karnei Shomron,West Bank,,,8135,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Alfei Menashe,West Bank,,,7952,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Kiryat Arba,West Bank,,,7326,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Beit El,West Bank,,,5973,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Bik'at HaYarden,West Bank,,,5400,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Beit Aryeh-Ofarim,West Bank,,,5253,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Kedumim,West Bank,,,4544,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Immanu'el,West Bank,,,3906,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Elkana,West Bank,,,3838,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Megilot,West Bank,,,1800,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
-Israel,Ma'ale Efrayim,West Bank,,,1260,Local Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,NONE,0.0,
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Israel,Gan Yavne,Center,,,23869,Local Council Area,Ashdod,,Ashdod,,CenterIsrael,locality,,IL-M,גן יבנה,,,,locality,,IL-M,גן יבנה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Hevel Yavne,Center,,,7000,Regional Council Area,Ashdod,,Ashdod,,CenterIsrael,locality,,IL-M,מועצה אזורית חבל יבנה,,,,locality,,IL-M,מועצה אזורית חבל יבנה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Gederot,Center,,,5200,Regional Council Area,Ashdod,,Ashdod,,CenterIsrael,locality,,IL-M,מועצה אזורית גדרות,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Netanya,Center,,,221353,City,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,נתניה,,,,locality,,IL-M,נתניה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Tayibe,Center,,,43957,City,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,الطيبة,,,,locality,,IL-M,الطيبة,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Hefer Valley,Center,,,42600,Regional Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,מועצה אזורית עמק חפר,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Tira,Center,,,26552,City,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,الطيرة,,,,locality,,IL-M,الطيرة,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Kfar Yona,Center,,,24778,City,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,כפר יונה,,,,locality,,IL-M,כפר יונה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Lev HaSharon,Center,,,23600,Regional Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,מועצה אזורית לב השרון,,,,locality,,IL-M,מועצה אזורית לב השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Qalansawe,Center,,,23143,City,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,قلنسوة,,,,locality,,IL-M,قلنسوة,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Kadima-Tzoran,Center,,,22683,Local Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,קדימה - צורן,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Hof HaSharon,Center,,,14400,Regional Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,מועצה אזורית חוף השרון,,,,locality,,IL-M,מועצה אזורית חוף השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Even Yehuda,Center,,,13826,Local Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,אבן יהודה,,,,locality,,IL-M,אבן יהודה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Tel Mond,Center,,,13144,Local Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,תל מונד,,,,locality,,IL-M,תל מונד,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Zemer,Center,,,7094,Local Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,زيمر‎,,,,locality,,IL-M,زيمر‎,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Pardesiya,Center,,,5930,Local Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,פרדסיה,,,,locality,,IL-M,פרדסיה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Elyakhin,Center,,,3415,Local Council Area,Netanya,,Netanya,,CenterIsrael,locality,,IL-M,אליכין,,,,locality,,IL-M,אליכין,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Rishon LeZion,Center,,,254384,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,ראשון לציון,,,,locality,,IL-M,ראשון לציון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Petah Tikva,Center,,,247956,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,פתח תקווה,,,,locality,,IL-M,פתח תקווה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Rehovot,Center,,,143904,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,רחובות,,,,locality,,IL-M,רחובות,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Kfar Saba,Center,,,101432,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,כפר סבא,,,,locality,,IL-M,כפר סבא,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Maccabim,Center,,,93277,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,מודיעין-מכבים-רעות,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Lod,Center,,,77223,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,לוד,,,,locality,,IL-M,לוד,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Ramla,Center,,,76246,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,רמלה,,,,locality,,IL-M,רמלה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Ra'anana,Center,,,75421,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,רעננה,,,,locality,,IL-M,רעננה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Hod HaSharon,Center,,,63175,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,הוד השרון,,,,locality,,IL-M,הוד השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Rosh HaAyin,Center,,,61801,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,ראש העין,,,,locality,,IL-M,ראש העין,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Ness Ziona,Center,,,50351,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,נס ציונה,,,,locality,,IL-M,נס ציונה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,El'ad,Center,,,48763,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,אלעד,,,,locality,,IL-M,אלעד,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Yavne,Center,,,47585,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,יבנה,,,,locality,,IL-M,יבנה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Drom HaSharon,Center,,,33900,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,מועצה אזורית דרום השרון,,,,locality,,IL-M,מועצה אזורית דרום השרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Yehud,Center,,,29928,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,גני יהודה,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Gedera,Center,,,28313,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,גדרה,,,,locality,,IL-M,גדרה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Be'er Ya'akov,Center,,,27768,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,באר יעקב,,,,locality,,IL-M,באר יעקב,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Gezer,Center,,,27200,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,גזר,,,,locality,,IL-M,גזר,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Giv'at Shmuel,Center,,,26578,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,גבעת שמואל,,,,locality,,IL-M,גבעת שמואל,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Kafr Qasim,Center,,,23823,City,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,كفر قاسم‎,,,,locality,,IL-M,كفر قاسم‎,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Hevel Modi'in,Center,,,23800,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,מועצה אזורית חבל מודיעין,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Shoham,Center,,,21045,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,שוהם,,,,locality,,IL-M,שוהם,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Ganei Tikva,Center,,,20398,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,גני תקווה,,,,locality,,IL-M,גני תקווה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,"Emeq Lod, Lod Valley",Center,,,15700,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,לוד,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Mazkeret Batya,Center,,,14837,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,מזכרת בתיה,,,,locality,,IL-M,מזכרת בתיה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Kiryat Ekron,Center,,,11001,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,קרית עקרון,,,,locality,,IL-M,קרית עקרון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Jaljulia,Center,,,10148,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,جلجولية,,,,locality,,IL-M,جلجولية,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Nahal Sorek,Center,,,9800,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,מועצה אזורית נחל שורק,,,,locality,,IL-M,מועצה אזורית נחל שורק,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Kokhav Ya'ir,Center,,,8702,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,כוכב יאיר,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Brenner,Center,,,8100,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,מועצה אזורית ברנר,,,,,,,,,,,,region,1,IL-M,מחוז המרכז,NONE,0.0,IL-M
+Israel,Beit Dagan,Center,,,7285,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,בית דגן,,,,locality,,IL-M,בית דגן,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Bnei Ayish,Center,,,6978,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,"בני עי""ש",,,,locality,,IL-M,"בני עי""ש",,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Gan Raveh,Center,,,6500,Regional Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,מועצה אזורית גן רווה,,,,locality,,IL-M,מועצה אזורית גן רווה,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Savyon,Center,,,4036,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,סביון,,,,locality,,IL-M,סביון,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Kafr Bara,Center,,,3678,Local Council Area,Tel-Aviv,,Tel-Aviv,,CenterIsrael,locality,,IL-M,كفر برا,,,,locality,,IL-M,كفر برا,,,,,region,1,IL-M,מחוז המרכז,HIGH,1.0,IL-M
+Israel,Haifa,Haifa,,,285316,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,חיפה,,,,region,1,IL-HA,מחוז חיפה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Hadera,Haifa,,,97335,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,חדרה,,,,locality,,IL-HA,חדרה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Kiryat Ata,Haifa,,,59030,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,קרית אתא,,,,locality,,IL-HA,קרית אתא,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Umm al-Fahm,Haifa,,,56109,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,أم الفحم,,,,locality,,IL-HA,أم الفحم,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Kiryat Motzkin,Haifa,,,43303,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,קריית מוצקין,,,,locality,,IL-HA,קריית מוצקין,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Pardes Hanna-Karkur,Haifa,,,43011,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,פרדס חנה-כרכור,,,,locality,,IL-HA,פרדס חנה-כרכור,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Kiryat Bialik,Haifa,,,40231,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,קרית ביאליק,,,,locality,,IL-HA,קרית ביאליק,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Kiryat Yam,Haifa,,,39897,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,קריית ים,,,,locality,,IL-HA,קריית ים,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Hof HaCarmel,Haifa,,,33100,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,מועצה אזורית חוף הכרמל,,,,locality,,IL-HA,מועצה אזורית חוף הכרמל,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Baqa al-Gharbiyye,Haifa,,,29950,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,باقة الغربية,,,,locality,,IL-HA,باقة الغربية,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Ar'ara,Haifa,,,25245,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,عرعرة,,,,locality,,IL-HA,عرعرة,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Nesher,Haifa,,,24148,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,נשר,,,,locality,,IL-HA,נשר,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Zikhron Ya'akov,Haifa,,,23206,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,זכרון יעקב,,,,,,,,,,,,region,1,IL-HA,מחוז חיפה,NONE,0.0,IL-HA
+Israel,Tirat Carmel,Haifa,,,23112,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,טירת הכרמל,,,,locality,,IL-HA,טירת הכרמל,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Menashe,Haifa,,,20800,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,מועצה אזורית מנשה,,,,locality,,IL-HA,מועצה אזורית מנשה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Kafr Qara,Haifa,,,19018,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,كفر قرع,,,,locality,,IL-HA,كفر قرع,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Or Akiva,Haifa,,,18972,City,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,אור עקיבא,,,,locality,,IL-HA,אור עקיבא,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Kiryat Tiv'on,Haifa,,,18130,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,קריית טבעון,,,,locality,,IL-HA,קריית טבעון,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Carmel City,Haifa,,,17653,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,רובע הכרמל,,,,locality,,IL-HA,רובע הכרמל,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Binyamina-Giv'at Ada,Haifa,,,15847,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,בנימינה - גבעת עדה,,,,locality,,IL-HA,בנימינה - גבעת עדה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Ma'ale Iron,Haifa,,,15065,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,طلعة عارة,,,,locality,,IL-HA,طلعة عارة,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Jisr Az-Zarqa,Haifa,,,14930,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,جسر الزرقاء,,,,locality,,IL-HA,جسر الزرقاء,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Zevulun,Haifa,,,13600,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,מועצה אזורית זבולון,,,,,,,,,,,,region,1,IL-HA,מחוז חיפה,NONE,0.0,IL-HA
+Israel,Fureidis,Haifa,,,13247,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,الفريديس,,,,locality,,IL-HA,الفريديس,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Harish,Haifa,,,13232,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,חריש,,,,locality,,IL-HA,חריש,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Rekhasim,Haifa,,,12668,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,רכסים,,,,locality,,IL-HA,רכסים,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Isfiya,Haifa,,,12503,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,عسفيا,,,,locality,,IL-HA,عسفيا,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Jatt,Haifa,,,12100,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,جت,,,,locality,,IL-HA,جت,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Basma,Haifa,,,10010,Local Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,بسمة,,,,locality,,IL-HA,بسمة,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Alona,Haifa,,,2300,Regional Council Area,Haifa,,Haifa,,HaifaIsrael,locality,,IL-HA,מועצה אזורית אלונה,,,,locality,,IL-HA,מועצה אזורית אלונה,,,,,region,1,IL-HA,מחוז חיפה,HIGH,1.0,IL-HA
+Israel,Jerusalem,Jerusalem,,,936425,City,Jerusalem,,Jerusalem,,JerusalemIsrael,locality,,IL-JM,מערב ירושלים,,,,region,1,IL-JM,מחוז ירושלים,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
+Israel,Beit Shemesh,Jerusalem,,,124957,City,Jerusalem,,Jerusalem,,JerusalemIsrael,locality,,IL-JM,בית שמש,,,,locality,,IL-JM,בית שמש,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
+Israel,Mateh Yehuda,Jerusalem,,,60700,Regional Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,locality,,IL-JM,מועצה אזורית מטה יהודה,,,,locality,,IL-JM,מועצה אזורית מטה יהודה,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
+Israel,Mevaseret Zion,Jerusalem,,,24052,Local Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,locality,,IL-JM,מבשרת ציון,,,,locality,,IL-JM,מבשרת ציון,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
+Israel,Abu Ghosh,Jerusalem,,,7698,Local Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,locality,,IL-JM,أبو غوش‎,,,,locality,,IL-JM,أبو غوش‎,,,,,region,1,IL-JM,מחוז ירושלים,HIGH,1.0,IL-JM
+Israel,Kiryat Ye'arim,Jerusalem,,,6128,Local Council Area,Jerusalem,,Jerusalem,,JerusalemIsrael,locality,,IL-JM,קרית יערים,,,,,,,,,,,,region,1,IL-JM,מחוז ירושלים,NONE,0.0,IL-JM
+Israel,Acre,North,,,49380,City,Acre,,Acre,,NorthIsrael,locality,,IL-Z,עכו,,,,locality,,IL-Z,עכו,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Afula,North,,,54250,City,Afula,,Afula,,NorthIsrael,locality,,IL-Z,עפולה,,,,locality,,IL-Z,עפולה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Bustan al-Marj,North,,,7900,Regional Council Area,Afula,,Afula,,NorthIsrael,locality,,IL-Z,مجلس إقليمي بستان المرج,,,,locality,,IL-Z,مجلس إقليمي بستان المرج,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Gilboa,North,,,30800,Regional Council Area,Gilboa,,Gilboa,,NorthIsrael,locality,,IL-Z,מועצה אזורית גלבוע,,,,locality,,IL-Z,מועצה אזורית גלבוע,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kiryat Shmona,North,,,22512,City,Kiryat Shmona,,Kiryat Shmona,,NorthIsrael,locality,,IL-Z,קרית שמונה,,,,locality,,IL-Z,קרית שמונה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Nahariya,North,,,58096,City,Nahariya,,Nahariya,,NorthIsrael,locality,,IL-Z,נהריה,,,,locality,,IL-Z,נהריה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Mazra'a,North,,,3929,Local Council Area,Nahariya,,Nahariya,,NorthIsrael,locality,,IL-Z,المزرعة,,,,locality,,IL-Z,المزرعة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Nazareth,North,,,77445,City,Nazareth,,Nazareth,,NorthIsrael,locality,,IL-Z,الناصرة,,,,locality,,IL-Z,الناصرة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Nazerat Illit,North,,,41734,City,Nazareth,,Nazareth,,NorthIsrael,locality,,IL-Z,الناصرة,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Migdal HaEmek,North,,,25675,City,Nazareth,,Nazareth,,NorthIsrael,locality,,IL-Z,מגדל העמק,,,,locality,,IL-Z,מגדל העמק,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Yafa an-Naseriyye,North,,,19151,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,locality,,IL-Z,يافة الناصرة,,,,locality,,IL-Z,يافة الناصرة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Reine,North,,,19001,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,locality,,IL-Z,الرينة,,,,locality,,IL-Z,الرينة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Ein Mahil,North,,,13335,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,locality,,IL-Z,عين ماهل,,,,locality,,IL-Z,عين ماهل,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Ilut,North,,,8356,Local Council Area,Nazareth,,Nazareth,,NorthIsrael,locality,,IL-Z,عيلوط,,,,locality,,IL-Z,عيلوط,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Sakhnin,North,,,31702,City,Sakhnin,,Sakhnin,,NorthIsrael,locality,,IL-Z,سخنين,,,,locality,,IL-Z,سخنين,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Arraba,North,,,25833,Local Council Area,Sakhnin,,Sakhnin,,NorthIsrael,locality,,IL-Z,عرابة,,,,locality,,IL-Z,عرابة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Tiberias,North,,,44779,City,Tiberias,,Tiberias,,NorthIsrael,locality,,IL-Z,טבריה,,,,locality,,IL-Z,טבריה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Karmi'el,North,,,46252,City,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Shefa-'Amr,North,,,42137,City,,,#N/A,,NorthIsrael,locality,,IL-Z,شفا عمرو,,,,locality,,IL-Z,شفا عمرو,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Jezreel Valley,North,,,39000,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מועצה אזורית עמק יזרעאל,,,,locality,,IL-Z,מועצה אזורית עמק יזרעאל,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Safed,North,,,36094,City,,,#N/A,,NorthIsrael,locality,,IL-Z,צפת,,,,locality,,IL-Z,צפת,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Tamra,North,,,34392,City,,,#N/A,,NorthIsrael,locality,,IL-Z,טמרה,,,,locality,,IL-Z,טמרה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Mateh Asher,North,,,29700,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Misgav,North,,,29100,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מועצה אזורית משגב,,,,locality,,IL-Z,מועצה אזורית משגב,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Yokneam Illit,North,,,23796,City,,,#N/A,,NorthIsrael,locality,,IL-Z,יוקנעם עילית,,,,locality,,IL-Z,יוקנעם עילית,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Maghar,North,,,22957,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,المغار,,,,locality,,IL-Z,المغار,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kafr Kanna,North,,,22751,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Ma'alot-Tarshiha,North,,,21836,City,,,#N/A,,NorthIsrael,locality,,IL-Z,מעלות תרשיחא,,,,locality,,IL-Z,מעלות תרשיחא,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Jadeidi-Makr,North,,,21163,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,جديدة-المكر,,,,locality,,IL-Z,جديدة-المكر,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kafr Manda,North,,,20188,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,كفر مندا,,,,locality,,IL-Z,كفر مندا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Upper Galilee,North,,,18600,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Beit She'an,North,,,18464,City,,,#N/A,,NorthIsrael,locality,,IL-Z,בית שאן,,,,locality,,IL-Z,בית שאן,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Golan,North,,,18000,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Yarka,North,,,17171,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,يركا,,,,locality,,IL-Z,يركا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Merom HaGalil,North,,,15500,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מועצה אזורית מרום הגליל,,,,locality,,IL-Z,מועצה אזורית מרום הגליל,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Majd al-Krum,North,,,15455,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,مجد الكروم,,,,locality,,IL-Z,مجد الكروم,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Iksal,North,,,14784,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,إكسال,,,,locality,,IL-Z,إكسال,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Tur'an,North,,,14240,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,طرعان,,,,locality,,IL-Z,طرعان,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Abu Snan,North,,,14099,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,أبو سنان,,,,locality,,IL-Z,أبو سنان,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kabul,North,,,14095,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,كابول,,,,locality,,IL-Z,كابول,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Emek HaYarden,North,,,13900,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מועצה אזורית עמק הירדן,,,,locality,,IL-Z,מועצה אזורית עמק הירדן,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Valley of Springs,North,,,13700,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,I'billin,North,,,13305,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,إعبلين,,,,locality,,IL-Z,إعبلين,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Nahf,North,,,13113,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,نحف,,,,locality,,IL-Z,نحف,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Deir al-Asad,North,,,12514,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,دير الأسد,,,,locality,,IL-Z,دير الأسد,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Lower Galilee,North,,,12500,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Beit Jann,North,,,12001,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,بيت جن,,,,locality,,IL-Z,بيت جن,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Megiddo,North,,,11900,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מגידו,,,,locality,,IL-Z,מגידו,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Majdal Shams,North,,,11180,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Ma'ale Yosef,North,,,10800,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מועצה אזורית מעלה יוסף,,,,locality,,IL-Z,מועצה אזורית מעלה יוסף,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Daburiyya,North,,,10510,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,دبورية,,,,locality,,IL-Z,دبورية,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Deir Hanna,North,,,10339,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,دير حنا,,,,locality,,IL-Z,دير حنا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kafr Yasif,North,,,10133,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,كفر ياسيف,,,,locality,,IL-Z,كفر ياسيف,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Bu'eine-Nujeidat,North,,,9812,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Bir al-Maksur,North,,,9522,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,بئر المكسور,,,,locality,,IL-Z,بئر المكسور,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Hatzor HaGlilit,North,,,9272,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,חצור הגלילית,,,,locality,,IL-Z,חצור הגלילית,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kisra-Sumei,North,,,8818,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,كيسرى-كفر سميع,,,,locality,,IL-Z,كيسرى-كفر سميع,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Bi'ina,North,,,8381,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,البعنة,,,,locality,,IL-Z,البعنة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Mashhad,North,,,8373,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,المشهد,,,,locality,,IL-Z,المشهد,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Zarzir,North,,,8119,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,زرزير,,,,locality,,IL-Z,زرزير,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Al-Batuf,North,,,8000,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,مجلس إقليمي البطوف,,,,locality,,IL-Z,مجلس إقليمي البطوف,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Basmat Tab'un,North,,,7916,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,بسمة طبعون,,,,locality,,IL-Z,بسمة طبعون,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Ramat Yishai,North,,,7785,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,רמת ישי,,,,locality,,IL-Z,רמת ישי,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Rame,North,,,7728,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Mevo'ot HaHermon,North,,,7400,Regional Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מועצה אזורית מבואות החרמון,,,,locality,,IL-Z,מועצה אזורית מבואות החרמון,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Katzrin,North,,,7297,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Sha'ab,North,,,7061,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,شعب‎,,,,locality,,IL-Z,شعب‎,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Tuba-Zangariyye,North,,,6776,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,طوبا الزنغرية,,,,locality,,IL-Z,طوبا الزنغرية,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Yanuh-Jat,North,,,6679,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,يانوح جت,,,,locality,,IL-Z,يانوح جت,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Buq'ata,North,,,6610,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Shlomi,North,,,6511,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,שלומי,,,,locality,,IL-Z,שלומי,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Julis,North,,,6465,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,جولس,,,,locality,,IL-Z,جولس,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Hurfeish,North,,,6410,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,حرفيش,,,,locality,,IL-Z,حرفيش,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Shibli - Umm al-Ghanam,North,,,6053,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Peki'in,North,,,5893,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,البقيعة,,,,locality,,IL-Z,البقيعة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Eilabun,North,,,5752,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,عيلبون,,,,locality,,IL-Z,عيلبون,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Ka'abiyye-Tabbash-Hajajre,North,,,5504,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,كعبية طباش حجاجرة,,,,locality,,IL-Z,كعبية طباش حجاجرة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kfar Vradim,North,,,5486,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,כפר ורדים,,,,locality,,IL-Z,כפר ורדים,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kfar Tavor,North,,,4311,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,כפר תבור,,,,locality,,IL-Z,כפר תבור,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Sajur,North,,,4270,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,ساجور,,,,locality,,IL-Z,ساجور,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Yavne'el,North,,,4243,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Mas'ade,North,,,3714,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Kaukab Abu al-Hija,North,,,3589,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,كوكب أبو الهيجاء,,,,locality,,IL-Z,كوكب أبو الهيجاء,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Kfar Kama,North,,,3373,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,Кфар Кама,,,,locality,,IL-Z,Кфар Кама,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Mi'ilya,North,,,3244,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,معليا,,,,locality,,IL-Z,معليا,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Fassuta,North,,,3172,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,فسوطة,,,,locality,,IL-Z,فسوطة,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Rosh Pinna,North,,,3148,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Jish (Gush Halav),North,,,3105,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,الجش,,,,locality,,IL-Z,الجش,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Ghajar,North,,,2659,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Ein Qiniyye,North,,,2098,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Migdal,North,,,1952,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מגדל,,,,locality,,IL-Z,מגדל,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Yesud HaMa'ala,North,,,1730,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,,,,,,,,,,,,,region,1,IL-Z,מחוז הצפון,NONE,0.0,IL-Z
+Israel,Metula,North,,,1615,Local Council Area,,,#N/A,,NorthIsrael,locality,,IL-Z,מטולה,,,,locality,,IL-Z,מטולה,,,,,region,1,IL-Z,מחוז הצפון,HIGH,1.0,IL-Z
+Israel,Ashdod,South,,,225939,City,Ashdod,,Ashdod,,SouthIsrael,locality,,IL-D,אשדוד,,,,locality,,IL-D,אשדוד,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Ashkelon,South,,,144073,City,Ashkelon,,Ashkelon,,SouthIsrael,locality,,IL-D,אשקלון,,,,locality,,IL-D,אשקלון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Hof Ashkelon,South,,,18000,Regional Council Area,Ashkelon,,Ashkelon,,SouthIsrael,locality,,IL-D,מועצה אזורית חוף אשקלון,,,,locality,,IL-D,מועצה אזורית חוף אשקלון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Beersheba,South,,,209687,City,Beer Sheva,,Beer Sheva,,SouthIsrael,locality,,IL-D,באר שבע,,,,locality,,IL-D,באר שבע,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Tel as-Sabi,South,,,20808,Local Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,locality,,IL-D,تل السبع,,,,locality,,IL-D,تل السبع,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Al-Kasom,South,,,15700,Regional Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,locality,,IL-D,مجلس إقليمي القيصوم,,,,locality,,IL-D,مجلس إقليمي القيصوم,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Shaqib al-Salam,South,,,10936,Local Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,locality,,IL-D,شقيب السلام,,,,locality,,IL-D,شقيب السلام,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Bnei Shimon,South,,,10900,Regional Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,locality,,IL-D,מועצה אזורית בני שמעון,,,,locality,,IL-D,מועצה אזורית בני שמעון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Omer,South,,,7530,Local Council Area,Beer Sheva,,Beer Sheva,,SouthIsrael,locality,,IL-D,עומר,,,,locality,,IL-D,עומר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Eilat,South,,,52299,City,Eilat,,Eilat,,SouthIsrael,locality,,IL-D,אילת,,,,locality,,IL-D,אילת,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Rahat,South,,,71437,City,,,#N/A,,SouthIsrael,locality,,IL-D,رهط,,,,locality,,IL-D,رهط,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Kiryat Gat,South,,,57105,City,,,#N/A,,SouthIsrael,locality,,IL-D,קרית גת,,,,locality,,IL-D,קרית גת,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Netivot,South,,,37542,City,,,#N/A,,SouthIsrael,locality,,IL-D,נתיבות,,,,locality,,IL-D,נתיבות,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Dimona,South,,,34500,City,,,#N/A,,SouthIsrael,locality,,IL-D,דימונה,,,,locality,,IL-D,דימונה,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Ofakim,South,,,30662,City,,,#N/A,,SouthIsrael,locality,,IL-D,אופקים,,,,locality,,IL-D,אופקים,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Sderot,South,,,27635,City,,,#N/A,,SouthIsrael,locality,,IL-D,שדרות,,,,locality,,IL-D,שדרות,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Arad,South,,,26756,City,,,#N/A,,SouthIsrael,locality,,IL-D,ערד,,,,locality,,IL-D,ערד,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Kiryat Malakhi,South,,,23819,City,,,#N/A,,SouthIsrael,locality,,IL-D,,,,,,,,,,,,,region,1,IL-D,מחוז הדרום,NONE,0.0,IL-D
+Israel,Be'er Tuvia,South,,,23700,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית באר טוביה,,,,locality,,IL-D,מועצה אזורית באר טוביה,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Hura,South,,,22337,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,حورة,,,,locality,,IL-D,حورة,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Kuseife,South,,,21866,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,كسيفة,,,,locality,,IL-D,كسيفة,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Ar'arat an-Naqab,South,,,18332,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,عرعرة النقب,,,,locality,,IL-D,عرعرة النقب,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Eshkol,South,,,14500,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית אשכול,,,,locality,,IL-D,מועצה אזורית אשכול,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Merhavim,South,,,14200,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית מרחבים,,,,locality,,IL-D,מועצה אזורית מרחבים,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Lakiya,South,,,14075,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,اللقية,,,,locality,,IL-D,اللقية,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Lakhish,South,,,12700,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,לכיש,,,,locality,,IL-D,לכיש,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Neve Midbar,South,,,12300,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,مجلس إقليمي واحة الصحراء,,,,locality,,IL-D,مجلس إقليمي واحة الصحراء,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Shafir,South,,,11200,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,שפיר,,,,locality,,IL-D,שפיר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Sdot Negev,South,,,10800,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית שדות נגב,,,,locality,,IL-D,מועצה אזורית שדות נגב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Yeruham,South,,,10294,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,ירוחם,,,,locality,,IL-D,ירוחם,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Meitar,South,,,9418,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מיתר,,,,locality,,IL-D,מיתר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Yoav,South,,,9000,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית יואב,,,,locality,,IL-D,מועצה אזורית יואב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Sha'ar HaNegev,South,,,8400,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית שער הנגב,,,,locality,,IL-D,מועצה אזורית שער הנגב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Ramat Negev,South,,,8100,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית רמת נגב,,,,locality,,IL-D,מועצה אזורית רמת נגב,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Lehavim,South,,,6415,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,להבים,,,,locality,,IL-D,להבים,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Mitzpe Ramon,South,,,5211,Local Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מצפה רמון,,,,locality,,IL-D,מצפה רמון,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Hevel Eilot,South,,,4400,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית חבל אילות,,,,locality,,IL-D,מועצה אזורית חבל אילות,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Central Arava,South,,,3600,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,,,,,,,,,,,,,region,1,IL-D,מחוז הדרום,NONE,0.0,IL-D
+Israel,Tamar,South,,,1600,Regional Council Area,,,#N/A,,SouthIsrael,locality,,IL-D,מועצה אזורית תמר,,,,locality,,IL-D,מועצה אזורית תמר,,,,,region,1,IL-D,מחוז הדרום,HIGH,1.0,IL-D
+Israel,Tel Aviv-Jaffa,Tel-Aviv,,,460613,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,תל־אביב–יפו,,,,locality,,IL-TA,תל־אביב–יפו,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Bnei Brak,Tel-Aviv,,,204639,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,בני ברק,,,,locality,,IL-TA,בני ברק,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Holon,Tel-Aviv,,,196282,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,חולון,,,,locality,,IL-TA,חולון,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Ramat Gan,Tel-Aviv,,,163480,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,רמת גן,,,,locality,,IL-TA,רמת גן,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Bat Yam,Tel-Aviv,,,129013,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,בת ים,,,,locality,,IL-TA,בת ים,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Herzliya,Tel-Aviv,,,97470,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,הרצליה,,,,locality,,IL-TA,הרצליה,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Giv'atayim,Tel-Aviv,,,60644,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,גבעתיים,,,,,,,,,,,,region,1,IL-TA,מחוז תל אביב,NONE,0.0,IL-TA
+Israel,Ramat HaSharon,Tel-Aviv,,,47245,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,רמת השרון,,,,locality,,IL-TA,רמת השרון,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Kiryat Ono,Tel-Aviv,,,40409,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,קרית אונו,,,,locality,,IL-TA,קרית אונו,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Or Yehuda,Tel-Aviv,,,36813,City,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,אור יהודה,,,,locality,,IL-TA,אור יהודה,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Azor,Tel-Aviv,,,12957,Local Council Area,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,אזור,,,,locality,,IL-TA,אזור,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Kfar Shmaryahu,Tel-Aviv,,,1938,Local Council Area,Tel-Aviv,,Tel-Aviv,,Tel-AvivIsrael,locality,,IL-TA,כפר שמריהו,,,,locality,,IL-TA,כפר שמריהו,,,,,region,1,IL-TA,מחוז תל אביב,HIGH,1.0,IL-TA
+Israel,Beitar Illit,West Bank,,,59270,City,Jerusalem,,Jerusalem,,West BankIsrael,locality,,XW,ביתר עילית,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Ma'ale Adumim,West Bank,,,38155,City,Jerusalem,,Jerusalem,,West BankIsrael,locality,,XW,מעלה אדומים,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Giv'at Ze'ev,West Bank,,,18420,Local Council Area,Jerusalem,,Jerusalem,,West BankIsrael,locality,,XW,גבעת זאב,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Efrat,West Bank,,,10806,Local Council Area,Jerusalem,,Jerusalem,,West BankIsrael,locality,,XW,אפרת,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Har Adar,West Bank,,,4088,Local Council Area,Jerusalem,,Jerusalem,,West BankIsrael,locality,,XW,הר אדר,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Modi'in Illit,West Bank,,,76374,City,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Mateh Binyamin,West Bank,,,69300,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Shomron,West Bank,,,45800,Regional Council Area,,,#N/A,,West BankIsrael,locality,,XW,מועצה אזורית שומרון,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Gush Etzion,West Bank,,,24400,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Ari'el,West Bank,,,20540,City,,,#N/A,,West BankIsrael,locality,,XW,אריאל,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Har Hevron,West Bank,,,9200,Regional Council Area,,,#N/A,,West BankIsrael,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Oranit,West Bank,,,8955,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,אורנית,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Karnei Shomron,West Bank,,,8135,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,קרני שומרון,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Alfei Menashe,West Bank,,,7952,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,אלפי מנשה,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Kiryat Arba,West Bank,,,7326,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,קריית ארבע,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Beit El,West Bank,,,5973,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,בית אל,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Bik'at HaYarden,West Bank,,,5400,Regional Council Area,,,#N/A,,West BankIsrael,locality,,XW,מועצה אזורית ערבות הירדן,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Beit Aryeh-Ofarim,West Bank,,,5253,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,בית אריה - עופרים,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Kedumim,West Bank,,,4544,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,קדומים,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Immanu'el,West Bank,,,3906,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,עמנואל,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Elkana,West Bank,,,3838,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,אלקנה,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Megilot,West Bank,,,1800,Regional Council Area,,,#N/A,,West BankIsrael,locality,,XW,מועצה אזורית מגילות ים המלח,,,,,,,,,,,,,,,,NONE,0.0,
+Israel,Ma'ale Efrayim,West Bank,,,1260,Local Council Area,,,#N/A,,West BankIsrael,locality,,XW,מעלה אפרים,,,,,,,,,,,,,,,,NONE,0.0,

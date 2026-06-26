@@ -1,0 +1,4 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Falkland Islands,East Falkland,East Falkland,,,2829,Island,Stanley (FALK),,Stanley (FALK),,East FalklandFalkland Islands,locality,,,Stanley,,,,,,,,,,,,,,,,NONE,0.0,
+Falkland Islands,Outlying Islands,Outlying Islands,,,43,Island,,,#N/A,,Outlying IslandsFalkland Islands,locality,,,Pebble Island Settlement,,,,,,,,,,,,,,,,NONE,0.0,
+Falkland Islands,West Falkland,West Falkland,,,160,Island,,,#N/A,,West FalklandFalkland Islands,dependency,1,,Falkland Islands,,,,,,,,,,,,,,,,NONE,0.0,

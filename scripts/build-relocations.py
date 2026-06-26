@@ -100,9 +100,15 @@ METRO_ALIAS={'baltimore':'washington-baltimore','san francisco':'san-francisco-s
              'greensboro':'greensboro-winston-salem'}
 for _r in read_csv('aliases.csv'):            # editable workbook-metro-name -> metro_slug map
     if _r.get('city') and _r.get('metro_slug'): METRO_ALIAS[_r['city'].strip().lower()]=_r['metro_slug'].strip()
+# North American disambiguation: a few bare city names collide with a same-named
+# metro elsewhere that owns the un-suffixed slug. The BIG4 workbooks are all North
+# American, so within this path the bare name always means the US/Canada metro.
+# (Verified the only colliding slug carrying defunct BIG4 teams is Birmingham:
+# Portland/Kansas City/Columbus/Hamilton bare slugs are already the right metro.)
+NA_DISAMBIG={'birmingham':'birmingham-al'}
 def m2slug(name):
     k=str(name).strip().lower()
-    return EXACT.get(k) or METRO_ALIAS.get(k)
+    return NA_DISAMBIG.get(k) or EXACT.get(k) or METRO_ALIAS.get(k)
 # WWII merger seasons: one team hosted in two cities the same year
 COMBINED_METRO_EXPAND={'phila-pit':'Philadelphia/Pittsburgh'}
 TEAM_NAME_OVERRIDE={'carpitts':'Card-Pitt','steagles':'Steagles'}
@@ -134,6 +140,32 @@ def football_stats(slug):
 def wnba_stats(f):
     return {'champ':int(f.get('titles') or 0),'div':int(f.get('division_titles') or 0),
             'finals':int(f.get('finals') or 0),'pct':round(float(f.get('win_pct') or 0),3)}
+# Non-BIG4 relocation honours: count per-stint titles from the rugby club-rolls and
+# T20 league rolls (winners list), so defunct/relocated rugby + cricket clubs (e.g.
+# Wasps, Stade Bordelais, Deccan Chargers) show titles on their metro cards.
+try: _RUGBY_ROLLS=load('public/data/rugby-union/club-rolls.json').get('rolls',{})
+except Exception: _RUGBY_ROLLS={}
+try: _T20_ROLLS=load('public/data/cricket/t20-leagues.json').get('rolls',{})
+except Exception: _T20_ROLLS={}
+def _roll_endyear(season):
+    t=str(season).replace('\u2013','-').replace('/','-'); m=re.findall(r'\d{4}',t)
+    if not m: return None
+    if len(m)>=2 and len(t.split('-')[-1])==2:
+        a=int(m[0]); b=int(t.split('-')[-1]); base=a-a%100+b; return base+100 if base<a else base
+    return int(m[-1])
+def _roll_titles(name, rolls, years):
+    ys=re.findall(r'\d{4}', years or ''); lo=int(ys[0]) if ys else None; hi=int(ys[-1]) if ys else None
+    n=0
+    for roll in rolls.values():
+        for e in roll:
+            w=str(e.get('winner','') or '').strip()
+            if w and (w==name or w.endswith(' '+name) or name.endswith(' '+w)):
+                y=_roll_endyear(e.get('season'))
+                if lo is None or (y is not None and lo<=y<=hi): n+=1
+    return n
+def _roll_stats(name, rolls, years):
+    return {'champ':_roll_titles(name,rolls,years),'pct':0.0,'div':0,'finals':0}
+
 OVERRIDES={(r['metro_slug'],r['href']):r for r in read_csv('overrides.csv')}
 # Editorial: a title won on the field then revoked by the league. Surfaced as a title
 # but flagged 'stolen' so the card can label it. The 1925 Pottsville Maroons (canonical
@@ -244,7 +276,7 @@ for f in load('public/data/ipl/data.json')['franchises']:
     if not f.get('active'):
         ms=f.get('metro') and (city2slug.get(f['metro'].lower()) or name2slug.get(f['metro'].lower()))
         if not ms: skipped.append({'league':'ipl','name':f['name'],'city':f.get('metro'),'reason':'no metro match'}); continue
-        add(ms,'ipl',f['name'],'',f"/teams/ipl/{f['slug']}","defunct")
+        add(ms,'ipl',f['name'],'',f"/teams/ipl/{f['slug']}","defunct",stats=_roll_stats(f['name'],_T20_ROLLS,''))
 for f in load('public/data/cfl/data.json')['franchises']:
     if (not f.get('active')) and f.get('metro_slug'):
         _cst={'champ':f.get('grey_cups',0),'div':0,'finals':f.get('gc_finals',0),'pct':f.get('win_pct',0.0)}
@@ -257,7 +289,11 @@ for _lg in ('afl','nrl'):
 
 for r in CURATED:
     if r.get('metro_slug') and r.get('href'):
-        _lg=r.get('league','football'); _fst=football_stats(r['href'].rsplit('/',1)[-1]) if _lg=='football' else None
+        _lg=r.get('league','football')
+        if _lg=='football': _fst=football_stats(r['href'].rsplit('/',1)[-1])
+        elif _lg=='rugby-union': _fst=_roll_stats(r['name'],_RUGBY_ROLLS,r.get('years',''))
+        elif _lg=='cricket-t20': _fst=_roll_stats(r['name'],_T20_ROLLS,r.get('years',''))
+        else: _fst=None
         add(r['metro_slug'],_lg,r['name'],r.get('years',''),r['href'],r.get('kind','relocated'),r.get('sport'),stats=_fst)
 
 defunct_hrefs=set()

@@ -1,0 +1,128 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Ukraine,Cherkasy,Cherkasy,,,583648,District,Cherkasy,,Cherkasy,,CherkasyUkraine,county,2,UA-71,Черкаський район,,,,region,1,UA-71,Черкаська область,,,,,region,1,UA-71,Черкаська область,HIGH,1.0,UA-71
+Ukraine,Uman,Cherkasy,,,247847,District,Uman,,Uman,,CherkasyUkraine,county,2,UA-71,Уманський район,,,,locality,,UA-71,Умань,,,,,region,1,UA-71,Черкаська область,HIGH,1.0,UA-71
+Ukraine,Zvenyhorodka,Cherkasy,,,193804,District,,,#N/A,,CherkasyUkraine,county,2,UA-71,Звенигородський район,,,,county,2,UA-71,Звенигородський район,,,,,region,1,UA-71,Черкаська область,HIGH,1.0,UA-71
+Ukraine,Zolotonosha,Cherkasy,,,135445,District,,,#N/A,,CherkasyUkraine,county,2,UA-71,Золотоніський район,,,,county,2,UA-71,Золотоніський район,,,,,region,1,UA-71,Черкаська область,HIGH,1.0,UA-71
+Ukraine,Chernihiv,Chernihiv,,,445430,District,Chernihiv,,Chernihiv,,ChernihivUkraine,county,2,UA-74,Чернігівський район,,,,county,2,UA-74,Чернігівський район,,,,,region,1,UA-74,Чернігівська область,HIGH,1.0,UA-74
+Ukraine,Nizhyn,Chernihiv,,,215908,District,Nizhyn,,Nizhyn,,ChernihivUkraine,county,2,UA-74,Ніжинський район,,,,county,2,UA-74,Ніжинський район,,,,,region,1,UA-74,Чернігівська область,HIGH,1.0,UA-74
+Ukraine,Pryluky,Chernihiv,,,149401,District,,,#N/A,,ChernihivUkraine,county,2,UA-74,Прилуцький район,,,,locality,,UA-74,Прилуки,,,,,region,1,UA-74,Чернігівська область,HIGH,1.0,UA-74
+Ukraine,Koriukivka,Chernihiv,,,86435,District,,,#N/A,,ChernihivUkraine,county,2,UA-74,Корюківський район,,,,locality,,UA-74,Корюківка,,,,,region,1,UA-74,Чернігівська область,HIGH,1.0,UA-74
+Ukraine,Novhorod-Siverskyi,Chernihiv,,,62141,District,,,#N/A,,ChernihivUkraine,county,2,UA-74,Новгород-Сіверський район,,,,locality,,UA-74,Новгород-Сіверський,,,,,region,1,UA-74,Чернігівська область,HIGH,1.0,UA-74
+Ukraine,Chernivtsi,Chernivtsi,,,648643,District,Chernivtsi,,Chernivtsi,,ChernivtsiUkraine,county,2,UA-77,Чернівецький район,,,,locality,,UA-77,Чернівці,,,,,region,1,UA-77,Чернівецька область,HIGH,1.0,UA-77
+Ukraine,Dnistrovskyi,Chernivtsi,,,152208,District,,,#N/A,,ChernivtsiUkraine,county,2,UA-77,Дністровський район,,,,county,2,UA-77,Дністровський район,,,,,region,1,UA-77,Чернівецька область,HIGH,1.0,UA-77
+Ukraine,Vyzhnytsia,Chernivtsi,,,89606,District,,,#N/A,,ChernivtsiUkraine,county,2,UA-77,Вижницький район,,,,locality,,UA-77,Вижниця,,,,,region,1,UA-77,Чернівецька область,HIGH,1.0,UA-77
+Ukraine,Dnipro,Dnipropetrovsk,,,1145065,District,Dnipro,,Dnipro,,DnipropetrovskUkraine,county,2,UA-12,Дніпровський район,,,,locality,,UA-12,Дніпровська міська громада,,,,,region,1,UA-12,Дніпропетровська область,HIGH,1.0,UA-12
+Ukraine,Kamianske,Dnipropetrovsk,,,423443,District,Kamianske,,Kamianske,,DnipropetrovskUkraine,county,2,UA-12,Кам'янський район,,,,locality,,UA-12,Кам’янське,,,,,region,1,UA-12,Дніпропетровська область,HIGH,1.0,UA-12
+Ukraine,Kryvyi Rih,Dnipropetrovsk,,,743934,District,Kryvyi Rih,,Kryvyi Rih,,DnipropetrovskUkraine,county,2,UA-12,Криворізький район,,,,county,2,UA-12,Криворізький район,,,,,region,1,UA-12,Дніпропетровська область,HIGH,1.0,UA-12
+Ukraine,Nikopol,Dnipropetrovsk,,,250746,District,Nikopol,,Nikopol,,DnipropetrovskUkraine,county,2,UA-12,Нікопольський район,,,,locality,,UA-12,Нікопольська міська громада,,,,,region,1,UA-12,Дніпропетровська область,HIGH,1.0,UA-12
+Ukraine,Pavlohrad,Dnipropetrovsk,,,166797,District,Pavlohrad,,Pavlohrad,,DnipropetrovskUkraine,county,2,UA-12,Павлоградський район,,,,locality,,UA-12,Павлоград,,,,,region,1,UA-12,Дніпропетровська область,HIGH,1.0,UA-12
+Ukraine,Synelnykove,Dnipropetrovsk,,,198974,District,,,#N/A,,DnipropetrovskUkraine,county,2,UA-12,Синельниківський район,,,,locality,,UA-12,Синельникове,,,,,region,1,UA-12,Дніпропетровська область,HIGH,1.0,UA-12
+Ukraine,Novomoskovsk,Dnipropetrovsk,,,167526,District,,,#N/A,,DnipropetrovskUkraine,county,2,UA-12,Самарівський район,,,,,,,,,,,,region,1,UA-12,Дніпропетровська область,NONE,0.0,UA-12
+Ukraine,Bakhmut,Donetsk,,,220275,District,Bakhmut,,Bakhmut,,DonetskUkraine,county,2,UA-14,Бахмутський район,,,,locality,,UA-14,Бахмут,,,,,region,1,UA-14,Донецька область,HIGH,1.0,UA-14
+Ukraine,Donetsk,Donetsk,,,1484514,District,Donetsk,,Donetsk,,DonetskUkraine,county,2,UA-14,Донецький район,,,,region,1,UA-14,Донецька область,,,,,region,1,UA-14,Донецька область,HIGH,1.0,UA-14
+Ukraine,Horlivka,Donetsk,,,662069,District,Horlivka,,Horlivka,,DonetskUkraine,county,2,UA-14,Горлівський район,,,,locality,,UA-14,Горлівка,,,,,region,1,UA-14,Донецька область,HIGH,1.0,UA-14
+Ukraine,Kramatorsk,Donetsk,,,543371,District,Kramatorsk,,Kramatorsk,,DonetskUkraine,county,2,UA-14,Краматорський район,,,,locality,,UA-14,Краматорськ,,,,,region,1,UA-14,Донецька область,HIGH,1.0,UA-14
+Ukraine,Mariupol,Donetsk,,,502909,District,Mariupol,,Mariupol,,DonetskUkraine,county,2,UA-14,Маріупольський район,,,,locality,,UA-14,Маріупольська міська громада,,,,,region,1,UA-14,Донецька область,HIGH,1.0,UA-14
+Ukraine,Pokrovsk,Donetsk,,,386451,District,Pokrovsk,,Pokrovsk,,DonetskUkraine,county,2,UA-14,Покровський район,,,,locality,,UA-14,Покровськ,,,,,region,1,UA-14,Донецька область,HIGH,1.0,UA-14
+Ukraine,Volnovakha,Donetsk,,,139014,District,,,#N/A,,DonetskUkraine,county,2,UA-14,Волноваський район,,,,locality,,UA-14,Волноваха,,,,,region,1,UA-14,Донецька область,HIGH,1.0,UA-14
+Ukraine,Kalmiuske,Donetsk,,,120769,District,,,#N/A,,DonetskUkraine,county,2,UA-14,Кальміуський район,,,,,,,,,,,,region,1,UA-14,Донецька область,NONE,0.0,UA-14
+Ukraine,Ivano-Frankivsk,Ivano-Frankivsk,,,556104,District,Ivano-Frankivsk,,Ivano-Frankivsk,,Ivano-FrankivskUkraine,county,2,UA-26,Івано-Франківський район,,,,county,2,UA-26,Івано-Франківський район,,,,,region,1,UA-26,Івано-Франківська область,HIGH,1.0,UA-26
+Ukraine,Kalush,Ivano-Frankivsk,,,279867,District,Kalush,,Kalush,,Ivano-FrankivskUkraine,county,2,UA-26,Калуський район,,,,locality,,UA-26,Калуш,,,,,region,1,UA-26,Івано-Франківська область,HIGH,1.0,UA-26
+Ukraine,Kolomyia,Ivano-Frankivsk,,,272628,District,Kolomyia,,Kolomyia,,Ivano-FrankivskUkraine,county,2,UA-26,Коломийський район,,,,county,2,UA-26,Коломийський район,,,,,region,1,UA-26,Івано-Франківська область,HIGH,1.0,UA-26
+Ukraine,Nadvirna,Ivano-Frankivsk,,,129328,District,,,#N/A,,Ivano-FrankivskUkraine,county,2,UA-26,Надвірнянський район,,,,locality,,UA-26,Надвірна,,,,,region,1,UA-26,Івано-Франківська область,HIGH,1.0,UA-26
+Ukraine,Kosiv,Ivano-Frankivsk,,,83700,District,,,#N/A,,Ivano-FrankivskUkraine,county,2,UA-26,Косівський район,,,,locality,,UA-26,Косів,,,,,region,1,UA-26,Івано-Франківська область,HIGH,1.0,UA-26
+Ukraine,Verkhovyna,Ivano-Frankivsk,,,30195,District,,,#N/A,,Ivano-FrankivskUkraine,county,2,UA-26,Верховинський район,,,,locality,,UA-26,Верховина,,,,,region,1,UA-26,Івано-Франківська область,HIGH,1.0,UA-26
+Ukraine,Kharkiv,Kharkiv,,,1729049,District,Kharkiv,,Kharkiv,,KharkivUkraine,county,2,UA-63,Харківський район,,,,locality,,UA-63,Харківська міська громада,,,,,region,1,UA-63,Харківська область,HIGH,1.0,UA-63
+Ukraine,Chuhuiv,Kharkiv,,,194177,District,,,#N/A,,KharkivUkraine,county,2,UA-63,Чугуївський район,,,,county,2,UA-63,Чугуївський район,,,,,region,1,UA-63,Харківська область,HIGH,1.0,UA-63
+Ukraine,Izium,Kharkiv,,,172120,District,,,#N/A,,KharkivUkraine,county,2,UA-63,Ізюмський район,,,,locality,,UA-63,Ізюм,,,,,region,1,UA-63,Харківська область,HIGH,1.0,UA-63
+Ukraine,Lozova,Kharkiv,,,147361,District,,,#N/A,,KharkivUkraine,county,2,UA-63,Лозівський район,,,,locality,,UA-63,Лозова,,,,,region,1,UA-63,Харківська область,HIGH,1.0,UA-63
+Ukraine,Kupiansk,Kharkiv,,,130111,District,,,#N/A,,KharkivUkraine,county,2,UA-63,Куп’янський район,,,,locality,,UA-63,Куп’янськ,,,,,region,1,UA-63,Харківська область,HIGH,1.0,UA-63
+Ukraine,Bohodukhiv,Kharkiv,,,122287,District,,,#N/A,,KharkivUkraine,county,2,UA-63,Богодухівський район,,,,locality,,UA-63,Богодухів,,,,,region,1,UA-63,Харківська область,HIGH,1.0,UA-63
+Ukraine,Krasnohrad,Kharkiv,,,103856,District,,,#N/A,,KharkivUkraine,county,2,UA-63,Берестинський район,,,,,,,,,,,,region,1,UA-63,Харківська область,NONE,0.0,UA-63
+Ukraine,Kherson,Kherson,,,450233,District,Kherson,,Kherson,,KhersonUkraine,county,2,UA-65,Херсонський район,,,,region,1,UA-65,Херсонська область,,,,,region,1,UA-65,Херсонська область,HIGH,1.0,UA-65
+Ukraine,Kakhovka,Kherson,,,216458,District,,,#N/A,,KhersonUkraine,county,2,UA-65,Каховський район,,,,county,2,UA-65,Каховський район,,,,,region,1,UA-65,Херсонська область,HIGH,1.0,UA-65
+Ukraine,Skadovsk,Kherson,,,122745,District,,,#N/A,,KhersonUkraine,county,2,UA-65,Скадовський район,,,,county,2,UA-65,Скадовський район,,,,,region,1,UA-65,Херсонська область,HIGH,1.0,UA-65
+Ukraine,Henichesk,Kherson,,,118059,District,,,#N/A,,KhersonUkraine,county,2,UA-65,Генічеський район,,,,county,2,UA-65,Генічеський район,,,,,region,1,UA-65,Херсонська область,HIGH,1.0,UA-65
+Ukraine,Beryslav,Kherson,,,94103,District,,,#N/A,,KhersonUkraine,county,2,UA-65,Бериславський район,,,,locality,,UA-65,Берислав,,,,,region,1,UA-65,Херсонська область,HIGH,1.0,UA-65
+Ukraine,Kamianets-Podilskyi,Khmelnytskyi,,,279789,District,Kamianets-Podilskyi,,Kamianets-Podilskyi,,KhmelnytskyiUkraine,county,2,UA-68,Кам’янець-Подільський район,,,,locality,,UA-68,Кам'янець-Подільський,,,,,region,1,UA-68,Хмельницька область,HIGH,1.0,UA-68
+Ukraine,Khmelnytskyi,Khmelnytskyi,,,672305,District,Khmelnytskyi,,Khmelnytskyi,,KhmelnytskyiUkraine,county,2,UA-68,Хмельницький район,,,,region,1,UA-68,Хмельницька область,,,,,region,1,UA-68,Хмельницька область,HIGH,1.0,UA-68
+Ukraine,Shepetivka,Khmelnytskyi,,,276735,District,,,#N/A,,KhmelnytskyiUkraine,county,2,UA-68,Шепетівський район,,,,locality,,UA-68,Шепетівка,,,,,region,1,UA-68,Хмельницька область,HIGH,1.0,UA-68
+Ukraine,Kropyvnytskyi,Kirovohrad,,,429585,District,Kropyvnytskyi,,Kropyvnytskyi,,KirovohradUkraine,county,2,UA-35,Кропивницький район,,,,locality,,UA-35,Кропивницька міська громада,,,,,region,1,UA-35,Кіровоградська область,HIGH,1.0,UA-35
+Ukraine,Oleksandriia,Kirovohrad,,,219482,District,Oleksandria,,Oleksandria,,KirovohradUkraine,county,2,UA-35,Олександрійський район,,,,locality,,UA-35,Олександрія,,,,,region,1,UA-35,Кіровоградська область,HIGH,1.0,UA-35
+Ukraine,Novoukrainka,Kirovohrad,,,135842,District,,,#N/A,,KirovohradUkraine,county,2,UA-35,Новоукраїнський район,,,,locality,,UA-35,Новоукраїнка,,,,,region,1,UA-35,Кіровоградська область,HIGH,1.0,UA-35
+Ukraine,Holovanivsk,Kirovohrad,,,118803,District,,,#N/A,,KirovohradUkraine,county,2,UA-35,Голованівський район,,,,county,2,UA-35,Голованівський район,,,,,region,1,UA-35,Кіровоградська область,HIGH,1.0,UA-35
+Ukraine,Kyiv,Kyiv,,,2952301,City,Kyiv,,Kyiv,,KyivUkraine,region,1,UA-30,Київ,,,,region,1,UA-30,Київ,,,,,region,1,UA-30,Київ,HIGH,1.0,UA-30
+Ukraine,Bucha,Kyiv Oblast,,,375536,District,Kyiv,,Kyiv,,Kyiv OblastUkraine,county,2,UA-32,Бучанський район,,,,,,,,,,,,region,1,UA-30,Київ,NONE,0.0,UA-30
+Ukraine,Brovary,Kyiv Oblast,,,241777,District,Kyiv,,Kyiv,,Kyiv OblastUkraine,county,2,UA-32,Броварський район,,,,,,,,,,,,region,1,UA-30,Київ,NONE,0.0,UA-30
+Ukraine,Bila Tserkva,Kyiv Oblast,,,431172,District,,,#N/A,,Kyiv OblastUkraine,county,2,UA-32,Білоцерківський район,,,,,,,,,,,,region,1,UA-30,Київ,NONE,0.0,UA-30
+Ukraine,Obukhiv,Kyiv Oblast,,,227209,District,,,#N/A,,Kyiv OblastUkraine,county,2,UA-32,Обухівський район,,,,,,,,,,,,region,1,UA-30,Київ,NONE,0.0,UA-30
+Ukraine,Boryspil,Kyiv Oblast,,,203154,District,,,#N/A,,Kyiv OblastUkraine,county,2,UA-32,Бориспільський район,,,,,,,,,,,,region,1,UA-30,Київ,NONE,0.0,UA-30
+Ukraine,Fastiv,Kyiv Oblast,,,184095,District,,,#N/A,,Kyiv OblastUkraine,county,2,UA-32,Фастівський район,,,,,,,,,,,,region,1,UA-30,Київ,NONE,0.0,UA-30
+Ukraine,Vyshhorod,Kyiv Oblast,,,132136,District,,,#N/A,,Kyiv OblastUkraine,county,2,UA-32,Вишгородський район,,,,,,,,,,,,region,1,UA-30,Київ,NONE,0.0,UA-30
+Ukraine,Alchevsk,Luhansk,,,435284,District,Alchevsk,,Alchevsk,,LuhanskUkraine,county,2,UA-09,Алчевський район,,,,locality,,UA-09,Алчевськ,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Rovenky,Luhansk,,,294125,District,Krasnyi Luch,,Krasnyi Luch,,LuhanskUkraine,county,2,UA-09,Ровеньківський район,,,,locality,,UA-09,Ровеньки,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Luhansk,Luhansk,,,527367,District,Luhansk,,Luhansk,,LuhanskUkraine,county,2,UA-09,Луганський район,,,,region,1,UA-09,Луганська область,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Sievierodonetsk,Luhansk,,,362539,District,Lysychansk,,Lysychansk,,LuhanskUkraine,county,2,UA-09,Сіверськодонецький район,,,,locality,,UA-09,Сіверськодонецьк,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Sverdlovsk,Luhansk,,,205465,District,Sverdlovsk,,Sverdlovsk,,LuhanskUkraine,county,2,UA-09,Довжанський район,,,,locality,,UA-09,Довжанськ,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Starobilsk,Luhansk,,,123833,District,,,#N/A,,LuhanskUkraine,county,2,UA-09,Старобільський район,,,,county,2,UA-09,Старобільський район,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Shchastia,Luhansk,,,77615,District,,,#N/A,,LuhanskUkraine,county,2,UA-09,Щастинський район,,,,county,2,UA-09,Щастинський район,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Svatove,Luhansk,,,76693,District,,,#N/A,,LuhanskUkraine,county,2,UA-09,Сватівський район,,,,locality,,UA-09,Сватове,,,,,region,1,UA-09,Луганська область,HIGH,1.0,UA-09
+Ukraine,Chervonohrad,Lviv,,,226102,District,Chervonohrad,,Chervonohrad,,LvivUkraine,county,2,UA-46,Шептицький район,,,,,,,,,,,,region,1,UA-46,Львівська область,NONE,0.0,UA-46
+Ukraine,Drohobych,Lviv,,,232947,District,Drohobych,,Drohobych,,LvivUkraine,county,2,UA-46,Дрогобицький район,,,,county,2,UA-46,Дрогобицький район,,,,,region,1,UA-46,Львівська область,HIGH,1.0,UA-46
+Ukraine,Lviv,Lviv,,,1141119,District,Lviv,,Lviv,,LvivUkraine,county,2,UA-46,Львівський район,,,,locality,,UA-46,Львівська міська громада,,,,,region,1,UA-46,Львівська область,HIGH,1.0,UA-46
+Ukraine,Stryi,Lviv,,,319464,District,,,#N/A,,LvivUkraine,county,2,UA-46,Стрийський район,,,,locality,,UA-46,Стрий,,,,,region,1,UA-46,Львівська область,HIGH,1.0,UA-46
+Ukraine,Sambir,Lviv,,,221896,District,,,#N/A,,LvivUkraine,county,2,UA-46,Самбірський район,,,,locality,,UA-46,Самбір,,,,,region,1,UA-46,Львівська область,HIGH,1.0,UA-46
+Ukraine,Yavoriv,Lviv,,,177662,District,,,#N/A,,LvivUkraine,county,2,UA-46,Яворівський район,,,,locality,,UA-46,Яворів,,,,,region,1,UA-46,Львівська область,HIGH,1.0,UA-46
+Ukraine,Zolochiv,Lviv,,,158943,District,,,#N/A,,LvivUkraine,county,2,UA-46,Золочівський район,,,,county,2,UA-46,Золочівський район,,,,,region,1,UA-46,Львівська область,HIGH,1.0,UA-46
+Ukraine,Mykolaiv,Mykolaiv,,,636832,District,Mykolaiv,,Mykolaiv,,MykolaivUkraine,county,2,UA-48,Миколаївський район,,,,locality,,UA-48,Миколаїв,,,,,region,1,UA-48,Миколаївська область,HIGH,1.0,UA-48
+Ukraine,Pervomaisk,Mykolaiv,,,145213,District,Pervomaisk,,Pervomaisk,,MykolaivUkraine,county,2,UA-48,Первомайський район,,,,county,2,UA-48,Первомайський район,,,,,region,1,UA-48,Миколаївська область,HIGH,1.0,UA-48
+Ukraine,Voznesensk,Mykolaiv,,,175542,District,,,#N/A,,MykolaivUkraine,county,2,UA-48,Вознесенський район,,,,county,2,UA-48,Вознесенський район,,,,,region,1,UA-48,Миколаївська область,HIGH,1.0,UA-48
+Ukraine,Bashtanka,Mykolaiv,,,134234,District,,,#N/A,,MykolaivUkraine,county,2,UA-48,Баштанський район,,,,locality,,UA-48,Баштанка,,,,,region,1,UA-48,Миколаївська область,HIGH,1.0,UA-48
+Ukraine,Izmail,Odesa,,,204745,District,Izmail,,Izmail,,OdesaUkraine,county,2,UA-51,Ізмаїльський район,,,,locality,,UA-51,Ізмаїл,,,,,region,1,UA-51,Одеська область,HIGH,1.0,UA-51
+Ukraine,Odessa,Odesa,,,1378490,District,Odessa,,Odessa,,OdesaUkraine,county,2,UA-51,Одеський район,,,,locality,,UA-51,Одеська міська громада,,,,,region,1,UA-51,Одеська область,HIGH,1.0,UA-51
+Ukraine,Podilsk,Odesa,,,220786,District,,,#N/A,,OdesaUkraine,county,2,UA-51,Подільський район,,,,county,2,UA-51,Подільський район,,,,,region,1,UA-51,Одеська область,HIGH,1.0,UA-51
+Ukraine,Bilhorod-Dnistrovskyi,Odesa,,,196618,District,,,#N/A,,OdesaUkraine,county,2,UA-51,Білгород-Дністровський район,,,,locality,,UA-51,Білгород-Дністровський,,,,,region,1,UA-51,Одеська область,HIGH,1.0,UA-51
+Ukraine,Bolhrad,Odesa,,,144377,District,,,#N/A,,OdesaUkraine,county,2,UA-51,Болградський район,,,,county,2,UA-51,Болградський район,,,,,region,1,UA-51,Одеська область,HIGH,1.0,UA-51
+Ukraine,Berezivka,Odesa,,,104969,District,,,#N/A,,OdesaUkraine,county,2,UA-51,Березівський район,,,,locality,,UA-51,Березівка,,,,,region,1,UA-51,Одеська область,HIGH,1.0,UA-51
+Ukraine,Rozdilna,Odesa,,,101407,District,,,#N/A,,OdesaUkraine,county,2,UA-51,Роздільнянський район,,,,locality,,UA-51,Роздільна,,,,,region,1,UA-51,Одеська область,HIGH,1.0,UA-51
+Ukraine,Kremenchuk,Poltava,,,387200,District,Kremenchuk,,Kremenchuk,,PoltavaUkraine,county,2,UA-53,Кременчуцький район,,,,county,2,UA-53,Кременчуцький район,,,,,region,1,UA-53,Полтавська область,HIGH,1.0,UA-53
+Ukraine,Poltava,Poltava,,,582391,District,Poltava,,Poltava,,PoltavaUkraine,county,2,UA-53,Полтавський район,,,,locality,,UA-53,Полтавська міська громада,,,,,region,1,UA-53,Полтавська область,HIGH,1.0,UA-53
+Ukraine,Myrhorod,Poltava,,,198076,District,,,#N/A,,PoltavaUkraine,county,2,UA-53,Миргородський район,,,,county,2,UA-53,Миргородський район,,,,,region,1,UA-53,Полтавська область,HIGH,1.0,UA-53
+Ukraine,Lubny,Poltava,,,184616,District,,,#N/A,,PoltavaUkraine,county,2,UA-53,Лубенський район,,,,locality,,UA-53,Лубни,,,,,region,1,UA-53,Полтавська область,HIGH,1.0,UA-53
+Ukraine,Rivne,Rivne,,,625543,District,Rivne,,Rivne,,RivneUkraine,county,2,UA-56,Рівненський район,,,,region,1,UA-56,Рівненська область,,,,,region,1,UA-56,Рівненська область,HIGH,1.0,UA-56
+Ukraine,Sarny,Rivne,,,212212,District,,,#N/A,,RivneUkraine,county,2,UA-56,Сарненський район,,,,locality,,UA-56,Сарни,,,,,region,1,UA-56,Рівненська область,HIGH,1.0,UA-56
+Ukraine,Dubno,Rivne,,,165911,District,,,#N/A,,RivneUkraine,county,2,UA-56,Дубенський район,,,,county,2,UA-56,Дубенський район,,,,,region,1,UA-56,Рівненська область,HIGH,1.0,UA-56
+Ukraine,Varash,Rivne,,,138118,District,,,#N/A,,RivneUkraine,county,2,UA-56,Вараський район,,,,county,2,UA-56,Вараський район,,,,,region,1,UA-56,Рівненська область,HIGH,1.0,UA-56
+Ukraine,Konotop,Sumy,,,194408,District,Konotop,,Konotop,,SumyUkraine,county,2,UA-59,Конотопський район,,,,county,2,UA-59,Конотопський район,,,,,region,1,UA-59,Сумська область,HIGH,1.0,UA-59
+Ukraine,Okhtyrka,Sumy,,,120107,District,Okhtyrka,,Okhtyrka,,SumyUkraine,county,2,UA-59,Охтирський район,,,,county,2,UA-59,Охтирський район,,,,,region,1,UA-59,Сумська область,HIGH,1.0,UA-59
+Ukraine,Shostka,Sumy,,,179432,District,Shostka,,Shostka,,SumyUkraine,county,2,UA-59,Шосткинський район,,,,locality,,UA-59,Шостка,,,,,region,1,UA-59,Сумська область,HIGH,1.0,UA-59
+Ukraine,Sumy,Sumy,,,434316,District,Sumy,,Sumy,,SumyUkraine,county,2,UA-59,Сумський район,,,,locality,,UA-59,Суми,,,,,region,1,UA-59,Сумська область,HIGH,1.0,UA-59
+Ukraine,Romny,Sumy,,,107509,District,,,#N/A,,SumyUkraine,county,2,UA-59,Роменський район,,,,locality,,UA-59,Ромни,,,,,region,1,UA-59,Сумська область,HIGH,1.0,UA-59
+Ukraine,Ternopil,Ternopil,,,559357,District,Ternopil,,Ternopil,,TernopilUkraine,county,2,UA-61,Тернопільський район,,,,locality,,UA-61,Тернопіль,,,,,region,1,UA-61,Тернопільська область,HIGH,1.0,UA-61
+Ukraine,Chortkiv,Ternopil,,,322293,District,,,#N/A,,TernopilUkraine,county,2,UA-61,Чортківський район,,,,locality,,UA-61,Чортків,,,,,region,1,UA-61,Тернопільська область,HIGH,1.0,UA-61
+Ukraine,Kremenets,Ternopil,,,140063,District,,,#N/A,,TernopilUkraine,county,2,UA-61,Кременецький район,,,,county,2,UA-61,Кременецький район,,,,,region,1,UA-61,Тернопільська область,HIGH,1.0,UA-61
+Ukraine,Vinnytsia,Vinnytsia,,,647966,District,Vinnytsia,,Vinnytsia,,VinnytsiaUkraine,county,2,UA-05,Вінницький район,,,,region,1,UA-05,Вінницька область,,,,,region,1,UA-05,Вінницька область,HIGH,1.0,UA-05
+Ukraine,Haisyn,Vinnytsia,,,232647,District,,,#N/A,,VinnytsiaUkraine,county,2,UA-05,Гайсинський район,,,,locality,,UA-05,Гайсин,,,,,region,1,UA-05,Вінницька область,HIGH,1.0,UA-05
+Ukraine,Khmilnyk,Vinnytsia,,,180732,District,,,#N/A,,VinnytsiaUkraine,county,2,UA-05,Хмільницький район,,,,county,2,UA-05,Хмільницький район,,,,,region,1,UA-05,Вінницька область,HIGH,1.0,UA-05
+Ukraine,Zhmerynka,Vinnytsia,,,158913,District,,,#N/A,,VinnytsiaUkraine,county,2,UA-05,Жмеринський район,,,,locality,,UA-05,Жмеринка,,,,,region,1,UA-05,Вінницька область,HIGH,1.0,UA-05
+Ukraine,Tulchyn,Vinnytsia,,,149429,District,,,#N/A,,VinnytsiaUkraine,county,2,UA-05,Тульчинський район,,,,county,2,UA-05,Тульчинський район,,,,,region,1,UA-05,Вінницька область,HIGH,1.0,UA-05
+Ukraine,Mohyliv-Podilskyi,Vinnytsia,,,139828,District,,,#N/A,,VinnytsiaUkraine,county,2,UA-05,Могилів-Подільський район,,,,locality,,UA-05,Могилів-Подільський,,,,,region,1,UA-05,Вінницька область,HIGH,1.0,UA-05
+Ukraine,Kovel,Volyn,,,266304,District,Kovel,,Kovel,,VolynUkraine,county,2,UA-07,Ковельський район,,,,locality,,UA-07,Ковель,,,,,region,1,UA-07,Волинська область,HIGH,1.0,UA-07
+Ukraine,Lutsk,Volyn,,,455439,District,Lutsk,,Lutsk,,VolynUkraine,county,2,UA-07,Луцький район,,,,county,2,UA-07,Луцький район,,,,,region,1,UA-07,Волинська область,HIGH,1.0,UA-07
+Ukraine,Volodymyr-Volynskyi,Volyn,,,169231,District,,,#N/A,,VolynUkraine,county,2,UA-07,Володимирський район,,,,,,,,,,,,region,1,UA-07,Волинська область,NONE,0.0,UA-07
+Ukraine,Kamin-Kashyrskyi,Volyn,,,130382,District,,,#N/A,,VolynUkraine,county,2,UA-07,Камінь-Каширський район,,,,county,2,UA-07,Камінь-Каширський район,,,,,region,1,UA-07,Волинська область,HIGH,1.0,UA-07
+Ukraine,Mukachevo,Zakarpattia,,,251145,District,Mukachevo,,Mukachevo,,ZakarpattiaUkraine,county,2,UA-21,Мукачівський район,,,,locality,,UA-21,Мукачево,,,,,region,1,UA-21,Закарпатська область,HIGH,1.0,UA-21
+Ukraine,Uzhhorod,Zakarpattia,,,255000,District,Uzhhorod,,Uzhhorod,,ZakarpattiaUkraine,county,2,UA-21,Ужгородський район,,,,locality,,UA-21,Ужгород,,,,,region,1,UA-21,Закарпатська область,HIGH,1.0,UA-21
+Ukraine,Khust,Zakarpattia,,,265845,District,,,#N/A,,ZakarpattiaUkraine,county,2,UA-21,Хустський район,,,,locality,,UA-21,Хуст,,,,,region,1,UA-21,Закарпатська область,HIGH,1.0,UA-21
+Ukraine,Berehove,Zakarpattia,,,206696,District,,,#N/A,,ZakarpattiaUkraine,county,2,UA-21,Берегівський район,,,,county,2,UA-21,Берегівський район,,,,,region,1,UA-21,Закарпатська область,HIGH,1.0,UA-21
+Ukraine,Tiachiv,Zakarpattia,,,183756,District,,,#N/A,,ZakarpattiaUkraine,county,2,UA-21,Тячівський район,,,,locality,,UA-21,Тячів,,,,,region,1,UA-21,Закарпатська область,HIGH,1.0,UA-21
+Ukraine,Rakhiv,Zakarpattia,,,82034,District,,,#N/A,,ZakarpattiaUkraine,county,2,UA-21,Рахівський район,,,,locality,,UA-21,Рахів,,,,,region,1,UA-21,Закарпатська область,HIGH,1.0,UA-21
+Ukraine,Berdyansk,Zaporizhzhia,,,176046,District,Berdiansk,,Berdiansk,,ZaporizhzhiaUkraine,county,2,UA-23,Бердянський район,,,,county,2,UA-23,Бердянський район,,,,,region,1,UA-23,Запорізька область,HIGH,1.0,UA-23
+Ukraine,Melitopol,Zaporizhzhia,,,276638,District,Melitopol,,Melitopol,,ZaporizhzhiaUkraine,county,2,UA-23,Мелітопольський район,,,,county,2,UA-23,Мелітопольський район,,,,,region,1,UA-23,Запорізька область,HIGH,1.0,UA-23
+Ukraine,Zaporizhzhia,Zaporizhzhia,,,840866,District,Zaporizhia,,Zaporizhia,,ZaporizhzhiaUkraine,county,2,UA-23,Запорізький район,,,,locality,,UA-23,Запоріжжя,,,,,region,1,UA-23,Запорізька область,HIGH,1.0,UA-23
+Ukraine,Vasylivka,Zaporizhzhia,,,181271,District,,,#N/A,,ZaporizhzhiaUkraine,county,2,UA-23,Василівський район,,,,county,2,UA-23,Василівський район,,,,,region,1,UA-23,Запорізька область,HIGH,1.0,UA-23
+Ukraine,Polohy,Zaporizhzhia,,,163641,District,,,#N/A,,ZaporizhzhiaUkraine,county,2,UA-23,Пологівський район,,,,county,2,UA-23,Пологівський район,,,,,region,1,UA-23,Запорізька область,HIGH,1.0,UA-23
+Ukraine,Berdychiv,Zhytomyr,,,156419,District,Berdychiv,,Berdychiv,,ZhytomyrUkraine,county,2,UA-18,Бердичівський район,,,,county,2,UA-18,Бердичівський район,,,,,region,1,UA-18,Житомирська область,HIGH,1.0,UA-18
+Ukraine,Korosten,Zhytomyr,,,251208,District,Korosten,,Korosten,,ZhytomyrUkraine,county,2,UA-18,Коростенський район,,,,locality,,UA-18,Коростень,,,,,region,1,UA-18,Житомирська область,HIGH,1.0,UA-18
+Ukraine,Zhytomyr,Zhytomyr,,,606433,District,Zhytomyr,,Zhytomyr,,ZhytomyrUkraine,county,2,UA-18,Житомирський район,,,,locality,,UA-18,Житомирська міська громада,,,,,region,1,UA-18,Житомирська область,HIGH,1.0,UA-18
+Ukraine,Novohrad-Volynskyi,Zhytomyr,,,164972,District,,,#N/A,,ZhytomyrUkraine,county,2,UA-18,Звягельський район,,,,,,,,,,,,region,1,UA-18,Житомирська область,NONE,0.0,UA-18

@@ -1,0 +1,43 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Latvia,Liepāja,Kurzeme,,,67398,City,Liepaja,,Liepaja,2025,KurzemeLatvia,region,1,LV-LPX,Liepāja,,,,region,1,LV-LPX,Liepāja,,,,,region,1,LV-LPX,Liepāja,HIGH,1.0,LV-LPX
+Latvia,Dienvidkurzemes novads,Kurzeme,,,32820,Municipality,Liepaja,,Liepaja,2025,KurzemeLatvia,region,1,LV-112,Dienvidkurzemes novads,,,,region,1,LV-112,Dienvidkurzemes novads,,,,,region,1,LV-112,Dienvidkurzemes novads,HIGH,1.0,LV-112
+Latvia,Tukuma novads,Kurzeme,,,43430,Municipality,Riga,,Riga,2025,KurzemeLatvia,region,1,LV-099,Tukuma novads,,,,region,1,LV-099,Tukuma novads,,,,,region,1,LV-099,Tukuma novads,HIGH,1.0,LV-099
+Latvia,Ventspils,Kurzeme,,,32719,City,Ventspils,,Ventspils,2025,KurzemeLatvia,region,1,LV-VEN,Ventspils,,,,region,1,LV-VEN,Ventspils,,,,,region,1,LV-VEN,Ventspils,HIGH,1.0,LV-VEN
+Latvia,Ventspils novads,Kurzeme,,,10295,Municipality,Ventspils,,Ventspils,2025,KurzemeLatvia,region,1,LV-106,Ventspils novads,,,,region,1,LV-106,Ventspils novads,,,,,region,1,LV-106,Ventspils novads,HIGH,1.0,LV-106
+Latvia,Talsu novads,Kurzeme,,,34797,Municipality,,,#N/A,2025,KurzemeLatvia,region,1,LV-097,Talsu novads,,,,region,1,LV-097,Talsu novads,,,,,region,1,LV-097,Talsu novads,HIGH,1.0,LV-097
+Latvia,Kuldīgas novads,Kurzeme,,,26666,Municipality,,,#N/A,2025,KurzemeLatvia,region,1,LV-050,Kuldīgas novads,,,,region,1,LV-050,Kuldīgas novads,,,,,region,1,LV-050,Kuldīgas novads,HIGH,1.0,LV-050
+Latvia,Saldus novads,Kurzeme,,,26629,Municipality,,,#N/A,2025,KurzemeLatvia,region,1,LV-088,Saldus novads,,,,region,1,LV-088,Saldus novads,,,,,region,1,LV-088,Saldus novads,HIGH,1.0,LV-088
+Latvia,Daugavpils,Latgale,,,78112,City,Daugavpils,,Daugavpils,2025,LatgaleLatvia,region,1,LV-DGV,Daugavpils,,,,region,1,LV-DGV,Daugavpils,,,,,region,1,LV-DGV,Daugavpils,HIGH,1.0,LV-DGV
+Latvia,Augšdaugavas novads,Latgale,,,24041,Municipality,Daugavpils,,Daugavpils,2025,LatgaleLatvia,region,1,LV-111,Augšdaugavas novads,,,,region,1,LV-111,Augšdaugavas novads,,,,,region,1,LV-111,Augšdaugavas novads,HIGH,1.0,LV-111
+Latvia,Rēzeknes novads,Latgale,,,27706,Municipality,Rezekne,,Rezekne,2025,LatgaleLatvia,region,1,LV-077,Rēzeknes novads,,,,region,1,LV-077,Rēzeknes novads,,,,,region,1,LV-077,Rēzeknes novads,HIGH,1.0,LV-077
+Latvia,Rēzekne,Latgale,,,26425,City,Rezekne,,Rezekne,2025,LatgaleLatvia,region,1,LV-REZ,Rēzekne,,,,region,1,LV-REZ,Rēzekne,,,,,region,1,LV-REZ,Rēzekne,HIGH,1.0,LV-REZ
+Latvia,Ludzas novads,Latgale,,,20166,Municipality,,,#N/A,2025,LatgaleLatvia,region,1,LV-058,Ludzas novads,,,,region,1,LV-058,Ludzas novads,,,,,region,1,LV-058,Ludzas novads,HIGH,1.0,LV-058
+Latvia,Krāslavas novads,Latgale,,,19505,Municipality,,,#N/A,2025,LatgaleLatvia,region,1,LV-047,Krāslavas novads,,,,region,1,LV-047,Krāslavas novads,,,,,region,1,LV-047,Krāslavas novads,HIGH,1.0,LV-047
+Latvia,Balvu novads,Latgale,,,17531,Municipality,,,#N/A,2025,LatgaleLatvia,region,1,LV-015,Balvu novads,,,,region,1,LV-015,Balvu novads,,,,,region,1,LV-015,Balvu novads,HIGH,1.0,LV-015
+Latvia,Preiļu novads,Latgale,,,15535,Municipality,,,#N/A,2025,LatgaleLatvia,region,1,LV-073,Preiļu novads,,,,region,1,LV-073,Preiļu novads,,,,,region,1,LV-073,Preiļu novads,HIGH,1.0,LV-073
+Latvia,Līvānu novads,Latgale,,,10145,Municipality,,,#N/A,2025,LatgaleLatvia,region,1,LV-056,Līvānu novads,,,,region,1,LV-056,Līvānu novads,,,,,region,1,LV-056,Līvānu novads,HIGH,1.0,LV-056
+Latvia,Rīga,Rīga,,,591882,City,Riga,,Riga,2025,RīgaLatvia,region,1,LV-RIX,Rīga,,,,region,1,LV-RIX,Rīga,,,,,region,1,LV-RIX,Rīga,HIGH,1.0,LV-RIX
+Latvia,Jūrmala,Rīga,,,51933,City,Riga,,Riga,2025,RīgaLatvia,region,1,LV-JUR,Jūrmala,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Mārupes novads,Rīga,,,37346,Municipality,Riga,,Riga,2025,RīgaLatvia,region,1,LV-062,Mārupes novads,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Ropažu novads,Rīga,,,35164,Municipality,Riga,,Riga,2025,RīgaLatvia,region,1,LV-080,Ropažu novads,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Siguldas novads,Rīga,,,31479,Municipality,Riga,,Riga,2025,RīgaLatvia,region,1,LV-091,Siguldas novads,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Ķekavas novads,Rīga,,,31271,Municipality,Riga,,Riga,2025,RīgaLatvia,region,1,LV-052,Ķekavas novads,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Salaspils novads,Rīga,,,23815,Municipality,Riga,,Riga,2025,RīgaLatvia,region,1,LV-087,Salaspils novads,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Ādažu novads,Rīga,,,23603,Municipality,Riga,,Riga,2025,RīgaLatvia,region,1,LV-011,Ādažu novads,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Olaines novads,Rīga,,,20669,Municipality,Riga,,Riga,2025,RīgaLatvia,region,1,LV-068,Olaines novads,,,,,,,,,,,,region,1,LV-RIX,Rīga,NONE,0.0,LV-RIX
+Latvia,Jelgava,Semigallia,,,54821,City,Jelgava,,Jelgava,2025,SemigalliaLatvia,region,1,LV-JEL,Jelgava,,,,region,1,LV-JEL,Jelgava,,,,,region,1,LV-JEL,Jelgava,HIGH,1.0,LV-JEL
+Latvia,Jelgavas novads,Semigallia,,,32005,Municipality,Jelgava,,Jelgava,2025,SemigalliaLatvia,region,1,LV-041,Jelgavas novads,,,,region,1,LV-041,Jelgavas novads,,,,,region,1,LV-041,Jelgavas novads,HIGH,1.0,LV-041
+Latvia,Bauskas novads,Semigallia,,,40488,Municipality,,,#N/A,2025,SemigalliaLatvia,region,1,LV-016,Bauskas novads,,,,region,1,LV-016,Bauskas novads,,,,,region,1,LV-016,Bauskas novads,HIGH,1.0,LV-016
+Latvia,Jēkabpils novads,Semigallia,,,38833,Municipality,,,#N/A,2025,SemigalliaLatvia,region,1,LV-042,Jēkabpils novads,,,,region,1,LV-042,Jēkabpils novads,,,,,region,1,LV-042,Jēkabpils novads,HIGH,1.0,LV-042
+Latvia,Aizkraukles novads,Semigallia,,,28238,Municipality,,,#N/A,2025,SemigalliaLatvia,region,1,LV-002,Aizkraukles novads,,,,region,1,LV-002,Aizkraukles novads,,,,,region,1,LV-002,Aizkraukles novads,HIGH,1.0,LV-002
+Latvia,Dobeles novads,Semigallia,,,27508,Municipality,,,#N/A,2025,SemigalliaLatvia,region,1,LV-026,Dobeles novads,,,,region,1,LV-026,Dobeles novads,,,,,region,1,LV-026,Dobeles novads,HIGH,1.0,LV-026
+Latvia,Ogres novads,Vidzeme,,,57648,Municipality,Riga,,Riga,2025,VidzemeLatvia,region,1,LV-067,Ogres novads,,,,region,1,LV-067,Ogres novads,,,,,region,1,LV-067,Ogres novads,HIGH,1.0,LV-067
+Latvia,Limbažu novads,Vidzeme,,,27612,Municipality,Riga,,Riga,2025,VidzemeLatvia,region,1,LV-054,Limbažu novads,,,,region,1,LV-054,Limbažu novads,,,,,region,1,LV-054,Limbažu novads,HIGH,1.0,LV-054
+Latvia,Saulkrastu novads,Vidzeme,,,9981,Municipality,Riga,,Riga,2025,VidzemeLatvia,region,1,LV-089,Saulkrastu novads,,,,region,1,LV-089,Saulkrastu novads,,,,,region,1,LV-089,Saulkrastu novads,HIGH,1.0,LV-089
+Latvia,Valmieras novads,Vidzeme,,,50647,Municipality,Valmiera,,Valmiera,2025,VidzemeLatvia,region,1,LV-113,Valmieras novads,,,,region,1,LV-113,Valmieras novads,,,,,region,1,LV-113,Valmieras novads,HIGH,1.0,LV-113
+Latvia,Cēsu novads,Vidzeme,,,41320,Municipality,,,#N/A,2025,VidzemeLatvia,region,1,LV-022,Cēsu novads,,,,region,1,LV-022,Cēsu novads,,,,,region,1,LV-022,Cēsu novads,HIGH,1.0,LV-022
+Latvia,Madonas novads (incl. Varakļānu novads),Vidzeme,,,29898,Municipality,,,#N/A,2025,VidzemeLatvia,region,1,LV-059,Madonas novads,,,,region,1,LV-059,Madonas novads,,,,,region,1,LV-059,Madonas novads,HIGH,1.0,LV-059
+Latvia,Gulbenes novads,Vidzeme,,,18497,Municipality,,,#N/A,2025,VidzemeLatvia,region,1,LV-033,Gulbenes novads,,,,region,1,LV-033,Gulbenes novads,,,,,region,1,LV-033,Gulbenes novads,HIGH,1.0,LV-033
+Latvia,Smiltenes novads,Vidzeme,,,17555,Municipality,,,#N/A,2025,VidzemeLatvia,region,1,LV-094,Smiltenes novads,,,,region,1,LV-094,Smiltenes novads,,,,,region,1,LV-094,Smiltenes novads,HIGH,1.0,LV-094
+Latvia,Alūksnes novads,Vidzeme,,,13154,Municipality,,,#N/A,2025,VidzemeLatvia,region,1,LV-007,Alūksnes novads,,,,region,1,LV-007,Alūksnes novads,,,,,region,1,LV-007,Alūksnes novads,HIGH,1.0,LV-007
+Latvia,Valkas novads,Vidzeme,,,7645,Municipality,,,#N/A,2025,VidzemeLatvia,region,1,LV-101,Valkas novads,,,,region,1,LV-101,Valkas novads,,,,,region,1,LV-101,Valkas novads,HIGH,1.0,LV-101

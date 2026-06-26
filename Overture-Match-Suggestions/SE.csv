@@ -1,291 +1,291 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Sweden,Karlskrona,Blekinge,,,66708,Municipality,Karlskrona,,Karlskrona,,BlekingeSweden,,,,,county,2,SE-K,Karlskrona kommun,,,,,region,1,SE-K,Blekinge län,LOW,0.791,SE-K
-Sweden,Sölvesborg,Blekinge,,,17540,Municipality,Mjällby,,Mjällby,,BlekingeSweden,,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
-Sweden,Karlshamn,Blekinge,,,32226,Municipality,,,#N/A,,BlekingeSweden,,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
-Sweden,Ronneby,Blekinge,,,29200,Municipality,,,#N/A,,BlekingeSweden,,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
-Sweden,Olofström,Blekinge,,,13263,Municipality,,,#N/A,,BlekingeSweden,,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
-Sweden,Avesta,Dalarna,,,22925,Municipality,Avesta,,Avesta,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Borlänge,Dalarna,,,52254,Municipality,Borlange,,Borlange,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Leksand,Dalarna,,,16012,Municipality,Leksand,,Leksand,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Falun,Dalarna,,,59837,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Ludvika,Dalarna,,,26497,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Mora,Dalarna,,,20670,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Hedemora,Dalarna,,,15458,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Säter,Dalarna,,,11242,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Rättvik,Dalarna,,,11103,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Smedjebacken,Dalarna,,,10933,Municipality,,,#N/A,,DalarnaSweden,,,,,county,2,SE-W,Smedjebackens kommun,,,,,region,1,SE-W,Dalarnas län,LOW,0.8,SE-W
-Sweden,Gagnef,Dalarna,,,10502,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Malung-Sälen,Dalarna,,,10218,Municipality,,,#N/A,,DalarnaSweden,,,,,county,2,SE-W,Malung-Sälens kommun,,,,,region,1,SE-W,Dalarnas län,LOW,0.8,SE-W
-Sweden,Älvdalen,Dalarna,,,7042,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Orsa,Dalarna,,,6918,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Vansbro,Dalarna,,,6776,Municipality,,,#N/A,,DalarnaSweden,,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
-Sweden,Gävle,Gävleborg,,,103136,Municipality,Gävle,,Gävle,,GävleborgSweden,,,,,locality,,SE-X,Gävle,,,,,region,1,SE-X,Gävleborgs län,HIGH,1.0,SE-X
-Sweden,Sandviken,Gävleborg,,,39250,Municipality,Sandviken,,Sandviken,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Hudiksvall,Gävleborg,,,37744,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Bollnäs,Gävleborg,,,26753,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Söderhamn,Gävleborg,,,25446,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Ljusdal,Gävleborg,,,18804,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Ovanåker,Gävleborg,,,11711,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Hofors,Gävleborg,,,9578,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Nordanstig,Gävleborg,,,9480,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Ockelbo,Gävleborg,,,5865,Municipality,,,#N/A,,GävleborgSweden,,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
-Sweden,Gotland,Gotland,,,61001,Municipality,Visby,,Visby,,GotlandSweden,,,,,region,1,SE-I,Gotlands län,,,,,region,1,SE-I,Gotlands län,HIGH,1.0,SE-I
-Sweden,Falkenberg,Halland,,,46773,Municipality,Falkenberg,,Falkenberg,,HallandSweden,,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
-Sweden,Kungsbacka,Halland,,,85301,Municipality,Gothenburg,,Gothenburg,,HallandSweden,,,,,county,2,SE-N,Kungsbacka kommun,,,,,region,1,SE-N,Hallands län,LOW,0.791,SE-N
-Sweden,Halmstad,Halland,,,104573,Municipality,Halmstad,,Halmstad,,HallandSweden,,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
-Sweden,Varberg,Halland,,,66658,Municipality,Varberg,,Varberg,,HallandSweden,,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
-Sweden,Laholm,Halland,,,26319,Municipality,,,#N/A,,HallandSweden,,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
-Sweden,Hylte,Halland,,,10619,Municipality,,,#N/A,,HallandSweden,,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
-Sweden,Östersund,Jämtland,,,64324,Municipality,Östersund,,Östersund,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Krokom,Jämtland,,,15352,Municipality,,,#N/A,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Åre,Jämtland,,,12271,Municipality,,,#N/A,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Strömsund,Jämtland,,,11473,Municipality,,,#N/A,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Härjedalen,Jämtland,,,10114,Municipality,,,#N/A,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Berg,Jämtland,,,7135,Municipality,,,#N/A,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Bräcke,Jämtland,,,6175,Municipality,,,#N/A,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Ragunda,Jämtland,,,5210,Municipality,,,#N/A,,JämtlandSweden,,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
-Sweden,Gislaved,Jönköping,,,29556,Municipality,Gislaved,,Gislaved,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Jönköping,Jönköping,,,143579,Municipality,Jönköping,,Jönköping,,JönköpingSweden,,,,,region,1,SE-F,Jönköpings län,,,,,region,1,SE-F,Jönköpings län,HIGH,1.0,SE-F
-Sweden,Värnamo,Jönköping,,,34661,Municipality,Värnamo,,Värnamo,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Vetlanda,Jönköping,,,27621,Municipality,Vetlanda,,Vetlanda,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Nässjö,Jönköping,,,31782,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Tranås,Jönköping,,,18874,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Eksjö,Jönköping,,,17834,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Vaggeryd,Jönköping,,,14746,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Habo,Jönköping,,,12810,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Sävsjö,Jönköping,,,11709,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Gnosjö,Jönköping,,,9570,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Mullsjö,Jönköping,,,7430,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Aneby,Jönköping,,,6892,Municipality,,,#N/A,,JönköpingSweden,,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
-Sweden,Hultsfred,Kalmar,,,14056,Municipality,Hultsfred,,Hultsfred,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Kalmar,Kalmar,,,71328,Municipality,Kalmar,,Kalmar,,KalmarSweden,,,,,region,1,SE-H,Kalmar län,,,,,region,1,SE-H,Kalmar län,HIGH,1.0,SE-H
-Sweden,Oskarshamn,Kalmar,,,27220,Municipality,Oskarshamn,,Oskarshamn,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Västervik,Kalmar,,,36747,Municipality,Västervik,,Västervik,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Nybro,Kalmar,,,20284,Municipality,,,#N/A,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Mörbylånga,Kalmar,,,15722,Municipality,,,#N/A,,KalmarSweden,,,,,county,2,SE-H,Mörbylånga kommun,,,,,region,1,SE-H,Kalmar län,LOW,0.791,SE-H
-Sweden,Vimmerby,Kalmar,,,15578,Municipality,,,#N/A,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Mönsterås,Kalmar,,,13258,Municipality,,,#N/A,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Borgholm,Kalmar,,,10895,Municipality,,,#N/A,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Emmaboda,Kalmar,,,9329,Municipality,,,#N/A,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Torsås,Kalmar,,,7113,Municipality,,,#N/A,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Högsby,Kalmar,,,5645,Municipality,,,#N/A,,KalmarSweden,,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
-Sweden,Markaryd,Kronoberg,,,10320,Municipality,Markaryd,,Markaryd,,KronobergSweden,,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
-Sweden,Växjö,Kronoberg,,,95995,Municipality,Vaxjo,,Vaxjo,,KronobergSweden,,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
-Sweden,Ljungby,Kronoberg,,,28433,Municipality,,,#N/A,,KronobergSweden,,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
-Sweden,Alvesta,Kronoberg,,,20287,Municipality,,,#N/A,,KronobergSweden,,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
-Sweden,Älmhult,Kronoberg,,,17963,Municipality,,,#N/A,,KronobergSweden,,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
-Sweden,Tingsryd,Kronoberg,,,12319,Municipality,,,#N/A,,KronobergSweden,,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
-Sweden,Uppvidinge,Kronoberg,,,9449,Municipality,,,#N/A,,KronobergSweden,,,,,county,2,SE-G,Uppvidinge kommun,,,,,region,1,SE-G,Kronobergs län,LOW,0.791,SE-G
-Sweden,Lessebo,Kronoberg,,,8574,Municipality,,,#N/A,,KronobergSweden,,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
-Sweden,Luleå,Norrbotten,,,78867,Municipality,Luleå,,Luleå,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Piteå,Norrbotten,,,42323,Municipality,Piteå,,Piteå,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Boden,Norrbotten,,,28160,Municipality,,,#N/A,,NorrbottenSweden,,,,,locality,,SE-BD,Boheden,,,,,region,1,SE-BD,Norrbottens län,LOW,0.833,SE-BD
-Sweden,Kiruna,Norrbotten,,,22555,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Gällivare,Norrbotten,,,17449,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Kalix,Norrbotten,,,15768,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Haparanda,Norrbotten,,,9496,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Älvsbyn,Norrbotten,,,8009,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Arvidsjaur,Norrbotten,,,6143,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Pajala,Norrbotten,,,5973,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Jokkmokk,Norrbotten,,,4780,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Övertorneå,Norrbotten,,,4211,Municipality,,,#N/A,,NorrbottenSweden,,,,,county,2,SE-BD,Övertorneå kommun,,,,,region,1,SE-BD,Norrbottens län,LOW,0.791,SE-BD
-Sweden,Överkalix,Norrbotten,,,3252,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Arjeplog,Norrbotten,,,2707,Municipality,,,#N/A,,NorrbottenSweden,,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
-Sweden,Degerfors,Örebro,,,9534,Municipality,Degerfors,,Degerfors,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Örebro,Örebro,,,156987,Municipality,Orebro,,Orebro,,ÖrebroSweden,,,,,region,1,SE-T,Örebro län,,,,,region,1,SE-T,Örebro län,HIGH,1.0,SE-T
-Sweden,Karlskoga,Örebro,,,30437,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Lindesberg,Örebro,,,23601,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Kumla,Örebro,,,22144,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Hallsberg,Örebro,,,16196,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Askersund,Örebro,,,11534,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Nora,Örebro,,,10721,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Lekeberg,Örebro,,,8603,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Hällefors,Örebro,,,6849,Municipality,,,#N/A,,ÖrebroSweden,,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
-Sweden,Laxå,Örebro,,,5582,Municipality,,,#N/A,,ÖrebroSweden,,,,,locality,,SE-T,Laxå,,,,,region,1,SE-T,Örebro län,HIGH,1.0,SE-T
-Sweden,Ljusnarsberg,Örebro,,,4604,Municipality,,,#N/A,,ÖrebroSweden,,,,,county,2,SE-T,Ljusnarsbergs kommun,,,,,region,1,SE-T,Örebro län,LOW,0.8,SE-T
-Sweden,Åtvidaberg,Östergötland,,,11462,Municipality,Åtvidaberg,,Åtvidaberg,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Linköping,Östergötland,,,165527,Municipality,Linköping,,Linköping,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Motala,Östergötland,,,43674,Municipality,Motala,,Motala,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Norrköping,Östergötland,,,144458,Municipality,Norrköping,,Norrköping,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Mjölby,Östergötland,,,28269,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Finspång,Östergötland,,,21889,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Söderköping,Östergötland,,,14673,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,county,2,SE-E,Söderköpings kommun,,,,,region,1,SE-E,Östergötlands län,LOW,0.783,SE-E
-Sweden,Kinda,Östergötland,,,10048,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Valdemarsvik,Östergötland,,,7660,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,county,2,SE-E,Valdemarsviks kommun,,,,,region,1,SE-E,Östergötlands län,LOW,0.8,SE-E
-Sweden,Vadstena,Östergötland,,,7528,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Boxholm,Östergötland,,,5512,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Ödeshög,Östergötland,,,5309,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Ydre,Östergötland,,,3695,Municipality,,,#N/A,,ÖstergötlandSweden,,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
-Sweden,Ängelholm,Skåne,,,43633,Municipality,Ängelholm,,Ängelholm,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Hässleholm,Skåne,,,52309,Municipality,Hässleholm,,Hässleholm,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Helsingborg,Skåne,,,150109,Municipality,Helsingborg,,Helsingborg,,SkåneSweden,,,,,county,2,SE-M,Helsingborgs kommun,,,,,region,1,SE-M,Skåne län,LOW,0.783,SE-M
-Sweden,Kristianstad,Skåne,,,86641,Municipality,Kristianstad,,Kristianstad,,SkåneSweden,,,,,county,2,SE-M,Kristianstads kommun,,,,,region,1,SE-M,Skåne län,LOW,0.8,SE-M
-Sweden,Malmö,Skåne,,,351749,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,locality,,SE-M,Malmö,,,,,region,1,SE-M,Skåne län,HIGH,1.0,SE-M
-Sweden,Lund,Skåne,,,127376,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,county,2,SE-M,Lunds kommun,,,,,region,1,SE-M,Skåne län,HIGH,1.0,SE-M
-Sweden,Trelleborg,Skåne,,,46231,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Vellinge,Skåne,,,37452,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Eslöv,Skåne,,,34593,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Kävlinge,Skåne,,,32341,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Staffanstorp,Skåne,,,26242,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,county,2,SE-M,Staffanstorps kommun,,,,,region,1,SE-M,Skåne län,LOW,0.8,SE-M
-Sweden,Lomma,Skåne,,,24638,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Svedala,Skåne,,,23222,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Burlöv,Skåne,,,19753,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Höör,Skåne,,,16954,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Skurup,Skåne,,,16419,Municipality,Malmo,,Malmo,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Landskrona,Skåne,,,46488,Municipality,,,#N/A,,SkåneSweden,,,,,county,2,SE-M,Landskrona kommun,,,,,region,1,SE-M,Skåne län,LOW,0.791,SE-M
-Sweden,Ystad,Skåne,,,31560,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Höganäs,Skåne,,,27589,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Sjöbo,Skåne,,,19497,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Simrishamn,Skåne,,,19267,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Klippan,Skåne,,,17783,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Åstorp,Skåne,,,16308,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Bjuv,Skåne,,,15842,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Hörby,Skåne,,,15745,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Båstad,Skåne,,,15636,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Östra Göinge,Skåne,,,14941,Municipality,,,#N/A,,SkåneSweden,,,,,county,2,SE-M,Östra Göinge kommun,,,,,region,1,SE-M,Skåne län,LOW,0.824,SE-M
-Sweden,Svalöv,Skåne,,,14412,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Tomelilla,Skåne,,,13712,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Osby,Skåne,,,13269,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Bromölla,Skåne,,,12650,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Örkelljunga,Skåne,,,10499,Municipality,,,#N/A,,SkåneSweden,,,,,county,2,SE-M,Örkelljunga kommun,,,,,region,1,SE-M,Skåne län,LOW,0.809,SE-M
-Sweden,Perstorp,Skåne,,,7565,Municipality,,,#N/A,,SkåneSweden,,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
-Sweden,Eskilstuna,Södermanland,,,107593,Municipality,Eskilstuna,,Eskilstuna,,SödermanlandSweden,,,,,county,2,SE-D,Eskilstuna kommun,,,,,region,1,SE-D,Södermanlands län,LOW,0.791,SE-D
-Sweden,Nyköping,Södermanland,,,57633,Municipality,,,#N/A,,SödermanlandSweden,,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
-Sweden,Strängnäs,Södermanland,,,38129,Municipality,,,#N/A,,SödermanlandSweden,,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
-Sweden,Katrineholm,Södermanland,,,34764,Municipality,,,#N/A,,SödermanlandSweden,,,,,county,2,SE-D,Katrineholms kommun,,,,,region,1,SE-D,Södermanlands län,LOW,0.783,SE-D
-Sweden,Flen,Södermanland,,,16316,Municipality,,,#N/A,,SödermanlandSweden,,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
-Sweden,Trosa,Södermanland,,,14658,Municipality,,,#N/A,,SödermanlandSweden,,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
-Sweden,Oxelösund,Södermanland,,,12132,Municipality,,,#N/A,,SödermanlandSweden,,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
-Sweden,Gnesta,Södermanland,,,11513,Municipality,,,#N/A,,SödermanlandSweden,,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
-Sweden,Vingåker,Södermanland,,,9063,Municipality,,,#N/A,,SödermanlandSweden,,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
-Sweden,Stockholm,Stockholm,,,978770,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,county,2,SE-AB,Stockholms kommun,,,,,region,1,SE-AB,Stockholms län,HIGH,1.0,SE-AB
-Sweden,Huddinge,Stockholm,,,113951,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Nacka,Stockholm,,,108234,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,"Södertälje (→ Nykvarn, 1999)",Stockholm,,,101209,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,county,2,SE-AB,Södertälje kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.791,SE-AB
-Sweden,Haninge,Stockholm,,,95658,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Botkyrka,Stockholm,,,95318,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Solna,Stockholm,,,84187,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Järfälla,Stockholm,,,83170,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Sollentuna,Stockholm,,,75108,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,county,2,SE-AB,Sollentuna kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.791,SE-AB
-Sweden,Täby,Stockholm,,,73955,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Norrtälje,Stockholm,,,64762,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Sundbyberg,Stockholm,,,53564,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Sigtuna,Stockholm,,,50273,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Tyresö,Stockholm,,,49062,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Österåker,Stockholm,,,48234,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Lidingö,Stockholm,,,48162,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Upplands Väsby,Stockholm,,,47820,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,county,2,SE-AB,Upplands Väsby kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.85,SE-AB
-Sweden,Värmdö,Stockholm,,,46232,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Vallentuna,Stockholm,,,34246,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,county,2,SE-AB,Vallentuna kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.791,SE-AB
-Sweden,Danderyd,Stockholm,,,32803,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Upplands-Bro,Stockholm,,,31082,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,county,2,SE-AB,Upplands-Bro kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.824,SE-AB
-Sweden,Nynäshamn,Stockholm,,,29495,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Ekerö,Stockholm,,,29096,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Salem,Stockholm,,,17252,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Vaxholm,Stockholm,,,11996,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,"Nykvarn (← Södertälje, 1999)",Stockholm,,,11500,Municipality,Stockholm,,Stockholm,,StockholmSweden,,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
-Sweden,Enköping,Uppsala,,,47489,Municipality,Enköping,,Enköping,,UppsalaSweden,,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
-Sweden,Uppsala,Uppsala,,,237596,Municipality,Uppsala,,Uppsala,,UppsalaSweden,,,,,region,1,SE-C,Uppsala län,,,,,region,1,SE-C,Uppsala län,HIGH,1.0,SE-C
-Sweden,Håbo,Uppsala,,,22344,Municipality,Uppsala,,Uppsala,,UppsalaSweden,,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
-Sweden,Knivsta,Uppsala,,,19818,Municipality,Uppsala,,Uppsala,,UppsalaSweden,,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
-Sweden,Östhammar,Uppsala,,,22364,Municipality,,,#N/A,,UppsalaSweden,,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
-Sweden,Tierp,Uppsala,,,21485,Municipality,,,#N/A,,UppsalaSweden,,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
-Sweden,Heby,Uppsala,,,14303,Municipality,,,#N/A,,UppsalaSweden,,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
-Sweden,Älvkarleby,Uppsala,,,9627,Municipality,,,#N/A,,UppsalaSweden,,,,,county,2,SE-C,Älvkarleby kommun,,,,,region,1,SE-C,Uppsala län,LOW,0.791,SE-C
-Sweden,Karlstad,Värmland,,,95408,Municipality,Karlstad,,Karlstad,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Arvika,Värmland,,,25854,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Kristinehamn,Värmland,,,24099,Municipality,,,#N/A,,VärmlandSweden,,,,,county,2,SE-S,Kristinehamns kommun,,,,,region,1,SE-S,Värmlands län,LOW,0.8,SE-S
-Sweden,Hammarö,Värmland,,,16765,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Säffle,Värmland,,,15396,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Sunne,Värmland,,,13355,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Kil,Värmland,,,12134,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Forshaga,Värmland,,,11606,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Hagfors,Värmland,,,11553,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Torsby,Värmland,,,11472,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Filipstad,Värmland,,,10403,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Årjäng,Värmland,,,9942,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Grums,Värmland,,,9091,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Eda,Värmland,,,8490,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Storfors,Värmland,,,3948,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Munkfors,Värmland,,,3680,Municipality,,,#N/A,,VärmlandSweden,,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
-Sweden,Skellefteå,Västerbotten,,,73393,Municipality,Skellefteå,,Skellefteå,,VästerbottenSweden,,,,,locality,,SE-AC,Skellefteå,,,,,region,1,SE-AC,Västerbottens län,HIGH,1.0,SE-AC
-Sweden,Umeå,Västerbotten,,,130997,Municipality,Umeå,,Umeå,,VästerbottenSweden,,,,,locality,,SE-AC,Umeå,,,,,region,1,SE-AC,Västerbottens län,HIGH,1.0,SE-AC
-Sweden,Lycksele,Västerbotten,,,12264,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Vännäs,Västerbotten,,,9054,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Nordmaling,Västerbotten,,,7100,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Robertsfors,Västerbotten,,,6786,Municipality,,,#N/A,,VästerbottenSweden,,,,,county,2,SE-AC,Robertsfors kommun,,,,,region,1,SE-AC,Västerbottens län,LOW,0.809,SE-AC
-Sweden,Vilhelmina,Västerbotten,,,6485,Municipality,,,#N/A,,VästerbottenSweden,,,,,county,2,SE-AC,Vilhelmina kommun,,,,,region,1,SE-AC,Västerbottens län,LOW,0.791,SE-AC
-Sweden,Storuman,Västerbotten,,,5808,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Vindeln,Västerbotten,,,5550,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Norsjö,Västerbotten,,,3971,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Malå,Västerbotten,,,3034,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Åsele,Västerbotten,,,2807,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Sorsele,Västerbotten,,,2460,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Dorotea,Västerbotten,,,2459,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Bjurholm,Västerbotten,,,2395,Municipality,,,#N/A,,VästerbottenSweden,,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
-Sweden,Sundsvall,Västernorrland,,,99383,Municipality,Sundsvall,,Sundsvall,,VästernorrlandSweden,,,,,locality,,SE-Y,Sundsvall,,,,,region,1,SE-Y,Västernorrlands län,HIGH,1.0,SE-Y
-Sweden,Timrå,Västernorrland,,,17923,Municipality,Timrå,,Timrå,,VästernorrlandSweden,,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
-Sweden,Örnsköldsvik,Västernorrland,,,55823,Municipality,,,#N/A,,VästernorrlandSweden,,,,,locality,,SE-Y,Örnsköldsvik,,,,,region,1,SE-Y,Västernorrlands län,HIGH,1.0,SE-Y
-Sweden,Härnösand,Västernorrland,,,25012,Municipality,,,#N/A,,VästernorrlandSweden,,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
-Sweden,Sollefteå,Västernorrland,,,18814,Municipality,,,#N/A,,VästernorrlandSweden,,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
-Sweden,Kramfors,Västernorrland,,,18005,Municipality,,,#N/A,,VästernorrlandSweden,,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
-Sweden,Ånge,Västernorrland,,,9233,Municipality,,,#N/A,,VästernorrlandSweden,,,,,county,2,SE-Y,Ånge kommun,,,,,region,1,SE-Y,Västernorrlands län,HIGH,1.0,SE-Y
-Sweden,Västerås,Västmanland,,,156838,Municipality,Västerås,,Västerås,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Köping,Västmanland,,,26133,Municipality,,,#N/A,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Sala,Västmanland,,,22998,Municipality,,,#N/A,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Hallstahammar,Västmanland,,,16608,Municipality,,,#N/A,,VästmanlandSweden,,,,,county,2,SE-U,Hallstahammars kommun,,,,,region,1,SE-U,Västmanlands län,LOW,0.815,SE-U
-Sweden,Arboga,Västmanland,,,14100,Municipality,,,#N/A,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Fagersta,Västmanland,,,13319,Municipality,,,#N/A,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Surahammar,Västmanland,,,10099,Municipality,,,#N/A,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Kungsör,Västmanland,,,8787,Municipality,,,#N/A,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Norberg,Västmanland,,,5714,Municipality,,,#N/A,,VästmanlandSweden,,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
-Sweden,Skinnskatteberg,Västmanland,,,4371,Municipality,,,#N/A,,VästmanlandSweden,,,,,county,2,SE-U,Skinnskattebergs kommun,,,,,region,1,SE-U,Västmanlands län,LOW,0.839,SE-U
-Sweden,Borås,Västra Götaland,,,114091,Municipality,Borås,,Borås,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Göteborg [Gothenburg],Västra Götaland,,,587549,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Mölndal,Västra Götaland,,,69943,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Kungälv,Västra Götaland,,,48271,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Lerum,Västra Götaland,,,43399,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Alingsås,Västra Götaland,,,41853,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Partille,Västra Götaland,,,39529,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Härryda,Västra Götaland,,,39006,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Ale,Västra Götaland,,,32148,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,locality,,SE-O,Åsle,,,,,region,1,SE-O,Västra Götalands län,LOW,0.857,SE-O
-Sweden,Stenungsund,Västra Götaland,,,27556,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,county,2,SE-O,Stenungsunds kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.783,SE-O
-Sweden,Tjörn,Västra Götaland,,,16312,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Lilla Edet,Västra Götaland,,,14509,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Öckerö,Västra Götaland,,,12902,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Uddevalla,Västra Götaland,,,57122,Municipality,Ljungskile,,Ljungskile,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Trollhättan,Västra Götaland,,,59154,Municipality,,,#N/A,,Västra GötalandSweden,,,,,county,2,SE-O,Trollhättans kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.783,SE-O
-Sweden,Skövde,Västra Götaland,,,57016,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Lidköping,Västra Götaland,,,40460,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Vänersborg,Västra Götaland,,,39636,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Mark,Västra Götaland,,,35201,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Falköping,Västra Götaland,,,33270,Municipality,,,#N/A,,Västra GötalandSweden,,,,,locality,,SE-O,Falköping,,,,,region,1,SE-O,Västra Götalands län,HIGH,1.0,SE-O
-Sweden,Ulricehamn,Västra Götaland,,,24898,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Mariestad,Västra Götaland,,,24723,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Skara,Västra Götaland,,,18732,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Vara,Västra Götaland,,,16162,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Orust,Västra Götaland,,,15345,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Lysekil,Västra Götaland,,,14266,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Strömstad,Västra Götaland,,,13277,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Götene,Västra Götaland,,,13263,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Tanum,Västra Götaland,,,12965,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Tidaholm,Västra Götaland,,,12825,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Åmål,Västra Götaland,,,12318,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Vårgårda,Västra Götaland,,,12180,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Tranemo,Västra Götaland,,,11937,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Tibro,Västra Götaland,,,11281,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Svenljunga,Västra Götaland,,,10864,Municipality,,,#N/A,,Västra GötalandSweden,,,,,county,2,SE-O,Svenljunga kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.791,SE-O
-Sweden,Munkedal,Västra Götaland,,,10588,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Bollebygd,Västra Götaland,,,9634,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Herrljunga,Västra Götaland,,,9501,Municipality,,,#N/A,,Västra GötalandSweden,,,,,county,2,SE-O,Herrljunga kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.791,SE-O
-Sweden,Bengtsfors,Västra Götaland,,,9409,Municipality,,,#N/A,,Västra GötalandSweden,,,,,county,2,SE-O,Bengtsfors kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.791,SE-O
-Sweden,Mellerud,Västra Götaland,,,9268,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Hjo,Västra Götaland,,,9233,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Töreboda,Västra Götaland,,,9207,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Sotenäs,Västra Götaland,,,9125,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Karlsborg,Västra Götaland,,,6965,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Färgelanda,Västra Götaland,,,6576,Municipality,,,#N/A,,Västra GötalandSweden,,,,,locality,,SE-O,Färgelanda,,,,,region,1,SE-O,Västra Götalands län,HIGH,1.0,SE-O
-Sweden,Grästorp,Västra Götaland,,,5730,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Essunga,Västra Götaland,,,5698,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Gullspång,Västra Götaland,,,5206,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
-Sweden,Dals-Ed,Västra Götaland,,,4756,Municipality,,,#N/A,,Västra GötalandSweden,,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Sweden,Karlskrona,Blekinge,,,66708,Municipality,Karlskrona,,Karlskrona,,BlekingeSweden,county,2,SE-K,Karlskrona kommun,,,,county,2,SE-K,Karlskrona kommun,,,,,region,1,SE-K,Blekinge län,LOW,0.791,SE-K
+Sweden,Sölvesborg,Blekinge,,,17540,Municipality,Mjällby,,Mjällby,,BlekingeSweden,county,2,SE-K,Sölvesborgs kommun,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
+Sweden,Karlshamn,Blekinge,,,32226,Municipality,,,#N/A,,BlekingeSweden,county,2,SE-K,Karlshamns kommun,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
+Sweden,Ronneby,Blekinge,,,29200,Municipality,,,#N/A,,BlekingeSweden,county,2,SE-K,Ronneby kommun,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
+Sweden,Olofström,Blekinge,,,13263,Municipality,,,#N/A,,BlekingeSweden,county,2,SE-K,Olofströms kommun,,,,,,,,,,,,region,1,SE-K,Blekinge län,NONE,0.0,SE-K
+Sweden,Avesta,Dalarna,,,22925,Municipality,Avesta,,Avesta,,DalarnaSweden,county,2,SE-W,Avesta kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Borlänge,Dalarna,,,52254,Municipality,Borlange,,Borlange,,DalarnaSweden,county,2,SE-W,Borlänge kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Leksand,Dalarna,,,16012,Municipality,Leksand,,Leksand,,DalarnaSweden,county,2,SE-W,Leksands kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Falun,Dalarna,,,59837,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Falu kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Ludvika,Dalarna,,,26497,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Ludvika kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Mora,Dalarna,,,20670,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Mora kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Hedemora,Dalarna,,,15458,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Hedemora kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Säter,Dalarna,,,11242,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Säters kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Rättvik,Dalarna,,,11103,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Rättviks kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Smedjebacken,Dalarna,,,10933,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Smedjebackens kommun,,,,county,2,SE-W,Smedjebackens kommun,,,,,region,1,SE-W,Dalarnas län,LOW,0.8,SE-W
+Sweden,Gagnef,Dalarna,,,10502,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Gagnefs kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Malung-Sälen,Dalarna,,,10218,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Malung-Sälens kommun,,,,county,2,SE-W,Malung-Sälens kommun,,,,,region,1,SE-W,Dalarnas län,LOW,0.8,SE-W
+Sweden,Älvdalen,Dalarna,,,7042,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Älvdalens kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Orsa,Dalarna,,,6918,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Orsa kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Vansbro,Dalarna,,,6776,Municipality,,,#N/A,,DalarnaSweden,county,2,SE-W,Vansbro kommun,,,,,,,,,,,,region,1,SE-W,Dalarnas län,NONE,0.0,SE-W
+Sweden,Gävle,Gävleborg,,,103136,Municipality,Gävle,,Gävle,,GävleborgSweden,county,2,SE-X,Gävle kommun,,,,locality,,SE-X,Gävle,,,,,region,1,SE-X,Gävleborgs län,HIGH,1.0,SE-X
+Sweden,Sandviken,Gävleborg,,,39250,Municipality,Sandviken,,Sandviken,,GävleborgSweden,county,2,SE-X,Sandvikens kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Hudiksvall,Gävleborg,,,37744,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Hudiksvalls kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Bollnäs,Gävleborg,,,26753,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Bollnäs kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Söderhamn,Gävleborg,,,25446,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Söderhamns kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Ljusdal,Gävleborg,,,18804,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Ljusdals kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Ovanåker,Gävleborg,,,11711,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Ovanåkers kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Hofors,Gävleborg,,,9578,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Hofors kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Nordanstig,Gävleborg,,,9480,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Nordanstigs kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Ockelbo,Gävleborg,,,5865,Municipality,,,#N/A,,GävleborgSweden,county,2,SE-X,Ockelbo kommun,,,,,,,,,,,,region,1,SE-X,Gävleborgs län,NONE,0.0,SE-X
+Sweden,Gotland,Gotland,,,61001,Municipality,Visby,,Visby,,GotlandSweden,county,2,SE-I,Gotlands kommun,,,,region,1,SE-I,Gotlands län,,,,,region,1,SE-I,Gotlands län,HIGH,1.0,SE-I
+Sweden,Falkenberg,Halland,,,46773,Municipality,Falkenberg,,Falkenberg,,HallandSweden,county,2,SE-N,Falkenbergs kommun,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
+Sweden,Kungsbacka,Halland,,,85301,Municipality,Gothenburg,,Gothenburg,,HallandSweden,county,2,SE-N,Kungsbacka kommun,,,,county,2,SE-N,Kungsbacka kommun,,,,,region,1,SE-N,Hallands län,LOW,0.791,SE-N
+Sweden,Halmstad,Halland,,,104573,Municipality,Halmstad,,Halmstad,,HallandSweden,county,2,SE-N,Halmstads kommun,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
+Sweden,Varberg,Halland,,,66658,Municipality,Varberg,,Varberg,,HallandSweden,county,2,SE-N,Varbergs kommun,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
+Sweden,Laholm,Halland,,,26319,Municipality,,,#N/A,,HallandSweden,county,2,SE-N,Laholms kommun,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
+Sweden,Hylte,Halland,,,10619,Municipality,,,#N/A,,HallandSweden,county,2,SE-N,Hylte kommun,,,,,,,,,,,,region,1,SE-N,Hallands län,NONE,0.0,SE-N
+Sweden,Östersund,Jämtland,,,64324,Municipality,Östersund,,Östersund,,JämtlandSweden,county,2,SE-Z,Östersunds kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Krokom,Jämtland,,,15352,Municipality,,,#N/A,,JämtlandSweden,county,2,SE-Z,Krokoms kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Åre,Jämtland,,,12271,Municipality,,,#N/A,,JämtlandSweden,county,2,SE-Z,Åre kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Strömsund,Jämtland,,,11473,Municipality,,,#N/A,,JämtlandSweden,county,2,SE-Z,Strömsunds kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Härjedalen,Jämtland,,,10114,Municipality,,,#N/A,,JämtlandSweden,county,2,SE-Z,Härjedalens kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Berg,Jämtland,,,7135,Municipality,,,#N/A,,JämtlandSweden,county,2,SE-Z,Bergs kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Bräcke,Jämtland,,,6175,Municipality,,,#N/A,,JämtlandSweden,county,2,SE-Z,Bräcke kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Ragunda,Jämtland,,,5210,Municipality,,,#N/A,,JämtlandSweden,county,2,SE-Z,Ragunda kommun,,,,,,,,,,,,region,1,SE-Z,Jämtlands län,NONE,0.0,SE-Z
+Sweden,Gislaved,Jönköping,,,29556,Municipality,Gislaved,,Gislaved,,JönköpingSweden,county,2,SE-F,Gislaveds kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Jönköping,Jönköping,,,143579,Municipality,Jönköping,,Jönköping,,JönköpingSweden,county,2,SE-F,Jönköpings kommun,,,,region,1,SE-F,Jönköpings län,,,,,region,1,SE-F,Jönköpings län,HIGH,1.0,SE-F
+Sweden,Värnamo,Jönköping,,,34661,Municipality,Värnamo,,Värnamo,,JönköpingSweden,county,2,SE-F,Värnamo kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Vetlanda,Jönköping,,,27621,Municipality,Vetlanda,,Vetlanda,,JönköpingSweden,county,2,SE-F,Vetlanda kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Nässjö,Jönköping,,,31782,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Nässjö kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Tranås,Jönköping,,,18874,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Tranås kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Eksjö,Jönköping,,,17834,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Eksjö kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Vaggeryd,Jönköping,,,14746,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Vaggeryds kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Habo,Jönköping,,,12810,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Habo kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Sävsjö,Jönköping,,,11709,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Sävsjö kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Gnosjö,Jönköping,,,9570,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Gnosjö kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Mullsjö,Jönköping,,,7430,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Mullsjö kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Aneby,Jönköping,,,6892,Municipality,,,#N/A,,JönköpingSweden,county,2,SE-F,Aneby kommun,,,,,,,,,,,,region,1,SE-F,Jönköpings län,NONE,0.0,SE-F
+Sweden,Hultsfred,Kalmar,,,14056,Municipality,Hultsfred,,Hultsfred,,KalmarSweden,county,2,SE-H,Hultsfreds kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Kalmar,Kalmar,,,71328,Municipality,Kalmar,,Kalmar,,KalmarSweden,county,2,SE-H,Kalmar kommun,,,,region,1,SE-H,Kalmar län,,,,,region,1,SE-H,Kalmar län,HIGH,1.0,SE-H
+Sweden,Oskarshamn,Kalmar,,,27220,Municipality,Oskarshamn,,Oskarshamn,,KalmarSweden,county,2,SE-H,Oskarshamns kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Västervik,Kalmar,,,36747,Municipality,Västervik,,Västervik,,KalmarSweden,county,2,SE-H,Västerviks kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Nybro,Kalmar,,,20284,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Nybro kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Mörbylånga,Kalmar,,,15722,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Mörbylånga kommun,,,,county,2,SE-H,Mörbylånga kommun,,,,,region,1,SE-H,Kalmar län,LOW,0.791,SE-H
+Sweden,Vimmerby,Kalmar,,,15578,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Vimmerby kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Mönsterås,Kalmar,,,13258,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Mönsterås kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Borgholm,Kalmar,,,10895,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Borgholms kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Emmaboda,Kalmar,,,9329,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Emmaboda kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Torsås,Kalmar,,,7113,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Torsås kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Högsby,Kalmar,,,5645,Municipality,,,#N/A,,KalmarSweden,county,2,SE-H,Högsby kommun,,,,,,,,,,,,region,1,SE-H,Kalmar län,NONE,0.0,SE-H
+Sweden,Markaryd,Kronoberg,,,10320,Municipality,Markaryd,,Markaryd,,KronobergSweden,county,2,SE-G,Markaryds kommun,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
+Sweden,Växjö,Kronoberg,,,95995,Municipality,Vaxjo,,Vaxjo,,KronobergSweden,county,2,SE-G,Växjö kommun,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
+Sweden,Ljungby,Kronoberg,,,28433,Municipality,,,#N/A,,KronobergSweden,county,2,SE-G,Ljungby kommun,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
+Sweden,Alvesta,Kronoberg,,,20287,Municipality,,,#N/A,,KronobergSweden,county,2,SE-G,Alvesta kommun,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
+Sweden,Älmhult,Kronoberg,,,17963,Municipality,,,#N/A,,KronobergSweden,county,2,SE-G,Älmhults kommun,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
+Sweden,Tingsryd,Kronoberg,,,12319,Municipality,,,#N/A,,KronobergSweden,county,2,SE-G,Tingsryds kommun,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
+Sweden,Uppvidinge,Kronoberg,,,9449,Municipality,,,#N/A,,KronobergSweden,county,2,SE-G,Uppvidinge kommun,,,,county,2,SE-G,Uppvidinge kommun,,,,,region,1,SE-G,Kronobergs län,LOW,0.791,SE-G
+Sweden,Lessebo,Kronoberg,,,8574,Municipality,,,#N/A,,KronobergSweden,county,2,SE-G,Lessebo kommun,,,,,,,,,,,,region,1,SE-G,Kronobergs län,NONE,0.0,SE-G
+Sweden,Luleå,Norrbotten,,,78867,Municipality,Luleå,,Luleå,,NorrbottenSweden,county,2,SE-BD,Luleå kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Piteå,Norrbotten,,,42323,Municipality,Piteå,,Piteå,,NorrbottenSweden,county,2,SE-BD,Piteå kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Boden,Norrbotten,,,28160,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Bodens kommun,,,,locality,,SE-BD,Boheden,,,,,region,1,SE-BD,Norrbottens län,LOW,0.833,SE-BD
+Sweden,Kiruna,Norrbotten,,,22555,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Kiruna kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Gällivare,Norrbotten,,,17449,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Gällivare kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Kalix,Norrbotten,,,15768,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Kalix kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Haparanda,Norrbotten,,,9496,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Haparanda kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Älvsbyn,Norrbotten,,,8009,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Älvsbyns kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Arvidsjaur,Norrbotten,,,6143,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Arvidsjaurs kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Pajala,Norrbotten,,,5973,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Pajala kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Jokkmokk,Norrbotten,,,4780,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Jokkmokks kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Övertorneå,Norrbotten,,,4211,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Övertorneå kommun,,,,county,2,SE-BD,Övertorneå kommun,,,,,region,1,SE-BD,Norrbottens län,LOW,0.791,SE-BD
+Sweden,Överkalix,Norrbotten,,,3252,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Överkalix kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Arjeplog,Norrbotten,,,2707,Municipality,,,#N/A,,NorrbottenSweden,county,2,SE-BD,Arjeplogs kommun,,,,,,,,,,,,region,1,SE-BD,Norrbottens län,NONE,0.0,SE-BD
+Sweden,Degerfors,Örebro,,,9534,Municipality,Degerfors,,Degerfors,,ÖrebroSweden,county,2,SE-T,Degerfors kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Örebro,Örebro,,,156987,Municipality,Orebro,,Orebro,,ÖrebroSweden,county,2,SE-T,Örebro kommun,,,,region,1,SE-T,Örebro län,,,,,region,1,SE-T,Örebro län,HIGH,1.0,SE-T
+Sweden,Karlskoga,Örebro,,,30437,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Karlskoga kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Lindesberg,Örebro,,,23601,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Lindesbergs kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Kumla,Örebro,,,22144,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Kumla kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Hallsberg,Örebro,,,16196,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Hallsbergs kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Askersund,Örebro,,,11534,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Askersunds kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Nora,Örebro,,,10721,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Nora kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Lekeberg,Örebro,,,8603,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Lekebergs kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Hällefors,Örebro,,,6849,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Hällefors kommun,,,,,,,,,,,,region,1,SE-T,Örebro län,NONE,0.0,SE-T
+Sweden,Laxå,Örebro,,,5582,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Laxå kommun,,,,locality,,SE-T,Laxå,,,,,region,1,SE-T,Örebro län,HIGH,1.0,SE-T
+Sweden,Ljusnarsberg,Örebro,,,4604,Municipality,,,#N/A,,ÖrebroSweden,county,2,SE-T,Ljusnarsbergs kommun,,,,county,2,SE-T,Ljusnarsbergs kommun,,,,,region,1,SE-T,Örebro län,LOW,0.8,SE-T
+Sweden,Åtvidaberg,Östergötland,,,11462,Municipality,Åtvidaberg,,Åtvidaberg,,ÖstergötlandSweden,county,2,SE-E,Åtvidabergs kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Linköping,Östergötland,,,165527,Municipality,Linköping,,Linköping,,ÖstergötlandSweden,county,2,SE-E,Linköpings kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Motala,Östergötland,,,43674,Municipality,Motala,,Motala,,ÖstergötlandSweden,county,2,SE-E,Motala kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Norrköping,Östergötland,,,144458,Municipality,Norrköping,,Norrköping,,ÖstergötlandSweden,county,2,SE-E,Norrköpings kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Mjölby,Östergötland,,,28269,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Mjölby kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Finspång,Östergötland,,,21889,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Finspångs kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Söderköping,Östergötland,,,14673,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Söderköpings kommun,,,,county,2,SE-E,Söderköpings kommun,,,,,region,1,SE-E,Östergötlands län,LOW,0.783,SE-E
+Sweden,Kinda,Östergötland,,,10048,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Kinda kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Valdemarsvik,Östergötland,,,7660,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Valdemarsviks kommun,,,,county,2,SE-E,Valdemarsviks kommun,,,,,region,1,SE-E,Östergötlands län,LOW,0.8,SE-E
+Sweden,Vadstena,Östergötland,,,7528,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Vadstena kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Boxholm,Östergötland,,,5512,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Boxholms kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Ödeshög,Östergötland,,,5309,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Ödeshögs kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Ydre,Östergötland,,,3695,Municipality,,,#N/A,,ÖstergötlandSweden,county,2,SE-E,Ydre kommun,,,,,,,,,,,,region,1,SE-E,Östergötlands län,NONE,0.0,SE-E
+Sweden,Ängelholm,Skåne,,,43633,Municipality,Ängelholm,,Ängelholm,,SkåneSweden,county,2,SE-M,Ängelholms kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Hässleholm,Skåne,,,52309,Municipality,Hässleholm,,Hässleholm,,SkåneSweden,county,2,SE-M,Hässleholms kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Helsingborg,Skåne,,,150109,Municipality,Helsingborg,,Helsingborg,,SkåneSweden,county,2,SE-M,Helsingborgs kommun,,,,county,2,SE-M,Helsingborgs kommun,,,,,region,1,SE-M,Skåne län,LOW,0.783,SE-M
+Sweden,Kristianstad,Skåne,,,86641,Municipality,Kristianstad,,Kristianstad,,SkåneSweden,county,2,SE-M,Kristianstads kommun,,,,county,2,SE-M,Kristianstads kommun,,,,,region,1,SE-M,Skåne län,LOW,0.8,SE-M
+Sweden,Malmö,Skåne,,,351749,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Malmö kommun,,,,locality,,SE-M,Malmö,,,,,region,1,SE-M,Skåne län,HIGH,1.0,SE-M
+Sweden,Lund,Skåne,,,127376,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Lunds kommun,,,,county,2,SE-M,Lunds kommun,,,,,region,1,SE-M,Skåne län,HIGH,1.0,SE-M
+Sweden,Trelleborg,Skåne,,,46231,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Trelleborgs kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Vellinge,Skåne,,,37452,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Vellinge kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Eslöv,Skåne,,,34593,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Eslövs kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Kävlinge,Skåne,,,32341,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Kävlinge kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Staffanstorp,Skåne,,,26242,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Staffanstorps kommun,,,,county,2,SE-M,Staffanstorps kommun,,,,,region,1,SE-M,Skåne län,LOW,0.8,SE-M
+Sweden,Lomma,Skåne,,,24638,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Lomma kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Svedala,Skåne,,,23222,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Svedala kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Burlöv,Skåne,,,19753,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Burlövs kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Höör,Skåne,,,16954,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Höörs kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Skurup,Skåne,,,16419,Municipality,Malmo,,Malmo,,SkåneSweden,county,2,SE-M,Skurups kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Landskrona,Skåne,,,46488,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Landskrona kommun,,,,county,2,SE-M,Landskrona kommun,,,,,region,1,SE-M,Skåne län,LOW,0.791,SE-M
+Sweden,Ystad,Skåne,,,31560,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Ystads kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Höganäs,Skåne,,,27589,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Höganäs kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Sjöbo,Skåne,,,19497,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Sjöbo kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Simrishamn,Skåne,,,19267,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Simrishamns kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Klippan,Skåne,,,17783,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Klippans kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Åstorp,Skåne,,,16308,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Åstorps kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Bjuv,Skåne,,,15842,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Bjuvs kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Hörby,Skåne,,,15745,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Hörby kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Båstad,Skåne,,,15636,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Båstads kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Östra Göinge,Skåne,,,14941,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Östra Göinge kommun,,,,county,2,SE-M,Östra Göinge kommun,,,,,region,1,SE-M,Skåne län,LOW,0.824,SE-M
+Sweden,Svalöv,Skåne,,,14412,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Svalövs kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Tomelilla,Skåne,,,13712,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Tomelilla kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Osby,Skåne,,,13269,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Osby kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Bromölla,Skåne,,,12650,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Bromölla kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Örkelljunga,Skåne,,,10499,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Örkelljunga kommun,,,,county,2,SE-M,Örkelljunga kommun,,,,,region,1,SE-M,Skåne län,LOW,0.809,SE-M
+Sweden,Perstorp,Skåne,,,7565,Municipality,,,#N/A,,SkåneSweden,county,2,SE-M,Perstorps kommun,,,,,,,,,,,,region,1,SE-M,Skåne län,NONE,0.0,SE-M
+Sweden,Eskilstuna,Södermanland,,,107593,Municipality,Eskilstuna,,Eskilstuna,,SödermanlandSweden,county,2,SE-D,Eskilstuna kommun,,,,county,2,SE-D,Eskilstuna kommun,,,,,region,1,SE-D,Södermanlands län,LOW,0.791,SE-D
+Sweden,Nyköping,Södermanland,,,57633,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Nyköpings kommun,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
+Sweden,Strängnäs,Södermanland,,,38129,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Strängnäs kommun,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
+Sweden,Katrineholm,Södermanland,,,34764,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Katrineholms kommun,,,,county,2,SE-D,Katrineholms kommun,,,,,region,1,SE-D,Södermanlands län,LOW,0.783,SE-D
+Sweden,Flen,Södermanland,,,16316,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Flens kommun,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
+Sweden,Trosa,Södermanland,,,14658,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Trosa kommun,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
+Sweden,Oxelösund,Södermanland,,,12132,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Oxelösunds kommun,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
+Sweden,Gnesta,Södermanland,,,11513,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Gnesta kommun,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
+Sweden,Vingåker,Södermanland,,,9063,Municipality,,,#N/A,,SödermanlandSweden,county,2,SE-D,Vingåkers kommun,,,,,,,,,,,,region,1,SE-D,Södermanlands län,NONE,0.0,SE-D
+Sweden,Stockholm,Stockholm,,,978770,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Stockholms kommun,,,,county,2,SE-AB,Stockholms kommun,,,,,region,1,SE-AB,Stockholms län,HIGH,1.0,SE-AB
+Sweden,Huddinge,Stockholm,,,113951,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Huddinge kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Nacka,Stockholm,,,108234,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Nacka kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,"Södertälje (→ Nykvarn, 1999)",Stockholm,,,101209,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Södertälje kommun,,,,county,2,SE-AB,Södertälje kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.791,SE-AB
+Sweden,Haninge,Stockholm,,,95658,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Haninge kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Botkyrka,Stockholm,,,95318,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Botkyrka kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Solna,Stockholm,,,84187,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Solna kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Järfälla,Stockholm,,,83170,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Järfälla kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Sollentuna,Stockholm,,,75108,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Sollentuna kommun,,,,county,2,SE-AB,Sollentuna kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.791,SE-AB
+Sweden,Täby,Stockholm,,,73955,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Täby kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Norrtälje,Stockholm,,,64762,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Norrtälje kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Sundbyberg,Stockholm,,,53564,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Sundbybergs kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Sigtuna,Stockholm,,,50273,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Sigtuna kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Tyresö,Stockholm,,,49062,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Tyresö kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Österåker,Stockholm,,,48234,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Österåkers kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Lidingö,Stockholm,,,48162,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Lidingö kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Upplands Väsby,Stockholm,,,47820,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Upplands Väsby kommun,,,,county,2,SE-AB,Upplands Väsby kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.85,SE-AB
+Sweden,Värmdö,Stockholm,,,46232,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Värmdö kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Vallentuna,Stockholm,,,34246,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Vallentuna kommun,,,,county,2,SE-AB,Vallentuna kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.791,SE-AB
+Sweden,Danderyd,Stockholm,,,32803,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Danderyds kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Upplands-Bro,Stockholm,,,31082,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Upplands-Bro kommun,,,,county,2,SE-AB,Upplands-Bro kommun,,,,,region,1,SE-AB,Stockholms län,LOW,0.824,SE-AB
+Sweden,Nynäshamn,Stockholm,,,29495,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Nynäshamns kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Ekerö,Stockholm,,,29096,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Ekerö kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Salem,Stockholm,,,17252,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Salems kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Vaxholm,Stockholm,,,11996,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Vaxholms kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,"Nykvarn (← Södertälje, 1999)",Stockholm,,,11500,Municipality,Stockholm,,Stockholm,,StockholmSweden,county,2,SE-AB,Nykvarns kommun,,,,,,,,,,,,region,1,SE-AB,Stockholms län,NONE,0.0,SE-AB
+Sweden,Enköping,Uppsala,,,47489,Municipality,Enköping,,Enköping,,UppsalaSweden,county,2,SE-C,Enköpings kommun,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
+Sweden,Uppsala,Uppsala,,,237596,Municipality,Uppsala,,Uppsala,,UppsalaSweden,county,2,SE-C,Uppsala kommun,,,,region,1,SE-C,Uppsala län,,,,,region,1,SE-C,Uppsala län,HIGH,1.0,SE-C
+Sweden,Håbo,Uppsala,,,22344,Municipality,Uppsala,,Uppsala,,UppsalaSweden,county,2,SE-C,Håbo kommun,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
+Sweden,Knivsta,Uppsala,,,19818,Municipality,Uppsala,,Uppsala,,UppsalaSweden,county,2,SE-C,Knivsta kommun,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
+Sweden,Östhammar,Uppsala,,,22364,Municipality,,,#N/A,,UppsalaSweden,county,2,SE-C,Östhammars kommun,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
+Sweden,Tierp,Uppsala,,,21485,Municipality,,,#N/A,,UppsalaSweden,county,2,SE-C,Tierps kommun,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
+Sweden,Heby,Uppsala,,,14303,Municipality,,,#N/A,,UppsalaSweden,county,2,SE-C,Heby kommun,,,,,,,,,,,,region,1,SE-C,Uppsala län,NONE,0.0,SE-C
+Sweden,Älvkarleby,Uppsala,,,9627,Municipality,,,#N/A,,UppsalaSweden,county,2,SE-C,Älvkarleby kommun,,,,county,2,SE-C,Älvkarleby kommun,,,,,region,1,SE-C,Uppsala län,LOW,0.791,SE-C
+Sweden,Karlstad,Värmland,,,95408,Municipality,Karlstad,,Karlstad,,VärmlandSweden,county,2,SE-S,Karlstads kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Arvika,Värmland,,,25854,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Arvika kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Kristinehamn,Värmland,,,24099,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Kristinehamns kommun,,,,county,2,SE-S,Kristinehamns kommun,,,,,region,1,SE-S,Värmlands län,LOW,0.8,SE-S
+Sweden,Hammarö,Värmland,,,16765,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Hammarö kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Säffle,Värmland,,,15396,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Säffle kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Sunne,Värmland,,,13355,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Sunne kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Kil,Värmland,,,12134,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Kils kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Forshaga,Värmland,,,11606,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Forshaga kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Hagfors,Värmland,,,11553,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Hagfors kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Torsby,Värmland,,,11472,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Torsby kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Filipstad,Värmland,,,10403,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Filipstads kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Årjäng,Värmland,,,9942,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Årjängs kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Grums,Värmland,,,9091,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Grums kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Eda,Värmland,,,8490,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Eda kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Storfors,Värmland,,,3948,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Storfors kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Munkfors,Värmland,,,3680,Municipality,,,#N/A,,VärmlandSweden,county,2,SE-S,Munkfors kommun,,,,,,,,,,,,region,1,SE-S,Värmlands län,NONE,0.0,SE-S
+Sweden,Skellefteå,Västerbotten,,,73393,Municipality,Skellefteå,,Skellefteå,,VästerbottenSweden,county,2,SE-AC,Skellefteå kommun,,,,locality,,SE-AC,Skellefteå,,,,,region,1,SE-AC,Västerbottens län,HIGH,1.0,SE-AC
+Sweden,Umeå,Västerbotten,,,130997,Municipality,Umeå,,Umeå,,VästerbottenSweden,county,2,SE-AC,Umeå kommun,,,,locality,,SE-AC,Umeå,,,,,region,1,SE-AC,Västerbottens län,HIGH,1.0,SE-AC
+Sweden,Lycksele,Västerbotten,,,12264,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Lycksele kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Vännäs,Västerbotten,,,9054,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Vännäs kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Nordmaling,Västerbotten,,,7100,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Nordmalings kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Robertsfors,Västerbotten,,,6786,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Robertsfors kommun,,,,county,2,SE-AC,Robertsfors kommun,,,,,region,1,SE-AC,Västerbottens län,LOW,0.809,SE-AC
+Sweden,Vilhelmina,Västerbotten,,,6485,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Vilhelmina kommun,,,,county,2,SE-AC,Vilhelmina kommun,,,,,region,1,SE-AC,Västerbottens län,LOW,0.791,SE-AC
+Sweden,Storuman,Västerbotten,,,5808,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Storumans kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Vindeln,Västerbotten,,,5550,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Vindelns kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Norsjö,Västerbotten,,,3971,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Norsjö kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Malå,Västerbotten,,,3034,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Malå kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Åsele,Västerbotten,,,2807,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Åsele kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Sorsele,Västerbotten,,,2460,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Sorsele kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Dorotea,Västerbotten,,,2459,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Dorotea kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Bjurholm,Västerbotten,,,2395,Municipality,,,#N/A,,VästerbottenSweden,county,2,SE-AC,Bjurholms kommun,,,,,,,,,,,,region,1,SE-AC,Västerbottens län,NONE,0.0,SE-AC
+Sweden,Sundsvall,Västernorrland,,,99383,Municipality,Sundsvall,,Sundsvall,,VästernorrlandSweden,county,2,SE-Y,Sollefteå kommun,,,,locality,,SE-Y,Sundsvall,,,,,region,1,SE-Y,Västernorrlands län,HIGH,1.0,SE-Y
+Sweden,Timrå,Västernorrland,,,17923,Municipality,Timrå,,Timrå,,VästernorrlandSweden,county,2,SE-Y,Timrå kommun,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
+Sweden,Örnsköldsvik,Västernorrland,,,55823,Municipality,,,#N/A,,VästernorrlandSweden,county,2,SE-Y,Kramfors kommun,,,,locality,,SE-Y,Örnsköldsvik,,,,,region,1,SE-Y,Västernorrlands län,HIGH,1.0,SE-Y
+Sweden,Härnösand,Västernorrland,,,25012,Municipality,,,#N/A,,VästernorrlandSweden,county,2,SE-Y,Sundsvalls kommun,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
+Sweden,Sollefteå,Västernorrland,,,18814,Municipality,,,#N/A,,VästernorrlandSweden,county,2,SE-Y,Örnsköldsviks kommun,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
+Sweden,Kramfors,Västernorrland,,,18005,Municipality,,,#N/A,,VästernorrlandSweden,county,2,SE-Y,Härnösands kommun,,,,,,,,,,,,region,1,SE-Y,Västernorrlands län,NONE,0.0,SE-Y
+Sweden,Ånge,Västernorrland,,,9233,Municipality,,,#N/A,,VästernorrlandSweden,county,2,SE-Y,Ånge kommun,,,,county,2,SE-Y,Ånge kommun,,,,,region,1,SE-Y,Västernorrlands län,HIGH,1.0,SE-Y
+Sweden,Västerås,Västmanland,,,156838,Municipality,Västerås,,Västerås,,VästmanlandSweden,county,2,SE-U,Västerås kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Köping,Västmanland,,,26133,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Köpings kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Sala,Västmanland,,,22998,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Sala kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Hallstahammar,Västmanland,,,16608,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Hallstahammars kommun,,,,county,2,SE-U,Hallstahammars kommun,,,,,region,1,SE-U,Västmanlands län,LOW,0.815,SE-U
+Sweden,Arboga,Västmanland,,,14100,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Arboga kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Fagersta,Västmanland,,,13319,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Fagersta kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Surahammar,Västmanland,,,10099,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Surahammars kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Kungsör,Västmanland,,,8787,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Kungsörs kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Norberg,Västmanland,,,5714,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Norbergs kommun,,,,,,,,,,,,region,1,SE-U,Västmanlands län,NONE,0.0,SE-U
+Sweden,Skinnskatteberg,Västmanland,,,4371,Municipality,,,#N/A,,VästmanlandSweden,county,2,SE-U,Skinnskattebergs kommun,,,,county,2,SE-U,Skinnskattebergs kommun,,,,,region,1,SE-U,Västmanlands län,LOW,0.839,SE-U
+Sweden,Borås,Västra Götaland,,,114091,Municipality,Borås,,Borås,,Västra GötalandSweden,county,2,SE-O,Borås kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Göteborg [Gothenburg],Västra Götaland,,,587549,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Göteborgs Stad,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Mölndal,Västra Götaland,,,69943,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Mölndals kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Kungälv,Västra Götaland,,,48271,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Kungälvs kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Lerum,Västra Götaland,,,43399,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Lerums kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Alingsås,Västra Götaland,,,41853,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Alingsås kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Partille,Västra Götaland,,,39529,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Partille kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Härryda,Västra Götaland,,,39006,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Härryda kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Ale,Västra Götaland,,,32148,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Ale kommun,,,,locality,,SE-O,Åsle,,,,,region,1,SE-O,Västra Götalands län,LOW,0.857,SE-O
+Sweden,Stenungsund,Västra Götaland,,,27556,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Stenungsunds kommun,,,,county,2,SE-O,Stenungsunds kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.783,SE-O
+Sweden,Tjörn,Västra Götaland,,,16312,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Tjörns kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Lilla Edet,Västra Götaland,,,14509,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Lilla Edets kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Öckerö,Västra Götaland,,,12902,Municipality,Gothenburg,,Gothenburg,,Västra GötalandSweden,county,2,SE-O,Öckerö kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Uddevalla,Västra Götaland,,,57122,Municipality,Ljungskile,,Ljungskile,,Västra GötalandSweden,county,2,SE-O,Uddevalla kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Trollhättan,Västra Götaland,,,59154,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Trollhättans kommun,,,,county,2,SE-O,Trollhättans kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.783,SE-O
+Sweden,Skövde,Västra Götaland,,,57016,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Skövde kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Lidköping,Västra Götaland,,,40460,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Lidköpings kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Vänersborg,Västra Götaland,,,39636,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Vänersborgs kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Mark,Västra Götaland,,,35201,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Marks kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Falköping,Västra Götaland,,,33270,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Falköpings kommun,,,,locality,,SE-O,Falköping,,,,,region,1,SE-O,Västra Götalands län,HIGH,1.0,SE-O
+Sweden,Ulricehamn,Västra Götaland,,,24898,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Ulricehamns kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Mariestad,Västra Götaland,,,24723,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Mariestads kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Skara,Västra Götaland,,,18732,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Skara kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Vara,Västra Götaland,,,16162,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Vara kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Orust,Västra Götaland,,,15345,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Orust kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Lysekil,Västra Götaland,,,14266,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Lysekils kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Strömstad,Västra Götaland,,,13277,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Strömstads kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Götene,Västra Götaland,,,13263,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Götene kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Tanum,Västra Götaland,,,12965,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Tanums kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Tidaholm,Västra Götaland,,,12825,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Tidaholms kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Åmål,Västra Götaland,,,12318,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Åmåls kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Vårgårda,Västra Götaland,,,12180,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Vårgårda kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Tranemo,Västra Götaland,,,11937,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Tranemo kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Tibro,Västra Götaland,,,11281,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Tibro kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Svenljunga,Västra Götaland,,,10864,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Svenljunga kommun,,,,county,2,SE-O,Svenljunga kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.791,SE-O
+Sweden,Munkedal,Västra Götaland,,,10588,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Munkedals kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Bollebygd,Västra Götaland,,,9634,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Bollebygds kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Herrljunga,Västra Götaland,,,9501,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Herrljunga kommun,,,,county,2,SE-O,Herrljunga kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.791,SE-O
+Sweden,Bengtsfors,Västra Götaland,,,9409,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Bengtsfors kommun,,,,county,2,SE-O,Bengtsfors kommun,,,,,region,1,SE-O,Västra Götalands län,LOW,0.791,SE-O
+Sweden,Mellerud,Västra Götaland,,,9268,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Melleruds kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Hjo,Västra Götaland,,,9233,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Hjo kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Töreboda,Västra Götaland,,,9207,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Töreboda kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Sotenäs,Västra Götaland,,,9125,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Sotenäs kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Karlsborg,Västra Götaland,,,6965,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Karlsborgs kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Färgelanda,Västra Götaland,,,6576,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Färgelanda kommun,,,,locality,,SE-O,Färgelanda,,,,,region,1,SE-O,Västra Götalands län,HIGH,1.0,SE-O
+Sweden,Grästorp,Västra Götaland,,,5730,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Grästorps kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Essunga,Västra Götaland,,,5698,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Essunga kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Gullspång,Västra Götaland,,,5206,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Gullspångs kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O
+Sweden,Dals-Ed,Västra Götaland,,,4756,Municipality,,,#N/A,,Västra GötalandSweden,county,2,SE-O,Dals-Eds kommun,,,,,,,,,,,,region,1,SE-O,Västra Götalands län,NONE,0.0,SE-O

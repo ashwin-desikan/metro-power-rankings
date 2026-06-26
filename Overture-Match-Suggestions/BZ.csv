@@ -1,0 +1,7 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Belize,Belize,Belize,,,131363,District,Belize City,,Belize City,,BelizeBelize,region,1,BZ-BZ,Belize District,,,,region,1,BZ-BZ,Belize District,,,,,region,1,BZ-BZ,Belize District,HIGH,1.0,BZ-BZ
+Belize,Cayo,Cayo,,,105190,District,Belmopan,,Belmopan,,CayoBelize,region,1,BZ-CY,Cayo,,,,region,1,BZ-CY,Cayo,,,,,region,1,BZ-CY,Cayo,HIGH,1.0,BZ-CY
+Belize,Corozal,Corozal,,,51561,District,,,#N/A,,CorozalBelize,region,1,BZ-CZL,Corozal,,,,region,1,BZ-CZL,Corozal,,,,,region,1,BZ-CZL,Corozal,HIGH,1.0,BZ-CZL
+Belize,Orange Walk,Orange Walk,,,54216,District,,,#N/A,,Orange WalkBelize,region,1,BZ-OW,Orange Walk,,,,region,1,BZ-OW,Orange Walk,,,,,region,1,BZ-OW,Orange Walk,HIGH,1.0,BZ-OW
+Belize,Stann Creek,Stann Creek,,,47343,District,,,#N/A,,Stann CreekBelize,region,1,BZ-SC,Stann Creek,,,,region,1,BZ-SC,Stann Creek,,,,,region,1,BZ-SC,Stann Creek,HIGH,1.0,BZ-SC
+Belize,Toledo,Toledo,,,40518,District,,,#N/A,,ToledoBelize,region,1,BZ-TOL,Toledo,,,,region,1,BZ-TOL,Toledo,,,,,region,1,BZ-TOL,Toledo,HIGH,1.0,BZ-TOL

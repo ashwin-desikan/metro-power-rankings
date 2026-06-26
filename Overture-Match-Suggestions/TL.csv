@@ -1,0 +1,15 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+East Timor,Aileu,Aileu,,,54631,Municipality,,,#N/A,,AileuEast Timor,region,1,TL-AL,Aileu,,,,region,1,TL-AL,Aileu,,,,,region,1,TL-AL,Aileu,HIGH,1.0,TL-AL
+East Timor,Ainaro,Ainaro,,,72989,Municipality,,,#N/A,,AinaroEast Timor,county,2,TL-AN,Ainaro,,,,county,2,TL-AN,Ainaro,,,,,region,1,TL-AN,Ainaru,HIGH,1.0,TL-AN
+East Timor,Atauro,Atauro,,,10302,Municipality,,,#N/A,,AtauroEast Timor,region,1,0,Ataúru,,,,region,1,nan,Ataúru,,,,,region,1,nan,Ataúru,HIGH,1.0,nan
+East Timor,Baucau,Baucau,,,133881,Municipality,,,#N/A,,BaucauEast Timor,county,2,TL-BA,Baukau,,,,county,2,TL-BA,Baukau,,,,,region,1,TL-BA,Baukau,HIGH,1.0,TL-BA
+East Timor,Bobonaro,Bobonaro,,,106543,Municipality,,,#N/A,,BobonaroEast Timor,county,2,TL-BO,Bobonaro,,,,county,2,TL-BO,Bobonaro,,,,,region,1,TL-BO,Bobonaru,HIGH,1.0,TL-BO
+East Timor,Cova Lima,Cova Lima,,,73909,Municipality,,,#N/A,,Cova LimaEast Timor,region,1,TL-CO,Kova Lima,,,,region,1,TL-CO,Kova Lima,,,,,region,1,TL-CO,Kova Lima,HIGH,1.0,TL-CO
+East Timor,Dili,Dili,,,324269,Municipality,Dili,,Dili,,DiliEast Timor,region,1,TL-DI,Dili,,,,region,1,TL-DI,Dili,,,,,region,1,TL-DI,Dili,HIGH,1.0,TL-DI
+East Timor,Ermera,Ermera,,,138080,Municipality,,,#N/A,,ErmeraEast Timor,region,1,TL-ER,Ermera,,,,region,1,TL-ER,Ermera,,,,,region,1,TL-ER,Ermera,HIGH,1.0,TL-ER
+East Timor,Lautém,Lautém,,,69836,Municipality,,,#N/A,,LautémEast Timor,region,1,TL-LA,Lautém,,,,region,1,TL-LA,Lautém,,,,,region,1,TL-LA,Lautém,HIGH,1.0,TL-LA
+East Timor,Liquiçá,Liquiçá,,,83689,Municipality,,,#N/A,,LiquiçáEast Timor,county,2,TL-LI,Liquiçá,,,,county,2,TL-LI,Liquiçá,,,,,region,1,TL-LI,Likisá,HIGH,1.0,TL-LI
+East Timor,Manatuto,Manatuto,,,50989,Municipality,,,#N/A,,ManatutoEast Timor,region,1,TL-MT,Manatutu,,,,region,1,TL-MT,Manatutu,,,,,region,1,TL-MT,Manatutu,HIGH,1.0,TL-MT
+East Timor,Manufahi,Manufahi,,,60536,Municipality,,,#N/A,,ManufahiEast Timor,region,1,TL-MF,Manufahi,,,,region,1,TL-MF,Manufahi,,,,,region,1,TL-MF,Manufahi,HIGH,1.0,TL-MF
+East Timor,Oecusse,Oecusse,,,80726,Special Administrative Region,,,#N/A,,OecusseEast Timor,region,1,TL-OE,Oe-Cusse Ambeno,,,,region,1,TL-OE,Oe-Cusse Ambeno,,,,,region,1,TL-OE,Oe-Cusse Ambeno,HIGH,1.0,TL-OE
+East Timor,Viqueque,Viqueque,,,80054,Municipality,,,#N/A,,ViquequeEast Timor,region,1,TL-VI,Vikeke,,,,region,1,TL-VI,Vikeke,,,,,region,1,TL-VI,Vikeke,HIGH,1.0,TL-VI

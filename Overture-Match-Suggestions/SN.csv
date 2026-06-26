@@ -1,0 +1,47 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Senegal,Dakar,Dakar,,,1278469,Department,Dakar,,Dakar,,DakarSenegal,county,2,SN-DK,Dakar,,,,county,2,SN-DK,Dakar,,,,,region,1,SN-DK,Région de Dakar,HIGH,1.0,SN-DK
+Senegal,Rufisque,Dakar,,,818337,Department,Dakar,,Dakar,,DakarSenegal,county,2,SN-DK,Département de Rufisque,,,,localadmin,,SN-DK,Rufisque,,,,,region,1,SN-DK,Région de Dakar,HIGH,1.0,SN-DK
+Senegal,Keur Massar (← Pikine (plus Jaxaay)),Dakar,,,770314,Department,Dakar,,Dakar,,DakarSenegal,county,2,SN-DK,Département de Keur Massar,,,,,,,,,,,,region,1,SN-DK,Région de Dakar,NONE,0.0,SN-DK
+Senegal,Pikine,Dakar,,,764597,Department,Dakar,,Dakar,,DakarSenegal,county,2,SN-DK,Département de Pikine,,,,county,2,SN-DK,Département de Pikine,,,,,region,1,SN-DK,Région de Dakar,HIGH,1.0,SN-DK
+Senegal,Guédiawaye,Dakar,,,372708,Department,Dakar,,Dakar,,DakarSenegal,county,2,SN-DK,Département de Guédiawaye,,,,county,2,SN-DK,Département de Guédiawaye,,,,,region,1,SN-DK,Région de Dakar,HIGH,1.0,SN-DK
+Senegal,Mbacké (M'Backé),Diourbel,,,1359756,Department,Touba,,Touba,,DiourbelSenegal,county,2,SN-DB,Département de Mbacké,,,,locality,,SN-DB,Mbacké,,,,,region,1,SN-DB,Région de Diourbel,HIGH,1.0,SN-DB
+Senegal,Bambey,Diourbel,,,376467,Department,,,#N/A,,DiourbelSenegal,county,2,SN-DB,Département de Bambey,,,,locality,,SN-DB,Bambey,,,,,region,1,SN-DB,Région de Diourbel,HIGH,1.0,SN-DB
+Senegal,Diourbel,Diourbel,,,344109,Department,,,#N/A,,DiourbelSenegal,county,2,SN-DB,Département de Diourbel,,,,locality,,SN-DB,Diourbel,,,,,region,1,SN-DB,Région de Diourbel,HIGH,1.0,SN-DB
+Senegal,Fatick,Fatick,,,408566,Department,,,#N/A,,FatickSenegal,county,2,SN-FK,Département de Fatick,,,,locality,,SN-FK,Fatick,,,,,region,1,SN-FK,Région de Fatick,HIGH,1.0,SN-FK
+Senegal,Foundiougne,Fatick,,,375388,Department,,,#N/A,,FatickSenegal,county,2,SN-FK,Département de Foundiougne,,,,locality,,SN-FK,Foundiougne,,,,,region,1,SN-FK,Région de Fatick,HIGH,1.0,SN-FK
+Senegal,Gossas,Fatick,,,122968,Department,,,#N/A,,FatickSenegal,county,2,SN-FK,Département de Gossas,,,,locality,,SN-FK,Gossas,,,,,region,1,SN-FK,Région de Fatick,HIGH,1.0,SN-FK
+Senegal,Kaffrine,Kaffrine,,,280787,Department,,,#N/A,,KaffrineSenegal,county,2,SN-KA,Département de Kaffrine,,,,locality,,SN-KA,Kaffrine,,,,,region,1,SN-KA,Région de Kaffrine,HIGH,1.0,SN-KA
+Senegal,Koungheul,Kaffrine,,,253304,Department,,,#N/A,,KaffrineSenegal,county,2,SN-KA,Département de Koungheul,,,,locality,,SN-KA,Koungheul,,,,,region,1,SN-KA,Région de Kaffrine,HIGH,1.0,SN-KA
+Senegal,Birkelane,Kaffrine,,,151064,Department,,,#N/A,,KaffrineSenegal,county,2,SN-KA,Département de Birkelane,,,,locality,,SN-KA,Birkelane,,,,,region,1,SN-KA,Région de Kaffrine,HIGH,1.0,SN-KA
+Senegal,Malem Hodar (Malem Hoddar),Kaffrine,,,135249,Department,,,#N/A,,KaffrineSenegal,county,2,SN-KA,Département de Malem Hodar,,,,locality,,SN-KA,Malem-Hodar,,,,,region,1,SN-KA,Région de Kaffrine,LOW,0.909,SN-KA
+Senegal,Kaolack,Kaolack,,,664053,Department,Kaolack,,Kaolack,,KaolackSenegal,county,2,SN-KL,Département de Kaolack,,,,locality,,SN-KL,Kaolack,,,,,region,1,SN-KL,Région de Kaolack,HIGH,1.0,SN-KL
+Senegal,Nioro du Rip,Kaolack,,,512608,Department,,,#N/A,,KaolackSenegal,county,2,SN-KL,Département de Nioro du Rip,,,,locality,,SN-KL,Nioro du Rip,,,,,region,1,SN-KL,Région de Kaolack,HIGH,1.0,SN-KL
+Senegal,Guinguinéo,Kaolack,,,160057,Department,,,#N/A,,KaolackSenegal,county,2,SN-KL,Département de Guinguinéo,,,,locality,,SN-KL,Guinguinéo,,,,,region,1,SN-KL,Région de Kaolack,HIGH,1.0,SN-KL
+Senegal,Kédougou,Kédougou,,,124266,Department,,,#N/A,,KédougouSenegal,county,2,SN-KE,Département de Kédougou,,,,locality,,SN-KE,Kédougou,,,,,region,1,SN-KE,Région de Kédougou,HIGH,1.0,SN-KE
+Senegal,Saraya,Kédougou,,,92855,Department,,,#N/A,,KédougouSenegal,county,2,SN-KE,Département de Saraya,,,,locality,,SN-KE,Saraya,,,,,region,1,SN-KE,Région de Kédougou,HIGH,1.0,SN-KE
+Senegal,Salémata,Kédougou,,,28026,Department,,,#N/A,,KédougouSenegal,county,2,SN-KE,Département de Salemata,,,,locality,,SN-KE,Salemata,,,,,region,1,SN-KE,Région de Kédougou,HIGH,1.0,SN-KE
+Senegal,Vélingara,Kolda,,,405149,Department,,,#N/A,,KoldaSenegal,county,2,SN-KD,Département de Vélingara,,,,locality,,SN-KD,Vélingara,,,,,region,1,SN-KD,Région de Kolda,HIGH,1.0,SN-KD
+Senegal,Kolda,Kolda,,,324192,Department,,,#N/A,,KoldaSenegal,county,2,SN-KD,Département de Kolda,,,,locality,,SN-KD,Kolda,,,,,region,1,SN-KD,Région de Kolda,HIGH,1.0,SN-KD
+Senegal,Médina Yoro Foulah,Kolda,,,185456,Department,,,#N/A,,KoldaSenegal,county,2,SN-KD,Département de Médina Yoro Foulah,,,,locality,,SN-KD,Médina Yoro Foulah,,,,,region,1,SN-KD,Région de Kolda,HIGH,1.0,SN-KD
+Senegal,Louga,Louga,,,477765,Department,,,#N/A,,LougaSenegal,county,2,SN-LG,Département de Louga,,,,locality,,SN-LG,Louga,,,,,region,1,SN-LG,Région de Louga,HIGH,1.0,SN-LG
+Senegal,Kébémer,Louga,,,335921,Department,,,#N/A,,LougaSenegal,county,2,SN-LG,Département de Kébémer,,,,locality,,SN-LG,Kébémer,,,,,region,1,SN-LG,Région de Louga,HIGH,1.0,SN-LG
+Senegal,Linguère,Louga,,,312224,Department,,,#N/A,,LougaSenegal,county,2,SN-LG,Département de Linguère,,,,locality,,SN-LG,Linguère,,,,,region,1,SN-LG,Région de Louga,HIGH,1.0,SN-LG
+Senegal,Matam,Matam,,,386887,Department,,,#N/A,,MatamSenegal,county,2,SN-MT,Département de Matam,,,,locality,,SN-MT,Matam,,,,,region,1,SN-MT,Région de Matam,HIGH,1.0,SN-MT
+Senegal,Kanel,Matam,,,341520,Department,,,#N/A,,MatamSenegal,county,2,SN-MT,Département de Kanel,,,,locality,,SN-MT,Kanel,,,,,region,1,SN-MT,Région de Matam,HIGH,1.0,SN-MT
+Senegal,Ranérou-Ferlo,Matam,,,103225,Department,,,#N/A,,MatamSenegal,county,2,SN-MT,Département de Ranérou-Ferlo,,,,,,,,,,,,region,1,SN-MT,Région de Matam,NONE,0.0,SN-MT
+Senegal,Saint-Louis,Saint-Louis,,,387368,Department,Saint-Louis,,Saint-Louis,,Saint-LouisSenegal,county,2,SN-SL,Département de Saint-Louis,,,,locality,,SN-SL,Saint-Louis,,,,,region,1,SN-SL,Région de Saint-Louis,HIGH,1.0,SN-SL
+Senegal,Podor,Saint-Louis,,,486007,Department,,,#N/A,,Saint-LouisSenegal,county,2,SN-SL,Département de Podor,,,,locality,,SN-SL,Podor,,,,,region,1,SN-SL,Région de Saint-Louis,HIGH,1.0,SN-SL
+Senegal,Dagana,Saint-Louis,,,329063,Department,,,#N/A,,Saint-LouisSenegal,county,2,SN-SL,Département de Dagana,,,,locality,,SN-SL,Dagana,,,,,region,1,SN-SL,Région de Saint-Louis,HIGH,1.0,SN-SL
+Senegal,Bounkiling,Sédhiou,,,207872,Department,,,#N/A,,SédhiouSenegal,county,2,SN-SE,Département de Bounkiling,,,,locality,,SN-SE,Bounkiling,,,,,region,1,SN-SE,Région de Sédhiou,HIGH,1.0,SN-SE
+Senegal,Sédhiou,Sédhiou,,,193295,Department,,,#N/A,,SédhiouSenegal,county,2,SN-SE,Département de Sédhiou,,,,locality,,SN-SE,Sédhiou,,,,,region,1,SN-SE,Région de Sédhiou,HIGH,1.0,SN-SE
+Senegal,Goudomp,Sédhiou,,,188097,Department,,,#N/A,,SédhiouSenegal,county,2,SN-SE,Département de Goudomp,,,,locality,,SN-SE,Goudomp,,,,,region,1,SN-SE,Région de Sédhiou,HIGH,1.0,SN-SE
+Senegal,Tambacounda,Tambacounda,,,427419,Department,,,#N/A,,TambacoundaSenegal,county,2,SN-TC,Département de Tambacounda,,,,locality,,SN-TC,Tambacounda,,,,,region,1,SN-TC,Région de Tambacounda,HIGH,1.0,SN-TC
+Senegal,Koumpentoum,Tambacounda,,,199197,Department,,,#N/A,,TambacoundaSenegal,county,2,SN-TC,Département de Koumpentoum,,,,locality,,SN-TC,Koumpentoum,,,,,region,1,SN-TC,Région de Tambacounda,HIGH,1.0,SN-TC
+Senegal,Bakel,Tambacounda,,,189937,Department,,,#N/A,,TambacoundaSenegal,county,2,SN-TC,Département de Bakel,,,,locality,,SN-TC,Bakel,,,,,region,1,SN-TC,Région de Tambacounda,HIGH,1.0,SN-TC
+Senegal,Goudiry,Tambacounda,,,170601,Department,,,#N/A,,TambacoundaSenegal,county,2,SN-TC,Département de Goudiry,,,,locality,,SN-TC,Goudiry,,,,,region,1,SN-TC,Région de Tambacounda,HIGH,1.0,SN-TC
+Senegal,Mbour (M'Bour),Thiès,,,935304,Department,Mbour,,Mbour,,ThièsSenegal,county,2,SN-TH,Département de M'bour,,,,locality,,SN-TH,M'bour,,,,,region,1,SN-TH,Région de Thiès,HIGH,1.0,SN-TH
+Senegal,Thiès,Thiès,,,879186,Department,Thiès,,Thiès,,ThièsSenegal,county,2,SN-TH,Département de Thiès,,,,region,1,SN-TH,Région de Thiès,,,,,region,1,SN-TH,Région de Thiès,HIGH,1.0,SN-TH
+Senegal,Tivaouane,Thiès,,,649189,Department,,,#N/A,,ThièsSenegal,county,2,SN-TH,Département de Tivaouane,,,,locality,,SN-TH,Tivaouane,,,,,region,1,SN-TH,Région de Thiès,HIGH,1.0,SN-TH
+Senegal,Bignona,Ziguinchor,,,287500,Department,,,#N/A,,ZiguinchorSenegal,county,2,SN-ZG,Département de Bignona,,,,locality,,SN-ZG,Bignona,,,,,region,1,SN-ZG,Région de Ziguinchor,HIGH,1.0,SN-ZG
+Senegal,Ziguinchor,Ziguinchor,,,275501,Department,,,#N/A,,ZiguinchorSenegal,county,2,SN-ZG,Département de Ziguinchor,,,,locality,,SN-ZG,Ziguinchor,,,,,region,1,SN-ZG,Région de Ziguinchor,HIGH,1.0,SN-ZG
+Senegal,Oussouye,Ziguinchor,,,54567,Department,,,#N/A,,ZiguinchorSenegal,county,2,SN-ZG,Département d'Oussouye,,,,locality,,SN-ZG,Oussouye,,,,,region,1,SN-ZG,Région de Ziguinchor,HIGH,1.0,SN-ZG

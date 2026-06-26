@@ -1,262 +1,262 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Ghana,Asunafo North Municipal,Ahafo,,,150198,Municipal District,,,#N/A,,AhafoGhana,,,,,county,2,GH-AF,Asunafo North Municipal District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
-Ghana,Tano North Municipal,Ahafo,,,93608,Municipal District,,,#N/A,,AhafoGhana,,,,,county,2,GH-AF,Tano North Municipal District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
-Ghana,Asunafo South,Ahafo,,,91693,District,,,#N/A,,AhafoGhana,,,,,county,2,GH-AF,Asunafo South District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
-Ghana,Tano South Municipal,Ahafo,,,87219,Municipal District,,,#N/A,,AhafoGhana,,,,,county,2,GH-AF,Tano South Municipal District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
-Ghana,Asutifi North,Ahafo,,,73556,District,,,#N/A,,AhafoGhana,,,,,county,2,GH-AF,Asutifi North District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
-Ghana,Asutifi South,Ahafo,,,68394,District,,,#N/A,,AhafoGhana,,,,,county,2,GH-AF,Asutifi South District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
-Ghana,"Kumasi Metropolitan (incl. Bantama Municipal, Manhyia North Municipal, Manhyia South Municipal, Nhyiaeso Municipal, Subin Municipal)",Ashanti,,,443981,Metropolitan District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Kumasi Metropolitan District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Kwabre East,Ashanti,,,296814,District,Kumasi,,Kumasi,,AshantiGhana,,,,,,,,,,,,,region,1,GH-AH,Ashanti Region,NONE,0.0,GH-AH
-Ghana,Atwima Kwanwoma,Ashanti,,,234846,District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Atwima-Kwanwoma District,,,,,region,1,GH-AH,Ashanti Region,MED,0.933,GH-AH
-Ghana,Afigya Kwabre South,Ashanti,,,234667,District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Afigya-Kwabre South District,,,,,region,1,GH-AH,Ashanti Region,MED,0.947,GH-AH
-Ghana,Oforikrom Municipal (← Kumasi Metropolitan),Ashanti,,,213126,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Oforikrom Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Asokore Mampong Municipal,Ashanti,,,191402,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Asokore-Mampong Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.96,GH-AH
-Ghana,Ejisu Municipal,Ashanti,,,180723,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Ejisu Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Bosomtwe,Ashanti,,,165180,District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Bosomtwe District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Atwima Nwabiagya Municipal (Atwima Nwabiagya South Municipal),Ashanti,,,161893,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Atwima-Nwabiagya Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.962,GH-AH
-Ghana,Atwima Nwabiagya North (← Atwima Nwabiagya Municipal),Ashanti,,,155025,District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Atwima-Nwabiagya North District,,,,,region,1,GH-AH,Ashanti Region,MED,0.955,GH-AH
-Ghana,Kwadaso Municipal (← Kumasi Metropolitan),Ashanti,,,154526,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Kwadaso Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Bekwai Municipal,Ashanti,,,137967,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Bekwai Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Ejura-Sekyedumase Municipal,Ashanti,,,137672,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Ejura/Sekyedumase Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.963,GH-AH
-Ghana,Offinso Municipal,Ashanti,,,137272,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Offinso Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Suame Municipal (← Kumasi Metropolitan),Ashanti,,,136290,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Suame Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Asokwa Municipal (← Kumasi Metropolitan),Ashanti,,,125642,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Asokwa Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Asante Akim South Municipal,Ashanti,,,123633,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Asante-Akim South Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.963,GH-AH
-Ghana,Mampong Municipal,Ashanti,,,116632,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Mampong Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Old Tafo Municipal (← Kumasi Metropolitan),Ashanti,,,114368,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Old Tafo Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Ahafo Ano North Municipal,Ashanti,,,92742,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Ahafo-Ano North Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.96,GH-AH
-Ghana,Asante Akim Central Municipal,Ashanti,,,91673,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Asante-Akim Central Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.966,GH-AH
-Ghana,Juaben Municipal,Ashanti,,,63929,Municipal District,Kumasi,,Kumasi,,AshantiGhana,,,,,county,2,GH-AH,Juaben Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Obuasi Municipal,Ashanti,,,104297,Municipal District,Obuasi,,Obuasi,,AshantiGhana,,,,,county,2,GH-AH,Obuasi Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Obuasi East (← Obuasi Municipal),Ashanti,,,92401,District,Obuasi,,Obuasi,,AshantiGhana,,,,,,,,,,,,,region,1,GH-AH,Ashanti Region,NONE,0.0,GH-AH
-Ghana,Akrofuom (← Obuasi Municipal),Ashanti,,,49291,District,Obuasi,,Obuasi,,AshantiGhana,,,,,county,2,GH-AH,Akrofuom District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Atwima Mponua,Ashanti,,,155254,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Atwima-Mponua District,,,,,region,1,GH-AH,Ashanti Region,MED,0.923,GH-AH
-Ghana,Sekyere South,Ashanti,,,120076,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Sekyere South District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Amansie South (← Amansie West),Ashanti,,,116366,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Amansie South District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Amansie West,Ashanti,,,109416,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Amansie West District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Amansie Central,Ashanti,,,93052,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Amansie Central District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Asante Akim North,Ashanti,,,85788,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Asante-Akim North District,,,,,region,1,GH-AH,Ashanti Region,MED,0.941,GH-AH
-Ghana,Adansi South,Ashanti,,,85200,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Adansi South District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Offinso North,Ashanti,,,83440,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Offinso North District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Sekyere East,Ashanti,,,74789,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Sekyere East District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Afigya Kwabre North,Ashanti,,,73330,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Afigya-Kwabre North District,,,,,region,1,GH-AH,Ashanti Region,MED,0.947,GH-AH
-Ghana,Sekyere Central,Ashanti,,,73228,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Sekyere Central District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Adansi Asokwa (← Adansi North),Ashanti,,,71844,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Adansi Asokwa District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Ahafo Ano South West,Ashanti,,,65770,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Ahafo-Ano South West District,,,,,region,1,GH-AH,Ashanti Region,MED,0.95,GH-AH
-Ghana,Sekyere Kumawu,Ashanti,,,64396,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Sekyere Kumawu District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Ahafo Ano South East,Ashanti,,,63468,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Ahafo-Ano South East District,,,,,region,1,GH-AH,Ashanti Region,MED,0.95,GH-AH
-Ghana,Bosome Freho,Ashanti,,,62259,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Bosome Freho District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Adansi North,Ashanti,,,54155,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Adansi North District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Sekyere Afram Plains,Ashanti,,,32640,District,,,#N/A,,AshantiGhana,,,,,county,2,GH-AH,Sekyere Afram Plains District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
-Ghana,Sunyani Municipal,Bono,,,193595,Municipal District,Sunyani,,Sunyani,,BonoGhana,,,,,county,2,GH-BO,Sunyani Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Sunyani West,Bono,,,136022,District,Sunyani,,Sunyani,,BonoGhana,,,,,county,2,GH-BO,Sunyani West District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Wenchi Municipal,Bono,,,124758,Municipal District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Wenchi Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Jaman North,Bono,,,117909,District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Jaman North District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Tain,Bono,,,115568,District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Tain District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Dormaa Central Municipal,Bono,,,112702,Municipal District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Dormaa Central Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Jaman South Municipal,Bono,,,108388,Municipal District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Jaman South Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Berekum East Municipal,Bono,,,106252,Municipal District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Berekum East Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Dormaa East,Bono,,,67899,District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Dormaa East District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Berekum West,Bono,,,49464,District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Berekum West District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Dormaa West,Bono,,,47913,District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Dormaa West District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Banda,Bono,,,28179,District,,,#N/A,,BonoGhana,,,,,county,2,GH-BO,Banda District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
-Ghana,Techiman Municipal,Bono East,,,243335,Municipal District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Techiman Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Atebubu-Amantin Municipal,Bono East,,,144947,Municipal District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Atebubu-Amantin Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Kintampo North Municipal,Bono East,,,139508,Municipal District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Kintampo North Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Nkoranza South Municipal,Bono East,,,114642,Municipal District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Nkoranza South Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Techiman North,Bono East,,,102529,District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Techiman North District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Pru East,Bono East,,,101545,District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Pru East District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Kintampo South,Bono East,,,89126,District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Kintampo South District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Sene East,Bono East,,,72081,District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Sene East District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Sene West,Bono East,,,69836,District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Sene West District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Pru West,Bono East,,,69383,District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Pru West District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Nkoranza North,Bono East,,,56468,District,,,#N/A,,Bono EastGhana,,,,,county,2,GH-BE,Nkoranza North District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
-Ghana,Gomoa East,Central,,,308697,District,Accra,,Accra,,CentralGhana,,,,,county,2,GH-CP,Gomoa East District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Awutu Senya East Municipal,Central,,,236527,Municipal District,Accra,,Accra,,CentralGhana,,,,,county,2,GH-CP,Awutu Senya East Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Awutu Senya West,Central,,,161460,District,Accra,,Accra,,CentralGhana,,,,,county,2,GH-CP,Awutu Senya West District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,"Cape Coast Metropolitan (incl. Cape Coast North Municipal, Cape Coast South Municipal)",Central,,,189925,Metropolitan District,Cape Coast,,Cape Coast,,CentralGhana,,,,,county,2,GH-CP,Cape Coast Metropolitan District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Mfantsiman Municipal,Central,,,168905,Municipal District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Mfantsiman Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Komenda-Edina-Eguafo-Abirem Municipal,Central,,,166017,Municipal District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Komenda/Edina/Eguafo/Abirem Municipal District,,,,,region,1,GH-CP,Central Region,LOW,0.919,GH-CP
-Ghana,Agona West Municipal,Central,,,136882,Municipal District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Agona West Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Gomoa West,Central,,,129512,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Gomoa West District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Asikuma-Odoben-Brakwa,Central,,,126993,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Asikuma/Odoben/Brakwa District,,,,,region,1,GH-CP,Central Region,LOW,0.905,GH-CP
-Ghana,Abura-Asebu-Kwamankese,Central,,,124465,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Abura/Asebu/Kwamankese District,,,,,region,1,GH-CP,Central Region,LOW,0.909,GH-CP
-Ghana,Ajumako-Enyan-Essiam,Central,,,120586,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Ajumako/Enyan/Essiam District,,,,,region,1,GH-CP,Central Region,LOW,0.9,GH-CP
-Ghana,Upper Denkyira East Municipal,Central,,,110141,Municipal District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Upper Denkyira East Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Effutu Municipal,Central,,,107798,Municipal District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Effutu Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Assin South,Central,,,105995,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Assin South District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Twifo-Ati Morkwa,Central,,,100851,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Twifo Atti Morkwa District,,,,,region,1,GH-CP,Central Region,LOW,0.909,GH-CP
-Ghana,Agona East,Central,,,98324,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Agona East District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Upper Denkyira West,Central,,,91025,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Upper Denkyira West District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Assin Central Municipal (Assin Fosu Municipal),Central,,,88753,Municipal District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Assin Central Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Gomoa Central (← Gomoa East),Central,,,83610,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Gomoa Central District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Assin North (← Assin Central Municipal),Central,,,80539,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Assin North District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Twifo-Heman-Lower Denkyira,Central,,,66075,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Twifo/Hemang/Lower Denkyira District,,,,,region,1,GH-CP,Central Region,LOW,0.906,GH-CP
-Ghana,Ekumfi,Central,,,56741,District,,,#N/A,,CentralGhana,,,,,county,2,GH-CP,Ekumfi District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
-Ghana,Nsawam Adoagyiri Municipal,Eastern,,,155597,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Nsawam Adoagyire Municipal District,,,,,region,1,GH-EP,Eastern Region,MED,0.962,GH-EP
-Ghana,Kwahu West Municipal,Eastern,,,145429,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Kwahu West Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Suhum Municipal,Eastern,,,126403,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Suhum Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,New Juaben South Municipal,Eastern,,,125256,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,New Juaben South Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Yilo Krobo Municipal,Eastern,,,122705,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Yilo-Krobo Municipal District,,,,,region,1,GH-EP,Eastern Region,MED,0.95,GH-EP
-Ghana,Kwaebibirem Municipal,Eastern,,,121698,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Kwaebibirem Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Lower Manya Krobo Municipal,Eastern,,,121478,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Lower Manya Krobo Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,West Akim Municipal,Eastern,,,120145,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,West Akim Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Akuapim North Municipal,Eastern,,,105315,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Akuapim North Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Asuogyaman,Eastern,,,101256,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Asuogyaman District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Ayensuano,Eastern,,,94594,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Ayensuano District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Upper West Akim,Eastern,,,93391,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Upper West Akim District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,New Juaben North Municipal,Eastern,,,93201,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,New Juaben North Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Abuakwa North Municipal (← East Akim Municipal),Eastern,,,91297,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Abuakwa North Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Akyemansa,Eastern,,,91038,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Akyemansa District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Birim North,Eastern,,,82669,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Birim North District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Kwahu South,Eastern,,,80358,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Kwahu South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Kwahu East,Eastern,,,79726,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Kwahu East District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Asene Manso-Akroso (← Birim Central Municipal),Eastern,,,77498,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Asene Manso Akroso District,,,,,region,1,GH-EP,Eastern Region,MED,0.944,GH-EP
-Ghana,Denkyembour,Eastern,,,77029,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Denkyembour District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Akwapim South,Eastern,,,76922,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Akuapim South District,,,,,region,1,GH-EP,Eastern Region,MED,0.923,GH-EP
-Ghana,Birim Central Municipal,Eastern,,,76302,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Birim Central Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Kwahu Afram Plains South,Eastern,,,74002,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Kwahu Afram Plains South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Abuakwa South Municipal (← East Akim Municipal),Eastern,,,73949,Municipal District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Abuakwa South Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Upper Manya Krobo,Eastern,,,70676,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Upper Manya Krobo District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Kwahu Afram Plains North,Eastern,,,66555,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Kwahu Afram Plains North District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Atiwa East,Eastern,,,64647,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Atiwa East District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Atiwa West,Eastern,,,61219,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Atiwa West District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Fanteakwa North,Eastern,,,56987,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Fanteakwa North District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Achiase (← Birim South),Eastern,,,56348,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Achiase District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Fanteakwa South,Eastern,,,54634,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Fanteakwa South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Okere (← Akwapim North Municipal),Eastern,,,51675,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Okere District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Birim South,Eastern,,,35654,District,,,#N/A,,EasternGhana,,,,,county,2,GH-EP,Birim South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
-Ghana,Kpone Katamanso Municipal,Greater Accra,,,417334,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Kpone-Katamanso Municipal District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.96,GH-AA
-Ghana,Ga South Municipal,Greater Accra,,,350121,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ga South Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ga Central Municipal,Greater Accra,,,332232,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ga Central Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ga West Municipal,Greater Accra,,,314299,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ga West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,"Accra Metropolitan (incl. Ablekuma Municipal, Ashiedu Municipal, Okaikoi Municipal)",Greater Accra,,,284124,Metropolitan Area,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Accra Metropolitan District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ga East Municipal,Greater Accra,,,283379,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ga East Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,La Nkwantanang Madina Municipal,Greater Accra,,,244676,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,La-Nkwantanang-Madina Municipal District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.935,GH-AA
-Ghana,Adenta Municipal,Greater Accra,,,237546,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Adenta Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ga North Municipal (← Ga West Municipal),Greater Accra,,,235292,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ga North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ledzokuku Municipal,Greater Accra,,,217304,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ledzokuku Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Weija-Gbawe Municipal (← Ga South Municipal),Greater Accra,,,213674,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Weija-Gbawe Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ashaiman Municipal,Greater Accra,,,208060,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ashaiman Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ningo Prampram,Greater Accra,,,204673,District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ningo-Prampram District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.929,GH-AA
-Ghana,Tema West Municipal (← Tema Metropolitan),Greater Accra,,,196224,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Tema West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,"Tema Metropolitan (incl. Tema Central Municipal, Tema East Municipal)",Greater Accra,,,177924,Metropolitan District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Tema Metropolitan District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ablekuma Central Municipal (← Accra Metropolitan),Greater Accra,,,169145,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ablekuma Central Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Okaikwei North Municipal (← Accra Metropolitan),Greater Accra,,,160446,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Okaikwei North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ablekuma North Municipal (← Accra Metropolitan),Greater Accra,,,159208,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ablekuma North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ablekuma West Municipal (← Accra Metropolitan),Greater Accra,,,153490,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ablekuma West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Krowor Municipal,Greater Accra,,,143012,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Krowor Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,La Dade-Kotopon Municipal,Greater Accra,,,140264,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,La-Dade-Kotopon Municipal District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.96,GH-AA
-Ghana,Shai Osudoku,Greater Accra,,,105610,District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Shai-Osudoku District,,,,,region,1,GH-AA,Greater Accra Region,LOW,0.917,GH-AA
-Ghana,Ayawaso Central Municipal (← Accra Metropolitan),Greater Accra,,,94831,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ayawaso Central Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ada East,Greater Accra,,,76411,District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ada East District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ada West,Greater Accra,,,76087,District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ada West District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ayawaso West Municipal (← Accra Metropolitan),Greater Accra,,,75303,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ayawaso West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Korle-Klottey Municipal (← Accra Metropolitan),Greater Accra,,,68633,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Korle-Klottey Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ayawaso North Municipal (← Accra Metropolitan),Greater Accra,,,63386,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ayawaso North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,Ayawaso East Municipal (← Accra Metropolitan),Greater Accra,,,53004,Municipal District,Accra,,Accra,,Greater AccraGhana,,,,,county,2,GH-AA,Ayawaso East Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
-Ghana,East Mamprusi Municipal,North East,,,188006,Municipal District,,,#N/A,,North EastGhana,,,,,county,2,GH-NE,East Mamprusi Municipal District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
-Ghana,West Mamprusi Municipal,North East,,,175755,Municipal District,,,#N/A,,North EastGhana,,,,,county,2,GH-NE,West Mamprusi Municipal District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
-Ghana,Chereponi,North East,,,87176,District,,,#N/A,,North EastGhana,,,,,county,2,GH-NE,Chereponi District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
-Ghana,Bunkpurugu-Nyakpanduri,North East,,,82384,District,,,#N/A,,North EastGhana,,,,,county,2,GH-NE,Bunkpurugu-Nakpanduri District,,,,,region,1,GH-NE,North East Region,HIGH,0.977,GH-NE
-Ghana,Mamprugu Moagduri,North East,,,68746,District,,,#N/A,,North EastGhana,,,,,county,2,GH-NE,Mamprugu Moagduri District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
-Ghana,Yunyoo-Nasuan,North East,,,56879,District,,,#N/A,,North EastGhana,,,,,county,2,GH-NE,Yunyoo-Nasuan District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
-Ghana,"Tamale Metropolitan (incl. Tamale Central Municipal, Tamale South Municipal)",Northern,,,374744,Metropolitan District,Tamale,,Tamale,,NorthernGhana,,,,,county,2,GH-NP,Tamale Metropolitan District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Sagnarigu Municipal,Northern,,,341711,Municipal District,Tamale,,Tamale,,NorthernGhana,,,,,county,2,GH-NP,Sagnarigu Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Nanumba North Municipal,Northern,,,188680,Municipal District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Nanumba North Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Yendi Municipal,Northern,,,154421,Municipal District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Yendi Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Gushiegu Municipal,Northern,,,153965,Municipal District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Gushiegu Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Kpandai,Northern,,,126213,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Kpandai District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Savelugu Municipal,Northern,,,122888,Municipal District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Savelugu Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Tolon,Northern,,,118101,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Tolon District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Karaga,Northern,,,114225,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Karaga District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Kumbungu,Northern,,,110586,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Kumbungu District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Nanumba South,Northern,,,106374,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Nanumba South District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Saboba,Northern,,,95683,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Saboba District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Mion,Northern,,,94930,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Mion District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Zabzugu,Northern,,,82846,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Zabzugu District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Tatale-Sangule,Northern,,,74805,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Tatale Sangule District,,,,,region,1,GH-NP,Northern Region,MED,0.929,GH-NP
-Ghana,Nanton,Northern,,,50767,District,,,#N/A,,NorthernGhana,,,,,county,2,GH-NP,Nanton District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
-Ghana,Nkwanta South Municipal,Oti,,,135936,Municipal District,,,#N/A,,OtiGhana,,,,,,,,,,,,,region,1,GH-OT,Oti Region,NONE,0.0,GH-OT
-Ghana,Nkwanta North,Oti,,,126096,District,,,#N/A,,OtiGhana,,,,,county,2,GH-OT,Nkwanta North District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
-Ghana,Krachi East Municipal,Oti,,,110435,Municipal District,,,#N/A,,OtiGhana,,,,,,,,,,,,,region,1,GH-OT,Oti Region,NONE,0.0,GH-OT
-Ghana,Krachi Nchumuru,Oti,,,79934,District,,,#N/A,,OtiGhana,,,,,county,2,GH-OT,Krachi Nchumuru District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
-Ghana,Kadjebi,Oti,,,73959,District,,,#N/A,,OtiGhana,,,,,county,2,GH-OT,Kadjebi District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
-Ghana,Biakoye,Oti,,,71827,District,,,#N/A,,OtiGhana,,,,,county,2,GH-OT,Biakoye District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
-Ghana,Krachi West,Oti,,,61128,District,,,#N/A,,OtiGhana,,,,,county,2,GH-OT,Krachi West District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
-Ghana,Jasikan,Oti,,,59695,District,,,#N/A,,OtiGhana,,,,,county,2,GH-OT,Jasikan District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
-Ghana,Guan (← Jasikan),Oti,,,28238,District,,,#N/A,,OtiGhana,,,,,county,2,GH-OT,Guan District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
-Ghana,Central Gonja,Savannah,,,142762,District,,,#N/A,,SavannahGhana,,,,,county,2,GH-SV,Central Gonja District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
-Ghana,East Gonja Municipal,Savannah,,,117755,Municipal District,,,#N/A,,SavannahGhana,,,,,county,2,GH-SV,East Gonja Municipal District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
-Ghana,Bole,Savannah,,,115800,District,,,#N/A,,SavannahGhana,,,,,county,2,GH-SV,Bole District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
-Ghana,Sawla-Tuna-Kalba,Savannah,,,112664,District,,,#N/A,,SavannahGhana,,,,,county,2,GH-SV,Sawla-Tuna-Kalba District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
-Ghana,West Gonja,Savannah,,,63449,District,,,#N/A,,SavannahGhana,,,,,,,,,,,,,region,1,GH-SV,Savannah Region,NONE,0.0,GH-SV
-Ghana,North Gonja,Savannah,,,61432,District,,,#N/A,,SavannahGhana,,,,,county,2,GH-SV,North Gonja District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
-Ghana,North East Gonja (← East Gonja Municipal),Savannah,,,39404,District,,,#N/A,,SavannahGhana,,,,,county,2,GH-SV,North East Gonja District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
-Ghana,Bawku West,Upper East,,,144189,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Bawku West District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Bolgatanga Municipal,Upper East,,,139864,Municipal District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Bolgatanga Municipal District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Bongo,Upper East,,,120254,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Bongo District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Bawku Municipal,Upper East,,,119458,Municipal District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Bawku Municipal District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Kassena Nankana Municipal,Upper East,,,99895,Municipal District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Kassena-Nankana Municipal District,,,,,region,1,GH-UE,Upper East Region,MED,0.96,GH-UE
-Ghana,Kassena Nankana West,Upper East,,,90735,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Kassena-Nankana West District,,,,,region,1,GH-UE,Upper East Region,MED,0.95,GH-UE
-Ghana,Talensi,Upper East,,,87021,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Talensi District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Tempane,Upper East,,,86993,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Tempane District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Pusiga,Upper East,,,80533,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Pusiga District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Binduri,Upper East,,,76679,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Binduri District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Garu,Upper East,,,71774,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Garu District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Builsa North Municipal,Upper East,,,56571,Municipal District,,,#N/A,,Upper EastGhana,,,,,,,,,,,,,region,1,GH-UE,Upper East Region,NONE,0.0,GH-UE
-Ghana,Nabdam,Upper East,,,51861,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Nabdam District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Bolgatanga East (← Bolgatanga Municipal),Upper East,,,38824,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Bolgatanga East District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Builsa South,Upper East,,,36575,District,,,#N/A,,Upper EastGhana,,,,,county,2,GH-UE,Builsa South District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
-Ghana,Wa Municipal,Upper West,,,200672,Municipal District,Wa Municipal,,Wa Municipal,,Upper WestGhana,,,,,county,2,GH-UW,Wa Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Wa West,Upper West,,,96957,District,Wa Municipal,,Wa Municipal,,Upper WestGhana,,,,,county,2,GH-UW,Wa West District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Wa East,Upper West,,,91457,District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Wa East District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Jirapa Municipal,Upper West,,,91279,Municipal District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Jirapa Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Sissala East Municipal,Upper West,,,80619,Municipal District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Sissala East Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Nadowli-Kaleo,Upper West,,,77057,District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Nadowli-Kaleo District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Sissala West,Upper West,,,63828,District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Sissala West District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Lawra Municipal,Upper West,,,58433,Municipal District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Lawra Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Nandom,Upper West,,,51328,District,,,#N/A,,Upper WestGhana,,,,,,,,,,,,,region,1,GH-UW,Upper West Region,NONE,0.0,GH-UW
-Ghana,Lambussie Karni,Upper West,,,51118,District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Lambussie Karni District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
-Ghana,Daffiama-Bussie-Issa,Upper West,,,38754,District,,,#N/A,,Upper WestGhana,,,,,county,2,GH-UW,Daffiama Bussie Issa District,,,,,region,1,GH-UW,Upper West Region,LOW,0.9,GH-UW
-Ghana,Ketu South Municipal,Volta,,,253122,Municipal District,Aflao,,Aflao,,VoltaGhana,,,,,county,2,GH-TV,Ketu South Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Ketu North Municipal,Volta,,,114846,Municipal District,Aflao,,Aflao,,VoltaGhana,,,,,county,2,GH-TV,Ketu North Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Ho Municipal,Volta,,,180420,Municipal District,Ho Municipal,,Ho Municipal,,VoltaGhana,,,,,county,2,GH-TV,Ho Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Hohoe Municipal,Volta,,,114472,Municipal District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Hohoe Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,South Tongu,Volta,,,113114,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,South Tongu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,North Tongu,Volta,,,110891,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,North Tongu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Anloga (← Keta Municipal),Volta,,,94895,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Anloga District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Akatsi South,Volta,,,92494,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Akatsi South District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Central Tongu,Volta,,,83803,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Central Tongu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Ho West,Volta,,,82886,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Ho West District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Keta Municipal,Volta,,,78862,Municipal District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Keta Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Afadzato South,Volta,,,73146,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Afadzato South District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Kpando Municipal,Volta,,,58552,Municipal District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Kpando Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,South Dayi,Volta,,,57526,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,South Dayi District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Agotime Ziope,Volta,,,39553,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Agotime Ziope District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,North Dayi,Volta,,,39268,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,North Dayi District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Adaklu,Volta,,,38649,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Adaklu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,Akatsi North,Volta,,,32541,District,,,#N/A,,VoltaGhana,,,,,county,2,GH-TV,Akatsi North District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
-Ghana,"Sekondi Takoradi Metropolitan (incl. Sekondi Municipal, Takoradi Municipal, Essikado Municipal)",Western,,,245382,Metropolitan District,Sekondi-Takoradi,,Sekondi-Takoradi,,WesternGhana,,,,,county,2,GH-WP,Sekondi Takoradi Metropolitan District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Effia-Kwesimintsim Municipal (← Sekondi Takoradi Metropolitan),Western,,,173975,Municipal District,Sekondi-Takoradi,,Sekondi-Takoradi,,WesternGhana,,,,,county,2,GH-WP,Effia Kwesimintsim Municipal District,,,,,region,1,GH-WP,Western Region,MED,0.964,GH-WP
-Ghana,Prestea-Huni Valley Municipal,Western,,,229301,Municipal District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Prestea-Huni Valley Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Tarkwa Nsuaem Municipal,Western,,,218664,Municipal District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Tarkwa-Nsuaem Municipal District,,,,,region,1,GH-WP,Western Region,MED,0.957,GH-WP
-Ghana,Wassa Amenfi East Municipal,Western,,,179696,Municipal District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Wassa Amenfi East Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Ahanta West Municipal,Western,,,153140,Municipal District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Ahanta West Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Wassa Amenfi West Municipal,Western,,,129882,Municipal District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Wassa Amenfi East Municipal District,,,,,region,1,GH-WP,Western Region,MED,0.963,GH-WP
-Ghana,Jomoro Municipal,Western,,,126576,Municipal District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Jomoro Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Ellembelle,Western,,,120893,District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Ellembelle District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Wassa Amenfi Central,Western,,,119117,District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Amenfi Central District,,,,,region,1,GH-WP,Western Region,LOW,0.824,GH-WP
-Ghana,Shama,Western,,,117224,District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Shama District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Wassa East,Western,,,99641,District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Wassa East District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Nzema East Municipal,Western,,,94621,Municipal District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Nzema East Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Mpohor,Western,,,52473,District,,,#N/A,,WesternGhana,,,,,county,2,GH-WP,Mpohor District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
-Ghana,Bibiani-Anhwiaso-Bekwai Municipal,Western North,,,167971,Municipal District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Bibiani Anhwiaso Bekwai Municipal District,,,,,region,1,GH-WN,Western North Region,MED,0.939,GH-WN
-Ghana,Sefwi Wiawso Municipal,Western North,,,151220,Municipal District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Sefwi-Wiawso Municipal District,,,,,region,1,GH-WN,Western North Region,MED,0.955,GH-WN
-Ghana,Aowin Municipal,Western North,,,129721,Municipal District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Aowin Municipal District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
-Ghana,Bia West,Western North,,,115881,District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Bia West District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
-Ghana,Juaboso,Western North,,,88814,District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Juaboso District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
-Ghana,Sefwi Akontombra,Western North,,,70225,District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Sefwi Akontombra District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
-Ghana,Bodi,Western North,,,65748,District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Bodi District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
-Ghana,Bia East,Western North,,,53073,District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Bia East District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
-Ghana,Suaman,Western North,,,38268,District,,,#N/A,,Western NorthGhana,,,,,county,2,GH-WN,Suaman District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Ghana,Asunafo North Municipal,Ahafo,,,150198,Municipal District,,,#N/A,,AhafoGhana,county,2,GH-AF,Asunafo North Municipal District,,,,county,2,GH-AF,Asunafo North Municipal District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
+Ghana,Tano North Municipal,Ahafo,,,93608,Municipal District,,,#N/A,,AhafoGhana,county,2,GH-AF,Tano North Municipal District,,,,county,2,GH-AF,Tano North Municipal District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
+Ghana,Asunafo South,Ahafo,,,91693,District,,,#N/A,,AhafoGhana,county,2,GH-AF,Asunafo South District,,,,county,2,GH-AF,Asunafo South District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
+Ghana,Tano South Municipal,Ahafo,,,87219,Municipal District,,,#N/A,,AhafoGhana,county,2,GH-AF,Tano South Municipal District,,,,county,2,GH-AF,Tano South Municipal District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
+Ghana,Asutifi North,Ahafo,,,73556,District,,,#N/A,,AhafoGhana,county,2,GH-AF,Asutifi North District,,,,county,2,GH-AF,Asutifi North District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
+Ghana,Asutifi South,Ahafo,,,68394,District,,,#N/A,,AhafoGhana,county,2,GH-AF,Asutifi South District,,,,county,2,GH-AF,Asutifi South District,,,,,region,1,GH-AF,Ahafo Region,HIGH,1.0,GH-AF
+Ghana,"Kumasi Metropolitan (incl. Bantama Municipal, Manhyia North Municipal, Manhyia South Municipal, Nhyiaeso Municipal, Subin Municipal)",Ashanti,,,443981,Metropolitan District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Kumasi Metropolitan District,,,,county,2,GH-AH,Kumasi Metropolitan District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Kwabre East,Ashanti,,,296814,District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Kwabre East Municipal District,,,,,,,,,,,,region,1,GH-AH,Ashanti Region,NONE,0.0,GH-AH
+Ghana,Atwima Kwanwoma,Ashanti,,,234846,District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Atwima-Kwanwoma District,,,,county,2,GH-AH,Atwima-Kwanwoma District,,,,,region,1,GH-AH,Ashanti Region,MED,0.933,GH-AH
+Ghana,Afigya Kwabre South,Ashanti,,,234667,District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Afigya-Kwabre South District,,,,county,2,GH-AH,Afigya-Kwabre South District,,,,,region,1,GH-AH,Ashanti Region,MED,0.947,GH-AH
+Ghana,Oforikrom Municipal (← Kumasi Metropolitan),Ashanti,,,213126,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Oforikrom Municipal District,,,,county,2,GH-AH,Oforikrom Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Asokore Mampong Municipal,Ashanti,,,191402,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Asokore-Mampong Municipal District,,,,county,2,GH-AH,Asokore-Mampong Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.96,GH-AH
+Ghana,Ejisu Municipal,Ashanti,,,180723,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Ejisu Municipal District,,,,county,2,GH-AH,Ejisu Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Bosomtwe,Ashanti,,,165180,District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Bosomtwe District,,,,county,2,GH-AH,Bosomtwe District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Atwima Nwabiagya Municipal (Atwima Nwabiagya South Municipal),Ashanti,,,161893,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Atwima-Nwabiagya Municipal District,,,,county,2,GH-AH,Atwima-Nwabiagya Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.962,GH-AH
+Ghana,Atwima Nwabiagya North (← Atwima Nwabiagya Municipal),Ashanti,,,155025,District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Atwima-Nwabiagya North District,,,,county,2,GH-AH,Atwima-Nwabiagya North District,,,,,region,1,GH-AH,Ashanti Region,MED,0.955,GH-AH
+Ghana,Kwadaso Municipal (← Kumasi Metropolitan),Ashanti,,,154526,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Kwadaso Municipal District,,,,county,2,GH-AH,Kwadaso Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Bekwai Municipal,Ashanti,,,137967,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Bekwai Municipal District,,,,county,2,GH-AH,Bekwai Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Ejura-Sekyedumase Municipal,Ashanti,,,137672,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Ejura/Sekyedumase Municipal District,,,,county,2,GH-AH,Ejura/Sekyedumase Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.963,GH-AH
+Ghana,Offinso Municipal,Ashanti,,,137272,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Offinso Municipal District,,,,county,2,GH-AH,Offinso Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Suame Municipal (← Kumasi Metropolitan),Ashanti,,,136290,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Suame Municipal District,,,,county,2,GH-AH,Suame Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Asokwa Municipal (← Kumasi Metropolitan),Ashanti,,,125642,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Asokwa Municipal District,,,,county,2,GH-AH,Asokwa Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Asante Akim South Municipal,Ashanti,,,123633,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Asante-Akim South Municipal District,,,,county,2,GH-AH,Asante-Akim South Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.963,GH-AH
+Ghana,Mampong Municipal,Ashanti,,,116632,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Mampong Municipal District,,,,county,2,GH-AH,Mampong Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Old Tafo Municipal (← Kumasi Metropolitan),Ashanti,,,114368,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Old Tafo Municipal District,,,,county,2,GH-AH,Old Tafo Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Ahafo Ano North Municipal,Ashanti,,,92742,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Ahafo-Ano North Municipal District,,,,county,2,GH-AH,Ahafo-Ano North Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.96,GH-AH
+Ghana,Asante Akim Central Municipal,Ashanti,,,91673,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Asante-Akim Central Municipal District,,,,county,2,GH-AH,Asante-Akim Central Municipal District,,,,,region,1,GH-AH,Ashanti Region,MED,0.966,GH-AH
+Ghana,Juaben Municipal,Ashanti,,,63929,Municipal District,Kumasi,,Kumasi,,AshantiGhana,county,2,GH-AH,Juaben Municipal District,,,,county,2,GH-AH,Juaben Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Obuasi Municipal,Ashanti,,,104297,Municipal District,Obuasi,,Obuasi,,AshantiGhana,county,2,GH-AH,Obuasi Municipal District,,,,county,2,GH-AH,Obuasi Municipal District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Obuasi East (← Obuasi Municipal),Ashanti,,,92401,District,Obuasi,,Obuasi,,AshantiGhana,county,2,GH-AH,Obuasi East Municipal District,,,,,,,,,,,,region,1,GH-AH,Ashanti Region,NONE,0.0,GH-AH
+Ghana,Akrofuom (← Obuasi Municipal),Ashanti,,,49291,District,Obuasi,,Obuasi,,AshantiGhana,county,2,GH-AH,Akrofuom District,,,,county,2,GH-AH,Akrofuom District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Atwima Mponua,Ashanti,,,155254,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Atwima-Mponua District,,,,county,2,GH-AH,Atwima-Mponua District,,,,,region,1,GH-AH,Ashanti Region,MED,0.923,GH-AH
+Ghana,Sekyere South,Ashanti,,,120076,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Sekyere South District,,,,county,2,GH-AH,Sekyere South District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Amansie South (← Amansie West),Ashanti,,,116366,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Amansie South District,,,,county,2,GH-AH,Amansie South District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Amansie West,Ashanti,,,109416,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Amansie West District,,,,county,2,GH-AH,Amansie West District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Amansie Central,Ashanti,,,93052,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Amansie Central District,,,,county,2,GH-AH,Amansie Central District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Asante Akim North,Ashanti,,,85788,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Asante-Akim North District,,,,county,2,GH-AH,Asante-Akim North District,,,,,region,1,GH-AH,Ashanti Region,MED,0.941,GH-AH
+Ghana,Adansi South,Ashanti,,,85200,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Adansi South District,,,,county,2,GH-AH,Adansi South District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Offinso North,Ashanti,,,83440,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Offinso North District,,,,county,2,GH-AH,Offinso North District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Sekyere East,Ashanti,,,74789,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Sekyere East District,,,,county,2,GH-AH,Sekyere East District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Afigya Kwabre North,Ashanti,,,73330,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Afigya-Kwabre North District,,,,county,2,GH-AH,Afigya-Kwabre North District,,,,,region,1,GH-AH,Ashanti Region,MED,0.947,GH-AH
+Ghana,Sekyere Central,Ashanti,,,73228,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Sekyere Central District,,,,county,2,GH-AH,Sekyere Central District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Adansi Asokwa (← Adansi North),Ashanti,,,71844,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Adansi Asokwa District,,,,county,2,GH-AH,Adansi Asokwa District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Ahafo Ano South West,Ashanti,,,65770,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Ahafo-Ano South West District,,,,county,2,GH-AH,Ahafo-Ano South West District,,,,,region,1,GH-AH,Ashanti Region,MED,0.95,GH-AH
+Ghana,Sekyere Kumawu,Ashanti,,,64396,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Sekyere Kumawu District,,,,county,2,GH-AH,Sekyere Kumawu District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Ahafo Ano South East,Ashanti,,,63468,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Ahafo-Ano South East District,,,,county,2,GH-AH,Ahafo-Ano South East District,,,,,region,1,GH-AH,Ashanti Region,MED,0.95,GH-AH
+Ghana,Bosome Freho,Ashanti,,,62259,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Bosome Freho District,,,,county,2,GH-AH,Bosome Freho District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Adansi North,Ashanti,,,54155,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Adansi North District,,,,county,2,GH-AH,Adansi North District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Sekyere Afram Plains,Ashanti,,,32640,District,,,#N/A,,AshantiGhana,county,2,GH-AH,Sekyere Afram Plains District,,,,county,2,GH-AH,Sekyere Afram Plains District,,,,,region,1,GH-AH,Ashanti Region,HIGH,1.0,GH-AH
+Ghana,Sunyani Municipal,Bono,,,193595,Municipal District,Sunyani,,Sunyani,,BonoGhana,county,2,GH-BO,Sunyani Municipal District,,,,county,2,GH-BO,Sunyani Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Sunyani West,Bono,,,136022,District,Sunyani,,Sunyani,,BonoGhana,county,2,GH-BO,Sunyani West District,,,,county,2,GH-BO,Sunyani West District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Wenchi Municipal,Bono,,,124758,Municipal District,,,#N/A,,BonoGhana,county,2,GH-BO,Wenchi Municipal District,,,,county,2,GH-BO,Wenchi Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Jaman North,Bono,,,117909,District,,,#N/A,,BonoGhana,county,2,GH-BO,Jaman North District,,,,county,2,GH-BO,Jaman North District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Tain,Bono,,,115568,District,,,#N/A,,BonoGhana,county,2,GH-BO,Tain District,,,,county,2,GH-BO,Tain District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Dormaa Central Municipal,Bono,,,112702,Municipal District,,,#N/A,,BonoGhana,county,2,GH-BO,Dormaa Central Municipal District,,,,county,2,GH-BO,Dormaa Central Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Jaman South Municipal,Bono,,,108388,Municipal District,,,#N/A,,BonoGhana,county,2,GH-BO,Jaman South Municipal District,,,,county,2,GH-BO,Jaman South Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Berekum East Municipal,Bono,,,106252,Municipal District,,,#N/A,,BonoGhana,county,2,GH-BO,Berekum East Municipal District,,,,county,2,GH-BO,Berekum East Municipal District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Dormaa East,Bono,,,67899,District,,,#N/A,,BonoGhana,county,2,GH-BO,Dormaa East District,,,,county,2,GH-BO,Dormaa East District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Berekum West,Bono,,,49464,District,,,#N/A,,BonoGhana,county,2,GH-BO,Berekum West District,,,,county,2,GH-BO,Berekum West District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Dormaa West,Bono,,,47913,District,,,#N/A,,BonoGhana,county,2,GH-BO,Dormaa West District,,,,county,2,GH-BO,Dormaa West District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Banda,Bono,,,28179,District,,,#N/A,,BonoGhana,county,2,GH-BO,Banda District,,,,county,2,GH-BO,Banda District,,,,,region,1,GH-BO,Bono Region,HIGH,1.0,GH-BO
+Ghana,Techiman Municipal,Bono East,,,243335,Municipal District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Techiman Municipal District,,,,county,2,GH-BE,Techiman Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Atebubu-Amantin Municipal,Bono East,,,144947,Municipal District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Atebubu-Amantin Municipal District,,,,county,2,GH-BE,Atebubu-Amantin Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Kintampo North Municipal,Bono East,,,139508,Municipal District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Kintampo North Municipal District,,,,county,2,GH-BE,Kintampo North Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Nkoranza South Municipal,Bono East,,,114642,Municipal District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Nkoranza South Municipal District,,,,county,2,GH-BE,Nkoranza South Municipal District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Techiman North,Bono East,,,102529,District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Techiman North District,,,,county,2,GH-BE,Techiman North District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Pru East,Bono East,,,101545,District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Pru East District,,,,county,2,GH-BE,Pru East District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Kintampo South,Bono East,,,89126,District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Kintampo South District,,,,county,2,GH-BE,Kintampo South District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Sene East,Bono East,,,72081,District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Sene East District,,,,county,2,GH-BE,Sene East District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Sene West,Bono East,,,69836,District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Sene West District,,,,county,2,GH-BE,Sene West District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Pru West,Bono East,,,69383,District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Pru West District,,,,county,2,GH-BE,Pru West District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Nkoranza North,Bono East,,,56468,District,,,#N/A,,Bono EastGhana,county,2,GH-BE,Nkoranza North District,,,,county,2,GH-BE,Nkoranza North District,,,,,region,1,GH-BE,Bono East Region,HIGH,1.0,GH-BE
+Ghana,Gomoa East,Central,,,308697,District,Accra,,Accra,,CentralGhana,county,2,GH-CP,Gomoa East District,,,,county,2,GH-CP,Gomoa East District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Awutu Senya East Municipal,Central,,,236527,Municipal District,Accra,,Accra,,CentralGhana,county,2,GH-CP,Awutu Senya East Municipal District,,,,county,2,GH-CP,Awutu Senya East Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Awutu Senya West,Central,,,161460,District,Accra,,Accra,,CentralGhana,county,2,GH-CP,Awutu Senya West District,,,,county,2,GH-CP,Awutu Senya West District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,"Cape Coast Metropolitan (incl. Cape Coast North Municipal, Cape Coast South Municipal)",Central,,,189925,Metropolitan District,Cape Coast,,Cape Coast,,CentralGhana,county,2,GH-CP,Cape Coast Metropolitan District,,,,county,2,GH-CP,Cape Coast Metropolitan District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Mfantsiman Municipal,Central,,,168905,Municipal District,,,#N/A,,CentralGhana,county,2,GH-CP,Mfantsiman Municipal District,,,,county,2,GH-CP,Mfantsiman Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Komenda-Edina-Eguafo-Abirem Municipal,Central,,,166017,Municipal District,,,#N/A,,CentralGhana,county,2,GH-CP,Komenda/Edina/Eguafo/Abirem Municipal District,,,,county,2,GH-CP,Komenda/Edina/Eguafo/Abirem Municipal District,,,,,region,1,GH-CP,Central Region,LOW,0.919,GH-CP
+Ghana,Agona West Municipal,Central,,,136882,Municipal District,,,#N/A,,CentralGhana,county,2,GH-CP,Agona West Municipal District,,,,county,2,GH-CP,Agona West Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Gomoa West,Central,,,129512,District,,,#N/A,,CentralGhana,county,2,GH-CP,Gomoa West District,,,,county,2,GH-CP,Gomoa West District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Asikuma-Odoben-Brakwa,Central,,,126993,District,,,#N/A,,CentralGhana,county,2,GH-CP,Asikuma/Odoben/Brakwa District,,,,county,2,GH-CP,Asikuma/Odoben/Brakwa District,,,,,region,1,GH-CP,Central Region,LOW,0.905,GH-CP
+Ghana,Abura-Asebu-Kwamankese,Central,,,124465,District,,,#N/A,,CentralGhana,county,2,GH-CP,Abura/Asebu/Kwamankese District,,,,county,2,GH-CP,Abura/Asebu/Kwamankese District,,,,,region,1,GH-CP,Central Region,LOW,0.909,GH-CP
+Ghana,Ajumako-Enyan-Essiam,Central,,,120586,District,,,#N/A,,CentralGhana,county,2,GH-CP,Ajumako/Enyan/Essiam District,,,,county,2,GH-CP,Ajumako/Enyan/Essiam District,,,,,region,1,GH-CP,Central Region,LOW,0.9,GH-CP
+Ghana,Upper Denkyira East Municipal,Central,,,110141,Municipal District,,,#N/A,,CentralGhana,county,2,GH-CP,Upper Denkyira East Municipal District,,,,county,2,GH-CP,Upper Denkyira East Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Effutu Municipal,Central,,,107798,Municipal District,,,#N/A,,CentralGhana,county,2,GH-CP,Effutu Municipal District,,,,county,2,GH-CP,Effutu Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Assin South,Central,,,105995,District,,,#N/A,,CentralGhana,county,2,GH-CP,Assin South District,,,,county,2,GH-CP,Assin South District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Twifo-Ati Morkwa,Central,,,100851,District,,,#N/A,,CentralGhana,county,2,GH-CP,Twifo Atti Morkwa District,,,,county,2,GH-CP,Twifo Atti Morkwa District,,,,,region,1,GH-CP,Central Region,LOW,0.909,GH-CP
+Ghana,Agona East,Central,,,98324,District,,,#N/A,,CentralGhana,county,2,GH-CP,Agona East District,,,,county,2,GH-CP,Agona East District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Upper Denkyira West,Central,,,91025,District,,,#N/A,,CentralGhana,county,2,GH-CP,Upper Denkyira West District,,,,county,2,GH-CP,Upper Denkyira West District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Assin Central Municipal (Assin Fosu Municipal),Central,,,88753,Municipal District,,,#N/A,,CentralGhana,county,2,GH-CP,Assin Central Municipal District,,,,county,2,GH-CP,Assin Central Municipal District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Gomoa Central (← Gomoa East),Central,,,83610,District,,,#N/A,,CentralGhana,county,2,GH-CP,Gomoa Central District,,,,county,2,GH-CP,Gomoa Central District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Assin North (← Assin Central Municipal),Central,,,80539,District,,,#N/A,,CentralGhana,county,2,GH-CP,Assin North District,,,,county,2,GH-CP,Assin North District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Twifo-Heman-Lower Denkyira,Central,,,66075,District,,,#N/A,,CentralGhana,county,2,GH-CP,Twifo/Hemang/Lower Denkyira District,,,,county,2,GH-CP,Twifo/Hemang/Lower Denkyira District,,,,,region,1,GH-CP,Central Region,LOW,0.906,GH-CP
+Ghana,Ekumfi,Central,,,56741,District,,,#N/A,,CentralGhana,county,2,GH-CP,Ekumfi District,,,,county,2,GH-CP,Ekumfi District,,,,,region,1,GH-CP,Central Region,HIGH,1.0,GH-CP
+Ghana,Nsawam Adoagyiri Municipal,Eastern,,,155597,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Nsawam Adoagyire Municipal District,,,,county,2,GH-EP,Nsawam Adoagyire Municipal District,,,,,region,1,GH-EP,Eastern Region,MED,0.962,GH-EP
+Ghana,Kwahu West Municipal,Eastern,,,145429,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Kwahu West Municipal District,,,,county,2,GH-EP,Kwahu West Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Suhum Municipal,Eastern,,,126403,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Suhum Municipal District,,,,county,2,GH-EP,Suhum Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,New Juaben South Municipal,Eastern,,,125256,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,New Juaben South Municipal District,,,,county,2,GH-EP,New Juaben South Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Yilo Krobo Municipal,Eastern,,,122705,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Yilo-Krobo Municipal District,,,,county,2,GH-EP,Yilo-Krobo Municipal District,,,,,region,1,GH-EP,Eastern Region,MED,0.95,GH-EP
+Ghana,Kwaebibirem Municipal,Eastern,,,121698,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Kwaebibirem Municipal District,,,,county,2,GH-EP,Kwaebibirem Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Lower Manya Krobo Municipal,Eastern,,,121478,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Lower Manya Krobo Municipal District,,,,county,2,GH-EP,Lower Manya Krobo Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,West Akim Municipal,Eastern,,,120145,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,West Akim Municipal District,,,,county,2,GH-EP,West Akim Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Akuapim North Municipal,Eastern,,,105315,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Akuapim North Municipal District,,,,county,2,GH-EP,Akuapim North Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Asuogyaman,Eastern,,,101256,District,,,#N/A,,EasternGhana,county,2,GH-EP,Asuogyaman District,,,,county,2,GH-EP,Asuogyaman District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Ayensuano,Eastern,,,94594,District,,,#N/A,,EasternGhana,county,2,GH-EP,Ayensuano District,,,,county,2,GH-EP,Ayensuano District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Upper West Akim,Eastern,,,93391,District,,,#N/A,,EasternGhana,county,2,GH-EP,Upper West Akim District,,,,county,2,GH-EP,Upper West Akim District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,New Juaben North Municipal,Eastern,,,93201,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,New Juaben North Municipal District,,,,county,2,GH-EP,New Juaben North Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Abuakwa North Municipal (← East Akim Municipal),Eastern,,,91297,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Abuakwa North Municipal District,,,,county,2,GH-EP,Abuakwa North Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Akyemansa,Eastern,,,91038,District,,,#N/A,,EasternGhana,county,2,GH-EP,Akyemansa District,,,,county,2,GH-EP,Akyemansa District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Birim North,Eastern,,,82669,District,,,#N/A,,EasternGhana,county,2,GH-EP,Birim North District,,,,county,2,GH-EP,Birim North District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Kwahu South,Eastern,,,80358,District,,,#N/A,,EasternGhana,county,2,GH-EP,Kwahu South District,,,,county,2,GH-EP,Kwahu South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Kwahu East,Eastern,,,79726,District,,,#N/A,,EasternGhana,county,2,GH-EP,Kwahu East District,,,,county,2,GH-EP,Kwahu East District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Asene Manso-Akroso (← Birim Central Municipal),Eastern,,,77498,District,,,#N/A,,EasternGhana,county,2,GH-EP,Asene Manso Akroso District,,,,county,2,GH-EP,Asene Manso Akroso District,,,,,region,1,GH-EP,Eastern Region,MED,0.944,GH-EP
+Ghana,Denkyembour,Eastern,,,77029,District,,,#N/A,,EasternGhana,county,2,GH-EP,Denkyembour District,,,,county,2,GH-EP,Denkyembour District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Akwapim South,Eastern,,,76922,District,,,#N/A,,EasternGhana,county,2,GH-EP,Akuapim South District,,,,county,2,GH-EP,Akuapim South District,,,,,region,1,GH-EP,Eastern Region,MED,0.923,GH-EP
+Ghana,Birim Central Municipal,Eastern,,,76302,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Birim Central Municipal District,,,,county,2,GH-EP,Birim Central Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Kwahu Afram Plains South,Eastern,,,74002,District,,,#N/A,,EasternGhana,county,2,GH-EP,Kwahu Afram Plains South District,,,,county,2,GH-EP,Kwahu Afram Plains South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Abuakwa South Municipal (← East Akim Municipal),Eastern,,,73949,Municipal District,,,#N/A,,EasternGhana,county,2,GH-EP,Abuakwa South Municipal District,,,,county,2,GH-EP,Abuakwa South Municipal District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Upper Manya Krobo,Eastern,,,70676,District,,,#N/A,,EasternGhana,county,2,GH-EP,Upper Manya Krobo District,,,,county,2,GH-EP,Upper Manya Krobo District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Kwahu Afram Plains North,Eastern,,,66555,District,,,#N/A,,EasternGhana,county,2,GH-EP,Kwahu Afram Plains North District,,,,county,2,GH-EP,Kwahu Afram Plains North District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Atiwa East,Eastern,,,64647,District,,,#N/A,,EasternGhana,county,2,GH-EP,Atiwa East District,,,,county,2,GH-EP,Atiwa East District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Atiwa West,Eastern,,,61219,District,,,#N/A,,EasternGhana,county,2,GH-EP,Atiwa West District,,,,county,2,GH-EP,Atiwa West District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Fanteakwa North,Eastern,,,56987,District,,,#N/A,,EasternGhana,county,2,GH-EP,Fanteakwa North District,,,,county,2,GH-EP,Fanteakwa North District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Achiase (← Birim South),Eastern,,,56348,District,,,#N/A,,EasternGhana,county,2,GH-EP,Achiase District,,,,county,2,GH-EP,Achiase District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Fanteakwa South,Eastern,,,54634,District,,,#N/A,,EasternGhana,county,2,GH-EP,Fanteakwa South District,,,,county,2,GH-EP,Fanteakwa South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Okere (← Akwapim North Municipal),Eastern,,,51675,District,,,#N/A,,EasternGhana,county,2,GH-EP,Okere District,,,,county,2,GH-EP,Okere District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Birim South,Eastern,,,35654,District,,,#N/A,,EasternGhana,county,2,GH-EP,Birim South District,,,,county,2,GH-EP,Birim South District,,,,,region,1,GH-EP,Eastern Region,HIGH,1.0,GH-EP
+Ghana,Kpone Katamanso Municipal,Greater Accra,,,417334,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Kpone-Katamanso Municipal District,,,,county,2,GH-AA,Kpone-Katamanso Municipal District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.96,GH-AA
+Ghana,Ga South Municipal,Greater Accra,,,350121,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ga South Municipal District,,,,county,2,GH-AA,Ga South Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ga Central Municipal,Greater Accra,,,332232,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ga Central Municipal District,,,,county,2,GH-AA,Ga Central Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ga West Municipal,Greater Accra,,,314299,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ga West Municipal District,,,,county,2,GH-AA,Ga West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,"Accra Metropolitan (incl. Ablekuma Municipal, Ashiedu Municipal, Okaikoi Municipal)",Greater Accra,,,284124,Metropolitan Area,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Accra Metropolitan District,,,,county,2,GH-AA,Accra Metropolitan District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ga East Municipal,Greater Accra,,,283379,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ga East Municipal District,,,,county,2,GH-AA,Ga East Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,La Nkwantanang Madina Municipal,Greater Accra,,,244676,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,La-Nkwantanang-Madina Municipal District,,,,county,2,GH-AA,La-Nkwantanang-Madina Municipal District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.935,GH-AA
+Ghana,Adenta Municipal,Greater Accra,,,237546,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Adenta Municipal District,,,,county,2,GH-AA,Adenta Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ga North Municipal (← Ga West Municipal),Greater Accra,,,235292,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ga North Municipal District,,,,county,2,GH-AA,Ga North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ledzokuku Municipal,Greater Accra,,,217304,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ledzokuku Municipal District,,,,county,2,GH-AA,Ledzokuku Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Weija-Gbawe Municipal (← Ga South Municipal),Greater Accra,,,213674,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Weija-Gbawe Municipal District,,,,county,2,GH-AA,Weija-Gbawe Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ashaiman Municipal,Greater Accra,,,208060,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ashaiman Municipal District,,,,county,2,GH-AA,Ashaiman Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ningo Prampram,Greater Accra,,,204673,District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ningo-Prampram District,,,,county,2,GH-AA,Ningo-Prampram District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.929,GH-AA
+Ghana,Tema West Municipal (← Tema Metropolitan),Greater Accra,,,196224,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Tema West Municipal District,,,,county,2,GH-AA,Tema West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,"Tema Metropolitan (incl. Tema Central Municipal, Tema East Municipal)",Greater Accra,,,177924,Metropolitan District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Tema Metropolitan District,,,,county,2,GH-AA,Tema Metropolitan District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ablekuma Central Municipal (← Accra Metropolitan),Greater Accra,,,169145,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ablekuma Central Municipal District,,,,county,2,GH-AA,Ablekuma Central Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Okaikwei North Municipal (← Accra Metropolitan),Greater Accra,,,160446,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Okaikwei North Municipal District,,,,county,2,GH-AA,Okaikwei North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ablekuma North Municipal (← Accra Metropolitan),Greater Accra,,,159208,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ablekuma North Municipal District,,,,county,2,GH-AA,Ablekuma North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ablekuma West Municipal (← Accra Metropolitan),Greater Accra,,,153490,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ablekuma West Municipal District,,,,county,2,GH-AA,Ablekuma West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Krowor Municipal,Greater Accra,,,143012,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Krowor Municipal District,,,,county,2,GH-AA,Krowor Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,La Dade-Kotopon Municipal,Greater Accra,,,140264,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,La-Dade-Kotopon Municipal District,,,,county,2,GH-AA,La-Dade-Kotopon Municipal District,,,,,region,1,GH-AA,Greater Accra Region,MED,0.96,GH-AA
+Ghana,Shai Osudoku,Greater Accra,,,105610,District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Shai-Osudoku District,,,,county,2,GH-AA,Shai-Osudoku District,,,,,region,1,GH-AA,Greater Accra Region,LOW,0.917,GH-AA
+Ghana,Ayawaso Central Municipal (← Accra Metropolitan),Greater Accra,,,94831,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ayawaso Central Municipal District,,,,county,2,GH-AA,Ayawaso Central Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ada East,Greater Accra,,,76411,District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ada East District,,,,county,2,GH-AA,Ada East District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ada West,Greater Accra,,,76087,District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ada West District,,,,county,2,GH-AA,Ada West District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ayawaso West Municipal (← Accra Metropolitan),Greater Accra,,,75303,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ayawaso West Municipal District,,,,county,2,GH-AA,Ayawaso West Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Korle-Klottey Municipal (← Accra Metropolitan),Greater Accra,,,68633,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Korle-Klottey Municipal District,,,,county,2,GH-AA,Korle-Klottey Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ayawaso North Municipal (← Accra Metropolitan),Greater Accra,,,63386,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ayawaso North Municipal District,,,,county,2,GH-AA,Ayawaso North Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,Ayawaso East Municipal (← Accra Metropolitan),Greater Accra,,,53004,Municipal District,Accra,,Accra,,Greater AccraGhana,county,2,GH-AA,Ayawaso East Municipal District,,,,county,2,GH-AA,Ayawaso East Municipal District,,,,,region,1,GH-AA,Greater Accra Region,HIGH,1.0,GH-AA
+Ghana,East Mamprusi Municipal,North East,,,188006,Municipal District,,,#N/A,,North EastGhana,county,2,GH-NE,East Mamprusi Municipal District,,,,county,2,GH-NE,East Mamprusi Municipal District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
+Ghana,West Mamprusi Municipal,North East,,,175755,Municipal District,,,#N/A,,North EastGhana,county,2,GH-NE,West Mamprusi Municipal District,,,,county,2,GH-NE,West Mamprusi Municipal District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
+Ghana,Chereponi,North East,,,87176,District,,,#N/A,,North EastGhana,county,2,GH-NE,Chereponi District,,,,county,2,GH-NE,Chereponi District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
+Ghana,Bunkpurugu-Nyakpanduri,North East,,,82384,District,,,#N/A,,North EastGhana,county,2,GH-NE,Bunkpurugu-Nakpanduri District,,,,county,2,GH-NE,Bunkpurugu-Nakpanduri District,,,,,region,1,GH-NE,North East Region,HIGH,0.977,GH-NE
+Ghana,Mamprugu Moagduri,North East,,,68746,District,,,#N/A,,North EastGhana,county,2,GH-NE,Mamprugu Moagduri District,,,,county,2,GH-NE,Mamprugu Moagduri District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
+Ghana,Yunyoo-Nasuan,North East,,,56879,District,,,#N/A,,North EastGhana,county,2,GH-NE,Yunyoo-Nasuan District,,,,county,2,GH-NE,Yunyoo-Nasuan District,,,,,region,1,GH-NE,North East Region,HIGH,1.0,GH-NE
+Ghana,"Tamale Metropolitan (incl. Tamale Central Municipal, Tamale South Municipal)",Northern,,,374744,Metropolitan District,Tamale,,Tamale,,NorthernGhana,county,2,GH-NP,Tamale Metropolitan District,,,,county,2,GH-NP,Tamale Metropolitan District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Sagnarigu Municipal,Northern,,,341711,Municipal District,Tamale,,Tamale,,NorthernGhana,county,2,GH-NP,Sagnarigu Municipal District,,,,county,2,GH-NP,Sagnarigu Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Nanumba North Municipal,Northern,,,188680,Municipal District,,,#N/A,,NorthernGhana,county,2,GH-NP,Nanumba North Municipal District,,,,county,2,GH-NP,Nanumba North Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Yendi Municipal,Northern,,,154421,Municipal District,,,#N/A,,NorthernGhana,county,2,GH-NP,Yendi Municipal District,,,,county,2,GH-NP,Yendi Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Gushiegu Municipal,Northern,,,153965,Municipal District,,,#N/A,,NorthernGhana,county,2,GH-NP,Gushiegu Municipal District,,,,county,2,GH-NP,Gushiegu Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Kpandai,Northern,,,126213,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Kpandai District,,,,county,2,GH-NP,Kpandai District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Savelugu Municipal,Northern,,,122888,Municipal District,,,#N/A,,NorthernGhana,county,2,GH-NP,Savelugu Municipal District,,,,county,2,GH-NP,Savelugu Municipal District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Tolon,Northern,,,118101,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Tolon District,,,,county,2,GH-NP,Tolon District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Karaga,Northern,,,114225,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Karaga District,,,,county,2,GH-NP,Karaga District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Kumbungu,Northern,,,110586,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Kumbungu District,,,,county,2,GH-NP,Kumbungu District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Nanumba South,Northern,,,106374,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Nanumba South District,,,,county,2,GH-NP,Nanumba South District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Saboba,Northern,,,95683,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Saboba District,,,,county,2,GH-NP,Saboba District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Mion,Northern,,,94930,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Mion District,,,,county,2,GH-NP,Mion District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Zabzugu,Northern,,,82846,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Zabzugu District,,,,county,2,GH-NP,Zabzugu District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Tatale-Sangule,Northern,,,74805,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Tatale Sangule District,,,,county,2,GH-NP,Tatale Sangule District,,,,,region,1,GH-NP,Northern Region,MED,0.929,GH-NP
+Ghana,Nanton,Northern,,,50767,District,,,#N/A,,NorthernGhana,county,2,GH-NP,Nanton District,,,,county,2,GH-NP,Nanton District,,,,,region,1,GH-NP,Northern Region,HIGH,1.0,GH-NP
+Ghana,Nkwanta South Municipal,Oti,,,135936,Municipal District,,,#N/A,,OtiGhana,,,,,,,,,,,,,,,,region,1,GH-OT,Oti Region,NONE,0.0,GH-OT
+Ghana,Nkwanta North,Oti,,,126096,District,,,#N/A,,OtiGhana,county,2,GH-OT,Nkwanta North District,,,,county,2,GH-OT,Nkwanta North District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
+Ghana,Krachi East Municipal,Oti,,,110435,Municipal District,,,#N/A,,OtiGhana,,,,,,,,,,,,,,,,region,1,GH-OT,Oti Region,NONE,0.0,GH-OT
+Ghana,Krachi Nchumuru,Oti,,,79934,District,,,#N/A,,OtiGhana,county,2,GH-OT,Krachi Nchumuru District,,,,county,2,GH-OT,Krachi Nchumuru District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
+Ghana,Kadjebi,Oti,,,73959,District,,,#N/A,,OtiGhana,county,2,GH-OT,Kadjebi District,,,,county,2,GH-OT,Kadjebi District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
+Ghana,Biakoye,Oti,,,71827,District,,,#N/A,,OtiGhana,county,2,GH-OT,Biakoye District,,,,county,2,GH-OT,Biakoye District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
+Ghana,Krachi West,Oti,,,61128,District,,,#N/A,,OtiGhana,county,2,GH-OT,Krachi West District,,,,county,2,GH-OT,Krachi West District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
+Ghana,Jasikan,Oti,,,59695,District,,,#N/A,,OtiGhana,county,2,GH-OT,Jasikan District,,,,county,2,GH-OT,Jasikan District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
+Ghana,Guan (← Jasikan),Oti,,,28238,District,,,#N/A,,OtiGhana,county,2,GH-OT,Guan District,,,,county,2,GH-OT,Guan District,,,,,region,1,GH-OT,Oti Region,HIGH,1.0,GH-OT
+Ghana,Central Gonja,Savannah,,,142762,District,,,#N/A,,SavannahGhana,county,2,GH-SV,Central Gonja District,,,,county,2,GH-SV,Central Gonja District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
+Ghana,East Gonja Municipal,Savannah,,,117755,Municipal District,,,#N/A,,SavannahGhana,county,2,GH-SV,East Gonja Municipal District,,,,county,2,GH-SV,East Gonja Municipal District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
+Ghana,Bole,Savannah,,,115800,District,,,#N/A,,SavannahGhana,county,2,GH-SV,Bole District,,,,county,2,GH-SV,Bole District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
+Ghana,Sawla-Tuna-Kalba,Savannah,,,112664,District,,,#N/A,,SavannahGhana,county,2,GH-SV,Sawla-Tuna-Kalba District,,,,county,2,GH-SV,Sawla-Tuna-Kalba District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
+Ghana,West Gonja,Savannah,,,63449,District,,,#N/A,,SavannahGhana,,,,,,,,,,,,,,,,region,1,GH-SV,Savannah Region,NONE,0.0,GH-SV
+Ghana,North Gonja,Savannah,,,61432,District,,,#N/A,,SavannahGhana,county,2,GH-SV,North Gonja District,,,,county,2,GH-SV,North Gonja District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
+Ghana,North East Gonja (← East Gonja Municipal),Savannah,,,39404,District,,,#N/A,,SavannahGhana,county,2,GH-SV,North East Gonja District,,,,county,2,GH-SV,North East Gonja District,,,,,region,1,GH-SV,Savannah Region,HIGH,1.0,GH-SV
+Ghana,Bawku West,Upper East,,,144189,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Bawku West District,,,,county,2,GH-UE,Bawku West District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Bolgatanga Municipal,Upper East,,,139864,Municipal District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Bolgatanga Municipal District,,,,county,2,GH-UE,Bolgatanga Municipal District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Bongo,Upper East,,,120254,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Bongo District,,,,county,2,GH-UE,Bongo District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Bawku Municipal,Upper East,,,119458,Municipal District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Bawku Municipal District,,,,county,2,GH-UE,Bawku Municipal District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Kassena Nankana Municipal,Upper East,,,99895,Municipal District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Kassena-Nankana Municipal District,,,,county,2,GH-UE,Kassena-Nankana Municipal District,,,,,region,1,GH-UE,Upper East Region,MED,0.96,GH-UE
+Ghana,Kassena Nankana West,Upper East,,,90735,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Kassena-Nankana West District,,,,county,2,GH-UE,Kassena-Nankana West District,,,,,region,1,GH-UE,Upper East Region,MED,0.95,GH-UE
+Ghana,Talensi,Upper East,,,87021,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Talensi District,,,,county,2,GH-UE,Talensi District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Tempane,Upper East,,,86993,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Tempane District,,,,county,2,GH-UE,Tempane District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Pusiga,Upper East,,,80533,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Pusiga District,,,,county,2,GH-UE,Pusiga District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Binduri,Upper East,,,76679,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Binduri District,,,,county,2,GH-UE,Binduri District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Garu,Upper East,,,71774,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Garu District,,,,county,2,GH-UE,Garu District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Builsa North Municipal,Upper East,,,56571,Municipal District,,,#N/A,,Upper EastGhana,,,,,,,,,,,,,,,,region,1,GH-UE,Upper East Region,NONE,0.0,GH-UE
+Ghana,Nabdam,Upper East,,,51861,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Nabdam District,,,,county,2,GH-UE,Nabdam District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Bolgatanga East (← Bolgatanga Municipal),Upper East,,,38824,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Bolgatanga East District,,,,county,2,GH-UE,Bolgatanga East District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Builsa South,Upper East,,,36575,District,,,#N/A,,Upper EastGhana,county,2,GH-UE,Builsa South District,,,,county,2,GH-UE,Builsa South District,,,,,region,1,GH-UE,Upper East Region,HIGH,1.0,GH-UE
+Ghana,Wa Municipal,Upper West,,,200672,Municipal District,Wa Municipal,,Wa Municipal,,Upper WestGhana,county,2,GH-UW,Wa Municipal District,,,,county,2,GH-UW,Wa Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Wa West,Upper West,,,96957,District,Wa Municipal,,Wa Municipal,,Upper WestGhana,county,2,GH-UW,Wa West District,,,,county,2,GH-UW,Wa West District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Wa East,Upper West,,,91457,District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Wa East District,,,,county,2,GH-UW,Wa East District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Jirapa Municipal,Upper West,,,91279,Municipal District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Jirapa Municipal District,,,,county,2,GH-UW,Jirapa Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Sissala East Municipal,Upper West,,,80619,Municipal District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Sissala East Municipal District,,,,county,2,GH-UW,Sissala East Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Nadowli-Kaleo,Upper West,,,77057,District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Nadowli-Kaleo District,,,,county,2,GH-UW,Nadowli-Kaleo District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Sissala West,Upper West,,,63828,District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Sissala West District,,,,county,2,GH-UW,Sissala West District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Lawra Municipal,Upper West,,,58433,Municipal District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Lawra Municipal District,,,,county,2,GH-UW,Lawra Municipal District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Nandom,Upper West,,,51328,District,,,#N/A,,Upper WestGhana,,,,,,,,,,,,,,,,region,1,GH-UW,Upper West Region,NONE,0.0,GH-UW
+Ghana,Lambussie Karni,Upper West,,,51118,District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Lambussie Karni District,,,,county,2,GH-UW,Lambussie Karni District,,,,,region,1,GH-UW,Upper West Region,HIGH,1.0,GH-UW
+Ghana,Daffiama-Bussie-Issa,Upper West,,,38754,District,,,#N/A,,Upper WestGhana,county,2,GH-UW,Daffiama Bussie Issa District,,,,county,2,GH-UW,Daffiama Bussie Issa District,,,,,region,1,GH-UW,Upper West Region,LOW,0.9,GH-UW
+Ghana,Ketu South Municipal,Volta,,,253122,Municipal District,Aflao,,Aflao,,VoltaGhana,county,2,GH-TV,Ketu South Municipal District,,,,county,2,GH-TV,Ketu South Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Ketu North Municipal,Volta,,,114846,Municipal District,Aflao,,Aflao,,VoltaGhana,county,2,GH-TV,Ketu North Municipal District,,,,county,2,GH-TV,Ketu North Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Ho Municipal,Volta,,,180420,Municipal District,Ho Municipal,,Ho Municipal,,VoltaGhana,county,2,GH-TV,Ho Municipal District,,,,county,2,GH-TV,Ho Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Hohoe Municipal,Volta,,,114472,Municipal District,,,#N/A,,VoltaGhana,county,2,GH-TV,Hohoe Municipal District,,,,county,2,GH-TV,Hohoe Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,South Tongu,Volta,,,113114,District,,,#N/A,,VoltaGhana,county,2,GH-TV,South Tongu District,,,,county,2,GH-TV,South Tongu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,North Tongu,Volta,,,110891,District,,,#N/A,,VoltaGhana,county,2,GH-TV,North Tongu District,,,,county,2,GH-TV,North Tongu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Anloga (← Keta Municipal),Volta,,,94895,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Anloga District,,,,county,2,GH-TV,Anloga District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Akatsi South,Volta,,,92494,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Akatsi South District,,,,county,2,GH-TV,Akatsi South District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Central Tongu,Volta,,,83803,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Central Tongu District,,,,county,2,GH-TV,Central Tongu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Ho West,Volta,,,82886,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Ho West District,,,,county,2,GH-TV,Ho West District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Keta Municipal,Volta,,,78862,Municipal District,,,#N/A,,VoltaGhana,county,2,GH-TV,Keta Municipal District,,,,county,2,GH-TV,Keta Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Afadzato South,Volta,,,73146,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Afadzato South District,,,,county,2,GH-TV,Afadzato South District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Kpando Municipal,Volta,,,58552,Municipal District,,,#N/A,,VoltaGhana,county,2,GH-TV,Kpando Municipal District,,,,county,2,GH-TV,Kpando Municipal District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,South Dayi,Volta,,,57526,District,,,#N/A,,VoltaGhana,county,2,GH-TV,South Dayi District,,,,county,2,GH-TV,South Dayi District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Agotime Ziope,Volta,,,39553,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Agotime Ziope District,,,,county,2,GH-TV,Agotime Ziope District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,North Dayi,Volta,,,39268,District,,,#N/A,,VoltaGhana,county,2,GH-TV,North Dayi District,,,,county,2,GH-TV,North Dayi District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Adaklu,Volta,,,38649,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Adaklu District,,,,county,2,GH-TV,Adaklu District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,Akatsi North,Volta,,,32541,District,,,#N/A,,VoltaGhana,county,2,GH-TV,Akatsi North District,,,,county,2,GH-TV,Akatsi North District,,,,,region,1,GH-TV,Volta Region,HIGH,1.0,GH-TV
+Ghana,"Sekondi Takoradi Metropolitan (incl. Sekondi Municipal, Takoradi Municipal, Essikado Municipal)",Western,,,245382,Metropolitan District,Sekondi-Takoradi,,Sekondi-Takoradi,,WesternGhana,county,2,GH-WP,Sekondi Takoradi Metropolitan District,,,,county,2,GH-WP,Sekondi Takoradi Metropolitan District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Effia-Kwesimintsim Municipal (← Sekondi Takoradi Metropolitan),Western,,,173975,Municipal District,Sekondi-Takoradi,,Sekondi-Takoradi,,WesternGhana,county,2,GH-WP,Effia Kwesimintsim Municipal District,,,,county,2,GH-WP,Effia Kwesimintsim Municipal District,,,,,region,1,GH-WP,Western Region,MED,0.964,GH-WP
+Ghana,Prestea-Huni Valley Municipal,Western,,,229301,Municipal District,,,#N/A,,WesternGhana,county,2,GH-WP,Prestea-Huni Valley Municipal District,,,,county,2,GH-WP,Prestea-Huni Valley Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Tarkwa Nsuaem Municipal,Western,,,218664,Municipal District,,,#N/A,,WesternGhana,county,2,GH-WP,Tarkwa-Nsuaem Municipal District,,,,county,2,GH-WP,Tarkwa-Nsuaem Municipal District,,,,,region,1,GH-WP,Western Region,MED,0.957,GH-WP
+Ghana,Wassa Amenfi East Municipal,Western,,,179696,Municipal District,,,#N/A,,WesternGhana,county,2,GH-WP,Wassa Amenfi East Municipal District,,,,county,2,GH-WP,Wassa Amenfi East Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Ahanta West Municipal,Western,,,153140,Municipal District,,,#N/A,,WesternGhana,county,2,GH-WP,Ahanta West Municipal District,,,,county,2,GH-WP,Ahanta West Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Wassa Amenfi West Municipal,Western,,,129882,Municipal District,,,#N/A,,WesternGhana,county,2,GH-WP,Wassa Amenfi East Municipal District,,,,county,2,GH-WP,Wassa Amenfi East Municipal District,,,,,region,1,GH-WP,Western Region,MED,0.963,GH-WP
+Ghana,Jomoro Municipal,Western,,,126576,Municipal District,,,#N/A,,WesternGhana,county,2,GH-WP,Jomoro Municipal District,,,,county,2,GH-WP,Jomoro Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Ellembelle,Western,,,120893,District,,,#N/A,,WesternGhana,county,2,GH-WP,Ellembelle District,,,,county,2,GH-WP,Ellembelle District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Wassa Amenfi Central,Western,,,119117,District,,,#N/A,,WesternGhana,county,2,GH-WP,Amenfi Central District,,,,county,2,GH-WP,Amenfi Central District,,,,,region,1,GH-WP,Western Region,LOW,0.824,GH-WP
+Ghana,Shama,Western,,,117224,District,,,#N/A,,WesternGhana,county,2,GH-WP,Shama District,,,,county,2,GH-WP,Shama District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Wassa East,Western,,,99641,District,,,#N/A,,WesternGhana,county,2,GH-WP,Wassa East District,,,,county,2,GH-WP,Wassa East District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Nzema East Municipal,Western,,,94621,Municipal District,,,#N/A,,WesternGhana,county,2,GH-WP,Nzema East Municipal District,,,,county,2,GH-WP,Nzema East Municipal District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Mpohor,Western,,,52473,District,,,#N/A,,WesternGhana,county,2,GH-WP,Mpohor District,,,,county,2,GH-WP,Mpohor District,,,,,region,1,GH-WP,Western Region,HIGH,1.0,GH-WP
+Ghana,Bibiani-Anhwiaso-Bekwai Municipal,Western North,,,167971,Municipal District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Bibiani Anhwiaso Bekwai Municipal District,,,,county,2,GH-WN,Bibiani Anhwiaso Bekwai Municipal District,,,,,region,1,GH-WN,Western North Region,MED,0.939,GH-WN
+Ghana,Sefwi Wiawso Municipal,Western North,,,151220,Municipal District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Sefwi-Wiawso Municipal District,,,,county,2,GH-WN,Sefwi-Wiawso Municipal District,,,,,region,1,GH-WN,Western North Region,MED,0.955,GH-WN
+Ghana,Aowin Municipal,Western North,,,129721,Municipal District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Aowin Municipal District,,,,county,2,GH-WN,Aowin Municipal District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
+Ghana,Bia West,Western North,,,115881,District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Bia West District,,,,county,2,GH-WN,Bia West District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
+Ghana,Juaboso,Western North,,,88814,District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Juaboso District,,,,county,2,GH-WN,Juaboso District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
+Ghana,Sefwi Akontombra,Western North,,,70225,District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Sefwi Akontombra District,,,,county,2,GH-WN,Sefwi Akontombra District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
+Ghana,Bodi,Western North,,,65748,District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Bodi District,,,,county,2,GH-WN,Bodi District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
+Ghana,Bia East,Western North,,,53073,District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Bia East District,,,,county,2,GH-WN,Bia East District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN
+Ghana,Suaman,Western North,,,38268,District,,,#N/A,,Western NorthGhana,county,2,GH-WN,Suaman District,,,,county,2,GH-WN,Suaman District,,,,,region,1,GH-WN,Western North Region,HIGH,1.0,GH-WN

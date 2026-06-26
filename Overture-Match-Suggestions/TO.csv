@@ -1,0 +1,24 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Tonga,'Eua Motu'a,'Eua,,,2771,District,,,#N/A,,'EuaTonga,county,2,TO-05,Vahe Motu,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,'Eua Fo'ou,'Eua,,,2132,District,,,#N/A,,'EuaTonga,county,2,TO-01,Vahe 'Eua,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Pangai (Lifuka),Ha'apai,,,2039,District,,,#N/A,,Ha'apaiTonga,county,2,TO-02,Vahe Lifuka,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Foa,Ha'apai,,,1367,District,,,#N/A,,Ha'apaiTonga,county,2,TO-02,Vahe Foa,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Lulunga,Ha'apai,,,660,District,,,#N/A,,Ha'apaiTonga,county,2,TO-02,Vahe Lulunga,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,'Uiha,Ha'apai,,,553,District,,,#N/A,,Ha'apaiTonga,county,2,TO-02,Vahe 'Uiha,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Ha`ano,Ha'apai,,,456,District,,,#N/A,,Ha'apaiTonga,county,2,TO-02,Vahe Ha'ano,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Mu'omu'a,Ha'apai,,,344,District,,,#N/A,,Ha'apaiTonga,county,2,TO-02,Vahe Mu'omu'a,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Niuatoputapu,Niuas,,,719,District,,,#N/A,,NiuasTonga,county,2,TO-03,Vahe Niuatoputapu,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Niuafo'ou,Niuas,,,431,District,,,#N/A,,NiuasTonga,county,2,TO-03,Vahe Niuafo'ou,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Kolofo'ou,Tongatapu,,,17294,District,Nukuʻalofa,,Nukuʻalofa,,TongatapuTonga,county,2,TO-04,Vahe Kolofo'ou,,,,county,2,TO-04,Vahe Kolofo'ou,,,,,region,1,TO-04,Tongatapu,LOW,0.833,TO-04
+Tonga,Kolomotu'a,Tongatapu,,,16826,District,Nukuʻalofa,,Nukuʻalofa,,TongatapuTonga,county,2,TO-04,Vahe Kolomotu'a,,,,county,2,TO-04,Vahe Kolomotu'a,,,,,region,1,TO-04,Tongatapu,LOW,0.85,TO-04
+Tonga,Vaini,Tongatapu,,,13246,District,Nukuʻalofa,,Nukuʻalofa,,TongatapuTonga,county,2,TO-04,Vahe Vaini,,,,,,,,,,,,region,1,TO-04,Tongatapu,NONE,0.0,TO-04
+Tonga,Nukunuku,Tongatapu,,,8220,District,Nukuʻalofa,,Nukuʻalofa,,TongatapuTonga,county,2,TO-04,Vahe Nukunuku,,,,county,2,TO-04,Vahe Nukunuku,,,,,region,1,TO-04,Tongatapu,LOW,0.812,TO-04
+Tonga,Lapaha,Tongatapu,,,7353,District,Nukuʻalofa,,Nukuʻalofa,,TongatapuTonga,county,2,TO-04,Vahe Lapaha,,,,,,,,,,,,region,1,TO-04,Tongatapu,NONE,0.0,TO-04
+Tonga,Tatakamotonga,Tongatapu,,,7216,District,Nukuʻalofa,,Nukuʻalofa,,TongatapuTonga,county,2,TO-04,Vahe Tatakamotonga,,,,county,2,TO-04,Vahe Tatakamotonga,,,,,region,1,TO-04,Tongatapu,LOW,0.889,TO-04
+Tonga,Kolovai,Tongatapu,,,4299,District,Nukuʻalofa,,Nukuʻalofa,,TongatapuTonga,,,,,x,,,,,,,,,,,region,1,TO-04,Tongatapu,NONE,0.0,TO-04
+Tonga,Neiafu,Vava'u,,,5377,District,,,#N/A,,Vava'uTonga,county,2,TO-05,Vahe Neiafu,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Leimatu'a,Vava'u,,,2873,District,,,#N/A,,Vava'uTonga,county,2,TO-05,Vahe Leimatu'a,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Hahake,Vava'u,,,2177,District,,,#N/A,,Vava'uTonga,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Hihifo,Vava'u,,,1994,District,,,#N/A,,Vava'uTonga,county,2,TO-05,Vahe Hihifo,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Pangaimotu,Vava'u,,,1203,District,,,#N/A,,Vava'uTonga,county,2,TO-05,Vahe Motu,,,,,,,,,,,,,,,,NONE,0.0,
+Tonga,Motu,Vava'u,,,659,District,,,#N/A,,Vava'uTonga,county,2,TO-05,Vahe Motu,,,,,,,,,,,,,,,,NONE,0.0,

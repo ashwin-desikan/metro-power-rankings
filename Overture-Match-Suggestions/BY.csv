@@ -1,0 +1,130 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Belarus,Baranavičy,Brest,,,174183,City,Baranavichy,,Baranavichy,,BrestBelarus,county,2,BY-BR,Баранавічы,,,,county,2,BY-BR,Баранавічы,,,,,region,1,BY-BR,Брэсцкая вобласць,HIGH,1.0,BY-BR
+Belarus,Baranavicki rajon,Brest,,,29110,District,Baranavichy,,Baranavichy,,BrestBelarus,county,2,BY-BR,Баранавіцкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Brest,Brest,,,340318,City,Brest (BLR),,Brest (BLR),,BrestBelarus,county,2,BY-BR,Брэст,,,,county,2,BY-BR,Брэст,,,,,region,1,BY-BR,Брэсцкая вобласць,HIGH,1.0,BY-BR
+Belarus,Brescki rajon,Brest,,,45615,District,Brest (BLR),,Brest (BLR),,BrestBelarus,county,2,BY-BR,Брэсцкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Pinsk,Brest,,,125900,City,Pinsk,,Pinsk,,BrestBelarus,county,2,BY-BR,Пінск,,,,county,2,BY-BR,Пінскі раён,,,,,region,1,BY-BR,Брэсцкая вобласць,HIGH,1.0,BY-BR
+Belarus,Pinski rajon,Brest,,,43060,District,Pinsk,,Pinsk,,BrestBelarus,county,2,BY-BR,Пінскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Kobrynski rajon,Brest,,,83884,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Кобрынскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Stolinski rajon,Brest,,,71297,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Столінскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Luniniecki rajon,Brest,,,64856,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Лунінецкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Biarozaǔski rajon,Brest,,,59900,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Бярозаўскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Ivacevicki rajon,Brest,,,52626,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Івацэвіцкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Pružanski rajon,Brest,,,43871,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Пружанскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Ivanaǔski rajon,Brest,,,37240,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Іванаўскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Drahičynski rajon,Brest,,,35757,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Драгічынскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Kamianiecki rajon,Brest,,,32854,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Камянецкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Hancavicki rajon,Brest,,,25862,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Ганцавіцкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Žabinkaǔski rajon,Brest,,,24764,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Жабінкаўскі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Malarycki rajon,Brest,,,23583,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Маларыцкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Liachavicki rajon,Brest,,,23364,District,,,#N/A,,BrestBelarus,county,2,BY-BR,Ляхавіцкі раён,,,,,,,,,,,,region,1,BY-BR,Брэсцкая вобласць,NONE,0.0,BY-BR
+Belarus,Homieĺ,Gomel,,,507795,City,Gomel,,Gomel,,GomelBelarus,county,2,BY-HO,Гомель,,,,county,2,BY-HO,Гомель,,,,,region,1,BY-HO,Гомельская вобласць,HIGH,1.0,BY-HO
+Belarus,Homieĺski rajon,Gomel,,,70112,District,Gomel,,Gomel,,GomelBelarus,county,2,BY-HO,Гомельскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Mazyrski rajon,Gomel,,,127464,District,Mazyr,,Mazyr,,GomelBelarus,county,2,BY-HO,Мазырскі раён,,,,county,2,BY-HO,Мазырскі раён,,,,,region,1,BY-HO,Гомельская вобласць,HIGH,1.0,BY-HO
+Belarus,Rečycki rajon,Gomel,,,97817,District,Rechytsa,,Rechytsa,,GomelBelarus,county,2,BY-HO,Рэчыцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Žlobinski rajon,Gomel,,,100314,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Жлобінскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Svietlahorski rajon,Gomel,,,79552,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Светлагорскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Kalinkavicki rajon,Gomel,,,57043,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Калінкавіцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Rahačoǔski rajon,Gomel,,,53139,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Рагачоўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Dobrušski rajon,Gomel,,,36220,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Добрушскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Žytkavicki rajon,Gomel,,,34479,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Жыткавіцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Buda-Kašaloǔski rajon,Gomel,,,30584,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Буда-Кашалёўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Pietrykaǔski rajon,Gomel,,,26987,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Петрыкаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Leĺčycki rajon,Gomel,,,24775,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Лельчыцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Chojnicki rajon,Gomel,,,19432,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Хойніцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Vietkaǔski rajon,Gomel,,,17478,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Веткаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Jeĺski rajon,Gomel,,,15002,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Ельскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Čačerski rajon,Gomel,,,14669,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Чачэрскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Karmianski rajon,Gomel,,,13904,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Кармянскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Akciabrski rajon,Gomel,,,13881,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Акцябрскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Brahinski rajon,Gomel,,,12283,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Брагінскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Lojeǔski rajon,Gomel,,,11629,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Лоеўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Naraǔlianski rajon,Gomel,,,10727,District,,,#N/A,,GomelBelarus,county,2,BY-HO,Нараўлянскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Hrodna,Grodno,,,357510,City,Grodno,,Grodno,,GrodnoBelarus,county,2,BY-HR,Гродна,,,,region,1,BY-HR,Гродзенская вобласць,,,,,region,1,BY-HR,Гродзенская вобласць,HIGH,1.0,BY-HR
+Belarus,Hrodzienski rajon,Grodno,,,49750,District,Grodno,,Grodno,,GrodnoBelarus,county,2,BY-HR,Гродзенскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Smarhonski rajon,Grodno,,,50428,District,Smarhon,,Smarhon,,GrodnoBelarus,county,2,BY-HR,Смаргонскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Lidski rajon,Grodno,,,134731,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Лідскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Vaǔkavyski rajon,Grodno,,,67173,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Ваўкавыскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Slonimski rajon,Grodno,,,62962,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Слонімскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Navahrudski rajon,Grodno,,,42318,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Навагрудскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Ščučynski rajon,Grodno,,,34691,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Шчучынскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Ašmianski rajon,Grodno,,,30503,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Ашмянскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Astraviecki rajon,Grodno,,,28597,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Астравецкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Mastoǔski rajon,Grodno,,,27031,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Мастоўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Dziatlaǔski rajon,Grodno,,,24356,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Дзятлаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Voranaǔski rajon,Grodno,,,23551,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Воранаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Iǔjeǔski rajon,Grodno,,,21336,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Іўеўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Karelicki rajon,Grodno,,,19455,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Карэліцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Bierastavicki rajon,Grodno,,,15225,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Бераставіцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Svislacki rajon,Grodno,,,14242,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Свіслацкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Zeĺvienski rajon,Grodno,,,14117,District,,,#N/A,,GrodnoBelarus,county,2,BY-HR,Зэльвенскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Barysaǔski rajon,Minsk,,,174091,District,Borisov,,Borisov,,MinskBelarus,county,2,BY-MI,Барысаўскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Dziaržynski rajon,Minsk,,,70249,District,Dzyarzhynsk,,Dzyarzhynsk,,MinskBelarus,county,2,BY-MI,Дзяржынскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Maladziečanski rajon,Minsk,,,131759,District,Maladzyechna,,Maladzyechna,,MinskBelarus,county,2,BY-MI,Маладзечанскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Minsk,Minsk,,,2009786,City,Minsk,,Minsk,,MinskBelarus,county,2,BY-MI,Мінскі раён,,,,region,1,BY-MI,Мінская вобласць,,,,,region,1,BY-MI,Мінская вобласць,HIGH,1.0,BY-MI
+Belarus,Minski rajon,Minsk,,,259710,District,Minsk,,Minsk,,MinskBelarus,county,2,BY-MI,Мінскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Salihorski rajon,Minsk,,,130511,District,Salihorsk,,Salihorsk,,MinskBelarus,county,2,BY-MI,Салігорскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Slucki rajon,Minsk,,,88198,District,Slutsk,,Slutsk,,MinskBelarus,county,2,BY-MI,Слуцкі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Žodzina,Minsk,,,64745,City,Zhodzina,,Zhodzina,,MinskBelarus,county,2,BY-MI,Жодзіна,,,,county,2,BY-MI,Жодзіна,,,,,region,1,BY-MI,Мінская вобласць,HIGH,1.0,BY-MI
+Belarus,Puchavicki rajon,Minsk,,,69001,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Пухавіцкі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Smaliavicki rajon,Minsk,,,52290,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Смалявіцкі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Vilejski rajon,Minsk,,,47862,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Вілейскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Niasvižski rajon,Minsk,,,39485,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Нясвіжскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Lahojski rajon,Minsk,,,38637,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Лагойскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Staǔbcoǔski rajon,Minsk,,,38474,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Стаўбцоўскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Valožynski rajon,Minsk,,,34341,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Валожынскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Červieński rajon,Minsk,,,33513,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Чэрвеньскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Liubanski rajon,Minsk,,,29795,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Любанскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Kapyĺski rajon,Minsk,,,28057,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Капыльскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Klecki rajon,Minsk,,,27121,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Клецкі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Miadzieĺski rajon,Minsk,,,25755,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Мядзельскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Uzdzienski rajon,Minsk,,,23831,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Уздзенскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Krupski rajon,Minsk,,,22970,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Крупскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Biarezinski rajon,Minsk,,,22760,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Бярэзінскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Staradarožski rajon,Minsk,,,20191,District,,,#N/A,,MinskBelarus,county,2,BY-MI,Старадарожскі раён,,,,,,,,,,,,region,1,BY-MI,Мінская вобласць,NONE,0.0,BY-MI
+Belarus,Babrujsk,Mogilev,,,211389,City,Babruysk,,Babruysk,,MogilevBelarus,county,2,BY-MA,Бабруйск,,,,county,2,BY-MA,Бабруйск,,,,,region,1,BY-MA,Магілёўская вобласць,HIGH,1.0,BY-MA
+Belarus,Babrujski rajon,Mogilev,,,17803,District,Babruysk,,Babruysk,,MogilevBelarus,county,2,BY-MA,Бабруйскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Mahiloǔ,Mogilev,,,357404,City,Mogilev,,Mogilev,,MogilevBelarus,county,2,BY-MA,Магілёў,,,,county,2,BY-MA,Магілёў,,,,,region,1,BY-MA,Магілёўская вобласць,HIGH,1.0,BY-MA
+Belarus,Mahiloǔski rajon,Mogilev,,,41520,District,Mogilev,,Mogilev,,MogilevBelarus,county,2,BY-MA,Магілёўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Asipovicki rajon,Mogilev,,,45452,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Асіповіцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Horacki rajon,Mogilev,,,40052,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Горацкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Bychaǔski rajon,Mogilev,,,29938,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Быхаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Kryčaǔski rajon,Mogilev,,,29222,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Крычаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Škloǔski rajon,Mogilev,,,25558,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Шклоўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Klimavicki rajon,Mogilev,,,23366,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Клімавіцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Kasciukovicki rajon,Mogilev,,,22534,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Касцюковіцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Mscislaǔski rajon,Mogilev,,,19583,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Мсціслаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Bialynicki rajon,Mogilev,,,18447,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Бялыніцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Kiraǔski rajon,Mogilev,,,18067,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Кіраўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Čavuski rajon,Mogilev,,,17817,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Чавускі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Kličaǔski rajon,Mogilev,,,14377,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Клічаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Kruhlianski rajon,Mogilev,,,13468,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Круглянскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Čerykaǔski rajon,Mogilev,,,13101,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Чэрыкаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Hluski rajon,Mogilev,,,13035,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Глускі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Slaǔharadski rajon,Mogilev,,,12892,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Слаўгарадскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Chocimski rajon,Mogilev,,,10341,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Хоцімскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Drybinski rajon,Mogilev,,,10148,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Дрыбінскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Krasnapoĺski rajon,Mogilev,,,9329,District,,,#N/A,,MogilevBelarus,county,2,BY-MA,Краснапольскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Polacki rajon,Vitebsk,,,102357,District,Navapolatsk,,Navapolatsk,,VitebskBelarus,county,2,BY-VI,Полацкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Navapolack,Vitebsk,,,98122,City,Navapolatsk,,Navapolatsk,,VitebskBelarus,county,2,BY-VI,Наваполацк,,,,county,2,BY-VI,Наваполацк,,,,,region,1,BY-VI,Віцебская вобласць,HIGH,1.0,BY-VI
+Belarus,Viciebsk,Vitebsk,,,362949,City,Vitebsk,,Vitebsk,,VitebskBelarus,county,2,BY-VI,Віцебск,,,,county,2,BY-VI,Віцебск,,,,,region,1,BY-VI,Віцебская вобласць,HIGH,1.0,BY-VI
+Belarus,Viciebski rajon,Vitebsk,,,35241,District,Vitebsk,,Vitebsk,,VitebskBelarus,county,2,BY-VI,Віцебскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Aršanski rajon,Vitebsk,,,146042,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Аршанскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Hlybocki rajon,Vitebsk,,,34716,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Глыбоцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Pastaǔski rajon,Vitebsk,,,33812,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Пастаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Lepieĺski rajon,Vitebsk,,,31582,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Лепельскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Čašnicki rajon,Vitebsk,,,28355,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Чашніцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Braslaǔski rajon,Vitebsk,,,24143,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Браслаўскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Talačynski rajon,Vitebsk,,,23396,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Талачынскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Dokšycki rajon,Vitebsk,,,21823,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Докшыцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Haradocki rajon,Vitebsk,,,21644,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Гарадоцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Siennienski rajon,Vitebsk,,,20377,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Сенненскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Vierchniadzvinski rajon,Vitebsk,,,19998,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Верхнядзвінскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Mijorski rajon,Vitebsk,,,18737,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Мёрскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Šumilinski rajon,Vitebsk,,,17260,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Шумілінскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Loznienski rajon,Vitebsk,,,15777,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Лёзненскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Šarkoǔščynski rajon,Vitebsk,,,14313,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Шаркаўшчынскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Biešankovicki rajon,Vitebsk,,,14289,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Бешанковіцкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Dubrovienski rajon,Vitebsk,,,14063,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Дубровенскі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Ušacki rajon,Vitebsk,,,12368,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Ушацкі раён,,,,,,,,,,,,,,,,NONE,0.0,
+Belarus,Rasonski rajon,Vitebsk,,,9000,District,,,#N/A,,VitebskBelarus,county,2,BY-VI,Расонскі раён,,,,,,,,,,,,,,,,NONE,0.0,

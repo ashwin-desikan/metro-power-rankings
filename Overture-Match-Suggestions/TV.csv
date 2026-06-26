@@ -1,0 +1,10 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Tuvalu,Funafuti,Funafuti,,,6320,Atoll,Funafuti,,Funafuti,,FunafutiTuvalu,region,1,TV-FUN,Funafuti,,,,region,1,TV-FUN,Funafuti,,,,,region,1,TV-FUN,Funafuti,HIGH,1.0,TV-FUN
+Tuvalu,Nanumanga (Nanumaga),Nanumanga (Nanumaga),,,491,Atoll,,,#N/A,,Nanumanga (Nanumaga)Tuvalu,region,1,TV-NMG,Nanumanga,,,,region,1,TV-NMG,Nanumanga,,,,,region,1,TV-NMG,Nanumanga,HIGH,1.0,TV-NMG
+Tuvalu,Nanumea,Nanumea,,,512,Atoll,,,#N/A,,NanumeaTuvalu,region,1,TV-NMA,Nanumea,,,,region,1,TV-NMA,Nanumea,,,,,region,1,TV-NMA,Nanumea,HIGH,1.0,TV-NMA
+Tuvalu,Niulakita,Niulakita,,,34,Atoll,,,#N/A,,NiulakitaTuvalu,county,2,TV-NIT,Niulakita,,,,county,2,TV-NIT,Niulakita,,,,,region,1,TV-NIT,Niutao,HIGH,1.0,TV-NIT
+Tuvalu,Niutao,Niutao,,,582,Atoll,,,#N/A,,NiutaoTuvalu,region,1,TV-NIT,Niutao,,,,region,1,TV-NIT,Niutao,,,,,region,1,TV-NIT,Niutao,HIGH,1.0,TV-NIT
+Tuvalu,Nui,Nui,,,610,Atoll,,,#N/A,,NuiTuvalu,region,1,TV-NUI,Nui,,,,region,1,TV-NUI,Nui,,,,,region,1,TV-NUI,Nui,HIGH,1.0,TV-NUI
+Tuvalu,Nukufetau,Nukufetau,,,597,Atoll,,,#N/A,,NukufetauTuvalu,region,1,TV-NKF,Nukufetau,,,,region,1,TV-NKF,Nukufetau,,,,,region,1,TV-NKF,Nukufetau,HIGH,1.0,TV-NKF
+Tuvalu,Nukulaelae,Nukulaelae,,,300,Atoll,,,#N/A,,NukulaelaeTuvalu,region,1,TV-NKL,Nukulaelae,,,,region,1,TV-NKL,Nukulaelae,,,,,region,1,TV-NKL,Nukulaelae,HIGH,1.0,TV-NKL
+Tuvalu,Vaitupu,Vaitupu,,,1061,Atoll,,,#N/A,,VaitupuTuvalu,region,1,TV-VAI,Vaitupu,,,,region,1,TV-VAI,Vaitupu,,,,,region,1,TV-VAI,Vaitupu,HIGH,1.0,TV-VAI

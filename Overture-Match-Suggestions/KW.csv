@@ -1,168 +1,168 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Kuwait,Al-Mahbūlah [Mahboula],Al-Aḥmadī,,,199859,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Manqaf [Mangaf],Al-Aḥmadī,,,145123,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Fuḥayḥīl [Fahaheel],Al-Aḥmadī,,,109714,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Aṣ-Ṣabāḥīyah [Sabahiya],Al-Aḥmadī,,,82277,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Abū Ḥulayfah [Abu Halifa],Al-Aḥmadī,,,60470,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ali Ṣabāḥ as-Sālem [Ali Sabah Al Salem],Al-Aḥmadī,,,56892,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ḍāḥiyah Jāber al-'Alī [West Funtas],Al-Aḥmadī,,,52374,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ar-Riqqah [Riqqa],Al-Aḥmadī,,,51830,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Finṭās [Funtas],Al-Aḥmadī,,,42820,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Aẓ-Ẓahar [Daher],Al-Aḥmadī,,,41797,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Aḥmadī [Ahmadi City],Al-Aḥmadī,,,30991,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Hadiyah [Hadiya],Al-Aḥmadī,,,26446,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Fahad al-Āḥmad [Fahad Al Ahmad],Al-Aḥmadī,,,26260,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ash-Shua'ībah aṣ-Ṣinā'iyah al-Gharbiyah [Shuaiba Industrial Western],Al-Aḥmadī,,,24159,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-E'qīlah [Eqaila],Al-Aḥmadī,,,13050,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Mazār' al-Wafrah [Wafra Agricultural],Al-Aḥmadī,,,12441,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ṣabāḥ al-Āḥmad 1 [Sabah Al Ahmad 1],Al-Aḥmadī,,,10818,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Bir Maḥāfẓah al-Aḥmadī [Ahmadi Desert],Al-Aḥmadī,,,10316,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Shālīhāt Mīnā' 'Abdāllah [Mina Abdulla Resort],Al-Aḥmadī,,,6137,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ṣabāḥ al-Āḥmad 3 [Sabah Al Ahmad 3],Al-Aḥmadī,,,3710,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ṣabāḥ al-Āḥmad 2 [Sabah Al Ahmad 2],Al-Aḥmadī,,,3578,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ṣabāḥ al-Āḥmad 5 [Sabah Al Ahmad 5],Al-Aḥmadī,,,3000,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ṣabāḥ al-Āḥmad 4 [Sabah Al Ahmad 4],Al-Aḥmadī,,,2901,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Mīnā' 'Abdāllah [Mina Abdullah],Al-Aḥmadī,,,2447,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Az-Zūr [Al Zour],Al-Aḥmadī,,,1915,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Shālīhāt al-Khīrān [Al Kayron Resorts],Al-Aḥmadī,,,1866,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Wafrah al-Jadīdah [New Wafra],Al-Aḥmadī,,,1855,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ṣabāḥ al-Āḥmad al-Baḥriyah [Sabah Al Ahmad Marine],Al-Aḥmadī,,,908,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ash-Shua'ībah [Shuaiba],Al-Aḥmadī,,,666,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Shālīhāt al-Julaiya'ah [Jlaiaa Resort],Al-Aḥmadī,,,321,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Shālīhāt Bnaīder [Bedier Resort],Al-Aḥmadī,,,236,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Rajim Khashmān [Rajm Khashman],Al-Aḥmadī,,,128,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ash-Shadādyah aṣ-Ṣinā'iyah [Al Shadadyia Industrial Area],Al-Aḥmadī,,,110,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Wafrah [Wafra],Al-Aḥmadī,,,104,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Khayrān [Al Kayron Residential],Al-Aḥmadī,,,98,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Janūbiyah [Jawakher South],Al-Aḥmadī,,,44,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Shālīhāt aḍ-Ḍabā'iyah [Dubaeeiya Resort],Al-Aḥmadī,,,20,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Shālīhāt az-Zūr [Zoor Resort],Al-Aḥmadī,,,13,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Janūb aṣ-Ṣabāḥīyah [South Sabahiya],Al-Aḥmadī,,,3,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Kabad az-Zarā'iyah [Kabad Agricultural],Al-Aḥmadī,,,3,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Maqwa' [Magwa],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Al-Nuwaīṣīb [Al Nuwaiseeb],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Madīnat Ṣabāḥ al-Āḥmad [Sabah Al Ahmad City],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Shālīhāt an-Nuwaīṣīb [Nwaiseeb Resort],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Wārah [Wara],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
-Kuwait,Ar-Rawḍah [Rawda],"Al-'Āṣimah [Al Asimah, Capital]",,,39340,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,As-Surrah [Surra],"Al-'Āṣimah [Al Asimah, Capital]",,,36517,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Kuwayt - Sharq [Kuwait City East],"Al-'Āṣimah [Al Asimah, Capital]",,,35417,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Banayd al-Qār [Bneid Al Qar],"Al-'Āṣimah [Al Asimah, Capital]",,,34710,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣulaybikhāt [Sulaibekhat],"Al-'Āṣimah [Al Asimah, Capital]",,,34537,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Qarṭabah [Qurtoba],"Al-'Āṣimah [Al Asimah, Capital]",,,33691,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Jāber al-Aḥmad [Jaber Al Ahmad New City],"Al-'Āṣimah [Al Asimah, Capital]",,,32469,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ad-Dawḥah [Doha],"Al-'Āṣimah [Al Asimah, Capital]",,,31851,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Kayfān [Kaifan],"Al-'Āṣimah [Al Asimah, Capital]",,,28862,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Qādisiyah [Qadisiya],"Al-'Āṣimah [Al Asimah, Capital]",,,24863,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Yarmūk [Yarmouk],"Al-'Āṣimah [Al Asimah, Capital]",,,24634,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Fayḥā' [Faiha],"Al-'Āṣimah [Al Asimah, Capital]",,,23729,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ḍāḥiyah 'Abdāllah as-Sālim [Abdulla Al Salem],"Al-'Āṣimah [Al Asimah, Capital]",,,21975,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-'Udayliyah [Adailiya],"Al-'Āṣimah [Al Asimah, Capital]",,,21636,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ad-D'aiyah [Daiya],"Al-'Āṣimah [Al Asimah, Capital]",,,19979,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Khāldiyah [Khalidiya],"Al-'Āṣimah [Al Asimah, Capital]",,,19193,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ad-Dasmah [Dasma],"Al-'Āṣimah [Al Asimah, Capital]",,,18709,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ash-Shāmīyah [Shamiya],"Al-'Āṣimah [Al Asimah, Capital]",,,18184,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Kuwayt - Al-Qiblah [Qibla],"Al-'Āṣimah [Al Asimah, Capital]",,,17378,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Nuzhha [Nuzha],"Al-'Āṣimah [Al Asimah, Capital]",,,14726,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Gharnāṭah [Garnata],"Al-'Āṣimah [Al Asimah, Capital]",,,10441,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Manṣūriyah [Mansouriya],"Al-'Āṣimah [Al Asimah, Capital]",,,9132,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ash-Shūwaīkh aṣ-Ṣinā'iyah [Shuwaikh Industrial Area],"Al-'Āṣimah [Al Asimah, Capital]",,,7411,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Kuwayt - Al-Murqāb [Murqab],"Al-'Āṣimah [Al Asimah, Capital]",,,7117,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Shamāl Gharb aṣ-Ṣulaībīkhāt [Northwest Sulaibekhat],"Al-'Āṣimah [Al Asimah, Capital]",,,5550,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ash-Shūwaīkh [Shuwaikh],"Al-'Āṣimah [Al Asimah, Capital]",,,5341,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Mu'skrāt al-Mubārekiyah [Mubarakiya Camp],"Al-'Āṣimah [Al Asimah, Capital]",,,3056,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Kuwayt - Dasmān [Dasman],"Al-'Āṣimah [Al Asimah, Capital]",,,2152,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Manṭeqah aṣ-Ṣḥiyah [Health District],"Al-'Āṣimah [Al Asimah, Capital]",,,908,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Mīnā' ad-Dawḥah [Doha Port],"Al-'Āṣimah [Al Asimah, Capital]",,,781,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Kuwayt - Ḥadāq as-Sūr [Wall Garden],"Al-'Āṣimah [Al Asimah, Capital]",,,10,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Shālīhāt ad-Dawḥah [Doha Resort],"Al-'Āṣimah [Al Asimah, Capital]",,,10,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al Wājahh al-Baḥriyah [Coastal Strip],"Al-'Āṣimah [Al Asimah, Capital]",,,0,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,"Al-Manṭeqah al-Ḥarah [Shuwaikh Port, Free Trade Zone]","Al-'Āṣimah [Al Asimah, Capital]",,,0,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Qalīb ash-Shuyūkh [Jaleeb Al Shuyoukh],Al-Farwānīyah [Farwaniya],,,328319,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Farwānīyah [Farwaniya],Al-Farwānīyah [Farwaniya],,,279733,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Khīṭān [Kheetan],Al-Farwānīyah [Farwaniya],,,190546,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Firdaws [Firdous],Al-Farwānīyah [Farwaniya],,,66831,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-'Ārḍiyah [Ardiya],Al-Farwānīyah [Farwaniya],,,60624,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Abdāllah Mubārak aṣ-Ṣabāḥ [Abdullah Al Mubarak Al Sabah],Al-Farwānīyah [Farwaniya],,,55481,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Andalus [Andalus],Al-Farwānīyah [Farwaniya],,,49641,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ṣabāḥ an-Nāṣr [Sabah Al Nasser],Al-Farwānīyah [Farwaniya],,,44239,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ar-Raq'ay [Regay],Al-Farwānīyah [Farwaniya],,,35280,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Āshbīliyah [Ishbeelia],Al-Farwānīyah [Farwaniya],,,31518,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ar-Rābiyah [Rabia],Al-Farwānīyah [Farwaniya],,,21473,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-'Mariyah [Omariya],Al-Farwānīyah [Farwaniya],,,19334,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ar-Raḥāb [Rahab],Al-Farwānīyah [Farwaniya],,,18427,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Raī [Rai],Al-Farwānīyah [Farwaniya],,,3565,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-'Ārḍiyah 6 [Ardiya Stores],Al-Farwānīyah [Farwaniya],,,610,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Maṭār al-Dūlī [International Airport],Al-Farwānīyah [Farwaniya],,,402,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-'Ārḍiyah 4 [Ardiya Governmental Use],Al-Farwānīyah [Farwaniya],,,160,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-'Ārḍiyah al-Ḥerfiyah [Ardiya Al Herafia],Al-Farwānīyah [Farwaniya],,,107,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ḍajīj aṭ-Ṭārāt [Airplane Noise Region],Al-Farwānīyah [Farwaniya],,,87,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ash-Shadādyah [Al Shadadyia],Al-Farwānīyah [Farwaniya],,,0,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Madīnat Ṣabāḥ as-Sālem al-Jām'yah [Sabah Al Salem University City],Al-Farwānīyah [Farwaniya],,,0,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Madīnat Sa'ad al-'Abdāllah [South Jahra City],Al-Jahrā',,,107379,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Jahrā' [Jahra],Al-Jahrā',,,76296,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Taymā' [Taima],Al-Jahrā',,,63164,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Qaṣr [Qasser],Al-Jahrā',,,60791,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣulaybīyah ash-Sha'abyah [Sulaibiah Shaabia],Al-Jahrā',,,54321,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-'Uyawn [Oyoun],Al-Jahrā',,,45800,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Wāḥah [Waha],Al-Jahrā',,,41257,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,An-Nasīm [Naseem],Al-Jahrā',,,27351,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Qaīrawān [Quirawan],Al-Jahrā',,,25054,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,An-Na'īm [Na'eem],Al-Jahrā',,,18833,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-A'bdilī [Abdilee],Al-Jahrā',,,11274,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Āmghrah aṣ-Ṣinā'iyah [Amgara Industrial Area],Al-Jahrā',,,10445,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,An-Nahḍah [Al Nahda],Al-Jahrā',,,8103,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Bir Maḥāfẓah al-Jahrā' [Jahra Desert],Al-Jahrā',,,5894,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣulaybīyah az-Zarā'iyah [Sulaibiya Agriculture],Al-Jahrā',,,3503,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣulaybīyah aṣ-Ṣinā'iyah 2 [Sulaibiah Industrial Area 2],Al-Jahrā',,,2603,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣulaybīyah aṣ-Ṣinā'iyah 1 [Sulaibiah Industrial Area 1],Al-Jahrā',,,1519,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Jahrā' aṣ-Ṣinā'iyah [Jahra Industrial Area],Al-Jahrā',,,943,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,As-Sālmī [Salmy],Al-Jahrā',,,891,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Kāṭmah [Kathma],Al-Jahrā',,,725,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Kabad,Al-Jahrā',,,585,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,county,2,KW-JA,Kabad,,,,,region,1,KW-JA,محافظة الجهراء,HIGH,1.0,KW-JA
-Kuwait,Janūb Amghrah [South Amgara],Al-Jahrā',,,495,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Shamāl Gharb al-Jahrā' [Northwestern Jahra],Al-Jahrā',,,140,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Mu'skrāt al-Jahrā' [Jahra Camp],Al-Jahrā',,,88,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,An-Ne'āyem [Neayem],Al-Jahrā',,,85,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ar-Rūḍtīn [Al Rawadatain],Al-Jahrā',,,75,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Janūb al-Muṭlā' [South Al Mutlaa],Al-Jahrā',,,51,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Maqbarat aṣ-Ṣulaybikhāt [Sulaibekhat Cemetery],Al-Jahrā',,,32,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Maṭlā' [Mitlaa],Al-Jahrā',,,26,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ām Āl'īsh [Aum Al Ash],Al-Jahrā',,,19,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣubiyah [Subiya],Al-Jahrā',,,12,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣulaybīyah aṣ-Ṣinā'iyah 3 [Sulaibiah Industrial Area 3],Al-Jahrā',,,6,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Jawākhīr al-Jahrā' [Jahraa Jawakher],Al-Jahrā',,,6,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Baḥyaṭ [Bhaith],Al-Jahrā',,,0,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ash-Sheqāyā [Shegaya],Al-Jahrā',,,0,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Aṣ-Ṣābryah [Sabryia],Al-Jahrā',,,0,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,As-Sālimīyah [Salmiya],Ḥawallī,,,301043,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Ḥawallī [Hawalli],Ḥawallī,,,217287,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Salwā' [Salwa],Ḥawallī,,,82654,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Al-Jābiriyah [Jabriya],Ḥawallī,,,78026,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Ar-Rumayṭīyah [Rumaithiya],Ḥawallī,,,59136,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Bayān [Bayan],Ḥawallī,,,47043,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Mishref [Mishrif],Ḥawallī,,,45044,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Al-Zahrā' [Zahraa],Ḥawallī,,,32064,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,As-Salām [Salam],Ḥawallī,,,27555,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Ḥaṭīn [Hateen],Ḥawallī,,,21557,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Ash-Sha'ab [Sha'ab],Ḥawallī,,,16162,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Ash-Shuhadā' [Shuhada],Ḥawallī,,,15672,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Mubārak al-'Abdāllah [Mubarak Al Abdullah],Ḥawallī,,,12659,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Aṣ-Ṣidīq [Sideek],Ḥawallī,,,3681,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Al-Bida' [Bedi],Ḥawallī,,,811,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Ānjafah [Anjafa],Ḥawallī,,,377,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Manṭeqah Wizārāt [Ministries Area],Ḥawallī,,,8,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Al-Mubārkiyah [Mubarakyia],Ḥawallī,,,0,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
-Kuwait,Sabāh as-Sālim [Sabah Al Salem],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,88641,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Mubarāk al-Kabīr [Mubarak Al Kabeer],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,46833,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Qoṣūr [Qosour],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,39353,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Adan [Adan],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,37634,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Qurayn [Qurain],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,34123,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ṣabḥān aṣ-Ṣinā'iyah [Sabhan Industrial Area],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,7761,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ḍāḥiyah Abū Faṭīrah [Abu Fatira],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,5710,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Manṭeqah al-Wusṭa [Wista],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,2871,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Masāyel [Masayel],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,2404,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Ḍāḥiyah al-Funaīṭīs [Fanatees],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,1447,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Abū al-Ḥaṣāniyah [Abu Hasaniya],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,1346,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Al-Mesīlah [Messila],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,1147,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
-Kuwait,Gharb Abū Faṭīra al-Ḥerfiyah [West Abu Fatira Al Herafia],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,61,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,,,,,,,,,,,,,,,,,NONE,0.0,
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Kuwait,Al-Mahbūlah [Mahboula],Al-Aḥmadī,,,199859,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Manqaf [Mangaf],Al-Aḥmadī,,,145123,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Fuḥayḥīl [Fahaheel],Al-Aḥmadī,,,109714,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Aṣ-Ṣabāḥīyah [Sabahiya],Al-Aḥmadī,,,82277,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Abū Ḥulayfah [Abu Halifa],Al-Aḥmadī,,,60470,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ali Ṣabāḥ as-Sālem [Ali Sabah Al Salem],Al-Aḥmadī,,,56892,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ḍāḥiyah Jāber al-'Alī [West Funtas],Al-Aḥmadī,,,52374,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ar-Riqqah [Riqqa],Al-Aḥmadī,,,51830,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Finṭās [Funtas],Al-Aḥmadī,,,42820,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Aẓ-Ẓahar [Daher],Al-Aḥmadī,,,41797,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Aḥmadī [Ahmadi City],Al-Aḥmadī,,,30991,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Hadiyah [Hadiya],Al-Aḥmadī,,,26446,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Fahad al-Āḥmad [Fahad Al Ahmad],Al-Aḥmadī,,,26260,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ash-Shua'ībah aṣ-Ṣinā'iyah al-Gharbiyah [Shuaiba Industrial Western],Al-Aḥmadī,,,24159,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-E'qīlah [Eqaila],Al-Aḥmadī,,,13050,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Mazār' al-Wafrah [Wafra Agricultural],Al-Aḥmadī,,,12441,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ṣabāḥ al-Āḥmad 1 [Sabah Al Ahmad 1],Al-Aḥmadī,,,10818,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Bir Maḥāfẓah al-Aḥmadī [Ahmadi Desert],Al-Aḥmadī,,,10316,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Shālīhāt Mīnā' 'Abdāllah [Mina Abdulla Resort],Al-Aḥmadī,,,6137,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ṣabāḥ al-Āḥmad 3 [Sabah Al Ahmad 3],Al-Aḥmadī,,,3710,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ṣabāḥ al-Āḥmad 2 [Sabah Al Ahmad 2],Al-Aḥmadī,,,3578,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ṣabāḥ al-Āḥmad 5 [Sabah Al Ahmad 5],Al-Aḥmadī,,,3000,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ṣabāḥ al-Āḥmad 4 [Sabah Al Ahmad 4],Al-Aḥmadī,,,2901,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Mīnā' 'Abdāllah [Mina Abdullah],Al-Aḥmadī,,,2447,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Az-Zūr [Al Zour],Al-Aḥmadī,,,1915,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Shālīhāt al-Khīrān [Al Kayron Resorts],Al-Aḥmadī,,,1866,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Wafrah al-Jadīdah [New Wafra],Al-Aḥmadī,,,1855,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ṣabāḥ al-Āḥmad al-Baḥriyah [Sabah Al Ahmad Marine],Al-Aḥmadī,,,908,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ash-Shua'ībah [Shuaiba],Al-Aḥmadī,,,666,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Shālīhāt al-Julaiya'ah [Jlaiaa Resort],Al-Aḥmadī,,,321,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Shālīhāt Bnaīder [Bedier Resort],Al-Aḥmadī,,,236,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Rajim Khashmān [Rajm Khashman],Al-Aḥmadī,,,128,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ash-Shadādyah aṣ-Ṣinā'iyah [Al Shadadyia Industrial Area],Al-Aḥmadī,,,110,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Wafrah [Wafra],Al-Aḥmadī,,,104,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Khayrān [Al Kayron Residential],Al-Aḥmadī,,,98,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Janūbiyah [Jawakher South],Al-Aḥmadī,,,44,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Shālīhāt aḍ-Ḍabā'iyah [Dubaeeiya Resort],Al-Aḥmadī,,,20,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Shālīhāt az-Zūr [Zoor Resort],Al-Aḥmadī,,,13,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Janūb aṣ-Ṣabāḥīyah [South Sabahiya],Al-Aḥmadī,,,3,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Kabad az-Zarā'iyah [Kabad Agricultural],Al-Aḥmadī,,,3,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Maqwa' [Magwa],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Al-Nuwaīṣīb [Al Nuwaiseeb],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Madīnat Ṣabāḥ al-Āḥmad [Sabah Al Ahmad City],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Shālīhāt an-Nuwaīṣīb [Nwaiseeb Resort],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Wārah [Wara],Al-Aḥmadī,,,0,District,Kuwait City,,Kuwait City,,Al-AḥmadīKuwait,region,1,KW-AH,محافظة الأحمدي,,,,,,,,,,,,region,1,KW-AH,محافظة الأحمدي,NONE,0.0,KW-AH
+Kuwait,Ar-Rawḍah [Rawda],"Al-'Āṣimah [Al Asimah, Capital]",,,39340,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,As-Surrah [Surra],"Al-'Āṣimah [Al Asimah, Capital]",,,36517,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Kuwayt - Sharq [Kuwait City East],"Al-'Āṣimah [Al Asimah, Capital]",,,35417,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Banayd al-Qār [Bneid Al Qar],"Al-'Āṣimah [Al Asimah, Capital]",,,34710,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣulaybikhāt [Sulaibekhat],"Al-'Āṣimah [Al Asimah, Capital]",,,34537,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Qarṭabah [Qurtoba],"Al-'Āṣimah [Al Asimah, Capital]",,,33691,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Jāber al-Aḥmad [Jaber Al Ahmad New City],"Al-'Āṣimah [Al Asimah, Capital]",,,32469,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ad-Dawḥah [Doha],"Al-'Āṣimah [Al Asimah, Capital]",,,31851,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Kayfān [Kaifan],"Al-'Āṣimah [Al Asimah, Capital]",,,28862,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Qādisiyah [Qadisiya],"Al-'Āṣimah [Al Asimah, Capital]",,,24863,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Yarmūk [Yarmouk],"Al-'Āṣimah [Al Asimah, Capital]",,,24634,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Fayḥā' [Faiha],"Al-'Āṣimah [Al Asimah, Capital]",,,23729,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ḍāḥiyah 'Abdāllah as-Sālim [Abdulla Al Salem],"Al-'Āṣimah [Al Asimah, Capital]",,,21975,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-'Udayliyah [Adailiya],"Al-'Āṣimah [Al Asimah, Capital]",,,21636,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ad-D'aiyah [Daiya],"Al-'Āṣimah [Al Asimah, Capital]",,,19979,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Khāldiyah [Khalidiya],"Al-'Āṣimah [Al Asimah, Capital]",,,19193,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ad-Dasmah [Dasma],"Al-'Āṣimah [Al Asimah, Capital]",,,18709,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ash-Shāmīyah [Shamiya],"Al-'Āṣimah [Al Asimah, Capital]",,,18184,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Kuwayt - Al-Qiblah [Qibla],"Al-'Āṣimah [Al Asimah, Capital]",,,17378,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Nuzhha [Nuzha],"Al-'Āṣimah [Al Asimah, Capital]",,,14726,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Gharnāṭah [Garnata],"Al-'Āṣimah [Al Asimah, Capital]",,,10441,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Manṣūriyah [Mansouriya],"Al-'Āṣimah [Al Asimah, Capital]",,,9132,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ash-Shūwaīkh aṣ-Ṣinā'iyah [Shuwaikh Industrial Area],"Al-'Āṣimah [Al Asimah, Capital]",,,7411,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Kuwayt - Al-Murqāb [Murqab],"Al-'Āṣimah [Al Asimah, Capital]",,,7117,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Shamāl Gharb aṣ-Ṣulaībīkhāt [Northwest Sulaibekhat],"Al-'Āṣimah [Al Asimah, Capital]",,,5550,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ash-Shūwaīkh [Shuwaikh],"Al-'Āṣimah [Al Asimah, Capital]",,,5341,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Mu'skrāt al-Mubārekiyah [Mubarakiya Camp],"Al-'Āṣimah [Al Asimah, Capital]",,,3056,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Kuwayt - Dasmān [Dasman],"Al-'Āṣimah [Al Asimah, Capital]",,,2152,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Manṭeqah aṣ-Ṣḥiyah [Health District],"Al-'Āṣimah [Al Asimah, Capital]",,,908,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Mīnā' ad-Dawḥah [Doha Port],"Al-'Āṣimah [Al Asimah, Capital]",,,781,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Kuwayt - Ḥadāq as-Sūr [Wall Garden],"Al-'Āṣimah [Al Asimah, Capital]",,,10,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Shālīhāt ad-Dawḥah [Doha Resort],"Al-'Āṣimah [Al Asimah, Capital]",,,10,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al Wājahh al-Baḥriyah [Coastal Strip],"Al-'Āṣimah [Al Asimah, Capital]",,,0,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,"Al-Manṭeqah al-Ḥarah [Shuwaikh Port, Free Trade Zone]","Al-'Āṣimah [Al Asimah, Capital]",,,0,District,Kuwait City,,Kuwait City,,"Al-'Āṣimah [Al Asimah, Capital]Kuwait",region,1,KW-KU,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Qalīb ash-Shuyūkh [Jaleeb Al Shuyoukh],Al-Farwānīyah [Farwaniya],,,328319,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Farwānīyah [Farwaniya],Al-Farwānīyah [Farwaniya],,,279733,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Khīṭān [Kheetan],Al-Farwānīyah [Farwaniya],,,190546,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Firdaws [Firdous],Al-Farwānīyah [Farwaniya],,,66831,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-'Ārḍiyah [Ardiya],Al-Farwānīyah [Farwaniya],,,60624,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Abdāllah Mubārak aṣ-Ṣabāḥ [Abdullah Al Mubarak Al Sabah],Al-Farwānīyah [Farwaniya],,,55481,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Andalus [Andalus],Al-Farwānīyah [Farwaniya],,,49641,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ṣabāḥ an-Nāṣr [Sabah Al Nasser],Al-Farwānīyah [Farwaniya],,,44239,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ar-Raq'ay [Regay],Al-Farwānīyah [Farwaniya],,,35280,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Āshbīliyah [Ishbeelia],Al-Farwānīyah [Farwaniya],,,31518,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ar-Rābiyah [Rabia],Al-Farwānīyah [Farwaniya],,,21473,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-'Mariyah [Omariya],Al-Farwānīyah [Farwaniya],,,19334,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ar-Raḥāb [Rahab],Al-Farwānīyah [Farwaniya],,,18427,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Raī [Rai],Al-Farwānīyah [Farwaniya],,,3565,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-'Ārḍiyah 6 [Ardiya Stores],Al-Farwānīyah [Farwaniya],,,610,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Maṭār al-Dūlī [International Airport],Al-Farwānīyah [Farwaniya],,,402,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-'Ārḍiyah 4 [Ardiya Governmental Use],Al-Farwānīyah [Farwaniya],,,160,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-'Ārḍiyah al-Ḥerfiyah [Ardiya Al Herafia],Al-Farwānīyah [Farwaniya],,,107,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ḍajīj aṭ-Ṭārāt [Airplane Noise Region],Al-Farwānīyah [Farwaniya],,,87,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ash-Shadādyah [Al Shadadyia],Al-Farwānīyah [Farwaniya],,,0,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Madīnat Ṣabāḥ as-Sālem al-Jām'yah [Sabah Al Salem University City],Al-Farwānīyah [Farwaniya],,,0,District,Kuwait City,,Kuwait City,,Al-Farwānīyah [Farwaniya]Kuwait,region,1,KW-FA,محافظة الفروانية,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Madīnat Sa'ad al-'Abdāllah [South Jahra City],Al-Jahrā',,,107379,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Jahrā' [Jahra],Al-Jahrā',,,76296,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Taymā' [Taima],Al-Jahrā',,,63164,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Qaṣr [Qasser],Al-Jahrā',,,60791,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣulaybīyah ash-Sha'abyah [Sulaibiah Shaabia],Al-Jahrā',,,54321,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-'Uyawn [Oyoun],Al-Jahrā',,,45800,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Wāḥah [Waha],Al-Jahrā',,,41257,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,An-Nasīm [Naseem],Al-Jahrā',,,27351,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Qaīrawān [Quirawan],Al-Jahrā',,,25054,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,An-Na'īm [Na'eem],Al-Jahrā',,,18833,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-A'bdilī [Abdilee],Al-Jahrā',,,11274,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Āmghrah aṣ-Ṣinā'iyah [Amgara Industrial Area],Al-Jahrā',,,10445,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,An-Nahḍah [Al Nahda],Al-Jahrā',,,8103,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Bir Maḥāfẓah al-Jahrā' [Jahra Desert],Al-Jahrā',,,5894,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣulaybīyah az-Zarā'iyah [Sulaibiya Agriculture],Al-Jahrā',,,3503,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣulaybīyah aṣ-Ṣinā'iyah 2 [Sulaibiah Industrial Area 2],Al-Jahrā',,,2603,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣulaybīyah aṣ-Ṣinā'iyah 1 [Sulaibiah Industrial Area 1],Al-Jahrā',,,1519,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Jahrā' aṣ-Ṣinā'iyah [Jahra Industrial Area],Al-Jahrā',,,943,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,As-Sālmī [Salmy],Al-Jahrā',,,891,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Kāṭmah [Kathma],Al-Jahrā',,,725,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Kabad,Al-Jahrā',,,585,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,county,2,KW-JA,Kabad,,,,,region,1,KW-JA,محافظة الجهراء,HIGH,1.0,KW-JA
+Kuwait,Janūb Amghrah [South Amgara],Al-Jahrā',,,495,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Shamāl Gharb al-Jahrā' [Northwestern Jahra],Al-Jahrā',,,140,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Mu'skrāt al-Jahrā' [Jahra Camp],Al-Jahrā',,,88,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,An-Ne'āyem [Neayem],Al-Jahrā',,,85,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ar-Rūḍtīn [Al Rawadatain],Al-Jahrā',,,75,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Janūb al-Muṭlā' [South Al Mutlaa],Al-Jahrā',,,51,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Maqbarat aṣ-Ṣulaybikhāt [Sulaibekhat Cemetery],Al-Jahrā',,,32,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Maṭlā' [Mitlaa],Al-Jahrā',,,26,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ām Āl'īsh [Aum Al Ash],Al-Jahrā',,,19,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣubiyah [Subiya],Al-Jahrā',,,12,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣulaybīyah aṣ-Ṣinā'iyah 3 [Sulaibiah Industrial Area 3],Al-Jahrā',,,6,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Jawākhīr al-Jahrā' [Jahraa Jawakher],Al-Jahrā',,,6,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Baḥyaṭ [Bhaith],Al-Jahrā',,,0,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ash-Sheqāyā [Shegaya],Al-Jahrā',,,0,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Aṣ-Ṣābryah [Sabryia],Al-Jahrā',,,0,District,Kuwait City,,Kuwait City,,Al-Jahrā'Kuwait,region,1,KW-JA,محافظة الجهراء,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,As-Sālimīyah [Salmiya],Ḥawallī,,,301043,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Ḥawallī [Hawalli],Ḥawallī,,,217287,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Salwā' [Salwa],Ḥawallī,,,82654,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Al-Jābiriyah [Jabriya],Ḥawallī,,,78026,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Ar-Rumayṭīyah [Rumaithiya],Ḥawallī,,,59136,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Bayān [Bayan],Ḥawallī,,,47043,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Mishref [Mishrif],Ḥawallī,,,45044,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Al-Zahrā' [Zahraa],Ḥawallī,,,32064,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,As-Salām [Salam],Ḥawallī,,,27555,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Ḥaṭīn [Hateen],Ḥawallī,,,21557,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Ash-Sha'ab [Sha'ab],Ḥawallī,,,16162,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Ash-Shuhadā' [Shuhada],Ḥawallī,,,15672,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Mubārak al-'Abdāllah [Mubarak Al Abdullah],Ḥawallī,,,12659,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Aṣ-Ṣidīq [Sideek],Ḥawallī,,,3681,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Al-Bida' [Bedi],Ḥawallī,,,811,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Ānjafah [Anjafa],Ḥawallī,,,377,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Manṭeqah Wizārāt [Ministries Area],Ḥawallī,,,8,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Al-Mubārkiyah [Mubarakyia],Ḥawallī,,,0,District,Kuwait City,,Kuwait City,,ḤawallīKuwait,region,1,KW-HA,محافظة حولي,,,,,,,,,,,,region,1,KW-HA,محافظة حولي,NONE,0.0,KW-HA
+Kuwait,Sabāh as-Sālim [Sabah Al Salem],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,88641,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Mubarāk al-Kabīr [Mubarak Al Kabeer],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,46833,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Qoṣūr [Qosour],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,39353,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Adan [Adan],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,37634,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Qurayn [Qurain],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,34123,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ṣabḥān aṣ-Ṣinā'iyah [Sabhan Industrial Area],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,7761,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ḍāḥiyah Abū Faṭīrah [Abu Fatira],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,5710,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Manṭeqah al-Wusṭa [Wista],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,2871,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Masāyel [Masayel],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,2404,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Ḍāḥiyah al-Funaīṭīs [Fanatees],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,1447,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Abū al-Ḥaṣāniyah [Abu Hasaniya],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,1346,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Al-Mesīlah [Messila],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,1147,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,
+Kuwait,Gharb Abū Faṭīra al-Ḥerfiyah [West Abu Fatira Al Herafia],Mubarāk al-Kabīr [Mubarak Al Kabeer],,,61,District,Kuwait City,,Kuwait City,,Mubarāk al-Kabīr [Mubarak Al Kabeer]Kuwait,region,1,KW-MU,محافظة مبارك الكبير,,,,,,,,,,,,,,,,NONE,0.0,

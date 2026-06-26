@@ -1,0 +1,430 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Iran,Karaj,Alborz,,,1973470,County,Tehran,,Tehran,2016,AlborzIran,county,2,IR-30,شهرستان کرج,,,,locality,,IR-30,کرج,,,,,region,1,IR-30,استان البرز,HIGH,1.0,IR-30
+Iran,Fardīs,Alborz,,,271829,County,Tehran,,Tehran,2016,AlborzIran,county,2,IR-30,شهرستان فردیس,,,,locality,,IR-30,شهر فردیس,,,,,region,1,IR-30,استان البرز,HIGH,1.0,IR-30
+Iran,Sāvojbolāgh,Alborz,,,259973,County,Tehran,,Tehran,2016,AlborzIran,county,2,IR-30,شهرستان ساوجبلاغ,,,,county,2,IR-30,شهرستان ساوجبلاغ,,,,,region,1,IR-30,استان البرز,HIGH,1.0,IR-30
+Iran,Naẓar'ābād,Alborz,,,152437,County,Tehran,,Tehran,2016,AlborzIran,county,2,IR-30,شهرستان نظرآباد,,,,,,,,,,,,region,1,IR-30,استان البرز,NONE,0.0,IR-30
+Iran,Eshtehārd,Alborz,,,37876,County,Tehran,,Tehran,2016,AlborzIran,county,2,IR-30,شهرستان اشتهارد,,,,locality,,IR-30,شهر اشتهارد,,,,,region,1,IR-30,استان البرز,HIGH,1.0,IR-30
+Iran,Ṭāleqān,Alborz,,,16815,County,Tehran,,Tehran,2016,AlborzIran,county,2,IR-30,شهرستان طالقان,,,,,,,,,,,,region,1,IR-30,استان البرز,NONE,0.0,IR-30
+Iran,Ardabīl,Ardabil,,,605992,County,Ardabīl,,Ardabīl,2016,ArdabilIran,county,2,IR-24,شهرستان اردبیل,,,,county,2,IR-24,شهرستان اردبیل,,,,,region,1,IR-24,استان اردبیل,HIGH,1.0,IR-24
+Iran,Pārs Ābād,Ardabil,,,177601,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان پارس آباد,,,,,,,,,,,,region,1,IR-24,استان اردبیل,NONE,0.0,IR-24
+Iran,Meshgīn Shahr,Ardabil,,,149941,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان مشگین شهر,,,,,,,,,,,,region,1,IR-24,استان اردبیل,NONE,0.0,IR-24
+Iran,Khalkhāl,Ardabil,,,86731,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان خلخال,,,,locality,,IR-24,خلخال,,,,,region,1,IR-24,استان اردبیل,HIGH,1.0,IR-24
+Iran,Germī,Ardabil,,,76901,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان گرمی,,,,county,2,IR-24,شهرستان گرمی,,,,,region,1,IR-24,استان اردبیل,HIGH,1.0,IR-24
+Iran,Namīn,Ardabil,,,60659,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان نمین,,,,county,2,IR-24,شهرستان نمین,,,,,region,1,IR-24,استان اردبیل,HIGH,1.0,IR-24
+Iran,Bīleh Savār,Ardabil,,,51404,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان بیله سوار,,,,,,,,,,,,region,1,IR-24,استان اردبیل,NONE,0.0,IR-24
+Iran,Kowṭar,Ardabil,,,22127,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان کوثر,,,,,,,,,,,,region,1,IR-24,استان اردبیل,NONE,0.0,IR-24
+Iran,Nīr,Ardabil,,,20864,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان نیر,,,,county,2,IR-24,شهرستان نیر,,,,,region,1,IR-24,استان اردبیل,HIGH,1.0,IR-24
+Iran,Sar'eyn,Ardabil,,,18200,County,,,#N/A,2016,ArdabilIran,county,2,IR-24,شهرستان سرعین,,,,,,,,,,,,region,1,IR-24,استان اردبیل,NONE,0.0,IR-24
+Iran,Tabrīz,"Azerbaijan, East",,,1773033,County,Tabriz,,Tabriz,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان تبریز,,,,county,2,IR-03,شهرستان تبریز,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Marāgheh,"Azerbaijan, East",,,262604,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان ویژه مراغه,,,,county,2,IR-03,شهرستان ویژه مراغه,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Marand,"Azerbaijan, East",,,244971,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان مرند,,,,county,2,IR-03,شهرستان مرند,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Mīāneh,"Azerbaijan, East",,,182848,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان میانه,,,,county,2,IR-03,شهرستان میانه,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Oskū,"Azerbaijan, East",,,158270,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان اسکو,,,,county,2,IR-03,شهرستان اسکو,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Ahar,"Azerbaijan, East",,,154530,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان اهر,,,,county,2,IR-03,شهرستان اهر,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Shabestar,"Azerbaijan, East",,,135421,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان شبستر,,,,county,2,IR-03,شهرستان شبستر,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Bonāb,"Azerbaijan, East",,,134892,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان بناب,,,,county,2,IR-03,شهرستان بناب,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Sarāb,"Azerbaijan, East",,,125341,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان سراب,,,,county,2,IR-03,شهرستان سراب,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Malekān,"Azerbaijan, East",,,111319,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان ملکان,,,,county,2,IR-03,شهرستان ملکان,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Āzarshahr,"Azerbaijan, East",,,110311,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان آذرشهر,,,,county,2,IR-03,شهرستان آذرشهر,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Bostān Ābād,"Azerbaijan, East",,,94769,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان بستان آباد,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,'Ajab Shīr,"Azerbaijan, East",,,70852,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان عجب شیر,,,,county,2,IR-03,شهرستان عجب شیر,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Herīs,"Azerbaijan, East",,,69093,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان هریس,,,,county,2,IR-03,شهرستان هریس,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Jolfā,"Azerbaijan, East",,,61358,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان جلفا,,,,county,2,IR-03,شهرستان جلفا,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Hashtrūd,"Azerbaijan, East",,,57199,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان هشترود,,,,county,2,IR-03,شهرستان هشترود,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Varzaqān,"Azerbaijan, East",,,52650,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان ورزقان,,,,county,2,IR-03,شهرستان ورزقان,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Kaleybar,"Azerbaijan, East",,,46125,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان کلیبر,,,,county,2,IR-03,شهرستان کلیبر,,,,,region,1,IR-03,استان آذربایجان شرقی,HIGH,1.0,IR-03
+Iran,Khodā'āfarīn,"Azerbaijan, East",,,32995,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان خداآفرین,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Chārāūymāq,"Azerbaijan, East",,,31071,County,,,#N/A,2016,"Azerbaijan, EastIran",county,2,IR-03,شهرستان چاراویماق,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Orūmīyeh,"Azerbaijan, West",,,1040565,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان ارومیه,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Khūy,"Azerbaijan, West",,,348664,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان خوی,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Mīāndūāb,"Azerbaijan, West",,,273949,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان میاندوآب,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Būkān,"Azerbaijan, West",,,251409,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان بوکان,,,,county,2,IR-04,شهرستان بوکان,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Mahābād,"Azerbaijan, West",,,236849,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان مهاباد,,,,county,2,IR-04,شهرستان مهاباد,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Salmās,"Azerbaijan, West",,,196546,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان سلماس,,,,county,2,IR-04,شهرستان سلماس,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Pīrānshahr,"Azerbaijan, West",,,138864,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان پیرانشهر,,,,county,2,IR-04,شهرستان پیرانشهر,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Naqadeh,"Azerbaijan, West",,,127671,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان نقده,,,,county,2,IR-04,شهرستان نقده,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Sardasht,"Azerbaijan, West",,,118849,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان سردشت,,,,county,2,IR-04,شهرستان سردشت,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Mākū,"Azerbaijan, West",,,94751,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان ماکو,,,,county,2,IR-04,شهرستان ماکو,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Shāhīn Dezh,"Azerbaijan, West",,,92456,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان شاهین دژ,,,,county,2,IR-04,شهرستان شاهین دژ,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Takāb,"Azerbaijan, West",,,80556,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان تکاب,,,,county,2,IR-04,شهرستان تکاب,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Oshnavīeh,"Azerbaijan, West",,,73886,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان اشنویه,,,,county,2,IR-04,شهرستان اشنویه,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Showṭ,"Azerbaijan, West",,,55682,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان شوط,,,,county,2,IR-04,شهرستان شوط,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Chāypāreh,"Azerbaijan, West",,,47292,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان چایپاره,,,,county,2,IR-04,شهرستان چایپاره,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Chāldorān,"Azerbaijan, West",,,45060,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان چالدران,,,,county,2,IR-04,شهرستان چالدران,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Poldasht,"Azerbaijan, West",,,42170,County,,,#N/A,2016,"Azerbaijan, WestIran",county,2,IR-04,شهرستان پلدشت,,,,county,2,IR-04,شهرستان پلدشت,,,,,region,1,IR-04,استان آذربایجان غربی,HIGH,1.0,IR-04
+Iran,Kangān,Bushehr,,,107801,County,Bandar Kangan,,Bandar Kangan,2016,BushehrIran,county,2,IR-18,شهرستان کنگان,,,,county,2,IR-18,شهرستان کنگان,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Jam,Bushehr,,,70051,County,Bandar Kangan,,Bandar Kangan,2016,BushehrIran,county,2,IR-18,شهرستان جم,,,,county,2,IR-18,شهرستان جم,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Būshehr,Bushehr,,,298594,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان بوشهر,,,,locality,,IR-18,شهر بوشهر,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Dashtestān,Bushehr,,,252047,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان دشتستان,,,,county,2,IR-18,شهرستان دشتستان,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Ganāveh,Bushehr,,,102484,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان گناوه,,,,county,2,IR-18,شهرستان گناوه,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Dashtī,Bushehr,,,86319,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان دشتی,,,,county,2,IR-18,شهرستان دشتی,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Tangestān,Bushehr,,,76706,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان تنگستان,,,,county,2,IR-18,شهرستان تنگستان,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,'Asalūyeh,Bushehr,,,73958,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان عسلویه,,,,county,2,IR-18,شهرستان عسلویه,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Deyr,Bushehr,,,60612,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان دیر,,,,county,2,IR-18,شهرستان دیر,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Deylam,Bushehr,,,34828,County,,,#N/A,2016,BushehrIran,county,2,IR-18,شهرستان دیلم,,,,county,2,IR-18,شهرستان دیلم,,,,,region,1,IR-18,استان بوشهر,HIGH,1.0,IR-18
+Iran,Shahr-e Kord,Chahar Mahaal and Bakhtiari,,,315980,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان شهرکرد,,,,locality,,IR-14,شهرکرد,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Lordegān,Chahar Mahaal and Bakhtiari,,,209681,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان لردگان,,,,county,2,IR-14,شهرستان لردگان,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Borūjen,Chahar Mahaal and Bakhtiari,,,122483,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان بروجن,,,,county,2,IR-14,شهرستان بروجن,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Fārsān,Chahar Mahaal and Bakhtiari,,,95286,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان فارسان,,,,county,2,IR-14,شهرستان فارسان,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Kīār,Chahar Mahaal and Bakhtiari,,,50976,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان کیار,,,,county,2,IR-14,شهرستان کیار,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Ardal,Chahar Mahaal and Bakhtiari,,,48880,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان اردل,,,,county,2,IR-14,شهرستان اردل,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Kūhrang,Chahar Mahaal and Bakhtiari,,,41535,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان کوهرنگ,,,,county,2,IR-14,شهرستان کوهرنگ,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Sāmān,Chahar Mahaal and Bakhtiari,,,34616,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان سامان,,,,county,2,IR-14,شهرستان سامان,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Ben,Chahar Mahaal and Bakhtiari,,,28326,County,,,#N/A,2016,Chahar Mahaal and BakhtiariIran,county,2,IR-14,شهرستان بن,,,,county,2,IR-14,شهرستان بن,,,,,region,1,IR-14,استان چهارمحال و بختیاری,HIGH,1.0,IR-14
+Iran,Shīrāz,Fars,,,1869001,County,Shiraz,,Shiraz,2016,FarsIran,county,2,IR-07,شهرستان شیراز,,,,county,2,IR-07,شهرستان شیراز,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Marvdasht,Fars,,,323434,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان مرودشت,,,,county,2,IR-07,شهرستان مرودشت,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Kāzerūn,Fars,,,266217,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان کازرون,,,,locality,,IR-07,شهر کازرون,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Jahrom,Fars,,,228532,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان جهرم,,,,locality,,IR-07,جهرم,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Lārestān,Fars,,,213920,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان لارستان,,,,county,2,IR-07,شهرستان لارستان,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Fasā,Fars,,,205187,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان فسا,,,,locality,,IR-07,فسا,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Dārāb,Fars,,,201489,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان داراب,,,,locality,,IR-07,شهر داراب,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Fīrūz'ābād,Fars,,,121417,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان فیروزآباد,,,,,,,,,,,,region,1,IR-07,استان فارس,NONE,0.0,IR-07
+Iran,Mamasanī,Fars,,,117527,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان ممسنی,,,,county,2,IR-07,شهرستان ممسنی,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Neyrīz,Fars,,,113291,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان نی ریز,,,,county,2,IR-07,شهرستان نی ریز,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Ābādeh,Fars,,,100831,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان آباده,,,,county,2,IR-07,شهرستان آباده,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Eqlīd,Fars,,,93763,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان اقلید,,,,locality,,IR-07,اقلید,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Lāmerd,Fars,,,91782,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان لامرد,,,,county,2,IR-07,شهرستان لامرد,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Sepīdān,Fars,,,91049,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان سپیدان,,,,county,2,IR-07,شهرستان سپیدان,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Kavār,Fars,,,83883,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان کوار,,,,county,2,IR-07,شهرستان کوار,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Zarrīn Dasht,Fars,,,73199,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان زرین دشت,,,,,,,,,,,,region,1,IR-07,استان فارس,NONE,0.0,IR-07
+Iran,Qīr va Kārzīn,Fars,,,71203,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان قیر و کارزین,,,,,,,,,,,,region,1,IR-07,استان فارس,NONE,0.0,IR-07
+Iran,Estahbān,Fars,,,68850,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان استهبان,,,,county,2,IR-07,شهرستان استهبان,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Mohr,Fars,,,64827,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان مهر,,,,locality,,IR-07,شهر مهر,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Kharāmeh,Fars,,,54864,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان خرامه,,,,locality,,IR-07,خرامه,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Gerāsh,Fars,,,53907,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان گراش,,,,locality,,IR-07,شهر گراش,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Khorrambīd,Fars,,,50522,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان خرم بید,,,,,,,,,,,,region,1,IR-07,استان فارس,NONE,0.0,IR-07
+Iran,Bavānāt,Fars,,,50418,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان بوانات,,,,county,2,IR-07,شهرستان بوانات,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Farāshband,Fars,,,45459,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان فراشبند,,,,county,2,IR-07,شهرستان فراشبند,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Rostam,Fars,,,44386,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان رستم,,,,county,2,IR-07,شهرستان رستم,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Arsanjān,Fars,,,42725,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان ارسنجان,,,,locality,,IR-07,شهر ارسنجان,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Khonj,Fars,,,41359,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان خنج,,,,locality,,IR-07,خنج,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Sarvestān,Fars,,,38114,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان سروستان,,,,locality,,IR-07,دهستان سروستان,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Pāsārgād,Fars,,,30118,County,,,#N/A,2016,FarsIran,county,2,IR-07,شهرستان پاسارگاد,,,,county,2,IR-07,شهرستان پاسارگاد,,,,,region,1,IR-07,استان فارس,HIGH,1.0,IR-07
+Iran,Bandar-e Anzalī,Gilan,,,139016,County,Bandar-e Anzali,,Bandar-e Anzali,2016,GilanIran,county,2,IR-01,شهرستان بندر انزلی,,,,locality,,IR-01,شهر بندر انزلی,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Rasht,Gilan,,,956971,County,Rasht,,Rasht,2016,GilanIran,county,2,IR-01,شهرستان رشت,,,,locality,,IR-01,شهر رشت,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Ṭavālsh,Gilan,,,200649,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان طوالش,,,,,,,,,,,,region,1,IR-01,استان گیلان,NONE,0.0,IR-01
+Iran,Lāhījān,Gilan,,,167544,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان لاهیجان,,,,county,2,IR-01,شهرستان لاهیجان,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Rūdsar,Gilan,,,147399,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان رودسر,,,,county,2,IR-01,شهرستان رودسر,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Langarūd,Gilan,,,140686,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان لنگرود,,,,locality,,IR-01,شهر لنگرود,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Ṣowme'eh Sarā,Gilan,,,125074,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان صومعه سرا,,,,county,2,IR-01,شهرستان صومعه سرا,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Āstāneh-e Ashrafiyeh,Gilan,,,108130,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان آستانه اشرفیه,,,,,,,,,,,,region,1,IR-01,استان گیلان,NONE,0.0,IR-01
+Iran,Rūdbār,Gilan,,,94720,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان رودبار,,,,county,2,IR-01,شهرستان رودبار,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Fūman,Gilan,,,92310,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان فومن,,,,county,2,IR-01,شهرستان فومن,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Āstārā,Gilan,,,91257,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان آستارا,,,,county,2,IR-01,شهرستان آستارا,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Rezvānshahr,Gilan,,,69865,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان رضوانشهر,,,,county,2,IR-01,شهرستان رضوانشهر,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Shaft,Gilan,,,54226,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان شفت,,,,county,2,IR-01,شهرستان شفت,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Māsāl,Gilan,,,52649,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان ماسال,,,,county,2,IR-01,شهرستان ماسال,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Sīāhkal,Gilan,,,46975,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان سیاهکل,,,,county,2,IR-01,شهرستان سیاهکل,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Amlash,Gilan,,,43225,County,,,#N/A,2016,GilanIran,county,2,IR-01,شهرستان املش,,,,county,2,IR-01,شهرستان املش,,,,,region,1,IR-01,استان گیلان,HIGH,1.0,IR-01
+Iran,Gorgān,Golestan,,,480541,County,Gorgan,,Gorgan,2016,GolestanIran,county,2,IR-27,شهرستان گرگان,,,,locality,,IR-27,شهر گرگان,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Gonbad-e Kāvūs,Golestan,,,348744,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان گنبد کاووس,,,,locality,,IR-27,شهر گنبد کاووس,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,'Alī Ābād,Golestan,,,140709,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان علی آباد کتول,,,,,,,,,,,,region,1,IR-27,استان گلستان,NONE,0.0,IR-27
+Iran,Āq Qalā,Golestan,,,132733,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان آق قلا,,,,locality,,IR-27,شهر آق قلا,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Kalāleh,Golestan,,,117319,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان کلاله,,,,county,2,IR-27,شهرستان کلاله,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Āzādshahr,Golestan,,,96803,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان آزادشهر,,,,county,2,IR-27,شهرستان آزادشهر,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Rāmīān,Golestan,,,86210,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان رامیان,,,,county,2,IR-27,شهرستان رامیان,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Torkaman,Golestan,,,79978,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان ترکمن,,,,county,2,IR-27,شهرستان ترکمن,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Mīnūdasht,Golestan,,,75483,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان مینودشت,,,,county,2,IR-27,شهرستان مینودشت,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Kordkūy,Golestan,,,71270,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان کردکوی,,,,county,2,IR-27,شهرستان کردکوی,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Gomīshān,Golestan,,,68773,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان گمیشان,,,,county,2,IR-27,شهرستان گمیشان,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Gālīkash,Golestan,,,63173,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان گالیکش,,,,county,2,IR-27,شهرستان گالیکش,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Marāveh Tappeh,Golestan,,,60953,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان مراوه تپه,,,,county,2,IR-27,شهرستان مراوه تپه,,,,,region,1,IR-27,استان گلستان,HIGH,1.0,IR-27
+Iran,Bandar-e Gaz,Golestan,,,46130,County,,,#N/A,2016,GolestanIran,county,2,IR-27,شهرستان بندر گز,,,,,,,,,,,,region,1,IR-27,استان گلستان,NONE,0.0,IR-27
+Iran,Hamadān,Hamadan,,,676105,County,Hamadan,,Hamadan,2016,HamadanIran,county,2,IR-13,شهرستان همدان,,,,locality,,IR-13,شهر همدان,,,,,region,1,IR-13,استان همدان,HIGH,1.0,IR-13
+Iran,Malāyer,Hamadan,,,288685,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان ملایر,,,,county,2,IR-13,شهرستان ملایر,,,,,region,1,IR-13,استان همدان,HIGH,1.0,IR-13
+Iran,Nahāvand,Hamadan,,,178787,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان نهاوند,,,,locality,,IR-13,شهر نهاوند,,,,,region,1,IR-13,استان همدان,HIGH,1.0,IR-13
+Iran,Kabūdarāhang,Hamadan,,,126062,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان کبودرآهنگ,,,,,,,,,,,,region,1,IR-13,استان همدان,NONE,0.0,IR-13
+Iran,Bahār,Hamadan,,,119082,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان بهار,,,,county,2,IR-13,شهرستان بهار,,,,,region,1,IR-13,استان همدان,HIGH,1.0,IR-13
+Iran,Razan,Hamadan,,,107587,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان رزن,,,,county,2,IR-13,شهرستان رزن,,,,,region,1,IR-13,استان همدان,HIGH,1.0,IR-13
+Iran,Tūyserkān,Hamadan,,,101666,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان تویسرکان,,,,county,2,IR-13,شهرستان تویسرکان,,,,,region,1,IR-13,استان همدان,HIGH,1.0,IR-13
+Iran,Asad'ābād,Hamadan,,,100901,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان اسدآباد,,,,,,,,,,,,region,1,IR-13,استان همدان,NONE,0.0,IR-13
+Iran,Fāmenīn,Hamadan,,,39359,County,,,#N/A,2016,HamadanIran,county,2,IR-13,شهرستان فامنین,,,,county,2,IR-13,شهرستان فامنین,,,,,region,1,IR-13,استان همدان,HIGH,1.0,IR-13
+Iran,Bandar-e 'Abās,Hormozgan,,,680366,County,Bandar Abbas,,Bandar Abbas,2016,HormozganIran,county,2,IR-22,شهرستان بندرعباس,,,,,,,,,,,,region,1,IR-22,استان هرمزگان,NONE,0.0,IR-22
+Iran,Qeshm,Hormozgan,,,148993,County,Qeshm,,Qeshm,2016,HormozganIran,county,2,IR-22,شهرستان قشم,,,,county,2,IR-22,شهرستان قشم,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Mīnāb,Hormozgan,,,259221,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان میناب,,,,county,2,IR-22,شهرستان میناب,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Bandar-e Lengeh,Hormozgan,,,159358,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان بندر لنگه,,,,,,,,,,,,region,1,IR-22,استان هرمزگان,NONE,0.0,IR-22
+Iran,Rūdān,Hormozgan,,,124522,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان رودان,,,,county,2,IR-22,شهرستان رودان,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Bastak,Hormozgan,,,80492,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان بستک,,,,county,2,IR-22,شهرستان بستک,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Ḥājī Ābād,Hormozgan,,,69625,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان حاجی آباد,,,,,,,,,,,,region,1,IR-22,استان هرمزگان,NONE,0.0,IR-22
+Iran,Bandar-e Jāsk,Hormozgan,,,58884,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان جاسک,,,,,,,,,,,,region,1,IR-22,استان هرمزگان,NONE,0.0,IR-22
+Iran,Khamīr,Hormozgan,,,56148,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان خمیر,,,,county,2,IR-22,شهرستان خمیر,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Pārsīān,Hormozgan,,,50596,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان پارسیان,,,,county,2,IR-22,شهرستان پارسیان,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Sīrīk,Hormozgan,,,45723,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان سیریک,,,,county,2,IR-22,شهرستان سیریک,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Bashāgard,Hormozgan,,,35085,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان بشاگرد,,,,county,2,IR-22,شهرستان بشاگرد,,,,,region,1,IR-22,استان هرمزگان,HIGH,1.0,IR-22
+Iran,Abū Mūsya,Hormozgan,,,7402,County,,,#N/A,2016,HormozganIran,county,2,IR-22,شهرستان ابوموسی,,,,,,,,,,,,region,1,IR-22,استان هرمزگان,NONE,0.0,IR-22
+Iran,Īlām,Ilam,,,235144,County,Ilam,,Ilam,2016,IlamIran,county,2,IR-16,شهرستان ایلام,,,,locality,,IR-16,شهر ایلام,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Dehlorān,Ilam,,,65630,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان دهلران,,,,county,2,IR-16,شهرستان دهلران,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Chardāvol,Ilam,,,57381,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان چرداول,,,,county,2,IR-16,شهرستان چرداول,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Eyvān,Ilam,,,49491,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان ایوان,,,,county,2,IR-16,شهرستان ایوان,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Ābdānān,Ilam,,,47851,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان آبدانان,,,,county,2,IR-16,شهرستان آبدانان,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Dareh Shahr,Ilam,,,43708,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان دره‌شهر,,,,,,,,,,,,region,1,IR-16,استان ایلام,NONE,0.0,IR-16
+Iran,Mehrān,Ilam,,,29797,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان مهران,,,,county,2,IR-16,شهرستان مهران,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Malekshāhī,Ilam,,,21138,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان ملکشاهی,,,,county,2,IR-16,شهرستان ملکشاهی,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Badreh,Ilam,,,15614,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان بدره,,,,county,2,IR-16,شهرستان بدره,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Sīrvān,Ilam,,,14404,County,,,#N/A,2016,IlamIran,county,2,IR-16,شهرستان سیروان,,,,county,2,IR-16,شهرستان سیروان,,,,,region,1,IR-16,استان ایلام,HIGH,1.0,IR-16
+Iran,Eṣfahān,Isfahan,,,2243249,County,Esfahan,,Esfahan,2016,IsfahanIran,county,2,IR-10,شهرستان اصفهان,,,,region,1,IR-10,استان اصفهان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Khomeynī Shahr,Isfahan,,,319727,County,Esfahan,,Esfahan,2016,IsfahanIran,county,2,IR-10,شهرستان خمینی شهر,,,,locality,,IR-10,خمینی شهر,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Najaf Ābād,Isfahan,,,319205,County,Esfahan,,Esfahan,2016,IsfahanIran,county,2,IR-10,شهرستان نجف آباد,,,,locality,,IR-10,نجف‌آباد,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Lenjān,Isfahan,,,262912,County,Esfahan,,Esfahan,2016,IsfahanIran,county,2,IR-10,شهرستان لنجان,,,,county,2,IR-10,شهرستان لنجان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Falāvarjān,Isfahan,,,249814,County,Esfahan,,Esfahan,2016,IsfahanIran,county,2,IR-10,شهرستان فلاورجان,,,,locality,,IR-10,فلاورجان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Mobārakeh,Isfahan,,,150441,County,Esfahan,,Esfahan,2016,IsfahanIran,county,2,IR-10,شهرستان مبارکه,,,,county,2,IR-10,شهرستان مبارکه,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Kāshān,Isfahan,,,364482,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان کاشان,,,,locality,,IR-10,شهر کاشان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Shāhīn Shahr va Meymeh,Isfahan,,,234667,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان شاهین شهر و میمه,,,,,,,,,,,,region,1,IR-10,استان اصفهان,NONE,0.0,IR-10
+Iran,Shahrezā,Isfahan,,,159797,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان شهرضا,,,,locality,,IR-10,شهر شهرضا,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Barkhār,Isfahan,,,122419,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان برخوار,,,,,,,,,,,,region,1,IR-10,استان اصفهان,NONE,0.0,IR-10
+Iran,Ārān va Bīdgol,Isfahan,,,103517,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان آران و بیدگل,,,,locality,,IR-10,شهر آران و بیدگل,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Golpāyegān,Isfahan,,,90086,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان گلپایگان,,,,county,2,IR-10,شهرستان گلپایگان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Semīrom,Isfahan,,,74109,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان سمیرم,,,,locality,,IR-10,سمیرم,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Tīrān va Karvan,Isfahan,,,71575,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان تیران و کرون,,,,,,,,,,,,region,1,IR-10,استان اصفهان,NONE,0.0,IR-10
+Iran,Farīdan,Isfahan,,,49890,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان فریدن,,,,,,,,,,,,region,1,IR-10,استان اصفهان,NONE,0.0,IR-10
+Iran,Naṭanz,Isfahan,,,43977,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان نطنز,,,,county,2,IR-10,شهرستان نطنز,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Ardestān,Isfahan,,,42105,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان اردستان,,,,county,2,IR-10,شهرستان اردستان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Nā'īn,Isfahan,,,39261,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان نائین,,,,locality,,IR-10,نایین,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Fereydūnshahr,Isfahan,,,35654,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان فریدون شهر,,,,county,2,IR-10,شهرستان فریدون شهر,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Dehāqān,Isfahan,,,34511,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان دهاقان,,,,county,2,IR-10,شهرستان دهاقان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Khvansār,Isfahan,,,33049,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان خوانسار,,,,,,,,,,,,region,1,IR-10,استان اصفهان,NONE,0.0,IR-10
+Iran,Chādegān,Isfahan,,,32479,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان چادگان,,,,county,2,IR-10,شهرستان چادگان,,,,,region,1,IR-10,استان اصفهان,HIGH,1.0,IR-10
+Iran,Bū'īn va Mīāndasht,Isfahan,,,24163,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان بوئین و میاندشت,,,,,,,,,,,,region,1,IR-10,استان اصفهان,NONE,0.0,IR-10
+Iran,Khūr va Biābānak,Isfahan,,,19761,County,,,#N/A,2016,IsfahanIran,county,2,IR-10,شهرستان خور و بیابانک,,,,,,,,,,,,region,1,IR-10,استان اصفهان,NONE,0.0,IR-10
+Iran,Kermān,Kerman,,,738724,County,Kerman,,Kerman,2016,KermanIran,county,2,IR-08,شهرستان کرمان,,,,region,1,IR-08,استان کرمان,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Rafsanjān,Kerman,,,311214,County,Rafsanjan,,Rafsanjan,2016,KermanIran,county,2,IR-08,شهرستان رفسنجان,,,,county,2,IR-08,شهرستان رفسنجان,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Sīrjān,Kerman,,,324103,County,Sirjan,,Sirjan,2016,KermanIran,county,2,IR-08,شهرستان سیرجان,,,,locality,,IR-08,شهر سیرجان,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Jīroft,Kerman,,,308858,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان جیرفت,,,,locality,,IR-08,شهر جیرفت,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Bam,Kerman,,,228241,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان بم,,,,locality,,IR-08,شهر بم,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Zarand,Kerman,,,138133,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان زرند,,,,locality,,IR-08,شهر زرند,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Rūdbār-e Jonūbi,Kerman,,,105992,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان رودبار جنوب,,,,county,2,IR-08,شهرستان رودبار جنوب,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Shahr-e Bābak,Kerman,,,103975,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان شهربابک,,,,locality,,IR-08,شهر بابک,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Kahnūj,Kerman,,,95848,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان کهنوج,,,,locality,,IR-08,کهنوج,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Rīgān,Kerman,,,88410,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان ریگان,,,,county,2,IR-08,شهرستان ریگان,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Bāft,Kerman,,,84103,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان بافت,,,,county,2,IR-08,شهرستان بافت,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,'Anbar'ābād,Kerman,,,82438,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان عنبرآباد,,,,,,,,,,,,region,1,IR-08,استان کرمان,NONE,0.0,IR-08
+Iran,Bardsīr,Kerman,,,81983,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان بردسیر,,,,county,2,IR-08,شهرستان بردسیر,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Qal'eh Ganj,Kerman,,,76495,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان قلعه گنج,,,,,,,,,,,,region,1,IR-08,استان کرمان,NONE,0.0,IR-08
+Iran,Fahraj,Kerman,,,67096,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان فهرج,,,,locality,,IR-08,شهر فهرج,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Manūjān,Kerman,,,65705,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان منوجان,,,,county,2,IR-08,شهرستان منوجان,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Narmāshīr,Kerman,,,54228,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان نرماشیر,,,,county,2,IR-08,شهرستان نرماشیر,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Rāvar,Kerman,,,43198,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان راور,,,,county,2,IR-08,شهرستان راور,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Arzūiyeh,Kerman,,,38510,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان ارزوئیه,,,,county,2,IR-08,شهرستان ارزوئیه,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Anār,Kerman,,,36897,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان انار,,,,county,2,IR-08,شهرستان انار,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Rābor,Kerman,,,35362,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان رابر,,,,locality,,IR-08,دهستان رابر,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Fāryāb,Kerman,,,34000,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان فاریاب,,,,county,2,IR-08,شهرستان فاریاب,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Kūhbanān,Kerman,,,21205,County,,,#N/A,2016,KermanIran,county,2,IR-08,شهرستان کوهبنان,,,,county,2,IR-08,شهرستان کوهبنان,,,,,region,1,IR-08,استان کرمان,HIGH,1.0,IR-08
+Iran,Kermānshāh,Kermanshah,,,1083833,County,Kermanshah,,Kermanshah,2016,KermanshahIran,county,2,IR-05,شهرستان کرمانشاه,,,,county,2,IR-05,شهرستان کرمانشاه,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Eslāmābād-e Gharb,Kermanshah,,,140876,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان اسلام آباد غرب,,,,county,2,IR-05,شهرستان اسلام آباد غرب,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Sarpol-e Dhahāb,Kermanshah,,,85342,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان سرپل ذهاب,,,,,,,,,,,,region,1,IR-05,استان کرمانشاه,NONE,0.0,IR-05
+Iran,Sonqor,Kermanshah,,,81661,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان سنقر,,,,county,2,IR-05,شهرستان سنقر,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Harsīn,Kermanshah,,,78350,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان هرسین,,,,county,2,IR-05,شهرستان هرسین,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Kangāvar,Kermanshah,,,76216,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان کنگاور,,,,county,2,IR-05,شهرستان کنگاور,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Javānrūd,Kermanshah,,,75169,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان جوانرود,,,,county,2,IR-05,شهرستان جوانرود,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Ṣaḥneh,Kermanshah,,,70757,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان صحنه,,,,locality,,IR-05,صحنه,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Pāveh,Kermanshah,,,60431,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان پاوه,,,,county,2,IR-05,شهرستان پاوه,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Gīlān-e Gharb,Kermanshah,,,57007,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان گیلانغرب,,,,,,,,,,,,region,1,IR-05,استان کرمانشاه,NONE,0.0,IR-05
+Iran,Ravānsar,Kermanshah,,,47657,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان روانسر,,,,county,2,IR-05,شهرستان روانسر,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Dālāhū,Kermanshah,,,35987,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان دالاهو,,,,county,2,IR-05,شهرستان دالاهو,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Ṭalāṭ Bābājānī,Kermanshah,,,35219,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان ثلاث باباجانی,,,,,,,,,,,,region,1,IR-05,استان کرمانشاه,NONE,0.0,IR-05
+Iran,Qaṣr-e Shīrīn,Kermanshah,,,23929,County,,,#N/A,2016,KermanshahIran,county,2,IR-05,شهرستان قصر شیرین,,,,locality,,IR-05,شهر قصر شیرین,,,,,region,1,IR-05,استان کرمانشاه,HIGH,1.0,IR-05
+Iran,Bojnūrd,"Khorasan, North",,,324083,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان بجنورد,,,,county,2,IR-28,شهرستان بجنورد,,,,,region,1,IR-28,استان خراسان شمالی,HIGH,1.0,IR-28
+Iran,Shīrvān,"Khorasan, North",,,146140,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان شیروان,,,,locality,,IR-28,شهر شیروان,,,,,region,1,IR-28,استان خراسان شمالی,HIGH,1.0,IR-28
+Iran,Esfarāyen,"Khorasan, North",,,120513,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان اسفراین,,,,county,2,IR-28,شهرستان اسفراین,,,,,region,1,IR-28,استان خراسان شمالی,HIGH,1.0,IR-28
+Iran,Māneh va Samalqān,"Khorasan, North",,,101727,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان مانه,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Rāz va Jargalān,"Khorasan, North",,,59210,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان راز و جرگلان,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Fārūj,"Khorasan, North",,,49271,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان فاروج,,,,county,2,IR-28,شهرستان فاروج,,,,,region,1,IR-28,استان خراسان شمالی,HIGH,1.0,IR-28
+Iran,Jājarm,"Khorasan, North",,,36673,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان جاجرم,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Garmeh,"Khorasan, North",,,25475,County,,,#N/A,2016,"Khorasan, NorthIran",county,2,IR-28,شهرستان گرمه,,,,county,2,IR-28,شهرستان گرمه,,,,,region,1,IR-28,استان خراسان شمالی,HIGH,1.0,IR-28
+Iran,Mashhad,"Khorasan, Razavi",,,3372660,County,Mashhad,,Mashhad,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان مشهد,,,,county,2,IR-09,شهرستان مشهد,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Nīshābūr,"Khorasan, Razavi",,,451780,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان نیشابور,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Sabzevār,"Khorasan, Razavi",,,306310,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان سبزوار,,,,county,2,IR-09,شهرستان سبزوار,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Torbat-e Jām,"Khorasan, Razavi",,,267671,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان تربت جام,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Torbat-e Ḥeydarīeh,"Khorasan, Razavi",,,224626,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان تربت حیدریه,,,,locality,,IR-09,شهر تربت حیدریه,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Qūchān,"Khorasan, Razavi",,,174495,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان قوچان,,,,county,2,IR-09,شهرستان قوچان,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Kāshmar,"Khorasan, Razavi",,,168664,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان کاشمر,,,,county,2,IR-09,شهرستان کاشمر,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Chenārān,"Khorasan, Razavi",,,155013,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان چناران,,,,county,2,IR-09,شهرستان چناران,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Khvāf,"Khorasan, Razavi",,,138972,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان خواف,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Ṭāybād,"Khorasan, Razavi",,,117564,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان تایباد,,,,county,2,IR-09,شهرستان تایباد,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Farīmān,"Khorasan, Razavi",,,99001,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان فریمان,,,,county,2,IR-09,شهرستان فریمان,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Sarakhs,"Khorasan, Razavi",,,97519,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان سرخس,,,,county,2,IR-09,شهرستان سرخس,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Gonābād,"Khorasan, Razavi",,,88753,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان گناباد,,,,county,2,IR-09,شهرستان گناباد,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Bardaskan,"Khorasan, Razavi",,,75631,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان بردسکن,,,,county,2,IR-09,شهرستان بردسکن,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Dargaz,"Khorasan, Razavi",,,72355,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان درگز,,,,county,2,IR-09,شهرستان درگز,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Bīnālūd,"Khorasan, Razavi",,,69640,County,,,#N/A,2016,"Khorasan, RazaviIran",,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Zāveh,"Khorasan, Razavi",,,67695,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان زاوه,,,,county,2,IR-09,شهرستان زاوه,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Roshtkvhār,"Khorasan, Razavi",,,60689,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان رشتخوار,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Bākharz,"Khorasan, Razavi",,,54615,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان باخرز,,,,county,2,IR-09,شهرستان باخرز,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Jowayin,"Khorasan, Razavi",,,54488,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان جوین,,,,county,2,IR-09,شهرستان جوین,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Khalīl Ābād,"Khorasan, Razavi",,,51701,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان خلیل آباد,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Mah va Lāt,"Khorasan, Razavi",,,51409,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان مه ولات,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Joghatāī,"Khorasan, Razavi",,,49175,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان جغتای,,,,county,2,IR-09,شهرستان جغتای,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Fīrūzeh,"Khorasan, Razavi",,,37539,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان فیروزه,,,,county,2,IR-09,شهرستان فیروزه,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Khūshāb,"Khorasan, Razavi",,,37181,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان خوشاب,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Kalāt,"Khorasan, Razavi",,,36237,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان کلات,,,,county,2,IR-09,شهرستان کلات,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Bajestān,"Khorasan, Razavi",,,31207,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان بجستان,,,,county,2,IR-09,شهرستان بجستان,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Dāvarzan,"Khorasan, Razavi",,,21911,County,,,#N/A,2016,"Khorasan, RazaviIran",county,2,IR-09,شهرستان داورزن,,,,county,2,IR-09,شهرستان داورزن,,,,,region,1,IR-09,استان خراسان رضوی,HIGH,1.0,IR-09
+Iran,Bīrjand,"Khorasan, South",,,261324,County,Birjand,,Birjand,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان بیرجند,,,,county,2,IR-29,شهرستان بیرجند,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Qā'en,"Khorasan, South",,,116181,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان قائنات,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Ṭabas,"Khorasan, South",,,72617,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان طبس,,,,county,2,IR-29,شهرستان طبس,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Darmīān,"Khorasan, South",,,53714,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان درمیان,,,,county,2,IR-29,شهرستان درمیان,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Nehbandān,"Khorasan, South",,,51449,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان نهبندان,,,,county,2,IR-29,شهرستان نهبندان,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Ferdows,"Khorasan, South",,,45523,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان فردوس,,,,county,2,IR-29,شهرستان فردوس,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Sarbīsheh,"Khorasan, South",,,40959,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان سربیشه,,,,county,2,IR-29,شهرستان سربیشه,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Zīrkūh,"Khorasan, South",,,40155,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان زیرکوه,,,,county,2,IR-29,شهرستان زیرکوه,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Sarāyān,"Khorasan, South",,,33312,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان سرایان,,,,county,2,IR-29,شهرستان سرایان,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Khūsf,"Khorasan, South",,,27600,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان خوسف,,,,county,2,IR-29,شهرستان خوسف,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Boshrūyeh,"Khorasan, South",,,26064,County,,,#N/A,2016,"Khorasan, SouthIran",county,2,IR-29,شهرستان بشرویه,,,,county,2,IR-29,شهرستان بشرویه,,,,,region,1,IR-29,استان خراسان جنوبی,HIGH,1.0,IR-29
+Iran,Ābādān,Khuzestan,,,298090,County,Abadan,,Abadan,2016,KhuzestanIran,county,2,IR-06,شهرستان آبادان,,,,county,2,IR-06,شهرستان آبادان,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Ahvāz,Khuzestan,,,1302591,County,Ahvaz,,Ahvaz,2016,KhuzestanIran,county,2,IR-06,شهرستان اهواز,,,,locality,,IR-06,شهر اهواز,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Masjed-e Soleymān,Khuzestan,,,113419,County,Masjed Soleyman,,Masjed Soleyman,2016,KhuzestanIran,county,2,IR-06,شهرستان مسجدسلیمان,,,,,,,,,,,,region,1,IR-06,استان خوزستان,NONE,0.0,IR-06
+Iran,Dezfūl,Khuzestan,,,443971,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان دزفول,,,,county,2,IR-06,شهرستان دزفول,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Bandar-e Māhshahr,Khuzestan,,,296271,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان بندر ماهشهر,,,,locality,,IR-06,شهر بندر ماهشهر,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Shūsh,Khuzestan,,,205720,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان شوش,,,,county,2,IR-06,شهرستان شوش,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Īzeh,Khuzestan,,,198871,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان ایذه,,,,county,2,IR-06,شهرستان ایذه,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Shūshtar,Khuzestan,,,192028,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان شوشتر,,,,county,2,IR-06,شهرستان شوشتر,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Behbahān,Khuzestan,,,180593,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان بهبهان,,,,county,2,IR-06,شهرستان بهبهان,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Andīmeshk,Khuzestan,,,171412,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان اندیمشک,,,,locality,,IR-06,اندیمشک,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Khoramshahr,Khuzestan,,,170976,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان خرمشهر,,,,county,2,IR-06,شهرستان خرمشهر,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Shādegān,Khuzestan,,,138480,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان شادگان,,,,locality,,IR-06,شادگان,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Rāmhormoz,Khuzestan,,,113776,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان رامهرمز,,,,county,2,IR-06,شهرستان رامهرمز,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Dasht-e 'Āzādegān,Khuzestan,,,107989,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان دشت آزادگان,,,,,,,,,,,,region,1,IR-06,استان خوزستان,NONE,0.0,IR-06
+Iran,Kārūn,Khuzestan,,,105872,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان کارون,,,,county,2,IR-06,شهرستان کارون,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Bāgh-e Malek,Khuzestan,,,105384,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان باغ ملک,,,,,,,,,,,,region,1,IR-06,استان خوزستان,NONE,0.0,IR-06
+Iran,Bāvī,Khuzestan,,,96484,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان باوی,,,,county,2,IR-06,شهرستان باوی,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Omīdiyeh,Khuzestan,,,92335,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان امیدیه,,,,locality,,IR-06,امیدیه,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Gotvand,Khuzestan,,,65468,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان گتوند,,,,county,2,IR-06,شهرستان گتوند,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Rāmshīr,Khuzestan,,,54004,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان رامشیر,,,,county,2,IR-06,شهرستان رامشیر,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Ḥamīdiyeh,Khuzestan,,,53762,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان حمیدیه,,,,,,,,,,,,region,1,IR-06,استان خوزستان,NONE,0.0,IR-06
+Iran,Andīkā,Khuzestan,,,47629,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان اندیکا,,,,county,2,IR-06,شهرستان اندیکا,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Hoveyzeh,Khuzestan,,,38886,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان هویزه,,,,county,2,IR-06,شهرستان هویزه,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Hendījān,Khuzestan,,,38762,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان هندیجان,,,,county,2,IR-06,شهرستان هندیجان,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Lālī,Khuzestan,,,37963,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان لالی,,,,county,2,IR-06,شهرستان لالی,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Haftkel,Khuzestan,,,22119,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان هفتکل,,,,county,2,IR-06,شهرستان هفتکل,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Āghājārī,Khuzestan,,,17654,County,,,#N/A,2016,KhuzestanIran,county,2,IR-06,شهرستان آغاجاری,,,,county,2,IR-06,شهرستان آغاجاری,,,,,region,1,IR-06,استان خوزستان,HIGH,1.0,IR-06
+Iran,Būyerāḥmad,Kohgiluyeh and Boyer-Ahmad,,,299885,County,Bushehr,,Bushehr,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان بویراحمد,,,,county,2,IR-17,شهرستان بویراحمد,,,,,region,1,IR-17,استان کهگیلویه و بویر احمد,HIGH,1.0,IR-17
+Iran,Kohgīlūyeh,Kohgiluyeh and Boyer-Ahmad,,,131351,County,,,#N/A,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان کهگیلویه,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Gachsārān,Kohgiluyeh and Boyer-Ahmad,,,124096,County,,,#N/A,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان گچساران,,,,county,2,IR-17,شهرستان گچساران,,,,,region,1,IR-17,استان کهگیلویه و بویر احمد,HIGH,1.0,IR-17
+Iran,Danā,Kohgiluyeh and Boyer-Ahmad,,,42539,County,,,#N/A,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان دنا,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Bahmaī,Kohgiluyeh and Boyer-Ahmad,,,38136,County,,,#N/A,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان بهمئی,,,,county,2,IR-17,شهرستان بهمئی,,,,,region,1,IR-17,استان کهگیلویه و بویر احمد,HIGH,1.0,IR-17
+Iran,Chorām,Kohgiluyeh and Boyer-Ahmad,,,33543,County,,,#N/A,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان چرام,,,,,,,,,,,,,,,,NONE,0.0,
+Iran,Landeh,Kohgiluyeh and Boyer-Ahmad,,,21812,County,,,#N/A,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان لنده,,,,county,2,IR-17,شهرستان لنده,,,,,region,1,IR-17,استان کهگیلویه و بویر احمد,HIGH,1.0,IR-17
+Iran,Bāsht,Kohgiluyeh and Boyer-Ahmad,,,21690,County,,,#N/A,2016,Kohgiluyeh and Boyer-AhmadIran,county,2,IR-17,شهرستان باشت,,,,county,2,IR-17,شهرستان باشت,,,,,region,1,IR-17,استان کهگیلویه و بویر احمد,HIGH,1.0,IR-17
+Iran,Sanandaj,Kurdistan,,,501402,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان سنندج,,,,locality,,IR-12,شهر سنندج,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Saqqez,Kurdistan,,,226451,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان سقز,,,,county,2,IR-12,شهرستان سقز,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Marīvān,Kurdistan,,,195263,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان مریوان,,,,county,2,IR-12,شهرستان مریوان,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Bāneh,Kurdistan,,,158690,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان بانه,,,,county,2,IR-12,شهرستان بانه,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Qorveh,Kurdistan,,,140192,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان قروه,,,,locality,,IR-12,شهر قروه,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Kāmyārān,Kurdistan,,,102856,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان کامیاران,,,,locality,,IR-12,کامیاران,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Bījār,Kurdistan,,,89162,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان بیجار,,,,county,2,IR-12,شهرستان بیجار,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Dīvāndareh,Kurdistan,,,80040,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان دیواندره,,,,,,,,,,,,region,1,IR-12,استان کردستان,NONE,0.0,IR-12
+Iran,Dehgolān,Kurdistan,,,64015,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان دهگلان,,,,county,2,IR-12,شهرستان دهگلان,,,,,region,1,IR-12,استان کردستان,HIGH,1.0,IR-12
+Iran,Sarv Ābād,Kurdistan,,,44940,County,,,#N/A,2016,KurdistanIran,county,2,IR-12,شهرستان سروآباد,,,,,,,,,,,,region,1,IR-12,استان کردستان,NONE,0.0,IR-12
+Iran,Dūrūd,Lorestan,,,174508,County,Dorud,,Dorud,2016,LorestanIran,county,2,IR-15,شهرستان دورود,,,,,,,,,,,,region,1,IR-15,استان لرستان,NONE,0.0,IR-15
+Iran,Khoram Ābād,Lorestan,,,506471,County,Khorramabad,,Khorramabad,2016,LorestanIran,county,2,IR-15,شهرستان خرم آباد,,,,,,,,,,,,region,1,IR-15,استان لرستان,NONE,0.0,IR-15
+Iran,Borūjerd,Lorestan,,,326452,County,,,#N/A,2016,LorestanIran,county,2,IR-15,شهرستان بروجرد,,,,locality,,IR-15,بروجرد,,,,,region,1,IR-15,استان لرستان,HIGH,1.0,IR-15
+Iran,Kūhdasht,Lorestan,,,166658,County,,,#N/A,2016,LorestanIran,county,2,IR-15,شهرستان کوهدشت,,,,locality,,IR-15,کوهدشت,,,,,region,1,IR-15,استان لرستان,HIGH,1.0,IR-15
+Iran,Delfān,Lorestan,,,143973,County,,,#N/A,2016,LorestanIran,county,2,IR-15,شهرستان دلفان,,,,county,2,IR-15,شهرستان دلفان,,,,,region,1,IR-15,استان لرستان,HIGH,1.0,IR-15
+Iran,Alīgūdarz,Lorestan,,,137534,County,,,#N/A,2016,LorestanIran,county,2,IR-15,شهرستان الیگودرز,,,,locality,,IR-15,شهر الیگودرز,,,,,region,1,IR-15,استان لرستان,HIGH,1.0,IR-15
+Iran,Selseleh,Lorestan,,,75559,County,,,#N/A,2016,LorestanIran,county,2,IR-15,شهرستان سلسله,,,,county,2,IR-15,شهرستان سلسله,,,,,region,1,IR-15,استان لرستان,HIGH,1.0,IR-15
+Iran,Aznā,Lorestan,,,74936,County,,,#N/A,2016,LorestanIran,county,2,IR-15,شهرستان ازنا,,,,locality,,IR-15,ازنا,,,,,region,1,IR-15,استان لرستان,HIGH,1.0,IR-15
+Iran,Pol-e Dokhtar,Lorestan,,,73744,County,,,#N/A,2016,LorestanIran,,,,,,,,,,,,,,,,region,1,IR-15,استان لرستان,NONE,0.0,IR-15
+Iran,Dowreh,Lorestan,,,41756,County,,,#N/A,2016,LorestanIran,,,,,,,,,,,,,,,,region,1,IR-15,استان لرستان,NONE,0.0,IR-15
+Iran,Rūmeshkhān,Lorestan,,,39058,County,,,#N/A,2016,LorestanIran,county,2,IR-15,شهرستان رومشکان,,,,,,,,,,,,region,1,IR-15,استان لرستان,NONE,0.0,IR-15
+Iran,Arāk,Markazi,,,591756,County,Arak,,Arak,2016,MarkaziIran,county,2,IR-00,شهرستان اراک,,,,locality,,IR-00,شهر اراک,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Sāveh,Markazi,,,283538,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان ساوه,,,,county,2,IR-00,شهرستان ساوه,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Shāzand,Markazi,,,117571,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان شازند,,,,county,2,IR-00,شهرستان شازند,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Khomeyn,Markazi,,,105017,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان خمین,,,,,,,,,,,,region,1,IR-00,استان مرکزی,NONE,0.0,IR-00
+Iran,Zarandīeh,Markazi,,,63907,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان زرندیه,,,,county,2,IR-00,شهرستان زرندیه,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Maḥalāt,Markazi,,,55342,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان محلات,,,,,,,,,,,,region,1,IR-00,استان مرکزی,NONE,0.0,IR-00
+Iran,Khondāb,Markazi,,,54018,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان خنداب,,,,county,2,IR-00,شهرستان خنداب,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Delījān,Markazi,,,51621,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان دلیجان,,,,county,2,IR-00,شهرستان دلیجان,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Komījān,Markazi,,,36441,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان کمیجان,,,,county,2,IR-00,شهرستان کمیجان,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Farāhān,Markazi,,,28994,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان فراهان,,,,county,2,IR-00,شهرستان فراهان,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Tafresh,Markazi,,,24913,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان تفرش,,,,county,2,IR-00,شهرستان تفرش,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Āshtīān,Markazi,,,16357,County,,,#N/A,2016,MarkaziIran,county,2,IR-00,شهرستان آشتیان,,,,locality,,IR-00,شهر آشتیان,,,,,region,1,IR-00,استان مرکزی,HIGH,1.0,IR-00
+Iran,Bābolsar,Mazandaran,,,135191,County,Babolsar,,Babolsar,2016,MazandaranIran,county,2,IR-02,شهرستان بابلسر,,,,county,2,IR-02,شهرستان بابلسر,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Fereydūnkenār,Mazandaran,,,60031,County,Babolsar,,Babolsar,2016,MazandaranIran,county,2,IR-02,شهرستان فریدونکنار,,,,county,2,IR-02,شهرستان فریدونکنار,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Qā'em Shahr,Mazandaran,,,309199,County,Qa'em Shahr,,Qa'em Shahr,2016,MazandaranIran,county,2,IR-02,شهرستان قائم شهر,,,,,,,,,,,,region,1,IR-02,استان مازندران,NONE,0.0,IR-02
+Iran,Bābol,Mazandaran,,,531930,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان بابل,,,,county,2,IR-02,شهرستان بابل,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Sārī,Mazandaran,,,504298,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان ساری,,,,county,2,IR-02,شهرستان ساری,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Āmol,Mazandaran,,,401639,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان آمل,,,,county,2,IR-02,شهرستان آمل,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Behshahr,Mazandaran,,,168769,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان بهشهر,,,,locality,,IR-02,شهر بهشهر,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Tonekābon,Mazandaran,,,166132,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان تنکابن,,,,county,2,IR-02,شهرستان تنکابن,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Nowshahr,Mazandaran,,,138913,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان نوشهر,,,,county,2,IR-02,شهرستان نوشهر,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Nūr,Mazandaran,,,121531,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان نور,,,,locality,,IR-02,نور,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Nekā,Mazandaran,,,119511,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان نکا,,,,locality,,IR-02,نکا,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Chālūs,Mazandaran,,,116542,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان چالوس,,,,locality,,IR-02,چالوس,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Maḥmūd'ābād,Mazandaran,,,98407,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان محمودآباد,,,,,,,,,,,,region,1,IR-02,استان مازندران,NONE,0.0,IR-02
+Iran,Jūybār,Mazandaran,,,77576,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان جویبار,,,,locality,,IR-02,جویبار,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Rāmsar,Mazandaran,,,74179,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان رامسر,,,,county,2,IR-02,شهرستان رامسر,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Mīāndūrūd,Mazandaran,,,55053,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان میاندورود,,,,,,,,,,,,region,1,IR-02,استان مازندران,NONE,0.0,IR-02
+Iran,'Abās Ābād,Mazandaran,,,52832,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان عباس آباد,,,,,,,,,,,,region,1,IR-02,استان مازندران,NONE,0.0,IR-02
+Iran,Savādkūh,Mazandaran,,,43913,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان سوادکوه,,,,county,2,IR-02,شهرستان سوادکوه,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Galūgāh,Mazandaran,,,40078,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان گلوگاه,,,,county,2,IR-02,شهرستان گلوگاه,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Savādkūh-e Shomālī,Mazandaran,,,24834,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان سوادکوه شمالی,,,,,,,,,,,,region,1,IR-02,استان مازندران,NONE,0.0,IR-02
+Iran,Kelārdasht,Mazandaran,,,23648,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان کلاردشت,,,,county,2,IR-02,شهرستان کلاردشت,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Sīmorgh,Mazandaran,,,19376,County,,,#N/A,2016,MazandaranIran,county,2,IR-02,شهرستان سیمرغ,,,,county,2,IR-02,شهرستان سیمرغ,,,,,region,1,IR-02,استان مازندران,HIGH,1.0,IR-02
+Iran,Qazvīn,Qazvin,,,596932,County,Qazvin,,Qazvin,2016,QazvinIran,county,2,IR-26,شهرستان قزوین,,,,region,1,IR-26,استان قزوین,,,,,region,1,IR-26,استان قزوین,HIGH,1.0,IR-26
+Iran,Alborz,Qazvin,,,242865,County,,,#N/A,2016,QazvinIran,county,2,IR-26,شهرستان البرز,,,,county,2,IR-26,شهرستان البرز,,,,,region,1,IR-26,استان قزوین,HIGH,1.0,IR-26
+Iran,Tākestān,Qazvin,,,172636,County,,,#N/A,2016,QazvinIran,county,2,IR-26,شهرستان تاکستان,,,,county,2,IR-26,شهرستان تاکستان,,,,,region,1,IR-26,استان قزوین,HIGH,1.0,IR-26
+Iran,Bū'īn Zahrā,Qazvin,,,122994,County,,,#N/A,2016,QazvinIran,county,2,IR-26,شهرستان بوئین زهرا,,,,,,,,,,,,region,1,IR-26,استان قزوین,NONE,0.0,IR-26
+Iran,Ābyek,Qazvin,,,94536,County,,,#N/A,2016,QazvinIran,county,2,IR-26,شهرستان آبیک,,,,county,2,IR-26,شهرستان آبیک,,,,,region,1,IR-26,استان قزوین,HIGH,1.0,IR-26
+Iran,Āvaj,Qazvin,,,43798,County,,,#N/A,2016,QazvinIran,county,2,IR-26,شهرستان آوج,,,,county,2,IR-26,شهرستان آوج,,,,,region,1,IR-26,استان قزوین,HIGH,1.0,IR-26
+Iran,Qom,Qom,,,1292283,County,Qom,,Qom,2016,QomIran,county,2,IR-25,شهرستان قم,,,,locality,,IR-25,شهر قم,,,,,region,1,IR-25,استان قم,HIGH,1.0,IR-25
+Iran,Shāhrūd,Semnan,,,218628,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان شاهرود,,,,county,2,IR-20,شهرستان شاهرود,,,,,region,1,IR-20,استان سمنان,HIGH,1.0,IR-20
+Iran,Semnān,Semnan,,,196521,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان سمنان,,,,county,2,IR-20,شهرستان سمنان,,,,,region,1,IR-20,استان سمنان,HIGH,1.0,IR-20
+Iran,Dāmghān,Semnan,,,94190,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان دامغان,,,,county,2,IR-20,شهرستان دامغان,,,,,region,1,IR-20,استان سمنان,HIGH,1.0,IR-20
+Iran,Garmsār,Semnan,,,77421,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان گرمسار,,,,locality,,IR-20,گرمسار,,,,,region,1,IR-20,استان سمنان,HIGH,1.0,IR-20
+Iran,Mehdīshahr,Semnan,,,47475,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان مهدی شهر,,,,locality,,IR-20,شهر مهدی‌شهر,,,,,region,1,IR-20,استان سمنان,HIGH,1.0,IR-20
+Iran,Meyāmī,Semnan,,,38718,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان میامی,,,,,,,,,,,,region,1,IR-20,استان سمنان,NONE,0.0,IR-20
+Iran,Sorkheh,Semnan,,,15523,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان سرخه,,,,county,2,IR-20,شهرستان سرخه,,,,,region,1,IR-20,استان سمنان,HIGH,1.0,IR-20
+Iran,Ārādan,Semnan,,,13884,County,,,#N/A,2016,SemnanIran,county,2,IR-20,شهرستان آرادان,,,,county,2,IR-20,شهرستان آرادان,,,,,region,1,IR-20,استان سمنان,HIGH,1.0,IR-20
+Iran,Zāhedān,Sistan and Baluchestan,,,672589,County,Zahedan,,Zahedan,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان زاهدان,,,,locality,,IR-11,شهر زاهدان,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Chābahār,Sistan and Baluchestan,,,283204,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان چابهار,,,,county,2,IR-11,شهرستان چابهار,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Īrānshahr,Sistan and Baluchestan,,,254314,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان ایرانشهر,,,,county,2,IR-11,شهرستان ایرانشهر,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Sarāvān,Sistan and Baluchestan,,,191661,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان سراوان,,,,locality,,IR-11,شهر سراوان,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Sarbāz,Sistan and Baluchestan,,,186165,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان سرباز,,,,county,2,IR-11,شهرستان سرباز,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Khāsh,Sistan and Baluchestan,,,173821,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان خاش,,,,county,2,IR-11,شهرستان خاش,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Zābol,Sistan and Baluchestan,,,165666,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان زابل,,,,locality,,IR-11,شهر زابل,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Nīk Shahr,Sistan and Baluchestan,,,141894,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان نیک شهر,,,,,,,,,,,,region,1,IR-11,استان سیستان و بلوچستان,NONE,0.0,IR-11
+Iran,Konārak,Sistan and Baluchestan,,,98212,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان کنارک,,,,locality,,IR-11,کنارک,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Sīb va Sūrān,Sistan and Baluchestan,,,85095,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان سیب و سوران,,,,,,,,,,,,region,1,IR-11,استان سیستان و بلوچستان,NONE,0.0,IR-11
+Iran,Zehak,Sistan and Baluchestan,,,74896,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان زهک,,,,locality,,IR-11,شهر زهک,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Mehrestān,Sistan and Baluchestan,,,70579,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان مهرستان,,,,county,2,IR-11,شهرستان مهرستان,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Dalgān,Sistan and Baluchestan,,,67857,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان دلگان,,,,,,,,,,,,region,1,IR-11,استان سیستان و بلوچستان,NONE,0.0,IR-11
+Iran,Hīrmand,Sistan and Baluchestan,,,63979,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان هیرمند,,,,county,2,IR-11,شهرستان هیرمند,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Qaṣr-e Qand,Sistan and Baluchestan,,,61076,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان قصرقند,,,,locality,,IR-11,قصرقند,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Fanūj,Sistan and Baluchestan,,,49161,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان فنوج,,,,county,2,IR-11,شهرستان فنوج,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Nīmrūz,Sistan and Baluchestan,,,48471,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان نیمروز,,,,county,2,IR-11,شهرستان نیمروز,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Mīrjāveh,Sistan and Baluchestan,,,45357,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان میرجاوه,,,,county,2,IR-11,شهرستان میرجاوه,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Hāmūn,Sistan and Baluchestan,,,41017,County,,,#N/A,2016,Sistan and BaluchestanIran,county,2,IR-11,شهرستان هامون,,,,county,2,IR-11,شهرستان هامون,,,,,region,1,IR-11,استان سیستان و بلوچستان,HIGH,1.0,IR-11
+Iran,Tehrān,Tehran,,,8737510,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان تهران,,,,county,2,IR-23,شهرستان تهران,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Shahrīār,Tehran,,,744210,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان شهریار,,,,county,2,IR-23,شهرستان شهریار,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Eslāmshahr,Tehran,,,548620,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان اسلامشهر,,,,county,2,IR-23,شهرستان اسلامشهر,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Bahārestān,Tehran,,,536329,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان بهارستان,,,,county,2,IR-23,شهرستان بهارستان,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Malārd,Tehran,,,377292,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان ملارد,,,,county,2,IR-23,شهرستان ملارد,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Pākdasht,Tehran,,,350966,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان پاکدشت,,,,county,2,IR-23,شهرستان پاکدشت,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Rey,Tehran,,,349700,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان ری,,,,locality,,IR-23,شهر ری,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Qods,Tehran,,,316636,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان قدس,,,,county,2,IR-23,شهرستان قدس,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Robāṭ Karīm,Tehran,,,291516,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان رباط کریم,,,,locality,,IR-23,شهر رباط کریم,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Varāmīn,Tehran,,,283742,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان ورامین,,,,county,2,IR-23,شهرستان ورامین,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Qarchak,Tehran,,,269138,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان قرچک,,,,county,2,IR-23,شهرستان قرچک,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Pardīs,Tehran,,,169060,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان پردیس,,,,county,2,IR-23,شهرستان پردیس,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Damāvand,Tehran,,,125480,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان دماوند,,,,locality,,IR-23,دماوند,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Pīshvā,Tehran,,,86601,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان پیشوا,,,,county,2,IR-23,شهرستان پیشوا,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Shemirānāt,Tehran,,,47279,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان شمیرانات,,,,county,2,IR-23,شهرستان شمیرانات,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Fīrūzkūh,Tehran,,,33558,County,Tehran,,Tehran,2016,TehranIran,county,2,IR-23,شهرستان فیروزکوه,,,,county,2,IR-23,شهرستان فیروزکوه,,,,,region,1,IR-23,استان تهران,HIGH,1.0,IR-23
+Iran,Yazd,Yazd,,,656474,County,Yazd,,Yazd,2016,YazdIran,county,2,IR-21,شهرستان یزد,,,,region,1,IR-21,استان یزد,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Ardakān,Yazd,,,97960,County,Yazd,,Yazd,2016,YazdIran,county,2,IR-21,شهرستان اردکان,,,,locality,,IR-21,اردکان,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Meybod,Yazd,,,99727,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان میبد,,,,county,2,IR-21,شهرستان میبد,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Mehrīz,Yazd,,,51733,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان مهریز,,,,locality,,IR-21,مهریز,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Abarkūh,Yazd,,,51552,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان ابرکوه,,,,locality,,IR-21,ابرکوه,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Bāfq,Yazd,,,50845,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان بافق,,,,county,2,IR-21,شهرستان بافق,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Taft,Yazd,,,43893,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان تفت,,,,county,2,IR-21,شهرستان تفت,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Khatām,Yazd,,,36562,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان خاتم,,,,county,2,IR-21,شهرستان خاتم,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Ashkezar,Yazd,,,32566,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان اشکذر,,,,county,2,IR-21,شهرستان اشکذر,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Behābād,Yazd,,,17221,County,,,#N/A,2016,YazdIran,county,2,IR-21,شهرستان بهاباد,,,,county,2,IR-21,شهرستان بهاباد,,,,,region,1,IR-21,استان یزد,HIGH,1.0,IR-21
+Iran,Zanjān,Zanjan,,,521302,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان زنجان,,,,county,2,IR-19,شهرستان زنجان,,,,,region,1,IR-19,استان زنجان,HIGH,1.0,IR-19
+Iran,Khodābandeh,Zanjan,,,164493,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان خدابنده,,,,county,2,IR-19,شهرستان خدابنده,,,,,region,1,IR-19,استان زنجان,HIGH,1.0,IR-19
+Iran,Abhar,Zanjan,,,151528,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان ابهر,,,,locality,,IR-19,شهر ابهر,,,,,region,1,IR-19,استان زنجان,HIGH,1.0,IR-19
+Iran,Khoramdareh,Zanjan,,,67951,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان خرمدره,,,,county,2,IR-19,شهرستان خرمدره,,,,,region,1,IR-19,استان زنجان,HIGH,1.0,IR-19
+Iran,Ṭārom,Zanjan,,,46641,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان طارم,,,,county,2,IR-19,شهرستان طارم,,,,,region,1,IR-19,استان زنجان,HIGH,1.0,IR-19
+Iran,Māh Neshān,Zanjan,,,39425,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان ماه نشان,,,,,,,,,,,,region,1,IR-19,استان زنجان,NONE,0.0,IR-19
+Iran,Ejrūd,Zanjan,,,36641,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان ایجرود,,,,,,,,,,,,region,1,IR-19,استان زنجان,NONE,0.0,IR-19
+Iran,Solṭāniyeh,Zanjan,,,29480,County,,,#N/A,2016,ZanjanIran,county,2,IR-19,شهرستان سلطانیه,,,,,,,,,,,,region,1,IR-19,استان زنجان,NONE,0.0,IR-19

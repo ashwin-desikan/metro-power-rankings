@@ -1,0 +1,27 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Bahamas,North Abaco + Grand Cay + Green Turtle Cay + Hope Town,Abaco,,,10057,District,,,#N/A,,AbacoBahamas,region,1,BS-NO,North Abaco,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,South Abaco + Central Abaco + Moore's Island,Abaco,,,6530,District,,,#N/A,,AbacoBahamas,region,1,BS-CO,Central Abaco,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,Acklins,Acklins,,,692,District,,,#N/A,,AcklinsBahamas,region,1,BS-AK,Acklins,,,,region,1,BS-AK,Acklins,,,,,region,1,BS-AK,Acklins,HIGH,1.0,BS-AK
+Bahamas,North Andros,Andros,,,4069,District,,,#N/A,,AndrosBahamas,region,1,BS-NS,North Andros,,,,region,1,BS-NS,North Andros,,,,,region,1,BS-NS,North Andros,HIGH,1.0,BS-NS
+Bahamas,South Andros + Central Andros + Mangrove Cay,Andros,,,3711,District,,,#N/A,,AndrosBahamas,region,1,BS-SA,South Andros,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,Berry Islands,Berry Islands,,,1016,District,,,#N/A,,Berry IslandsBahamas,region,1,BS-BY,Berry Islands,,,,region,1,BS-BY,Berry Islands,,,,,region,1,BS-BY,Berry Islands,HIGH,1.0,BS-BY
+Bahamas,Bimini,Bimini,,,2418,District,,,#N/A,,BiminiBahamas,region,1,BS-BI,Bimini,,,,region,1,BS-BI,Bimini,,,,,region,1,BS-BI,Bimini,HIGH,1.0,BS-BI
+Bahamas,Cat Island,Cat Island,,,1601,District,,,#N/A,,Cat IslandBahamas,region,1,BS-CI,Cat Island,,,,region,1,BS-CI,Cat Island,,,,,region,1,BS-CI,Cat Island,HIGH,1.0,BS-CI
+Bahamas,Crooked Island,Crooked Island,,,305,District,,,#N/A,,Crooked IslandBahamas,region,1,BS-CK,Crooked Island and Long Cay,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,South Eleuthera + Central Eleuthera,Eleuthera,,,5324,District,,,#N/A,,EleutheraBahamas,region,1,BS-SE,South Eleuthera,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,North Eleuthera,Eleuthera,,,3923,District,,,#N/A,,EleutheraBahamas,region,1,BS-NE,North Eleuthera,,,,region,1,BS-NE,North Eleuthera,,,,,region,1,BS-NE,North Eleuthera,HIGH,1.0,BS-NE
+Bahamas,Harbour Island,Eleuthera,,,1861,District,,,#N/A,,EleutheraBahamas,region,1,BS-HI,Harbour Island,,,,region,1,BS-HI,Harbour Island,,,,,region,1,BS-HI,Harbour Island,HIGH,1.0,BS-HI
+Bahamas,Spanish Wells,Eleuthera,,,1609,District,,,#N/A,,EleutheraBahamas,region,1,BS-SW,Spanish Wells,,,,region,1,BS-SW,Spanish Wells,,,,,region,1,BS-SW,Spanish Wells,HIGH,1.0,BS-SW
+Bahamas,Exuma + Black Point,Exuma and Cays,,,7293,District,,,#N/A,,Exuma and CaysBahamas,region,1,BS-EX,Exuma,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,Grand Bahama,Grand Bahama,,,11496,District,Freeport (BAH),,Freeport (BAH),,Grand BahamaBahamas,region,1,BS-FP,City of Freeport,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,East Grand Bahama,Grand Bahama,,,11011,District,Freeport (BAH),,Freeport (BAH),,Grand BahamaBahamas,region,1,BS-EG,East Grand Bahama,,,,region,1,BS-EG,East Grand Bahama,,,,,region,1,BS-EG,East Grand Bahama,HIGH,1.0,BS-EG
+Bahamas,Marco City,Grand Bahama,,,10527,District,Freeport (BAH),,Freeport (BAH),,Grand BahamaBahamas,region,1,BS-FP,City of Freeport,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,Pineridge,Grand Bahama,,,8082,District,Freeport (BAH),,Freeport (BAH),,Grand BahamaBahamas,region,1,BS-FP,City of Freeport,,,,,,,,,,,,,,,,NONE,0.0,
+Bahamas,West Grand Bahama,Grand Bahama,,,5960,District,Freeport (BAH),,Freeport (BAH),,Grand BahamaBahamas,region,1,BS-WG,West Grand Bahama,,,,region,1,BS-WG,West Grand Bahama,,,,,region,1,BS-WG,West Grand Bahama,HIGH,1.0,BS-WG
+Bahamas,Inagua,Inagua,,,856,District,,,#N/A,,InaguaBahamas,region,1,BS-IN,Inagua,,,,region,1,BS-IN,Inagua,,,,,region,1,BS-IN,Inagua,HIGH,1.0,BS-IN
+Bahamas,Long Island,Long Island,,,2887,District,,,#N/A,,Long IslandBahamas,region,1,BS-LI,Long Island,,,,region,1,BS-LI,Long Island,,,,,region,1,BS-LI,Long Island,HIGH,1.0,BS-LI
+Bahamas,Mayaguana,Mayaguana,,,208,District,,,#N/A,,MayaguanaBahamas,region,1,BS-MG,Mayaguana,,,,region,1,BS-MG,Mayaguana,,,,,region,1,BS-MG,Mayaguana,HIGH,1.0,BS-MG
+Bahamas,New Providence,New Providence,,,296521,District,Nassau (BAH),,Nassau (BAH),,New ProvidenceBahamas,region,1,BS-NP,New Providence,,,,region,1,BS-NP,New Providence,,,,,region,1,BS-NP,New Providence,HIGH,1.0,BS-NP
+Bahamas,Ragged Island,Ragged Island,,,44,District,,,#N/A,,Ragged IslandBahamas,region,1,BS-RI,Ragged Island,,,,region,1,BS-RI,Ragged Island,,,,,region,1,BS-RI,Ragged Island,HIGH,1.0,BS-RI
+Bahamas,Rum Cay,Rum Cay,,,90,District,,,#N/A,,Rum CayBahamas,region,1,BS-RC,Rum Cay,,,,region,1,BS-RC,Rum Cay,,,,,region,1,BS-RC,Rum Cay,HIGH,1.0,BS-RC
+Bahamas,San Salvador,San Salvador,,,825,District,,,#N/A,,San SalvadorBahamas,region,1,BS-SS,San Salvador,,,,region,1,BS-SS,San Salvador,,,,,region,1,BS-SS,San Salvador,HIGH,1.0,BS-SS

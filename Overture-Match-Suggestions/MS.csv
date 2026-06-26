@@ -1,0 +1,5 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Montserrat,Central Region,Central Region,,,1475,Region,Brades,,Brades,,Central RegionMontserrat,dependency,1,,Montserrat,,,,,,,,,,,,,,,,NONE,0.0,
+Montserrat,Exclusion Zone,Exclusion Zone,,,0,Zone,,,#N/A,,Exclusion ZoneMontserrat,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Montserrat,Northern Region,Northern Region,,,2163,Region,Brades,,Brades,,Northern RegionMontserrat,dependency,1,,Montserrat,,,,,,,,,,,,,,,,NONE,0.0,
+Montserrat,South of Nantes River,South of Nantes River,,,928,Region,Brades,,Brades,,South of Nantes RiverMontserrat,dependency,1,,Montserrat,,,,,,,,,,,,,,,,NONE,0.0,

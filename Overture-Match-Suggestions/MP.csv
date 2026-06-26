@@ -1,0 +1,4 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Northern Mariana Islands,Rota,Rota,,,2477,Municipality,,,#N/A,,RotaNorthern Mariana Islands,region,2,,Rota Municipality,,,,region,2,nan,Rota Municipality,,,,,,,,,HIGH,1.0,nan
+Northern Mariana Islands,Saipan,Saipan,,,48220,Municipality,Saipan,,Saipan,,SaipanNorthern Mariana Islands,region,2,,Saipan Municipality,,,,region,2,nan,Saipan Municipality,,,,,,,,,HIGH,1.0,nan
+Northern Mariana Islands,Tinian,Tinian,,,3136,Municipality,,,#N/A,,TinianNorthern Mariana Islands,region,2,,Tinian Municipality,,,,region,2,nan,Tinian Municipality,,,,,,,,,HIGH,1.0,nan

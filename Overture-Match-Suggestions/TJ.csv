@@ -1,0 +1,63 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Tajikistan,Dušanbe [Dushanbe],Dushanbe,,,1201800,City,Dushanbe,,Dushanbe,,DushanbeTajikistan,region,1,TJ-DU,Душанбе,,,,,,,,,,,,region,1,TJ-DU,Душанбе,NONE,0.0,TJ-DU
+Tajikistan,Šuġnon [Shughnon; incl. Choruġ],Gorno-Badakhshan,,,70600,District,,,#N/A,,Gorno-BadakhshanTajikistan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Tajikistan,Vanç [Vanj],Gorno-Badakhshan,,,34400,District,,,#N/A,,Gorno-BadakhshanTajikistan,county,2,TJ-GB,Ноҳияи Ванҷ,,,,,,,,,,,,,,,,NONE,0.0,
+Tajikistan,Iškošim [Ishkoshim],Gorno-Badakhshan,,,30600,District,,,#N/A,,Gorno-BadakhshanTajikistan,county,2,TJ-GB,Ноҳияи Ишкошим,,,,,,,,,,,,,,,,NONE,0.0,
+Tajikistan,Roštḳal'a [Roshtqala],Gorno-Badakhshan,,,28100,District,,,#N/A,,Gorno-BadakhshanTajikistan,county,2,TJ-GB,Ноҳияи Роштқалъа,,,,,,,,,,,,,,,,NONE,0.0,
+Tajikistan,Rūšon [Rushon],Gorno-Badakhshan,,,26500,District,,,#N/A,,Gorno-BadakhshanTajikistan,county,2,TJ-GB,Ноҳияи Рӯшон,,,,,,,,,,,,,,,,NONE,0.0,
+Tajikistan,Darvoz,Gorno-Badakhshan,,,23500,District,,,#N/A,,Gorno-BadakhshanTajikistan,county,2,TJ-GB,Ноҳияи Дарвоз,,,,county,2,TJ-GB,Ноҳияи Дарвоз,,,,,region,1,TJ-GB,Вилояти Мухтори Кӯҳистони Бадахшон,HIGH,1.0,TJ-GB
+Tajikistan,Murġob [Murghob],Gorno-Badakhshan,,,16400,District,,,#N/A,,Gorno-BadakhshanTajikistan,county,2,TJ-GB,Ноҳияи Мурғоб,,,,,,,,,,,,,,,,NONE,0.0,
+Tajikistan,Rūdakī,Karotegin,,,387200,District,Dushanbe,,Dushanbe,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Рӯдакӣ,,,,county,2,TJ-RA,Ноҳияи Рӯдакӣ,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,HIGH,1.0,TJ-RA
+Tajikistan,Vah̦dat,Karotegin,,,359800,City,Dushanbe,,Dushanbe,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Ваҳдат,,,,locality,,TJ-RA,Ваҳдат,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,HIGH,1.0,TJ-RA
+Tajikistan,H̦isor,Karotegin,,,331400,City,Dushanbe,,Dushanbe,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Ҳисор,,,,county,2,TJ-RA,Ноҳияи Ҳисор,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,HIGH,1.0,TJ-RA
+Tajikistan,Varzob,Karotegin,,,89300,District,Dushanbe,,Dushanbe,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Варзоб,,,,county,2,TJ-RA,Ноҳияи Варзоб,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,HIGH,1.0,TJ-RA
+Tajikistan,Tursunzoda,Karotegin,,,320200,City,Tursunzoda,,Tursunzoda,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Турсунзода,,,,county,2,TJ-RA,Ноҳияи Турсунзода,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,HIGH,1.0,TJ-RA
+Tajikistan,Rašt [Rasht],Karotegin,,,131100,District,,,#N/A,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Рашт,,,,,,,,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,NONE,0.0,TJ-RA
+Tajikistan,Šah̦rinav [Sharinav],Karotegin,,,121900,District,,,#N/A,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Шаҳринав,,,,,,,,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,NONE,0.0,TJ-RA
+Tajikistan,Fajzobod [Fayzobod],Karotegin,,,111700,District,,,#N/A,,KaroteginTajikistan,,,,,,,,,,,,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,NONE,0.0,TJ-RA
+Tajikistan,Nurobod,Karotegin,,,72600,District,,,#N/A,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Нуробод,,,,county,2,TJ-RA,Ноҳияи Нуробод,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,HIGH,1.0,TJ-RA
+Tajikistan,"Lachš [Çirgatol, Lakhsh]",Karotegin,,,54400,District,,,#N/A,,KaroteginTajikistan,,,,,,,,,,,,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,NONE,0.0,TJ-RA
+Tajikistan,Toçikobod [Tojikobod],Karotegin,,,50900,District,,,#N/A,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Тоҷикобод,,,,,,,,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,NONE,0.0,TJ-RA
+Tajikistan,Roġun [Roghun],Karotegin,,,45400,City,,,#N/A,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Роғун,,,,,,,,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,NONE,0.0,TJ-RA
+Tajikistan,Sangvor [Tavildara],Karotegin,,,25100,District,,,#N/A,,KaroteginTajikistan,county,2,TJ-RA,Ноҳияи Сангвор,,,,,,,,,,,,region,1,TJ-RA,Ноҳияҳои тобеи ҷумҳурӣ,NONE,0.0,TJ-RA
+Tajikistan,Kūšonijën [Kushoniyon; incl. Bochtar],Khatlon,,,387200,District,Bokhtar,,Bokhtar,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Кӯшониён,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Levakant [Sarband],Khatlon,,,49700,City,Bokhtar,,Bokhtar,,KhatlonTajikistan,county,2,TJ-KT,Yоҳияи Леваканд,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Ëvon [Yovon],Khatlon,,,248100,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Ёвон,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Vose',Khatlon,,,228200,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Восеъ,,,,county,2,TJ-KT,Ноҳияи Восеъ,,,,,region,1,TJ-KT,Вилояти Хатлон,HIGH,1.0,TJ-KT
+Tajikistan,Kūlob,Khatlon,,,222100,City,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Кӯлоб,,,,county,2,TJ-KT,Ноҳияи Кӯлоб,,,,,region,1,TJ-KT,Вилояти Хатлон,HIGH,1.0,TJ-KT
+Tajikistan,Vachš [Vakhsh],Khatlon,,,213000,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Вахш,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,"Çaloliddin Balchī [Rumī, Jalaladdin Balkhi]",Khatlon,,,210500,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Ҷалолиддин Балхӣ,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Ḳubodjën [Qabodiyon],Khatlon,,,195100,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Қубодиён,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Abdurah̦moni Çomī [Dzhami],Khatlon,,,183900,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Абдураҳмони Ҷомӣ,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Farchor [Farkhor],Khatlon,,,179100,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Фархор,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Danġara [Danghara],Khatlon,,,171900,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Данғара,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Mir Sajid Alii H̦amadonī [Hamadoni],Khatlon,,,154300,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Ҳамадонӣ,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,"Çajh̦un [Ḳumsangir, Jayhun]",Khatlon,,,145600,District,,,#N/A,,KhatlonTajikistan,,,,,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Šah̦ritus [Shahritus],Khatlon,,,135700,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-SU,Ноҳияи Шаҳристон,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Churoson [Khuroson],Khatlon,,,126300,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Хуросон,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Panç [Panj],Khatlon,,,124100,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Панҷ,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Dūstī [Çilikūl],Khatlon,,,122000,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Дӯстӣ,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Mūminobod,Khatlon,,,99300,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Мӯъминобод,,,,county,2,TJ-KT,Ноҳияи Мӯъминобод,,,,,region,1,TJ-KT,Вилояти Хатлон,HIGH,1.0,TJ-KT
+Tajikistan,Temurmalik,Khatlon,,,75300,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Темурмалик,,,,county,2,TJ-KT,Ноҳияи Темурмалик,,,,,region,1,TJ-KT,Вилояти Хатлон,HIGH,1.0,TJ-KT
+Tajikistan,Norak,Khatlon,,,64900,City,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Норак,,,,county,2,TJ-KT,Ноҳияи Норак,,,,,region,1,TJ-KT,Вилояти Хатлон,HIGH,1.0,TJ-KT
+Tajikistan,Chovaling [Khovaling],Khatlon,,,58300,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Ховалинг,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,"Šamsiddin Šoh̦in [Šūroobod, Shamsiddin Shohin]",Khatlon,,,57700,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Шамсиддин Шоҳин,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Nosiri Chusrav [Nosiri Khusrav],Khatlon,,,45100,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Носири Хусрав,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Balçuvon [Baljuvon],Khatlon,,,32700,District,,,#N/A,,KhatlonTajikistan,county,2,TJ-KT,Ноҳияи Балҷувон,,,,,,,,,,,,region,1,TJ-KT,Вилояти Хатлон,NONE,0.0,TJ-KT
+Tajikistan,Isfara,Sughd,,,285000,City,Isfara,,Isfara,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Исфара,,,,locality,,TJ-SU,Исфара,,,,,region,1,TJ-SU,Вилояти Суғд,HIGH,1.0,TJ-SU
+Tajikistan,Istaravšan [Istaravshan],Sughd,,,288100,City,Istaravshan,,Istaravshan,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Истаравшан,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Pançakent [Panjakent],Sughd,,,312400,City,Panjakent,,Panjakent,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Панҷакент,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Boboçon Ġafurov [Ghafurov; incl. Istiḳlol],Sughd,,,407300,District,,,#N/A,,SughdTajikistan,,,,,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Konibodom,Sughd,,,219900,City,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Конибодом,,,,county,2,TJ-SU,Ноҳияи Конибодом,,,,,region,1,TJ-SU,Вилояти Суғд,HIGH,1.0,TJ-SU
+Tajikistan,Chuçand [Khujand],Sughd,,,198700,City,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Шаҳри Хуҷанд,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,"Devaštič [Ġončī, Devashtich]",Sughd,,,182100,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Деваштич,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Ašt [Asht],Sughd,,,176300,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Ашт,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Spitamen,Sughd,,,149700,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Спитаман,,,,county,2,TJ-SU,Ноҳияи Спитаман,,,,,region,1,TJ-SU,Вилояти Суғд,HIGH,1.0,TJ-SU
+Tajikistan,Çabbor Rasulov [Jabbor Rasulov],Sughd,,,144100,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Ҷаббор Расулов,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Mastčoh̦ [Mastchoh],Sughd,,,132500,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Мастчоҳ,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Ajnī [Ayni],Sughd,,,91200,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Айнӣ,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Zafarobod,Sughd,,,77400,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Зафаробод,,,,county,2,TJ-SU,Ноҳияи Зафаробод,,,,,region,1,TJ-SU,Вилояти Суғд,HIGH,1.0,TJ-SU
+Tajikistan,Guliston [Ḳajroqqum],Sughd,,,50200,City,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Шаҳри Гулистон,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Šah̦riston [Shahriston],Sughd,,,46200,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Шаҳристон,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Būston [Čkalov],Sughd,,,38400,City,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Шаҳри Бӯстон,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU
+Tajikistan,Kūh̦istoni Mastčoh̦ [Kuhistoni Mastchoh],Sughd,,,24400,District,,,#N/A,,SughdTajikistan,county,2,TJ-SU,Ноҳияи Кӯҳистони Мастчоҳ,,,,,,,,,,,,region,1,TJ-SU,Вилояти Суғд,NONE,0.0,TJ-SU

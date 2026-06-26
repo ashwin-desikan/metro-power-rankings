@@ -1,0 +1,115 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Madagascar,Ambatondrazaka,Alaotra-Mangoro,,,375183,District,,,#N/A,,Alaotra-MangoroMadagascar,county,2,,Ambatondrazaka,,,,county,2,nan,Ambatondrazaka,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Moramanga,Alaotra-Mangoro,,,369814,District,,,#N/A,,Alaotra-MangoroMadagascar,county,2,,Moramanga,,,,county,2,nan,Moramanga,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Amparafaravola,Alaotra-Mangoro,,,338494,District,,,#N/A,,Alaotra-MangoroMadagascar,county,2,,Amparafaravola,,,,county,2,nan,Amparafaravola,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Anosibe An'ala,Alaotra-Mangoro,,,118439,District,,,#N/A,,Alaotra-MangoroMadagascar,county,2,,Anosibe-An'ala,,,,county,2,nan,Anosibe-An'ala,,,,,region,1,nan,Atsinanana,MED,0.929,nan
+Madagascar,Andilamena,Alaotra-Mangoro,,,114206,District,,,#N/A,,Alaotra-MangoroMadagascar,county,2,,Andilamena,,,,county,2,nan,Andilamena,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambositra,Amoron'i Mania,,,314968,District,,,#N/A,,Amoron'i ManiaMadagascar,county,2,,Ambositra,,,,county,2,nan,Ambositra,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambatofinandrahana,Amoron'i Mania,,,237262,District,,,#N/A,,Amoron'i ManiaMadagascar,county,2,,Ambatofinandrahana,,,,county,2,nan,Ambatofinandrahana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Fandriana,Amoron'i Mania,,,225574,District,,,#N/A,,Amoron'i ManiaMadagascar,county,2,,Fandriana,,,,county,2,nan,Fandriana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Manandriana,Amoron'i Mania,,,111693,District,,,#N/A,,Amoron'i ManiaMadagascar,county,2,,Manandriana,,,,county,2,nan,Manandriana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antananarivo Renivohitra,Analamanga,,,1321269,District,Antananarivo,,Antananarivo,,AnalamangaMadagascar,county,2,,1er Arrondissement,x,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Antananarivo Atsimondrano,Analamanga,,,699348,District,Antananarivo,,Antananarivo,,AnalamangaMadagascar,county,2,,Antananarivo Atsimondrano,,,,county,2,nan,Antananarivo Atsimondrano,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antananarivo Avaradrano,Analamanga,,,483687,District,Antananarivo,,Antananarivo,,AnalamangaMadagascar,county,2,,Antananarivo Avaradrano,,,,county,2,nan,Antananarivo Avaradrano,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambohidratrimo,Analamanga,,,470221,District,Antananarivo,,Antananarivo,,AnalamangaMadagascar,county,2,,Ambohidratrimo,,,,county,2,nan,Ambohidratrimo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Manjakandriana,Analamanga,,,223286,District,Antananarivo,,Antananarivo,,AnalamangaMadagascar,county,2,,Manjakandriana,,,,locality,,nan,Manjakandriana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Andramasina,Analamanga,,,173237,District,Antananarivo,,Antananarivo,,AnalamangaMadagascar,county,2,,Andramasina,,,,county,2,nan,Andramasina,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Anjozorobe,Analamanga,,,236729,District,,,#N/A,,AnalamangaMadagascar,county,2,,Anjozorobe,,,,county,2,nan,Anjozorobe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ankazobe,Analamanga,,,204349,District,,,#N/A,,AnalamangaMadagascar,county,2,,Ankazobe,,,,locality,,nan,Ankazobe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Fenoarivo Atsinanana (Fenerive-Est),Analanjirofo,,,303525,District,,,#N/A,,AnalanjirofoMadagascar,,,,,,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Maroantsetra,Analanjirofo,,,264234,District,,,#N/A,,AnalanjirofoMadagascar,county,2,,Maroantsetra,,,,county,2,nan,Maroantsetra,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mananara Avaratra (Mananara-Nord),Analanjirofo,,,261784,District,,,#N/A,,AnalanjirofoMadagascar,county,2,,Mananara-Avaratra,,,,county,2,nan,Mananara-Avaratra,,,,,region,1,nan,Atsinanana,MED,0.941,nan
+Madagascar,Vavatenina,Analanjirofo,,,202529,District,,,#N/A,,AnalanjirofoMadagascar,county,2,,Vavatenina,,,,county,2,nan,Vavatenina,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Soanierana Ivongo,Analanjirofo,,,150841,District,,,#N/A,,AnalanjirofoMadagascar,county,2,,Soanierana Ivongo,,,,county,2,nan,Soanierana Ivongo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Nosy Boraha (Sainte-Marie),Analanjirofo,,,28467,District,,,#N/A,,AnalanjirofoMadagascar,,,,,,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Ambovombe-Androy,Androy,,,387339,District,,,#N/A,,AndroyMadagascar,county,2,,Ambovombe-Androy,,,,county,2,nan,Ambovombe-Androy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Bekily,Androy,,,252765,District,,,#N/A,,AndroyMadagascar,county,2,,Bekily,,,,county,2,nan,Bekily,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Beloha,Androy,,,167650,District,,,#N/A,,AndroyMadagascar,county,2,,Beloha,,,,county,2,nan,Beloha,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Tsihombe,Androy,,,158954,District,,,#N/A,,AndroyMadagascar,county,2,,Tsihombe,,,,county,2,nan,Tsihombe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Taolanaro (Tôlanaro),Anosy,,,361313,District,Tôlanaro,,Tôlanaro,,AnosyMadagascar,county,2,,Taolagnaro,,,,county,2,nan,Taolagnaro,,,,,region,1,nan,Atsinanana,MED,0.947,nan
+Madagascar,Amboasary Atsimo (Amboasary-Sud),Anosy,,,275397,District,,,#N/A,,AnosyMadagascar,county,2,,Amboasary-Atsimo,,,,county,2,nan,Amboasary-Atsimo,,,,,region,1,nan,Atsinanana,MED,0.938,nan
+Madagascar,Betroka,Anosy,,,222278,District,,,#N/A,,AnosyMadagascar,county,2,,Betroka,,,,county,2,nan,Betroka,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Toliara I,Atsimo-Andrefana,,,175251,District,Toliara,,Toliara,,Atsimo-AndrefanaMadagascar,county,2,,Toliary-I,,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Ampanihy Ouest,Atsimo-Andrefana,,,420065,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Ampanihy Ouest,,,,county,2,nan,Ampanihy Ouest,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Toliara II,Atsimo-Andrefana,,,391939,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Toliary-II,,,,county,2,nan,Toliary-II,,,,,region,1,nan,Atsinanana,LOW,0.8,nan
+Madagascar,Betioky Atsimo (Betioky-Sud),Atsimo-Andrefana,,,321809,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Betioky Atsimo,,,,county,2,nan,Betioky Atsimo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Morombe,Atsimo-Andrefana,,,231431,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Morombe,,,,county,2,nan,Morombe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Sakaraha,Atsimo-Andrefana,,,160094,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Sakaraha,,,,county,2,nan,Sakaraha,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ankazoabo,Atsimo-Andrefana,,,74751,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Ankazoabo,,,,county,2,nan,Ankazoabo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Beroroha,Atsimo-Andrefana,,,71712,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Beroroha,,,,county,2,nan,Beroroha,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Benenitra,Atsimo-Andrefana,,,44972,District,,,#N/A,,Atsimo-AndrefanaMadagascar,county,2,,Benenitra,,,,county,2,nan,Benenitra,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Farafangana,Atsimo-Atsinanana,,,436226,District,,,#N/A,,Atsimo-AtsinananaMadagascar,county,2,,Farafangana,,,,county,2,nan,Farafangana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Vangaindrano,Atsimo-Atsinanana,,,376110,District,,,#N/A,,Atsimo-AtsinananaMadagascar,county,2,,Vangaindrano,,,,county,2,nan,Vangaindrano,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Vondrozo,Atsimo-Atsinanana,,,174769,District,,,#N/A,,Atsimo-AtsinananaMadagascar,county,2,,Vondrozo,,,,county,2,nan,Vondrozo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Befotaka (Befotaka-Sud),Atsimo-Atsinanana,,,57750,District,,,#N/A,,Atsimo-AtsinananaMadagascar,county,2,,Befotaka,,,,locality,,nan,Befotaka,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Midongy (Midongy Atsimo),Atsimo-Atsinanana,,,50812,District,,,#N/A,,Atsimo-AtsinananaMadagascar,,,,,,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Toamasina I,Atsinanana,,,350607,District,Toamasina,,Toamasina,,AtsinananaMadagascar,county,2,,Toamasina I,,,,county,2,nan,Toamasina I,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mahanoro,Atsinanana,,,299459,District,,,#N/A,,AtsinananaMadagascar,county,2,,Mahanoro,,,,locality,,nan,Mahanoro,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Toamasina II,Atsinanana,,,276478,District,,,#N/A,,AtsinananaMadagascar,county,2,,Toamasina II,,,,county,2,nan,Toamasina II,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Vohibinany (Brickaville),Atsinanana,,,218727,District,,,#N/A,,AtsinananaMadagascar,,,,,,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Vatomandry,Atsinanana,,,177786,District,,,#N/A,,AtsinananaMadagascar,county,2,,Vatomandry,,,,county,2,nan,Vatomandry,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Marolambo,Atsinanana,,,174871,District,,,#N/A,,AtsinananaMadagascar,county,2,,Marolambo,,,,county,2,nan,Marolambo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antanambao Manampontsy,Atsinanana,,,64402,District,,,#N/A,,AtsinananaMadagascar,county,2,,Antanambao Manampontsy,,,,county,2,nan,Antanambao Manampontsy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Maevatanana,Betsiboka,,,236791,District,,,#N/A,,BetsibokaMadagascar,county,2,,Maevatanana,,,,county,2,nan,Maevatanana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Tsaratanana,Betsiboka,,,152822,District,,,#N/A,,BetsibokaMadagascar,county,2,,Tsaratanana,,,,locality,,nan,Tsaratanana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Kandreho,Betsiboka,,,27997,District,,,#N/A,,BetsibokaMadagascar,county,2,,Kandreho,,,,county,2,nan,Kandreho,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mahajanga I,Boeny,,,258068,District,Mahajanga,,Mahajanga,,BoenyMadagascar,county,2,,Mahajanga I,,,,county,2,nan,Mahajanga I,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambato-Boeni (Ambato Boina),Boeny,,,283840,District,,,#N/A,,BoenyMadagascar,county,2,,Ambato Boeni,,,,county,2,nan,Ambato Boeni,,,,,region,1,nan,Atsinanana,LOW,0.917,nan
+Madagascar,Marovoay,Boeny,,,204963,District,,,#N/A,,BoenyMadagascar,county,2,,Marovoay,,,,county,2,nan,Marovoay,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mahajanga II,Boeny,,,101218,District,,,#N/A,,BoenyMadagascar,county,2,,Mahajanga II,,,,county,2,nan,Mahajanga II,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mitsinjo,Boeny,,,87202,District,,,#N/A,,BoenyMadagascar,county,2,,Mitsinjo,,,,county,2,nan,Mitsinjo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Soalala,Boeny,,,43059,District,,,#N/A,,BoenyMadagascar,county,2,,Soalala,,,,county,2,nan,Soalala,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Tsiroanomandidy,Bongolava,,,521372,District,,,#N/A,,BongolavaMadagascar,county,2,,Tsiroanomandidy,,,,county,2,nan,Tsiroanomandidy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Fenoarivobe (Fenoarivo Afovoany),Bongolava,,,191309,District,,,#N/A,,BongolavaMadagascar,county,2,,Fenoarivobe,,,,county,2,nan,Fenoarivobe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antsiranana I,Diana,,,134922,District,Antsiranana,,Antsiranana,,DianaMadagascar,county,2,,Antsiranana I,,,,county,2,nan,Antsiranana I,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Nosy Be,Diana,,,118025,District,Nosy Be,,Nosy Be,,DianaMadagascar,county,2,,Nosy-Be,,,,county,2,nan,Nosy-Be,,,,,region,1,nan,Atsinanana,LOW,0.857,nan
+Madagascar,Ambilobe,Diana,,,301103,District,,,#N/A,,DianaMadagascar,county,2,,Ambilobe,,,,county,2,nan,Ambilobe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambanja,Diana,,,248842,District,,,#N/A,,DianaMadagascar,county,2,,Ambanja,,,,county,2,nan,Ambanja,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antsiranana II,Diana,,,136389,District,,,#N/A,,DianaMadagascar,county,2,,Antsiranana II,,,,county,2,nan,Antsiranana II,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambalavao,Haute Matsiatra (Matsiatra Ambony),,,316842,District,,,#N/A,,Haute Matsiatra (Matsiatra Ambony)Madagascar,county,2,,Ambalavao,,,,locality,,nan,Ambalavao,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambohimahasoa,Haute Matsiatra (Matsiatra Ambony),,,284782,District,,,#N/A,,Haute Matsiatra (Matsiatra Ambony)Madagascar,county,2,,Ambohimahasoa,,,,county,2,nan,Ambohimahasoa,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Vohibato,Haute Matsiatra (Matsiatra Ambony),,,232518,District,,,#N/A,,Haute Matsiatra (Matsiatra Ambony)Madagascar,county,2,,Vohibato,,,,county,2,nan,Vohibato,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Fianarantsoa I,Haute Matsiatra (Matsiatra Ambony),,,200765,District,,,#N/A,,Haute Matsiatra (Matsiatra Ambony)Madagascar,county,2,,Fianarantsoa I,,,,county,2,nan,Fianarantsoa I,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Lalangina,Haute Matsiatra (Matsiatra Ambony),,,192344,District,,,#N/A,,Haute Matsiatra (Matsiatra Ambony)Madagascar,county,2,,Lalangina,,,,county,2,nan,Lalangina,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Isandra,Haute Matsiatra (Matsiatra Ambony),,,157769,District,,,#N/A,,Haute Matsiatra (Matsiatra Ambony)Madagascar,county,2,,Isandra,,,,county,2,nan,Isandra,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ikalamavony,Haute Matsiatra (Matsiatra Ambony),,,137092,District,,,#N/A,,Haute Matsiatra (Matsiatra Ambony)Madagascar,county,2,,Ikalamavony,,,,locality,,nan,Ikalamavony,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ihosy,Ihorombe,,,313733,District,,,#N/A,,IhorombeMadagascar,county,2,,Ihosy,,,,county,2,nan,Ihosy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ivohibe,Ihorombe,,,72077,District,,,#N/A,,IhorombeMadagascar,county,2,,Ivohibe,,,,county,2,nan,Ivohibe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Iakora,Ihorombe,,,57362,District,,,#N/A,,IhorombeMadagascar,county,2,,Iakora,,,,county,2,nan,Iakora,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Arivonimamo,Itasy,,,372816,District,Antananarivo,,Antananarivo,,ItasyMadagascar,county,2,,Arivonimamo,,,,county,2,nan,Arivonimamo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Miarinarivo,Itasy,,,313443,District,,,#N/A,,ItasyMadagascar,county,2,,Miarinarivo,,,,county,2,nan,Miarinarivo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Soavinandriana,Itasy,,,267937,District,,,#N/A,,ItasyMadagascar,county,2,,Soavinandriana,,,,locality,,nan,Soavinandriana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Maintirano,Melaky,,,122505,District,,,#N/A,,MelakyMadagascar,county,2,,Maintirano,,,,county,2,nan,Maintirano,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Besalampy,Melaky,,,62347,District,,,#N/A,,MelakyMadagascar,county,2,,Besalampy,,,,county,2,nan,Besalampy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antsalova,Melaky,,,62306,District,,,#N/A,,MelakyMadagascar,county,2,,Antsalova,,,,county,2,nan,Antsalova,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambatomainty,Melaky,,,46739,District,,,#N/A,,MelakyMadagascar,county,2,,Ambatomainty,,,,county,2,nan,Ambatomainty,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Morafenobe,Melaky,,,36470,District,,,#N/A,,MelakyMadagascar,county,2,,Morafenobe,,,,county,2,nan,Morafenobe,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Miandrivazo,Menabe,,,162462,District,,,#N/A,,MenabeMadagascar,county,2,,Miandrivazo,,,,county,2,nan,Miandrivazo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Morondava,Menabe,,,157596,District,,,#N/A,,MenabeMadagascar,county,2,,Morondava,,,,county,2,nan,Morondava,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mahabo,Menabe,,,157104,District,,,#N/A,,MenabeMadagascar,county,2,,Mahabo,,,,county,2,nan,Mahabo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Belo sur Tsiribihina (Belon'i Tsiribihina),Menabe,,,138775,District,,,#N/A,,MenabeMadagascar,county,2,,Belo Sur Tsiribihina,,,,county,2,nan,Belo Sur Tsiribihina,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Manja,Menabe,,,111430,District,,,#N/A,,MenabeMadagascar,county,2,,Manja,,,,county,2,nan,Manja,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Sambava,Sava,,,429947,District,,,#N/A,,SavaMadagascar,county,2,,Sambava,,,,locality,,nan,Sambava,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antalaha,Sava,,,282158,District,,,#N/A,,SavaMadagascar,county,2,,Antalaha,,,,locality,,nan,Antalaha,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Vohemar (Vohimarina),Sava,,,264236,District,,,#N/A,,SavaMadagascar,county,2,,Vohemar,,,,county,2,nan,Vohemar,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Andapa,Sava,,,227941,District,,,#N/A,,SavaMadagascar,county,2,,Andapa,,,,locality,,nan,Andapa,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mandritsara,Sofia,,,320647,District,,,#N/A,,SofiaMadagascar,county,2,,Mandritsara,,,,county,2,nan,Mandritsara,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Befandriana Avaratra (Befandriana-Nord),Sofia,,,271314,District,,,#N/A,,SofiaMadagascar,,,,,,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Boriziny-Vaovao (Port-Bergé),Sofia,,,248906,District,,,#N/A,,SofiaMadagascar,,,,,,,,,,,,,,,,region,1,nan,Atsinanana,NONE,0.0,nan
+Madagascar,Mampikony,Sofia,,,204840,District,,,#N/A,,SofiaMadagascar,county,2,,Mampikony,,,,county,2,nan,Mampikony,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Bealanana,Sofia,,,201836,District,,,#N/A,,SofiaMadagascar,county,2,,Bealanana,,,,county,2,nan,Bealanana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antsohihy,Sofia,,,186283,District,,,#N/A,,SofiaMadagascar,county,2,,Antsohihy,,,,county,2,nan,Antsohihy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Analalava,Sofia,,,176396,District,,,#N/A,,SofiaMadagascar,county,2,,Analalava,,,,county,2,nan,Analalava,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ambatolampy,Vakinankaratra,,,299512,District,Antananarivo,,Antananarivo,,VakinankaratraMadagascar,county,2,,Ambatolampy,,,,county,2,nan,Ambatolampy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antsirabe II,Vakinankaratra,,,475556,District,,,#N/A,,VakinankaratraMadagascar,county,2,,Antsirabe II,,,,county,2,nan,Antsirabe II,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antanifotsy,Vakinankaratra,,,374933,District,,,#N/A,,VakinankaratraMadagascar,county,2,,Antanifotsy,,,,county,2,nan,Antanifotsy,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Betafo,Vakinankaratra,,,331696,District,,,#N/A,,VakinankaratraMadagascar,county,2,,Betafo,,,,county,2,nan,Betafo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Antsirabe I,Vakinankaratra,,,265018,District,,,#N/A,,VakinankaratraMadagascar,county,2,,Antsirabe I,,,,county,2,nan,Antsirabe I,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Faratsiho,Vakinankaratra,,,237162,District,,,#N/A,,VakinankaratraMadagascar,county,2,,Faratsiho,,,,county,2,nan,Faratsiho,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mandoto,Vakinankaratra,,,227800,District,,,#N/A,,VakinankaratraMadagascar,county,2,,Mandoto,,,,county,2,nan,Mandoto,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Manakara (Manakara Atsimo),Vatovavy-Fitovinany,,,414818,District,,,#N/A,,Vatovavy-FitovinanyMadagascar,,,,,,,,locality,,nan,Manakara,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Mananjary,Vatovavy-Fitovinany,,,289411,District,,,#N/A,,Vatovavy-FitovinanyMadagascar,county,2,,Mananjary,,,,county,2,nan,Mananjary,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Nosy Varika,Vatovavy-Fitovinany,,,270332,District,,,#N/A,,Vatovavy-FitovinanyMadagascar,,,,,,,,locality,,nan,Nosy Varika,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ikongo,Vatovavy-Fitovinany,,,222580,District,,,#N/A,,Vatovavy-FitovinanyMadagascar,county,2,,Ikongo,,,,county,2,nan,Ikongo,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Ifanadiana,Vatovavy-Fitovinany,,,183553,District,,,#N/A,,Vatovavy-FitovinanyMadagascar,county,2,,Ifanadiana,,,,county,2,nan,Ifanadiana,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan
+Madagascar,Vohipeno,Vatovavy-Fitovinany,,,154060,District,,,#N/A,,Vatovavy-FitovinanyMadagascar,county,2,,Vohipeno,,,,county,2,nan,Vohipeno,,,,,region,1,nan,Atsinanana,HIGH,1.0,nan

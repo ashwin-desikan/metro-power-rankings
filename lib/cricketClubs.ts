@@ -32,6 +32,17 @@ export function getT20Leagues(): T20Data | null {
 
 let _byName: Map<string, { league: string; titles: number; years: string[] }[]> | null = null;
 
+// Some counties play a T20 competition under a different brand than their
+// Team List franchise name (e.g. Warwickshire Bears contest the Vitality
+// Blast as "Birmingham Bears"). The honours layer is keyed by the brand used
+// in the cricsheet finals, so an exact metro-card lookup on the Team List
+// name misses those Blast titles. Map Team List name -> honours-brand name.
+const T20_NAME_ALIASES: Record<string, string> = {
+  "Warwickshire Bears": "Birmingham Bears",
+  "Essex": "Essex Eagles",
+  "Northamptonshire Steelbacks": "Northants Steelbacks",
+};
+
 // Metro-card lookup: name-first (the metro extract's league label is a
 // workbook display value, not the competition name).
 export function getT20Honours(name: string): { league: string; titles: number; years: string[] }[] {
@@ -44,5 +55,5 @@ export function getT20Honours(name: string): { league: string; titles: number; y
       _byName.set(h.name, list);
     }
   }
-  return _byName.get(name) ?? [];
+  return _byName.get(name) ?? _byName.get(T20_NAME_ALIASES[name] ?? "") ?? [];
 }

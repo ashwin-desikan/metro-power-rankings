@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-26",
+    headline: "NFL International hub: NFL Europe, mapped to its metros",
+    items: [
+      "New NFL International hub documents NFL Europe / WLAF (1991-2007) in full: every World Bowl, every franchise ranked by titles, and season-by-season standings, linked from the NFL page.",
+      "Every franchise now appears as a defunct team on its host metro pages, from Frankfurt to Sacramento; relocations like Birmingham to Rhein and Edinburgh to Glasgow show under both metros.",
+      "The hub also maps the modern NFL International Series, every regular-season game played abroad since 2007, each linked to its host metro and country.",
+    ],
+  },
+  {
     date: "2026-06-25",
     headline: "Live Standings hub, live golf, tennis, cricket, and an NFL Rules Lab",
     items: [

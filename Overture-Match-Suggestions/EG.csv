@@ -1,376 +1,376 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Egypt,Al-Muntazah 1 [Montaza],Alexandria,,,1093203,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Ar-Raml 2 [El Raml],Alexandria,,,659687,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Al-Muntazah 2 [Montaza],Alexandria,,,566870,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Al-'Āmriyah 1 [Amreya],Alexandria,,,497375,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Ad-Dukhaylah [Dekhela],Alexandria,,,494936,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Muḥarram Bik [Moharam Bek],Alexandria,,,293073,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Al-'Āmriyah 2 [Amreya],Alexandria,,,291321,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Ar-Raml 1 [El Raml],Alexandria,,,290275,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Mīnā al-Baṣal,Alexandria,,,264425,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,county,2,EG-ALX,Mina Al-Basal,,,,,region,1,EG-ALX,الإسكندرية,HIGH,1.0,EG-ALX
-Egypt,Sīdi Jābir [Sidi Gaber],Alexandria,,,263344,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Bāb Sharqi,Alexandria,,,237320,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,county,2,EG-ALX,Bab Sharqi,,,,,region,1,EG-ALX,الإسكندرية,HIGH,1.0,EG-ALX
-Egypt,Burj al-'Arab [Borg El Arab],Alexandria,,,129364,Kism (urban and rural parts),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Karmūz [Karmouz],Alexandria,,,108957,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Al-Jumruk [Gomrok],Alexandria,,,96657,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Madīnat Burj al-'Arab al-Jadīdah [New Borg El Arab],Alexandria,,,45865,New City,Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Al-Labān [Labban],Alexandria,,,42954,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Al-'Aṭṭārīn [Ataren],Alexandria,,,38599,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Al-Manshiyah [Mansheya],Alexandria,,,24546,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,As-Sāḥal ash-Shamāli [North Coast],Alexandria,,,3095,Area,Alexandria,,Alexandria,,AlexandriaEgypt,,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
-Egypt,Aswān 2,Aswan,,,199306,Kism (fully urban),Aswan,,Aswan,,AswanEgypt,,,,,county,2,EG-ASN,Aswan,,,,,region,1,EG-ASN,أسوان,LOW,0.833,EG-ASN
-Egypt,Aswān 1,Aswan,,,180468,Kism (fully urban),Aswan,,Aswan,,AswanEgypt,,,,,county,2,EG-ASN,Aswan,,,,,region,1,EG-ASN,أسوان,LOW,0.833,EG-ASN
-Egypt,Aswān,Aswan,,,72549,Markaz,Aswan,,Aswan,,AswanEgypt,,,,,county,2,EG-ASN,Aswan,,,,,region,1,EG-ASN,أسوان,HIGH,1.0,EG-ASN
-Egypt,Madīnat Aswān al-Jadīdah [New Aswan],Aswan,,,112,New City,Aswan,,Aswan,,AswanEgypt,,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
-Egypt,Idfū [Edfu],Aswan,,,488805,Markaz,Edfu,,Edfu,,AswanEgypt,,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
-Egypt,Kawm Umbū [Kom Ombo],Aswan,,,409311,Markaz,,,#N/A,,AswanEgypt,,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
-Egypt,Daraw,Aswan,,,147564,Markaz,,,#N/A,,AswanEgypt,,,,,county,2,EG-ASN,Daraw,,,,,region,1,EG-ASN,أسوان,HIGH,1.0,EG-ASN
-Egypt,Naṣr [Nasser City],Aswan,,,93964,Markaz,,,#N/A,,AswanEgypt,,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
-Egypt,Abū Sunbul [Abu Simbel],Aswan,,,8131,Markaz,,,#N/A,,AswanEgypt,,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
-Egypt,Asyūṭ [Asyut],Asyut,,,562743,Markaz,Asyut,,Asyut,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Asyūṭ 1 [Asyut],Asyut,,,286075,Kism (fully urban),Asyut,,Asyut,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Asyūṭ 2 [Asyut],Asyut,,,242594,Kism (fully urban),Asyut,,Asyut,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Dayrūṭ [Dairut],Asyut,,,653847,Markaz,,,#N/A,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Manfalūṭ,Asyut,,,576972,Markaz,,,#N/A,,AsyutEgypt,,,,,county,2,EG-AST,Manfalut,,,,,region,1,EG-AST,أسيوط,HIGH,1.0,EG-AST
-Egypt,Al-Qūṣiyah,Asyut,,,510317,Markaz,,,#N/A,,AsyutEgypt,,,,,county,2,EG-AST,Al-Qusia,,,,,region,1,EG-AST,أسيوط,LOW,0.889,EG-AST
-Egypt,Abnūb,Asyut,,,454520,Markaz,,,#N/A,,AsyutEgypt,,,,,county,2,EG-AST,Abnub,,,,,region,1,EG-AST,أسيوط,HIGH,1.0,EG-AST
-Egypt,Al-Fatḥ,Asyut,,,348876,Markaz,,,#N/A,,AsyutEgypt,,,,,county,2,EG-AST,Alfath,,,,,region,1,EG-AST,أسيوط,MED,0.923,EG-AST
-Egypt,Al-Badārī,Asyut,,,297487,Markaz,,,#N/A,,AsyutEgypt,,,,,county,2,EG-AST,Al- Badari,,,,,region,1,EG-AST,أسيوط,MED,0.947,EG-AST
-Egypt,Abū Tīj,Asyut,,,251125,Markaz,,,#N/A,,AsyutEgypt,,,,,county,2,EG-AST,Abu Tig,,,,,region,1,EG-AST,أسيوط,LOW,0.857,EG-AST
-Egypt,Ṣidfa [Sodfa],Asyut,,,200977,Markaz,,,#N/A,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Sāḥīl Salim [Sahel Selim],Asyut,,,199101,Markaz,,,#N/A,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Al-Ghanāyim [El Ghanayem],Asyut,,,148455,Markaz,,,#N/A,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Abū Tīj,Asyut,,,105418,Kism (fully urban),,,#N/A,,AsyutEgypt,,,,,county,2,EG-AST,Abu Tig,,,,,region,1,EG-AST,أسيوط,LOW,0.857,EG-AST
-Egypt,Madīnat Asyūṭ al-Jadīdah [New Asyut],Asyut,,,9228,New City,,,#N/A,,AsyutEgypt,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
-Egypt,Kafr ad-Dawwār,Beheira,,,733846,Markaz,Alexandria,,Alexandria,,BeheiraEgypt,,,,,county,2,EG-BH,Kafr Al-Dawwar,,,,,region,1,EG-BH,البحيرة,MED,0.929,EG-BH
-Egypt,Kafr ad-Dawwār [Kafr el-Dawwar],Beheira,,,335988,Kism (urban and rural parts),Alexandria,,Alexandria,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Damanhūr [Damanhour],Beheira,,,573923,Markaz,Damanhur,,Damanhur,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Damanhūr [Damanhour],Beheira,,,318207,Kism (fully urban),Damanhur,,Damanhur,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Abū al-Maṭāmīr,Beheira,,,590481,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Abu-l-Matamir,,,,,region,1,EG-BH,البحيرة,LOW,0.889,EG-BH
-Egypt,Abū Ḥummuṣ,Beheira,,,569157,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Abu Hummus,,,,,region,1,EG-BH,البحيرة,HIGH,1.0,EG-BH
-Egypt,Kawm Ḥamādah,Beheira,,,527486,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Kum Hamada,,,,,region,1,EG-BH,البحيرة,LOW,0.818,EG-BH
-Egypt,Ityāy al-Bārūd,Beheira,,,508979,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Itay Al-Barud,,,,,region,1,EG-BH,البحيرة,MED,0.963,EG-BH
-Egypt,Ad-Dilinjāt,Beheira,,,428637,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Al-Dilingat,,,,,region,1,EG-BH,البحيرة,LOW,0.818,EG-BH
-Egypt,Ḥawsh 'Īsā [Hosh Essa],Beheira,,,331827,Markaz,,,#N/A,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Rashīd [Rosetta],Beheira,,,301795,Markaz,,,#N/A,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Al-Maḥmūdiyah [Mahmoudiyah],Beheira,,,299296,Markaz,,,#N/A,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Shubrākhīt,Beheira,,,295777,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Shubra Khît,,,,,region,1,EG-BH,البحيرة,MED,0.952,EG-BH
-Egypt,Idkū,Beheira,,,251194,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Idku,,,,,region,1,EG-BH,البحيرة,HIGH,1.0,EG-BH
-Egypt,Badr,Beheira,,,222093,Markaz,,,#N/A,,BeheiraEgypt,,,,,county,2,EG-BH,Badr,,,,,region,1,EG-BH,البحيرة,HIGH,1.0,EG-BH
-Egypt,Ar-Raḥmāniyah [Rahmaniya],Beheira,,,172293,Markaz,,,#N/A,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Gharb an-Nūbāriyah [West Nubariyah],Beheira,,,127499,Kism (urban and rural parts),,,#N/A,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Wadi an-Natrun [Natron Valley],Beheira,,,88380,Markaz,,,#N/A,,BeheiraEgypt,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
-Egypt,Banī Suwayf [Beni Suef],Beni Suef,,,461283,Markaz,Beni Suef,,Beni Suef,,Beni SuefEgypt,,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
-Egypt,Banī Suwayf [Beni Suef],Beni Suef,,,273151,Kism (fully urban),Beni Suef,,Beni Suef,,Beni SuefEgypt,,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
-Egypt,Madīnat Banī Suwayf al-Jadīdah [New Beni Suef],Beni Suef,,,32278,Kism (fully urban),Beni Suef,,Beni Suef,,Beni SuefEgypt,,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
-Egypt,Al-Wāsiṭā,Beni Suef,,,532119,Markaz,,,#N/A,,Beni SuefEgypt,,,,,county,2,EG-BNS,Al Wasta,,,,,region,1,EG-BNS,بنى سويف,LOW,0.824,EG-BNS
-Egypt,Al-Fashn,Beni Suef,,,512242,Markaz,,,#N/A,,Beni SuefEgypt,,,,,county,2,EG-BNS,Al Fashn,,,,,region,1,EG-BNS,بنى سويف,LOW,0.875,EG-BNS
-Egypt,Bibā,Beni Suef,,,509384,Markaz,,,#N/A,,Beni SuefEgypt,,,,,county,2,EG-BNS,Biba,,,,,region,1,EG-BNS,بنى سويف,HIGH,1.0,EG-BNS
-Egypt,Ihnāsiyā,Beni Suef,,,423868,Markaz,,,#N/A,,Beni SuefEgypt,,,,,county,2,EG-BNS,Ahnasya,,,,,region,1,EG-BNS,بنى سويف,LOW,0.8,EG-BNS
-Egypt,Nāṣir [Nasser],Beni Suef,,,409922,Markaz,,,#N/A,,Beni SuefEgypt,,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
-Egypt,Sumusṭā al-Waqf,Beni Suef,,,301486,Markaz,,,#N/A,,Beni SuefEgypt,,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
-Egypt,Al-Marj [El Marg],Cairo,,,840978,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Madīnat an-Naṣr 1 [Nasr City],Cairo,,,668413,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,'Ain Schams,Cairo,,,646982,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Ain Shams,,,,,region,1,EG-C,القاهرة,MED,0.947,EG-C
-Egypt,Al-Maṭariyah [Matariyyah],Cairo,,,634405,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Dār as-Salām,Cairo,,,553472,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Ḥulwān [Helwan],Cairo,,,548919,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Basātīn,Cairo,,,521642,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Basatin,,,,,region,1,EG-C,القاهرة,LOW,0.824,EG-C
-Egypt,As-Salām 1,Cairo,,,506185,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Az-Zāwiyah al-Ḥamrā',Cairo,,,335060,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Zawiyya Al-Hamra,,,,,region,1,EG-C,القاهرة,LOW,0.857,EG-C
-Egypt,As-Sāḥil,Cairo,,,333210,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Hada'iq al-Qubbah,Cairo,,,332851,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Hadaiq Al-Qubba,,,,,region,1,EG-C,القاهرة,MED,0.938,EG-C
-Egypt,Al-Ma'ṣarah,Cairo,,,284370,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Munsha'āt Nāṣr [Manshiyat Naser],Cairo,,,272062,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Miṣr al-Qadīmah [Old Cairo],Cairo,,,263577,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,An-Nuzhah,Cairo,,,243517,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Ṭurah [Tura],Cairo,,,242022,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Muqaṭṭam,Cairo,,,236015,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Ash-Sharābiyah,Cairo,,,197146,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Az-Zaytūn [Zeitoun],Cairo,,,183443,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,As-Salām 2,Cairo,,,161909,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Amīriīah,Cairo,,,160658,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Rūd al-Faraj [Rod El Farag],Cairo,,,153382,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,As-Sayyidah Zaynab,Cairo,,,143525,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Sayyida Zainab,,,,,region,1,EG-C,القاهرة,LOW,0.812,EG-C
-Egypt,Al-Qāhirah al-Jadīdah 1 [New Cairo],Cairo,,,143025,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Miṣr al-Jādidah [Heliopolis],Cairo,,,141237,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Khalīfah,Cairo,,,110815,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Al Khalifa,,,,,region,1,EG-C,القاهرة,LOW,0.857,EG-C
-Egypt,15 Māyū [15th of May City],Cairo,,,98521,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Qāhirah al-Jadīdah 2 [New Cairo],Cairo,,,95482,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Ma'ādī [Maadi],Cairo,,,93291,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Ash-Shurūq,Cairo,,,91899,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Waylī,Cairo,,,83515,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Al Wayli,,,,,region,1,EG-C,القاهرة,LOW,0.875,EG-C
-Egypt,Shubrā,Cairo,,,80777,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Shubra,,,,,region,1,EG-C,القاهرة,HIGH,1.0,EG-C
-Egypt,Madīnat an-Naṣr 2 [Nasr City],Cairo,,,75994,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,At-Tibbīn,Cairo,,,75872,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Aẓ-Ẓāhir,Cairo,,,75695,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Qāhirah al-Jadīdah 3 [New Cairo],Cairo,,,74632,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Ad-Darb al-Aḥmar,Cairo,,,61588,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Al Darb al-Ahmar,,,,,region,1,EG-C,القاهرة,LOW,0.875,EG-C
-Egypt,Būlāq,Cairo,,,50709,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Bulaq,,,,,region,1,EG-C,القاهرة,HIGH,1.0,EG-C
-Egypt,Bāb ash-Sha'riyah,Cairo,,,49145,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Bab Al-Shariyya,,,,,region,1,EG-C,القاهرة,LOW,0.812,EG-C
-Egypt,'Ābidīn,Cairo,,,42477,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Abdin,,,,,region,1,EG-C,القاهرة,LOW,0.909,EG-C
-Egypt,Al-Jamāliyah,Cairo,,,38299,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Madīnat Badr,Cairo,,,32940,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Azbakiyah [Azbakeya],Cairo,,,20816,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Al-Mūskī,Cairo,,,17550,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Az-Zamālik [Zamalek],Cairo,,,15742,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
-Egypt,Qaṣr an-Nīl,Cairo,,,11130,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,,,,,county,2,EG-C,Qasr Al-Nile,,,,,region,1,EG-C,القاهرة,LOW,0.87,EG-C
-Egypt,Al-Manṣūrah [El Mansoura],Dakahlia,,,638037,Markaz,El Mansoura,,El Mansoura,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Al-Manṣūrah 1 [El Mansoura],Dakahlia,,,355095,Kism (fully urban),El Mansoura,,El Mansoura,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Al-Manṣūrah 2 [El Mansoura],Dakahlia,,,266858,Kism (fully urban),El Mansoura,,El Mansoura,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Mīt Ghamr,Dakahlia,,,681091,Markaz,,,#N/A,,DakahliaEgypt,,,,,county,2,EG-DK,Mit Ghamr,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
-Egypt,As-Sinbillāwayn [El Senbellawein],Dakahlia,,,594488,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Bilqās [Belqas],Dakahlia,,,558412,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Ajā,Dakahlia,,,557328,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Shirbīn,Dakahlia,,,446520,Markaz,,,#N/A,,DakahliaEgypt,,,,,county,2,EG-DK,Shirbin,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
-Egypt,Ṭalkhā,Dakahlia,,,413584,Markaz,,,#N/A,,DakahliaEgypt,,,,,county,2,EG-DK,Talkha,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
-Egypt,Al-Manzilah [Manzala],Dakahlia,,,382383,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Dikirnis,Dakahlia,,,372871,Markaz,,,#N/A,,DakahliaEgypt,,,,,county,2,EG-DK,Dikirnis,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
-Egypt,Nabarūh,Dakahlia,,,296213,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Minyat an-Naṣr,Dakahlia,,,282401,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Timay al-Imdīd,Dakahlia,,,205273,Markaz,,,#N/A,,DakahliaEgypt,,,,,county,2,EG-DK,Tamy Al-Amdid,,,,,region,1,EG-DK,الدقهلية,LOW,0.815,EG-DK
-Egypt,Al-Maṭariyah [El Matareya],Dakahlia,,,199009,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Mīt Ghamr,Dakahlia,,,153754,Kism (fully urban),,,#N/A,,DakahliaEgypt,,,,,county,2,EG-DK,Mit Ghamr,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
-Egypt,Al-Jamāliyah,Dakahlia,,,151444,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Banī Ubayd,Dakahlia,,,139373,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Mīt Salsīl,Dakahlia,,,79957,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Maḥallat Damanah,Dakahlia,,,66516,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Al-Kurdy,Dakahlia,,,44905,Kism (fully urban),,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Jamaṣah [Gamasa],Dakahlia,,,4450,Kism (fully urban),,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
-Egypt,Dumyāṭ [Damietta],Damietta,,,349281,Markaz,Damietta,,Damietta,,DamiettaEgypt,,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
-Egypt,Kafr Sa'd,Damietta,,,277225,Markaz,Damietta,,Damietta,,DamiettaEgypt,,,,,county,2,EG-DT,Kafr Sad,,,,,region,1,EG-DT,دمياط,MED,0.941,EG-DT
-Egypt,Fāraskūr,Damietta,,,269724,Markaz,Damietta,,Damietta,,DamiettaEgypt,,,,,county,2,EG-DT,Fariskur,,,,,region,1,EG-DT,دمياط,LOW,0.875,EG-DT
-Egypt,Dumyāṭ 2 [Damietta],Damietta,,,187179,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
-Egypt,Az-Zarqā' [incl. As-Sarw],Damietta,,,177983,Markaz,Damietta,,Damietta,,DamiettaEgypt,,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
-Egypt,Kafr al-Baṭṭīkh,Damietta,,,140399,Markaz,Damietta,,Damietta,,DamiettaEgypt,,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
-Egypt,Dumyāṭ 1 [Damietta],Damietta,,,118741,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
-Egypt,Madīnat Dumyāṭ al-Jadīdah [New Damietta],Damietta,,,54508,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
-Egypt,Ra's al-Bar,Damietta,,,10213,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,,,,,county,2,EG-DT,Ras al-Bar,,,,,region,1,EG-DT,دمياط,MED,0.952,EG-DT
-Egypt,Iṭsā,Faiyum,,,773167,Markaz,Faiyum,,Faiyum,,FaiyumEgypt,,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
-Egypt,Al-Fayyūm [Fayoum],Faiyum,,,605120,Markaz,Faiyum,,Faiyum,,FaiyumEgypt,,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
-Egypt,Al-Fayyūm 1 & 2 [Fayoum],Faiyum,,,519047,Kism (fully urban),Faiyum,,Faiyum,,FaiyumEgypt,,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
-Egypt,Madīnat al-Fayyūm al-Jadīdah [New Al Fayyum],Faiyum,,,433,New City,Faiyum,,Faiyum,,FaiyumEgypt,,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
-Egypt,Sinnūris,Faiyum,,,692701,Markaz,,,#N/A,,FaiyumEgypt,,,,,county,2,EG-FYM,Sinuras,,,,,region,1,EG-FYM,الفيوم,LOW,0.8,EG-FYM
-Egypt,Ṭāmiyah [Tamiya],Faiyum,,,487150,Markaz,,,#N/A,,FaiyumEgypt,,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
-Egypt,Ibshawāy,Faiyum,,,453836,Markaz,,,#N/A,,FaiyumEgypt,,,,,county,2,EG-FYM,Abshaway,,,,,region,1,EG-FYM,الفيوم,LOW,0.875,EG-FYM
-Egypt,Yūsuf aṣ-Ṣiddīq [incl. Ash-Shawāshnah],Faiyum,,,396566,Markaz,,,#N/A,,FaiyumEgypt,,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
-Egypt,Al-Maḥallah al-Kubrā,Gharbia,,,817969,Markaz,El-Mahalla El-Kubra,,El-Mahalla El-Kubra,,GharbiaEgypt,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
-Egypt,Al-Maḥallah al-Kubrā 2 [Mahalla el-Kubra],Gharbia,,,281271,Kism (fully urban),El-Mahalla El-Kubra,,El-Mahalla El-Kubra,,GharbiaEgypt,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
-Egypt,Ṭanṭā,Gharbia,,,705998,Markaz,Tanta,,Tanta,,GharbiaEgypt,,,,,county,2,EG-GH,Tanta,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
-Egypt,Ṭanṭā 1,Gharbia,,,306719,Kism (fully urban),Tanta,,Tanta,,GharbiaEgypt,,,,,county,2,EG-GH,Tanta 1,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
-Egypt,Ṭanṭā 2,Gharbia,,,269929,Kism (fully urban),Tanta,,Tanta,,GharbiaEgypt,,,,,county,2,EG-GH,Tanta 2,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
-Egypt,As-Sanṭah,Gharbia,,,500080,Markaz,,,#N/A,,GharbiaEgypt,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
-Egypt,Kafr az-Zayyāt,Gharbia,,,477948,Markaz,,,#N/A,,GharbiaEgypt,,,,,county,2,EG-GH,Kafr Al-Zayyat,,,,,region,1,EG-GH,الغربية,MED,0.929,EG-GH
-Egypt,Ziftā [Zefta],Gharbia,,,442721,Markaz,,,#N/A,,GharbiaEgypt,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
-Egypt,Samannūd,Gharbia,,,418930,Markaz,,,#N/A,,GharbiaEgypt,,,,,county,2,EG-GH,Samannud,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
-Egypt,Quṭūr,Gharbia,,,352115,Markaz,,,#N/A,,GharbiaEgypt,,,,,county,2,EG-GH,Qutur,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
-Egypt,Basyūn [Basyoun],Gharbia,,,312758,Markaz,,,#N/A,,GharbiaEgypt,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
-Egypt,Al-Maḥallah al-Kubrā 1 [Mahalla el-Kubra],Gharbia,,,181469,Kism (fully urban),,,#N/A,,GharbiaEgypt,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
-Egypt,Al-Maḥallah al-Kubrā 3 [Mahalla el-Kubra],Gharbia,,,129833,Kism (fully urban),,,#N/A,,GharbiaEgypt,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
-Egypt,Ziftā,Gharbia,,,111700,Kism (fully urban),,,#N/A,,GharbiaEgypt,,,,,county,2,EG-GH,Zifta,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
-Egypt,Būlāq al-Dakrūr,Giza,,,1014537,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,county,2,EG-GZ,Bulaq Al-DakrUr,,,,,region,1,EG-GZ,الجيزة,HIGH,1.0,EG-GZ
-Egypt,Al-Warrāq,Giza,,,774581,Kism (urban and rural parts),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-Ahrām,Giza,,,696696,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,county,2,EG-GZ,Al-Ahram,,,,,region,1,EG-GZ,الجيزة,HIGH,1.0,EG-GZ
-Egypt,Imbābah [Imbaba],Giza,,,668471,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-Badrashayn [Badrshein],Giza,,,584885,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Imbābah [Imbaba],Giza,,,563806,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-'Ayyāṭ,Giza,,,537276,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Kirdāsah,Giza,,,485132,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,county,2,EG-GZ,Kardasa,,,,,region,1,EG-GZ,الجيزة,LOW,0.8,EG-GZ
-Egypt,Aṭ-Ṭālbīah,Giza,,,483690,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Aṣ-Ṣaff,Giza,,,455845,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Awsīm [Ossim],Giza,,,415735,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Aṭfīḥ [Atfeh],Giza,,,402310,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-Jīzah [Giza],Giza,,,399467,Markaz,Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-'Umrāniyah,Giza,,,386844,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-Jīzah [Giza],Giza,,,301967,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-'Ajūzah,Giza,,,294299,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Madīnat Sittah Uktūbar 2 [6th of October City],Giza,,,207505,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-Ḥawāmidiyah,Giza,,,203371,Kism (urban and rural parts),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Madīnat Sittah Uktūbar 1 & 3 [6th of October City],Giza,,,161145,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Ash-Shaykh Zāyid [Sheikh Zayed City],Giza,,,95854,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Ad-Duqqī,Giza,,,74964,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-Wāḥāt al-Baḥariyah,Giza,,,42411,Kism (urban and rural parts),Cairo,,Cairo,,GizaEgypt,,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
-Egypt,Al-Ismā'īliyah 2 [Ismaïlia],Ismailia,,,254771,Kism (fully urban),Ismaïlia,,Ismaïlia,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Al-Ismā'īliyah [Ismaïlia],Ismailia,,,168050,Markaz,Ismaïlia,,Ismaïlia,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Al-Ismā'īliyah 3 [Ismaïlia],Ismailia,,,126647,Kism (fully urban),Ismaïlia,,Ismaïlia,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Al-Ismā'īliyah 1 [Ismaïlia],Ismailia,,,48047,Kism (fully urban),Ismaïlia,,Ismaïlia,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Abū Ṣuwīr,Ismailia,,,218532,Markaz,,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Al-Qanṭarah,Ismailia,,,158972,Markaz,,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Fa'id [Fayid],Ismailia,,,144921,Markaz,,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Al-Qaṣāṣīn al-Jadīdah,Ismailia,,,118739,New City,,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,At-Tall al-Kabīr,Ismailia,,,109119,Markaz,,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Al-Qanṭarah Sharq,Ismailia,,,61049,Kism (urban and rural parts),,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
-Egypt,Kafr ash-Shaykh [Kafr el-Sheikh],Kafr el-Sheikh,,,478530,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Sīdī Sālim,Kafr el-Sheikh,,,469402,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,county,2,EG-KFS,Sidi Salim,,,,,region,1,EG-KFS,كفر الشيخ,HIGH,1.0,EG-KFS
-Egypt,Disūq [Desouk],Kafr el-Sheikh,,,439586,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Muṭūbis [Metoubes],Kafr el-Sheikh,,,324515,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Al-Ḥāmūl,Kafr el-Sheikh,,,311153,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,county,2,EG-KFS,Al Hamul,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.875,EG-KFS
-Egypt,Qallīn,Kafr el-Sheikh,,,284853,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,county,2,EG-KFS,Qillin,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.833,EG-KFS
-Egypt,Al-Burulus,Kafr el-Sheikh,,,254504,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Biyalā,Kafr el-Sheikh,,,231569,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,county,2,EG-KFS,Biyalu,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.833,EG-KFS
-Egypt,Ar-Riyād,Kafr el-Sheikh,,,199801,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Fuwah,Kafr el-Sheikh,,,194046,Markaz,,,#N/A,,Kafr el-SheikhEgypt,,,,,locality,,EG-KFS,فوه,,,,,region,1,EG-KFS,كفر الشيخ,HIGH,1.0,EG-KFS
-Egypt,Kafr ash-Shaykh 1 [Kafr el-Sheikh],Kafr el-Sheikh,,,154940,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Disūq [Desouk],Kafr el-Sheikh,,,149291,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Biyalā,Kafr el-Sheikh,,,89068,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,,,,,county,2,EG-KFS,Biyalu,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.833,EG-KFS
-Egypt,Kafr ash-Shaykh 2 [Kafr el-Sheikh],Kafr el-Sheikh,,,39629,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
-Egypt,Al-Uqṣur [Luxor],Luxor,,,268640,Kism (fully urban),Luxor,,Luxor,,LuxorEgypt,,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
-Egypt,Armant,Luxor,,,188325,Markaz,Luxor,,Luxor,,LuxorEgypt,,,,,county,2,EG-LX,Armant,,,,,region,1,EG-LX,الأقصر,HIGH,1.0,EG-LX
-Egypt,Al-Uqṣur [Luxor],Luxor,,,178030,Markaz,Luxor,,Luxor,,LuxorEgypt,,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
-Egypt,Al-Qarnah,Luxor,,,176478,Markaz,Luxor,,Luxor,,LuxorEgypt,,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
-Egypt,Shurṭah Ṭībah [Tiba],Luxor,,,78558,Markaz,Luxor,,Luxor,,LuxorEgypt,,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
-Egypt,Isnā [Esna],Luxor,,,462787,Markaz,,,#N/A,,LuxorEgypt,,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
-Egypt,Marsā Maṭrūḥ [Mersa Matruh],Matruh,,,228154,Kism (urban and rural parts),Mersa Matruh,,Mersa Matruh,,MatruhEgypt,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
-Egypt,As-Sāḥal ash-Shamāli,Matruh,,,81,Kism (fully urban),Mersa Matruh,,Mersa Matruh,,MatruhEgypt,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
-Egypt,Al-Ḥammām,Matruh,,,63493,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,county,2,EG-MT,Al-Hammam,,,,,region,1,EG-MT,مطروح,HIGH,1.0,EG-MT
-Egypt,Sīdī Barrānī,Matruh,,,63098,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,county,2,EG-MT,Sidi Barani,,,,,region,1,EG-MT,مطروح,MED,0.957,EG-MT
-Egypt,Aḍ-Ḍab'ah,Matruh,,,58737,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
-Egypt,Sīwa,Matruh,,,33957,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,county,2,EG-MT,Siwa,,,,,region,1,EG-MT,مطروح,HIGH,1.0,EG-MT
-Egypt,An-Najīlah,Matruh,,,32917,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
-Egypt,As-Sallūm,Matruh,,,19265,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
-Egypt,Al-'Alamayn,Matruh,,,11843,Kism (fully rural),,,#N/A,,MatruhEgypt,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
-Egypt,Al-Minyā,Minya,,,739279,Markaz,Minya,,Minya,,MinyaEgypt,,,,,region,1,EG-MN,المنيا,,,,,region,1,EG-MN,المنيا,HIGH,1.0,EG-MN
-Egypt,Al-Minyā 2,Minya,,,125569,Kism (fully urban),Minya,,Minya,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Al-Minyā 3,Minya,,,103735,Kism (fully urban),Minya,,Minya,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Al-Minyā 1,Minya,,,54301,Kism (fully urban),Minya,,Minya,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Madīnat al-Minyā al-Jadīdah [New Minya],Minya,,,17470,New City,Minya,,Minya,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Mallawī,Minya,,,813824,Markaz,,,#N/A,,MinyaEgypt,,,,,county,2,EG-MN,Kesm Mallawi,,,,,region,1,EG-MN,المنيا,LOW,0.787,EG-MN
-Egypt,Banī Mazār [Beni Mazar],Minya,,,701816,Markaz,,,#N/A,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Abū Qurqās,Minya,,,662967,Markaz,,,#N/A,,MinyaEgypt,,,,,county,2,EG-MN,Markz Abu Qurqas,,,,,region,1,EG-MN,المنيا,LOW,0.819,EG-MN
-Egypt,Maghāghah,Minya,,,655588,Markaz,,,#N/A,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Malawiṭ Gharb,Minya,,,531204,Markaz,,,#N/A,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Dayr Mawās [Deir Mawas],Minya,,,451702,Markaz,,,#N/A,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Maṭāy,Minya,,,352377,Markaz,,,#N/A,,MinyaEgypt,,,,,locality,,EG-MN,مدينه مطاى,,,,,region,1,EG-MN,المنيا,HIGH,1.0,EG-MN
-Egypt,Samālūṭ,Minya,,,347427,Markaz,,,#N/A,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Al-'Idwah,Minya,,,307904,Markaz,,,#N/A,,MinyaEgypt,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
-Egypt,Mallawī,Minya,,,212628,Kism (fully urban),,,#N/A,,MinyaEgypt,,,,,county,2,EG-MN,Kesm Mallawi,,,,,region,1,EG-MN,المنيا,LOW,0.787,EG-MN
-Egypt,Ashmūn [Ashmoun],Monufia,,,901191,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Quwaysinā [Quweisna],Monufia,,,526513,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Shibīn al-Kawm [Shibin el-Kom],Monufia,,,506394,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Minūf [Menouf],Monufia,,,465897,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Al-Bājūr [El Bagour],Monufia,,,427017,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Talā,Monufia,,,413839,Markaz,,,#N/A,,MonufiaEgypt,,,,,county,2,EG-MNF,Tala,,,,,region,1,EG-MNF,المنوفية,HIGH,1.0,EG-MNF
-Egypt,Ash-Shuhadā',Monufia,,,368909,Markaz,,,#N/A,,MonufiaEgypt,,,,,county,2,EG-MNF,Al-Shuhada,,,,,region,1,EG-MNF,المنوفية,LOW,0.857,EG-MNF
-Egypt,Birkat as-Sab' [Birket el-Sab],Monufia,,,330847,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Shibīn al-Kawm [Shibin el-Kom],Monufia,,,267945,Kism (fully urban),,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Madīnat as-Sādāt [Sadat City],Monufia,,,192172,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Minūf [Menouf],Monufia,,,125707,Kism (fully urban),,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
-Egypt,Sirs al-Layyānah,Monufia,,,78168,Kism (fully urban),,,#N/A,,MonufiaEgypt,,,,,county,2,EG-MNF,Sirs Al-Layyana City,,,,,region,1,EG-MNF,المنوفية,MED,0.968,EG-MNF
-Egypt,Al-Wāḥāt al-Khārijah [Kharga],New Valley,,,101283,Kism (urban and rural parts),,,#N/A,,New ValleyEgypt,,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
-Egypt,Shurṭah al-Dākhlah [Dakhla],New Valley,,,93578,Markaz,,,#N/A,,New ValleyEgypt,,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
-Egypt,Shurṭah al-Farāfirah,New Valley,,,37031,Markaz,,,#N/A,,New ValleyEgypt,,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
-Egypt,Shurṭah Bārīs [Baris],New Valley,,,14466,Markaz,,,#N/A,,New ValleyEgypt,,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
-Egypt,Balāṭ,New Valley,,,12816,Markaz,,,#N/A,,New ValleyEgypt,,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
-Egypt,Al-'Arīsh 2 [El Arish],North Sinai,,,69504,Kism (fully urban),El Arish,,El Arish,,North SinaiEgypt,,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
-Egypt,Al-'Arīsh 1 [El Arish],North Sinai,,,59047,Kism (urban and rural parts),El Arish,,El Arish,,North SinaiEgypt,,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
-Egypt,Al-'Arīsh 3 [El Arish],North Sinai,,,46789,Kism (fully urban),El Arish,,El Arish,,North SinaiEgypt,,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
-Egypt,Al-'Arīsh 4 [El Arish],North Sinai,,,28756,Kism (urban and rural parts),El Arish,,El Arish,,North SinaiEgypt,,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
-Egypt,Rafaḥ,North Sinai,,,80823,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,,,,,county,2,EG-SIN,Rafah,,,,,region,1,EG-SIN,شمال سيناء,HIGH,1.0,EG-SIN
-Egypt,Ash-Shaykh Zuwayd [Sheikh Zuweid],North Sinai,,,64305,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
-Egypt,B'īr al-'Abd,North Sinai,,,59316,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,,,,,county,2,EG-SIN,Bir Al-Abd,,,,,region,1,EG-SIN,شمال سيناء,LOW,0.909,EG-SIN
-Egypt,Shurṭah Rumānah,North Sinai,,,43963,Kism (fully rural),,,#N/A,,North SinaiEgypt,,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
-Egypt,Al-Ḥasanah,North Sinai,,,20631,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,,,,,county,2,EG-SIN,Al-Hasna,,,,,region,1,EG-SIN,شمال سيناء,LOW,0.889,EG-SIN
-Egypt,Shurṭah al-Qasīmah,North Sinai,,,12939,Kism (fully rural),,,#N/A,,North SinaiEgypt,,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
-Egypt,Nakhl,North Sinai,,,6482,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,,,,,county,2,EG-SIN,Nakhl,,,,,region,1,EG-SIN,شمال سيناء,HIGH,1.0,EG-SIN
-Egypt,Az-Zuhūr [Al-Zohour],Port Said,,,263437,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Aḍ-Ḍawāḥy [Al-Dawahy],Port Said,,,146980,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Būr Fuād [Port Fuad],Port Said,,,88550,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Al-Manākh [Al-Manakh],Port Said,,,83741,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Al-'Arab [Al-Arab],Port Said,,,59586,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Al-Janūb [Al-Ganoub],Port Said,,,41439,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Al-Janūb 2 [Al-Ganoub],Port Said,,,37850,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Ash-Sharq [Al-Sharq],Port Said,,,34296,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Būr Fuād 2 [Port Fuad],Port Said,,,11893,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Mubārak - Sharq at-Tafrī'tah [Mubarak East],Port Said,,,7219,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Al-Manāṣrah [Al-Manasra],Port Said,,,5524,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
-Egypt,Shubrā al-Khaymah 2 [Shubra el-Kheima],Qalyubia,,,725652,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
-Egypt,Al-Khānkah,Qalyubia,,,606693,Markaz,Cairo,,Cairo,,QalyubiaEgypt,,,,,county,2,EG-KB,Al Khanka,,,,,region,1,EG-KB,القليوبية,LOW,0.842,EG-KB
-Egypt,Qalyūb,Qalyubia,,,592638,Markaz,Cairo,,Cairo,,QalyubiaEgypt,,,,,county,2,EG-KB,Qalyub,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
-Egypt,Sibīn al-Qanāṭir [Shibin el-Qanater],Qalyubia,,,570868,Markaz,Cairo,,Cairo,,QalyubiaEgypt,,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
-Egypt,Al-Qanāṭir al-Khayriyah,Qalyubia,,,536164,Markaz,Cairo,,Cairo,,QalyubiaEgypt,,,,,county,2,EG-KB,Qanatir Al-Khayriyya,,,,,region,1,EG-KB,القليوبية,LOW,0.884,EG-KB
-Egypt,Shubrā al-Khaymah 1 [Shubra el-Kheima],Qalyubia,,,514637,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
-Egypt,Al-Khuṣūṣ,Qalyubia,,,488904,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
-Egypt,Qalyūb,Qalyubia,,,156363,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,,,,,county,2,EG-KB,Qalyub,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
-Egypt,Al-'Ubūr [El Ubour],Qalyubia,,,138987,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
-Egypt,Al-Khānkah,Qalyubia,,,81646,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,,,,,county,2,EG-KB,Al Khanka,,,,,region,1,EG-KB,القليوبية,LOW,0.842,EG-KB
-Egypt,Ṭūkh,Qalyubia,,,627290,Markaz,,,#N/A,,QalyubiaEgypt,,,,,county,2,EG-KB,Tukh,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
-Egypt,Banhā,Qalyubia,,,509971,Markaz,,,#N/A,,QalyubiaEgypt,,,,,county,2,EG-KB,Banha,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
-Egypt,Kafr Shukr,Qalyubia,,,199650,Markaz,,,#N/A,,QalyubiaEgypt,,,,,county,2,EG-KB,Kafr Shukr,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
-Egypt,Banhā 1,Qalyubia,,,113642,Kism (fully urban),,,#N/A,,QalyubiaEgypt,,,,,county,2,EG-KB,Banha,,,,,region,1,EG-KB,القليوبية,LOW,0.833,EG-KB
-Egypt,Banhā 2,Qalyubia,,,68612,Kism (fully urban),,,#N/A,,QalyubiaEgypt,,,,,county,2,EG-KB,Banha,,,,,region,1,EG-KB,القليوبية,LOW,0.833,EG-KB
-Egypt,Qahā,Qalyubia,,,50850,Kism (urban and rural parts),,,#N/A,,QalyubiaEgypt,,,,,county,2,EG-KB,Qaha,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
-Egypt,Naj' Ḥammādī,Qena,,,640290,Markaz,Nag Hammadi,,Nag Hammadi,,QenaEgypt,,,,,county,2,EG-KN,Nag Hammadi,,,,,region,1,EG-KN,قنا,LOW,0.87,EG-KN
-Egypt,Qinā [Qena],Qena,,,498297,Markaz,Qena,,Qena,,QenaEgypt,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
-Egypt,Qinā [Qena],Qena,,,252883,Kism (fully urban),Qena,,Qena,,QenaEgypt,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
-Egypt,Abū Ṭisht,Qena,,,514535,Markaz,,,#N/A,,QenaEgypt,,,,,county,2,EG-KN,Abu Tisht,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
-Egypt,Qūṣ,Qena,,,512827,Markaz,,,#N/A,,QenaEgypt,,,,,county,2,EG-KN,Qus,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
-Egypt,Dishnā,Qena,,,429294,Markaz,,,#N/A,,QenaEgypt,,,,,county,2,EG-KN,Dishna,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
-Egypt,Farshūṭ,Qena,,,207547,Markaz,,,#N/A,,QenaEgypt,,,,,county,2,EG-KN,Farshut,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
-Egypt,Naqādah [Naqada],Qena,,,188984,Markaz,,,#N/A,,QenaEgypt,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
-Egypt,"Qifṭ [Gebtu, Coptos]",Qena,,,157383,Markaz,,,#N/A,,QenaEgypt,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
-Egypt,Al-Waqf,Qena,,,89187,Markaz,,,#N/A,,QenaEgypt,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
-Egypt,Madīnat Qinā al-Jadīdah [New Qina],Qena,,,1640,New City,,,#N/A,,QenaEgypt,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
-Egypt,Al-Ghurdaqah 2 [Hurghada],Red Sea,,,125395,Kism (fully urban),Hurghada,,Hurghada,,Red SeaEgypt,,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
-Egypt,Al-Ghurdaqah 1 [Hurghada],Red Sea,,,81737,Kism (fully urban),Hurghada,,Hurghada,,Red SeaEgypt,,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
-Egypt,Safājā [Safaga],Red Sea,,,55299,Kism (urban and rural parts),Hurghada,,Hurghada,,Red SeaEgypt,,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
-Egypt,Marsā 'Alam,Red Sea,,,9001,Kism (urban and rural parts),Marsa Alam,,Marsa Alam,,Red SeaEgypt,,,,,county,2,EG-BA,Marsa Alam,,,,,region,1,EG-BA,البحر الأحمر,MED,0.952,EG-BA
-Egypt,Al-Quṣayr,Red Sea,,,51882,Kism (urban and rural parts),,,#N/A,,Red SeaEgypt,,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
-Egypt,Ras Ghārib [Ras Gharib],Red Sea,,,45108,Kism (urban and rural parts),,,#N/A,,Red SeaEgypt,,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
-Egypt,Ash-Shalātīn,Red Sea,,,13431,Kism (urban and rural parts),,,#N/A,,Red SeaEgypt,,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
-Egypt,Ḥalāyib,Red Sea,,,8217,Kism (fully rural),,,#N/A,,Red SeaEgypt,,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
-Egypt,Bilbays [Bilbeis],Sharqia,,,866246,Markaz,Bilbeis,,Bilbeis,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Az-Zaqāzīq [Zagazig],Sharqia,,,915777,Markaz,Zagazig,,Zagazig,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Az-Zaqāzīq 2 [Zagazig],Sharqia,,,232739,Kism (fully urban),Zagazig,,Zagazig,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Az-Zaqāzīq 1 [Zagazig],Sharqia,,,197706,Kism (fully urban),Zagazig,,Zagazig,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Minyā al-Qamḥ,Sharqia,,,812193,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Minya al-Qamh,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
-Egypt,Fāqūs [Faqous],Sharqia,,,641663,Markaz,,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Diyarb Najm,Sharqia,,,519957,Markaz,,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Abū Kabīr,Sharqia,,,477167,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Abu Kabir,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
-Egypt,Abū Ḥammād,Sharqia,,,455013,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Abu Hammad,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
-Egypt,Al-Ḥusayniyah,Sharqia,,,393420,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Al-Husayniya,,,,,region,1,EG-SHR,الشرقية,MED,0.96,EG-SHR
-Egypt,Hihyā,Sharqia,,,317772,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Hihya,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
-Egypt,Kafr Ṣaqr,Sharqia,,,294765,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Kafr Saqr,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
-Egypt,Awlād Ṣaqr,Sharqia,,,239055,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Awlad Saqr,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
-Egypt,Mashtūl as-Sūq,Sharqia,,,234575,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Mashtul Al-Suq,,,,,region,1,EG-SHR,الشرقية,MED,0.929,EG-SHR
-Egypt,Al-Ibrāhīmiyah,Sharqia,,,194874,Markaz,,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,El-Ibrahimiya,,,,,region,1,EG-SHR,الشرقية,LOW,0.889,EG-SHR
-Egypt,Ṣān al-Ḥajar,Sharqia,,,167435,Markaz,,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Madīnat 'Ashirh min-Ramaḍān 2 [10th of Ramadan City],Sharqia,,,162957,Kism (fully urban),,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Fāqūs [Faqous],Sharqia,,,116945,Kism (fully urban),,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Al-Qurayn,Sharqia,,,94632,Kism (fully urban),,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Munshāh Abū 'Umar,Sharqia,,,91982,Markaz,,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Madīnat 'Ashirh min-Ramaḍān 1 [10th of Ramadan City],Sharqia,,,83191,Kism (fully urban),,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Al-Qanāyāt,Sharqia,,,70687,Kism (fully urban),,,#N/A,,SharqiaEgypt,,,,,county,2,EG-SHR,Al-Qanayat,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
-Egypt,Aṣ-Ṣaliḥiyah al-Jadīdah [New Salhia],Sharqia,,,59320,Kism (fully urban),,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
-Egypt,Sawhāj [Sohag],Sohag,,,588615,Markaz,Sohag,,Sohag,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Sawhāj 1 [Sohag],Sohag,,,146011,Kism (fully urban),Sohag,,Sohag,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Al-Balyanā [El Balyana],Sohag,,,576226,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Akhmīm,Sohag,,,482666,Markaz,,,#N/A,,SohagEgypt,,,,,county,2,EG-SHG,Akhmim,,,,,region,1,EG-SHG,سوهاج,HIGH,1.0,EG-SHG
-Egypt,Ṭimā,Sohag,,,471166,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Dar as-Salām [Dar el-Salam],Sohag,,,451506,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Al-Munsha'āh,Sohag,,,443727,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Al-Marāghah [El Maragha],Sohag,,,432678,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Jirjā [Girga],Sohag,,,363806,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Ṭahṭā,Sohag,,,317195,Markaz,,,#N/A,,SohagEgypt,,,,,county,2,EG-SHG,Tahta,,,,,region,1,EG-SHG,سوهاج,HIGH,1.0,EG-SHG
-Egypt,Juhaynah al-Gharbiyah [Juhaynah West],Sohag,,,299568,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Sāqultah [Sakulta],Sohag,,,227719,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Al-'Usayrāt [Aserat],Sohag,,,214812,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Ṭahṭā,Sohag,,,182052,Kism (urban and rural parts),,,#N/A,,SohagEgypt,,,,,county,2,EG-SHG,Tahta,,,,,region,1,EG-SHG,سوهاج,HIGH,1.0,EG-SHG
-Egypt,Jirjā [Girga],Sohag,,,162165,Kism (urban and rural parts),,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Sawhāj 2 [Sohag],Sohag,,,120933,Kism (fully urban),,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Al-Kawthar,Sohag,,,5372,Kism (fully urban),,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Madīnat Sawhāj al-Jadīdah [New Sohag],Sohag,,,192,New City,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Madīnat Akhmīm al-Jadīdah [New Akhmim],Sohag,,,0,New City,,,#N/A,,SohagEgypt,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
-Egypt,Aṭ-Ṭūr [El Tor],South Sinai,,,43720,Kism (urban and rural parts),Sharm El Sheikh,,Sharm El Sheikh,,South SinaiEgypt,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
-Egypt,Sharm ash-Shaykh 1 [Sharm el-Sheikh],South Sinai,,,13561,Kism (fully urban),Sharm El Sheikh,,Sharm El Sheikh,,South SinaiEgypt,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
-Egypt,Sharm ash-Shaykh 2 [Sharm el-Sheikh],South Sinai,,,1532,Kism (urban and rural parts),Sharm El Sheikh,,Sharm El Sheikh,,South SinaiEgypt,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
-Egypt,Ras Sidr,South Sinai,,,17571,Kism (urban and rural parts),Suez,,Suez,,South SinaiEgypt,,,,,county,2,EG-JS,Ras Sidr,,,,,region,1,EG-JS,جنوب سيناء,HIGH,1.0,EG-JS
-Egypt,Nuwaybi'a,South Sinai,,,7619,Kism (urban and rural parts),Taba,,Taba,,South SinaiEgypt,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
-Egypt,Shurṭah Ṭābā [Taba],South Sinai,,,789,Kism (fully rural),Taba,,Taba,,South SinaiEgypt,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
-Egypt,Abū Radīs [incl. Abū Zanīmah],South Sinai,,,19982,Kism (urban and rural parts),,,#N/A,,South SinaiEgypt,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
-Egypt,Sānt Kātirīn [Saint Catherine],South Sinai,,,4792,Kism (urban and rural parts),,,#N/A,,South SinaiEgypt,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
-Egypt,Dahab,South Sinai,,,3106,Kism (urban and rural parts),,,#N/A,,South SinaiEgypt,,,,,county,2,EG-JS,Dahab,,,,,region,1,EG-JS,جنوب سيناء,HIGH,1.0,EG-JS
-Egypt,Al-Arba'īn [Arbaeen],Suez,,,282299,Kism (fully urban),Suez,,Suez,,SuezEgypt,,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
-Egypt,Fayṣal [Faisal],Suez,,,190650,Kism (fully urban),Suez,,Suez,,SuezEgypt,,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
-Egypt,Al-Janāyin [Ganayen],Suez,,,139871,Kism (fully urban),Suez,,Suez,,SuezEgypt,,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
-Egypt,As-Suways [Suez],Suez,,,86721,Kism (fully urban),Suez,,Suez,,SuezEgypt,,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
-Egypt,'Atāqah [Attaka],Suez,,,74299,Kism (fully urban),Suez,,Suez,,SuezEgypt,,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Egypt,Al-Muntazah 1 [Montaza],Alexandria,,,1093203,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Ar-Raml 2 [El Raml],Alexandria,,,659687,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Al-Muntazah 2 [Montaza],Alexandria,,,566870,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Al-'Āmriyah 1 [Amreya],Alexandria,,,497375,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Ad-Dukhaylah [Dekhela],Alexandria,,,494936,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Muḥarram Bik [Moharam Bek],Alexandria,,,293073,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Al-'Āmriyah 2 [Amreya],Alexandria,,,291321,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Ar-Raml 1 [El Raml],Alexandria,,,290275,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Mīnā al-Baṣal,Alexandria,,,264425,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,county,2,EG-ALX,Mina Al-Basal,,,,,region,1,EG-ALX,الإسكندرية,HIGH,1.0,EG-ALX
+Egypt,Sīdi Jābir [Sidi Gaber],Alexandria,,,263344,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Bāb Sharqi,Alexandria,,,237320,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,county,2,EG-ALX,Bab Sharqi,,,,,region,1,EG-ALX,الإسكندرية,HIGH,1.0,EG-ALX
+Egypt,Burj al-'Arab [Borg El Arab],Alexandria,,,129364,Kism (urban and rural parts),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Karmūz [Karmouz],Alexandria,,,108957,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Al-Jumruk [Gomrok],Alexandria,,,96657,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Madīnat Burj al-'Arab al-Jadīdah [New Borg El Arab],Alexandria,,,45865,New City,Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Al-Labān [Labban],Alexandria,,,42954,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Al-'Aṭṭārīn [Ataren],Alexandria,,,38599,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Al-Manshiyah [Mansheya],Alexandria,,,24546,Kism (fully urban),Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,As-Sāḥal ash-Shamāli [North Coast],Alexandria,,,3095,Area,Alexandria,,Alexandria,,AlexandriaEgypt,region,1,EG-ALX,الإسكندرية,,,,,,,,,,,,region,1,EG-ALX,الإسكندرية,NONE,0.0,EG-ALX
+Egypt,Aswān 2,Aswan,,,199306,Kism (fully urban),Aswan,,Aswan,,AswanEgypt,,,,,,,,county,2,EG-ASN,Aswan,,,,,region,1,EG-ASN,أسوان,LOW,0.833,EG-ASN
+Egypt,Aswān 1,Aswan,,,180468,Kism (fully urban),Aswan,,Aswan,,AswanEgypt,county,2,EG-ASN,Aswan,,,,county,2,EG-ASN,Aswan,,,,,region,1,EG-ASN,أسوان,LOW,0.833,EG-ASN
+Egypt,Aswān,Aswan,,,72549,Markaz,Aswan,,Aswan,,AswanEgypt,county,2,EG-ASN,Aswan City,,,,county,2,EG-ASN,Aswan,,,,,region,1,EG-ASN,أسوان,HIGH,1.0,EG-ASN
+Egypt,Madīnat Aswān al-Jadīdah [New Aswan],Aswan,,,112,New City,Aswan,,Aswan,,AswanEgypt,,,,,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
+Egypt,Idfū [Edfu],Aswan,,,488805,Markaz,Edfu,,Edfu,,AswanEgypt,county,2,EG-ASN,Adfu,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
+Egypt,Kawm Umbū [Kom Ombo],Aswan,,,409311,Markaz,,,#N/A,,AswanEgypt,county,2,EG-ASN,Kum Umbu,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
+Egypt,Daraw,Aswan,,,147564,Markaz,,,#N/A,,AswanEgypt,county,2,EG-ASN,Daraw,,,,county,2,EG-ASN,Daraw,,,,,region,1,EG-ASN,أسوان,HIGH,1.0,EG-ASN
+Egypt,Naṣr [Nasser City],Aswan,,,93964,Markaz,,,#N/A,,AswanEgypt,county,2,EG-ASN,Nasr,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
+Egypt,Abū Sunbul [Abu Simbel],Aswan,,,8131,Markaz,,,#N/A,,AswanEgypt,county,2,EG-ASN,Abu Simbel,,,,,,,,,,,,region,1,EG-ASN,أسوان,NONE,0.0,EG-ASN
+Egypt,Asyūṭ [Asyut],Asyut,,,562743,Markaz,Asyut,,Asyut,,AsyutEgypt,county,2,EG-AST,Assuit City,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Asyūṭ 1 [Asyut],Asyut,,,286075,Kism (fully urban),Asyut,,Asyut,,AsyutEgypt,county,2,EG-AST,Assuit,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Asyūṭ 2 [Asyut],Asyut,,,242594,Kism (fully urban),Asyut,,Asyut,,AsyutEgypt,,,,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Dayrūṭ [Dairut],Asyut,,,653847,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Dayrut,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Manfalūṭ,Asyut,,,576972,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Manfalut,,,,county,2,EG-AST,Manfalut,,,,,region,1,EG-AST,أسيوط,HIGH,1.0,EG-AST
+Egypt,Al-Qūṣiyah,Asyut,,,510317,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Al-Qusia,,,,county,2,EG-AST,Al-Qusia,,,,,region,1,EG-AST,أسيوط,LOW,0.889,EG-AST
+Egypt,Abnūb,Asyut,,,454520,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Abnub,,,,county,2,EG-AST,Abnub,,,,,region,1,EG-AST,أسيوط,HIGH,1.0,EG-AST
+Egypt,Al-Fatḥ,Asyut,,,348876,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Alfath,,,,county,2,EG-AST,Alfath,,,,,region,1,EG-AST,أسيوط,MED,0.923,EG-AST
+Egypt,Al-Badārī,Asyut,,,297487,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Al- Badari,,,,county,2,EG-AST,Al- Badari,,,,,region,1,EG-AST,أسيوط,MED,0.947,EG-AST
+Egypt,Abū Tīj,Asyut,,,251125,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Abu Tig,,,,county,2,EG-AST,Abu Tig,,,,,region,1,EG-AST,أسيوط,LOW,0.857,EG-AST
+Egypt,Ṣidfa [Sodfa],Asyut,,,200977,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Sidfa,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Sāḥīl Salim [Sahel Selim],Asyut,,,199101,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Sahil Silim,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Al-Ghanāyim [El Ghanayem],Asyut,,,148455,Markaz,,,#N/A,,AsyutEgypt,county,2,EG-AST,Al-Ghanayem,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Abū Tīj,Asyut,,,105418,Kism (fully urban),,,#N/A,,AsyutEgypt,county,2,EG-AST,Abu Tig,,,,county,2,EG-AST,Abu Tig,,,,,region,1,EG-AST,أسيوط,LOW,0.857,EG-AST
+Egypt,Madīnat Asyūṭ al-Jadīdah [New Asyut],Asyut,,,9228,New City,,,#N/A,,AsyutEgypt,,,,,,,,,,,,,,,,region,1,EG-AST,أسيوط,NONE,0.0,EG-AST
+Egypt,Kafr ad-Dawwār,Beheira,,,733846,Markaz,Alexandria,,Alexandria,,BeheiraEgypt,county,2,EG-BH,Kafr Al-Dawwar,,,,county,2,EG-BH,Kafr Al-Dawwar,,,,,region,1,EG-BH,البحيرة,MED,0.929,EG-BH
+Egypt,Kafr ad-Dawwār [Kafr el-Dawwar],Beheira,,,335988,Kism (urban and rural parts),Alexandria,,Alexandria,,BeheiraEgypt,,,,,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Damanhūr [Damanhour],Beheira,,,573923,Markaz,Damanhur,,Damanhur,,BeheiraEgypt,county,2,EG-BH,Damanhur,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Damanhūr [Damanhour],Beheira,,,318207,Kism (fully urban),Damanhur,,Damanhur,,BeheiraEgypt,county,2,EG-BH,Damanhur,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Abū al-Maṭāmīr,Beheira,,,590481,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Abu-l-Matamir,,,,county,2,EG-BH,Abu-l-Matamir,,,,,region,1,EG-BH,البحيرة,LOW,0.889,EG-BH
+Egypt,Abū Ḥummuṣ,Beheira,,,569157,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Abu Hummus,,,,county,2,EG-BH,Abu Hummus,,,,,region,1,EG-BH,البحيرة,HIGH,1.0,EG-BH
+Egypt,Kawm Ḥamādah,Beheira,,,527486,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Kum Hamada,,,,county,2,EG-BH,Kum Hamada,,,,,region,1,EG-BH,البحيرة,LOW,0.818,EG-BH
+Egypt,Ityāy al-Bārūd,Beheira,,,508979,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Itay Al-Barud,,,,county,2,EG-BH,Itay Al-Barud,,,,,region,1,EG-BH,البحيرة,MED,0.963,EG-BH
+Egypt,Ad-Dilinjāt,Beheira,,,428637,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Al-Dilingat,,,,county,2,EG-BH,Al-Dilingat,,,,,region,1,EG-BH,البحيرة,LOW,0.818,EG-BH
+Egypt,Ḥawsh 'Īsā [Hosh Essa],Beheira,,,331827,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Hush Isa,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Rashīd [Rosetta],Beheira,,,301795,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Rashid,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Al-Maḥmūdiyah [Mahmoudiyah],Beheira,,,299296,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Al-Mahmudiyya,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Shubrākhīt,Beheira,,,295777,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Shubra Khît,,,,county,2,EG-BH,Shubra Khît,,,,,region,1,EG-BH,البحيرة,MED,0.952,EG-BH
+Egypt,Idkū,Beheira,,,251194,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Idku,,,,county,2,EG-BH,Idku,,,,,region,1,EG-BH,البحيرة,HIGH,1.0,EG-BH
+Egypt,Badr,Beheira,,,222093,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Badr,,,,county,2,EG-BH,Badr,,,,,region,1,EG-BH,البحيرة,HIGH,1.0,EG-BH
+Egypt,Ar-Raḥmāniyah [Rahmaniya],Beheira,,,172293,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Al-Rahmaniyya,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Gharb an-Nūbāriyah [West Nubariyah],Beheira,,,127499,Kism (urban and rural parts),,,#N/A,,BeheiraEgypt,county,2,EG-BH,Nubariyya West,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Wadi an-Natrun [Natron Valley],Beheira,,,88380,Markaz,,,#N/A,,BeheiraEgypt,county,2,EG-BH,Wadi Al-NatrUn,,,,,,,,,,,,region,1,EG-BH,البحيرة,NONE,0.0,EG-BH
+Egypt,Banī Suwayf [Beni Suef],Beni Suef,,,461283,Markaz,Beni Suef,,Beni Suef,,Beni SuefEgypt,county,2,EG-BNS,Bani Swayf,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
+Egypt,Banī Suwayf [Beni Suef],Beni Suef,,,273151,Kism (fully urban),Beni Suef,,Beni Suef,,Beni SuefEgypt,county,2,EG-BNS,Bani Swayf,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
+Egypt,Madīnat Banī Suwayf al-Jadīdah [New Beni Suef],Beni Suef,,,32278,Kism (fully urban),Beni Suef,,Beni Suef,,Beni SuefEgypt,,,,,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
+Egypt,Al-Wāsiṭā,Beni Suef,,,532119,Markaz,,,#N/A,,Beni SuefEgypt,county,2,EG-BNS,Al Wasta,,,,county,2,EG-BNS,Al Wasta,,,,,region,1,EG-BNS,بنى سويف,LOW,0.824,EG-BNS
+Egypt,Al-Fashn,Beni Suef,,,512242,Markaz,,,#N/A,,Beni SuefEgypt,county,2,EG-BNS,Al Fashn,,,,county,2,EG-BNS,Al Fashn,,,,,region,1,EG-BNS,بنى سويف,LOW,0.875,EG-BNS
+Egypt,Bibā,Beni Suef,,,509384,Markaz,,,#N/A,,Beni SuefEgypt,county,2,EG-BNS,Biba,,,,county,2,EG-BNS,Biba,,,,,region,1,EG-BNS,بنى سويف,HIGH,1.0,EG-BNS
+Egypt,Ihnāsiyā,Beni Suef,,,423868,Markaz,,,#N/A,,Beni SuefEgypt,county,2,EG-BNS,Ahnasya,,,,county,2,EG-BNS,Ahnasya,,,,,region,1,EG-BNS,بنى سويف,LOW,0.8,EG-BNS
+Egypt,Nāṣir [Nasser],Beni Suef,,,409922,Markaz,,,#N/A,,Beni SuefEgypt,county,2,EG-BNS,Nasir,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
+Egypt,Sumusṭā al-Waqf,Beni Suef,,,301486,Markaz,,,#N/A,,Beni SuefEgypt,county,2,EG-BNS,Sumusta,,,,,,,,,,,,region,1,EG-BNS,بنى سويف,NONE,0.0,EG-BNS
+Egypt,Al-Marj [El Marg],Cairo,,,840978,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Madīnat an-Naṣr 1 [Nasr City],Cairo,,,668413,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,'Ain Schams,Cairo,,,646982,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Ain Shams,,,,,region,1,EG-C,القاهرة,MED,0.947,EG-C
+Egypt,Al-Maṭariyah [Matariyyah],Cairo,,,634405,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Dār as-Salām,Cairo,,,553472,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Ḥulwān [Helwan],Cairo,,,548919,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Basātīn,Cairo,,,521642,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Basatin,,,,,region,1,EG-C,القاهرة,LOW,0.824,EG-C
+Egypt,As-Salām 1,Cairo,,,506185,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Az-Zāwiyah al-Ḥamrā',Cairo,,,335060,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Zawiyya Al-Hamra,,,,,region,1,EG-C,القاهرة,LOW,0.857,EG-C
+Egypt,As-Sāḥil,Cairo,,,333210,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Hada'iq al-Qubbah,Cairo,,,332851,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Hadaiq Al-Qubba,,,,,region,1,EG-C,القاهرة,MED,0.938,EG-C
+Egypt,Al-Ma'ṣarah,Cairo,,,284370,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Munsha'āt Nāṣr [Manshiyat Naser],Cairo,,,272062,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Miṣr al-Qadīmah [Old Cairo],Cairo,,,263577,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,An-Nuzhah,Cairo,,,243517,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Ṭurah [Tura],Cairo,,,242022,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Muqaṭṭam,Cairo,,,236015,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Ash-Sharābiyah,Cairo,,,197146,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Az-Zaytūn [Zeitoun],Cairo,,,183443,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,As-Salām 2,Cairo,,,161909,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Amīriīah,Cairo,,,160658,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Rūd al-Faraj [Rod El Farag],Cairo,,,153382,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,As-Sayyidah Zaynab,Cairo,,,143525,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Sayyida Zainab,,,,,region,1,EG-C,القاهرة,LOW,0.812,EG-C
+Egypt,Al-Qāhirah al-Jadīdah 1 [New Cairo],Cairo,,,143025,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Miṣr al-Jādidah [Heliopolis],Cairo,,,141237,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Khalīfah,Cairo,,,110815,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Al Khalifa,,,,,region,1,EG-C,القاهرة,LOW,0.857,EG-C
+Egypt,15 Māyū [15th of May City],Cairo,,,98521,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Qāhirah al-Jadīdah 2 [New Cairo],Cairo,,,95482,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Ma'ādī [Maadi],Cairo,,,93291,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Ash-Shurūq,Cairo,,,91899,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Waylī,Cairo,,,83515,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Al Wayli,,,,,region,1,EG-C,القاهرة,LOW,0.875,EG-C
+Egypt,Shubrā,Cairo,,,80777,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Shubra,,,,,region,1,EG-C,القاهرة,HIGH,1.0,EG-C
+Egypt,Madīnat an-Naṣr 2 [Nasr City],Cairo,,,75994,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,At-Tibbīn,Cairo,,,75872,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Aẓ-Ẓāhir,Cairo,,,75695,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Qāhirah al-Jadīdah 3 [New Cairo],Cairo,,,74632,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Ad-Darb al-Aḥmar,Cairo,,,61588,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Al Darb al-Ahmar,,,,,region,1,EG-C,القاهرة,LOW,0.875,EG-C
+Egypt,Būlāq,Cairo,,,50709,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Bulaq,,,,,region,1,EG-C,القاهرة,HIGH,1.0,EG-C
+Egypt,Bāb ash-Sha'riyah,Cairo,,,49145,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Bab Al-Shariyya,,,,,region,1,EG-C,القاهرة,LOW,0.812,EG-C
+Egypt,'Ābidīn,Cairo,,,42477,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Abdin,,,,,region,1,EG-C,القاهرة,LOW,0.909,EG-C
+Egypt,Al-Jamāliyah,Cairo,,,38299,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Madīnat Badr,Cairo,,,32940,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Azbakiyah [Azbakeya],Cairo,,,20816,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Al-Mūskī,Cairo,,,17550,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Az-Zamālik [Zamalek],Cairo,,,15742,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,,,,,,,,,region,1,EG-C,القاهرة,NONE,0.0,EG-C
+Egypt,Qaṣr an-Nīl,Cairo,,,11130,Kism (fully urban),Cairo,,Cairo,,CairoEgypt,region,1,EG-C,القاهرة,,,,county,2,EG-C,Qasr Al-Nile,,,,,region,1,EG-C,القاهرة,LOW,0.87,EG-C
+Egypt,Al-Manṣūrah [El Mansoura],Dakahlia,,,638037,Markaz,El Mansoura,,El Mansoura,,DakahliaEgypt,county,2,EG-DK,El Mansora,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Al-Manṣūrah 1 [El Mansoura],Dakahlia,,,355095,Kism (fully urban),El Mansoura,,El Mansoura,,DakahliaEgypt,county,2,EG-DK,El Mansora 1,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Al-Manṣūrah 2 [El Mansoura],Dakahlia,,,266858,Kism (fully urban),El Mansoura,,El Mansoura,,DakahliaEgypt,county,2,EG-DK,E Mansora 2,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Mīt Ghamr,Dakahlia,,,681091,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Mit Ghamr,,,,county,2,EG-DK,Mit Ghamr,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
+Egypt,As-Sinbillāwayn [El Senbellawein],Dakahlia,,,594488,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Sinbillawin,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Bilqās [Belqas],Dakahlia,,,558412,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Bilqas,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Ajā,Dakahlia,,,557328,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Aga,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Shirbīn,Dakahlia,,,446520,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Shirbin,,,,county,2,EG-DK,Shirbin,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
+Egypt,Ṭalkhā,Dakahlia,,,413584,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Talkha,,,,county,2,EG-DK,Talkha,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
+Egypt,Al-Manzilah [Manzala],Dakahlia,,,382383,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Manzala,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Dikirnis,Dakahlia,,,372871,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Dikirnis,,,,county,2,EG-DK,Dikirnis,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
+Egypt,Nabarūh,Dakahlia,,,296213,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Nebro,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Minyat an-Naṣr,Dakahlia,,,282401,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Timay al-Imdīd,Dakahlia,,,205273,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Tamy Al-Amdid,,,,county,2,EG-DK,Tamy Al-Amdid,,,,,region,1,EG-DK,الدقهلية,LOW,0.815,EG-DK
+Egypt,Al-Maṭariyah [El Matareya],Dakahlia,,,199009,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Matariyya,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Mīt Ghamr,Dakahlia,,,153754,Kism (fully urban),,,#N/A,,DakahliaEgypt,county,2,EG-DK,Mit Ghamr,,,,county,2,EG-DK,Mit Ghamr,,,,,region,1,EG-DK,الدقهلية,HIGH,1.0,EG-DK
+Egypt,Al-Jamāliyah,Dakahlia,,,151444,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Gamaliyya,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Banī Ubayd,Dakahlia,,,139373,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Bany Abeed,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Mīt Salsīl,Dakahlia,,,79957,Markaz,,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Maḥallat Damanah,Dakahlia,,,66516,Markaz,,,#N/A,,DakahliaEgypt,county,2,EG-DK,Mahalet Demna,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Al-Kurdy,Dakahlia,,,44905,Kism (fully urban),,,#N/A,,DakahliaEgypt,,,,,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Jamaṣah [Gamasa],Dakahlia,,,4450,Kism (fully urban),,,#N/A,,DakahliaEgypt,county,2,EG-DK,Gamsa,,,,,,,,,,,,region,1,EG-DK,الدقهلية,NONE,0.0,EG-DK
+Egypt,Dumyāṭ [Damietta],Damietta,,,349281,Markaz,Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
+Egypt,Kafr Sa'd,Damietta,,,277225,Markaz,Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,county,2,EG-DT,Kafr Sad,,,,,region,1,EG-DT,دمياط,MED,0.941,EG-DT
+Egypt,Fāraskūr,Damietta,,,269724,Markaz,Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,county,2,EG-DT,Fariskur,,,,,region,1,EG-DT,دمياط,LOW,0.875,EG-DT
+Egypt,Dumyāṭ 2 [Damietta],Damietta,,,187179,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
+Egypt,Az-Zarqā' [incl. As-Sarw],Damietta,,,177983,Markaz,Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
+Egypt,Kafr al-Baṭṭīkh,Damietta,,,140399,Markaz,Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
+Egypt,Dumyāṭ 1 [Damietta],Damietta,,,118741,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
+Egypt,Madīnat Dumyāṭ al-Jadīdah [New Damietta],Damietta,,,54508,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,,,,,,,,,region,1,EG-DT,دمياط,NONE,0.0,EG-DT
+Egypt,Ra's al-Bar,Damietta,,,10213,Kism (fully urban),Damietta,,Damietta,,DamiettaEgypt,region,1,EG-DT,دمياط,,,,county,2,EG-DT,Ras al-Bar,,,,,region,1,EG-DT,دمياط,MED,0.952,EG-DT
+Egypt,Iṭsā,Faiyum,,,773167,Markaz,Faiyum,,Faiyum,,FaiyumEgypt,county,2,EG-FYM,Atsa,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
+Egypt,Al-Fayyūm [Fayoum],Faiyum,,,605120,Markaz,Faiyum,,Faiyum,,FaiyumEgypt,county,2,EG-FYM,Fayyum City,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
+Egypt,Al-Fayyūm 1 & 2 [Fayoum],Faiyum,,,519047,Kism (fully urban),Faiyum,,Faiyum,,FaiyumEgypt,county,2,EG-FYM,Fayyum,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
+Egypt,Madīnat al-Fayyūm al-Jadīdah [New Al Fayyum],Faiyum,,,433,New City,Faiyum,,Faiyum,,FaiyumEgypt,,,,,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
+Egypt,Sinnūris,Faiyum,,,692701,Markaz,,,#N/A,,FaiyumEgypt,county,2,EG-FYM,Sinuras,,,,county,2,EG-FYM,Sinuras,,,,,region,1,EG-FYM,الفيوم,LOW,0.8,EG-FYM
+Egypt,Ṭāmiyah [Tamiya],Faiyum,,,487150,Markaz,,,#N/A,,FaiyumEgypt,county,2,EG-FYM,Tamya,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
+Egypt,Ibshawāy,Faiyum,,,453836,Markaz,,,#N/A,,FaiyumEgypt,county,2,EG-FYM,Abshaway,,,,county,2,EG-FYM,Abshaway,,,,,region,1,EG-FYM,الفيوم,LOW,0.875,EG-FYM
+Egypt,Yūsuf aṣ-Ṣiddīq [incl. Ash-Shawāshnah],Faiyum,,,396566,Markaz,,,#N/A,,FaiyumEgypt,county,2,EG-FYM,Yousef El sadeq,,,,,,,,,,,,region,1,EG-FYM,الفيوم,NONE,0.0,EG-FYM
+Egypt,Al-Maḥallah al-Kubrā,Gharbia,,,817969,Markaz,El-Mahalla El-Kubra,,El-Mahalla El-Kubra,,GharbiaEgypt,county,2,EG-GH,El Mahalla El Kobra,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
+Egypt,Al-Maḥallah al-Kubrā 2 [Mahalla el-Kubra],Gharbia,,,281271,Kism (fully urban),El-Mahalla El-Kubra,,El-Mahalla El-Kubra,,GharbiaEgypt,county,2,EG-GH,El Mahalla El Kobra 2,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
+Egypt,Ṭanṭā,Gharbia,,,705998,Markaz,Tanta,,Tanta,,GharbiaEgypt,county,2,EG-GH,Tanta,,,,county,2,EG-GH,Tanta,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
+Egypt,Ṭanṭā 1,Gharbia,,,306719,Kism (fully urban),Tanta,,Tanta,,GharbiaEgypt,county,2,EG-GH,Tanta 1,,,,county,2,EG-GH,Tanta 1,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
+Egypt,Ṭanṭā 2,Gharbia,,,269929,Kism (fully urban),Tanta,,Tanta,,GharbiaEgypt,county,2,EG-GH,Tanta 2,,,,county,2,EG-GH,Tanta 2,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
+Egypt,As-Sanṭah,Gharbia,,,500080,Markaz,,,#N/A,,GharbiaEgypt,county,2,EG-GH,Santa,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
+Egypt,Kafr az-Zayyāt,Gharbia,,,477948,Markaz,,,#N/A,,GharbiaEgypt,county,2,EG-GH,Kafr Al-Zayyat,,,,county,2,EG-GH,Kafr Al-Zayyat,,,,,region,1,EG-GH,الغربية,MED,0.929,EG-GH
+Egypt,Ziftā [Zefta],Gharbia,,,442721,Markaz,,,#N/A,,GharbiaEgypt,,,,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
+Egypt,Samannūd,Gharbia,,,418930,Markaz,,,#N/A,,GharbiaEgypt,county,2,EG-GH,Samannud,,,,county,2,EG-GH,Samannud,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
+Egypt,Quṭūr,Gharbia,,,352115,Markaz,,,#N/A,,GharbiaEgypt,county,2,EG-GH,Qutur,,,,county,2,EG-GH,Qutur,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
+Egypt,Basyūn [Basyoun],Gharbia,,,312758,Markaz,,,#N/A,,GharbiaEgypt,county,2,EG-GH,Basyun,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
+Egypt,Al-Maḥallah al-Kubrā 1 [Mahalla el-Kubra],Gharbia,,,181469,Kism (fully urban),,,#N/A,,GharbiaEgypt,county,2,EG-GH,El Mahalla El Kobra 1,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
+Egypt,Al-Maḥallah al-Kubrā 3 [Mahalla el-Kubra],Gharbia,,,129833,Kism (fully urban),,,#N/A,,GharbiaEgypt,,,,,,,,,,,,,,,,region,1,EG-GH,الغربية,NONE,0.0,EG-GH
+Egypt,Ziftā,Gharbia,,,111700,Kism (fully urban),,,#N/A,,GharbiaEgypt,county,2,EG-GH,Zifta,,,,county,2,EG-GH,Zifta,,,,,region,1,EG-GH,الغربية,HIGH,1.0,EG-GH
+Egypt,Būlāq al-Dakrūr,Giza,,,1014537,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,county,2,EG-GZ,Bulaq Al-DakrUr,,,,,region,1,EG-GZ,الجيزة,HIGH,1.0,EG-GZ
+Egypt,Al-Warrāq,Giza,,,774581,Kism (urban and rural parts),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-Ahrām,Giza,,,696696,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,county,2,EG-GZ,Al-Ahram,,,,,region,1,EG-GZ,الجيزة,HIGH,1.0,EG-GZ
+Egypt,Imbābah [Imbaba],Giza,,,668471,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-Badrashayn [Badrshein],Giza,,,584885,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Imbābah [Imbaba],Giza,,,563806,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-'Ayyāṭ,Giza,,,537276,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Kirdāsah,Giza,,,485132,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,county,2,EG-GZ,Kardasa,,,,,region,1,EG-GZ,الجيزة,LOW,0.8,EG-GZ
+Egypt,Aṭ-Ṭālbīah,Giza,,,483690,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Aṣ-Ṣaff,Giza,,,455845,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Awsīm [Ossim],Giza,,,415735,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Aṭfīḥ [Atfeh],Giza,,,402310,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-Jīzah [Giza],Giza,,,399467,Markaz,Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-'Umrāniyah,Giza,,,386844,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-Jīzah [Giza],Giza,,,301967,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-'Ajūzah,Giza,,,294299,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Madīnat Sittah Uktūbar 2 [6th of October City],Giza,,,207505,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-Ḥawāmidiyah,Giza,,,203371,Kism (urban and rural parts),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Madīnat Sittah Uktūbar 1 & 3 [6th of October City],Giza,,,161145,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Ash-Shaykh Zāyid [Sheikh Zayed City],Giza,,,95854,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Ad-Duqqī,Giza,,,74964,Kism (fully urban),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-Wāḥāt al-Baḥariyah,Giza,,,42411,Kism (urban and rural parts),Cairo,,Cairo,,GizaEgypt,region,1,EG-GZ,الجيزة,,,,,,,,,,,,region,1,EG-GZ,الجيزة,NONE,0.0,EG-GZ
+Egypt,Al-Ismā'īliyah 2 [Ismaïlia],Ismailia,,,254771,Kism (fully urban),Ismaïlia,,Ismaïlia,,IsmailiaEgypt,county,2,EG-IS,Ismailiyya 2,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Al-Ismā'īliyah [Ismaïlia],Ismailia,,,168050,Markaz,Ismaïlia,,Ismaïlia,,IsmailiaEgypt,county,2,EG-IS,Ismailiyya,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Al-Ismā'īliyah 3 [Ismaïlia],Ismailia,,,126647,Kism (fully urban),Ismaïlia,,Ismaïlia,,IsmailiaEgypt,county,2,EG-IS,Ismailiyya 3,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Al-Ismā'īliyah 1 [Ismaïlia],Ismailia,,,48047,Kism (fully urban),Ismaïlia,,Ismaïlia,,IsmailiaEgypt,county,2,EG-IS,Ismailiyya 1,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Abū Ṣuwīr,Ismailia,,,218532,Markaz,,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Al-Qanṭarah,Ismailia,,,158972,Markaz,,,#N/A,,IsmailiaEgypt,county,2,EG-IS,"Qantara Gharb, al-",,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Fa'id [Fayid],Ismailia,,,144921,Markaz,,,#N/A,,IsmailiaEgypt,county,2,EG-IS,Fayid,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Al-Qaṣāṣīn al-Jadīdah,Ismailia,,,118739,New City,,,#N/A,,IsmailiaEgypt,,,,,,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,At-Tall al-Kabīr,Ismailia,,,109119,Markaz,,,#N/A,,IsmailiaEgypt,county,2,EG-IS,"Tal al-Kabir, al-",,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Al-Qanṭarah Sharq,Ismailia,,,61049,Kism (urban and rural parts),,,#N/A,,IsmailiaEgypt,county,2,EG-IS,"Qantara Sharq, al-",,,,,,,,,,,,region,1,EG-IS,الإسماعيلية,NONE,0.0,EG-IS
+Egypt,Kafr ash-Shaykh [Kafr el-Sheikh],Kafr el-Sheikh,,,478530,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Kafr Al-Shaykh,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Sīdī Sālim,Kafr el-Sheikh,,,469402,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Sidi Salim,,,,county,2,EG-KFS,Sidi Salim,,,,,region,1,EG-KFS,كفر الشيخ,HIGH,1.0,EG-KFS
+Egypt,Disūq [Desouk],Kafr el-Sheikh,,,439586,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Disuq,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Muṭūbis [Metoubes],Kafr el-Sheikh,,,324515,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Mitubas,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Al-Ḥāmūl,Kafr el-Sheikh,,,311153,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Al Hamul,,,,county,2,EG-KFS,Al Hamul,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.875,EG-KFS
+Egypt,Qallīn,Kafr el-Sheikh,,,284853,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Qillin,,,,county,2,EG-KFS,Qillin,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.833,EG-KFS
+Egypt,Al-Burulus,Kafr el-Sheikh,,,254504,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Burullus,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Biyalā,Kafr el-Sheikh,,,231569,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Biyalu,,,,county,2,EG-KFS,Biyalu,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.833,EG-KFS
+Egypt,Ar-Riyād,Kafr el-Sheikh,,,199801,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Riyad,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Fuwah,Kafr el-Sheikh,,,194046,Markaz,,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Fuwwa,,,,locality,,EG-KFS,فوه,,,,,region,1,EG-KFS,كفر الشيخ,HIGH,1.0,EG-KFS
+Egypt,Kafr ash-Shaykh 1 [Kafr el-Sheikh],Kafr el-Sheikh,,,154940,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Disūq [Desouk],Kafr el-Sheikh,,,149291,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Disuq,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Biyalā,Kafr el-Sheikh,,,89068,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,county,2,EG-KFS,Biyalu,,,,county,2,EG-KFS,Biyalu,,,,,region,1,EG-KFS,كفر الشيخ,LOW,0.833,EG-KFS
+Egypt,Kafr ash-Shaykh 2 [Kafr el-Sheikh],Kafr el-Sheikh,,,39629,Kism (fully urban),,,#N/A,,Kafr el-SheikhEgypt,,,,,,,,,,,,,,,,region,1,EG-KFS,كفر الشيخ,NONE,0.0,EG-KFS
+Egypt,Al-Uqṣur [Luxor],Luxor,,,268640,Kism (fully urban),Luxor,,Luxor,,LuxorEgypt,county,2,EG-LX,Luxor,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
+Egypt,Armant,Luxor,,,188325,Markaz,Luxor,,Luxor,,LuxorEgypt,county,2,EG-LX,Armant,,,,county,2,EG-LX,Armant,,,,,region,1,EG-LX,الأقصر,HIGH,1.0,EG-LX
+Egypt,Al-Uqṣur [Luxor],Luxor,,,178030,Markaz,Luxor,,Luxor,,LuxorEgypt,county,2,EG-LX,Luxor,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
+Egypt,Al-Qarnah,Luxor,,,176478,Markaz,Luxor,,Luxor,,LuxorEgypt,,,,,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
+Egypt,Shurṭah Ṭībah [Tiba],Luxor,,,78558,Markaz,Luxor,,Luxor,,LuxorEgypt,county,2,EG-LX,Tiba police station,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
+Egypt,Isnā [Esna],Luxor,,,462787,Markaz,,,#N/A,,LuxorEgypt,county,2,EG-LX,Isna,,,,,,,,,,,,region,1,EG-LX,الأقصر,NONE,0.0,EG-LX
+Egypt,Marsā Maṭrūḥ [Mersa Matruh],Matruh,,,228154,Kism (urban and rural parts),Mersa Matruh,,Mersa Matruh,,MatruhEgypt,county,2,EG-MT,Marsa Matruh,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
+Egypt,As-Sāḥal ash-Shamāli,Matruh,,,81,Kism (fully urban),Mersa Matruh,,Mersa Matruh,,MatruhEgypt,,,,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
+Egypt,Al-Ḥammām,Matruh,,,63493,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,county,2,EG-MT,Al-Hammam,,,,county,2,EG-MT,Al-Hammam,,,,,region,1,EG-MT,مطروح,HIGH,1.0,EG-MT
+Egypt,Sīdī Barrānī,Matruh,,,63098,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,county,2,EG-MT,Sidi Barani,,,,county,2,EG-MT,Sidi Barani,,,,,region,1,EG-MT,مطروح,MED,0.957,EG-MT
+Egypt,Aḍ-Ḍab'ah,Matruh,,,58737,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
+Egypt,Sīwa,Matruh,,,33957,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,county,2,EG-MT,Siwa,,,,county,2,EG-MT,Siwa,,,,,region,1,EG-MT,مطروح,HIGH,1.0,EG-MT
+Egypt,An-Najīlah,Matruh,,,32917,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,,,,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
+Egypt,As-Sallūm,Matruh,,,19265,Kism (urban and rural parts),,,#N/A,,MatruhEgypt,county,2,EG-MT,Salloum,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
+Egypt,Al-'Alamayn,Matruh,,,11843,Kism (fully rural),,,#N/A,,MatruhEgypt,,,,,,,,,,,,,,,,region,1,EG-MT,مطروح,NONE,0.0,EG-MT
+Egypt,Al-Minyā,Minya,,,739279,Markaz,Minya,,Minya,,MinyaEgypt,county,2,EG-MN,Markz Al Minya,,,,region,1,EG-MN,المنيا,,,,,region,1,EG-MN,المنيا,HIGH,1.0,EG-MN
+Egypt,Al-Minyā 2,Minya,,,125569,Kism (fully urban),Minya,,Minya,,MinyaEgypt,,,,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Al-Minyā 3,Minya,,,103735,Kism (fully urban),Minya,,Minya,,MinyaEgypt,,,,,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Al-Minyā 1,Minya,,,54301,Kism (fully urban),Minya,,Minya,,MinyaEgypt,county,2,EG-MN,Kesm Al-minya,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Madīnat al-Minyā al-Jadīdah [New Minya],Minya,,,17470,New City,Minya,,Minya,,MinyaEgypt,county,2,EG-MN,New Minya,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Mallawī,Minya,,,813824,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Kesm Mallawi,,,,county,2,EG-MN,Kesm Mallawi,,,,,region,1,EG-MN,المنيا,LOW,0.787,EG-MN
+Egypt,Banī Mazār [Beni Mazar],Minya,,,701816,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Bani Mazar,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Abū Qurqās,Minya,,,662967,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Abu Qurqas,,,,county,2,EG-MN,Markz Abu Qurqas,,,,,region,1,EG-MN,المنيا,LOW,0.819,EG-MN
+Egypt,Maghāghah,Minya,,,655588,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Maghagha,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Malawiṭ Gharb,Minya,,,531204,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Mallawi,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Dayr Mawās [Deir Mawas],Minya,,,451702,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Dir Mawas,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Maṭāy,Minya,,,352377,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Matay,,,,locality,,EG-MN,مدينه مطاى,,,,,region,1,EG-MN,المنيا,HIGH,1.0,EG-MN
+Egypt,Samālūṭ,Minya,,,347427,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Samalut,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Al-'Idwah,Minya,,,307904,Markaz,,,#N/A,,MinyaEgypt,county,2,EG-MN,Markz Al Idwa,,,,,,,,,,,,region,1,EG-MN,المنيا,NONE,0.0,EG-MN
+Egypt,Mallawī,Minya,,,212628,Kism (fully urban),,,#N/A,,MinyaEgypt,county,2,EG-MN,Kesm Mallawi,,,,county,2,EG-MN,Kesm Mallawi,,,,,region,1,EG-MN,المنيا,LOW,0.787,EG-MN
+Egypt,Ashmūn [Ashmoun],Monufia,,,901191,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Ashmun,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Quwaysinā [Quweisna],Monufia,,,526513,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Quwisna,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Shibīn al-Kawm [Shibin el-Kom],Monufia,,,506394,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Shibin al-Kum,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Minūf [Menouf],Monufia,,,465897,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Minuf,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Al-Bājūr [El Bagour],Monufia,,,427017,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Al-Bagur,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Talā,Monufia,,,413839,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Tala,,,,county,2,EG-MNF,Tala,,,,,region,1,EG-MNF,المنوفية,HIGH,1.0,EG-MNF
+Egypt,Ash-Shuhadā',Monufia,,,368909,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Al-Shuhada,,,,county,2,EG-MNF,Al-Shuhada,,,,,region,1,EG-MNF,المنوفية,LOW,0.857,EG-MNF
+Egypt,Birkat as-Sab' [Birket el-Sab],Monufia,,,330847,Markaz,,,#N/A,,MonufiaEgypt,,,,,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Shibīn al-Kawm [Shibin el-Kom],Monufia,,,267945,Kism (fully urban),,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Shibin al-Kum,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Madīnat as-Sādāt [Sadat City],Monufia,,,192172,Markaz,,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Sadat City,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Minūf [Menouf],Monufia,,,125707,Kism (fully urban),,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Minuf,,,,,,,,,,,,region,1,EG-MNF,المنوفية,NONE,0.0,EG-MNF
+Egypt,Sirs al-Layyānah,Monufia,,,78168,Kism (fully urban),,,#N/A,,MonufiaEgypt,county,2,EG-MNF,Sirs Al-Layyana City,,,,county,2,EG-MNF,Sirs Al-Layyana City,,,,,region,1,EG-MNF,المنوفية,MED,0.968,EG-MNF
+Egypt,Al-Wāḥāt al-Khārijah [Kharga],New Valley,,,101283,Kism (urban and rural parts),,,#N/A,,New ValleyEgypt,county,2,EG-WAD,Al Waqf,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
+Egypt,Shurṭah al-Dākhlah [Dakhla],New Valley,,,93578,Markaz,,,#N/A,,New ValleyEgypt,county,2,EG-WAD,A-Dakhla Oasis,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
+Egypt,Shurṭah al-Farāfirah,New Valley,,,37031,Markaz,,,#N/A,,New ValleyEgypt,county,2,EG-WAD,Al Farafra Oasis,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
+Egypt,Shurṭah Bārīs [Baris],New Valley,,,14466,Markaz,,,#N/A,,New ValleyEgypt,county,2,EG-WAD,Paris Paris,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
+Egypt,Balāṭ,New Valley,,,12816,Markaz,,,#N/A,,New ValleyEgypt,,,,,,,,,,,,,,,,region,1,EG-WAD,الوادي الجديد,NONE,0.0,EG-WAD
+Egypt,Al-'Arīsh 2 [El Arish],North Sinai,,,69504,Kism (fully urban),El Arish,,El Arish,,North SinaiEgypt,county,2,EG-SIN,El Arish 2,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
+Egypt,Al-'Arīsh 1 [El Arish],North Sinai,,,59047,Kism (urban and rural parts),El Arish,,El Arish,,North SinaiEgypt,county,2,EG-SIN,El Arish 1,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
+Egypt,Al-'Arīsh 3 [El Arish],North Sinai,,,46789,Kism (fully urban),El Arish,,El Arish,,North SinaiEgypt,county,2,EG-SIN,El Arish 3,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
+Egypt,Al-'Arīsh 4 [El Arish],North Sinai,,,28756,Kism (urban and rural parts),El Arish,,El Arish,,North SinaiEgypt,county,2,EG-SIN,El Arish 4,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
+Egypt,Rafaḥ,North Sinai,,,80823,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,county,2,EG-SIN,Rafah,,,,county,2,EG-SIN,Rafah,,,,,region,1,EG-SIN,شمال سيناء,HIGH,1.0,EG-SIN
+Egypt,Ash-Shaykh Zuwayd [Sheikh Zuweid],North Sinai,,,64305,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,county,2,EG-SIN,Shaykh Zuwayd,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
+Egypt,B'īr al-'Abd,North Sinai,,,59316,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,county,2,EG-SIN,Bir Al-Abd,,,,county,2,EG-SIN,Bir Al-Abd,,,,,region,1,EG-SIN,شمال سيناء,LOW,0.909,EG-SIN
+Egypt,Shurṭah Rumānah,North Sinai,,,43963,Kism (fully rural),,,#N/A,,North SinaiEgypt,county,2,EG-SIN,Rummana,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
+Egypt,Al-Ḥasanah,North Sinai,,,20631,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,county,2,EG-SIN,Al-Hasna,,,,county,2,EG-SIN,Al-Hasna,,,,,region,1,EG-SIN,شمال سيناء,LOW,0.889,EG-SIN
+Egypt,Shurṭah al-Qasīmah,North Sinai,,,12939,Kism (fully rural),,,#N/A,,North SinaiEgypt,county,2,EG-SIN,Qasima,,,,,,,,,,,,region,1,EG-SIN,شمال سيناء,NONE,0.0,EG-SIN
+Egypt,Nakhl,North Sinai,,,6482,Kism (urban and rural parts),,,#N/A,,North SinaiEgypt,county,2,EG-SIN,Nakhl,,,,county,2,EG-SIN,Nakhl,,,,,region,1,EG-SIN,شمال سيناء,HIGH,1.0,EG-SIN
+Egypt,Az-Zuhūr [Al-Zohour],Port Said,,,263437,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Aḍ-Ḍawāḥy [Al-Dawahy],Port Said,,,146980,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Būr Fuād [Port Fuad],Port Said,,,88550,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Al-Manākh [Al-Manakh],Port Said,,,83741,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Al-'Arab [Al-Arab],Port Said,,,59586,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Al-Janūb [Al-Ganoub],Port Said,,,41439,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Al-Janūb 2 [Al-Ganoub],Port Said,,,37850,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Ash-Sharq [Al-Sharq],Port Said,,,34296,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Būr Fuād 2 [Port Fuad],Port Said,,,11893,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Mubārak - Sharq at-Tafrī'tah [Mubarak East],Port Said,,,7219,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Al-Manāṣrah [Al-Manasra],Port Said,,,5524,Kism (fully urban),Port Said,,Port Said,,Port SaidEgypt,region,1,EG-PTS,بورسعيد,,,,,,,,,,,,region,1,EG-PTS,بورسعيد,NONE,0.0,EG-PTS
+Egypt,Shubrā al-Khaymah 2 [Shubra el-Kheima],Qalyubia,,,725652,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Shubra Al-Khayma 2,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
+Egypt,Al-Khānkah,Qalyubia,,,606693,Markaz,Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Al Khanka,,,,county,2,EG-KB,Al Khanka,,,,,region,1,EG-KB,القليوبية,LOW,0.842,EG-KB
+Egypt,Qalyūb,Qalyubia,,,592638,Markaz,Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Qalyub,,,,county,2,EG-KB,Qalyub,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
+Egypt,Sibīn al-Qanāṭir [Shibin el-Qanater],Qalyubia,,,570868,Markaz,Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Shibin al-Qanatir,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
+Egypt,Al-Qanāṭir al-Khayriyah,Qalyubia,,,536164,Markaz,Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Qanatir Al-Khayriyya,,,,county,2,EG-KB,Qanatir Al-Khayriyya,,,,,region,1,EG-KB,القليوبية,LOW,0.884,EG-KB
+Egypt,Shubrā al-Khaymah 1 [Shubra el-Kheima],Qalyubia,,,514637,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Shubra Al-Khayma 1,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
+Egypt,Al-Khuṣūṣ,Qalyubia,,,488904,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Khsos,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
+Egypt,Qalyūb,Qalyubia,,,156363,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Qalyub,,,,county,2,EG-KB,Qalyub,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
+Egypt,Al-'Ubūr [El Ubour],Qalyubia,,,138987,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Abour,,,,,,,,,,,,region,1,EG-KB,القليوبية,NONE,0.0,EG-KB
+Egypt,Al-Khānkah,Qalyubia,,,81646,Kism (fully urban),Cairo,,Cairo,,QalyubiaEgypt,county,2,EG-KB,Al Khanka,,,,county,2,EG-KB,Al Khanka,,,,,region,1,EG-KB,القليوبية,LOW,0.842,EG-KB
+Egypt,Ṭūkh,Qalyubia,,,627290,Markaz,,,#N/A,,QalyubiaEgypt,county,2,EG-KB,Tukh,,,,county,2,EG-KB,Tukh,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
+Egypt,Banhā,Qalyubia,,,509971,Markaz,,,#N/A,,QalyubiaEgypt,,,,,,,,county,2,EG-KB,Banha,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
+Egypt,Kafr Shukr,Qalyubia,,,199650,Markaz,,,#N/A,,QalyubiaEgypt,county,2,EG-KB,Kafr Shukr,,,,county,2,EG-KB,Kafr Shukr,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
+Egypt,Banhā 1,Qalyubia,,,113642,Kism (fully urban),,,#N/A,,QalyubiaEgypt,county,2,EG-KB,Banha,,,,county,2,EG-KB,Banha,,,,,region,1,EG-KB,القليوبية,LOW,0.833,EG-KB
+Egypt,Banhā 2,Qalyubia,,,68612,Kism (fully urban),,,#N/A,,QalyubiaEgypt,,,,,,,,county,2,EG-KB,Banha,,,,,region,1,EG-KB,القليوبية,LOW,0.833,EG-KB
+Egypt,Qahā,Qalyubia,,,50850,Kism (urban and rural parts),,,#N/A,,QalyubiaEgypt,county,2,EG-KB,Qaha,,,,county,2,EG-KB,Qaha,,,,,region,1,EG-KB,القليوبية,HIGH,1.0,EG-KB
+Egypt,Naj' Ḥammādī,Qena,,,640290,Markaz,Nag Hammadi,,Nag Hammadi,,QenaEgypt,county,2,EG-KN,Nag Hammadi,,,,county,2,EG-KN,Nag Hammadi,,,,,region,1,EG-KN,قنا,LOW,0.87,EG-KN
+Egypt,Qinā [Qena],Qena,,,498297,Markaz,Qena,,Qena,,QenaEgypt,county,2,EG-KN,Qina,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
+Egypt,Qinā [Qena],Qena,,,252883,Kism (fully urban),Qena,,Qena,,QenaEgypt,county,2,EG-KN,Qina,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
+Egypt,Abū Ṭisht,Qena,,,514535,Markaz,,,#N/A,,QenaEgypt,county,2,EG-KN,Abu Tisht,,,,county,2,EG-KN,Abu Tisht,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
+Egypt,Qūṣ,Qena,,,512827,Markaz,,,#N/A,,QenaEgypt,county,2,EG-KN,Qus,,,,county,2,EG-KN,Qus,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
+Egypt,Dishnā,Qena,,,429294,Markaz,,,#N/A,,QenaEgypt,county,2,EG-KN,Dishna,,,,county,2,EG-KN,Dishna,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
+Egypt,Farshūṭ,Qena,,,207547,Markaz,,,#N/A,,QenaEgypt,county,2,EG-KN,Farshut,,,,county,2,EG-KN,Farshut,,,,,region,1,EG-KN,قنا,HIGH,1.0,EG-KN
+Egypt,Naqādah [Naqada],Qena,,,188984,Markaz,,,#N/A,,QenaEgypt,county,2,EG-KN,Naqada,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
+Egypt,"Qifṭ [Gebtu, Coptos]",Qena,,,157383,Markaz,,,#N/A,,QenaEgypt,county,2,EG-KN,Qift,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
+Egypt,Al-Waqf,Qena,,,89187,Markaz,,,#N/A,,QenaEgypt,,,,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
+Egypt,Madīnat Qinā al-Jadīdah [New Qina],Qena,,,1640,New City,,,#N/A,,QenaEgypt,,,,,,,,,,,,,,,,region,1,EG-KN,قنا,NONE,0.0,EG-KN
+Egypt,Al-Ghurdaqah 2 [Hurghada],Red Sea,,,125395,Kism (fully urban),Hurghada,,Hurghada,,Red SeaEgypt,county,2,EG-BA,Hurghada 2,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
+Egypt,Al-Ghurdaqah 1 [Hurghada],Red Sea,,,81737,Kism (fully urban),Hurghada,,Hurghada,,Red SeaEgypt,county,2,EG-BA,Hurghada 1,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
+Egypt,Safājā [Safaga],Red Sea,,,55299,Kism (urban and rural parts),Hurghada,,Hurghada,,Red SeaEgypt,county,2,EG-BA,Safaga,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
+Egypt,Marsā 'Alam,Red Sea,,,9001,Kism (urban and rural parts),Marsa Alam,,Marsa Alam,,Red SeaEgypt,county,2,EG-BA,Marsa Alam,,,,county,2,EG-BA,Marsa Alam,,,,,region,1,EG-BA,البحر الأحمر,MED,0.952,EG-BA
+Egypt,Al-Quṣayr,Red Sea,,,51882,Kism (urban and rural parts),,,#N/A,,Red SeaEgypt,county,2,EG-BA,Qusir,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
+Egypt,Ras Ghārib [Ras Gharib],Red Sea,,,45108,Kism (urban and rural parts),,,#N/A,,Red SeaEgypt,county,2,EG-BA,Ras Gharib,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
+Egypt,Ash-Shalātīn,Red Sea,,,13431,Kism (urban and rural parts),,,#N/A,,Red SeaEgypt,county,2,EG-BA,Shallatin,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
+Egypt,Ḥalāyib,Red Sea,,,8217,Kism (fully rural),,,#N/A,,Red SeaEgypt,county,2,0,Halayib,,,,,,,,,,,,region,1,EG-BA,البحر الأحمر,NONE,0.0,EG-BA
+Egypt,Bilbays [Bilbeis],Sharqia,,,866246,Markaz,Bilbeis,,Bilbeis,,SharqiaEgypt,county,2,EG-SHR,Bilbis,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Az-Zaqāzīq [Zagazig],Sharqia,,,915777,Markaz,Zagazig,,Zagazig,,SharqiaEgypt,county,2,EG-SHR,Zaqaziq,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Az-Zaqāzīq 2 [Zagazig],Sharqia,,,232739,Kism (fully urban),Zagazig,,Zagazig,,SharqiaEgypt,county,2,EG-SHR,Zaqaziq 2,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Az-Zaqāzīq 1 [Zagazig],Sharqia,,,197706,Kism (fully urban),Zagazig,,Zagazig,,SharqiaEgypt,county,2,EG-SHR,Zaqaziq 1,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Minyā al-Qamḥ,Sharqia,,,812193,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Minya al-Qamh,,,,county,2,EG-SHR,Minya al-Qamh,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
+Egypt,Fāqūs [Faqous],Sharqia,,,641663,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Faqus,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Diyarb Najm,Sharqia,,,519957,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Dyarb Nigm,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Abū Kabīr,Sharqia,,,477167,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Abu Kabir,,,,county,2,EG-SHR,Abu Kabir,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
+Egypt,Abū Ḥammād,Sharqia,,,455013,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Abu Hammad,,,,county,2,EG-SHR,Abu Hammad,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
+Egypt,Al-Ḥusayniyah,Sharqia,,,393420,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Al-Husayniya,,,,county,2,EG-SHR,Al-Husayniya,,,,,region,1,EG-SHR,الشرقية,MED,0.96,EG-SHR
+Egypt,Hihyā,Sharqia,,,317772,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Hihya,,,,county,2,EG-SHR,Hihya,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
+Egypt,Kafr Ṣaqr,Sharqia,,,294765,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Kafr Saqr,,,,county,2,EG-SHR,Kafr Saqr,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
+Egypt,Awlād Ṣaqr,Sharqia,,,239055,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Awlad Saqr,,,,county,2,EG-SHR,Awlad Saqr,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
+Egypt,Mashtūl as-Sūq,Sharqia,,,234575,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Mashtul Al-Suq,,,,county,2,EG-SHR,Mashtul Al-Suq,,,,,region,1,EG-SHR,الشرقية,MED,0.929,EG-SHR
+Egypt,Al-Ibrāhīmiyah,Sharqia,,,194874,Markaz,,,#N/A,,SharqiaEgypt,county,2,EG-SHR,El-Ibrahimiya,,,,county,2,EG-SHR,El-Ibrahimiya,,,,,region,1,EG-SHR,الشرقية,LOW,0.889,EG-SHR
+Egypt,Ṣān al-Ḥajar,Sharqia,,,167435,Markaz,,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Madīnat 'Ashirh min-Ramaḍān 2 [10th of Ramadan City],Sharqia,,,162957,Kism (fully urban),,,#N/A,,SharqiaEgypt,county,2,EG-SHR,10 Ramadan 2,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Fāqūs [Faqous],Sharqia,,,116945,Kism (fully urban),,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Faqus,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Al-Qurayn,Sharqia,,,94632,Kism (fully urban),,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Qurin,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Munshāh Abū 'Umar,Sharqia,,,91982,Markaz,,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Madīnat 'Ashirh min-Ramaḍān 1 [10th of Ramadan City],Sharqia,,,83191,Kism (fully urban),,,#N/A,,SharqiaEgypt,,,,,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Al-Qanāyāt,Sharqia,,,70687,Kism (fully urban),,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Al-Qanayat,,,,county,2,EG-SHR,Al-Qanayat,,,,,region,1,EG-SHR,الشرقية,HIGH,1.0,EG-SHR
+Egypt,Aṣ-Ṣaliḥiyah al-Jadīdah [New Salhia],Sharqia,,,59320,Kism (fully urban),,,#N/A,,SharqiaEgypt,county,2,EG-SHR,Al-Salhiyya,,,,,,,,,,,,region,1,EG-SHR,الشرقية,NONE,0.0,EG-SHR
+Egypt,Sawhāj [Sohag],Sohag,,,588615,Markaz,Sohag,,Sohag,,SohagEgypt,county,2,EG-SHG,Suhag,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Sawhāj 1 [Sohag],Sohag,,,146011,Kism (fully urban),Sohag,,Sohag,,SohagEgypt,county,2,EG-SHG,Suhag-2,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Al-Balyanā [El Balyana],Sohag,,,576226,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Al-Balyana,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Akhmīm,Sohag,,,482666,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Akhmim,,,,county,2,EG-SHG,Akhmim,,,,,region,1,EG-SHG,سوهاج,HIGH,1.0,EG-SHG
+Egypt,Ṭimā,Sohag,,,471166,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Tama,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Dar as-Salām [Dar el-Salam],Sohag,,,451506,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Al-Munsha'āh,Sohag,,,443727,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Al-Minshat,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Al-Marāghah [El Maragha],Sohag,,,432678,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Al-Maragha,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Jirjā [Girga],Sohag,,,363806,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Girga,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Ṭahṭā,Sohag,,,317195,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Kesm Tahta,,,,county,2,EG-SHG,Tahta,,,,,region,1,EG-SHG,سوهاج,HIGH,1.0,EG-SHG
+Egypt,Juhaynah al-Gharbiyah [Juhaynah West],Sohag,,,299568,Markaz,,,#N/A,,SohagEgypt,,,,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Sāqultah [Sakulta],Sohag,,,227719,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Saqulta,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Al-'Usayrāt [Aserat],Sohag,,,214812,Markaz,,,#N/A,,SohagEgypt,county,2,EG-SHG,Al Usayrat,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Ṭahṭā,Sohag,,,182052,Kism (urban and rural parts),,,#N/A,,SohagEgypt,county,2,EG-SHG,Kesm Tahta,,,,county,2,EG-SHG,Tahta,,,,,region,1,EG-SHG,سوهاج,HIGH,1.0,EG-SHG
+Egypt,Jirjā [Girga],Sohag,,,162165,Kism (urban and rural parts),,,#N/A,,SohagEgypt,county,2,EG-SHG,Girga,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Sawhāj 2 [Sohag],Sohag,,,120933,Kism (fully urban),,,#N/A,,SohagEgypt,,,,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Al-Kawthar,Sohag,,,5372,Kism (fully urban),,,#N/A,,SohagEgypt,county,2,EG-SHG,Kawther,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Madīnat Sawhāj al-Jadīdah [New Sohag],Sohag,,,192,New City,,,#N/A,,SohagEgypt,,,,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Madīnat Akhmīm al-Jadīdah [New Akhmim],Sohag,,,0,New City,,,#N/A,,SohagEgypt,,,,,,,,,,,,,,,,region,1,EG-SHG,سوهاج,NONE,0.0,EG-SHG
+Egypt,Aṭ-Ṭūr [El Tor],South Sinai,,,43720,Kism (urban and rural parts),Sharm El Sheikh,,Sharm El Sheikh,,South SinaiEgypt,county,2,EG-JS,Al-Tur,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
+Egypt,Sharm ash-Shaykh 1 [Sharm el-Sheikh],South Sinai,,,13561,Kism (fully urban),Sharm El Sheikh,,Sharm El Sheikh,,South SinaiEgypt,county,2,EG-JS,Sharm el-Sheikh,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
+Egypt,Sharm ash-Shaykh 2 [Sharm el-Sheikh],South Sinai,,,1532,Kism (urban and rural parts),Sharm El Sheikh,,Sharm El Sheikh,,South SinaiEgypt,,,,,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
+Egypt,Ras Sidr,South Sinai,,,17571,Kism (urban and rural parts),Suez,,Suez,,South SinaiEgypt,county,2,EG-JS,Ras Sidr,,,,county,2,EG-JS,Ras Sidr,,,,,region,1,EG-JS,جنوب سيناء,HIGH,1.0,EG-JS
+Egypt,Nuwaybi'a,South Sinai,,,7619,Kism (urban and rural parts),Taba,,Taba,,South SinaiEgypt,county,2,EG-JS,Nuweiba,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
+Egypt,Shurṭah Ṭābā [Taba],South Sinai,,,789,Kism (fully rural),Taba,,Taba,,South SinaiEgypt,county,2,EG-JS,Taba,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
+Egypt,Abū Radīs [incl. Abū Zanīmah],South Sinai,,,19982,Kism (urban and rural parts),,,#N/A,,South SinaiEgypt,county,2,EG-JS,Abu Radis,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
+Egypt,Sānt Kātirīn [Saint Catherine],South Sinai,,,4792,Kism (urban and rural parts),,,#N/A,,South SinaiEgypt,county,2,EG-JS,Sant Katrin,,,,,,,,,,,,region,1,EG-JS,جنوب سيناء,NONE,0.0,EG-JS
+Egypt,Dahab,South Sinai,,,3106,Kism (urban and rural parts),,,#N/A,,South SinaiEgypt,county,2,EG-JS,Dahab,,,,county,2,EG-JS,Dahab,,,,,region,1,EG-JS,جنوب سيناء,HIGH,1.0,EG-JS
+Egypt,Al-Arba'īn [Arbaeen],Suez,,,282299,Kism (fully urban),Suez,,Suez,,SuezEgypt,county,2,EG-SUZ,Al-Arbiin,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
+Egypt,Fayṣal [Faisal],Suez,,,190650,Kism (fully urban),Suez,,Suez,,SuezEgypt,county,2,EG-SUZ,Faysal,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
+Egypt,Al-Janāyin [Ganayen],Suez,,,139871,Kism (fully urban),Suez,,Suez,,SuezEgypt,county,2,EG-SUZ,Al-Ganayin,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
+Egypt,As-Suways [Suez],Suez,,,86721,Kism (fully urban),Suez,,Suez,,SuezEgypt,county,2,EG-SUZ,Suez,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ
+Egypt,'Atāqah [Attaka],Suez,,,74299,Kism (fully urban),Suez,,Suez,,SuezEgypt,county,2,EG-SUZ,Ataqa,,,,,,,,,,,,region,1,EG-SUZ,السويس,NONE,0.0,EG-SUZ

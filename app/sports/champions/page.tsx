@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getChampionsWithLinks } from "@/lib/championsHub";
-import ChampionsTable, { type ChampRow } from "./ChampionsTable";
+import { type ChampRow } from "./ChampionsTable";
+import ChampionsView from "./ChampionsView";
+import { getCompetitionIndex } from "@/lib/championsHistory";
 
 export const dynamicParams = false;
 
 const PATH = "/sports/champions";
-const TITLE = "Current Champions";
+const TITLE = "Champions";
 const DESC =
-  "Every reigning champion across the Gold Standard competitions and selected leagues, on one board: World Cup holders, continental kings, and the domestic title-holders, each linked to its team page and league hub.";
+  "Champions across every competition we track: the current reigning holders on one board, plus all-time honour rolls for each competition, every champion linked to its team page and home metro.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -47,6 +49,7 @@ function sportRank(s: string): number {
 export default function ChampionsHubPage() {
   const rows = getChampionsWithLinks();
   const linked = rows.filter((r) => r.teamHref).length;
+  const index = getCompetitionIndex();
 
   // One merged board, default order: the workbook's tier rank (lowest first;
   // not shown), then by sport, then competition name. The client table layers
@@ -83,23 +86,23 @@ export default function ChampionsHubPage() {
         {" / "}
         <Link href="/sports" className="hover:underline">Sports</Link>
         {" / "}
-        <span>Current Champions</span>
+        <span>Champions</span>
       </nav>
 
       <header className="mb-6">
         <div className="flex items-center gap-2 mb-2">
           <span aria-hidden className="text-2xl">🏆</span>
           <span className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: GOLD }}>
-            Reigning holders
+            Reigning holders &amp; honour rolls
           </span>
         </div>
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Current Champions</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-2">Champions</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Every reigning champion across the Gold Standard competitions and the selected leagues we
-          highlight, on one board. Each champion links to its team page where one exists, and to the
-          league hub; the Region column gives each competition's reach, from World to continent to
-          country. Filter by scope, sport or region, and click any column header to sort. Maintained
-          by hand against the source of truth; updated as each title changes hands.
+          Two views, one board. <strong className="text-[var(--text)]">Current</strong> lists every
+          reigning champion across the Gold Standard competitions and selected leagues, filterable by
+          scope, sport or region. <strong className="text-[var(--text)]">All-Time</strong> opens the
+          honour rolls: every champion of every competition we track, each linked to its team page and,
+          for club sports, the home metro that won it.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-[var(--text-muted)] mt-3">
           <div>
@@ -112,7 +115,7 @@ export default function ChampionsHubPage() {
       </header>
 
       <div className="mt-6">
-        <ChampionsTable rows={tableRows} />
+        <ChampionsView current={tableRows} index={index} />
       </div>
 
       <p className="text-xs text-[var(--text-dim)] mt-10">

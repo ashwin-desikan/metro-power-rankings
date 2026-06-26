@@ -1,0 +1,169 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Serbia,Novi Beograd,Belgrade City,,,211027,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Нови Београд,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Palilula (Beograd),Belgrade City,,,185416,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Палилула,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Zemun,Belgrade City,,,176894,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Земун,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Čukarica,Belgrade City,,,175860,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Чукарица,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Zvezdara,Belgrade City,,,171064,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Звездара,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Voždovac,Belgrade City,,,169801,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Вождовац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Rakovica,Belgrade City,,,106852,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Раковица,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Grocka,Belgrade City,,,87092,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Гроцка,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Obrenovac,Belgrade City,,,71808,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Обреновац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Vračar,Belgrade City,,,57888,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Врачар,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Lazarevac,Belgrade City,,,55802,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Лазаревац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Mladenovac,Belgrade City,,,51055,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Младеновац (село),,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Surčin,Belgrade City,,,47212,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Сурчин,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Stari Grad,Belgrade City,,,43772,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Стари град,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Savski Venac,Belgrade City,,,34912,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Савски венац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Barajevo,Belgrade City,,,26644,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Барајево,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Sopot,Belgrade City,,,19669,City Municipality,Belgrade,,Belgrade,,Belgrade CitySerbia,county,2,,Град Београд,,,,locality,,nan,Сопот,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bor,Bor,,,43649,Municipality,Bor,,Bor,,BorSerbia,locality,,RS,Бор,,,,locality,,nan,Бор,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Negotin,Bor,,,30988,Municipality,,,#N/A,,BorSerbia,locality,,RS,Неготин,,,,locality,,nan,Неготин,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kladovo,Bor,,,17831,Municipality,,,#N/A,,BorSerbia,locality,,RS,Кладово,,,,locality,,nan,Кладово,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Majdanpek,Bor,,,15733,Municipality,,,#N/A,,BorSerbia,locality,,RS,Мајданпек,,,,locality,,nan,Мајданпек,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Požarevac,Braničevo,,,57738,City Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Пожаревац,,,,locality,,nan,Пожаревац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Petrovac na Mlavi,Braničevo,,,27037,Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Петровац на Млави,,,,locality,,nan,Петровац на Млави,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Veliko Gradište,Braničevo,,,15312,Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Велико Градиште,,,,locality,,nan,Велико Градиште,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kostolac,Braničevo,,,12868,City Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Костолац,,,,locality,,nan,Костолац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kučevo,Braničevo,,,12492,Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Кучево,,,,locality,,nan,Кучево,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Žagubica,Braničevo,,,10771,Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Жагубица,,,,locality,,nan,Жагубица,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Malo Crniće,Braničevo,,,9301,Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Мало Црниће,,,,locality,,nan,Мало Црниће,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Žabari,Braničevo,,,9033,Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Жабари,,,,locality,,nan,Жабари,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Golubac,Braničevo,,,7073,Municipality,,,#N/A,,BraničevoSerbia,locality,,RS,Голубац,,,,locality,,nan,Голубац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Zrenjanin,Central Banat,,,114034,City,Zrenjanin,,Zrenjanin,,Central BanatSerbia,locality,,RS-VO,Зрењанин,,,,locality,,RS-VO,Зрењанин,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Novi Bečej,Central Banat,,,22010,Municipality,,,#N/A,,Central BanatSerbia,locality,,RS-VO,Нови Бечеј,,,,locality,,RS-VO,Нови Бечеј,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Žitište,Central Banat,,,14597,Municipality,,,#N/A,,Central BanatSerbia,locality,,RS-VO,Житиште,,,,locality,,RS-VO,Житиште,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Sečanj,Central Banat,,,11334,Municipality,,,#N/A,,Central BanatSerbia,locality,,RS-VO,Сечањ,,,,locality,,RS-VO,Сечањ,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Nova Crnja,Central Banat,,,8982,Municipality,,,#N/A,,Central BanatSerbia,locality,,RS-VO,Нова Црња,,,,locality,,RS-VO,Нова Црња,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Smederevo,Danube,,,100786,City,Smederevo,,Smederevo,,DanubeSerbia,locality,,RS,Смедерево,,,,locality,,nan,Смедерево,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Smederevska Palanka,Danube,,,43984,Municipality,,,#N/A,,DanubeSerbia,locality,,RS,Смедеревска Паланка,,,,locality,,nan,Смедеревска Паланка,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Velika Plana,Danube,,,36983,Municipality,,,#N/A,,DanubeSerbia,locality,,RS,Велика Плана,,,,locality,,nan,Велика Плана,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Leskovac,Jablanica,,,131949,City,Leskovac,,Leskovac,,JablanicaSerbia,locality,,RS,Лесковац,,,,locality,,nan,Лесковац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Vlasotince,Jablanica,,,26961,Municipality,,,#N/A,,JablanicaSerbia,locality,,RS,Власотинце,,,,locality,,nan,Власотинце,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Lebane,Jablanica,,,18981,Municipality,,,#N/A,,JablanicaSerbia,locality,,RS,Лебане,,,,locality,,nan,Лебане,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bojnik,Jablanica,,,9803,Municipality,,,#N/A,,JablanicaSerbia,locality,,RS,Бојник,,,,locality,,nan,Бојник,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Medveđa,Jablanica,,,6230,Municipality,,,#N/A,,JablanicaSerbia,locality,,RS,Медвеђа,,,,locality,,nan,Медвеђа,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Crna Trava,Jablanica,,,1075,Municipality,,,#N/A,,JablanicaSerbia,locality,,RS,Црна Трава,,,,locality,,nan,Црна Трава,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Valjevo,Kolubara,,,84166,City,Valjevo,,Valjevo,,KolubaraSerbia,locality,,RS,Ваљево,,,,locality,,nan,Ваљево,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Ub,Kolubara,,,26878,Municipality,,,#N/A,,KolubaraSerbia,locality,,RS,Уб,,,,locality,,nan,Уб,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Lajkovac,Kolubara,,,14499,Municipality,,,#N/A,,KolubaraSerbia,locality,,RS,Лајковац (село),,,,locality,,nan,Лајковац (село),,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Mionica,Kolubara,,,12612,Municipality,,,#N/A,,KolubaraSerbia,locality,,RS,Мионица,,,,locality,,nan,Мионица,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Ljig,Kolubara,,,10918,Municipality,,,#N/A,,KolubaraSerbia,locality,,RS,Љиг,,,,locality,,nan,Љиг,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Osečina,Kolubara,,,10599,Municipality,,,#N/A,,KolubaraSerbia,locality,,RS,Осечина (село),,,,locality,,nan,Осечина (село),,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Loznica,Mačva,,,73550,City,Loznica,,Loznica,,MačvaSerbia,locality,,RS,Лозница,,,,locality,,nan,Лозница,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Šabac,Mačva,,,108898,City,Šabac,,Šabac,,MačvaSerbia,locality,,RS,Шабац,,,,locality,,nan,Шабац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bogatić,Mačva,,,25857,Municipality,,,#N/A,,MačvaSerbia,locality,,RS,Богатић,,,,locality,,nan,Богатић,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Vladimirci,Mačva,,,15157,Municipality,,,#N/A,,MačvaSerbia,locality,,RS,Владимирци,,,,locality,,nan,Владимирци,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Krupanj,Mačva,,,14942,Municipality,,,#N/A,,MačvaSerbia,locality,,RS,Крупањ,,,,locality,,nan,Крупањ,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Ljubovija,Mačva,,,12192,Municipality,,,#N/A,,MačvaSerbia,locality,,RS,Љубовија,,,,locality,,nan,Љубовија,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Koceljeva,Mačva,,,11382,Municipality,,,#N/A,,MačvaSerbia,locality,,RS,Коцељева,,,,locality,,nan,Коцељева,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Mali Zvornik,Mačva,,,10943,Municipality,,,#N/A,,MačvaSerbia,locality,,RS,Мали Зворник,,,,locality,,nan,Мали Зворник,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Čačak,Moravica,,,108219,City,Čačak,,Čačak,,MoravicaSerbia,locality,,RS,Чачак,,,,locality,,nan,Чачак,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Ivanjica,Moravica,,,28922,Municipality,Ivanjica,,Ivanjica,,MoravicaSerbia,locality,,RS,Ивањица,,,,locality,,nan,Ивањица,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Lučani,Moravica,,,17724,Municipality,Lucani,,Lucani,,MoravicaSerbia,locality,,RS,Лучани,,,,locality,,nan,Лучани,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Gornji Milanovac,Moravica,,,40519,Municipality,,,#N/A,,MoravicaSerbia,locality,,RS,Горњи Милановац,,,,locality,,nan,Горњи Милановац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Medijana,Niš,,,84224,City Municipality,Niš,,Niš,,NišSerbia,locality,,RS,Медијана,,,,locality,,nan,Медијана,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Palilula (Niš),Niš,,,72258,City Municipality,Niš,,Niš,,NišSerbia,locality,,RS,Палилула,,,,locality,,nan,Палилула,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Pantelej,Niš,,,53133,City Municipality,Niš,,Niš,,NišSerbia,locality,,RS,Пантелеј,,,,locality,,nan,Пантелеј,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Crveni krst,Niš,,,30427,City Municipality,Niš,,Niš,,NišSerbia,locality,,RS,Црвени Крст,,,,locality,,nan,Црвени Крст,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Doljevac,Niš,,,17613,Municipality,Niš,,Niš,,NišSerbia,locality,,RS,Дољевац,,,,locality,,nan,Дољевац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Niška Banja,Niš,,,13807,City Municipality,Niš,,Niš,,NišSerbia,locality,,RS,Нишка Бања,,,,locality,,nan,Нишка Бања,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Aleksinac,Niš,,,46219,Municipality,,,#N/A,,NišSerbia,locality,,RS,Алексинац,,,,locality,,nan,Алексинац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Merošina,Niš,,,12667,Municipality,,,#N/A,,NišSerbia,locality,,RS,Мерошина,,,,locality,,nan,Мерошина,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Svrljig,Niš,,,11971,Municipality,,,#N/A,,NišSerbia,locality,,RS,Сврљиг,,,,locality,,nan,Сврљиг,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Ražanj,Niš,,,7577,Municipality,,,#N/A,,NišSerbia,locality,,RS,Ражањ,,,,locality,,nan,Ражањ,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Gadžin Han,Niš,,,6402,Municipality,,,#N/A,,NišSerbia,locality,,RS,Гаџин Хан,,,,locality,,nan,Гаџин Хан,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bačka Topola,North Bačka,,,30082,Municipality,Bačka Topola,,Bačka Topola,,North BačkaSerbia,locality,,RS-VO,Бачка Топола,,,,locality,,RS-VO,Бачка Топола,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Subotica,North Bačka,,,135237,City,Subotica,,Subotica,,North BačkaSerbia,locality,,RS-VO,Суботица,,,,locality,,nan,Суботица,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Mali Iđoš,North Bačka,,,11035,Municipality,,,#N/A,,North BačkaSerbia,locality,,RS-VO,Мали Иђош,,,,locality,,RS-VO,Мали Иђош,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Kikinda,North Banat,,,53077,City,,,#N/A,,North BanatSerbia,locality,,RS-VO,Кикинда,,,,locality,,RS-VO,Кикинда,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Kanjiža,North Banat,,,23251,Municipality,,,#N/A,,North BanatSerbia,locality,,RS-VO,Кањижа,,,,locality,,RS-VO,Кањижа,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Senta,North Banat,,,21251,Municipality,,,#N/A,,North BanatSerbia,locality,,RS-VO,Сента,,,,locality,,RS-VO,Сента,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Ada,North Banat,,,15536,Municipality,,,#N/A,,North BanatSerbia,locality,,RS-VO,Ада,,,,locality,,RS-VO,Ада,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Novi Kneževac,North Banat,,,10023,Municipality,,,#N/A,,North BanatSerbia,locality,,RS-VO,Нови Кнежевац,,,,locality,,RS-VO,Нови Кнежевац,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Čoka,North Banat,,,10008,Municipality,,,#N/A,,North BanatSerbia,locality,,RS-VO,Чока,,,,locality,,RS-VO,Чока,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Surdulica,Pčinja,,,18190,Municipality,Surdulica,,Surdulica,,PčinjaSerbia,locality,,RS,Сурдулица,,,,locality,,nan,Сурдулица,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Vranje,Pčinja,,,70113,City Municipality,,,#N/A,,PčinjaSerbia,locality,,RS,Врање,,,,locality,,nan,Врање,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bujanovac,Pčinja,,,37532,Municipality,,,#N/A,,PčinjaSerbia,locality,,RS,Бујановац,,,,locality,,nan,Бујановац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Preševo,Pčinja,,,30173,Municipality,,,#N/A,,PčinjaSerbia,locality,,RS,Прешево,,,,locality,,nan,Прешево,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Vladičin Han,Pčinja,,,18331,Municipality,,,#N/A,,PčinjaSerbia,locality,,RS,Владичин Хан,,,,locality,,nan,Владичин Хан,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Vranjska Banja,Pčinja,,,8542,City Municipality,,,#N/A,,PčinjaSerbia,locality,,RS,Врањска Бања,,,,locality,,nan,Врањска Бања,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bosilegrad,Pčinja,,,6850,Municipality,,,#N/A,,PčinjaSerbia,locality,,RS,Босилеград,,,,locality,,nan,Босилеград,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Trgovište,Pčinja,,,4457,Municipality,,,#N/A,,PčinjaSerbia,locality,,RS,Трговиште,,,,locality,,nan,Трговиште,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Pirot,Pirot,,,52987,City,,,#N/A,,PirotSerbia,locality,,RS,Пирот,,,,locality,,nan,Пирот,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bela Palanka,Pirot,,,10432,Municipality,,,#N/A,,PirotSerbia,locality,,RS,Бела Паланка,,,,locality,,nan,Бела Паланка,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Babušnica,Pirot,,,9653,Municipality,,,#N/A,,PirotSerbia,locality,,RS,Бабушница,,,,locality,,nan,Бабушница,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Dimitrovgrad,Pirot,,,8847,Municipality,,,#N/A,,PirotSerbia,locality,,RS,Димитровград,,,,locality,,nan,Димитровград,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Jagodina,Pomoravlje,,,68091,City,Jagodina,,Jagodina,,PomoravljeSerbia,locality,,RS,Јагодина,,,,locality,,nan,Јагодина,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Paraćin,Pomoravlje,,,49232,Municipality,,,#N/A,,PomoravljeSerbia,locality,,RS,Параћин,,,,locality,,nan,Параћин,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Ćuprija,Pomoravlje,,,27151,Municipality,,,#N/A,,PomoravljeSerbia,locality,,RS,Ћуприја,,,,locality,,nan,Ћуприја,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Svilajnac,Pomoravlje,,,20531,Municipality,,,#N/A,,PomoravljeSerbia,locality,,RS,Свилајнац,,,,locality,,nan,Свилајнац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Despotovac,Pomoravlje,,,19580,Municipality,,,#N/A,,PomoravljeSerbia,locality,,RS,Деспотовац,,,,locality,,nan,Деспотовац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Rekovac,Pomoravlje,,,8687,Municipality,,,#N/A,,PomoravljeSerbia,locality,,RS,Рековац,,,,locality,,nan,Рековац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kruševac,Rasina,,,118446,City,Krusevac,,Krusevac,,RasinaSerbia,locality,,RS,Крушевац,,,,locality,,nan,Крушевац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Trstenik,Rasina,,,37570,Municipality,,,#N/A,,RasinaSerbia,locality,,RS,Трстеник,,,,locality,,nan,Трстеник,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Aleksandrovac,Rasina,,,23364,Municipality,,,#N/A,,RasinaSerbia,locality,,RS,Александровац,,,,locality,,nan,Александровац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Varvarin,Rasina,,,15673,Municipality,,,#N/A,,RasinaSerbia,locality,,RS,Варварин (село),,,,locality,,nan,Варварин (село),,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Brus,Rasina,,,14196,Municipality,,,#N/A,,RasinaSerbia,locality,,RS,Брус,,,,locality,,nan,Брус,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Ćićevac,Rasina,,,8346,Municipality,,,#N/A,,RasinaSerbia,locality,,RS,Ћићевац,,,,locality,,nan,Ћићевац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kraljevo,Raška,,,115297,City,Kraljevo,,Kraljevo,,RaškaSerbia,locality,,RS,Краљево,,,,locality,,nan,Краљево,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Novi Pazar,Raška,,,108124,City,Novi Pazar,,Novi Pazar,,RaškaSerbia,locality,,RS,Нови Пазар,,,,locality,,nan,Нови Пазар,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Tutin,Raška,,,32043,Municipality,,,#N/A,,RaškaSerbia,locality,,RS,Тутин,,,,locality,,nan,Тутин,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Vrnjačka Banja,Raška,,,25598,Municipality,,,#N/A,,RaškaSerbia,locality,,RS,Врњачка Бања,,,,locality,,nan,Врњачка Бања,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Raška,Raška,,,21894,Municipality,,,#N/A,,RaškaSerbia,locality,,RS,Рашка,,,,locality,,nan,Рашка,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bečej,South Bačka,,,34539,Municipality,Bečej,,Bečej,,South BačkaSerbia,locality,,RS-VO,Бечеј,,,,locality,,RS-VO,Бечеј,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,"Grad Novi Sad [incl. Novi Sad, Petrovaradin]",South Bačka,,,363254,Municipality,Novi Sad,,Novi Sad,,South BačkaSerbia,locality,,RS-VO,Нови Сад,,,,,,,,,,,,,,,,NONE,0.0,
+Serbia,Temerin,South Bačka,,,27568,Municipality,Novi Sad,,Novi Sad,,South BačkaSerbia,locality,,RS-VO,Темерин,,,,locality,,RS-VO,Темерин,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Sremski Karlovci,South Bačka,,,8224,Municipality,Novi Sad,,Novi Sad,,South BačkaSerbia,locality,,RS-VO,Сремски Карловци,,,,locality,,RS-VO,Сремски Карловци,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Bačka Palanka,South Bačka,,,51012,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Бачка Паланка,,,,locality,,RS-VO,Бачка Паланка,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Vrbas,South Bačka,,,38436,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Врбас,,,,locality,,RS-VO,Врбас,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Žabalj,South Bačka,,,24759,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Жабаљ,,,,locality,,RS-VO,Жабаљ,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Srbobran,South Bačka,,,15223,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Србобран,,,,locality,,RS-VO,Србобран,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Titel,South Bačka,,,14908,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Тител,,,,locality,,RS-VO,Тител,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Beočin,South Bačka,,,14868,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Беочин,,,,locality,,RS-VO,Беочин,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Bač,South Bačka,,,12812,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Бач,,,,locality,,RS-VO,Бач,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Bački Petrovac,South Bačka,,,12576,Municipality,,,#N/A,,South BačkaSerbia,locality,,RS-VO,Бачки Петровац,,,,locality,,RS-VO,Бачки Петровац,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Pančevo,South Banat,,,118660,City,Belgrade,,Belgrade,,South BanatSerbia,locality,,RS-VO,Панчево,,,,locality,,RS-VO,Панчево,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Vršac,South Banat,,,48280,City,,,#N/A,,South BanatSerbia,locality,,RS-VO,Вршац,,,,locality,,RS-VO,Вршац,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Kovin,South Banat,,,30671,Municipality,,,#N/A,,South BanatSerbia,locality,,RS-VO,Ковин,,,,locality,,RS-VO,Ковин,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Kovačica,South Banat,,,23377,Municipality,,,#N/A,,South BanatSerbia,locality,,RS-VO,Ковачица,,,,locality,,RS-VO,Ковачица,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Alibunar,South Banat,,,17947,Municipality,,,#N/A,,South BanatSerbia,locality,,RS-VO,Алибунар,,,,locality,,RS-VO,Алибунар,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Bela Crkva,South Banat,,,15700,Municipality,,,#N/A,,South BanatSerbia,locality,,RS-VO,Бела Црква,,,,locality,,nan,Бела Црква,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Plandište,South Banat,,,9951,Municipality,,,#N/A,,South BanatSerbia,locality,,RS-VO,Пландиште,,,,locality,,RS-VO,Пландиште,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Opovo,South Banat,,,9558,Municipality,,,#N/A,,South BanatSerbia,locality,,RS-VO,Опово,,,,locality,,RS-VO,Опово,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Sremska Mitrovica,Srem,,,74299,City,Sremska Mitrovica,,Sremska Mitrovica,,SremSerbia,locality,,RS-VO,Сремска Митровица,,,,locality,,RS-VO,Сремска Митровица,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Stara Pazova,Srem,,,64606,Municipality,,,#N/A,,SremSerbia,locality,,RS-VO,Стара Пазова,,,,locality,,RS-VO,Стара Пазова,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Ruma,Srem,,,50732,Municipality,,,#N/A,,SremSerbia,locality,,RS-VO,Рума,,,,locality,,RS-VO,Рума,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Inđija,Srem,,,45149,Municipality,,,#N/A,,SremSerbia,locality,,RS-VO,Инђија,,,,locality,,RS-VO,Инђија,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Šid,Srem,,,30424,Municipality,,,#N/A,,SremSerbia,locality,,RS-VO,Шид,,,,locality,,RS-VO,Шид,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Pećinci,Srem,,,19021,Municipality,,,#N/A,,SremSerbia,locality,,RS-VO,Пећинци,,,,locality,,RS-VO,Пећинци,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Irig,Srem,,,9734,Municipality,,,#N/A,,SremSerbia,locality,,RS-VO,Ириг,,,,locality,,RS-VO,Ириг,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Kragujevac,Šumadija,,,175112,City,Kragujevac,,Kragujevac,,ŠumadijaSerbia,locality,,RS,Крагујевац,,,,locality,,nan,Крагујевац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Aranđelovac,Šumadija,,,42436,Municipality,,,#N/A,,ŠumadijaSerbia,locality,,RS,Аранђеловац,,,,locality,,nan,Аранђеловац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Topola,Šumadija,,,19707,Municipality,,,#N/A,,ŠumadijaSerbia,locality,,RS,Топола (варошица),,,,locality,,nan,Топола (варошица),,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Knić,Šumadija,,,12531,Municipality,,,#N/A,,ŠumadijaSerbia,locality,,RS,Кнић,,,,locality,,nan,Кнић,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Batočina,Šumadija,,,10669,Municipality,,,#N/A,,ŠumadijaSerbia,locality,,RS,Баточина,,,,locality,,nan,Баточина,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Rača,Šumadija,,,10162,Municipality,,,#N/A,,ŠumadijaSerbia,locality,,RS,Рача,,,,locality,,nan,Рача,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Lapovo,Šumadija,,,6973,Municipality,,,#N/A,,ŠumadijaSerbia,locality,,RS,Лапово (село),,,,locality,,nan,Лапово (село),,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Prokuplje,Toplica,,,39955,Municipality,,,#N/A,,ToplicaSerbia,locality,,RS,Прокупље,,,,locality,,nan,Прокупље,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kuršumlija,Toplica,,,16931,Municipality,,,#N/A,,ToplicaSerbia,locality,,RS,Куршумлија,,,,locality,,nan,Куршумлија,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Žitorađa,Toplica,,,14556,Municipality,,,#N/A,,ToplicaSerbia,locality,,RS,Житорађа,,,,locality,,nan,Житорађа,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Blace,Toplica,,,10032,Municipality,,,#N/A,,ToplicaSerbia,locality,,RS,Блаце,,,,locality,,nan,Блаце,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kula,West Bačka,,,38367,Municipality,Kula,,Kula,,West BačkaSerbia,locality,,RS-VO,Кула,,,,locality,,nan,Кула,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Sombor,West Bačka,,,76940,City,Sombor,,Sombor,,West BačkaSerbia,locality,,RS-VO,Сомбор,,,,locality,,RS-VO,Сомбор,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Odžaci,West Bačka,,,26515,Municipality,,,#N/A,,West BačkaSerbia,locality,,RS-VO,Оџаци,,,,locality,,nan,Оџаци,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Apatin,West Bačka,,,25863,Municipality,,,#N/A,,West BačkaSerbia,locality,,RS-VO,Апатин,,,,locality,,RS-VO,Апатин,,,,,region,1,RS-VO,Војводина,HIGH,1.0,RS-VO
+Serbia,Zaječar,Zaječar,,,52159,City,,,#N/A,,ZaječarSerbia,locality,,RS,Зајечар,,,,locality,,nan,Зајечар,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Knjaževac,Zaječar,,,26748,Municipality,,,#N/A,,ZaječarSerbia,locality,,RS,Књажевац,,,,locality,,nan,Књажевац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Sokobanja,Zaječar,,,13662,Municipality,,,#N/A,,ZaječarSerbia,locality,,RS,Сокобања,,,,locality,,nan,Сокобања,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Boljevac,Zaječar,,,10856,Municipality,,,#N/A,,ZaječarSerbia,locality,,RS,Бољевац,,,,locality,,nan,Бољевац,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Užice,Zlatibor,,,65112,City Municipality,Užice,,Užice,,ZlatiborSerbia,locality,,RS,Ужице,,,,locality,,nan,Ужице,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Prijepolje,Zlatibor,,,33862,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Пријепоље,,,,locality,,nan,Пријепоље,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Požega,Zlatibor,,,26791,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Пожега,,,,locality,,nan,Пожега,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Sjenica,Zlatibor,,,25468,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Сјеница,,,,locality,,nan,Сјеница,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Bajina Bašta,Zlatibor,,,23748,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Бајина Башта,,,,locality,,nan,Бајина Башта,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Priboj,Zlatibor,,,23116,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Прибој,,,,locality,,nan,Прибој,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Arilje,Zlatibor,,,17522,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Ариље,,,,locality,,nan,Ариље,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Čajetina,Zlatibor,,,14618,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Чајетина,,,,locality,,nan,Чајетина,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Nova Varoš,Zlatibor,,,13917,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Нова Варош,,,,locality,,nan,Нова Варош,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Kosjerić,Zlatibor,,,10393,Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Косјерић (село),,,,locality,,nan,Косјерић (село),,,,,region,1,nan,Централна Србија,HIGH,1.0,nan
+Serbia,Sevojno,Zlatibor,,,6530,City Municipality,,,#N/A,,ZlatiborSerbia,locality,,RS,Севојно,,,,locality,,nan,Севојно,,,,,region,1,nan,Централна Србија,HIGH,1.0,nan

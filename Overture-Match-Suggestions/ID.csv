@@ -1,515 +1,515 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Indonesia,Kota Banda Aceh,Aceh,,,252899,City,Banda Aceh,,Banda Aceh,,AcehIndonesia,,,,,county,2,ID-AC,Banda Aceh,,,,,region,1,ID-AC,Aceh,LOW,0.8,ID-AC
-Indonesia,Aceh Utara [North Aceh],Aceh,,,602793,Regency,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Bireuen,Aceh,,,436418,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Bireuen,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Pidie,Aceh,,,435275,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Pidie,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Aceh Timur [East Aceh],Aceh,,,422401,Regency,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Aceh Besar,Aceh,,,405535,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Aceh Besar,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Aceh Tamiang,Aceh,,,294356,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Aceh Tamiang,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Aceh Selatan [South Aceh],Aceh,,,232414,Regency,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Aceh Tenggara [Southeast Aceh],Aceh,,,220860,Regency,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Aceh Tengah [Central Aceh],Aceh,,,215576,Regency,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Aceh Barat [West Aceh],Aceh,,,198736,Regency,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Kota Lhokseumawe,Aceh,,,188713,City,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Lhokseumawe,,,,,region,1,ID-AC,Aceh,LOW,0.815,ID-AC
-Indonesia,Kota Langsa,Aceh,,,185971,City,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Nagan Raya,Aceh,,,168392,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Nagan Raya,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Bener Meriah,Aceh,,,161342,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Bener Meriah,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Pidie Jaya,Aceh,,,158397,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Pidie Jaya,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Aceh Barat Daya [Southwest Aceh],Aceh,,,150775,Regency,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Aceh Singkil,Aceh,,,126514,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Aceh Singkil,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Gayo Lues,Aceh,,,99532,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Gayo Lues,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Aceh Jaya,Aceh,,,93159,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Aceh Jaya,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Simeulue,Aceh,,,92865,Regency,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Simeulue,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
-Indonesia,Kota Subulussalam,Aceh,,,90751,City,,,#N/A,,AcehIndonesia,,,,,county,2,ID-AC,Subulussalam,,,,,region,1,ID-AC,Aceh,LOW,0.828,ID-AC
-Indonesia,Kota Sabang,Aceh,,,41197,City,,,#N/A,,AcehIndonesia,,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
-Indonesia,Kota Denpasar,Bali,,,725314,City,Denpasar,,Denpasar,,BaliIndonesia,,,,,,,,,,,,,region,1,ID-BA,Bali,NONE,0.0,ID-BA
-Indonesia,Badung,Bali,,,548191,Regency,Denpasar,,Denpasar,,BaliIndonesia,,,,,county,2,ID-BA,Badung,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
-Indonesia,Gianyar,Bali,,,515344,Regency,Denpasar,,Denpasar,,BaliIndonesia,,,,,county,2,ID-BA,Gianyar,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
-Indonesia,Tabanan,Bali,,,461630,Regency,Denpasar,,Denpasar,,BaliIndonesia,,,,,county,2,ID-BA,Tabanan,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
-Indonesia,Klungkung,Bali,,,206925,Regency,Denpasar,,Denpasar,,BaliIndonesia,,,,,county,2,ID-BA,Klungkung,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
-Indonesia,Buleleng,Bali,,,791813,Regency,,,#N/A,,BaliIndonesia,,,,,county,2,ID-BA,Buleleng,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
-Indonesia,Karang Asem,Bali,,,492402,Regency,,,#N/A,,BaliIndonesia,,,,,county,2,ID-BA,Karangasem,,,,,region,1,ID-BA,Bali,MED,0.952,ID-BA
-Indonesia,Jembrana,Bali,,,317064,Regency,,,#N/A,,BaliIndonesia,,,,,county,2,ID-BA,Jembrana,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
-Indonesia,Bangli,Bali,,,258721,Regency,,,#N/A,,BaliIndonesia,,,,,county,2,ID-BA,Bangli,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
-Indonesia,Bangka,Bangka-Belitung,,,326265,Regency,,,#N/A,,Bangka-BelitungIndonesia,,,,,county,2,ID-BB,Bangka,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,HIGH,1.0,ID-BB
-Indonesia,Kota Pangkal Pinang,Bangka-Belitung,,,218569,City,,,#N/A,,Bangka-BelitungIndonesia,,,,,county,2,ID-BB,Pangkalpinang,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,LOW,0.812,ID-BB
-Indonesia,Bangka Barat [West Bangka],Bangka-Belitung,,,204612,Regency,,,#N/A,,Bangka-BelitungIndonesia,,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
-Indonesia,Bangka Tengah [Central Bangka],Bangka-Belitung,,,198946,Regency,,,#N/A,,Bangka-BelitungIndonesia,,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
-Indonesia,Bangka Selatan [South Bangka],Bangka-Belitung,,,198189,Regency,,,#N/A,,Bangka-BelitungIndonesia,,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
-Indonesia,Belitung,Bangka-Belitung,,,182079,Regency,,,#N/A,,Bangka-BelitungIndonesia,,,,,county,2,ID-BB,Belitung,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,HIGH,1.0,ID-BB
-Indonesia,Belitung Timur [East Belitung],Bangka-Belitung,,,127018,Regency,,,#N/A,,Bangka-BelitungIndonesia,,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
-Indonesia,Tangerang,Banten,,,3245619,Regency,Jakarta,,Jakarta,,BantenIndonesia,,,,,county,2,ID-BT,Tangerang,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
-Indonesia,Kota Tangerang,Banten,,,1895486,City,Jakarta,,Jakarta,,BantenIndonesia,,,,,county,2,ID-BT,Tangerang,,,,,region,1,ID-BT,Banten,LOW,0.783,ID-BT
-Indonesia,Kota Tangerang Selatan [South Tangerang],Banten,,,1354350,City,Jakarta,,Jakarta,,BantenIndonesia,,,,,,,,,,,,,region,1,ID-BT,Banten,NONE,0.0,ID-BT
-Indonesia,Serang,Banten,,,1622630,Regency,Serang,,Serang,,BantenIndonesia,,,,,county,2,ID-BT,Serang,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
-Indonesia,Kota Serang,Banten,,,692101,City,Serang,,Serang,,BantenIndonesia,,,,,county,2,ID-BT,Kab Serang,,,,,region,1,ID-BT,Banten,LOW,0.857,ID-BT
-Indonesia,Lebak,Banten,,,1386793,Regency,,,#N/A,,BantenIndonesia,,,,,county,2,ID-BT,Lebak,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
-Indonesia,Pandeglang,Banten,,,1272687,Regency,,,#N/A,,BantenIndonesia,,,,,county,2,ID-BT,Pandeglang,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
-Indonesia,Kota Cilegon,Banten,,,434896,City,,,#N/A,,BantenIndonesia,,,,,county,2,ID-BT,Cilegon,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
-Indonesia,Kota Bengkulu,Bengkulu,,,373591,City,,,#N/A,,BengkuluIndonesia,,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
-Indonesia,Bengkulu Utara [North Bengkulu],Bengkulu,,,296523,Regency,,,#N/A,,BengkuluIndonesia,,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
-Indonesia,Rejang Lebong,Bengkulu,,,276645,Regency,,,#N/A,,BengkuluIndonesia,,,,,county,2,ID-BE,Rejang Lebong,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
-Indonesia,Seluma,Bengkulu,,,207877,Regency,,,#N/A,,BengkuluIndonesia,,,,,county,2,ID-BE,Seluma,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
-Indonesia,Mukomuko,Bengkulu,,,190498,Regency,,,#N/A,,BengkuluIndonesia,,,,,county,2,ID-BE,Mukomuko,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
-Indonesia,Bengkulu Selatan [South Bengkulu],Bengkulu,,,166249,Regency,,,#N/A,,BengkuluIndonesia,,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
-Indonesia,Kepahiang,Bengkulu,,,149737,Regency,,,#N/A,,BengkuluIndonesia,,,,,county,2,ID-BE,Kepahiang,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
-Indonesia,Kaur,Bengkulu,,,126551,Regency,,,#N/A,,BengkuluIndonesia,,,,,county,2,ID-BE,Kaur,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
-Indonesia,Bengkulu Tengah [Central Bengkulu],Bengkulu,,,116706,Regency,,,#N/A,,BengkuluIndonesia,,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
-Indonesia,Lebong,Bengkulu,,,106293,Regency,,,#N/A,,BengkuluIndonesia,,,,,county,2,ID-BE,Lebong,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
-Indonesia,Jepara,Central Java,,,1184947,Regency,Jepara,,Jepara,,Central JavaIndonesia,,,,,county,2,ID-JT,Jepara,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kota Semarang,Central Java,,,1653524,City,Semarang,,Semarang,,Central JavaIndonesia,,,,,county,2,ID-JT,Kota Semarang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Grobogan,Central Java,,,1453526,Regency,Semarang,,Semarang,,Central JavaIndonesia,,,,,county,2,ID-JT,Grobogan,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Demak,Central Java,,,1203956,Regency,Semarang,,Semarang,,Central JavaIndonesia,,,,,county,2,ID-JT,Demak,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Semarang,Central Java,,,1053094,Regency,Semarang,,Semarang,,Central JavaIndonesia,,,,,county,2,ID-JT,Kota Semarang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kendal,Central Java,,,1018505,Regency,Semarang,,Semarang,,Central JavaIndonesia,,,,,county,2,ID-JT,Kendal,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kota Salatiga,Central Java,,,192322,City,Semarang,,Semarang,,Central JavaIndonesia,,,,,,,,,,,,,region,1,ID-JT,Jawa Tengah,NONE,0.0,ID-JT
-Indonesia,Magelang,Central Java,,,1299859,Regency,Yogyakarta,,Yogyakarta,,Central JavaIndonesia,,,,,county,2,ID-JT,Magelang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Klaten,Central Java,,,1260506,Regency,Yogyakarta,,Yogyakarta,,Central JavaIndonesia,,,,,county,2,ID-JT,Klaten,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kota Surakarta,Central Java,,,522364,City,Yogyakarta,,Yogyakarta,,Central JavaIndonesia,,,,,county,2,ID-JT,Surakarta,,,,,region,1,ID-JT,Jawa Tengah,LOW,0.783,ID-JT
-Indonesia,Brebes,Central Java,,,1978759,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Brebes,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Cilacap,Central Java,,,1944857,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Cilacap,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Banyumas,Central Java,,,1776918,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Banyumas,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Tegal,Central Java,,,1596996,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Tegal,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Pemalang,Central Java,,,1471489,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Pemalang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kebumen,Central Java,,,1350438,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Kebumen,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Pati,Central Java,,,1324188,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Pati,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Boyolali,Central Java,,,1062713,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Boyolali,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Wonogiri,Central Java,,,1043177,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Wonogiri,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Banjarnegara,Central Java,,,1017767,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Banjarnegara,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Purbalingga,Central Java,,,998561,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Purbalingga,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Sragen,Central Java,,,976951,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Sragen,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Pekalongan,Central Java,,,968821,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Pekalongan,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Karanganyar,Central Java,,,931963,Regency,,,#N/A,,Central JavaIndonesia,,,,,locality,,ID-JT,Karanganyar,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Sukoharjo,Central Java,,,907587,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Sukoharjo,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Blora,Central Java,,,884333,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Blora,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Wonosobo,Central Java,,,879124,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Wonosobo,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kudus,Central Java,,,849184,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Kudus,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Batang,Central Java,,,801718,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Batang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Temanggung,Central Java,,,790174,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Temanggung,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Purworejo,Central Java,,,769880,Regency,,,#N/A,,Central JavaIndonesia,,,,,localadmin,,ID-JT,Purworejo,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Rembang,Central Java,,,645333,Regency,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Rembang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kota Pekalongan,Central Java,,,307150,City,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Pekalongan,,,,,region,1,ID-JT,Jawa Tengah,LOW,0.8,ID-JT
-Indonesia,Kota Tegal,Central Java,,,273825,City,,,#N/A,,Central JavaIndonesia,,,,,,,,,,,,,region,1,ID-JT,Jawa Tengah,NONE,0.0,ID-JT
-Indonesia,Kota Magelang,Central Java,,,121526,City,,,#N/A,,Central JavaIndonesia,,,,,county,2,ID-JT,Kota Magelang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
-Indonesia,Kotawaringin Timur [East Kotawaringin],Central Kalimantan,,,428895,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
-Indonesia,Kapuas,Central Kalimantan,,,410446,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Kapuas,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Kota Palangka Raya,Central Kalimantan,,,293457,City,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Palangka Raya,,,,,region,1,ID-KT,Kalimantan Tengah,LOW,0.839,ID-KT
-Indonesia,Kotawaringin Barat [West Kotawaringin],Central Kalimantan,,,270388,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
-Indonesia,Seruyan,Central Kalimantan,,,162906,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Seruyan,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Katingan,Central Kalimantan,,,162222,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Katingan,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Barito Utara [North Barito],Central Kalimantan,,,154812,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
-Indonesia,Gunung Mas,Central Kalimantan,,,135373,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Gunung Mas,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Pulang Pisau,Central Kalimantan,,,134499,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Pulang Pisau,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Barito Selatan [South Barito],Central Kalimantan,,,131140,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
-Indonesia,Barito Timur [East Barito],Central Kalimantan,,,113229,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
-Indonesia,Murung Raya,Central Kalimantan,,,111527,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Murung Raya,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Lamandau,Central Kalimantan,,,97611,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Lamandau,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Sukamara,Central Kalimantan,,,63464,Regency,,,#N/A,,Central KalimantanIndonesia,,,,,county,2,ID-KT,Sukamara,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
-Indonesia,Mimika,Central Papua,,,311969,Regency,,,#N/A,,Central PapuaIndonesia,,,,,county,2,ID-PT,Mimika,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
-Indonesia,Puncak Jaya,Central Papua,,,224527,Regency,,,#N/A,,Central PapuaIndonesia,,,,,county,2,ID-PT,Puncak Jaya,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
-Indonesia,Paniai,Central Papua,,,220410,Regency,,,#N/A,,Central PapuaIndonesia,,,,,county,2,ID-PT,Paniai,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
-Indonesia,Nabire,Central Papua,,,169136,Regency,,,#N/A,,Central PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PT,Papua Tengah,NONE,0.0,ID-PT
-Indonesia,Intan Jaya,Central Papua,,,135043,Regency,,,#N/A,,Central PapuaIndonesia,,,,,county,2,ID-PT,Intan Jaya,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
-Indonesia,Dogiyai,Central Papua,,,116206,Regency,,,#N/A,,Central PapuaIndonesia,,,,,county,2,ID-PT,Dogiyai,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
-Indonesia,Puncak,Central Papua,,,114741,Regency,,,#N/A,,Central PapuaIndonesia,,,,,county,2,ID-PT,Puncak,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
-Indonesia,Deiyai,Central Papua,,,99091,Regency,,,#N/A,,Central PapuaIndonesia,,,,,county,2,ID-PT,Deiyai,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
-Indonesia,Parigi Moutong,Central Sulawesi,,,440015,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Parigi Moutong,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Kota Palu,Central Sulawesi,,,373218,City,,,#N/A,,Central SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-ST,Sulawesi Tengah,NONE,0.0,ID-ST
-Indonesia,Banggai,Central Sulawesi,,,362275,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Banggai,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Donggala,Central Sulawesi,,,300436,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Donggala,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Sigi,Central Sulawesi,,,257585,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Sigi,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Poso,Central Sulawesi,,,244875,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Poso,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Tolitoli,Central Sulawesi,,,225154,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Tolitoli,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Tojo Una-Una,Central Sulawesi,,,163829,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Tojo Una-Una,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Morowali,Central Sulawesi,,,161727,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Morowali,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Buol,Central Sulawesi,,,145254,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Buol,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Morowali Utara [North Morowali],Central Sulawesi,,,120789,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-ST,Sulawesi Tengah,NONE,0.0,ID-ST
-Indonesia,Banggai Kepulauan [Banggai Islands],Central Sulawesi,,,120142,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-ST,Sulawesi Tengah,NONE,0.0,ID-ST
-Indonesia,Banggai Laut,Central Sulawesi,,,70435,Regency,,,#N/A,,Central SulawesiIndonesia,,,,,county,2,ID-ST,Banggai Laut,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
-Indonesia,Kediri,East Java,,,1635294,Regency,Kediri,,Kediri,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Kediri,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Kediri,East Java,,,286796,City,Kediri,,Kediri,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Kediri,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Malang,East Java,,,2654448,Regency,Malang,,Malang,,East JavaIndonesia,,,,,localadmin,,ID-JI,Palang,,,,,region,1,ID-JI,Jawa Timur,LOW,0.833,ID-JI
-Indonesia,Kota Malang,East Java,,,843810,City,Malang,,Malang,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Malang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Pamekasan,East Java,,,850057,Regency,Pamekasan,,Pamekasan,,East JavaIndonesia,,,,,county,2,ID-JI,Pamekasan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Surabaya,East Java,,,2874314,City,Surabaya,,Surabaya,,East JavaIndonesia,,,,,county,2,ID-JI,Surabaya,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Sidoarjo,East Java,,,2082801,Regency,Surabaya,,Surabaya,,East JavaIndonesia,,,,,localadmin,,ID-JI,Sidoarjo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Lamongan,East Java,,,1344165,Regency,Surabaya,,Surabaya,,East JavaIndonesia,,,,,county,2,ID-JI,Lamongan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Gresik,East Java,,,1311215,Regency,Surabaya,,Surabaya,,East JavaIndonesia,,,,,county,2,ID-JI,Gresik,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Mojokerto,East Java,,,1119209,Regency,Surabaya,,Surabaya,,East JavaIndonesia,,,,,county,2,ID-JI,Mojokerto,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Bangkalan,East Java,,,1060377,Regency,Surabaya,,Surabaya,,East JavaIndonesia,,,,,county,2,ID-JI,Bangkalan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Mojokerto,East Java,,,132434,City,Surabaya,,Surabaya,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Mojokerto,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Jember,East Java,,,2536729,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Jember,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Banyuwangi,East Java,,,1708114,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Banyuwangi,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Pasuruan,East Java,,,1605969,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Pasuruan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Jombang,East Java,,,1318062,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Jombang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Bojonegoro,East Java,,,1301635,Regency,,,#N/A,,East JavaIndonesia,,,,,localadmin,,ID-JI,Bojonegoro,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Blitar,East Java,,,1223745,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Blitar,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Tuban,East Java,,,1198012,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Tuban,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Probolinggo,East Java,,,1152537,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Probolinggo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Sumenep,East Java,,,1124436,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Sumenep,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Lumajang,East Java,,,1119251,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Lumajang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Nganjuk,East Java,,,1103902,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Nganjuk,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Tulungagung,East Java,,,1089775,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Tulungagung,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Sampang,East Java,,,969694,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Sampang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Ponorogo,East Java,,,949318,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Ponorogo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Ngawi,East Java,,,870057,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Ngawi,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Bondowoso,East Java,,,776151,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Bondowoso,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Madiun,East Java,,,744350,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Madiun,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Trenggalek,East Java,,,731125,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Trenggalek,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Situbondo,East Java,,,685967,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Situbondo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Magetan,East Java,,,670812,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Magetan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Pacitan,East Java,,,586110,Regency,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Pacitan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Probolinggo,East Java,,,239649,City,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Probolinggo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Batu,East Java,,,213046,City,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Batu,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Pasuruan,East Java,,,208006,City,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Pasuruan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Madiun,East Java,,,195175,City,,,#N/A,,East JavaIndonesia,,,,,county,2,ID-JI,Kota Madiun,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
-Indonesia,Kota Blitar,East Java,,,149149,City,,,#N/A,,East JavaIndonesia,,,,,,,,,,,,,region,1,ID-JI,Jawa Timur,NONE,0.0,ID-JI
-Indonesia,Kota Balikpapan,East Kalimantan,,,688318,City,Balikpapan,,Balikpapan,,East KalimantanIndonesia,,,,,county,2,ID-KI,Balikpapan,,,,,region,1,ID-KI,Kalimantan Timur,LOW,0.8,ID-KI
-Indonesia,Kutai Kartanegara,East Kalimantan,,,729382,Regency,Nusantara,,Nusantara,,East KalimantanIndonesia,,,,,county,2,ID-KI,Kutai Kartanegara,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
-Indonesia,Penajam Paser Utara [North Penajam Paser],East Kalimantan,,,178681,Regency,Nusantara,,Nusantara,,East KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
-Indonesia,Kota Samarinda,East Kalimantan,,,827994,City,Samarinda,,Samarinda,,East KalimantanIndonesia,,,,,county,2,ID-KI,Samarinda,,,,,region,1,ID-KI,Kalimantan Timur,LOW,0.783,ID-KI
-Indonesia,Kutai Timur [East Kutai],East Kalimantan,,,434459,Regency,,,#N/A,,East KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
-Indonesia,Paser,East Kalimantan,,,275452,Regency,,,#N/A,,East KalimantanIndonesia,,,,,county,2,ID-KI,Paser,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
-Indonesia,Berau,East Kalimantan,,,248035,Regency,,,#N/A,,East KalimantanIndonesia,,,,,county,2,ID-KI,Berau,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
-Indonesia,Kota Bontang,East Kalimantan,,,178917,City,,,#N/A,,East KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
-Indonesia,Kutai Barat [West Kutai],East Kalimantan,,,172288,Regency,,,#N/A,,East KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
-Indonesia,Mahakam Ulu,East Kalimantan,,,32513,Regency,,,#N/A,,East KalimantanIndonesia,,,,,county,2,ID-KI,Mahakam Ulu,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
-Indonesia,Kota Kupang,East Nusa Tenggara,,,442758,City,Kupang,,Kupang,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Timor Tengah Selatan [South Central Timor],East Nusa Tenggara,,,455410,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Kupang,East Nusa Tenggara,,,366383,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Kupang,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Sikka,East Nusa Tenggara,,,321953,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Sikka,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Manggarai,East Nusa Tenggara,,,312855,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Manggarai,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Sumba Barat Daya [Southwest Sumba],East Nusa Tenggara,,,303650,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Flores Timur [East Flores],East Nusa Tenggara,,,276896,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Manggarai Timur [East Manggarai],East Nusa Tenggara,,,275603,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Ende,East Nusa Tenggara,,,270763,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Ende,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Timor Tengah Utara [North Central Timor],East Nusa Tenggara,,,259829,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Manggarai Barat [West Manggarai],East Nusa Tenggara,,,256317,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Sumba Timur [East Sumba],East Nusa Tenggara,,,244820,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Belu,East Nusa Tenggara,,,217973,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Belu,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Alor,East Nusa Tenggara,,,211872,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Alor,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Malaka,East Nusa Tenggara,,,183898,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Malaka,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Ngada,East Nusa Tenggara,,,165254,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Ngada,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Nagekeo,East Nusa Tenggara,,,159732,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Nagekeo,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Sumba Barat [West Sumba],East Nusa Tenggara,,,145097,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Rote Ndao,East Nusa Tenggara,,,143764,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Rote Ndao,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Lembata,East Nusa Tenggara,,,135930,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Lembata,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Sabu Raijua,East Nusa Tenggara,,,89327,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,county,2,ID-NT,Sabu Raijua,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
-Indonesia,Sumba Tengah [Central Sumba],East Nusa Tenggara,,,85482,Regency,,,#N/A,,East Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
-Indonesia,Gorontalo,Gorontalo,,,393107,Regency,,,#N/A,,GorontaloIndonesia,,,,,county,2,ID-GO,Gorontalo,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
-Indonesia,Kota Gorontalo,Gorontalo,,,198539,City,,,#N/A,,GorontaloIndonesia,,,,,county,2,ID-GO,Gorontalo,,,,,region,1,ID-GO,Gorontalo,LOW,0.783,ID-GO
-Indonesia,Bone Bolango,Gorontalo,,,162778,Regency,,,#N/A,,GorontaloIndonesia,,,,,county,2,ID-GO,Bone Bolango,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
-Indonesia,Pohuwato,Gorontalo,,,146432,Regency,,,#N/A,,GorontaloIndonesia,,,,,county,2,ID-GO,Pohuwato,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
-Indonesia,Boalemo,Gorontalo,,,145868,Regency,,,#N/A,,GorontaloIndonesia,,,,,county,2,ID-GO,Boalemo,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
-Indonesia,Gorontalo Utara [North Gorontalo],Gorontalo,,,124957,Regency,,,#N/A,,GorontaloIndonesia,,,,,,,,,,,,,region,1,ID-GO,Gorontalo,NONE,0.0,ID-GO
-Indonesia,Yahukimo,Highland Papua,,,350880,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,county,2,ID-PE,Yahukimo,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
-Indonesia,Jayawijaya,Highland Papua,,,269553,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,county,2,ID-PE,Jayawijaya,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
-Indonesia,Tolikara,Highland Papua,,,236986,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,county,2,ID-PE,Tolikara,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
-Indonesia,Lanny Jaya,Highland Papua,,,196399,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,county,2,ID-PE,Lanny Jaya,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
-Indonesia,Nduga,Highland Papua,,,106533,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,county,2,ID-PE,Nduga,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
-Indonesia,Yalimo,Highland Papua,,,101973,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,county,2,ID-PE,Yalimo,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
-Indonesia,Pegunungan Bintang [Bintang Mountains],Highland Papua,,,77872,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PE,Papua Pegunungan,NONE,0.0,ID-PE
-Indonesia,Mamberamo Tengah [Central Mamberamo],Highland Papua,,,50685,Regency,,,#N/A,,Highland PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PE,Papua Pegunungan,NONE,0.0,ID-PE
-Indonesia,Kodya Jakarta Timur [East Jakarta],Jakarta,,,3037139,City District,Jakarta,,Jakarta,,JakartaIndonesia,,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
-Indonesia,Kodya Jakarta Barat [West Jakarta],Jakarta,,,2434511,City District,Jakarta,,Jakarta,,JakartaIndonesia,,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
-Indonesia,Kodya Jakarta Selatan [South Jakarta],Jakarta,,,2226812,City District,Jakarta,,Jakarta,,JakartaIndonesia,,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
-Indonesia,Kodya Jakarta Utara [North Jakarta],Jakarta,,,1778981,City District,Jakarta,,Jakarta,,JakartaIndonesia,,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
-Indonesia,Kodya Jakarta Pusat [Central Jakarta],Jakarta,,,1056896,City District,Jakarta,,Jakarta,,JakartaIndonesia,,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
-Indonesia,Kepulauan Seribu [Thousand Islands],Jakarta,,,27749,Regency,Jakarta,,Jakarta,,JakartaIndonesia,,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
-Indonesia,Kota Jambi,Jambi,,,606200,City,,,#N/A,,JambiIndonesia,,,,,,,,,,,,,region,1,ID-JA,Jambi,NONE,0.0,ID-JA
-Indonesia,Muaro Jambi,Jambi,,,402017,Regency,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Muaro Jambi,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
-Indonesia,Bungo,Jambi,,,362363,Regency,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Bungo,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
-Indonesia,Merangin,Jambi,,,354052,Regency,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Merangin,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
-Indonesia,Tebo,Jambi,,,337669,Regency,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Tebo,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
-Indonesia,Tanjung Jabung Barat [West Tanjung Jabung],Jambi,,,317498,Regency,,,#N/A,,JambiIndonesia,,,,,,,,,,,,,region,1,ID-JA,Jambi,NONE,0.0,ID-JA
-Indonesia,Batang Hari,Jambi,,,301700,Regency,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Batang Hari,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
-Indonesia,Sarolangun,Jambi,,,290047,Regency,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Sarolangun,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
-Indonesia,Kerinci,Jambi,,,250259,Regency,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Kerinci,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
-Indonesia,Tanjung Jabung Timur [East Tanjung Jabung],Jambi,,,229813,Regency,,,#N/A,,JambiIndonesia,,,,,,,,,,,,,region,1,ID-JA,Jambi,NONE,0.0,ID-JA
-Indonesia,Kota Sungai Penuh,Jambi,,,96610,City,,,#N/A,,JambiIndonesia,,,,,county,2,ID-JA,Sungai Penuh,,,,,region,1,ID-JA,Jambi,LOW,0.828,ID-JA
-Indonesia,Kota Bandar Lampung,Lampung,,,1166066,City,Bandar Lampung,,Bandar Lampung,,LampungIndonesia,,,,,county,2,ID-LA,Bandar Lampung,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
-Indonesia,Lampung Selatan [South Lampung],Lampung,,,1064301,Regency,Bandar Lampung,,Bandar Lampung,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Lampung Tengah [Central Lampung],Lampung,,,1460045,Regency,,,#N/A,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Lampung Timur [East Lampung],Lampung,,,1110340,Regency,,,#N/A,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Tanggamus,Lampung,,,640275,Regency,,,#N/A,,LampungIndonesia,,,,,county,2,ID-LA,Tanggamus,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
-Indonesia,Lampung Utara [North Lampung],Lampung,,,633099,Regency,,,#N/A,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Pesawaran,Lampung,,,477468,Regency,,,#N/A,,LampungIndonesia,,,,,county,2,ID-LA,Pesawaran,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
-Indonesia,Way Kanan,Lampung,,,473575,Regency,,,#N/A,,LampungIndonesia,,,,,county,2,ID-LA,Way Kanan,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
-Indonesia,Tulang Bawang,Lampung,,,430021,Regency,,,#N/A,,LampungIndonesia,,,,,county,2,ID-LA,Tulang Bawang,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
-Indonesia,Pringsewu,Lampung,,,405466,Regency,,,#N/A,,LampungIndonesia,,,,,county,2,ID-LA,Pringsewu,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
-Indonesia,Lampung Barat [West Lampung],Lampung,,,302139,Regency,,,#N/A,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Tulang Bawang Barat [West Tulang Bawang],Lampung,,,286162,Regency,,,#N/A,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Mesuji,Lampung,,,227518,Regency,,,#N/A,,LampungIndonesia,,,,,county,2,ID-LA,Mesuji,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
-Indonesia,Kota Metro,Lampung,,,168676,City,,,#N/A,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Pesisir Barat [West Pesisir],Lampung,,,162697,Regency,,,#N/A,,LampungIndonesia,,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
-Indonesia,Kota Ambon,Maluku,,,347288,City,Ambon,,Ambon,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Maluku Tengah [Central Maluku],Maluku,,,423094,Regency,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Seram Bagian Barat [West Seram],Maluku,,,212393,Regency,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Seram Bagian Timur [East Seram],Maluku,,,137972,Regency,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Buru,Maluku,,,135238,Regency,,,#N/A,,MalukuIndonesia,,,,,county,2,ID-MA,Buru,,,,,region,1,ID-MA,Maluku,HIGH,1.0,ID-MA
-Indonesia,Kepulauan Tanimbar (Maluku Tenggara Barat) [Tanimbar Islands],Maluku,,,123572,Regency,,,#N/A,,MalukuIndonesia,,,,,county,2,ID-MA,Kepulauan Tanimbar,,,,,region,1,ID-MA,Maluku,HIGH,1.0,ID-MA
-Indonesia,Maluku Tenggara [Southeast Maluku],Maluku,,,121511,Regency,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Kepulauan Aru [Aru Islands],Maluku,,,102237,Regency,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Kota Tual,Maluku,,,88280,City,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Maluku Barat Daya [Southwest Maluku],Maluku,,,81928,Regency,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Buru Selatan [South Buru],Maluku,,,75410,Regency,,,#N/A,,MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
-Indonesia,Kota Tarakan,North Kalimantan,,,242786,City,Tarakan,,Tarakan,,North KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KU,Kalimantan Utara,NONE,0.0,ID-KU
-Indonesia,Nunukan,North Kalimantan,,,199090,Regency,,,#N/A,,North KalimantanIndonesia,,,,,county,2,ID-KU,Nunukan,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
-Indonesia,Bulungan,North Kalimantan,,,151844,Regency,,,#N/A,,North KalimantanIndonesia,,,,,county,2,ID-KU,Bulungan,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
-Indonesia,Malinau,North Kalimantan,,,82510,Regency,,,#N/A,,North KalimantanIndonesia,,,,,county,2,ID-KU,Malinau,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
-Indonesia,Tana Tidung,North Kalimantan,,,25584,Regency,,,#N/A,,North KalimantanIndonesia,,,,,county,2,ID-KU,Tana Tidung,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
-Indonesia,Kota Ternate,North Maluku,,,205001,City,Ternate,,Ternate,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Halmahera Selatan [South Halmahera],North Maluku,,,248395,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Halmahera Utara [North Halmahera],North Maluku,,,197638,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Halmahera Barat [West Halmahera],North Maluku,,,132349,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Kota Tidore Kepulauan [Tidore Islands],North Maluku,,,114480,City,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Kepulauan Sula [Sula Islands],North Maluku,,,104082,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Halmahera Timur [East Halmahera],North Maluku,,,91707,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Pulau Morotai [Morotai Island],North Maluku,,,74436,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Pulau Taliabu [Taliabu Island],North Maluku,,,58047,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Halmahera Tengah [Central Halmahera],North Maluku,,,56802,Regency,,,#N/A,,North MalukuIndonesia,,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
-Indonesia,Kota Manado,North Sulawesi,,,451916,City,Manado,,Manado,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Kota Bitung,North Sulawesi,,,225134,City,Manado,,Manado,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Minahasa Utara [North Minahasa],North Sulawesi,,,224993,Regency,Manado,,Manado,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Minahasa,North Sulawesi,,,347290,Regency,,,#N/A,,North SulawesiIndonesia,,,,,county,2,ID-SA,Minahasa,,,,,region,1,ID-SA,Sulawesi Utara,HIGH,1.0,ID-SA
-Indonesia,Bolaang Mongondow,North Sulawesi,,,248751,Regency,,,#N/A,,North SulawesiIndonesia,,,,,county,2,ID-SA,Bolaang Mongondow,,,,,region,1,ID-SA,Sulawesi Utara,HIGH,1.0,ID-SA
-Indonesia,Minahasa Selatan (Suluun Tareran) [South Minahasa],North Sulawesi,,,236463,Regency,,,#N/A,,North SulawesiIndonesia,,,,,county,2,ID-SA,Minahasa Selatan,,,,,region,1,ID-SA,Sulawesi Utara,HIGH,1.0,ID-SA
-Indonesia,Kepulauan Sangihe [Sangihe Islands],North Sulawesi,,,139262,Regency,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Kota Kotamobagu,North Sulawesi,,,123722,City,,,#N/A,,North SulawesiIndonesia,,,,,county,2,ID-SA,Kotamobagu,,,,,region,1,ID-SA,Sulawesi Utara,LOW,0.8,ID-SA
-Indonesia,Minahasa Tenggara [Southeast Minahasa],North Sulawesi,,,116323,Regency,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Kota Tomohon,North Sulawesi,,,100587,City,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Kepulauan Talaud [Talaud Islands],North Sulawesi,,,94521,Regency,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Bolaang Mongondow Timur [East Bolaang Mongondow],North Sulawesi,,,88241,Regency,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Bolaang Mongondow Utara [North Bolaang Mongondow],North Sulawesi,,,83112,Regency,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Siau Tagulandang Biaro [Sitaro Islands],North Sulawesi,,,71817,Regency,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Bolaang Mongondow Selatan [South Bolaang Mongondow],North Sulawesi,,,69791,Regency,,,#N/A,,North SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
-Indonesia,Kota Medan,North Sumatra,,,2435252,City,Medan,,Medan,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Medan,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Deli Serdang,North Sumatra,,,1931441,Regency,Medan,,Medan,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Karo,North Sumatra,,,404998,Regency,Medan,,Medan,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Kota Binjai,North Sumatra,,,291842,City,Medan,,Medan,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Binjai,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Langkat,North Sumatra,,,1030202,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Simalungun,North Sumatra,,,990246,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Simalungun,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Asahan,North Sumatra,,,769960,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Asahan,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Serdang Bedagai,North Sumatra,,,657490,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kabupaten Serdang Bedagai,,,,,region,1,ID-SU,Sumatera Utara,LOW,0.8,ID-SU
-Indonesia,Labuhan Batu,North Sumatra,,,493899,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Labuhanbatu,,,,,region,1,ID-SU,Sumatera Utara,MED,0.957,ID-SU
-Indonesia,Mandailing Natal,North Sumatra,,,472886,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Mandailing Natal,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Batu Bara,North Sumatra,,,410678,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Batu Bara,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Labuhan Batu Utara [North Labuhan Batu],North Sumatra,,,381994,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Tapanuli Tengah [Central Tapanuli],North Sumatra,,,365177,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Nias Selatan [South Nias],North Sumatra,,,360531,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Labuhan Batu Selatan [South Labuhan Batu],North Sumatra,,,314094,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Tapanuli Utara [North Tapanuli],North Sumatra,,,312758,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Dairi,North Sumatra,,,308764,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Tapanuli Selatan [South Tapanuli],North Sumatra,,,300911,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Kota Pematangsiantar,North Sumatra,,,268254,City,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Pematangsiantar,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Padang Lawas,North Sumatra,,,261011,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Padang Lawas,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Padang Lawas Utara [North Padang Lawas],North Sumatra,,,260720,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Kota Padang Sidempuan,North Sumatra,,,225105,City,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Padangsidimpuan,,,,,region,1,ID-SU,Sumatera Utara,MED,0.927,ID-SU
-Indonesia,Toba Samosir,North Sumatra,,,206199,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Humbang Hasundutan,North Sumatra,,,197751,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kabupaten Humbang Hasundutan,,,,,region,1,ID-SU,Sumatera Utara,LOW,0.833,ID-SU
-Indonesia,Kota Tanjungbalai,North Sumatra,,,176027,City,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Tanjung Balai,,,,,region,1,ID-SU,Sumatera Utara,HIGH,0.971,ID-SU
-Indonesia,Kota Tebing Tinggi,North Sumatra,,,172838,City,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Tebing Tinggi,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Nias Utara [North Nias],North Sumatra,,,147274,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Nias,North Sumatra,,,146672,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Samosir,North Sumatra,,,136441,Regency,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Samosir,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Kota Gunungsitoli,North Sumatra,,,136017,City,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Gunungsitoli,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Nias Barat [West Nias],North Sumatra,,,89994,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Kota Sibolga,North Sumatra,,,89584,City,,,#N/A,,North SumatraIndonesia,,,,,county,2,ID-SU,Kota Sibolga,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
-Indonesia,Pakpak Bharat,North Sumatra,,,52351,Regency,,,#N/A,,North SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
-Indonesia,Biak Numfor,Papua,,,134650,Regency,Biak Numfor,,Biak Numfor,,PapuaIndonesia,,,,,county,2,ID-PA,Biak Numfor,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Kota Jayapura,Papua,,,398478,City,Jayapura,,Jayapura,,PapuaIndonesia,,,,,county,2,ID-PA,Jayapura,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Jayapura (Nambluong),Papua,,,166171,Regency,,,#N/A,,PapuaIndonesia,,,,,county,2,ID-PA,Jayapura,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Kepulauan Yapen [Yapen Islands],Papua,,,112676,Regency,,,#N/A,,PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PA,Papua,NONE,0.0,ID-PA
-Indonesia,Keerom,Papua,,,61623,Regency,,,#N/A,,PapuaIndonesia,,,,,county,2,ID-PA,Keerom,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Sarmi,Papua,,,41515,Regency,,,#N/A,,PapuaIndonesia,,,,,county,2,ID-PA,Sarmi,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Mamberamo Raya,Papua,,,36483,Regency,,,#N/A,,PapuaIndonesia,,,,,county,2,ID-PA,Mamberamo Raya,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Waropen,Papua,,,33943,Regency,,,#N/A,,PapuaIndonesia,,,,,county,2,ID-PA,Waropen,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Supiori,Papua,,,22547,Regency,,,#N/A,,PapuaIndonesia,,,,,county,2,ID-PA,Supiori,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
-Indonesia,Kota Pekanbaru,Riau,,,983356,City,Pekanbaru,,Pekanbaru,,RiauIndonesia,,,,,county,2,ID-RI,Pekanbaru,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Siak,Riau,,,457940,Regency,Pekanbaru,,Pekanbaru,,RiauIndonesia,,,,,localadmin,,ID-RI,Siak,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Kampar,Riau,,,841332,Regency,,,#N/A,,RiauIndonesia,,,,,county,2,ID-RI,Kampar,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Indragiri Hilir,Riau,,,654909,Regency,,,#N/A,,RiauIndonesia,,,,,county,2,ID-RI,Indragiri Hilir,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Rokan Hilir,Riau,,,637161,Regency,,,#N/A,,RiauIndonesia,,,,,county,2,ID-RI,Rokan Hilir,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Bengkalis,Riau,,,565569,Regency,,,#N/A,,RiauIndonesia,,,,,localadmin,,ID-RI,Bengkalis,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Rokan Hulu,Riau,,,561385,Regency,,,#N/A,,RiauIndonesia,,,,,county,2,ID-RI,Rokan Hulu,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Indragiri Hulu,Riau,,,444548,Regency,,,#N/A,,RiauIndonesia,,,,,county,2,ID-RI,Indragiri Hulu,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Pelalawan,Riau,,,390046,Regency,,,#N/A,,RiauIndonesia,,,,,localadmin,,ID-RI,Pelalawan,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Kuantan Singingi,Riau,,,334943,Regency,,,#N/A,,RiauIndonesia,,,,,county,2,ID-RI,Kuantan Singingi,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
-Indonesia,Kota Dumai,Riau,,,316782,City,,,#N/A,,RiauIndonesia,,,,,,,,,,,,,region,1,ID-RI,Riau,NONE,0.0,ID-RI
-Indonesia,Kepulauan Meranti [Meranti Islands],Riau,,,206116,Regency,,,#N/A,,RiauIndonesia,,,,,,,,,,,,,region,1,ID-RI,Riau,NONE,0.0,ID-RI
-Indonesia,Kota Batam,Riau Islands,,,1196396,City,Batam,,Batam,,Riau IslandsIndonesia,,,,,,,,,,,,,region,1,ID-KR,Kepulauan Riau,NONE,0.0,ID-KR
-Indonesia,Karimun,Riau Islands,,,253457,Regency,,,#N/A,,Riau IslandsIndonesia,,,,,county,2,ID-KR,Karimun,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
-Indonesia,Kota Tanjung Pinang,Riau Islands,,,227663,City,,,#N/A,,Riau IslandsIndonesia,,,,,county,2,ID-KR,Tanjungpinang,,,,,region,1,ID-KR,Kepulauan Riau,LOW,0.812,ID-KR
-Indonesia,Bintan,Riau Islands,,,159518,Regency,,,#N/A,,Riau IslandsIndonesia,,,,,county,2,ID-KR,Bintan,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
-Indonesia,Lingga,Riau Islands,,,98633,Regency,,,#N/A,,Riau IslandsIndonesia,,,,,county,2,ID-KR,Lingga,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
-Indonesia,Natuna,Riau Islands,,,81495,Regency,,,#N/A,,Riau IslandsIndonesia,,,,,county,2,ID-KR,Natuna,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
-Indonesia,Kepulauan Anambas [Anambas Islands],Riau Islands,,,47402,Regency,,,#N/A,,Riau IslandsIndonesia,,,,,,,,,,,,,region,1,ID-KR,Kepulauan Riau,NONE,0.0,ID-KR
-Indonesia,Kota Kendari,South East Sulawesi,,,345107,City,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Konawe Selatan [South Konawe],South East Sulawesi,,,308524,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Konawe,South East Sulawesi,,,257011,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,county,2,ID-SG,Konawe,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
-Indonesia,Kolaka,South East Sulawesi,,,237587,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,county,2,ID-SG,Kolaka,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
-Indonesia,Muna,South East Sulawesi,,,215527,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,county,2,ID-SG,Muna,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
-Indonesia,Kota Bau-Bau,South East Sulawesi,,,159248,City,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Bombana,South East Sulawesi,,,150706,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,county,2,ID-SG,Bombana,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
-Indonesia,Kolaka Utara [North Kolaka],South East Sulawesi,,,137659,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Kolaka Timur (Koltim) [East Kolaka],South East Sulawesi,,,120699,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,county,2,ID-SG,Kolaka Timur,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
-Indonesia,Buton,South East Sulawesi,,,115207,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,county,2,ID-SG,Buton,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
-Indonesia,Buton Tengah [Central Buton],South East Sulawesi,,,114773,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Wakatobi,South East Sulawesi,,,111402,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,county,2,ID-SG,Wakatobi,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
-Indonesia,Buton Selatan [South Buton],South East Sulawesi,,,95261,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Muna Barat [West Marat],South East Sulawesi,,,84590,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Konawe Utara [North Konawe],South East Sulawesi,,,67871,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Buton Utara [North Buton],South East Sulawesi,,,66653,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Konawe Kepulauan [Konawe Islands],South East Sulawesi,,,37050,Regency,,,#N/A,,South East SulawesiIndonesia,,,,,,,,,,,,,,,,,NONE,0.0,
-Indonesia,Kota Banjarmasin,South Kalimantan,,,657663,City,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,,,,,county,2,ID-KS,Banjarmasin,,,,,region,1,ID-KS,Kalimantan Selatan,LOW,0.815,ID-KS
-Indonesia,Banjar,South Kalimantan,,,565635,Regency,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,,,,,county,2,ID-KS,Banjar,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Tanah Laut,South Kalimantan,,,348966,Regency,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,,,,,county,2,ID-KS,Tanah Laut,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Barito Kuala,South Kalimantan,,,313021,Regency,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,,,,,county,2,ID-KS,Barito Kuala,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Kota Banjarbaru,South Kalimantan,,,253442,City,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,,,,,county,2,ID-KS,Banjarbaru,,,,,region,1,ID-KS,Kalimantan Selatan,LOW,0.8,ID-KS
-Indonesia,Kotabaru,South Kalimantan,,,325622,Regency,,,#N/A,,South KalimantanIndonesia,,,,,county,2,ID-KS,Kotabaru,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Tanah Bumbu,South Kalimantan,,,322646,Regency,,,#N/A,,South KalimantanIndonesia,,,,,county,2,ID-KS,Tanah Bumbu,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Hulu Sungai Tengah [Central Hulu Sungai],South Kalimantan,,,258721,Regency,,,#N/A,,South KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KS,Kalimantan Selatan,NONE,0.0,ID-KS
-Indonesia,Tabalong,South Kalimantan,,,253305,Regency,,,#N/A,,South KalimantanIndonesia,,,,,county,2,ID-KS,Tabalong,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Hulu Sungai Selatan [South Hulu Sungai],South Kalimantan,,,228006,Regency,,,#N/A,,South KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KS,Kalimantan Selatan,NONE,0.0,ID-KS
-Indonesia,Hulu Sungai Utara [North Hulu Sungai],South Kalimantan,,,226727,Regency,,,#N/A,,South KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KS,Kalimantan Selatan,NONE,0.0,ID-KS
-Indonesia,Tapin,South Kalimantan,,,189475,Regency,,,#N/A,,South KalimantanIndonesia,,,,,county,2,ID-KS,Tapin,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Balangan,South Kalimantan,,,130355,Regency,,,#N/A,,South KalimantanIndonesia,,,,,county,2,ID-KS,Balangan,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
-Indonesia,Merauke,South Papua,,,230932,Regency,,,#N/A,,South PapuaIndonesia,,,,,county,2,ID-PS,Merauke,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
-Indonesia,Asmat,South Papua,,,110105,Regency,,,#N/A,,South PapuaIndonesia,,,,,county,2,ID-PS,Asmat,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
-Indonesia,Mappi,South Papua,,,108295,Regency,,,#N/A,,South PapuaIndonesia,,,,,county,2,ID-PS,Mappi,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
-Indonesia,Boven Digoel,South Papua,,,64285,Regency,,,#N/A,,South PapuaIndonesia,,,,,county,2,ID-PS,Boven Digoel,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
-Indonesia,Kota Makassar,South Sulawesi,,,1423877,City,Makassar,,Makassar,,South SulawesiIndonesia,,,,,county,2,ID-SN,Makassar,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Gowa,South Sulawesi,,,765836,Regency,Makassar,,Makassar,,South SulawesiIndonesia,,,,,county,2,ID-SN,Gowa,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Maros,South Sulawesi,,,391774,Regency,Makassar,,Makassar,,South SulawesiIndonesia,,,,,county,2,ID-SN,Maros,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Bone,South Sulawesi,,,801775,Regency,,,#N/A,,South SulawesiIndonesia,,,,,locality,,ID-SN,Bone,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Bulukumba,South Sulawesi,,,437607,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Bulukumba,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Pinrang,South Sulawesi,,,403994,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Pinrang,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Jeneponto,South Sulawesi,,,401610,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Jeneponto,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Wajo,South Sulawesi,,,379079,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Wajo,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Luwu (Bua Ponrang),South Sulawesi,,,365608,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Luwu,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Pangkajene Dan Kepulauan [Pangkajene Islands],South Sulawesi,,,345775,Regency,,,#N/A,,South SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
-Indonesia,Luwu Utara [North Luwu],South Sulawesi,,,322919,Regency,,,#N/A,,South SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
-Indonesia,Sidenreng Rappang,South Sulawesi,,,319990,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Sidenreng Rappang,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Takalar,South Sulawesi,,,300853,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Takalar,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Luwu Timur [East Luwu],South Sulawesi,,,296741,Regency,,,#N/A,,South SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
-Indonesia,Tana Toraja,South Sulawesi,,,280794,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Tana Toraja,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Toraja Utara [North Toraja],South Sulawesi,,,261086,Regency,,,#N/A,,South SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
-Indonesia,Sinjai,South Sulawesi,,,259478,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Sinjai,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Soppeng,South Sulawesi,,,235167,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Soppeng,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Enrekang,South Sulawesi,,,225172,Regency,,,#N/A,,South SulawesiIndonesia,,,,,localadmin,,ID-SN,Enrekang,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Bantaeng,South Sulawesi,,,196716,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Bantaeng,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Kota Palopo,South Sulawesi,,,184681,City,,,#N/A,,South SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
-Indonesia,Barru,South Sulawesi,,,184452,Regency,,,#N/A,,South SulawesiIndonesia,,,,,county,2,ID-SN,Barru,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
-Indonesia,Kota Parepare,South Sulawesi,,,151454,City,,,#N/A,,South SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
-Indonesia,Kepulauan Selayar [Selayar Islands],South Sulawesi,,,137071,Regency,,,#N/A,,South SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
-Indonesia,Kota Palembang,South Sumatra,,,1668848,City,Palembang,,Palembang,,South SumatraIndonesia,,,,,locality,,ID-SS,Kota Padang,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.8,ID-SS
-Indonesia,Banyuasin,South Sumatra,,,836914,Regency,Palembang,,Palembang,,South SumatraIndonesia,,,,,county,2,ID-SS,Banyuasin,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Ogan Komering Ilir,South Sumatra,,,769348,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Ogan Komering Ilir,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Ogan Komering Ulu Timur [East Ogan Komering Ulu],South Sumatra,,,649853,Regency,,,#N/A,,South SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SS,Sumatera Selatan,NONE,0.0,ID-SS
-Indonesia,Musi Banyuasin,South Sumatra,,,622206,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Musi Banyuasin,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Muara Enim,South Sumatra,,,612900,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Muara Enim,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Lahat,South Sumatra,,,430071,Regency,,,#N/A,,South SumatraIndonesia,,,,,localadmin,,ID-SS,Lahat,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Ogan Ilir,South Sumatra,,,416549,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Ogan Ilir,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Ogan Komering Ulu Selatan [South Ogan Komering Ulu],South Sumatra,,,408981,Regency,,,#N/A,,South SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SS,Sumatera Selatan,NONE,0.0,ID-SS
-Indonesia,Musi Rawas,South Sumatra,,,395570,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Musi Rawas,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Ogan Komering Ulu,South Sumatra,,,367603,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Ogan Komering Ulu,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Empat Lawang,South Sumatra,,,333622,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Empat Lawang,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Kota Lubuklinggau,South Sumatra,,,234166,City,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Lubuklinggau,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.828,ID-SS
-Indonesia,Penukal Abab Lematang Ilir (PALI),South Sumatra,,,194900,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Penukal Abab Lematang Ilir,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Kota Prabumulih,South Sumatra,,,193196,City,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Prabumulih,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.8,ID-SS
-Indonesia,Musi Rawas Utara (Muratara) [North Musi Rawas],South Sumatra,,,188861,Regency,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Musi Rawas Utara,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
-Indonesia,Kota Pagar Alam,South Sumatra,,,143844,City,,,#N/A,,South SumatraIndonesia,,,,,county,2,ID-SS,Pagar Alam,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.8,ID-SS
-Indonesia,Bandung,West Java,,,3623790,Regency,Bandung,,Bandung,,West JavaIndonesia,,,,,county,2,ID-JB,Kota Bandung,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Bandung,West Java,,,2444160,City,Bandung,,Bandung,,West JavaIndonesia,,,,,county,2,ID-JB,Kota Bandung,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Bandung Barat [West Bandung],West Java,,,1788336,Regency,Bandung,,Bandung,,West JavaIndonesia,,,,,,,,,,,,,region,1,ID-JB,Jawa Barat,NONE,0.0,ID-JB
-Indonesia,Sumedang,West Java,,,1152507,Regency,Bandung,,Bandung,,West JavaIndonesia,,,,,county,2,ID-JB,Sumedang,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Cimahi,West Java,,,568400,City,Bandung,,Bandung,,West JavaIndonesia,,,,,,,,,,,,,region,1,ID-JB,Jawa Barat,NONE,0.0,ID-JB
-Indonesia,Cirebon,West Java,,,2270621,Regency,Cirebon,,Cirebon,,West JavaIndonesia,,,,,county,2,ID-JB,Kota Cirebon,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Cirebon,West Java,,,333303,City,Cirebon,,Cirebon,,West JavaIndonesia,,,,,county,2,ID-JB,Kota Cirebon,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Bogor,West Java,,,5427068,Regency,Jakarta,,Jakarta,,West JavaIndonesia,,,,,county,2,ID-JB,Bogor,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Bekasi,West Java,,,3113017,Regency,Jakarta,,Jakarta,,West JavaIndonesia,,,,,county,2,ID-JB,Bekasi,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Bekasi,West Java,,,2543676,City,Jakarta,,Jakarta,,West JavaIndonesia,,,,,county,2,ID-JB,Kab Bekasi,,,,,region,1,ID-JB,Jawa Barat,LOW,0.857,ID-JB
-Indonesia,Cianjur,West Java,,,2477560,Regency,Jakarta,,Jakarta,,West JavaIndonesia,,,,,county,2,ID-JB,Cianjur,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Karawang,West Java,,,2439085,Regency,Jakarta,,Jakarta,,West JavaIndonesia,,,,,county,2,ID-JB,Karawang,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Depok,West Java,,,2056335,City,Jakarta,,Jakarta,,West JavaIndonesia,,,,,,,,,,,,,region,1,ID-JB,Jawa Barat,NONE,0.0,ID-JB
-Indonesia,Kota Bogor,West Java,,,1043070,City,Jakarta,,Jakarta,,West JavaIndonesia,,,,,county,2,ID-JB,Kab Bogor,,,,,region,1,ID-JB,Jawa Barat,LOW,0.842,ID-JB
-Indonesia,Sukabumi,West Java,,,2725450,Regency,Sukabumi,,Sukabumi,,West JavaIndonesia,,,,,county,2,ID-JB,Sukabumi,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Sukabumi,West Java,,,346325,City,Sukabumi,,Sukabumi,,West JavaIndonesia,,,,,county,2,ID-JB,Kab Sukabumi,,,,,region,1,ID-JB,Jawa Barat,LOW,0.88,ID-JB
-Indonesia,Tasikmalaya,West Java,,,1865203,Regency,Tasikmalaya,,Tasikmalaya,,West JavaIndonesia,,,,,county,2,ID-JB,Tasikmalaya,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Tasikmalaya,West Java,,,716155,City,Tasikmalaya,,Tasikmalaya,,West JavaIndonesia,,,,,county,2,ID-JB,Tasikmalaya,,,,,region,1,ID-JB,Jawa Barat,LOW,0.815,ID-JB
-Indonesia,Garut,West Java,,,2585607,Regency,,,#N/A,,West JavaIndonesia,,,,,county,2,ID-JB,Garut,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Indramayu,West Java,,,1834434,Regency,,,#N/A,,West JavaIndonesia,,,,,county,2,ID-JB,Indramayu,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Subang,West Java,,,1595320,Regency,,,#N/A,,West JavaIndonesia,,,,,county,2,ID-JB,Subang,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Majalengka,West Java,,,1305476,Regency,,,#N/A,,West JavaIndonesia,,,,,county,2,ID-JB,Majalengka,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Ciamis,West Java,,,1229069,Regency,,,#N/A,,West JavaIndonesia,,,,,localadmin,,ID-JB,Ciamis,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kuningan,West Java,,,1167686,Regency,,,#N/A,,West JavaIndonesia,,,,,county,2,ID-JB,Kuningan,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Purwakarta,West Java,,,997869,Regency,,,#N/A,,West JavaIndonesia,,,,,county,2,ID-JB,Purwakarta,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Pangandaran,West Java,,,423667,Regency,,,#N/A,,West JavaIndonesia,,,,,county,2,ID-JB,Pangandaran,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
-Indonesia,Kota Banjar,West Java,,,200973,City,,,#N/A,,West JavaIndonesia,,,,,locality,,ID-JB,Kota Baru,,,,,region,1,ID-JB,Jawa Barat,LOW,0.8,ID-JB
-Indonesia,Kota Pontianak,West Kalimantan,,,658685,City,Pontianak,,Pontianak,,West KalimantanIndonesia,,,,,county,2,ID-KB,Pontianak,,,,,region,1,ID-KB,Kalimantan Barat,LOW,0.783,ID-KB
-Indonesia,Mempawah (Pontianak),West Kalimantan,,,301560,Regency,Pontianak,,Pontianak,,West KalimantanIndonesia,,,,,county,2,ID-KB,Mempawah,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Sambas,West Kalimantan,,,629905,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Sambas,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Kubu Raya,West Kalimantan,,,609392,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Kubu Raya,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Ketapang,West Kalimantan,,,570657,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Ketapang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Sanggau,West Kalimantan,,,484836,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Sanggau,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Sintang,West Kalimantan,,,421306,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Sintang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Landak,West Kalimantan,,,397610,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Landak,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Bengkayang,West Kalimantan,,,286366,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Bengkayang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Kapuas Hulu,West Kalimantan,,,252609,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Kapuas Hulu,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Kota Singkawang,West Kalimantan,,,235064,City,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Singkawang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Melawi,West Kalimantan,,,228270,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Melawi,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Sekadau,West Kalimantan,,,211559,Regency,,,#N/A,,West KalimantanIndonesia,,,,,county,2,ID-KB,Sekadau,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
-Indonesia,Kayong Utara [North Kayong],West Kalimantan,,,126571,Regency,,,#N/A,,West KalimantanIndonesia,,,,,,,,,,,,,region,1,ID-KB,Kalimantan Barat,NONE,0.0,ID-KB
-Indonesia,Lombok Barat [West Lombok],West Nusa Tenggara,,,721481,Regency,Mataram,,Mataram,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
-Indonesia,Kota Mataram,West Nusa Tenggara,,,429651,City,Mataram,,Mataram,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
-Indonesia,Lombok Timur [East Lombok],West Nusa Tenggara,,,1325240,Regency,,,#N/A,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
-Indonesia,Lombok Tengah [Central Lombok],West Nusa Tenggara,,,1034859,Regency,,,#N/A,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
-Indonesia,Bima,West Nusa Tenggara,,,514105,Regency,,,#N/A,,West Nusa TenggaraIndonesia,,,,,county,2,ID-NB,Bima,,,,,region,1,ID-NB,Nusa Tenggara Barat,HIGH,1.0,ID-NB
-Indonesia,Sumbawa,West Nusa Tenggara,,,509753,Regency,,,#N/A,,West Nusa TenggaraIndonesia,,,,,county,2,ID-NB,Sumbawa,,,,,region,1,ID-NB,Nusa Tenggara Barat,HIGH,1.0,ID-NB
-Indonesia,Lombok Utara [North Lombok],West Nusa Tenggara,,,247400,Regency,,,#N/A,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
-Indonesia,Dompu,West Nusa Tenggara,,,236665,Regency,,,#N/A,,West Nusa TenggaraIndonesia,,,,,county,2,ID-NB,Dompu,,,,,region,1,ID-NB,Nusa Tenggara Barat,HIGH,1.0,ID-NB
-Indonesia,Kota Bima,West Nusa Tenggara,,,155140,City,,,#N/A,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
-Indonesia,Sumbawa Barat [West Sumbawa],West Nusa Tenggara,,,145798,Regency,,,#N/A,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
-Indonesia,Kota Sorong,West Papua,,,284410,City,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Manokwari,West Papua,,,192663,Regency,,,#N/A,,West PapuaIndonesia,,,,,county,2,ID-PB,Manokwari,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
-Indonesia,Sorong,West Papua,,,118679,Regency,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Teluk Bintuni,West Papua,,,87083,Regency,,,#N/A,,West PapuaIndonesia,,,,,county,2,ID-PB,Teluk Bintuni,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
-Indonesia,Fakfak,West Papua,,,85197,Regency,,,#N/A,,West PapuaIndonesia,,,,,county,2,ID-PB,Fakfak,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
-Indonesia,Raja Ampat,West Papua,,,64141,Regency,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Kaimana,West Papua,,,62256,Regency,,,#N/A,,West PapuaIndonesia,,,,,county,2,ID-PB,Kaimana,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
-Indonesia,Sorong Selatan [South Sorong],West Papua,,,52469,Regency,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Maybrat,West Papua,,,42991,Regency,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Teluk Wondama,West Papua,,,41644,Regency,,,#N/A,,West PapuaIndonesia,,,,,county,2,ID-PB,Teluk Wondama,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
-Indonesia,Pegunungan Arfak [Arfak Mountains],West Papua,,,38207,Regency,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Manokwari Selatan [South Manokwari],West Papua,,,35949,Regency,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Tambrauw,West Papua,,,28379,Regency,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
-Indonesia,Polewali Mandar (Tutar),West Sulawesi,,,478534,Regency,,,#N/A,,West SulawesiIndonesia,,,,,county,2,ID-SR,Polewali Mandar,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
-Indonesia,Mamuju,West Sulawesi,,,278764,Regency,,,#N/A,,West SulawesiIndonesia,,,,,county,2,ID-SR,Mamuju,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
-Indonesia,Pasangkayu (Mamuju Utara),West Sulawesi,,,188861,Regency,,,#N/A,,West SulawesiIndonesia,,,,,county,2,ID-SR,Pasangkayu,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
-Indonesia,Majene,West Sulawesi,,,174407,Regency,,,#N/A,,West SulawesiIndonesia,,,,,county,2,ID-SR,Majene,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
-Indonesia,Mamasa,West Sulawesi,,,163383,Regency,,,#N/A,,West SulawesiIndonesia,,,,,county,2,ID-SR,Mamasa,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
-Indonesia,Mamuju Tengah [Central Mamuju],West Sulawesi,,,135280,Regency,,,#N/A,,West SulawesiIndonesia,,,,,,,,,,,,,region,1,ID-SR,Sulawesi Barat,NONE,0.0,ID-SR
-Indonesia,Kota Padang,West Sumatra,,,909040,City,Padang,,Padang,,West SumatraIndonesia,,,,,locality,,ID-SB,Koto Panjang,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.783,ID-SB
-Indonesia,Padang Pariaman,West Sumatra,,,430626,Regency,Padang,,Padang,,West SumatraIndonesia,,,,,county,2,ID-SB,Padang Pariaman,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Kota Pariaman,West Sumatra,,,94224,City,Padang,,Padang,,West SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
-Indonesia,Agam,West Sumatra,,,529138,Regency,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Agam,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Pesisir Selatan [South Pesisir],West Sumatra,,,504418,Regency,,,#N/A,,West SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
-Indonesia,Pasaman Barat [West Pasaman],West Sumatra,,,431672,Regency,,,#N/A,,West SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
-Indonesia,Solok,West Sumatra,,,391497,Regency,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Solok,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Lima Puluh Kota,West Sumatra,,,383525,Regency,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Lima Puluh Kota,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Tanah Datar,West Sumatra,,,371704,Regency,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Tanah Datar,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Pasaman,West Sumatra,,,299851,Regency,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Pasaman,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Sijunjung,West Sumatra,,,235045,Regency,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Sijunjung,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Dharmasraya,West Sumatra,,,228591,Regency,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Dharmasraya,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Solok Selatan [South Solok],West Sumatra,,,182027,Regency,,,#N/A,,West SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
-Indonesia,Kota Payakumbuh,West Sumatra,,,139576,City,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Payakumbuh,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.8,ID-SB
-Indonesia,Kota Bukittinggi,West Sumatra,,,121028,City,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Bukittinggi,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.815,ID-SB
-Indonesia,Kepulauan Mentawai [Mentawai Islands],West Sumatra,,,87623,Regency,,,#N/A,,West SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
-Indonesia,Kota Solok,West Sumatra,,,73438,City,,,#N/A,,West SumatraIndonesia,,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
-Indonesia,Kota Sawahlunto,West Sumatra,,,65138,City,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Sawahlunto,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.8,ID-SB
-Indonesia,Kota Padang Panjang,West Sumatra,,,56311,City,,,#N/A,,West SumatraIndonesia,,,,,county,2,ID-SB,Padang Panjang,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
-Indonesia,Sleman,Yogyakarta,,,1125804,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,,,,,county,2,ID-YO,Sleman,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,HIGH,1.0,ID-YO
-Indonesia,Bantul,Yogyakarta,,,985770,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,,,,,locality,,ID-YO,Bantul,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,HIGH,1.0,ID-YO
-Indonesia,Gunung Kidul,Yogyakarta,,,747161,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,,,,,county,2,ID-YO,Gunungkidul,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,MED,0.957,ID-YO
-Indonesia,Kulon Progo,Yogyakarta,,,436395,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,,,,,county,2,ID-YO,Kulonprogo,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,MED,0.952,ID-YO
-Indonesia,Kota Yogyakarta,Yogyakarta,,,373589,City,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,,,,,county,2,ID-YO,Kota Yogyakarta,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,HIGH,1.0,ID-YO
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Indonesia,Kota Banda Aceh,Aceh,,,252899,City,Banda Aceh,,Banda Aceh,,AcehIndonesia,county,2,ID-AC,Banda Aceh,,,,county,2,ID-AC,Banda Aceh,,,,,region,1,ID-AC,Aceh,LOW,0.8,ID-AC
+Indonesia,Aceh Utara [North Aceh],Aceh,,,602793,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Utara,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Bireuen,Aceh,,,436418,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Bireuen,,,,county,2,ID-AC,Bireuen,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Pidie,Aceh,,,435275,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Pidie,,,,county,2,ID-AC,Pidie,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Aceh Timur [East Aceh],Aceh,,,422401,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Timur,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Aceh Besar,Aceh,,,405535,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Besar,,,,county,2,ID-AC,Aceh Besar,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Aceh Tamiang,Aceh,,,294356,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Tamiang,,,,county,2,ID-AC,Aceh Tamiang,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Aceh Selatan [South Aceh],Aceh,,,232414,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Selatan,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Aceh Tenggara [Southeast Aceh],Aceh,,,220860,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Tenggara,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Aceh Tengah [Central Aceh],Aceh,,,215576,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Tengah,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Aceh Barat [West Aceh],Aceh,,,198736,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Barat,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Kota Lhokseumawe,Aceh,,,188713,City,,,#N/A,,AcehIndonesia,county,2,ID-AC,Lhokseumawe,,,,county,2,ID-AC,Lhokseumawe,,,,,region,1,ID-AC,Aceh,LOW,0.815,ID-AC
+Indonesia,Kota Langsa,Aceh,,,185971,City,,,#N/A,,AcehIndonesia,county,2,ID-AC,Langsa,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Nagan Raya,Aceh,,,168392,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Nagan Raya,,,,county,2,ID-AC,Nagan Raya,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Bener Meriah,Aceh,,,161342,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Bener Meriah,,,,county,2,ID-AC,Bener Meriah,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Pidie Jaya,Aceh,,,158397,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Pidie Jaya,,,,county,2,ID-AC,Pidie Jaya,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Aceh Barat Daya [Southwest Aceh],Aceh,,,150775,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Barat Daya,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Aceh Singkil,Aceh,,,126514,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Singkil,,,,county,2,ID-AC,Aceh Singkil,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Gayo Lues,Aceh,,,99532,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Gayo Lues,,,,county,2,ID-AC,Gayo Lues,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Aceh Jaya,Aceh,,,93159,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Aceh Jaya,,,,county,2,ID-AC,Aceh Jaya,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Simeulue,Aceh,,,92865,Regency,,,#N/A,,AcehIndonesia,county,2,ID-AC,Simeulue,,,,county,2,ID-AC,Simeulue,,,,,region,1,ID-AC,Aceh,HIGH,1.0,ID-AC
+Indonesia,Kota Subulussalam,Aceh,,,90751,City,,,#N/A,,AcehIndonesia,county,2,ID-AC,Subulussalam,,,,county,2,ID-AC,Subulussalam,,,,,region,1,ID-AC,Aceh,LOW,0.828,ID-AC
+Indonesia,Kota Sabang,Aceh,,,41197,City,,,#N/A,,AcehIndonesia,county,2,ID-AC,Sabang,,,,,,,,,,,,region,1,ID-AC,Aceh,NONE,0.0,ID-AC
+Indonesia,Kota Denpasar,Bali,,,725314,City,Denpasar,,Denpasar,,BaliIndonesia,county,2,ID-BA,Denpasar,,,,,,,,,,,,region,1,ID-BA,Bali,NONE,0.0,ID-BA
+Indonesia,Badung,Bali,,,548191,Regency,Denpasar,,Denpasar,,BaliIndonesia,county,2,ID-BA,Badung,,,,county,2,ID-BA,Badung,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
+Indonesia,Gianyar,Bali,,,515344,Regency,Denpasar,,Denpasar,,BaliIndonesia,county,2,ID-BA,Gianyar,,,,county,2,ID-BA,Gianyar,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
+Indonesia,Tabanan,Bali,,,461630,Regency,Denpasar,,Denpasar,,BaliIndonesia,county,2,ID-BA,Tabanan,,,,county,2,ID-BA,Tabanan,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
+Indonesia,Klungkung,Bali,,,206925,Regency,Denpasar,,Denpasar,,BaliIndonesia,county,2,ID-BA,Klungkung,,,,county,2,ID-BA,Klungkung,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
+Indonesia,Buleleng,Bali,,,791813,Regency,,,#N/A,,BaliIndonesia,county,2,ID-BA,Buleleng,,,,county,2,ID-BA,Buleleng,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
+Indonesia,Karang Asem,Bali,,,492402,Regency,,,#N/A,,BaliIndonesia,county,2,ID-BA,Karangasem,,,,county,2,ID-BA,Karangasem,,,,,region,1,ID-BA,Bali,MED,0.952,ID-BA
+Indonesia,Jembrana,Bali,,,317064,Regency,,,#N/A,,BaliIndonesia,county,2,ID-BA,Jembrana,,,,county,2,ID-BA,Jembrana,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
+Indonesia,Bangli,Bali,,,258721,Regency,,,#N/A,,BaliIndonesia,county,2,ID-BA,Bangli,,,,county,2,ID-BA,Bangli,,,,,region,1,ID-BA,Bali,HIGH,1.0,ID-BA
+Indonesia,Bangka,Bangka-Belitung,,,326265,Regency,,,#N/A,,Bangka-BelitungIndonesia,county,2,ID-BB,Bangka,,,,county,2,ID-BB,Bangka,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,HIGH,1.0,ID-BB
+Indonesia,Kota Pangkal Pinang,Bangka-Belitung,,,218569,City,,,#N/A,,Bangka-BelitungIndonesia,county,2,ID-BB,Pangkalpinang,,,,county,2,ID-BB,Pangkalpinang,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,LOW,0.812,ID-BB
+Indonesia,Bangka Barat [West Bangka],Bangka-Belitung,,,204612,Regency,,,#N/A,,Bangka-BelitungIndonesia,county,2,ID-BB,Bangka Barat,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
+Indonesia,Bangka Tengah [Central Bangka],Bangka-Belitung,,,198946,Regency,,,#N/A,,Bangka-BelitungIndonesia,county,2,ID-BB,Bangka Tengah,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
+Indonesia,Bangka Selatan [South Bangka],Bangka-Belitung,,,198189,Regency,,,#N/A,,Bangka-BelitungIndonesia,county,2,ID-BB,Bangka Selatan,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
+Indonesia,Belitung,Bangka-Belitung,,,182079,Regency,,,#N/A,,Bangka-BelitungIndonesia,county,2,ID-BB,Belitung,,,,county,2,ID-BB,Belitung,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,HIGH,1.0,ID-BB
+Indonesia,Belitung Timur [East Belitung],Bangka-Belitung,,,127018,Regency,,,#N/A,,Bangka-BelitungIndonesia,county,2,ID-BB,Belitung Timur,,,,,,,,,,,,region,1,ID-BB,Kepulauan Bangka Belitung,NONE,0.0,ID-BB
+Indonesia,Tangerang,Banten,,,3245619,Regency,Jakarta,,Jakarta,,BantenIndonesia,county,2,ID-BT,Tangerang,,,,county,2,ID-BT,Tangerang,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
+Indonesia,Kota Tangerang,Banten,,,1895486,City,Jakarta,,Jakarta,,BantenIndonesia,county,2,ID-BT,Kabupaten Tangerang,,,,county,2,ID-BT,Tangerang,,,,,region,1,ID-BT,Banten,LOW,0.783,ID-BT
+Indonesia,Kota Tangerang Selatan [South Tangerang],Banten,,,1354350,City,Jakarta,,Jakarta,,BantenIndonesia,county,2,ID-BT,Tangerang Selatan,,,,,,,,,,,,region,1,ID-BT,Banten,NONE,0.0,ID-BT
+Indonesia,Serang,Banten,,,1622630,Regency,Serang,,Serang,,BantenIndonesia,county,2,ID-BT,Serang,,,,county,2,ID-BT,Serang,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
+Indonesia,Kota Serang,Banten,,,692101,City,Serang,,Serang,,BantenIndonesia,county,2,ID-BT,Kab Serang,,,,county,2,ID-BT,Kab Serang,,,,,region,1,ID-BT,Banten,LOW,0.857,ID-BT
+Indonesia,Lebak,Banten,,,1386793,Regency,,,#N/A,,BantenIndonesia,county,2,ID-BT,Lebak,,,,county,2,ID-BT,Lebak,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
+Indonesia,Pandeglang,Banten,,,1272687,Regency,,,#N/A,,BantenIndonesia,county,2,ID-BT,Pandeglang,,,,county,2,ID-BT,Pandeglang,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
+Indonesia,Kota Cilegon,Banten,,,434896,City,,,#N/A,,BantenIndonesia,county,2,ID-BT,Cilegon,,,,county,2,ID-BT,Cilegon,,,,,region,1,ID-BT,Banten,HIGH,1.0,ID-BT
+Indonesia,Kota Bengkulu,Bengkulu,,,373591,City,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Bengkulu,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
+Indonesia,Bengkulu Utara [North Bengkulu],Bengkulu,,,296523,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Bengkulu Utara,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
+Indonesia,Rejang Lebong,Bengkulu,,,276645,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Rejang Lebong,,,,county,2,ID-BE,Rejang Lebong,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
+Indonesia,Seluma,Bengkulu,,,207877,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Seluma,,,,county,2,ID-BE,Seluma,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
+Indonesia,Mukomuko,Bengkulu,,,190498,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Mukomuko,,,,county,2,ID-BE,Mukomuko,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
+Indonesia,Bengkulu Selatan [South Bengkulu],Bengkulu,,,166249,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Bengkulu Selatan,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
+Indonesia,Kepahiang,Bengkulu,,,149737,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Kepahiang,,,,county,2,ID-BE,Kepahiang,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
+Indonesia,Kaur,Bengkulu,,,126551,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Kaur,,,,county,2,ID-BE,Kaur,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
+Indonesia,Bengkulu Tengah [Central Bengkulu],Bengkulu,,,116706,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Bengkulu Tengah,,,,,,,,,,,,region,1,ID-BE,Bengkulu,NONE,0.0,ID-BE
+Indonesia,Lebong,Bengkulu,,,106293,Regency,,,#N/A,,BengkuluIndonesia,county,2,ID-BE,Lebong,,,,county,2,ID-BE,Lebong,,,,,region,1,ID-BE,Bengkulu,HIGH,1.0,ID-BE
+Indonesia,Jepara,Central Java,,,1184947,Regency,Jepara,,Jepara,,Central JavaIndonesia,county,2,ID-JT,Jepara,,,,county,2,ID-JT,Jepara,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kota Semarang,Central Java,,,1653524,City,Semarang,,Semarang,,Central JavaIndonesia,county,2,ID-JT,Kota Semarang,,,,county,2,ID-JT,Kota Semarang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Grobogan,Central Java,,,1453526,Regency,Semarang,,Semarang,,Central JavaIndonesia,county,2,ID-JT,Grobogan,,,,county,2,ID-JT,Grobogan,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Demak,Central Java,,,1203956,Regency,Semarang,,Semarang,,Central JavaIndonesia,county,2,ID-JT,Demak,,,,county,2,ID-JT,Demak,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Semarang,Central Java,,,1053094,Regency,Semarang,,Semarang,,Central JavaIndonesia,county,2,ID-JT,Kabupaten Semarang,,,,county,2,ID-JT,Kota Semarang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kendal,Central Java,,,1018505,Regency,Semarang,,Semarang,,Central JavaIndonesia,county,2,ID-JT,Kendal,,,,county,2,ID-JT,Kendal,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kota Salatiga,Central Java,,,192322,City,Semarang,,Semarang,,Central JavaIndonesia,county,2,ID-JT,Salatiga,,,,,,,,,,,,region,1,ID-JT,Jawa Tengah,NONE,0.0,ID-JT
+Indonesia,Magelang,Central Java,,,1299859,Regency,Yogyakarta,,Yogyakarta,,Central JavaIndonesia,county,2,ID-JT,Magelang,,,,county,2,ID-JT,Magelang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Klaten,Central Java,,,1260506,Regency,Yogyakarta,,Yogyakarta,,Central JavaIndonesia,county,2,ID-JT,Klaten,,,,county,2,ID-JT,Klaten,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kota Surakarta,Central Java,,,522364,City,Yogyakarta,,Yogyakarta,,Central JavaIndonesia,county,2,ID-JT,Surakarta,,,,county,2,ID-JT,Surakarta,,,,,region,1,ID-JT,Jawa Tengah,LOW,0.783,ID-JT
+Indonesia,Brebes,Central Java,,,1978759,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Brebes,,,,county,2,ID-JT,Brebes,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Cilacap,Central Java,,,1944857,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Cilacap,,,,county,2,ID-JT,Cilacap,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Banyumas,Central Java,,,1776918,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Banyumas,,,,county,2,ID-JT,Banyumas,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Tegal,Central Java,,,1596996,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Tegal,,,,county,2,ID-JT,Tegal,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Pemalang,Central Java,,,1471489,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Pemalang,,,,county,2,ID-JT,Pemalang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kebumen,Central Java,,,1350438,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Kebumen,,,,county,2,ID-JT,Kebumen,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Pati,Central Java,,,1324188,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Pati,,,,county,2,ID-JT,Pati,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Boyolali,Central Java,,,1062713,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Boyolali,,,,county,2,ID-JT,Boyolali,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Wonogiri,Central Java,,,1043177,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Wonogiri,,,,county,2,ID-JT,Wonogiri,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Banjarnegara,Central Java,,,1017767,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Banjarnegara,,,,county,2,ID-JT,Banjarnegara,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Purbalingga,Central Java,,,998561,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Purbalingga,,,,county,2,ID-JT,Purbalingga,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Sragen,Central Java,,,976951,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Sragen,,,,county,2,ID-JT,Sragen,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Pekalongan,Central Java,,,968821,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Pekalongan,,,,county,2,ID-JT,Pekalongan,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Karanganyar,Central Java,,,931963,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Karanganyar,,,,locality,,ID-JT,Karanganyar,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Sukoharjo,Central Java,,,907587,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Sukoharjo,,,,county,2,ID-JT,Sukoharjo,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Blora,Central Java,,,884333,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Blora,,,,county,2,ID-JT,Blora,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Wonosobo,Central Java,,,879124,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Wonosobo,,,,county,2,ID-JT,Wonosobo,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kudus,Central Java,,,849184,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Kudus,,,,county,2,ID-JT,Kudus,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Batang,Central Java,,,801718,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Batang,,,,county,2,ID-JT,Batang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Temanggung,Central Java,,,790174,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Temanggung,,,,county,2,ID-JT,Temanggung,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Purworejo,Central Java,,,769880,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Purworejo,,,,localadmin,,ID-JT,Purworejo,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Rembang,Central Java,,,645333,Regency,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Rembang,,,,county,2,ID-JT,Rembang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kota Pekalongan,Central Java,,,307150,City,,,#N/A,,Central JavaIndonesia,,,,,,,,county,2,ID-JT,Pekalongan,,,,,region,1,ID-JT,Jawa Tengah,LOW,0.8,ID-JT
+Indonesia,Kota Tegal,Central Java,,,273825,City,,,#N/A,,Central JavaIndonesia,,,,,,,,,,,,,,,,region,1,ID-JT,Jawa Tengah,NONE,0.0,ID-JT
+Indonesia,Kota Magelang,Central Java,,,121526,City,,,#N/A,,Central JavaIndonesia,county,2,ID-JT,Kota Magelang,,,,county,2,ID-JT,Kota Magelang,,,,,region,1,ID-JT,Jawa Tengah,HIGH,1.0,ID-JT
+Indonesia,Kotawaringin Timur [East Kotawaringin],Central Kalimantan,,,428895,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Kotawaringin Timur,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
+Indonesia,Kapuas,Central Kalimantan,,,410446,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Kapuas,,,,county,2,ID-KT,Kapuas,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Kota Palangka Raya,Central Kalimantan,,,293457,City,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Palangka Raya,,,,county,2,ID-KT,Palangka Raya,,,,,region,1,ID-KT,Kalimantan Tengah,LOW,0.839,ID-KT
+Indonesia,Kotawaringin Barat [West Kotawaringin],Central Kalimantan,,,270388,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Kotawaringin Barat,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
+Indonesia,Seruyan,Central Kalimantan,,,162906,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Seruyan,,,,county,2,ID-KT,Seruyan,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Katingan,Central Kalimantan,,,162222,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Katingan,,,,county,2,ID-KT,Katingan,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Barito Utara [North Barito],Central Kalimantan,,,154812,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Barito Utara,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
+Indonesia,Gunung Mas,Central Kalimantan,,,135373,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Gunung Mas,,,,county,2,ID-KT,Gunung Mas,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Pulang Pisau,Central Kalimantan,,,134499,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Pulang Pisau,,,,county,2,ID-KT,Pulang Pisau,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Barito Selatan [South Barito],Central Kalimantan,,,131140,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Barito Selatan,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
+Indonesia,Barito Timur [East Barito],Central Kalimantan,,,113229,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Barito Timur,,,,,,,,,,,,region,1,ID-KT,Kalimantan Tengah,NONE,0.0,ID-KT
+Indonesia,Murung Raya,Central Kalimantan,,,111527,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Murung Raya,,,,county,2,ID-KT,Murung Raya,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Lamandau,Central Kalimantan,,,97611,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Lamandau,,,,county,2,ID-KT,Lamandau,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Sukamara,Central Kalimantan,,,63464,Regency,,,#N/A,,Central KalimantanIndonesia,county,2,ID-KT,Sukamara,,,,county,2,ID-KT,Sukamara,,,,,region,1,ID-KT,Kalimantan Tengah,HIGH,1.0,ID-KT
+Indonesia,Mimika,Central Papua,,,311969,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Mimika,,,,county,2,ID-PT,Mimika,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
+Indonesia,Puncak Jaya,Central Papua,,,224527,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Puncak Jaya,,,,county,2,ID-PT,Puncak Jaya,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
+Indonesia,Paniai,Central Papua,,,220410,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Paniai,,,,county,2,ID-PT,Paniai,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
+Indonesia,Nabire,Central Papua,,,169136,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Kabupaten Nabire,,,,,,,,,,,,region,1,ID-PT,Papua Tengah,NONE,0.0,ID-PT
+Indonesia,Intan Jaya,Central Papua,,,135043,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Intan Jaya,,,,county,2,ID-PT,Intan Jaya,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
+Indonesia,Dogiyai,Central Papua,,,116206,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Dogiyai,,,,county,2,ID-PT,Dogiyai,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
+Indonesia,Puncak,Central Papua,,,114741,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Puncak,,,,county,2,ID-PT,Puncak,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
+Indonesia,Deiyai,Central Papua,,,99091,Regency,,,#N/A,,Central PapuaIndonesia,county,2,ID-PT,Deiyai,,,,county,2,ID-PT,Deiyai,,,,,region,1,ID-PT,Papua Tengah,HIGH,1.0,ID-PT
+Indonesia,Parigi Moutong,Central Sulawesi,,,440015,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Parigi Moutong,,,,county,2,ID-ST,Parigi Moutong,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Kota Palu,Central Sulawesi,,,373218,City,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Palu,,,,,,,,,,,,region,1,ID-ST,Sulawesi Tengah,NONE,0.0,ID-ST
+Indonesia,Banggai,Central Sulawesi,,,362275,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Banggai,,,,county,2,ID-ST,Banggai,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Donggala,Central Sulawesi,,,300436,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Donggala,,,,county,2,ID-ST,Donggala,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Sigi,Central Sulawesi,,,257585,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Sigi,,,,county,2,ID-ST,Sigi,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Poso,Central Sulawesi,,,244875,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Poso,,,,county,2,ID-ST,Poso,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Tolitoli,Central Sulawesi,,,225154,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Tolitoli,,,,county,2,ID-ST,Tolitoli,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Tojo Una-Una,Central Sulawesi,,,163829,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Tojo Una-Una,,,,county,2,ID-ST,Tojo Una-Una,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Morowali,Central Sulawesi,,,161727,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Morowali,,,,county,2,ID-ST,Morowali,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Buol,Central Sulawesi,,,145254,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Buol,,,,county,2,ID-ST,Buol,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Morowali Utara [North Morowali],Central Sulawesi,,,120789,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Morowali Utara,,,,,,,,,,,,region,1,ID-ST,Sulawesi Tengah,NONE,0.0,ID-ST
+Indonesia,Banggai Kepulauan [Banggai Islands],Central Sulawesi,,,120142,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Banggai Kepulauan,,,,,,,,,,,,region,1,ID-ST,Sulawesi Tengah,NONE,0.0,ID-ST
+Indonesia,Banggai Laut,Central Sulawesi,,,70435,Regency,,,#N/A,,Central SulawesiIndonesia,county,2,ID-ST,Banggai Laut,,,,county,2,ID-ST,Banggai Laut,,,,,region,1,ID-ST,Sulawesi Tengah,HIGH,1.0,ID-ST
+Indonesia,Kediri,East Java,,,1635294,Regency,Kediri,,Kediri,,East JavaIndonesia,county,2,ID-JI,Kabupaten Kediri,,,,county,2,ID-JI,Kota Kediri,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Kediri,East Java,,,286796,City,Kediri,,Kediri,,East JavaIndonesia,county,2,ID-JI,Kota Kediri,,,,county,2,ID-JI,Kota Kediri,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Malang,East Java,,,2654448,Regency,Malang,,Malang,,East JavaIndonesia,county,2,ID-JI,Kabupaten Malang,,,,localadmin,,ID-JI,Palang,,,,,region,1,ID-JI,Jawa Timur,LOW,0.833,ID-JI
+Indonesia,Kota Malang,East Java,,,843810,City,Malang,,Malang,,East JavaIndonesia,county,2,ID-JI,Kota Malang,,,,county,2,ID-JI,Kota Malang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Pamekasan,East Java,,,850057,Regency,Pamekasan,,Pamekasan,,East JavaIndonesia,county,2,ID-JI,Pamekasan,,,,county,2,ID-JI,Pamekasan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Surabaya,East Java,,,2874314,City,Surabaya,,Surabaya,,East JavaIndonesia,county,2,ID-JI,Surabaya,,,,county,2,ID-JI,Surabaya,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Sidoarjo,East Java,,,2082801,Regency,Surabaya,,Surabaya,,East JavaIndonesia,county,2,ID-JI,Sidoarjo,,,,localadmin,,ID-JI,Sidoarjo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Lamongan,East Java,,,1344165,Regency,Surabaya,,Surabaya,,East JavaIndonesia,county,2,ID-JI,Lamongan,,,,county,2,ID-JI,Lamongan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Gresik,East Java,,,1311215,Regency,Surabaya,,Surabaya,,East JavaIndonesia,county,2,ID-JI,Gresik,,,,county,2,ID-JI,Gresik,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Mojokerto,East Java,,,1119209,Regency,Surabaya,,Surabaya,,East JavaIndonesia,county,2,ID-JI,Mojokerto,,,,county,2,ID-JI,Mojokerto,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Bangkalan,East Java,,,1060377,Regency,Surabaya,,Surabaya,,East JavaIndonesia,county,2,ID-JI,Bangkalan,,,,county,2,ID-JI,Bangkalan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Mojokerto,East Java,,,132434,City,Surabaya,,Surabaya,,East JavaIndonesia,county,2,ID-JI,Kota Mojokerto,,,,county,2,ID-JI,Kota Mojokerto,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Jember,East Java,,,2536729,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Jember,,,,county,2,ID-JI,Jember,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Banyuwangi,East Java,,,1708114,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Banyuwangi,,,,county,2,ID-JI,Banyuwangi,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Pasuruan,East Java,,,1605969,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Pasuruan,,,,county,2,ID-JI,Pasuruan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Jombang,East Java,,,1318062,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Jombang,,,,county,2,ID-JI,Jombang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Bojonegoro,East Java,,,1301635,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Bojonegoro,,,,localadmin,,ID-JI,Bojonegoro,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Blitar,East Java,,,1223745,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Blitar,,,,county,2,ID-JI,Blitar,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Tuban,East Java,,,1198012,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Tuban,,,,county,2,ID-JI,Tuban,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Probolinggo,East Java,,,1152537,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Probolinggo,,,,county,2,ID-JI,Probolinggo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Sumenep,East Java,,,1124436,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Sumenep,,,,county,2,ID-JI,Sumenep,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Lumajang,East Java,,,1119251,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Lumajang,,,,county,2,ID-JI,Lumajang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Nganjuk,East Java,,,1103902,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Nganjuk,,,,county,2,ID-JI,Nganjuk,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Tulungagung,East Java,,,1089775,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Tulungagung,,,,county,2,ID-JI,Tulungagung,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Sampang,East Java,,,969694,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Sampang,,,,county,2,ID-JI,Sampang,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Ponorogo,East Java,,,949318,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Ponorogo,,,,county,2,ID-JI,Ponorogo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Ngawi,East Java,,,870057,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Ngawi,,,,county,2,ID-JI,Ngawi,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Bondowoso,East Java,,,776151,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Bondowoso,,,,county,2,ID-JI,Bondowoso,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Madiun,East Java,,,744350,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Madiun,,,,county,2,ID-JI,Madiun,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Trenggalek,East Java,,,731125,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Trenggalek,,,,county,2,ID-JI,Trenggalek,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Situbondo,East Java,,,685967,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Situbondo,,,,county,2,ID-JI,Situbondo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Magetan,East Java,,,670812,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Magetan,,,,county,2,ID-JI,Magetan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Pacitan,East Java,,,586110,Regency,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Pacitan,,,,county,2,ID-JI,Pacitan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Probolinggo,East Java,,,239649,City,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Kota Probolinggo,,,,county,2,ID-JI,Kota Probolinggo,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Batu,East Java,,,213046,City,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Kota Batu,,,,county,2,ID-JI,Kota Batu,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Pasuruan,East Java,,,208006,City,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Kota Pasuruan,,,,county,2,ID-JI,Kota Pasuruan,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Madiun,East Java,,,195175,City,,,#N/A,,East JavaIndonesia,county,2,ID-JI,Kota Madiun,,,,county,2,ID-JI,Kota Madiun,,,,,region,1,ID-JI,Jawa Timur,HIGH,1.0,ID-JI
+Indonesia,Kota Blitar,East Java,,,149149,City,,,#N/A,,East JavaIndonesia,,,,,,,,,,,,,,,,region,1,ID-JI,Jawa Timur,NONE,0.0,ID-JI
+Indonesia,Kota Balikpapan,East Kalimantan,,,688318,City,Balikpapan,,Balikpapan,,East KalimantanIndonesia,county,2,ID-KI,Balikpapan,,,,county,2,ID-KI,Balikpapan,,,,,region,1,ID-KI,Kalimantan Timur,LOW,0.8,ID-KI
+Indonesia,Kutai Kartanegara,East Kalimantan,,,729382,Regency,Nusantara,,Nusantara,,East KalimantanIndonesia,county,2,ID-KI,Kutai Kartanegara,,,,county,2,ID-KI,Kutai Kartanegara,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
+Indonesia,Penajam Paser Utara [North Penajam Paser],East Kalimantan,,,178681,Regency,Nusantara,,Nusantara,,East KalimantanIndonesia,county,2,ID-KI,Penajam Paser Utara,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
+Indonesia,Kota Samarinda,East Kalimantan,,,827994,City,Samarinda,,Samarinda,,East KalimantanIndonesia,county,2,ID-KI,Samarinda,,,,county,2,ID-KI,Samarinda,,,,,region,1,ID-KI,Kalimantan Timur,LOW,0.783,ID-KI
+Indonesia,Kutai Timur [East Kutai],East Kalimantan,,,434459,Regency,,,#N/A,,East KalimantanIndonesia,county,2,ID-KI,Kutai Timur,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
+Indonesia,Paser,East Kalimantan,,,275452,Regency,,,#N/A,,East KalimantanIndonesia,county,2,ID-KI,Paser,,,,county,2,ID-KI,Paser,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
+Indonesia,Berau,East Kalimantan,,,248035,Regency,,,#N/A,,East KalimantanIndonesia,county,2,ID-KI,Berau,,,,county,2,ID-KI,Berau,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
+Indonesia,Kota Bontang,East Kalimantan,,,178917,City,,,#N/A,,East KalimantanIndonesia,county,2,ID-KI,Bontang,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
+Indonesia,Kutai Barat [West Kutai],East Kalimantan,,,172288,Regency,,,#N/A,,East KalimantanIndonesia,county,2,ID-KI,Kutai Barat,,,,,,,,,,,,region,1,ID-KI,Kalimantan Timur,NONE,0.0,ID-KI
+Indonesia,Mahakam Ulu,East Kalimantan,,,32513,Regency,,,#N/A,,East KalimantanIndonesia,county,2,ID-KI,Mahakam Ulu,,,,county,2,ID-KI,Mahakam Ulu,,,,,region,1,ID-KI,Kalimantan Timur,HIGH,1.0,ID-KI
+Indonesia,Kota Kupang,East Nusa Tenggara,,,442758,City,Kupang,,Kupang,,East Nusa TenggaraIndonesia,county,2,ID-NT,Kupang,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Timor Tengah Selatan [South Central Timor],East Nusa Tenggara,,,455410,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Timor Tengah Selatan,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Kupang,East Nusa Tenggara,,,366383,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Kupang,,,,county,2,ID-NT,Kupang,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Sikka,East Nusa Tenggara,,,321953,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Sikka,,,,county,2,ID-NT,Sikka,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Manggarai,East Nusa Tenggara,,,312855,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Manggarai,,,,county,2,ID-NT,Manggarai,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Sumba Barat Daya [Southwest Sumba],East Nusa Tenggara,,,303650,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Sumba Barat Daya,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Flores Timur [East Flores],East Nusa Tenggara,,,276896,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Flores Timur,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Manggarai Timur [East Manggarai],East Nusa Tenggara,,,275603,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Manggarai Timur,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Ende,East Nusa Tenggara,,,270763,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Ende,,,,county,2,ID-NT,Ende,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Timor Tengah Utara [North Central Timor],East Nusa Tenggara,,,259829,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Timor Tengah Utara,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Manggarai Barat [West Manggarai],East Nusa Tenggara,,,256317,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Manggarai Barat,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Sumba Timur [East Sumba],East Nusa Tenggara,,,244820,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Sumba Timur,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Belu,East Nusa Tenggara,,,217973,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Belu,,,,county,2,ID-NT,Belu,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Alor,East Nusa Tenggara,,,211872,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Alor,,,,county,2,ID-NT,Alor,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Malaka,East Nusa Tenggara,,,183898,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Malaka,,,,county,2,ID-NT,Malaka,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Ngada,East Nusa Tenggara,,,165254,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Ngada,,,,county,2,ID-NT,Ngada,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Nagekeo,East Nusa Tenggara,,,159732,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Nagekeo,,,,county,2,ID-NT,Nagekeo,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Sumba Barat [West Sumba],East Nusa Tenggara,,,145097,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Sumba Barat,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Rote Ndao,East Nusa Tenggara,,,143764,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Rote Ndao,,,,county,2,ID-NT,Rote Ndao,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Lembata,East Nusa Tenggara,,,135930,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Lembata,,,,county,2,ID-NT,Lembata,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Sabu Raijua,East Nusa Tenggara,,,89327,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Sabu Raijua,,,,county,2,ID-NT,Sabu Raijua,,,,,region,1,ID-NT,Nusa Tenggara Timur,HIGH,1.0,ID-NT
+Indonesia,Sumba Tengah [Central Sumba],East Nusa Tenggara,,,85482,Regency,,,#N/A,,East Nusa TenggaraIndonesia,county,2,ID-NT,Sumba Tengah,,,,,,,,,,,,region,1,ID-NT,Nusa Tenggara Timur,NONE,0.0,ID-NT
+Indonesia,Gorontalo,Gorontalo,,,393107,Regency,,,#N/A,,GorontaloIndonesia,county,2,ID-GO,Gorontalo,,,,county,2,ID-GO,Gorontalo,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
+Indonesia,Kota Gorontalo,Gorontalo,,,198539,City,,,#N/A,,GorontaloIndonesia,,,,,,,,county,2,ID-GO,Gorontalo,,,,,region,1,ID-GO,Gorontalo,LOW,0.783,ID-GO
+Indonesia,Bone Bolango,Gorontalo,,,162778,Regency,,,#N/A,,GorontaloIndonesia,county,2,ID-GO,Bone Bolango,,,,county,2,ID-GO,Bone Bolango,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
+Indonesia,Pohuwato,Gorontalo,,,146432,Regency,,,#N/A,,GorontaloIndonesia,county,2,ID-GO,Pohuwato,,,,county,2,ID-GO,Pohuwato,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
+Indonesia,Boalemo,Gorontalo,,,145868,Regency,,,#N/A,,GorontaloIndonesia,county,2,ID-GO,Boalemo,,,,county,2,ID-GO,Boalemo,,,,,region,1,ID-GO,Gorontalo,HIGH,1.0,ID-GO
+Indonesia,Gorontalo Utara [North Gorontalo],Gorontalo,,,124957,Regency,,,#N/A,,GorontaloIndonesia,county,2,ID-GO,Gorontalo Utara,,,,,,,,,,,,region,1,ID-GO,Gorontalo,NONE,0.0,ID-GO
+Indonesia,Yahukimo,Highland Papua,,,350880,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Yahukimo,,,,county,2,ID-PE,Yahukimo,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
+Indonesia,Jayawijaya,Highland Papua,,,269553,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Jayawijaya,,,,county,2,ID-PE,Jayawijaya,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
+Indonesia,Tolikara,Highland Papua,,,236986,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Tolikara,,,,county,2,ID-PE,Tolikara,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
+Indonesia,Lanny Jaya,Highland Papua,,,196399,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Lanny Jaya,,,,county,2,ID-PE,Lanny Jaya,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
+Indonesia,Nduga,Highland Papua,,,106533,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Nduga,,,,county,2,ID-PE,Nduga,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
+Indonesia,Yalimo,Highland Papua,,,101973,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Yalimo,,,,county,2,ID-PE,Yalimo,,,,,region,1,ID-PE,Papua Pegunungan,HIGH,1.0,ID-PE
+Indonesia,Pegunungan Bintang [Bintang Mountains],Highland Papua,,,77872,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Pegunungan Bintang,,,,,,,,,,,,region,1,ID-PE,Papua Pegunungan,NONE,0.0,ID-PE
+Indonesia,Mamberamo Tengah [Central Mamberamo],Highland Papua,,,50685,Regency,,,#N/A,,Highland PapuaIndonesia,county,2,ID-PE,Mamberamo Tengah,,,,,,,,,,,,region,1,ID-PE,Papua Pegunungan,NONE,0.0,ID-PE
+Indonesia,Kodya Jakarta Timur [East Jakarta],Jakarta,,,3037139,City District,Jakarta,,Jakarta,,JakartaIndonesia,county,2,ID-JK,Jakarta Timur,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
+Indonesia,Kodya Jakarta Barat [West Jakarta],Jakarta,,,2434511,City District,Jakarta,,Jakarta,,JakartaIndonesia,county,2,ID-JK,Jakarta Barat,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
+Indonesia,Kodya Jakarta Selatan [South Jakarta],Jakarta,,,2226812,City District,Jakarta,,Jakarta,,JakartaIndonesia,county,2,ID-JK,Jakarta Selatan,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
+Indonesia,Kodya Jakarta Utara [North Jakarta],Jakarta,,,1778981,City District,Jakarta,,Jakarta,,JakartaIndonesia,county,2,ID-JK,Jakarta Utara,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
+Indonesia,Kodya Jakarta Pusat [Central Jakarta],Jakarta,,,1056896,City District,Jakarta,,Jakarta,,JakartaIndonesia,county,2,ID-JK,Jakarta Pusat,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
+Indonesia,Kepulauan Seribu [Thousand Islands],Jakarta,,,27749,Regency,Jakarta,,Jakarta,,JakartaIndonesia,county,2,ID-JK,Kepulauan Seribu,,,,,,,,,,,,region,1,ID-JK,Daerah Khusus Ibukota Jakarta,NONE,0.0,ID-JK
+Indonesia,Kota Jambi,Jambi,,,606200,City,,,#N/A,,JambiIndonesia,county,2,ID-JA,Jambi,,,,,,,,,,,,region,1,ID-JA,Jambi,NONE,0.0,ID-JA
+Indonesia,Muaro Jambi,Jambi,,,402017,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Muaro Jambi,,,,county,2,ID-JA,Muaro Jambi,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
+Indonesia,Bungo,Jambi,,,362363,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Bungo,,,,county,2,ID-JA,Bungo,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
+Indonesia,Merangin,Jambi,,,354052,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Merangin,,,,county,2,ID-JA,Merangin,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
+Indonesia,Tebo,Jambi,,,337669,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Tebo,,,,county,2,ID-JA,Tebo,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
+Indonesia,Tanjung Jabung Barat [West Tanjung Jabung],Jambi,,,317498,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Tanjung Jabung Barat,,,,,,,,,,,,region,1,ID-JA,Jambi,NONE,0.0,ID-JA
+Indonesia,Batang Hari,Jambi,,,301700,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Batang Hari,,,,county,2,ID-JA,Batang Hari,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
+Indonesia,Sarolangun,Jambi,,,290047,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Sarolangun,,,,county,2,ID-JA,Sarolangun,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
+Indonesia,Kerinci,Jambi,,,250259,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Kerinci,,,,county,2,ID-JA,Kerinci,,,,,region,1,ID-JA,Jambi,HIGH,1.0,ID-JA
+Indonesia,Tanjung Jabung Timur [East Tanjung Jabung],Jambi,,,229813,Regency,,,#N/A,,JambiIndonesia,county,2,ID-JA,Tanjung Jabung Timur,,,,,,,,,,,,region,1,ID-JA,Jambi,NONE,0.0,ID-JA
+Indonesia,Kota Sungai Penuh,Jambi,,,96610,City,,,#N/A,,JambiIndonesia,county,2,ID-JA,Sungai Penuh,,,,county,2,ID-JA,Sungai Penuh,,,,,region,1,ID-JA,Jambi,LOW,0.828,ID-JA
+Indonesia,Kota Bandar Lampung,Lampung,,,1166066,City,Bandar Lampung,,Bandar Lampung,,LampungIndonesia,county,2,ID-LA,Bandar Lampung,,,,county,2,ID-LA,Bandar Lampung,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
+Indonesia,Lampung Selatan [South Lampung],Lampung,,,1064301,Regency,Bandar Lampung,,Bandar Lampung,,LampungIndonesia,county,2,ID-LA,Lampung Selatan,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Lampung Tengah [Central Lampung],Lampung,,,1460045,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Lampung Tengah,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Lampung Timur [East Lampung],Lampung,,,1110340,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Lampung Timur,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Tanggamus,Lampung,,,640275,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Tanggamus,,,,county,2,ID-LA,Tanggamus,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
+Indonesia,Lampung Utara [North Lampung],Lampung,,,633099,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Lampung Utara,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Pesawaran,Lampung,,,477468,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Pesawaran,,,,county,2,ID-LA,Pesawaran,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
+Indonesia,Way Kanan,Lampung,,,473575,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Way Kanan,,,,county,2,ID-LA,Way Kanan,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
+Indonesia,Tulang Bawang,Lampung,,,430021,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Tulang Bawang,,,,county,2,ID-LA,Tulang Bawang,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
+Indonesia,Pringsewu,Lampung,,,405466,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Pringsewu,,,,county,2,ID-LA,Pringsewu,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
+Indonesia,Lampung Barat [West Lampung],Lampung,,,302139,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Lampung Barat,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Tulang Bawang Barat [West Tulang Bawang],Lampung,,,286162,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Tulang Bawang Barat,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Mesuji,Lampung,,,227518,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Mesuji,,,,county,2,ID-LA,Mesuji,,,,,region,1,ID-LA,Lampung,HIGH,1.0,ID-LA
+Indonesia,Kota Metro,Lampung,,,168676,City,,,#N/A,,LampungIndonesia,county,2,ID-LA,Metro,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Pesisir Barat [West Pesisir],Lampung,,,162697,Regency,,,#N/A,,LampungIndonesia,county,2,ID-LA,Pesisir Barat,,,,,,,,,,,,region,1,ID-LA,Lampung,NONE,0.0,ID-LA
+Indonesia,Kota Ambon,Maluku,,,347288,City,Ambon,,Ambon,,MalukuIndonesia,county,2,ID-MA,Ambon,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Maluku Tengah [Central Maluku],Maluku,,,423094,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Maluku Tengah,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Seram Bagian Barat [West Seram],Maluku,,,212393,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Seram Bagian Barat,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Seram Bagian Timur [East Seram],Maluku,,,137972,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Seram Bagian Timur,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Buru,Maluku,,,135238,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Buru,,,,county,2,ID-MA,Buru,,,,,region,1,ID-MA,Maluku,HIGH,1.0,ID-MA
+Indonesia,Kepulauan Tanimbar (Maluku Tenggara Barat) [Tanimbar Islands],Maluku,,,123572,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Kepulauan Tanimbar,,,,county,2,ID-MA,Kepulauan Tanimbar,,,,,region,1,ID-MA,Maluku,HIGH,1.0,ID-MA
+Indonesia,Maluku Tenggara [Southeast Maluku],Maluku,,,121511,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Maluku Tenggara,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Kepulauan Aru [Aru Islands],Maluku,,,102237,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Kepulauan Aru,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Kota Tual,Maluku,,,88280,City,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Tual,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Maluku Barat Daya [Southwest Maluku],Maluku,,,81928,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Maluku Barat Daya,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Buru Selatan [South Buru],Maluku,,,75410,Regency,,,#N/A,,MalukuIndonesia,county,2,ID-MA,Buru Selatan,,,,,,,,,,,,region,1,ID-MA,Maluku,NONE,0.0,ID-MA
+Indonesia,Kota Tarakan,North Kalimantan,,,242786,City,Tarakan,,Tarakan,,North KalimantanIndonesia,county,2,ID-KU,Tarakan,,,,,,,,,,,,region,1,ID-KU,Kalimantan Utara,NONE,0.0,ID-KU
+Indonesia,Nunukan,North Kalimantan,,,199090,Regency,,,#N/A,,North KalimantanIndonesia,county,2,ID-KU,Nunukan,,,,county,2,ID-KU,Nunukan,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
+Indonesia,Bulungan,North Kalimantan,,,151844,Regency,,,#N/A,,North KalimantanIndonesia,county,2,ID-KU,Bulungan,,,,county,2,ID-KU,Bulungan,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
+Indonesia,Malinau,North Kalimantan,,,82510,Regency,,,#N/A,,North KalimantanIndonesia,county,2,ID-KU,Malinau,,,,county,2,ID-KU,Malinau,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
+Indonesia,Tana Tidung,North Kalimantan,,,25584,Regency,,,#N/A,,North KalimantanIndonesia,county,2,ID-KU,Tana Tidung,,,,county,2,ID-KU,Tana Tidung,,,,,region,1,ID-KU,Kalimantan Utara,HIGH,1.0,ID-KU
+Indonesia,Kota Ternate,North Maluku,,,205001,City,Ternate,,Ternate,,North MalukuIndonesia,county,2,ID-MU,Ternate,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Halmahera Selatan [South Halmahera],North Maluku,,,248395,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Halmahera Selatan,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Halmahera Utara [North Halmahera],North Maluku,,,197638,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Halmahera Utara,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Halmahera Barat [West Halmahera],North Maluku,,,132349,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Halmahera Barat,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Kota Tidore Kepulauan [Tidore Islands],North Maluku,,,114480,City,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Tidore Kepulauan,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Kepulauan Sula [Sula Islands],North Maluku,,,104082,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Kepulauan Sula,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Halmahera Timur [East Halmahera],North Maluku,,,91707,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Halmahera Timur,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Pulau Morotai [Morotai Island],North Maluku,,,74436,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Pulau Morotai,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Pulau Taliabu [Taliabu Island],North Maluku,,,58047,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Pulau Taliabu,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Halmahera Tengah [Central Halmahera],North Maluku,,,56802,Regency,,,#N/A,,North MalukuIndonesia,county,2,ID-MU,Halmahera Tengah,,,,,,,,,,,,region,1,ID-MU,Maluku Utara,NONE,0.0,ID-MU
+Indonesia,Kota Manado,North Sulawesi,,,451916,City,Manado,,Manado,,North SulawesiIndonesia,county,2,ID-SA,Manado,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Kota Bitung,North Sulawesi,,,225134,City,Manado,,Manado,,North SulawesiIndonesia,county,2,ID-SA,Bitung,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Minahasa Utara [North Minahasa],North Sulawesi,,,224993,Regency,Manado,,Manado,,North SulawesiIndonesia,county,2,ID-SA,Minahasa Utara,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Minahasa,North Sulawesi,,,347290,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Minahasa,,,,county,2,ID-SA,Minahasa,,,,,region,1,ID-SA,Sulawesi Utara,HIGH,1.0,ID-SA
+Indonesia,Bolaang Mongondow,North Sulawesi,,,248751,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Bolaang Mongondow,,,,county,2,ID-SA,Bolaang Mongondow,,,,,region,1,ID-SA,Sulawesi Utara,HIGH,1.0,ID-SA
+Indonesia,Minahasa Selatan (Suluun Tareran) [South Minahasa],North Sulawesi,,,236463,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Minahasa Selatan,,,,county,2,ID-SA,Minahasa Selatan,,,,,region,1,ID-SA,Sulawesi Utara,HIGH,1.0,ID-SA
+Indonesia,Kepulauan Sangihe [Sangihe Islands],North Sulawesi,,,139262,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Kepulauan Sangihe,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Kota Kotamobagu,North Sulawesi,,,123722,City,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Kotamobagu,,,,county,2,ID-SA,Kotamobagu,,,,,region,1,ID-SA,Sulawesi Utara,LOW,0.8,ID-SA
+Indonesia,Minahasa Tenggara [Southeast Minahasa],North Sulawesi,,,116323,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Minahasa Tenggara,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Kota Tomohon,North Sulawesi,,,100587,City,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Tomohon,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Kepulauan Talaud [Talaud Islands],North Sulawesi,,,94521,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Kabupaten Kepulauan Talaud,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Bolaang Mongondow Timur [East Bolaang Mongondow],North Sulawesi,,,88241,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Bolaang Mongondow Timur,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Bolaang Mongondow Utara [North Bolaang Mongondow],North Sulawesi,,,83112,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Bolaang Mongondow Utara,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Siau Tagulandang Biaro [Sitaro Islands],North Sulawesi,,,71817,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Kepulauan Siau Tagulandang Biaro,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Bolaang Mongondow Selatan [South Bolaang Mongondow],North Sulawesi,,,69791,Regency,,,#N/A,,North SulawesiIndonesia,county,2,ID-SA,Bolaang Mongondow Selatan,,,,,,,,,,,,region,1,ID-SA,Sulawesi Utara,NONE,0.0,ID-SA
+Indonesia,Kota Medan,North Sumatra,,,2435252,City,Medan,,Medan,,North SumatraIndonesia,county,2,ID-SU,Kota Medan,,,,county,2,ID-SU,Kota Medan,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Deli Serdang,North Sumatra,,,1931441,Regency,Medan,,Medan,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Deli Serdang,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Karo,North Sumatra,,,404998,Regency,Medan,,Medan,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Karo,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Kota Binjai,North Sumatra,,,291842,City,Medan,,Medan,,North SumatraIndonesia,county,2,ID-SU,Kota Binjai,,,,county,2,ID-SU,Kota Binjai,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Langkat,North Sumatra,,,1030202,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Langkat,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Simalungun,North Sumatra,,,990246,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Simalungun,,,,county,2,ID-SU,Simalungun,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Asahan,North Sumatra,,,769960,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Asahan,,,,county,2,ID-SU,Asahan,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Serdang Bedagai,North Sumatra,,,657490,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Serdang Bedagai,,,,county,2,ID-SU,Kabupaten Serdang Bedagai,,,,,region,1,ID-SU,Sumatera Utara,LOW,0.8,ID-SU
+Indonesia,Labuhan Batu,North Sumatra,,,493899,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Labuhanbatu,,,,county,2,ID-SU,Labuhanbatu,,,,,region,1,ID-SU,Sumatera Utara,MED,0.957,ID-SU
+Indonesia,Mandailing Natal,North Sumatra,,,472886,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Mandailing Natal,,,,county,2,ID-SU,Mandailing Natal,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Batu Bara,North Sumatra,,,410678,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Batu Bara,,,,county,2,ID-SU,Batu Bara,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Labuhan Batu Utara [North Labuhan Batu],North Sumatra,,,381994,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Labuhanbatu Utara,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Tapanuli Tengah [Central Tapanuli],North Sumatra,,,365177,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Tapanuli Tengah,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Nias Selatan [South Nias],North Sumatra,,,360531,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Nias Selatan,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Labuhan Batu Selatan [South Labuhan Batu],North Sumatra,,,314094,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Labuhanbatu Selatan,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Tapanuli Utara [North Tapanuli],North Sumatra,,,312758,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Tapanuli Utara,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Dairi,North Sumatra,,,308764,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Dairi,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Tapanuli Selatan [South Tapanuli],North Sumatra,,,300911,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Tapanuli Selatan,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Kota Pematangsiantar,North Sumatra,,,268254,City,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kota Pematangsiantar,,,,county,2,ID-SU,Kota Pematangsiantar,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Padang Lawas,North Sumatra,,,261011,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Padang Lawas,,,,county,2,ID-SU,Padang Lawas,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Padang Lawas Utara [North Padang Lawas],North Sumatra,,,260720,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Padang Lawas Utara,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Kota Padang Sidempuan,North Sumatra,,,225105,City,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kota Padangsidimpuan,,,,county,2,ID-SU,Kota Padangsidimpuan,,,,,region,1,ID-SU,Sumatera Utara,MED,0.927,ID-SU
+Indonesia,Toba Samosir,North Sumatra,,,206199,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Toba,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Humbang Hasundutan,North Sumatra,,,197751,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Humbang Hasundutan,,,,county,2,ID-SU,Kabupaten Humbang Hasundutan,,,,,region,1,ID-SU,Sumatera Utara,LOW,0.833,ID-SU
+Indonesia,Kota Tanjungbalai,North Sumatra,,,176027,City,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kota Tanjung Balai,,,,county,2,ID-SU,Kota Tanjung Balai,,,,,region,1,ID-SU,Sumatera Utara,HIGH,0.971,ID-SU
+Indonesia,Kota Tebing Tinggi,North Sumatra,,,172838,City,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kota Tebing Tinggi,,,,county,2,ID-SU,Kota Tebing Tinggi,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Nias Utara [North Nias],North Sumatra,,,147274,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Nias Utara,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Nias,North Sumatra,,,146672,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Nias Regency,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Samosir,North Sumatra,,,136441,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Samosir,,,,county,2,ID-SU,Samosir,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Kota Gunungsitoli,North Sumatra,,,136017,City,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kota Gunungsitoli,,,,county,2,ID-SU,Kota Gunungsitoli,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Nias Barat [West Nias],North Sumatra,,,89994,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Nias Barat,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Kota Sibolga,North Sumatra,,,89584,City,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kota Sibolga,,,,county,2,ID-SU,Kota Sibolga,,,,,region,1,ID-SU,Sumatera Utara,HIGH,1.0,ID-SU
+Indonesia,Pakpak Bharat,North Sumatra,,,52351,Regency,,,#N/A,,North SumatraIndonesia,county,2,ID-SU,Kabupaten Pakpak Bharat,,,,,,,,,,,,region,1,ID-SU,Sumatera Utara,NONE,0.0,ID-SU
+Indonesia,Biak Numfor,Papua,,,134650,Regency,Biak Numfor,,Biak Numfor,,PapuaIndonesia,county,2,ID-PA,Biak Numfor,,,,county,2,ID-PA,Biak Numfor,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Kota Jayapura,Papua,,,398478,City,Jayapura,,Jayapura,,PapuaIndonesia,county,2,ID-PA,Jayapura,,,,county,2,ID-PA,Jayapura,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Jayapura (Nambluong),Papua,,,166171,Regency,,,#N/A,,PapuaIndonesia,county,2,ID-PA,Jayapura,,,,county,2,ID-PA,Jayapura,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Kepulauan Yapen [Yapen Islands],Papua,,,112676,Regency,,,#N/A,,PapuaIndonesia,county,2,ID-PA,Kepulauan Yapen,,,,,,,,,,,,region,1,ID-PA,Papua,NONE,0.0,ID-PA
+Indonesia,Keerom,Papua,,,61623,Regency,,,#N/A,,PapuaIndonesia,county,2,ID-PA,Keerom,,,,county,2,ID-PA,Keerom,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Sarmi,Papua,,,41515,Regency,,,#N/A,,PapuaIndonesia,county,2,ID-PA,Sarmi,,,,county,2,ID-PA,Sarmi,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Mamberamo Raya,Papua,,,36483,Regency,,,#N/A,,PapuaIndonesia,county,2,ID-PA,Mamberamo Raya,,,,county,2,ID-PA,Mamberamo Raya,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Waropen,Papua,,,33943,Regency,,,#N/A,,PapuaIndonesia,county,2,ID-PA,Waropen,,,,county,2,ID-PA,Waropen,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Supiori,Papua,,,22547,Regency,,,#N/A,,PapuaIndonesia,county,2,ID-PA,Supiori,,,,county,2,ID-PA,Supiori,,,,,region,1,ID-PA,Papua,HIGH,1.0,ID-PA
+Indonesia,Kota Pekanbaru,Riau,,,983356,City,Pekanbaru,,Pekanbaru,,RiauIndonesia,county,2,ID-RI,Pekanbaru,,,,county,2,ID-RI,Pekanbaru,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Siak,Riau,,,457940,Regency,Pekanbaru,,Pekanbaru,,RiauIndonesia,county,2,ID-RI,Siak,,,,localadmin,,ID-RI,Siak,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Kampar,Riau,,,841332,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Kampar,,,,county,2,ID-RI,Kampar,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Indragiri Hilir,Riau,,,654909,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Indragiri Hilir,,,,county,2,ID-RI,Indragiri Hilir,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Rokan Hilir,Riau,,,637161,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Rokan Hilir,,,,county,2,ID-RI,Rokan Hilir,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Bengkalis,Riau,,,565569,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Bengkalis,,,,localadmin,,ID-RI,Bengkalis,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Rokan Hulu,Riau,,,561385,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Rokan Hulu,,,,county,2,ID-RI,Rokan Hulu,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Indragiri Hulu,Riau,,,444548,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Indragiri Hulu,,,,county,2,ID-RI,Indragiri Hulu,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Pelalawan,Riau,,,390046,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Pelalawan,,,,localadmin,,ID-RI,Pelalawan,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Kuantan Singingi,Riau,,,334943,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Kuantan Singingi,,,,county,2,ID-RI,Kuantan Singingi,,,,,region,1,ID-RI,Riau,HIGH,1.0,ID-RI
+Indonesia,Kota Dumai,Riau,,,316782,City,,,#N/A,,RiauIndonesia,county,2,ID-RI,Dumai,,,,,,,,,,,,region,1,ID-RI,Riau,NONE,0.0,ID-RI
+Indonesia,Kepulauan Meranti [Meranti Islands],Riau,,,206116,Regency,,,#N/A,,RiauIndonesia,county,2,ID-RI,Kepulauan Meranti,,,,,,,,,,,,region,1,ID-RI,Riau,NONE,0.0,ID-RI
+Indonesia,Kota Batam,Riau Islands,,,1196396,City,Batam,,Batam,,Riau IslandsIndonesia,county,2,ID-KR,Batam,,,,,,,,,,,,region,1,ID-KR,Kepulauan Riau,NONE,0.0,ID-KR
+Indonesia,Karimun,Riau Islands,,,253457,Regency,,,#N/A,,Riau IslandsIndonesia,county,2,ID-KR,Karimun,,,,county,2,ID-KR,Karimun,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
+Indonesia,Kota Tanjung Pinang,Riau Islands,,,227663,City,,,#N/A,,Riau IslandsIndonesia,county,2,ID-KR,Tanjungpinang,,,,county,2,ID-KR,Tanjungpinang,,,,,region,1,ID-KR,Kepulauan Riau,LOW,0.812,ID-KR
+Indonesia,Bintan,Riau Islands,,,159518,Regency,,,#N/A,,Riau IslandsIndonesia,county,2,ID-KR,Bintan,,,,county,2,ID-KR,Bintan,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
+Indonesia,Lingga,Riau Islands,,,98633,Regency,,,#N/A,,Riau IslandsIndonesia,county,2,ID-KR,Lingga,,,,county,2,ID-KR,Lingga,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
+Indonesia,Natuna,Riau Islands,,,81495,Regency,,,#N/A,,Riau IslandsIndonesia,county,2,ID-KR,Natuna,,,,county,2,ID-KR,Natuna,,,,,region,1,ID-KR,Kepulauan Riau,HIGH,1.0,ID-KR
+Indonesia,Kepulauan Anambas [Anambas Islands],Riau Islands,,,47402,Regency,,,#N/A,,Riau IslandsIndonesia,county,2,ID-KR,Kepulauan Anambas,,,,,,,,,,,,region,1,ID-KR,Kepulauan Riau,NONE,0.0,ID-KR
+Indonesia,Kota Kendari,South East Sulawesi,,,345107,City,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Kendari,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Konawe Selatan [South Konawe],South East Sulawesi,,,308524,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Konawe Selatan,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Konawe,South East Sulawesi,,,257011,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Konawe,,,,county,2,ID-SG,Konawe,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
+Indonesia,Kolaka,South East Sulawesi,,,237587,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Kolaka,,,,county,2,ID-SG,Kolaka,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
+Indonesia,Muna,South East Sulawesi,,,215527,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Muna,,,,county,2,ID-SG,Muna,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
+Indonesia,Kota Bau-Bau,South East Sulawesi,,,159248,City,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Baubau,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Bombana,South East Sulawesi,,,150706,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Bombana,,,,county,2,ID-SG,Bombana,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
+Indonesia,Kolaka Utara [North Kolaka],South East Sulawesi,,,137659,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Kolaka Utara,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Kolaka Timur (Koltim) [East Kolaka],South East Sulawesi,,,120699,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Kolaka Timur,,,,county,2,ID-SG,Kolaka Timur,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
+Indonesia,Buton,South East Sulawesi,,,115207,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Buton,,,,county,2,ID-SG,Buton,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
+Indonesia,Buton Tengah [Central Buton],South East Sulawesi,,,114773,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Buton Tengah,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Wakatobi,South East Sulawesi,,,111402,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Wakatobi,,,,county,2,ID-SG,Wakatobi,,,,,region,1,ID-SG,Sulawesi Tenggara,HIGH,1.0,ID-SG
+Indonesia,Buton Selatan [South Buton],South East Sulawesi,,,95261,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Buton Selatan,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Muna Barat [West Marat],South East Sulawesi,,,84590,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Muna Barat,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Konawe Utara [North Konawe],South East Sulawesi,,,67871,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Konawe Utara,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Buton Utara [North Buton],South East Sulawesi,,,66653,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Buton Utara,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Konawe Kepulauan [Konawe Islands],South East Sulawesi,,,37050,Regency,,,#N/A,,South East SulawesiIndonesia,county,2,ID-SG,Konawe Kepulauan,,,,,,,,,,,,,,,,NONE,0.0,
+Indonesia,Kota Banjarmasin,South Kalimantan,,,657663,City,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,county,2,ID-KS,Banjarmasin,,,,county,2,ID-KS,Banjarmasin,,,,,region,1,ID-KS,Kalimantan Selatan,LOW,0.815,ID-KS
+Indonesia,Banjar,South Kalimantan,,,565635,Regency,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,county,2,ID-KS,Banjar,,,,county,2,ID-KS,Banjar,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Tanah Laut,South Kalimantan,,,348966,Regency,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,county,2,ID-KS,Tanah Laut,,,,county,2,ID-KS,Tanah Laut,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Barito Kuala,South Kalimantan,,,313021,Regency,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,county,2,ID-KS,Barito Kuala,,,,county,2,ID-KS,Barito Kuala,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Kota Banjarbaru,South Kalimantan,,,253442,City,Banjarmasin,,Banjarmasin,,South KalimantanIndonesia,county,2,ID-KS,Banjarbaru,,,,county,2,ID-KS,Banjarbaru,,,,,region,1,ID-KS,Kalimantan Selatan,LOW,0.8,ID-KS
+Indonesia,Kotabaru,South Kalimantan,,,325622,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Kotabaru,,,,county,2,ID-KS,Kotabaru,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Tanah Bumbu,South Kalimantan,,,322646,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Tanah Bumbu,,,,county,2,ID-KS,Tanah Bumbu,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Hulu Sungai Tengah [Central Hulu Sungai],South Kalimantan,,,258721,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Hulu Sungai Tengah,,,,,,,,,,,,region,1,ID-KS,Kalimantan Selatan,NONE,0.0,ID-KS
+Indonesia,Tabalong,South Kalimantan,,,253305,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Tabalong,,,,county,2,ID-KS,Tabalong,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Hulu Sungai Selatan [South Hulu Sungai],South Kalimantan,,,228006,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Hulu Sungai Selatan,,,,,,,,,,,,region,1,ID-KS,Kalimantan Selatan,NONE,0.0,ID-KS
+Indonesia,Hulu Sungai Utara [North Hulu Sungai],South Kalimantan,,,226727,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Hulu Sungai Utara,,,,,,,,,,,,region,1,ID-KS,Kalimantan Selatan,NONE,0.0,ID-KS
+Indonesia,Tapin,South Kalimantan,,,189475,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Tapin,,,,county,2,ID-KS,Tapin,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Balangan,South Kalimantan,,,130355,Regency,,,#N/A,,South KalimantanIndonesia,county,2,ID-KS,Balangan,,,,county,2,ID-KS,Balangan,,,,,region,1,ID-KS,Kalimantan Selatan,HIGH,1.0,ID-KS
+Indonesia,Merauke,South Papua,,,230932,Regency,,,#N/A,,South PapuaIndonesia,county,2,ID-PS,Merauke,,,,county,2,ID-PS,Merauke,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
+Indonesia,Asmat,South Papua,,,110105,Regency,,,#N/A,,South PapuaIndonesia,county,2,ID-PS,Asmat,,,,county,2,ID-PS,Asmat,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
+Indonesia,Mappi,South Papua,,,108295,Regency,,,#N/A,,South PapuaIndonesia,county,2,ID-PS,Mappi,,,,county,2,ID-PS,Mappi,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
+Indonesia,Boven Digoel,South Papua,,,64285,Regency,,,#N/A,,South PapuaIndonesia,county,2,ID-PS,Boven Digoel,,,,county,2,ID-PS,Boven Digoel,,,,,region,1,ID-PS,Papua Selatan,HIGH,1.0,ID-PS
+Indonesia,Kota Makassar,South Sulawesi,,,1423877,City,Makassar,,Makassar,,South SulawesiIndonesia,county,2,ID-SN,Makassar,,,,county,2,ID-SN,Makassar,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Gowa,South Sulawesi,,,765836,Regency,Makassar,,Makassar,,South SulawesiIndonesia,county,2,ID-SN,Gowa,,,,county,2,ID-SN,Gowa,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Maros,South Sulawesi,,,391774,Regency,Makassar,,Makassar,,South SulawesiIndonesia,county,2,ID-SN,Maros,,,,county,2,ID-SN,Maros,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Bone,South Sulawesi,,,801775,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Bone,,,,locality,,ID-SN,Bone,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Bulukumba,South Sulawesi,,,437607,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Bulukumba,,,,county,2,ID-SN,Bulukumba,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Pinrang,South Sulawesi,,,403994,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Pinrang,,,,county,2,ID-SN,Pinrang,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Jeneponto,South Sulawesi,,,401610,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Jeneponto,,,,county,2,ID-SN,Jeneponto,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Wajo,South Sulawesi,,,379079,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Wajo,,,,county,2,ID-SN,Wajo,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Luwu (Bua Ponrang),South Sulawesi,,,365608,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Luwu,,,,county,2,ID-SN,Luwu,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Pangkajene Dan Kepulauan [Pangkajene Islands],South Sulawesi,,,345775,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Pangkajene dan Kepulauan,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
+Indonesia,Luwu Utara [North Luwu],South Sulawesi,,,322919,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Luwu Utara,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
+Indonesia,Sidenreng Rappang,South Sulawesi,,,319990,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Sidenreng Rappang,,,,county,2,ID-SN,Sidenreng Rappang,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Takalar,South Sulawesi,,,300853,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Takalar,,,,county,2,ID-SN,Takalar,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Luwu Timur [East Luwu],South Sulawesi,,,296741,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Luwu Timur,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
+Indonesia,Tana Toraja,South Sulawesi,,,280794,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Tana Toraja,,,,county,2,ID-SN,Tana Toraja,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Toraja Utara [North Toraja],South Sulawesi,,,261086,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Toraja Utara,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
+Indonesia,Sinjai,South Sulawesi,,,259478,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Sinjai,,,,county,2,ID-SN,Sinjai,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Soppeng,South Sulawesi,,,235167,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Soppeng,,,,county,2,ID-SN,Soppeng,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Enrekang,South Sulawesi,,,225172,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Enrekang,,,,localadmin,,ID-SN,Enrekang,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Bantaeng,South Sulawesi,,,196716,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Bantaeng,,,,county,2,ID-SN,Bantaeng,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Kota Palopo,South Sulawesi,,,184681,City,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Palopo,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
+Indonesia,Barru,South Sulawesi,,,184452,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Barru,,,,county,2,ID-SN,Barru,,,,,region,1,ID-SN,Sulawesi Selatan,HIGH,1.0,ID-SN
+Indonesia,Kota Parepare,South Sulawesi,,,151454,City,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Parepare,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
+Indonesia,Kepulauan Selayar [Selayar Islands],South Sulawesi,,,137071,Regency,,,#N/A,,South SulawesiIndonesia,county,2,ID-SN,Kepulauan Selayar,,,,,,,,,,,,region,1,ID-SN,Sulawesi Selatan,NONE,0.0,ID-SN
+Indonesia,Kota Palembang,South Sumatra,,,1668848,City,Palembang,,Palembang,,South SumatraIndonesia,county,2,ID-SS,Palembang,,,,locality,,ID-SS,Kota Padang,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.8,ID-SS
+Indonesia,Banyuasin,South Sumatra,,,836914,Regency,Palembang,,Palembang,,South SumatraIndonesia,county,2,ID-SS,Banyuasin,,,,county,2,ID-SS,Banyuasin,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Ogan Komering Ilir,South Sumatra,,,769348,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Ogan Komering Ilir,,,,county,2,ID-SS,Ogan Komering Ilir,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Ogan Komering Ulu Timur [East Ogan Komering Ulu],South Sumatra,,,649853,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Ogan Komering Ulu Timur,,,,,,,,,,,,region,1,ID-SS,Sumatera Selatan,NONE,0.0,ID-SS
+Indonesia,Musi Banyuasin,South Sumatra,,,622206,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Musi Banyuasin,,,,county,2,ID-SS,Musi Banyuasin,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Muara Enim,South Sumatra,,,612900,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Muara Enim,,,,county,2,ID-SS,Muara Enim,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Lahat,South Sumatra,,,430071,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Lahat,,,,localadmin,,ID-SS,Lahat,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Ogan Ilir,South Sumatra,,,416549,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Ogan Ilir,,,,county,2,ID-SS,Ogan Ilir,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Ogan Komering Ulu Selatan [South Ogan Komering Ulu],South Sumatra,,,408981,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Ogan Komering Ulu Selatan,,,,,,,,,,,,region,1,ID-SS,Sumatera Selatan,NONE,0.0,ID-SS
+Indonesia,Musi Rawas,South Sumatra,,,395570,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Musi Rawas,,,,county,2,ID-SS,Musi Rawas,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Ogan Komering Ulu,South Sumatra,,,367603,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Ogan Komering Ulu,,,,county,2,ID-SS,Ogan Komering Ulu,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Empat Lawang,South Sumatra,,,333622,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Empat Lawang,,,,county,2,ID-SS,Empat Lawang,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Kota Lubuklinggau,South Sumatra,,,234166,City,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Lubuklinggau,,,,county,2,ID-SS,Lubuklinggau,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.828,ID-SS
+Indonesia,Penukal Abab Lematang Ilir (PALI),South Sumatra,,,194900,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Penukal Abab Lematang Ilir,,,,county,2,ID-SS,Penukal Abab Lematang Ilir,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Kota Prabumulih,South Sumatra,,,193196,City,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Prabumulih,,,,county,2,ID-SS,Prabumulih,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.8,ID-SS
+Indonesia,Musi Rawas Utara (Muratara) [North Musi Rawas],South Sumatra,,,188861,Regency,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Musi Rawas Utara,,,,county,2,ID-SS,Musi Rawas Utara,,,,,region,1,ID-SS,Sumatera Selatan,HIGH,1.0,ID-SS
+Indonesia,Kota Pagar Alam,South Sumatra,,,143844,City,,,#N/A,,South SumatraIndonesia,county,2,ID-SS,Pagar Alam,,,,county,2,ID-SS,Pagar Alam,,,,,region,1,ID-SS,Sumatera Selatan,LOW,0.8,ID-SS
+Indonesia,Bandung,West Java,,,3623790,Regency,Bandung,,Bandung,,West JavaIndonesia,county,2,ID-JB,Kabupaten Bandung,,,,county,2,ID-JB,Kota Bandung,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Bandung,West Java,,,2444160,City,Bandung,,Bandung,,West JavaIndonesia,county,2,ID-JB,Kota Bandung,,,,county,2,ID-JB,Kota Bandung,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Bandung Barat [West Bandung],West Java,,,1788336,Regency,Bandung,,Bandung,,West JavaIndonesia,county,2,ID-JB,Bandung Barat,,,,,,,,,,,,region,1,ID-JB,Jawa Barat,NONE,0.0,ID-JB
+Indonesia,Sumedang,West Java,,,1152507,Regency,Bandung,,Bandung,,West JavaIndonesia,county,2,ID-JB,Sumedang,,,,county,2,ID-JB,Sumedang,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Cimahi,West Java,,,568400,City,Bandung,,Bandung,,West JavaIndonesia,county,2,ID-JB,Cimahi,,,,,,,,,,,,region,1,ID-JB,Jawa Barat,NONE,0.0,ID-JB
+Indonesia,Cirebon,West Java,,,2270621,Regency,Cirebon,,Cirebon,,West JavaIndonesia,county,2,ID-JB,Kabupaten Cirebon,,,,county,2,ID-JB,Kota Cirebon,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Cirebon,West Java,,,333303,City,Cirebon,,Cirebon,,West JavaIndonesia,county,2,ID-JB,Kota Cirebon,,,,county,2,ID-JB,Kota Cirebon,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Bogor,West Java,,,5427068,Regency,Jakarta,,Jakarta,,West JavaIndonesia,county,2,ID-JB,Bogor,,,,county,2,ID-JB,Bogor,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Bekasi,West Java,,,3113017,Regency,Jakarta,,Jakarta,,West JavaIndonesia,county,2,ID-JB,Bekasi,,,,county,2,ID-JB,Bekasi,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Bekasi,West Java,,,2543676,City,Jakarta,,Jakarta,,West JavaIndonesia,county,2,ID-JB,Kab Bekasi,,,,county,2,ID-JB,Kab Bekasi,,,,,region,1,ID-JB,Jawa Barat,LOW,0.857,ID-JB
+Indonesia,Cianjur,West Java,,,2477560,Regency,Jakarta,,Jakarta,,West JavaIndonesia,county,2,ID-JB,Cianjur,,,,county,2,ID-JB,Cianjur,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Karawang,West Java,,,2439085,Regency,Jakarta,,Jakarta,,West JavaIndonesia,county,2,ID-JB,Karawang,,,,county,2,ID-JB,Karawang,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Depok,West Java,,,2056335,City,Jakarta,,Jakarta,,West JavaIndonesia,county,2,ID-JB,Depok,,,,,,,,,,,,region,1,ID-JB,Jawa Barat,NONE,0.0,ID-JB
+Indonesia,Kota Bogor,West Java,,,1043070,City,Jakarta,,Jakarta,,West JavaIndonesia,county,2,ID-JB,Kab Bogor,,,,county,2,ID-JB,Kab Bogor,,,,,region,1,ID-JB,Jawa Barat,LOW,0.842,ID-JB
+Indonesia,Sukabumi,West Java,,,2725450,Regency,Sukabumi,,Sukabumi,,West JavaIndonesia,county,2,ID-JB,Sukabumi,,,,county,2,ID-JB,Sukabumi,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Sukabumi,West Java,,,346325,City,Sukabumi,,Sukabumi,,West JavaIndonesia,county,2,ID-JB,Kab Sukabumi,,,,county,2,ID-JB,Kab Sukabumi,,,,,region,1,ID-JB,Jawa Barat,LOW,0.88,ID-JB
+Indonesia,Tasikmalaya,West Java,,,1865203,Regency,Tasikmalaya,,Tasikmalaya,,West JavaIndonesia,county,2,ID-JB,Tasikmalaya,,,,county,2,ID-JB,Tasikmalaya,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Tasikmalaya,West Java,,,716155,City,Tasikmalaya,,Tasikmalaya,,West JavaIndonesia,county,2,ID-JB,Tasikmalaya,,,,county,2,ID-JB,Tasikmalaya,,,,,region,1,ID-JB,Jawa Barat,LOW,0.815,ID-JB
+Indonesia,Garut,West Java,,,2585607,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Garut,,,,county,2,ID-JB,Garut,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Indramayu,West Java,,,1834434,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Indramayu,,,,county,2,ID-JB,Indramayu,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Subang,West Java,,,1595320,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Subang,,,,county,2,ID-JB,Subang,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Majalengka,West Java,,,1305476,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Majalengka,,,,county,2,ID-JB,Majalengka,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Ciamis,West Java,,,1229069,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Ciamis,,,,localadmin,,ID-JB,Ciamis,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kuningan,West Java,,,1167686,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Kuningan,,,,county,2,ID-JB,Kuningan,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Purwakarta,West Java,,,997869,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Purwakarta,,,,county,2,ID-JB,Purwakarta,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Pangandaran,West Java,,,423667,Regency,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Pangandaran,,,,county,2,ID-JB,Pangandaran,,,,,region,1,ID-JB,Jawa Barat,HIGH,1.0,ID-JB
+Indonesia,Kota Banjar,West Java,,,200973,City,,,#N/A,,West JavaIndonesia,county,2,ID-JB,Banjar,,,,locality,,ID-JB,Kota Baru,,,,,region,1,ID-JB,Jawa Barat,LOW,0.8,ID-JB
+Indonesia,Kota Pontianak,West Kalimantan,,,658685,City,Pontianak,,Pontianak,,West KalimantanIndonesia,county,2,ID-KB,Pontianak,,,,county,2,ID-KB,Pontianak,,,,,region,1,ID-KB,Kalimantan Barat,LOW,0.783,ID-KB
+Indonesia,Mempawah (Pontianak),West Kalimantan,,,301560,Regency,Pontianak,,Pontianak,,West KalimantanIndonesia,county,2,ID-KB,Mempawah,,,,county,2,ID-KB,Mempawah,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Sambas,West Kalimantan,,,629905,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Sambas,,,,county,2,ID-KB,Sambas,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Kubu Raya,West Kalimantan,,,609392,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Kubu Raya,,,,county,2,ID-KB,Kubu Raya,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Ketapang,West Kalimantan,,,570657,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Ketapang,,,,county,2,ID-KB,Ketapang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Sanggau,West Kalimantan,,,484836,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Sanggau,,,,county,2,ID-KB,Sanggau,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Sintang,West Kalimantan,,,421306,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Sintang,,,,county,2,ID-KB,Sintang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Landak,West Kalimantan,,,397610,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Landak,,,,county,2,ID-KB,Landak,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Bengkayang,West Kalimantan,,,286366,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Bengkayang,,,,county,2,ID-KB,Bengkayang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Kapuas Hulu,West Kalimantan,,,252609,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Kapuas Hulu,,,,county,2,ID-KB,Kapuas Hulu,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Kota Singkawang,West Kalimantan,,,235064,City,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Singkawang,,,,county,2,ID-KB,Singkawang,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Melawi,West Kalimantan,,,228270,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Melawi,,,,county,2,ID-KB,Melawi,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Sekadau,West Kalimantan,,,211559,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Sekadau,,,,county,2,ID-KB,Sekadau,,,,,region,1,ID-KB,Kalimantan Barat,HIGH,1.0,ID-KB
+Indonesia,Kayong Utara [North Kayong],West Kalimantan,,,126571,Regency,,,#N/A,,West KalimantanIndonesia,county,2,ID-KB,Kayong Utara,,,,,,,,,,,,region,1,ID-KB,Kalimantan Barat,NONE,0.0,ID-KB
+Indonesia,Lombok Barat [West Lombok],West Nusa Tenggara,,,721481,Regency,Mataram,,Mataram,,West Nusa TenggaraIndonesia,county,2,ID-NB,Lombok Barat,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
+Indonesia,Kota Mataram,West Nusa Tenggara,,,429651,City,Mataram,,Mataram,,West Nusa TenggaraIndonesia,county,2,ID-NB,Mataram,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
+Indonesia,Lombok Timur [East Lombok],West Nusa Tenggara,,,1325240,Regency,,,#N/A,,West Nusa TenggaraIndonesia,county,2,ID-NB,Lombok Timur,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
+Indonesia,Lombok Tengah [Central Lombok],West Nusa Tenggara,,,1034859,Regency,,,#N/A,,West Nusa TenggaraIndonesia,county,2,ID-NB,Lombok Tengah,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
+Indonesia,Bima,West Nusa Tenggara,,,514105,Regency,,,#N/A,,West Nusa TenggaraIndonesia,county,2,ID-NB,Bima,,,,county,2,ID-NB,Bima,,,,,region,1,ID-NB,Nusa Tenggara Barat,HIGH,1.0,ID-NB
+Indonesia,Sumbawa,West Nusa Tenggara,,,509753,Regency,,,#N/A,,West Nusa TenggaraIndonesia,county,2,ID-NB,Sumbawa,,,,county,2,ID-NB,Sumbawa,,,,,region,1,ID-NB,Nusa Tenggara Barat,HIGH,1.0,ID-NB
+Indonesia,Lombok Utara [North Lombok],West Nusa Tenggara,,,247400,Regency,,,#N/A,,West Nusa TenggaraIndonesia,county,2,ID-NB,Lombok Utara,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
+Indonesia,Dompu,West Nusa Tenggara,,,236665,Regency,,,#N/A,,West Nusa TenggaraIndonesia,county,2,ID-NB,Dompu,,,,county,2,ID-NB,Dompu,,,,,region,1,ID-NB,Nusa Tenggara Barat,HIGH,1.0,ID-NB
+Indonesia,Kota Bima,West Nusa Tenggara,,,155140,City,,,#N/A,,West Nusa TenggaraIndonesia,,,,,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
+Indonesia,Sumbawa Barat [West Sumbawa],West Nusa Tenggara,,,145798,Regency,,,#N/A,,West Nusa TenggaraIndonesia,county,2,ID-NB,Sumbawa Barat,,,,,,,,,,,,region,1,ID-NB,Nusa Tenggara Barat,NONE,0.0,ID-NB
+Indonesia,Kota Sorong,West Papua,,,284410,City,,,#N/A,,West PapuaIndonesia,,,,,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Manokwari,West Papua,,,192663,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PB,Manokwari,,,,county,2,ID-PB,Manokwari,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
+Indonesia,Sorong,West Papua,,,118679,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PD,Sorong,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Teluk Bintuni,West Papua,,,87083,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PB,Teluk Bintuni,,,,county,2,ID-PB,Teluk Bintuni,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
+Indonesia,Fakfak,West Papua,,,85197,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PB,Fakfak,,,,county,2,ID-PB,Fakfak,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
+Indonesia,Raja Ampat,West Papua,,,64141,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PD,Raja Ampat,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Kaimana,West Papua,,,62256,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PB,Kaimana,,,,county,2,ID-PB,Kaimana,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
+Indonesia,Sorong Selatan [South Sorong],West Papua,,,52469,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PD,Sorong Selatan,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Maybrat,West Papua,,,42991,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PD,Maybrat,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Teluk Wondama,West Papua,,,41644,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PB,Teluk Wondama,,,,county,2,ID-PB,Teluk Wondama,,,,,region,1,ID-PB,Papua Barat,HIGH,1.0,ID-PB
+Indonesia,Pegunungan Arfak [Arfak Mountains],West Papua,,,38207,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PB,Pegunungan Arfak,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Manokwari Selatan [South Manokwari],West Papua,,,35949,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PB,Manokwari Selatan,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Tambrauw,West Papua,,,28379,Regency,,,#N/A,,West PapuaIndonesia,county,2,ID-PD,Tambrauw,,,,,,,,,,,,region,1,ID-PB,Papua Barat,NONE,0.0,ID-PB
+Indonesia,Polewali Mandar (Tutar),West Sulawesi,,,478534,Regency,,,#N/A,,West SulawesiIndonesia,county,2,ID-SR,Polewali Mandar,,,,county,2,ID-SR,Polewali Mandar,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
+Indonesia,Mamuju,West Sulawesi,,,278764,Regency,,,#N/A,,West SulawesiIndonesia,county,2,ID-SR,Mamuju,,,,county,2,ID-SR,Mamuju,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
+Indonesia,Pasangkayu (Mamuju Utara),West Sulawesi,,,188861,Regency,,,#N/A,,West SulawesiIndonesia,county,2,ID-SR,Pasangkayu,,,,county,2,ID-SR,Pasangkayu,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
+Indonesia,Majene,West Sulawesi,,,174407,Regency,,,#N/A,,West SulawesiIndonesia,county,2,ID-SR,Majene,,,,county,2,ID-SR,Majene,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
+Indonesia,Mamasa,West Sulawesi,,,163383,Regency,,,#N/A,,West SulawesiIndonesia,county,2,ID-SR,Mamasa,,,,county,2,ID-SR,Mamasa,,,,,region,1,ID-SR,Sulawesi Barat,HIGH,1.0,ID-SR
+Indonesia,Mamuju Tengah [Central Mamuju],West Sulawesi,,,135280,Regency,,,#N/A,,West SulawesiIndonesia,county,2,ID-SR,Mamuju Tengah,,,,,,,,,,,,region,1,ID-SR,Sulawesi Barat,NONE,0.0,ID-SR
+Indonesia,Kota Padang,West Sumatra,,,909040,City,Padang,,Padang,,West SumatraIndonesia,county,2,ID-SB,Padang,,,,locality,,ID-SB,Koto Panjang,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.783,ID-SB
+Indonesia,Padang Pariaman,West Sumatra,,,430626,Regency,Padang,,Padang,,West SumatraIndonesia,county,2,ID-SB,Padang Pariaman,,,,county,2,ID-SB,Padang Pariaman,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Kota Pariaman,West Sumatra,,,94224,City,Padang,,Padang,,West SumatraIndonesia,county,2,ID-SB,Pariaman,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
+Indonesia,Agam,West Sumatra,,,529138,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Agam,,,,county,2,ID-SB,Agam,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Pesisir Selatan [South Pesisir],West Sumatra,,,504418,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Pesisir Selatan,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
+Indonesia,Pasaman Barat [West Pasaman],West Sumatra,,,431672,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Pasaman Barat,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
+Indonesia,Solok,West Sumatra,,,391497,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Solok,,,,county,2,ID-SB,Solok,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Lima Puluh Kota,West Sumatra,,,383525,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Lima Puluh Kota,,,,county,2,ID-SB,Lima Puluh Kota,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Tanah Datar,West Sumatra,,,371704,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Tanah Datar,,,,county,2,ID-SB,Tanah Datar,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Pasaman,West Sumatra,,,299851,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Pasaman,,,,county,2,ID-SB,Pasaman,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Sijunjung,West Sumatra,,,235045,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Sijunjung,,,,county,2,ID-SB,Sijunjung,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Dharmasraya,West Sumatra,,,228591,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Dharmasraya,,,,county,2,ID-SB,Dharmasraya,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Solok Selatan [South Solok],West Sumatra,,,182027,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Solok Selatan,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
+Indonesia,Kota Payakumbuh,West Sumatra,,,139576,City,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Payakumbuh,,,,county,2,ID-SB,Payakumbuh,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.8,ID-SB
+Indonesia,Kota Bukittinggi,West Sumatra,,,121028,City,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Bukittinggi,,,,county,2,ID-SB,Bukittinggi,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.815,ID-SB
+Indonesia,Kepulauan Mentawai [Mentawai Islands],West Sumatra,,,87623,Regency,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Kepulauan Mentawai,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
+Indonesia,Kota Solok,West Sumatra,,,73438,City,,,#N/A,,West SumatraIndonesia,,,,,,,,,,,,,,,,region,1,ID-SB,Sumatra Barat,NONE,0.0,ID-SB
+Indonesia,Kota Sawahlunto,West Sumatra,,,65138,City,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Sawahlunto,,,,county,2,ID-SB,Sawahlunto,,,,,region,1,ID-SB,Sumatra Barat,LOW,0.8,ID-SB
+Indonesia,Kota Padang Panjang,West Sumatra,,,56311,City,,,#N/A,,West SumatraIndonesia,county,2,ID-SB,Padang Panjang,,,,county,2,ID-SB,Padang Panjang,,,,,region,1,ID-SB,Sumatra Barat,HIGH,1.0,ID-SB
+Indonesia,Sleman,Yogyakarta,,,1125804,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,county,2,ID-YO,Sleman,,,,county,2,ID-YO,Sleman,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,HIGH,1.0,ID-YO
+Indonesia,Bantul,Yogyakarta,,,985770,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,county,2,ID-YO,Bantul,,,,locality,,ID-YO,Bantul,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,HIGH,1.0,ID-YO
+Indonesia,Gunung Kidul,Yogyakarta,,,747161,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,county,2,ID-YO,Gunungkidul,,,,county,2,ID-YO,Gunungkidul,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,MED,0.957,ID-YO
+Indonesia,Kulon Progo,Yogyakarta,,,436395,Regency,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,county,2,ID-YO,Kulonprogo,,,,county,2,ID-YO,Kulonprogo,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,MED,0.952,ID-YO
+Indonesia,Kota Yogyakarta,Yogyakarta,,,373589,City,Yogyakarta,,Yogyakarta,,YogyakartaIndonesia,county,2,ID-YO,Kota Yogyakarta,,,,county,2,ID-YO,Kota Yogyakarta,,,,,region,1,ID-YO,Daerah Istimewa Yogyakarta,HIGH,1.0,ID-YO

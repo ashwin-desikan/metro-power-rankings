@@ -1,0 +1,15 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Nauru,Aiwo,Aiwo,,,1292,District,Yaren,,Yaren,,AiwoNauru,county,2,,Aiwo,,,,county,2,nan,Aiwo,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Anabar,Anabar,,,418,District,Yaren,,Yaren,,AnabarNauru,county,2,,Anabar,,,,county,2,nan,Anabar,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Anetan,Anetan,,,774,District,Yaren,,Yaren,,AnetanNauru,county,2,,Anetan,,,,region,1,nan,Anetan,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Anibare,Anibare,,,317,District,Yaren,,Yaren,,AnibareNauru,county,2,,Anibare,,,,county,2,nan,Anibare,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Baitsi (Baiti),Baitsi (Baiti),,,656,District,Yaren,,Yaren,,Baitsi (Baiti)Nauru,county,2,,Baitsi,,,,county,2,nan,Baitsi,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Boe,Boe,,,987,District,Yaren,,Yaren,,BoeNauru,county,2,,Boe,,,,county,2,nan,Boe,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Buada,Buada,,,962,District,Yaren,,Yaren,,BuadaNauru,county,2,,Buada,,,,region,1,nan,Buada,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Denigomodu,Denigomodu,,,1861,District,Yaren,,Yaren,,DenigomoduNauru,county,2,,Denigomodu,,,,county,2,nan,Denigomodu,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Ewa,Ewa,,,513,District,Yaren,,Yaren,,EwaNauru,county,2,,Ewa,,,,county,2,nan,Ewa,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Ijuw,Ijuw,,,212,District,Yaren,,Yaren,,IjuwNauru,county,2,,Ijuw,,,,county,2,nan,Ijuw,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Meneng,Meneng,,,1729,District,Yaren,,Yaren,,MenengNauru,county,2,,Meneng,,,,county,2,nan,Meneng,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Nibok,Nibok,,,571,District,Yaren,,Yaren,,NibokNauru,county,2,,Nibok,,,,county,2,nan,Nibok,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Uaboe,Uaboe,,,448,District,Yaren,,Yaren,,UaboeNauru,county,2,,Uaboe,,,,county,2,nan,Uaboe,,,,,region,1,nan,Meneng,HIGH,1.0,nan
+Nauru,Yaren,Yaren,,,810,District,Yaren,,Yaren,,YarenNauru,county,2,,Yaren,,,,region,1,nan,Yaren,,,,,region,1,nan,Meneng,HIGH,1.0,nan

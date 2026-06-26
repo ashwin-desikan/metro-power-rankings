@@ -1,0 +1,24 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Marshall Islands,Ailinglaplap,Ailinglaplap,,,1179,Atoll,,,#N/A,,AilinglaplapMarshall Islands,region,1,MH-ALL,Aelōñḷapḷap,,,,region,1,MH-ALL,Aelōñḷapḷap,,,,,region,1,MH-ALL,Aelōñḷapḷap,HIGH,1.0,MH-ALL
+Marshall Islands,Ailuk,Ailuk,,,235,Atoll,,,#N/A,,AilukMarshall Islands,region,1,MH-ALK,Aelok,,,,region,1,MH-ALK,Aelok,,,,,region,1,MH-ALK,Aelok,HIGH,1.0,MH-ALK
+Marshall Islands,Arno,Arno,,,1144,Atoll,,,#N/A,,ArnoMarshall Islands,region,1,MH-ARN,Arṇo,,,,region,1,MH-ARN,Arṇo,,,,,region,1,MH-ARN,Arṇo,HIGH,1.0,MH-ARN
+Marshall Islands,Aur,Aur,,,317,Atoll,,,#N/A,,AurMarshall Islands,region,1,MH-AUR,Aur,,,,region,1,MH-AUR,Aur,,,,,region,1,MH-AUR,Aur,HIGH,1.0,MH-AUR
+Marshall Islands,Ebon,Ebon,,,470,Atoll,,,#N/A,,EbonMarshall Islands,region,1,MH-EBO,Epoon,,,,region,1,MH-EBO,Epoon,,,,,region,1,MH-EBO,Epoon,HIGH,1.0,MH-EBO
+Marshall Islands,Enewetak (Eniwetok),Enewetak (Eniwetok),,,296,Atoll,,,#N/A,,Enewetak (Eniwetok)Marshall Islands,region,1,MH-ENI,Ānewetak,,,,region,1,MH-ENI,Ānewetak,,,,,region,1,MH-ENI,Ānewetak,HIGH,1.0,MH-ENI
+Marshall Islands,Jabat (Jabwot),Jabat (Jabwot),,,75,Island,,,#N/A,,Jabat (Jabwot)Marshall Islands,region,1,MH-JAB,Jebat,,,,region,1,MH-JAB,Jebat,,,,,region,1,MH-JAB,Jebat,HIGH,1.0,MH-JAB
+Marshall Islands,Jaluit,Jaluit,,,1423,Atoll,,,#N/A,,JaluitMarshall Islands,region,1,MH-JAL,Jālwōj,,,,region,1,MH-JAL,Jālwōj,,,,,region,1,MH-JAL,Jālwōj,HIGH,1.0,MH-JAL
+Marshall Islands,Kili,Kili,,,416,Island,,,#N/A,,KiliMarshall Islands,region,1,MH-KIL,Kōle,,,,region,1,MH-KIL,Kōle,,,,,region,1,MH-KIL,Kōle,HIGH,1.0,MH-KIL
+Marshall Islands,Kwajalein,Kwajalein,,,9945,Atoll,,,#N/A,,KwajaleinMarshall Islands,region,1,MH-KWA,Kuwajleen,,,,region,1,MH-KWA,Kuwajleen,,,,,region,1,MH-KWA,Kuwajleen,HIGH,1.0,MH-KWA
+Marshall Islands,Lae,Lae,,,91,Atoll,,,#N/A,,LaeMarshall Islands,region,1,MH-LAE,Lae,,,,region,1,MH-LAE,Lae,,,,,region,1,MH-LAE,Lae,HIGH,1.0,MH-LAE
+Marshall Islands,Lib,Lib,,,119,Island,,,#N/A,,LibMarshall Islands,region,1,MH-LIB,Ellep,,,,region,1,MH-LIB,Ellep,,,,,region,1,MH-LIB,Ellep,HIGH,1.0,MH-LIB
+Marshall Islands,Likiep,Likiep,,,234,Atoll,,,#N/A,,LikiepMarshall Islands,region,1,MH-LIK,Likiep,,,,region,1,MH-LIK,Likiep,,,,,region,1,MH-LIK,Likiep,HIGH,1.0,MH-LIK
+Marshall Islands,Majuro,Majuro,,,23225,Atoll,Majuro,,Majuro,,MajuroMarshall Islands,region,1,MH-MAJ,Mājro,,,,region,1,MH-MAJ,Mājro,,,,,region,1,MH-MAJ,Mājro,HIGH,1.0,MH-MAJ
+Marshall Islands,Maloelap,Maloelap,,,401,Atoll,,,#N/A,,MaloelapMarshall Islands,region,1,MH-MAL,Ṃaḷoeḷap,,,,region,1,MH-MAL,Ṃaḷoeḷap,,,,,region,1,MH-MAL,Ṃaḷoeḷap,HIGH,1.0,MH-MAL
+Marshall Islands,Mejit,Mejit,,,230,Island,,,#N/A,,MejitMarshall Islands,region,1,MH-MEJ,Mājej,,,,region,1,MH-MEJ,Mājej,,,,,region,1,MH-MEJ,Mājej,HIGH,1.0,MH-MEJ
+Marshall Islands,Mili,Mili,,,497,Atoll,,,#N/A,,MiliMarshall Islands,region,1,MH-MIL,Mile,,,,region,1,MH-MIL,Mile,,,,,region,1,MH-MIL,Mile,HIGH,1.0,MH-MIL
+Marshall Islands,Namorik (Namdrik),Namorik (Namdrik),,,300,Atoll,,,#N/A,,Namorik (Namdrik)Marshall Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Marshall Islands,Namu,Namu,,,526,Atoll,,,#N/A,,NamuMarshall Islands,region,1,MH-NMU,Naṃo,,,,region,1,MH-NMU,Naṃo,,,,,region,1,MH-NMU,Naṃo,HIGH,1.0,MH-NMU
+Marshall Islands,Ujae,Ujae,,,310,Atoll,,,#N/A,,UjaeMarshall Islands,region,1,MH-UJA,Ujae,,,,region,1,MH-UJA,Ujae,,,,,region,1,MH-UJA,Ujae,HIGH,1.0,MH-UJA
+Marshall Islands,Utirik,Utirik,,,264,Atoll,,,#N/A,,UtirikMarshall Islands,region,1,MH-UTI,Utrōk,,,,region,1,MH-UTI,Utrōk,,,,,region,1,MH-UTI,Utrōk,HIGH,1.0,MH-UTI
+Marshall Islands,Wotho,Wotho,,,89,Atoll,,,#N/A,,WothoMarshall Islands,region,1,MH-WTH,Wōtto,,,,region,1,MH-WTH,Wōtto,,,,,region,1,MH-WTH,Wōtto,HIGH,1.0,MH-WTH
+Marshall Islands,Wotje,Wotje,,,802,Atoll,,,#N/A,,WotjeMarshall Islands,region,1,MH-WTJ,Wōjjā,,,,region,1,MH-WTJ,Wōjjā,,,,,region,1,MH-WTJ,Wōjjā,HIGH,1.0,MH-WTJ

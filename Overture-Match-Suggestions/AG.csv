@@ -1,0 +1,9 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Antigua & Barbuda,Barbuda,Barbuda,,,1634,Island,,,#N/A,,BarbudaAntigua & Barbuda,region,1,AG-10,Barbuda,,,,region,1,AG-10,Barbuda,,,,,region,1,AG-10,Barbuda,HIGH,1.0,AG-10
+Antigua & Barbuda,Redonda,Redonda,,,0,Island,,,#N/A,,RedondaAntigua & Barbuda,region,1,AG-11,Redonda,,,,region,1,AG-11,Redonda,,,,,region,1,AG-11,Redonda,HIGH,1.0,AG-11
+Antigua & Barbuda,St. George,St. George,,,8055,Parish,,,#N/A,,St. GeorgeAntigua & Barbuda,region,1,AG-03,Saint George,,,,,,,,,,,,,,,,NONE,0.0,
+Antigua & Barbuda,St. John,St. John,,,51737,Parish,St. John's (ANT),,St. John's (ANT),,St. JohnAntigua & Barbuda,region,1,AG-04,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Antigua & Barbuda,St. Mary,St. Mary,,,7341,Parish,,,#N/A,,St. MaryAntigua & Barbuda,region,1,AG-05,Saint Mary,,,,,,,,,,,,,,,,NONE,0.0,
+Antigua & Barbuda,St. Paul,St. Paul,,,8128,Parish,,,#N/A,,St. PaulAntigua & Barbuda,region,1,AG-06,Saint Paul,,,,,,,,,,,,,,,,NONE,0.0,
+Antigua & Barbuda,St. Peter,St. Peter,,,5325,Parish,,,#N/A,,St. PeterAntigua & Barbuda,region,1,AG-07,Saint Peter,,,,,,,,,,,,,,,,NONE,0.0,
+Antigua & Barbuda,St. Phillip,St. Phillip,,,3347,Parish,,,#N/A,,St. PhillipAntigua & Barbuda,,,,,,,,,,,,,,,,,,,,NONE,0.0,

@@ -1,0 +1,23 @@
+﻿me,Country,Municipality,Distri rrondissement/County,State/Region (ISO 3166-2),Population,Metro Area,Type,Lookup,Metro Area Check,Code,Part,Township,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+,French Guiana,Cayenne,Cayenne,Cayenne,63956,Cayenne,Commune,,Cayenne,COM-97302,,,county,3,,Cayenne,,,region,2,nan,Cayenne,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Matoury,Cayenne,Cayenne,35551,Cayenne,Commune,,Cayenne,COM-97307,,,county,3,,Cayenne,,,county,3,nan,Matoury,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Remire-Montjoly,Cayenne,Cayenne,27037,Cayenne,Commune,,Cayenne,COM-97309,,,county,3,,Cayenne,,,county,3,nan,Remire-Montjoly,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Kourou,Cayenne,Cayenne,24470,Cayenne,Commune,,Cayenne,COM-97304,,,county,3,,Cayenne,,,county,3,nan,Kourou,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Macouria,Cayenne,Cayenne,18807,Cayenne,Commune,,Cayenne,COM-97305,,,county,3,,Cayenne,,,county,3,nan,Macouria,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Montsinery-Tonnegrande,Cayenne,Cayenne,3457,Cayenne,Commune,,Cayenne,COM-97313,,,county,3,,Cayenne,,,county,3,nan,Montsinéry-Tonnegrande,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Roura,Cayenne,Cayenne,3382,Cayenne,Commune,,Cayenne,COM-97310,,,county,3,,Cayenne,,,county,3,nan,Roura,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Sinnamary,Cayenne,Cayenne,2801,Cayenne,Commune,,Cayenne,COM-97312,,,county,3,,Cayenne,,,county,3,nan,Sinnamary,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Iracoubo,Cayenne,Cayenne,1685,Cayenne,Commune,,Cayenne,COM-97303,,,county,3,,Cayenne,,,county,3,nan,Iracoubo,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Saint-Elie,Cayenne,Cayenne,157,Cayenne,Commune,,Cayenne,COM-97358,,,county,3,,Cayenne,,,county,3,nan,Saint-Élie,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Saint-Georges,Saint-Georges,Saint-Georges,4710,,Commune,,#N/A,COM-97308,,,county,3,,Saint-Georges,,,region,2,nan,Saint-Georges,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Camopi,Saint-Georges,Saint-Georges,2168,,Commune,,#N/A,COM-97356,,,county,3,,Saint-Georges,,,county,3,nan,Camopi,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Regina,Saint-Georges,Saint-Georges,1657,,Commune,,#N/A,COM-97301,,,county,3,,Saint-Georges,,,county,3,nan,Régina,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Ouanary,Saint-Georges,Saint-Georges,200,,Commune,,#N/A,COM-97314,,,county,3,,Saint-Georges,,,county,3,nan,Ouanary,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,51732,,Commune,,#N/A,COM-97311,,,county,3,,Saint-Laurent-du-Maroni,,,region,2,nan,Saint-Laurent-du-Maroni,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Mana,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,11364,,Commune,,#N/A,COM-97306,,,county,3,,Saint-Laurent-du-Maroni,,,county,3,nan,Mana,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Apatou,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,10059,,Commune,,#N/A,COM-97360,,,county,3,,Saint-Laurent-du-Maroni,,,county,3,nan,Apatou,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Grand-Santi,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,9390,,Commune,,#N/A,COM-97357,,,county,3,,Saint-Laurent-du-Maroni,,,county,3,nan,Grand-Santi,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Maripasoula,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,8423,,Commune,,#N/A,COM-97353,,,county,3,,Saint-Laurent-du-Maroni,,,county,3,nan,Maripasoula,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Papaichton,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,5530,,Commune,,#N/A,COM-97362,,,county,3,,Saint-Laurent-du-Maroni,,,county,3,nan,Papaichton,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Awala-Yalimapo,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,1549,,Commune,,#N/A,COM-97361,,,county,3,,Saint-Laurent-du-Maroni,,,county,3,nan,Awala-Yalimapo,,,,,,,,,HIGH,1.0,nan
+,French Guiana,Saul,Saint-Laurent-du-Maroni,Saint-Laurent-du-Maroni,297,,Commune,,#N/A,COM-97352,,,county,3,,Saint-Laurent-du-Maroni,,,county,3,nan,Saül,,,,,,,,,HIGH,1.0,nan

@@ -1,0 +1,251 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Paraguay,Puerto Casado (La Victoria),Alto Paraguay,,,6618,District,,,#N/A,,Alto ParaguayParaguay,locality,,PY-16,Puerto Casado,,,,locality,,PY-16,Puerto Casado,,,,,region,1,PY-16,Alto Paraguay,HIGH,1.0,PY-16
+Paraguay,Carmelo Peralta (← Puerto Casado),Alto Paraguay,,,4576,District,,,#N/A,,Alto ParaguayParaguay,locality,,PY-16,Carmelo Peralta,,,,locality,,PY-16,Carmelo Peralta,,,,,region,1,PY-16,Alto Paraguay,HIGH,1.0,PY-16
+Paraguay,Fuerte Olimpo,Alto Paraguay,,,4523,District,,,#N/A,,Alto ParaguayParaguay,locality,,PY-16,Fuerte Olimpo,,,,locality,,PY-16,Fuerte Olimpo,,,,,region,1,PY-16,Alto Paraguay,HIGH,1.0,PY-16
+Paraguay,Bahía Negra (← Fuerte Olimpo),Alto Paraguay,,,2514,District,,,#N/A,,Alto ParaguayParaguay,locality,,PY-16,Bahía Negra,,,,locality,,PY-16,Bahía Negra,,,,,region,1,PY-16,Alto Paraguay,HIGH,1.0,PY-16
+Paraguay,Ciudad del Este,Alto Paraná,,,304282,District,Ciudad del Este,,Ciudad del Este,,Alto ParanáParaguay,locality,,PY-10,Ciudad del Este,,,,locality,,PY-10,Ciudad del Este,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Presidente Franco,Alto Paraná,,,104677,District,Ciudad del Este,,Ciudad del Este,,Alto ParanáParaguay,locality,,PY-10,Presidente Franco,,,,locality,,PY-10,Presidente Franco,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Hernandarias,Alto Paraná,,,80319,District,Ciudad del Este,,Ciudad del Este,,Alto ParanáParaguay,locality,,PY-10,Hernandarias,,,,locality,,PY-10,Hernandarias,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Doctor Juan León Mallorquín,Alto Paraná,,,22670,District,Doctor JLM,,Doctor JLM,,Alto ParanáParaguay,locality,,PY-10,Doctor Juan León Mallorquín,,,,locality,,PY-10,Doctor Juan León Mallorquín,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Minga Guazú,Alto Paraná,,,91531,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Minga Guazú,,,,locality,,PY-10,Minga Guazú,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Itakyry,Alto Paraná,,,39311,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Itakyry,,,,locality,,PY-10,Itakyry,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Santa Rita,Alto Paraná,,,34905,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Santa Rita,,,,locality,,PY-10,Santa Rita,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Juan Emilio O'Leary,Alto Paraná,,,26859,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Juan Emilio O'Leary,,,,locality,,PY-10,Juan Emilio O'Leary,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Minga Porá,Alto Paraná,,,15156,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Minga Porá,,,,locality,,PY-10,Minga Porá,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,San Alberto,Alto Paraná,,,11973,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,San Alberto,,,,locality,,PY-10,San Alberto,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Yguazú,Alto Paraná,,,11391,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Yguazú,,,,locality,,PY-10,Yguazú,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,San Cristóbal,Alto Paraná,,,11301,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,San Cristóbal,,,,locality,,PY-10,San Cristóbal,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Los Cedrales,Alto Paraná,,,10316,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Los Cedrales,,,,locality,,PY-10,Los Cedrales,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Doctor Raúl Peña (← Naranjal),Alto Paraná,,,9647,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Naranjal,,,,,,,,,,,,region,1,PY-10,Alto Paraná,NONE,0.0,PY-10
+Paraguay,Ñacunday,Alto Paraná,,,9500,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Ñacunday,,,,locality,,PY-10,Ñacunday,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Mbaracayú,Alto Paraná,,,8862,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-14,Mbaracayú,,,,locality,,PY-10,Mbaracayú,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Tavapy (← Santa Rosa del Monday),Alto Paraná,,,8601,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Tavapy,,,,locality,,PY-10,Tavapy,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Santa Rosa del Monday,Alto Paraná,,,7537,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Santa Rosa del Monday,,,,locality,,PY-10,Santa Rosa del Monday,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Iruña,Alto Paraná,,,6296,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Iruña,,,,locality,,PY-10,Iruña,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Naranjal,Alto Paraná,,,6004,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Naranjal,,,,locality,,PY-10,Naranjal,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Domingo Martínez de Irala,Alto Paraná,,,5623,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Domingo Martínez de Irala,,,,locality,,PY-10,Domingo Martínez de Irala,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Santa Fe del Paraná (←Hernandarias),Alto Paraná,,,4182,District,,,#N/A,,Alto ParanáParaguay,locality,,PY-10,Santa Fe del Paraná,,,,locality,,PY-10,Santa Fe del Paraná,,,,,region,1,PY-10,Alto Paraná,HIGH,1.0,PY-10
+Paraguay,Pedro Juan Caballero,Amambay,,,122190,District,Pedro Juan Caballero,,Pedro Juan Caballero,,AmambayParaguay,locality,,PY-13,Pedro Juan Caballero,,,,locality,,PY-13,Pedro Juan Caballero,,,,,region,1,PY-13,Amambay,HIGH,1.0,PY-13
+Paraguay,Capitán Bado,Amambay,,,19035,District,,,#N/A,,AmambayParaguay,locality,,PY-13,Capitán Bado,,,,locality,,PY-13,Capitán Bado,,,,,region,1,PY-13,Amambay,HIGH,1.0,PY-13
+Paraguay,Bella Vista Norte,Amambay,,,17765,District,,,#N/A,,AmambayParaguay,locality,,PY-7,Bella Vista,,,,locality,,PY-13,Bella Vista,,,,,region,1,PY-13,Amambay,LOW,0.786,PY-13
+Paraguay,Zanja Pytá (← Pedro Juan Caballero),Amambay,,,8033,District,,,#N/A,,AmambayParaguay,locality,,PY-13,Zanja Pytá,,,,locality,,PY-13,Zanja Pytá,,,,,region,1,PY-13,Amambay,HIGH,1.0,PY-13
+Paraguay,Karapa'í (← Capitán Bado),Amambay,,,5147,District,,,#N/A,,AmambayParaguay,locality,,PY-13,Capitán Bado,,,,locality,,PY-13,Karapaí,,,,,region,1,PY-13,Amambay,MED,0.933,PY-13
+Paraguay,Asunción,Asunción,,,521559,District,Asuncion,,Asuncion,,AsunciónParaguay,locality,,PY-ASU,Asunción,,,,locality,,PY-ASU,Asunción,,,,,region,1,PY-ASU,Asunción,HIGH,1.0,PY-ASU
+Paraguay,Mariscal Estigarribia (Mariscal José Félix Estigarribia),Boquerón,,,29905,District,,,#N/A,,BoquerónParaguay,locality,,PY-19,Mariscal Estigarribia,,,,locality,,PY-19,Mariscal Estigarribia,,,,,region,1,PY-19,Boquerón,HIGH,1.0,PY-19
+Paraguay,Filadelfia (← Mariscal Estigarribia),Boquerón,,,19500,District,,,#N/A,,BoquerónParaguay,locality,,PY-19,Filadelfia,,,,locality,,PY-19,Filadelfia,,,,,region,1,PY-19,Boquerón,HIGH,1.0,PY-19
+Paraguay,Loma Plata (← Mariscal Estigarribia),Boquerón,,,17431,District,,,#N/A,,BoquerónParaguay,locality,,PY-19,Loma Plata,,,,locality,,PY-19,Loma Plata,,,,,region,1,PY-19,Boquerón,HIGH,1.0,PY-19
+Paraguay,Caaguazú,Caaguazú,,,126091,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Caaguazú,,,,locality,,PY-5,Caaguazú,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Coronel Oviedo,Caaguazú,,,123740,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Coronel Oviedo,,,,locality,,PY-5,Coronel Oviedo,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Doctor Juan Eulogio Estigarribia,Caaguazú,,,39331,District,,,#N/A,,CaaguazúParaguay,,,,,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Yhú,Caaguazú,,,35075,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Yhú,,,,locality,,PY-5,Yhú,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Repatriación,Caaguazú,,,33485,District,,,#N/A,,CaaguazúParaguay,,,,,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Doctor Juan Manuel Frutos,Caaguazú,,,25172,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Doctor Juan Manuel Frutos,,,,locality,,PY-5,Doctor Juan Manuel Frutos,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,San José de los Arroyos,Caaguazú,,,20232,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,San José de los Arroyos,,,,locality,,PY-5,San José de los Arroyos,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,San Joaquín,Caaguazú,,,18231,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,San Joaquín,,,,locality,,PY-5,San Joaquín,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Raúl Arsenio Oviedo,Caaguazú,,,17573,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Raúl Arsenio Oviedo,,,,locality,,PY-5,Raúl Arsenio Oviedo,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Carayaó,Caaguazú,,,16208,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Carayaó,,,,locality,,PY-5,Carayaó,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Tembiaporá (← Raúl Arsenio Oviedo),Caaguazú,,,14867,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Tembiaporá,,,,locality,,PY-5,Tembiaporá,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Santa Rosa del Mbutuy,Caaguazú,,,13204,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Santa Rosa del Mbutuy,,,,locality,,PY-5,Santa Rosa del Mbutuy,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,Vaquería,Caaguazú,,,11968,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Vaquería,,,,locality,,PY-5,Vaquería,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,José Domingo Ocampos,Caaguazú,,,11417,District,,,#N/A,,CaaguazúParaguay,,,,,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Tres de Febrero (3 de Febrero),Caaguazú,,,10105,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Tres de Febrero,,,,locality,,PY-5,Tres de Febrero,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,R. I. Tres Corrales,Caaguazú,,,9641,District,,,#N/A,,CaaguazúParaguay,,,,,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Doctor Cecilio Báez,Caaguazú,,,8097,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Cecilio Báez,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Mariscal Francisco Solano López,Caaguazú,,,7226,District,,,#N/A,,CaaguazúParaguay,,,,,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Simón Bolívar,Caaguazú,,,6418,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Simón Bolívar,,,,locality,,PY-5,Simón Bolívar,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,La Pastora,Caaguazú,,,5399,District,,,#N/A,,CaaguazúParaguay,,,,,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Nueva Toledo (← Raúl Arsenio Oviedo),Caaguazú,,,5225,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Raúl Arsenio Oviedo,,,,,,,,,,,,region,1,PY-5,Caaguazú,NONE,0.0,PY-5
+Paraguay,Nueva Londres,Caaguazú,,,5099,District,,,#N/A,,CaaguazúParaguay,locality,,PY-5,Nueva Londres,,,,locality,,PY-5,Nueva Londres,,,,,region,1,PY-5,Caaguazú,HIGH,1.0,PY-5
+Paraguay,San Juan Nepomuceno,Caazapá,,,40136,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,San Juan Nepomuceno,,,,locality,,PY-6,San Juan Nepomuceno,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Abaí,Caazapá,,,33059,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Abaí,,,,locality,,PY-6,Abaí,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Caazapá,Caazapá,,,26619,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Caazapá,,,,locality,,PY-6,Caazapá,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Yuty,Caazapá,,,23322,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Yuty,,,,locality,,PY-6,Yuty,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Tres de Mayo (3 de Mayo; ← Yuty),Caazapá,,,19633,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,3 de Mayo,,,,,,,,,,,,region,1,PY-6,Caazapá,NONE,0.0,PY-6
+Paraguay,Tavaí,Caazapá,,,18893,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Tavaí,,,,locality,,PY-6,Tavaí,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Fulgencio Yegros,Caazapá,,,6950,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Fulgencio Yegros,,,,locality,,PY-6,Fulgencio Yegros,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,General Higinio Morínigo,Caazapá,,,6352,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,General Higinio Morínigo,,,,locality,,PY-6,General Higinio Morínigo,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Buena Vista,Caazapá,,,6276,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Buena Vista,,,,locality,,PY-6,Buena Vista,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Doctor Moisés Bertoni,Caazapá,,,5867,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Doctor Moisés Bertoni,,,,locality,,PY-6,Doctor Moisés Bertoni,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Maciel,Caazapá,,,4923,District,,,#N/A,,CaazapáParaguay,locality,,PY-6,Maciel,,,,locality,,PY-6,Maciel,,,,,region,1,PY-6,Caazapá,HIGH,1.0,PY-6
+Paraguay,Curuguaty (Villa San Isidro Curuguaty),Canindeyú,,,57834,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Curuguaty,,,,locality,,PY-14,Curuguaty,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Salto del Guairá,Canindeyú,,,39846,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Salto del Guairá,,,,locality,,PY-14,Salto del Guairá,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Yasy Cañy (← Curuguaty),Canindeyú,,,27814,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Yasy Cañy,,,,locality,,PY-14,Yasy Cañy,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Villa Ygatimí,Canindeyú,,,17842,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Villa Ygatimí,,,,locality,,PY-14,Villa Ygatimí,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Ybyrarobaná (← Villa Ygatimí),Canindeyú,,,14204,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Ybyrarobaná,,,,locality,,PY-14,Ybyrarobaná,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Nueva Esperanza,Canindeyú,,,12972,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Nueva Esperanza,,,,locality,,PY-14,Nueva Esperanza,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,General Francisco Caballero Alvarez,Canindeyú,,,12127,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,General Francisco Caballero Álvarez,,,,locality,,PY-14,General Francisco Caballero Álvarez,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,"Yby Pytá (← Corpus Christi, Villa Ygatimí, Curuguaty)",Canindeyú,,,11975,District,,,#N/A,,CanindeyúParaguay,locality,,PY-5,Yby Pytá,,,,,,,,,,,,region,1,PY-14,Canindeyú,NONE,0.0,PY-14
+Paraguay,Corpus Christi,Canindeyú,,,10019,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Corpus Christi,,,,locality,,PY-14,Corpus Christi,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,La Paloma,Canindeyú,,,9063,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,La Paloma,,,,locality,,PY-14,La Paloma,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Ypehú,Canindeyú,,,8935,District,,,#N/A,,CanindeyúParaguay,,,,,,,,locality,,PY-14,Ypejhú,,,,,region,1,PY-14,Canindeyú,LOW,0.909,PY-14
+Paraguay,Katueté,Canindeyú,,,8908,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Katueté,,,,locality,,PY-14,Katueté,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Itanará,Canindeyú,,,3440,District,,,#N/A,,CanindeyúParaguay,locality,,PY-14,Itanará,,,,locality,,PY-14,Itanará,,,,,region,1,PY-14,Canindeyú,HIGH,1.0,PY-14
+Paraguay,Luque,Central,,,281719,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Luque,,,,locality,,PY-11,Luque,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,San Lorenzo,Central,,,258919,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-10,San Lorenzo,,,,locality,,PY-11,San Lorenzo,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Capiatá,Central,,,240950,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Capiatá,,,,locality,,PY-11,Capiatá,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Lambaré,Central,,,182689,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Lambaré,,,,locality,,PY-11,Lambaré,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Fernando de la Mora,Central,,,180186,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Fernando de la Mora,,,,locality,,PY-11,Fernando de la Mora,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Limpio,Central,,,150566,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Limpio,,,,locality,,PY-11,Limpio,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Ñemby,Central,,,144106,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Ñemby,,,,locality,,PY-11,Ñemby,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Itauguá,Central,,,112162,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-ASU,Asunción,,,,county,2,PY-11,Distrito de Itauguá,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Mariano Roque Alonso,Central,,,105789,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Mariano Roque Alonso,,,,locality,,PY-11,Mariano Roque Alonso,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Itá,Central,,,82032,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-10,Ita Vera,,,,county,2,PY-11,Distrito de Itá,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Villa Elisa,Central,,,81223,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Villa Elisa,,,,locality,,PY-11,Villa Elisa,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Areguá,Central,,,77652,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Areguá,,,,locality,,PY-11,Areguá,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,San Antonio,Central,,,69976,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,San Antonio,,,,locality,,PY-11,San Antonio,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Ypané,Central,,,56793,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Ypané,,,,locality,,PY-11,Ypané,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Julián Augusto Saldívar,Central,,,55055,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Julián Augusto Saldívar,,,,locality,,PY-11,Julián Augusto Saldívar,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Guarambaré,Central,,,39084,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-11,Guarambaré,,,,locality,,PY-11,Guarambaré,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Ypacaraí,Central,,,28283,District,Asuncion,,Asuncion,,CentralParaguay,locality,,PY-ASU,Asunción,,,,county,2,PY-11,Distrito de Ypacarai,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Villeta,Central,,,41235,District,,,#N/A,,CentralParaguay,locality,,PY-11,Villeta,,,,locality,,PY-11,Villeta,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Nueva Italia,Central,,,12690,District,,,#N/A,,CentralParaguay,locality,,PY-11,Nueva Italia,,,,locality,,PY-11,Nueva Italia,,,,,region,1,PY-11,Central,HIGH,1.0,PY-11
+Paraguay,Concepción,Concepción,,,87215,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,Concepción,,,,region,1,PY-1,Concepción,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,Horqueta,Concepción,,,62664,District,,,#N/A,,ConcepciónParaguay,locality,,PY-9,Horqueta,,,,locality,,PY-1,Horqueta,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,Yby Yaú,Concepción,,,33666,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,Yby Yaú,,,,locality,,PY-1,Yby Yaú,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,Loreto,Concepción,,,18879,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,Loreto,,,,locality,,PY-1,Loreto,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,Belén,Concepción,,,13215,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,Belén,,,,locality,,PY-1,Belén,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,San Lázaro,Concepción,,,12000,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,San Lázaro,,,,locality,,PY-1,San Lázaro,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,Azotey (← Horqueta),Concepción,,,9360,District,,,#N/A,,ConcepciónParaguay,locality,,PY-9,Horqueta,,,,,,,,,,,,region,1,PY-1,Concepción,NONE,0.0,PY-1
+Paraguay,Sargento José Félix López (← Concepción),Concepción,,,7242,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,Concepción,,,,locality,,PY-1,José Félix López (Puentesiño),,,,,region,1,PY-1,Concepción,LOW,0.78,PY-1
+Paraguay,San Alfredo (← Concepción),Concepción,,,5799,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,Concepción,,,,,,,,,,,,region,1,PY-1,Concepción,NONE,0.0,PY-1
+Paraguay,Paso Barreto (← Concepción),Concepción,,,4185,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,Paso Barreto,,,,locality,,PY-1,Paso Barreto,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,San Carlos del Apa,Concepción,,,751,District,,,#N/A,,ConcepciónParaguay,locality,,PY-1,San Carlos del Apa,,,,locality,,PY-1,San Carlos del Apa,,,,,region,1,PY-1,Concepción,HIGH,1.0,PY-1
+Paraguay,Caacupé,Cordillera,,,57682,District,Asuncion,,Asuncion,,CordilleraParaguay,locality,,PY-3,Caacupé,,,,locality,,PY-3,Caacupé,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Tobatí,Cordillera,,,33676,District,,,#N/A,,CordilleraParaguay,,,,,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Piribebuy,Cordillera,,,29980,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Piribebuy,,,,locality,,PY-3,Piribebuy,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Arroyos y Esteros,Cordillera,,,25657,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Arroyos y Esteros,,,,locality,,PY-3,Arroyos y Esteros,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Eusebio Ayala,Cordillera,,,24637,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Eusebio Ayala,,,,locality,,PY-3,Eusebio Ayala,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Emboscada,Cordillera,,,19987,District,,,#N/A,,CordilleraParaguay,,,,,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Atyrá,Cordillera,,,17300,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Atyrá,,,,locality,,PY-3,Atyrá,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Altos,Cordillera,,,14687,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Altos,,,,locality,,PY-3,Altos,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Caraguatay,Cordillera,,,13892,District,,,#N/A,,CordilleraParaguay,locality,,PY-9,caraguatay guazu,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,San Bernardino,Cordillera,,,12232,District,,,#N/A,,CordilleraParaguay,,,,,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Itacurubí de la Cordillera,Cordillera,,,11149,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Itacurubí de la Cordillera,,,,locality,,PY-3,Itacurubí de la Cordillera,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Isla Pucú,Cordillera,,,8094,District,,,#N/A,,CordilleraParaguay,locality,,PY-15,Isla Poi,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Valenzuela,Cordillera,,,7170,District,,,#N/A,,CordilleraParaguay,,,,,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Juan de Mena,Cordillera,,,7030,District,,,#N/A,,CordilleraParaguay,,,,,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Primero de Marzo,Cordillera,,,6804,District,,,#N/A,,CordilleraParaguay,,,,,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Santa Elena,Cordillera,,,5160,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Santa Elena,,,,locality,,PY-3,Santa Elena,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,San José Obrero,Cordillera,,,4392,District,,,#N/A,,CordilleraParaguay,locality,,PY-15,San Jose,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Mbocayaty del Yhaguy,Cordillera,,,4218,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Mbocayaty del Yhaguy,,,,locality,,PY-3,Mbocayaty del Yhaguy,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Nueva Colombia,Cordillera,,,3924,District,,,#N/A,,CordilleraParaguay,,,,,,,,,,,,,,,,region,1,PY-3,Cordillera,NONE,0.0,PY-3
+Paraguay,Loma Grande,Cordillera,,,3601,District,,,#N/A,,CordilleraParaguay,locality,,PY-3,Loma Grande,,,,locality,,PY-3,Loma Grande,,,,,region,1,PY-3,Cordillera,HIGH,1.0,PY-3
+Paraguay,Villarrica,Guairá,,,74355,District,Villarrica,,Villarrica,,GuairáParaguay,locality,,PY-4,Villarrica,,,,locality,,PY-4,Villarrica,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Colonia Independencia,Guairá,,,27658,District,,,#N/A,,GuairáParaguay,locality,,PY-4,"Colonia Independencia, Planta Urbana",,,,locality,,PY-4,"Colonia Independencia, Planta Urbana",,,,,region,1,PY-4,Guairá,LOW,0.787,PY-4
+Paraguay,Paso Yobái,Guairá,,,27482,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Paso Yobái,,,,locality,,PY-4,Paso Yobái,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Capitán Mauricio José Troche,Guairá,,,11216,District,,,#N/A,,GuairáParaguay,,,,,,,,,,,,,,,,region,1,PY-4,Guairá,NONE,0.0,PY-4
+Paraguay,Borja,Guairá,,,10287,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Borja,,,,locality,,PY-4,Borja,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Iturbe,Guairá,,,9082,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Iturbe,,,,locality,,PY-4,Iturbe,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Mbocayaty del Guairá,Guairá,,,8939,District,,,#N/A,,GuairáParaguay,locality,,PY-3,Mbocayaty del Yhaguy,,,,locality,,PY-4,Yataity del Guairá,,,,,region,1,PY-4,Guairá,LOW,0.789,PY-4
+Paraguay,General Eugenio A. Garay,Guairá,,,8634,District,,,#N/A,,GuairáParaguay,locality,,PY-4,General Eugenio A. Garay,,,,locality,,PY-4,General Eugenio A. Garay,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Itapé,Guairá,,,7982,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Itapé,,,,locality,,PY-4,Itapé,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Coronel Martínez,Guairá,,,7169,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Coronel Martínez,,,,locality,,PY-4,Coronel Martínez,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,José Fassardi,Guairá,,,7024,District,,,#N/A,,GuairáParaguay,,,,,,,,,,,,,,,,region,1,PY-4,Guairá,NONE,0.0,PY-4
+Paraguay,Félix Pérez Cardozo,Guairá,,,6397,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Félix Pérez Cardozo,,,,locality,,PY-4,Félix Pérez Cardozo,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Natalicio Talavera,Guairá,,,5203,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Natalicio Talavera,,,,locality,,PY-4,Natalicio Talavera,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Yataity del Guairá,Guairá,,,4887,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Yataity del Guairá,,,,locality,,PY-4,Yataity del Guairá,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Ñumí,Guairá,,,3488,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Ñumí,,,,locality,,PY-4,Ñumí,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Tebicuary (← Coronel Martínez),Guairá,,,3247,District,,,#N/A,,GuairáParaguay,locality,,PY-9,Tebicuary-mí,,,,,,,,,,,,region,1,PY-4,Guairá,NONE,0.0,PY-4
+Paraguay,San Salvador,Guairá,,,2941,District,,,#N/A,,GuairáParaguay,,,,,,,,,,,,,,,,region,1,PY-4,Guairá,NONE,0.0,PY-4
+Paraguay,Doctor Botrell,Guairá,,,1755,District,,,#N/A,,GuairáParaguay,locality,,PY-4,Doctor Botrell,,,,locality,,PY-4,Doctor Botrell,,,,,region,1,PY-4,Guairá,HIGH,1.0,PY-4
+Paraguay,Encarnación,Itapúa,,,136308,District,Encarnación,,Encarnación,,ItapúaParaguay,locality,,PY-7,Encarnación,,,,locality,,PY-7,Encarnación,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Cambyretá,Itapúa,,,60722,District,Encarnación,,Encarnación,,ItapúaParaguay,locality,,PY-7,Cambyretá,,,,locality,,PY-7,Cambyretá,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,San Pedro del Paraná,Itapúa,,,34099,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,San Pedro del Paraná,,,,locality,,PY-7,San Pedro del Paraná,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Tomás Romero Pereira,Itapúa,,,30043,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Arquitecto Tomás Romero Pereira,,,,locality,,PY-7,Arquitecto Tomás Romero Pereira,,,,,region,1,PY-7,Itapúa,LOW,0.834,PY-7
+Paraguay,Edelira,Itapúa,,,24372,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Edelira Km. 28,,,,,,,,,,,,region,1,PY-7,Itapúa,NONE,0.0,PY-7
+Paraguay,San Rafael del Paraná,Itapúa,,,23045,District,,,#N/A,,ItapúaParaguay,,,,,,,,locality,,PY-7,San Juan del Paraná,,,,,region,1,PY-7,Itapúa,LOW,0.8,PY-7
+Paraguay,Coronel Bogado,Itapúa,,,21413,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Coronel Bogado,,,,locality,,PY-7,Coronel Bogado,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Natalio,Itapúa,,,21271,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Natalio,,,,locality,,PY-7,Natalio,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Carlos Antonio López,Itapúa,,,19932,District,,,#N/A,,ItapúaParaguay,,,,,,,,,,,,,,,,region,1,PY-7,Itapúa,NONE,0.0,PY-7
+Paraguay,Alto Verá,Itapúa,,,18277,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Alto Vera,,,,locality,,PY-7,Alto Vera,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Obligado,Itapúa,,,17619,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Obligado,,,,locality,,PY-7,Obligado,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Itapúa Poty,Itapúa,,,17066,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Itapúa Poty,,,,locality,,PY-7,Itapúa Poty,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Mayor Otaño,Itapúa,,,15842,District,,,#N/A,,ItapúaParaguay,,,,,,,,locality,,PY-7,Mayor Julio Otaño,,,,,region,1,PY-7,Itapúa,LOW,0.786,PY-7
+Paraguay,Hohenau,Itapúa,,,15803,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Hohenau,,,,locality,,PY-7,Hohenau,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Bella Vista,Itapúa,,,14838,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Bella Vista,,,,locality,,PY-7,Bella Vista,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Capitán Meza,Itapúa,,,14646,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Capitán Meza Km. 32,,,,locality,,PY-7,Capitán Meza Km. 32,,,,,region,1,PY-7,Itapúa,LOW,0.824,PY-7
+Paraguay,Capitán Miranda,Itapúa,,,14305,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Capitán Miranda,,,,locality,,PY-7,Capitán Miranda,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Yatytay,Itapúa,,,13430,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Yatytay,,,,locality,,PY-7,Yatytay,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,General Artigas,Itapúa,,,13291,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,General Artigas,,,,locality,,PY-7,General Artigas,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Fram,Itapúa,,,10605,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Fram,,,,locality,,PY-7,Fram,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,San Cosme y Damián,Itapúa,,,10301,District,,,#N/A,,ItapúaParaguay,,,,,,,,,,,,,,,,region,1,PY-7,Itapúa,NONE,0.0,PY-7
+Paraguay,San Juan del Paraná,Itapúa,,,9985,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,San Juan del Paraná,,,,locality,,PY-7,San Juan del Paraná,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Trinidad,Itapúa,,,9974,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Trinidad,,,,locality,,PY-7,Trinidad,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Pirapó,Itapúa,,,9473,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Pirapó,,,,locality,,PY-7,Pirapó,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Carmen del Paraná,Itapúa,,,9177,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Carmen del Paraná,,,,locality,,PY-7,Carmen del Paraná,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,General Delgado,Itapúa,,,8123,District,,,#N/A,,ItapúaParaguay,,,,,,,,,,,,,,,,region,1,PY-7,Itapúa,NONE,0.0,PY-7
+Paraguay,Nueva Alborada,Itapúa,,,7963,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Nueva Alborada,,,,locality,,PY-7,Nueva Alborada,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,Jesús,Itapúa,,,6435,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,Jesús de Tavarangüé,,,,,,,,,,,,region,1,PY-7,Itapúa,NONE,0.0,PY-7
+Paraguay,José Leandro Oviedo,Itapúa,,,4871,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,José Leandro Oviedo,,,,locality,,PY-7,José Leandro Oviedo,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,La Paz,Itapúa,,,3335,District,,,#N/A,,ItapúaParaguay,locality,,PY-7,La Paz,,,,locality,,PY-7,La Paz,,,,,region,1,PY-7,Itapúa,HIGH,1.0,PY-7
+Paraguay,San Ignacio Guazú,Misiones,,,34793,District,,,#N/A,,MisionesParaguay,locality,,PY-8,San Ignacio Guazú,,,,locality,,PY-8,San Ignacio Guazú,,,,,region,1,PY-8,Misiones,HIGH,1.0,PY-8
+Paraguay,San Juan Bautista,Misiones,,,23998,District,,,#N/A,,MisionesParaguay,locality,,PY-8,San Juan Bautista,,,,county,2,PY-8,San Juan Bautista,,,,,region,1,PY-8,Misiones,HIGH,1.0,PY-8
+Paraguay,Ayolas,Misiones,,,19036,District,,,#N/A,,MisionesParaguay,locality,,PY-8,Ayolas,,,,locality,,PY-8,Ayolas,,,,,region,1,PY-8,Misiones,HIGH,1.0,PY-8
+Paraguay,Santa Rosa de Lima,Misiones,,,18520,District,,,#N/A,,MisionesParaguay,locality,,PY-6,Santa Rosa de Lima,,,,locality,,PY-8,Santa Rosa de Lima,,,,,region,1,PY-8,Misiones,HIGH,1.0,PY-8
+Paraguay,Santa María de Fe,Misiones,,,9048,District,,,#N/A,,MisionesParaguay,,,,,,,,,,,,,,,,region,1,PY-8,Misiones,NONE,0.0,PY-8
+Paraguay,Santiago,Misiones,,,6548,District,,,#N/A,,MisionesParaguay,locality,,PY-8,Santiago,,,,locality,,PY-8,Santiago,,,,,region,1,PY-8,Misiones,HIGH,1.0,PY-8
+Paraguay,San Miguel,Misiones,,,6032,District,,,#N/A,,MisionesParaguay,locality,,PY-8,San Miguel,,,,locality,,PY-8,San Miguel,,,,,region,1,PY-8,Misiones,HIGH,1.0,PY-8
+Paraguay,San Patricio,Misiones,,,3750,District,,,#N/A,,MisionesParaguay,locality,,PY-8,San Patricio,,,,locality,,PY-8,San Patricio,,,,,region,1,PY-8,Misiones,HIGH,1.0,PY-8
+Paraguay,Villa Florida,Misiones,,,3713,District,,,#N/A,,MisionesParaguay,,,,,,,,,,,,,,,,region,1,PY-8,Misiones,NONE,0.0,PY-8
+Paraguay,Yabebyry,Misiones,,,2693,District,,,#N/A,,MisionesParaguay,,,,,,,,,,,,,,,,region,1,PY-8,Misiones,NONE,0.0,PY-8
+Paraguay,Pilar,Ñeembucú,,,33174,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Pilar,,,,locality,,PY-12,Pilar,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Alberdi,Ñeembucú,,,9571,District,,,#N/A,,ÑeembucúParaguay,,,,,,,,,,,,,,,,region,1,PY-12,Ñeembucú,NONE,0.0,PY-12
+Paraguay,San Juan Bautista del Ñeembucú,Ñeembucú,,,5948,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-8,San Juan Bautista,,,,,,,,,,,,region,1,PY-12,Ñeembucú,NONE,0.0,PY-12
+Paraguay,Cerrito,Ñeembucú,,,5754,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Cerrito,,,,locality,,PY-12,Cerrito,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Mayor José Martínez,Ñeembucú,,,4267,District,,,#N/A,,ÑeembucúParaguay,,,,,,,,locality,,PY-12,Mayor José de Jesús Martínez,,,,,region,1,PY-12,Ñeembucú,LOW,0.809,PY-12
+Paraguay,General José Eduvigis Díaz,Ñeembucú,,,4048,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,General José Eduvigis Díaz,,,,locality,,PY-12,General José Eduvigis Díaz,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Tacuaras,Ñeembucú,,,3953,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Tacuaras,,,,locality,,PY-12,Tacuaras,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Villa Oliva,Ñeembucú,,,3831,District,,,#N/A,,ÑeembucúParaguay,,,,,,,,,,,,,,,,region,1,PY-12,Ñeembucú,NONE,0.0,PY-12
+Paraguay,Laureles,Ñeembucú,,,3529,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Laureles,,,,locality,,PY-12,Laureles,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Humaitá,Ñeembucú,,,3098,District,,,#N/A,,ÑeembucúParaguay,,,,,,,,,,,,,,,,region,1,PY-12,Ñeembucú,NONE,0.0,PY-12
+Paraguay,Isla Umbú,Ñeembucú,,,3019,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Isla Umbú,,,,locality,,PY-12,Isla Umbú,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Villalbín,Ñeembucú,,,2499,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Villalbín,,,,locality,,PY-12,Villalbín,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Guazú Cuá,Ñeembucú,,,2201,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Guazú Cúa,,,,locality,,PY-12,Guazú Cúa,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Paso de Patria,Ñeembucú,,,2166,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Paso de Patria,,,,locality,,PY-12,Paso de Patria,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Desmochados,Ñeembucú,,,1803,District,,,#N/A,,ÑeembucúParaguay,,,,,,,,,,,,,,,,region,1,PY-12,Ñeembucú,NONE,0.0,PY-12
+Paraguay,Villa Franca,Ñeembucú,,,1426,District,,,#N/A,,ÑeembucúParaguay,locality,,PY-12,Villa Franca,,,,locality,,PY-12,Villa Franca,,,,,region,1,PY-12,Ñeembucú,HIGH,1.0,PY-12
+Paraguay,Carapeguá,Paraguarí,,,36854,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Carapeguá,,,,locality,,PY-9,Carapeguá,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Yaguarón,Paraguarí,,,32266,District,,,#N/A,,ParaguaríParaguay,,,,,,,,,,,,,,,,region,1,PY-9,Paraguarí,NONE,0.0,PY-9
+Paraguay,Ybycuí,Paraguarí,,,25338,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Ybycuí,,,,locality,,PY-9,Ybycuí,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Paraguarí,Paraguarí,,,24164,District,,,#N/A,,ParaguaríParaguay,locality,,PY-ASU,Asunción,,,,region,1,PY-9,Paraguarí,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Quiindy,Paraguarí,,,21733,District,,,#N/A,,ParaguaríParaguay,,,,,,,,,,,,,,,,region,1,PY-9,Paraguarí,NONE,0.0,PY-9
+Paraguay,Pirayú,Paraguarí,,,18110,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Pirayú,,,,locality,,PY-9,Pirayú,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Acahay,Paraguarí,,,16360,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Acahay,,,,locality,,PY-9,Acahay,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Mbuyapey,Paraguarí,,,14707,District,,,#N/A,,ParaguaríParaguay,,,,,,,,,,,,,,,,region,1,PY-9,Paraguarí,NONE,0.0,PY-9
+Paraguay,San Roque González de Santa Cruz,Paraguarí,,,12420,District,,,#N/A,,ParaguaríParaguay,,,,,,,,locality,,PY-9,San Roque Gonzáles de Santa Cruz,,,,,region,1,PY-9,Paraguarí,MED,0.969,PY-9
+Paraguay,Escobar,Paraguarí,,,8725,District,,,#N/A,,ParaguaríParaguay,,,,,,,,county,2,PY-9,Distrito de Escobar,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Caapucú,Paraguarí,,,8524,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Caapucú,,,,locality,,PY-9,Caapucú,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Quyquyhó,Paraguarí,,,7536,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Quyquyhó,,,,locality,,PY-9,Quyquyhó,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Ybytimí,Paraguarí,,,7474,District,,,#N/A,,ParaguaríParaguay,,,,,,,,locality,,PY-9,Ybytymí,,,,,region,1,PY-9,Paraguarí,LOW,0.857,PY-9
+Paraguay,General Bernardino Caballero,Paraguarí,,,7333,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,General Bernardino Caballero,,,,locality,,PY-9,General Bernardino Caballero,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Sapucai,Paraguarí,,,6872,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Sapucaí,,,,locality,,PY-9,Sapucaí,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,La Colmena,Paraguarí,,,5855,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,La Colmena,,,,locality,,PY-9,La Colmena,,,,,region,1,PY-9,Paraguarí,HIGH,1.0,PY-9
+Paraguay,Tebicuarymí,Paraguarí,,,4684,District,,,#N/A,,ParaguaríParaguay,locality,,PY-9,Tebicuary-mí,,,,locality,,PY-9,Tebicuary-mí,,,,,region,1,PY-9,Paraguarí,MED,0.957,PY-9
+Paraguay,Villa Hayes,Presidente Hayes,,,50568,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,Villa Hayes,,,,locality,,PY-15,Villa Hayes,,,,,region,1,PY-15,Presidente Hayes,HIGH,1.0,PY-15
+Paraguay,Teniente Primero Manuel Irala Fernández (← Villa Hayes),Presidente Hayes,,,27593,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,Villa Hayes,,,,locality,,PY-15,Teniente 1° Manuel Irala Fernández,,,,,region,1,PY-15,Presidente Hayes,LOW,0.877,PY-15
+Paraguay,Benjamín Aceval,Presidente Hayes,,,21156,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,Benjamín Aceval,,,,locality,,PY-15,Benjamín Aceval,,,,,region,1,PY-15,Presidente Hayes,HIGH,1.0,PY-15
+Paraguay,Puerto Pinasco,Presidente Hayes,,,11586,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,Puerto Pinasco,,,,locality,,PY-15,Puerto Pinasco,,,,,region,1,PY-15,Presidente Hayes,HIGH,1.0,PY-15
+Paraguay,Nanawa,Presidente Hayes,,,6014,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,Nanawa,,,,locality,,PY-15,Nanawa,,,,,region,1,PY-15,Presidente Hayes,HIGH,1.0,PY-15
+Paraguay,José Falcón,Presidente Hayes,,,4212,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,José Falcón,,,,locality,,PY-15,José Falcón,,,,,region,1,PY-15,Presidente Hayes,HIGH,1.0,PY-15
+Paraguay,Teniente Esteban Martínez (← Villa Hayes),Presidente Hayes,,,3477,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,Teniente Esteban Martínez,,,,locality,,PY-15,Teniente Esteban Martínez,,,,,region,1,PY-15,Presidente Hayes,HIGH,1.0,PY-15
+Paraguay,General José Maria Bruguez (← Villa Hayes),Presidente Hayes,,,3344,District,,,#N/A,,Presidente HayesParaguay,locality,,PY-15,General Jose Maria Bruguez,,,,locality,,PY-15,General Jose Maria Bruguez,,,,,region,1,PY-15,Presidente Hayes,HIGH,1.0,PY-15
+Paraguay,San Estanislao,San Pedro,,,56729,District,San Estanislao,,San Estanislao,,San PedroParaguay,locality,,PY-2,San Estanislao,,,,locality,,PY-2,San Estanislao,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,Capiibary,San Pedro,,,49579,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Capiibary,,,,locality,,PY-2,Capiibary,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,Santa Rosa del Aguaray,San Pedro,,,44345,District,,,#N/A,,San PedroParaguay,locality,,PY-5,Santa Rosa del Mbutuy,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,San Pedro de Ycuamandyyú,San Pedro,,,35518,District,,,#N/A,,San PedroParaguay,,,,,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,Guayaibí,San Pedro,,,31368,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Guayaibí,,,,locality,,PY-2,Guayaibí,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,Choré,San Pedro,,,30016,District,,,#N/A,,San PedroParaguay,,,,,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,General Francisco Isidoro Resquín,San Pedro,,,25265,District,,,#N/A,,San PedroParaguay,,,,,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,Liberación (← Choré),San Pedro,,,25184,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Liberación,,,,locality,,PY-2,Liberación,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,General Elizardo Aquino,San Pedro,,,24211,District,,,#N/A,,San PedroParaguay,locality,,PY-2,General Elizardo Aquino,,,,locality,,PY-2,General Elizardo Aquino,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,Tacuatí,San Pedro,,,16489,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Tacuara,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,Yrybucuá (← San Estanislao),San Pedro,,,16424,District,,,#N/A,,San PedroParaguay,locality,,PY-2,San Estanislao,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,Yataity del Norte,San Pedro,,,12506,District,,,#N/A,,San PedroParaguay,locality,,PY-4,Yataity del Guairá,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,Lima,San Pedro,,,12313,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Lima,,,,locality,,PY-2,Lima,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,Itacurubí del Rosario,San Pedro,,,11654,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Itacurubí del Rosario,,,,locality,,PY-2,Itacurubí del Rosario,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,Villa del Rosario,San Pedro,,,10836,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Villa del Rosario,,,,locality,,PY-2,Villa del Rosario,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,25 de Diciembre,San Pedro,,,10240,District,,,#N/A,,San PedroParaguay,,,,,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,Unión,San Pedro,,,7260,District,,,#N/A,,San PedroParaguay,,,,,,,,,,,,,,,,region,1,PY-2,San Pedro,NONE,0.0,PY-2
+Paraguay,Nueva Germania,San Pedro,,,7228,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Nueva Germania,,,,locality,,PY-2,Nueva Germania,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,Antequera,San Pedro,,,4283,District,,,#N/A,,San PedroParaguay,locality,,PY-2,Antequera,,,,locality,,PY-2,Antequera,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2
+Paraguay,San Pablo,San Pedro,,,3679,District,,,#N/A,,San PedroParaguay,locality,,PY-2,San Pablo,,,,locality,,PY-2,San Pablo,,,,,region,1,PY-2,San Pedro,HIGH,1.0,PY-2

@@ -1,15 +1,15 @@
 ﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Ethiopia,Kolfe Keraniyo,Addis Ababa,,,604226,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Yeka,Addis Ababa,,,488537,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Nefas Silk-Lafto,Addis Ababa,,,445683,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Bole,Addis Ababa,,,435421,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Gulele,Addis Ababa,,,377032,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Addis Ketema,Addis Ababa,,,359735,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Kirkos,Addis Ababa,,,311765,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Arada,Addis Ababa,,,298044,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Lideta,Addis Ababa,,,284208,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Akaki Kaliti,Addis Ababa,,,255348,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
-Ethiopia,Dubti,Afar,,,122641,District,Semera,,Semera,,AfarEthiopia,,,,,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
+Ethiopia,Kolfe Keraniyo,Addis Ababa,,,604226,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Yeka,Addis Ababa,,,488537,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Nefas Silk-Lafto,Addis Ababa,,,445683,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Bole,Addis Ababa,,,435421,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Gulele,Addis Ababa,,,377032,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Addis Ketema,Addis Ababa,,,359735,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Kirkos,Addis Ababa,,,311765,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Arada,Addis Ababa,,,298044,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Lideta,Addis Ababa,,,284208,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Akaki Kaliti,Addis Ababa,,,255348,Sub City,Addis Ababa,,Addis Ababa,,Addis AbabaEthiopia,region,1,ET-AA,አዲስ አበባ أديس أبابا,,,,,,,,,,,,region,1,ET-AA,አዲስ አበባ أديس أبابا,NONE,0.0,ET-AA
+Ethiopia,Dubti,Afar,,,122641,District,Semera,,Semera,,AfarEthiopia,county,2,ET-AF,Zone 1,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
 Ethiopia,Mile,Afar,,,133319,District,,,#N/A,,AfarEthiopia,,,,,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
 Ethiopia,Chifra,Afar,,,127884,District,,,#N/A,,AfarEthiopia,,,,,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
 Ethiopia,Amibara,Afar,,,114496,District,,,#N/A,,AfarEthiopia,,,,,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
@@ -41,10 +41,10 @@ Ethiopia,Afambo,Afar,,,32064,District,,,#N/A,,AfarEthiopia,,,,,,,,,,,,,,,,region
 Ethiopia,Argoba Liyu,Afar,,,30613,District,,,#N/A,,AfarEthiopia,,,,,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
 Ethiopia,Dulacha,Afar,,,28039,District,,,#N/A,,AfarEthiopia,,,,,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
 Ethiopia,Mulo,Afar,,,875,Special Census District,,,#N/A,,AfarEthiopia,,,,,,,,,,,,,,,,region,1,ET-AF,አፋር ክልል Afar عفر,NONE,0.0,ET-AF
-Ethiopia,Bahir Dar,Amhara,,,455901,Town,Bahir Dar,,Bahir Dar,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
-Ethiopia,Dese,Amhara,,,307638,Town,Dessie,,Dessie,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
-Ethiopia,Kombolcha,Amhara,,,164140,Town,Dessie,,Dessie,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
-Ethiopia,Gondar (Gonder),Amhara,,,465973,Town,Gondar,,Gondar,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
+Ethiopia,Bahir Dar,Amhara,,,455901,Town,Bahir Dar,,Bahir Dar,,AmharaEthiopia,county,2,ET-AM,Special Woreda,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
+Ethiopia,Dese,Amhara,,,307638,Town,Dessie,,Dessie,,AmharaEthiopia,county,2,ET-AM,South Wollo,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
+Ethiopia,Kombolcha,Amhara,,,164140,Town,Dessie,,Dessie,,AmharaEthiopia,county,2,ET-AM,South Wollo,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
+Ethiopia,Gondar (Gonder),Amhara,,,465973,Town,Gondar,,Gondar,,AmharaEthiopia,county,2,ET-AM,North Gonder,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
 Ethiopia,Mecha,Amhara,,,374196,District,,,#N/A,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
 Ethiopia,Hulet Ej Enese,Amhara,,,362868,District,,,#N/A,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
 Ethiopia,Dembia,Amhara,,,349512,District,,,#N/A,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
@@ -180,7 +180,7 @@ Ethiopia,Kemisie,Amhara,,,43791,Town,,,#N/A,,AmharaEthiopia,,,,,,,,,,,,,,,,regio
 Ethiopia,Argoba,Amhara,,,41968,Special District,,,#N/A,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
 Ethiopia,Sehala,Amhara,,,28404,District,,,#N/A,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
 Ethiopia,Menz Lalo Midir,Amhara,,,20757,District,,,#N/A,,AmharaEthiopia,,,,,,,,,,,,,,,,region,1,ET-AM,አማራ ክልል Amhara أمحرة,NONE,0.0,ET-AM
-Ethiopia,Asossa,Benishangul-Gumuz,,,177292,District,Asosa,,Asosa,,Benishangul-GumuzEthiopia,,,,,,,,county,2,ET-BE,Asosa,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,LOW,0.909,ET-BE
+Ethiopia,Asossa,Benishangul-Gumuz,,,177292,District,Asosa,,Asosa,,Benishangul-GumuzEthiopia,county,2,ET-BE,Asosa,,,,county,2,ET-BE,Asosa,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,LOW,0.909,ET-BE
 Ethiopia,Dibate,Benishangul-Gumuz,,,101051,District,,,#N/A,,Benishangul-GumuzEthiopia,,,,,,,,,,,,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,NONE,0.0,ET-BE
 Ethiopia,Wenbera,Benishangul-Gumuz,,,89152,District,,,#N/A,,Benishangul-GumuzEthiopia,,,,,,,,,,,,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,NONE,0.0,ET-BE
 Ethiopia,Bambasi,Benishangul-Gumuz,,,79558,District,,,#N/A,,Benishangul-GumuzEthiopia,,,,,,,,,,,,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,NONE,0.0,ET-BE
@@ -200,8 +200,8 @@ Ethiopia,Sirba Abay,Benishangul-Gumuz,,,28397,District,,,#N/A,,Benishangul-Gumuz
 Ethiopia,Guba,Benishangul-Gumuz,,,23648,District,,,#N/A,,Benishangul-GumuzEthiopia,,,,,,,,,,,,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,NONE,0.0,ET-BE
 Ethiopia,Kurmuk,Benishangul-Gumuz,,,23368,District,,,#N/A,,Benishangul-GumuzEthiopia,,,,,,,,,,,,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,NONE,0.0,ET-BE
 Ethiopia,Yaso,Benishangul-Gumuz,,,19327,District,,,#N/A,,Benishangul-GumuzEthiopia,,,,,,,,,,,,,,,,region,1,ET-BE,ቤንሻንጉል ጉሙዝ ክልል Bani Shangul - Gumuz بنى شنقول - قماز,NONE,0.0,ET-BE
-Ethiopia,Dire Dawa,Dire Dawa,,,535000,Special District,Dire Dawa,,Dire Dawa,,Dire DawaEthiopia,,,,,,,,county,2,ET-DD,Dire Dawa,,,,,region,1,ET-DD,ድሬዳዋ دير داوا,HIGH,1.0,ET-DD
-Ethiopia,Gambela,Gambela,,,97643,Town,Gambela,,Gambela,,GambelaEthiopia,,,,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,HIGH,1.0,ET-GA
+Ethiopia,Dire Dawa,Dire Dawa,,,535000,Special District,Dire Dawa,,Dire Dawa,,Dire DawaEthiopia,county,2,ET-DD,Dire Dawa,,,,county,2,ET-DD,Dire Dawa,,,,,region,1,ET-DD,ድሬዳዋ دير داوا,HIGH,1.0,ET-DD
+Ethiopia,Gambela,Gambela,,,97643,Town,Gambela,,Gambela,,GambelaEthiopia,county,2,ET-GA,Agnuak,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,HIGH,1.0,ET-GA
 Ethiopia,Godare,Gambela,,,61079,District,,,#N/A,,GambelaEthiopia,,,,,,,,,,,,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,NONE,0.0,ET-GA
 Ethiopia,Etang,Gambela,,,55507,Special District,,,#N/A,,GambelaEthiopia,,,,,,,,,,,,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,NONE,0.0,ET-GA
 Ethiopia,Jikawo,Gambela,,,51140,District,,,#N/A,,GambelaEthiopia,,,,,,,,,,,,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,NONE,0.0,ET-GA
@@ -215,24 +215,24 @@ Ethiopia,Gambela Zuria,Gambela,,,15705,District,,,#N/A,,GambelaEthiopia,,,,,,,,,
 Ethiopia,Jor,Gambela,,,13507,District,,,#N/A,,GambelaEthiopia,,,,,,,,,,,,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,NONE,0.0,ET-GA
 Ethiopia,Dima,Gambela,,,13322,District,,,#N/A,,GambelaEthiopia,,,,,,,,,,,,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,NONE,0.0,ET-GA
 Ethiopia,Gambela National Park,Gambela,,,0,National Park,,,#N/A,,GambelaEthiopia,,,,,,,,,,,,,,,,region,1,ET-GA,ጋምቤላ ሕዝቦች ክልል Gambela جامبلا,NONE,0.0,ET-GA
-Ethiopia,Harari,Harari,,,276000,Region,Harar,,Harar,,HarariEthiopia,,,,,,,,region,1,ET-HA,ሐረሪ ሕዝብ ክልል Harar هرر,,,,,region,1,ET-HA,ሐረሪ ሕዝብ ክልል Harar هرر,HIGH,1.0,ET-HA
-Ethiopia,Adama,Oromia,,,456868,Special District,Adama,,Adama,,OromiaEthiopia,,,,,,,,locality,,ET-OR,አዳማ,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,HIGH,1.0,ET-OR
-Ethiopia,Adama,Oromia,,,234986,District,Adama,,Adama,,OromiaEthiopia,,,,,,,,locality,,ET-OR,አዳማ,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,HIGH,1.0,ET-OR
-Ethiopia,Sebeta Hawas (Alem Gena),Oromia,,,189912,District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Burayu,Oromia,,,122397,Special District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Wolmera,Oromia,,,119458,District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Akaki,Oromia,,,113316,District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Sebeta,Oromia,,,102347,Town,Addis Ababa,,Addis Ababa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Holeta,Oromia,,,51544,Town,Addis Ababa,,Addis Ababa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Shashemene Zuria,Oromia,,,351898,District,Awassa,,Awassa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Shashemene,Oromia,,,208368,Town,Awassa,,Awassa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Haramaya,Oromia,,,412685,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Meta,Oromia,,,362936,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Kersa,Oromia,,,234886,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Kombolcha,Oromia,,,204348,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Jarso,Oromia,,,165712,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Jima,Oromia,,,250909,Special District,Jimma,,Jimma,,OromiaEthiopia,,,,,,,,county,2,ET-OR,Jimma,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,LOW,0.889,ET-OR
-Ethiopia,Mana,Oromia,,,208014,District,Jimma,,Jimma,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Harari,Harari,,,276000,Region,Harar,,Harar,,HarariEthiopia,county,2,ET-HA,Hareri,,,,region,1,ET-HA,ሐረሪ ሕዝብ ክልል Harar هرر,,,,,region,1,ET-HA,ሐረሪ ሕዝብ ክልል Harar هرر,HIGH,1.0,ET-HA
+Ethiopia,Adama,Oromia,,,456868,Special District,Adama,,Adama,,OromiaEthiopia,locality,,ET-OR,አዳማ,,,,locality,,ET-OR,አዳማ,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,HIGH,1.0,ET-OR
+Ethiopia,Adama,Oromia,,,234986,District,Adama,,Adama,,OromiaEthiopia,county,2,ET-OR,East Shewa,,,,locality,,ET-OR,አዳማ,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,HIGH,1.0,ET-OR
+Ethiopia,Sebeta Hawas (Alem Gena),Oromia,,,189912,District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,county,2,ET-OR,West Shewa,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Burayu,Oromia,,,122397,Special District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,county,2,ET-OR,West Shewa,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Wolmera,Oromia,,,119458,District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,county,2,ET-OR,West Shewa,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Akaki,Oromia,,,113316,District,Addis Ababa,,Addis Ababa,,OromiaEthiopia,county,2,ET-OR,South West Shewa,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Sebeta,Oromia,,,102347,Town,Addis Ababa,,Addis Ababa,,OromiaEthiopia,county,2,ET-OR,South West Shewa,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Holeta,Oromia,,,51544,Town,Addis Ababa,,Addis Ababa,,OromiaEthiopia,county,2,ET-OR,South West Shewa,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Shashemene Zuria,Oromia,,,351898,District,Awassa,,Awassa,,OromiaEthiopia,county,2,ET-OR,West Arsi,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Shashemene,Oromia,,,208368,Town,Awassa,,Awassa,,OromiaEthiopia,county,2,ET-OR,West Arsi,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Haramaya,Oromia,,,412685,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,county,2,ET-OR,East Harerge,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Meta,Oromia,,,362936,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,county,2,ET-OR,East Harerge,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Kersa,Oromia,,,234886,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,county,2,ET-OR,East Harerge,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Kombolcha,Oromia,,,204348,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,county,2,ET-OR,East Harerge,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Jarso,Oromia,,,165712,District,Dire Dawa,,Dire Dawa,,OromiaEthiopia,county,2,ET-OR,East Harerge,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
+Ethiopia,Jima,Oromia,,,250909,Special District,Jimma,,Jimma,,OromiaEthiopia,county,2,ET-OR,Jimma,,,,county,2,ET-OR,Jimma,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,LOW,0.889,ET-OR
+Ethiopia,Mana,Oromia,,,208014,District,Jimma,,Jimma,,OromiaEthiopia,county,2,ET-OR,Jimma,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
 Ethiopia,Dedo,Oromia,,,407175,District,,,#N/A,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
 Ethiopia,Arsi Negele,Oromia,,,398551,District,,,#N/A,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
 Ethiopia,Bule Hora,Oromia,,,393573,District,,,#N/A,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
@@ -496,8 +496,8 @@ Ethiopia,Mako,Oromia,,,30762,District,,,#N/A,,OromiaEthiopia,,,,,,,,,,,,,,,,regi
 Ethiopia,Sendafa,Oromia,,,25502,Town,,,#N/A,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
 Ethiopia,Huka Halu,Oromia,,,24741,District,,,#N/A,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
 Ethiopia,Meda Welabu,Oromia,,,5327,Special Census District,,,#N/A,,OromiaEthiopia,,,,,,,,,,,,,,,,region,1,ET-OR,ኦሮሚያ ክልል Oromia أوروميا,NONE,0.0,ET-OR
-Ethiopia,Awasa,Sidama,,,555480,City,Awassa,,Awassa,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
-Ethiopia,Wendo Genet,Sidama,,,234490,District,Awassa,,Awassa,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
+Ethiopia,Awasa,Sidama,,,555480,City,Awassa,,Awassa,,SidamaEthiopia,county,2,ET-SI,Sidama,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
+Ethiopia,Wendo Genet,Sidama,,,234490,District,Awassa,,Awassa,,SidamaEthiopia,county,2,ET-SI,Sidama,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
 Ethiopia,Dale,Sidama,,,357733,District,,,#N/A,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
 Ethiopia,Bensa,Sidama,,,342116,District,,,#N/A,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
 Ethiopia,Boricha,Sidama,,,339933,District,,,#N/A,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
@@ -516,8 +516,8 @@ Ethiopia,Gorche,Sidama,,,141320,District,,,#N/A,,SidamaEthiopia,,,,,,,,,,,,,,,,r
 Ethiopia,Bursa,Sidama,,,137982,District,,,#N/A,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
 Ethiopia,Loko Abeya,Sidama,,,130539,District,,,#N/A,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
 Ethiopia,Wensho,Sidama,,,119461,District,,,#N/A,,SidamaEthiopia,,,,,,,,,,,,,,,,region,1,ET-SI,ሲዳማ ክልል Sidama سيداما,NONE,0.0,ET-SI
-Ethiopia,Awubere,Somali,,,496198,District,Awubere,,Awubere,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
-Ethiopia,Jijiga,Somali,,,417688,District,Jijiga,,Jijiga,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
+Ethiopia,Awubere,Somali,,,496198,District,Awubere,,Awubere,,SomaliEthiopia,county,2,ET-SO,Fafan,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
+Ethiopia,Jijiga,Somali,,,417688,District,Jijiga,,Jijiga,,SomaliEthiopia,county,2,ET-SO,Fafan,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
 Ethiopia,Moyale,Somali,,,367953,District,,,#N/A,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
 Ethiopia,Kebri Beyah,Somali,,,242880,District,,,#N/A,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
 Ethiopia,Kebri Dehar,Somali,,,200228,District,,,#N/A,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
@@ -569,8 +569,8 @@ Ethiopia,Danan,Somali,,,35148,District,,,#N/A,,SomaliEthiopia,,,,,,,,,,,,,,,,reg
 Ethiopia,Guradamole,Somali,,,28782,District,,,#N/A,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
 Ethiopia,Legehida,Somali,,,25469,District,,,#N/A,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
 Ethiopia,Meyu Muluke,Somali,,,17721,District,,,#N/A,,SomaliEthiopia,,,,,,,,,,,,,,,,region,1,ET-SO,ሶማሌ ክልል Somali صومالى,NONE,0.0,ET-SO
-Ethiopia,Gimbo,South West,,,130328,District,Bonga,,Bonga,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Bonga,South West,,,56045,Town,Bonga,,Bonga,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Gimbo,South West,,,130328,District,Bonga,,Bonga,,South WestEthiopia,county,2,ET-SW,Keffa,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Bonga,South West,,,56045,Town,Bonga,,Bonga,,South WestEthiopia,county,2,ET-SW,Keffa,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Chena,South West,,,222310,District,,,#N/A,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Yeki,South West,,,209337,District,,,#N/A,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Mareka,South West,,,190009,District,,,#N/A,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
@@ -600,14 +600,14 @@ Ethiopia,Cheta,South West,,,44479,District,,,#N/A,,South WestEthiopia,,,,,,,,,,,
 Ethiopia,Anderacha,South West,,,34834,District,,,#N/A,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Surma,South West,,,33264,District,,,#N/A,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Bero,South West,,,18523,District,,,#N/A,,South WestEthiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Arba Minch,Southern (SNNPR),,,201049,Town,Arba Minch,,Arba Minch,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Hosaena,Southern (SNNPR),,,188192,Town,Hossana,,Hossana,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Lemo,Southern (SNNPR),,,157107,District,Hossana,,Hossana,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Sodo Zuria,Southern (SNNPR),,,211629,District,Wolaita Sodo,,Wolaita Sodo,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Sodo,Southern (SNNPR),,,204121,Town,Wolaita Sodo,,Wolaita Sodo,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Abeshge,Southern (SNNPR),,,79901,District,Wolkite,,Wolkite,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Welkite,Southern (SNNPR),,,77514,Town,Wolkite,,Wolkite,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Kebena,Southern (SNNPR),,,68135,District,Wolkite,,Wolkite,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Arba Minch,Southern (SNNPR),,,201049,Town,Arba Minch,,Arba Minch,,Southern (SNNPR)Ethiopia,county,2,,Gamo Gofa,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Hosaena,Southern (SNNPR),,,188192,Town,Hossana,,Hossana,,Southern (SNNPR)Ethiopia,county,2,,Hadiya,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Lemo,Southern (SNNPR),,,157107,District,Hossana,,Hossana,,Southern (SNNPR)Ethiopia,county,2,,Hadiya,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Sodo Zuria,Southern (SNNPR),,,211629,District,Wolaita Sodo,,Wolaita Sodo,,Southern (SNNPR)Ethiopia,county,2,,Wolayita,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Sodo,Southern (SNNPR),,,204121,Town,Wolaita Sodo,,Wolaita Sodo,,Southern (SNNPR)Ethiopia,county,2,,Wolayita,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Abeshge,Southern (SNNPR),,,79901,District,Wolkite,,Wolkite,,Southern (SNNPR)Ethiopia,county,2,,Gurage,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Welkite,Southern (SNNPR),,,77514,Town,Wolkite,,Wolkite,,Southern (SNNPR)Ethiopia,county,2,,Gurage,,,,,,,,,,,,,,,,NONE,0.0,
+Ethiopia,Kebena,Southern (SNNPR),,,68135,District,Wolkite,,Wolkite,,Southern (SNNPR)Ethiopia,county,2,,Gurage,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Alaba,Southern (SNNPR),,,339423,District,,,#N/A,,Southern (SNNPR)Ethiopia,,,,,,,,county,2,nan,Alaba,,,,,region,1,nan,ደቡብ ኢትዮጵያ ክልላዊ መንግስት South Ethiopia Regional State ولاية جنوب إثيوبيا الإقليمية,HIGH,1.0,nan
 Ethiopia,Konso,Southern (SNNPR),,,318819,District,,,#N/A,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Debub Ari,Southern (SNNPR),,,316792,District,,,#N/A,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
@@ -696,10 +696,10 @@ Ethiopia,Selamago,Southern (SNNPR),,,37954,District,,,#N/A,,Southern (SNNPR)Ethi
 Ethiopia,Nyangatom,Southern (SNNPR),,,22946,District,,,#N/A,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Mago National Park,Southern (SNNPR),,,0,National Park,,,#N/A,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Ethiopia,Nech Sar National Park,Southern (SNNPR),,,0,National Park,,,#N/A,,Southern (SNNPR)Ethiopia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Ethiopia,Adigrat,Tigray,,,121776,Town,Adigrat,,Adigrat,,TigrayEthiopia,,,,,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
-Ethiopia,Ganta Afeshum,Tigray,,,104431,District,Adigrat,,Adigrat,,TigrayEthiopia,,,,,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
-Ethiopia,Mekele (Debub Mekele & Semen Mekele),Tigray,,,457917,Town,Mekelle,,Mekelle,,TigrayEthiopia,,,,,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
-Ethiopia,Enderta,Tigray,,,130020,District,Mekelle,,Mekelle,,TigrayEthiopia,,,,,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
+Ethiopia,Adigrat,Tigray,,,121776,Town,Adigrat,,Adigrat,,TigrayEthiopia,county,2,ET-TI,Eastern,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
+Ethiopia,Ganta Afeshum,Tigray,,,104431,District,Adigrat,,Adigrat,,TigrayEthiopia,county,2,ET-TI,Eastern,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
+Ethiopia,Mekele (Debub Mekele & Semen Mekele),Tigray,,,457917,Town,Mekelle,,Mekelle,,TigrayEthiopia,county,2,ET-TI,Southern,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
+Ethiopia,Enderta,Tigray,,,130020,District,Mekelle,,Mekelle,,TigrayEthiopia,county,2,ET-TI,Southern,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
 Ethiopia,Ahiferom (Enticho),Tigray,,,220575,District,,,#N/A,,TigrayEthiopia,,,,,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
 Ethiopia,Hintalo Wajirat,Tigray,,,186342,District,,,#N/A,,TigrayEthiopia,,,,,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI
 Ethiopia,Were Lehe,Tigray,,,182387,District,,,#N/A,,TigrayEthiopia,,,,,,,,,,,,,,,,region,1,ET-TI,ትግራይ تجراى,NONE,0.0,ET-TI

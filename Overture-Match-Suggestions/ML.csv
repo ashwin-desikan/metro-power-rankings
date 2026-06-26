@@ -1,0 +1,54 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Mali,Bamako,Bamako,,,4227569,Cercle,Bamako,,Bamako,2019,BamakoMali,county,2,ML-BKO,Bamako,,,,region,1,ML-BKO,Bamako,,,,,region,1,ML-BKO,Bamako,HIGH,1.0,ML-BKO
+Mali,Commune VI,Bamako,,,469662,Urban Commune,Bamako,,Bamako,2009,BamakoMali,county,2,ML-BKO,Bamako,,,,,,,,,,,,region,1,ML-BKO,Bamako,NONE,0.0,ML-BKO
+Mali,Commune V,Bamako,,,413266,Urban Commune,Bamako,,Bamako,2009,BamakoMali,county,2,ML-BKO,Bamako,,,,,,,,,,,,region,1,ML-BKO,Bamako,NONE,0.0,ML-BKO
+Mali,Koro,Bandiagara,,,446902,Cercle,,,#N/A,2019,BandiagaraMali,county,2,ML-5,Cercle de Koro,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Bandiagara,Bandiagara,,,386346,Cercle,,,#N/A,2019,BandiagaraMali,county,2,ML-5,Cercle de Bandiagara,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Bankass,Bandiagara,,,326346,Cercle,,,#N/A,2019,BandiagaraMali,county,2,ML-5,Cercle de Bankass,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Bougouni,Bougouni,,,565174.9999999999,Cercle,,,#N/A,2019,BougouniMali,county,2,ML-3,Cercle de Bougouni,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Yanfolila,Bougouni,,,262182,Cercle,,,#N/A,2019,BougouniMali,county,2,ML-3,Cercle de Yanfolila,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Kolondiéba,Bougouni,,,248309.00000000003,Cercle,,,#N/A,2019,BougouniMali,county,2,ML-3,Cercle de Kolondiéba,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Dioïla,Dioila,,,602633.0000000001,Cercle,,,#N/A,2019,DioilaMali,county,2,ML-2,Cercle de Dioïla,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Douentza,Douentza,,,303974,Cercle,,,#N/A,2019,DouentzaMali,county,2,ML-5,Cercle de Douentza,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Gao,Gao,,,295236,Cercle,,,#N/A,2019,GaoMali,county,2,ML-7,Cercle de Gao,,,,region,1,ML-7,Gao,,,,,region,1,ML-7,Gao,HIGH,1.0,ML-7
+Mali,Ansongo,Gao,,,162637,Cercle,,,#N/A,2019,GaoMali,county,2,ML-7,Cercle d'Ansongo,,,,,,,,,,,,region,1,ML-7,Gao,NONE,0.0,ML-7
+Mali,Bourem,Gao,,,143418,Cercle,,,#N/A,2019,GaoMali,county,2,ML-7,Cercle de Bourem,,,,,,,,,,,,region,1,ML-7,Gao,NONE,0.0,ML-7
+Mali,Kayes,Kayes,,,632503,Cercle,Kayes,,Kayes,2019,KayesMali,county,2,ML-1,Kayes,,,,county,2,ML-1,Kayes,,,,,region,1,ML-1,Kayes,HIGH,1.0,ML-1
+Mali,Bafoulabé,Kayes,,,287978.9999999999,Cercle,,,#N/A,2019,KayesMali,county,2,ML-1,Bafoulabé,,,,county,2,ML-1,Bafoulabé,,,,,region,1,ML-1,Kayes,HIGH,1.0,ML-1
+Mali,Kéniéba,Kayes,,,242871.00000000003,Cercle,,,#N/A,2019,KayesMali,county,2,ML-1,Kéniéba,,,,county,2,ML-1,Kéniéba,,,,,region,1,ML-1,Kayes,HIGH,1.0,ML-1
+Mali,Yélimané,Kayes,,,217564.00000000003,Cercle,,,#N/A,2019,KayesMali,county,2,ML-1,Yélimané,,,,county,2,ML-1,Yélimané,,,,,region,1,ML-1,Kayes,HIGH,1.0,ML-1
+Mali,Kidal,Kidal,,,41248,Cercle,,,#N/A,2019,KidalMali,county,2,ML-8,Cercle de Kidal,,,,region,1,ML-8,Kidal,,,,,region,1,ML-8,Kidal,HIGH,1.0,ML-8
+Mali,Tessalit,Kidal,,,19665,Cercle,,,#N/A,2019,KidalMali,county,2,ML-8,Cercle de Tessalit,,,,,,,,,,,,region,1,ML-8,Kidal,NONE,0.0,ML-8
+Mali,Abeïbara,Kidal,,,12690.000000000002,Cercle,,,#N/A,2019,KidalMali,county,2,ML-8,Cercle d'Abeïbara,,,,,,,,,,,,region,1,ML-8,Kidal,NONE,0.0,ML-8
+Mali,Tin-Essako,Kidal,,,9887,Cercle,,,#N/A,2019,KidalMali,county,2,ML-8,Cercle de Tin-Essako,,,,,,,,,,,,region,1,ML-8,Kidal,NONE,0.0,ML-8
+Mali,Kita,Kita,,,533110,Cercle,,,#N/A,2019,KitaMali,county,2,ML-1,Kita,,,,county,2,ML-1,Kita,,,,,region,1,ML-1,Kayes,HIGH,1.0,ML-1
+Mali,Kati,Koulikoro,,,1179233.0000000005,Cercle,Bamako,,Bamako,2019,KoulikoroMali,county,2,ML-2,Cercle de Kati,,,,,,,,,,,,region,1,ML-2,Koulikoro,NONE,0.0,ML-2
+Mali,Kolokani,Koulikoro,,,286565,Cercle,,,#N/A,2019,KoulikoroMali,county,2,ML-2,Cercle de Kolokani,,,,,,,,,,,,region,1,ML-2,Koulikoro,NONE,0.0,ML-2
+Mali,Koulikoro,Koulikoro,,,259586.00000000003,Cercle,,,#N/A,2019,KoulikoroMali,county,2,ML-2,Cercle de Koulikoro,,,,region,1,ML-2,Koulikoro,,,,,region,1,ML-2,Koulikoro,HIGH,1.0,ML-2
+Mali,Banamba,Koulikoro,,,235420.99999999994,Cercle,,,#N/A,2019,KoulikoroMali,county,2,ML-2,Cercle de Banamba,,,,,,,,,,,,region,1,ML-2,Koulikoro,NONE,0.0,ML-2
+Mali,Kangaba,Koulikoro,,,123744,Cercle,,,#N/A,2019,KoulikoroMali,county,2,ML-2,Cercle de Kangaba,,,,,,,,,,,,region,1,ML-2,Koulikoro,NONE,0.0,ML-2
+Mali,Koutiala,Koutiala,,,715429.9999999999,Cercle,Koutiala,,Koutiala,2019,KoutialaMali,county,2,ML-3,Cercle de Koutiala,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Yorosso,Koutiala,,,260812.00000000006,Cercle,,,#N/A,2019,KoutialaMali,county,2,ML-3,Cercle de Yorosso,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Ménaka,Ménaka,,,67119,Cercle,,,#N/A,2019,MénakaMali,,,,,,,,region,1,ML-9,Ménaka,,,,,region,1,ML-9,Ménaka,HIGH,1.0,ML-9
+Mali,Mopti,Mopti,,,454689,Cercle,Mopti,,Mopti,2019,MoptiMali,county,2,ML-5,Cercle de Mopti,,,,region,1,ML-5,Mopti,,,,,region,1,ML-5,Mopti,HIGH,1.0,ML-5
+Mali,Djenné,Mopti,,,256877.00000000003,Cercle,,,#N/A,2019,MoptiMali,county,2,ML-5,Cercle de Djenné,,,,,,,,,,,,region,1,ML-5,Mopti,NONE,0.0,ML-5
+Mali,Ténenkou,Mopti,,,200810,Cercle,,,#N/A,2019,MoptiMali,county,2,ML-5,Cercle de Tenenkou,,,,,,,,,,,,region,1,ML-5,Mopti,NONE,0.0,ML-5
+Mali,Youwarou,Mopti,,,133759,Cercle,,,#N/A,2019,MoptiMali,county,2,ML-5,Cercle de Youwarou,,,,,,,,,,,,region,1,ML-5,Mopti,NONE,0.0,ML-5
+Mali,Nara,Nara,,,298156,Cercle,,,#N/A,2019,NaraMali,county,2,ML-2,Cercle de Nara,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Nioro,Nioro,,,282160,Cercle,,,#N/A,2019,NioroMali,county,2,ML-1,Nioro,,,,county,2,ML-1,Nioro,,,,,region,1,ML-1,Kayes,HIGH,1.0,ML-1
+Mali,Diéma,Nioro,,,261016.99999999997,Cercle,,,#N/A,2019,NioroMali,county,2,ML-1,Diéma,,,,county,2,ML-1,Diéma,,,,,region,1,ML-1,Kayes,HIGH,1.0,ML-1
+Mali,San,San,,,411190.0000000001,Cercle,,,#N/A,2019,SanMali,county,2,ML-4,Cercle de San,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Tominian,San,,,272550,Cercle,,,#N/A,2019,SanMali,county,2,ML-4,Cercle de Tominian,,,,,,,,,,,,,,,,NONE,0.0,
+Mali,Ségou,Ségou,,,857987,Cercle,Ségou,,Ségou,2019,SégouMali,county,2,ML-4,Cercle de Ségou,,,,region,1,ML-4,Ségou,,,,,region,1,ML-4,Ségou,HIGH,1.0,ML-4
+Mali,Niono,Ségou,,,449717,Cercle,,,#N/A,2019,SégouMali,county,2,ML-4,Cercle de Niono,,,,,,,,,,,,region,1,ML-4,Ségou,NONE,0.0,ML-4
+Mali,Bla,Ségou,,,349643.9999999999,Cercle,,,#N/A,2019,SégouMali,county,2,ML-4,Cercle de Bla,,,,,,,,,,,,region,1,ML-4,Ségou,NONE,0.0,ML-4
+Mali,Macina,Ségou,,,290974,Cercle,,,#N/A,2019,SégouMali,county,2,ML-4,Cercle de Macina,,,,,,,,,,,,region,1,ML-4,Ségou,NONE,0.0,ML-4
+Mali,Barouéli,Ségou,,,250039.99999999997,Cercle,,,#N/A,2019,SégouMali,,,,,,,,,,,,,,,,region,1,ML-4,Ségou,NONE,0.0,ML-4
+Mali,Sikasso,Sikasso,,,905895,Cercle,Sikasso,,Sikasso,2019,SikassoMali,county,2,ML-3,Cercle de Sikasso,,,,region,1,ML-3,Région de Sikasso,,,,,region,1,ML-3,Région de Sikasso,HIGH,1.0,ML-3
+Mali,Kadiolo,Sikasso,,,300013,Cercle,,,#N/A,2019,SikassoMali,county,2,ML-3,Cercle de Kadiolo,,,,,,,,,,,,region,1,ML-3,Région de Sikasso,NONE,0.0,ML-3
+Mali,Taoudenni,Taoudénit,,,100358,Cercle,,,#N/A,2019,TaoudénitMali,,,,,,,,locality,,ML-10,Taoudeni,,,,,region,1,ML-10,Taoudénit,HIGH,1.0,ML-10
+Mali,Niafunké,Tombouctou,,,216238.99999999997,Cercle,,,#N/A,2019,TombouctouMali,,,,,,,,,,,,,,,,region,1,ML-6,Tombouctou,NONE,0.0,ML-6
+Mali,Goundam,Tombouctou,,,186519,Cercle,,,#N/A,2019,TombouctouMali,county,2,ML-6,Cercle de Goundam,,,,,,,,,,,,region,1,ML-6,Tombouctou,NONE,0.0,ML-6
+Mali,Gourma-Rharous,Tombouctou,,,136852,Cercle,,,#N/A,2019,TombouctouMali,county,2,ML-6,Cercle Gourma-Rharous,,,,county,2,ML-6,Cercle Gourma-Rharous,,,,,region,1,ML-6,Tombouctou,LOW,0.85,ML-6
+Mali,Diré,Tombouctou,,,135161,Cercle,,,#N/A,2019,TombouctouMali,county,2,ML-6,Cercle de Diré,,,,,,,,,,,,region,1,ML-6,Tombouctou,NONE,0.0,ML-6
+Mali,Tombouctou,Tombouctou,,,56578,Cercle,,,#N/A,2019,TombouctouMali,county,2,ML-10,Cercle de Tombouctou,,,,region,1,ML-6,Tombouctou,,,,,region,1,ML-6,Tombouctou,HIGH,1.0,ML-6

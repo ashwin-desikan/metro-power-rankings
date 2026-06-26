@@ -1,0 +1,423 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Afghanistan,Kishim,Badakhshān,,,91407,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی کشم,,,,county,2,AF-BDS,ولسوالی کشم,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Argō,Badakhshān,,,88616,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی ارگو,,,,county,2,AF-BDS,ولسوالی ارگو,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Fayzābād,Badakhshān,,,77154,Capital District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی فیض‌آباد,,,,county,2,AF-BDS,ولسوالی فیض‌آباد,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Darāyim,Badakhshān,,,69618,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی درایم,,,,county,2,AF-BDS,ولسوالی درایم,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Yaftal-e Suflá [Yaftali Sufla],Badakhshān,,,59654,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی یفتل پایین,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Shahr-e Buzurg [Shahri Buzurg],Badakhshān,,,59123,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی شهر بزرگ,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Rāghistān,Badakhshān,,,44773,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی راغستان,,,,county,2,AF-BDS,ولسوالی راغستان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Khāsh,Badakhshān,,,43046,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی خاش,,,,county,2,AF-BDS,ولسوالی خاش,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Jurm,Badakhshān,,,42671,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی جرم,,,,county,2,AF-BDS,ولسوالی جرم,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Shuhadā,Badakhshān,,,39061,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی شهدا,,,,county,2,AF-BDS,ولسوالی شهدا,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Yāwān,Badakhshān,,,36669,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی یاوان,,,,county,2,AF-BDS,ولسوالی یاوان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Tīshkān,Badakhshān,,,33746,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی تیشکان,,,,county,2,AF-BDS,ولسوالی تیشکان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Bahārak,Badakhshān,,,32551,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی بهارک,,,,county,2,AF-BDS,ولسوالی بهارک,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Tagāb,Badakhshān,,,31753,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی تگاب,,,,county,2,AF-BDS,ولسوالی تگاب,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Shighnān,Badakhshān,,,31487,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی شغنان,,,,county,2,AF-BDS,ولسوالی شغنان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Dawrāz-e Pāyīn [Māimaī],Badakhshān,,,29893,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی درواز پایین,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Shikī [Shekay],Badakhshān,,,29760,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی شکی,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Yamgān [Gīrwān],Badakhshān,,,29096,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی یمگان,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Darwāz-e Bālā [Nuysaī],Badakhshān,,,26173,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی دروازه بالا,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Kūf Āb,Badakhshān,,,25243,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی کوف‌آب,,,,county,2,AF-BDS,ولسوالی کوف‌آب,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Wardūj [Wurduj],Badakhshān,,,24712,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی وردوج,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Khwāhān,Badakhshān,,,18734,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی خواهان,,,,county,2,AF-BDS,ولسوالی خواهان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Kōhistān,Badakhshān,,,18733,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,لسوالی کوهستان,,,,county,2,AF-BDS,لسوالی کوهستان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Arghanj Khwāh [Arghanj Khwa],Badakhshān,,,18201,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی ارغنج‌خواه,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Wākhān,Badakhshān,,,16873,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی واخان,,,,county,2,AF-BDS,ولسوالی واخان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Ishkāshim,Badakhshān,,,15677,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی اشکاشم,,,,county,2,AF-BDS,ولسوالی اشکاشم,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Kurān wa Munjān,Badakhshān,,,10761,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,ولسوالی کران و منجان,,,,county,2,AF-BDS,ولسوالی کران و منجان,,,,,region,1,AF-BDS,ولایت بدخشان,HIGH,1.0,AF-BDS
+Afghanistan,Zaybāk [Zebak],Badakhshān,,,8902,District,,,#N/A,,BadakhshānAfghanistan,county,2,AF-BDS,زېباک ولسوالۍ,,,,,,,,,,,,region,1,AF-BDS,ولایت بدخشان,NONE,0.0,AF-BDS
+Afghanistan,Bālā Murghāb [Murghāb],Bādghīs,,,109874,District,,,#N/A,,BādghīsAfghanistan,county,2,AF-BDG,ولسوالی مرغاب,,,,,,,,,,,,region,1,AF-BDG,ولایت بادغیس,NONE,0.0,AF-BDG
+Afghanistan,Qādis,Bādghīs,,,102833,District,,,#N/A,,BādghīsAfghanistan,county,2,AF-BDG,ولسوالی قادس,,,,county,2,AF-BDG,ولسوالی قادس,,,,,region,1,AF-BDG,ولایت بادغیس,HIGH,1.0,AF-BDG
+Afghanistan,Jowand [Jawand],Bādghīs,,,89148,District,,,#N/A,,BādghīsAfghanistan,county,2,AF-BDG,ولسوالی قلعه نو,,,,,,,,,,,,region,1,AF-BDG,ولایت بادغیس,NONE,0.0,AF-BDG
+Afghanistan,Āb-e Kamarī [Ab Kamari],Bādghīs,,,83169,District,,,#N/A,,BādghīsAfghanistan,county,2,AF-BDG,ولسوالی آبکمری,,,,,,,,,,,,region,1,AF-BDG,ولایت بادغیس,NONE,0.0,AF-BDG
+Afghanistan,Qal'ah-ye Now [Qala e Naw],Bādghīs,,,75410,Capital District,,,#N/A,,BādghīsAfghanistan,county,2,AF-BDG,ولسوالی قلعه نو,,,,,,,,,,,,region,1,AF-BDG,ولایت بادغیس,NONE,0.0,AF-BDG
+Afghanistan,Ghōrmāch,Bādghīs,,,62311,District,,,#N/A,,BādghīsAfghanistan,county,2,AF-BDG,ولسوالۍ غورماچ,,,,county,2,AF-BDG,ولسوالۍ غورماچ,,,,,region,1,AF-BDG,ولایت بادغیس,HIGH,1.0,AF-BDG
+Afghanistan,Muqur,Bādghīs,,,26838,District,,,#N/A,,BādghīsAfghanistan,county,2,AF-BDG,ولسوالی مقر,,,,county,2,AF-BDG,ولسوالی مقر,,,,,region,1,AF-BDG,ولایت بادغیس,HIGH,1.0,AF-BDG
+Afghanistan,Pul-e Khumrī [Puli Khumri],Baghlān,,,242859,Capital District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی پل خمری,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Baghlān-e Jadīd [Baghlani Jadid],Baghlān,,,198382,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی بغلان جدید,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Nahrīn,Baghlān,,,78438,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی نهرین,,,,county,2,AF-BGL,ولسوالی نهرین,,,,,region,1,AF-BGL,ولایت بغلان,HIGH,1.0,AF-BGL
+Afghanistan,Dōshī [Dushi],Baghlān,,,75597,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی دوشی,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Khōst wa Fireng [Khost wa Fereng],Baghlān,,,71345,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی خوست و فرنگ,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Dahānah-ye Ghōrī [Dahana i Ghuri],Baghlān,,,66618,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی دهانه غوری,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Burkah [Burka],Baghlān,,,59521,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی برکه,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Deh-e Ṣalāḥ [Dih Salah],Baghlān,,,36137,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی ده‌صلاح,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Khinjān,Baghlān,,,34411,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی خنجان,,,,county,2,AF-BGL,ولسوالی خنجان,,,,,region,1,AF-BGL,ولایت بغلان,HIGH,1.0,AF-BGL
+Afghanistan,Tālah wa Barfak [Tala wa Barfak],Baghlān,,,34144,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی تاله و برفک,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Pul-e Ḥiṣār [Puli Hisar],Baghlān,,,31222,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی پل حصار,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Andarāb,Baghlān,,,28830,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی اندراب,,,,county,2,AF-BGL,ولسوالی اندراب,,,,,region,1,AF-BGL,ولایت بغلان,HIGH,1.0,AF-BGL
+Afghanistan,Khwājah Hijrān [Jalgah],Baghlān,,,26971,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی خواجه هجران,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Fireng wa Ghārū [Farang Wa Gharu],Baghlān,,,18733,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی فرنگ و غارو,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Guzargāh-e Nūr [Guzargahi Nur],Baghlān,,,11426,District,,,#N/A,,BaghlānAfghanistan,county,2,AF-BGL,ولسوالی گذرگاه نور,,,,,,,,,,,,region,1,AF-BGL,ولایت بغلان,NONE,0.0,AF-BGL
+Afghanistan,Mazār-e Sharīf [Mazar-i-Sharif],Balkh,,,484492,Capital District,Mazar-e Sharif,,Mazar-e Sharif,,BalkhAfghanistan,county,2,AF-BAL,مزار شريف,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Balkh,Balkh,,,136097,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی بلخ,,,,county,2,AF-BAL,ولسوالی بلخ,,,,,region,1,AF-BAL,ولایت بلخ,HIGH,1.0,AF-BAL
+Afghanistan,Shōlgarah [Sholgara],Balkh,,,129271,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی شولگره,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Dowlat Ābād [Dawlatabad],Balkh,,,119083,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی دولت‌آباد,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Chimtāl,Balkh,,,103630,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی چمتال,,,,county,2,AF-BAL,ولسوالی چمتال,,,,,region,1,AF-BAL,ولایت بلخ,HIGH,1.0,AF-BAL
+Afghanistan,Chār Bōlak,Balkh,,,91539,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی چارپولک,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Khulm [Kholm],Balkh,,,83032,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی خولم,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Dehdādī [Dihdadi],Balkh,,,76261,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی دهدادی,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Kishindeh [Kishindih],Balkh,,,55003,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی کشنده,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Nahr-e Shāhī [Nahri Shahi],Balkh,,,50752,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی نهر شاهی,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Chārkent [Charkint],Balkh,,,50220,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی چارکنت,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Zārī,Balkh,,,49556,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی زاری,,,,county,2,AF-BAL,ولسوالی زاری,,,,,region,1,AF-BAL,ولایت بلخ,HIGH,1.0,AF-BAL
+Afghanistan,Shōrtepah [Shortepa],Balkh,,,44773,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی شورتپه,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Kaldār [incl. Shahrak-e Ḥayratān],Balkh,,,22586,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی کلدار,,,,,,,,,,,,region,1,AF-BAL,ولایت بلخ,NONE,0.0,AF-BAL
+Afghanistan,Mārmul,Balkh,,,12888,District,,,#N/A,,BalkhAfghanistan,county,2,AF-BAL,ولسوالی مارمل,,,,county,2,AF-BAL,ولسوالی مارمل,,,,,region,1,AF-BAL,ولایت بلخ,HIGH,1.0,AF-BAL
+Afghanistan,Waras,Bāmyān,,,123293,District,,,#N/A,,BāmyānAfghanistan,county,2,AF-BAM,ولسوالی ورس,,,,county,2,AF-BAM,ولسوالی ورس,,,,,region,1,AF-BAM,ولایت بامیان,HIGH,1.0,AF-BAM
+Afghanistan,Bāmyān,Bāmyān,,,94855,Capital District,,,#N/A,,BāmyānAfghanistan,county,2,AF-BAM,ولسوالی بامیان,,,,region,1,AF-BAM,ولایت بامیان,,,,,region,1,AF-BAM,ولایت بامیان,HIGH,1.0,AF-BAM
+Afghanistan,Panjāb,Bāmyān,,,77058,District,,,#N/A,,BāmyānAfghanistan,county,2,AF-BAM,ولسوالی پنجاب,,,,county,2,AF-BAM,ولسوالی پنجاب,,,,,region,1,AF-BAM,ولایت بامیان,HIGH,1.0,AF-BAM
+Afghanistan,Yakāwlang,Bāmyān,,,68821,District,,,#N/A,,BāmyānAfghanistan,county,2,AF-BAM,ولسوالی یکاولنگ,,,,county,2,AF-BAM,ولسوالی یکاولنگ,,,,,region,1,AF-BAM,ولایت بامیان,HIGH,1.0,AF-BAM
+Afghanistan,Kahmard,Bāmyān,,,41053,District,,,#N/A,,BāmyānAfghanistan,county,2,AF-BAM,ولسوالی کهمرد,,,,county,2,AF-BAM,ولسوالی کهمرد,,,,,region,1,AF-BAM,ولایت بامیان,HIGH,1.0,AF-BAM
+Afghanistan,Shībar,Bāmyān,,,33348,District,,,#N/A,,BāmyānAfghanistan,county,2,AF-BAM,ولسوالی شیبر,,,,county,2,AF-BAM,ولسوالی شیبر,,,,,region,1,AF-BAM,ولایت بامیان,HIGH,1.0,AF-BAM
+Afghanistan,Yakāwlang No 2 [← Yakāwlang],Bāmyān,,,30026,Temporary District,,,#N/A,,BāmyānAfghanistan,,,,,,,,,,,,,,,,region,1,AF-BAM,ولایت بامیان,NONE,0.0,AF-BAM
+Afghanistan,Sayghān,Bāmyān,,,27103,District,,,#N/A,,BāmyānAfghanistan,county,2,AF-BAM,ولسوالی سیغان,,,,county,2,AF-BAM,ولسوالی سیغان,,,,,region,1,AF-BAM,ولایت بامیان,HIGH,1.0,AF-BAM
+Afghanistan,Mīrāmōr,Dāykundī,,,86024,District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی میرامور,,,,county,2,AF-DAY,ولسوالی میرامور,,,,,region,1,AF-DAY,ولایت دایکندی,HIGH,1.0,AF-DAY
+Afghanistan,Shahristān,Dāykundī,,,80740,District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی شهرستان,,,,county,2,AF-DAY,ولسوالی شهرستان,,,,,region,1,AF-DAY,ولایت دایکندی,HIGH,1.0,AF-DAY
+Afghanistan,Ishtarlay,Dāykundī,,,61174,District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی اشترلی,,,,county,2,AF-DAY,ولسوالی اشترلی,,,,,region,1,AF-DAY,ولایت دایکندی,HIGH,1.0,AF-DAY
+Afghanistan,Sang-e Takht [Sangi Takht],Dāykundī,,,59043,District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی سنگ تخت,,,,,,,,,,,,region,1,AF-DAY,ولایت دایکندی,NONE,0.0,AF-DAY
+Afghanistan,Kītī,Dāykundī,,,56436,District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی گیتی,,,,county,2,AF-DAY,ولسوالی گیتی,,,,,region,1,AF-DAY,ولایت دایکندی,HIGH,1.0,AF-DAY
+Afghanistan,Khadīr,Dāykundī,,,53434,District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی خدیر,,,,county,2,AF-DAY,ولسوالی خدیر,,,,,region,1,AF-DAY,ولایت دایکندی,HIGH,1.0,AF-DAY
+Afghanistan,Nīlī,Dāykundī,,,42832,Capital District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی نیلی,,,,county,2,AF-DAY,ولسوالی نیلی,,,,,region,1,AF-DAY,ولایت دایکندی,HIGH,1.0,AF-DAY
+Afghanistan,Pātū [Patoo; ← Gīzāb],Dāykundī,,,39759,Temporary District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,ولسوالی گیزاب,,,,,,,,,,,,region,1,AF-DAY,ولایت دایکندی,NONE,0.0,AF-DAY
+Afghanistan,Kajrān,Dāykundī,,,37062,District,,,#N/A,,DāykundīAfghanistan,county,2,AF-DAY,کجران ولسوالۍ,,,,county,2,AF-DAY,کجران ولسوالۍ,,,,,region,1,AF-DAY,ولایت دایکندی,HIGH,1.0,AF-DAY
+Afghanistan,Farāh [Farah City],Farāh,,,128047,Capital District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,فراه,,,,,,,,,,,,region,1,AF-FRA,ولایت فراه,NONE,0.0,AF-FRA
+Afghanistan,Bālā Bulūk,Farāh,,,80778,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی بالا بلوک,,,,county,2,AF-FRA,ولسوالی بالا بلوک,,,,,region,1,AF-FRA,ولایت فراه,HIGH,1.0,AF-FRA
+Afghanistan,Pur Chaman,Farāh,,,60450,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی پر چمن,,,,county,2,AF-FRA,ولسوالی پر چمن,,,,,region,1,AF-FRA,ولایت فراه,HIGH,1.0,AF-FRA
+Afghanistan,Gulistān,Farāh,,,49025,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی گلستان,,,,county,2,AF-FRA,ولسوالی گلستان,,,,,region,1,AF-FRA,ولایت فراه,HIGH,1.0,AF-FRA
+Afghanistan,Pusht-e Rōd [Pusht Rod],Farāh,,,45969,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی پشت رود,,,,,,,,,,,,region,1,AF-FRA,ولایت فراه,NONE,0.0,AF-FRA
+Afghanistan,Bakwāh [Bakwa],Farāh,,,40124,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی بکواه,,,,,,,,,,,,region,1,AF-FRA,ولایت فراه,NONE,0.0,AF-FRA
+Afghanistan,Qal'ah-ye Kāh [Qala i Kah],Farāh,,,34809,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی قلعه کاه,,,,,,,,,,,,region,1,AF-FRA,ولایت فراه,NONE,0.0,AF-FRA
+Afghanistan,Khāk-e Safēd [Khaki Safed],Farāh,,,34277,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی خاک سفید,,,,,,,,,,,,region,1,AF-FRA,ولایت فراه,NONE,0.0,AF-FRA
+Afghanistan,Lāsh wa Juwayn,Farāh,,,31621,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی لاش و جوین,,,,county,2,AF-FRA,ولسوالی لاش و جوین,,,,,region,1,AF-FRA,ولایت فراه,HIGH,1.0,AF-FRA
+Afghanistan,Anār Darah [Anar Dara],Farāh,,,31487,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی انار دره,,,,,,,,,,,,region,1,AF-FRA,ولایت فراه,NONE,0.0,AF-FRA
+Afghanistan,Shayb Kōh [Shib Koh],Farāh,,,26439,District,,,#N/A,,FarāhAfghanistan,county,2,AF-FRA,ولسوالی شېب کوه,,,,,,,,,,,,region,1,AF-FRA,ولایت فراه,NONE,0.0,AF-FRA
+Afghanistan,Pashtūn Kōt,Fāryāb,,,213371,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی پشتون‌کوت,,,,county,2,AF-FYB,ولسوالی پشتون‌کوت,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,HIGH,1.0,AF-FYB
+Afghanistan,Qaīṣār [Qaysar],Fāryāb,,,161025,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی قیصار,,,,,,,,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,NONE,0.0,AF-FYB
+Afghanistan,Meymaneh [Maymana],Fāryāb,,,95971,Capital District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی ميمنه,,,,,,,,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,NONE,0.0,AF-FYB
+Afghanistan,Shīrīn Tagāb,Fāryāb,,,92071,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی شیرین‌تگاب,,,,county,2,AF-FYB,ولسوالی شیرین‌تگاب,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,HIGH,1.0,AF-FYB
+Afghanistan,Gurzīwān,Fāryāb,,,85694,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی گرزیوان,,,,county,2,AF-FYB,ولسوالی گرزیوان,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,HIGH,1.0,AF-FYB
+Afghanistan,Almār,Fāryāb,,,79449,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی المار,,,,county,2,AF-FYB,ولسوالی المار,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,HIGH,1.0,AF-FYB
+Afghanistan,Kōhistān,Fāryāb,,,61646,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی کوهستان,,,,county,2,AF-FYB,ولسوالی کوهستان,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,HIGH,1.0,AF-FYB
+Afghanistan,Balchirāgh [Bilchiragh],Fāryāb,,,58989,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی بلچراغ,,,,,,,,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,NONE,0.0,AF-FYB
+Afghanistan,Khwājah Sabz Pōsh Walī [Khwaja Sabz Posh],Fāryāb,,,57395,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی خواجه سبزپوش ولی,,,,,,,,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,NONE,0.0,AF-FYB
+Afghanistan,Dowlat Ābād [Dawlat Abad],Fāryāb,,,55186,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی دولت‌آباد,,,,,,,,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,NONE,0.0,AF-FYB
+Afghanistan,Qurghān,Fāryāb,,,53277,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی قرغان,,,,county,2,AF-FYB,ولسوالی قرغان,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,HIGH,1.0,AF-FYB
+Afghanistan,Andkhōy,Fāryāb,,,46789,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,اندخوی,,,,county,2,AF-FYB,اندخوی,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,HIGH,1.0,AF-FYB
+Afghanistan,Khān-e Chahārbāgh [Khani Chahar Bagh],Fāryāb,,,26173,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی خان چارباغ,,,,,,,,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,NONE,0.0,AF-FYB
+Afghanistan,Qaram Qol,Fāryāb,,,22187,District,,,#N/A,,FāryābAfghanistan,county,2,AF-FYB,ولسوالی قرم‌قل,,,,,,,,,,,,region,1,AF-FYB,ولایت فاریاب / فاریاب ولایتی,NONE,0.0,AF-FYB
+Afghanistan,Jaghūrī [Jaghori],Ghaznī,,,199553,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولایت جاغوری,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Ghaznī,Ghaznī,,,186706,Capital District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی غزنی,,,,county,2,AF-GHA,ولسوالی غزنی,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Qarah Bāgh [Qarabagh],Ghaznī,,,161424,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,قره باغ ولسوالۍ,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Andar,Ghaznī,,,140963,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,اندړ ولسوالۍ,,,,county,2,AF-GHA,اندړ ولسوالۍ,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Nāwur,Ghaznī,,,106952,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی ناور,,,,county,2,AF-GHA,ولسوالی ناور,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Malistān [Malestan],Ghaznī,,,92736,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی مالستان,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Gīlān [Gelan],Ghaznī,,,65366,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,گېلان ولسوالۍ,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Muqur,Ghaznī,,,56863,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,مقر ولسوالۍ,,,,county,2,AF-GHA,مقر ولسوالۍ,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Deh Yak [Dih Yak],Ghaznī,,,55269,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی ده‌یک,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Wāghaz,Ghaznī,,,43578,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی واغز,,,,county,2,AF-GHA,ولسوالی واغز,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Gīrō,Ghaznī,,,41319,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,گېرو ولسوالۍ,,,,county,2,AF-GHA,گېرو ولسوالۍ,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Jaghatū,Ghaznī,,,35871,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی جغتو,,,,county,2,AF-GHA,ولسوالی جغتو,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Nāwah [Nawa],Ghaznī,,,33613,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ناوه ولسوالۍ,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Ajristān,Ghaznī,,,32550,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی اجرستان,,,,county,2,AF-GHA,ولسوالی اجرستان,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Āb Band,Ghaznī,,,31089,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,آب‌بند ولسوالۍ,,,,county,2,AF-GHA,آب‌بند ولسوالۍ,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Walī Muḥammad Shahīd [Khūgyanī; Khogyani],Ghaznī,,,22719,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی ولی‌محمد شهید خوگیانی,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Khwājah 'Omarī [Khwaja Umari],Ghaznī,,,21390,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,ولسوالی خواجه‌عمری,,,,,,,,,,,,region,1,AF-GHA,ولایت غزنی,NONE,0.0,AF-GHA
+Afghanistan,Rashīdān,Ghaznī,,,20328,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,رشيدان,,,,county,2,AF-GHA,رشيدان,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Zana Khān,Ghaznī,,,14215,District,,,#N/A,,GhaznīAfghanistan,county,2,AF-GHA,زنه خان ولسوالۍ,,,,county,2,AF-GHA,زنه خان ولسوالۍ,,,,,region,1,AF-GHA,ولایت غزنی,HIGH,1.0,AF-GHA
+Afghanistan,Chaghcharān,Ghōr,,,132537,Capital District,,,#N/A,,GhōrAfghanistan,,,,,,,,,,,,,,,,region,1,AF-GHO,غور,NONE,0.0,AF-GHO
+Afghanistan,La'l wa Sarjangal,Ghōr,,,126615,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی لعل و سر جنگل,,,,,,,,,,,,region,1,AF-GHO,غور,NONE,0.0,AF-GHO
+Afghanistan,Pasāband,Ghōr,,,107217,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی پسابند,,,,county,2,AF-GHO,ولسوالی پسابند,,,,,region,1,AF-GHO,غور,HIGH,1.0,AF-GHO
+Afghanistan,Taywarah [Taywara],Ghōr,,,103364,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی تیوره,,,,,,,,,,,,region,1,AF-GHO,غور,NONE,0.0,AF-GHO
+Afghanistan,Shahrak,Ghōr,,,67625,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی شهرک,,,,county,2,AF-GHO,ولسوالی شهرک,,,,,region,1,AF-GHO,غور,HIGH,1.0,AF-GHO
+Afghanistan,Tūlak,Ghōr,,,58192,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی تولک,,,,county,2,AF-GHO,ولسوالی تولک,,,,,region,1,AF-GHO,غور,HIGH,1.0,AF-GHO
+Afghanistan,Dūlaīnah [Du Layna],Ghōr,,,40788,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی دولینه,,,,,,,,,,,,region,1,AF-GHO,غور,NONE,0.0,AF-GHO
+Afghanistan,Sāghar,Ghōr,,,39193,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی ساغر,,,,county,2,AF-GHO,ولسوالی ساغر,,,,,region,1,AF-GHO,غور,HIGH,1.0,AF-GHO
+Afghanistan,Dowlat Yār [Dawlat Yar],Ghōr,,,36934,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی دولت‌یار,,,,,,,,,,,,region,1,AF-GHO,غور,NONE,0.0,AF-GHO
+Afghanistan,Chārsadah [Charsadda],Ghōr,,,30956,District,,,#N/A,,GhōrAfghanistan,county,2,AF-GHO,ولسوالی چارسده,,,,,,,,,,,,region,1,AF-GHO,غور,NONE,0.0,AF-GHO
+Afghanistan,Marghāb,Ghōr,,,21051,District,,,#N/A,,GhōrAfghanistan,,,,,,,,,,,,,,,,region,1,AF-GHO,غور,NONE,0.0,AF-GHO
+Afghanistan,Lashkargāh,Helmand,,,194473,Capital District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,لښکرگاه ولسوالۍ,,,,county,2,AF-HEL,لښکرگاه ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Nād 'Alī,Helmand,,,186929,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,نادعلي ولسوالۍ,,,,,,,,,,,,region,1,AF-HEL,هلمند ولايت,NONE,0.0,AF-HEL
+Afghanistan,Nahr-e Sarāj [Gereshk; Grishk],Helmand,,,174820,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,نهر سراج ولسوالۍ,,,,,,,,,,,,region,1,AF-HEL,هلمند ولايت,NONE,0.0,AF-HEL
+Afghanistan,Mūsá Qal'ah [Musa Qala],Helmand,,,121749,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,موسی کلا ولسوالۍ,,,,,,,,,,,,region,1,AF-HEL,هلمند ولايت,NONE,0.0,AF-HEL
+Afghanistan,Garmsīr,Helmand,,,119237,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,گرمسېر ولسوالۍ,,,,county,2,AF-HEL,گرمسېر ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Kajakī,Helmand,,,116827,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,کجکي ولسوالۍ,,,,county,2,AF-HEL,کجکي ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Nāwah-ye Bārakzā'yī [Nawa-i-Barakzayi],Helmand,,,111259,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,نوی بارکزی ولسوالۍ,,,,,,,,,,,,region,1,AF-HEL,هلمند ولايت,NONE,0.0,AF-HEL
+Afghanistan,Bāghrān,Helmand,,,110683,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,باغران ولسوالۍ,,,,county,2,AF-HEL,باغران ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Nawzād,Helmand,,,97824,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,نوزاد ولسوالۍ,,,,county,2,AF-HEL,نوزاد ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Sangīn,Helmand,,,77353,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,سنگين ولسوالۍ,,,,county,2,AF-HEL,سنگين ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Mārjah [Marja; ← Nād 'Alī],Helmand,,,30425,Temporary District,,,#N/A,,HelmandAfghanistan,,,,,,,,,,,,,,,,region,1,AF-HEL,هلمند ولايت,NONE,0.0,AF-HEL
+Afghanistan,Dīshū,Helmand,,,30296,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,دېشو ولسوالۍ,,,,county,2,AF-HEL,دېشو ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Wāshīr,Helmand,,,28945,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,واشېر ولسوالۍ,,,,county,2,AF-HEL,واشېر ولسوالۍ,,,,,region,1,AF-HEL,هلمند ولايت,HIGH,1.0,AF-HEL
+Afghanistan,Rēg-e Khān Neshīn [Khanashin],Helmand,,,26348,District,,,#N/A,,HelmandAfghanistan,county,2,AF-HEL,خانېشين ولسوالۍ,,,,,,,,,,,,region,1,AF-HEL,هلمند ولايت,NONE,0.0,AF-HEL
+Afghanistan,Nāwah Mīsh [Nawamish; ← Bāghrān],Helmand,,,19062,Temporary District,,,#N/A,,HelmandAfghanistan,,,,,,,,,,,,,,,,region,1,AF-HEL,هلمند ولايت,NONE,0.0,AF-HEL
+Afghanistan,Herāt [Herat],Herāt,,,574276,Capital District,Herat,,Herat,,HerātAfghanistan,county,2,AF-HER,هرات,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Injīl,Herāt,,,276479,District,Herat,,Herat,,HerātAfghanistan,county,2,AF-HER,ولسوالی انجیل,,,,county,2,AF-HER,ولسوالی انجیل,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Guzarah [Neẓām-e Shahīd; Guzara],Herāt,,,165940,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی گذره,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Kushk [Robāṭ-e Sangī],Herāt,,,141585,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی کوشک,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Pashtūn Zarghūn,Herāt,,,113329,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی پشتون‌ زرغون,,,,county,2,AF-HER,ولسوالی پشتون‌ زرغون,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Gulrān,Herāt,,,106420,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی گلران,,,,county,2,AF-HER,ولسوالی گلران,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Ghōrīān [Ghurian],Herāt,,,101878,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی غوریان,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Obeh [Obe],Herāt,,,85836,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی اوبه,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Karukh,Herāt,,,72530,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی کرخ,,,,county,2,AF-HER,ولسوالی کرخ,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Zindah Jān [Zendeh Jan],Herāt,,,64569,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی زنده‌جان,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Kohsān,Herāt,,,61513,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی کهسان,,,,county,2,AF-HER,ولسوالی کهسان,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Adraskan,Herāt,,,60716,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی ادرسکن,,,,county,2,AF-HER,ولسوالی ادرسکن,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Zīrkūh [Zerko; ← Shīndand],Herāt,,,53720,Temporary District,,,#N/A,,HerātAfghanistan,,,,,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Zāwol [← Shīndand],Herāt,,,51698,Temporary District,,,#N/A,,HerātAfghanistan,,,,,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Kushk-e Kuhnah [Kushki Kuhna],Herāt,,,51682,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی کشک کهنه,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Shīndand,Herāt,,,48144,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی شیندند,,,,county,2,AF-HER,ولسوالی شیندند,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Pusht Kōh [Pushtko; ← Shīndand],Herāt,,,35801,Temporary District,,,#N/A,,HerātAfghanistan,,,,,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Farsī,Herāt,,,34676,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی فارسی,,,,county,2,AF-HER,ولسوالی فارسی,,,,,region,1,AF-HER,ولایت هرات,HIGH,1.0,AF-HER
+Afghanistan,Shahristān Chisht-e Sharīf [Chishti Sharif],Herāt,,,26838,District,,,#N/A,,HerātAfghanistan,county,2,AF-HER,ولسوالی چشت شریف,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Kōh-e Zūre [Koh-e Zore; ← Shīndand],Herāt,,,13032,Temporary District,,,#N/A,,HerātAfghanistan,,,,,,,,,,,,,,,,region,1,AF-HER,ولایت هرات,NONE,0.0,AF-HER
+Afghanistan,Sheberghān [Shibirghan],Jowzjān,,,192724,Capital District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی شبرغان,,,,,,,,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,NONE,0.0,AF-JOW
+Afghanistan,Āqchah [Aqcha],Jowzjān,,,87265,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی آقچه / آقچه اولسوالیگی,,,,,,,,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,NONE,0.0,AF-JOW
+Afghanistan,Darzāb,Jowzjān,,,55635,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی درزاب,,,,county,2,AF-JOW,ولسوالی درزاب,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,HIGH,1.0,AF-JOW
+Afghanistan,Mingajik,Jowzjān,,,48493,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی منگجک,,,,county,2,AF-JOW,ولسوالی منگجک,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,HIGH,1.0,AF-JOW
+Afghanistan,Fayzābād,Jowzjān,,,47032,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی فیض‌آباد,,,,county,2,AF-JOW,ولسوالی فیض‌آباد,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,HIGH,1.0,AF-JOW
+Afghanistan,Mardīān [Mardyan],Jowzjān,,,43577,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی مردیان,,,,,,,,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,NONE,0.0,AF-JOW
+Afghanistan,Khwājah Dū Kōh [Khwaja Du Koh],Jowzjān,,,30424,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی خواجه دوکوه,,,,,,,,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,NONE,0.0,AF-JOW
+Afghanistan,Qarqīn,Jowzjān,,,28243,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی قرقین,,,,county,2,AF-JOW,ولسوالی قرقین,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,HIGH,1.0,AF-JOW
+Afghanistan,Qūsh Tepah [Qush Tepa],Jowzjān,,,26572,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی قوش‌تپ,,,,,,,,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,NONE,0.0,AF-JOW
+Afghanistan,Khānaqāh [Khaniqa],Jowzjān,,,26306,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی خانقاه,,,,,,,,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,NONE,0.0,AF-JOW
+Afghanistan,Khamyāb,Jowzjān,,,15811,District,,,#N/A,,JowzjānAfghanistan,county,2,AF-JOW,ولسوالی خم‌آب,,,,,,,,,,,,region,1,AF-JOW,ولایت جوزجان / جوزجان ولایتی,NONE,0.0,AF-JOW
+Afghanistan,Kābul,Kābul,,,4434550,Capital District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,کابل ښاروالۍ,,,,county,2,AF-KAB,کابل ښاروالۍ,,,,,region,1,AF-KAB,ولایت كابل,HIGH,1.0,AF-KAB
+Afghanistan,Paghmān,Kābul,,,138507,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی پغمان,,,,county,2,AF-KAB,ولسوالی پغمان,,,,,region,1,AF-KAB,ولایت كابل,HIGH,1.0,AF-KAB
+Afghanistan,Shakardarah [Shakardara],Kābul,,,93001,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی شکردره,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Qarah Bāgh [Qarabagh],Kābul,,,86358,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی قره‌باغ,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Bagrāmī,Kābul,,,62709,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی بگرامی,,,,county,2,AF-KAB,ولسوالی بگرامی,,,,,region,1,AF-KAB,ولایت كابل,HIGH,1.0,AF-KAB
+Afghanistan,Deh-e Sabz [Deh Sabz],Kābul,,,61115,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی ده‌سبز,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Mīr Bachah Kōt [Mir Bacha Kot],Kābul,,,59122,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی میربچه‌کوت,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Chahār Āsīāb [Char Asiab],Kābul,,,41452,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی چهارآسیاب,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Istālif,Kābul,,,37998,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی استالف,,,,county,2,AF-KAB,ولسوالی استالف,,,,,region,1,AF-KAB,ولایت كابل,HIGH,1.0,AF-KAB
+Afghanistan,Kalakān,Kābul,,,34278,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی کلکان,,,,county,2,AF-KAB,ولسوالی کلکان,,,,,region,1,AF-KAB,ولایت كابل,HIGH,1.0,AF-KAB
+Afghanistan,Mūsahī [Mussahi],Kābul,,,26439,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی موسهی,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Guldarah [Guldara],Kābul,,,25907,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی گلدره,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Farzah [Farza],Kābul,,,24313,District,Kabul,,Kabul,,KābulAfghanistan,county,2,AF-KAB,ولسوالی فرزه,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Surōbī [Surobi (Kabul)],Kābul,,,62709,District,,,#N/A,,KābulAfghanistan,county,2,AF-KAB,سروبي ولسوالۍ,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Khāk-e Jabār [Khaki Jabbar],Kābul,,,16209,District,,,#N/A,,KābulAfghanistan,county,2,AF-KAB,خاکجبار ولسوالۍ,,,,,,,,,,,,region,1,AF-KAB,ولایت كابل,NONE,0.0,AF-KAB
+Afghanistan,Kandahār,Kandahār,,,632601,Capital District,Kandahar,,Kandahar,,KandahārAfghanistan,county,2,AF-KAN,کندهار ولسوالۍ,,,,county,2,AF-KAN,کندهار ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Spīn Bōldak,Kandahār,,,113727,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,سپين بولدک ولسوالۍ,,,,county,2,AF-KAN,سپين بولدک ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Panjwā'yī,Kandahār,,,98448,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,پنجوايي ولسوالۍ,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Zharay [Zhari],Kandahār,,,96987,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,ژړۍ ولسوالۍ,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Arghandāb,Kandahār,,,70016,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,ارغنداب,,,,county,2,AF-KAN,ارغنداب,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Maywand,Kandahār,,,66297,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,ميوند ولسوالۍ,,,,county,2,AF-KAN,ميوند ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Dand [← Kandahār],Kandahār,,,50752,Temporary District,,,#N/A,,KandahārAfghanistan,,,,,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Shāh Walī Kōt,Kandahār,,,49025,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,شاه ولي کوټ ولسوالۍ,,,,county,2,AF-KAN,شاه ولي کوټ ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Dāmān,Kandahār,,,39193,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,دامان ولسوالۍ,,,,county,2,AF-KAN,دامان ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Arghistān,Kandahār,,,38928,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,ارغسان ولسوالۍ,,,,county,2,AF-KAN,ارغسان ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Ma'rūf,Kandahār,,,37333,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,معروف ولسوالۍ,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Khākrēz,Kandahār,,,25774,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,خاکرېز ولسوالۍ,,,,county,2,AF-KAN,خاکرېز ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Miyāneshīn [Miyanishin],Kandahār,,,17006,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,ميه نشين ولسوالۍ,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Nēsh,Kandahār,,,15146,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,نېش ولسوالۍ,,,,county,2,AF-KAN,نېش ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Takhtah Pul [← Spīn Bōldak],Kandahār,,,14349,Temporary District,,,#N/A,,KandahārAfghanistan,,,,,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Shōrābak,Kandahār,,,13020,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,ښوراوک ولسوالۍ,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Ghōrak,Kandahār,,,10895,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,غورک ولسوالۍ,,,,county,2,AF-KAN,غورک ولسوالۍ,,,,,region,1,AF-KAN,کندهار ولايت,HIGH,1.0,AF-KAN
+Afghanistan,Rēg [Shigah],Kandahār,,,10097,District,,,#N/A,,KandahārAfghanistan,county,2,AF-KAN,رېګ ولسوالۍ,,,,,,,,,,,,region,1,AF-KAN,کندهار ولايت,NONE,0.0,AF-KAN
+Afghanistan,Nijrāb,Kāpīsā,,,127013,District,,,#N/A,,KāpīsāAfghanistan,county,2,AF-KAP,ولسوالی نجراب,,,,county,2,AF-KAP,ولسوالی نجراب,,,,,region,1,AF-KAP,ولایت کاپیسا,HIGH,1.0,AF-KAP
+Afghanistan,Tagāb,Kāpīsā,,,91407,District,,,#N/A,,KāpīsāAfghanistan,county,2,AF-KAP,تگاب ولسوالۍ,,,,county,2,AF-KAP,تگاب ولسوالۍ,,,,,region,1,AF-KAP,ولایت کاپیسا,HIGH,1.0,AF-KAP
+Afghanistan,Ḥiṣah-e Awal-e Kōhistān [Hesa Awal Kohistan],Kāpīsā,,,76925,District,,,#N/A,,KāpīsāAfghanistan,county,2,AF-KAP,ولسوالی حصه اول کوهستان,,,,,,,,,,,,region,1,AF-KAP,ولایت کاپیسا,NONE,0.0,AF-KAP
+Afghanistan,Maḥmūd-e Rāqī [Mahmud Raqi],Kāpīsā,,,72716,Capital District,,,#N/A,,KāpīsāAfghanistan,county,2,AF-KAP,محمد راقي ولسوالۍ,,,,,,,,,,,,region,1,AF-KAP,ولایت کاپیسا,NONE,0.0,AF-KAP
+Afghanistan,Ḥiṣah-e Duwum-e Kōhistān [Hesa Duwum Kohistan],Kāpīsā,,,50885,District,,,#N/A,,KāpīsāAfghanistan,county,2,AF-KAP,ولسوالی حصه دوم کوهستان,,,,,,,,,,,,region,1,AF-KAP,ولایت کاپیسا,NONE,0.0,AF-KAP
+Afghanistan,Alah Sāy [Alasay],Kāpīsā,,,42780,District,,,#N/A,,KāpīsāAfghanistan,county,2,AF-KAP,آلاسای ولسوالۍ,,,,,,,,,,,,region,1,AF-KAP,ولایت کاپیسا,NONE,0.0,AF-KAP
+Afghanistan,Kōh Band,Kāpīsā,,,26572,District,,,#N/A,,KāpīsāAfghanistan,county,2,AF-KAP,ولسوالی کوه‌بند,,,,county,2,AF-KAP,ولسوالی کوه‌بند,,,,,region,1,AF-KAP,ولایت کاپیسا,HIGH,1.0,AF-KAP
+Afghanistan,Khōst [Matūn],Khōst,,,156106,Capital District,Khost,,Khost,,KhōstAfghanistan,county,2,AF-KHO,خوست ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Ṣabarī [Ya'qūbī],Khōst,,,80114,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,سبري ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Tanī,Khōst,,,67360,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,تڼي ولسوالۍ,,,,county,2,AF-KHO,تڼي ولسوالۍ,,,,,region,1,AF-KHO,خوست ولايت,HIGH,1.0,AF-KHO
+Afghanistan,Mandūzaī [Ishma'īl Khail; Mandozayi],Khōst,,,63772,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,مندوزي ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Tīrayzāyī ['Alishīr],Khōst,,,50486,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,تېره زي ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Mūsá Khēl,Khōst,,,46368,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,موسی خېل ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Nādirshāh Kōt,Khōst,,,36005,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,نادرشاه کوټ ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Gurbuz,Khōst,,,29627,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,گوربز ولسوالۍ,,,,county,2,AF-KHO,گوربز ولسوالۍ,,,,,region,1,AF-KHO,خوست ولايت,HIGH,1.0,AF-KHO
+Afghanistan,Spērah [Spera],Khōst,,,27501,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,سپېره ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Jājī Maīdān [Zazi Maidan],Khōst,,,27236,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,ځاځي ميدان ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Bāk,Khōst,,,24977,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,باک ولسوالۍ,,,,county,2,AF-KHO,باک ولسوالۍ,,,,,region,1,AF-KHO,خوست ولايت,HIGH,1.0,AF-KHO
+Afghanistan,Shamul [Shamal],Khōst,,,15411,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,شمال ولسوالۍ,,,,,,,,,,,,region,1,AF-KHO,خوست ولايت,NONE,0.0,AF-KHO
+Afghanistan,Qalandar,Khōst,,,11559,District,,,#N/A,,KhōstAfghanistan,county,2,AF-KHO,قلندر ولسوالۍ,,,,county,2,AF-KHO,قلندر ولسوالۍ,,,,,region,1,AF-KHO,خوست ولايت,HIGH,1.0,AF-KHO
+Afghanistan,Darah-ye Pēch [Dara-i-Pech],Kunarhā [Kunar],,,61779,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,پېچ دره ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Chawkay,Kunarhā [Kunar],,,40389,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,څوکۍ ولسوالۍ,,,,county,2,AF-KNR,څوکۍ ولسوالۍ,,,,,region,1,AF-KNR,کونړ ولايت,HIGH,1.0,AF-KNR
+Afghanistan,Khaṣ Kunar,Kunarhā [Kunar],,,39592,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,خاص کونړ ولسوالۍ,,,,county,2,AF-KNR,خاص کونړ ولسوالۍ,,,,,region,1,AF-KNR,کونړ ولايت,HIGH,1.0,AF-KNR
+Afghanistan,Asad Ābād,Kunarhā [Kunar],,,38374,Capital District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,اسد آباد ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Nūrgal,Kunarhā [Kunar],,,35739,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,نورگل ولسوالۍ,,,,county,2,AF-KNR,نورگل ولسوالۍ,,,,,region,1,AF-KNR,کونړ ولايت,HIGH,1.0,AF-KNR
+Afghanistan,Chapah Darah [Chapa Dara],Kunarhā [Kunar],,,35074,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,چپه دره ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Narang [Narang Aw Badil],Kunarhā [Kunar],,,34145,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,نړنگ او باډل ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Nārī,Kunarhā [Kunar],,,31222,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,ناړۍ ولسوالۍ,,,,county,2,AF-KNR,ناړۍ ولسوالۍ,,,,,region,1,AF-KNR,کونړ ولايت,HIGH,1.0,AF-KNR
+Afghanistan,Watahpūr [Watapur],Kunarhā [Kunar],,,30956,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,وټه پور ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Sirkānay,Kunarhā [Kunar],,,30823,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,سرکاڼو ولسوالۍ,,,,county,2,AF-KNR,سرکاڼو ولسوالۍ,,,,,region,1,AF-KNR,کونړ ولايت,HIGH,1.0,AF-KNR
+Afghanistan,Barkunar,Kunarhā [Kunar],,,24844,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,بر کونړ ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Marawarah [Marawara],Kunarhā [Kunar],,,23118,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,مروره ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Ghāzī Ābād,Kunarhā [Kunar],,,21124,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,غازي آباد ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Sheltan [← Shīgal wa Sheltan],Kunarhā [Kunar],,,19497,Temporary District,,,#N/A,,Kunarhā [Kunar]Afghanistan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Dāngām,Kunarhā [Kunar],,,19132,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,دانگام ولسوالۍ,,,,county,2,AF-KNR,دانگام ولسوالۍ,,,,,region,1,AF-KNR,کونړ ولايت,HIGH,1.0,AF-KNR
+Afghanistan,Shīgal [← Shīgal wa Sheltan],Kunarhā [Kunar],,,13585,District,,,#N/A,,Kunarhā [Kunar]Afghanistan,county,2,AF-KNR,شيگل او ېلتن ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Kunduz,Kunduz,,,365529,Capital District,Kunduz,,Kunduz,,KunduzAfghanistan,county,2,AF-KDZ,ولسوالی قندوز,,,,region,1,AF-KDZ,کندوز ولایت,,,,,region,1,AF-KDZ,کندوز ولایت,HIGH,1.0,AF-KDZ
+Afghanistan,Ḥazrat-e Imām Ṣāḥib [Imam Sahib],Kunduz,,,228583,District,,,#N/A,,KunduzAfghanistan,county,2,AF-KDZ,ولسوالی امام‌صاحب,,,,,,,,,,,,region,1,AF-KDZ,کندوز ولایت,NONE,0.0,AF-KDZ
+Afghanistan,Khān Ābād,Kunduz,,,156489,District,,,#N/A,,KunduzAfghanistan,county,2,AF-KDZ,خان آباد ولسوالۍ,,,,county,2,AF-KDZ,خان آباد ولسوالۍ,,,,,region,1,AF-KDZ,کندوز ولایت,HIGH,1.0,AF-KDZ
+Afghanistan,Archī,Kunduz,,,95903,District,,,#N/A,,KunduzAfghanistan,county,2,AF-KDZ,ارچي ولسوالۍ,,,,county,2,AF-KDZ,ارچي ولسوالۍ,,,,,region,1,AF-KDZ,کندوز ولایت,HIGH,1.0,AF-KDZ
+Afghanistan,Chahār Darah [Char Dara],Kunduz,,,83037,District,,,#N/A,,KunduzAfghanistan,county,2,AF-KDZ,چاردره ولسوالۍ,,,,,,,,,,,,region,1,AF-KDZ,کندوز ولایت,NONE,0.0,AF-KDZ
+Afghanistan,Qal'ah-ye Zāl [Qalay-i-Zal],Kunduz,,,79612,District,,,#N/A,,KunduzAfghanistan,county,2,AF-KDZ,ولسوالی قلعه ذال,,,,,,,,,,,,region,1,AF-KDZ,کندوز ولایت,NONE,0.0,AF-KDZ
+Afghanistan,'Ali Ābād,Kunduz,,,53276,District,,,#N/A,,KunduzAfghanistan,county,2,AF-KDZ,ولسوالی علی‌آباد,,,,county,2,AF-KDZ,ولسوالی علی‌آباد,,,,,region,1,AF-KDZ,کندوز ولایت,HIGH,1.0,AF-KDZ
+Afghanistan,Kalbād [Calbad; ← Ḥazrat-e Imām Ṣāḥib],Kunduz,,,35972,Temporary District,,,#N/A,,KunduzAfghanistan,,,,,,,,,,,,,,,,region,1,AF-KDZ,کندوز ولایت,NONE,0.0,AF-KDZ
+Afghanistan,Aqtāsh [← Khān Ābād],Kunduz,,,27573,Temporary District,,,#N/A,,KunduzAfghanistan,,,,,,,,,,,,,,,,region,1,AF-KDZ,کندوز ولایت,NONE,0.0,AF-KDZ
+Afghanistan,Gultīpah [Gultipa; ← Kunduz],Kunduz,,,10703,Temporary District,,,#N/A,,KunduzAfghanistan,,,,,,,,,,,,,,,,region,1,AF-KDZ,کندوز ولایت,NONE,0.0,AF-KDZ
+Afghanistan,Mehtarlām [Mihtarlam],Laghmān,,,146727,Capital District,,,#N/A,,LaghmānAfghanistan,county,2,AF-LAG,مهترلام ولسوالۍ,,,,,,,,,,,,region,1,AF-LAG,لغمان ولايت,NONE,0.0,AF-LAG
+Afghanistan,Qarghah'ī [Qarghayi],Laghmān,,,110804,District,,,#N/A,,LaghmānAfghanistan,county,2,AF-LAG,قرغيو ولسوالۍ,,,,,,,,,,,,region,1,AF-LAG,لغمان ولايت,NONE,0.0,AF-LAG
+Afghanistan,'Alīngār,Laghmān,,,109343,District,,,#N/A,,LaghmānAfghanistan,county,2,AF-LAG,الينگار ولسوالۍ,,,,county,2,AF-LAG,الينگار ولسوالۍ,,,,,region,1,AF-LAG,لغمان ولايت,HIGH,1.0,AF-LAG
+Afghanistan,'Alīsheng [Alishing],Laghmān,,,80645,District,,,#N/A,,LaghmānAfghanistan,county,2,AF-LAG,اليشنگ ولسوالۍ,,,,,,,,,,,,region,1,AF-LAG,لغمان ولايت,NONE,0.0,AF-LAG
+Afghanistan,Dowlat Shāh [Dawlat Shah],Laghmān,,,37599,District,,,#N/A,,LaghmānAfghanistan,county,2,AF-LAG,دولتشاه ولسوالۍ,,,,,,,,,,,,region,1,AF-LAG,لغمان ولايت,NONE,0.0,AF-LAG
+Afghanistan,Bādpash [← Mehtarlām],Laghmān,,,8370,Temporary District,,,#N/A,,LaghmānAfghanistan,,,,,,,,,,,,,,,,region,1,AF-LAG,لغمان ولايت,NONE,0.0,AF-LAG
+Afghanistan,Pul-e 'Alam [Puli Alam],Lōgar [Logar],,,119800,Capital District,,,#N/A,,Lōgar [Logar]Afghanistan,county,2,AF-LOG,پل علم ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Barakī Barak,Lōgar [Logar],,,99210,District,,,#N/A,,Lōgar [Logar]Afghanistan,county,2,AF-LOG,برکي برک ولسوالۍ,,,,county,2,AF-LOG,برکي برک ولسوالۍ,,,,,region,1,AF-LOG,لوگر ولايت,HIGH,1.0,AF-LOG
+Afghanistan,Muḥammad Āghah [Mohammad Agha],Lōgar [Logar],,,85295,District,,,#N/A,,Lōgar [Logar]Afghanistan,county,2,AF-LOG,محمد آغې ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Charkh,Lōgar [Logar],,,50220,District,,,#N/A,,Lōgar [Logar]Afghanistan,county,2,AF-LOG,څرخ ولسوالۍ,,,,county,2,AF-LOG,څرخ ولسوالۍ,,,,,region,1,AF-LOG,لوگر ولايت,HIGH,1.0,AF-LOG
+Afghanistan,Kharwār,Lōgar [Logar],,,29628,District,,,#N/A,,Lōgar [Logar]Afghanistan,county,2,AF-LOG,خروار ولسوالۍ,,,,county,2,AF-LOG,خروار ولسوالۍ,,,,,region,1,AF-LOG,لوگر ولايت,HIGH,1.0,AF-LOG
+Afghanistan,Khōshī,Lōgar [Logar],,,27236,District,,,#N/A,,Lōgar [Logar]Afghanistan,county,2,AF-LOG,خوښی ولسوالۍ,,,,county,2,AF-LOG,خوښی ولسوالۍ,,,,,region,1,AF-LOG,لوگر ولايت,HIGH,1.0,AF-LOG
+Afghanistan,Azrah [Azra],Lōgar [Logar],,,22985,District,,,#N/A,,Lōgar [Logar]Afghanistan,county,2,AF-LOG,ازره ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Jalālābād [Jalalabad],Nangarhār,,,271867,Capital District,Jalalabad,,Jalalabad,,NangarhārAfghanistan,county,2,AF-NAN,جلال اباد,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Khūgyānī [Khogyani],Nangarhār,,,147745,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,خوگياڼي ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Surkh Rōd,Nangarhār,,,136180,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,سره رود ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Bihsūd,Nangarhār,,,128474,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,بهسود ولسوالۍ,,,,county,2,AF-NAN,بهسود ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Kāmah [Kama],Nangarhār,,,86890,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,کامې ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Batī Kōt,Nangarhār,,,85562,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,بټي کوټ ولسوالۍ,,,,county,2,AF-NAN,بټي کوټ ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Rōdāt,Nangarhār,,,78121,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,رودات ولسوالۍ,,,,county,2,AF-NAN,رودات ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Shīrzād [Sherzad],Nangarhār,,,74932,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,شېرزاد ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Chaparhār,Nangarhār,,,68156,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,چپرهار ولسوالۍ,,,,county,2,AF-NAN,چپرهار ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Shīnwār,Nangarhār,,,67758,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,شينوار ولسوالۍ,,,,county,2,AF-NAN,شينوار ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Kūz Kunar,Nangarhār,,,62178,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,ضلع کوز کنڑ,,,,county,2,AF-NAN,ضلع کوز کنڑ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Spīn Ghar [← Mehtarlām],Nangarhār,,,59329,Temporary District,,,#N/A,,NangarhārAfghanistan,,,,,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Kōt,Nangarhār,,,58857,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,کوټ ولسوالۍ,,,,county,2,AF-NAN,کوټ ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Achīn,Nangarhār,,,53999,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,اچين ولسوالۍ,,,,county,2,AF-NAN,اچين ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Mohmand Darah [Momand Dara],Nangarhār,,,50752,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,مومند دره ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Pachīr wa Āgām [Pachir Aw Agam],Nangarhār,,,48095,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,پچير او آگام ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Darah-ye Nūr [Darai Nur],Nangarhār,,,45571,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,دره نور ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Deh Bālā [Haska Meyna],Nangarhār,,,45570,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,هسکه مېنه ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Ḥeṣārak,Nangarhār,,,34809,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,حصارک ولسوالۍ,,,,county,2,AF-NAN,حصارک ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Gōshtah [Goshta],Nangarhār,,,30823,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,گوشته ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Durbābā,Nangarhār,,,26306,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,دور بابا ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,La'lpūr,Nangarhār,,,23117,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,لالپوره ولسوالۍ,,,,,,,,,,,,region,1,AF-NAN,ننگرهار ولايت,NONE,0.0,AF-NAN
+Afghanistan,Nāzyān,Nangarhār,,,16607,District,,,#N/A,,NangarhārAfghanistan,county,2,AF-NAN,نازيان ولسوالۍ,,,,county,2,AF-NAN,نازيان ولسوالۍ,,,,,region,1,AF-NAN,ننگرهار ولايت,HIGH,1.0,AF-NAN
+Afghanistan,Zaranj,Nīmrōz [Nimruz],,,65310,Capital District,,,#N/A,,Nīmrōz [Nimruz]Afghanistan,county,2,AF-NIM,ولسوالی زرنج,,,,county,2,AF-NIM,ولسوالی زرنج,,,,,region,1,AF-NIM,ولایت نیمروز,HIGH,1.0,AF-NIM
+Afghanistan,Chahār Burjak,Nīmrōz [Nimruz],,,29893,District,,,#N/A,,Nīmrōz [Nimruz]Afghanistan,county,2,AF-NIM,ولسوالی چاربورجک,,,,county,2,AF-NIM,ولسوالی چاربورجک,,,,,region,1,AF-NIM,ولایت نیمروز,HIGH,1.0,AF-NIM
+Afghanistan,Khāsh Rōd,Nīmrōz [Nimruz],,,28698,District,,,#N/A,,Nīmrōz [Nimruz]Afghanistan,county,2,AF-NIM,ولسوالی خاش رود,,,,county,2,AF-NIM,ولسوالی خاش رود,,,,,region,1,AF-NIM,ولایت نیمروز,HIGH,1.0,AF-NIM
+Afghanistan,Chakhānsūr,Nīmrōz [Nimruz],,,26837,District,,,#N/A,,Nīmrōz [Nimruz]Afghanistan,county,2,AF-NIM,ولسوالی چخانسور,,,,county,2,AF-NIM,ولسوالی چخانسور,,,,,region,1,AF-NIM,ولایت نیمروز,HIGH,1.0,AF-NIM
+Afghanistan,Kang,Nīmrōz [Nimruz],,,25376,District,,,#N/A,,Nīmrōz [Nimruz]Afghanistan,county,2,AF-NIM,ولسوالی کنگ,,,,county,2,AF-NIM,ولسوالی کنگ,,,,,region,1,AF-NIM,ولایت نیمروز,HIGH,1.0,AF-NIM
+Afghanistan,Dulārām [← Khāsh Rōd],Nīmrōz [Nimruz],,,7440,Temporary District,,,#N/A,,Nīmrōz [Nimruz]Afghanistan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Nūrgarām,Nūristān,,,36536,District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,نورگرام ولسوالۍ,,,,county,2,AF-NUR,نورگرام ولسوالۍ,,,,,region,1,AF-NUR,نورستان ولایت,HIGH,1.0,AF-NUR
+Afghanistan,Kāmdēsh,Nūristān,,,28564,District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,کامدېش ولسوالۍ,,,,county,2,AF-NUR,کامدېش ولسوالۍ,,,,,region,1,AF-NUR,نورستان ولایت,HIGH,1.0,AF-NUR
+Afghanistan,Mandōl,Nūristān,,,22320,District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,مندول ولسوالۍ,,,,county,2,AF-NUR,مندول ولسوالۍ,,,,,region,1,AF-NUR,نورستان ولایت,HIGH,1.0,AF-NUR
+Afghanistan,Wāygal,Nūristān,,,22187,District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,وایگل ولسوالۍ,,,,county,2,AF-NUR,وایگل ولسوالۍ,,,,,region,1,AF-NUR,نورستان ولایت,HIGH,1.0,AF-NUR
+Afghanistan,Barg-e Matāl [Barg-i-Matal],Nūristān,,,17537,District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,برگمټال ولسوالۍ,,,,,,,,,,,,region,1,AF-NUR,نورستان ولایت,NONE,0.0,AF-NUR
+Afghanistan,Pārūn,Nūristān,,,15279,Capital District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,پارون ولسوالۍ,,,,county,2,AF-NUR,پارون ولسوالۍ,,,,,region,1,AF-NUR,نورستان ولایت,HIGH,1.0,AF-NUR
+Afghanistan,Wāmā,Nūristān,,,12489,District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,واما ولسوالۍ,,,,county,2,AF-NUR,واما ولسوالۍ,,,,,region,1,AF-NUR,نورستان ولایت,HIGH,1.0,AF-NUR
+Afghanistan,Dū'āb,Nūristān,,,8902,District,,,#N/A,,NūristānAfghanistan,county,2,AF-NUR,دو آب ولسوالۍ,,,,,,,,,,,,region,1,AF-NUR,نورستان ولایت,NONE,0.0,AF-NUR
+Afghanistan,Orgūn [Urgun],Paktīkā,,,90549,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,ورگون ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Barmal,Paktīkā,,,77006,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,برمل ولسوالۍ,,,,county,2,AF-PKA,برمل ولسوالۍ,,,,,region,1,AF-PKA,پکتيکا ولايت,HIGH,1.0,AF-PKA
+Afghanistan,Sharan [Sharana],Paktīkā,,,64774,Capital District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,ښرنه ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Dīlah wa Khūshāmand [Dila],Paktīkā,,,47848,District,,,#N/A,,PaktīkāAfghanistan,,,,,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Giyān [Gayan],Paktīkā,,,47800,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,گيان ولسوالی,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Wāzah Khwāh [Wazakhwa],Paktīkā,,,46647,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,وازه خوا ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Gōmal,Paktīkā,,,46586,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,گومل,,,,county,2,AF-PKA,گومل,,,,,region,1,AF-PKA,پکتيکا ولايت,HIGH,1.0,AF-PKA
+Afghanistan,Zarghūn Shahr [Khairkot],Paktīkā,,,42044,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,رغون ښار ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Zīrūk [Zerok],Paktīkā,,,39415,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,زېروک ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Surōbī [Surobi (Paktika)],Paktīkā,,,38855,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,سروبي ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Sar Rawzah [Sar Ḥawzah; Sar Hawza],Paktīkā,,,37053,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,سرحوزه ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Jānī Khēl [Janikhel (Paktika)],Paktīkā,,,36873,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,جاني خېل ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Yaḥyya Khēl [Yahyakhel],Paktīkā,,,29771,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,يحيی خېل,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Yōsuf Khēl [Yusufkhel],Paktīkā,,,29193,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,يوسف خېل ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Mutā Khān [Mata Khan],Paktīkā,,,27189,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,مټه خان ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Omnah [Omna],Paktīkā,,,23811,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,اومنه ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Wor Mamay,Paktīkā,,,21777,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,ورمامی ولسوالۍ,,,,county,2,AF-PKA,ورمامی ولسوالۍ,,,,,region,1,AF-PKA,پکتيکا ولايت,HIGH,1.0,AF-PKA
+Afghanistan,Nīkeh [Nika],Paktīkā,,,17041,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,نېکه ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Terwō [Terwa],Paktīkā,,,11266,District,,,#N/A,,PaktīkāAfghanistan,county,2,AF-PKA,تېروه ولسوالۍ,,,,,,,,,,,,region,1,AF-PKA,پکتيکا ولايت,NONE,0.0,AF-PKA
+Afghanistan,Zurmat,Paktiyā [Paktia],,,98547,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,زرمت ولسوالۍ,,,,county,2,AF-PIA,زرمت ولسوالۍ,,,,,region,1,AF-PIA,پکتيا ولايت,HIGH,1.0,AF-PIA
+Afghanistan,Gardēz,Paktiyā [Paktia],,,95663,Capital District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,گردېز ولسوالۍ,,,,county,2,AF-PIA,گردېز ولسوالۍ,,,,,region,1,AF-PIA,پکتيا ولايت,HIGH,1.0,AF-PIA
+Afghanistan,Jājī [Zazi],Paktiyā [Paktia],,,71212,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,ځاځي ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Sayed Karam [Said Karam],Paktiyā [Paktia],,,62975,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,سیدکرم,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Chamkanī [Tsamkani],Paktiyā [Paktia],,,56465,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,څمکنۍ ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Jānī Khēl [Janikhel (Paktia)],Paktiyā [Paktia],,,39459,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,جانيخېل ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Aḥmad'ābād [Ahmad Aba],Paktiyā [Paktia],,,31488,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,احمدآباد ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Dand Patān [Dand Aw Patan],Paktiyā [Paktia],,,30027,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,ډنډ او پټان ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Zadrān,Paktiyā [Paktia],,,27480,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,ځدراڼ ولسوالۍ,,,,county,2,AF-PIA,ځدراڼ ولسوالۍ,,,,,region,1,AF-PIA,پکتيا ولايت,HIGH,1.0,AF-PIA
+Afghanistan,Lajah Aḥmad Khēl [Ahmadkhel],Paktiyā [Paktia],,,25775,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,لژه احمد خېل ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Rōḥāny Bābā [← Zurmat],Paktiyā [Paktia],,,23018,Temporary District,,,#N/A,,Paktiyā [Paktia]Afghanistan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Lajah Mangel [← Lajah Aḥmad Khēl],Paktiyā [Paktia],,,21258,Temporary District,,,#N/A,,Paktiyā [Paktia]Afghanistan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Gardah Siray [Garda Siray; ← Zadrān],Paktiyā [Paktia],,,12642,Temporary District,,,#N/A,,Paktiyā [Paktia]Afghanistan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Mīrzakah [Mirzaka; ← Sayed Karam],Paktiyā [Paktia],,,9698,Temporary District,,,#N/A,,Paktiyā [Paktia]Afghanistan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Shwāk,Paktiyā [Paktia],,,6245,District,,,#N/A,,Paktiyā [Paktia]Afghanistan,county,2,AF-PIA,شواک ولسوالۍ,,,,county,2,AF-PIA,شواک ولسوالۍ,,,,,region,1,AF-PIA,پکتيا ولايت,HIGH,1.0,AF-PIA
+Afghanistan,Ḥiṣah-e Awal [Khenj],Panjshīr,,,45172,District,,,#N/A,,PanjshīrAfghanistan,county,2,AF-PAN,ولسوالی خنج,,,,,,,,,,,,region,1,AF-PAN,ولایت پنجشیر,NONE,0.0,AF-PAN
+Afghanistan,Rūkhah [Rokha],Panjshīr,,,25908,District,,,#N/A,,PanjshīrAfghanistan,county,2,AF-PAN,ولسوالی روخه,,,,,,,,,,,,region,1,AF-PAN,ولایت پنجشیر,NONE,0.0,AF-PAN
+Afghanistan,Bāzārak,Panjshīr,,,21257,Capital District,,,#N/A,,PanjshīrAfghanistan,county,2,AF-PAN,ولسوالی بازارک,,,,county,2,AF-PAN,ولسوالی بازارک,,,,,region,1,AF-PAN,ولایت پنجشیر,HIGH,1.0,AF-PAN
+Afghanistan,'Unābah [Anaba],Panjshīr,,,20328,District,,,#N/A,,PanjshīrAfghanistan,county,2,AF-PAN,ولسوالی انابه,,,,,,,,,,,,region,1,AF-PAN,ولایت پنجشیر,NONE,0.0,AF-PAN
+Afghanistan,Parīān [Paryan],Panjshīr,,,16740,District,,,#N/A,,PanjshīrAfghanistan,county,2,AF-PAN,ولسوالی پریان,,,,,,,,,,,,region,1,AF-PAN,ولایت پنجشیر,NONE,0.0,AF-PAN
+Afghanistan,Darah,Panjshīr,,,15677,District,,,#N/A,,PanjshīrAfghanistan,county,2,AF-PAN,ولسوالی دره,,,,county,2,AF-PAN,ولسوالی دره,,,,,region,1,AF-PAN,ولایت پنجشیر,HIGH,1.0,AF-PAN
+Afghanistan,Ābshār [← Darah],Panjshīr,,,12488,Temporary District,,,#N/A,,PanjshīrAfghanistan,,,,,,,,,,,,,,,,region,1,AF-PAN,ولایت پنجشیر,NONE,0.0,AF-PAN
+Afghanistan,Shutul [Shotul],Panjshīr,,,12356,District,,,#N/A,,PanjshīrAfghanistan,county,2,AF-PAN,ولسوالی شتل,,,,,,,,,,,,region,1,AF-PAN,ولایت پنجشیر,NONE,0.0,AF-PAN
+Afghanistan,Chārīkār [Chaharikar],Parwān,,,202210,Capital District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی چاریکار,,,,,,,,,,,,region,1,AF-PAR,ولایت پروان,NONE,0.0,AF-PAR
+Afghanistan,Bagrām,Parwān,,,117181,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی بگرام,,,,county,2,AF-PAR,ولسوالی بگرام,,,,,region,1,AF-PAR,ولایت پروان,HIGH,1.0,AF-PAR
+Afghanistan,Ghōrband [Siyāh Gird],Parwān,,,109342,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی غوربند,,,,,,,,,,,,region,1,AF-PAR,ولایت پروان,NONE,0.0,AF-PAR
+Afghanistan,Jabal Sarāj,Parwān,,,72345,District,,,#N/A,,ParwānAfghanistan,,,,,,,,county,2,AF-PAR,=ولسوالی جبل‌سراج,,,,,region,1,AF-PAR,ولایت پروان,HIGH,1.0,AF-PAR
+Afghanistan,Sayed Kheyl [Sayed Khel],Parwān,,,51549,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی سیدخیل,,,,,,,,,,,,region,1,AF-PAR,ولایت پروان,NONE,0.0,AF-PAR
+Afghanistan,Shīnwārī,Parwān,,,46501,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی شینواری,,,,county,2,AF-PAR,ولسوالی شینواری,,,,,region,1,AF-PAR,ولایت پروان,HIGH,1.0,AF-PAR
+Afghanistan,Surkh-e Pārsā [Surkhi Parsa],Parwān,,,46234,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی سرخ پارسا,,,,,,,,,,,,region,1,AF-PAR,ولایت پروان,NONE,0.0,AF-PAR
+Afghanistan,Kōh-e Ṣāfī [Kohi Safi],Parwān,,,35075,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی کوه صافی,,,,,,,,,,,,region,1,AF-PAR,ولایت پروان,NONE,0.0,AF-PAR
+Afghanistan,Salang,Parwān,,,29362,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی سالنگ,,,,county,2,AF-PAR,ولسوالی سالنگ,,,,,region,1,AF-PAR,ولایت پروان,HIGH,1.0,AF-PAR
+Afghanistan,Shekh 'Alī,Parwān,,,27901,District,,,#N/A,,ParwānAfghanistan,county,2,AF-PAR,ولسوالی شیخ‌علی,,,,,,,,,,,,region,1,AF-PAR,ولایت پروان,NONE,0.0,AF-PAR
+Afghanistan,Aībak [Aybak],Samangān,,,118537,Capital District,,,#N/A,,SamangānAfghanistan,county,2,AF-SAM,ولسوالی آیبک,,,,,,,,,,,,region,1,AF-SAM,ولایت سمنگان,NONE,0.0,AF-SAM
+Afghanistan,Darah-ye Ṣūf-e Pāyīn [Darah Sof],Samangān,,,80778,District,,,#N/A,,SamangānAfghanistan,county,2,AF-SAM,ولسوالی دره‌صوف پایین,,,,,,,,,,,,region,1,AF-SAM,ولایت سمنگان,NONE,0.0,AF-SAM
+Afghanistan,Darah-ye Ṣūf-e Bālā [Dara-i-Suf],Samangān,,,73072,District,,,#N/A,,SamangānAfghanistan,,,,,,,,,,,,,,,,region,1,AF-SAM,ولایت سمنگان,NONE,0.0,AF-SAM
+Afghanistan,Rūy Dū'āb [Ruyi Du Ab],Samangān,,,51550,District,,,#N/A,,SamangānAfghanistan,county,2,AF-SAM,ولسوالی روی دوآب,,,,,,,,,,,,region,1,AF-SAM,ولایت سمنگان,NONE,0.0,AF-SAM
+Afghanistan,Ḥazrat-e Sulṭān [Hazrati Sultan],Samangān,,,46766,District,,,#N/A,,SamangānAfghanistan,county,2,AF-SAM,ولسوالی حضرت سلطان,,,,,,,,,,,,region,1,AF-SAM,ولایت سمنگان,NONE,0.0,AF-SAM
+Afghanistan,Khuram wa Sārbāgh,Samangān,,,45039,District,,,#N/A,,SamangānAfghanistan,county,2,AF-SAM,ولسوالی خرم و سارباغ,,,,county,2,AF-SAM,ولسوالی خرم و سارباغ,,,,,region,1,AF-SAM,ولایت سمنگان,HIGH,1.0,AF-SAM
+Afghanistan,Fayrōz Nakhchīr [Feroz Nakhchir],Samangān,,,14747,District,,,#N/A,,SamangānAfghanistan,county,2,AF-SAM,ولسوالی فیروزنخچیر,,,,,,,,,,,,region,1,AF-SAM,ولایت سمنگان,NONE,0.0,AF-SAM
+Afghanistan,Sar-e Pul [Sar-e Pol],Sar-e Pul [Sar-e Pol],,,176994,Capital District,,,#N/A,,Sar-e Pul [Sar-e Pol]Afghanistan,county,2,AF-SAR,ولسوالی سرپل,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Sānchārak,Sar-e Pul [Sar-e Pol],,,115050,District,,,#N/A,,Sar-e Pul [Sar-e Pol]Afghanistan,county,2,AF-SAR,ولسوالی سانچارک,,,,county,2,AF-SAR,ولسوالی سانچارک,,,,,region,1,AF-SAR,سرپل,HIGH,1.0,AF-SAR
+Afghanistan,Kōhistānāt,Sar-e Pul [Sar-e Pol],,,90477,District,,,#N/A,,Sar-e Pul [Sar-e Pol]Afghanistan,county,2,AF-SAR,ولسوالی کوهستانات,,,,county,2,AF-SAR,ولسوالی کوهستانات,,,,,region,1,AF-SAR,سرپل,HIGH,1.0,AF-SAR
+Afghanistan,Gōsfandī,Sar-e Pul [Sar-e Pol],,,64038,District,,,#N/A,,Sar-e Pul [Sar-e Pol]Afghanistan,county,2,AF-SAR,ولسوالی گوسفندی,,,,county,2,AF-SAR,ولسوالی گوسفندی,,,,,region,1,AF-SAR,سرپل,HIGH,1.0,AF-SAR
+Afghanistan,Ṣayād [Sayyad],Sar-e Pul [Sar-e Pol],,,61646,District,,,#N/A,,Sar-e Pul [Sar-e Pol]Afghanistan,county,2,AF-SAR,ولسوالی صیاد,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Balkhāb,Sar-e Pul [Sar-e Pol],,,56864,District,,,#N/A,,Sar-e Pul [Sar-e Pol]Afghanistan,county,2,AF-SAR,ولسوالی بلخاب,,,,county,2,AF-SAR,ولسوالی بلخاب,,,,,region,1,AF-SAR,سرپل,HIGH,1.0,AF-SAR
+Afghanistan,Sōzmah Qal'ah [Sozma Qala],Sar-e Pul [Sar-e Pol],,,55933,District,,,#N/A,,Sar-e Pul [Sar-e Pol]Afghanistan,county,2,AF-SAR,ولسوالی سوزمه قلعه,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Tāluqān,Takhār,,,258724,Capital District,Taluqan,,Taluqan,,TakhārAfghanistan,county,2,AF-TAK,تالقان ولسوالۍ,,,,county,2,AF-TAK,تالقان ولسوالۍ,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Rustāq,Takhār,,,186144,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی رستاق,,,,county,2,AF-TAK,ولسوالی رستاق,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Chāhāb,Takhār,,,90011,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی چاه‌آب,,,,,,,,,,,,region,1,AF-TAK,تخار ولايت,NONE,0.0,AF-TAK
+Afghanistan,Khwājah Ghār [Khwaja Ghar],Takhār,,,76132,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی خواجه غار,,,,,,,,,,,,region,1,AF-TAK,تخار ولايت,NONE,0.0,AF-TAK
+Afghanistan,Ishkmish [Ishkamish],Takhār,,,66695,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی اشکمش,,,,,,,,,,,,region,1,AF-TAK,تخار ولايت,NONE,0.0,AF-TAK
+Afghanistan,Farkhār,Takhār,,,53051,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی فرخار,,,,county,2,AF-TAK,ولسوالی فرخار,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Yangī Qal'ah [Yangi Qala],Takhār,,,50782,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ینگی قلعه ولسوالۍ,,,,,,,,,,,,region,1,AF-TAK,تخار ولايت,NONE,0.0,AF-TAK
+Afghanistan,Warsaj,Takhār,,,42914,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی ورسج,,,,county,2,AF-TAK,ولسوالی ورسج,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Kalafgān,Takhār,,,39858,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی کلفگان,,,,county,2,AF-TAK,ولسوالی کلفگان,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Bangī,Takhār,,,39725,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی بنگی,,,,county,2,AF-TAK,ولسوالی بنگی,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Dasht-e Qal'ah [Dashti Qala],Takhār,,,36137,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی دشت قلعه,,,,,,,,,,,,region,1,AF-TAK,تخار ولايت,NONE,0.0,AF-TAK
+Afghanistan,Bahārak,Takhār,,,34942,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,د بهارک ولسوالۍ,,,,county,2,AF-TAK,د بهارک ولسوالۍ,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Chāl,Takhār,,,31885,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,چال ولسوالۍ,,,,county,2,AF-TAK,چال ولسوالۍ,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Darqad,Takhār,,,30424,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی درقد,,,,county,2,AF-TAK,ولسوالی درقد,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Khwājah Bahāwuddīn [Khwaja Bahauddin],Takhār,,,26306,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی خواجه بهاالدین,,,,,,,,,,,,region,1,AF-TAK,تخار ولايت,NONE,0.0,AF-TAK
+Afghanistan,Hazār Sumūch,Takhār,,,15545,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی هزارسموچ,,,,county,2,AF-TAK,ولسوالی هزارسموچ,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Namak Āb,Takhār,,,13817,District,,,#N/A,,TakhārAfghanistan,county,2,AF-TAK,ولسوالی نمک‌آب,,,,county,2,AF-TAK,ولسوالی نمک‌آب,,,,,region,1,AF-TAK,تخار ولايت,HIGH,1.0,AF-TAK
+Afghanistan,Tarīnkōt,Urūzgān,,,116359,Capital District,Tarinkot,,Tarinkot,,UrūzgānAfghanistan,county,2,AF-URU,ترينکوټ ولسوالۍ,,,,county,2,AF-URU,ترينکوټ ولسوالۍ,,,,,region,1,AF-URU,روزگان ولايت,HIGH,1.0,AF-URU
+Afghanistan,Dehrāwūd [Deh Rawood],Urūzgān,,,69213,District,,,#N/A,,UrūzgānAfghanistan,county,2,AF-URU,دهراود ولسوالۍ,,,,,,,,,,,,region,1,AF-URU,روزگان ولايت,NONE,0.0,AF-URU
+Afghanistan,Shahīd-e Ḥasās [Shahidi Hassas],Urūzgān,,,66695,District,,,#N/A,,UrūzgānAfghanistan,county,2,AF-URU,شهيدې حساس ولسوالۍ,,,,,,,,,,,,region,1,AF-URU,روزگان ولايت,NONE,0.0,AF-URU
+Afghanistan,Khāṣ Urūzgān,Urūzgān,,,63904,District,,,#N/A,,UrūzgānAfghanistan,county,2,AF-URU,خاص روزگان ولسوالۍ,,,,county,2,AF-URU,خاص روزگان ولسوالۍ,,,,,region,1,AF-URU,روزگان ولايت,HIGH,1.0,AF-URU
+Afghanistan,Chōrah [Chora],Urūzgān,,,57794,District,,,#N/A,,UrūzgānAfghanistan,county,2,AF-URU,چوره ولسوالۍ,,,,,,,,,,,,region,1,AF-URU,روزگان ولايت,NONE,0.0,AF-URU
+Afghanistan,Gīzāb,Urūzgān,,,47632,District,,,#N/A,,UrūzgānAfghanistan,,,,,,,,,,,,,,,,region,1,AF-URU,روزگان ولايت,NONE,0.0,AF-URU
+Afghanistan,Chinārtō [← Chōrah],Urūzgān,,,14482,Temporary District,,,#N/A,,UrūzgānAfghanistan,,,,,,,,,,,,,,,,region,1,AF-URU,روزگان ولايت,NONE,0.0,AF-URU
+Afghanistan,Markaz-e Bihsūd [Markazi Bihsud],Wardak [Maīdān Wardak],,,134852,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,ولسوالی مرکز بهسود,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Sayd'ābād,Wardak [Maīdān Wardak],,,131264,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,سيد آباد ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Chak-e Wardak [Chaki Wardak],Wardak [Maīdān Wardak],,,95392,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,چک ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Nirkh,Wardak [Maīdān Wardak],,,64436,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,نرخ ولسوالۍ,,,,county,2,AF-WAR,نرخ ولسوالۍ,,,,,region,1,AF-WAR,ميدان وردگ ولايت,HIGH,1.0,AF-WAR
+Afghanistan,Jalrayz [Jalrez],Wardak [Maīdān Wardak],,,59920,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,ولسوالی جلریز,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Jaghatū [Jaghatu (Wardak)],Wardak [Maīdān Wardak],,,51682,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,جغتو ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Maīdān Shahr [Maidan Shar],Wardak [Maīdān Wardak],,,45787,Capital District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,ميدان ښار ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Hiṣah-e Awal-e Behsūd [Hesa Awal Behsood],Wardak [Maīdān Wardak],,,41850,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,ولسوالی حصه اول بهسود,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Dāymīrdād,Wardak [Maīdān Wardak],,,35075,District,,,#N/A,,Wardak [Maīdān Wardak]Afghanistan,county,2,AF-WAR,دايمرداد ولسوالۍ,,,,,,,,,,,,,,,,NONE,0.0,
+Afghanistan,Shāh Jōy,Zābul,,,79889,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,شاه جوی ولسوالۍ,,,,county,2,AF-ZAB,شاه جوی ولسوالۍ,,,,,region,1,AF-ZAB,زابل ولايت,HIGH,1.0,AF-ZAB
+Afghanistan,Qalāt,Zābul,,,44928,Capital District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,قلات ولسوالۍ,,,,county,2,AF-ZAB,قلات ولسوالۍ,,,,,region,1,AF-ZAB,زابل ولايت,HIGH,1.0,AF-ZAB
+Afghanistan,Dāy Chōpān [Dey Chopan],Zābul,,,44508,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,دای چوپان,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Arghandāb,Zābul,,,36934,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,ارغنداب ولسوالۍ,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Shamulzā'yī,Zābul,,,36515,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,شمولزی ولسوالۍ,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Shīnkaī [Shinkay],Zābul,,,31911,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,شينکی ولسوالۍ,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Kākar [Khāk-e Afghān],Zābul,,,27234,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,کاکړ ولسوالۍ,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Nowbahār [Naw Bahar],Zābul,,,24534,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,نوبهار ولسوالۍ,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Tarneg wa Jaldak [Tarnak Aw Jaldak],Zābul,,,22214,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,ترنک او جلدک ولسوالۍ,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Mīzān [Mezana],Zābul,,,21623,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,ميزان ولسوالۍ,,,,,,,,,,,,region,1,AF-ZAB,زابل ولايت,NONE,0.0,AF-ZAB
+Afghanistan,Atghar,Zābul,,,14059,District,,,#N/A,,ZābulAfghanistan,county,2,AF-ZAB,اټغار ولسوالۍ,,,,county,2,AF-ZAB,اټغار ولسوالۍ,,,,,region,1,AF-ZAB,زابل ولايت,HIGH,1.0,AF-ZAB

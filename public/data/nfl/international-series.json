@@ -1,0 +1,1430 @@
+{
+  "meta": {
+    "name": "NFL International Series",
+    "blurb": "NFL regular-season games played outside the United States, from the first London game in 2007 to the current slate. Excludes the 2018 Mexico City game, which was relocated to Los Angeles, and future fixtures without a confirmed matchup.",
+    "source": "Wikipedia, NFL International Series (Results).",
+    "count": 64,
+    "countries": [
+      "Australia",
+      "Brazil",
+      "France",
+      "Germany",
+      "Ireland",
+      "Mexico",
+      "Spain",
+      "United Kingdom"
+    ],
+    "first_season": 2007,
+    "last_season": 2026
+  },
+  "games": [
+    {
+      "season": 2026,
+      "date": "2026-11-22",
+      "date_display": "November 22, 2026",
+      "visitor": {
+        "name": "Minnesota Vikings",
+        "slug": "minnesota-vikings"
+      },
+      "home": {
+        "name": "San Francisco 49ers",
+        "slug": "san-francisco-49ers"
+      },
+      "stadium": "Estadio Banorte",
+      "metro": {
+        "name": "Mexico City",
+        "slug": "mexico-city"
+      },
+      "country": {
+        "name": "Mexico",
+        "slug": "mexico"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-11-15",
+      "date_display": "November 15, 2026",
+      "visitor": {
+        "name": "New England Patriots",
+        "slug": "new-england-patriots"
+      },
+      "home": {
+        "name": "Detroit Lions",
+        "slug": "detroit-lions"
+      },
+      "stadium": "Allianz Arena",
+      "metro": {
+        "name": "Munich",
+        "slug": "munich"
+      },
+      "country": {
+        "name": "Germany",
+        "slug": "germany"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-11-08",
+      "date_display": "November 8, 2026",
+      "visitor": {
+        "name": "Cincinnati Bengals",
+        "slug": "cincinnati-bengals"
+      },
+      "home": {
+        "name": "Atlanta Falcons",
+        "slug": "atlanta-falcons"
+      },
+      "stadium": "Bernabéu",
+      "metro": {
+        "name": "Madrid",
+        "slug": "madrid"
+      },
+      "country": {
+        "name": "Spain",
+        "slug": "spain"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-10-25",
+      "date_display": "October 25, 2026",
+      "visitor": {
+        "name": "Pittsburgh Steelers",
+        "slug": "pittsburgh-steelers"
+      },
+      "home": {
+        "name": "New Orleans Saints",
+        "slug": "new-orleans-saints"
+      },
+      "stadium": "Stade de France",
+      "metro": {
+        "name": "Paris",
+        "slug": "paris"
+      },
+      "country": {
+        "name": "France",
+        "slug": "france"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-10-18",
+      "date_display": "October 18, 2026",
+      "visitor": {
+        "name": "Houston Texans",
+        "slug": "houston-texans"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-10-11",
+      "date_display": "October 11, 2026",
+      "visitor": {
+        "name": "Philadelphia Eagles",
+        "slug": "philadelphia-eagles"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-10-04",
+      "date_display": "October 4, 2026",
+      "visitor": {
+        "name": "Indianapolis Colts",
+        "slug": "indianapolis-colts"
+      },
+      "home": {
+        "name": "Washington Commanders",
+        "slug": "washington-commanders"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-09-27",
+      "date_display": "September 27, 2026",
+      "visitor": {
+        "name": "Baltimore Ravens",
+        "slug": "baltimore-ravens"
+      },
+      "home": {
+        "name": "Dallas Cowboys",
+        "slug": "dallas-cowboys"
+      },
+      "stadium": "Maracanã Stadium",
+      "metro": {
+        "name": "Rio de Janeiro",
+        "slug": "rio-de-janeiro"
+      },
+      "country": {
+        "name": "Brazil",
+        "slug": "brazil"
+      }
+    },
+    {
+      "season": 2026,
+      "date": "2026-09-11",
+      "date_display": "September 11, 2026",
+      "visitor": {
+        "name": "San Francisco 49ers",
+        "slug": "san-francisco-49ers"
+      },
+      "home": {
+        "name": "Los Angeles Rams",
+        "slug": "los-angeles-rams"
+      },
+      "stadium": "Melbourne Cricket Ground",
+      "metro": {
+        "name": "Melbourne",
+        "slug": "melbourne"
+      },
+      "country": {
+        "name": "Australia",
+        "slug": "australia"
+      }
+    },
+    {
+      "season": 2025,
+      "date": "2025-11-16",
+      "date_display": "November 16, 2025",
+      "visitor": {
+        "name": "Washington Commanders",
+        "slug": "washington-commanders"
+      },
+      "home": {
+        "name": "Miami Dolphins",
+        "slug": "miami-dolphins"
+      },
+      "stadium": "Bernabéu",
+      "metro": {
+        "name": "Madrid",
+        "slug": "madrid"
+      },
+      "country": {
+        "name": "Spain",
+        "slug": "spain"
+      }
+    },
+    {
+      "season": 2025,
+      "date": "2025-11-09",
+      "date_display": "November 9, 2025",
+      "visitor": {
+        "name": "Atlanta Falcons",
+        "slug": "atlanta-falcons"
+      },
+      "home": {
+        "name": "Indianapolis Colts",
+        "slug": "indianapolis-colts"
+      },
+      "stadium": "Olympiastadion",
+      "metro": {
+        "name": "Berlin",
+        "slug": "berlin"
+      },
+      "country": {
+        "name": "Germany",
+        "slug": "germany"
+      }
+    },
+    {
+      "season": 2025,
+      "date": "2025-10-19",
+      "date_display": "October 19, 2025",
+      "visitor": {
+        "name": "Los Angeles Rams",
+        "slug": "los-angeles-rams"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2025,
+      "date": "2025-10-12",
+      "date_display": "October 12, 2025",
+      "visitor": {
+        "name": "Denver Broncos",
+        "slug": "denver-broncos"
+      },
+      "home": {
+        "name": "New York Jets",
+        "slug": "new-york-jets"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2025,
+      "date": "2025-10-05",
+      "date_display": "October 5, 2025",
+      "visitor": {
+        "name": "Minnesota Vikings",
+        "slug": "minnesota-vikings"
+      },
+      "home": {
+        "name": "Cleveland Browns",
+        "slug": "cleveland-browns"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2025,
+      "date": "2025-09-28",
+      "date_display": "September 28, 2025",
+      "visitor": {
+        "name": "Minnesota Vikings",
+        "slug": "minnesota-vikings"
+      },
+      "home": {
+        "name": "Pittsburgh Steelers",
+        "slug": "pittsburgh-steelers"
+      },
+      "stadium": "Croke Park",
+      "metro": {
+        "name": "Dublin",
+        "slug": "dublin"
+      },
+      "country": {
+        "name": "Ireland",
+        "slug": "ireland"
+      }
+    },
+    {
+      "season": 2025,
+      "date": "2025-09-05",
+      "date_display": "September 5, 2025",
+      "visitor": {
+        "name": "Kansas City Chiefs",
+        "slug": "kansas-city-chiefs"
+      },
+      "home": {
+        "name": "Los Angeles Chargers",
+        "slug": "los-angeles-chargers"
+      },
+      "stadium": "Arena Corinthians",
+      "metro": {
+        "name": "São Paulo",
+        "slug": "sao-paulo"
+      },
+      "country": {
+        "name": "Brazil",
+        "slug": "brazil"
+      }
+    },
+    {
+      "season": 2024,
+      "date": "2024-11-10",
+      "date_display": "November 10, 2024",
+      "visitor": {
+        "name": "New York Giants",
+        "slug": "new-york-giants"
+      },
+      "home": {
+        "name": "Carolina Panthers",
+        "slug": "carolina-panthers"
+      },
+      "stadium": "Allianz Arena",
+      "metro": {
+        "name": "Munich",
+        "slug": "munich"
+      },
+      "country": {
+        "name": "Germany",
+        "slug": "germany"
+      }
+    },
+    {
+      "season": 2024,
+      "date": "2024-10-20",
+      "date_display": "October 20, 2024",
+      "visitor": {
+        "name": "New England Patriots",
+        "slug": "new-england-patriots"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2024,
+      "date": "2024-10-13",
+      "date_display": "October 13, 2024",
+      "visitor": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "home": {
+        "name": "Chicago Bears",
+        "slug": "chicago-bears"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2024,
+      "date": "2024-10-06",
+      "date_display": "October 6, 2024",
+      "visitor": {
+        "name": "New York Jets",
+        "slug": "new-york-jets"
+      },
+      "home": {
+        "name": "Minnesota Vikings",
+        "slug": "minnesota-vikings"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2024,
+      "date": "2024-09-06",
+      "date_display": "September 6, 2024",
+      "visitor": {
+        "name": "Green Bay Packers",
+        "slug": "green-bay-packers"
+      },
+      "home": {
+        "name": "Philadelphia Eagles",
+        "slug": "philadelphia-eagles"
+      },
+      "stadium": "Arena Corinthians",
+      "metro": {
+        "name": "São Paulo",
+        "slug": "sao-paulo"
+      },
+      "country": {
+        "name": "Brazil",
+        "slug": "brazil"
+      }
+    },
+    {
+      "season": 2023,
+      "date": "2023-11-12",
+      "date_display": "November 12, 2023",
+      "visitor": {
+        "name": "Indianapolis Colts",
+        "slug": "indianapolis-colts"
+      },
+      "home": {
+        "name": "New England Patriots",
+        "slug": "new-england-patriots"
+      },
+      "stadium": "Deutsche Bank Park",
+      "metro": {
+        "name": "Frankfurt",
+        "slug": "frankfurt"
+      },
+      "country": {
+        "name": "Germany",
+        "slug": "germany"
+      }
+    },
+    {
+      "season": 2023,
+      "date": "2023-11-05",
+      "date_display": "November 5, 2023",
+      "visitor": {
+        "name": "Miami Dolphins",
+        "slug": "miami-dolphins"
+      },
+      "home": {
+        "name": "Kansas City Chiefs",
+        "slug": "kansas-city-chiefs"
+      },
+      "stadium": "Deutsche Bank Park",
+      "metro": {
+        "name": "Frankfurt",
+        "slug": "frankfurt"
+      },
+      "country": {
+        "name": "Germany",
+        "slug": "germany"
+      }
+    },
+    {
+      "season": 2023,
+      "date": "2023-10-15",
+      "date_display": "October 15, 2023",
+      "visitor": {
+        "name": "Baltimore Ravens",
+        "slug": "baltimore-ravens"
+      },
+      "home": {
+        "name": "Tennessee Titans",
+        "slug": "tennessee-titans"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2023,
+      "date": "2023-10-08",
+      "date_display": "October 8, 2023",
+      "visitor": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "home": {
+        "name": "Buffalo Bills",
+        "slug": "buffalo-bills"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2023,
+      "date": "2023-10-01",
+      "date_display": "October 1, 2023",
+      "visitor": {
+        "name": "Atlanta Falcons",
+        "slug": "atlanta-falcons"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2022,
+      "date": "2022-11-21",
+      "date_display": "November 21, 2022",
+      "visitor": {
+        "name": "San Francisco 49ers",
+        "slug": "san-francisco-49ers"
+      },
+      "home": {
+        "name": "Arizona Cardinals",
+        "slug": "arizona-cardinals"
+      },
+      "stadium": "Estadio Azteca",
+      "metro": {
+        "name": "Mexico City",
+        "slug": "mexico-city"
+      },
+      "country": {
+        "name": "Mexico",
+        "slug": "mexico"
+      }
+    },
+    {
+      "season": 2022,
+      "date": "2022-11-13",
+      "date_display": "November 13, 2022",
+      "visitor": {
+        "name": "Seattle Seahawks",
+        "slug": "seattle-seahawks"
+      },
+      "home": {
+        "name": "Tampa Bay Buccaneers",
+        "slug": "tampa-bay-buccaneers"
+      },
+      "stadium": "Allianz Arena",
+      "metro": {
+        "name": "Munich",
+        "slug": "munich"
+      },
+      "country": {
+        "name": "Germany",
+        "slug": "germany"
+      }
+    },
+    {
+      "season": 2022,
+      "date": "2022-10-30",
+      "date_display": "October 30, 2022",
+      "visitor": {
+        "name": "Denver Broncos",
+        "slug": "denver-broncos"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2022,
+      "date": "2022-10-09",
+      "date_display": "October 9, 2022",
+      "visitor": {
+        "name": "New York Giants",
+        "slug": "new-york-giants"
+      },
+      "home": {
+        "name": "Green Bay Packers",
+        "slug": "green-bay-packers"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2022,
+      "date": "2022-10-02",
+      "date_display": "October 2, 2022",
+      "visitor": {
+        "name": "Minnesota Vikings",
+        "slug": "minnesota-vikings"
+      },
+      "home": {
+        "name": "New Orleans Saints",
+        "slug": "new-orleans-saints"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2021,
+      "date": "2021-10-17",
+      "date_display": "October 17, 2021",
+      "visitor": {
+        "name": "Miami Dolphins",
+        "slug": "miami-dolphins"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2021,
+      "date": "2021-10-10",
+      "date_display": "October 10, 2021",
+      "visitor": {
+        "name": "New York Jets",
+        "slug": "new-york-jets"
+      },
+      "home": {
+        "name": "Atlanta Falcons",
+        "slug": "atlanta-falcons"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2019,
+      "date": "2019-11-18",
+      "date_display": "November 18, 2019",
+      "visitor": {
+        "name": "Kansas City Chiefs",
+        "slug": "kansas-city-chiefs"
+      },
+      "home": {
+        "name": "Los Angeles Chargers",
+        "slug": "los-angeles-chargers"
+      },
+      "stadium": "Estadio Azteca",
+      "metro": {
+        "name": "Mexico City",
+        "slug": "mexico-city"
+      },
+      "country": {
+        "name": "Mexico",
+        "slug": "mexico"
+      }
+    },
+    {
+      "season": 2019,
+      "date": "2019-11-03",
+      "date_display": "November 3, 2019",
+      "visitor": {
+        "name": "Houston Texans",
+        "slug": "houston-texans"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2019,
+      "date": "2019-10-27",
+      "date_display": "October 27, 2019",
+      "visitor": {
+        "name": "Cincinnati Bengals",
+        "slug": "cincinnati-bengals"
+      },
+      "home": {
+        "name": "Los Angeles Rams",
+        "slug": "los-angeles-rams"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2019,
+      "date": "2019-10-13",
+      "date_display": "October 13, 2019",
+      "visitor": {
+        "name": "Carolina Panthers",
+        "slug": "carolina-panthers"
+      },
+      "home": {
+        "name": "Tampa Bay Buccaneers",
+        "slug": "tampa-bay-buccaneers"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2019,
+      "date": "2019-10-06",
+      "date_display": "October 6, 2019",
+      "visitor": {
+        "name": "Chicago Bears",
+        "slug": "chicago-bears"
+      },
+      "home": {
+        "name": "Oakland Raiders",
+        "slug": "las-vegas-raiders"
+      },
+      "stadium": "Tottenham Hotspur Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2018,
+      "date": "2018-10-28",
+      "date_display": "October 28, 2018",
+      "visitor": {
+        "name": "Philadelphia Eagles",
+        "slug": "philadelphia-eagles"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2018,
+      "date": "2018-10-21",
+      "date_display": "October 21, 2018",
+      "visitor": {
+        "name": "Tennessee Titans",
+        "slug": "tennessee-titans"
+      },
+      "home": {
+        "name": "Los Angeles Chargers",
+        "slug": "los-angeles-chargers"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2018,
+      "date": "2018-10-14",
+      "date_display": "October 14, 2018",
+      "visitor": {
+        "name": "Seattle Seahawks",
+        "slug": "seattle-seahawks"
+      },
+      "home": {
+        "name": "Oakland Raiders",
+        "slug": "las-vegas-raiders"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2017,
+      "date": "2017-11-19",
+      "date_display": "November 19, 2017",
+      "visitor": {
+        "name": "New England Patriots",
+        "slug": "new-england-patriots"
+      },
+      "home": {
+        "name": "Oakland Raiders",
+        "slug": "las-vegas-raiders"
+      },
+      "stadium": "Estadio Azteca",
+      "metro": {
+        "name": "Mexico City",
+        "slug": "mexico-city"
+      },
+      "country": {
+        "name": "Mexico",
+        "slug": "mexico"
+      }
+    },
+    {
+      "season": 2017,
+      "date": "2017-10-29",
+      "date_display": "October 29, 2017",
+      "visitor": {
+        "name": "Minnesota Vikings",
+        "slug": "minnesota-vikings"
+      },
+      "home": {
+        "name": "Cleveland Browns",
+        "slug": "cleveland-browns"
+      },
+      "stadium": "Twickenham Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2017,
+      "date": "2017-10-22",
+      "date_display": "October 22, 2017",
+      "visitor": {
+        "name": "Arizona Cardinals",
+        "slug": "arizona-cardinals"
+      },
+      "home": {
+        "name": "Los Angeles Rams",
+        "slug": "los-angeles-rams"
+      },
+      "stadium": "Twickenham Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2017,
+      "date": "2017-10-01",
+      "date_display": "October 1, 2017",
+      "visitor": {
+        "name": "New Orleans Saints",
+        "slug": "new-orleans-saints"
+      },
+      "home": {
+        "name": "Miami Dolphins",
+        "slug": "miami-dolphins"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2017,
+      "date": "2017-09-24",
+      "date_display": "September 24, 2017",
+      "visitor": {
+        "name": "Baltimore Ravens",
+        "slug": "baltimore-ravens"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2016,
+      "date": "2016-11-21",
+      "date_display": "November 21, 2016",
+      "visitor": {
+        "name": "Houston Texans",
+        "slug": "houston-texans"
+      },
+      "home": {
+        "name": "Oakland Raiders",
+        "slug": "las-vegas-raiders"
+      },
+      "stadium": "Estadio Azteca",
+      "metro": {
+        "name": "Mexico City",
+        "slug": "mexico-city"
+      },
+      "country": {
+        "name": "Mexico",
+        "slug": "mexico"
+      }
+    },
+    {
+      "season": 2016,
+      "date": "2016-10-30",
+      "date_display": "October 30, 2016",
+      "visitor": {
+        "name": "Washington Redskins",
+        "slug": "washington-commanders"
+      },
+      "home": {
+        "name": "Cincinnati Bengals",
+        "slug": "cincinnati-bengals"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2016,
+      "date": "2016-10-23",
+      "date_display": "October 23, 2016",
+      "visitor": {
+        "name": "New York Giants",
+        "slug": "new-york-giants"
+      },
+      "home": {
+        "name": "Los Angeles Rams",
+        "slug": "los-angeles-rams"
+      },
+      "stadium": "Twickenham Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2016,
+      "date": "2016-10-02",
+      "date_display": "October 2, 2016",
+      "visitor": {
+        "name": "Indianapolis Colts",
+        "slug": "indianapolis-colts"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2015,
+      "date": "2015-11-01",
+      "date_display": "November 1, 2015",
+      "visitor": {
+        "name": "Detroit Lions",
+        "slug": "detroit-lions"
+      },
+      "home": {
+        "name": "Kansas City Chiefs",
+        "slug": "kansas-city-chiefs"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2015,
+      "date": "2015-10-25",
+      "date_display": "October 25, 2015",
+      "visitor": {
+        "name": "Buffalo Bills",
+        "slug": "buffalo-bills"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2015,
+      "date": "2015-10-04",
+      "date_display": "October 4, 2015",
+      "visitor": {
+        "name": "New York Jets",
+        "slug": "new-york-jets"
+      },
+      "home": {
+        "name": "Miami Dolphins",
+        "slug": "miami-dolphins"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2014,
+      "date": "2014-11-09",
+      "date_display": "November 9, 2014",
+      "visitor": {
+        "name": "Dallas Cowboys",
+        "slug": "dallas-cowboys"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2014,
+      "date": "2014-10-26",
+      "date_display": "October 26, 2014",
+      "visitor": {
+        "name": "Detroit Lions",
+        "slug": "detroit-lions"
+      },
+      "home": {
+        "name": "Atlanta Falcons",
+        "slug": "atlanta-falcons"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2014,
+      "date": "2014-09-28",
+      "date_display": "September 28, 2014",
+      "visitor": {
+        "name": "Miami Dolphins",
+        "slug": "miami-dolphins"
+      },
+      "home": {
+        "name": "Oakland Raiders",
+        "slug": "las-vegas-raiders"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2013,
+      "date": "2013-10-27",
+      "date_display": "October 27, 2013",
+      "visitor": {
+        "name": "San Francisco 49ers",
+        "slug": "san-francisco-49ers"
+      },
+      "home": {
+        "name": "Jacksonville Jaguars",
+        "slug": "jacksonville-jaguars"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2013,
+      "date": "2013-09-29",
+      "date_display": "September 29, 2013",
+      "visitor": {
+        "name": "Pittsburgh Steelers",
+        "slug": "pittsburgh-steelers"
+      },
+      "home": {
+        "name": "Minnesota Vikings",
+        "slug": "minnesota-vikings"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2012,
+      "date": "2012-10-28",
+      "date_display": "October 28, 2012",
+      "visitor": {
+        "name": "New England Patriots",
+        "slug": "new-england-patriots"
+      },
+      "home": {
+        "name": "St. Louis Rams",
+        "slug": "los-angeles-rams"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2011,
+      "date": "2011-10-23",
+      "date_display": "October 23, 2011",
+      "visitor": {
+        "name": "Chicago Bears",
+        "slug": "chicago-bears"
+      },
+      "home": {
+        "name": "Tampa Bay Buccaneers",
+        "slug": "tampa-bay-buccaneers"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2010,
+      "date": "2010-10-31",
+      "date_display": "October 31, 2010",
+      "visitor": {
+        "name": "Denver Broncos",
+        "slug": "denver-broncos"
+      },
+      "home": {
+        "name": "San Francisco 49ers",
+        "slug": "san-francisco-49ers"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2009,
+      "date": "2009-10-25",
+      "date_display": "October 25, 2009",
+      "visitor": {
+        "name": "New England Patriots",
+        "slug": "new-england-patriots"
+      },
+      "home": {
+        "name": "Tampa Bay Buccaneers",
+        "slug": "tampa-bay-buccaneers"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2008,
+      "date": "2008-10-26",
+      "date_display": "October 26, 2008",
+      "visitor": {
+        "name": "San Diego Chargers",
+        "slug": "los-angeles-chargers"
+      },
+      "home": {
+        "name": "New Orleans Saints",
+        "slug": "new-orleans-saints"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    },
+    {
+      "season": 2007,
+      "date": "2007-10-28",
+      "date_display": "October 28, 2007",
+      "visitor": {
+        "name": "New York Giants",
+        "slug": "new-york-giants"
+      },
+      "home": {
+        "name": "Miami Dolphins",
+        "slug": "miami-dolphins"
+      },
+      "stadium": "Wembley Stadium",
+      "metro": {
+        "name": "London",
+        "slug": "london"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "slug": "england"
+      }
+    }
+  ]
+}

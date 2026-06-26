@@ -60,6 +60,9 @@ export default function NflIndexPage() {
           <div>
             Defunct franchises: <Link href="/teams/nfl/historical" className="text-[var(--accent)] hover:underline">/teams/nfl/historical</Link>
           </div>
+          <div>
+            International: <Link href="/teams/nfl/international" className="text-[var(--accent)] hover:underline">/teams/nfl/international</Link>
+          </div>
         </div>
       </header>
 
@@ -69,6 +72,7 @@ export default function NflIndexPage() {
           { label: "Map", href: "#map" },
           { label: "All-Time Table", href: "#all-time" },
           { label: "Top Games", href: "#top-games" },
+          { label: "International", href: "/teams/nfl/international" },
         ]}
       />
 

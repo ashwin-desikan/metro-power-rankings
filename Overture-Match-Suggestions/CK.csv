@@ -1,0 +1,15 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Cook Islands,Aitutaki,Aitutaki,,,1776,Island,,,#N/A,,AitutakiCook Islands,region,2,0,Aitutaki,,,,region,2,nan,Aitutaki,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Atiu,Atiu,,,382,Island,,,#N/A,,AtiuCook Islands,region,2,0,Atiu,,,,region,2,nan,Atiu,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Mangaia,Mangaia,,,471,Island,,,#N/A,,MangaiaCook Islands,region,2,0,Mangaia,,,,region,2,nan,Mangaia,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Manihiki,Manihiki,,,207,Island,,,#N/A,,ManihikiCook Islands,region,2,0,Manihiki,,,,region,2,nan,Manihiki,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Manuae,Manuae,,,0,Island,,,#N/A,,ManuaeCook Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Cook Islands,Mauke,Mauke,,,249,Island,,,#N/A,,MaukeCook Islands,region,2,0,Mauke,,,,region,2,nan,Mauke,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Mitiaro,Mitiaro,,,155,Island,,,#N/A,,MitiaroCook Islands,region,2,0,Mitiaro,,,,region,2,nan,Mitiaro,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Nassau,Nassau,,,92,Island,,,#N/A,,NassauCook Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Cook Islands,Palmerston,Palmerston,,,25,Island,,,#N/A,,PalmerstonCook Islands,region,2,0,Palmerston,,,,region,2,nan,Palmerston,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Penrhyn,Penrhyn,,,230,Island,,,#N/A,,PenrhynCook Islands,region,2,0,Penrhyn,,,,region,2,nan,Penrhyn,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Pukapuka,Pukapuka,,,456,Island,,,#N/A,,PukapukaCook Islands,region,2,0,Pukapuka,,,,region,2,nan,Pukapuka,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Rakahanga,Rakahanga,,,81,Island,,,#N/A,,RakahangaCook Islands,region,2,0,Rakahanga,,,,region,2,nan,Rakahanga,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Rarotonga,Rarotonga,,,10863,Island,Avarua,,Avarua,,RarotongaCook Islands,region,2,0,Rarotonga,,,,region,2,nan,Rarotonga,,,,,,,,,HIGH,1.0,nan
+Cook Islands,Suwarrow,Suwarrow,,,0,Island,,,#N/A,,SuwarrowCook Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,

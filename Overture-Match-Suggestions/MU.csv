@@ -1,0 +1,13 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Mauritius,Agalega,Agalega,,,274,District,,,#N/A,,AgalegaMauritius,region,1,MU-AG,Agaléga,,,,region,1,MU-AG,Agaléga,,,,,region,1,MU-AG,Agaléga,HIGH,1.0,MU-AG
+Mauritius,Black River (Rivière Noire),Black River (Rivière Noire),,,84451,District,Port Louis,,Port Louis,,Black River (Rivière Noire)Mauritius,region,1,MU-BL,Black River,,,,region,1,MU-BL,Black River,,,,,region,1,MU-BL,Black River,HIGH,1.0,MU-BL
+Mauritius,Flacq,Flacq,,,138700,District,,,#N/A,,FlacqMauritius,region,1,MU-FL,Flacq,,,,region,1,MU-FL,Flacq,,,,,region,1,MU-FL,Flacq,HIGH,1.0,MU-FL
+Mauritius,Grand Port,Grand Port,,,112734,District,,,#N/A,,Grand PortMauritius,region,1,MU-GP,Grand Port,,,,region,1,MU-GP,Grand Port,,,,,region,1,MU-GP,Grand Port,HIGH,1.0,MU-GP
+Mauritius,Moka,Moka,,,83729,District,,,#N/A,,MokaMauritius,locality,0,MU-MO,Moka,,,,locality,,MU-MO,Moka,,,,,region,1,MU-MO,Moka,HIGH,1.0,MU-MO
+Mauritius,Outer Islands,Outer Islands,,,44093,District,,,#N/A,,Outer IslandsMauritius,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Mauritius,Pamplemousses,Pamplemousses,,,141955,District,Port Louis,,Port Louis,,PamplemoussesMauritius,region,1,MU-PA,Pamplemousses,,,,region,1,MU-PA,Pamplemousses,,,,,region,1,MU-PA,Pamplemousses,HIGH,1.0,MU-PA
+Mauritius,Plaines Wilhems,Plaines Wilhems,,,366153,District,Curepipe,,Curepipe,,Plaines WilhemsMauritius,region,1,MU-PW,Plaines Wilhems,,,,region,1,MU-PW,Plaines Wilhems,,,,,region,1,MU-PW,Plaines Wilhems,HIGH,1.0,MU-PW
+Mauritius,Port Louis,Port Louis,,,117880,District,Port Louis,,Port Louis,,Port LouisMauritius,region,1,MU-PL,Port Louis,,,,region,1,MU-PL,Port Louis,,,,,region,1,MU-PL,Port Louis,HIGH,1.0,MU-PL
+Mauritius,Rivière du Rempart,Rivière du Rempart,,,108053,District,,,#N/A,,Rivière du RempartMauritius,region,1,MU-RR,Riviere du Rempart,,,,region,1,MU-RR,Riviere du Rempart,,,,,region,1,MU-RR,Riviere du Rempart,HIGH,1.0,MU-RR
+Mauritius,Rodrigues,Rodrigues,,,43819,District,,,#N/A,,RodriguesMauritius,region,1,MU-RO,Rodrigues,,,,region,1,MU-RO,Rodrigues,,,,,region,1,MU-RO,Rodrigues,HIGH,1.0,MU-RO
+Mauritius,Savanne,Savanne,,,68266,District,,,#N/A,,SavanneMauritius,region,1,MU-SA,Savanne,,,,region,1,MU-SA,Savanne,,,,,region,1,MU-SA,Savanne,HIGH,1.0,MU-SA

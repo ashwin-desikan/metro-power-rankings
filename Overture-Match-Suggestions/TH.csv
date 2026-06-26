@@ -1,0 +1,78 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Thailand,Krung Thep Mahanakhon [Bangkok],Bangkok Metropolitan,,,8833400,Province-level City,Bangkok,,Bangkok,,Bangkok MetropolitanThailand,region,1,TH-10,กรุงเทพมหานคร,,,,,,,,,,,,,,,,NONE,0.0,
+Thailand,Samut Prakan,Bangkok Metropolitan,,,2159600,Province,Bangkok,,Bangkok,,Bangkok MetropolitanThailand,region,1,TH-11,จังหวัดสมุทรปราการ,,,,region,1,TH-11,จังหวัดสมุทรปราการ,,,,,region,1,TH-11,จังหวัดสมุทรปราการ,HIGH,1.0,TH-11
+Thailand,Nonthaburi,Bangkok Metropolitan,,,1611100,Province,Bangkok,,Bangkok,,Bangkok MetropolitanThailand,region,1,TH-12,จังหวัดนนทบุรี,,,,region,1,TH-12,จังหวัดนนทบุรี,,,,,region,1,TH-12,จังหวัดนนทบุรี,HIGH,1.0,TH-12
+Thailand,Pathum Thani,Bangkok Metropolitan,,,1541100,Province,Bangkok,,Bangkok,,Bangkok MetropolitanThailand,region,1,TH-13,จังหวัดปทุมธานี,,,,region,1,TH-13,จังหวัดปทุมธานี,,,,,region,1,TH-13,จังหวัดปทุมธานี,HIGH,1.0,TH-13
+Thailand,Nakhon Pathom,Bangkok Metropolitan,,,1118600,Province,Bangkok,,Bangkok,,Bangkok MetropolitanThailand,region,1,TH-73,จังหวัดนครปฐม,,,,region,1,TH-73,จังหวัดนครปฐม,,,,,region,1,TH-73,จังหวัดนครปฐม,HIGH,1.0,TH-73
+Thailand,Samut Sakhon,Bangkok Metropolitan,,,992100,Province,Bangkok,,Bangkok,,Bangkok MetropolitanThailand,region,1,TH-74,จังหวัดสมุทรสาคร,,,,region,1,TH-74,จังหวัดสมุทรสาคร,,,,,region,1,TH-74,จังหวัดสมุทรสาคร,HIGH,1.0,TH-74
+Thailand,Phra Nakhon Si Ayutthaya,Central,,,863400,Province,Bangkok,,Bangkok,,CentralThailand,region,1,TH-14,จังหวัดพระนครศรีอยุธยา,,,,region,1,TH-14,จังหวัดพระนครศรีอยุธยา,,,,,region,1,TH-14,จังหวัดพระนครศรีอยุธยา,HIGH,1.0,TH-14
+Thailand,Lopburi,Central,,,776400,Province,,,#N/A,,CentralThailand,region,1,TH-16,จังหวัดลพบุรี,,,,region,1,TH-16,จังหวัดลพบุรี,,,,,region,1,TH-16,จังหวัดลพบุรี,HIGH,1.0,TH-16
+Thailand,Saraburi,Central,,,712600,Province,,,#N/A,,CentralThailand,region,1,TH-19,จังหวัดสระบุรี,,,,region,1,TH-19,จังหวัดสระบุรี,,,,,region,1,TH-19,จังหวัดสระบุรี,HIGH,1.0,TH-19
+Thailand,Chainat,Central,,,316000,Province,,,#N/A,,CentralThailand,region,1,TH-18,จังหวัดชัยนาท,,,,region,1,TH-18,จังหวัดชัยนาท,,,,,region,1,TH-18,จังหวัดชัยนาท,HIGH,1.0,TH-18
+Thailand,Ang Thong,Central,,,260200,Province,,,#N/A,,CentralThailand,region,1,TH-15,จังหวัดอ่างทอง,,,,region,1,TH-15,จังหวัดอ่างทอง,,,,,region,1,TH-15,จังหวัดอ่างทอง,HIGH,1.0,TH-15
+Thailand,Singburi,Central,,,206200,Province,,,#N/A,,CentralThailand,region,1,TH-17,จังหวัดสิงห์บุรี,,,,region,1,TH-17,จังหวัดสิงห์บุรี,,,,,region,1,TH-17,จังหวัดสิงห์บุรี,HIGH,1.0,TH-17
+Thailand,Chonburi,Eastern,,,1711400,Province,Chonburi,,Chonburi,,EasternThailand,region,1,TH-20,จังหวัดชลบุรี,,,,region,1,TH-20,จังหวัดชลบุรี,,,,,region,1,TH-20,จังหวัดชลบุรี,HIGH,1.0,TH-20
+Thailand,Rayong,Eastern,,,918400,Province,Rayong,,Rayong,,EasternThailand,region,1,TH-21,จังหวัดระยอง,,,,region,1,TH-21,จังหวัดระยอง,,,,,region,1,TH-21,จังหวัดระยอง,HIGH,1.0,TH-21
+Thailand,Chachoengsao,Eastern,,,820500,Province,,,#N/A,,EasternThailand,region,1,TH-24,จังหวัดฉะเชิงเทรา,,,,region,1,TH-24,จังหวัดฉะเชิงเทรา,,,,,region,1,TH-24,จังหวัดฉะเชิงเทรา,HIGH,1.0,TH-24
+Thailand,Sa Kaeo,Eastern,,,641900,Province,,,#N/A,,EasternThailand,region,1,TH-27,จังหวัดสระแก้ว,,,,region,1,TH-27,จังหวัดสระแก้ว,,,,,region,1,TH-27,จังหวัดสระแก้ว,HIGH,1.0,TH-27
+Thailand,Prachinburi,Eastern,,,628400,Province,,,#N/A,,EasternThailand,region,1,TH-25,จังหวัดปราจีนบุรี,,,,region,1,TH-25,จังหวัดปราจีนบุรี,,,,,region,1,TH-25,จังหวัดปราจีนบุรี,HIGH,1.0,TH-25
+Thailand,Chanthaburi,Eastern,,,559700,Province,,,#N/A,,EasternThailand,region,1,TH-22,จังหวัดจันทบุรี,,,,region,1,TH-22,จังหวัดจันทบุรี,,,,,region,1,TH-22,จังหวัดจันทบุรี,HIGH,1.0,TH-22
+Thailand,Nakhon Nayok,Eastern,,,286500,Province,,,#N/A,,EasternThailand,region,1,TH-26,จังหวัดนครนายก,,,,region,1,TH-26,จังหวัดนครนายก,,,,,region,1,TH-26,จังหวัดนครนายก,HIGH,1.0,TH-26
+Thailand,Trat,Eastern,,,281500,Province,,,#N/A,,EasternThailand,region,1,TH-23,จังหวัดตราด,,,,region,1,TH-23,จังหวัดตราด,,,,,region,1,TH-23,จังหวัดตราด,HIGH,1.0,TH-23
+Thailand,Buri Ram,Northeastern,,,1239500,Province,Buriram,,Buriram,,NortheasternThailand,region,1,TH-31,จังหวัดบุรีรัมย์,,,,region,1,TH-31,จังหวัดบุรีรัมย์,,,,,region,1,TH-31,จังหวัดบุรีรัมย์,HIGH,1.0,TH-31
+Thailand,Khon Kaen,Northeastern,,,1728900,Province,Khon Kaen,,Khon Kaen,,NortheasternThailand,region,1,TH-40,จังหวัดขอนแก่น,,,,region,1,TH-40,จังหวัดขอนแก่น,,,,,region,1,TH-40,จังหวัดขอนแก่น,HIGH,1.0,TH-40
+Thailand,Nakhon Ratchasima,Northeastern,,,2482900,Province,Nakhon Ratchasima,,Nakhon Ratchasima,,NortheasternThailand,region,1,TH-30,จังหวัดนครราชสีมา,,,,region,1,TH-30,จังหวัดนครราชสีมา,,,,,region,1,TH-30,จังหวัดนครราชสีมา,HIGH,1.0,TH-30
+Thailand,Nong Bua Lamphu,Northeastern,,,467200,Province,Nong Bua Lam Phu,,Nong Bua Lam Phu,,NortheasternThailand,region,1,TH-39,จังหวัดหนองบัวลำภู,,,,,,,,,,,,,,,,NONE,0.0,
+Thailand,Udon Thani,Northeastern,,,1244100,Province,Udon Thani,,Udon Thani,,NortheasternThailand,region,1,TH-41,จังหวัดอุดรธานี,,,,region,1,TH-41,จังหวัดอุดรธานี,,,,,region,1,TH-41,จังหวัดอุดรธานี,HIGH,1.0,TH-41
+Thailand,Ubon Ratchathani,Northeastern,,,1695200,Province,,,#N/A,,NortheasternThailand,region,1,TH-34,จังหวัดอุบลราชธานี,,,,region,1,TH-34,จังหวัดอุบลราชธานี,,,,,region,1,TH-34,จังหวัดอุบลราชธานี,HIGH,1.0,TH-34
+Thailand,Surin,Northeastern,,,1102000,Province,,,#N/A,,NortheasternThailand,region,1,TH-32,จังหวัดสุรินทร์,,,,region,1,TH-32,จังหวัดสุรินทร์,,,,,region,1,TH-32,จังหวัดสุรินทร์,HIGH,1.0,TH-32
+Thailand,Roi Et,Northeastern,,,1062300,Province,,,#N/A,,NortheasternThailand,region,1,TH-45,จังหวัดร้อยเอ็ด,,,,region,1,TH-45,จังหวัดร้อยเอ็ด,,,,,region,1,TH-45,จังหวัดร้อยเอ็ด,HIGH,1.0,TH-45
+Thailand,Si Saket,Northeastern,,,1025300,Province,,,#N/A,,NortheasternThailand,region,1,TH-33,จังหวัดศรีสะเกษ,,,,,,,,,,,,,,,,NONE,0.0,
+Thailand,Chaiyaphum,Northeastern,,,949200,Province,,,#N/A,,NortheasternThailand,region,1,TH-36,จังหวัดชัยภูมิ,,,,region,1,TH-36,จังหวัดชัยภูมิ,,,,,region,1,TH-36,จังหวัดชัยภูมิ,HIGH,1.0,TH-36
+Thailand,Sakon Nakhon,Northeastern,,,905700,Province,,,#N/A,,NortheasternThailand,region,1,TH-47,จังหวัดสกลนคร,,,,region,1,TH-47,จังหวัดสกลนคร,,,,,region,1,TH-47,จังหวัดสกลนคร,HIGH,1.0,TH-47
+Thailand,Maha Sarakham,Northeastern,,,820500,Province,,,#N/A,,NortheasternThailand,region,1,TH-44,จังหวัดมหาสารคาม,,,,region,1,TH-44,จังหวัดมหาสารคาม,,,,,region,1,TH-44,จังหวัดมหาสารคาม,HIGH,1.0,TH-44
+Thailand,Kalasin,Northeastern,,,800700,Province,,,#N/A,,NortheasternThailand,region,1,TH-46,จังหวัดกาฬสินธุ์,,,,region,1,TH-46,จังหวัดกาฬสินธุ์,,,,,region,1,TH-46,จังหวัดกาฬสินธุ์,HIGH,1.0,TH-46
+Thailand,Nakhon Phanom,Northeastern,,,559000,Province,,,#N/A,,NortheasternThailand,region,1,TH-48,จังหวัดนครพนม,,,,region,1,TH-48,จังหวัดนครพนม,,,,,region,1,TH-48,จังหวัดนครพนม,HIGH,1.0,TH-48
+Thailand,Loei,Northeastern,,,535400,Province,,,#N/A,,NortheasternThailand,region,1,TH-42,จังหวัดเลย,,,,region,1,TH-42,จังหวัดเลย,,,,,region,1,TH-42,จังหวัดเลย,HIGH,1.0,TH-42
+Thailand,Yasothon,Northeastern,,,477700,Province,,,#N/A,,NortheasternThailand,region,1,TH-35,จังหวัดยโสธร,,,,region,1,TH-35,จังหวัดยโสธร,,,,,region,1,TH-35,จังหวัดยโสธร,HIGH,1.0,TH-35
+Thailand,Nong Khai,Northeastern,,,441400,Province,,,#N/A,,NortheasternThailand,region,1,TH-43,จังหวัดหนองคาย,,,,region,1,TH-43,จังหวัดหนองคาย,,,,,region,1,TH-43,จังหวัดหนองคาย,HIGH,1.0,TH-43
+Thailand,Bueng Kan [← Nong Khai],Northeastern,,,345000,Province,,,#N/A,,NortheasternThailand,region,1,TH-38,จังหวัดบึงกาฬ,,,,,,,,,,,,,,,,NONE,0.0,
+Thailand,Mukdahan,Northeastern,,,342200,Province,,,#N/A,,NortheasternThailand,region,1,TH-49,จังหวัดมุกดาหาร,,,,region,1,TH-49,จังหวัดมุกดาหาร,,,,,region,1,TH-49,จังหวัดมุกดาหาร,HIGH,1.0,TH-49
+Thailand,Amnat Charoen,Northeastern,,,274100,Province,,,#N/A,,NortheasternThailand,region,1,TH-37,จังหวัดอำนาจเจริญ,,,,region,1,TH-37,จังหวัดอำนาจเจริญ,,,,,region,1,TH-37,จังหวัดอำนาจเจริญ,HIGH,1.0,TH-37
+Thailand,Chiang Mai,Northern,,,1688200,Province,Chiang Mai,,Chiang Mai,,NorthernThailand,region,1,TH-50,จังหวัดเชียงใหม่,,,,region,1,TH-50,จังหวัดเชียงใหม่,,,,,region,1,TH-50,จังหวัดเชียงใหม่,HIGH,1.0,TH-50
+Thailand,Lampang,Northern,,,730200,Province,Lampang,,Lampang,,NorthernThailand,region,1,TH-52,จังหวัดลำปาง,,,,region,1,TH-52,จังหวัดลำปาง,,,,,region,1,TH-52,จังหวัดลำปาง,HIGH,1.0,TH-52
+Thailand,Chiang Rai,Northern,,,1132500,Province,Mueang Chiang Rai,,Mueang Chiang Rai,,NorthernThailand,region,1,TH-57,จังหวัดเชียงราย,,,,region,1,TH-57,จังหวัดเชียงราย,,,,,region,1,TH-57,จังหวัดเชียงราย,HIGH,1.0,TH-57
+Thailand,Sukhothai,Northern,,,611700,Province,Sukhothai Thani,,Sukhothai Thani,,NorthernThailand,region,1,TH-64,จังหวัดสุโขทัย,,,,region,1,TH-64,จังหวัดสุโขทัย,,,,,region,1,TH-64,จังหวัดสุโขทัย,HIGH,1.0,TH-64
+Thailand,Uthai Thani,Northern,,,290400,Province,Uthai Thani,,Uthai Thani,,NorthernThailand,region,1,TH-61,จังหวัดอุทัยธานี,,,,region,1,TH-61,จังหวัดอุทัยธานี,,,,,region,1,TH-61,จังหวัดอุทัยธานี,HIGH,1.0,TH-61
+Thailand,Nakhon Sawan,Northern,,,968200,Province,,,#N/A,,NorthernThailand,region,1,TH-60,จังหวัดนครสวรรค์,,,,region,1,TH-60,จังหวัดนครสวรรค์,,,,,region,1,TH-60,จังหวัดนครสวรรค์,HIGH,1.0,TH-60
+Thailand,Phetchabun,Northern,,,905500,Province,,,#N/A,,NorthernThailand,region,1,TH-67,จังหวัดเพชรบูรณ์,,,,region,1,TH-67,จังหวัดเพชรบูรณ์,,,,,region,1,TH-67,จังหวัดเพชรบูรณ์,HIGH,1.0,TH-67
+Thailand,Phitsanulok,Northern,,,885400,Province,,,#N/A,,NorthernThailand,region,1,TH-65,จังหวัดพิษณุโลก,,,,region,1,TH-65,จังหวัดพิษณุโลก,,,,,region,1,TH-65,จังหวัดพิษณุโลก,HIGH,1.0,TH-65
+Thailand,Kamphaeng Phet,Northern,,,765400,Province,,,#N/A,,NorthernThailand,region,1,TH-62,จังหวัดกำแพงเพชร,,,,region,1,TH-62,จังหวัดกำแพงเพชร,,,,,region,1,TH-62,จังหวัดกำแพงเพชร,HIGH,1.0,TH-62
+Thailand,Phichit,Northern,,,536500,Province,,,#N/A,,NorthernThailand,region,1,TH-66,จังหวัดพิจิตร,,,,region,1,TH-66,จังหวัดพิจิตร,,,,,region,1,TH-66,จังหวัดพิจิตร,HIGH,1.0,TH-66
+Thailand,Tak,Northern,,,497700,Province,,,#N/A,,NorthernThailand,region,1,TH-63,จังหวัดตาก,,,,region,1,TH-63,จังหวัดตาก,,,,,region,1,TH-63,จังหวัดตาก,HIGH,1.0,TH-63
+Thailand,Nan,Northern,,,436100,Province,,,#N/A,,NorthernThailand,region,1,TH-55,จังหวัดน่าน,,,,region,1,TH-55,จังหวัดน่าน,,,,,region,1,TH-55,จังหวัดน่าน,HIGH,1.0,TH-55
+Thailand,Uttaradit,Northern,,,430500,Province,,,#N/A,,NorthernThailand,region,1,TH-53,จังหวัดอุตรดิตถ์,,,,region,1,TH-53,จังหวัดอุตรดิตถ์,,,,,region,1,TH-53,จังหวัดอุตรดิตถ์,HIGH,1.0,TH-53
+Thailand,Phrae,Northern,,,420900,Province,,,#N/A,,NorthernThailand,region,1,TH-54,จังหวัดแพร่,,,,region,1,TH-54,จังหวัดแพร่,,,,,region,1,TH-54,จังหวัดแพร่,HIGH,1.0,TH-54
+Thailand,Phayao,Northern,,,405900,Province,,,#N/A,,NorthernThailand,region,1,TH-56,จังหวัดพะเยา,,,,region,1,TH-56,จังหวัดพะเยา,,,,,region,1,TH-56,จังหวัดพะเยา,HIGH,1.0,TH-56
+Thailand,Lamphun,Northern,,,404600,Province,,,#N/A,,NorthernThailand,region,1,TH-51,จังหวัดลำพูน,,,,region,1,TH-51,จังหวัดลำพูน,,,,,region,1,TH-51,จังหวัดลำพูน,HIGH,1.0,TH-51
+Thailand,Mae Hong Son,Northern,,,196100,Province,,,#N/A,,NorthernThailand,region,1,TH-58,จังหวัดแม่ฮ่องสอน,,,,region,1,TH-58,จังหวัดแม่ฮ่องสอน,,,,,region,1,TH-58,จังหวัดแม่ฮ่องสอน,HIGH,1.0,TH-58
+Thailand,Krabi,Southern,,,377400,Province,Krabi,,Krabi,,SouthernThailand,region,1,TH-81,จังหวัดกระบี่,,,,region,1,TH-81,จังหวัดกระบี่,,,,,region,1,TH-81,จังหวัดกระบี่,HIGH,1.0,TH-81
+Thailand,Phuket,Southern,,,540200,Province,Phuket,,Phuket,,SouthernThailand,region,1,TH-83,จังหวัดภูเก็ต,,,,region,1,TH-83,จังหวัดภูเก็ต,,,,,region,1,TH-83,จังหวัดภูเก็ต,HIGH,1.0,TH-83
+Thailand,Songkhla,Southern,,,1563300,Province,Songkhla,,Songkhla,,SouthernThailand,region,1,TH-90,จังหวัดสงขลา,,,,region,1,TH-90,จังหวัดสงขลา,,,,,region,1,TH-90,จังหวัดสงขลา,HIGH,1.0,TH-90
+Thailand,Surat Thani,Southern,,,1062600,Province,Surat Thani,,Surat Thani,,SouthernThailand,region,1,TH-84,จังหวัดสุราษฎร์ธานี,,,,region,1,TH-84,จังหวัดสุราษฎร์ธานี,,,,,region,1,TH-84,จังหวัดสุราษฎร์ธานี,HIGH,1.0,TH-84
+Thailand,Nakhon Si Thammarat,Southern,,,1559200,Province,,,#N/A,,SouthernThailand,region,1,TH-80,จังหวัดนครศรีธรรมราช,,,,region,1,TH-80,จังหวัดนครศรีธรรมราช,,,,,region,1,TH-80,จังหวัดนครศรีธรรมราช,HIGH,1.0,TH-80
+Thailand,Narathiwat,Southern,,,697200,Province,,,#N/A,,SouthernThailand,region,1,TH-96,จังหวัดนราธิวาส,,,,region,1,TH-96,จังหวัดนราธิวาส,,,,,region,1,TH-96,จังหวัดนราธิวาส,HIGH,1.0,TH-96
+Thailand,Trang,Southern,,,635800,Province,,,#N/A,,SouthernThailand,region,1,TH-92,จังหวัดตรัง,,,,region,1,TH-92,จังหวัดตรัง,,,,,region,1,TH-92,จังหวัดตรัง,HIGH,1.0,TH-92
+Thailand,Pattani,Southern,,,635700,Province,,,#N/A,,SouthernThailand,region,1,TH-94,จังหวัดปัตตานี,,,,region,1,TH-94,จังหวัดปัตตานี,,,,,region,1,TH-94,จังหวัดปัตตานี,HIGH,1.0,TH-94
+Thailand,Phatthalung,Southern,,,519100,Province,,,#N/A,,SouthernThailand,region,1,TH-93,จังหวัดพัทลุง,,,,region,1,TH-93,จังหวัดพัทลุง,,,,,region,1,TH-93,จังหวัดพัทลุง,HIGH,1.0,TH-93
+Thailand,Chumphon,Southern,,,496700,Province,,,#N/A,,SouthernThailand,region,1,TH-86,จังหวัดชุมพร,,,,region,1,TH-86,จังหวัดชุมพร,,,,,region,1,TH-86,จังหวัดชุมพร,HIGH,1.0,TH-86
+Thailand,Yala,Southern,,,451000,Province,,,#N/A,,SouthernThailand,region,1,TH-95,จังหวัดยะลา,,,,region,1,TH-95,จังหวัดยะลา,,,,,region,1,TH-95,จังหวัดยะลา,HIGH,1.0,TH-95
+Thailand,Satun,Southern,,,284400,Province,,,#N/A,,SouthernThailand,region,1,TH-91,จังหวัดสตูล,,,,region,1,TH-91,จังหวัดสตูล,,,,,region,1,TH-91,จังหวัดสตูล,HIGH,1.0,TH-91
+Thailand,Phang Nga,Southern,,,272700,Province,,,#N/A,,SouthernThailand,region,1,TH-82,จังหวัดพังงา,,,,region,1,TH-82,จังหวัดพังงา,,,,,region,1,TH-82,จังหวัดพังงา,HIGH,1.0,TH-82
+Thailand,Ranong,Southern,,,257700,Province,,,#N/A,,SouthernThailand,region,1,TH-85,จังหวัดระนอง,,,,region,1,TH-85,จังหวัดระนอง,,,,,region,1,TH-85,จังหวัดระนอง,HIGH,1.0,TH-85
+Thailand,Samut Songkhram,Western,,,191300,Province,Bangkok,,Bangkok,,WesternThailand,region,1,TH-75,จังหวัดสมุทรสงคราม,,,,region,1,TH-75,จังหวัดสมุทรสงคราม,,,,,region,1,TH-75,จังหวัดสมุทรสงคราม,HIGH,1.0,TH-75
+Thailand,Kanchanaburi,Western,,,797800,Province,Kanchanaburi,,Kanchanaburi,,WesternThailand,region,1,TH-71,จังหวัดกาญจนบุรี,,,,region,1,TH-71,จังหวัดกาญจนบุรี,,,,,region,1,TH-71,จังหวัดกาญจนบุรี,HIGH,1.0,TH-71
+Thailand,Prachuap Khiri Khan,Western,,,462000,Province,Prachuap Khiri Khan,,Prachuap Khiri Khan,,WesternThailand,region,1,TH-77,จังหวัดประจวบคีรีขันธ์,,,,region,1,TH-77,จังหวัดประจวบคีรีขันธ์,,,,,region,1,TH-77,จังหวัดประจวบคีรีขันธ์,HIGH,1.0,TH-77
+Thailand,Ratchaburi,Western,,,803700,Province,Ratchaburi,,Ratchaburi,,WesternThailand,region,1,TH-70,จังหวัดราชบุรี,,,,region,1,TH-70,จังหวัดราชบุรี,,,,,region,1,TH-70,จังหวัดราชบุรี,HIGH,1.0,TH-70
+Thailand,Suphanburi,Western,,,864800,Province,,,#N/A,,WesternThailand,region,1,TH-72,จังหวัดสุพรรณบุรี,,,,region,1,TH-72,จังหวัดสุพรรณบุรี,,,,,region,1,TH-72,จังหวัดสุพรรณบุรี,HIGH,1.0,TH-72
+Thailand,Phetchaburi,Western,,,477400,Province,,,#N/A,,WesternThailand,region,1,TH-76,จังหวัดเพชรบุรี,,,,region,1,TH-76,จังหวัดเพชรบุรี,,,,,region,1,TH-76,จังหวัดเพชรบุรี,HIGH,1.0,TH-76

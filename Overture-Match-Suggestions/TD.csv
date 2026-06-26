@@ -1,0 +1,24 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Chad,Barh el Gazel,Barh el Gazel,,,361100,Region,,,#N/A,,Barh el GazelChad,region,1,TD-BG,Barh el Gazel بحر الغزال,,,,region,1,TD-BG,Barh el Gazel بحر الغزال,,,,,region,1,TD-BG,Barh el Gazel بحر الغزال,HIGH,1.0,TD-BG
+Chad,Batha,Batha,,,667600,Region,,,#N/A,,BathaChad,region,1,TD-BA,Batha البطحة,,,,region,1,TD-BA,Batha البطحة,,,,,region,1,TD-BA,Batha البطحة,HIGH,1.0,TD-BA
+Chad,Borkou,Borkou,,,133600,Region,,,#N/A,,BorkouChad,,,,,,,,county,2,TD-BO,Borkou,,,,,region,1,TD-BO,Borkou بوركو,HIGH,1.0,TD-BO
+Chad,Chari-Baguirmi,Chari-Baguirmi,,,816300,Region,,,#N/A,,Chari-BaguirmiChad,region,1,TD-CB,Chari-Baguirmi شاري باقرمي,,,,region,1,TD-CB,Chari-Baguirmi شاري باقرمي,,,,,region,1,TD-CB,Chari-Baguirmi شاري باقرمي,HIGH,1.0,TD-CB
+Chad,Ennedi-Est,Ennedi-Est,,,152900,Region,,,#N/A,,Ennedi-EstChad,region,1,TD-EE,Ennedi Est إنيدي الشرقية,,,,region,1,TD-EE,Ennedi Est إنيدي الشرقية,,,,,region,1,TD-EE,Ennedi Est إنيدي الشرقية,HIGH,1.0,TD-EE
+Chad,Ennedi-Ouest,Ennedi-Ouest,,,86400,Region,,,#N/A,,Ennedi-OuestChad,region,1,TD-EO,Ennedi Ouest إنيدي الغربية,,,,region,1,TD-EO,Ennedi Ouest إنيدي الغربية,,,,,region,1,TD-EO,Ennedi Ouest إنيدي الغربية,HIGH,1.0,TD-EO
+Chad,Guéra,Guéra,,,622200,Region,,,#N/A,,GuéraChad,,,,,,,,county,2,TD-GR,Guéra,,,,,region,1,TD-GR,Guéra قيرا,HIGH,1.0,TD-GR
+Chad,Hadjer-Lamis,Hadjer-Lamis,,,794300,Region,,,#N/A,,Hadjer-LamisChad,region,1,TD-HL,Hadjer-Lamis حجر لميس,,,,region,1,TD-HL,Hadjer-Lamis حجر لميس,,,,,region,1,TD-HL,Hadjer-Lamis حجر لميس,HIGH,1.0,TD-HL
+Chad,Kanem,Kanem,,,481100,Region,,,#N/A,,KanemChad,,,,,,,,county,2,TD-KA,Kanem,,,,,region,1,TD-KA,Kanem كانم,HIGH,1.0,TD-KA
+Chad,Lac,Lac,,,617000,Region,,,#N/A,,LacChad,region,1,TD-LC,Lac البحيرة,,,,region,1,TD-LC,Lac البحيرة,,,,,region,1,TD-LC,Lac البحيرة,HIGH,1.0,TD-LC
+Chad,Logone Occidental,Logone Occidental,,,996400,Region,,,#N/A,,Logone OccidentalChad,region,1,TD-LO,لوقون الغربية Logone Occidental,,,,region,1,TD-LO,لوقون الغربية Logone Occidental,,,,,region,1,TD-LO,لوقون الغربية Logone Occidental,HIGH,1.0,TD-LO
+Chad,Logone Oriental,Logone Oriental,,,1121000,Region,,,#N/A,,Logone OrientalChad,region,1,TD-LR,Logone Oriental لوقون الشرقية,,,,region,1,TD-LR,Logone Oriental لوقون الشرقية,,,,,region,1,TD-LR,Logone Oriental لوقون الشرقية,HIGH,1.0,TD-LR
+Chad,Mandoul,Mandoul,,,897100,Region,,,#N/A,,MandoulChad,region,1,TD-MA,Mandoul ماندول,,,,region,1,TD-MA,Mandoul ماندول,,,,,region,1,TD-MA,Mandoul ماندول,HIGH,1.0,TD-MA
+Chad,Mayo-Kebbi Est,Mayo-Kebbi Est,,,1106500,Region,,,#N/A,,Mayo-Kebbi EstChad,region,1,TD-ME,Mayo-Kebbi Est مايو كيبي الشرقية,,,,region,1,TD-ME,Mayo-Kebbi Est مايو كيبي الشرقية,,,,,region,1,TD-ME,Mayo-Kebbi Est مايو كيبي الشرقية,HIGH,1.0,TD-ME
+Chad,Mayo-Kebbi Ouest,Mayo-Kebbi Ouest,,,815100,Region,,,#N/A,,Mayo-Kebbi OuestChad,region,1,TD-MO,Mayo-Kebbi Ouest مايو كيبي الغربية,,,,region,1,TD-MO,Mayo-Kebbi Ouest مايو كيبي الغربية,,,,,region,1,TD-MO,Mayo-Kebbi Ouest مايو كيبي الغربية,HIGH,1.0,TD-MO
+Chad,Moyen-Chari,Moyen-Chari,,,847500,Region,,,#N/A,,Moyen-ChariChad,region,1,TD-MC,Moyen-Chari شاري الأوسط,,,,region,1,TD-MC,Moyen-Chari شاري الأوسط,,,,,region,1,TD-MC,Moyen-Chari شاري الأوسط,HIGH,1.0,TD-MC
+Chad,Ndjamena,Ndjamena,,,1521900,Capital District,N'Djamena,,N'Djamena,,NdjamenaChad,region,1,TD-ND,N'Djaména انجمينا,,,,region,1,TD-ND,N'Djaména انجمينا,,,,,region,1,TD-ND,N'Djaména انجمينا,HIGH,1.0,TD-ND
+Chad,Ouaddaï,Ouaddaï,,,1032500,Region,,,#N/A,,OuaddaïChad,region,1,TD-OD,Ouaddaï وداي,,,,region,1,TD-OD,Ouaddaï وداي,,,,,region,1,TD-OD,Ouaddaï وداي,HIGH,1.0,TD-OD
+Chad,Salamat,Salamat,,,434900,Region,,,#N/A,,SalamatChad,region,1,TD-SA,Salamat سلامات,,,,region,1,TD-SA,Salamat سلامات,,,,,region,1,TD-SA,Salamat سلامات,HIGH,1.0,TD-SA
+Chad,Sila,Sila,,,544200,Region,,,#N/A,,SilaChad,region,1,TD-SI,Sila سيلا,,,,region,1,TD-SI,Sila سيلا,,,,,region,1,TD-SI,Sila سيلا,HIGH,1.0,TD-SI
+Chad,Tandjilé,Tandjilé,,,960900,Region,,,#N/A,,TandjiléChad,region,1,TD-TA,Tandjilé تانجلي,,,,region,1,TD-TA,Tandjilé تانجلي,,,,,region,1,TD-TA,Tandjilé تانجلي,HIGH,1.0,TD-TA
+Chad,Tibesti,Tibesti,,,36500,Region,,,#N/A,,TibestiChad,region,1,TD-TI,Tibesti تيبستي,,,,region,1,TD-TI,Tibesti تيبستي,,,,,region,1,TD-TI,Tibesti تيبستي,HIGH,1.0,TD-TI
+Chad,Wadi Fira (Biltine),Wadi Fira (Biltine),,,728200,Region,,,#N/A,,Wadi Fira (Biltine)Chad,region,1,TD-WF,Wadi Fira وادي فيرا,,,,region,1,TD-WF,Wadi Fira وادي فيرا,,,,,region,1,TD-WF,Wadi Fira وادي فيرا,HIGH,1.0,TD-WF

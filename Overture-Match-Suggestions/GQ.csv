@@ -1,0 +1,8 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Equatorial Guinea,Annobón (Pagalu),Annobón (Pagalu),,,5314,Province,,,#N/A,,Annobón (Pagalu)Equatorial Guinea,county,2,GQ-AN,ANNOBON,,,,county,2,GQ-AN,ANNOBON,,,,,region,1,GQ-AN,Annobón,HIGH,1.0,GQ-AN
+Equatorial Guinea,Bioko Norte,Bioko Norte,,,300374,Province,Malabo,,Malabo,,Bioko NorteEquatorial Guinea,region,1,GQ-BN,Bioko Norte,,,,region,1,GQ-BN,Bioko Norte,,,,,region,1,GQ-BN,Bioko Norte,HIGH,1.0,GQ-BN
+Equatorial Guinea,Bioko Sur,Bioko Sur,,,34674,Province,,,#N/A,,Bioko SurEquatorial Guinea,region,1,GQ-BS,Bioko Sur,,,,region,1,GQ-BS,Bioko Sur,,,,,region,1,GQ-BS,Bioko Sur,HIGH,1.0,GQ-BS
+Equatorial Guinea,Centro Sur,Centro Sur,,,141986,Province,,,#N/A,,Centro SurEquatorial Guinea,region,1,GQ-CS,Centro Sur,,,,region,1,GQ-CS,Centro Sur,,,,,region,1,GQ-CS,Centro Sur,HIGH,1.0,GQ-CS
+Equatorial Guinea,Kié-Ntem,Kié-Ntem,,,183664,Province,,,#N/A,,Kié-NtemEquatorial Guinea,region,1,GQ-KN,Kié-Ntem,,,,region,1,GQ-KN,Kié-Ntem,,,,,region,1,GQ-KN,Kié-Ntem,HIGH,1.0,GQ-KN
+Equatorial Guinea,Litoral,Litoral,,,367348,Province,Bata,,Bata,,LitoralEquatorial Guinea,region,1,GQ-LI,Litoral,,,,region,1,GQ-LI,Litoral,,,,,region,1,GQ-LI,Litoral,HIGH,1.0,GQ-LI
+Equatorial Guinea,Wele-Nzas,Wele-Nzas,,,192017,Province,,,#N/A,,Wele-NzasEquatorial Guinea,region,1,GQ-WN,Wele-Nzas,,,,region,1,GQ-WN,Wele-Nzas,,,,,region,1,GQ-WN,Wele-Nzas,HIGH,1.0,GQ-WN

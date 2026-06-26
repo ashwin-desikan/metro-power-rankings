@@ -1,0 +1,20 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Guam,Agana Heights,Agana Heights,,,3673,Municipality,Dededo,,Dededo,,Agana HeightsGuam,locality,,,Agana Heights,,,,region,2,nan,Agana Heights Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Agat,Agat,,,4515,Municipality,Dededo,,Dededo,,AgatGuam,locality,,,Agat,,,,locality,,nan,Agat,,,,,,,,,HIGH,1.0,nan
+Guam,Asan,Asan,,,2011,Municipality,Dededo,,Dededo,,AsanGuam,region,2,,Asan Municipality,,,,region,2,nan,Asan Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Barrigada,Barrigada,,,7956,Municipality,Dededo,,Dededo,,BarrigadaGuam,region,2,,Barrigada Municipality,,,,region,2,nan,Barrigada Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Chalan Pago-Ordot,Chalan Pago-Ordot,,,7064,Municipality,Dededo,,Dededo,,Chalan Pago-OrdotGuam,region,2,,Dededo Municipality,,,,region,2,nan,Chalan Pago-Ordot Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Dededo,Dededo,,,44908,Municipality,Dededo,,Dededo,,DededoGuam,region,2,,Dededo Municipality,,,,region,2,nan,Dededo Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Hagåtña,Hagåtña,,,943,Municipality,Dededo,,Dededo,,HagåtñaGuam,region,2,,Hagåtña Municipality,,,,region,2,nan,Hagåtña Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Inarajan,Inarajan,,,2317,Municipality,Dededo,,Dededo,,InarajanGuam,region,2,,Dededo Municipality,,,,,,,,,,,,,,,,NONE,0.0,
+Guam,Mangilao,Mangilao,,,13476,Municipality,Dededo,,Dededo,,MangilaoGuam,region,2,,Mangilao Municipality,,,,region,2,nan,Mangilao Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Merizo,Merizo,,,1604,Municipality,Dededo,,Dededo,,MerizoGuam,region,2,,Malesso’ Municipality,,,,locality,,nan,Merizo,,,,,,,,,HIGH,1.0,nan
+Guam,Mongmong-Toto-Maite,Mongmong-Toto-Maite,,,6380,Municipality,Dededo,,Dededo,,Mongmong-Toto-MaiteGuam,region,2,,Mongmong-Toto-Maite Municipality,,,,region,2,nan,Mongmong-Toto-Maite Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Piti,Piti,,,1585,Municipality,Dededo,,Dededo,,PitiGuam,region,2,,Piti Municipality,,,,region,2,nan,Piti Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Santa Rita,Santa Rita,,,6470,Municipality,Dededo,,Dededo,,Santa RitaGuam,locality,,,Santa Rita,,,,locality,,nan,Santa Rita,,,,,,,,,HIGH,1.0,nan
+Guam,Sinajana,Sinajana,,,2611,Municipality,Dededo,,Dededo,,SinajanaGuam,region,2,,Sinajana Municipality,,,,region,2,nan,Sinajana Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Talofofo,Talofofo,,,3550,Municipality,Dededo,,Dededo,,TalofofoGuam,locality,,,Talofofo,,,,locality,,nan,Talofofo,,,,,,,,,HIGH,1.0,nan
+Guam,Tamuning,Tamuning,,,18489,Municipality,Dededo,,Dededo,,TamuningGuam,region,2,,Tamuning Municipality,,,,region,2,nan,Tamuning Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Umatac,Umatac,,,647,Municipality,Dededo,,Dededo,,UmatacGuam,region,2,,Humåtak Municipality,,,,locality,,nan,Umatac,,,,,,,,,HIGH,1.0,nan
+Guam,Yigo,Yigo,,,19339,Municipality,Dededo,,Dededo,,YigoGuam,region,2,,Yigo Municipality,,,,region,2,nan,Yigo Municipality,,,,,,,,,HIGH,1.0,nan
+Guam,Yona,Yona,,,6298,Municipality,Dededo,,Dededo,,YonaGuam,region,2,,Yona Municipality,,,,region,2,nan,Yona Municipality,,,,,,,,,HIGH,1.0,nan

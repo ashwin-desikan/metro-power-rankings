@@ -1,117 +1,117 @@
 ﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Zambia,Chibombo,Central,,,421315,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Chibombo District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Kapiri Mposhi,Central,,,371068,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Kapiri Mposhi District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Mumbwa,Central,,,332237,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Mumbwa District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Kabwe,Central,,,299206,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Kabwe District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Mkushi,Central,,,208635,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Mkushi District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Chisamba,Central,,,160828,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Chisamba District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Serenje,Central,,,158192,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Serenje District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Chitambo,Central,,,100603,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Chitambo District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Shibuyunji,Central,,,91616,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Shibuyunji District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Luano,Central,,,66679,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Luano District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Ngabwe,Central,,,42104,District,,,#N/A,,CentralZambia,,,,,,,,county,2,ZM-02,Ngabwe District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
-Zambia,Kitwe,Copperbelt,,,661901,District,Kitwe,,Kitwe,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Kitwe District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Ndola,Copperbelt,,,624579,District,Ndola,,Ndola,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Ndola District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Chingola,Copperbelt,,,299936,District,,,#N/A,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Chingola District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Luanshya,Copperbelt,,,211966,District,,,#N/A,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Luanshya District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Mufulira,Copperbelt,,,200182,District,,,#N/A,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Mufulira District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Masaiti,Copperbelt,,,177829,District,,,#N/A,,CopperbeltZambia,,,,,,,,locality,,ZM-08,Masaiti,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Kalulushi,Copperbelt,,,170701,District,,,#N/A,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Kalulushi District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Chililabombwe,Copperbelt,,,141899,District,,,#N/A,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Chililabombwe District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Mpongwe,Copperbelt,,,135486,District,,,#N/A,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Mpongwe District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Lufwanyama,Copperbelt,,,133060,District,,,#N/A,,CopperbeltZambia,,,,,,,,county,2,ZM-08,Lufwanyama District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
-Zambia,Chipata,Eastern,,,327059,District,Chipata,,Chipata,,EasternZambia,,,,,,,,county,2,ZM-03,Chipata District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Petauke,Eastern,,,259385,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Petauke District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Katete,Eastern,,,214072,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Katete District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Sinda,Eastern,,,213762,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Sinda District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Chipangali (← Chipata),Eastern,,,169357,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Chipangali District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Lumezi (← Lundazi),Eastern,,,158971,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Lumezi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Kasenengwa (← Chipata),Eastern,,,155565,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Kasenengwa District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Lundazi,Eastern,,,154908,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Lundazi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Chama,Eastern,,,140326,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Chama District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Nyimba,Eastern,,,136238,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Nyimba District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Chasefu (← Lundazi),Eastern,,,131160,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Chasefu District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Mambwe,Eastern,,,119313,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Mambwe District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Chadiza,Eastern,,,111069,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Chadiza District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Lusangazi (Msanzala; ← Petauke),Eastern,,,110523,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Lusangazi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Vubwi,Eastern,,,53080,District,,,#N/A,,EasternZambia,,,,,,,,county,2,ZM-03,Vubwi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
-Zambia,Mansa,Luapula,,,327063,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Mansa District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Nchelenge,Luapula,,,233696,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Nchelenge District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Chienge (Chiengi),Luapula,,,189893,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Chiengi District,,,,,region,1,ZM-04,Luapula Province,LOW,0.857,ZM-04
-Zambia,Samfya,Luapula,,,147189,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Samfya District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Kawambwa,Luapula,,,123652,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Kawambwa District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Mwense,Luapula,,,122605,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Mwense District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Chifunabuli (← Samfya),Luapula,,,116326,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Chifunabuli District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Mwansabombwe,Luapula,,,58919,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Mwansabombwe District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Milenge,Luapula,,,56543,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Milenge District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Chembe,Luapula,,,51532,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Chembe District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Chipili,Luapula,,,47210,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Chipili District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Lunga,Luapula,,,39383,District,,,#N/A,,LuapulaZambia,,,,,,,,county,2,ZM-04,Lunga District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
-Zambia,Lusaka,Lusaka,,,2204059,District,Lusaka,,Lusaka,,LusakaZambia,,,,,,,,county,2,ZM-09,Lusaka District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
-Zambia,Chongwe,Lusaka,,,313389,District,Lusaka,,Lusaka,,LusakaZambia,,,,,,,,county,2,ZM-09,Chongwe District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
-Zambia,Chilanga,Lusaka,,,225276,District,Lusaka,,Lusaka,,LusakaZambia,,,,,,,,county,2,ZM-09,Chilanga District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
-Zambia,Kafue,Lusaka,,,219574,District,Lusaka,,Lusaka,,LusakaZambia,,,,,,,,county,2,ZM-09,Kafue District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
-Zambia,Rufunsa,Lusaka,,,81733,District,,,#N/A,,LusakaZambia,,,,,,,,county,2,ZM-09,Rufunsa District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
-Zambia,Luangwa,Lusaka,,,35933,District,,,#N/A,,LusakaZambia,,,,,,,,county,2,ZM-09,Luangwa District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
-Zambia,Nakonde,Muchinga,,,178788,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Nakonde District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
-Zambia,Mpika,Muchinga,,,149063,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Mpika District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
-Zambia,Chinsali,Muchinga,,,148997,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Chinsali District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
-Zambia,Isoka,Muchinga,,,111599,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Isoka District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
-Zambia,Mafinga,Muchinga,,,102533,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Mafinga District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
-Zambia,Kanchibiya (← Mpika),Muchinga,,,93052,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Kanchibiya District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
-Zambia,Shiwang'andu,Muchinga,,,78509,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Shiwa Ng'andu District,,,,,region,1,ZM-10,Muchinga Province,MED,0.96,ZM-10
-Zambia,Lavushimanda (← Mpika),Muchinga,,,55755,District,,,#N/A,,MuchingaZambia,,,,,,,,county,2,ZM-10,Lavushimanda District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
-Zambia,Kasama,Northern,,,348552,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Kasama District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Mungwi,Northern,,,205096,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Mungwi District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Mbala,Northern,,,161595,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Mbala District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Mpulungu,Northern,,,153564,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Mpulungu District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Senga Hill (← Mbala),Northern,,,126308,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Senga Hill District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Chilubi,Northern,,,114011,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Chilubi District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Kaputa,Northern,,,102854,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Kaputa District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Luwingu,Northern,,,101142,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Luwingu District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Lunte (← Mporokoso),Northern,,,84573,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Lunte District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Lupososhi (← Luwingu),Northern,,,79614,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Lupososhi District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Nsama,Northern,,,77651,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Nsama District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Mporokoso,Northern,,,63452,District,,,#N/A,,NorthernZambia,,,,,,,,county,2,ZM-05,Mporokoso District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
-Zambia,Solwezi,North-Western,,,332623,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Solwezi District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Kalumbila (← Solwezi),North-Western,,,177067,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Kalumbila District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Mwinilunga,North-Western,,,136770,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Mwinilunga District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Kasempa,North-Western,,,111272,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Kasempa District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Zambezi,North-Western,,,108220,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Zambezi District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Mufumbwe,North-Western,,,98217,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Mufumbwe District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Manyinga,North-Western,,,75030,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Manyinga District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Kabompo,North-Western,,,65760,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Kabompo District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Mushindamo (← Solwezi),North-Western,,,65335,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Mushindamo District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Chavuma,North-Western,,,54959,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Chavuma District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Ikelenge,North-Western,,,44775,District,,,#N/A,,North-WesternZambia,,,,,,,,county,2,ZM-06,Ikelenge District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
-Zambia,Livingstone,Southern,,,177393,District,Livingstone,,Livingstone,,SouthernZambia,,,,,,,,county,2,ZM-07,Livingstone District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Kalomo,Southern,,,274640,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Kalomo District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Monze,Southern,,,268432,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Monze District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Choma,Southern,,,266916,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Choma District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Mazabuka,Southern,,,232045,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Mazabuka District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Kazungula,Southern,,,173002,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Kazungula District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Namwala,Southern,,,167938,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Namwala District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Sinazongwe,Southern,,,159055,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Sinazongwe District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Itezhi-Tezhi,Southern,,,130216,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Itezhi-Tezhi District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Zimba,Southern,,,108316,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Zimba District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Pemba,Southern,,,101021,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Pemba District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Chikankata,Southern,,,98671,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Chikankata District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Gwembe,Southern,,,79273,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Gwembe District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Chirundu,Southern,,,78780,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Chirundu District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Siavonga,Southern,,,66030,District,,,#N/A,,SouthernZambia,,,,,,,,county,2,ZM-07,Siavonga District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
-Zambia,Mongu,Western,,,197816,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Mongu District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Kaoma,Western,,,146690,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Kaoma District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Senanga,Western,,,112040,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Senanga District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Kalabo,Western,,,111769,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Kalabo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Nkeyema,Western,,,106074,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Nkeyema District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Lukulu,Western,,,96290,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Lukulu District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Shang'ombo,Western,,,73822,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Shang'ombo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Nalolo,Western,,,73645,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Nalolo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Sesheke,Western,,,72655,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Sesheke District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Sioma,Western,,,65539,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Sioma District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Limulunga,Western,,,61102,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Limulunga District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Luampa,Western,,,61023,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Luampa District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Sikongo,Western,,,59670,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Sikongo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Mulobezi,Western,,,45326,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Mulobezi District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Mwandi,Western,,,40418,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Mwandi District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
-Zambia,Mitete,Western,,,39641,District,,,#N/A,,WesternZambia,,,,,,,,county,2,ZM-01,Mitete District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Chibombo,Central,,,421315,District,,,#N/A,,CentralZambia,county,2,ZM-02,Chibombo District,,,,county,2,ZM-02,Chibombo District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Kapiri Mposhi,Central,,,371068,District,,,#N/A,,CentralZambia,county,2,ZM-02,Kapiri Mposhi District,,,,county,2,ZM-02,Kapiri Mposhi District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Mumbwa,Central,,,332237,District,,,#N/A,,CentralZambia,county,2,ZM-02,Mumbwa District,,,,county,2,ZM-02,Mumbwa District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Kabwe,Central,,,299206,District,,,#N/A,,CentralZambia,county,2,ZM-02,Kabwe District,,,,county,2,ZM-02,Kabwe District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Mkushi,Central,,,208635,District,,,#N/A,,CentralZambia,county,2,ZM-02,Mkushi District,,,,county,2,ZM-02,Mkushi District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Chisamba,Central,,,160828,District,,,#N/A,,CentralZambia,county,2,ZM-02,Chisamba District,,,,county,2,ZM-02,Chisamba District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Serenje,Central,,,158192,District,,,#N/A,,CentralZambia,county,2,ZM-02,Serenje District,,,,county,2,ZM-02,Serenje District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Chitambo,Central,,,100603,District,,,#N/A,,CentralZambia,county,2,ZM-02,Chitambo District,,,,county,2,ZM-02,Chitambo District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Shibuyunji,Central,,,91616,District,,,#N/A,,CentralZambia,county,2,ZM-02,Shibuyunji District,,,,county,2,ZM-02,Shibuyunji District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Luano,Central,,,66679,District,,,#N/A,,CentralZambia,county,2,ZM-02,Luano District,,,,county,2,ZM-02,Luano District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Ngabwe,Central,,,42104,District,,,#N/A,,CentralZambia,county,2,ZM-02,Ngabwe District,,,,county,2,ZM-02,Ngabwe District,,,,,region,1,ZM-02,Central Province,HIGH,1.0,ZM-02
+Zambia,Kitwe,Copperbelt,,,661901,District,Kitwe,,Kitwe,,CopperbeltZambia,county,2,ZM-08,Kitwe District,,,,county,2,ZM-08,Kitwe District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Ndola,Copperbelt,,,624579,District,Ndola,,Ndola,,CopperbeltZambia,county,2,ZM-08,Ndola District,,,,county,2,ZM-08,Ndola District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Chingola,Copperbelt,,,299936,District,,,#N/A,,CopperbeltZambia,county,2,ZM-08,Chingola District,,,,county,2,ZM-08,Chingola District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Luanshya,Copperbelt,,,211966,District,,,#N/A,,CopperbeltZambia,county,2,ZM-08,Luanshya District,,,,county,2,ZM-08,Luanshya District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Mufulira,Copperbelt,,,200182,District,,,#N/A,,CopperbeltZambia,county,2,ZM-08,Mufulira District,,,,county,2,ZM-08,Mufulira District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Masaiti,Copperbelt,,,177829,District,,,#N/A,,CopperbeltZambia,locality,,ZM-08,Masaiti,,,,locality,,ZM-08,Masaiti,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Kalulushi,Copperbelt,,,170701,District,,,#N/A,,CopperbeltZambia,county,2,ZM-08,Kalulushi District,,,,county,2,ZM-08,Kalulushi District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Chililabombwe,Copperbelt,,,141899,District,,,#N/A,,CopperbeltZambia,county,2,ZM-08,Chililabombwe District,,,,county,2,ZM-08,Chililabombwe District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Mpongwe,Copperbelt,,,135486,District,,,#N/A,,CopperbeltZambia,county,2,ZM-08,Mpongwe District,,,,county,2,ZM-08,Mpongwe District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Lufwanyama,Copperbelt,,,133060,District,,,#N/A,,CopperbeltZambia,county,2,ZM-08,Lufwanyama District,,,,county,2,ZM-08,Lufwanyama District,,,,,region,1,ZM-08,Copperbelt Province,HIGH,1.0,ZM-08
+Zambia,Chipata,Eastern,,,327059,District,Chipata,,Chipata,,EasternZambia,county,2,ZM-03,Chipata District,,,,county,2,ZM-03,Chipata District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Petauke,Eastern,,,259385,District,,,#N/A,,EasternZambia,county,2,ZM-03,Petauke District,,,,county,2,ZM-03,Petauke District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Katete,Eastern,,,214072,District,,,#N/A,,EasternZambia,county,2,ZM-03,Katete District,,,,county,2,ZM-03,Katete District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Sinda,Eastern,,,213762,District,,,#N/A,,EasternZambia,county,2,ZM-03,Sinda District,,,,county,2,ZM-03,Sinda District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Chipangali (← Chipata),Eastern,,,169357,District,,,#N/A,,EasternZambia,county,2,ZM-03,Chipangali District,,,,county,2,ZM-03,Chipangali District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Lumezi (← Lundazi),Eastern,,,158971,District,,,#N/A,,EasternZambia,county,2,ZM-03,Lumezi District,,,,county,2,ZM-03,Lumezi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Kasenengwa (← Chipata),Eastern,,,155565,District,,,#N/A,,EasternZambia,county,2,ZM-03,Kasenengwa District,,,,county,2,ZM-03,Kasenengwa District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Lundazi,Eastern,,,154908,District,,,#N/A,,EasternZambia,county,2,ZM-03,Lundazi District,,,,county,2,ZM-03,Lundazi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Chama,Eastern,,,140326,District,,,#N/A,,EasternZambia,county,2,ZM-03,Chama District,,,,county,2,ZM-03,Chama District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Nyimba,Eastern,,,136238,District,,,#N/A,,EasternZambia,county,2,ZM-03,Nyimba District,,,,county,2,ZM-03,Nyimba District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Chasefu (← Lundazi),Eastern,,,131160,District,,,#N/A,,EasternZambia,county,2,ZM-03,Chasefu District,,,,county,2,ZM-03,Chasefu District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Mambwe,Eastern,,,119313,District,,,#N/A,,EasternZambia,county,2,ZM-03,Mambwe District,,,,county,2,ZM-03,Mambwe District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Chadiza,Eastern,,,111069,District,,,#N/A,,EasternZambia,county,2,ZM-03,Chadiza District,,,,county,2,ZM-03,Chadiza District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Lusangazi (Msanzala; ← Petauke),Eastern,,,110523,District,,,#N/A,,EasternZambia,county,2,ZM-03,Lusangazi District,,,,county,2,ZM-03,Lusangazi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Vubwi,Eastern,,,53080,District,,,#N/A,,EasternZambia,county,2,ZM-03,Vubwi District,,,,county,2,ZM-03,Vubwi District,,,,,region,1,ZM-03,Eastern Province,HIGH,1.0,ZM-03
+Zambia,Mansa,Luapula,,,327063,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Mansa District,,,,county,2,ZM-04,Mansa District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Nchelenge,Luapula,,,233696,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Nchelenge District,,,,county,2,ZM-04,Nchelenge District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Chienge (Chiengi),Luapula,,,189893,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Chiengi District,,,,county,2,ZM-04,Chiengi District,,,,,region,1,ZM-04,Luapula Province,LOW,0.857,ZM-04
+Zambia,Samfya,Luapula,,,147189,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Samfya District,,,,county,2,ZM-04,Samfya District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Kawambwa,Luapula,,,123652,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Kawambwa District,,,,county,2,ZM-04,Kawambwa District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Mwense,Luapula,,,122605,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Mwense District,,,,county,2,ZM-04,Mwense District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Chifunabuli (← Samfya),Luapula,,,116326,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Chifunabuli District,,,,county,2,ZM-04,Chifunabuli District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Mwansabombwe,Luapula,,,58919,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Mwansabombwe District,,,,county,2,ZM-04,Mwansabombwe District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Milenge,Luapula,,,56543,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Milenge District,,,,county,2,ZM-04,Milenge District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Chembe,Luapula,,,51532,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Chembe District,,,,county,2,ZM-04,Chembe District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Chipili,Luapula,,,47210,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Chipili District,,,,county,2,ZM-04,Chipili District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Lunga,Luapula,,,39383,District,,,#N/A,,LuapulaZambia,county,2,ZM-04,Lunga District,,,,county,2,ZM-04,Lunga District,,,,,region,1,ZM-04,Luapula Province,HIGH,1.0,ZM-04
+Zambia,Lusaka,Lusaka,,,2204059,District,Lusaka,,Lusaka,,LusakaZambia,county,2,ZM-09,Lusaka District,,,,county,2,ZM-09,Lusaka District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
+Zambia,Chongwe,Lusaka,,,313389,District,Lusaka,,Lusaka,,LusakaZambia,county,2,ZM-09,Chongwe District,,,,county,2,ZM-09,Chongwe District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
+Zambia,Chilanga,Lusaka,,,225276,District,Lusaka,,Lusaka,,LusakaZambia,county,2,ZM-09,Chilanga District,,,,county,2,ZM-09,Chilanga District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
+Zambia,Kafue,Lusaka,,,219574,District,Lusaka,,Lusaka,,LusakaZambia,county,2,ZM-09,Kafue District,,,,county,2,ZM-09,Kafue District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
+Zambia,Rufunsa,Lusaka,,,81733,District,,,#N/A,,LusakaZambia,county,2,ZM-09,Rufunsa District,,,,county,2,ZM-09,Rufunsa District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
+Zambia,Luangwa,Lusaka,,,35933,District,,,#N/A,,LusakaZambia,county,2,ZM-09,Luangwa District,,,,county,2,ZM-09,Luangwa District,,,,,region,1,ZM-09,Lusaka Province,HIGH,1.0,ZM-09
+Zambia,Nakonde,Muchinga,,,178788,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Nakonde District,,,,county,2,ZM-10,Nakonde District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
+Zambia,Mpika,Muchinga,,,149063,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Mpika District,,,,county,2,ZM-10,Mpika District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
+Zambia,Chinsali,Muchinga,,,148997,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Chinsali District,,,,county,2,ZM-10,Chinsali District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
+Zambia,Isoka,Muchinga,,,111599,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Isoka District,,,,county,2,ZM-10,Isoka District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
+Zambia,Mafinga,Muchinga,,,102533,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Mafinga District,,,,county,2,ZM-10,Mafinga District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
+Zambia,Kanchibiya (← Mpika),Muchinga,,,93052,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Kanchibiya District,,,,county,2,ZM-10,Kanchibiya District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
+Zambia,Shiwang'andu,Muchinga,,,78509,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Shiwa Ng'andu District,,,,county,2,ZM-10,Shiwa Ng'andu District,,,,,region,1,ZM-10,Muchinga Province,MED,0.96,ZM-10
+Zambia,Lavushimanda (← Mpika),Muchinga,,,55755,District,,,#N/A,,MuchingaZambia,county,2,ZM-10,Lavushimanda District,,,,county,2,ZM-10,Lavushimanda District,,,,,region,1,ZM-10,Muchinga Province,HIGH,1.0,ZM-10
+Zambia,Kasama,Northern,,,348552,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Kasama District,,,,county,2,ZM-05,Kasama District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Mungwi,Northern,,,205096,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Mungwi District,,,,county,2,ZM-05,Mungwi District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Mbala,Northern,,,161595,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Mbala District,,,,county,2,ZM-05,Mbala District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Mpulungu,Northern,,,153564,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Mpulungu District,,,,county,2,ZM-05,Mpulungu District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Senga Hill (← Mbala),Northern,,,126308,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Senga Hill District,,,,county,2,ZM-05,Senga Hill District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Chilubi,Northern,,,114011,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Chilubi District,,,,county,2,ZM-05,Chilubi District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Kaputa,Northern,,,102854,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Kaputa District,,,,county,2,ZM-05,Kaputa District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Luwingu,Northern,,,101142,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Luwingu District,,,,county,2,ZM-05,Luwingu District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Lunte (← Mporokoso),Northern,,,84573,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Lunte District,,,,county,2,ZM-05,Lunte District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Lupososhi (← Luwingu),Northern,,,79614,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Lupososhi District,,,,county,2,ZM-05,Lupososhi District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Nsama,Northern,,,77651,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Nsama District,,,,county,2,ZM-05,Nsama District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Mporokoso,Northern,,,63452,District,,,#N/A,,NorthernZambia,county,2,ZM-05,Mporokoso District,,,,county,2,ZM-05,Mporokoso District,,,,,region,1,ZM-05,Northern Province,HIGH,1.0,ZM-05
+Zambia,Solwezi,North-Western,,,332623,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Solwezi District,,,,county,2,ZM-06,Solwezi District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Kalumbila (← Solwezi),North-Western,,,177067,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Kalumbila District,,,,county,2,ZM-06,Kalumbila District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Mwinilunga,North-Western,,,136770,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Mwinilunga District,,,,county,2,ZM-06,Mwinilunga District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Kasempa,North-Western,,,111272,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Kasempa District,,,,county,2,ZM-06,Kasempa District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Zambezi,North-Western,,,108220,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Zambezi District,,,,county,2,ZM-06,Zambezi District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Mufumbwe,North-Western,,,98217,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Mufumbwe District,,,,county,2,ZM-06,Mufumbwe District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Manyinga,North-Western,,,75030,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Manyinga District,,,,county,2,ZM-06,Manyinga District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Kabompo,North-Western,,,65760,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Kabompo District,,,,county,2,ZM-06,Kabompo District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Mushindamo (← Solwezi),North-Western,,,65335,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Mushindamo District,,,,county,2,ZM-06,Mushindamo District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Chavuma,North-Western,,,54959,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Chavuma District,,,,county,2,ZM-06,Chavuma District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Ikelenge,North-Western,,,44775,District,,,#N/A,,North-WesternZambia,county,2,ZM-06,Ikelenge District,,,,county,2,ZM-06,Ikelenge District,,,,,region,1,ZM-06,North-Western Province,HIGH,1.0,ZM-06
+Zambia,Livingstone,Southern,,,177393,District,Livingstone,,Livingstone,,SouthernZambia,county,2,ZM-07,Livingstone District,,,,county,2,ZM-07,Livingstone District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Kalomo,Southern,,,274640,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Kalomo District,,,,county,2,ZM-07,Kalomo District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Monze,Southern,,,268432,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Monze District,,,,county,2,ZM-07,Monze District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Choma,Southern,,,266916,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Choma District,,,,county,2,ZM-07,Choma District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Mazabuka,Southern,,,232045,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Mazabuka District,,,,county,2,ZM-07,Mazabuka District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Kazungula,Southern,,,173002,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Kazungula District,,,,county,2,ZM-07,Kazungula District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Namwala,Southern,,,167938,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Namwala District,,,,county,2,ZM-07,Namwala District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Sinazongwe,Southern,,,159055,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Sinazongwe District,,,,county,2,ZM-07,Sinazongwe District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Itezhi-Tezhi,Southern,,,130216,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Itezhi-Tezhi District,,,,county,2,ZM-07,Itezhi-Tezhi District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Zimba,Southern,,,108316,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Zimba District,,,,county,2,ZM-07,Zimba District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Pemba,Southern,,,101021,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Pemba District,,,,county,2,ZM-07,Pemba District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Chikankata,Southern,,,98671,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Chikankata District,,,,county,2,ZM-07,Chikankata District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Gwembe,Southern,,,79273,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Gwembe District,,,,county,2,ZM-07,Gwembe District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Chirundu,Southern,,,78780,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Chirundu District,,,,county,2,ZM-07,Chirundu District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Siavonga,Southern,,,66030,District,,,#N/A,,SouthernZambia,county,2,ZM-07,Siavonga District,,,,county,2,ZM-07,Siavonga District,,,,,region,1,ZM-07,Southern Province,HIGH,1.0,ZM-07
+Zambia,Mongu,Western,,,197816,District,,,#N/A,,WesternZambia,county,2,ZM-01,Mongu District,,,,county,2,ZM-01,Mongu District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Kaoma,Western,,,146690,District,,,#N/A,,WesternZambia,county,2,ZM-01,Kaoma District,,,,county,2,ZM-01,Kaoma District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Senanga,Western,,,112040,District,,,#N/A,,WesternZambia,county,2,ZM-01,Senanga District,,,,county,2,ZM-01,Senanga District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Kalabo,Western,,,111769,District,,,#N/A,,WesternZambia,county,2,ZM-01,Kalabo District,,,,county,2,ZM-01,Kalabo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Nkeyema,Western,,,106074,District,,,#N/A,,WesternZambia,county,2,ZM-01,Nkeyema District,,,,county,2,ZM-01,Nkeyema District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Lukulu,Western,,,96290,District,,,#N/A,,WesternZambia,county,2,ZM-01,Lukulu District,,,,county,2,ZM-01,Lukulu District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Shang'ombo,Western,,,73822,District,,,#N/A,,WesternZambia,county,2,ZM-01,Shang'ombo District,,,,county,2,ZM-01,Shang'ombo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Nalolo,Western,,,73645,District,,,#N/A,,WesternZambia,county,2,ZM-01,Nalolo District,,,,county,2,ZM-01,Nalolo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Sesheke,Western,,,72655,District,,,#N/A,,WesternZambia,county,2,ZM-01,Sesheke District,,,,county,2,ZM-01,Sesheke District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Sioma,Western,,,65539,District,,,#N/A,,WesternZambia,county,2,ZM-01,Sioma District,,,,county,2,ZM-01,Sioma District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Limulunga,Western,,,61102,District,,,#N/A,,WesternZambia,county,2,ZM-01,Limulunga District,,,,county,2,ZM-01,Limulunga District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Luampa,Western,,,61023,District,,,#N/A,,WesternZambia,county,2,ZM-01,Luampa District,,,,county,2,ZM-01,Luampa District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Sikongo,Western,,,59670,District,,,#N/A,,WesternZambia,county,2,ZM-01,Sikongo District,,,,county,2,ZM-01,Sikongo District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Mulobezi,Western,,,45326,District,,,#N/A,,WesternZambia,county,2,ZM-01,Mulobezi District,,,,county,2,ZM-01,Mulobezi District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Mwandi,Western,,,40418,District,,,#N/A,,WesternZambia,county,2,ZM-01,Mwandi District,,,,county,2,ZM-01,Mwandi District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01
+Zambia,Mitete,Western,,,39641,District,,,#N/A,,WesternZambia,county,2,ZM-01,Mitete District,,,,county,2,ZM-01,Mitete District,,,,,region,1,ZM-01,Western Province,HIGH,1.0,ZM-01

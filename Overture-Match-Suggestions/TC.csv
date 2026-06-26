@@ -1,0 +1,8 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Turks & Caicos Islands,Grand Turk,Grand Turk,,,4831,Island,Cockburn Town,,Cockburn Town,,Grand TurkTurks & Caicos Islands,region,2,,Grand Turk,,,,region,2,nan,Grand Turk,,,,,,,,,HIGH,1.0,nan
+Turks & Caicos Islands,Middle Caicos,Middle Caicos,,,168,Island,,,#N/A,,Middle CaicosTurks & Caicos Islands,region,2,,Middle Caicos,,,,region,2,nan,Middle Caicos,,,,,,,,,HIGH,1.0,nan
+Turks & Caicos Islands,North Caicos,North Caicos,,,1312,Island,,,#N/A,,North CaicosTurks & Caicos Islands,region,2,,North Caicos,,,,region,2,nan,North Caicos,,,,,,,,,HIGH,1.0,nan
+Turks & Caicos Islands,Parrot Cay,Parrot Cay,,,131,Island,,,#N/A,,Parrot CayTurks & Caicos Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Turks & Caicos Islands,Providenciales,Providenciales,,,23769,Island,Providenciales,,Providenciales,,ProvidencialesTurks & Caicos Islands,region,2,,Providenciales,,,,region,2,nan,Providenciales,,,,,,,,,HIGH,1.0,nan
+Turks & Caicos Islands,Salt Cay,Salt Cay,,,108,Island,,,#N/A,,Salt CayTurks & Caicos Islands,region,2,,Salt Cay,,,,region,2,nan,Salt Cay,,,,,,,,,HIGH,1.0,nan
+Turks & Caicos Islands,South Caicos,South Caicos,,,1139,Island,,,#N/A,,South CaicosTurks & Caicos Islands,,,,,,,,,,,,,,,,,,,,NONE,0.0,

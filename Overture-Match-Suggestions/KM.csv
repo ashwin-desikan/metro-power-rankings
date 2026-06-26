@@ -1,0 +1,55 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Comoros,Djando,Djando,,,9349,Commune,,,#N/A,,DjandoComoros,locality,,KM-M,Djando,,,,county,2,KM-M,Djando,,,,,region,1,KM-M,موهيلي Mohéli,HIGH,1.0,KM-M
+Comoros,Koni,Domoni,,,18883,Commune,,,#N/A,,DomoniComoros,locality,,KM-A,Koni,,,,locality,,KM-A,Koni,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Domoni,Domoni,,,15623,Commune,,,#N/A,,DomoniComoros,locality,,KM-A,Domoni,,,,county,2,KM-A,Domoni,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Bambao Mstanga,Domoni,,,13779,Commune,,,#N/A,,DomoniComoros,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Jimlimé,Domoni,,,11480,Commune,,,#N/A,,DomoniComoros,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Ngandzalé,Domoni,,,10139,Commune,,,#N/A,,DomoniComoros,locality,,KM-A,Ngandzalé,,,,locality,,KM-A,Ngandzalé,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Fomboni,Fomboni,,,17291,Commune,,,#N/A,,FomboniComoros,locality,,KM-M,Fomboni,,,,county,2,KM-M,Fomboni,,,,,region,1,KM-M,موهيلي Mohéli,HIGH,1.0,KM-M
+Comoros,Moili Mdjini,Fomboni,,,7410,Commune,,,#N/A,,FomboniComoros,locality,,KM-M,Moili Mdjini,,,,locality,,KM-M,Moili Mdjini,,,,,region,1,KM-M,موهيلي Mohéli,HIGH,1.0,KM-M
+Comoros,Moinbassa,Fomboni,,,6133,Commune,,,#N/A,,FomboniComoros,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Nyuma Msiru,Hamahamet-Mboinkou,,,13630,Commune,,,#N/A,,Hamahamet-MboinkouComoros,locality,,KM-G,Nyuma Msiru,,,,locality,,KM-G,Nyuma Msiru,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Mboinkou,Hamahamet-Mboinkou,,,11573,Commune,,,#N/A,,Hamahamet-MboinkouComoros,locality,,KM-G,Mboinkou,,,,locality,,KM-G,Mboinkou,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Nyuma Mro,Hamahamet-Mboinkou,,,11445,Commune,,,#N/A,,Hamahamet-MboinkouComoros,locality,,KM-G,Nyuma Mro,,,,locality,,KM-G,Nyuma Mro,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Tsinimoipangua,Hambou,,,13443,Commune,,,#N/A,,HambouComoros,locality,,KM-G,Tsinimoipangua,,,,locality,,KM-G,Tsinimoipangua,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Djoumoipangua,Hambou,,,9334,Commune,,,#N/A,,HambouComoros,locality,,KM-G,Djoumoipangua,,,,locality,,KM-G,Djoumoipangua,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Bangaani,Itsandra-Hamanvou,,,19355,Commune,,,#N/A,,Itsandra-HamanvouComoros,locality,,KM-G,Bangaani,,,,locality,,KM-G,Bangaani,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Hamanvou,Itsandra-Hamanvou,,,13789,Commune,,,#N/A,,Itsandra-HamanvouComoros,locality,,KM-G,Hamanvou,,,,locality,,KM-G,Hamanvou,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Mbadani,Itsandra-Hamanvou,,,8470,Commune,,,#N/A,,Itsandra-HamanvouComoros,locality,,KM-G,Mbadani,,,,locality,,KM-G,Mbadani,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Isahari,Itsandra-Hamanvou,,,8279,Commune,,,#N/A,,Itsandra-HamanvouComoros,locality,,KM-G,Isahari,,,,locality,,KM-G,Isahari,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Djoumoichongo,Itsandra-Hamanvou,,,7442,Commune,,,#N/A,,Itsandra-HamanvouComoros,locality,,KM-G,Djoumoichongo,,,,locality,,KM-G,Djoumoichongo,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Itsahidi,Mbadjini-Est,,,15225,Commune,,,#N/A,,Mbadjini-EstComoros,locality,,KM-G,Itsah,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Pimba,Mbadjini-Est,,,11923,Commune,,,#N/A,,Mbadjini-EstComoros,locality,,KM-G,Pimba,,,,locality,,KM-G,Pimba,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Domba (Dombàà),Mbadjini-Est,,,8164,Commune,,,#N/A,,Mbadjini-EstComoros,locality,,KM-G,Domba,,,,locality,,KM-G,Domba,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Nioumagama,Mbadjini-Ouest,,,14355,Commune,,,#N/A,,Mbadjini-OuestComoros,locality,,KM-G,Nioumagama,,,,locality,,KM-G,Nioumagama,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Ngouéngoué,Mbadjini-Ouest,,,9244,Commune,,,#N/A,,Mbadjini-OuestComoros,locality,,KM-G,Ngouéngoé,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Nyumamro Souheili,Mboudé,,,12251,Commune,,,#N/A,,MboudéComoros,locality,,KM-G,Nyumamro Souheili,,,,locality,,KM-G,Nyumamro Souheili,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Nyumamro Kiblani,Mboudé,,,12089,Commune,,,#N/A,,MboudéComoros,locality,,KM-G,Nyumamro Kiblani,,,,locality,,KM-G,Nyumamro Kiblani,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Mitsamiouli,Mitsamiouli,,,9906,Commune,,,#N/A,,MitsamiouliComoros,locality,,KM-G,Mitsamiouli,,,,locality,,KM-G,Mitsamiouli,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Cembenoi Lac-Salé,Mitsamiouli,,,7926,Commune,,,#N/A,,MitsamiouliComoros,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Nyuma Komo,Mitsamiouli,,,7615,Commune,,,#N/A,,MitsamiouliComoros,locality,,KM-G,Nyuma Komo,,,,locality,,KM-G,Nyuma Komo,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Cembenoui Sada-Djoulamlima,Mitsamiouli,,,6373,Commune,,,#N/A,,MitsamiouliComoros,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Moroni,Moroni-Bambao,,,74749,Commune,Moroni,,Moroni,,Moroni-BambaoComoros,locality,,KM-G,Moroni,,,,locality,,KM-G,Moroni,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Bambao ya Hari,Moroni-Bambao,,,20854,Commune,Moroni,,Moroni,,Moroni-BambaoComoros,locality,,KM-G,Bambao ya Hari,,,,locality,,KM-G,Bambao ya Hari,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Bambao ya Djou,Moroni-Bambao,,,13525,Commune,Moroni,,Moroni,,Moroni-BambaoComoros,locality,,KM-G,Bambao ya Djou,,,,locality,,KM-G,Bambao ya Djou,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Bambao ya Mboini,Moroni-Bambao,,,12107,Commune,Moroni,,Moroni,,Moroni-BambaoComoros,locality,,KM-G,Bambao ya Mboini,,,,locality,,KM-G,Bambao ya Mboini,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Moya,Moya,,,24140,Commune,,,#N/A,,MoyaComoros,locality,,KM-A,Moya,,,,locality,,KM-A,Moya,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Adda,Mrémani,,,21482,Commune,,,#N/A,,MrémaniComoros,locality,,KM-A,Adda,,,,locality,,KM-A,Adda,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Mrémani,Mrémani,,,15805,Commune,,,#N/A,,MrémaniComoros,locality,,KM-A,Mrémani,,,,county,2,KM-A,Mrémani,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Ongojou,Mrémani,,,11206,Commune,,,#N/A,,MrémaniComoros,locality,,KM-A,Ongojou,,,,locality,,KM-A,Ongojou,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Mramani,Mrémani,,,9562,Commune,,,#N/A,,MrémaniComoros,locality,,KM-A,Mramani,,,,locality,,KM-A,Mramani,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Shaweni (Chaweni),Mrémani,,,7393,Commune,,,#N/A,,MrémaniComoros,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Mutsamudu,Mutsamudu,,,34940,Commune,,,#N/A,,MutsamuduComoros,locality,,KM-A,Mutsamudu,,,,county,2,KM-A,Mutsamudu,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Mirontsi,Mutsamudu,,,11955,Commune,,,#N/A,,MutsamuduComoros,locality,,KM-A,Mirontsy,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Bandrani ya Chironkamba,Mutsamudu,,,9733,Commune,,,#N/A,,MutsamuduComoros,locality,,KM-A,Bandrani ya Chironkamba,,,,locality,,KM-A,Bandrani ya Chironkamba,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Bandrani ya Mitsangani,Mutsamudu,,,7203,Commune,,,#N/A,,MutsamuduComoros,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,M'Lédjélé,Nioumachoua,,,7914,Commune,,,#N/A,,NioumachouaComoros,locality,,KM-M,M'lédjélé,,,,locality,,KM-M,M'lédjélé,,,,,region,1,KM-M,موهيلي Mohéli,HIGH,1.0,KM-M
+Comoros,Moimbao,Nioumachoua,,,3470,Commune,,,#N/A,,NioumachouaComoros,locality,,KM-M,Moimbao,,,,locality,,KM-M,Moimbao,,,,,region,1,KM-M,موهيلي Mohéli,HIGH,1.0,KM-M
+Comoros,Dimani,Oichili-Dimani,,,11414,Commune,,,#N/A,,Oichili-DimaniComoros,locality,,KM-G,Dimani,,,,locality,,KM-G,Dimani,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Oichili ya Djou,Oichili-Dimani,,,8860,Commune,,,#N/A,,Oichili-DimaniComoros,locality,,KM-G,Oichili ya Djou,,,,locality,,KM-G,Oichili ya Djou,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Oichili ya Mboini,Oichili-Dimani,,,6025,Commune,,,#N/A,,Oichili-DimaniComoros,locality,,KM-G,Oichili ya Mboini,,,,locality,,KM-G,Oichili ya Mboini,,,,,region,1,KM-G,Ngazidja القمر الكبرى,HIGH,1.0,KM-G
+Comoros,Bambao Mtrouni,Ouani,,,27916,Commune,,,#N/A,,OuaniComoros,locality,,KM-A,Bambao Mtsanga,,,,,,,,,,,,,,,,NONE,0.0,
+Comoros,Ouani,Ouani,,,22501,Commune,,,#N/A,,OuaniComoros,locality,,KM-A,Ouani,,,,county,2,KM-A,Ouani,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Bazimini,Ouani,,,18469,Commune,,,#N/A,,OuaniComoros,locality,,KM-A,Bazimini,,,,locality,,KM-A,Bazimini,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Sima,Sima,,,18415,Commune,,,#N/A,,SimaComoros,locality,,KM-A,Sima,,,,county,2,KM-A,Sima,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A
+Comoros,Vouani,Sima,,,16758,Commune,,,#N/A,,SimaComoros,locality,,KM-A,Vouani,,,,locality,,KM-A,Vouani,,,,,region,1,KM-A,Nzwani أنجوان,HIGH,1.0,KM-A

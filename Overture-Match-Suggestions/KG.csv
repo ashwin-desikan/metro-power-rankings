@@ -1,0 +1,60 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Kyrgyzstan,Kadamžaj [Kadamjay],Batken,,,201293,District,,,#N/A,,BatkenKyrgyzstan,county,2,KG-B,Кадамжай району,,,,,,,,,,,,region,1,KG-B,Баткен облусу,NONE,0.0,KG-B
+Kyrgyzstan,Lejlek [Leylek],Batken,,,149089,District,,,#N/A,,BatkenKyrgyzstan,county,2,KG-B,Лейлек району,,,,,,,,,,,,region,1,KG-B,Баткен облусу,NONE,0.0,KG-B
+Kyrgyzstan,Batken,Batken,,,98194,District,,,#N/A,,BatkenKyrgyzstan,county,2,KG-B,Баткен району,,,,county,2,KG-B,Баткен,,,,,region,1,KG-B,Баткен облусу,HIGH,1.0,KG-B
+Kyrgyzstan,Kyzyl-Kyâ [Kyzyl-Kyya],Batken,,,59298,District-level City,,,#N/A,,BatkenKyrgyzstan,county,2,KG-B,Кызыл-Кыя шаары,,,,,,,,,,,,region,1,KG-B,Баткен облусу,NONE,0.0,KG-B
+Kyrgyzstan,Batken,Batken,,,28559,District-level City,,,#N/A,,BatkenKyrgyzstan,county,2,KG-B,Баткен району,,,,county,2,KG-B,Баткен,,,,,region,1,KG-B,Баткен облусу,HIGH,1.0,KG-B
+Kyrgyzstan,Sùlùktù [Sülüktü],Batken,,,25010,District-level City,,,#N/A,,BatkenKyrgyzstan,county,2,KG-B,Сүлүктү шаары,,,,,,,,,,,,region,1,KG-B,Баткен облусу,NONE,0.0,KG-B
+Kyrgyzstan,Oktâbr' [October],Bishkek City,,,316745,City District,Bishkek,,Bishkek,,Bishkek CityKyrgyzstan,county,2,KG-GB,Октябрь району,,,,,,,,,,,,region,1,KG-GB,Бишкек шаары,NONE,0.0,KG-GB
+Kyrgyzstan,Sverdlov,Bishkek City,,,283981,City District,Bishkek,,Bishkek,,Bishkek CityKyrgyzstan,county,2,KG-GB,Свердлов району,,,,county,2,KG-GB,Свердлов району,,,,,region,1,KG-GB,Бишкек шаары,HIGH,1.0,KG-GB
+Kyrgyzstan,Lenin,Bishkek City,,,265451,City District,Bishkek,,Bishkek,,Bishkek CityKyrgyzstan,county,2,KG-GB,Ленин району,,,,county,2,KG-GB,Ленин району,,,,,region,1,KG-GB,Бишкек шаары,HIGH,1.0,KG-GB
+Kyrgyzstan,Birinči Maj [First of May],Bishkek City,,,237385,City District,Bishkek,,Bishkek,,Bishkek CityKyrgyzstan,county,2,KG-GB,Биринчи май району,,,,,,,,,,,,region,1,KG-GB,Бишкек шаары,NONE,0.0,KG-GB
+Kyrgyzstan,Čon-Aryk [Chong-Aryk],Bishkek City,,,11022,Settlement,,,#N/A,,Bishkek CityKyrgyzstan,county,2,KG-O,Чоң-Алай району,,,,,,,,,,,,region,1,KG-GB,Бишкек шаары,NONE,0.0,KG-GB
+Kyrgyzstan,Orto-Saj [Orto-Say],Bishkek City,,,6243,Village,,,#N/A,,Bishkek CityKyrgyzstan,,,,,,,,,,,,,,,,region,1,KG-GB,Бишкек шаары,NONE,0.0,KG-GB
+Kyrgyzstan,Sokuluk,Chüy,,,257959,District,Bishkek,,Bishkek,,ChüyKyrgyzstan,county,2,KG-C,Сокулук району,,,,locality,,KG-C,Сокулук,,,,,region,1,KG-C,Чүй облусу,HIGH,1.0,KG-C
+Kyrgyzstan,Alamùdùn [Alamüdün],Chüy,,,194381,District,Bishkek,,Bishkek,,ChüyKyrgyzstan,county,2,KG-C,Аламүдүн району,,,,,,,,,,,,region,1,KG-C,Чүй облусу,NONE,0.0,KG-C
+Kyrgyzstan,Ysyk-Ata,Chüy,,,156816,District,Bishkek,,Bishkek,,ChüyKyrgyzstan,county,2,KG-C,Ысык-Ата району,,,,county,2,KG-C,Ысык-Ата району,,,,,region,1,KG-C,Чүй облусу,HIGH,1.0,KG-C
+Kyrgyzstan,Tokmok,Chüy,,,73433,District-level City,Tokmok,,Tokmok,,ChüyKyrgyzstan,county,2,KG-C,Токмок шаары,,,,county,2,KG-C,Токмок шаары,,,,,region,1,KG-C,Чүй облусу,HIGH,1.0,KG-C
+Kyrgyzstan,Žajyl [Jayyl],Chüy,,,114852,District,,,#N/A,,ChüyKyrgyzstan,county,2,KG-C,Жайыл району,,,,,,,,,,,,region,1,KG-C,Чүй облусу,NONE,0.0,KG-C
+Kyrgyzstan,Moskva,Chüy,,,100929,District,,,#N/A,,ChüyKyrgyzstan,county,2,KG-C,Москва району,,,,county,2,KG-C,Москва району,,,,,region,1,KG-C,Чүй облусу,HIGH,1.0,KG-C
+Kyrgyzstan,Čùj [Chuy],Chüy,,,58442,District,,,#N/A,,ChüyKyrgyzstan,county,2,KG-C,Чүй району,,,,,,,,,,,,region,1,KG-C,Чүй облусу,NONE,0.0,KG-C
+Kyrgyzstan,Kemin,Chüy,,,51067,District,,,#N/A,,ChüyKyrgyzstan,county,2,KG-C,Кемин району,,,,locality,,KG-C,Кемин,,,,,region,1,KG-C,Чүй облусу,HIGH,1.0,KG-C
+Kyrgyzstan,Panfilov,Chüy,,,48879,District,,,#N/A,,ChüyKyrgyzstan,county,2,KG-C,Панфилов району,,,,county,2,KG-C,Панфилов району,,,,,region,1,KG-C,Чүй облусу,HIGH,1.0,KG-C
+Kyrgyzstan,Žeti-Ôgùz [Jeti-Ögüz],Issyk-Kul,,,99055,District,,,#N/A,,Issyk-KulKyrgyzstan,county,2,KG-Y,Жети-Өгүз району,,,,,,,,,,,,region,1,KG-Y,Ысык-Көл облусу,NONE,0.0,KG-Y
+Kyrgyzstan,Ysyk-Kôl [Issyk-Kul],Issyk-Kul,,,97748,District,,,#N/A,,Issyk-KulKyrgyzstan,county,2,KG-Y,Ысык-Көл району,,,,,,,,,,,,region,1,KG-Y,Ысык-Көл облусу,NONE,0.0,KG-Y
+Kyrgyzstan,Karakol,Issyk-Kul,,,80733,District-level City,,,#N/A,,Issyk-KulKyrgyzstan,county,2,KG-Y,Каракол шаары,,,,county,2,KG-Y,Каракол шаары,,,,,region,1,KG-Y,Ысык-Көл облусу,HIGH,1.0,KG-Y
+Kyrgyzstan,Ak-Suu,Issyk-Kul,,,73453,District,,,#N/A,,Issyk-KulKyrgyzstan,county,2,KG-Y,Ак-Суу району,,,,county,2,KG-Y,Ак-Суу району,,,,,region,1,KG-Y,Ысык-Көл облусу,HIGH,1.0,KG-Y
+Kyrgyzstan,Tùp [Tüp],Issyk-Kul,,,71382,District,,,#N/A,,Issyk-KulKyrgyzstan,county,2,KG-Y,Түп району,,,,,,,,,,,,region,1,KG-Y,Ысык-Көл облусу,NONE,0.0,KG-Y
+Kyrgyzstan,Ton̦ [Tong],Issyk-Kul,,,59876,District,,,#N/A,,Issyk-KulKyrgyzstan,county,2,KG-Y,Тоң району,,,,,,,,,,,,region,1,KG-Y,Ысык-Көл облусу,NONE,0.0,KG-Y
+Kyrgyzstan,Balykčy [Balykchy],Issyk-Kul,,,52225,District-level City,,,#N/A,,Issyk-KulKyrgyzstan,county,2,KG-Y,Балыкчы,,,,,,,,,,,,region,1,KG-Y,Ысык-Көл облусу,NONE,0.0,KG-Y
+Kyrgyzstan,Žalal-Abad [Jalal-Abad],Jalal-Abad,,,127122,District-level City,Jalal-Abad,,Jalal-Abad,,Jalal-AbadKyrgyzstan,county,2,KG-J,Манас,,,,,,,,,,,,region,1,KG-J,Жалал-Абад облусу,NONE,0.0,KG-J
+Kyrgyzstan,Suzak,Jalal-Abad,,,319341,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Сузак району,,,,county,2,KG-J,Сузак району,,,,,region,1,KG-J,Жалал-Абад облусу,HIGH,1.0,KG-J
+Kyrgyzstan,Bazar-Korgon,Jalal-Abad,,,190226,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Базар-Коргон району,,,,locality,,KG-J,Базар-Коргон,,,,,region,1,KG-J,Жалал-Абад облусу,HIGH,1.0,KG-J
+Kyrgyzstan,Nooken,Jalal-Abad,,,149640,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Ноокен району,,,,county,2,KG-J,Ноокен району,,,,,region,1,KG-J,Жалал-Абад облусу,HIGH,1.0,KG-J
+Kyrgyzstan,Aksy,Jalal-Abad,,,138544,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Аксы району,,,,county,2,KG-J,Аксы району,,,,,region,1,KG-J,Жалал-Абад облусу,HIGH,1.0,KG-J
+Kyrgyzstan,Ala-Buka,Jalal-Abad,,,114515,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Ала-Бука району,,,,county,2,KG-J,Ала-Бука району,,,,,region,1,KG-J,Жалал-Абад облусу,HIGH,1.0,KG-J
+Kyrgyzstan,Toktogul,Jalal-Abad,,,105267,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Токтогул району,,,,county,2,KG-J,Токтогул району,,,,,region,1,KG-J,Жалал-Абад облусу,HIGH,1.0,KG-J
+Kyrgyzstan,Taš-Kômùr [Tash-Komur],Jalal-Abad,,,36889,District-level City,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Таш-Көмүр шаары,,,,,,,,,,,,region,1,KG-J,Жалал-Абад облусу,NONE,0.0,KG-J
+Kyrgyzstan,Čatkal [Chatkal],Jalal-Abad,,,29937,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Чаткал району,,,,,,,,,,,,region,1,KG-J,Жалал-Абад облусу,NONE,0.0,KG-J
+Kyrgyzstan,Toguz-Toro,Jalal-Abad,,,27615,District,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Тогуз-торо району,,,,county,2,KG-J,Тогуз-торо району,,,,,region,1,KG-J,Жалал-Абад облусу,HIGH,1.0,KG-J
+Kyrgyzstan,Kara-Kôl [Kara-Köl],Jalal-Abad,,,27257,District-level City,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Кара-Көл шаары,,,,,,,,,,,,region,1,KG-J,Жалал-Абад облусу,NONE,0.0,KG-J
+Kyrgyzstan,Majluu-Suu [Mailuu-Suu],Jalal-Abad,,,26067,District-level City,,,#N/A,,Jalal-AbadKyrgyzstan,county,2,KG-J,Майлуу-Суу шаары,,,,,,,,,,,,region,1,KG-J,Жалал-Абад облусу,NONE,0.0,KG-J
+Kyrgyzstan,Kočkor [Kochkor],Naryn,,,68962,District,,,#N/A,,NarynKyrgyzstan,county,2,KG-N,Кочкор району,,,,,,,,,,,,region,1,KG-N,Нарын облусу,NONE,0.0,KG-N
+Kyrgyzstan,At-Bašy [At-Bashy],Naryn,,,60874,District,,,#N/A,,NarynKyrgyzstan,county,2,KG-N,Ат-Башы району,,,,,,,,,,,,region,1,KG-N,Нарын облусу,NONE,0.0,KG-N
+Kyrgyzstan,Naryn,Naryn,,,52564,District,,,#N/A,,NarynKyrgyzstan,county,2,KG-N,Нарын шаары,,,,region,1,KG-N,Нарын облусу,,,,,region,1,KG-N,Нарын облусу,HIGH,1.0,KG-N
+Kyrgyzstan,Žumgal [Jumgal],Naryn,,,48513,District,,,#N/A,,NarynKyrgyzstan,county,2,KG-N,Жумгал району,,,,,,,,,,,,region,1,KG-N,Нарын облусу,NONE,0.0,KG-N
+Kyrgyzstan,Naryn,Naryn,,,41681,District-level City,,,#N/A,,NarynKyrgyzstan,county,2,KG-N,Нарын шаары,,,,region,1,KG-N,Нарын облусу,,,,,region,1,KG-N,Нарын облусу,HIGH,1.0,KG-N
+Kyrgyzstan,Ak-Talaa,Naryn,,,33979,District,,,#N/A,,NarynKyrgyzstan,county,2,KG-N,Ак-Талаа району,,,,locality,,KG-N,Ак-Талаа,,,,,region,1,KG-N,Нарын облусу,HIGH,1.0,KG-N
+Kyrgyzstan,Aravan,Osh,,,141560,District,Osh,,Osh,,OshKyrgyzstan,county,2,KG-O,Араван району,,,,locality,,KG-O,Араван,,,,,region,1,KG-O,Ош облусу,HIGH,1.0,KG-O
+Kyrgyzstan,Kara-Suu,Osh,,,468323,District,,,#N/A,,OshKyrgyzstan,county,2,KG-O,Кара-Суу району,,,,county,2,KG-O,Кара-Суу району,,,,,region,1,KG-O,Ош облусу,HIGH,1.0,KG-O
+Kyrgyzstan,Nookat,Osh,,,315011,District,,,#N/A,,OshKyrgyzstan,county,2,KG-O,Ноокат району,,,,county,2,KG-O,Ноокат району,,,,,region,1,KG-O,Ош облусу,HIGH,1.0,KG-O
+Kyrgyzstan,Ôzgôn [Özgön],Osh,,,287109,District,,,#N/A,,OshKyrgyzstan,county,2,KG-O,Өзгөн району,,,,,,,,,,,,region,1,KG-O,Ош облусу,NONE,0.0,KG-O
+Kyrgyzstan,Kara-Kulža [Kara-Kulja],Osh,,,99490,District,,,#N/A,,OshKyrgyzstan,county,2,KG-O,Кара-Кулжа району,,,,,,,,,,,,region,1,KG-O,Ош облусу,NONE,0.0,KG-O
+Kyrgyzstan,Alaj [Alay],Osh,,,91919,District,,,#N/A,,OshKyrgyzstan,county,2,KG-O,Алай району,,,,,,,,,,,,region,1,KG-O,Ош облусу,NONE,0.0,KG-O
+Kyrgyzstan,Čon̦-Alaj [Chong-Alay],Osh,,,36221,District,,,#N/A,,OshKyrgyzstan,county,2,KG-O,Чоң-Алай району,,,,,,,,,,,,region,1,KG-O,Ош облусу,NONE,0.0,KG-O
+Kyrgyzstan,Oš [Osh],Osh City,,,353080,City,Osh,,Osh,,Osh CityKyrgyzstan,region,1,KG-GO,Ош шаары,,,,,,,,,,,,region,1,KG-O,Ош облусу,NONE,0.0,KG-O
+Kyrgyzstan,Kara-Buura,Talas,,,70623,District,,,#N/A,,TalasKyrgyzstan,county,2,KG-T,Кара-Буура району,,,,county,2,KG-T,Кара-Буура району,,,,,region,1,KG-T,Талас облусу,HIGH,1.0,KG-T
+Kyrgyzstan,Talas,Talas,,,69606,District,,,#N/A,,TalasKyrgyzstan,county,2,KG-T,Талас району,,,,county,2,KG-T,Талас району,,,,,region,1,KG-T,Талас облусу,HIGH,1.0,KG-T
+Kyrgyzstan,Bakaj-Ata [Bakay-Ata],Talas,,,54161,District,,,#N/A,,TalasKyrgyzstan,county,2,KG-T,Бакай-Ата району,,,,,,,,,,,,region,1,KG-T,Талас облусу,NONE,0.0,KG-T
+Kyrgyzstan,Talas,Talas,,,41067,District-level City,,,#N/A,,TalasKyrgyzstan,county,2,KG-T,Талас району,,,,county,2,KG-T,Талас району,,,,,region,1,KG-T,Талас облусу,HIGH,1.0,KG-T
+Kyrgyzstan,Manas,Talas,,,35493,District,,,#N/A,,TalasKyrgyzstan,county,2,KG-J,Манас,,,,locality,,KG-T,Манас,,,,,region,1,KG-T,Талас облусу,HIGH,1.0,KG-T

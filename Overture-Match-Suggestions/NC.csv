@@ -1,0 +1,35 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+New Caledonia,Lifou,Loyalty Islands,,,9195,Commune,,,#N/A,,Loyalty IslandsNew Caledonia,county,3,,Lifou,,,,county,3,nan,Lifou,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Maré,Loyalty Islands,,,5757,Commune,,,#N/A,,Loyalty IslandsNew Caledonia,county,3,,Maré,,,,county,3,nan,Maré,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Ouvéa,Loyalty Islands,,,3401,Commune,,,#N/A,,Loyalty IslandsNew Caledonia,county,3,,Ouvéa,,,,county,3,nan,Ouvéa,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Koné,Nord,,,8144,Commune,,,#N/A,,NordNew Caledonia,county,3,,Koné,,,,county,3,nan,Koné,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Poindimié,Nord,,,5006,Commune,,,#N/A,,NordNew Caledonia,county,3,,Poindimié,,,,county,3,nan,Poindimié,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Koumac,Nord,,,3981,Commune,,,#N/A,,NordNew Caledonia,county,3,,Koumac,,,,county,3,nan,Koumac,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Houaïlou,Nord,,,3955,Commune,,,#N/A,,NordNew Caledonia,county,3,,Houaïlou,,,,county,3,nan,Houaïlou,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Canala,Nord,,,3701,Commune,,,#N/A,,NordNew Caledonia,county,3,,Canala,,,,county,3,nan,Canala,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Voh,Nord,,,2856,Commune,,,#N/A,,NordNew Caledonia,county,3,,Voh,,,,county,3,nan,Voh,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Pouembout,Nord,,,2752,Commune,,,#N/A,,NordNew Caledonia,county,3,,Pouembout,,,,county,3,nan,Pouembout,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Poya,Nord,,,2590,Commune,,,#N/A,,NordNew Caledonia,county,3,,Poya,,,,county,3,nan,Poya,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Hienghène,Nord,,,2454,Commune,,,#N/A,,NordNew Caledonia,county,3,,Hienghène,,,,county,3,nan,Hienghène,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Ponérihouen,Nord,,,2420,Commune,,,#N/A,,NordNew Caledonia,county,3,,Ponérihouen,,,,county,3,nan,Ponérihouen,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Touho,Nord,,,2380,Commune,,,#N/A,,NordNew Caledonia,county,3,,Touho,,,,county,3,nan,Touho,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Pouébo,Nord,,,2144,Commune,,,#N/A,,NordNew Caledonia,county,3,,Pouébo,,,,county,3,nan,Pouébo,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Ouégoa,Nord,,,2118,Commune,,,#N/A,,NordNew Caledonia,county,3,,Ouégoa,,,,county,3,nan,Ouégoa,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Kaala-Gomen,Nord,,,1803,Commune,,,#N/A,,NordNew Caledonia,county,3,,Kaala-Gomen,,,,county,3,nan,Kaala-Gomen,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Poum,Nord,,,1435,Commune,,,#N/A,,NordNew Caledonia,county,3,,Poum,,,,county,3,nan,Poum,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Kouaoua,Nord,,,1304,Commune,,,#N/A,,NordNew Caledonia,county,3,,Kouaoua,,,,county,3,nan,Kouaoua,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Bélep,Nord,,,867,Commune,,,#N/A,,NordNew Caledonia,county,3,,Bélep,,,,county,3,nan,Bélep,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Nouméa,Sud,,,94285,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Nouméa,,,,county,3,nan,Nouméa,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Dumbéa,Sud,,,35873,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Dumbéa,,,,county,3,nan,Dumbéa,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Le Mont-Dore,Sud,,,27620,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Nouméa,,,,,,,,,,,,,,,,NONE,0.0,
+New Caledonia,Païta,Sud,,,24563,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Païta,,,,county,3,nan,Païta,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Bourail,Sud,,,5531,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Bourail,,,,county,3,nan,Bourail,,,,,,,,,HIGH,1.0,nan
+New Caledonia,La Foa,Sud,,,3552,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,La Foa,,,,county,3,nan,La Foa,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Boulouparis (Bouloupari),Sud,,,3315,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Boulouparis,,,,county,3,nan,Boulouparis,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Thio,Sud,,,2524,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Thio,,,,county,3,nan,Thio,,,,,,,,,HIGH,1.0,nan
+New Caledonia,L'Île-des-Pins,Sud,,,2037,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Nouméa,,,,,,,,,,,,,,,,NONE,0.0,
+New Caledonia,Yaté,Sud,,,1667,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Yaté,,,,county,3,nan,Yaté,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Farino,Sud,,,712,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Farino,,,,county,3,nan,Farino,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Moindou,Sud,,,681,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Moindou,,,,county,3,nan,Moindou,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Sarraméa,Sud,,,572,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Sarraméa,,,,county,3,nan,Sarraméa,,,,,,,,,HIGH,1.0,nan
+New Caledonia,Poya,Sud,,,212,Commune,Noumea,,Noumea,,SudNew Caledonia,county,3,,Poya,,,,county,3,nan,Poya,,,,,,,,,HIGH,1.0,nan

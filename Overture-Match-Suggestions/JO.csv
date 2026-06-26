@@ -1,0 +1,13 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Jordan,Amman,Central,,,4642000,Governorate,Amman,,Amman,,CentralJordan,region,1,JO-AM,عمان,,,,region,1,JO-AM,عمان,,,,,region,1,JO-AM,عمان,HIGH,1.0,JO-AM
+Jordan,Balqa,Central,,,569500,Governorate,Amman,,Amman,,CentralJordan,region,1,JO-BA,البلقاء,,,,region,1,JO-BA,البلقاء,,,,,region,1,JO-BA,البلقاء,HIGH,1.0,JO-BA
+Jordan,Zarqa,Central,,,1581000,Governorate,Zarqa,,Zarqa,,CentralJordan,region,1,JO-AZ,الزرقاء,,,,region,1,JO-AZ,الزرقاء,,,,,region,1,JO-AZ,الزرقاء,HIGH,1.0,JO-AZ
+Jordan,Madaba,Central,,,219100,Governorate,,,#N/A,,CentralJordan,region,1,JO-MD,مادبا,,,,region,1,JO-MD,مادبا,,,,,region,1,JO-MD,مادبا,HIGH,1.0,JO-MD
+Jordan,Jerash,North,,,274500,Governorate,Amman,,Amman,,NorthJordan,region,1,JO-JA,جرش,,,,region,1,JO-JA,جرش,,,,,region,1,JO-JA,جرش,HIGH,1.0,JO-JA
+Jordan,Irbid,North,,,2050300,Governorate,Irbid,,Irbid,,NorthJordan,region,1,JO-IR,إربد,,,,region,1,JO-IR,إربد,,,,,region,1,JO-IR,إربد,HIGH,1.0,JO-IR
+Jordan,Mafraq,North,,,637000,Governorate,Mafraq,,Mafraq,,NorthJordan,region,1,JO-MA,المفرق,,,,region,1,JO-MA,المفرق,,,,,region,1,JO-MA,المفرق,HIGH,1.0,JO-MA
+Jordan,Ajloun,North,,,204000,Governorate,,,#N/A,,NorthJordan,region,1,JO-AJ,عجلون,,,,region,1,JO-AJ,عجلون,,,,,region,1,JO-AJ,عجلون,HIGH,1.0,JO-AJ
+Jordan,Aqaba,South,,,217900,Governorate,Aqaba,,Aqaba,,SouthJordan,region,1,JO-AQ,العقبة,,,,region,1,JO-AQ,العقبة,,,,,region,1,JO-AQ,العقبة,HIGH,1.0,JO-AQ
+Jordan,Karak,South,,,366700,Governorate,,,#N/A,,SouthJordan,region,1,JO-KA,الكرك,,,,region,1,JO-KA,الكرك,,,,,region,1,JO-KA,الكرك,HIGH,1.0,JO-KA
+Jordan,Ma'an,South,,,183500,Governorate,,,#N/A,,SouthJordan,region,1,JO-MN,معان,,,,region,1,JO-MN,معان,,,,,region,1,JO-MN,معان,HIGH,1.0,JO-MN
+Jordan,Tafilah,South,,,111500,Governorate,,,#N/A,,SouthJordan,region,1,JO-AT,الطفيلة,,,,region,1,JO-AT,الطفيلة,,,,,region,1,JO-AT,الطفيلة,HIGH,1.0,JO-AT

@@ -1,0 +1,6 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Cayman Islands,Bodden Town,Bodden Town,,,14268,District,George Town (CAY),,George Town (CAY),,Bodden TownCayman Islands,region,2,,Bodden Town,,,,region,2,nan,Bodden Town,,,,,,,,,HIGH,1.0,nan
+Cayman Islands,East End,East End,,,1749,District,George Town (CAY),,George Town (CAY),,East EndCayman Islands,region,2,,East End,,,,region,2,nan,East End,,,,,,,,,HIGH,1.0,nan
+Cayman Islands,George Town,George Town,,,34399,District,George Town (CAY),,George Town (CAY),,George TownCayman Islands,region,2,,George Town,,,,region,2,nan,George Town,,,,,,,,,HIGH,1.0,nan
+Cayman Islands,North Side,North Side,,,1840,District,George Town (CAY),,George Town (CAY),,North SideCayman Islands,region,2,,North Side,,,,region,2,nan,North Side,,,,,,,,,HIGH,1.0,nan
+Cayman Islands,West Bay,West Bay,,,14931,District,George Town (CAY),,George Town (CAY),,West BayCayman Islands,region,2,,West Bay,,,,region,2,nan,West Bay,,,,,,,,,HIGH,1.0,nan

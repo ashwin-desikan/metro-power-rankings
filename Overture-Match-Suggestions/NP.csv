@@ -1,0 +1,78 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Nepal,Chitwan,Bagmati,,,722168,District,Bharatpur,,Bharatpur,,BagmatiNepal,county,2,NP-P3,चितवन जिल्ला,,,,county,2,NP-P3,चितवन जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Kathmandu,Bagmati,,,2017532,District,Kathmandu,,Kathmandu,,BagmatiNepal,county,2,NP-P3,काठमाडौं जिल्ला,,,,county,2,NP-P3,काठमाडौं जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Lalitpur,Bagmati,,,548401,District,Kathmandu,,Kathmandu,,BagmatiNepal,county,2,NP-P3,ललितपुर जिल्ला,,,,county,2,NP-P3,ललितपुर जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Bhaktapur,Bagmati,,,430408,District,Kathmandu,,Kathmandu,,BagmatiNepal,county,2,NP-P3,भक्तपुर जिल्ला,,,,county,2,NP-P3,भक्तपुर जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Makwanpur,Bagmati,,,461053,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,मकवानपुर जिल्ला,,,,county,2,NP-P3,मकवानपुर जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Kavrepalanchok,Bagmati,,,366879,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,काभ्रेपलाञ्चोक जिल्ला,,,,county,2,NP-P3,काभ्रेपलाञ्चोक जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Dhading,Bagmati,,,322751,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,धादिङ जिल्ला,,,,county,2,NP-P3,धादिङ जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Sindhuli,Bagmati,,,300117,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,सिन्धुली जिल्ला,,,,county,2,NP-P3,सिन्धुली जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Nuwakot,Bagmati,,,262981,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,नुवाकोट जिल्ला,,,,county,2,NP-P3,नुवाकोट जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Sindhupalchowk,Bagmati,,,262852,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,सिन्धुपाल्चोक जिल्ला,,,,county,2,NP-P3,सिन्धुपाल्चोक जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Dolakha,Bagmati,,,172726,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,दोलखा जिल्ला,,,,county,2,NP-P3,दोलखा जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Ramechhap,Bagmati,,,170620,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,रामेछाप जिल्ला,,,,county,2,NP-P3,रामेछाप जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Rasuwa,Bagmati,,,45554,District,,,#N/A,,BagmatiNepal,county,2,NP-P3,रसुवा जिल्ला,,,,county,2,NP-P3,रसुवा जिल्ला,,,,,region,1,NP-P3,बागमती प्रदेश,HIGH,1.0,NP-P3
+Nepal,Kaski,Gandaki,,,599504,District,Pokhara,,Pokhara,,GandakiNepal,county,2,NP-P4,कास्की,,,,county,2,NP-P4,कास्की,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Nawalpur [Nawalparasi East],Gandaki,,,381105,District,,,#N/A,,GandakiNepal,county,2,NP-P4,Nawalpur District,,,,,,,,,,,,region,1,NP-P4,गण्डकी प्रदेश,NONE,0.0,NP-P4
+Nepal,Tanahun,Gandaki,,,327620,District,,,#N/A,,GandakiNepal,county,2,NP-P4,तनहुँ,,,,county,2,NP-P4,तनहुँ,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Syangja,Gandaki,,,254965,District,,,#N/A,,GandakiNepal,county,2,NP-P4,स्याङ्जा,,,,county,2,NP-P4,स्याङ्जा,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Gorkha,Gandaki,,,252201,District,,,#N/A,,GandakiNepal,county,2,NP-P4,गोरखा,,,,locality,,NP-P4,गोरखा,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Baglung,Gandaki,,,250554,District,,,#N/A,,GandakiNepal,county,2,NP-P4,बागलुङ,,,,locality,,NP-P4,बागलुङ,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Lamjung,Gandaki,,,153480,District,,,#N/A,,GandakiNepal,county,2,NP-P4,लमजुङ,,,,county,2,NP-P4,लमजुङ,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Parbat,Gandaki,,,132703,District,,,#N/A,,GandakiNepal,county,2,NP-P4,पर्वत,,,,county,2,NP-P4,पर्वत,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Myagdi,Gandaki,,,107372,District,,,#N/A,,GandakiNepal,county,2,NP-P4,म्याग्दी,,,,county,2,NP-P4,म्याग्दी,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Mustang,Gandaki,,,14596,District,,,#N/A,,GandakiNepal,county,2,NP-P4,मुस्ताङ,,,,county,2,NP-P4,मुस्ताङ,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Manang,Gandaki,,,5645,District,,,#N/A,,GandakiNepal,county,2,NP-P4,मनाङ,,,,county,2,NP-P4,मनाङ,,,,,region,1,NP-P4,गण्डकी प्रदेश,HIGH,1.0,NP-P4
+Nepal,Surkhet,Karnali,,,417776,District,Birendranagar,,Birendranagar,,KarnaliNepal,county,2,NP-P6,सुर्खेत,,,,county,2,NP-P6,सुर्खेत,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Dailekh,Karnali,,,253319,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,दैलेख,,,,county,2,NP-P6,दैलेख,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Salyān,Karnali,,,238668,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,सल्यान,,,,county,2,NP-P6,सल्यान,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Jajarkot,Karnali,,,189365,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,जाजरकोट,,,,county,2,NP-P6,जाजरकोट,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,West Rukum,Karnali,,,166354,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,पश्चिमी रुकुम,,,,,,,,,,,,region,1,NP-P6,कर्णाली प्रदेश,NONE,0.0,NP-P6
+Nepal,Kalikot,Karnali,,,144917,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,कालीकोट,,,,county,2,NP-P6,कालीकोट,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Jumla,Karnali,,,119377,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,Jumla,,,,county,2,NP-P6,Jumla,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Mugu,Karnali,,,66658,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,मुगु,,,,county,2,NP-P6,मुगु,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Humla,Karnali,,,55496,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,हुम्ला,,,,county,2,NP-P6,हुम्ला,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Dolpa,Karnali,,,42959,District,,,#N/A,,KarnaliNepal,county,2,NP-P6,डोल्पा,,,,county,2,NP-P6,डोल्पा,,,,,region,1,NP-P6,कर्णाली प्रदेश,HIGH,1.0,NP-P6
+Nepal,Rupandehi,Lumbini,,,1118975,District,Bhairahawa,,Bhairahawa,,LumbiniNepal,county,2,NP-P5,रुपन्देही,,,,county,2,NP-P5,रुपन्देही,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Kapilvastu,Lumbini,,,686739,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,कपिलवस्तु,,,,county,2,NP-P5,कपिलवस्तु,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Dang Deukhuri,Lumbini,,,676277,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,दाङ,,,,,,,,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,NONE,0.0,NP-P5
+Nepal,Banke,Lumbini,,,603393,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,बाँके,,,,county,2,NP-P5,बाँके,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Bardiya,Lumbini,,,460831,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,बर्दिया,,,,county,2,NP-P5,बर्दिया,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Parasi [Nawalparasi West],Lumbini,,,385515,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,Nawalparasi W,,,,,,,,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,NONE,0.0,NP-P5
+Nepal,Gulmi,Lumbini,,,246836,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,गुल्मी,,,,county,2,NP-P5,गुल्मी,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Palpa,Lumbini,,,242423,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,पाल्पा,,,,county,2,NP-P5,पाल्पा,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Rolpa,Lumbini,,,236226,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,रोल्पा,,,,locality,,NP-P5,रोल्पा,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Pyuthan,Lumbini,,,231848,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,Pyuthan,,,,locality,,NP-P5,Pyuthan,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,Arghakhanchi,Lumbini,,,177200,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,अर्घाखाँची,,,,county,2,NP-P5,अर्घाखाँची,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,HIGH,1.0,NP-P5
+Nepal,East Rukum,Lumbini,,,57962,District,,,#N/A,,LumbiniNepal,county,2,NP-P5,पूर्वी रुकुम,,,,,,,,,,,,region,1,NP-P5,लुम्बिनी प्रदेश,NONE,0.0,NP-P5
+Nepal,Parsa,Madhesh [Province No. 2],,,649397,District,Birgunj,,Birgunj,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,पर्सा जिल्ला,,,,county,2,NP-P2,पर्सा जिल्ला,,,,,region,1,NP-P2,मधेश प्रदेश,HIGH,1.0,NP-P2
+Nepal,Dhanusa,Madhesh [Province No. 2],,,873274,District,Janakpur,,Janakpur,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,धनुषा जिल्ला,,,,,,,,,,,,,,,,NONE,0.0,
+Nepal,Sarlahi,Madhesh [Province No. 2],,,857360,District,,,#N/A,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,सर्लाही जिल्ला,,,,county,2,NP-P2,सर्लाही जिल्ला,,,,,region,1,NP-P2,मधेश प्रदेश,HIGH,1.0,NP-P2
+Nepal,Rautahat,Madhesh [Province No. 2],,,825623,District,,,#N/A,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,रौतहट जिल्ला,,,,county,2,NP-P2,रौतहट जिल्ला,,,,,region,1,NP-P2,मधेश प्रदेश,HIGH,1.0,NP-P2
+Nepal,Siraha,Madhesh [Province No. 2],,,748416,District,,,#N/A,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,सिराहा जिल्ला,,,,county,2,NP-P2,सिराहा जिल्ला,,,,,region,1,NP-P2,मधेश प्रदेश,HIGH,1.0,NP-P2
+Nepal,Bara,Madhesh [Province No. 2],,,743975,District,,,#N/A,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,बारा जिल्ला,,,,county,2,NP-P2,बारा जिल्ला,,,,,region,1,NP-P2,मधेश प्रदेश,HIGH,1.0,NP-P2
+Nepal,Mahottari,Madhesh [Province No. 2],,,715040,District,,,#N/A,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,महोत्तरी जिल्ला,,,,county,2,NP-P2,महोत्तरी जिल्ला,,,,,region,1,NP-P2,मधेश प्रदेश,HIGH,1.0,NP-P2
+Nepal,Saptari,Madhesh [Province No. 2],,,713203,District,,,#N/A,,Madhesh [Province No. 2]Nepal,county,2,NP-P2,सप्तरी जिल्ला,,,,county,2,NP-P2,सप्तरी जिल्ला,,,,,region,1,NP-P2,मधेश प्रदेश,HIGH,1.0,NP-P2
+Nepal,Morang,Pradesh 1 [Province No. 1],,,1147186,District,Biratnagar,,Biratnagar,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,मोरङ जिल्ला,,,,county,2,NP-P1,मोरङ जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Jhapa,Pradesh 1 [Province No. 1],,,994090,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,झापा जिल्ला,,,,county,2,NP-P1,झापा जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Sunsari,Pradesh 1 [Province No. 1],,,934461,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,सुनसरी जिल्ला,,,,county,2,NP-P1,सुनसरी जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Udayapur,Pradesh 1 [Province No. 1],,,342773,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,उदयपुर जिल्ला,,,,county,2,NP-P1,उदयपुर जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Ilam,Pradesh 1 [Province No. 1],,,280565,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,इलाम जिल्ला,,,,county,2,NP-P1,इलाम जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Khotang,Pradesh 1 [Province No. 1],,,175340,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,खोटाङ जिल्ला,,,,county,2,NP-P1,खोटाङ जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Panchthar,Pradesh 1 [Province No. 1],,,174419,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,पाँचथर जिल्ला,,,,county,2,NP-P1,पाँचथर जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Sankhuwasabha,Pradesh 1 [Province No. 1],,,159046,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,सङ्खुवासभा जिल्ला,,,,county,2,NP-P1,सङ्खुवासभा जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Bhojpur,Pradesh 1 [Province No. 1],,,158991,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,भोजपुर जिल्ला,,,,county,2,NP-P1,भोजपुर जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Dhankuta,Pradesh 1 [Province No. 1],,,149984,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,धनकुटा जिल्ला,,,,county,2,NP-P1,धनकुटा जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Okhaldhunga,Pradesh 1 [Province No. 1],,,140914,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,ओखलढुङ्गा जिल्ला,,,,county,2,NP-P1,ओखलढुङ्गा जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Taplejung,Pradesh 1 [Province No. 1],,,120359,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,ताप्लेजुङ जिल्ला,,,,county,2,NP-P1,ताप्लेजुङ जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Solukhumbu,Pradesh 1 [Province No. 1],,,104768,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,सोलुखुम्बु जिल्ला,,,,county,2,NP-P1,सोलुखुम्बु जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Tehrathum,Pradesh 1 [Province No. 1],,,89125,District,,,#N/A,,Pradesh 1 [Province No. 1]Nepal,county,2,NP-P1,तेह्रथुम जिल्ला,,,,county,2,NP-P1,तेह्रथुम जिल्ला,,,,,region,1,NP-P1,कोशी प्रदेश,HIGH,1.0,NP-P1
+Nepal,Kailali,Sudurpashchim [Far West],,,911155,District,Dhangadi,,Dhangadi,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,कैलाली,,,,county,2,NP-P7,कैलाली,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7
+Nepal,Kanchanpur [Dodhara Chandani],Sudurpashchim [Far West],,,517645,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,कञ्चनपुर जिल्ला,,,,,,,,,,,,,,,,NONE,0.0,
+Nepal,Baitadi,Sudurpashchim [Far West],,,244400,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,बैतडी,,,,county,2,NP-P7,बैतडी,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7
+Nepal,Achham,Sudurpashchim [Far West],,,229816,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,अछाम,,,,county,2,NP-P7,अछाम,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7
+Nepal,Doti,Sudurpashchim [Far West],,,205683,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,डोटी,,,,county,2,NP-P7,डोटी,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7
+Nepal,Bajhang,Sudurpashchim [Far West],,,189097,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,बझाङ,,,,county,2,NP-P7,बझाङ,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7
+Nepal,Dadeldhura,Sudurpashchim [Far West],,,139420,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,डडेलधुरा,,,,county,2,NP-P7,डडेलधुरा,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7
+Nepal,Bajura,Sudurpashchim [Far West],,,138998,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,बाजुरा,,,,county,2,NP-P7,बाजुरा,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7
+Nepal,Darchula,Sudurpashchim [Far West],,,135056,District,,,#N/A,,Sudurpashchim [Far West]Nepal,county,2,NP-P7,दार्चुला,,,,county,2,NP-P7,दार्चुला,,,,,region,1,NP-P7,सुदूरपश्चिम प्रदेश,HIGH,1.0,NP-P7

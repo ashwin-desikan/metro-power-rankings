@@ -1,0 +1,18 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Botswana,Central District,Central,,,652085,District,,,#N/A,2022,CentralBotswana,region,1,BW-CE,Central District,,,,region,1,BW-CE,Central District,,,,,region,1,BW-CE,Central District,HIGH,1.0,BW-CE
+Botswana,Selebi-Phikwe town,Central,,,42488,Town,,,#N/A,2022,CentralBotswana,region,1,BW-JW,Jwaneng Town,,,,,,,,,,,,region,1,BW-CE,Central District,NONE,0.0,BW-CE
+Botswana,Orapa town,Central,,,8648,Town,,,#N/A,2022,CentralBotswana,region,1,BW-JW,Jwaneng Town,,,,,,,,,,,,region,1,BW-CE,Central District,NONE,0.0,BW-CE
+Botswana,Sowa town,Central,,,2914,Town,,,#N/A,2022,CentralBotswana,region,1,BW-ST,Sowa Town,,,,,,,,,,,,region,1,BW-CE,Central District,NONE,0.0,BW-CE
+Botswana,Chobe District,Chobe,,,28743,District,Kasane,,Kasane,2022,ChobeBotswana,region,1,BW-CH,Chobe District,,,,region,1,BW-CH,Chobe District,,,,,region,1,BW-CH,Chobe District,HIGH,1.0,BW-CH
+Botswana,Ghanzi District,Ghanzi,,,56555,District,,,#N/A,2022,GhanziBotswana,region,1,BW-GH,Ghanzi District,,,,county,2,BW-GH,Ghanzi,,,,,region,1,BW-GH,Ghanzi District,HIGH,1.0,BW-GH
+Botswana,Kgalagadi District,Kgalagadi,,,58857,District,,,#N/A,2022,KgalagadiBotswana,region,1,BW-KG,Kgalagadi District,,,,region,1,BW-KG,Kgalagadi District,,,,,region,1,BW-KG,Kgalagadi District,HIGH,1.0,BW-KG
+Botswana,Kgatleng District,Kgatleng,,,121882,District,,,#N/A,2022,KgatlengBotswana,region,1,BW-KL,Kgatleng District,,,,region,1,BW-KL,Kgatleng District,,,,,region,1,BW-KL,Kgatleng District,HIGH,1.0,BW-KL
+Botswana,Kweneng District,Kweneng,,,387983,District,,,#N/A,2022,KwenengBotswana,region,1,BW-KW,Kweneng District,,,,region,1,BW-KW,Kweneng District,,,,,region,1,BW-KW,Kweneng District,HIGH,1.0,BW-KW
+Botswana,Francistown city,North East,,,103417,City,Francistown,,Francistown,2022,North EastBotswana,region,1,BW-FR,Francistown,,,,,,,,,,,,region,1,BW-NE,North-East District,NONE,0.0,BW-NE
+Botswana,North-East District,North East,,,69352,District,Francistown,,Francistown,2022,North EastBotswana,region,1,BW-NE,North-East District,,,,region,1,BW-NE,North-East District,,,,,region,1,BW-NE,North-East District,HIGH,1.0,BW-NE
+Botswana,North-West District,North West,,,198436,District,Maun,,Maun,2022,North WestBotswana,region,1,BW-NW,North-West District,,,,region,1,BW-NW,North-West District,,,,,region,1,BW-NW,North-West District,HIGH,1.0,BW-NW
+Botswana,Gaborone city,South East,,,246325,City,Gaborone,,Gaborone,2022,South EastBotswana,county,2,BW-SE,Gaborone,,,,county,2,BW-SE,Gaborone,,,,,region,1,BW-SE,South-East District,HIGH,1.0,BW-SE
+Botswana,South-East District,South East,,,111440,District,Gaborone,,Gaborone,2022,South EastBotswana,region,1,BW-SE,South-East District,,,,region,1,BW-SE,South-East District,,,,,region,1,BW-SE,South-East District,HIGH,1.0,BW-SE
+Botswana,Lobatse town,South East,,,29772,Town,Gaborone,,Gaborone,2022,South EastBotswana,county,2,BW-SE,Gaborone,,,,,,,,,,,,region,1,BW-SE,South-East District,NONE,0.0,BW-SE
+Botswana,Southern District,Southern,,,221928,District,,,#N/A,2022,SouthernBotswana,region,1,BW-SO,Southern District,,,,region,1,BW-SO,Southern District,,,,,region,1,BW-SO,Southern District,HIGH,1.0,BW-SO
+Botswana,Jwaneng town,Southern,,,18784,Town,,,#N/A,2022,SouthernBotswana,region,1,BW-JW,Jwaneng Town,,,,,,,,,,,,region,1,BW-SO,Southern District,NONE,0.0,BW-SO

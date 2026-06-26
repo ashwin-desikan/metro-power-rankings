@@ -1,0 +1,14 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+St. Vincent & the Grenadines,Northern Grenadines,Grenadines,,,6184,District,,,#N/A,,GrenadinesSt. Vincent & the Grenadines,region,1,VC-06,Grenadines,,,,,,,,,,,,region,1,VC-06,Grenadines,NONE,0.0,VC-06
+St. Vincent & the Grenadines,Southern Grenadines,Grenadines,,,4050,District,,,#N/A,,GrenadinesSt. Vincent & the Grenadines,region,1,VC-06,Grenadines,,,,,,,,,,,,region,1,VC-06,Grenadines,NONE,0.0,VC-06
+St. Vincent & the Grenadines,Calliaqua,St. Vincent,,,24205,District,Kingstown (STV),,Kingstown (STV),,St. VincentSt. Vincent & the Grenadines,region,1,VC-01,Charlotte,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Suburbs of Kingstown,St. Vincent,,,13812,District,Kingstown (STV),,Kingstown (STV),,St. VincentSt. Vincent & the Grenadines,region,1,VC-01,Charlotte,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Kingstown,St. Vincent,,,12909,District,Kingstown (STV),,Kingstown (STV),,St. VincentSt. Vincent & the Grenadines,region,1,VC-01,Charlotte,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Marriaqua,St. Vincent,,,7798,District,Kingstown (STV),,Kingstown (STV),,St. VincentSt. Vincent & the Grenadines,region,1,VC-01,Charlotte,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Layou (St. Andrew),St. Vincent,,,6339,District,Kingstown (STV),,Kingstown (STV),,St. VincentSt. Vincent & the Grenadines,region,1,VC-02,Saint Andrew,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Georgetown,St. Vincent,,,7061,District,,,#N/A,,St. VincentSt. Vincent & the Grenadines,region,1,VC-04,Saint George,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Colonarie,St. Vincent,,,6849,District,,,#N/A,,St. VincentSt. Vincent & the Grenadines,region,1,VC-01,Charlotte,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Bridgetown,St. Vincent,,,6568,District,,,#N/A,,St. VincentSt. Vincent & the Grenadines,region,1,VC-01,Charlotte,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Barrouallie (St. Patrick),St. Vincent,,,5884,District,,,#N/A,,St. VincentSt. Vincent & the Grenadines,region,1,VC-05,Saint Patrick,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Chateaubelair (St. David),St. Vincent,,,5756,District,,,#N/A,,St. VincentSt. Vincent & the Grenadines,region,1,VC-03,Saint David,,,,,,,,,,,,,,,,NONE,0.0,
+St. Vincent & the Grenadines,Sandy Bay,St. Vincent,,,2576,District,,,#N/A,,St. VincentSt. Vincent & the Grenadines,region,1,VC-01,Charlotte,,,,,,,,,,,,,,,,NONE,0.0,

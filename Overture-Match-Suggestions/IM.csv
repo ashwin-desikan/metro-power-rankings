@@ -1,0 +1,25 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Isle of Man,Andreas,Ayre,,,1400,Parish,Douglas,,Douglas,,AyreIsle of Man,region,2,,Andreas,,,,region,2,nan,Andreas,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Lezayre,Ayre,,,1230,Parish,Douglas,,Douglas,,AyreIsle of Man,region,2,,Lezayre,,,,region,2,nan,Lezayre,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Bride,Ayre,,,359,Parish,Douglas,,Douglas,,AyreIsle of Man,region,2,,Bride,,,,region,2,nan,Bride,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Ramsey,Garff,,,8288,Town,Douglas,,Douglas,,GarffIsle of Man,region,2,,Ramsey,,,,region,2,nan,Ramsey,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Laxey,Garff,,,1656,Village,Douglas,,Douglas,,GarffIsle of Man,region,2,,Laxey,,,,region,2,nan,Laxey,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Lonan,Garff,,,1647,Parish,Douglas,,Douglas,,GarffIsle of Man,region,2,,Lonan,,,,region,2,nan,Lonan,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Maughold,Garff,,,952,Parish,Douglas,,Douglas,,GarffIsle of Man,region,2,,Maughold,,,,region,2,nan,Maughold,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Peel,Glenfaba,,,5710,Town,Douglas,,Douglas,,GlenfabaIsle of Man,region,2,,Peel,,,,region,2,nan,Peel,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Patrick,Glenfaba,,,1487,Parish,Douglas,,Douglas,,GlenfabaIsle of Man,region,2,,Patrick,,,,region,2,nan,Patrick,,,,,,,,,HIGH,1.0,nan
+Isle of Man,German,Glenfaba,,,1056,Parish,Douglas,,Douglas,,GlenfabaIsle of Man,region,2,,German,,,,region,2,nan,German,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Michael,Michael,,,1522,Parish,Douglas,,Douglas,,MichaelIsle of Man,region,2,,Michael,,,,region,2,nan,Michael,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Ballaugh,Michael,,,1041,Parish,Douglas,,Douglas,,MichaelIsle of Man,region,2,,Ballaugh,,,,region,2,nan,Ballaugh,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Jurby,Michael,,,780,Parish,Douglas,,Douglas,,MichaelIsle of Man,region,2,,Jurby,,,,region,2,nan,Jurby,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Douglas,Middle,,,26677,Town,Douglas,,Douglas,,MiddleIsle of Man,region,2,,Douglas,,,,region,2,nan,Douglas,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Onchan,Middle,,,9039,Village,Douglas,,Douglas,,MiddleIsle of Man,region,2,,Onchan,,,,region,2,nan,Onchan,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Braddan,Middle,,,3404,Parish,Douglas,,Douglas,,MiddleIsle of Man,region,2,,Braddan,,,,region,2,nan,Braddan,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Marown,Middle,,,2220,Parish,Douglas,,Douglas,,MiddleIsle of Man,region,2,,Marown,,,,region,2,nan,Marown,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Santon,Middle,,,749,Parish,Douglas,,Douglas,,MiddleIsle of Man,region,2,,Santon,,,,region,2,nan,Santon,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Port Erin,Rushen,,,3730,Village,Douglas,,Douglas,,RushenIsle of Man,region,2,,Port Erin,,,,region,2,nan,Port Erin,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Castletown,Rushen,,,3206,Town,Douglas,,Douglas,,RushenIsle of Man,region,2,,Castletown,,,,region,2,nan,Castletown,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Malew,Rushen,,,2367,Parish,Douglas,,Douglas,,RushenIsle of Man,region,2,,Malew,,,,region,2,nan,Malew,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Port St. Mary,Rushen,,,1989,Village,Douglas,,Douglas,,RushenIsle of Man,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Isle of Man,Arbory,Rushen,,,1899,Parish,Douglas,,Douglas,,RushenIsle of Man,region,2,,Arbory,,,,region,2,nan,Arbory,,,,,,,,,HIGH,1.0,nan
+Isle of Man,Rushen,Rushen,,,1661,Parish,Douglas,,Douglas,,RushenIsle of Man,region,2,,Rushen,,,,region,2,nan,Rushen,,,,,,,,,HIGH,1.0,nan

@@ -1,0 +1,196 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Tanzania,Arusha City,Arusha,,,617631,City,Arusha,,Arusha,,ArushaTanzania,county,2,TZ-01,Arusha,,,,region,1,TZ-01,Arusha,,,,,region,1,TZ-01,Arusha,HIGH,1.0,TZ-01
+Tanzania,Arusha Rural,Arusha,,,449518,District,Arusha,,Arusha,,ArushaTanzania,county,2,TZ-01,Arusha,,,,,,,,,,,,region,1,TZ-01,Arusha,NONE,0.0,TZ-01
+Tanzania,Meru,Arusha,,,331603,District,Arusha,,Arusha,,ArushaTanzania,county,2,TZ-01,Meru,,,,county,2,TZ-01,Meru,,,,,region,1,TZ-01,Arusha,HIGH,1.0,TZ-01
+Tanzania,Karatu,Arusha,,,280454,District,,,#N/A,,ArushaTanzania,county,2,TZ-01,Karatu,,,,county,2,TZ-01,Karatu,,,,,region,1,TZ-01,Arusha,HIGH,1.0,TZ-01
+Tanzania,Ngorongoro,Arusha,,,273549,District,,,#N/A,,ArushaTanzania,county,2,TZ-01,Ngorongoro,,,,county,2,TZ-01,Ngorongoro,,,,,region,1,TZ-01,Arusha,HIGH,1.0,TZ-01
+Tanzania,Monduli,Arusha,,,227585,District,,,#N/A,,ArushaTanzania,county,2,TZ-01,Monduli,,,,county,2,TZ-01,Monduli,,,,,region,1,TZ-01,Arusha,HIGH,1.0,TZ-01
+Tanzania,Longido,Arusha,,,175915,District,,,#N/A,,ArushaTanzania,county,2,TZ-01,Longido,,,,county,2,TZ-01,Longido,,,,,region,1,TZ-01,Arusha,HIGH,1.0,TZ-01
+Tanzania,Dar es Salaam City (Ilala Municipal),Dar es Salaam,,,1649912,City,Dar es Salaam,,Dar es Salaam,,Dar es SalaamTanzania,region,1,TZ-02,Dar es-Salaam,,,,region,1,TZ-02,Dar es-Salaam,,,,,region,1,TZ-02,Dar es-Salaam,HIGH,1.0,TZ-02
+Tanzania,Temeke Municipal,Dar es Salaam,,,1346674,Municipality,Dar es Salaam,,Dar es Salaam,,Dar es SalaamTanzania,region,1,TZ-02,Dar es-Salaam,,,,,,,,,,,,region,1,TZ-02,Dar es-Salaam,NONE,0.0,TZ-02
+Tanzania,Ubungo Municipal (← Kinondoni Municipal),Dar es Salaam,,,1086912,Municipality,Dar es Salaam,,Dar es Salaam,,Dar es SalaamTanzania,region,1,TZ-02,Dar es-Salaam,,,,county,2,TZ-02,Ubungo Municipal,,,,,region,1,TZ-02,Dar es-Salaam,HIGH,1.0,TZ-02
+Tanzania,Kinondoni Municipal,Dar es Salaam,,,982328,Municipality,Dar es Salaam,,Dar es Salaam,,Dar es SalaamTanzania,region,1,TZ-02,Dar es-Salaam,,,,county,2,TZ-02,Kinondoni Municipal,,,,,region,1,TZ-02,Dar es-Salaam,HIGH,1.0,TZ-02
+Tanzania,Kigamboni Municipal (← Temeke Municipal),Dar es Salaam,,,317902,Municipality,Dar es Salaam,,Dar es Salaam,,Dar es SalaamTanzania,region,1,TZ-02,Dar es-Salaam,,,,county,2,TZ-02,Kigamboni Municipal,,,,,region,1,TZ-02,Dar es-Salaam,HIGH,1.0,TZ-02
+Tanzania,Dodoma City,Dodoma,,,765179,City,Dodoma City,,Dodoma City,,DodomaTanzania,county,2,TZ-03,Dodoma City,,,,county,2,TZ-03,Dodoma City,,,,,region,1,TZ-03,Dodoma,HIGH,1.0,TZ-03
+Tanzania,Chamwino,Dodoma,,,486176,District,,,#N/A,,DodomaTanzania,county,2,TZ-03,Chamwino,,,,county,2,TZ-03,Chamwino,,,,,region,1,TZ-03,Dodoma,HIGH,1.0,TZ-03
+Tanzania,Kongwa,Dodoma,,,443867,District,,,#N/A,,DodomaTanzania,county,2,TZ-03,Kongwa,,,,county,2,TZ-03,Kongwa,,,,,region,1,TZ-03,Dodoma,HIGH,1.0,TZ-03
+Tanzania,Mpwapwa,Dodoma,,,403247,District,,,#N/A,,DodomaTanzania,county,2,TZ-03,Mpwapwa,,,,county,2,TZ-03,Mpwapwa,,,,,region,1,TZ-03,Dodoma,HIGH,1.0,TZ-03
+Tanzania,Chemba,Dodoma,,,339333,District,,,#N/A,,DodomaTanzania,county,2,TZ-03,Chemba,,,,county,2,TZ-03,Chemba,,,,,region,1,TZ-03,Dodoma,HIGH,1.0,TZ-03
+Tanzania,Bahi,Dodoma,,,322526,District,,,#N/A,,DodomaTanzania,county,2,TZ-03,Bahi,,,,county,2,TZ-03,Bahi,,,,,region,1,TZ-03,Dodoma,HIGH,1.0,TZ-03
+Tanzania,Kondoa Rural,Dodoma,,,244854,District,,,#N/A,,DodomaTanzania,county,2,TZ-03,Kondoa,,,,,,,,,,,,region,1,TZ-03,Dodoma,NONE,0.0,TZ-03
+Tanzania,Kondoa Town (← Kondoa Rural),Dodoma,,,80443,Town,,,#N/A,,DodomaTanzania,county,2,TZ-03,Kondoa Town,,,,county,2,TZ-03,Kondoa Town,,,,,region,1,TZ-03,Dodoma,HIGH,1.0,TZ-03
+Tanzania,Geita Town (← Geita Rural),Geita,,,361671,Town,Geita,,Geita,,GeitaTanzania,county,2,TZ-27,Geita Town,,,,county,2,TZ-27,Geita Town,,,,,region,1,TZ-27,Geita,HIGH,1.0,TZ-27
+Tanzania,Geita Rural,Geita,,,1035214,District,,,#N/A,,GeitaTanzania,,,,,,,,,,,,,,,,region,1,TZ-27,Geita,NONE,0.0,TZ-27
+Tanzania,Chato,Geita,,,584963,District,,,#N/A,,GeitaTanzania,county,2,TZ-27,Chato DC,,,,county,2,TZ-27,Chato DC,,,,,region,1,TZ-27,Geita,LOW,0.819,TZ-27
+Tanzania,Bukombe,Geita,,,407102,District,,,#N/A,,GeitaTanzania,county,2,TZ-27,Bukombe,,,,county,2,TZ-27,Bukombe,,,,,region,1,TZ-27,Geita,HIGH,1.0,TZ-27
+Tanzania,Mbogwe,Geita,,,362855,District,,,#N/A,,GeitaTanzania,county,2,TZ-27,Mbogwe,,,,county,2,TZ-27,Mbogwe,,,,,region,1,TZ-27,Geita,HIGH,1.0,TZ-27
+Tanzania,Nyang'hwale,Geita,,,225803,District,,,#N/A,,GeitaTanzania,,,,,,,,county,2,TZ-27,Nyang'wale,,,,,region,1,TZ-27,Geita,MED,0.952,TZ-27
+Tanzania,Iringa Rural,Iringa,,,315354,District,,,#N/A,,IringaTanzania,county,2,TZ-04,Iringa,,,,,,,,,,,,region,1,TZ-04,Iringa,NONE,0.0,TZ-04
+Tanzania,Mufindi,Iringa,,,288996,District,,,#N/A,,IringaTanzania,county,2,TZ-04,Mufindi,,,,county,2,TZ-04,Mufindi,,,,,region,1,TZ-04,Iringa,HIGH,1.0,TZ-04
+Tanzania,Kilolo,Iringa,,,263559,District,,,#N/A,,IringaTanzania,county,2,TZ-04,Kilolo,,,,county,2,TZ-04,Kilolo,,,,,region,1,TZ-04,Iringa,HIGH,1.0,TZ-04
+Tanzania,Iringa Municipal,Iringa,,,202490,Municipality,,,#N/A,,IringaTanzania,county,2,TZ-04,Iringa Municipal,,,,county,2,TZ-04,Iringa Municipal,,,,,region,1,TZ-04,Iringa,HIGH,1.0,TZ-04
+Tanzania,Mafinga Town,Iringa,,,122329,Town,,,#N/A,,IringaTanzania,county,2,TZ-04,Mafinga Town,,,,county,2,TZ-04,Mafinga Town,,,,,region,1,TZ-04,Iringa,HIGH,1.0,TZ-04
+Tanzania,Bukoba Municipal,Kagera,,,144938,Municipality,Bukoba,,Bukoba,,KageraTanzania,county,2,TZ-05,Bukoba,,,,,,,,,,,,region,1,TZ-05,Kagera,NONE,0.0,TZ-05
+Tanzania,Muleba,Kagera,,,637659,District,,,#N/A,,KageraTanzania,county,2,TZ-05,Muleba,,,,county,2,TZ-05,Muleba,,,,,region,1,TZ-05,Kagera,HIGH,1.0,TZ-05
+Tanzania,Biharamulo,Kagera,,,457114,District,,,#N/A,,KageraTanzania,county,2,TZ-05,Biharamulo,,,,county,2,TZ-05,Biharamulo,,,,,region,1,TZ-05,Kagera,HIGH,1.0,TZ-05
+Tanzania,Kyerwa,Kagera,,,412910,District,,,#N/A,,KageraTanzania,county,2,TZ-05,Kyerwa,,,,county,2,TZ-05,Kyerwa,,,,,region,1,TZ-05,Kagera,HIGH,1.0,TZ-05
+Tanzania,Karagwe,Kagera,,,385744,District,,,#N/A,,KageraTanzania,county,2,TZ-05,Karagwe,,,,county,2,TZ-05,Karagwe,,,,,region,1,TZ-05,Kagera,HIGH,1.0,TZ-05
+Tanzania,Ngara,Kagera,,,383092,District,,,#N/A,,KageraTanzania,county,2,TZ-05,Ngara,,,,county,2,TZ-05,Ngara,,,,,region,1,TZ-05,Kagera,HIGH,1.0,TZ-05
+Tanzania,Bukoba Rural,Kagera,,,322448,District,,,#N/A,,KageraTanzania,county,2,TZ-05,Bukoba,,,,,,,,,,,,region,1,TZ-05,Kagera,NONE,0.0,TZ-05
+Tanzania,Missenyi,Kagera,,,245394,District,,,#N/A,,KageraTanzania,county,2,TZ-05,Missenyi,,,,county,2,TZ-05,Missenyi,,,,,region,1,TZ-05,Kagera,HIGH,1.0,TZ-05
+Tanzania,Wete,Kaskazini Pemba [North Pemba],,,148712,District,,,#N/A,,Kaskazini Pemba [North Pemba]Tanzania,county,2,TZ-06,Wete District,,,,county,2,TZ-06,Wete District,,,,,region,1,TZ-06,Kaskazini Pemba,HIGH,1.0,TZ-06
+Tanzania,Micheweni,Kaskazini Pemba [North Pemba],,,123379,District,,,#N/A,,Kaskazini Pemba [North Pemba]Tanzania,county,2,TZ-06,Micheweni District,,,,county,2,TZ-06,Micheweni District,,,,,region,1,TZ-06,Kaskazini Pemba,HIGH,1.0,TZ-06
+Tanzania,Kaskazini A Town [North Unguja A],Kaskazini Unguja [North Zanzibar],,,157369,Town,,,#N/A,,Kaskazini Unguja [North Zanzibar]Tanzania,county,2,TZ-07,Kaskazini A,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Kaskazini B [North Unguja B],Kaskazini Unguja [North Zanzibar],,,99921,District,,,#N/A,,Kaskazini Unguja [North Zanzibar]Tanzania,county,2,TZ-07,Kaskazini B,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Tanganyika (Mpanda Rural),Katavi,,,371836,District,,,#N/A,,KataviTanzania,county,2,TZ-28,Mpanda,,,,,,,,,,,,region,1,TZ-28,Katavi,NONE,0.0,TZ-28
+Tanzania,Mpanda Municipal,Katavi,,,245764,Municipality,,,#N/A,,KataviTanzania,county,2,TZ-28,Mpanda Municipal,,,,county,2,TZ-28,Mpanda Municipal,,,,,region,1,TZ-28,Katavi,HIGH,1.0,TZ-28
+Tanzania,Mpimbwe (← Mlele),Katavi,,,215438,District,,,#N/A,,KataviTanzania,county,2,TZ-28,Mpimbwe,,,,county,2,TZ-28,Mpimbwe,,,,,region,1,TZ-28,Katavi,HIGH,1.0,TZ-28
+Tanzania,Nsimbo (← Mlele),Katavi,,,201102,District,,,#N/A,,KataviTanzania,county,2,TZ-28,Nsimbo,,,,county,2,TZ-28,Nsimbo,,,,,region,1,TZ-28,Katavi,HIGH,1.0,TZ-28
+Tanzania,Mlele,Katavi,,,118818,District,,,#N/A,,KataviTanzania,county,2,TZ-28,Mlele,,,,county,2,TZ-28,Mlele,,,,,region,1,TZ-28,Katavi,HIGH,1.0,TZ-28
+Tanzania,Kigoma Municipal,Kigoma,,,232388,Municipality,Kigoma,,Kigoma,,KigomaTanzania,county,2,TZ-08,Kigoma Municipal-Ujiji,,,,county,2,TZ-08,Kigoma Municipal-Ujiji,,,,,region,1,TZ-08,Kigoma,LOW,0.892,TZ-08
+Tanzania,Kasulu Rural,Kigoma,,,537767,District,,,#N/A,,KigomaTanzania,county,2,TZ-08,Kasulu,,,,,,,,,,,,region,1,TZ-08,Kigoma,NONE,0.0,TZ-08
+Tanzania,Uvinza,Kigoma,,,458353,District,,,#N/A,,KigomaTanzania,county,2,TZ-08,Uvinza,,,,county,2,TZ-08,Uvinza,,,,,region,1,TZ-08,Kigoma,HIGH,1.0,TZ-08
+Tanzania,Kibondo,Kigoma,,,362922,District,,,#N/A,,KigomaTanzania,county,2,TZ-08,Kibondo,,,,county,2,TZ-08,Kibondo,,,,,region,1,TZ-08,Kigoma,HIGH,1.0,TZ-08
+Tanzania,Buhigwe,Kigoma,,,240005,District,,,#N/A,,KigomaTanzania,county,2,TZ-08,Buhigwe,,,,county,2,TZ-08,Buhigwe,,,,,region,1,TZ-08,Kigoma,HIGH,1.0,TZ-08
+Tanzania,Kasulu Town,Kigoma,,,238321,Town,,,#N/A,,KigomaTanzania,county,2,TZ-08,Kasulu Town,,,,county,2,TZ-08,Kasulu Town,,,,,region,1,TZ-08,Kigoma,HIGH,1.0,TZ-08
+Tanzania,Kigoma Rural,Kigoma,,,222792,District,,,#N/A,,KigomaTanzania,county,2,TZ-08,Kigoma Rural,,,,county,2,TZ-08,Kigoma Rural,,,,,region,1,TZ-08,Kigoma,HIGH,1.0,TZ-08
+Tanzania,Kakonko,Kigoma,,,178419,District,,,#N/A,,KigomaTanzania,county,2,TZ-08,Kakonko,,,,county,2,TZ-08,Kakonko,,,,,region,1,TZ-08,Kigoma,HIGH,1.0,TZ-08
+Tanzania,Moshi Rural,Kilimanjaro,,,535803,District,,,#N/A,,KilimanjaroTanzania,county,2,TZ-09,Moshi Rural,,,,county,2,TZ-09,Moshi Rural,,,,,region,1,TZ-09,Kilimanjaro,HIGH,1.0,TZ-09
+Tanzania,Same,Kilimanjaro,,,300303,District,,,#N/A,,KilimanjaroTanzania,county,2,TZ-09,Same,,,,county,2,TZ-09,Same,,,,,region,1,TZ-09,Kilimanjaro,HIGH,1.0,TZ-09
+Tanzania,Rombo,Kilimanjaro,,,275314,District,,,#N/A,,KilimanjaroTanzania,county,2,TZ-09,Rombo,,,,county,2,TZ-09,Rombo,,,,,region,1,TZ-09,Kilimanjaro,HIGH,1.0,TZ-09
+Tanzania,Hai,Kilimanjaro,,,240999,District,,,#N/A,,KilimanjaroTanzania,county,2,TZ-09,Hai,,,,county,2,TZ-09,Hai,,,,,region,1,TZ-09,Kilimanjaro,HIGH,1.0,TZ-09
+Tanzania,Moshi Municipal,Kilimanjaro,,,221733,Municipality,,,#N/A,,KilimanjaroTanzania,,,,,,,,,,,,,,,,region,1,TZ-09,Kilimanjaro,NONE,0.0,TZ-09
+Tanzania,Mwanga,Kilimanjaro,,,148763,District,,,#N/A,,KilimanjaroTanzania,county,2,TZ-09,Mwanga,,,,county,2,TZ-09,Mwanga,,,,,region,1,TZ-09,Kilimanjaro,HIGH,1.0,TZ-09
+Tanzania,Siha,Kilimanjaro,,,139019,District,,,#N/A,,KilimanjaroTanzania,county,2,TZ-09,Siha,,,,county,2,TZ-09,Siha,,,,,region,1,TZ-09,Kilimanjaro,HIGH,1.0,TZ-09
+Tanzania,Chake Chake,Kusini Pemba [South Pemba],,,136298,District,,,#N/A,,Kusini Pemba [South Pemba]Tanzania,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Mkoani Town,Kusini Pemba [South Pemba],,,135052,Town,,,#N/A,,Kusini Pemba [South Pemba]Tanzania,county,2,TZ-10,Mkoani,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Kati [Central Unguja],Kusini Unguja [South Zanzibar],,,132717,District,,,#N/A,,Kusini Unguja [South Zanzibar]Tanzania,county,2,TZ-11,Kati,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Kusini [South Unguja],Kusini Unguja [South Zanzibar],,,63156,District,,,#N/A,,Kusini Unguja [South Zanzibar]Tanzania,county,2,TZ-11,Kusini,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Lindi Municipal,Lindi,,,174126,Municipality,Lindi,,Lindi,,LindiTanzania,county,2,TZ-12,Lindi Municipal,,,,county,2,TZ-12,Lindi Municipal,,,,,region,1,TZ-12,Lindi,HIGH,1.0,TZ-12
+Tanzania,Kilwa,Lindi,,,297676,District,,,#N/A,,LindiTanzania,county,2,TZ-12,Kilwa,,,,county,2,TZ-12,Kilwa,,,,,region,1,TZ-12,Lindi,HIGH,1.0,TZ-12
+Tanzania,Nachingwea,Lindi,,,233655,District,,,#N/A,,LindiTanzania,county,2,TZ-12,Nachingwea,,,,county,2,TZ-12,Nachingwea,,,,,region,1,TZ-12,Lindi,HIGH,1.0,TZ-12
+Tanzania,Ruangwa,Lindi,,,185573,District,,,#N/A,,LindiTanzania,county,2,TZ-12,Ruangwa,,,,county,2,TZ-12,Ruangwa,,,,,region,1,TZ-12,Lindi,HIGH,1.0,TZ-12
+Tanzania,Mtama (← Lindi Rural),Lindi,,,166493,District,,,#N/A,,LindiTanzania,,,,,,,,,,,,,,,,region,1,TZ-12,Lindi,NONE,0.0,TZ-12
+Tanzania,Liwale,Lindi,,,136505,District,,,#N/A,,LindiTanzania,county,2,TZ-12,Liwale,,,,county,2,TZ-12,Liwale,,,,,region,1,TZ-12,Lindi,HIGH,1.0,TZ-12
+Tanzania,Babati Town,Manyara,,,129572,Town,Babati,,Babati,,ManyaraTanzania,county,2,TZ-26,Babati,,,,,,,,,,,,region,1,TZ-26,Manyara,NONE,0.0,TZ-26
+Tanzania,Babati Rural,Manyara,,,375200,District,,,#N/A,,ManyaraTanzania,county,2,TZ-26,Babati,,,,,,,,,,,,region,1,TZ-26,Manyara,NONE,0.0,TZ-26
+Tanzania,Hanang,Manyara,,,367391,District,,,#N/A,,ManyaraTanzania,county,2,TZ-26,Hanang,,,,county,2,TZ-26,Hanang,,,,,region,1,TZ-26,Manyara,HIGH,1.0,TZ-26
+Tanzania,Kiteto,Manyara,,,352305,District,,,#N/A,,ManyaraTanzania,county,2,TZ-26,Kiteto,,,,county,2,TZ-26,Kiteto,,,,,region,1,TZ-26,Manyara,HIGH,1.0,TZ-26
+Tanzania,Simanjiro,Manyara,,,291169,District,,,#N/A,,ManyaraTanzania,county,2,TZ-26,Simanjiro,,,,county,2,TZ-26,Simanjiro,,,,,region,1,TZ-26,Manyara,HIGH,1.0,TZ-26
+Tanzania,Mbulu Rural,Manyara,,,238272,District,,,#N/A,,ManyaraTanzania,,,,,,,,,,,,,,,,region,1,TZ-26,Manyara,NONE,0.0,TZ-26
+Tanzania,Mbulu Town (← Mbulu Rural),Manyara,,,138593,Town,,,#N/A,,ManyaraTanzania,county,2,TZ-26,Mbulu Town,,,,county,2,TZ-26,Mbulu Town,,,,,region,1,TZ-26,Manyara,HIGH,1.0,TZ-26
+Tanzania,Tarime Rural,Mara,,,404848,District,,,#N/A,,MaraTanzania,county,2,TZ-13,Tarime,,,,,,,,,,,,region,1,TZ-13,Mara,NONE,0.0,TZ-13
+Tanzania,Rorya,Mara,,,354490,District,,,#N/A,,MaraTanzania,county,2,TZ-13,Rorya,,,,county,2,TZ-13,Rorya,,,,,region,1,TZ-13,Mara,HIGH,1.0,TZ-13
+Tanzania,Serengeti,Mara,,,340349,District,,,#N/A,,MaraTanzania,county,2,TZ-13,Serengeti,,,,county,2,TZ-13,Serengeti,,,,,region,1,TZ-13,Mara,HIGH,1.0,TZ-13
+Tanzania,Butiama,Mara,,,281656,District,,,#N/A,,MaraTanzania,county,2,TZ-13,Butiama,,,,county,2,TZ-13,Butiama,,,,,region,1,TZ-13,Mara,HIGH,1.0,TZ-13
+Tanzania,Musoma Rural,Mara,,,266665,District,,,#N/A,,MaraTanzania,county,2,TZ-13,Musoma,,,,,,,,,,,,region,1,TZ-13,Mara,NONE,0.0,TZ-13
+Tanzania,Bunda Rural,Mara,,,243822,District,,,#N/A,,MaraTanzania,,,,,,,,,,,,,,,,region,1,TZ-13,Mara,NONE,0.0,TZ-13
+Tanzania,Bunda Town (← Bunda Rural),Mara,,,182970,Town,,,#N/A,,MaraTanzania,county,2,TZ-13,Bunda Town,,,,county,2,TZ-13,Bunda Town,,,,,region,1,TZ-13,Mara,HIGH,1.0,TZ-13
+Tanzania,Musoma Municipal,Mara,,,164172,Municipality,,,#N/A,,MaraTanzania,county,2,TZ-13,Musoma Municipal,,,,county,2,TZ-13,Musoma Municipal,,,,,region,1,TZ-13,Mara,HIGH,1.0,TZ-13
+Tanzania,Tarime Town (← Tarime Rural),Mara,,,133043,Town,,,#N/A,,MaraTanzania,county,2,TZ-13,Tarime Town,,,,county,2,TZ-13,Tarime Town,,,,,region,1,TZ-13,Mara,HIGH,1.0,TZ-13
+Tanzania,Mbeya City,Mbeya,,,541603,City,Mbeya,,Mbeya,,MbeyaTanzania,county,2,TZ-14,Mbeya,,,,county,2,TZ-14,Mbeya,,,,,region,1,TZ-14,Mbeya,HIGH,1.0,TZ-14
+Tanzania,Mbeya Rural,Mbeya,,,371259,District,Mbeya,,Mbeya,,MbeyaTanzania,county,2,TZ-14,Mbeya,,,,,,,,,,,,region,1,TZ-14,Mbeya,NONE,0.0,TZ-14
+Tanzania,Mbarali,Mbeya,,,446336,District,,,#N/A,,MbeyaTanzania,county,2,TZ-14,Mbarali,,,,county,2,TZ-14,Mbarali,,,,,region,1,TZ-14,Mbeya,HIGH,1.0,TZ-14
+Tanzania,Chunya,Mbeya,,,344471,District,,,#N/A,,MbeyaTanzania,county,2,TZ-14,Chunya,,,,county,2,TZ-14,Chunya,,,,,region,1,TZ-14,Mbeya,HIGH,1.0,TZ-14
+Tanzania,Rungwe,Mbeya,,,273536,District,,,#N/A,,MbeyaTanzania,county,2,TZ-14,Rungwe,,,,county,2,TZ-14,Rungwe,,,,,region,1,TZ-14,Mbeya,HIGH,1.0,TZ-14
+Tanzania,Kyela,Mbeya,,,266426,District,,,#N/A,,MbeyaTanzania,county,2,TZ-14,Kyela,,,,county,2,TZ-14,Kyela,,,,,region,1,TZ-14,Mbeya,HIGH,1.0,TZ-14
+Tanzania,Busekelo (← Rungwe),Mbeya,,,100123,District,,,#N/A,,MbeyaTanzania,county,2,TZ-14,Rungwe,,,,county,2,TZ-14,Busokelo,,,,,region,1,TZ-14,Mbeya,LOW,0.875,TZ-14
+Tanzania,Magharibi B Municipal (← Magharibi),Mjini Magharibi [Urban West],,,344517,Municipality,Zanzibar City,,Zanzibar City,,Mjini Magharibi [Urban West]Tanzania,region,1,TZ-15,Unguja Mjini Magharibi,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Magharibi A Municipal (← Magharibi),Mjini Magharibi [Urban West],,,329645,Municipality,Zanzibar City,,Zanzibar City,,Mjini Magharibi [Urban West]Tanzania,region,1,TZ-15,Unguja Mjini Magharibi,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Mjini Municipal [Zanzibar City],Mjini Magharibi [Urban West],,,219007,Municipality,Zanzibar City,,Zanzibar City,,Mjini Magharibi [Urban West]Tanzania,region,1,TZ-15,Unguja Mjini Magharibi,,,,,,,,,,,,,,,,NONE,0.0,
+Tanzania,Morogoro Municipal,Morogoro,,,471409,Municipality,Morogoro,,Morogoro,,MorogoroTanzania,county,2,TZ-16,Morogoro Municipal,,,,county,2,TZ-16,Morogoro Municipal,,,,,region,1,TZ-16,Morogoro,HIGH,1.0,TZ-16
+Tanzania,Kilosa,Morogoro,,,617032,District,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Kilosa,,,,county,2,TZ-16,Kilosa,,,,,region,1,TZ-16,Morogoro,HIGH,1.0,TZ-16
+Tanzania,Mvomero,Morogoro,,,421741,District,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Mvomero,,,,county,2,TZ-16,Mvomero,,,,,region,1,TZ-16,Morogoro,HIGH,1.0,TZ-16
+Tanzania,Morogoro Rural,Morogoro,,,387736,District,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Morogoro,,,,,,,,,,,,region,1,TZ-16,Morogoro,NONE,0.0,TZ-16
+Tanzania,Mlimba (← Kilombero),Morogoro,,,292536,District,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Kilombero,,,,,,,,,,,,region,1,TZ-16,Morogoro,NONE,0.0,TZ-16
+Tanzania,Ifakara Town (← Kilombero),Morogoro,,,290424,Town,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Ifakara Town,,,,county,2,TZ-16,Ifakara Town,,,,,region,1,TZ-16,Morogoro,HIGH,1.0,TZ-16
+Tanzania,Gairo,Morogoro,,,258205,District,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Gairo,,,,county,2,TZ-16,Gairo,,,,,region,1,TZ-16,Morogoro,HIGH,1.0,TZ-16
+Tanzania,Ulanga,Morogoro,,,232895,District,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Ulanga,,,,county,2,TZ-16,Ulanga,,,,,region,1,TZ-16,Morogoro,HIGH,1.0,TZ-16
+Tanzania,Malinyi (← Ulanga),Morogoro,,,225126,District,,,#N/A,,MorogoroTanzania,county,2,TZ-16,Malinyi,,,,county,2,TZ-16,Malinyi,,,,,region,1,TZ-16,Morogoro,HIGH,1.0,TZ-16
+Tanzania,Masasi Rural,Mtwara,,,314778,District,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Masasi,,,,,,,,,,,,region,1,TZ-17,Mtwara,NONE,0.0,TZ-17
+Tanzania,Tandahimba,Mtwara,,,299073,District,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Tandahimba,,,,county,2,TZ-17,Tandahimba,,,,,region,1,TZ-17,Mtwara,HIGH,1.0,TZ-17
+Tanzania,Nanyumbu,Mtwara,,,204323,District,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Nanyumbu,,,,county,2,TZ-17,Nanyumbu,,,,,region,1,TZ-17,Mtwara,HIGH,1.0,TZ-17
+Tanzania,Mtwara Rural,Mtwara,,,158504,District,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Mtwara,,,,,,,,,,,,region,1,TZ-17,Mtwara,NONE,0.0,TZ-17
+Tanzania,Mtwara Municipal,Mtwara,,,146772,Municipality,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Mtwara Municipal,,,,county,2,TZ-17,Mtwara Municipal,,,,,region,1,TZ-17,Mtwara,HIGH,1.0,TZ-17
+Tanzania,Masasi Town,Mtwara,,,137585,Town,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Masasi Town,,,,county,2,TZ-17,Masasi Town,,,,,region,1,TZ-17,Mtwara,HIGH,1.0,TZ-17
+Tanzania,Newala Rural,Mtwara,,,136939,District,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Newala,,,,,,,,,,,,region,1,TZ-17,Mtwara,NONE,0.0,TZ-17
+Tanzania,Nanyamba Town (← Mtwara Rural),Mtwara,,,132624,Town,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Nanyamba Town,,,,county,2,TZ-17,Nanyamba Town,,,,,region,1,TZ-17,Mtwara,HIGH,1.0,TZ-17
+Tanzania,Newala Town (← Newala Rural),Mtwara,,,104349,Town,,,#N/A,,MtwaraTanzania,county,2,TZ-17,Newala Town,,,,county,2,TZ-17,Newala Town,,,,,region,1,TZ-17,Mtwara,HIGH,1.0,TZ-17
+Tanzania,Mwanza (Nyamagana Municipal),Mwanza,,,594834,City,Mwanza,,Mwanza,,MwanzaTanzania,county,2,TZ-09,Mwanga,,,,region,1,TZ-18,Mwanza,,,,,region,1,TZ-18,Mwanza,HIGH,1.0,TZ-18
+Tanzania,Ilemela Municipal,Mwanza,,,509687,Municipality,Mwanza,,Mwanza,,MwanzaTanzania,county,2,TZ-09,Mwanga,,,,,,,,,,,,region,1,TZ-18,Mwanza,NONE,0.0,TZ-18
+Tanzania,Magu,Mwanza,,,421119,District,Mwanza,,Mwanza,,MwanzaTanzania,county,2,TZ-18,Magu,,,,county,2,TZ-18,Magu,,,,,region,1,TZ-18,Mwanza,HIGH,1.0,TZ-18
+Tanzania,Kwimba,Mwanza,,,480025,District,,,#N/A,,MwanzaTanzania,county,2,TZ-18,Kwimba,,,,county,2,TZ-18,Kwimba,,,,,region,1,TZ-18,Mwanza,HIGH,1.0,TZ-18
+Tanzania,Misungwi,Mwanza,,,467867,District,,,#N/A,,MwanzaTanzania,county,2,TZ-18,Misungwi,,,,county,2,TZ-18,Misungwi,,,,,region,1,TZ-18,Mwanza,HIGH,1.0,TZ-18
+Tanzania,Sengerema,Mwanza,,,425415,District,,,#N/A,,MwanzaTanzania,county,2,TZ-18,Sengerema,,,,county,2,TZ-18,Sengerema,,,,,region,1,TZ-18,Mwanza,HIGH,1.0,TZ-18
+Tanzania,Buchosa (← Sengerema),Mwanza,,,413110,District,,,#N/A,,MwanzaTanzania,county,2,TZ-18,Buchosa,,,,county,2,TZ-18,Buchosa,,,,,region,1,TZ-18,Mwanza,HIGH,1.0,TZ-18
+Tanzania,Ukerewe,Mwanza,,,387815,District,,,#N/A,,MwanzaTanzania,county,2,TZ-18,Ukerewe,,,,county,2,TZ-18,Ukerewe,,,,,region,1,TZ-18,Mwanza,HIGH,1.0,TZ-18
+Tanzania,Wanging'ombe,Njombe,,,191506,District,,,#N/A,,NjombeTanzania,county,2,TZ-29,Wanging'ombe,,,,county,2,TZ-29,Wanging'ombe,,,,,region,1,TZ-29,Njombe,HIGH,1.0,TZ-29
+Tanzania,Njombe Town,Njombe,,,182127,Town,,,#N/A,,NjombeTanzania,county,2,TZ-29,Njombe,,,,,,,,,,,,region,1,TZ-29,Njombe,NONE,0.0,TZ-29
+Tanzania,Ludewa,Njombe,,,151361,District,,,#N/A,,NjombeTanzania,county,2,TZ-29,Ludewa,,,,county,2,TZ-29,Ludewa,,,,,region,1,TZ-29,Njombe,HIGH,1.0,TZ-29
+Tanzania,Makambako Town,Njombe,,,146481,Town,,,#N/A,,NjombeTanzania,county,2,TZ-29,Makambako Town,,,,county,2,TZ-29,Makambako Town,,,,,region,1,TZ-29,Njombe,HIGH,1.0,TZ-29
+Tanzania,Njombe Rural,Njombe,,,109311,District,,,#N/A,,NjombeTanzania,county,2,TZ-29,Njombe,,,,,,,,,,,,region,1,TZ-29,Njombe,NONE,0.0,TZ-29
+Tanzania,Makete,Njombe,,,109160,District,,,#N/A,,NjombeTanzania,county,2,TZ-29,Makete,,,,county,2,TZ-29,Makete,,,,,region,1,TZ-29,Njombe,HIGH,1.0,TZ-29
+Tanzania,Mkuranga,Pwani,,,533033,District,Dar es Salaam,,Dar es Salaam,,PwaniTanzania,county,2,TZ-19,Mkuranga,,,,county,2,TZ-19,Mkuranga,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Kibaha Town,Pwani,,,265360,Town,Dar es Salaam,,Dar es Salaam,,PwaniTanzania,county,2,TZ-19,Kibaha Town,,,,county,2,TZ-19,Kibaha Town,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Bagamoyo,Pwani,,,205478,District,Dar es Salaam,,Dar es Salaam,,PwaniTanzania,county,2,TZ-19,Bagamoyo,,,,county,2,TZ-19,Bagamoyo,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Chalinze (← Bagamoyo),Pwani,,,316759,District,,,#N/A,,PwaniTanzania,county,2,TZ-19,Chalinze,,,,county,2,TZ-19,Chalinze,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Kibiti (← Rufiji),Pwani,,,195638,District,,,#N/A,,PwaniTanzania,county,2,TZ-19,Kibiti,,,,county,2,TZ-19,Kibiti,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Rufiji,Pwani,,,159906,District,,,#N/A,,PwaniTanzania,county,2,TZ-19,Rufiji,,,,county,2,TZ-19,Rufiji,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Kisarawe,Pwani,,,159226,District,,,#N/A,,PwaniTanzania,county,2,TZ-19,Kisarawe,,,,county,2,TZ-19,Kisarawe,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Kibaha,Pwani,,,123367,District,,,#N/A,,PwaniTanzania,county,2,TZ-19,Kibaha,,,,county,2,TZ-19,Kibaha,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Mafia,Pwani,,,66180,District,,,#N/A,,PwaniTanzania,county,2,TZ-19,Mafia,,,,county,2,TZ-19,Mafia,,,,,region,1,TZ-19,Pwani,HIGH,1.0,TZ-19
+Tanzania,Sumbawanga Rural,Rukwa,,,494330,District,,,#N/A,,RukwaTanzania,county,2,TZ-20,Sumbawanga Rural,,,,county,2,TZ-20,Sumbawanga Rural,,,,,region,1,TZ-20,Rukwa,HIGH,1.0,TZ-20
+Tanzania,Nkasi,Rukwa,,,425420,District,,,#N/A,,RukwaTanzania,county,2,TZ-20,Nkasi,,,,county,2,TZ-20,Nkasi,,,,,region,1,TZ-20,Rukwa,HIGH,1.0,TZ-20
+Tanzania,Kalambo,Rukwa,,,316783,District,,,#N/A,,RukwaTanzania,county,2,TZ-20,Kalambo,,,,county,2,TZ-20,Kalambo,,,,,region,1,TZ-20,Rukwa,HIGH,1.0,TZ-20
+Tanzania,Sumbawanga Municipal,Rukwa,,,303986,Municipality,,,#N/A,,RukwaTanzania,county,2,TZ-20,Sumbawanga Urban,,,,,,,,,,,,region,1,TZ-20,Rukwa,NONE,0.0,TZ-20
+Tanzania,Tunduru,Ruvuma,,,412054,District,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Tunduru,,,,county,2,TZ-21,Tunduru,,,,,region,1,TZ-21,Ruvuma,HIGH,1.0,TZ-21
+Tanzania,Songea Municipal,Ruvuma,,,286285,Municipality,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Songea Municipal,,,,county,2,TZ-21,Songea Municipal,,,,,region,1,TZ-21,Ruvuma,HIGH,1.0,TZ-21
+Tanzania,Mbinga Rural,Ruvuma,,,285582,District,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Mbinga,,,,,,,,,,,,region,1,TZ-21,Ruvuma,NONE,0.0,TZ-21
+Tanzania,Namtumbo,Ruvuma,,,271368,District,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Namtumbo,,,,county,2,TZ-21,Namtumbo,,,,,region,1,TZ-21,Ruvuma,HIGH,1.0,TZ-21
+Tanzania,Nyasa,Ruvuma,,,191193,District,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Nyasa,,,,county,2,TZ-21,Nyasa,,,,,region,1,TZ-21,Ruvuma,HIGH,1.0,TZ-21
+Tanzania,Songea Rural,Ruvuma,,,178201,District,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Songea,,,,,,,,,,,,region,1,TZ-21,Ruvuma,NONE,0.0,TZ-21
+Tanzania,Mbinga Town (← Mbinga Rural),Ruvuma,,,158896,Town,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Mbinga Town,,,,county,2,TZ-21,Mbinga Town,,,,,region,1,TZ-21,Ruvuma,HIGH,1.0,TZ-21
+Tanzania,Madaba (← Songea Rural),Ruvuma,,,65215,District,,,#N/A,,RuvumaTanzania,county,2,TZ-21,Madaba,,,,county,2,TZ-21,Madaba,,,,,region,1,TZ-21,Ruvuma,HIGH,1.0,TZ-21
+Tanzania,Kahama Municipality,Shinyanga,,,453654,Municipality,Kahama,,Kahama,,ShinyangaTanzania,county,2,TZ-22,Kahama Urban,,,,,,,,,,,,region,1,TZ-22,Shinyanga,NONE,0.0,TZ-22
+Tanzania,Shinyanga Rural,Shinyanga,,,468611,District,,,#N/A,,ShinyangaTanzania,county,2,TZ-22,Shinyanga Rural,,,,county,2,TZ-22,Shinyanga Rural,,,,,region,1,TZ-22,Shinyanga,HIGH,1.0,TZ-22
+Tanzania,Ushetu (← Kahama Rural),Shinyanga,,,390593,District,,,#N/A,,ShinyangaTanzania,county,2,TZ-22,Ushetu,,,,county,2,TZ-22,Ushetu,,,,,region,1,TZ-22,Shinyanga,HIGH,1.0,TZ-22
+Tanzania,Msalala (← Kahama Rural),Shinyanga,,,378214,District,,,#N/A,,ShinyangaTanzania,county,2,TZ-22,Msalala,,,,county,2,TZ-22,Msalala,,,,,region,1,TZ-22,Shinyanga,HIGH,1.0,TZ-22
+Tanzania,Kishapu,Shinyanga,,,335483,District,,,#N/A,,ShinyangaTanzania,county,2,TZ-22,Kishapu,,,,county,2,TZ-22,Kishapu,,,,,region,1,TZ-22,Shinyanga,HIGH,1.0,TZ-22
+Tanzania,Shinyanga Municipal,Shinyanga,,,214744,Municipality,,,#N/A,,ShinyangaTanzania,,,,,,,,,,,,,,,,region,1,TZ-22,Shinyanga,NONE,0.0,TZ-22
+Tanzania,Maswa,Simiyu,,,427864,District,,,#N/A,,SimiyuTanzania,county,2,TZ-30,Maswa,,,,county,2,TZ-30,Maswa,,,,,region,1,TZ-30,Simiyu,HIGH,1.0,TZ-30
+Tanzania,Itilima,Simiyu,,,419213,District,,,#N/A,,SimiyuTanzania,county,2,TZ-30,Itilima,,,,county,2,TZ-30,Itilima,,,,,region,1,TZ-30,Simiyu,HIGH,1.0,TZ-30
+Tanzania,Bariadi Rural,Simiyu,,,383385,District,,,#N/A,,SimiyuTanzania,county,2,TZ-30,Bariadi,,,,,,,,,,,,region,1,TZ-30,Simiyu,NONE,0.0,TZ-30
+Tanzania,Meatu,Simiyu,,,366941,District,,,#N/A,,SimiyuTanzania,county,2,TZ-30,Meatu,,,,county,2,TZ-30,Meatu,,,,,region,1,TZ-30,Simiyu,HIGH,1.0,TZ-30
+Tanzania,Busega,Simiyu,,,282167,District,,,#N/A,,SimiyuTanzania,county,2,TZ-30,Busega,,,,county,2,TZ-30,Busega,,,,,region,1,TZ-30,Simiyu,HIGH,1.0,TZ-30
+Tanzania,Bariadi Town (← Bariadi Rural),Simiyu,,,260927,Town,,,#N/A,,SimiyuTanzania,county,2,TZ-30,Bariadi Town,,,,county,2,TZ-30,Bariadi Town,,,,,region,1,TZ-30,Simiyu,HIGH,1.0,TZ-30
+Tanzania,Singida Municipal,Singida,,,232459,Municipality,Singida,,Singida,,SingidaTanzania,county,2,TZ-23,Singida Municipal,,,,county,2,TZ-23,Singida Municipal,,,,,region,1,TZ-23,Singida,HIGH,1.0,TZ-23
+Tanzania,Ikungi,Singida,,,411262,District,,,#N/A,,SingidaTanzania,county,2,TZ-23,Ikungi,,,,county,2,TZ-23,Ikungi,,,,,region,1,TZ-23,Singida,HIGH,1.0,TZ-23
+Tanzania,Iramba,Singida,,,328912,District,,,#N/A,,SingidaTanzania,county,2,TZ-23,Iramba,,,,county,2,TZ-23,Iramba,,,,,region,1,TZ-23,Singida,HIGH,1.0,TZ-23
+Tanzania,Singida Rural,Singida,,,284895,District,,,#N/A,,SingidaTanzania,county,2,TZ-23,Singida,,,,,,,,,,,,region,1,TZ-23,Singida,NONE,0.0,TZ-23
+Tanzania,Manyoni,Singida,,,279069,District,,,#N/A,,SingidaTanzania,county,2,TZ-23,Manyoni,,,,county,2,TZ-23,Manyoni,,,,,region,1,TZ-23,Singida,HIGH,1.0,TZ-23
+Tanzania,Mkalama,Singida,,,255514,District,,,#N/A,,SingidaTanzania,county,2,TZ-23,Mkalama,,,,county,2,TZ-23,Mkalama,,,,,region,1,TZ-23,Singida,HIGH,1.0,TZ-23
+Tanzania,Itigi (← Manyoni),Singida,,,215947,District,,,#N/A,,SingidaTanzania,county,2,TZ-23,Itigi,,,,county,2,TZ-23,Itigi,,,,,region,1,TZ-23,Singida,HIGH,1.0,TZ-23
+Tanzania,Mbozi,Songwe,,,510599,District,,,#N/A,,SongweTanzania,county,2,TZ-31,Mbozi,,,,county,2,TZ-31,Mbozi,,,,,region,1,TZ-31,Songwe,HIGH,1.0,TZ-31
+Tanzania,Momba,Songwe,,,259781,District,,,#N/A,,SongweTanzania,county,2,TZ-31,Momba,,,,county,2,TZ-31,Momba,,,,,region,1,TZ-31,Songwe,HIGH,1.0,TZ-31
+Tanzania,Songwe (← Chunya),Songwe,,,229129,District,,,#N/A,,SongweTanzania,county,2,TZ-31,Songwe,,,,county,2,TZ-31,Songwe,,,,,region,1,TZ-31,Songwe,HIGH,1.0,TZ-31
+Tanzania,Tunduma Town,Songwe,,,219309,Town,,,#N/A,,SongweTanzania,county,2,TZ-31,Tunduma,,,,,,,,,,,,region,1,TZ-31,Songwe,NONE,0.0,TZ-31
+Tanzania,Ileje,Songwe,,,125869,District,,,#N/A,,SongweTanzania,county,2,TZ-31,Ileje,,,,county,2,TZ-31,Ileje,,,,,region,1,TZ-31,Songwe,HIGH,1.0,TZ-31
+Tanzania,Tabora Municipal,Tabora,,,308741,Municipality,Tabora,,Tabora,,TaboraTanzania,county,2,TZ-24,Tabora Muncipal,,,,county,2,TZ-24,Tabora Muncipal,,,,,region,1,TZ-24,Tabora,MED,0.968,TZ-24
+Tanzania,Kaliua,Tabora,,,678447,District,,,#N/A,,TaboraTanzania,county,2,TZ-24,Kaliua,,,,county,2,TZ-24,Kaliua,,,,,region,1,TZ-24,Tabora,HIGH,1.0,TZ-24
+Tanzania,Nzega Rural,Tabora,,,574498,District,,,#N/A,,TaboraTanzania,,,,,,,,,,,,,,,,region,1,TZ-24,Tabora,NONE,0.0,TZ-24
+Tanzania,Uyui,Tabora,,,562588,District,,,#N/A,,TaboraTanzania,county,2,TZ-24,Uyui,,,,county,2,TZ-24,Uyui,,,,,region,1,TZ-24,Tabora,HIGH,1.0,TZ-24
+Tanzania,Igunga,Tabora,,,546204,District,,,#N/A,,TaboraTanzania,county,2,TZ-24,Igunga,,,,county,2,TZ-24,Igunga,,,,,region,1,TZ-24,Tabora,HIGH,1.0,TZ-24
+Tanzania,Sikonge,Tabora,,,335686,District,,,#N/A,,TaboraTanzania,county,2,TZ-24,Sikonge,,,,county,2,TZ-24,Sikonge,,,,,region,1,TZ-24,Tabora,HIGH,1.0,TZ-24
+Tanzania,Urambo,Tabora,,,260322,District,,,#N/A,,TaboraTanzania,county,2,TZ-24,Urambo,,,,county,2,TZ-24,Urambo,,,,,region,1,TZ-24,Tabora,HIGH,1.0,TZ-24
+Tanzania,Nzega Town (← Nzega Rural),Tabora,,,125193,Town,,,#N/A,,TaboraTanzania,county,2,TZ-24,Nzega Town,,,,county,2,TZ-24,Nzega Town,,,,,region,1,TZ-24,Tabora,HIGH,1.0,TZ-24
+Tanzania,Tanga City,Tanga,,,393429,City,Tanga,,Tanga,,TangaTanzania,county,2,TZ-25,Tanga,,,,county,2,TZ-25,Tanga,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Kilindi,Tanga,,,398391,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Kilindi,,,,county,2,TZ-25,Kilindi,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Handeni Rural,Tanga,,,384353,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Handeni,,,,,,,,,,,,region,1,TZ-25,Tanga,NONE,0.0,TZ-25
+Tanzania,Lushoto,Tanga,,,350958,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Lushoto,,,,county,2,TZ-25,Lushoto,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Korogwe Rural,Tanga,,,272870,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Korogwe,,,,,,,,,,,,region,1,TZ-25,Tanga,NONE,0.0,TZ-25
+Tanzania,Muheza,Tanga,,,238260,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Muheza,,,,county,2,TZ-25,Muheza,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Bumbuli (← Lushoto),Tanga,,,159373,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Bumbuli,,,,county,2,TZ-25,Bumbuli,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Mkinga,Tanga,,,146802,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Mkinga,,,,county,2,TZ-25,Mkinga,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Handeni Town,Tanga,,,108968,Town,,,#N/A,,TangaTanzania,county,2,TZ-25,Handeni Town,,,,county,2,TZ-25,Handeni Town,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Korogwe Town,Tanga,,,86551,Town,,,#N/A,,TangaTanzania,county,2,TZ-25,Korogwe Town,,,,county,2,TZ-25,Korogwe Town,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25
+Tanzania,Pangani,Tanga,,,75642,District,,,#N/A,,TangaTanzania,county,2,TZ-25,Pangani,,,,county,2,TZ-25,Pangani,,,,,region,1,TZ-25,Tanga,HIGH,1.0,TZ-25

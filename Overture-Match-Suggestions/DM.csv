@@ -1,0 +1,11 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Dominica,Saint Andrew,Saint Andrew,,,9471,Parish,,,#N/A,,Saint AndrewDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint David,Saint David,,,6043,Parish,,,#N/A,,Saint DavidDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint George,Saint George,,,21241,Parish,Roseau,,Roseau,,Saint GeorgeDominica,county,2,DM-04,Roseau,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint John,Saint John,,,6561,Parish,,,#N/A,,Saint JohnDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint Joseph,Saint Joseph,,,5637,Parish,,,#N/A,,Saint JosephDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint Luke,Saint Luke,,,1668,Parish,,,#N/A,,Saint LukeDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint Mark,Saint Mark,,,1834,Parish,,,#N/A,,Saint MarkDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint Patrick,Saint Patrick,,,7622,Parish,,,#N/A,,Saint PatrickDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint Paul,Saint Paul,,,9786,Parish,,,#N/A,,Saint PaulDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,
+Dominica,Saint Peter,Saint Peter,,,1430,Parish,,,#N/A,,Saint PeterDominica,region,1,DM-03,Saint David Parish,,,,,,,,,,,,,,,,NONE,0.0,

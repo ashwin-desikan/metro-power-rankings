@@ -1,0 +1,15 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Jamaica,Clarendon,Clarendon,,,247112,Parish,May Pen,,May Pen,,ClarendonJamaica,region,1,JM-13,Clarendon,,,,region,1,JM-13,Clarendon,,,,,region,1,JM-13,Clarendon,HIGH,1.0,JM-13
+Jamaica,Hanover,Hanover,,,72519,Parish,,,#N/A,,HanoverJamaica,region,1,JM-09,Hanover,,,,region,1,JM-09,Hanover,,,,,region,1,JM-09,Hanover,HIGH,1.0,JM-09
+Jamaica,Kingston,Kingston,,,90544,Parish,Kingston,,Kingston,,KingstonJamaica,region,1,JM-01,Kingston,,,,region,1,JM-01,Kingston,,,,,region,1,JM-01,Kingston,HIGH,1.0,JM-01
+Jamaica,Manchester,Manchester,,,191720,Parish,Mandeville,,Mandeville,,ManchesterJamaica,region,1,JM-12,Manchester,,,,region,1,JM-12,Manchester,,,,,region,1,JM-12,Manchester,HIGH,1.0,JM-12
+Jamaica,Portland,Portland,,,80921,Parish,,,#N/A,,PortlandJamaica,region,1,JM-04,Portland,,,,region,1,JM-04,Portland,,,,,region,1,JM-04,Portland,HIGH,1.0,JM-04
+Jamaica,St. Andrew,St. Andrew,,,571947,Parish,Kingston,,Kingston,,St. AndrewJamaica,region,1,JM-01,Kingston,,,,,,,,,,,,,,,,NONE,0.0,
+Jamaica,St. Ann,St. Ann,,,177054,Parish,,,#N/A,,St. AnnJamaica,region,1,JM-06,Saint Ann,,,,,,,,,,,,,,,,NONE,0.0,
+Jamaica,St. Catherine,St. Catherine,,,520804,Parish,Kingston,,Kingston,,St. CatherineJamaica,region,1,JM-01,Kingston,,,,,,,,,,,,,,,,NONE,0.0,
+Jamaica,St. Elizabeth,St. Elizabeth,,,151911,Parish,,,#N/A,,St. ElizabethJamaica,region,1,JM-11,Saint Elizabeth,,,,,,,,,,,,,,,,NONE,0.0,
+Jamaica,St. James,St. James,,,191737,Parish,Montego Bay,,Montego Bay,,St. JamesJamaica,locality,,JM-08,Montego Bay,,,,,,,,,,,,,,,,NONE,0.0,
+Jamaica,St. Mary,St. Mary,,,115090,Parish,,,#N/A,,St. MaryJamaica,region,1,JM-05,Saint Mary,,,,,,,,,,,,,,,,NONE,0.0,
+Jamaica,St. Thomas,St. Thomas,,,94391,Parish,,,#N/A,,St. ThomasJamaica,region,1,JM-03,Saint Thomas,,,,,,,,,,,,,,,,NONE,0.0,
+Jamaica,Trelawny,Trelawny,,,78487,Parish,,,#N/A,,TrelawnyJamaica,region,1,JM-07,Trelawny,,,,region,1,JM-07,Trelawny,,,,,region,1,JM-07,Trelawny,HIGH,1.0,JM-07
+Jamaica,Westmoreland,Westmoreland,,,149857,Parish,,,#N/A,,WestmorelandJamaica,region,1,JM-10,Westmoreland,,,,region,1,JM-10,Westmoreland,,,,,region,1,JM-10,Westmoreland,HIGH,1.0,JM-10

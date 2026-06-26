@@ -1,0 +1,8 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+São Tomé and Príncipe,Água Grande,Centro Oeste [Midwest],,,80647,District,São Tomé,,São Tomé,,Centro Oeste [Midwest]São Tomé and Príncipe,county,1,,Água Grande,,,,county,1,nan,Água Grande,,,,,,,,,HIGH,1.0,nan
+São Tomé and Príncipe,Mé-Zóchi,Centro Oeste [Midwest],,,50697,District,São Tomé,,São Tomé,,Centro Oeste [Midwest]São Tomé and Príncipe,county,1,,Mé-Zóchi,,,,county,1,nan,Mé-Zóchi,,,,,,,,,HIGH,1.0,nan
+São Tomé and Príncipe,Lobata,Norte Oeste [North West],,,23086,District,São Tomé,,São Tomé,,Norte Oeste [North West]São Tomé and Príncipe,county,1,,Lobata,,,,county,1,nan,Lobata,,,,,,,,,HIGH,1.0,nan
+São Tomé and Príncipe,Lembá,Norte Oeste [North West],,,17129,District,,,#N/A,,Norte Oeste [North West]São Tomé and Príncipe,county,1,,Lembá,,,,county,1,nan,Lembá,,,,,,,,,HIGH,1.0,nan
+São Tomé and Príncipe,Pagué,Príncipe,,,9830,District,,,#N/A,,PríncipeSão Tomé and Príncipe,county,2,ST-P,Pagué,,,,county,2,ST-P,Pagué,,,,,region,1,ST-P,Príncipe,HIGH,1.0,ST-P
+São Tomé and Príncipe,Cantagalo,Sul Oeste [South West],,,20794,District,São Tomé,,São Tomé,,Sul Oeste [South West]São Tomé and Príncipe,county,1,,Cantagalo,,,,county,1,nan,Cantagalo,,,,,,,,,HIGH,1.0,nan
+São Tomé and Príncipe,Caué,Sul Oeste [South West],,,7424,District,,,#N/A,,Sul Oeste [South West]São Tomé and Príncipe,county,1,,Caué,,,,county,1,nan,Caué,,,,,,,,,HIGH,1.0,nan

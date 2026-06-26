@@ -48,7 +48,7 @@ CFL_METRO = {
  "BC Lions":"vancouver","Saskatchewan Roughriders":"regina","Ottawa RedBlacks":"ottawa",
  "Ottawa Rough Riders":"ottawa","Ottawa Renegades":"ottawa","Ottawa Trojans":"ottawa",
  "Baltimore CFLs":"washington-baltimore","San Antonio Texans":"san-antonio",
- "Birmingham Barracudas":"birmingham","Memphis Mad Dogs":"memphis","Shreveport Pirates":"shreveport",
+ "Birmingham Barracudas":"birmingham-al","Memphis Mad Dogs":"memphis","Shreveport Pirates":"shreveport",
  "Sacramento Gold Miners":"sacramento","Las Vegas Posse":"las-vegas",
  "Kitchener-Waterloo Dutchmen":"kitchener-waterloo","Toronto Balmy Beach":"toronto",
  "Sarnia Imperials":"sarnia","Hamilton Wildcats":"hamilton","Hamilton Tigers":"hamilton",

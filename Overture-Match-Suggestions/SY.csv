@@ -1,0 +1,62 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Syria,Jabal Sam'an,Aleppo,,,2490751,District,Aleppo,,Aleppo,2004,AleppoSyria,county,2,SY-HL,منطقة جبل سمعان,,,,,,,,,,,,region,1,SY-HL,محافظة حلب,NONE,0.0,SY-HL
+Syria,Manbij,Aleppo,,,408143,District,,,#N/A,2004,AleppoSyria,county,2,SY-HL,منطقة منبج,,,,county,2,SY-HL,منطقة منبج,,,,,region,1,SY-HL,محافظة حلب,HIGH,1.0,SY-HL
+Syria,Al-Bab,Aleppo,,,292713,District,,,#N/A,2004,AleppoSyria,county,2,SY-HL,منطقة الباب,,,,county,2,SY-HL,منطقة الباب,,,,,region,1,SY-HL,محافظة حلب,HIGH,1.0,SY-HL
+Syria,A'zaz,Aleppo,,,251769,District,,,#N/A,2004,AleppoSyria,county,2,SY-HL,منطقة أعزاز,,,,,,,,,,,,region,1,SY-HL,محافظة حلب,NONE,0.0,SY-HL
+Syria,Ayn al-'Arab,Aleppo,,,192513,District,,,#N/A,2004,AleppoSyria,county,2,SY-HL,منطقة عين العرب,,,,,,,,,,,,region,1,SY-HL,محافظة حلب,NONE,0.0,SY-HL
+Syria,As-Safirah,Aleppo,,,178293,District,,,#N/A,2004,AleppoSyria,county,2,SY-HL,منطقة السفيرة,,,,,,,,,,,,region,1,SY-HL,محافظة حلب,NONE,0.0,SY-HL
+Syria,Afrin,Aleppo,,,172095,District,,,#N/A,2004,AleppoSyria,county,2,SY-HL,منطقة عفرين,,,,county,2,SY-HL,منطقة عفرين,,,,,region,1,SY-HL,محافظة حلب,HIGH,1.0,SY-HL
+Syria,Jarabulus,Aleppo,,,58889,District,,,#N/A,2004,AleppoSyria,county,2,SY-HL,منطقة جرابلس‎‎,,,,,,,,,,,,region,1,SY-HL,محافظة حلب,NONE,0.0,SY-HL
+Syria,Markaz Al-Hasakah,Al-Ḥasakah,,,484966,District,Al Hasakah,,Al Hasakah,2004,Al-ḤasakahSyria,county,2,SY-HA,منطقة الحسكة,,,,,,,,,,,,region,1,SY-HA,محافظة الحسكة,NONE,0.0,SY-HA
+Syria,Al-Qamishli,Al-Ḥasakah,,,423368,District,,,#N/A,2004,Al-ḤasakahSyria,county,2,SY-HA,منطقة القامشلي,,,,county,2,SY-HA,منطقة القامشلي,,,,,region,1,SY-HA,محافظة الحسكة,HIGH,1.0,SY-HA
+Syria,Al-Malikiyah,Al-Ḥasakah,,,189634,District,,,#N/A,2004,Al-ḤasakahSyria,county,2,SY-HA,منطقة المالكية,,,,,,,,,,,,region,1,SY-HA,محافظة الحسكة,NONE,0.0,SY-HA
+Syria,Ra's-al-Ayn,Al-Ḥasakah,,,177150,District,,,#N/A,2004,Al-ḤasakahSyria,county,2,SY-HA,منطقة رأس العين,,,,,,,,,,,,region,1,SY-HA,محافظة الحسكة,NONE,0.0,SY-HA
+Syria,Markaz Ar-Raqqah,Ar-Raqqah,,,506306,District,Ar Raqqah,,Ar Raqqah,2004,Ar-RaqqahSyria,county,2,SY-RA,منطقة الرقة,,,,,,,,,,,,region,1,SY-RA,محافظة الرقة,NONE,0.0,SY-RA
+Syria,Ath-Thawrah,Ar-Raqqah,,,159938,District,,,#N/A,2004,Ar-RaqqahSyria,county,2,SY-RA,منطقة الطبقة,,,,,,,,,,,,region,1,SY-RA,محافظة الرقة,NONE,0.0,SY-RA
+Syria,Tall Abyad,Ar-Raqqah,,,127270,District,,,#N/A,2004,Ar-RaqqahSyria,county,2,SY-RA,منطقة تل أبيض,,,,,,,,,,,,region,1,SY-RA,محافظة الرقة,NONE,0.0,SY-RA
+Syria,Markaz As-Suwayda,As-Suwaydā',,,180907,District,,,#N/A,2004,As-Suwaydā'Syria,county,2,SY-SU,منطقة مركز السويداء,,,,,,,,,,,,region,1,SY-SU,محافظة السويداء,NONE,0.0,SY-SU
+Syria,Shahba',As-Suwaydā',,,71949,District,,,#N/A,2004,As-Suwaydā'Syria,county,2,SY-SU,منطقة شهبا,,,,county,2,SY-SU,منطقة شهبا,,,,,region,1,SY-SU,محافظة السويداء,HIGH,1.0,SY-SU
+Syria,Salkhad,As-Suwaydā',,,60375,District,,,#N/A,2004,As-Suwaydā'Syria,county,2,SY-SU,منطقة صلخد,,,,county,2,SY-SU,منطقة صلخد,,,,,region,1,SY-SU,محافظة السويداء,HIGH,1.0,SY-SU
+Syria,Madinah Dimashq,Damascus,,,1552161,District,Damascus,,Damascus,2004,DamascusSyria,county,2,SY-DI,منطقة دمشق,,,,,,,,,,,,,,,,NONE,0.0,
+Syria,Markaz Dar'a,Dar`ā,,,428681,District,Daraa,,Daraa,2004,Dar`āSyria,county,2,SY-DR,منطقة درعا,,,,,,,,,,,,,,,,NONE,0.0,
+Syria,Izra',Dar`ā,,,246804,District,,,#N/A,2004,Dar`āSyria,county,2,SY-DR,منطقة ازرع,,,,county,2,SY-DR,منطقة ازرع,,,,,region,1,SY-DR,محافظة درعا,HIGH,1.0,SY-DR
+Syria,As-Sanamayn,Dar`ā,,,167993,District,,,#N/A,2004,Dar`āSyria,county,2,SY-DR,منطقة الصنمين,,,,,,,,,,,,,,,,NONE,0.0,
+Syria,Markaz Dayr az-Zawr,Dayr az Zawr,,,492434,District,Deir ez-Zor,,Deir ez-Zor,2004,Dayr az ZawrSyria,county,2,SY-DY,منطقة دير الزور,,,,,,,,,,,,,,,,NONE,0.0,
+Syria,Abu-Kamal,Dayr az Zawr,,,265142,District,,,#N/A,2004,Dayr az ZawrSyria,county,2,SY-DY,منطقة البوكمال,,,,,,,,,,,,,,,,NONE,0.0,
+Syria,Mayadin,Dayr az Zawr,,,247171,District,,,#N/A,2004,Dayr az ZawrSyria,county,2,SY-DY,منطقة الميادين,,,,,,,,,,,,,,,,NONE,0.0,
+Syria,Salamiyah,Hama,,,187123,District,As-Suwayda,,As-Suwayda,2004,HamaSyria,county,2,SY-HM,منطقة السلمية,,,,,,,,,,,,region,1,SY-HM,محافظة حماة,NONE,0.0,SY-HM
+Syria,Markaz Hamah,Hama,,,644445,District,Hama,,Hama,2004,HamaSyria,county,2,SY-HM,منطقة حماة,,,,,,,,,,,,region,1,SY-HM,محافظة حماة,NONE,0.0,SY-HM
+Syria,As-Saqlabiyah,Hama,,,240091,District,,,#N/A,2004,HamaSyria,county,2,SY-HM,منطقة السقيلبية,,,,,,,,,,,,region,1,SY-HM,محافظة حماة,NONE,0.0,SY-HM
+Syria,Masyaf,Hama,,,169341,District,,,#N/A,2004,HamaSyria,county,2,SY-HM,منطقة مصياف,,,,county,2,SY-HM,منطقة مصياف,,,,,region,1,SY-HM,محافظة حماة,HIGH,1.0,SY-HM
+Syria,Muhradah,Hama,,,143953,District,,,#N/A,2004,HamaSyria,county,2,SY-HM,منطقة محردة,,,,,,,,,,,,region,1,SY-HM,محافظة حماة,NONE,0.0,SY-HM
+Syria,Markaz Hims,Ḥimṣ,,,1035055,District,Homs,,Homs,2004,ḤimṣSyria,county,2,SY-HI,منطقة حمص,,,,,,,,,,,,region,1,SY-HI,محافظة حمص,NONE,0.0,SY-HI
+Syria,Tall Kalakh,Ḥimṣ,,,129429,District,,,#N/A,2004,ḤimṣSyria,county,2,SY-HI,منطقة تلكلخ,,,,,,,,,,,,region,1,SY-HI,محافظة حمص,NONE,0.0,SY-HI
+Syria,Ar-Rastan,Ḥimṣ,,,127806,District,,,#N/A,2004,ḤimṣSyria,county,2,SY-HI,منطقة الرستن,,,,county,2,SY-HI,منطقة الرستن,,,,,region,1,SY-HI,محافظة حمص,HIGH,1.0,SY-HI
+Syria,Al-Qusayr,Ḥimṣ,,,108102,District,,,#N/A,2004,ḤimṣSyria,county,2,SY-HI,منطقة القصير,,,,,,,,,,,,region,1,SY-HI,محافظة حمص,NONE,0.0,SY-HI
+Syria,Tadmur,Ḥimṣ,,,76942,District,,,#N/A,2004,ḤimṣSyria,county,2,SY-HI,منطقة تدمر,,,,county,2,SY-HI,منطقة تدمر,,,,,region,1,SY-HI,محافظة حمص,HIGH,1.0,SY-HI
+Syria,Al-Mukharram,Ḥimṣ,,,52068,District,,,#N/A,2004,ḤimṣSyria,county,2,SY-HI,منطقة المخرّم,,,,county,2,SY-HI,منطقة المخرّم,,,,,region,1,SY-HI,محافظة حمص,HIGH,1.0,SY-HI
+Syria,Markaz Idlib,Idlib,,,382928,District,Idlib,,Idlib,2004,IdlibSyria,county,2,SY-ID,منطقة إدلب,,,,,,,,,,,,region,1,SY-ID,محافظة إدلب,NONE,0.0,SY-ID
+Syria,Ma'arrat an-Nu'man,Idlib,,,372960,District,,,#N/A,2004,IdlibSyria,county,2,SY-ID,منطقة معرة النعمان,,,,county,2,SY-ID,منطقة معرة النعمان,,,,,region,1,SY-ID,محافظة إدلب,HIGH,1.0,SY-ID
+Syria,Ariha,Idlib,,,177005,District,,,#N/A,2004,IdlibSyria,county,2,SY-ID,منطقة أريحا,,,,county,2,SY-ID,منطقة أريحا,,,,,region,1,SY-ID,محافظة إدلب,HIGH,1.0,SY-ID
+Syria,Harim,Idlib,,,175482,District,,,#N/A,2004,IdlibSyria,county,2,SY-ID,منطقة حارم,,,,county,2,SY-ID,منطقة حارم,,,,,region,1,SY-ID,محافظة إدلب,HIGH,1.0,SY-ID
+Syria,Jisr ash-Shughur,Idlib,,,150052,District,,,#N/A,2004,IdlibSyria,county,2,SY-ID,منطقة جسر الشغور,,,,,,,,,,,,region,1,SY-ID,محافظة إدلب,NONE,0.0,SY-ID
+Syria,Markaz Al-Ladhiqiyah,Latakia,,,526888,District,Lattakia,,Lattakia,2004,LatakiaSyria,county,2,SY-LA,منطقة اللاذقية,,,,,,,,,,,,region,1,SY-LA,محافظة اللاذقية,NONE,0.0,SY-LA
+Syria,Jablah,Latakia,,,196171,District,,,#N/A,2004,LatakiaSyria,county,2,SY-LA,منطقة جبلة,,,,,,,,,,,,region,1,SY-LA,محافظة اللاذقية,NONE,0.0,SY-LA
+Syria,Al-Haffah,Latakia,,,81848,District,,,#N/A,2004,LatakiaSyria,county,2,SY-LA,منطقة الحفّة,,,,,,,,,,,,region,1,SY-LA,محافظة اللاذقية,NONE,0.0,SY-LA
+Syria,Qardahah,Latakia,,,74644,District,,,#N/A,2004,LatakiaSyria,county,2,SY-LA,منطقة القرداحة,,,,,,,,,,,,region,1,SY-LA,محافظة اللاذقية,NONE,0.0,SY-LA
+Syria,Markaz Al-Qunaytrah,Quneitra,,,64680,District,Al-Qunaytrah,,Al-Qunaytrah,2004,QuneitraSyria,county,2,SY-QU,منطقة القنيطرة,,,,,,,,,,,,region,1,SY-QU,محافظة القنيطرة,NONE,0.0,SY-QU
+Syria,Fiq Zawiyah,Quneitra,,,1947,District,,,#N/A,2004,QuneitraSyria,county,2,SY-QU,منطقة فيق,,,,,,,,,,,,region,1,SY-QU,محافظة القنيطرة,NONE,0.0,SY-QU
+Syria,Markaz Rif Dimashq,Rif Dimashq,,,902216,District,Damascus,,Damascus,2004,Rif DimashqSyria,county,2,SY-RD,منطقة مركز ريف دمشق,,,,,,,,,,,,region,1,SY-RD,محافظة ريف دمشق,NONE,0.0,SY-RD
+Syria,Darayya,Rif Dimashq,,,260961,District,Damascus,,Damascus,2004,Rif DimashqSyria,county,2,SY-RD,منطقة داريا,,,,county,2,SY-RD,منطقة داريا,,,,,region,1,SY-RD,محافظة ريف دمشق,HIGH,1.0,SY-RD
+Syria,Duma,Rif Dimashq,,,433719,District,,,#N/A,2004,Rif DimashqSyria,county,2,SY-RD,منطقة دوما,,,,county,2,SY-RD,منطقة دوما,,,,,region,1,SY-RD,محافظة ريف دمشق,HIGH,1.0,SY-RD
+Syria,Qatana,Rif Dimashq,,,207245,District,,,#N/A,2004,Rif DimashqSyria,county,2,SY-RD,منطقة قطنا,,,,county,2,SY-RD,منطقة قطنا,,,,,region,1,SY-RD,محافظة ريف دمشق,HIGH,1.0,SY-RD
+Syria,Al-Qutayfah,Rif Dimashq,,,119283,District,,,#N/A,2004,Rif DimashqSyria,county,2,SY-RD,منطقة القطيفة,,,,,,,,,,,,region,1,SY-RD,محافظة ريف دمشق,NONE,0.0,SY-RD
+Syria,At-Tall,Rif Dimashq,,,115937,District,,,#N/A,2004,Rif DimashqSyria,county,2,SY-RD,منطقة التل,,,,county,2,SY-RD,منطقة التل,,,,,region,1,SY-RD,محافظة ريف دمشق,HIGH,1.0,SY-RD
+Syria,Az-Zabadani,Rif Dimashq,,,105342,District,,,#N/A,2004,Rif DimashqSyria,county,2,SY-RD,منطقة الزبداني,,,,county,2,SY-RD,منطقة الزبداني,,,,,region,1,SY-RD,محافظة ريف دمشق,HIGH,1.0,SY-RD
+Syria,An-Nabk,Rif Dimashq,,,80001,District,,,#N/A,2004,Rif DimashqSyria,county,2,SY-RD,منطقة النبك,,,,county,2,SY-RD,منطقة النبك,,,,,region,1,SY-RD,محافظة ريف دمشق,HIGH,1.0,SY-RD
+Syria,Yabrud,Rif Dimashq,,,48370,District,,,#N/A,2004,Rif DimashqSyria,county,2,SY-RD,منطقة يبرود,,,,county,2,SY-RD,منطقة يبرود,,,,,region,1,SY-RD,محافظة ريف دمشق,HIGH,1.0,SY-RD
+Syria,Markaz Tartus,Ṭarṭūs,,,281453,District,Tartus,,Tartus,2004,ṬarṭūsSyria,county,2,SY-TA,منطقة طرطوس,,,,,,,,,,,,region,1,SY-TA,محافظة طرطوس,NONE,0.0,SY-TA
+Syria,Baniyas,Ṭarṭūs,,,176351,District,,,#N/A,2004,ṬarṭūsSyria,county,2,SY-TA,منطقة بانياس,,,,,,,,,,,,region,1,SY-TA,محافظة طرطوس,NONE,0.0,SY-TA
+Syria,Safita,Ṭarṭūs,,,129632,District,,,#N/A,2004,ṬarṭūsSyria,county,2,SY-TA,منطقة صافيتا,,,,county,2,SY-TA,منطقة صافيتا,,,,,region,1,SY-TA,محافظة طرطوس,HIGH,1.0,SY-TA
+Syria,Duraykish,Ṭarṭūs,,,60978,District,,,#N/A,2004,ṬarṭūsSyria,county,2,SY-TA,منطقة دريكيش,,,,,,,,,,,,region,1,SY-TA,محافظة طرطوس,NONE,0.0,SY-TA
+Syria,Ash-Shaykh Badr,Ṭarṭūs,,,52981,District,,,#N/A,2004,ṬarṭūsSyria,county,2,SY-TA,منطقة الشيخ بدر,,,,,,,,,,,,region,1,SY-TA,محافظة طرطوس,NONE,0.0,SY-TA

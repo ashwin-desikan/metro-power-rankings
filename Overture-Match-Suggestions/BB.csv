@@ -1,0 +1,22 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Barbados,Christ Church,Christ Church,,,54336,Parish,Bridgetown,,Bridgetown,,Christ ChurchBarbados,region,1,BB-01,Christ Church,,,,region,1,BB-01,Christ Church,,,,,region,1,BB-01,Christ Church,HIGH,1.0,BB-01
+Barbados,Saint Andrew,Saint Andrew,,,9471,Parish,,,#N/A,,Saint AndrewBarbados,region,1,BB-02,Saint Andrew,,,,region,1,BB-02,Saint Andrew,,,,,region,1,BB-02,Saint Andrew,HIGH,1.0,BB-02
+Barbados,Saint David,Saint David,,,6043,Parish,,,#N/A,,Saint DavidBarbados,region,1,BB-05,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,Saint George,Saint George,,,21241,Parish,,,#N/A,,Saint GeorgeBarbados,region,1,BB-03,Saint George,,,,region,1,BB-03,Saint George,,,,,region,1,BB-03,Saint George,HIGH,1.0,BB-03
+Barbados,Saint John,Saint John,,,6561,Parish,,,#N/A,,Saint JohnBarbados,region,1,BB-05,Saint John,,,,region,1,BB-05,Saint John,,,,,region,1,BB-05,Saint John,HIGH,1.0,BB-05
+Barbados,Saint Joseph,Saint Joseph,,,5637,Parish,,,#N/A,,Saint JosephBarbados,region,1,BB-06,Saint Joseph,,,,region,1,BB-06,Saint Joseph,,,,,region,1,BB-06,Saint Joseph,HIGH,1.0,BB-06
+Barbados,Saint Luke,Saint Luke,,,1668,Parish,,,#N/A,,Saint LukeBarbados,region,1,BB-05,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,Saint Mark,Saint Mark,,,1834,Parish,,,#N/A,,Saint MarkBarbados,region,1,BB-05,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,Saint Patrick,Saint Patrick,,,7622,Parish,,,#N/A,,Saint PatrickBarbados,region,1,BB-05,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,Saint Paul,Saint Paul,,,9786,Parish,Roseau,,Roseau,,Saint PaulBarbados,region,1,BB-05,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,Saint Peter,Saint Peter,,,1430,Parish,,,#N/A,,Saint PeterBarbados,region,1,BB-09,Saint Peter,,,,region,1,BB-09,Saint Peter,,,,,region,1,BB-09,Saint Peter,HIGH,1.0,BB-09
+Barbados,St. Andrew,St. Andrew,,,5139,Parish,,,#N/A,,St. AndrewBarbados,region,1,BB-02,Saint Andrew,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. George,St. George,,,19767,Parish,,,#N/A,,St. GeorgeBarbados,region,1,BB-03,Saint George,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. James,St. James,,,28498,Parish,Bridgetown,,Bridgetown,,St. JamesBarbados,locality,,BB-08,Bridgetown,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. John,St. John,,,8963,Parish,,,#N/A,,St. JohnBarbados,region,1,BB-05,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. Joseph,St. Joseph,,,6620,Parish,,,#N/A,,St. JosephBarbados,region,1,BB-06,Saint Joseph,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. Lucy,St. Lucy,,,9758,Parish,,,#N/A,,St. LucyBarbados,region,1,BB-07,Saint Lucy,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. Michael,St. Michael,,,88529,Parish,Bridgetown,,Bridgetown,,St. MichaelBarbados,locality,,BB-08,Bridgetown,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. Peter,St. Peter,,,11300,Parish,,,#N/A,,St. PeterBarbados,region,1,BB-09,Saint Peter,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. Philip,St. Philip,,,30662,Parish,,,#N/A,,St. PhilipBarbados,region,1,BB-10,Saint Philip,,,,,,,,,,,,,,,,NONE,0.0,
+Barbados,St. Thomas,St. Thomas,,,14249,Parish,,,#N/A,,St. ThomasBarbados,region,1,BB-11,Saint Thomas,,,,,,,,,,,,,,,,NONE,0.0,

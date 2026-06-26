@@ -1,0 +1,151 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Saudi Arabia,Al-Bāḥah,Al-Bahah,,,90515,Governorate,Al Bahah,,Al Bahah,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة الباحة,,,,region,1,SA-11,منطقة الباحة,,,,,region,1,SA-11,منطقة الباحة,HIGH,1.0,SA-11
+Saudi Arabia,Baljurashī,Al-Bahah,,,51787,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة بلجرشي,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Al-Makhwāh,Al-Bahah,,,48333,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة المخواة,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Al-'Aqīq,Al-Bahah,,,37608,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة العقيق,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Qilwah,Al-Bahah,,,31197,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة قلوه,,,,county,2,SA-11,محافظة قلوه,,,,,region,1,SA-11,منطقة الباحة,HIGH,1.0,SA-11
+Saudi Arabia,Al-Mandaq,Al-Bahah,,,20010,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة المندق,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Al-Qarā,Al-Bahah,,,19586,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة القرى,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Banī Ḥasan [← Al-Mandaq],Al-Bahah,,,15496,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة بني حسن,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Far'at Ghāmid az-Zinād [← Al-Makhwāh],Al-Bahah,,,12506,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة فرعة غامد الزناد,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Al-Ḥajrah [← Qilwah],Al-Bahah,,,12136,Governorate,,,#N/A,,Al-BahahSaudi Arabia,county,2,SA-11,محافظة الحجرة,,,,,,,,,,,,region,1,SA-11,منطقة الباحة,NONE,0.0,SA-11
+Saudi Arabia,Sakākā,Al-Jawf,,,236669,Governorate,Sakakah,,Sakakah,,Al-JawfSaudi Arabia,county,2,SA-12,محافظة سكاكا,,,,county,2,SA-12,محافظة سكاكا,,,,,region,1,SA-12,منطقة الجوف,HIGH,1.0,SA-12
+Saudi Arabia,Al-Qurayyāt,Al-Jawf,,,195016,Governorate,,,#N/A,,Al-JawfSaudi Arabia,county,2,SA-12,محافظة القريات,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Ṭubarjal [← Sakākā],Al-Jawf,,,109796,Governorate,,,#N/A,,Al-JawfSaudi Arabia,county,2,SA-12,محافظة طبرجل,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Dūmat al-Jandal [Al-Jawf],Al-Jawf,,,54341,Governorate,,,#N/A,,Al-JawfSaudi Arabia,county,2,SA-12,محافظة دومة الجندل,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Ar-Rass,Al-Qassim,,,121359,Governorate,Ar Rass,,Ar Rass,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة الرس,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Buraydah [Buraidah],Al-Qassim,,,677647,Governorate,Buraidah,,Buraidah,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة بريدة,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,'Unaīzah [Unaizah],Al-Qassim,,,184644,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة عنيزه,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Al-Bukayriyah,Al-Qassim,,,63551,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة البكيريه,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Al-Badā'i'a,Al-Qassim,,,53779,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة البدائع,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,An-Nabhāniyah,Al-Qassim,,,46558,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة النبهانيه,,,,locality,,SA-05,An Nabhaniyah,,,,,region,1,SA-05,منطقة القصيم,MED,0.923,SA-05
+Saudi Arabia,Al-Midhnab,Al-Qassim,,,43278,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة المذنب,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Al-'Asyāḥ,Al-Qassim,,,35533,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة الأسياح,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Riyāḍ al-Khabrā',Al-Qassim,,,31203,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة رياض الخبراء,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,'Uyūn al-Jiwā',Al-Qassim,,,29178,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة عيون الجواء,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Ḍariyah [← Ar-Rass],Al-Qassim,,,20826,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة ضريه,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,'Uqalt aṣ-Ṣuqūr [← Buraydah],Al-Qassim,,,20805,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة عقلة الصقور,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Ash-Shimāiyah,Al-Qassim,,,7818,Governorate,,,#N/A,,Al-QassimSaudi Arabia,county,2,SA-05,محافظة الشماسيه,,,,,,,,,,,,region,1,SA-05,منطقة القصيم,NONE,0.0,SA-05
+Saudi Arabia,Abhā,Asir,,,422243,Governorate,Abha,,Abha,,AsirSaudi Arabia,county,2,SA-14,محافظة أبها,,,,county,2,SA-14,محافظة أبها,,,,,region,1,SA-14,منطقة عسير,HIGH,1.0,SA-14
+Saudi Arabia,Khamīs Mushaīṭ [Khamis Mushait],Asir,,,601305,Governorate,Khamis Mushait,,Khamis Mushait,,AsirSaudi Arabia,county,2,SA-14,محافظة خميس مشيط,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Aḥad Rāfidah,Asir,,,107894,Governorate,Khamis Mushait,,Khamis Mushait,,AsirSaudi Arabia,county,2,SA-14,محافظة احد رفيدة,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Muḥā'yil,Asir,,,230537,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة محايل,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Bīshah [Bisha],Asir,,,202096,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة بيشة,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Balqarn,Asir,,,60012,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة بلقرن,,,,county,2,SA-14,محافظة بلقرن,,,,,region,1,SA-14,منطقة عسير,HIGH,1.0,SA-14
+Saudi Arabia,Sarāt 'Abīdah,Asir,,,57123,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة سراة عبيدة,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Rijal 'Ālm'a,Asir,,,50825,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة رجال ألمع,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Al-Majāridah,Asir,,,48302,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة المجاردة,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Bāriq [← Al-Majāridah],Asir,,,44880,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة بارق,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,An-Nimāṣ [Namas],Asir,,,38409,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة النماص,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Tathlīth,Asir,,,36451,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة تثليث,,,,county,2,SA-14,محافظة تثليث,,,,,region,1,SA-14,منطقة عسير,HIGH,1.0,SA-14
+Saudi Arabia,Ẓahrān al-Janūb,Asir,,,32099,Governorate,,,#N/A,,AsirSaudi Arabia,,,,,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Al-Birk [← Abhā],Asir,,,22583,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة البرك,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Ṭarīb [← Abhā],Asir,,,22298,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة طريب,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Al-Ḥarjah [← Ẓahrān al-Janūb],Asir,,,18503,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة الحرجه,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Tanūmah [← Abhā],Asir,,,17756,Governorate,,,#N/A,,AsirSaudi Arabia,county,2,SA-14,محافظة تنومة,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Al-Amwāh [← Tathlīth],Asir,,,10969,Governorate,,,#N/A,,AsirSaudi Arabia,,,,,,,,,,,,,,,,region,1,SA-14,منطقة عسير,NONE,0.0,SA-14
+Saudi Arabia,Al-'Aḥsā',Eastern,,,1104267,Governorate,Al Hofuf,,Al Hofuf,,EasternSaudi Arabia,county,2,SA-04,محافظة الأحساء,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Ad-Dammām [Dammam],Eastern,,,1532326,Governorate,Dammam,,Dammam,,EasternSaudi Arabia,county,2,SA-04,محافظة الدمام,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Al-Khubar [Khobar],Eastern,,,658550,Governorate,Dammam,,Dammam,,EasternSaudi Arabia,county,2,SA-04,محافظة الخبر,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Al-Qaṭīf,Eastern,,,552442,Governorate,Dammam,,Dammam,,EasternSaudi Arabia,county,2,SA-04,محافظة القطيف,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Ḥafar al-Bāṭin,Eastern,,,467007,Governorate,Hafar Al-Batin,,Hafar Al-Batin,,EasternSaudi Arabia,county,2,SA-04,محافظة حفر الباطن,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Al-Jubaīl [Jubail],Eastern,,,505162,Governorate,Jubail,,Jubail,,EasternSaudi Arabia,county,2,SA-04,محافظة الجبيل,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Al-Khafjī,Eastern,,,84316,Governorate,,,#N/A,,EasternSaudi Arabia,county,2,SA-04,محافظة الخفجي,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Abqaīq [Abqaiq],Eastern,,,64632,Governorate,,,#N/A,,EasternSaudi Arabia,county,2,SA-04,محافظة بقيق,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,An-Na'īryah [Nariyah],Eastern,,,63815,Governorate,,,#N/A,,EasternSaudi Arabia,county,2,SA-04,محافظة النعيريه,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,R'ās Tanūrah,Eastern,,,62314,Governorate,,,#N/A,,EasternSaudi Arabia,county,2,SA-04,محافظة رأس تنوره,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Qaryat al-'Ulyā,Eastern,,,21788,Governorate,,,#N/A,,EasternSaudi Arabia,county,2,SA-04,محافظة قرية العليا,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Al-'Udayd [← Al-'Aḥsā'],Eastern,,,8635,Governorate,,,#N/A,,EasternSaudi Arabia,county,2,SA-04,محافظة العديد,,,,,,,,,,,,region,1,SA-04,المنطقة الشرقية,NONE,0.0,SA-04
+Saudi Arabia,Ḥā'il [Ha'il],Ha'il,,,498575,Governorate,Ha'il,,Ha'il,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة حائل,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Al-Ḥā'īṭ [← Al-Ghazalah],Ha'il,,,74596,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة الحائط,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Baq'ā' [Baqaa ],Ha'il,,,56362,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة بقعاء,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Ash-Shanān,Ha'il,,,29419,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة الشنان,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Ash-Shamlī [← Ḥā'il],Ha'il,,,20946,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة الشملى,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Simīrā' [← Ḥā'il],Ha'il,,,19563,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة سميراء,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,As-Sulaymī [← Al-Ghazalah],Ha'il,,,17343,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة السليمي,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Mawqaq [← Ḥā'il],Ha'il,,,16835,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة موقق,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Al-Ghazalah,Ha'il,,,12767,Governorate,,,#N/A,,Ha'ilSaudi Arabia,county,2,SA-06,محافظة الغزالة,,,,,,,,,,,,region,1,SA-06,منطقة حائل,NONE,0.0,SA-06
+Saudi Arabia,Ṣabyā,Jazan,,,223083,Governorate,Sabya,,Sabya,,JazanSaudi Arabia,county,2,SA-09,محافظة صبياء,,,,county,2,SA-09,محافظة صبياء,,,,,region,1,SA-09,منطقة جازان,HIGH,1.0,SA-09
+Saudi Arabia,Jīzān,Jazan,,,200911,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة جازان,,,,region,1,SA-09,منطقة جازان,,,,,region,1,SA-09,منطقة جازان,HIGH,1.0,SA-09
+Saudi Arabia,Abū 'Arīsh,Jazan,,,187060,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة أبو عريش,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Ṣāmiṭah [Samtah],Jazan,,,154926,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة صامطة,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Aḥad al-Masāriḥah,Jazan,,,130545,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة احد المسارحه,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Bīsh,Jazan,,,86996,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة بيش,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Al-'Arḍah,Jazan,,,79730,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة العارضه,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Ad-Darb,Jazan,,,68965,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة الدرب,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Ḍamad,Jazan,,,64136,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة ضمد,,,,county,2,SA-09,محافظة ضمد,,,,,region,1,SA-09,منطقة جازان,HIGH,1.0,SA-09
+Saudi Arabia,Ad-Dā'yir [Ad-Dayer],Jazan,,,47424,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة الدائر,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Aṭ-Ṭuwāl [← Ṣāmiṭah],Jazan,,,36259,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة الطوال,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Al-'Aydābī,Jazan,,,32940,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة العيدابى,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Harūb [← Al-'Aydābī],Jazan,,,30709,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة هروب,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Fayfā [← Jīzān],Jazan,,,19346,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,فيفاء,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Ar-Rayth,Jazan,,,16877,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة الريث,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Farasān,Jazan,,,13529,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة فرسان,,,,county,2,SA-09,محافظة فرسان,,,,,region,1,SA-09,منطقة جازان,HIGH,1.0,SA-09
+Saudi Arabia,Al-Ḥarth,Jazan,,,11561,Governorate,,,#N/A,,JazanSaudi Arabia,county,2,SA-09,محافظة الحرث,,,,,,,,,,,,region,1,SA-09,منطقة جازان,NONE,0.0,SA-09
+Saudi Arabia,Al-Qunfudhah,Mecca,,,205188,Governorate,Al-Qunfudhah,,Al-Qunfudhah,,MeccaSaudi Arabia,county,2,SA-02,محافظة القنفذة,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Jiddah [Jeddah],Mecca,,,3751722,Governorate,Jeddah,,Jeddah,,MeccaSaudi Arabia,county,2,SA-02,محافظة جدة,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Baḥrah [← Makkah al-Mukarramah],Mecca,,,94603,Governorate,Jeddah,,Jeddah,,MeccaSaudi Arabia,county,2,SA-02,محافظة بحرة,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Makkah al-Mukarramah [Mecca],Mecca,,,2427924,Governorate,Mecca,,Mecca,,MeccaSaudi Arabia,county,2,SA-02,محافظة مكة المكرمة,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Aṭ-Ṭa'if [Ta'if],Mecca,,,913374,Governorate,Taif,,Taif,,MeccaSaudi Arabia,county,2,SA-02,محافظة الطائف,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Rābigh,Mecca,,,112383,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة رابغ,,,,county,2,SA-02,محافظة رابغ,,,,,region,1,SA-02,منطقة مكة المكرمة,HIGH,1.0,SA-02
+Saudi Arabia,Al-Jumūm,Mecca,,,89575,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة الجموم,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Al-Līth [Al-Leith],Mecca,,,73753,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة الليث,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Al-'Arḍiyāt [← Al-Qunfudhah],Mecca,,,65078,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة العرضيات,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Khulaīṣ [Khulays],Mecca,,,51338,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة خليص,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Ranyah,Mecca,,,49854,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة رنيه,,,,county,2,SA-02,محافظة رنيه,,,,,region,1,SA-02,منطقة مكة المكرمة,HIGH,1.0,SA-02
+Saudi Arabia,Turubah,Mecca,,,41769,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة تربه,,,,county,2,SA-02,محافظة تربه,,,,,region,1,SA-02,منطقة مكة المكرمة,HIGH,1.0,SA-02
+Saudi Arabia,Al-Khurmah,Mecca,,,38744,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة الخرمة,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,'Āḍam [← Al-Līth],Mecca,,,33958,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة أضم,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Al-Muwayh [← Aṭ-Ṭa'if],Mecca,,,29065,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة المويه,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Maysān [← Aṭ-Ṭa'if],Mecca,,,28765,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة ميسان,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Al-Kāmil,Mecca,,,14370,Governorate,,,#N/A,,MeccaSaudi Arabia,county,2,SA-02,محافظة الكامل,,,,,,,,,,,,,,,,NONE,0.0,
+Saudi Arabia,Al-Madīnah al-Munuwarah [Medina],Medina,,,1477047,Governorate,Medina,,Medina,,MedinaSaudi Arabia,county,2,SA-03,محافظة المدينة المنورة,,,,,,,,,,,,region,1,SA-03,منطقة المدينة المنورة,NONE,0.0,SA-03
+Saudi Arabia,Yanbu' al-Baḥr [Yanbu],Medina,,,359631,Governorate,Yanbu,,Yanbu,,MedinaSaudi Arabia,county,2,SA-03,محافظة ينبع,,,,,,,,,,,,region,1,SA-03,منطقة المدينة المنورة,NONE,0.0,SA-03
+Saudi Arabia,Al-'Ulā,Medina,,,60103,Governorate,,,#N/A,,MedinaSaudi Arabia,county,2,SA-03,محافظة العلا,,,,,,,,,,,,region,1,SA-03,منطقة المدينة المنورة,NONE,0.0,SA-03
+Saudi Arabia,Badr,Medina,,,58259,Governorate,,,#N/A,,MedinaSaudi Arabia,county,2,SA-03,محافظة بدر,,,,county,2,SA-03,محافظة بدر,,,,,region,1,SA-03,منطقة المدينة المنورة,HIGH,1.0,SA-03
+Saudi Arabia,Mahd adh-Dhahab,Medina,,,48590,Governorate,,,#N/A,,MedinaSaudi Arabia,county,2,SA-03,محافظة المهد,,,,,,,,,,,,region,1,SA-03,منطقة المدينة المنورة,NONE,0.0,SA-03
+Saudi Arabia,Khaybar,Medina,,,45532,Governorate,,,#N/A,,MedinaSaudi Arabia,county,2,SA-03,محافظة خيبر,,,,county,2,SA-03,محافظة خيبر,,,,,region,1,SA-03,منطقة المدينة المنورة,HIGH,1.0,SA-03
+Saudi Arabia,Al-Ḥinākīyah [Al-Henakiyah],Medina,,,43256,Governorate,,,#N/A,,MedinaSaudi Arabia,county,2,SA-03,محافظة الحناكيه,,,,,,,,,,,,region,1,SA-03,منطقة المدينة المنورة,NONE,0.0,SA-03
+Saudi Arabia,Wādī al-Fara' [← Al-Madīnah al-Munuwarah],Medina,,,23120,Governorate,,,#N/A,,MedinaSaudi Arabia,county,2,SA-03,محافظة وادي الفرع,,,,,,,,,,,,region,1,SA-03,منطقة المدينة المنورة,NONE,0.0,SA-03
+Saudi Arabia,Al-'Aīṣ [← Yanbu' al-Baḥr],Medina,,,22445,Governorate,,,#N/A,,MedinaSaudi Arabia,county,2,SA-03,محافظة العيص,,,,,,,,,,,,region,1,SA-03,منطقة المدينة المنورة,NONE,0.0,SA-03
+Saudi Arabia,Najrān [Najran],Najran,,,421902,Governorate,Najran,,Najran,,NajranSaudi Arabia,county,2,SA-10,محافظة نجران,,,,,,,,,,,,region,1,SA-10,منطقة نجران,NONE,0.0,SA-10
+Saudi Arabia,Sharūrah [incl. Al-Khirkhīr],Najran,,,100199,Governorate,,,#N/A,,NajranSaudi Arabia,county,2,SA-10,محافظة شروره,,,,,,,,,,,,region,1,SA-10,منطقة نجران,NONE,0.0,SA-10
+Saudi Arabia,Ḥubūnā,Najran,,,24823,Governorate,,,#N/A,,NajranSaudi Arabia,county,2,SA-10,محافظة حبونا,,,,county,2,SA-10,محافظة حبونا,,,,,region,1,SA-10,منطقة نجران,HIGH,1.0,SA-10
+Saudi Arabia,Yadamah,Najran,,,16160,Governorate,,,#N/A,,NajranSaudi Arabia,county,2,SA-10,محافظة يدمه,,,,county,2,SA-10,محافظة يدمه,,,,,region,1,SA-10,منطقة نجران,HIGH,1.0,SA-10
+Saudi Arabia,Thār,Najran,,,13391,Governorate,,,#N/A,,NajranSaudi Arabia,county,2,SA-10,محافظة ثار,,,,county,2,SA-10,محافظة ثار,,,,,region,1,SA-10,منطقة نجران,HIGH,1.0,SA-10
+Saudi Arabia,Badr al-Janūb,Najran,,,7991,Governorate,,,#N/A,,NajranSaudi Arabia,county,2,SA-10,محافظة بدر الجنوب,,,,,,,,,,,,region,1,SA-10,منطقة نجران,NONE,0.0,SA-10
+Saudi Arabia,Khubāsh,Najran,,,7834,Governorate,,,#N/A,,NajranSaudi Arabia,county,2,SA-10,محافظة خباش,,,,county,2,SA-10,محافظة خباش,,,,,region,1,SA-10,منطقة نجران,HIGH,1.0,SA-10
+Saudi Arabia,'Ar'ar,Northern Borders,,,202719,Governorate,,,#N/A,,Northern BordersSaudi Arabia,county,2,SA-08,محافظة عرعر,,,,,,,,,,,,region,1,SA-08,منطقة الحدود الشمالية,NONE,0.0,SA-08
+Saudi Arabia,Rafḥā',Northern Borders,,,84536,Governorate,,,#N/A,,Northern BordersSaudi Arabia,county,2,SA-08,محافظة رفحاء,,,,county,2,SA-08,محافظة رفحاء,,,,,region,1,SA-08,منطقة الحدود الشمالية,HIGH,1.0,SA-08
+Saudi Arabia,Ṭuraīf,Northern Borders,,,66004,Governorate,,,#N/A,,Northern BordersSaudi Arabia,county,2,SA-08,محافظة طريف,,,,,,,,,,,,region,1,SA-08,منطقة الحدود الشمالية,NONE,0.0,SA-08
+Saudi Arabia,Al-'Awayqīlah [← 'Ar'ar],Northern Borders,,,20318,Governorate,,,#N/A,,Northern BordersSaudi Arabia,county,2,SA-08,محافظة العويقيله,,,,,,,,,,,,region,1,SA-08,منطقة الحدود الشمالية,NONE,0.0,SA-08
+Saudi Arabia,Al-Majma'ah,Riyadh,,,151877,Governorate,Al Majma'ah,,Al Majma'ah,,RiyadhSaudi Arabia,county,2,SA-01,محافظة المجمعة,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Al-Kharj [As-Saīḥ],Riyadh,,,373177,Governorate,Al-Kharj,,Al-Kharj,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الخرج,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ar-Riyāḍ [Riyadh],Riyadh,,,7009120,Governorate,Riyadh,,Riyadh,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الرياض,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ad-Dir'iyah,Riyadh,,,95834,Governorate,Riyadh,,Riyadh,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الدرعية,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Al-Muzāḥimiyah,Riyadh,,,62760,Governorate,Riyadh,,Riyadh,,RiyadhSaudi Arabia,county,2,SA-01,محافظة المزاحميه,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ḍurmā [Dhurma],Riyadh,,,26299,Governorate,Riyadh,,Riyadh,,RiyadhSaudi Arabia,county,2,SA-01,محافظة ضرما,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ad-Dawādmī,Riyadh,,,200620,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الدوادمى,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Wādī ad-Dawāsir,Riyadh,,,91535,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة وادي الدواسر,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Az-Zulfī,Riyadh,,,74903,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الزلفى,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,'Afïf,Riyadh,,,71616,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة عفيف,,,,county,2,SA-01,محافظة عفيف,,,,,region,1,SA-01,منطقة الرياض,HIGH,1.0,SA-01
+Saudi Arabia,Al-Qūway'iyah,Riyadh,,,71410,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة القويعيه,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ad-Dilam [← Al-Kharj],Riyadh,,,54822,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الدلم,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Al-'Aflāj,Riyadh,,,54544,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الافلاج,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Shaqrā' [Shaqraa],Riyadh,,,46403,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة شقراء,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ḥawṭah Banī Tamīm [Hotat Bani Tamim],Riyadh,,,41854,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة حوطه بنى تميم,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Rimāḥ,Riyadh,,,35683,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة رماح,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,As-Sulayyil,Riyadh,,,35271,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة السليل,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ar-Rayn [← Al-Qūway'iyah],Riyadh,,,28243,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الرين,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Ḥuraymilā',Riyadh,,,21758,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة حريملاء,,,,county,2,SA-01,محافظة حريملاء,,,,,region,1,SA-01,منطقة الرياض,HIGH,1.0,SA-01
+Saudi Arabia,Thādiq [Thadig],Riyadh,,,12510,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة ثادق,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Al-Ḥarīq [Al-Hareeq],Riyadh,,,10864,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الحريق,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Al-Ghāṭ,Riyadh,,,10799,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة الغاط,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Marāt [← Ar-Riyāḍ],Riyadh,,,9846,Governorate,,,#N/A,,RiyadhSaudi Arabia,county,2,SA-01,محافظة مرات,,,,,,,,,,,,region,1,SA-01,منطقة الرياض,NONE,0.0,SA-01
+Saudi Arabia,Tabūk [Tabouk],Tabuk,,,623665,Governorate,Tabuk,,Tabuk,,TabukSaudi Arabia,county,2,SA-07,محافظة تبوك,,,,,,,,,,,,region,1,SA-07,منطقة تبوك,NONE,0.0,SA-07
+Saudi Arabia,'Umluj,Tabuk,,,69656,Governorate,,,#N/A,,TabukSaudi Arabia,county,2,SA-07,محافظة املج,,,,county,2,SA-07,محافظة املج,,,,,region,1,SA-07,منطقة تبوك,HIGH,1.0,SA-07
+Saudi Arabia,Ḍubā',Tabuk,,,54917,Governorate,,,#N/A,,TabukSaudi Arabia,county,2,SA-07,محافظة ضباء,,,,,,,,,,,,region,1,SA-07,منطقة تبوك,NONE,0.0,SA-07
+Saudi Arabia,Al-Wajh,Tabuk,,,49948,Governorate,,,#N/A,,TabukSaudi Arabia,county,2,SA-07,محافظة الوجه,,,,,,,,,,,,region,1,SA-07,منطقة تبوك,NONE,0.0,SA-07
+Saudi Arabia,Taymā',Tabuk,,,42165,Governorate,,,#N/A,,TabukSaudi Arabia,county,2,SA-07,محافظة تيماء,,,,county,2,SA-07,محافظة تيماء,,,,,region,1,SA-07,منطقة تبوك,HIGH,1.0,SA-07
+Saudi Arabia,Ḥaql,Tabuk,,,27712,Governorate,,,#N/A,,TabukSaudi Arabia,county,2,SA-07,محافظة حقل,,,,,,,,,,,,region,1,SA-07,منطقة تبوك,NONE,0.0,SA-07
+Saudi Arabia,Al-Bad' [← Tabūk],Tabuk,,,17973,Governorate,,,#N/A,,TabukSaudi Arabia,county,2,SA-07,محافظة البدع,,,,,,,,,,,,region,1,SA-07,منطقة تبوك,NONE,0.0,SA-07

@@ -1,0 +1,31 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Rwanda,Nyagatare,Eastern,,,653861,District,,,#N/A,,EasternRwanda,,,,,,,,locality,,RW-02,Nyagatare,,,,,region,1,RW-02,Iburasirasuba,HIGH,1.0,RW-02
+Rwanda,Gatsibo,Eastern,,,551164,District,,,#N/A,,EasternRwanda,county,2,RW-02,Gatsibo District,,,,county,2,RW-02,Gatsibo District,,,,,region,1,RW-02,Iburasirasuba,HIGH,1.0,RW-02
+Rwanda,Bugesera,Eastern,,,551103,District,,,#N/A,,EasternRwanda,county,2,RW-02,Bugesera District,,,,county,2,RW-02,Bugesera District,,,,,region,1,RW-02,Iburasirasuba,HIGH,1.0,RW-02
+Rwanda,Rwamagana,Eastern,,,484953,District,,,#N/A,,EasternRwanda,county,2,RW-02,Rwamagana District,,,,county,2,RW-02,Rwamagana District,,,,,region,1,RW-02,Iburasirasuba,HIGH,1.0,RW-02
+Rwanda,Kirehe,Eastern,,,460860,District,,,#N/A,,EasternRwanda,county,2,RW-02,Kirehe District,,,,county,2,RW-02,Kirehe District,,,,,region,1,RW-02,Iburasirasuba,HIGH,1.0,RW-02
+Rwanda,Kayonza,Eastern,,,457156,District,,,#N/A,,EasternRwanda,county,2,RW-02,Kayonza District,,,,county,2,RW-02,Kayonza District,,,,,region,1,RW-02,Iburasirasuba,HIGH,1.0,RW-02
+Rwanda,Ngoma,Eastern,,,404048,District,,,#N/A,,EasternRwanda,county,2,RW-02,Ngoma District,,,,county,2,RW-02,Ngoma District,,,,,region,1,RW-02,Iburasirasuba,HIGH,1.0,RW-02
+Rwanda,Gasabo,Kigali,,,879505,District,Kigali,,Kigali,,KigaliRwanda,county,2,RW-01,Akarere ka Gasabo,,,,county,2,RW-01,Akarere ka Gasabo,,,,,region,1,RW-01,Umujyi wa Kigali,HIGH,1.0,RW-01
+Rwanda,Kicukiro,Kigali,,,491731,District,Kigali,,Kigali,,KigaliRwanda,county,2,RW-01,Akarere ka Kicukiro,,,,county,2,RW-01,Akarere ka Kicukiro,,,,,region,1,RW-01,Umujyi wa Kigali,HIGH,1.0,RW-01
+Rwanda,Nyarugenge,Kigali,,,374319,District,Kigali,,Kigali,,KigaliRwanda,county,2,RW-01,Akarere ka Nyarugenge,,,,county,2,RW-01,Akarere ka Nyarugenge,,,,,region,1,RW-01,Umujyi wa Kigali,HIGH,1.0,RW-01
+Rwanda,Musanze,Northern,,,476522,District,Ruhengeri,,Ruhengeri,,NorthernRwanda,county,2,RW-03,Musanze,,,,county,2,RW-03,Musanze,,,,,region,1,RW-03,Majyaruguru,HIGH,1.0,RW-03
+Rwanda,Gicumbi,Northern,,,448824,District,,,#N/A,,NorthernRwanda,county,2,RW-03,Gicumbi,,,,county,2,RW-03,Gicumbi,,,,,region,1,RW-03,Majyaruguru,HIGH,1.0,RW-03
+Rwanda,Burera,Northern,,,387729,District,,,#N/A,,NorthernRwanda,county,2,RW-03,Akarere ka Burera,,,,county,2,RW-03,Akarere ka Burera,,,,,region,1,RW-03,Majyaruguru,HIGH,1.0,RW-03
+Rwanda,Gakenke,Northern,,,365292,District,,,#N/A,,NorthernRwanda,,,,,,,,locality,,RW-03,Gakenke,,,,,region,1,RW-03,Majyaruguru,HIGH,1.0,RW-03
+Rwanda,Rulindo,Northern,,,360144,District,,,#N/A,,NorthernRwanda,county,2,RW-03,Rulindo,,,,county,2,RW-03,Rulindo,,,,,region,1,RW-03,Majyaruguru,HIGH,1.0,RW-03
+Rwanda,Kamonyi,Southern,,,450849,District,,,#N/A,,SouthernRwanda,county,2,RW-05,Kamonyi,,,,county,2,RW-05,Kamonyi,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Gisagara,Southern,,,397051,District,,,#N/A,,SouthernRwanda,county,2,RW-05,Gisagara,,,,county,2,RW-05,Gisagara,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Huye,Southern,,,381900,District,,,#N/A,,SouthernRwanda,,,,,,,,locality,,RW-05,Huye,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Nyamagabe,Southern,,,371501,District,,,#N/A,,SouthernRwanda,county,2,RW-05,Nyamagabe,,,,county,2,RW-05,Nyamagabe,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Nyanza,Southern,,,365718,District,,,#N/A,,SouthernRwanda,,,,,,,,locality,,RW-05,Nyanza,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Ruhango,Southern,,,359121,District,,,#N/A,,SouthernRwanda,,,,,,,,locality,,RW-05,Ruhango,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Muhanga,Southern,,,358433,District,,,#N/A,,SouthernRwanda,,,,,,,,locality,,RW-05,Muhanga,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Nyaruguru,Southern,,,318126,District,,,#N/A,,SouthernRwanda,county,2,RW-05,Akarere ka Nyaruguru,,,,county,2,RW-05,Akarere ka Nyaruguru,,,,,region,1,RW-05,Amajvepfo,HIGH,1.0,RW-05
+Rwanda,Rubavu,Western,,,546683,District,Gisenyi,,Gisenyi,,WesternRwanda,county,2,RW-04,Rubavu,,,,locality,,RW-04,Rubavu,,,,,region,1,RW-04,Iburengerazuba,HIGH,1.0,RW-04
+Rwanda,Rusizi,Western,,,485529,District,,,#N/A,,WesternRwanda,county,2,RW-04,Rusizi,,,,county,2,RW-04,Rusizi,,,,,region,1,RW-04,Iburengerazuba,HIGH,1.0,RW-04
+Rwanda,Nyamasheke,Western,,,434221,District,,,#N/A,,WesternRwanda,county,2,RW-04,Nyamasheke,,,,county,2,RW-04,Nyamasheke,,,,,region,1,RW-04,Iburengerazuba,HIGH,1.0,RW-04
+Rwanda,Karongi,Western,,,373869,District,,,#N/A,,WesternRwanda,county,2,RW-04,Karongi,,,,county,2,RW-04,Karongi,,,,,region,1,RW-04,Iburengerazuba,HIGH,1.0,RW-04
+Rwanda,Rutsiro,Western,,,369180,District,,,#N/A,,WesternRwanda,county,2,RW-04,Rutsiro,,,,county,2,RW-04,Rutsiro,,,,,region,1,RW-04,Iburengerazuba,HIGH,1.0,RW-04
+Rwanda,Ngororero,Western,,,367955,District,,,#N/A,,WesternRwanda,county,2,RW-04,Ngororero,,,,county,2,RW-04,Ngororero,,,,,region,1,RW-04,Iburengerazuba,HIGH,1.0,RW-04
+Rwanda,Nyabihu,Western,,,319047,District,,,#N/A,,WesternRwanda,county,2,RW-04,Nyabihu,,,,county,2,RW-04,Nyabihu,,,,,region,1,RW-04,Iburengerazuba,HIGH,1.0,RW-04

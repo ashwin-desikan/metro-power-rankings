@@ -1,0 +1,5 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Bahrain,Al-Janūbīyah [Southern],Al-Janūbīyah [Southern],,,305547,Governorate,Manama,,Manama,,Al-Janūbīyah [Southern]Bahrain,region,1,BH-14,المحافظة الجنوبية,,,,,,,,,,,,,,,,NONE,0.0,
+Bahrain,Al-Manāmah [Capital],Al-Manāmah [Capital],,,548345,Governorate,Manama,,Manama,,Al-Manāmah [Capital]Bahrain,region,1,BH-13,محافظة العاصمة,,,,,,,,,,,,,,,,NONE,0.0,
+Bahrain,Al-Muḥarraq,Al-Muḥarraq,,,268106,Governorate,Manama,,Manama,,Al-MuḥarraqBahrain,region,1,BH-15,محافظة المحرق,,,,,,,,,,,,,,,,NONE,0.0,
+Bahrain,Ash-Shamālīyah [Northern],Ash-Shamālīyah [Northern],,,379637,Governorate,Manama,,Manama,,Ash-Shamālīyah [Northern]Bahrain,region,1,BH-17,المحافظة الشمالية,,,,,,,,,,,,,,,,NONE,0.0,

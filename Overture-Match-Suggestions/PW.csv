@@ -1,0 +1,17 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Palau,Aimeliik,Aimeliik,,,363,State,Ngerulmud,,Ngerulmud,,AimeliikPalau,region,1,PW-002,Aimeliik,,,,region,1,PW-002,Aimeliik,,,,,region,1,PW-002,Aimeliik,HIGH,1.0,PW-002
+Palau,Airai,Airai,,,2529,State,Ngerulmud,,Ngerulmud,,AiraiPalau,region,1,PW-004,Airai,,,,region,1,PW-004,Airai,,,,,region,1,PW-004,Airai,HIGH,1.0,PW-004
+Palau,Angaur,Angaur,,,114,State,,,#N/A,,AngaurPalau,region,1,PW-010,Angaur,,,,region,1,PW-010,Angaur,,,,,region,1,PW-010,Angaur,HIGH,1.0,PW-010
+Palau,Hatohobei,Hatohobei,,,39,State,,,#N/A,,HatohobeiPalau,region,1,PW-050,Hatohobei,,,,region,1,PW-050,Hatohobei,,,,,region,1,PW-050,Hatohobei,HIGH,1.0,PW-050
+Palau,Kayangel,Kayangel,,,41,State,,,#N/A,,KayangelPalau,region,1,PW-100,Kayangel,,,,region,1,PW-100,Kayangel,,,,,region,1,PW-100,Kayangel,HIGH,1.0,PW-100
+Palau,Koror (incl. Rock Islands / Chelbacheb),Koror (incl. Rock Islands / Chelbacheb),,,11199,State,Koror City,,Koror City,,Koror (incl. Rock Islands / Chelbacheb)Palau,region,1,PW-150,Koror,,,,region,1,PW-150,Koror,,,,,region,1,PW-150,Koror,HIGH,1.0,PW-150
+Palau,Melekeok,Melekeok,,,318,State,Ngerulmud,,Ngerulmud,,MelekeokPalau,region,1,PW-212,Melekeok,,,,region,1,PW-212,Melekeok,,,,,region,1,PW-212,Melekeok,HIGH,1.0,PW-212
+Palau,Ngaraard,Ngaraard,,,396,State,Ngerulmud,,Ngerulmud,,NgaraardPalau,region,1,PW-214,Ngaraard,,,,region,1,PW-214,Ngaraard,,,,,region,1,PW-214,Ngaraard,HIGH,1.0,PW-214
+Palau,Ngarchelong,Ngarchelong,,,384,State,Ngerulmud,,Ngerulmud,,NgarchelongPalau,region,1,PW-218,Ngarchelong,,,,region,1,PW-218,Ngarchelong,,,,,region,1,PW-218,Ngarchelong,HIGH,1.0,PW-218
+Palau,Ngardmau,Ngardmau,,,238,State,Ngerulmud,,Ngerulmud,,NgardmauPalau,region,1,PW-222,Ngardmau,,,,region,1,PW-222,Ngardmau,,,,,region,1,PW-222,Ngardmau,HIGH,1.0,PW-222
+Palau,Ngaremlengui,Ngaremlengui,,,349,State,Ngerulmud,,Ngerulmud,,NgaremlenguiPalau,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Palau,Ngatpang,Ngatpang,,,289,State,Ngerulmud,,Ngerulmud,,NgatpangPalau,region,1,PW-224,Ngatpang,,,,region,1,PW-224,Ngatpang,,,,,region,1,PW-224,Ngatpang,HIGH,1.0,PW-224
+Palau,Ngchesar,Ngchesar,,,319,State,Ngerulmud,,Ngerulmud,,NgchesarPalau,region,1,PW-226,Ngchesar,,,,region,1,PW-226,Ngchesar,,,,,region,1,PW-226,Ngchesar,HIGH,1.0,PW-226
+Palau,Ngiwal,Ngiwal,,,312,State,Ngerulmud,,Ngerulmud,,NgiwalPalau,region,1,PW-228,Ngiwal,,,,region,1,PW-228,Ngiwal,,,,,region,1,PW-228,Ngiwal,HIGH,1.0,PW-228
+Palau,Peleliu,Peleliu,,,470,State,,,#N/A,,PeleliuPalau,region,1,PW-350,Peleliu,,,,region,1,PW-350,Peleliu,,,,,region,1,PW-350,Peleliu,HIGH,1.0,PW-350
+Palau,Sonsorol,Sonsorol,,,53,State,,,#N/A,,SonsorolPalau,region,1,PW-370,Sonsorol,,,,region,1,PW-370,Sonsorol,,,,,region,1,PW-370,Sonsorol,HIGH,1.0,PW-370

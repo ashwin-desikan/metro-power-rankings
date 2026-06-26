@@ -1,0 +1,23 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Libya,Banghāzī [Benghazi],Libya,,,807255,District,Benghazi,,Benghazi,,LibyaLibya,region,1,LY-BA,بنغازي,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Miṣrātah [Misrata],Libya,,,663853,District,Misratah,,Misratah,,LibyaLibya,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Sabhā,Libya,,,153454,District,Sabha,,Sabha,,LibyaLibya,region,1,LY-SB,سبها,,,,region,1,LY-SB,سبها,,,,,region,1,LY-SB,سبها,HIGH,1.0,LY-SB
+Libya,Ṭarābulus [Tripoli],Libya,,,1293016,District,Tripoli,,Tripoli,,LibyaLibya,region,1,LY-TB,طرابلس,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Jifārah [Jafara],Libya,,,548855,District,Tripoli,,Tripoli,,LibyaLibya,region,1,LY-JI,الجفارة,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Az-Zāwiyah [Zawiya],Libya,,,351306,District,Tripoli,,Tripoli,,LibyaLibya,region,1,LY-ZA,شعبية الزاوية,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Marqab [Murqub],Libya,,,532227,District,,,#N/A,,LibyaLibya,region,1,LY-MB,محافظة المرقب,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Jabal al-Gharbi,Libya,,,374911,District,,,#N/A,,LibyaLibya,region,1,LY-JG,الجبل الغربي,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,An-Nuqāṭ al-Khams,Libya,,,349755,District,,,#N/A,,LibyaLibya,region,1,LY-NQ,النقاط الخمس,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Marj,Libya,,,286045,District,,,#N/A,,LibyaLibya,region,1,LY-MJ,المرج,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Jabal al-Akhdar,Libya,,,250020,District,,,#N/A,,LibyaLibya,region,1,LY-JG,الجبل الغربي,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Wāḥat,Libya,,,213728,District,,,#N/A,,LibyaLibya,region,1,LY-WA,الواحات,,,,region,1,LY-WA,الواحات,,,,,region,1,LY-WA,الواحات,HIGH,1.0,LY-WA
+Libya,Darnah [Derna],Libya,,,201639,District,,,#N/A,,LibyaLibya,region,1,LY-DR,درنة,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Buṭnān,Libya,,,195088,District,,,#N/A,,LibyaLibya,region,1,LY-BU,البطنان,,,,region,1,LY-BU,البطنان,,,,,region,1,LY-BU,البطنان,HIGH,1.0,LY-BU
+Libya,Surt [Sirte],Libya,,,170869,District,,,#N/A,,LibyaLibya,region,1,LY-SR,سرت,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Nālūt,Libya,,,113886,District,,,#N/A,,LibyaLibya,region,1,LY-NL,نالوت,,,,region,1,LY-NL,نالوت,,,,,region,1,LY-NL,نالوت,HIGH,1.0,LY-NL
+Libya,Wādī ash-Shāṭī,Libya,,,95294,District,,,#N/A,,LibyaLibya,region,1,LY-WD,وادي الحياة,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Marzūq [Murzuq],Libya,,,94088,District,,,#N/A,,LibyaLibya,region,1,LY-MQ,مرزق,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Wādī al-Ḥayāh [Wadi al Hayaa],Libya,,,91749,District,,,#N/A,,LibyaLibya,region,1,LY-WD,وادي الحياة,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Jufrah [Jufra],Libya,,,60853,District,,,#N/A,,LibyaLibya,region,1,LY-JU,شعبية الجفرة,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Al-Kufrah [Kufra],Libya,,,55495,District,,,#N/A,,LibyaLibya,region,1,LY-KF,الكفرة,,,,,,,,,,,,,,,,NONE,0.0,
+Libya,Ghāt,Libya,,,27675,District,,,#N/A,,LibyaLibya,region,1,LY-GT,غات,,,,region,1,LY-GT,غات,,,,,region,1,LY-GT,غات,HIGH,1.0,LY-GT

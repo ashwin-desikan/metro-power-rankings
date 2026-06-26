@@ -1,0 +1,81 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+North Macedonia,Kočani [Kochani],East,,,31602,Municipality,Kočani,,Kočani,,EastNorth Macedonia,region,1,MK-206,Општина Кочани,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Makedonska Kamenica,East,,,6439,Municipality,Makedonska Kamenica,,Makedonska Kamenica,,EastNorth Macedonia,locality,,MK-207,Македонска Каменица,,,,region,1,MK-207,Општина Македонска Каменица,,,,,region,1,MK-207,Општина Македонска Каменица,HIGH,1.0,MK-207
+North Macedonia,Štip [Shtip],East,,,44866,Municipality,Stip,,Stip,,EastNorth Macedonia,region,1,MK-211,Општина Штип,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Vinica,East,,,14475,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-202,Општина Виница,,,,region,1,MK-202,Општина Виница,,,,,region,1,MK-202,Општина Виница,HIGH,1.0,MK-202
+North Macedonia,Delčevo [Delchevo],East,,,13585,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-203,Општина Делчево,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Probištip [Probishtip],East,,,13417,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-209,Општина Пробиштип,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Berovo,East,,,10890,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-201,Општина Берово,,,,region,1,MK-201,Општина Берово,,,,,region,1,MK-201,Општина Берово,HIGH,1.0,MK-201
+North Macedonia,Češinovo - Obleševo [Cheshinovo - Obleshevo],East,,,5471,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-408,Општина Ново Село,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Pehčevo [Pehchevo],East,,,3983,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-208,Општина Пехчево,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Karbinci,East,,,3420,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-205,Општина Карбинци,,,,region,1,MK-205,Општина Карбинци,,,,,region,1,MK-205,Општина Карбинци,HIGH,1.0,MK-205
+North Macedonia,Zrnovci,East,,,2086,Municipality,,,#N/A,,EastNorth Macedonia,region,1,MK-204,Општина Зрновци,,,,region,1,MK-204,Општина Зрновци,,,,,region,1,MK-204,Општина Зрновци,HIGH,1.0,MK-204
+North Macedonia,Kratovo,Northeast,,,7545,Municipality,Kratovo,,Kratovo,,NortheastNorth Macedonia,region,1,MK-701,Општина Кратово,,,,region,1,MK-701,Општина Кратово,,,,,region,1,MK-701,Општина Кратово,HIGH,1.0,MK-701
+North Macedonia,Kumanovo,Northeast,,,98104,Municipality,Kumanovo,,Kumanovo,,NortheastNorth Macedonia,region,1,MK-703,Општина Куманово,,,,region,1,MK-703,Општина Куманово,,,,,region,1,MK-703,Општина Куманово,HIGH,1.0,MK-703
+North Macedonia,Lipkovo,Northeast,,,22308,Municipality,,,#N/A,,NortheastNorth Macedonia,region,1,MK-704,Општина Липково,,,,region,1,MK-704,Општина Липково,,,,,region,1,MK-704,Општина Липково,HIGH,1.0,MK-704
+North Macedonia,Kriva Palanka,Northeast,,,18059,Municipality,,,#N/A,,NortheastNorth Macedonia,locality,,MK-702,Крива Паланка,,,,region,1,MK-702,Општина Крива Паланка,,,,,region,1,MK-702,Општина Крива Паланка,HIGH,1.0,MK-702
+North Macedonia,Staro Nagoričane [Staro Nagorichane],Northeast,,,3501,Municipality,,,#N/A,,NortheastNorth Macedonia,locality,,MK-706,Старо Нагоричане,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Rankovce,Northeast,,,3465,Municipality,,,#N/A,,NortheastNorth Macedonia,region,1,MK-705,Општина Ранковце,,,,region,1,MK-705,Општина Ранковце,,,,,region,1,MK-705,Општина Ранковце,HIGH,1.0,MK-705
+North Macedonia,Bitola,Pelagonia,,,85164,Municipality,Bitola,,Bitola,,PelagoniaNorth Macedonia,region,1,MK-501,Општина Битола,,,,region,1,MK-501,Општина Битола,,,,,region,1,MK-501,Општина Битола,HIGH,1.0,MK-501
+North Macedonia,Prilep,Pelagonia,,,69025,Municipality,Prelip,,Prelip,,PelagoniaNorth Macedonia,region,1,MK-508,Општина Прилеп,,,,region,1,MK-508,Општина Прилеп,,,,,region,1,MK-508,Општина Прилеп,HIGH,1.0,MK-508
+North Macedonia,Resen,Pelagonia,,,14373,Municipality,,,#N/A,,PelagoniaNorth Macedonia,region,1,MK-509,Општина Ресен,,,,region,1,MK-509,Општина Ресен,,,,,region,1,MK-509,Општина Ресен,HIGH,1.0,MK-509
+North Macedonia,Dolneni,Pelagonia,,,13126,Municipality,,,#N/A,,PelagoniaNorth Macedonia,region,1,MK-503,Општина Долнени,,,,region,1,MK-503,Општина Долнени,,,,,region,1,MK-503,Општина Долнени,HIGH,1.0,MK-503
+North Macedonia,Kruševo [Krushevo],Pelagonia,,,8385,Municipality,,,#N/A,,PelagoniaNorth Macedonia,region,1,MK-505,Општина Крушево,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Demir Hisar,Pelagonia,,,7260,Municipality,,,#N/A,,PelagoniaNorth Macedonia,locality,,MK-502,Демир Хисар,,,,locality,,MK-502,Демир Хисар,,,,,region,1,MK-502,Општина Демир Хисар/Мургашево,HIGH,1.0,MK-502
+North Macedonia,Mogila,Pelagonia,,,5283,Municipality,,,#N/A,,PelagoniaNorth Macedonia,region,1,MK-506,Општина Могила,,,,region,1,MK-506,Општина Могила,,,,,region,1,MK-506,Општина Могила,HIGH,1.0,MK-506
+North Macedonia,Krivogaštani [Krivogashtani],Pelagonia,,,5167,Municipality,,,#N/A,,PelagoniaNorth Macedonia,region,1,MK-504,Општина Кривогаштани,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Novaci,Pelagonia,,,2648,Municipality,,,#N/A,,PelagoniaNorth Macedonia,region,1,MK-507,Општина Новаци,,,,region,1,MK-507,Општина Новаци,,,,,region,1,MK-507,Општина Новаци,HIGH,1.0,MK-507
+North Macedonia,Gostivar,Polog,,,59770,Municipality,Gostivar,,Gostivar,,PologNorth Macedonia,region,1,MK-604,Општина Гостивар,,,,region,1,MK-604,Општина Гостивар,,,,,region,1,MK-604,Општина Гостивар,HIGH,1.0,MK-604
+North Macedonia,Tetovo,Polog,,,84770,Municipality,Tetovo,,Tetovo,,PologNorth Macedonia,region,1,MK-609,Општина Тетово,,,,region,1,MK-609,Општина Тетово,,,,,region,1,MK-609,Општина Тетово,HIGH,1.0,MK-609
+North Macedonia,Bogovinje,Polog,,,22906,Municipality,,,#N/A,,PologNorth Macedonia,region,1,MK-601,Општина Боговиње,,,,region,1,MK-601,Општина Боговиње,,,,,region,1,MK-601,Општина Боговиње,HIGH,1.0,MK-601
+North Macedonia,Vrapčište [Vrapchishte],Polog,,,19842,Municipality,,,#N/A,,PologNorth Macedonia,region,1,MK-603,Општина Врапчиште,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Želino [Zhelino],Polog,,,18988,Municipality,,,#N/A,,PologNorth Macedonia,region,1,MK-605,Општина Желино,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Tearce,Polog,,,17694,Municipality,,,#N/A,,PologNorth Macedonia,region,1,MK-608,Општина Теарце,,,,region,1,MK-608,Општина Теарце,,,,,region,1,MK-608,Општина Теарце,HIGH,1.0,MK-608
+North Macedonia,Brvenica,Polog,,,13645,Municipality,,,#N/A,,PologNorth Macedonia,region,1,MK-602,Општина Брвеница,,,,region,1,MK-602,Општина Брвеница,,,,,region,1,MK-602,Општина Брвеница,HIGH,1.0,MK-602
+North Macedonia,Jegunovce,Polog,,,8895,Municipality,,,#N/A,,PologNorth Macedonia,region,1,MK-606,Општина Јегуновце,,,,region,1,MK-606,Општина Јегуновце,,,,,region,1,MK-606,Општина Јегуновце,HIGH,1.0,MK-606
+North Macedonia,Mavrovo i Rostuše [Mavrovo and Rostusha],Polog,,,5042,Municipality,,,#N/A,,PologNorth Macedonia,region,1,MK-607,Општина Маврово и Ростуша,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Aerodrom,Skopje,,,77735,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,county,2,,Општина Аеродром,,,,county,2,nan,Општина Аеродром,,,,,region,1,nan,Град Скопје,HIGH,1.0,nan
+North Macedonia,Gazi Baba,Skopje,,,69626,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,macrohood,,,Гази Баба,,,,county,2,nan,Општина Гази Баба,,,,,region,1,nan,Град Скопје,HIGH,1.0,nan
+North Macedonia,Karpoš [Karposh],Skopje,,,63760,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,county,2,,Општина Карпош,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Čair [Chair],Skopje,,,62586,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,county,2,,Општина Чаир,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Kisela Voda,Skopje,,,61965,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,macrohood,,,Кисела Вода,,,,county,2,nan,Општина Кисела Вода,,,,,region,1,nan,Град Скопје,HIGH,1.0,nan
+North Macedonia,Ǵorche Petrov [Gjorche Petrov],Skopje,,,44844,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,macrohood,,,Ѓорче Петров,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Centar,Skopje,,,43893,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,county,2,,Општина Центар,,,,county,2,nan,Општина Центар,,,,,region,1,nan,Град Скопје,HIGH,1.0,nan
+North Macedonia,Saraj,Skopje,,,38399,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,county,2,,Општина Сарај,,,,county,2,nan,Општина Сарај,,,,,region,1,nan,Град Скопје,HIGH,1.0,nan
+North Macedonia,Butel,Skopje,,,37968,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,county,2,,Општина Бутел,,,,county,2,nan,Општина Бутел,,,,,region,1,nan,Град Скопје,HIGH,1.0,nan
+North Macedonia,Šuto Orizari [Shuto Orizari],Skopje,,,25726,City Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,macrohood,,,Шуто Оризари,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Studeničani [Studenichani],Skopje,,,21970,Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,region,1,MK-813,Општина Студеничани,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Ilinden,Skopje,,,17435,Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,region,1,MK-807,Општина Илинден,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Aračinovo [Arachinovo],Skopje,,,12676,Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,region,1,MK-802,Општина Арачиново,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Čučer - Sandevo [Chucher - Sandevo],Skopje,,,9200,Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,region,1,,Град Скопје,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Petrovec,Skopje,,,9150,Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,region,1,MK-810,Општина Петровец,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Sopište [Sopishte],Skopje,,,6713,Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,region,1,MK-812,Општина Сопиште,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Zelenikovo,Skopje,,,3361,Municipality,Skopje,,Skopje,,SkopjeNorth Macedonia,region,1,MK-806,Општина Зелениково,,,,,,,,,,,,region,1,nan,Град Скопје,NONE,0.0,nan
+North Macedonia,Bosilovo,Southeast,,,11508,Municipality,Bosilovo,,Bosilovo,,SoutheastNorth Macedonia,region,1,MK-402,Општина Босилово,,,,region,1,MK-402,Општина Босилово,,,,,region,1,MK-402,Општина Босилово,HIGH,1.0,MK-402
+North Macedonia,Strumica,Southeast,,,49995,Municipality,Strumica,,Strumica,,SoutheastNorth Macedonia,region,1,MK-410,Општина Струмица,,,,region,1,MK-410,Општина Струмица,,,,,region,1,MK-410,Општина Струмица,HIGH,1.0,MK-410
+North Macedonia,Radoviš [Radovish],Southeast,,,24122,Municipality,,,#N/A,,SoutheastNorth Macedonia,region,1,MK-409,Општина Радовиш,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Gevgelija,Southeast,,,21582,Municipality,,,#N/A,,SoutheastNorth Macedonia,region,1,MK-405,Општина Гевгелија,,,,region,1,MK-405,Општина Гевгелија,,,,,region,1,MK-405,Општина Гевгелија,HIGH,1.0,MK-405
+North Macedonia,Vasilevo,Southeast,,,10552,Municipality,,,#N/A,,SoutheastNorth Macedonia,region,1,MK-404,Општина Василево,,,,region,1,MK-404,Општина Василево,,,,,region,1,MK-404,Општина Василево,HIGH,1.0,MK-404
+North Macedonia,Valandovo,Southeast,,,10508,Municipality,,,#N/A,,SoutheastNorth Macedonia,region,1,MK-403,Општина Валандово,,,,region,1,MK-403,Општина Валандово,,,,,region,1,MK-403,Општина Валандово,HIGH,1.0,MK-403
+North Macedonia,Bogdanci,Southeast,,,7339,Municipality,,,#N/A,,SoutheastNorth Macedonia,region,1,MK-401,Општина Богданци,,,,region,1,MK-401,Општина Богданци,,,,,region,1,MK-401,Општина Богданци,HIGH,1.0,MK-401
+North Macedonia,Novo Selo,Southeast,,,6972,Municipality,,,#N/A,,SoutheastNorth Macedonia,locality,,,Ново Село,,,,region,1,MK-408,Општина Ново Село,,,,,region,1,MK-408,Општина Ново Село,HIGH,1.0,MK-408
+North Macedonia,Dojran,Southeast,,,3084,Municipality,,,#N/A,,SoutheastNorth Macedonia,region,1,MK-406,Општина Дојран,,,,region,1,MK-406,Општина Дојран,,,,,region,1,MK-406,Општина Дојран,HIGH,1.0,MK-406
+North Macedonia,Konče [Konche],Southeast,,,2725,Municipality,,,#N/A,,SoutheastNorth Macedonia,region,1,MK-407,Општина Конче,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,"Kičevo [Kichevo; incl. Drugovo, Oslomej, Vraneštica, Zajas]",Southwest,,,39669,Municipality,Kicevo,,Kicevo,,SouthwestNorth Macedonia,locality,,MK-307,Кичево,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Ohrid,Southwest,,,51428,Municipality,Ohrid,,Ohrid,,SouthwestNorth Macedonia,region,1,MK-310,Општина Охрид,,,,region,1,MK-310,Општина Охрид,,,,,region,1,MK-310,Општина Охрид,HIGH,1.0,MK-310
+North Macedonia,Struga,Southwest,,,50980,Municipality,Struga,,Struga,,SouthwestNorth Macedonia,region,1,MK-312,Општина Струга,,,,region,1,MK-312,Општина Струга,,,,,region,1,MK-312,Општина Струга,HIGH,1.0,MK-312
+North Macedonia,Debar,Southwest,,,15412,Municipality,,,#N/A,,SouthwestNorth Macedonia,region,1,MK-303,Општина Дебар,,,,region,1,MK-303,Општина Дебар,,,,,region,1,MK-303,Општина Дебар,HIGH,1.0,MK-303
+North Macedonia,Makedonski Brod,Southwest,,,5889,Municipality,,,#N/A,,SouthwestNorth Macedonia,locality,,MK-308,Македонски Брод,,,,region,1,MK-308,Општина Македонски Брод,,,,,region,1,MK-308,Општина Македонски Брод,HIGH,1.0,MK-308
+North Macedonia,Plasnica,Southwest,,,4222,Municipality,,,#N/A,,SouthwestNorth Macedonia,region,1,MK-311,Општина Пласница,,,,region,1,MK-311,Општина Пласница,,,,,region,1,MK-311,Општина Пласница,HIGH,1.0,MK-311
+North Macedonia,Centar Župa [Centar Zhupa],Southwest,,,3720,Municipality,,,#N/A,,SouthwestNorth Macedonia,county,2,,Општина Центар,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Debrca,Southwest,,,3719,Municipality,,,#N/A,,SouthwestNorth Macedonia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Vevčani [Vevchani],Southwest,,,2359,Municipality,,,#N/A,,SouthwestNorth Macedonia,region,1,MK-301,Општина Вевчани,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Kavadarci,Vardar,,,35733,Municipality,Kavadarci,,Kavadarci,,VardarNorth Macedonia,region,1,MK-104,Општина Кавадарци,,,,region,1,MK-104,Општина Кавадарци,,,,,region,1,MK-104,Општина Кавадарци,HIGH,1.0,MK-104
+North Macedonia,Veles,Vardar,,,48463,Municipality,Veles,,Veles,,VardarNorth Macedonia,region,1,MK-101,Општина Велес,,,,region,1,MK-101,Општина Велес,,,,,region,1,MK-101,Општина Велес,HIGH,1.0,MK-101
+North Macedonia,Negotino,Vardar,,,18194,Municipality,,,#N/A,,VardarNorth Macedonia,region,1,MK-106,Општина Неготино,,,,region,1,MK-106,Општина Неготино,,,,,region,1,MK-106,Општина Неготино,HIGH,1.0,MK-106
+North Macedonia,Sveti Nikole,Vardar,,,15320,Municipality,,,#N/A,,VardarNorth Macedonia,locality,,MK-108,Свети Николе,,,,region,1,MK-108,Општина Свети Николе,,,,,region,1,MK-108,Општина Свети Николе,HIGH,1.0,MK-108
+North Macedonia,Čaška [Chashka],Vardar,,,7942,Municipality,,,#N/A,,VardarNorth Macedonia,region,1,MK-109,Општина Чашка,,,,,,,,,,,,,,,,NONE,0.0,
+North Macedonia,Rosoman,Vardar,,,3796,Municipality,,,#N/A,,VardarNorth Macedonia,region,1,MK-107,Општина Росоман,,,,region,1,MK-107,Општина Росоман,,,,,region,1,MK-107,Општина Росоман,HIGH,1.0,MK-107
+North Macedonia,Demir Kapija,Vardar,,,3777,Municipality,,,#N/A,,VardarNorth Macedonia,locality,,MK-103,Демир Капија,,,,region,1,MK-103,Општина Демир Капија,,,,,region,1,MK-103,Општина Демир Капија,HIGH,1.0,MK-103
+North Macedonia,Gradsko,Vardar,,,3233,Municipality,,,#N/A,,VardarNorth Macedonia,region,1,MK-102,Општина Градско,,,,region,1,MK-102,Општина Градско,,,,,region,1,MK-102,Општина Градско,HIGH,1.0,MK-102
+North Macedonia,Lozovo,Vardar,,,2264,Municipality,,,#N/A,,VardarNorth Macedonia,region,1,MK-105,Општина Лозово,,,,region,1,MK-105,Општина Лозово,,,,,region,1,MK-105,Општина Лозово,HIGH,1.0,MK-105

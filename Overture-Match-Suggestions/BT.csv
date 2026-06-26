@@ -1,0 +1,207 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Bhutan,Chhoekhor,Bumthang,,,10190,Gewog,,,#N/A,,BumthangBhutan,locality,,BT-31,Chhoekhorling,,,,,,,,,,,,region,1,BT-33,བུམ་ཐང་རྫོང་ཁག་,NONE,0.0,BT-33
+Bhutan,"Chhumig (Chhume, Chumey)",Bumthang,,,3588,Gewog,,,#N/A,,BumthangBhutan,,,,,,,,,,,,,,,,region,1,BT-33,བུམ་ཐང་རྫོང་ཁག་,NONE,0.0,BT-33
+Bhutan,Tang,Bumthang,,,2318,Gewog,,,#N/A,,BumthangBhutan,locality,,BT-44,Tang-Roong_Wawel,,,,,,,,,,,,region,1,BT-33,བུམ་ཐང་རྫོང་ཁག་,NONE,0.0,BT-33
+Bhutan,Ura,Bumthang,,,1724,Gewog,,,#N/A,,BumthangBhutan,locality,,BT-33,Ura-Dozhi,,,,,,,,,,,,region,1,BT-33,བུམ་ཐང་རྫོང་ཁག་,NONE,0.0,BT-33
+Bhutan,Phuentshogling (Phuentsholing),Chukha (Chhukha),,,33444,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,,,,,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Darla (Dala),Chukha (Chhukha),,,8541,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,locality,,BT-43,Bangdala,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Bjagchhog (Bjacho) [incl. Tsimasham],Chukha (Chhukha),,,6864,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,locality,,BT-12,Bjagchhog,,,,locality,,BT-12,Bjagchhog,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,HIGH,1.0,BT-12
+Bhutan,Bongo,Chukha (Chhukha),,,6512,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,,,,,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Samphelling (Sampheling),Chukha (Chhukha),,,4077,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,,,,,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Loggchina (Logchina),Chukha (Chhukha),,,2694,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,,,,,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Chapchha (Chapcha),Chukha (Chhukha),,,2657,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,,,,,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Geling,Chukha (Chhukha),,,1609,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,locality,,BT-12,Geling Geygoen,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Doongna (Dungna),Chukha (Chhukha),,,1091,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,locality,,BT-12,Doongna Paksel-Lhakha,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,Getana (Getena),Chukha (Chhukha),,,820,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,,,,,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,"Maedtabkha (Metap, Metakha)",Chukha (Chhukha),,,657,Gewog,,,#N/A,,Chukha (Chhukha)Bhutan,,,,,,,,,,,,,,,,region,1,BT-12,ཆུ་ཁ་རྫོང་ཁག་,NONE,0.0,BT-12
+Bhutan,"Lhamoi Dzingkha (Lhamoizingkha, Lhamoy Zingkha) [← Sarpang District]",Dagana,,,2757,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,locality,,BT-22,Lhamoi Dzingkha,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,HIGH,1.0,BT-22
+Bhutan,Tseza,Dagana,,,2642,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,,,,,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,NONE,0.0,BT-22
+Bhutan,"Drukjeygang (Drugyelgang, Drujegang)",Dagana,,,2517,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,,,,,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,NONE,0.0,BT-22
+Bhutan,Karna (Kalidzingkha),Dagana,,,2510,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,locality,,BT-22,Barna,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,LOW,0.8,BT-22
+Bhutan,Gozhi (Goshi),Dagana,,,2507,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,,,,,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,NONE,0.0,BT-22
+Bhutan,Tsenda-Gang (Tsendagang),Dagana,,,2407,Gewog,,,#N/A,,DaganaBhutan,locality,,BT-22,Tsenda-Gang,,,,locality,,BT-22,Tsenda-Gang,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,HIGH,1.0,BT-22
+Bhutan,Tsangkha,Dagana,,,1707,Gewog,,,#N/A,,DaganaBhutan,locality,,BT-22,Tsangkha,,,,locality,,BT-22,Tsangkha,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,HIGH,1.0,BT-22
+Bhutan,Tashiding (Trashiding),Dagana,,,1687,Gewog,,,#N/A,,DaganaBhutan,locality,,BT-22,Tashiding,,,,locality,,BT-22,Tashiding,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,HIGH,1.0,BT-22
+Bhutan,Gesarling,Dagana,,,1663,Gewog,,,#N/A,,DaganaBhutan,locality,,BT-22,Gesarling,,,,locality,,BT-22,Gesarling,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,HIGH,1.0,BT-22
+Bhutan,Karmaling (Deorali) [← Sarpang District],Dagana,,,1324,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,locality,,BT-22,Karmaling,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,HIGH,1.0,BT-22
+Bhutan,Khebisa (Khipisa),Dagana,,,1215,Gewog,,,#N/A,,DaganaBhutan,locality,,BT-42,Khebishing,,,,,,,,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,NONE,0.0,BT-22
+Bhutan,Largyab (Lajab),Dagana,,,843,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,,,,,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,NONE,0.0,BT-22
+Bhutan,Dorona,Dagana,,,752,Gewog,,,#N/A,,DaganaBhutan,locality,,BT-22,Dorona Chhewa,,,,,,,,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,NONE,0.0,BT-22
+Bhutan,Nichula [← Sarpang District],Dagana,,,434,Gewog,,,#N/A,,DaganaBhutan,,,,,,,,,,,,,,,,region,1,BT-22,དར་དཀར་ན་རྫོང་ཁག་,NONE,0.0,BT-22
+Bhutan,Khatoed (Goenkhatoe),Gasa,,,1095,Gewog,,,#N/A,,GasaBhutan,locality,,BT-31,Khatoed,,,,,,,,,,,,region,1,BT-GA,མགར་ས་རྫོང་ཁག་,NONE,0.0,BT-GA
+Bhutan,Khamaed (Goenkhame),Gasa,,,1083,Gewog,,,#N/A,,GasaBhutan,locality,,BT-31,Khamaed,,,,,,,,,,,,region,1,BT-GA,མགར་ས་རྫོང་ཁག་,NONE,0.0,BT-GA
+Bhutan,Laya,Gasa,,,1075,Gewog,,,#N/A,,GasaBhutan,,,,,,,,,,,,,,,,region,1,BT-GA,མགར་ས་རྫོང་ཁག་,NONE,0.0,BT-GA
+Bhutan,Lunana,Gasa,,,699,Gewog,,,#N/A,,GasaBhutan,,,,,,,,,,,,,,,,region,1,BT-GA,མགར་ས་རྫོང་ཁག་,NONE,0.0,BT-GA
+Bhutan,Kar-tshog (Katsho),Haa,,,4078,Gewog,,,#N/A,,HaaBhutan,,,,,,,,,,,,,,,,region,1,BT-13,ཧཱ་རྫོང་ཁག་,NONE,0.0,BT-13
+Bhutan,Bji,Haa,,,3321,Gewog,,,#N/A,,HaaBhutan,locality,,BT-32,Bji Saengbji,,,,,,,,,,,,region,1,BT-13,ཧཱ་རྫོང་ཁག་,NONE,0.0,BT-13
+Bhutan,Uesu (Eusue),Haa,,,2551,Gewog,,,#N/A,,HaaBhutan,,,,,,,,,,,,,,,,region,1,BT-13,ཧཱ་རྫོང་ཁག་,NONE,0.0,BT-13
+Bhutan,Samar (Sama),Haa,,,1502,Gewog,,,#N/A,,HaaBhutan,locality,,BT-22,Samarchhu,,,,,,,,,,,,region,1,BT-13,ཧཱ་རྫོང་ཁག་,NONE,0.0,BT-13
+Bhutan,Gakiling,Haa,,,1292,Gewog,,,#N/A,,HaaBhutan,,,,,,,,,,,,,,,,region,1,BT-13,ཧཱ་རྫོང་ཁག་,NONE,0.0,BT-13
+Bhutan,Sangbay (Sombey),Haa,,,911,Gewog,,,#N/A,,HaaBhutan,locality,,BT-13,གསང་སྦས་ཨ་མ།,,,,,,,,,,,,region,1,BT-13,ཧཱ་རྫོང་ཁག་,NONE,0.0,BT-13
+Bhutan,Gangzur,Lhuentse (Lhuntse),,,3762,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,locality,,BT-22,Gangzur Maed,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Tsaenkhar (Tsenkhar),Lhuentse (Lhuntse),,,2710,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,locality,,BT-43,Khar,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Maenbi (Menbi),Lhuentse (Lhuntse),,,2341,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,locality,,BT-43,Maendi,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Khoma,Lhuentse (Lhuntse),,,1501,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Minjey (Minjay),Lhuentse (Lhuntse),,,1430,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Jarey (Jaray),Lhuentse (Lhuntse),,,1008,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Maedtsho (Metsho),Lhuentse (Lhuntse),,,945,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Kurtoed (Kurtoe),Lhuentse (Lhuntse),,,740,Gewog,,,#N/A,,Lhuentse (Lhuntse)Bhutan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Bhutan,Monggar (Mongar),Mongar (Monggar),,,11130,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,,,,,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Saling (Saleng),Mongar (Monggar),,,2881,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Saling,,,,locality,,BT-42,Saling,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,HIGH,1.0,BT-42
+Bhutan,Chagsakhar (Chaskhar),Mongar (Monggar),,,2494,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-43,Khar,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Ngatshang,Mongar (Monggar),,,2375,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Ngatshang,,,,locality,,BT-42,Ngatshang,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,HIGH,1.0,BT-42
+Bhutan,Na-Rang (Narang),Mongar (Monggar),,,2232,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Na-Rang Pangthang,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Dramedtse (Drametse),Mongar (Monggar),,,1848,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Dramedtse Shapangma,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Kengkhar,Mongar (Monggar),,,1844,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-43,Khar,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Shermuhoong (Shermung),Mongar (Monggar),,,1627,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,,,,,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Thang-Rong (Thangrong),Mongar (Monggar),,,1606,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-24,Thang-Goo,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Chhaling (Chhali),Mongar (Monggar),,,1441,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Chhaling Dopang,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Silambi,Mongar (Monggar),,,1357,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Kadag Silambi,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Jurmed (Jurmey),Mongar (Monggar),,,1247,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,,,,,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Gongdue,Mongar (Monggar),,,1234,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-31,Gongduegang,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Tsakaling,Mongar (Monggar),,,1086,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Nyartsi Tsakaling,,,,locality,,BT-42,Saling,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,LOW,0.8,BT-42
+Bhutan,Tsamang,Mongar (Monggar),,,932,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-TY,Betsamang,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Balam,Mongar (Monggar),,,912,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,locality,,BT-42,Balam Morphu,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Drepoong (Drepung),Mongar (Monggar),,,904,Gewog,,,#N/A,,Mongar (Monggar)Bhutan,,,,,,,,,,,,,,,,region,1,BT-42,མོང་སྒར་རྫོང་ཁག་,NONE,0.0,BT-42
+Bhutan,Wangchang,Paro,,,12805,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Tsento,Paro,,,5946,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Sharpa (Shapa),Paro,,,5941,Gewog,,,#N/A,,ParoBhutan,locality,,BT-12,Sharphug,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Lamgong,Paro,,,5846,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Loong-nyi (Lungnyi),Paro,,,4727,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Nagya (Naja),Paro,,,3752,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Dopshar-ri (Dopshari),Paro,,,3333,Gewog,,,#N/A,,ParoBhutan,locality,,BT-13,Shar-ri,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Dokar (Doga),Paro,,,2327,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Doteng,Paro,,,1303,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Hoongrel (Hungrel),Paro,,,336,Gewog,,,#N/A,,ParoBhutan,,,,,,,,,,,,,,,,region,1,BT-11,སྤ་རོ་རྫོང་ཁག་,NONE,0.0,BT-11
+Bhutan,Norboogang (Norbugang) [← Samdrup Jongkhar District],Pemagatshel,,,6786,Gewog,,,#N/A,,PemagatshelBhutan,,,,,,,,,,,,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,NONE,0.0,BT-43
+Bhutan,Shumar (Shumer),Pemagatshel,,,5333,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-43,Shumarthung,,,,,,,,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,NONE,0.0,BT-43
+Bhutan,Nanong [← Trashigang District],Pemagatshel,,,2123,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-43,Nanong,,,,,,,,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,NONE,0.0,BT-43
+Bhutan,Zobel,Pemagatshel,,,1696,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-43,Zobel,,,,locality,,BT-43,Zobel,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,HIGH,1.0,BT-43
+Bhutan,Dechhenling (Dechenling) [← Samdrup Jongkhar District],Pemagatshel,,,1680,Gewog,,,#N/A,,PemagatshelBhutan,,,,,,,,,,,,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,NONE,0.0,BT-43
+Bhutan,Khar,Pemagatshel,,,1577,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-43,Khar,,,,locality,,BT-43,Khar,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,HIGH,1.0,BT-43
+Bhutan,Dungmaed (Dungmin),Pemagatshel,,,1271,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-43,Dungmaed_Zimzor,,,,,,,,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,NONE,0.0,BT-43
+Bhutan,Yurung,Pemagatshel,,,1128,Gewog,,,#N/A,,PemagatshelBhutan,,,,,,,,,,,,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,NONE,0.0,BT-43
+Bhutan,Chongshing,Pemagatshel,,,771,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-43,Chongshing_Jorphoong,,,,,,,,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,NONE,0.0,BT-43
+Bhutan,"Chhoekhorling (Chokhorling, Choekhorling)",Pemagatshel,,,703,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-31,Chhoekhorling,,,,locality,,BT-43,Chhoekhorling_Gazawong,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,LOW,0.793,BT-43
+Bhutan,"Chhimoong (Chhimung, Chimoong)",Pemagatshel,,,564,Gewog,,,#N/A,,PemagatshelBhutan,locality,,BT-43,Chhimoong,,,,locality,,BT-43,Chhimoong,,,,,region,1,BT-43,པདྨ་དགའ་ཚལ་རྫོང་ཁག་,HIGH,1.0,BT-43
+Bhutan,Guma,Punakha,,,9014,Gewog,,,#N/A,,PunakhaBhutan,locality,,BT-23,Guma Wolakha,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Barp (Bapisa) [← Thimphu District],Punakha,,,5726,Gewog,,,#N/A,,PunakhaBhutan,,,,,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Kabisa (Kabjisa),Punakha,,,2542,Gewog,,,#N/A,,PunakhaBhutan,,,,,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Toedpaisa (Toepisa) [← Thimphu District],Punakha,,,2427,Gewog,,,#N/A,,PunakhaBhutan,,,,,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Dzomi (Dzoma),Punakha,,,2147,Gewog,,,#N/A,,PunakhaBhutan,,,,,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Chhubu,Punakha,,,1651,Gewog,,,#N/A,,PunakhaBhutan,locality,,BT-11,Chhubar,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Toedwang (Toewang),Punakha,,,1313,Gewog,,,#N/A,,PunakhaBhutan,,,,,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Talog (Talo),Punakha,,,1205,Gewog,,,#N/A,,PunakhaBhutan,locality,,BT-23,Talog,,,,locality,,BT-23,Talog,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,HIGH,1.0,BT-23
+Bhutan,Lingmukha,Punakha,,,1018,Gewog,,,#N/A,,PunakhaBhutan,locality,,BT-23,Lingmukha,,,,locality,,BT-23,Lingmukha,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,HIGH,1.0,BT-23
+Bhutan,Shelnga-Bjemi (Shengabjimi),Punakha,,,1003,Gewog,,,#N/A,,PunakhaBhutan,,,,,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Goenshari,Punakha,,,694,Gewog,,,#N/A,,PunakhaBhutan,,,,,,,,,,,,,,,,region,1,BT-23,སྤུ་ན་ཁ་རྫོང་ཁག་,NONE,0.0,BT-23
+Bhutan,Dewathang,Samdrup Jongkhar,,,12239,Gewog,,,#N/A,,Samdrup JongkharBhutan,locality,,BT-14,Dewathang Lamaithang,,,,,,,,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,NONE,0.0,BT-45
+Bhutan,Phuentshogthang (Phuntshothang),Samdrup Jongkhar,,,4741,Gewog,,,#N/A,,Samdrup JongkharBhutan,locality,,BT-45,Phuentshogthang Chiwogs,,,,locality,,BT-45,Phuentshogthang Chiwogs,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,LOW,0.839,BT-45
+Bhutan,Gomdar,Samdrup Jongkhar,,,3206,Gewog,,,#N/A,,Samdrup JongkharBhutan,,,,,,,,,,,,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,NONE,0.0,BT-45
+Bhutan,Orong (Jangchhubling),Samdrup Jongkhar,,,2815,Gewog,,,#N/A,,Samdrup JongkharBhutan,locality,,BT-45,Jangchhubling,,,,locality,,BT-45,Morong,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,MED,0.959,BT-45
+Bhutan,Martshala,Samdrup Jongkhar,,,2589,Gewog,,,#N/A,,Samdrup JongkharBhutan,locality,,BT-45,Martshala,,,,locality,,BT-45,Martshala,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,HIGH,1.0,BT-45
+Bhutan,Langchenphu (Langchhenphu),Samdrup Jongkhar,,,2104,Gewog,,,#N/A,,Samdrup JongkharBhutan,locality,,BT-45,Langchenphu,,,,locality,,BT-45,Langchenphu,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,HIGH,1.0,BT-45
+Bhutan,Serthig (Serthi),Samdrup Jongkhar,,,2090,Gewog,,,#N/A,,Samdrup JongkharBhutan,,,,,,,,,,,,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,NONE,0.0,BT-45
+Bhutan,Wangphu,Samdrup Jongkhar,,,1803,Gewog,,,#N/A,,Samdrup JongkharBhutan,,,,,,,,,,,,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,NONE,0.0,BT-45
+Bhutan,Lauri,Samdrup Jongkhar,,,1714,Gewog,,,#N/A,,Samdrup JongkharBhutan,locality,,BT-45,Lauri,,,,locality,,BT-45,Lauri,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,HIGH,1.0,BT-45
+Bhutan,Pemathang,Samdrup Jongkhar,,,1468,Gewog,,,#N/A,,Samdrup JongkharBhutan,locality,,BT-45,Pemathang,,,,locality,,BT-45,Pemathang,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,HIGH,1.0,BT-45
+Bhutan,Samrang,Samdrup Jongkhar,,,310,Gewog,,,#N/A,,Samdrup JongkharBhutan,,,,,,,,,,,,,,,,region,1,BT-45,བསམ་གྲུབ་ལྗོངས་མཁར་རྫོང་ཁག་,NONE,0.0,BT-45
+Bhutan,Samtse,Samtse (Samchi),,,9002,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,HIGH,1.0,BT-14
+Bhutan,Phuentshogpelri (Pagli),Samtse (Samchi),,,7735,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Tendruk (Tendu),Samtse (Samchi),,,6242,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Dophuchen (Dorokha),Samtse (Samchi),,,5419,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Tading,Samtse (Samchi),,,4719,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,locality,,BT-14,Tading Tenpaling,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Tashichhoeling (Sipsu),Samtse (Samchi),,,4577,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,locality,,BT-31,Tashichhoeling,,,,locality,,BT-14,Tashichhoeling,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,HIGH,1.0,BT-14
+Bhutan,Norboogang (Chengmari),Samtse (Samchi),,,4075,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,locality,,BT-21,Norboogang,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Norgaygang (Bara),Samtse (Samchi),,,3743,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Pemaling (Biru),Samtse (Samchi),,,3262,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Namgyalchhoeling (Namgyel Chhoeling),Samtse (Samchi),,,3141,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,locality,,BT-14,Namgyalchhoeling,,,,locality,,BT-14,Namgyalchhoeling,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,HIGH,1.0,BT-14
+Bhutan,Sang-Ngag-Chhoeling (Chargharay),Samtse (Samchi),,,3061,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,locality,,BT-14,Joenlegsa Sang-Ngag-Chhoeling,,,,locality,,BT-14,Joenlegsa Sang-Ngag-Chhoeling,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,LOW,0.842,BT-14
+Bhutan,Yoeseltse,Samtse (Samchi),,,2632,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,"Duenchhukha (Denchhukha, Duenchukha)",Samtse (Samchi),,,2159,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Doomtoed (Dungtoe),Samtse (Samchi),,,1433,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Ugyentse (Ugentse),Samtse (Samchi),,,1390,Gewog,,,#N/A,,Samtse (Samchi)Bhutan,,,,,,,,,,,,,,,,region,1,BT-14,བསམ་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-14
+Bhutan,Gelegphu (Gelephu),Sarpang (Geylegphug),,,16315,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,,,,,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,NONE,0.0,BT-31
+Bhutan,Dekiling,Sarpang (Geylegphug),,,5980,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,locality,,BT-31,Dekidling,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,MED,0.941,BT-31
+Bhutan,Shompangkha,Sarpang (Geylegphug),,,4638,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,locality,,BT-31,Shompangkha,,,,locality,,BT-31,Shompangkha,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,HIGH,1.0,BT-31
+Bhutan,Jigme Chhoeling (Jigmechhoeling),Sarpang (Geylegphug),,,3258,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,,,,,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,NONE,0.0,BT-31
+Bhutan,Samtenling (Bhur),Sarpang (Geylegphug),,,2801,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,locality,,BT-31,Samtenling,,,,locality,,BT-31,Samtenling,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,HIGH,1.0,BT-31
+Bhutan,Serzhong (Sherzhong),Sarpang (Geylegphug),,,2707,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,locality,,BT-21,Serzhong,,,,locality,,BT-31,Serzhong,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,HIGH,1.0,BT-31
+Bhutan,Chhudzom (Doban),Sarpang (Geylegphug),,,2664,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,,,,,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,NONE,0.0,BT-31
+Bhutan,Chhuzanggang (Chhuzagang),Sarpang (Geylegphug),,,2499,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,locality,,BT-15,Chhuzarkha,,,,,,,,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,NONE,0.0,BT-31
+Bhutan,Gakiling (Hiley),Sarpang (Geylegphug),,,2125,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,locality,,BT-31,Gakidling,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,MED,0.941,BT-31
+Bhutan,Umling,Sarpang (Geylegphug),,,1586,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,,,,,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,NONE,0.0,BT-31
+Bhutan,"Senggey (Senge, Senghe)",Sarpang (Geylegphug),,,1080,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,,,,,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,NONE,0.0,BT-31
+Bhutan,Tareythang (Taklai),Sarpang (Geylegphug),,,351,Gewog,,,#N/A,,Sarpang (Geylegphug)Bhutan,,,,,,,,,,,,,,,,region,1,BT-31,གསར་སྤང་རྫོང་ཁག་,NONE,0.0,BT-31
+Bhutan,Thimphu,Thimphu,,,114551,Municipality,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-15,ཐིམ་ཕུག,,,,locality,,BT-15,ཐིམ་ཕུག,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,HIGH,1.0,BT-15
+Bhutan,Maedwang (Mewang),Thimphu,,,7799,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-34,Mewangang,,,,,,,,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,NONE,0.0,BT-15
+Bhutan,Chang,Thimphu,,,6752,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-42,Changshing,,,,,,,,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,NONE,0.0,BT-15
+Bhutan,Kawang,Thimphu,,,5477,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-15,ཐིམ་ཕུག,,,,,,,,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,NONE,0.0,BT-15
+Bhutan,Darkarla (Dagala),Thimphu,,,2094,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-15,ཐིམ་ཕུག,,,,,,,,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,NONE,0.0,BT-15
+Bhutan,Ge-nyen (Genye),Thimphu,,,1141,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-15,DGe-Nyenkha,,,,locality,,BT-15,DGe-Nyenkha,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,LOW,0.828,BT-15
+Bhutan,Lingzhi,Thimphu,,,490,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-15,ཐིམ་ཕུག,,,,,,,,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,NONE,0.0,BT-15
+Bhutan,Naro,Thimphu,,,250,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-15,ཐིམ་ཕུག,,,,,,,,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,NONE,0.0,BT-15
+Bhutan,Soe,Thimphu,,,182,Gewog,Thimphu,,Thimphu,,ThimphuBhutan,locality,,BT-15,ཐིམ་ཕུག,,,,,,,,,,,,region,1,BT-15,ཐིམ་ཕུ་རྫོང་ཁག་,NONE,0.0,BT-15
+Bhutan,Kanglung,Trashigang,,,7316,Gewog,,,#N/A,,TrashigangBhutan,,,,,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Samkhar,Trashigang,,,5146,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-31,Samkhar,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Lumang,Trashigang,,,4293,Gewog,,,#N/A,,TrashigangBhutan,,,,,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Shongphu (Shongphoog),Trashigang,,,3949,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-41,Dramin_Shongphoog,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Khaling,Trashigang,,,3585,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-41,Khaling,,,,locality,,BT-41,Khaling,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,HIGH,1.0,BT-41
+Bhutan,Udzorong (Uzorong),Trashigang,,,2760,Gewog,,,#N/A,,TrashigangBhutan,,,,,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Phongmed (Phongme),Trashigang,,,2617,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-41,Phongmed,,,,locality,,BT-41,Phongmed,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,HIGH,1.0,BT-41
+Bhutan,Thrimshing,Trashigang,,,2548,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-41,Thrimshing,,,,locality,,BT-41,Thrimshing,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,HIGH,1.0,BT-41
+Bhutan,Yangnyer,Trashigang,,,2535,Gewog,,,#N/A,,TrashigangBhutan,,,,,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Radhi (Radi),Trashigang,,,2346,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-34,Radi,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Sagteng (Sakteng),Trashigang,,,2061,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-41,Sagteng,,,,locality,,BT-41,Sagteng,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,HIGH,1.0,BT-41
+Bhutan,Bartsham,Trashigang,,,1788,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-43,Bartseri,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Kangpar (Kangpara),Trashigang,,,1591,Gewog,,,#N/A,,TrashigangBhutan,,,,,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Merag (Merak),Trashigang,,,1562,Gewog,,,#N/A,,TrashigangBhutan,locality,,BT-41,Merag Maed,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Bidoong (Bidung),Trashigang,,,1421,Gewog,,,#N/A,,TrashigangBhutan,,,,,,,,,,,,,,,,region,1,BT-41,བཀྲ་ཤིས་སྒང་རྫོང་ཁག་,NONE,0.0,BT-41
+Bhutan,Yangtse (Trashiyangtse),Trashiyangtse,,,4540,Gewog,,,#N/A,,TrashiyangtseBhutan,,,,,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,Khamdang,Trashiyangtse,,,3672,Gewog,,,#N/A,,TrashiyangtseBhutan,locality,,BT-TY,Khamdang Manla,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,Boomdeling (Bumdeling),Trashiyangtse,,,2142,Gewog,,,#N/A,,TrashiyangtseBhutan,,,,,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,"Tongmajangsa (Tomzhangtshen, Tomzhangsa)",Trashiyangtse,,,1782,Gewog,,,#N/A,,TrashiyangtseBhutan,locality,,BT-45,Jangsa,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,Toedtsho (Toetsho),Trashiyangtse,,,1580,Gewog,,,#N/A,,TrashiyangtseBhutan,,,,,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,Yalang,Trashiyangtse,,,1372,Gewog,,,#N/A,,TrashiyangtseBhutan,locality,,BT-43,Yalang,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,Ramjar,Trashiyangtse,,,1213,Gewog,,,#N/A,,TrashiyangtseBhutan,,,,,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,Jamkhar,Trashiyangtse,,,999,Gewog,,,#N/A,,TrashiyangtseBhutan,locality,,BT-43,Khar,,,,,,,,,,,,region,1,BT-TY,བཀྲ་ཤིས་གཡང་རྩེ་རྫོང་ཁག་,NONE,0.0,BT-TY
+Bhutan,Draagteng (Dragteng),Trongsa,,,6624,Gewog,,,#N/A,,TrongsaBhutan,locality,,BT-32,Draagteng Gewog Office campus,,,,,,,,,,,,region,1,BT-32,ཀྲོང་གསར་རྫོང་ཁག་,NONE,0.0,BT-32
+Bhutan,Nubi,Trongsa,,,6293,Gewog,,,#N/A,,TrongsaBhutan,,,,,,,,,,,,,,,,region,1,BT-32,ཀྲོང་གསར་རྫོང་ཁག་,NONE,0.0,BT-32
+Bhutan,Langthil,Trongsa,,,3750,Gewog,,,#N/A,,TrongsaBhutan,locality,,BT-32,Langthil,,,,locality,,BT-32,Langthil,,,,,region,1,BT-32,ཀྲོང་གསར་རྫོང་ཁག་,HIGH,1.0,BT-32
+Bhutan,Tangsibji,Trongsa,,,2544,Gewog,,,#N/A,,TrongsaBhutan,locality,,BT-32,Tangsibji,,,,locality,,BT-32,Tangsibji,,,,,region,1,BT-32,ཀྲོང་གསར་རྫོང་ཁག་,HIGH,1.0,BT-32
+Bhutan,Korphu,Trongsa,,,749,Gewog,,,#N/A,,TrongsaBhutan,,,,,,,,,,,,,,,,region,1,BT-32,ཀྲོང་གསར་རྫོང་ཁག་,NONE,0.0,BT-32
+Bhutan,Kilkhorthang (Kikhorthang),Tsirang (Chirang),,,5593,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,,,,,,,,,,,,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,NONE,0.0,BT-21
+Bhutan,Mendrelgang,Tsirang (Chirang),,,2569,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,locality,,BT-21,Mendrelgang,,,,locality,,BT-21,Mendrelgang,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,HIGH,1.0,BT-21
+Bhutan,Gosarling,Tsirang (Chirang),,,1864,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,,,,,,,,,,,,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,NONE,0.0,BT-21
+Bhutan,Tsholingkhar (Tsholingkhor),Tsirang (Chirang),,,1745,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,locality,,BT-21,Tsholingkhar Toed,,,,locality,,BT-21,Tsholingkhar Toed,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,LOW,0.878,BT-21
+Bhutan,Rangthangling,Tsirang (Chirang),,,1585,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,locality,,BT-21,Charingma Rangthangling,,,,,,,,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,NONE,0.0,BT-21
+Bhutan,Doonglagang (Dunglegang),Tsirang (Chirang),,,1546,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,,,,,,,,,,,,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,NONE,0.0,BT-21
+Bhutan,Tsirang Toed (Tsirangtoe),Tsirang (Chirang),,,1451,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,locality,,BT-21,Tsirang Toed,,,,locality,,BT-21,Tsirang Toed,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,HIGH,1.0,BT-21
+Bhutan,Sergithang (Patakla),Tsirang (Chirang),,,1379,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,locality,,BT-21,Sergithang Maed,,,,locality,,BT-21,Sergithang Maed,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,LOW,0.85,BT-21
+Bhutan,Pungtenchhu (Phuentenchhu),Tsirang (Chirang),,,1331,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,,,,,,,,,,,,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,NONE,0.0,BT-21
+Bhutan,Semjong (Shemjong),Tsirang (Chirang),,,1312,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,,,,,,,,locality,,BT-21,Semdenjong,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,LOW,0.824,BT-21
+Bhutan,Patshaling (Beteni),Tsirang (Chirang),,,1159,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,locality,,BT-21,Patshaling Toed,,,,locality,,BT-21,Patshaling Toed,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,LOW,0.85,BT-21
+Bhutan,Barshong (Barzhong),Tsirang (Chirang),,,842,Gewog,,,#N/A,,Tsirang (Chirang)Bhutan,locality,,BT-31,Barshong,,,,locality,,BT-21,Barshong Toed,,,,,region,1,BT-21,རྩི་རང་རྫོང་ཁག་,LOW,0.812,BT-21
+Bhutan,Thedtsho,Wangdue Phodrang,,,12328,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Darkar (Daga),Wangdue Phodrang,,,6270,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Gase Tshogongm (Gasetsho Gom),Wangdue Phodrang,,,3960,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Gangteng (Gangte),Wangdue Phodrang,,,2775,Gewog,,,#N/A,,Wangdue PhodrangBhutan,locality,,BT-24,Gangteng,,,,locality,,BT-24,Gangteng,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,HIGH,1.0,BT-24
+Bhutan,Nyishog (Nyisho),Wangdue Phodrang,,,2512,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Ruebisa (Ruepisa),Wangdue Phodrang,,,2179,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Phobji,Wangdue Phodrang,,,2121,Gewog,,,#N/A,,Wangdue PhodrangBhutan,locality,,BT-24,སྒང་སྟེང་,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,"Bjenag (Bjena, Bjendag)",Wangdue Phodrang,,,1916,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Dangchhu (Dangchu),Wangdue Phodrang,,,1815,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Saephu (Sephu),Wangdue Phodrang,,,1729,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Kazhi,Wangdue Phodrang,,,1289,Gewog,,,#N/A,,Wangdue PhodrangBhutan,locality,,BT-24,Kazhi,,,,locality,,BT-24,Kazhi,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,HIGH,1.0,BT-24
+Bhutan,Phangyuel,Wangdue Phodrang,,,964,Gewog,,,#N/A,,Wangdue PhodrangBhutan,locality,,BT-24,Koomchhi Phangyuel,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Gase Tshowogm (Gasetsho Om),Wangdue Phodrang,,,959,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Athang,Wangdue Phodrang,,,773,Gewog,,,#N/A,,Wangdue PhodrangBhutan,locality,,BT-45,Pemathang,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Nahi,Wangdue Phodrang,,,596,Gewog,,,#N/A,,Wangdue PhodrangBhutan,,,,,,,,,,,,,,,,region,1,BT-24,དབང་འདུས་ཕོ་བྲང་རྫོང་ཁག་,NONE,0.0,BT-24
+Bhutan,Trong,Zhemgang,,,5679,Gewog,,,#N/A,,ZhemgangBhutan,,,,,,,,,,,,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,NONE,0.0,BT-34
+Bhutan,Ngangla,Zhemgang,,,3056,Gewog,,,#N/A,,ZhemgangBhutan,locality,,BT-34,Ngangla Trong,,,,,,,,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,NONE,0.0,BT-34
+Bhutan,Nangkor,Zhemgang,,,2602,Gewog,,,#N/A,,ZhemgangBhutan,locality,,BT-43,Nangkor,,,,,,,,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,NONE,0.0,BT-34
+Bhutan,Bardo,Zhemgang,,,1734,Gewog,,,#N/A,,ZhemgangBhutan,locality,,BT-34,Bardo,,,,locality,,BT-34,Bardo,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,HIGH,1.0,BT-34
+Bhutan,Goshing (Gozhing),Zhemgang,,,1396,Gewog,,,#N/A,,ZhemgangBhutan,,,,,,,,,,,,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,NONE,0.0,BT-34
+Bhutan,Shingkhar,Zhemgang,,,1276,Gewog,,,#N/A,,ZhemgangBhutan,locality,,BT-33,Shingkhar,,,,,,,,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,NONE,0.0,BT-34
+Bhutan,Phangkhar (Pangkhar),Zhemgang,,,1164,Gewog,,,#N/A,,ZhemgangBhutan,locality,,BT-44,Pangkhar,,,,,,,,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,NONE,0.0,BT-34
+Bhutan,Bjoka,Zhemgang,,,856,Gewog,,,#N/A,,ZhemgangBhutan,locality,,BT-34,Bjoka Trong village,,,,locality,,BT-34,Bjokar,,,,,region,1,BT-34,གཞལམ་སྒང་རྫོང་ཁག་,MED,0.959,BT-34

@@ -1,0 +1,11 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Saint Lucia,Anse-la-Raye,Anse-la-Raye,,,6247,District,,,#N/A,,Anse-la-RayeSaint Lucia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Saint Lucia,Canaries,Canaries,,,2044,District,,,#N/A,,CanariesSaint Lucia,region,1,LC-12,Canaries,,,,region,1,LC-12,Canaries,,,,,region,1,LC-12,Canaries,HIGH,1.0,LC-12
+Saint Lucia,Castries,Castries,,,65656,District,Castries,,Castries,,CastriesSaint Lucia,region,1,LC-02,Castries,,,,region,1,LC-02,Castries,,,,,region,1,LC-02,Castries,HIGH,1.0,LC-02
+Saint Lucia,Choiseul,Choiseul,,,6098,District,,,#N/A,,ChoiseulSaint Lucia,region,1,LC-03,Choiseul,,,,region,1,LC-03,Choiseul,,,,,region,1,LC-03,Choiseul,HIGH,1.0,LC-03
+Saint Lucia,Dennery,Dennery,,,12599,District,,,#N/A,,DennerySaint Lucia,region,1,LC-05,Dennery,,,,region,1,LC-05,Dennery,,,,,region,1,LC-05,Dennery,HIGH,1.0,LC-05
+Saint Lucia,Gros Islet,Gros Islet,,,25210,District,,,#N/A,,Gros IsletSaint Lucia,region,1,LC-06,Gros Islet,,,,region,1,LC-06,Gros Islet,,,,,region,1,LC-06,Gros Islet,HIGH,1.0,LC-06
+Saint Lucia,Laborie,Laborie,,,6701,District,,,#N/A,,LaborieSaint Lucia,region,1,LC-07,Laborie,,,,region,1,LC-07,Laborie,,,,,region,1,LC-07,Laborie,HIGH,1.0,LC-07
+Saint Lucia,Micoud,Micoud,,,16284,District,,,#N/A,,MicoudSaint Lucia,region,1,LC-08,Micoud,,,,region,1,LC-08,Micoud,,,,,region,1,LC-08,Micoud,HIGH,1.0,LC-08
+Saint Lucia,Soufrière,Soufrière,,,8472,District,,,#N/A,,SoufrièreSaint Lucia,region,1,LC-10,Soufrière,,,,region,1,LC-10,Soufrière,,,,,region,1,LC-10,Soufrière,HIGH,1.0,LC-10
+Saint Lucia,Vieux Fort,Vieux Fort,,,16284,District,,,#N/A,,Vieux FortSaint Lucia,locality,0,LC-11,Vieux Fort,,,,locality,,LC-11,Vieux Fort,,,,,region,1,LC-11,Vieux Fort,HIGH,1.0,LC-11

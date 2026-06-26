@@ -9,7 +9,7 @@ Congo,Mabombo,Bouenza,,,12145,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,regio
 Congo,Boko-Songho,Bouenza,,,11563,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
 Congo,Yamba,Bouenza,,,11377,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
 Congo,Tsiaki,Bouenza,,,10966,District,,,#N/A,,BouenzaCongo,,,,,,,,,,,,,,,,region,1,CG-11,Bouenza,NONE,0.0,CG-11
-Congo,Brazzaville,Brazzaville,,,2138236,Commune,Brazzaville,,Brazzaville,,BrazzavilleCongo,,,,,,,,region,1,CG-BZV,Brazzaville (département),,,,,region,1,CG-BZV,Brazzaville (département),HIGH,1.0,CG-BZV
+Congo,Brazzaville,Brazzaville,,,2138236,Commune,Brazzaville,,Brazzaville,,BrazzavilleCongo,region,1,CG-BZV,Brazzaville (département),,,,region,1,CG-BZV,Brazzaville (département),,,,,region,1,CG-BZV,Brazzaville (département),HIGH,1.0,CG-BZV
 Congo,Ile Mbamou,Brazzaville,,,7547,District,,,#N/A,,BrazzavilleCongo,,,,,,,,,,,,,,,,region,1,CG-BZV,Brazzaville (département),NONE,0.0,CG-BZV
 Congo,Oyo,Cuvette,,,70287,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
 Congo,Owando (incl. Owando commune),Cuvette,,,64358,District,,,#N/A,,CuvetteCongo,,,,,,,,,,,,,,,,region,1,CG-8,Cuvette,NONE,0.0,CG-8
@@ -45,7 +45,7 @@ Congo,Dongou,Likouala,,,44027,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,regi
 Congo,Epena,Likouala,,,32110,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
 Congo,Liranga,Likouala,,,30141,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
 Congo,Bouanéla,Likouala,,,16359,District,,,#N/A,,LikoualaCongo,,,,,,,,,,,,,,,,region,1,CG-7,Likouala,NONE,0.0,CG-7
-Congo,Louvakou (incl. Dolisie commune),Niari,,,209889,District,Dolisie,,Dolisie,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
+Congo,Louvakou (incl. Dolisie commune),Niari,,,209889,District,Dolisie,,Dolisie,,NiariCongo,county,2,CG-11,Louvakou (Loubomo),,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
 Congo,Moutamba (incl. Mossendjo commune),Niari,,,22936,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
 Congo,Kimongo,Niari,,,18929,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
 Congo,Kibangou,Niari,,,13430,District,,,#N/A,,NiariCongo,,,,,,,,,,,,,,,,region,1,CG-9,Niari,NONE,0.0,CG-9
@@ -70,9 +70,9 @@ Congo,Lékana,Plateaux,,,15257,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,reg
 Congo,Abala,Plateaux,,,13326,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
 Congo,Allembé,Plateaux,,,6208,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
 Congo,Mbon,Plateaux,,,5711,District,,,#N/A,,PlateauxCongo,,,,,,,,,,,,,,,,region,1,CG-14,Plateaux,NONE,0.0,CG-14
-Congo,Pointe-Noire,Pointe-Noire,,,1398812,Commune,Pointe-Noire,,Pointe-Noire,,Pointe-NoireCongo,,,,,,,,region,1,CG-16,Pointe-Noire (département),,,,,region,1,CG-16,Pointe-Noire (département),HIGH,1.0,CG-16
+Congo,Pointe-Noire,Pointe-Noire,,,1398812,Commune,Pointe-Noire,,Pointe-Noire,,Pointe-NoireCongo,county,2,CG-8,Loandjili (Pointe Noire),,,,region,1,CG-16,Pointe-Noire (département),,,,,region,1,CG-16,Pointe-Noire (département),HIGH,1.0,CG-16
 Congo,Tchiamba-Nzassi,Pointe-Noire,,,21800,District,,,#N/A,,Pointe-NoireCongo,,,,,,,,,,,,,,,,region,1,CG-16,Pointe-Noire (département),NONE,0.0,CG-16
-Congo,Kimba,Pool,,,8092,District,Brazzaville,,Brazzaville,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
+Congo,Kimba,Pool,,,8092,District,Brazzaville,,Brazzaville,,PoolCongo,region,1,CG-BZV,Brazzaville (département),,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
 Congo,Ignié (incl. Kintélé commune),Pool,,,108294,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
 Congo,Mindouli,Pool,,,63954,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12
 Congo,Kinkala (incl. Kinkala commune),Pool,,,50528,District,,,#N/A,,PoolCongo,,,,,,,,,,,,,,,,region,1,CG-12,Pool,NONE,0.0,CG-12

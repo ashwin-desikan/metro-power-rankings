@@ -1,0 +1,16 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Liberia,Bomi,Bomi,,,133705,County,,,#N/A,,BomiLiberia,region,1,LR-BM,Bomi County,,,,region,1,LR-BM,Bomi County,,,,,region,1,LR-BM,Bomi County,HIGH,1.0,LR-BM
+Liberia,Bong,Bong,,,467561,County,,,#N/A,,BongLiberia,region,1,LR-BG,Bong County,,,,region,1,LR-BG,Bong County,,,,,region,1,LR-BG,Bong County,HIGH,1.0,LR-BG
+Liberia,Gbarpolu,Gbarpolu,,,95995,County,,,#N/A,,GbarpoluLiberia,region,1,LR-GP,Gbarpolu County,,,,region,1,LR-GP,Gbarpolu County,,,,,region,1,LR-GP,Gbarpolu County,HIGH,1.0,LR-GP
+Liberia,Grand Bassa,Grand Bassa,,,293689,County,,,#N/A,,Grand BassaLiberia,region,1,LR-GB,Grand Bassa County,,,,region,1,LR-GB,Grand Bassa County,,,,,region,1,LR-GB,Grand Bassa County,HIGH,1.0,LR-GB
+Liberia,Grand Cape Mount,Grand Cape Mount,,,178867,County,,,#N/A,,Grand Cape MountLiberia,region,1,LR-CM,Grand Cape Mount County,,,,region,1,LR-CM,Grand Cape Mount County,,,,,region,1,LR-CM,Grand Cape Mount County,HIGH,1.0,LR-CM
+Liberia,Grand Gedeh,Grand Gedeh,,,216692,County,,,#N/A,,Grand GedehLiberia,region,1,LR-GG,Grand Gedeh County,,,,region,1,LR-GG,Grand Gedeh County,,,,,region,1,LR-GG,Grand Gedeh County,HIGH,1.0,LR-GG
+Liberia,Grand Kru (Kru Coast & Sasstown),Grand Kru (Kru Coast & Sasstown),,,109342,County,,,#N/A,,Grand Kru (Kru Coast & Sasstown)Liberia,region,1,LR-GK,Grand Kru County,,,,region,1,LR-GK,Grand Kru County,,,,,region,1,LR-GK,Grand Kru County,HIGH,1.0,LR-GK
+Liberia,Lofa,Lofa,,,367376,County,,,#N/A,,LofaLiberia,region,1,LR-LO,Lofa County,,,,region,1,LR-LO,Lofa County,,,,,region,1,LR-LO,Lofa County,HIGH,1.0,LR-LO
+Liberia,Margibi (Gibi & Marshall),Margibi (Gibi & Marshall),,,304946,County,Monrovia,,Monrovia,,Margibi (Gibi & Marshall)Liberia,region,1,LR-MG,Margibi County,,,,region,1,LR-MG,Margibi County,,,,,region,1,LR-MG,Margibi County,HIGH,1.0,LR-MG
+Liberia,Maryland,Maryland,,,172587,County,,,#N/A,,MarylandLiberia,region,1,LR-MY,Maryland County,,,,region,1,LR-MY,Maryland County,,,,,region,1,LR-MY,Maryland County,HIGH,1.0,LR-MY
+Liberia,Montserrado,Montserrado,,,1920965,County,Monrovia,,Monrovia,,MontserradoLiberia,region,1,LR-MO,Montserrado County,,,,region,1,LR-MO,Montserrado County,,,,,region,1,LR-MO,Montserrado County,HIGH,1.0,LR-MO
+Liberia,Nimba,Nimba,,,621841,County,,,#N/A,,NimbaLiberia,region,1,LR-NI,Nimba County,,,,region,1,LR-NI,Nimba County,,,,,region,1,LR-NI,Nimba County,HIGH,1.0,LR-NI
+Liberia,River Gee,River Gee,,,124653,County,,,#N/A,,River GeeLiberia,region,1,LR-RG,River Gee County,,,,region,1,LR-RG,River Gee County,,,,,region,1,LR-RG,River Gee County,HIGH,1.0,LR-RG
+Liberia,Rivercess,Rivercess,,,90819,County,,,#N/A,,RivercessLiberia,region,1,LR-RI,River Cess County,,,,region,1,LR-RI,River Cess County,,,,,region,1,LR-RI,River Cess County,HIGH,1.0,LR-RI
+Liberia,Sinoe,Sinoe,,,151149,County,,,#N/A,,SinoeLiberia,region,1,LR-SI,Sinoe County,,,,region,1,LR-SI,Sinoe County,,,,,region,1,LR-SI,Sinoe County,HIGH,1.0,LR-SI

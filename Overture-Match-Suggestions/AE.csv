@@ -1,0 +1,37 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+United Arab Emirates,Abū Ẓaby [Abu Dhabi],Abu Dhabi,,,2823340,Region,Abu Dhabi,,Abu Dhabi,,Abu DhabiUnited Arab Emirates,locality,,AE-AZ,أبو ظبي,,,,,,,,,,,,region,1,AE-AZ,أبو ظبي,NONE,0.0,AE-AZ
+United Arab Emirates,Al-'Ayn [Al-Ain],Abu Dhabi,,,986910,Region,Al Ain,,Al Ain,,Abu DhabiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AZ,أبو ظبي,NONE,0.0,AE-AZ
+United Arab Emirates,"Aẓ-Ẓafrah [Al-Dhafra, Al-Gharbia]",Abu Dhabi,,,325735,Region,Madinat Zayed,,Madinat Zayed,,Abu DhabiUnited Arab Emirates,locality,,AE-AZ,مدينة زايد,,,,,,,,,,,,region,1,AE-AZ,أبو ظبي,NONE,0.0,AE-AZ
+United Arab Emirates,Markaz al-Madīnat [City Center],Ajman,,,273474,Sector,Dubai-Sharjah,,Dubai-Sharjah,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Al-Janūbī [Southern],Ajman,,,113242,Sector,Dubai-Sharjah,,Dubai-Sharjah,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Al-Awsaṭ [Middle East],Ajman,,,51422,Sector,Dubai-Sharjah,,Dubai-Sharjah,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Ash-Shamalī [Northern],Ajman,,,45043,Sector,Dubai-Sharjah,,Dubai-Sharjah,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Maṣfūt [Masfout],Ajman,,,8988,Sector,Dubai-Sharjah,,Dubai-Sharjah,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Ash-Sharqī [Eastern],Ajman,,,5995,Sector,Dubai-Sharjah,,Dubai-Sharjah,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Az-Zūrā [Al-Zorah],Ajman,,,859,Sector,Dubai-Sharjah,,Dubai-Sharjah,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Al-Manāmah [Manama],Ajman,,,5823,Sector,,,#N/A,,AjmanUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-AJ,إمارة عجمان,NONE,0.0,AE-AJ
+United Arab Emirates,Al-Qiṭā 3 [Sector 3],Dubai,,,1328669,Sector,Dubai-Sharjah,,Dubai-Sharjah,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 2 [Sector 2],Dubai,,,672308,Sector,Dubai-Sharjah,,Dubai-Sharjah,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 5 [Sector 5],Dubai,,,510288,Sector,Dubai-Sharjah,,Dubai-Sharjah,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 1 [Sector 1],Dubai,,,506808,Sector,Dubai-Sharjah,,Dubai-Sharjah,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 6 [Sector 6],Dubai,,,451067,Sector,Dubai-Sharjah,,Dubai-Sharjah,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 4 [Sector 4],Dubai,,,100959,Sector,Dubai-Sharjah,,Dubai-Sharjah,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 8 [Sector 8],Dubai,,,42142,Sector,Hatta,,Hatta,,DubaiUnited Arab Emirates,locality,,AE-DU,حتا,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 9 [Sector 9],Dubai,,,25597,Sector,,,#N/A,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Al-Qiṭā 7 [Sector 7],Dubai,,,17162,Sector,,,#N/A,,DubaiUnited Arab Emirates,,,,,,,,,,,,,,,,region,1,AE-DU,دبي,NONE,0.0,AE-DU
+United Arab Emirates,Madīnat Dibā [Dibba City],Fujairah,,,49333,City,Dibba,,Dibba,,FujairahUnited Arab Emirates,region,1,AE-FU,الفجيرة,,,,,,,,,,,,region,1,AE-FU,الفجيرة,NONE,0.0,AE-FU
+United Arab Emirates,Madīnat al-Fujayrah [Fujairah City],Fujairah,,,114356,City,Fujairah,,Fujairah,,FujairahUnited Arab Emirates,region,1,AE-FU,الفجيرة,,,,,,,,,,,,region,1,AE-FU,الفجيرة,NONE,0.0,AE-FU
+United Arab Emirates,Rīf al-Fujayrah [Fujairah Countryside],Fujairah,,,107187,Area,,,#N/A,,FujairahUnited Arab Emirates,region,1,AE-FU,الفجيرة,,,,,,,,,,,,region,1,AE-FU,الفجيرة,NONE,0.0,AE-FU
+United Arab Emirates,Rīf Dibā [Dibba Countryside],Fujairah,,,38204,Area,,,#N/A,,FujairahUnited Arab Emirates,region,1,AE-FU,الفجيرة,,,,,,,,,,,,region,1,AE-FU,الفجيرة,NONE,0.0,AE-FU
+United Arab Emirates,Manāṭiq Ghayr Wa'wuhūlih Biālsukān,Fujairah,,,0,Uninhabited Area,,,#N/A,,FujairahUnited Arab Emirates,region,1,AE-FU,الفجيرة,,,,,,,,,,,,region,1,AE-FU,الفجيرة,NONE,0.0,AE-FU
+United Arab Emirates,Ras al-Khaimah,Ras al-Khaimah,,,400000,Emirate,Ras al-Khaimah,,Ras al-Khaimah,,Ras al-KhaimahUnited Arab Emirates,region,1,AE-RK,رأس الخيمة,,,,region,1,AE-RK,رأس الخيمة,,,,,region,1,AE-RK,رأس الخيمة,HIGH,1.0,AE-RK
+United Arab Emirates,Dibā al-Ḥiṣn [Dibba],Sharjah,,,15000,Municipality,Dibba,,Dibba,,SharjahUnited Arab Emirates,locality,,AE-SH,دبا الحصن,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Ash-Shāriqah [Sharjah City],Sharjah,,,1610000,Municipality,Dubai-Sharjah,,Dubai-Sharjah,,SharjahUnited Arab Emirates,locality,,AE-SH,مدينة الشارقة,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Kalbā',Sharjah,,,51000,Municipality,Kalba,,Kalba,,SharjahUnited Arab Emirates,locality,,AE-SH,Kalba كلباء,,,,locality,,AE-SH,Kalba كلباء,,,,,region,1,AE-SH,الشارقة,HIGH,1.0,AE-SH
+United Arab Emirates,Khawr Fakān [Khor Fakkan],Sharjah,,,53000,Municipality,Khor Fakkan,,Khor Fakkan,,SharjahUnited Arab Emirates,locality,,AE-SH,خورفكان,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Ad-Dhaīd,Sharjah,,,33000,Municipality,,,#N/A,,SharjahUnited Arab Emirates,locality,,AE-SH,الذيد,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Al-Ḥamriyah,Sharjah,,,19000,Municipality,,,#N/A,,SharjahUnited Arab Emirates,locality,,AE-SH,الحمرية,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Al-Madām,Sharjah,,,18000,Municipality,,,#N/A,,SharjahUnited Arab Emirates,locality,,AE-SH,المدام,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Al-Baṭāeḥ,Sharjah,,,7000,Municipality,,,#N/A,,SharjahUnited Arab Emirates,locality,,AE-SH,البطائح,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Mileīḥah [Mileiha],Sharjah,,,6000,Municipality,,,#N/A,,SharjahUnited Arab Emirates,locality,,AE-SH,مليحة,,,,,,,,,,,,region,1,AE-SH,الشارقة,NONE,0.0,AE-SH
+United Arab Emirates,Umm al-Quwain,Umm al-Quwain,,,88000,Emirate,Umm al-Quwain,,Umm al-Quwain,,Umm al-QuwainUnited Arab Emirates,region,1,AE-UQ,أم القيوين,,,,region,1,AE-UQ,أم القيوين,,,,,region,1,AE-UQ,أم القيوين,HIGH,1.0,AE-UQ

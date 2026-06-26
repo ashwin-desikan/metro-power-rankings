@@ -1,0 +1,5 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Martinique,Fort-de-France,Fort-de-France,ARR-9721,,157449,Arrondissement,Fort-de-France,DEP-972,Fort-de-France,,Fort-de-FranceMartinique,region,2,,Fort-de-France,,,,region,2,nan,Fort-de-France,,,,,,,,,HIGH,1.0,nan
+Martinique,La Trinité,La Trinité,ARR-9722,,78937,Arrondissement,,DEP-972,#N/A,,La TrinitéMartinique,region,2,,La Trinité,,,,region,2,nan,La Trinité,,,,,,,,,HIGH,1.0,nan
+Martinique,Le Marin,Le Marin,ARR-9723,,117168,Arrondissement,,DEP-972,#N/A,,Le MarinMartinique,region,2,,Le Marin,,,,region,2,nan,Le Marin,,,,,,,,,HIGH,1.0,nan
+Martinique,Saint-Pierre,Saint-Pierre,ARR-9724,,22926,Arrondissement,,DEP-972,#N/A,,Saint-PierreMartinique,region,2,,Saint-Pierre,,,,region,2,nan,Saint-Pierre,,,,,,,,,HIGH,1.0,nan

@@ -1,0 +1,5 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Réunion,Saint-Benoît,Saint-Benoît,ARR-9743,,126777,Arrondissement,Réunion,DEP-974,Réunion,,Saint-BenoîtRéunion,region,2,,Saint-Benoît,,,,region,2,nan,Saint-Benoît,,,,,,,,,HIGH,1.0,nan
+Réunion,Saint-Denis,Saint-Denis,ARR-9741,,204304,Arrondissement,Réunion,DEP-974,Réunion,,Saint-DenisRéunion,region,2,,Saint-Denis,,,,region,2,nan,Saint-Denis,,,,,,,,,HIGH,1.0,nan
+Réunion,Saint-Paul,Saint-Paul,ARR-9744,,214073,Arrondissement,Réunion,DEP-974,Réunion,,Saint-PaulRéunion,region,2,,Saint-Paul,,,,region,2,nan,Saint-Paul,,,,,,,,,HIGH,1.0,nan
+Réunion,Saint-Pierre,Saint-Pierre,ARR-9742,,307770,Arrondissement,Réunion,DEP-974,Réunion,,Saint-PierreRéunion,region,2,,Saint-Pierre,,,,region,2,nan,Saint-Pierre,,,,,,,,,HIGH,1.0,nan

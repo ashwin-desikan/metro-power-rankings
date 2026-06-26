@@ -1,0 +1,149 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Laos,Samakkhixai,Attapeu [Attapu],,,41040,District,,,#N/A,,Attapeu [Attapu]Laos,county,2,LA-AT,ເມືອງສາມັກຄີໄຊ,,,,county,2,LA-AT,ເມືອງສາມັກຄີໄຊ,,,,,region,1,LA-AT,ອັດຕະປື,HIGH,1.0,LA-AT
+Laos,Sanamxai,Attapeu [Attapu],,,39116,District,,,#N/A,,Attapeu [Attapu]Laos,county,2,LA-AT,ເມືອງສະໜາມໄຊ,,,,county,2,LA-AT,ເມືອງສະໜາມໄຊ,,,,,region,1,LA-AT,ອັດຕະປື,HIGH,1.0,LA-AT
+Laos,Xaysetha [Saysetha],Attapeu [Attapu],,,37396,District,,,#N/A,,Attapeu [Attapu]Laos,county,2,LA-AT,ເມືອງໄຊສະຖານ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Sanxai,Attapeu [Attapu],,,25823,District,,,#N/A,,Attapeu [Attapu]Laos,county,2,LA-AT,ເມືອງສານໄຊ,,,,county,2,LA-AT,ເມືອງສານໄຊ,,,,,region,1,LA-AT,ອັດຕະປື,HIGH,1.0,LA-AT
+Laos,Phouvong,Attapeu [Attapu],,,16511,District,,,#N/A,,Attapeu [Attapu]Laos,county,2,LA-AT,ເມືອງພູວົງ,,,,county,2,LA-AT,ເມືອງພູວົງ,,,,,region,1,LA-AT,ອັດຕະປື,HIGH,1.0,LA-AT
+Laos,Huoixai [Houayxay],Bokeo,,,78246,District,,,#N/A,,BokeoLaos,,,,,,,,,,,,,,,,region,1,LA-BK,ບໍ່ແກ້ວ,NONE,0.0,LA-BK
+Laos,Pha Oudom,Bokeo,,,46849,District,,,#N/A,,BokeoLaos,county,2,LA-BK,ເມືອງຜາອຸດົມ,,,,county,2,LA-BK,ເມືອງຜາອຸດົມ,,,,,region,1,LA-BK,ບໍ່ແກ້ວ,HIGH,1.0,LA-BK
+Laos,Tonpheung,Bokeo,,,39520,District,,,#N/A,,BokeoLaos,county,2,LA-BK,ເມືອງຕົ້ນເຜິ້ງ,,,,county,2,LA-BK,ເມືອງຕົ້ນເຜິ້ງ,,,,,region,1,LA-BK,ບໍ່ແກ້ວ,HIGH,1.0,LA-BK
+Laos,Paktha,Bokeo,,,21849,District,,,#N/A,,BokeoLaos,county,2,LA-BK,ເມືອງປາກທາ,,,,county,2,LA-BK,ເມືອງປາກທາ,,,,,region,1,LA-BK,ບໍ່ແກ້ວ,HIGH,1.0,LA-BK
+Laos,Meung [incl. Nam Ngu Special Region],Bokeo,,,17004,District,,,#N/A,,BokeoLaos,county,2,LA-BK,ເມືອງເມິງ,,,,,,,,,,,,region,1,LA-BK,ບໍ່ແກ້ວ,NONE,0.0,LA-BK
+Laos,Khamkheuth,Borikhamxay [Bolikhamsai],,,71209,District,,,#N/A,,Borikhamxay [Bolikhamsai]Laos,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,"Borikhanh [Borikhane, Bolikanh]",Borikhamxay [Bolikhamsai],,,57959,District,,,#N/A,,Borikhamxay [Bolikhamsai]Laos,county,2,LA-BL,ເມືອງບໍລິຄັນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Pakkading,Borikhamxay [Bolikhamsai],,,57824,District,,,#N/A,,Borikhamxay [Bolikhamsai]Laos,county,2,LA-BL,ເມືອງປາກກະດິງ,,,,county,2,LA-BL,ເມືອງປາກກະດິງ,,,,,region,1,LA-BL,ບໍລິຄຳໄຊ,HIGH,1.0,LA-BL
+Laos,Pakxane [Paksane],Borikhamxay [Bolikhamsai],,,51078,District,,,#N/A,,Borikhamxay [Bolikhamsai]Laos,county,2,LA-BL,ເມືອງປາກຊັນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Viengthong,Borikhamxay [Bolikhamsai],,,35122,District,,,#N/A,,Borikhamxay [Bolikhamsai]Laos,county,2,LA-BL,ເມືອງວຽງທອງ,,,,county,2,LA-BL,ເມືອງວຽງທອງ,,,,,region,1,LA-BL,ບໍລິຄຳໄຊ,HIGH,1.0,LA-BL
+Laos,Thaphabath,Borikhamxay [Bolikhamsai],,,28699,District,,,#N/A,,Borikhamxay [Bolikhamsai]Laos,county,2,LA-BL,ເມືອງທ່າພະບາດ,,,,county,2,LA-BL,ເມືອງທ່າພະບາດ,,,,,region,1,LA-BL,ບໍລິຄຳໄຊ,HIGH,1.0,LA-BL
+Laos,Xaychomphone,Borikhamxay [Bolikhamsai],,,13066,District,,,#N/A,,Borikhamxay [Bolikhamsai]Laos,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Pakxe [Pakse],Champasack [Champasak],,,80944,District,Pakse,,Pakse,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງປາກເຊ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Khong,Champasack [Champasak],,,100537,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງໂຂງ,,,,county,2,LA-CH,ເມືອງໂຂງ,,,,,region,1,LA-CH,ຈຳປາສັກ,HIGH,1.0,LA-CH
+Laos,Phonthong,Champasack [Champasak],,,100291,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງໂພນທອງ,,,,county,2,LA-LP,ເມືອງໂພນທອງ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Pakxong [Paksong],Champasack [Champasak],,,93084,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງປາກຊ່ອງ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Sanasomboon [Sanasomboune],Champasack [Champasak],,,71834,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງຊະນະສົມບູນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Pathoomphone,Champasack [Champasak],,,68108,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງປະທຸມພອນ,,,,county,2,LA-CH,ເມືອງປະທຸມພອນ,,,,,region,1,LA-CH,ຈຳປາສັກ,HIGH,1.0,LA-CH
+Laos,Champasack,Champasack [Champasak],,,66978,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງຈຳປາສັກ,,,,region,1,LA-CH,ຈຳປາສັກ,,,,,region,1,LA-CH,ຈຳປາສັກ,HIGH,1.0,LA-CH
+Laos,Sukhuma [Soukhoumma],Champasack [Champasak],,,63733,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງສຸຂຸມາ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Bachiangchaleunsook,Champasack [Champasak],,,63586,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງບາຈຽງຈະເລີນສຸກ,,,,county,2,LA-CH,ເມືອງບາຈຽງຈະເລີນສຸກ,,,,,region,1,LA-CH,ຈຳປາສັກ,HIGH,1.0,LA-CH
+Laos,Moonlapamok,Champasack [Champasak],,,43588,District,,,#N/A,,Champasack [Champasak]Laos,county,2,LA-CH,ເມືອງມູນລະປະໂມກ,,,,county,2,LA-CH,ເມືອງມູນລະປະໂມກ,,,,,region,1,LA-CH,ຈຳປາສັກ,HIGH,1.0,LA-CH
+Laos,Xamneua,Huaphanh [Houaphan],,,61654,District,,,#N/A,,Huaphanh [Houaphan]Laos,county,2,LA-HO,ຊຳເໜືອ,,,,county,2,LA-HO,ຊຳເໜືອ,,,,,region,1,LA-HO,ຫົວພັນ,HIGH,1.0,LA-HO
+Laos,Xamtay [Samtay],Huaphanh [Houaphan],,,39698,District,,,#N/A,,Huaphanh [Houaphan]Laos,county,2,LA-HO,ຊຳໃຕ້,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Houameuang,Huaphanh [Houaphan],,,35215,District,,,#N/A,,Huaphanh [Houaphan]Laos,county,2,LA-HO,ຫົວເມືອງ,,,,county,2,LA-HO,ຫົວເມືອງ,,,,,region,1,LA-HO,ຫົວພັນ,HIGH,1.0,LA-HO
+Laos,Viengxay,Huaphanh [Houaphan],,,33251,District,,,#N/A,,Huaphanh [Houaphan]Laos,county,2,LA-HO,ວຽງໄຊ,,,,county,2,LA-HO,ວຽງໄຊ,,,,,region,1,LA-HO,ຫົວພັນ,HIGH,1.0,LA-HO
+Laos,Et,Huaphanh [Houaphan],,,28481,District,,,#N/A,,Huaphanh [Houaphan]Laos,county,2,LA-HO,ເມືອງແອດ,,,,county,2,LA-HO,ເມືອງແອດ,,,,,region,1,LA-HO,ຫົວພັນ,HIGH,1.0,LA-HO
+Laos,Kuan,Huaphanh [Houaphan],,,27404,District,,,#N/A,,Huaphanh [Houaphan]Laos,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Xiengkhor,Huaphanh [Houaphan],,,27180,District,,,#N/A,,Huaphanh [Houaphan]Laos,county,2,LA-HO,ຊຽງຄໍ້,,,,county,2,LA-HO,ຊຽງຄໍ້,,,,,region,1,LA-HO,ຫົວພັນ,HIGH,1.0,LA-HO
+Laos,Sopbao,Huaphanh [Houaphan],,,27075,District,,,#N/A,,Huaphanh [Houaphan]Laos,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Xon [Sone],Huaphanh [Houaphan],,,17814,District,,,#N/A,,Huaphanh [Houaphan]Laos,county,2,LA-HO,ຊ່ອນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Hiem [Viangthong],Huaphanh [Houaphan],,,13207,District,,,#N/A,,Huaphanh [Houaphan]Laos,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Thakhek,Khammuane [Khammouan],,,97542,District,Luang Prabang,,Luang Prabang,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງທ່າແຂກ,,,,county,2,LA-KH,ເມືອງທ່າແຂກ,,,,,region,1,LA-KH,ຄໍາມ່ວນ,HIGH,1.0,LA-KH
+Laos,Hineboune [Hinboon],Khammuane [Khammouan],,,55036,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງຫີນບູນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Nongbok,Khammuane [Khammouan],,,50799,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງໜອງບົກ,,,,county,2,LA-KH,ເມືອງໜອງບົກ,,,,,region,1,LA-KH,ຄໍາມ່ວນ,HIGH,1.0,LA-KH
+Laos,Mahaxay,Khammuane [Khammouan],,,40983,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງມະຫາໄຊ,,,,county,2,LA-KH,ເມືອງມະຫາໄຊ,,,,,region,1,LA-KH,ຄໍາມ່ວນ,HIGH,1.0,LA-KH
+Laos,Nhommalath [Yommalath],Khammuane [Khammouan],,,37187,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງຍົມມະລາດ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Boualapha,Khammuane [Khammouan],,,37023,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງບົວລະພາ,,,,county,2,LA-KH,ເມືອງບົວລະພາ,,,,,region,1,LA-KH,ຄໍາມ່ວນ,HIGH,1.0,LA-KH
+Laos,Xebangfay [Sebangphay],Khammuane [Khammouan],,,31532,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງເຊບັ້ງໄຟ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Xaybuathong [Saybouathong],Khammuane [Khammouan],,,29614,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ເມືອງໄຊບົວທອງ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Nakay,Khammuane [Khammouan],,,28992,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-KH,ມືອງນາກາຍ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Khounkham,Khammuane [Khammouan],,,24862,District,,,#N/A,,Khammuane [Khammouan]Laos,county,2,LA-XI,ເມືອງຄູນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Namtha,Luangnamtha,,,60870,District,,,#N/A,,LuangnamthaLaos,county,2,LA-LM,ເມືອງຫຼວງນໍ້າທາ,,,,county,2,LA-LM,ເມືອງຫຼວງນໍ້າທາ,,,,,region,1,LA-LM,ຫລວງນໍ້າທາ,HIGH,1.0,LA-LM
+Laos,Sing,Luangnamtha,,,44660,District,,,#N/A,,LuangnamthaLaos,county,2,LA-LM,ເມືອງສີງ,,,,county,2,LA-LM,ເມືອງສີງ,,,,,region,1,LA-LM,ຫລວງນໍ້າທາ,HIGH,1.0,LA-LM
+Laos,Long,Luangnamtha,,,40124,District,,,#N/A,,LuangnamthaLaos,county,2,LA-LM,ເມືອງລອງ,,,,county,2,LA-LM,ເມືອງລອງ,,,,,region,1,LA-LM,ຫລວງນໍ້າທາ,HIGH,1.0,LA-LM
+Laos,Viengphoukha,Luangnamtha,,,27366,District,,,#N/A,,LuangnamthaLaos,county,2,LA-LM,ເມືອງວຽງພູຄາ,,,,county,2,LA-LM,ເມືອງວຽງພູຄາ,,,,,region,1,LA-LM,ຫລວງນໍ້າທາ,HIGH,1.0,LA-LM
+Laos,Nalae [Na Le],Luangnamtha,,,26071,District,,,#N/A,,LuangnamthaLaos,county,2,LA-LM,ເມືອງນາແລ,,,,,,,,,,,,region,1,LA-LM,ຫລວງນໍ້າທາ,NONE,0.0,LA-LM
+Laos,Luangprabang,Luangprabang,,,98080,District,,,#N/A,,LuangprabangLaos,,,,,,,,region,1,LA-LP,ຫລວງພະບາງ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Nambak,Luangprabang,,,75742,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງນ້ຳບາກ,,,,county,2,LA-LP,ເມືອງນ້ຳບາກ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Phonxay,Luangprabang,,,35763,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງໂພນໄຊ,,,,county,2,LA-LP,ເມືອງໂພນໄຊ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Xiengngeun,Luangprabang,,,35487,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງຊຽງເງິນ,,,,county,2,LA-LP,ເມືອງຊຽງເງິນ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Chomphet,Luangprabang,,,32260,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງຈອມເພັດ,,,,county,2,LA-LP,ເມືອງຈອມເພັດ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Ngoy,Luangprabang,,,31077,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງງອຍ,,,,county,2,LA-LP,ເມືອງງອຍ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Viengkham,Luangprabang,,,30116,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງວຽງຄຳ,,,,county,2,LA-LP,ເມືອງວຽງຄຳ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Nan [Nane],Luangprabang,,,29630,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງນານ,,,,,,,,,,,,region,1,LA-LP,ຫລວງພະບາງ,NONE,0.0,LA-LP
+Laos,Pak Ou,Luangprabang,,,28066,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງປາກອ,,,,county,2,LA-LP,ເມືອງປາກອ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Phoukhoune,Luangprabang,,,26190,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງພູຄູນ,,,,county,2,LA-LP,ເມືອງພູຄູນ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Pak Xeng [Pak Seng],Luangprabang,,,23248,District,,,#N/A,,LuangprabangLaos,county,2,LA-LP,ເມືອງປາກແຊງ,,,,,,,,,,,,region,1,LA-LP,ຫລວງພະບາງ,NONE,0.0,LA-LP
+Laos,Phonthong,Luangprabang,,,21498,District,,,#N/A,,LuangprabangLaos,county,2,LA-CH,ເມືອງໂພນທອງ,,,,county,2,LA-LP,ເມືອງໂພນທອງ,,,,,region,1,LA-LP,ຫລວງພະບາງ,HIGH,1.0,LA-LP
+Laos,Xaythany,Nakhon Luang Viengchan [Vientiane Capital City],,,234938,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,county,2,LA-VT,ເມືອງໄຊທານີ,,,,,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,HIGH,1.0,LA-VT
+Laos,Sikhottabong,Nakhon Luang Viengchan [Vientiane Capital City],,,138655,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,county,2,LA-VT,ສີໂຄດຕະບອງ,,,,,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,HIGH,1.0,LA-VT
+Laos,Xaysetha [Saysetha],Nakhon Luang Viengchan [Vientiane Capital City],,,135209,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Hadxaifong,Nakhon Luang Viengchan [Vientiane Capital City],,,111044,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Naxaithong,Nakhon Luang Viengchan [Vientiane Capital City],,,88298,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,county,2,LA-VT,ເມືອງນາຊາຍທອງ,,,,,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,HIGH,1.0,LA-VT
+Laos,Chanthabuly [Khanthaboury],Nakhon Luang Viengchan [Vientiane Capital City],,,77256,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Sisattanak,Nakhon Luang Viengchan [Vientiane Capital City],,,73610,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,county,2,LA-VT,Sisattanāk,,,,,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,HIGH,1.0,LA-VT
+Laos,Mayparkngeum,Nakhon Luang Viengchan [Vientiane Capital City],,,55412,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Sangthong,Nakhon Luang Viengchan [Vientiane Capital City],,,34024,District,Vientiane,,Vientiane,,Nakhon Luang Viengchan [Vientiane Capital City]Laos,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,,,,county,2,LA-VT,ເມືອງສັງທອງ,,,,,region,1,LA-VT,ນະຄອນຫຼວງວຽງຈັນ,HIGH,1.0,LA-VT
+Laos,Xay,Oudomxay [Oudomxai],,,88121,District,,,#N/A,,Oudomxay [Oudomxai]Laos,county,2,LA-OU,ເມືອງໄຊ,,,,county,2,LA-OU,ເມືອງໄຊ,,,,,region,1,LA-OU,ອຸດົມໄຊ,HIGH,1.0,LA-OU
+Laos,Houne,Oudomxay [Oudomxai],,,83734,District,,,#N/A,,Oudomxay [Oudomxai]Laos,county,2,LA-OU,ເມືອງຮຸນ,,,,county,2,LA-OU,ເມືອງຮຸນ,,,,,region,1,LA-OU,ອຸດົມໄຊ,HIGH,1.0,LA-OU
+Laos,Namor [Namo],Oudomxay [Oudomxai],,,44141,District,,,#N/A,,Oudomxay [Oudomxai]Laos,county,2,LA-OU,ເມືອງນາໝ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Beng,Oudomxay [Oudomxai],,,41662,District,,,#N/A,,Oudomxay [Oudomxai]Laos,county,2,LA-OU,ເມືອງແບ່ງ,,,,county,2,LA-OU,ເມືອງແບ່ງ,,,,,region,1,LA-OU,ອຸດົມໄຊ,HIGH,1.0,LA-OU
+Laos,Nga,Oudomxay [Oudomxai],,,35893,District,,,#N/A,,Oudomxay [Oudomxai]Laos,county,2,LA-OU,ເມືອງງາ,,,,county,2,LA-OU,ເມືອງງາ,,,,,region,1,LA-OU,ອຸດົມໄຊ,HIGH,1.0,LA-OU
+Laos,Pakbeng,Oudomxay [Oudomxai],,,33072,District,,,#N/A,,Oudomxay [Oudomxai]Laos,county,2,LA-OU,ເມືອງປາກແບ່ງ,,,,county,2,LA-OU,ເມືອງປາກແບ່ງ,,,,,region,1,LA-OU,ອຸດົມໄຊ,HIGH,1.0,LA-OU
+Laos,La,Oudomxay [Oudomxai],,,18801,District,,,#N/A,,Oudomxay [Oudomxai]Laos,,,,,,,,county,2,LA-OU,ເມືອງຫຼາ,,,,,region,1,LA-OU,ອຸດົມໄຊ,HIGH,1.0,LA-OU
+Laos,Nhot Ou [Yot Ou],Phongsaly [Phongsali],,,33303,District,,,#N/A,,Phongsaly [Phongsali]Laos,county,2,LA-PH,ເມືອງຍອດອ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,May,Phongsaly [Phongsali],,,28932,District,,,#N/A,,Phongsaly [Phongsali]Laos,county,2,LA-PH,ເມືອງໃໝ,,,,county,2,LA-PH,ເມືອງໃໝ,,,,,region,1,LA-PH,ຜົ້ງສາລີ,HIGH,1.0,LA-PH
+Laos,Boun Tay,Phongsaly [Phongsali],,,28310,District,,,#N/A,,Phongsaly [Phongsali]Laos,county,2,LA-PH,ເມືອງບຸນໃຕ້,,,,county,2,LA-PH,ເມືອງບຸນໃຕ້,,,,,region,1,LA-PH,ຜົ້ງສາລີ,HIGH,1.0,LA-PH
+Laos,Khoua,Phongsaly [Phongsali],,,27421,District,,,#N/A,,Phongsaly [Phongsali]Laos,county,2,LA-PH,ເມືອງຂວາ,,,,county,2,LA-PH,ເມືອງຂວາ,,,,,region,1,LA-PH,ຜົ້ງສາລີ,HIGH,1.0,LA-PH
+Laos,Samphanh,Phongsaly [Phongsali],,,26133,District,,,#N/A,,Phongsaly [Phongsali]Laos,county,2,LA-PH,ເມືອງສຳພັນ,,,,county,2,LA-PH,ເມືອງສຳພັນ,,,,,region,1,LA-PH,ຜົ້ງສາລີ,HIGH,1.0,LA-PH
+Laos,Boun Neua,Phongsaly [Phongsali],,,25018,District,,,#N/A,,Phongsaly [Phongsali]Laos,county,2,LA-PH,ເມືອງບຸນເໜືອ,,,,county,2,LA-PH,ເມືອງບຸນເໜືອ,,,,,region,1,LA-PH,ຜົ້ງສາລີ,HIGH,1.0,LA-PH
+Laos,Phongsaly,Phongsaly [Phongsali],,,24032,District,,,#N/A,,Phongsaly [Phongsali]Laos,county,2,LA-PH,ເມືອງຜົ້ງສາລ,,,,region,1,LA-PH,ຜົ້ງສາລີ,,,,,region,1,LA-PH,ຜົ້ງສາລີ,HIGH,1.0,LA-PH
+Laos,Saravane,Saravane [Salavan],,,111474,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງສາລະວັນ,,,,region,1,LA-SL,ສາລະວັນ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Lao Ngam,Saravane [Salavan],,,79978,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງເລົ່າງາມ,,,,county,2,LA-SL,ເມືອງເລົ່າງາມ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Khongxedone,Saravane [Salavan],,,67444,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງຄົງເຊໂດນ,,,,county,2,LA-SL,ເມືອງຄົງເຊໂດນ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Lakhonepheng,Saravane [Salavan],,,52934,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງລະຄອນເພັງ,,,,county,2,LA-SL,ເມືອງລະຄອນເພັງ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Vapy,Saravane [Salavan],,,40939,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງວາປີ,,,,county,2,LA-SL,ເມືອງວາປີ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Ta Oy,Saravane [Salavan],,,37658,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງຕະໂອ້ຍ,,,,county,2,LA-SL,ເມືອງຕະໂອ້ຍ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Toumlane,Saravane [Salavan],,,32827,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງຕຸ້ມລານ,,,,county,2,LA-SL,ເມືອງຕຸ້ມລານ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Sa Mouay,Saravane [Salavan],,,18976,District,,,#N/A,,Saravane [Salavan]Laos,county,2,LA-SL,ເມືອງສະມ້ວຍ,,,,county,2,LA-SL,ເມືອງສະມ້ວຍ,,,,,region,1,LA-SL,ສາລະວັນ,HIGH,1.0,LA-SL
+Laos,Kaysone Phomvihane [Savannakhet],Savannakhet,,,136583,District,Savannakhet,,Savannakhet,,SavannakhetLaos,county,2,LA-SV,ເມືອງຊົນນະບູລ,,,,,,,,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,NONE,0.0,LA-SV
+Laos,Champhone,Savannakhet,,,116656,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງຈຳພອນ,,,,county,2,LA-SV,ເມືອງຈຳພອນ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Songkhone,Savannakhet,,,108140,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງສອງຄອນ,,,,county,2,LA-SV,ເມືອງສອງຄອນ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Outhoumphone,Savannakhet,,,100061,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງອຸທຸມພອນ,,,,county,2,LA-SV,ເມືອງອຸທຸມພອນ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Phine,Savannakhet,,,74792,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງພີນ,,,,county,2,LA-SV,ເມືອງພີນ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Xonbuly [Xonboury],Savannakhet,,,65946,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງຊົນນະບູລີ,,,,,,,,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,NONE,0.0,LA-SV
+Laos,Xaybuly [Xayboury],Savannakhet,,,65738,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງໄຊບູລີ,,,,,,,,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,NONE,0.0,LA-SV
+Laos,Seponh [Xepon],Savannakhet,,,65147,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງເຊໂປນ,,,,,,,,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,NONE,0.0,LA-SV
+Laos,Assaphone,Savannakhet,,,64722,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງອາດສະພອນ,,,,county,2,LA-SV,ເມືອງອາດສະພອນ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Xayphouthong,Savannakhet,,,50644,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງໄຊພູທອງ,,,,,,,,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,NONE,0.0,LA-SV
+Laos,Atsaphangthong,Savannakhet,,,50210,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງອາດສະພັງທອງ,,,,county,2,LA-SV,ເມືອງອາດສະພັງທອງ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Thapangthong,Savannakhet,,,46941,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງທ່າປາງທອງ,,,,county,2,LA-SV,ເມືອງທ່າປາງທອງ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Phalanxay,Savannakhet,,,45375,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງພະລານໄຊ,,,,,,,,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,NONE,0.0,LA-SV
+Laos,Vilabuly [Viraboury],Savannakhet,,,44714,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງວີລະບຸລີ,,,,,,,,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,NONE,0.0,LA-SV
+Laos,Nong,Savannakhet,,,34362,District,,,#N/A,,SavannakhetLaos,county,2,LA-SV,ເມືອງນອງ,,,,county,2,LA-SV,ເມືອງນອງ,,,,,region,1,LA-SV,ສະຫວັນນະເຂດ,HIGH,1.0,LA-SV
+Laos,Thateng,Sekong,,,43306,District,,,#N/A,,SekongLaos,,,,,,,,,,,,,,,,region,1,LA-XE,ເຊກອງ,NONE,0.0,LA-XE
+Laos,Lam Mam,Sekong,,,39354,District,,,#N/A,,SekongLaos,county,2,LA-XE,ເມືອງລະມາມ,,,,county,2,LA-XE,ເມືອງລະມາມ,,,,,region,1,LA-XE,ເຊກອງ,HIGH,1.0,LA-XE
+Laos,Dakcheung,Sekong,,,26499,District,,,#N/A,,SekongLaos,,,,,,,,,,,,,,,,region,1,LA-XE,ເຊກອງ,NONE,0.0,LA-XE
+Laos,Kaleum,Sekong,,,20240,District,,,#N/A,,SekongLaos,county,2,LA-XE,ເມືອງກະລຶມ,,,,county,2,LA-XE,ເມືອງກະລຶມ,,,,,region,1,LA-XE,ເຊກອງ,HIGH,1.0,LA-XE
+Laos,Phonhong,Viengchan [Vientiane],,,70843,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ໂພນໂຮງ,,,,county,2,LA-VI,ໂພນໂຮງ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Vangvieng,Viengchan [Vientiane],,,61314,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ວັງວຽງ,,,,county,2,LA-VI,ວັງວຽງ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Thoulakhom,Viengchan [Vientiane],,,57791,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ທຸລະຄົມ,,,,county,2,LA-VI,ທຸລະຄົມ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Meun,Viengchan [Vientiane],,,46652,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ໝື່ນ,,,,county,2,LA-VI,ໝື່ນ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Feuang,Viengchan [Vientiane],,,46196,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ເຟືອງ,,,,county,2,LA-VI,ເຟືອງ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Xanakharm,Viengchan [Vientiane],,,43502,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ຊະນະຄາມ,,,,county,2,LA-VI,ຊະນະຄາມ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Kasy,Viengchan [Vientiane],,,41528,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ກາສີ,,,,county,2,LA-VI,ກາສີ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Hinhurp,Viengchan [Vientiane],,,32288,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ຫີນເຫີບ,,,,county,2,LA-VI,ຫີນເຫີບ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Mad,Viengchan [Vientiane],,,23085,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-VI,ແມດ,,,,county,2,LA-VI,ແມດ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Viengkham,Viengchan [Vientiane],,,19959,District,,,#N/A,,Viengchan [Vientiane]Laos,county,2,LA-LP,ເມືອງວຽງຄຳ,,,,county,2,LA-VI,ວຽງຄຳ,,,,,region,1,LA-VI,ວຽງຈັນ,HIGH,1.0,LA-VI
+Laos,Keooudom,Viengchan [Vientiane],,,18981,District,,,#N/A,,Viengchan [Vientiane]Laos,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Anouvong [Xaisomboun],Xaisomboun [Saysomboun],,,29733,District,,,#N/A,,Xaisomboun [Saysomboun]Laos,county,2,LA-XS,ອະນຸວົງ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Longxan [Longsan],Xaisomboun [Saysomboun],,,28359,District,,,#N/A,,Xaisomboun [Saysomboun]Laos,county,2,LA-XS,ລ້ອງຊານ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Thathom,Xaisomboun [Saysomboun],,,24584,District,,,#N/A,,Xaisomboun [Saysomboun]Laos,county,2,LA-XS,ເມືອງທ່າໂທມ,,,,county,2,LA-XS,ເມືອງທ່າໂທມ,,,,,region,1,LA-XS,ໄຊສົມບູນ,HIGH,1.0,LA-XS
+Laos,Hom,Xaisomboun [Saysomboun],,,13541,District,,,#N/A,,Xaisomboun [Saysomboun]Laos,county,2,LA-XS,ຮົ່ມ,,,,county,2,LA-XS,ຮົ່ມ,,,,,region,1,LA-XS,ໄຊສົມບູນ,HIGH,1.0,LA-XS
+Laos,Longchaeng,Xaisomboun [Saysomboun],,,11710,District,,,#N/A,,Xaisomboun [Saysomboun]Laos,county,2,LA-XS,ລ້ອງແຈ້ງ,,,,county,2,LA-XS,ລ້ອງແຈ້ງ,,,,,region,1,LA-XS,ໄຊສົມບູນ,HIGH,1.0,LA-XS
+Laos,Xayabury [Sainyabuli],Xayabury [Sainyabuli],,,85468,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງໄຊຍະບູລ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Parklai [Paklay],Xayabury [Sainyabuli],,,74834,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງປາກລາຍ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Phiang,Xayabury [Sainyabuli],,,64715,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງພຽງ,,,,county,2,LA-XA,ເມືອງພຽງ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Kenethao,Xayabury [Sainyabuli],,,42930,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງແກ່ນທ້າວ,,,,county,2,LA-XA,ເມືອງແກ່ນທ້າວ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Xienghone,Xayabury [Sainyabuli],,,36653,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງຊຽງຮ່ອນ,,,,county,2,LA-XA,ເມືອງຊຽງຮ່ອນ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Hongsa,Xayabury [Sainyabuli],,,30730,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງຫົງສາ,,,,county,2,LA-XA,ເມືອງຫົງສາ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Khop,Xayabury [Sainyabuli],,,23726,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງຄອບ,,,,county,2,LA-XA,ເມືອງຄອບ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Ngeun,Xayabury [Sainyabuli],,,20287,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງເງິນ,,,,county,2,LA-XA,ເມືອງເງິນ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Botene,Xayabury [Sainyabuli],,,17801,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງບໍ່ແຕນ,,,,county,2,LA-XA,ເມືອງບໍ່ແຕນ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Xaisathan,Xayabury [Sainyabuli],,,17106,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງໄຊສະຖານ,,,,county,2,LA-XA,ເມືອງໄຊສະຖານ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Thongmyxay,Xayabury [Sainyabuli],,,9242,District,,,#N/A,,Xayabury [Sainyabuli]Laos,county,2,LA-XA,ເມືອງທົ່ງມີໄຊ,,,,county,2,LA-XA,ເມືອງທົ່ງມີໄຊ,,,,,region,1,LA-XA,ໄຊຍະບູລີ,HIGH,1.0,LA-XA
+Laos,Pek,Xiengkhuang [Xiangkhouang],,,83006,District,,,#N/A,,Xiengkhuang [Xiangkhouang]Laos,county,2,LA-XI,ເມືອງແປກ,,,,county,2,LA-XI,ເມືອງແປກ,,,,,region,1,LA-XI,ຊຽງຂວາງ,HIGH,1.0,LA-XI
+Laos,Kham,Xiengkhuang [Xiangkhouang],,,51087,District,,,#N/A,,Xiengkhuang [Xiangkhouang]Laos,county,2,LA-XI,ເມືອງຄຳ,,,,county,2,LA-XI,ເມືອງຄຳ,,,,,region,1,LA-XI,ຊຽງຂວາງ,HIGH,1.0,LA-XI
+Laos,Nonghet,Xiengkhuang [Xiangkhouang],,,41002,District,,,#N/A,,Xiengkhuang [Xiangkhouang]Laos,county,2,LA-SV,ເມືອງນອງ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Khoune,Xiengkhuang [Xiangkhouang],,,36574,District,,,#N/A,,Xiengkhuang [Xiangkhouang]Laos,county,2,LA-XI,ເມືອງຄູນ,,,,county,2,LA-XI,ເມືອງຄູນ,,,,,region,1,LA-XI,ຊຽງຂວາງ,HIGH,1.0,LA-XI
+Laos,Phoukout,Xiengkhuang [Xiangkhouang],,,26446,District,,,#N/A,,Xiengkhuang [Xiangkhouang]Laos,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Morkmay [Mok May],Xiengkhuang [Xiangkhouang],,,16277,District,,,#N/A,,Xiengkhuang [Xiangkhouang]Laos,county,2,LA-XI,ເມືອງທ່າໂທມ,,,,,,,,,,,,,,,,NONE,0.0,
+Laos,Phaxay,Xiengkhuang [Xiangkhouang],,,12790,District,,,#N/A,,Xiengkhuang [Xiangkhouang]Laos,county,2,LA-XI,ເມືອງຜາໄຊ,,,,county,2,LA-XI,ເມືອງຜາໄຊ,,,,,region,1,LA-XI,ຊຽງຂວາງ,HIGH,1.0,LA-XI

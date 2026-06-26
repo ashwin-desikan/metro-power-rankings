@@ -1,0 +1,117 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Tahiti,Moerai,Austral Islands,,,1101,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Moerai,,,,locality,,nan,Moerai,,,,,,,,,HIGH,1.0,nan
+Tahiti,Mataura,Austral Islands,,,970,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Mataura,,,,locality,,nan,Mataura,,,,,,,,,HIGH,1.0,nan
+Tahiti,Avera,Austral Islands,,,919,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Avera,,,,locality,,nan,Avera,,,,,,,,,HIGH,1.0,nan
+Tahiti,Taahuaia,Austral Islands,,,645,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Taahuaia,,,,locality,,nan,Taahuaia,,,,,,,,,HIGH,1.0,nan
+Tahiti,Mahu,Austral Islands,,,602,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Mahu,,,,locality,,nan,Mahu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Rapa,Austral Islands,,,507,Place,,,#N/A,,Austral IslandsTahiti,,,,,,,,county,3,nan,Rapa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Rairua-Mahanatoa,Austral Islands,,,468,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Rairua-Mahatanoa,,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Hauti,Austral Islands,,,446,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Hauti,,,,locality,,nan,Hauti,,,,,,,,,HIGH,1.0,nan
+Tahiti,Mutuaura,Austral Islands,,,315,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Mutuaura,,,,locality,,nan,Mutuaura,,,,,,,,,HIGH,1.0,nan
+Tahiti,Amaru,Austral Islands,,,289,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Amaru,,,,locality,,nan,Amaru,,,,,,,,,HIGH,1.0,nan
+Tahiti,Anapoto,Austral Islands,,,268,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Anapoto,,,,locality,,nan,Anapoto,,,,,,,,,HIGH,1.0,nan
+Tahiti,Anatonu,Austral Islands,,,237,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Anatonu,,,,locality,,nan,Anatonu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Vaiuru,Austral Islands,,,198,Place,,,#N/A,,Austral IslandsTahiti,locality,,,Vaiuru,,,,locality,,nan,Vaiuru,,,,,,,,,HIGH,1.0,nan
+Tahiti,Nunue,Leeward Islands,,,5614,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Nunue,,,,locality,,nan,Nunue,,,,,,,,,HIGH,1.0,nan
+Tahiti,Uturoa,Leeward Islands,,,3736,Place,Papeete,,Papeete,,Leeward IslandsTahiti,,,,,x,,,county,3,nan,Uturoa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Avera,Leeward Islands,,,3265,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Avera,,,,locality,,nan,Avera,,,,,,,,,HIGH,1.0,nan
+Tahiti,Faanui,Leeward Islands,,,2962,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Faanui,,,,locality,,nan,Faanui,,,,,,,,,HIGH,1.0,nan
+Tahiti,Anau,Leeward Islands,,,1973,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Anau,,,,locality,,nan,Anau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tevaitoa,Leeward Islands,,,1939,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Tevaitoa,,,,locality,,nan,Tevaitoa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Fare,Leeward Islands,,,1562,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Fare,,,,locality,,nan,Fare,,,,,,,,,HIGH,1.0,nan
+Tahiti,Maupiti,Leeward Islands,,,1286,Place,Papeete,,Papeete,,Leeward IslandsTahiti,,,,,x,,,county,3,nan,Maupiti,,,,,,,,,HIGH,1.0,nan
+Tahiti,Iripau,Leeward Islands,,,1242,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Iripau,,,,locality,,nan,Iripau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Opoa,Leeward Islands,,,1183,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Opoa,,,,locality,,nan,Opoa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Fitii,Leeward Islands,,,1049,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Fitii,,,,locality,,nan,Fitii,,,,,,,,,HIGH,1.0,nan
+Tahiti,Maeva,Leeward Islands,,,934,Place,Papeete,,Papeete,,Leeward IslandsTahiti,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Haamene,Leeward Islands,,,908,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Haamene,,,,locality,,nan,Haamene,,,,,,,,,HIGH,1.0,nan
+Tahiti,Vaiaau,Leeward Islands,,,837,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Vaiaau,,,,locality,,nan,Vaiaau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tapuamu,Leeward Islands,,,653,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Tapuamu,,,,locality,,nan,Tapuamu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Haapu,Leeward Islands,,,637,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Haapu,,,,locality,,nan,Haapu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Maroe,Leeward Islands,,,576,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Maroe,,,,locality,,nan,Maroe,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tehurui,Leeward Islands,,,555,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Tehurui,,,,locality,,nan,Tehurui,,,,,,,,,HIGH,1.0,nan
+Tahiti,Ruutia,Leeward Islands,,,548,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Ruutia,,,,locality,,nan,Ruutia,,,,,,,,,HIGH,1.0,nan
+Tahiti,Niua,Leeward Islands,,,542,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Niua,,,,locality,,nan,Niua,,,,,,,,,HIGH,1.0,nan
+Tahiti,Parea,Leeward Islands,,,492,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Parea,,,,locality,,nan,Parea,,,,,,,,,HIGH,1.0,nan
+Tahiti,Vaitoare,Leeward Islands,,,485,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Vaitoare,,,,locality,,nan,Vaitoare,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tefarerii,Leeward Islands,,,438,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Tefarerii,,,,locality,,nan,Tefarerii,,,,,,,,,HIGH,1.0,nan
+Tahiti,Faaaha,Leeward Islands,,,428,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Faaaha,,,,locality,,nan,Faaaha,,,,,,,,,HIGH,1.0,nan
+Tahiti,Hipu,Leeward Islands,,,428,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Hipu,,,,locality,,nan,Hipu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Fetuna,Leeward Islands,,,390,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Fetuna,,,,locality,,nan,Fetuna,,,,,,,,,HIGH,1.0,nan
+Tahiti,Faie,Leeward Islands,,,387,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Faie,,,,locality,,nan,Faie,,,,,,,,,HIGH,1.0,nan
+Tahiti,Puohine,Leeward Islands,,,344,Place,Papeete,,Papeete,,Leeward IslandsTahiti,locality,,,Puohine,,,,locality,,nan,Puohine,,,,,,,,,HIGH,1.0,nan
+Tahiti,Taiohae,Marquesas Islands,,,2183,Place,,,#N/A,,Marquesas IslandsTahiti,locality,,,Taiohae,,,,locality,,nan,Taiohae,,,,,,,,,HIGH,1.0,nan
+Tahiti,Atuona,Marquesas Islands,,,1934,Place,,,#N/A,,Marquesas IslandsTahiti,locality,,,Atuona,,,,locality,,nan,Atuona,,,,,,,,,HIGH,1.0,nan
+Tahiti,Hakahau,Marquesas Islands,,,1683,Place,,,#N/A,,Marquesas IslandsTahiti,locality,,,Hakahau,,,,locality,,nan,Hakahau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Ua Huka,Marquesas Islands,,,674,Place,,,#N/A,,Marquesas IslandsTahiti,,,,,,,,county,3,nan,Ua Huka,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tahuata,Marquesas Islands,,,653,Place,,,#N/A,,Marquesas IslandsTahiti,,,,,,,,county,3,nan,Tahuata,,,,,,,,,HIGH,1.0,nan
+Tahiti,Fatu-Hiva,Marquesas Islands,,,612,Place,,,#N/A,,Marquesas IslandsTahiti,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Hakamaii,Marquesas Islands,,,530,Place,,,#N/A,,Marquesas IslandsTahiti,locality,,,Hakamaii,,,,locality,,nan,Hakamaii,,,,,,,,,HIGH,1.0,nan
+Tahiti,Taipivai,Marquesas Islands,,,416,Place,,,#N/A,,Marquesas IslandsTahiti,locality,,,Taipivai,,,,locality,,nan,Taipivai,,,,,,,,,HIGH,1.0,nan
+Tahiti,Hatiheu,Marquesas Islands,,,352,Place,,,#N/A,,Marquesas IslandsTahiti,locality,,,Hatiheu,,,,locality,,nan,Hatiheu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Puamau,Marquesas Islands,,,309,Place,,,#N/A,,Marquesas IslandsTahiti,locality,,,Puamau,,,,locality,,nan,Puamau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Rangiroa,Tuamotu et Gambier,,,2709,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Rangiroa,,,,county,3,nan,Rangiroa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Gambier,Tuamotu et Gambier,,,1535,Place,,,#N/A,,Tuamotu et GambierTahiti,,,,,,,,county,3,nan,Gambier,,,,,,,,,HIGH,1.0,nan
+Tahiti,Hao,Tuamotu et Gambier,,,1027,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Hao,,,,county,3,nan,Hao,,,,,,,,,HIGH,1.0,nan
+Tahiti,Fakarava,Tuamotu et Gambier,,,844,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Fakarava,,,,county,3,nan,Fakarava,,,,,,,,,HIGH,1.0,nan
+Tahiti,Makemo,Tuamotu et Gambier,,,825,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Makemo,,,,county,3,nan,Makemo,,,,,,,,,HIGH,1.0,nan
+Tahiti,Arutua,Tuamotu et Gambier,,,808,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Arutua,,,,county,3,nan,Arutua,,,,,,,,,HIGH,1.0,nan
+Tahiti,Takaroa,Tuamotu et Gambier,,,674,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Takaroa,,,,county,3,nan,Takaroa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Manihi,Tuamotu et Gambier,,,650,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Manihi,,,,county,3,nan,Manihi,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tikehau,Tuamotu et Gambier,,,560,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Tikehau,,,,locality,,nan,Tikehau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Kauehi,Tuamotu et Gambier,,,547,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Kauehi,,,,locality,,nan,Kauehi,,,,,,,,,HIGH,1.0,nan
+Tahiti,Takapoto,Tuamotu et Gambier,,,501,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Takapoto,,,,locality,,nan,Takapoto,,,,,,,,,HIGH,1.0,nan
+Tahiti,Anaa,Tuamotu et Gambier,,,494,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Anaa,,,,county,3,nan,Anaa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Ahe,Tuamotu et Gambier,,,491,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Ahe,,,,locality,,nan,Ahe,,,,,,,,,HIGH,1.0,nan
+Tahiti,Apataki,Tuamotu et Gambier,,,442,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Apataki,,,,locality,,nan,Apataki,,,,,,,,,HIGH,1.0,nan
+Tahiti,Kaukura,Tuamotu et Gambier,,,414,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Kaukura,,,,locality,,nan,Kaukura,,,,,,,,,HIGH,1.0,nan
+Tahiti,Reao,Tuamotu et Gambier,,,351,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Reao,,,,county,3,nan,Reao,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tureia,Tuamotu et Gambier,,,336,Place,,,#N/A,,Tuamotu et GambierTahiti,,,,,,,,county,3,nan,Tureia,,,,,,,,,HIGH,1.0,nan
+Tahiti,Raroia,Tuamotu et Gambier,,,326,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Raroia,,,,locality,,nan,Raroia,,,,,,,,,HIGH,1.0,nan
+Tahiti,Faaite,Tuamotu et Gambier,,,317,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Faaite,,,,locality,,nan,Faaite,,,,,,,,,HIGH,1.0,nan
+Tahiti,Mataiva,Tuamotu et Gambier,,,294,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Mataiva,,,,locality,,nan,Mataiva,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tatakoto,Tuamotu et Gambier,,,259,Place,,,#N/A,,Tuamotu et GambierTahiti,,,,,,,,county,3,nan,Tatakoto,,,,,,,,,HIGH,1.0,nan
+Tahiti,Niau,Tuamotu et Gambier,,,246,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Niau,,,,locality,,nan,Niau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Katiu,Tuamotu et Gambier,,,240,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Katiu,,,,locality,,nan,Katiu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Pukarua,Tuamotu et Gambier,,,236,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Pukarua,,,,locality,,nan,Pukarua,,,,,,,,,HIGH,1.0,nan
+Tahiti,Napuka,Tuamotu et Gambier,,,234,Place,,,#N/A,,Tuamotu et GambierTahiti,,,,,,,,county,3,nan,Napuka,,,,,,,,,HIGH,1.0,nan
+Tahiti,Hikueru,Tuamotu et Gambier,,,179,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Hikueru,,,,county,3,nan,Hikueru,,,,,,,,,HIGH,1.0,nan
+Tahiti,Nukutavake,Tuamotu et Gambier,,,177,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Nukutavake,,,,county,3,nan,Nukutavake,,,,,,,,,HIGH,1.0,nan
+Tahiti,Amanu,Tuamotu et Gambier,,,174,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Amanu,,,,locality,,nan,Amanu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Pukapuka,Tuamotu et Gambier,,,163,Place,,,#N/A,,Tuamotu et GambierTahiti,,,,,,,,county,3,nan,Pukapuka,,,,,,,,,HIGH,1.0,nan
+Tahiti,Fakahina,Tuamotu et Gambier,,,161,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Fakahina,,,,locality,,nan,Fakahina,,,,,,,,,HIGH,1.0,nan
+Tahiti,Fangatau,Tuamotu et Gambier,,,135,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Fangatau,,,,county,3,nan,Fangatau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Taenga,Tuamotu et Gambier,,,117,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Taenga,,,,locality,,nan,Taenga,,,,,,,,,HIGH,1.0,nan
+Tahiti,Marokau,Tuamotu et Gambier,,,96,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Marokau,,,,locality,,nan,Marokau,,,,,,,,,HIGH,1.0,nan
+Tahiti,Makatea,Tuamotu et Gambier,,,94,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Makatea,,,,locality,,nan,Makatea,,,,,,,,,HIGH,1.0,nan
+Tahiti,Vahitahi,Tuamotu et Gambier,,,68,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Vahitahi,,,,locality,,nan,Vahitahi,,,,,,,,,HIGH,1.0,nan
+Tahiti,Hereheretue,Tuamotu et Gambier,,,57,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Hereheretue,,,,locality,,nan,Hereheretue,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tepoto Nord,Tuamotu et Gambier,,,50,Place,,,#N/A,,Tuamotu et GambierTahiti,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Vairaatea,Tuamotu et Gambier,,,50,Place,,,#N/A,,Tuamotu et GambierTahiti,locality,,,Vairaatea,,,,locality,,nan,Vairaatea,,,,,,,,,HIGH,1.0,nan
+Tahiti,Faaa,Windward Islands,,,29506,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Faaaha,,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Punaauia,Windward Islands,,,28103,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Unaa,,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Papeete,Windward Islands,,,26926,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,county,3,nan,Papeʻete,,,,,,,,,HIGH,1.0,nan
+Tahiti,Mahina,Windward Islands,,,14763,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,county,3,nan,Māhina,,,,,,,,,HIGH,1.0,nan
+Tahiti,Pirae,Windward Islands,,,14209,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Paea,Windward Islands,,,13021,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Papara,Windward Islands,,,11680,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,county,3,nan,Papara,,,,,,,,,HIGH,1.0,nan
+Tahiti,Arue,Windward Islands,,,10243,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Afaahiti,Windward Islands,,,6163,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Afaahiti,,,,locality,,nan,Afaahiti,,,,,,,,,HIGH,1.0,nan
+Tahiti,Mataiea,Windward Islands,,,5214,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Mataiea,,,,locality,,nan,Mataiea,,,,,,,,,HIGH,1.0,nan
+Tahiti,Papeari,Windward Islands,,,5040,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Papeari,,,,locality,,nan,Papeari,,,,,,,,,HIGH,1.0,nan
+Tahiti,Paopao,Windward Islands,,,4639,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Haapiti,Windward Islands,,,4254,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Haapiti,,,,locality,,nan,Haapiti,,,,,,,,,HIGH,1.0,nan
+Tahiti,Papenoo,Windward Islands,,,4005,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Papenoo,,,,locality,,nan,Papenoo,,,,,,,,,HIGH,1.0,nan
+Tahiti,Toahotu,Windward Islands,,,3769,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Toahotu,,,,locality,,nan,Toahotu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Afareaitu,Windward Islands,,,3674,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Afareaitu,,,,locality,,nan,Afareaitu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Tiarei,Windward Islands,,,2907,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Tiarei,,,,locality,,nan,Tiarei,,,,,,,,,HIGH,1.0,nan
+Tahiti,Vairao,Windward Islands,,,2890,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Vairao,,,,locality,,nan,Vairao,,,,,,,,,HIGH,1.0,nan
+Tahiti,Teavaro,Windward Islands,,,2567,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Tautira,Windward Islands,,,2449,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Tautira,,,,locality,,nan,Tautira,,,,,,,,,HIGH,1.0,nan
+Tahiti,Papetoai,Windward Islands,,,2329,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Papetō’ai,,,,,,,,,,,,,,,,NONE,0.0,
+Tahiti,Pueu,Windward Islands,,,2084,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Pueu,,,,locality,,nan,Pueu,,,,,,,,,HIGH,1.0,nan
+Tahiti,Hitiaa,Windward Islands,,,2012,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Hitiaa,,,,locality,,nan,Hitiaa,,,,,,,,,HIGH,1.0,nan
+Tahiti,Faaone,Windward Islands,,,2005,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Faaone,,,,locality,,nan,Faaone,,,,,,,,,HIGH,1.0,nan
+Tahiti,Teahupoo,Windward Islands,,,1419,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Teahupoo,,,,locality,,nan,Teahupoo,,,,,,,,,HIGH,1.0,nan
+Tahiti,Mahaena,Windward Islands,,,1109,Place,Papeete,,Papeete,,Windward IslandsTahiti,locality,,,Mahaena,,,,locality,,nan,Mahaena,,,,,,,,,HIGH,1.0,nan
+Tahiti,Maiao,Windward Islands,,,353,Place,Papeete,,Papeete,,Windward IslandsTahiti,,,,,x,,,,,,,,,,,,,,,NONE,0.0,

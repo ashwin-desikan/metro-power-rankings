@@ -56,6 +56,7 @@ import { resolveTeamLink, type TeamLink } from "@/lib/teamLinks";
 import { getCfbTeamForName, cfbMonogram, getFormerMajorCfbForMetro, type FormerCfbCard } from "@/lib/cfb";
 import { getFormerMajorCbbForMetro, getCbbTeamForName, cbbMonogram, type FormerCbbCard, type CbbTeam } from "@/lib/cbb";
 import { getWcbbForMetro, getFormerWcbbForMetro, type WcbbCard, type FormerWcbbCard } from "@/lib/wcbb";
+import { getNflEuropeForMetro } from "@/lib/nflEurope";
 import { getCollegeHockeyForMetro, type CollegeHockeyCard } from "@/lib/collegeHockey";
 import BadgeChips from "./BadgeChips";
 import MetroPageMap from "./MetroPageMap";
@@ -1489,7 +1490,9 @@ function TeamsSection({
     return 0;
   });
   const majorTeamsOnly = majorTeamsRaw.filter((t) => t.league !== "Notable Venues");
-  const majorVenues = nonHistoricForBucketing.filter((t) => t.major && t.league === "Notable Venues");
+  // All Notable Venues (major and non-major) belong in the Notable Venues section,
+  // never in the Other Men’s/Women’s team buckets.
+  const majorVenues = nonHistoricForBucketing.filter((t) => t.league === "Notable Venues");
 
   // Other Teams: four sub-groupings, all collapsible. Priority order when sport + level
   // overlap: College first (pulls out NCAA/FBS/FCS/College Hockey regardless of sport),
@@ -1506,7 +1509,7 @@ function TeamsSection({
 
   // College-level teams always flow through the college-card pipeline below,
   // even when flagged major, so they render as college cards behind the pros.
-  const otherTeamsRaw = nonHistoricForBucketing.filter((t) => !t.major || t.level === "College");
+  const otherTeamsRaw = nonHistoricForBucketing.filter((t) => (!t.major || t.level === "College") && t.league !== "Notable Venues");
   // College Football (FBS) is lifted into its own group above Football/Soccer.
   // Everything else college (FCS, basketball, hockey, ...) stays in College/University.
   const isFbsFootball = (t: { sport: string; league: string }) =>
@@ -1705,6 +1708,9 @@ function TeamsSection({
   // Defunct pre-1985 NASL clubs based in this metro (rendered as defunct cards).
   const defunctNasl = getDefunctNaslForMetro(metroName);
 
+  // Defunct NFL Europe / WLAF franchises that called this metro home (1991-2007).
+  const nflEurope = getNflEuropeForMetro(metroName);
+
   const collapsible = (
     label: string,
     items: typeof majorTeamsRaw,
@@ -1845,7 +1851,7 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0) && (
+      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
@@ -1870,12 +1876,12 @@ function TeamsSection({
                 </div>
               </details>
             )}
-            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0) && (
+            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                   <span className="font-semibold text-[var(--text)]">Defunct/Relocated Teams</span>
                   <span className="text-sm text-[var(--text-muted)]">
-                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length !== 1 ? "s" : ""}
+                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length !== 1 ? "s" : ""}
                   </span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
@@ -2050,6 +2056,13 @@ function TeamsSection({
                           )}
                         </div>
                       )}
+                      {r.stats && (r.league === "rugby-union" || r.league === "cricket-t20" || r.league === "ipl") && (
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: (r.stats.champ ?? 0) > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: (r.stats.champ ?? 0) > 0 ? "#d4af37" : "var(--text-dim)" }} title="Titles won during the years this club played in this metro">
+                            {(r.stats.champ ?? 0) === 0 ? "No titles" : (r.stats.champ ?? 0) === 1 ? "1 title" : `${r.stats.champ} titles`}
+                          </span>
+                        </div>
+                      )}
                     </Link>
                     ) })),
                     ...formerCfb.map((f) => ({ y: f.lastYear, el: (
@@ -2134,6 +2147,18 @@ function TeamsSection({
                         <div key={"nasl-" + idx} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">{body}</div>
                       );
                     })() })),
+                    ...nflEurope.map((n, idx) => ({ y: n.lastYear, el: (
+                    <Link key={"nfle-" + idx} href={`/teams/nfl/international#${n.slug}`} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
+                      <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">{"\uD83C\uDFC8"}</span>American Football &bull; NFL Europe &bull; Defunct</p>
+                      <p className="font-semibold text-[var(--text)]">{n.name}</p>
+                      <p className="text-xs text-[var(--text-dim)]">{n.firstYear === n.lastYear ? n.firstYear : `${n.firstYear}\u2013${n.lastYear}`}</p>
+                      <div className="flex gap-1.5 mt-2 flex-wrap">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: n.titles > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: n.titles > 0 ? "#d4af37" : "var(--text-dim)" }} title="World Bowls won while based in this metro">{n.titles === 0 ? "No World Bowls" : n.titles === 1 ? "1 World Bowl" : `${n.titles} World Bowls`}</span>
+                        {n.apps > 0 && (<span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }} title="World Bowl appearances while based in this metro">{n.apps} WB app{n.apps === 1 ? "" : "s"}</span>)}
+                      </div>
+                      {n.relocated && n.also.length > 0 && (<p className="text-[10px] text-[var(--text-dim)] mt-1.5">Also: {n.also.join("; ")}</p>)}
+                    </Link>
+                    ) })),
                   ].sort((a, b) => b.y - a.y).map((e) => e.el)}
                 </div>
               </details>

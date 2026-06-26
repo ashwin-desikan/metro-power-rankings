@@ -1,0 +1,5 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+American Samoa,Eastern,Eastern,,,23030,District,Pago Pago,,Pago Pago,,EasternAmerican Samoa,region,2,,Eastern District,,,,region,2,nan,Eastern District,,,,,,,,,HIGH,1.0,nan
+American Samoa,Manu'a,Manu'a,,,1143,District,,,#N/A,,Manu'aAmerican Samoa,region,2,,Manuʻa District,,,,,,,,,,,,,,,,NONE,0.0,
+American Samoa,Swains Island,Swains Island,,,17,Island,,,#N/A,,Swains IslandAmerican Samoa,region,2,,Swains Island,,,,region,2,nan,Swains Island,,,,,,,,,HIGH,1.0,nan
+American Samoa,Western,Western,,,31329,District,,,#N/A,,WesternAmerican Samoa,region,2,,Western District,,,,region,2,nan,Western District,,,,,,,,,HIGH,1.0,nan

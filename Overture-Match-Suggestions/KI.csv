@@ -1,0 +1,26 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Kiribati,South Tarawa (Teinainano),Gilbert,,,44643,Island,Tarawa,,Tarawa,,GilbertKiribati,locality,0,KI-G,Tarawa Te Inainano,,,,locality,,KI-G,Tarawa Te Inainano,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Betio,Gilbert,,,18429,Island,Tarawa,,Tarawa,,GilbertKiribati,locality,0,KI-G,Betio,,,,locality,,KI-G,Betio,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,North Tarawa,Gilbert,,,7018,Island,Tarawa,,Tarawa,,GilbertKiribati,locality,0,KI-G,Tarawa Te Inaieta,,,,locality,,KI-G,Tarawa Te Inaieta,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Abaiang,Gilbert,,,5815,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Abaiang,,,,locality,,KI-G,Abaiang,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,North Tabiteuea,Gilbert,,,4181,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Tabiteuea Meang,,,,locality,,KI-G,Tabiteuea Meang,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Abemama,Gilbert,,,3255,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Abemama,,,,locality,,KI-G,Abemama,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Butaritari,Gilbert,,,3250,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Butaritari,,,,locality,,KI-G,Butaritari,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Nonouti,Gilbert,,,2749,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Nonouti,,,,locality,,KI-G,Nonouti,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Marakei,Gilbert,,,2738,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Marakei,,,,locality,,KI-G,Marakei,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Maiana,Gilbert,,,2345,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Maiana,,,,locality,,KI-G,Maiana,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Beru,Gilbert,,,2214,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Beru,,,,locality,,KI-G,Beru,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Nikunau,Gilbert,,,2055,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Nikunau,,,,locality,,KI-G,Nikunau,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Makin,Gilbert,,,1914,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Makin,,,,locality,,KI-G,Makin,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Onotoa,Gilbert,,,1417,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Onotoa,,,,locality,,KI-G,Onotoa,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,South Tabiteuea,Gilbert,,,1356,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Tabiteuea Maiaki,,,,locality,,KI-G,Tabiteuea Maiaki,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Aranuka,Gilbert,,,1221,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Aranuka,,,,locality,,KI-G,Aranuka,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Kuria,Gilbert,,,1190,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Kuria,,,,locality,,KI-G,Kuria,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Tamana,Gilbert,,,1028,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Tamana,,,,locality,,KI-G,Tamana,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Arorae,Gilbert,,,994,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Arorae,,,,locality,,KI-G,Arorae,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Banaba (Ocean Island),Gilbert,,,333,Island,,,#N/A,,GilbertKiribati,locality,0,KI-G,Banaba,,,,locality,,KI-G,Banaba,,,,,region,1,KI-G,Gilbert Islands,HIGH,1.0,KI-G
+Kiribati,Kiritimati (Christmas Island),Line & Phoenix,,,7369,Island,,,#N/A,,Line & PhoenixKiribati,locality,0,KI-L,Kiritimati,,,,locality,,KI-L,Kiritimati,,,,,region,1,KI-L,Line Islands,HIGH,1.0,KI-L
+Kiribati,Tabuaeran (Fanning Island),Line & Phoenix,,,1990,Island,,,#N/A,,Line & PhoenixKiribati,locality,0,KI-L,Tabuaeran,,,,locality,,KI-L,Tabuaeran,,,,,region,1,KI-L,Line Islands,HIGH,1.0,KI-L
+Kiribati,"Teraina (Washington Island, Teeraina)",Line & Phoenix,,,1893,Island,,,#N/A,,Line & PhoenixKiribati,locality,0,KI-L,Teraina,,,,locality,,KI-L,Teraina,,,,,region,1,KI-L,Line Islands,HIGH,1.0,KI-L
+Kiribati,Phoenix Islands,Line & Phoenix,,,41,Island,,,#N/A,,Line & PhoenixKiribati,region,1,KI-P,Phoenix Islands,,,,region,1,KI-P,Phoenix Islands,,,,,region,1,KI-P,Phoenix Islands,HIGH,1.0,KI-P
+Kiribati,Southern Line Islands,Line & Phoenix,,,0,Island,,,#N/A,,Line & PhoenixKiribati,,,,,,,,,,,,,,,,,,,,NONE,0.0,

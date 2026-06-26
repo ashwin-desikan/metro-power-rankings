@@ -1,0 +1,340 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Mongolia,Ėrdėnėbulgan [Tsetserleg],Archangaj [Arkhangai],,,21849,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Цэцэрлэг ᠴᠡᠴᠡᠷᠯᠢᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cėnchėr [Tsenkher],Archangaj [Arkhangai],,,6098,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Цэнхэр ᠴᠡᠩᠬᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Öndör-Ulaan [Öndur-Ulaan],Archangaj [Arkhangai],,,5885,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Өндөр-Улаан ᠥᠨᠳᠦᠷ ᠤᠯᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ichtamir [Ikhtamir],Archangaj [Arkhangai],,,5699,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ėrdėnėmandal [Erdenemandal],Archangaj [Arkhangai],,,5666,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Эрдэнэмандал ᠡᠷᠳᠡᠨᠢ ᠮᠠᠨᠳᠠᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tariat,Archangaj [Arkhangai],,,4980,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Тариат ᠲᠠᠷᠢᠶ᠋ᠠᠲᠤ,,,,county,2,MN-073,Тариат ᠲᠠᠷᠢᠶ᠋ᠠᠲᠤ,,,,,region,1,MN-073,Архангай ᠠᠷᠤ ᠬᠠᠩᠭ᠋ᠠᠢ,HIGH,1.0,MN-073
+Mongolia,Chotont [Khotont],Archangaj [Arkhangai],,,4426,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Хотонт ᠬᠣᠲᠤᠩᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jargalant,Archangaj [Arkhangai],,,4415,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Čuluut [Chuluut],Archangaj [Arkhangai],,,4187,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Чулуут ᠴᠢᠯᠠᠭᠤᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cėcėrlėg [Tsetserleg],Archangaj [Arkhangai],,,3814,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Цэцэрлэг ᠴᠡᠴᠡᠷᠯᠢᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Batcėngėl [Battsengel],Archangaj [Arkhangai],,,3790,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Батцэнгэл ᠪᠠᠲᠤ ᠴᠡᠩᠭᠡᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chajrchan [Khairkhan],Archangaj [Arkhangai],,,3720,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Хайрхан ᠬᠠᠶᠢᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ölzijt [Ölziit],Archangaj [Arkhangai],,,3449,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-069,Өлзийт ᠥᠯᠵᠡᠶᠢᠲᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Changaj [Khangai],Archangaj [Arkhangai],,,3303,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Хангай ᠬᠠᠩᠭ᠋ᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chašaat [Khashaat],Archangaj [Arkhangai],,,3233,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Хашаат ᠬᠠᠰᠢᠶ᠋ᠠᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ögijnuur [Ögiinuur],Archangaj [Arkhangai],,,3109,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Өгийнуур ᠥᠭᠦᠶ ᠨᠠᠭᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tövšrüülėch [Tövshrüülekh],Archangaj [Arkhangai],,,2952,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bulgan,Archangaj [Arkhangai],,,2815,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-043,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Cachir [Tsakhir],Archangaj [Arkhangai],,,2477,District,,,#N/A,,Archangaj [Arkhangai]Mongolia,county,2,MN-073,Цахир ᠴᠠᠬᠢᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajanchongor [Bayankhongor],Bajanchongor [Bayankhongor],,,32454,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ėrdėnėcogt [Erdenetsogt],Bajanchongor [Bayankhongor],,,4457,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Эрдэнэцогт ᠡᠷᠳᠡᠨᠢ ᠴᠣᠭᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Galuut,Bajanchongor [Bayankhongor],,,4217,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Галуут ᠭᠠᠯᠠᠭᠲᠤ,,,,county,2,MN-069,Галуут ᠭᠠᠯᠠᠭᠲᠤ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Ölzijt [Ölziit],Bajanchongor [Bayankhongor],,,3907,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Өлзийт ᠥᠯᠵᠡᠶᠢᠲᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajanlig [Bayanlig],Bajanchongor [Bayankhongor],,,3827,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баянлиг ᠪᠠᠶ᠋ᠠᠨ ᠯᠢᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Buucagaan [Buutsagaan],Bajanchongor [Bayankhongor],,,3696,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Бууцагаан ᠪᠤᠤ ᠴᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajancagaan [Bayantsagaan],Bajanchongor [Bayankhongor],,,3573,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баянцагаан ᠪᠠᠶ᠋ᠠᠨ ᠴᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bömbögör,Bajanchongor [Bayankhongor],,,3403,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Бөмбөгөр ᠪᠥᠮᠪᠦᠭᠡᠷ,,,,county,2,MN-069,Бөмбөгөр ᠪᠥᠮᠪᠦᠭᠡᠷ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Baacagaan [Baatsagaan],Bajanchongor [Bayankhongor],,,3265,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баацагаан ᠪᠠ ᠴᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bogd,Bajanchongor [Bayankhongor],,,3124,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-055,Богд ᠪᠣᠭᠳᠠ,,,,county,2,MN-055,Богд ᠪᠣᠭᠳᠠ,,,,,region,1,MN-055,Өвөрхангай ᠥᠪᠦᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,HIGH,1.0,MN-055
+Mongolia,Bajangov' [Bayangovi],Bajanchongor [Bayankhongor],,,3079,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баянговь ᠪᠠᠶ᠋ᠠᠨ ᠭᠣᠪᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jargalant,Bajanchongor [Bayankhongor],,,2959,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Bajan-Öndör [Bayan-Öndör],Bajanchongor [Bayankhongor],,,2633,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баян-Өндөр ᠪᠠᠶ᠋ᠠᠨ ᠥᠨᠳᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajan-Ovoo [Bayan-Ovoo],Bajanchongor [Bayankhongor],,,2610,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баян-Овоо ᠪᠠᠶ᠋ᠠᠨ ᠣᠪᠤᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Šinėjinst [Shinejinst],Bajanchongor [Bayankhongor],,,2514,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Шинэжинст ᠰᠢᠨ᠎ᠡ ᠵᠢᠩᠰᠡᠲᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Gurvanbulag,Bajanchongor [Bayankhongor],,,2306,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Гурванбулаг ᠭᠤᠷᠪᠠᠨ ᠪᠤᠯᠠᠭ,,,,county,2,MN-069,Гурванбулаг ᠭᠤᠷᠪᠠᠨ ᠪᠤᠯᠠᠭ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Jinst,Bajanchongor [Bayankhongor],,,2257,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Жинст ᠵᠢᠩᠰᠡᠲᠦ,,,,county,2,MN-069,Жинст ᠵᠢᠩᠰᠡᠲᠦ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Zag,Bajanchongor [Bayankhongor],,,2139,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Заг ᠵᠠᠭ,,,,county,2,MN-069,Заг ᠵᠠᠭ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Bajanbulag [Bayanbulag],Bajanchongor [Bayankhongor],,,1778,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Баянбулаг ᠪᠠᠶ᠋ᠠᠨ ᠪᠤᠯᠠᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chürėėmaral [Khüreemaral],Bajanchongor [Bayankhongor],,,1777,District,,,#N/A,,Bajanchongor [Bayankhongor]Mongolia,county,2,MN-069,Хүрээмарал ᠬᠦᠷᠢᠶ᠋ᠡ ᠮᠠᠷᠠᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ölgij [Ölgii],Bajan-Ölgij [Bayan-Ölgii],,,39711,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-046,Өлгий ᠥᠯᠦᠭᠡᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cėngėl [Tsengel],Bajan-Ölgij [Bayan-Ölgii],,,9876,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Цэнгэл ᠴᠡᠩᠭᠡᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ulaanchus [Ulaankhus],Bajan-Ölgij [Bayan-Ölgii],,,8922,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Улаанхус ᠤᠯᠠᠭᠠᠩ ᠬᠤᠰᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Nogoonnuur [incl. Cagaannuur],Bajan-Ölgij [Bayan-Ölgii],,,8254,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Ногооннуур ᠨᠣᠭᠤᠭᠠᠨ ᠨᠠᠭᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dėlüün [Delüün],Bajan-Ölgij [Bayan-Ölgii],,,7613,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Дэлүүн ᠳᠡᠯᠢᠭᠦᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sagsaj [Sagsai],Bajan-Ölgij [Bayan-Ölgii],,,5405,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Сагсай ᠰᠠᠭᠰᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bulgan,Bajan-Ölgij [Bayan-Ölgii],,,5163,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-043,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Bajannuur [Bayannuur],Bajan-Ölgij [Bayan-Ölgii],,,4971,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Баяннуур ᠪᠠᠶ᠋ᠠᠨ ᠨᠠᠭᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tolbo,Bajan-Ölgij [Bayan-Ölgii],,,4364,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Толбо ᠲᠣᠯᠪᠤ,,,,county,2,MN-071,Толбо ᠲᠣᠯᠪᠤ,,,,,region,1,MN-071,Баян-Өлгий ᠪᠠᠶ᠋ᠠᠨ ᠥᠯᠦᠭᠡᠢ,HIGH,1.0,MN-071
+Mongolia,Altaj [Altai],Bajan-Ölgij [Bayan-Ölgii],,,4342,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-065,Алтай ᠠᠯᠲᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bugat,Bajan-Ölgij [Bayan-Ölgii],,,4021,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-067,Бугат ᠪᠤᠭᠠᠲᠤ,,,,county,2,MN-067,Бугат ᠪᠤᠭᠠᠲᠤ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Altancögts [Altantsögts],Bajan-Ölgij [Bayan-Ölgii],,,2887,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-071,Алтанцөгц ᠠᠯᠲᠠᠨ ᠴᠥ᠋ᠭᠦᠴᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bujant [Buyant],Bajan-Ölgij [Bayan-Ölgii],,,2847,District,,,#N/A,,Bajan-Ölgij [Bayan-Ölgii]Mongolia,county,2,MN-043,Буянт ᠪᠤᠶ᠋ᠠᠨᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bulgan,Bulgan,,,12810,District,,,#N/A,,BulganMongolia,county,2,MN-043,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,county,2,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Chutag-Öndör [Khutag-Öndör],Bulgan,,,5046,District,,,#N/A,,BulganMongolia,county,2,MN-067,Хутаг-Өндөр ᠬᠤᠲᠤᠭ ᠥᠨᠳᠦᠷ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Changal [Khangal],Bulgan,,,4543,District,,,#N/A,,BulganMongolia,county,2,MN-067,Хангал ᠬᠠᠩᠭ᠋ᠠᠯ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Tėšig [Teshig],Bulgan,,,3621,District,,,#N/A,,BulganMongolia,county,2,MN-067,Тэшиг ᠲᠡᠰᠢᠭ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Sajchan [Saikhan],Bulgan,,,3578,District,,,#N/A,,BulganMongolia,county,2,MN-067,Сайхан ᠰᠠᠶᠢᠬᠠᠨ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Orchon [Orkhon],Bulgan,,,3385,District,,,#N/A,,BulganMongolia,county,2,MN-067,Орхон ᠣᠷᠬᠤᠨ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Bajan-Agt [Bayan-Agt],Bulgan,,,3364,District,,,#N/A,,BulganMongolia,county,2,MN-067,Баян-Агт ᠪᠠᠶ᠋ᠠᠨ ᠠᠭᠲᠠ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Sėlėngė [Selenge],Bulgan,,,3330,District,,,#N/A,,BulganMongolia,county,2,MN-067,Сэлэнгэ ᠰᠡᠯᠡᠩᠭᠡ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Gurvanbulag,Bulgan,,,3286,District,,,#N/A,,BulganMongolia,county,2,MN-069,Гурванбулаг ᠭᠤᠷᠪᠠᠨ ᠪᠤᠯᠠᠭ,,,,county,2,MN-067,Гурванбулаг ᠭᠤᠷᠪᠠᠨ ᠪᠤᠯᠠᠭ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Rašaant [Rashaant],Bulgan,,,3202,District,,,#N/A,,BulganMongolia,county,2,MN-041,Рашаант ᠷᠠᠰᠢᠶ᠋ᠠᠨᠲᠤ ᠰᠤᠮᠤ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Chišig-Öndör [Khishig-Öndör],Bulgan,,,3056,District,,,#N/A,,BulganMongolia,county,2,MN-067,Хишиг-Өндөр ᠬᠡᠰᠢᠭ ᠥᠨᠳᠦᠷ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Dašinčilėn [Dashinchilen],Bulgan,,,3049,District,,,#N/A,,BulganMongolia,county,2,MN-067,Дашинчилэн ᠳᠠᠰᠢᠨᠴᠢᠯᠢᠩ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Bürėgchangaj [Büregkhangai],Bulgan,,,2927,District,,,#N/A,,BulganMongolia,county,2,MN-067,Бүрэгхангай ᠪᠦᠷᠦᠭ ᠬᠠᠩᠭ᠋ᠠᠢ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Mogod,Bulgan,,,2681,District,,,#N/A,,BulganMongolia,county,2,MN-067,Могод ᠮᠣᠭᠤᠳᠤ,,,,county,2,MN-067,Могод ᠮᠣᠭᠤᠳᠤ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Bugat,Bulgan,,,2202,District,,,#N/A,,BulganMongolia,county,2,MN-067,Бугат ᠪᠤᠭᠠᠲᠤ,,,,county,2,MN-067,Бугат ᠪᠤᠭᠠᠲᠤ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Bajannuur [Bayannuur],Bulgan,,,1858,District,,,#N/A,,BulganMongolia,county,2,MN-071,Баяннуур ᠪᠠᠶ᠋ᠠᠨ ᠨᠠᠭᠤᠷ,,,,,,,,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,NONE,0.0,MN-067
+Mongolia,Chėrlėn [Kherlen],Chėntij [Khentii],,,24115,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Хэрлэн ᠬᠡᠷᠦᠯᠦᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bor-Öndör,Chėntij [Khentii],,,8941,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Бор-Өндөр ᠪᠣᠷᠤ ᠥᠨᠳᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ömnödėlgėr [Ömnödelger; incl. Gurvanbajan],Chėntij [Khentii],,,5966,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Өмнөдэлгэр ᠡᠮᠦᠨᠡ ᠳᠡᠯᠭᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Batnorov [incl. Bėrch],Chėntij [Khentii],,,5757,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Батноров ᠪᠠᠲᠤ ᠨᠣᠷᠪᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bindėr [Binder],Chėntij [Khentii],,,4139,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Биндэр ᠪᠢᠨᠳᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dadal,Chėntij [Khentii],,,3212,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Дадал ᠳᠠᠳᠠᠯ,,,,county,2,MN-039,Дадал ᠳᠠᠳᠠᠯ,,,,,region,1,MN-039,Хэнтий ᠬᠡᠨᠲᠡᠢ,HIGH,1.0,MN-039
+Mongolia,Norovlin,Chėntij [Khentii],,,2797,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Норовлин ᠨᠣᠷᠪᠤᠯᠢᠩ,,,,county,2,MN-039,Норовлин ᠨᠣᠷᠪᠤᠯᠢᠩ,,,,,region,1,MN-039,Хэнтий ᠬᠡᠨᠲᠡᠢ,HIGH,1.0,MN-039
+Mongolia,Bajan-Adarga [Bayan-Adarga],Chėntij [Khentii],,,2527,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Баян-Адрага ᠪᠠᠶ᠋ᠠᠨ ᠠᠳᠤᠷᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajanchutag [Bayankhutag],Chėntij [Khentii],,,2515,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Баянхутаг ᠪᠠᠶ᠋ᠠᠨ ᠬᠤᠲᠤᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dėlgėrchaan [Delgerkhaan],Chėntij [Khentii],,,2505,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-047,Дэлгэрхаан ᠳᠡᠯᠭᠡᠷ ᠬᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bachirėėt [Batshireet],Chėntij [Khentii],,,2403,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Батширээт ᠪᠠᠲᠤ ᠰᠢᠷᠡᠭᠡᠲᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jargaltchaan [Jargaltkhaan],Chėntij [Khentii],,,2290,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Жаргалтхаан ᠵᠢᠷᠭᠠᠯᠲᠤ ᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Galšir [Galshar],Chėntij [Khentii],,,2247,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Галшар ᠭᠠᠯᠰᠢᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cėnchėrmandal [Tsenkhermandal],Chėntij [Khentii],,,2155,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Цэнхэрмандал ᠴᠡᠩᠬᠡᠷ ᠮᠠᠨᠳᠠᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Darchan [Darkhan],Chėntij [Khentii],,,2096,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-037,Дархан ᠳᠠᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajan-Ovoo [Bayan-Ovoo],Chėntij [Khentii],,,2023,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-069,Баян-Овоо ᠪᠠᠶ᠋ᠠᠨ ᠣᠪᠤᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Mörön,Chėntij [Khentii],,,1950,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-041,Мөрөн ᠮᠥᠷᠡᠨ,,,,county,2,MN-041,Мөрөн ᠮᠥᠷᠡᠨ,,,,,region,1,MN-041,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,HIGH,1.0,MN-041
+Mongolia,Bajanmönch [Bayanmönkh],Chėntij [Khentii],,,1791,District,,,#N/A,,Chėntij [Khentii]Mongolia,county,2,MN-039,Баянмөнх ᠪᠠᠶ᠋ᠠᠨ ᠮᠥᠩᠬᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jargalant [Khovd],Chovd [Khovd],,,31980,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bulgan,Chovd [Khovd],,,10069,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Manchan [Mankhan],Chovd [Khovd],,,4278,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Манхан ᠮᠠᠩᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Üjenč [Üyench],Chovd [Khovd],,,3964,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Үенч ᠦᠶ᠋ᠡᠩᠴᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bujant [Buyant],Chovd [Khovd],,,3792,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Буянт ᠪᠤᠶ᠋ᠠᠨᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Mjangad [Myangad],Chovd [Khovd],,,3768,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Мянгад ᠮᠢᠩᠭ᠋ᠠᠳ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chovd [Khovd],Chovd [Khovd],,,3532,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-046,Ховд ᠬᠣᠪᠳᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Altaj [Altai],Chovd [Khovd],,,3388,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-065,Алтай ᠠᠯᠲᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Zėrėg [Zereg],Chovd [Khovd],,,3367,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Зэрэг ᠵᠡᠷᠭᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Möst,Chovd [Khovd],,,3192,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Мөст ᠮᠥᠰᠦᠲᠦ,,,,county,2,MN-043,Мөст ᠮᠥᠰᠦᠲᠦ,,,,,region,1,MN-043,Ховд ᠬᠣᠪᠳᠤ,HIGH,1.0,MN-043
+Mongolia,Cėcėg [Tsetseg],Chovd [Khovd],,,3191,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Цэцэг ᠴᠡᠴᠡᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dörgön,Chovd [Khovd],,,3123,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Дөргөн ᠳᠥᠷᠭᠦᠨ,,,,county,2,MN-043,Дөргөн ᠳᠥᠷᠭᠦᠨ,,,,,region,1,MN-043,Ховд ᠬᠣᠪᠳᠤ,HIGH,1.0,MN-043
+Mongolia,Čandman' [Chandmani],Chovd [Khovd],,,3101,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Чандмань ᠴᠢᠨᠳᠠᠮᠠᠨᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Darvi,Chovd [Khovd],,,3050,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-065,Дарви ᠳᠠᠷᠪᠢ,,,,county,2,MN-065,Дарви ᠳᠠᠷᠪᠢ,,,,,region,1,MN-065,Говь-Алтай ᠭᠣᠪᠢ ᠠᠯᠲᠠᠢ,HIGH,1.0,MN-065
+Mongolia,Ėrdėnėbürėn [Erdenebüren],Chovd [Khovd],,,2426,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Эрдэнэбүрэн ᠡᠷᠳᠡᠨᠢ ᠪᠦᠷᠢᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Mönchchajrchan [Mönkhkhairkhan],Chovd [Khovd],,,2185,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Мөнххайрхан ᠮᠥᠩᠬᠡ ᠬᠠᠶᠢᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Duut,Chovd [Khovd],,,1927,District,,,#N/A,,Chovd [Khovd]Mongolia,county,2,MN-043,Дуут ᠳᠠᠭᠤᠲᠤ,,,,county,2,MN-043,Дуут ᠳᠠᠭᠤᠲᠤ,,,,,region,1,MN-043,Ховд ᠬᠣᠪᠳᠤ,HIGH,1.0,MN-043
+Mongolia,Mörön,Chövsgöl [Khövsgöl],,,42423,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Мөрөн ᠮᠥᠷᠡᠨ,,,,county,2,MN-041,Мөрөн ᠮᠥᠷᠡᠨ,,,,,region,1,MN-041,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,HIGH,1.0,MN-041
+Mongolia,Alag-Ėrdėnė [Alag-Erdene; incl. Chatgal],Chövsgöl [Khövsgöl],,,7052,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Алаг-Эрдэнэ ᠠᠯᠠᠭ ᠡᠷᠳᠡᠨᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tarialan,Chövsgöl [Khövsgöl],,,6291,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Тариалан ᠲᠠᠷᠢᠶ᠋ᠠᠯᠠᠩ,,,,county,2,MN-041,Тариалан ᠲᠠᠷᠢᠶ᠋ᠠᠯᠠᠩ,,,,,region,1,MN-041,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,HIGH,1.0,MN-041
+Mongolia,Cagaan-Uul [Tsagaan-Uul],Chövsgöl [Khövsgöl],,,5916,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Цагаан-Уул ᠴᠠᠭᠠᠨ ᠠᠭᠤᠯᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Galt,Chövsgöl [Khövsgöl],,,5532,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Галт ᠭᠠᠯᠲᠤ,,,,county,2,MN-041,Галт ᠭᠠᠯᠲᠤ,,,,,region,1,MN-041,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,HIGH,1.0,MN-041
+Mongolia,Jargalant,Chövsgöl [Khövsgöl],,,5512,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Renčinlchümbė [Renchinlkhümbe],Chövsgöl [Khövsgöl],,,4868,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Рэнчинлхүмбэ ᠷᠢᠨᠴᠢᠨ ᡀᠦᠮᠪᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cėcėrlėg [Tsetserleg],Chövsgöl [Khövsgöl],,,4651,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-073,Цэцэрлэг ᠴᠡᠴᠡᠷᠯᠢᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tosoncėngėl [Tosontsengel],Chövsgöl [Khövsgöl],,,4478,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-057,Тосонцэнгэл ᠲᠣᠰᠤᠨ ᠴᠡᠩᠭᠡᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bürėntogtoch [Bürentogtokh],Chövsgöl [Khövsgöl],,,4410,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Бүрэнтогтох ᠪᠦᠷᠢᠨ ᠲᠣᠭᠲᠣᠬᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tömörbulag,Chövsgöl [Khövsgöl],,,4400,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Төмөрбулаг ᠲᠡᠮᠦᠷ ᠪᠤᠯᠠᠭ,,,,county,2,MN-041,Төмөрбулаг ᠲᠡᠮᠦᠷ ᠪᠤᠯᠠᠭ,,,,,region,1,MN-041,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,HIGH,1.0,MN-041
+Mongolia,Tünėl [Tünel],Chövsgöl [Khövsgöl],,,4377,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Түнэл ᠲᠦᠨᠡᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ulaan-Uul,Chövsgöl [Khövsgöl],,,4329,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Улаан-Уул ᠤᠯᠠᠭᠠᠨ ᠠᠭᠤᠯᠠ,,,,county,2,MN-041,Улаан-Уул ᠤᠯᠠᠭᠠᠨ ᠠᠭᠤᠯᠠ,,,,,region,1,MN-041,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,HIGH,1.0,MN-041
+Mongolia,Ich-Uul [Ikh-Uul],Chövsgöl [Khövsgöl],,,4223,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Их-Уул ᠶᠡᠬᠡ ᠠᠭᠤᠯᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Arbulag,Chövsgöl [Khövsgöl],,,4152,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Арбулаг ᠠᠷᠤ ᠪᠤᠯᠠᠭ,,,,county,2,MN-041,Арбулаг ᠠᠷᠤ ᠪᠤᠯᠠᠭ,,,,,region,1,MN-041,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,HIGH,1.0,MN-041
+Mongolia,Bajanzürch [Bayanzürkh],Chövsgöl [Khövsgöl],,,4062,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Баянзүрх ᠪᠠᠶᠠᠨ ᠵᠢᠷᠦᠬᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Rašaant [Rashaant],Chövsgöl [Khövsgöl],,,3838,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Рашаант ᠷᠠᠰᠢᠶ᠋ᠠᠨᠲᠤ ᠰᠤᠮᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Šinė-Idėr [Shine-Ider],Chövsgöl [Khövsgöl],,,3186,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Шинэ-Идэр ᠰᠢᠨ᠎ᠡ ᠢᠳᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Čandman'-Öndör [Chandmani-Öndör],Chövsgöl [Khövsgöl],,,3164,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Чандмань-Өндөр ᠴᠢᠨᠳᠠᠮᠠᠨᠢ ᠥᠨᠳᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ėrdėnėbulgan [Erdenebulgan],Chövsgöl [Khövsgöl],,,3150,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-073,Эрдэнэбулган ᠡᠷᠳᠡᠨᠢ ᠪᠤᠯᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chanch [Khankh],Chövsgöl [Khövsgöl],,,2867,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Ханх ᠬᠠᠩᠬ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cagaan-Üür [Tsagaan-Üür],Chövsgöl [Khövsgöl],,,2696,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-041,Цагаан-Үүр ᠴᠠᠭᠠᠨ ᠡᠭᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cagaannuur [Tsagaannuur],Chövsgöl [Khövsgöl],,,2051,District,,,#N/A,,Chövsgöl [Khövsgöl]Mongolia,county,2,MN-049,Цагааннуур ᠴᠠᠭᠠᠨ ᠨᠠᠭᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Darchan [Darkhan],Darchan-Uul [Darkhan-Uul],,,87595,District,,,#N/A,,Darchan-Uul [Darkhan-Uul]Mongolia,county,2,MN-037,Дархан ᠳᠠᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Šaryngol [Sharyngol],Darchan-Uul [Darkhan-Uul],,,7827,District,,,#N/A,,Darchan-Uul [Darkhan-Uul]Mongolia,county,2,MN-037,Шарынгол ᠱᠠᠷ᠎ᠠ ᠶᠢᠨ ᠭᠣᠣᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chongor [Khongor],Darchan-Uul [Darkhan-Uul],,,5964,District,,,#N/A,,Darchan-Uul [Darkhan-Uul]Mongolia,county,2,MN-037,Хонгор ᠬᠣᠩᠭ᠋ᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Orchon [Orkhon],Darchan-Uul [Darkhan-Uul],,,3351,District,,,#N/A,,Darchan-Uul [Darkhan-Uul]Mongolia,county,2,MN-067,Орхон ᠣᠷᠬᠤᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chėrlėn [Kherlen],Dornod,,,47153,District,,,#N/A,,DornodMongolia,county,2,MN-039,Хэрлэн ᠬᠡᠷᠦᠯᠦᠨ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Bajan-Uul [Bayan-Uul],Dornod,,,4821,District,,,#N/A,,DornodMongolia,county,2,MN-065,Баян-Уул ᠪᠠᠶ᠋ᠠᠨ ᠠᠭᠤᠯᠠ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Cagaan-Ovoo [Tsagaan-Ovoo],Dornod,,,3875,District,,,#N/A,,DornodMongolia,county,2,MN-061,Цагаан-Овоо ᠴᠠᠭᠠᠨ ᠣᠪᠤᠭ᠎ᠠ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Chalchgol [Khalkhgol],Dornod,,,3617,District,,,#N/A,,DornodMongolia,county,2,MN-061,Халхгол ᠬᠠᠯᠬ᠎ᠠ ᠭᠣᠣᠯ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Dašbalbar [Dashbalbar],Dornod,,,3590,District,,,#N/A,,DornodMongolia,county,2,MN-061,Дашбалбар ᠳᠰᠢᠪᠠᠯᠪᠠᠷ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Bajandun [Bayandun],Dornod,,,3208,District,,,#N/A,,DornodMongolia,county,2,MN-061,Баяндун ᠪᠠᠶ᠋ᠠᠨ ᠳᠣᠩ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Matad,Dornod,,,3188,District,,,#N/A,,DornodMongolia,county,2,MN-061,Матад ᠮᠠᠲᠠᠳ,,,,county,2,MN-061,Матад ᠮᠠᠲᠠᠳ,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,HIGH,1.0,MN-061
+Mongolia,Bajantümėn [Bayantümen],Dornod,,,2840,District,,,#N/A,,DornodMongolia,county,2,MN-061,Баянтүмэн ᠪᠠᠶ᠋ᠠᠨᠲᠦ᠋ᠮᠡᠨ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Čojbalsan [Choibalsan],Dornod,,,2735,District,,,#N/A,,DornodMongolia,county,2,MN-061,Чойбалсан ᠴᠣᠶᠢ ᠪᠠᠯᠰᠠᠩ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Bulgan,Dornod,,,2100,District,,,#N/A,,DornodMongolia,county,2,MN-043,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,county,2,MN-061,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,HIGH,1.0,MN-061
+Mongolia,Sėrgėlėn [Sergelen],Dornod,,,2068,District,,,#N/A,,DornodMongolia,county,2,MN-047,Сэргэлэн ᠰᠡᠷᠭᠦᠯᠡᠩ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Chölönbujr [Khölönbuir],Dornod,,,1942,District,,,#N/A,,DornodMongolia,county,2,MN-061,Хөлөнбуйр ᠬᠥᠯᠥᠨ ᠪᠤᠶᠢᠷ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Čuluunchoroot [Chuluunkhoroot],Dornod,,,1885,District,,,#N/A,,DornodMongolia,county,2,MN-061,Чулуунхороот ᠴᠠᠯᠠᠭᠤᠨ ᠬᠣᠷᠢᠶ᠋ᠠᠲᠤ,,,,,,,,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,NONE,0.0,MN-061
+Mongolia,Gurvanzagal,Dornod,,,1553,District,,,#N/A,,DornodMongolia,county,2,MN-061,Гурванзагал ᠭᠤᠷᠪᠠᠨ ᠵᠠᠭᠠᠯ,,,,county,2,MN-061,Гурванзагал ᠭᠤᠷᠪᠠᠨ ᠵᠠᠭᠠᠯ,,,,,region,1,MN-061,Дорнод ᠳᠣᠷᠤᠨᠠᠳᠤ,HIGH,1.0,MN-061
+Mongolia,Sajnšand [Sainshand],Dornogov' [Dornogovi],,,27405,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Сайншанд ᠰᠠᠶᠢᠨᠱᠠᠩᠳᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Zamyn-Üüd,Dornogov' [Dornogovi],,,18995,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Замын-Үүд ᠵᠠᠮ ᠤᠨ ᠡᠭᠦᠳᠡ ᠰᠤᠮᠤ,,,,county,2,MN-063,Замын-Үүд ᠵᠠᠮ ᠤᠨ ᠡᠭᠦᠳᠡ ᠰᠤᠮᠤ,,,,,region,1,MN-063,Дорноговь ᠳᠣᠷᠤᠨᠠ ᠭᠣᠪᠢ,HIGH,1.0,MN-063
+Mongolia,Ajrag [Airag],Dornogov' [Dornogovi],,,3598,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Айраг ᠠᠶᠢᠷᠠᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chatanbulag [Khatanbulag],Dornogov' [Dornogovi],,,3007,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Хатанбулаг ᠬᠠᠲᠤᠨ ᠪᠤᠯᠠᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dalanjargalan,Dornogov' [Dornogovi],,,2983,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Даланжаргалан ᠳᠠᠯᠠᠨ ᠵᠢᠷᠭᠠᠯᠠᠩ,,,,county,2,MN-063,Даланжаргалан ᠳᠠᠯᠠᠨ ᠵᠢᠷᠭᠠᠯᠠᠩ,,,,,region,1,MN-063,Дорноговь ᠳᠣᠷᠤᠨᠠ ᠭᠣᠪᠢ,HIGH,1.0,MN-063
+Mongolia,Ėrdėnė [Erdene],Dornogov' [Dornogovi],,,2418,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-065,Эрдэнэ ᠡᠷᠳᠡᠨᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Örgön,Dornogov' [Dornogovi],,,2155,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Өргөн ᠳᠥᠷᠭᠦᠨ,,,,county,2,MN-063,Өргөн ᠳᠥᠷᠭᠦᠨ,,,,,region,1,MN-063,Дорноговь ᠳᠣᠷᠤᠨᠠ ᠭᠣᠪᠢ,HIGH,1.0,MN-063
+Mongolia,Ichchėt [Ikhkhet],Dornogov' [Dornogovi],,,2087,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Иххэт ᠶᠡᠬᠡ ᠬᠡᠲᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dėlgėrėch [Delgerekh],Dornogov' [Dornogovi],,,1918,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Дэлгэрэх ᠳᠡᠯᠭᠡᠷᠡᠬᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Mandach [Mandakh],Dornogov' [Dornogovi],,,1550,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Мандах ᠮᠠᠨᠳᠤᠬᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chövsgöl [Khövsgöl],Dornogov' [Dornogovi],,,1534,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Хөвсгөл ᠬᠥᠪᠰᠦᠭᠦᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Altanširėė [Altanshiree],Dornogov' [Dornogovi],,,1533,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Алтанширээ ᠠᠯᠲᠠᠨ ᠰᠢᠷᠡᠭᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ulaanbadrach [Ulaanbadrakh],Dornogov' [Dornogovi],,,1519,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Улаанбадрах ᠤᠯᠠᠭᠠᠨ ᠪᠠᠳᠠᠷᠠᠬᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sajchandulaan [Saikhandulaan],Dornogov' [Dornogovi],,,1411,District,,,#N/A,,Dornogov' [Dornogovi]Mongolia,county,2,MN-063,Сайхандулаан ᠰᠠᠶᠢᠬᠠᠨ ᠳᠤᠯᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sajncagaan [Saintsagaan],Dundgov' [Dundgovi],,,16394,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Сайнцагаан ᠰᠠᠶᠢᠩ ᠴᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ėrdėnėdalaj [Erdenedalai],Dundgov' [Dundgovi],,,5953,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Эрдэнэдалай ᠡᠷᠳᠡᠨᠢ ᠳᠠᠯᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Adaacag [Adaatsag],Dundgov' [Dundgovi],,,2794,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Адаацаг ᠠᠳᠠᠭᠠᠴᠠᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chuld [Khuld],Dundgov' [Dundgovi],,,2385,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Хулд ᠬᠤᠯᠤᠳ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ölzijt [Ölziit],Dundgov' [Dundgovi],,,2383,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-069,Өлзийт ᠥᠯᠵᠡᠶᠢᠲᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dėlgėrchangaj [Delgerkhangai],Dundgov' [Dundgovi],,,2282,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Дэлгэрхангай ᠳᠡᠯᠭᠡᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sajchan-Ovoo [Saikhan-Ovoo],Dundgov' [Dundgovi],,,2173,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Сайхан-Овоо ᠰᠠᠶᠢᠬᠠᠨ ᠣᠪᠤᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Gurvansajchan [Gurvansaikhan],Dundgov' [Dundgovi],,,2149,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Гурвансайхан ᠭᠤᠷᠪᠠᠨ ᠰᠠᠶᠢᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dėrėn [Deren],Dundgov' [Dundgovi],,,2144,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Дэрэн ᠳᠡᠷᠡᠩ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Luus,Dundgov' [Dundgovi],,,1932,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Луус ᠯᠤᠤᠰ,,,,county,2,MN-059,Луус ᠯᠤᠤᠰ,,,,,region,1,MN-059,Дундговь ᠳᠤᠮᠳᠠ ᠭᠣᠪᠢ,HIGH,1.0,MN-059
+Mongolia,Dėlgėrcogt [Delgertsogt],Dundgov' [Dundgovi],,,1661,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Дэлгэрцогт ᠳᠡᠯᠭᠡᠷ ᠴᠣᠭᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Gov'-Ugtaal [Govi-Ugtaal],Dundgov' [Dundgovi],,,1509,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Говь-Угтаал ᠭᠣᠪᠢ ᠤᠭᠲᠠᠭᠠᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Öndöršil [Öndörshil],Dundgov' [Dundgovi],,,1432,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Өндөршил ᠥᠨᠳᠦᠷᠰᠢᠯᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajanjargalan [Bayanjargalan],Dundgov' [Dundgovi],,,1323,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Баянжаргалан ᠪᠠᠶ᠋ᠠᠨ ᠵᠢᠷᠭᠠᠯᠠᠩ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cagaandėlgėr [Tsagaandelger],Dundgov' [Dundgovi],,,1028,District,,,#N/A,,Dundgov' [Dundgovi]Mongolia,county,2,MN-059,Цагаандэлгэр ᠴᠠᠭᠠᠨ ᠳᠡᠯᠭᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jesönbulag [Yesönbulag],Gov'-Altaj [Govi-Altai],,,18867,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Есөнбулаг ᠶᠢᠰᠤᠨ ᠪᠤᠯᠠᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cogt [Tsogt],Gov'-Altaj [Govi-Altai],,,3568,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Цогт ᠴᠣᠭᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dėlgėr [Delger],Gov'-Altaj [Govi-Altai],,,3202,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Дэлгэр ᠳᠡᠯᠭᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajan-Uul [Bayan-Uul],Gov'-Altaj [Govi-Altai],,,3080,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Баян-Уул ᠪᠠᠶ᠋ᠠᠨ ᠠᠭᠤᠯᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chaliun [Khaliun],Gov'-Altaj [Govi-Altai],,,2471,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Халиун ᠬᠠᠯᠢᠭᠤᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chöchmor't [Khökhmorit],Gov'-Altaj [Govi-Altai],,,2346,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ėrdėnė [Erdene],Gov'-Altaj [Govi-Altai],,,2326,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Эрдэнэ ᠡᠷᠳᠡᠨᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Čandman' [Chandmani],Gov'-Altaj [Govi-Altai],,,2323,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-043,Чандмань ᠴᠢᠨᠳᠠᠮᠠᠨᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cėėl [Tseel],Gov'-Altaj [Govi-Altai],,,2300,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Цээл ᠴᠡᠭᠡᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bigėr [Biger],Gov'-Altaj [Govi-Altai],,,2265,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Бигэр ᠪᠢᠭᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tonchil [Tonkhil],Gov'-Altaj [Govi-Altai],,,2257,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Тонхил ᠲᠣᠩᠬᠢᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bugat,Gov'-Altaj [Govi-Altai],,,2215,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-067,Бугат ᠪᠤᠭᠠᠲᠤ,,,,county,2,MN-067,Бугат ᠪᠤᠭᠠᠲᠤ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Altaj [Altai],Gov'-Altaj [Govi-Altai],,,2097,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Алтай ᠠᠯᠲᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tögrög,Gov'-Altaj [Govi-Altai],,,2088,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Төгрөг ᠲᠦᠭᠦᠷᠢᠭ,,,,county,2,MN-065,Төгрөг ᠲᠦᠭᠦᠷᠢᠭ,,,,,region,1,MN-065,Говь-Алтай ᠭᠣᠪᠢ ᠠᠯᠲᠠᠢ,HIGH,1.0,MN-065
+Mongolia,Šarga [Sharga],Gov'-Altaj [Govi-Altai],,,2027,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Шарга ᠰᠢᠷᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jargalan,Gov'-Altaj [Govi-Altai],,,1871,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Жаргалан ᠵᠢᠷᠭᠠᠯᠠᠩ,,,,county,2,MN-065,Жаргалан ᠵᠢᠷᠭᠠᠯᠠᠩ,,,,,region,1,MN-065,Говь-Алтай ᠭᠣᠪᠢ ᠠᠯᠲᠠᠢ,HIGH,1.0,MN-065
+Mongolia,Darvi,Gov'-Altaj [Govi-Altai],,,1780,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Дарви ᠳᠠᠷᠪᠢ,,,,county,2,MN-065,Дарви ᠳᠠᠷᠪᠢ,,,,,region,1,MN-065,Говь-Алтай ᠭᠣᠪᠢ ᠠᠯᠲᠠᠢ,HIGH,1.0,MN-065
+Mongolia,Tajšir [Taishir],Gov'-Altaj [Govi-Altai],,,1652,District,,,#N/A,,Gov'-Altaj [Govi-Altai]Mongolia,county,2,MN-065,Тайшир ᠲᠠᠶᠢᠰᠢᠷᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sümbėr [Sümber],Gov'sümbėr [Govisümber],,,13152,District,,,#N/A,,Gov'sümbėr [Govisümber]Mongolia,county,2,MN-047,Сүмбэр ᠰᠦᠮᠪᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Šivėėgov' [Shiveegovi],Gov'sümbėr [Govisümber],,,3822,District,,,#N/A,,Gov'sümbėr [Govisümber]Mongolia,county,2,MN-064,Шивээговь ᠰᠢᠪᠡᠭᠡ ᠭᠣᠪᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajantal [Bayantal],Gov'sümbėr [Govisümber],,,1179,District,,,#N/A,,Gov'sümbėr [Govisümber]Mongolia,county,2,MN-064,Баянтал ᠪᠠᠶ᠋ᠠᠨ ᠲᠠᠯ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dalanzadgad,Ömnögov' [Ömnögovi],,,28854,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Даланзадгад ᠳᠠᠯᠠᠨ ᠵᠠᠳᠠᠭᠠᠳ,,,,county,2,MN-053,Даланзадгад ᠳᠠᠯᠠᠨ ᠵᠠᠳᠠᠭᠠᠳ,,,,,region,1,MN-053,Өмнөговь ᠡᠮᠦᠨᠡ ᠭᠣᠪᠢ,HIGH,1.0,MN-053
+Mongolia,Cogtcėcji [Tsogttsetsii],Ömnögov' [Ömnögovi],,,8599,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Цогтцэций ᠴᠣᠭᠲᠤ ᠴᠡᠴᠡᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chanbogd [Khanbogd],Ömnögov' [Ömnögovi],,,8404,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Ханбогд ᠬᠠᠨ ᠪᠣᠭᠳᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Gurvantės [Gurvantes],Ömnögov' [Ömnögovi],,,5316,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Гурвантэс ᠭᠤᠷᠪᠠᠨ ᠲᠡᠰ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Manlaj [Manlai],Ömnögov' [Ömnögovi],,,2735,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Манлай ᠮᠠᠩᠯᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Nomgon,Ömnögov' [Ömnögovi],,,2498,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Номгон ᠨᠣᠮᠭᠤᠨ,,,,county,2,MN-053,Номгон ᠨᠣᠮᠭᠤᠨ,,,,,region,1,MN-053,Өмнөговь ᠡᠮᠦᠨᠡ ᠭᠣᠪᠢ,HIGH,1.0,MN-053
+Mongolia,Bajandalaj [Bayandalai],Ömnögov' [Ömnögovi],,,2083,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Баяндалай ᠪᠠᠶ᠋ᠠᠨ ᠳᠠᠯᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bulgan,Ömnögov' [Ömnögovi],,,2059,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-043,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,,,,,region,1,MN-067,Булган ᠪᠤᠯᠠᠭᠠᠨ,HIGH,1.0,MN-067
+Mongolia,Sėvrėj [Sevrei],Ömnögov' [Ömnögovi],,,2015,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Сэврэй ᠰᠡᠪᠡᠷᠡᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chanchongor [Khankhongor],Ömnögov' [Ömnögovi],,,2014,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-041,Ханх ᠬᠠᠩᠬ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cogt-Ovoo [Tsogt-Ovoo],Ömnögov' [Ömnögovi],,,1939,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Цогт-Овоо ᠴᠣᠭᠲᠤ ᠣᠪᠤᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajan-Ovoo [Bayan-Ovoo],Ömnögov' [Ömnögovi],,,1853,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-069,Баян-Овоо ᠪᠠᠶ᠋ᠠᠨ ᠣᠪᠤᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Mandal-Ovoo,Ömnögov' [Ömnögovi],,,1629,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Мандал-Овоо ᠮᠠᠨᠳᠠᠯ ᠣᠪᠤᠭ᠎ᠠ,,,,county,2,MN-053,Мандал-Овоо ᠮᠠᠨᠳᠠᠯ ᠣᠪᠤᠭ᠎ᠠ,,,,,region,1,MN-053,Өмнөговь ᠡᠮᠦᠨᠡ ᠭᠣᠪᠢ,HIGH,1.0,MN-053
+Mongolia,Chürmėn [Khürmen],Ömnögov' [Ömnögovi],,,1560,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Хүрмэн ᠬᠦᠷᠮᠡᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Noën [Noyon],Ömnögov' [Ömnögovi],,,1385,District,,,#N/A,,Ömnögov' [Ömnögovi]Mongolia,county,2,MN-053,Ноён ᠨᠣᠶ᠋ᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajan-Öndör [Bayan-Öndör; Erdenet],Orchon [Orkhon],,,102634,District,,,#N/A,,Orchon [Orkhon]Mongolia,county,2,MN-069,Баян-Өндөр ᠪᠠᠶ᠋ᠠᠨ ᠥᠨᠳᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jargalant,Orchon [Orkhon],,,3511,District,,,#N/A,,Orchon [Orkhon]Mongolia,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,,region,1,MN-069,Баянхонгор ᠪᠠᠶᠠᠨ ᠬᠣᠩᠭᠣᠷ,HIGH,1.0,MN-069
+Mongolia,Arvajchėėr [Arvaikheer],Övörchangaj [Övörkhangai],,,34605,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Арвайхээр ᠠᠷᠪᠠᠶ ᠬᠡᠭᠡᠷ᠎ᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Charchorin [Kharkhorin],Övörchangaj [Övörkhangai],,,12159,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Хархорин ᠬᠠᠷ᠎ᠠ ᠬᠣᠷᠢᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ujanga [Uyanga],Övörchangaj [Övörkhangai],,,9504,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Уянга ᠤᠶᠠᠩᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bat-Ölzij [Bat-Ölzii],Övörchangaj [Övörkhangai],,,7626,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Бат-Өлзий ᠪᠠᠲᠤ ᠥᠯᠵᠡᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chujirt [Khujirt],Övörchangaj [Övörkhangai],,,6782,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Хужирт ᠬᠤᠵᠢᠷᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bogd,Övörchangaj [Övörkhangai],,,5794,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Богд ᠪᠣᠭᠳᠠ,,,,county,2,MN-055,Богд ᠪᠣᠭᠳᠠ,,,,,region,1,MN-055,Өвөрхангай ᠥᠪᠦᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,HIGH,1.0,MN-055
+Mongolia,Züünbajan-Ulaan [Züünbayan-Ulaan],Övörchangaj [Övörkhangai],,,3842,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Зүүн Баян-Улаан ᠵᠡᠭᠦᠨ ᠪᠠᠶ᠋ᠠᠨ ᠤᠯᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajangol [Bayangol],Övörchangaj [Övörkhangai],,,3753,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-049,Баянгол ᠪᠠᠶᠠᠨ ᠭᠣᠤᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Narijntėėl [Nariinteel],Övörchangaj [Övörkhangai],,,3625,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Нарийнтээл ᠨᠠᠷᠢᠨ ᠲᠡᠭᠡᠯᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajan-Öndör [Bayan-Öndör],Övörchangaj [Övörkhangai],,,3576,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-069,Баян-Өндөр ᠪᠠᠶ᠋ᠠᠨ ᠥᠨᠳᠦᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sant,Övörchangaj [Övörkhangai],,,3514,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Сант ᠰᠠᠩᠲᠤ,,,,county,2,MN-055,Сант ᠰᠠᠩᠲᠤ,,,,,region,1,MN-055,Өвөрхангай ᠥᠪᠦᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,HIGH,1.0,MN-055
+Mongolia,Chajrchandulaan [Khairkhandulaan],Övörchangaj [Övörkhangai],,,3493,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Хайрхандулаан ᠬᠠᠶᠢᠷᠬᠠᠨ ᠳᠤᠯᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Taragt,Övörchangaj [Övörkhangai],,,3354,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Тарагт ᠲᠠᠷᠠᠭᠲᠤ,,,,county,2,MN-055,Тарагт ᠲᠠᠷᠠᠭᠲᠤ,,,,,region,1,MN-055,Өвөрхангай ᠥᠪᠦᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,HIGH,1.0,MN-055
+Mongolia,Bürd,Övörchangaj [Övörkhangai],,,2919,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Бүрд ᠪᠦᠷᠢᠳᠦ,,,,county,2,MN-055,Бүрд ᠪᠦᠷᠢᠳᠦ,,,,,region,1,MN-055,Өвөрхангай ᠥᠪᠦᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,HIGH,1.0,MN-055
+Mongolia,Züjl [Yesönzüil],Övörchangaj [Övörkhangai],,,2781,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Есөнзүйл ᠶᠢᠰᠤᠨ ᠵᠦᠢᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Baruunbajan-Ulaan [Baruun Bayan-Ulaan],Övörchangaj [Övörkhangai],,,2732,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Баруун Баян-Улаан ᠪᠠᠷᠠᠭᠤᠨ ᠪᠠᠶ᠋ᠠᠨ ᠤᠯᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tögrög,Övörchangaj [Övörkhangai],,,2699,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-065,Төгрөг ᠲᠦᠭᠦᠷᠢᠭ,,,,county,2,MN-065,Төгрөг ᠲᠦᠭᠦᠷᠢᠭ,,,,,region,1,MN-065,Говь-Алтай ᠭᠣᠪᠢ ᠠᠯᠲᠠᠢ,HIGH,1.0,MN-065
+Mongolia,Ölzijt [Ölziit],Övörchangaj [Övörkhangai],,,2346,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-069,Өлзийт ᠥᠯᠵᠡᠶᠢᠲᠦ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Gučin-Us [Guchin-Us],Övörchangaj [Övörkhangai],,,2157,District,,,#N/A,,Övörchangaj [Övörkhangai]Mongolia,county,2,MN-055,Гучин-Ус ᠭᠤᠴᠢᠨ ᠤᠰᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Mandal,Sėlėngė [Selenge],,,27017,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Мандал ᠮᠠᠨᠳᠠᠯ,,,,county,2,MN-049,Мандал ᠮᠠᠨᠳᠠᠯ,,,,,region,1,MN-049,Сэлэнгэ ᠰᠡᠯᠡᠩᠭᠡ,HIGH,1.0,MN-049
+Mongolia,Süchbaatar [Sükhbaatar],Sėlėngė [Selenge],,,22412,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-1,Сүхбаатар ᠰᠦᠬᠡ ᠪᠠᠭᠠᠲᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sajchan [Saikhan],Sėlėngė [Selenge],,,9332,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-067,Сайхан ᠰᠠᠶᠢᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Jeröö [Yeröö],Sėlėngė [Selenge],,,7061,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Ерөө ᠢᠷᠦᠭᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajangol [Bayangol],Sėlėngė [Selenge],,,5695,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Баянгол ᠪᠠᠶᠠᠨ ᠭᠣᠤᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cagaannuur [Tsagaannuur],Sėlėngė [Selenge],,,5255,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Цагааннуур ᠴᠠᠭᠠᠨ ᠨᠠᠭᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Altanbulag,Sėlėngė [Selenge],,,4766,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-047,Алтанбулаг ᠠᠯᠲᠠᠨ ᠪᠤᠯᠠᠭ,,,,county,2,MN-047,Алтанбулаг ᠠᠯᠲᠠᠨ ᠪᠤᠯᠠᠭ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Šaamar [Shaamar],Sėlėngė [Selenge],,,4061,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Шаамар ᠱᠠᠮᠠᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Orchontuul [Orkhontuul],Sėlėngė [Selenge],,,3802,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Орхонтуул ᠣᠷᠬᠤᠨ ᠪᠤᠯᠠᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Baruunbürėn [Baruunbüren],Sėlėngė [Selenge],,,3121,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Баруунбүрэн ᠪᠠᠷᠠᠭᠤᠨ ᠪᠦᠷᠢᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Züünbürėn [Züünbüren],Sėlėngė [Selenge],,,2992,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Зүүнбүрэн ᠵᠡᠭᠦᠨ ᠪᠦᠷᠢᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chüdėr [Khüder],Sėlėngė [Selenge],,,2871,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Хүдэр ᠬᠦᠳᠡᠷᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Orchon [Orkhon],Sėlėngė [Selenge],,,2289,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-067,Орхон ᠣᠷᠬᠤᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Sant,Sėlėngė [Selenge],,,2155,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-055,Сант ᠰᠠᠩᠲᠤ,,,,county,2,MN-055,Сант ᠰᠠᠩᠲᠤ,,,,,region,1,MN-055,Өвөрхангай ᠥᠪᠦᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,HIGH,1.0,MN-055
+Mongolia,Chušaat [Khushaat],Sėlėngė [Selenge],,,2125,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Хушаат ᠬᠠᠰᠢᠶ᠋ᠠᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Javchlant [Javkhlant],Sėlėngė [Selenge],,,2049,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Жавхлант ᠵᠢᠪᠬᠤᠯᠠᠩᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tüšig [Tüshig],Sėlėngė [Selenge],,,1884,District,,,#N/A,,Sėlėngė [Selenge]Mongolia,county,2,MN-049,Түшиг ᠲᠦᠰᠢᠭ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Baruun-Urt,Süchbaatar [Sükhbaatar],,,23103,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Баруун-Урт ᠪᠠᠷᠠᠭᠤᠨ ᠤᠷᠲᠤ,,,,county,2,MN-051,Баруун-Урт ᠪᠠᠷᠠᠭᠤᠨ ᠤᠷᠲᠤ,,,,,region,1,MN-051,Сүхбаатар ᠰᠦᠬᠡ ᠪᠠᠭᠠᠲᠤᠷ,HIGH,1.0,MN-051
+Mongolia,Ėrdėnėcagaan [Erdenetsagaan],Süchbaatar [Sükhbaatar],,,6965,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Эрдэнэцагаан ᠡᠷᠳᠡᠨᠢ ᠴᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajandėlgėr [Bayandelger],Süchbaatar [Sükhbaatar],,,5121,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-047,Баяндэлгэр ᠪᠠᠶ᠋ᠠᠨ ᠳᠡᠯᠭᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Mönchchaan [Mönkhkhaan],Süchbaatar [Sükhbaatar],,,5015,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Мөнххаан ᠮᠥᠩᠬᠡ ᠬᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ongon,Süchbaatar [Sükhbaatar],,,3839,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Онгон ᠣᠩᠭᠤᠨ,,,,county,2,MN-051,Онгон ᠣᠩᠭᠤᠨ,,,,,region,1,MN-051,Сүхбаатар ᠰᠦᠬᠡ ᠪᠠᠭᠠᠲᠤᠷ,HIGH,1.0,MN-051
+Mongolia,Süchbaatar [Sükhbaatar],Süchbaatar [Sükhbaatar],,,3595,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-1,Сүхбаатар ᠰᠦᠬᠡ ᠪᠠᠭᠠᠲᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tüvšinširėė [Tüvshinshiree],Süchbaatar [Sükhbaatar],,,3433,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Тувшинширээ ᠲᠥᠪᠰᠢᠨ ᠰᠢᠷᠡᠭᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dar'ganga [Dariganga],Süchbaatar [Sükhbaatar],,,3196,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Дарьганга ᠳᠠᠷᠢᠭᠠᠩᠭ᠎ᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Uulbajan [Uulbayan],Süchbaatar [Sükhbaatar],,,2923,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Уулбаян ᠠᠭᠤᠯᠠ ᠪᠠᠶ᠋ᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tümėncogt [Tümentsogt],Süchbaatar [Sükhbaatar],,,2556,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Түмэнцогт ᠲᠦᠮᠡᠨ ᠴᠣᠭᠲᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Asgat,Süchbaatar [Sükhbaatar],,,1986,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-057,Асгат ᠠᠰᠭᠠᠲᠤ,,,,county,2,MN-057,Асгат ᠠᠰᠭᠠᠲᠤ,,,,,region,1,MN-057,Завхан ᠵᠠᠪᠬᠠᠨ,HIGH,1.0,MN-057
+Mongolia,Chalzan [Khalzan],Süchbaatar [Sükhbaatar],,,1815,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Халзан ᠬᠠᠯᠵᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Naran,Süchbaatar [Sükhbaatar],,,1681,District,,,#N/A,,Süchbaatar [Sükhbaatar]Mongolia,county,2,MN-051,Наран ᠨᠠᠷᠠᠨ,,,,county,2,MN-051,Наран ᠨᠠᠷᠠᠨ,,,,,region,1,MN-051,Сүхбаатар ᠰᠦᠬᠡ ᠪᠠᠭᠠᠲᠤᠷ,HIGH,1.0,MN-051
+Mongolia,Zuunmod,Töv,,,17313,District,,,#N/A,,TövMongolia,county,2,MN-047,Зуунмод ᠵᠠᠭᠤᠨ ᠮᠣᠳᠤ,,,,county,2,MN-047,Зуунмод ᠵᠠᠭᠤᠨ ᠮᠣᠳᠤ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Bacümbėr [Batsümber],Töv,,,7040,District,,,#N/A,,TövMongolia,county,2,MN-047,Батсүмбэр ᠪᠠᠲᠤ ᠰᠦ᠋ᠮᠪᠦᠷ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Jargalant,Töv,,,6747,District,,,#N/A,,TövMongolia,county,2,MN-069,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,county,2,MN-047,Жаргалант ᠵᠢᠷᠭᠠᠯᠠᠩᠲᠤ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Zaamar,Töv,,,5872,District,,,#N/A,,TövMongolia,county,2,MN-047,Заамар ᠵᠠᠭᠠᠮᠠᠷ,,,,county,2,MN-047,Заамар ᠵᠠᠭᠠᠮᠠᠷ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Bornuur,Töv,,,5002,District,,,#N/A,,TövMongolia,county,2,MN-047,Борнуур ᠪᠣᠷᠤ ᠨᠠᠭᠤᠷ,,,,county,2,MN-047,Борнуур ᠪᠣᠷᠤ ᠨᠠᠭᠤᠷ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Ėrdėnėsant [Erdenesant],Töv,,,4492,District,,,#N/A,,TövMongolia,county,2,MN-047,Эрдэнэсант ᠡᠷᠳᠡᠨᠢ ᠰᠠᠩᠲᠤ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajančandman' [Bayanchandmani],Töv,,,4228,District,,,#N/A,,TövMongolia,county,2,MN-047,Баянчандмань ᠪᠠᠶ᠋ᠠᠨ ᠴᠢᠨᠳᠠᠮᠠᠨᠢ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Ėrdėnė [Erdene],Töv,,,3949,District,,,#N/A,,TövMongolia,county,2,MN-065,Эрдэнэ ᠡᠷᠳᠡᠨᠢ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Altanbulag,Töv,,,3308,District,,,#N/A,,TövMongolia,county,2,MN-047,Алтанбулаг ᠠᠯᠲᠠᠨ ᠪᠤᠯᠠᠭ,,,,county,2,MN-047,Алтанбулаг ᠠᠯᠲᠠᠨ ᠪᠤᠯᠠᠭ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Bürėn [Büren],Töv,,,2963,District,,,#N/A,,TövMongolia,county,2,MN-047,Бүрэн ᠪᠦᠷᠢᠨ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Cėėl [Tseel],Töv,,,2647,District,,,#N/A,,TövMongolia,county,2,MN-065,Цээл ᠴᠡᠭᠡᠯ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Ugtaal,Töv,,,2639,District,,,#N/A,,TövMongolia,county,2,MN-059,Говь-Угтаал ᠭᠣᠪᠢ ᠤᠭᠲᠠᠭᠠᠯ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Lün,Töv,,,2521,District,,,#N/A,,TövMongolia,county,2,MN-047,Лүн ᠯᠦᠩ,,,,county,2,MN-047,Лүн ᠯᠦᠩ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Möngönmor't [Möngönmorit],Töv,,,2243,District,,,#N/A,,TövMongolia,county,2,MN-047,Мөнгөнморьт ᠮᠥᠩᠭᠦᠨ ᠮᠣᠷᠢᠲᠤ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajan-Önjüül [Bayan-Önjüül],Töv,,,2206,District,,,#N/A,,TövMongolia,county,2,MN-047,Баян-Өнжүүл ᠪᠠᠶ᠋ᠠᠨ ᠥᠨᠵᠢᠭᠦᠯ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Sėrgėlėn [Sergelen],Töv,,,2084,District,,,#N/A,,TövMongolia,county,2,MN-047,Сэргэлэн ᠰᠡᠷᠭᠦᠯᠡᠩ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajan [Bayan],Töv,,,2049,District,,,#N/A,,TövMongolia,county,2,MN-047,Баян ᠪᠠᠶ᠋ᠠᠨ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Öndörširėėt [Öndörshireet],Töv,,,2018,District,,,#N/A,,TövMongolia,county,2,MN-047,Өндөрширээт ᠥᠨᠳᠦᠷ ᠰᠢᠷᠡᠭᠡᠲᠦ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajancagaan [Bayantsagaan],Töv,,,1857,District,,,#N/A,,TövMongolia,county,2,MN-069,Баянцагаан ᠪᠠᠶ᠋ᠠᠨ ᠴᠠᠭᠠᠨ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Dėlgėrchaan [Delgerkhaan],Töv,,,1817,District,,,#N/A,,TövMongolia,county,2,MN-047,Дэлгэрхаан ᠳᠡᠯᠭᠡᠷ ᠬᠠᠭᠠᠨ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Sümbėr [Sümber],Töv,,,1736,District,,,#N/A,,TövMongolia,county,2,MN-047,Сүмбэр ᠰᠦᠮᠪᠦᠷ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajancogt [Bayantsogt],Töv,,,1717,District,,,#N/A,,TövMongolia,county,2,MN-047,Баянцогт ᠪᠠᠶ᠋ᠠᠨ ᠴᠣᠭᠲᠤ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajanjargalan [Bayanjargalan],Töv,,,1647,District,,,#N/A,,TövMongolia,county,2,MN-059,Баянжаргалан ᠪᠠᠶ᠋ᠠᠨ ᠵᠢᠷᠭᠠᠯᠠᠩ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Argalant,Töv,,,1601,District,,,#N/A,,TövMongolia,county,2,MN-047,Аргалант ᠠᠷᠭᠠᠯᠠᠩᠲᠤ,,,,county,2,MN-047,Аргалант ᠠᠷᠭᠠᠯᠠᠩᠲᠤ,,,,,region,1,MN-047,Төв ᠲᠥᠪ,HIGH,1.0,MN-047
+Mongolia,Bajandėlgėr [Bayandelger],Töv,,,1598,District,,,#N/A,,TövMongolia,county,2,MN-047,Баяндэлгэр ᠪᠠᠶ᠋ᠠᠨ ᠳᠡᠯᠭᠡᠷ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajanchangaj [Bayankhangai],Töv,,,1402,District,,,#N/A,,TövMongolia,county,2,MN-047,Баянхангай ᠪᠠᠶ᠋ᠠᠨ ᠬᠠᠩᠭ᠋ᠠᠢ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Archust [Arkhust],Töv,,,1346,District,,,#N/A,,TövMongolia,county,2,MN-047,Архуст ᠠᠷᠤᠬᠤᠰᠤᠲᠤ,,,,,,,,,,,,region,1,MN-047,Төв ᠲᠥᠪ,NONE,0.0,MN-047
+Mongolia,Bajanzürch [Bayanzürkh],Ulaanbaatar [Ulan Bator],,,383892,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-041,Баянзүрх ᠪᠠᠶᠠᠨ ᠵᠢᠷᠦᠬᠡ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Songinochajrchan [Songinokhairkhan],Ulaanbaatar [Ulan Bator],,,341540,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-073,Хайрхан ᠬᠠᠶᠢᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajangol [Bayangol],Ulaanbaatar [Ulan Bator],,,236385,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-049,Баянгол ᠪᠠᠶᠠᠨ ᠭᠣᠤᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Chan-Uul [Khan-Uul],Ulaanbaatar [Ulan Bator],,,209524,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-1,Хан-Уул ᠬᠠᠨ ᠠᠭᠤᠯᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Čingėltėj [Chingeltei],Ulaanbaatar [Ulan Bator],,,150548,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-1,Чингэлтэй ᠴᠢᠩᠭᠢᠯᠲᠡᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Süchbaatar [Sükhbaatar],Ulaanbaatar [Ulan Bator],,,144542,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-1,Сүхбаатар ᠰᠦᠬᠡ ᠪᠠᠭᠠᠲᠤᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Nalajch [Nalaikh],Ulaanbaatar [Ulan Bator],,,38929,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-1,Налайх ᠨᠠᠯᠠᠶᠢᠬᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Baganuur,Ulaanbaatar [Ulan Bator],,,29433,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-1,Багануур ᠪᠠᠭᠠᠨᠠᠭᠤᠷ,,,,county,2,MN-1,Багануур ᠪᠠᠭᠠᠨᠠᠭᠤᠷ,,,,,region,1,MN-1,Улаанбаатар ᠤᠯᠠᠭᠠᠨ ᠪᠠᠭᠠᠲᠤᠷ,HIGH,1.0,MN-1
+Mongolia,Bagachangaj [Bagakhangai],Ulaanbaatar [Ulan Bator],,,4459,City District,Ulan Bator,,Ulan Bator,,Ulaanbaatar [Ulan Bator]Mongolia,county,2,MN-1,Багахангай ᠪᠠᠭᠠ ᠬᠠᠩᠭ᠋ᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ulaangom,Uvs,,,32912,District,,,#N/A,,UvsMongolia,county,2,MN-046,Улаангом ᠤᠯᠠᠭᠠᠨ ᠭᠣᠮ,,,,county,2,MN-046,Улаангом ᠤᠯᠠᠭᠠᠨ ᠭᠣᠮ,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,HIGH,1.0,MN-046
+Mongolia,Tės [Tes],Uvs,,,5211,District,,,#N/A,,UvsMongolia,county,2,MN-057,Тэс ᠲᠡᠰ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Ömnögov' [Ömnögovi],Uvs,,,4772,District,,,#N/A,,UvsMongolia,county,2,MN-046,Өмнөговь ᠡᠮᠦᠨᠡ ᠭᠣᠪᠢ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Naranbulag,Uvs,,,4400,District,,,#N/A,,UvsMongolia,county,2,MN-046,Наранбулаг ᠨᠠᠷᠠᠨ ᠪᠤᠯᠠᠭ,,,,county,2,MN-046,Наранбулаг ᠨᠠᠷᠠᠨ ᠪᠤᠯᠠᠭ,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,HIGH,1.0,MN-046
+Mongolia,Tarialan,Uvs,,,4067,District,,,#N/A,,UvsMongolia,county,2,MN-041,Тариалан ᠲᠠᠷᠢᠶ᠋ᠠᠯᠠᠩ,,,,county,2,MN-046,Тариалан ᠲᠠᠷᠢᠶ᠋ᠠᠯᠠᠩ,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,HIGH,1.0,MN-046
+Mongolia,Öndörchangaj [Öndörkhangai],Uvs,,,3238,District,,,#N/A,,UvsMongolia,county,2,MN-046,Өндөрхангай ᠥᠨᠳᠦᠷ ᠬᠠᠩᠭ᠋ᠠᠢ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Züüngov' [Züüngovi],Uvs,,,2895,District,,,#N/A,,UvsMongolia,county,2,MN-046,Зүүнговь ᠵᠡᠭᠦᠨ ᠭᠣᠪᠢ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Baruunturuun,Uvs,,,2802,District,,,#N/A,,UvsMongolia,county,2,MN-046,Баруунтуруун ᠪᠠᠷᠠᠭᠤᠨ ᠲᠤᠷᠤᠭᠤᠨ,,,,county,2,MN-046,Баруунтуруун ᠪᠠᠷᠠᠭᠤᠨ ᠲᠤᠷᠤᠭᠤᠨ,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,HIGH,1.0,MN-046
+Mongolia,Chjargas [Khyargas],Uvs,,,2564,District,,,#N/A,,UvsMongolia,county,2,MN-046,Хяргас ᠬᠢᠷᠭᠢᠰ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Chovd [Khovd],Uvs,,,2555,District,,,#N/A,,UvsMongolia,county,2,MN-046,Ховд ᠬᠣᠪᠳᠤ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Sagil,Uvs,,,2507,District,,,#N/A,,UvsMongolia,county,2,MN-046,Сагил ᠰᠠᠭᠢᠯᠢ,,,,locality,,MN-046,Сагил,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,HIGH,1.0,MN-046
+Mongolia,Ölgij [Ölgii],Uvs,,,2493,District,,,#N/A,,UvsMongolia,county,2,MN-046,Өлгий ᠥᠯᠦᠭᠡᠢ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Malčin [Malchin],Uvs,,,2472,District,,,#N/A,,UvsMongolia,county,2,MN-046,Малчин,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Züünchangaj [Züünkhangai],Uvs,,,2409,District,,,#N/A,,UvsMongolia,county,2,MN-046,Зүүнхангай ᠵᠡᠭᠦᠨ ᠬᠠᠩᠭ᠋ᠠᠢ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Böchmörön [Bökhmörön],Uvs,,,2294,District,,,#N/A,,UvsMongolia,county,2,MN-046,Бөхмөрөн ᠪᠥᠬᠡ ᠮᠥ᠋ᠷᠡᠨ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Cagaanchajrchan [Tsagaankhairkhan],Uvs,,,2118,District,,,#N/A,,UvsMongolia,county,2,MN-057,Цагаанхайрхан ᠴᠠᠭᠠᠨ ᠬᠠᠶᠢᠷᠬᠠᠨ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Türgėn [Türgen],Uvs,,,2100,District,,,#N/A,,UvsMongolia,county,2,MN-046,Түргэн ᠲᠦᠷᠭᠡᠨ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Zavchan [Zavkhan],Uvs,,,1913,District,,,#N/A,,UvsMongolia,county,2,MN-046,Завхан ᠵᠠᠪᠬᠠᠨ,,,,,,,,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,NONE,0.0,MN-046
+Mongolia,Davst,Uvs,,,1592,District,,,#N/A,,UvsMongolia,county,2,MN-046,Давст ᠳᠠᠪᠤᠰᠤᠲᠤ,,,,county,2,MN-046,Давст ᠳᠠᠪᠤᠰᠤᠲᠤ,,,,,region,1,MN-046,Увс ᠤᠪᠰᠤ,HIGH,1.0,MN-046
+Mongolia,Uliastaj [Uliastai],Zavchan [Zavkhan],,,16580,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Улиастай ᠤᠯᠢᠶᠠᠰᠤᠲᠠᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tosoncėngėl [Tosontsengel],Zavchan [Zavkhan],,,9536,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Тосонцэнгэл ᠲᠣᠰᠤᠨ ᠴᠡᠩᠭᠡᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ich-Uul [Ikh-Uul],Zavchan [Zavkhan],,,6549,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-041,Их-Уул ᠶᠡᠬᠡ ᠠᠭᠤᠯᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Aldarchaan [Aldarkhaan],Zavchan [Zavkhan],,,3050,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Алдархаан ᠠᠯᠳᠠᠷ ᠬᠠᠭᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tės [Tes],Zavchan [Zavkhan],,,2952,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Тэс ᠲᠡᠰ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Tėlmėn [Telmen],Zavchan [Zavkhan],,,2920,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Тэлмэн ᠲᠡᠯᠡᠮᠡᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajantės [Bayantes],Zavchan [Zavkhan],,,2667,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Баянтэс ᠪᠠᠶᠠᠨ ᠲᠡᠰ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Otgon,Zavchan [Zavkhan],,,2593,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Отгон ᠣᠳᠬᠠᠨ,,,,county,2,MN-057,Отгон ᠣᠳᠬᠠᠨ,,,,,region,1,MN-057,Завхан ᠵᠠᠪᠬᠠᠨ,HIGH,1.0,MN-057
+Mongolia,Idėr [Ider],Zavchan [Zavkhan],,,2525,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Идэр ᠢᠳᠡᠷ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Dörvöljin,Zavchan [Zavkhan],,,2284,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Дөрвөлжин ᠳᠥᠷᠪᠡᠯᠵᠢᠨ,,,,county,2,MN-057,Дөрвөлжин ᠳᠥᠷᠪᠡᠯᠵᠢᠨ,,,,,region,1,MN-057,Завхан ᠵᠠᠪᠬᠠᠨ,HIGH,1.0,MN-057
+Mongolia,Jaruu [Yaruu],Zavchan [Zavkhan],,,2041,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Яруу ᠢᠷᠠᠭᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Nömrög,Zavchan [Zavkhan],,,1958,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Нөмрөг ᠨᠥᠮᠦᠷᠭᠡ,,,,county,2,MN-057,Нөмрөг ᠨᠥᠮᠦᠷᠭᠡ,,,,,region,1,MN-057,Завхан ᠵᠠᠪᠬᠠᠨ,HIGH,1.0,MN-057
+Mongolia,Tüdėvtėj [Tüdevtei],Zavchan [Zavkhan],,,1937,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Түдэвтэй ᠲᠦᠳᠦᠪᠲᠡᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Šilüüstėj [Shilüüstei],Zavchan [Zavkhan],,,1788,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Шилүүстэй ᠰᠢᠯᠢᠭᠦᠰᠦᠲᠡᠢ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Bajanchajrchan [Bayankhairkhan],Zavchan [Zavkhan],,,1773,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Баянхайрхан ᠪᠠᠶ᠋ᠠᠨ ᠬᠠᠶᠢᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Ėrdėnėchajrchan [Erdenekhairkhan],Zavchan [Zavkhan],,,1736,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Эрдэнэхайрхан ᠡᠷᠳᠡᠨᠢ ᠬᠠᠶᠢᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Cėcėn-Uul [Tsetsen-Uul],Zavchan [Zavkhan],,,1634,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Цэцэн-уул ᠰᠡᠴᠡᠨ ᠠᠭᠤᠯᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Santmargac [Santmargats],Zavchan [Zavkhan],,,1568,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Сантмаргац ᠰᠠᠩᠲᠤ ᠮᠠᠷᠭᠠᠴᠠ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Songino,Zavchan [Zavkhan],,,1532,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Сонгино ᠰᠣᠩᠭᠢᠨ᠎ᠠ,,,,county,2,MN-057,Сонгино ᠰᠣᠩᠭᠢᠨ᠎ᠠ,,,,,region,1,MN-057,Завхан ᠵᠠᠪᠬᠠᠨ,HIGH,1.0,MN-057
+Mongolia,Cagaanchajrchan [Tsagaankhairkhan],Zavchan [Zavkhan],,,1409,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Цагаанхайрхан ᠴᠠᠭᠠᠨ ᠬᠠᠶᠢᠷᠬᠠᠨ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Urgamal,Zavchan [Zavkhan],,,1338,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Ургамал ᠤᠷᠭᠤᠮᠠᠯ,,,,county,2,MN-057,Ургамал ᠤᠷᠭᠤᠮᠠᠯ,,,,,region,1,MN-057,Завхан ᠵᠠᠪᠬᠠᠨ,HIGH,1.0,MN-057
+Mongolia,Cagaančuluut [Tsagaanchuluut],Zavchan [Zavkhan],,,1290,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Цагаанчулуут ᠴᠠᠭᠠᠨ ᠴᠢᠯᠠᠭᠤᠳᠤ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Zavchanmandal [Zavkhanmandal],Zavchan [Zavkhan],,,1100,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Завханмандал ᠵᠠᠪᠬᠠᠨ ᠮᠠᠨᠳᠠᠯ,,,,,,,,,,,,,,,,NONE,0.0,
+Mongolia,Asgat,Zavchan [Zavkhan],,,1042,District,,,#N/A,,Zavchan [Zavkhan]Mongolia,county,2,MN-057,Асгат ᠠᠰᠭᠠᠲᠤ,,,,county,2,MN-057,Асгат ᠠᠰᠭᠠᠲᠤ,,,,,region,1,MN-057,Завхан ᠵᠠᠪᠬᠠᠨ,HIGH,1.0,MN-057

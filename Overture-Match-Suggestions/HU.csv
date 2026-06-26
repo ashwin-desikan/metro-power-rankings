@@ -1,176 +1,176 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Hungary,Kecskemét,Bács-Kiskun,,,155983,District,Kecskemét,,Kecskemét,,Bács-KiskunHungary,,,,,locality,,HU-BK,Kecskemét,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Kiskunfélegyháza,Bács-Kiskun,,,36191,District,Kecskemét,,Kecskemét,,Bács-KiskunHungary,,,,,locality,,HU-BK,Kiskunfélegyháza,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Tiszakécske,Bács-Kiskun,,,24452,District,Kecskemét,,Kecskemét,,Bács-KiskunHungary,,,,,locality,,HU-BK,Tiszakécske,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Baja,Bács-Kiskun,,,63205,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Baja,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Kiskőrös,Bács-Kiskun,,,53032,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Kiskőrös,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Kalocsa,Bács-Kiskun,,,47483,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Kalocsa,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Kiskunhalas,Bács-Kiskun,,,42117,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Kiskunhalas,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Kunszentmiklós,Bács-Kiskun,,,29100,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Kunszentmiklós,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Bácsalmás,Bács-Kiskun,,,18287,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Bácsalmás,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Kiskunmajsa,Bács-Kiskun,,,18091,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Kiskunmajsa,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Jánoshalma,Bács-Kiskun,,,15884,District,,,#N/A,,Bács-KiskunHungary,,,,,locality,,HU-BK,Jánoshalma,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
-Hungary,Pécs,Baranya,,,175235,District,Pecs,,Pecs,,BaranyaHungary,,,,,locality,,HU-BA,Pécs,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Siklós,Baranya,,,34364,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Siklós,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Mohács,Baranya,,,33045,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Mohács,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Komló,Baranya,,,32761,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Komló,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Szigetvár,Baranya,,,23974,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Szigetvár,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Szentlőrinc,Baranya,,,13936,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Szentlőrinc,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Sellye,Baranya,,,13123,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Sellye,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Sásd,Baranya,,,11617,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Sásd,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Pécsvárad,Baranya,,,11327,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Pécsvárad,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Bóly,Baranya,,,11322,District,,,#N/A,,BaranyaHungary,,,,,locality,,HU-BA,Bóly,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
-Hungary,Békéscsaba,Békes,,,79002,District,Békéscsaba,,Békéscsaba,,BékesHungary,,,,,locality,,HU-BE,Békéscsaba,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Orosháza,Békes,,,47659,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Orosháza,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Gyula,Békes,,,38787,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Gyula,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Mezőkovácsháza,Békes,,,36793,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Mezőkovácsháza,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Békés,Békes,,,34234,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Békés,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Szeghalom,Békes,,,27755,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Szeghalom,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Szarvas,Békes,,,26318,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Szarvas,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Gyomaendrőd,Békes,,,22280,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Gyomaendrőd,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Sarkad,Békes,,,21436,District,,,#N/A,,BékesHungary,,,,,locality,,HU-BE,Sarkad,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
-Hungary,Mezőkövesd,Borsod-Abaúj-Zemplén,,,40024,District,Mezőkövesd,,Mezőkövesd,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Mezőkövesd,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Miskolc,Borsod-Abaúj-Zemplén,,,233281,District,Miskolc,,Miskolc,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Miskolc,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Kazincbarcika,Borsod-Abaúj-Zemplén,,,61036,District,Miskolc,,Miskolc,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Kazincbarcika,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Ózd,Borsod-Abaúj-Zemplén,,,50730,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Ózd,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Szerencs,Borsod-Abaúj-Zemplén,,,38250,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Szerencs,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Edelény,Borsod-Abaúj-Zemplén,,,32522,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Edelény,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Tiszaújváros,Borsod-Abaúj-Zemplén,,,29966,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Tiszaújváros,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Sárospatak,Borsod-Abaúj-Zemplén,,,22860,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Sárospatak,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Encs,Borsod-Abaúj-Zemplén,,,21226,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Encs,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Sátoraljaújhely,Borsod-Abaúj-Zemplén,,,20722,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Sátoraljaújhely,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Putnok,Borsod-Abaúj-Zemplén,,,17612,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Putnok,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Szikszó,Borsod-Abaúj-Zemplén,,,16708,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Szikszó,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Gönc,Borsod-Abaúj-Zemplén,,,15856,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Gönc,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Cigánd,Borsod-Abaúj-Zemplén,,,15578,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Cigánd,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Mezőcsát,Borsod-Abaúj-Zemplén,,,13807,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Mezőcsát,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Tokaj,Borsod-Abaúj-Zemplén,,,12269,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,,,,,locality,,HU-BZ,Tokaj,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
-Hungary,Budapest,Budapest,,,1752286,City,Budapest,,Budapest,,BudapestHungary,,,,,locality,,HU-BU,Budapest,,,,,region,1,HU-BU,Budapest,HIGH,1.0,HU-BU
-Hungary,Szeged,Csongrád,,,197615,District,Szeged,,Szeged,,CsongrádHungary,,,,,locality,,HU-CS,Szeged,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
-Hungary,Hódmezővásárhely,Csongrád,,,52960,District,Szeged,,Szeged,,CsongrádHungary,,,,,locality,,HU-CS,Hódmezővásárhely,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
-Hungary,Makó,Csongrád,,,42310,District,Szeged,,Szeged,,CsongrádHungary,,,,,locality,,HU-CS,Makó,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
-Hungary,Mórahalom,Csongrád,,,28452,District,Szeged,,Szeged,,CsongrádHungary,,,,,locality,,HU-CS,Mórahalom,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
-Hungary,Kistelek,Csongrád,,,17704,District,Szeged,,Szeged,,CsongrádHungary,,,,,locality,,HU-CS,Kistelek,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
-Hungary,Szentes,Csongrád,,,38727,District,,,#N/A,,CsongrádHungary,,,,,locality,,HU-CS,Szentes,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
-Hungary,Csongrád,Csongrád,,,21244,District,,,#N/A,,CsongrádHungary,,,,,locality,,HU-CS,Csongrád,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
-Hungary,Dunaújváros,Fejér,,,89467,District,Dunaujvaros,,Dunaujvaros,,FejérHungary,,,,,locality,,HU-FE,Dunaújváros,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Székesfehérvár,Fejér,,,151270,District,Székesfehérvár,,Székesfehérvár,,FejérHungary,,,,,locality,,HU-FE,Székesfehérvár,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Mór,Fejér,,,33922,District,Székesfehérvár,,Székesfehérvár,,FejérHungary,,,,,locality,,HU-FE,Mór,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Gárdony,Fejér,,,33392,District,Székesfehérvár,,Székesfehérvár,,FejérHungary,,,,,locality,,HU-FE,Gárdony,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Bicske,Fejér,,,35668,District,,,#N/A,,FejérHungary,,,,,locality,,HU-FE,Bicske,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Sárbogárd,Fejér,,,27019,District,,,#N/A,,FejérHungary,,,,,locality,,HU-FE,Sárbogárd,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Martonvásár,Fejér,,,26867,District,,,#N/A,,FejérHungary,,,,,locality,,HU-FE,Martonvásár,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Enying,Fejér,,,20107,District,,,#N/A,,FejérHungary,,,,,locality,,HU-FE,Enying,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
-Hungary,Győr,Győr-Moson-Sopron,,,200351,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,,,,,locality,,HU-GS,Győr,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
-Hungary,Mosonmagyaróvár,Győr-Moson-Sopron,,,76378,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,,,,,locality,,HU-GS,Mosonmagyaróvár,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
-Hungary,Pannonhalma,Győr-Moson-Sopron,,,15878,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,,,,,locality,,HU-GS,Pannonhalma,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
-Hungary,Tét,Győr-Moson-Sopron,,,14749,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,,,,,locality,,HU-GS,Tét,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
-Hungary,Sopron,Győr-Moson-Sopron,,,102854,District,Sopron,,Sopron,,Győr-Moson-SopronHungary,,,,,locality,,HU-GS,Sopron,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
-Hungary,Csorna,Győr-Moson-Sopron,,,32634,District,,,#N/A,,Győr-Moson-SopronHungary,,,,,locality,,HU-GS,Csorna,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
-Hungary,Kapuvár,Győr-Moson-Sopron,,,24300,District,,,#N/A,,Győr-Moson-SopronHungary,,,,,locality,,HU-GS,Kapuvár,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
-Hungary,Debrecen,Hajdú-Bihar,,,214701,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Debrecen,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Hajdúszoboszló,Hajdú-Bihar,,,42746,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Hajdúszoboszló,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Hajdúböszörmény,Hajdú-Bihar,,,38708,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Hajdúböszörmény,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Balmazújváros,Hajdú-Bihar,,,29100,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Balmazújváros,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Hajdúhadház,Hajdú-Bihar,,,22426,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Hajdúhadház,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Berettyóújfalu,Hajdú-Bihar,,,43275,District,,,#N/A,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Berettyóújfalu,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Derecske,Hajdú-Bihar,,,40849,District,,,#N/A,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Derecske,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Püspökladány,Hajdú-Bihar,,,38120,District,,,#N/A,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Püspökladány,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Nyíradony,Hajdú-Bihar,,,29324,District,,,#N/A,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Nyíradony,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Hajdúnánás,Hajdú-Bihar,,,28740,District,,,#N/A,,Hajdú-BiharHungary,,,,,locality,,HU-HB,Hajdúnánás,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
-Hungary,Eger,Heves,,,84007,District,Eger,,Eger,,HevesHungary,,,,,locality,,HU-HE,Eger,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
-Hungary,Gyöngyös,Heves,,,70420,District,Gyöngyös,,Gyöngyös,,HevesHungary,,,,,locality,,HU-HE,Gyöngyös,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
-Hungary,Hatvan,Heves,,,49518,District,,,#N/A,,HevesHungary,,,,,locality,,HU-HE,Hatvan,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
-Hungary,Heves,Heves,,,33889,District,,,#N/A,,HevesHungary,,,,,locality,,HU-HE,Heves,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
-Hungary,Füzesabony,Heves,,,28830,District,,,#N/A,,HevesHungary,,,,,locality,,HU-HE,Füzesabony,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
-Hungary,Pétervására,Heves,,,19691,District,,,#N/A,,HevesHungary,,,,,locality,,HU-HE,Pétervására,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
-Hungary,Bélapátfalva,Heves,,,8254,District,,,#N/A,,HevesHungary,,,,,locality,,HU-HE,Bélapátfalva,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
-Hungary,Szolnok,Jász-Nagykun-Szolnok,,,114801,District,Szolnok,,Szolnok,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Szolnok,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Jászberény,Jász-Nagykun-Szolnok,,,51416,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Jászberény,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Karcag,Jász-Nagykun-Szolnok,,,40628,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Karcag,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Törökszentmiklós,Jász-Nagykun-Szolnok,,,34392,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Törökszentmiklós,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Kunszentmárton,Jász-Nagykun-Szolnok,,,33505,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Kunszentmárton,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Jászapáti,Jász-Nagykun-Szolnok,,,31298,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Jászapáti,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Mezőtúr,Jász-Nagykun-Szolnok,,,25862,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Mezőtúr,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Kunhegyes,Jász-Nagykun-Szolnok,,,19612,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Kunhegyes,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Tiszafüred,Jász-Nagykun-Szolnok,,,18493,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,,,,,locality,,HU-JN,Tiszafüred,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
-Hungary,Esztergom,Komárom-Esztergom,,,91050,District,Esztergom,,Esztergom,,Komárom-EsztergomHungary,,,,,locality,,HU-KE,Esztergom,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
-Hungary,Tatabánya,Komárom-Esztergom,,,84416,District,Tatabánya,,Tatabánya,,Komárom-EsztergomHungary,,,,,locality,,HU-KE,Tatabánya,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
-Hungary,Komárom,Komárom-Esztergom,,,39337,District,,,#N/A,,Komárom-EsztergomHungary,,,,,locality,,HU-KE,Komárom,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
-Hungary,Tata,Komárom-Esztergom,,,38832,District,,,#N/A,,Komárom-EsztergomHungary,,,,,locality,,HU-KE,Tata,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
-Hungary,Oroszlány,Komárom-Esztergom,,,25948,District,,,#N/A,,Komárom-EsztergomHungary,,,,,locality,,HU-KE,Oroszlány,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
-Hungary,Kisbér,Komárom-Esztergom,,,19624,District,,,#N/A,,Komárom-EsztergomHungary,,,,,locality,,HU-KE,Kisbér,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
-Hungary,Salgótarján,Nógrád,,,59056,District,Salgótarján,,Salgótarján,,NógrádHungary,,,,,locality,,HU-NO,Salgótarján,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
-Hungary,Balassagyarmat,Nógrád,,,37421,District,,,#N/A,,NógrádHungary,,,,,locality,,HU-NO,Balassagyarmat,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
-Hungary,Pásztó,Nógrád,,,30211,District,,,#N/A,,NógrádHungary,,,,,locality,,HU-NO,Pásztó,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
-Hungary,Rétság,Nógrád,,,24193,District,,,#N/A,,NógrádHungary,,,,,locality,,HU-NO,Rétság,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
-Hungary,Bátonyterenye,Nógrád,,,20027,District,,,#N/A,,NógrádHungary,,,,,locality,,HU-NO,Bátonyterenye,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
-Hungary,Szécsény,Nógrád,,,18396,District,,,#N/A,,NógrádHungary,,,,,locality,,HU-NO,Szécsény,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
-Hungary,Gödöllő,Pest,,,149605,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Gödöllő,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Érd,Pest,,,125594,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Érd,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Szigetszentmiklós,Pest,,,121900,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Szigetszentmiklós,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Budakeszi,Pest,,,92090,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Budakeszi,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Cegléd,Pest,,,87528,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Cegléd,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Dunakeszi,Pest,,,85254,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Dunakeszi,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Szentendre,Pest,,,82565,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Szentendre,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Nagykáta,Pest,,,72234,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Nagykáta,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Monor,Pest,,,70247,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Monor,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Vác,Pest,,,68328,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Vác,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Pilisvörösvár,Pest,,,55494,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Pilisvörösvár,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Vecsés,Pest,,,49769,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Vecsés,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Dabas,Pest,,,49696,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Dabas,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Gyál,Pest,,,42306,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Gyál,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Ráckeve,Pest,,,37093,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Ráckeve,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Aszód,Pest,,,37082,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Aszód,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Nagykőrös,Pest,,,27232,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Nagykőrös,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Szob,Pest,,,24857,District,Budapest,,Budapest,,PestHungary,,,,,locality,,HU-PE,Szob,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
-Hungary,Csurgó,Somogy,,,15383,District,Csurgó,,Csurgó,,SomogyHungary,,,,,locality,,HU-SO,Csurgó,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Fonyód,Somogy,,,32594,District,Fonyód,,Fonyód,,SomogyHungary,,,,,locality,,HU-SO,Fonyód,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Kaposvár,Somogy,,,110980,District,Kaposvár,,Kaposvár,,SomogyHungary,,,,,locality,,HU-SO,Kaposvár,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Siófok,Somogy,,,51572,District,Siófok,,Siófok,,SomogyHungary,,,,,locality,,HU-SO,Siófok,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Marcali,Somogy,,,32811,District,,,#N/A,,SomogyHungary,,,,,locality,,HU-SO,Marcali,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Nagyatád,Somogy,,,24178,District,,,#N/A,,SomogyHungary,,,,,locality,,HU-SO,Nagyatád,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Barcs,Somogy,,,22115,District,,,#N/A,,SomogyHungary,,,,,locality,,HU-SO,Barcs,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Tab,Somogy,,,11796,District,,,#N/A,,SomogyHungary,,,,,locality,,HU-SO,Tab,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
-Hungary,Kisvárda,Szabolcs-Szatmár-Bereg,,,54356,District,Kisvárda,,Kisvárda,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Kisvárda,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Záhony,Szabolcs-Szatmár-Bereg,,,18933,District,Kisvárda,,Kisvárda,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Záhony,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Nyíregyháza,Szabolcs-Szatmár-Bereg,,,163819,District,Nyíregyháza,,Nyíregyháza,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Nyíregyháza,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Nagykálló,Szabolcs-Szatmár-Bereg,,,29109,District,Nyíregyháza,,Nyíregyháza,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Nagykálló,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Kemecse,Szabolcs-Szatmár-Bereg,,,21425,District,Nyíregyháza,,Nyíregyháza,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Kemecse,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Mátészalka,Szabolcs-Szatmár-Bereg,,,63501,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Mátészalka,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Nyírbátor,Szabolcs-Szatmár-Bereg,,,41972,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Nyírbátor,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Fehérgyarmat,Szabolcs-Szatmár-Bereg,,,39507,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Fehérgyarmat,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Vásárosnamény,Szabolcs-Szatmár-Bereg,,,38208,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Vásárosnamény,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Tiszavasvári,Szabolcs-Szatmár-Bereg,,,25894,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Tiszavasvári,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Ibrány,Szabolcs-Szatmár-Bereg,,,22888,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Ibrány,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Baktalórántháza,Szabolcs-Szatmár-Bereg,,,18968,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Baktalórántháza,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Csenger,Szabolcs-Szatmár-Bereg,,,14384,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,,,,,locality,,HU-SZ,Csenger,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
-Hungary,Paks,Tolna,,,47566,District,Paks,,Paks,,TolnaHungary,,,,,locality,,HU-TO,Paks,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
-Hungary,Szekszárd,Tolna,,,56221,District,,,#N/A,,TolnaHungary,,,,,locality,,HU-TO,Szekszárd,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
-Hungary,Tamási,Tolna,,,36214,District,,,#N/A,,TolnaHungary,,,,,locality,,HU-TO,Tamási,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
-Hungary,Dombóvár,Tolna,,,30219,District,,,#N/A,,TolnaHungary,,,,,locality,,HU-TO,Dombóvár,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
-Hungary,Bonyhád,Tolna,,,29516,District,,,#N/A,,TolnaHungary,,,,,locality,,HU-TO,Bonyhád,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
-Hungary,Tolna,Tolna,,,17727,District,,,#N/A,,TolnaHungary,,,,,locality,,HU-TO,Tolna,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
-Hungary,Szombathely,Vas,,,111222,District,Szombathely,,Szombathely,,VasHungary,,,,,locality,,HU-VA,Szombathely,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
-Hungary,Sárvár,Vas,,,39082,District,,,#N/A,,VasHungary,,,,,locality,,HU-VA,Sárvár,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
-Hungary,Körmend,Vas,,,25790,District,,,#N/A,,VasHungary,,,,,locality,,HU-VA,Körmend,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
-Hungary,Kőszeg,Vas,,,25674,District,,,#N/A,,VasHungary,,,,,locality,,HU-VA,Kőszeg,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
-Hungary,Celldömölk,Vas,,,23587,District,,,#N/A,,VasHungary,,,,,locality,,HU-VA,Celldömölk,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
-Hungary,Szentgotthárd,Vas,,,14948,District,,,#N/A,,VasHungary,,,,,locality,,HU-VA,Szentgotthárd,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
-Hungary,Vasvár,Vas,,,13248,District,,,#N/A,,VasHungary,,,,,locality,,HU-VA,Vasvár,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
-Hungary,Pápa,Veszprém,,,56706,District,Pápa,,Pápa,,VeszprémHungary,,,,,locality,,HU-VE,Pápa,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Várpalota,Veszprém,,,35773,District,Székesfehérvár,,Székesfehérvár,,VeszprémHungary,,,,,locality,,HU-VE,Várpalota,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Veszprém,Veszprém,,,81577,District,Veszprém,,Veszprém,,VeszprémHungary,,,,,locality,,HU-VE,Veszprém,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Ajka,Veszprém,,,37547,District,,,#N/A,,VeszprémHungary,,,,,locality,,HU-VE,Ajka,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Tapolca,Veszprém,,,32767,District,,,#N/A,,VeszprémHungary,,,,,locality,,HU-VE,Tapolca,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Balatonalmádi,Veszprém,,,25542,District,,,#N/A,,VeszprémHungary,,,,,locality,,HU-VE,Balatonalmádi,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Balatonfüred,Veszprém,,,24091,District,,,#N/A,,VeszprémHungary,,,,,locality,,HU-VE,Balatonfüred,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Zirc,Veszprém,,,18879,District,,,#N/A,,VeszprémHungary,,,,,locality,,HU-VE,Zirc,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Sümeg,Veszprém,,,14560,District,,,#N/A,,VeszprémHungary,,,,,locality,,HU-VE,Sümeg,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Devecser,Veszprém,,,13875,District,,,#N/A,,VeszprémHungary,,,,,locality,,HU-VE,Devecser,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
-Hungary,Keszthely,Zala,,,48410,District,Keszthely,,Keszthely,,ZalaHungary,,,,,locality,,HU-ZA,Keszthely,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
-Hungary,Zalaegerszeg,Zala,,,98263,District,Zalaegerszeg,,Zalaegerszeg,,ZalaHungary,,,,,locality,,HU-ZA,Zalaegerszeg,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
-Hungary,Nagykanizsa,Zala,,,74005,District,,,#N/A,,ZalaHungary,,,,,locality,,HU-ZA,Nagykanizsa,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
-Hungary,Lenti,Zala,,,18329,District,,,#N/A,,ZalaHungary,,,,,locality,,HU-ZA,Lenti,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
-Hungary,Letenye,Zala,,,15074,District,,,#N/A,,ZalaHungary,,,,,locality,,HU-ZA,Letenye,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
-Hungary,Zalaszentgrót,Zala,,,14567,District,,,#N/A,,ZalaHungary,,,,,locality,,HU-ZA,Zalaszentgrót,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Hungary,Kecskemét,Bács-Kiskun,,,155983,District,Kecskemét,,Kecskemét,,Bács-KiskunHungary,county,2,HU-BK,Kecskeméti járás,,,,locality,,HU-BK,Kecskemét,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Kiskunfélegyháza,Bács-Kiskun,,,36191,District,Kecskemét,,Kecskemét,,Bács-KiskunHungary,county,2,HU-BK,Kiskunfélegyházi járás,,,,locality,,HU-BK,Kiskunfélegyháza,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Tiszakécske,Bács-Kiskun,,,24452,District,Kecskemét,,Kecskemét,,Bács-KiskunHungary,county,2,HU-BK,Tiszakécskei járás,,,,locality,,HU-BK,Tiszakécske,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Baja,Bács-Kiskun,,,63205,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Bajai járás,,,,locality,,HU-BK,Baja,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Kiskőrös,Bács-Kiskun,,,53032,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Kiskőrösi járás,,,,locality,,HU-BK,Kiskőrös,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Kalocsa,Bács-Kiskun,,,47483,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Kalocsai járás,,,,locality,,HU-BK,Kalocsa,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Kiskunhalas,Bács-Kiskun,,,42117,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Kiskunhalasi járás,,,,locality,,HU-BK,Kiskunhalas,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Kunszentmiklós,Bács-Kiskun,,,29100,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Kunszentmiklósi járás,,,,locality,,HU-BK,Kunszentmiklós,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Bácsalmás,Bács-Kiskun,,,18287,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Bácsalmási járás,,,,locality,,HU-BK,Bácsalmás,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Kiskunmajsa,Bács-Kiskun,,,18091,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Kiskunmajsai járás,,,,locality,,HU-BK,Kiskunmajsa,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Jánoshalma,Bács-Kiskun,,,15884,District,,,#N/A,,Bács-KiskunHungary,county,2,HU-BK,Jánoshalmai járás,,,,locality,,HU-BK,Jánoshalma,,,,,region,1,HU-BK,Bács-Kiskun vármegye,HIGH,1.0,HU-BK
+Hungary,Pécs,Baranya,,,175235,District,Pecs,,Pecs,,BaranyaHungary,county,2,HU-BA,Pécsi járás,,,,locality,,HU-BA,Pécs,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Siklós,Baranya,,,34364,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Siklósi járás,,,,locality,,HU-BA,Siklós,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Mohács,Baranya,,,33045,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Mohácsi járás,,,,locality,,HU-BA,Mohács,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Komló,Baranya,,,32761,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Komlói járás,,,,locality,,HU-BA,Komló,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Szigetvár,Baranya,,,23974,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Szigetvári járás,,,,locality,,HU-BA,Szigetvár,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Szentlőrinc,Baranya,,,13936,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Szentlőrinci járás,,,,locality,,HU-BA,Szentlőrinc,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Sellye,Baranya,,,13123,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Sellyei járás,,,,locality,,HU-BA,Sellye,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Sásd,Baranya,,,11617,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Hegyháti járás,,,,locality,,HU-BA,Sásd,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Pécsvárad,Baranya,,,11327,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Pécsváradi járás,,,,locality,,HU-BA,Pécsvárad,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Bóly,Baranya,,,11322,District,,,#N/A,,BaranyaHungary,county,2,HU-BA,Bólyi járás,,,,locality,,HU-BA,Bóly,,,,,region,1,HU-BA,Baranya vármegye,HIGH,1.0,HU-BA
+Hungary,Békéscsaba,Békes,,,79002,District,Békéscsaba,,Békéscsaba,,BékesHungary,county,2,HU-BE,Békéscsabai járás,,,,locality,,HU-BE,Békéscsaba,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Orosháza,Békes,,,47659,District,,,#N/A,,BékesHungary,county,2,HU-BE,Orosházi járás,,,,locality,,HU-BE,Orosháza,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Gyula,Békes,,,38787,District,,,#N/A,,BékesHungary,county,2,HU-BE,Gyulai járás,,,,locality,,HU-BE,Gyula,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Mezőkovácsháza,Békes,,,36793,District,,,#N/A,,BékesHungary,county,2,HU-BE,Mezőkovácsházai járás,,,,locality,,HU-BE,Mezőkovácsháza,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Békés,Békes,,,34234,District,,,#N/A,,BékesHungary,county,2,HU-BE,Békési járás,,,,locality,,HU-BE,Békés,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Szeghalom,Békes,,,27755,District,,,#N/A,,BékesHungary,county,2,HU-BE,Szeghalmi járás,,,,locality,,HU-BE,Szeghalom,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Szarvas,Békes,,,26318,District,,,#N/A,,BékesHungary,county,2,HU-BE,Szarvasi járás,,,,locality,,HU-BE,Szarvas,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Gyomaendrőd,Békes,,,22280,District,,,#N/A,,BékesHungary,county,2,HU-BE,Gyomaendrődi járás,,,,locality,,HU-BE,Gyomaendrőd,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Sarkad,Békes,,,21436,District,,,#N/A,,BékesHungary,county,2,HU-BE,Sarkadi járás,,,,locality,,HU-BE,Sarkad,,,,,region,1,HU-BE,Békés vármegye,HIGH,1.0,HU-BE
+Hungary,Mezőkövesd,Borsod-Abaúj-Zemplén,,,40024,District,Mezőkövesd,,Mezőkövesd,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Mezőkövesdi járás,,,,locality,,HU-BZ,Mezőkövesd,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Miskolc,Borsod-Abaúj-Zemplén,,,233281,District,Miskolc,,Miskolc,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Miskolci járás,,,,locality,,HU-BZ,Miskolc,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Kazincbarcika,Borsod-Abaúj-Zemplén,,,61036,District,Miskolc,,Miskolc,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Kazincbarcikai járás,,,,locality,,HU-BZ,Kazincbarcika,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Ózd,Borsod-Abaúj-Zemplén,,,50730,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Ózdi járás,,,,locality,,HU-BZ,Ózd,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Szerencs,Borsod-Abaúj-Zemplén,,,38250,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Szerencsi járás,,,,locality,,HU-BZ,Szerencs,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Edelény,Borsod-Abaúj-Zemplén,,,32522,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Edelényi járás,,,,locality,,HU-BZ,Edelény,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Tiszaújváros,Borsod-Abaúj-Zemplén,,,29966,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Tiszaújvárosi járás,,,,locality,,HU-BZ,Tiszaújváros,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Sárospatak,Borsod-Abaúj-Zemplén,,,22860,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Sárospataki járás,,,,locality,,HU-BZ,Sárospatak,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Encs,Borsod-Abaúj-Zemplén,,,21226,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Encsi járás,,,,locality,,HU-BZ,Encs,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Sátoraljaújhely,Borsod-Abaúj-Zemplén,,,20722,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Sátoraljaújhelyi járás,,,,locality,,HU-BZ,Sátoraljaújhely,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Putnok,Borsod-Abaúj-Zemplén,,,17612,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Putnoki járás,,,,locality,,HU-BZ,Putnok,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Szikszó,Borsod-Abaúj-Zemplén,,,16708,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Szikszói járás,,,,locality,,HU-BZ,Szikszó,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Gönc,Borsod-Abaúj-Zemplén,,,15856,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Gönci járás,,,,locality,,HU-BZ,Gönc,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Cigánd,Borsod-Abaúj-Zemplén,,,15578,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Cigándi járás,,,,locality,,HU-BZ,Cigánd,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Mezőcsát,Borsod-Abaúj-Zemplén,,,13807,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Mezőcsáti járás,,,,locality,,HU-BZ,Mezőcsát,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Tokaj,Borsod-Abaúj-Zemplén,,,12269,District,,,#N/A,,Borsod-Abaúj-ZemplénHungary,county,2,HU-BZ,Tokaji járás,,,,locality,,HU-BZ,Tokaj,,,,,region,1,HU-BZ,Borsod-Abaúj-Zemplén vármegye,HIGH,1.0,HU-BZ
+Hungary,Budapest,Budapest,,,1752286,City,Budapest,,Budapest,,BudapestHungary,region,1,HU-BU,Budapest,,,,locality,,HU-BU,Budapest,,,,,region,1,HU-BU,Budapest,HIGH,1.0,HU-BU
+Hungary,Szeged,Csongrád,,,197615,District,Szeged,,Szeged,,CsongrádHungary,county,2,HU-CS,Szegedi járás,,,,locality,,HU-CS,Szeged,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
+Hungary,Hódmezővásárhely,Csongrád,,,52960,District,Szeged,,Szeged,,CsongrádHungary,county,2,HU-CS,Hódmezővásárhelyi járás,,,,locality,,HU-CS,Hódmezővásárhely,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
+Hungary,Makó,Csongrád,,,42310,District,Szeged,,Szeged,,CsongrádHungary,county,2,HU-CS,Makói járás,,,,locality,,HU-CS,Makó,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
+Hungary,Mórahalom,Csongrád,,,28452,District,Szeged,,Szeged,,CsongrádHungary,county,2,HU-CS,Mórahalmi járás,,,,locality,,HU-CS,Mórahalom,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
+Hungary,Kistelek,Csongrád,,,17704,District,Szeged,,Szeged,,CsongrádHungary,county,2,HU-CS,Kisteleki járás,,,,locality,,HU-CS,Kistelek,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
+Hungary,Szentes,Csongrád,,,38727,District,,,#N/A,,CsongrádHungary,county,2,HU-CS,Szentesi járás,,,,locality,,HU-CS,Szentes,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
+Hungary,Csongrád,Csongrád,,,21244,District,,,#N/A,,CsongrádHungary,county,2,HU-CS,Csongrádi járás,,,,locality,,HU-CS,Csongrád,,,,,region,1,HU-CS,Csongrád-Csanád vármegye,HIGH,1.0,HU-CS
+Hungary,Dunaújváros,Fejér,,,89467,District,Dunaujvaros,,Dunaujvaros,,FejérHungary,county,2,HU-FE,Dunaújvárosi járás,,,,locality,,HU-FE,Dunaújváros,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Székesfehérvár,Fejér,,,151270,District,Székesfehérvár,,Székesfehérvár,,FejérHungary,county,2,HU-FE,Székesfehérvári járás,,,,locality,,HU-FE,Székesfehérvár,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Mór,Fejér,,,33922,District,Székesfehérvár,,Székesfehérvár,,FejérHungary,county,2,HU-FE,Móri járás,,,,locality,,HU-FE,Mór,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Gárdony,Fejér,,,33392,District,Székesfehérvár,,Székesfehérvár,,FejérHungary,county,2,HU-FE,Gárdonyi járás,,,,locality,,HU-FE,Gárdony,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Bicske,Fejér,,,35668,District,,,#N/A,,FejérHungary,county,2,HU-FE,Bicskei járás,,,,locality,,HU-FE,Bicske,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Sárbogárd,Fejér,,,27019,District,,,#N/A,,FejérHungary,county,2,HU-FE,Sárbogárdi járás,,,,locality,,HU-FE,Sárbogárd,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Martonvásár,Fejér,,,26867,District,,,#N/A,,FejérHungary,county,2,HU-FE,Martonvásári járás,,,,locality,,HU-FE,Martonvásár,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Enying,Fejér,,,20107,District,,,#N/A,,FejérHungary,county,2,HU-FE,Enyingi járás,,,,locality,,HU-FE,Enying,,,,,region,1,HU-FE,Fejér vármegye,HIGH,1.0,HU-FE
+Hungary,Győr,Győr-Moson-Sopron,,,200351,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,county,2,HU-GS,Győri járás,,,,locality,,HU-GS,Győr,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
+Hungary,Mosonmagyaróvár,Győr-Moson-Sopron,,,76378,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,county,2,HU-GS,Mosonmagyaróvári járás,,,,locality,,HU-GS,Mosonmagyaróvár,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
+Hungary,Pannonhalma,Győr-Moson-Sopron,,,15878,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,county,2,HU-GS,Pannonhalmi járás,,,,locality,,HU-GS,Pannonhalma,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
+Hungary,Tét,Győr-Moson-Sopron,,,14749,District,Gyor,,Gyor,,Győr-Moson-SopronHungary,county,2,HU-GS,Téti járás,,,,locality,,HU-GS,Tét,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
+Hungary,Sopron,Győr-Moson-Sopron,,,102854,District,Sopron,,Sopron,,Győr-Moson-SopronHungary,county,2,HU-GS,Soproni járás,,,,locality,,HU-GS,Sopron,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
+Hungary,Csorna,Győr-Moson-Sopron,,,32634,District,,,#N/A,,Győr-Moson-SopronHungary,county,2,HU-GS,Csornai járás,,,,locality,,HU-GS,Csorna,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
+Hungary,Kapuvár,Győr-Moson-Sopron,,,24300,District,,,#N/A,,Győr-Moson-SopronHungary,county,2,HU-GS,Kapuvári járás,,,,locality,,HU-GS,Kapuvár,,,,,region,1,HU-GS,Győr-Moson-Sopron vármegye,HIGH,1.0,HU-GS
+Hungary,Debrecen,Hajdú-Bihar,,,214701,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,county,2,HU-HB,Debreceni járás,,,,locality,,HU-HB,Debrecen,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Hajdúszoboszló,Hajdú-Bihar,,,42746,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,county,2,HU-HB,Hajdúszoboszlói járás,,,,locality,,HU-HB,Hajdúszoboszló,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Hajdúböszörmény,Hajdú-Bihar,,,38708,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,county,2,HU-HB,Hajdúböszörményi járás,,,,locality,,HU-HB,Hajdúböszörmény,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Balmazújváros,Hajdú-Bihar,,,29100,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,county,2,HU-HB,Balmazújvárosi járás,,,,locality,,HU-HB,Balmazújváros,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Hajdúhadház,Hajdú-Bihar,,,22426,District,Debrecen,,Debrecen,,Hajdú-BiharHungary,county,2,HU-HB,Hajdúhadházi járás,,,,locality,,HU-HB,Hajdúhadház,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Berettyóújfalu,Hajdú-Bihar,,,43275,District,,,#N/A,,Hajdú-BiharHungary,county,2,HU-HB,Berettyóújfalui járás,,,,locality,,HU-HB,Berettyóújfalu,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Derecske,Hajdú-Bihar,,,40849,District,,,#N/A,,Hajdú-BiharHungary,county,2,HU-HB,Derecskei járás,,,,locality,,HU-HB,Derecske,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Püspökladány,Hajdú-Bihar,,,38120,District,,,#N/A,,Hajdú-BiharHungary,county,2,HU-HB,Püspökladányi járás,,,,locality,,HU-HB,Püspökladány,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Nyíradony,Hajdú-Bihar,,,29324,District,,,#N/A,,Hajdú-BiharHungary,county,2,HU-HB,Nyíradonyi járás,,,,locality,,HU-HB,Nyíradony,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Hajdúnánás,Hajdú-Bihar,,,28740,District,,,#N/A,,Hajdú-BiharHungary,county,2,HU-HB,Hajdúnánási járás,,,,locality,,HU-HB,Hajdúnánás,,,,,region,1,HU-HB,Hajdú-Bihar vármegye,HIGH,1.0,HU-HB
+Hungary,Eger,Heves,,,84007,District,Eger,,Eger,,HevesHungary,county,2,HU-HE,Egri járás,,,,locality,,HU-HE,Eger,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
+Hungary,Gyöngyös,Heves,,,70420,District,Gyöngyös,,Gyöngyös,,HevesHungary,county,2,HU-HE,Gyöngyösi járás,,,,locality,,HU-HE,Gyöngyös,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
+Hungary,Hatvan,Heves,,,49518,District,,,#N/A,,HevesHungary,county,2,HU-HE,Hatvani járás,,,,locality,,HU-HE,Hatvan,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
+Hungary,Heves,Heves,,,33889,District,,,#N/A,,HevesHungary,county,2,HU-HE,Hevesi járás,,,,locality,,HU-HE,Heves,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
+Hungary,Füzesabony,Heves,,,28830,District,,,#N/A,,HevesHungary,county,2,HU-HE,Füzesabonyi járás,,,,locality,,HU-HE,Füzesabony,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
+Hungary,Pétervására,Heves,,,19691,District,,,#N/A,,HevesHungary,county,2,HU-HE,Pétervásárai járás,,,,locality,,HU-HE,Pétervására,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
+Hungary,Bélapátfalva,Heves,,,8254,District,,,#N/A,,HevesHungary,county,2,HU-HE,Bélapátfalvai járás,,,,locality,,HU-HE,Bélapátfalva,,,,,region,1,HU-HE,Heves vármegye,HIGH,1.0,HU-HE
+Hungary,Szolnok,Jász-Nagykun-Szolnok,,,114801,District,Szolnok,,Szolnok,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Szolnoki járás,,,,locality,,HU-JN,Szolnok,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Jászberény,Jász-Nagykun-Szolnok,,,51416,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Jászberényi járás,,,,locality,,HU-JN,Jászberény,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Karcag,Jász-Nagykun-Szolnok,,,40628,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Karcagi járás,,,,locality,,HU-JN,Karcag,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Törökszentmiklós,Jász-Nagykun-Szolnok,,,34392,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Törökszentmiklósi járás,,,,locality,,HU-JN,Törökszentmiklós,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Kunszentmárton,Jász-Nagykun-Szolnok,,,33505,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Kunszentmártoni járás,,,,locality,,HU-JN,Kunszentmárton,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Jászapáti,Jász-Nagykun-Szolnok,,,31298,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Jászapáti járás,,,,locality,,HU-JN,Jászapáti,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Mezőtúr,Jász-Nagykun-Szolnok,,,25862,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Mezőtúri járás,,,,locality,,HU-JN,Mezőtúr,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Kunhegyes,Jász-Nagykun-Szolnok,,,19612,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Kunhegyesi járás,,,,locality,,HU-JN,Kunhegyes,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Tiszafüred,Jász-Nagykun-Szolnok,,,18493,District,,,#N/A,,Jász-Nagykun-SzolnokHungary,county,2,HU-JN,Tiszafüredi járás,,,,locality,,HU-JN,Tiszafüred,,,,,region,1,HU-JN,Jász-Nagykun-Szolnok vármegye,HIGH,1.0,HU-JN
+Hungary,Esztergom,Komárom-Esztergom,,,91050,District,Esztergom,,Esztergom,,Komárom-EsztergomHungary,county,2,HU-KE,Esztergomi járás,,,,locality,,HU-KE,Esztergom,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
+Hungary,Tatabánya,Komárom-Esztergom,,,84416,District,Tatabánya,,Tatabánya,,Komárom-EsztergomHungary,county,2,HU-KE,Tatabányai járás,,,,locality,,HU-KE,Tatabánya,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
+Hungary,Komárom,Komárom-Esztergom,,,39337,District,,,#N/A,,Komárom-EsztergomHungary,county,2,HU-KE,Komáromi járás,,,,locality,,HU-KE,Komárom,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
+Hungary,Tata,Komárom-Esztergom,,,38832,District,,,#N/A,,Komárom-EsztergomHungary,county,2,HU-KE,Tatai járás,,,,locality,,HU-KE,Tata,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
+Hungary,Oroszlány,Komárom-Esztergom,,,25948,District,,,#N/A,,Komárom-EsztergomHungary,county,2,HU-KE,Oroszlányi járás,,,,locality,,HU-KE,Oroszlány,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
+Hungary,Kisbér,Komárom-Esztergom,,,19624,District,,,#N/A,,Komárom-EsztergomHungary,county,2,HU-KE,Kisbéri járás,,,,locality,,HU-KE,Kisbér,,,,,region,1,HU-KE,Komárom-Esztergom vármegye,HIGH,1.0,HU-KE
+Hungary,Salgótarján,Nógrád,,,59056,District,Salgótarján,,Salgótarján,,NógrádHungary,county,2,HU-NO,Salgótarjáni járás,,,,locality,,HU-NO,Salgótarján,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
+Hungary,Balassagyarmat,Nógrád,,,37421,District,,,#N/A,,NógrádHungary,county,2,HU-NO,Balassagyarmati járás,,,,locality,,HU-NO,Balassagyarmat,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
+Hungary,Pásztó,Nógrád,,,30211,District,,,#N/A,,NógrádHungary,county,2,HU-NO,Pásztói járás,,,,locality,,HU-NO,Pásztó,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
+Hungary,Rétság,Nógrád,,,24193,District,,,#N/A,,NógrádHungary,county,2,HU-NO,Rétsági járás,,,,locality,,HU-NO,Rétság,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
+Hungary,Bátonyterenye,Nógrád,,,20027,District,,,#N/A,,NógrádHungary,county,2,HU-NO,Bátonyterenyei járás,,,,locality,,HU-NO,Bátonyterenye,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
+Hungary,Szécsény,Nógrád,,,18396,District,,,#N/A,,NógrádHungary,county,2,HU-NO,Szécsényi járás,,,,locality,,HU-NO,Szécsény,,,,,region,1,HU-NO,Nógrád vármegye,HIGH,1.0,HU-NO
+Hungary,Gödöllő,Pest,,,149605,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Gödöllői járás,,,,locality,,HU-PE,Gödöllő,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Érd,Pest,,,125594,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Érdi járás,,,,locality,,HU-PE,Érd,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Szigetszentmiklós,Pest,,,121900,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Szigetszentmiklósi járás,,,,locality,,HU-PE,Szigetszentmiklós,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Budakeszi,Pest,,,92090,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Budakeszi járás,,,,locality,,HU-PE,Budakeszi,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Cegléd,Pest,,,87528,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Ceglédi járás,,,,locality,,HU-PE,Cegléd,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Dunakeszi,Pest,,,85254,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Dunakeszi járás,,,,locality,,HU-PE,Dunakeszi,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Szentendre,Pest,,,82565,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Szentendrei járás,,,,locality,,HU-PE,Szentendre,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Nagykáta,Pest,,,72234,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Nagykátai járás,,,,locality,,HU-PE,Nagykáta,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Monor,Pest,,,70247,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Monori járás,,,,locality,,HU-PE,Monor,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Vác,Pest,,,68328,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Váci járás,,,,locality,,HU-PE,Vác,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Pilisvörösvár,Pest,,,55494,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Pilisvörösvári járás,,,,locality,,HU-PE,Pilisvörösvár,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Vecsés,Pest,,,49769,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Vecsési járás,,,,locality,,HU-PE,Vecsés,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Dabas,Pest,,,49696,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Dabasi járás,,,,locality,,HU-PE,Dabas,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Gyál,Pest,,,42306,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Gyáli járás,,,,locality,,HU-PE,Gyál,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Ráckeve,Pest,,,37093,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Ráckevei járás,,,,locality,,HU-PE,Ráckeve,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Aszód,Pest,,,37082,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Aszódi járás,,,,locality,,HU-PE,Aszód,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Nagykőrös,Pest,,,27232,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Nagykőrösi járás,,,,locality,,HU-PE,Nagykőrös,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Szob,Pest,,,24857,District,Budapest,,Budapest,,PestHungary,county,2,HU-PE,Szobi járás,,,,locality,,HU-PE,Szob,,,,,region,1,HU-PE,Pest vármegye,HIGH,1.0,HU-PE
+Hungary,Csurgó,Somogy,,,15383,District,Csurgó,,Csurgó,,SomogyHungary,county,2,HU-SO,Csurgói járás,,,,locality,,HU-SO,Csurgó,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Fonyód,Somogy,,,32594,District,Fonyód,,Fonyód,,SomogyHungary,county,2,HU-SO,Fonyódi járás,,,,locality,,HU-SO,Fonyód,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Kaposvár,Somogy,,,110980,District,Kaposvár,,Kaposvár,,SomogyHungary,county,2,HU-SO,Kaposvári járás,,,,locality,,HU-SO,Kaposvár,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Siófok,Somogy,,,51572,District,Siófok,,Siófok,,SomogyHungary,county,2,HU-SO,Siófoki járás,,,,locality,,HU-SO,Siófok,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Marcali,Somogy,,,32811,District,,,#N/A,,SomogyHungary,county,2,HU-SO,Marcali járás,,,,locality,,HU-SO,Marcali,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Nagyatád,Somogy,,,24178,District,,,#N/A,,SomogyHungary,county,2,HU-SO,Nagyatádi járás,,,,locality,,HU-SO,Nagyatád,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Barcs,Somogy,,,22115,District,,,#N/A,,SomogyHungary,county,2,HU-SO,Barcsi járás,,,,locality,,HU-SO,Barcs,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Tab,Somogy,,,11796,District,,,#N/A,,SomogyHungary,county,2,HU-SO,Tabi járás,,,,locality,,HU-SO,Tab,,,,,region,1,HU-SO,Somogy vármegye,HIGH,1.0,HU-SO
+Hungary,Kisvárda,Szabolcs-Szatmár-Bereg,,,54356,District,Kisvárda,,Kisvárda,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Kisvárdai járás,,,,locality,,HU-SZ,Kisvárda,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Záhony,Szabolcs-Szatmár-Bereg,,,18933,District,Kisvárda,,Kisvárda,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Záhonyi járás,,,,locality,,HU-SZ,Záhony,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Nyíregyháza,Szabolcs-Szatmár-Bereg,,,163819,District,Nyíregyháza,,Nyíregyháza,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Nyíregyházi járás,,,,locality,,HU-SZ,Nyíregyháza,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Nagykálló,Szabolcs-Szatmár-Bereg,,,29109,District,Nyíregyháza,,Nyíregyháza,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Nagykállói járás,,,,locality,,HU-SZ,Nagykálló,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Kemecse,Szabolcs-Szatmár-Bereg,,,21425,District,Nyíregyháza,,Nyíregyháza,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Kemecsei járás,,,,locality,,HU-SZ,Kemecse,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Mátészalka,Szabolcs-Szatmár-Bereg,,,63501,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Mátészalkai járás,,,,locality,,HU-SZ,Mátészalka,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Nyírbátor,Szabolcs-Szatmár-Bereg,,,41972,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Nyírbátori járás,,,,locality,,HU-SZ,Nyírbátor,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Fehérgyarmat,Szabolcs-Szatmár-Bereg,,,39507,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Fehérgyarmati járás,,,,locality,,HU-SZ,Fehérgyarmat,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Vásárosnamény,Szabolcs-Szatmár-Bereg,,,38208,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Vásárosnaményi járás,,,,locality,,HU-SZ,Vásárosnamény,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Tiszavasvári,Szabolcs-Szatmár-Bereg,,,25894,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Tiszavasvári járás,,,,locality,,HU-SZ,Tiszavasvári,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Ibrány,Szabolcs-Szatmár-Bereg,,,22888,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Ibrányi járás,,,,locality,,HU-SZ,Ibrány,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Baktalórántháza,Szabolcs-Szatmár-Bereg,,,18968,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Baktalórántházai járás,,,,locality,,HU-SZ,Baktalórántháza,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Csenger,Szabolcs-Szatmár-Bereg,,,14384,District,,,#N/A,,Szabolcs-Szatmár-BeregHungary,county,2,HU-SZ,Csengeri járás,,,,locality,,HU-SZ,Csenger,,,,,region,1,HU-SZ,Szabolcs-Szatmár-Bereg vármegye,HIGH,1.0,HU-SZ
+Hungary,Paks,Tolna,,,47566,District,Paks,,Paks,,TolnaHungary,county,2,HU-TO,Paksi járás,,,,locality,,HU-TO,Paks,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
+Hungary,Szekszárd,Tolna,,,56221,District,,,#N/A,,TolnaHungary,county,2,HU-TO,Szekszárdi járás,,,,locality,,HU-TO,Szekszárd,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
+Hungary,Tamási,Tolna,,,36214,District,,,#N/A,,TolnaHungary,county,2,HU-TO,Tamási járás,,,,locality,,HU-TO,Tamási,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
+Hungary,Dombóvár,Tolna,,,30219,District,,,#N/A,,TolnaHungary,county,2,HU-TO,Dombóvári járás,,,,locality,,HU-TO,Dombóvár,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
+Hungary,Bonyhád,Tolna,,,29516,District,,,#N/A,,TolnaHungary,county,2,HU-TO,Bonyhádi járás,,,,locality,,HU-TO,Bonyhád,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
+Hungary,Tolna,Tolna,,,17727,District,,,#N/A,,TolnaHungary,county,2,HU-TO,Tolnai járás,,,,locality,,HU-TO,Tolna,,,,,region,1,HU-TO,Tolna vármegye,HIGH,1.0,HU-TO
+Hungary,Szombathely,Vas,,,111222,District,Szombathely,,Szombathely,,VasHungary,county,2,HU-VA,Szombathelyi járás,,,,locality,,HU-VA,Szombathely,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
+Hungary,Sárvár,Vas,,,39082,District,,,#N/A,,VasHungary,county,2,HU-VA,Sárvári járás,,,,locality,,HU-VA,Sárvár,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
+Hungary,Körmend,Vas,,,25790,District,,,#N/A,,VasHungary,county,2,HU-VA,Körmendi járás,,,,locality,,HU-VA,Körmend,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
+Hungary,Kőszeg,Vas,,,25674,District,,,#N/A,,VasHungary,county,2,HU-VA,Kőszegi járás,,,,locality,,HU-VA,Kőszeg,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
+Hungary,Celldömölk,Vas,,,23587,District,,,#N/A,,VasHungary,county,2,HU-VA,Celldömölki járás,,,,locality,,HU-VA,Celldömölk,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
+Hungary,Szentgotthárd,Vas,,,14948,District,,,#N/A,,VasHungary,county,2,HU-VA,Szentgotthárdi járás,,,,locality,,HU-VA,Szentgotthárd,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
+Hungary,Vasvár,Vas,,,13248,District,,,#N/A,,VasHungary,county,2,HU-VA,Vasvári járás,,,,locality,,HU-VA,Vasvár,,,,,region,1,HU-VA,Vas vármegye,HIGH,1.0,HU-VA
+Hungary,Pápa,Veszprém,,,56706,District,Pápa,,Pápa,,VeszprémHungary,county,2,HU-VE,Pápai járás,,,,locality,,HU-VE,Pápa,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Várpalota,Veszprém,,,35773,District,Székesfehérvár,,Székesfehérvár,,VeszprémHungary,county,2,HU-VE,Várpalotai járás,,,,locality,,HU-VE,Várpalota,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Veszprém,Veszprém,,,81577,District,Veszprém,,Veszprém,,VeszprémHungary,county,2,HU-VE,Veszprémi járás,,,,locality,,HU-VE,Veszprém,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Ajka,Veszprém,,,37547,District,,,#N/A,,VeszprémHungary,county,2,HU-VE,Ajkai járás,,,,locality,,HU-VE,Ajka,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Tapolca,Veszprém,,,32767,District,,,#N/A,,VeszprémHungary,county,2,HU-VE,Tapolcai járás,,,,locality,,HU-VE,Tapolca,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Balatonalmádi,Veszprém,,,25542,District,,,#N/A,,VeszprémHungary,county,2,HU-VE,Balatonalmádi járás,,,,locality,,HU-VE,Balatonalmádi,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Balatonfüred,Veszprém,,,24091,District,,,#N/A,,VeszprémHungary,county,2,HU-VE,Balatonfüredi járás,,,,locality,,HU-VE,Balatonfüred,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Zirc,Veszprém,,,18879,District,,,#N/A,,VeszprémHungary,county,2,HU-VE,Zirci járás,,,,locality,,HU-VE,Zirc,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Sümeg,Veszprém,,,14560,District,,,#N/A,,VeszprémHungary,county,2,HU-VE,Sümegi járás,,,,locality,,HU-VE,Sümeg,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Devecser,Veszprém,,,13875,District,,,#N/A,,VeszprémHungary,county,2,HU-VE,Devecseri járás,,,,locality,,HU-VE,Devecser,,,,,region,1,HU-VE,Veszprém vármegye,HIGH,1.0,HU-VE
+Hungary,Keszthely,Zala,,,48410,District,Keszthely,,Keszthely,,ZalaHungary,county,2,HU-ZA,Keszthelyi járás,,,,locality,,HU-ZA,Keszthely,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
+Hungary,Zalaegerszeg,Zala,,,98263,District,Zalaegerszeg,,Zalaegerszeg,,ZalaHungary,county,2,HU-ZA,Zalaegerszegi járás,,,,locality,,HU-ZA,Zalaegerszeg,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
+Hungary,Nagykanizsa,Zala,,,74005,District,,,#N/A,,ZalaHungary,county,2,HU-ZA,Nagykanizsai járás,,,,locality,,HU-ZA,Nagykanizsa,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
+Hungary,Lenti,Zala,,,18329,District,,,#N/A,,ZalaHungary,county,2,HU-ZA,Lenti járás,,,,locality,,HU-ZA,Lenti,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
+Hungary,Letenye,Zala,,,15074,District,,,#N/A,,ZalaHungary,county,2,HU-ZA,Letenyei járás,,,,locality,,HU-ZA,Letenye,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA
+Hungary,Zalaszentgrót,Zala,,,14567,District,,,#N/A,,ZalaHungary,county,2,HU-ZA,Zalaszentgróti járás,,,,locality,,HU-ZA,Zalaszentgrót,,,,,region,1,HU-ZA,Zala vármegye,HIGH,1.0,HU-ZA

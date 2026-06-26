@@ -1,0 +1,8 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Grenada,Carriacou (incl. Petite Martinique),Carriacou (incl. Petite Martinique),,,4747,Territory,,,#N/A,,Carriacou (incl. Petite Martinique)Grenada,region,1,GD-10,Carriacou and Petite Martinique,,,,,,,,,,,,,,,,NONE,0.0,
+Grenada,St. Andrew,St. Andrew,,,24755,Parish,,,#N/A,,St. AndrewGrenada,region,1,GD-01,Saint Andrew,,,,,,,,,,,,,,,,NONE,0.0,
+Grenada,St. David,St. David,,,14443,Parish,,,#N/A,,St. DavidGrenada,region,1,GD-02,Saint David,,,,,,,,,,,,,,,,NONE,0.0,
+Grenada,St. George,St. George,,,44777,Parish,St. George's (GRE),,St. George's (GRE),,St. GeorgeGrenada,region,1,GD-03,Saint George,,,,,,,,,,,,,,,,NONE,0.0,
+Grenada,St. John,St. John,,,7773,Parish,,,#N/A,,St. JohnGrenada,region,1,GD-04,Saint John,,,,,,,,,,,,,,,,NONE,0.0,
+Grenada,St. Mark,St. Mark,,,3938,Parish,,,#N/A,,St. MarkGrenada,region,1,GD-05,Saint Mark,,,,,,,,,,,,,,,,NONE,0.0,
+Grenada,St. Patrick,St. Patrick,,,7846,Parish,,,#N/A,,St. PatrickGrenada,region,1,GD-06,Saint Patrick,,,,,,,,,,,,,,,,NONE,0.0,

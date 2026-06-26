@@ -1,63 +1,63 @@
 rank,slug,name,country,score,pop,airport_score
-2,london,London,United Kingdom,180.2,16152605,19.0
-1,new-york,New York,United States,181.1,22342624,17.0
-7,los-angeles,Los Angeles,United States,109.9,18507255,13.5
-9,shanghai,Shanghai,China,104.5,50359413,12.0
-11,guangzhou,Guangzhou,China,96.3,62994136,11.0
-17,moscow,Moscow,Russia,70.3,21534777,11.0
-26,miami,Miami,United States,62.1,6538896,11.0
-5,san-francisco-san-jose,San Francisco-San Jose,United States,124.6,7979579,10.0
-6,beijing,Beijing,China,110.7,22560773,10.0
-10,washington-baltimore,Washington-Baltimore,United States,96.8,10204407,10.0
-22,istanbul,Istanbul,Turkey,65.3,16293275,10.0
-3,paris,Paris,France,142.7,12878104,8.0
-4,tokyo,Tokyo,Japan,133.0,40317972,8.0
-8,seoul,Seoul,South Korea,107.8,26043325,8.0
-12,chicago,Chicago,United States,90.5,9941597,8.0
-13,boston,Boston,United States,87.3,6792923,8.0
-20,milan,Milan,Italy,67.5,7843262,8.0
-23,sao-paulo,Sao Paulo,Brazil,65.3,22305115,8.0
-27,mexico-city,Mexico City,Mexico,61.7,26370664,8.0
-50,chengdu,Chengdu,China,46.0,20937757,8.0
-21,houston,Houston,United States,65.4,7981303,7.0
-24,rhine-ruhr,Rhine-Ruhr,Germany,65.0,11102474,7.0
-32,dallas,Dallas,United States,57.5,8730700,7.0
-35,dubai-sharjah,Dubai-Sharjah,United Arab Emirates,56.0,5679122,7.0
-48,rome,Rome,Italy,47.5,4224901,7.0
-51,delhi,Delhi,India,45.7,33446850,7.0
-111,orlando,Orlando,United States,25.0,3974152,6.5
-14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,75.0,18126728,6.0
-16,toronto,Toronto,Canada,71.6,7670678,6.0
-25,singapore,Singapore,Singapore,64.0,5678287,6.0
-31,seattle,Seattle,United States,58.8,5105721,6.0
-36,bangkok,Bangkok,Thailand,54.2,17310600,6.0
-37,mumbai,Mumbai,India,54.1,23146605,6.0
-39,kuala-lumpur,Kuala Lumpur,Malaysia,51.9,9668818,6.0
-45,jakarta,Jakarta,Indonesia,48.3,36157354,6.0
-47,frankfurt,Frankfurt,Germany,47.6,5719169,6.0
-58,taipei,Taipei,Taiwan,39.8,9269756,6.0
-59,las-vegas,Las Vegas,United States,39.5,2454861,6.0
-61,stockholm,Stockholm,Sweden,39.3,2415139,6.0
-77,phoenix,Phoenix,United States,33.6,5186958,6.0
-96,charlotte,Charlotte,United States,29.2,3052890,6.0
-15,sydney,Sydney,Australia,72.3,5497131,5.0
-18,hong-kong,Hong Kong,Hong Kong,68.6,7411945,5.0
-19,madrid,Madrid,Spain,68.0,6930703,5.0
-33,barcelona,Barcelona,Spain,56.7,5702262,5.0
-34,atlanta,Atlanta,United States,56.7,7258116,5.0
-38,munich,Munich,Germany,52.0,6114612,5.0
-40,buenos-aires,Buenos Aires,Argentina,51.8,15188985,5.0
-42,amsterdam,Amsterdam,Netherlands,51.0,2460092,5.0
+2,london,London,United Kingdom,180.1,16152605,19.0
+1,new-york,New York,United States,181.6,22342624,17.0
+8,los-angeles,Los Angeles,United States,108.4,18507255,13.5
+9,shanghai,Shanghai,China,107.8,50359413,12.0
+10,guangzhou,Guangzhou,China,100.1,67792226,11.0
+17,moscow,Moscow,Russia,70.5,21534777,11.0
+28,miami,Miami,United States,59.9,6538896,11.0
+5,san-francisco-san-jose,San Francisco-San Jose,United States,124.9,7979579,10.0
+6,beijing,Beijing,China,112.8,22560773,10.0
+11,washington-baltimore,Washington-Baltimore,United States,96.1,10204407,10.0
+22,istanbul,Istanbul,Turkey,64.8,16293275,10.0
+3,paris,Paris,France,143.4,12878104,8.0
+4,tokyo,Tokyo,Japan,132.8,40317972,8.0
+7,seoul,Seoul,South Korea,109.0,26043325,8.0
+12,chicago,Chicago,United States,89.7,9941597,8.0
+13,boston,Boston,United States,86.6,6792923,8.0
+20,milan,Milan,Italy,66.9,7843262,8.0
+25,sao-paulo,Sao Paulo,Brazil,62.8,22305115,8.0
+26,mexico-city,Mexico City,Mexico,61.4,26370664,8.0
+49,chengdu,Chengdu,China,46.8,20937757,8.0
+21,houston,Houston,United States,66.3,7981303,7.0
+23,rhine-ruhr,Rhine-Ruhr,Germany,64.8,11102474,7.0
+31,dubai-sharjah,Dubai-Sharjah,United Arab Emirates,58.3,5679122,7.0
+34,dallas,Dallas,United States,55.9,8730700,7.0
+45,rome,Rome,Italy,49.2,4224901,7.0
+48,delhi,Delhi,India,47.0,36790184,7.0
+113,orlando,Orlando,United States,26.5,3974152,6.5
+14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,75.1,18126728,6.0
+15,toronto,Toronto,Canada,71.1,7670678,6.0
+24,singapore,Singapore,Singapore,64.4,6111190,6.0
+32,seattle,Seattle,United States,57.7,5105721,6.0
+35,bangkok,Bangkok,Thailand,54.2,17310600,6.0
+37,mumbai,Mumbai,India,53.8,23146605,6.0
+42,kuala-lumpur,Kuala Lumpur,Malaysia,51.8,9668818,6.0
+46,jakarta,Jakarta,Indonesia,48.2,36157354,6.0
+51,frankfurt,Frankfurt,Germany,45.4,5719169,6.0
+54,stockholm,Stockholm,Sweden,43.1,2415139,6.0
+60,taipei,Taipei,Taiwan,40.0,9269756,6.0
+64,las-vegas,Las Vegas,United States,38.1,2454861,6.0
+72,phoenix,Phoenix,United States,34.8,5186958,6.0
+93,charlotte,Charlotte,United States,30.4,3052890,6.0
+16,sydney,Sydney,Australia,70.8,5497131,5.0
+18,hong-kong,Hong Kong,Hong Kong,68.5,7411945,5.0
+19,madrid,Madrid,Spain,67.3,6930703,5.0
+33,barcelona,Barcelona,Spain,56.3,5702262,5.0
+36,atlanta,Atlanta,United States,54.0,7258116,5.0
+38,buenos-aires,Buenos Aires,Argentina,52.3,15188985,5.0
+40,amsterdam,Amsterdam,Netherlands,52.3,2460092,5.0
+41,munich,Munich,Germany,52.0,6114612,5.0
 43,manila,Manila,Philippines,49.8,28250517,5.0
-55,denver,Denver,United States,40.9,3382760,5.0
-63,hangzhou,Hangzhou,China,38.7,17206987,5.0
-64,rio-de-janeiro,Rio de Janeiro,Brazil,37.9,12937950,5.0
-69,xian,Xi'an,China,35.1,17166620,5.0
-70,doha,Doha,Qatar,34.9,2669452,5.0
-71,chongqing,Chongqing,China,34.6,21609651,5.0
-100,tehran,Tehran,Iran,27.6,15980037,5.0
-105,salt-lake-city-provo,Salt Lake City-Provo,United States,26.7,2874061,5.0
-119,bogota,Bogota,Colombia,24.2,10986954,5.0
-122,jeddah,Jeddah,Saudi Arabia,23.6,3846325,5.0
-155,kunming,Kunming,China,18.0,8460088,5.0
-167,bangalore,Bangalore,India,16.4,13231511,5.0
+57,hangzhou,Hangzhou,China,40.8,17206987,5.0
+59,denver,Denver,United States,40.6,3382760,5.0
+62,rio-de-janeiro,Rio de Janeiro,Brazil,38.8,12937950,5.0
+65,doha,Doha,Qatar,37.4,2669452,5.0
+71,xian,Xi'an,China,35.1,17166620,5.0
+73,chongqing,Chongqing,China,34.6,21609651,5.0
+100,salt-lake-city-provo,Salt Lake City-Provo,United States,28.9,2874061,5.0
+107,tehran,Tehran,Iran,27.6,15980037,5.0
+120,bogota,Bogota,Colombia,24.2,10986954,5.0
+121,jeddah,Jeddah,Saudi Arabia,23.9,3846325,5.0
+158,kunming,Kunming,China,18.0,8460088,5.0
+171,bangalore,Bangalore,India,16.3,13231511,5.0

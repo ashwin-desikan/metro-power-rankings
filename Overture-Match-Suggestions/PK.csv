@@ -1,0 +1,156 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Pakistan,Kotli,Azad Kashmir,,,774194,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Muzaffarābād,Azad Kashmir,,,650370,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Pūnch (Poonch),Azad Kashmir,,,500571,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Mīrpur,Azad Kashmir,,,456200,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Bhimbar (Bhimber),Azad Kashmir,,,420624,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Bāgh,Azad Kashmir,,,371919,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,"Sudhnoti (Sudhnutti, Sudhanoti)",Azad Kashmir,,,297584,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Hattiān (Jhelum Valley),Azad Kashmir,,,230529,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Nīlam (Neelam),Azad Kashmir,,,191251,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Haveli (Kahutta),Azad Kashmir,,,152124,District,,,#N/A,,Azad KashmirPakistan,,,,,,,,,,,,,,,,region,1,PK-JK,آزاد کشمیر,NONE,0.0,PK-JK
+Pakistan,Quetta,Balochistan,,,2269473,District,Quetta,,Quetta,,BalochistanPakistan,county,2,PK-BA,کوئٹہ ڈویژن,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Kech,Balochistan,,,907182,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Khuzdar,Balochistan,,,798896,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Killa Abdullah,Balochistan,,,758354,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Pishin,Balochistan,,,736903,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Lasbela,Balochistan,,,576271,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Jaffarabad,Balochistan,,,513972,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Nasirabad,Balochistan,,,487847,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Kalat,Balochistan,,,412058,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Loralai,Balochistan,,,397423,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Killa Saifullah,Balochistan,,,342932,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Panjgur,Balochistan,,,315353,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Dera Bugti,Balochistan,,,313110,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Zhob,Balochistan,,,310354,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Kachhi (Bolan; incl. Bhag Tehsil),Balochistan,,,309932,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Mastung,Balochistan,,,265676,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Gwadar,Balochistan,,,262253,District,,,#N/A,,BalochistanPakistan,,,,,,,,locality,,PK-BA,Gwadar,,,,,region,1,PK-BA,بلوچستان,HIGH,1.0,PK-BA
+Pakistan,Chagai,Balochistan,,,226517,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Kohlu,Balochistan,,,213933,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Sohbatpur,Balochistan,,,200426,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Sibi (incl. Lehri Tehsil),Balochistan,,,179751,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Nushki,Balochistan,,,178947,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Washuk,Balochistan,,,175712,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Barkhan,Balochistan,,,171025,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Musakhel,Balochistan,,,167243,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Kharan,Balochistan,,,162766,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Ziarat,Balochistan,,,160095,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Sheerani (Sherani),Balochistan,,,152952,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Jhal Magsi,Balochistan,,,148900,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Awaran,Balochistan,,,121821,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Harnai,Balochistan,,,97052,District,,,#N/A,,BalochistanPakistan,,,,,,,,,,,,,,,,region,1,PK-BA,بلوچستان,NONE,0.0,PK-BA
+Pakistan,Gilgit,Gilgit-Baltistan,,,290000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Diāmir [Diamer],Gilgit-Baltistan,,,270000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Skārdu,Gilgit-Baltistan,,,260000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Ghizer,Gilgit-Baltistan,,,170000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Ghānche,Gilgit-Baltistan,,,160000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Astore,Gilgit-Baltistan,,,100000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Nagar,Gilgit-Baltistan,,,70000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Shigar,Gilgit-Baltistan,,,70000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Hunza,Gilgit-Baltistan,,,50000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Kharmang,Gilgit-Baltistan,,,50000,District,,,#N/A,,Gilgit-BaltistanPakistan,,,,,,,,,,,,,,,,region,1,PK-GB,گلگت بلتستان,NONE,0.0,PK-GB
+Pakistan,Islamabad,Islamabad,,,2003368,District,Islamabad,,Islamabad,,IslamabadPakistan,region,1,PK-IS,وفاقی دارالحکومت اسلام آباد,,,,,,,,,,,,,,,,NONE,0.0,
+Pakistan,Peshawar,Khyber Pakhtunkhwa (North-West Frontier),,,4267198,District,Peshawar,,Peshawar,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,county,2,PK-KP,پشاور ڈویژن,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Mardan,Khyber Pakhtunkhwa (North-West Frontier),,,2373399,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Swat,Khyber Pakhtunkhwa (North-West Frontier),,,2308624,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Swabi,Khyber Pakhtunkhwa (North-West Frontier),,,1625477,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Dera Ismail Khan,Khyber Pakhtunkhwa (North-West Frontier),,,1625088,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Charsadda,Khyber Pakhtunkhwa (North-West Frontier),,,1610960,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Mansehra,Khyber Pakhtunkhwa (North-West Frontier),,,1555742,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,locality,,PK-KP,مانسہرہ,,,,,region,1,PK-KP,خیبر پختونخوا,HIGH,1.0,PK-KP
+Pakistan,Nowshera,Khyber Pakhtunkhwa (North-West Frontier),,,1520995,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Lower Dir,Khyber Pakhtunkhwa (North-West Frontier),,,1436082,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Abbottabad,Khyber Pakhtunkhwa (North-West Frontier),,,1333089,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Bannu,Khyber Pakhtunkhwa (North-West Frontier),,,1167071,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Bajaur,Khyber Pakhtunkhwa (North-West Frontier),,,1090987,Tribal District (Agency),,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Haripur,Khyber Pakhtunkhwa (North-West Frontier),,,1001515,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Kohat,Khyber Pakhtunkhwa (North-West Frontier),,,992427,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,locality,,PK-KP,تحصیل کوہاٹ,,,,,region,1,PK-KP,خیبر پختونخوا,HIGH,1.0,PK-KP
+Pakistan,Khyber,Khyber Pakhtunkhwa (North-West Frontier),,,984246,Tribal District (Agency),,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Upper Dir,Khyber Pakhtunkhwa (North-West Frontier),,,947401,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Buner,Khyber Pakhtunkhwa (North-West Frontier),,,895460,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Lakki Marwat,Khyber Pakhtunkhwa (North-West Frontier),,,875744,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Kohistan (Lower Kohistan - Upper Kohistan),Khyber Pakhtunkhwa (North-West Frontier),,,784711,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Shangla,Khyber Pakhtunkhwa (North-West Frontier),,,759609,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Malakand Protected Area,Khyber Pakhtunkhwa (North-West Frontier),,,717806,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Karak,Khyber Pakhtunkhwa (North-West Frontier),,,705362,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,South Waziristan,Khyber Pakhtunkhwa (North-West Frontier),,,675215,Tribal District (Agency),,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Kurram,Khyber Pakhtunkhwa (North-West Frontier),,,615372,Tribal District (Agency),,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,North Waziristan,Khyber Pakhtunkhwa (North-West Frontier),,,540546,Tribal District (Agency),,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Hangu,Khyber Pakhtunkhwa (North-West Frontier),,,518811,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Batagram,Khyber Pakhtunkhwa (North-West Frontier),,,476749,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Mohmand,Khyber Pakhtunkhwa (North-West Frontier),,,474345,Tribal District (Agency),,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Chitral,Khyber Pakhtunkhwa (North-West Frontier),,,447625,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Tank,Khyber Pakhtunkhwa (North-West Frontier),,,390626,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Orakzai,Khyber Pakhtunkhwa (North-West Frontier),,,254303,Tribal District (Agency),,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Tor Ghar (Kala Dhaka),Khyber Pakhtunkhwa (North-West Frontier),,,171349,District,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Frontier Region Kohat,Khyber Pakhtunkhwa (North-West Frontier),,,118839,Adjoining Tribal Area,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Frontier Region Dera Ismail Khan,Khyber Pakhtunkhwa (North-West Frontier),,,68506,Adjoining Tribal Area,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Frontier Region Peshawar,Khyber Pakhtunkhwa (North-West Frontier),,,64761,Adjoining Tribal Area,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Frontier Region Bannu,Khyber Pakhtunkhwa (North-West Frontier),,,43112,Adjoining Tribal Area,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Frontier Region Tank,Khyber Pakhtunkhwa (North-West Frontier),,,36418,Adjoining Tribal Area,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Frontier Region Lakki Marwat,Khyber Pakhtunkhwa (North-West Frontier),,,26394,Adjoining Tribal Area,,,#N/A,,Khyber Pakhtunkhwa (North-West Frontier)Pakistan,,,,,,,,,,,,,,,,region,1,PK-KP,خیبر پختونخوا,NONE,0.0,PK-KP
+Pakistan,Bahawalpur,Punjab,,,3669176,District,Bahawalpur,,Bahawalpur,,PunjabPakistan,county,2,PK-PB,بہاولپور ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Faisalabad,Punjab,,,7882444,District,Faisalabad,,Faisalabad,,PunjabPakistan,county,2,PK-PB,فیصل آباد ڈویژن,,,,locality,,PK-PB,فیصل آباد,,,,,region,1,PK-PB,پنجاب,HIGH,1.0,PK-PB
+Pakistan,Gujranwala,Punjab,,,5011066,District,Gujranwala,,Gujranwala,,PunjabPakistan,county,2,PK-PB,گوجرانوالہ ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Rawalpindi,Punjab,,,5402380,District,Islamabad,,Islamabad,,PunjabPakistan,county,2,PK-PB,راولپنڈی ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Lahore,Punjab,,,11119985,District,Lahore,,Lahore,,PunjabPakistan,county,2,PK-PB,لاہور ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Sheikhupura,Punjab,,,3460004,District,Lahore,,Lahore,,PunjabPakistan,county,2,PK-PB,لاہور ڈویژن,,,,locality,,PK-PB,شیخوپورہ,,,,,region,1,PK-PB,پنجاب,HIGH,1.0,PK-PB
+Pakistan,Kasur,Punjab,,,3454881,District,Lahore,,Lahore,,PunjabPakistan,county,2,PK-PB,لاہور ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Nankana Sahib,Punjab,,,1354986,District,Lahore,,Lahore,,PunjabPakistan,county,2,PK-PB,لاہور ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Multan,Punjab,,,4746166,District,Multan,,Multan,,PunjabPakistan,county,2,PK-PB,ملتان ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Rahim Yar Khan,Punjab,,,4807762,District,Rahim Yar Khan,,Rahim Yar Khan,,PunjabPakistan,county,2,PK-PB,بہاولپور ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Sargodha,Punjab,,,3696212,District,Sargodha,,Sargodha,,PunjabPakistan,county,2,PK-PB,سرگودھا ڈویژن,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Sialkot,Punjab,,,3894938,District,Sialkot,,Sialkot,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Muzaffargarh,Punjab,,,4328549,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Okara,Punjab,,,3040826,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Bahawalnagar,Punjab,,,2975656,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Khanewal,Punjab,,,2920233,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Vehari,Punjab,,,2902081,District,,,#N/A,,PunjabPakistan,,,,,,,,locality,,PK-PB,وہاڑی,,,,,region,1,PK-PB,پنجاب,HIGH,1.0,PK-PB
+Pakistan,Dera Ghazi Khan,Punjab,,,2872631,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Gujrat,Punjab,,,2756289,District,,,#N/A,,PunjabPakistan,,,,,,,,locality,,PK-PB,گجرات,,,,,region,1,PK-PB,پنجاب,HIGH,1.0,PK-PB
+Pakistan,Jhang,Punjab,,,2742633,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Sahiwal,Punjab,,,2513011,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Toba Tek Singh,Punjab,,,2191495,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Rajanpur,Punjab,,,1996039,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Attock,Punjab,,,1886378,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Pakpattan,Punjab,,,1824228,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Layyah,Punjab,,,1823995,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Narowal,Punjab,,,1707575,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Lodhran,Punjab,,,1699693,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Bhakkar,Punjab,,,1647852,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Mandi Bahauddin,Punjab,,,1594039,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Mianwali,Punjab,,,1542601,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Chakwal,Punjab,,,1495463,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Chiniot,Punjab,,,1368659,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Khushab,Punjab,,,1280372,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Jhelum,Punjab,,,1222403,District,,,#N/A,,PunjabPakistan,,,,,,,,,,,,,,,,region,1,PK-PB,پنجاب,NONE,0.0,PK-PB
+Pakistan,Hafizabad,Punjab,,,1156954,District,,,#N/A,,PunjabPakistan,,,,,,,,locality,,PK-PB,Basti hafizabad,,,,,region,1,PK-PB,پنجاب,LOW,0.8,PK-PB
+Pakistan,Hyderabad,Sindh,,,2199928,District,Hyderabad-Sindh,,Hyderabad-Sindh,,SindhPakistan,county,2,PK-SD,حیدر آباد ڈویژن,,,,locality,,PK-SD,تعلقہ حیدرآباد شہر,,,,,region,1,PK-SD,سندھ,HIGH,1.0,PK-SD
+Pakistan,Tando Muhammad Khan,Sindh,,,677098,District,Hyderabad-Sindh,,Hyderabad-Sindh,,SindhPakistan,county,2,PK-SD,حیدر آباد ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Karachi West,Sindh,,,3907065,District,Karachi,,Karachi,,SindhPakistan,county,2,PK-SD,کراچی ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Karachi Central,Sindh,,,2971382,District,Karachi,,Karachi,,SindhPakistan,county,2,PK-SD,کراچی ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Karachi East,Sindh,,,2875315,District,Karachi,,Karachi,,SindhPakistan,county,2,PK-SD,کراچی ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Korangi,Sindh,,,2577556,District,Karachi,,Karachi,,SindhPakistan,county,2,PK-SD,کراچی ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Malir,Sindh,,,1924346,District,Karachi,,Karachi,,SindhPakistan,county,2,PK-SD,کراچی ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Karachi South,Sindh,,,1769230,District,Karachi,,Karachi,,SindhPakistan,county,2,PK-SD,کراچی ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Thatta,Sindh,,,982138,District,Karachi,,Karachi,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Khairpur,Sindh,,,2405190,District,Khairpur,,Khairpur,,SindhPakistan,county,2,PK-SD,سکھر ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Sanghar,Sindh,,,2049873,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Badin,Sindh,,,1804958,District,,,#N/A,,SindhPakistan,,,,,,,,locality,,PK-SD,بدين,,,,,region,1,PK-SD,سندھ,HIGH,1.0,PK-SD
+Pakistan,Ghotki,Sindh,,,1648708,District,,,#N/A,,SindhPakistan,,,,,,,,locality,,PK-SD,Goki,,,,,region,1,PK-SD,سندھ,LOW,0.8,PK-SD
+Pakistan,Tharparkar,Sindh,,,1647036,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Shaheed Benazir Abad (Nawabshah),Sindh,,,1613506,District,,,#N/A,,SindhPakistan,county,2,PK-SD,شہید بینظیر آباد ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Naushahro Feroze,Sindh,,,1612047,District,,,#N/A,,SindhPakistan,county,2,PK-SD,شہید بینظیر آباد ڈویژن,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Dadu,Sindh,,,1550390,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Larkana,Sindh,,,1521786,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Mirpur Khas,Sindh,,,1504440,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Sukkur,Sindh,,,1488372,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Qambar Shahdadkot,Sindh,,,1338035,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Shikarpur,Sindh,,,1233760,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Kashmore,Sindh,,,1090336,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Umerkot,Sindh,,,1073469,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Jacobabad,Sindh,,,1007009,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Jamshoro,Sindh,,,993908,District,,,#N/A,,SindhPakistan,,,,,,,,locality,,PK-SD,Jamshoro,,,,,region,1,PK-SD,سندھ,HIGH,1.0,PK-SD
+Pakistan,Tando Allahyar,Sindh,,,838527,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Sujawal,Sindh,,,779062,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD
+Pakistan,Matiari,Sindh,,,770040,District,,,#N/A,,SindhPakistan,,,,,,,,,,,,,,,,region,1,PK-SD,سندھ,NONE,0.0,PK-SD

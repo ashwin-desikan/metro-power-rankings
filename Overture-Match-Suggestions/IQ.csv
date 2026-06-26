@@ -1,0 +1,186 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Iraq,Ar-Ramādī [Ramadi],Al-Anbar,,,573672,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء الرمادي,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Al-Fallūjah [Fallujah],Al-Anbar,,,485474,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء الفلوجة,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Hīt,Al-Anbar,,,188370,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء هيت,,,,county,2,IQ-AN,قضاء هيت,,,,,region,1,IQ-AN,محافظة الأنبار,HIGH,1.0,IQ-AN
+Iraq,Al-Karmah,Al-Anbar,,,147125,District,,,#N/A,2024,Al-AnbarIraq,,,,,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Al-Ḥabbāniyah,Al-Anbar,,,142642,District,,,#N/A,2024,Al-AnbarIraq,,,,,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Al-Qā'im,Al-Anbar,,,140923,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء القائم,,,,county,2,IQ-AN,قضاء القائم,,,,,region,1,IQ-AN,محافظة الأنبار,HIGH,1.0,IQ-AN
+Iraq,Ḥadīṭha [Haditha],Al-Anbar,,,114697,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء حديثة,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Al-'Āmiriyah,Al-Anbar,,,78174,District,,,#N/A,2024,Al-AnbarIraq,,,,,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Al-'Ubūr,Al-Anbar,,,44306,District,,,#N/A,2024,Al-AnbarIraq,,,,,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Ar-Ruṭbah,Al-Anbar,,,41285,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء الرطبة,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Anah,Al-Anbar,,,30921,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء عناة,,,,county,2,IQ-AN,قضاء عناة,,,,,region,1,IQ-AN,محافظة الأنبار,HIGH,1.0,IQ-AN
+Iraq,Rāwah,Al-Anbar,,,16829,District,,,#N/A,2024,Al-AnbarIraq,county,2,IQ-AN,قضاء الراوة,,,,,,,,,,,,region,1,IQ-AN,محافظة الأنبار,NONE,0.0,IQ-AN
+Iraq,Ad-Dīwāniyah [Diwaniya],Al-Qādisiyyah,,,481773,District,,,#N/A,2024,Al-QādisiyyahIraq,county,2,IQ-QA,قضاء الديوانية,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Al-Ḥamzah,Al-Qādisiyyah,,,164998,District,,,#N/A,2024,Al-QādisiyyahIraq,county,2,IQ-QA,قضاء الحمزة,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Ash-Shāmiyah,Al-Qādisiyyah,,,145763,District,,,#N/A,2024,Al-QādisiyyahIraq,county,2,IQ-QA,قضاء الشامية,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Afak,Al-Qādisiyyah,,,95948,District,,,#N/A,2024,Al-QādisiyyahIraq,county,2,IQ-QA,قضاء عفك,,,,county,2,IQ-QA,قضاء عفك,,,,,region,1,IQ-QA,محافظة القادسية,HIGH,1.0,IQ-QA
+Iraq,Ghammās,Al-Qādisiyyah,,,94362,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Akad [Ad-Daghārah],Al-Qādisiyyah,,,89503,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Ash-Shāfi'iyah,Al-Qādisiyyah,,,67348,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,As-Saniyah,Al-Qādisiyyah,,,66119,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Al-Budaīr,Al-Qādisiyyah,,,65293,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,As-Sudayr,Al-Qādisiyyah,,,56209,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Sūmir,Al-Qādisiyyah,,,52658,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Al-Mahnāwiyah,Al-Qādisiyyah,,,51983,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,Ash-Shināqiyah,Al-Qādisiyyah,,,45353,District,,,#N/A,2024,Al-QādisiyyahIraq,,,,,,,,,,,,,,,,region,1,IQ-QA,محافظة القادسية,NONE,0.0,IQ-QA
+Iraq,"As-Sulaymāniyah [Silêmanî, Sulaymaniyah]",As Sulaymaniyah,,,1056067,District,Sulaymaniyah,,Sulaymaniyah,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای سلێمانی,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Kalār [Kelar],As Sulaymaniyah,,,213452,District,,,#N/A,2024,As SulaymaniyahIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Rānyah [Raniye],As Sulaymaniyah,,,197700,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای ڕانیە,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Bashdar [Pişder],As Sulaymaniyah,,,140688,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای پشدەر,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Jamjamāl [Çemçemal],As Sulaymaniyah,,,109502,District,,,#N/A,2024,As SulaymaniyahIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Saīd Ṣādiq [Seyd Sadiq],As Sulaymaniyah,,,93247,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای سەید سادق,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Dūkān [Dûkan],As Sulaymaniyah,,,75167,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای دووکان,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Shārah Zūr [Şarezûr],As Sulaymaniyah,,,73776,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای شارەزوور,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Ḥājīāwah [Hacîawe],As Sulaymaniyah,,,66788,District,,,#N/A,2024,As SulaymaniyahIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Darbandikhān [Derbendîxan],As Sulaymaniyah,,,56146,District,,,#N/A,2024,As SulaymaniyahIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Bāzyān [Bazyan],As Sulaymaniyah,,,53167,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای بازیان,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Banjwīn [Pêncwîn],As Sulaymaniyah,,,52251,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای پێنجوێن,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Kifrī [Kifrî],As Sulaymaniyah,,,50714,District,,,#N/A,2024,As SulaymaniyahIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Shārbāzīr [Şarbajêr],As Sulaymaniyah,,,19646,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای شارباژێڕ,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Khānaqīn [Xaneqîn],As Sulaymaniyah,,,18054,District,,,#N/A,2024,As SulaymaniyahIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Qara Dāgh [Qeredax],As Sulaymaniyah,,,7590,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای قەرەداغ,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Māwat [Mawet],As Sulaymaniyah,,,3843,District,,,#N/A,2024,As SulaymaniyahIraq,county,2,IQ-SU,قەزای ماوەت,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Al-Ḥillah [Hillah],Babil,,,848512,District,Hillah,,Hillah,2024,BabilIraq,county,2,IQ-BB,قضاء الحلة,,,,,,,,,,,,region,1,IQ-BB,محافظة بابل,NONE,0.0,IQ-BB
+Iraq,Al-Musayab,Babil,,,411654,District,,,#N/A,2024,BabilIraq,county,2,IQ-BB,قضاء المسيب,,,,,,,,,,,,region,1,IQ-BB,محافظة بابل,NONE,0.0,IQ-BB
+Iraq,Al-Hāshmiyah,Babil,,,359137,District,,,#N/A,2024,BabilIraq,county,2,IQ-BB,قضاء الهاشمية,,,,,,,,,,,,region,1,IQ-BB,محافظة بابل,NONE,0.0,IQ-BB
+Iraq,Al-Maḥāwīl,Babil,,,268266,District,,,#N/A,2024,BabilIraq,county,2,IQ-BB,قضاء المحاويل,,,,county,2,IQ-BB,قضاء المحاويل,,,,,region,1,IQ-BB,محافظة بابل,HIGH,1.0,IQ-BB
+Iraq,Al-Qāsim,Babil,,,247784,District,,,#N/A,2024,BabilIraq,county,2,IQ-BB,قضاء الحمزة الغربي,,,,,,,,,,,,region,1,IQ-BB,محافظة بابل,NONE,0.0,IQ-BB
+Iraq,Al-Kifl,Babil,,,192391,District,,,#N/A,2024,BabilIraq,county,2,IQ-BB,قضاء الكفل,,,,,,,,,,,,region,1,IQ-BB,محافظة بابل,NONE,0.0,IQ-BB
+Iraq,Kūthā,Babil,,,154580,District,,,#N/A,2024,BabilIraq,county,2,IQ-BB,قضاء كوثى,,,,county,2,IQ-BB,قضاء كوثى,,,,,region,1,IQ-BB,محافظة بابل,HIGH,1.0,IQ-BB
+Iraq,Al-Karkh,Baghdad,,,2075295,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الکرخ,,,,county,2,IQ-BG,قضاء الکرخ,,,,,region,1,IQ-BG,محافظة بغداد,HIGH,1.0,IQ-BG
+Iraq,Ar-Ruṣāfah,Baghdad,,,1800181,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الرصافة,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Al-Ā'ẓamiyah [Adhamiyah],Baghdad,,,1204579,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الأعظمية,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Al-Madā'in,Baghdad,,,687060,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء المدائن,,,,county,2,IQ-BG,قضاء المدائن,,,,,region,1,IQ-BG,محافظة بغداد,HIGH,1.0,IQ-BG
+Iraq,Samā al-Kāẓimiyyah [Dhāt as-Salāsil],Baghdad,,,639059,District,Baghdad,,Baghdad,2024,BaghdadIraq,,,,,x,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Al-Maḥmūdiyah [Mahmoudiyah],Baghdad,,,607427,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء المحمودية,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Aṣ-Ṣadr al-Āwlā [Sadr City 1],Baghdad,,,548711,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الصدر الاولى,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,"Az-Zawrā' [← Ar-Ruṣāfah, Aṣ-Ṣadr al-Āwlā, Aṣ-Ṣadr ath-Thāniyah]",Baghdad,,,476394,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الزوراء,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Abū Ghraīb,Baghdad,,,450808,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء ابو غريب,,,,county,2,IQ-BG,قضاء ابو غريب,,,,,region,1,IQ-BG,محافظة بغداد,HIGH,1.0,IQ-BG
+Iraq,Aṣ-Ṣadr ath-Thāniyah [Sadr City 2],Baghdad,,,360648,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الصدر الثاني,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Az-Zahūr,Baghdad,,,250170,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الاستقلال,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Al-Kāẓimiyyah [Kadhimiya],Baghdad,,,238720,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الکاظمية,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Faḍā' al-Kāẓimiyyah [At-Tājī],Baghdad,,,208013,District,Baghdad,,Baghdad,2024,BaghdadIraq,,,,,x,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Aṭ-Ṭārmiyah,Baghdad,,,160017,District,Baghdad,,Baghdad,2024,BaghdadIraq,county,2,IQ-BG,قضاء الطارمية,,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Ar-Rāshidiyah,Baghdad,,,73347,District,Baghdad,,Baghdad,2024,BaghdadIraq,,,,,x,,,,,,,,,,,region,1,IQ-BG,محافظة بغداد,NONE,0.0,IQ-BG
+Iraq,Al-Baṣrah [Basra],Basra,,,1337707,District,Basra,,Basra,2024,BasraIraq,county,2,IQ-BA,قضاء البصرة,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,Abū al-Kahṣīb,Basra,,,394716,District,Basra,,Basra,2024,BasraIraq,county,2,IQ-BA,قضاء ابي الخصيب,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,Shaṭṭ al-'Arab,Basra,,,355028,District,Basra,,Basra,2024,BasraIraq,county,2,IQ-BA,قضاء شط العرب,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,Al-Qurnah,Basra,,,211499,District,Basra,,Basra,2024,BasraIraq,county,2,IQ-BA,قضاء القرنة,,,,county,2,IQ-BA,قضاء القرنة,,,,,region,1,IQ-BA,محافظة البصرة,HIGH,1.0,IQ-BA
+Iraq,Al-Midaīnah,Basra,,,196008,District,Basra,,Basra,2024,BasraIraq,county,2,IQ-BA,قضاء المدينة,,,,county,2,IQ-BA,قضاء المدينة,,,,,region,1,IQ-BA,محافظة البصرة,HIGH,1.0,IQ-BA
+Iraq,Al-Fāw,Basra,,,45388,District,Basra,,Basra,2024,BasraIraq,county,2,IQ-BA,قضاء الفاو,,,,county,2,IQ-BA,قضاء الفاو,,,,,region,1,IQ-BA,محافظة البصرة,HIGH,1.0,IQ-BA
+Iraq,Az-Zubayr,Basra,,,598460,District,,,#N/A,2024,BasraIraq,county,2,IQ-BA,قضاء الزبير,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,Al-Hārithah,Basra,,,193495,District,,,#N/A,2024,BasraIraq,,,,,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,Ad-Daīr,Basra,,,134328,District,,,#N/A,2024,BasraIraq,,,,,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,Aṣ-Ṣādiq,Basra,,,113517,District,,,#N/A,2024,BasraIraq,,,,,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,Safwān,Basra,,,84022,District,,,#N/A,2024,BasraIraq,,,,,,,,,,,,,,,,region,1,IQ-BA,محافظة البصرة,NONE,0.0,IQ-BA
+Iraq,An-Nāṣiriyah [Nasiriyah],Dhi Qar,,,789847,District,Nasiriyah,,Nasiriyah,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الناصرية,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Ash-Shaṭrah,Dhi Qar,,,292930,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الشطرة,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Sūq ash-Shuyūkh,Dhi Qar,,,279085,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء سوق الشيوخ,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Ar-Rifā'ī,Dhi Qar,,,194946,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الرفاعي,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Al-Gharrāf,Dhi Qar,,,145659,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الغراف,,,,county,2,IQ-DQ,قضاء الغراف,,,,,region,1,IQ-DQ,محافظة ذي قار,HIGH,1.0,IQ-DQ
+Iraq,Qal'at Sikar,Dhi Qar,,,124104,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء قلعة سکر,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,An-Naṣr,Dhi Qar,,,113587,District,,,#N/A,2024,Dhi QarIraq,,,,,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Karmat Banī Sa'īd,Dhi Qar,,,94293,District,,,#N/A,2024,Dhi QarIraq,,,,,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Ad-Dawāyah,Dhi Qar,,,90742,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الدواية,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Al-Fajr,Dhi Qar,,,76168,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الفجر,,,,county,2,IQ-DQ,قضاء الفجر,,,,,region,1,IQ-DQ,محافظة ذي قار,HIGH,1.0,IQ-DQ
+Iraq,Saīd Dakhīl,Dhi Qar,,,72891,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء سيد دخيل,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Al-Jibāyish [Al-Chibayish],Dhi Qar,,,63204,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الجبايش,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Al-Fuhūd,Dhi Qar,,,55987,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الفهود,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Al-Baṭḥā'a,Dhi Qar,,,55429,District,,,#N/A,2024,Dhi QarIraq,,,,,,,,,,,,,,,,region,1,IQ-DQ,محافظة ذي قار,NONE,0.0,IQ-DQ
+Iraq,Al-Iṣlāḥ,Dhi Qar,,,50596,District,,,#N/A,2024,Dhi QarIraq,county,2,IQ-DQ,قضاء الاصلاج,,,,county,2,IQ-DQ,قضاء الاصلاج,,,,,region,1,IQ-DQ,محافظة ذي قار,HIGH,1.0,IQ-DQ
+Iraq,Ba'qūbah [Baquba],Diyala,,,754785,District,Baghdad,,Baghdad,2024,DiyalaIraq,,,,,x,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,Al-Khāliṣ,Diyala,,,356395,District,,,#N/A,2024,DiyalaIraq,,,,,,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,Khānaqīn,Diyala,,,260907,District,,,#N/A,2024,DiyalaIraq,,,,,,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,Al-Muqdādiyah,Diyala,,,254346,District,,,#N/A,2024,DiyalaIraq,,,,,,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,Baladrūz,Diyala,,,117497,District,,,#N/A,2024,DiyalaIraq,,,,,,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,Al-Manṣūriyah,Diyala,,,74789,District,,,#N/A,2024,DiyalaIraq,,,,,,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,Kifrī,Diyala,,,66437,District,,,#N/A,2024,DiyalaIraq,,,,,,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,Mandalī,Diyala,,,49348,District,,,#N/A,2024,DiyalaIraq,,,,,,,,,,,,,,,,region,1,IQ-DI,محافظة ديالى,NONE,0.0,IQ-DI
+Iraq,"Dahūk [Dihok, Dohuk]",Duhouk,,,497029,District,,,#N/A,2024,DuhoukIraq,county,2,IQ-DA,قەزای دهۆک,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Zākhū [Zaxo],Duhouk,,,398876,District,,,#N/A,2024,DuhoukIraq,county,2,IQ-DA,قەزای زاخۆ,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Ākra [Akrê],Duhouk,,,216146,District,,,#N/A,2024,DuhoukIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,"Sumaīl [Sêmêl, Simele]",Duhouk,,,166319,District,,,#N/A,2024,DuhoukIraq,county,2,IQ-DA,قەزای سێمێل,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Bardarash [Berdereş],Duhouk,,,129715,District,,,#N/A,2024,DuhoukIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Al-'Amādiyah [Amêdî],Duhouk,,,103507,District,,,#N/A,2024,DuhoukIraq,county,2,IQ-DA,قەزای ئامێدی,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Ash-Shaīkhān [Shekhan],Duhouk,,,69279,District,,,#N/A,2024,DuhoukIraq,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Bātīfā [Batîfa],Duhouk,,,19000,District,,,#N/A,2024,DuhoukIraq,county,2,IQ-DA,قه‌زا باتیفا,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,"Arbīl [Hewlêr, Erbil]",Erbil,,,1288538,District,Erbil,,Erbil,2024,ErbilIraq,county,2,IQ-AR,قەزای ناوەندی هەولێر,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Dhashtā Hawlī'r [Deşta Hewlêrê],Erbil,,,315266,District,Erbil,,Erbil,2024,ErbilIraq,county,2,IQ-AR,قەزای دەشتی هەولێر,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Khabāt [Xebat],Erbil,,,148047,District,Erbil,,Erbil,2024,ErbilIraq,county,2,IQ-AR,قەزای خەبات,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Sūrān [Soran‎],Erbil,,,179596,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای سۆران,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Kuysanjaq [Koye],Erbil,,,110172,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای کۆیە,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Pīrmām [Pîrmam],Erbil,,,96713,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای پیرمام,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Harīr [Harîr],Erbil,,,63587,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای هەریر,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Maīrkahsūr [Mêrgesor‎],Erbil,,,61866,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای مێرگەسۆر,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Qūshtabah [Quştepe],Erbil,,,54622,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای قوشتەپە,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Shaqlāwah [Şeqlawe],Erbil,,,44172,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای شەقڵاوە,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Ainkāwah [Enkawa],Erbil,,,40708,District,,,#N/A,2024,ErbilIraq,,,,,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Khalīfān [Xelîfan],Erbil,,,39909,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای خەلیفان,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Jūmān [Çoman],Erbil,,,28150,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای چۆمان,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Rawāndūz [Rewandiz],Erbil,,,26979,District,,,#N/A,2024,ErbilIraq,county,2,IQ-AR,قەزای ڕەواندز,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Sīdakān [Sîdekan],Erbil,,,19209,District,,,#N/A,2024,ErbilIraq,,,,,,,,,,,,,,,,region,1,IQ-AR,پارێزگای ھەولێر,NONE,0.0,IQ-AR
+Iraq,Ḥalabjah [Helebce],Halabja,,,75922,District,,,#N/A,2024,HalabjaIraq,county,2,0,قەزای هەڵەبجە,,,,,,,,,,,,region,1,nan,پارێزگای ھەڵەبجە,NONE,0.0,nan
+Iraq,Khūrmāl [Xurmal],Halabja,,,20958,District,,,#N/A,2024,HalabjaIraq,,,,,,,,,,,,,,,,region,1,nan,پارێزگای ھەڵەبجە,NONE,0.0,nan
+Iraq,Sīrwān [Sîrwan],Halabja,,,11420,District,,,#N/A,2024,HalabjaIraq,,,,,,,,,,,,,,,,region,1,nan,پارێزگای ھەڵەبجە,NONE,0.0,nan
+Iraq,Bīārā [Biyare],Halabja,,,5049,District,,,#N/A,2024,HalabjaIraq,,,,,,,,,,,,,,,,region,1,nan,پارێزگای ھەڵەبجە,NONE,0.0,nan
+Iraq,Bamū [Bemo],Halabja,,,577,District,,,#N/A,2024,HalabjaIraq,,,,,,,,,,,,,,,,region,1,nan,پارێزگای ھەڵەبجە,NONE,0.0,nan
+Iraq,Karbalā' [Kerbala],Karbala,,,811368,District,Kerbala,,Kerbala,2024,KarbalaIraq,county,2,IQ-KA,قضاء کربلاء,,,,,,,,,,,,region,1,IQ-KA,محافظة كربلاء,NONE,0.0,IQ-KA
+Iraq,Al-Ḥusayniyah,Karbala,,,194589,District,Kerbala,,Kerbala,2024,KarbalaIraq,,,,,x,,,,,,,,,,,region,1,IQ-KA,محافظة كربلاء,NONE,0.0,IQ-KA
+Iraq,Al-Ḥur,Karbala,,,362102,District,,,#N/A,2024,KarbalaIraq,,,,,,,,,,,,,,,,region,1,IQ-KA,محافظة كربلاء,NONE,0.0,IQ-KA
+Iraq,Al-Hindiyah,Karbala,,,243720,District,,,#N/A,2024,KarbalaIraq,county,2,IQ-KA,قضاء الهندية,,,,,,,,,,,,region,1,IQ-KA,محافظة كربلاء,NONE,0.0,IQ-KA
+Iraq,Al-Jadwal al-Gharbī,Karbala,,,108783,District,,,#N/A,2024,KarbalaIraq,,,,,,,,,,,,,,,,region,1,IQ-KA,محافظة كربلاء,NONE,0.0,IQ-KA
+Iraq,At-Tamur,Karbala,,,33503,District,,,#N/A,2024,KarbalaIraq,county,2,IQ-KA,قضاء عين التمر,,,,,,,,,,,,region,1,IQ-KA,محافظة كربلاء,NONE,0.0,IQ-KA
+Iraq,Kirkūk,Kirkuk,,,1549454,District,Kirkuk,,Kirkuk,2024,KirkukIraq,county,2,IQ-KI,قضاء كركوك,,,,region,1,IQ-KI,محافظة كركوك,,,,,region,1,IQ-KI,محافظة كركوك,HIGH,1.0,IQ-KI
+Iraq,Al-Ḥawījah [Hawija],Kirkuk,,,321299,District,,,#N/A,2024,KirkukIraq,county,2,IQ-KI,قضاء الحويجة,,,,,,,,,,,,region,1,IQ-KI,محافظة كركوك,NONE,0.0,IQ-KI
+Iraq,Dāqūq,Kirkuk,,,85773,District,,,#N/A,2024,KirkukIraq,county,2,IQ-KI,قضاء داقوق,,,,county,2,IQ-KI,قضاء داقوق,,,,,region,1,IQ-KI,محافظة كركوك,HIGH,1.0,IQ-KI
+Iraq,Ad-Dibs [Dibis],Kirkuk,,,78101,District,,,#N/A,2024,KirkukIraq,county,2,IQ-KI,قضاء الدبس,,,,,,,,,,,,region,1,IQ-KI,محافظة كركوك,NONE,0.0,IQ-KI
+Iraq,Al-'Amārah [Amara],Maysan,,,719898,District,,,#N/A,2024,MaysanIraq,county,2,IQ-MA,قضاء العمارة,,,,,,,,,,,,region,1,IQ-MA,محافظة ميسان,NONE,0.0,IQ-MA
+Iraq,Al-Majar al-Kabīr,Maysan,,,163136,District,,,#N/A,2024,MaysanIraq,county,2,IQ-MA,قضاء المجر الکبير,,,,,,,,,,,,region,1,IQ-MA,محافظة ميسان,NONE,0.0,IQ-MA
+Iraq,Al-Kaḥlā',Maysan,,,107276,District,,,#N/A,2024,MaysanIraq,county,2,IQ-MA,قضاء الکجلاء,,,,county,2,IQ-MA,قضاء الکجلاء,,,,,region,1,IQ-MA,محافظة ميسان,HIGH,1.0,IQ-MA
+Iraq,Qal'at Ṣāliḥ,Maysan,,,100772,District,,,#N/A,2024,MaysanIraq,county,2,IQ-MA,قضاء قلعة صالح,,,,,,,,,,,,region,1,IQ-MA,محافظة ميسان,NONE,0.0,IQ-MA
+Iraq,Al-Maīmūnah,Maysan,,,99704,District,,,#N/A,2024,MaysanIraq,county,2,IQ-MA,قضاء الميمونة,,,,,,,,,,,,region,1,IQ-MA,محافظة ميسان,NONE,0.0,IQ-MA
+Iraq,Alī al-Gharbī,Maysan,,,63222,District,,,#N/A,2024,MaysanIraq,county,2,IQ-MA,قضاء علي الفربي,,,,county,2,IQ-MA,قضاء علي الفربي,,,,,region,1,IQ-MA,محافظة ميسان,HIGH,1.0,IQ-MA
+Iraq,Kumayt,Maysan,,,39628,District,,,#N/A,2024,MaysanIraq,,,,,,,,,,,,,,,,region,1,IQ-MA,محافظة ميسان,NONE,0.0,IQ-MA
+Iraq,As-Samāwah,Muthanna,,,373770,District,,,#N/A,2024,MuthannaIraq,county,2,IQ-MU,قضاء السماوة,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,Al-Khiḍir,Muthanna,,,147312,District,,,#N/A,2024,MuthannaIraq,county,2,IQ-MU,قضاء الخضر,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,Ar-Rumaītah,Muthanna,,,141946,District,,,#N/A,2024,MuthannaIraq,county,2,IQ-MU,قضاء الرميثة,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,Al-Warkā',Muthanna,,,141273,District,,,#N/A,2024,MuthannaIraq,county,2,IQ-MU,قضاء الورکاء,,,,county,2,IQ-MU,قضاء الورکاء,,,,,region,1,IQ-MU,محافظة المثنى,HIGH,1.0,IQ-MU
+Iraq,As-Suwaīr,Muthanna,,,69886,District,,,#N/A,2024,MuthannaIraq,,,,,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,Al-Majd,Muthanna,,,59570,District,,,#N/A,2024,MuthannaIraq,,,,,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,Al-Hilāl,Muthanna,,,51482,District,,,#N/A,2024,MuthannaIraq,,,,,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,An-Najmī,Muthanna,,,47240,District,,,#N/A,2024,MuthannaIraq,,,,,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,As-Salmān,Muthanna,,,10608,District,,,#N/A,2024,MuthannaIraq,county,2,IQ-MU,قضاء السلمان,,,,,,,,,,,,region,1,IQ-MU,محافظة المثنى,NONE,0.0,IQ-MU
+Iraq,An-Najaf [Najaf],Najaf,,,1082091,District,Najaf,,Najaf,2024,NajafIraq,county,2,IQ-NA,قضاء النجف,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Al-Kūfah,Najaf,,,589415,District,,,#N/A,2024,NajafIraq,county,2,IQ-NA,قضاء الکوفة,,,,county,2,IQ-NA,قضاء الکوفة,,,,,region,1,IQ-NA,محافظة النجف,HIGH,1.0,IQ-NA
+Iraq,Al-Mishkhāb [Al-Meshkhab],Najaf,,,147347,District,,,#N/A,2024,NajafIraq,county,2,IQ-NA,قضاء المشخاب,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Al-Manādhirah [Al-Manathera],Najaf,,,131980,District,,,#N/A,2024,NajafIraq,county,2,IQ-NA,قضاء المناذرة,,,,,,,,,,,,,,,,NONE,0.0,
+Iraq,Al-Mawṣil [Mosul],Ninawa,,,2346534,District,Mosul,,Mosul,2024,NinawaIraq,county,2,IQ-NI,قضاء الموصل,,,,,,,,,,,,region,1,IQ-NI,محافظة نینوى,NONE,0.0,IQ-NI
+Iraq,Al-Ḥamdāniyah,Ninawa,,,249808,District,Mosul,,Mosul,2024,NinawaIraq,county,2,IQ-NI,قضاء الحمدانية,,,,,,,,,,,,region,1,IQ-NI,محافظة نینوى,NONE,0.0,IQ-NI
+Iraq,Tal'afar [Tel Afar],Ninawa,,,546411,District,,,#N/A,2024,NinawaIraq,county,2,IQ-NI,قضاء تلعفر,,,,,,,,,,,,region,1,IQ-NI,محافظة نینوى,NONE,0.0,IQ-NI
+Iraq,"Talkayf [Tel Keppe, Tel Kaif]",Ninawa,,,406732,District,,,#N/A,2024,NinawaIraq,county,2,IQ-NI,قضاء تلكيف,,,,,,,,,,,,region,1,IQ-NI,محافظة نینوى,NONE,0.0,IQ-NI
+Iraq,Makhmūr,Ninawa,,,212357,District,,,#N/A,2024,NinawaIraq,,,,,,,,,,,,,,,,region,1,IQ-NI,محافظة نینوى,NONE,0.0,IQ-NI
+Iraq,Sinjār,Ninawa,,,201002,District,,,#N/A,2024,NinawaIraq,county,2,IQ-NI,شارۆچکەی شنگال,,,,county,2,IQ-NI,شارۆچکەی شنگال,,,,,region,1,IQ-NI,محافظة نینوى,HIGH,1.0,IQ-NI
+Iraq,Al-Ba'āj,Ninawa,,,121075,District,,,#N/A,2024,NinawaIraq,county,2,IQ-NI,قضاء البعاج,,,,county,2,IQ-NI,قضاء البعاج,,,,,region,1,IQ-NI,محافظة نینوى,HIGH,1.0,IQ-NI
+Iraq,Ash-Shaīkhān [Shekhan],Ninawa,,,117621,District,,,#N/A,2024,NinawaIraq,county,2,IQ-NI,قضاء الشيخان,,,,,,,,,,,,region,1,IQ-NI,محافظة نینوى,NONE,0.0,IQ-NI
+Iraq,Al-Ḥaḍra [Hatra],Ninawa,,,60440,District,,,#N/A,2024,NinawaIraq,county,2,IQ-NI,قضاء الحضر,,,,,,,,,,,,region,1,IQ-NI,محافظة نینوى,NONE,0.0,IQ-NI
+Iraq,Sāmarrā',Salah Al-Din,,,307560,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء سامراء,,,,county,2,IQ-SD,قضاء سامراء,,,,,region,1,IQ-SD,محافظة صلاح الدين,HIGH,1.0,IQ-SD
+Iraq,Ash-Shirqāṭ,Salah Al-Din,,,261926,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء الشرقاط,,,,,,,,,,,,region,1,IQ-SD,محافظة صلاح الدين,NONE,0.0,IQ-SD
+Iraq,Tikrīt,Salah Al-Din,,,253957,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء تكريت,,,,county,2,IQ-SD,قضاء تكريت,,,,,region,1,IQ-SD,محافظة صلاح الدين,HIGH,1.0,IQ-SD
+Iraq,Balad,Salah Al-Din,,,228925,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء بلد,,,,county,2,IQ-SD,قضاء بلد,,,,,region,1,IQ-SD,محافظة صلاح الدين,HIGH,1.0,IQ-SD
+Iraq,Baījī,Salah Al-Din,,,186672,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء بيجي,,,,locality,,IQ-SD,بيجي,,,,,region,1,IQ-SD,محافظة صلاح الدين,HIGH,1.0,IQ-SD
+Iraq,Ṭūz Khūrmātū,Salah Al-Din,,,147216,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء طوز خورماتو,,,,,,,,,,,,region,1,IQ-SD,محافظة صلاح الدين,NONE,0.0,IQ-SD
+Iraq,Ad-Dujaīl,Salah Al-Din,,,132119,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء دجيل,,,,,,,,,,,,region,1,IQ-SD,محافظة صلاح الدين,NONE,0.0,IQ-SD
+Iraq,Al-'Alam,Salah Al-Din,,,87870,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء العلم,,,,,,,,,,,,region,1,IQ-SD,محافظة صلاح الدين,NONE,0.0,IQ-SD
+Iraq,Aḍ-Ḍulū'īah,Salah Al-Din,,,87224,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء الضلوعية,,,,,,,,,,,,region,1,IQ-SD,محافظة صلاح الدين,NONE,0.0,IQ-SD
+Iraq,Ad-Dawr,Salah Al-Din,,,55230,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء الدور,,,,,,,,,,,,region,1,IQ-SD,محافظة صلاح الدين,NONE,0.0,IQ-SD
+Iraq,Āmirlī,Salah Al-Din,,,25843,District,,,#N/A,2024,Salah Al-DinIraq,county,2,IQ-SD,قضاء آمرلي,,,,county,2,IQ-SD,قضاء آمرلي,,,,,region,1,IQ-SD,محافظة صلاح الدين,HIGH,1.0,IQ-SD
+Iraq,Al-Kūt [Kut],Wasit,,,654110,District,,,#N/A,2024,WasitIraq,county,2,IQ-WA,قضاء الكوت,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,Al-'Azīziyah,Wasit,,,267371,District,,,#N/A,2024,WasitIraq,county,2,IQ-WA,قضاء العزيرية,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,Aṣ-Ṣuwaīrah,Wasit,,,226734,District,,,#N/A,2024,WasitIraq,county,2,IQ-WA,قضاء الصويرة,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,Al-Ḥay,Wasit,,,136984,District,,,#N/A,2024,WasitIraq,county,2,IQ-WA,قضاء الحي,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,An-Nu'māniyah,Wasit,,,135177,District,,,#N/A,2024,WasitIraq,county,2,IQ-WA,قضاء النعمانية,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,Az-Zubaīdiyah,Wasit,,,65358,District,,,#N/A,2024,WasitIraq,,,,,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,Al-Mūwafaqiyah,Wasit,,,60985,District,,,#N/A,2024,WasitIraq,,,,,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,Al-Aḥrār,Wasit,,,60829,District,,,#N/A,2024,WasitIraq,,,,,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA
+Iraq,Badrah,Wasit,,,36725,District,,,#N/A,2024,WasitIraq,county,2,IQ-WA,قضاء بدرة,,,,,,,,,,,,region,1,IQ-WA,محافظة واسط,NONE,0.0,IQ-WA

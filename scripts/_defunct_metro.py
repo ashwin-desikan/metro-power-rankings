@@ -102,6 +102,7 @@ def resolve_nba(display_name):
 # Cleveland Crusaders, whose history is "Cleveland/Minnesota").
 _NHL_OVERRIDE = {
     "Fighting Saints (1)": "minneapolis",
+    "Bulls (B)": "birmingham-al",  # Birmingham Bulls (WHA) -> Birmingham, Alabama, not UK Birmingham
 }
 
 def resolve_nhl(canonical, cityblob):

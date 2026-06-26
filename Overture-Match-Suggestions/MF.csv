@@ -1,0 +1,10 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Saint Martin,Agrément - Galisbay,Agrément - Galisbay,,,2014,Place,Marigot,,Marigot,,Agrément - GalisbaySaint Martin,country,0,,Saint-Martin,,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Bellevue - Saint-James,Bellevue - Saint-James,,,1847,Place,Marigot,,Marigot,,Bellevue - Saint-JamesSaint Martin,locality,,,Saint-Martin (France),,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Concordia - Spring,Concordia - Spring,,,5682,Place,Marigot,,Marigot,,Concordia - SpringSaint Martin,country,0,,Saint-Martin,,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Grand Case - La Savane - Anse Marcel - Cul de Sac,Grand Case - La Savane - Anse Marcel - Cul de Sac,,,6583,Place,Marigot,,Marigot,,Grand Case - La Savane - Anse Marcel - Cul de SacSaint Martin,country,0,,Saint-Martin,,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Marigot,Marigot,,,3265,Place,Marigot,,Marigot,,MarigotSaint Martin,country,0,,Saint-Martin,,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Oyster Pond,Oyster Pond,,,2111,Place,Marigot,,Marigot,,Oyster PondSaint Martin,country,0,,Saint-Martin,,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Quartier d'Orleans,Quartier d'Orleans,,,3784,Place,Marigot,,Marigot,,Quartier d'OrleansSaint Martin,country,0,,Saint-Martin,,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Rambaud - Saint-Louis - Colombier,Rambaud - Saint-Louis - Colombier,,,3323,Place,Marigot,,Marigot,,Rambaud - Saint-Louis - ColombierSaint Martin,locality,,,Saint-Martin (France),,,,,,,,,,,,,,,,NONE,0.0,
+Saint Martin,Sandy Ground - Baie Nettlé - Terres Basses,Sandy Ground - Baie Nettlé - Terres Basses,,,3880,Place,Marigot,,Marigot,,Sandy Ground - Baie Nettlé - Terres BassesSaint Martin,locality,,,Saint-Martin (France),,,,,,,,,,,,,,,,NONE,0.0,

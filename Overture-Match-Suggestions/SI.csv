@@ -1,0 +1,213 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Slovenia,Zagorje ob Savi,Central Sava,,,16307,Municipality,,,#N/A,,Central SavaSlovenia,region,1,SI-142,Zagorje ob Savi,,,,region,1,SI-142,Zagorje ob Savi,,,,,region,1,SI-142,Zagorje ob Savi,HIGH,1.0,SI-142
+Slovenia,Trbovlje,Central Sava,,,15893,Municipality,,,#N/A,,Central SavaSlovenia,region,1,SI-129,Trbovlje,,,,region,1,SI-129,Trbovlje,,,,,region,1,SI-129,Trbovlje,HIGH,1.0,SI-129
+Slovenia,Hrastnik,Central Sava,,,8963,Municipality,,,#N/A,,Central SavaSlovenia,region,1,SI-034,Hrastnik,,,,region,1,SI-034,Hrastnik,,,,,region,1,SI-034,Hrastnik,HIGH,1.0,SI-034
+Slovenia,Ljubljana,Central Slovenia,,,293218,City Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-061,Ljubljana,,,,region,1,SI-061,Ljubljana,,,,,region,1,SI-061,Ljubljana,HIGH,1.0,SI-061
+Slovenia,Domžale,Central Slovenia,,,36905,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-023,Domžale,,,,region,1,SI-023,Domžale,,,,,region,1,SI-023,Domžale,HIGH,1.0,SI-023
+Slovenia,Kamnik,Central Slovenia,,,29793,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-043,Kamnik,,,,region,1,SI-043,Kamnik,,,,,region,1,SI-043,Kamnik,HIGH,1.0,SI-043
+Slovenia,Grosuplje,Central Slovenia,,,21333,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-032,Grosuplje,,,,region,1,SI-032,Grosuplje,,,,,region,1,SI-032,Grosuplje,HIGH,1.0,SI-032
+Slovenia,Vrhnika,Central Slovenia,,,17684,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-140,Vrhnika,,,,region,1,SI-140,Vrhnika,,,,,region,1,SI-140,Vrhnika,HIGH,1.0,SI-140
+Slovenia,Ivančna Gorica,Central Slovenia,,,17599,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-039,Ivančna Gorica,,,,region,1,SI-039,Ivančna Gorica,,,,,region,1,SI-039,Ivančna Gorica,HIGH,1.0,SI-039
+Slovenia,Medvode,Central Slovenia,,,16792,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-071,Medvode,,,,region,1,SI-071,Medvode,,,,,region,1,SI-071,Medvode,HIGH,1.0,SI-071
+Slovenia,Litija,Central Slovenia,,,15720,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-060,Litija,,,,region,1,SI-060,Litija,,,,,region,1,SI-060,Litija,HIGH,1.0,SI-060
+Slovenia,Logatec,Central Slovenia,,,14699,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-064,Logatec,,,,region,1,SI-064,Logatec,,,,,region,1,SI-064,Logatec,HIGH,1.0,SI-064
+Slovenia,Brezovica,Central Slovenia,,,12823,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-008,Brezovica,,,,region,1,SI-008,Brezovica,,,,,region,1,SI-008,Brezovica,HIGH,1.0,SI-008
+Slovenia,Škofljica,Central Slovenia,,,11666,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-123,Škofljica,,,,region,1,SI-123,Škofljica,,,,,region,1,SI-123,Škofljica,HIGH,1.0,SI-123
+Slovenia,Mengeš,Central Slovenia,,,8487,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-072,Mengeš,,,,region,1,SI-072,Mengeš,,,,,region,1,SI-072,Mengeš,HIGH,1.0,SI-072
+Slovenia,Dobrova - Polhov Gradec,Central Slovenia,,,7844,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-021,Dobrova-Polhov Gradec,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Ig,Central Slovenia,,,7695,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-037,Ig,,,,region,1,SI-037,Ig,,,,,region,1,SI-037,Ig,HIGH,1.0,SI-037
+Slovenia,Komenda,Central Slovenia,,,6482,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-164,Komenda,,,,region,1,SI-164,Komenda,,,,,region,1,SI-164,Komenda,HIGH,1.0,SI-164
+Slovenia,Dol pri Ljubljani,Central Slovenia,,,6348,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-022,Dol pri Ljubljani,,,,region,1,SI-022,Dol pri Ljubljani,,,,,region,1,SI-022,Dol pri Ljubljani,HIGH,1.0,SI-022
+Slovenia,Lukovica,Central Slovenia,,,5978,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-068,Lukovica,,,,region,1,SI-068,Lukovica,,,,,region,1,SI-068,Lukovica,HIGH,1.0,SI-068
+Slovenia,Šmartno pri Litiji,Central Slovenia,,,5700,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-194,Šmartno pri Litiji,,,,region,1,SI-194,Šmartno pri Litiji,,,,,region,1,SI-194,Šmartno pri Litiji,HIGH,1.0,SI-194
+Slovenia,Moravče,Central Slovenia,,,5522,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-077,Moravče,,,,region,1,SI-077,Moravče,,,,,region,1,SI-077,Moravče,HIGH,1.0,SI-077
+Slovenia,Vodice,Central Slovenia,,,4974,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-138,Vodice,,,,region,1,SI-138,Vodice,,,,,region,1,SI-138,Vodice,HIGH,1.0,SI-138
+Slovenia,Borovnica,Central Slovenia,,,4629,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-005,Borovnica,,,,region,1,SI-005,Borovnica,,,,,region,1,SI-005,Borovnica,HIGH,1.0,SI-005
+Slovenia,Velike Lašče,Central Slovenia,,,4584,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-134,Velike Lašče,,,,region,1,SI-134,Velike Lašče,,,,,region,1,SI-134,Velike Lašče,HIGH,1.0,SI-134
+Slovenia,Trzin,Central Slovenia,,,3900,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-186,Trzin,,,,region,1,SI-186,Trzin,,,,,region,1,SI-186,Trzin,HIGH,1.0,SI-186
+Slovenia,Dobrepolje,Central Slovenia,,,3871,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-020,Dobrepolje,,,,region,1,SI-020,Dobrepolje,,,,,region,1,SI-020,Dobrepolje,HIGH,1.0,SI-020
+Slovenia,Log - Dragomer,Central Slovenia,,,3681,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-208,Log-Dragomer,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Horjul,Central Slovenia,,,3006,Municipality,Ljubljana,,Ljubljana,,Central SloveniaSlovenia,region,1,SI-162,Horjul,,,,region,1,SI-162,Horjul,,,,,region,1,SI-162,Horjul,HIGH,1.0,SI-162
+Slovenia,Piran (Pirano),Coastal - Karst,,,18432,Municipality,Izola,,Izola,,Coastal - KarstSlovenia,region,1,SI-090,Piran / Pirano,,,,region,1,SI-090,Piran / Pirano,,,,,region,1,SI-090,Piran / Pirano,HIGH,1.0,SI-090
+Slovenia,Izola (Isola),Coastal - Karst,,,16647,Municipality,Izola,,Izola,,Coastal - KarstSlovenia,region,1,SI-040,Izola / Isola,,,,region,1,SI-040,Izola / Isola,,,,,region,1,SI-040,Izola / Isola,HIGH,1.0,SI-040
+Slovenia,Koper (Capodistria),Coastal - Karst,,,53462,City Municipality,Koper,,Koper,,Coastal - KarstSlovenia,region,1,SI-050,Koper / Capodistria,,,,region,1,SI-050,Koper / Capodistria,,,,,region,1,SI-050,Koper / Capodistria,HIGH,1.0,SI-050
+Slovenia,Ankaran (Ancarano),Coastal - Karst,,,3282,Municipality,Koper,,Koper,,Coastal - KarstSlovenia,region,1,SI-213,Ankaran / Ancarano,,,,region,1,SI-213,Ankaran / Ancarano,,,,,region,1,SI-213,Ankaran / Ancarano,HIGH,1.0,SI-213
+Slovenia,Sežana,Coastal - Karst,,,13842,Municipality,Sežana,,Sežana,,Coastal - KarstSlovenia,region,1,SI-111,Sežana,,,,region,1,SI-111,Sežana,,,,,region,1,SI-111,Sežana,HIGH,1.0,SI-111
+Slovenia,Hrpelje - Kozina,Coastal - Karst,,,4970,Municipality,,,#N/A,,Coastal - KarstSlovenia,region,1,SI-035,Hrpelje-Kozina,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Divača,Coastal - Karst,,,4371,Municipality,,,#N/A,,Coastal - KarstSlovenia,region,1,SI-019,Divača,,,,region,1,SI-019,Divača,,,,,region,1,SI-019,Divača,HIGH,1.0,SI-019
+Slovenia,Komen,Coastal - Karst,,,3634,Municipality,,,#N/A,,Coastal - KarstSlovenia,region,1,SI-049,Komen,,,,region,1,SI-049,Komen,,,,,region,1,SI-049,Komen,HIGH,1.0,SI-049
+Slovenia,Maribor,Drava,,,113004,City Municipality,Maribor,,Maribor,,DravaSlovenia,region,1,SI-070,Maribor,,,,region,1,SI-070,Maribor,,,,,region,1,SI-070,Maribor,HIGH,1.0,SI-070
+Slovenia,Hoče - Slivnica,Drava,,,11723,Municipality,Maribor,,Maribor,,DravaSlovenia,region,1,SI-160,Hoče-Slivnica,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Lenart,Drava,,,8561,Municipality,Maribor,,Maribor,,DravaSlovenia,region,1,SI-058,Lenart,,,,region,1,SI-058,Lenart,,,,,region,1,SI-058,Lenart,HIGH,1.0,SI-058
+Slovenia,Miklavž na Dravskem polju,Drava,,,7045,Municipality,Maribor,,Maribor,,DravaSlovenia,region,1,SI-169,Miklavž na Dravskem polju,,,,region,1,SI-169,Miklavž na Dravskem polju,,,,,region,1,SI-169,Miklavž na Dravskem polju,HIGH,1.0,SI-169
+Slovenia,Duplek,Drava,,,7015,Municipality,Maribor,,Maribor,,DravaSlovenia,region,1,SI-026,Duplek,,,,region,1,SI-026,Duplek,,,,,region,1,SI-026,Duplek,HIGH,1.0,SI-026
+Slovenia,Ptuj,Drava,,,23509,City Municipality,Ptuj,,Ptuj,,DravaSlovenia,region,1,SI-096,Ptuj,,,,region,1,SI-096,Ptuj,,,,,region,1,SI-096,Ptuj,HIGH,1.0,SI-096
+Slovenia,Kidričevo,Drava,,,6547,Municipality,Ptuj,,Ptuj,,DravaSlovenia,region,1,SI-045,Kidričevo,,,,region,1,SI-045,Kidričevo,,,,,region,1,SI-045,Kidričevo,HIGH,1.0,SI-045
+Slovenia,Slovenska Bistrica,Drava,,,26042,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-113,Slovenska Bistrica,,,,region,1,SI-113,Slovenska Bistrica,,,,,region,1,SI-113,Slovenska Bistrica,HIGH,1.0,SI-113
+Slovenia,Ormož,Drava,,,11890,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-087,Ormož,,,,region,1,SI-087,Ormož,,,,,region,1,SI-087,Ormož,HIGH,1.0,SI-087
+Slovenia,Šentilj,Drava,,,8367,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-118,Šentilj,,,,region,1,SI-118,Šentilj,,,,,region,1,SI-118,Šentilj,HIGH,1.0,SI-118
+Slovenia,Rače - Fram,Drava,,,7749,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-098,Rače-Fram,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Pesnica,Drava,,,7576,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-089,Pesnica,,,,region,1,SI-089,Pesnica,,,,,region,1,SI-089,Pesnica,HIGH,1.0,SI-089
+Slovenia,Ruše,Drava,,,7091,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-108,Ruše,,,,region,1,SI-108,Ruše,,,,,region,1,SI-108,Ruše,HIGH,1.0,SI-108
+Slovenia,Videm,Drava,,,5601,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-135,Videm,,,,region,1,SI-135,Videm,,,,,region,1,SI-135,Videm,HIGH,1.0,SI-135
+Slovenia,Kungota,Drava,,,4916,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-055,Kungota,,,,region,1,SI-055,Kungota,,,,,region,1,SI-055,Kungota,HIGH,1.0,SI-055
+Slovenia,Selnica ob Dravi,Drava,,,4513,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-178,Selnica ob Dravi,,,,region,1,SI-178,Selnica ob Dravi,,,,,region,1,SI-178,Selnica ob Dravi,HIGH,1.0,SI-178
+Slovenia,Poljčane,Drava,,,4493,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-200,Poljčane,,,,region,1,SI-200,Poljčane,,,,,region,1,SI-200,Poljčane,HIGH,1.0,SI-200
+Slovenia,Gorišnica,Drava,,,4180,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-028,Gorišnica,,,,region,1,SI-028,Gorišnica,,,,,region,1,SI-028,Gorišnica,HIGH,1.0,SI-028
+Slovenia,Oplotnica,Drava,,,4131,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-171,Oplotnica,,,,region,1,SI-171,Oplotnica,,,,,region,1,SI-171,Oplotnica,HIGH,1.0,SI-171
+Slovenia,Starše,Drava,,,4077,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-115,Starše,,,,region,1,SI-115,Starše,,,,,region,1,SI-115,Starše,HIGH,1.0,SI-115
+Slovenia,Majšperk,Drava,,,4026,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-069,Majšperk,,,,region,1,SI-069,Majšperk,,,,,region,1,SI-069,Majšperk,HIGH,1.0,SI-069
+Slovenia,Markovci,Drava,,,4022,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-168,Markovci,,,,region,1,SI-168,Markovci,,,,,region,1,SI-168,Markovci,HIGH,1.0,SI-168
+Slovenia,Hajdina,Drava,,,3873,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-159,Hajdina,,,,region,1,SI-159,Hajdina,,,,,region,1,SI-159,Hajdina,HIGH,1.0,SI-159
+Slovenia,Lovrenc na Pohorju,Drava,,,2958,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-167,Lovrenc na Pohorju,,,,region,1,SI-167,Lovrenc na Pohorju,,,,,region,1,SI-167,Lovrenc na Pohorju,HIGH,1.0,SI-167
+Slovenia,Dornava,Drava,,,2880,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-024,Dornava,,,,region,1,SI-024,Dornava,,,,,region,1,SI-024,Dornava,HIGH,1.0,SI-024
+Slovenia,Benedikt,Drava,,,2684,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-148,Benedikt,,,,region,1,SI-148,Benedikt,,,,,region,1,SI-148,Benedikt,HIGH,1.0,SI-148
+Slovenia,Destrnik,Drava,,,2632,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-018,Destrnik,,,,region,1,SI-018,Destrnik,,,,,region,1,SI-018,Destrnik,HIGH,1.0,SI-018
+Slovenia,Juršinci,Drava,,,2501,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-042,Juršinci,,,,region,1,SI-042,Juršinci,,,,,region,1,SI-042,Juršinci,HIGH,1.0,SI-042
+Slovenia,Cirkulane,Drava,,,2363,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-196,Cirkulane,,,,region,1,SI-196,Cirkulane,,,,,region,1,SI-196,Cirkulane,HIGH,1.0,SI-196
+Slovenia,Sveta Ana,Drava,,,2326,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-181,Sveta Ana,,,,region,1,SI-181,Sveta Ana,,,,,region,1,SI-181,Sveta Ana,HIGH,1.0,SI-181
+Slovenia,Sveta Trojica v Slovenskih goricah,Drava,,,2194,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-204,Sveta Trojica v Slovenskih goricah,,,,region,1,SI-204,Sveta Trojica v Slovenskih goricah,,,,,region,1,SI-204,Sveta Trojica v Slovenskih goricah,HIGH,1.0,SI-204
+Slovenia,Cerkvenjak,Drava,,,2179,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-153,Cerkvenjak,,,,region,1,SI-153,Cerkvenjak,,,,,region,1,SI-153,Cerkvenjak,HIGH,1.0,SI-153
+Slovenia,Sveti Jurij v Slovenskih goricah,Drava,,,2118,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-210,Sveti Jurij v Slovenskih goricah,,,,region,1,SI-210,Sveti Jurij v Slovenskih goricah,,,,,region,1,SI-210,Sveti Jurij v Slovenskih goricah,HIGH,1.0,SI-210
+Slovenia,Makole,Drava,,,2048,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-198,Makole,,,,region,1,SI-198,Makole,,,,,region,1,SI-198,Makole,HIGH,1.0,SI-198
+Slovenia,Sveti Tomaž,Drava,,,2015,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-205,Sveti Tomaž,,,,region,1,SI-205,Sveti Tomaž,,,,,region,1,SI-205,Sveti Tomaž,HIGH,1.0,SI-205
+Slovenia,Središče ob Dravi,Drava,,,1904,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-202,Središče ob Dravi,,,,region,1,SI-202,Središče ob Dravi,,,,,region,1,SI-202,Središče ob Dravi,HIGH,1.0,SI-202
+Slovenia,Podlehnik,Drava,,,1844,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-172,Podlehnik,,,,region,1,SI-172,Podlehnik,,,,,region,1,SI-172,Podlehnik,HIGH,1.0,SI-172
+Slovenia,Zavrč,Drava,,,1506,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-143,Zavrč,,,,region,1,SI-143,Zavrč,,,,,region,1,SI-143,Zavrč,HIGH,1.0,SI-143
+Slovenia,Trnovska vas,Drava,,,1385,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-185,Trnovska vas,,,,region,1,SI-185,Trnovska vas,,,,,region,1,SI-185,Trnovska vas,HIGH,1.0,SI-185
+Slovenia,Žetale,Drava,,,1309,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-191,Žetale,,,,region,1,SI-191,Žetale,,,,,region,1,SI-191,Žetale,HIGH,1.0,SI-191
+Slovenia,Sveti Andraž v Slovenskih goricah,Drava,,,1201,Municipality,,,#N/A,,DravaSlovenia,region,1,SI-182,Sveti Andraž v Slovenskih goricah,,,,region,1,SI-182,Sveti Andraž v Slovenskih goricah,,,,,region,1,SI-182,Sveti Andraž v Slovenskih goricah,HIGH,1.0,SI-182
+Slovenia,Ajdovščina,Gorizia,,,19727,Municipality,Ajdovščina,,Ajdovščina,,GoriziaSlovenia,region,1,SI-001,Ajdovščina,,,,region,1,SI-001,Ajdovščina,,,,,region,1,SI-001,Ajdovščina,HIGH,1.0,SI-001
+Slovenia,Nova Gorica,Gorizia,,,31824,City Municipality,Nova Gorica,,Nova Gorica,,GoriziaSlovenia,region,1,SI-084,Nova Gorica,,,,region,1,SI-084,Nova Gorica,,,,,region,1,SI-084,Nova Gorica,HIGH,1.0,SI-084
+Slovenia,Šempeter - Vrtojba,Gorizia,,,6164,Municipality,Nova Gorica,,Nova Gorica,,GoriziaSlovenia,region,1,SI-183,Šempeter-Vrtojba,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Renče - Vogrsko,Gorizia,,,4377,Municipality,Nova Gorica,,Nova Gorica,,GoriziaSlovenia,region,1,SI-201,Renče-Vogrsko,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Idrija,Gorizia,,,11729,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-036,Idrija,,,,region,1,SI-036,Idrija,,,,,region,1,SI-036,Idrija,HIGH,1.0,SI-036
+Slovenia,Tolmin,Gorizia,,,10953,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-128,Tolmin,,,,region,1,SI-128,Tolmin,,,,,region,1,SI-128,Tolmin,HIGH,1.0,SI-128
+Slovenia,Vipava,Gorizia,,,5822,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-136,Vipava,,,,region,1,SI-136,Vipava,,,,,region,1,SI-136,Vipava,HIGH,1.0,SI-136
+Slovenia,Brda,Gorizia,,,5632,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-007,Brda,,,,region,1,SI-007,Brda,,,,,region,1,SI-007,Brda,HIGH,1.0,SI-007
+Slovenia,Kanal,Gorizia,,,5245,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-044,Kanal,,,,region,1,SI-044,Kanal,,,,,region,1,SI-044,Kanal,HIGH,1.0,SI-044
+Slovenia,Miren - Kostanjevica,Gorizia,,,5072,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-075,Miren-Kostanjevica,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Cerkno,Gorizia,,,4546,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-014,Cerkno,,,,region,1,SI-014,Cerkno,,,,,region,1,SI-014,Cerkno,HIGH,1.0,SI-014
+Slovenia,Kobarid,Gorizia,,,4044,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-046,Kobarid,,,,region,1,SI-046,Kobarid,,,,,region,1,SI-046,Kobarid,HIGH,1.0,SI-046
+Slovenia,Bovec,Gorizia,,,3178,Municipality,,,#N/A,,GoriziaSlovenia,region,1,SI-006,Bovec,,,,region,1,SI-006,Bovec,,,,,region,1,SI-006,Bovec,HIGH,1.0,SI-006
+Slovenia,Postojna,Littoral - Inner Carniola,,,16753,Municipality,,,#N/A,,Littoral - Inner CarniolaSlovenia,region,1,SI-094,Postojna,,,,region,1,SI-094,Postojna,,,,,region,1,SI-094,Postojna,HIGH,1.0,SI-094
+Slovenia,Ilirska Bistrica,Littoral - Inner Carniola,,,13399,Municipality,,,#N/A,,Littoral - Inner CarniolaSlovenia,region,1,SI-038,Ilirska Bistrica,,,,region,1,SI-038,Ilirska Bistrica,,,,,region,1,SI-038,Ilirska Bistrica,HIGH,1.0,SI-038
+Slovenia,Cerknica,Littoral - Inner Carniola,,,11718,Municipality,,,#N/A,,Littoral - Inner CarniolaSlovenia,region,1,SI-013,Cerknica,,,,region,1,SI-013,Cerknica,,,,,region,1,SI-013,Cerknica,HIGH,1.0,SI-013
+Slovenia,Pivka,Littoral - Inner Carniola,,,6230,Municipality,,,#N/A,,Littoral - Inner CarniolaSlovenia,region,1,SI-091,Pivka,,,,region,1,SI-091,Pivka,,,,,region,1,SI-091,Pivka,HIGH,1.0,SI-091
+Slovenia,Loška dolina,Littoral - Inner Carniola,,,3624,Municipality,,,#N/A,,Littoral - Inner CarniolaSlovenia,region,1,SI-065,Loška Dolina,,,,region,1,SI-065,Loška Dolina,,,,,region,1,SI-065,Loška Dolina,HIGH,1.0,SI-065
+Slovenia,Bloke,Littoral - Inner Carniola,,,1610,Municipality,,,#N/A,,Littoral - Inner CarniolaSlovenia,region,1,SI-150,Bloke,,,,region,1,SI-150,Bloke,,,,,region,1,SI-150,Bloke,HIGH,1.0,SI-150
+Slovenia,Krško,Lower Sava,,,25833,Municipality,,,#N/A,,Lower SavaSlovenia,region,1,SI-054,Krško,,,,region,1,SI-054,Krško,,,,,region,1,SI-054,Krško,HIGH,1.0,SI-054
+Slovenia,Brežice,Lower Sava,,,24370,Municipality,,,#N/A,,Lower SavaSlovenia,region,1,SI-009,Brežice,,,,region,1,SI-009,Brežice,,,,,region,1,SI-009,Brežice,HIGH,1.0,SI-009
+Slovenia,Sevnica,Lower Sava,,,17661,Municipality,,,#N/A,,Lower SavaSlovenia,region,1,SI-110,Sevnica,,,,region,1,SI-110,Sevnica,,,,,region,1,SI-110,Sevnica,HIGH,1.0,SI-110
+Slovenia,Kostanjevica na Krki,Lower Sava,,,2453,Municipality,,,#N/A,,Lower SavaSlovenia,region,1,SI-197,Kostanjevica na Krki,,,,region,1,SI-197,Kostanjevica na Krki,,,,,region,1,SI-197,Kostanjevica na Krki,HIGH,1.0,SI-197
+Slovenia,Beltinci,Mura,,,8104,Municipality,Beltinci,,Beltinci,,MuraSlovenia,region,1,SI-002,Beltinci,,,,region,1,SI-002,Beltinci,,,,,region,1,SI-002,Beltinci,HIGH,1.0,SI-002
+Slovenia,Lendava (Lendva),Mura,,,10312,Municipality,Lendava,,Lendava,,MuraSlovenia,region,1,SI-059,Lendava / Lendva,,,,region,1,SI-059,Lendava / Lendva,,,,,region,1,SI-059,Lendava / Lendva,HIGH,1.0,SI-059
+Slovenia,Murska Sobota,Mura,,,18543,City Municipality,Murska Sobota,,Murska Sobota,,MuraSlovenia,region,1,SI-080,Murska Sobota,,,,region,1,SI-080,Murska Sobota,,,,,region,1,SI-080,Murska Sobota,HIGH,1.0,SI-080
+Slovenia,Ljutomer,Mura,,,11140,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-063,Ljutomer,,,,region,1,SI-063,Ljutomer,,,,,region,1,SI-063,Ljutomer,HIGH,1.0,SI-063
+Slovenia,Gornja Radgona,Mura,,,8476,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-029,Gornja Radgona,,,,region,1,SI-029,Gornja Radgona,,,,,region,1,SI-029,Gornja Radgona,HIGH,1.0,SI-029
+Slovenia,Moravske Toplice,Mura,,,5990,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-078,Moravske Toplice,,,,region,1,SI-078,Moravske Toplice,,,,,region,1,SI-078,Moravske Toplice,HIGH,1.0,SI-078
+Slovenia,Puconci,Mura,,,5871,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-097,Puconci,,,,region,1,SI-097,Puconci,,,,,region,1,SI-097,Puconci,HIGH,1.0,SI-097
+Slovenia,Radenci,Mura,,,5056,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-100,Radenci,,,,region,1,SI-100,Radenci,,,,,region,1,SI-100,Radenci,HIGH,1.0,SI-100
+Slovenia,Črenšovci,Mura,,,3982,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-015,Črenšovci,,,,region,1,SI-015,Črenšovci,,,,,region,1,SI-015,Črenšovci,HIGH,1.0,SI-015
+Slovenia,Tišina,Mura,,,3941,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-010,Tišina,,,,region,1,SI-010,Tišina,,,,,region,1,SI-010,Tišina,HIGH,1.0,SI-010
+Slovenia,Apače,Mura,,,3556,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-195,Apače,,,,region,1,SI-195,Apače,,,,,region,1,SI-195,Apače,HIGH,1.0,SI-195
+Slovenia,Križevci,Mura,,,3536,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-166,Križevci,,,,region,1,SI-166,Križevci,,,,,region,1,SI-166,Križevci,HIGH,1.0,SI-166
+Slovenia,Turnišče,Mura,,,3153,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-132,Turnišče,,,,region,1,SI-132,Turnišče,,,,,region,1,SI-132,Turnišče,HIGH,1.0,SI-132
+Slovenia,Rogašovci,Mura,,,3125,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-105,Rogašovci,,,,region,1,SI-105,Rogašovci,,,,,region,1,SI-105,Rogašovci,HIGH,1.0,SI-105
+Slovenia,Sveti Jurij,Mura,,,2855,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-116,Sveti Jurij ob Ščavnici,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Grad,Mura,,,2063,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-158,Grad,,,,region,1,SI-158,Grad,,,,,region,1,SI-158,Grad,HIGH,1.0,SI-158
+Slovenia,Gornji Petrovci,Mura,,,2010,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-031,Gornji Petrovci,,,,region,1,SI-031,Gornji Petrovci,,,,,region,1,SI-031,Gornji Petrovci,HIGH,1.0,SI-031
+Slovenia,Cankova,Mura,,,1740,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-152,Cankova,,,,region,1,SI-152,Cankova,,,,,region,1,SI-152,Cankova,HIGH,1.0,SI-152
+Slovenia,Kuzma,Mura,,,1654,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-056,Kuzma,,,,region,1,SI-056,Kuzma,,,,,region,1,SI-056,Kuzma,HIGH,1.0,SI-056
+Slovenia,Odranci,Mura,,,1595,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-086,Odranci,,,,region,1,SI-086,Odranci,,,,,region,1,SI-086,Odranci,HIGH,1.0,SI-086
+Slovenia,Velika Polana,Mura,,,1387,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-187,Velika Polana,,,,region,1,SI-187,Velika Polana,,,,,region,1,SI-187,Velika Polana,HIGH,1.0,SI-187
+Slovenia,Šalovci,Mura,,,1372,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-033,Šalovci,,,,region,1,SI-033,Šalovci,,,,,region,1,SI-033,Šalovci,HIGH,1.0,SI-033
+Slovenia,Veržej,Mura,,,1371,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-188,Veržej,,,,region,1,SI-188,Veržej,,,,,region,1,SI-188,Veržej,HIGH,1.0,SI-188
+Slovenia,Dobrovnik (Dobronak),Mura,,,1263,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-156,Dobrovnik / Dobronak,,,,region,1,SI-156,Dobrovnik / Dobronak,,,,,region,1,SI-156,Dobrovnik / Dobronak,HIGH,1.0,SI-156
+Slovenia,Razkrižje,Mura,,,1237,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-176,Razkrižje,,,,region,1,SI-176,Razkrižje,,,,,region,1,SI-176,Razkrižje,HIGH,1.0,SI-176
+Slovenia,Kobilje,Mura,,,532,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-047,Kobilje,,,,region,1,SI-047,Kobilje,,,,,region,1,SI-047,Kobilje,HIGH,1.0,SI-047
+Slovenia,Hodoš (Hodos),Mura,,,362,Municipality,,,#N/A,,MuraSlovenia,region,1,SI-161,Hodoš / Hodos,,,,region,1,SI-161,Hodoš / Hodos,,,,,region,1,SI-161,Hodoš / Hodos,HIGH,1.0,SI-161
+Slovenia,Celje,Savinja,,,48679,City Municipality,Celje,,Celje,,SavinjaSlovenia,region,1,SI-011,Celje,,,,region,1,SI-011,Celje,,,,,region,1,SI-011,Celje,HIGH,1.0,SI-011
+Slovenia,Žalec,Savinja,,,21477,Municipality,Celje,,Celje,,SavinjaSlovenia,region,1,SI-190,Žalec,,,,region,1,SI-190,Žalec,,,,,region,1,SI-190,Žalec,HIGH,1.0,SI-190
+Slovenia,Štore,Savinja,,,4396,Municipality,Celje,,Celje,,SavinjaSlovenia,region,1,SI-127,Štore,,,,region,1,SI-127,Štore,,,,,region,1,SI-127,Štore,HIGH,1.0,SI-127
+Slovenia,Rogaška Slatina,Savinja,,,11438,Municipality,Rogaška Slatina,,Rogaška Slatina,,SavinjaSlovenia,region,1,SI-106,Rogaška Slatina,,,,region,1,SI-106,Rogaška Slatina,,,,,region,1,SI-106,Rogaška Slatina,HIGH,1.0,SI-106
+Slovenia,Velenje,Savinja,,,33548,City Municipality,Velenje,,Velenje,,SavinjaSlovenia,region,1,SI-133,Velenje,,,,region,1,SI-133,Velenje,,,,,region,1,SI-133,Velenje,HIGH,1.0,SI-133
+Slovenia,Polzela,Savinja,,,6386,Municipality,Velenje,,Velenje,,SavinjaSlovenia,region,1,SI-173,Polzela,,,,region,1,SI-173,Polzela,,,,,region,1,SI-173,Polzela,HIGH,1.0,SI-173
+Slovenia,Šmartno ob Paki,Savinja,,,3324,Municipality,Velenje,,Velenje,,SavinjaSlovenia,region,1,SI-125,Šmartno ob Paki,,,,region,1,SI-125,Šmartno ob Paki,,,,,region,1,SI-125,Šmartno ob Paki,HIGH,1.0,SI-125
+Slovenia,Šentjur,Savinja,,,19378,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-120,Šentjur,,,,region,1,SI-120,Šentjur,,,,,region,1,SI-120,Šentjur,HIGH,1.0,SI-120
+Slovenia,Slovenske Konjice,Savinja,,,15221,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-114,Slovenske Konjice,,,,region,1,SI-114,Slovenske Konjice,,,,,region,1,SI-114,Slovenske Konjice,HIGH,1.0,SI-114
+Slovenia,Laško,Savinja,,,12976,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-057,Laško,,,,region,1,SI-057,Laško,,,,,region,1,SI-057,Laško,HIGH,1.0,SI-057
+Slovenia,Šmarje pri Jelšah,Savinja,,,10361,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-124,Šmarje pri Jelšah,,,,region,1,SI-124,Šmarje pri Jelšah,,,,,region,1,SI-124,Šmarje pri Jelšah,HIGH,1.0,SI-124
+Slovenia,Vojnik,Savinja,,,9063,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-139,Vojnik,,,,region,1,SI-139,Vojnik,,,,,region,1,SI-139,Vojnik,HIGH,1.0,SI-139
+Slovenia,Šoštanj,Savinja,,,8822,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-126,Šoštanj,,,,region,1,SI-126,Šoštanj,,,,,region,1,SI-126,Šoštanj,HIGH,1.0,SI-126
+Slovenia,Zreče,Savinja,,,6576,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-144,Zreče,,,,region,1,SI-144,Zreče,,,,,region,1,SI-144,Zreče,HIGH,1.0,SI-144
+Slovenia,Braslovče,Savinja,,,5681,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-151,Braslovče,,,,region,1,SI-151,Braslovče,,,,,region,1,SI-151,Braslovče,HIGH,1.0,SI-151
+Slovenia,Prebold,Savinja,,,5302,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-174,Prebold,,,,region,1,SI-174,Prebold,,,,,region,1,SI-174,Prebold,HIGH,1.0,SI-174
+Slovenia,Mozirje,Savinja,,,4401,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-079,Mozirje,,,,region,1,SI-079,Mozirje,,,,,region,1,SI-079,Mozirje,HIGH,1.0,SI-079
+Slovenia,Radeče,Savinja,,,4146,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-099,Radeče,,,,region,1,SI-099,Radeče,,,,,region,1,SI-099,Radeče,HIGH,1.0,SI-099
+Slovenia,Podčetrtek,Savinja,,,3657,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-092,Podčetrtek,,,,region,1,SI-092,Podčetrtek,,,,,region,1,SI-092,Podčetrtek,HIGH,1.0,SI-092
+Slovenia,Rogatec,Savinja,,,3055,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-107,Rogatec,,,,region,1,SI-107,Rogatec,,,,,region,1,SI-107,Rogatec,HIGH,1.0,SI-107
+Slovenia,Kozje,Savinja,,,3029,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-051,Kozje,,,,region,1,SI-051,Kozje,,,,,region,1,SI-051,Kozje,HIGH,1.0,SI-051
+Slovenia,Nazarje,Savinja,,,2682,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-083,Nazarje,,,,region,1,SI-083,Nazarje,,,,,region,1,SI-083,Nazarje,HIGH,1.0,SI-083
+Slovenia,Vransko,Savinja,,,2672,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-189,Vransko,,,,region,1,SI-189,Vransko,,,,,region,1,SI-189,Vransko,HIGH,1.0,SI-189
+Slovenia,Gornji Grad,Savinja,,,2552,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-030,Gornji Grad,,,,region,1,SI-030,Gornji Grad,,,,,region,1,SI-030,Gornji Grad,HIGH,1.0,SI-030
+Slovenia,Ljubno,Savinja,,,2542,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-062,Ljubno,,,,region,1,SI-062,Ljubno,,,,,region,1,SI-062,Ljubno,HIGH,1.0,SI-062
+Slovenia,Rečica ob Savinji,Savinja,,,2324,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-209,Rečica ob Savinji,,,,region,1,SI-209,Rečica ob Savinji,,,,,region,1,SI-209,Rečica ob Savinji,HIGH,1.0,SI-209
+Slovenia,Dobrna,Savinja,,,2277,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-155,Dobrna,,,,region,1,SI-155,Dobrna,,,,,region,1,SI-155,Dobrna,HIGH,1.0,SI-155
+Slovenia,Vitanje,Savinja,,,2266,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-137,Vitanje,,,,region,1,SI-137,Vitanje,,,,,region,1,SI-137,Vitanje,HIGH,1.0,SI-137
+Slovenia,Tabor,Savinja,,,1693,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-184,Tabor,,,,region,1,SI-184,Tabor,,,,,region,1,SI-184,Tabor,HIGH,1.0,SI-184
+Slovenia,Luče,Savinja,,,1455,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-067,Luče,,,,region,1,SI-067,Luče,,,,,region,1,SI-067,Luče,HIGH,1.0,SI-067
+Slovenia,Bistrica ob Sotli,Savinja,,,1361,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-149,Bistrica ob Sotli,,,,region,1,SI-149,Bistrica ob Sotli,,,,,region,1,SI-149,Bistrica ob Sotli,HIGH,1.0,SI-149
+Slovenia,Dobje,Savinja,,,942,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-154,Dobje,,,,region,1,SI-154,Dobje,,,,,region,1,SI-154,Dobje,HIGH,1.0,SI-154
+Slovenia,Solčava,Savinja,,,524,Municipality,,,#N/A,,SavinjaSlovenia,region,1,SI-180,Solčava,,,,region,1,SI-180,Solčava,,,,,region,1,SI-180,Solčava,HIGH,1.0,SI-180
+Slovenia,Prevalje,Slovenian Carinthia,,,6732,Municipality,Prevalje,,Prevalje,,Slovenian CarinthiaSlovenia,region,1,SI-175,Prevalje,,,,region,1,SI-175,Prevalje,,,,,region,1,SI-175,Prevalje,HIGH,1.0,SI-175
+Slovenia,Slovenj Gradec,Slovenian Carinthia,,,16716,City Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-112,Slovenj Gradec,,,,region,1,SI-112,Slovenj Gradec,,,,,region,1,SI-112,Slovenj Gradec,HIGH,1.0,SI-112
+Slovenia,Ravne na Koroškem,Slovenian Carinthia,,,11228,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-103,Ravne na Koroškem,,,,region,1,SI-103,Ravne na Koroškem,,,,,region,1,SI-103,Ravne na Koroškem,HIGH,1.0,SI-103
+Slovenia,Dravograd,Slovenian Carinthia,,,8882,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-025,Dravograd,,,,region,1,SI-025,Dravograd,,,,,region,1,SI-025,Dravograd,HIGH,1.0,SI-025
+Slovenia,Radlje ob Dravi,Slovenian Carinthia,,,6181,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-101,Radlje ob Dravi,,,,region,1,SI-101,Radlje ob Dravi,,,,,region,1,SI-101,Radlje ob Dravi,HIGH,1.0,SI-101
+Slovenia,Mislinja,Slovenian Carinthia,,,4532,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-076,Mislinja,,,,region,1,SI-076,Mislinja,,,,,region,1,SI-076,Mislinja,HIGH,1.0,SI-076
+Slovenia,Mežica,Slovenian Carinthia,,,3567,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-074,Mežica,,,,region,1,SI-074,Mežica,,,,,region,1,SI-074,Mežica,HIGH,1.0,SI-074
+Slovenia,Muta,Slovenian Carinthia,,,3402,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-081,Muta,,,,region,1,SI-081,Muta,,,,,region,1,SI-081,Muta,HIGH,1.0,SI-081
+Slovenia,Črna na Koroškem,Slovenian Carinthia,,,3201,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-016,Črna na Koroškem,,,,region,1,SI-016,Črna na Koroškem,,,,,region,1,SI-016,Črna na Koroškem,HIGH,1.0,SI-016
+Slovenia,Vuzenica,Slovenian Carinthia,,,2652,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-141,Vuzenica,,,,region,1,SI-141,Vuzenica,,,,,region,1,SI-141,Vuzenica,HIGH,1.0,SI-141
+Slovenia,Podvelka,Slovenian Carinthia,,,2337,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-093,Podvelka,,,,region,1,SI-093,Podvelka,,,,,region,1,SI-093,Podvelka,HIGH,1.0,SI-093
+Slovenia,Ribnica na Pohorju,Slovenian Carinthia,,,1141,Municipality,,,#N/A,,Slovenian CarinthiaSlovenia,region,1,SI-177,Ribnica na Pohorju,,,,region,1,SI-177,Ribnica na Pohorju,,,,,region,1,SI-177,Ribnica na Pohorju,HIGH,1.0,SI-177
+Slovenia,Novo mesto,Southeast Slovenia,,,37615,City Municipality,Novo mesto,,Novo mesto,,Southeast SloveniaSlovenia,region,1,SI-085,Novo mesto,,,,region,1,SI-085,Novo mesto,,,,,region,1,SI-085,Novo mesto,HIGH,1.0,SI-085
+Slovenia,Straža,Southeast Slovenia,,,3881,Municipality,Novo mesto,,Novo mesto,,Southeast SloveniaSlovenia,region,1,SI-203,Straža,,,,region,1,SI-203,Straža,,,,,region,1,SI-203,Straža,HIGH,1.0,SI-203
+Slovenia,Šmarješke Toplice,Southeast Slovenia,,,3522,Municipality,Novo mesto,,Novo mesto,,Southeast SloveniaSlovenia,region,1,SI-206,Šmarješke Toplice,,,,region,1,SI-206,Šmarješke Toplice,,,,,region,1,SI-206,Šmarješke Toplice,HIGH,1.0,SI-206
+Slovenia,Kočevje,Southeast Slovenia,,,15623,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-048,Kočevje,,,,region,1,SI-048,Kočevje,,,,,region,1,SI-048,Kočevje,HIGH,1.0,SI-048
+Slovenia,Črnomelj,Southeast Slovenia,,,14279,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-017,Črnomelj,,,,region,1,SI-017,Črnomelj,,,,,region,1,SI-017,Črnomelj,HIGH,1.0,SI-017
+Slovenia,Trebnje,Southeast Slovenia,,,13413,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-130,Trebnje,,,,region,1,SI-130,Trebnje,,,,,region,1,SI-130,Trebnje,HIGH,1.0,SI-130
+Slovenia,Ribnica,Southeast Slovenia,,,9684,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-104,Ribnica,,,,region,1,SI-104,Ribnica,,,,,region,1,SI-104,Ribnica,HIGH,1.0,SI-104
+Slovenia,Metlika,Southeast Slovenia,,,8452,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-073,Metlika,,,,region,1,SI-073,Metlika,,,,,region,1,SI-073,Metlika,HIGH,1.0,SI-073
+Slovenia,Šentjernej,Southeast Slovenia,,,7247,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-119,Šentjernej,,,,region,1,SI-119,Šentjernej,,,,,region,1,SI-119,Šentjernej,HIGH,1.0,SI-119
+Slovenia,Žužemberk,Southeast Slovenia,,,4719,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-193,Žužemberk,,,,region,1,SI-193,Žužemberk,,,,,region,1,SI-193,Žužemberk,HIGH,1.0,SI-193
+Slovenia,Semič,Southeast Slovenia,,,3864,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-109,Semič,,,,region,1,SI-109,Semič,,,,,region,1,SI-109,Semič,HIGH,1.0,SI-109
+Slovenia,Dolenjske Toplice,Southeast Slovenia,,,3589,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-157,Dolenjske Toplice,,,,region,1,SI-157,Dolenjske Toplice,,,,,region,1,SI-157,Dolenjske Toplice,HIGH,1.0,SI-157
+Slovenia,Škocjan,Southeast Slovenia,,,3419,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-121,Škocjan,,,,region,1,SI-121,Škocjan,,,,,region,1,SI-121,Škocjan,HIGH,1.0,SI-121
+Slovenia,Mokronog - Trebelno,Southeast Slovenia,,,3164,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-199,Mokronog-Trebelno,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Mirna Peč,Southeast Slovenia,,,3077,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-170,Mirna Peč,,,,region,1,SI-170,Mirna Peč,,,,,region,1,SI-170,Mirna Peč,HIGH,1.0,SI-170
+Slovenia,Šentrupert,Southeast Slovenia,,,2935,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-211,Šentrupert,,,,region,1,SI-211,Šentrupert,,,,,region,1,SI-211,Šentrupert,HIGH,1.0,SI-211
+Slovenia,Mirna,Southeast Slovenia,,,2694,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-212,Mirna,,,,region,1,SI-212,Mirna,,,,,region,1,SI-212,Mirna,HIGH,1.0,SI-212
+Slovenia,Sodražica,Southeast Slovenia,,,2269,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-179,Sodražica,,,,region,1,SI-179,Sodražica,,,,,region,1,SI-179,Sodražica,HIGH,1.0,SI-179
+Slovenia,Loški Potok,Southeast Slovenia,,,1807,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-066,Loški Potok,,,,region,1,SI-066,Loški Potok,,,,,region,1,SI-066,Loški Potok,HIGH,1.0,SI-066
+Slovenia,Kostel,Southeast Slovenia,,,678,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-165,Kostel,,,,region,1,SI-165,Kostel,,,,,region,1,SI-165,Kostel,HIGH,1.0,SI-165
+Slovenia,Osilnica,Southeast Slovenia,,,321,Municipality,,,#N/A,,Southeast SloveniaSlovenia,region,1,SI-088,Osilnica,,,,region,1,SI-088,Osilnica,,,,,region,1,SI-088,Osilnica,HIGH,1.0,SI-088
+Slovenia,Kranj,Upper Carniola,,,56639,City Municipality,Kranj,,Kranj,,Upper CarniolaSlovenia,region,1,SI-052,Kranj,,,,region,1,SI-052,Kranj,,,,,region,1,SI-052,Kranj,HIGH,1.0,SI-052
+Slovenia,Škofja Loka,Upper Carniola,,,23622,Municipality,Kranj,,Kranj,,Upper CarniolaSlovenia,region,1,SI-122,Škofja Loka,,,,region,1,SI-122,Škofja Loka,,,,,region,1,SI-122,Škofja Loka,HIGH,1.0,SI-122
+Slovenia,Radovljica,Upper Carniola,,,19325,Municipality,Kranj,,Kranj,,Upper CarniolaSlovenia,region,1,SI-102,Radovljica,,,,region,1,SI-102,Radovljica,,,,,region,1,SI-102,Radovljica,HIGH,1.0,SI-102
+Slovenia,Šenčur,Upper Carniola,,,8893,Municipality,Kranj,,Kranj,,Upper CarniolaSlovenia,region,1,SI-117,Šenčur,,,,region,1,SI-117,Šenčur,,,,,region,1,SI-117,Šenčur,HIGH,1.0,SI-117
+Slovenia,Cerklje na Gorenjskem,Upper Carniola,,,7901,Municipality,Kranj,,Kranj,,Upper CarniolaSlovenia,region,1,SI-012,Cerklje na Gorenjskem,,,,region,1,SI-012,Cerklje na Gorenjskem,,,,,region,1,SI-012,Cerklje na Gorenjskem,HIGH,1.0,SI-012
+Slovenia,Naklo,Upper Carniola,,,5380,Municipality,Kranj,,Kranj,,Upper CarniolaSlovenia,region,1,SI-082,Naklo,,,,region,1,SI-082,Naklo,,,,,region,1,SI-082,Naklo,HIGH,1.0,SI-082
+Slovenia,Jesenice,Upper Carniola,,,21758,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-041,Jesenice,,,,region,1,SI-041,Jesenice,,,,,region,1,SI-041,Jesenice,HIGH,1.0,SI-041
+Slovenia,Tržič,Upper Carniola,,,15011,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-131,Tržič,,,,region,1,SI-131,Tržič,,,,,region,1,SI-131,Tržič,HIGH,1.0,SI-131
+Slovenia,Bled,Upper Carniola,,,8250,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-003,Bled,,,,region,1,SI-003,Bled,,,,,region,1,SI-003,Bled,HIGH,1.0,SI-003
+Slovenia,Kranjska Gora,Upper Carniola,,,7689,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-053,Kranjska Gora,,,,region,1,SI-053,Kranjska Gora,,,,,region,1,SI-053,Kranjska Gora,HIGH,1.0,SI-053
+Slovenia,Gorenja vas - Poljane,Upper Carniola,,,7672,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-027,Gorenja vas-Poljane,,,,,,,,,,,,,,,,NONE,0.0,
+Slovenia,Železniki,Upper Carniola,,,6685,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-146,Železniki,,,,region,1,SI-146,Železniki,,,,,region,1,SI-146,Železniki,HIGH,1.0,SI-146
+Slovenia,Bohinj,Upper Carniola,,,5676,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-004,Bohinj,,,,region,1,SI-004,Bohinj,,,,,region,1,SI-004,Bohinj,HIGH,1.0,SI-004
+Slovenia,Žiri,Upper Carniola,,,4990,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-147,Žiri,,,,region,1,SI-147,Žiri,,,,,region,1,SI-147,Žiri,HIGH,1.0,SI-147
+Slovenia,Žirovnica,Upper Carniola,,,4479,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-192,Žirovnica,,,,region,1,SI-192,Žirovnica,,,,,region,1,SI-192,Žirovnica,HIGH,1.0,SI-192
+Slovenia,Preddvor,Upper Carniola,,,3811,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-095,Preddvor,,,,region,1,SI-095,Preddvor,,,,,region,1,SI-095,Preddvor,HIGH,1.0,SI-095
+Slovenia,Gorje,Upper Carniola,,,2779,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-207,Gorje,,,,region,1,SI-207,Gorje,,,,,region,1,SI-207,Gorje,HIGH,1.0,SI-207
+Slovenia,Jezersko,Upper Carniola,,,667,Municipality,,,#N/A,,Upper CarniolaSlovenia,region,1,SI-163,Jezersko,,,,region,1,SI-163,Jezersko,,,,,region,1,SI-163,Jezersko,HIGH,1.0,SI-163

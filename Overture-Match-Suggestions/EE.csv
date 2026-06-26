@@ -1,0 +1,80 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Estonia,Tallinn,Harju,,,437817,Urban Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Tallinn,,,,county,2,EE-37,Tallinn,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Saue,Harju,,,24111,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Saue vald,,,,locality,,EE-37,Saue linn,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Rae,Harju,,,22900,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Rae vald,,,,locality,,EE-37,Rae küla,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Viimsi,Harju,,,21872,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Viimsi vald,,,,locality,,EE-37,Viimsi alevik,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Harku,Harju,,,16380,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Harku vald,,,,locality,,EE-37,Harku alevik,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Maardu linn,Harju,,,16170,Urban Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Maardu linn,,,,county,2,EE-37,Maardu linn,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Lääne-Harju,Harju,,,12997,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Lääne-Harju vald,,,,county,2,EE-37,Lääne-Harju vald,,,,,region,1,EE-37,Harju maakond,LOW,0.865,EE-37
+Estonia,Saku,Harju,,,11001,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Saku vald,,,,locality,,EE-37,Saku alevik,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Keila linn,Harju,,,10499,Urban Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Keila linn,,,,locality,,EE-37,Keila linn,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Jõelähtme,Harju,,,6970,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Jõelähtme vald,,,,locality,,EE-37,Jõelähtme küla,,,,,region,1,EE-37,Harju maakond,LOW,0.833,EE-37
+Estonia,Kiili,Harju,,,6165,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Kiili vald,,,,locality,,EE-37,Siili,,,,,region,1,EE-37,Harju maakond,LOW,0.8,EE-37
+Estonia,Raasiku,Harju,,,5115,Rural Municipality,Talinn,,Talinn,,HarjuEstonia,county,2,EE-37,Raasiku vald,,,,county,2,EE-37,Raasiku vald,,,,,region,1,EE-37,Harju maakond,LOW,0.787,EE-37
+Estonia,Kose,Harju,,,7451,Rural Municipality,,,#N/A,,HarjuEstonia,county,2,EE-37,Kose vald,,,,locality,,EE-37,Kose,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Anija,Harju,,,6262,Rural Municipality,,,#N/A,,HarjuEstonia,county,2,EE-37,Anija vald,,,,,,,,,,,,region,1,EE-37,Harju maakond,NONE,0.0,EE-37
+Estonia,Kuusalu,Harju,,,6242,Rural Municipality,,,#N/A,,HarjuEstonia,county,2,EE-37,Kuusalu vald,,,,county,2,EE-37,Kuusalu vald,,,,,region,1,EE-37,Harju maakond,LOW,0.787,EE-37
+Estonia,Loksa linn,Harju,,,2615,Urban Municipality,,,#N/A,,HarjuEstonia,county,2,EE-37,Loksa linn,,,,locality,,EE-37,Loksa linn,,,,,region,1,EE-37,Harju maakond,HIGH,1.0,EE-37
+Estonia,Hiiumaa,Hiiu,,,8497,Rural Municipality,,,#N/A,,HiiuEstonia,county,2,EE-39,Hiiumaa vald,,,,county,2,EE-39,Hiiumaa vald,,,,,region,1,EE-39,Hiiu maakond,LOW,0.787,EE-39
+Estonia,Jõhvi,Ida-Viru,,,11948,Rural Municipality,Jõhvi,,Jõhvi,,Ida-ViruEstonia,county,2,EE-45,Jõhvi vald,,,,locality,,EE-45,Jõhvi linn,,,,,region,1,EE-45,Ida-Viru maakond,HIGH,1.0,EE-45
+Estonia,Kohtla-Järve linn,Ida-Viru,,,33499,Urban Municipality,Kohtla-Järve,,Kohtla-Järve,,Ida-ViruEstonia,county,2,EE-45,Kohtla-Järve linn,,,,county,2,EE-45,Kohtla-Järve linn,,,,,region,1,EE-45,Ida-Viru maakond,HIGH,1.0,EE-45
+Estonia,Narva linn,Ida-Viru,,,53955,Urban Municipality,Narva,,Narva,,Ida-ViruEstonia,county,2,EE-45,Narva linn,,,,county,2,EE-45,Narva linn,,,,,region,1,EE-45,Ida-Viru maakond,HIGH,1.0,EE-45
+Estonia,Narva-Jõesuu linn,Ida-Viru,,,4175,Urban Municipality,Narva,,Narva,,Ida-ViruEstonia,county,2,EE-45,Narva-Jõesuu linn,,,,locality,,EE-45,Narva-Jõesuu linn,,,,,region,1,EE-45,Ida-Viru maakond,HIGH,1.0,EE-45
+Estonia,Sillamäe linn,Ida-Viru,,,12439,Urban Municipality,Sillamae,,Sillamae,,Ida-ViruEstonia,county,2,EE-45,Sillamäe linn,,,,county,2,EE-45,Sillamäe linn,,,,,region,1,EE-45,Ida-Viru maakond,HIGH,1.0,EE-45
+Estonia,Lüganuse,Ida-Viru,,,8223,Rural Municipality,,,#N/A,,Ida-ViruEstonia,county,2,EE-45,Lüganuse vald,,,,locality,,EE-45,Lüganuse alevik,,,,,region,1,EE-45,Ida-Viru maakond,HIGH,1.0,EE-45
+Estonia,Toila,Ida-Viru,,,4335,Rural Municipality,,,#N/A,,Ida-ViruEstonia,locality,,EE-45,Toila alevik,,,,,,,,,,,,region,1,EE-45,Ida-Viru maakond,NONE,0.0,EE-45
+Estonia,Alutaguse,Ida-Viru,,,4167,Rural Municipality,,,#N/A,,Ida-ViruEstonia,county,2,EE-45,Alutaguse vald,,,,county,2,EE-45,Alutaguse vald,,,,,region,1,EE-45,Ida-Viru maakond,LOW,0.833,EE-45
+Estonia,Paide linn,Järva,,,10439,Urban Municipality,Paide,,Paide,,JärvaEstonia,county,2,EE-52,Paide linn,,,,locality,,EE-52,Paide linn,,,,,region,1,EE-52,Järva maakond,HIGH,1.0,EE-52
+Estonia,Türi,Järva,,,10626,Rural Municipality,,,#N/A,,JärvaEstonia,county,2,EE-52,Türi vald,,,,locality,,EE-52,Türi linn,,,,,region,1,EE-52,Järva maakond,HIGH,1.0,EE-52
+Estonia,Järva,Järva,,,8632,Rural Municipality,,,#N/A,,JärvaEstonia,county,2,EE-52,Järva vald,,,,region,1,EE-52,Järva maakond,,,,,region,1,EE-52,Järva maakond,HIGH,1.0,EE-52
+Estonia,Jõgeva,Jõgeva,,,13186,Rural Municipality,,,#N/A,,JõgevaEstonia,county,2,EE-50,Jõgeva vald,,,,region,1,EE-50,Jõgeva maakond,,,,,region,1,EE-50,Jõgeva maakond,HIGH,1.0,EE-50
+Estonia,Põltsamaa,Jõgeva,,,9690,Rural Municipality,,,#N/A,,JõgevaEstonia,county,2,EE-50,Põltsamaa vald,,,,locality,,EE-50,Põltsamaa linn,,,,,region,1,EE-50,Jõgeva maakond,HIGH,1.0,EE-50
+Estonia,Mustvee,Jõgeva,,,4982,Rural Municipality,,,#N/A,,JõgevaEstonia,county,2,EE-50,Mustvee vald,,,,locality,,EE-50,Mustvee linn,,,,,region,1,EE-50,Jõgeva maakond,HIGH,1.0,EE-50
+Estonia,Haapsalu linn,Lääne,,,13132,Urban Municipality,,,#N/A,,LääneEstonia,county,2,EE-56,Haapsalu linn,,,,county,2,EE-56,Haapsalu linn,,,,,region,1,EE-56,Lääne maakond,HIGH,1.0,EE-56
+Estonia,Lääne-Nigula,Lääne,,,6796,Rural Municipality,,,#N/A,,LääneEstonia,county,2,EE-56,Lääne-Nigula vald,,,,county,2,EE-56,Lääne-Nigula vald,,,,,region,1,EE-56,Lääne maakond,LOW,0.878,EE-56
+Estonia,Vormsi,Lääne,,,301,Rural Municipality,,,#N/A,,LääneEstonia,county,2,EE-56,Vormsi vald,,,,,,,,,,,,region,1,EE-56,Lääne maakond,NONE,0.0,EE-56
+Estonia,Rakvere linn,Lääne-Viru,,,15141,Urban Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Rakvere linn,,,,locality,,EE-60,Rakvere linn,,,,,region,1,EE-60,Lääne-Viru maakond,HIGH,1.0,EE-60
+Estonia,Tapa,Lääne-Viru,,,10901,Rural Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Tapa vald,,,,locality,,EE-60,Tapa linn,,,,,region,1,EE-60,Lääne-Viru maakond,HIGH,1.0,EE-60
+Estonia,Vinni,Lääne-Viru,,,6683,Rural Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Vinni vald,,,,,,,,,,,,region,1,EE-60,Lääne-Viru maakond,NONE,0.0,EE-60
+Estonia,Rakvere,Lääne-Viru,,,5745,Rural Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Rakvere linn,,,,locality,,EE-60,Rakvere linn,,,,,region,1,EE-60,Lääne-Viru maakond,HIGH,1.0,EE-60
+Estonia,Väike-Maarja,Lääne-Viru,,,5664,Rural Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Väike-Maarja vald,,,,county,2,EE-60,Väike-Maarja vald,,,,,region,1,EE-60,Lääne-Viru maakond,LOW,0.878,EE-60
+Estonia,Viru-Nigula,Lääne-Viru,,,5647,Rural Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Viru-Nigula vald,,,,county,2,EE-60,Viru-Nigula vald,,,,,region,1,EE-60,Lääne-Viru maakond,LOW,0.865,EE-60
+Estonia,Kadrina,Lääne-Viru,,,4838,Rural Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Kadrina vald,,,,county,2,EE-60,Kadrina vald,,,,,region,1,EE-60,Lääne-Viru maakond,LOW,0.787,EE-60
+Estonia,Haljala,Lääne-Viru,,,4090,Rural Municipality,,,#N/A,,Lääne-ViruEstonia,county,2,EE-60,Haljala vald,,,,county,2,EE-60,Haljala vald,,,,,region,1,EE-60,Lääne-Viru maakond,LOW,0.787,EE-60
+Estonia,Pärnu linn,Pärnu,,,51212,Urban Municipality,Parnu,,Parnu,,PärnuEstonia,county,2,EE-68,Pärnu linn,,,,locality,,EE-68,Pärnu linn,,,,,region,1,EE-68,Pärnu maakond,HIGH,1.0,EE-68
+Estonia,Tori,Pärnu,,,11861,Rural Municipality,,,#N/A,,PärnuEstonia,county,2,EE-68,Tori vald,,,,,,,,,,,,region,1,EE-68,Pärnu maakond,NONE,0.0,EE-68
+Estonia,Põhja-Pärnumaa,Pärnu,,,8048,Rural Municipality,,,#N/A,,PärnuEstonia,county,2,EE-68,Põhja-Pärnumaa vald,,,,county,2,EE-68,Põhja-Pärnumaa vald,,,,,region,1,EE-68,Pärnu maakond,LOW,0.898,EE-68
+Estonia,Lääneranna,Pärnu,,,5073,Rural Municipality,,,#N/A,,PärnuEstonia,county,2,EE-68,Lääneranna vald,,,,county,2,EE-68,Lääneranna vald,,,,,region,1,EE-68,Pärnu maakond,LOW,0.85,EE-68
+Estonia,Häädemeeste,Pärnu,,,4616,Rural Municipality,,,#N/A,,PärnuEstonia,county,2,EE-68,Häädemeeste vald,,,,county,2,EE-68,Häädemeeste vald,,,,,region,1,EE-68,Pärnu maakond,LOW,0.865,EE-68
+Estonia,Saarde,Pärnu,,,4349,Rural Municipality,,,#N/A,,PärnuEstonia,county,2,EE-68,Saarde vald,,,,,,,,,,,,region,1,EE-68,Pärnu maakond,NONE,0.0,EE-68
+Estonia,Kihnu,Pärnu,,,551,Rural Municipality,,,#N/A,,PärnuEstonia,county,2,EE-68,Kihnu vald,,,,,,,,,,,,region,1,EE-68,Pärnu maakond,NONE,0.0,EE-68
+Estonia,Põlva,Põlva,,,13395,Rural Municipality,,,#N/A,,PõlvaEstonia,county,2,EE-64,Põlva vald,,,,region,1,EE-64,Põlva maakond,,,,,region,1,EE-64,Põlva maakond,HIGH,1.0,EE-64
+Estonia,Räpina,Põlva,,,6115,Rural Municipality,,,#N/A,,PõlvaEstonia,county,2,EE-64,Räpina vald,,,,locality,,EE-64,Räpina linn,,,,,region,1,EE-64,Põlva maakond,HIGH,1.0,EE-64
+Estonia,Kanepi,Põlva,,,4481,Rural Municipality,,,#N/A,,PõlvaEstonia,county,2,EE-64,Kanepi vald,,,,,,,,,,,,region,1,EE-64,Põlva maakond,NONE,0.0,EE-64
+Estonia,Rapla,Rapla,,,13229,Rural Municipality,,,#N/A,,RaplaEstonia,county,2,EE-71,Rapla vald,,,,region,1,EE-71,Rapla maakond,,,,,region,1,EE-71,Rapla maakond,HIGH,1.0,EE-71
+Estonia,Kohila,Rapla,,,7525,Rural Municipality,,,#N/A,,RaplaEstonia,county,2,EE-71,Kohila vald,,,,,,,,,,,,region,1,EE-71,Rapla maakond,NONE,0.0,EE-71
+Estonia,Märjamaa,Rapla,,,7368,Rural Municipality,,,#N/A,,RaplaEstonia,county,2,EE-71,Märjamaa vald,,,,county,2,EE-71,Märjamaa vald,,,,,region,1,EE-71,Rapla maakond,LOW,0.812,EE-71
+Estonia,Kehtna,Rapla,,,5407,Rural Municipality,,,#N/A,,RaplaEstonia,county,2,EE-71,Kehtna vald,,,,locality,,EE-71,Kehtna alevik,,,,,region,1,EE-71,Rapla maakond,HIGH,1.0,EE-71
+Estonia,Saaremaa,Saare,,,29557,Rural Municipality,Kuressaare,,Kuressaare,,SaareEstonia,county,2,EE-74,Saaremaa vald,,,,county,2,EE-74,Saaremaa vald,,,,,region,1,EE-74,Saare maakond,LOW,0.812,EE-74
+Estonia,Muhu,Saare,,,1646,Rural Municipality,,,#N/A,,SaareEstonia,county,2,EE-74,Muhu vald,,,,,,,,,,,,region,1,EE-74,Saare maakond,NONE,0.0,EE-74
+Estonia,Ruhnu,Saare,,,89,Rural Municipality,,,#N/A,,SaareEstonia,county,2,EE-74,Ruhnu vald,,,,,,,,,,,,region,1,EE-74,Saare maakond,NONE,0.0,EE-74
+Estonia,Tartu linn,Tartu,,,98313,Urban Municipality,Tartu,,Tartu,,TartuEstonia,county,2,EE-79,Tartu linn,,,,locality,,EE-79,Tartu linn,,,,,region,1,EE-79,Tartu maakond,HIGH,1.0,EE-79
+Estonia,Tartu,Tartu,,,11728,Rural Municipality,Tartu,,Tartu,,TartuEstonia,county,2,EE-79,Tartu linn,,,,locality,,EE-79,Tartu linn,,,,,region,1,EE-79,Tartu maakond,HIGH,1.0,EE-79
+Estonia,Elva,Tartu,,,14707,Rural Municipality,,,#N/A,,TartuEstonia,county,2,EE-79,Elva vald,,,,locality,,EE-79,Elva linn,,,,,region,1,EE-79,Tartu maakond,HIGH,1.0,EE-79
+Estonia,Kambja,Tartu,,,12858,Rural Municipality,,,#N/A,,TartuEstonia,county,2,EE-79,Kambja vald,,,,,,,,,,,,region,1,EE-79,Tartu maakond,NONE,0.0,EE-79
+Estonia,Kastre,Tartu,,,5402,Rural Municipality,,,#N/A,,TartuEstonia,county,2,EE-79,Kastre vald,,,,,,,,,,,,region,1,EE-79,Tartu maakond,NONE,0.0,EE-79
+Estonia,Luunja,Tartu,,,5378,Rural Municipality,,,#N/A,,TartuEstonia,county,2,EE-79,Luunja vald,,,,locality,,EE-79,Luunja alevik,,,,,region,1,EE-79,Tartu maakond,HIGH,1.0,EE-79
+Estonia,Peipsiääre,Tartu,,,5108,Rural Municipality,,,#N/A,,TartuEstonia,county,2,EE-79,Peipsiääre vald,,,,county,2,EE-79,Peipsiääre vald,,,,,region,1,EE-79,Tartu maakond,LOW,0.85,EE-79
+Estonia,Nõo,Tartu,,,4266,Rural Municipality,,,#N/A,,TartuEstonia,county,2,EE-79,Nõo vald,,,,,,,,,,,,region,1,EE-79,Tartu maakond,NONE,0.0,EE-79
+Estonia,Valga,Valga,,,15541,Rural Municipality,,,#N/A,,ValgaEstonia,county,2,EE-81,Valga vald,,,,locality,,EE-81,Valga linn,,,,,region,1,EE-81,Valga maakond,HIGH,1.0,EE-81
+Estonia,Otepää,Valga,,,6238,Rural Municipality,,,#N/A,,ValgaEstonia,county,2,EE-81,Otepää vald,,,,locality,,EE-81,Otepää küla,,,,,region,1,EE-81,Valga maakond,HIGH,1.0,EE-81
+Estonia,Tõrva,Valga,,,5872,Rural Municipality,,,#N/A,,ValgaEstonia,county,2,EE-81,Tõrva vald,,,,locality,,EE-81,Tõrva linn,,,,,region,1,EE-81,Valga maakond,HIGH,1.0,EE-81
+Estonia,Viljandi linn,Viljandi,,,17245,Urban Municipality,Viljandi,,Viljandi,,ViljandiEstonia,county,2,EE-84,Viljandi linn,,,,locality,,EE-84,Viljandi linn,,,,,region,1,EE-84,Viljandi maakond,HIGH,1.0,EE-84
+Estonia,Viljandi,Viljandi,,,13407,Rural Municipality,Viljandi,,Viljandi,,ViljandiEstonia,county,2,EE-84,Viljandi vald,,,,locality,,EE-84,Viljandi linn,,,,,region,1,EE-84,Viljandi maakond,HIGH,1.0,EE-84
+Estonia,Põhja-Sakala,Viljandi,,,7735,Rural Municipality,,,#N/A,,ViljandiEstonia,county,2,EE-84,Põhja-Sakala vald,,,,county,2,EE-84,Põhja-Sakala vald,,,,,region,1,EE-84,Viljandi maakond,LOW,0.878,EE-84
+Estonia,Mulgi,Viljandi,,,7026,Rural Municipality,,,#N/A,,ViljandiEstonia,county,2,EE-84,Mulgi vald,,,,,,,,,,,,region,1,EE-84,Viljandi maakond,NONE,0.0,EE-84
+Estonia,Võru linn,Võru,,,11865,Urban Municipality,,,#N/A,,VõruEstonia,county,2,EE-87,Võru linn,,,,county,2,EE-87,Võru linn,,,,,region,1,EE-87,Võru maakond,HIGH,1.0,EE-87
+Estonia,Võru,Võru,,,10367,Rural Municipality,,,#N/A,,VõruEstonia,county,2,EE-87,Võru vald,,,,region,1,EE-87,Võru maakond,,,,,region,1,EE-87,Võru maakond,HIGH,1.0,EE-87
+Estonia,Rõuge,Võru,,,4877,Rural Municipality,,,#N/A,,VõruEstonia,county,2,EE-87,Rõuge vald,,,,,,,,,,,,region,1,EE-87,Võru maakond,NONE,0.0,EE-87
+Estonia,Antsla,Võru,,,4222,Rural Municipality,,,#N/A,,VõruEstonia,county,2,EE-87,Antsla vald,,,,locality,,EE-87,Antsla linn,,,,,region,1,EE-87,Võru maakond,HIGH,1.0,EE-87
+Estonia,Setomaa,Võru,,,2849,Rural Municipality,,,#N/A,,VõruEstonia,county,2,EE-87,Setomaa vald,,,,county,2,EE-87,Setomaa vald,,,,,region,1,EE-87,Võru maakond,LOW,0.787,EE-87

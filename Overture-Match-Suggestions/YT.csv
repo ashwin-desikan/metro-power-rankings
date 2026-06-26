@@ -1,0 +1,18 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Mayotte,Mamoudzou,Grande-Terre,,,71437,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Mamoudzou,,,,region,2,nan,Mamoudzou,,,,,,,,,HIGH,1.0,nan
+Mayotte,Koungou,Grande-Terre,,,32156,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Koungou,,,,region,2,nan,Koungou,,,,,,,,,HIGH,1.0,nan
+Mayotte,Dembéni,Grande-Terre,,,15848,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Dembéni,,,,region,2,nan,Dembéni,,,,,,,,,HIGH,1.0,nan
+Mayotte,Bandraboua,Grande-Terre,,,13989,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Bandraboua,,,,region,2,nan,Bandraboua,,,,,,,,,HIGH,1.0,nan
+Mayotte,Tsingoni,Grande-Terre,,,13934,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Tsingoni,,,,region,2,nan,Tsingoni,,,,,,,,,HIGH,1.0,nan
+Mayotte,Sada,Grande-Terre,,,11156,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Sada,,,,region,2,nan,Sada,,,,,,,,,HIGH,1.0,nan
+Mayotte,Bandrélé,Grande-Terre,,,10282,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Bandrélé,,,,region,2,nan,Bandrélé,,,,,,,,,HIGH,1.0,nan
+Mayotte,Ouangani,Grande-Terre,,,10203,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Ouangani,,,,region,2,nan,Ouangani,,,,,,,,,HIGH,1.0,nan
+Mayotte,Chirongui,Grande-Terre,,,8920,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Chirongui,,,,region,2,nan,Chirongui,,,,,,,,,HIGH,1.0,nan
+Mayotte,Chiconi,Grande-Terre,,,8295,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Chiconi,,,,region,2,nan,Chiconi,,,,,,,,,HIGH,1.0,nan
+Mayotte,Mtsamboro,Grande-Terre,,,7705,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Mtsamboro,,,,region,2,nan,Mtsamboro,,,,,,,,,HIGH,1.0,nan
+Mayotte,M'Tsangamouji,Grande-Terre,,,6432,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,M'Tsangamouji,,,,region,2,nan,M'Tsangamouji,,,,,,,,,HIGH,1.0,nan
+Mayotte,Bouéni,Grande-Terre,,,6189,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Bouéni,,,,region,2,nan,Bouéni,,,,,,,,,HIGH,1.0,nan
+Mayotte,Kani-Kéli,Grande-Terre,,,5507,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Kani-Kéli,,,,region,2,nan,Kani-Kéli,,,,,,,,,HIGH,1.0,nan
+Mayotte,Acoua,Grande-Terre,,,5192,Commune,Mamoudzou,,Mamoudzou,,Grande-TerreMayotte,region,2,,Acoua,,,,region,2,nan,Acoua,,,,,,,,,HIGH,1.0,nan
+Mayotte,Dzaoudzi,Petite-Terre,,,17831,Commune,,,#N/A,,Petite-TerreMayotte,region,2,,Dzaoudzi,,,,region,2,nan,Dzaoudzi,,,,,,,,,HIGH,1.0,nan
+Mayotte,Pamandzi,Petite-Terre,,,11442,Commune,,,#N/A,,Petite-TerreMayotte,region,2,,Pamandzi,,,,region,2,nan,Pamandzi,,,,,,,,,HIGH,1.0,nan

@@ -1,0 +1,5 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Eswatini,Hhohho,Hhohho,,,346300,Region,Mbabane,,Mbabane,,HhohhoEswatini,region,1,SZ-HH,Hhohho,,,,region,1,SZ-HH,Hhohho,,,,,region,1,SZ-HH,Hhohho,HIGH,1.0,SZ-HH
+Eswatini,Lubombo,Lubombo,,,230700,Region,,,#N/A,,LubomboEswatini,region,1,SZ-LU,Lubombo,,,,region,1,SZ-LU,Lubombo,,,,,region,1,SZ-LU,Lubombo,HIGH,1.0,SZ-LU
+Eswatini,Manzini,Manzini,,,386300,Region,,,#N/A,,ManziniEswatini,region,1,SZ-MA,Manzini,,,,region,1,SZ-MA,Manzini,,,,,region,1,SZ-MA,Manzini,HIGH,1.0,SZ-MA
+Eswatini,Shiselweni,Shiselweni,,,210700,Region,,,#N/A,,ShiselweniEswatini,region,1,SZ-SH,Shiselweni,,,,region,1,SZ-SH,Shiselweni,,,,,region,1,SZ-SH,Shiselweni,HIGH,1.0,SZ-SH

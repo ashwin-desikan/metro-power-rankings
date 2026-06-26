@@ -1,0 +1,11 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Suriname,Brokopondo,Brokopondo,,,15909,District,,,#N/A,,BrokopondoSuriname,region,1,SR-BR,Brokopondo,,,,region,1,SR-BR,Brokopondo,,,,,region,1,SR-BR,Brokopondo,HIGH,1.0,SR-BR
+Suriname,Commewijne,Commewijne,,,31420,District,,,#N/A,,CommewijneSuriname,region,1,SR-CM,Commewijne,,,,region,1,SR-CM,Commewijne,,,,,region,1,SR-CM,Commewijne,HIGH,1.0,SR-CM
+Suriname,Coronie,Coronie,,,3391,District,,,#N/A,,CoronieSuriname,region,1,SR-CR,Coronie,,,,region,1,SR-CR,Coronie,,,,,region,1,SR-CR,Coronie,HIGH,1.0,SR-CR
+Suriname,Marowijne,Marowijne,,,18294,District,,,#N/A,,MarowijneSuriname,region,1,SR-MA,Marowijne,,,,region,1,SR-MA,Marowijne,,,,,region,1,SR-MA,Marowijne,HIGH,1.0,SR-MA
+Suriname,Nickerie,Nickerie,,,34233,District,,,#N/A,,NickerieSuriname,region,1,SR-NI,Nickerie,,,,region,1,SR-NI,Nickerie,,,,,region,1,SR-NI,Nickerie,HIGH,1.0,SR-NI
+Suriname,Para,Para,,,24700,District,,,#N/A,,ParaSuriname,region,1,SR-PR,Para,,,,region,1,SR-PR,Para,,,,,region,1,SR-PR,Para,HIGH,1.0,SR-PR
+Suriname,Paramaribo,Paramaribo,,,240924,District,Paramaribo,,Paramaribo,,ParamariboSuriname,region,1,SR-PM,Paramaribo,,,,region,1,SR-PM,Paramaribo,,,,,region,1,SR-PM,Paramaribo,HIGH,1.0,SR-PM
+Suriname,Saramacca,Saramacca,,,17480,District,,,#N/A,,SaramaccaSuriname,region,1,SR-SA,Saramacca,,,,region,1,SR-SA,Saramacca,,,,,region,1,SR-SA,Saramacca,HIGH,1.0,SR-SA
+Suriname,Sipaliwini,Sipaliwini,,,37065,District,,,#N/A,,SipaliwiniSuriname,region,1,SR-SI,Sipaliwini,,,,region,1,SR-SI,Sipaliwini,,,,,region,1,SR-SI,Sipaliwini,HIGH,1.0,SR-SI
+Suriname,Wanica,Wanica,,,118222,District,,,#N/A,,WanicaSuriname,region,1,SR-WA,Wanica,,,,region,1,SR-WA,Wanica,,,,,region,1,SR-WA,Wanica,HIGH,1.0,SR-WA

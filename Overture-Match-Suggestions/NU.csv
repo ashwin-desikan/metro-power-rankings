@@ -1,0 +1,14 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Niue,Alofi,Alofi,,,606,Village,Alofi,,Alofi,,AlofiNiue,locality,,,Alofi,,,,locality,,nan,Alofi,,,,,,,,,HIGH,1.0,nan
+Niue,Avatele,Avatele,,,135,Village,,,#N/A,,AvateleNiue,locality,,,Avatele,,,,locality,,nan,Avatele,,,,,,,,,HIGH,1.0,nan
+Niue,Hakupu,Hakupu,,,197,Village,,,#N/A,,HakupuNiue,locality,,,Hakupu,,,,locality,,nan,Hakupu,,,,,,,,,HIGH,1.0,nan
+Niue,Hikutavake,Hikutavake,,,38,Village,,,#N/A,,HikutavakeNiue,locality,,,Hikutavake,,,,locality,,nan,Hikutavake,,,,,,,,,HIGH,1.0,nan
+Niue,Lakepa,Lakepa,,,110,Village,,,#N/A,,LakepaNiue,locality,,,Lakepa,,,,locality,,nan,Lakepa,,,,,,,,,HIGH,1.0,nan
+Niue,Liku,Liku,,,74,Village,,,#N/A,,LikuNiue,locality,,,Liku,,,,locality,,nan,Liku,,,,,,,,,HIGH,1.0,nan
+Niue,Makefu,Makefu,,,83,Village,,,#N/A,,MakefuNiue,locality,,,Makefu,,,,locality,,nan,Makefu,,,,,,,,,HIGH,1.0,nan
+Niue,Mutalau,Mutalau,,,94,Village,,,#N/A,,MutalauNiue,locality,,,Mutalau,,,,locality,,nan,Mutalau,,,,,,,,,HIGH,1.0,nan
+Niue,Namukulu,Namukulu,,,8,Village,,,#N/A,,NamukuluNiue,locality,,,Namukulu,,,,locality,,nan,Namukulu,,,,,,,,,HIGH,1.0,nan
+Niue,Tamakautoga,Tamakautoga,,,134,Village,,,#N/A,,TamakautogaNiue,locality,,,Tamakautoga,,,,locality,,nan,Tamakautoga,,,,,,,,,HIGH,1.0,nan
+Niue,Toi,Toi,,,33,Village,,,#N/A,,ToiNiue,locality,,,Toi,,,,locality,,nan,Toi,,,,,,,,,HIGH,1.0,nan
+Niue,Tuapa,Tuapa,,,91,Village,,,#N/A,,TuapaNiue,locality,,,Tuapa,,,,locality,,nan,Tuapa,,,,,,,,,HIGH,1.0,nan
+Niue,Vaiea,Vaiea,,,86,Village,,,#N/A,,VaieaNiue,locality,,,Vaiea,,,,locality,,nan,Vaiea,,,,,,,,,HIGH,1.0,nan

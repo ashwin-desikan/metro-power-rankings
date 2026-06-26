@@ -86,6 +86,16 @@ ALIASES = {
     "B-Love Kandy": "Kandy Falcons",
 }
 
+# T20 finals are stored under the era competition brand (Vitality Blast names
+# Warwickshire as "Birmingham Bears", etc.) so the rolls/hub stay era-correct.
+# Metro cards look honours up by Team List franchise name, so the honours layer
+# must be re-keyed brand -> Team List name. Keep rolls on the brand.
+BRAND_TO_TEAMLIST = {
+    "Birmingham Bears": "Warwickshire Bears",
+    "Essex Eagles": "Essex",
+    "Northants Steelbacks": "Northamptonshire Steelbacks",
+}
+
 
 def main():
     d = json.load(io.open(MATCHES, encoding="utf-8"))
@@ -127,8 +137,9 @@ def main():
         out = sorted(by_season.values(), key=lambda x: x["date"], reverse=True)
         for r in out:
             r.pop("date", None)
-            if r["winner"] in tl_names.get(tl_league, set()):
-                honours[(r["winner"], tl_league)][key].append(r["season"])
+            tl_name = BRAND_TO_TEAMLIST.get(r["winner"], r["winner"])
+            if tl_name in tl_names.get(tl_league, set()):
+                honours[(tl_name, tl_league)][key].append(r["season"])
             else:
                 unmatched[r["winner"]].append(f"{LABELS[key]} {r['season']}")
         rolls[key] = out

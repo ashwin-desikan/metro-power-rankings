@@ -1,0 +1,221 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Kazakhstan,Semey,Abai,,,327516,City with Environs,Semey,,Semey,,AbaiKazakhstan,county,2,KZ-10,Семей,,,,county,2,KZ-10,Семей,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Urzhar,Abai,,,69980,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-10,Үржар ауданы,,,,county,2,KZ-10,Үржар ауданы,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Ayagoz,Abai,,,66453,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-10,Аягөз ауданы,,,,county,2,KZ-10,Аягөз ауданы,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Zharma,Abai,,,36732,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-10,Жарма ауданы,,,,county,2,KZ-10,Жарма ауданы,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Borodulikha,Abai,,,33395,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-10,Бородулиха ауданы,,,,county,2,KZ-10,Бородулиха ауданы,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Aksuat,Abai,,,19827,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-33,Ақсу ауданы,,,,locality,,KZ-10,Ақсуат,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Beskaragay,Abai,,,17970,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-10,Бесқарағай ауданы,,,,county,2,KZ-10,Бесқарағай ауданы,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Abay,Abai,,,14129,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-35,Абай ауданы,,,,region,1,KZ-10,Абай облысы,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Kókpekti aýdany,Abai,,,13714,District,,,#N/A,,AbaiKazakhstan,county,2,KZ-10,Көкпекті ауданы,,,,,,,,,,,,,,,,NONE,0.0,
+Kazakhstan,Kurchatov,Abai,,,10467,City,,,#N/A,,AbaiKazakhstan,county,2,KZ-10,Курчатов қалалық әкімшілігі,,,,county,2,KZ-10,Курчатов қалалық әкімшілігі,,,,,region,1,KZ-10,Абай облысы,HIGH,1.0,KZ-10
+Kazakhstan,Tselinograd,Akmola,,,80617,District,Astana,,Astana,,AkmolaKazakhstan,county,2,KZ-11,Целиноград ауданы,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Qosshy,Akmola,,,50651,City with Environs,Astana,,Astana,,AkmolaKazakhstan,,,,,x,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Kokshetau,Akmola,,,190523,City with Environs,Kokshetau,,Kokshetau,,AkmolaKazakhstan,county,2,KZ-11,Көкшетау Қ.Ә.,,,,locality,,KZ-11,Көкшетау,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Burabay,Akmola,,,71442,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Бурабай ауданы,,,,county,2,KZ-11,Бурабай ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Stepnogorsk,Akmola,,,68568,City with Environs,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Степногорск қаласының әкімшілігі,,,,locality,,KZ-11,Степногорск,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Atbasar aýdany,Akmola,,,43604,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Атбасар ауданы,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Zerendi aýdany,Akmola,,,35042,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Зеренді ауданы,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Bulandy aýdany,Akmola,,,29376,District,,,#N/A,,AkmolaKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Shortandy aýdany,Akmola,,,27584,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Шортанды ауданы,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Ereymentau,Akmola,,,26287,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Ерейментау ауданы,,,,county,2,KZ-11,Ерейментау ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Arshaly aýdany,Akmola,,,24764,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Аршалы ауданы,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Akkol,Akmola,,,24411,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Ақкөл ауданы,,,,county,2,KZ-11,Ақкөл ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Esil aýdany,Akmola,,,20977,District,,,#N/A,,AkmolaKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Astrakhan,Akmola,,,19991,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Астрахан ауданы,,,,county,2,KZ-11,Астрахан ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Sandyktau,Akmola,,,17053,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Сандықтау ауданы,,,,county,2,KZ-11,Сандықтау ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Zhaksy,Akmola,,,16216,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Жақсы ауданы,,,,county,2,KZ-11,Жақсы ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,"Birzhan sal, Eńbekshilder",Akmola,,,13323,District,,,#N/A,,AkmolaKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Zharkain,Akmola,,,12904,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Жарқайың ауданы,,,,county,2,KZ-11,Жарқайың ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Korgalzhyn,Akmola,,,7328,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Қорғалжын ауданы,,,,county,2,KZ-11,Қорғалжын ауданы,,,,,region,1,KZ-11,Ақмола облысы,HIGH,1.0,KZ-11
+Kazakhstan,Egindikól aýdany,Akmola,,,5351,District,,,#N/A,,AkmolaKazakhstan,county,2,KZ-11,Егіндікөл ауданы,,,,,,,,,,,,region,1,KZ-11,Ақмола облысы,NONE,0.0,KZ-11
+Kazakhstan,Aktobe,Aktobe,,,556976,City with Environs,Aktobe,,Aktobe,,AktobeKazakhstan,county,2,KZ-15,Ақтөбе Қ.Ә.,,,,region,1,KZ-15,Ақтөбе облысы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Mugalzhar,Aktobe,,,65399,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Мұғалжар ауданы,,,,county,2,KZ-15,Мұғалжар ауданы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Khromtau,Aktobe,,,46276,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Хромтау ауданы,,,,county,2,KZ-15,Хромтау ауданы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Alǵa aýdany,Aktobe,,,43251,District,,,#N/A,,AktobeKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-15,Ақтөбе облысы,NONE,0.0,KZ-15
+Kazakhstan,Shalkar,Aktobe,,,42556,District,,,#N/A,,AktobeKazakhstan,,,,,,,,locality,,KZ-15,Шалқар,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Temir aýdany,Aktobe,,,35811,District,,,#N/A,,AktobeKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-15,Ақтөбе облысы,NONE,0.0,KZ-15
+Kazakhstan,Martuk,Aktobe,,,29512,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Мартөк ауданы,,,,locality,,KZ-15,Мартук,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Bayganin,Aktobe,,,22862,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Байғанин ауданы,,,,county,2,KZ-15,Байғанин ауданы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Ayteke Bi,Aktobe,,,20773,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Әйтеке би ауданы,,,,county,2,KZ-15,Әйтеке би ауданы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Oiyl,Aktobe,,,16077,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Ойыл ауданы,,,,county,2,KZ-15,Ойыл ауданы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Kobda,Aktobe,,,16001,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Қобда ауданы,,,,county,2,KZ-15,Қобда ауданы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Kargaly,Aktobe,,,15353,District,,,#N/A,,AktobeKazakhstan,county,2,KZ-15,Қарғалы ауданы,,,,county,2,KZ-15,Қарғалы ауданы,,,,,region,1,KZ-15,Ақтөбе облысы,HIGH,1.0,KZ-15
+Kazakhstan,Yrǵyz aýdany,Aktobe,,,13998,District,,,#N/A,,AktobeKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-15,Ақтөбе облысы,NONE,0.0,KZ-15
+Kazakhstan,Karasay,Almaty,,,323151,District,Almaty,,Almaty,,AlmatyKazakhstan,county,2,KZ-39,Қарасу ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Talǵar aýdany,Almaty,,,237869,District,Almaty,,Almaty,,AlmatyKazakhstan,county,2,KZ-71,Алматы ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Enbekshikazakh,Almaty,,,283684,District,,,#N/A,,AlmatyKazakhstan,county,2,KZ-19,Еңбекшіқазақ ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Ile aýdany,Almaty,,,264515,District,,,#N/A,,AlmatyKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Zhambyl,Almaty,,,167380,District,,,#N/A,,AlmatyKazakhstan,county,2,KZ-59,Жамбыл ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Qonayev,Almaty,,,70217,City with Environs,,,#N/A,,AlmatyKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Uygur,Almaty,,,63498,District,,,#N/A,,AlmatyKazakhstan,county,2,KZ-19,Ұйғыр ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Raiymbek,Almaty,,,29377,District,,,#N/A,,AlmatyKazakhstan,county,2,KZ-19,Райымбек ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Balkhash,Almaty,,,28901,District,,,#N/A,,AlmatyKazakhstan,county,2,KZ-19,Балқаш ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Kegen aýdany,Almaty,,,28433,District,,,#N/A,,AlmatyKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Auezov,Almaty Qalasy,,,354034,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-75,Әуезов ауданы,,,,county,2,KZ-75,Әуезов ауданы,,,,,region,1,KZ-75,Алматы,HIGH,1.0,KZ-75
+Kazakhstan,Alatau,Almaty Qalasy,,,351021,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-75,Алатау ауданы,,,,county,2,KZ-75,Алатау ауданы,,,,,region,1,KZ-75,Алматы,HIGH,1.0,KZ-75
+Kazakhstan,Bostandyk,Almaty Qalasy,,,316776,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-75,Бостандық ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Almaly aýdany,Almaty Qalasy,,,261594,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-71,Алматы ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Turksib,Almaty Qalasy,,,250745,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-75,Түрксіб Ауданы,,,,county,2,KZ-75,Түрксіб Ауданы,,,,,region,1,KZ-75,Алматы,HIGH,1.0,KZ-75
+Kazakhstan,Medau,Almaty Qalasy,,,240026,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-71,Алматы ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Jetysu,Almaty Qalasy,,,195388,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-71,Алматы ауданы,,,,,,,,,,,,region,1,KZ-75,Алматы,NONE,0.0,KZ-75
+Kazakhstan,Nauryzbay,Almaty Qalasy,,,177529,City District,Almaty,,Almaty,,Almaty QalasyKazakhstan,county,2,KZ-75,Наурызбай ауданы,,,,county,2,KZ-75,Наурызбай ауданы,,,,,region,1,KZ-75,Алматы,HIGH,1.0,KZ-75
+Kazakhstan,Atyrau,Atyraý,,,398943,City with Environs,Atyrau,,Atyrau,,AtyraýKazakhstan,county,2,KZ-23,Атырау қалалық әкімдігі,,,,region,1,KZ-23,Атырау облысы,,,,,region,1,KZ-23,Атырау облысы,HIGH,1.0,KZ-23
+Kazakhstan,Zhylyoi,Atyraý,,,86030,District,,,#N/A,,AtyraýKazakhstan,county,2,KZ-23,Жылыой ауданы,,,,county,2,KZ-23,Жылыой ауданы,,,,,region,1,KZ-23,Атырау облысы,HIGH,1.0,KZ-23
+Kazakhstan,Kurmangazy,Atyraý,,,56073,District,,,#N/A,,AtyraýKazakhstan,county,2,KZ-23,Құрманғазы ауданы,,,,county,2,KZ-23,Құрманғазы ауданы,,,,,region,1,KZ-23,Атырау облысы,HIGH,1.0,KZ-23
+Kazakhstan,Inder aýdany,Atyraý,,,32735,District,,,#N/A,,AtyraýKazakhstan,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Kazakhstan,Kyzylkoga,Atyraý,,,30685,District,,,#N/A,,AtyraýKazakhstan,county,2,KZ-23,Қызылқоға ауданы,,,,county,2,KZ-23,Қызылқоға ауданы,,,,,region,1,KZ-23,Атырау облысы,HIGH,1.0,KZ-23
+Kazakhstan,Makat,Atyraý,,,29580,District,,,#N/A,,AtyraýKazakhstan,county,2,KZ-23,Мақат ауданы,,,,county,2,KZ-23,Мақат ауданы,,,,,region,1,KZ-23,Атырау облысы,HIGH,1.0,KZ-23
+Kazakhstan,Makhambet,Atyraý,,,29086,District,,,#N/A,,AtyraýKazakhstan,county,2,KZ-23,Махамбет ауданы,,,,county,2,KZ-23,Махамбет ауданы,,,,,region,1,KZ-23,Атырау облысы,HIGH,1.0,KZ-23
+Kazakhstan,Isatay,Atyraý,,,26542,District,,,#N/A,,AtyraýKazakhstan,county,2,KZ-23,Исатай ауданы,,,,county,2,KZ-23,Исатай ауданы,,,,,region,1,KZ-23,Атырау облысы,HIGH,1.0,KZ-23
+Kazakhstan,Oskemen,East Kazakhstan,,,372064,City with Environs,Oskemen,,Oskemen,,East KazakhstanKazakhstan,county,2,KZ-63,Өскемен Қ.Ә.,,,,locality,,KZ-63,Өскемен,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,HIGH,1.0,KZ-63
+Kazakhstan,Zyryan,East Kazakhstan,,,61552,District,,,#N/A,,East KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,NONE,0.0,KZ-63
+Kazakhstan,Glubokoye,East Kazakhstan,,,57106,District,,,#N/A,,East KazakhstanKazakhstan,county,2,KZ-63,Глубокое ауданы,,,,locality,,KZ-63,Глубокое,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,HIGH,1.0,KZ-63
+Kazakhstan,Ridder,East Kazakhstan,,,52186,City with Environs,,,#N/A,,East KazakhstanKazakhstan,county,2,KZ-63,Риддер қалалық әкімдігі,,,,locality,,KZ-63,Риддер,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,HIGH,1.0,KZ-63
+Kazakhstan,Shemonaikha,East Kazakhstan,,,42215,District,,,#N/A,,East KazakhstanKazakhstan,county,2,KZ-63,Шемонаиха ауданы,,,,county,2,KZ-63,Шемонаиха ауданы,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,HIGH,1.0,KZ-63
+Kazakhstan,Zaysan,East Kazakhstan,,,36154,District,,,#N/A,,East KazakhstanKazakhstan,county,2,KZ-63,Зайсан ауданы,,,,locality,,KZ-63,Зайсан,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,HIGH,1.0,KZ-63
+Kazakhstan,Ulan aýdany,East Kazakhstan,,,34031,District,,,#N/A,,East KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,NONE,0.0,KZ-63
+Kazakhstan,Kúrshim aýdany,East Kazakhstan,,,22526,District,,,#N/A,,East KazakhstanKazakhstan,county,2,KZ-63,Күршім ауданы,,,,,,,,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,NONE,0.0,KZ-63
+Kazakhstan,Katonkaragay,East Kazakhstan,,,21473,District,,,#N/A,,East KazakhstanKazakhstan,county,2,KZ-63,Катонқарағай ауданы,,,,county,2,KZ-63,Катонқарағай ауданы,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,HIGH,1.0,KZ-63
+Kazakhstan,Tarbagatay,East Kazakhstan,,,19489,District,,,#N/A,,East KazakhstanKazakhstan,county,2,KZ-63,Тарбағатай ауданы,,,,county,2,KZ-63,Тарбағатай ауданы,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,HIGH,1.0,KZ-63
+Kazakhstan,Samar aýdany,East Kazakhstan,,,12022,District,,,#N/A,,East KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-63,Шығыс Қазақстан облысы,NONE,0.0,KZ-63
+Kazakhstan,Taraz,Jambyl,,,425959,City,Taraz,,Taraz,,JambylKazakhstan,county,2,KZ-31,Тараз қаласының әкімшілігі,,,,locality,,KZ-31,Тараз,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Korday,Jambyl,,,158233,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Қордай ауданы,,,,county,2,KZ-31,Қордай ауданы,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Shu,Jambyl,,,106213,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Шу ауданы,,,,county,2,KZ-31,Шу ауданы,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Bayzak,Jambyl,,,105368,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Байзақ ауданы,,,,,,,,,,,,region,1,KZ-31,Жамбыл облысы,NONE,0.0,KZ-31
+Kazakhstan,Merki,Jambyl,,,88477,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Меркі ауданы,,,,county,2,KZ-31,Меркі ауданы,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Jambyl aýdany,Jambyl,,,87523,District,,,#N/A,,JambylKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-31,Жамбыл облысы,NONE,0.0,KZ-31
+Kazakhstan,Turar Ryskulov,Jambyl,,,67472,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Тұрар Рысқұлов ауданы,,,,county,2,KZ-31,Тұрар Рысқұлов ауданы,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Zhualy,Jambyl,,,54542,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Жуалы ауданы,,,,county,2,KZ-31,Жуалы ауданы,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Talas aýdany,Jambyl,,,48926,District,,,#N/A,,JambylKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-31,Жамбыл облысы,NONE,0.0,KZ-31
+Kazakhstan,Sarysu,Jambyl,,,44151,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Сарысу ауданы,,,,county,2,KZ-31,Сарысу ауданы,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Moiynkum,Jambyl,,,28618,District,,,#N/A,,JambylKazakhstan,county,2,KZ-31,Мойынқұм ауданы,,,,county,2,KZ-31,Мойынқұм ауданы,,,,,region,1,KZ-31,Жамбыл облысы,HIGH,1.0,KZ-31
+Kazakhstan,Taldykorgan,Jetisu,,,201089,City with Environs,Taldykorgan,,Taldykorgan,,JetisuKazakhstan,county,2,KZ-33,Талдықорған қаласының әкімшілігі,,,,county,2,KZ-33,Талдықорған қаласының әкімшілігі,,,,,region,1,KZ-33,Жетісу облысы,HIGH,1.0,KZ-33
+Kazakhstan,Panfilov,Jetisu,,,133915,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Панфилов ауданы,,,,county,2,KZ-33,Панфилов ауданы,,,,,region,1,KZ-33,Жетісу облысы,HIGH,1.0,KZ-33
+Kazakhstan,Alakól aýdany,Jetisu,,,75322,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Алакөл ауданы,,,,,,,,,,,,region,1,KZ-33,Жетісу облысы,NONE,0.0,KZ-33
+Kazakhstan,Eskeldi aýdany,Jetisu,,,52382,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Ескелді ауданы,,,,,,,,,,,,region,1,KZ-33,Жетісу облысы,NONE,0.0,KZ-33
+Kazakhstan,Kerbulak,Jetisu,,,44845,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Кербұлақ ауданы,,,,,,,,,,,,region,1,KZ-33,Жетісу облысы,NONE,0.0,KZ-33
+Kazakhstan,Koksu,Jetisu,,,42183,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Көксу ауданы,,,,locality,,KZ-33,Көксу,,,,,region,1,KZ-33,Жетісу облысы,HIGH,1.0,KZ-33
+Kazakhstan,Karatal,Jetisu,,,40449,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Қаратал ауданы,,,,county,2,KZ-33,Қаратал ауданы,,,,,region,1,KZ-33,Жетісу облысы,HIGH,1.0,KZ-33
+Kazakhstan,Sarkand,Jetisu,,,39969,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Сарқан ауданы,,,,county,2,KZ-33,Сарқан ауданы,,,,,region,1,KZ-33,Жетісу облысы,HIGH,1.0,KZ-33
+Kazakhstan,Aksu,Jetisu,,,37397,District,,,#N/A,,JetisuKazakhstan,county,2,KZ-33,Ақсу ауданы,,,,county,2,KZ-33,Ақсу ауданы,,,,,region,1,KZ-33,Жетісу облысы,HIGH,1.0,KZ-33
+Kazakhstan,Tekeli,Jetisu,,,31401,City with Environs,,,#N/A,,JetisuKazakhstan,,,,,,,,locality,,KZ-33,Текелі,,,,,region,1,KZ-33,Жетісу облысы,HIGH,1.0,KZ-33
+Kazakhstan,Karaganda,Karagandy,,,514510,City with Environs,Karagandy,,Karagandy,,KaragandyKazakhstan,county,2,KZ-35,Қарағанды ​​қаласының әкімшілігі,,,,region,1,KZ-35,Қарағанды облысы,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Temirtau,Karagandy,,,177632,City with Environs,Karagandy,,Karagandy,,KaragandyKazakhstan,county,2,KZ-15,Темір ауданы,,,,locality,,KZ-35,Теміртау,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Shakhtinsk,Karagandy,,,58433,City with Environs,Karagandy,,Karagandy,,KaragandyKazakhstan,county,2,KZ-35,Шахтинск қаласының әкімшілігі,,,,,,,,,,,,region,1,KZ-35,Қарағанды облысы,NONE,0.0,KZ-35
+Kazakhstan,Bukhar-Zhyrau,Karagandy,,,53650,District,Karagandy,,Karagandy,,KaragandyKazakhstan,county,2,KZ-35,Бұқар жырау ауданы,,,,county,2,KZ-35,Бұқар жырау ауданы,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Saran,Karagandy,,,43795,City with Environs,Karagandy,,Karagandy,,KaragandyKazakhstan,county,2,KZ-35,Саран қаласының әкімшілігі,,,,locality,,KZ-35,Саран,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Balkhash,Karagandy,,,77930,City with Environs,,,#N/A,,KaragandyKazakhstan,county,2,KZ-35,Балқаш Қ.Ә.,,,,locality,,KZ-35,Балқаш,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Abay,Karagandy,,,59102,District,,,#N/A,,KaragandyKazakhstan,county,2,KZ-35,Абай ауданы,,,,locality,,KZ-35,Абай қаласы әкімшілігі,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Shet aýdany,Karagandy,,,38077,District,,,#N/A,,KaragandyKazakhstan,county,2,KZ-35,Шет ауданы,,,,,,,,,,,,region,1,KZ-35,Қарағанды облысы,NONE,0.0,KZ-35
+Kazakhstan,Karkaraly,Karagandy,,,30984,District,,,#N/A,,KaragandyKazakhstan,county,2,KZ-35,Қарқаралы ауданы,,,,county,2,KZ-35,Қарқаралы ауданы,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Osakarov aýdany,Karagandy,,,30339,District,,,#N/A,,KaragandyKazakhstan,county,2,KZ-35,Осакаров ауданы,,,,,,,,,,,,region,1,KZ-35,Қарағанды облысы,NONE,0.0,KZ-35
+Kazakhstan,Nura aýdany,Karagandy,,,22444,District,,,#N/A,,KaragandyKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-35,Қарағанды облысы,NONE,0.0,KZ-35
+Kazakhstan,Aktogay,Karagandy,,,16071,District,,,#N/A,,KaragandyKazakhstan,county,2,KZ-55,Ақтоғай ауданы,,,,county,2,KZ-35,Ақтоғай ауданы,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Priozersk,Karagandy,,,11179,City,,,#N/A,,KaragandyKazakhstan,county,2,KZ-35,Приозерск Қ.Ә.,,,,county,2,KZ-35,Приозерск Қ.Ә.,,,,,region,1,KZ-35,Қарағанды облысы,HIGH,1.0,KZ-35
+Kazakhstan,Kostanay,Kostanay,,,263432,City,Kostanay,,Kostanay,,KostanayKazakhstan,county,2,KZ-39,Қостанай Қ.Ә.,,,,county,2,KZ-39,Қостанай Қ.Ә.,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Rudny,Kostanay,,,123809,City with Environs,Kostanay,,Kostanay,,KostanayKazakhstan,county,2,KZ-39,Рудный Қ.Ә.,,,,locality,,KZ-39,Рудный,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Kostanay,Kostanay,,,73160,District,Kostanay,,Kostanay,,KostanayKazakhstan,county,2,KZ-39,Қостанай Қ.Ә.,,,,county,2,KZ-39,Қостанай Қ.Ә.,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Zhetikara,Kostanay,,,42728,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Жітіқара ауданы,,,,county,2,KZ-39,Жітіқара ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Arkalyk,Kostanay,,,38563,City with Environs,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Арқалық Қ.Ә.,,,,county,2,KZ-39,Арқалық Қ.Ә.,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Auliekol,Kostanay,,,34972,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Әулиекөл ауданы,,,,county,2,KZ-39,Әулиекөл ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Lisakovsk,Kostanay,,,34775,City with Environs,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Лисаковск Қ.Ә.,,,,county,2,KZ-39,Лисаковск Қ.Ә.,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Karabalyk,Kostanay,,,24593,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Қарабалық ауданы,,,,locality,,KZ-39,Қарабалық,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Fyodorov,Kostanay,,,24082,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Федоров ауданы,,,,county,2,KZ-39,Федоров ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,"Taran, Beimbet Mailin",Kostanay,,,22983,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Бейімбет Майлин ауданы,,,,,,,,,,,,region,1,KZ-39,Қостанай облысы,NONE,0.0,KZ-39
+Kazakhstan,Mendykara,Kostanay,,,22217,District,,,#N/A,,KostanayKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-39,Қостанай облысы,NONE,0.0,KZ-39
+Kazakhstan,Karasu,Kostanay,,,20690,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Қарасу ауданы,,,,county,2,KZ-39,Қарасу ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Sarykól aýdany,Kostanay,,,17546,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Сарыкөл ауданы,,,,,,,,,,,,region,1,KZ-39,Қостанай облысы,NONE,0.0,KZ-39
+Kazakhstan,Denisov,Kostanay,,,16565,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Денисов ауданы,,,,county,2,KZ-39,Денисов ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Uzunkol,Kostanay,,,15347,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Ұзынкөл ауданы,,,,county,2,KZ-39,Ұзынкөл ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Amangeldi aýdany,Kostanay,,,13506,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Амангелді ауданы,,,,,,,,,,,,region,1,KZ-39,Қостанай облысы,NONE,0.0,KZ-39
+Kazakhstan,Altynsarin,Kostanay,,,12471,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Алтынсарин ауданы,,,,county,2,KZ-39,Алтынсарин ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Kamysty,Kostanay,,,10933,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Қамысты ауданы,,,,locality,,KZ-39,Камысты,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Zhangeldi,Kostanay,,,10820,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Жангелдин ауданы,,,,,,,,,,,,region,1,KZ-39,Қостанай облысы,NONE,0.0,KZ-39
+Kazakhstan,Nauyrzym,Kostanay,,,9253,District,,,#N/A,,KostanayKazakhstan,county,2,KZ-39,Науырзым ауданы,,,,county,2,KZ-39,Науырзым ауданы,,,,,region,1,KZ-39,Қостанай облысы,HIGH,1.0,KZ-39
+Kazakhstan,Baikonur,Kyzylorda,,,34544,City,Baikonur,,Baikonur,,KyzylordaKazakhstan,county,2,KZ-71,Байқоңыр ауданы,,,,locality,,KZ-43,Байқоңыр Қ.Ә.,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Kyzylorda,Kyzylorda,,,348370,City with Environs,Kyzylorda,,Kyzylorda,,KyzylordaKazakhstan,county,2,KZ-43,Қызылорда қаласының әкімдігі,,,,region,1,KZ-43,Қызылорда облысы,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Shieli,Kyzylorda,,,85016,District,,,#N/A,,KyzylordaKazakhstan,county,2,KZ-43,Шиелі ауданы,,,,county,2,KZ-43,Шиелі ауданы,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Zhanakorgan,Kyzylorda,,,80237,District,,,#N/A,,KyzylordaKazakhstan,county,2,KZ-43,Жаңақорған ауданы,,,,county,2,KZ-43,Жаңақорған ауданы,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Aral aýdany,Kyzylorda,,,78434,District,,,#N/A,,KyzylordaKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-43,Қызылорда облысы,NONE,0.0,KZ-43
+Kazakhstan,Kazaly,Kyzylorda,,,78362,District,,,#N/A,,KyzylordaKazakhstan,county,2,KZ-43,Қазалы ауданы,,,,county,2,KZ-43,Қазалы ауданы,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Karmakshy,Kyzylorda,,,52171,District,,,#N/A,,KyzylordaKazakhstan,county,2,KZ-43,Қармақшы ауданы,,,,county,2,KZ-43,Қармақшы ауданы,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Syrdariya,Kyzylorda,,,37850,District,,,#N/A,,KyzylordaKazakhstan,county,2,KZ-43,Сырдария ауданы,,,,county,2,KZ-43,Сырдария ауданы,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Zhalagash,Kyzylorda,,,35917,District,,,#N/A,,KyzylordaKazakhstan,county,2,KZ-43,Жалағаш ауданы,,,,locality,,KZ-43,Жалағаш,,,,,region,1,KZ-43,Қызылорда облысы,HIGH,1.0,KZ-43
+Kazakhstan,Aktau,Mangystau,,,269665,City with Environs,Aktau,,Aktau,,MangystauKazakhstan,county,2,KZ-47,Ақтау қалалық әкімдігі,,,,county,2,KZ-47,Ақтау қалалық әкімдігі,,,,,region,1,KZ-47,Маңғыстау облысы,HIGH,1.0,KZ-47
+Kazakhstan,Zhanaozen,Mangystau,,,146719,City with Environs,Zhanaozen,,Zhanaozen,,MangystauKazakhstan,county,2,KZ-47,Жаңаөзен қалалық әкімдігі,,,,locality,,KZ-47,Жаңаөзен,,,,,region,1,KZ-47,Маңғыстау облысы,HIGH,1.0,KZ-47
+Kazakhstan,Munaily,Mangystau,,,162237,District,,,#N/A,,MangystauKazakhstan,county,2,KZ-47,Мұнайлы ауданы,,,,county,2,KZ-47,Мұнайлы ауданы,,,,,region,1,KZ-47,Маңғыстау облысы,HIGH,1.0,KZ-47
+Kazakhstan,Beyneu,Mangystau,,,72190,District,,,#N/A,,MangystauKazakhstan,county,2,KZ-47,Бейнеу ауданы,,,,county,2,KZ-47,Бейнеу ауданы,,,,,region,1,KZ-47,Маңғыстау облысы,HIGH,1.0,KZ-47
+Kazakhstan,Tupkaragan,Mangystau,,,38671,District,,,#N/A,,MangystauKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-47,Маңғыстау облысы,NONE,0.0,KZ-47
+Kazakhstan,Karakiya,Mangystau,,,36654,District,,,#N/A,,MangystauKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-47,Маңғыстау облысы,NONE,0.0,KZ-47
+Kazakhstan,Mangystau,Mangystau,,,35265,District,,,#N/A,,MangystauKazakhstan,county,2,KZ-47,Маңғыстау ауданы,,,,region,1,KZ-47,Маңғыстау облысы,,,,,region,1,KZ-47,Маңғыстау облысы,HIGH,1.0,KZ-47
+Kazakhstan,Petropavl,North Kazakhstan,,,221902,City with Environs,Petropavl,,Petropavl,,North KazakhstanKazakhstan,county,2,KZ-59,Петропавл қалалық әкімшілігі,,,,locality,,KZ-59,Петропавл,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Kyzylzhar,North Kazakhstan,,,46365,District,,,#N/A,,North KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,NONE,0.0,KZ-59
+Kazakhstan,Taiynsha,North Kazakhstan,,,40455,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Тайынша ауданы,,,,county,2,KZ-59,Тайынша ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Gabit Musirepov,North Kazakhstan,,,35834,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Ғабит Мүсірепов ауданы,,,,county,2,KZ-59,Ғабит Мүсірепов ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Aiyrtau,North Kazakhstan,,,32834,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Айыртау ауданы,,,,county,2,KZ-59,Айыртау ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Magzhan Zhumabaev,North Kazakhstan,,,27426,District,,,#N/A,,North KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,NONE,0.0,KZ-59
+Kazakhstan,Esil aýdany,North Kazakhstan,,,21400,District,,,#N/A,,North KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,NONE,0.0,KZ-59
+Kazakhstan,Zhambyl,North Kazakhstan,,,18235,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Жамбыл ауданы,,,,county,2,KZ-59,Жамбыл ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Akkayin,North Kazakhstan,,,18211,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Аққайың ауданы,,,,county,2,KZ-59,Аққайың ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Shal akyn,North Kazakhstan,,,18008,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Шал ақын ауданы,,,,county,2,KZ-59,Шал ақын ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Mamlyut,North Kazakhstan,,,17578,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Мамлют ауданы,,,,locality,,KZ-59,Мәмлүт,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Akzhar,North Kazakhstan,,,13531,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Ақжар ауданы,,,,county,2,KZ-59,Ақжар ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Ualikhanov,North Kazakhstan,,,13233,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Уәлиханов ауданы,,,,county,2,KZ-59,Уәлиханов ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Timiryazev,North Kazakhstan,,,9954,District,,,#N/A,,North KazakhstanKazakhstan,county,2,KZ-59,Тимирязев ауданы,,,,county,2,KZ-59,Тимирязев ауданы,,,,,region,1,KZ-59,Солтүстік Қазақстан облысы,HIGH,1.0,KZ-59
+Kazakhstan,Esil aýdany,Nur-Sultan,,,396970,City District,Astana,,Astana,,Nur-SultanKazakhstan,county,2,KZ-71,Алматы ауданы,,,,,,,,,,,,region,1,KZ-71,Астана,NONE,0.0,KZ-71
+Kazakhstan,Almaty aýdany,Nur-Sultan,,,364291,City District,Astana,,Astana,,Nur-SultanKazakhstan,county,2,KZ-71,Есіл ауданы,,,,,,,,,,,,region,1,KZ-71,Астана,NONE,0.0,KZ-71
+Kazakhstan,Sarya,Nur-Sultan,,,345023,City District,Astana,,Astana,,Nur-SultanKazakhstan,county,2,KZ-71,Сарыарқа ауданы,,,,,,,,,,,,region,1,KZ-71,Астана,NONE,0.0,KZ-71
+Kazakhstan,Baıqońyr aýdany,Nur-Sultan,,,234498,City District,Astana,,Astana,,Nur-SultanKazakhstan,county,2,KZ-71,Байқоңыр ауданы,,,,,,,,,,,,region,1,KZ-71,Астана,NONE,0.0,KZ-71
+Kazakhstan,Ekibastuz,Pavlodar,,,145535,City with Environs,Ekibastuz,,Ekibastuz,,PavlodarKazakhstan,county,2,KZ-55,Екібастұз қаласының әкімшілігі,,,,locality,,KZ-55,Екібастұз,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,Pavlodar,Pavlodar,,,366698,City with Environs,Pavlodar,,Pavlodar,,PavlodarKazakhstan,county,2,KZ-55,Павлодар ауданы,,,,region,1,KZ-55,Павлодар облысы,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,Aksu,Pavlodar,,,72282,City with Environs,Pavlodar,,Pavlodar,,PavlodarKazakhstan,county,2,KZ-33,Ақсу ауданы,,,,locality,,KZ-55,Ақсу,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,Pavlodar aýdany,Pavlodar,,,26676,District,,,#N/A,,PavlodarKazakhstan,county,2,KZ-55,Павлодар ауданы,,,,,,,,,,,,region,1,KZ-55,Павлодар облысы,NONE,0.0,KZ-55
+Kazakhstan,Bayanaul,Pavlodar,,,23763,District,,,#N/A,,PavlodarKazakhstan,county,2,KZ-55,Баянауыл ауданы,,,,county,2,KZ-55,Баянауыл ауданы,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,"Kachıry, Kashyr",Pavlodar,,,19966,District,,,#N/A,,PavlodarKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-55,Павлодар облысы,NONE,0.0,KZ-55
+Kazakhstan,Sharbakty,Pavlodar,,,19064,District,,,#N/A,,PavlodarKazakhstan,county,2,KZ-55,Шарбақты ауданы,,,,county,2,KZ-55,Шарбақты ауданы,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,Ertis aýdany,Pavlodar,,,17063,District,,,#N/A,,PavlodarKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-55,Павлодар облысы,NONE,0.0,KZ-55
+Kazakhstan,Zhelezin,Pavlodar,,,15291,District,,,#N/A,,PavlodarKazakhstan,county,2,KZ-55,Железин ауданы,,,,county,2,KZ-55,Железин ауданы,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,Aktogay,Pavlodar,,,12937,District,,,#N/A,,PavlodarKazakhstan,county,2,KZ-55,Ақтоғай ауданы,,,,county,2,KZ-55,Ақтоғай ауданы,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,Uspen,Pavlodar,,,12558,District,,,#N/A,,PavlodarKazakhstan,county,2,KZ-55,Успен ауданы,,,,county,2,KZ-55,Успен ауданы,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,"Akkuli, Lebjaji, Lebyazhye",Pavlodar,,,12518,District,,,#N/A,,PavlodarKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-55,Павлодар облысы,NONE,0.0,KZ-55
+Kazakhstan,May,Pavlodar,,,10478,District,,,#N/A,,PavlodarKazakhstan,county,2,KZ-55,Май ауданы,,,,locality,,KZ-55,Май,,,,,region,1,KZ-55,Павлодар облысы,HIGH,1.0,KZ-55
+Kazakhstan,Qarataý aýdany,Shymkent Qalasy,,,349775,City District,Shymkent,,Shymkent,,Shymkent QalasyKazakhstan,county,2,KZ-79,Қаратау ауданы,,,,,,,,,,,,,,,,NONE,0.0,
+Kazakhstan,Abaı aýdany,Shymkent Qalasy,,,343556,City District,Shymkent,,Shymkent,,Shymkent QalasyKazakhstan,county,2,KZ-79,Абай ауданы,,,,,,,,,,,,,,,,NONE,0.0,
+Kazakhstan,Eńbekshi aýdany,Shymkent Qalasy,,,289158,City District,Shymkent,,Shymkent,,Shymkent QalasyKazakhstan,county,2,KZ-79,Еңбекші ауданы,,,,,,,,,,,,,,,,NONE,0.0,
+Kazakhstan,Ál Farabı aýdany,Shymkent Qalasy,,,201624,City District,Shymkent,,Shymkent,,Shymkent QalasyKazakhstan,county,2,KZ-79,Әл-Фараби ауданы,,,,,,,,,,,,,,,,NONE,0.0,
+Kazakhstan,Sayram,Túrkistan,,,230621,District,Shymkent,,Shymkent,,TúrkistanKazakhstan,county,2,KZ-61,Сайрам ауданы,,,,county,2,KZ-61,Сайрам ауданы,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Turkistan,Túrkistan,,,218331,City,Turkistan,,Turkistan,,TúrkistanKazakhstan,county,2,KZ-61,Түркістан Қ.Ә.,,,,county,2,KZ-61,Түркістан Қ.Ә.,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Jetisaı aýdany,Túrkistan,,,187019,District,Zhetisay,,Zhetisay,,TúrkistanKazakhstan,county,2,KZ-61,Жетісай ауданы,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Maktaaral,Túrkistan,,,128866,District,Zhetisay,,Zhetisay,,TúrkistanKazakhstan,county,2,KZ-61,Мақтаарал ауданы,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Saryaǵash aýdany,Túrkistan,,,218024,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Сарыағаш ауданы,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Keles aýdany,Túrkistan,,,133247,District,,,#N/A,,TúrkistanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Ordabasy aýdany,Túrkistan,,,127041,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Ордабасы ауданы,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Tole Bi,Túrkistan,,,120481,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Төле би ауданы,,,,county,2,KZ-61,Төле би ауданы,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Kazygurt,Túrkistan,,,115891,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Қазығұрт ауданы,,,,county,2,KZ-61,Қазығұрт ауданы,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Túlkibas aýdany,Túrkistan,,,106127,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Түлкібас ауданы,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Sauran aýdany,Túrkistan,,,99488,District,,,#N/A,,TúrkistanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Kentau,Túrkistan,,,99205,City with Environs,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Кентау қаласының әкімшілігі,,,,locality,,KZ-61,Кентау,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Shardara aýdany,Túrkistan,,,84122,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Шардара ауданы,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Arys,Túrkistan,,,78781,City with Environs,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Арыс қаласының әкімшілігі,,,,locality,,KZ-61,Арыс,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Sozak,Túrkistan,,,62910,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Созақ ауданы,,,,county,2,KZ-61,Созақ ауданы,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Otyrar aýdany,Túrkistan,,,51489,District,,,#N/A,,TúrkistanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-61,Түркістан облысы,NONE,0.0,KZ-61
+Kazakhstan,Baydibek,Túrkistan,,,48859,District,,,#N/A,,TúrkistanKazakhstan,county,2,KZ-61,Бәйдібек ауданы,,,,county,2,KZ-61,Бәйдібек ауданы,,,,,region,1,KZ-61,Түркістан облысы,HIGH,1.0,KZ-61
+Kazakhstan,Jezkazgan,Ulytau,,,92623,City with Environs,Jezkazgan,,Jezkazgan,,UlytauKazakhstan,county,2,KZ-62,Жезқазған Қ.Ә.,,,,county,2,KZ-62,Жезқазған Қ.Ә.,,,,,region,1,KZ-62,Ұлытау облысы,HIGH,1.0,KZ-62
+Kazakhstan,Satbayev,Ulytau,,,68523,City with Environs,,,#N/A,,UlytauKazakhstan,county,2,KZ-62,Сәтбаев Қ.Ә.,,,,county,2,KZ-62,Сәтбаев Қ.Ә.,,,,,region,1,KZ-62,Ұлытау облысы,HIGH,1.0,KZ-62
+Kazakhstan,Zhanaarka,Ulytau,,,31150,District,,,#N/A,,UlytauKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-62,Ұлытау облысы,NONE,0.0,KZ-62
+Kazakhstan,Karazhal,Ulytau,,,17447,City with Environs,,,#N/A,,UlytauKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-62,Ұлытау облысы,NONE,0.0,KZ-62
+Kazakhstan,Ulytau,Ulytau,,,11271,District,,,#N/A,,UlytauKazakhstan,county,2,KZ-62,Ұлытау ауданы,,,,region,1,KZ-62,Ұлытау облысы,,,,,region,1,KZ-62,Ұлытау облысы,HIGH,1.0,KZ-62
+Kazakhstan,Oral,West Kazakhstan,,,355205,City with Environs,Oral,,Oral,,West KazakhstanKazakhstan,county,2,KZ-27,Орал қалалық әкімдігі,,,,county,2,KZ-27,Орал қалалық әкімдігі,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,"Zelenov, Bayterek",West Kazakhstan,,,59759,District,,,#N/A,,West KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-27,Батыс Қазақстан облысы,NONE,0.0,KZ-27
+Kazakhstan,Borili,West Kazakhstan,,,58381,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Бөрлі ауданы,,,,county,2,KZ-27,Бөрлі ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Terekti aýdany,West Kazakhstan,,,38956,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Теректі ауданы,,,,,,,,,,,,region,1,KZ-27,Батыс Қазақстан облысы,NONE,0.0,KZ-27
+Kazakhstan,Akzhaik,West Kazakhstan,,,36073,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Ақжайық ауданы,,,,county,2,KZ-27,Ақжайық ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Kaztal,West Kazakhstan,,,27393,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Казталов ауданы,,,,locality,,KZ-27,Казталовка,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Zhanakala,West Kazakhstan,,,21648,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Жаңақала ауданы,,,,county,2,KZ-27,Жаңақала ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Syrym aýdany,West Kazakhstan,,,17272,District,,,#N/A,,West KazakhstanKazakhstan,,,,,,,,,,,,,,,,region,1,KZ-27,Батыс Қазақстан облысы,NONE,0.0,KZ-27
+Kazakhstan,Taskala,West Kazakhstan,,,16319,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Тасқала ауданы,,,,county,2,KZ-27,Тасқала ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Zhanybek,West Kazakhstan,,,14521,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Жәнібек ауданы,,,,county,2,KZ-27,Жәнібек ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Bokey Orda,West Kazakhstan,,,14464,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Бөкей ордасы ауданы,,,,county,2,KZ-27,Бөкей ордасы ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Karatobe,West Kazakhstan,,,13620,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Қаратөбе ауданы,,,,county,2,KZ-27,Қаратөбе ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27
+Kazakhstan,Shyngyrlau,West Kazakhstan,,,13044,District,,,#N/A,,West KazakhstanKazakhstan,county,2,KZ-27,Шыңғырлау ауданы,,,,county,2,KZ-27,Шыңғырлау ауданы,,,,,region,1,KZ-27,Батыс Қазақстан облысы,HIGH,1.0,KZ-27

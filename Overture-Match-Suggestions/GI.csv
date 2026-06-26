@@ -1,0 +1,8 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Gibraltar,East Side,East Side,,,526,Neighbourhood,Gibraltar,,Gibraltar,,East SideGibraltar,dependency,1,,Gibraltar,,,,,,,,,,,,,,,,NONE,0.0,
+Gibraltar,North District ,North District ,,,4267,Neighbourhood,Gibraltar,,Gibraltar,,North District Gibraltar,dependency,1,,Gibraltar,,,,,,,,,,,,,,,,NONE,0.0,
+Gibraltar,Reclamation Areas,Reclamation Areas,,,13690,Neighbourhood,Gibraltar,,Gibraltar,,Reclamation AreasGibraltar,dependency,1,,Gibraltar,,,,,,,,,,,,,,,,NONE,0.0,
+Gibraltar,Sandpits Area,Sandpits Area,,,2020,Neighbourhood,Gibraltar,,Gibraltar,,Sandpits AreaGibraltar,dependency,1,,Gibraltar,,,,,,,,,,,,,,,,NONE,0.0,
+Gibraltar,South District,South District,,,5380,Neighbourhood,Gibraltar,,Gibraltar,,South DistrictGibraltar,dependency,1,,Gibraltar,,,,,,,,,,,,,,,,NONE,0.0,
+Gibraltar,Town Area,Town Area,,,3238,Neighbourhood,Gibraltar,,Gibraltar,,Town AreaGibraltar,dependency,1,,Gibraltar,,,,,,,,,,,,,,,,NONE,0.0,
+Gibraltar,Upper Town,Upper Town,,,2483,Neighbourhood,Gibraltar,,Gibraltar,,Upper TownGibraltar,dependency,1,,Gibraltar,,,,,,,,,,,,,,,,NONE,0.0,

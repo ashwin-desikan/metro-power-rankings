@@ -1,0 +1,11 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Solomon Islands,Capital Territory,Capital Territory,,,94206,Capital Territory,Honiara,,Honiara,,Capital TerritorySolomon Islands,region,1,SB-CT,Honiara,,,,,,,,,,,,,,,,NONE,0.0,
+Solomon Islands,Central,Central,,,33476,Province,,,#N/A,,CentralSolomon Islands,region,1,SB-CE,Central,,,,region,1,SB-CE,Central,,,,,region,1,SB-CE,Central,HIGH,1.0,SB-CE
+Solomon Islands,Choiseul,Choiseul,,,38453,Province,,,#N/A,,ChoiseulSolomon Islands,region,1,SB-CH,Choiseul,,,,region,1,SB-CH,Choiseul,,,,,region,1,SB-CH,Choiseul,HIGH,1.0,SB-CH
+Solomon Islands,Guadalcanal,Guadalcanal,,,166838,Province,,,#N/A,,GuadalcanalSolomon Islands,region,1,SB-GU,Guadalcanal,,,,region,1,SB-GU,Guadalcanal,,,,,region,1,SB-GU,Guadalcanal,HIGH,1.0,SB-GU
+Solomon Islands,Isabel,Isabel,,,36688,Province,,,#N/A,,IsabelSolomon Islands,region,1,SB-IS,Isabel,,,,region,1,SB-IS,Isabel,,,,,region,1,SB-IS,Isabel,HIGH,1.0,SB-IS
+Solomon Islands,Makira-Ulawa,Makira-Ulawa,,,57396,Province,,,#N/A,,Makira-UlawaSolomon Islands,region,1,SB-MK,Makira-Ulawa,,,,region,1,SB-MK,Makira-Ulawa,,,,,region,1,SB-MK,Makira-Ulawa,HIGH,1.0,SB-MK
+Solomon Islands,Malaita,Malaita,,,163085,Province,,,#N/A,,MalaitaSolomon Islands,region,1,SB-ML,Malaita,,,,region,1,SB-ML,Malaita,,,,,region,1,SB-ML,Malaita,HIGH,1.0,SB-ML
+Solomon Islands,Rennell and Bellona,Rennell and Bellona,,,4465,Province,,,#N/A,,Rennell and BellonaSolomon Islands,region,1,SB-RB,Rennell and Bellona,,,,region,1,SB-RB,Rennell and Bellona,,,,,region,1,SB-RB,Rennell and Bellona,HIGH,1.0,SB-RB
+Solomon Islands,Temotu,Temotu,,,25701,Province,,,#N/A,,TemotuSolomon Islands,region,1,SB-TE,Temotu,,,,region,1,SB-TE,Temotu,,,,,region,1,SB-TE,Temotu,HIGH,1.0,SB-TE
+Solomon Islands,Western,Western,,,102083,Province,,,#N/A,,WesternSolomon Islands,region,1,SB-WE,Western,,,,region,1,SB-WE,Western,,,,,region,1,SB-WE,Western,HIGH,1.0,SB-WE

@@ -1,0 +1,49 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Turkmenistan,Tejen,Ahal,,,181961,District,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Tejen etraby,,,,county,2,TM-A,Tejen etraby,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Gökdepe,Ahal,,,161819,District,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Gökdepe etraby,,,,county,2,TM-A,Gökdepe etraby,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Ak bugdaý,Ahal,,,144119,District,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Ak bugdaý etraby,,,,county,2,TM-A,Ak bugdaý etraby,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Bäherden,Ahal,,,126409,District,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Bäherden etraby,,,,county,2,TM-A,Bäherden etraby,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Babadaýhan,Ahal,,,97312,District,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Babadaýhan etraby,,,,county,2,TM-A,Babadaýhan etraby,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Kaka,Ahal,,,93652,District,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Kaka etraby,,,,county,2,TM-A,Kaka etraby,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Sarahs,Ahal,,,81006,District,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Sarahs etraby,,,,county,2,TM-A,Sarahs etraby,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Arkadag,Ahal,,,567,City,,,#N/A,,AhalTurkmenistan,county,2,TM-A,Arkadag şäheri,,,,locality,,TM-A,Arkadag,,,,,region,1,TM-A,Ahal welaýaty,HIGH,1.0,TM-A
+Turkmenistan,Bagtyýarlyk,Ashgabat,,,309619,District,Ashgabat,,Ashgabat,,AshgabatTurkmenistan,region,1,TM-S,Aşgabat,,,,,,,,,,,,region,1,TM-S,Aşgabat,NONE,0.0,TM-S
+Turkmenistan,Köpetdag,Ashgabat,,,278840,District,Ashgabat,,Ashgabat,,AshgabatTurkmenistan,region,1,TM-S,Aşgabat,,,,locality,,TM-S,Köpetdag etraby,,,,,region,1,TM-S,Aşgabat,HIGH,1.0,TM-S
+Turkmenistan,Berkararlyk,Ashgabat,,,266425,District,Ashgabat,,Ashgabat,,AshgabatTurkmenistan,region,1,TM-S,Aşgabat,,,,locality,,TM-S,Berkararlyk etraby,,,,,region,1,TM-S,Aşgabat,HIGH,1.0,TM-S
+Turkmenistan,Büzmeýin,Ashgabat,,,175179,District,Ashgabat,,Ashgabat,,AshgabatTurkmenistan,region,1,TM-S,Aşgabat,,,,,,,,,,,,region,1,TM-S,Aşgabat,NONE,0.0,TM-S
+Turkmenistan,Balkanabat,Balkan,,,188429,City,Balkanabat,,Balkanabat,,BalkanTurkmenistan,county,2,TM-B,Balkanabat şäheri,,,,county,2,TM-B,Balkanabat şäheri,,,,,region,1,TM-B,Balkan welaýaty,HIGH,1.0,TM-B
+Turkmenistan,Türkmenbaşy [Turkmenbashy],Balkan,,,91745,City,,,#N/A,,BalkanTurkmenistan,county,2,TM-B,Türkmenbaşy şäheri,,,,,,,,,,,,region,1,TM-B,Balkan welaýaty,NONE,0.0,TM-B
+Turkmenistan,Gyzylarbat,Balkan,,,72473,District,,,#N/A,,BalkanTurkmenistan,county,2,TM-B,Gyzylarbat etraby,,,,locality,,TM-B,Gyzylarbat,,,,,region,1,TM-B,Balkan welaýaty,HIGH,1.0,TM-B
+Turkmenistan,Esenguly,Balkan,,,45436,District,,,#N/A,,BalkanTurkmenistan,county,2,TM-B,Esenguly etraby,,,,locality,,TM-B,Esenguly,,,,,region,1,TM-B,Balkan welaýaty,HIGH,1.0,TM-B
+Turkmenistan,Bereket,Balkan,,,39282,District,,,#N/A,,BalkanTurkmenistan,county,2,TM-B,Bereket etraby,,,,locality,,TM-B,Bereket,,,,,region,1,TM-B,Balkan welaýaty,HIGH,1.0,TM-B
+Turkmenistan,Magtymguly,Balkan,,,34664,District,,,#N/A,,BalkanTurkmenistan,county,2,TM-B,Magtymguly etraby,,,,locality,,TM-B,Magtymguly,,,,,region,1,TM-B,Balkan welaýaty,HIGH,1.0,TM-B
+Turkmenistan,Türkmenbaşy [Turkmenbashy],Balkan,,,34119,District,,,#N/A,,BalkanTurkmenistan,county,2,TM-B,Türkmenbaşy şäheri,,,,,,,,,,,,region,1,TM-B,Balkan welaýaty,NONE,0.0,TM-B
+Turkmenistan,Etrek,Balkan,,,23747,District,,,#N/A,,BalkanTurkmenistan,county,2,TM-B,Etrek etraby,,,,locality,,TM-B,Etrek,,,,,region,1,TM-B,Balkan welaýaty,HIGH,1.0,TM-B
+Turkmenistan,Daşoguz [Dashoguz],Daşoguz,,,201142,City,Dashoguz,,Dashoguz,,DaşoguzTurkmenistan,county,2,TM-D,Daşoguz şäheri,,,,,,,,,,,,region,1,TM-D,Daşoguz welaýaty,NONE,0.0,TM-D
+Turkmenistan,Akdepe,Daşoguz,,,340930,District,,,#N/A,,DaşoguzTurkmenistan,county,2,TM-D,Akdepe etraby,,,,county,2,TM-D,Akdepe etraby,,,,,region,1,TM-D,Daşoguz welaýaty,HIGH,1.0,TM-D
+Turkmenistan,Boldumsaz,Daşoguz,,,257496,District,,,#N/A,,DaşoguzTurkmenistan,county,2,TM-D,Boldumsaz etraby,,,,locality,,TM-D,Boldumsaz,,,,,region,1,TM-D,Daşoguz welaýaty,HIGH,1.0,TM-D
+Turkmenistan,Şabat [Shabat],Daşoguz,,,218075,District,,,#N/A,,DaşoguzTurkmenistan,county,2,TM-D,Şabat etraby,,,,,,,,,,,,region,1,TM-D,Daşoguz welaýaty,NONE,0.0,TM-D
+Turkmenistan,Köneürgenç [Koneurgench],Daşoguz,,,176784,District,,,#N/A,,DaşoguzTurkmenistan,county,2,TM-D,Köneürgenç etraby,,,,,,,,,,,,region,1,TM-D,Daşoguz welaýaty,NONE,0.0,TM-D
+Turkmenistan,Görogly,Daşoguz,,,164894,District,,,#N/A,,DaşoguzTurkmenistan,county,2,TM-D,Görogly etraby,,,,county,2,TM-D,Görogly etraby,,,,,region,1,TM-D,Daşoguz welaýaty,HIGH,1.0,TM-D
+Turkmenistan,Saparmyrat Türkmenbaşy [Saparmyrat Turkmenbashy],Daşoguz,,,162861,District,,,#N/A,,DaşoguzTurkmenistan,county,2,TM-D,Saparmyrat Türkmenbaşy etraby,,,,,,,,,,,,region,1,TM-D,Daşoguz welaýaty,NONE,0.0,TM-D
+Turkmenistan,Ruhubelent,Daşoguz,,,28172,District,,,#N/A,,DaşoguzTurkmenistan,county,2,TM-D,Ruhubelent etraby,,,,county,2,TM-D,Ruhubelent etraby,,,,,region,1,TM-D,Daşoguz welaýaty,HIGH,1.0,TM-D
+Turkmenistan,Türkmenabat,Lebap,,,230861,City,Türkmenabat,,Türkmenabat,,LebapTurkmenistan,county,2,TM-L,Türkmenabat şäheri,,,,county,2,TM-L,Türkmenabat şäheri,,,,,region,1,TM-L,Lebap welaýaty,HIGH,1.0,TM-L
+Turkmenistan,Çärjew [Charjev],Lebap,,,233699,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Çärjew etraby,,,,,,,,,,,,region,1,TM-L,Lebap welaýaty,NONE,0.0,TM-L
+Turkmenistan,Köýtendag,Lebap,,,199820,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Köýtendag etraby,,,,county,2,TM-L,Köýtendag etraby,,,,,region,1,TM-L,Lebap welaýaty,HIGH,1.0,TM-L
+Turkmenistan,Saýat [Sayat],Lebap,,,188485,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Saýat etraby,,,,,,,,,,,,region,1,TM-L,Lebap welaýaty,NONE,0.0,TM-L
+Turkmenistan,Dänew,Lebap,,,159634,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Dänew etraby,,,,county,2,TM-L,Dänew etraby,,,,,region,1,TM-L,Lebap welaýaty,HIGH,1.0,TM-L
+Turkmenistan,Halaç [Halach],Lebap,,,133909,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Halaç etraby,,,,,,,,,,,,region,1,TM-L,Lebap welaýaty,NONE,0.0,TM-L
+Turkmenistan,Kerki,Lebap,,,132562,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Kerki etraby,,,,county,2,TM-L,Kerki etraby,,,,,region,1,TM-L,Lebap welaýaty,HIGH,1.0,TM-L
+Turkmenistan,Hojambaz,Lebap,,,110376,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Hojambaz etraby,,,,county,2,TM-L,Hojambaz etraby,,,,,region,1,TM-L,Lebap welaýaty,HIGH,1.0,TM-L
+Turkmenistan,Darganata,Lebap,,,57952,District,,,#N/A,,LebapTurkmenistan,county,2,TM-L,Darganata etraby,,,,county,2,TM-L,Darganata etraby,,,,,region,1,TM-L,Lebap welaýaty,HIGH,1.0,TM-L
+Turkmenistan,Mary,Mary,,,167027,City,Mary,,Mary,,MaryTurkmenistan,county,2,TM-M,Mary etraby,,,,county,2,TM-M,Mary etraby,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Sakarçäge [Sakarchage],Mary,,,196202,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Sakarçäge etraby,,,,,,,,,,,,region,1,TM-M,Mary welaýaty,NONE,0.0,TM-M
+Turkmenistan,Murgap,Mary,,,190218,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Murgap etraby,,,,county,2,TM-M,Murgap etraby,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Mary,Mary,,,173140,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Mary etraby,,,,county,2,TM-M,Mary etraby,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Baýramaly,Mary,,,170462,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Baýramaly,,,,county,2,TM-M,Baýramaly,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Wekilbazar [Vekilbazar],Mary,,,168734,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Wekilbazar etraby,,,,,,,,,,,,region,1,TM-M,Mary welaýaty,NONE,0.0,TM-M
+Turkmenistan,Ýolöten,Mary,,,155616,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Ýolöten etraby,,,,county,2,TM-M,Ýolöten etraby,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Tagtabazar,Mary,,,134751,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Tagtabazar etraby,,,,county,2,TM-M,Tagtabazar etraby,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Türkmengala,Mary,,,124642,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Türkmengala etraby,,,,county,2,TM-M,Türkmengala etraby,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Baýramaly,Mary,,,70376,City,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Baýramaly,,,,county,2,TM-M,Baýramaly,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M
+Turkmenistan,Garagum,Mary,,,62218,District,,,#N/A,,MaryTurkmenistan,county,2,TM-M,Garagum etraby,,,,county,2,TM-M,Garagum etraby,,,,,region,1,TM-M,Mary welaýaty,HIGH,1.0,TM-M

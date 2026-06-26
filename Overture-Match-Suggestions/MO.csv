@@ -1,0 +1,8 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Macau,Coloane,Coloane,,,36384,Parish,Macau,,Macau,,ColoaneMacau,,,,,x,,,,,,,,,,,,,,,NONE,0.0,
+Macau,Nossa Senhora de Fátima,Nossa Senhora de Fátima,,,256381,Parish,Macau,,Macau,,Nossa Senhora de FátimaMacau,region,2,0,花地瑪堂區 Nossa Senhora de Fátima,,,,region,2,nan,花地瑪堂區 Nossa Senhora de Fátima,,,,,,,,,HIGH,1.0,nan
+Macau,Santo António,Santo António,,,133920,Parish,Macau,,Macau,,Santo AntónioMacau,region,2,0,花王堂區 Santo António,,,,region,2,nan,花王堂區 Santo António,,,,,,,,,HIGH,1.0,nan
+Macau,São Lázaro,São Lázaro,,,33442,Parish,Macau,,Macau,,São LázaroMacau,region,2,0,望德堂區 São Lázaro,,,,region,2,nan,望德堂區 São Lázaro,,,,,,,,,HIGH,1.0,nan
+Macau,São Lourenço,São Lourenço,,,53840,Parish,Macau,,Macau,,São LourençoMacau,region,2,0,風順堂區 São Lourenço,,,,region,2,nan,風順堂區 São Lourenço,,,,,,,,,HIGH,1.0,nan
+Macau,Sé,Sé,,,55275,Parish,Macau,,Macau,,SéMacau,region,2,0,大堂區 Sé,,,,region,2,nan,大堂區 Sé,,,,,,,,,HIGH,1.0,nan
+Macau,Taipa,Taipa,,,112051,Parish,Macau,,Macau,,TaipaMacau,,,,,x,,,,,,,,,,,,,,,NONE,0.0,

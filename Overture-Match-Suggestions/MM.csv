@@ -1,0 +1,127 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Myanmar,Bago,Bago,,,927389,District,Bago,,Bago,2024,BagoMyanmar,county,2,MM-02,ပဲခူးမြို့နယ်,,,,region,1,MM-02,ပဲခူးတိုင်းဒေသကြီး,,,,,region,1,MM-02,ပဲခူးတိုင်းဒေသကြီး,HIGH,1.0,MM-02
+Myanmar,Taungoo,Bago,,,954714,District,,,#N/A,2024,BagoMyanmar,county,2,MM-02,တောင်ငူမြို့နယ်,,,,,,,,,,,,region,1,MM-02,ပဲခူးတိုင်းဒေသကြီး,NONE,0.0,MM-02
+Myanmar,Nyaunglebin,Bago,,,866566,District,,,#N/A,2024,BagoMyanmar,county,2,MM-02,ညောင်လေးပင်မြို့နယ,,,,,,,,,,,,region,1,MM-02,ပဲခူးတိုင်းဒေသကြီး,NONE,0.0,MM-02
+Myanmar,Thayarwady,Bago,,,708096,District,,,#N/A,2024,BagoMyanmar,,,,,,,,,,,,,,,,region,1,MM-02,ပဲခူးတိုင်းဒေသကြီး,NONE,0.0,MM-02
+Myanmar,Pyay,Bago,,,564391,District,,,#N/A,2024,BagoMyanmar,county,2,MM-02,ပြည်မြို့နယ်,,,,,,,,,,,,region,1,MM-02,ပဲခူးတိုင်းဒေသကြီး,NONE,0.0,MM-02
+Myanmar,Nattalin,Bago,,,432535,District,,,#N/A,2024,BagoMyanmar,county,2,MM-02,နတ်တလင်းမြို့နယ်,,,,locality,,MM-02,Nattalin,,,,,region,1,MM-02,ပဲခူးတိုင်းဒေသကြီး,HIGH,1.0,MM-02
+Myanmar,Hakha,Chin,,,98497,District,Hakha,,Hakha,2024,ChinMyanmar,county,2,MM-14,ဟားခါးမြို့နယ်,,,,,,,,,,,,region,1,MM-14,ချင်းပြည်နယ်,NONE,0.0,MM-14
+Myanmar,Paletwa,Chin,,,83905,District,,,#N/A,2024,ChinMyanmar,county,2,MM-14,ပလက်ဝမြို့နယ်,,,,county,2,MM-14,ပလက်ဝမြို့နယ်,,,,,region,1,MM-14,ချင်းပြည်နယ်,HIGH,1.0,MM-14
+Myanmar,Tedim,Chin,,,64397,District,,,#N/A,2024,ChinMyanmar,county,2,MM-14,တီးတိန်မြို့နယ်,,,,,,,,,,,,region,1,MM-14,ချင်းပြည်နယ်,NONE,0.0,MM-14
+Myanmar,Mindat,Chin,,,60941,District,,,#N/A,2024,ChinMyanmar,county,2,MM-14,မင်းတပ်မြို့နယ်,,,,,,,,,,,,region,1,MM-14,ချင်းပြည်နယ်,NONE,0.0,MM-14
+Myanmar,Matupi,Chin,,,45693,District,,,#N/A,2024,ChinMyanmar,county,2,MM-14,မတူပီမြို့နယ်,,,,,,,,,,,,region,1,MM-14,ချင်းပြည်နယ်,NONE,0.0,MM-14
+Myanmar,Falam,Chin,,,19591,District,,,#N/A,2024,ChinMyanmar,county,2,MM-14,ဖလမ်းမြို့နယ်,,,,,,,,,,,,region,1,MM-14,ချင်းပြည်နယ်,NONE,0.0,MM-14
+Myanmar,Pathein,Irrawaddy,,,903051,District,Pathein,,Pathein,2024,IrrawaddyMyanmar,county,2,MM-07,ပုသိမ်မြို့နယ်,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Maubin,Irrawaddy,,,926269,District,,,#N/A,2024,IrrawaddyMyanmar,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Pyapon,Irrawaddy,,,856788,District,,,#N/A,2024,IrrawaddyMyanmar,county,2,MM-07,ဖျာပုံမြို့နယ်,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Myaungmya,Irrawaddy,,,717198,District,,,#N/A,2024,IrrawaddyMyanmar,county,2,MM-07,မြောင်းမြမြို့နယ်,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Kyonpyaw,Irrawaddy,,,562958,District,,,#N/A,2024,IrrawaddyMyanmar,county,2,MM-07,ကျုံပျော်မြို့နယ်,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Hinthada,Irrawaddy,,,560956,District,,,#N/A,2024,IrrawaddyMyanmar,county,2,MM-07,ဟင်္သာတမြို့နယ်,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Labutta,Irrawaddy,,,549780,District,,,#N/A,2024,IrrawaddyMyanmar,county,2,MM-07,လပွတ္တာမြို့နယ်,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Myanaung,Irrawaddy,,,469281,District,,,#N/A,2024,IrrawaddyMyanmar,county,2,MM-07,မြန်အောင်မြို့နယ်,,,,,,,,,,,,,,,,NONE,0.0,
+Myanmar,Mohnyin,Kachin,,,721602,District,,,#N/A,2024,KachinMyanmar,county,2,MM-11,မိုးညှင်းမြို့နယ်,,,,,,,,,,,,region,1,MM-11,ကချင်ပြည်နယ်,NONE,0.0,MM-11
+Myanmar,Bhamo,Kachin,,,620200,District,,,#N/A,2024,KachinMyanmar,county,2,MM-11,ဗန်းမော်မြို့နယ်,,,,,,,,,,,,region,1,MM-11,ကချင်ပြည်နယ်,NONE,0.0,MM-11
+Myanmar,Myitkyina,Kachin,,,562469,District,,,#N/A,2024,KachinMyanmar,county,2,MM-11,မြစ်ကြီးနားမြို့နယ်,,,,county,2,MM-11,မြစ်ကြီးနားမြို့နယ်,,,,,region,1,MM-11,ကချင်ပြည်နယ်,HIGH,1.0,MM-11
+Myanmar,Tanai,Kachin,,,136654,District,,,#N/A,2024,KachinMyanmar,county,2,MM-11,တနိုင်းမြို့နယ်,,,,county,2,MM-11,တနိုင်းမြို့နယ်,,,,,region,1,MM-11,ကချင်ပြည်နယ်,HIGH,1.0,MM-11
+Myanmar,Putao,Kachin,,,112517,District,,,#N/A,2024,KachinMyanmar,county,2,MM-11,ပူတာအိုမြို့နယ်,,,,county,2,MM-11,ပူတာအိုမြို့နယ်,,,,,region,1,MM-11,ကချင်ပြည်နယ်,HIGH,1.0,MM-11
+Myanmar,Chipwi,Kachin,,,43841,District,,,#N/A,2024,KachinMyanmar,county,2,MM-11,ချီဖွေမြို့နယ်,,,,county,2,MM-11,ချီဖွေမြို့နယ်,,,,,region,1,MM-11,ကချင်ပြည်နယ်,HIGH,1.0,MM-11
+Myanmar,Loikaw,Kayah,,,126411,District,,,#N/A,2024,KayahMyanmar,county,2,MM-12,လွိုင်ကော်မြို့နယ်,,,,,,,,,,,,region,1,MM-12,ကယားပြည်နယ်,NONE,0.0,MM-12
+Myanmar,Demoso,Kayah,,,119832,District,,,#N/A,2024,KayahMyanmar,county,2,MM-12,ဒီးမော့ဆိုမြို့နယ်,,,,,,,,,,,,region,1,MM-12,ကယားပြည်နယ်,NONE,0.0,MM-12
+Myanmar,Bawlakhe,Kayah,,,38855,District,,,#N/A,2024,KayahMyanmar,county,2,MM-12,ဘော်လခဲမြို့နယ်,,,,,,,,,,,,region,1,MM-12,ကယားပြည်နယ်,NONE,0.0,MM-12
+Myanmar,Mese,Kayah,,,11805,District,,,#N/A,2024,KayahMyanmar,county,2,MM-12,မယ်စဲ့မြို့နယ်,,,,,,,,,,,,region,1,MM-12,ကယားပြည်နယ်,NONE,0.0,MM-12
+Myanmar,Hpa-An,Kayin,,,730200,District,,,#N/A,2024,KayinMyanmar,county,2,MM-13,ဘားအံမြို့နယ်,,,,,,,,,,,,region,1,MM-13,ကရင်ပြည်နယ်,NONE,0.0,MM-13
+Myanmar,Kyainseikgyi,Kayin,,,245303,District,,,#N/A,2024,KayinMyanmar,county,2,MM-13,ကြာအင်းဆိပ်ကြီးမြို့နယ်,,,,,,,,,,,,region,1,MM-13,ကရင်ပြည်နယ်,NONE,0.0,MM-13
+Myanmar,Myawaddy,Kayin,,,168779,District,,,#N/A,2024,KayinMyanmar,county,2,MM-13,မြဝတီမြို့နယ်,,,,,,,,,,,,region,1,MM-13,ကရင်ပြည်နယ်,NONE,0.0,MM-13
+Myanmar,Kawkareik,Kayin,,,139683,District,,,#N/A,2024,KayinMyanmar,county,2,MM-13,ကော့ကရိတ်မြို့နယ်,,,,,,,,,,,,region,1,MM-13,ကရင်ပြည်နယ်,NONE,0.0,MM-13
+Myanmar,Hpapun,Kayin,,,118834,District,,,#N/A,2024,KayinMyanmar,county,2,MM-13,ဖာပွန်မြို့နယ်,,,,,,,,,,,,region,1,MM-13,ကရင်ပြည်နယ်,NONE,0.0,MM-13
+Myanmar,Thandaunggyi,Kayin,,,88169,District,,,#N/A,2024,KayinMyanmar,county,2,MM-13,သံတောင်ကြီးမြို့နယ်,,,,,,,,,,,,region,1,MM-13,ကရင်ပြည်နယ်,NONE,0.0,MM-13
+Myanmar,Pakokku,Magway,,,1149879,District,,,#N/A,2024,MagwayMyanmar,county,2,MM-03,ပခုက္ကူ,,,,locality,,MM-03,Pakokku,,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,HIGH,1.0,MM-03
+Myanmar,Magway,Magway,,,892173,District,,,#N/A,2024,MagwayMyanmar,county,2,MM-03,မကွေး,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,HIGH,1.0,MM-03
+Myanmar,Minbu,Magway,,,690045,District,,,#N/A,2024,MagwayMyanmar,county,2,MM-03,မင်းဘူး,,,,,,,,,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,NONE,0.0,MM-03
+Myanmar,Aunglan,Magway,,,387555,District,,,#N/A,2024,MagwayMyanmar,county,2,MM-03,အောင်လံ,,,,,,,,,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,NONE,0.0,MM-03
+Myanmar,Chauk,Magway,,,357742,District,,,#N/A,2024,MagwayMyanmar,county,2,MM-03,ချောက်,,,,,,,,,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,NONE,0.0,MM-03
+Myanmar,Thayet,Magway,,,331257,District,,,#N/A,2024,MagwayMyanmar,county,2,MM-03,သရက်,,,,county,2,MM-03,သရက်,,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,HIGH,1.0,MM-03
+Myanmar,Gangaw,Magway,,,269853,District,,,#N/A,2024,MagwayMyanmar,county,2,MM-03,ဂန့်ဂေါ,,,,,,,,,,,,region,1,MM-03,မကွေးတိုင်းဒေသကြီး,NONE,0.0,MM-03
+Myanmar,Mahaaungmyay,Mandalay,,,832708,District,Mandalay,,Mandalay,2024,MandalayMyanmar,county,2,MM-04,မန္တလေးမြို့,,,,,,,,,,,,region,1,MM-04,မန္တလေးတိုင်း,NONE,0.0,MM-04
+Myanmar,Aungmyethazan,Mandalay,,,792084,District,Mandalay,,Mandalay,2024,MandalayMyanmar,county,2,MM-04,အောင်မြေသာစံ,,,,county,2,MM-04,အောင်မြေသာစံ,,,,,region,1,MM-04,မန္တလေးတိုင်း,HIGH,1.0,MM-04
+Myanmar,Amarapura,Mandalay,,,249883,District,Mandalay,,Mandalay,2024,MandalayMyanmar,county,2,MM-04,အမရပူရမြို့နယ်,,,,county,2,MM-04,အမရပူရမြို့နယ်,,,,,region,1,MM-04,မန္တလေးတိုင်း,HIGH,1.0,MM-04
+Myanmar,Meiktila,Mandalay,,,814620,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,မိတ္ထီလာ,,,,,,,,,,,,region,1,MM-04,မန္တလေးတိုင်း,NONE,0.0,MM-04
+Myanmar,Myingyan,Mandalay,,,736445,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,မြင်းခြံ,,,,locality,,MM-04,မြင်းခြံ,,,,,region,1,MM-04,မန္တလေးတိုင်း,HIGH,1.0,MM-04
+Myanmar,Thabeikkyin,Mandalay,,,604995,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,သပိတ်ကျင်း,,,,locality,,MM-04,Tha Beik Kyin,,,,,region,1,MM-04,မန္တလေးတိုင်း,LOW,0.917,MM-04
+Myanmar,Kyaukse,Mandalay,,,563251,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,ကျောက်ဆည်,,,,locality,,MM-04,Kyauk Oe,,,,,region,1,MM-04,မန္တလေးတိုင်း,LOW,0.8,MM-04
+Myanmar,Yamethin,Mandalay,,,502025,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,ရမည်းသင်း,,,,,,,,,,,,region,1,MM-04,မန္တလေးတိုင်း,NONE,0.0,MM-04
+Myanmar,Nyaung-U,Mandalay,,,482045,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,ညောင်ဦး,,,,,,,,,,,,region,1,MM-04,မန္တလေးတိုင်း,NONE,0.0,MM-04
+Myanmar,Pyinoolwin,Mandalay,,,361096,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,ပြင်ဦးလွင်,,,,,,,,,,,,region,1,MM-04,မန္တလေးတိုင်း,NONE,0.0,MM-04
+Myanmar,Tada-U,Mandalay,,,344511,District,,,#N/A,2024,MandalayMyanmar,county,2,MM-04,တံတားဦး,,,,locality,,MM-04,Tada-U,,,,,region,1,MM-04,မန္တလေးတိုင်း,HIGH,1.0,MM-04
+Myanmar,Mawlamyine,Mon,,,794384,District,Mawlamyine,,Mawlamyine,2024,MonMyanmar,county,2,MM-15,မော်လမြိုင်,,,,county,2,MM-15,မော်လမြိုင်,,,,,region,1,MM-15,မွန်ပြည်နယ်,HIGH,1.0,MM-15
+Myanmar,Thaton,Mon,,,379654,District,,,#N/A,2024,MonMyanmar,county,2,MM-15,သထုံ,,,,,,,,,,,,region,1,MM-15,မွန်ပြည်နယ်,NONE,0.0,MM-15
+Myanmar,Kyaikto,Mon,,,296888,District,,,#N/A,2024,MonMyanmar,county,2,MM-15,ကျိုက်ထို,,,,,,,,,,,,region,1,MM-15,မွန်ပြည်နယ်,NONE,0.0,MM-15
+Myanmar,Ye,Mon,,,246240,District,,,#N/A,2024,MonMyanmar,county,2,MM-15,ရေး,,,,county,2,MM-15,ရေး,,,,,region,1,MM-15,မွန်ပြည်နယ်,HIGH,1.0,MM-15
+Myanmar,Lewe,Naypyitaw,,,312627,District,Naypyidaw,,Naypyidaw,2024,NaypyitawMyanmar,county,2,MM-18,လယ်ဝေး,,,,,,,,,,,,region,1,MM-18,နေပြည်တော် ပြည်ထောင်စုနယ်မြေ,NONE,0.0,MM-18
+Myanmar,Pyinmana,Naypyitaw,,,298113,District,Naypyidaw,,Naypyidaw,2024,NaypyitawMyanmar,county,2,MM-18,ပျဥ်းမနားမြို့နယ်,,,,,,,,,,,,region,1,MM-18,နေပြည်တော် ပြည်ထောင်စုနယ်မြေ,NONE,0.0,MM-18
+Myanmar,Ottara,Naypyitaw,,,270917,District,Naypyidaw,,Naypyidaw,2024,NaypyitawMyanmar,county,2,MM-18,ဥတ္တရသီရိ,,,,,,,,,,,,region,1,MM-18,နေပြည်တော် ပြည်ထောင်စုနယ်မြေ,NONE,0.0,MM-18
+Myanmar,Zeyarthiri,Naypyitaw,,,247687,District,Naypyidaw,,Naypyidaw,2024,NaypyitawMyanmar,county,2,MM-18,ဇေယျာသီရိမြို့နယ်,,,,,,,,,,,,region,1,MM-18,နေပြည်တော် ပြည်ထောင်စုနယ်မြေ,NONE,0.0,MM-18
+Myanmar,Mrauk-U,Rakhine,,,808737,District,,,#N/A,2024,RakhineMyanmar,county,2,MM-16,မြောက်ဦး,,,,,,,,,,,,region,1,MM-16,ရခိုင်ပြည်နယ်,NONE,0.0,MM-16
+Myanmar,Sittwe,Rakhine,,,699772,District,,,#N/A,2024,RakhineMyanmar,county,2,MM-16,စစ်တွေမြို့နယ်,,,,,,,,,,,,region,1,MM-16,ရခိုင်ပြည်နယ်,NONE,0.0,MM-16
+Myanmar,Maungdaw,Rakhine,,,264498,District,,,#N/A,2024,RakhineMyanmar,county,2,MM-16,မောင်တော,,,,,,,,,,,,region,1,MM-16,ရခိုင်ပြည်နယ်,NONE,0.0,MM-16
+Myanmar,Kyaukpyu,Rakhine,,,229213,District,,,#N/A,2024,RakhineMyanmar,county,2,MM-16,ကျောက်ဖြူ,,,,,,,,,,,,region,1,MM-16,ရခိုင်ပြည်နယ်,NONE,0.0,MM-16
+Myanmar,Thandwe,Rakhine,,,208676,District,,,#N/A,2024,RakhineMyanmar,county,2,MM-16,သံတွဲ,,,,,,,,,,,,region,1,MM-16,ရခိုင်ပြည်နယ်,NONE,0.0,MM-16
+Myanmar,Toungup,Rakhine,,,134290,District,,,#N/A,2024,RakhineMyanmar,county,2,MM-16,တောင်ကုတ်မြို့နယ်,,,,,,,,,,,,region,1,MM-16,ရခိုင်ပြည်နယ်,NONE,0.0,MM-16
+Myanmar,Ann,Rakhine,,,121199,District,,,#N/A,2024,RakhineMyanmar,county,2,MM-16,အမ်း,,,,,,,,,,,,region,1,MM-16,ရခိုင်ပြည်နယ်,NONE,0.0,MM-16
+Myanmar,Monywa,Sagaing,,,608592,District,Monywa,,Monywa,2024,SagaingMyanmar,county,2,MM-01,မုံရွာမြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Shwebo,Sagaing,,,808294,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ရွှေဘိုမြို့နယ်,,,,county,2,MM-01,ရွှေဘိုမြို့နယ်,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,HIGH,1.0,MM-01
+Myanmar,Kale,Sagaing,,,703241,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ကလေးဝမြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Katha,Sagaing,,,681962,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ကသာမြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Yinmabin,Sagaing,,,595226,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ယင်းမာပင်မြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Ye-U,Sagaing,,,537978,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ရေဦးမြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Sagaing,Sagaing,,,522159,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,စစ်ကိုင်းမြို့နယ်,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,HIGH,1.0,MM-01
+Myanmar,Kanbalu,Sagaing,,,412478,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ကန့်ဘလူ,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Kawlin,Sagaing,,,369361,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ကောလင်းမြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Homalin,Sagaing,,,295396,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ဟုမ္မလင်းမြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Mawlaik,Sagaing,,,211681,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,မော်လိုက်မြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Naga,Sagaing,,,121682,Self-Administered Zone,,,#N/A,2024,SagaingMyanmar,,,,,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Tamu,Sagaing,,,106127,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,တမူးမြို့နယ်,,,,locality,,MM-01,တမူး,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,HIGH,1.0,MM-01
+Myanmar,Hkamti,Sagaing,,,41413,District,,,#N/A,2024,SagaingMyanmar,county,2,MM-01,ခန္တီးမြို့နယ်,,,,,,,,,,,,region,1,MM-01,စစ်ကိုင်းတိုင်းဒေသကြီး,NONE,0.0,MM-01
+Myanmar,Taunggyi,Shan,,,683854,District,Taunggyi,,Taunggyi,2024,ShanMyanmar,county,2,MM-17,ဝဵင်းတူၼ်ႈတီး,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Kyaukme,Shan,,,709692,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,ကျောက်မဲ,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Kalaw,Shan,,,617586,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,ကလော,,,,locality,,MM-17,Kalaw,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,HIGH,1.0,MM-17
+Myanmar,Pa-O,Shan,,,495224,Self-Administered Zone,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Lashio,Shan,,,470315,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Muse,Shan,,,377450,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Tangyan,Shan,,,329542,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,တန့်ယန်း,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Tachileik,Shan,,,255917,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,တာချီလိတ်,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Kengtung,Shan,,,254800,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,ကျိုင်းတုံမြို့နယ် เมืองเชียงตุง,,,,county,2,MM-17,ကျိုင်းတုံမြို့နယ် เมืองเชียงตุง,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,HIGH,1.0,MM-17
+Myanmar,Kokang,Shan,,,248407,Self-Administered Zone,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Hopang,Shan,,,228074,District,,,#N/A,2024,ShanMyanmar,county,2,,veng' Ho Pang 富邦区,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Matman,Shan,,,209547,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,မက်မန်းမြို့နယ်,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Namphan,Shan,,,187717,District,,,#N/A,2024,ShanMyanmar,county,2,,veng' Nam Phai,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Loilem,Shan,,,175498,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,လွိုင်လင်,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Kutkai,Shan,,,171105,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Danu,Shan,,,170099,Self-Administered Zone,,,#N/A,2024,ShanMyanmar,county,2,MM-07,ဓနုဖြူမြို့နယ်,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Palaung,Shan,,,135957,Self-Administered Zone,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Mongmit,Shan,,,135581,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Monghsu,Shan,,,131420,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Mongyang,Shan,,,117108,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,မိုင်းရယ်မြို့နယ်,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Mongyawng,Shan,,,93320,District,,,#N/A,2024,ShanMyanmar,county,2,MM-17,孟尧区,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Langkho,Shan,,,93015,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Monghsat,Shan,,,90055,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Mongton,Shan,,,85457,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Mongla,Shan,,,50637,District,,,#N/A,2024,ShanMyanmar,,,,,,,,,,,,,,,,region,1,MM-17,ရှမ်းပြည်နယ်,NONE,0.0,MM-17
+Myanmar,Myeik,Tanintharyi,,,701392,District,,,#N/A,2024,TanintharyiMyanmar,,,,,,,,,,,,,,,,region,1,MM-05,တနင်္သာရီတိုင်း,NONE,0.0,MM-05
+Myanmar,Dawei,Tanintharyi,,,499084,District,,,#N/A,2024,TanintharyiMyanmar,county,2,MM-05,ထားဝယ်မြို့နယ်,,,,,,,,,,,,region,1,MM-05,တနင်္သာရီတိုင်း,NONE,0.0,MM-05
+Myanmar,Kawthaung,Tanintharyi,,,97339,District,,,#N/A,2024,TanintharyiMyanmar,,,,,,,,,,,,,,,,region,1,MM-05,တနင်္သာရီတိုင်း,NONE,0.0,MM-05
+Myanmar,Bokpyin,Tanintharyi,,,82752,District,,,#N/A,2024,TanintharyiMyanmar,county,2,MM-05,ဘုတ်ပြင်းမြို့နယ်,,,,,,,,,,,,region,1,MM-05,တနင်္သာရီတိုင်း,NONE,0.0,MM-05
+Myanmar,Dagon Myothit,Yangon,,,1044449,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-03,မြို့သစ်,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Insein,Yangon,,,906512,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,အင်းစိန်,,,,county,2,MM-06,အင်းစိန်,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,HIGH,1.0,MM-06
+Myanmar,Mingaladon,Yangon,,,793250,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,Mingaladon,,,,county,2,MM-06,Mingaladon,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,HIGH,1.0,MM-06
+Myanmar,Thanlyin,Yangon,,,745806,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,သန်လျင်,,,,county,2,MM-06,သန်လျင်,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,HIGH,1.0,MM-06
+Myanmar,Mayangon,Yangon,,,606836,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,မရမ်းကုန်း,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Twantay,Yangon,,,591240,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,တွံတေးမြို့နယ်,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Thingangyun,Yangon,,,575032,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,သင်္ဃန်းကျွန်း,,,,county,2,MM-06,သင်္ဃန်းကျွန်း,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,HIGH,1.0,MM-06
+Myanmar,Hmawbi,Yangon,,,521453,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,မှော်ဘီမြို့နယ်,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Botahtaung,Yangon,,,469495,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,ဗိုလ်တထောင်,,,,county,2,MM-06,ဗိုလ်တထောင်,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,HIGH,1.0,MM-06
+Myanmar,Hlegu,Yangon,,,327032,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,လှည်းကူးမြို့နယ်,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Taikkyi,Yangon,,,272238,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,တိုက်ကြီးမြို့နယ်,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Ahlon,Yangon,,,229600,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,အလုံ,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Kamayut,Yangon,,,158895,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,ကွမ်းခြံကုန်းမြို့နယ်,,,,,,,,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,NONE,0.0,MM-06
+Myanmar,Kyauktada,Yangon,,,128172,District,Yangon,,Yangon,2024,YangonMyanmar,county,2,MM-06,ကျောက်တံတား,,,,county,2,MM-06,ကျောက်တံတား,,,,,region,1,MM-06,ရန်ကုန်တိုင်းဒေသကြီး,HIGH,1.0,MM-06

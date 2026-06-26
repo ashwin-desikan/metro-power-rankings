@@ -1,0 +1,28 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Seychelles,La Digue,La Digue and Inner Islands,,,3430,District,La Digue,,La Digue,,La Digue and Inner IslandsSeychelles,region,1,SC-15,La Digue,,,,region,1,SC-15,La Digue,,,,,region,1,SC-15,La Digue,HIGH,1.0,SC-15
+Seychelles,Cascade,Mahé,,,6249,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-11,Cascade,,,,region,1,SC-11,Cascade,,,,,region,1,SC-11,Cascade,HIGH,1.0,SC-11
+Seychelles,Anse Étoile,Mahé,,,5413,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-03,Anse Etoile,,,,region,1,SC-03,Anse Etoile,,,,,region,1,SC-03,Anse Etoile,HIGH,1.0,SC-03
+Seychelles,Perseverance,Mahé,,,5402,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-26,Ile Perseverance 1,,,,,,,,,,,,,,,,NONE,0.0,
+Seychelles,Au Cap,Mahé,,,5106,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-04,Au Cap,,,,region,1,SC-04,Au Cap,,,,,region,1,SC-04,Au Cap,HIGH,1.0,SC-04
+Seychelles,Beau Vallon,Mahé,,,4597,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-08,Beau Vallon,,,,region,1,SC-08,Beau Vallon,,,,,region,1,SC-08,Beau Vallon,HIGH,1.0,SC-08
+Seychelles,Anse Royale,Mahé,,,4551,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-05,Anse Royale,,,,region,1,SC-05,Anse Royale,,,,,region,1,SC-05,Anse Royale,HIGH,1.0,SC-05
+Seychelles,Anse Boileau,Mahé,,,4537,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-02,Anse Boileau,,,,region,1,SC-02,Anse Boileau,,,,,region,1,SC-02,Anse Boileau,HIGH,1.0,SC-02
+Seychelles,Baie Lazare,Mahé,,,4256,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-06,Baie Lazare,,,,region,1,SC-06,Baie Lazare,,,,,region,1,SC-06,Baie Lazare,HIGH,1.0,SC-06
+Seychelles,Anse aux Pins,Mahé,,,3876,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-01,Anse Aux Pins,,,,region,1,SC-01,Anse Aux Pins,,,,,region,1,SC-01,Anse Aux Pins,HIGH,1.0,SC-01
+Seychelles,Belombre,Mahé,,,3717,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-09,Bel Air,,,,,,,,,,,,,,,,NONE,0.0,
+Seychelles,Glacis,Mahé,,,3712,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-12,Glacis,,,,region,1,SC-12,Glacis,,,,,region,1,SC-12,Glacis,HIGH,1.0,SC-12
+Seychelles,Plaisance,Mahé,,,3580,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-19,Plaisance,,,,region,1,SC-19,Plaisance,,,,,region,1,SC-19,Plaisance,HIGH,1.0,SC-19
+Seychelles,Takamaka,Mahé,,,3516,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-23,Takamaka,,,,region,1,SC-23,Takamaka,,,,,region,1,SC-23,Takamaka,HIGH,1.0,SC-23
+Seychelles,English River (La Rivière Anglaise),Mahé,,,3486,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-16,English River,,,,region,1,SC-16,English River,,,,,region,1,SC-16,English River,HIGH,1.0,SC-16
+Seychelles,Grand'Anse,Mahé,,,3386,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-02,Anse Boileau,,,,,,,,,,,,,,,,NONE,0.0,
+Seychelles,Mont Fleuri,Mahé,,,3375,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-18,Mont Fleuri,,,,region,1,SC-18,Mont Fleuri,,,,,region,1,SC-18,Mont Fleuri,HIGH,1.0,SC-18
+Seychelles,Pointe La Rue,Mahé,,,3190,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-20,Pointe La Rue,,,,region,1,SC-20,Pointe La Rue,,,,,region,1,SC-20,Pointe La Rue,HIGH,1.0,SC-20
+Seychelles,Saint Louis,Mahé,,,3146,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-22,Saint Louis,,,,region,1,SC-22,Saint Louis,,,,,region,1,SC-22,Saint Louis,HIGH,1.0,SC-22
+Seychelles,Roche Caïman,Mahé,,,2905,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-25,Roche Caiman,,,,region,1,SC-25,Roche Caiman,,,,,region,1,SC-25,Roche Caiman,HIGH,1.0,SC-25
+Seychelles,Port Glaud,Mahé,,,2787,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-21,Port Glaud,,,,region,1,SC-21,Port Glaud,,,,,region,1,SC-21,Port Glaud,HIGH,1.0,SC-21
+Seychelles,Mont Buxton,Mahé,,,2755,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-17,Mont Buxton,,,,region,1,SC-17,Mont Buxton,,,,,region,1,SC-17,Mont Buxton,HIGH,1.0,SC-17
+Seychelles,Bel Air,Mahé,,,2525,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-09,Bel Air,,,,region,1,SC-09,Bel Air,,,,,region,1,SC-09,Bel Air,HIGH,1.0,SC-09
+Seychelles,Les Mamelles,Mahé,,,2315,District,Victoria (SEY),,Victoria (SEY),,MahéSeychelles,region,1,SC-24,Les Mamelles,,,,region,1,SC-24,Les Mamelles,,,,,region,1,SC-24,Les Mamelles,HIGH,1.0,SC-24
+Seychelles,Outer Islands,Outer Islands,,,1021,Islands,,,#N/A,,Outer IslandsSeychelles,,,,Sesel,,,,,,,,,,,,,,,,NONE,0.0,
+Seychelles,Baie Sainte Anne,Praslin,,,4093,District,Praslin,,Praslin,,PraslinSeychelles,region,1,SC-14,Grand Anse Praslin,,,,,,,,,,,,,,,,NONE,0.0,
+Seychelles,Grand'Anse,Praslin,,,3521,District,Praslin,,Praslin,,PraslinSeychelles,region,1,SC-14,Grand Anse Praslin,,,,,,,,,,,,,,,,NONE,0.0,

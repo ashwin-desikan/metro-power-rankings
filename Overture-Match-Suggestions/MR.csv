@@ -1,0 +1,58 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Mauritania,Atar,Adrar,,,47364,Department,,,#N/A,,AdrarMauritania,county,2,MR-07,Atar,,,,county,2,MR-07,Atar,,,,,region,1,MR-07,Adrar أدرار,HIGH,1.0,MR-07
+Mauritania,Aoujeft,Adrar,,,13877,Department,,,#N/A,,AdrarMauritania,county,2,MR-07,Aoujeft,,,,county,2,MR-07,Aoujeft,,,,,region,1,MR-07,Adrar أدرار,HIGH,1.0,MR-07
+Mauritania,Chinguetti,Adrar,,,6549,Department,,,#N/A,,AdrarMauritania,county,2,MR-07,Chinguitti,,,,county,2,MR-07,Chinguitti,,,,,region,1,MR-07,Adrar أدرار,LOW,0.9,MR-07
+Mauritania,Ouadane,Adrar,,,3833,Department,,,#N/A,,AdrarMauritania,county,2,MR-07,Ouadane,,,,county,2,MR-07,Ouadane,,,,,region,1,MR-07,Adrar أدرار,HIGH,1.0,MR-07
+Mauritania,Kiffa,Assaba,,,146464,Department,,,#N/A,,AssabaMauritania,county,2,MR-03,Kiffa,,,,county,2,MR-03,Kiffa,,,,,region,1,MR-03,Assaba العصابة,HIGH,1.0,MR-03
+Mauritania,Kankossa,Assaba,,,117392,Department,,,#N/A,,AssabaMauritania,county,2,MR-03,Kankossa,,,,county,2,MR-03,Kankossa,,,,,region,1,MR-03,Assaba العصابة,HIGH,1.0,MR-03
+Mauritania,Barkewol,Assaba,,,109237,Department,,,#N/A,,AssabaMauritania,county,2,MR-03,Barkeol,,,,county,2,MR-03,Barkeol,,,,,region,1,MR-03,Assaba العصابة,MED,0.933,MR-03
+Mauritania,Guerou,Assaba,,,67964,Department,,,#N/A,,AssabaMauritania,,,,,,,,county,2,MR-03,Guerrou,,,,,region,1,MR-03,Assaba العصابة,MED,0.923,MR-03
+Mauritania,Boumdeid,Assaba,,,10747,Department,,,#N/A,,AssabaMauritania,county,2,MR-03,Boumdeid,,,,county,2,MR-03,Boumdeid,,,,,region,1,MR-03,Assaba العصابة,HIGH,1.0,MR-03
+Mauritania,Boghé,Brakna,,,85333,Department,,,#N/A,,BraknaMauritania,county,2,MR-05,Boghe,,,,county,2,MR-05,Boghe,,,,,region,1,MR-05,Brakna البراكنة,HIGH,1.0,MR-05
+Mauritania,Magta-Lahjar,Brakna,,,79046,Department,,,#N/A,,BraknaMauritania,,,,,,,,county,2,MR-05,Magta lahjar,,,,,region,1,MR-05,Brakna البراكنة,LOW,0.917,MR-05
+Mauritania,Aleg,Brakna,,,75856,Department,,,#N/A,,BraknaMauritania,county,2,MR-05,Aleg,,,,county,2,MR-05,Aleg,,,,,region,1,MR-05,Brakna البراكنة,HIGH,1.0,MR-05
+Mauritania,Mal [← Aleg],Brakna,,,54800,Department,,,#N/A,,BraknaMauritania,county,2,MR-05,Aleg,,,,,,,,,,,,region,1,MR-05,Brakna البراكنة,NONE,0.0,MR-05
+Mauritania,M'Bagne,Brakna,,,52865,Department,,,#N/A,,BraknaMauritania,county,2,MR-05,M'Bagne,,,,county,2,MR-05,M'Bagne,,,,,region,1,MR-05,Brakna البراكنة,HIGH,1.0,MR-05
+Mauritania,Bababé,Brakna,,,43410,Department,,,#N/A,,BraknaMauritania,county,2,MR-05,Bababe,,,,county,2,MR-05,Bababe,,,,,region,1,MR-05,Brakna البراكنة,HIGH,1.0,MR-05
+Mauritania,Nouadhibou,Dakhlet Nouadhibou,,,177077,Department,Nouadhibou,,Nouadhibou,,Dakhlet NouadhibouMauritania,county,2,MR-08,Nouadhibou,,,,county,2,MR-08,Nouadhibou,,,,,region,1,MR-08,Dakhlet Nouadhibou ولاية داخلة نواذيبو,HIGH,1.0,MR-08
+Mauritania,Chami,Dakhlet Nouadhibou,,,7382,Department,,,#N/A,,Dakhlet NouadhibouMauritania,county,2,MR-12,Chami,,,,,,,,,,,,region,1,MR-08,Dakhlet Nouadhibou ولاية داخلة نواذيبو,NONE,0.0,MR-08
+Mauritania,M'Bout,Gorgol,,,132464,Department,,,#N/A,,GorgolMauritania,county,2,MR-04,M'bout,,,,county,2,MR-04,M'bout,,,,,region,1,MR-04,Gorgol كوركول,HIGH,1.0,MR-04
+Mauritania,Kaédi,Gorgol,,,120660,Department,,,#N/A,,GorgolMauritania,county,2,MR-04,Kaedi,,,,county,2,MR-04,Kaedi,,,,,region,1,MR-04,Gorgol كوركول,HIGH,1.0,MR-04
+Mauritania,Maghama,Gorgol,,,90891,Department,,,#N/A,,GorgolMauritania,county,2,MR-04,Maghama,,,,county,2,MR-04,Maghama,,,,,region,1,MR-04,Gorgol كوركول,HIGH,1.0,MR-04
+Mauritania,Monguel,Gorgol,,,57208,Department,,,#N/A,,GorgolMauritania,county,2,MR-04,Monguel,,,,county,2,MR-04,Monguel,,,,,region,1,MR-04,Gorgol كوركول,HIGH,1.0,MR-04
+Mauritania,Lexeiba 1 [← Kaédi],Gorgol,,,41267,Department,,,#N/A,,GorgolMauritania,county,2,MR-04,Kaedi,,,,,,,,,,,,region,1,MR-04,Gorgol كوركول,NONE,0.0,MR-04
+Mauritania,Ghabou [← Sélibabi],Guidimaka,,,113669,Department,,,#N/A,,GuidimakaMauritania,county,2,MR-10,Ghabou,,,,,,,,,,,,region,1,MR-10,Guidimaka غيديماغا,NONE,0.0,MR-10
+Mauritania,Sélibabi,Guidimaka,,,99118,Department,,,#N/A,,GuidimakaMauritania,county,2,MR-10,Selibabi,,,,county,2,MR-10,Selibabi,,,,,region,1,MR-10,Guidimaka غيديماغا,HIGH,1.0,MR-10
+Mauritania,Ould Yengé,Guidimaka,,,92582,Department,,,#N/A,,GuidimakaMauritania,county,2,MR-10,Ould Yenge,,,,county,2,MR-10,Ould Yenge,,,,,region,1,MR-10,Guidimaka غيديماغا,HIGH,1.0,MR-10
+Mauritania,Wompou [← Sélibabi],Guidimaka,,,57706,Department,,,#N/A,,GuidimakaMauritania,county,2,MR-10,Selibabi,,,,,,,,,,,,region,1,MR-10,Guidimaka غيديماغا,NONE,0.0,MR-10
+Mauritania,Bassikounou,Hodh Ech Chargui,,,123337,Department,,,#N/A,,Hodh Ech CharguiMauritania,,,,,,,,county,2,MR-01,Basseknou,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,LOW,0.8,MR-01
+Mauritania,Néma,Hodh Ech Chargui,,,121408,Department,,,#N/A,,Hodh Ech CharguiMauritania,,,,,,,,,,,,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,NONE,0.0,MR-01
+Mauritania,Timbedra,Hodh Ech Chargui,,,112796,Department,,,#N/A,,Hodh Ech CharguiMauritania,county,2,MR-01,Timbedgha,,,,county,2,MR-01,Timbedgha,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,LOW,0.824,MR-01
+Mauritania,Djiguenni,Hodh Ech Chargui,,,91605,Department,,,#N/A,,Hodh Ech CharguiMauritania,county,2,MR-01,Djigueni,,,,county,2,MR-01,Djigueni,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,MED,0.941,MR-01
+Mauritania,Amourj,Hodh Ech Chargui,,,78148,Department,,,#N/A,,Hodh Ech CharguiMauritania,county,2,MR-01,Amourj,,,,county,2,MR-01,Amourj,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,HIGH,1.0,MR-01
+Mauritania,Adel Bagrou [← Amourj],Hodh Ech Chargui,,,72855,Department,,,#N/A,,Hodh Ech CharguiMauritania,county,2,MR-01,Amourj,,,,,,,,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,NONE,0.0,MR-01
+Mauritania,Oualata,Hodh Ech Chargui,,,12842,Department,,,#N/A,,Hodh Ech CharguiMauritania,county,2,MR-01,Oualata,,,,county,2,MR-01,Oualata,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,HIGH,1.0,MR-01
+Mauritania,N'Beiket Lehwach [← Oualata],Hodh Ech Chargui,,,12652,Department,,,#N/A,,Hodh Ech CharguiMauritania,county,2,MR-01,Oualata,,,,,,,,,,,,region,1,MR-01,Hodh Ech Chargui الحوض الشرقي,NONE,0.0,MR-01
+Mauritania,Kobenni,Hodh El Gharbi,,,135158,Department,,,#N/A,,Hodh El GharbiMauritania,,,,,,,,county,2,MR-02,Koubenni,,,,,region,1,MR-02,Hodh El Gharbi الحوض الغربي,MED,0.933,MR-02
+Mauritania,Tintane,Hodh El Gharbi,,,98188,Department,,,#N/A,,Hodh El GharbiMauritania,county,2,MR-02,Tintane,,,,county,2,MR-02,Tintane,,,,,region,1,MR-02,Hodh El Gharbi الحوض الغربي,HIGH,1.0,MR-02
+Mauritania,Aïoun El Atrouss,Hodh El Gharbi,,,78229,Department,,,#N/A,,Hodh El GharbiMauritania,,,,,,,,county,2,MR-02,Eayoune El Atrous,,,,,region,1,MR-02,Hodh El Gharbi الحوض الغربي,LOW,0.848,MR-02
+Mauritania,Touil [← Tintane],Hodh El Gharbi,,,47578,Department,,,#N/A,,Hodh El GharbiMauritania,county,2,MR-02,Tintane,,,,,,,,,,,,region,1,MR-02,Hodh El Gharbi الحوض الغربي,NONE,0.0,MR-02
+Mauritania,Tamchekett,Hodh El Gharbi,,,43936,Department,,,#N/A,,Hodh El GharbiMauritania,county,2,MR-02,Tamchekett,,,,county,2,MR-02,Tamchekett,,,,,region,1,MR-02,Hodh El Gharbi الحوض الغربي,HIGH,1.0,MR-02
+Mauritania,Akjoujt,Inchiri,,,18138,Department,,,#N/A,,InchiriMauritania,county,2,MR-12,Akjoujt,,,,county,2,MR-12,Akjoujt,,,,,region,1,MR-12,Inchiri إينشيري,HIGH,1.0,MR-12
+Mauritania,Bennechab [← Akjoujt],Inchiri,,,11346,Department,,,#N/A,,InchiriMauritania,county,2,MR-12,Akjoujt,,,,,,,,,,,,region,1,MR-12,Inchiri إينشيري,NONE,0.0,MR-12
+Mauritania,Nouakchott-Sud,Nouakchott,,,627415,Capital Region,Nouakchott,,Nouakchott,,NouakchottMauritania,region,1,MR-15,نواكشوط الجنوبية,,,,,,,,,,,,region,1,MR-14,نواكشوط الشمالية,NONE,0.0,MR-14
+Mauritania,Nouakchott-Nord,Nouakchott,,,614465,Capital Region,Nouakchott,,Nouakchott,,NouakchottMauritania,region,1,MR-14,نواكشوط الشمالية,,,,region,1,MR-14,نواكشوط الشمالية,,,,,region,1,MR-14,نواكشوط الشمالية,HIGH,1.0,MR-14
+Mauritania,Nouakchott-Ouest,Nouakchott,,,204881,Capital Region,Nouakchott,,Nouakchott,,NouakchottMauritania,region,1,MR-13,Nouakchott Ouest نواكشوط الغربية,,,,,,,,,,,,region,1,MR-14,نواكشوط الشمالية,NONE,0.0,MR-14
+Mauritania,Moudjeria,Tagant,,,57936,Department,,,#N/A,,TagantMauritania,,,,,,,,,,,,,,,,region,1,MR-09,Tagant تكانت,NONE,0.0,MR-09
+Mauritania,Tidjikdja,Tagant,,,52334,Department,,,#N/A,,TagantMauritania,,,,,,,,,,,,,,,,region,1,MR-09,Tagant تكانت,NONE,0.0,MR-09
+Mauritania,Tichitt,Tagant,,,4490,Department,,,#N/A,,TagantMauritania,county,2,MR-09,Tichitt,,,,county,2,MR-09,Tichitt,,,,,region,1,MR-09,Tagant تكانت,HIGH,1.0,MR-09
+Mauritania,Zouerate,Tiris Zemmour,,,62380,Department,,,#N/A,,Tiris ZemmourMauritania,county,2,MR-11,Zoueratt,,,,county,2,MR-11,Zoueratt,,,,,region,1,MR-11,Tiris Zemmour تيرس زمور,LOW,0.875,MR-11
+Mauritania,F'Derick,Tiris Zemmour,,,11623,Department,,,#N/A,,Tiris ZemmourMauritania,county,2,MR-11,F'Derick,,,,county,2,MR-11,F'Derick,,,,,region,1,MR-11,Tiris Zemmour تيرس زمور,HIGH,1.0,MR-11
+Mauritania,Birmoguren,Tiris Zemmour,,,5126,Department,,,#N/A,,Tiris ZemmourMauritania,,,,,,,,county,2,MR-11,Bir Moghrein,,,,,region,1,MR-11,Tiris Zemmour تيرس زمور,LOW,0.818,MR-11
+Mauritania,Rosso,Trarza,,,70403,Department,,,#N/A,,TrarzaMauritania,county,2,MR-06,Rosso,,,,county,2,MR-06,Rosso,,,,,region,1,MR-06,الترارزة,HIGH,1.0,MR-06
+Mauritania,Boutilimit,Trarza,,,66999,Department,,,#N/A,,TrarzaMauritania,county,2,MR-06,Boutilimitt,,,,county,2,MR-06,Boutilimitt,,,,,region,1,MR-06,الترارزة,HIGH,1.0,MR-06
+Mauritania,R'Kiz,Trarza,,,49564,Department,,,#N/A,,TrarzaMauritania,county,2,MR-06,R'Kiz,,,,county,2,MR-06,R'Kiz,,,,,region,1,MR-06,الترارزة,HIGH,1.0,MR-06
+Mauritania,Tékane [← R'Kiz],Trarza,,,43736,Department,,,#N/A,,TrarzaMauritania,county,2,MR-06,R'Kiz,,,,,,,,,,,,region,1,MR-06,الترارزة,NONE,0.0,MR-06
+Mauritania,Mederdra,Trarza,,,35108,Department,,,#N/A,,TrarzaMauritania,county,2,MR-06,Mederdra,,,,county,2,MR-06,Mederdra,,,,,region,1,MR-06,الترارزة,HIGH,1.0,MR-06
+Mauritania,Keurmacen,Trarza,,,33488,Department,,,#N/A,,TrarzaMauritania,,,,,,,,county,2,MR-06,Keur Macene,,,,,region,1,MR-06,الترارزة,LOW,0.9,MR-06
+Mauritania,Ouad Naga,Trarza,,,24605,Department,,,#N/A,,TrarzaMauritania,county,2,MR-06,Ouad Naga,,,,county,2,MR-06,Ouad Naga,,,,,region,1,MR-06,الترارزة,HIGH,1.0,MR-06

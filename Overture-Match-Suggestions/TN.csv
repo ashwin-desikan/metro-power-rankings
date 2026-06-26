@@ -1,280 +1,280 @@
-﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Tunisia,La Soukra,Ariana,,,152275,Delegation,Tunis,,Tunis,,ArianaTunisia,,,,,,,,,,,,,region,1,TN-12,ولاية أريانة,NONE,0.0,TN-12
-Tunisia,Raoued,Ariana,,,138205,Delegation,Tunis,,Tunis,,ArianaTunisia,,,,,locality,,TN-12,رواد,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
-Tunisia,Ariana Ville,Ariana,,,122341,Delegation,Tunis,,Tunis,,ArianaTunisia,,,,,locality,,TN-12,أريانة المدينة,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
-Tunisia,Mnihla,Ariana,,,116653,Delegation,Tunis,,Tunis,,ArianaTunisia,,,,,locality,,TN-12,المنيهلة,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
-Tunisia,Cité Ettadhamen,Ariana,,,84923,Delegation,Tunis,,Tunis,,ArianaTunisia,,,,,locality,,TN-12,حي التضامن,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
-Tunisia,Kalâat El Andalous,Ariana,,,28120,Delegation,Tunis,,Tunis,,ArianaTunisia,,,,,,,,,,,,,region,1,TN-12,ولاية أريانة,NONE,0.0,TN-12
-Tunisia,Sidi Thabet,Ariana,,,26906,Delegation,Tunis,,Tunis,,ArianaTunisia,,,,,locality,,TN-12,سيدي ثابت,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
-Tunisia,Béja Nord,Béja,,,75175,Delegation,Béja,,Béja,,BéjaTunisia,,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
-Tunisia,Béja Sud,Béja,,,38563,Delegation,Béja,,Béja,,BéjaTunisia,,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
-Tunisia,Nefza,Béja,,,45630,Delegation,,,#N/A,,BéjaTunisia,,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
-Tunisia,Medjez El Bab,Béja,,,44749,Delegation,,,#N/A,,BéjaTunisia,,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
-Tunisia,Testour,Béja,,,34852,Delegation,,,#N/A,,BéjaTunisia,,,,,locality,,TN-31,تستور,,,,,region,1,TN-31,ولاية باجة,HIGH,1.0,TN-31
-Tunisia,Téboursouk,Béja,,,21130,Delegation,,,#N/A,,BéjaTunisia,,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
-Tunisia,Amdoun,Béja,,,20664,Delegation,,,#N/A,,BéjaTunisia,,,,,locality,,TN-31,عمدون,,,,,region,1,TN-31,ولاية باجة,HIGH,1.0,TN-31
-Tunisia,Goubellat,Béja,,,15616,Delegation,,,#N/A,,BéjaTunisia,,,,,locality,,TN-31,قبلاط,,,,,region,1,TN-31,ولاية باجة,HIGH,1.0,TN-31
-Tunisia,Thibar [Tibar],Béja,,,11914,Delegation,,,#N/A,,BéjaTunisia,,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
-Tunisia,El Mourouj,Ben Arous,,,119954,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,locality,,TN-13,المروج 3,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
-Tunisia,Fouchana,Ben Arous,,,87819,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,locality,,TN-13,فوشانة,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
-Tunisia,Mohamedia,Ben Arous,,,81952,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,locality,,TN-13,المحمدية,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
-Tunisia,Radès,Ben Arous,,,71683,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,locality,,TN-13,رادس,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
-Tunisia,Medina Jedida [La Nouvelle Medina ],Ben Arous,,,67722,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
-Tunisia,Mornag,Ben Arous,,,64781,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,locality,,TN-13,مرناق,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
-Tunisia,Bou Mhel El Bassatine,Ben Arous,,,50005,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
-Tunisia,Hammam Lif,Ben Arous,,,44057,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
-Tunisia,Hammam Chott,Ben Arous,,,36977,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,locality,,TN-13,حمام الشط,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
-Tunisia,Ezzahra,Ben Arous,,,36170,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
-Tunisia,Ben Arous,Ben Arous,,,28502,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,region,1,TN-13,ولاية بن عروس,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
-Tunisia,Mégrine,Ben Arous,,,27839,Delegation,Tunis,,Tunis,,Ben ArousTunisia,,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
-Tunisia,Bizerte Nord,Bizerte,,,96679,Delegation,Bizerte,,Bizerte,,BizerteTunisia,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
-Tunisia,Bizerte Sud,Bizerte,,,63939,Delegation,Bizerte,,Bizerte,,BizerteTunisia,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
-Tunisia,Menzel Bourguiba,Bizerte,,,66522,Delegation,,,#N/A,,BizerteTunisia,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
-Tunisia,Ras Jebel,Bizerte,,,62837,Delegation,,,#N/A,,BizerteTunisia,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
-Tunisia,Menzel Jemil,Bizerte,,,51859,Delegation,,,#N/A,,BizerteTunisia,,,,,locality,,TN-23,منزل جميل,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
-Tunisia,Mateur,Bizerte,,,46033,Delegation,,,#N/A,,BizerteTunisia,,,,,locality,,TN-23,ماطر,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
-Tunisia,Sejnane,Bizerte,,,38342,Delegation,,,#N/A,,BizerteTunisia,,,,,locality,,TN-23,سجنان,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
-Tunisia,El Alia,Bizerte,,,28867,Delegation,,,#N/A,,BizerteTunisia,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
-Tunisia,Ghezala,Bizerte,,,26186,Delegation,,,#N/A,,BizerteTunisia,,,,,locality,,TN-23,غزالة,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
-Tunisia,Tinja,Bizerte,,,26003,Delegation,,,#N/A,,BizerteTunisia,,,,,locality,,TN-23,تينجة,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
-Tunisia,Joumine [Djoumine],Bizerte,,,25097,Delegation,,,#N/A,,BizerteTunisia,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
-Tunisia,Zarzouna,Bizerte,,,24929,Delegation,,,#N/A,,BizerteTunisia,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
-Tunisia,Utique,Bizerte,,,20869,Delegation,,,#N/A,,BizerteTunisia,,,,,locality,,TN-23,أوتيك,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
-Tunisia,Ghar El Melh,Bizerte,,,20048,Delegation,,,#N/A,,BizerteTunisia,,,,,locality,,TN-23,غار الملح,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
-Tunisia,Gabès Sud,Gabès,,,84432,Delegation,Gabès,,Gabès,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Gabès Médina,Gabès,,,47441,Delegation,Gabès,,Gabès,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Gabès Ouest,Gabès,,,35209,Delegation,Gabès,,Gabès,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,El Hamma,Gabès,,,60937,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Mareth,Gabès,,,54661,Delegation,,,#N/A,,GabèsTunisia,,,,,locality,,TN-81,مارث,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
-Tunisia,Ghannouch,Gabès,,,32355,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Habib Thameur Bouatouch [← El Hamma],Gabès,,,21760,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Oudhref [← Métouia],Gabès,,,16478,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Nouvelle Matmata,Gabès,,,14257,Delegation,,,#N/A,,GabèsTunisia,,,,,locality,,TN-81,مطماطة الجديدة,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
-Tunisia,Métouia,Gabès,,,13407,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Dkhilet Toujane [← Mareth],Gabès,,,11023,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
-Tunisia,Menzel El Habib,Gabès,,,9455,Delegation,,,#N/A,,GabèsTunisia,,,,,locality,,TN-81,منزل الحبيب,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
-Tunisia,Matmata,Gabès,,,4075,Delegation,,,#N/A,,GabèsTunisia,,,,,locality,,TN-81,مطماطة,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
-Tunisia,Métlaoui,Gafsa,,,39142,Delegation,Métlaoui,,Métlaoui,,GafsaTunisia,,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
-Tunisia,Gafsa Sud,Gafsa,,,109748,Delegation,,,#N/A,,GafsaTunisia,,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
-Tunisia,El Ksar,Gafsa,,,39631,Delegation,,,#N/A,,GafsaTunisia,,,,,locality,,TN-71,القصر,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
-Tunisia,Redeyef,Gafsa,,,26906,Delegation,,,#N/A,,GafsaTunisia,,,,,locality,,TN-71,الرديف,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
-Tunisia,Sened,Gafsa,,,22725,Delegation,,,#N/A,,GafsaTunisia,,,,,locality,,TN-71,السند,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
-Tunisia,Moularès [Oum El Araies],Gafsa,,,21515,Delegation,,,#N/A,,GafsaTunisia,,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
-Tunisia,El Guettar,Gafsa,,,20820,Delegation,,,#N/A,,GafsaTunisia,,,,,locality,,TN-71,القطار,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
-Tunisia,Zannouch [← Sened],Gafsa,,,16429,Delegation,,,#N/A,,GafsaTunisia,,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
-Tunisia,Mdhila,Gafsa,,,15950,Delegation,,,#N/A,,GafsaTunisia,,,,,locality,,TN-71,Mdhila,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
-Tunisia,Belkhir,Gafsa,,,15032,Delegation,,,#N/A,,GafsaTunisia,,,,,locality,,TN-71,بلخير,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
-Tunisia,Sidi Aïch,Gafsa,,,11821,Delegation,,,#N/A,,GafsaTunisia,,,,,locality,,TN-71,سيدي عيش,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
-Tunisia,Gafsa Nord,Gafsa,,,10630,Delegation,,,#N/A,,GafsaTunisia,,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
-Tunisia,Sidi Boubaker [← Moularès],Gafsa,,,4255,Delegation,,,#N/A,,GafsaTunisia,,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
-Tunisia,Tabarka,Jendouba,,,54151,Delegation,Tabarka,,Tabarka,,JendoubaTunisia,,,,,locality,,TN-32,طبرقة,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
-Tunisia,Jendouba [Jendouba Sud],Jendouba,,,77217,Delegation,,,#N/A,,JendoubaTunisia,,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
-Tunisia,Ghardimaou,Jendouba,,,63232,Delegation,,,#N/A,,JendoubaTunisia,,,,,locality,,TN-32,غار الدماء,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
-Tunisia,Fernana,Jendouba,,,45895,Delegation,,,#N/A,,JendoubaTunisia,,,,,locality,,TN-32,فرنانة,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
-Tunisia,Jendouba Nord,Jendouba,,,39225,Delegation,,,#N/A,,JendoubaTunisia,,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
-Tunisia,Balta - Bou Aouane,Jendouba,,,37486,Delegation,,,#N/A,,JendoubaTunisia,,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
-Tunisia,Bou Salem,Jendouba,,,36482,Delegation,,,#N/A,,JendoubaTunisia,,,,,locality,,TN-32,بوسالم الشمالية,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
-Tunisia,Aïn Draham,Jendouba,,,33801,Delegation,,,#N/A,,JendoubaTunisia,,,,,locality,,TN-32,عين دراهم المدينة,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
-Tunisia,Oued Meliz,Jendouba,,,17365,Delegation,,,#N/A,,JendoubaTunisia,,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
-Tunisia,Kairouan Nord,Kairouan,,,106741,Delegation,Kairouan,,Kairouan,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Kairouan Sud,Kairouan,,,103013,Delegation,Kairouan,,Kairouan,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Sbikha,Kairouan,,,75975,Delegation,,,#N/A,,KairouanTunisia,,,,,locality,,TN-41,السبيخة,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
-Tunisia,Bou Hajla,Kairouan,,,75054,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Haffouz,Kairouan,,,39605,Delegation,,,#N/A,,KairouanTunisia,,,,,locality,,TN-41,حفوز,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
-Tunisia,Hajeb el Ayoun,Kairouan,,,37407,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Chebika,Kairouan,,,36900,Delegation,,,#N/A,,KairouanTunisia,,,,,locality,,TN-41,الشبيكة,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
-Tunisia,Echrarda,Kairouan,,,29065,Delegation,,,#N/A,,KairouanTunisia,,,,,locality,,TN-41,الشراردة,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
-Tunisia,El Alâa,Kairouan,,,28530,Delegation,,,#N/A,,KairouanTunisia,,,,,locality,,TN-41,العلاء,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
-Tunisia,Oueslatia,Kairouan,,,28053,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Nasrallah,Kairouan,,,20167,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Menzel Mehiri [← Nasrallah],Kairouan,,,13077,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Aïn Djeloula [← Oueslatia],Kairouan,,,6759,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
-Tunisia,Sbeïtla,Kasserine,,,80135,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,سبيطلة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,Kasserine Nord,Kasserine,,,70454,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
-Tunisia,Fériana,Kasserine,,,55764,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,فريانة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,Foussana,Kasserine,,,43550,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,فوسانة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,Sbiba,Kasserine,,,40855,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,سبيبة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,Thala,Kasserine,,,39547,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,تالة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,Majel Bel Abbès,Kasserine,,,24485,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
-Tunisia,Ezzouhour,Kasserine,,,23030,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
-Tunisia,Kasserine Sud,Kasserine,,,22320,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
-Tunisia,Hassi El Ferid,Kasserine,,,21127,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,حاسي الفريد,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,El Ayoun,Kasserine,,,19828,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,العيون,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,Jedelienne,Kasserine,,,12112,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
-Tunisia,Haïdra,Kasserine,,,10918,Delegation,,,#N/A,,KasserineTunisia,,,,,locality,,TN-42,حيدرة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
-Tunisia,Kébili Nord,Kébili,,,34441,Delegation,,,#N/A,,KébiliTunisia,,,,,locality,,TN-73,قبلي الشمالية,,,,,region,1,TN-73,ولاية قبلي,HIGH,1.0,TN-73
-Tunisia,Kébili Sud,Kébili,,,32964,Delegation,,,#N/A,,KébiliTunisia,,,,,locality,,TN-73,قبلي الجنوبية,,,,,region,1,TN-73,ولاية قبلي,HIGH,1.0,TN-73
-Tunisia,Douz Nord,Kébili,,,31401,Delegation,,,#N/A,,KébiliTunisia,,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
-Tunisia,Souk Lahad [Souk El Ahed],Kébili,,,29576,Delegation,,,#N/A,,KébiliTunisia,,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
-Tunisia,Douz Sud,Kébili,,,20049,Delegation,,,#N/A,,KébiliTunisia,,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
-Tunisia,Faouar,Kébili,,,17058,Delegation,,,#N/A,,KébiliTunisia,,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
-Tunisia,Rjim Maatoug [← Faouar],Kébili,,,5314,Delegation,,,#N/A,,KébiliTunisia,,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
-Tunisia,Kef Est,Kef,,,42680,Delegation,,,#N/A,,KefTunisia,,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
-Tunisia,Kef Ouest,Kef,,,38300,Delegation,,,#N/A,,KefTunisia,,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
-Tunisia,Dahmani,Kef,,,27504,Delegation,,,#N/A,,KefTunisia,,,,,locality,,TN-33,الدهماني,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
-Tunisia,Tajerouine,Kef,,,27052,Delegation,,,#N/A,,KefTunisia,,,,,locality,,TN-33,تاجروين,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
-Tunisia,Sers,Kef,,,22836,Delegation,,,#N/A,,KefTunisia,,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
-Tunisia,Nebeur,Kef,,,19657,Delegation,,,#N/A,,KefTunisia,,,,,locality,,TN-33,نبر,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
-Tunisia,Sakiet Sidi Youssef,Kef,,,16638,Delegation,,,#N/A,,KefTunisia,,,,,locality,,TN-33,ساقية سيدي يوسف,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
-Tunisia,Kalaat Senan,Kef,,,15980,Delegation,,,#N/A,,KefTunisia,,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
-Tunisia,El Ksour,Kef,,,14821,Delegation,,,#N/A,,KefTunisia,,,,,locality,,TN-33,القصور,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
-Tunisia,Jérissa,Kef,,,9352,Delegation,,,#N/A,,KefTunisia,,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
-Tunisia,Kalâat Khasba,Kef,,,6517,Delegation,,,#N/A,,KefTunisia,,,,,locality,,TN-33,القلعة الخصبة,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
-Tunisia,Touiref [← Nebeur],Kef,,,6044,Delegation,,,#N/A,,KefTunisia,,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
-Tunisia,Mahdia,Mahdia,,,76041,Delegation,,,#N/A,,MahdiaTunisia,,,,,region,1,TN-53,ولاية المهدية,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
-Tunisia,El Jem,Mahdia,,,56029,Delegation,,,#N/A,,MahdiaTunisia,,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
-Tunisia,Essouassi,Mahdia,,,55001,Delegation,,,#N/A,,MahdiaTunisia,,,,,locality,,TN-53,السواسي,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
-Tunisia,Sidi Alouane,Mahdia,,,40376,Delegation,,,#N/A,,MahdiaTunisia,,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
-Tunisia,Bou Merdes,Mahdia,,,38090,Delegation,,,#N/A,,MahdiaTunisia,,,,,locality,,TN-53,بومرداس,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
-Tunisia,Ksour Essef,Mahdia,,,37453,Delegation,,,#N/A,,MahdiaTunisia,,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
-Tunisia,Chebba,Mahdia,,,31138,Delegation,,,#N/A,,MahdiaTunisia,,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
-Tunisia,Chorbane,Mahdia,,,24755,Delegation,,,#N/A,,MahdiaTunisia,,,,,locality,,TN-53,شربان,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
-Tunisia,Melloulèche,Mahdia,,,24635,Delegation,,,#N/A,,MahdiaTunisia,,,,,locality,,TN-53,ملولش,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
-Tunisia,Ouled Chamekh,Mahdia,,,23907,Delegation,,,#N/A,,MahdiaTunisia,,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
-Tunisia,El Bradâa [← Ksour Essef],Mahdia,,,17271,Delegation,,,#N/A,,MahdiaTunisia,,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
-Tunisia,Rejiche [← Mahdia],Mahdia,,,11332,Delegation,,,#N/A,,MahdiaTunisia,,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
-Tunisia,Hebira,Mahdia,,,10465,Delegation,,,#N/A,,MahdiaTunisia,,,,,locality,,TN-53,هبيرة,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
-Tunisia,Douar Hicher,Manouba,,,92731,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,locality,,TN-14,دوار ھیشر,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
-Tunisia,Oued Ellil,Manouba,,,78767,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,locality,,TN-14,وادي اللیل,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
-Tunisia,Manouba,Manouba,,,66116,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,locality,,TN-14,منوبة,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
-Tunisia,Djedeida,Manouba,,,50225,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,,,,,,,,,region,1,TN-14,ولاية منوبة,NONE,0.0,TN-14
-Tunisia,Mornaguia,Manouba,,,49506,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,locality,,TN-14,المرناقية,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
-Tunisia,Tebourba,Manouba,,,47018,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,locality,,TN-14,طبربة,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
-Tunisia,El Batan,Manouba,,,20812,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,,,,,,,,,region,1,TN-14,ولاية منوبة,NONE,0.0,TN-14
-Tunisia,Borj El Amri,Manouba,,,18964,Delegation,Tunis,,Tunis,,ManoubaTunisia,,,,,locality,,TN-14,برج العامري,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
-Tunisia,Ben Gardane,Médenine,,,87032,Delegation,Ben Guerdane,,Ben Guerdane,,MédenineTunisia,,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
-Tunisia,Djerba Houmt Souk,Médenine,,,84165,Delegation,Djerba,,Djerba,,MédenineTunisia,,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
-Tunisia,Djerba Midoun,Médenine,,,72915,Delegation,Djerba,,Djerba,,MédenineTunisia,,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
-Tunisia,Djerba Ajim,Médenine,,,25085,Delegation,Djerba,,Djerba,,MédenineTunisia,,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
-Tunisia,Zarzis,Médenine,,,78428,Delegation,Zarzis,,Zarzis,,MédenineTunisia,,,,,locality,,TN-82,جرجيس,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
-Tunisia,Médenine Nord,Médenine,,,60331,Delegation,,,#N/A,,MédenineTunisia,,,,,locality,,TN-82,مدنين الشمالية,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
-Tunisia,Médenine Sud,Médenine,,,60127,Delegation,,,#N/A,,MédenineTunisia,,,,,locality,,TN-82,مدنين الجنوبية,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
-Tunisia,Sidi Makhlouf [Sidi Makhloulf],Médenine,,,26709,Delegation,,,#N/A,,MédenineTunisia,,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
-Tunisia,Beni Khedache,Médenine,,,25276,Delegation,,,#N/A,,MédenineTunisia,,,,,locality,,TN-82,بني خداش,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
-Tunisia,Monastir,Monastir,,,119379,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,region,1,TN-52,ولاية المنستير,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
-Tunisia,Moknine,Monastir,,,97646,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,locality,,TN-52,مكنين,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
-Tunisia,Jemmal,Monastir,,,71554,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
-Tunisia,Ksar Hellal,Monastir,,,55119,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,locality,,TN-52,قصرهلال,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
-Tunisia,Bekalta,Monastir,,,41508,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
-Tunisia,Ksibet El Médiouni,Monastir,,,38091,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,locality,,TN-52,قصيبة المديوني,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
-Tunisia,Bembla,Monastir,,,35874,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,locality,,TN-52,بنبلة,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
-Tunisia,Zéramdine,Monastir,,,32929,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
-Tunisia,Sahline,Monastir,,,30949,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
-Tunisia,Sayada - Lamta - Bouhjar,Monastir,,,26186,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
-Tunisia,Ouerdanine,Monastir,,,23579,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
-Tunisia,Téboulba,Monastir,,,20397,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,locality,,TN-52,طبلبة,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
-Tunisia,Beni Hassen,Monastir,,,14636,Delegation,Sousse,,Sousse,,MonastirTunisia,,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
-Tunisia,Soliman,Nabeul,,,63301,Delegation,Tunis,,Tunis,,NabeulTunisia,,,,,locality,,TN-21,سليمان,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
-Tunisia,Hammamet,Nabeul,,,105820,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Nabeul,Nabeul,,,83731,Delegation,,,#N/A,,NabeulTunisia,,,,,region,1,TN-21,ولاية نابل,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
-Tunisia,Grombalia,Nabeul,,,76484,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Korba,Nabeul,,,75454,Delegation,,,#N/A,,NabeulTunisia,,,,,locality,,TN-21,قربة,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
-Tunisia,Menzel Temime,Nabeul,,,70780,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Kélibia,Nabeul,,,62646,Delegation,,,#N/A,,NabeulTunisia,,,,,locality,,TN-21,قليبية,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
-Tunisia,Dar Châabane El Fehri,Nabeul,,,52122,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Béni Khiar,Nabeul,,,48632,Delegation,,,#N/A,,NabeulTunisia,,,,,locality,,TN-21,بني خيار,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
-Tunisia,El Haouaria,Nabeul,,,43517,Delegation,,,#N/A,,NabeulTunisia,,,,,locality,,TN-21,الهوارية,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
-Tunisia,Menzel Bouzelfa,Nabeul,,,41227,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Béni Khalled,Nabeul,,,41187,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Bou Argoub,Nabeul,,,33467,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,El Mida,Nabeul,,,29553,Delegation,,,#N/A,,NabeulTunisia,,,,,locality,,TN-21,الميدة,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
-Tunisia,Takelsa,Nabeul,,,23976,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Hammam Ghezèze,Nabeul,,,16925,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
-Tunisia,Sfax Sud,Sfax,,,130944,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
-Tunisia,Sakiet Eddaïer,Sfax,,,124427,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,ساقية الدائر,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Sfax Ouest,Sfax,,,112997,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
-Tunisia,Sakiet Ezzit,Sfax,,,98429,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,ساقية الزيت,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Sfax Ville,Sfax,,,97457,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
-Tunisia,Thyna,Sfax,,,76937,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,طينة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Bir Ali Ben Khalifa [Bir Ali Ben Khélifa],Sfax,,,54293,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
-Tunisia,Jebiniana,Sfax,,,53197,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,جبنيانة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,El Hencha,Sfax,,,53118,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,الحنشة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Agareb,Sfax,,,44082,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,عقارب,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Menzel Chaker,Sfax,,,39255,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,منزل شاكر,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Skhira,Sfax,,,38209,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,الصخيرة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Mahrès,Sfax,,,36432,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
-Tunisia,El Amra,Sfax,,,31824,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,locality,,TN-61,العامرة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Graïba [Ghraïba],Sfax,,,16563,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
-Tunisia,Kerkennah,Sfax,,,16395,Delegation,Sfax,,Sfax,,SfaxTunisia,,,,,county,2,TN-61,قرقنة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
-Tunisia,Sidi Bouzid Ouest,Sidi Bouzid,,,68305,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,سيدي بوزيد الغربية,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,Sidi Bouzid Est,Sidi Bouzid,,,47587,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
-Tunisia,Regueb,Sidi Bouzid,,,45318,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,الرقاب,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,Jilma,Sidi Bouzid,,,42835,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
-Tunisia,Bir El Hafey,Sidi Bouzid,,,41683,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,بئر الحفي,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,Sidi Ali Ben Aoun,Sidi Bouzid,,,30564,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,سيدي علي بن عون,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,Menzel Bouzaiane,Sidi Bouzid,,,26927,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,منزل بوزيان,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,Mezzouna,Sidi Bouzid,,,26337,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,المزونة,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,Meknassy,Sidi Bouzid,,,24901,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
-Tunisia,Essaïda [← Regueb],Sidi Bouzid,,,24625,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
-Tunisia,Souk Jedid,Sidi Bouzid,,,23424,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,سوق الجديد,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,Cebbala Ouled Asker [Cebalet],Sidi Bouzid,,,21722,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
-Tunisia,Ouled Haffouz,Sidi Bouzid,,,19870,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,locality,,TN-43,أولاد حفوز,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
-Tunisia,El Hichria [← Sidi Bouzid Ouest / Est],Sidi Bouzid,,,14135,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
-Tunisia,Siliana Nord,Siliana,,,33573,Delegation,,,#N/A,,SilianaTunisia,,,,,locality,,TN-34,سليانة الشمالية,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
-Tunisia,Siliana Sud,Siliana,,,32946,Delegation,,,#N/A,,SilianaTunisia,,,,,locality,,TN-34,سليانة الجنوبية,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
-Tunisia,Makthar,Siliana,,,29021,Delegation,,,#N/A,,SilianaTunisia,,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
-Tunisia,Rouhia,Siliana,,,24700,Delegation,,,#N/A,,SilianaTunisia,,,,,locality,,TN-34,الروحية,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
-Tunisia,Bou Arada,Siliana,,,21154,Delegation,,,#N/A,,SilianaTunisia,,,,,locality,,TN-34,بوعرادة,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
-Tunisia,El Krib,Siliana,,,20104,Delegation,,,#N/A,,SilianaTunisia,,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
-Tunisia,Gaâfour,Siliana,,,17028,Delegation,,,#N/A,,SilianaTunisia,,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
-Tunisia,Kesra,Siliana,,,16315,Delegation,,,#N/A,,SilianaTunisia,,,,,locality,,TN-34,كسرى,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
-Tunisia,Bargou,Siliana,,,12199,Delegation,,,#N/A,,SilianaTunisia,,,,,locality,,TN-34,برقو,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
-Tunisia,Sidi Bou Rouis,Siliana,,,11338,Delegation,,,#N/A,,SilianaTunisia,,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
-Tunisia,El Aroussa,Siliana,,,10464,Delegation,,,#N/A,,SilianaTunisia,,,,,locality,,TN-34,العروسة,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
-Tunisia,M'saken,Sousse,,,103158,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Sousse Jawhara,Sousse,,,100855,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Sousse Riadh,Sousse,,,74924,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Kalâa Kebira,Sousse,,,63008,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Sousse Sidi Abdelhamid,Sousse,,,55588,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Enfida [Enfidha],Sousse,,,52038,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Hammam Sousse,Sousse,,,47269,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Kalâa Seghira,Sousse,,,43901,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Zaouiet - Ksibet Thrayet,Sousse,,,42574,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Akouda,Sousse,,,40160,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Sousse Médina,Sousse,,,38315,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Bouficha,Sousse,,,28254,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,locality,,TN-51,بوفيشة,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
-Tunisia,Sidi Bou Ali,Sousse,,,20544,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,locality,,TN-51,سيدي بو علي,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
-Tunisia,Kondar,Sousse,,,14709,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,locality,,TN-51,كندار,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
-Tunisia,Sidi El Hani,Sousse,,,14380,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
-Tunisia,Hergla,Sousse,,,9981,Delegation,Sousse,,Sousse,,SousseTunisia,,,,,locality,,TN-51,هرقلة,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
-Tunisia,Tataouine Nord,Tataouine,,,65409,Delegation,,,#N/A,,TataouineTunisia,,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
-Tunisia,Tataouine Sud,Tataouine,,,34209,Delegation,,,#N/A,,TataouineTunisia,,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
-Tunisia,Ghomrassen,Tataouine,,,14634,Delegation,,,#N/A,,TataouineTunisia,,,,,locality,,TN-83,غمراسن,,,,,region,1,TN-83,ولاية تطاوين,HIGH,1.0,TN-83
-Tunisia,Remada,Tataouine,,,10232,Delegation,,,#N/A,,TataouineTunisia,,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
-Tunisia,Bir Lahmar,Tataouine,,,7895,Delegation,,,#N/A,,TataouineTunisia,,,,,county,2,TN-83,بئر الأحمر,,,,,region,1,TN-83,ولاية تطاوين,HIGH,1.0,TN-83
-Tunisia,Beni Mehira [← Smâr],Tataouine,,,7601,Delegation,,,#N/A,,TataouineTunisia,,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
-Tunisia,Smâr,Tataouine,,,7453,Delegation,,,#N/A,,TataouineTunisia,,,,,locality,,TN-83,الصمار,,,,,region,1,TN-83,ولاية تطاوين,HIGH,1.0,TN-83
-Tunisia,Dehiba,Tataouine,,,4398,Delegation,,,#N/A,,TataouineTunisia,,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
-Tunisia,Tozeur,Tozeur,,,51159,Delegation,Tozeur,,Tozeur,,TozeurTunisia,,,,,region,1,TN-72,ولاية توزر,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
-Tunisia,Degache,Tozeur,,,22960,Delegation,,,#N/A,,TozeurTunisia,,,,,,,,,,,,,region,1,TN-72,ولاية توزر,NONE,0.0,TN-72
-Tunisia,Nefta,Tozeur,,,22692,Delegation,,,#N/A,,TozeurTunisia,,,,,locality,,TN-72,نفطة,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
-Tunisia,El Hamma du Jérid [← Degache],Tozeur,,,7171,Delegation,,,#N/A,,TozeurTunisia,,,,,,,,,,,,,region,1,TN-72,ولاية توزر,NONE,0.0,TN-72
-Tunisia,Tamerza,Tozeur,,,6635,Delegation,,,#N/A,,TozeurTunisia,,,,,locality,,TN-72,تمغزة,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
-Tunisia,Hazoua,Tozeur,,,5264,Delegation,,,#N/A,,TozeurTunisia,,,,,locality,,TN-72,حزوة,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
-Tunisia,Sidi Hassine,Tunis,,,128240,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,سيدي حسين,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,El Hraïria,Tunis,,,119274,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
-Tunisia,La Marsa,Tunis,,,100715,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
-Tunisia,Le Kram,Tunis,,,86846,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,county,2,TN-11,الكرم,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,El Kabaria,Tunis,,,85864,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,الكبارية 2,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Le Bardo,Tunis,,,71232,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,باردو,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,La Goulette,Tunis,,,59790,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,حلق الوادي,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,El Omrane Supérieur,Tunis,,,48018,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,العمران الأعلى,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,El Omrane,Tunis,,,41865,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,العمران,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Ezzouhour,Tunis,,,39951,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,الزهور,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,El Menzah,Tunis,,,39249,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,المنزه,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Cité El Khadra,Tunis,,,31979,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,حي الخضراء,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Bab El Bhar,Tunis,,,31642,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,باب البحر,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Séjoumi [Sijoumi],Tunis,,,29709,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
-Tunisia,El Ouardia,Tunis,,,29325,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,الوردية,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Carthage,Tunis,,,26452,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,county,2,TN-11,قرطاج,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Bab Souika,Tunis,,,24263,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,باب سويقة,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Sidi El Béchir,Tunis,,,24090,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,سيدي البشير,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Ettahrir,Tunis,,,20579,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,locality,,TN-11,التحرير الأول,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
-Tunisia,Djebel Jelloud [Djebel Djelloud],Tunis,,,19962,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
-Tunisia,Medina,Tunis,,,16788,Delegation,Tunis,,Tunis,,TunisTunisia,,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
-Tunisia,El Fahs,Zaghouan,,,49281,Delegation,,,#N/A,,ZaghouanTunisia,,,,,locality,,TN-22,الفحص,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
-Tunisia,Zaghouan,Zaghouan,,,41609,Delegation,,,#N/A,,ZaghouanTunisia,,,,,region,1,TN-22,ولاية زغوان,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
-Tunisia,Nadhour,Zaghouan,,,32358,Delegation,,,#N/A,,ZaghouanTunisia,,,,,,,,,,,,,region,1,TN-22,ولاية زغوان,NONE,0.0,TN-22
-Tunisia,Zriba,Zaghouan,,,27355,Delegation,,,#N/A,,ZaghouanTunisia,,,,,locality,,TN-22,الزريبة,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
-Tunisia,Bir Mcherga,Zaghouan,,,26505,Delegation,,,#N/A,,ZaghouanTunisia,,,,,locality,,TN-22,بئر مشارقة,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
-Tunisia,Saouaf,Zaghouan,,,13284,Delegation,,,#N/A,,ZaghouanTunisia,,,,,,,,,,,,,region,1,TN-22,ولاية زغوان,NONE,0.0,TN-22
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Tunisia,La Soukra,Ariana,,,152275,Delegation,Tunis,,Tunis,,ArianaTunisia,county,2,TN-12,معتمدية سكرة,,,,,,,,,,,,region,1,TN-12,ولاية أريانة,NONE,0.0,TN-12
+Tunisia,Raoued,Ariana,,,138205,Delegation,Tunis,,Tunis,,ArianaTunisia,county,2,TN-12,معتمدية رواد,,,,locality,,TN-12,رواد,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
+Tunisia,Ariana Ville,Ariana,,,122341,Delegation,Tunis,,Tunis,,ArianaTunisia,county,2,TN-12,معتمدية أريانة المدينة,,,,locality,,TN-12,أريانة المدينة,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
+Tunisia,Mnihla,Ariana,,,116653,Delegation,Tunis,,Tunis,,ArianaTunisia,county,2,TN-12,معتمدية منيهلة,,,,locality,,TN-12,المنيهلة,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
+Tunisia,Cité Ettadhamen,Ariana,,,84923,Delegation,Tunis,,Tunis,,ArianaTunisia,county,2,TN-12,معتمدية حي التضامن,,,,locality,,TN-12,حي التضامن,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
+Tunisia,Kalâat El Andalous,Ariana,,,28120,Delegation,Tunis,,Tunis,,ArianaTunisia,county,2,TN-12,معتمدية قلعة الأندلس,,,,,,,,,,,,region,1,TN-12,ولاية أريانة,NONE,0.0,TN-12
+Tunisia,Sidi Thabet,Ariana,,,26906,Delegation,Tunis,,Tunis,,ArianaTunisia,county,2,TN-12,معتمدية سيدي ثابت,,,,locality,,TN-12,سيدي ثابت,,,,,region,1,TN-12,ولاية أريانة,HIGH,1.0,TN-12
+Tunisia,Béja Nord,Béja,,,75175,Delegation,Béja,,Béja,,BéjaTunisia,county,2,TN-31,معتمدية باجة الشمالية,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
+Tunisia,Béja Sud,Béja,,,38563,Delegation,Béja,,Béja,,BéjaTunisia,county,2,TN-31,معتمدية باجة الجنوبية,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
+Tunisia,Nefza,Béja,,,45630,Delegation,,,#N/A,,BéjaTunisia,county,2,TN-31,معتمدية نفزة,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
+Tunisia,Medjez El Bab,Béja,,,44749,Delegation,,,#N/A,,BéjaTunisia,county,2,TN-31,معتمدية مجاز الباب,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
+Tunisia,Testour,Béja,,,34852,Delegation,,,#N/A,,BéjaTunisia,county,2,TN-31,معتمدية تستور,,,,locality,,TN-31,تستور,,,,,region,1,TN-31,ولاية باجة,HIGH,1.0,TN-31
+Tunisia,Téboursouk,Béja,,,21130,Delegation,,,#N/A,,BéjaTunisia,county,2,TN-31,معتمدية تبرسق,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
+Tunisia,Amdoun,Béja,,,20664,Delegation,,,#N/A,,BéjaTunisia,county,2,TN-31,معتمدية عمدون,,,,locality,,TN-31,عمدون,,,,,region,1,TN-31,ولاية باجة,HIGH,1.0,TN-31
+Tunisia,Goubellat,Béja,,,15616,Delegation,,,#N/A,,BéjaTunisia,county,2,TN-31,معتمدية قبلاط,,,,locality,,TN-31,قبلاط,,,,,region,1,TN-31,ولاية باجة,HIGH,1.0,TN-31
+Tunisia,Thibar [Tibar],Béja,,,11914,Delegation,,,#N/A,,BéjaTunisia,county,2,TN-31,معتمدية تيبار,,,,,,,,,,,,region,1,TN-31,ولاية باجة,NONE,0.0,TN-31
+Tunisia,El Mourouj,Ben Arous,,,119954,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية المروج,,,,locality,,TN-13,المروج 3,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
+Tunisia,Fouchana,Ben Arous,,,87819,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية فوشانة,,,,locality,,TN-13,فوشانة,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
+Tunisia,Mohamedia,Ben Arous,,,81952,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية المحمدية,,,,locality,,TN-13,المحمدية,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
+Tunisia,Radès,Ben Arous,,,71683,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية رادس,,,,locality,,TN-13,رادس,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
+Tunisia,Medina Jedida [La Nouvelle Medina ],Ben Arous,,,67722,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية المدينة الجديدة,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
+Tunisia,Mornag,Ben Arous,,,64781,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية مرناق,,,,locality,,TN-13,مرناق,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
+Tunisia,Bou Mhel El Bassatine,Ben Arous,,,50005,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية بومهل البساتين,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
+Tunisia,Hammam Lif,Ben Arous,,,44057,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية حمام الأنف,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
+Tunisia,Hammam Chott,Ben Arous,,,36977,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية حمام الشط,,,,locality,,TN-13,حمام الشط,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
+Tunisia,Ezzahra,Ben Arous,,,36170,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية الزهراء,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
+Tunisia,Ben Arous,Ben Arous,,,28502,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية بن عروس,,,,region,1,TN-13,ولاية بن عروس,,,,,region,1,TN-13,ولاية بن عروس,HIGH,1.0,TN-13
+Tunisia,Mégrine,Ben Arous,,,27839,Delegation,Tunis,,Tunis,,Ben ArousTunisia,county,2,TN-13,معتمدية مقرين,,,,,,,,,,,,region,1,TN-13,ولاية بن عروس,NONE,0.0,TN-13
+Tunisia,Bizerte Nord,Bizerte,,,96679,Delegation,Bizerte,,Bizerte,,BizerteTunisia,county,2,TN-23,معتمدية بنزرت الشمالية,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
+Tunisia,Bizerte Sud,Bizerte,,,63939,Delegation,Bizerte,,Bizerte,,BizerteTunisia,county,2,TN-23,معتمدية بنزرت الجنوبية,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
+Tunisia,Menzel Bourguiba,Bizerte,,,66522,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية منزل بورقيبة,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
+Tunisia,Ras Jebel,Bizerte,,,62837,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية رأس الجبل,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
+Tunisia,Menzel Jemil,Bizerte,,,51859,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية منزل جميل,,,,locality,,TN-23,منزل جميل,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
+Tunisia,Mateur,Bizerte,,,46033,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية ماطر,,,,locality,,TN-23,ماطر,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
+Tunisia,Sejnane,Bizerte,,,38342,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية سجنان,,,,locality,,TN-23,سجنان,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
+Tunisia,El Alia,Bizerte,,,28867,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية العالية,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
+Tunisia,Ghezala,Bizerte,,,26186,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية غزالة,,,,locality,,TN-23,غزالة,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
+Tunisia,Tinja,Bizerte,,,26003,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية تينجة,,,,locality,,TN-23,تينجة,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
+Tunisia,Joumine [Djoumine],Bizerte,,,25097,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية جومين,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
+Tunisia,Zarzouna,Bizerte,,,24929,Delegation,,,#N/A,,BizerteTunisia,,,,,,,,,,,,,,,,region,1,TN-23,ولاية بنزرت,NONE,0.0,TN-23
+Tunisia,Utique,Bizerte,,,20869,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية أوتيك,,,,locality,,TN-23,أوتيك,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
+Tunisia,Ghar El Melh,Bizerte,,,20048,Delegation,,,#N/A,,BizerteTunisia,county,2,TN-23,معتمدية غار الملح,,,,locality,,TN-23,غار الملح,,,,,region,1,TN-23,ولاية بنزرت,HIGH,1.0,TN-23
+Tunisia,Gabès Sud,Gabès,,,84432,Delegation,Gabès,,Gabès,,GabèsTunisia,county,2,TN-81,معتمدية قابس الجنوبية,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Gabès Médina,Gabès,,,47441,Delegation,Gabès,,Gabès,,GabèsTunisia,county,2,TN-11,معتمدية المدينة,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Gabès Ouest,Gabès,,,35209,Delegation,Gabès,,Gabès,,GabèsTunisia,county,2,TN-81,معتمدية قابس الغربية,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,El Hamma,Gabès,,,60937,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية الحامة,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Mareth,Gabès,,,54661,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية مارث,,,,locality,,TN-81,مارث,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
+Tunisia,Ghannouch,Gabès,,,32355,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Habib Thameur Bouatouch [← El Hamma],Gabès,,,21760,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية الحامة,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Oudhref [← Métouia],Gabès,,,16478,Delegation,,,#N/A,,GabèsTunisia,,,,,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Nouvelle Matmata,Gabès,,,14257,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية مطماطة الجديدة,,,,locality,,TN-81,مطماطة الجديدة,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
+Tunisia,Métouia,Gabès,,,13407,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية المطوية,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Dkhilet Toujane [← Mareth],Gabès,,,11023,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية مارث,,,,,,,,,,,,region,1,TN-81,ولاية قابس,NONE,0.0,TN-81
+Tunisia,Menzel El Habib,Gabès,,,9455,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية منزل الحبيب,,,,locality,,TN-81,منزل الحبيب,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
+Tunisia,Matmata,Gabès,,,4075,Delegation,,,#N/A,,GabèsTunisia,county,2,TN-81,معتمدية مطماطة,,,,locality,,TN-81,مطماطة,,,,,region,1,TN-81,ولاية قابس,HIGH,1.0,TN-81
+Tunisia,Métlaoui,Gafsa,,,39142,Delegation,Métlaoui,,Métlaoui,,GafsaTunisia,county,2,TN-71,معتمدية المتلوي,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
+Tunisia,Gafsa Sud,Gafsa,,,109748,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية قفصة الجنوبية,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
+Tunisia,El Ksar,Gafsa,,,39631,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية القصر,,,,locality,,TN-71,القصر,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
+Tunisia,Redeyef,Gafsa,,,26906,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية الرديف,,,,locality,,TN-71,الرديف,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
+Tunisia,Sened,Gafsa,,,22725,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية السند,,,,locality,,TN-71,السند,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
+Tunisia,Moularès [Oum El Araies],Gafsa,,,21515,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية أم العرائس,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
+Tunisia,El Guettar,Gafsa,,,20820,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية القطار,,,,locality,,TN-71,القطار,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
+Tunisia,Zannouch [← Sened],Gafsa,,,16429,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية السند,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
+Tunisia,Mdhila,Gafsa,,,15950,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية المضيلة,,,,locality,,TN-71,Mdhila,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
+Tunisia,Belkhir,Gafsa,,,15032,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية بلخير,,,,locality,,TN-71,بلخير,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
+Tunisia,Sidi Aïch,Gafsa,,,11821,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية سيدي عيش,,,,locality,,TN-71,سيدي عيش,,,,,region,1,TN-71,ولاية قفصة,HIGH,1.0,TN-71
+Tunisia,Gafsa Nord,Gafsa,,,10630,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-71,معتمدية قفصة الشمالية,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
+Tunisia,Sidi Boubaker [← Moularès],Gafsa,,,4255,Delegation,,,#N/A,,GafsaTunisia,county,2,TN-34,معتمدية سيدي بورويس,,,,,,,,,,,,region,1,TN-71,ولاية قفصة,NONE,0.0,TN-71
+Tunisia,Tabarka,Jendouba,,,54151,Delegation,Tabarka,,Tabarka,,JendoubaTunisia,county,2,TN-32,معتمدية طبرقة,,,,locality,,TN-32,طبرقة,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
+Tunisia,Jendouba [Jendouba Sud],Jendouba,,,77217,Delegation,,,#N/A,,JendoubaTunisia,county,2,TN-32,معتمدية جندوبة الجنوبية,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
+Tunisia,Ghardimaou,Jendouba,,,63232,Delegation,,,#N/A,,JendoubaTunisia,county,2,TN-32,معتمدية غار الدماء,,,,locality,,TN-32,غار الدماء,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
+Tunisia,Fernana,Jendouba,,,45895,Delegation,,,#N/A,,JendoubaTunisia,county,2,TN-32,معتمدية فرنانة,,,,locality,,TN-32,فرنانة,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
+Tunisia,Jendouba Nord,Jendouba,,,39225,Delegation,,,#N/A,,JendoubaTunisia,county,2,TN-32,معتمدية جندوبة الشمالية,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
+Tunisia,Balta - Bou Aouane,Jendouba,,,37486,Delegation,,,#N/A,,JendoubaTunisia,,,,,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
+Tunisia,Bou Salem,Jendouba,,,36482,Delegation,,,#N/A,,JendoubaTunisia,,,,,,,,locality,,TN-32,بوسالم الشمالية,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
+Tunisia,Aïn Draham,Jendouba,,,33801,Delegation,,,#N/A,,JendoubaTunisia,county,2,TN-32,معتمدية عين دراهم,,,,locality,,TN-32,عين دراهم المدينة,,,,,region,1,TN-32,ولاية جندوبة,HIGH,1.0,TN-32
+Tunisia,Oued Meliz,Jendouba,,,17365,Delegation,,,#N/A,,JendoubaTunisia,county,2,TN-32,معتمدية وادي مليز,,,,,,,,,,,,region,1,TN-32,ولاية جندوبة,NONE,0.0,TN-32
+Tunisia,Kairouan Nord,Kairouan,,,106741,Delegation,Kairouan,,Kairouan,,KairouanTunisia,county,2,TN-41,معتمدية القيروان الشمالية,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Kairouan Sud,Kairouan,,,103013,Delegation,Kairouan,,Kairouan,,KairouanTunisia,county,2,TN-41,معتمدية القيروان الجنوبية,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Sbikha,Kairouan,,,75975,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية السبيخة,,,,locality,,TN-41,السبيخة,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
+Tunisia,Bou Hajla,Kairouan,,,75054,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Haffouz,Kairouan,,,39605,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية حفوز,,,,locality,,TN-41,حفوز,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
+Tunisia,Hajeb el Ayoun,Kairouan,,,37407,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية حاجب العيون,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Chebika,Kairouan,,,36900,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية الشبيكة,,,,locality,,TN-41,الشبيكة,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
+Tunisia,Echrarda,Kairouan,,,29065,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية الشراردة,,,,locality,,TN-41,الشراردة,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
+Tunisia,El Alâa,Kairouan,,,28530,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية العلاء,,,,locality,,TN-41,العلاء,,,,,region,1,TN-41,ولاية القيروان,HIGH,1.0,TN-41
+Tunisia,Oueslatia,Kairouan,,,28053,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Nasrallah,Kairouan,,,20167,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية نصر الله,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Menzel Mehiri [← Nasrallah],Kairouan,,,13077,Delegation,,,#N/A,,KairouanTunisia,county,2,TN-41,معتمدية نصر الله,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Aïn Djeloula [← Oueslatia],Kairouan,,,6759,Delegation,,,#N/A,,KairouanTunisia,,,,,,,,,,,,,,,,region,1,TN-41,ولاية القيروان,NONE,0.0,TN-41
+Tunisia,Sbeïtla,Kasserine,,,80135,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية سبيطلة,,,,locality,,TN-42,سبيطلة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,Kasserine Nord,Kasserine,,,70454,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية القصرين الشمالية,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
+Tunisia,Fériana,Kasserine,,,55764,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية فريانة,,,,locality,,TN-42,فريانة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,Foussana,Kasserine,,,43550,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية فوسانة,,,,locality,,TN-42,فوسانة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,Sbiba,Kasserine,,,40855,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية سبيبة,,,,locality,,TN-42,سبيبة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,Thala,Kasserine,,,39547,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية تالة,,,,locality,,TN-42,تالة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,Majel Bel Abbès,Kasserine,,,24485,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية ماجل بالعباس,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
+Tunisia,Ezzouhour,Kasserine,,,23030,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية الزهور,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
+Tunisia,Kasserine Sud,Kasserine,,,22320,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية القصرين الجنوبية,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
+Tunisia,Hassi El Ferid,Kasserine,,,21127,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,locality,,TN-42,حاسي الفريد,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,El Ayoun,Kasserine,,,19828,Delegation,,,#N/A,,KasserineTunisia,county,2,TN-42,معتمدية العيون,,,,locality,,TN-42,العيون,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,Jedelienne,Kasserine,,,12112,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,,,,,,,,,region,1,TN-42,ولاية القصرين,NONE,0.0,TN-42
+Tunisia,Haïdra,Kasserine,,,10918,Delegation,,,#N/A,,KasserineTunisia,,,,,,,,locality,,TN-42,حيدرة,,,,,region,1,TN-42,ولاية القصرين,HIGH,1.0,TN-42
+Tunisia,Kébili Nord,Kébili,,,34441,Delegation,,,#N/A,,KébiliTunisia,county,2,TN-73,معتمدية قبلي الشمالية,,,,locality,,TN-73,قبلي الشمالية,,,,,region,1,TN-73,ولاية قبلي,HIGH,1.0,TN-73
+Tunisia,Kébili Sud,Kébili,,,32964,Delegation,,,#N/A,,KébiliTunisia,county,2,TN-73,معتمدية قبلي الجنوبية,,,,locality,,TN-73,قبلي الجنوبية,,,,,region,1,TN-73,ولاية قبلي,HIGH,1.0,TN-73
+Tunisia,Douz Nord,Kébili,,,31401,Delegation,,,#N/A,,KébiliTunisia,county,2,TN-73,معتمدية دوز الشمالية,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
+Tunisia,Souk Lahad [Souk El Ahed],Kébili,,,29576,Delegation,,,#N/A,,KébiliTunisia,county,2,TN-73,معتمدية سوق الأحد,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
+Tunisia,Douz Sud,Kébili,,,20049,Delegation,,,#N/A,,KébiliTunisia,county,2,TN-73,معتمدية دوز الجنوبية,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
+Tunisia,Faouar,Kébili,,,17058,Delegation,,,#N/A,,KébiliTunisia,county,2,TN-73,معتمدية الفوار,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
+Tunisia,Rjim Maatoug [← Faouar],Kébili,,,5314,Delegation,,,#N/A,,KébiliTunisia,,,,,,,,,,,,,,,,region,1,TN-73,ولاية قبلي,NONE,0.0,TN-73
+Tunisia,Kef Est,Kef,,,42680,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية الكاف الشرقية,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
+Tunisia,Kef Ouest,Kef,,,38300,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية الكاف الغربية,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
+Tunisia,Dahmani,Kef,,,27504,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية الدهماني,,,,locality,,TN-33,الدهماني,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
+Tunisia,Tajerouine,Kef,,,27052,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية تاجروين,,,,locality,,TN-33,تاجروين,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
+Tunisia,Sers,Kef,,,22836,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية السرس,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
+Tunisia,Nebeur,Kef,,,19657,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية نبر,,,,locality,,TN-33,نبر,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
+Tunisia,Sakiet Sidi Youssef,Kef,,,16638,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية ساقية سيدي يوسف,,,,locality,,TN-33,ساقية سيدي يوسف,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
+Tunisia,Kalaat Senan,Kef,,,15980,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية قلعة سنان,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
+Tunisia,El Ksour,Kef,,,14821,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية القصور,,,,locality,,TN-33,القصور,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
+Tunisia,Jérissa,Kef,,,9352,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية الجريصة,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
+Tunisia,Kalâat Khasba,Kef,,,6517,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية القلعة الخصبة,,,,locality,,TN-33,القلعة الخصبة,,,,,region,1,TN-33,ولاية الكاف,HIGH,1.0,TN-33
+Tunisia,Touiref [← Nebeur],Kef,,,6044,Delegation,,,#N/A,,KefTunisia,county,2,TN-33,معتمدية نبر,,,,,,,,,,,,region,1,TN-33,ولاية الكاف,NONE,0.0,TN-33
+Tunisia,Mahdia,Mahdia,,,76041,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية المهدية,,,,region,1,TN-53,ولاية المهدية,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
+Tunisia,El Jem,Mahdia,,,56029,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية الجم,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
+Tunisia,Essouassi,Mahdia,,,55001,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية السواسي,,,,locality,,TN-53,السواسي,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
+Tunisia,Sidi Alouane,Mahdia,,,40376,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية سيدي علوان,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
+Tunisia,Bou Merdes,Mahdia,,,38090,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية بومرداس,,,,locality,,TN-53,بومرداس,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
+Tunisia,Ksour Essef,Mahdia,,,37453,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية قصور الساف,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
+Tunisia,Chebba,Mahdia,,,31138,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية الشابة,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
+Tunisia,Chorbane,Mahdia,,,24755,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية شربان,,,,locality,,TN-53,شربان,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
+Tunisia,Melloulèche,Mahdia,,,24635,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية ملولش,,,,locality,,TN-53,ملولش,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
+Tunisia,Ouled Chamekh,Mahdia,,,23907,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية أولاد الشامخ,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
+Tunisia,El Bradâa [← Ksour Essef],Mahdia,,,17271,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية قصور الساف,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
+Tunisia,Rejiche [← Mahdia],Mahdia,,,11332,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية المهدية,,,,,,,,,,,,region,1,TN-53,ولاية المهدية,NONE,0.0,TN-53
+Tunisia,Hebira,Mahdia,,,10465,Delegation,,,#N/A,,MahdiaTunisia,county,2,TN-53,معتمدية هبيرة,,,,locality,,TN-53,هبيرة,,,,,region,1,TN-53,ولاية المهدية,HIGH,1.0,TN-53
+Tunisia,Douar Hicher,Manouba,,,92731,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية دوار هيشر,,,,locality,,TN-14,دوار ھیشر,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
+Tunisia,Oued Ellil,Manouba,,,78767,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية وادي اللیل,,,,locality,,TN-14,وادي اللیل,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
+Tunisia,Manouba,Manouba,,,66116,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية منوبة,,,,locality,,TN-14,منوبة,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
+Tunisia,Djedeida,Manouba,,,50225,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية الجديدة,,,,,,,,,,,,region,1,TN-14,ولاية منوبة,NONE,0.0,TN-14
+Tunisia,Mornaguia,Manouba,,,49506,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية المرناقية,,,,locality,,TN-14,المرناقية,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
+Tunisia,Tebourba,Manouba,,,47018,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية طبربة,,,,locality,,TN-14,طبربة,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
+Tunisia,El Batan,Manouba,,,20812,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية البطان,,,,,,,,,,,,region,1,TN-14,ولاية منوبة,NONE,0.0,TN-14
+Tunisia,Borj El Amri,Manouba,,,18964,Delegation,Tunis,,Tunis,,ManoubaTunisia,county,2,TN-14,معتمدية برج العامري,,,,locality,,TN-14,برج العامري,,,,,region,1,TN-14,ولاية منوبة,HIGH,1.0,TN-14
+Tunisia,Ben Gardane,Médenine,,,87032,Delegation,Ben Guerdane,,Ben Guerdane,,MédenineTunisia,county,2,TN-82,معتمدية بنقردان,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
+Tunisia,Djerba Houmt Souk,Médenine,,,84165,Delegation,Djerba,,Djerba,,MédenineTunisia,county,2,TN-82,معتمدية جربة حومة السوق,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
+Tunisia,Djerba Midoun,Médenine,,,72915,Delegation,Djerba,,Djerba,,MédenineTunisia,county,2,TN-82,معتمدية جربة ميدون,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
+Tunisia,Djerba Ajim,Médenine,,,25085,Delegation,Djerba,,Djerba,,MédenineTunisia,county,2,TN-82,معتمدية جربة أجيم,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
+Tunisia,Zarzis,Médenine,,,78428,Delegation,Zarzis,,Zarzis,,MédenineTunisia,county,2,TN-82,معتمدية جرجيس,,,,locality,,TN-82,جرجيس,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
+Tunisia,Médenine Nord,Médenine,,,60331,Delegation,,,#N/A,,MédenineTunisia,county,2,TN-82,معتمدية مدنين الشمالية,,,,locality,,TN-82,مدنين الشمالية,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
+Tunisia,Médenine Sud,Médenine,,,60127,Delegation,,,#N/A,,MédenineTunisia,county,2,TN-82,معتمدية مدنين االجنوبية,,,,locality,,TN-82,مدنين الجنوبية,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
+Tunisia,Sidi Makhlouf [Sidi Makhloulf],Médenine,,,26709,Delegation,,,#N/A,,MédenineTunisia,county,2,TN-82,معتمدية سيدي مخلوف,,,,,,,,,,,,region,1,TN-82,ولاية مدنين,NONE,0.0,TN-82
+Tunisia,Beni Khedache,Médenine,,,25276,Delegation,,,#N/A,,MédenineTunisia,county,2,TN-82,معتمدية بني خداش,,,,locality,,TN-82,بني خداش,,,,,region,1,TN-82,ولاية مدنين,HIGH,1.0,TN-82
+Tunisia,Monastir,Monastir,,,119379,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية المنستير,,,,region,1,TN-52,ولاية المنستير,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
+Tunisia,Moknine,Monastir,,,97646,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية المكنين,,,,locality,,TN-52,مكنين,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
+Tunisia,Jemmal,Monastir,,,71554,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-51,معتمدية سوسة الرياض,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
+Tunisia,Ksar Hellal,Monastir,,,55119,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية قصر هلال,,,,locality,,TN-52,قصرهلال,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
+Tunisia,Bekalta,Monastir,,,41508,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية البقالطة,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
+Tunisia,Ksibet El Médiouni,Monastir,,,38091,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية قصيبة المديوني,,,,locality,,TN-52,قصيبة المديوني,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
+Tunisia,Bembla,Monastir,,,35874,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية بنبلة,,,,locality,,TN-52,بنبلة,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
+Tunisia,Zéramdine,Monastir,,,32929,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية زرمدين,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
+Tunisia,Sahline,Monastir,,,30949,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية الساحلين,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
+Tunisia,Sayada - Lamta - Bouhjar,Monastir,,,26186,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية صيادة - لمطة - بوحجر,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
+Tunisia,Ouerdanine,Monastir,,,23579,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية الوردانين,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
+Tunisia,Téboulba,Monastir,,,20397,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية طبلبة,,,,locality,,TN-52,طبلبة,,,,,region,1,TN-52,ولاية المنستير,HIGH,1.0,TN-52
+Tunisia,Beni Hassen,Monastir,,,14636,Delegation,Sousse,,Sousse,,MonastirTunisia,county,2,TN-52,معتمدية بني حسان,,,,,,,,,,,,region,1,TN-52,ولاية المنستير,NONE,0.0,TN-52
+Tunisia,Soliman,Nabeul,,,63301,Delegation,Tunis,,Tunis,,NabeulTunisia,county,2,TN-21,معتمدية سليمان,,,,locality,,TN-21,سليمان,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
+Tunisia,Hammamet,Nabeul,,,105820,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية الحمامات,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Nabeul,Nabeul,,,83731,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية نابل,,,,region,1,TN-21,ولاية نابل,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
+Tunisia,Grombalia,Nabeul,,,76484,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية قرمبالية,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Korba,Nabeul,,,75454,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية قربة,,,,locality,,TN-21,قربة,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
+Tunisia,Menzel Temime,Nabeul,,,70780,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية منزل تميم,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Kélibia,Nabeul,,,62646,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية قليبية,,,,locality,,TN-21,قليبية,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
+Tunisia,Dar Châabane El Fehri,Nabeul,,,52122,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية دار شعبان الفهري,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Béni Khiar,Nabeul,,,48632,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية بني خيار,,,,locality,,TN-21,بني خيار,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
+Tunisia,El Haouaria,Nabeul,,,43517,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية الهوارية,,,,locality,,TN-21,الهوارية,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
+Tunisia,Menzel Bouzelfa,Nabeul,,,41227,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية منزل بوزلفة,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Béni Khalled,Nabeul,,,41187,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية بني خلاد,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Bou Argoub,Nabeul,,,33467,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية بو عرقوب,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,El Mida,Nabeul,,,29553,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية الميدة,,,,locality,,TN-21,الميدة,,,,,region,1,TN-21,ولاية نابل,HIGH,1.0,TN-21
+Tunisia,Takelsa,Nabeul,,,23976,Delegation,,,#N/A,,NabeulTunisia,county,2,TN-21,معتمدية تاكلسة,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Hammam Ghezèze,Nabeul,,,16925,Delegation,,,#N/A,,NabeulTunisia,,,,,,,,,,,,,,,,region,1,TN-21,ولاية نابل,NONE,0.0,TN-21
+Tunisia,Sfax Sud,Sfax,,,130944,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية صفاقس الجنوبية,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
+Tunisia,Sakiet Eddaïer,Sfax,,,124427,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية ساقية الدائر,,,,locality,,TN-61,ساقية الدائر,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Sfax Ouest,Sfax,,,112997,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية صفاقس الغربية,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
+Tunisia,Sakiet Ezzit,Sfax,,,98429,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية ساقية الزيت,,,,locality,,TN-61,ساقية الزيت,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Sfax Ville,Sfax,,,97457,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية صفاقس المدينة,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
+Tunisia,Thyna,Sfax,,,76937,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية طينة,,,,locality,,TN-61,طينة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Bir Ali Ben Khalifa [Bir Ali Ben Khélifa],Sfax,,,54293,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية بئر علي بن خليفة,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
+Tunisia,Jebiniana,Sfax,,,53197,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية صفاقس الغربية,,,,locality,,TN-61,جبنيانة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,El Hencha,Sfax,,,53118,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية الحنشة,,,,locality,,TN-61,الحنشة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Agareb,Sfax,,,44082,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية عقارب,,,,locality,,TN-61,عقارب,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Menzel Chaker,Sfax,,,39255,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية منزل شاكر,,,,locality,,TN-61,منزل شاكر,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Skhira,Sfax,,,38209,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية الصخيرة,,,,locality,,TN-61,الصخيرة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Mahrès,Sfax,,,36432,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية المحرس,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
+Tunisia,El Amra,Sfax,,,31824,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية العامرة,,,,locality,,TN-61,العامرة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Graïba [Ghraïba],Sfax,,,16563,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,معتمدية الغريبة,,,,,,,,,,,,region,1,TN-61,ولاية صفاقس,NONE,0.0,TN-61
+Tunisia,Kerkennah,Sfax,,,16395,Delegation,Sfax,,Sfax,,SfaxTunisia,county,2,TN-61,قرقنة,,,,county,2,TN-61,قرقنة,,,,,region,1,TN-61,ولاية صفاقس,HIGH,1.0,TN-61
+Tunisia,Sidi Bouzid Ouest,Sidi Bouzid,,,68305,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية سيدي بوزيد الغربية,,,,locality,,TN-43,سيدي بوزيد الغربية,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,Sidi Bouzid Est,Sidi Bouzid,,,47587,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية سيدي بوزيد الشرقية,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
+Tunisia,Regueb,Sidi Bouzid,,,45318,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية الرقاب,,,,locality,,TN-43,الرقاب,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,Jilma,Sidi Bouzid,,,42835,Delegation,,,#N/A,,Sidi BouzidTunisia,,,,,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
+Tunisia,Bir El Hafey,Sidi Bouzid,,,41683,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية بئر الحفي,,,,locality,,TN-43,بئر الحفي,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,Sidi Ali Ben Aoun,Sidi Bouzid,,,30564,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية سيدي علي بن عون,,,,locality,,TN-43,سيدي علي بن عون,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,Menzel Bouzaiane,Sidi Bouzid,,,26927,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية منزل بوزيان,,,,locality,,TN-43,منزل بوزيان,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,Mezzouna,Sidi Bouzid,,,26337,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية المزونة,,,,locality,,TN-43,المزونة,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,Meknassy,Sidi Bouzid,,,24901,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية المكناسي,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
+Tunisia,Essaïda [← Regueb],Sidi Bouzid,,,24625,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية السعيدة,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
+Tunisia,Souk Jedid,Sidi Bouzid,,,23424,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية سوق الجديد,,,,locality,,TN-43,سوق الجديد,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,Cebbala Ouled Asker [Cebalet],Sidi Bouzid,,,21722,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية سبالة أولاد عسكر,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
+Tunisia,Ouled Haffouz,Sidi Bouzid,,,19870,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية أولاد حفوز,,,,locality,,TN-43,أولاد حفوز,,,,,region,1,TN-43,ولاية سيدي بوزيد,HIGH,1.0,TN-43
+Tunisia,El Hichria [← Sidi Bouzid Ouest / Est],Sidi Bouzid,,,14135,Delegation,,,#N/A,,Sidi BouzidTunisia,county,2,TN-43,معتمدية سيدي بوزيد الغربية,,,,,,,,,,,,region,1,TN-43,ولاية سيدي بوزيد,NONE,0.0,TN-43
+Tunisia,Siliana Nord,Siliana,,,33573,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية سليانة الشمالية,,,,locality,,TN-34,سليانة الشمالية,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
+Tunisia,Siliana Sud,Siliana,,,32946,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية سليانة الجنوبية,,,,locality,,TN-34,سليانة الجنوبية,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
+Tunisia,Makthar,Siliana,,,29021,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية مكثر,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
+Tunisia,Rouhia,Siliana,,,24700,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية الروحية,,,,locality,,TN-34,الروحية,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
+Tunisia,Bou Arada,Siliana,,,21154,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية بوعرادة,,,,locality,,TN-34,بوعرادة,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
+Tunisia,El Krib,Siliana,,,20104,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية الكريب,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
+Tunisia,Gaâfour,Siliana,,,17028,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية قعفور,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
+Tunisia,Kesra,Siliana,,,16315,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية كسرى,,,,locality,,TN-34,كسرى,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
+Tunisia,Bargou,Siliana,,,12199,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,معتمدية برقو,,,,locality,,TN-34,برقو,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
+Tunisia,Sidi Bou Rouis,Siliana,,,11338,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-51,معتمدية سيدي بو علي,,,,,,,,,,,,region,1,TN-34,ولاية سليانة,NONE,0.0,TN-34
+Tunisia,El Aroussa,Siliana,,,10464,Delegation,,,#N/A,,SilianaTunisia,county,2,TN-34,العروسة,,,,locality,,TN-34,العروسة,,,,,region,1,TN-34,ولاية سليانة,HIGH,1.0,TN-34
+Tunisia,M'saken,Sousse,,,103158,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سوسة الرياض,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Sousse Jawhara,Sousse,,,100855,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سوسة جوهرة,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Sousse Riadh,Sousse,,,74924,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سوسة الرياض,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Kalâa Kebira,Sousse,,,63008,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية القلعة الكبرى,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Sousse Sidi Abdelhamid,Sousse,,,55588,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سوسة سيدي عبد الحميد,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Enfida [Enfidha],Sousse,,,52038,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية النفيضة,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Hammam Sousse,Sousse,,,47269,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية حمام سوسة,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Kalâa Seghira,Sousse,,,43901,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سوسة الرياض,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Zaouiet - Ksibet Thrayet,Sousse,,,42574,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سوسة الرياض,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Akouda,Sousse,,,40160,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية أكودة,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Sousse Médina,Sousse,,,38315,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سوسة المدينة,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Bouficha,Sousse,,,28254,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية بوفيشة,,,,locality,,TN-51,بوفيشة,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
+Tunisia,Sidi Bou Ali,Sousse,,,20544,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سيدي بو علي,,,,locality,,TN-51,سيدي بو علي,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
+Tunisia,Kondar,Sousse,,,14709,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية كندار,,,,locality,,TN-51,كندار,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
+Tunisia,Sidi El Hani,Sousse,,,14380,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية سيدي الهاني,,,,,,,,,,,,region,1,TN-51,ولاية سوسة,NONE,0.0,TN-51
+Tunisia,Hergla,Sousse,,,9981,Delegation,Sousse,,Sousse,,SousseTunisia,county,2,TN-51,معتمدية هرقلة,,,,locality,,TN-51,هرقلة,,,,,region,1,TN-51,ولاية سوسة,HIGH,1.0,TN-51
+Tunisia,Tataouine Nord,Tataouine,,,65409,Delegation,,,#N/A,,TataouineTunisia,county,2,TN-83,معتمدية تطاوين الشمالية,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
+Tunisia,Tataouine Sud,Tataouine,,,34209,Delegation,,,#N/A,,TataouineTunisia,county,2,TN-83,معتمدية تطاوين الجنوبية,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
+Tunisia,Ghomrassen,Tataouine,,,14634,Delegation,,,#N/A,,TataouineTunisia,county,2,TN-83,معتمدية غمراسن,,,,locality,,TN-83,غمراسن,,,,,region,1,TN-83,ولاية تطاوين,HIGH,1.0,TN-83
+Tunisia,Remada,Tataouine,,,10232,Delegation,,,#N/A,,TataouineTunisia,county,2,TN-83,معتمدية رمادة,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
+Tunisia,Bir Lahmar,Tataouine,,,7895,Delegation,,,#N/A,,TataouineTunisia,county,2,TN-83,بئر الأحمر,,,,county,2,TN-83,بئر الأحمر,,,,,region,1,TN-83,ولاية تطاوين,HIGH,1.0,TN-83
+Tunisia,Beni Mehira [← Smâr],Tataouine,,,7601,Delegation,,,#N/A,,TataouineTunisia,county,2,TN-83,معتمدية الصمار,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
+Tunisia,Smâr,Tataouine,,,7453,Delegation,,,#N/A,,TataouineTunisia,county,2,TN-83,معتمدية الصمار,,,,locality,,TN-83,الصمار,,,,,region,1,TN-83,ولاية تطاوين,HIGH,1.0,TN-83
+Tunisia,Dehiba,Tataouine,,,4398,Delegation,,,#N/A,,TataouineTunisia,,,,,,,,,,,,,,,,region,1,TN-83,ولاية تطاوين,NONE,0.0,TN-83
+Tunisia,Tozeur,Tozeur,,,51159,Delegation,Tozeur,,Tozeur,,TozeurTunisia,county,2,TN-72,معتمدية توزر,,,,region,1,TN-72,ولاية توزر,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
+Tunisia,Degache,Tozeur,,,22960,Delegation,,,#N/A,,TozeurTunisia,county,2,TN-72,معتمدية دقاش,,,,,,,,,,,,region,1,TN-72,ولاية توزر,NONE,0.0,TN-72
+Tunisia,Nefta,Tozeur,,,22692,Delegation,,,#N/A,,TozeurTunisia,county,2,TN-72,معتمدية نفطة,,,,locality,,TN-72,نفطة,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
+Tunisia,El Hamma du Jérid [← Degache],Tozeur,,,7171,Delegation,,,#N/A,,TozeurTunisia,county,2,TN-72,معتمدية دقاش,,,,,,,,,,,,region,1,TN-72,ولاية توزر,NONE,0.0,TN-72
+Tunisia,Tamerza,Tozeur,,,6635,Delegation,,,#N/A,,TozeurTunisia,,,,,,,,locality,,TN-72,تمغزة,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
+Tunisia,Hazoua,Tozeur,,,5264,Delegation,,,#N/A,,TozeurTunisia,county,2,TN-72,معتمدية حزوة,,,,locality,,TN-72,حزوة,,,,,region,1,TN-72,ولاية توزر,HIGH,1.0,TN-72
+Tunisia,Sidi Hassine,Tunis,,,128240,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية سيدي حسين,,,,locality,,TN-11,سيدي حسين,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,El Hraïria,Tunis,,,119274,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية الحرائرية,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
+Tunisia,La Marsa,Tunis,,,100715,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية المرسى,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
+Tunisia,Le Kram,Tunis,,,86846,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,الكرم,,,,county,2,TN-11,الكرم,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,El Kabaria,Tunis,,,85864,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,الكبارية,,,,locality,,TN-11,الكبارية 2,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Le Bardo,Tunis,,,71232,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية باردو,,,,locality,,TN-11,باردو,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,La Goulette,Tunis,,,59790,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية حلق الوادي,,,,locality,,TN-11,حلق الوادي,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,El Omrane Supérieur,Tunis,,,48018,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية العمران الأعلى,,,,locality,,TN-11,العمران الأعلى,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,El Omrane,Tunis,,,41865,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية العمران,,,,locality,,TN-11,العمران,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Ezzouhour,Tunis,,,39951,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-42,معتمدية الزهور,,,,locality,,TN-11,الزهور,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,El Menzah,Tunis,,,39249,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية المنزه,,,,locality,,TN-11,المنزه,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Cité El Khadra,Tunis,,,31979,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية حي الخضراء,,,,locality,,TN-11,حي الخضراء,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Bab El Bhar,Tunis,,,31642,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية باب بحر,,,,locality,,TN-11,باب البحر,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Séjoumi [Sijoumi],Tunis,,,29709,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية السيجومي,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
+Tunisia,El Ouardia,Tunis,,,29325,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية الوردية,,,,locality,,TN-11,الوردية,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Carthage,Tunis,,,26452,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,قرطاج,,,,county,2,TN-11,قرطاج,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Bab Souika,Tunis,,,24263,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية باب سويقة,,,,locality,,TN-11,باب سويقة,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Sidi El Béchir,Tunis,,,24090,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية سيدي البشير,,,,locality,,TN-11,سيدي البشير,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Ettahrir,Tunis,,,20579,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية التحرير,,,,locality,,TN-11,التحرير الأول,,,,,region,1,TN-11,ولاية تونس,HIGH,1.0,TN-11
+Tunisia,Djebel Jelloud [Djebel Djelloud],Tunis,,,19962,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية جبل الجلود,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
+Tunisia,Medina,Tunis,,,16788,Delegation,Tunis,,Tunis,,TunisTunisia,county,2,TN-11,معتمدية المدينة,,,,,,,,,,,,region,1,TN-11,ولاية تونس,NONE,0.0,TN-11
+Tunisia,El Fahs,Zaghouan,,,49281,Delegation,,,#N/A,,ZaghouanTunisia,county,2,TN-22,معتمدية الفحص,,,,locality,,TN-22,الفحص,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
+Tunisia,Zaghouan,Zaghouan,,,41609,Delegation,,,#N/A,,ZaghouanTunisia,county,2,TN-22,معتمدية زغوان,,,,region,1,TN-22,ولاية زغوان,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
+Tunisia,Nadhour,Zaghouan,,,32358,Delegation,,,#N/A,,ZaghouanTunisia,county,2,TN-22,معتمدية الناظور,,,,,,,,,,,,region,1,TN-22,ولاية زغوان,NONE,0.0,TN-22
+Tunisia,Zriba,Zaghouan,,,27355,Delegation,,,#N/A,,ZaghouanTunisia,county,2,TN-22,معتمدية الزريبة,,,,locality,,TN-22,الزريبة,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
+Tunisia,Bir Mcherga,Zaghouan,,,26505,Delegation,,,#N/A,,ZaghouanTunisia,county,2,TN-22,معتمدية بئر مشارقة,,,,locality,,TN-22,بئر مشارقة,,,,,region,1,TN-22,ولاية زغوان,HIGH,1.0,TN-22
+Tunisia,Saouaf,Zaghouan,,,13284,Delegation,,,#N/A,,ZaghouanTunisia,county,2,TN-22,معتمدية صواف,,,,,,,,,,,,region,1,TN-22,ولاية زغوان,NONE,0.0,TN-22

@@ -1,0 +1,4 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+US Virgin Islands,Saint Croix,Saint Croix,,,50601,Island,Christiansted,,Christiansted,,Saint CroixUS Virgin Islands,locality,,,Christiansted,,,,region,2,nan,Saint Croix District,,,,,,,,,HIGH,1.0,nan
+US Virgin Islands,Saint John,Saint John,,,4170,Island,,,#N/A,,Saint JohnUS Virgin Islands,region,2,,Saint Thomas - Saint John District,,,,,,,,,,,,,,,,NONE,0.0,
+US Virgin Islands,Saint Thomas,Saint Thomas,,,51634,Island,Charlotte Amalie,,Charlotte Amalie,,Saint ThomasUS Virgin Islands,region,2,,Saint Thomas - Saint John District,,,,,,,,,,,,,,,,NONE,0.0,

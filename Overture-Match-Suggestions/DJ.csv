@@ -1,0 +1,7 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Djibouti,Ali-Sabieh,Ali-Sabieh,,,97600,Region,,,#N/A,,Ali-SabiehDjibouti,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Djibouti,Arta,Arta,,,76200,Region,,,#N/A,,ArtaDjibouti,region,1,DJ-AR,Arta عرتا,,,,region,1,DJ-AR,Arta عرتا,,,,,region,1,DJ-AR,Arta عرتا,HIGH,1.0,DJ-AR
+Djibouti,Dikhil,Dikhil,,,107300,Region,,,#N/A,,DikhilDjibouti,region,1,DJ-DI,Dikhil دخيل,,,,region,1,DJ-DI,Dikhil دخيل,,,,,region,1,DJ-DI,Dikhil دخيل,HIGH,1.0,DJ-DI
+Djibouti,Djibouti,Djibouti,,,619900,City,Djibouti,,Djibouti,,DjiboutiDjibouti,region,1,DJ-DJ,Djibouti جيبوتي,,,,region,1,DJ-DJ,Djibouti جيبوتي,,,,,region,1,DJ-DJ,Djibouti جيبوتي,HIGH,1.0,DJ-DJ
+Djibouti,Obock,Obock,,,51700,Region,,,#N/A,,ObockDjibouti,region,1,DJ-OB,Obock أبخ,,,,region,1,DJ-OB,Obock أبخ,,,,,region,1,DJ-OB,Obock أبخ,HIGH,1.0,DJ-OB
+Djibouti,Tadjourah,Tadjourah,,,125500,Region,,,#N/A,,TadjourahDjibouti,region,1,DJ-TA,Tadjourah تجرة,,,,region,1,DJ-TA,Tadjourah تجرة,,,,,region,1,DJ-TA,Tadjourah تجرة,HIGH,1.0,DJ-TA

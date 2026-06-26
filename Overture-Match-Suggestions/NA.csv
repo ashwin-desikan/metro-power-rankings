@@ -1,0 +1,122 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Namibia,Walvis Bay Urban,Erongo,,,51618,Constituency,Walvis Bay,,Walvis Bay,,ErongoNamibia,county,2,NA-KH,Walvisbay Urban,,,,,,,,,,,,region,1,NA-ER,Erongo Region,NONE,0.0,NA-ER
+Namibia,Walvis Bay Rural,Erongo,,,51497,Constituency,Walvis Bay,,Walvis Bay,,ErongoNamibia,county,2,NA-HA,Walvisbay Rural,,,,,,,,,,,,region,1,NA-ER,Erongo Region,NONE,0.0,NA-ER
+Namibia,Swakopmund,Erongo,,,75921,Constituency,,,#N/A,,ErongoNamibia,county,2,NA-HA,Swakopmund,,,,,,,,,,,,region,1,NA-ER,Erongo Region,NONE,0.0,NA-ER
+Namibia,Karibib,Erongo,,,19705,Constituency,,,#N/A,,ErongoNamibia,county,2,NA-KA,Karibib,,,,locality,,NA-ER,Karibib,,,,,region,1,NA-ER,Erongo Region,HIGH,1.0,NA-ER
+Namibia,Dâures,Erongo,,,14601,Constituency,,,#N/A,,ErongoNamibia,county,2,NA-KA,Daures,,,,,,,,,,,,region,1,NA-ER,Erongo Region,NONE,0.0,NA-ER
+Namibia,Arandis,Erongo,,,13542,Constituency,,,#N/A,,ErongoNamibia,county,2,NA-KE,Arandis,,,,locality,,NA-ER,Arandis,,,,,region,1,NA-ER,Erongo Region,HIGH,1.0,NA-ER
+Namibia,Omaruru,Erongo,,,13322,Constituency,,,#N/A,,ErongoNamibia,county,2,NA-HA,Omaruru,,,,locality,,NA-ER,Omaruru,,,,,region,1,NA-ER,Erongo Region,HIGH,1.0,NA-ER
+Namibia,Rehoboth Urban East,Hardap,,,29299,Constituency,Rehoboth (NAM),,Rehoboth (NAM),,HardapNamibia,county,2,NA-OD,Rehoboth Rural,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Rehoboth Urban West,Hardap,,,11914,Constituency,Rehoboth (NAM),,Rehoboth (NAM),,HardapNamibia,county,2,NA-OD,Rehoboth Rural,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Mariental Urban,Hardap,,,18368,Constituency,,,#N/A,,HardapNamibia,county,2,NA-OD,Mariental Urban,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Mariental Rural,Hardap,,,12812,Constituency,,,#N/A,,HardapNamibia,county,2,NA-KA,Mariental Rural,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Aranos,Hardap,,,10722,Constituency,,,#N/A,,HardapNamibia,,,,,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Rehoboth Rural,Hardap,,,9439,Constituency,,,#N/A,,HardapNamibia,county,2,NA-OD,Rehoboth Rural,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Gibeon,Hardap,,,8034,Constituency,,,#N/A,,HardapNamibia,county,2,NA-OH,Gibeon,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Daweb,Hardap,,,6092,Constituency,,,#N/A,,HardapNamibia,,,,,,,,,,,,,,,,region,1,NA-HA,Hardap Region,NONE,0.0,NA-HA
+Namibia,Keetmanshoop Urban,Karas,,,27862,Constituency,,,#N/A,,KarasNamibia,county,2,NA-OH,Keetmanshoop Urban,,,,locality,,NA-KA,Keetmanshoop,,,,,region,1,NA-KA,ǁKharas Region,LOW,0.8,NA-KA
+Namibia,Karasburg West,Karas,,,17741,Constituency,,,#N/A,,KarasNamibia,,,,,,,,locality,,NA-KA,Karasburg,,,,,region,1,NA-KA,ǁKharas Region,LOW,0.783,NA-KA
+Namibia,ǃNamiǂNûs (Lüderitz),Karas,,,17243,Constituency,,,#N/A,,KarasNamibia,county,2,NA-OH,Luderitz,,,,,,,,,,,,region,1,NA-KA,ǁKharas Region,NONE,0.0,NA-KA
+Namibia,Karasburg East,Karas,,,13821,Constituency,,,#N/A,,KarasNamibia,,,,,,,,locality,,NA-KA,Karasburg,,,,,region,1,NA-KA,ǁKharas Region,LOW,0.783,NA-KA
+Namibia,Oranjemund,Karas,,,13224,Constituency,,,#N/A,,KarasNamibia,county,2,NA-ER,Oranjemund,,,,locality,,NA-KA,Oranjemund,,,,,region,1,NA-KA,ǁKharas Region,HIGH,1.0,NA-KA
+Namibia,Berseba,Karas,,,11258,Constituency,,,#N/A,,KarasNamibia,county,2,NA-KW,Berseba,,,,,,,,,,,,region,1,NA-KA,ǁKharas Region,NONE,0.0,NA-KA
+Namibia,Keetmanshoop Rural,Karas,,,8744,Constituency,,,#N/A,,KarasNamibia,county,2,NA-OH,Keetmanshoop Rural,,,,locality,,NA-KA,Keetmanshoop,,,,,region,1,NA-KA,ǁKharas Region,LOW,0.8,NA-KA
+Namibia,Rundu Urban,Kavango East,,,118632,Constituency,Rundu,,Rundu,,Kavango EastNamibia,county,2,NA-KE,Rundu Urban,,,,county,2,NA-KE,Rundu Urban,,,,,region,1,NA-KE,Kavango-East Region,HIGH,1.0,NA-KE
+Namibia,Mukwe,Kavango East,,,39170,Constituency,,,#N/A,,Kavango EastNamibia,county,2,NA-OT,Mukwe,,,,,,,,,,,,region,1,NA-KE,Kavango-East Region,NONE,0.0,NA-KE
+Namibia,Mashare,Kavango East,,,19478,Constituency,,,#N/A,,Kavango EastNamibia,county,2,NA-OT,Mashare,,,,,,,,,,,,region,1,NA-KE,Kavango-East Region,NONE,0.0,NA-KE
+Namibia,Ndonga Linena,Kavango East,,,14936,Constituency,,,#N/A,,Kavango EastNamibia,,,,,,,,,,,,,,,,region,1,NA-KE,Kavango-East Region,NONE,0.0,NA-KE
+Namibia,Ndiyona,Kavango East,,,13800,Constituency,,,#N/A,,Kavango EastNamibia,county,2,NA-OT,Ndiyona,,,,,,,,,,,,region,1,NA-KE,Kavango-East Region,NONE,0.0,NA-KE
+Namibia,Rundu Rural,Kavango East,,,12405,Constituency,,,#N/A,,Kavango EastNamibia,county,2,NA-OW,Rundu Rural,,,,county,2,NA-KE,Rundu Urban,,,,,region,1,NA-KE,Kavango-East Region,LOW,0.818,NA-KE
+Namibia,Kapako,Kavango West,,,27823,Constituency,,,#N/A,,Kavango WestNamibia,county,2,NA-KU,Kapako,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Mpungu,Kavango West,,,21098,Constituency,,,#N/A,,Kavango WestNamibia,county,2,NA-OT,Mpungu,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Tondoro,Kavango West,,,18497,Constituency,,,#N/A,,Kavango WestNamibia,,,,,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Nkurenkuru,Kavango West,,,15887,Constituency,,,#N/A,,Kavango WestNamibia,,,,,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Musese,Kavango West,,,13659,Constituency,,,#N/A,,Kavango WestNamibia,,,,,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Ncuncuni,Kavango West,,,10943,Constituency,,,#N/A,,Kavango WestNamibia,,,,,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Ncamagoro,Kavango West,,,8449,Constituency,,,#N/A,,Kavango WestNamibia,,,,,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Mankumpi,Kavango West,,,6910,Constituency,,,#N/A,,Kavango WestNamibia,,,,,,,,,,,,,,,,region,1,NA-KW,Kavango-West Region,NONE,0.0,NA-KW
+Namibia,Samora Machel,Khomas,,,92401,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-KH,Windhoek East,,,,,,,,,,,,region,1,NA-KH,Khomas Region,NONE,0.0,NA-KH
+Namibia,Moses ǁGaroëb,Khomas,,,68932,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-KH,Windhoek East,,,,,,,,,,,,region,1,NA-KH,Khomas Region,NONE,0.0,NA-KH
+Namibia,Khomasdal,Khomas,,,67211,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-ER,Khomasdal North,,,,region,1,NA-KH,Khomas Region,,,,,region,1,NA-KH,Khomas Region,LOW,0.8,NA-KH
+Namibia,Tobias Hainyeko,Khomas,,,67067,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-KH,Windhoek East,,,,,,,,,,,,region,1,NA-KH,Khomas Region,NONE,0.0,NA-KH
+Namibia,Windhoek West,Khomas,,,59907,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-KH,Windhoek West,,,,county,2,NA-KH,Windhoek West,,,,,region,1,NA-KH,Khomas Region,HIGH,1.0,NA-KH
+Namibia,Katutura Central,Khomas,,,30557,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-HA,Katutura Central,,,,,,,,,,,,region,1,NA-KH,Khomas Region,NONE,0.0,NA-KH
+Namibia,Windhoek East,Khomas,,,30054,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-KH,Windhoek East,,,,county,2,NA-KH,Windhoek East,,,,,region,1,NA-KH,Khomas Region,HIGH,1.0,NA-KH
+Namibia,John Pandeni,Khomas,,,25457,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-KH,Windhoek East,,,,,,,,,,,,region,1,NA-KH,Khomas Region,NONE,0.0,NA-KH
+Namibia,Katutura East,Khomas,,,22940,Constituency,Windhoek,,Windhoek,,KhomasNamibia,county,2,NA-HA,Katutura East,,,,,,,,,,,,region,1,NA-KH,Khomas Region,NONE,0.0,NA-KH
+Namibia,Windhoek Rural,Khomas,,,30079,Constituency,,,#N/A,,KhomasNamibia,county,2,NA-KH,Windhoek Rural,,,,county,2,NA-KH,Windhoek Rural,,,,,region,1,NA-KH,Khomas Region,HIGH,1.0,NA-KH
+Namibia,Epupa,Kunene,,,26491,Constituency,,,#N/A,,KuneneNamibia,county,2,NA-KH,Epupa,,,,,,,,,,,,region,1,NA-KU,Kunene Region,NONE,0.0,NA-KU
+Namibia,Opuwo Urban,Kunene,,,23934,Constituency,,,#N/A,,KuneneNamibia,,,,,,,,,,,,,,,,region,1,NA-KU,Kunene Region,NONE,0.0,NA-KU
+Namibia,Outjo,Kunene,,,19743,Constituency,,,#N/A,,KuneneNamibia,county,2,NA-ER,Outjo,,,,locality,,NA-KU,Outjo,,,,,region,1,NA-KU,Kunene Region,HIGH,1.0,NA-KU
+Namibia,Khorixas,Kunene,,,15506,Constituency,,,#N/A,,KuneneNamibia,county,2,NA-KH,Khorixas,,,,,,,,,,,,region,1,NA-KU,Kunene Region,NONE,0.0,NA-KU
+Namibia,Opuwo Rural,Kunene,,,14894,Constituency,,,#N/A,,KuneneNamibia,,,,,,,,,,,,,,,,region,1,NA-KU,Kunene Region,NONE,0.0,NA-KU
+Namibia,Kamanjab,Kunene,,,11349,Constituency,,,#N/A,,KuneneNamibia,county,2,NA-KH,Kamanjab,,,,locality,,NA-KU,Kamanjab,,,,,region,1,NA-KU,Kunene Region,HIGH,1.0,NA-KU
+Namibia,Sesfontein,Kunene,,,8845,Constituency,,,#N/A,,KuneneNamibia,county,2,NA-ER,Sesfontein,,,,,,,,,,,,region,1,NA-KU,Kunene Region,NONE,0.0,NA-KU
+Namibia,Eenhana,Ohangwena,,,35304,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-KH,Eenhana,,,,locality,,NA-OW,Eenhana,,,,,region,1,NA-OW,Ohangwena Region,HIGH,1.0,NA-OW
+Namibia,Omulonga,Ohangwena,,,32802,Constituency,,,#N/A,,OhangwenaNamibia,,,,,,,,,,,,,,,,region,1,NA-OW,Ohangwena Region,NONE,0.0,NA-OW
+Namibia,Endola,Ohangwena,,,32698,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-KU,Endola,,,,,,,,,,,,region,1,NA-OW,Ohangwena Region,NONE,0.0,NA-OW
+Namibia,Ondobe,Ohangwena,,,32622,Constituency,,,#N/A,,OhangwenaNamibia,,,,,,,,,,,,,,,,region,1,NA-OW,Ohangwena Region,NONE,0.0,NA-OW
+Namibia,Okongo,Ohangwena,,,31746,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-OS,Okongo,,,,county,2,NA-OW,Ogongo,,,,,region,1,NA-OW,Ohangwena Region,LOW,0.833,NA-OW
+Namibia,Ohangwena,Ohangwena,,,31491,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-ON,Ohangwena,,,,region,1,NA-OW,Ohangwena Region,,,,,region,1,NA-OW,Ohangwena Region,HIGH,1.0,NA-OW
+Namibia,Oshikango,Ohangwena,,,30531,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-OW,Oshikango,,,,county,2,NA-OW,Oshikango,,,,,region,1,NA-OW,Ohangwena Region,HIGH,1.0,NA-OW
+Namibia,Engela,Ohangwena,,,30004,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-KU,Engela,,,,,,,,,,,,region,1,NA-OW,Ohangwena Region,NONE,0.0,NA-OW
+Namibia,Ongenga,Ohangwena,,,27296,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-OW,Ongenga,,,,county,2,NA-OW,Ongenga,,,,,region,1,NA-OW,Ohangwena Region,HIGH,1.0,NA-OW
+Namibia,Oshikunde,Ohangwena,,,21890,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-ON,Oshikuku,,,,,,,,,,,,region,1,NA-OW,Ohangwena Region,NONE,0.0,NA-OW
+Namibia,Epembe,Ohangwena,,,16336,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-OS,Epembe,,,,,,,,,,,,region,1,NA-OW,Ohangwena Region,NONE,0.0,NA-OW
+Namibia,Omundaungilo,Ohangwena,,,15009,Constituency,,,#N/A,,OhangwenaNamibia,county,2,NA-OS,Omundaungilo,,,,,,,,,,,,region,1,NA-OW,Ohangwena Region,NONE,0.0,NA-OW
+Namibia,Gobabis,Omaheke,,,35452,Constituency,,,#N/A,,OmahekeNamibia,county,2,NA-OW,Gobabis,,,,locality,,NA-OH,Gobabis,,,,,region,1,NA-OH,Omaheke Region,HIGH,1.0,NA-OH
+Namibia,Aminuis,Omaheke,,,13801,Constituency,,,#N/A,,OmahekeNamibia,,,,,,,,,,,,,,,,region,1,NA-OH,Omaheke Region,NONE,0.0,NA-OH
+Namibia,Otjinene,Omaheke,,,12415,Constituency,,,#N/A,,OmahekeNamibia,county,2,NA-ON,Otjinene,,,,locality,,NA-OH,Otjinene,,,,,region,1,NA-OH,Omaheke Region,HIGH,1.0,NA-OH
+Namibia,Okorukambe,Omaheke,,,12271,Constituency,,,#N/A,,OmahekeNamibia,,,,,,,,,,,,,,,,region,1,NA-OH,Omaheke Region,NONE,0.0,NA-OH
+Namibia,Kalahari,Omaheke,,,12021,Constituency,,,#N/A,,OmahekeNamibia,county,2,NA-OW,Kalahari,,,,,,,,,,,,region,1,NA-OH,Omaheke Region,NONE,0.0,NA-OH
+Namibia,Otjombinde,Omaheke,,,9041,Constituency,,,#N/A,,OmahekeNamibia,county,2,NA-ON,Otjombinde,,,,,,,,,,,,region,1,NA-OH,Omaheke Region,NONE,0.0,NA-OH
+Namibia,Epukiro,Omaheke,,,7880,Constituency,,,#N/A,,OmahekeNamibia,,,,,,,,,,,,,,,,region,1,NA-OH,Omaheke Region,NONE,0.0,NA-OH
+Namibia,Outapi,Omusati,,,53594,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-ON,Outapi,,,,locality,,NA-OS,Outapi,,,,,region,1,NA-OS,Omusati Region,HIGH,1.0,NA-OS
+Namibia,Tsandi,Omusati,,,34307,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-OS,Tsandi,,,,county,2,NA-OS,Tsandi,,,,,region,1,NA-OS,Omusati Region,HIGH,1.0,NA-OS
+Namibia,Etayi,Omusati,,,33088,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-OS,Etayi,,,,county,2,NA-OS,Etayi,,,,,region,1,NA-OS,Omusati Region,HIGH,1.0,NA-OS
+Namibia,Okalongo,Omusati,,,32663,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-ON,Okalongo,,,,county,2,NA-OS,Okongo,,,,,region,1,NA-OS,Omusati Region,LOW,0.857,NA-OS
+Namibia,Ruacana,Omusati,,,27261,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-OS,Ruacana,,,,county,2,NA-OS,Ruacana,,,,,region,1,NA-OS,Omusati Region,HIGH,1.0,NA-OS
+Namibia,Okahao,Omusati,,,24909,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-OT,Okahao,,,,locality,,NA-OS,Okahao,,,,,region,1,NA-OS,Omusati Region,HIGH,1.0,NA-OS
+Namibia,Onesi,Omusati,,,23364,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-ON,Onesi,,,,,,,,,,,,region,1,NA-OS,Omusati Region,NONE,0.0,NA-OS
+Namibia,Anamulenge,Omusati,,,20344,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-OS,Anamulenge,,,,county,2,NA-OS,Anamulenge,,,,,region,1,NA-OS,Omusati Region,HIGH,1.0,NA-OS
+Namibia,Oshikuku,Omusati,,,19693,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-ON,Oshikuku,,,,,,,,,,,,region,1,NA-OS,Omusati Region,NONE,0.0,NA-OS
+Namibia,Ogongo,Omusati,,,17649,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-OW,Ogongo,,,,county,2,NA-OS,Okongo,,,,,region,1,NA-OS,Omusati Region,LOW,0.833,NA-OS
+Namibia,Otamanzi,Omusati,,,16399,Constituency,,,#N/A,,OmusatiNamibia,,,,,,,,,,,,,,,,region,1,NA-OS,Omusati Region,NONE,0.0,NA-OS
+Namibia,Elim,Omusati,,,13400,Constituency,,,#N/A,,OmusatiNamibia,county,2,NA-OS,Elim,,,,county,2,NA-OS,Elim,,,,,region,1,NA-OS,Omusati Region,HIGH,1.0,NA-OS
+Namibia,Ongwediva,Oshana,,,44166,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OS,Ongwediva,,,,locality,,NA-ON,Ongwediva,,,,,region,1,NA-ON,Oshana Region,HIGH,1.0,NA-ON
+Namibia,Oshakati East,Oshana,,,39915,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OW,Oshakati East,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Ondangwa Urban,Oshana,,,31466,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OT,Ondangwa,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Oshakati West,Oshana,,,30665,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OW,Oshakati East,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Okaku,Oshana,,,21892,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OW,Okaku,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Okatana,Oshana,,,19974,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OW,Okatana,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Ondangwa Rural,Oshana,,,14959,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OT,Ondangwa,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Uukwiyu,Oshana,,,13033,Constituency,,,#N/A,,OshanaNamibia,,,,,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Uuvudhiya,Oshana,,,5647,Constituency,,,#N/A,,OshanaNamibia,,,,,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Ompundja,Oshana,,,4582,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OT,Ompundja,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Okatyali,Oshana,,,4502,Constituency,,,#N/A,,OshanaNamibia,county,2,NA-OT,Okatyali,,,,,,,,,,,,region,1,NA-ON,Oshana Region,NONE,0.0,NA-ON
+Namibia,Omuthiyagwiipundi,Oshikoto,,,39855,Constituency,,,#N/A,,OshikotoNamibia,county,2,NA-KA,Omuthiyagwipundi,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Tsumeb,Oshikoto,,,38134,Constituency,,,#N/A,,OshikotoNamibia,county,2,NA-KE,Tsumeb,,,,locality,,NA-OT,Tsumeb,,,,,region,1,NA-OT,Oshikoto Region,HIGH,1.0,NA-OT
+Namibia,Oniipa,Oshikoto,,,33727,Constituency,,,#N/A,,OshikotoNamibia,county,2,NA-KA,Oniipa,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Onyaanya,Oshikoto,,,25465,Constituency,,,#N/A,,OshikotoNamibia,county,2,NA-HA,Onyaanya,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Eengodi,Oshikoto,,,24208,Constituency,,,#N/A,,OshikotoNamibia,,,,,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Omuntele,Oshikoto,,,21043,Constituency,,,#N/A,,OshikotoNamibia,county,2,NA-OS,Omuntele,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Okankolo,Oshikoto,,,17988,Constituency,,,#N/A,,OshikotoNamibia,,,,,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Nehale IyaMpingana,Oshikoto,,,17317,Constituency,,,#N/A,,OshikotoNamibia,,,,,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Onayena,Oshikoto,,,16669,Constituency,,,#N/A,,OshikotoNamibia,county,2,NA-KA,Onayena,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Olukonda,Oshikoto,,,14318,Constituency,,,#N/A,,OshikotoNamibia,county,2,NA-KU,Olukonda,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Guinas,Oshikoto,,,8578,Constituency,,,#N/A,,OshikotoNamibia,,,,,,,,,,,,,,,,region,1,NA-OT,Oshikoto Region,NONE,0.0,NA-OT
+Namibia,Otjiwarongo,Otjozondjupa,,,54893,Constituency,,,#N/A,,OtjozondjupaNamibia,county,2,NA-OT,Otjiwarongo,,,,locality,,NA-OD,Otjiwarongo,,,,,region,1,NA-OD,Otjozondjupa Region,HIGH,1.0,NA-OD
+Namibia,Okahandja,Otjozondjupa,,,46061,Constituency,,,#N/A,,OtjozondjupaNamibia,county,2,NA-OH,Okahandja,,,,,,,,,,,,region,1,NA-OD,Otjozondjupa Region,NONE,0.0,NA-OD
+Namibia,Grootfontein,Otjozondjupa,,,36951,Constituency,,,#N/A,,OtjozondjupaNamibia,county,2,NA-KE,Grootfontein,,,,locality,,NA-OD,Grootfontein,,,,,region,1,NA-OD,Otjozondjupa Region,HIGH,1.0,NA-OD
+Namibia,Okakarara,Otjozondjupa,,,30987,Constituency,,,#N/A,,OtjozondjupaNamibia,county,2,NA-KH,Okakarara,,,,,,,,,,,,region,1,NA-OD,Otjozondjupa Region,NONE,0.0,NA-OD
+Namibia,Omatako,Otjozondjupa,,,18283,Constituency,,,#N/A,,OtjozondjupaNamibia,county,2,NA-KU,Omatako,,,,,,,,,,,,region,1,NA-OD,Otjozondjupa Region,NONE,0.0,NA-OD
+Namibia,Otavi,Otjozondjupa,,,18279,Constituency,,,#N/A,,OtjozondjupaNamibia,county,2,NA-ON,Otavi,,,,locality,,NA-OD,Otavi,,,,,region,1,NA-OD,Otjozondjupa Region,HIGH,1.0,NA-OD
+Namibia,Tsumkwe,Otjozondjupa,,,15357,Constituency,,,#N/A,,OtjozondjupaNamibia,county,2,NA-KU,Tsumkwe,,,,locality,,NA-OD,Tsumkwe (Boundaries),,,,,region,1,NA-OD,Otjozondjupa Region,HIGH,1.0,NA-OD
+Namibia,Katima Mulilo Urban,Zambezi (Caprivi),,,46401,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,,,,,,,,county,2,NA-CA,Katima Muliro Urban,,,,,region,1,NA-CA,Zambezi Region,MED,0.947,NA-CA
+Namibia,Katima Mulilo Rural,Zambezi (Caprivi),,,24016,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,,,,,,,,county,2,NA-CA,Katima Muliro Rural,,,,,region,1,NA-CA,Zambezi Region,MED,0.947,NA-CA
+Namibia,Sibbinda,Zambezi (Caprivi),,,17126,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,,,,,,,,locality,,NA-CA,Sibbinda,,,,,region,1,NA-CA,Zambezi Region,HIGH,1.0,NA-CA
+Namibia,Kabbe North,Zambezi (Caprivi),,,12253,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,,,,,,,,,,,,,,,,region,1,NA-CA,Zambezi Region,NONE,0.0,NA-CA
+Namibia,Kongola,Zambezi (Caprivi),,,12069,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,county,2,NA-CA,Kongola,,,,county,2,NA-CA,Kongola,,,,,region,1,NA-CA,Zambezi Region,HIGH,1.0,NA-CA
+Namibia,Kabbe South,Zambezi (Caprivi),,,11345,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,,,,,,,,,,,,,,,,region,1,NA-CA,Zambezi Region,NONE,0.0,NA-CA
+Namibia,Linyanti,Zambezi (Caprivi),,,10425,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,county,2,NA-CA,Linyandi,,,,locality,,NA-CA,Linyanti,,,,,region,1,NA-CA,Zambezi Region,HIGH,1.0,NA-CA
+Namibia,Judea Lyaboloma,Zambezi (Caprivi),,,8738,Constituency,,,#N/A,,Zambezi (Caprivi)Namibia,,,,,,,,,,,,,,,,region,1,NA-CA,Zambezi Region,NONE,0.0,NA-CA

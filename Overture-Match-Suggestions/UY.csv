@@ -1,0 +1,20 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Uruguay,Artigas,Artigas,,,74100,Department,,,#N/A,,ArtigasUruguay,region,1,UY-AR,Artigas,,,,locality,,UY-AR,Artigas,,,,,region,1,UY-AR,Artigas,HIGH,1.0,UY-AR
+Uruguay,Canelones,Canelones,,,603700,Department,Montevideo,,Montevideo,,CanelonesUruguay,region,1,UY-CA,Canelones,,,,county,2,UY-CA,Canelones,,,,,region,1,UY-CA,Canelones,HIGH,1.0,UY-CA
+Uruguay,Cerro Largo,Cerro Largo,,,89600,Department,Melo,,Melo,,Cerro LargoUruguay,region,1,UY-CL,Cerro Largo,,,,region,1,UY-CL,Cerro Largo,,,,,region,1,UY-CL,Cerro Largo,HIGH,1.0,UY-CL
+Uruguay,Colonia,Colonia,,,131300,Department,Colonia del Sacramento,,Colonia del Sacramento,,ColoniaUruguay,region,1,UY-CO,Colonia,,,,region,1,UY-CO,Colonia,,,,,region,1,UY-CO,Colonia,HIGH,1.0,UY-CO
+Uruguay,Durazno,Durazno,,,59000,Department,,,#N/A,,DuraznoUruguay,region,1,UY-DU,Durazno,,,,region,1,UY-DU,Durazno,,,,,region,1,UY-DU,Durazno,HIGH,1.0,UY-DU
+Uruguay,Flores,Flores,,,26500,Department,Trinidad (URU),,Trinidad (URU),,FloresUruguay,region,1,UY-FS,Flores,,,,region,1,UY-FS,Flores,,,,,region,1,UY-FS,Flores,HIGH,1.0,UY-FS
+Uruguay,Florida,Florida,,,69300,Department,,,#N/A,,FloridaUruguay,region,1,UY-FD,Florida,,,,locality,,UY-FD,Florida,,,,,region,1,UY-FD,Florida,HIGH,1.0,UY-FD
+Uruguay,Lavalleja,Lavalleja,,,58700,Department,,,#N/A,,LavallejaUruguay,region,1,UY-LA,Lavalleja,,,,region,1,UY-LA,Lavalleja,,,,,region,1,UY-LA,Lavalleja,HIGH,1.0,UY-LA
+Uruguay,Maldonado,Maldonado,,,195000,Department,Maldonado,,Maldonado,,MaldonadoUruguay,region,1,UY-MA,Maldonado,,,,locality,,UY-MA,Maldonado,,,,,region,1,UY-MA,Maldonado,HIGH,1.0,UY-MA
+Uruguay,Montevideo,Montevideo,,,1383100,Department,Montevideo,,Montevideo,,MontevideoUruguay,region,1,UY-MO,Montevideo,,,,locality,,UY-MO,Montevideo,,,,,region,1,UY-MO,Montevideo,HIGH,1.0,UY-MO
+Uruguay,Paysandú,Paysandú,,,119900,Department,Paysandú,,Paysandú,,PaysandúUruguay,region,1,UY-PA,Paysandú,,,,locality,,UY-PA,Paysandú,,,,,region,1,UY-PA,Paysandú,HIGH,1.0,UY-PA
+Uruguay,Río Negro,Río Negro,,,58300,Department,,,#N/A,,Río NegroUruguay,region,1,UY-RN,Río Negro,,,,region,1,UY-RN,Río Negro,,,,,region,1,UY-RN,Río Negro,HIGH,1.0,UY-RN
+Uruguay,Rivera,Rivera,,,109000,Department,Rivera,,Rivera,,RiveraUruguay,region,1,UY-RV,Rivera,,,,locality,,UY-RV,Rivera,,,,,region,1,UY-RV,Rivera,HIGH,1.0,UY-RV
+Uruguay,Rocha,Rocha,,,74200,Department,,,#N/A,,RochaUruguay,region,1,UY-RO,Rocha,,,,region,1,UY-RO,Rocha,,,,,region,1,UY-RO,Rocha,HIGH,1.0,UY-RO
+Uruguay,Salto,Salto,,,133700,Department,Salto,,Salto,,SaltoUruguay,region,1,UY-SA,Salto,,,,locality,,UY-SA,Salto,,,,,region,1,UY-SA,Salto,HIGH,1.0,UY-SA
+Uruguay,San José,San José,,,118300,Department,,,#N/A,,San JoséUruguay,region,1,UY-SJ,San José,,,,locality,,UY-SJ,San José,,,,,region,1,UY-SJ,San José,HIGH,1.0,UY-SJ
+Uruguay,Soriano,Soriano,,,83700,Department,,,#N/A,,SorianoUruguay,region,1,UY-SO,Soriano,,,,region,1,UY-SO,Soriano,,,,,region,1,UY-SO,Soriano,HIGH,1.0,UY-SO
+Uruguay,Tacuarembó,Tacuarembó,,,92900,Department,Tacuarembo,,Tacuarembo,,TacuarembóUruguay,region,1,UY-TA,Tacuarembó,,,,locality,,UY-TA,Tacuarembó,,,,,region,1,UY-TA,Tacuarembó,HIGH,1.0,UY-TA
+Uruguay,Treinta y Tres  ,Treinta y Tres  ,,,50500,Department,,,#N/A,,Treinta y Tres  Uruguay,region,1,UY-TT,Treinta y Tres,,,,locality,,UY-TT,Treinta y Tres,,,,,region,1,UY-TT,Treinta y Tres,HIGH,1.0,UY-TT

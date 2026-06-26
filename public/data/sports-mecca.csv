@@ -1,57 +1,60 @@
 rank,slug,name,country,score,pop,sports_score
-2,london,London,United Kingdom,180.2,16152605,287
-7,los-angeles,Los Angeles,United States,109.9,18507255,213
-1,new-york,New York,United States,181.1,22342624,198
-4,tokyo,Tokyo,Japan,133.0,40317972,158
-26,miami,Miami,United States,62.1,6538896,133
-3,paris,Paris,France,142.7,12878104,123
-86,new-orleans,New Orleans,United States,32.0,1487788,100
-10,washington-baltimore,Washington-Baltimore,United States,96.8,10204407,91
-40,buenos-aires,Buenos Aires,Argentina,51.8,15188985,90
-12,chicago,Chicago,United States,90.5,9941597,89
-34,atlanta,Atlanta,United States,56.7,7258116,88
-28,melbourne,Melbourne,Australia,61.2,5411094,82
-5,san-francisco-san-jose,San Francisco-San Jose,United States,124.6,7979579,81
-77,phoenix,Phoenix,United States,33.6,5186958,81
-19,madrid,Madrid,Spain,68.0,6930703,80
-15,sydney,Sydney,Australia,72.3,5497131,78
-110,indianapolis,Indianapolis,United States,25.0,2584194,76
-13,boston,Boston,United States,87.3,6792923,73
-22,istanbul,Istanbul,Turkey,65.3,16293275,73
-49,johannesburg,Johannesburg,South Africa,46.2,15099421,69
-20,milan,Milan,Italy,67.5,7843262,67
-32,dallas,Dallas,United States,57.5,8730700,67
-67,manchester,Manchester,United Kingdom,35.2,3087309,67
-21,houston,Houston,United States,65.4,7981303,66
-82,athens,Athens,Greece,33.2,3792469,64
-115,kansas-city,Kansas City,United States,24.8,2593094,64
-65,minneapolis,Minneapolis,United States,37.7,4170245,60
-24,rhine-ruhr,Rhine-Ruhr,Germany,65.0,11102474,58
-29,philadelphia,Philadelphia,United States,60.5,7298206,57
-48,rome,Rome,Italy,47.5,4224901,57
-17,moscow,Moscow,Russia,70.3,21534777,56
-31,seattle,Seattle,United States,58.8,5105721,55
-33,barcelona,Barcelona,Spain,56.7,5702262,55
-52,cairo,Cairo,Egypt,43.9,23708237,54
-16,toronto,Toronto,Canada,71.6,7670678,53
-38,munich,Munich,Germany,52.0,6114612,53
-59,las-vegas,Las Vegas,United States,39.5,2454861,51
-60,lisbon,Lisbon,Portugal,39.4,3150191,50
-62,detroit,Detroit,United States,39.1,5430523,50
-27,mexico-city,Mexico City,Mexico,61.7,26370664,49
-139,glasgow,Glasgow,United Kingdom,20.8,1740760,49
-53,san-diego,San Diego,United States,42.1,3298799,48
-64,rio-de-janeiro,Rio de Janeiro,Brazil,37.9,12937950,48
-30,berlin,Berlin,Germany,59.7,5683734,47
-95,tampa,Tampa,United States,29.3,3424560,45
-96,charlotte,Charlotte,United States,29.2,3052890,45
-116,birmingham,Birmingham,United Kingdom,24.8,3260752,45
-117,liverpool,Liverpool,United Kingdom,24.6,2237316,45
-14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,75.0,18126728,44
-8,seoul,Seoul,South Korea,107.8,26043325,43
-41,brussels,Brussels,Belgium,51.5,2875717,43
-42,amsterdam,Amsterdam,Netherlands,51.0,2460092,42
-70,doha,Doha,Qatar,34.9,2669452,42
-75,st-louis,St. Louis,United States,34.1,2915867,42
-72,rotterdam-the-hague,Rotterdam-The Hague,Netherlands,34.6,3334090,41
-101,auckland,Auckland,New Zealand,27.3,1695200,40
+2,london,London,United Kingdom,180.1,16152605,303
+8,los-angeles,Los Angeles,United States,108.4,18507255,225
+1,new-york,New York,United States,181.6,22342624,206
+4,tokyo,Tokyo,Japan,132.8,40317972,156
+28,miami,Miami,United States,59.9,6538896,139
+3,paris,Paris,France,143.4,12878104,134
+86,new-orleans,New Orleans,United States,32.7,1487788,102
+11,washington-baltimore,Washington-Baltimore,United States,96.1,10204407,97
+36,atlanta,Atlanta,United States,54.0,7258116,94
+12,chicago,Chicago,United States,89.7,9941597,92
+27,melbourne,Melbourne,Australia,60.2,5411094,92
+38,buenos-aires,Buenos Aires,Argentina,52.3,15188985,92
+16,sydney,Sydney,Australia,70.8,5497131,90
+5,san-francisco-san-jose,San Francisco-San Jose,United States,124.9,7979579,85
+19,madrid,Madrid,Spain,67.3,6930703,81
+72,phoenix,Phoenix,United States,34.8,5186958,81
+110,indianapolis,Indianapolis,United States,26.7,2584194,80
+22,istanbul,Istanbul,Turkey,64.8,16293275,77
+21,houston,Houston,United States,66.3,7981303,74
+78,manchester,Manchester,United Kingdom,33.9,3087309,74
+13,boston,Boston,United States,86.6,6792923,73
+34,dallas,Dallas,United States,55.9,8730700,73
+50,johannesburg,Johannesburg,South Africa,45.7,15099421,70
+83,athens,Athens,Greece,33.4,3792469,70
+20,milan,Milan,Italy,66.9,7843262,65
+66,minneapolis,Minneapolis,United States,37.3,4170245,64
+30,philadelphia,Philadelphia,United States,59.7,7298206,63
+45,rome,Rome,Italy,49.2,4224901,62
+115,kansas-city,Kansas City,United States,26.1,2593094,62
+15,toronto,Toronto,Canada,71.1,7670678,57
+23,rhine-ruhr,Rhine-Ruhr,Germany,64.8,11102474,57
+32,seattle,Seattle,United States,57.7,5105721,57
+52,cairo,Cairo,Egypt,44.1,23708237,55
+33,barcelona,Barcelona,Spain,56.3,5702262,54
+63,detroit,Detroit,United States,38.7,5430523,54
+41,munich,Munich,Germany,52.0,6114612,53
+62,rio-de-janeiro,Rio de Janeiro,Brazil,38.8,12937950,52
+17,moscow,Moscow,Russia,70.5,21534777,51
+123,liverpool,Liverpool,United Kingdom,23.9,2237316,51
+61,lisbon,Lisbon,Portugal,39.4,3150191,50
+92,tampa,Tampa,United States,30.8,3424560,49
+114,birmingham,Birmingham,United Kingdom,26.3,3260752,49
+138,glasgow,Glasgow,United Kingdom,20.8,1740760,49
+53,san-diego,San Diego,United States,43.2,3298799,48
+29,berlin,Berlin,Germany,59.7,5683734,47
+64,las-vegas,Las Vegas,United States,38.1,2454861,47
+26,mexico-city,Mexico City,Mexico,61.4,26370664,46
+65,doha,Doha,Qatar,37.4,2669452,46
+39,brussels,Brussels,Belgium,52.3,2875717,45
+93,charlotte,Charlotte,United States,30.4,3052890,45
+14,osaka-kyoto-kobe,Osaka-Kyoto-Kobe,Japan,75.1,18126728,44
+40,amsterdam,Amsterdam,Netherlands,52.3,2460092,44
+69,st-louis,St. Louis,United States,35.9,2915867,44
+100,salt-lake-city-provo,Salt Lake City-Provo,United States,28.9,2874061,44
+7,seoul,Seoul,South Korea,109.0,26043325,43
+6,beijing,Beijing,China,112.8,22560773,42
+103,auckland,Auckland,New Zealand,28.0,1695200,42
+146,leeds-bradford,Leeds-Bradford,United Kingdom,19.8,2351599,42
+59,denver,Denver,United States,40.6,3382760,41

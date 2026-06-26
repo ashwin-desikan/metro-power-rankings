@@ -1,0 +1,40 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Togo,Tchaoudjo,Centrale,,,240360,Prefecture,,,#N/A,,CentraleTogo,county,2,TG-C,Tchaoudjo,,,,county,2,TG-C,Tchaoudjo,,,,,region,1,TG-C,Région Centrale,HIGH,1.0,TG-C
+Togo,Tchamba,Centrale,,,200585,Prefecture,,,#N/A,,CentraleTogo,county,2,TG-C,Tchamba,,,,county,2,TG-C,Tchamba,,,,,region,1,TG-C,Région Centrale,HIGH,1.0,TG-C
+Togo,Blitta,Centrale,,,163272,Prefecture,,,#N/A,,CentraleTogo,county,2,TG-C,Blitta,,,,county,2,TG-C,Blitta,,,,,region,1,TG-C,Région Centrale,HIGH,1.0,TG-C
+Togo,Sotouboua,Centrale,,,138864,Prefecture,,,#N/A,,CentraleTogo,county,2,TG-C,Sotouboua,,,,county,2,TG-C,Sotouboua,,,,,region,1,TG-C,Région Centrale,HIGH,1.0,TG-C
+Togo,Mô,Centrale,,,52448,Prefecture,,,#N/A,,CentraleTogo,,,,,,,,,,,,,,,,region,1,TG-C,Région Centrale,NONE,0.0,TG-C
+Togo,Kozah,Kara,,,283738,Prefecture,,,#N/A,,KaraTogo,county,2,TG-K,Kozah,,,,county,2,TG-K,Kozah,,,,,region,1,TG-K,Région de la Kara,HIGH,1.0,TG-K
+Togo,Dankpen,Kara,,,185662,Prefecture,,,#N/A,,KaraTogo,county,2,TG-K,Dankpen,,,,county,2,TG-K,Dankpen,,,,,region,1,TG-K,Région de la Kara,HIGH,1.0,TG-K
+Togo,Bassar,Kara,,,152065,Prefecture,,,#N/A,,KaraTogo,county,2,TG-K,Bassar,,,,county,2,TG-K,Bassar,,,,,region,1,TG-K,Région de la Kara,HIGH,1.0,TG-K
+Togo,Kéran,Kara,,,128687,Prefecture,,,#N/A,,KaraTogo,county,2,TG-K,Keran,,,,county,2,TG-K,Keran,,,,,region,1,TG-K,Région de la Kara,HIGH,1.0,TG-K
+Togo,Doufelgou,Kara,,,84767,Prefecture,,,#N/A,,KaraTogo,county,2,TG-K,Doufelgou,,,,county,2,TG-K,Doufelgou,,,,,region,1,TG-K,Région de la Kara,HIGH,1.0,TG-K
+Togo,Binah (Bimah),Kara,,,84199,Prefecture,,,#N/A,,KaraTogo,county,2,TG-K,Binah,,,,county,2,TG-K,Binah,,,,,region,1,TG-K,Région de la Kara,HIGH,1.0,TG-K
+Togo,Assoli,Kara,,,66394,Prefecture,,,#N/A,,KaraTogo,county,2,TG-K,Assoli,,,,county,2,TG-K,Assoli,,,,,region,1,TG-K,Région de la Kara,HIGH,1.0,TG-K
+Togo,Golfe,Maritime,,,1305681,Prefecture,Lomé,,Lomé,,MaritimeTogo,county,2,TG-M,Golfe,,,,county,2,TG-M,Golfe,,,,,region,1,TG-M,Région Maritime,HIGH,1.0,TG-M
+Togo,Agoè-Nyivé,Maritime,,,882695,Prefecture,Lomé,,Lomé,,MaritimeTogo,county,2,TG-M,Lome Commune,,,,,,,,,,,,region,1,TG-M,Région Maritime,NONE,0.0,TG-M
+Togo,Zio,Maritime,,,500032,Prefecture,,,#N/A,,MaritimeTogo,county,2,TG-M,Zio,,,,county,2,TG-M,Zio,,,,,region,1,TG-M,Région Maritime,HIGH,1.0,TG-M
+Togo,Lacs,Maritime,,,241247,Prefecture,,,#N/A,,MaritimeTogo,county,2,TG-M,Lacs,,,,county,2,TG-M,Lacs,,,,,region,1,TG-M,Région Maritime,HIGH,1.0,TG-M
+Togo,Vo,Maritime,,,224411,Prefecture,,,#N/A,,MaritimeTogo,county,2,TG-M,Vo,,,,county,2,TG-M,Vo,,,,,region,1,TG-M,Région Maritime,HIGH,1.0,TG-M
+Togo,Yoto,Maritime,,,174851,Prefecture,,,#N/A,,MaritimeTogo,county,2,TG-M,Yoto,,,,county,2,TG-M,Yoto,,,,,region,1,TG-M,Région Maritime,HIGH,1.0,TG-M
+Togo,Avé,Maritime,,,111214,Prefecture,,,#N/A,,MaritimeTogo,county,2,TG-M,Ave,,,,county,2,TG-M,Ave,,,,,region,1,TG-M,Région Maritime,HIGH,1.0,TG-M
+Togo,Bas-Mono,Maritime,,,94860,Prefecture,,,#N/A,,MaritimeTogo,county,2,TG-M,Bas-Mono,,,,county,2,TG-M,Bas-Mono,,,,,region,1,TG-M,Région Maritime,HIGH,1.0,TG-M
+Togo,Haho,Plateaux,,,305096,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Haho,,,,county,2,TG-P,Haho,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Ogou,Plateaux,,,253467,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Ogou,,,,county,2,TG-P,Ogou,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Anié,Plateaux,,,180158,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Anié,,,,county,2,TG-P,Anié,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Est-Mono,Plateaux,,,164460,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Est-Mono,,,,county,2,TG-P,Est-Mono,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Kloto,Plateaux,,,145986,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Kloto,,,,county,2,TG-P,Kloto,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Amou,Plateaux,,,114172,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Amou,,,,county,2,TG-P,Amou,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Wawa,Plateaux,,,101300,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Wawa,,,,county,2,TG-P,Wawa,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Moyen-Mono,Plateaux,,,90505,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Moyen-Mono,,,,county,2,TG-P,Moyen-Mono,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Agou,Plateaux,,,85793,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Agou,,,,county,2,TG-P,Agou,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Kpélé,Plateaux,,,80939,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Kpélé,,,,county,2,TG-P,Kpélé,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Akébou,Plateaux,,,73830,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Akébou,,,,county,2,TG-P,Akébou,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Danyi,Plateaux,,,40240,Prefecture,,,#N/A,,PlateauxTogo,county,2,TG-P,Danyi,,,,county,2,TG-P,Danyi,,,,,region,1,TG-P,Région des Plateaux,HIGH,1.0,TG-P
+Togo,Tône,Savanes,,,388775,Prefecture,,,#N/A,,SavanesTogo,county,2,TG-S,Tone,,,,county,2,TG-S,Tone,,,,,region,1,TG-S,Région des Savanes,HIGH,1.0,TG-S
+Togo,Oti-Sud,Savanes,,,150376,Prefecture,,,#N/A,,SavanesTogo,,,,,,,,,,,,,,,,region,1,TG-S,Région des Savanes,NONE,0.0,TG-S
+Togo,Cinkassé,Savanes,,,128959,Prefecture,,,#N/A,,SavanesTogo,county,2,TG-S,Cinkassé,,,,county,2,TG-S,Cinkassé,,,,,region,1,TG-S,Région des Savanes,HIGH,1.0,TG-S
+Togo,Oti,Savanes,,,124848,Prefecture,,,#N/A,,SavanesTogo,county,2,TG-S,Oti,,,,county,2,TG-S,Oti,,,,,region,1,TG-S,Région des Savanes,HIGH,1.0,TG-S
+Togo,Kpendjal-Ouest,Savanes,,,123330,Prefecture,,,#N/A,,SavanesTogo,,,,,,,,,,,,,,,,region,1,TG-S,Région des Savanes,NONE,0.0,TG-S
+Togo,Tandjouaré,Savanes,,,117969,Prefecture,,,#N/A,,SavanesTogo,county,2,TG-S,Tandjouare,,,,county,2,TG-S,Tandjouare,,,,,region,1,TG-S,Région des Savanes,HIGH,1.0,TG-S
+Togo,Kpendjal,Savanes,,,88365,Prefecture,,,#N/A,,SavanesTogo,county,2,TG-S,Kpendjal,,,,county,2,TG-S,Kpendjal,,,,,region,1,TG-S,Région des Savanes,HIGH,1.0,TG-S

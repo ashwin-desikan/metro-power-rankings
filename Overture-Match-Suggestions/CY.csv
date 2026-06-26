@@ -1,428 +1,428 @@
 ﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
-Cyprus,Avgórou,Famagusta,,,4925,Community,Achna,,Achna,,FamagustaCyprus,,,,,,,,locality,,nan,Αυγόρου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ormídeia,Famagusta,,,4212,Community,Achna,,Achna,,FamagustaCyprus,,,,,,,,locality,,nan,Ορμήδεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Xylotýmvou,Famagusta,,,3784,Community,Achna,,Achna,,FamagustaCyprus,,,,,,,,locality,,nan,Ξυλοτύμβου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Áchna [Dasáki Áchnas],Famagusta,,,2182,Community,Achna,,Achna,,FamagustaCyprus,,,,,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
-Cyprus,Agía Nápa,Famagusta,,,4716,Municipality,Ayia Napa,,Ayia Napa,,FamagustaCyprus,,,,,,,,locality,,nan,Αγία Νάπα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Paralímni,Famagusta,,,19037,Municipality,Paralimni,,Paralimni,,FamagustaCyprus,,,,,,,,locality,,nan,Παραλίμνι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Derýneia,Famagusta,,,6229,Municipality,,,#N/A,,FamagustaCyprus,,,,,,,,locality,,nan,Δερύνεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Sotíra,Famagusta,,,5905,Municipality,,,#N/A,,FamagustaCyprus,,,,,,,,locality,,nan,Σωτήρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Liopétri,Famagusta,,,4908,Community,,,#N/A,,FamagustaCyprus,,,,,,,,locality,,nan,Λιοπέτρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Famagusta,Gazimağusa,,,40920,Municipality (Northern),Famagusta,,Famagusta,,GazimağusaCyprus,,,,,,,,region,1,nan,Famagusta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Avgórou,Famagusta,,,4925,Community,Achna,,Achna,,FamagustaCyprus,locality,,,Αυγόρου,,,,locality,,nan,Αυγόρου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ormídeia,Famagusta,,,4212,Community,Achna,,Achna,,FamagustaCyprus,locality,,,Ορμήδεια,,,,locality,,nan,Ορμήδεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Xylotýmvou,Famagusta,,,3784,Community,Achna,,Achna,,FamagustaCyprus,locality,,,Ξυλοτύμβου,,,,locality,,nan,Ξυλοτύμβου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Áchna [Dasáki Áchnas],Famagusta,,,2182,Community,Achna,,Achna,,FamagustaCyprus,locality,,,Achna,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
+Cyprus,Agía Nápa,Famagusta,,,4716,Municipality,Ayia Napa,,Ayia Napa,,FamagustaCyprus,locality,,,Αγία Νάπα,,,,locality,,nan,Αγία Νάπα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Paralímni,Famagusta,,,19037,Municipality,Paralimni,,Paralimni,,FamagustaCyprus,locality,,,Παραλίμνι,,,,locality,,nan,Παραλίμνι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Derýneia,Famagusta,,,6229,Municipality,,,#N/A,,FamagustaCyprus,locality,,,Δερύνεια,,,,locality,,nan,Δερύνεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Sotíra,Famagusta,,,5905,Municipality,,,#N/A,,FamagustaCyprus,locality,,,Σωτήρα,,,,locality,,nan,Σωτήρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Liopétri,Famagusta,,,4908,Community,,,#N/A,,FamagustaCyprus,locality,,,Λιοπέτρι,,,,locality,,nan,Λιοπέτρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Famagusta,Gazimağusa,,,40920,Municipality (Northern),Famagusta,,Famagusta,,GazimağusaCyprus,locality,,,Gazimağusa,,,,region,1,nan,Famagusta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Yeni Boğaziçi (Ágios Sérgios),Gazimağusa,,,6618,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Beyarmudu (Pérgamos),Gazimağusa,,,4125,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,Beyarmudu,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Paşaköy (Áskisi / Ádeia),Gazimağusa,,,3561,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,Paşaköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,İnönü (Sínta),Gazimağusa,,,2927,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,İnönü,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Akdoğan (Lýsi),Gazimağusa,,,2471,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,Akdoğan,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Serdarlı (Kínaidos),Gazimağusa,,,2411,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,Serdarlı,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Vadili (Vatilí),Gazimağusa,,,2390,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,Vadili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Geçitkale (Lefkónoiko),Gazimağusa,,,2380,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,Geçitkale,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tatlısu (Akanthoú),Gazimağusa,,,1459,Municipality (Northern),,,#N/A,,GazimağusaCyprus,,,,,,,,locality,,nan,Tatlısu,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kyrenia,Girne,,,33207,Municipality (Northern),Kyrenia,,Kyrenia,,GirneCyprus,,,,,,,,region,1,nan,Kyrenia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Beyarmudu (Pérgamos),Gazimağusa,,,4125,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,Beyarmudu,,,,locality,,nan,Beyarmudu,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Paşaköy (Áskisi / Ádeia),Gazimağusa,,,3561,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,Paşaköy,,,,locality,,nan,Paşaköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,İnönü (Sínta),Gazimağusa,,,2927,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,İnönü,,,,locality,,nan,İnönü,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Akdoğan (Lýsi),Gazimağusa,,,2471,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,Akdoğan,,,,locality,,nan,Akdoğan,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Serdarlı (Kínaidos),Gazimağusa,,,2411,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,Serdarlı,,,,locality,,nan,Serdarlı,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Vadili (Vatilí),Gazimağusa,,,2390,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,Vadili,,,,locality,,nan,Vadili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Geçitkale (Lefkónoiko),Gazimağusa,,,2380,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,Geçitkale,,,,locality,,nan,Geçitkale,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tatlısu (Akanthoú),Gazimağusa,,,1459,Municipality (Northern),,,#N/A,,GazimağusaCyprus,locality,,,Tatlısu,,,,locality,,nan,Tatlısu,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kyrenia,Girne,,,33207,Municipality (Northern),Kyrenia,,Kyrenia,,GirneCyprus,locality,,,Girne,,,,region,1,nan,Kyrenia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Dikmen (Díkomo),Girne,,,9120,Municipality (Northern),,,#N/A,,GirneCyprus,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Lapta (Girne) (Lápithos),Girne,,,7839,Municipality (Northern),,,#N/A,,GirneCyprus,,,,,,,,locality,,nan,Lapta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Alsancak (Karavás),Girne,,,6597,Municipality (Northern),,,#N/A,,GirneCyprus,,,,,,,,locality,,nan,Alsancak,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Çatalköy (Ágios Epíktitos),Girne,,,5652,Municipality (Northern),,,#N/A,,GirneCyprus,,,,,,,,locality,,nan,Çatalköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lapta (Çamlıbel) (Lápithos),Girne,,,4279,Municipality (Northern),,,#N/A,,GirneCyprus,,,,,,,,locality,,nan,Lapta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Esentepe (Ágios Amvrósios),Girne,,,2414,Municipality (Northern),,,#N/A,,GirneCyprus,,,,,,,,locality,,nan,Esentepe,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Karaman (Yukarı Karmi) (Kármi),Girne,,,55,Municipality (Northern),,,#N/A,,GirneCyprus,,,,,,,,locality,,nan,Karaman,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Morphou,Güzelyurt,,,18946,Municipality (Northern),Morphou,,Morphou,,GüzelyurtCyprus,,,,,,,,locality,,nan,Güzelyurt,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,İskele (Tríkomo),İskele,,,7906,Municipality (Northern),,,#N/A,,İskeleCyprus,,,,,,,,locality,,nan,İskele,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lapta (Girne) (Lápithos),Girne,,,7839,Municipality (Northern),,,#N/A,,GirneCyprus,locality,,,Lapta,,,,locality,,nan,Lapta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Alsancak (Karavás),Girne,,,6597,Municipality (Northern),,,#N/A,,GirneCyprus,locality,,,Alsancak,,,,locality,,nan,Alsancak,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Çatalköy (Ágios Epíktitos),Girne,,,5652,Municipality (Northern),,,#N/A,,GirneCyprus,locality,,,Çatalköy,,,,locality,,nan,Çatalköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lapta (Çamlıbel) (Lápithos),Girne,,,4279,Municipality (Northern),,,#N/A,,GirneCyprus,locality,,,Lapta,,,,locality,,nan,Lapta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Esentepe (Ágios Amvrósios),Girne,,,2414,Municipality (Northern),,,#N/A,,GirneCyprus,locality,,,Esentepe,,,,locality,,nan,Esentepe,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Karaman (Yukarı Karmi) (Kármi),Girne,,,55,Municipality (Northern),,,#N/A,,GirneCyprus,locality,,,Karaman,,,,locality,,nan,Karaman,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Morphou,Güzelyurt,,,18946,Municipality (Northern),Morphou,,Morphou,,GüzelyurtCyprus,locality,,,Güzelyurt,,,,locality,,nan,Güzelyurt,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,İskele (Tríkomo),İskele,,,7906,Municipality (Northern),,,#N/A,,İskeleCyprus,locality,,,İskele,,,,locality,,nan,İskele,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Yeni Erenköy (Aigialoúsa),İskele,,,5627,Municipality (Northern),,,#N/A,,İskeleCyprus,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Mehmetçik (Galáteia),İskele,,,3729,Municipality (Northern),,,#N/A,,İskeleCyprus,,,,,,,,locality,,nan,Mehmetçik,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Büyükkonuk (Kómi),İskele,,,2860,Municipality (Northern),,,#N/A,,İskeleCyprus,,,,,,,,locality,,nan,Büyükkonuk,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Dipkarpaz (Rizokárpaso),İskele,,,2349,Municipality (Northern),,,#N/A,,İskeleCyprus,,,,,,,,locality,,nan,Dipkarpaz,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mehmetçik (Galáteia),İskele,,,3729,Municipality (Northern),,,#N/A,,İskeleCyprus,locality,,,Mehmetçik,,,,locality,,nan,Mehmetçik,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Büyükkonuk (Kómi),İskele,,,2860,Municipality (Northern),,,#N/A,,İskeleCyprus,locality,,,Büyükkonuk,,,,locality,,nan,Büyükkonuk,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Dipkarpaz (Rizokárpaso),İskele,,,2349,Municipality (Northern),,,#N/A,,İskeleCyprus,locality,,,Dipkarpaz,,,,locality,,nan,Dipkarpaz,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Kantara,İskele,,,21,Municipality (Northern),,,#N/A,,İskeleCyprus,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Xylofágou,Larnaca,,,6625,Community,Achna,,Achna,,LarnacaCyprus,,,,,,,,locality,,nan,Ξυλοφάγου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Larnaca,Larnaca,,,52046,Municipality,Larnaca,,Larnaca,,LarnacaCyprus,,,,,,,,region,1,nan,Larnaca,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Aradíppou,Larnaca,,,22932,Municipality,Larnaca,,Larnaca,,LarnacaCyprus,,,,,,,,locality,,nan,Αραδίππου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Livádia,Larnaca,,,8581,Municipality,,,#N/A,,LarnacaCyprus,,,,,,,,locality,,nan,Δήμος Λιβαδιών,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Xylofágou,Larnaca,,,6625,Community,Achna,,Achna,,LarnacaCyprus,locality,,,Ξυλοφάγου,,,,locality,,nan,Ξυλοφάγου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Larnaca,Larnaca,,,52046,Municipality,Larnaca,,Larnaca,,LarnacaCyprus,locality,,,Δήμος Λάρνακας,,,,region,1,nan,Larnaca,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Aradíppou,Larnaca,,,22932,Municipality,Larnaca,,Larnaca,,LarnacaCyprus,locality,,,Αραδίππου,,,,locality,,nan,Αραδίππου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Livádia,Larnaca,,,8581,Municipality,,,#N/A,,LarnacaCyprus,locality,,,Δήμος Λιβαδιών,,,,locality,,nan,Δήμος Λιβαδιών,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Voróklini (Oróklini),Larnaca,,,7575,Community,,,#N/A,,LarnacaCyprus,,,,,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
 Cyprus,Dromolaxiá-Meneoú,Larnaca,,,6838,Municipality,,,#N/A,,LarnacaCyprus,,,,,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
-Cyprus,Athiénou,Larnaca,,,5202,Municipality,,,#N/A,,LarnacaCyprus,,,,,,,,locality,,nan,Athienou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kíti,Larnaca,,,5136,Community,,,#N/A,,LarnacaCyprus,,,,,,,,locality,,nan,Κίτι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pýla,Larnaca,,,479,Community,,,#N/A,,LarnacaCyprus,,,,,,,,locality,,nan,Πύλα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lefke (Léfka),Lefke,,,11091,Municipality (Northern),,,#N/A,,LefkeCyprus,,,,,,,,locality,,nan,Lefka,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,North Nicosia,Lefkoşa,,,61378,Municipality (Northern),North Nicosia,,North Nicosia,,LefkoşaCyprus,,,,,,,,locality,,nan,Kuzey Lefkoşa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Gönyeli (Kióneli),Lefkoşa,,,17277,Municipality (Northern),North Nicosia,,North Nicosia,,LefkoşaCyprus,,,,,,,,locality,,nan,Gönyeli,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Değirmenlik (Kythréa),Lefkoşa,,,11895,Municipality (Northern),,,#N/A,,LefkoşaCyprus,,,,,,,,locality,,nan,Değirmenlik,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Alayköy (Gerólakkos),Lefkoşa,,,3884,Municipality (Northern),,,#N/A,,LefkoşaCyprus,,,,,,,,locality,,nan,Alayköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Akıncılar (Louroukína),Lefkoşa,,,390,Municipality (Northern),,,#N/A,,LefkoşaCyprus,,,,,,,,locality,,nan,Akıncılar,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Limassol,Limassol,,,107970,Municipality,Limassol,,Limassol,,LimassolCyprus,,,,,,,,region,1,nan,Limassol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Polemídia,Limassol,,,23174,Municipality,Limassol,,Limassol,,LimassolCyprus,,,,,,,,locality,,nan,Δήμος Κάτω Πολεμιδίων,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Germasógeia,Limassol,,,17329,Municipality,Limassol,,Limassol,,LimassolCyprus,,,,,,,,locality,,nan,Germasogeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Athanásios,Limassol,,,16520,Municipality,Limassol,,Limassol,,LimassolCyprus,,,,,,,,locality,,nan,Agios Athanasios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mésa Geitoniá,Limassol,,,15925,Municipality,Limassol,,Limassol,,LimassolCyprus,,,,,,,,locality,,nan,Δήμος Μέσα Γειτονιάς,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ýpsonas,Limassol,,,13966,Municipality,Limassol,,Limassol,,LimassolCyprus,,,,,,,,locality,,nan,Ύψωνας,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kolóssi,Limassol,,,6482,Community,Limassol,,Limassol,,LimassolCyprus,,,,,,,,locality,,nan,Κολόσσι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mouttagiáka,Limassol,,,3239,Community,Limassol,,Limassol,,LimassolCyprus,,,,,,,,locality,,nan,Mouttayiaka,,,,,region,1,nan,Kyrenia,LOW,0.909,nan
-Cyprus,Stróvolos,Nicosia,,,70823,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,locality,,nan,Strovolos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Nicosia,Nicosia,,,56479,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,region,1,nan,Nicosia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lakatámeia,Nicosia,,,43111,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,locality,,nan,Λακατάμεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Aglantziá,Nicosia,,,21544,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
-Cyprus,Énkomi [Engomi],Nicosia,,,20504,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
-Cyprus,Latsiá,Nicosia,,,18587,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,locality,,nan,Latsia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Géri,Nicosia,,,9706,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,locality,,nan,Geri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tséri,Nicosia,,,8304,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,,,,,,,,locality,,nan,Tseri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Athiénou,Larnaca,,,5202,Municipality,,,#N/A,,LarnacaCyprus,locality,,,Athienou,,,,locality,,nan,Athienou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kíti,Larnaca,,,5136,Community,,,#N/A,,LarnacaCyprus,locality,,,Κίτι,,,,locality,,nan,Κίτι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pýla,Larnaca,,,479,Community,,,#N/A,,LarnacaCyprus,locality,,,Πύλα,,,,locality,,nan,Πύλα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lefke (Léfka),Lefke,,,11091,Municipality (Northern),,,#N/A,,LefkeCyprus,locality,,,Lefka,,,,locality,,nan,Lefka,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,North Nicosia,Lefkoşa,,,61378,Municipality (Northern),North Nicosia,,North Nicosia,,LefkoşaCyprus,locality,,,Kuzey Lefkoşa,,,,locality,,nan,Kuzey Lefkoşa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Gönyeli (Kióneli),Lefkoşa,,,17277,Municipality (Northern),North Nicosia,,North Nicosia,,LefkoşaCyprus,locality,,,Gönyeli,,,,locality,,nan,Gönyeli,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Değirmenlik (Kythréa),Lefkoşa,,,11895,Municipality (Northern),,,#N/A,,LefkoşaCyprus,locality,,,Değirmenlik,,,,locality,,nan,Değirmenlik,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Alayköy (Gerólakkos),Lefkoşa,,,3884,Municipality (Northern),,,#N/A,,LefkoşaCyprus,locality,,,Alayköy,,,,locality,,nan,Alayköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Akıncılar (Louroukína),Lefkoşa,,,390,Municipality (Northern),,,#N/A,,LefkoşaCyprus,locality,,,Akıncılar,,,,locality,,nan,Akıncılar,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Limassol,Limassol,,,107970,Municipality,Limassol,,Limassol,,LimassolCyprus,locality,,,Λεμεσός,,,,region,1,nan,Limassol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Polemídia,Limassol,,,23174,Municipality,Limassol,,Limassol,,LimassolCyprus,locality,,,Δήμος Κάτω Πολεμιδίων,,,,locality,,nan,Δήμος Κάτω Πολεμιδίων,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Germasógeia,Limassol,,,17329,Municipality,Limassol,,Limassol,,LimassolCyprus,locality,,,Germasogeia,,,,locality,,nan,Germasogeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Athanásios,Limassol,,,16520,Municipality,Limassol,,Limassol,,LimassolCyprus,locality,,,Agios Athanasios,,,,locality,,nan,Agios Athanasios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mésa Geitoniá,Limassol,,,15925,Municipality,Limassol,,Limassol,,LimassolCyprus,locality,,,Δήμος Μέσα Γειτονιάς,,,,locality,,nan,Δήμος Μέσα Γειτονιάς,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ýpsonas,Limassol,,,13966,Municipality,Limassol,,Limassol,,LimassolCyprus,locality,,,Ύψωνας,,,,locality,,nan,Ύψωνας,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kolóssi,Limassol,,,6482,Community,Limassol,,Limassol,,LimassolCyprus,locality,,,Κολόσσι,,,,locality,,nan,Κολόσσι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mouttagiáka,Limassol,,,3239,Community,Limassol,,Limassol,,LimassolCyprus,locality,,,Mouttayiaka,,,,locality,,nan,Mouttayiaka,,,,,region,1,nan,Kyrenia,LOW,0.909,nan
+Cyprus,Stróvolos,Nicosia,,,70823,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,locality,,,Strovolos,,,,locality,,nan,Strovolos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Nicosia,Nicosia,,,56479,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,region,1,,Nicosia,,,,region,1,nan,Nicosia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lakatámeia,Nicosia,,,43111,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,locality,,,Λακατάμεια,,,,locality,,nan,Λακατάμεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Aglantziá,Nicosia,,,21544,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,locality,,,Αγλαντζιά,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
+Cyprus,Énkomi [Engomi],Nicosia,,,20504,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,locality,,,Έγκωμη,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
+Cyprus,Latsiá,Nicosia,,,18587,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,locality,,,Latsia,,,,locality,,nan,Latsia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Géri,Nicosia,,,9706,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,locality,,,Geri,,,,locality,,nan,Geri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tséri,Nicosia,,,8304,Municipality,Nicosia,,Nicosia,,NicosiaCyprus,locality,,,Tseri,,,,locality,,nan,Tseri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Ágios Dométios,Nicosia,,,12906,Municipality,,,#N/A,,NicosiaCyprus,,,,,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
-Cyprus,Dáli,Nicosia,,,12350,Municipality,,,#N/A,,NicosiaCyprus,,,,,,,,locality,,nan,Dali,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kokkinotrimithiá,Nicosia,,,4817,Community,,,#N/A,,NicosiaCyprus,,,,,,,,locality,,nan,Κοκκινοτριμιθιά,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Paphos,Paphos,,,37991,Municipality,Paphos,,Paphos,,PaphosCyprus,,,,,,,,region,1,nan,Paphos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Geroskípou,Paphos,,,8579,Municipality,,,#N/A,,PaphosCyprus,,,,,,,,locality,,nan,Γεροσκήπου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pégeia,Paphos,,,6945,Municipality,,,#N/A,,PaphosCyprus,,,,,,,,locality,,nan,Πέγεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Chlórakas,Paphos,,,6422,Community,,,#N/A,,PaphosCyprus,,,,,,,,locality,,nan,Hlorakas,,,,,region,1,nan,Kyrenia,MED,0.941,nan
-Cyprus,Émpa,Paphos,,,5505,Community,,,#N/A,,PaphosCyprus,,,,,,,,locality,,nan,Empa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Dáli,Nicosia,,,12350,Municipality,,,#N/A,,NicosiaCyprus,locality,,,Dali,,,,locality,,nan,Dali,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kokkinotrimithiá,Nicosia,,,4817,Community,,,#N/A,,NicosiaCyprus,locality,,,Κοκκινοτριμιθιά,,,,locality,,nan,Κοκκινοτριμιθιά,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Paphos,Paphos,,,37991,Municipality,Paphos,,Paphos,,PaphosCyprus,region,1,,Paphos,,,,region,1,nan,Paphos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Geroskípou,Paphos,,,8579,Municipality,,,#N/A,,PaphosCyprus,locality,,,Γεροσκήπου,,,,locality,,nan,Γεροσκήπου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pégeia,Paphos,,,6945,Municipality,,,#N/A,,PaphosCyprus,locality,,,Πέγεια,,,,locality,,nan,Πέγεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Chlórakas,Paphos,,,6422,Community,,,#N/A,,PaphosCyprus,locality,,,Hlorakas,,,,locality,,nan,Hlorakas,,,,,region,1,nan,Kyrenia,MED,0.941,nan
+Cyprus,Émpa,Paphos,,,5505,Community,,,#N/A,,PaphosCyprus,locality,,,Empa,,,,locality,,nan,Empa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Pólis,Paphos,,,2570,Municipality,,,#N/A,,PaphosCyprus,,,,,,,,,,,,,,,,region,1,nan,Kyrenia,NONE,0.0,nan
-Cyprus,Trachóni,,,,4549,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Τραχώνι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Frénaros,,,,4515,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Φρέναρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Trachóni,,,,4549,Community,,,#N/A,,#N/A,locality,,,Τραχώνι,,,,locality,,nan,Τραχώνι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Frénaros,,,,4515,Community,,,#N/A,,#N/A,locality,,,Φρέναρος,,,,locality,,nan,Φρέναρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Ágios Týchon,,,,4502,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Cyprus,Palaiométocho,,,,4447,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Episkopí,,,,4098,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Επισκοπή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pýla,,,,3869,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πύλα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Parekklisiá,,,,3492,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Parekklisia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Polemídia,,,,3419,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Πάνω Πολεμιδίων,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Episkopí,,,,4098,Community,,,#N/A,,#N/A,locality,,,Επισκοπή,,,,locality,,nan,Επισκοπή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pýla,,,,3869,Community,,,#N/A,,#N/A,locality,,,Πύλα,,,,locality,,nan,Πύλα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Parekklisiá,,,,3492,Community,,,#N/A,,#N/A,locality,,,Parekklisia,,,,locality,,nan,Parekklisia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Polemídia,,,,3419,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Πάνω Πολεμιδίων,,,,locality,,nan,Κοινότητα Πάνω Πολεμιδίων,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Perivólia,,,,3292,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Erími,,,,3159,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ερήμη,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lythrodóntas,,,,3124,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lythrodontas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Akáki,,,,3104,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Akaki,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tála,,,,3100,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Tala,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pýrgos,,,,3066,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pyrgos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Defterá,,,,3007,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Deftera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Péra Chorió,,,,3002,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pera Chorio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lýmpia,,,,2911,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lympia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agía Varvára,,,,2866,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agia Varvara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Koniá,,,,2754,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Konia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kissónerga,,,,2292,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kissonerga,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Peristeróna,,,,2237,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Περιστερώνα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Astromerítis,,,,2192,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Astromeritis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Defterá,,,,2132,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kato Deftera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Nísou,,,,2132,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Nisou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Palódeia,,,,2107,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Palodeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kórnos,,,,2081,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kornos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pissoúri,,,,2047,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πισσούρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágioi Trimithiás,,,,2036,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agioi Trimithias,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ergátes,,,,1950,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ergates,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Psimolófou,,,,1914,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Psimolofou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mámmari,,,,1907,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mammari,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Acherítou,,,,1901,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Acheritou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Klírou,,,,1884,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Klirou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mesógi,,,,1856,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mesogi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tersefánou,,,,1760,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Τερσεφάνου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Synoikismós Anthoúpolis,,,,1690,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Συνοικισμός Ανθούπολης,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Alámpra,,,,1655,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Alampra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Alethrikó,,,,1652,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Alethriko,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Anágeia,,,,1553,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Anageia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Erími,,,,3159,Community,,,#N/A,,#N/A,locality,,,Ερήμη,,,,locality,,nan,Ερήμη,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lythrodóntas,,,,3124,Community,,,#N/A,,#N/A,locality,,,Lythrodontas,,,,locality,,nan,Lythrodontas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Akáki,,,,3104,Community,,,#N/A,,#N/A,locality,,,Akaki,,,,locality,,nan,Akaki,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tála,,,,3100,Community,,,#N/A,,#N/A,locality,,,Tala,,,,locality,,nan,Tala,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pýrgos,,,,3066,Community,,,#N/A,,#N/A,locality,,,Pyrgos,,,,locality,,nan,Pyrgos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Defterá,,,,3007,Community,,,#N/A,,#N/A,locality,,,Pano Deftera,,,,locality,,nan,Pano Deftera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Péra Chorió,,,,3002,Community,,,#N/A,,#N/A,locality,,,Pera Chorio,,,,locality,,nan,Pera Chorio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lýmpia,,,,2911,Community,,,#N/A,,#N/A,locality,,,Lympia,,,,locality,,nan,Lympia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agía Varvára,,,,2866,Community,,,#N/A,,#N/A,locality,,,Agia Varvara,,,,locality,,nan,Agia Varvara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Koniá,,,,2754,Community,,,#N/A,,#N/A,locality,,,Konia,,,,locality,,nan,Konia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kissónerga,,,,2292,Community,,,#N/A,,#N/A,locality,,,Kissonerga,,,,locality,,nan,Kissonerga,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Peristeróna,,,,2237,Community,,,#N/A,,#N/A,locality,,,Περιστερώνα,,,,locality,,nan,Περιστερώνα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Astromerítis,,,,2192,Community,,,#N/A,,#N/A,locality,,,Astromeritis,,,,locality,,nan,Astromeritis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Defterá,,,,2132,Community,,,#N/A,,#N/A,locality,,,Kato Deftera,,,,locality,,nan,Kato Deftera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Nísou,,,,2132,Community,,,#N/A,,#N/A,locality,,,Nisou,,,,locality,,nan,Nisou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Palódeia,,,,2107,Community,,,#N/A,,#N/A,locality,,,Palodeia,,,,locality,,nan,Palodeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kórnos,,,,2081,Community,,,#N/A,,#N/A,locality,,,Kornos,,,,locality,,nan,Kornos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pissoúri,,,,2047,Community,,,#N/A,,#N/A,locality,,,Πισσούρι,,,,locality,,nan,Πισσούρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágioi Trimithiás,,,,2036,Community,,,#N/A,,#N/A,locality,,,Agioi Trimithias,,,,locality,,nan,Agioi Trimithias,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ergátes,,,,1950,Community,,,#N/A,,#N/A,locality,,,Ergates,,,,locality,,nan,Ergates,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Psimolófou,,,,1914,Community,,,#N/A,,#N/A,locality,,,Psimolofou,,,,locality,,nan,Psimolofou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mámmari,,,,1907,Community,,,#N/A,,#N/A,locality,,,Mammari,,,,locality,,nan,Mammari,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Acherítou,,,,1901,Community,,,#N/A,,#N/A,locality,,,Acheritou,,,,locality,,nan,Acheritou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Klírou,,,,1884,Community,,,#N/A,,#N/A,locality,,,Klirou,,,,locality,,nan,Klirou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mesógi,,,,1856,Community,,,#N/A,,#N/A,locality,,,Mesogi,,,,locality,,nan,Mesogi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tersefánou,,,,1760,Community,,,#N/A,,#N/A,locality,,,Τερσεφάνου,,,,locality,,nan,Τερσεφάνου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Synoikismós Anthoúpolis,,,,1690,Community,,,#N/A,,#N/A,locality,,,Συνοικισμός Ανθούπολης,,,,locality,,nan,Συνοικισμός Ανθούπολης,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Alámpra,,,,1655,Community,,,#N/A,,#N/A,locality,,,Alampra,,,,locality,,nan,Alampra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Alethrikó,,,,1652,Community,,,#N/A,,#N/A,locality,,,Alethriko,,,,locality,,nan,Alethriko,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Anágeia,,,,1553,Community,,,#N/A,,#N/A,locality,,,Anageia,,,,locality,,nan,Anageia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Kaló Chorió,,,,1534,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Mosfilotí,,,,1470,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mosfiloti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Péra,,,,1421,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kyperoúnta,,,,1372,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κυπερούντα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kofínou,,,,1306,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kofinou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Psevdás,,,,1289,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Psevdas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Aredioú,,,,1273,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Arediou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Soúni-Zanakiá,,,,1257,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Souni-Zanakia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kakopetriá,,,,1255,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kakopetria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Anglisídes,,,,1253,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Anglisides,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Koúklia,,,,1211,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kouklia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Troúlloi,,,,1181,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Troulloi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tsáda,,,,1180,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Tsada,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tremithoúsa,,,,1171,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Tremithousa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mazotós,,,,1148,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mazotos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mandriá,,,,1127,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mandria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Argáka,,,,1081,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αργάκα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tími,,,,1063,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Timi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Méniko,,,,1037,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Meniko,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Peléndri,,,,1026,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πελένδρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Anaríta,,,,1006,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Anarita,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Moní,,,,937,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Moni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Akrotíri,,,,931,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Akrotiri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Pýrgos,,,,919,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κάτω Πύργος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Kivídes,,,,900,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Kivides,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Asómatos,,,,895,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ασώματος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kalavasós,,,,880,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kalavasos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Polémi,,,,870,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Polemi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pyrgá,,,,870,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pyrga,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Léfkara,,,,870,Municipality,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Lefkara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mésa Chorió,,,,868,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mesa Chorio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Evrýchou,,,,859,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Evrychou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páchna,,,,848,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pachna,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agrós,,,,844,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αγρός,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Siá,,,,840,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Sia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Anafotída,,,,818,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Anafotida,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Giólou,,,,814,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Giolou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Monagroúlli,,,,795,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Monagroulli,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mitseró,,,,789,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mitsero,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pentákomo,,,,765,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πεντάκωμο,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Choirokoitía,,,,761,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Choirokoitia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mosfilotí,,,,1470,Community,,,#N/A,,#N/A,locality,,,Mosfiloti,,,,locality,,nan,Mosfiloti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Péra,,,,1421,Community,,,#N/A,,#N/A,locality,,,Pera,,,,locality,,nan,Pera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kyperoúnta,,,,1372,Community,,,#N/A,,#N/A,locality,,,Κυπερούντα,,,,locality,,nan,Κυπερούντα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kofínou,,,,1306,Community,,,#N/A,,#N/A,locality,,,Kofinou,,,,locality,,nan,Kofinou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Psevdás,,,,1289,Community,,,#N/A,,#N/A,locality,,,Psevdas,,,,locality,,nan,Psevdas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Aredioú,,,,1273,Community,,,#N/A,,#N/A,locality,,,Arediou,,,,locality,,nan,Arediou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Soúni-Zanakiá,,,,1257,Community,,,#N/A,,#N/A,locality,,,Souni-Zanakia,,,,locality,,nan,Souni-Zanakia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kakopetriá,,,,1255,Community,,,#N/A,,#N/A,locality,,,Kakopetria,,,,locality,,nan,Kakopetria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Anglisídes,,,,1253,Community,,,#N/A,,#N/A,locality,,,Anglisides,,,,locality,,nan,Anglisides,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Koúklia,,,,1211,Community,,,#N/A,,#N/A,locality,,,Kouklia,,,,locality,,nan,Kouklia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Troúlloi,,,,1181,Community,,,#N/A,,#N/A,locality,,,Troulloi,,,,locality,,nan,Troulloi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tsáda,,,,1180,Community,,,#N/A,,#N/A,locality,,,Tsada,,,,locality,,nan,Tsada,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tremithoúsa,,,,1171,Community,,,#N/A,,#N/A,locality,,,Tremithousa,,,,locality,,nan,Tremithousa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mazotós,,,,1148,Community,,,#N/A,,#N/A,locality,,,Mazotos,,,,locality,,nan,Mazotos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mandriá,,,,1127,Community,,,#N/A,,#N/A,locality,,,Mandria,,,,locality,,nan,Mandria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Argáka,,,,1081,Community,,,#N/A,,#N/A,locality,,,Αργάκα,,,,locality,,nan,Αργάκα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tími,,,,1063,Community,,,#N/A,,#N/A,locality,,,Timi,,,,locality,,nan,Timi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Méniko,,,,1037,Community,,,#N/A,,#N/A,locality,,,Meniko,,,,locality,,nan,Meniko,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Peléndri,,,,1026,Community,,,#N/A,,#N/A,locality,,,Πελένδρι,,,,locality,,nan,Πελένδρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Anaríta,,,,1006,Community,,,#N/A,,#N/A,locality,,,Anarita,,,,locality,,nan,Anarita,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Moní,,,,937,Community,,,#N/A,,#N/A,locality,,,Moni,,,,locality,,nan,Moni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Akrotíri,,,,931,Community,,,#N/A,,#N/A,locality,,,Akrotiri,,,,locality,,nan,Akrotiri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Pýrgos,,,,919,Community,,,#N/A,,#N/A,locality,,,Κάτω Πύργος,,,,locality,,nan,Κάτω Πύργος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Kivídes,,,,900,Community,,,#N/A,,#N/A,locality,,,Pano Kivides,,,,locality,,nan,Pano Kivides,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Asómatos,,,,895,Community,,,#N/A,,#N/A,locality,,,Ασώματος,,,,locality,,nan,Ασώματος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kalavasós,,,,880,Community,,,#N/A,,#N/A,locality,,,Kalavasos,,,,locality,,nan,Kalavasos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Polémi,,,,870,Community,,,#N/A,,#N/A,locality,,,Polemi,,,,locality,,nan,Polemi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pyrgá,,,,870,Community,,,#N/A,,#N/A,locality,,,Pyrga,,,,locality,,nan,Pyrga,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Léfkara,,,,870,Municipality,,,#N/A,,#N/A,locality,,,Pano Lefkara,,,,locality,,nan,Pano Lefkara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mésa Chorió,,,,868,Community,,,#N/A,,#N/A,locality,,,Mesa Chorio,,,,locality,,nan,Mesa Chorio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Evrýchou,,,,859,Community,,,#N/A,,#N/A,locality,,,Evrychou,,,,locality,,nan,Evrychou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páchna,,,,848,Community,,,#N/A,,#N/A,locality,,,Pachna,,,,locality,,nan,Pachna,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agrós,,,,844,Community,,,#N/A,,#N/A,locality,,,Αγρός,,,,locality,,nan,Αγρός,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Siá,,,,840,Community,,,#N/A,,#N/A,locality,,,Sia,,,,locality,,nan,Sia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Anafotída,,,,818,Community,,,#N/A,,#N/A,locality,,,Anafotida,,,,locality,,nan,Anafotida,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Giólou,,,,814,Community,,,#N/A,,#N/A,locality,,,Giolou,,,,locality,,nan,Giolou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Monagroúlli,,,,795,Community,,,#N/A,,#N/A,locality,,,Monagroulli,,,,locality,,nan,Monagroulli,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mitseró,,,,789,Community,,,#N/A,,#N/A,locality,,,Mitsero,,,,locality,,nan,Mitsero,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pentákomo,,,,765,Community,,,#N/A,,#N/A,locality,,,Πεντάκωμο,,,,locality,,nan,Πεντάκωμο,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Choirokoitía,,,,761,Community,,,#N/A,,#N/A,locality,,,Choirokoitia,,,,locality,,nan,Choirokoitia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Kaló Chorió (Oreinís),,,,747,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Maróni,,,,740,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Maroni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Maróni,,,,740,Community,,,#N/A,,#N/A,locality,,,Maroni,,,,locality,,nan,Maroni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Fasoúla,,,,735,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Ágios Theódoros,,,,727,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αγιος Θεόδωρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Paramýtha,,,,710,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Paramytha,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Theódoros,,,,727,Community,,,#N/A,,#N/A,locality,,,Αγιος Θεόδωρος,,,,locality,,nan,Αγιος Θεόδωρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Paramýtha,,,,710,Community,,,#N/A,,#N/A,locality,,,Paramytha,,,,locality,,nan,Paramytha,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Palaichóri (Mórfou),,,,708,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Mathiátis,,,,670,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mathiatis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Zýgi,,,,667,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Zygi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ármou,,,,663,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Armou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Apesiá,,,,620,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Apesia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Stroumpí,,,,600,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Stroumpi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mathiátis,,,,670,Community,,,#N/A,,#N/A,locality,,,Mathiatis,,,,locality,,nan,Mathiatis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Zýgi,,,,667,Community,,,#N/A,,#N/A,locality,,,Zygi,,,,locality,,nan,Zygi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ármou,,,,663,Community,,,#N/A,,#N/A,locality,,,Armou,,,,locality,,nan,Armou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Apesiá,,,,620,Community,,,#N/A,,#N/A,locality,,,Apesia,,,,locality,,nan,Apesia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Stroumpí,,,,600,Community,,,#N/A,,#N/A,locality,,,Stroumpi,,,,locality,,nan,Stroumpi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Agía Marína (Chrysochoús),,,,591,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Potamiá,,,,587,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Potamia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Galáta,,,,571,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Galata,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kapédes,,,,566,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kapedes,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Avdímou,,,,561,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αυδήμου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Episkopeió,,,,559,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Episkopeio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Koíli,,,,559,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Koili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Potámi,,,,559,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Potami,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Analióntas,,,,551,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Analiontas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kampiá,,,,539,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kampia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agrokipiá,,,,529,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agrokipia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Néo Chorió,,,,522,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Νέο Χωριό,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Akroúnta,,,,521,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Akrounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Déneia,,,,513,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Deneia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Maloúnta,,,,510,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Malounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Oroúnta,,,,505,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Orounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Potamiá,,,,587,Community,,,#N/A,,#N/A,locality,,,Potamia,,,,locality,,nan,Potamia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Galáta,,,,571,Community,,,#N/A,,#N/A,locality,,,Galata,,,,locality,,nan,Galata,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kapédes,,,,566,Community,,,#N/A,,#N/A,locality,,,Kapedes,,,,locality,,nan,Kapedes,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Avdímou,,,,561,Community,,,#N/A,,#N/A,locality,,,Αυδήμου,,,,locality,,nan,Αυδήμου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Episkopeió,,,,559,Community,,,#N/A,,#N/A,locality,,,Episkopeio,,,,locality,,nan,Episkopeio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Koíli,,,,559,Community,,,#N/A,,#N/A,locality,,,Koili,,,,locality,,nan,Koili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Potámi,,,,559,Community,,,#N/A,,#N/A,locality,,,Potami,,,,locality,,nan,Potami,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Analióntas,,,,551,Community,,,#N/A,,#N/A,locality,,,Analiontas,,,,locality,,nan,Analiontas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kampiá,,,,539,Community,,,#N/A,,#N/A,locality,,,Kampia,,,,locality,,nan,Kampia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agrokipiá,,,,529,Community,,,#N/A,,#N/A,locality,,,Agrokipia,,,,locality,,nan,Agrokipia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Néo Chorió,,,,522,Community,,,#N/A,,#N/A,locality,,,Νέο Χωριό,,,,locality,,nan,Νέο Χωριό,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Akroúnta,,,,521,Community,,,#N/A,,#N/A,locality,,,Akrounta,,,,locality,,nan,Akrounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Déneia,,,,513,Community,,,#N/A,,#N/A,locality,,,Deneia,,,,locality,,nan,Deneia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Maloúnta,,,,510,Community,,,#N/A,,#N/A,locality,,,Malounta,,,,locality,,nan,Malounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Oroúnta,,,,505,Community,,,#N/A,,#N/A,locality,,,Orounta,,,,locality,,nan,Orounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Kaló Chorió,,,,503,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Korákou,,,,494,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Korakou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Korákou,,,,494,Community,,,#N/A,,#N/A,locality,,,Korakou,,,,locality,,nan,Korakou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Agía Marína (Xyliátou),,,,490,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Temvriá,,,,476,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Temvria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Ioánnis (Maloúntas),,,,474,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Ioannis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Droúseia,,,,473,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Δρούσεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Asgáta,,,,464,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ασγάτα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Temvriá,,,,476,Community,,,#N/A,,#N/A,locality,,,Temvria,,,,locality,,nan,Temvria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Ioánnis (Maloúntas),,,,474,Community,,,#N/A,,#N/A,locality,,,Agios Ioannis,,,,locality,,nan,Agios Ioannis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Droúseia,,,,473,Community,,,#N/A,,#N/A,locality,,,Δρούσεια,,,,locality,,nan,Δρούσεια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Asgáta,,,,464,Community,,,#N/A,,#N/A,locality,,,Ασγάτα,,,,locality,,nan,Ασγάτα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Foinikária,,,,461,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Lémpa,,,,453,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lempa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pomós,,,,450,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πωμός,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Epifánios (Oreinís),,,,449,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Epifanios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Farmakás,,,,443,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Farmakas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Nikitári,,,,439,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Nikitari,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tóchni,,,,439,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Tochni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agía Marinoúda,,,,425,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agia Marinouda,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Politikó,,,,420,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Politiko,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lémpa,,,,453,Community,,,#N/A,,#N/A,locality,,,Lempa,,,,locality,,nan,Lempa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pomós,,,,450,Community,,,#N/A,,#N/A,locality,,,Πωμός,,,,locality,,nan,Πωμός,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Epifánios (Oreinís),,,,449,Community,,,#N/A,,#N/A,locality,,,Agios Epifanios,,,,locality,,nan,Agios Epifanios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Farmakás,,,,443,Community,,,#N/A,,#N/A,locality,,,Farmakas,,,,locality,,nan,Farmakas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Nikitári,,,,439,Community,,,#N/A,,#N/A,locality,,,Nikitari,,,,locality,,nan,Nikitari,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tóchni,,,,439,Community,,,#N/A,,#N/A,locality,,,Tochni,,,,locality,,nan,Tochni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agía Marinoúda,,,,425,Community,,,#N/A,,#N/A,locality,,,Agia Marinouda,,,,locality,,nan,Agia Marinouda,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Politikó,,,,420,Community,,,#N/A,,#N/A,locality,,,Politiko,,,,locality,,nan,Politiko,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Palaichóri (Oreinís),,,,419,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Kantoú,,,,417,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kantou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Skarínou,,,,413,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Skarinou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agía Ánna,,,,411,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agia Anna,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Klavdiá,,,,406,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Klavdia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kelliá,,,,397,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κελλιά,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Panagiá,,,,392,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Panagia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káthikas,,,,387,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kathikas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Láneia,,,,385,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Laneia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Louvarás,,,,365,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Λουβαράς,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Trimíklini,,,,353,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Trimiklini,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Amvrósios,,,,350,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Esentepe,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Spitáli,,,,350,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Spitali,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Foiní,,,,347,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Φοινιού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kallépeia,,,,343,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kallepeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ómodos,,,,339,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Omodos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Vyzakiá,,,,338,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Vyzakia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Moniátis,,,,337,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Μονιάτης,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Anógyra,,,,326,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Anogyra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Marathoúnta,,,,325,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Marathounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Alaminós,,,,322,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Alaminos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Íneia,,,,319,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ineia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Eptagóneia,,,,317,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Επταγώνια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kelláki,,,,315,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κελλάκι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Ioánnis,,,,314,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Ioannis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Limnátis,,,,303,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Limnatis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Psematisménos,,,,299,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Psematismenos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Moní,,,,293,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kato Moni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Arakapás,,,,290,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αρακαπάς,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Peristeróna,,,,290,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Περιστερώνα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Álassa,,,,288,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Alassa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Korfí,,,,273,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Korfi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kivisíli,,,,266,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kivisili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Avdelleró,,,,265,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Avdellero,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Prastió (Avdímou),,,,260,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Dörtyol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Cholétria,,,,256,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Choletria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Apsioú,,,,252,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αψιού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Letýmvou,,,,240,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Letymvou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Sinaóros,,,,232,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Sinaoros,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Sotíra,,,,232,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Σωτήρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Goudí,,,,231,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Γουδί,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Paramáli,,,,230,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Παραμάλι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Flásou,,,,226,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Flasou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Armenochóri,,,,211,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Armenochori,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pérgamos,,,,207,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Beyarmudu,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Símou,,,,207,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Simou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Therápon,,,,206,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Therapon,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Episkopí,,,,205,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Επισκοπή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mathikolóni,,,,202,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Μαθηκολώνη,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Odoú,,,,202,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Odou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kalopanagiótis,,,,201,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kalopanagiotis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Monágri,,,,201,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Monagri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Plátres,,,,200,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πάνω Πλάτρες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Goúrri,,,,197,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Gourri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Salamioú,,,,195,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Salamiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kantoú,,,,417,Community,,,#N/A,,#N/A,locality,,,Kantou,,,,locality,,nan,Kantou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Skarínou,,,,413,Community,,,#N/A,,#N/A,locality,,,Skarinou,,,,locality,,nan,Skarinou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agía Ánna,,,,411,Community,,,#N/A,,#N/A,locality,,,Agia Anna,,,,locality,,nan,Agia Anna,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Klavdiá,,,,406,Community,,,#N/A,,#N/A,locality,,,Klavdia,,,,locality,,nan,Klavdia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kelliá,,,,397,Community,,,#N/A,,#N/A,locality,,,Κελλιά,,,,locality,,nan,Κελλιά,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Panagiá,,,,392,Community,,,#N/A,,#N/A,locality,,,Pano Panagia,,,,locality,,nan,Pano Panagia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káthikas,,,,387,Community,,,#N/A,,#N/A,locality,,,Kathikas,,,,locality,,nan,Kathikas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Láneia,,,,385,Community,,,#N/A,,#N/A,locality,,,Laneia,,,,locality,,nan,Laneia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Louvarás,,,,365,Community,,,#N/A,,#N/A,locality,,,Λουβαράς,,,,locality,,nan,Λουβαράς,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Trimíklini,,,,353,Community,,,#N/A,,#N/A,locality,,,Trimiklini,,,,locality,,nan,Trimiklini,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Amvrósios,,,,350,Community,,,#N/A,,#N/A,locality,,,Esentepe,,,,locality,,nan,Esentepe,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Spitáli,,,,350,Community,,,#N/A,,#N/A,locality,,,Spitali,,,,locality,,nan,Spitali,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Foiní,,,,347,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Φοινιού,,,,locality,,nan,Κοινότητα Φοινιού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kallépeia,,,,343,Community,,,#N/A,,#N/A,locality,,,Kallepeia,,,,locality,,nan,Kallepeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ómodos,,,,339,Community,,,#N/A,,#N/A,locality,,,Omodos,,,,locality,,nan,Omodos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Vyzakiá,,,,338,Community,,,#N/A,,#N/A,locality,,,Vyzakia,,,,locality,,nan,Vyzakia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Moniátis,,,,337,Community,,,#N/A,,#N/A,locality,,,Μονιάτης,,,,locality,,nan,Μονιάτης,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Anógyra,,,,326,Community,,,#N/A,,#N/A,locality,,,Anogyra,,,,locality,,nan,Anogyra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Marathoúnta,,,,325,Community,,,#N/A,,#N/A,locality,,,Marathounta,,,,locality,,nan,Marathounta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Alaminós,,,,322,Community,,,#N/A,,#N/A,locality,,,Alaminos,,,,locality,,nan,Alaminos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Íneia,,,,319,Community,,,#N/A,,#N/A,locality,,,Ineia,,,,locality,,nan,Ineia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Eptagóneia,,,,317,Community,,,#N/A,,#N/A,locality,,,Επταγώνια,,,,locality,,nan,Επταγώνια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kelláki,,,,315,Community,,,#N/A,,#N/A,locality,,,Κελλάκι,,,,locality,,nan,Κελλάκι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Ioánnis,,,,314,Community,,,#N/A,,#N/A,locality,,,Agios Ioannis,,,,locality,,nan,Agios Ioannis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Limnátis,,,,303,Community,,,#N/A,,#N/A,locality,,,Limnatis,,,,locality,,nan,Limnatis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Psematisménos,,,,299,Community,,,#N/A,,#N/A,locality,,,Psematismenos,,,,locality,,nan,Psematismenos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Moní,,,,293,Community,,,#N/A,,#N/A,locality,,,Kato Moni,,,,locality,,nan,Kato Moni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Arakapás,,,,290,Community,,,#N/A,,#N/A,locality,,,Αρακαπάς,,,,locality,,nan,Αρακαπάς,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Peristeróna,,,,290,Community,,,#N/A,,#N/A,locality,,,Περιστερώνα,,,,locality,,nan,Περιστερώνα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Álassa,,,,288,Community,,,#N/A,,#N/A,locality,,,Alassa,,,,locality,,nan,Alassa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Korfí,,,,273,Community,,,#N/A,,#N/A,locality,,,Korfi,,,,locality,,nan,Korfi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kivisíli,,,,266,Community,,,#N/A,,#N/A,locality,,,Kivisili,,,,locality,,nan,Kivisili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Avdelleró,,,,265,Community,,,#N/A,,#N/A,locality,,,Avdellero,,,,locality,,nan,Avdellero,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Prastió (Avdímou),,,,260,Community,,,#N/A,,#N/A,locality,,,Dörtyol,,,,locality,,nan,Dörtyol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Cholétria,,,,256,Community,,,#N/A,,#N/A,locality,,,Choletria,,,,locality,,nan,Choletria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Apsioú,,,,252,Community,,,#N/A,,#N/A,locality,,,Αψιού,,,,locality,,nan,Αψιού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Letýmvou,,,,240,Community,,,#N/A,,#N/A,locality,,,Letymvou,,,,locality,,nan,Letymvou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Sinaóros,,,,232,Community,,,#N/A,,#N/A,locality,,,Sinaoros,,,,locality,,nan,Sinaoros,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Sotíra,,,,232,Community,,,#N/A,,#N/A,locality,,,Σωτήρα,,,,locality,,nan,Σωτήρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Goudí,,,,231,Community,,,#N/A,,#N/A,locality,,,Γουδί,,,,locality,,nan,Γουδί,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Paramáli,,,,230,Community,,,#N/A,,#N/A,locality,,,Παραμάλι,,,,locality,,nan,Παραμάλι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Flásou,,,,226,Community,,,#N/A,,#N/A,locality,,,Flasou,,,,locality,,nan,Flasou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Armenochóri,,,,211,Community,,,#N/A,,#N/A,locality,,,Armenochori,,,,locality,,nan,Armenochori,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pérgamos,,,,207,Community,,,#N/A,,#N/A,locality,,,Beyarmudu,,,,locality,,nan,Beyarmudu,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Símou,,,,207,Community,,,#N/A,,#N/A,locality,,,Simou,,,,locality,,nan,Simou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Therápon,,,,206,Community,,,#N/A,,#N/A,locality,,,Agios Therapon,,,,locality,,nan,Agios Therapon,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Episkopí,,,,205,Community,,,#N/A,,#N/A,locality,,,Επισκοπή,,,,locality,,nan,Επισκοπή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mathikolóni,,,,202,Community,,,#N/A,,#N/A,locality,,,Μαθηκολώνη,,,,locality,,nan,Μαθηκολώνη,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Odoú,,,,202,Community,,,#N/A,,#N/A,locality,,,Odou,,,,locality,,nan,Odou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kalopanagiótis,,,,201,Community,,,#N/A,,#N/A,locality,,,Kalopanagiotis,,,,locality,,nan,Kalopanagiotis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Monágri,,,,201,Community,,,#N/A,,#N/A,locality,,,Monagri,,,,locality,,nan,Monagri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Plátres,,,,200,Community,,,#N/A,,#N/A,locality,,,Πάνω Πλάτρες,,,,locality,,nan,Πάνω Πλάτρες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Goúrri,,,,197,Community,,,#N/A,,#N/A,locality,,,Gourri,,,,locality,,nan,Gourri,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Salamioú,,,,195,Community,,,#N/A,,#N/A,locality,,,Salamiou,,,,locality,,nan,Salamiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Statós-Ágios Fótios,,,,193,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Dieróna,,,,191,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Διερώνα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Orá,,,,190,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ora,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agía Varvára,,,,185,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agia Varvara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Dieróna,,,,191,Community,,,#N/A,,#N/A,locality,,,Διερώνα,,,,locality,,nan,Διερώνα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Orá,,,,190,Community,,,#N/A,,#N/A,locality,,,Ora,,,,locality,,nan,Ora,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agía Varvára,,,,185,Community,,,#N/A,,#N/A,locality,,,Agia Varvara,,,,locality,,nan,Agia Varvara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Gialiá,,,,182,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Amíantos,,,,179,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αμίαντος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ársos,,,,179,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Yiğitler,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Koiláni,,,,177,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Koilani,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kaliána,,,,176,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kaliana,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lysós,,,,172,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lysos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Konstantínos,,,,171,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αγιος Κωνσταντίνος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kámpos,,,,171,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kampos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kotsiátis,,,,171,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kotsiatis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Amíantos,,,,179,Community,,,#N/A,,#N/A,locality,,,Αμίαντος,,,,locality,,nan,Αμίαντος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ársos,,,,179,Community,,,#N/A,,#N/A,locality,,,Yiğitler,,,,locality,,nan,Yiğitler,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Koiláni,,,,177,Community,,,#N/A,,#N/A,locality,,,Koilani,,,,locality,,nan,Koilani,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kaliána,,,,176,Community,,,#N/A,,#N/A,locality,,,Kaliana,,,,locality,,nan,Kaliana,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lysós,,,,172,Community,,,#N/A,,#N/A,locality,,,Lysos,,,,locality,,nan,Lysos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Konstantínos,,,,171,Community,,,#N/A,,#N/A,locality,,,Αγιος Κωνσταντίνος,,,,locality,,nan,Αγιος Κωνσταντίνος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kámpos,,,,171,Community,,,#N/A,,#N/A,locality,,,Kampos,,,,locality,,nan,Kampos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kotsiátis,,,,171,Community,,,#N/A,,#N/A,locality,,,Kotsiatis,,,,locality,,nan,Kotsiatis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Vása (Koilaníou),,,,168,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Margí,,,,163,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Margi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Amargéti,,,,162,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Amargeti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Stení,,,,161,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Στενή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Thelétra,,,,155,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Theletra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Vouní,,,,155,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Vouni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Linoú,,,,152,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Linou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Dýmes,,,,151,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Δύμες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Natá,,,,151,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Nata,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Silíkou,,,,149,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Silikou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Zoopigí,,,,149,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ζωοπηγή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Péra Pedí,,,,141,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pera Pedi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kelokédara,,,,139,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kelokedara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Oíkos,,,,139,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Oikos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Aródes,,,,139,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Arodes,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pedoulás,,,,139,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pedoulas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Achéleia,,,,137,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Acheleia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Dorós,,,,135,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Doros,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Polýstypos,,,,133,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Polystypos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kannávia,,,,132,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kannavia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Margí,,,,163,Community,,,#N/A,,#N/A,locality,,,Margi,,,,locality,,nan,Margi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Amargéti,,,,162,Community,,,#N/A,,#N/A,locality,,,Amargeti,,,,locality,,nan,Amargeti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Stení,,,,161,Community,,,#N/A,,#N/A,locality,,,Στενή,,,,locality,,nan,Στενή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Thelétra,,,,155,Community,,,#N/A,,#N/A,locality,,,Theletra,,,,locality,,nan,Theletra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Vouní,,,,155,Community,,,#N/A,,#N/A,locality,,,Vouni,,,,locality,,nan,Vouni,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Linoú,,,,152,Community,,,#N/A,,#N/A,locality,,,Linou,,,,locality,,nan,Linou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Dýmes,,,,151,Community,,,#N/A,,#N/A,locality,,,Δύμες,,,,locality,,nan,Δύμες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Natá,,,,151,Community,,,#N/A,,#N/A,locality,,,Nata,,,,locality,,nan,Nata,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Silíkou,,,,149,Community,,,#N/A,,#N/A,locality,,,Silikou,,,,locality,,nan,Silikou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Zoopigí,,,,149,Community,,,#N/A,,#N/A,locality,,,Ζωοπηγή,,,,locality,,nan,Ζωοπηγή,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Péra Pedí,,,,141,Community,,,#N/A,,#N/A,locality,,,Pera Pedi,,,,locality,,nan,Pera Pedi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kelokédara,,,,139,Community,,,#N/A,,#N/A,locality,,,Kelokedara,,,,locality,,nan,Kelokedara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Oíkos,,,,139,Community,,,#N/A,,#N/A,locality,,,Oikos,,,,locality,,nan,Oikos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Aródes,,,,139,Community,,,#N/A,,#N/A,locality,,,Pano Arodes,,,,locality,,nan,Pano Arodes,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pedoulás,,,,139,Community,,,#N/A,,#N/A,locality,,,Pedoulas,,,,locality,,nan,Pedoulas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Achéleia,,,,137,Community,,,#N/A,,#N/A,locality,,,Acheleia,,,,locality,,nan,Acheleia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Dorós,,,,135,Community,,,#N/A,,#N/A,locality,,,Doros,,,,locality,,nan,Doros,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Polýstypos,,,,133,Community,,,#N/A,,#N/A,locality,,,Polystypos,,,,locality,,nan,Polystypos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kannávia,,,,132,Community,,,#N/A,,#N/A,locality,,,Kannavia,,,,locality,,nan,Kannavia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Nikókleia,,,,132,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Cyprus,Kannavioú (Melamioú),,,,131,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Dorá,,,,129,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Dora,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Geórgios,,,,128,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Georgios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Chandriá,,,,128,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Χανδριά,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Moutoullás,,,,126,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Moutoullas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Plátres (Tornárides),,,,123,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κάτω Πλάτρες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Choúlou,,,,120,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Choulou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Pávlos,,,,119,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Άγιος Παύλος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Léfkara,,,,119,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kato Lefkara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Xyliátos,,,,118,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Xyliatos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mandriá,,,,117,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mandria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Chrysochoú,,,,116,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Χρυσοχού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Drys,,,,114,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kato Drys,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Mámas,,,,113,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Άγιος Μάμας,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágioi Iliófotoi,,,,111,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agioi Iliofotoi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agrídia,,,,108,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αγρίδια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Prastió (Kellakíou),,,,107,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Dörtyol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Spília,,,,107,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Spilia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Drýmou,,,,105,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Drymou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Dorá,,,,129,Community,,,#N/A,,#N/A,locality,,,Dora,,,,locality,,nan,Dora,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Geórgios,,,,128,Community,,,#N/A,,#N/A,locality,,,Agios Georgios,,,,locality,,nan,Agios Georgios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Chandriá,,,,128,Community,,,#N/A,,#N/A,locality,,,Χανδριά,,,,locality,,nan,Χανδριά,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Moutoullás,,,,126,Community,,,#N/A,,#N/A,locality,,,Moutoullas,,,,locality,,nan,Moutoullas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Plátres (Tornárides),,,,123,Community,,,#N/A,,#N/A,locality,,,Κάτω Πλάτρες,,,,locality,,nan,Κάτω Πλάτρες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Choúlou,,,,120,Community,,,#N/A,,#N/A,locality,,,Choulou,,,,locality,,nan,Choulou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Pávlos,,,,119,Community,,,#N/A,,#N/A,locality,,,Άγιος Παύλος,,,,locality,,nan,Άγιος Παύλος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Léfkara,,,,119,Community,,,#N/A,,#N/A,locality,,,Kato Lefkara,,,,locality,,nan,Kato Lefkara,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Xyliátos,,,,118,Community,,,#N/A,,#N/A,locality,,,Xyliatos,,,,locality,,nan,Xyliatos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mandriá,,,,117,Community,,,#N/A,,#N/A,locality,,,Mandria,,,,locality,,nan,Mandria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Chrysochoú,,,,116,Community,,,#N/A,,#N/A,locality,,,Χρυσοχού,,,,locality,,nan,Χρυσοχού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Drys,,,,114,Community,,,#N/A,,#N/A,locality,,,Kato Drys,,,,locality,,nan,Kato Drys,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Mámas,,,,113,Community,,,#N/A,,#N/A,locality,,,Άγιος Μάμας,,,,locality,,nan,Άγιος Μάμας,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágioi Iliófotoi,,,,111,Community,,,#N/A,,#N/A,locality,,,Agioi Iliofotoi,,,,locality,,nan,Agioi Iliofotoi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agrídia,,,,108,Community,,,#N/A,,#N/A,locality,,,Αγρίδια,,,,locality,,nan,Αγρίδια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Prastió (Kellakíou),,,,107,Community,,,#N/A,,#N/A,locality,,,Dörtyol,,,,locality,,nan,Dörtyol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Spília,,,,107,Community,,,#N/A,,#N/A,locality,,,Spilia,,,,locality,,nan,Spilia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Drýmou,,,,105,Community,,,#N/A,,#N/A,locality,,,Drymou,,,,locality,,nan,Drymou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Sykópetra,,,,105,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Marí,,,,102,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mari,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Psáthi,,,,101,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Psathi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Katýdata,,,,100,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Katydata,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágioi Vavatsiniás,,,,97,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agioi Vavatsinias,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Askás,,,,90,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Askas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Melíni,,,,88,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Melini,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Gerása,,,,81,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Gerasa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Geórgios,,,,80,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Georgios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kampí,,,,80,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kampi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tsakístra,,,,80,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Tsakistra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lófou,,,,79,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lofou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pigénia,,,,79,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πηγένια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Marí,,,,102,Community,,,#N/A,,#N/A,locality,,,Mari,,,,locality,,nan,Mari,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Psáthi,,,,101,Community,,,#N/A,,#N/A,locality,,,Psathi,,,,locality,,nan,Psathi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Katýdata,,,,100,Community,,,#N/A,,#N/A,locality,,,Katydata,,,,locality,,nan,Katydata,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágioi Vavatsiniás,,,,97,Community,,,#N/A,,#N/A,locality,,,Agioi Vavatsinias,,,,locality,,nan,Agioi Vavatsinias,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Askás,,,,90,Community,,,#N/A,,#N/A,locality,,,Askas,,,,locality,,nan,Askas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Melíni,,,,88,Community,,,#N/A,,#N/A,locality,,,Melini,,,,locality,,nan,Melini,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Gerása,,,,81,Community,,,#N/A,,#N/A,locality,,,Gerasa,,,,locality,,nan,Gerasa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Geórgios,,,,80,Community,,,#N/A,,#N/A,locality,,,Agios Georgios,,,,locality,,nan,Agios Georgios,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kampí,,,,80,Community,,,#N/A,,#N/A,locality,,,Kampi,,,,locality,,nan,Kampi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tsakístra,,,,80,Community,,,#N/A,,#N/A,locality,,,Tsakistra,,,,locality,,nan,Tsakistra,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lófou,,,,79,Community,,,#N/A,,#N/A,locality,,,Lofou,,,,locality,,nan,Lofou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pigénia,,,,79,Community,,,#N/A,,#N/A,locality,,,Πηγένια,,,,locality,,nan,Πηγένια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Kynoúsa,,,,77,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Fýti,,,,76,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Fyti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pródromos,,,,75,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Προδρόμου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Vavatsiniá,,,,75,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Vavatsinia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Chóli,,,,74,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Χόλη,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Softádes,,,,74,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Σοφτάδες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Skoúlli,,,,73,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Σκούλλι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Fýti,,,,76,Community,,,#N/A,,#N/A,locality,,,Fyti,,,,locality,,nan,Fyti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pródromos,,,,75,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Προδρόμου,,,,locality,,nan,Κοινότητα Προδρόμου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Vavatsiniá,,,,75,Community,,,#N/A,,#N/A,locality,,,Vavatsinia,,,,locality,,nan,Vavatsinia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Chóli,,,,74,Community,,,#N/A,,#N/A,locality,,,Χόλη,,,,locality,,nan,Χόλη,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Softádes,,,,74,Community,,,#N/A,,#N/A,locality,,,Σοφτάδες,,,,locality,,nan,Σοφτάδες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Skoúlli,,,,73,Community,,,#N/A,,#N/A,locality,,,Σκούλλι,,,,locality,,nan,Σκούλλι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Vása (Kellakíou),,,,73,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Lemíthou,,,,72,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Λεμύθου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Dimitrianós,,,,71,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Dimitrianos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Makoúnta,,,,71,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Μακούντα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Platanistása,,,,70,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Platanistasa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Krítou Maróttou,,,,69,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kritou Marottou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Krítou Téra,,,,68,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kritou Tera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Fterikoúdi,,,,67,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Fterikoudi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lemíthou,,,,72,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Λεμύθου,,,,locality,,nan,Κοινότητα Λεμύθου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Dimitrianós,,,,71,Community,,,#N/A,,#N/A,locality,,,Agios Dimitrianos,,,,locality,,nan,Agios Dimitrianos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Makoúnta,,,,71,Community,,,#N/A,,#N/A,locality,,,Μακούντα,,,,locality,,nan,Μακούντα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Platanistása,,,,70,Community,,,#N/A,,#N/A,locality,,,Platanistasa,,,,locality,,nan,Platanistasa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Krítou Maróttou,,,,69,Community,,,#N/A,,#N/A,locality,,,Kritou Marottou,,,,locality,,nan,Kritou Marottou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Krítou Téra,,,,68,Community,,,#N/A,,#N/A,locality,,,Kritou Tera,,,,locality,,nan,Kritou Tera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Fterikoúdi,,,,67,Community,,,#N/A,,#N/A,locality,,,Fterikoudi,,,,locality,,nan,Fterikoudi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Aplíki,,,,65,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Maliá,,,,65,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Malia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Potamítissa,,,,65,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ποταμίτισσα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Axýlou,,,,64,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Axylou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Koutrafás,,,,64,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kato Koutrafas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Sanída,,,,64,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Σανίδα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Theódoros,,,,63,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αγιος Θεόδωρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kapileió,,,,62,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kapileio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pentaliá,,,,61,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pentalia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Nikólaos,,,,60,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Yamaçköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lagouderá,,,,60,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lagoudera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pachýammos,,,,59,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Παχύαμμος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Theódoros (Soléas),,,,58,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Αγιος Θεόδωρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Milioú,,,,58,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Miliou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Mýlos,,,,57,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κάτω Μύλος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lása,,,,57,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lasa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Asprogiá,,,,56,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Asprogia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Aléktora,,,,55,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Alektora,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Néa Dímmata,,,,55,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Νέα Δήμματα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Pelathoúsa,,,,53,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πελαθούσα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Akourdáleia,,,,52,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κάτω Ακουρδάλια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Tserkézoi,,,,52,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Τσερκέζοι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Stavrokónnou,,,,51,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Stavrokonnou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Gerakiés,,,,50,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Gerakies,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Vávla,,,,50,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Vavla,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mamónia,,,,48,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mamonia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Káto Aródes,,,,46,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kato Arodes,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lazaniás,,,,46,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lazanias,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Galatariá,,,,45,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Galataria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Thriniá,,,,44,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Thrinia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Maliá,,,,65,Community,,,#N/A,,#N/A,locality,,,Malia,,,,locality,,nan,Malia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Potamítissa,,,,65,Community,,,#N/A,,#N/A,locality,,,Ποταμίτισσα,,,,locality,,nan,Ποταμίτισσα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Axýlou,,,,64,Community,,,#N/A,,#N/A,locality,,,Axylou,,,,locality,,nan,Axylou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Koutrafás,,,,64,Community,,,#N/A,,#N/A,locality,,,Kato Koutrafas,,,,locality,,nan,Kato Koutrafas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Sanída,,,,64,Community,,,#N/A,,#N/A,locality,,,Σανίδα,,,,locality,,nan,Σανίδα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Theódoros,,,,63,Community,,,#N/A,,#N/A,locality,,,Αγιος Θεόδωρος,,,,locality,,nan,Αγιος Θεόδωρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kapileió,,,,62,Community,,,#N/A,,#N/A,locality,,,Kapileio,,,,locality,,nan,Kapileio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pentaliá,,,,61,Community,,,#N/A,,#N/A,locality,,,Pentalia,,,,locality,,nan,Pentalia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Nikólaos,,,,60,Community,,,#N/A,,#N/A,locality,,,Yamaçköy,,,,locality,,nan,Yamaçköy,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lagouderá,,,,60,Community,,,#N/A,,#N/A,locality,,,Lagoudera,,,,locality,,nan,Lagoudera,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pachýammos,,,,59,Community,,,#N/A,,#N/A,locality,,,Παχύαμμος,,,,locality,,nan,Παχύαμμος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Theódoros (Soléas),,,,58,Community,,,#N/A,,#N/A,locality,,,Αγιος Θεόδωρος,,,,locality,,nan,Αγιος Θεόδωρος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Milioú,,,,58,Community,,,#N/A,,#N/A,locality,,,Miliou,,,,locality,,nan,Miliou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Mýlos,,,,57,Community,,,#N/A,,#N/A,locality,,,Κάτω Μύλος,,,,locality,,nan,Κάτω Μύλος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lása,,,,57,Community,,,#N/A,,#N/A,locality,,,Lasa,,,,locality,,nan,Lasa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Asprogiá,,,,56,Community,,,#N/A,,#N/A,locality,,,Asprogia,,,,locality,,nan,Asprogia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Aléktora,,,,55,Community,,,#N/A,,#N/A,locality,,,Alektora,,,,locality,,nan,Alektora,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Néa Dímmata,,,,55,Community,,,#N/A,,#N/A,locality,,,Νέα Δήμματα,,,,locality,,nan,Νέα Δήμματα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Pelathoúsa,,,,53,Community,,,#N/A,,#N/A,locality,,,Πελαθούσα,,,,locality,,nan,Πελαθούσα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Akourdáleia,,,,52,Community,,,#N/A,,#N/A,locality,,,Κάτω Ακουρδάλια,,,,locality,,nan,Κάτω Ακουρδάλια,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Tserkézoi,,,,52,Community,,,#N/A,,#N/A,locality,,,Τσερκέζοι,,,,locality,,nan,Τσερκέζοι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Stavrokónnou,,,,51,Community,,,#N/A,,#N/A,locality,,,Stavrokonnou,,,,locality,,nan,Stavrokonnou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Gerakiés,,,,50,Community,,,#N/A,,#N/A,locality,,,Gerakies,,,,locality,,nan,Gerakies,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Vávla,,,,50,Community,,,#N/A,,#N/A,locality,,,Vavla,,,,locality,,nan,Vavla,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mamónia,,,,48,Community,,,#N/A,,#N/A,locality,,,Mamonia,,,,locality,,nan,Mamonia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Káto Aródes,,,,46,Community,,,#N/A,,#N/A,locality,,,Kato Arodes,,,,locality,,nan,Kato Arodes,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lazaniás,,,,46,Community,,,#N/A,,#N/A,locality,,,Lazanias,,,,locality,,nan,Lazanias,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Galatariá,,,,45,Community,,,#N/A,,#N/A,locality,,,Galataria,,,,locality,,nan,Galataria,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Thriniá,,,,44,Community,,,#N/A,,#N/A,locality,,,Thrinia,,,,locality,,nan,Thrinia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Fasoúla,,,,43,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Trachypédoula,,,,43,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Trachypedoula,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lemóna,,,,42,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lemona,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Thomás,,,,41,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Thomas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Akapnoú,,,,40,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ακαπνού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Menógeia,,,,40,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Menogeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Dimítrios,,,,39,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Αγίου Δημητρίου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Álona,,,,39,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Alona,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kédares,,,,39,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kedares,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Ioánnis,,,,38,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Ioannis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Potamioú,,,,38,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Potamiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Trachypédoula,,,,43,Community,,,#N/A,,#N/A,locality,,,Trachypedoula,,,,locality,,nan,Trachypedoula,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lemóna,,,,42,Community,,,#N/A,,#N/A,locality,,,Lemona,,,,locality,,nan,Lemona,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Thomás,,,,41,Community,,,#N/A,,#N/A,locality,,,Agios Thomas,,,,locality,,nan,Agios Thomas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Akapnoú,,,,40,Community,,,#N/A,,#N/A,locality,,,Ακαπνού,,,,locality,,nan,Ακαπνού,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Menógeia,,,,40,Community,,,#N/A,,#N/A,locality,,,Menogeia,,,,locality,,nan,Menogeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Dimítrios,,,,39,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Αγίου Δημητρίου,,,,locality,,nan,Κοινότητα Αγίου Δημητρίου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Álona,,,,39,Community,,,#N/A,,#N/A,locality,,,Alona,,,,locality,,nan,Alona,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kédares,,,,39,Community,,,#N/A,,#N/A,locality,,,Kedares,,,,locality,,nan,Kedares,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Ioánnis,,,,38,Community,,,#N/A,,#N/A,locality,,,Agios Ioannis,,,,locality,,nan,Agios Ioannis,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Potamioú,,,,38,Community,,,#N/A,,#N/A,locality,,,Potamiou,,,,locality,,nan,Potamiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Agía Marína (Kelokedáron),,,,37,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Akoursós,,,,36,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Akoursos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Delíkipos,,,,36,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Delikipos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Lágeia,,,,36,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Lageia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Treis Eliés,,,,36,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Τρεις Ελιές,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Eledió,,,,35,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Eledio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Akourdáleia,,,,34,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Akourdaleia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Platanísteia,,,,34,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Platanisteia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Armínou,,,,31,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Arminou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Agía Eiríni,,,,30,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Akdeniz,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Akoursós,,,,36,Community,,,#N/A,,#N/A,locality,,,Akoursos,,,,locality,,nan,Akoursos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Delíkipos,,,,36,Community,,,#N/A,,#N/A,locality,,,Delikipos,,,,locality,,nan,Delikipos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Lágeia,,,,36,Community,,,#N/A,,#N/A,locality,,,Lageia,,,,locality,,nan,Lageia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Treis Eliés,,,,36,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Τρεις Ελιές,,,,locality,,nan,Κοινότητα Τρεις Ελιές,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Eledió,,,,35,Community,,,#N/A,,#N/A,locality,,,Eledio,,,,locality,,nan,Eledio,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Akourdáleia,,,,34,Community,,,#N/A,,#N/A,locality,,,Pano Akourdaleia,,,,locality,,nan,Pano Akourdaleia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Platanísteia,,,,34,Community,,,#N/A,,#N/A,locality,,,Platanisteia,,,,locality,,nan,Platanisteia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Armínou,,,,31,Community,,,#N/A,,#N/A,locality,,,Arminou,,,,locality,,nan,Arminou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Agía Eiríni,,,,30,Community,,,#N/A,,#N/A,locality,,,Akdeniz,,,,locality,,nan,Akdeniz,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Ágios Geórgios Kafkállou,,,,29,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Androlíkou,,,,28,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Ανδρολύκου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Androlíkou,,,,28,Community,,,#N/A,,#N/A,locality,,,Ανδρολύκου,,,,locality,,nan,Ανδρολύκου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Filoúsa (Chrysochoús),,,,28,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Praitóri,,,,28,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Praitori,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Archimandríta,,,,26,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Archimandrita,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Fikárdou,,,,25,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Fikardou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Koilíneia,,,,25,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Koilineia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mésana,,,,22,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mesana,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Saránti,,,,22,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Saranti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Klonári,,,,20,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κλωνάρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mosfíli,,,,20,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mosfili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kaminária,,,,19,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Καμιναρίων,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Meládeia,,,,19,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Meladeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Koutrafás,,,,19,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Pano Koutrafas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kidási,,,,18,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kidasi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Téra,,,,18,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Τέρρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Anadioú,,,,17,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Anadiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Katalióntas,,,,17,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kataliontas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Páno Pýrgos,,,,17,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Πάνω Πύργος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Praitóri,,,,28,Community,,,#N/A,,#N/A,locality,,,Praitori,,,,locality,,nan,Praitori,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Archimandríta,,,,26,Community,,,#N/A,,#N/A,locality,,,Pano Archimandrita,,,,locality,,nan,Pano Archimandrita,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Fikárdou,,,,25,Community,,,#N/A,,#N/A,locality,,,Fikardou,,,,locality,,nan,Fikardou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Koilíneia,,,,25,Community,,,#N/A,,#N/A,locality,,,Koilineia,,,,locality,,nan,Koilineia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mésana,,,,22,Community,,,#N/A,,#N/A,locality,,,Mesana,,,,locality,,nan,Mesana,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Saránti,,,,22,Community,,,#N/A,,#N/A,locality,,,Saranti,,,,locality,,nan,Saranti,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Klonári,,,,20,Community,,,#N/A,,#N/A,locality,,,Κλωνάρι,,,,locality,,nan,Κλωνάρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mosfíli,,,,20,Community,,,#N/A,,#N/A,locality,,,Mosfili,,,,locality,,nan,Mosfili,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kaminária,,,,19,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Καμιναρίων,,,,locality,,nan,Κοινότητα Καμιναρίων,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Meládeia,,,,19,Community,,,#N/A,,#N/A,locality,,,Meladeia,,,,locality,,nan,Meladeia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Koutrafás,,,,19,Community,,,#N/A,,#N/A,locality,,,Pano Koutrafas,,,,locality,,nan,Pano Koutrafas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kidási,,,,18,Community,,,#N/A,,#N/A,locality,,,Kidasi,,,,locality,,nan,Kidasi,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Téra,,,,18,Community,,,#N/A,,#N/A,locality,,,Τέρρα,,,,locality,,nan,Τέρρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Anadioú,,,,17,Community,,,#N/A,,#N/A,locality,,,Anadiou,,,,locality,,nan,Anadiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Katalióntas,,,,17,Community,,,#N/A,,#N/A,locality,,,Kataliontas,,,,locality,,nan,Kataliontas,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Páno Pýrgos,,,,17,Community,,,#N/A,,#N/A,locality,,,Πάνω Πύργος,,,,locality,,nan,Πάνω Πύργος,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Troódos [← Páno Plátres],,,,17,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
 Cyprus,Filoúsa (Kelokedáron),,,,15,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Kouká,,,,14,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kouka,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Palaiómylos,,,,14,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Κοινότητα Παλαιόμυλου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kouká,,,,14,Community,,,#N/A,,#N/A,locality,,,Kouka,,,,locality,,nan,Kouka,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Palaiómylos,,,,14,Community,,,#N/A,,#N/A,locality,,,Κοινότητα Παλαιόμυλου,,,,locality,,nan,Κοινότητα Παλαιόμυλου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
 Cyprus,Ágios Isídoros,,,,13,Community,,,#N/A,,#N/A,,,,,,,,,,,,,,,,,,,,NONE,0.0,
-Cyprus,Loukroúnou,,,,13,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Λουκρούνου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Petrofáni,,,,10,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Petrofani,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mylikoúri,,,,9,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Μηλικούρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Skouriótissa (Foukása),,,,9,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Skouriotissa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Aplánta,,,,8,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Aplanta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Souskioú,,,,8,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Souskiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Kissoúsa,,,,7,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kissousa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mansoúra,,,,7,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Μανσούρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Prastió,,,,7,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Dörtyol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Alithinoú,,,,6,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Alithinou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Koúrdaka,,,,6,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Kourdaka,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Miliá,,,,6,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Yıldırım,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Ágios Sozómenos,,,,5,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Agios Sozomenos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Karamoúllides,,,,4,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Καραμουλλήδες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Livádia,,,,3,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Δήμος Λιβαδιών,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Fáleia,,,,2,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Faleia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Mamoúntali,,,,2,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mamountali,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Moúsere,,,,1,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Mousere,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
-Cyprus,Víkla,,,,1,Community,,,#N/A,,#N/A,,,,,,,,locality,,nan,Βίκλα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Loukroúnou,,,,13,Community,,,#N/A,,#N/A,locality,,,Λουκρούνου,,,,locality,,nan,Λουκρούνου,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Petrofáni,,,,10,Community,,,#N/A,,#N/A,locality,,,Petrofani,,,,locality,,nan,Petrofani,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mylikoúri,,,,9,Community,,,#N/A,,#N/A,locality,,,Μηλικούρι,,,,locality,,nan,Μηλικούρι,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Skouriótissa (Foukása),,,,9,Community,,,#N/A,,#N/A,locality,,,Skouriotissa,,,,locality,,nan,Skouriotissa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Aplánta,,,,8,Community,,,#N/A,,#N/A,locality,,,Aplanta,,,,locality,,nan,Aplanta,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Souskioú,,,,8,Community,,,#N/A,,#N/A,locality,,,Souskiou,,,,locality,,nan,Souskiou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Kissoúsa,,,,7,Community,,,#N/A,,#N/A,locality,,,Kissousa,,,,locality,,nan,Kissousa,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mansoúra,,,,7,Community,,,#N/A,,#N/A,locality,,,Μανσούρα,,,,locality,,nan,Μανσούρα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Prastió,,,,7,Community,,,#N/A,,#N/A,locality,,,Dörtyol,,,,locality,,nan,Dörtyol,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Alithinoú,,,,6,Community,,,#N/A,,#N/A,locality,,,Alithinou,,,,locality,,nan,Alithinou,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Koúrdaka,,,,6,Community,,,#N/A,,#N/A,locality,,,Kourdaka,,,,locality,,nan,Kourdaka,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Miliá,,,,6,Community,,,#N/A,,#N/A,locality,,,Yıldırım,,,,locality,,nan,Yıldırım,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Ágios Sozómenos,,,,5,Community,,,#N/A,,#N/A,locality,,,Agios Sozomenos,,,,locality,,nan,Agios Sozomenos,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Karamoúllides,,,,4,Community,,,#N/A,,#N/A,locality,,,Καραμουλλήδες,,,,locality,,nan,Καραμουλλήδες,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Livádia,,,,3,Community,,,#N/A,,#N/A,locality,,,Δήμος Λιβαδιών,,,,locality,,nan,Δήμος Λιβαδιών,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Fáleia,,,,2,Community,,,#N/A,,#N/A,locality,,,Faleia,,,,locality,,nan,Faleia,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Mamoúntali,,,,2,Community,,,#N/A,,#N/A,locality,,,Mamountali,,,,locality,,nan,Mamountali,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Moúsere,,,,1,Community,,,#N/A,,#N/A,locality,,,Mousere,,,,locality,,nan,Mousere,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan
+Cyprus,Víkla,,,,1,Community,,,#N/A,,#N/A,locality,,,Βίκλα,,,,locality,,nan,Βίκλα,,,,,region,1,nan,Kyrenia,HIGH,1.0,nan

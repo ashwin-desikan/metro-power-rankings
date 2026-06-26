@@ -451,12 +451,12 @@
 "canonical":"Bulls (B)",
 "name":"Bulls (B)",
 "display_name":"Birmingham Bulls",
-"metro":"Birmingham",
-"metro_slug":"birmingham",
+"metro":"Birmingham (AL)",
+"metro_slug":"birmingham-al",
 "metros":[
 {
-"name":"Birmingham",
-"slug":"birmingham"
+"name":"Birmingham (AL)",
+"slug":"birmingham-al"
 }
 ],
 "last_city":"Birmingham",

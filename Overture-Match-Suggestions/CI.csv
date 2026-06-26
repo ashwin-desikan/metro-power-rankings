@@ -1,0 +1,112 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Côte d'Ivoire,Abidjan,Abidjan,,,6321017,Department,Abidjan,,Abidjan,,AbidjanCôte d'Ivoire,region,1,CI-AB,Abidjan,,,,region,1,CI-AB,Abidjan,,,,,region,1,CI-AB,Abidjan,HIGH,1.0,CI-AB
+Côte d'Ivoire,Agboville,Agnéby-Tiassa,,,384340,Department,,,#N/A,,Agnéby-TiassaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Tiassalé,Agnéby-Tiassa,,,278954,Department,,,#N/A,,Agnéby-TiassaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Sikensi,Agnéby-Tiassa,,,125897,Department,,,#N/A,,Agnéby-TiassaCôte d'Ivoire,,,,,,,,locality,,CI-LG,Sikensi,,,,,region,1,CI-LG,Lagunes,HIGH,1.0,CI-LG
+Côte d'Ivoire,Taabo,Agnéby-Tiassa,,,76761,Department,,,#N/A,,Agnéby-TiassaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Touba,Bafing,,,120524,Department,,,#N/A,,BafingCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Koro,Bafing,,,76345,Department,,,#N/A,,BafingCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Ouaninou,Bafing,,,65981,Department,,,#N/A,,BafingCôte d'Ivoire,,,,,,,,locality,,CI-WR,Ouaninou,,,,,region,1,CI-WR,Woroba,HIGH,1.0,CI-WR
+Côte d'Ivoire,Boundiali,Bagoué,,,198541,Department,,,#N/A,,BagouéCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Kouto,Bagoué,,,175587,Department,,,#N/A,,BagouéCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Tengréla,Bagoué,,,141761,Department,,,#N/A,,BagouéCôte d'Ivoire,,,,,,,,localadmin,,CI-SV,Tengréla,,,,,region,1,CI-SV,Savanes,HIGH,1.0,CI-SV
+Côte d'Ivoire,Toumodi,Bélier,,,168363,Department,,,#N/A,,BélierCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Tiébissou,Bélier,,,116321,Department,,,#N/A,,BélierCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Didiévi,Bélier,,,93629,Department,,,#N/A,,BélierCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Djékanou,Bélier,,,37281,Department,,,#N/A,,BélierCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Mankono,Béré (Koyadougou),,,271894,Department,,,#N/A,,Béré (Koyadougou)Côte d'Ivoire,,,,,,,,locality,,CI-WR,Mankono,,,,,region,1,CI-WR,Woroba,HIGH,1.0,CI-WR
+Côte d'Ivoire,Dianra,Béré (Koyadougou),,,119146,Department,,,#N/A,,Béré (Koyadougou)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Kounahiri,Béré (Koyadougou),,,101111,Department,,,#N/A,,Béré (Koyadougou)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Bouna,Bounkani,,,178081,Department,,,#N/A,,BounkaniCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Doropo,Bounkani,,,93386,Department,,,#N/A,,BounkaniCôte d'Ivoire,,,,,,,,locality,,CI-ZZ,Doropo,,,,,region,1,CI-ZZ,Zanzan,HIGH,1.0,CI-ZZ
+Côte d'Ivoire,Téhini,Bounkani,,,83846,Department,,,#N/A,,BounkaniCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Nassian,Bounkani,,,71724,Department,,,#N/A,,BounkaniCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Guiglo,Cavally,,,259381,Department,,,#N/A,,CavallyCôte d'Ivoire,,,,,,,,locality,,CI-MG,Guiglo,,,,,region,1,CI-MG,Montagnes,HIGH,1.0,CI-MG
+Côte d'Ivoire,Bloléquin,Cavally,,,237944,Department,,,#N/A,,CavallyCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Taï,Cavally,,,117387,Department,,,#N/A,,CavallyCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Toulépleu,Cavally,,,93529,Department,,,#N/A,,CavallyCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Kaniasso,Folon,,,84572,Department,,,#N/A,,FolonCôte d'Ivoire,,,,,,,,locality,,CI-DN,Kaniasso,,,,,region,1,CI-DN,Denguélé,HIGH,1.0,CI-DN
+Côte d'Ivoire,Minignan,Folon,,,61637,Department,,,#N/A,,FolonCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Bouaké,Gbêkê (Wawlè),,,931851,Department,Bouaké,,Bouaké,,Gbêkê (Wawlè)Côte d'Ivoire,locality,,CI-VB,Bouaké,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Béoumi,Gbêkê (Wawlè),,,195015,Department,,,#N/A,,Gbêkê (Wawlè)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Botro,Gbêkê (Wawlè),,,117924,Department,,,#N/A,,Gbêkê (Wawlè)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Sakassou,Gbêkê (Wawlè),,,108110,Department,,,#N/A,,Gbêkê (Wawlè)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Sassandra,Gbôklé,,,353228,Department,,,#N/A,,GbôkléCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Fresco,Gbôklé,,,107752,Department,,,#N/A,,GbôkléCôte d'Ivoire,,,,,,,,locality,,CI-BS,Fresco,,,,,region,1,CI-BS,Bas-Sassandra,HIGH,1.0,CI-BS
+Côte d'Ivoire,Gagnoa,Gôh,,,724496,Department,,,#N/A,,GôhCôte d'Ivoire,,,,,,,,locality,,CI-GD,Gagnoa,,,,,region,1,CI-GD,Gôh-Djiboua,HIGH,1.0,CI-GD
+Côte d'Ivoire,Oumé,Gôh,,,260786,Department,,,#N/A,,GôhCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Bondoukou,Gontougo,,,453841,Department,,,#N/A,,GontougoCôte d'Ivoire,,,,,,,,locality,,CI-ZZ,Bondoukou,,,,,region,1,CI-ZZ,Zanzan,HIGH,1.0,CI-ZZ
+Côte d'Ivoire,Koun-Fao,Gontougo,,,167881,Department,,,#N/A,,GontougoCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Tanda,Gontougo,,,113523,Department,,,#N/A,,GontougoCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Transua,Gontougo,,,112842,Department,,,#N/A,,GontougoCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Sandégué,Gontougo,,,69742,Department,,,#N/A,,GontougoCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Dabou,Grands-Ponts (Leboutou),,,213582,Department,,,#N/A,,Grands-Ponts (Leboutou)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Grand-Lahou,Grands-Ponts (Leboutou),,,155832,Department,,,#N/A,,Grands-Ponts (Leboutou)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Jacqueville,Grands-Ponts (Leboutou),,,80593,Department,,,#N/A,,Grands-Ponts (Leboutou)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Duékoué,Guémon (Yémahin),,,420911,Department,,,#N/A,,Guémon (Yémahin)Côte d'Ivoire,,,,,,,,locality,,CI-MG,Duékoué,,,,,region,1,CI-MG,Montagnes,HIGH,1.0,CI-MG
+Côte d'Ivoire,Bangolo,Guémon (Yémahin),,,270629,Department,,,#N/A,,Guémon (Yémahin)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Kouibly,Guémon (Yémahin),,,144723,Department,,,#N/A,,Guémon (Yémahin)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Facobly,Guémon (Yémahin),,,94610,Department,,,#N/A,,Guémon (Yémahin)Côte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Dabakala,Hambol,,,254430,Department,,,#N/A,,HambolCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Niakaramandougou,Hambol,,,195127,Department,,,#N/A,,HambolCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Katiola,Hambol,,,162472,Department,,,#N/A,,HambolCôte d'Ivoire,,,,,,,,locality,,CI-VB,Katiola,,,,,region,1,CI-VB,Vallée du Bandama,HIGH,1.0,CI-VB
+Côte d'Ivoire,Daloa,Haut-Sassandra,,,705378,Department,,,#N/A,,Haut-SassandraCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Vavoua,Haut-Sassandra,,,477154,Department,,,#N/A,,Haut-SassandraCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Issia,Haut-Sassandra,,,410628,Department,,,#N/A,,Haut-SassandraCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Zoukougbeu,Haut-Sassandra,,,146537,Department,,,#N/A,,Haut-SassandraCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Daoukro,Iffou,,,148095,Department,,,#N/A,,IffouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Prikro,Iffou,,,95595,Department,,,#N/A,,IffouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,M'Bahiakro,Iffou,,,78369,Department,,,#N/A,,IffouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Ouellé (← Daoukro),Iffou,,,56501,Department,,,#N/A,,IffouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Abengourou,Indénié-Djuablin,,,430539,Department,,,#N/A,,Indénié-DjuablinCôte d'Ivoire,,,,,,,,localadmin,,CI-CM,Abengourou,,,,,region,1,CI-CM,Comoé,HIGH,1.0,CI-CM
+Côte d'Ivoire,Agnibilékrou,Indénié-Djuablin,,,216264,Department,,,#N/A,,Indénié-DjuablinCôte d'Ivoire,,,,,,,,localadmin,,CI-CM,Agnibilékrou,,,,,region,1,CI-CM,Comoé,HIGH,1.0,CI-CM
+Côte d'Ivoire,Bettié,Indénié-Djuablin,,,69640,Department,,,#N/A,,Indénié-DjuablinCôte d'Ivoire,,,,,,,,localadmin,,CI-CM,Bettié,,,,,region,1,CI-CM,Comoé,HIGH,1.0,CI-CM
+Côte d'Ivoire,Odienné,Kabadougou,,,156730,Department,,,#N/A,,KabadougouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Madinani,Kabadougou,,,50248,Department,,,#N/A,,KabadougouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Séguélon,Kabadougou,,,33585,Department,,,#N/A,,KabadougouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Gbéléban,Kabadougou,,,29532,Department,,,#N/A,,KabadougouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Samatiguila,Kabadougou,,,19710,Department,,,#N/A,,KabadougouCôte d'Ivoire,,,,,,,,locality,,CI-DN,Samatiguila,,,,,region,1,CI-DN,Denguélé,HIGH,1.0,CI-DN
+Côte d'Ivoire,Divo,Lôh-Djiboua,,,571688,Department,,,#N/A,,Lôh-DjibouaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Lakota,Lôh-Djiboua,,,334235,Department,,,#N/A,,Lôh-DjibouaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Guitry,Lôh-Djiboua,,,197236,Department,,,#N/A,,Lôh-DjibouaCôte d'Ivoire,,,,,,,,locality,,CI-GD,Guitry,,,,,region,1,CI-GD,Gôh-Djiboua,HIGH,1.0,CI-GD
+Côte d'Ivoire,Bouaflé,Marahoué,,,300305,Department,,,#N/A,,MarahouéCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Sinfra,Marahoué,,,245226,Department,,,#N/A,,MarahouéCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Zuénoula,Marahoué,,,184882,Department,,,#N/A,,MarahouéCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Bonon (← Bouaflé),Marahoué,,,167397,Department,,,#N/A,,MarahouéCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Gohitafla (← Zuénoula),Marahoué,,,83370,Department,,,#N/A,,MarahouéCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Adzopé,"Mé (La Mé, Massan)",,,283727,Department,,,#N/A,,"Mé (La Mé, Massan)Côte d'Ivoire",,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Alépé,"Mé (La Mé, Massan)",,,180253,Department,,,#N/A,,"Mé (La Mé, Massan)Côte d'Ivoire",,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Akoupé,"Mé (La Mé, Massan)",,,156698,Department,,,#N/A,,"Mé (La Mé, Massan)Côte d'Ivoire",,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Yakassé-Attobrou,"Mé (La Mé, Massan)",,,105986,Department,,,#N/A,,"Mé (La Mé, Massan)Côte d'Ivoire",,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Bongouanou,Moronou,,,193158,Department,,,#N/A,,MoronouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,M'Batto,Moronou,,,142750,Department,,,#N/A,,MoronouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Arrah,Moronou,,,103846,Department,,,#N/A,,MoronouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Soubré,Nawa,,,587441,Department,,,#N/A,,NawaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Méagui,Nawa,,,299251,Department,,,#N/A,,NawaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Buyo,Nawa,,,176568,Department,,,#N/A,,NawaCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Guéyo,Nawa,,,102213,Department,,,#N/A,,NawaCôte d'Ivoire,,,,,,,,locality,,CI-BS,Guéyo,,,,,region,1,CI-BS,Bas-Sassandra,HIGH,1.0,CI-BS
+Côte d'Ivoire,Bocanda,N'Zi,,,121469,Department,,,#N/A,,N'ZiCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Dimbokro,N'Zi,,,102192,Department,,,#N/A,,N'ZiCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Kouassi-Kouassikro,N'Zi,,,30962,Department,,,#N/A,,N'ZiCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Korhogo,Poro,,,748393,Department,,,#N/A,,PoroCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,M'Bengué,Poro,,,114971,Department,,,#N/A,,PoroCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Dikodougou,Poro,,,102115,Department,,,#N/A,,PoroCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Sinématiali,Poro,,,74981,Department,,,#N/A,,PoroCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,San-Pédro,San-Pédro,,,790242,Department,,,#N/A,,San-PédroCôte d'Ivoire,,,,,,,,county,2,CI-BS,San-Pédro,,,,,region,1,CI-BS,Bas-Sassandra,HIGH,1.0,CI-BS
+Côte d'Ivoire,Tabou,San-Pédro,,,270482,Department,,,#N/A,,San-PédroCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Aboisso,Sud-Comoé,,,361842,Department,,,#N/A,,Sud-ComoéCôte d'Ivoire,,,,,,,,localadmin,,CI-CM,Aboisso,,,,,region,1,CI-CM,Comoé,HIGH,1.0,CI-CM
+Côte d'Ivoire,Grand-Bassam,Sud-Comoé,,,267103,Department,,,#N/A,,Sud-ComoéCôte d'Ivoire,,,,,,,,localadmin,,CI-CM,Grand-Bassam,,,,,region,1,CI-CM,Comoé,HIGH,1.0,CI-CM
+Côte d'Ivoire,Adiaké,Sud-Comoé,,,88006,Department,,,#N/A,,Sud-ComoéCôte d'Ivoire,,,,,,,,localadmin,,CI-CM,Adiaké,,,,,region,1,CI-CM,Comoé,HIGH,1.0,CI-CM
+Côte d'Ivoire,Tiapoum,Sud-Comoé,,,67941,Department,,,#N/A,,Sud-ComoéCôte d'Ivoire,,,,,,,,localadmin,,CI-CM,Tiapoum,,,,,region,1,CI-CM,Comoé,HIGH,1.0,CI-CM
+Côte d'Ivoire,Ouangolodougou,Tchologo,,,294639,Department,,,#N/A,,TchologoCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Ferkessédougou,Tchologo,,,190141,Department,,,#N/A,,TchologoCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Kong,Tchologo,,,118304,Department,,,#N/A,,TchologoCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Man,Tonkpi,,,461135,Department,,,#N/A,,TonkpiCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Danané,Tonkpi,,,364012,Department,,,#N/A,,TonkpiCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Zouan-Hounien,Tonkpi,,,250938,Department,,,#N/A,,TonkpiCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Biankouma,Tonkpi,,,238714,Department,,,#N/A,,TonkpiCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Sipilou,Tonkpi,,,73109,Department,,,#N/A,,TonkpiCôte d'Ivoire,,,,,,,,locality,,CI-MG,Sipilou,,,,,region,1,CI-MG,Montagnes,HIGH,1.0,CI-MG
+Côte d'Ivoire,Séguéla,Worodougou,,,298384,Department,,,#N/A,,WorodougouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Kani,Worodougou,,,131428,Department,,,#N/A,,WorodougouCôte d'Ivoire,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Côte d'Ivoire,Yamoussoukro,Yamoussoukro,,,372559,Department,Yamoussoukro,,Yamoussoukro,,YamoussoukroCôte d'Ivoire,region,1,CI-YM,Yamoussoukro,,,,region,1,CI-YM,Yamoussoukro,,,,,region,1,CI-YM,Yamoussoukro,HIGH,1.0,CI-YM
+Côte d'Ivoire,Attiégouakro,Yamoussoukro,,,49513,Department,,,#N/A,,YamoussoukroCôte d'Ivoire,,,,,,,,,,,,,,,,region,1,CI-YM,Yamoussoukro,NONE,0.0,CI-YM

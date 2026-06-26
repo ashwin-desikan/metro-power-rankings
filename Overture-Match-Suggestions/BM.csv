@@ -1,0 +1,10 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Bermuda,Devonshire,Devonshire,,,7087,Parish,Hamilton (BER),,Hamilton (BER),,DevonshireBermuda,region,2,,Devonshire,,,,region,2,nan,Devonshire,,,,,,,,,HIGH,1.0,nan
+Bermuda,Hamilton,Hamilton,,,5584,Parish,Hamilton (BER),,Hamilton (BER),,HamiltonBermuda,region,2,,Hamilton,,,,region,2,nan,Hamilton,,,,,,,,,HIGH,1.0,nan
+Bermuda,Paget,Paget,,,5899,Parish,Hamilton (BER),,Hamilton (BER),,PagetBermuda,region,2,,Paget,,,,region,2,nan,Paget,,,,,,,,,HIGH,1.0,nan
+Bermuda,Pembroke (incl. Hamiton City),Pembroke (incl. Hamiton City),,,11160,Parish,Hamilton (BER),,Hamilton (BER),,Pembroke (incl. Hamiton City)Bermuda,region,2,,Pembroke,,,,region,2,nan,Pembroke,,,,,,,,,HIGH,1.0,nan
+Bermuda,Saint George's,Saint George's,,,5659,Parish,Hamilton (BER),,Hamilton (BER),,Saint George'sBermuda,region,2,,St. George's,,,,region,2,nan,St. George's,,,,,,,,,HIGH,1.0,nan
+Bermuda,Sandys,Sandys,,,6983,Parish,Hamilton (BER),,Hamilton (BER),,SandysBermuda,region,2,,Sandys,,,,region,2,nan,Sandys,,,,,,,,,HIGH,1.0,nan
+Bermuda,Smith's,Smith's,,,5984,Parish,Hamilton (BER),,Hamilton (BER),,Smith'sBermuda,region,2,,Smith's,,,,region,2,nan,Smith's,,,,,,,,,HIGH,1.0,nan
+Bermuda,Southampton,Southampton,,,6421,Parish,Hamilton (BER),,Hamilton (BER),,SouthamptonBermuda,region,2,,Southampton,,,,region,2,nan,Southampton,,,,,,,,,HIGH,1.0,nan
+Bermuda,Warwick,Warwick,,,9002,Parish,Hamilton (BER),,Hamilton (BER),,WarwickBermuda,region,2,,Warwick,,,,region,2,nan,Warwick,,,,,,,,,HIGH,1.0,nan

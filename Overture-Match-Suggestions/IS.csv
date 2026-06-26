@@ -1,0 +1,70 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Iceland,Múlaþing (incl. Fljótsdalshérað),Austurland,,,5057,Municipality,Egilsstaðir,,Egilsstaðir,,AusturlandIceland,county,2,IS-7,Múlaþing,,,,county,2,IS-7,Múlaþing,,,,,region,1,IS-7,Austurland,HIGH,1.0,IS-7
+Iceland,Fjarðabyggð (incl. Breiðdalshreppur),Austurland,,,5206,Municipality,,,#N/A,,AusturlandIceland,county,2,IS-7,Fjarðabyggð,,,,county,2,IS-7,Fjarðabyggð,,,,,region,1,IS-7,Austurland,HIGH,1.0,IS-7
+Iceland,Hornafjörður (Sveitarfélagið Hornafjörður),Austurland,,,2450,Municipality,,,#N/A,,AusturlandIceland,county,2,IS-8,Sveitarfélagið Hornafjörður,,,,,,,,,,,,region,1,IS-7,Austurland,NONE,0.0,IS-7
+Iceland,Vopnafjarðarhreppur,Austurland,,,665,Municipality,,,#N/A,,AusturlandIceland,county,2,IS-7,Vopnafjarðarhreppur,,,,county,2,IS-7,Vopnafjarðarhreppur,,,,,region,1,IS-7,Austurland,HIGH,1.0,IS-7
+Iceland,Fljótsdalshreppur,Austurland,,,103,Municipality,,,#N/A,,AusturlandIceland,county,2,IS-7,Fljótsdalshreppur,,,,county,2,IS-7,Fljótsdalshreppur,,,,,region,1,IS-7,Austurland,HIGH,1.0,IS-7
+Iceland,Reykjavík (Reykjavíkurborg),Höfuðborgarsvæði,,,135688,Municipality,Reykjavík,,Reykjavík,,HöfuðborgarsvæðiIceland,county,2,IS-1,Reykjavíkurborg,,,,county,2,IS-1,Reykjavíkurborg,,,,,region,1,IS-1,Höfuðborgarsvæðið,HIGH,1.0,IS-1
+Iceland,Kópavogur,Höfuðborgarsvæði,,,38998,Municipality,Reykjavík,,Reykjavík,,HöfuðborgarsvæðiIceland,county,2,IS-1,Reykjavíkurborg,,,,county,2,IS-1,Kópavogsbær,,,,,region,1,IS-1,Höfuðborgarsvæðið,HIGH,1.0,IS-1
+Iceland,Hafnarfjörður,Höfuðborgarsvæði,,,29763,Municipality,Reykjavík,,Reykjavík,,HöfuðborgarsvæðiIceland,county,2,IS-1,Reykjavíkurborg,,,,,,,,,,,,,,,,NONE,0.0,
+Iceland,Garðabær (incl. Álftanes),Höfuðborgarsvæði,,,18445,Municipality,Reykjavík,,Reykjavík,,HöfuðborgarsvæðiIceland,county,2,IS-1,Garðabær,,,,county,2,IS-1,Garðabær,,,,,region,1,IS-1,Höfuðborgarsvæðið,HIGH,1.0,IS-1
+Iceland,Mosfellsbær,Höfuðborgarsvæði,,,13024,Municipality,Reykjavík,,Reykjavík,,HöfuðborgarsvæðiIceland,county,2,IS-1,Mosfellsbær,,,,county,2,IS-1,Mosfellsbær,,,,,region,1,IS-1,Höfuðborgarsvæðið,HIGH,1.0,IS-1
+Iceland,Seltjarnarnes,Höfuðborgarsvæði,,,4720,Municipality,Reykjavík,,Reykjavík,,HöfuðborgarsvæðiIceland,county,2,IS-1,Reykjavíkurborg,,,,,,,,,,,,,,,,NONE,0.0,
+Iceland,Kjósarhreppur,Höfuðborgarsvæði,,,244,Municipality,Reykjavík,,Reykjavík,,HöfuðborgarsvæðiIceland,county,2,IS-1,Kjósarhreppur,,,,county,2,IS-1,Kjósarhreppur,,,,,region,1,IS-1,Höfuðborgarsvæðið,HIGH,1.0,IS-1
+Iceland,Akureyri,Norðurland eystra,,,19642,Municipality,Akureyri,,Akureyri,,Norðurland eystraIceland,locality,,IS-6,Akureyri,,,,locality,,IS-6,Akureyri,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Fjallabyggð,Norðurland eystra,,,1966,Municipality,Fjallabyggð,,Fjallabyggð,,Norðurland eystraIceland,county,2,IS-6,Fjallabyggð,,,,county,2,IS-6,Fjallabyggð,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Norðurþing,Norðurland eystra,,,3041,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Norðurþing,,,,county,2,IS-6,Norðurþing,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Dalvíkurbyggð,Norðurland eystra,,,1860,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Dalvíkurbyggð,,,,county,2,IS-6,Dalvíkurbyggð,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Eyjafjarðarsveit,Norðurland eystra,,,1119,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Eyjafjarðarsveit,,,,county,2,IS-6,Eyjafjarðarsveit,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Þingeyjarsveit,Norðurland eystra,,,867,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Þingeyjarsveit,,,,county,2,IS-6,Þingeyjarsveit,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Hörgársveit (Hörgárbyggð & Arnarneshreppur),Norðurland eystra,,,704,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Hörgársveit,,,,county,2,IS-6,Hörgársveit,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Langanesbyggð,Norðurland eystra,,,506,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Langanesbyggð,,,,county,2,IS-6,Langanesbyggð,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Skútustaðahreppur,Norðurland eystra,,,483,Municipality,,,#N/A,,Norðurland eystraIceland,,,,,,,,,,,,,,,,region,1,IS-6,Norðurland eystra,NONE,0.0,IS-6
+Iceland,Svalbarðsstrandarhreppur,Norðurland eystra,,,449,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Svalbarðsstrandarhreppur,,,,county,2,IS-6,Svalbarðsstrandarhreppur,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Grýtubakkahreppur,Norðurland eystra,,,369,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Grýtubakkahreppur,,,,county,2,IS-6,Grýtubakkahreppur,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Svalbarðshreppur,Norðurland eystra,,,94,Municipality,,,#N/A,,Norðurland eystraIceland,,,,,,,,county,2,IS-6,Svalbarðsstrandarhreppur,,,,,region,1,IS-6,Norðurland eystra,LOW,0.8,IS-6
+Iceland,Tjörneshreppur,Norðurland eystra,,,61,Municipality,,,#N/A,,Norðurland eystraIceland,county,2,IS-6,Tjörneshreppur,,,,county,2,IS-6,Tjörneshreppur,,,,,region,1,IS-6,Norðurland eystra,HIGH,1.0,IS-6
+Iceland,Skagafjörður (Sveitarfélagið Skagafjörður),Norðurland vestra,,,4090,Municipality,,,#N/A,,Norðurland vestraIceland,county,2,IS-5,Skagafjörður,,,,county,2,IS-5,Skagafjörður,,,,,region,1,IS-5,Norðurland vestra,HIGH,1.0,IS-5
+Iceland,Húnaþing vestra (incl. Bæjarhreppur),Norðurland vestra,,,1226,Municipality,,,#N/A,,Norðurland vestraIceland,county,2,IS-5,Húnaþing vestra,,,,county,2,IS-5,Húnaþing vestra,,,,,region,1,IS-5,Norðurland vestra,HIGH,1.0,IS-5
+Iceland,Blönduóssbær,Norðurland vestra,,,928,Municipality,,,#N/A,,Norðurland vestraIceland,neighborhood,,IS-1,Lönd,,,,,,,,,,,,region,1,IS-5,Norðurland vestra,NONE,0.0,IS-5
+Iceland,Skagaströnd (Sveitarfélagið Skagaströnd),Norðurland vestra,,,483,Municipality,,,#N/A,,Norðurland vestraIceland,county,2,IS-5,Sveitarfélagið Skagaströnd,,,,,,,,,,,,region,1,IS-5,Norðurland vestra,NONE,0.0,IS-5
+Iceland,Húnavatnshreppur,Norðurland vestra,,,384,Municipality,,,#N/A,,Norðurland vestraIceland,,,,,,,,,,,,,,,,region,1,IS-5,Norðurland vestra,NONE,0.0,IS-5
+Iceland,Akrahreppur,Norðurland vestra,,,204,Municipality,,,#N/A,,Norðurland vestraIceland,,,,,,,,,,,,,,,,region,1,IS-5,Norðurland vestra,NONE,0.0,IS-5
+Iceland,Skagabyggð,Norðurland vestra,,,90,Municipality,,,#N/A,,Norðurland vestraIceland,,,,,,,,,,,,,,,,region,1,IS-5,Norðurland vestra,NONE,0.0,IS-5
+Iceland,Vestmannaeyjar,Suðurland,,,4414,Municipality,Vestmannaeyjar,,Vestmannaeyjar,,SuðurlandIceland,county,2,IS-8,Vestmannaeyjabær,,,,county,2,IS-8,Vestmannaeyjabær,,,,,region,1,IS-8,Suðurland,MED,0.933,IS-8
+Iceland,Árborg (Sveitarfélagið Árborg),Suðurland,,,10834,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Sveitarfélagið Árborg,,,,,,,,,,,,region,1,IS-8,Suðurland,NONE,0.0,IS-8
+Iceland,Hveragerði,Suðurland,,,2984,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Hveragerðisbær,,,,county,2,IS-8,Hveragerðisbær,,,,,region,1,IS-8,Suðurland,LOW,0.883,IS-8
+Iceland,Ölfus (Sveitarfélagið Ölfus),Suðurland,,,2481,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Sveitarfélagið Ölfus,,,,,,,,,,,,region,1,IS-8,Suðurland,NONE,0.0,IS-8
+Iceland,Rangárþing eystra,Suðurland,,,1971,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Rangárþing eystra,,,,county,2,IS-8,Rangárþing eystra,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Rangárþing ytra,Suðurland,,,1810,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Rangárþing ytra,,,,county,2,IS-8,Rangárþing ytra,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Bláskógabyggð,Suðurland,,,1164,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Bláskógabyggð,,,,county,2,IS-8,Bláskógabyggð,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Hrunamannahreppur,Suðurland,,,818,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Hrunamannahreppur,,,,county,2,IS-8,Hrunamannahreppur,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Mýrdalshreppur,Suðurland,,,814,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Mýrdalshreppur,,,,county,2,IS-8,Mýrdalshreppur,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Flóahreppur,Suðurland,,,694,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Flóahreppur,,,,county,2,IS-8,Flóahreppur,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Skaftárhreppur,Suðurland,,,641,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Skaftárhreppur,,,,county,2,IS-8,Skaftárhreppur,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Skeiða- og Gnúpverjahreppur,Suðurland,,,576,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Skeiða- og Gnúpverjahreppur,,,,county,2,IS-8,Skeiða- og Gnúpverjahreppur,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Grímsnes- og Grafningshreppur,Suðurland,,,525,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Grímsnes- og Grafningshreppur,,,,county,2,IS-8,Grímsnes- og Grafningshreppur,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Ásahreppur,Suðurland,,,261,Municipality,,,#N/A,,SuðurlandIceland,county,2,IS-8,Ásahreppur,,,,county,2,IS-8,Ásahreppur,,,,,region,1,IS-8,Suðurland,HIGH,1.0,IS-8
+Iceland,Reykjanesbær,Suðurnes,,,20416,Municipality,Reykjavík,,Reykjavík,,SuðurnesIceland,county,2,IS-2,Reykjanesbær,,,,county,2,IS-2,Reykjanesbær,,,,,region,1,IS-2,Suðurnes,HIGH,1.0,IS-2
+Iceland,"Suðurnesjabær (incl. Garður, Sandgerði)",Suðurnes,,,3753,Municipality,,,#N/A,,SuðurnesIceland,county,2,IS-2,Suðurnesjabær,,,,county,2,IS-2,Suðurnesjabær,,,,,region,1,IS-2,Suðurnes,HIGH,1.0,IS-2
+Iceland,Grindavíkurbær,Suðurnes,,,3585,Municipality,,,#N/A,,SuðurnesIceland,county,2,IS-2,Grindavíkurbær,,,,county,2,IS-2,Grindavíkurbær,,,,,region,1,IS-2,Suðurnes,HIGH,1.0,IS-2
+Iceland,Vogar (Sveitarfélagið Vogar),Suðurnes,,,1354,Municipality,,,#N/A,,SuðurnesIceland,county,2,IS-2,Sveitarfélagið Vogar,,,,,,,,,,,,region,1,IS-2,Suðurnes,NONE,0.0,IS-2
+Iceland,Ísafjarðarbær,Vestfirðir,,,3840,Municipality,Ísafjarðarbær,,Ísafjarðarbær,,VestfirðirIceland,county,2,IS-4,Ísafjarðarbær,,,,county,2,IS-4,Ísafjarðarbær,,,,,region,1,IS-4,Vestfirðir,HIGH,1.0,IS-4
+Iceland,Vesturbyggð,Vestfirðir,,,1131,Municipality,,,#N/A,,VestfirðirIceland,county,2,IS-4,Vesturbyggð,,,,county,2,IS-4,Vesturbyggð,,,,,region,1,IS-4,Vestfirðir,HIGH,1.0,IS-4
+Iceland,Bolungarvík,Vestfirðir,,,956,Municipality,,,#N/A,,VestfirðirIceland,county,2,IS-4,Bolungarvíkurkaupstaður,,,,,,,,,,,,region,1,IS-4,Vestfirðir,NONE,0.0,IS-4
+Iceland,Strandabyggð,Vestfirðir,,,424,Municipality,,,#N/A,,VestfirðirIceland,county,2,IS-4,Strandabyggð,,,,county,2,IS-4,Strandabyggð,,,,,region,1,IS-4,Vestfirðir,HIGH,1.0,IS-4
+Iceland,Tálknafjarðarhreppur,Vestfirðir,,,255,Municipality,,,#N/A,,VestfirðirIceland,,,,,,,,,,,,,,,,region,1,IS-4,Vestfirðir,NONE,0.0,IS-4
+Iceland,Reykhólahreppur,Vestfirðir,,,233,Municipality,,,#N/A,,VestfirðirIceland,county,2,IS-4,Reykhólahreppur,,,,county,2,IS-4,Reykhólahreppur,,,,,region,1,IS-4,Vestfirðir,HIGH,1.0,IS-4
+Iceland,Súðavíkurhreppur,Vestfirðir,,,215,Municipality,,,#N/A,,VestfirðirIceland,county,2,IS-4,Súðavíkurhreppur,,,,county,2,IS-4,Súðavíkurhreppur,,,,,region,1,IS-4,Vestfirðir,HIGH,1.0,IS-4
+Iceland,Kaldrananeshreppur,Vestfirðir,,,109,Municipality,,,#N/A,,VestfirðirIceland,county,2,IS-4,Kaldrananeshreppur,,,,county,2,IS-4,Kaldrananeshreppur,,,,,region,1,IS-4,Vestfirðir,HIGH,1.0,IS-4
+Iceland,Árneshreppur,Vestfirðir,,,42,Municipality,,,#N/A,,VestfirðirIceland,county,2,IS-4,Árneshreppur,,,,county,2,IS-4,Árneshreppur,,,,,region,1,IS-4,Vestfirðir,HIGH,1.0,IS-4
+Iceland,Akranes (Akraneskaupstaður),Vesturland,,,7841,Municipality,Akranes,,Akranes,,VesturlandIceland,county,2,IS-3,Akraneskaupstaður,,,,,,,,,,,,region,1,IS-3,Vesturland,NONE,0.0,IS-3
+Iceland,Borgarbyggð,Vesturland,,,3868,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Borgarbyggð,,,,county,2,IS-3,Borgarbyggð,,,,,region,1,IS-3,Vesturland,HIGH,1.0,IS-3
+Iceland,Snæfellsbær,Vesturland,,,1666,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Snæfellsbær,,,,county,2,IS-3,Snæfellsbær,,,,,region,1,IS-3,Vesturland,HIGH,1.0,IS-3
+Iceland,Stykkishólmur,Vesturland,,,1211,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Sveitarfélagið Stykkishólmur,,,,,,,,,,,,region,1,IS-3,Vesturland,NONE,0.0,IS-3
+Iceland,Grundarfjarðarbær,Vesturland,,,840,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Grundarfjarðarbær,,,,county,2,IS-3,Grundarfjarðarbær,,,,,region,1,IS-3,Vesturland,HIGH,1.0,IS-3
+Iceland,Hvalfjarðarsveit,Vesturland,,,687,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Hvalfjarðarsveit,,,,county,2,IS-3,Hvalfjarðarsveit,,,,,region,1,IS-3,Vesturland,HIGH,1.0,IS-3
+Iceland,Dalabyggð,Vesturland,,,665,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Dalabyggð,,,,county,2,IS-3,Dalabyggð,,,,,region,1,IS-3,Vesturland,HIGH,1.0,IS-3
+Iceland,Eyja- og Miklaholtshreppur,Vesturland,,,102,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Eyja- og Miklaholtshreppur,,,,county,2,IS-3,Eyja- og Miklaholtshreppur,,,,,region,1,IS-3,Vesturland,HIGH,1.0,IS-3
+Iceland,Helgafellssveit,Vesturland,,,79,Municipality,,,#N/A,,VesturlandIceland,neighborhood,,IS-1,Fell,,,,,,,,,,,,region,1,IS-3,Vesturland,NONE,0.0,IS-3
+Iceland,Skorradalshreppur,Vesturland,,,60,Municipality,,,#N/A,,VesturlandIceland,county,2,IS-3,Skorradalshreppur,,,,county,2,IS-3,Skorradalshreppur,,,,,region,1,IS-3,Vesturland,HIGH,1.0,IS-3

@@ -1,0 +1,78 @@
+﻿Country,Distri rrondissement/County,State/Region (ISO 3166-2),Abv,Subregion,Pop,Type,Metro Area,Sub Country,lookup,Census Year,,Subtype,Admin Level,Region (ISO 3166-2),Primary Name,fixlater,,,Direct Subtype,Direct Admin,Direct Region ISO,Direct Primary,County Subtype,County Admin,County Region ISO,County Primary,Region Subtype,Region Admin,Region Region ISO,Region Primary,Confidence,Score,Resolved Region ISO
+Georgia,Aqwa [Sukhumi],Abkhazia,,,65087,City,Sukhumi,,Sukhumi,,AbkhaziaGeorgia,county,2,GE-AB,Аҟəа,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Gagra,Abkhazia,,,38656,District,,,#N/A,,AbkhaziaGeorgia,county,2,GE-AB,Гагра араион,,,,county,2,GE-AB,Гагра араион,,,,,region,1,GE-AB,აფხაზეთის ავტონომიური რესპუბლიკა - Аԥснытәи Автономтә Республика,HIGH,1.0,GE-AB
+Georgia,Gwdouţa [Gudauta],Abkhazia,,,38646,District,,,#N/A,,AbkhaziaGeorgia,county,2,GE-AB,Гәдоуҭа араион,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Gal [Gali],Abkhazia,,,30276,District,,,#N/A,,AbkhaziaGeorgia,county,2,GE-AB,Гал араион,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Očamčyra [Ochamchira],Abkhazia,,,25994,District,,,#N/A,,AbkhaziaGeorgia,county,2,GE-AB,Очамчыра араион,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Gwylryphš' [Gulripshi],Abkhazia,,,17620,District,,,#N/A,,AbkhaziaGeorgia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Tqwarčal [Tkvarcheli],Abkhazia,,,16420,District,,,#N/A,,AbkhaziaGeorgia,,,,,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Aqwa (araion) [Sukhumi],Abkhazia,,,11259,District,,,#N/A,,AbkhaziaGeorgia,county,2,GE-AB,Аҟəа,,,,county,2,GE-AB,Аҟəа,,,,,region,1,GE-AB,აფხაზეთის ავტონომიური რესპუბლიკა - Аԥснытәи Автономтә Республика,HIGH,1.0,GE-AB
+Georgia,Batumi,Adjara,,,234600,City,Batumi,,Batumi,,AdjaraGeorgia,county,2,GE-AJ,ბათუმი,,,,county,2,GE-AJ,ბათუმი,,,,,region,1,GE-AJ,აჭარის ავტონომიური რესპუბლიკა,HIGH,1.0,GE-AJ
+Georgia,Kobuleti,Adjara,,,73100,Municipality,Kobuleti,,Kobuleti,,AdjaraGeorgia,county,2,GE-AJ,ქობულეთის მუნიციპალიტეტი,,,,locality,,GE-AJ,ქობულეთი,,,,,region,1,GE-AJ,აჭარის ავტონომიური რესპუბლიკა,HIGH,1.0,GE-AJ
+Georgia,Khelvachauri,Adjara,,,51500,Municipality,,,#N/A,,AdjaraGeorgia,county,2,GE-AJ,ხელვაჩაურის მუნიციპალიტეტი,,,,locality,,GE-AJ,ხელვაჩაური,,,,,region,1,GE-AJ,აჭარის ავტონომიური რესპუბლიკა,HIGH,1.0,GE-AJ
+Georgia,Khulo,Adjara,,,16500,Municipality,,,#N/A,,AdjaraGeorgia,county,2,GE-AJ,ხულოს მუნიციპალიტეტი,,,,locality,,GE-AJ,ხულო,,,,,region,1,GE-AJ,აჭარის ავტონომიური რესპუბლიკა,HIGH,1.0,GE-AJ
+Georgia,Keda,Adjara,,,14500,Municipality,,,#N/A,,AdjaraGeorgia,county,2,GE-AJ,ქედის მუნიციპალიტეტი,,,,county,2,GE-AJ,ქედის მუნიციპალიტეტი,,,,,region,1,GE-AJ,აჭარის ავტონომიური რესპუბლიკა,HIGH,1.0,GE-AJ
+Georgia,Shuakhevi,Adjara,,,10900,Municipality,,,#N/A,,AdjaraGeorgia,county,2,GE-AJ,შუახევის მუნიციპალიტეტი,,,,locality,,GE-AJ,შუახევი,,,,,region,1,GE-AJ,აჭარის ავტონომიური რესპუბლიკა,HIGH,1.0,GE-AJ
+Georgia,Lanchkhuti,Guria,,,26500,Municipality,Lanchkhuti,,Lanchkhuti,,GuriaGeorgia,county,2,GE-GU,ლანჩხუთის მუნიციპალიტეტი,,,,locality,,GE-GU,ლანჩხუთი,,,,,region,1,GE-GU,გურია,HIGH,1.0,GE-GU
+Georgia,Ozurgeti,Guria,,,57600,Municipality,,,#N/A,,GuriaGeorgia,county,2,GE-GU,ოზურგეთის მუნიციპალიტეტი,,,,locality,,GE-GU,ოზურგეთი,,,,,region,1,GE-GU,გურია,HIGH,1.0,GE-GU
+Georgia,Chokhatauri,Guria,,,16700,Municipality,,,#N/A,,GuriaGeorgia,county,2,GE-GU,ჩოხატაურის მუნიციპალიტეტი,,,,county,2,GE-GU,ჩოხატაურის მუნიციპალიტეტი,,,,,region,1,GE-GU,გურია,HIGH,1.0,GE-GU
+Georgia,Kutaisi,Imereti,,,161200,City,Kutaisi,,Kutaisi,,ImeretiGeorgia,county,2,GE-IM,ქუთაისი,,,,county,2,GE-IM,ქუთაისი,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Sachkhere,Imereti,,,34000,Municipality,Sachkhere,,Sachkhere,,ImeretiGeorgia,county,2,GE-IM,საჩხერის მუნიციპალიტეტი,,,,county,2,GE-IM,საჩხერის მუნიციპალიტეტი,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Samtredia,Imereti,,,44000,Municipality,Samtredia,,Samtredia,,ImeretiGeorgia,county,2,GE-IM,სამტრედიის მუნიციპალიტეტი,,,,locality,,GE-IM,სამტრედია,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Tsqaltubo,Imereti,,,48400,Municipality,Tsqaltubo,,Tsqaltubo,,ImeretiGeorgia,locality,,GE-IM,წყალტუბო,,,,locality,,GE-IM,წყალტუბო,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Zestaponi,Imereti,,,54200,Municipality,Zestafoni,,Zestafoni,,ImeretiGeorgia,county,2,GE-IM,ზესტაფონის მუნიციპალიტეტი,,,,county,2,GE-IM,ზესტაფონის მუნიციპალიტეტი,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Chiatura,Imereti,,,36400,Municipality,,,#N/A,,ImeretiGeorgia,county,2,GE-IM,ჭიათურის მუნიციპალიტეტი,,,,locality,,GE-IM,ჭიათურა,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Terjola,Imereti,,,31600,Municipality,,,#N/A,,ImeretiGeorgia,county,2,GE-IM,თერჯოლის მუნიციპალიტეტი,,,,county,2,GE-IM,თერჯოლის მუნიციპალიტეტი,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Khoni,Imereti,,,21500,Municipality,,,#N/A,,ImeretiGeorgia,county,2,GE-IM,ხონის მუნიციპალიტეტი,,,,locality,,GE-IM,ხონი,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Vani,Imereti,,,20700,Municipality,,,#N/A,,ImeretiGeorgia,county,2,GE-IM,ვანის მუნიციპალიტეტი,,,,locality,,GE-IM,ვანი,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Baghdati,Imereti,,,19400,Municipality,,,#N/A,,ImeretiGeorgia,county,2,GE-IM,ბაღდათის მუნიციპალიტეტი,,,,county,2,GE-IM,ბაღდათის მუნიციპალიტეტი,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Tkibuli,Imereti,,,17500,Municipality,Tkibuli,,Tkibuli,,ImeretiGeorgia,county,2,GE-IM,ტყიბულის მუნიციპალიტეტი,,,,locality,,GE-IM,ტყიბული,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Kharagauli,Imereti,,,16500,Municipality,,,#N/A,,ImeretiGeorgia,county,2,GE-IM,ხარაგაულის მუნიციპალიტეტი,,,,locality,,GE-IM,ხარაგაული,,,,,region,1,GE-IM,იმერეთი,HIGH,1.0,GE-IM
+Georgia,Sagarejo,Kakheti,,,50300,Municipality,Sagarejo,,Sagarejo,,KakhetiGeorgia,county,2,GE-KA,საგარეჯოს მუნიციპალიტეტი,,,,locality,,GE-KA,საგარეჯო,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Telavi,Kakheti,,,56700,Municipality,Telavi,,Telavi,,KakhetiGeorgia,county,2,GE-KA,თელავის მუნიციპალიტეტი,,,,county,2,GE-KA,თელავის მუნიციპალიტეტი,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Gurjaani,Kakheti,,,50600,Municipality,,,#N/A,,KakhetiGeorgia,county,2,GE-KA,გურჯაანის მუნიციპალიტეტი,,,,county,2,GE-KA,გურჯაანის მუნიციპალიტეტი,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Lagodekhi,Kakheti,,,39200,Municipality,,,#N/A,,KakhetiGeorgia,county,2,GE-KA,ლაგოდეხის მუნიციპალიტეტი,,,,county,2,GE-KA,ლაგოდეხის მუნიციპალიტეტი,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Akhmeta,Kakheti,,,28800,Municipality,,,#N/A,,KakhetiGeorgia,county,2,GE-KA,ახმეტის მუნიციპალიტეტი,,,,county,2,GE-KA,ახმეტის მუნიციპალიტეტი,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Kvareli,Kakheti,,,28500,Municipality,,,#N/A,,KakhetiGeorgia,county,2,GE-KA,ყვარლის მუნიციპალიტეტი,,,,county,2,GE-KA,ყვარლის მუნიციპალიტეტი,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Sighnaghi,Kakheti,,,28500,Municipality,,,#N/A,,KakhetiGeorgia,county,2,GE-KA,სიღნაღის მუნიციპალიტეტი,,,,locality,,GE-KA,სიღნაღი,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Dedoplistsqaro,Kakheti,,,18800,Municipality,,,#N/A,,KakhetiGeorgia,county,2,GE-KA,დედოფლისწყაროს მუნიციპალიტეტი,,,,county,2,GE-KA,დედოფლისწყაროს მუნიციპალიტეტი,,,,,region,1,GE-KA,კახეთი,HIGH,1.0,GE-KA
+Georgia,Bolnisi,Kvemo Kartli,,,53200,Municipality,Bolnisi,,Bolnisi,,Kvemo KartliGeorgia,county,2,GE-KK,ბოლნისის მუნიციპალიტეტი,,,,locality,,GE-KK,ბოლნისი,,,,,region,1,GE-KK,ქვემო ქართლი,HIGH,1.0,GE-KK
+Georgia,Rustavi,Kvemo Kartli,,,131800,City,Rustavi,,Rustavi,,Kvemo KartliGeorgia,county,2,GE-KK,რუსთავი,,,,county,2,GE-KK,რუსთავი,,,,,region,1,GE-KK,ქვემო ქართლი,HIGH,1.0,GE-KK
+Georgia,Marneuli,Kvemo Kartli,,,114000,Municipality,,,#N/A,,Kvemo KartliGeorgia,county,2,GE-KK,მარნეულის მუნიციპალიტეტი,,,,locality,,GE-KK,მარნეული,,,,,region,1,GE-KK,ქვემო ქართლი,HIGH,1.0,GE-KK
+Georgia,Gardabani,Kvemo Kartli,,,83200,Municipality,,,#N/A,,Kvemo KartliGeorgia,county,2,GE-KK,გარდაბნის მუნიციპალიტეტი,,,,locality,,GE-KK,გარდაბანი,,,,,region,1,GE-KK,ქვემო ქართლი,HIGH,1.0,GE-KK
+Georgia,Tetritskaro,Kvemo Kartli,,,19500,Municipality,,,#N/A,,Kvemo KartliGeorgia,county,2,GE-KK,თეთრიწყაროს მუნიციპალიტეტი,,,,locality,,GE-KK,თეთრიწყარო,,,,,region,1,GE-KK,ქვემო ქართლი,HIGH,1.0,GE-KK
+Georgia,Dmanisi,Kvemo Kartli,,,19000,Municipality,,,#N/A,,Kvemo KartliGeorgia,county,2,GE-KK,დმანისის მუნიციპალიტეტი,,,,locality,,GE-KK,დმანისი,,,,,region,1,GE-KK,ქვემო ქართლი,HIGH,1.0,GE-KK
+Georgia,Tsalka,Kvemo Kartli,,,17700,Municipality,,,#N/A,,Kvemo KartliGeorgia,county,2,GE-KK,წალკის მუნიციპალიტეტი,,,,locality,,GE-KK,წალკა,,,,,region,1,GE-KK,ქვემო ქართლი,HIGH,1.0,GE-KK
+Georgia,Mtskheta,Mtskheta-Mtianeti,,,56500,Municipality,,,#N/A,,Mtskheta-MtianetiGeorgia,county,2,GE-MM,მცხეთის მუნიციპალიტეტი,,,,locality,,GE-MM,მცხეთა,,,,,region,1,GE-MM,მცხეთა-მთიანეთი,HIGH,1.0,GE-MM
+Georgia,Dusheti,Mtskheta-Mtianeti,,,26000,Municipality,,,#N/A,,Mtskheta-MtianetiGeorgia,county,2,GE-MM,დუშეთის მუნიციპალიტეტი,,,,county,2,GE-MM,დუშეთის მუნიციპალიტეტი,,,,,region,1,GE-MM,მცხეთა-მთიანეთი,HIGH,1.0,GE-MM
+Georgia,Tianeti,Mtskheta-Mtianeti,,,8400,Municipality,,,#N/A,,Mtskheta-MtianetiGeorgia,county,2,GE-MM,თიანეთის მუნიციპალიტეტი,,,,locality,,GE-MM,თიანეთი,,,,,region,1,GE-MM,მცხეთა-მთიანეთი,HIGH,1.0,GE-MM
+Georgia,Kazbegi,Mtskheta-Mtianeti,,,4800,Municipality,,,#N/A,,Mtskheta-MtianetiGeorgia,county,2,GE-MM,ყაზბეგის მუნიციპალიტეტი,,,,county,2,GE-MM,ყაზბეგის მუნიციპალიტეტი,,,,,region,1,GE-MM,მცხეთა-მთიანეთი,HIGH,1.0,GE-MM
+Georgia,Ambrolauri,Racha-Lechkumi & Kvemo Svaneti,,,10300,Municipality,,,#N/A,,Racha-Lechkumi & Kvemo SvanetiGeorgia,county,2,GE-RL,ამბროლაურის მუნიციპალიტეტი,,,,county,2,GE-RL,ამბროლაურის მუნიციპალიტეტი,,,,,region,1,GE-RL,რაჭა-ლეჩხუმი და ქვემო სვანეთი,HIGH,1.0,GE-RL
+Georgia,Tsageri,Racha-Lechkumi & Kvemo Svaneti,,,8300,Municipality,,,#N/A,,Racha-Lechkumi & Kvemo SvanetiGeorgia,county,2,GE-RL,ცაგერის მუნიციპალიტეტი,,,,county,2,GE-RL,ცაგერის მუნიციპალიტეტი,,,,,region,1,GE-RL,რაჭა-ლეჩხუმი და ქვემო სვანეთი,HIGH,1.0,GE-RL
+Georgia,Oni,Racha-Lechkumi & Kvemo Svaneti,,,5400,Municipality,,,#N/A,,Racha-Lechkumi & Kvemo SvanetiGeorgia,county,2,GE-RL,ონის მუნიციპალიტეტი,,,,county,2,GE-RL,ონის მუნიციპალიტეტი,,,,,region,1,GE-RL,რაჭა-ლეჩხუმი და ქვემო სვანეთი,HIGH,1.0,GE-RL
+Georgia,Lentekhi,Racha-Lechkumi & Kvemo Svaneti,,,5000,Municipality,,,#N/A,,Racha-Lechkumi & Kvemo SvanetiGeorgia,county,2,GE-RL,ლენტეხის მუნიციპალიტეტი,,,,county,2,GE-RL,ლენტეხის მუნიციპალიტეტი,,,,,region,1,GE-RL,რაჭა-ლეჩხუმი და ქვემო სვანეთი,HIGH,1.0,GE-RL
+Georgia,Poti,Samegrelo-Zemo Svaneti,,,38800,City,Poti,,Poti,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,ფოთი,,,,county,2,GE-SZ,ფოთი,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Zugdidi,Samegrelo-Zemo Svaneti,,,108600,Municipality,Zugdidi,,Zugdidi,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,ზუგდიდის მუნიციპალიტეტი,,,,locality,,GE-SZ,ზუგდიდი,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Senaki,Samegrelo-Zemo Svaneti,,,35200,Municipality,,,#N/A,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,სენაკის მუნიციპალიტეტი,,,,county,2,GE-SZ,სენაკის მუნიციპალიტეტი,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Martvili,Samegrelo-Zemo Svaneti,,,28900,Municipality,,,#N/A,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,მარტვილის მუნიციპალიტეტი,,,,locality,,GE-SZ,მარტვილი,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Khobi,Samegrelo-Zemo Svaneti,,,26300,Municipality,,,#N/A,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,ხობის მუნიციპალიტეტი,,,,locality,,GE-SZ,ხობი,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Tsalenjikha,Samegrelo-Zemo Svaneti,,,21900,Municipality,,,#N/A,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,წალენჯიხის მუნიციპალიტეტი,,,,locality,,GE-SZ,წალენჯიხა,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Chkhorotsqu,Samegrelo-Zemo Svaneti,,,20300,Municipality,,,#N/A,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,ჩხოროწყუს მუნიციპალიტეტი,,,,county,2,GE-SZ,ჩხოროწყუს მუნიციპალიტეტი,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Abasha,Samegrelo-Zemo Svaneti,,,19200,Municipality,,,#N/A,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,აბაშის მუნიციპალიტეტი,,,,locality,,GE-SZ,აბაშა,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Mestia,Samegrelo-Zemo Svaneti,,,9800,Municipality,,,#N/A,,Samegrelo-Zemo SvanetiGeorgia,county,2,GE-SZ,მესტიის მუნიციპალიტეტი,,,,county,2,GE-SZ,მესტიის მუნიციპალიტეტი,,,,,region,1,GE-SZ,სამეგრელო-ზემო სვანეთი,HIGH,1.0,GE-SZ
+Georgia,Akhalkalaki,Samtskhe-Javakheti,,,43700,Municipality,,,#N/A,,Samtskhe-JavakhetiGeorgia,county,2,GE-SJ,ახალქალაქის მუნიციპალიტეტი,,,,county,2,GE-SJ,ახალქალაქის მუნიციპალიტეტი,,,,,region,1,GE-SJ,სამცხე-ჯავახეთი,HIGH,1.0,GE-SJ
+Georgia,Akhaltsikhe,Samtskhe-Javakheti,,,37900,Municipality,,,#N/A,,Samtskhe-JavakhetiGeorgia,county,2,GE-SJ,ახალციხის მუნიციპალიტეტი,,,,locality,,GE-SJ,ახალციხე,,,,,region,1,GE-SJ,სამცხე-ჯავახეთი,HIGH,1.0,GE-SJ
+Georgia,Borjomi,Samtskhe-Javakheti,,,24300,Municipality,,,#N/A,,Samtskhe-JavakhetiGeorgia,county,2,GE-SJ,ბორჯომის მუნიციპალიტეტი,,,,county,2,GE-SJ,ბორჯომის მუნიციპალიტეტი,,,,,region,1,GE-SJ,სამცხე-ჯავახეთი,HIGH,1.0,GE-SJ
+Georgia,Ninotsminda,Samtskhe-Javakheti,,,23000,Municipality,,,#N/A,,Samtskhe-JavakhetiGeorgia,county,2,GE-SJ,ნინოწმინდის მუნიციპალიტეტი,,,,county,2,GE-SJ,ნინოწმინდის მუნიციპალიტეტი,,,,,region,1,GE-SJ,სამცხე-ჯავახეთი,HIGH,1.0,GE-SJ
+Georgia,Adigeni,Samtskhe-Javakheti,,,14200,Municipality,,,#N/A,,Samtskhe-JavakhetiGeorgia,county,2,GE-SJ,ადიგენის მუნიციპალიტეტი,,,,county,2,GE-SJ,ადიგენის მუნიციპალიტეტი,,,,,region,1,GE-SJ,სამცხე-ჯავახეთი,HIGH,1.0,GE-SJ
+Georgia,Aspindza,Samtskhe-Javakheti,,,9300,Municipality,,,#N/A,,Samtskhe-JavakhetiGeorgia,county,2,GE-SJ,ასპინძის მუნიციპალიტეტი,,,,county,2,GE-SJ,ასპინძის მუნიციპალიტეტი,,,,,region,1,GE-SJ,სამცხე-ჯავახეთი,HIGH,1.0,GE-SJ
+Georgia,Gori,Shida Kartli,,,121500,Municipality,Gori,,Gori,,Shida KartliGeorgia,county,2,GE-SK,გორის მუნიციპალიტეტი,,,,locality,,GE-SK,გორი,,,,,region,1,GE-SK,შიდა ქართლი,HIGH,1.0,GE-SK
+Georgia,Khashuri,Shida Kartli,,,50200,Municipality,Khashuri,,Khashuri,,Shida KartliGeorgia,county,2,GE-SK,ხაშურის მუნიციპალიტეტი,,,,county,2,GE-SK,ხაშურის მუნიციპალიტეტი,,,,,region,1,GE-SK,შიდა ქართლი,HIGH,1.0,GE-SK
+Georgia,Kaspi,Shida Kartli,,,40900,Municipality,,,#N/A,,Shida KartliGeorgia,county,2,GE-SK,კასპის მუნიციპალიტეტი,,,,county,2,GE-SK,კასპის მუნიციპალიტეტი,,,,,region,1,GE-SK,შიდა ქართლი,HIGH,1.0,GE-SK
+Georgia,Kareli,Shida Kartli,,,37900,Municipality,,,#N/A,,Shida KartliGeorgia,county,2,GE-SK,ქარელის მუნიციპალიტეტი,,,,locality,,GE-SK,ქარელი,,,,,region,1,GE-SK,შიდა ქართლი,HIGH,1.0,GE-SK
+Georgia,Tchinval [Tskhinvali],South Ossetia,,,34184,City,Tskhinvali,,Tskhinvali,,South OssetiaGeorgia,county,2,GE-SK,Цхинвалы район,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Tchinval (rajon) [Tskhinvali],South Ossetia,,,8409,District,,,#N/A,,South OssetiaGeorgia,county,2,GE-SK,Цхинвалы район,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Dzau [Java],South Ossetia,,,6848,District,,,#N/A,,South OssetiaGeorgia,county,2,GE-SK,Дзауы район,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Znauyr [Znauri],South Ossetia,,,4386,District,,,#N/A,,South OssetiaGeorgia,county,2,GE-SK,Знауыры район,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Leningor [Akhalgori],South Ossetia,,,2865,District,,,#N/A,,South OssetiaGeorgia,county,2,GE-MM,Ленингоры район,,,,,,,,,,,,,,,,NONE,0.0,
+Georgia,Tbilisi,Tbilisi,,,1330200,City,Tbilisi,,Tbilisi,,TbilisiGeorgia,region,1,GE-TB,თბილისი,,,,region,1,GE-TB,თბილისი,,,,,region,1,GE-TB,თბილისი,HIGH,1.0,GE-TB
