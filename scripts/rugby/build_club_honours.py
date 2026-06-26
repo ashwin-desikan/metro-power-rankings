@@ -181,6 +181,26 @@ def season_year(s):
     return int(m.group(1)) if m else None
 
 
+# Display-name normalization (user-approved 2026-06-25): show the full era name
+# consistently across rolls. Short colloquial names -> full club name for clubs
+# that never renamed; rename/sponsor-era names handled per-year below. The crest
+# "team" field is untouched. Only affects the displayed "winner".
+DISPLAY_ALIASES = {
+    "Toulouse": "Stade Toulousain", "Toulon": "RC Toulon",
+    "La Rochelle": "Stade Rochelais", "Brive": "CA Brive",
+    "Bordeaux B\u00e8gles": "Union Bordeaux B\u00e8gles",
+    "Leicester": "Leicester Tigers", "Exeter": "Exeter Chiefs",
+    "Northampton": "Northampton Saints", "Sale": "Sale Sharks",
+}
+def display_name(winner, season):
+    y = season_year(season) or 0
+    if winner == "Newcastle":
+        return "Newcastle Falcons"
+    if winner == "Wasps":
+        return "London Wasps" if y >= 1999 else "Wasps"
+    return DISPLAY_ALIASES.get(winner, winner)
+
+
 def parse_domestic(path):
     lines = io.open(path, encoding="utf-8").read().splitlines()
     section = None
@@ -333,6 +353,9 @@ def main():
     rolls = {comp: [r for r in rows if r["winner"]] for comp, rows in rolls.items()}
     roll_out = {comp: sorted(rows, key=lambda r: -(season_year(r["season"]) or 0))
                 for comp, rows in rolls.items()}
+    for _rows in roll_out.values():
+        for _r in _rows:
+            _r["winner"] = display_name(_r["winner"], _r.get("season"))
     most = {}
     for comp, rows in rolls.items():
         counts = defaultdict(int)
@@ -342,7 +365,7 @@ def main():
             if r.get("team") and r["winner"] not in wt:
                 wt[r["winner"]] = r["team"]
         most[comp] = sorted(
-            [{"winner": w, "titles": n, "team": wt.get(w)} for w, n in counts.items()],
+            [{"winner": DISPLAY_ALIASES.get(w, w), "titles": n, "team": wt.get(w)} for w, n in counts.items()],
             key=lambda x: -x["titles"])[:8]
 
     os.makedirs(OUT_DIR, exist_ok=True)
