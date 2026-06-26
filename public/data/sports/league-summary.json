@@ -1,9 +1,9 @@
 {
-  "total_markers": 8871,
+  "total_markers": 8900,
   "major_markers": 1311,
-  "other_markers": 7560,
+  "other_markers": 7589,
   "by_sport": {
-    "Football": 5638,
+    "Football": 5667,
     "Basketball": 741,
     "W Basketball": 454,
     "Hockey": 344,
@@ -45,7 +45,7 @@
     "Water Polo": 1
   },
   "by_league_top": {
-    "England": 456,
+    "England": 488,
     "Germany": 317,
     "Spain": 307,
     "International Teams": 239,
@@ -63,8 +63,8 @@
     "United States": 82,
     "Turkey": 78,
     "Belgium": 77,
-    "Austria": 72,
     "Poland": 72,
+    "Austria": 71,
     "Mexico": 69,
     "Scotland": 65,
     "Japan": 62,
@@ -74,9 +74,9 @@
     "Israel": 57,
     "Sweden": 56,
     "Atlantic Coast": 53,
-    "Bulgaria": 49,
     "Big 12": 48,
     "Southeastern": 48,
+    "Bulgaria": 48,
     "Egypt": 46,
     "Belarus": 45,
     "Finland": 45,
@@ -88,7 +88,7 @@
   },
   "by_country_top": {
     "United States": 1703,
-    "United Kingdom": 743,
+    "United Kingdom": 775,
     "Spain": 394,
     "Germany": 390,
     "France": 263,
@@ -103,14 +103,14 @@
     "Portugal": 116,
     "Canada": 113
   },
-  "markers_with_team_page": 1308,
+  "markers_with_team_page": 1310,
   "sources": {
     "team_list": 3239,
-    "football_club_data": 5632,
+    "football_club_data": 5661,
     "team_list_excluded_no_coords": 0,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 709,
-    "football_club_data_excluded_no_coords": 4251
+    "football_club_data_excluded_no_coords": 4229
   },
   "league_cards": [
     {
@@ -159,7 +159,7 @@
       "sport": "Football",
       "status": "coming",
       "page": null,
-      "team_count": 456
+      "team_count": 488
     },
     {
       "league": "Spain",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25",
+  "generated_at": "2026-06-26",
   "source": "Champions League-201516.xlsx",
   "scope": {
     "countries": [
@@ -6026,8 +6026,8 @@
       "cur_name": "AP Leamington",
       "country": "England",
       "federation_country": null,
-      "city": "Leamington Spa",
-      "metro": "Leamington Spa",
+      "city": "Leamington",
+      "metro": "Birmingham",
       "county": "Warwickshire",
       "continent": "Europe",
       "lat": 52.2457,
@@ -17200,8 +17200,8 @@
       "metro": "Newcastle",
       "county": "Tyne and Wear",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 54.961016,
+      "lng": -1.579665,
       "tiers": [
         2,
         3,
@@ -21341,8 +21341,8 @@
       "metro": "Leicester",
       "county": "Leicestershire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 52.77,
+      "lng": -1.205,
       "tiers": [
         2
       ],
@@ -22135,7 +22135,7 @@
       "cur_name": "Manchester United",
       "country": "England",
       "federation_country": null,
-      "city": "Manchester",
+      "city": "Trafford",
       "metro": "Manchester",
       "county": "Greater Manchester",
       "continent": "Europe",
@@ -64566,7 +64566,7 @@
       "country": "Mexico",
       "federation_country": null,
       "city": "Toluca",
-      "metro": "Toluca",
+      "metro": "Mexico City",
       "county": "Mexico",
       "continent": "North America",
       "lat": 19.288,

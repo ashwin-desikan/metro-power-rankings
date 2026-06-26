@@ -10,7 +10,7 @@ import "server-only";
 
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
-import { championTeamHref } from "./championsHub";
+import { championTeamHref, getChampionsWithLinks } from "./championsHub";
 
 export type ChampHistoryRow = {
   sport: string;
@@ -48,11 +48,28 @@ function hrefFor(r: ChampHistoryRow): string | null {
 const byYearDesc = (a: ChampHistoryRow, b: ChampHistoryRow) =>
   (b.year ?? 0) - (a.year ?? 0) || b.date.localeCompare(a.date);
 
+// Per-competition metadata (tier, geo, region, canonical scope) reused from the
+// current-champions board so the All-Time index sorts and filters identically.
+type CompMeta = { tier: number | null; geo: string; region: string; scopeType: string };
+let _meta: Map<string, CompMeta> | null = null;
+function metaFor(competition: string): CompMeta {
+  if (!_meta) {
+    _meta = new Map();
+    for (const c of getChampionsWithLinks()) {
+      _meta.set(c.competition, { tier: c.tier ?? null, geo: c.geo, region: c.region, scopeType: c.scopeType ?? "" });
+    }
+  }
+  return _meta.get(competition) ?? { tier: null, geo: "—", region: "Other", scopeType: "" };
+}
+
 export type CompIndexEntry = {
   competition: string;
   compSlug: string;
   sport: string;
   scopeType: string;
+  geo: string;
+  region: string;
+  tier: number | null;
   count: number;
   firstYear: number | null;
   lastYear: number | null;
@@ -72,18 +89,29 @@ export function getCompetitionIndex(): CompIndexEntry[] {
   for (const rows of by.values()) {
     const years = rows.map((r) => r.year).filter((y): y is number => y != null);
     const top = [...rows].sort(byYearDesc)[0];
+    const m = metaFor(top.competition);
     out.push({
       competition: top.competition,
       compSlug: top.compSlug,
       sport: top.sport,
-      scopeType: top.scopeType,
+      scopeType: m.scopeType || top.scopeType,
+      geo: m.geo,
+      region: m.region,
+      tier: m.tier,
       count: rows.length,
       firstYear: years.length ? Math.min(...years) : null,
       lastYear: years.length ? Math.max(...years) : null,
       current: { champion: top.champion, canonical: top.canonical, teamHref: hrefFor(top), year: top.year },
     });
   }
-  out.sort((a, b) => a.sport.localeCompare(b.sport) || a.competition.localeCompare(b.competition));
+  // Default order: by tier ascending (apex = 0 first; untiered last), then
+  // sport, then competition. The client list filters on top of this order.
+  out.sort(
+    (a, b) =>
+      (a.tier ?? 99) - (b.tier ?? 99) ||
+      a.sport.localeCompare(b.sport) ||
+      a.competition.localeCompare(b.competition),
+  );
   _index = out;
   return out;
 }

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { olympicEditionSlugFromName } from "@/lib/olympics";
+import { getMetroTitles } from "@/lib/championsHistory";
 import {
   getAllMetros,
   getMetroDetail,
@@ -858,6 +859,54 @@ export default async function MetroDetailPage({ params }: PageProps) {
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
               )}
+            </section>
+          );
+        })()}
+
+        {/* Championship History: every title won by a team while based here */}
+        {(() => {
+          const titles = getMetroTitles(slug);
+          if (!titles.length) return null;
+          return (
+            <section>
+              <h2 id="championships" className="text-2xl font-bold mb-2">Championship History</h2>
+              <p className="text-sm text-[var(--text-muted)] mb-4">
+                Every major championship won by a team while it represented {metro.name}, across all
+                sports, newest first. {titles.length} in total. Each links to the team and the
+                competition&apos;s full honour roll.
+              </p>
+              <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
+                <div className="max-h-[32rem] overflow-y-auto">
+                  <table className="w-full text-sm">
+                    <thead className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)]">
+                      <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">
+                        <th className="px-4 py-2 font-semibold">Year</th>
+                        <th className="px-4 py-2 font-semibold">Champion</th>
+                        <th className="px-4 py-2 font-semibold">Competition</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {titles.map((t, i) => (
+                        <tr key={`${t.compSlug}-${t.year}-${i}`} className="border-b border-[var(--border)] last:border-0 hover:bg-[var(--bg-card-hover)] transition">
+                          <td className="px-4 py-2 tabular-nums whitespace-nowrap" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                            {t.date || t.year || "\u2014"}
+                          </td>
+                          <td className="px-4 py-2">
+                            {t.teamHref ? (
+                              <Link href={t.teamHref} className="text-[var(--text)] hover:text-[var(--accent)] hover:underline">{t.champion}</Link>
+                            ) : (
+                              <span className="text-[var(--text)]">{t.champion}</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-2 text-xs">
+                            <Link href={`/sports/champions/${t.compSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.competition}</Link>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </section>
           );
         })()}

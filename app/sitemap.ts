@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllMetros } from "@/lib/data";
 import { getLiveBadgeSlugs } from "@/lib/badges";
 import { getAllCountrySlugs } from "@/lib/countries";
+import { getAllCompSlugs } from "@/lib/championsHistory";
 import { getStateSlugsWithMetros } from "@/lib/states";
 import { getAllFranchiseSlugs as getNflSlugs } from "@/lib/nfl";
 import { getAllFranchiseSlugs as getNbaSlugs } from "@/lib/nba";
@@ -257,8 +258,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  const championsEntries: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/sports/champions`,
+      lastModified: stamp,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...getAllCompSlugs().map((slug) => ({
+      url: `${BASE_URL}/sports/champions/${slug}`,
+      lastModified: stamp,
+      changeFrequency: "monthly" as const,
+      priority: 0.55,
+    })),
+  ];
+
   return [
     ...staticEntries,
+    ...championsEntries,
     ...olympicsEntries,
     ...badgeEntries,
     ...countryEntries,

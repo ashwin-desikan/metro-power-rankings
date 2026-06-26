@@ -17,6 +17,34 @@ from openpyxl import load_workbook
 SRC = os.path.expanduser("~/OneDrive/Excel Files/Champions_History.xlsx")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "public", "data", "champions-history.json")
+METROS = os.path.join(ROOT, "public", "data", "metros.json")
+
+def _normname(x):
+    import unicodedata
+    x = unicodedata.normalize("NFKD", str(x))
+    x = "".join(c for c in x if not unicodedata.combining(c))
+    return x.lower().strip()
+
+def _metro_lookup():
+    """slug set + unique normalized-name -> slug, from metros.json, so a
+    champion's era-correct metro resolves to a real metro page even when the
+    workbook's Metro Slug column mangled accents (Beziers, Saint-Etienne, ...)."""
+    with open(METROS, encoding="utf-8") as f:
+        data = json.load(f)
+    arr = data if isinstance(data, list) else data.get("metros", data)
+    slugset = {m.get("slug") for m in arr}
+    byname = {}
+    for m in arr:
+        byname.setdefault(_normname(m.get("name") or ""), set()).add(m.get("slug"))
+    return slugset, byname
+
+def _fix_slug(slugset, byname, slug, name):
+    if slug and slug in slugset:
+        return slug
+    cand = byname.get(_normname(name)) if name else None
+    if cand and len(cand) == 1:
+        return next(iter(cand))
+    return slug  # leave as-is (flagged downstream / metro not yet in metros.json)
 
 def slugify(s: str) -> str:
     s = s.lower().replace("&", "and")
@@ -35,6 +63,7 @@ def main():
     ix = {n: hdr.index(n) for n in [
         "Sport", "Competition", "Era Name", "Season", "Year", "Champion",
         "Champion (Canonical)", "Metro", "Metro Slug", "Date", "Scope Type"]}
+    slugset, byname = _metro_lookup()
     out = []
     for r in rows[1:]:
         comp = cell(r[ix["Competition"]])
@@ -56,7 +85,7 @@ def main():
             "champion": cell(r[ix["Champion"]]),
             "canonical": cell(r[ix["Champion (Canonical)"]]),
             "metro": cell(r[ix["Metro"]]),
-            "metroSlug": cell(r[ix["Metro Slug"]]),
+            "metroSlug": _fix_slug(slugset, byname, cell(r[ix["Metro Slug"]]), cell(r[ix["Metro"]])),
             "date": date,
             "scopeType": cell(r[ix["Scope Type"]]),
         })

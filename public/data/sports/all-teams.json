@@ -12215,7 +12215,7 @@
 "sport":"Baseball",
 "league":"Honkbal Hoofdklasse",
 "league_raw":"Minor Lg Base",
-"team":"UVV Urecht",
+"team":"UVV Utrecht",
 "main_div":"Honkbal Hoofdklasse",
 "division":null,
 "city":"Utrecht",
@@ -34601,31 +34601,6 @@
 "sport":"Football",
 "league":"Albania",
 "league_raw":"Albania",
-"team":"FK Egnatia",
-"main_div":null,
-"division":null,
-"city":"Rrogozhinë",
-"metro":"Tirana",
-"metro_slug":"tirana",
-"state":null,
-"country":"Albania",
-"country_iso2":null,
-"level":"Other",
-"lat":41.076111,
-"lng":19.666667,
-"wikidata_qid":null,
-"wikipedia_url":null,
-"team_page_url":null,
-"source":"football_club_data",
-"federation":null,
-"fifa":null,
-"active":null,
-"workbook_level":"1"
-},
-{
-"sport":"Football",
-"league":"Albania",
-"league_raw":"Albania",
 "team":"KF Erzeni",
 "main_div":null,
 "division":null,
@@ -41546,31 +41521,6 @@
 "fifa":null,
 "active":null,
 "workbook_level":"1"
-},
-{
-"sport":"Football",
-"league":"Austria",
-"league_raw":"Austria",
-"team":"WSG Wattens",
-"main_div":null,
-"division":null,
-"city":"Innsbruck",
-"metro":"Innsbruck",
-"metro_slug":"innsbruck",
-"state":null,
-"country":"Austria",
-"country_iso2":"AT",
-"level":"Other",
-"lat":47.283333,
-"lng":11.583333,
-"wikidata_qid":null,
-"wikipedia_url":null,
-"team_page_url":null,
-"source":"football_club_data",
-"federation":null,
-"fifa":null,
-"active":null,
-"workbook_level":null
 },
 {
 "sport":"Football",
@@ -52296,31 +52246,6 @@
 "fifa":null,
 "active":null,
 "workbook_level":"4"
-},
-{
-"sport":"Football",
-"league":"Bulgaria",
-"league_raw":"Bulgaria",
-"team":"AS 23 Sofia",
-"main_div":null,
-"division":null,
-"city":"Sofia",
-"metro":"Sofia",
-"metro_slug":"sofia",
-"state":null,
-"country":"Bulgaria",
-"country_iso2":null,
-"level":"Other",
-"lat":42.684258,
-"lng":23.339769,
-"wikidata_qid":null,
-"wikipedia_url":null,
-"team_page_url":null,
-"source":"football_club_data",
-"federation":null,
-"fifa":null,
-"active":null,
-"workbook_level":null
 },
 {
 "sport":"Football",
@@ -66020,7 +65945,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"5"
 },
 {
 "sport":"Football",
@@ -66070,7 +65995,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -66154,9 +66079,9 @@
 "team":"AP Leamington",
 "main_div":null,
 "division":null,
-"city":"Leamington Spa",
-"metro":"Leamington Spa",
-"metro_slug":"leamington-spa",
+"city":"Leamington",
+"metro":"Birmingham",
+"metro_slug":"birmingham",
 "state":null,
 "country":"United Kingdom",
 "country_iso2":"GB",
@@ -66345,7 +66270,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -66388,6 +66313,56 @@
 "level":"Other",
 "lat":52.344906,
 "lng":-1.956369,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Annfield Plain",
+"main_div":null,
+"division":null,
+"city":"Durham",
+"metro":"Durham",
+"metro_slug":"durham",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":54.855661,
+"lng":-1.742925,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Anstey Nomads",
+"main_div":null,
+"division":null,
+"city":"Anstey",
+"metro":"Leicester",
+"metro_slug":"leicester",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.675779,
+"lng":-1.180279,
 "wikidata_qid":null,
 "wikipedia_url":null,
 "team_page_url":null,
@@ -66588,6 +66563,31 @@
 "level":"Other",
 "lat":51.503458,
 "lng":0.252892,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Avro",
+"main_div":null,
+"division":null,
+"city":"Oldham",
+"metro":"Manchester",
+"metro_slug":"manchester",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":53.518572,
+"lng":-2.12177,
 "wikidata_qid":null,
 "wikipedia_url":null,
 "team_page_url":null,
@@ -66820,7 +66820,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"4"
+"workbook_level":"5"
 },
 {
 "sport":"Football",
@@ -66845,7 +66845,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -66945,7 +66945,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -67154,7 +67154,7 @@
 "team":"Billericay Town",
 "main_div":null,
 "division":null,
-"city":"London",
+"city":"Billericay",
 "metro":"London",
 "metro_slug":"london",
 "state":null,
@@ -67170,7 +67170,32 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Billingham Synthonia",
+"main_div":null,
+"division":null,
+"city":"Middlesbrough",
+"metro":"Middlesbrough",
+"metro_slug":"middlesbrough",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":54.468028,
+"lng":-1.178409,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -67254,7 +67279,7 @@
 "team":"Bishop's Stortford",
 "main_div":null,
 "division":null,
-"city":"London",
+"city":"Bishop's Stortford",
 "metro":"London",
 "metro_slug":"london",
 "state":null,
@@ -67420,7 +67445,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"3"
+"workbook_level":"2"
 },
 {
 "sport":"Football",
@@ -67501,6 +67526,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Bournemouth Rovers",
+"main_div":null,
+"division":null,
+"city":"Bournemouth",
+"metro":"Bournemouth",
+"metro_slug":"bournemouth",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":50.72,
+"lng":-1.88,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Brackley Town",
 "main_div":null,
 "division":null,
@@ -67520,7 +67570,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"5"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -67620,7 +67670,32 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"5"
+"workbook_level":"6"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Brandon United",
+"main_div":null,
+"division":null,
+"city":"Durham",
+"metro":"Durham",
+"metro_slug":"durham",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":54.756473,
+"lng":-1.628718,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -67845,7 +67920,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"4"
+"workbook_level":"3"
 },
 {
 "sport":"Football",
@@ -67960,7 +68035,7 @@
 "state":null,
 "country":"United Kingdom",
 "country_iso2":"GB",
-"level":"Major",
+"level":"Other",
 "lat":53.7888,
 "lng":-2.23018,
 "wikidata_qid":null,
@@ -67970,7 +68045,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"1"
+"workbook_level":"2"
 },
 {
 "sport":"Football",
@@ -68145,7 +68220,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":null
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -68270,7 +68345,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"4"
+"workbook_level":"3"
 },
 {
 "sport":"Football",
@@ -68345,7 +68420,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -68370,7 +68445,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"3"
+"workbook_level":"2"
 },
 {
 "sport":"Football",
@@ -68626,10 +68701,35 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
-"team":"Chesham United",
+"team":"Chesham (old)",
 "main_div":null,
 "division":null,
 "city":"London",
+"metro":"London",
+"metro_slug":"london",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.698869,
+"lng":-0.614008,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Chesham United",
+"main_div":null,
+"division":null,
+"city":"Chesham",
 "metro":"London",
 "metro_slug":"london",
 "state":null,
@@ -68801,6 +68901,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Chilton Colliery Recreation",
+"main_div":null,
+"division":null,
+"city":"Durham",
+"metro":"Durham",
+"metro_slug":"durham",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":54.71,
+"lng":-1.566,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Chippenham Town",
 "main_div":null,
 "division":null,
@@ -68820,7 +68945,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -69185,7 +69310,7 @@
 "state":null,
 "country":"United Kingdom",
 "country_iso2":"GB",
-"level":"Other",
+"level":"Major",
 "lat":52.4481,
 "lng":-1.49563,
 "wikidata_qid":null,
@@ -69195,7 +69320,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"2"
+"workbook_level":"1"
 },
 {
 "sport":"Football",
@@ -69245,7 +69370,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -69420,7 +69545,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -69576,6 +69701,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Davenham",
+"main_div":null,
+"division":null,
+"city":"Davenham",
+"metro":"Davenham",
+"metro_slug":"davenham",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":53.2255,
+"lng":-2.5095,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Derby County",
 "main_div":null,
 "division":null,
@@ -69596,6 +69746,106 @@
 "fifa":null,
 "active":null,
 "workbook_level":"2"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Derby Junction",
+"main_div":null,
+"division":null,
+"city":"Derby",
+"metro":"Derby",
+"metro_slug":"derby",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.9225,
+"lng":-1.4746,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Derby Midland",
+"main_div":null,
+"division":null,
+"city":"Derby",
+"metro":"Derby",
+"metro_slug":"derby",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.9225,
+"lng":-1.4746,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Derby Old",
+"main_div":null,
+"division":null,
+"city":"Derby",
+"metro":"Derby",
+"metro_slug":"derby",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.9225,
+"lng":-1.4746,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Derby St. Luke's",
+"main_div":null,
+"division":null,
+"city":"Derby",
+"metro":"Derby",
+"metro_slug":"derby",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.9225,
+"lng":-1.4746,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -69670,7 +69920,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -69920,7 +70170,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -70001,6 +70251,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Emley",
+"main_div":null,
+"division":null,
+"city":"Huddersfield",
+"metro":"Leeds-Bradford",
+"metro_slug":"leeds-bradford",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":53.612653,
+"lng":-1.631936,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Enfield",
 "main_div":null,
 "division":null,
@@ -70045,7 +70320,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -70120,7 +70395,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"3"
+"workbook_level":"4"
 },
 {
 "sport":"Football",
@@ -70270,7 +70545,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -70395,7 +70670,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -70470,7 +70745,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":null
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -70551,6 +70826,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Gateshead AFC",
+"main_div":null,
+"division":null,
+"city":"Gateshead",
+"metro":"Newcastle",
+"metro_slug":"newcastle",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":54.961016,
+"lng":-1.579665,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":"/teams/football/gateshead-afc",
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Gillingham",
 "main_div":null,
 "division":null,
@@ -70621,6 +70921,31 @@
 "fifa":null,
 "active":null,
 "workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Goole",
+"main_div":null,
+"division":null,
+"city":"Goole",
+"metro":"Goole",
+"metro_slug":"goole",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":53.703153,
+"lng":-0.880931,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -70926,6 +71251,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Hanworth Villa",
+"main_div":null,
+"division":null,
+"city":"London",
+"metro":"London",
+"metro_slug":"london",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.433005,
+"lng":-0.396521,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Harborough Town",
 "main_div":null,
 "division":null,
@@ -70945,7 +71295,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -71045,7 +71395,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"4"
+"workbook_level":"5"
 },
 {
 "sport":"Football",
@@ -71145,7 +71495,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -71270,7 +71620,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -71295,7 +71645,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -71479,7 +71829,7 @@
 "team":"Hitchin Town",
 "main_div":null,
 "division":null,
-"city":"London",
+"city":"Hitchin",
 "metro":"London",
 "metro_slug":"london",
 "state":null,
@@ -71495,7 +71845,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":null
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -71520,7 +71870,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"5"
 },
 {
 "sport":"Football",
@@ -71610,7 +71960,7 @@
 "state":null,
 "country":"United Kingdom",
 "country_iso2":"GB",
-"level":"Other",
+"level":"Major",
 "lat":53.7465,
 "lng":-0.368009,
 "wikidata_qid":null,
@@ -71620,7 +71970,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"2"
+"workbook_level":"1"
 },
 {
 "sport":"Football",
@@ -71645,7 +71995,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -71760,7 +72110,7 @@
 "state":null,
 "country":"United Kingdom",
 "country_iso2":"GB",
-"level":"Other",
+"level":"Major",
 "lat":52.0544,
 "lng":1.14554,
 "wikidata_qid":null,
@@ -71770,7 +72120,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"2"
+"workbook_level":"1"
 },
 {
 "sport":"Football",
@@ -71845,7 +72195,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"5"
 },
 {
 "sport":"Football",
@@ -71970,7 +72320,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -71979,7 +72329,7 @@
 "team":"Leatherhead",
 "main_div":null,
 "division":null,
-"city":"London",
+"city":"Leatherhead",
 "metro":"London",
 "metro_slug":"london",
 "state":null,
@@ -71995,7 +72345,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":null
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -72095,7 +72445,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"2"
+"workbook_level":"3"
 },
 {
 "sport":"Football",
@@ -72146,6 +72496,31 @@
 "fifa":null,
 "active":null,
 "workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Leighton Town",
+"main_div":null,
+"division":null,
+"city":"Leighton Buzzard",
+"metro":"London",
+"metro_slug":"london",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.91291,
+"lng":-0.659623,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -72320,7 +72695,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"3"
+"workbook_level":"2"
 },
 {
 "sport":"Football",
@@ -72401,6 +72776,56 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Long Eaton United",
+"main_div":null,
+"division":null,
+"city":"Long Eaton",
+"metro":null,
+"metro_slug":null,
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.896417,
+"lng":-1.25627,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Loughborough",
+"main_div":null,
+"division":null,
+"city":"Loughborough",
+"metro":"Leicester",
+"metro_slug":"leicester",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.77,
+"lng":-1.205,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":"/teams/football/loughborough",
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Loughborough Town",
 "main_div":null,
 "division":null,
@@ -72471,6 +72896,31 @@
 "fifa":null,
 "active":null,
 "workbook_level":"3"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Luton Wanderers",
+"main_div":null,
+"division":null,
+"city":"London",
+"metro":"London",
+"metro_slug":"london",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.879,
+"lng":-0.425,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -72576,6 +73026,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Maldon & Tiptree",
+"main_div":null,
+"division":null,
+"city":"Maldon",
+"metro":"London",
+"metro_slug":"london",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.720835,
+"lng":0.694019,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Maldon Town",
 "main_div":null,
 "division":null,
@@ -72596,6 +73071,31 @@
 "fifa":null,
 "active":null,
 "workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Malvern Town",
+"main_div":null,
+"division":null,
+"city":"Malvern",
+"metro":"Malvern",
+"metro_slug":"malvern",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.116717,
+"lng":-2.304102,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -72654,7 +73154,7 @@
 "team":"Manchester United",
 "main_div":null,
 "division":null,
-"city":"Manchester",
+"city":"Trafford",
 "metro":"Manchester",
 "metro_slug":"manchester",
 "state":null,
@@ -72951,6 +73451,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Mickleover",
+"main_div":null,
+"division":null,
+"city":"Mickleover",
+"metro":"Derby",
+"metro_slug":"derby",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.923703,
+"lng":-1.533971,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Mickleover Sports",
 "main_div":null,
 "division":null,
@@ -73070,7 +73595,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"4"
+"workbook_level":"3"
 },
 {
 "sport":"Football",
@@ -73120,7 +73645,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"5"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -73145,7 +73670,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -73420,7 +73945,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"3"
+"workbook_level":"4"
 },
 {
 "sport":"Football",
@@ -73545,7 +74070,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"4"
+"workbook_level":"3"
 },
 {
 "sport":"Football",
@@ -73820,7 +74345,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"2"
+"workbook_level":"3"
 },
 {
 "sport":"Football",
@@ -73920,7 +74445,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -74045,7 +74570,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"3"
+"workbook_level":"4"
 },
 {
 "sport":"Football",
@@ -74095,7 +74620,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -74120,7 +74645,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -74188,6 +74713,31 @@
 "level":"Other",
 "lat":52.7458,
 "lng":-1.1683,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Racing Club Warwick",
+"main_div":null,
+"division":null,
+"city":"Warwick",
+"metro":"Birmingham",
+"metro_slug":"birmingham",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":52.275469,
+"lng":-1.601599,
 "wikidata_qid":null,
 "wikipedia_url":null,
 "team_page_url":null,
@@ -74376,6 +74926,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Redcar Athletic",
+"main_div":null,
+"division":null,
+"city":"Redcar",
+"metro":"Middlesbrough",
+"metro_slug":"middlesbrough",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":54.602839,
+"lng":-1.038849,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Redditch United",
 "main_div":null,
 "division":null,
@@ -74445,7 +75020,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"5"
+"workbook_level":"4"
 },
 {
 "sport":"Football",
@@ -74495,7 +75070,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"3"
+"workbook_level":"4"
 },
 {
 "sport":"Football",
@@ -74545,7 +75120,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -74654,7 +75229,7 @@
 "team":"Rushall Olympic",
 "main_div":null,
 "division":null,
-"city":"Birmingham",
+"city":"Walsall",
 "metro":"Birmingham",
 "metro_slug":"birmingham",
 "state":null,
@@ -74670,7 +75245,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":null
+"workbook_level":"7"
 },
 {
 "sport":"Football",
@@ -74920,7 +75495,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"2"
+"workbook_level":"3"
 },
 {
 "sport":"Football",
@@ -75245,7 +75820,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -75276,6 +75851,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Spennymoor United",
+"main_div":null,
+"division":null,
+"city":"Durham",
+"metro":"Durham",
+"metro_slug":"durham",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":54.704498,
+"lng":-1.599155,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"St Ives Town",
 "main_div":null,
 "division":null,
@@ -75295,7 +75895,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -75379,7 +75979,7 @@
 "team":"Staines Town",
 "main_div":null,
 "division":null,
-"city":"London",
+"city":"Staines",
 "metro":"London",
 "metro_slug":"london",
 "state":null,
@@ -75438,6 +76038,31 @@
 "level":"Other",
 "lat":52.642082,
 "lng":-0.484681,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Stanway Rovers",
+"main_div":null,
+"division":null,
+"city":"Stanway",
+"metro":"Colchester",
+"metro_slug":"colchester",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.887719,
+"lng":0.84484,
 "wikidata_qid":null,
 "wikipedia_url":null,
 "team_page_url":null,
@@ -75545,7 +76170,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -76001,6 +76626,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Three Bridges",
+"main_div":null,
+"division":null,
+"city":"Crawley",
+"metro":"London",
+"metro_slug":"london",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.115314,
+"lng":-0.167697,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Thurrock",
 "main_div":null,
 "division":null,
@@ -76045,7 +76695,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -76245,7 +76895,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"5"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -76379,7 +77029,7 @@
 "team":"Wakefield",
 "main_div":null,
 "division":null,
-"city":"Leeds-Bradford",
+"city":"Wakefield",
 "metro":"Leeds-Bradford",
 "metro_slug":"leeds-bradford",
 "state":null,
@@ -76495,7 +77145,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":"6"
 },
 {
 "sport":"Football",
@@ -76571,6 +77221,31 @@
 "fifa":null,
 "active":null,
 "workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
+"team":"Warrington Rylands 1906",
+"main_div":null,
+"division":null,
+"city":"Warrington",
+"metro":"Warrington",
+"metro_slug":"warrington",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":53.400408,
+"lng":-2.5756,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -76710,7 +77385,7 @@
 "state":null,
 "country":"United Kingdom",
 "country_iso2":"GB",
-"level":"Major",
+"level":"Other",
 "lat":51.538611,
 "lng":-0.016389,
 "wikidata_qid":null,
@@ -76720,7 +77395,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"1"
+"workbook_level":"2"
 },
 {
 "sport":"Football",
@@ -76770,7 +77445,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -76826,6 +77501,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Whyteleafe",
+"main_div":null,
+"division":null,
+"city":"Whyteleafe",
+"metro":"London",
+"metro_slug":"london",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":51.30473,
+"lng":-0.079662,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":"7"
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Widnes",
 "main_div":null,
 "division":null,
@@ -76845,7 +77545,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"7"
+"workbook_level":null
 },
 {
 "sport":"Football",
@@ -77026,6 +77726,31 @@
 "sport":"Football",
 "league":"England",
 "league_raw":"England",
+"team":"Witton (old)",
+"main_div":null,
+"division":null,
+"city":"Liverpool",
+"metro":"Liverpool",
+"metro_slug":"liverpool",
+"state":null,
+"country":"United Kingdom",
+"country_iso2":"GB",
+"level":"Other",
+"lat":53.270496,
+"lng":-2.488721,
+"wikidata_qid":null,
+"wikipedia_url":null,
+"team_page_url":null,
+"source":"football_club_data",
+"federation":null,
+"fifa":null,
+"active":null,
+"workbook_level":null
+},
+{
+"sport":"Football",
+"league":"England",
+"league_raw":"England",
 "team":"Witton Albion",
 "main_div":null,
 "division":null,
@@ -77085,7 +77810,7 @@
 "state":null,
 "country":"United Kingdom",
 "country_iso2":"GB",
-"level":"Major",
+"level":"Other",
 "lat":52.5904,
 "lng":-2.13061,
 "wikidata_qid":null,
@@ -77095,7 +77820,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"1"
+"workbook_level":"2"
 },
 {
 "sport":"Football",
@@ -77179,7 +77904,7 @@
 "team":"Worthing",
 "main_div":null,
 "division":null,
-"city":"Brighton & Hove",
+"city":"Worthing",
 "metro":"Brighton & Hove",
 "metro_slug":"brighton-hove",
 "state":null,
@@ -77220,7 +77945,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"6"
+"workbook_level":"5"
 },
 {
 "sport":"Football",
@@ -77370,7 +78095,7 @@
 "federation":null,
 "fifa":null,
 "active":null,
-"workbook_level":"5"
+"workbook_level":"4"
 },
 {
 "sport":"Football",
@@ -121155,8 +121880,8 @@
 "main_div":null,
 "division":null,
 "city":"Toluca",
-"metro":"Toluca",
-"metro_slug":"toluca",
+"metro":"Mexico City",
+"metro_slug":"mexico-city",
 "state":null,
 "country":"Mexico",
 "country_iso2":"MX",
