@@ -11,12 +11,12 @@ is cloud-only and unreadable from the sandbox.
 
     python scripts/build-champions-history.py
 """
-import json, os, re
+import json, os, re, sys, datetime
 from openpyxl import load_workbook
 
-SRC = os.path.expanduser("~/OneDrive/Excel Files/Champions_History.xlsx")
+SRC = os.environ.get("CHAMPS_SRC", os.path.expanduser("~/OneDrive/Excel Files/Champions_History.xlsx"))
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "public", "data", "champions-history.json")
+OUT = os.environ.get("CHAMPS_OUT", os.path.join(ROOT, "public", "data", "champions-history.json"))
 METROS = os.path.join(ROOT, "public", "data", "metros.json")
 
 def _normname(x):
@@ -50,6 +50,12 @@ CANONICAL_ALIAS = {
     "Oklahoma A&M": "Oklahoma State",
 }
 
+# Metro NAME variants the workbook uses that differ from metros.json names,
+# so _fix_slug can still resolve them (normalized name -> slug).
+METRO_NAME_ALIAS = {
+    "rotterdam": "rotterdam-the-hague",
+}
+
 METRO_OVERRIDE = {
     ("MLB", 1992, "Toronto Blue Jays"): "toronto",
     ("MLB", 1993, "Toronto Blue Jays"): "toronto",
@@ -62,10 +68,34 @@ METRO_OVERRIDE = {
 def _fix_slug(slugset, byname, slug, name):
     if slug and slug in slugset:
         return slug
+    if name:
+        alias = METRO_NAME_ALIAS.get(_normname(name))
+        if alias:
+            return alias
     cand = byname.get(_normname(name)) if name else None
     if cand and len(cand) == 1:
         return next(iter(cand))
     return slug  # leave as-is (flagged downstream / metro not yet in metros.json)
+
+def _norm_date(d):
+    """Normalize a Date cell to YYYY-MM-DD. Handles Excel datetimes, ISO strings,
+    and American m/d/Y strings (the FA Cup early finals). Unparseable values are
+    returned unchanged so they surface rather than silently vanish."""
+    if d in (None, ""):
+        return ""
+    if hasattr(d, "strftime"):
+        return d.strftime("%Y-%m-%d")
+    s = str(d).strip()
+    if not s:
+        return ""
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", s):
+        return s
+    for fmt in ("%m/%d/%Y", "%m/%d/%y", "%Y/%m/%d"):
+        try:
+            return datetime.datetime.strptime(s, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            pass
+    return s
 
 def slugify(s: str) -> str:
     s = s.lower().replace("&", "and")
@@ -94,8 +124,7 @@ def main():
             yr = int(float(r[ix["Year"]]))
         except (TypeError, ValueError):
             yr = None
-        d = r[ix["Date"]]
-        date = d.strftime("%Y-%m-%d") if hasattr(d, "strftime") else (str(d).strip() if d else "")
+        date = _norm_date(r[ix["Date"]])
         out.append({
             "sport": cell(r[ix["Sport"]]),
             "competition": comp,

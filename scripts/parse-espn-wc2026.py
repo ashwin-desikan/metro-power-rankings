@@ -45,6 +45,7 @@ OVERRIDES = {
     "unitedstatesofamerica": "united-states",
     "iriran": "iran",
     "caboverde": "cape-verde",
+    "capeverdeislands": "cape-verde",
     "korearepublic": "south-korea",
     "republicofkorea": "south-korea",
 }
