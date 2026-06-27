@@ -683,7 +683,7 @@
   },
   "copa-america": {
     "slug": "copa-america",
-    "label": "Copa Am\u00c3\u00a9rica",
+    "label": "Copa América",
     "category": "COPA",
     "year_min": 1916,
     "year_max": 2024,
@@ -1277,7 +1277,7 @@
       },
       {
         "year": 2024,
-        "champion_cur_name": "C\u00c3\u00b4te d'Ivoire",
+        "champion_cur_name": "CÃ´te d'Ivoire",
         "champion_slug": "cote-d-ivoire",
         "champion_as": null,
         "group": "A",
@@ -1309,7 +1309,7 @@
       },
       {
         "year": 2015,
-        "champion_cur_name": "C\u00c3\u00b4te d'Ivoire",
+        "champion_cur_name": "CÃ´te d'Ivoire",
         "champion_slug": "cote-d-ivoire",
         "champion_as": null,
         "group": "D",
@@ -1397,7 +1397,7 @@
       },
       {
         "year": 1992,
-        "champion_cur_name": "C\u00c3\u00b4te d'Ivoire",
+        "champion_cur_name": "CÃ´te d'Ivoire",
         "champion_slug": "cote-d-ivoire",
         "champion_as": null,
         "group": "C",
@@ -1585,7 +1585,7 @@
       },
       {
         "year": 2012,
-        "cur_name": "C\u00c3\u00b4te d'Ivoire",
+        "cur_name": "CÃ´te d'Ivoire",
         "slug": "cote-d-ivoire",
         "tournament_label": null
       },
@@ -1603,7 +1603,7 @@
       },
       {
         "year": 2006,
-        "cur_name": "C\u00c3\u00b4te d'Ivoire",
+        "cur_name": "CÃ´te d'Ivoire",
         "slug": "cote-d-ivoire",
         "tournament_label": null
       },
@@ -1754,7 +1754,7 @@
         "last_won": 1982
       },
       {
-        "cur_name": "C\u00c3\u00b4te d'Ivoire",
+        "cur_name": "CÃ´te d'Ivoire",
         "slug": "cote-d-ivoire",
         "champion_count": 3,
         "last_won": 2024
@@ -2903,21 +2903,9 @@
       },
       {
         "year": 1985,
-        "cur_name": "France",
-        "slug": "france",
-        "tournament_label": "Artemio Franchi Trophy 1985"
-      },
-      {
-        "year": 1985,
         "cur_name": "Uruguay",
         "slug": "uruguay",
         "tournament_label": "Artemio Franchi Trophy 1985"
-      },
-      {
-        "year": 1981,
-        "cur_name": "Uruguay",
-        "slug": "uruguay",
-        "tournament_label": "Mundialito 1981"
       },
       {
         "year": 1981,
