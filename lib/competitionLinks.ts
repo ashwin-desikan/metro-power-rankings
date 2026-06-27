@@ -1,24 +1,14 @@
 // Maps a champions-history competition slug to a richer, dedicated hub page
-// where one exists, so the All-Time champions list, metro Championship History
-// and country Championship History link to the real tournament hub instead of
-// the generic /sports/champions/[comp] honour roll. Competitions with no hub
-// (e.g. Mitropa Cup, Latin Cup, the US majors, NCAA, etc.) fall through to the
-// honour roll. Client-safe: pure data + a string function, no server imports.
+// that already shows that competition's champions. The All-Time list on
+// /sports/champions, the metro Championship History and the country
+// Championship History all link through competitionHref(); mapped competitions
+// route to their hub instead of the generic /sports/champions/[comp] honour
+// roll (those roll pages are no longer generated for mapped competitions).
+// Competitions with no hub (Argentina Primera, Brasileiro, Liga MX, Mitropa
+// Cup, Latin Cup, Frozen Four, women's Olympic basketball) keep their roll.
+// Client-safe: pure data + string helpers, no server imports.
 
-// champions-history compSlug -> absolute hub path.
 const COMP_TO_HUB: Record<string, string> = {
-  // Club football — Club Football hubs (/teams/football/tournaments/[slug]).
-  // NB: the hub slug differs from the champions-history slug in a few cases.
-  "champions-league": "/teams/football/tournaments/champions-league",
-  "europa-league": "/teams/football/tournaments/europa-league",
-  "europa-conference-league": "/teams/football/tournaments/conference-league",
-  "cup-winners-cup": "/teams/football/tournaments/cup-winners-cup",
-  "inter-cities-fairs-cup": "/teams/football/tournaments/inter-cities-fairs-cup",
-  "copa-libertadores": "/teams/football/tournaments/copa-libertadores",
-  "club-world-cup": "/teams/football/tournaments/club-world-cup",
-
-  // International football — national-team tournament hubs
-  // (/teams/national/tournaments/[slug]).
   "fifa-world-cup": "/teams/national/tournaments/world-cup",
   "uefa-european-championship": "/teams/national/tournaments/euros",
   "copa-am-rica": "/teams/national/tournaments/copa-america",
@@ -26,16 +16,105 @@ const COMP_TO_HUB: Record<string, string> = {
   "afc-asian-cup": "/teams/national/tournaments/asian-cup",
   "concacaf-championship-gold-cup": "/teams/national/tournaments/gold-cup",
   "ofc-nations-cup": "/teams/national/tournaments/ofc-nations-cup",
+  "confederations-cup": "/teams/national/tournaments/intercontinental",
+  "champions-league": "/teams/football/tournaments/champions-league",
+  "europa-league": "/teams/football/tournaments/europa-league",
+  "europa-conference-league": "/teams/football/tournaments/conference-league",
+  "cup-winners-cup": "/teams/football/tournaments/cup-winners-cup",
+  "inter-cities-fairs-cup": "/teams/football/tournaments/inter-cities-fairs-cup",
+  "copa-libertadores": "/teams/football/tournaments/copa-libertadores",
+  "club-world-cup": "/teams/football/tournaments/club-world-cup",
+  "caf-champions-league": "/teams/football/tournaments/other-continental",
+  "afc-champions-league-elite": "/teams/football/tournaments/other-continental",
+  "concacaf-champions-cup": "/teams/football/tournaments/other-continental",
+  "ofc-champions-league": "/teams/football/tournaments/other-continental",
+  "premier-league": "/teams/football/leagues/premier-league",
+  "la-liga": "/teams/football/leagues/la-liga",
+  "serie-a": "/teams/football/leagues/serie-a",
+  "bundesliga": "/teams/football/leagues/bundesliga",
+  "ligue-1": "/teams/football/leagues/ligue-1",
+  "eredivisie": "/teams/football/leagues/eredivisie",
+  "primeira-liga": "/teams/football/leagues/primeira-liga",
+  "scottish-premiership": "/teams/football/leagues/scottish-premiership",
+  "major-league-soccer": "/teams/football/leagues/mls",
+  "fa-cup": "/teams/football/cups",
+  "cricket-world-cup": "/teams/cricket#honours",
+  "t20-world-cup": "/teams/cricket#honours",
+  "world-test-championship": "/teams/cricket#wtc",
+  "county-championship": "/teams/cricket/county",
+  "ipl": "/teams/ipl",
+  "t20-blast": "/teams/cricket/t20",
+  "big-bash-league": "/teams/cricket/t20",
+  "bpl": "/teams/cricket/t20",
+  "cpl": "/teams/cricket/t20",
+  "lanka-premier-league": "/teams/cricket/t20",
+  "pakistan-super-league": "/teams/cricket/t20",
+  "sa20": "/teams/cricket/t20",
+  "super-smash": "/teams/cricket/t20",
+  "the-hundred": "/teams/cricket/t20",
+  "international-league-t20": "/teams/cricket/t20",
+  "mlb": "/teams/mlb#all-time",
+  "japan-series": "/teams/baseball/npb",
+  "college-world-series": "/teams/baseball/college",
+  "world-baseball-classic": "/teams/baseball#champions",
+  "nba": "/teams/nba#all-time",
+  "euroleague": "/teams/basketball/euroleague",
+  "cba": "/teams/basketball/domestic",
+  "fiba-world-cup": "/teams/basketball#world-cup",
+  "ncaa-champions": "/teams/cbb",
+  "olympic-mens-basketball": "/teams/basketball#olympics",
+  "nhl": "/teams/nhl#all-time",
+  "khl": "/teams/hockey/domestic",
+  "world-cup-of-hockey": "/teams/hockey#world-cup",
+  "olympic-mens-hockey": "/teams/hockey#olympics",
+  "nfl": "/teams/nfl#all-time",
+  "college-football": "/teams/cfb",
+  "afl": "/teams/afl",
+  "nrl": "/teams/nrl",
+  "cfl": "/teams/cfl",
+  "rugby-league-world-cup": "/teams/rugby-league#champions",
+  "rugby-world-cup": "/teams/rugby-union#world-cup",
+  "six-nations-tournament": "/teams/rugby-union#six-nations",
+  "champions-cup": "/teams/rugby-union/clubs",
+  "top-14": "/teams/rugby-union/clubs",
+  "prem-rugby": "/teams/rugby-union/clubs",
+  "masters-tournament": "/teams/golf",
+  "pga-championship": "/teams/golf",
+  "the-open-championship": "/teams/golf",
+  "us-open-championship": "/teams/golf",
+  "australian-open-mens": "/teams/tennis",
+  "australian-open-womens": "/teams/tennis",
+  "french-open-mens": "/teams/tennis",
+  "french-open-womens": "/teams/tennis",
+  "us-open-mens": "/teams/tennis",
+  "us-open-womens": "/teams/tennis",
+  "wimbledon-mens": "/teams/tennis",
+  "wimbledon-womens": "/teams/tennis",
+  "world-drivers-championship": "/teams/f1",
+  "ihf-world-championship": "/teams/handball#worlds",
+  "handball-bundesliga": "/teams/handball/domestic",
+  "olympic-mens-handball": "/teams/handball#olympics",
+  "fivb-world-championship": "/teams/volleyball#worlds",
+  "olympic-mens-volleyball": "/teams/volleyball#olympics",
+  "summer-olympics-top-medalist": "/teams/olympics#all-time",
+  "winter-olympics-top-medalist": "/teams/olympics#all-time",
+  "wnba": "/teams/wnba",
+  "ncaa-w-champions": "/teams/cbb-w",
+  "fifa-womens-world-cup": "/teams/wnational#world-cup",
+  "uefa-womens-championship": "/teams/wnational#euros",
+  "uefa-womens-champions-league": "/teams/wfootball#club-tournaments",
+  "wsl": "/teams/wfootball/leagues/england",
+  "nwsl": "/teams/wfootball/leagues/united-states",
+  "liga-f": "/teams/wfootball/leagues/spain",
+  "olympic-womens-football": "/teams/wnational#olympics",
 };
 
-// Returns the dedicated hub path for a competition if one exists, otherwise the
-// generic honour-roll path.
+// Dedicated hub path for a competition if one exists, else the honour roll.
 export function competitionHref(compSlug: string): string {
   return COMP_TO_HUB[compSlug] ?? `/sports/champions/${compSlug}`;
 }
 
-// True when the competition has a dedicated hub (i.e. competitionHref points
-// away from the generic honour roll).
+// True when the competition has a dedicated hub (so no honour roll is built).
 export function competitionHasHub(compSlug: string): boolean {
   return compSlug in COMP_TO_HUB;
 }

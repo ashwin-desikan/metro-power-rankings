@@ -3,13 +3,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getAllCompSlugs, getRoll } from "@/lib/championsHistory";
+import { competitionHasHub } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllCompSlugs().map((comp) => ({ comp }));
+  // Only competitions WITHOUT a dedicated hub get an honour-roll page; the
+  // rest link straight to their hub (see lib/competitionLinks.ts).
+  return getAllCompSlugs().filter((comp) => !competitionHasHub(comp)).map((comp) => ({ comp }));
 }
 
 export async function generateMetadata(
