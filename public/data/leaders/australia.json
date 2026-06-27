@@ -1,0 +1,362 @@
+[
+  {
+    "name": "Edmund Barton",
+    "role": "Prime Minister",
+    "start": "1901-01-01",
+    "end": "1903-09-24",
+    "current": false,
+    "tenure": "2y 8m 26d",
+    "party": "Protectionist",
+    "era": null
+  },
+  {
+    "name": "Alfred Deakin",
+    "role": "Prime Minister",
+    "start": "1903-09-24",
+    "end": "1904-10-27",
+    "current": false,
+    "tenure": "1y 1m 4d",
+    "party": "Protectionist; 1st term",
+    "era": null
+  },
+  {
+    "name": "Chris Watson",
+    "role": "Prime Minister",
+    "start": "1904-04-27",
+    "end": "1904-08-18",
+    "current": false,
+    "tenure": "3m 23d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "George Reid",
+    "role": "Prime Minister",
+    "start": "1904-08-18",
+    "end": "1905-09-05",
+    "current": false,
+    "tenure": "1y 18d",
+    "party": "Free Trade",
+    "era": null
+  },
+  {
+    "name": "Alfred Deakin",
+    "role": "Prime Minister",
+    "start": "1905-09-05",
+    "end": "1908-06-13",
+    "current": false,
+    "tenure": "2y 9m 12d",
+    "party": "Protectionist; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Andrew Fisher",
+    "role": "Prime Minister",
+    "start": "1908-06-13",
+    "end": "1909-12-02",
+    "current": false,
+    "tenure": "1y 5m 22d",
+    "party": "Labor; 1st term",
+    "era": null
+  },
+  {
+    "name": "Alfred Deakin",
+    "role": "Prime Minister",
+    "start": "1909-12-02",
+    "end": "1910-04-29",
+    "current": false,
+    "tenure": "4m 28d",
+    "party": "Protectionist; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Andrew Fisher",
+    "role": "Prime Minister",
+    "start": "1910-04-29",
+    "end": "1913-06-24",
+    "current": false,
+    "tenure": "3y 1m 27d",
+    "party": "Labor; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Joseph Cook",
+    "role": "Prime Minister",
+    "start": "1913-06-24",
+    "end": "1914-09-17",
+    "current": false,
+    "tenure": "1y 2m 25d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Andrew Fisher",
+    "role": "Prime Minister",
+    "start": "1914-09-17",
+    "end": "1915-10-27",
+    "current": false,
+    "tenure": "1y 1m 10d",
+    "party": "Labor; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Billy Hughes",
+    "role": "Prime Minister",
+    "start": "1915-10-27",
+    "end": "1923-02-09",
+    "current": false,
+    "tenure": "7y 3m 17d",
+    "party": "Nationalist/Labor",
+    "era": null
+  },
+  {
+    "name": "Stanley Bruce",
+    "role": "Prime Minister",
+    "start": "1923-02-09",
+    "end": "1929-10-22",
+    "current": false,
+    "tenure": "6y 8m 17d",
+    "party": "Nationalist",
+    "era": null
+  },
+  {
+    "name": "James Scullin",
+    "role": "Prime Minister",
+    "start": "1929-10-22",
+    "end": "1932-01-06",
+    "current": false,
+    "tenure": "2y 2m 16d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "Joseph Lyons",
+    "role": "Prime Minister",
+    "start": "1932-01-06",
+    "end": "1939-04-07",
+    "current": false,
+    "tenure": "7y 3m 3d",
+    "party": "United Australia; died in office",
+    "era": null
+  },
+  {
+    "name": "Robert Menzies",
+    "role": "Prime Minister",
+    "start": "1939-04-26",
+    "end": "1941-08-29",
+    "current": false,
+    "tenure": "2y 4m 6d",
+    "party": "United Australia; 1st term",
+    "era": null
+  },
+  {
+    "name": "Arthur Fadden",
+    "role": "Prime Minister",
+    "start": "1941-08-29",
+    "end": "1941-10-07",
+    "current": false,
+    "tenure": "1m 9d",
+    "party": "Country",
+    "era": null
+  },
+  {
+    "name": "John Curtin",
+    "role": "Prime Minister",
+    "start": "1941-10-07",
+    "end": "1945-07-05",
+    "current": false,
+    "tenure": "3y 9m 2d",
+    "party": "Labor; died in office",
+    "era": null
+  },
+  {
+    "name": "Frank Forde",
+    "role": "Prime Minister",
+    "start": "1945-07-05",
+    "end": "1945-07-13",
+    "current": false,
+    "tenure": "8d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "Ben Chifley",
+    "role": "Prime Minister",
+    "start": "1945-07-13",
+    "end": "1949-12-19",
+    "current": false,
+    "tenure": "4y 5m 10d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "Robert Menzies",
+    "role": "Prime Minister",
+    "start": "1949-12-19",
+    "end": "1966-01-26",
+    "current": false,
+    "tenure": "16y 1m 12d",
+    "party": "Liberal; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Harold Holt",
+    "role": "Prime Minister",
+    "start": "1966-01-26",
+    "end": "1967-12-19",
+    "current": false,
+    "tenure": "1y 10m 27d",
+    "party": "Liberal; disappeared/presumed dead",
+    "era": null
+  },
+  {
+    "name": "John McEwen",
+    "role": "Prime Minister",
+    "start": "1967-12-19",
+    "end": "1968-01-10",
+    "current": false,
+    "tenure": "22d",
+    "party": "Country",
+    "era": null
+  },
+  {
+    "name": "John Gorton",
+    "role": "Prime Minister",
+    "start": "1968-01-10",
+    "end": "1971-03-10",
+    "current": false,
+    "tenure": "3y 2m",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "William McMahon",
+    "role": "Prime Minister",
+    "start": "1971-03-10",
+    "end": "1972-12-05",
+    "current": false,
+    "tenure": "1y 9m 1d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Gough Whitlam",
+    "role": "Prime Minister",
+    "start": "1972-12-05",
+    "end": "1975-11-11",
+    "current": false,
+    "tenure": "2y 11m 11d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "Malcolm Fraser",
+    "role": "Prime Minister",
+    "start": "1975-11-11",
+    "end": "1983-03-11",
+    "current": false,
+    "tenure": "7y 4m 2d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Bob Hawke",
+    "role": "Prime Minister",
+    "start": "1983-03-11",
+    "end": "1991-12-20",
+    "current": false,
+    "tenure": "8y 9m 16d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "Paul Keating",
+    "role": "Prime Minister",
+    "start": "1991-12-20",
+    "end": "1996-03-11",
+    "current": false,
+    "tenure": "4y 2m 23d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "John Howard",
+    "role": "Prime Minister",
+    "start": "1996-03-11",
+    "end": "2007-12-03",
+    "current": false,
+    "tenure": "11y 8m 29d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Kevin Rudd",
+    "role": "Prime Minister",
+    "start": "2007-12-03",
+    "end": "2010-06-24",
+    "current": false,
+    "tenure": "2y 6m 24d",
+    "party": "Labor; 1st term",
+    "era": null
+  },
+  {
+    "name": "Julia Gillard",
+    "role": "Prime Minister",
+    "start": "2010-06-24",
+    "end": "2013-06-27",
+    "current": false,
+    "tenure": "3y 4d",
+    "party": "Labor",
+    "era": null
+  },
+  {
+    "name": "Kevin Rudd",
+    "role": "Prime Minister",
+    "start": "2013-06-27",
+    "end": "2013-09-18",
+    "current": false,
+    "tenure": "2m 23d",
+    "party": "Labor; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Tony Abbott",
+    "role": "Prime Minister",
+    "start": "2013-09-18",
+    "end": "2015-09-15",
+    "current": false,
+    "tenure": "1y 12m 2d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Malcolm Turnbull",
+    "role": "Prime Minister",
+    "start": "2015-09-15",
+    "end": "2018-08-24",
+    "current": false,
+    "tenure": "2y 11m 14d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Scott Morrison",
+    "role": "Prime Minister",
+    "start": "2018-08-24",
+    "end": "2022-05-23",
+    "current": false,
+    "tenure": "3y 9m 3d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Anthony Albanese",
+    "role": "Prime Minister",
+    "start": "2022-05-23",
+    "end": null,
+    "current": true,
+    "tenure": "4y 1m 5d",
+    "party": "Labor",
+    "era": null
+  }
+]

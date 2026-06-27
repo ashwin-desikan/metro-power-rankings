@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Nelson Mandela",
+    "role": "President",
+    "start": "1994-05-10",
+    "end": "1999-06-14",
+    "current": false,
+    "tenure": "5y 1m 1d",
+    "party": "ANC; Nobel Peace Prize 1993",
+    "era": null
+  },
+  {
+    "name": "Thabo Mbeki",
+    "role": "President",
+    "start": "1999-06-14",
+    "end": "2008-09-24",
+    "current": false,
+    "tenure": "9y 3m",
+    "party": "ANC; resigned",
+    "era": null
+  },
+  {
+    "name": "Kgalema Motlanthe",
+    "role": "President",
+    "start": "2008-09-25",
+    "end": "2009-05-09",
+    "current": false,
+    "tenure": "7m 16d",
+    "party": "ANC; caretaker",
+    "era": null
+  },
+  {
+    "name": "Jacob Zuma",
+    "role": "President",
+    "start": "2009-05-09",
+    "end": "2018-02-14",
+    "current": false,
+    "tenure": "8y 9m 23d",
+    "party": "ANC; resigned amid scandal",
+    "era": null
+  },
+  {
+    "name": "Cyril Ramaphosa",
+    "role": "President",
+    "start": "2018-02-15",
+    "end": null,
+    "current": true,
+    "tenure": "8y 4m 24d",
+    "party": "ANC",
+    "era": null
+  }
+]

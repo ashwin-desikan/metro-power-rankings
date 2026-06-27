@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Sheikh Mujibur Rahman",
+    "role": "Prime Minister",
+    "start": "1972-01-12",
+    "end": "1975-01-25",
+    "current": false,
+    "tenure": "3y 29d",
+    "party": "Awami League; founding PM; became President",
+    "era": null
+  },
+  {
+    "name": "Shah Azizur Rahman",
+    "role": "Prime Minister",
+    "start": "1979-04-15",
+    "end": "1982-03-24",
+    "current": false,
+    "tenure": "2y 11m 24d",
+    "party": "BNP; under Ziaur Rahman",
+    "era": null
+  },
+  {
+    "name": "Khaleda Zia",
+    "role": "Prime Minister",
+    "start": "1991-03-20",
+    "end": "1996-03-30",
+    "current": false,
+    "tenure": "5y 7d",
+    "party": "BNP; 1st female PM; 1st term",
+    "era": null
+  },
+  {
+    "name": "Sheikh Hasina",
+    "role": "Prime Minister",
+    "start": "1996-06-23",
+    "end": "2001-07-15",
+    "current": false,
+    "tenure": "5y 18d",
+    "party": "Awami League; 1st term",
+    "era": null
+  },
+  {
+    "name": "Khaleda Zia",
+    "role": "Prime Minister",
+    "start": "2001-10-10",
+    "end": "2006-10-29",
+    "current": false,
+    "tenure": "5y 15d",
+    "party": "BNP; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Sheikh Hasina",
+    "role": "Prime Minister",
+    "start": "2009-01-06",
+    "end": "2024-08-05",
+    "current": false,
+    "tenure": "15y 7m 20d",
+    "party": "Awami League; 2nd-5th terms; fled",
+    "era": null
+  },
+  {
+    "name": "Muhammad Yunus",
+    "role": "Chief Adviser",
+    "start": "2024-08-08",
+    "end": null,
+    "current": true,
+    "tenure": "1y 10m 28d",
+    "party": "Interim govt; Nobel Peace laureate 2006",
+    "era": null
+  }
+]

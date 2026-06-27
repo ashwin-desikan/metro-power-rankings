@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Leonid Kravchuk",
+    "role": "President",
+    "start": "1991-12-05",
+    "end": "1994-07-19",
+    "current": false,
+    "tenure": "2y 7m 27d",
+    "party": "Independent; 1st president",
+    "era": null
+  },
+  {
+    "name": "Leonid Kuchma",
+    "role": "President",
+    "start": "1994-07-19",
+    "end": "2005-01-23",
+    "current": false,
+    "tenure": "10y 6m 1d",
+    "party": "Independent/For Ukraine; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Viktor Yushchenko",
+    "role": "President",
+    "start": "2005-01-23",
+    "end": "2010-02-25",
+    "current": false,
+    "tenure": "5y 1m 29d",
+    "party": "Our Ukraine",
+    "era": null
+  },
+  {
+    "name": "Viktor Yanukovych",
+    "role": "President",
+    "start": "2010-02-25",
+    "end": "2014-02-22",
+    "current": false,
+    "tenure": "3y 12m 18d",
+    "party": "Party of Regions; fled amid Maidan",
+    "era": null
+  },
+  {
+    "name": "Oleksandr Turchynov",
+    "role": "President",
+    "start": "2014-02-23",
+    "end": "2014-06-07",
+    "current": false,
+    "tenure": "3m 14d",
+    "party": "Batkivshchyna; acting president",
+    "era": null
+  },
+  {
+    "name": "Petro Poroshenko",
+    "role": "President",
+    "start": "2014-06-07",
+    "end": "2019-05-20",
+    "current": false,
+    "tenure": "4y 11m 8d",
+    "party": "Petro Poroshenko Bloc",
+    "era": null
+  },
+  {
+    "name": "Volodymyr Zelensky",
+    "role": "President",
+    "start": "2019-05-20",
+    "end": null,
+    "current": true,
+    "tenure": "7y 1m 15d",
+    "party": "Servant of the People",
+    "era": null
+  }
+]

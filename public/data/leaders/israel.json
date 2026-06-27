@@ -1,0 +1,202 @@
+[
+  {
+    "name": "David Ben-Gurion",
+    "role": "Prime Minister",
+    "start": "1948-05-14",
+    "end": "1953-12-07",
+    "current": false,
+    "tenure": "5y 6m 23d",
+    "party": "Mapai; 1st PM, 1st term",
+    "era": null
+  },
+  {
+    "name": "Moshe Sharett",
+    "role": "Prime Minister",
+    "start": "1953-12-07",
+    "end": "1955-11-03",
+    "current": false,
+    "tenure": "1y 11m 6d",
+    "party": "Mapai",
+    "era": null
+  },
+  {
+    "name": "David Ben-Gurion",
+    "role": "Prime Minister",
+    "start": "1955-11-03",
+    "end": "1963-06-26",
+    "current": false,
+    "tenure": "7y 7m 2d",
+    "party": "Mapai; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Levi Eshkol",
+    "role": "Prime Minister",
+    "start": "1963-06-26",
+    "end": "1969-02-26",
+    "current": false,
+    "tenure": "5y 8m 2d",
+    "party": "Mapai/Labour; died in office",
+    "era": null
+  },
+  {
+    "name": "Golda Meir",
+    "role": "Prime Minister",
+    "start": "1969-03-17",
+    "end": "1974-06-03",
+    "current": false,
+    "tenure": "5y 2m 14d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Yitzhak Rabin",
+    "role": "Prime Minister",
+    "start": "1974-06-03",
+    "end": "1977-06-20",
+    "current": false,
+    "tenure": "3y 3d",
+    "party": "Labour; 1st term",
+    "era": null
+  },
+  {
+    "name": "Menachem Begin",
+    "role": "Prime Minister",
+    "start": "1977-06-20",
+    "end": "1983-10-10",
+    "current": false,
+    "tenure": "6y 3m 23d",
+    "party": "Likud; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Yitzhak Shamir",
+    "role": "Prime Minister",
+    "start": "1983-10-10",
+    "end": "1984-09-13",
+    "current": false,
+    "tenure": "11m 9d",
+    "party": "Likud; 1st term",
+    "era": null
+  },
+  {
+    "name": "Shimon Peres",
+    "role": "Prime Minister",
+    "start": "1984-09-13",
+    "end": "1986-10-20",
+    "current": false,
+    "tenure": "2y 1m 17d",
+    "party": "Labour; 1st term (rotation)",
+    "era": null
+  },
+  {
+    "name": "Yitzhak Shamir",
+    "role": "Prime Minister",
+    "start": "1986-10-20",
+    "end": "1992-07-13",
+    "current": false,
+    "tenure": "5y 8m 23d",
+    "party": "Likud; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Yitzhak Rabin",
+    "role": "Prime Minister",
+    "start": "1992-07-13",
+    "end": "1995-11-04",
+    "current": false,
+    "tenure": "3y 3m 9d",
+    "party": "Labour; 2nd term; assassinated",
+    "era": null
+  },
+  {
+    "name": "Shimon Peres",
+    "role": "Prime Minister",
+    "start": "1995-11-04",
+    "end": "1996-06-18",
+    "current": false,
+    "tenure": "7m 17d",
+    "party": "Labour; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Benjamin Netanyahu",
+    "role": "Prime Minister",
+    "start": "1996-06-18",
+    "end": "1999-07-06",
+    "current": false,
+    "tenure": "3y 3d",
+    "party": "Likud; 1st term",
+    "era": null
+  },
+  {
+    "name": "Ehud Barak",
+    "role": "Prime Minister",
+    "start": "1999-07-06",
+    "end": "2001-03-07",
+    "current": false,
+    "tenure": "1y 8m 10d",
+    "party": "One Israel",
+    "era": null
+  },
+  {
+    "name": "Ariel Sharon",
+    "role": "Prime Minister",
+    "start": "2001-03-07",
+    "end": "2006-01-14",
+    "current": false,
+    "tenure": "4y 10m 4d",
+    "party": "Likud/Kadima; incapacitated Jan 2006",
+    "era": null
+  },
+  {
+    "name": "Ehud Olmert",
+    "role": "Prime Minister",
+    "start": "2006-01-14",
+    "end": "2009-03-31",
+    "current": false,
+    "tenure": "3y 2m 2d",
+    "party": "Kadima",
+    "era": null
+  },
+  {
+    "name": "Benjamin Netanyahu",
+    "role": "Prime Minister",
+    "start": "2009-03-31",
+    "end": "2021-06-13",
+    "current": false,
+    "tenure": "12y 2m 17d",
+    "party": "Likud; 2nd term (cont. 4 govts)",
+    "era": null
+  },
+  {
+    "name": "Naftali Bennett",
+    "role": "Prime Minister",
+    "start": "2021-06-13",
+    "end": "2022-06-30",
+    "current": false,
+    "tenure": "1y 22d",
+    "party": "Yamina; rotation coalition",
+    "era": null
+  },
+  {
+    "name": "Yair Lapid",
+    "role": "Prime Minister",
+    "start": "2022-07-01",
+    "end": "2022-12-29",
+    "current": false,
+    "tenure": "6m 1d",
+    "party": "Yesh Atid; rotation",
+    "era": null
+  },
+  {
+    "name": "Benjamin Netanyahu",
+    "role": "Prime Minister",
+    "start": "2022-12-29",
+    "end": null,
+    "current": true,
+    "tenure": "3y 6m 16d",
+    "party": "Likud; 3rd term",
+    "era": null
+  }
+]

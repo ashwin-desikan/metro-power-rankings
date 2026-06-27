@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Francisco Franco",
+    "role": "Monarch",
+    "start": "1939-11-01",
+    "end": "1975-11-20",
+    "current": false,
+    "tenure": "36y 28d",
+    "party": "Military dictatorship",
+    "era": null
+  },
+  {
+    "name": "Juan Carlos I",
+    "role": "Monarch",
+    "start": "1975-11-22",
+    "end": "2014-06-19",
+    "current": false,
+    "tenure": "38y 7m 19d",
+    "party": "Bourbon; abdicated",
+    "era": null
+  },
+  {
+    "name": "Adolfo Suárez",
+    "role": "Prime Minister",
+    "start": "1976-07-05",
+    "end": "1981-01-29",
+    "current": false,
+    "tenure": "4y 6m 19d",
+    "party": "UCD; first democratic PM; resigned",
+    "era": null
+  },
+  {
+    "name": "Leopoldo Calvo-Sotelo",
+    "role": "Prime Minister",
+    "start": "1981-02-25",
+    "end": "1982-12-01",
+    "current": false,
+    "tenure": "1y 9m 14d",
+    "party": "UCD",
+    "era": null
+  },
+  {
+    "name": "Felipe González",
+    "role": "Prime Minister",
+    "start": "1982-12-01",
+    "end": "1996-05-04",
+    "current": false,
+    "tenure": "13y 5m 13d",
+    "party": "PSOE; 3 terms",
+    "era": null
+  },
+  {
+    "name": "José María Aznar",
+    "role": "Prime Minister",
+    "start": "1996-05-04",
+    "end": "2004-04-16",
+    "current": false,
+    "tenure": "7y 11m 24d",
+    "party": "PP; 2 terms",
+    "era": null
+  },
+  {
+    "name": "José Luis Rodríguez Zapatero",
+    "role": "Prime Minister",
+    "start": "2004-04-17",
+    "end": "2011-12-21",
+    "current": false,
+    "tenure": "7y 8m 14d",
+    "party": "PSOE; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Mariano Rajoy",
+    "role": "Prime Minister",
+    "start": "2011-12-21",
+    "end": "2018-06-01",
+    "current": false,
+    "tenure": "6y 5m 14d",
+    "party": "PP; ousted by no-confidence",
+    "era": null
+  },
+  {
+    "name": "Felipe VI",
+    "role": "Monarch",
+    "start": "2014-06-19",
+    "end": null,
+    "current": true,
+    "tenure": "12y 11d",
+    "party": "Bourbon",
+    "era": null
+  },
+  {
+    "name": "Pedro Sánchez",
+    "role": "Prime Minister",
+    "start": "2018-06-02",
+    "end": null,
+    "current": true,
+    "tenure": "8y 7d",
+    "party": "PSOE",
+    "era": null
+  }
+]

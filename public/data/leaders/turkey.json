@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Mustafa Kemal Atatürk",
+    "role": "President",
+    "start": "1923-10-29",
+    "end": "1938-11-10",
+    "current": false,
+    "tenure": "15y 1d",
+    "party": "CHP; founder; died in office",
+    "era": null
+  },
+  {
+    "name": "İsmet İnönü",
+    "role": "President",
+    "start": "1938-11-11",
+    "end": "1950-05-22",
+    "current": false,
+    "tenure": "11y 6m 10d",
+    "party": "CHP",
+    "era": null
+  },
+  {
+    "name": "Celal Bayar",
+    "role": "President",
+    "start": "1950-05-22",
+    "end": "1960-05-27",
+    "current": false,
+    "tenure": "10y 28d",
+    "party": "DP; deposed in coup",
+    "era": null
+  },
+  {
+    "name": "Adnan Menderes",
+    "role": "Prime Minister",
+    "start": "1950-05-22",
+    "end": "1960-05-27",
+    "current": false,
+    "tenure": "10y 28d",
+    "party": "DP; executed after coup",
+    "era": null
+  },
+  {
+    "name": "Cemal Gürsel",
+    "role": "President",
+    "start": "1960-05-27",
+    "end": "1966-03-28",
+    "current": false,
+    "tenure": "5y 10m 1d",
+    "party": "Military; died in office",
+    "era": null
+  },
+  {
+    "name": "İsmet İnönü",
+    "role": "Prime Minister",
+    "start": "1961-11-20",
+    "end": "1965-02-20",
+    "current": false,
+    "tenure": "3y 3m 18d",
+    "party": "CHP; 3rd term as PM",
+    "era": null
+  },
+  {
+    "name": "Süleyman Demirel",
+    "role": "Prime Minister",
+    "start": "1965-10-27",
+    "end": "1971-03-12",
+    "current": false,
+    "tenure": "5y 4m 12d",
+    "party": "AP; 1st term (of 5)",
+    "era": null
+  },
+  {
+    "name": "Cevdet Sunay",
+    "role": "President",
+    "start": "1966-03-28",
+    "end": "1973-03-28",
+    "current": false,
+    "tenure": "7y 7d",
+    "party": "Military-backed",
+    "era": null
+  },
+  {
+    "name": "Fahri Korutürk",
+    "role": "President",
+    "start": "1973-04-06",
+    "end": "1980-04-06",
+    "current": false,
+    "tenure": "7y 7d",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Bülent Ecevit",
+    "role": "Prime Minister",
+    "start": "1974-01-26",
+    "end": "1974-09-17",
+    "current": false,
+    "tenure": "7m 24d",
+    "party": "CHP; 1st term",
+    "era": null
+  },
+  {
+    "name": "Süleyman Demirel",
+    "role": "Prime Minister",
+    "start": "1975-03-31",
+    "end": "1977-06-21",
+    "current": false,
+    "tenure": "2y 2m 3d",
+    "party": "AP; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Bülent Ecevit",
+    "role": "Prime Minister",
+    "start": "1979-01-05",
+    "end": "1980-09-12",
+    "current": false,
+    "tenure": "1y 8m 16d",
+    "party": "CHP; final term",
+    "era": null
+  },
+  {
+    "name": "Kenan Evren",
+    "role": "President",
+    "start": "1982-09-18",
+    "end": "1989-11-09",
+    "current": false,
+    "tenure": "7y 1m 29d",
+    "party": "Military coup leader",
+    "era": null
+  },
+  {
+    "name": "Turgut Özal",
+    "role": "Prime Minister",
+    "start": "1983-12-13",
+    "end": "1989-11-09",
+    "current": false,
+    "tenure": "5y 11m 28d",
+    "party": "ANAP; became President",
+    "era": null
+  },
+  {
+    "name": "Turgut Özal",
+    "role": "President",
+    "start": "1989-11-09",
+    "end": "1993-04-17",
+    "current": false,
+    "tenure": "3y 5m 25d",
+    "party": "ANAP; died in office",
+    "era": null
+  },
+  {
+    "name": "Süleyman Demirel",
+    "role": "President",
+    "start": "1993-05-16",
+    "end": "2000-05-16",
+    "current": false,
+    "tenure": "7y 7d",
+    "party": "DYP",
+    "era": null
+  },
+  {
+    "name": "Tansu Çiller",
+    "role": "Prime Minister",
+    "start": "1993-06-25",
+    "end": "1996-03-06",
+    "current": false,
+    "tenure": "2y 8m 25d",
+    "party": "DYP; 1st female PM",
+    "era": null
+  },
+  {
+    "name": "Bülent Ecevit",
+    "role": "Prime Minister",
+    "start": "1999-01-11",
+    "end": "2002-11-18",
+    "current": false,
+    "tenure": "3y 10m 27d",
+    "party": "DSP; final term",
+    "era": null
+  },
+  {
+    "name": "Ahmet Necdet Sezer",
+    "role": "President",
+    "start": "2000-05-16",
+    "end": "2007-08-28",
+    "current": false,
+    "tenure": "7y 3m 20d",
+    "party": "Independent; constitutional court judge",
+    "era": null
+  },
+  {
+    "name": "Recep Tayyip Erdoğan",
+    "role": "Prime Minister",
+    "start": "2003-03-14",
+    "end": "2014-08-28",
+    "current": false,
+    "tenure": "11y 5m 15d",
+    "party": "AKP; became President",
+    "era": null
+  },
+  {
+    "name": "Abdullah Gül",
+    "role": "President",
+    "start": "2007-08-28",
+    "end": "2014-08-28",
+    "current": false,
+    "tenure": "7y 7d",
+    "party": "AKP",
+    "era": null
+  },
+  {
+    "name": "Recep Tayyip Erdoğan",
+    "role": "President",
+    "start": "2014-08-28",
+    "end": null,
+    "current": true,
+    "tenure": "11y 10m 1d",
+    "party": "AKP; exec. president since 2018",
+    "era": null
+  },
+  {
+    "name": "Ahmet Davutoğlu",
+    "role": "Prime Minister",
+    "start": "2014-08-28",
+    "end": "2016-05-22",
+    "current": false,
+    "tenure": "1y 8m 3d",
+    "party": "AKP",
+    "era": null
+  },
+  {
+    "name": "Binali Yıldırım",
+    "role": "Prime Minister",
+    "start": "2016-05-24",
+    "end": "2018-07-09",
+    "current": false,
+    "tenure": "2y 1m 26d",
+    "party": "AKP; last PM (office abolished)",
+    "era": null
+  }
+]

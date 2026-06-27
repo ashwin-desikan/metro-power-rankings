@@ -1,0 +1,252 @@
+[
+  {
+    "name": "Louis-Napoleon Bonaparte",
+    "role": "President",
+    "start": "1848-12-10",
+    "end": "1852-02-02",
+    "current": false,
+    "tenure": "3y 1m 24d",
+    "party": "Bonapartist; 2nd Republic",
+    "era": null
+  },
+  {
+    "name": "Adolphe Thiers",
+    "role": "President",
+    "start": "1871-08-17",
+    "end": "1873-05-24",
+    "current": false,
+    "tenure": "1y 9m 11d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Patrice de Mac-Mahon",
+    "role": "President",
+    "start": "1873-05-24",
+    "end": "1879-01-30",
+    "current": false,
+    "tenure": "5y 8m 12d",
+    "party": "Conservative; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Jules Grevy",
+    "role": "President",
+    "start": "1879-01-30",
+    "end": "1887-12-02",
+    "current": false,
+    "tenure": "8y 10m 8d",
+    "party": "Republican; 3rd Republic; 1st term",
+    "era": null
+  },
+  {
+    "name": "Sadi Carnot",
+    "role": "President",
+    "start": "1888-01-03",
+    "end": "1894-06-25",
+    "current": false,
+    "tenure": "6y 5m 25d",
+    "party": "Republican; 3rd Republic; assassinated",
+    "era": null
+  },
+  {
+    "name": "Jean Casimir-Perier",
+    "role": "President",
+    "start": "1894-06-27",
+    "end": "1895-01-16",
+    "current": false,
+    "tenure": "6m 23d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Felix Faure",
+    "role": "President",
+    "start": "1895-01-17",
+    "end": "1899-02-16",
+    "current": false,
+    "tenure": "4y 1m 1d",
+    "party": "Republican; 3rd Republic; died in office",
+    "era": null
+  },
+  {
+    "name": "Emile Loubet",
+    "role": "President",
+    "start": "1899-02-18",
+    "end": "1906-01-18",
+    "current": false,
+    "tenure": "6y 11m 5d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Armand Fallieres",
+    "role": "President",
+    "start": "1906-01-18",
+    "end": "1913-01-18",
+    "current": false,
+    "tenure": "7y 2d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Raymond Poincare",
+    "role": "President",
+    "start": "1913-01-18",
+    "end": "1920-01-18",
+    "current": false,
+    "tenure": "7y 1d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Paul Deschanel",
+    "role": "President",
+    "start": "1920-01-18",
+    "end": "1920-09-21",
+    "current": false,
+    "tenure": "8m 7d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Alexandre Millerand",
+    "role": "President",
+    "start": "1920-09-23",
+    "end": "1924-06-11",
+    "current": false,
+    "tenure": "3y 8m 22d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Gaston Doumergue",
+    "role": "President",
+    "start": "1924-06-13",
+    "end": "1931-06-13",
+    "current": false,
+    "tenure": "7y 1d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Paul Doumer",
+    "role": "President",
+    "start": "1931-06-13",
+    "end": "1932-05-07",
+    "current": false,
+    "tenure": "10m 29d",
+    "party": "Republican; 3rd Republic; assassinated",
+    "era": null
+  },
+  {
+    "name": "Albert Lebrun",
+    "role": "President",
+    "start": "1932-05-10",
+    "end": "1940-07-10",
+    "current": false,
+    "tenure": "8y 2m 3d",
+    "party": "Republican; 3rd Republic",
+    "era": null
+  },
+  {
+    "name": "Vincent Auriol",
+    "role": "President",
+    "start": "1947-01-16",
+    "end": "1954-01-16",
+    "current": false,
+    "tenure": "7y 2d",
+    "party": "Socialist; 4th Republic",
+    "era": null
+  },
+  {
+    "name": "Rene Coty",
+    "role": "President",
+    "start": "1954-01-16",
+    "end": "1959-01-08",
+    "current": false,
+    "tenure": "4y 11m 28d",
+    "party": "Independent; 4th Republic",
+    "era": null
+  },
+  {
+    "name": "Charles de Gaulle",
+    "role": "President",
+    "start": "1959-01-08",
+    "end": "1969-04-28",
+    "current": false,
+    "tenure": "10y 3m 23d",
+    "party": "Gaullist; 5th Republic",
+    "era": null
+  },
+  {
+    "name": "Georges Pompidou",
+    "role": "President",
+    "start": "1969-06-20",
+    "end": "1974-04-02",
+    "current": false,
+    "tenure": "4y 9m 17d",
+    "party": "Gaullist; 5th Republic; died in office",
+    "era": null
+  },
+  {
+    "name": "Valery Giscard d'Estaing",
+    "role": "President",
+    "start": "1974-05-27",
+    "end": "1981-05-21",
+    "current": false,
+    "tenure": "6y 12m 1d",
+    "party": "Centre-right; 5th Republic",
+    "era": null
+  },
+  {
+    "name": "Francois Mitterrand",
+    "role": "President",
+    "start": "1981-05-21",
+    "end": "1995-05-17",
+    "current": false,
+    "tenure": "13y 12m 4d",
+    "party": "Socialist; 5th Republic",
+    "era": null
+  },
+  {
+    "name": "Jacques Chirac",
+    "role": "President",
+    "start": "1995-05-17",
+    "end": "2007-05-16",
+    "current": false,
+    "tenure": "12y 2d",
+    "party": "Gaullist/Conservative; 5th Republic",
+    "era": null
+  },
+  {
+    "name": "Nicolas Sarkozy",
+    "role": "President",
+    "start": "2007-05-16",
+    "end": "2012-05-15",
+    "current": false,
+    "tenure": "5y 1d",
+    "party": "Conservative UMP; 5th Republic",
+    "era": null
+  },
+  {
+    "name": "Francois Hollande",
+    "role": "President",
+    "start": "2012-05-15",
+    "end": "2017-05-14",
+    "current": false,
+    "tenure": "5y",
+    "party": "Socialist; 5th Republic",
+    "era": null
+  },
+  {
+    "name": "Emmanuel Macron",
+    "role": "President",
+    "start": "2017-05-14",
+    "end": null,
+    "current": true,
+    "tenure": "9y 1m 15d",
+    "party": "Centrist En Marche; 5th Republic",
+    "era": null
+  }
+]

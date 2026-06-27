@@ -1,0 +1,362 @@
+[
+  {
+    "name": "Otto von Bismarck",
+    "role": "Imperial Chancellor",
+    "start": "1871-03-18",
+    "end": "1890-03-20",
+    "current": false,
+    "tenure": "19y 7d",
+    "party": "Conservative",
+    "era": "German Empire"
+  },
+  {
+    "name": "Leo von Caprivi",
+    "role": "Imperial Chancellor",
+    "start": "1890-03-20",
+    "end": "1894-10-26",
+    "current": false,
+    "tenure": "4y 7m 11d",
+    "party": "Conservative",
+    "era": "German Empire"
+  },
+  {
+    "name": "Chlodwig zu Hohenlohe-Schillingsfurst",
+    "role": "Imperial Chancellor",
+    "start": "1894-10-26",
+    "end": "1900-10-17",
+    "current": false,
+    "tenure": "5y 11m 27d",
+    "party": "Conservative",
+    "era": "German Empire"
+  },
+  {
+    "name": "Bernhard von Bulow",
+    "role": "Imperial Chancellor",
+    "start": "1900-10-17",
+    "end": "1909-07-14",
+    "current": false,
+    "tenure": "8y 9m 2d",
+    "party": "Conservative",
+    "era": "German Empire"
+  },
+  {
+    "name": "Theobald von Bethmann Hollweg",
+    "role": "Imperial Chancellor",
+    "start": "1909-07-14",
+    "end": "1917-07-13",
+    "current": false,
+    "tenure": "8y 1d",
+    "party": "Conservative",
+    "era": "German Empire"
+  },
+  {
+    "name": "Georg Michaelis",
+    "role": "Imperial Chancellor",
+    "start": "1917-07-14",
+    "end": "1917-10-01",
+    "current": false,
+    "tenure": "2m 19d",
+    "party": "Conservative",
+    "era": "German Empire"
+  },
+  {
+    "name": "Georg von Hertling",
+    "role": "Imperial Chancellor",
+    "start": "1917-10-01",
+    "end": "1918-09-30",
+    "current": false,
+    "tenure": "12m 4d",
+    "party": "Centre",
+    "era": "German Empire"
+  },
+  {
+    "name": "Maximilian von Baden",
+    "role": "Imperial Chancellor",
+    "start": "1918-10-03",
+    "end": "1918-11-09",
+    "current": false,
+    "tenure": "1m 7d",
+    "party": "Liberal",
+    "era": "German Empire"
+  },
+  {
+    "name": "Friedrich Ebert",
+    "role": "Weimar Chancellor",
+    "start": "1918-11-09",
+    "end": "1919-11-13",
+    "current": false,
+    "tenure": "1y 4d",
+    "party": "SPD",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Philipp Scheidemann",
+    "role": "Weimar Chancellor",
+    "start": "1919-02-13",
+    "end": "1919-06-20",
+    "current": false,
+    "tenure": "4m 7d",
+    "party": "SPD",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Gustav Bauer",
+    "role": "Weimar Chancellor",
+    "start": "1919-06-21",
+    "end": "1920-03-26",
+    "current": false,
+    "tenure": "9m 9d",
+    "party": "SPD",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Hermann Muller",
+    "role": "Weimar Chancellor",
+    "start": "1920-03-26",
+    "end": "1920-06-08",
+    "current": false,
+    "tenure": "2m 14d",
+    "party": "SPD; 1st term",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Konstantin Fehrenbach",
+    "role": "Weimar Chancellor",
+    "start": "1920-06-25",
+    "end": "1921-05-04",
+    "current": false,
+    "tenure": "10m 13d",
+    "party": "Centre",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Joseph Wirth",
+    "role": "Weimar Chancellor",
+    "start": "1921-05-10",
+    "end": "1922-11-22",
+    "current": false,
+    "tenure": "1y 6m 16d",
+    "party": "Centre",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Wilhelm Cuno",
+    "role": "Weimar Chancellor",
+    "start": "1922-11-22",
+    "end": "1923-08-13",
+    "current": false,
+    "tenure": "8m 24d",
+    "party": "Non-partisan",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Gustav Stresemann",
+    "role": "Weimar Chancellor",
+    "start": "1923-08-13",
+    "end": "1923-11-23",
+    "current": false,
+    "tenure": "3m 12d",
+    "party": "DVP",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Wilhelm Marx",
+    "role": "Weimar Chancellor",
+    "start": "1923-11-30",
+    "end": "1925-01-15",
+    "current": false,
+    "tenure": "1y 1m 17d",
+    "party": "Centre; 1st term",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Hans Luther",
+    "role": "Weimar Chancellor",
+    "start": "1925-01-15",
+    "end": "1926-05-12",
+    "current": false,
+    "tenure": "1y 3m 27d",
+    "party": "Non-partisan; 1st term",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Wilhelm Marx",
+    "role": "Weimar Chancellor",
+    "start": "1926-05-17",
+    "end": "1928-12-28",
+    "current": false,
+    "tenure": "2y 7m 16d",
+    "party": "Centre; 2nd term",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Hermann Muller",
+    "role": "Weimar Chancellor",
+    "start": "1928-06-28",
+    "end": "1930-03-27",
+    "current": false,
+    "tenure": "1y 9m 2d",
+    "party": "SPD; 2nd term",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Heinrich Bruning",
+    "role": "Weimar Chancellor",
+    "start": "1930-03-30",
+    "end": "1932-05-30",
+    "current": false,
+    "tenure": "2y 2m 2d",
+    "party": "Centre",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Franz von Papen",
+    "role": "Weimar Chancellor",
+    "start": "1932-06-01",
+    "end": "1932-12-03",
+    "current": false,
+    "tenure": "6m 5d",
+    "party": "Non-partisan",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Kurt von Schleicher",
+    "role": "Weimar Chancellor",
+    "start": "1932-12-03",
+    "end": "1933-01-30",
+    "current": false,
+    "tenure": "1m 28d",
+    "party": "Non-partisan",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Adolf Hitler",
+    "role": "Chancellor/Fuhrer",
+    "start": "1933-01-30",
+    "end": "1945-04-30",
+    "current": false,
+    "tenure": "12y 3m 3d",
+    "party": "NSDAP; suicide",
+    "era": "Nazi Germany"
+  },
+  {
+    "name": "Joseph Goebbels",
+    "role": "Chancellor (1 day)",
+    "start": "1945-04-30",
+    "end": "1945-05-01",
+    "current": false,
+    "tenure": "1d",
+    "party": "NSDAP",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Lutz Graf Schwerin von Krosigk",
+    "role": "Chancellor (brief)",
+    "start": "1945-05-02",
+    "end": "1945-05-23",
+    "current": false,
+    "tenure": "21d",
+    "party": "Non-partisan",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Konrad Adenauer",
+    "role": "Federal Chancellor",
+    "start": "1949-09-20",
+    "end": "1963-10-16",
+    "current": false,
+    "tenure": "14y 29d",
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Ludwig Erhard",
+    "role": "Federal Chancellor",
+    "start": "1963-10-16",
+    "end": "1966-12-01",
+    "current": false,
+    "tenure": "3y 1m 17d",
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Kurt Georg Kiesinger",
+    "role": "Federal Chancellor",
+    "start": "1966-12-01",
+    "end": "1969-10-22",
+    "current": false,
+    "tenure": "2y 10m 26d",
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Willy Brandt",
+    "role": "Federal Chancellor",
+    "start": "1969-10-22",
+    "end": "1974-05-16",
+    "current": false,
+    "tenure": "4y 6m 27d",
+    "party": "SPD",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Helmut Schmidt",
+    "role": "Federal Chancellor",
+    "start": "1974-05-16",
+    "end": "1982-10-01",
+    "current": false,
+    "tenure": "8y 4m 20d",
+    "party": "SPD",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Helmut Kohl",
+    "role": "Federal Chancellor",
+    "start": "1982-10-01",
+    "end": "1998-10-27",
+    "current": false,
+    "tenure": "16y 1m",
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Gerhard Schroeder",
+    "role": "Federal Chancellor",
+    "start": "1998-10-27",
+    "end": "2005-11-22",
+    "current": false,
+    "tenure": "7y 28d",
+    "party": "SPD",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Angela Merkel",
+    "role": "Federal Chancellor",
+    "start": "2005-11-22",
+    "end": "2021-12-08",
+    "current": false,
+    "tenure": "16y 20d",
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Olaf Scholz",
+    "role": "Federal Chancellor",
+    "start": "2021-12-08",
+    "end": "2024-12-23",
+    "current": false,
+    "tenure": "3y 16d",
+    "party": "SPD",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Friedrich Merz",
+    "role": "Federal Chancellor",
+    "start": "2025-02-25",
+    "end": null,
+    "current": true,
+    "tenure": "1y 4m 1d",
+    "party": "CDU",
+    "era": "Federal Republic"
+  }
+]

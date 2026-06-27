@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Sukarno",
+    "role": "President",
+    "start": "1945-08-18",
+    "end": "1967-03-12",
+    "current": false,
+    "tenure": "21y 7m 16d",
+    "party": "Nationalist; founding president",
+    "era": null
+  },
+  {
+    "name": "Suharto",
+    "role": "President",
+    "start": "1967-03-12",
+    "end": "1998-05-21",
+    "current": false,
+    "tenure": "31y 2m 23d",
+    "party": "Golkar; New Order; resigned",
+    "era": null
+  },
+  {
+    "name": "B.J. Habibie",
+    "role": "President",
+    "start": "1998-05-21",
+    "end": "1999-10-20",
+    "current": false,
+    "tenure": "1y 5m 7d",
+    "party": "Golkar; transition",
+    "era": null
+  },
+  {
+    "name": "Abdurrahman Wahid",
+    "role": "President",
+    "start": "1999-10-20",
+    "end": "2001-07-23",
+    "current": false,
+    "tenure": "1y 9m 12d",
+    "party": "PKB; impeached",
+    "era": null
+  },
+  {
+    "name": "Megawati Sukarnoputri",
+    "role": "President",
+    "start": "2001-07-23",
+    "end": "2004-10-20",
+    "current": false,
+    "tenure": "3y 3m 15d",
+    "party": "PDI-P; 1st female president",
+    "era": null
+  },
+  {
+    "name": "Susilo Bambang Yudhoyono",
+    "role": "President",
+    "start": "2004-10-20",
+    "end": "2014-10-20",
+    "current": false,
+    "tenure": "10y 22d",
+    "party": "Demokrat; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Joko Widodo",
+    "role": "President",
+    "start": "2014-10-20",
+    "end": "2024-10-20",
+    "current": false,
+    "tenure": "10y 23d",
+    "party": "PDI-P; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Prabowo Subianto",
+    "role": "President",
+    "start": "2024-10-20",
+    "end": null,
+    "current": true,
+    "tenure": "1y 8m 15d",
+    "party": "Gerindra",
+    "era": null
+  }
+]

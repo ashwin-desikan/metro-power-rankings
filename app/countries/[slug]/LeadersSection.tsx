@@ -1,0 +1,137 @@
+// app/countries/[slug]/LeadersSection.tsx
+// Renders an era-grouped table of heads of state/government for a country.
+// Era grouping is shown only when the data has non-null era fields (Russia,
+// China, Germany).
+
+import { getLeaders, leaderYear, type Leader } from "@/lib/leaders";
+
+type Props = { countrySlug: string };
+
+function formatYear(d: string | null): string {
+  const y = leaderYear(d);
+  return y !== null ? String(y) : "—";
+}
+
+function PartyBadge({ party }: { party: string | null }) {
+  if (!party) return null;
+  // Strip trailing "; ..." notes so the badge stays compact
+  const label = party.split(";")[0].trim();
+  return (
+    <span className="text-xs text-gray-500 dark:text-gray-400 italic">
+      {label}
+    </span>
+  );
+}
+
+function LeaderRow({ l }: { l: Leader }) {
+  const startY = formatYear(l.start);
+  const endY = l.current ? "Present" : formatYear(l.end);
+  return (
+    <tr className="border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/40 transition-colors">
+      <td className="py-2 pr-4 font-medium text-sm text-gray-900 dark:text-gray-100 whitespace-nowrap">
+        {l.name}
+        {l.current && (
+          <span className="ml-2 text-xs font-semibold text-green-600 dark:text-green-400">
+            ✦ Current
+          </span>
+        )}
+      </td>
+      <td className="py-2 pr-4 text-sm text-gray-600 dark:text-gray-300">{l.role}</td>
+      <td className="py-2 pr-4 text-sm text-gray-600 dark:text-gray-300 whitespace-nowrap tabular-nums">
+        {startY}–{endY}
+      </td>
+      <td className="py-2 pr-4 text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap hidden sm:table-cell">
+        {l.tenure ?? "—"}
+      </td>
+      <td className="py-2 text-sm hidden md:table-cell">
+        <PartyBadge party={l.party} />
+      </td>
+    </tr>
+  );
+}
+
+function EraGroup({ era, leaders }: { era: string; leaders: Leader[] }) {
+  return (
+    <div className="mb-6">
+      <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">
+        {era}
+      </h4>
+      <LeaderTable leaders={leaders} />
+    </div>
+  );
+}
+
+function LeaderTable({ leaders }: { leaders: Leader[] }) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full text-left border-collapse">
+        <thead>
+          <tr className="border-b border-gray-200 dark:border-gray-700">
+            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Name</th>
+            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Role</th>
+            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Years</th>
+            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4 hidden sm:table-cell">Tenure</th>
+            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 hidden md:table-cell">Party</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leaders.map((l, i) => (
+            <LeaderRow key={`${l.name}-${l.start ?? i}`} l={l} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default function LeadersSection({ countrySlug }: Props) {
+  const leadersAsc = getLeaders(countrySlug);
+  if (leadersAsc.length === 0) return null;
+
+  // Most recent first
+  const leaders = [...leadersAsc].reverse();
+
+  // Determine if era grouping is needed
+  const hasEras = leaders.some((l) => l.era !== null);
+
+  const inner = hasEras ? (() => {
+    // Group by era in reverse order (most recent era first)
+    const eraOrder: string[] = [];
+    const eraMap: Record<string, Leader[]> = {};
+    for (const l of leaders) {
+      const era = l.era ?? "Other";
+      if (!eraMap[era]) {
+        eraMap[era] = [];
+        eraOrder.push(era);
+      }
+      eraMap[era].push(l);
+    }
+    return eraOrder.map((era) => (
+      <EraGroup key={era} era={era} leaders={eraMap[era]} />
+    ));
+  })() : <LeaderTable leaders={leaders} />;
+
+  return (
+    <section className="mb-12" id="leaders">
+      <details>
+        <summary className="cursor-pointer list-none flex items-center gap-2 group mb-4">
+          <span className="text-xl font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
+            Leadership History
+          </span>
+          <span className="text-xs text-[var(--text-dim)] ml-1">
+            {leaders.length} leaders · click to expand
+          </span>
+          <svg
+            className="w-4 h-4 text-[var(--text-dim)] transition-transform details-chevron ml-auto"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+        <div className="mt-2">
+          {inner}
+        </div>
+      </details>
+    </section>
+  );
+}

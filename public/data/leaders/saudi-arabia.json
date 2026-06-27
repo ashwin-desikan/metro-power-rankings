@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Abdulaziz ibn Saud",
+    "role": "King",
+    "start": "1932-09-23",
+    "end": "1953-11-09",
+    "current": false,
+    "tenure": "21y 1m 7d",
+    "party": "House of Saud; founder",
+    "era": null
+  },
+  {
+    "name": "Saud bin Abdulaziz",
+    "role": "King",
+    "start": "1953-11-09",
+    "end": "1964-11-02",
+    "current": false,
+    "tenure": "10y 12m 21d",
+    "party": "House of Saud; deposed",
+    "era": null
+  },
+  {
+    "name": "Faisal bin Abdulaziz",
+    "role": "King",
+    "start": "1964-11-02",
+    "end": "1975-03-25",
+    "current": false,
+    "tenure": "10y 4m 15d",
+    "party": "House of Saud; assassinated",
+    "era": null
+  },
+  {
+    "name": "Khalid bin Abdulaziz",
+    "role": "King",
+    "start": "1975-03-25",
+    "end": "1982-06-13",
+    "current": false,
+    "tenure": "7y 2m 27d",
+    "party": "House of Saud; died in office",
+    "era": null
+  },
+  {
+    "name": "Fahd bin Abdulaziz",
+    "role": "King",
+    "start": "1982-06-13",
+    "end": "2005-08-01",
+    "current": false,
+    "tenure": "23y 1m 20d",
+    "party": "House of Saud; died in office",
+    "era": null
+  },
+  {
+    "name": "Abdullah bin Abdulaziz",
+    "role": "King",
+    "start": "2005-08-01",
+    "end": "2015-01-23",
+    "current": false,
+    "tenure": "9y 5m 12d",
+    "party": "House of Saud; died in office",
+    "era": null
+  },
+  {
+    "name": "Salman bin Abdulaziz",
+    "role": "King",
+    "start": "2015-01-23",
+    "end": null,
+    "current": true,
+    "tenure": "11y 5m 3d",
+    "party": "House of Saud",
+    "era": null
+  }
+]

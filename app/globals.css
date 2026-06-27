@@ -27,6 +27,7 @@ html { scroll-behavior: smooth; }
 
 /* Anchor targets (hub section ids) clear the sticky site header when jumped to. */
 [id] { scroll-margin-top: 5rem; }
+details[open] .details-chevron { transform: rotate(180deg); }
 
 body {
   background: var(--bg);

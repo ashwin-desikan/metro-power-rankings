@@ -21,6 +21,10 @@ import { competitionHref } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
+import LeadersSection from "./LeadersSection";
+import { countryHasLeaders, getLeaders } from "@/lib/leaders";
+import OrgsSection from "./OrgsSection";
+import { countryHasOrgs } from "@/lib/orgs";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
 import {
@@ -335,6 +339,12 @@ export default async function CountryDetailPage({ params }: Props) {
                   )}
                 </span>
               ) : null}
+              {getLeaders(slug).filter((l) => l.current).map((l) => (
+                <span key={`${l.name}-${l.role}`}>
+                  <span className="text-[var(--text-dim)]">{l.role}:</span>{" "}
+                  {l.name}
+                </span>
+              ))}
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -363,6 +373,8 @@ export default async function CountryDetailPage({ params }: Props) {
             const navItems = [
               ...(indicators ? [{ label: "Economy", href: "#economy" }] : []),
               ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams" }] : []),
+              ...(countryHasOrgs(slug) ? [{ label: "Alliances & Orgs", href: "#orgs" }] : []),
+              ...(countryHasLeaders(slug) ? [{ label: "Leadership", href: "#leaders" }] : []),
               ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs" }] : []),
               ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents" }] : []),
               ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions" }] : []),
@@ -408,6 +420,10 @@ export default async function CountryDetailPage({ params }: Props) {
               </p>
             </section>
           ) : null}
+
+          <OrgsSection countrySlug={slug} />
+
+          <LeadersSection countrySlug={slug} />
 
           <NationalTeamsSection countryName={country.name} />
 

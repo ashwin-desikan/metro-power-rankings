@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Lee Kuan Yew",
+    "role": "Prime Minister",
+    "start": "1959-06-05",
+    "end": "1990-11-28",
+    "current": false,
+    "tenure": "31y 6m 9d",
+    "party": "PAP; founding PM; 31 years",
+    "era": null
+  },
+  {
+    "name": "Goh Chok Tong",
+    "role": "Prime Minister",
+    "start": "1990-11-28",
+    "end": "2004-08-12",
+    "current": false,
+    "tenure": "13y 8m 26d",
+    "party": "PAP",
+    "era": null
+  },
+  {
+    "name": "Lee Hsien Loong",
+    "role": "Prime Minister",
+    "start": "2004-08-12",
+    "end": "2024-05-15",
+    "current": false,
+    "tenure": "19y 9m 16d",
+    "party": "PAP; son of LKY",
+    "era": null
+  },
+  {
+    "name": "Lawrence Wong",
+    "role": "Prime Minister",
+    "start": "2024-05-15",
+    "end": null,
+    "current": true,
+    "tenure": "2y 1m 23d",
+    "party": "PAP",
+    "era": null
+  }
+]

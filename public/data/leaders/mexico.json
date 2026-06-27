@@ -1,0 +1,692 @@
+[
+  {
+    "name": "Guadalupe Victoria",
+    "role": "President",
+    "start": "1824-10-10",
+    "end": "1829-04-01",
+    "current": false,
+    "tenure": "4y 5m 24d",
+    "party": "Federalist; 1st president",
+    "era": null
+  },
+  {
+    "name": "Vicente Guerrero",
+    "role": "President",
+    "start": "1829-04-01",
+    "end": "1829-12-18",
+    "current": false,
+    "tenure": "8m 21d",
+    "party": "Federalist",
+    "era": null
+  },
+  {
+    "name": "Jose Maria Bocanegra",
+    "role": "President",
+    "start": "1829-12-18",
+    "end": "1829-12-23",
+    "current": false,
+    "tenure": "5d",
+    "party": "Federalist; interim",
+    "era": null
+  },
+  {
+    "name": "Anastasio Bustamante",
+    "role": "President",
+    "start": "1830-01-04",
+    "end": "1832-08-14",
+    "current": false,
+    "tenure": "2y 7m 13d",
+    "party": "Conservative; 1st term",
+    "era": null
+  },
+  {
+    "name": "Melchor Muzquiz",
+    "role": "President",
+    "start": "1832-08-14",
+    "end": "1832-12-24",
+    "current": false,
+    "tenure": "4m 12d",
+    "party": "Federalist; interim",
+    "era": null
+  },
+  {
+    "name": "Manuel Gomez Pedraza",
+    "role": "President",
+    "start": "1832-12-24",
+    "end": "1833-04-01",
+    "current": false,
+    "tenure": "3m 8d",
+    "party": "Federalist",
+    "era": null
+  },
+  {
+    "name": "Valentin Gomez Farias",
+    "role": "President",
+    "start": "1833-04-01",
+    "end": "1833-05-24",
+    "current": false,
+    "tenure": "1m 23d",
+    "party": "Federalist; 1st acting",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1833-05-24",
+    "end": "1833-06-16",
+    "current": false,
+    "tenure": "23d",
+    "party": "Conservative/Liberal; 1st term",
+    "era": null
+  },
+  {
+    "name": "Valentin Gomez Farias",
+    "role": "President",
+    "start": "1833-06-16",
+    "end": "1833-10-18",
+    "current": false,
+    "tenure": "4m 4d",
+    "party": "Federalist; 2nd acting",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1833-10-18",
+    "end": "1834-01-29",
+    "current": false,
+    "tenure": "3m 13d",
+    "party": "Liberal; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Miguel Barragan",
+    "role": "President",
+    "start": "1834-01-28",
+    "end": "1836-02-27",
+    "current": false,
+    "tenure": "2y 1m",
+    "party": "Conservative; died in office",
+    "era": null
+  },
+  {
+    "name": "Jose Justo Corro",
+    "role": "President",
+    "start": "1836-02-27",
+    "end": "1837-04-19",
+    "current": false,
+    "tenure": "1y 1m 22d",
+    "party": "Conservative",
+    "era": null
+  },
+  {
+    "name": "Anastasio Bustamante",
+    "role": "President",
+    "start": "1837-04-19",
+    "end": "1839-10-20",
+    "current": false,
+    "tenure": "2y 6m 4d",
+    "party": "Conservative; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1839-03-18",
+    "end": "1839-10-10",
+    "current": false,
+    "tenure": "6m 26d",
+    "party": "Liberal; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Nicolas Bravo",
+    "role": "President",
+    "start": "1839-10-10",
+    "end": "1839-10-19",
+    "current": false,
+    "tenure": "9d",
+    "party": "Conservative; 1st acting",
+    "era": null
+  },
+  {
+    "name": "Francisco Javier Echeverria",
+    "role": "President",
+    "start": "1840-09-22",
+    "end": "1840-10-10",
+    "current": false,
+    "tenure": "18d",
+    "party": "Conservative; interim",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1840-10-10",
+    "end": "1844-10-02",
+    "current": false,
+    "tenure": "3y 11m 28d",
+    "party": "Liberal; 4th-6th terms",
+    "era": null
+  },
+  {
+    "name": "Valentin Gomez Farias",
+    "role": "President",
+    "start": "1846-12-24",
+    "end": "1847-03-21",
+    "current": false,
+    "tenure": "2m 27d",
+    "party": "Liberal; 3rd acting",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1847-03-21",
+    "end": "1847-04-02",
+    "current": false,
+    "tenure": "12d",
+    "party": "Liberal; 7th term",
+    "era": null
+  },
+  {
+    "name": "Pedro Maria Anaya",
+    "role": "President",
+    "start": "1847-04-02",
+    "end": "1847-05-20",
+    "current": false,
+    "tenure": "1m 18d",
+    "party": "Conservative; 1st acting",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1847-05-20",
+    "end": "1847-06-15",
+    "current": false,
+    "tenure": "26d",
+    "party": "Liberal; 8th term",
+    "era": null
+  },
+  {
+    "name": "Pedro Maria Anaya",
+    "role": "President",
+    "start": "1847-06-15",
+    "end": "1847-08-22",
+    "current": false,
+    "tenure": "2m 8d",
+    "party": "Conservative; 2nd acting",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1847-08-22",
+    "end": "1847-09-16",
+    "current": false,
+    "tenure": "25d",
+    "party": "Liberal; 9th term",
+    "era": null
+  },
+  {
+    "name": "Manuel de la Pena y Pena",
+    "role": "President",
+    "start": "1847-09-16",
+    "end": "1847-11-13",
+    "current": false,
+    "tenure": "1m 28d",
+    "party": "Liberal; 1st acting",
+    "era": null
+  },
+  {
+    "name": "Pedro Maria Anaya",
+    "role": "President",
+    "start": "1847-11-13",
+    "end": "1848-01-08",
+    "current": false,
+    "tenure": "1m 26d",
+    "party": "Conservative; 3rd acting",
+    "era": null
+  },
+  {
+    "name": "Manuel de la Pena y Pena",
+    "role": "President",
+    "start": "1848-01-08",
+    "end": "1848-06-03",
+    "current": false,
+    "tenure": "4m 27d",
+    "party": "Liberal; 2nd acting",
+    "era": null
+  },
+  {
+    "name": "Jose Joaquin de Herrera",
+    "role": "President",
+    "start": "1848-06-03",
+    "end": "1851-01-15",
+    "current": false,
+    "tenure": "2y 7m 16d",
+    "party": "Liberal; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Mariano Arista",
+    "role": "President",
+    "start": "1851-01-15",
+    "end": "1853-01-06",
+    "current": false,
+    "tenure": "1y 11m 27d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Juan Bautista Ceballos",
+    "role": "President",
+    "start": "1853-01-06",
+    "end": "1853-02-08",
+    "current": false,
+    "tenure": "1m 3d",
+    "party": "Liberal; interim",
+    "era": null
+  },
+  {
+    "name": "Manuel Maria Lombardini",
+    "role": "President",
+    "start": "1853-02-08",
+    "end": "1853-04-20",
+    "current": false,
+    "tenure": "2m 11d",
+    "party": "Conservative; interim",
+    "era": null
+  },
+  {
+    "name": "Antonio Lopez de Santa Anna",
+    "role": "President",
+    "start": "1853-04-20",
+    "end": "1855-03-12",
+    "current": false,
+    "tenure": "1y 10m 26d",
+    "party": "Conservative; 10th final term",
+    "era": null
+  },
+  {
+    "name": "Martin Carrera",
+    "role": "President",
+    "start": "1855-03-12",
+    "end": "1855-09-09",
+    "current": false,
+    "tenure": "6m 1d",
+    "party": "Conservative; interim",
+    "era": null
+  },
+  {
+    "name": "Romulo Diaz de la Vega",
+    "role": "President",
+    "start": "1855-09-09",
+    "end": "1855-10-04",
+    "current": false,
+    "tenure": "25d",
+    "party": "Conservative; interim",
+    "era": null
+  },
+  {
+    "name": "Juan Alvarez",
+    "role": "President",
+    "start": "1855-10-04",
+    "end": "1855-12-11",
+    "current": false,
+    "tenure": "2m 8d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Ignacio Comonfort",
+    "role": "President",
+    "start": "1855-12-11",
+    "end": "1858-01-21",
+    "current": false,
+    "tenure": "2y 1m 12d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Benito Juarez",
+    "role": "President",
+    "start": "1858-01-19",
+    "end": "1872-07-18",
+    "current": false,
+    "tenure": "14y 6m 4d",
+    "party": "Liberal; multiple terms; died in office",
+    "era": null
+  },
+  {
+    "name": "Sebastian Lerdo de Tejada",
+    "role": "President",
+    "start": "1872-07-18",
+    "end": "1876-10-21",
+    "current": false,
+    "tenure": "4y 3m 6d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Jose Maria Iglesias",
+    "role": "President",
+    "start": "1876-10-26",
+    "end": "1877-01-16",
+    "current": false,
+    "tenure": "2m 22d",
+    "party": "Liberal; contested",
+    "era": null
+  },
+  {
+    "name": "Porfirio Diaz",
+    "role": "President",
+    "start": "1876-11-28",
+    "end": "1880-12-05",
+    "current": false,
+    "tenure": "4y 8d",
+    "party": "Liberal; 1st term",
+    "era": null
+  },
+  {
+    "name": "Manuel Gonzalez",
+    "role": "President",
+    "start": "1880-12-01",
+    "end": "1884-12-01",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Porfirio Diaz",
+    "role": "President",
+    "start": "1884-12-01",
+    "end": "1911-05-25",
+    "current": false,
+    "tenure": "26y 6m",
+    "party": "Conservative/PNP; Porfiriato",
+    "era": null
+  },
+  {
+    "name": "Francisco Leon de la Barra",
+    "role": "President",
+    "start": "1911-05-25",
+    "end": "1911-11-06",
+    "current": false,
+    "tenure": "5m 15d",
+    "party": "Liberal; interim",
+    "era": null
+  },
+  {
+    "name": "Francisco I. Madero",
+    "role": "President",
+    "start": "1911-11-06",
+    "end": "1913-02-19",
+    "current": false,
+    "tenure": "1y 3m 16d",
+    "party": "Liberal; assassinated",
+    "era": null
+  },
+  {
+    "name": "Pedro Lascurain",
+    "role": "President",
+    "start": "1913-02-19",
+    "end": "1913-02-19",
+    "current": false,
+    "tenure": "0d",
+    "party": "Liberal; ~45 min in office",
+    "era": null
+  },
+  {
+    "name": "Victoriano Huerta",
+    "role": "President",
+    "start": "1913-02-19",
+    "end": "1914-07-15",
+    "current": false,
+    "tenure": "1y 4m 26d",
+    "party": "Military coup",
+    "era": null
+  },
+  {
+    "name": "Francisco S. Carvajal",
+    "role": "President",
+    "start": "1914-07-15",
+    "end": "1914-08-13",
+    "current": false,
+    "tenure": "29d",
+    "party": "Conservative; interim",
+    "era": null
+  },
+  {
+    "name": "Venustiano Carranza",
+    "role": "President",
+    "start": "1914-08-20",
+    "end": "1920-05-21",
+    "current": false,
+    "tenure": "5y 9m 6d",
+    "party": "Constitutionalist; assassinated",
+    "era": null
+  },
+  {
+    "name": "Adolfo de la Huerta",
+    "role": "President",
+    "start": "1920-06-01",
+    "end": "1920-12-01",
+    "current": false,
+    "tenure": "6m 3d",
+    "party": "Liberal; interim",
+    "era": null
+  },
+  {
+    "name": "Alvaro Obregon",
+    "role": "President",
+    "start": "1920-12-01",
+    "end": "1924-01-30",
+    "current": false,
+    "tenure": "3y 2m",
+    "party": "Liberal/PNA",
+    "era": null
+  },
+  {
+    "name": "Plutarco Elias Calles",
+    "role": "President",
+    "start": "1924-12-01",
+    "end": "1928-12-01",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "PNR",
+    "era": null
+  },
+  {
+    "name": "Emilio Portes Gil",
+    "role": "President",
+    "start": "1928-12-01",
+    "end": "1930-02-05",
+    "current": false,
+    "tenure": "1y 2m 6d",
+    "party": "PNR; interim",
+    "era": null
+  },
+  {
+    "name": "Pascual Ortiz Rubio",
+    "role": "President",
+    "start": "1930-02-05",
+    "end": "1932-09-02",
+    "current": false,
+    "tenure": "2y 7m",
+    "party": "PNR",
+    "era": null
+  },
+  {
+    "name": "Abelardo L. Rodriguez",
+    "role": "President",
+    "start": "1932-09-03",
+    "end": "1934-12-01",
+    "current": false,
+    "tenure": "2y 2m 29d",
+    "party": "PNR; interim",
+    "era": null
+  },
+  {
+    "name": "Lazaro Cardenas",
+    "role": "President",
+    "start": "1934-12-01",
+    "end": "1940-12-01",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "PRM",
+    "era": null
+  },
+  {
+    "name": "Manuel Avila Camacho",
+    "role": "President",
+    "start": "1940-12-01",
+    "end": "1946-12-01",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "PRM/PRI",
+    "era": null
+  },
+  {
+    "name": "Miguel Aleman Valdes",
+    "role": "President",
+    "start": "1946-12-01",
+    "end": "1952-12-01",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Adolfo Ruiz Cortines",
+    "role": "President",
+    "start": "1952-12-01",
+    "end": "1958-12-01",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Adolfo Lopez Mateos",
+    "role": "President",
+    "start": "1958-12-01",
+    "end": "1964-12-01",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Gustavo Diaz Ordaz",
+    "role": "President",
+    "start": "1964-12-01",
+    "end": "1970-12-01",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Luis Echeverria",
+    "role": "President",
+    "start": "1970-12-01",
+    "end": "1976-12-01",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Jose Lopez Portillo",
+    "role": "President",
+    "start": "1976-12-01",
+    "end": "1982-12-01",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Miguel de la Madrid",
+    "role": "President",
+    "start": "1982-12-01",
+    "end": "1988-12-01",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Carlos Salinas de Gortari",
+    "role": "President",
+    "start": "1988-12-01",
+    "end": "1994-12-01",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Ernesto Zedillo",
+    "role": "President",
+    "start": "1994-12-01",
+    "end": "2000-12-01",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Vicente Fox",
+    "role": "President",
+    "start": "2000-12-01",
+    "end": "2006-12-01",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "PAN",
+    "era": null
+  },
+  {
+    "name": "Felipe Calderon",
+    "role": "President",
+    "start": "2006-12-01",
+    "end": "2012-12-01",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "PAN",
+    "era": null
+  },
+  {
+    "name": "Enrique Pena Nieto",
+    "role": "President",
+    "start": "2012-12-01",
+    "end": "2018-12-01",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "PRI",
+    "era": null
+  },
+  {
+    "name": "Andres Manuel Lopez Obrador",
+    "role": "President",
+    "start": "2018-12-01",
+    "end": "2024-10-01",
+    "current": false,
+    "tenure": "5y 10m 6d",
+    "party": "Morena",
+    "era": null
+  },
+  {
+    "name": "Claudia Sheinbaum",
+    "role": "President",
+    "start": "2024-10-01",
+    "end": null,
+    "current": true,
+    "tenure": "1y 8m 28d",
+    "party": "Morena; 1st female president",
+    "era": null
+  }
+]

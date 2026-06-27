@@ -1,0 +1,292 @@
+[
+  {
+    "name": "John A. Macdonald",
+    "role": "Prime Minister",
+    "start": "1867-07-01",
+    "end": "1873-11-05",
+    "current": false,
+    "tenure": "6y 4m 9d",
+    "party": "Conservative; 1st term",
+    "era": null
+  },
+  {
+    "name": "Alexander Mackenzie",
+    "role": "Prime Minister",
+    "start": "1873-11-05",
+    "end": "1878-10-17",
+    "current": false,
+    "tenure": "4y 11m 17d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "John A. Macdonald",
+    "role": "Prime Minister",
+    "start": "1878-10-17",
+    "end": "1891-06-06",
+    "current": false,
+    "tenure": "12y 7m 25d",
+    "party": "Conservative; 2nd term",
+    "era": null
+  },
+  {
+    "name": "John J.C. Abbott",
+    "role": "Prime Minister",
+    "start": "1891-06-16",
+    "end": "1892-11-24",
+    "current": false,
+    "tenure": "1y 5m 12d",
+    "party": "Conservative",
+    "era": null
+  },
+  {
+    "name": "John S.D. Thompson",
+    "role": "Prime Minister",
+    "start": "1892-12-05",
+    "end": "1894-12-12",
+    "current": false,
+    "tenure": "2y 7d",
+    "party": "Conservative; died in office",
+    "era": null
+  },
+  {
+    "name": "Mackenzie Bowell",
+    "role": "Prime Minister",
+    "start": "1894-12-21",
+    "end": "1896-04-27",
+    "current": false,
+    "tenure": "1y 4m 8d",
+    "party": "Conservative",
+    "era": null
+  },
+  {
+    "name": "Charles Tupper",
+    "role": "Prime Minister",
+    "start": "1896-05-01",
+    "end": "1896-07-08",
+    "current": false,
+    "tenure": "2m 8d",
+    "party": "Conservative",
+    "era": null
+  },
+  {
+    "name": "Wilfrid Laurier",
+    "role": "Prime Minister",
+    "start": "1896-07-11",
+    "end": "1911-10-06",
+    "current": false,
+    "tenure": "15y 2m 29d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Robert Borden",
+    "role": "Prime Minister",
+    "start": "1911-10-10",
+    "end": "1920-10-01",
+    "current": false,
+    "tenure": "8y 11m 29d",
+    "party": "Conservative/Unionist",
+    "era": null
+  },
+  {
+    "name": "Arthur Meighen",
+    "role": "Prime Minister",
+    "start": "1920-10-01",
+    "end": "1921-12-29",
+    "current": false,
+    "tenure": "1y 2m 29d",
+    "party": "Conservative; 1st term",
+    "era": null
+  },
+  {
+    "name": "William Lyon Mackenzie King",
+    "role": "Prime Minister",
+    "start": "1921-12-29",
+    "end": "1926-06-28",
+    "current": false,
+    "tenure": "4y 6m 2d",
+    "party": "Liberal; 1st term",
+    "era": null
+  },
+  {
+    "name": "Arthur Meighen",
+    "role": "Prime Minister",
+    "start": "1926-06-29",
+    "end": "1926-09-25",
+    "current": false,
+    "tenure": "2m 28d",
+    "party": "Conservative; 2nd term",
+    "era": null
+  },
+  {
+    "name": "William Lyon Mackenzie King",
+    "role": "Prime Minister",
+    "start": "1926-09-25",
+    "end": "1930-08-07",
+    "current": false,
+    "tenure": "3y 10m 17d",
+    "party": "Liberal; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Richard B. Bennett",
+    "role": "Prime Minister",
+    "start": "1930-08-07",
+    "end": "1935-10-23",
+    "current": false,
+    "tenure": "5y 2m 18d",
+    "party": "Conservative",
+    "era": null
+  },
+  {
+    "name": "William Lyon Mackenzie King",
+    "role": "Prime Minister",
+    "start": "1935-10-23",
+    "end": "1948-11-15",
+    "current": false,
+    "tenure": "13y 27d",
+    "party": "Liberal; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Louis St. Laurent",
+    "role": "Prime Minister",
+    "start": "1948-11-15",
+    "end": "1957-06-21",
+    "current": false,
+    "tenure": "8y 7m 10d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "John Diefenbaker",
+    "role": "Prime Minister",
+    "start": "1957-06-21",
+    "end": "1963-04-22",
+    "current": false,
+    "tenure": "5y 10m 6d",
+    "party": "Progressive Conservative",
+    "era": null
+  },
+  {
+    "name": "Lester B. Pearson",
+    "role": "Prime Minister",
+    "start": "1963-04-22",
+    "end": "1968-04-20",
+    "current": false,
+    "tenure": "5y",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Pierre Trudeau",
+    "role": "Prime Minister",
+    "start": "1968-04-20",
+    "end": "1979-06-04",
+    "current": false,
+    "tenure": "11y 1m 17d",
+    "party": "Liberal; 1st term",
+    "era": null
+  },
+  {
+    "name": "Joe Clark",
+    "role": "Prime Minister",
+    "start": "1979-06-04",
+    "end": "1980-03-03",
+    "current": false,
+    "tenure": "9m 3d",
+    "party": "Progressive Conservative",
+    "era": null
+  },
+  {
+    "name": "Pierre Trudeau",
+    "role": "Prime Minister",
+    "start": "1980-03-03",
+    "end": "1984-06-30",
+    "current": false,
+    "tenure": "4y 4m",
+    "party": "Liberal; 2nd term",
+    "era": null
+  },
+  {
+    "name": "John Turner",
+    "role": "Prime Minister",
+    "start": "1984-06-30",
+    "end": "1984-09-17",
+    "current": false,
+    "tenure": "2m 19d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Brian Mulroney",
+    "role": "Prime Minister",
+    "start": "1984-09-17",
+    "end": "1993-06-25",
+    "current": false,
+    "tenure": "8y 9m 13d",
+    "party": "Progressive Conservative",
+    "era": null
+  },
+  {
+    "name": "Kim Campbell",
+    "role": "Prime Minister",
+    "start": "1993-06-25",
+    "end": "1993-11-04",
+    "current": false,
+    "tenure": "4m 12d",
+    "party": "Progressive Conservative",
+    "era": null
+  },
+  {
+    "name": "Jean Chretien",
+    "role": "Prime Minister",
+    "start": "1993-11-04",
+    "end": "2003-12-12",
+    "current": false,
+    "tenure": "10y 1m 10d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Paul Martin",
+    "role": "Prime Minister",
+    "start": "2003-12-12",
+    "end": "2006-02-06",
+    "current": false,
+    "tenure": "2y 1m 27d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Stephen Harper",
+    "role": "Prime Minister",
+    "start": "2006-02-06",
+    "end": "2015-11-04",
+    "current": false,
+    "tenure": "9y 9m 3d",
+    "party": "Conservative",
+    "era": null
+  },
+  {
+    "name": "Justin Trudeau",
+    "role": "Prime Minister",
+    "start": "2015-11-04",
+    "end": "2025-03-09",
+    "current": false,
+    "tenure": "9y 4m 8d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Mark Carney",
+    "role": "Prime Minister",
+    "start": "2025-03-14",
+    "end": null,
+    "current": true,
+    "tenure": "1y 3m 14d",
+    "party": "Liberal",
+    "era": null
+  }
+]

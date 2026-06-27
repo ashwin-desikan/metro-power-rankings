@@ -1,0 +1,472 @@
+[
+  {
+    "name": "George Washington",
+    "role": "President",
+    "start": "1789-04-30",
+    "end": "1797-03-04",
+    "current": false,
+    "tenure": "7y 10m 10d",
+    "party": "No Party",
+    "era": null
+  },
+  {
+    "name": "John Adams",
+    "role": "President",
+    "start": "1797-03-04",
+    "end": "1801-03-04",
+    "current": false,
+    "tenure": "4y",
+    "party": "Federalist",
+    "era": null
+  },
+  {
+    "name": "Thomas Jefferson",
+    "role": "President",
+    "start": "1801-03-04",
+    "end": "1809-03-04",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Democratic-Republican",
+    "era": null
+  },
+  {
+    "name": "James Madison",
+    "role": "President",
+    "start": "1809-03-04",
+    "end": "1817-03-04",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Democratic-Republican",
+    "era": null
+  },
+  {
+    "name": "James Monroe",
+    "role": "President",
+    "start": "1817-03-04",
+    "end": "1825-03-04",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Democratic-Republican",
+    "era": null
+  },
+  {
+    "name": "John Quincy Adams",
+    "role": "President",
+    "start": "1825-03-04",
+    "end": "1829-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "National Republican",
+    "era": null
+  },
+  {
+    "name": "Andrew Jackson",
+    "role": "President",
+    "start": "1829-03-04",
+    "end": "1837-03-04",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Martin Van Buren",
+    "role": "President",
+    "start": "1837-03-04",
+    "end": "1841-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "William Henry Harrison",
+    "role": "President",
+    "start": "1841-03-04",
+    "end": "1841-04-04",
+    "current": false,
+    "tenure": "1m 1d",
+    "party": "Whig; died in office",
+    "era": null
+  },
+  {
+    "name": "John Tyler",
+    "role": "President",
+    "start": "1841-04-04",
+    "end": "1845-03-04",
+    "current": false,
+    "tenure": "3y 11m 5d",
+    "party": "Whig/Independent",
+    "era": null
+  },
+  {
+    "name": "James K. Polk",
+    "role": "President",
+    "start": "1845-03-04",
+    "end": "1849-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Zachary Taylor",
+    "role": "President",
+    "start": "1849-03-04",
+    "end": "1850-07-09",
+    "current": false,
+    "tenure": "1y 4m 7d",
+    "party": "Whig; died in office",
+    "era": null
+  },
+  {
+    "name": "Millard Fillmore",
+    "role": "President",
+    "start": "1850-07-09",
+    "end": "1853-03-04",
+    "current": false,
+    "tenure": "2y 7m 29d",
+    "party": "Whig",
+    "era": null
+  },
+  {
+    "name": "Franklin Pierce",
+    "role": "President",
+    "start": "1853-03-04",
+    "end": "1857-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "James Buchanan",
+    "role": "President",
+    "start": "1857-03-04",
+    "end": "1861-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Abraham Lincoln",
+    "role": "President",
+    "start": "1861-03-04",
+    "end": "1865-04-15",
+    "current": false,
+    "tenure": "4y 1m 13d",
+    "party": "Republican; assassinated",
+    "era": null
+  },
+  {
+    "name": "Andrew Johnson",
+    "role": "President",
+    "start": "1865-04-15",
+    "end": "1869-03-04",
+    "current": false,
+    "tenure": "3y 10m 24d",
+    "party": "Democratic/National Union",
+    "era": null
+  },
+  {
+    "name": "Ulysses S. Grant",
+    "role": "President",
+    "start": "1869-03-04",
+    "end": "1877-03-04",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Rutherford B. Hayes",
+    "role": "President",
+    "start": "1877-03-04",
+    "end": "1881-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "James A. Garfield",
+    "role": "President",
+    "start": "1881-03-04",
+    "end": "1881-09-19",
+    "current": false,
+    "tenure": "6m 19d",
+    "party": "Republican; assassinated",
+    "era": null
+  },
+  {
+    "name": "Chester A. Arthur",
+    "role": "President",
+    "start": "1881-09-19",
+    "end": "1885-03-04",
+    "current": false,
+    "tenure": "3y 5m 17d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Grover Cleveland",
+    "role": "President",
+    "start": "1885-03-04",
+    "end": "1889-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat; 22nd President",
+    "era": null
+  },
+  {
+    "name": "Benjamin Harrison",
+    "role": "President",
+    "start": "1889-03-04",
+    "end": "1893-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Grover Cleveland",
+    "role": "President",
+    "start": "1893-03-04",
+    "end": "1897-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat; 24th President (nonconsecutive)",
+    "era": null
+  },
+  {
+    "name": "William McKinley",
+    "role": "President",
+    "start": "1897-03-04",
+    "end": "1901-09-14",
+    "current": false,
+    "tenure": "4y 6m 14d",
+    "party": "Republican; assassinated",
+    "era": null
+  },
+  {
+    "name": "Theodore Roosevelt",
+    "role": "President",
+    "start": "1901-09-14",
+    "end": "1909-03-04",
+    "current": false,
+    "tenure": "7y 5m 23d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "William Howard Taft",
+    "role": "President",
+    "start": "1909-03-04",
+    "end": "1913-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Woodrow Wilson",
+    "role": "President",
+    "start": "1913-03-04",
+    "end": "1921-03-04",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Warren G. Harding",
+    "role": "President",
+    "start": "1921-03-04",
+    "end": "1923-08-02",
+    "current": false,
+    "tenure": "2y 5m 1d",
+    "party": "Republican; died in office",
+    "era": null
+  },
+  {
+    "name": "Calvin Coolidge",
+    "role": "President",
+    "start": "1923-08-02",
+    "end": "1929-03-04",
+    "current": false,
+    "tenure": "5y 7m 6d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Herbert Hoover",
+    "role": "President",
+    "start": "1929-03-04",
+    "end": "1933-03-04",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Franklin D. Roosevelt",
+    "role": "President",
+    "start": "1933-03-04",
+    "end": "1945-04-12",
+    "current": false,
+    "tenure": "12y 1m 12d",
+    "party": "Democrat; died in 4th term",
+    "era": null
+  },
+  {
+    "name": "Harry S. Truman",
+    "role": "President",
+    "start": "1945-04-12",
+    "end": "1953-01-20",
+    "current": false,
+    "tenure": "7y 9m 15d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Dwight D. Eisenhower",
+    "role": "President",
+    "start": "1953-01-20",
+    "end": "1961-01-20",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "John F. Kennedy",
+    "role": "President",
+    "start": "1961-01-20",
+    "end": "1963-11-22",
+    "current": false,
+    "tenure": "2y 10m 6d",
+    "party": "Democrat; assassinated",
+    "era": null
+  },
+  {
+    "name": "Lyndon B. Johnson",
+    "role": "President",
+    "start": "1963-11-22",
+    "end": "1969-01-20",
+    "current": false,
+    "tenure": "5y 2m 1d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Richard Nixon",
+    "role": "President",
+    "start": "1969-01-20",
+    "end": "1974-08-09",
+    "current": false,
+    "tenure": "5y 6m 22d",
+    "party": "Republican; resigned",
+    "era": null
+  },
+  {
+    "name": "Gerald Ford",
+    "role": "President",
+    "start": "1974-08-09",
+    "end": "1977-01-20",
+    "current": false,
+    "tenure": "2y 5m 15d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Jimmy Carter",
+    "role": "President",
+    "start": "1977-01-20",
+    "end": "1981-01-20",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Ronald Reagan",
+    "role": "President",
+    "start": "1981-01-20",
+    "end": "1989-01-20",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "George H.W. Bush",
+    "role": "President",
+    "start": "1989-01-20",
+    "end": "1993-01-20",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Bill Clinton",
+    "role": "President",
+    "start": "1993-01-20",
+    "end": "2001-01-20",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "George W. Bush",
+    "role": "President",
+    "start": "2001-01-20",
+    "end": "2009-01-20",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Republican",
+    "era": null
+  },
+  {
+    "name": "Barack Obama",
+    "role": "President",
+    "start": "2009-01-20",
+    "end": "2017-01-20",
+    "current": false,
+    "tenure": "8y 2d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Donald Trump",
+    "role": "President",
+    "start": "2017-01-20",
+    "end": "2021-01-20",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Republican; 45th President",
+    "era": null
+  },
+  {
+    "name": "Joe Biden",
+    "role": "President",
+    "start": "2021-01-20",
+    "end": "2025-01-20",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Donald Trump",
+    "role": "President",
+    "start": "2025-01-20",
+    "end": null,
+    "current": true,
+    "tenure": "1y 5m 7d",
+    "party": "Republican; 47th President",
+    "era": null
+  }
+]

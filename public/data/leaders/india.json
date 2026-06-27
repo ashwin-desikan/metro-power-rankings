@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Jawaharlal Nehru",
+    "role": "Prime Minister",
+    "start": "1947-08-15",
+    "end": "1964-05-27",
+    "current": false,
+    "tenure": "16y 9m 20d",
+    "party": "INC; died in office",
+    "era": null
+  },
+  {
+    "name": "Gulzarilal Nanda",
+    "role": "Prime Minister",
+    "start": "1964-05-27",
+    "end": "1964-06-09",
+    "current": false,
+    "tenure": "13d",
+    "party": "INC; 1st acting PM",
+    "era": null
+  },
+  {
+    "name": "Lal Bahadur Shastri",
+    "role": "Prime Minister",
+    "start": "1964-06-09",
+    "end": "1966-01-11",
+    "current": false,
+    "tenure": "1y 7m 6d",
+    "party": "INC; died in office",
+    "era": null
+  },
+  {
+    "name": "Gulzarilal Nanda",
+    "role": "Prime Minister",
+    "start": "1966-01-11",
+    "end": "1966-01-24",
+    "current": false,
+    "tenure": "13d",
+    "party": "INC; 2nd acting PM",
+    "era": null
+  },
+  {
+    "name": "Indira Gandhi",
+    "role": "Prime Minister",
+    "start": "1966-01-24",
+    "end": "1977-03-24",
+    "current": false,
+    "tenure": "11y 2m 2d",
+    "party": "INC; 1st term",
+    "era": null
+  },
+  {
+    "name": "Morarji Desai",
+    "role": "Prime Minister",
+    "start": "1977-03-24",
+    "end": "1979-07-28",
+    "current": false,
+    "tenure": "2y 4m 6d",
+    "party": "Janata Party",
+    "era": null
+  },
+  {
+    "name": "Charan Singh",
+    "role": "Prime Minister",
+    "start": "1979-07-28",
+    "end": "1980-01-14",
+    "current": false,
+    "tenure": "5m 20d",
+    "party": "Janata/Secular",
+    "era": null
+  },
+  {
+    "name": "Indira Gandhi",
+    "role": "Prime Minister",
+    "start": "1980-01-14",
+    "end": "1984-10-31",
+    "current": false,
+    "tenure": "4y 9m 22d",
+    "party": "INC; 2nd term; assassinated",
+    "era": null
+  },
+  {
+    "name": "Rajiv Gandhi",
+    "role": "Prime Minister",
+    "start": "1984-10-31",
+    "end": "1989-12-02",
+    "current": false,
+    "tenure": "5y 1m 3d",
+    "party": "INC",
+    "era": null
+  },
+  {
+    "name": "V.P. Singh",
+    "role": "Prime Minister",
+    "start": "1989-12-02",
+    "end": "1990-11-10",
+    "current": false,
+    "tenure": "11m 13d",
+    "party": "Janata Dal",
+    "era": null
+  },
+  {
+    "name": "Chandra Shekhar",
+    "role": "Prime Minister",
+    "start": "1990-11-10",
+    "end": "1991-06-21",
+    "current": false,
+    "tenure": "7m 13d",
+    "party": "Samajwadi Janata Party",
+    "era": null
+  },
+  {
+    "name": "P.V. Narasimha Rao",
+    "role": "Prime Minister",
+    "start": "1991-06-21",
+    "end": "1996-05-16",
+    "current": false,
+    "tenure": "4y 11m 1d",
+    "party": "INC",
+    "era": null
+  },
+  {
+    "name": "Atal Bihari Vajpayee",
+    "role": "Prime Minister",
+    "start": "1996-05-16",
+    "end": "1996-06-01",
+    "current": false,
+    "tenure": "16d",
+    "party": "BJP; 1st term",
+    "era": null
+  },
+  {
+    "name": "H.D. Deve Gowda",
+    "role": "Prime Minister",
+    "start": "1996-06-01",
+    "end": "1997-04-21",
+    "current": false,
+    "tenure": "10m 24d",
+    "party": "Janata Dal",
+    "era": null
+  },
+  {
+    "name": "Inder Kumar Gujral",
+    "role": "Prime Minister",
+    "start": "1997-04-21",
+    "end": "1998-03-19",
+    "current": false,
+    "tenure": "11m 2d",
+    "party": "Janata Dal",
+    "era": null
+  },
+  {
+    "name": "Atal Bihari Vajpayee",
+    "role": "Prime Minister",
+    "start": "1998-03-19",
+    "end": "2004-05-22",
+    "current": false,
+    "tenure": "6y 2m 6d",
+    "party": "BJP; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Manmohan Singh",
+    "role": "Prime Minister",
+    "start": "2004-05-22",
+    "end": "2014-05-26",
+    "current": false,
+    "tenure": "10y 6d",
+    "party": "INC",
+    "era": null
+  },
+  {
+    "name": "Narendra Modi",
+    "role": "Prime Minister",
+    "start": "2014-05-26",
+    "end": null,
+    "current": true,
+    "tenure": "12y 1m 4d",
+    "party": "BJP",
+    "era": null
+  }
+]

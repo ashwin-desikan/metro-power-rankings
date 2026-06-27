@@ -1,0 +1,852 @@
+[
+  {
+    "name": "Ito Hirobumi",
+    "role": "Prime Minister",
+    "start": "1885-12-22",
+    "end": "1888-12-24",
+    "current": false,
+    "tenure": "3y 3d",
+    "party": "Meiji oligarch; 1st term",
+    "era": null
+  },
+  {
+    "name": "Kuroda Kiyotaka",
+    "role": "Prime Minister",
+    "start": "1888-12-24",
+    "end": "1889-10-24",
+    "current": false,
+    "tenure": "10m 4d",
+    "party": "Meiji oligarch",
+    "era": null
+  },
+  {
+    "name": "Yamagata Aritomo",
+    "role": "Prime Minister",
+    "start": "1889-10-24",
+    "end": "1891-11-05",
+    "current": false,
+    "tenure": "2y 12d",
+    "party": "Meiji oligarch; 1st term",
+    "era": null
+  },
+  {
+    "name": "Matsukata Masayoshi",
+    "role": "Prime Minister",
+    "start": "1891-11-06",
+    "end": "1892-08-08",
+    "current": false,
+    "tenure": "9m 6d",
+    "party": "Meiji oligarch; 1st term",
+    "era": null
+  },
+  {
+    "name": "Ito Hirobumi",
+    "role": "Prime Minister",
+    "start": "1892-08-08",
+    "end": "1896-10-18",
+    "current": false,
+    "tenure": "4y 2m 12d",
+    "party": "Meiji oligarch; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Matsukata Masayoshi",
+    "role": "Prime Minister",
+    "start": "1896-10-18",
+    "end": "1897-12-12",
+    "current": false,
+    "tenure": "1y 1m 25d",
+    "party": "Meiji oligarch; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Ito Hirobumi",
+    "role": "Prime Minister",
+    "start": "1897-12-12",
+    "end": "1898-10-30",
+    "current": false,
+    "tenure": "10m 22d",
+    "party": "Meiji oligarch; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Yamagata Aritomo",
+    "role": "Prime Minister",
+    "start": "1898-11-08",
+    "end": "1900-10-19",
+    "current": false,
+    "tenure": "1y 11m 15d",
+    "party": "Meiji oligarch; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Ito Hirobumi",
+    "role": "Prime Minister",
+    "start": "1900-10-19",
+    "end": "1901-05-10",
+    "current": false,
+    "tenure": "6m 23d",
+    "party": "Meiji oligarch; 4th term",
+    "era": null
+  },
+  {
+    "name": "Katsura Taro",
+    "role": "Prime Minister",
+    "start": "1901-05-02",
+    "end": "1906-01-07",
+    "current": false,
+    "tenure": "4y 8m 11d",
+    "party": "Genro; 1st term",
+    "era": null
+  },
+  {
+    "name": "Saionji Kinmochi",
+    "role": "Prime Minister",
+    "start": "1906-01-07",
+    "end": "1908-07-14",
+    "current": false,
+    "tenure": "2y 6m 9d",
+    "party": "Rikken Seiyukai; 1st term",
+    "era": null
+  },
+  {
+    "name": "Katsura Taro",
+    "role": "Prime Minister",
+    "start": "1908-07-14",
+    "end": "1911-08-30",
+    "current": false,
+    "tenure": "3y 1m 17d",
+    "party": "Genro; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Saionji Kinmochi",
+    "role": "Prime Minister",
+    "start": "1911-08-30",
+    "end": "1912-12-21",
+    "current": false,
+    "tenure": "1y 3m 24d",
+    "party": "Rikken Seiyukai; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Katsura Taro",
+    "role": "Prime Minister",
+    "start": "1912-12-21",
+    "end": "1913-02-20",
+    "current": false,
+    "tenure": "2m 1d",
+    "party": "Genro; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Yamamoto Gonnohyoe",
+    "role": "Prime Minister",
+    "start": "1913-02-20",
+    "end": "1914-03-16",
+    "current": false,
+    "tenure": "1y 24d",
+    "party": "Independent; 1st term",
+    "era": null
+  },
+  {
+    "name": "Okuma Shigenobu",
+    "role": "Prime Minister",
+    "start": "1914-04-16",
+    "end": "1916-10-09",
+    "current": false,
+    "tenure": "2y 5m 27d",
+    "party": "Rikken Doshikai; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Terauchi Masatake",
+    "role": "Prime Minister",
+    "start": "1916-10-09",
+    "end": "1918-09-29",
+    "current": false,
+    "tenure": "1y 11m 25d",
+    "party": "Independent/Military",
+    "era": null
+  },
+  {
+    "name": "Hara Takashi",
+    "role": "Prime Minister",
+    "start": "1918-09-29",
+    "end": "1921-11-04",
+    "current": false,
+    "tenure": "3y 1m 7d",
+    "party": "Rikken Seiyukai; assassinated",
+    "era": null
+  },
+  {
+    "name": "Takahashi Korekiyo",
+    "role": "Prime Minister",
+    "start": "1921-11-13",
+    "end": "1922-06-12",
+    "current": false,
+    "tenure": "7m 1d",
+    "party": "Rikken Seiyukai",
+    "era": null
+  },
+  {
+    "name": "Kato Tomosaburo",
+    "role": "Prime Minister",
+    "start": "1922-06-12",
+    "end": "1923-09-24",
+    "current": false,
+    "tenure": "1y 3m 14d",
+    "party": "Independent; died in office",
+    "era": null
+  },
+  {
+    "name": "Yamamoto Gonnohyoe",
+    "role": "Prime Minister",
+    "start": "1923-09-02",
+    "end": "1924-01-07",
+    "current": false,
+    "tenure": "4m 7d",
+    "party": "Independent; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Kiyoura Keigo",
+    "role": "Prime Minister",
+    "start": "1924-01-07",
+    "end": "1924-06-11",
+    "current": false,
+    "tenure": "5m 6d",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Kato Takaakira",
+    "role": "Prime Minister",
+    "start": "1924-06-11",
+    "end": "1926-01-28",
+    "current": false,
+    "tenure": "1y 7m 21d",
+    "party": "Kenseikai; died in office",
+    "era": null
+  },
+  {
+    "name": "Wakatsuki Reijiro",
+    "role": "Prime Minister",
+    "start": "1926-01-30",
+    "end": "1927-04-20",
+    "current": false,
+    "tenure": "1y 2m 20d",
+    "party": "Rikken Minseito; 1st term",
+    "era": null
+  },
+  {
+    "name": "Tanaka Giichi",
+    "role": "Prime Minister",
+    "start": "1927-04-20",
+    "end": "1929-07-02",
+    "current": false,
+    "tenure": "2y 2m 14d",
+    "party": "Rikken Seiyukai",
+    "era": null
+  },
+  {
+    "name": "Hamaguchi Osachi",
+    "role": "Prime Minister",
+    "start": "1929-07-02",
+    "end": "1931-04-14",
+    "current": false,
+    "tenure": "1y 9m 16d",
+    "party": "Rikken Minseito; shot/died",
+    "era": null
+  },
+  {
+    "name": "Wakatsuki Reijiro",
+    "role": "Prime Minister",
+    "start": "1931-04-14",
+    "end": "1931-12-13",
+    "current": false,
+    "tenure": "8m 3d",
+    "party": "Rikken Minseito; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Inukai Tsuyoshi",
+    "role": "Prime Minister",
+    "start": "1931-12-13",
+    "end": "1932-05-15",
+    "current": false,
+    "tenure": "5m 4d",
+    "party": "Rikken Seiyukai; assassinated",
+    "era": null
+  },
+  {
+    "name": "Saito Makoto",
+    "role": "Prime Minister",
+    "start": "1932-05-26",
+    "end": "1934-07-08",
+    "current": false,
+    "tenure": "2y 1m 13d",
+    "party": "Non-party/Military",
+    "era": null
+  },
+  {
+    "name": "Okada Keisuke",
+    "role": "Prime Minister",
+    "start": "1934-07-08",
+    "end": "1936-03-09",
+    "current": false,
+    "tenure": "1y 8m 5d",
+    "party": "Non-party/Military",
+    "era": null
+  },
+  {
+    "name": "Hirota Koki",
+    "role": "Prime Minister",
+    "start": "1936-03-09",
+    "end": "1937-02-02",
+    "current": false,
+    "tenure": "11m",
+    "party": "Non-party",
+    "era": null
+  },
+  {
+    "name": "Hayashi Senjuro",
+    "role": "Prime Minister",
+    "start": "1937-02-02",
+    "end": "1937-06-04",
+    "current": false,
+    "tenure": "4m 2d",
+    "party": "Military",
+    "era": null
+  },
+  {
+    "name": "Konoe Fumimaro",
+    "role": "Prime Minister",
+    "start": "1937-06-04",
+    "end": "1939-01-05",
+    "current": false,
+    "tenure": "1y 7m 5d",
+    "party": "IRAA; 1st term",
+    "era": null
+  },
+  {
+    "name": "Hiranuma Kiichiro",
+    "role": "Prime Minister",
+    "start": "1939-01-05",
+    "end": "1939-08-30",
+    "current": false,
+    "tenure": "7m 27d",
+    "party": "Non-party",
+    "era": null
+  },
+  {
+    "name": "Abe Nobuyuki",
+    "role": "Prime Minister",
+    "start": "1939-08-30",
+    "end": "1940-01-16",
+    "current": false,
+    "tenure": "4m 19d",
+    "party": "Military",
+    "era": null
+  },
+  {
+    "name": "Yonai Mitsumasa",
+    "role": "Prime Minister",
+    "start": "1940-01-16",
+    "end": "1940-07-22",
+    "current": false,
+    "tenure": "6m 8d",
+    "party": "Military/Navy",
+    "era": null
+  },
+  {
+    "name": "Konoe Fumimaro",
+    "role": "Prime Minister",
+    "start": "1940-07-22",
+    "end": "1941-07-18",
+    "current": false,
+    "tenure": "12m 1d",
+    "party": "IRAA; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Konoe Fumimaro",
+    "role": "Prime Minister",
+    "start": "1941-07-18",
+    "end": "1941-10-18",
+    "current": false,
+    "tenure": "3m 2d",
+    "party": "IRAA; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Tojo Hideki",
+    "role": "Prime Minister",
+    "start": "1941-10-18",
+    "end": "1944-07-22",
+    "current": false,
+    "tenure": "2y 9m 8d",
+    "party": "Military/IRAA",
+    "era": null
+  },
+  {
+    "name": "Koiso Kuniaki",
+    "role": "Prime Minister",
+    "start": "1944-07-22",
+    "end": "1945-04-05",
+    "current": false,
+    "tenure": "8m 17d",
+    "party": "Military",
+    "era": null
+  },
+  {
+    "name": "Suzuki Kantaro",
+    "role": "Prime Minister",
+    "start": "1945-04-07",
+    "end": "1945-08-17",
+    "current": false,
+    "tenure": "4m 12d",
+    "party": "Military/Navy",
+    "era": null
+  },
+  {
+    "name": "Higashikuni Naruhiko",
+    "role": "Prime Minister",
+    "start": "1945-08-17",
+    "end": "1945-10-09",
+    "current": false,
+    "tenure": "1m 23d",
+    "party": "Imperial Family",
+    "era": null
+  },
+  {
+    "name": "Shidehara Kijuro",
+    "role": "Prime Minister",
+    "start": "1945-10-09",
+    "end": "1946-05-22",
+    "current": false,
+    "tenure": "7m 15d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Yoshida Shigeru",
+    "role": "Prime Minister",
+    "start": "1946-05-22",
+    "end": "1947-05-24",
+    "current": false,
+    "tenure": "1y 2d",
+    "party": "Liberal; 1st term",
+    "era": null
+  },
+  {
+    "name": "Katayama Tetsu",
+    "role": "Prime Minister",
+    "start": "1947-05-24",
+    "end": "1948-03-10",
+    "current": false,
+    "tenure": "9m 21d",
+    "party": "Japan Socialist Party",
+    "era": null
+  },
+  {
+    "name": "Ashida Hitoshi",
+    "role": "Prime Minister",
+    "start": "1948-03-10",
+    "end": "1948-10-15",
+    "current": false,
+    "tenure": "7m 9d",
+    "party": "Democratic Party",
+    "era": null
+  },
+  {
+    "name": "Yoshida Shigeru",
+    "role": "Prime Minister",
+    "start": "1948-10-15",
+    "end": "1949-12-16",
+    "current": false,
+    "tenure": "1y 2m 2d",
+    "party": "Liberal; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Yoshida Shigeru",
+    "role": "Prime Minister",
+    "start": "1949-12-16",
+    "end": "1952-10-28",
+    "current": false,
+    "tenure": "2y 10m 17d",
+    "party": "Liberal; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Yoshida Shigeru",
+    "role": "Prime Minister",
+    "start": "1952-10-28",
+    "end": "1953-10-21",
+    "current": false,
+    "tenure": "11m 28d",
+    "party": "Liberal; 4th term",
+    "era": null
+  },
+  {
+    "name": "Yoshida Shigeru",
+    "role": "Prime Minister",
+    "start": "1953-10-21",
+    "end": "1954-12-10",
+    "current": false,
+    "tenure": "1y 1m 20d",
+    "party": "Liberal; 5th term",
+    "era": null
+  },
+  {
+    "name": "Hatoyama Ichiro",
+    "role": "Prime Minister",
+    "start": "1954-12-10",
+    "end": "1955-03-19",
+    "current": false,
+    "tenure": "3m 9d",
+    "party": "LDP; 1st term",
+    "era": null
+  },
+  {
+    "name": "Hatoyama Ichiro",
+    "role": "Prime Minister",
+    "start": "1955-03-19",
+    "end": "1955-11-22",
+    "current": false,
+    "tenure": "8m 8d",
+    "party": "LDP; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Hatoyama Ichiro",
+    "role": "Prime Minister",
+    "start": "1955-11-22",
+    "end": "1956-12-23",
+    "current": false,
+    "tenure": "1y 1m 2d",
+    "party": "LDP; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Ishibashi Tanzan",
+    "role": "Prime Minister",
+    "start": "1956-12-23",
+    "end": "1957-02-25",
+    "current": false,
+    "tenure": "2m 4d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Kishi Nobusuke",
+    "role": "Prime Minister",
+    "start": "1957-02-25",
+    "end": "1960-07-19",
+    "current": false,
+    "tenure": "3y 4m 25d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Ikeda Hayato",
+    "role": "Prime Minister",
+    "start": "1960-07-19",
+    "end": "1964-11-09",
+    "current": false,
+    "tenure": "4y 3m 24d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Sato Eisaku",
+    "role": "Prime Minister",
+    "start": "1964-11-09",
+    "end": "1972-07-07",
+    "current": false,
+    "tenure": "7y 8m 2d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Tanaka Kakuei",
+    "role": "Prime Minister",
+    "start": "1972-07-05",
+    "end": "1974-12-09",
+    "current": false,
+    "tenure": "2y 5m 7d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Miki Takeo",
+    "role": "Prime Minister",
+    "start": "1974-12-09",
+    "end": "1976-12-24",
+    "current": false,
+    "tenure": "2y 16d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Fukuda Takeo",
+    "role": "Prime Minister",
+    "start": "1976-12-24",
+    "end": "1978-12-07",
+    "current": false,
+    "tenure": "1y 11m 18d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Ohira Masayoshi",
+    "role": "Prime Minister",
+    "start": "1978-12-07",
+    "end": "1980-06-12",
+    "current": false,
+    "tenure": "1y 6m 8d",
+    "party": "LDP; died in office",
+    "era": null
+  },
+  {
+    "name": "Suzuki Zenko",
+    "role": "Prime Minister",
+    "start": "1980-07-17",
+    "end": "1982-11-27",
+    "current": false,
+    "tenure": "2y 4m 13d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Nakasone Yasuhiro",
+    "role": "Prime Minister",
+    "start": "1982-11-27",
+    "end": "1987-11-06",
+    "current": false,
+    "tenure": "4y 11m 15d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Takeshita Noboru",
+    "role": "Prime Minister",
+    "start": "1987-11-06",
+    "end": "1989-06-03",
+    "current": false,
+    "tenure": "1y 7m",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Uno Sosuke",
+    "role": "Prime Minister",
+    "start": "1989-06-03",
+    "end": "1989-08-10",
+    "current": false,
+    "tenure": "2m 8d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Kaifu Toshiki",
+    "role": "Prime Minister",
+    "start": "1989-08-10",
+    "end": "1991-11-05",
+    "current": false,
+    "tenure": "2y 2m 27d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Miyazawa Kiichi",
+    "role": "Prime Minister",
+    "start": "1991-11-05",
+    "end": "1993-08-09",
+    "current": false,
+    "tenure": "1y 9m 8d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Hosokawa Morihiro",
+    "role": "Prime Minister",
+    "start": "1993-08-09",
+    "end": "1994-04-28",
+    "current": false,
+    "tenure": "8m 22d",
+    "party": "Japan New Party",
+    "era": null
+  },
+  {
+    "name": "Hata Tsutomu",
+    "role": "Prime Minister",
+    "start": "1994-04-28",
+    "end": "1994-06-30",
+    "current": false,
+    "tenure": "2m 3d",
+    "party": "Shinseito",
+    "era": null
+  },
+  {
+    "name": "Murayama Tomiichi",
+    "role": "Prime Minister",
+    "start": "1994-06-30",
+    "end": "1996-01-11",
+    "current": false,
+    "tenure": "1y 6m 15d",
+    "party": "Japan Socialist Party",
+    "era": null
+  },
+  {
+    "name": "Hashimoto Ryutaro",
+    "role": "Prime Minister",
+    "start": "1996-01-11",
+    "end": "1998-07-30",
+    "current": false,
+    "tenure": "2y 6m 21d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Obuchi Keizo",
+    "role": "Prime Minister",
+    "start": "1998-07-30",
+    "end": "2000-04-05",
+    "current": false,
+    "tenure": "1y 8m 10d",
+    "party": "LDP; died in office",
+    "era": null
+  },
+  {
+    "name": "Mori Yoshiro",
+    "role": "Prime Minister",
+    "start": "2000-04-05",
+    "end": "2001-04-26",
+    "current": false,
+    "tenure": "1y 21d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Koizumi Junichiro",
+    "role": "Prime Minister",
+    "start": "2001-04-26",
+    "end": "2006-09-26",
+    "current": false,
+    "tenure": "5y 5m 4d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Abe Shinzo",
+    "role": "Prime Minister",
+    "start": "2006-09-26",
+    "end": "2007-09-26",
+    "current": false,
+    "tenure": "1y",
+    "party": "LDP; 1st term",
+    "era": null
+  },
+  {
+    "name": "Fukuda Yasuo",
+    "role": "Prime Minister",
+    "start": "2007-09-26",
+    "end": "2008-09-24",
+    "current": false,
+    "tenure": "12m 4d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Aso Taro",
+    "role": "Prime Minister",
+    "start": "2008-09-24",
+    "end": "2009-09-16",
+    "current": false,
+    "tenure": "11m 27d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Hatoyama Yukio",
+    "role": "Prime Minister",
+    "start": "2009-09-16",
+    "end": "2010-06-02",
+    "current": false,
+    "tenure": "8m 19d",
+    "party": "DPJ",
+    "era": null
+  },
+  {
+    "name": "Kan Naoto",
+    "role": "Prime Minister",
+    "start": "2010-06-02",
+    "end": "2011-09-02",
+    "current": false,
+    "tenure": "1y 3m 2d",
+    "party": "DPJ",
+    "era": null
+  },
+  {
+    "name": "Noda Yoshihiko",
+    "role": "Prime Minister",
+    "start": "2011-09-02",
+    "end": "2012-12-26",
+    "current": false,
+    "tenure": "1y 3m 26d",
+    "party": "DPJ",
+    "era": null
+  },
+  {
+    "name": "Abe Shinzo",
+    "role": "Prime Minister",
+    "start": "2012-12-26",
+    "end": "2020-09-16",
+    "current": false,
+    "tenure": "7y 8m 26d",
+    "party": "LDP; 2nd-4th terms",
+    "era": null
+  },
+  {
+    "name": "Suga Yoshihide",
+    "role": "Prime Minister",
+    "start": "2020-09-16",
+    "end": "2021-10-04",
+    "current": false,
+    "tenure": "1y 18d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Kishida Fumio",
+    "role": "Prime Minister",
+    "start": "2021-10-04",
+    "end": "2024-10-01",
+    "current": false,
+    "tenure": "2y 12m 3d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Ishiba Shigeru",
+    "role": "Prime Minister",
+    "start": "2024-10-01",
+    "end": "2024-11-11",
+    "current": false,
+    "tenure": "1m 11d",
+    "party": "LDP",
+    "era": null
+  },
+  {
+    "name": "Sanae Takaichi",
+    "role": "Prime Minister",
+    "start": "2024-11-11",
+    "end": null,
+    "current": true,
+    "tenure": "1y 7m 17d",
+    "party": "LDP",
+    "era": null
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Raúl Alfonsín",
+    "role": "President",
+    "start": "1983-12-10",
+    "end": "1989-07-08",
+    "current": false,
+    "tenure": "5y 7m 27d",
+    "party": "UCR; 1st post-junta",
+    "era": null
+  },
+  {
+    "name": "Carlos Menem",
+    "role": "President",
+    "start": "1989-07-08",
+    "end": "1999-12-10",
+    "current": false,
+    "tenure": "10y 5m 27d",
+    "party": "PJ/Peronist; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Fernando de la Rúa",
+    "role": "President",
+    "start": "1999-12-10",
+    "end": "2001-12-21",
+    "current": false,
+    "tenure": "2y 22d",
+    "party": "UCR; resigned amid crisis",
+    "era": null
+  },
+  {
+    "name": "Adolfo Rodríguez Saá",
+    "role": "President",
+    "start": "2001-12-23",
+    "end": "2001-12-30",
+    "current": false,
+    "tenure": "7d",
+    "party": "PJ; resigned",
+    "era": null
+  },
+  {
+    "name": "Eduardo Duhalde",
+    "role": "President",
+    "start": "2002-01-02",
+    "end": "2003-05-25",
+    "current": false,
+    "tenure": "1y 4m 28d",
+    "party": "PJ; caretaker",
+    "era": null
+  },
+  {
+    "name": "Néstor Kirchner",
+    "role": "President",
+    "start": "2003-05-25",
+    "end": "2007-12-10",
+    "current": false,
+    "tenure": "4y 6m 10d",
+    "party": "FPV/Kirchnerist",
+    "era": null
+  },
+  {
+    "name": "Cristina Fernández de Kirchner",
+    "role": "President",
+    "start": "2007-12-10",
+    "end": "2015-12-10",
+    "current": false,
+    "tenure": "8y 12d",
+    "party": "FPV; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Mauricio Macri",
+    "role": "President",
+    "start": "2015-12-10",
+    "end": "2019-12-10",
+    "current": false,
+    "tenure": "4y 21d",
+    "party": "PRO/Cambiemos",
+    "era": null
+  },
+  {
+    "name": "Alberto Fernández",
+    "role": "President",
+    "start": "2019-12-10",
+    "end": "2023-12-10",
+    "current": false,
+    "tenure": "4y 21d",
+    "party": "FdT",
+    "era": null
+  },
+  {
+    "name": "Javier Milei",
+    "role": "President",
+    "start": "2023-12-10",
+    "end": null,
+    "current": true,
+    "tenure": "2y 6m",
+    "party": "La Libertad Avanza",
+    "era": null
+  }
+]

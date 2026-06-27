@@ -1,0 +1,552 @@
+[
+  {
+    "name": "Henry Sewell",
+    "role": "Prime Minister",
+    "start": "1856-03-07",
+    "end": "1856-05-20",
+    "current": false,
+    "tenure": "2m 14d",
+    "party": "No party; 1st PM",
+    "era": null
+  },
+  {
+    "name": "William Fox",
+    "role": "Prime Minister",
+    "start": "1856-05-20",
+    "end": "1856-06-02",
+    "current": false,
+    "tenure": "13d",
+    "party": "No party; 1st term",
+    "era": null
+  },
+  {
+    "name": "Edward Stafford",
+    "role": "Prime Minister",
+    "start": "1856-06-02",
+    "end": "1861-10-12",
+    "current": false,
+    "tenure": "5y 4m 13d",
+    "party": "No party; 1st term",
+    "era": null
+  },
+  {
+    "name": "William Fox",
+    "role": "Prime Minister",
+    "start": "1861-10-12",
+    "end": "1862-08-30",
+    "current": false,
+    "tenure": "10m 22d",
+    "party": "No party; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Alfred Domett",
+    "role": "Prime Minister",
+    "start": "1862-08-30",
+    "end": "1863-10-08",
+    "current": false,
+    "tenure": "1y 1m 9d",
+    "party": "No party",
+    "era": null
+  },
+  {
+    "name": "Frederick Whitaker",
+    "role": "Prime Minister",
+    "start": "1863-10-08",
+    "end": "1864-10-26",
+    "current": false,
+    "tenure": "1y 19d",
+    "party": "No party; 1st term",
+    "era": null
+  },
+  {
+    "name": "Frederick Weld",
+    "role": "Prime Minister",
+    "start": "1864-10-26",
+    "end": "1866-00-16",
+    "current": false,
+    "tenure": null,
+    "party": "No party",
+    "era": null
+  },
+  {
+    "name": "Edward Stafford",
+    "role": "Prime Minister",
+    "start": "1866-09-16",
+    "end": "1869-00-28",
+    "current": false,
+    "tenure": null,
+    "party": "No party; 2nd term",
+    "era": null
+  },
+  {
+    "name": "William Fox",
+    "role": "Prime Minister",
+    "start": "1869-09-28",
+    "end": "1872-00-28",
+    "current": false,
+    "tenure": null,
+    "party": "No party; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Edward Stafford",
+    "role": "Prime Minister",
+    "start": "1872-09-28",
+    "end": "1872-09-28",
+    "current": false,
+    "tenure": "0d",
+    "party": "No party; 3rd term",
+    "era": null
+  },
+  {
+    "name": "George Waterhouse",
+    "role": "Prime Minister",
+    "start": "1872-09-28",
+    "end": "1873-09-28",
+    "current": false,
+    "tenure": "1y",
+    "party": "No party",
+    "era": null
+  },
+  {
+    "name": "William Fox",
+    "role": "Prime Minister",
+    "start": "1873-09-28",
+    "end": "1873-10-28",
+    "current": false,
+    "tenure": "1m",
+    "party": "No party; 4th term",
+    "era": null
+  },
+  {
+    "name": "Julius Vogel",
+    "role": "Prime Minister",
+    "start": "1873-10-28",
+    "end": "1875-00-15",
+    "current": false,
+    "tenure": null,
+    "party": "No party; 1st term",
+    "era": null
+  },
+  {
+    "name": "Daniel Pollen",
+    "role": "Prime Minister",
+    "start": "1875-07-15",
+    "end": "1876-01-15",
+    "current": false,
+    "tenure": "6m 4d",
+    "party": "No party",
+    "era": null
+  },
+  {
+    "name": "Julius Vogel",
+    "role": "Prime Minister",
+    "start": "1876-02-15",
+    "end": "1876-09-15",
+    "current": false,
+    "tenure": "7m 3d",
+    "party": "No party; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Harry Atkinson",
+    "role": "Prime Minister",
+    "start": "1876-09-15",
+    "end": "1877-05-13",
+    "current": false,
+    "tenure": "8m",
+    "party": "No party; 1st term",
+    "era": null
+  },
+  {
+    "name": "George Grey",
+    "role": "Prime Minister",
+    "start": "1877-05-13",
+    "end": "1879-00-08",
+    "current": false,
+    "tenure": null,
+    "party": "No party",
+    "era": null
+  },
+  {
+    "name": "John Hall",
+    "role": "Prime Minister",
+    "start": "1879-00-08",
+    "end": "1882-00-28",
+    "current": false,
+    "tenure": null,
+    "party": "No party",
+    "era": null
+  },
+  {
+    "name": "Frederick Whitaker",
+    "role": "Prime Minister",
+    "start": "1882-04-28",
+    "end": "1883-00-28",
+    "current": false,
+    "tenure": null,
+    "party": "No party; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Harry Atkinson",
+    "role": "Prime Minister",
+    "start": "1883-03-28",
+    "end": "1884-01-08",
+    "current": false,
+    "tenure": "9m 16d",
+    "party": "No party; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Robert Stout",
+    "role": "Prime Minister",
+    "start": "1884-03-28",
+    "end": "1884-08-16",
+    "current": false,
+    "tenure": "4m 21d",
+    "party": "No party; 1st term",
+    "era": null
+  },
+  {
+    "name": "Harry Atkinson",
+    "role": "Prime Minister",
+    "start": "1884-08-16",
+    "end": "1884-09-28",
+    "current": false,
+    "tenure": "1m 13d",
+    "party": "No party; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Robert Stout",
+    "role": "Prime Minister",
+    "start": "1884-09-28",
+    "end": "1887-00-28",
+    "current": false,
+    "tenure": null,
+    "party": "No party; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Harry Atkinson",
+    "role": "Prime Minister",
+    "start": "1887-01-28",
+    "end": "1891-01-24",
+    "current": false,
+    "tenure": "3y 12m 2d",
+    "party": "No party; 4th term",
+    "era": null
+  },
+  {
+    "name": "John Ballance",
+    "role": "Prime Minister",
+    "start": "1891-01-24",
+    "end": "1893-04-27",
+    "current": false,
+    "tenure": "2y 3m 4d",
+    "party": "Liberal; died in office",
+    "era": null
+  },
+  {
+    "name": "Richard Seddon",
+    "role": "Prime Minister",
+    "start": "1893-05-01",
+    "end": "1906-06-10",
+    "current": false,
+    "tenure": "13y 1m 12d",
+    "party": "Liberal; died in office",
+    "era": null
+  },
+  {
+    "name": "William Hall-Jones",
+    "role": "Prime Minister",
+    "start": "1906-06-10",
+    "end": "1906-06-11",
+    "current": false,
+    "tenure": "1d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "Joseph Ward",
+    "role": "Prime Minister",
+    "start": "1906-06-11",
+    "end": "1912-06-28",
+    "current": false,
+    "tenure": "6y 19d",
+    "party": "Liberal; 1st term",
+    "era": null
+  },
+  {
+    "name": "Thomas Mackenzie",
+    "role": "Prime Minister",
+    "start": "1912-06-28",
+    "end": "1912-07-10",
+    "current": false,
+    "tenure": "12d",
+    "party": "Liberal",
+    "era": null
+  },
+  {
+    "name": "William Massey",
+    "role": "Prime Minister",
+    "start": "1912-07-10",
+    "end": "1925-05-10",
+    "current": false,
+    "tenure": "12y 10m 7d",
+    "party": "Reform; died in office",
+    "era": null
+  },
+  {
+    "name": "Francis Bell",
+    "role": "Prime Minister",
+    "start": "1925-05-10",
+    "end": "1925-06-30",
+    "current": false,
+    "tenure": "1m 21d",
+    "party": "Reform",
+    "era": null
+  },
+  {
+    "name": "Gordon Coates",
+    "role": "Prime Minister",
+    "start": "1925-06-30",
+    "end": "1928-08-10",
+    "current": false,
+    "tenure": "3y 1m 12d",
+    "party": "Reform",
+    "era": null
+  },
+  {
+    "name": "Joseph Ward",
+    "role": "Prime Minister",
+    "start": "1928-08-10",
+    "end": "1930-05-28",
+    "current": false,
+    "tenure": "1y 9m 21d",
+    "party": "Liberal/United; 2nd term",
+    "era": null
+  },
+  {
+    "name": "George Forbes",
+    "role": "Prime Minister",
+    "start": "1930-05-28",
+    "end": "1935-12-06",
+    "current": false,
+    "tenure": "5y 6m 13d",
+    "party": "United",
+    "era": null
+  },
+  {
+    "name": "Michael Joseph Savage",
+    "role": "Prime Minister",
+    "start": "1935-12-06",
+    "end": "1940-03-27",
+    "current": false,
+    "tenure": "4y 3m 23d",
+    "party": "Labour; died in office",
+    "era": null
+  },
+  {
+    "name": "Peter Fraser",
+    "role": "Prime Minister",
+    "start": "1940-03-27",
+    "end": "1949-12-13",
+    "current": false,
+    "tenure": "9y 8m 23d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Sidney Holland",
+    "role": "Prime Minister",
+    "start": "1949-12-13",
+    "end": "1957-09-20",
+    "current": false,
+    "tenure": "7y 9m 13d",
+    "party": "National",
+    "era": null
+  },
+  {
+    "name": "Keith Holyoake",
+    "role": "Prime Minister",
+    "start": "1957-09-20",
+    "end": "1957-12-12",
+    "current": false,
+    "tenure": "2m 23d",
+    "party": "National; 1st term",
+    "era": null
+  },
+  {
+    "name": "Walter Nash",
+    "role": "Prime Minister",
+    "start": "1957-12-12",
+    "end": "1960-09-12",
+    "current": false,
+    "tenure": "2y 9m 5d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Keith Holyoake",
+    "role": "Prime Minister",
+    "start": "1960-09-12",
+    "end": "1972-02-07",
+    "current": false,
+    "tenure": "11y 5m",
+    "party": "National; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Jack Marshall",
+    "role": "Prime Minister",
+    "start": "1972-02-07",
+    "end": "1972-12-08",
+    "current": false,
+    "tenure": "10m 5d",
+    "party": "National",
+    "era": null
+  },
+  {
+    "name": "Norman Kirk",
+    "role": "Prime Minister",
+    "start": "1972-12-08",
+    "end": "1974-08-31",
+    "current": false,
+    "tenure": "1y 8m 26d",
+    "party": "Labour; died in office",
+    "era": null
+  },
+  {
+    "name": "Bill Rowling",
+    "role": "Prime Minister",
+    "start": "1974-08-31",
+    "end": "1975-12-12",
+    "current": false,
+    "tenure": "1y 3m 13d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Robert Muldoon",
+    "role": "Prime Minister",
+    "start": "1975-12-12",
+    "end": "1984-07-26",
+    "current": false,
+    "tenure": "8y 7m 19d",
+    "party": "National",
+    "era": null
+  },
+  {
+    "name": "David Lange",
+    "role": "Prime Minister",
+    "start": "1984-07-26",
+    "end": "1989-08-08",
+    "current": false,
+    "tenure": "5y 14d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Geoffrey Palmer",
+    "role": "Prime Minister",
+    "start": "1989-08-08",
+    "end": "1990-09-04",
+    "current": false,
+    "tenure": "1y 27d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Mike Moore",
+    "role": "Prime Minister",
+    "start": "1990-09-04",
+    "end": "1990-12-02",
+    "current": false,
+    "tenure": "2m 29d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Jim Bolger",
+    "role": "Prime Minister",
+    "start": "1990-12-02",
+    "end": "1997-12-08",
+    "current": false,
+    "tenure": "7y 8d",
+    "party": "National",
+    "era": null
+  },
+  {
+    "name": "Jenny Shipley",
+    "role": "Prime Minister",
+    "start": "1997-12-08",
+    "end": "1999-12-10",
+    "current": false,
+    "tenure": "2y 2d",
+    "party": "National",
+    "era": null
+  },
+  {
+    "name": "Helen Clark",
+    "role": "Prime Minister",
+    "start": "1999-12-10",
+    "end": "2008-11-19",
+    "current": false,
+    "tenure": "8y 11m 17d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "John Key",
+    "role": "Prime Minister",
+    "start": "2008-11-19",
+    "end": "2016-12-12",
+    "current": false,
+    "tenure": "8y 25d",
+    "party": "National",
+    "era": null
+  },
+  {
+    "name": "Bill English",
+    "role": "Prime Minister",
+    "start": "2016-12-12",
+    "end": "2017-10-26",
+    "current": false,
+    "tenure": "10m 18d",
+    "party": "National",
+    "era": null
+  },
+  {
+    "name": "Jacinda Ardern",
+    "role": "Prime Minister",
+    "start": "2017-10-26",
+    "end": "2023-01-25",
+    "current": false,
+    "tenure": "5y 3m 2d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Chris Hipkins",
+    "role": "Prime Minister",
+    "start": "2023-01-25",
+    "end": "2023-10-27",
+    "current": false,
+    "tenure": "9m 5d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Christopher Luxon",
+    "role": "Prime Minister",
+    "start": "2023-10-27",
+    "end": null,
+    "current": true,
+    "tenure": "2y 8m 3d",
+    "party": "National",
+    "era": null
+  }
+]

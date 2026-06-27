@@ -1,0 +1,252 @@
+[
+  {
+    "name": "W. T. Cosgrave",
+    "role": "President of Executive Council",
+    "start": "1922-08-22",
+    "end": "1932-03-09",
+    "current": false,
+    "tenure": "9y 6m 7d",
+    "party": "Cumann na nGaedheal; 1st head of govt",
+    "era": null
+  },
+  {
+    "name": "Éamon de Valera",
+    "role": "Taoiseach",
+    "start": "1932-03-09",
+    "end": "1948-02-18",
+    "current": false,
+    "tenure": "15y 11m 4d",
+    "party": "Fianna Fáil; multiple terms",
+    "era": null
+  },
+  {
+    "name": "John A. Costello",
+    "role": "Taoiseach",
+    "start": "1948-02-18",
+    "end": "1951-06-13",
+    "current": false,
+    "tenure": "3y 3m 11d",
+    "party": "Fine Gael; 1st term",
+    "era": null
+  },
+  {
+    "name": "Éamon de Valera",
+    "role": "Taoiseach",
+    "start": "1951-06-13",
+    "end": "1954-06-02",
+    "current": false,
+    "tenure": "2y 11m 5d",
+    "party": "Fianna Fáil; 4th term",
+    "era": null
+  },
+  {
+    "name": "John A. Costello",
+    "role": "Taoiseach",
+    "start": "1954-06-02",
+    "end": "1957-03-20",
+    "current": false,
+    "tenure": "2y 9m 2d",
+    "party": "Fine Gael; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Éamon de Valera",
+    "role": "Taoiseach",
+    "start": "1957-03-20",
+    "end": "1959-06-23",
+    "current": false,
+    "tenure": "2y 3m 15d",
+    "party": "Fianna Fáil; 5th term",
+    "era": null
+  },
+  {
+    "name": "Seán Lemass",
+    "role": "Taoiseach",
+    "start": "1959-06-23",
+    "end": "1966-11-10",
+    "current": false,
+    "tenure": "7y 4m 27d",
+    "party": "Fianna Fáil",
+    "era": null
+  },
+  {
+    "name": "Jack Lynch",
+    "role": "Taoiseach",
+    "start": "1966-11-10",
+    "end": "1973-03-14",
+    "current": false,
+    "tenure": "6y 4m 6d",
+    "party": "Fianna Fáil; 1st term",
+    "era": null
+  },
+  {
+    "name": "Liam Cosgrave",
+    "role": "Taoiseach",
+    "start": "1973-03-14",
+    "end": "1977-07-05",
+    "current": false,
+    "tenure": "4y 3m 14d",
+    "party": "Fine Gael",
+    "era": null
+  },
+  {
+    "name": "Jack Lynch",
+    "role": "Taoiseach",
+    "start": "1977-07-05",
+    "end": "1979-12-11",
+    "current": false,
+    "tenure": "2y 5m 19d",
+    "party": "Fianna Fáil; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Charles Haughey",
+    "role": "Taoiseach",
+    "start": "1979-12-11",
+    "end": "1981-06-30",
+    "current": false,
+    "tenure": "1y 6m 27d",
+    "party": "Fianna Fáil; 1st term",
+    "era": null
+  },
+  {
+    "name": "Garret FitzGerald",
+    "role": "Taoiseach",
+    "start": "1981-06-30",
+    "end": "1982-03-09",
+    "current": false,
+    "tenure": "8m 12d",
+    "party": "Fine Gael; 1st term",
+    "era": null
+  },
+  {
+    "name": "Charles Haughey",
+    "role": "Taoiseach",
+    "start": "1982-03-09",
+    "end": "1982-12-14",
+    "current": false,
+    "tenure": "9m 10d",
+    "party": "Fianna Fáil; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Garret FitzGerald",
+    "role": "Taoiseach",
+    "start": "1982-12-14",
+    "end": "1987-03-10",
+    "current": false,
+    "tenure": "4y 2m 17d",
+    "party": "Fine Gael; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Charles Haughey",
+    "role": "Taoiseach",
+    "start": "1987-03-10",
+    "end": "1992-02-11",
+    "current": false,
+    "tenure": "4y 11m 29d",
+    "party": "Fianna Fáil; 3rd term",
+    "era": null
+  },
+  {
+    "name": "Albert Reynolds",
+    "role": "Taoiseach",
+    "start": "1992-02-11",
+    "end": "1994-12-15",
+    "current": false,
+    "tenure": "2y 10m 18d",
+    "party": "Fianna Fáil",
+    "era": null
+  },
+  {
+    "name": "John Bruton",
+    "role": "Taoiseach",
+    "start": "1994-12-15",
+    "end": "1997-06-26",
+    "current": false,
+    "tenure": "2y 6m 24d",
+    "party": "Fine Gael",
+    "era": null
+  },
+  {
+    "name": "Bertie Ahern",
+    "role": "Taoiseach",
+    "start": "1997-06-26",
+    "end": "2008-05-07",
+    "current": false,
+    "tenure": "10y 10m 8d",
+    "party": "Fianna Fáil; 3 terms",
+    "era": null
+  },
+  {
+    "name": "Brian Cowen",
+    "role": "Taoiseach",
+    "start": "2008-05-07",
+    "end": "2011-03-09",
+    "current": false,
+    "tenure": "2y 10m 16d",
+    "party": "Fianna Fáil",
+    "era": null
+  },
+  {
+    "name": "Enda Kenny",
+    "role": "Taoiseach",
+    "start": "2011-03-09",
+    "end": "2017-06-14",
+    "current": false,
+    "tenure": "6y 3m 9d",
+    "party": "Fine Gael",
+    "era": null
+  },
+  {
+    "name": "Leo Varadkar",
+    "role": "Taoiseach",
+    "start": "2017-06-14",
+    "end": "2020-06-27",
+    "current": false,
+    "tenure": "3y 29d",
+    "party": "Fine Gael; 1st term",
+    "era": null
+  },
+  {
+    "name": "Micheál Martin",
+    "role": "Taoiseach",
+    "start": "2020-06-27",
+    "end": "2022-12-17",
+    "current": false,
+    "tenure": "2y 5m 3d",
+    "party": "Fianna Fáil; 1st term (rotation)",
+    "era": null
+  },
+  {
+    "name": "Leo Varadkar",
+    "role": "Taoiseach",
+    "start": "2022-12-17",
+    "end": "2024-04-09",
+    "current": false,
+    "tenure": "1y 3m 29d",
+    "party": "Fine Gael; 2nd term (rotation); resigned",
+    "era": null
+  },
+  {
+    "name": "Simon Harris",
+    "role": "Taoiseach",
+    "start": "2024-04-09",
+    "end": "2025-01-23",
+    "current": false,
+    "tenure": "9m 19d",
+    "party": "Fine Gael; youngest Taoiseach",
+    "era": null
+  },
+  {
+    "name": "Micheál Martin",
+    "role": "Taoiseach",
+    "start": "2025-01-23",
+    "end": null,
+    "current": true,
+    "tenure": "1y 5m 10d",
+    "party": "Fianna Fáil; 2nd term",
+    "era": null
+  }
+]

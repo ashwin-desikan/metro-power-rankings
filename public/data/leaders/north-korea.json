@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Kim Il-sung",
+    "role": "Supreme Leader",
+    "start": "1948-09-09",
+    "end": "1994-07-08",
+    "current": false,
+    "tenure": "45y 10m 28d",
+    "party": "KWP; founder DPRK; died in office",
+    "era": null
+  },
+  {
+    "name": "Kim Jong-il",
+    "role": "Supreme Leader",
+    "start": "1994-07-08",
+    "end": "2011-12-17",
+    "current": false,
+    "tenure": "17y 5m 11d",
+    "party": "KWP; died in office",
+    "era": null
+  },
+  {
+    "name": "Kim Jong-un",
+    "role": "Supreme Leader",
+    "start": "2011-12-29",
+    "end": null,
+    "current": true,
+    "tenure": "14y 6m 14d",
+    "party": "KWP General Secretary",
+    "era": null
+  }
+]

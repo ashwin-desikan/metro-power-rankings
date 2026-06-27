@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Syngman Rhee",
+    "role": "President",
+    "start": "1948-07-20",
+    "end": "1960-04-26",
+    "current": false,
+    "tenure": "11y 9m 8d",
+    "party": "Liberal; resigned amid protests",
+    "era": null
+  },
+  {
+    "name": "Yun Po-sun",
+    "role": "President",
+    "start": "1960-08-13",
+    "end": "1962-12-13",
+    "current": false,
+    "tenure": "2y 4m 12d",
+    "party": "Democratic; figurehead under military",
+    "era": null
+  },
+  {
+    "name": "Park Chung-hee",
+    "role": "President",
+    "start": "1963-12-13",
+    "end": "1979-10-26",
+    "current": false,
+    "tenure": "15y 10m 6d",
+    "party": "Military/DRP; assassinated",
+    "era": null
+  },
+  {
+    "name": "Choi Kyu-hah",
+    "role": "President",
+    "start": "1979-10-26",
+    "end": "1980-08-16",
+    "current": false,
+    "tenure": "9m 25d",
+    "party": "Caretaker",
+    "era": null
+  },
+  {
+    "name": "Chun Doo-hwan",
+    "role": "President",
+    "start": "1980-08-27",
+    "end": "1988-02-25",
+    "current": false,
+    "tenure": "7y 6m 8d",
+    "party": "Military; 5th Republic",
+    "era": null
+  },
+  {
+    "name": "Roh Tae-woo",
+    "role": "President",
+    "start": "1988-02-25",
+    "end": "1993-02-25",
+    "current": false,
+    "tenure": "5y 27d",
+    "party": "DJP; first direct election",
+    "era": null
+  },
+  {
+    "name": "Kim Young-sam",
+    "role": "President",
+    "start": "1993-02-25",
+    "end": "1998-02-25",
+    "current": false,
+    "tenure": "5y 26d",
+    "party": "NKP; 1st civilian in 32 yrs",
+    "era": null
+  },
+  {
+    "name": "Kim Dae-jung",
+    "role": "President",
+    "start": "1998-02-25",
+    "end": "2003-02-25",
+    "current": false,
+    "tenure": "5y 26d",
+    "party": "MDP; Nobel Peace Prize 2000",
+    "era": null
+  },
+  {
+    "name": "Roh Moo-hyun",
+    "role": "President",
+    "start": "2003-02-25",
+    "end": "2008-02-25",
+    "current": false,
+    "tenure": "5y 26d",
+    "party": "Uri Party",
+    "era": null
+  },
+  {
+    "name": "Lee Myung-bak",
+    "role": "President",
+    "start": "2008-02-25",
+    "end": "2013-02-25",
+    "current": false,
+    "tenure": "5y 27d",
+    "party": "GNP/Saenuri",
+    "era": null
+  },
+  {
+    "name": "Park Geun-hye",
+    "role": "President",
+    "start": "2013-02-25",
+    "end": "2017-03-10",
+    "current": false,
+    "tenure": "4y 4d",
+    "party": "Saenuri; impeached/removed",
+    "era": null
+  },
+  {
+    "name": "Moon Jae-in",
+    "role": "President",
+    "start": "2017-05-10",
+    "end": "2022-05-10",
+    "current": false,
+    "tenure": "5y 26d",
+    "party": "DP",
+    "era": null
+  },
+  {
+    "name": "Yoon Suk-yeol",
+    "role": "President",
+    "start": "2022-05-10",
+    "end": "2025-04-04",
+    "current": false,
+    "tenure": "2y 11m 10d",
+    "party": "PPP; impeached (martial law)",
+    "era": null
+  },
+  {
+    "name": "Lee Jae-myung",
+    "role": "President",
+    "start": "2025-06-04",
+    "end": null,
+    "current": true,
+    "tenure": "1y 28d",
+    "party": "DP",
+    "era": null
+  }
+]

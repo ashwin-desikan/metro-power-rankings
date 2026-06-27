@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Liaquat Ali Khan",
+    "role": "Prime Minister",
+    "start": "1947-08-15",
+    "end": "1951-10-16",
+    "current": false,
+    "tenure": "4y 2m 23d",
+    "party": "Muslim League; assassinated",
+    "era": null
+  },
+  {
+    "name": "Khawaja Nazimuddin",
+    "role": "Prime Minister",
+    "start": "1951-10-17",
+    "end": "1953-04-17",
+    "current": false,
+    "tenure": "1y 6m 8d",
+    "party": "Muslim League; dismissed",
+    "era": null
+  },
+  {
+    "name": "Mohammad Ali Bogra",
+    "role": "Prime Minister",
+    "start": "1953-04-17",
+    "end": "1955-08-12",
+    "current": false,
+    "tenure": "2y 3m 7d",
+    "party": "Muslim League",
+    "era": null
+  },
+  {
+    "name": "Chaudhry Mohammad Ali",
+    "role": "Prime Minister",
+    "start": "1955-08-12",
+    "end": "1956-09-12",
+    "current": false,
+    "tenure": "1y 1m 7d",
+    "party": "Muslim League; resigned",
+    "era": null
+  },
+  {
+    "name": "Huseyn Suhrawardy",
+    "role": "Prime Minister",
+    "start": "1956-09-12",
+    "end": "1957-10-17",
+    "current": false,
+    "tenure": "1y 1m 10d",
+    "party": "Awami League; resigned",
+    "era": null
+  },
+  {
+    "name": "Feroze Khan Noon",
+    "role": "Prime Minister",
+    "start": "1957-12-16",
+    "end": "1958-10-07",
+    "current": false,
+    "tenure": "9m 25d",
+    "party": "Republican; dissolved by martial law",
+    "era": null
+  },
+  {
+    "name": "Zulfikar Ali Bhutto",
+    "role": "Prime Minister",
+    "start": "1973-08-14",
+    "end": "1977-07-05",
+    "current": false,
+    "tenure": "3y 10m 11d",
+    "party": "PPP; overthrown by Zia",
+    "era": null
+  },
+  {
+    "name": "Muhammad Khan Junejo",
+    "role": "Prime Minister",
+    "start": "1985-03-24",
+    "end": "1988-05-29",
+    "current": false,
+    "tenure": "3y 2m 22d",
+    "party": "PML; dismissed by Zia",
+    "era": null
+  },
+  {
+    "name": "Benazir Bhutto",
+    "role": "Prime Minister",
+    "start": "1988-12-02",
+    "end": "1990-08-06",
+    "current": false,
+    "tenure": "1y 8m 12d",
+    "party": "PPP; 1st term; 1st female PM",
+    "era": null
+  },
+  {
+    "name": "Nawaz Sharif",
+    "role": "Prime Minister",
+    "start": "1990-11-06",
+    "end": "1993-07-18",
+    "current": false,
+    "tenure": "2y 8m 25d",
+    "party": "PML-N; 1st term",
+    "era": null
+  },
+  {
+    "name": "Benazir Bhutto",
+    "role": "Prime Minister",
+    "start": "1993-10-19",
+    "end": "1996-11-05",
+    "current": false,
+    "tenure": "3y 3d",
+    "party": "PPP; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Nawaz Sharif",
+    "role": "Prime Minister",
+    "start": "1997-02-17",
+    "end": "1999-10-12",
+    "current": false,
+    "tenure": "2y 7m 7d",
+    "party": "PML-N; 2nd term; ousted by Musharraf",
+    "era": null
+  },
+  {
+    "name": "Mir Zafarullah Jamali",
+    "role": "Prime Minister",
+    "start": "2002-11-23",
+    "end": "2004-06-26",
+    "current": false,
+    "tenure": "1y 7m 11d",
+    "party": "PML-Q",
+    "era": null
+  },
+  {
+    "name": "Shaukat Aziz",
+    "role": "Prime Minister",
+    "start": "2004-08-28",
+    "end": "2007-11-15",
+    "current": false,
+    "tenure": "3y 2m 4d",
+    "party": "PML-Q",
+    "era": null
+  },
+  {
+    "name": "Yusuf Raza Gilani",
+    "role": "Prime Minister",
+    "start": "2008-03-25",
+    "end": "2012-06-19",
+    "current": false,
+    "tenure": "4y 2m 17d",
+    "party": "PPP; disqualified by SC",
+    "era": null
+  },
+  {
+    "name": "Raja Pervez Ashraf",
+    "role": "Prime Minister",
+    "start": "2012-06-22",
+    "end": "2013-03-24",
+    "current": false,
+    "tenure": "9m 5d",
+    "party": "PPP",
+    "era": null
+  },
+  {
+    "name": "Nawaz Sharif",
+    "role": "Prime Minister",
+    "start": "2013-06-05",
+    "end": "2017-07-28",
+    "current": false,
+    "tenure": "4y 1m 14d",
+    "party": "PML-N; 3rd term; disqualified by SC",
+    "era": null
+  },
+  {
+    "name": "Shahid Khaqan Abbasi",
+    "role": "Prime Minister",
+    "start": "2017-08-01",
+    "end": "2018-05-31",
+    "current": false,
+    "tenure": "10m 3d",
+    "party": "PML-N",
+    "era": null
+  },
+  {
+    "name": "Imran Khan",
+    "role": "Prime Minister",
+    "start": "2018-08-18",
+    "end": "2022-04-10",
+    "current": false,
+    "tenure": "3y 7m 11d",
+    "party": "PTI; removed by no-confidence",
+    "era": null
+  },
+  {
+    "name": "Shehbaz Sharif",
+    "role": "Prime Minister",
+    "start": "2022-04-11",
+    "end": "2023-08-14",
+    "current": false,
+    "tenure": "1y 4m 10d",
+    "party": "PML-N; 1st term",
+    "era": null
+  },
+  {
+    "name": "Shehbaz Sharif",
+    "role": "Prime Minister",
+    "start": "2024-03-04",
+    "end": null,
+    "current": true,
+    "tenure": "2y 3m 5d",
+    "party": "PML-N; 2nd term",
+    "era": null
+  }
+]

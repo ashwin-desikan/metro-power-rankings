@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Abubakar Tafawa Balewa",
+    "role": "Prime Minister",
+    "start": "1960-10-01",
+    "end": "1966-01-15",
+    "current": false,
+    "tenure": "5y 3m 12d",
+    "party": "NPC; 1st PM; killed in coup",
+    "era": null
+  },
+  {
+    "name": "Johnson Aguiyi-Ironsi",
+    "role": "Head of State",
+    "start": "1966-01-16",
+    "end": "1966-08-01",
+    "current": false,
+    "tenure": "6m 17d",
+    "party": "Military; killed in counter-coup",
+    "era": null
+  },
+  {
+    "name": "Yakubu Gowon",
+    "role": "Head of State",
+    "start": "1966-08-01",
+    "end": "1975-07-29",
+    "current": false,
+    "tenure": "8y 12m 14d",
+    "party": "Military; oversaw Civil War; deposed",
+    "era": null
+  },
+  {
+    "name": "Murtala Muhammed",
+    "role": "Head of State",
+    "start": "1975-07-29",
+    "end": "1976-02-13",
+    "current": false,
+    "tenure": "6m 19d",
+    "party": "Military; assassinated",
+    "era": null
+  },
+  {
+    "name": "Olusegun Obasanjo",
+    "role": "Head of State",
+    "start": "1976-02-13",
+    "end": "1979-10-01",
+    "current": false,
+    "tenure": "3y 7m 6d",
+    "party": "Military; handed to civilians",
+    "era": null
+  },
+  {
+    "name": "Shehu Shagari",
+    "role": "President",
+    "start": "1979-10-01",
+    "end": "1983-12-31",
+    "current": false,
+    "tenure": "4y 3m 22d",
+    "party": "NPN; 1st elected executive president",
+    "era": null
+  },
+  {
+    "name": "Muhammadu Buhari",
+    "role": "Head of State",
+    "start": "1983-12-31",
+    "end": "1985-08-27",
+    "current": false,
+    "tenure": "1y 8m 5d",
+    "party": "Military; overthrown by Babangida",
+    "era": null
+  },
+  {
+    "name": "Ibrahim Babangida",
+    "role": "Head of State",
+    "start": "1985-08-27",
+    "end": "1993-08-26",
+    "current": false,
+    "tenure": "8y 11d",
+    "party": "Military; annulled 1993 election",
+    "era": null
+  },
+  {
+    "name": "Sani Abacha",
+    "role": "Head of State",
+    "start": "1993-11-17",
+    "end": "1998-06-08",
+    "current": false,
+    "tenure": "4y 6m 14d",
+    "party": "Military; died in office",
+    "era": null
+  },
+  {
+    "name": "Abdulsalami Abubakar",
+    "role": "Head of State",
+    "start": "1998-06-09",
+    "end": "1999-05-29",
+    "current": false,
+    "tenure": "11m 24d",
+    "party": "Military; transitioned to democracy",
+    "era": null
+  },
+  {
+    "name": "Olusegun Obasanjo",
+    "role": "President",
+    "start": "1999-05-29",
+    "end": "2007-05-29",
+    "current": false,
+    "tenure": "8y 12d",
+    "party": "PDP; 2 elected terms",
+    "era": null
+  },
+  {
+    "name": "Umaru Musa Yar'Adua",
+    "role": "President",
+    "start": "2007-05-29",
+    "end": "2010-05-05",
+    "current": false,
+    "tenure": "2y 11m 22d",
+    "party": "PDP; died in office",
+    "era": null
+  },
+  {
+    "name": "Goodluck Jonathan",
+    "role": "President",
+    "start": "2010-05-06",
+    "end": "2015-05-29",
+    "current": false,
+    "tenure": "5y 19d",
+    "party": "PDP; succeeded Yar'Adua; won 2011",
+    "era": null
+  },
+  {
+    "name": "Muhammadu Buhari",
+    "role": "President",
+    "start": "2015-05-29",
+    "end": "2023-05-29",
+    "current": false,
+    "tenure": "8y 12d",
+    "party": "APC; 2 elected terms",
+    "era": null
+  },
+  {
+    "name": "Bola Tinubu",
+    "role": "President",
+    "start": "2023-05-29",
+    "end": null,
+    "current": true,
+    "tenure": "3y 1m 15d",
+    "party": "APC",
+    "era": null
+  }
+]

@@ -181,6 +181,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/expandable-map" title="Expandable Map" hint="Full-corpus interactive map; resizable canvas, persistent filters and viewport" />
         <DropdownItem href="/compare" title="Compare" hint="Side-by-side any 2 to 4 metros" />
         <DropdownItem href="/countries" title="Countries" hint="Population, metros, and composite score by country" />
+        <DropdownItem href="/orgs" title="Alliances & Orgs" hint="International organisation memberships by country" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/badges" title="Badges" hint="Categorical lenses over the dataset" />
         <DropdownItem href="/matchups/london-vs-new-york" title="Matchups" hint="Head-to-head metro pages" />

@@ -43,6 +43,7 @@ const ITEMS: Item[] = [
   { href: '/expandable-map', label: 'Expandable Map', hint: 'Full-corpus interactive map; resizable, persistent filters and viewport', group: 'Geography' },
   { href: '/compare', label: 'Compare', hint: 'Side-by-side any 2 to 4 metros', group: 'Geography' },
   { href: '/countries', label: 'Countries', hint: 'Population, metros, and composite score by country', group: 'Geography' },
+  { href: '/orgs', label: 'Alliances & Orgs', hint: 'International organisation memberships by country', group: 'Geography' },
   { href: '/badges', label: 'Badges', hint: 'Categorical lenses over the dataset', group: 'Geography' },
   { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Geography' },
   { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Geography' },

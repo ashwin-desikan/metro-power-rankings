@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Catherine II (the Great)",
+    "role": "Empress/Emperor",
+    "start": "1762-07-09",
+    "end": "1796-11-17",
+    "current": false,
+    "tenure": "34y 4m 20d",
+    "party": "House of Holstein-Gottorp-Romanov",
+    "era": "Imperial Era"
+  },
+  {
+    "name": "Paul I",
+    "role": "Emperor",
+    "start": "1796-11-17",
+    "end": "1801-03-23",
+    "current": false,
+    "tenure": "4y 4m 6d",
+    "party": "House of Holstein-Gottorp-Romanov",
+    "era": "Imperial Era"
+  },
+  {
+    "name": "Alexander I",
+    "role": "Emperor",
+    "start": "1801-03-23",
+    "end": "1825-12-01",
+    "current": false,
+    "tenure": "24y 8m 19d",
+    "party": "House of Holstein-Gottorp-Romanov",
+    "era": "Imperial Era"
+  },
+  {
+    "name": "Nicholas I",
+    "role": "Emperor",
+    "start": "1825-12-14",
+    "end": "1855-03-02",
+    "current": false,
+    "tenure": "29y 2m 25d",
+    "party": "House of Holstein-Gottorp-Romanov",
+    "era": "Imperial Era"
+  },
+  {
+    "name": "Alexander II",
+    "role": "Emperor",
+    "start": "1855-03-02",
+    "end": "1881-03-13",
+    "current": false,
+    "tenure": "26y 18d",
+    "party": "House of Holstein-Gottorp-Romanov; assassinated",
+    "era": "Imperial Era"
+  },
+  {
+    "name": "Alexander III",
+    "role": "Emperor",
+    "start": "1881-03-13",
+    "end": "1894-11-01",
+    "current": false,
+    "tenure": "13y 7m 26d",
+    "party": "House of Holstein-Gottorp-Romanov",
+    "era": "Imperial Era"
+  },
+  {
+    "name": "Nicholas II",
+    "role": "Emperor",
+    "start": "1894-11-01",
+    "end": "1917-03-15",
+    "current": false,
+    "tenure": "22y 4m 19d",
+    "party": "House of Holstein-Gottorp-Romanov; abdicated",
+    "era": "Imperial Era"
+  },
+  {
+    "name": "Vladimir Lenin",
+    "role": "Head of Government/Party",
+    "start": "1917-03-07",
+    "end": "1924-01-21",
+    "current": false,
+    "tenure": "6y 10m 21d",
+    "party": "Bolshevik/Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Joseph Stalin",
+    "role": "General Secretary",
+    "start": "1922-04-03",
+    "end": "1953-03-05",
+    "current": false,
+    "tenure": "30y 11m 14d",
+    "party": "Communist; died in office",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Nikita Khrushchev",
+    "role": "First Secretary",
+    "start": "1953-09-14",
+    "end": "1964-10-14",
+    "current": false,
+    "tenure": "11y 1m 3d",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Leonid Brezhnev",
+    "role": "General Secretary",
+    "start": "1964-10-14",
+    "end": "1982-11-10",
+    "current": false,
+    "tenure": "18y 1m 1d",
+    "party": "Communist; died in office",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Yuri Andropov",
+    "role": "General Secretary",
+    "start": "1982-11-12",
+    "end": "1984-02-09",
+    "current": false,
+    "tenure": "1y 2m 29d",
+    "party": "Communist; died in office",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Konstantin Chernenko",
+    "role": "General Secretary",
+    "start": "1984-02-13",
+    "end": "1985-03-10",
+    "current": false,
+    "tenure": "1y 26d",
+    "party": "Communist; died in office",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Mikhail Gorbachev",
+    "role": "General Secretary",
+    "start": "1985-03-11",
+    "end": "1991-12-25",
+    "current": false,
+    "tenure": "6y 9m 20d",
+    "party": "Communist/Reformist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Boris Yeltsin",
+    "role": "President",
+    "start": "1991-06-10",
+    "end": "1999-12-31",
+    "current": false,
+    "tenure": "8y 6m 26d",
+    "party": "Independent",
+    "era": "Modern Russia"
+  },
+  {
+    "name": "Vladimir Putin",
+    "role": "President",
+    "start": "2000-05-07",
+    "end": "2004-05-07",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "United Russia; 1st term",
+    "era": "Modern Russia"
+  },
+  {
+    "name": "Vladimir Putin",
+    "role": "President",
+    "start": "2004-05-07",
+    "end": "2008-05-07",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "United Russia; 2nd term",
+    "era": "Modern Russia"
+  },
+  {
+    "name": "Dmitry Medvedev",
+    "role": "President",
+    "start": "2008-05-07",
+    "end": "2012-05-07",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": "United Russia",
+    "era": "Modern Russia"
+  },
+  {
+    "name": "Vladimir Putin",
+    "role": "President",
+    "start": "2012-05-07",
+    "end": "2018-05-07",
+    "current": false,
+    "tenure": "6y 1d",
+    "party": "United Russia; 3rd term",
+    "era": "Modern Russia"
+  },
+  {
+    "name": "Vladimir Putin",
+    "role": "President",
+    "start": "2018-05-07",
+    "end": "2024-05-07",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "United Russia; 4th term",
+    "era": "Modern Russia"
+  },
+  {
+    "name": "Vladimir Putin",
+    "role": "President",
+    "start": "2024-05-07",
+    "end": null,
+    "current": true,
+    "tenure": "2y 1m 20d",
+    "party": "United Russia; 5th term",
+    "era": "Modern Russia"
+  }
+]

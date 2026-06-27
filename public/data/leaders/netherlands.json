@@ -1,0 +1,222 @@
+[
+  {
+    "name": "Wilhelmina",
+    "role": "Monarch",
+    "start": "1898-11-10",
+    "end": "1948-09-06",
+    "current": false,
+    "tenure": "49y 10m 17d",
+    "party": "House of Orange-Nassau; abdicated",
+    "era": null
+  },
+  {
+    "name": "Wim Schermerhorn",
+    "role": "Prime Minister",
+    "start": "1945-06-25",
+    "end": "1946-07-03",
+    "current": false,
+    "tenure": "1y 13d",
+    "party": "Labour",
+    "era": null
+  },
+  {
+    "name": "Louis Beel",
+    "role": "Prime Minister",
+    "start": "1946-07-03",
+    "end": "1948-08-07",
+    "current": false,
+    "tenure": "2y 1m 16d",
+    "party": "KVP; 1st term",
+    "era": null
+  },
+  {
+    "name": "Willem Drees",
+    "role": "Prime Minister",
+    "start": "1948-08-07",
+    "end": "1958-12-22",
+    "current": false,
+    "tenure": "10y 4m 9d",
+    "party": "PvdA; longest post-war PM",
+    "era": null
+  },
+  {
+    "name": "Juliana",
+    "role": "Monarch",
+    "start": "1948-09-06",
+    "end": "1980-04-30",
+    "current": false,
+    "tenure": "31y 8m 9d",
+    "party": "House of Orange-Nassau; abdicated",
+    "era": null
+  },
+  {
+    "name": "Louis Beel",
+    "role": "Prime Minister",
+    "start": "1958-12-22",
+    "end": "1959-05-19",
+    "current": false,
+    "tenure": "4m 28d",
+    "party": "KVP; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Jan de Quay",
+    "role": "Prime Minister",
+    "start": "1959-05-19",
+    "end": "1963-07-24",
+    "current": false,
+    "tenure": "4y 2m 27d",
+    "party": "KVP",
+    "era": null
+  },
+  {
+    "name": "Victor Marijnen",
+    "role": "Prime Minister",
+    "start": "1963-07-24",
+    "end": "1965-04-14",
+    "current": false,
+    "tenure": "1y 8m",
+    "party": "KVP",
+    "era": null
+  },
+  {
+    "name": "Jo Cals",
+    "role": "Prime Minister",
+    "start": "1965-04-14",
+    "end": "1966-11-22",
+    "current": false,
+    "tenure": "1y 7m 17d",
+    "party": "KVP",
+    "era": null
+  },
+  {
+    "name": "Jelle Zijlstra",
+    "role": "Prime Minister",
+    "start": "1966-11-22",
+    "end": "1967-04-05",
+    "current": false,
+    "tenure": "4m 14d",
+    "party": "ARP",
+    "era": null
+  },
+  {
+    "name": "Piet de Jong",
+    "role": "Prime Minister",
+    "start": "1967-04-05",
+    "end": "1971-07-06",
+    "current": false,
+    "tenure": "4y 3m 23d",
+    "party": "KVP",
+    "era": null
+  },
+  {
+    "name": "Barend Biesheuvel",
+    "role": "Prime Minister",
+    "start": "1971-07-06",
+    "end": "1973-05-11",
+    "current": false,
+    "tenure": "1y 10m 15d",
+    "party": "ARP",
+    "era": null
+  },
+  {
+    "name": "Joop den Uyl",
+    "role": "Prime Minister",
+    "start": "1973-05-11",
+    "end": "1977-12-19",
+    "current": false,
+    "tenure": "4y 7m 3d",
+    "party": "PvdA",
+    "era": null
+  },
+  {
+    "name": "Dries van Agt",
+    "role": "Prime Minister",
+    "start": "1977-12-19",
+    "end": "1982-11-04",
+    "current": false,
+    "tenure": "4y 10m 11d",
+    "party": "CDA",
+    "era": null
+  },
+  {
+    "name": "Beatrix",
+    "role": "Monarch",
+    "start": "1980-04-30",
+    "end": "2013-04-30",
+    "current": false,
+    "tenure": "33y 23d",
+    "party": "House of Orange-Nassau; abdicated",
+    "era": null
+  },
+  {
+    "name": "Ruud Lubbers",
+    "role": "Prime Minister",
+    "start": "1982-11-04",
+    "end": "1994-08-22",
+    "current": false,
+    "tenure": "11y 9m 19d",
+    "party": "CDA; 3 terms",
+    "era": null
+  },
+  {
+    "name": "Wim Kok",
+    "role": "Prime Minister",
+    "start": "1994-08-22",
+    "end": "2002-07-22",
+    "current": false,
+    "tenure": "7y 11m 11d",
+    "party": "PvdA",
+    "era": null
+  },
+  {
+    "name": "Jan Peter Balkenende",
+    "role": "Prime Minister",
+    "start": "2002-07-22",
+    "end": "2010-10-14",
+    "current": false,
+    "tenure": "8y 2m 6d",
+    "party": "CDA; 4 terms",
+    "era": null
+  },
+  {
+    "name": "Mark Rutte",
+    "role": "Prime Minister",
+    "start": "2010-10-14",
+    "end": "2024-07-02",
+    "current": false,
+    "tenure": "13y 8m",
+    "party": "VVD; 4 terms",
+    "era": null
+  },
+  {
+    "name": "Willem-Alexander",
+    "role": "Monarch",
+    "start": "2013-04-30",
+    "end": null,
+    "current": true,
+    "tenure": "13y 2m 6d",
+    "party": "House of Orange-Nassau",
+    "era": null
+  },
+  {
+    "name": "Dick Schoof",
+    "role": "Prime Minister",
+    "start": "2024-07-02",
+    "end": "2026-02-23",
+    "current": false,
+    "tenure": "1y 7m 1d",
+    "party": "Independent/PVV coalition",
+    "era": null
+  },
+  {
+    "name": "Rob Jetten",
+    "role": "Prime Minister",
+    "start": "2026-02-23",
+    "end": null,
+    "current": true,
+    "tenure": "4m 4d",
+    "party": "D66",
+    "era": null
+  }
+]

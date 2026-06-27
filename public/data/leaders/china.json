@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Sun Yat-sen",
+    "role": "President (ROC)",
+    "start": "1912-01-01",
+    "end": "1912-03-10",
+    "current": false,
+    "tenure": "2m 9d",
+    "party": "Kuomintang; Provisional",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Yuan Shikai",
+    "role": "President (ROC)",
+    "start": "1912-03-10",
+    "end": "1916-06-06",
+    "current": false,
+    "tenure": "4y 2m 29d",
+    "party": "Independent; died in office",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Li Yuanhong",
+    "role": "President (ROC)",
+    "start": "1916-06-06",
+    "end": "1917-07-12",
+    "current": false,
+    "tenure": "1y 1m 6d",
+    "party": "Independent; 1st term",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Feng Guozhang",
+    "role": "President (ROC)",
+    "start": "1917-07-12",
+    "end": "1918-10-10",
+    "current": false,
+    "tenure": "1y 3m",
+    "party": "Independent",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Xu Shichang",
+    "role": "President (ROC)",
+    "start": "1918-10-10",
+    "end": "1922-06-02",
+    "current": false,
+    "tenure": "3y 7m 26d",
+    "party": "Independent",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Li Yuanhong",
+    "role": "President (ROC)",
+    "start": "1922-06-02",
+    "end": "1923-06-13",
+    "current": false,
+    "tenure": "1y 11d",
+    "party": "Independent; 2nd term",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Cao Kun",
+    "role": "President (ROC)",
+    "start": "1923-10-10",
+    "end": "1924-11-02",
+    "current": false,
+    "tenure": "1y 24d",
+    "party": "Independent",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Chiang Kai-shek",
+    "role": "President (ROC)",
+    "start": "1928-02-10",
+    "end": "1931-01-15",
+    "current": false,
+    "tenure": "2y 11m 10d",
+    "party": "Kuomintang; 1st term",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Lin Sen",
+    "role": "President (ROC)",
+    "start": "1931-12-20",
+    "end": "1943-08-01",
+    "current": false,
+    "tenure": "11y 7m 17d",
+    "party": "Kuomintang",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Chiang Kai-shek",
+    "role": "President (ROC)",
+    "start": "1943-09-23",
+    "end": "1949-01-21",
+    "current": false,
+    "tenure": "5y 4m 2d",
+    "party": "Kuomintang; 2nd term",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Li Zongren",
+    "role": "President (ROC)",
+    "start": "1949-01-21",
+    "end": "1950-03-01",
+    "current": false,
+    "tenure": "1y 1m 9d",
+    "party": "Kuomintang; Acting",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Mao Zedong",
+    "role": "Paramount Leader (PRC)",
+    "start": "1949-10-01",
+    "end": "1976-09-09",
+    "current": false,
+    "tenure": "26y 11m 20d",
+    "party": "Communist Party; died in office",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Chiang Kai-shek",
+    "role": "President (ROC/Taiwan)",
+    "start": "1950-03-01",
+    "end": "1975-04-05",
+    "current": false,
+    "tenure": "25y 1m 11d",
+    "party": "Kuomintang; died in office",
+    "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Hua Guofeng",
+    "role": "Paramount Leader (PRC)",
+    "start": "1976-09-07",
+    "end": "1978-12-27",
+    "current": false,
+    "tenure": "2y 3m 21d",
+    "party": "Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Deng Xiaoping",
+    "role": "Paramount Leader (PRC)",
+    "start": "1978-12-28",
+    "end": "1989-11-19",
+    "current": false,
+    "tenure": "10y 10m 29d",
+    "party": "Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Jiang Zemin",
+    "role": "President (PRC)",
+    "start": "1993-03-27",
+    "end": "2003-03-15",
+    "current": false,
+    "tenure": "9y 11m 25d",
+    "party": "Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Hu Jintao",
+    "role": "President (PRC)",
+    "start": "2003-03-15",
+    "end": "2013-03-14",
+    "current": false,
+    "tenure": "10y 2d",
+    "party": "Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Xi Jinping",
+    "role": "President (PRC)",
+    "start": "2013-03-14",
+    "end": null,
+    "current": true,
+    "tenure": "13y 3m 17d",
+    "party": "Communist Party",
+    "era": "People's Republic of China (PRC)"
+  }
+]

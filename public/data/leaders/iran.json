@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Ruhollah Khomeini",
+    "role": "Supreme Leader",
+    "start": "1979-02-11",
+    "end": "1989-06-03",
+    "current": false,
+    "tenure": "10y 3m 15d",
+    "party": "IRP; founder of Islamic Republic; died",
+    "era": null
+  },
+  {
+    "name": "Abolhassan Banisadr",
+    "role": "President",
+    "start": "1980-02-04",
+    "end": "1981-06-20",
+    "current": false,
+    "tenure": "1y 4m 22d",
+    "party": "Bani-Sadr Movement; impeached",
+    "era": null
+  },
+  {
+    "name": "Mohammad-Ali Rajai",
+    "role": "President",
+    "start": "1981-08-02",
+    "end": "1981-08-30",
+    "current": false,
+    "tenure": "28d",
+    "party": "IRP; assassinated",
+    "era": null
+  },
+  {
+    "name": "Ali Khamenei",
+    "role": "President",
+    "start": "1981-10-13",
+    "end": "1989-08-03",
+    "current": false,
+    "tenure": "7y 9m 1d",
+    "party": "IRP; 2 terms; became Supreme Leader",
+    "era": null
+  },
+  {
+    "name": "Ali Khamenei",
+    "role": "Supreme Leader",
+    "start": "1989-06-04",
+    "end": null,
+    "current": true,
+    "tenure": "37y 1m 7d",
+    "party": "IRP; 35+ years in office",
+    "era": null
+  },
+  {
+    "name": "Akbar Hashemi Rafsanjani",
+    "role": "President",
+    "start": "1989-08-17",
+    "end": "1997-08-03",
+    "current": false,
+    "tenure": "7y 11m 28d",
+    "party": "Pragmatists; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Mohammad Khatami",
+    "role": "President",
+    "start": "1997-08-03",
+    "end": "2005-08-03",
+    "current": false,
+    "tenure": "8y 12d",
+    "party": "Reformists; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Mahmoud Ahmadinejad",
+    "role": "President",
+    "start": "2005-08-03",
+    "end": "2013-08-03",
+    "current": false,
+    "tenure": "8y 12d",
+    "party": "Alliance of Builders; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Hassan Rouhani",
+    "role": "President",
+    "start": "2013-08-03",
+    "end": "2021-08-03",
+    "current": false,
+    "tenure": "8y 12d",
+    "party": "Moderation/Development; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Ebrahim Raisi",
+    "role": "President",
+    "start": "2021-08-03",
+    "end": "2024-05-19",
+    "current": false,
+    "tenure": "2y 9m",
+    "party": "Principalists; died in helicopter crash",
+    "era": null
+  },
+  {
+    "name": "Masoud Pezeshkian",
+    "role": "President",
+    "start": "2024-07-28",
+    "end": null,
+    "current": true,
+    "tenure": "1y 11m 9d",
+    "party": "Reformists",
+    "era": null
+  }
+]

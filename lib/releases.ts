@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-27",
-    headline: "WC2026 bracket, Premier League live table, BHC archive",
+    headline: "WC2026 bracket, country leadership history, and Alliances & Orgs",
     items: [
       "The World Cup section transitions automatically from group tables to a full knockout bracket as results arrive — no manual update or Vercel deploy required.",
       "Every unplayed match card shows a model win probability (Elo + market odds blend), shifting to Elo-dominant weighting once the group stage is complete.",
-      "Intercontinental hub now correctly credits Uruguay (Mundialito 1981) and France (Artemio Franchi 1985), previously absent from the all-time list.",
-      "British Home Championship (1884-1984) and Rous Cup (1985-1989) archived as a reference table, linked from England, Scotland, Wales, and Northern Ireland.",
+      "Country pages now show a collapsible leadership history table covering heads of state and government since independence or earliest recorded office.",
+      "New Alliances & Orgs hub: maps every country's standing across 18 international organisations from NATO to OPEC, with gold badges for full members.",
     ],
   },
   {

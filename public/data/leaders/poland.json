@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Wojciech Jaruzelski",
+    "role": "President",
+    "start": "1989-07-19",
+    "end": "1990-12-22",
+    "current": false,
+    "tenure": "1y 5m 11d",
+    "party": "PZPR; last communist-era president",
+    "era": null
+  },
+  {
+    "name": "Tadeusz Mazowiecki",
+    "role": "Prime Minister",
+    "start": "1989-08-24",
+    "end": "1991-01-04",
+    "current": false,
+    "tenure": "1y 4m 18d",
+    "party": "Solidarity; 1st non-communist PM",
+    "era": null
+  },
+  {
+    "name": "Lech Wałęsa",
+    "role": "President",
+    "start": "1990-12-22",
+    "end": "1995-12-22",
+    "current": false,
+    "tenure": "5y 26d",
+    "party": "Solidarity",
+    "era": null
+  },
+  {
+    "name": "Jan Krzysztof Bielecki",
+    "role": "Prime Minister",
+    "start": "1991-01-04",
+    "end": "1991-12-06",
+    "current": false,
+    "tenure": "11m 6d",
+    "party": "KLD",
+    "era": null
+  },
+  {
+    "name": "Jan Olszewski",
+    "role": "Prime Minister",
+    "start": "1991-12-06",
+    "end": "1992-06-05",
+    "current": false,
+    "tenure": "6m 2d",
+    "party": "PC; removed by no-confidence",
+    "era": null
+  },
+  {
+    "name": "Hanna Suchocka",
+    "role": "Prime Minister",
+    "start": "1992-07-11",
+    "end": "1993-10-26",
+    "current": false,
+    "tenure": "1y 3m 22d",
+    "party": "UD; 1st female Polish PM",
+    "era": null
+  },
+  {
+    "name": "Waldemar Pawlak",
+    "role": "Prime Minister",
+    "start": "1993-10-26",
+    "end": "1995-03-07",
+    "current": false,
+    "tenure": "1y 4m 17d",
+    "party": "PSL; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Józef Oleksy",
+    "role": "Prime Minister",
+    "start": "1995-03-07",
+    "end": "1996-02-07",
+    "current": false,
+    "tenure": "11m 7d",
+    "party": "SLD",
+    "era": null
+  },
+  {
+    "name": "Aleksander Kwaśniewski",
+    "role": "President",
+    "start": "1995-12-23",
+    "end": "2005-12-23",
+    "current": false,
+    "tenure": "10y 23d",
+    "party": "SLD; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Włodzimierz Cimoszewicz",
+    "role": "Prime Minister",
+    "start": "1996-02-07",
+    "end": "1997-10-31",
+    "current": false,
+    "tenure": "1y 8m 2d",
+    "party": "SLD",
+    "era": null
+  },
+  {
+    "name": "Jerzy Buzek",
+    "role": "Prime Minister",
+    "start": "1997-10-31",
+    "end": "2001-10-19",
+    "current": false,
+    "tenure": "3y 11m 9d",
+    "party": "AWS",
+    "era": null
+  },
+  {
+    "name": "Leszek Miller",
+    "role": "Prime Minister",
+    "start": "2001-10-19",
+    "end": "2004-05-02",
+    "current": false,
+    "tenure": "2y 6m 26d",
+    "party": "SLD",
+    "era": null
+  },
+  {
+    "name": "Marek Belka",
+    "role": "Prime Minister",
+    "start": "2004-05-02",
+    "end": "2005-10-31",
+    "current": false,
+    "tenure": "1y 6m 7d",
+    "party": "SLD",
+    "era": null
+  },
+  {
+    "name": "Kazimierz Marcinkiewicz",
+    "role": "Prime Minister",
+    "start": "2005-10-31",
+    "end": "2006-07-14",
+    "current": false,
+    "tenure": "8m 16d",
+    "party": "PiS",
+    "era": null
+  },
+  {
+    "name": "Lech Kaczyński",
+    "role": "President",
+    "start": "2005-12-23",
+    "end": "2010-04-10",
+    "current": false,
+    "tenure": "4y 3m 9d",
+    "party": "PiS; died in Smolensk crash",
+    "era": null
+  },
+  {
+    "name": "Jarosław Kaczyński",
+    "role": "Prime Minister",
+    "start": "2006-07-14",
+    "end": "2007-11-16",
+    "current": false,
+    "tenure": "1y 4m 10d",
+    "party": "PiS",
+    "era": null
+  },
+  {
+    "name": "Donald Tusk",
+    "role": "Prime Minister",
+    "start": "2007-11-16",
+    "end": "2014-09-22",
+    "current": false,
+    "tenure": "6y 10m 12d",
+    "party": "PO; 1st term; left for EU Council",
+    "era": null
+  },
+  {
+    "name": "Bronisław Komorowski",
+    "role": "President",
+    "start": "2010-08-06",
+    "end": "2015-08-06",
+    "current": false,
+    "tenure": "5y 26d",
+    "party": "PO; acting from Apr 2010",
+    "era": null
+  },
+  {
+    "name": "Ewa Kopacz",
+    "role": "Prime Minister",
+    "start": "2014-09-22",
+    "end": "2015-11-16",
+    "current": false,
+    "tenure": "1y 1m",
+    "party": "PO",
+    "era": null
+  },
+  {
+    "name": "Andrzej Duda",
+    "role": "President",
+    "start": "2015-08-06",
+    "end": "2025-08-06",
+    "current": false,
+    "tenure": "10y 23d",
+    "party": "PiS; 2 terms",
+    "era": null
+  },
+  {
+    "name": "Beata Szydło",
+    "role": "Prime Minister",
+    "start": "2015-11-16",
+    "end": "2017-12-11",
+    "current": false,
+    "tenure": "2y 6d",
+    "party": "PiS",
+    "era": null
+  },
+  {
+    "name": "Mateusz Morawiecki",
+    "role": "Prime Minister",
+    "start": "2017-12-11",
+    "end": "2023-12-13",
+    "current": false,
+    "tenure": "6y 3d",
+    "party": "PiS",
+    "era": null
+  },
+  {
+    "name": "Donald Tusk",
+    "role": "Prime Minister",
+    "start": "2023-12-13",
+    "end": null,
+    "current": true,
+    "tenure": "2y 6m 27d",
+    "party": "KO; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Karol Nawrocki",
+    "role": "President",
+    "start": "2025-08-06",
+    "end": null,
+    "current": true,
+    "tenure": "10m 25d",
+    "party": "Independent (PiS-backed)",
+    "era": null
+  }
+]
