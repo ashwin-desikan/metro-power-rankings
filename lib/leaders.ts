@@ -5,15 +5,21 @@
 import fs from "fs";
 import path from "path";
 
+export type LeaderMetro = {
+  name: string;  // display name, e.g. "Chicago"
+  slug: string;  // metro slug for /metros/[slug]
+};
+
 export type Leader = {
   name: string;
   role: string;
-  start: string | null;   // "YYYY-MM-DD" or null
-  end: string | null;     // "YYYY-MM-DD" or null (null = current)
+  start: string | null;
+  end: string | null;
   current: boolean;
-  tenure: string | null;  // pre-formatted human string, e.g. "8y 2d"
+  tenure: string | null;
   party: string | null;
-  era: string | null;     // only for russia / china / germany
+  era: string | null;
+  metros?: LeaderMetro[];  // home metro(s) — US presidents
 };
 
 const DATA_DIR = path.join(process.cwd(), "public", "data", "leaders");

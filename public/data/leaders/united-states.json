@@ -7,7 +7,13 @@
     "current": false,
     "tenure": "7y 10m 10d",
     "party": "No Party",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Washington-Baltimore",
+        "slug": "washington-baltimore"
+      }
+    ]
   },
   {
     "name": "John Adams",
@@ -17,7 +23,13 @@
     "current": false,
     "tenure": "4y",
     "party": "Federalist",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Boston",
+        "slug": "boston"
+      }
+    ]
   },
   {
     "name": "Thomas Jefferson",
@@ -27,7 +39,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Democratic-Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Charlottesville",
+        "slug": "charlottesville"
+      }
+    ]
   },
   {
     "name": "James Madison",
@@ -37,7 +55,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Democratic-Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Washington-Baltimore",
+        "slug": "washington-baltimore"
+      }
+    ]
   },
   {
     "name": "James Monroe",
@@ -47,7 +71,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Democratic-Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Washington-Baltimore",
+        "slug": "washington-baltimore"
+      }
+    ]
   },
   {
     "name": "John Quincy Adams",
@@ -57,7 +87,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "National Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Boston",
+        "slug": "boston"
+      }
+    ]
   },
   {
     "name": "Andrew Jackson",
@@ -67,7 +103,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Nashville",
+        "slug": "nashville"
+      }
+    ]
   },
   {
     "name": "Martin Van Buren",
@@ -77,7 +119,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Albany",
+        "slug": "albany"
+      }
+    ]
   },
   {
     "name": "William Henry Harrison",
@@ -87,7 +135,13 @@
     "current": false,
     "tenure": "1m 1d",
     "party": "Whig; died in office",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Cincinnati",
+        "slug": "cincinnati"
+      }
+    ]
   },
   {
     "name": "John Tyler",
@@ -97,7 +151,13 @@
     "current": false,
     "tenure": "3y 11m 5d",
     "party": "Whig/Independent",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Richmond",
+        "slug": "richmond"
+      }
+    ]
   },
   {
     "name": "James K. Polk",
@@ -107,7 +167,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Nashville",
+        "slug": "nashville"
+      }
+    ]
   },
   {
     "name": "Zachary Taylor",
@@ -117,7 +183,13 @@
     "current": false,
     "tenure": "1y 4m 7d",
     "party": "Whig; died in office",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "New Orleans",
+        "slug": "new-orleans"
+      }
+    ]
   },
   {
     "name": "Millard Fillmore",
@@ -127,7 +199,13 @@
     "current": false,
     "tenure": "2y 7m 29d",
     "party": "Whig",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Buffalo",
+        "slug": "buffalo"
+      }
+    ]
   },
   {
     "name": "Franklin Pierce",
@@ -137,7 +215,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Boston",
+        "slug": "boston"
+      }
+    ]
   },
   {
     "name": "James Buchanan",
@@ -147,7 +231,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Lancaster",
+        "slug": "lancaster-pa"
+      }
+    ]
   },
   {
     "name": "Abraham Lincoln",
@@ -157,7 +247,13 @@
     "current": false,
     "tenure": "4y 1m 13d",
     "party": "Republican; assassinated",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Springfield",
+        "slug": "springfield-il"
+      }
+    ]
   },
   {
     "name": "Andrew Johnson",
@@ -167,7 +263,13 @@
     "current": false,
     "tenure": "3y 10m 24d",
     "party": "Democratic/National Union",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Greeneville",
+        "slug": "greeneville-tn"
+      }
+    ]
   },
   {
     "name": "Ulysses S. Grant",
@@ -177,7 +279,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Cincinnati",
+        "slug": "cincinnati"
+      }
+    ]
   },
   {
     "name": "Rutherford B. Hayes",
@@ -187,7 +295,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Toledo",
+        "slug": "toledo"
+      }
+    ]
   },
   {
     "name": "James A. Garfield",
@@ -197,7 +311,13 @@
     "current": false,
     "tenure": "6m 19d",
     "party": "Republican; assassinated",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Cleveland",
+        "slug": "cleveland"
+      }
+    ]
   },
   {
     "name": "Chester A. Arthur",
@@ -207,7 +327,13 @@
     "current": false,
     "tenure": "3y 5m 17d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   },
   {
     "name": "Grover Cleveland",
@@ -217,7 +343,17 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat; 22nd President",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Buffalo",
+        "slug": "buffalo"
+      },
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   },
   {
     "name": "Benjamin Harrison",
@@ -227,7 +363,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Indianapolis",
+        "slug": "indianapolis"
+      }
+    ]
   },
   {
     "name": "Grover Cleveland",
@@ -237,7 +379,17 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat; 24th President (nonconsecutive)",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Buffalo",
+        "slug": "buffalo"
+      },
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   },
   {
     "name": "William McKinley",
@@ -247,7 +399,13 @@
     "current": false,
     "tenure": "4y 6m 14d",
     "party": "Republican; assassinated",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Cleveland",
+        "slug": "cleveland"
+      }
+    ]
   },
   {
     "name": "Theodore Roosevelt",
@@ -257,7 +415,13 @@
     "current": false,
     "tenure": "7y 5m 23d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   },
   {
     "name": "William Howard Taft",
@@ -267,7 +431,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Cincinnati",
+        "slug": "cincinnati"
+      }
+    ]
   },
   {
     "name": "Woodrow Wilson",
@@ -277,7 +447,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   },
   {
     "name": "Warren G. Harding",
@@ -287,7 +463,13 @@
     "current": false,
     "tenure": "2y 5m 1d",
     "party": "Republican; died in office",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Columbus",
+        "slug": "columbus"
+      }
+    ]
   },
   {
     "name": "Calvin Coolidge",
@@ -297,7 +479,13 @@
     "current": false,
     "tenure": "5y 7m 6d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Lebanon",
+        "slug": "lebanon"
+      }
+    ]
   },
   {
     "name": "Herbert Hoover",
@@ -307,7 +495,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "San Francisco",
+        "slug": "san-francisco-san-jose"
+      }
+    ]
   },
   {
     "name": "Franklin D. Roosevelt",
@@ -317,7 +511,13 @@
     "current": false,
     "tenure": "12y 1m 12d",
     "party": "Democrat; died in 4th term",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   },
   {
     "name": "Harry S. Truman",
@@ -327,7 +527,13 @@
     "current": false,
     "tenure": "7y 9m 15d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Kansas City",
+        "slug": "kansas-city"
+      }
+    ]
   },
   {
     "name": "Dwight D. Eisenhower",
@@ -337,7 +543,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Salina",
+        "slug": "salina"
+      }
+    ]
   },
   {
     "name": "John F. Kennedy",
@@ -347,7 +559,13 @@
     "current": false,
     "tenure": "2y 10m 6d",
     "party": "Democrat; assassinated",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Boston",
+        "slug": "boston"
+      }
+    ]
   },
   {
     "name": "Lyndon B. Johnson",
@@ -357,7 +575,13 @@
     "current": false,
     "tenure": "5y 2m 1d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Austin",
+        "slug": "austin"
+      }
+    ]
   },
   {
     "name": "Richard Nixon",
@@ -367,7 +591,13 @@
     "current": false,
     "tenure": "5y 6m 22d",
     "party": "Republican; resigned",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Los Angeles",
+        "slug": "los-angeles"
+      }
+    ]
   },
   {
     "name": "Gerald Ford",
@@ -377,7 +607,13 @@
     "current": false,
     "tenure": "2y 5m 15d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Grand Rapids",
+        "slug": "grand-rapids"
+      }
+    ]
   },
   {
     "name": "Jimmy Carter",
@@ -387,7 +623,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Americus",
+        "slug": "americus-ga"
+      }
+    ]
   },
   {
     "name": "Ronald Reagan",
@@ -397,7 +639,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Los Angeles",
+        "slug": "los-angeles"
+      }
+    ]
   },
   {
     "name": "George H.W. Bush",
@@ -407,7 +655,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Houston",
+        "slug": "houston"
+      }
+    ]
   },
   {
     "name": "Bill Clinton",
@@ -417,7 +671,17 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Hot Springs",
+        "slug": "hot-springs"
+      },
+      {
+        "name": "Little Rock",
+        "slug": "little-rock"
+      }
+    ]
   },
   {
     "name": "George W. Bush",
@@ -427,7 +691,13 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Republican",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Midland-Odessa",
+        "slug": "midland-odessa"
+      }
+    ]
   },
   {
     "name": "Barack Obama",
@@ -437,7 +707,17 @@
     "current": false,
     "tenure": "8y 2d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Honolulu",
+        "slug": "honolulu"
+      },
+      {
+        "name": "Chicago",
+        "slug": "chicago"
+      }
+    ]
   },
   {
     "name": "Donald Trump",
@@ -447,7 +727,13 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Republican; 45th President",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   },
   {
     "name": "Joe Biden",
@@ -457,7 +743,17 @@
     "current": false,
     "tenure": "4y 1d",
     "party": "Democrat",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "Scranton",
+        "slug": "scranton"
+      },
+      {
+        "name": "Philadelphia",
+        "slug": "philadelphia"
+      }
+    ]
   },
   {
     "name": "Donald Trump",
@@ -467,6 +763,12 @@
     "current": true,
     "tenure": "1y 5m 7d",
     "party": "Republican; 47th President",
-    "era": null
+    "era": null,
+    "metros": [
+      {
+        "name": "New York",
+        "slug": "new-york"
+      }
+    ]
   }
 ]

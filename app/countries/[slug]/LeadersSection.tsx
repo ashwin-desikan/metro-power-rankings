@@ -3,6 +3,7 @@
 // Era grouping is shown only when the data has non-null era fields (Russia,
 // China, Germany).
 
+import Link from "next/link";
 import { getLeaders, leaderYear, type Leader } from "@/lib/leaders";
 
 type Props = { countrySlug: string };
@@ -23,7 +24,7 @@ function PartyBadge({ party }: { party: string | null }) {
   );
 }
 
-function LeaderRow({ l }: { l: Leader }) {
+function LeaderRow({ l, showMetros }: { l: Leader; showMetros: boolean }) {
   const startY = formatYear(l.start);
   const endY = l.current ? "Present" : formatYear(l.end);
   return (
@@ -46,22 +47,48 @@ function LeaderRow({ l }: { l: Leader }) {
       <td className="py-2 text-sm hidden md:table-cell">
         <PartyBadge party={l.party} />
       </td>
+      {showMetros && (
+        <td className="py-2 pl-4 text-sm hidden lg:table-cell">
+          <MetroLinks metros={l.metros} />
+        </td>
+      )}
     </tr>
   );
 }
 
-function EraGroup({ era, leaders }: { era: string; leaders: Leader[] }) {
+function EraGroup({ era, leaders, showMetros }: { era: string; leaders: Leader[]; showMetros: boolean }) {
   return (
     <div className="mb-6">
       <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2">
         {era}
       </h4>
-      <LeaderTable leaders={leaders} />
+      <LeaderTable leaders={leaders} showMetros={showMetros} />
     </div>
   );
 }
 
-function LeaderTable({ leaders }: { leaders: Leader[] }) {
+function MetroLinks({ metros }: { metros: Leader["metros"] }) {
+  if (!metros?.length) return null;
+  return (
+    <span className="flex flex-wrap gap-0">
+      {metros.map((m, i) => (
+        <span key={m.slug} className="whitespace-nowrap">
+          <Link
+            href={`/rankings/${m.slug}`}
+            className="text-xs text-[var(--accent)] hover:underline"
+          >
+            {m.name}
+          </Link>
+          {i < metros.length - 1 && (
+            <span className="text-xs text-gray-400 mr-1">,</span>
+          )}
+        </span>
+      ))}
+    </span>
+  );
+}
+
+function LeaderTable({ leaders, showMetros }: { leaders: Leader[]; showMetros: boolean }) {
   return (
     <div className="overflow-x-auto">
       <table className="w-full text-left border-collapse">
@@ -72,11 +99,14 @@ function LeaderTable({ leaders }: { leaders: Leader[] }) {
             <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Years</th>
             <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4 hidden sm:table-cell">Tenure</th>
             <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 hidden md:table-cell">Party</th>
+            {showMetros && (
+              <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 hidden lg:table-cell pl-4">Home Metro</th>
+            )}
           </tr>
         </thead>
         <tbody>
           {leaders.map((l, i) => (
-            <LeaderRow key={`${l.name}-${l.start ?? i}`} l={l} />
+            <LeaderRow key={`${l.name}-${l.start ?? i}`} l={l} showMetros={showMetros} />
           ))}
         </tbody>
       </table>
@@ -91,25 +121,21 @@ export default function LeadersSection({ countrySlug }: Props) {
   // Most recent first
   const leaders = [...leadersAsc].reverse();
 
-  // Determine if era grouping is needed
   const hasEras = leaders.some((l) => l.era !== null);
+  const showMetros = leaders.some((l) => l.metros?.length);
 
   const inner = hasEras ? (() => {
-    // Group by era in reverse order (most recent era first)
     const eraOrder: string[] = [];
     const eraMap: Record<string, Leader[]> = {};
     for (const l of leaders) {
       const era = l.era ?? "Other";
-      if (!eraMap[era]) {
-        eraMap[era] = [];
-        eraOrder.push(era);
-      }
+      if (!eraMap[era]) { eraMap[era] = []; eraOrder.push(era); }
       eraMap[era].push(l);
     }
     return eraOrder.map((era) => (
-      <EraGroup key={era} era={era} leaders={eraMap[era]} />
+      <EraGroup key={era} era={era} leaders={eraMap[era]} showMetros={showMetros} />
     ));
-  })() : <LeaderTable leaders={leaders} />;
+  })() : <LeaderTable leaders={leaders} showMetros={showMetros} />;
 
   return (
     <section className="mb-12" id="leaders">
