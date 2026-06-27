@@ -5,6 +5,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { useSessionState } from "@/lib/useSessionState";
 
 export type DirectoryCountry = {
   slug: string;
@@ -50,8 +51,8 @@ export default function CountriesDirectory({
 }: {
   countries: DirectoryCountry[];
 }) {
-  const [sortKey, setSortKey] = useState<SortKey>("pop");
-  const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [sortKey, setSortKey] = useSessionState<SortKey>("countries-sort-key", "pop");
+  const [sortDir, setSortDir] = useSessionState<SortDir>("countries-sort-dir", "desc");
   const [continent, setContinent] = useState<string>("All");
   const [search, setSearch] = useState<string>("");
   const [expanded, setExpanded] = useState<Set<string>>(new Set());

@@ -110,16 +110,6 @@
     "era": "Republic of China (ROC)"
   },
   {
-    "name": "Mao Zedong",
-    "role": "Paramount Leader (PRC)",
-    "start": "1949-10-01",
-    "end": "1976-09-09",
-    "current": false,
-    "tenure": "26y 11m 20d",
-    "party": "Communist Party; died in office",
-    "era": "People's Republic of China (PRC)"
-  },
-  {
     "name": "Chiang Kai-shek",
     "role": "President (ROC/Taiwan)",
     "start": "1950-03-01",
@@ -128,6 +118,16 @@
     "tenure": "25y 1m 11d",
     "party": "Kuomintang; died in office",
     "era": "Republic of China (ROC)"
+  },
+  {
+    "name": "Mao Zedong",
+    "role": "Paramount Leader (PRC)",
+    "start": "1949-10-01",
+    "end": "1976-09-09",
+    "current": false,
+    "tenure": "26y 11m 20d",
+    "party": "Communist Party; died in office",
+    "era": "People's Republic of China (PRC)"
   },
   {
     "name": "Hua Guofeng",
@@ -150,6 +150,46 @@
     "era": "People's Republic of China (PRC)"
   },
   {
+    "name": "Zhao Ziyang",
+    "role": "Premier (PRC)",
+    "start": "1980-09-10",
+    "end": "1987-11-24",
+    "current": false,
+    "tenure": "7y 2m",
+    "party": "Chinese Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Li Xiannian",
+    "role": "President (PRC)",
+    "start": "1983-06-18",
+    "end": "1988-04-08",
+    "current": false,
+    "tenure": "4y 10m",
+    "party": "Chinese Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Li Peng",
+    "role": "Premier (PRC)",
+    "start": "1987-11-24",
+    "end": "1998-03-17",
+    "current": false,
+    "tenure": "10y 4m",
+    "party": "Chinese Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Yang Shangkun",
+    "role": "President (PRC)",
+    "start": "1988-04-08",
+    "end": "1993-03-27",
+    "current": false,
+    "tenure": "4y 11m",
+    "party": "Chinese Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
     "name": "Jiang Zemin",
     "role": "President (PRC)",
     "start": "1993-03-27",
@@ -157,6 +197,16 @@
     "current": false,
     "tenure": "9y 11m 25d",
     "party": "Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Zhu Rongji",
+    "role": "Premier (PRC)",
+    "start": "1998-03-17",
+    "end": "2003-03-16",
+    "current": false,
+    "tenure": "5y",
+    "party": "Chinese Communist Party",
     "era": "People's Republic of China (PRC)"
   },
   {
@@ -170,6 +220,16 @@
     "era": "People's Republic of China (PRC)"
   },
   {
+    "name": "Wen Jiabao",
+    "role": "Premier (PRC)",
+    "start": "2003-03-16",
+    "end": "2013-03-15",
+    "current": false,
+    "tenure": "10y",
+    "party": "Chinese Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
     "name": "Xi Jinping",
     "role": "President (PRC)",
     "start": "2013-03-14",
@@ -177,6 +237,26 @@
     "current": true,
     "tenure": "13y 3m 17d",
     "party": "Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Li Keqiang",
+    "role": "Premier (PRC)",
+    "start": "2013-03-15",
+    "end": "2023-03-11",
+    "current": false,
+    "tenure": "10y",
+    "party": "Chinese Communist Party",
+    "era": "People's Republic of China (PRC)"
+  },
+  {
+    "name": "Li Qiang",
+    "role": "Premier (PRC)",
+    "start": "2023-03-11",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "Chinese Communist Party",
     "era": "People's Republic of China (PRC)"
   }
 ]

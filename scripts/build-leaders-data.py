@@ -73,8 +73,8 @@ def china_era(role):
 GERMANY_ERA_MAP = {
     "Imperial Chancellor":  "German Empire",
     "Weimar Chancellor":    "Weimar Republic",
-    "Chancellor (1 day)":   "Weimar Republic",
-    "Chancellor (brief)":   "Weimar Republic",
+    "Chancellor (1 day)":   "Nazi Germany",
+    "Chancellor (brief)":   "Nazi Germany",
     "Chancellor/Fuhrer":    "Nazi Germany",
     "Federal Chancellor":   "Federal Republic",
 }
