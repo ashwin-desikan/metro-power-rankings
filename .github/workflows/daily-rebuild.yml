@@ -1,82 +1,40 @@
-# Daily rebuild of rankings.citizenofnowhere.org. Two responsibilities now:
+# Daily Substack snapshot refresh.
 #
-#   1. Refresh public/data/substack-feed.json from the live RSS feed and
-#      commit any change back to main. This snapshot is the build-time
-#      fallback for the home page Featured Articles strip when the live
-#      fetch fails (lib/substack.ts always prefers the live fetch, but
-#      having a recent snapshot in git means the worst case is "yesterday's
-#      posts", not "blank strip"). Wired in 2026-05-16 as part of the P0
-#      automation pass.
+# Refreshes public/data/substack-feed.json from the live RSS feed and commits
+# any change back to main with [vercel skip]. This snapshot is the build-time
+# fallback for the home-page Featured Articles strip — lib/substack.ts always
+# prefers the live ISR fetch, so the snapshot is only used when Substack is
+# unreachable. Committing with [vercel skip] means the snapshot update never
+# consumes a build slot.
 #
-#   2. Trigger a fresh Vercel production build so static pages re-cache
-#      the latest external data:
-#        - Home-page Featured Articles strip (lib/substack.ts at build time).
-#        - Live MLB / NFL / NBA / NHL standings on /teams/{league}/[slug]
-#          (lib/{mlb,nba,nhl}-standings.ts + lib/standings.ts fetch ESPN
-#          at build time and serve via 1-hour ISR thereafter). The daily
-#          rebuild puts a fresh ESPN snapshot into the static cache once
-#          a day so the in-progress season row reflects yesterday's games
-#          as soon as readers wake up.
+# The daily Vercel deploy hook that used to live here has been removed (2026-06-27).
+# It was originally needed to re-cache MLB/NBA/NHL standings and Substack posts.
+# All three now use runtime ISR (fetch + revalidate) so a daily rebuild adds
+# no value and wastes the build budget.
 #
-# Why this exists
-#   Although both data sources self-refresh via Next ISR for request-time
-#   renders, the statically generated pages only re-render on a fresh
-#   build. A daily rebuild guarantees freshness within 24 hours even when
-#   no other commit lands. Mirrors the pattern shipped on citizenofnowhere-brand.
-#
-# How it works
-#   1. GitHub Actions invokes this workflow on the schedule below (and on
-#      manual dispatch from the Actions tab).
-#   2. The runner checks out main, runs scripts/refresh-substack-feed.mjs,
-#      and commits any diff to public/data/substack-feed.json.
-#   3. The runner POSTs to the Vercel Deploy Hook URL stored in the
-#      VERCEL_DEPLOY_HOOK_URL repo secret.
-#   4. Vercel queues a fresh production build of the main branch. The build
-#      pulls the latest Substack RSS (live, with snapshot as fallback),
-#      regenerates the home-page HTML, and ships.
-#
-# Secret setup (one-time)
-#   - In Vercel: Project Settings > Git > Deploy Hooks > Create Hook.
-#       Name: daily-substack-refresh
-#       Branch: main
-#     Copy the URL it returns.
-#   - In GitHub: Repo Settings > Secrets and variables > Actions > New
-#     repository secret.
-#       Name:  VERCEL_DEPLOY_HOOK_URL
-#       Value: <the hook URL from Vercel>
-#
-# Cost / footprint
-#   One small node script + at most one tiny git commit + one HTTP POST per day.
+# Acceptable non-ISR exceptions tracked separately:
+#   - fiba-ranking.yml  (FIBA rankings, readFileSync, ~few times/year)
+#   - rugby-rankings.yml (World Rugby rankings, readFileSync, ~weekly in season)
+# Those workflows intentionally trigger a Vercel build on the rare occasions
+# the underlying data actually changes.
 
-name: Daily rebuild (Substack snapshot + live standings)
+name: Daily Substack snapshot refresh
 
 on:
   schedule:
-    # 08:00 UTC daily. Chosen so the freshly-baked ESPN standings cache
-    # reflects "yesterday's" games:
-    #   - East Coast late games end around 03:00-04:00 UTC.
-    #   - West Coast late games end around 05:00-09:00 UTC. The 08:00
-    #     timing catches almost all of them; the rare 12-inning Pacific
-    #     game running past 09:00 UTC will simply be in the next day's
-    #     refresh.
-    # The team page's in-progress live row labels the data "as of
-    # {yesterday}" so the date matches what readers see when they open
-    # the page during US daytime hours.
     - cron: "0 8 * * *"
   workflow_dispatch: {}
 
-# Only one rebuild in flight at a time.
 concurrency:
   group: daily-rebuild
   cancel-in-progress: true
 
-# write needed because we commit the refreshed snapshot back to main.
 permissions:
   contents: write
 
 jobs:
-  refresh-and-deploy:
-    name: Refresh Substack snapshot then trigger Vercel deploy
+  refresh-snapshot:
+    name: Refresh Substack feed snapshot
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -84,7 +42,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          # Use default GITHUB_TOKEN; permissions block above grants write.
           persist-credentials: true
 
       - name: Set up Node
@@ -93,10 +50,6 @@ jobs:
           node-version: "20"
 
       - name: Refresh Substack snapshot
-        # Best-effort: if Substack 403s the runner today, we still want the
-        # rest of the workflow (Vercel deploy hook) to fire so the daily
-        # production rebuild happens regardless. Failure shows as a yellow
-        # warning in the GH UI without sending an email blast.
         continue-on-error: true
         run: node scripts/refresh-substack-feed.mjs
 
@@ -104,34 +57,12 @@ jobs:
         run: |
           set -euo pipefail
           if git diff --quiet -- public/data/substack-feed.json; then
-            echo "No snapshot changes; skipping commit."
+            echo "No snapshot changes; nothing to commit."
           else
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add public/data/substack-feed.json
-            git commit -m "chore(substack): refresh feed snapshot (daily rebuild)"
+            git commit -m "chore(substack): refresh feed snapshot [vercel skip]"
             git push origin HEAD:main
             echo "Pushed snapshot update."
           fi
-
-      - name: Verify Vercel deploy hook secret
-        env:
-          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
-        run: |
-          if [ -z "$HOOK_URL" ]; then
-            echo "::error::VERCEL_DEPLOY_HOOK_URL secret is not set. See workflow header for setup steps."
-            exit 1
-          fi
-          echo "Secret present (length: ${#HOOK_URL})."
-
-      - name: POST to Vercel Deploy Hook
-        env:
-          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
-        run: |
-          set -euo pipefail
-          response=$(curl -fsS -X POST \
-            --retry 3 --retry-delay 5 --retry-connrefused \
-            -H "Content-Type: application/json" \
-            -d '{"trigger":"github-actions-daily"}' \
-            "$HOOK_URL")
-          echo "Vercel response: $response"
