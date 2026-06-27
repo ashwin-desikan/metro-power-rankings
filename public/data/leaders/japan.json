@@ -5,7 +5,7 @@
     "start": "1885-12-22",
     "end": "1888-12-24",
     "current": false,
-    "tenure": "3y 3d",
+    "tenure": "3y",
     "party": "Meiji oligarch; 1st term",
     "era": null
   },
@@ -15,7 +15,7 @@
     "start": "1888-12-24",
     "end": "1889-10-24",
     "current": false,
-    "tenure": "10m 4d",
+    "tenure": "10m",
     "party": "Meiji oligarch",
     "era": null
   },
@@ -25,7 +25,7 @@
     "start": "1889-10-24",
     "end": "1891-11-05",
     "current": false,
-    "tenure": "2y 12d",
+    "tenure": "2y",
     "party": "Meiji oligarch; 1st term",
     "era": null
   },
@@ -35,7 +35,7 @@
     "start": "1891-11-06",
     "end": "1892-08-08",
     "current": false,
-    "tenure": "9m 6d",
+    "tenure": "9m",
     "party": "Meiji oligarch; 1st term",
     "era": null
   },
@@ -45,7 +45,7 @@
     "start": "1892-08-08",
     "end": "1896-10-18",
     "current": false,
-    "tenure": "4y 2m 12d",
+    "tenure": "4y 2m",
     "party": "Meiji oligarch; 2nd term",
     "era": null
   },
@@ -55,7 +55,7 @@
     "start": "1896-10-18",
     "end": "1897-12-12",
     "current": false,
-    "tenure": "1y 1m 25d",
+    "tenure": "1y 1m",
     "party": "Meiji oligarch; 2nd term",
     "era": null
   },
@@ -65,7 +65,7 @@
     "start": "1897-12-12",
     "end": "1898-10-30",
     "current": false,
-    "tenure": "10m 22d",
+    "tenure": "10m",
     "party": "Meiji oligarch; 3rd term",
     "era": null
   },
@@ -75,7 +75,7 @@
     "start": "1898-11-08",
     "end": "1900-10-19",
     "current": false,
-    "tenure": "1y 11m 15d",
+    "tenure": "1y 11m",
     "party": "Meiji oligarch; 2nd term",
     "era": null
   },
@@ -85,7 +85,7 @@
     "start": "1900-10-19",
     "end": "1901-05-10",
     "current": false,
-    "tenure": "6m 23d",
+    "tenure": "6m",
     "party": "Meiji oligarch; 4th term",
     "era": null
   },
@@ -95,7 +95,7 @@
     "start": "1901-05-02",
     "end": "1906-01-07",
     "current": false,
-    "tenure": "4y 8m 11d",
+    "tenure": "4y 8m",
     "party": "Genro; 1st term",
     "era": null
   },
@@ -105,7 +105,7 @@
     "start": "1906-01-07",
     "end": "1908-07-14",
     "current": false,
-    "tenure": "2y 6m 9d",
+    "tenure": "2y 6m",
     "party": "Rikken Seiyukai; 1st term",
     "era": null
   },
@@ -115,7 +115,7 @@
     "start": "1908-07-14",
     "end": "1911-08-30",
     "current": false,
-    "tenure": "3y 1m 17d",
+    "tenure": "3y 1m",
     "party": "Genro; 2nd term",
     "era": null
   },
@@ -125,7 +125,7 @@
     "start": "1911-08-30",
     "end": "1912-12-21",
     "current": false,
-    "tenure": "1y 3m 24d",
+    "tenure": "1y 3m",
     "party": "Rikken Seiyukai; 2nd term",
     "era": null
   },
@@ -135,7 +135,7 @@
     "start": "1912-12-21",
     "end": "1913-02-20",
     "current": false,
-    "tenure": "2m 1d",
+    "tenure": "2m",
     "party": "Genro; 3rd term",
     "era": null
   },
@@ -145,7 +145,7 @@
     "start": "1913-02-20",
     "end": "1914-03-16",
     "current": false,
-    "tenure": "1y 24d",
+    "tenure": "1y",
     "party": "Independent; 1st term",
     "era": null
   },
@@ -155,7 +155,7 @@
     "start": "1914-04-16",
     "end": "1916-10-09",
     "current": false,
-    "tenure": "2y 5m 27d",
+    "tenure": "2y 5m",
     "party": "Rikken Doshikai; 2nd term",
     "era": null
   },
@@ -165,7 +165,7 @@
     "start": "1916-10-09",
     "end": "1918-09-29",
     "current": false,
-    "tenure": "1y 11m 25d",
+    "tenure": "1y 11m",
     "party": "Independent/Military",
     "era": null
   },
@@ -175,7 +175,7 @@
     "start": "1918-09-29",
     "end": "1921-11-04",
     "current": false,
-    "tenure": "3y 1m 7d",
+    "tenure": "3y 1m",
     "party": "Rikken Seiyukai; assassinated",
     "era": null
   },
@@ -185,7 +185,7 @@
     "start": "1921-11-13",
     "end": "1922-06-12",
     "current": false,
-    "tenure": "7m 1d",
+    "tenure": "7m",
     "party": "Rikken Seiyukai",
     "era": null
   },
@@ -195,7 +195,7 @@
     "start": "1922-06-12",
     "end": "1923-09-24",
     "current": false,
-    "tenure": "1y 3m 14d",
+    "tenure": "1y 3m",
     "party": "Independent; died in office",
     "era": null
   },
@@ -205,7 +205,7 @@
     "start": "1923-09-02",
     "end": "1924-01-07",
     "current": false,
-    "tenure": "4m 7d",
+    "tenure": "4m",
     "party": "Independent; 2nd term",
     "era": null
   },
@@ -215,7 +215,7 @@
     "start": "1924-01-07",
     "end": "1924-06-11",
     "current": false,
-    "tenure": "5m 6d",
+    "tenure": "5m",
     "party": "Independent",
     "era": null
   },
@@ -225,7 +225,7 @@
     "start": "1924-06-11",
     "end": "1926-01-28",
     "current": false,
-    "tenure": "1y 7m 21d",
+    "tenure": "1y 7m",
     "party": "Kenseikai; died in office",
     "era": null
   },
@@ -235,7 +235,7 @@
     "start": "1926-01-30",
     "end": "1927-04-20",
     "current": false,
-    "tenure": "1y 2m 20d",
+    "tenure": "1y 2m",
     "party": "Rikken Minseito; 1st term",
     "era": null
   },
@@ -245,7 +245,7 @@
     "start": "1927-04-20",
     "end": "1929-07-02",
     "current": false,
-    "tenure": "2y 2m 14d",
+    "tenure": "2y 2m",
     "party": "Rikken Seiyukai",
     "era": null
   },
@@ -255,7 +255,7 @@
     "start": "1929-07-02",
     "end": "1931-04-14",
     "current": false,
-    "tenure": "1y 9m 16d",
+    "tenure": "1y 9m",
     "party": "Rikken Minseito; shot/died",
     "era": null
   },
@@ -265,7 +265,7 @@
     "start": "1931-04-14",
     "end": "1931-12-13",
     "current": false,
-    "tenure": "8m 3d",
+    "tenure": "8m",
     "party": "Rikken Minseito; 2nd term",
     "era": null
   },
@@ -275,7 +275,7 @@
     "start": "1931-12-13",
     "end": "1932-05-15",
     "current": false,
-    "tenure": "5m 4d",
+    "tenure": "5m",
     "party": "Rikken Seiyukai; assassinated",
     "era": null
   },
@@ -285,7 +285,7 @@
     "start": "1932-05-26",
     "end": "1934-07-08",
     "current": false,
-    "tenure": "2y 1m 13d",
+    "tenure": "2y 1m",
     "party": "Non-party/Military",
     "era": null
   },
@@ -295,7 +295,7 @@
     "start": "1934-07-08",
     "end": "1936-03-09",
     "current": false,
-    "tenure": "1y 8m 5d",
+    "tenure": "1y 8m",
     "party": "Non-party/Military",
     "era": null
   },
@@ -315,7 +315,7 @@
     "start": "1937-02-02",
     "end": "1937-06-04",
     "current": false,
-    "tenure": "4m 2d",
+    "tenure": "4m",
     "party": "Military",
     "era": null
   },
@@ -325,7 +325,7 @@
     "start": "1937-06-04",
     "end": "1939-01-05",
     "current": false,
-    "tenure": "1y 7m 5d",
+    "tenure": "1y 7m",
     "party": "IRAA; 1st term",
     "era": null
   },
@@ -335,7 +335,7 @@
     "start": "1939-01-05",
     "end": "1939-08-30",
     "current": false,
-    "tenure": "7m 27d",
+    "tenure": "7m",
     "party": "Non-party",
     "era": null
   },
@@ -345,7 +345,7 @@
     "start": "1939-08-30",
     "end": "1940-01-16",
     "current": false,
-    "tenure": "4m 19d",
+    "tenure": "4m",
     "party": "Military",
     "era": null
   },
@@ -355,7 +355,7 @@
     "start": "1940-01-16",
     "end": "1940-07-22",
     "current": false,
-    "tenure": "6m 8d",
+    "tenure": "6m",
     "party": "Military/Navy",
     "era": null
   },
@@ -363,20 +363,10 @@
     "name": "Konoe Fumimaro",
     "role": "Prime Minister",
     "start": "1940-07-22",
-    "end": "1941-07-18",
-    "current": false,
-    "tenure": "12m 1d",
-    "party": "IRAA; 2nd term",
-    "era": null
-  },
-  {
-    "name": "Konoe Fumimaro",
-    "role": "Prime Minister",
-    "start": "1941-07-18",
     "end": "1941-10-18",
     "current": false,
-    "tenure": "3m 2d",
-    "party": "IRAA; 3rd term",
+    "tenure": "1y 2m",
+    "party": "IRAA; 2nd term",
     "era": null
   },
   {
@@ -385,7 +375,7 @@
     "start": "1941-10-18",
     "end": "1944-07-22",
     "current": false,
-    "tenure": "2y 9m 8d",
+    "tenure": "2y 9m",
     "party": "Military/IRAA",
     "era": null
   },
@@ -395,7 +385,7 @@
     "start": "1944-07-22",
     "end": "1945-04-05",
     "current": false,
-    "tenure": "8m 17d",
+    "tenure": "8m",
     "party": "Military",
     "era": null
   },
@@ -405,7 +395,7 @@
     "start": "1945-04-07",
     "end": "1945-08-17",
     "current": false,
-    "tenure": "4m 12d",
+    "tenure": "4m",
     "party": "Military/Navy",
     "era": null
   },
@@ -415,7 +405,7 @@
     "start": "1945-08-17",
     "end": "1945-10-09",
     "current": false,
-    "tenure": "1m 23d",
+    "tenure": "1m",
     "party": "Imperial Family",
     "era": null
   },
@@ -425,7 +415,7 @@
     "start": "1945-10-09",
     "end": "1946-05-22",
     "current": false,
-    "tenure": "7m 15d",
+    "tenure": "7m",
     "party": "Liberal",
     "era": null
   },
@@ -435,7 +425,7 @@
     "start": "1946-05-22",
     "end": "1947-05-24",
     "current": false,
-    "tenure": "1y 2d",
+    "tenure": "1y",
     "party": "Liberal; 1st term",
     "era": null
   },
@@ -445,7 +435,7 @@
     "start": "1947-05-24",
     "end": "1948-03-10",
     "current": false,
-    "tenure": "9m 21d",
+    "tenure": "9m",
     "party": "Japan Socialist Party",
     "era": null
   },
@@ -455,7 +445,7 @@
     "start": "1948-03-10",
     "end": "1948-10-15",
     "current": false,
-    "tenure": "7m 9d",
+    "tenure": "7m",
     "party": "Democratic Party",
     "era": null
   },
@@ -463,70 +453,20 @@
     "name": "Yoshida Shigeru",
     "role": "Prime Minister",
     "start": "1948-10-15",
-    "end": "1949-12-16",
-    "current": false,
-    "tenure": "1y 2m 2d",
-    "party": "Liberal; 2nd term",
-    "era": null
-  },
-  {
-    "name": "Yoshida Shigeru",
-    "role": "Prime Minister",
-    "start": "1949-12-16",
-    "end": "1952-10-28",
-    "current": false,
-    "tenure": "2y 10m 17d",
-    "party": "Liberal; 3rd term",
-    "era": null
-  },
-  {
-    "name": "Yoshida Shigeru",
-    "role": "Prime Minister",
-    "start": "1952-10-28",
-    "end": "1953-10-21",
-    "current": false,
-    "tenure": "11m 28d",
-    "party": "Liberal; 4th term",
-    "era": null
-  },
-  {
-    "name": "Yoshida Shigeru",
-    "role": "Prime Minister",
-    "start": "1953-10-21",
     "end": "1954-12-10",
     "current": false,
-    "tenure": "1y 1m 20d",
-    "party": "Liberal; 5th term",
+    "tenure": "6y 1m",
+    "party": "Liberal; 2nd term",
     "era": null
   },
   {
     "name": "Hatoyama Ichiro",
     "role": "Prime Minister",
     "start": "1954-12-10",
-    "end": "1955-03-19",
-    "current": false,
-    "tenure": "3m 9d",
-    "party": "LDP; 1st term",
-    "era": null
-  },
-  {
-    "name": "Hatoyama Ichiro",
-    "role": "Prime Minister",
-    "start": "1955-03-19",
-    "end": "1955-11-22",
-    "current": false,
-    "tenure": "8m 8d",
-    "party": "LDP; 2nd term",
-    "era": null
-  },
-  {
-    "name": "Hatoyama Ichiro",
-    "role": "Prime Minister",
-    "start": "1955-11-22",
     "end": "1956-12-23",
     "current": false,
-    "tenure": "1y 1m 2d",
-    "party": "LDP; 3rd term",
+    "tenure": "2y",
+    "party": "LDP; 1st term",
     "era": null
   },
   {
@@ -535,7 +475,7 @@
     "start": "1956-12-23",
     "end": "1957-02-25",
     "current": false,
-    "tenure": "2m 4d",
+    "tenure": "2m",
     "party": "LDP",
     "era": null
   },
@@ -545,7 +485,7 @@
     "start": "1957-02-25",
     "end": "1960-07-19",
     "current": false,
-    "tenure": "3y 4m 25d",
+    "tenure": "3y 4m",
     "party": "LDP",
     "era": null
   },
@@ -555,7 +495,7 @@
     "start": "1960-07-19",
     "end": "1964-11-09",
     "current": false,
-    "tenure": "4y 3m 24d",
+    "tenure": "4y 3m",
     "party": "LDP",
     "era": null
   },
@@ -565,7 +505,7 @@
     "start": "1964-11-09",
     "end": "1972-07-07",
     "current": false,
-    "tenure": "7y 8m 2d",
+    "tenure": "7y 8m",
     "party": "LDP",
     "era": null
   },
@@ -575,7 +515,7 @@
     "start": "1972-07-05",
     "end": "1974-12-09",
     "current": false,
-    "tenure": "2y 5m 7d",
+    "tenure": "2y 5m",
     "party": "LDP",
     "era": null
   },
@@ -585,7 +525,7 @@
     "start": "1974-12-09",
     "end": "1976-12-24",
     "current": false,
-    "tenure": "2y 16d",
+    "tenure": "2y",
     "party": "LDP",
     "era": null
   },
@@ -595,7 +535,7 @@
     "start": "1976-12-24",
     "end": "1978-12-07",
     "current": false,
-    "tenure": "1y 11m 18d",
+    "tenure": "1y 11m",
     "party": "LDP",
     "era": null
   },
@@ -605,7 +545,7 @@
     "start": "1978-12-07",
     "end": "1980-06-12",
     "current": false,
-    "tenure": "1y 6m 8d",
+    "tenure": "1y 6m",
     "party": "LDP; died in office",
     "era": null
   },
@@ -615,7 +555,7 @@
     "start": "1980-07-17",
     "end": "1982-11-27",
     "current": false,
-    "tenure": "2y 4m 13d",
+    "tenure": "2y 4m",
     "party": "LDP",
     "era": null
   },
@@ -625,7 +565,7 @@
     "start": "1982-11-27",
     "end": "1987-11-06",
     "current": false,
-    "tenure": "4y 11m 15d",
+    "tenure": "4y 11m",
     "party": "LDP",
     "era": null
   },
@@ -645,7 +585,7 @@
     "start": "1989-06-03",
     "end": "1989-08-10",
     "current": false,
-    "tenure": "2m 8d",
+    "tenure": "2m",
     "party": "LDP",
     "era": null
   },
@@ -655,7 +595,7 @@
     "start": "1989-08-10",
     "end": "1991-11-05",
     "current": false,
-    "tenure": "2y 2m 27d",
+    "tenure": "2y 2m",
     "party": "LDP",
     "era": null
   },
@@ -665,7 +605,7 @@
     "start": "1991-11-05",
     "end": "1993-08-09",
     "current": false,
-    "tenure": "1y 9m 8d",
+    "tenure": "1y 9m",
     "party": "LDP",
     "era": null
   },
@@ -675,7 +615,7 @@
     "start": "1993-08-09",
     "end": "1994-04-28",
     "current": false,
-    "tenure": "8m 22d",
+    "tenure": "8m",
     "party": "Japan New Party",
     "era": null
   },
@@ -685,7 +625,7 @@
     "start": "1994-04-28",
     "end": "1994-06-30",
     "current": false,
-    "tenure": "2m 3d",
+    "tenure": "2m",
     "party": "Shinseito",
     "era": null
   },
@@ -695,7 +635,7 @@
     "start": "1994-06-30",
     "end": "1996-01-11",
     "current": false,
-    "tenure": "1y 6m 15d",
+    "tenure": "1y 6m",
     "party": "Japan Socialist Party",
     "era": null
   },
@@ -705,7 +645,7 @@
     "start": "1996-01-11",
     "end": "1998-07-30",
     "current": false,
-    "tenure": "2y 6m 21d",
+    "tenure": "2y 6m",
     "party": "LDP",
     "era": null
   },
@@ -715,7 +655,7 @@
     "start": "1998-07-30",
     "end": "2000-04-05",
     "current": false,
-    "tenure": "1y 8m 10d",
+    "tenure": "1y 8m",
     "party": "LDP; died in office",
     "era": null
   },
@@ -725,7 +665,7 @@
     "start": "2000-04-05",
     "end": "2001-04-26",
     "current": false,
-    "tenure": "1y 21d",
+    "tenure": "1y",
     "party": "LDP",
     "era": null
   },
@@ -735,7 +675,7 @@
     "start": "2001-04-26",
     "end": "2006-09-26",
     "current": false,
-    "tenure": "5y 5m 4d",
+    "tenure": "5y 5m",
     "party": "LDP",
     "era": null
   },
@@ -755,7 +695,7 @@
     "start": "2007-09-26",
     "end": "2008-09-24",
     "current": false,
-    "tenure": "12m 4d",
+    "tenure": "12m",
     "party": "LDP",
     "era": null
   },
@@ -765,7 +705,7 @@
     "start": "2008-09-24",
     "end": "2009-09-16",
     "current": false,
-    "tenure": "11m 27d",
+    "tenure": "11m",
     "party": "LDP",
     "era": null
   },
@@ -775,7 +715,7 @@
     "start": "2009-09-16",
     "end": "2010-06-02",
     "current": false,
-    "tenure": "8m 19d",
+    "tenure": "8m",
     "party": "DPJ",
     "era": null
   },
@@ -785,7 +725,7 @@
     "start": "2010-06-02",
     "end": "2011-09-02",
     "current": false,
-    "tenure": "1y 3m 2d",
+    "tenure": "1y 3m",
     "party": "DPJ",
     "era": null
   },
@@ -795,7 +735,7 @@
     "start": "2011-09-02",
     "end": "2012-12-26",
     "current": false,
-    "tenure": "1y 3m 26d",
+    "tenure": "1y 3m",
     "party": "DPJ",
     "era": null
   },
@@ -805,7 +745,7 @@
     "start": "2012-12-26",
     "end": "2020-09-16",
     "current": false,
-    "tenure": "7y 8m 26d",
+    "tenure": "7y 8m",
     "party": "LDP; 2nd-4th terms",
     "era": null
   },
@@ -815,7 +755,7 @@
     "start": "2020-09-16",
     "end": "2021-10-04",
     "current": false,
-    "tenure": "1y 18d",
+    "tenure": "1y",
     "party": "LDP",
     "era": null
   },
@@ -825,7 +765,7 @@
     "start": "2021-10-04",
     "end": "2024-10-01",
     "current": false,
-    "tenure": "2y 12m 3d",
+    "tenure": "2y 12m",
     "party": "LDP",
     "era": null
   },
@@ -835,7 +775,7 @@
     "start": "2024-10-01",
     "end": "2024-11-11",
     "current": false,
-    "tenure": "1m 11d",
+    "tenure": "1m",
     "party": "LDP",
     "era": null
   },
@@ -845,7 +785,7 @@
     "start": "2024-11-11",
     "end": null,
     "current": true,
-    "tenure": "1y 7m 17d",
+    "tenure": "1y 7m",
     "party": "LDP",
     "era": null
   }
