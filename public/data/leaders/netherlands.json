@@ -1,13 +1,403 @@
 [
   {
-    "name": "Wilhelmina",
+    "name": "👑 King William I",
     "role": "Monarch",
-    "start": "1898-11-10",
-    "end": "1948-09-06",
+    "start": "1815-03-16",
+    "end": "1840-10-07",
     "current": false,
-    "tenure": "49y 10m 17d",
-    "party": "House of Orange-Nassau; abdicated",
-    "era": null
+    "tenure": "25 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 King William II",
+    "role": "Monarch",
+    "start": "1840-10-07",
+    "end": "1849-03-17",
+    "current": false,
+    "tenure": "8 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 King William III",
+    "role": "Monarch",
+    "start": "1849-03-17",
+    "end": "1890-11-23",
+    "current": false,
+    "tenure": "41 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 Queen Emma (Regent)",
+    "role": "Regent",
+    "start": "1890-11-23",
+    "end": "1898-08-31",
+    "current": false,
+    "tenure": "7 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 Queen Wilhelmina",
+    "role": "Monarch",
+    "start": "1890-11-23",
+    "end": "1948-09-04",
+    "current": false,
+    "tenure": "57 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 Queen Juliana",
+    "role": "Monarch",
+    "start": "1948-09-04",
+    "end": "1980-04-30",
+    "current": false,
+    "tenure": "31 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 Queen Beatrix",
+    "role": "Monarch",
+    "start": "1980-04-30",
+    "end": "2013-04-30",
+    "current": false,
+    "tenure": "33 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 King Willem-Alexander",
+    "role": "Monarch",
+    "start": "2013-04-30",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Gerrit Schimmelpenninck",
+    "role": "Prime Minister",
+    "start": "1848-03-25",
+    "end": "1848-05-17",
+    "current": false,
+    "tenure": "2 months",
+    "party": "Conservative",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Gerrit de Kempenaer",
+    "role": "Prime Minister",
+    "start": "1848-11-21",
+    "end": "1849-11-01",
+    "current": false,
+    "tenure": "11 months",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Johan Rudolf Thorbecke",
+    "role": "Prime Minister",
+    "start": "1849-11-01",
+    "end": "1853-04-19",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Floris Adriaan van Hall",
+    "role": "Prime Minister",
+    "start": "1853-04-19",
+    "end": "1856-07-01",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Conservative-Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "J.L.H. van der Brugghen",
+    "role": "Prime Minister",
+    "start": "1856-07-01",
+    "end": "1858-03-18",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Jan Jacob Rochussen",
+    "role": "Prime Minister",
+    "start": "1858-03-18",
+    "end": "1860-02-23",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Conservative",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Floris Adriaan van Hall",
+    "role": "Prime Minister",
+    "start": "1860-02-23",
+    "end": "1861-03-14",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Jan van Zuylen van Nijevelt",
+    "role": "Prime Minister",
+    "start": "1861-03-14",
+    "end": "1866-06-01",
+    "current": false,
+    "tenure": "5 years",
+    "party": "Conservative",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Isäac Dignus Fransen van de Putte",
+    "role": "Prime Minister",
+    "start": "1866-02-10",
+    "end": "1866-06-01",
+    "current": false,
+    "tenure": "4 months",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Jan van Zuylen van Nijevelt",
+    "role": "Prime Minister",
+    "start": "1866-06-01",
+    "end": "1868-06-04",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Conservative",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Pieter Philip van Bosse",
+    "role": "Prime Minister",
+    "start": "1868-06-04",
+    "end": "1871-01-04",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Johan Rudolf Thorbecke",
+    "role": "Prime Minister",
+    "start": "1871-01-04",
+    "end": "1872-06-04",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Gerrit de Vries",
+    "role": "Prime Minister",
+    "start": "1872-06-04",
+    "end": "1874-08-27",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Jan Heemskerk",
+    "role": "Prime Minister",
+    "start": "1874-08-27",
+    "end": "1877-11-03",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Conservative",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Kappeyne van de Coppello",
+    "role": "Prime Minister",
+    "start": "1877-11-03",
+    "end": "1879-08-20",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "C.Th. van Lynden van Sandenburg",
+    "role": "Prime Minister",
+    "start": "1879-08-20",
+    "end": "1883-04-23",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Conservative",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Jan Heemskerk",
+    "role": "Prime Minister",
+    "start": "1883-04-23",
+    "end": "1888-04-21",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Conservative",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Aeneas Mackay",
+    "role": "Prime Minister",
+    "start": "1888-04-21",
+    "end": "1891-08-21",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Gijsbert van Tienhoven",
+    "role": "Prime Minister",
+    "start": "1891-08-21",
+    "end": "1894-05-09",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Joan Röell",
+    "role": "Prime Minister",
+    "start": "1894-05-09",
+    "end": "1897-07-27",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Nicolaas Pierson",
+    "role": "Prime Minister",
+    "start": "1897-07-27",
+    "end": "1901-08-01",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Abraham Kuyper",
+    "role": "Prime Minister",
+    "start": "1901-08-01",
+    "end": "1905-08-17",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Theo de Meester",
+    "role": "Prime Minister",
+    "start": "1905-08-17",
+    "end": "1908-02-12",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Theo Heemskerk",
+    "role": "Prime Minister",
+    "start": "1908-02-12",
+    "end": "1913-08-29",
+    "current": false,
+    "tenure": "5 years",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Pieter Cort van der Linden",
+    "role": "Prime Minister",
+    "start": "1913-08-29",
+    "end": "1918-09-09",
+    "current": false,
+    "tenure": "5 years",
+    "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Ruijs de Beerenbrouck",
+    "role": "Prime Minister",
+    "start": "1918-09-09",
+    "end": "1925-08-04",
+    "current": false,
+    "tenure": "6 years",
+    "party": "Catholic",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Hendrik Colijn",
+    "role": "Prime Minister",
+    "start": "1925-08-04",
+    "end": "1926-03-08",
+    "current": false,
+    "tenure": "7 months",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Dirk de Geer",
+    "role": "Prime Minister",
+    "start": "1926-03-08",
+    "end": "1929-08-10",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Christian Historical",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Ruijs de Beerenbrouck",
+    "role": "Prime Minister",
+    "start": "1929-08-10",
+    "end": "1933-05-26",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Catholic",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Hendrik Colijn",
+    "role": "Prime Minister",
+    "start": "1933-05-26",
+    "end": "1939-08-10",
+    "current": false,
+    "tenure": "6 years",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Dirk de Geer",
+    "role": "Prime Minister",
+    "start": "1939-08-10",
+    "end": "1940-09-03",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Christian Historical",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "Pieter Sjoerds Gerbrandy",
+    "role": "Prime Minister",
+    "start": "1940-09-03",
+    "end": "1945-06-25",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Anti-Revolutionary",
+    "era": "WWII (Government-in-Exile)"
   },
   {
     "name": "Wim Schermerhorn",
@@ -15,9 +405,9 @@
     "start": "1945-06-25",
     "end": "1946-07-03",
     "current": false,
-    "tenure": "1y 13d",
-    "party": "Labour",
-    "era": null
+    "tenure": "1 year",
+    "party": "Liberal/Labour",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Louis Beel",
@@ -25,9 +415,9 @@
     "start": "1946-07-03",
     "end": "1948-08-07",
     "current": false,
-    "tenure": "2y 1m 16d",
-    "party": "KVP; 1st term",
-    "era": null
+    "tenure": "2 years",
+    "party": "Catholic People's",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Willem Drees",
@@ -35,19 +425,9 @@
     "start": "1948-08-07",
     "end": "1958-12-22",
     "current": false,
-    "tenure": "10y 4m 9d",
-    "party": "PvdA; longest post-war PM",
-    "era": null
-  },
-  {
-    "name": "Juliana",
-    "role": "Monarch",
-    "start": "1948-09-06",
-    "end": "1980-04-30",
-    "current": false,
-    "tenure": "31y 8m 9d",
-    "party": "House of Orange-Nassau; abdicated",
-    "era": null
+    "tenure": "10 years",
+    "party": "Labour",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Louis Beel",
@@ -55,9 +435,9 @@
     "start": "1958-12-22",
     "end": "1959-05-19",
     "current": false,
-    "tenure": "4m 28d",
-    "party": "KVP; 2nd term",
-    "era": null
+    "tenure": "5 months",
+    "party": "Catholic People's",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Jan de Quay",
@@ -65,9 +445,9 @@
     "start": "1959-05-19",
     "end": "1963-07-24",
     "current": false,
-    "tenure": "4y 2m 27d",
-    "party": "KVP",
-    "era": null
+    "tenure": "4 years",
+    "party": "Catholic People's",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Victor Marijnen",
@@ -75,9 +455,9 @@
     "start": "1963-07-24",
     "end": "1965-04-14",
     "current": false,
-    "tenure": "1y 8m",
-    "party": "KVP",
-    "era": null
+    "tenure": "1 year",
+    "party": "Catholic People's",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Jo Cals",
@@ -85,9 +465,9 @@
     "start": "1965-04-14",
     "end": "1966-11-22",
     "current": false,
-    "tenure": "1y 7m 17d",
-    "party": "KVP",
-    "era": null
+    "tenure": "1 year",
+    "party": "Catholic People's",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Jelle Zijlstra",
@@ -95,9 +475,9 @@
     "start": "1966-11-22",
     "end": "1967-04-05",
     "current": false,
-    "tenure": "4m 14d",
-    "party": "ARP",
-    "era": null
+    "tenure": "5 months",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Piet de Jong",
@@ -105,9 +485,9 @@
     "start": "1967-04-05",
     "end": "1971-07-06",
     "current": false,
-    "tenure": "4y 3m 23d",
-    "party": "KVP",
-    "era": null
+    "tenure": "4 years",
+    "party": "Catholic People's",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Barend Biesheuvel",
@@ -115,9 +495,9 @@
     "start": "1971-07-06",
     "end": "1973-05-11",
     "current": false,
-    "tenure": "1y 10m 15d",
-    "party": "ARP",
-    "era": null
+    "tenure": "1 year",
+    "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Joop den Uyl",
@@ -125,9 +505,9 @@
     "start": "1973-05-11",
     "end": "1977-12-19",
     "current": false,
-    "tenure": "4y 7m 3d",
-    "party": "PvdA",
-    "era": null
+    "tenure": "4 years",
+    "party": "Labour",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Dries van Agt",
@@ -135,19 +515,9 @@
     "start": "1977-12-19",
     "end": "1982-11-04",
     "current": false,
-    "tenure": "4y 10m 11d",
-    "party": "CDA",
-    "era": null
-  },
-  {
-    "name": "Beatrix",
-    "role": "Monarch",
-    "start": "1980-04-30",
-    "end": "2013-04-30",
-    "current": false,
-    "tenure": "33y 23d",
-    "party": "House of Orange-Nassau; abdicated",
-    "era": null
+    "tenure": "4 years",
+    "party": "Christian Democratic",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Ruud Lubbers",
@@ -155,9 +525,9 @@
     "start": "1982-11-04",
     "end": "1994-08-22",
     "current": false,
-    "tenure": "11y 9m 19d",
-    "party": "CDA; 3 terms",
-    "era": null
+    "tenure": "11 years",
+    "party": "Christian Democratic",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Wim Kok",
@@ -165,9 +535,9 @@
     "start": "1994-08-22",
     "end": "2002-07-22",
     "current": false,
-    "tenure": "7y 11m 11d",
-    "party": "PvdA",
-    "era": null
+    "tenure": "7 years",
+    "party": "Labour",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Jan Peter Balkenende",
@@ -175,9 +545,9 @@
     "start": "2002-07-22",
     "end": "2010-10-14",
     "current": false,
-    "tenure": "8y 2m 6d",
-    "party": "CDA; 4 terms",
-    "era": null
+    "tenure": "8 years",
+    "party": "Christian Democratic",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Mark Rutte",
@@ -185,19 +555,9 @@
     "start": "2010-10-14",
     "end": "2024-07-02",
     "current": false,
-    "tenure": "13y 8m",
-    "party": "VVD; 4 terms",
-    "era": null
-  },
-  {
-    "name": "Willem-Alexander",
-    "role": "Monarch",
-    "start": "2013-04-30",
-    "end": null,
-    "current": true,
-    "tenure": "13y 2m 6d",
-    "party": "House of Orange-Nassau",
-    "era": null
+    "tenure": "13 years",
+    "party": "Liberal (VVD)",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Dick Schoof",
@@ -205,9 +565,9 @@
     "start": "2024-07-02",
     "end": "2026-02-23",
     "current": false,
-    "tenure": "1y 7m 1d",
-    "party": "Independent/PVV coalition",
-    "era": null
+    "tenure": "1 year",
+    "party": "Independent",
+    "era": "Kingdom of the Netherlands"
   },
   {
     "name": "Rob Jetten",
@@ -215,8 +575,8 @@
     "start": "2026-02-23",
     "end": null,
     "current": true,
-    "tenure": "4m 4d",
-    "party": "D66",
-    "era": null
+    "tenure": null,
+    "party": "Democrats 66",
+    "era": "Kingdom of the Netherlands"
   }
 ]

@@ -1,23 +1,273 @@
 [
   {
-    "name": "Francisco Franco",
+    "name": "👑 Queen Isabella I",
+    "role": "Monarch",
+    "start": "1479-01-19",
+    "end": "1504-11-26",
+    "current": false,
+    "tenure": "25 years",
+    "party": null,
+    "era": "Catholic Monarchs"
+  },
+  {
+    "name": "👑 King Ferdinand II",
+    "role": "Monarch",
+    "start": "1479-01-19",
+    "end": "1516-01-23",
+    "current": false,
+    "tenure": "37 years",
+    "party": null,
+    "era": "Catholic Monarchs"
+  },
+  {
+    "name": "👑 King Carlos I",
+    "role": "Monarch",
+    "start": "1516-01-23",
+    "end": "1556-01-16",
+    "current": false,
+    "tenure": "40 years",
+    "party": null,
+    "era": "Habsburg Dynasty"
+  },
+  {
+    "name": "👑 King Felipe II",
+    "role": "Monarch",
+    "start": "1556-01-16",
+    "end": "1598-09-13",
+    "current": false,
+    "tenure": "42 years",
+    "party": null,
+    "era": "Habsburg Dynasty"
+  },
+  {
+    "name": "👑 King Felipe III",
+    "role": "Monarch",
+    "start": "1598-09-13",
+    "end": "1621-03-31",
+    "current": false,
+    "tenure": "22 years",
+    "party": null,
+    "era": "Habsburg Dynasty"
+  },
+  {
+    "name": "👑 King Felipe IV",
+    "role": "Monarch",
+    "start": "1621-03-31",
+    "end": "1665-09-17",
+    "current": false,
+    "tenure": "44 years",
+    "party": null,
+    "era": "Habsburg Dynasty"
+  },
+  {
+    "name": "👑 King Carlos II",
+    "role": "Monarch",
+    "start": "1665-09-17",
+    "end": "1700-11-01",
+    "current": false,
+    "tenure": "35 years",
+    "party": null,
+    "era": "Habsburg Dynasty"
+  },
+  {
+    "name": "👑 King Felipe V",
+    "role": "Monarch",
+    "start": "1700-11-16",
+    "end": "1746-07-09",
+    "current": false,
+    "tenure": "45 years",
+    "party": null,
+    "era": "Bourbon Dynasty"
+  },
+  {
+    "name": "👑 King Luis I",
+    "role": "Monarch",
+    "start": "1724-01-14",
+    "end": "1724-08-31",
+    "current": false,
+    "tenure": "7 months",
+    "party": null,
+    "era": "Bourbon Dynasty"
+  },
+  {
+    "name": "👑 King Fernando VI",
+    "role": "Monarch",
+    "start": "1746-07-09",
+    "end": "1759-08-10",
+    "current": false,
+    "tenure": "13 years",
+    "party": null,
+    "era": "Bourbon Dynasty"
+  },
+  {
+    "name": "👑 King Carlos III",
+    "role": "Monarch",
+    "start": "1759-08-10",
+    "end": "1788-12-14",
+    "current": false,
+    "tenure": "29 years",
+    "party": null,
+    "era": "Bourbon Dynasty"
+  },
+  {
+    "name": "👑 King Carlos IV",
+    "role": "Monarch",
+    "start": "1788-12-14",
+    "end": "1808-03-19",
+    "current": false,
+    "tenure": "19 years",
+    "party": null,
+    "era": "Bourbon Dynasty"
+  },
+  {
+    "name": "👑 King Fernando VII",
+    "role": "Monarch",
+    "start": "1813-12-11",
+    "end": "1833-09-29",
+    "current": false,
+    "tenure": "19 years",
+    "party": null,
+    "era": "Bourbon Dynasty"
+  },
+  {
+    "name": "👑 Queen Isabel II",
+    "role": "Monarch",
+    "start": "1833-09-29",
+    "end": "1868-09-30",
+    "current": false,
+    "tenure": "35 years",
+    "party": null,
+    "era": "Bourbon Dynasty"
+  },
+  {
+    "name": "Francisco Serrano",
+    "role": "Regent",
+    "start": "1869-06-18",
+    "end": "1871-01-02",
+    "current": false,
+    "tenure": "1 year",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "👑 King Amadeo I",
+    "role": "Monarch",
+    "start": "1871-01-02",
+    "end": "1873-02-11",
+    "current": false,
+    "tenure": "2 years",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Estanislao Figueras",
+    "role": "President",
+    "start": "1873-02-11",
+    "end": "1873-06-11",
+    "current": false,
+    "tenure": "4 months",
+    "party": "Federal Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Francisco Pi i Margall",
+    "role": "President",
+    "start": "1873-06-11",
+    "end": "1873-07-18",
+    "current": false,
+    "tenure": "1 month",
+    "party": "Federal Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Nicolás Salmerón",
+    "role": "President",
+    "start": "1873-07-18",
+    "end": "1873-09-07",
+    "current": false,
+    "tenure": "2 months",
+    "party": "Federal Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Emilio Castelar",
+    "role": "President",
+    "start": "1873-09-07",
+    "end": "1874-01-03",
+    "current": false,
+    "tenure": "4 months",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "👑 King Alfonso XII",
+    "role": "Monarch",
+    "start": "1874-12-29",
+    "end": "1885-11-25",
+    "current": false,
+    "tenure": "10 years",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "👑 Queen María Cristina",
+    "role": "Regent",
+    "start": "1885-11-25",
+    "end": "1902-05-17",
+    "current": false,
+    "tenure": "16 years",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "👑 King Alfonso XIII",
+    "role": "Monarch",
+    "start": "1902-05-17",
+    "end": "1931-04-14",
+    "current": false,
+    "tenure": "28 years",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "Niceto Alcalá-Zamora",
+    "role": "President",
+    "start": "1931-12-10",
+    "end": "1936-04-07",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Republican",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Manuel Azaña",
+    "role": "President",
+    "start": "1936-05-10",
+    "end": "1939-02-27",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Republican Left",
+    "era": "Second Republic"
+  },
+  {
+    "name": "⚠️ Francisco Franco",
     "role": "Monarch",
     "start": "1939-11-01",
     "end": "1975-11-20",
     "current": false,
     "tenure": "36y 28d",
     "party": "Military dictatorship",
-    "era": null
+    "era": "Francoist State"
   },
   {
-    "name": "Juan Carlos I",
+    "name": "👑 King Juan Carlos I",
     "role": "Monarch",
     "start": "1975-11-22",
     "end": "2014-06-19",
     "current": false,
     "tenure": "38y 7m 19d",
     "party": "Bourbon; abdicated",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
     "name": "Adolfo Suárez",
@@ -27,7 +277,7 @@
     "current": false,
     "tenure": "4y 6m 19d",
     "party": "UCD; first democratic PM; resigned",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
     "name": "Leopoldo Calvo-Sotelo",
@@ -37,7 +287,7 @@
     "current": false,
     "tenure": "1y 9m 14d",
     "party": "UCD",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
     "name": "Felipe González",
@@ -47,7 +297,7 @@
     "current": false,
     "tenure": "13y 5m 13d",
     "party": "PSOE; 3 terms",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
     "name": "José María Aznar",
@@ -57,7 +307,7 @@
     "current": false,
     "tenure": "7y 11m 24d",
     "party": "PP; 2 terms",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
     "name": "José Luis Rodríguez Zapatero",
@@ -67,7 +317,7 @@
     "current": false,
     "tenure": "7y 8m 14d",
     "party": "PSOE; 2 terms",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
     "name": "Mariano Rajoy",
@@ -77,17 +327,17 @@
     "current": false,
     "tenure": "6y 5m 14d",
     "party": "PP; ousted by no-confidence",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
-    "name": "Felipe VI",
+    "name": "👑 King Felipe VI",
     "role": "Monarch",
     "start": "2014-06-19",
     "end": null,
     "current": true,
     "tenure": "12y 11d",
     "party": "Bourbon",
-    "era": null
+    "era": "Constitutional Monarchy"
   },
   {
     "name": "Pedro Sánchez",
@@ -97,6 +347,6 @@
     "current": true,
     "tenure": "8y 7d",
     "party": "PSOE",
-    "era": null
+    "era": "Constitutional Monarchy"
   }
 ]

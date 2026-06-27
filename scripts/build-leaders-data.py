@@ -45,6 +45,7 @@ SLUG_MAP = {
     # Batch 3
     "Spain":           "spain",
     "Netherlands":     "netherlands",
+    "Belgium":         "belgium",
     "Poland":          "poland",
     "Ukraine":         "ukraine",
     "Israel":          "israel",
@@ -124,42 +125,4 @@ def build(xlsx: Path) -> None:
 
         party_clean = str(party).strip() if party else None
         if party_clean and party_clean.lower().endswith("; incumbent"):
-            party_clean = party_clean[: -len("; incumbent")].rstrip(";").strip()
-
-        buckets[slug].append({
-            "name": str(name).strip(),
-            "role": str(role).strip(),
-            "start": start_str,
-            "end": end_str,
-            "current": is_current,
-            "tenure": str(tenure).strip() if tenure else None,
-            "party": party_clean or None,
-            "era": era,
-            "_sort": start_str or "0000-00-00",
-        })
-
-    for slug, records in buckets.items():
-        if slug == "russia":
-            records.sort(key=lambda r: (ERA_ORDER.get(r["era"] or "", 9), r["_sort"]))
-        else:
-            records.sort(key=lambda r: r["_sort"])
-        for r in records:
-            del r["_sort"]
-
-        out = OUT_DIR / f"{slug}.json"
-        with open(out, "w", encoding="utf-8") as f:
-            json.dump(records, f, ensure_ascii=False, indent=2)
-        print(f"  {slug}: {len(records)} leaders → data/leaders/{slug}.json")
-
-    print(f"\nDone. {len(buckets)} files.")
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Build world leaders JSON data.")
-    parser.add_argument("--xlsx", required=True, help="Path to world_leaders_single_table.xlsx")
-    args = parser.parse_args()
-
-    xlsx_path = Path(args.xlsx)
-    if not xlsx_path.exists():
-        sys.exit(f"File not found: {xlsx_path}")
-    build(xlsx_path)
+            party_clean = party_clean[: -len("; i

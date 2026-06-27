@@ -7,7 +7,13 @@
     "current": false,
     "tenure": "2m 9d",
     "party": "Kuomintang; Provisional",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Guangzhou",
+        "slug": "guangzhou"
+      }
+    ]
   },
   {
     "name": "Yuan Shikai",
@@ -17,7 +23,13 @@
     "current": false,
     "tenure": "4y 2m 29d",
     "party": "Independent; died in office",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
   },
   {
     "name": "Li Yuanhong",
@@ -27,7 +39,13 @@
     "current": false,
     "tenure": "1y 1m 6d",
     "party": "Independent; 1st term",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Wuhan",
+        "slug": "wuhan"
+      }
+    ]
   },
   {
     "name": "Feng Guozhang",
@@ -37,7 +55,13 @@
     "current": false,
     "tenure": "1y 3m",
     "party": "Independent",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
   },
   {
     "name": "Xu Shichang",
@@ -47,7 +71,13 @@
     "current": false,
     "tenure": "3y 7m 26d",
     "party": "Independent",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Tianjin",
+        "slug": "tianjin"
+      }
+    ]
   },
   {
     "name": "Li Yuanhong",
@@ -57,7 +87,13 @@
     "current": false,
     "tenure": "1y 11d",
     "party": "Independent; 2nd term",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Wuhan",
+        "slug": "wuhan"
+      }
+    ]
   },
   {
     "name": "Cao Kun",
@@ -67,7 +103,13 @@
     "current": false,
     "tenure": "1y 24d",
     "party": "Independent",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Tianjin",
+        "slug": "tianjin"
+      }
+    ]
   },
   {
     "name": "Chiang Kai-shek",
@@ -77,7 +119,17 @@
     "current": false,
     "tenure": "2y 11m 10d",
     "party": "Kuomintang; 1st term",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Nanjing",
+        "slug": "nanjing"
+      },
+      {
+        "name": "Shanghai",
+        "slug": "shanghai"
+      }
+    ]
   },
   {
     "name": "Lin Sen",
@@ -87,7 +139,13 @@
     "current": false,
     "tenure": "11y 7m 17d",
     "party": "Kuomintang",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Fuzhou",
+        "slug": "fuzhou"
+      }
+    ]
   },
   {
     "name": "Chiang Kai-shek",
@@ -97,7 +155,17 @@
     "current": false,
     "tenure": "5y 4m 2d",
     "party": "Kuomintang; 2nd term",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Nanjing",
+        "slug": "nanjing"
+      },
+      {
+        "name": "Shanghai",
+        "slug": "shanghai"
+      }
+    ]
   },
   {
     "name": "Li Zongren",
@@ -107,7 +175,13 @@
     "current": false,
     "tenure": "1y 1m 9d",
     "party": "Kuomintang; Acting",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Guilin",
+        "slug": "guilin"
+      }
+    ]
   },
   {
     "name": "Chiang Kai-shek",
@@ -117,17 +191,33 @@
     "current": false,
     "tenure": "25y 1m 11d",
     "party": "Kuomintang; died in office",
-    "era": "Republic of China (ROC)"
+    "era": "Republic of China (ROC)",
+    "metros": [
+      {
+        "name": "Taipei",
+        "slug": "taipei"
+      }
+    ]
   },
   {
-    "name": "Mao Zedong",
+    "name": "⚠️ Mao Zedong",
     "role": "Paramount Leader (PRC)",
     "start": "1949-10-01",
     "end": "1976-09-09",
     "current": false,
     "tenure": "26y 11m 20d",
     "party": "Communist Party; died in office",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Changsha",
+        "slug": "changsha"
+      },
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
   },
   {
     "name": "Hua Guofeng",
@@ -137,7 +227,13 @@
     "current": false,
     "tenure": "2y 3m 21d",
     "party": "Communist Party",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
   },
   {
     "name": "Deng Xiaoping",
@@ -147,17 +243,17 @@
     "current": false,
     "tenure": "10y 10m 29d",
     "party": "Communist Party",
-    "era": "People's Republic of China (PRC)"
-  },
-  {
-    "name": "Zhao Ziyang",
-    "role": "Premier (PRC)",
-    "start": "1980-09-10",
-    "end": "1987-11-24",
-    "current": false,
-    "tenure": "7y 2m",
-    "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Chengdu",
+        "slug": "chengdu"
+      },
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
   },
   {
     "name": "Li Xiannian",
@@ -167,17 +263,13 @@
     "current": false,
     "tenure": "4y 10m",
     "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
-  },
-  {
-    "name": "Li Peng",
-    "role": "Premier (PRC)",
-    "start": "1987-11-24",
-    "end": "1998-03-17",
-    "current": false,
-    "tenure": "10y 4m",
-    "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Wuhan",
+        "slug": "wuhan"
+      }
+    ]
   },
   {
     "name": "Yang Shangkun",
@@ -187,7 +279,13 @@
     "current": false,
     "tenure": "4y 11m",
     "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Chongqing",
+        "slug": "chongqing"
+      }
+    ]
   },
   {
     "name": "Jiang Zemin",
@@ -197,17 +295,17 @@
     "current": false,
     "tenure": "9y 11m 25d",
     "party": "Communist Party",
-    "era": "People's Republic of China (PRC)"
-  },
-  {
-    "name": "Zhu Rongji",
-    "role": "Premier (PRC)",
-    "start": "1998-03-17",
-    "end": "2003-03-16",
-    "current": false,
-    "tenure": "5y",
-    "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Yangzhou",
+        "slug": "yangzhou"
+      },
+      {
+        "name": "Shanghai",
+        "slug": "shanghai"
+      }
+    ]
   },
   {
     "name": "Hu Jintao",
@@ -217,17 +315,13 @@
     "current": false,
     "tenure": "10y 2d",
     "party": "Communist Party",
-    "era": "People's Republic of China (PRC)"
-  },
-  {
-    "name": "Wen Jiabao",
-    "role": "Premier (PRC)",
-    "start": "2003-03-16",
-    "end": "2013-03-15",
-    "current": false,
-    "tenure": "10y",
-    "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
   },
   {
     "name": "Xi Jinping",
@@ -237,26 +331,12 @@
     "current": true,
     "tenure": "13y 3m 17d",
     "party": "Communist Party",
-    "era": "People's Republic of China (PRC)"
-  },
-  {
-    "name": "Li Keqiang",
-    "role": "Premier (PRC)",
-    "start": "2013-03-15",
-    "end": "2023-03-11",
-    "current": false,
-    "tenure": "10y",
-    "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
-  },
-  {
-    "name": "Li Qiang",
-    "role": "Premier (PRC)",
-    "start": "2023-03-11",
-    "end": null,
-    "current": true,
-    "tenure": null,
-    "party": "Chinese Communist Party",
-    "era": "People's Republic of China (PRC)"
+    "era": "People's Republic of China (PRC)",
+    "metros": [
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
   }
 ]

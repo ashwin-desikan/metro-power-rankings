@@ -1,6 +1,6 @@
 [
   {
-    "name": "Alfred the Great",
+    "name": "👑 King Alfred the Great",
     "role": "King",
     "start": "0886-01-01",
     "end": "0899-10-26",
@@ -10,7 +10,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward the Elder",
+    "name": "👑 King Edward the Elder",
     "role": "King",
     "start": "0899-10-26",
     "end": "0924-07-17",
@@ -20,7 +20,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Æthelstan",
+    "name": "👑 King Æthelstan",
     "role": "King",
     "start": "0924-01-01",
     "end": "0939-10-27",
@@ -30,7 +30,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edmund I",
+    "name": "👑 King Edmund I",
     "role": "King",
     "start": "0939-10-27",
     "end": "0946-05-26",
@@ -40,7 +40,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Eadred",
+    "name": "👑 King Eadred",
     "role": "King",
     "start": "0946-05-26",
     "end": "0955-11-23",
@@ -50,7 +50,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Eadwig",
+    "name": "👑 King Eadwig",
     "role": "King",
     "start": "0955-11-23",
     "end": "0959-10-01",
@@ -60,7 +60,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edgar the Peaceful",
+    "name": "👑 King Edgar the Peaceful",
     "role": "King",
     "start": "0959-10-01",
     "end": "0975-07-08",
@@ -70,7 +70,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward the Martyr",
+    "name": "👑 King Edward the Martyr",
     "role": "King",
     "start": "0975-07-08",
     "end": "0978-03-18",
@@ -80,7 +80,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Æthelred the Unready",
+    "name": "👑 King Æthelred the Unready",
     "role": "King",
     "start": "0978-03-18",
     "end": "1013-01-01",
@@ -90,7 +90,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Sweyn Forkbeard",
+    "name": "👑 King Sweyn Forkbeard",
     "role": "King",
     "start": "1013-01-01",
     "end": "1014-02-03",
@@ -100,7 +100,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Æthelred the Unready",
+    "name": "👑 King Æthelred the Unready",
     "role": "King",
     "start": "1014-01-01",
     "end": "1016-04-23",
@@ -110,7 +110,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edmund Ironside",
+    "name": "👑 King Edmund Ironside",
     "role": "King",
     "start": "1016-04-23",
     "end": "1016-11-30",
@@ -120,7 +120,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Cnut the Great",
+    "name": "👑 King Cnut the Great",
     "role": "King",
     "start": "1016-11-30",
     "end": "1035-11-12",
@@ -130,7 +130,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Harold Harefoot",
+    "name": "👑 King Harold Harefoot",
     "role": "King",
     "start": "1035-11-12",
     "end": "1040-03-17",
@@ -140,7 +140,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Harthacnut",
+    "name": "👑 King Harthacnut",
     "role": "King",
     "start": "1040-03-17",
     "end": "1042-06-08",
@@ -150,7 +150,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward the Confessor",
+    "name": "👑 King Edward the Confessor",
     "role": "King",
     "start": "1042-06-08",
     "end": "1066-01-05",
@@ -160,7 +160,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Harold II",
+    "name": "👑 King Harold II",
     "role": "King",
     "start": "1066-01-06",
     "end": "1066-10-14",
@@ -170,7 +170,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "William I (the Conqueror)",
+    "name": "👑 King William I (the Conqueror)",
     "role": "King",
     "start": "1066-12-25",
     "end": "1087-09-09",
@@ -180,7 +180,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "William II",
+    "name": "👑 King William II",
     "role": "King",
     "start": "1087-09-26",
     "end": "1100-08-02",
@@ -190,7 +190,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry I",
+    "name": "👑 King Henry I",
     "role": "King",
     "start": "1100-08-05",
     "end": "1135-12-01",
@@ -200,7 +200,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Stephen",
+    "name": "👑 King Stephen",
     "role": "King",
     "start": "1135-12-22",
     "end": "1154-10-25",
@@ -210,7 +210,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry II",
+    "name": "👑 King Henry II",
     "role": "King",
     "start": "1154-12-19",
     "end": "1189-07-06",
@@ -220,7 +220,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Richard I",
+    "name": "👑 King Richard I",
     "role": "King",
     "start": "1189-09-03",
     "end": "1199-04-06",
@@ -230,7 +230,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "John",
+    "name": "👑 King John",
     "role": "King",
     "start": "1199-05-27",
     "end": "1216-10-19",
@@ -240,7 +240,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry III",
+    "name": "👑 King Henry III",
     "role": "King",
     "start": "1216-10-28",
     "end": "1272-11-16",
@@ -250,7 +250,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward I",
+    "name": "👑 King Edward I",
     "role": "King",
     "start": "1272-11-20",
     "end": "1307-07-07",
@@ -260,7 +260,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward II",
+    "name": "👑 King Edward II",
     "role": "King",
     "start": "1307-07-08",
     "end": "1327-01-20",
@@ -270,7 +270,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward III",
+    "name": "👑 King Edward III",
     "role": "King",
     "start": "1327-01-25",
     "end": "1377-06-21",
@@ -280,7 +280,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Richard II",
+    "name": "👑 King Richard II",
     "role": "King",
     "start": "1377-06-22",
     "end": "1399-09-29",
@@ -290,7 +290,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry IV",
+    "name": "👑 King Henry IV",
     "role": "King",
     "start": "1399-09-30",
     "end": "1413-03-20",
@@ -300,7 +300,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry V",
+    "name": "👑 King Henry V",
     "role": "King",
     "start": "1413-03-21",
     "end": "1422-08-31",
@@ -310,7 +310,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry VI",
+    "name": "👑 King Henry VI",
     "role": "King",
     "start": "1422-09-01",
     "end": "1461-03-04",
@@ -320,7 +320,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward IV",
+    "name": "👑 King Edward IV",
     "role": "King",
     "start": "1461-03-04",
     "end": "1470-10-03",
@@ -330,7 +330,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry VI",
+    "name": "👑 King Henry VI",
     "role": "King",
     "start": "1470-10-03",
     "end": "1471-04-11",
@@ -340,7 +340,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward IV",
+    "name": "👑 King Edward IV",
     "role": "King",
     "start": "1471-04-11",
     "end": "1483-04-09",
@@ -350,7 +350,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward V",
+    "name": "👑 King Edward V",
     "role": "King",
     "start": "1483-04-09",
     "end": "1483-06-25",
@@ -360,7 +360,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Richard III",
+    "name": "👑 King Richard III",
     "role": "King",
     "start": "1483-06-26",
     "end": "1485-08-22",
@@ -370,7 +370,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry VII",
+    "name": "👑 King Henry VII",
     "role": "King",
     "start": "1485-08-22",
     "end": "1509-04-21",
@@ -380,7 +380,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Henry VIII",
+    "name": "👑 King Henry VIII",
     "role": "King",
     "start": "1509-04-22",
     "end": "1547-01-28",
@@ -390,7 +390,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Edward VI",
+    "name": "👑 King Edward VI",
     "role": "King",
     "start": "1547-01-28",
     "end": "1553-07-06",
@@ -400,7 +400,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Lady Jane Grey",
+    "name": "👑 Queen Lady Jane Grey",
     "role": "Queen",
     "start": "1553-07-10",
     "end": "1553-07-19",
@@ -410,7 +410,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Mary I",
+    "name": "👑 Queen Mary I",
     "role": "Queen",
     "start": "1553-07-19",
     "end": "1558-11-17",
@@ -420,7 +420,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Elizabeth I",
+    "name": "👑 Queen Elizabeth I",
     "role": "Queen",
     "start": "1558-11-17",
     "end": "1603-03-24",
@@ -430,7 +430,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "James I",
+    "name": "👑 King James I",
     "role": "King",
     "start": "1603-03-24",
     "end": "1625-03-27",
@@ -440,7 +440,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Charles I",
+    "name": "👑 King Charles I",
     "role": "King",
     "start": "1625-03-27",
     "end": "1649-01-30",
@@ -460,7 +460,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Oliver Cromwell",
+    "name": "👑 Lord Protector Oliver Cromwell",
     "role": "Lord Protector",
     "start": "1653-12-16",
     "end": "1658-09-03",
@@ -470,7 +470,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Richard Cromwell",
+    "name": "👑 Lord Protector Richard Cromwell",
     "role": "Lord Protector",
     "start": "1658-09-03",
     "end": "1659-05-07",
@@ -490,7 +490,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Charles II",
+    "name": "👑 King Charles II",
     "role": "King",
     "start": "1660-05-29",
     "end": "1685-02-06",
@@ -500,7 +500,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "James II",
+    "name": "👑 King James II",
     "role": "King",
     "start": "1685-02-06",
     "end": "1688-12-23",
@@ -510,7 +510,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "William III & Mary II",
+    "name": "👑 King William III & Queen Mary II",
     "role": "Sovereigns",
     "start": "1689-02-13",
     "end": "1694-12-28",
@@ -520,7 +520,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "William III",
+    "name": "👑 King William III",
     "role": "King",
     "start": "1694-12-28",
     "end": "1702-03-08",
@@ -530,7 +530,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Anne",
+    "name": "👑 Queen Anne",
     "role": "Queen",
     "start": "1702-03-08",
     "end": "1707-05-01",
@@ -540,7 +540,7 @@
     "era": "Kingdom of England"
   },
   {
-    "name": "Anne",
+    "name": "👑 Queen Anne",
     "role": "Sovereign",
     "start": "1707-05-01",
     "end": "1714-08-01",
@@ -550,7 +550,7 @@
     "era": "Great Britain"
   },
   {
-    "name": "George I",
+    "name": "👑 King George I",
     "role": "Sovereign",
     "start": "1714-08-01",
     "end": "1727-06-11",
@@ -570,7 +570,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "George II",
+    "name": "👑 King George II",
     "role": "Sovereign",
     "start": "1727-06-11",
     "end": "1760-10-25",
@@ -630,7 +630,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "George III",
+    "name": "👑 King George III",
     "role": "Sovereign",
     "start": "1760-10-25",
     "end": "1820-01-29",
@@ -800,7 +800,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "George IV",
+    "name": "👑 King George IV",
     "role": "Sovereign",
     "start": "1820-01-29",
     "end": "1830-06-26",
@@ -840,7 +840,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "William IV",
+    "name": "👑 King William IV",
     "role": "Sovereign",
     "start": "1830-06-26",
     "end": "1837-06-20",
@@ -890,7 +890,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "Victoria",
+    "name": "👑 Queen Victoria",
     "role": "Sovereign",
     "start": "1837-06-20",
     "end": "1901-01-22",
@@ -1090,7 +1090,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "Edward VII",
+    "name": "👑 King Edward VII",
     "role": "Sovereign",
     "start": "1901-01-22",
     "end": "1910-05-06",
@@ -1130,7 +1130,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "George V",
+    "name": "👑 King George V",
     "role": "Sovereign",
     "start": "1910-05-06",
     "end": "1936-01-20",
@@ -1210,7 +1210,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "Edward VIII",
+    "name": "👑 King Edward VIII",
     "role": "Sovereign",
     "start": "1936-01-20",
     "end": "1936-12-11",
@@ -1220,7 +1220,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "George VI",
+    "name": "👑 King George VI",
     "role": "Sovereign",
     "start": "1936-12-11",
     "end": "1952-02-06",
@@ -1270,7 +1270,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "Elizabeth II",
+    "name": "👑 Queen Elizabeth II",
     "role": "Sovereign",
     "start": "1952-02-06",
     "end": "2022-09-08",
@@ -1430,7 +1430,7 @@
     "era": "United Kingdom"
   },
   {
-    "name": "Charles III",
+    "name": "👑 King Charles III",
     "role": "Sovereign",
     "start": "2022-09-08",
     "end": null,

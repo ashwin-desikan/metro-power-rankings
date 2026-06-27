@@ -1,6 +1,6 @@
 [
   {
-    "name": "Catherine II (the Great)",
+    "name": "👑 Empress Catherine II (the Great)",
     "role": "Empress/Emperor",
     "start": "1762-07-09",
     "end": "1796-11-17",
@@ -10,7 +10,7 @@
     "era": "Imperial Era"
   },
   {
-    "name": "Paul I",
+    "name": "👑 Emperor Paul I",
     "role": "Emperor",
     "start": "1796-11-17",
     "end": "1801-03-23",
@@ -20,7 +20,7 @@
     "era": "Imperial Era"
   },
   {
-    "name": "Alexander I",
+    "name": "👑 Emperor Alexander I",
     "role": "Emperor",
     "start": "1801-03-23",
     "end": "1825-12-01",
@@ -30,7 +30,7 @@
     "era": "Imperial Era"
   },
   {
-    "name": "Nicholas I",
+    "name": "👑 Emperor Nicholas I",
     "role": "Emperor",
     "start": "1825-12-14",
     "end": "1855-03-02",
@@ -40,7 +40,7 @@
     "era": "Imperial Era"
   },
   {
-    "name": "Alexander II",
+    "name": "👑 Emperor Alexander II",
     "role": "Emperor",
     "start": "1855-03-02",
     "end": "1881-03-13",
@@ -50,7 +50,7 @@
     "era": "Imperial Era"
   },
   {
-    "name": "Alexander III",
+    "name": "👑 Emperor Alexander III",
     "role": "Emperor",
     "start": "1881-03-13",
     "end": "1894-11-01",
@@ -60,7 +60,7 @@
     "era": "Imperial Era"
   },
   {
-    "name": "Nicholas II",
+    "name": "👑 Emperor Nicholas II",
     "role": "Emperor",
     "start": "1894-11-01",
     "end": "1917-03-15",
@@ -100,93 +100,13 @@
     "era": "Soviet Era"
   },
   {
-    "name": "Yakov Sverdlov",
-    "role": "Chairman of VTSIK (Head of State)",
-    "start": "1917-11-08",
-    "end": "1919-03-16",
-    "current": false,
-    "tenure": "1y 4m",
-    "party": "Bolshevik",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Mikhail Kalinin",
-    "role": "Chairman of VTSIK / Presidium",
-    "start": "1919-03-30",
-    "end": "1946-03-19",
-    "current": false,
-    "tenure": "26y 12m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Joseph Stalin",
+    "name": "⚠️ Joseph Stalin",
     "role": "General Secretary",
     "start": "1922-04-03",
     "end": "1953-03-05",
     "current": false,
     "tenure": "30y 11m",
     "party": "Communist; died in office",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Alexei Rykov",
-    "role": "Chairman of Council of People's Commissars",
-    "start": "1924-02-02",
-    "end": "1930-12-19",
-    "current": false,
-    "tenure": "6y 10m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Vyacheslav Molotov",
-    "role": "Chairman of Council of People's Commissars",
-    "start": "1930-12-19",
-    "end": "1941-05-06",
-    "current": false,
-    "tenure": "10y 4m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Joseph Stalin",
-    "role": "Chairman of Council of Ministers",
-    "start": "1941-05-06",
-    "end": "1953-03-05",
-    "current": false,
-    "tenure": "11y 10m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Nikolai Shvernik",
-    "role": "Chairman of Presidium",
-    "start": "1946-03-19",
-    "end": "1953-03-15",
-    "current": false,
-    "tenure": "6y 12m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Georgy Malenkov",
-    "role": "Chairman of Council of Ministers",
-    "start": "1953-03-05",
-    "end": "1955-02-08",
-    "current": false,
-    "tenure": "1y 11m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Kliment Voroshilov",
-    "role": "Chairman of Presidium",
-    "start": "1953-03-15",
-    "end": "1960-05-07",
-    "current": false,
-    "tenure": "7y 1m",
-    "party": "Communist",
     "era": "Soviet Era"
   },
   {
@@ -200,36 +120,6 @@
     "era": "Soviet Era"
   },
   {
-    "name": "Nikolai Bulganin",
-    "role": "Chairman of Council of Ministers",
-    "start": "1955-02-08",
-    "end": "1958-03-27",
-    "current": false,
-    "tenure": "3y 1m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Nikita Khrushchev",
-    "role": "Chairman of Council of Ministers",
-    "start": "1958-03-27",
-    "end": "1964-10-14",
-    "current": false,
-    "tenure": "6y 6m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Leonid Brezhnev",
-    "role": "Chairman of Presidium",
-    "start": "1960-05-07",
-    "end": "1964-07-15",
-    "current": false,
-    "tenure": "4y 2m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
     "name": "Leonid Brezhnev",
     "role": "General Secretary",
     "start": "1964-10-14",
@@ -237,26 +127,6 @@
     "current": false,
     "tenure": "18y 1m",
     "party": "Communist; died in office",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Aleksei Kosygin",
-    "role": "Chairman of Council of Ministers",
-    "start": "1964-10-15",
-    "end": "1980-10-23",
-    "current": false,
-    "tenure": "16y",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Nikolai Tikhonov",
-    "role": "Chairman of Council of Ministers",
-    "start": "1980-10-23",
-    "end": "1985-09-27",
-    "current": false,
-    "tenure": "4y 11m",
-    "party": "Communist",
     "era": "Soviet Era"
   },
   {
@@ -290,26 +160,6 @@
     "era": "Soviet Era"
   },
   {
-    "name": "Nikolai Ryzhkov",
-    "role": "Chairman of Council of Ministers",
-    "start": "1985-09-27",
-    "end": "1991-01-14",
-    "current": false,
-    "tenure": "5y 3m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
-    "name": "Valentin Pavlov",
-    "role": "Prime Minister (Soviet)",
-    "start": "1991-01-14",
-    "end": "1991-08-22",
-    "current": false,
-    "tenure": "7m",
-    "party": "Communist",
-    "era": "Soviet Era"
-  },
-  {
     "name": "Boris Yeltsin",
     "role": "President",
     "start": "1991-06-10",
@@ -318,16 +168,6 @@
     "tenure": "8y 6m",
     "party": "Independent",
     "era": "Modern Russia"
-  },
-  {
-    "name": "Ivan Silayev",
-    "role": "Prime Minister (interim)",
-    "start": "1991-08-24",
-    "end": "1991-12-26",
-    "current": false,
-    "tenure": "4m",
-    "party": "Communist",
-    "era": "Soviet Era"
   },
   {
     "name": "Vladimir Putin",
@@ -360,7 +200,7 @@
     "era": "Modern Russia"
   },
   {
-    "name": "Vladimir Putin",
+    "name": "⚠️ Vladimir Putin",
     "role": "President",
     "start": "2012-05-07",
     "end": null,

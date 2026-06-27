@@ -230,7 +230,7 @@
     "era": "Weimar Republic"
   },
   {
-    "name": "Adolf Hitler",
+    "name": "⚠️ Adolf Hitler",
     "role": "Chancellor/Fuhrer",
     "start": "1933-01-30",
     "end": "1945-04-30",
@@ -240,7 +240,7 @@
     "era": "Nazi Germany"
   },
   {
-    "name": "Joseph Goebbels",
+    "name": "⚠️ Joseph Goebbels",
     "role": "Chancellor (1 day)",
     "start": "1945-04-30",
     "end": "1945-05-01",
@@ -250,7 +250,7 @@
     "era": "Nazi Germany"
   },
   {
-    "name": "Lutz Graf Schwerin von Krosigk",
+    "name": "⚠️ Lutz Graf Schwerin von Krosigk",
     "role": "Chancellor (brief)",
     "start": "1945-05-02",
     "end": "1945-05-23",

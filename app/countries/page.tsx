@@ -6,6 +6,7 @@ import {
   getTopLevelCountries,
   getChildrenOf,
 } from "@/lib/countries";
+import { getLeaders } from "@/lib/leaders";
 import {
   AUTHOR,
   BASE_URL,
@@ -42,6 +43,37 @@ export const metadata: Metadata = {
   },
 };
 
+// Priority order for picking the "current leader" to show in the directory.
+const ROLE_PRIORITY = [
+  "Supreme Leader", "General Secretary", "President", "Chancellor",
+  "Prime Minister", "Taoiseach", "Premier", "Monarch",
+];
+
+function pickCurrentLeader(slug: string): { name: string; role: string } | null {
+  try {
+    const leaders = getLeaders(slug);
+    const current = leaders.filter((l) => l.current);
+    if (!current.length) return null;
+    for (const role of ROLE_PRIORITY) {
+      const match = current.find((l) => l.role.includes(role));
+      if (match) {
+        const name = match.name.replace(/^[⚠️👑\s]+/u, "").trim();
+        const roleShort = match.role
+          .replace("Prime Minister", "PM")
+          .replace("General Secretary", "Gen. Sec.")
+          .replace("Supreme Leader", "Sup. Leader")
+          .replace("Chancellor", "Chanc.")
+          .replace("President", "Pres.");
+        return { name, role: roleShort };
+      }
+    }
+    const first = current[0];
+    return { name: first.name.replace(/^[⚠️👑\s]+/u, "").trim(), role: first.role };
+  } catch {
+    return null;
+  }
+}
+
 function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number]): DirectoryCountry {
   const children = getChildrenOf(c.name).map((child) => ({
     slug: child.slug,
@@ -54,6 +86,7 @@ function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number]): Director
     scoreTotal: child.scoreTotal,
     capital: child.capital,
     disputed: child.disputed,
+    currentLeader: pickCurrentLeader(child.slug),
     children: [],
   }));
   return {
@@ -67,6 +100,7 @@ function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number]): Director
     scoreTotal: c.scoreTotal,
     capital: c.capital,
     disputed: c.disputed,
+    currentLeader: pickCurrentLeader(c.slug),
     children,
   };
 }

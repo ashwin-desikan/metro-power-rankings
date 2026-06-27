@@ -1,5 +1,255 @@
 [
   {
+    "name": "👑 Emperor Pedro I",
+    "role": "Emperor",
+    "start": "1822-09-07",
+    "end": "1831-04-07",
+    "current": false,
+    "tenure": "8 years",
+    "party": null,
+    "era": "Empire of Brazil"
+  },
+  {
+    "name": "👑 Emperor Pedro II",
+    "role": "Emperor",
+    "start": "1841-07-18",
+    "end": "1889-11-15",
+    "current": false,
+    "tenure": "48 years",
+    "party": null,
+    "era": "Empire of Brazil"
+  },
+  {
+    "name": "Deodoro da Fonseca",
+    "role": "President",
+    "start": "1889-11-15",
+    "end": "1891-11-23",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Military",
+    "era": "First Republic"
+  },
+  {
+    "name": "Floriano Peixoto",
+    "role": "President",
+    "start": "1891-11-23",
+    "end": "1894-11-15",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Military",
+    "era": "First Republic"
+  },
+  {
+    "name": "Prudente de Morais",
+    "role": "President",
+    "start": "1894-11-15",
+    "end": "1898-11-15",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Campos Sales",
+    "role": "President",
+    "start": "1898-11-15",
+    "end": "1902-11-15",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Rodrigues Alves",
+    "role": "President",
+    "start": "1902-11-15",
+    "end": "1906-11-15",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Afonso Pena",
+    "role": "President",
+    "start": "1906-11-15",
+    "end": "1909-06-14",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Hermes da Fonseca",
+    "role": "President",
+    "start": "1910-11-15",
+    "end": "1914-11-15",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Military/Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Venceslau Brás",
+    "role": "President",
+    "start": "1914-11-15",
+    "end": "1918-11-15",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Epitácio Pessoa",
+    "role": "President",
+    "start": "1919-07-28",
+    "end": "1922-11-15",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Artur Bernardes",
+    "role": "President",
+    "start": "1922-11-15",
+    "end": "1926-11-15",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Washington Luís",
+    "role": "President",
+    "start": "1926-11-15",
+    "end": "1930-10-24",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "⚠️ Getúlio Vargas",
+    "role": "President",
+    "start": "1930-11-03",
+    "end": "1945-10-29",
+    "current": false,
+    "tenure": "15 years",
+    "party": null,
+    "era": "Vargas Era"
+  },
+  {
+    "name": "Eurico Gaspar Dutra",
+    "role": "President",
+    "start": "1946-01-31",
+    "end": "1951-01-31",
+    "current": false,
+    "tenure": "5 years",
+    "party": "Social Democratic",
+    "era": "Fourth Republic"
+  },
+  {
+    "name": "Getúlio Vargas",
+    "role": "President",
+    "start": "1951-01-31",
+    "end": "1954-08-24",
+    "current": false,
+    "tenure": "3 years",
+    "party": "Brazilian Labour",
+    "era": "Fourth Republic"
+  },
+  {
+    "name": "Café Filho",
+    "role": "President",
+    "start": "1954-08-24",
+    "end": "1955-11-08",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Social Progressive",
+    "era": "Fourth Republic"
+  },
+  {
+    "name": "Juscelino Kubitschek",
+    "role": "President",
+    "start": "1956-01-31",
+    "end": "1961-01-31",
+    "current": false,
+    "tenure": "5 years",
+    "party": "Social Democratic",
+    "era": "Fourth Republic"
+  },
+  {
+    "name": "Jânio Quadros",
+    "role": "President",
+    "start": "1961-01-31",
+    "end": "1961-08-25",
+    "current": false,
+    "tenure": "7 months",
+    "party": "National Labour",
+    "era": "Fourth Republic"
+  },
+  {
+    "name": "João Goulart",
+    "role": "President",
+    "start": "1961-09-07",
+    "end": "1964-04-01",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Brazilian Labour",
+    "era": "Fourth Republic"
+  },
+  {
+    "name": "⚠️ Humberto Castelo Branco",
+    "role": "President",
+    "start": "1964-04-15",
+    "end": "1967-03-15",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Military",
+    "era": "Military Dictatorship"
+  },
+  {
+    "name": "⚠️ Artur da Costa e Silva",
+    "role": "President",
+    "start": "1967-03-15",
+    "end": "1969-08-31",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Military",
+    "era": "Military Dictatorship"
+  },
+  {
+    "name": "⚠️ Emílio Médici",
+    "role": "President",
+    "start": "1969-10-30",
+    "end": "1974-03-15",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Military",
+    "era": "Military Dictatorship"
+  },
+  {
+    "name": "⚠️ Ernesto Geisel",
+    "role": "President",
+    "start": "1974-03-15",
+    "end": "1979-03-15",
+    "current": false,
+    "tenure": "5 years",
+    "party": "Military",
+    "era": "Military Dictatorship"
+  },
+  {
+    "name": "⚠️ João Figueiredo",
+    "role": "President",
+    "start": "1979-03-15",
+    "end": "1985-03-15",
+    "current": false,
+    "tenure": "6 years",
+    "party": "Military",
+    "era": "Military Dictatorship"
+  },
+  {
     "name": "José Sarney",
     "role": "President",
     "start": "1985-03-15",
@@ -7,7 +257,7 @@
     "current": false,
     "tenure": "5y 26d",
     "party": "PMDB; VP who assumed after Neves died",
-    "era": null
+    "era": "New Republic"
   },
   {
     "name": "Fernando Collor",
@@ -17,7 +267,7 @@
     "current": false,
     "tenure": "2y 9m",
     "party": "PRN; resigned amid corruption",
-    "era": null
+    "era": "New Republic"
   },
   {
     "name": "Itamar Franco",
@@ -27,7 +277,7 @@
     "current": false,
     "tenure": "2y 13d",
     "party": "PMDB; succeeded Collor",
-    "era": null
+    "era": "New Republic"
   },
   {
     "name": "Fernando Henrique Cardoso",
@@ -37,7 +287,7 @@
     "current": false,
     "tenure": "8y 12d",
     "party": "PSDB; 2 terms",
-    "era": null
+    "era": "New Republic"
   },
   {
     "name": "Luiz Inácio Lula da Silva",
@@ -47,7 +297,7 @@
     "current": false,
     "tenure": "8y 12d",
     "party": "PT; 1st & 2nd terms",
-    "era": null
+    "era": "New Republic"
   },
   {
     "name": "Dilma Rousseff",
@@ -57,7 +307,7 @@
     "current": false,
     "tenure": "5y 8m 29d",
     "party": "PT; impeached",
-    "era": null
+    "era": "New Republic"
   },
   {
     "name": "Michel Temer",
@@ -67,17 +317,17 @@
     "current": false,
     "tenure": "2y 4m 13d",
     "party": "MDB; succeeded Rousseff",
-    "era": null
+    "era": "New Republic"
   },
   {
-    "name": "Jair Bolsonaro",
+    "name": "⚠️ Jair Bolsonaro",
     "role": "President",
     "start": "2019-01-01",
     "end": "2023-01-01",
     "current": false,
     "tenure": "4y 21d",
     "party": "PL",
-    "era": null
+    "era": "New Republic"
   },
   {
     "name": "Luiz Inácio Lula da Silva",
@@ -87,6 +337,6 @@
     "current": true,
     "tenure": "3y 5m 13d",
     "party": "PT; 3rd term",
-    "era": null
+    "era": "New Republic"
   }
 ]

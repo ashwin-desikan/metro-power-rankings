@@ -1,0 +1,202 @@
+[
+  {
+    "name": "👑 King Leopold I",
+    "role": "Monarch",
+    "start": "1831-07-21",
+    "end": "1865-12-10",
+    "current": false,
+    "tenure": "34 years",
+    "party": null,
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "⚠️ 👑 King Leopold II",
+    "role": "Monarch",
+    "start": "1865-12-10",
+    "end": "1909-12-17",
+    "current": false,
+    "tenure": "44 years",
+    "party": null,
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "👑 King Albert I",
+    "role": "Monarch",
+    "start": "1909-12-17",
+    "end": "1934-02-17",
+    "current": false,
+    "tenure": "24 years",
+    "party": null,
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "👑 King Leopold III",
+    "role": "Monarch",
+    "start": "1934-02-17",
+    "end": "1951-07-11",
+    "current": false,
+    "tenure": "17 years",
+    "party": null,
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "👑 King Baudouin",
+    "role": "Monarch",
+    "start": "1951-07-11",
+    "end": "1993-07-31",
+    "current": false,
+    "tenure": "42 years",
+    "party": null,
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "👑 King Albert II",
+    "role": "Monarch",
+    "start": "1993-08-09",
+    "end": "2013-07-21",
+    "current": false,
+    "tenure": "19 years",
+    "party": null,
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "👑 King Philippe",
+    "role": "Monarch",
+    "start": "2013-07-21",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Paul-Henri Spaak",
+    "role": "Prime Minister",
+    "start": "1947-03-20",
+    "end": "1949-08-11",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Socialist",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Gaston Eyskens",
+    "role": "Prime Minister",
+    "start": "1958-06-26",
+    "end": "1961-04-25",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Christian Social",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Leo Tindemans",
+    "role": "Prime Minister",
+    "start": "1974-04-25",
+    "end": "1978-10-20",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Christian People's",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Wilfried Martens",
+    "role": "Prime Minister",
+    "start": "1979-04-03",
+    "end": "1992-03-07",
+    "current": false,
+    "tenure": "13 years",
+    "party": "Christian People's",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Jean-Luc Dehaene",
+    "role": "Prime Minister",
+    "start": "1992-03-07",
+    "end": "1999-07-12",
+    "current": false,
+    "tenure": "7 years",
+    "party": "Christian People's",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Guy Verhofstadt",
+    "role": "Prime Minister",
+    "start": "1999-07-12",
+    "end": "2008-03-20",
+    "current": false,
+    "tenure": "8 years",
+    "party": "Liberal",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Herman Van Rompuy",
+    "role": "Prime Minister",
+    "start": "2008-03-20",
+    "end": "2009-11-25",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Christian People's",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Yves Leterme",
+    "role": "Prime Minister",
+    "start": "2009-11-25",
+    "end": "2011-12-06",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Christian People's",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Elio Di Rupo",
+    "role": "Prime Minister",
+    "start": "2011-12-06",
+    "end": "2014-10-11",
+    "current": false,
+    "tenure": "2 years",
+    "party": "Socialist",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Charles Michel",
+    "role": "Prime Minister",
+    "start": "2014-10-11",
+    "end": "2019-10-27",
+    "current": false,
+    "tenure": "5 years",
+    "party": "Liberal",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Sophie Wilmès",
+    "role": "Prime Minister",
+    "start": "2019-10-27",
+    "end": "2020-10-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Liberal",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Alexander De Croo",
+    "role": "Prime Minister",
+    "start": "2020-10-01",
+    "end": "2024-10-16",
+    "current": false,
+    "tenure": "4 years",
+    "party": "Liberal",
+    "era": "Kingdom of Belgium"
+  },
+  {
+    "name": "Bart De Wever",
+    "role": "Prime Minister",
+    "start": "2025-02-03",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "New Flemish Alliance",
+    "era": "Kingdom of Belgium"
+  }
+]
