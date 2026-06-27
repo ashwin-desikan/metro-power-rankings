@@ -60,7 +60,7 @@ export default async function WLeagueHubPage({ params }: Props) {
         </p>
       </header>
 
-      <section className="mb-10">
+      <section id="champions" className="mb-10 scroll-mt-20">
         <h2 className="text-base font-semibold mb-3">Competitions</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {hub.competitions.map((c) => {
