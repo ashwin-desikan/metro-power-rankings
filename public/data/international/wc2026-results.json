@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-26T08:29:49Z",
+ "as_of": "2026-06-27T06:27:11Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -521,6 +521,51 @@
    "a_score": 0,
    "b_slug": "australia",
    "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1539074": {
+   "round": "Group",
+   "a_slug": "senegal",
+   "a_score": 5,
+   "b_slug": "iraq",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489416": {
+   "round": "Group",
+   "a_slug": "norway",
+   "a_score": 1,
+   "b_slug": "france",
+   "b_score": 4,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489417": {
+   "round": "Group",
+   "a_slug": "uruguay",
+   "a_score": 0,
+   "b_slug": "spain",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489414": {
+   "round": "Group",
+   "a_slug": "egypt",
+   "a_score": 1,
+   "b_slug": "iran",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1489415": {
+   "round": "Group",
+   "a_slug": "new-zealand",
+   "a_score": 1,
+   "b_slug": "belgium",
+   "b_score": 5,
    "winner_slug": null,
    "completed": true
   }
