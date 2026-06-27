@@ -1,4 +1,4 @@
-﻿import "server-only";
+﻿﻿import "server-only";
 
 // Shared release-notes data. Single source of truth, imported by both the
 // /updates page renderer (full list, brevity-validated) and the home-page
@@ -19,10 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-27",
-    headline: "WC2026 knockout bracket with live win probabilities",
+    headline: "WC2026 bracket, intercontinental fixes, British Home Championship",
     items: [
       "The World Cup section transitions automatically from group tables to a full knockout bracket as results arrive — no manual update or Vercel deploy required.",
       "Every unplayed match card shows a model win probability (Elo + market odds blend), shifting to Elo-dominant weighting once the group stage is complete.",
+      "Intercontinental hub now correctly credits Uruguay (Mundialito 1981) and France (Artemio Franchi 1985), previously absent from the all-time list.",
+      "British Home Championship (1884-1984) and Rous Cup (1985-1989) archived as a reference table, linked from England, Scotland, Wales, and Northern Ireland.",
     ],
   },
   {

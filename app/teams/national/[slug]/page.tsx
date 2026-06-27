@@ -32,6 +32,8 @@ import {
 } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export const dynamicParams = false;
 
@@ -233,6 +235,9 @@ export default async function NationalTeamPage({ params }: Props) {
       />
 
       {finals.length > 0 && <FinalsTable finals={finals} />}
+      {["england", "scotland", "wales", "northern-ireland"].includes(team.slug) && (
+        <BhcSection slug={team.slug} />
+      )}
     </main>
   );
 }
@@ -552,6 +557,65 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
             })}
           </tbody>
         </table>
+      </div>
+    </section>
+  );
+}
+
+const BHC_SLUGS = ["england", "scotland", "wales", "northern-ireland"] as const;
+const BHC_NAMES: Record<string, string> = {
+  "england": "England", "scotland": "Scotland", "wales": "Wales",
+  "northern-ireland": "Northern Ireland", "brazil": "Brazil", "colombia": "Colombia",
+};
+
+function BhcSection({ slug }: { slug: string }) {
+  let data: { meta: { teams: Record<string, { wins: number }> }; editions: Array<{ year: number; tournament: string; first: string[] }> } | null = null;
+  try {
+    const raw = readFileSync(join(process.cwd(), "public/data/international/british-home-championship.json"), "utf-8");
+    data = JSON.parse(raw);
+  } catch {
+    return null;
+  }
+  if (!data) return null;
+  const wins = data.meta.teams[slug]?.wins ?? 0;
+  const bhcEditions = data.editions.filter((e) => e.tournament === "British Home Championship");
+  const rousEditions = data.editions.filter((e) => e.tournament === "Rous Cup");
+  const bhcWins = bhcEditions.filter((e) => e.first.includes(slug)).length;
+  const rousWins = rousEditions.filter((e) => e.first.includes(slug)).length;
+
+  return (
+    <section
+      className="rounded-xl border p-5 mt-6"
+      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+    >
+      <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+        <h2 className="text-base font-semibold">British Home Championship &amp; Rous Cup</h2>
+        <Link
+          href="/teams/national/tournaments/british-home-championship"
+          className="text-xs text-[var(--accent)] hover:underline"
+        >
+          Full results →
+        </Link>
+      </div>
+      <p className="text-xs text-[var(--text-muted)] mb-3">
+        Historical reference only — these titles are not counted in the main honors totals.
+      </p>
+      <div className="flex gap-6 text-sm mb-0">
+        {bhcWins > 0 && (
+          <div>
+            <span className="text-2xl font-bold tabular-nums">{bhcWins}</span>
+            <span className="text-xs text-[var(--text-muted)] ml-1.5">BHC title{bhcWins !== 1 ? "s" : ""} (1884–1984)</span>
+          </div>
+        )}
+        {rousWins > 0 && (
+          <div>
+            <span className="text-2xl font-bold tabular-nums">{rousWins}</span>
+            <span className="text-xs text-[var(--text-muted)] ml-1.5">Rous Cup win{rousWins !== 1 ? "s" : ""} (1985–1989)</span>
+          </div>
+        )}
+        {wins === 0 && (
+          <p className="text-sm text-[var(--text-muted)]">No outright titles on record.</p>
+        )}
       </div>
     </section>
   );

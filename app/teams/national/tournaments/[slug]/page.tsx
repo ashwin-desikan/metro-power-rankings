@@ -85,6 +85,7 @@ export default async function TournamentHubPage({ params }: Props) {
       <div id="champions">
         <ChampionsList hub={hub} />
       </div>
+      {hub.slug === "other-tournaments" && <BhcLinkCard />}
     </main>
   );
 }
@@ -235,6 +236,25 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
           </tbody>
         </table>
       </div>
+    </section>
+  );
+}
+
+function BhcLinkCard() {
+  return (
+    <section className="mt-4">
+      <h2 className="text-base font-semibold mb-2">British Home Championship &amp; Rous Cup</h2>
+      <p className="text-sm text-[var(--text-muted)] mb-3">
+        The British Home Championship (1884–1984) and its successor the Rous Cup (1985–1989) are
+        archived separately. Results are not counted toward any team&apos;s main honors totals.
+      </p>
+      <Link
+        href="/teams/national/tournaments/british-home-championship"
+        className="inline-flex items-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+      >
+        View British Home Championship &amp; Rous Cup results →
+      </Link>
     </section>
   );
 }

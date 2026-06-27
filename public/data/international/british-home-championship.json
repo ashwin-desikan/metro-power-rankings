@@ -1,0 +1,1459 @@
+{
+  "meta": {
+    "label": "British Home Championship & Rous Cup",
+    "year_min": 1884,
+    "year_max": 1989,
+    "teams": {
+      "england": {
+        "slug": "england",
+        "name": "England",
+        "wins": 57
+      },
+      "scotland": {
+        "slug": "scotland",
+        "name": "Scotland",
+        "wins": 42
+      },
+      "wales": {
+        "slug": "wales",
+        "name": "Wales",
+        "wins": 12
+      },
+      "northern-ireland": {
+        "slug": "northern-ireland",
+        "name": "Northern Ireland",
+        "wins": 8
+      },
+      "brazil": {
+        "slug": "brazil",
+        "name": "Brazil",
+        "wins": 1
+      },
+      "colombia": {
+        "slug": "colombia",
+        "name": "Colombia",
+        "wins": 0
+      }
+    }
+  },
+  "editions": [
+    {
+      "year": 1884,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1885,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1886,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland",
+        "england"
+      ],
+      "second": [],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1887,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1888,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1889,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1890,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland"
+      ],
+      "second": [],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1891,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1892,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland",
+        "wales"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1893,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1894,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1895,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales",
+        "scotland"
+      ],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1896,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1897,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1898,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1899,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1900,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "wales",
+        "england"
+      ],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1901,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1902,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1903,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "northern-ireland",
+        "scotland"
+      ],
+      "second": [],
+      "third": [],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1904,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "northern-ireland"
+      ],
+      "third": [
+        "scotland",
+        "wales"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1905,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "scotland",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1906,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland"
+      ],
+      "second": [],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1907,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1908,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland"
+      ],
+      "second": [],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1909,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1910,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england",
+        "northern-ireland"
+      ],
+      "third": [],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1911,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1912,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland"
+      ],
+      "second": [],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1913,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland",
+        "wales"
+      ],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1914,
+      "tournament": "British Home Championship",
+      "first": [
+        "northern-ireland"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "england"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1920,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales"
+      ],
+      "second": [
+        "scotland",
+        "england"
+      ],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1921,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "wales",
+        "england"
+      ],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1922,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "wales",
+        "england"
+      ],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1923,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1924,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "england"
+      ]
+    },
+    {
+      "year": 1925,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1926,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "northern-ireland"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "england"
+      ]
+    },
+    {
+      "year": 1927,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland",
+        "england"
+      ],
+      "second": [],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1928,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales"
+      ],
+      "second": [
+        "northern-ireland"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "england"
+      ]
+    },
+    {
+      "year": 1929,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1930,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1931,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland"
+      ],
+      "second": [],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1932,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1933,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "england"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1934,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "scotland"
+      ]
+    },
+    {
+      "year": 1935,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland"
+      ],
+      "second": [],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1936,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "wales",
+        "england"
+      ],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1937,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "england"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1938,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland",
+        "northern-ireland"
+      ],
+      "third": [],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1939,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "wales",
+        "scotland"
+      ],
+      "second": [],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1947,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "northern-ireland"
+      ],
+      "third": [
+        "scotland",
+        "wales"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1948,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "scotland"
+      ]
+    },
+    {
+      "year": 1949,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1950,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1951,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1952,
+      "tournament": "British Home Championship",
+      "first": [
+        "wales",
+        "england"
+      ],
+      "second": [],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1953,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland",
+        "england"
+      ],
+      "second": [],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1954,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1955,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1956,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland",
+        "wales",
+        "northern-ireland"
+      ],
+      "second": [],
+      "third": [],
+      "fourth": []
+    },
+    {
+      "year": 1957,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1958,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "northern-ireland"
+      ],
+      "second": [],
+      "third": [
+        "scotland",
+        "wales"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1959,
+      "tournament": "British Home Championship",
+      "first": [
+        "northern-ireland",
+        "england"
+      ],
+      "second": [],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1960,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland",
+        "england",
+        "wales"
+      ],
+      "second": [],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1961,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1962,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "england"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1963,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1964,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "scotland",
+        "northern-ireland"
+      ],
+      "second": [],
+      "third": [],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1965,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1966,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "northern-ireland"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1967,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1968,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1969,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1970,
+      "tournament": "British Home Championship",
+      "first": [
+        "england",
+        "wales",
+        "scotland"
+      ],
+      "second": [],
+      "third": [],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1971,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "northern-ireland"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "scotland"
+      ]
+    },
+    {
+      "year": 1972,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland",
+        "england"
+      ],
+      "second": [],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1973,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "northern-ireland"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1974,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland",
+        "england"
+      ],
+      "second": [],
+      "third": [
+        "wales",
+        "northern-ireland"
+      ],
+      "fourth": []
+    },
+    {
+      "year": 1975,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1976,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1977,
+      "tournament": "British Home Championship",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "england"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1978,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1979,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "scotland"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1980,
+      "tournament": "British Home Championship",
+      "first": [
+        "northern-ireland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "scotland"
+      ]
+    },
+    {
+      "year": 1982,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "wales"
+      ],
+      "fourth": [
+        "northern-ireland"
+      ]
+    },
+    {
+      "year": 1983,
+      "tournament": "British Home Championship",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [
+        "northern-ireland"
+      ],
+      "fourth": [
+        "wales"
+      ]
+    },
+    {
+      "year": 1984,
+      "tournament": "British Home Championship",
+      "first": [
+        "northern-ireland"
+      ],
+      "second": [
+        "wales"
+      ],
+      "third": [
+        "england"
+      ],
+      "fourth": [
+        "scotland"
+      ]
+    },
+    {
+      "year": 1985,
+      "tournament": "Rous Cup",
+      "first": [
+        "scotland"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [],
+      "fourth": []
+    },
+    {
+      "year": 1986,
+      "tournament": "Rous Cup",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [],
+      "fourth": []
+    },
+    {
+      "year": 1987,
+      "tournament": "Rous Cup",
+      "first": [
+        "brazil"
+      ],
+      "second": [
+        "england"
+      ],
+      "third": [],
+      "fourth": []
+    },
+    {
+      "year": 1988,
+      "tournament": "Rous Cup",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "colombia"
+      ],
+      "third": [],
+      "fourth": []
+    },
+    {
+      "year": 1989,
+      "tournament": "Rous Cup",
+      "first": [
+        "england"
+      ],
+      "second": [
+        "scotland"
+      ],
+      "third": [],
+      "fourth": []
+    }
+  ]
+}

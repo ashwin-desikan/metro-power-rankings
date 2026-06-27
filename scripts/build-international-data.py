@@ -1367,6 +1367,21 @@ def main():
     summary_rows = read_int_summary(wb)
     print(f"  {len(summary_rows)} appearance rows")
 
+    # Patch missing INTER champion flags for one-off early editions whose
+    # workbook rows exist but lack the Champions flag. Keyed by (year, cur_name).
+    INTER_CHAMPION_PATCHES = {
+        (1981, "Uruguay"),   # Mundialito 1981
+        (1985, "France"),    # Artemio Franchi Trophy 1985
+    }
+    patched = 0
+    for r in summary_rows:
+        if r.get("intercont_champ") == "Y" and (r.get("year"), r.get("cur_name")) in INTER_CHAMPION_PATCHES:
+            r["champions"] = "Y"
+            r["finals"] = "Y"
+            patched += 1
+    if patched:
+        print(f"  Patched {patched} INTER champion row(s) (Mundialito/Artemio Franchi)")
+
     print("\nReading Int Tournaments (Comp. Rnd = Final only)...")
     finals_rows = read_finals(wb)
     print(f"  {len(finals_rows)} final-match rows")
