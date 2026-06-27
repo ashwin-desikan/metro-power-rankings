@@ -111,9 +111,13 @@ def main():
     ws = wb["Champions"]
     rows = list(ws.iter_rows(values_only=True))
     hdr = [str(c).strip() if c is not None else "" for c in rows[0]]
-    ix = {n: hdr.index(n) for n in [
-        "Sport", "Competition", "Era Name", "Season", "Year", "Champion",
-        "Champion (Canonical)", "Metro", "Metro Slug", "Date", "Scope Type"]}
+    REQUIRED = ["Sport", "Competition", "Era Name", "Season", "Year", "Champion",
+                "Champion (Canonical)", "Metro", "Metro Slug", "Date", "Scope Type"]
+    OPTIONAL = ["Tier", "Is Current", "Date Awarded", "Next Awarded Date"]
+    ix = {n: hdr.index(n) for n in REQUIRED}
+    for n in OPTIONAL:
+        if n in hdr:
+            ix[n] = hdr.index(n)
     slugset, byname = _metro_lookup()
     out = []
     for r in rows[1:]:
@@ -125,6 +129,14 @@ def main():
         except (TypeError, ValueError):
             yr = None
         date = _norm_date(r[ix["Date"]])
+        def opt(name, default=None):
+            i = ix.get(name)
+            return cell(r[i]) if i is not None and i < len(r) else default
+        tier_raw = opt("Tier")
+        try:
+            tier = int(float(tier_raw)) if tier_raw not in (None, "") else None
+        except (TypeError, ValueError):
+            tier = None
         out.append({
             "sport": cell(r[ix["Sport"]]),
             "competition": comp,
@@ -138,12 +150,17 @@ def main():
             "metroSlug": METRO_OVERRIDE.get((comp, yr, cell(r[ix["Champion (Canonical)"]])), _fix_slug(slugset, byname, cell(r[ix["Metro Slug"]]), cell(r[ix["Metro"]]))),
             "date": date,
             "scopeType": cell(r[ix["Scope Type"]]),
+            "tier":            tier,
+            "isCurrent":       opt("Is Current") == "Y",
+            "dateAwarded":     _norm_date(opt("Date Awarded")) or None,
+            "nextAwardedDate": _norm_date(opt("Next Awarded Date")) or None,
         })
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
     dated = sum(1 for x in out if x["date"])
+    current = sum(1 for x in out if x["isCurrent"])
     comps = len({x["competition"] for x in out})
-    print(f"champions-history.json: {len(out)} rows, {comps} competitions, {dated} dated")
+    print(f"champions-history.json: {len(out)} rows, {comps} competitions, {dated} dated, {current} current")
 
 if __name__ == "__main__":
     main()
