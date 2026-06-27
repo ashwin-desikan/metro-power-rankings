@@ -152,7 +152,7 @@ def main():
             "scopeType": cell(r[ix["Scope Type"]]),
             "tier":            tier,
             "isCurrent":       opt("Is Current") == "Y",
-            "dateAwarded":     _norm_date(opt("Date Awarded")) or None,
+            "dateAwarded":     _norm_date(opt("Date Awarded")) or date or None,  # fallback to Date col
             "nextAwardedDate": _norm_date(opt("Next Awarded Date")) or None,
         })
     with open(OUT, "w", encoding="utf-8") as f:
