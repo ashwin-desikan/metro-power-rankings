@@ -84,7 +84,8 @@ def main():
     ap.add_argument("--sims", type=int, default=40000)
     ap.add_argument("--beta", type=float, default=0.50, help="strength->goals sensitivity")
     ap.add_argument("--mu", type=float, default=1.33, help="baseline goals per team")
-    ap.add_argument("--blend-market", type=float, default=0.72, help="weight on market vs elo")
+    ap.add_argument("--blend-market", type=float, default=None,
+                    help="weight on market vs elo (default: 0.72 group stage, 0.45 knockout)")
     ap.add_argument("--host-bonus", type=float, default=0.10, help="strength bump for hosts")
     ap.add_argument("--seed", type=int, default=20260611)
     args = ap.parse_args()
@@ -107,6 +108,22 @@ def main():
         elif e.get("winner_slug"):
             ko_winner[(e["round"], frozenset((a, b)))] = e["winner_slug"]
 
+    # Auto-select blend weight: once the group stage is complete, outright market
+    # odds are less useful as head-to-head predictors (they price full-bracket
+    # scenarios, not individual matchups). Shift to Elo-dominant for the knockout
+    # phase so that a Sunday-morning Elo refresh has maximum impact on per-match
+    # win % shown on the bracket cards.
+    played_group = sum(1 for e in res_events if e["round"] == "Group")
+    knockout_phase = played_group >= 48
+    if args.blend_market is not None:
+        w = args.blend_market          # explicit override always wins
+    elif knockout_phase:
+        w = 0.45                       # knockout: roughly equal Elo / market split
+        print(f"Knockout phase detected ({played_group} group matches played) — "
+              f"shifting blend to market={w:.0%} / elo={1-w:.0%}")
+    else:
+        w = 0.72                       # group stage default
+
     gs = wc["group_stage"]
     field = [(g, t["slug"], t["cur_name"]) for g in GROUPS for t in gs[g]]
     slugs = [s for _, s, _ in field]
@@ -120,7 +137,6 @@ def main():
 
     mz = dict(zip(slugs, zscore([math.log(mkt[s]) for s in slugs])))
     ez = dict(zip(slugs, zscore([-math.log(elo_rank[s]) for s in slugs])))
-    w = args.blend_market
     S = {s: w * mz[s] + (1 - w) * ez[s] + (args.host_bonus if s in HOSTS else 0.0) for s in slugs}
 
     mu, beta = args.mu, args.beta
@@ -335,13 +351,45 @@ def main():
         })
     deep.sort(key=lambda r: -r["p_title"])
 
+    # Per-matchup win probabilities using the blended strength signal S.
+    # Computed analytically from the Poisson lambdas (no simulation needed).
+    # Emitted as { "slug_a:slug_b": p_a_wins } for every possible pairing
+    # among the 48 WC2026 teams, ordered so slug_a < slug_b alphabetically.
+    # When Elo data is refreshed (Sunday AM), these numbers update automatically.
+    def p_win_elo(a, b):
+        """P(a beats b in 90 min) from Poisson model, ignoring draws (KO context)."""
+        la, lb = lambdas(a, b)
+        # Sum P(a scores k) * P(b scores < k) for k=0..20
+        import math as _math
+        def pois_pmf(lam, k):
+            return _math.exp(-lam) * (lam ** k) / _math.factorial(k)
+        pa_wins = 0.0
+        for ka in range(1, 21):
+            p_ka = pois_pmf(la, ka)
+            p_b_less = sum(pois_pmf(lb, kb) for kb in range(0, ka))
+            pa_wins += p_ka * p_b_less
+        # Draw → goes to extra time/pens; split based on relative strength
+        p_draw = sum(pois_pmf(la, k) * pois_pmf(lb, k) for k in range(0, 15))
+        pen_edge = 0.5 + 0.05 * math.tanh(S[a] - S[b])
+        return round(pa_wins + p_draw * pen_edge, 4)
+
+    matchups = {}
+    for i, sa in enumerate(slugs):
+        for sb in slugs[i+1:]:
+            key = f"{min(sa,sb)}:{max(sa,sb)}"
+            pa = p_win_elo(sa, sb) if sa < sb else 1.0 - p_win_elo(sb, sa)
+            matchups[f"{sa}:{sb}"] = round(pa, 4)
+
+
     out = {
         "meta": {
             "tournament": "FIFA World Cup 2026",
             "generated_at": datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
             "sims": N,
             "model": "Blended Elo + market odds, Poisson goals, Monte Carlo",
-            "blend_market_weight": w, "beta": beta, "mu": mu, "host_bonus": args.host_bonus,
+            "blend_market_weight": w,
+            "knockout_phase": knockout_phase,
+            "beta": beta, "mu": mu, "host_bonus": args.host_bonus,
             "odds_source": odds_doc["source"], "odds_as_of": odds_doc["as_of"],
             "starts_iso": wc["tournament"]["starts_iso"],
             "pre_tournament": len(res_events) == 0,
@@ -351,6 +399,7 @@ def main():
         },
         "groups": groups_out,
         "deep_runs": deep,
+        "matchups": matchups,
     }
     outpath = os.path.join(INTL, "wc2026-sim.json")
     # Idempotent write: if only the wall-clock timestamps would change, keep the

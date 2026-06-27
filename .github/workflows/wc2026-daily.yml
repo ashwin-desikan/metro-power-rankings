@@ -1,15 +1,17 @@
 name: WC2026 daily simulation refresh
 
 # Pulls the latest World Cup 2026 results, reconditions the Monte Carlo
-# simulator, and commits the refreshed JSON. The commit triggers Vercel's
-# normal deploy, so the live numbers update with no manual step.
+# simulator, patches the knockout bracket, and commits the refreshed JSON with
+# [vercel skip]. The page fetches wc2026.json + wc2026-sim.json at runtime via
+# ISR (revalidate: 1800) from GitHub raw, so live odds update without a deploy.
 # Primary results source is API-Football (api-sports.io); ESPN's public feed
 # is an automatic fallback if that call fails. The simulator uses a fixed RNG
 # seed, so output only changes when results change: quiet days produce no commit.
 
 on:
   schedule:
-    - cron: "0 7 * * *"   # 07:00 UTC daily
+    - cron: "0 7  * * *"   # 07:00 UTC — catches overnight/morning results
+    - cron: "0 23 * * *"   # 23:00 UTC — catches afternoon/evening KO matches same day
   workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
 
 permissions:
@@ -72,17 +74,22 @@ jobs:
       - name: Rebuild the simulation
         run: python3 scripts/build-wc2026-simulation.py
 
-      - name: Commit and push only if the projections changed
+      - name: Patch bracket slots with real teams and scores
+        run: python3 scripts/patch-wc2026-bracket.py
+
+      - name: Commit and push only if anything changed
         run: |
-          if git diff --quiet -- public/data/international/wc2026-sim.json; then
+          if git diff --quiet -- public/data/international/wc2026-sim.json \
+                                  public/data/international/wc2026.json; then
             echo "No change in simulation output; nothing to deploy."
             exit 0
           fi
           git config user.name "wc2026-refresh-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/data/international/wc2026-results.json \
-                  public/data/international/wc2026-sim.json
-          git commit -m "Auto: refresh WC2026 projections from latest results"
+                  public/data/international/wc2026-sim.json \
+                  public/data/international/wc2026.json
+          git commit -m "Auto: refresh WC2026 bracket and projections [vercel skip]"
           # Integrate anything that landed on main during the run, then push.
           # Retry so a concurrent push (e.g. a human commit) cannot fail the job.
           for attempt in 1 2 3 4 5; do

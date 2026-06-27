@@ -16,7 +16,7 @@ import {
   countryPageSlugFor,
 } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
-import { getWc2026LiveStandings, mergeWc2026Live } from "@/lib/wc2026Standings";
+import { getWc2026LiveStandings, mergeWc2026Live, fetchWc2026Bundle } from "@/lib/wc2026Standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import NationalIndexClient, { type IndexTeam } from "./NationalIndexClient";
 import WorldCup2026 from "./WorldCup2026";
@@ -38,7 +38,10 @@ export const metadata: Metadata = {
 export default async function NationalIndexPage() {
   const teams = getAllNationalTeams();
   const hubs = getAllTournamentHubs();
-  const wc2026 = getWorldCup2026();
+  // Fetch wc2026.json + wc2026-sim.json at runtime from GitHub raw so the
+  // bracket and sim odds update via ISR without a Vercel deploy. Falls back
+  // to the build-time bundle on any network failure.
+  const wc2026 = await fetchWc2026Bundle(getWorldCup2026());
   const wc2026Live = wc2026 ? await getWc2026LiveStandings() : null;
   const snapshots = getRankSnapshots();
   const countrySlugSet = new Set(getAllCountrySlugs());
@@ -201,6 +204,7 @@ export default async function NationalIndexPage() {
           </div>
         </div>
         <p className="text-[var(--text-muted)] text-xs">
+          Intercontinental honors include the FIFA Confederations Cup, the King Fahd Cup, and
           Intercontinental honors include the FIFA Confederations Cup, the King Fahd Cup, and
           the Finalissima. Olympic football, the Central European International Cup, and the
           Pan-American Championship are surfaced as appearance history but do not contribute to

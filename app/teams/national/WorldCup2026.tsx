@@ -44,6 +44,8 @@ export default function WorldCup2026({ wc }: Props) {
   const tournamentEnds = new Date("2026-07-20T00:00:00Z");
   const tournamentOver = today >= tournamentEnds;
   const [open, setOpen] = useState(!tournamentOver);
+  // Hide group tables once all 48 group matches are confirmed in the sim data.
+  const groupStageComplete = (sim?.meta?.played_group ?? 0) >= 48;
 
   useEffect(() => {
     function syncFromHash() {
@@ -97,9 +99,15 @@ export default function WorldCup2026({ wc }: Props) {
 
       {open && (
         <div id="wc2026-body" className="mt-4">
-          <GroupStage groups={wc.group_stage} sim={sim} />
+          {groupStageComplete ? (
+            <div className="mb-4 text-xs text-[var(--text-muted)] bg-[var(--bg-card)] border border-[var(--border)] rounded-lg px-3 py-2">
+              Group stage complete — all 48 matches played. Knockout bracket below.
+            </div>
+          ) : (
+            <GroupStage groups={wc.group_stage} sim={sim} />
+          )}
           {sim && sim.deep_runs.length > 0 && <TitleOdds sim={sim} />}
-          <Bracket knockout={wc.knockout} />
+          <Bracket knockout={wc.knockout} sim={sim} />
         </div>
       )}
     </section>
@@ -269,23 +277,26 @@ function TitleOdds({ sim }: { sim: WorldCup2026Sim }) {
         </div>
       </div>
       <p className="text-[10px] text-[var(--text-dim)] mt-2">
-        {sim.meta.sims.toLocaleString()} Monte Carlo simulations. Team strength blends market odds
-        ({Math.round(sim.meta.blend_market_weight * 100)}%) with our Elo ranking
-        ({Math.round((1 - sim.meta.blend_market_weight) * 100)}%). Market column from {sim.meta.odds_source}, as of
-        {" "}{fmtDate(sim.meta.odds_as_of)}. Updated {fmtDate(sim.meta.generated_at)}. Informational, not betting advice.
+        {sim.meta.sims.toLocaleString()} Monte Carlo simulations.
+        {sim.meta.knockout_phase
+          ? ` Knockout phase: strength weighted ${Math.round(sim.meta.blend_market_weight * 100)}% market / ${Math.round((1 - sim.meta.blend_market_weight) * 100)}% Elo — Elo-dominant from group-stage refresh.`
+          : ` Team strength blends market odds (${Math.round(sim.meta.blend_market_weight * 100)}%) with our Elo ranking (${Math.round((1 - sim.meta.blend_market_weight) * 100)}%).`
+        }
+        {" "}Market from {sim.meta.odds_source}, as of {fmtDate(sim.meta.odds_as_of)}. Updated {fmtDate(sim.meta.generated_at)}. Informational, not betting advice.
       </p>
     </div>
   );
 }
 
-function Bracket({ knockout }: { knockout: WorldCup2026Bundle["knockout"] }) {
+function Bracket({ knockout, sim }: { knockout: WorldCup2026Bundle["knockout"]; sim: WorldCup2026Sim | null }) {
   const populatedRounds = KNOCKOUT_ROUND_ORDER.filter(
     (rn) => knockout[rn] && knockout[rn].length > 0
   );
   if (populatedRounds.length === 0) return null;
+  const matchups = sim?.matchups ?? {};
   return (
     <div>
-      <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)] uppercase tracking-wider">Knockout rounds</h3>
+      <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)] uppercase tracking-wider">Knockout bracket</h3>
       <div className="space-y-4">
         {populatedRounds.map((rn) => (
           <div key={rn}>
@@ -294,7 +305,7 @@ function Bracket({ knockout }: { knockout: WorldCup2026Bundle["knockout"] }) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
               {knockout[rn].map((m, i) => (
-                <MatchCard key={`${m.date}-${i}`} m={m} />
+                <MatchCard key={`${m.date}-${i}`} m={m} matchups={matchups} />
               ))}
             </div>
           </div>
@@ -304,13 +315,27 @@ function Bracket({ knockout }: { knockout: WorldCup2026Bundle["knockout"] }) {
   );
 }
 
-function MatchCard({ m }: { m: WorldCup2026Bundle["knockout"][string][number] }) {
+function getMatchupProb(matchups: Record<string, number>, slugA: string | null, slugB: string | null): number | null {
+  if (!slugA || !slugB) return null;
+  const key = `${slugA}:${slugB}`;
+  const inv = `${slugB}:${slugA}`;
+  if (matchups[key] !== undefined) return matchups[key];
+  if (matchups[inv] !== undefined) return 1 - matchups[inv];
+  return null;
+}
+
+function MatchCard({ m, matchups }: { m: WorldCup2026Bundle["knockout"][string][number]; matchups: Record<string, number> }) {
   const dateDisplay = m.date
     ? new Date(m.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })
     : null;
   const teamFlag = m.team_slug ? flagCdnUrl(m.team_slug) : null;
   const oppFlag = m.opp_slug ? flagCdnUrl(m.opp_slug) : null;
   const showScores = m.played && m.team_score !== null && m.opp_score !== null;
+  // Win probability from the Elo-blended model (only shown for unplayed matches with known teams)
+  const pTeam = (!m.played && m.team_slug && m.opp_slug)
+    ? getMatchupProb(matchups, m.team_slug, m.opp_slug)
+    : null;
+  const pOpp = pTeam !== null ? 1 - pTeam : null;
   return (
     <div
       className="rounded-lg border p-2 text-xs"
@@ -324,23 +349,28 @@ function MatchCard({ m }: { m: WorldCup2026Bundle["knockout"][string][number] })
         <span className="text-[10px] text-[var(--text-muted)] uppercase tracking-wider">
           {dateDisplay ?? "TBD"}
         </span>
-        {!m.played && (
+        {!m.played && m.team_slug && (
           <span className="text-[9px] text-[var(--text-dim)] uppercase tracking-wider">scheduled</span>
+        )}
+        {!m.team_slug && (
+          <span className="text-[9px] text-[var(--text-dim)] uppercase tracking-wider">TBD</span>
         )}
       </div>
       <Row
         flag={teamFlag}
-        name={m.team_slug ? displayNameForTeam(m.team_slug, m.team_cur_name) : m.team_cur_name}
+        name={m.team_slug ? displayNameForTeam(m.team_slug, m.team_cur_name) : "TBD"}
         slug={m.team_slug}
         score={showScores ? m.team_score : null}
         win={m.played && m.team_score !== null && m.opp_score !== null && m.team_score > m.opp_score}
+        prob={pTeam}
       />
       <Row
         flag={oppFlag}
-        name={m.opp_slug ? displayNameForTeam(m.opp_slug, m.opp_cur_name) : m.opp_cur_name}
+        name={m.opp_slug ? displayNameForTeam(m.opp_slug, m.opp_cur_name) : "TBD"}
         slug={m.opp_slug}
         score={showScores ? m.opp_score : null}
         win={m.played && m.team_score !== null && m.opp_score !== null && m.opp_score > m.team_score}
+        prob={pOpp}
       />
       {m.penalty_kicks ? (
         <div className="mt-1 text-[10px] text-[var(--text-muted)]">PKs: {m.penalty_kicks}</div>
@@ -360,12 +390,14 @@ function Row({
   slug,
   score,
   win,
+  prob,
 }: {
   flag: string | null;
   name: string;
   slug: string | null;
   score: number | null;
   win: boolean;
+  prob?: number | null;
 }) {
   return (
     <div className="flex items-center justify-between gap-2 py-0.5">
@@ -380,6 +412,9 @@ function Row({
         )}
       </span>
       <span className="tabular-nums font-semibold text-xs flex-shrink-0">
+        {prob !== null && prob !== undefined && (
+          <span className="text-[var(--text-muted)] font-normal mr-1 text-[9px]">{Math.round(prob * 100)}%</span>
+        )}
         {score !== null ? score : <span className="text-[var(--text-dim)] font-normal">—</span>}
       </span>
     </div>

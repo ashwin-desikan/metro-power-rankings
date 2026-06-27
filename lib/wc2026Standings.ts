@@ -136,3 +136,49 @@ export function mergeWc2026Live(
   if (matched === 0) return bundle;
   return { ...bundle, group_stage, live: { source: "espn" } };
 }
+
+// ---------------------------------------------------------------------------
+// Runtime fetch of wc2026.json + wc2026-sim.json from GitHub raw.
+//
+// These two files are updated by the daily GitHub Action (wc2026-daily.yml)
+// with [vercel skip] so no Vercel deploy is triggered. Fetching from GitHub
+// raw with 30-minute revalidation means the bracket + sim odds update on the
+// ISR cycle without needing a rebuild.
+//
+// Falls back to the build-time bundle (getWorldCup2026) on any fetch failure
+// so the page never breaks.
+// ---------------------------------------------------------------------------
+
+const GH_RAW =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/international";
+
+export async function fetchWc2026Bundle(
+  buildTimeFallback: WorldCup2026Bundle | null,
+): Promise<WorldCup2026Bundle | null> {
+  try {
+    const [bundleRes, simRes] = await Promise.all([
+      fetch(`${GH_RAW}/wc2026.json`,     { next: { revalidate: 1800 } }),
+      fetch(`${GH_RAW}/wc2026-sim.json`, { next: { revalidate: 1800 } }),
+    ]);
+    if (!bundleRes.ok) return buildTimeFallback;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const bundle: any = await bundleRes.json();
+    if (!bundle?.tournament) return buildTimeFallback;
+    if (simRes.ok) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const rawSim: any = await simRes.json();
+      if (rawSim?.groups) {
+        const by_slug: Record<string, { exp_points: number; p_advance: number; p_win_group: number }> = {};
+        for (const rows of Object.values(rawSim.groups) as any[]) {
+          for (const r of rows) {
+            by_slug[r.slug] = { exp_points: r.exp_points, p_advance: r.p_advance, p_win_group: r.p_win_group };
+          }
+        }
+        bundle.sim = { meta: rawSim.meta, by_slug, deep_runs: rawSim.deep_runs ?? [], matchups: rawSim.matchups ?? {} };
+      }
+    }
+    return bundle as WorldCup2026Bundle;
+  } catch {
+    return buildTimeFallback;
+  }
+}

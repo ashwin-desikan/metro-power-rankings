@@ -245,9 +245,13 @@ export type WorldCup2026Sim = {
     blend_market_weight: number;
     odds_source: string;
     odds_as_of: string;
+    played_group?: number;
+    played_knockout?: number;
+    knockout_phase?: boolean;
   };
   by_slug: Record<string, WorldCup2026SimRow>;
   deep_runs: WorldCup2026DeepRow[];
+  matchups?: Record<string, number>;
 };
 
 export type WorldCup2026Bundle = {
@@ -435,6 +439,7 @@ type RawWc2026Sim = {
   meta: WorldCup2026Sim["meta"];
   groups: Record<string, Array<{ slug: string; exp_points: number; p_advance: number; p_win_group: number }>>;
   deep_runs: WorldCup2026DeepRow[];
+  matchups?: Record<string, number>;
 };
 
 function buildWc2026Sim(): WorldCup2026Sim | null {
@@ -450,7 +455,7 @@ function buildWc2026Sim(): WorldCup2026Sim | null {
       };
     }
   }
-  return { meta: raw.meta, by_slug, deep_runs: raw.deep_runs ?? [] };
+  return { meta: raw.meta, by_slug, deep_runs: raw.deep_runs ?? [], matchups: raw.matchups ?? {} };
 }
 
 export function getWorldCup2026(): WorldCup2026Bundle | null {
