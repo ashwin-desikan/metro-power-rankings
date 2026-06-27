@@ -260,6 +260,16 @@
     "era": "Nazi Germany"
   },
   {
+    "name": "Allied Control Council",
+    "role": "Occupation Authority",
+    "start": "1945-06-05",
+    "end": "1949-09-21",
+    "current": false,
+    "tenure": "4y",
+    "party": null,
+    "era": "Federal Republic"
+  },
+  {
     "name": "Konrad Adenauer",
     "role": "Federal Chancellor",
     "start": "1949-09-20",

@@ -450,6 +450,16 @@
     "era": "Kingdom of England"
   },
   {
+    "name": "Council of State (Commonwealth)",
+    "role": "Head of Government (Commonwealth)",
+    "start": "1649-02-14",
+    "end": "1653-12-16",
+    "current": false,
+    "tenure": "4y 10m",
+    "party": null,
+    "era": "Kingdom of England"
+  },
+  {
     "name": "Oliver Cromwell",
     "role": "Lord Protector",
     "start": "1653-12-16",
@@ -467,6 +477,16 @@
     "current": false,
     "tenure": "8m 6d",
     "party": "Puritan; resigned",
+    "era": "Kingdom of England"
+  },
+  {
+    "name": "Committee of Safety",
+    "role": "Provisional Authority",
+    "start": "1659-05-25",
+    "end": "1660-02-21",
+    "current": false,
+    "tenure": "9m",
+    "party": null,
     "era": "Kingdom of England"
   },
   {

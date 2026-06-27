@@ -450,6 +450,16 @@
     "era": "Kingdom of Scotland"
   },
   {
+    "name": "Convention of Estates",
+    "role": "Provisional Authority",
+    "start": "1689-01-14",
+    "end": "1689-05-11",
+    "current": false,
+    "tenure": "4m",
+    "party": null,
+    "era": "Kingdom of Scotland"
+  },
+  {
     "name": "William II & Mary II",
     "role": "Sovereigns",
     "start": "1689-05-11",

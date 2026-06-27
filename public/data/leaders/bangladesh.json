@@ -10,6 +10,36 @@
     "era": null
   },
   {
+    "name": "Khandaker Mushtaque Ahmad",
+    "role": "President / Acting PM",
+    "start": "1975-08-15",
+    "end": "1975-11-06",
+    "current": false,
+    "tenure": "3m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Abu Sadat Mohammad Sayem",
+    "role": "President / CMLA",
+    "start": "1975-11-06",
+    "end": "1977-04-21",
+    "current": false,
+    "tenure": "1y 5m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ziaur Rahman",
+    "role": "President / CMLA",
+    "start": "1977-04-21",
+    "end": "1981-05-30",
+    "current": false,
+    "tenure": "4y 1m",
+    "party": "BNP",
+    "era": null
+  },
+  {
     "name": "Shah Azizur Rahman",
     "role": "Prime Minister",
     "start": "1979-04-15",
@@ -17,6 +47,76 @@
     "current": false,
     "tenure": "2y 11m 24d",
     "party": "BNP; under Ziaur Rahman",
+    "era": null
+  },
+  {
+    "name": "Abdus Sattar",
+    "role": "Acting President",
+    "start": "1981-05-30",
+    "end": "1981-11-20",
+    "current": false,
+    "tenure": "6m",
+    "party": "BNP",
+    "era": null
+  },
+  {
+    "name": "Abdus Sattar",
+    "role": "President",
+    "start": "1981-11-20",
+    "end": "1982-03-24",
+    "current": false,
+    "tenure": "4m",
+    "party": "BNP",
+    "era": null
+  },
+  {
+    "name": "Hussain Muhammad Ershad",
+    "role": "President / CMLA",
+    "start": "1982-03-24",
+    "end": "1990-12-06",
+    "current": false,
+    "tenure": "8y 9m",
+    "party": "JP",
+    "era": null
+  },
+  {
+    "name": "Mizanur Rahman Chowdhury",
+    "role": "Prime Minister",
+    "start": "1986-07-09",
+    "end": "1988-03-27",
+    "current": false,
+    "tenure": "1y 8m",
+    "party": "JP",
+    "era": null
+  },
+  {
+    "name": "Moudud Ahmed",
+    "role": "Prime Minister",
+    "start": "1988-03-27",
+    "end": "1989-08-12",
+    "current": false,
+    "tenure": "1y 4m",
+    "party": "JP",
+    "era": null
+  },
+  {
+    "name": "Kazi Zafar Ahmed",
+    "role": "Prime Minister",
+    "start": "1989-08-12",
+    "end": "1990-12-06",
+    "current": false,
+    "tenure": "1y 4m",
+    "party": "JP",
+    "era": null
+  },
+  {
+    "name": "Shahabuddin Ahmed",
+    "role": "Chief Justice / Acting President",
+    "start": "1990-12-06",
+    "end": "1991-03-20",
+    "current": false,
+    "tenure": "3m",
+    "party": null,
     "era": null
   },
   {
@@ -47,6 +147,16 @@
     "current": false,
     "tenure": "5y 15d",
     "party": "BNP; 2nd term",
+    "era": null
+  },
+  {
+    "name": "Fakhruddin Ahmed",
+    "role": "Chief Adviser (Caretaker)",
+    "start": "2007-01-12",
+    "end": "2009-01-06",
+    "current": false,
+    "tenure": "2y",
+    "party": null,
     "era": null
   },
   {

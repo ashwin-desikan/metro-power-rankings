@@ -171,12 +171,22 @@
   },
   {
     "name": "Bronisław Komorowski",
+    "role": "Acting President",
+    "start": "2010-04-10",
+    "end": "2010-07-06",
+    "current": false,
+    "tenure": "3m",
+    "party": "PO",
+    "era": null
+  },
+  {
+    "name": "Bronisław Komorowski",
     "role": "President",
     "start": "2010-08-06",
     "end": "2015-08-06",
     "current": false,
-    "tenure": "5y 26d",
-    "party": "PO; acting from Apr 2010",
+    "tenure": "5y",
+    "party": "PO",
     "era": null
   },
   {

@@ -60,6 +60,36 @@
     "era": null
   },
   {
+    "name": "Ayub Khan",
+    "role": "President / CMLA",
+    "start": "1958-10-27",
+    "end": "1969-03-25",
+    "current": false,
+    "tenure": "10y 5m",
+    "party": "ML(C)",
+    "era": null
+  },
+  {
+    "name": "Yahya Khan",
+    "role": "President / CMLA",
+    "start": "1969-03-25",
+    "end": "1971-12-20",
+    "current": false,
+    "tenure": "2y 9m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Zulfikar Ali Bhutto",
+    "role": "President",
+    "start": "1971-12-20",
+    "end": "1973-08-14",
+    "current": false,
+    "tenure": "1y 8m",
+    "party": "PPP",
+    "era": null
+  },
+  {
     "name": "Zulfikar Ali Bhutto",
     "role": "Prime Minister",
     "start": "1973-08-14",
@@ -67,6 +97,26 @@
     "current": false,
     "tenure": "3y 10m 11d",
     "party": "PPP; overthrown by Zia",
+    "era": null
+  },
+  {
+    "name": "Fazal Ilahi Chaudhry",
+    "role": "President",
+    "start": "1973-08-14",
+    "end": "1978-09-16",
+    "current": false,
+    "tenure": "5y",
+    "party": "PPP",
+    "era": null
+  },
+  {
+    "name": "Zia ul-Haq",
+    "role": "President / CMLA",
+    "start": "1977-07-05",
+    "end": "1988-08-17",
+    "current": false,
+    "tenure": "11y 1m",
+    "party": null,
     "era": null
   },
   {
@@ -80,6 +130,16 @@
     "era": null
   },
   {
+    "name": "Ghulam Ishaq Khan",
+    "role": "President",
+    "start": "1988-08-17",
+    "end": "1993-07-18",
+    "current": false,
+    "tenure": "4y 11m",
+    "party": "Ind",
+    "era": null
+  },
+  {
     "name": "Benazir Bhutto",
     "role": "Prime Minister",
     "start": "1988-12-02",
@@ -87,6 +147,16 @@
     "current": false,
     "tenure": "1y 8m 12d",
     "party": "PPP; 1st term; 1st female PM",
+    "era": null
+  },
+  {
+    "name": "Ghulam Mustafa Jatoi",
+    "role": "Caretaker Prime Minister",
+    "start": "1990-08-06",
+    "end": "1990-11-06",
+    "current": false,
+    "tenure": "3m",
+    "party": null,
     "era": null
   },
   {
@@ -100,6 +170,36 @@
     "era": null
   },
   {
+    "name": "Balakh Sher Mazari",
+    "role": "Caretaker Prime Minister",
+    "start": "1993-04-18",
+    "end": "1993-07-18",
+    "current": false,
+    "tenure": "3m",
+    "party": "IDA",
+    "era": null
+  },
+  {
+    "name": "Moeen Qureshi",
+    "role": "Caretaker Prime Minister",
+    "start": "1993-07-18",
+    "end": "1993-10-19",
+    "current": false,
+    "tenure": "3m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Wasim Sajjad",
+    "role": "Acting President",
+    "start": "1993-07-18",
+    "end": "1993-11-14",
+    "current": false,
+    "tenure": "4m",
+    "party": "PML-N",
+    "era": null
+  },
+  {
     "name": "Benazir Bhutto",
     "role": "Prime Minister",
     "start": "1993-10-19",
@@ -110,6 +210,26 @@
     "era": null
   },
   {
+    "name": "Farooq Leghari",
+    "role": "President",
+    "start": "1993-11-14",
+    "end": "1997-12-02",
+    "current": false,
+    "tenure": "4y",
+    "party": "PPP",
+    "era": null
+  },
+  {
+    "name": "Meraj Khalid",
+    "role": "Caretaker Prime Minister",
+    "start": "1996-11-05",
+    "end": "1997-02-17",
+    "current": false,
+    "tenure": "3m",
+    "party": null,
+    "era": null
+  },
+  {
     "name": "Nawaz Sharif",
     "role": "Prime Minister",
     "start": "1997-02-17",
@@ -117,6 +237,36 @@
     "current": false,
     "tenure": "2y 7m 7d",
     "party": "PML-N; 2nd term; ousted by Musharraf",
+    "era": null
+  },
+  {
+    "name": "Wasim Sajjad",
+    "role": "Acting President",
+    "start": "1997-12-02",
+    "end": "1998-01-01",
+    "current": false,
+    "tenure": "1m",
+    "party": "PML-N",
+    "era": null
+  },
+  {
+    "name": "Muhammad Rafiq Tarar",
+    "role": "President",
+    "start": "1998-01-01",
+    "end": "2001-06-20",
+    "current": false,
+    "tenure": "3y 6m",
+    "party": "PML-N",
+    "era": null
+  },
+  {
+    "name": "Pervez Musharraf",
+    "role": "President / CMLA",
+    "start": "1999-10-12",
+    "end": "2008-08-18",
+    "current": false,
+    "tenure": "8y 10m",
+    "party": null,
     "era": null
   },
   {
@@ -137,6 +287,16 @@
     "current": false,
     "tenure": "3y 2m 4d",
     "party": "PML-Q",
+    "era": null
+  },
+  {
+    "name": "Muhammad Mian Soomro",
+    "role": "Caretaker Prime Minister",
+    "start": "2007-11-16",
+    "end": "2008-03-25",
+    "current": false,
+    "tenure": "4m",
+    "party": null,
     "era": null
   },
   {
@@ -197,6 +357,16 @@
     "current": false,
     "tenure": "1y 4m 10d",
     "party": "PML-N; 1st term",
+    "era": null
+  },
+  {
+    "name": "Anwar ul-Haq Kakar",
+    "role": "Caretaker Prime Minister",
+    "start": "2023-08-14",
+    "end": "2024-03-04",
+    "current": false,
+    "tenure": "7m",
+    "party": "BNP-A",
     "era": null
   },
   {

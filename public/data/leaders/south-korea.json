@@ -10,6 +10,16 @@
     "era": null
   },
   {
+    "name": "Heo Jeong",
+    "role": "Acting President",
+    "start": "1960-04-27",
+    "end": "1960-08-13",
+    "current": false,
+    "tenure": "4m",
+    "party": null,
+    "era": null
+  },
+  {
     "name": "Yun Po-sun",
     "role": "President",
     "start": "1960-08-13",
@@ -17,6 +27,16 @@
     "current": false,
     "tenure": "2y 4m 12d",
     "party": "Democratic; figurehead under military",
+    "era": null
+  },
+  {
+    "name": "Park Chung-hee",
+    "role": "Chairman (Supreme Council for National Reconstruction)",
+    "start": "1961-05-16",
+    "end": "1963-12-17",
+    "current": false,
+    "tenure": "2y 7m",
+    "party": null,
     "era": null
   },
   {

@@ -70,13 +70,53 @@
     "era": "Imperial Era"
   },
   {
+    "name": "Georgy Lvov",
+    "role": "Prime Minister (Provisional Government)",
+    "start": "1917-03-15",
+    "end": "1917-07-21",
+    "current": false,
+    "tenure": "4m",
+    "party": null,
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Alexander Kerensky",
+    "role": "Prime Minister (Provisional Government)",
+    "start": "1917-07-21",
+    "end": "1917-11-08",
+    "current": false,
+    "tenure": "4m",
+    "party": null,
+    "era": "Soviet Era"
+  },
+  {
     "name": "Vladimir Lenin",
-    "role": "Head of Government/Party",
-    "start": "1917-03-07",
+    "role": "Chairman, Council of People's Commissars",
+    "start": "1917-11-08",
     "end": "1924-01-21",
     "current": false,
     "tenure": "6y 10m 21d",
     "party": "Bolshevik/Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Yakov Sverdlov",
+    "role": "Chairman of VTSIK (Head of State)",
+    "start": "1917-11-08",
+    "end": "1919-03-16",
+    "current": false,
+    "tenure": "1y 4m",
+    "party": "Bolshevik",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Mikhail Kalinin",
+    "role": "Chairman of VTSIK / Presidium",
+    "start": "1919-03-30",
+    "end": "1946-03-19",
+    "current": false,
+    "tenure": "27y",
+    "party": "Communist",
     "era": "Soviet Era"
   },
   {
@@ -90,12 +130,102 @@
     "era": "Soviet Era"
   },
   {
+    "name": "Alexei Rykov",
+    "role": "Chairman of Council of People's Commissars",
+    "start": "1924-02-02",
+    "end": "1930-12-19",
+    "current": false,
+    "tenure": "6y 10m",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Vyacheslav Molotov",
+    "role": "Chairman of Council of People's Commissars",
+    "start": "1930-12-19",
+    "end": "1941-05-06",
+    "current": false,
+    "tenure": "10y 5m",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Joseph Stalin",
+    "role": "Chairman of Council of Ministers",
+    "start": "1941-05-06",
+    "end": "1953-03-05",
+    "current": false,
+    "tenure": "11y 10m",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Nikolai Shvernik",
+    "role": "Chairman of Presidium",
+    "start": "1946-03-19",
+    "end": "1953-03-15",
+    "current": false,
+    "tenure": "7y",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Georgy Malenkov",
+    "role": "Chairman of Council of Ministers",
+    "start": "1953-03-05",
+    "end": "1955-02-08",
+    "current": false,
+    "tenure": "2y",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Kliment Voroshilov",
+    "role": "Chairman of Presidium",
+    "start": "1953-03-15",
+    "end": "1960-05-07",
+    "current": false,
+    "tenure": "7y",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
     "name": "Nikita Khrushchev",
     "role": "First Secretary",
     "start": "1953-09-14",
     "end": "1964-10-14",
     "current": false,
     "tenure": "11y 1m 3d",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Nikolai Bulganin",
+    "role": "Chairman of Council of Ministers",
+    "start": "1955-02-08",
+    "end": "1958-03-27",
+    "current": false,
+    "tenure": "3y",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Nikita Khrushchev",
+    "role": "Chairman of Council of Ministers",
+    "start": "1958-03-27",
+    "end": "1964-10-14",
+    "current": false,
+    "tenure": "6y 7m",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Leonid Brezhnev",
+    "role": "Chairman of Presidium",
+    "start": "1960-05-07",
+    "end": "1964-07-15",
+    "current": false,
+    "tenure": "4y",
     "party": "Communist",
     "era": "Soviet Era"
   },
@@ -107,6 +237,26 @@
     "current": false,
     "tenure": "18y 1m 1d",
     "party": "Communist; died in office",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Aleksei Kosygin",
+    "role": "Chairman of Council of Ministers",
+    "start": "1964-10-15",
+    "end": "1980-10-23",
+    "current": false,
+    "tenure": "16y",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Nikolai Tikhonov",
+    "role": "Chairman of Council of Ministers",
+    "start": "1980-10-23",
+    "end": "1985-09-27",
+    "current": false,
+    "tenure": "5y",
+    "party": "Communist",
     "era": "Soviet Era"
   },
   {
@@ -140,6 +290,26 @@
     "era": "Soviet Era"
   },
   {
+    "name": "Nikolai Ryzhkov",
+    "role": "Chairman of Council of Ministers",
+    "start": "1985-09-27",
+    "end": "1991-01-14",
+    "current": false,
+    "tenure": "5y 4m",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Valentin Pavlov",
+    "role": "Prime Minister (Soviet)",
+    "start": "1991-01-14",
+    "end": "1991-08-22",
+    "current": false,
+    "tenure": "7m",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
     "name": "Boris Yeltsin",
     "role": "President",
     "start": "1991-06-10",
@@ -147,6 +317,26 @@
     "current": false,
     "tenure": "8y 6m 26d",
     "party": "Independent",
+    "era": "Modern Russia"
+  },
+  {
+    "name": "Ivan Silayev",
+    "role": "Prime Minister (interim)",
+    "start": "1991-08-24",
+    "end": "1991-12-26",
+    "current": false,
+    "tenure": "4m",
+    "party": "Communist",
+    "era": "Soviet Era"
+  },
+  {
+    "name": "Vladimir Putin",
+    "role": "Acting President",
+    "start": "2000-01-01",
+    "end": "2000-05-07",
+    "current": false,
+    "tenure": "4m",
+    "party": "United Russia",
     "era": "Modern Russia"
   },
   {

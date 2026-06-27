@@ -1,22 +1,42 @@
 [
   {
     "name": "Louis-Napoleon Bonaparte",
-    "role": "President",
+    "role": "President / Prince-President",
     "start": "1848-12-10",
-    "end": "1852-02-02",
+    "end": "1852-12-02",
     "current": false,
     "tenure": "3y 1m 24d",
     "party": "Bonapartist; 2nd Republic",
     "era": null
   },
   {
+    "name": "Napoleon III",
+    "role": "Emperor (Second Empire)",
+    "start": "1852-12-02",
+    "end": "1870-09-04",
+    "current": false,
+    "tenure": "18y",
+    "party": "Bonapartist",
+    "era": null
+  },
+  {
+    "name": "Government of National Defense",
+    "role": "Head of State (Provisional)",
+    "start": "1870-09-04",
+    "end": "1871-02-17",
+    "current": false,
+    "tenure": "5m",
+    "party": null,
+    "era": null
+  },
+  {
     "name": "Adolphe Thiers",
     "role": "President",
-    "start": "1871-08-17",
+    "start": "1871-02-17",
     "end": "1873-05-24",
     "current": false,
-    "tenure": "1y 9m 11d",
-    "party": "Republican; 3rd Republic",
+    "tenure": "2y 3m",
+    "party": "Republican",
     "era": null
   },
   {
@@ -150,6 +170,46 @@
     "era": null
   },
   {
+    "name": "Philippe Pétain",
+    "role": "Head of State (Vichy)",
+    "start": "1940-07-10",
+    "end": "1944-08-25",
+    "current": false,
+    "tenure": "4y",
+    "party": "Vichy Regime",
+    "era": null
+  },
+  {
+    "name": "Charles de Gaulle",
+    "role": "President (GPRF)",
+    "start": "1944-09-09",
+    "end": "1946-01-20",
+    "current": false,
+    "tenure": "16m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Félix Gouin",
+    "role": "President (GPRF)",
+    "start": "1946-01-26",
+    "end": "1946-06-24",
+    "current": false,
+    "tenure": "5m",
+    "party": "Socialist",
+    "era": null
+  },
+  {
+    "name": "Georges Bidault",
+    "role": "President (GPRF)",
+    "start": "1946-06-24",
+    "end": "1946-11-29",
+    "current": false,
+    "tenure": "5m",
+    "party": "MRP",
+    "era": null
+  },
+  {
     "name": "Vincent Auriol",
     "role": "President",
     "start": "1947-01-16",
@@ -160,13 +220,13 @@
     "era": null
   },
   {
-    "name": "Rene Coty",
-    "role": "President",
+    "name": "René Coty",
+    "role": "President (4th Republic)",
     "start": "1954-01-16",
     "end": "1959-01-08",
     "current": false,
-    "tenure": "4y 11m 28d",
-    "party": "Independent; 4th Republic",
+    "tenure": "5y",
+    "party": "IR",
     "era": null
   },
   {
