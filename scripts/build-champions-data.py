@@ -106,4 +106,102 @@ def build_from_history(src):
                 continue
 
         canon = cell(g(iCanon)) if iCanon is not None else ""
-        era   =
+        era   = cell(g(iEra))   if iEra   is not None else ""
+        team  = canon or era
+        if not team:
+            continue
+
+        scope_type  = cell(g(iScope)) if iScope is not None else ""
+        scope_label = ""
+        if iIntl is not None and g(iIntl):
+            scope_label = cell(g(iIntl)); scope_type = scope_type or "International"
+        elif iCont is not None and g(iCont):
+            scope_label = cell(g(iCont)); scope_type = scope_type or "Continental"
+        elif iDom is not None and g(iDom):
+            scope_label = cell(g(iDom));  scope_type = scope_type or "Domestic"
+
+        date_val = to_iso(g(iDate)) if iDate is not None else None
+        next_val = to_iso(g(iNext)) if iNext is not None else None
+        tier_raw = g(iTier) if iTier is not None else None
+        try:
+            tier = int(tier_raw) if tier_raw is not None else None
+        except (TypeError, ValueError):
+            tier = None
+
+        out.append({
+            "sport":           cell(g(iSport)),
+            "competition":     comp,
+            "team":            team,
+            "year":            to_year(date_val) or to_year(g(iYear)),
+            "dateAwarded":     date_val,
+            "scope":           scope_label,
+            "scopeType":       scope_type,
+            "nextAwarded":     to_year(next_val) if next_val else None,
+            "nextAwardedDate": next_val,
+            "tier":            tier,
+        })
+
+    return out
+
+def build_from_zone_zero(src):
+    """Legacy fallback: read ZoneZero_Champions.xlsx (original schema)."""
+    print(f"Reading legacy source: {src}")
+    wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
+    ws = wb["Sheet1"]
+    rows = list(ws.iter_rows(values_only=True))
+    hdr = [str(c).strip() if c is not None else "" for c in rows[0]]
+    idx = {h.lower(): i for i, h in enumerate(hdr)}
+    def col(*names):
+        for n in names:
+            if n in idx: return idx[n]
+        return None
+    iSport = col("sport"); iComp = col("competiton", "competition"); iTeam = col("team")
+    iDate = col("date awarded", "date", "year")
+    iIntl = col("international"); iCont = col("continental"); iDom = col("domestic")
+    iNext = col("next awarded date", "next awarded", "nextawarded", "next")
+    iTier = col("my tier rank", "tier", "my tier", "rank")
+    out = []
+    for r in rows[1:]:
+        def g(i): return r[i] if i is not None and i < len(r) else None
+        team, comp = g(iTeam), g(iComp)
+        if not team or not comp:
+            continue
+        intl, cont, dom = g(iIntl), g(iCont), g(iDom)
+        scope_type = "International" if intl else "Continental" if cont else "Domestic" if dom else None
+        out.append({
+            "sport":           str(g(iSport) or "").strip(),
+            "competition":     str(comp).strip(),
+            "team":            str(team).strip(),
+            "year":            to_year(g(iDate)),
+            "dateAwarded":     to_iso(g(iDate)),
+            "scope":           str(intl or cont or dom or "").strip(),
+            "scopeType":       scope_type,
+            "nextAwarded":     to_year(g(iNext)),
+            "nextAwardedDate": to_iso(g(iNext)),
+            "tier":            int(g(iTier)) if g(iTier) is not None else None,
+        })
+    return out
+
+def main():
+    if os.path.exists(SRC):
+        out = build_from_history(SRC)
+    elif os.path.exists(LEGACY_SRC):
+        out = build_from_zone_zero(LEGACY_SRC)
+    else:
+        raise FileNotFoundError(
+            f"Neither Champions_History.xlsx ({SRC}) nor ZoneZero_Champions.xlsx ({LEGACY_SRC}) found."
+        )
+
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=0)
+
+    import collections
+    tiers = collections.Counter(x["tier"] for x in out)
+    print(f"champions.json: {len(out)} current champions")
+    print(f"tiers: {dict(sorted(tiers.items(), key=lambda x: (x[0] is None, x[0])))}")
+    print(f"with dateAwarded: {sum(1 for x in out if x['dateAwarded'])}  "
+          f"with nextDate: {sum(1 for x in out if x['nextAwardedDate'])}")
+
+if __name__ == "__main__":
+    main()
