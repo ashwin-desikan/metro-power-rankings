@@ -25,6 +25,8 @@ import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
 import MlsStandings from "./MlsStandings";
 import MlsMostDecorated from "./MlsMostDecorated";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
+import { getPlLiveStandings } from "@/lib/premier-league-standings";
+import PremierLeagueStandings from "./PremierLeagueStandings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -60,6 +62,9 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   if (hub.is_mls) {
     return <MlsHubView hub={hub as unknown as MlsLeagueHub} />;
   }
+
+  // Premier League: fetch live standings from ESPN (ISR, 30-min cache)
+  const plLive = hub.slug === "premier-league" ? await getPlLiveStandings() : null;
 
   // All in-scope clubs for this hub's country, slimmed to the fields the
   // map needs. tier_by_year drives the year filter and tier coloring.
@@ -135,7 +140,11 @@ export default async function FootballLeagueHubPage({ params }: Props) {
         </section>
       )}
       <div id="standings">
-        <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
+        {hub.slug === "premier-league" ? (
+          <PremierLeagueStandings live={plLive} hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
+        ) : (
+          <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
+        )}
       </div>
       <div id="map">
         <LeagueHubMap country={hub.country} clubs={hubClubs} />

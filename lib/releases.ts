@@ -19,7 +19,7 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-27",
-    headline: "WC2026 bracket, intercontinental fixes, British Home Championship",
+    headline: "WC2026 bracket, Premier League live table, BHC archive",
     items: [
       "The World Cup section transitions automatically from group tables to a full knockout bracket as results arrive — no manual update or Vercel deploy required.",
       "Every unplayed match card shows a model win probability (Elo + market odds blend), shifting to Elo-dominant weighting once the group stage is complete.",
