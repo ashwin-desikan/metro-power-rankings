@@ -1,0 +1,1278 @@
+[
+  {
+    "name": "Iran crisis of 1946",
+    "wiki": "Iran_crisis_of_1946",
+    "start": "1945-11-01",
+    "end": "1946-12-15",
+    "ongoing": false,
+    "side_a": [
+      "Iran"
+    ],
+    "side_b": [
+      "Azerbaijan People's Government",
+      "Republic of Mahabad"
+    ],
+    "deaths_min": 2000,
+    "deaths_max": null
+  },
+  {
+    "name": "Indo-Pakistani War of 1947",
+    "wiki": "Indo-Pakistani_War_of_1947",
+    "start": "1947-10-22",
+    "end": "1949-01-05",
+    "ongoing": false,
+    "side_a": [
+      "India"
+    ],
+    "side_b": [
+      "Pakistan"
+    ],
+    "deaths_min": 2604,
+    "deaths_max": 7500
+  },
+  {
+    "name": "1948 Arab–Israeli War",
+    "wiki": "1948_Arab–Israeli_War",
+    "start": "1948-05-14",
+    "end": "1949-03-10",
+    "ongoing": false,
+    "side_a": [
+      "Israel"
+    ],
+    "side_b": [
+      "Egypt",
+      "Iraq",
+      "Transjordan",
+      "Syria",
+      "Lebanon",
+      "Saudi Arabia",
+      "Yemen"
+    ],
+    "deaths_min": 13073,
+    "deaths_max": 26373
+  },
+  {
+    "name": "Operation Polo",
+    "wiki": "Operation_Polo",
+    "start": "1948-09-13",
+    "end": "1948-09-18",
+    "ongoing": false,
+    "side_a": [
+      "India"
+    ],
+    "side_b": [
+      "Hyderabad"
+    ],
+    "deaths_min": 32190,
+    "deaths_max": 202190
+  },
+  {
+    "name": "Korean War",
+    "wiki": "Korean_War",
+    "start": "1950-06-25",
+    "end": "1953-07-27",
+    "ongoing": false,
+    "side_a": [
+      "UN Command",
+      "South Korea",
+      "United States",
+      "United Kingdom",
+      "Australia",
+      "Belgium",
+      "Canada",
+      "France",
+      "Philippines",
+      "Colombia",
+      "Ethiopia",
+      "Greece",
+      "Luxembourg",
+      "Netherlands",
+      "New Zealand",
+      "South Africa",
+      "Thailand",
+      "Turkey"
+    ],
+    "side_b": [
+      "North Korea",
+      "China",
+      "Soviet Union"
+    ],
+    "deaths_min": 2568927,
+    "deaths_max": 4096927
+  },
+  {
+    "name": "Chinese invasion of Tibet",
+    "wiki": "Chinese_invasion_of_Tibet",
+    "start": "1950-10-06",
+    "end": "1950-10-24",
+    "ongoing": false,
+    "side_a": [
+      "China"
+    ],
+    "side_b": [
+      "Tibet"
+    ],
+    "deaths_min": 294,
+    "deaths_max": 5814
+  },
+  {
+    "name": "First Taiwan Strait Crisis",
+    "wiki": "First_Taiwan_Strait_Crisis",
+    "start": "1954-09-03",
+    "end": "1955-05-01",
+    "ongoing": false,
+    "side_a": [
+      "China"
+    ],
+    "side_b": [
+      "Republic of China",
+      "United States"
+    ],
+    "deaths_min": 914,
+    "deaths_max": 1054
+  },
+  {
+    "name": "Suez Crisis",
+    "wiki": "Suez_Crisis",
+    "start": "1956-10-29",
+    "end": "1956-11-07",
+    "ongoing": false,
+    "side_a": [
+      "Israel",
+      "United Kingdom",
+      "France"
+    ],
+    "side_b": [
+      "Egypt"
+    ],
+    "deaths_min": 2848,
+    "deaths_max": 4198
+  },
+  {
+    "name": "Soviet invasion of Hungary",
+    "wiki": "Soviet_invasion_of_Hungary",
+    "start": "1956-11-01",
+    "end": "1956-11-04",
+    "ongoing": false,
+    "side_a": [
+      "Soviet Union"
+    ],
+    "side_b": [
+      "Hungary"
+    ],
+    "deaths_min": 3222,
+    "deaths_max": null
+  },
+  {
+    "name": "Ifni War",
+    "wiki": "Ifni_War",
+    "start": "1957-10-23",
+    "end": "1958-06-30",
+    "ongoing": false,
+    "side_a": [
+      "Spain",
+      "France"
+    ],
+    "side_b": [
+      "Morocco"
+    ],
+    "deaths_min": 1197,
+    "deaths_max": null
+  },
+  {
+    "name": "Second Taiwan Strait Crisis",
+    "wiki": "Second_Taiwan_Strait_Crisis",
+    "start": "1958-08-23",
+    "end": "1958-12-02",
+    "ongoing": false,
+    "side_a": [
+      "Republic of China",
+      "United States"
+    ],
+    "side_b": [
+      "China"
+    ],
+    "deaths_min": 1054,
+    "deaths_max": null
+  },
+  {
+    "name": "Bay of Pigs Invasion",
+    "wiki": "Bay_of_Pigs_Invasion",
+    "start": "1961-04-17",
+    "end": "1961-04-20",
+    "ongoing": false,
+    "side_a": [
+      "Cuba"
+    ],
+    "side_b": [
+      "United States",
+      "DRF"
+    ],
+    "deaths_min": 2298,
+    "deaths_max": null
+  },
+  {
+    "name": "Bizerte crisis",
+    "wiki": "Bizerte_crisis",
+    "start": "1961-07-19",
+    "end": "1961-07-23",
+    "ongoing": false,
+    "side_a": [
+      "France"
+    ],
+    "side_b": [
+      "Tunisia"
+    ],
+    "deaths_min": 654,
+    "deaths_max": 657
+  },
+  {
+    "name": "Operation Trikora",
+    "wiki": "Operation_Trikora",
+    "start": "1961-12-19",
+    "end": "1962-08-15",
+    "ongoing": false,
+    "side_a": [
+      "Indonesia"
+    ],
+    "side_b": [
+      "Netherlands"
+    ],
+    "deaths_min": 223,
+    "deaths_max": null
+  },
+  {
+    "name": "Sino-Indian War",
+    "wiki": "Sino-Indian_War",
+    "start": "1962-10-20",
+    "end": "1962-11-21",
+    "ongoing": false,
+    "side_a": [
+      "China"
+    ],
+    "side_b": [
+      "India"
+    ],
+    "deaths_min": 2105,
+    "deaths_max": 6197
+  },
+  {
+    "name": "Indonesia–Malaysia confrontation",
+    "wiki": "Indonesia–Malaysia_confrontation",
+    "start": "1963-01-20",
+    "end": "1966-08-11",
+    "ongoing": false,
+    "side_a": [
+      "Malaysia",
+      "Singapore",
+      "United Kingdom",
+      "Australia",
+      "New Zealand"
+    ],
+    "side_b": [
+      "Indonesia"
+    ],
+    "deaths_min": 874,
+    "deaths_max": null
+  },
+  {
+    "name": "Sand War",
+    "wiki": "Sand_War",
+    "start": "1963-09-25",
+    "end": "1964-02-20",
+    "ongoing": false,
+    "side_a": [
+      "Morocco"
+    ],
+    "side_b": [
+      "Algeria"
+    ],
+    "deaths_min": 69,
+    "deaths_max": 500
+  },
+  {
+    "name": "1964 Ethiopian–Somali Border War",
+    "wiki": "1964_Ethiopian–Somali_Border_War",
+    "start": "1964-02-26",
+    "end": "1964-04-06",
+    "ongoing": false,
+    "side_a": [
+      "Ethiopia"
+    ],
+    "side_b": [
+      "Somalia"
+    ],
+    "deaths_min": 1000,
+    "deaths_max": 2000
+  },
+  {
+    "name": "Vietnam War",
+    "wiki": "Vietnam_War",
+    "start": "1965-03-08",
+    "end": "1973-03-29",
+    "ongoing": false,
+    "side_a": [
+      "North Vietnam",
+      "FNL",
+      "Khmer Rouge",
+      "Khmer Issarak",
+      "Pathet Lao",
+      "China",
+      "North Korea",
+      "Soviet Union"
+    ],
+    "side_b": [
+      "South Vietnam",
+      "United States",
+      "South Korea",
+      "Thailand",
+      "Australia",
+      "New Zealand",
+      "Laos",
+      "Khmer Republic",
+      "Philippines"
+    ],
+    "deaths_min": 1326494,
+    "deaths_max": 3447494
+  },
+  {
+    "name": "Indo-Pakistani War of 1965",
+    "wiki": "Indo-Pakistani_War_of_1965",
+    "start": "1965-08-05",
+    "end": "1965-09-23",
+    "ongoing": false,
+    "side_a": [
+      "India"
+    ],
+    "side_b": [
+      "Pakistan"
+    ],
+    "deaths_min": 6800,
+    "deaths_max": 13459
+  },
+  {
+    "name": "Korean DMZ Conflict",
+    "wiki": "Korean_DMZ_Conflict",
+    "start": "1966-10-05",
+    "end": "1969-12-03",
+    "ongoing": false,
+    "side_a": [
+      "South Korea",
+      "United States"
+    ],
+    "side_b": [
+      "North Korea"
+    ],
+    "deaths_min": 739,
+    "deaths_max": null
+  },
+  {
+    "name": "Six-Day War",
+    "wiki": "Six-Day_War",
+    "start": "1967-06-05",
+    "end": "1967-06-10",
+    "ongoing": false,
+    "side_a": [
+      "Israel"
+    ],
+    "side_b": [
+      "Egypt",
+      "Syria",
+      "Jordan",
+      "Iraq",
+      "Saudi Arabia",
+      "Morocco",
+      "Algeria",
+      "Libya",
+      "Kuwait",
+      "Tunisia",
+      "Sudan"
+    ],
+    "deaths_min": 12336,
+    "deaths_max": 19264
+  },
+  {
+    "name": "War of Attrition",
+    "wiki": "War_of_Attrition",
+    "start": "1967-07-01",
+    "end": "1970-08-07",
+    "ongoing": false,
+    "side_a": [
+      "Israel"
+    ],
+    "side_b": [
+      "Egypt",
+      "Soviet Union",
+      "Cuba",
+      "Jordan",
+      "Syria"
+    ],
+    "deaths_min": 6442,
+    "deaths_max": 14290
+  },
+  {
+    "name": "Warsaw Pact invasion of Czechoslovakia",
+    "wiki": "Warsaw_Pact_invasion_of_Czechoslovakia",
+    "start": "1968-08-20",
+    "end": "1968-08-21",
+    "ongoing": false,
+    "side_a": [
+      "Soviet Union",
+      "Bulgaria",
+      "East Germany",
+      "Hungary",
+      "Poland"
+    ],
+    "side_b": [
+      "Czechoslovakia"
+    ],
+    "deaths_min": 254,
+    "deaths_max": null
+  },
+  {
+    "name": "Football War",
+    "wiki": "Football_War",
+    "start": "1969-07-14",
+    "end": "1969-07-18",
+    "ongoing": false,
+    "side_a": [
+      "El Salvador"
+    ],
+    "side_b": [
+      "Honduras"
+    ],
+    "deaths_min": 3000,
+    "deaths_max": null
+  },
+  {
+    "name": "Indo-Pakistani War of 1971",
+    "wiki": "Indo-Pakistani_War_of_1971",
+    "start": "1971-12-03",
+    "end": "1971-12-16",
+    "ongoing": false,
+    "side_a": [
+      "India"
+    ],
+    "side_b": [
+      "Pakistan"
+    ],
+    "deaths_min": 11500,
+    "deaths_max": 12843
+  },
+  {
+    "name": "Yom Kippur War",
+    "wiki": "Yom_Kippur_War",
+    "start": "1973-10-06",
+    "end": "1973-10-25",
+    "ongoing": false,
+    "side_a": [
+      "Israel"
+    ],
+    "side_b": [
+      "Egypt",
+      "Syria",
+      "Iraq",
+      "Jordan",
+      "Algeria",
+      "Cuba",
+      "Morocco"
+    ],
+    "deaths_min": 10521,
+    "deaths_max": 21300
+  },
+  {
+    "name": "Turkish invasion of Cyprus",
+    "wiki": "Turkish_invasion_of_Cyprus",
+    "start": "1974-07-20",
+    "end": "1974-08-18",
+    "ongoing": false,
+    "side_a": [
+      "Turkey"
+    ],
+    "side_b": [
+      "Cyprus",
+      "Greece"
+    ],
+    "deaths_min": 6009,
+    "deaths_max": 9509
+  },
+  {
+    "name": "1974–75 Shatt al-Arab conflict",
+    "wiki": "1974–75_Shatt_al-Arab_conflict",
+    "start": "1974-04-01",
+    "end": "1975-03-01",
+    "ongoing": false,
+    "side_a": [
+      "Iran"
+    ],
+    "side_b": [
+      "Iraq"
+    ],
+    "deaths_min": 1000,
+    "deaths_max": null
+  },
+  {
+    "name": "Western Sahara War",
+    "wiki": "Western_Sahara_War",
+    "start": "1975-10-30",
+    "end": "1991-09-06",
+    "ongoing": false,
+    "side_a": [
+      "Morocco",
+      "Mauritania",
+      "France"
+    ],
+    "side_b": [
+      "Sahrawi Arab Democratic Republic",
+      "Algeria"
+    ],
+    "deaths_min": 10000,
+    "deaths_max": 20000
+  },
+  {
+    "name": "Indonesian invasion of East Timor",
+    "wiki": "Indonesian_invasion_of_East_Timor",
+    "start": "1975-12-07",
+    "end": "1976-07-17",
+    "ongoing": false,
+    "side_a": [
+      "Indonesia"
+    ],
+    "side_b": [
+      "East Timor"
+    ],
+    "deaths_min": 51000,
+    "deaths_max": null
+  },
+  {
+    "name": "Ogaden War",
+    "wiki": "Ogaden_War",
+    "start": "1977-07-13",
+    "end": "1978-03-23",
+    "ongoing": false,
+    "side_a": [
+      "Ethiopia",
+      "Cuba",
+      "South Yemen",
+      "Soviet Union"
+    ],
+    "side_b": [
+      "Somalia"
+    ],
+    "deaths_min": 39836,
+    "deaths_max": null
+  },
+  {
+    "name": "Egyptian–Libyan War",
+    "wiki": "Egyptian–Libyan_War",
+    "start": "1977-07-21",
+    "end": "1977-07-24",
+    "ongoing": false,
+    "side_a": [
+      "Egypt"
+    ],
+    "side_b": [
+      "Libya"
+    ],
+    "deaths_min": 500,
+    "deaths_max": null
+  },
+  {
+    "name": "Chadian–Libyan War",
+    "wiki": "Chadian–Libyan_War",
+    "start": "1978-01-29",
+    "end": "1987-09-11",
+    "ongoing": false,
+    "side_a": [
+      "Chad",
+      "France"
+    ],
+    "side_b": [
+      "Libya"
+    ],
+    "deaths_min": 8500,
+    "deaths_max": null
+  },
+  {
+    "name": "Uganda–Tanzania War",
+    "wiki": "Uganda–Tanzania_War",
+    "start": "1978-10-09",
+    "end": "1979-06-03",
+    "ongoing": false,
+    "side_a": [
+      "Tanzania",
+      "Mozambique"
+    ],
+    "side_b": [
+      "Uganda",
+      "Libya"
+    ],
+    "deaths_min": 4135,
+    "deaths_max": 4323
+  },
+  {
+    "name": "Cambodian–Vietnamese War",
+    "wiki": "Cambodian–Vietnamese_War",
+    "start": "1978-12-21",
+    "end": "1989-09-26",
+    "ongoing": false,
+    "side_a": [
+      "Vietnam",
+      "People's Republic of Kampuchea"
+    ],
+    "side_b": [
+      "Democratic Kampuchea",
+      "Thailand"
+    ],
+    "deaths_min": 270000,
+    "deaths_max": 297000
+  },
+  {
+    "name": "Sino-Vietnamese War",
+    "wiki": "Sino-Vietnamese_War",
+    "start": "1979-02-17",
+    "end": "1979-03-16",
+    "ongoing": false,
+    "side_a": [
+      "Vietnam"
+    ],
+    "side_b": [
+      "China"
+    ],
+    "deaths_min": 36945,
+    "deaths_max": 175000
+  },
+  {
+    "name": "Yemenite War of 1979",
+    "wiki": "Yemenite_War_of_1979",
+    "start": "1979-02-24",
+    "end": "1979-03-19",
+    "ongoing": false,
+    "side_a": [
+      "North Yemen"
+    ],
+    "side_b": [
+      "South Yemen"
+    ],
+    "deaths_min": 1084,
+    "deaths_max": null
+  },
+  {
+    "name": "Sino-Vietnamese conflicts (1979–1991)",
+    "wiki": "Sino-Vietnamese_conflicts_(1979–1991)",
+    "start": "1979-03-16",
+    "end": "1991-11-01",
+    "ongoing": false,
+    "side_a": [
+      "Vietnam"
+    ],
+    "side_b": [
+      "China"
+    ],
+    "deaths_min": 6000,
+    "deaths_max": null
+  },
+  {
+    "name": "Soviet–Afghan War",
+    "wiki": "Soviet–Afghan_War",
+    "start": "1979-12-24",
+    "end": "1989-02-15",
+    "ongoing": false,
+    "side_a": [
+      "Soviet Union",
+      "Afghanistan"
+    ],
+    "side_b": [
+      "Afghan Mujahideen",
+      "Afghan Interim Government",
+      "Pakistan"
+    ],
+    "deaths_min": 600000,
+    "deaths_max": 2000000
+  },
+  {
+    "name": "Iran–Iraq War",
+    "wiki": "Iran–Iraq_War",
+    "start": "1980-09-22",
+    "end": "1988-08-20",
+    "ongoing": false,
+    "side_a": [
+      "Iran"
+    ],
+    "side_b": [
+      "Iraq",
+      "United States"
+    ],
+    "deaths_min": 405000,
+    "deaths_max": 1200000
+  },
+  {
+    "name": "Falklands War",
+    "wiki": "Falklands_War",
+    "start": "1982-04-02",
+    "end": "1982-06-14",
+    "ongoing": false,
+    "side_a": [
+      "United Kingdom"
+    ],
+    "side_b": [
+      "Argentina"
+    ],
+    "deaths_min": 907,
+    "deaths_max": null
+  },
+  {
+    "name": "1982 Ethiopian–Somali Border War",
+    "wiki": "1982_Ethiopian–Somali_Border_War",
+    "start": "1982-06-01",
+    "end": "1982-08-01",
+    "ongoing": false,
+    "side_a": [
+      "Somalia"
+    ],
+    "side_b": [
+      "Ethiopia"
+    ],
+    "deaths_min": null,
+    "deaths_max": null
+  },
+  {
+    "name": "Chadian–Nigerian War",
+    "wiki": "Chadian–Nigerian_War",
+    "start": "1983-04-18",
+    "end": "1983-04-01",
+    "ongoing": false,
+    "side_a": [
+      "Nigeria"
+    ],
+    "side_b": [
+      "Chad"
+    ],
+    "deaths_min": 100,
+    "deaths_max": null
+  },
+  {
+    "name": "Invasion of Grenada",
+    "wiki": "Invasion_of_Grenada",
+    "start": "1983-10-25",
+    "end": "1983-10-29",
+    "ongoing": false,
+    "side_a": [
+      "United States",
+      "Antigua and Barbuda",
+      "Barbados",
+      "Dominica",
+      "Jamaica",
+      "Saint Lucia",
+      "Saint Vincent and the Grenadines"
+    ],
+    "side_b": [
+      "Grenada",
+      "Cuba"
+    ],
+    "deaths_min": 102,
+    "deaths_max": null
+  },
+  {
+    "name": "Agacher Strip War",
+    "wiki": "Agacher_Strip_War",
+    "start": "1985-12-25",
+    "end": "1985-12-30",
+    "ongoing": false,
+    "side_a": [
+      "Mali"
+    ],
+    "side_b": [
+      "Burkina Faso"
+    ],
+    "deaths_min": 142,
+    "deaths_max": null
+  },
+  {
+    "name": "First Nagorno-Karabakh War",
+    "wiki": "First_Nagorno-Karabakh_War",
+    "start": "1988-02-20",
+    "end": "1994-05-12",
+    "ongoing": false,
+    "side_a": [
+      "Nagorno-Karabakh Republic",
+      "Armenia"
+    ],
+    "side_b": [
+      "Azerbaijan"
+    ],
+    "deaths_min": 37413,
+    "deaths_max": 56000
+  },
+  {
+    "name": "Mauritania–Senegal Border War",
+    "wiki": "Mauritania–Senegal_Border_War",
+    "start": "1989-04-09",
+    "end": "1991-07-18",
+    "ongoing": false,
+    "side_a": [
+      "Mauritania"
+    ],
+    "side_b": [
+      "Senegal"
+    ],
+    "deaths_min": 200,
+    "deaths_max": null
+  },
+  {
+    "name": "United States invasion of Panama",
+    "wiki": "United_States_invasion_of_Panama",
+    "start": "1989-12-20",
+    "end": "1990-01-31",
+    "ongoing": false,
+    "side_a": [
+      "United States"
+    ],
+    "side_b": [
+      "Panama"
+    ],
+    "deaths_min": 540,
+    "deaths_max": 3338
+  },
+  {
+    "name": "Persian Gulf War",
+    "wiki": "Gulf_War",
+    "start": "1990-08-02",
+    "end": "1991-02-28",
+    "ongoing": false,
+    "side_a": [
+      "Kuwait",
+      "United States",
+      "United Kingdom",
+      "Saudi Arabia",
+      "France",
+      "Italy",
+      "Canada",
+      "Australia",
+      "Egypt",
+      "Syria",
+      "Qatar"
+    ],
+    "side_b": [
+      "Iraq"
+    ],
+    "deaths_min": 29231,
+    "deaths_max": 59231
+  },
+  {
+    "name": "Transnistria War",
+    "wiki": "Transnistria_War",
+    "start": "1990-11-02",
+    "end": "1992-07-21",
+    "ongoing": false,
+    "side_a": [
+      "Moldova"
+    ],
+    "side_b": [
+      "Transnistria",
+      "Russia"
+    ],
+    "deaths_min": 316,
+    "deaths_max": 637
+  },
+  {
+    "name": "South Ossetia war (1991–1992)",
+    "wiki": "1991–1992_South_Ossetia_war",
+    "start": "1991-01-05",
+    "end": "1992-06-24",
+    "ongoing": false,
+    "side_a": [
+      "Georgia"
+    ],
+    "side_b": [
+      "South Ossetia",
+      "Russia"
+    ],
+    "deaths_min": 1000,
+    "deaths_max": null
+  },
+  {
+    "name": "Croatian War of Independence",
+    "wiki": "Croatian_War_of_Independence",
+    "start": "1991-09-20",
+    "end": "1992-01-03",
+    "ongoing": false,
+    "side_a": [
+      "Croatia"
+    ],
+    "side_b": [
+      "Yugoslavia"
+    ],
+    "deaths_min": 5040,
+    "deaths_max": 7279
+  },
+  {
+    "name": "Bosnian War",
+    "wiki": "Bosnian_War",
+    "start": "1992-04-06",
+    "end": "1992-05-19",
+    "ongoing": false,
+    "side_a": [
+      "Bosnia and Herzegovina"
+    ],
+    "side_b": [
+      "Yugoslavia",
+      "Serbia and Montenegro",
+      "Republika Srpska"
+    ],
+    "deaths_min": 25000,
+    "deaths_max": 329000
+  },
+  {
+    "name": "War in Abkhazia (1992–1993)",
+    "wiki": "War_in_Abkhazia_(1992–1993)",
+    "start": "1992-08-14",
+    "end": "1993-09-27",
+    "ongoing": false,
+    "side_a": [
+      "Abkhazia",
+      "Russia"
+    ],
+    "side_b": [
+      "Georgia"
+    ],
+    "deaths_min": 10000,
+    "deaths_max": 30000
+  },
+  {
+    "name": "Cenepa War",
+    "wiki": "Cenepa_War",
+    "start": "1995-01-26",
+    "end": "1995-02-28",
+    "ongoing": false,
+    "side_a": [
+      "Peru"
+    ],
+    "side_b": [
+      "Ecuador"
+    ],
+    "deaths_min": 84,
+    "deaths_max": 410
+  },
+  {
+    "name": "First Congo War",
+    "wiki": "First_Congo_War",
+    "start": "1996-10-24",
+    "end": "1997-05-16",
+    "ongoing": false,
+    "side_a": [
+      "AFDL",
+      "Rwanda",
+      "Uganda",
+      "Burundi",
+      "Angola",
+      "SPLA",
+      "Eritrea"
+    ],
+    "side_b": [
+      "Zaire",
+      "Sudan",
+      "Chad",
+      "Ex-FAR/ALiR",
+      "Interahamwe",
+      "CNDD-FDD",
+      "UNITA",
+      "ADF",
+      "FLNC"
+    ],
+    "deaths_min": 235000,
+    "deaths_max": 250000
+  },
+  {
+    "name": "Kosovo War",
+    "wiki": "Kosovo_War",
+    "start": "1998-02-28",
+    "end": "1999-06-10",
+    "ongoing": false,
+    "side_a": [
+      "Kosova",
+      "NATO"
+    ],
+    "side_b": [
+      "Yugoslavia"
+    ],
+    "deaths_min": 16056,
+    "deaths_max": 16879
+  },
+  {
+    "name": "Eritrean–Ethiopian War",
+    "wiki": "Eritrean–Ethiopian_War",
+    "start": "1998-05-03",
+    "end": "2000-06-18",
+    "ongoing": false,
+    "side_a": [
+      "Ethiopia"
+    ],
+    "side_b": [
+      "Eritrea"
+    ],
+    "deaths_min": 53000,
+    "deaths_max": 300000
+  },
+  {
+    "name": "Kargil War",
+    "wiki": "Kargil_War",
+    "start": "1999-05-03",
+    "end": "1999-07-26",
+    "ongoing": false,
+    "side_a": [
+      "India"
+    ],
+    "side_b": [
+      "Pakistan"
+    ],
+    "deaths_min": 884,
+    "deaths_max": 5600
+  },
+  {
+    "name": "Second Chechen War",
+    "wiki": "Second_Chechen_War",
+    "start": "1999-08-07",
+    "end": "2000-04-30",
+    "ongoing": false,
+    "side_a": [
+      "Russia"
+    ],
+    "side_b": [
+      "Ichkeria"
+    ],
+    "deaths_min": 20000,
+    "deaths_max": null
+  },
+  {
+    "name": "African Six-Day War",
+    "wiki": "Six-Day_War_(2000)",
+    "start": "2000-06-05",
+    "end": "2000-06-10",
+    "ongoing": false,
+    "side_a": [
+      "Rwanda"
+    ],
+    "side_b": [
+      "Uganda"
+    ],
+    "deaths_min": 4051,
+    "deaths_max": null
+  },
+  {
+    "name": "United States invasion of Afghanistan",
+    "wiki": "United_States_invasion_of_Afghanistan",
+    "start": "2001-10-07",
+    "end": "2001-12-17",
+    "ongoing": false,
+    "side_a": [
+      "United States",
+      "United Kingdom",
+      "Canada",
+      "Australia",
+      "Afghanistan",
+      "Northern Alliance"
+    ],
+    "side_b": [
+      "Islamic Emirate of Afghanistan"
+    ],
+    "deaths_min": 9550,
+    "deaths_max": 14388
+  },
+  {
+    "name": "2003 invasion of Iraq",
+    "wiki": "2003_invasion_of_Iraq",
+    "start": "2003-03-19",
+    "end": "2003-05-01",
+    "ongoing": false,
+    "side_a": [
+      "United States",
+      "United Kingdom",
+      "Australia",
+      "Poland"
+    ],
+    "side_b": [
+      "Iraq"
+    ],
+    "deaths_min": 10996,
+    "deaths_max": 53016
+  },
+  {
+    "name": "Gaza–Israel conflict",
+    "wiki": "Gaza–Israel_conflict",
+    "start": "2006-06-28",
+    "end": null,
+    "ongoing": true,
+    "side_a": [
+      "Israel"
+    ],
+    "side_b": [
+      "Gaza Strip"
+    ],
+    "deaths_min": 42783,
+    "deaths_max": null
+  },
+  {
+    "name": "Russo-Georgian War",
+    "wiki": "Russo-Georgian_War",
+    "start": "2008-08-01",
+    "end": "2008-08-12",
+    "ongoing": false,
+    "side_a": [
+      "Russia",
+      "South Ossetia",
+      "Abkhazia"
+    ],
+    "side_b": [
+      "Georgia"
+    ],
+    "deaths_min": 730,
+    "deaths_max": 737
+  },
+  {
+    "name": "2011 military intervention in Libya",
+    "wiki": "2011_military_intervention_in_Libya",
+    "start": "2011-03-19",
+    "end": "2011-10-31",
+    "ongoing": false,
+    "side_a": [
+      "NATO",
+      "Qatar",
+      "Sweden",
+      "United Arab Emirates"
+    ],
+    "side_b": [
+      "Libya"
+    ],
+    "deaths_min": 72,
+    "deaths_max": 403
+  },
+  {
+    "name": "Heglig Crisis",
+    "wiki": "Heglig_Crisis",
+    "start": "2012-03-26",
+    "end": "2012-09-26",
+    "ongoing": false,
+    "side_a": [
+      "Sudan"
+    ],
+    "side_b": [
+      "South Sudan"
+    ],
+    "deaths_min": 316,
+    "deaths_max": 1485
+  },
+  {
+    "name": "Russo-Ukrainian War",
+    "wiki": "Russo-Ukrainian_War",
+    "start": "2014-02-20",
+    "end": null,
+    "ongoing": true,
+    "side_a": [
+      "Ukraine"
+    ],
+    "side_b": [
+      "Russia",
+      "DPR",
+      "LPR",
+      "North Korea"
+    ],
+    "deaths_min": 400000,
+    "deaths_max": 650000
+  },
+  {
+    "name": "Second Nagorno-Karabakh War",
+    "wiki": "Second_Nagorno-Karabakh_War",
+    "start": "2020-09-27",
+    "end": "2020-11-10",
+    "ongoing": false,
+    "side_a": [
+      "Azerbaijan"
+    ],
+    "side_b": [
+      "Armenia",
+      "Artsakh"
+    ],
+    "deaths_min": 7726,
+    "deaths_max": null
+  },
+  {
+    "name": "Democratic Republic of the Congo–Rwanda conflict (2022–present)",
+    "wiki": "Democratic_Republic_of_the_Congo–Rwanda_conflict_(2022–present)",
+    "start": "2022-03-27",
+    "end": "2025-06-27",
+    "ongoing": false,
+    "side_a": [
+      "Democratic Republic of the Congo"
+    ],
+    "side_b": [
+      "Rwanda",
+      "March 23 Movement"
+    ],
+    "deaths_min": 7000,
+    "deaths_max": null
+  },
+  {
+    "name": "2025 India–Pakistan conflict",
+    "wiki": "2025_India–Pakistan_conflict",
+    "start": "2025-05-07",
+    "end": "2025-05-10",
+    "ongoing": false,
+    "side_a": [
+      "India"
+    ],
+    "side_b": [
+      "Pakistan"
+    ],
+    "deaths_min": 83,
+    "deaths_max": 210
+  },
+  {
+    "name": "Twelve-Day War",
+    "wiki": "Twelve-Day_War",
+    "start": "2025-06-13",
+    "end": "2025-06-24",
+    "ongoing": false,
+    "side_a": [
+      "Israel",
+      "United States"
+    ],
+    "side_b": [
+      "Iran",
+      "Houthis"
+    ],
+    "deaths_min": 1091,
+    "deaths_max": 1226
+  },
+  {
+    "name": "2026 Afghanistan–Pakistan war",
+    "wiki": "2026_Afghanistan–Pakistan_war",
+    "start": "2026-02-21",
+    "end": null,
+    "ongoing": true,
+    "side_a": [
+      "Pakistan"
+    ],
+    "side_b": [
+      "Afghanistan"
+    ],
+    "deaths_min": 100,
+    "deaths_max": 457
+  },
+  {
+    "name": "Iran War",
+    "wiki": "Iran_War",
+    "start": "2026-02-28",
+    "end": null,
+    "ongoing": true,
+    "side_a": [
+      "Israel",
+      "United States"
+    ],
+    "side_b": [
+      "Iran"
+    ],
+    "deaths_min": 3411,
+    "deaths_max": 9114
+  }
+]

@@ -1,5 +1,565 @@
 [
   {
+    "name": "Simón Bolívar",
+    "role": "President",
+    "start": "1819-12-17",
+    "end": "1830-05-04",
+    "current": false,
+    "tenure": "1819–1830",
+    "party": "Independent",
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Francisco de Paula Santander",
+    "role": "President",
+    "start": "1821-10-03",
+    "end": "1827-01-01",
+    "current": false,
+    "tenure": "1821–1827",
+    "party": "Independent",
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Joaquín de Mosquera",
+    "role": "President",
+    "start": "1830-05-04",
+    "end": "1830-09-04",
+    "current": false,
+    "tenure": "1830–1830",
+    "party": "Independent",
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Domingo Caicedo",
+    "role": "President",
+    "start": "1830-09-04",
+    "end": "1830-09-04",
+    "current": false,
+    "tenure": "1830–1830",
+    "party": "Independent",
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Rafael Urdaneta",
+    "role": "President",
+    "start": "1830-09-05",
+    "end": "1831-04-30",
+    "current": false,
+    "tenure": "1830–1831",
+    "party": "Independent",
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Domingo Caicedo",
+    "role": "President",
+    "start": "1831-04-30",
+    "end": "1831-11-21",
+    "current": false,
+    "tenure": "1831–1831",
+    "party": "Independent",
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "José María Obando",
+    "role": "President",
+    "start": "1831-11-21",
+    "end": "1832-03-10",
+    "current": false,
+    "tenure": "1831–1832",
+    "party": "Liberal",
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Francisco de Paula Santander",
+    "role": "President",
+    "start": "1832-03-10",
+    "end": "1837-04-01",
+    "current": false,
+    "tenure": "1832–1837",
+    "party": "Independent",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "José Ignacio de Márquez",
+    "role": "President",
+    "start": "1837-04-01",
+    "end": "1841-04-01",
+    "current": false,
+    "tenure": "1837–1841",
+    "party": "Independent",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "Pedro Alcántara Herrán",
+    "role": "President",
+    "start": "1841-04-01",
+    "end": "1845-04-01",
+    "current": false,
+    "tenure": "1841–1845",
+    "party": "Independent",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "Tomás Cipriano de Mosquera",
+    "role": "President",
+    "start": "1845-04-01",
+    "end": "1849-04-01",
+    "current": false,
+    "tenure": "1845–1849",
+    "party": "Independent",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "José Hilario López",
+    "role": "President",
+    "start": "1849-04-01",
+    "end": "1853-04-01",
+    "current": false,
+    "tenure": "1849–1853",
+    "party": "Liberal",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "José María Obando",
+    "role": "President",
+    "start": "1853-04-01",
+    "end": "1854-04-17",
+    "current": false,
+    "tenure": "1853–1854",
+    "party": "Liberal",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "José María Melo",
+    "role": "President",
+    "start": "1854-04-17",
+    "end": "1854-12-04",
+    "current": false,
+    "tenure": "1854–1854",
+    "party": "Liberal",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "José de Obaldía",
+    "role": "President",
+    "start": "1854-12-04",
+    "end": "1855-04-01",
+    "current": false,
+    "tenure": "1854–1855",
+    "party": "Liberal",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "Manuel María Mallarino",
+    "role": "President",
+    "start": "1855-04-01",
+    "end": "1857-04-01",
+    "current": false,
+    "tenure": "1855–1857",
+    "party": "Conservative",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "Mariano Ospina Rodríguez",
+    "role": "President",
+    "start": "1857-04-01",
+    "end": "1858-05-22",
+    "current": false,
+    "tenure": "1857–1858",
+    "party": "Conservative",
+    "era": "Republic of New Granada"
+  },
+  {
+    "name": "Mariano Ospina Rodríguez",
+    "role": "President",
+    "start": "1858-05-22",
+    "end": "1861-04-01",
+    "current": false,
+    "tenure": "1858–1861",
+    "party": "Conservative",
+    "era": "Granadine Confederation"
+  },
+  {
+    "name": "Bartolomé Calvo",
+    "role": "President",
+    "start": "1861-04-01",
+    "end": "1861-07-18",
+    "current": false,
+    "tenure": "1861–1861",
+    "party": "Conservative",
+    "era": "Granadine Confederation"
+  },
+  {
+    "name": "Tomás Cipriano de Mosquera",
+    "role": "President",
+    "start": "1861-07-18",
+    "end": "1863-02-04",
+    "current": false,
+    "tenure": "1861–1863",
+    "party": "Liberal",
+    "era": "Granadine Confederation"
+  },
+  {
+    "name": "Tomás Cipriano de Mosquera",
+    "role": "President",
+    "start": "1863-05-14",
+    "end": "1864-04-01",
+    "current": false,
+    "tenure": "1863–1864",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Manuel Murillo Toro",
+    "role": "President",
+    "start": "1864-04-01",
+    "end": "1866-04-01",
+    "current": false,
+    "tenure": "1864–1866",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Tomás Cipriano de Mosquera",
+    "role": "President",
+    "start": "1866-04-01",
+    "end": "1867-05-23",
+    "current": false,
+    "tenure": "1866–1867",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Santos Acosta",
+    "role": "President",
+    "start": "1867-05-23",
+    "end": "1868-04-01",
+    "current": false,
+    "tenure": "1867–1868",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Santos Gutiérrez",
+    "role": "President",
+    "start": "1868-04-01",
+    "end": "1870-04-01",
+    "current": false,
+    "tenure": "1868–1870",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Eustorgio Salgar",
+    "role": "President",
+    "start": "1870-04-01",
+    "end": "1872-04-01",
+    "current": false,
+    "tenure": "1870–1872",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Manuel Murillo Toro",
+    "role": "President",
+    "start": "1872-04-01",
+    "end": "1874-04-01",
+    "current": false,
+    "tenure": "1872–1874",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Santiago Pérez",
+    "role": "President",
+    "start": "1874-04-01",
+    "end": "1876-04-01",
+    "current": false,
+    "tenure": "1874–1876",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Aquileo Parra",
+    "role": "President",
+    "start": "1876-04-01",
+    "end": "1878-04-01",
+    "current": false,
+    "tenure": "1876–1878",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Julián Trujillo",
+    "role": "President",
+    "start": "1878-04-01",
+    "end": "1880-04-01",
+    "current": false,
+    "tenure": "1878–1880",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Rafael Núñez",
+    "role": "President",
+    "start": "1880-04-01",
+    "end": "1882-04-01",
+    "current": false,
+    "tenure": "1880–1882",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Francisco Javier Zaldúa",
+    "role": "President",
+    "start": "1882-04-01",
+    "end": "1882-12-21",
+    "current": false,
+    "tenure": "1882–1882",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "José Eusebio Otálora",
+    "role": "President",
+    "start": "1882-12-21",
+    "end": "1884-04-01",
+    "current": false,
+    "tenure": "1882–1884",
+    "party": "Liberal",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Rafael Núñez",
+    "role": "President",
+    "start": "1884-04-01",
+    "end": "1886-08-06",
+    "current": false,
+    "tenure": "1884–1886",
+    "party": "National",
+    "era": "United States of Colombia"
+  },
+  {
+    "name": "Rafael Núñez",
+    "role": "President",
+    "start": "1886-08-06",
+    "end": "1894-09-18",
+    "current": false,
+    "tenure": "1886–1894",
+    "party": "National",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Miguel Antonio Caro",
+    "role": "President",
+    "start": "1894-09-18",
+    "end": "1898-08-07",
+    "current": false,
+    "tenure": "1894–1898",
+    "party": "National",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Manuel Antonio Sanclemente",
+    "role": "President",
+    "start": "1898-08-07",
+    "end": "1900-07-31",
+    "current": false,
+    "tenure": "1898–1900",
+    "party": "National",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "José Manuel Marroquín",
+    "role": "President",
+    "start": "1900-07-31",
+    "end": "1904-08-07",
+    "current": false,
+    "tenure": "1900–1904",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Rafael Reyes",
+    "role": "President",
+    "start": "1904-08-07",
+    "end": "1909-07-27",
+    "current": false,
+    "tenure": "1904–1909",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Ramón González Valencia",
+    "role": "President",
+    "start": "1909-08-03",
+    "end": "1910-08-07",
+    "current": false,
+    "tenure": "1909–1910",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Carlos Eugenio Restrepo",
+    "role": "President",
+    "start": "1910-08-07",
+    "end": "1914-08-07",
+    "current": false,
+    "tenure": "1910–1914",
+    "party": "Republican Union",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "José Vicente Concha",
+    "role": "President",
+    "start": "1914-08-07",
+    "end": "1918-08-07",
+    "current": false,
+    "tenure": "1914–1918",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Marco Fidel Suárez",
+    "role": "President",
+    "start": "1918-08-07",
+    "end": "1921-11-11",
+    "current": false,
+    "tenure": "1918–1921",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Jorge Holguín",
+    "role": "President",
+    "start": "1921-11-11",
+    "end": "1922-08-07",
+    "current": false,
+    "tenure": "1921–1922",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Pedro Nel Ospina",
+    "role": "President",
+    "start": "1922-08-07",
+    "end": "1926-08-07",
+    "current": false,
+    "tenure": "1922–1926",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Miguel Abadía Méndez",
+    "role": "President",
+    "start": "1926-08-07",
+    "end": "1930-08-07",
+    "current": false,
+    "tenure": "1926–1930",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Enrique Olaya Herrera",
+    "role": "President",
+    "start": "1930-08-07",
+    "end": "1934-08-07",
+    "current": false,
+    "tenure": "1930–1934",
+    "party": "Liberal",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Alfonso López Pumarejo",
+    "role": "President",
+    "start": "1934-08-07",
+    "end": "1938-08-07",
+    "current": false,
+    "tenure": "1934–1938",
+    "party": "Liberal",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Eduardo Santos",
+    "role": "President",
+    "start": "1938-08-07",
+    "end": "1942-08-07",
+    "current": false,
+    "tenure": "1938–1942",
+    "party": "Liberal",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Alfonso López Pumarejo",
+    "role": "President",
+    "start": "1942-08-07",
+    "end": "1945-08-07",
+    "current": false,
+    "tenure": "1942–1945",
+    "party": "Liberal",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Alberto Lleras Camargo",
+    "role": "President",
+    "start": "1945-08-07",
+    "end": "1946-08-07",
+    "current": false,
+    "tenure": "1945–1946",
+    "party": "Liberal",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Mariano Ospina Pérez",
+    "role": "President",
+    "start": "1946-08-07",
+    "end": "1950-08-07",
+    "current": false,
+    "tenure": "1946–1950",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Laureano Gómez",
+    "role": "President",
+    "start": "1950-08-07",
+    "end": "1953-06-13",
+    "current": false,
+    "tenure": "1950–1953",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Roberto Urdaneta Arbeláez",
+    "role": "President",
+    "start": "1951-11-05",
+    "end": "1953-06-13",
+    "current": false,
+    "tenure": "1951–1953",
+    "party": "Conservative",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "⚠️ Gustavo Rojas Pinilla",
+    "role": "President",
+    "start": "1953-06-13",
+    "end": "1957-05-10",
+    "current": false,
+    "tenure": "1953–1957",
+    "party": "Military",
+    "era": "Republic of Colombia"
+  },
+  {
+    "name": "Military Junta",
+    "role": "President",
+    "start": "1957-05-10",
+    "end": "1958-08-07",
+    "current": false,
+    "tenure": "1957–1958",
+    "party": "Military",
+    "era": "Republic of Colombia"
+  },
+  {
     "name": "Alberto Lleras Camargo",
     "role": "President",
     "start": "1958-08-07",

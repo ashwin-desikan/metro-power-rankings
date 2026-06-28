@@ -12,6 +12,7 @@ import "server-only";
 export type CurrentLeader = {
   name: string;
   role: string;
+  since?: string;
   second?: { name: string; role: string };
 };
 

@@ -1,0 +1,48 @@
+name: Billionaires refresh (monthly, no deploy)
+
+# Pulls the Forbes real-time billionaires list from the free rtb-api
+# (komed3/rtb-api, MIT), rebuilds public/data/billionaires.json with canonical
+# country mapping, and commits it with [vercel skip]. The /billionaires hub and
+# country pages read it via ISR, so it updates with no Vercel build. The build
+# aborts if it parses implausibly few people, so a source schema change can't
+# overwrite good data.
+
+on:
+  schedule:
+    - cron: "0 6 2 * *"   # 06:00 UTC on the 2nd of each month
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: billionaires-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install requests
+      - name: Fetch + rebuild billionaires.json
+        run: |
+          set -e
+          python scripts/billionaires/fetch-billionaires.py
+          python scripts/billionaires/build-billionaires.py
+      - name: Commit if changed
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- public/data/billionaires.json; then
+            echo "No billionaire-data changes this month."
+            exit 0
+          fi
+          git add public/data/billionaires.json public/data/billionaires_raw.json
+          git commit -m "data: monthly billionaires refresh [vercel skip]"
+          git push origin HEAD:main

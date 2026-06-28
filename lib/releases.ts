@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-28",
-    headline: "Leadership history reaches 98 countries, now self-updating",
+    headline: "Deeper leadership histories, a Since column, and Interstate Wars",
     items: [
-      "Leadership history now covers 98 countries, adding 63 this release across Africa, the Middle East, the Americas, the Balkans, Central Asia and beyond, each traced from the modern state's founding.",
-      "The directory leads with the head of government (PM or chancellor) where the president is ceremonial, showing the head of state alongside, with crowns for monarchs and a mark for authoritarian leaders.",
-      "Current officeholders were individually verified to reflect 2026, capturing recent changes of government in Venezuela, Iraq, Bolivia, Hungary, Czechia and beyond.",
-      "A weekly job now refreshes each country's current leaders automatically from open data and updates the site with no deploy, so the directory stays current on its own.",
+      "Leadership history now spans ~100 countries, several traced to their founding dynasties (France to Charlemagne, Russia to Ivan III), with a sortable in-office date for each current leader.",
+      "The directory leads with the head of government where the president is ceremonial, with crowns for monarchs and warning marks for leaders tied to atrocities, constitutional subversion, or criminal conviction.",
+      "Two new hubs: Interstate Wars since 1945 (wars between states, belligerents linked) and Billionaires (the Forbes real-time list by net worth, country and industry), each also on country pages.",
+      "The leaders, interstate-wars and billionaires datasets all refresh automatically from open data (weekly or monthly) and update the site with no deploy.",
     ],
   },
   {

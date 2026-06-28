@@ -44,6 +44,8 @@ const ITEMS: Item[] = [
   { href: '/compare', label: 'Compare', hint: 'Side-by-side any 2 to 4 metros', group: 'Geography' },
   { href: '/countries', label: 'Countries', hint: 'Population, metros, and composite score by country', group: 'Geography' },
   { href: '/orgs', label: 'Alliances & Orgs', hint: 'International organisation memberships by country', group: 'Geography' },
+  { href: '/conflicts', label: 'Interstate Wars', hint: 'Wars between states since 1945', group: 'Geography' },
+  { href: '/billionaires', label: 'Billionaires', hint: 'Forbes real-time billionaires by country', group: 'Geography' },
   { href: '/badges', label: 'Badges', hint: 'Categorical lenses over the dataset', group: 'Geography' },
   { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Geography' },
   { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Geography' },

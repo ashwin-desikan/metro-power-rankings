@@ -1,0 +1,2562 @@
+{
+  "generated": "2026-06-28",
+  "source": "https://en.wikipedia.org/wiki/List_of_interstate_wars_since_1945",
+  "count": 75,
+  "wars": [
+    {
+      "name": "Iran crisis of 1946",
+      "url": "https://en.wikipedia.org/wiki/Iran_crisis_of_1946",
+      "start": "1945-11-01",
+      "end": "1946-12-15",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 2000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Iran",
+          "slug": "iran",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Azerbaijan People's Government",
+          "slug": null,
+          "principal": true
+        },
+        {
+          "name": "Republic of Mahabad",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Indo-Pakistani War of 1947",
+      "url": "https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1947",
+      "start": "1947-10-22",
+      "end": "1949-01-05",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 2604,
+      "deathsMax": 7500,
+      "sideA": [
+        {
+          "name": "India",
+          "slug": "india",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Pakistan",
+          "slug": "pakistan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "1948 Arab–Israeli War",
+      "url": "https://en.wikipedia.org/wiki/1948_Arab–Israeli_War",
+      "start": "1948-05-14",
+      "end": "1949-03-10",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 13073,
+      "deathsMax": 26373,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Egypt",
+          "slug": "egypt",
+          "principal": true
+        },
+        {
+          "name": "Iraq",
+          "slug": "iraq",
+          "principal": false
+        },
+        {
+          "name": "Transjordan",
+          "slug": "jordan",
+          "principal": false
+        },
+        {
+          "name": "Syria",
+          "slug": "syria",
+          "principal": false
+        },
+        {
+          "name": "Lebanon",
+          "slug": "lebanon",
+          "principal": false
+        },
+        {
+          "name": "Saudi Arabia",
+          "slug": "saudi-arabia",
+          "principal": false
+        },
+        {
+          "name": "Yemen",
+          "slug": "yemen",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Operation Polo",
+      "url": "https://en.wikipedia.org/wiki/Operation_Polo",
+      "start": "1948-09-13",
+      "end": "1948-09-18",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 32190,
+      "deathsMax": 202190,
+      "sideA": [
+        {
+          "name": "India",
+          "slug": "india",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Hyderabad",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Korean War",
+      "url": "https://en.wikipedia.org/wiki/Korean_War",
+      "start": "1950-06-25",
+      "end": "1953-07-27",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 2568927,
+      "deathsMax": 4096927,
+      "sideA": [
+        {
+          "name": "UN Command",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "South Korea",
+          "slug": "south-korea",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        },
+        {
+          "name": "United Kingdom",
+          "slug": "united-kingdom",
+          "principal": false
+        },
+        {
+          "name": "Australia",
+          "slug": "australia",
+          "principal": false
+        },
+        {
+          "name": "Belgium",
+          "slug": "belgium",
+          "principal": false
+        },
+        {
+          "name": "Canada",
+          "slug": "canada",
+          "principal": false
+        },
+        {
+          "name": "France",
+          "slug": "france",
+          "principal": false
+        },
+        {
+          "name": "Philippines",
+          "slug": "philippines",
+          "principal": false
+        },
+        {
+          "name": "Colombia",
+          "slug": "colombia",
+          "principal": false
+        },
+        {
+          "name": "Ethiopia",
+          "slug": "ethiopia",
+          "principal": false
+        },
+        {
+          "name": "Greece",
+          "slug": "greece",
+          "principal": false
+        },
+        {
+          "name": "Luxembourg",
+          "slug": "luxembourg",
+          "principal": false
+        },
+        {
+          "name": "Netherlands",
+          "slug": "netherlands",
+          "principal": false
+        },
+        {
+          "name": "New Zealand",
+          "slug": "new-zealand",
+          "principal": false
+        },
+        {
+          "name": "South Africa",
+          "slug": "south-africa",
+          "principal": false
+        },
+        {
+          "name": "Thailand",
+          "slug": "thailand",
+          "principal": false
+        },
+        {
+          "name": "Turkey",
+          "slug": "turkey",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "North Korea",
+          "slug": "north-korea",
+          "principal": true
+        },
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": false
+        },
+        {
+          "name": "Soviet Union",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Chinese invasion of Tibet",
+      "url": "https://en.wikipedia.org/wiki/Chinese_invasion_of_Tibet",
+      "start": "1950-10-06",
+      "end": "1950-10-24",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 294,
+      "deathsMax": 5814,
+      "sideA": [
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Tibet",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "First Taiwan Strait Crisis",
+      "url": "https://en.wikipedia.org/wiki/First_Taiwan_Strait_Crisis",
+      "start": "1954-09-03",
+      "end": "1955-05-01",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 914,
+      "deathsMax": 1054,
+      "sideA": [
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Republic of China",
+          "slug": "taiwan",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Suez Crisis",
+      "url": "https://en.wikipedia.org/wiki/Suez_Crisis",
+      "start": "1956-10-29",
+      "end": "1956-11-07",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 2848,
+      "deathsMax": 4198,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        },
+        {
+          "name": "United Kingdom",
+          "slug": "united-kingdom",
+          "principal": false
+        },
+        {
+          "name": "France",
+          "slug": "france",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Egypt",
+          "slug": "egypt",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Soviet invasion of Hungary",
+      "url": "https://en.wikipedia.org/wiki/Soviet_invasion_of_Hungary",
+      "start": "1956-11-01",
+      "end": "1956-11-04",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 3222,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Soviet Union",
+          "slug": null,
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Hungary",
+          "slug": "hungary",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Ifni War",
+      "url": "https://en.wikipedia.org/wiki/Ifni_War",
+      "start": "1957-10-23",
+      "end": "1958-06-30",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 1197,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Spain",
+          "slug": "spain",
+          "principal": true
+        },
+        {
+          "name": "France",
+          "slug": "france",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Morocco",
+          "slug": "morocco",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Second Taiwan Strait Crisis",
+      "url": "https://en.wikipedia.org/wiki/Second_Taiwan_Strait_Crisis",
+      "start": "1958-08-23",
+      "end": "1958-12-02",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 1054,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Republic of China",
+          "slug": "taiwan",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Bay of Pigs Invasion",
+      "url": "https://en.wikipedia.org/wiki/Bay_of_Pigs_Invasion",
+      "start": "1961-04-17",
+      "end": "1961-04-20",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 2298,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Cuba",
+          "slug": "cuba",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": true
+        },
+        {
+          "name": "DRF",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Bizerte crisis",
+      "url": "https://en.wikipedia.org/wiki/Bizerte_crisis",
+      "start": "1961-07-19",
+      "end": "1961-07-23",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 654,
+      "deathsMax": 657,
+      "sideA": [
+        {
+          "name": "France",
+          "slug": "france",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Tunisia",
+          "slug": "tunisia",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Operation Trikora",
+      "url": "https://en.wikipedia.org/wiki/Operation_Trikora",
+      "start": "1961-12-19",
+      "end": "1962-08-15",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 223,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Indonesia",
+          "slug": "indonesia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Netherlands",
+          "slug": "netherlands",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Sino-Indian War",
+      "url": "https://en.wikipedia.org/wiki/Sino-Indian_War",
+      "start": "1962-10-20",
+      "end": "1962-11-21",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 2105,
+      "deathsMax": 6197,
+      "sideA": [
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "India",
+          "slug": "india",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Indonesia–Malaysia confrontation",
+      "url": "https://en.wikipedia.org/wiki/Indonesia–Malaysia_confrontation",
+      "start": "1963-01-20",
+      "end": "1966-08-11",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 874,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Malaysia",
+          "slug": "malaysia",
+          "principal": true
+        },
+        {
+          "name": "Singapore",
+          "slug": "singapore",
+          "principal": false
+        },
+        {
+          "name": "United Kingdom",
+          "slug": "united-kingdom",
+          "principal": false
+        },
+        {
+          "name": "Australia",
+          "slug": "australia",
+          "principal": false
+        },
+        {
+          "name": "New Zealand",
+          "slug": "new-zealand",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Indonesia",
+          "slug": "indonesia",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Sand War",
+      "url": "https://en.wikipedia.org/wiki/Sand_War",
+      "start": "1963-09-25",
+      "end": "1964-02-20",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 69,
+      "deathsMax": 500,
+      "sideA": [
+        {
+          "name": "Morocco",
+          "slug": "morocco",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Algeria",
+          "slug": "algeria",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "1964 Ethiopian–Somali Border War",
+      "url": "https://en.wikipedia.org/wiki/1964_Ethiopian–Somali_Border_War",
+      "start": "1964-02-26",
+      "end": "1964-04-06",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 1000,
+      "deathsMax": 2000,
+      "sideA": [
+        {
+          "name": "Ethiopia",
+          "slug": "ethiopia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Somalia",
+          "slug": "somalia",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Vietnam War",
+      "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+      "start": "1965-03-08",
+      "end": "1973-03-29",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 1326494,
+      "deathsMax": 3447494,
+      "sideA": [
+        {
+          "name": "North Vietnam",
+          "slug": "vietnam",
+          "principal": true
+        },
+        {
+          "name": "FNL",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Khmer Rouge",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Khmer Issarak",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Pathet Lao",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": false
+        },
+        {
+          "name": "North Korea",
+          "slug": "north-korea",
+          "principal": false
+        },
+        {
+          "name": "Soviet Union",
+          "slug": null,
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "South Vietnam",
+          "slug": "vietnam",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        },
+        {
+          "name": "South Korea",
+          "slug": "south-korea",
+          "principal": false
+        },
+        {
+          "name": "Thailand",
+          "slug": "thailand",
+          "principal": false
+        },
+        {
+          "name": "Australia",
+          "slug": "australia",
+          "principal": false
+        },
+        {
+          "name": "New Zealand",
+          "slug": "new-zealand",
+          "principal": false
+        },
+        {
+          "name": "Laos",
+          "slug": "laos",
+          "principal": false
+        },
+        {
+          "name": "Khmer Republic",
+          "slug": "cambodia",
+          "principal": false
+        },
+        {
+          "name": "Philippines",
+          "slug": "philippines",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Indo-Pakistani War of 1965",
+      "url": "https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1965",
+      "start": "1965-08-05",
+      "end": "1965-09-23",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 6800,
+      "deathsMax": 13459,
+      "sideA": [
+        {
+          "name": "India",
+          "slug": "india",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Pakistan",
+          "slug": "pakistan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Korean DMZ Conflict",
+      "url": "https://en.wikipedia.org/wiki/Korean_DMZ_Conflict",
+      "start": "1966-10-05",
+      "end": "1969-12-03",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 739,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "South Korea",
+          "slug": "south-korea",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "North Korea",
+          "slug": "north-korea",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Six-Day War",
+      "url": "https://en.wikipedia.org/wiki/Six-Day_War",
+      "start": "1967-06-05",
+      "end": "1967-06-10",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 12336,
+      "deathsMax": 19264,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Egypt",
+          "slug": "egypt",
+          "principal": true
+        },
+        {
+          "name": "Syria",
+          "slug": "syria",
+          "principal": false
+        },
+        {
+          "name": "Jordan",
+          "slug": "jordan",
+          "principal": false
+        },
+        {
+          "name": "Iraq",
+          "slug": "iraq",
+          "principal": false
+        },
+        {
+          "name": "Saudi Arabia",
+          "slug": "saudi-arabia",
+          "principal": false
+        },
+        {
+          "name": "Morocco",
+          "slug": "morocco",
+          "principal": false
+        },
+        {
+          "name": "Algeria",
+          "slug": "algeria",
+          "principal": false
+        },
+        {
+          "name": "Libya",
+          "slug": "libya",
+          "principal": false
+        },
+        {
+          "name": "Kuwait",
+          "slug": "kuwait",
+          "principal": false
+        },
+        {
+          "name": "Tunisia",
+          "slug": "tunisia",
+          "principal": false
+        },
+        {
+          "name": "Sudan",
+          "slug": "sudan",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "War of Attrition",
+      "url": "https://en.wikipedia.org/wiki/War_of_Attrition",
+      "start": "1967-07-01",
+      "end": "1970-08-07",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 6442,
+      "deathsMax": 14290,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Egypt",
+          "slug": "egypt",
+          "principal": true
+        },
+        {
+          "name": "Soviet Union",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Cuba",
+          "slug": "cuba",
+          "principal": false
+        },
+        {
+          "name": "Jordan",
+          "slug": "jordan",
+          "principal": false
+        },
+        {
+          "name": "Syria",
+          "slug": "syria",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Warsaw Pact invasion of Czechoslovakia",
+      "url": "https://en.wikipedia.org/wiki/Warsaw_Pact_invasion_of_Czechoslovakia",
+      "start": "1968-08-20",
+      "end": "1968-08-21",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 254,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Soviet Union",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Bulgaria",
+          "slug": "bulgaria",
+          "principal": true
+        },
+        {
+          "name": "East Germany",
+          "slug": "germany",
+          "principal": false
+        },
+        {
+          "name": "Hungary",
+          "slug": "hungary",
+          "principal": false
+        },
+        {
+          "name": "Poland",
+          "slug": "poland",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Czechoslovakia",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Football War",
+      "url": "https://en.wikipedia.org/wiki/Football_War",
+      "start": "1969-07-14",
+      "end": "1969-07-18",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 3000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "El Salvador",
+          "slug": "el-salvador",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Honduras",
+          "slug": "honduras",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Indo-Pakistani War of 1971",
+      "url": "https://en.wikipedia.org/wiki/Indo-Pakistani_War_of_1971",
+      "start": "1971-12-03",
+      "end": "1971-12-16",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 11500,
+      "deathsMax": 12843,
+      "sideA": [
+        {
+          "name": "India",
+          "slug": "india",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Pakistan",
+          "slug": "pakistan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Yom Kippur War",
+      "url": "https://en.wikipedia.org/wiki/Yom_Kippur_War",
+      "start": "1973-10-06",
+      "end": "1973-10-25",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 10521,
+      "deathsMax": 21300,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Egypt",
+          "slug": "egypt",
+          "principal": true
+        },
+        {
+          "name": "Syria",
+          "slug": "syria",
+          "principal": false
+        },
+        {
+          "name": "Iraq",
+          "slug": "iraq",
+          "principal": false
+        },
+        {
+          "name": "Jordan",
+          "slug": "jordan",
+          "principal": false
+        },
+        {
+          "name": "Algeria",
+          "slug": "algeria",
+          "principal": false
+        },
+        {
+          "name": "Cuba",
+          "slug": "cuba",
+          "principal": false
+        },
+        {
+          "name": "Morocco",
+          "slug": "morocco",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Turkish invasion of Cyprus",
+      "url": "https://en.wikipedia.org/wiki/Turkish_invasion_of_Cyprus",
+      "start": "1974-07-20",
+      "end": "1974-08-18",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 6009,
+      "deathsMax": 9509,
+      "sideA": [
+        {
+          "name": "Turkey",
+          "slug": "turkey",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Cyprus",
+          "slug": "cyprus",
+          "principal": true
+        },
+        {
+          "name": "Greece",
+          "slug": "greece",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "1974–75 Shatt al-Arab conflict",
+      "url": "https://en.wikipedia.org/wiki/1974–75_Shatt_al-Arab_conflict",
+      "start": "1974-04-01",
+      "end": "1975-03-01",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 1000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Iran",
+          "slug": "iran",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Iraq",
+          "slug": "iraq",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Western Sahara War",
+      "url": "https://en.wikipedia.org/wiki/Western_Sahara_War",
+      "start": "1975-10-30",
+      "end": "1991-09-06",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 10000,
+      "deathsMax": 20000,
+      "sideA": [
+        {
+          "name": "Morocco",
+          "slug": "morocco",
+          "principal": true
+        },
+        {
+          "name": "Mauritania",
+          "slug": "mauritania",
+          "principal": false
+        },
+        {
+          "name": "France",
+          "slug": "france",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Sahrawi Arab Democratic Republic",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Algeria",
+          "slug": "algeria",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Indonesian invasion of East Timor",
+      "url": "https://en.wikipedia.org/wiki/Indonesian_invasion_of_East_Timor",
+      "start": "1975-12-07",
+      "end": "1976-07-17",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 51000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Indonesia",
+          "slug": "indonesia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "East Timor",
+          "slug": "east-timor",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Ogaden War",
+      "url": "https://en.wikipedia.org/wiki/Ogaden_War",
+      "start": "1977-07-13",
+      "end": "1978-03-23",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 39836,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Ethiopia",
+          "slug": "ethiopia",
+          "principal": true
+        },
+        {
+          "name": "Cuba",
+          "slug": "cuba",
+          "principal": false
+        },
+        {
+          "name": "South Yemen",
+          "slug": "yemen",
+          "principal": false
+        },
+        {
+          "name": "Soviet Union",
+          "slug": null,
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Somalia",
+          "slug": "somalia",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Egyptian–Libyan War",
+      "url": "https://en.wikipedia.org/wiki/Egyptian–Libyan_War",
+      "start": "1977-07-21",
+      "end": "1977-07-24",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 500,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Egypt",
+          "slug": "egypt",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Libya",
+          "slug": "libya",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Chadian–Libyan War",
+      "url": "https://en.wikipedia.org/wiki/Chadian–Libyan_War",
+      "start": "1978-01-29",
+      "end": "1987-09-11",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 8500,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Chad",
+          "slug": "chad",
+          "principal": true
+        },
+        {
+          "name": "France",
+          "slug": "france",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Libya",
+          "slug": "libya",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Uganda–Tanzania War",
+      "url": "https://en.wikipedia.org/wiki/Uganda–Tanzania_War",
+      "start": "1978-10-09",
+      "end": "1979-06-03",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 4135,
+      "deathsMax": 4323,
+      "sideA": [
+        {
+          "name": "Tanzania",
+          "slug": "tanzania",
+          "principal": true
+        },
+        {
+          "name": "Mozambique",
+          "slug": "mozambique",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Uganda",
+          "slug": "uganda",
+          "principal": true
+        },
+        {
+          "name": "Libya",
+          "slug": "libya",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Cambodian–Vietnamese War",
+      "url": "https://en.wikipedia.org/wiki/Cambodian–Vietnamese_War",
+      "start": "1978-12-21",
+      "end": "1989-09-26",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 270000,
+      "deathsMax": 297000,
+      "sideA": [
+        {
+          "name": "Vietnam",
+          "slug": "vietnam",
+          "principal": true
+        },
+        {
+          "name": "People's Republic of Kampuchea",
+          "slug": "cambodia",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Democratic Kampuchea",
+          "slug": "cambodia",
+          "principal": true
+        },
+        {
+          "name": "Thailand",
+          "slug": "thailand",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Sino-Vietnamese War",
+      "url": "https://en.wikipedia.org/wiki/Sino-Vietnamese_War",
+      "start": "1979-02-17",
+      "end": "1979-03-16",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 36945,
+      "deathsMax": 175000,
+      "sideA": [
+        {
+          "name": "Vietnam",
+          "slug": "vietnam",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Yemenite War of 1979",
+      "url": "https://en.wikipedia.org/wiki/Yemenite_War_of_1979",
+      "start": "1979-02-24",
+      "end": "1979-03-19",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 1084,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "North Yemen",
+          "slug": "yemen",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "South Yemen",
+          "slug": "yemen",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Sino-Vietnamese conflicts (1979–1991)",
+      "url": "https://en.wikipedia.org/wiki/Sino-Vietnamese_conflicts_(1979–1991)",
+      "start": "1979-03-16",
+      "end": "1991-11-01",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 6000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Vietnam",
+          "slug": "vietnam",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "China",
+          "slug": "china",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Soviet–Afghan War",
+      "url": "https://en.wikipedia.org/wiki/Soviet–Afghan_War",
+      "start": "1979-12-24",
+      "end": "1989-02-15",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 600000,
+      "deathsMax": 2000000,
+      "sideA": [
+        {
+          "name": "Soviet Union",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Afghanistan",
+          "slug": "afghanistan",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Afghan Mujahideen",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Afghan Interim Government",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Pakistan",
+          "slug": "pakistan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Iran–Iraq War",
+      "url": "https://en.wikipedia.org/wiki/Iran–Iraq_War",
+      "start": "1980-09-22",
+      "end": "1988-08-20",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 405000,
+      "deathsMax": 1200000,
+      "sideA": [
+        {
+          "name": "Iran",
+          "slug": "iran",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Iraq",
+          "slug": "iraq",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Falklands War",
+      "url": "https://en.wikipedia.org/wiki/Falklands_War",
+      "start": "1982-04-02",
+      "end": "1982-06-14",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 907,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "United Kingdom",
+          "slug": "united-kingdom",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Argentina",
+          "slug": "argentina",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "1982 Ethiopian–Somali Border War",
+      "url": "https://en.wikipedia.org/wiki/1982_Ethiopian–Somali_Border_War",
+      "start": "1982-06-01",
+      "end": "1982-08-01",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": null,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Somalia",
+          "slug": "somalia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Ethiopia",
+          "slug": "ethiopia",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Chadian–Nigerian War",
+      "url": "https://en.wikipedia.org/wiki/Chadian–Nigerian_War",
+      "start": "1983-04-18",
+      "end": "1983-04-01",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 100,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Nigeria",
+          "slug": "nigeria",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Chad",
+          "slug": "chad",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Invasion of Grenada",
+      "url": "https://en.wikipedia.org/wiki/Invasion_of_Grenada",
+      "start": "1983-10-25",
+      "end": "1983-10-29",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 102,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": true
+        },
+        {
+          "name": "Antigua and Barbuda",
+          "slug": "antigua-barbuda",
+          "principal": false
+        },
+        {
+          "name": "Barbados",
+          "slug": "barbados",
+          "principal": false
+        },
+        {
+          "name": "Dominica",
+          "slug": "dominica",
+          "principal": false
+        },
+        {
+          "name": "Jamaica",
+          "slug": "jamaica",
+          "principal": false
+        },
+        {
+          "name": "Saint Lucia",
+          "slug": "saint-lucia",
+          "principal": false
+        },
+        {
+          "name": "Saint Vincent and the Grenadines",
+          "slug": "st-vincent-the-grenadines",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Grenada",
+          "slug": "grenada",
+          "principal": true
+        },
+        {
+          "name": "Cuba",
+          "slug": "cuba",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Agacher Strip War",
+      "url": "https://en.wikipedia.org/wiki/Agacher_Strip_War",
+      "start": "1985-12-25",
+      "end": "1985-12-30",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 142,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Mali",
+          "slug": "mali",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Burkina Faso",
+          "slug": "burkina-faso",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "First Nagorno-Karabakh War",
+      "url": "https://en.wikipedia.org/wiki/First_Nagorno-Karabakh_War",
+      "start": "1988-02-20",
+      "end": "1994-05-12",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 37413,
+      "deathsMax": 56000,
+      "sideA": [
+        {
+          "name": "Nagorno-Karabakh Republic",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Armenia",
+          "slug": "armenia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Azerbaijan",
+          "slug": "azerbaijan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Mauritania–Senegal Border War",
+      "url": "https://en.wikipedia.org/wiki/Mauritania–Senegal_Border_War",
+      "start": "1989-04-09",
+      "end": "1991-07-18",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 200,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Mauritania",
+          "slug": "mauritania",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Senegal",
+          "slug": "senegal",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "United States invasion of Panama",
+      "url": "https://en.wikipedia.org/wiki/United_States_invasion_of_Panama",
+      "start": "1989-12-20",
+      "end": "1990-01-31",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 540,
+      "deathsMax": 3338,
+      "sideA": [
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Panama",
+          "slug": "panama",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Persian Gulf War",
+      "url": "https://en.wikipedia.org/wiki/Gulf_War",
+      "start": "1990-08-02",
+      "end": "1991-02-28",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 29231,
+      "deathsMax": 59231,
+      "sideA": [
+        {
+          "name": "Kuwait",
+          "slug": "kuwait",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        },
+        {
+          "name": "United Kingdom",
+          "slug": "united-kingdom",
+          "principal": false
+        },
+        {
+          "name": "Saudi Arabia",
+          "slug": "saudi-arabia",
+          "principal": false
+        },
+        {
+          "name": "France",
+          "slug": "france",
+          "principal": false
+        },
+        {
+          "name": "Italy",
+          "slug": "italy",
+          "principal": false
+        },
+        {
+          "name": "Canada",
+          "slug": "canada",
+          "principal": false
+        },
+        {
+          "name": "Australia",
+          "slug": "australia",
+          "principal": false
+        },
+        {
+          "name": "Egypt",
+          "slug": "egypt",
+          "principal": false
+        },
+        {
+          "name": "Syria",
+          "slug": "syria",
+          "principal": false
+        },
+        {
+          "name": "Qatar",
+          "slug": "qatar",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Iraq",
+          "slug": "iraq",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Transnistria War",
+      "url": "https://en.wikipedia.org/wiki/Transnistria_War",
+      "start": "1990-11-02",
+      "end": "1992-07-21",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 316,
+      "deathsMax": 637,
+      "sideA": [
+        {
+          "name": "Moldova",
+          "slug": "moldova",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Transnistria",
+          "slug": "transnistria",
+          "principal": true
+        },
+        {
+          "name": "Russia",
+          "slug": "russia",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "South Ossetia war (1991–1992)",
+      "url": "https://en.wikipedia.org/wiki/1991–1992_South_Ossetia_war",
+      "start": "1991-01-05",
+      "end": "1992-06-24",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 1000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Georgia",
+          "slug": "georgia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "South Ossetia",
+          "slug": "south-ossetia",
+          "principal": true
+        },
+        {
+          "name": "Russia",
+          "slug": "russia",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Croatian War of Independence",
+      "url": "https://en.wikipedia.org/wiki/Croatian_War_of_Independence",
+      "start": "1991-09-20",
+      "end": "1992-01-03",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 5040,
+      "deathsMax": 7279,
+      "sideA": [
+        {
+          "name": "Croatia",
+          "slug": "croatia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Yugoslavia",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Bosnian War",
+      "url": "https://en.wikipedia.org/wiki/Bosnian_War",
+      "start": "1992-04-06",
+      "end": "1992-05-19",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 25000,
+      "deathsMax": 329000,
+      "sideA": [
+        {
+          "name": "Bosnia and Herzegovina",
+          "slug": "bosnia-herzegovina",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Yugoslavia",
+          "slug": null,
+          "principal": true
+        },
+        {
+          "name": "Serbia and Montenegro",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Republika Srpska",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "War in Abkhazia (1992–1993)",
+      "url": "https://en.wikipedia.org/wiki/War_in_Abkhazia_(1992–1993)",
+      "start": "1992-08-14",
+      "end": "1993-09-27",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 10000,
+      "deathsMax": 30000,
+      "sideA": [
+        {
+          "name": "Abkhazia",
+          "slug": "abkhazia",
+          "principal": true
+        },
+        {
+          "name": "Russia",
+          "slug": "russia",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Georgia",
+          "slug": "georgia",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Cenepa War",
+      "url": "https://en.wikipedia.org/wiki/Cenepa_War",
+      "start": "1995-01-26",
+      "end": "1995-02-28",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 84,
+      "deathsMax": 410,
+      "sideA": [
+        {
+          "name": "Peru",
+          "slug": "peru",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Ecuador",
+          "slug": "ecuador",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "First Congo War",
+      "url": "https://en.wikipedia.org/wiki/First_Congo_War",
+      "start": "1996-10-24",
+      "end": "1997-05-16",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 235000,
+      "deathsMax": 250000,
+      "sideA": [
+        {
+          "name": "AFDL",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Rwanda",
+          "slug": "rwanda",
+          "principal": true
+        },
+        {
+          "name": "Uganda",
+          "slug": "uganda",
+          "principal": false
+        },
+        {
+          "name": "Burundi",
+          "slug": "burundi",
+          "principal": false
+        },
+        {
+          "name": "Angola",
+          "slug": "angola",
+          "principal": false
+        },
+        {
+          "name": "SPLA",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Eritrea",
+          "slug": "eritrea",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Zaire",
+          "slug": "congo-dr",
+          "principal": true
+        },
+        {
+          "name": "Sudan",
+          "slug": "sudan",
+          "principal": false
+        },
+        {
+          "name": "Chad",
+          "slug": "chad",
+          "principal": false
+        },
+        {
+          "name": "Ex-FAR/ALiR",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Interahamwe",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "CNDD-FDD",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "UNITA",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "ADF",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "FLNC",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Kosovo War",
+      "url": "https://en.wikipedia.org/wiki/Kosovo_War",
+      "start": "1998-02-28",
+      "end": "1999-06-10",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 16056,
+      "deathsMax": 16879,
+      "sideA": [
+        {
+          "name": "Kosova",
+          "slug": "kosovo",
+          "principal": true
+        },
+        {
+          "name": "NATO",
+          "slug": null,
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Yugoslavia",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Eritrean–Ethiopian War",
+      "url": "https://en.wikipedia.org/wiki/Eritrean–Ethiopian_War",
+      "start": "1998-05-03",
+      "end": "2000-06-18",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 53000,
+      "deathsMax": 300000,
+      "sideA": [
+        {
+          "name": "Ethiopia",
+          "slug": "ethiopia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Eritrea",
+          "slug": "eritrea",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Kargil War",
+      "url": "https://en.wikipedia.org/wiki/Kargil_War",
+      "start": "1999-05-03",
+      "end": "1999-07-26",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 884,
+      "deathsMax": 5600,
+      "sideA": [
+        {
+          "name": "India",
+          "slug": "india",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Pakistan",
+          "slug": "pakistan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Second Chechen War",
+      "url": "https://en.wikipedia.org/wiki/Second_Chechen_War",
+      "start": "1999-08-07",
+      "end": "2000-04-30",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 20000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Russia",
+          "slug": "russia",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Ichkeria",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "African Six-Day War",
+      "url": "https://en.wikipedia.org/wiki/Six-Day_War_(2000)",
+      "start": "2000-06-05",
+      "end": "2000-06-10",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 4051,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Rwanda",
+          "slug": "rwanda",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Uganda",
+          "slug": "uganda",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "United States invasion of Afghanistan",
+      "url": "https://en.wikipedia.org/wiki/United_States_invasion_of_Afghanistan",
+      "start": "2001-10-07",
+      "end": "2001-12-17",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 9550,
+      "deathsMax": 14388,
+      "sideA": [
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": true
+        },
+        {
+          "name": "United Kingdom",
+          "slug": "united-kingdom",
+          "principal": false
+        },
+        {
+          "name": "Canada",
+          "slug": "canada",
+          "principal": false
+        },
+        {
+          "name": "Australia",
+          "slug": "australia",
+          "principal": false
+        },
+        {
+          "name": "Afghanistan",
+          "slug": "afghanistan",
+          "principal": false
+        },
+        {
+          "name": "Northern Alliance",
+          "slug": null,
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Islamic Emirate of Afghanistan",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "2003 invasion of Iraq",
+      "url": "https://en.wikipedia.org/wiki/2003_invasion_of_Iraq",
+      "start": "2003-03-19",
+      "end": "2003-05-01",
+      "ongoing": false,
+      "major": true,
+      "deathsMin": 10996,
+      "deathsMax": 53016,
+      "sideA": [
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": true
+        },
+        {
+          "name": "United Kingdom",
+          "slug": "united-kingdom",
+          "principal": false
+        },
+        {
+          "name": "Australia",
+          "slug": "australia",
+          "principal": false
+        },
+        {
+          "name": "Poland",
+          "slug": "poland",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Iraq",
+          "slug": "iraq",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Gaza–Israel conflict",
+      "url": "https://en.wikipedia.org/wiki/Gaza–Israel_conflict",
+      "start": "2006-06-28",
+      "end": null,
+      "ongoing": true,
+      "major": true,
+      "deathsMin": 42783,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Gaza Strip",
+          "slug": null,
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Russo-Georgian War",
+      "url": "https://en.wikipedia.org/wiki/Russo-Georgian_War",
+      "start": "2008-08-01",
+      "end": "2008-08-12",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 730,
+      "deathsMax": 737,
+      "sideA": [
+        {
+          "name": "Russia",
+          "slug": "russia",
+          "principal": true
+        },
+        {
+          "name": "South Ossetia",
+          "slug": "south-ossetia",
+          "principal": false
+        },
+        {
+          "name": "Abkhazia",
+          "slug": "abkhazia",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Georgia",
+          "slug": "georgia",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "2011 military intervention in Libya",
+      "url": "https://en.wikipedia.org/wiki/2011_military_intervention_in_Libya",
+      "start": "2011-03-19",
+      "end": "2011-10-31",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 72,
+      "deathsMax": 403,
+      "sideA": [
+        {
+          "name": "NATO",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "Qatar",
+          "slug": "qatar",
+          "principal": true
+        },
+        {
+          "name": "Sweden",
+          "slug": "sweden",
+          "principal": false
+        },
+        {
+          "name": "United Arab Emirates",
+          "slug": "united-arab-emirates",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Libya",
+          "slug": "libya",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Heglig Crisis",
+      "url": "https://en.wikipedia.org/wiki/Heglig_Crisis",
+      "start": "2012-03-26",
+      "end": "2012-09-26",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 316,
+      "deathsMax": 1485,
+      "sideA": [
+        {
+          "name": "Sudan",
+          "slug": "sudan",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "South Sudan",
+          "slug": "south-sudan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Russo-Ukrainian War",
+      "url": "https://en.wikipedia.org/wiki/Russo-Ukrainian_War",
+      "start": "2014-02-20",
+      "end": null,
+      "ongoing": true,
+      "major": true,
+      "deathsMin": 400000,
+      "deathsMax": 650000,
+      "sideA": [
+        {
+          "name": "Ukraine",
+          "slug": "ukraine",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Russia",
+          "slug": "russia",
+          "principal": true
+        },
+        {
+          "name": "DPR",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "LPR",
+          "slug": null,
+          "principal": false
+        },
+        {
+          "name": "North Korea",
+          "slug": "north-korea",
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Second Nagorno-Karabakh War",
+      "url": "https://en.wikipedia.org/wiki/Second_Nagorno-Karabakh_War",
+      "start": "2020-09-27",
+      "end": "2020-11-10",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 7726,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Azerbaijan",
+          "slug": "azerbaijan",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Armenia",
+          "slug": "armenia",
+          "principal": true
+        },
+        {
+          "name": "Artsakh",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "Democratic Republic of the Congo–Rwanda conflict (2022–present)",
+      "url": "https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo–Rwanda_conflict_(2022–present)",
+      "start": "2022-03-27",
+      "end": "2025-06-27",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 7000,
+      "deathsMax": null,
+      "sideA": [
+        {
+          "name": "Democratic Republic of the Congo",
+          "slug": "congo-dr",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Rwanda",
+          "slug": "rwanda",
+          "principal": true
+        },
+        {
+          "name": "March 23 Movement",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "2025 India–Pakistan conflict",
+      "url": "https://en.wikipedia.org/wiki/2025_India–Pakistan_conflict",
+      "start": "2025-05-07",
+      "end": "2025-05-10",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 83,
+      "deathsMax": 210,
+      "sideA": [
+        {
+          "name": "India",
+          "slug": "india",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Pakistan",
+          "slug": "pakistan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Twelve-Day War",
+      "url": "https://en.wikipedia.org/wiki/Twelve-Day_War",
+      "start": "2025-06-13",
+      "end": "2025-06-24",
+      "ongoing": false,
+      "major": false,
+      "deathsMin": 1091,
+      "deathsMax": 1226,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Iran",
+          "slug": "iran",
+          "principal": true
+        },
+        {
+          "name": "Houthis",
+          "slug": null,
+          "principal": false
+        }
+      ]
+    },
+    {
+      "name": "2026 Afghanistan–Pakistan war",
+      "url": "https://en.wikipedia.org/wiki/2026_Afghanistan–Pakistan_war",
+      "start": "2026-02-21",
+      "end": null,
+      "ongoing": true,
+      "major": false,
+      "deathsMin": 100,
+      "deathsMax": 457,
+      "sideA": [
+        {
+          "name": "Pakistan",
+          "slug": "pakistan",
+          "principal": true
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Afghanistan",
+          "slug": "afghanistan",
+          "principal": true
+        }
+      ]
+    },
+    {
+      "name": "Iran War",
+      "url": "https://en.wikipedia.org/wiki/Iran_War",
+      "start": "2026-02-28",
+      "end": null,
+      "ongoing": true,
+      "major": false,
+      "deathsMin": 3411,
+      "deathsMax": 9114,
+      "sideA": [
+        {
+          "name": "Israel",
+          "slug": "israel",
+          "principal": true
+        },
+        {
+          "name": "United States",
+          "slug": "united-states",
+          "principal": false
+        }
+      ],
+      "sideB": [
+        {
+          "name": "Iran",
+          "slug": "iran",
+          "principal": true
+        }
+      ]
+    }
+  ]
+}

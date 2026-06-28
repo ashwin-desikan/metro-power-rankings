@@ -48,7 +48,7 @@ WARN_NAMES = {
     # history files directly; this set only re-applies the glyph on the live feed.
     "Vladimir Putin","Ali Khamenei","Kim Jong-un","Alexander Lukashenko",
     "Abdel Fattah al-Burhan","Min Aung Hlaing","Donald Trump",
-    "Abdel Fattah el-Sisi","Kais Saied","Benjamin Netanyahu",
+    "Abdel Fattah el-Sisi","Kais Saied","Benjamin Netanyahu","Recep Tayyip Erdoğan",
 }
 ROLE_DEFAULT = ["Supreme Leader","General Secretary","President","Chancellor",
                 "Prime Minister","Taoiseach","Premier","Monarch"]
@@ -76,6 +76,7 @@ def pick(slug, cands, pm_led):
         m = next((c for c in cands if role in c["role"]), None)
         if m: primary = m; break
     out = {"name": primary["name"], "role": short_role(primary["role"])}
+    if primary.get("start"): out["since"] = primary["start"]
     if any(r in primary["role"] for r in GOV_ROLES):
         for tok in HOS_TOKENS:
             hs = next((c for c in cands if tok in c["role"] and bare(c["name"]) != bare(primary["name"])), None)
@@ -103,7 +104,7 @@ def hog_role_token(office_label):
     if "premier" in o and "prime" not in o: return "Premier"
     return "Prime Minister"
 
-def build_entry(slug, hos_name, hog_name, hog_office, form):
+def build_entry(slug, hos_name, hog_name, hog_office, form, hos_start=None, hog_start=None):
     form_l = (form or "").lower()
     is_monarchy = "monarchy" in form_l
     # Parliamentary republics (and the curated PM-led set) lead with the head of
@@ -113,20 +114,20 @@ def build_entry(slug, hos_name, hog_name, hog_office, form):
     pm_led = (slug in PM_LED) or ("parliamentary" in form_l)
     cands = []
     if hog_name and slug not in MONARCH_LED:
-        cands.append({"name": hog_name, "role": hog_role_token(hog_office)})
+        cands.append({"name": hog_name, "role": hog_role_token(hog_office), "start": hog_start})
     if hos_name:
         if is_monarchy:
-            cands.append({"name": f"{CROWN} {hos_name}", "role": "Monarch"})
+            cands.append({"name": f"{CROWN} {hos_name}", "role": "Monarch", "start": hos_start})
         else:
-            cands.append({"name": hos_name, "role": "President"})
+            cands.append({"name": hos_name, "role": "President", "start": hos_start})
     res = pick(slug, cands, pm_led)
     return apply_warn(res) if res else None
 
 SPARQL = """
-SELECT ?iso ?hosLabel ?hogLabel ?hogOfficeLabel ?formLabel WHERE {
+SELECT ?iso ?hosLabel ?hogLabel ?hosStart ?hogStart ?hogOfficeLabel ?formLabel WHERE {
   ?country wdt:P297 ?iso .
-  OPTIONAL { ?country wdt:P35 ?hos. }
-  OPTIONAL { ?country wdt:P6 ?hog. }
+  OPTIONAL { ?country p:P35 ?hosSt. ?hosSt ps:P35 ?hos. FILTER NOT EXISTS { ?hosSt pq:P582 ?hosEnd } OPTIONAL { ?hosSt pq:P580 ?hosStart } }
+  OPTIONAL { ?country p:P6 ?hogSt. ?hogSt ps:P6 ?hog. FILTER NOT EXISTS { ?hogSt pq:P582 ?hogEnd } OPTIONAL { ?hogSt pq:P580 ?hogStart } }
   OPTIONAL { ?country wdt:P1313 ?hogOffice. }
   OPTIONAL { ?country wdt:P122 ?form. }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
@@ -148,9 +149,11 @@ def query_wikidata():
         iso = b.get("iso",{}).get("value","").upper()
         if not iso: continue
         d = by_iso.setdefault(iso, {})
-        for k_out, k_in in [("hos","hosLabel"),("hog","hogLabel"),("office","hogOfficeLabel"),("form","formLabel")]:
+        for k_out, k_in in [("hos","hosLabel"),("hog","hogLabel"),("office","hogOfficeLabel"),
+                            ("form","formLabel"),("hos_start","hosStart"),("hog_start","hogStart")]:
             v = b.get(k_in,{}).get("value")
-            if v and k_out not in d: d[k_out] = v
+            if v and k_out not in d:
+                d[k_out] = v[:10] if k_out.endswith("_start") else v
     return by_iso
 
 def load_iso_map():
@@ -171,7 +174,7 @@ def main():
     for iso, slug in iso_map.items():
         info = wd.get(iso)
         if not info: continue
-        entry = build_entry(slug, info.get("hos"), info.get("hog"), info.get("office"), info.get("form",""))
+        entry = build_entry(slug, info.get("hos"), info.get("hog"), info.get("office"), info.get("form",""), info.get("hos_start"), info.get("hog_start"))
         if not entry: continue
         prev = existing.get(slug)
         # Keep curated entry if the same person still leads; else replace.
@@ -188,8 +191,9 @@ def self_test():
     e = build_entry("croatia", "Zoran Milanovic", "Andrej Plenkovic", "Prime Minister of Croatia", "parliamentary republic")
     assert e["name"] == "Andrej Plenkovic" and e["role"] == "PM" and e["second"]["name"] == "Zoran Milanovic", e
     # presidential: president only
-    e = build_entry("kenya", "William Ruto", None, None, "presidential system")
+    e = build_entry("kenya", "William Ruto", None, None, "presidential system", hos_start="2022-09-13")
     assert e["name"] == "William Ruto" and e["role"] == "Pres." and "second" not in e, e
+    assert e.get("since") == "2022-09-13", e
     # constitutional monarchy: PM first, crowned monarch second
     e = build_entry("sweden", "Carl XVI Gustaf", "Ulf Kristersson", "Prime Minister of Sweden", "constitutional monarchy")
     assert e["name"] == "Ulf Kristersson" and e["second"]["name"].startswith(CROWN), e

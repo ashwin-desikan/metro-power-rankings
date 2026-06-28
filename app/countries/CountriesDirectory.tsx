@@ -18,11 +18,11 @@ export type DirectoryCountry = {
   scoreTotal: number | null;
   capital: string | null;
   disputed?: boolean;
-  currentLeader: { name: string; role: string; second?: { name: string; role: string } } | null;
+  currentLeader: { name: string; role: string; since?: string; second?: { name: string; role: string } } | null;
   children: DirectoryCountry[];
 };
 
-type SortKey = "pop" | "metroCount" | "scoreTotal" | "name";
+type SortKey = "pop" | "metroCount" | "scoreTotal" | "name" | "since";
 type SortDir = "asc" | "desc";
 
 const CONTINENTS = [
@@ -96,6 +96,7 @@ export default function CountriesDirectory({
       else if (sortKey === "pop") { av = a.pop; bv = b.pop; }
       else if (sortKey === "metroCount") { av = a.metroCount; bv = b.metroCount; }
       else if (sortKey === "scoreTotal") { av = a.scoreTotal; bv = b.scoreTotal; }
+      else if (sortKey === "since") { av = a.currentLeader?.since ?? null; bv = b.currentLeader?.since ?? null; }
       if (av == null && bv == null) return 0;
       if (av == null) return 1;
       if (bv == null) return -1;
@@ -150,6 +151,7 @@ export default function CountriesDirectory({
               <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country{arrow("name")}</th>
               <th className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Continent</th>
               <th className="hidden lg:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Leader</th>
+              <th className="hidden lg:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("since")}>Since{arrow("since")}</th>
               <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("pop")}>Population{arrow("pop")}</th>
               <th className="hidden sm:table-cell px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("metroCount")}>Metros{arrow("metroCount")}</th>
               <th className="hidden sm:table-cell px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("scoreTotal")}>Score{arrow("scoreTotal")}</th>
@@ -244,6 +246,9 @@ function CountryRows({
             </span>
           ) : null}
         </td>
+        <td className="hidden lg:table-cell px-4 py-3 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          {country.currentLeader?.since ?? ""}
+        </td>
         <td className="px-2 sm:px-4 py-3 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{fmtPop(country.pop)}</td>
         <td className="hidden sm:table-cell px-4 py-3 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{country.metroCount}</td>
         <td className="hidden sm:table-cell px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(country.scoreTotal)}</td>
@@ -263,6 +268,9 @@ function CountryRows({
               <td className="hidden md:table-cell px-4 py-2 text-[var(--text-dim)] text-xs">{child.continent ?? ""}</td>
               <td className="hidden lg:table-cell px-4 py-2 text-xs text-[var(--text-dim)]">
                 {child.currentLeader ? child.currentLeader.name : ""}
+              </td>
+              <td className="hidden lg:table-cell px-4 py-2 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                {child.currentLeader?.since ?? ""}
               </td>
               <td className="px-2 sm:px-4 py-2 text-right text-[var(--text-muted)] text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{fmtPop(child.pop)}</td>
               <td className="hidden sm:table-cell px-4 py-2 text-right text-[var(--text-dim)] text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{child.metroCount}</td>

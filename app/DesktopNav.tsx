@@ -182,6 +182,8 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/compare" title="Compare" hint="Side-by-side any 2 to 4 metros" />
         <DropdownItem href="/countries" title="Countries" hint="Population, metros, and composite score by country" />
         <DropdownItem href="/orgs" title="Alliances & Orgs" hint="International organisation memberships by country" />
+        <DropdownItem href="/conflicts" title="Interstate Wars" hint="Wars between states since 1945" />
+        <DropdownItem href="/billionaires" title="Billionaires" hint="Forbes real-time billionaires by country" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/badges" title="Badges" hint="Categorical lenses over the dataset" />
         <DropdownItem href="/matchups/london-vs-new-york" title="Matchups" hint="Head-to-head metro pages" />

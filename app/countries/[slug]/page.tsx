@@ -24,6 +24,10 @@ import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
 import LeadersSection from "./LeadersSection";
 import { countryHasLeaders, getLeaders } from "@/lib/leaders";
 import OrgsSection from "./OrgsSection";
+import ConflictsSection from "./ConflictsSection";
+import { getConflicts, conflictsForCountry } from "@/lib/conflicts";
+import BillionairesSection from "./BillionairesSection";
+import { getBillionaires, billionairesForCountry } from "@/lib/billionaires";
 import { countryHasOrgs } from "@/lib/orgs";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
@@ -211,6 +215,8 @@ function LargestBadge() {
 
 export default async function CountryDetailPage({ params }: Props) {
   const { slug } = await params;
+  const conflictWars = conflictsForCountry(await getConflicts(), slug);
+  const billionaires = billionairesForCountry(await getBillionaires(), slug);
   const country = getCountry(slug);
   if (!country) notFound();
 
@@ -375,6 +381,8 @@ export default async function CountryDetailPage({ params }: Props) {
               ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams" }] : []),
               ...(countryHasOrgs(slug) ? [{ label: "Alliances & Orgs", href: "#orgs" }] : []),
               ...(countryHasLeaders(slug) ? [{ label: "Leadership", href: "#leaders" }] : []),
+              ...(conflictWars.length ? [{ label: "Conflicts", href: "#conflicts" }] : []),
+              ...(billionaires.length ? [{ label: "Billionaires", href: "#billionaires" }] : []),
               ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs" }] : []),
               ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents" }] : []),
               ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions" }] : []),
@@ -424,6 +432,8 @@ export default async function CountryDetailPage({ params }: Props) {
           <OrgsSection countrySlug={slug} />
 
           <LeadersSection countrySlug={slug} />
+          <ConflictsSection wars={conflictWars} />
+          <BillionairesSection list={billionaires} />
 
           <NationalTeamsSection countryName={country.name} />
 

@@ -88,7 +88,7 @@ function cleanName(n: string): string {
 
 function pickCurrentLeader(
   slug: string,
-): { name: string; role: string; second?: { name: string; role: string } } | null {
+): { name: string; role: string; since?: string; second?: { name: string; role: string } } | null {
   try {
     const leaders = getLeaders(slug);
     const current = leaders.filter((l) => l.current);
@@ -112,6 +112,7 @@ function pickCurrentLeader(
     return {
       name: primary.name,
       role: shortRole(primary.role),
+      ...(primary.start ? { since: primary.start } : {}),
       ...(second ? { second } : {}),
     };
   } catch {
@@ -119,7 +120,7 @@ function pickCurrentLeader(
   }
 }
 
-type LeaderOverlay = Record<string, { name: string; role: string; second?: { name: string; role: string } }>;
+type LeaderOverlay = Record<string, { name: string; role: string; since?: string; second?: { name: string; role: string } }>;
 
 function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number], overlay: LeaderOverlay): DirectoryCountry {
   const children = getChildrenOf(c.name).map((child) => ({

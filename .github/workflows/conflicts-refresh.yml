@@ -1,0 +1,48 @@
+name: Interstate wars refresh (monthly, no deploy)
+
+# Re-parses the Wikipedia "List of interstate wars since 1945" once a month,
+# rebuilds public/data/conflicts.json with canonical country mapping, and commits
+# it with [vercel skip]. The /conflicts hub and country pages read it via ISR, so
+# updates appear with no Vercel build. If a brand-new belligerent name appears
+# that isn't yet mapped, the build step fails on purpose so it gets reviewed
+# (added to ALIAS or KEEP_LABEL) rather than silently mislinked or dropped.
+
+on:
+  schedule:
+    - cron: "0 5 1 * *"   # 05:00 UTC on the 1st of each month
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conflicts-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+      - name: Fetch + rebuild conflicts.json
+        run: |
+          set -e
+          python scripts/conflicts/fetch-conflicts.py
+          python scripts/conflicts/build-conflicts.py
+      - name: Commit if changed
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- public/data/conflicts.json; then
+            echo "No conflict-data changes this month."
+            exit 0
+          fi
+          git add public/data/conflicts.json public/data/conflicts_raw.json
+          git commit -m "data: monthly interstate-wars refresh [vercel skip]"
+          git push origin HEAD:main
