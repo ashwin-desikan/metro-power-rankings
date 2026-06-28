@@ -27,7 +27,7 @@ const GH_RAW =
 
 export async function getConflicts(): Promise<War[]> {
   try {
-    const res = await fetch(GH_RAW, { next: { revalidate: 2592000 } }); // 30 days
+    const res = await fetch(GH_RAW, { next: { revalidate: 3600 } }); // 30 days
     if (res.ok) {
       const d = (await res.json()) as ConflictsFile;
       if (d?.wars?.length) return d.wars;

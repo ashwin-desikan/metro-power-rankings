@@ -27,7 +27,7 @@ const GH_RAW =
 
 export async function getBillionaires(): Promise<Billionaire[]> {
   try {
-    const res = await fetch(GH_RAW, { next: { revalidate: 2592000 } });
+    const res = await fetch(GH_RAW, { next: { revalidate: 3600 } });
     if (res.ok) {
       const d = (await res.json()) as BillionairesFile;
       if (d?.billionaires?.length) return d.billionaires;

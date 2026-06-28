@@ -12,11 +12,16 @@ COUNTRIES = ROOT / "public/data/countries.json"
 def main():
     rows = json.loads(COUNTRIES.read_text(encoding="utf-8"))
     rows = rows if isinstance(rows, list) else rows.get("countries", rows)
+    name_of = {c["slug"]: c.get("name") for c in rows if c.get("slug")}
+    # countries.json "isoCode" is actually the country NAME; use the real ISO2
+    # codes from country-indicators.json (keyed by our slug).
+    ci = json.loads((ROOT / "public/data/country-indicators.json").read_text(encoding="utf-8"))["countries"]
     iso2slug, iso2name = {}, {}
-    for c in rows:
-        iso = (c.get("isoCode") or "").upper()
-        if iso and c.get("slug"):
-            iso2slug[iso] = c["slug"]; iso2name[iso] = c.get("name")
+    for slug, v in ci.items():
+        iso = str(v.get("iso2") or "").upper()
+        if iso:
+            iso2slug[iso] = slug
+            iso2name[iso] = name_of.get(slug, slug)
     raw = json.loads(RAW.read_text(encoding="utf-8"))
     today = datetime.date.today()
     out = []

@@ -21,7 +21,7 @@ const GH_RAW =
 
 export async function getCurrentLeaderOverlay(): Promise<Record<string, CurrentLeader>> {
   try {
-    const res = await fetch(GH_RAW, { next: { revalidate: 604800 } }); // weekly
+    const res = await fetch(GH_RAW, { next: { revalidate: 3600 } }); // weekly
     if (!res.ok) return {};
     return (await res.json()) as Record<string, CurrentLeader>;
   } catch {
