@@ -1,5 +1,205 @@
 [
   {
+    "name": "👑 Imam Muhammad bin Saud",
+    "role": "Monarch",
+    "start": "1727-01-01",
+    "end": "1765-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "First Saudi State (Emirate of Diriyah)"
+  },
+  {
+    "name": "👑 Abdulaziz bin Muhammad",
+    "role": "Monarch",
+    "start": "1765-01-01",
+    "end": "1803-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "First Saudi State (Emirate of Diriyah)"
+  },
+  {
+    "name": "👑 Saud bin Abdulaziz (Saud the Great)",
+    "role": "Monarch",
+    "start": "1803-01-01",
+    "end": "1814-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "First Saudi State (Emirate of Diriyah)"
+  },
+  {
+    "name": "👑 Abdullah bin Saud",
+    "role": "Monarch",
+    "start": "1814-01-01",
+    "end": "1818-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "First Saudi State (Emirate of Diriyah)"
+  },
+  {
+    "name": "👑 Turki bin Abdullah",
+    "role": "Monarch",
+    "start": "1824-01-01",
+    "end": "1834-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Mishari bin Abdul Rahman",
+    "role": "Monarch",
+    "start": "1834-01-01",
+    "end": "1834-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Faisal bin Turki (first reign)",
+    "role": "Monarch",
+    "start": "1834-01-01",
+    "end": "1838-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Khalid bin Saud",
+    "role": "Monarch",
+    "start": "1838-01-01",
+    "end": "1841-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Abdullah bin Thunayan",
+    "role": "Monarch",
+    "start": "1841-01-01",
+    "end": "1843-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Faisal bin Turki (second reign)",
+    "role": "Monarch",
+    "start": "1843-01-01",
+    "end": "1865-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Abdullah bin Faisal (first reign)",
+    "role": "Monarch",
+    "start": "1865-01-01",
+    "end": "1871-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Saud bin Faisal (first reign)",
+    "role": "Monarch",
+    "start": "1871-01-01",
+    "end": "1871-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Abdullah bin Faisal (second reign)",
+    "role": "Monarch",
+    "start": "1871-01-01",
+    "end": "1873-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Saud bin Faisal (second reign)",
+    "role": "Monarch",
+    "start": "1873-01-01",
+    "end": "1875-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Abdul Rahman bin Faisal (first reign)",
+    "role": "Monarch",
+    "start": "1875-01-01",
+    "end": "1876-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Abdullah bin Faisal (third reign)",
+    "role": "Monarch",
+    "start": "1876-01-01",
+    "end": "1889-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Abdul Rahman bin Faisal (second reign)",
+    "role": "Monarch",
+    "start": "1889-01-01",
+    "end": "1891-01-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Second Saudi State (Emirate of Nejd)"
+  },
+  {
+    "name": "👑 Abdulaziz ibn Saud (Ibn Saud) — Emir of Nejd",
+    "role": "Monarch",
+    "start": "1902-01-15",
+    "end": "1921-11-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Unification (Third Saudi State)"
+  },
+  {
+    "name": "👑 Abdulaziz ibn Saud (Ibn Saud) — Sultan of Nejd",
+    "role": "Monarch",
+    "start": "1921-11-01",
+    "end": "1926-01-08",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Unification (Third Saudi State)"
+  },
+  {
+    "name": "👑 Abdulaziz ibn Saud (Ibn Saud) — King of Hejaz and Nejd",
+    "role": "Monarch",
+    "start": "1926-01-08",
+    "end": "1932-09-23",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Unification (Third Saudi State)"
+  },
+  {
     "name": "👑 King Abdulaziz ibn Saud",
     "role": "King",
     "start": "1932-09-23",
@@ -7,7 +207,7 @@
     "current": false,
     "tenure": "21y 1m 7d",
     "party": "House of Saud; founder",
-    "era": null
+    "era": "Kingdom of Saudi Arabia"
   },
   {
     "name": "👑 King Saud bin Abdulaziz",
@@ -17,7 +217,7 @@
     "current": false,
     "tenure": "10y 12m 21d",
     "party": "House of Saud; deposed",
-    "era": null
+    "era": "Kingdom of Saudi Arabia"
   },
   {
     "name": "👑 King Faisal bin Abdulaziz",
@@ -27,7 +227,7 @@
     "current": false,
     "tenure": "10y 4m 15d",
     "party": "House of Saud; assassinated",
-    "era": null
+    "era": "Kingdom of Saudi Arabia"
   },
   {
     "name": "👑 King Khalid bin Abdulaziz",
@@ -37,7 +237,7 @@
     "current": false,
     "tenure": "7y 2m 27d",
     "party": "House of Saud; died in office",
-    "era": null
+    "era": "Kingdom of Saudi Arabia"
   },
   {
     "name": "👑 King Fahd bin Abdulaziz",
@@ -47,7 +247,7 @@
     "current": false,
     "tenure": "23y 1m 20d",
     "party": "House of Saud; died in office",
-    "era": null
+    "era": "Kingdom of Saudi Arabia"
   },
   {
     "name": "👑 King Abdullah bin Abdulaziz",
@@ -57,7 +257,7 @@
     "current": false,
     "tenure": "9y 5m 12d",
     "party": "House of Saud; died in office",
-    "era": null
+    "era": "Kingdom of Saudi Arabia"
   },
   {
     "name": "👑 King Salman bin Abdulaziz",
@@ -67,6 +267,6 @@
     "current": true,
     "tenure": "11y 5m 3d",
     "party": "House of Saud",
-    "era": null
+    "era": "Kingdom of Saudi Arabia"
   }
 ]

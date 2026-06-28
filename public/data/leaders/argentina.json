@@ -1,5 +1,495 @@
 [
   {
+    "name": "Bernardino Rivadavia",
+    "role": "President",
+    "start": "1826-02-08",
+    "end": "1827-06-27",
+    "current": false,
+    "tenure": null,
+    "party": "Unitarian Party",
+    "era": "Early Republic"
+  },
+  {
+    "name": "Vicente López y Planes",
+    "role": "President",
+    "start": "1827-07-07",
+    "end": "1827-08-18",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Early Republic"
+  },
+  {
+    "name": "Justo José de Urquiza",
+    "role": "President",
+    "start": "1854-03-05",
+    "end": "1860-03-05",
+    "current": false,
+    "tenure": null,
+    "party": "Federalist Party",
+    "era": "Early Republic"
+  },
+  {
+    "name": "Santiago Derqui",
+    "role": "President",
+    "start": "1860-03-05",
+    "end": "1861-11-05",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Early Republic"
+  },
+  {
+    "name": "Juan Esteban Pedernera",
+    "role": "President",
+    "start": "1861-11-05",
+    "end": "1861-12-12",
+    "current": false,
+    "tenure": null,
+    "party": "Unitarian Party",
+    "era": "Early Republic"
+  },
+  {
+    "name": "Bartolomé Mitre",
+    "role": "President",
+    "start": "1862-10-12",
+    "end": "1868-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "Liberal Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Domingo Faustino Sarmiento",
+    "role": "President",
+    "start": "1868-10-12",
+    "end": "1874-10-12",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Nicolás Avellaneda",
+    "role": "President",
+    "start": "1874-10-12",
+    "end": "1880-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Julio Argentino Roca",
+    "role": "President",
+    "start": "1880-10-12",
+    "end": "1886-10-12",
+    "current": false,
+    "tenure": "First term",
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Miguel Ángel Juárez Celman",
+    "role": "President",
+    "start": "1886-10-12",
+    "end": "1890-08-06",
+    "current": false,
+    "tenure": null,
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Carlos Pellegrini",
+    "role": "President",
+    "start": "1890-08-06",
+    "end": "1892-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Luis Sáenz Peña",
+    "role": "President",
+    "start": "1892-10-12",
+    "end": "1895-01-22",
+    "current": false,
+    "tenure": null,
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "José Evaristo Uriburu",
+    "role": "President",
+    "start": "1895-01-22",
+    "end": "1898-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Julio Argentino Roca",
+    "role": "President",
+    "start": "1898-10-12",
+    "end": "1904-10-12",
+    "current": false,
+    "tenure": "Second term",
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Manuel Quintana",
+    "role": "President",
+    "start": "1904-10-12",
+    "end": "1906-03-12",
+    "current": false,
+    "tenure": "Died in office",
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "José Figueroa Alcorta",
+    "role": "President",
+    "start": "1906-03-12",
+    "end": "1910-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Roque Sáenz Peña",
+    "role": "President",
+    "start": "1910-10-12",
+    "end": "1914-08-09",
+    "current": false,
+    "tenure": "Died in office",
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Victorino de la Plaza",
+    "role": "President",
+    "start": "1914-08-09",
+    "end": "1916-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "National Autonomist Party",
+    "era": "Conservative Republic"
+  },
+  {
+    "name": "Hipólito Yrigoyen",
+    "role": "President",
+    "start": "1916-10-12",
+    "end": "1922-10-12",
+    "current": false,
+    "tenure": "First term",
+    "party": "Radical Civic Union",
+    "era": "Radical Era"
+  },
+  {
+    "name": "Marcelo Torcuato de Alvear",
+    "role": "President",
+    "start": "1922-10-12",
+    "end": "1928-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "Radical Civic Union",
+    "era": "Radical Era"
+  },
+  {
+    "name": "Hipólito Yrigoyen",
+    "role": "President",
+    "start": "1928-10-12",
+    "end": "1930-09-06",
+    "current": false,
+    "tenure": "Second term; ousted by coup",
+    "party": "Radical Civic Union",
+    "era": "Radical Era"
+  },
+  {
+    "name": "José Félix Uriburu",
+    "role": "President",
+    "start": "1930-09-06",
+    "end": "1932-02-20",
+    "current": false,
+    "tenure": "De facto; 1930 coup",
+    "party": "Military",
+    "era": "Infamous Decade / Concordancia"
+  },
+  {
+    "name": "Agustín Pedro Justo",
+    "role": "President",
+    "start": "1932-02-20",
+    "end": "1938-02-20",
+    "current": false,
+    "tenure": null,
+    "party": "Concordancia",
+    "era": "Infamous Decade / Concordancia"
+  },
+  {
+    "name": "Roberto Marcelino Ortiz",
+    "role": "President",
+    "start": "1938-02-20",
+    "end": "1942-06-27",
+    "current": false,
+    "tenure": "Resigned, ill",
+    "party": "Concordancia",
+    "era": "Infamous Decade / Concordancia"
+  },
+  {
+    "name": "Ramón Castillo",
+    "role": "President",
+    "start": "1942-06-27",
+    "end": "1943-06-04",
+    "current": false,
+    "tenure": "Deposed by coup",
+    "party": "Concordancia",
+    "era": "Infamous Decade / Concordancia"
+  },
+  {
+    "name": "Arturo Rawson",
+    "role": "President",
+    "start": "1943-06-04",
+    "end": "1943-06-07",
+    "current": false,
+    "tenure": "De facto; 1943 coup",
+    "party": "Military",
+    "era": "Revolution of '43 (military)"
+  },
+  {
+    "name": "Pedro Pablo Ramírez",
+    "role": "President",
+    "start": "1943-06-07",
+    "end": "1944-03-09",
+    "current": false,
+    "tenure": "De facto",
+    "party": "Military",
+    "era": "Revolution of '43 (military)"
+  },
+  {
+    "name": "Edelmiro Julián Farrell",
+    "role": "President",
+    "start": "1944-03-09",
+    "end": "1946-06-04",
+    "current": false,
+    "tenure": "De facto",
+    "party": "Military",
+    "era": "Revolution of '43 (military)"
+  },
+  {
+    "name": "Juan Perón",
+    "role": "President",
+    "start": "1946-06-04",
+    "end": "1952-06-04",
+    "current": false,
+    "tenure": "First term",
+    "party": "Labour Party",
+    "era": "Peronist Era"
+  },
+  {
+    "name": "Juan Perón",
+    "role": "President",
+    "start": "1952-06-04",
+    "end": "1955-09-21",
+    "current": false,
+    "tenure": "Second term; ousted by coup",
+    "party": "Peronist Party",
+    "era": "Peronist Era"
+  },
+  {
+    "name": "Eduardo Lonardi",
+    "role": "President",
+    "start": "1955-09-23",
+    "end": "1955-11-13",
+    "current": false,
+    "tenure": "De facto; Revolución Libertadora",
+    "party": "Military",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "Pedro Eugenio Aramburu",
+    "role": "President",
+    "start": "1955-11-13",
+    "end": "1958-05-01",
+    "current": false,
+    "tenure": "De facto",
+    "party": "Military",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "Arturo Frondizi",
+    "role": "President",
+    "start": "1958-05-01",
+    "end": "1962-03-29",
+    "current": false,
+    "tenure": "Ousted by coup",
+    "party": "Intransigent Radical Civic Union",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "José María Guido",
+    "role": "President",
+    "start": "1962-03-29",
+    "end": "1963-10-12",
+    "current": false,
+    "tenure": "Senate president exercising executive power",
+    "party": "Intransigent Radical Civic Union",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "Arturo Umberto Illia",
+    "role": "President",
+    "start": "1963-10-12",
+    "end": "1966-06-28",
+    "current": false,
+    "tenure": "Ousted by coup",
+    "party": "Radical Civic Union (People's)",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "Juan Carlos Onganía",
+    "role": "President",
+    "start": "1966-06-29",
+    "end": "1970-06-08",
+    "current": false,
+    "tenure": "De facto; Argentine Revolution",
+    "party": "Military",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "Roberto Marcelo Levingston",
+    "role": "President",
+    "start": "1970-06-18",
+    "end": "1971-03-23",
+    "current": false,
+    "tenure": "De facto; appointed by junta",
+    "party": "Military",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "Alejandro Agustín Lanusse",
+    "role": "President",
+    "start": "1971-03-26",
+    "end": "1973-05-25",
+    "current": false,
+    "tenure": "De facto; appointed by junta",
+    "party": "Military",
+    "era": "Military & unstable rule"
+  },
+  {
+    "name": "Héctor José Cámpora",
+    "role": "President",
+    "start": "1973-05-25",
+    "end": "1973-07-13",
+    "current": false,
+    "tenure": null,
+    "party": "Justicialist Party",
+    "era": "Peronist restoration"
+  },
+  {
+    "name": "Raúl Alberto Lastiri",
+    "role": "President",
+    "start": "1973-07-13",
+    "end": "1973-10-12",
+    "current": false,
+    "tenure": "Chamber president exercising executive power",
+    "party": "Justicialist Party",
+    "era": "Peronist restoration"
+  },
+  {
+    "name": "Juan Perón",
+    "role": "President",
+    "start": "1973-10-12",
+    "end": "1974-07-01",
+    "current": false,
+    "tenure": "Third term; died in office",
+    "party": "Justicialist Party",
+    "era": "Peronist restoration"
+  },
+  {
+    "name": "Isabel Perón",
+    "role": "President",
+    "start": "1974-07-01",
+    "end": "1976-03-24",
+    "current": false,
+    "tenure": "First female president; ousted by coup",
+    "party": "Justicialist Party",
+    "era": "Peronist restoration"
+  },
+  {
+    "name": "⚠️ Jorge Rafael Videla (Military Junta)",
+    "role": "President",
+    "start": "1976-03-29",
+    "end": "1981-03-29",
+    "current": false,
+    "tenure": "De facto; 1976 coup; junta president",
+    "party": "Military",
+    "era": "National Reorganization Process (dictatorship)"
+  },
+  {
+    "name": "⚠️ Roberto Eduardo Viola (Military Junta)",
+    "role": "President",
+    "start": "1981-03-29",
+    "end": "1981-12-11",
+    "current": false,
+    "tenure": "De facto; junta president",
+    "party": "Military",
+    "era": "National Reorganization Process (dictatorship)"
+  },
+  {
+    "name": "Horacio Tomás Liendo",
+    "role": "President",
+    "start": "1981-11-21",
+    "end": "1981-12-11",
+    "current": false,
+    "tenure": "De facto; acting during Viola suspension",
+    "party": "Military",
+    "era": "National Reorganization Process (dictatorship)"
+  },
+  {
+    "name": "Carlos Lacoste",
+    "role": "President",
+    "start": "1981-12-11",
+    "end": "1981-12-22",
+    "current": false,
+    "tenure": "De facto; interim",
+    "party": "Military",
+    "era": "National Reorganization Process (dictatorship)"
+  },
+  {
+    "name": "⚠️ Leopoldo Galtieri (Military Junta)",
+    "role": "President",
+    "start": "1981-12-22",
+    "end": "1982-06-18",
+    "current": false,
+    "tenure": "De facto; junta president; Falklands War",
+    "party": "Military",
+    "era": "National Reorganization Process (dictatorship)"
+  },
+  {
+    "name": "Alfredo Oscar Saint Jean",
+    "role": "President",
+    "start": "1982-06-18",
+    "end": "1982-07-01",
+    "current": false,
+    "tenure": "De facto; interim",
+    "party": "Military",
+    "era": "National Reorganization Process (dictatorship)"
+  },
+  {
+    "name": "⚠️ Reynaldo Bignone (Military Junta)",
+    "role": "President",
+    "start": "1982-07-01",
+    "end": "1983-12-10",
+    "current": false,
+    "tenure": "De facto; last junta president",
+    "party": "Military",
+    "era": "National Reorganization Process (dictatorship)"
+  },
+  {
     "name": "Raúl Alfonsín",
     "role": "President",
     "start": "1983-12-10",
@@ -7,7 +497,7 @@
     "current": false,
     "tenure": "5y 7m 27d",
     "party": "UCR; 1st post-junta",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Carlos Menem",
@@ -17,7 +507,7 @@
     "current": false,
     "tenure": "10y 5m 27d",
     "party": "PJ/Peronist; 2 terms",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Fernando de la Rúa",
@@ -27,7 +517,7 @@
     "current": false,
     "tenure": "2y 22d",
     "party": "UCR; resigned amid crisis",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Adolfo Rodríguez Saá",
@@ -37,7 +527,7 @@
     "current": false,
     "tenure": "7d",
     "party": "PJ; resigned",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Eduardo Duhalde",
@@ -47,7 +537,7 @@
     "current": false,
     "tenure": "1y 4m 28d",
     "party": "PJ; caretaker",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Néstor Kirchner",
@@ -57,7 +547,7 @@
     "current": false,
     "tenure": "4y 6m 10d",
     "party": "FPV/Kirchnerist",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Cristina Fernández de Kirchner",
@@ -67,7 +557,7 @@
     "current": false,
     "tenure": "8y 12d",
     "party": "FPV; 2 terms",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Mauricio Macri",
@@ -77,7 +567,7 @@
     "current": false,
     "tenure": "4y 21d",
     "party": "PRO/Cambiemos",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Alberto Fernández",
@@ -87,7 +577,7 @@
     "current": false,
     "tenure": "4y 21d",
     "party": "FdT",
-    "era": null
+    "era": "Democratic era"
   },
   {
     "name": "Javier Milei",
@@ -97,6 +587,6 @@
     "current": true,
     "tenure": "2y 6m",
     "party": "La Libertad Avanza",
-    "era": null
+    "era": "Democratic era"
   }
 ]

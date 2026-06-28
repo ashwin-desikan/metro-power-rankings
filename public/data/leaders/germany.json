@@ -1,5 +1,15 @@
 [
   {
+    "name": "👑 Kaiser Wilhelm I",
+    "role": "Monarch",
+    "start": "1871-01-18",
+    "end": "1888-03-09",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "German Empire"
+  },
+  {
     "name": "Otto von Bismarck",
     "role": "Imperial Chancellor",
     "start": "1871-03-18",
@@ -7,6 +17,26 @@
     "current": false,
     "tenure": "19y 7d",
     "party": "Conservative",
+    "era": "German Empire"
+  },
+  {
+    "name": "👑 Kaiser Friedrich III",
+    "role": "Monarch",
+    "start": "1888-03-09",
+    "end": "1888-06-15",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "German Empire"
+  },
+  {
+    "name": "👑 Kaiser Wilhelm II",
+    "role": "Monarch",
+    "start": "1888-06-15",
+    "end": "1918-11-09",
+    "current": false,
+    "tenure": null,
+    "party": null,
     "era": "German Empire"
   },
   {
@@ -86,6 +116,16 @@
     "end": "1919-11-13",
     "current": false,
     "tenure": "1y 4d",
+    "party": "SPD",
+    "era": "Weimar Republic"
+  },
+  {
+    "name": "Friedrich Ebert",
+    "role": "President",
+    "start": "1919-02-11",
+    "end": "1925-02-28",
+    "current": false,
+    "tenure": null,
     "party": "SPD",
     "era": "Weimar Republic"
   },
@@ -180,6 +220,16 @@
     "era": "Weimar Republic"
   },
   {
+    "name": "Paul von Hindenburg",
+    "role": "President",
+    "start": "1925-05-12",
+    "end": "1934-08-02",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Weimar Republic"
+  },
+  {
     "name": "Wilhelm Marx",
     "role": "Weimar Chancellor",
     "start": "1926-05-17",
@@ -270,12 +320,32 @@
     "era": "Federal Republic"
   },
   {
+    "name": "Theodor Heuss",
+    "role": "President",
+    "start": "1949-09-13",
+    "end": "1959-09-12",
+    "current": false,
+    "tenure": null,
+    "party": "FDP",
+    "era": "Federal Republic"
+  },
+  {
     "name": "Konrad Adenauer",
     "role": "Federal Chancellor",
     "start": "1949-09-20",
     "end": "1963-10-16",
     "current": false,
     "tenure": "14y 29d",
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Heinrich Lübke",
+    "role": "President",
+    "start": "1959-09-13",
+    "end": "1969-06-30",
+    "current": false,
+    "tenure": null,
     "party": "CDU",
     "era": "Federal Republic"
   },
@@ -300,6 +370,16 @@
     "era": "Federal Republic"
   },
   {
+    "name": "Gustav Heinemann",
+    "role": "President",
+    "start": "1969-07-01",
+    "end": "1974-06-30",
+    "current": false,
+    "tenure": null,
+    "party": "SPD",
+    "era": "Federal Republic"
+  },
+  {
     "name": "Willy Brandt",
     "role": "Federal Chancellor",
     "start": "1969-10-22",
@@ -320,12 +400,52 @@
     "era": "Federal Republic"
   },
   {
+    "name": "Walter Scheel",
+    "role": "President",
+    "start": "1974-07-01",
+    "end": "1979-06-30",
+    "current": false,
+    "tenure": null,
+    "party": "FDP",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Karl Carstens",
+    "role": "President",
+    "start": "1979-07-01",
+    "end": "1984-06-30",
+    "current": false,
+    "tenure": null,
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
     "name": "Helmut Kohl",
     "role": "Federal Chancellor",
     "start": "1982-10-01",
     "end": "1998-10-27",
     "current": false,
     "tenure": "16y 1m",
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Richard von Weizsäcker",
+    "role": "President",
+    "start": "1984-07-01",
+    "end": "1994-06-30",
+    "current": false,
+    "tenure": null,
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Roman Herzog",
+    "role": "President",
+    "start": "1994-07-01",
+    "end": "1999-06-30",
+    "current": false,
+    "tenure": null,
     "party": "CDU",
     "era": "Federal Republic"
   },
@@ -340,6 +460,26 @@
     "era": "Federal Republic"
   },
   {
+    "name": "Johannes Rau",
+    "role": "President",
+    "start": "1999-07-01",
+    "end": "2004-06-30",
+    "current": false,
+    "tenure": null,
+    "party": "SPD",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Horst Köhler",
+    "role": "President",
+    "start": "2004-07-01",
+    "end": "2010-05-31",
+    "current": false,
+    "tenure": null,
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
     "name": "Angela Merkel",
     "role": "Federal Chancellor",
     "start": "2005-11-22",
@@ -347,6 +487,36 @@
     "current": false,
     "tenure": "16y 20d",
     "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Christian Wulff",
+    "role": "President",
+    "start": "2010-06-30",
+    "end": "2012-02-17",
+    "current": false,
+    "tenure": null,
+    "party": "CDU",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Joachim Gauck",
+    "role": "President",
+    "start": "2012-03-18",
+    "end": "2017-03-18",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Federal Republic"
+  },
+  {
+    "name": "Frank-Walter Steinmeier",
+    "role": "President",
+    "start": "2017-03-19",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "SPD",
     "era": "Federal Republic"
   },
   {

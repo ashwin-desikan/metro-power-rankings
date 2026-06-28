@@ -1,5 +1,605 @@
 [
   {
+    "name": "👑 Charlemagne",
+    "role": "Monarch",
+    "start": "768-10-09",
+    "end": "814-01-28",
+    "current": false,
+    "tenure": "768-814",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Louis I (the Pious)",
+    "role": "Monarch",
+    "start": "814-01-28",
+    "end": "840-06-20",
+    "current": false,
+    "tenure": "814-840",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Charles II (the Bald)",
+    "role": "Monarch",
+    "start": "843-08-10",
+    "end": "877-10-06",
+    "current": false,
+    "tenure": "843-877",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Louis II (the Stammerer)",
+    "role": "Monarch",
+    "start": "877-10-06",
+    "end": "879-04-10",
+    "current": false,
+    "tenure": "877-879",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Louis III",
+    "role": "Monarch",
+    "start": "879-04-10",
+    "end": "882-08-05",
+    "current": false,
+    "tenure": "879-882",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Carloman II",
+    "role": "Monarch",
+    "start": "879-04-10",
+    "end": "884-12-06",
+    "current": false,
+    "tenure": "879-884",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Charles the Fat",
+    "role": "Monarch",
+    "start": "884-12-01",
+    "end": "888-01-13",
+    "current": false,
+    "tenure": "884-888",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Odo (Eudes)",
+    "role": "Monarch",
+    "start": "888-02-29",
+    "end": "898-01-03",
+    "current": false,
+    "tenure": "888-898",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Charles III (the Simple)",
+    "role": "Monarch",
+    "start": "898-01-03",
+    "end": "922-06-30",
+    "current": false,
+    "tenure": "898-922",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Robert I",
+    "role": "Monarch",
+    "start": "922-06-30",
+    "end": "923-06-15",
+    "current": false,
+    "tenure": "922-923",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Rudolph (Raoul)",
+    "role": "Monarch",
+    "start": "923-07-13",
+    "end": "936-01-15",
+    "current": false,
+    "tenure": "923-936",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Louis IV (d'Outremer)",
+    "role": "Monarch",
+    "start": "936-06-19",
+    "end": "954-09-10",
+    "current": false,
+    "tenure": "936-954",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Lothair",
+    "role": "Monarch",
+    "start": "954-11-12",
+    "end": "986-03-02",
+    "current": false,
+    "tenure": "954-986",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Louis V (the Indolent)",
+    "role": "Monarch",
+    "start": "986-03-02",
+    "end": "987-05-22",
+    "current": false,
+    "tenure": "986-987",
+    "party": null,
+    "era": "Carolingian Dynasty"
+  },
+  {
+    "name": "👑 Hugh Capet",
+    "role": "Monarch",
+    "start": "987-07-03",
+    "end": "996-10-24",
+    "current": false,
+    "tenure": "987-996",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Robert II (the Pious)",
+    "role": "Monarch",
+    "start": "996-10-24",
+    "end": "1031-07-20",
+    "current": false,
+    "tenure": "996-1031",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Henry I",
+    "role": "Monarch",
+    "start": "1031-07-20",
+    "end": "1060-08-04",
+    "current": false,
+    "tenure": "1031-1060",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Philip I",
+    "role": "Monarch",
+    "start": "1060-08-04",
+    "end": "1108-07-29",
+    "current": false,
+    "tenure": "1060-1108",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Louis VI (the Fat)",
+    "role": "Monarch",
+    "start": "1108-07-29",
+    "end": "1137-08-01",
+    "current": false,
+    "tenure": "1108-1137",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Louis VII (the Younger)",
+    "role": "Monarch",
+    "start": "1137-08-01",
+    "end": "1180-09-18",
+    "current": false,
+    "tenure": "1137-1180",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Philip II (Augustus)",
+    "role": "Monarch",
+    "start": "1180-09-18",
+    "end": "1223-07-14",
+    "current": false,
+    "tenure": "1180-1223",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Louis VIII (the Lion)",
+    "role": "Monarch",
+    "start": "1223-07-14",
+    "end": "1226-11-08",
+    "current": false,
+    "tenure": "1223-1226",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Louis IX (Saint Louis)",
+    "role": "Monarch",
+    "start": "1226-11-08",
+    "end": "1270-08-25",
+    "current": false,
+    "tenure": "1226-1270",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Philip III (the Bold)",
+    "role": "Monarch",
+    "start": "1270-08-25",
+    "end": "1285-10-05",
+    "current": false,
+    "tenure": "1270-1285",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Philip IV (the Fair)",
+    "role": "Monarch",
+    "start": "1285-10-05",
+    "end": "1314-11-29",
+    "current": false,
+    "tenure": "1285-1314",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Louis X (the Quarrelsome)",
+    "role": "Monarch",
+    "start": "1314-11-29",
+    "end": "1316-06-05",
+    "current": false,
+    "tenure": "1314-1316",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 John I (the Posthumous)",
+    "role": "Monarch",
+    "start": "1316-11-15",
+    "end": "1316-11-20",
+    "current": false,
+    "tenure": "1316-1316",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Philip V (the Tall)",
+    "role": "Monarch",
+    "start": "1316-11-20",
+    "end": "1322-01-03",
+    "current": false,
+    "tenure": "1316-1322",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Charles IV (the Fair)",
+    "role": "Monarch",
+    "start": "1322-01-03",
+    "end": "1328-02-01",
+    "current": false,
+    "tenure": "1322-1328",
+    "party": null,
+    "era": "Capetian Dynasty"
+  },
+  {
+    "name": "👑 Philip VI",
+    "role": "Monarch",
+    "start": "1328-04-01",
+    "end": "1350-08-22",
+    "current": false,
+    "tenure": "1328-1350",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 John II (the Good)",
+    "role": "Monarch",
+    "start": "1350-08-22",
+    "end": "1364-04-08",
+    "current": false,
+    "tenure": "1350-1364",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Charles V (the Wise)",
+    "role": "Monarch",
+    "start": "1364-04-08",
+    "end": "1380-09-16",
+    "current": false,
+    "tenure": "1364-1380",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Charles VI (the Mad)",
+    "role": "Monarch",
+    "start": "1380-09-16",
+    "end": "1422-10-21",
+    "current": false,
+    "tenure": "1380-1422",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Charles VII (the Victorious)",
+    "role": "Monarch",
+    "start": "1422-10-21",
+    "end": "1461-07-22",
+    "current": false,
+    "tenure": "1422-1461",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Louis XI (the Prudent)",
+    "role": "Monarch",
+    "start": "1461-07-22",
+    "end": "1483-08-30",
+    "current": false,
+    "tenure": "1461-1483",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Charles VIII (the Affable)",
+    "role": "Monarch",
+    "start": "1483-08-30",
+    "end": "1498-04-07",
+    "current": false,
+    "tenure": "1483-1498",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Louis XII (Father of the People)",
+    "role": "Monarch",
+    "start": "1498-04-07",
+    "end": "1515-01-01",
+    "current": false,
+    "tenure": "1498-1515",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Francis I",
+    "role": "Monarch",
+    "start": "1515-01-01",
+    "end": "1547-03-31",
+    "current": false,
+    "tenure": "1515-1547",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Henry II",
+    "role": "Monarch",
+    "start": "1547-03-31",
+    "end": "1559-07-10",
+    "current": false,
+    "tenure": "1547-1559",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Francis II",
+    "role": "Monarch",
+    "start": "1559-07-10",
+    "end": "1560-12-05",
+    "current": false,
+    "tenure": "1559-1560",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Charles IX",
+    "role": "Monarch",
+    "start": "1560-12-05",
+    "end": "1574-05-30",
+    "current": false,
+    "tenure": "1560-1574",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Henry III",
+    "role": "Monarch",
+    "start": "1574-05-30",
+    "end": "1589-08-02",
+    "current": false,
+    "tenure": "1574-1589",
+    "party": null,
+    "era": "House of Valois"
+  },
+  {
+    "name": "👑 Henry IV (the Great)",
+    "role": "Monarch",
+    "start": "1589-08-02",
+    "end": "1610-05-14",
+    "current": false,
+    "tenure": "1589-1610",
+    "party": null,
+    "era": "House of Bourbon"
+  },
+  {
+    "name": "👑 Louis XIII (the Just)",
+    "role": "Monarch",
+    "start": "1610-05-14",
+    "end": "1643-05-14",
+    "current": false,
+    "tenure": "1610-1643",
+    "party": null,
+    "era": "House of Bourbon"
+  },
+  {
+    "name": "👑 Louis XIV (the Sun King)",
+    "role": "Monarch",
+    "start": "1643-05-14",
+    "end": "1715-09-01",
+    "current": false,
+    "tenure": "1643-1715",
+    "party": null,
+    "era": "House of Bourbon"
+  },
+  {
+    "name": "👑 Louis XV (the Beloved)",
+    "role": "Monarch",
+    "start": "1715-09-01",
+    "end": "1774-05-10",
+    "current": false,
+    "tenure": "1715-1774",
+    "party": null,
+    "era": "House of Bourbon"
+  },
+  {
+    "name": "👑 Louis XVI",
+    "role": "Monarch",
+    "start": "1774-05-10",
+    "end": "1792-09-21",
+    "current": false,
+    "tenure": "1774-1792",
+    "party": null,
+    "era": "House of Bourbon"
+  },
+  {
+    "name": "Head of State (National Convention)",
+    "role": "Head of State (National Convention)",
+    "start": "1792-09-21",
+    "end": "1795-11-02",
+    "current": false,
+    "tenure": "1792-1795",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "👑 Louis XVII (titular)",
+    "role": "Monarch",
+    "start": "1793-01-21",
+    "end": "1795-06-08",
+    "current": false,
+    "tenure": "1793-1795",
+    "party": null,
+    "era": "House of Bourbon"
+  },
+  {
+    "name": "Executive Directory",
+    "role": "President of the Directory",
+    "start": "1795-11-02",
+    "end": "1799-11-10",
+    "current": false,
+    "tenure": "1795-1799",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Napoleon Bonaparte (First Consul)",
+    "role": "First Consul",
+    "start": "1799-11-10",
+    "end": "1804-05-18",
+    "current": false,
+    "tenure": "1799-1804",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "⚠️ 👑 Emperor Napoleon I",
+    "role": "Monarch",
+    "start": "1804-05-18",
+    "end": "1814-04-06",
+    "current": false,
+    "tenure": "1804-1814",
+    "party": null,
+    "era": "First Empire"
+  },
+  {
+    "name": "👑 Louis XVIII",
+    "role": "Monarch",
+    "start": "1814-04-06",
+    "end": "1815-03-20",
+    "current": false,
+    "tenure": "1814-1815",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "⚠️ 👑 Emperor Napoleon I (Hundred Days)",
+    "role": "Monarch",
+    "start": "1815-03-20",
+    "end": "1815-07-07",
+    "current": false,
+    "tenure": "1815-1815",
+    "party": null,
+    "era": "First Empire"
+  },
+  {
+    "name": "👑 Louis XVIII",
+    "role": "Monarch",
+    "start": "1815-07-08",
+    "end": "1824-09-16",
+    "current": false,
+    "tenure": "1815-1824",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "👑 Charles X",
+    "role": "Monarch",
+    "start": "1824-09-16",
+    "end": "1830-08-02",
+    "current": false,
+    "tenure": "1824-1830",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "👑 Louis XIX (disputed, ~20 min)",
+    "role": "Monarch",
+    "start": "1830-08-02",
+    "end": "1830-08-02",
+    "current": false,
+    "tenure": "1830-1830",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "👑 Henri V (disputed, 7 days)",
+    "role": "Monarch",
+    "start": "1830-08-02",
+    "end": "1830-08-09",
+    "current": false,
+    "tenure": "1830-1830",
+    "party": null,
+    "era": "Bourbon Restoration"
+  },
+  {
+    "name": "👑 Louis Philippe I",
+    "role": "Monarch",
+    "start": "1830-08-09",
+    "end": "1848-02-24",
+    "current": false,
+    "tenure": "1830-1848",
+    "party": null,
+    "era": "July Monarchy"
+  },
+  {
+    "name": "Provisional Government of 1848",
+    "role": "Head of State (Provisional Government)",
+    "start": "1848-02-24",
+    "end": "1848-12-10",
+    "current": false,
+    "tenure": "1848-1848",
+    "party": null,
+    "era": "Second Republic"
+  },
+  {
     "name": "⚠️ Louis-Napoleon Bonaparte",
     "role": "President / Prince-President",
     "start": "1848-12-10",
@@ -7,17 +607,17 @@
     "current": false,
     "tenure": "3y 1m 24d",
     "party": "Bonapartist; 2nd Republic",
-    "era": null
+    "era": "Second Republic"
   },
   {
-    "name": "👑 Emperor Napoleon III",
+    "name": "⚠️ 👑 Emperor Napoleon III",
     "role": "Emperor (Second Empire)",
     "start": "1852-12-02",
     "end": "1870-09-04",
     "current": false,
     "tenure": "18y",
     "party": "Bonapartist",
-    "era": null
+    "era": "Second Empire"
   },
   {
     "name": "Government of National Defense",
@@ -27,7 +627,7 @@
     "current": false,
     "tenure": "5m",
     "party": null,
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Adolphe Thiers",
@@ -37,7 +637,7 @@
     "current": false,
     "tenure": "2y 3m",
     "party": "Republican",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Patrice de Mac-Mahon",
@@ -47,7 +647,7 @@
     "current": false,
     "tenure": "5y 8m 12d",
     "party": "Conservative; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Jules Grevy",
@@ -57,7 +657,7 @@
     "current": false,
     "tenure": "8y 10m 8d",
     "party": "Republican; 3rd Republic; 1st term",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Sadi Carnot",
@@ -67,7 +667,7 @@
     "current": false,
     "tenure": "6y 5m 25d",
     "party": "Republican; 3rd Republic; assassinated",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Jean Casimir-Perier",
@@ -77,7 +677,7 @@
     "current": false,
     "tenure": "6m 23d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Felix Faure",
@@ -87,7 +687,7 @@
     "current": false,
     "tenure": "4y 1m 1d",
     "party": "Republican; 3rd Republic; died in office",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Emile Loubet",
@@ -97,7 +697,7 @@
     "current": false,
     "tenure": "6y 11m 5d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Armand Fallieres",
@@ -107,7 +707,7 @@
     "current": false,
     "tenure": "7y 2d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Raymond Poincare",
@@ -117,7 +717,7 @@
     "current": false,
     "tenure": "7y 1d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Paul Deschanel",
@@ -127,7 +727,7 @@
     "current": false,
     "tenure": "8m 7d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Alexandre Millerand",
@@ -137,7 +737,7 @@
     "current": false,
     "tenure": "3y 8m 22d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Gaston Doumergue",
@@ -147,7 +747,7 @@
     "current": false,
     "tenure": "7y 1d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Paul Doumer",
@@ -157,7 +757,7 @@
     "current": false,
     "tenure": "10m 29d",
     "party": "Republican; 3rd Republic; assassinated",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "Albert Lebrun",
@@ -167,7 +767,7 @@
     "current": false,
     "tenure": "8y 2m 3d",
     "party": "Republican; 3rd Republic",
-    "era": null
+    "era": "Third Republic"
   },
   {
     "name": "⚠️ Philippe Pétain",
@@ -177,7 +777,7 @@
     "current": false,
     "tenure": "4y",
     "party": "Vichy Regime",
-    "era": null
+    "era": "Vichy France"
   },
   {
     "name": "Charles de Gaulle",
@@ -187,7 +787,7 @@
     "current": false,
     "tenure": "16m",
     "party": null,
-    "era": null
+    "era": "Provisional Government"
   },
   {
     "name": "Félix Gouin",
@@ -197,7 +797,7 @@
     "current": false,
     "tenure": "5m",
     "party": "Socialist",
-    "era": null
+    "era": "Provisional Government"
   },
   {
     "name": "Georges Bidault",
@@ -207,7 +807,7 @@
     "current": false,
     "tenure": "5m",
     "party": "MRP",
-    "era": null
+    "era": "Provisional Government"
   },
   {
     "name": "Vincent Auriol",
@@ -217,7 +817,7 @@
     "current": false,
     "tenure": "7y 2d",
     "party": "Socialist; 4th Republic",
-    "era": null
+    "era": "Fourth Republic"
   },
   {
     "name": "René Coty",
@@ -227,7 +827,7 @@
     "current": false,
     "tenure": "5y",
     "party": "IR",
-    "era": null
+    "era": "Fourth Republic"
   },
   {
     "name": "Charles de Gaulle",
@@ -237,7 +837,7 @@
     "current": false,
     "tenure": "10y 3m 23d",
     "party": "Gaullist; 5th Republic",
-    "era": null
+    "era": "Fifth Republic"
   },
   {
     "name": "Georges Pompidou",
@@ -247,7 +847,7 @@
     "current": false,
     "tenure": "4y 9m 17d",
     "party": "Gaullist; 5th Republic; died in office",
-    "era": null
+    "era": "Fifth Republic"
   },
   {
     "name": "Valery Giscard d'Estaing",
@@ -257,7 +857,7 @@
     "current": false,
     "tenure": "6y 12m 1d",
     "party": "Centre-right; 5th Republic",
-    "era": null
+    "era": "Fifth Republic"
   },
   {
     "name": "Francois Mitterrand",
@@ -267,7 +867,7 @@
     "current": false,
     "tenure": "13y 12m 4d",
     "party": "Socialist; 5th Republic",
-    "era": null
+    "era": "Fifth Republic"
   },
   {
     "name": "⚠️ Jacques Chirac",
@@ -277,7 +877,7 @@
     "current": false,
     "tenure": "12y 2d",
     "party": "Gaullist/Conservative; 5th Republic",
-    "era": null
+    "era": "Fifth Republic"
   },
   {
     "name": "⚠️ Nicolas Sarkozy",
@@ -287,7 +887,7 @@
     "current": false,
     "tenure": "5y 1d",
     "party": "Conservative UMP; 5th Republic",
-    "era": null
+    "era": "Fifth Republic"
   },
   {
     "name": "Francois Hollande",
@@ -297,7 +897,7 @@
     "current": false,
     "tenure": "5y",
     "party": "Socialist; 5th Republic",
-    "era": null
+    "era": "Fifth Republic"
   },
   {
     "name": "Emmanuel Macron",
@@ -307,6 +907,6 @@
     "current": true,
     "tenure": "9y 1m 15d",
     "party": "Centrist En Marche; 5th Republic",
-    "era": null
+    "era": "Fifth Republic"
   }
 ]

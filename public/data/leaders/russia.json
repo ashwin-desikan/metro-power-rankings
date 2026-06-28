@@ -1,5 +1,215 @@
 [
   {
+    "name": "👑 Ivan III (the Great)",
+    "role": "Monarch",
+    "start": "1462-01-01",
+    "end": "1505-10-27",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Vasili III",
+    "role": "Monarch",
+    "start": "1505-10-27",
+    "end": "1533-12-03",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "⚠️ 👑 Tsar Ivan IV (the Terrible)",
+    "role": "Monarch",
+    "start": "1533-12-03",
+    "end": "1584-03-28",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Feodor I",
+    "role": "Monarch",
+    "start": "1584-03-28",
+    "end": "1598-01-17",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Boris Godunov",
+    "role": "Monarch",
+    "start": "1598-02-21",
+    "end": "1605-04-23",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Feodor II (Godunov)",
+    "role": "Monarch",
+    "start": "1605-04-23",
+    "end": "1605-06-20",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar False Dmitry I",
+    "role": "Monarch",
+    "start": "1605-07-21",
+    "end": "1606-05-17",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Vasili IV (Shuisky)",
+    "role": "Monarch",
+    "start": "1606-05-19",
+    "end": "1610-07-17",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "Seven Boyars (Interregnum)",
+    "role": "Provisional Government",
+    "start": "1610-07-17",
+    "end": "1613-02-21",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Michael I",
+    "role": "Monarch",
+    "start": "1613-02-21",
+    "end": "1645-07-12",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Alexis I",
+    "role": "Monarch",
+    "start": "1645-07-12",
+    "end": "1676-01-29",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Feodor III",
+    "role": "Monarch",
+    "start": "1676-01-29",
+    "end": "1682-05-07",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsars Ivan V & Peter I (joint)",
+    "role": "Monarch",
+    "start": "1682-05-07",
+    "end": "1696-02-08",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Tsar Peter I (the Great)",
+    "role": "Monarch",
+    "start": "1696-02-08",
+    "end": "1721-11-02",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Tsardom of Russia"
+  },
+  {
+    "name": "👑 Emperor Peter I (the Great)",
+    "role": "Monarch",
+    "start": "1721-11-02",
+    "end": "1725-02-08",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Imperial Era"
+  },
+  {
+    "name": "👑 Empress Catherine I",
+    "role": "Monarch",
+    "start": "1725-02-08",
+    "end": "1727-05-17",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Imperial Era"
+  },
+  {
+    "name": "👑 Emperor Peter II",
+    "role": "Monarch",
+    "start": "1727-05-17",
+    "end": "1730-01-30",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Imperial Era"
+  },
+  {
+    "name": "👑 Empress Anna",
+    "role": "Monarch",
+    "start": "1730-02-13",
+    "end": "1740-10-28",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Imperial Era"
+  },
+  {
+    "name": "👑 Emperor Ivan VI",
+    "role": "Monarch",
+    "start": "1740-10-28",
+    "end": "1741-12-06",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Imperial Era"
+  },
+  {
+    "name": "👑 Empress Elizabeth",
+    "role": "Monarch",
+    "start": "1741-12-06",
+    "end": "1762-01-05",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Imperial Era"
+  },
+  {
+    "name": "👑 Emperor Peter III",
+    "role": "Monarch",
+    "start": "1762-01-05",
+    "end": "1762-07-09",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Imperial Era"
+  },
+  {
     "name": "👑 Empress Catherine II (the Great)",
     "role": "Empress/Emperor",
     "start": "1762-07-09",

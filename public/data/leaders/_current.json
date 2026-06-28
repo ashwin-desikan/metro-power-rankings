@@ -148,7 +148,7 @@
     "role": "Pres."
   },
   "egypt": {
-    "name": "Abdel Fattah el-Sisi",
+    "name": "⚠️ Abdel Fattah el-Sisi",
     "role": "Pres."
   },
   "england": {
@@ -189,7 +189,11 @@
   },
   "germany": {
     "name": "Friedrich Merz",
-    "role": "Federal Chanc."
+    "role": "Federal Chanc.",
+    "second": {
+      "name": "Frank-Walter Steinmeier",
+      "role": "Pres."
+    }
   },
   "ghana": {
     "name": "John Mahama",
@@ -240,7 +244,7 @@
     "role": "Taoiseach"
   },
   "israel": {
-    "name": "Benjamin Netanyahu",
+    "name": "⚠️ Benjamin Netanyahu",
     "role": "PM"
   },
   "italy": {
@@ -308,12 +312,8 @@
     "role": "Pres."
   },
   "monaco": {
-    "name": "Christophe Mirmand",
-    "role": "PM",
-    "second": {
-      "name": "👑 Albert II",
-      "role": "Monarch"
-    }
+    "name": "👑 Albert II",
+    "role": "Monarch"
   },
   "montenegro": {
     "name": "Milojko Spajić",
@@ -496,7 +496,7 @@
     }
   },
   "tunisia": {
-    "name": "Kais Saied",
+    "name": "⚠️ Kais Saied",
     "role": "Pres."
   },
   "turkey": {

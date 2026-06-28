@@ -1,5 +1,1655 @@
 [
   {
+    "name": "Jonas Furrer",
+    "role": "President of the Swiss Confederation",
+    "start": "1848-01-01",
+    "end": "1848-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jonas Furrer",
+    "role": "President of the Swiss Confederation",
+    "start": "1849-01-01",
+    "end": "1849-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Henri Druey",
+    "role": "President of the Swiss Confederation",
+    "start": "1850-01-01",
+    "end": "1850-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Josef Munzinger",
+    "role": "President of the Swiss Confederation",
+    "start": "1851-01-01",
+    "end": "1851-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jonas Furrer",
+    "role": "President of the Swiss Confederation",
+    "start": "1852-01-01",
+    "end": "1852-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Wilhelm Matthias Naeff",
+    "role": "President of the Swiss Confederation",
+    "start": "1853-01-01",
+    "end": "1853-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Friedrich Frey-Herosé",
+    "role": "President of the Swiss Confederation",
+    "start": "1854-01-01",
+    "end": "1854-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jonas Furrer",
+    "role": "President of the Swiss Confederation",
+    "start": "1855-01-01",
+    "end": "1855-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jakob Stämpfli",
+    "role": "President of the Swiss Confederation",
+    "start": "1856-01-01",
+    "end": "1856-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Constant Fornerod",
+    "role": "President of the Swiss Confederation",
+    "start": "1857-01-01",
+    "end": "1857-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jonas Furrer",
+    "role": "President of the Swiss Confederation",
+    "start": "1858-01-01",
+    "end": "1858-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jakob Stämpfli",
+    "role": "President of the Swiss Confederation",
+    "start": "1859-01-01",
+    "end": "1859-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Friedrich Frey-Herosé",
+    "role": "President of the Swiss Confederation",
+    "start": "1860-01-01",
+    "end": "1860-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Melchior Josef Martin Knüsel",
+    "role": "President of the Swiss Confederation",
+    "start": "1861-01-01",
+    "end": "1861-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jakob Stämpfli",
+    "role": "President of the Swiss Confederation",
+    "start": "1862-01-01",
+    "end": "1862-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Constant Fornerod",
+    "role": "President of the Swiss Confederation",
+    "start": "1863-01-01",
+    "end": "1863-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jakob Dubs",
+    "role": "President of the Swiss Confederation",
+    "start": "1864-01-01",
+    "end": "1864-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Schenk",
+    "role": "President of the Swiss Confederation",
+    "start": "1865-01-01",
+    "end": "1865-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Melchior Josef Martin Knüsel",
+    "role": "President of the Swiss Confederation",
+    "start": "1866-01-01",
+    "end": "1866-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Constant Fornerod",
+    "role": "President of the Swiss Confederation",
+    "start": "1867-01-01",
+    "end": "1867-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jakob Dubs",
+    "role": "President of the Swiss Confederation",
+    "start": "1868-01-01",
+    "end": "1868-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Emil Welti",
+    "role": "President of the Swiss Confederation",
+    "start": "1869-01-01",
+    "end": "1869-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jakob Dubs",
+    "role": "President of the Swiss Confederation",
+    "start": "1870-01-01",
+    "end": "1870-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Schenk",
+    "role": "President of the Swiss Confederation",
+    "start": "1871-01-01",
+    "end": "1871-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Emil Welti",
+    "role": "President of the Swiss Confederation",
+    "start": "1872-01-01",
+    "end": "1872-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Paul Cérésole",
+    "role": "President of the Swiss Confederation",
+    "start": "1873-01-01",
+    "end": "1873-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Schenk",
+    "role": "President of the Swiss Confederation",
+    "start": "1874-01-01",
+    "end": "1874-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Johann Jakob Scherer",
+    "role": "President of the Swiss Confederation",
+    "start": "1875-01-01",
+    "end": "1875-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Emil Welti",
+    "role": "President of the Swiss Confederation",
+    "start": "1876-01-01",
+    "end": "1876-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Joachim Heer",
+    "role": "President of the Swiss Confederation",
+    "start": "1877-01-01",
+    "end": "1877-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Schenk",
+    "role": "President of the Swiss Confederation",
+    "start": "1878-01-01",
+    "end": "1878-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Bernhard Hammer",
+    "role": "President of the Swiss Confederation",
+    "start": "1879-01-01",
+    "end": "1879-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Emil Welti",
+    "role": "President of the Swiss Confederation",
+    "start": "1880-01-01",
+    "end": "1880-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Numa Droz",
+    "role": "President of the Swiss Confederation",
+    "start": "1881-01-01",
+    "end": "1881-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Simeon Bavier",
+    "role": "President of the Swiss Confederation",
+    "start": "1882-01-01",
+    "end": "1882-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Louis Ruchonnet",
+    "role": "President of the Swiss Confederation",
+    "start": "1883-01-01",
+    "end": "1883-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Emil Welti",
+    "role": "President of the Swiss Confederation",
+    "start": "1884-01-01",
+    "end": "1884-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Schenk",
+    "role": "President of the Swiss Confederation",
+    "start": "1885-01-01",
+    "end": "1885-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Adolf Deucher",
+    "role": "President of the Swiss Confederation",
+    "start": "1886-01-01",
+    "end": "1886-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Numa Droz",
+    "role": "President of the Swiss Confederation",
+    "start": "1887-01-01",
+    "end": "1887-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Wilhelm Hertenstein",
+    "role": "President of the Swiss Confederation",
+    "start": "1888-01-01",
+    "end": "1888-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Bernhard Hammer",
+    "role": "President of the Swiss Confederation",
+    "start": "1889-01-01",
+    "end": "1889-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Louis Ruchonnet",
+    "role": "President of the Swiss Confederation",
+    "start": "1890-01-01",
+    "end": "1890-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Emil Welti",
+    "role": "President of the Swiss Confederation",
+    "start": "1891-01-01",
+    "end": "1891-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Walter Hauser",
+    "role": "President of the Swiss Confederation",
+    "start": "1892-01-01",
+    "end": "1892-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Schenk",
+    "role": "President of the Swiss Confederation",
+    "start": "1893-01-01",
+    "end": "1893-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Emil Frey",
+    "role": "President of the Swiss Confederation",
+    "start": "1894-01-01",
+    "end": "1894-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Josef Zemp",
+    "role": "President of the Swiss Confederation",
+    "start": "1895-01-01",
+    "end": "1895-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Adrien Lachenal",
+    "role": "President of the Swiss Confederation",
+    "start": "1896-01-01",
+    "end": "1896-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Adolf Deucher",
+    "role": "President of the Swiss Confederation",
+    "start": "1897-01-01",
+    "end": "1897-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Eugène Ruffy",
+    "role": "President of the Swiss Confederation",
+    "start": "1898-01-01",
+    "end": "1898-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Eduard Müller",
+    "role": "President of the Swiss Confederation",
+    "start": "1899-01-01",
+    "end": "1899-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Walter Hauser",
+    "role": "President of the Swiss Confederation",
+    "start": "1900-01-01",
+    "end": "1900-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ernst Brenner",
+    "role": "President of the Swiss Confederation",
+    "start": "1901-01-01",
+    "end": "1901-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Josef Zemp",
+    "role": "President of the Swiss Confederation",
+    "start": "1902-01-01",
+    "end": "1902-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Adolf Deucher",
+    "role": "President of the Swiss Confederation",
+    "start": "1903-01-01",
+    "end": "1903-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Robert Comtesse",
+    "role": "President of the Swiss Confederation",
+    "start": "1904-01-01",
+    "end": "1904-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Marc-Émile Ruchet",
+    "role": "President of the Swiss Confederation",
+    "start": "1905-01-01",
+    "end": "1905-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ludwig Forrer",
+    "role": "President of the Swiss Confederation",
+    "start": "1906-01-01",
+    "end": "1906-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Eduard Müller",
+    "role": "President of the Swiss Confederation",
+    "start": "1907-01-01",
+    "end": "1907-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ernst Brenner",
+    "role": "President of the Swiss Confederation",
+    "start": "1908-01-01",
+    "end": "1908-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Adolf Deucher",
+    "role": "President of the Swiss Confederation",
+    "start": "1909-01-01",
+    "end": "1909-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Robert Comtesse",
+    "role": "President of the Swiss Confederation",
+    "start": "1910-01-01",
+    "end": "1910-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Marc-Émile Ruchet",
+    "role": "President of the Swiss Confederation",
+    "start": "1911-01-01",
+    "end": "1911-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ludwig Forrer",
+    "role": "President of the Swiss Confederation",
+    "start": "1912-01-01",
+    "end": "1912-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Eduard Müller",
+    "role": "President of the Swiss Confederation",
+    "start": "1913-01-01",
+    "end": "1913-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Arthur Hoffmann",
+    "role": "President of the Swiss Confederation",
+    "start": "1914-01-01",
+    "end": "1914-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Giuseppe Motta",
+    "role": "President of the Swiss Confederation",
+    "start": "1915-01-01",
+    "end": "1915-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Camille Decoppet",
+    "role": "President of the Swiss Confederation",
+    "start": "1916-01-01",
+    "end": "1916-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Edmund Schulthess",
+    "role": "President of the Swiss Confederation",
+    "start": "1917-01-01",
+    "end": "1917-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Felix Calonder",
+    "role": "President of the Swiss Confederation",
+    "start": "1918-01-01",
+    "end": "1918-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Gustave Ador",
+    "role": "President of the Swiss Confederation",
+    "start": "1919-01-01",
+    "end": "1919-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Liberal",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Giuseppe Motta",
+    "role": "President of the Swiss Confederation",
+    "start": "1920-01-01",
+    "end": "1920-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Edmund Schulthess",
+    "role": "President of the Swiss Confederation",
+    "start": "1921-01-01",
+    "end": "1921-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Robert Haab",
+    "role": "President of the Swiss Confederation",
+    "start": "1922-01-01",
+    "end": "1922-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Scheurer",
+    "role": "President of the Swiss Confederation",
+    "start": "1923-01-01",
+    "end": "1923-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ernest Chuard",
+    "role": "President of the Swiss Confederation",
+    "start": "1924-01-01",
+    "end": "1924-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jean-Marie Musy",
+    "role": "President of the Swiss Confederation",
+    "start": "1925-01-01",
+    "end": "1925-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Heinrich Häberlin",
+    "role": "President of the Swiss Confederation",
+    "start": "1926-01-01",
+    "end": "1926-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Giuseppe Motta",
+    "role": "President of the Swiss Confederation",
+    "start": "1927-01-01",
+    "end": "1927-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Edmund Schulthess",
+    "role": "President of the Swiss Confederation",
+    "start": "1928-01-01",
+    "end": "1928-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Robert Haab",
+    "role": "President of the Swiss Confederation",
+    "start": "1929-01-01",
+    "end": "1929-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jean-Marie Musy",
+    "role": "President of the Swiss Confederation",
+    "start": "1930-01-01",
+    "end": "1930-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Heinrich Häberlin",
+    "role": "President of the Swiss Confederation",
+    "start": "1931-01-01",
+    "end": "1931-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Giuseppe Motta",
+    "role": "President of the Swiss Confederation",
+    "start": "1932-01-01",
+    "end": "1932-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Edmund Schulthess",
+    "role": "President of the Swiss Confederation",
+    "start": "1933-01-01",
+    "end": "1933-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Marcel Pilet-Golaz",
+    "role": "President of the Swiss Confederation",
+    "start": "1934-01-01",
+    "end": "1934-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Rudolf Minger",
+    "role": "President of the Swiss Confederation",
+    "start": "1935-01-01",
+    "end": "1935-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "BGB",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Albert Meyer",
+    "role": "President of the Swiss Confederation",
+    "start": "1936-01-01",
+    "end": "1936-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Giuseppe Motta",
+    "role": "President of the Swiss Confederation",
+    "start": "1937-01-01",
+    "end": "1937-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Johannes Baumann",
+    "role": "President of the Swiss Confederation",
+    "start": "1938-01-01",
+    "end": "1938-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Philipp Etter",
+    "role": "President of the Swiss Confederation",
+    "start": "1939-01-01",
+    "end": "1939-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Marcel Pilet-Golaz",
+    "role": "President of the Swiss Confederation",
+    "start": "1940-01-01",
+    "end": "1940-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ernst Wetter",
+    "role": "President of the Swiss Confederation",
+    "start": "1941-01-01",
+    "end": "1941-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Philipp Etter",
+    "role": "President of the Swiss Confederation",
+    "start": "1942-01-01",
+    "end": "1942-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Enrico Celio",
+    "role": "President of the Swiss Confederation",
+    "start": "1943-01-01",
+    "end": "1943-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Walther Stampfli",
+    "role": "President of the Swiss Confederation",
+    "start": "1944-01-01",
+    "end": "1944-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Eduard von Steiger",
+    "role": "President of the Swiss Confederation",
+    "start": "1945-01-01",
+    "end": "1945-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "BGB",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Kobelt",
+    "role": "President of the Swiss Confederation",
+    "start": "1946-01-01",
+    "end": "1946-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Philipp Etter",
+    "role": "President of the Swiss Confederation",
+    "start": "1947-01-01",
+    "end": "1947-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Enrico Celio",
+    "role": "President of the Swiss Confederation",
+    "start": "1948-01-01",
+    "end": "1948-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ernst Nobs",
+    "role": "President of the Swiss Confederation",
+    "start": "1949-01-01",
+    "end": "1949-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Max Petitpierre",
+    "role": "President of the Swiss Confederation",
+    "start": "1950-01-01",
+    "end": "1950-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Eduard von Steiger",
+    "role": "President of the Swiss Confederation",
+    "start": "1951-01-01",
+    "end": "1951-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "BGB",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karl Kobelt",
+    "role": "President of the Swiss Confederation",
+    "start": "1952-01-01",
+    "end": "1952-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Philipp Etter",
+    "role": "President of the Swiss Confederation",
+    "start": "1953-01-01",
+    "end": "1953-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Rodolphe Rubattel",
+    "role": "President of the Swiss Confederation",
+    "start": "1954-01-01",
+    "end": "1954-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Max Petitpierre",
+    "role": "President of the Swiss Confederation",
+    "start": "1955-01-01",
+    "end": "1955-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Markus Feldmann",
+    "role": "President of the Swiss Confederation",
+    "start": "1956-01-01",
+    "end": "1956-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "BGB",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Hans Streuli",
+    "role": "President of the Swiss Confederation",
+    "start": "1957-01-01",
+    "end": "1957-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Thomas Holenstein",
+    "role": "President of the Swiss Confederation",
+    "start": "1958-01-01",
+    "end": "1958-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Paul Chaudet",
+    "role": "President of the Swiss Confederation",
+    "start": "1959-01-01",
+    "end": "1959-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Max Petitpierre",
+    "role": "President of the Swiss Confederation",
+    "start": "1960-01-01",
+    "end": "1960-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Friedrich Traugott Wahlen",
+    "role": "President of the Swiss Confederation",
+    "start": "1961-01-01",
+    "end": "1961-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "BGB",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Paul Chaudet",
+    "role": "President of the Swiss Confederation",
+    "start": "1962-01-01",
+    "end": "1962-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Willy Spühler",
+    "role": "President of the Swiss Confederation",
+    "start": "1963-01-01",
+    "end": "1963-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ludwig von Moos",
+    "role": "President of the Swiss Confederation",
+    "start": "1964-01-01",
+    "end": "1964-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Hans-Peter Tschudi",
+    "role": "President of the Swiss Confederation",
+    "start": "1965-01-01",
+    "end": "1965-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Hans Schaffner",
+    "role": "President of the Swiss Confederation",
+    "start": "1966-01-01",
+    "end": "1966-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Roger Bonvin",
+    "role": "President of the Swiss Confederation",
+    "start": "1967-01-01",
+    "end": "1967-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Willy Spühler",
+    "role": "President of the Swiss Confederation",
+    "start": "1968-01-01",
+    "end": "1968-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ludwig von Moos",
+    "role": "President of the Swiss Confederation",
+    "start": "1969-01-01",
+    "end": "1969-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Catholic-Conservative",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Hans-Peter Tschudi",
+    "role": "President of the Swiss Confederation",
+    "start": "1970-01-01",
+    "end": "1970-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Rudolf Gnägi",
+    "role": "President of the Swiss Confederation",
+    "start": "1971-01-01",
+    "end": "1971-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Nello Celio",
+    "role": "President of the Swiss Confederation",
+    "start": "1972-01-01",
+    "end": "1972-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Roger Bonvin",
+    "role": "President of the Swiss Confederation",
+    "start": "1973-01-01",
+    "end": "1973-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ernst Brugger",
+    "role": "President of the Swiss Confederation",
+    "start": "1974-01-01",
+    "end": "1974-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Pierre Graber",
+    "role": "President of the Swiss Confederation",
+    "start": "1975-01-01",
+    "end": "1975-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Rudolf Gnägi",
+    "role": "President of the Swiss Confederation",
+    "start": "1976-01-01",
+    "end": "1976-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Kurt Furgler",
+    "role": "President of the Swiss Confederation",
+    "start": "1977-01-01",
+    "end": "1977-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Willi Ritschard",
+    "role": "President of the Swiss Confederation",
+    "start": "1978-01-01",
+    "end": "1978-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Hans Hürlimann",
+    "role": "President of the Swiss Confederation",
+    "start": "1979-01-01",
+    "end": "1979-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Georges-André Chevallaz",
+    "role": "President of the Swiss Confederation",
+    "start": "1980-01-01",
+    "end": "1980-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Kurt Furgler",
+    "role": "President of the Swiss Confederation",
+    "start": "1981-01-01",
+    "end": "1981-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Fritz Honegger",
+    "role": "President of the Swiss Confederation",
+    "start": "1982-01-01",
+    "end": "1982-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Pierre Aubert",
+    "role": "President of the Swiss Confederation",
+    "start": "1983-01-01",
+    "end": "1983-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Leon Schlumpf",
+    "role": "President of the Swiss Confederation",
+    "start": "1984-01-01",
+    "end": "1984-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Kurt Furgler",
+    "role": "President of the Swiss Confederation",
+    "start": "1985-01-01",
+    "end": "1985-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Alphons Egli",
+    "role": "President of the Swiss Confederation",
+    "start": "1986-01-01",
+    "end": "1986-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Pierre Aubert",
+    "role": "President of the Swiss Confederation",
+    "start": "1987-01-01",
+    "end": "1987-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Otto Stich",
+    "role": "President of the Swiss Confederation",
+    "start": "1988-01-01",
+    "end": "1988-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jean-Pascal Delamuraz",
+    "role": "President of the Swiss Confederation",
+    "start": "1989-01-01",
+    "end": "1989-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Arnold Koller",
+    "role": "President of the Swiss Confederation",
+    "start": "1990-01-01",
+    "end": "1990-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Flavio Cotti",
+    "role": "President of the Swiss Confederation",
+    "start": "1991-01-01",
+    "end": "1991-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "René Felber",
+    "role": "President of the Swiss Confederation",
+    "start": "1992-01-01",
+    "end": "1992-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Adolf Ogi",
+    "role": "President of the Swiss Confederation",
+    "start": "1993-01-01",
+    "end": "1993-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Otto Stich",
+    "role": "President of the Swiss Confederation",
+    "start": "1994-01-01",
+    "end": "1994-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Kaspar Villiger",
+    "role": "President of the Swiss Confederation",
+    "start": "1995-01-01",
+    "end": "1995-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Jean-Pascal Delamuraz",
+    "role": "President of the Swiss Confederation",
+    "start": "1996-01-01",
+    "end": "1996-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Arnold Koller",
+    "role": "President of the Swiss Confederation",
+    "start": "1997-01-01",
+    "end": "1997-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Flavio Cotti",
+    "role": "President of the Swiss Confederation",
+    "start": "1998-01-01",
+    "end": "1998-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ruth Dreifuss",
+    "role": "President of the Swiss Confederation",
+    "start": "1999-01-01",
+    "end": "1999-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Adolf Ogi",
+    "role": "President of the Swiss Confederation",
+    "start": "2000-01-01",
+    "end": "2000-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Moritz Leuenberger",
+    "role": "President of the Swiss Confederation",
+    "start": "2001-01-01",
+    "end": "2001-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Kaspar Villiger",
+    "role": "President of the Swiss Confederation",
+    "start": "2002-01-01",
+    "end": "2002-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Pascal Couchepin",
+    "role": "President of the Swiss Confederation",
+    "start": "2003-01-01",
+    "end": "2003-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Joseph Deiss",
+    "role": "President of the Swiss Confederation",
+    "start": "2004-01-01",
+    "end": "2004-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Samuel Schmid",
+    "role": "President of the Swiss Confederation",
+    "start": "2005-01-01",
+    "end": "2005-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Moritz Leuenberger",
+    "role": "President of the Swiss Confederation",
+    "start": "2006-01-01",
+    "end": "2006-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Micheline Calmy-Rey",
+    "role": "President of the Swiss Confederation",
+    "start": "2007-01-01",
+    "end": "2007-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Pascal Couchepin",
+    "role": "President of the Swiss Confederation",
+    "start": "2008-01-01",
+    "end": "2008-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Hans-Rudolf Merz",
+    "role": "President of the Swiss Confederation",
+    "start": "2009-01-01",
+    "end": "2009-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "FDP/Radical",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Doris Leuthard",
+    "role": "President of the Swiss Confederation",
+    "start": "2010-01-01",
+    "end": "2010-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "CVP/Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Micheline Calmy-Rey",
+    "role": "President of the Swiss Confederation",
+    "start": "2011-01-01",
+    "end": "2011-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Eveline Widmer-Schlumpf",
+    "role": "President of the Swiss Confederation",
+    "start": "2012-01-01",
+    "end": "2012-12-31",
+    "current": false,
+    "tenure": "1 year",
+    "party": "BDP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
     "name": "Ueli Maurer",
     "role": "President of the Swiss Confederation",
     "start": "2013-01-01",

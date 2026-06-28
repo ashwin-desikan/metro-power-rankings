@@ -60,7 +60,7 @@ const HEAD_OF_GOV_PRIORITY = [
 const PM_LED_COUNTRIES = new Set([
   // Parliamentary / PM-led systems where the head of government leads and the
   // president (or, in BiH, the tripartite presidency) is largely ceremonial.
-  "poland", "austria", "czech-republic", "hungary", "greece", "portugal", "finland",
+  "germany", "poland", "austria", "czech-republic", "hungary", "greece", "portugal", "finland",
   "ethiopia", "iraq", "georgia", "croatia", "bulgaria", "bosnia-herzegovina",
   "montenegro", "slovenia", "slovakia", "lithuania",
 ]);

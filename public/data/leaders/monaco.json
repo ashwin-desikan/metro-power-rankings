@@ -1,5 +1,35 @@
 [
   {
+    "name": "👑 Charles III",
+    "role": "Monarch",
+    "start": "1856-06-20",
+    "end": "1889-09-10",
+    "current": false,
+    "tenure": "33 years",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Albert I",
+    "role": "Monarch",
+    "start": "1889-09-10",
+    "end": "1922-06-26",
+    "current": false,
+    "tenure": "32 years",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Louis II",
+    "role": "Monarch",
+    "start": "1922-06-26",
+    "end": "1949-05-09",
+    "current": false,
+    "tenure": "26 years",
+    "party": null,
+    "era": null
+  },
+  {
     "name": "👑 Rainier III",
     "role": "Monarch",
     "start": "1949-05-09",
@@ -21,7 +51,7 @@
   },
   {
     "name": "Pierre Dartout",
-    "role": "Prime Minister",
+    "role": "Minister of State",
     "start": "2020-09-01",
     "end": "2024-09-01",
     "current": false,
@@ -31,7 +61,7 @@
   },
   {
     "name": "Didier Guillaume",
-    "role": "Prime Minister",
+    "role": "Minister of State",
     "start": "2024-09-02",
     "end": "2025-01-17",
     "current": false,
@@ -41,7 +71,7 @@
   },
   {
     "name": "Isabelle Berro-Amadeï",
-    "role": "Prime Minister",
+    "role": "Minister of State",
     "start": "2025-01-17",
     "end": "2025-07-21",
     "current": false,
@@ -51,7 +81,7 @@
   },
   {
     "name": "Christophe Mirmand",
-    "role": "Prime Minister",
+    "role": "Minister of State",
     "start": "2025-07-21",
     "end": null,
     "current": true,

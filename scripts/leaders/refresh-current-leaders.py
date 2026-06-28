@@ -35,10 +35,12 @@ OUT = LEADERS_DIR / "_current.json"
 
 # Parliamentary / PM-led systems: head of government leads, president ceremonial.
 PM_LED = {
-    "poland","austria","czech-republic","hungary","greece","portugal","finland",
+    "germany","poland","austria","czech-republic","hungary","greece","portugal","finland",
     "ethiopia","iraq","georgia","croatia","bulgaria","bosnia-herzegovina",
     "montenegro","slovenia","slovakia","lithuania",
 }
+# Executive monarchies where the sovereign (not the appointed head of government) leads.
+MONARCH_LED = {"monaco"}
 # Current leaders that carry a warning glyph (editorial; cannot be auto-derived).
 WARN_NAMES = {
     # Current leaders carrying a warning glyph (atrocities / systemic subversion /
@@ -46,6 +48,7 @@ WARN_NAMES = {
     # history files directly; this set only re-applies the glyph on the live feed.
     "Vladimir Putin","Ali Khamenei","Kim Jong-un","Alexander Lukashenko",
     "Abdel Fattah al-Burhan","Min Aung Hlaing","Donald Trump",
+    "Abdel Fattah el-Sisi","Kais Saied","Benjamin Netanyahu",
 }
 ROLE_DEFAULT = ["Supreme Leader","General Secretary","President","Chancellor",
                 "Prime Minister","Taoiseach","Premier","Monarch"]
@@ -109,7 +112,7 @@ def build_entry(slug, hos_name, hog_name, hog_office, form):
     # ceremonial monarch, matching the rest of the site).
     pm_led = (slug in PM_LED) or ("parliamentary" in form_l)
     cands = []
-    if hog_name:
+    if hog_name and slug not in MONARCH_LED:
         cands.append({"name": hog_name, "role": hog_role_token(hog_office)})
     if hos_name:
         if is_monarchy:
@@ -199,6 +202,9 @@ def self_test():
     # semi-presidential not in PM_LED -> president leads (e.g. France/Russia style)
     e = build_entry("france", "Emmanuel Macron", "Some PM", "Prime Minister of France", "semi-presidential system")
     assert e["name"] == "Emmanuel Macron" and e["role"] == "Pres.", e
+    # executive monarchy: sovereign leads, head of government suppressed
+    e = build_entry("monaco", "Albert II", "Christophe Mirmand", "Minister of State", "constitutional monarchy")
+    assert e["role"] == "Monarch" and "second" not in e, e
     print("self-test OK")
 
 if __name__ == "__main__":

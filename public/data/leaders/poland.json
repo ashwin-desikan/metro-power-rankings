@@ -1,5 +1,135 @@
 [
   {
+    "name": "Józef Piłsudski",
+    "role": "President (Chief of State)",
+    "start": "1918-11-14",
+    "end": "1922-12-11",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Second Polish Republic"
+  },
+  {
+    "name": "Gabriel Narutowicz",
+    "role": "President",
+    "start": "1922-12-11",
+    "end": "1922-12-16",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Second Polish Republic"
+  },
+  {
+    "name": "Stanisław Wojciechowski",
+    "role": "President",
+    "start": "1922-12-22",
+    "end": "1926-05-14",
+    "current": false,
+    "tenure": null,
+    "party": "Polish People's Party \"Piast\"",
+    "era": "Second Polish Republic"
+  },
+  {
+    "name": "Józef Piłsudski",
+    "role": "De facto leader (post-May Coup)",
+    "start": "1926-05-12",
+    "end": "1935-05-12",
+    "current": false,
+    "tenure": null,
+    "party": "Sanacja",
+    "era": "Second Polish Republic"
+  },
+  {
+    "name": "Ignacy Mościcki",
+    "role": "President",
+    "start": "1926-06-04",
+    "end": "1939-09-30",
+    "current": false,
+    "tenure": null,
+    "party": "Nonpartisan Bloc (BBWR)",
+    "era": "Second Polish Republic"
+  },
+  {
+    "name": "Władysław Raczkiewicz",
+    "role": "President (in exile)",
+    "start": "1939-09-30",
+    "end": "1945-07-05",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Government-in-Exile / WWII"
+  },
+  {
+    "name": "Władysław Sikorski",
+    "role": "Prime Minister (in exile)",
+    "start": "1939-09-30",
+    "end": "1943-07-04",
+    "current": false,
+    "tenure": null,
+    "party": "Front Morges / Independent",
+    "era": "Government-in-Exile / WWII"
+  },
+  {
+    "name": "⚠️ Bolesław Bierut",
+    "role": "President",
+    "start": "1945-06-28",
+    "end": "1956-03-12",
+    "current": false,
+    "tenure": null,
+    "party": "PPR / PZPR",
+    "era": "Polish People's Republic"
+  },
+  {
+    "name": "Edward Ochab",
+    "role": "General Secretary",
+    "start": "1956-03-20",
+    "end": "1956-10-21",
+    "current": false,
+    "tenure": null,
+    "party": "PZPR",
+    "era": "Polish People's Republic"
+  },
+  {
+    "name": "Władysław Gomułka",
+    "role": "General Secretary",
+    "start": "1956-10-21",
+    "end": "1970-12-20",
+    "current": false,
+    "tenure": null,
+    "party": "PZPR",
+    "era": "Polish People's Republic"
+  },
+  {
+    "name": "Edward Gierek",
+    "role": "General Secretary",
+    "start": "1970-12-20",
+    "end": "1980-09-06",
+    "current": false,
+    "tenure": null,
+    "party": "PZPR",
+    "era": "Polish People's Republic"
+  },
+  {
+    "name": "Stanisław Kania",
+    "role": "General Secretary",
+    "start": "1980-09-06",
+    "end": "1981-10-18",
+    "current": false,
+    "tenure": null,
+    "party": "PZPR",
+    "era": "Polish People's Republic"
+  },
+  {
+    "name": "Wojciech Jaruzelski",
+    "role": "General Secretary",
+    "start": "1981-10-18",
+    "end": "1989-07-19",
+    "current": false,
+    "tenure": null,
+    "party": "PZPR",
+    "era": "Polish People's Republic"
+  },
+  {
     "name": "Wojciech Jaruzelski",
     "role": "President",
     "start": "1989-07-19",
@@ -7,7 +137,7 @@
     "current": false,
     "tenure": "1y 5m 11d",
     "party": "PZPR; last communist-era president",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Tadeusz Mazowiecki",
@@ -17,7 +147,7 @@
     "current": false,
     "tenure": "1y 4m 18d",
     "party": "Solidarity; 1st non-communist PM",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Lech Wałęsa",
@@ -27,7 +157,7 @@
     "current": false,
     "tenure": "5y 26d",
     "party": "Solidarity",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Jan Krzysztof Bielecki",
@@ -37,7 +167,7 @@
     "current": false,
     "tenure": "11m 6d",
     "party": "KLD",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Jan Olszewski",
@@ -47,7 +177,7 @@
     "current": false,
     "tenure": "6m 2d",
     "party": "PC; removed by no-confidence",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Hanna Suchocka",
@@ -57,7 +187,7 @@
     "current": false,
     "tenure": "1y 3m 22d",
     "party": "UD; 1st female Polish PM",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Waldemar Pawlak",
@@ -67,7 +197,7 @@
     "current": false,
     "tenure": "1y 4m 17d",
     "party": "PSL; 2nd term",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Józef Oleksy",
@@ -77,7 +207,7 @@
     "current": false,
     "tenure": "11m 7d",
     "party": "SLD",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Aleksander Kwaśniewski",
@@ -87,7 +217,7 @@
     "current": false,
     "tenure": "10y 23d",
     "party": "SLD; 2 terms",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Włodzimierz Cimoszewicz",
@@ -97,7 +227,7 @@
     "current": false,
     "tenure": "1y 8m 2d",
     "party": "SLD",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Jerzy Buzek",
@@ -107,7 +237,7 @@
     "current": false,
     "tenure": "3y 11m 9d",
     "party": "AWS",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Leszek Miller",
@@ -117,7 +247,7 @@
     "current": false,
     "tenure": "2y 6m 26d",
     "party": "SLD",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Marek Belka",
@@ -127,7 +257,7 @@
     "current": false,
     "tenure": "1y 6m 7d",
     "party": "SLD",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Kazimierz Marcinkiewicz",
@@ -137,7 +267,7 @@
     "current": false,
     "tenure": "8m 16d",
     "party": "PiS",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Lech Kaczyński",
@@ -147,7 +277,7 @@
     "current": false,
     "tenure": "4y 3m 9d",
     "party": "PiS; died in Smolensk crash",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Jarosław Kaczyński",
@@ -157,7 +287,7 @@
     "current": false,
     "tenure": "1y 4m 10d",
     "party": "PiS",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Donald Tusk",
@@ -167,7 +297,7 @@
     "current": false,
     "tenure": "6y 10m 12d",
     "party": "PO; 1st term; left for EU Council",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Bronisław Komorowski",
@@ -177,7 +307,7 @@
     "current": false,
     "tenure": "3m",
     "party": "PO",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Bronisław Komorowski",
@@ -187,7 +317,7 @@
     "current": false,
     "tenure": "5y",
     "party": "PO",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Ewa Kopacz",
@@ -197,7 +327,7 @@
     "current": false,
     "tenure": "1y 1m",
     "party": "PO",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Andrzej Duda",
@@ -207,7 +337,7 @@
     "current": false,
     "tenure": "10y 23d",
     "party": "PiS; 2 terms",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Beata Szydło",
@@ -217,7 +347,7 @@
     "current": false,
     "tenure": "2y 6d",
     "party": "PiS",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Mateusz Morawiecki",
@@ -227,7 +357,7 @@
     "current": false,
     "tenure": "6y 3d",
     "party": "PiS",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Donald Tusk",
@@ -237,7 +367,7 @@
     "current": true,
     "tenure": "2y 6m 27d",
     "party": "KO; 2nd term",
-    "era": null
+    "era": "Third Polish Republic"
   },
   {
     "name": "Karol Nawrocki",
@@ -247,6 +377,6 @@
     "current": true,
     "tenure": "10m 25d",
     "party": "Independent (PiS-backed)",
-    "era": null
+    "era": "Third Polish Republic"
   }
 ]
