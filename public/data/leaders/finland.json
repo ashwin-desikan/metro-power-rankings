@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Carl Gustaf Emil Mannerheim",
+    "role": "President",
+    "start": "1944-08-04",
+    "end": "1946-03-11",
+    "current": false,
+    "tenure": "1944–1946",
+    "party": "Independent",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Juho Kusti Paasikivi",
+    "role": "President",
+    "start": "1946-03-11",
+    "end": "1956-03-01",
+    "current": false,
+    "tenure": "1946–1956",
+    "party": "National Coalition Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Urho Kekkonen",
+    "role": "President",
+    "start": "1956-03-01",
+    "end": "1982-01-27",
+    "current": false,
+    "tenure": "1956–1982",
+    "party": "Centre Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Mauno Koivisto",
+    "role": "President",
+    "start": "1982-01-27",
+    "end": "1994-03-01",
+    "current": false,
+    "tenure": "1982–1994",
+    "party": "Social Democratic Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Martti Ahtisaari",
+    "role": "President",
+    "start": "1994-03-01",
+    "end": "2000-03-01",
+    "current": false,
+    "tenure": "1994–2000",
+    "party": "Social Democratic Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Paavo Lipponen",
+    "role": "Prime Minister",
+    "start": "1995-04-13",
+    "end": "2003-04-17",
+    "current": false,
+    "tenure": "1995–2003",
+    "party": "Social Democratic Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Tarja Halonen",
+    "role": "President",
+    "start": "2000-03-01",
+    "end": "2012-03-01",
+    "current": false,
+    "tenure": "2000–2012",
+    "party": "Social Democratic Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Matti Vanhanen",
+    "role": "Prime Minister",
+    "start": "2003-06-24",
+    "end": "2010-06-22",
+    "current": false,
+    "tenure": "2003–2010",
+    "party": "Centre Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Jyrki Katainen",
+    "role": "Prime Minister",
+    "start": "2011-06-22",
+    "end": "2014-06-24",
+    "current": false,
+    "tenure": "2011–2014",
+    "party": "National Coalition Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Sauli Niinistö",
+    "role": "President",
+    "start": "2012-03-01",
+    "end": "2024-03-01",
+    "current": false,
+    "tenure": "2012–2024",
+    "party": "National Coalition Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Juha Sipilä",
+    "role": "Prime Minister",
+    "start": "2015-05-29",
+    "end": "2019-06-06",
+    "current": false,
+    "tenure": "2015–2019",
+    "party": "Centre Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Sanna Marin",
+    "role": "Prime Minister",
+    "start": "2019-12-10",
+    "end": "2023-06-20",
+    "current": false,
+    "tenure": "2019–2023",
+    "party": "Social Democratic Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Petteri Orpo",
+    "role": "Prime Minister",
+    "start": "2023-06-20",
+    "end": null,
+    "current": true,
+    "tenure": "2023–present",
+    "party": "National Coalition Party",
+    "era": "Republic of Finland"
+  },
+  {
+    "name": "Alexander Stubb",
+    "role": "President",
+    "start": "2024-03-01",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present",
+    "party": "National Coalition Party",
+    "era": "Republic of Finland"
+  }
+]

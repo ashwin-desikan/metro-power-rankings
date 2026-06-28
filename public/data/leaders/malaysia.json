@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Tunku Abdul Rahman",
+    "role": "Prime Minister",
+    "start": "1957-08-31",
+    "end": "1970-09-22",
+    "current": false,
+    "tenure": "1957–1970",
+    "party": "Alliance (UMNO)",
+    "era": "1950s–60s"
+  },
+  {
+    "name": "Abdul Razak Hussein",
+    "role": "Prime Minister",
+    "start": "1970-09-22",
+    "end": "1976-01-14",
+    "current": false,
+    "tenure": "1970–1976",
+    "party": "Alliance / Barisan Nasional (UMNO)",
+    "era": "1970s"
+  },
+  {
+    "name": "Hussein Onn",
+    "role": "Prime Minister",
+    "start": "1976-01-15",
+    "end": "1981-07-16",
+    "current": false,
+    "tenure": "1976–1981",
+    "party": "Barisan Nasional (UMNO)",
+    "era": "1970s–80s"
+  },
+  {
+    "name": "Mahathir Mohamad",
+    "role": "Prime Minister",
+    "start": "1981-07-16",
+    "end": "2003-10-31",
+    "current": false,
+    "tenure": "1981–2003",
+    "party": "Barisan Nasional (UMNO)",
+    "era": "1980s–2000s"
+  },
+  {
+    "name": "Abdullah Ahmad Badawi",
+    "role": "Prime Minister",
+    "start": "2003-10-31",
+    "end": "2009-04-03",
+    "current": false,
+    "tenure": "2003–2009",
+    "party": "Barisan Nasional (UMNO)",
+    "era": "2000s"
+  },
+  {
+    "name": "Najib Razak",
+    "role": "Prime Minister",
+    "start": "2009-04-03",
+    "end": "2018-05-10",
+    "current": false,
+    "tenure": "2009–2018",
+    "party": "Barisan Nasional (UMNO)",
+    "era": "2010s"
+  },
+  {
+    "name": "Mahathir Mohamad",
+    "role": "Prime Minister",
+    "start": "2018-05-10",
+    "end": "2020-03-01",
+    "current": false,
+    "tenure": "2018–2020",
+    "party": "Pakatan Harapan (PPBM)",
+    "era": "2010s–20s"
+  },
+  {
+    "name": "Muhyiddin Yassin",
+    "role": "Prime Minister",
+    "start": "2020-03-01",
+    "end": "2021-08-16",
+    "current": false,
+    "tenure": "2020–2021",
+    "party": "Perikatan Nasional (PPBM)",
+    "era": "2020s"
+  },
+  {
+    "name": "Ismail Sabri Yaakob",
+    "role": "Prime Minister",
+    "start": "2021-08-21",
+    "end": "2022-11-24",
+    "current": false,
+    "tenure": "2021–2022",
+    "party": "Barisan Nasional (UMNO)",
+    "era": "2020s"
+  },
+  {
+    "name": "Anwar Ibrahim",
+    "role": "Prime Minister",
+    "start": "2022-11-24",
+    "end": null,
+    "current": true,
+    "tenure": "2022–present",
+    "party": "Pakatan Harapan (PKR)",
+    "era": "2020s"
+  },
+  {
+    "name": "👑 Sultan Ibrahim of Johor",
+    "role": "Monarch (Yang di-Pertuan Agong)",
+    "start": "2024-01-31",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present",
+    "party": null,
+    "era": "2020s"
+  }
+]

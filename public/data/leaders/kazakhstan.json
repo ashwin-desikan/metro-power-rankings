@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Nursultan Nazarbayev",
+    "role": "President",
+    "start": "1991-12-16",
+    "end": "2019-03-20",
+    "current": false,
+    "tenure": "1991–2019",
+    "party": "Nur Otan",
+    "era": "Republic of Kazakhstan"
+  },
+  {
+    "name": "Askar Mamin",
+    "role": "Prime Minister",
+    "start": "2019-02-25",
+    "end": "2022-01-05",
+    "current": false,
+    "tenure": "2019–2022",
+    "party": "Independent",
+    "era": "Republic of Kazakhstan"
+  },
+  {
+    "name": "Kassym-Jomart Tokayev",
+    "role": "President",
+    "start": "2019-03-20",
+    "end": null,
+    "current": true,
+    "tenure": "2019–present",
+    "party": "Amanat",
+    "era": "Republic of Kazakhstan"
+  },
+  {
+    "name": "Alikhan Smailov",
+    "role": "Prime Minister",
+    "start": "2022-01-11",
+    "end": "2024-02-06",
+    "current": false,
+    "tenure": "2022–2024",
+    "party": "Independent",
+    "era": "Republic of Kazakhstan"
+  },
+  {
+    "name": "Olzhas Bektenov",
+    "role": "Prime Minister",
+    "start": "2024-02-06",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present",
+    "party": "Independent",
+    "era": "Republic of Kazakhstan"
+  }
+]

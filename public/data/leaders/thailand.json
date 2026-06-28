@@ -1,0 +1,422 @@
+[
+  {
+    "name": "👑 Prajadhipok (Rama VII)",
+    "role": "Monarch",
+    "start": "1925-11-26",
+    "end": "1935-03-02",
+    "current": false,
+    "tenure": "1925–1935 (abdicated)",
+    "party": null,
+    "era": "Chakri Dynasty"
+  },
+  {
+    "name": "Phraya Manopakorn Nititada",
+    "role": "Prime Minister",
+    "start": "1932-06-28",
+    "end": "1933-06-21",
+    "current": false,
+    "tenure": "1932–1933",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Phraya Phahon Phonphayuhasena",
+    "role": "Prime Minister",
+    "start": "1933-06-21",
+    "end": "1938-12-16",
+    "current": false,
+    "tenure": "1933–1938",
+    "party": "Khana Ratsadon",
+    "era": null
+  },
+  {
+    "name": "👑 Ananda Mahidol (Rama VIII)",
+    "role": "Monarch",
+    "start": "1935-03-02",
+    "end": "1946-06-09",
+    "current": false,
+    "tenure": "1935–1946",
+    "party": null,
+    "era": "Chakri Dynasty"
+  },
+  {
+    "name": "⚠️ Plaek Phibunsongkhram (Phibun)",
+    "role": "Prime Minister",
+    "start": "1938-12-16",
+    "end": "1944-08-01",
+    "current": false,
+    "tenure": "1938–1944",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Khuang Aphaiwong",
+    "role": "Prime Minister",
+    "start": "1944-08-01",
+    "end": "1945-08-31",
+    "current": false,
+    "tenure": "1944–1945",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tawee Boonyaket",
+    "role": "Prime Minister",
+    "start": "1945-08-31",
+    "end": "1945-09-17",
+    "current": false,
+    "tenure": "1945",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Seni Pramoj",
+    "role": "Prime Minister",
+    "start": "1945-09-17",
+    "end": "1946-01-31",
+    "current": false,
+    "tenure": "1945–1946",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Pridi Banomyong",
+    "role": "Prime Minister",
+    "start": "1946-03-24",
+    "end": "1946-08-23",
+    "current": false,
+    "tenure": "1946",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Bhumibol Adulyadej (Rama IX)",
+    "role": "Monarch",
+    "start": "1946-06-09",
+    "end": "2016-10-13",
+    "current": false,
+    "tenure": "1946–2016",
+    "party": null,
+    "era": "Chakri Dynasty"
+  },
+  {
+    "name": "Thawan Thamrongnawasawat",
+    "role": "Prime Minister",
+    "start": "1946-08-23",
+    "end": "1947-11-08",
+    "current": false,
+    "tenure": "1946–1947",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "⚠️ Plaek Phibunsongkhram (Phibun)",
+    "role": "Prime Minister",
+    "start": "1948-04-08",
+    "end": "1957-09-16",
+    "current": false,
+    "tenure": "1948–1957 (second term, ousted by coup)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Pote Sarasin",
+    "role": "Prime Minister",
+    "start": "1957-09-21",
+    "end": "1958-01-01",
+    "current": false,
+    "tenure": "1957–1958",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Thanom Kittikachorn",
+    "role": "Prime Minister",
+    "start": "1958-01-01",
+    "end": "1958-10-20",
+    "current": false,
+    "tenure": "1958 (first term)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "⚠️ Sarit Thanarat",
+    "role": "Prime Minister",
+    "start": "1959-02-09",
+    "end": "1963-12-08",
+    "current": false,
+    "tenure": "1959–1963 (military dictator)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "⚠️ Thanom Kittikachorn",
+    "role": "Prime Minister",
+    "start": "1963-12-09",
+    "end": "1973-10-14",
+    "current": false,
+    "tenure": "1963–1973 (ousted in October 1973 uprising)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sanya Dharmasakti",
+    "role": "Prime Minister",
+    "start": "1973-10-14",
+    "end": "1975-02-15",
+    "current": false,
+    "tenure": "1973–1975",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Seni Pramoj",
+    "role": "Prime Minister",
+    "start": "1975-02-15",
+    "end": "1975-03-14",
+    "current": false,
+    "tenure": "1975 (second term)",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Kukrit Pramoj",
+    "role": "Prime Minister",
+    "start": "1975-03-14",
+    "end": "1976-04-20",
+    "current": false,
+    "tenure": "1975–1976",
+    "party": "Social Action",
+    "era": null
+  },
+  {
+    "name": "Seni Pramoj",
+    "role": "Prime Minister",
+    "start": "1976-04-20",
+    "end": "1976-10-06",
+    "current": false,
+    "tenure": "1976 (third term)",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Thanin Kraivichien",
+    "role": "Prime Minister",
+    "start": "1976-10-08",
+    "end": "1977-10-20",
+    "current": false,
+    "tenure": "1976–1977",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kriangsak Chamanan",
+    "role": "Prime Minister",
+    "start": "1977-11-11",
+    "end": "1980-03-03",
+    "current": false,
+    "tenure": "1977–1980",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Prem Tinsulanonda",
+    "role": "Prime Minister",
+    "start": "1980-03-03",
+    "end": "1988-08-04",
+    "current": false,
+    "tenure": "1980–1988",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Chatichai Choonhavan",
+    "role": "Prime Minister",
+    "start": "1988-08-04",
+    "end": "1991-02-23",
+    "current": false,
+    "tenure": "1988–1991 (ousted by coup)",
+    "party": "Chart Thai",
+    "era": null
+  },
+  {
+    "name": "Anand Panyarachun",
+    "role": "Prime Minister",
+    "start": "1991-03-02",
+    "end": "1992-04-07",
+    "current": false,
+    "tenure": "1991–1992 (first term)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "⚠️ Suchinda Kraprayoon",
+    "role": "Prime Minister",
+    "start": "1992-04-07",
+    "end": "1992-05-24",
+    "current": false,
+    "tenure": "1992 (resigned after Black May)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Anand Panyarachun",
+    "role": "Prime Minister",
+    "start": "1992-06-10",
+    "end": "1992-09-23",
+    "current": false,
+    "tenure": "1992 (second term, caretaker)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Chuan Leekpai",
+    "role": "Prime Minister",
+    "start": "1992-09-23",
+    "end": "1995-07-13",
+    "current": false,
+    "tenure": "1992–1995 (first term)",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Banharn Silpa-archa",
+    "role": "Prime Minister",
+    "start": "1995-07-13",
+    "end": "1996-11-25",
+    "current": false,
+    "tenure": "1995–1996",
+    "party": "Chart Thai",
+    "era": null
+  },
+  {
+    "name": "Chavalit Yongchaiyudh",
+    "role": "Prime Minister",
+    "start": "1996-11-25",
+    "end": "1997-11-09",
+    "current": false,
+    "tenure": "1996–1997",
+    "party": "New Aspiration",
+    "era": null
+  },
+  {
+    "name": "Chuan Leekpai",
+    "role": "Prime Minister",
+    "start": "1997-11-09",
+    "end": "2001-02-09",
+    "current": false,
+    "tenure": "1997–2001 (second term)",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Thaksin Shinawatra",
+    "role": "Prime Minister",
+    "start": "2001-02-09",
+    "end": "2006-09-19",
+    "current": false,
+    "tenure": "2001–2006 (ousted by coup)",
+    "party": "Thai Rak Thai",
+    "era": null
+  },
+  {
+    "name": "⚠️ Surayud Chulanont",
+    "role": "Prime Minister",
+    "start": "2006-10-01",
+    "end": "2008-01-29",
+    "current": false,
+    "tenure": "2006–2008 (post-coup junta-appointed)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Samak Sundaravej",
+    "role": "Prime Minister",
+    "start": "2008-01-29",
+    "end": "2008-09-09",
+    "current": false,
+    "tenure": "2008 (removed by court)",
+    "party": "People's Power",
+    "era": null
+  },
+  {
+    "name": "Somchai Wongsawat",
+    "role": "Prime Minister",
+    "start": "2008-09-18",
+    "end": "2008-12-02",
+    "current": false,
+    "tenure": "2008 (removed by court)",
+    "party": "People's Power",
+    "era": null
+  },
+  {
+    "name": "Abhisit Vejjajiva",
+    "role": "Prime Minister",
+    "start": "2008-12-17",
+    "end": "2011-08-05",
+    "current": false,
+    "tenure": "2008–2011",
+    "party": "Democrat",
+    "era": null
+  },
+  {
+    "name": "Yingluck Shinawatra",
+    "role": "Prime Minister",
+    "start": "2011-08-05",
+    "end": "2014-05-07",
+    "current": false,
+    "tenure": "2011–2014 (removed by court)",
+    "party": "Pheu Thai",
+    "era": null
+  },
+  {
+    "name": "⚠️ Prayut Chan-o-cha",
+    "role": "Prime Minister",
+    "start": "2014-08-24",
+    "end": "2023-08-22",
+    "current": false,
+    "tenure": "2014–2023 (coup leader, then elected)",
+    "party": "United Thai Nation",
+    "era": null
+  },
+  {
+    "name": "👑 Vajiralongkorn (Rama X)",
+    "role": "Monarch",
+    "start": "2016-10-13",
+    "end": null,
+    "current": true,
+    "tenure": "2016–present",
+    "party": null,
+    "era": "Chakri Dynasty"
+  },
+  {
+    "name": "Srettha Thavisin",
+    "role": "Prime Minister",
+    "start": "2023-08-22",
+    "end": "2024-08-14",
+    "current": false,
+    "tenure": "2023–2024 (removed by court)",
+    "party": "Pheu Thai",
+    "era": null
+  },
+  {
+    "name": "Paetongtarn Shinawatra",
+    "role": "Prime Minister",
+    "start": "2024-08-16",
+    "end": "2025-08-29",
+    "current": false,
+    "tenure": "2024–2025 (removed by Constitutional Court)",
+    "party": "Pheu Thai",
+    "era": null
+  },
+  {
+    "name": "Anutin Charnvirakul",
+    "role": "Prime Minister",
+    "start": "2025-09-05",
+    "end": null,
+    "current": true,
+    "tenure": "2025–present",
+    "party": "Bhumjaithai",
+    "era": null
+  }
+]

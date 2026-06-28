@@ -1,0 +1,232 @@
+[
+  {
+    "name": "👑 Haakon VII",
+    "role": "Monarch",
+    "start": "1905-11-18",
+    "end": "1957-09-21",
+    "current": false,
+    "tenure": "1905–1957",
+    "party": null,
+    "era": "House of Glücksburg"
+  },
+  {
+    "name": "Einar Gerhardsen",
+    "role": "Prime Minister",
+    "start": "1955-01-22",
+    "end": "1963-08-28",
+    "current": false,
+    "tenure": "1955–1963",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "👑 Olav V",
+    "role": "Monarch",
+    "start": "1957-09-21",
+    "end": "1991-01-17",
+    "current": false,
+    "tenure": "1957–1991",
+    "party": null,
+    "era": "House of Glücksburg"
+  },
+  {
+    "name": "John Lyng",
+    "role": "Prime Minister",
+    "start": "1963-08-28",
+    "end": "1963-09-25",
+    "current": false,
+    "tenure": "1963",
+    "party": "Conservative Party",
+    "era": null
+  },
+  {
+    "name": "Einar Gerhardsen",
+    "role": "Prime Minister",
+    "start": "1963-09-25",
+    "end": "1965-10-12",
+    "current": false,
+    "tenure": "1963–1965",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Per Borten",
+    "role": "Prime Minister",
+    "start": "1965-10-12",
+    "end": "1971-03-17",
+    "current": false,
+    "tenure": "1965–1971",
+    "party": "Centre Party",
+    "era": null
+  },
+  {
+    "name": "Trygve Bratteli",
+    "role": "Prime Minister",
+    "start": "1971-03-17",
+    "end": "1972-10-18",
+    "current": false,
+    "tenure": "1971–1972",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Lars Korvald",
+    "role": "Prime Minister",
+    "start": "1972-10-18",
+    "end": "1973-10-16",
+    "current": false,
+    "tenure": "1972–1973",
+    "party": "Christian Democratic Party",
+    "era": null
+  },
+  {
+    "name": "Trygve Bratteli",
+    "role": "Prime Minister",
+    "start": "1973-10-16",
+    "end": "1976-01-15",
+    "current": false,
+    "tenure": "1973–1976",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Odvar Nordli",
+    "role": "Prime Minister",
+    "start": "1976-01-15",
+    "end": "1981-02-04",
+    "current": false,
+    "tenure": "1976–1981",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Gro Harlem Brundtland",
+    "role": "Prime Minister",
+    "start": "1981-02-04",
+    "end": "1981-10-14",
+    "current": false,
+    "tenure": "1981",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Kåre Willoch",
+    "role": "Prime Minister",
+    "start": "1981-10-14",
+    "end": "1986-05-09",
+    "current": false,
+    "tenure": "1981–1986",
+    "party": "Conservative Party",
+    "era": null
+  },
+  {
+    "name": "Gro Harlem Brundtland",
+    "role": "Prime Minister",
+    "start": "1986-05-09",
+    "end": "1989-10-16",
+    "current": false,
+    "tenure": "1986–1989",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Jan P. Syse",
+    "role": "Prime Minister",
+    "start": "1989-10-16",
+    "end": "1990-11-03",
+    "current": false,
+    "tenure": "1989–1990",
+    "party": "Conservative Party",
+    "era": null
+  },
+  {
+    "name": "Gro Harlem Brundtland",
+    "role": "Prime Minister",
+    "start": "1990-11-03",
+    "end": "1996-10-25",
+    "current": false,
+    "tenure": "1990–1996",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "👑 Harald V",
+    "role": "Monarch",
+    "start": "1991-01-17",
+    "end": null,
+    "current": true,
+    "tenure": "1991–present",
+    "party": null,
+    "era": "House of Glücksburg"
+  },
+  {
+    "name": "Thorbjørn Jagland",
+    "role": "Prime Minister",
+    "start": "1996-10-25",
+    "end": "1997-10-17",
+    "current": false,
+    "tenure": "1996–1997",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Kjell Magne Bondevik",
+    "role": "Prime Minister",
+    "start": "1997-10-17",
+    "end": "2000-03-17",
+    "current": false,
+    "tenure": "1997–2000",
+    "party": "Christian Democratic Party",
+    "era": null
+  },
+  {
+    "name": "Jens Stoltenberg",
+    "role": "Prime Minister",
+    "start": "2000-03-17",
+    "end": "2001-10-19",
+    "current": false,
+    "tenure": "2000–2001",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Kjell Magne Bondevik",
+    "role": "Prime Minister",
+    "start": "2001-10-19",
+    "end": "2005-10-17",
+    "current": false,
+    "tenure": "2001–2005",
+    "party": "Christian Democratic Party",
+    "era": null
+  },
+  {
+    "name": "Jens Stoltenberg",
+    "role": "Prime Minister",
+    "start": "2005-10-17",
+    "end": "2013-10-16",
+    "current": false,
+    "tenure": "2005–2013",
+    "party": "Labour Party",
+    "era": null
+  },
+  {
+    "name": "Erna Solberg",
+    "role": "Prime Minister",
+    "start": "2013-10-16",
+    "end": "2021-10-14",
+    "current": false,
+    "tenure": "2013–2021",
+    "party": "Conservative Party",
+    "era": null
+  },
+  {
+    "name": "Jonas Gahr Støre",
+    "role": "Prime Minister",
+    "start": "2021-10-14",
+    "end": null,
+    "current": true,
+    "tenure": "2021–present",
+    "party": "Labour Party",
+    "era": null
+  }
+]

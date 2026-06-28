@@ -1,0 +1,112 @@
+[
+  {
+    "name": "👑 King Fuad I",
+    "role": "Monarch",
+    "start": "1922-03-15",
+    "end": "1936-04-28",
+    "current": false,
+    "tenure": "14 years",
+    "party": null,
+    "era": "Kingdom of Egypt"
+  },
+  {
+    "name": "👑 King Farouk I",
+    "role": "Monarch",
+    "start": "1936-04-28",
+    "end": "1952-07-26",
+    "current": false,
+    "tenure": "16 years",
+    "party": null,
+    "era": "Kingdom of Egypt"
+  },
+  {
+    "name": "👑 King Fuad II",
+    "role": "Monarch",
+    "start": "1952-07-26",
+    "end": "1953-06-18",
+    "current": false,
+    "tenure": "1 year",
+    "party": null,
+    "era": "Kingdom of Egypt"
+  },
+  {
+    "name": "Mohamed Naguib",
+    "role": "President",
+    "start": "1953-06-18",
+    "end": "1954-11-14",
+    "current": false,
+    "tenure": "1 year",
+    "party": null,
+    "era": "Republic"
+  },
+  {
+    "name": "Gamal Abdel Nasser",
+    "role": "President",
+    "start": "1954-11-14",
+    "end": "1970-09-28",
+    "current": false,
+    "tenure": "15 years",
+    "party": "Arab Socialist Union",
+    "era": "Republic"
+  },
+  {
+    "name": "Anwar Sadat",
+    "role": "President",
+    "start": "1970-10-15",
+    "end": "1981-10-06",
+    "current": false,
+    "tenure": "11 years",
+    "party": "National Democratic Party",
+    "era": "Republic"
+  },
+  {
+    "name": "Hosni Mubarak",
+    "role": "President",
+    "start": "1981-10-14",
+    "end": "2011-02-11",
+    "current": false,
+    "tenure": "29 years",
+    "party": "National Democratic Party",
+    "era": "Republic"
+  },
+  {
+    "name": "Mohamed Morsi",
+    "role": "President",
+    "start": "2012-06-30",
+    "end": "2013-07-03",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Freedom and Justice Party",
+    "era": "Republic"
+  },
+  {
+    "name": "Adly Mansour",
+    "role": "President",
+    "start": "2013-07-04",
+    "end": "2014-06-08",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Independent",
+    "era": "Republic"
+  },
+  {
+    "name": "Abdel Fattah el-Sisi",
+    "role": "President",
+    "start": "2014-06-08",
+    "end": null,
+    "current": true,
+    "tenure": "12 years",
+    "party": "Independent",
+    "era": "Republic"
+  },
+  {
+    "name": "Mostafa Madbouly",
+    "role": "Prime Minister",
+    "start": "2018-06-07",
+    "end": null,
+    "current": true,
+    "tenure": "8 years",
+    "party": "Independent",
+    "era": "Republic"
+  }
+]

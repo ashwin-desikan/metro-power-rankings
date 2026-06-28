@@ -1,0 +1,132 @@
+[
+  {
+    "name": "⚠️ Alberto Fujimori",
+    "role": "President",
+    "start": "1990-07-28",
+    "end": "2000-11-22",
+    "current": false,
+    "tenure": "1990–2000",
+    "party": "Change 90 / Vamos Vecino",
+    "era": null
+  },
+  {
+    "name": "Valentín Paniagua",
+    "role": "President",
+    "start": "2000-11-22",
+    "end": "2001-07-28",
+    "current": false,
+    "tenure": "2000–2001 (transitional)",
+    "party": "Popular Action",
+    "era": null
+  },
+  {
+    "name": "Alejandro Toledo",
+    "role": "President",
+    "start": "2001-07-28",
+    "end": "2006-07-28",
+    "current": false,
+    "tenure": "2001–2006",
+    "party": "Possible Peru",
+    "era": null
+  },
+  {
+    "name": "Alan García",
+    "role": "President",
+    "start": "2006-07-28",
+    "end": "2011-07-28",
+    "current": false,
+    "tenure": "2006–2011",
+    "party": "APRA",
+    "era": null
+  },
+  {
+    "name": "Ollanta Humala",
+    "role": "President",
+    "start": "2011-07-28",
+    "end": "2016-07-28",
+    "current": false,
+    "tenure": "2011–2016",
+    "party": "Peruvian Nationalist",
+    "era": null
+  },
+  {
+    "name": "Pedro Pablo Kuczynski",
+    "role": "President",
+    "start": "2016-07-28",
+    "end": "2018-03-23",
+    "current": false,
+    "tenure": "2016–2018",
+    "party": "Peruvians for Change",
+    "era": null
+  },
+  {
+    "name": "Martín Vizcarra",
+    "role": "President",
+    "start": "2018-03-23",
+    "end": "2020-11-10",
+    "current": false,
+    "tenure": "2018–2020",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Manuel Merino",
+    "role": "President",
+    "start": "2020-11-10",
+    "end": "2020-11-15",
+    "current": false,
+    "tenure": "2020 (5 days)",
+    "party": "Popular Action",
+    "era": null
+  },
+  {
+    "name": "Francisco Sagasti",
+    "role": "President",
+    "start": "2020-11-17",
+    "end": "2021-07-28",
+    "current": false,
+    "tenure": "2020–2021",
+    "party": "Purple Party",
+    "era": null
+  },
+  {
+    "name": "Pedro Castillo",
+    "role": "President",
+    "start": "2021-07-28",
+    "end": "2022-12-07",
+    "current": false,
+    "tenure": "2021–2022",
+    "party": "Free Peru",
+    "era": null
+  },
+  {
+    "name": "Dina Boluarte",
+    "role": "President",
+    "start": "2022-12-07",
+    "end": "2025-10-10",
+    "current": false,
+    "tenure": "2022–2025",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "José Jerí",
+    "role": "President",
+    "start": "2025-10-10",
+    "end": "2026-02-17",
+    "current": false,
+    "tenure": "2025–2026",
+    "party": "Somos Perú",
+    "era": null
+  },
+  {
+    "name": "José María Balcázar",
+    "role": "President",
+    "start": "2026-02-18",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present (interim)",
+    "party": "Free Peru",
+    "era": null
+  }
+]

@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-28",
+    headline: "Leadership pages for 23 more countries, head of government first",
+    items: [
+      "Leadership history now covers 23 more countries across Asia, Europe, the Gulf, the Nordics, and Latin America, each traced from the modern state's founding with era groupings.",
+      "The countries directory now lists the head of government first (prime minister or chancellor), showing the head of state alongside it where the two roles are distinct.",
+      "Every sitting head of state and government was individually verified to reflect 2026 officeholders, including several recent changes of government.",
+    ],
+  },
+  {
     date: "2026-06-27",
     headline: "WC2026 bracket, country leadership history, and Alliances & Orgs",
     items: [

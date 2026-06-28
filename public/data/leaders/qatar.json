@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Emir Ahmad bin Ali Al Thani",
+    "role": "Monarch",
+    "start": "1971-09-03",
+    "end": "1972-02-22",
+    "current": false,
+    "tenure": "1971–1972",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "👑 Emir Khalifa bin Hamad Al Thani",
+    "role": "Monarch",
+    "start": "1972-02-22",
+    "end": "1995-06-27",
+    "current": false,
+    "tenure": "1972–1995",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "👑 Emir Hamad bin Khalifa Al Thani",
+    "role": "Monarch",
+    "start": "1995-06-27",
+    "end": "2013-06-25",
+    "current": false,
+    "tenure": "1995–2013",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "Abdullah bin Khalifa Al Thani",
+    "role": "Prime Minister",
+    "start": "1996-10-30",
+    "end": "2007-04-03",
+    "current": false,
+    "tenure": "1996–2007",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "Hamad bin Jassim Al Thani",
+    "role": "Prime Minister",
+    "start": "2007-04-03",
+    "end": "2013-06-26",
+    "current": false,
+    "tenure": "2007–2013",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "👑 Emir Tamim bin Hamad Al Thani",
+    "role": "Monarch",
+    "start": "2013-06-25",
+    "end": null,
+    "current": true,
+    "tenure": "2013–present",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "Abdullah bin Nasser Al Thani",
+    "role": "Prime Minister",
+    "start": "2013-06-26",
+    "end": "2020-01-28",
+    "current": false,
+    "tenure": "2013–2020",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "Khalid bin Khalifa Al Thani",
+    "role": "Prime Minister",
+    "start": "2020-01-28",
+    "end": "2023-03-07",
+    "current": false,
+    "tenure": "2020–2023",
+    "party": null,
+    "era": "State of Qatar"
+  },
+  {
+    "name": "Mohammed bin Abdulrahman Al Thani",
+    "role": "Prime Minister",
+    "start": "2023-03-07",
+    "end": null,
+    "current": true,
+    "tenure": "2023–present",
+    "party": null,
+    "era": "State of Qatar"
+  }
+]

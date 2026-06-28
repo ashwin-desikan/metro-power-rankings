@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Ueli Maurer",
+    "role": "President of the Swiss Confederation",
+    "start": "2013-01-01",
+    "end": "2013-12-31",
+    "current": false,
+    "tenure": "2013",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Didier Burkhalter",
+    "role": "President of the Swiss Confederation",
+    "start": "2014-01-01",
+    "end": "2014-12-31",
+    "current": false,
+    "tenure": "2014",
+    "party": "FDP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Simonetta Sommaruga",
+    "role": "President of the Swiss Confederation",
+    "start": "2015-01-01",
+    "end": "2015-12-31",
+    "current": false,
+    "tenure": "2015",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Johann Schneider-Ammann",
+    "role": "President of the Swiss Confederation",
+    "start": "2016-01-01",
+    "end": "2016-12-31",
+    "current": false,
+    "tenure": "2016",
+    "party": "FDP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Doris Leuthard",
+    "role": "President of the Swiss Confederation",
+    "start": "2017-01-01",
+    "end": "2017-12-31",
+    "current": false,
+    "tenure": "2017",
+    "party": "Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Alain Berset",
+    "role": "President of the Swiss Confederation",
+    "start": "2018-01-01",
+    "end": "2018-12-31",
+    "current": false,
+    "tenure": "2018",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ueli Maurer",
+    "role": "President of the Swiss Confederation",
+    "start": "2019-01-01",
+    "end": "2019-12-31",
+    "current": false,
+    "tenure": "2019",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Simonetta Sommaruga",
+    "role": "President of the Swiss Confederation",
+    "start": "2020-01-01",
+    "end": "2020-12-31",
+    "current": false,
+    "tenure": "2020",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Guy Parmelin",
+    "role": "President of the Swiss Confederation",
+    "start": "2021-01-01",
+    "end": "2021-12-31",
+    "current": false,
+    "tenure": "2021",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Ignazio Cassis",
+    "role": "President of the Swiss Confederation",
+    "start": "2022-01-01",
+    "end": "2022-12-31",
+    "current": false,
+    "tenure": "2022",
+    "party": "FDP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Alain Berset",
+    "role": "President of the Swiss Confederation",
+    "start": "2023-01-01",
+    "end": "2023-12-31",
+    "current": false,
+    "tenure": "2023",
+    "party": "SP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Viola Amherd",
+    "role": "President of the Swiss Confederation",
+    "start": "2024-01-01",
+    "end": "2024-12-31",
+    "current": false,
+    "tenure": "2024",
+    "party": "Centre",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Karin Keller-Sutter",
+    "role": "President of the Swiss Confederation",
+    "start": "2025-01-01",
+    "end": "2025-12-31",
+    "current": false,
+    "tenure": "2025",
+    "party": "FDP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Guy Parmelin",
+    "role": "President of the Swiss Confederation",
+    "start": "2026-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "2026",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  }
+]

@@ -18,7 +18,7 @@ export type DirectoryCountry = {
   scoreTotal: number | null;
   capital: string | null;
   disputed?: boolean;
-  currentLeader: { name: string; role: string } | null;
+  currentLeader: { name: string; role: string; second?: { name: string; role: string } } | null;
   children: DirectoryCountry[];
 };
 
@@ -235,6 +235,12 @@ function CountryRows({
             <span className="text-sm text-[var(--text)]">
               {country.currentLeader.name}
               <span className="ml-1 text-xs text-[var(--text-dim)]">({country.currentLeader.role})</span>
+              {country.currentLeader.second ? (
+                <span className="block text-xs text-[var(--text-dim)]">
+                  {country.currentLeader.second.name}
+                  <span className="ml-1">({country.currentLeader.second.role})</span>
+                </span>
+              ) : null}
             </span>
           ) : null}
         </td>

@@ -1,0 +1,172 @@
+[
+  {
+    "name": "👑 Christian X",
+    "role": "Monarch",
+    "start": "1912-05-14",
+    "end": "1947-04-20",
+    "current": false,
+    "tenure": "1912–1947",
+    "party": null,
+    "era": "House of Glücksburg"
+  },
+  {
+    "name": "👑 Frederik IX",
+    "role": "Monarch",
+    "start": "1947-04-20",
+    "end": "1972-01-14",
+    "current": false,
+    "tenure": "1947–1972",
+    "party": null,
+    "era": "House of Glücksburg"
+  },
+  {
+    "name": "Jens Otto Krag",
+    "role": "Prime Minister",
+    "start": "1962-09-03",
+    "end": "1968-02-02",
+    "current": false,
+    "tenure": "1962–1968",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Hilmar Baunsgaard",
+    "role": "Prime Minister",
+    "start": "1968-02-02",
+    "end": "1971-10-11",
+    "current": false,
+    "tenure": "1968–1971",
+    "party": "Social Liberals",
+    "era": null
+  },
+  {
+    "name": "Jens Otto Krag",
+    "role": "Prime Minister",
+    "start": "1971-10-11",
+    "end": "1972-10-05",
+    "current": false,
+    "tenure": "1971–1972",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "👑 Margrethe II",
+    "role": "Monarch",
+    "start": "1972-01-14",
+    "end": "2024-01-14",
+    "current": false,
+    "tenure": "1972–2024 (abdicated)",
+    "party": null,
+    "era": "House of Glücksburg"
+  },
+  {
+    "name": "Anker Jørgensen",
+    "role": "Prime Minister",
+    "start": "1972-10-05",
+    "end": "1973-12-19",
+    "current": false,
+    "tenure": "1972–1973",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Poul Hartling",
+    "role": "Prime Minister",
+    "start": "1973-12-19",
+    "end": "1975-02-13",
+    "current": false,
+    "tenure": "1973–1975",
+    "party": "Venstre",
+    "era": null
+  },
+  {
+    "name": "Anker Jørgensen",
+    "role": "Prime Minister",
+    "start": "1975-02-13",
+    "end": "1982-09-10",
+    "current": false,
+    "tenure": "1975–1982",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Poul Schlüter",
+    "role": "Prime Minister",
+    "start": "1982-09-10",
+    "end": "1993-01-25",
+    "current": false,
+    "tenure": "1982–1993",
+    "party": "Conservative People's Party",
+    "era": null
+  },
+  {
+    "name": "Poul Nyrup Rasmussen",
+    "role": "Prime Minister",
+    "start": "1993-01-25",
+    "end": "2001-11-27",
+    "current": false,
+    "tenure": "1993–2001",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Anders Fogh Rasmussen",
+    "role": "Prime Minister",
+    "start": "2001-11-27",
+    "end": "2009-04-05",
+    "current": false,
+    "tenure": "2001–2009",
+    "party": "Venstre",
+    "era": null
+  },
+  {
+    "name": "Lars Løkke Rasmussen",
+    "role": "Prime Minister",
+    "start": "2009-04-05",
+    "end": "2011-10-03",
+    "current": false,
+    "tenure": "2009–2011",
+    "party": "Venstre",
+    "era": null
+  },
+  {
+    "name": "Helle Thorning-Schmidt",
+    "role": "Prime Minister",
+    "start": "2011-10-03",
+    "end": "2015-06-28",
+    "current": false,
+    "tenure": "2011–2015",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Lars Løkke Rasmussen",
+    "role": "Prime Minister",
+    "start": "2015-06-28",
+    "end": "2019-06-27",
+    "current": false,
+    "tenure": "2015–2019",
+    "party": "Venstre",
+    "era": null
+  },
+  {
+    "name": "Mette Frederiksen",
+    "role": "Prime Minister",
+    "start": "2019-06-27",
+    "end": null,
+    "current": true,
+    "tenure": "2019–present",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "👑 Frederik X",
+    "role": "Monarch",
+    "start": "2024-01-14",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present",
+    "party": null,
+    "era": "House of Glücksburg"
+  }
+]

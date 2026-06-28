@@ -43,32 +43,72 @@ export const metadata: Metadata = {
   },
 };
 
-// Priority order for picking the "current leader" to show in the directory.
+// Role priority for picking the "current leader" shown in the directory.
+// Default (presidential systems / executive monarchies): head of state leads,
+// but a governing PM still outranks a ceremonial monarch.
 const ROLE_PRIORITY = [
   "Supreme Leader", "General Secretary", "President", "Chancellor",
   "Prime Minister", "Taoiseach", "Premier", "Monarch",
 ];
+// Parliamentary / PM-led systems: the head of government (PM or Chancellor)
+// outranks a largely ceremonial president and is shown first.
+const HEAD_OF_GOV_PRIORITY = [
+  "Supreme Leader", "General Secretary", "Chancellor", "Prime Minister",
+  "Taoiseach", "Premier", "President", "Monarch",
+];
+const PM_LED_COUNTRIES = new Set([
+  "poland", "austria", "czech-republic", "hungary", "greece", "portugal", "finland",
+]);
+// Head-of-government / paramount roles (eligible to carry a secondary head of state).
+const GOV_ROLES = [
+  "Supreme Leader", "General Secretary", "Chancellor",
+  "Prime Minister", "Taoiseach", "Premier",
+];
+// Head-of-state role tokens used for the secondary slot, in display order.
+const HEAD_OF_STATE_TOKENS = [
+  "Monarch", "Sovereign", "Emir", "Sultan", "King", "Queen", "Emperor", "President",
+];
 
-function pickCurrentLeader(slug: string): { name: string; role: string } | null {
+function shortRole(role: string): string {
+  return role
+    .replace("Prime Minister", "PM")
+    .replace("General Secretary", "Gen. Sec.")
+    .replace("Supreme Leader", "Sup. Leader")
+    .replace("Chancellor", "Chanc.")
+    .replace("President", "Pres.");
+}
+function cleanName(n: string): string {
+  return n.replace(/^[\u{26A0}\u{FE0F}\u{1F451}\s]+/u, "").trim();
+}
+
+function pickCurrentLeader(
+  slug: string,
+): { name: string; role: string; second?: { name: string; role: string } } | null {
   try {
     const leaders = getLeaders(slug);
     const current = leaders.filter((l) => l.current);
     if (!current.length) return null;
-    for (const role of ROLE_PRIORITY) {
+    const order = PM_LED_COUNTRIES.has(slug) ? HEAD_OF_GOV_PRIORITY : ROLE_PRIORITY;
+    let primary = current[0];
+    for (const role of order) {
       const match = current.find((l) => l.role.includes(role));
-      if (match) {
-        const name = match.name.replace(/^[⚠️👑\s]+/u, "").trim();
-        const roleShort = match.role
-          .replace("Prime Minister", "PM")
-          .replace("General Secretary", "Gen. Sec.")
-          .replace("Supreme Leader", "Sup. Leader")
-          .replace("Chancellor", "Chanc.")
-          .replace("President", "Pres.");
-        return { name, role: roleShort };
+      if (match) { primary = match; break; }
+    }
+    let second: { name: string; role: string } | undefined;
+    const primaryIsGov = GOV_ROLES.some((r) => primary.role.includes(r));
+    if (primaryIsGov) {
+      for (const tok of HEAD_OF_STATE_TOKENS) {
+        const hs = current.find(
+          (l) => l.role.includes(tok) && cleanName(l.name) !== cleanName(primary.name),
+        );
+        if (hs) { second = { name: cleanName(hs.name), role: shortRole(hs.role) }; break; }
       }
     }
-    const first = current[0];
-    return { name: first.name.replace(/^[⚠️👑\s]+/u, "").trim(), role: first.role };
+    return {
+      name: cleanName(primary.name),
+      role: shortRole(primary.role),
+      ...(second ? { second } : {}),
+    };
   } catch {
     return null;
   }

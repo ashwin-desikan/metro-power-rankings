@@ -1,0 +1,72 @@
+[
+  {
+    "name": "👑 President Zayed bin Sultan Al Nahyan",
+    "role": "President",
+    "start": "1971-12-02",
+    "end": "2004-11-02",
+    "current": false,
+    "tenure": "1971–2004",
+    "party": null,
+    "era": "United Arab Emirates"
+  },
+  {
+    "name": "Maktoum bin Rashid Al Maktoum",
+    "role": "Prime Minister",
+    "start": "1971-12-09",
+    "end": "1979-04-30",
+    "current": false,
+    "tenure": "1971–1979",
+    "party": null,
+    "era": "United Arab Emirates"
+  },
+  {
+    "name": "Rashid bin Saeed Al Maktoum",
+    "role": "Prime Minister",
+    "start": "1979-04-30",
+    "end": "1990-10-07",
+    "current": false,
+    "tenure": "1979–1990",
+    "party": null,
+    "era": "United Arab Emirates"
+  },
+  {
+    "name": "Maktoum bin Rashid Al Maktoum (2nd term)",
+    "role": "Prime Minister",
+    "start": "1990-11-20",
+    "end": "2006-01-04",
+    "current": false,
+    "tenure": "1990–2006",
+    "party": null,
+    "era": "United Arab Emirates"
+  },
+  {
+    "name": "👑 President Khalifa bin Zayed Al Nahyan",
+    "role": "President",
+    "start": "2004-11-03",
+    "end": "2022-05-13",
+    "current": false,
+    "tenure": "2004–2022",
+    "party": null,
+    "era": "United Arab Emirates"
+  },
+  {
+    "name": "Mohammed bin Rashid Al Maktoum",
+    "role": "Prime Minister",
+    "start": "2006-01-05",
+    "end": null,
+    "current": true,
+    "tenure": "2006–present",
+    "party": null,
+    "era": "United Arab Emirates"
+  },
+  {
+    "name": "Mohamed bin Zayed Al Nahyan",
+    "role": "President",
+    "start": "2022-05-14",
+    "end": null,
+    "current": true,
+    "tenure": "2022–present",
+    "party": null,
+    "era": "United Arab Emirates"
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "name": "👑 Carlos I",
+    "role": "Monarch",
+    "start": "1889-10-19",
+    "end": "1908-02-01",
+    "current": false,
+    "tenure": "1889–1908",
+    "party": null,
+    "era": "Constitutional Monarchy"
+  },
+  {
+    "name": "👑 Manuel II",
+    "role": "Monarch",
+    "start": "1908-02-01",
+    "end": "1910-10-05",
+    "current": false,
+    "tenure": "1908–1910",
+    "party": null,
+    "era": "Constitutional Monarchy"
+  },
+  {
+    "name": "Teófilo Braga",
+    "role": "President",
+    "start": "1910-10-05",
+    "end": "1911-08-24",
+    "current": false,
+    "tenure": "1910–1911 (provisional), 1915",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "Manuel de Arriaga",
+    "role": "President",
+    "start": "1911-08-24",
+    "end": "1915-05-26",
+    "current": false,
+    "tenure": "1911–1915",
+    "party": "Republican",
+    "era": "First Republic"
+  },
+  {
+    "name": "⚠️ António de Oliveira Salazar",
+    "role": "Prime Minister",
+    "start": "1932-07-05",
+    "end": "1968-09-27",
+    "current": false,
+    "tenure": "1932–1968",
+    "party": "National Union",
+    "era": "Estado Novo"
+  },
+  {
+    "name": "Marcello Caetano",
+    "role": "Prime Minister",
+    "start": "1968-09-27",
+    "end": "1974-04-25",
+    "current": false,
+    "tenure": "1968–1974",
+    "party": "National Union / Popular National Action",
+    "era": "Estado Novo"
+  },
+  {
+    "name": "António de Spínola",
+    "role": "President",
+    "start": "1974-05-15",
+    "end": "1974-09-30",
+    "current": false,
+    "tenure": "1974",
+    "party": "Military (Junta of National Salvation)",
+    "era": "Third Republic"
+  },
+  {
+    "name": "António Ramalho Eanes",
+    "role": "President",
+    "start": "1976-07-14",
+    "end": "1986-03-09",
+    "current": false,
+    "tenure": "1976–1986",
+    "party": "Independent (military)",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Mário Soares",
+    "role": "Prime Minister",
+    "start": "1976-07-23",
+    "end": "1978-08-28",
+    "current": false,
+    "tenure": "1976–1978, 1983–1985",
+    "party": "Socialist Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Aníbal Cavaco Silva",
+    "role": "Prime Minister",
+    "start": "1985-11-06",
+    "end": "1995-10-28",
+    "current": false,
+    "tenure": "1985–1995",
+    "party": "Social Democratic Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Mário Soares",
+    "role": "President",
+    "start": "1986-03-09",
+    "end": "1996-03-09",
+    "current": false,
+    "tenure": "1986–1996",
+    "party": "Socialist Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "António Guterres",
+    "role": "Prime Minister",
+    "start": "1995-10-28",
+    "end": "2002-04-06",
+    "current": false,
+    "tenure": "1995–2002",
+    "party": "Socialist Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Jorge Sampaio",
+    "role": "President",
+    "start": "1996-03-09",
+    "end": "2006-03-09",
+    "current": false,
+    "tenure": "1996–2006",
+    "party": "Socialist Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "José Manuel Durão Barroso",
+    "role": "Prime Minister",
+    "start": "2002-04-06",
+    "end": "2004-07-17",
+    "current": false,
+    "tenure": "2002–2004",
+    "party": "Social Democratic Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "José Sócrates",
+    "role": "Prime Minister",
+    "start": "2005-03-12",
+    "end": "2011-06-21",
+    "current": false,
+    "tenure": "2005–2011",
+    "party": "Socialist Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Aníbal Cavaco Silva",
+    "role": "President",
+    "start": "2006-03-09",
+    "end": "2016-03-09",
+    "current": false,
+    "tenure": "2006–2016",
+    "party": "Social Democratic Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Pedro Passos Coelho",
+    "role": "Prime Minister",
+    "start": "2011-06-21",
+    "end": "2015-11-26",
+    "current": false,
+    "tenure": "2011–2015",
+    "party": "Social Democratic Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "António Costa",
+    "role": "Prime Minister",
+    "start": "2015-11-26",
+    "end": "2024-04-02",
+    "current": false,
+    "tenure": "2015–2024",
+    "party": "Socialist Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Marcelo Rebelo de Sousa",
+    "role": "President",
+    "start": "2016-03-09",
+    "end": "2026-03-09",
+    "current": false,
+    "tenure": "2016–2026",
+    "party": "Social Democratic Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Luís Montenegro",
+    "role": "Prime Minister",
+    "start": "2024-04-02",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present",
+    "party": "Social Democratic Party",
+    "era": "Third Republic"
+  },
+  {
+    "name": "António José Seguro",
+    "role": "President",
+    "start": "2026-03-09",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Independent (former Socialist)",
+    "era": "Third Republic"
+  }
+]

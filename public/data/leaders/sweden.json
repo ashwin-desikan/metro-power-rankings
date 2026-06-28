@@ -1,0 +1,172 @@
+[
+  {
+    "name": "👑 Gustaf V",
+    "role": "Monarch",
+    "start": "1907-12-08",
+    "end": "1950-10-29",
+    "current": false,
+    "tenure": "1907–1950",
+    "party": null,
+    "era": "House of Bernadotte"
+  },
+  {
+    "name": "Tage Erlander",
+    "role": "Prime Minister",
+    "start": "1946-10-11",
+    "end": "1969-10-14",
+    "current": false,
+    "tenure": "1946–1969",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "👑 Gustaf VI Adolf",
+    "role": "Monarch",
+    "start": "1950-10-29",
+    "end": "1973-09-15",
+    "current": false,
+    "tenure": "1950–1973",
+    "party": null,
+    "era": "House of Bernadotte"
+  },
+  {
+    "name": "Olof Palme",
+    "role": "Prime Minister",
+    "start": "1969-10-14",
+    "end": "1976-10-08",
+    "current": false,
+    "tenure": "1969–1976",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "👑 Carl XVI Gustaf",
+    "role": "Monarch",
+    "start": "1973-09-15",
+    "end": null,
+    "current": true,
+    "tenure": "1973–present",
+    "party": null,
+    "era": "House of Bernadotte"
+  },
+  {
+    "name": "Thorbjörn Fälldin",
+    "role": "Prime Minister",
+    "start": "1976-10-08",
+    "end": "1978-10-18",
+    "current": false,
+    "tenure": "1976–1978",
+    "party": "Centre Party",
+    "era": null
+  },
+  {
+    "name": "Ola Ullsten",
+    "role": "Prime Minister",
+    "start": "1978-10-18",
+    "end": "1979-10-12",
+    "current": false,
+    "tenure": "1978–1979",
+    "party": "People's Party",
+    "era": null
+  },
+  {
+    "name": "Thorbjörn Fälldin",
+    "role": "Prime Minister",
+    "start": "1979-10-12",
+    "end": "1982-10-08",
+    "current": false,
+    "tenure": "1979–1982",
+    "party": "Centre Party",
+    "era": null
+  },
+  {
+    "name": "Olof Palme",
+    "role": "Prime Minister",
+    "start": "1982-10-08",
+    "end": "1986-02-28",
+    "current": false,
+    "tenure": "1982–1986",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Ingvar Carlsson",
+    "role": "Prime Minister",
+    "start": "1986-03-01",
+    "end": "1991-10-04",
+    "current": false,
+    "tenure": "1986–1991",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Carl Bildt",
+    "role": "Prime Minister",
+    "start": "1991-10-04",
+    "end": "1994-10-07",
+    "current": false,
+    "tenure": "1991–1994",
+    "party": "Moderate Party",
+    "era": null
+  },
+  {
+    "name": "Ingvar Carlsson",
+    "role": "Prime Minister",
+    "start": "1994-10-07",
+    "end": "1996-03-22",
+    "current": false,
+    "tenure": "1994–1996",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Göran Persson",
+    "role": "Prime Minister",
+    "start": "1996-03-22",
+    "end": "2006-10-06",
+    "current": false,
+    "tenure": "1996–2006",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Fredrik Reinfeldt",
+    "role": "Prime Minister",
+    "start": "2006-10-06",
+    "end": "2014-10-03",
+    "current": false,
+    "tenure": "2006–2014",
+    "party": "Moderate Party",
+    "era": null
+  },
+  {
+    "name": "Stefan Löfven",
+    "role": "Prime Minister",
+    "start": "2014-10-03",
+    "end": "2021-11-30",
+    "current": false,
+    "tenure": "2014–2021",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Magdalena Andersson",
+    "role": "Prime Minister",
+    "start": "2021-11-30",
+    "end": "2022-10-18",
+    "current": false,
+    "tenure": "2021–2022",
+    "party": "Social Democrats",
+    "era": null
+  },
+  {
+    "name": "Ulf Kristersson",
+    "role": "Prime Minister",
+    "start": "2022-10-18",
+    "end": null,
+    "current": true,
+    "tenure": "2022–present",
+    "party": "Moderate Party",
+    "era": null
+  }
+]

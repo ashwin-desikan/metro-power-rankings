@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Eduardo Frei Montalva",
+    "role": "President",
+    "start": "1964-11-03",
+    "end": "1970-11-03",
+    "current": false,
+    "tenure": "1964–1970",
+    "party": "Christian Democratic",
+    "era": "Presidential Republic"
+  },
+  {
+    "name": "Salvador Allende",
+    "role": "President",
+    "start": "1970-11-03",
+    "end": "1973-09-11",
+    "current": false,
+    "tenure": "1970–1973",
+    "party": "Socialist",
+    "era": "Presidential Republic"
+  },
+  {
+    "name": "⚠️ Augusto Pinochet",
+    "role": "President",
+    "start": "1973-09-11",
+    "end": "1990-03-11",
+    "current": false,
+    "tenure": "1973–1990",
+    "party": "Military (non-partisan)",
+    "era": "Military Dictatorship"
+  },
+  {
+    "name": "Patricio Aylwin",
+    "role": "President",
+    "start": "1990-03-11",
+    "end": "1994-03-11",
+    "current": false,
+    "tenure": "1990–1994",
+    "party": "Christian Democratic",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Eduardo Frei Ruiz-Tagle",
+    "role": "President",
+    "start": "1994-03-11",
+    "end": "2000-03-11",
+    "current": false,
+    "tenure": "1994–2000",
+    "party": "Christian Democratic",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Ricardo Lagos",
+    "role": "President",
+    "start": "2000-03-11",
+    "end": "2006-03-11",
+    "current": false,
+    "tenure": "2000–2006",
+    "party": "Party for Democracy",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Michelle Bachelet",
+    "role": "President",
+    "start": "2006-03-11",
+    "end": "2010-03-11",
+    "current": false,
+    "tenure": "2006–2010",
+    "party": "Socialist",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Sebastián Piñera",
+    "role": "President",
+    "start": "2010-03-11",
+    "end": "2014-03-11",
+    "current": false,
+    "tenure": "2010–2014",
+    "party": "National Renewal",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Michelle Bachelet",
+    "role": "President",
+    "start": "2014-03-11",
+    "end": "2018-03-11",
+    "current": false,
+    "tenure": "2014–2018",
+    "party": "Socialist",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Sebastián Piñera",
+    "role": "President",
+    "start": "2018-03-11",
+    "end": "2022-03-11",
+    "current": false,
+    "tenure": "2018–2022",
+    "party": "National Renewal",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Gabriel Boric",
+    "role": "President",
+    "start": "2022-03-11",
+    "end": "2026-03-11",
+    "current": false,
+    "tenure": "2022–2026",
+    "party": "Social Convergence",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "José Antonio Kast",
+    "role": "President",
+    "start": "2026-03-11",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Republican Party",
+    "era": "Return to Democracy"
+  }
+]

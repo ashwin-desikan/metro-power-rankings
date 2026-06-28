@@ -1,0 +1,332 @@
+[
+  {
+    "name": "Michael Hainisch",
+    "role": "Federal President",
+    "start": "1920-12-09",
+    "end": "1928-12-10",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "First Republic"
+  },
+  {
+    "name": "Wilhelm Miklas",
+    "role": "Federal President",
+    "start": "1928-12-10",
+    "end": "1938-03-13",
+    "current": false,
+    "tenure": null,
+    "party": "Christian Social Party",
+    "era": "First Republic"
+  },
+  {
+    "name": "Engelbert Dollfuss",
+    "role": "Federal Chancellor",
+    "start": "1932-05-20",
+    "end": "1934-07-25",
+    "current": false,
+    "tenure": null,
+    "party": "Christian Social Party / Fatherland Front",
+    "era": "Austrofascism & Anschluss"
+  },
+  {
+    "name": "Kurt Schuschnigg",
+    "role": "Federal Chancellor",
+    "start": "1934-07-29",
+    "end": "1938-03-11",
+    "current": false,
+    "tenure": null,
+    "party": "Fatherland Front",
+    "era": "Austrofascism & Anschluss"
+  },
+  {
+    "name": "⚠️ Arthur Seyss-Inquart",
+    "role": "Federal Chancellor",
+    "start": "1938-03-11",
+    "end": "1938-03-13",
+    "current": false,
+    "tenure": null,
+    "party": "Nazi Party (NSDAP)",
+    "era": "Austrofascism & Anschluss"
+  },
+  {
+    "name": "Karl Renner",
+    "role": "Federal President",
+    "start": "1945-12-20",
+    "end": "1950-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Leopold Figl",
+    "role": "Federal Chancellor",
+    "start": "1945-12-20",
+    "end": "1953-04-02",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Theodor Körner",
+    "role": "Federal President",
+    "start": "1951-06-21",
+    "end": "1957-01-04",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Julius Raab",
+    "role": "Federal Chancellor",
+    "start": "1953-04-02",
+    "end": "1961-04-11",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Adolf Schärf",
+    "role": "Federal President",
+    "start": "1957-05-22",
+    "end": "1965-02-28",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Alfons Gorbach",
+    "role": "Federal Chancellor",
+    "start": "1961-04-11",
+    "end": "1964-04-02",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Josef Klaus",
+    "role": "Federal Chancellor",
+    "start": "1964-04-02",
+    "end": "1970-04-21",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Franz Jonas",
+    "role": "Federal President",
+    "start": "1965-06-09",
+    "end": "1974-04-24",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Bruno Kreisky",
+    "role": "Federal Chancellor",
+    "start": "1970-04-21",
+    "end": "1983-05-24",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Rudolf Kirchschläger",
+    "role": "Federal President",
+    "start": "1974-07-08",
+    "end": "1986-07-08",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Fred Sinowatz",
+    "role": "Federal Chancellor",
+    "start": "1983-05-24",
+    "end": "1986-06-16",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Franz Vranitzky",
+    "role": "Federal Chancellor",
+    "start": "1986-06-16",
+    "end": "1997-01-28",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Kurt Waldheim",
+    "role": "Federal President",
+    "start": "1986-07-08",
+    "end": "1992-07-08",
+    "current": false,
+    "tenure": null,
+    "party": "Independent (ÖVP-backed)",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Thomas Klestil",
+    "role": "Federal President",
+    "start": "1992-07-08",
+    "end": "2004-07-06",
+    "current": false,
+    "tenure": null,
+    "party": "Independent (ÖVP-backed)",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Viktor Klima",
+    "role": "Federal Chancellor",
+    "start": "1997-01-28",
+    "end": "2000-02-04",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Wolfgang Schüssel",
+    "role": "Federal Chancellor",
+    "start": "2000-02-04",
+    "end": "2007-01-11",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Heinz Fischer",
+    "role": "Federal President",
+    "start": "2004-07-08",
+    "end": "2016-07-08",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Alfred Gusenbauer",
+    "role": "Federal Chancellor",
+    "start": "2007-01-11",
+    "end": "2008-12-02",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Werner Faymann",
+    "role": "Federal Chancellor",
+    "start": "2008-12-02",
+    "end": "2016-05-09",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Christian Kern",
+    "role": "Federal Chancellor",
+    "start": "2016-05-17",
+    "end": "2017-12-18",
+    "current": false,
+    "tenure": null,
+    "party": "SPÖ",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Alexander Van der Bellen",
+    "role": "Federal President",
+    "start": "2017-01-26",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "Independent (former Greens)",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Sebastian Kurz",
+    "role": "Federal Chancellor",
+    "start": "2017-12-18",
+    "end": "2019-05-28",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Brigitte Bierlein",
+    "role": "Federal Chancellor",
+    "start": "2019-06-03",
+    "end": "2020-01-07",
+    "current": false,
+    "tenure": "caretaker",
+    "party": "Independent",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Sebastian Kurz",
+    "role": "Federal Chancellor",
+    "start": "2020-01-07",
+    "end": "2021-10-11",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Alexander Schallenberg",
+    "role": "Federal Chancellor",
+    "start": "2021-10-11",
+    "end": "2021-12-06",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Karl Nehammer",
+    "role": "Federal Chancellor",
+    "start": "2021-12-06",
+    "end": "2025-01-03",
+    "current": false,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Alexander Schallenberg",
+    "role": "Federal Chancellor",
+    "start": "2025-01-03",
+    "end": "2025-03-03",
+    "current": false,
+    "tenure": "caretaker",
+    "party": "ÖVP",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Christian Stocker",
+    "role": "Federal Chancellor",
+    "start": "2025-03-03",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "ÖVP",
+    "era": "Second Republic"
+  }
+]

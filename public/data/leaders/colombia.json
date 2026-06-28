@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Alberto Lleras Camargo",
+    "role": "President",
+    "start": "1958-08-07",
+    "end": "1962-08-07",
+    "current": false,
+    "tenure": "1958–1962",
+    "party": "Liberal",
+    "era": "National Front"
+  },
+  {
+    "name": "Guillermo León Valencia",
+    "role": "President",
+    "start": "1962-08-07",
+    "end": "1966-08-07",
+    "current": false,
+    "tenure": "1962–1966",
+    "party": "Conservative",
+    "era": "National Front"
+  },
+  {
+    "name": "Carlos Lleras Restrepo",
+    "role": "President",
+    "start": "1966-08-07",
+    "end": "1970-08-07",
+    "current": false,
+    "tenure": "1966–1970",
+    "party": "Liberal",
+    "era": "National Front"
+  },
+  {
+    "name": "Misael Pastrana Borrero",
+    "role": "President",
+    "start": "1970-08-07",
+    "end": "1974-08-07",
+    "current": false,
+    "tenure": "1970–1974",
+    "party": "Conservative",
+    "era": "National Front"
+  },
+  {
+    "name": "Alfonso López Michelsen",
+    "role": "President",
+    "start": "1974-08-07",
+    "end": "1978-08-07",
+    "current": false,
+    "tenure": "1974–1978",
+    "party": "Liberal",
+    "era": "Post-National Front"
+  },
+  {
+    "name": "Julio César Turbay Ayala",
+    "role": "President",
+    "start": "1978-08-07",
+    "end": "1982-08-07",
+    "current": false,
+    "tenure": "1978–1982",
+    "party": "Liberal",
+    "era": "Post-National Front"
+  },
+  {
+    "name": "Belisario Betancur",
+    "role": "President",
+    "start": "1982-08-07",
+    "end": "1986-08-07",
+    "current": false,
+    "tenure": "1982–1986",
+    "party": "Conservative",
+    "era": "Post-National Front"
+  },
+  {
+    "name": "Virgilio Barco Vargas",
+    "role": "President",
+    "start": "1986-08-07",
+    "end": "1990-08-07",
+    "current": false,
+    "tenure": "1986–1990",
+    "party": "Liberal",
+    "era": "Post-National Front"
+  },
+  {
+    "name": "César Gaviria",
+    "role": "President",
+    "start": "1990-08-07",
+    "end": "1994-08-07",
+    "current": false,
+    "tenure": "1990–1994",
+    "party": "Liberal",
+    "era": "Post-National Front"
+  },
+  {
+    "name": "Ernesto Samper",
+    "role": "President",
+    "start": "1994-08-07",
+    "end": "1998-08-07",
+    "current": false,
+    "tenure": "1994–1998",
+    "party": "Liberal",
+    "era": "Post-National Front"
+  },
+  {
+    "name": "Andrés Pastrana Arango",
+    "role": "President",
+    "start": "1998-08-07",
+    "end": "2002-08-07",
+    "current": false,
+    "tenure": "1998–2002",
+    "party": "Conservative",
+    "era": "Post-National Front"
+  },
+  {
+    "name": "Álvaro Uribe",
+    "role": "President",
+    "start": "2002-08-07",
+    "end": "2010-08-07",
+    "current": false,
+    "tenure": "2002–2010",
+    "party": "Colombia First / U Party",
+    "era": "Modern"
+  },
+  {
+    "name": "Juan Manuel Santos",
+    "role": "President",
+    "start": "2010-08-07",
+    "end": "2018-08-07",
+    "current": false,
+    "tenure": "2010–2018",
+    "party": "U Party",
+    "era": "Modern"
+  },
+  {
+    "name": "Iván Duque",
+    "role": "President",
+    "start": "2018-08-07",
+    "end": "2022-08-07",
+    "current": false,
+    "tenure": "2018–2022",
+    "party": "Democratic Centre",
+    "era": "Modern"
+  },
+  {
+    "name": "Gustavo Petro",
+    "role": "President",
+    "start": "2022-08-07",
+    "end": null,
+    "current": true,
+    "tenure": "2022–present",
+    "party": "Historic Pact",
+    "era": "Modern"
+  }
+]

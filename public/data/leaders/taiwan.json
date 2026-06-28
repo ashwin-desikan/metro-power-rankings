@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Chiang Kai-shek",
+    "role": "President",
+    "start": "1948-05-20",
+    "end": "1949-01-21",
+    "current": false,
+    "tenure": "1948–1949 (first term)",
+    "party": "Kuomintang",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Li Tsung-jen",
+    "role": "President",
+    "start": "1949-01-21",
+    "end": "1950-03-01",
+    "current": false,
+    "tenure": "1949–1950 (acting)",
+    "party": "Kuomintang",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Chiang Kai-shek",
+    "role": "President",
+    "start": "1950-03-01",
+    "end": "1975-04-05",
+    "current": false,
+    "tenure": "1950–1975",
+    "party": "Kuomintang",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Yen Chia-kan",
+    "role": "President",
+    "start": "1975-04-06",
+    "end": "1978-05-20",
+    "current": false,
+    "tenure": "1975–1978",
+    "party": "Kuomintang",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Chiang Ching-kuo",
+    "role": "President",
+    "start": "1978-05-20",
+    "end": "1988-01-13",
+    "current": false,
+    "tenure": "1978–1988",
+    "party": "Kuomintang",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Lee Teng-hui",
+    "role": "President",
+    "start": "1988-01-13",
+    "end": "2000-05-20",
+    "current": false,
+    "tenure": "1988–2000",
+    "party": "Kuomintang",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Chen Shui-bian",
+    "role": "President",
+    "start": "2000-05-20",
+    "end": "2008-05-20",
+    "current": false,
+    "tenure": "2000–2008",
+    "party": "Democratic Progressive Party",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Ma Ying-jeou",
+    "role": "President",
+    "start": "2008-05-20",
+    "end": "2016-05-20",
+    "current": false,
+    "tenure": "2008–2016",
+    "party": "Kuomintang",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Tsai Ing-wen",
+    "role": "President",
+    "start": "2016-05-20",
+    "end": "2024-05-20",
+    "current": false,
+    "tenure": "2016–2024",
+    "party": "Democratic Progressive Party",
+    "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Lai Ching-te",
+    "role": "President",
+    "start": "2024-05-20",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present",
+    "party": "Democratic Progressive Party",
+    "era": "Republic of China (Taiwan)"
+  }
+]

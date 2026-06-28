@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Tomáš Garrigue Masaryk",
+    "role": "President",
+    "start": "1918-11-14",
+    "end": "1935-12-14",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Edvard Beneš",
+    "role": "President",
+    "start": "1935-12-18",
+    "end": "1938-10-05",
+    "current": false,
+    "tenure": null,
+    "party": "Czechoslovak National Socialist Party",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Edvard Beneš",
+    "role": "President",
+    "start": "1945-04-04",
+    "end": "1948-06-07",
+    "current": false,
+    "tenure": null,
+    "party": "Czechoslovak National Socialist Party",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "⚠️ Klement Gottwald",
+    "role": "President",
+    "start": "1948-06-14",
+    "end": "1953-03-14",
+    "current": false,
+    "tenure": null,
+    "party": "Communist Party (KSČ)",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Antonín Zápotocký",
+    "role": "President",
+    "start": "1953-03-21",
+    "end": "1957-11-13",
+    "current": false,
+    "tenure": null,
+    "party": "Communist Party (KSČ)",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Antonín Novotný",
+    "role": "President",
+    "start": "1957-11-19",
+    "end": "1968-03-22",
+    "current": false,
+    "tenure": null,
+    "party": "Communist Party (KSČ)",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Ludvík Svoboda",
+    "role": "President",
+    "start": "1968-03-30",
+    "end": "1975-05-29",
+    "current": false,
+    "tenure": null,
+    "party": "Communist Party (KSČ)",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Gustáv Husák",
+    "role": "President",
+    "start": "1975-05-29",
+    "end": "1989-12-10",
+    "current": false,
+    "tenure": null,
+    "party": "Communist Party (KSČ)",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Václav Havel",
+    "role": "President",
+    "start": "1989-12-29",
+    "end": "1992-07-20",
+    "current": false,
+    "tenure": null,
+    "party": "Civic Forum / Independent",
+    "era": "Czechoslovakia"
+  },
+  {
+    "name": "Václav Klaus",
+    "role": "Prime Minister",
+    "start": "1993-01-01",
+    "end": "1998-01-02",
+    "current": false,
+    "tenure": null,
+    "party": "ODS",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Václav Havel",
+    "role": "President",
+    "start": "1993-02-02",
+    "end": "2003-02-02",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Josef Tošovský",
+    "role": "Prime Minister",
+    "start": "1998-01-02",
+    "end": "1998-07-22",
+    "current": false,
+    "tenure": "caretaker",
+    "party": "Independent",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Miloš Zeman",
+    "role": "Prime Minister",
+    "start": "1998-07-22",
+    "end": "2002-07-15",
+    "current": false,
+    "tenure": null,
+    "party": "ČSSD",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Vladimír Špidla",
+    "role": "Prime Minister",
+    "start": "2002-07-15",
+    "end": "2004-08-04",
+    "current": false,
+    "tenure": null,
+    "party": "ČSSD",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Václav Klaus",
+    "role": "President",
+    "start": "2003-03-07",
+    "end": "2013-03-07",
+    "current": false,
+    "tenure": null,
+    "party": "ODS / Independent",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Stanislav Gross",
+    "role": "Prime Minister",
+    "start": "2004-08-04",
+    "end": "2005-04-25",
+    "current": false,
+    "tenure": null,
+    "party": "ČSSD",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Jiří Paroubek",
+    "role": "Prime Minister",
+    "start": "2005-04-25",
+    "end": "2006-09-04",
+    "current": false,
+    "tenure": null,
+    "party": "ČSSD",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Mirek Topolánek",
+    "role": "Prime Minister",
+    "start": "2006-09-04",
+    "end": "2009-05-08",
+    "current": false,
+    "tenure": null,
+    "party": "ODS",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Jan Fischer",
+    "role": "Prime Minister",
+    "start": "2009-05-08",
+    "end": "2010-07-13",
+    "current": false,
+    "tenure": "caretaker",
+    "party": "Independent",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Petr Nečas",
+    "role": "Prime Minister",
+    "start": "2010-07-13",
+    "end": "2013-07-10",
+    "current": false,
+    "tenure": null,
+    "party": "ODS",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Miloš Zeman",
+    "role": "President",
+    "start": "2013-03-08",
+    "end": "2023-03-08",
+    "current": false,
+    "tenure": null,
+    "party": "SPOZ / Independent",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Jiří Rusnok",
+    "role": "Prime Minister",
+    "start": "2013-07-10",
+    "end": "2014-01-29",
+    "current": false,
+    "tenure": "caretaker",
+    "party": "Independent",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Bohuslav Sobotka",
+    "role": "Prime Minister",
+    "start": "2014-01-29",
+    "end": "2017-12-13",
+    "current": false,
+    "tenure": null,
+    "party": "ČSSD",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Andrej Babiš",
+    "role": "Prime Minister",
+    "start": "2017-12-13",
+    "end": "2021-12-17",
+    "current": false,
+    "tenure": null,
+    "party": "ANO",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Petr Fiala",
+    "role": "Prime Minister",
+    "start": "2021-12-17",
+    "end": "2025-12-09",
+    "current": false,
+    "tenure": null,
+    "party": "ODS",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Petr Pavel",
+    "role": "President",
+    "start": "2023-03-09",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Czech Republic"
+  },
+  {
+    "name": "Andrej Babiš",
+    "role": "Prime Minister",
+    "start": "2025-12-09",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "ANO",
+    "era": "Czech Republic"
+  }
+]

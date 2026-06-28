@@ -1,0 +1,342 @@
+[
+  {
+    "name": "Truong Chinh",
+    "role": "General Secretary",
+    "start": "1941-05-19",
+    "end": "1956-10-01",
+    "current": false,
+    "tenure": "1941–1956 (party chief; resigned over land-reform errors)",
+    "party": "Communist Party",
+    "era": "Democratic Republic of Vietnam (North)"
+  },
+  {
+    "name": "Ho Chi Minh",
+    "role": "President",
+    "start": "1945-09-02",
+    "end": "1969-09-02",
+    "current": false,
+    "tenure": "1945–1969 (President & founding leader)",
+    "party": "Communist Party",
+    "era": "Democratic Republic of Vietnam (North)"
+  },
+  {
+    "name": "Pham Van Dong",
+    "role": "Prime Minister",
+    "start": "1955-09-20",
+    "end": "1987-06-18",
+    "current": false,
+    "tenure": "1955–1987",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Ho Chi Minh",
+    "role": "General Secretary",
+    "start": "1956-10-01",
+    "end": "1960-09-10",
+    "current": false,
+    "tenure": "1956–1960 (acting party chairman)",
+    "party": "Communist Party",
+    "era": "Democratic Republic of Vietnam (North)"
+  },
+  {
+    "name": "Le Duan",
+    "role": "General Secretary",
+    "start": "1960-09-10",
+    "end": "1986-07-10",
+    "current": false,
+    "tenure": "1960–1986 (First/General Secretary)",
+    "party": "Communist Party",
+    "era": "Democratic Republic of Vietnam (North)"
+  },
+  {
+    "name": "Ton Duc Thang",
+    "role": "President",
+    "start": "1969-09-23",
+    "end": "1980-03-30",
+    "current": false,
+    "tenure": "1969–1980",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Truong Chinh",
+    "role": "President",
+    "start": "1981-07-04",
+    "end": "1987-06-18",
+    "current": false,
+    "tenure": "1981–1987 (Chairman of Council of State)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Truong Chinh",
+    "role": "General Secretary",
+    "start": "1986-07-14",
+    "end": "1986-12-18",
+    "current": false,
+    "tenure": "1986 (second term)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nguyen Van Linh",
+    "role": "General Secretary",
+    "start": "1986-12-18",
+    "end": "1991-06-28",
+    "current": false,
+    "tenure": "1986–1991 (launched Doi Moi reforms)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Vo Chi Cong",
+    "role": "President",
+    "start": "1987-06-18",
+    "end": "1992-09-23",
+    "current": false,
+    "tenure": "1987–1992 (Chairman of Council of State)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Pham Hung",
+    "role": "Prime Minister",
+    "start": "1987-06-18",
+    "end": "1988-03-10",
+    "current": false,
+    "tenure": "1987–1988 (died in office)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Do Muoi",
+    "role": "Prime Minister",
+    "start": "1988-06-22",
+    "end": "1991-08-08",
+    "current": false,
+    "tenure": "1988–1991",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Do Muoi",
+    "role": "General Secretary",
+    "start": "1991-06-28",
+    "end": "1997-12-29",
+    "current": false,
+    "tenure": "1991–1997",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Vo Van Kiet",
+    "role": "Prime Minister",
+    "start": "1991-08-08",
+    "end": "1997-09-25",
+    "current": false,
+    "tenure": "1991–1997",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Le Duc Anh",
+    "role": "President",
+    "start": "1992-09-23",
+    "end": "1997-09-24",
+    "current": false,
+    "tenure": "1992–1997",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Tran Duc Luong",
+    "role": "President",
+    "start": "1997-09-24",
+    "end": "2006-06-27",
+    "current": false,
+    "tenure": "1997–2006",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Phan Van Khai",
+    "role": "Prime Minister",
+    "start": "1997-09-25",
+    "end": "2006-06-27",
+    "current": false,
+    "tenure": "1997–2006",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Le Kha Phieu",
+    "role": "General Secretary",
+    "start": "1997-12-29",
+    "end": "2001-04-22",
+    "current": false,
+    "tenure": "1997–2001",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nong Duc Manh",
+    "role": "General Secretary",
+    "start": "2001-04-22",
+    "end": "2011-01-19",
+    "current": false,
+    "tenure": "2001–2011",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nguyen Minh Triet",
+    "role": "President",
+    "start": "2006-06-27",
+    "end": "2011-07-25",
+    "current": false,
+    "tenure": "2006–2011",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nguyen Tan Dung",
+    "role": "Prime Minister",
+    "start": "2006-06-27",
+    "end": "2016-04-06",
+    "current": false,
+    "tenure": "2006–2016",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nguyen Phu Trong",
+    "role": "General Secretary",
+    "start": "2011-01-19",
+    "end": "2024-07-19",
+    "current": false,
+    "tenure": "2011–2024 (died in office)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Truong Tan Sang",
+    "role": "President",
+    "start": "2011-07-25",
+    "end": "2016-04-02",
+    "current": false,
+    "tenure": "2011–2016",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Tran Dai Quang",
+    "role": "President",
+    "start": "2016-04-02",
+    "end": "2018-09-21",
+    "current": false,
+    "tenure": "2016–2018 (died in office)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nguyen Xuan Phuc",
+    "role": "Prime Minister",
+    "start": "2016-04-07",
+    "end": "2021-04-05",
+    "current": false,
+    "tenure": "2016–2021",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nguyen Phu Trong",
+    "role": "President",
+    "start": "2018-10-23",
+    "end": "2021-04-05",
+    "current": false,
+    "tenure": "2018–2021 (held alongside Gen Sec)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Nguyen Xuan Phuc",
+    "role": "President",
+    "start": "2021-04-05",
+    "end": "2023-01-18",
+    "current": false,
+    "tenure": "2021–2023 (resigned)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Pham Minh Chinh",
+    "role": "Prime Minister",
+    "start": "2021-04-05",
+    "end": "2026-04-07",
+    "current": false,
+    "tenure": "2021–2026",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Vo Van Thuong",
+    "role": "President",
+    "start": "2023-03-02",
+    "end": "2024-03-21",
+    "current": false,
+    "tenure": "2023–2024 (resigned)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "To Lam",
+    "role": "President",
+    "start": "2024-05-22",
+    "end": "2024-10-21",
+    "current": false,
+    "tenure": "2024 (first term, before Luong Cuong)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "To Lam",
+    "role": "General Secretary",
+    "start": "2024-08-03",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present (re-elected Jan 2026)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Luong Cuong",
+    "role": "President",
+    "start": "2024-10-21",
+    "end": "2026-04-07",
+    "current": false,
+    "tenure": "2024–2026",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "To Lam",
+    "role": "President",
+    "start": "2026-04-07",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present (President & General Secretary)",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  },
+  {
+    "name": "Le Minh Hung",
+    "role": "Prime Minister",
+    "start": "2026-04-07",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Communist Party",
+    "era": "Socialist Republic of Vietnam"
+  }
+]

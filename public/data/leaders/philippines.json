@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Manuel L. Quezon",
+    "role": "President",
+    "start": "1935-11-15",
+    "end": "1944-08-01",
+    "current": false,
+    "tenure": "1935–1944",
+    "party": "Nacionalista",
+    "era": "Commonwealth"
+  },
+  {
+    "name": "Sergio Osmeña",
+    "role": "President",
+    "start": "1944-08-01",
+    "end": "1946-05-28",
+    "current": false,
+    "tenure": "1944–1946",
+    "party": "Nacionalista",
+    "era": "Commonwealth"
+  },
+  {
+    "name": "Manuel Roxas",
+    "role": "President",
+    "start": "1946-05-28",
+    "end": "1948-04-15",
+    "current": false,
+    "tenure": "1946–1948",
+    "party": "Liberal",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Elpidio Quirino",
+    "role": "President",
+    "start": "1948-04-17",
+    "end": "1953-12-30",
+    "current": false,
+    "tenure": "1948–1953",
+    "party": "Liberal",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Ramon Magsaysay",
+    "role": "President",
+    "start": "1953-12-30",
+    "end": "1957-03-17",
+    "current": false,
+    "tenure": "1953–1957",
+    "party": "Nacionalista",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Carlos P. Garcia",
+    "role": "President",
+    "start": "1957-03-18",
+    "end": "1961-12-30",
+    "current": false,
+    "tenure": "1957–1961",
+    "party": "Nacionalista",
+    "era": "Third Republic"
+  },
+  {
+    "name": "Diosdado Macapagal",
+    "role": "President",
+    "start": "1961-12-30",
+    "end": "1965-12-30",
+    "current": false,
+    "tenure": "1961–1965",
+    "party": "Liberal",
+    "era": "Third Republic"
+  },
+  {
+    "name": "⚠️ Ferdinand Marcos Sr.",
+    "role": "President",
+    "start": "1965-12-30",
+    "end": "1986-02-25",
+    "current": false,
+    "tenure": "1965–1986",
+    "party": "Nacionalista / KBL",
+    "era": "Marcos era (martial law)"
+  },
+  {
+    "name": "Corazon Aquino",
+    "role": "President",
+    "start": "1986-02-25",
+    "end": "1992-06-30",
+    "current": false,
+    "tenure": "1986–1992",
+    "party": "PDP–Laban / UNIDO",
+    "era": "Fifth Republic"
+  },
+  {
+    "name": "Fidel V. Ramos",
+    "role": "President",
+    "start": "1992-06-30",
+    "end": "1998-06-30",
+    "current": false,
+    "tenure": "1992–1998",
+    "party": "Lakas",
+    "era": "Fifth Republic"
+  },
+  {
+    "name": "Joseph Estrada",
+    "role": "President",
+    "start": "1998-06-30",
+    "end": "2001-01-20",
+    "current": false,
+    "tenure": "1998–2001",
+    "party": "LAMMP / PMP",
+    "era": "Fifth Republic"
+  },
+  {
+    "name": "Gloria Macapagal Arroyo",
+    "role": "President",
+    "start": "2001-01-20",
+    "end": "2010-06-30",
+    "current": false,
+    "tenure": "2001–2010",
+    "party": "Lakas–Kampi",
+    "era": "Fifth Republic"
+  },
+  {
+    "name": "Benigno Aquino III",
+    "role": "President",
+    "start": "2010-06-30",
+    "end": "2016-06-30",
+    "current": false,
+    "tenure": "2010–2016",
+    "party": "Liberal",
+    "era": "Fifth Republic"
+  },
+  {
+    "name": "Rodrigo Duterte",
+    "role": "President",
+    "start": "2016-06-30",
+    "end": "2022-06-30",
+    "current": false,
+    "tenure": "2016–2022",
+    "party": "PDP–Laban",
+    "era": "Fifth Republic"
+  },
+  {
+    "name": "Bongbong Marcos (Ferdinand Marcos Jr.)",
+    "role": "President",
+    "start": "2022-06-30",
+    "end": null,
+    "current": true,
+    "tenure": "2022–present",
+    "party": "PFP",
+    "era": "Fifth Republic"
+  }
+]
