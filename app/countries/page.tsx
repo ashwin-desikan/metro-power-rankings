@@ -101,11 +101,11 @@ function pickCurrentLeader(
         const hs = current.find(
           (l) => l.role.includes(tok) && cleanName(l.name) !== cleanName(primary.name),
         );
-        if (hs) { second = { name: cleanName(hs.name), role: shortRole(hs.role) }; break; }
+        if (hs) { second = { name: hs.name, role: shortRole(hs.role) }; break; }
       }
     }
     return {
-      name: cleanName(primary.name),
+      name: primary.name,
       role: shortRole(primary.role),
       ...(second ? { second } : {}),
     };
