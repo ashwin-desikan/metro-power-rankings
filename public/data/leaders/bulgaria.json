@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Zhelyu Zhelev",
+    "role": "President",
+    "start": "1990-08-01",
+    "end": "1997-01-22",
+    "current": false,
+    "tenure": "1990–1997",
+    "party": "Union of Democratic Forces",
+    "era": "Post-communist transition"
+  },
+  {
+    "name": "Petar Stoyanov",
+    "role": "President",
+    "start": "1997-01-22",
+    "end": "2002-01-22",
+    "current": false,
+    "tenure": "1997–2002",
+    "party": "Union of Democratic Forces",
+    "era": "Pre-EU reform era"
+  },
+  {
+    "name": "Georgi Parvanov",
+    "role": "President",
+    "start": "2002-01-22",
+    "end": "2012-01-22",
+    "current": false,
+    "tenure": "2002–2012",
+    "party": "Bulgarian Socialist Party",
+    "era": "EU accession era"
+  },
+  {
+    "name": "Rosen Plevneliev",
+    "role": "President",
+    "start": "2012-01-22",
+    "end": "2017-01-22",
+    "current": false,
+    "tenure": "2012–2017",
+    "party": "GERB",
+    "era": "EU member era"
+  },
+  {
+    "name": "Rumen Radev",
+    "role": "President",
+    "start": "2017-01-22",
+    "end": "2026-01-23",
+    "current": false,
+    "tenure": "2017–2026",
+    "party": "Independent (BSP-backed)",
+    "era": "Political instability era"
+  },
+  {
+    "name": "Kiril Petkov",
+    "role": "Prime Minister",
+    "start": "2021-12-13",
+    "end": "2022-08-02",
+    "current": false,
+    "tenure": "2021–2022",
+    "party": "We Continue the Change",
+    "era": "Political instability era"
+  },
+  {
+    "name": "Galab Donev",
+    "role": "Prime Minister",
+    "start": "2022-08-02",
+    "end": "2023-06-06",
+    "current": false,
+    "tenure": "2022–2023 (caretaker)",
+    "party": "Independent",
+    "era": "Political instability era"
+  },
+  {
+    "name": "Nikolai Denkov",
+    "role": "Prime Minister",
+    "start": "2023-06-06",
+    "end": "2024-04-09",
+    "current": false,
+    "tenure": "2023–2024",
+    "party": "We Continue the Change",
+    "era": "Political instability era"
+  },
+  {
+    "name": "Dimitar Glavchev",
+    "role": "Prime Minister",
+    "start": "2024-04-09",
+    "end": "2025-01-16",
+    "current": false,
+    "tenure": "2024–2025 (caretaker)",
+    "party": "Independent",
+    "era": "Political instability era"
+  },
+  {
+    "name": "Rosen Zhelyazkov",
+    "role": "Prime Minister",
+    "start": "2025-01-16",
+    "end": "2026-05-08",
+    "current": false,
+    "tenure": "2025–2026",
+    "party": "GERB",
+    "era": "Political instability era"
+  },
+  {
+    "name": "Iliana Iotova",
+    "role": "President",
+    "start": "2026-01-23",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Independent (BSP-backed)",
+    "era": "Progressive Bulgaria era"
+  },
+  {
+    "name": "Rumen Radev",
+    "role": "Prime Minister",
+    "start": "2026-05-08",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Progressive Bulgaria",
+    "era": "Progressive Bulgaria era"
+  }
+]

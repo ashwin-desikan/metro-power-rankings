@@ -96,7 +96,7 @@
     ]
   },
   {
-    "name": "Andrew Jackson",
+    "name": "⚠️ Andrew Jackson",
     "role": "President",
     "start": "1829-03-04",
     "end": "1837-03-04",
@@ -450,6 +450,10 @@
     "era": null,
     "metros": [
       {
+        "name": "Augusta (GA)",
+        "slug": "augusta-ga"
+      },
+      {
         "name": "New York",
         "slug": "new-york"
       }
@@ -482,8 +486,8 @@
     "era": null,
     "metros": [
       {
-        "name": "Lebanon",
-        "slug": "lebanon"
+        "name": "Springfield",
+        "slug": "springfield"
       }
     ]
   },
@@ -584,7 +588,7 @@
     ]
   },
   {
-    "name": "Richard Nixon",
+    "name": "⚠️ Richard Nixon",
     "role": "President",
     "start": "1969-01-20",
     "end": "1974-08-09",
@@ -720,7 +724,7 @@
     ]
   },
   {
-    "name": "Donald Trump",
+    "name": "⚠️ Donald Trump",
     "role": "President",
     "start": "2017-01-20",
     "end": "2021-01-20",
@@ -756,7 +760,7 @@
     ]
   },
   {
-    "name": "Donald Trump",
+    "name": "⚠️ Donald Trump",
     "role": "President",
     "start": "2025-01-20",
     "end": null,

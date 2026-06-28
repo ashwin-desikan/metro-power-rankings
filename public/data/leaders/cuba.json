@@ -1,0 +1,92 @@
+[
+  {
+    "name": "⚠️ Fulgencio Batista",
+    "role": "President",
+    "start": "1952-03-10",
+    "end": "1959-01-01",
+    "current": false,
+    "tenure": "1952–1959",
+    "party": "Progressive Action Party",
+    "era": "Pre-Revolution dictatorship"
+  },
+  {
+    "name": "Manuel Urrutia Lleó",
+    "role": "President",
+    "start": "1959-01-03",
+    "end": "1959-07-18",
+    "current": false,
+    "tenure": "1959",
+    "party": "Independent",
+    "era": "Cuban Revolution"
+  },
+  {
+    "name": "⚠️ Fidel Castro",
+    "role": "Prime Minister",
+    "start": "1959-02-16",
+    "end": "1976-12-02",
+    "current": false,
+    "tenure": "1959–1976",
+    "party": "Communist Party of Cuba",
+    "era": "Castro era"
+  },
+  {
+    "name": "Osvaldo Dorticós Torrado",
+    "role": "President",
+    "start": "1959-07-18",
+    "end": "1976-12-02",
+    "current": false,
+    "tenure": "1959–1976",
+    "party": "Communist Party of Cuba",
+    "era": "Cuban Revolution"
+  },
+  {
+    "name": "⚠️ Fidel Castro",
+    "role": "President (President of the Council of State)",
+    "start": "1976-12-02",
+    "end": "2008-02-24",
+    "current": false,
+    "tenure": "1976–2008",
+    "party": "Communist Party of Cuba",
+    "era": "Castro era"
+  },
+  {
+    "name": "⚠️ Raúl Castro",
+    "role": "President (President of the Council of State)",
+    "start": "2008-02-24",
+    "end": "2018-04-19",
+    "current": false,
+    "tenure": "2008–2018",
+    "party": "Communist Party of Cuba",
+    "era": "Castro era"
+  },
+  {
+    "name": "⚠️ Raúl Castro",
+    "role": "General Secretary (First Secretary, PCC)",
+    "start": "2011-04-19",
+    "end": "2021-04-19",
+    "current": false,
+    "tenure": "2011–2021",
+    "party": "Communist Party of Cuba",
+    "era": "Castro era"
+  },
+  {
+    "name": "Miguel Díaz-Canel",
+    "role": "President",
+    "start": "2018-04-19",
+    "end": null,
+    "current": true,
+    "tenure": "2018–present",
+    "party": "Communist Party of Cuba",
+    "era": "Post-Castro era"
+  },
+  {
+    "name": "Miguel Díaz-Canel",
+    "role": "General Secretary (First Secretary, PCC)",
+    "start": "2021-04-19",
+    "end": null,
+    "current": true,
+    "tenure": "2021–present",
+    "party": "Communist Party of Cuba",
+    "era": "Post-Castro era"
+  }
+]

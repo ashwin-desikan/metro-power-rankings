@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Romulo Betancourt",
+    "role": "President",
+    "start": "1959-02-13",
+    "end": "1964-03-11",
+    "current": false,
+    "tenure": "1959-1964",
+    "party": "Democratic Action (AD)",
+    "era": "Punto Fijo democracy"
+  },
+  {
+    "name": "Raul Leoni",
+    "role": "President",
+    "start": "1964-03-11",
+    "end": "1969-03-11",
+    "current": false,
+    "tenure": "1964-1969",
+    "party": "Democratic Action (AD)",
+    "era": "Punto Fijo democracy"
+  },
+  {
+    "name": "Rafael Caldera",
+    "role": "President",
+    "start": "1969-03-11",
+    "end": "1974-03-12",
+    "current": false,
+    "tenure": "1969-1974",
+    "party": "COPEI",
+    "era": "Punto Fijo democracy"
+  },
+  {
+    "name": "⚠️ Carlos Andres Perez",
+    "role": "President",
+    "start": "1974-03-12",
+    "end": "1979-03-12",
+    "current": false,
+    "tenure": "1974-1979",
+    "party": "Democratic Action (AD)",
+    "era": "Punto Fijo democracy"
+  },
+  {
+    "name": "Luis Herrera Campins",
+    "role": "President",
+    "start": "1979-03-12",
+    "end": "1984-02-02",
+    "current": false,
+    "tenure": "1979-1984",
+    "party": "COPEI",
+    "era": "Punto Fijo democracy"
+  },
+  {
+    "name": "Jaime Lusinchi",
+    "role": "President",
+    "start": "1984-02-02",
+    "end": "1989-02-02",
+    "current": false,
+    "tenure": "1984-1989",
+    "party": "Democratic Action (AD)",
+    "era": "Punto Fijo democracy"
+  },
+  {
+    "name": "⚠️ Carlos Andres Perez",
+    "role": "President",
+    "start": "1989-02-02",
+    "end": "1993-05-21",
+    "current": false,
+    "tenure": "1989-1993",
+    "party": "Democratic Action (AD)",
+    "era": "Punto Fijo democracy (collapse)"
+  },
+  {
+    "name": "Ramon Jose Velasquez",
+    "role": "President (interim)",
+    "start": "1993-06-05",
+    "end": "1994-02-02",
+    "current": false,
+    "tenure": "1993-1994",
+    "party": "Independent",
+    "era": "Punto Fijo democracy (collapse)"
+  },
+  {
+    "name": "Rafael Caldera",
+    "role": "President",
+    "start": "1994-02-02",
+    "end": "1999-02-02",
+    "current": false,
+    "tenure": "1994-1999",
+    "party": "National Convergence",
+    "era": "Punto Fijo democracy (collapse)"
+  },
+  {
+    "name": "Hugo Chavez",
+    "role": "President",
+    "start": "1999-02-02",
+    "end": "2013-03-05",
+    "current": false,
+    "tenure": "1999-2013 (died in office)",
+    "party": "PSUV / MVR",
+    "era": "Bolivarian Revolution"
+  },
+  {
+    "name": "⚠️ Nicolas Maduro",
+    "role": "President",
+    "start": "2013-04-19",
+    "end": "2026-01-03",
+    "current": false,
+    "tenure": "2013-2026 (captured by US forces)",
+    "party": "PSUV",
+    "era": "Bolivarian Revolution (Maduro)"
+  },
+  {
+    "name": "Delcy Rodriguez",
+    "role": "Acting President",
+    "start": "2026-01-05",
+    "end": null,
+    "current": true,
+    "tenure": "2026-present (acting)",
+    "party": "PSUV",
+    "era": "Post-Maduro transition"
+  }
+]

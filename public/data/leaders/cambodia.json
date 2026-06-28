@@ -1,0 +1,112 @@
+[
+  {
+    "name": "👑 Norodom Sihanouk",
+    "role": "Monarch",
+    "start": "1941-04-25",
+    "end": "1955-03-02",
+    "current": false,
+    "tenure": "1941-1955",
+    "party": null,
+    "era": "Kingdom of Cambodia"
+  },
+  {
+    "name": "👑 Norodom Suramarit",
+    "role": "Monarch",
+    "start": "1955-03-03",
+    "end": "1960-04-03",
+    "current": false,
+    "tenure": "1955-1960",
+    "party": null,
+    "era": "Kingdom of Cambodia"
+  },
+  {
+    "name": "Norodom Sihanouk",
+    "role": "President",
+    "start": "1960-06-14",
+    "end": "1970-03-18",
+    "current": false,
+    "tenure": "1960-1970",
+    "party": "Sangkum",
+    "era": "Kingdom (Head of State)"
+  },
+  {
+    "name": "Lon Nol",
+    "role": "President",
+    "start": "1972-03-10",
+    "end": "1975-04-01",
+    "current": false,
+    "tenure": "1972-1975",
+    "party": "Social Republican Party",
+    "era": "Khmer Republic"
+  },
+  {
+    "name": "⚠️ Pol Pot",
+    "role": "Prime Minister",
+    "start": "1976-04-14",
+    "end": "1979-01-07",
+    "current": false,
+    "tenure": "1976-1979",
+    "party": "Communist Party of Kampuchea (Khmer Rouge)",
+    "era": "Democratic Kampuchea (Khmer Rouge genocide)"
+  },
+  {
+    "name": "Heng Samrin",
+    "role": "President",
+    "start": "1979-01-08",
+    "end": "1992-08-29",
+    "current": false,
+    "tenure": "1979-1992",
+    "party": "Kampuchean People's Revolutionary Party",
+    "era": "People's Republic of Kampuchea"
+  },
+  {
+    "name": "⚠️ Hun Sen",
+    "role": "Prime Minister",
+    "start": "1985-01-14",
+    "end": "1993-07-02",
+    "current": false,
+    "tenure": "1985-1993",
+    "party": "Cambodian People's Party",
+    "era": "People's Republic of Kampuchea"
+  },
+  {
+    "name": "👑 Norodom Sihanouk",
+    "role": "Monarch",
+    "start": "1993-09-24",
+    "end": "2004-10-07",
+    "current": false,
+    "tenure": "1993-2004",
+    "party": null,
+    "era": "Restored Kingdom"
+  },
+  {
+    "name": "⚠️ Hun Sen",
+    "role": "Prime Minister",
+    "start": "1998-11-30",
+    "end": "2023-08-22",
+    "current": false,
+    "tenure": "1998-2023",
+    "party": "Cambodian People's Party",
+    "era": "Restored Kingdom"
+  },
+  {
+    "name": "👑 Norodom Sihamoni",
+    "role": "Monarch",
+    "start": "2004-10-14",
+    "end": null,
+    "current": true,
+    "tenure": "2004-present",
+    "party": null,
+    "era": "Restored Kingdom"
+  },
+  {
+    "name": "Hun Manet",
+    "role": "Prime Minister",
+    "start": "2023-08-22",
+    "end": null,
+    "current": true,
+    "tenure": "2023-present",
+    "party": "Cambodian People's Party",
+    "era": "Restored Kingdom"
+  }
+]

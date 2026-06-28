@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Lojze Peterle",
+    "role": "Prime Minister",
+    "start": "1990-05-16",
+    "end": "1992-05-14",
+    "current": false,
+    "tenure": null,
+    "party": "SKD",
+    "era": "Independence era"
+  },
+  {
+    "name": "Milan Kučan",
+    "role": "President",
+    "start": "1991-06-25",
+    "end": "2002-12-22",
+    "current": false,
+    "tenure": null,
+    "party": "Independent (ex-ZKS)",
+    "era": "Independence era"
+  },
+  {
+    "name": "Janez Drnovšek",
+    "role": "Prime Minister",
+    "start": "1992-05-14",
+    "end": "2000-05-07",
+    "current": false,
+    "tenure": null,
+    "party": "LDS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Andrej Bajuk",
+    "role": "Prime Minister",
+    "start": "2000-05-07",
+    "end": "2000-11-30",
+    "current": false,
+    "tenure": null,
+    "party": "SLS+SKD / NSi",
+    "era": "Independence era"
+  },
+  {
+    "name": "Janez Drnovšek",
+    "role": "Prime Minister",
+    "start": "2000-11-30",
+    "end": "2002-12-19",
+    "current": false,
+    "tenure": null,
+    "party": "LDS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Anton Rop",
+    "role": "Prime Minister",
+    "start": "2002-12-19",
+    "end": "2004-12-03",
+    "current": false,
+    "tenure": null,
+    "party": "LDS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Janez Drnovšek",
+    "role": "President",
+    "start": "2002-12-22",
+    "end": "2007-12-22",
+    "current": false,
+    "tenure": null,
+    "party": "LDS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Janez Janša",
+    "role": "Prime Minister",
+    "start": "2004-12-03",
+    "end": "2008-11-21",
+    "current": false,
+    "tenure": null,
+    "party": "SDS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Danilo Türk",
+    "role": "President",
+    "start": "2007-12-22",
+    "end": "2012-12-22",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Independence era"
+  },
+  {
+    "name": "Borut Pahor",
+    "role": "Prime Minister",
+    "start": "2008-11-21",
+    "end": "2012-02-10",
+    "current": false,
+    "tenure": null,
+    "party": "SD",
+    "era": "Independence era"
+  },
+  {
+    "name": "Janez Janša",
+    "role": "Prime Minister",
+    "start": "2012-02-10",
+    "end": "2013-03-20",
+    "current": false,
+    "tenure": null,
+    "party": "SDS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Borut Pahor",
+    "role": "President",
+    "start": "2012-12-22",
+    "end": "2022-12-22",
+    "current": false,
+    "tenure": null,
+    "party": "SD / Independent",
+    "era": "Independence era"
+  },
+  {
+    "name": "Alenka Bratušek",
+    "role": "Prime Minister",
+    "start": "2013-03-20",
+    "end": "2014-09-18",
+    "current": false,
+    "tenure": null,
+    "party": "PS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Miro Cerar",
+    "role": "Prime Minister",
+    "start": "2014-09-18",
+    "end": "2018-09-13",
+    "current": false,
+    "tenure": null,
+    "party": "SMC",
+    "era": "Independence era"
+  },
+  {
+    "name": "Marjan Šarec",
+    "role": "Prime Minister",
+    "start": "2018-09-13",
+    "end": "2020-03-13",
+    "current": false,
+    "tenure": null,
+    "party": "LMŠ",
+    "era": "Independence era"
+  },
+  {
+    "name": "Janez Janša",
+    "role": "Prime Minister",
+    "start": "2020-03-13",
+    "end": "2022-06-01",
+    "current": false,
+    "tenure": null,
+    "party": "SDS",
+    "era": "Independence era"
+  },
+  {
+    "name": "Robert Golob",
+    "role": "Prime Minister",
+    "start": "2022-06-01",
+    "end": "2026-05-22",
+    "current": false,
+    "tenure": null,
+    "party": "Freedom Movement (GS)",
+    "era": "Independence era"
+  },
+  {
+    "name": "Nataša Pirc Musar",
+    "role": "President",
+    "start": "2022-12-22",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Independence era"
+  },
+  {
+    "name": "Janez Janša",
+    "role": "Prime Minister",
+    "start": "2026-05-22",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "SDS",
+    "era": "Independence era"
+  }
+]

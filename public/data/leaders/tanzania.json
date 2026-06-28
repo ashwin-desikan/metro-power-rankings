@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Julius Nyerere",
+    "role": "President",
+    "start": "1964-04-26",
+    "end": "1985-11-05",
+    "current": false,
+    "tenure": "1964-1985",
+    "party": "TANU / CCM",
+    "era": "Union & Ujamaa"
+  },
+  {
+    "name": "Ali Hassan Mwinyi",
+    "role": "President",
+    "start": "1985-11-05",
+    "end": "1995-11-23",
+    "current": false,
+    "tenure": "1985-1995",
+    "party": "CCM",
+    "era": "Liberalization"
+  },
+  {
+    "name": "Benjamin Mkapa",
+    "role": "President",
+    "start": "1995-11-23",
+    "end": "2005-12-21",
+    "current": false,
+    "tenure": "1995-2005",
+    "party": "CCM",
+    "era": "Multiparty Era"
+  },
+  {
+    "name": "Jakaya Kikwete",
+    "role": "President",
+    "start": "2005-12-21",
+    "end": "2015-11-05",
+    "current": false,
+    "tenure": "2005-2015",
+    "party": "CCM",
+    "era": "Multiparty Era"
+  },
+  {
+    "name": "John Magufuli",
+    "role": "President",
+    "start": "2015-11-05",
+    "end": "2021-03-17",
+    "current": false,
+    "tenure": "2015-2021",
+    "party": "CCM",
+    "era": "Multiparty Era"
+  },
+  {
+    "name": "Samia Suluhu Hassan",
+    "role": "President",
+    "start": "2021-03-19",
+    "end": null,
+    "current": true,
+    "tenure": "2021-present",
+    "party": "CCM",
+    "era": "Multiparty Era"
+  }
+]

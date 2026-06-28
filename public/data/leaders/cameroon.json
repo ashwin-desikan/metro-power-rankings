@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ahmadou Ahidjo",
+    "role": "President",
+    "start": "1960-01-01",
+    "end": "1982-11-06",
+    "current": false,
+    "tenure": "1960-1982",
+    "party": "Cameroonian Union / Cameroon National Union",
+    "era": "Post-independence one-party era"
+  },
+  {
+    "name": "Paul Biya",
+    "role": "President",
+    "start": "1982-11-06",
+    "end": null,
+    "current": true,
+    "tenure": "1982-present",
+    "party": "Cameroon People's Democratic Movement",
+    "era": "Biya era"
+  },
+  {
+    "name": "Joseph Dion Ngute",
+    "role": "Prime Minister",
+    "start": "2019-01-04",
+    "end": null,
+    "current": true,
+    "tenure": "2019-present",
+    "party": "Cameroon People's Democratic Movement",
+    "era": "Biya era"
+  }
+]

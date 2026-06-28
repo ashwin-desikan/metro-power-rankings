@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Zviad Gamsakhurdia",
+    "role": "President",
+    "start": "1991-04-14",
+    "end": "1992-01-06",
+    "current": false,
+    "tenure": "1991–1992",
+    "party": "Round Table—Free Georgia",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Eduard Shevardnadze",
+    "role": "President",
+    "start": "1995-11-26",
+    "end": "2003-11-23",
+    "current": false,
+    "tenure": "1995–2003 (head of state from 1992)",
+    "party": "Union of Citizens of Georgia",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Mikheil Saakashvili",
+    "role": "President",
+    "start": "2004-01-25",
+    "end": "2013-11-17",
+    "current": false,
+    "tenure": "2004–2013",
+    "party": "United National Movement",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Bidzina Ivanishvili",
+    "role": "Prime Minister",
+    "start": "2012-10-25",
+    "end": "2013-11-20",
+    "current": false,
+    "tenure": "2012–2013",
+    "party": "Georgian Dream",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Giorgi Margvelashvili",
+    "role": "President",
+    "start": "2013-11-17",
+    "end": "2018-12-16",
+    "current": false,
+    "tenure": "2013–2018",
+    "party": "Independent (Georgian Dream-backed)",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Irakli Garibashvili",
+    "role": "Prime Minister",
+    "start": "2013-11-20",
+    "end": "2015-12-30",
+    "current": false,
+    "tenure": "2013–2015 (first term)",
+    "party": "Georgian Dream",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Giorgi Kvirikashvili",
+    "role": "Prime Minister",
+    "start": "2015-12-30",
+    "end": "2018-06-13",
+    "current": false,
+    "tenure": "2015–2018",
+    "party": "Georgian Dream",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Mamuka Bakhtadze",
+    "role": "Prime Minister",
+    "start": "2018-06-20",
+    "end": "2019-09-08",
+    "current": false,
+    "tenure": "2018–2019",
+    "party": "Georgian Dream",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Salome Zourabichvili",
+    "role": "President",
+    "start": "2018-12-16",
+    "end": "2024-12-29",
+    "current": false,
+    "tenure": "2018–2024",
+    "party": "Independent (Georgian Dream-backed)",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Giorgi Gakharia",
+    "role": "Prime Minister",
+    "start": "2019-09-08",
+    "end": "2021-02-18",
+    "current": false,
+    "tenure": "2019–2021",
+    "party": "Georgian Dream",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Irakli Garibashvili",
+    "role": "Prime Minister",
+    "start": "2021-02-22",
+    "end": "2024-02-08",
+    "current": false,
+    "tenure": "2021–2024 (second term)",
+    "party": "Georgian Dream",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Irakli Kobakhidze",
+    "role": "Prime Minister",
+    "start": "2024-02-08",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present",
+    "party": "Georgian Dream",
+    "era": "Independent Georgia"
+  },
+  {
+    "name": "Mikheil Kavelashvili",
+    "role": "President",
+    "start": "2024-12-29",
+    "end": null,
+    "current": true,
+    "tenure": "2024–present (disputed)",
+    "party": "People's Power (Georgian Dream-backed)",
+    "era": "Independent Georgia"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Vladimír Mečiar",
+    "role": "Prime Minister",
+    "start": "1993-01-01",
+    "end": "1994-03-16",
+    "current": false,
+    "tenure": "1993-1994 (1st term as PM of independent Slovakia)",
+    "party": "HZDS",
+    "era": null
+  },
+  {
+    "name": "Michal Kováč",
+    "role": "President",
+    "start": "1993-03-02",
+    "end": "1998-03-02",
+    "current": false,
+    "tenure": "1993-1998",
+    "party": "HZDS (then independent)",
+    "era": null
+  },
+  {
+    "name": "Jozef Moravčík",
+    "role": "Prime Minister",
+    "start": "1994-03-16",
+    "end": "1994-12-13",
+    "current": false,
+    "tenure": "1994",
+    "party": "DEÚS",
+    "era": null
+  },
+  {
+    "name": "Vladimír Mečiar",
+    "role": "Prime Minister",
+    "start": "1994-12-13",
+    "end": "1998-10-30",
+    "current": false,
+    "tenure": "1994-1998 (2nd term)",
+    "party": "HZDS",
+    "era": null
+  },
+  {
+    "name": "Mikuláš Dzurinda",
+    "role": "Prime Minister",
+    "start": "1998-10-30",
+    "end": "2006-07-04",
+    "current": false,
+    "tenure": "1998-2006",
+    "party": "SDKÚ",
+    "era": null
+  },
+  {
+    "name": "Rudolf Schuster",
+    "role": "President",
+    "start": "1999-06-15",
+    "end": "2004-06-15",
+    "current": false,
+    "tenure": "1999-2004",
+    "party": "SOP",
+    "era": null
+  },
+  {
+    "name": "Ivan Gašparovič",
+    "role": "President",
+    "start": "2004-06-15",
+    "end": "2014-06-15",
+    "current": false,
+    "tenure": "2004-2014",
+    "party": "HZD / independent",
+    "era": null
+  },
+  {
+    "name": "Robert Fico",
+    "role": "Prime Minister",
+    "start": "2006-07-04",
+    "end": "2010-07-08",
+    "current": false,
+    "tenure": "2006-2010 (1st term)",
+    "party": "Smer-SD",
+    "era": null
+  },
+  {
+    "name": "Iveta Radičová",
+    "role": "Prime Minister",
+    "start": "2010-07-08",
+    "end": "2012-04-04",
+    "current": false,
+    "tenure": "2010-2012",
+    "party": "SDKÚ-DS",
+    "era": null
+  },
+  {
+    "name": "Robert Fico",
+    "role": "Prime Minister",
+    "start": "2012-04-04",
+    "end": "2018-03-22",
+    "current": false,
+    "tenure": "2012-2018 (2nd-3rd term)",
+    "party": "Smer-SD",
+    "era": null
+  },
+  {
+    "name": "Andrej Kiska",
+    "role": "President",
+    "start": "2014-06-15",
+    "end": "2019-06-15",
+    "current": false,
+    "tenure": "2014-2019",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Peter Pellegrini",
+    "role": "Prime Minister",
+    "start": "2018-03-22",
+    "end": "2020-03-21",
+    "current": false,
+    "tenure": "2018-2020 (as PM)",
+    "party": "Smer-SD",
+    "era": null
+  },
+  {
+    "name": "Zuzana Čaputová",
+    "role": "President",
+    "start": "2019-06-15",
+    "end": "2024-06-15",
+    "current": false,
+    "tenure": "2019-2024",
+    "party": "Progressive Slovakia",
+    "era": null
+  },
+  {
+    "name": "Igor Matovič",
+    "role": "Prime Minister",
+    "start": "2020-03-21",
+    "end": "2021-04-01",
+    "current": false,
+    "tenure": "2020-2021",
+    "party": "OĽaNO",
+    "era": null
+  },
+  {
+    "name": "Eduard Heger",
+    "role": "Prime Minister",
+    "start": "2021-04-01",
+    "end": "2023-05-15",
+    "current": false,
+    "tenure": "2021-2023",
+    "party": "OĽaNO",
+    "era": null
+  },
+  {
+    "name": "Ľudovít Ódor",
+    "role": "Prime Minister",
+    "start": "2023-05-15",
+    "end": "2023-10-25",
+    "current": false,
+    "tenure": "2023 (technocratic caretaker)",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Robert Fico",
+    "role": "Prime Minister",
+    "start": "2023-10-25",
+    "end": null,
+    "current": true,
+    "tenure": "2023-present (4th term)",
+    "party": "Smer-SD",
+    "era": null
+  },
+  {
+    "name": "Peter Pellegrini",
+    "role": "President",
+    "start": "2024-06-15",
+    "end": null,
+    "current": true,
+    "tenure": "2024-present",
+    "party": "Hlas-SD",
+    "era": null
+  }
+]

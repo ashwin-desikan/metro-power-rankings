@@ -1,0 +1,102 @@
+[
+  {
+    "name": "José Figueres Ferrer",
+    "role": "President (Founding Junta of the Second Republic)",
+    "start": "1948-05-08",
+    "end": "1949-11-08",
+    "current": false,
+    "tenure": "1948–1949",
+    "party": "National Liberation Movement",
+    "era": "Second Republic founding"
+  },
+  {
+    "name": "José Figueres Ferrer",
+    "role": "President",
+    "start": "1953-11-08",
+    "end": "1958-05-08",
+    "current": false,
+    "tenure": "1953–1958",
+    "party": "National Liberation Party",
+    "era": "Second Republic"
+  },
+  {
+    "name": "Óscar Arias Sánchez",
+    "role": "President",
+    "start": "1986-05-08",
+    "end": "1990-05-08",
+    "current": false,
+    "tenure": "1986–1990",
+    "party": "National Liberation Party",
+    "era": "Modern democracy"
+  },
+  {
+    "name": "Abel Pacheco",
+    "role": "President",
+    "start": "2002-05-08",
+    "end": "2006-05-08",
+    "current": false,
+    "tenure": "2002–2006",
+    "party": "Social Christian Unity Party",
+    "era": "Modern democracy"
+  },
+  {
+    "name": "Óscar Arias Sánchez",
+    "role": "President",
+    "start": "2006-05-08",
+    "end": "2010-05-08",
+    "current": false,
+    "tenure": "2006–2010",
+    "party": "National Liberation Party",
+    "era": "Modern democracy"
+  },
+  {
+    "name": "Laura Chinchilla",
+    "role": "President",
+    "start": "2010-05-08",
+    "end": "2014-05-08",
+    "current": false,
+    "tenure": "2010–2014",
+    "party": "National Liberation Party",
+    "era": "Modern democracy"
+  },
+  {
+    "name": "Luis Guillermo Solís",
+    "role": "President",
+    "start": "2014-05-08",
+    "end": "2018-05-08",
+    "current": false,
+    "tenure": "2014–2018",
+    "party": "Citizens' Action Party",
+    "era": "Modern democracy"
+  },
+  {
+    "name": "Carlos Alvarado Quesada",
+    "role": "President",
+    "start": "2018-05-08",
+    "end": "2022-05-08",
+    "current": false,
+    "tenure": "2018–2022",
+    "party": "Citizens' Action Party",
+    "era": "Modern democracy"
+  },
+  {
+    "name": "Rodrigo Chaves Robles",
+    "role": "President",
+    "start": "2022-05-08",
+    "end": "2026-05-08",
+    "current": false,
+    "tenure": "2022–2026",
+    "party": "Social Democratic Progress Party",
+    "era": "Modern democracy"
+  },
+  {
+    "name": "Laura Fernández Delgado",
+    "role": "President",
+    "start": "2026-05-08",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Sovereign People's Party",
+    "era": "Modern democracy"
+  }
+]

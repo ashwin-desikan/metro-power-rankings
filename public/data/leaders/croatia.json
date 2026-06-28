@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Franjo Tuđman",
+    "role": "President",
+    "start": "1990-05-30",
+    "end": "1999-12-10",
+    "current": false,
+    "tenure": "1990–1999",
+    "party": "Croatian Democratic Union",
+    "era": "Independence & founding presidency"
+  },
+  {
+    "name": "Ivica Račan",
+    "role": "Prime Minister",
+    "start": "2000-01-27",
+    "end": "2003-12-23",
+    "current": false,
+    "tenure": "2000–2003",
+    "party": "Social Democratic Party",
+    "era": "European integration era"
+  },
+  {
+    "name": "Stjepan Mesić",
+    "role": "President",
+    "start": "2000-02-18",
+    "end": "2010-02-18",
+    "current": false,
+    "tenure": "2000–2010",
+    "party": "Croatian People's Party",
+    "era": "European integration era"
+  },
+  {
+    "name": "⚠️ Ivo Sanader",
+    "role": "Prime Minister",
+    "start": "2003-12-23",
+    "end": "2009-07-01",
+    "current": false,
+    "tenure": "2003–2009",
+    "party": "Croatian Democratic Union",
+    "era": "European integration era"
+  },
+  {
+    "name": "Jadranka Kosor",
+    "role": "Prime Minister",
+    "start": "2009-07-06",
+    "end": "2011-12-23",
+    "current": false,
+    "tenure": "2009–2011",
+    "party": "Croatian Democratic Union",
+    "era": "European integration era"
+  },
+  {
+    "name": "Ivo Josipović",
+    "role": "President",
+    "start": "2010-02-18",
+    "end": "2015-02-18",
+    "current": false,
+    "tenure": "2010–2015",
+    "party": "Social Democratic Party",
+    "era": "EU accession & austerity era"
+  },
+  {
+    "name": "Zoran Milanović",
+    "role": "Prime Minister",
+    "start": "2011-12-23",
+    "end": "2016-01-22",
+    "current": false,
+    "tenure": "2011–2016",
+    "party": "Social Democratic Party",
+    "era": "EU accession & austerity era"
+  },
+  {
+    "name": "Kolinda Grabar-Kitarović",
+    "role": "President",
+    "start": "2015-02-19",
+    "end": "2020-02-18",
+    "current": false,
+    "tenure": "2015–2020",
+    "party": "Croatian Democratic Union",
+    "era": "EU member era"
+  },
+  {
+    "name": "Tihomir Orešković",
+    "role": "Prime Minister",
+    "start": "2016-01-22",
+    "end": "2016-10-19",
+    "current": false,
+    "tenure": "2016",
+    "party": "Independent",
+    "era": "EU member era"
+  },
+  {
+    "name": "Andrej Plenković",
+    "role": "Prime Minister",
+    "start": "2016-10-19",
+    "end": null,
+    "current": true,
+    "tenure": "2016–present",
+    "party": "Croatian Democratic Union",
+    "era": "Plenković era"
+  },
+  {
+    "name": "Zoran Milanović",
+    "role": "President",
+    "start": "2020-02-18",
+    "end": null,
+    "current": true,
+    "tenure": "2020–present",
+    "party": "Independent (SDP-backed)",
+    "era": "Plenković era"
+  }
+]

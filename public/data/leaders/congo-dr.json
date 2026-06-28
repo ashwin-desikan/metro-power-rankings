@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Patrice Lumumba",
+    "role": "Prime Minister",
+    "start": "1960-06-24",
+    "end": "1960-09-05",
+    "current": false,
+    "tenure": "1960",
+    "party": "Mouvement National Congolais",
+    "era": "First Republic (independence)"
+  },
+  {
+    "name": "Joseph Kasa-Vubu",
+    "role": "President",
+    "start": "1960-06-27",
+    "end": "1965-11-24",
+    "current": false,
+    "tenure": "1960-1965",
+    "party": "Alliance des Bakongo (ABAKO)",
+    "era": "First Republic"
+  },
+  {
+    "name": "⚠️ Mobutu Sese Seko",
+    "role": "President",
+    "start": "1965-11-24",
+    "end": "1997-05-16",
+    "current": false,
+    "tenure": "1965-1997",
+    "party": "Popular Movement of the Revolution",
+    "era": "Mobutu dictatorship (Zaire)"
+  },
+  {
+    "name": "⚠️ Laurent-Désiré Kabila",
+    "role": "President",
+    "start": "1997-05-17",
+    "end": "2001-01-16",
+    "current": false,
+    "tenure": "1997-2001",
+    "party": "AFDL / PPRD",
+    "era": "Kabila era (post-Mobutu)"
+  },
+  {
+    "name": "Joseph Kabila",
+    "role": "President",
+    "start": "2001-01-26",
+    "end": "2019-01-24",
+    "current": false,
+    "tenure": "2001-2019",
+    "party": "People's Party for Reconstruction and Democracy",
+    "era": "Kabila era"
+  },
+  {
+    "name": "Félix Tshisekedi",
+    "role": "President",
+    "start": "2019-01-24",
+    "end": null,
+    "current": true,
+    "tenure": "2019-present",
+    "party": "Union for Democracy and Social Progress",
+    "era": "Tshisekedi era"
+  },
+  {
+    "name": "Judith Suminwa",
+    "role": "Prime Minister",
+    "start": "2024-06-12",
+    "end": null,
+    "current": true,
+    "tenure": "2024-present",
+    "party": "Union for Democracy and Social Progress",
+    "era": "Tshisekedi era"
+  }
+]

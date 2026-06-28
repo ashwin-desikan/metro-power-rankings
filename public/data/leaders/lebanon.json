@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Bechara El Khoury",
+    "role": "President",
+    "start": "1943-09-21",
+    "end": "1952-09-18",
+    "current": false,
+    "tenure": "1943–1952",
+    "party": null,
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Riad al-Solh",
+    "role": "Prime Minister",
+    "start": "1943-09-25",
+    "end": "1945-01-10",
+    "current": false,
+    "tenure": "1943–1945 (first independence PM)",
+    "party": null,
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Camille Chamoun",
+    "role": "President",
+    "start": "1952-09-23",
+    "end": "1958-09-23",
+    "current": false,
+    "tenure": "1952–1958",
+    "party": "National Liberal Party",
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Fuad Chehab",
+    "role": "President",
+    "start": "1958-09-23",
+    "end": "1964-09-23",
+    "current": false,
+    "tenure": "1958–1964",
+    "party": null,
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Charles Helou",
+    "role": "President",
+    "start": "1964-09-23",
+    "end": "1970-09-23",
+    "current": false,
+    "tenure": "1964–1970",
+    "party": null,
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Suleiman Frangieh",
+    "role": "President",
+    "start": "1970-09-23",
+    "end": "1976-09-23",
+    "current": false,
+    "tenure": "1970–1976",
+    "party": "Marada Movement",
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Elias Sarkis",
+    "role": "President",
+    "start": "1976-09-23",
+    "end": "1982-09-23",
+    "current": false,
+    "tenure": "1976–1982",
+    "party": null,
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Amine Gemayel",
+    "role": "President",
+    "start": "1982-09-23",
+    "end": "1988-09-23",
+    "current": false,
+    "tenure": "1982–1988",
+    "party": "Kataeb Party",
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "René Moawad",
+    "role": "President",
+    "start": "1989-11-05",
+    "end": "1989-11-22",
+    "current": false,
+    "tenure": "1989",
+    "party": null,
+    "era": "First Republic (1943–1990)"
+  },
+  {
+    "name": "Elias Hrawi",
+    "role": "President",
+    "start": "1989-11-24",
+    "end": "1998-11-24",
+    "current": false,
+    "tenure": "1989–1998",
+    "party": null,
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Rafic Hariri",
+    "role": "Prime Minister",
+    "start": "1992-10-31",
+    "end": "1998-12-04",
+    "current": false,
+    "tenure": "1992–1998",
+    "party": "Future Movement",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Émile Lahoud",
+    "role": "President",
+    "start": "1998-11-24",
+    "end": "2007-11-24",
+    "current": false,
+    "tenure": "1998–2007",
+    "party": null,
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Fouad Siniora",
+    "role": "Prime Minister",
+    "start": "2005-07-19",
+    "end": "2009-11-09",
+    "current": false,
+    "tenure": "2005–2009",
+    "party": "Future Movement",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Michel Suleiman",
+    "role": "President",
+    "start": "2008-05-25",
+    "end": "2014-05-25",
+    "current": false,
+    "tenure": "2008–2014",
+    "party": "Independent",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Michel Aoun",
+    "role": "President",
+    "start": "2016-10-31",
+    "end": "2022-10-31",
+    "current": false,
+    "tenure": "2016–2022",
+    "party": "Free Patriotic Movement",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Saad Hariri",
+    "role": "Prime Minister",
+    "start": "2016-12-18",
+    "end": "2020-01-21",
+    "current": false,
+    "tenure": "2016–2020 (multiple terms)",
+    "party": "Future Movement",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Hassan Diab",
+    "role": "Prime Minister",
+    "start": "2020-01-21",
+    "end": "2021-09-10",
+    "current": false,
+    "tenure": "2020–2021",
+    "party": "Independent",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Najib Mikati",
+    "role": "Prime Minister",
+    "start": "2021-09-10",
+    "end": "2025-02-08",
+    "current": false,
+    "tenure": "2021–2025 (incl. caretaker)",
+    "party": "Azm Movement",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Joseph Aoun",
+    "role": "President",
+    "start": "2025-01-09",
+    "end": null,
+    "current": true,
+    "tenure": "2025–present",
+    "party": "Independent",
+    "era": "Second Republic (post-Taif)"
+  },
+  {
+    "name": "Nawaf Salam",
+    "role": "Prime Minister",
+    "start": "2025-02-08",
+    "end": null,
+    "current": true,
+    "tenure": "2025–present",
+    "party": "Independent",
+    "era": "Second Republic (post-Taif)"
+  }
+]

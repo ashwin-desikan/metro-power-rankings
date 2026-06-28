@@ -1,0 +1,202 @@
+[
+  {
+    "name": "D.S. Senanayake",
+    "role": "Prime Minister",
+    "start": "1947-09-26",
+    "end": "1952-03-22",
+    "current": false,
+    "tenure": "1947-1952",
+    "party": "United National Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "Dudley Senanayake",
+    "role": "Prime Minister",
+    "start": "1952-03-26",
+    "end": "1953-10-12",
+    "current": false,
+    "tenure": "1952-1953",
+    "party": "United National Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "John Kotelawala",
+    "role": "Prime Minister",
+    "start": "1953-10-12",
+    "end": "1956-04-12",
+    "current": false,
+    "tenure": "1953-1956",
+    "party": "United National Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "S.W.R.D. Bandaranaike",
+    "role": "Prime Minister",
+    "start": "1956-04-12",
+    "end": "1959-09-26",
+    "current": false,
+    "tenure": "1956-1959",
+    "party": "Sri Lanka Freedom Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "Wijeyananda Dahanayake",
+    "role": "Prime Minister",
+    "start": "1959-09-26",
+    "end": "1960-03-21",
+    "current": false,
+    "tenure": "1959-1960",
+    "party": "Sri Lanka Freedom Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "Dudley Senanayake",
+    "role": "Prime Minister",
+    "start": "1960-03-21",
+    "end": "1960-07-21",
+    "current": false,
+    "tenure": "1960",
+    "party": "United National Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "Sirimavo Bandaranaike",
+    "role": "Prime Minister",
+    "start": "1960-07-21",
+    "end": "1965-03-25",
+    "current": false,
+    "tenure": "1960-1965",
+    "party": "Sri Lanka Freedom Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "Dudley Senanayake",
+    "role": "Prime Minister",
+    "start": "1965-03-25",
+    "end": "1970-05-29",
+    "current": false,
+    "tenure": "1965-1970",
+    "party": "United National Party",
+    "era": "Dominion of Ceylon"
+  },
+  {
+    "name": "Sirimavo Bandaranaike",
+    "role": "Prime Minister",
+    "start": "1970-05-29",
+    "end": "1977-07-23",
+    "current": false,
+    "tenure": "1970-1977",
+    "party": "Sri Lanka Freedom Party",
+    "era": "Republic"
+  },
+  {
+    "name": "J.R. Jayewardene",
+    "role": "Prime Minister",
+    "start": "1977-07-23",
+    "end": "1978-02-04",
+    "current": false,
+    "tenure": "1977-1978",
+    "party": "United National Party",
+    "era": "Republic"
+  },
+  {
+    "name": "J.R. Jayewardene",
+    "role": "President",
+    "start": "1978-02-04",
+    "end": "1989-01-02",
+    "current": false,
+    "tenure": "1978-1989",
+    "party": "United National Party",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Ranasinghe Premadasa",
+    "role": "President",
+    "start": "1989-01-02",
+    "end": "1993-05-01",
+    "current": false,
+    "tenure": "1989-1993",
+    "party": "United National Party",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Dingiri Banda Wijetunga",
+    "role": "President",
+    "start": "1993-05-01",
+    "end": "1994-11-12",
+    "current": false,
+    "tenure": "1993-1994",
+    "party": "United National Party",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Chandrika Kumaratunga",
+    "role": "President",
+    "start": "1994-11-12",
+    "end": "2005-11-19",
+    "current": false,
+    "tenure": "1994-2005",
+    "party": "Sri Lanka Freedom Party",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Mahinda Rajapaksa",
+    "role": "President",
+    "start": "2005-11-19",
+    "end": "2015-01-09",
+    "current": false,
+    "tenure": "2005-2015",
+    "party": "Sri Lanka Freedom Party",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Maithripala Sirisena",
+    "role": "President",
+    "start": "2015-01-09",
+    "end": "2019-11-18",
+    "current": false,
+    "tenure": "2015-2019",
+    "party": "Sri Lanka Freedom Party",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Gotabaya Rajapaksa",
+    "role": "President",
+    "start": "2019-11-18",
+    "end": "2022-07-14",
+    "current": false,
+    "tenure": "2019-2022",
+    "party": "Sri Lanka Podujana Peramuna",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Ranil Wickremesinghe",
+    "role": "President",
+    "start": "2022-07-21",
+    "end": "2024-09-23",
+    "current": false,
+    "tenure": "2022-2024",
+    "party": "United National Party",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Anura Kumara Dissanayake",
+    "role": "President",
+    "start": "2024-09-23",
+    "end": null,
+    "current": true,
+    "tenure": "2024-present",
+    "party": "National People's Power (JVP)",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Harini Amarasuriya",
+    "role": "Prime Minister",
+    "start": "2024-09-24",
+    "end": null,
+    "current": true,
+    "tenure": "2024-present",
+    "party": "National People's Power (JVP)",
+    "era": "Executive Presidency"
+  }
+]

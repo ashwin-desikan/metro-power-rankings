@@ -1,0 +1,42 @@
+[
+  {
+    "name": "👑 Isa bin Salman Al Khalifa",
+    "role": "Monarch",
+    "start": "1971-08-15",
+    "end": "1999-03-06",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Khalifa Monarchy"
+  },
+  {
+    "name": "Khalifa bin Salman Al Khalifa",
+    "role": "Prime Minister",
+    "start": "1971-08-15",
+    "end": "2020-11-11",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Khalifa Monarchy"
+  },
+  {
+    "name": "👑 Hamad bin Isa Al Khalifa",
+    "role": "Monarch",
+    "start": "1999-03-06",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Al Khalifa Monarchy"
+  },
+  {
+    "name": "Salman bin Hamad Al Khalifa",
+    "role": "Prime Minister",
+    "start": "2020-11-11",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Al Khalifa Monarchy"
+  }
+]

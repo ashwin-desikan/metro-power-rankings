@@ -19,11 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-28",
-    headline: "Leadership pages for 23 more countries, head of government first",
+    headline: "Leadership history reaches 98 countries, now self-updating",
     items: [
-      "Leadership history now covers 23 more countries across Asia, Europe, the Gulf, the Nordics, and Latin America, each traced from the modern state's founding with era groupings.",
-      "The countries directory now lists the head of government first (prime minister or chancellor), showing the head of state alongside it where the two roles are distinct.",
-      "Every sitting head of state and government was individually verified to reflect 2026 officeholders, including several recent changes of government.",
+      "Leadership history now covers 98 countries, adding 63 this release across Africa, the Middle East, the Americas, the Balkans, Central Asia and beyond, each traced from the modern state's founding.",
+      "The directory leads with the head of government (PM or chancellor) where the president is ceremonial, showing the head of state alongside, with crowns for monarchs and a mark for authoritarian leaders.",
+      "Current officeholders were individually verified to reflect 2026, capturing recent changes of government in Venezuela, Iraq, Bolivia, Hungary, Czechia and beyond.",
+      "A weekly job now refreshes each country's current leaders automatically from open data and updates the site with no deploy, so the directory stays current on its own.",
     ],
   },
   {

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Makarios III",
+    "role": "President",
+    "start": "1960-08-16",
+    "end": "1977-08-03",
+    "current": false,
+    "tenure": "1960–1977",
+    "party": null,
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "Spyros Kyprianou",
+    "role": "President",
+    "start": "1977-08-03",
+    "end": "1988-02-28",
+    "current": false,
+    "tenure": "1977–1988",
+    "party": "Democratic Party (DIKO)",
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "George Vassiliou",
+    "role": "President",
+    "start": "1988-02-28",
+    "end": "1993-02-28",
+    "current": false,
+    "tenure": "1988–1993",
+    "party": "Independent",
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "Glafcos Clerides",
+    "role": "President",
+    "start": "1993-02-28",
+    "end": "2003-02-28",
+    "current": false,
+    "tenure": "1993–2003",
+    "party": "Democratic Rally (DISY)",
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "Tassos Papadopoulos",
+    "role": "President",
+    "start": "2003-02-28",
+    "end": "2008-02-28",
+    "current": false,
+    "tenure": "2003–2008",
+    "party": "Democratic Party (DIKO)",
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "Demetris Christofias",
+    "role": "President",
+    "start": "2008-02-28",
+    "end": "2013-02-28",
+    "current": false,
+    "tenure": "2008–2013",
+    "party": "AKEL",
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "Nicos Anastasiades",
+    "role": "President",
+    "start": "2013-02-28",
+    "end": "2023-02-28",
+    "current": false,
+    "tenure": "2013–2023",
+    "party": "Democratic Rally (DISY)",
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "Nikos Christodoulides",
+    "role": "President",
+    "start": "2023-02-28",
+    "end": null,
+    "current": true,
+    "tenure": "2023–present",
+    "party": "Independent",
+    "era": "Republic of Cyprus"
+  }
+]

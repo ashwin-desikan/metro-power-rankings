@@ -43,8 +43,8 @@
     "name": "⚠️ Ali Khamenei",
     "role": "Supreme Leader",
     "start": "1989-06-04",
-    "end": null,
-    "current": true,
+    "end": "2026-02-28",
+    "current": false,
     "tenure": "37y 1m 7d",
     "party": "IRP; 35+ years in office",
     "era": null
@@ -90,7 +90,7 @@
     "era": null
   },
   {
-    "name": "Ebrahim Raisi",
+    "name": "⚠️ Ebrahim Raisi",
     "role": "President",
     "start": "2021-08-03",
     "end": "2024-05-19",
@@ -107,6 +107,16 @@
     "current": true,
     "tenure": "1y 11m 9d",
     "party": "Reformists",
+    "era": null
+  },
+  {
+    "name": "Mojtaba Khamenei",
+    "role": "Supreme Leader",
+    "start": "2026-03-08",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
     "era": null
   }
 ]

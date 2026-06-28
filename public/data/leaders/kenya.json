@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Jomo Kenyatta",
+    "role": "President",
+    "start": "1964-12-12",
+    "end": "1978-08-22",
+    "current": false,
+    "tenure": "1964-1978",
+    "party": "KANU",
+    "era": "Founding Republic"
+  },
+  {
+    "name": "Daniel arap Moi",
+    "role": "President",
+    "start": "1978-08-22",
+    "end": "2002-12-30",
+    "current": false,
+    "tenure": "1978-2002",
+    "party": "KANU",
+    "era": "Nyayo Era"
+  },
+  {
+    "name": "Mwai Kibaki",
+    "role": "President",
+    "start": "2002-12-30",
+    "end": "2013-04-09",
+    "current": false,
+    "tenure": "2002-2013",
+    "party": "NARC / PNU",
+    "era": "Multiparty Era"
+  },
+  {
+    "name": "Uhuru Kenyatta",
+    "role": "President",
+    "start": "2013-04-09",
+    "end": "2022-09-13",
+    "current": false,
+    "tenure": "2013-2022",
+    "party": "TNA / Jubilee",
+    "era": "Devolution Era"
+  },
+  {
+    "name": "William Ruto",
+    "role": "President",
+    "start": "2022-09-13",
+    "end": null,
+    "current": true,
+    "tenure": "2022-present",
+    "party": "UDA / Kenya Kwanza",
+    "era": "Devolution Era"
+  }
+]

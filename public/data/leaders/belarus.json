@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Stanislav Shushkevich",
+    "role": "Chairman of the Supreme Soviet (head of state)",
+    "start": "1991-09-18",
+    "end": "1994-01-26",
+    "current": false,
+    "tenure": "1991–1994",
+    "party": "Independent",
+    "era": "Independent Belarus"
+  },
+  {
+    "name": "Myechyslaw Hryb",
+    "role": "Chairman of the Supreme Soviet (head of state)",
+    "start": "1994-01-28",
+    "end": "1994-07-20",
+    "current": false,
+    "tenure": "1994",
+    "party": "Independent",
+    "era": "Independent Belarus"
+  },
+  {
+    "name": "⚠️ Alexander Lukashenko",
+    "role": "President",
+    "start": "1994-07-20",
+    "end": null,
+    "current": true,
+    "tenure": "1994–present",
+    "party": "Independent (non-partisan, dominant)",
+    "era": "Independent Belarus"
+  },
+  {
+    "name": "Roman Golovchenko",
+    "role": "Prime Minister",
+    "start": "2020-06-04",
+    "end": "2025-03-10",
+    "current": false,
+    "tenure": "2020–2025",
+    "party": "Independent",
+    "era": "Independent Belarus"
+  },
+  {
+    "name": "Alexander Turchin",
+    "role": "Prime Minister",
+    "start": "2025-03-10",
+    "end": null,
+    "current": true,
+    "tenure": "2025–present",
+    "party": "Independent",
+    "era": "Independent Belarus"
+  }
+]

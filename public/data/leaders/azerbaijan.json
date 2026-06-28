@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ayaz Mutallibov",
+    "role": "President",
+    "start": "1991-09-08",
+    "end": "1992-03-06",
+    "current": false,
+    "tenure": "1991–1992",
+    "party": "Independent (ex-Communist)",
+    "era": "Post-Soviet independence"
+  },
+  {
+    "name": "Yagub Mammadov",
+    "role": "President (acting)",
+    "start": "1992-03-06",
+    "end": "1992-05-14",
+    "current": false,
+    "tenure": "1992",
+    "party": "Independent",
+    "era": "Post-Soviet independence"
+  },
+  {
+    "name": "Abulfaz Elchibey",
+    "role": "President",
+    "start": "1992-06-16",
+    "end": "1993-06-24",
+    "current": false,
+    "tenure": "1992–1993",
+    "party": "Popular Front of Azerbaijan",
+    "era": "Post-Soviet independence"
+  },
+  {
+    "name": "Heydar Aliyev",
+    "role": "President",
+    "start": "1993-10-10",
+    "end": "2003-10-31",
+    "current": false,
+    "tenure": "1993–2003",
+    "party": "New Azerbaijan Party",
+    "era": "Aliyev dynasty"
+  },
+  {
+    "name": "Ilham Aliyev",
+    "role": "President",
+    "start": "2003-10-31",
+    "end": null,
+    "current": true,
+    "tenure": "2003–present",
+    "party": "New Azerbaijan Party",
+    "era": "Aliyev dynasty"
+  },
+  {
+    "name": "Ali Asadov",
+    "role": "Prime Minister",
+    "start": "2019-10-08",
+    "end": null,
+    "current": true,
+    "tenure": "2019–present",
+    "party": "New Azerbaijan Party",
+    "era": "Aliyev dynasty"
+  }
+]

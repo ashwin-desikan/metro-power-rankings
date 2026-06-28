@@ -1,0 +1,122 @@
+[
+  {
+    "name": "⚠️ Rafael Trujillo",
+    "role": "President / De facto dictator",
+    "start": "1930-08-16",
+    "end": "1961-05-30",
+    "current": false,
+    "tenure": "1930–1961 (assassinated)",
+    "party": "Dominican Party",
+    "era": "Trujillo Era (Era of Trujillo)"
+  },
+  {
+    "name": "Joaquín Balaguer",
+    "role": "President",
+    "start": "1960-08-03",
+    "end": "1962-01-16",
+    "current": false,
+    "tenure": "1960–1962 (Trujillo-era puppet, then transitional)",
+    "party": "Dominican Party",
+    "era": "Trujillo Era / Transition"
+  },
+  {
+    "name": "Juan Bosch",
+    "role": "President",
+    "start": "1963-02-27",
+    "end": "1963-09-25",
+    "current": false,
+    "tenure": "1963 (overthrown in coup)",
+    "party": "Dominican Revolutionary Party (PRD)",
+    "era": "Post-Trujillo Turmoil"
+  },
+  {
+    "name": "Joaquín Balaguer",
+    "role": "President",
+    "start": "1966-07-01",
+    "end": "1978-08-16",
+    "current": false,
+    "tenure": "1966–1978 (the Twelve Years)",
+    "party": "Reformist Party",
+    "era": "The Twelve Years (Los Doce Años)"
+  },
+  {
+    "name": "Antonio Guzmán Fernández",
+    "role": "President",
+    "start": "1978-08-16",
+    "end": "1982-07-04",
+    "current": false,
+    "tenure": "1978–1982 (died in office)",
+    "party": "Dominican Revolutionary Party (PRD)",
+    "era": "PRD Era"
+  },
+  {
+    "name": "Salvador Jorge Blanco",
+    "role": "President",
+    "start": "1982-08-16",
+    "end": "1986-08-16",
+    "current": false,
+    "tenure": "1982–1986",
+    "party": "Dominican Revolutionary Party (PRD)",
+    "era": "PRD Era"
+  },
+  {
+    "name": "Joaquín Balaguer",
+    "role": "President",
+    "start": "1986-08-16",
+    "end": "1996-08-16",
+    "current": false,
+    "tenure": "1986–1996",
+    "party": "Social Christian Reformist Party (PRSC)",
+    "era": "Balaguer Return"
+  },
+  {
+    "name": "Leonel Fernández",
+    "role": "President",
+    "start": "1996-08-16",
+    "end": "2000-08-16",
+    "current": false,
+    "tenure": "1996–2000",
+    "party": "Dominican Liberation Party (PLD)",
+    "era": "PLD Era"
+  },
+  {
+    "name": "Hipólito Mejía",
+    "role": "President",
+    "start": "2000-08-16",
+    "end": "2004-08-16",
+    "current": false,
+    "tenure": "2000–2004",
+    "party": "Dominican Revolutionary Party (PRD)",
+    "era": "PLD Era"
+  },
+  {
+    "name": "Leonel Fernández",
+    "role": "President",
+    "start": "2004-08-16",
+    "end": "2012-08-16",
+    "current": false,
+    "tenure": "2004–2012",
+    "party": "Dominican Liberation Party (PLD)",
+    "era": "PLD Era"
+  },
+  {
+    "name": "Danilo Medina",
+    "role": "President",
+    "start": "2012-08-16",
+    "end": "2020-08-16",
+    "current": false,
+    "tenure": "2012–2020",
+    "party": "Dominican Liberation Party (PLD)",
+    "era": "PLD Era"
+  },
+  {
+    "name": "Luis Abinader",
+    "role": "President",
+    "start": "2020-08-16",
+    "end": null,
+    "current": true,
+    "tenure": "2020–present (re-elected 2024)",
+    "party": "Modern Revolutionary Party (PRM)",
+    "era": "PRM Era"
+  }
+]

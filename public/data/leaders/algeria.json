@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Ahmed Ben Bella",
+    "role": "President",
+    "start": "1963-09-15",
+    "end": "1965-06-19",
+    "current": false,
+    "tenure": "1963-1965",
+    "party": "FLN",
+    "era": "Independence & one-party era"
+  },
+  {
+    "name": "⚠️ Houari Boumédiène",
+    "role": "President",
+    "start": "1965-06-19",
+    "end": "1978-12-27",
+    "current": false,
+    "tenure": "1965-1978",
+    "party": "FLN",
+    "era": "Independence & one-party era"
+  },
+  {
+    "name": "Rabah Bitat",
+    "role": "President",
+    "start": "1978-12-27",
+    "end": "1979-02-09",
+    "current": false,
+    "tenure": "1978-1979 (acting)",
+    "party": "FLN",
+    "era": "Independence & one-party era"
+  },
+  {
+    "name": "Chadli Bendjedid",
+    "role": "President",
+    "start": "1979-02-09",
+    "end": "1992-01-11",
+    "current": false,
+    "tenure": "1979-1992",
+    "party": "FLN",
+    "era": "One-party era & liberalization"
+  },
+  {
+    "name": "Mohamed Boudiaf",
+    "role": "President (High Council of State Chairman)",
+    "start": "1992-01-16",
+    "end": "1992-06-29",
+    "current": false,
+    "tenure": "1992 (assassinated)",
+    "party": "Independent",
+    "era": "Civil war (Black Decade)"
+  },
+  {
+    "name": "Ali Kafi",
+    "role": "President (High Council of State Chairman)",
+    "start": "1992-07-02",
+    "end": "1994-01-31",
+    "current": false,
+    "tenure": "1992-1994",
+    "party": "FLN",
+    "era": "Civil war (Black Decade)"
+  },
+  {
+    "name": "Liamine Zéroual",
+    "role": "President",
+    "start": "1994-01-31",
+    "end": "1999-04-27",
+    "current": false,
+    "tenure": "1994-1999",
+    "party": "Independent / RND",
+    "era": "Civil war (Black Decade)"
+  },
+  {
+    "name": "Abdelaziz Bouteflika",
+    "role": "President",
+    "start": "1999-04-27",
+    "end": "2019-04-02",
+    "current": false,
+    "tenure": "1999-2019 (resigned amid Hirak)",
+    "party": "FLN",
+    "era": "Bouteflika era"
+  },
+  {
+    "name": "Abdelkader Bensalah",
+    "role": "President (interim, Council of the Nation)",
+    "start": "2019-04-09",
+    "end": "2019-12-19",
+    "current": false,
+    "tenure": "2019 (interim)",
+    "party": "RND",
+    "era": "Hirak transition"
+  },
+  {
+    "name": "Abdelmadjid Tebboune",
+    "role": "President",
+    "start": "2019-12-19",
+    "end": null,
+    "current": true,
+    "tenure": "2019-present",
+    "party": "Independent",
+    "era": "Tebboune era"
+  },
+  {
+    "name": "Sifi Ghrieb",
+    "role": "Prime Minister",
+    "start": "2025-08-28",
+    "end": null,
+    "current": true,
+    "tenure": "2025-present (interim Aug 2025, confirmed Sept 2025)",
+    "party": "Independent",
+    "era": "Tebboune era"
+  }
+]

@@ -1,0 +1,542 @@
+{
+  "algeria": {
+    "name": "Abdelmadjid Tebboune",
+    "role": "Pres."
+  },
+  "argentina": {
+    "name": "Javier Milei",
+    "role": "Pres."
+  },
+  "australia": {
+    "name": "Anthony Albanese",
+    "role": "PM"
+  },
+  "austria": {
+    "name": "Christian Stocker",
+    "role": "Federal Chanc.",
+    "second": {
+      "name": "Alexander Van der Bellen",
+      "role": "Federal Pres."
+    }
+  },
+  "azerbaijan": {
+    "name": "Ilham Aliyev",
+    "role": "Pres."
+  },
+  "bahrain": {
+    "name": "Salman bin Hamad Al Khalifa",
+    "role": "PM",
+    "second": {
+      "name": "👑 Hamad bin Isa Al Khalifa",
+      "role": "Monarch"
+    }
+  },
+  "bangladesh": {
+    "name": "Muhammad Yunus",
+    "role": "Chief Adviser"
+  },
+  "belarus": {
+    "name": "⚠️ Alexander Lukashenko",
+    "role": "Pres."
+  },
+  "belgium": {
+    "name": "Bart De Wever",
+    "role": "PM",
+    "second": {
+      "name": "👑 King Philippe",
+      "role": "Monarch"
+    }
+  },
+  "bolivia": {
+    "name": "Rodrigo Paz",
+    "role": "Pres."
+  },
+  "bosnia-herzegovina": {
+    "name": "Borjana Krišto",
+    "role": "PM",
+    "second": {
+      "name": "Denis Bećirović",
+      "role": "Pres. (Presidency)"
+    }
+  },
+  "brazil": {
+    "name": "Luiz Inácio Lula da Silva",
+    "role": "Pres."
+  },
+  "bulgaria": {
+    "name": "Rumen Radev",
+    "role": "PM",
+    "second": {
+      "name": "Iliana Iotova",
+      "role": "Pres."
+    }
+  },
+  "cambodia": {
+    "name": "Hun Manet",
+    "role": "PM",
+    "second": {
+      "name": "👑 Norodom Sihamoni",
+      "role": "Monarch"
+    }
+  },
+  "cameroon": {
+    "name": "Paul Biya",
+    "role": "Pres."
+  },
+  "canada": {
+    "name": "Mark Carney",
+    "role": "PM"
+  },
+  "chile": {
+    "name": "José Antonio Kast",
+    "role": "Pres."
+  },
+  "china": {
+    "name": "Xi Jinping",
+    "role": "Pres. (PRC)"
+  },
+  "colombia": {
+    "name": "Gustavo Petro",
+    "role": "Pres."
+  },
+  "congo-dr": {
+    "name": "Félix Tshisekedi",
+    "role": "Pres."
+  },
+  "costa-rica": {
+    "name": "Laura Fernández Delgado",
+    "role": "Pres."
+  },
+  "croatia": {
+    "name": "Andrej Plenković",
+    "role": "PM",
+    "second": {
+      "name": "Zoran Milanović",
+      "role": "Pres."
+    }
+  },
+  "cuba": {
+    "name": "Miguel Díaz-Canel",
+    "role": "Gen. Sec. (First Secretary, PCC)"
+  },
+  "cyprus": {
+    "name": "Nikos Christodoulides",
+    "role": "Pres."
+  },
+  "czech-republic": {
+    "name": "Andrej Babiš",
+    "role": "PM",
+    "second": {
+      "name": "Petr Pavel",
+      "role": "Pres."
+    }
+  },
+  "denmark": {
+    "name": "Mette Frederiksen",
+    "role": "PM",
+    "second": {
+      "name": "👑 Frederik X",
+      "role": "Monarch"
+    }
+  },
+  "dominican-republic": {
+    "name": "Luis Abinader",
+    "role": "Pres."
+  },
+  "ecuador": {
+    "name": "Daniel Noboa",
+    "role": "Pres."
+  },
+  "egypt": {
+    "name": "Abdel Fattah el-Sisi",
+    "role": "Pres."
+  },
+  "england": {
+    "name": "Keir Starmer",
+    "role": "PM",
+    "second": {
+      "name": "👑 King Charles III",
+      "role": "Sovereign"
+    }
+  },
+  "ethiopia": {
+    "name": "Abiy Ahmed",
+    "role": "PM",
+    "second": {
+      "name": "Taye Atske Selassie",
+      "role": "Pres."
+    }
+  },
+  "finland": {
+    "name": "Petteri Orpo",
+    "role": "PM",
+    "second": {
+      "name": "Alexander Stubb",
+      "role": "Pres."
+    }
+  },
+  "france": {
+    "name": "Emmanuel Macron",
+    "role": "Pres."
+  },
+  "georgia": {
+    "name": "Irakli Kobakhidze",
+    "role": "PM",
+    "second": {
+      "name": "Mikheil Kavelashvili",
+      "role": "Pres."
+    }
+  },
+  "germany": {
+    "name": "Friedrich Merz",
+    "role": "Federal Chanc."
+  },
+  "ghana": {
+    "name": "John Mahama",
+    "role": "Pres."
+  },
+  "greece": {
+    "name": "Kyriakos Mitsotakis",
+    "role": "PM",
+    "second": {
+      "name": "Konstantinos Tasoulas",
+      "role": "Pres."
+    }
+  },
+  "hungary": {
+    "name": "Péter Magyar",
+    "role": "PM",
+    "second": {
+      "name": "Tamás Sulyok",
+      "role": "Pres."
+    }
+  },
+  "india": {
+    "name": "Narendra Modi",
+    "role": "PM"
+  },
+  "indonesia": {
+    "name": "Prabowo Subianto",
+    "role": "Pres."
+  },
+  "iran": {
+    "name": "Mojtaba Khamenei",
+    "role": "Sup. Leader",
+    "second": {
+      "name": "Masoud Pezeshkian",
+      "role": "Pres."
+    }
+  },
+  "iraq": {
+    "name": "Ali al-Zaidi",
+    "role": "PM",
+    "second": {
+      "name": "Nizar Amedi",
+      "role": "Pres."
+    }
+  },
+  "ireland": {
+    "name": "Micheál Martin",
+    "role": "Taoiseach"
+  },
+  "israel": {
+    "name": "Benjamin Netanyahu",
+    "role": "PM"
+  },
+  "italy": {
+    "name": "Giorgia Meloni",
+    "role": "PM"
+  },
+  "japan": {
+    "name": "Sanae Takaichi",
+    "role": "PM"
+  },
+  "jordan": {
+    "name": "Jafar Hassan",
+    "role": "PM",
+    "second": {
+      "name": "👑 Abdullah II bin Al-Hussein",
+      "role": "Monarch"
+    }
+  },
+  "kazakhstan": {
+    "name": "Kassym-Jomart Tokayev",
+    "role": "Pres."
+  },
+  "kenya": {
+    "name": "William Ruto",
+    "role": "Pres."
+  },
+  "kuwait": {
+    "name": "Ahmad Abdullah Al-Ahmad Al-Sabah",
+    "role": "PM",
+    "second": {
+      "name": "👑 Meshal Al-Ahmad Al-Jaber Al-Sabah",
+      "role": "Monarch"
+    }
+  },
+  "lebanon": {
+    "name": "Joseph Aoun",
+    "role": "Pres."
+  },
+  "lithuania": {
+    "name": "Inga Ruginienė",
+    "role": "PM",
+    "second": {
+      "name": "Gitanas Nausėda",
+      "role": "Pres."
+    }
+  },
+  "luxembourg": {
+    "name": "Luc Frieden",
+    "role": "PM",
+    "second": {
+      "name": "👑 Guillaume",
+      "role": "Monarch"
+    }
+  },
+  "malaysia": {
+    "name": "Anwar Ibrahim",
+    "role": "PM",
+    "second": {
+      "name": "👑 Sultan Ibrahim of Johor",
+      "role": "Monarch (Yang di-Pertuan Agong)"
+    }
+  },
+  "mexico": {
+    "name": "Claudia Sheinbaum",
+    "role": "Pres."
+  },
+  "monaco": {
+    "name": "Christophe Mirmand",
+    "role": "PM",
+    "second": {
+      "name": "👑 Albert II",
+      "role": "Monarch"
+    }
+  },
+  "montenegro": {
+    "name": "Milojko Spajić",
+    "role": "PM",
+    "second": {
+      "name": "Jakov Milatović",
+      "role": "Pres."
+    }
+  },
+  "morocco": {
+    "name": "Aziz Akhannouch",
+    "role": "PM",
+    "second": {
+      "name": "👑 King Mohammed VI",
+      "role": "Monarch"
+    }
+  },
+  "myanmar": {
+    "name": "⚠️ Min Aung Hlaing",
+    "role": "Pres."
+  },
+  "netherlands": {
+    "name": "Rob Jetten",
+    "role": "PM",
+    "second": {
+      "name": "👑 King Willem-Alexander",
+      "role": "Monarch"
+    }
+  },
+  "new-zealand": {
+    "name": "Christopher Luxon",
+    "role": "PM"
+  },
+  "nigeria": {
+    "name": "Bola Tinubu",
+    "role": "Pres."
+  },
+  "north-korea": {
+    "name": "⚠️ Kim Jong-un",
+    "role": "Sup. Leader"
+  },
+  "norway": {
+    "name": "Jonas Gahr Støre",
+    "role": "PM",
+    "second": {
+      "name": "👑 Harald V",
+      "role": "Monarch"
+    }
+  },
+  "pakistan": {
+    "name": "Shehbaz Sharif",
+    "role": "PM"
+  },
+  "panama": {
+    "name": "Jose Raul Mulino",
+    "role": "Pres."
+  },
+  "peru": {
+    "name": "José María Balcázar",
+    "role": "Pres."
+  },
+  "philippines": {
+    "name": "Bongbong Marcos (Ferdinand Marcos Jr.)",
+    "role": "Pres."
+  },
+  "poland": {
+    "name": "Donald Tusk",
+    "role": "PM",
+    "second": {
+      "name": "Karol Nawrocki",
+      "role": "Pres."
+    }
+  },
+  "portugal": {
+    "name": "Luís Montenegro",
+    "role": "PM",
+    "second": {
+      "name": "António José Seguro",
+      "role": "Pres."
+    }
+  },
+  "qatar": {
+    "name": "Mohammed bin Abdulrahman Al Thani",
+    "role": "PM",
+    "second": {
+      "name": "👑 Emir Tamim bin Hamad Al Thani",
+      "role": "Monarch"
+    }
+  },
+  "russia": {
+    "name": "⚠️ Vladimir Putin",
+    "role": "Pres."
+  },
+  "saudi-arabia": {
+    "name": "👑 King Salman bin Abdulaziz",
+    "role": "King"
+  },
+  "scotland": {
+    "name": "Keir Starmer",
+    "role": "PM",
+    "second": {
+      "name": "👑 King Charles III",
+      "role": "Sovereign"
+    }
+  },
+  "serbia": {
+    "name": "Aleksandar Vučić",
+    "role": "Pres."
+  },
+  "singapore": {
+    "name": "Lawrence Wong",
+    "role": "PM"
+  },
+  "slovakia": {
+    "name": "Robert Fico",
+    "role": "PM",
+    "second": {
+      "name": "Peter Pellegrini",
+      "role": "Pres."
+    }
+  },
+  "slovenia": {
+    "name": "Janez Janša",
+    "role": "PM",
+    "second": {
+      "name": "Nataša Pirc Musar",
+      "role": "Pres."
+    }
+  },
+  "south-africa": {
+    "name": "Cyril Ramaphosa",
+    "role": "Pres."
+  },
+  "south-korea": {
+    "name": "Lee Jae-myung",
+    "role": "Pres."
+  },
+  "spain": {
+    "name": "Pedro Sánchez",
+    "role": "PM",
+    "second": {
+      "name": "👑 King Felipe VI",
+      "role": "Monarch"
+    }
+  },
+  "sri-lanka": {
+    "name": "Anura Kumara Dissanayake",
+    "role": "Pres."
+  },
+  "sudan": {
+    "name": "⚠️ Abdel Fattah al-Burhan",
+    "role": "Pres. (Sovereignty Council Chairman)"
+  },
+  "sweden": {
+    "name": "Ulf Kristersson",
+    "role": "PM",
+    "second": {
+      "name": "👑 Carl XVI Gustaf",
+      "role": "Monarch"
+    }
+  },
+  "switzerland": {
+    "name": "Guy Parmelin",
+    "role": "Pres. of the Swiss Confederation"
+  },
+  "taiwan": {
+    "name": "Lai Ching-te",
+    "role": "Pres."
+  },
+  "tanzania": {
+    "name": "Samia Suluhu Hassan",
+    "role": "Pres."
+  },
+  "thailand": {
+    "name": "Anutin Charnvirakul",
+    "role": "PM",
+    "second": {
+      "name": "👑 Vajiralongkorn (Rama X)",
+      "role": "Monarch"
+    }
+  },
+  "tunisia": {
+    "name": "Kais Saied",
+    "role": "Pres."
+  },
+  "turkey": {
+    "name": "Recep Tayyip Erdoğan",
+    "role": "Pres."
+  },
+  "ukraine": {
+    "name": "Volodymyr Zelensky",
+    "role": "Pres."
+  },
+  "united-arab-emirates": {
+    "name": "Mohamed bin Zayed Al Nahyan",
+    "role": "Pres."
+  },
+  "united-kingdom": {
+    "name": "Keir Starmer",
+    "role": "PM",
+    "second": {
+      "name": "👑 King Charles III",
+      "role": "Sovereign"
+    }
+  },
+  "united-states": {
+    "name": "⚠️ Donald Trump",
+    "role": "Pres."
+  },
+  "uruguay": {
+    "name": "Yamandú Orsi",
+    "role": "Pres."
+  },
+  "uzbekistan": {
+    "name": "Shavkat Mirziyoyev",
+    "role": "Pres."
+  },
+  "venezuela": {
+    "name": "Delcy Rodriguez",
+    "role": "Acting Pres."
+  },
+  "vietnam": {
+    "name": "To Lam",
+    "role": "Gen. Sec."
+  }
+}

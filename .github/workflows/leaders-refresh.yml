@@ -1,0 +1,54 @@
+name: Leaders current-refresh (weekly, no deploy)
+
+# Refreshes public/data/leaders/_current.json from Wikidata once a week and
+# commits it with [vercel skip]. The countries hub fetches that file at runtime
+# via ISR (lib/currentLeaders.ts, revalidate weekly) from GitHub raw, so a change
+# of head of state / head of government appears with NO Vercel build. Quiet weeks
+# (no leadership changes) produce no commit. The per-country history files remain
+# the curated source of truth for the detail-page tables.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC
+  workflow_dispatch: {}    # allow manual "Run workflow"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: leaders-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Self-test refresh logic
+        run: python scripts/leaders/refresh-current-leaders.py --self-test
+
+      - name: Refresh current leaders from Wikidata
+        run: python scripts/leaders/refresh-current-leaders.py
+
+      - name: Commit if changed
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- public/data/leaders/_current.json; then
+            echo "No leadership changes this week."
+            exit 0
+          fi
+          git add public/data/leaders/_current.json
+          git commit -m "data: weekly current-leader refresh [vercel skip]"
+          git push origin HEAD:main

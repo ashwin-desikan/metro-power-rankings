@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Sao Shwe Thaik",
+    "role": "President",
+    "start": "1948-01-04",
+    "end": "1952-03-16",
+    "current": false,
+    "tenure": "1948-1952",
+    "party": "Anti-Fascist People's Freedom League",
+    "era": "Union of Burma (parliamentary)"
+  },
+  {
+    "name": "U Nu",
+    "role": "Prime Minister",
+    "start": "1948-01-04",
+    "end": "1956-06-12",
+    "current": false,
+    "tenure": "1948-1956",
+    "party": "Anti-Fascist People's Freedom League",
+    "era": "Union of Burma (parliamentary)"
+  },
+  {
+    "name": "Ba Swe",
+    "role": "Prime Minister",
+    "start": "1956-06-12",
+    "end": "1957-02-28",
+    "current": false,
+    "tenure": "1956-1957",
+    "party": "Anti-Fascist People's Freedom League",
+    "era": "Union of Burma (parliamentary)"
+  },
+  {
+    "name": "U Nu",
+    "role": "Prime Minister",
+    "start": "1957-02-28",
+    "end": "1958-10-28",
+    "current": false,
+    "tenure": "1957-1958",
+    "party": "Anti-Fascist People's Freedom League",
+    "era": "Union of Burma (parliamentary)"
+  },
+  {
+    "name": "Ne Win",
+    "role": "Prime Minister",
+    "start": "1958-10-28",
+    "end": "1960-04-04",
+    "current": false,
+    "tenure": "1958-1960 (caretaker)",
+    "party": "Military (caretaker)",
+    "era": "Union of Burma (parliamentary)"
+  },
+  {
+    "name": "U Nu",
+    "role": "Prime Minister",
+    "start": "1960-04-04",
+    "end": "1962-03-02",
+    "current": false,
+    "tenure": "1960-1962",
+    "party": "Union Party",
+    "era": "Union of Burma (parliamentary)"
+  },
+  {
+    "name": "⚠️ Ne Win",
+    "role": "President",
+    "start": "1962-03-02",
+    "end": "1981-11-09",
+    "current": false,
+    "tenure": "1962-1981",
+    "party": "Burma Socialist Programme Party",
+    "era": "Military rule / one-party socialist state"
+  },
+  {
+    "name": "San Yu",
+    "role": "President",
+    "start": "1981-11-09",
+    "end": "1988-07-27",
+    "current": false,
+    "tenure": "1981-1988",
+    "party": "Burma Socialist Programme Party",
+    "era": "One-party socialist state"
+  },
+  {
+    "name": "⚠️ Saw Maung",
+    "role": "President",
+    "start": "1988-09-18",
+    "end": "1992-04-23",
+    "current": false,
+    "tenure": "1988-1992",
+    "party": "Military (SLORC)",
+    "era": "Military junta (SLORC)"
+  },
+  {
+    "name": "⚠️ Than Shwe",
+    "role": "President",
+    "start": "1992-04-23",
+    "end": "2011-03-30",
+    "current": false,
+    "tenure": "1992-2011",
+    "party": "Military (SLORC/SPDC)",
+    "era": "Military junta (SLORC/SPDC)"
+  },
+  {
+    "name": "Thein Sein",
+    "role": "President",
+    "start": "2011-03-30",
+    "end": "2016-03-30",
+    "current": false,
+    "tenure": "2011-2016",
+    "party": "Union Solidarity and Development Party",
+    "era": "Quasi-civilian transition"
+  },
+  {
+    "name": "Htin Kyaw",
+    "role": "President",
+    "start": "2016-03-30",
+    "end": "2018-03-21",
+    "current": false,
+    "tenure": "2016-2018",
+    "party": "National League for Democracy",
+    "era": "Civilian (NLD government)"
+  },
+  {
+    "name": "Win Myint",
+    "role": "President",
+    "start": "2018-03-30",
+    "end": "2021-02-01",
+    "current": false,
+    "tenure": "2018-2021",
+    "party": "National League for Democracy",
+    "era": "Civilian (NLD government)"
+  },
+  {
+    "name": "⚠️ Min Aung Hlaing",
+    "role": "Prime Minister",
+    "start": "2021-08-01",
+    "end": "2025-07-30",
+    "current": false,
+    "tenure": "2021-2025",
+    "party": "Military (State Administration Council)",
+    "era": "Military junta (post-2021 coup)"
+  },
+  {
+    "name": "⚠️ Nyo Saw",
+    "role": "Prime Minister",
+    "start": "2025-07-30",
+    "end": "2026-04-10",
+    "current": false,
+    "tenure": "2025-2026",
+    "party": "Military (State Administration Council)",
+    "era": "Military junta (post-2021 coup)"
+  },
+  {
+    "name": "⚠️ Min Aung Hlaing",
+    "role": "President",
+    "start": "2026-04-10",
+    "end": null,
+    "current": true,
+    "tenure": "2026-present",
+    "party": "Military (Union Government)",
+    "era": "Military rule (post-coup, post-2026 election)"
+  }
+]

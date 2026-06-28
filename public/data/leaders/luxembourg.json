@@ -1,0 +1,62 @@
+[
+  {
+    "name": "👑 Jean",
+    "role": "Monarch",
+    "start": "1964-11-12",
+    "end": "2000-10-07",
+    "current": false,
+    "tenure": "1964-2000 (Grand Duke)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jean-Claude Juncker",
+    "role": "Prime Minister",
+    "start": "1995-01-20",
+    "end": "2013-12-04",
+    "current": false,
+    "tenure": "1995-2013",
+    "party": "CSV",
+    "era": null
+  },
+  {
+    "name": "👑 Henri",
+    "role": "Monarch",
+    "start": "2000-10-07",
+    "end": "2025-10-03",
+    "current": false,
+    "tenure": "2000-2025 (Grand Duke; abdicated 3 Oct 2025)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Xavier Bettel",
+    "role": "Prime Minister",
+    "start": "2013-12-04",
+    "end": "2023-11-17",
+    "current": false,
+    "tenure": "2013-2023",
+    "party": "DP",
+    "era": null
+  },
+  {
+    "name": "Luc Frieden",
+    "role": "Prime Minister",
+    "start": "2023-11-17",
+    "end": null,
+    "current": true,
+    "tenure": "2023-present",
+    "party": "CSV",
+    "era": null
+  },
+  {
+    "name": "👑 Guillaume",
+    "role": "Monarch",
+    "start": "2025-10-03",
+    "end": null,
+    "current": true,
+    "tenure": "2025-present (Grand Duke Guillaume V)",
+    "party": null,
+    "era": null
+  }
+]

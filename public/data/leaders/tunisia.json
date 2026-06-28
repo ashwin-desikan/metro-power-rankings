@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Habib Bourguiba",
+    "role": "President",
+    "start": "1957-07-25",
+    "end": "1987-11-07",
+    "current": false,
+    "tenure": "1957-1987 (deposed)",
+    "party": "Neo Destour / PSD",
+    "era": "Bourguiba era"
+  },
+  {
+    "name": "⚠️ Zine El Abidine Ben Ali",
+    "role": "President",
+    "start": "1987-11-07",
+    "end": "2011-01-14",
+    "current": false,
+    "tenure": "1987-2011 (fled in Arab Spring)",
+    "party": "RCD",
+    "era": "Ben Ali era"
+  },
+  {
+    "name": "Fouad Mebazaa",
+    "role": "President (interim)",
+    "start": "2011-01-15",
+    "end": "2011-12-13",
+    "current": false,
+    "tenure": "2011 (interim)",
+    "party": "RCD",
+    "era": "Arab Spring transition"
+  },
+  {
+    "name": "Moncef Marzouki",
+    "role": "President",
+    "start": "2011-12-13",
+    "end": "2014-12-31",
+    "current": false,
+    "tenure": "2011-2014",
+    "party": "CPR",
+    "era": "Democratic transition"
+  },
+  {
+    "name": "Beji Caid Essebsi",
+    "role": "President",
+    "start": "2014-12-31",
+    "end": "2019-07-25",
+    "current": false,
+    "tenure": "2014-2019 (died in office)",
+    "party": "Nidaa Tounes",
+    "era": "Democratic transition"
+  },
+  {
+    "name": "Mohamed Ennaceur",
+    "role": "President (interim)",
+    "start": "2019-07-25",
+    "end": "2019-10-23",
+    "current": false,
+    "tenure": "2019 (interim)",
+    "party": "Nidaa Tounes",
+    "era": "Democratic transition"
+  },
+  {
+    "name": "Kais Saied",
+    "role": "President",
+    "start": "2019-10-23",
+    "end": null,
+    "current": true,
+    "tenure": "2019-present",
+    "party": "Independent",
+    "era": "Saied era"
+  },
+  {
+    "name": "Sara Zaafrani Zenzri",
+    "role": "Prime Minister",
+    "start": "2025-03-21",
+    "end": null,
+    "current": true,
+    "tenure": "2025-present",
+    "party": "Independent",
+    "era": "Saied era"
+  }
+]

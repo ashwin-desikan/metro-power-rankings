@@ -1,0 +1,82 @@
+[
+  {
+    "name": "⚠️ Slobodan Milošević",
+    "role": "President",
+    "start": "1991-01-09",
+    "end": "1997-07-23",
+    "current": false,
+    "tenure": "1991–1997",
+    "party": "Socialist Party of Serbia",
+    "era": "Milošević era & Yugoslav wars"
+  },
+  {
+    "name": "Boris Tadić",
+    "role": "President",
+    "start": "2004-07-11",
+    "end": "2012-04-05",
+    "current": false,
+    "tenure": "2004–2012",
+    "party": "Democratic Party",
+    "era": "Post-Milošević democratic transition"
+  },
+  {
+    "name": "Tomislav Nikolić",
+    "role": "President",
+    "start": "2012-05-31",
+    "end": "2017-05-31",
+    "current": false,
+    "tenure": "2012–2017",
+    "party": "Serbian Progressive Party",
+    "era": "SNS ascendancy"
+  },
+  {
+    "name": "Aleksandar Vučić",
+    "role": "Prime Minister",
+    "start": "2014-04-27",
+    "end": "2017-05-31",
+    "current": false,
+    "tenure": "2014–2017",
+    "party": "Serbian Progressive Party",
+    "era": "SNS ascendancy"
+  },
+  {
+    "name": "Aleksandar Vučić",
+    "role": "President",
+    "start": "2017-05-31",
+    "end": null,
+    "current": true,
+    "tenure": "2017–present",
+    "party": "Serbian Progressive Party",
+    "era": "Vučić era"
+  },
+  {
+    "name": "Ana Brnabić",
+    "role": "Prime Minister",
+    "start": "2017-06-29",
+    "end": "2024-05-02",
+    "current": false,
+    "tenure": "2017–2024",
+    "party": "Independent (SNS-backed)",
+    "era": "Vučić era"
+  },
+  {
+    "name": "Miloš Vučević",
+    "role": "Prime Minister",
+    "start": "2024-05-02",
+    "end": "2025-03-19",
+    "current": false,
+    "tenure": "2024–2025",
+    "party": "Serbian Progressive Party",
+    "era": "Vučić era"
+  },
+  {
+    "name": "Đuro Macut",
+    "role": "Prime Minister",
+    "start": "2025-04-16",
+    "end": null,
+    "current": true,
+    "tenure": "2025–present",
+    "party": "Independent (SNS-backed)",
+    "era": "Vučić era"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Abdullah I bin Al-Hussein",
+    "role": "Monarch",
+    "start": "1946-05-25",
+    "end": "1951-07-20",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "👑 Talal bin Abdullah",
+    "role": "Monarch",
+    "start": "1951-07-20",
+    "end": "1952-08-11",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "👑 Hussein bin Talal",
+    "role": "Monarch",
+    "start": "1952-08-11",
+    "end": "1999-02-07",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "👑 Abdullah II bin Al-Hussein",
+    "role": "Monarch",
+    "start": "1999-02-07",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "Abdullah Ensour",
+    "role": "Prime Minister",
+    "start": "2012-10-11",
+    "end": "2016-05-29",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "Hani Al-Mulki",
+    "role": "Prime Minister",
+    "start": "2016-05-29",
+    "end": "2018-06-04",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "Omar Razzaz",
+    "role": "Prime Minister",
+    "start": "2018-06-14",
+    "end": "2020-10-07",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "Bisher Al-Khasawneh",
+    "role": "Prime Minister",
+    "start": "2020-10-12",
+    "end": "2024-09-15",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  },
+  {
+    "name": "Jafar Hassan",
+    "role": "Prime Minister",
+    "start": "2024-09-15",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Hashemite Kingdom"
+  }
+]

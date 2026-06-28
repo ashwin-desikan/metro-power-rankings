@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Víctor Paz Estenssoro",
+    "role": "President",
+    "start": "1952-04-15",
+    "end": "1956-08-06",
+    "current": false,
+    "tenure": "1952–1956 (National Revolution)",
+    "party": "Revolutionary Nationalist Movement (MNR)",
+    "era": "National Revolution"
+  },
+  {
+    "name": "⚠️ Hugo Banzer",
+    "role": "President / De facto dictator",
+    "start": "1971-08-22",
+    "end": "1978-07-21",
+    "current": false,
+    "tenure": "1971–1978 (military dictatorship)",
+    "party": "Military / Nationalist Democratic Action (later)",
+    "era": "Military Dictatorships"
+  },
+  {
+    "name": "Hernán Siles Zuazo",
+    "role": "President",
+    "start": "1982-10-10",
+    "end": "1985-08-06",
+    "current": false,
+    "tenure": "1982–1985 (return to democracy)",
+    "party": "Democratic and Popular Unity (UDP)",
+    "era": "Return to Democracy"
+  },
+  {
+    "name": "Víctor Paz Estenssoro",
+    "role": "President",
+    "start": "1985-08-06",
+    "end": "1989-08-06",
+    "current": false,
+    "tenure": "1985–1989",
+    "party": "Revolutionary Nationalist Movement (MNR)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Jaime Paz Zamora",
+    "role": "President",
+    "start": "1989-08-06",
+    "end": "1993-08-06",
+    "current": false,
+    "tenure": "1989–1993",
+    "party": "Revolutionary Left Movement (MIR)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Gonzalo Sánchez de Lozada",
+    "role": "President",
+    "start": "1993-08-06",
+    "end": "1997-08-06",
+    "current": false,
+    "tenure": "1993–1997",
+    "party": "Revolutionary Nationalist Movement (MNR)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Hugo Banzer",
+    "role": "President",
+    "start": "1997-08-06",
+    "end": "2001-08-07",
+    "current": false,
+    "tenure": "1997–2001 (elected; resigned, ill)",
+    "party": "Nationalist Democratic Action (ADN)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Jorge Quiroga",
+    "role": "President",
+    "start": "2001-08-07",
+    "end": "2002-08-06",
+    "current": false,
+    "tenure": "2001–2002 (completed Banzer term)",
+    "party": "Nationalist Democratic Action (ADN)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Gonzalo Sánchez de Lozada",
+    "role": "President",
+    "start": "2002-08-06",
+    "end": "2003-10-17",
+    "current": false,
+    "tenure": "2002–2003 (resigned, Gas War)",
+    "party": "Revolutionary Nationalist Movement (MNR)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Carlos Mesa",
+    "role": "President",
+    "start": "2003-10-17",
+    "end": "2005-06-09",
+    "current": false,
+    "tenure": "2003–2005 (resigned)",
+    "party": "Independent",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Evo Morales",
+    "role": "President",
+    "start": "2006-01-22",
+    "end": "2019-11-10",
+    "current": false,
+    "tenure": "2006–2019 (resigned amid crisis)",
+    "party": "Movement for Socialism (MAS)",
+    "era": "MAS Era"
+  },
+  {
+    "name": "Jeanine Áñez",
+    "role": "President",
+    "start": "2019-11-12",
+    "end": "2020-11-08",
+    "current": false,
+    "tenure": "2019–2020 (interim)",
+    "party": "Democrat Social Movement",
+    "era": "Interim / Transition"
+  },
+  {
+    "name": "Luis Arce",
+    "role": "President",
+    "start": "2020-11-08",
+    "end": "2025-11-08",
+    "current": false,
+    "tenure": "2020–2025",
+    "party": "Movement for Socialism (MAS)",
+    "era": "MAS Era"
+  },
+  {
+    "name": "Rodrigo Paz",
+    "role": "President",
+    "start": "2025-11-08",
+    "end": null,
+    "current": true,
+    "tenure": "2025–present",
+    "party": "Christian Democratic Party (PDC)",
+    "era": "Post-MAS Era"
+  }
+]

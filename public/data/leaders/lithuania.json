@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Algirdas Brazauskas",
+    "role": "President",
+    "start": "1993-02-25",
+    "end": "1998-02-26",
+    "current": false,
+    "tenure": "1993-1998",
+    "party": "LDDP",
+    "era": null
+  },
+  {
+    "name": "Valdas Adamkus",
+    "role": "President",
+    "start": "1998-02-26",
+    "end": "2003-02-26",
+    "current": false,
+    "tenure": "1998-2003 (1st term)",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Algirdas Brazauskas",
+    "role": "Prime Minister",
+    "start": "2001-07-03",
+    "end": "2006-06-01",
+    "current": false,
+    "tenure": "2001-2006",
+    "party": "LSDP",
+    "era": null
+  },
+  {
+    "name": "Rolandas Paksas",
+    "role": "President",
+    "start": "2003-02-26",
+    "end": "2004-04-06",
+    "current": false,
+    "tenure": "2003-2004 (impeached)",
+    "party": "Liberal Democratic Party",
+    "era": null
+  },
+  {
+    "name": "Valdas Adamkus",
+    "role": "President",
+    "start": "2004-07-12",
+    "end": "2009-07-12",
+    "current": false,
+    "tenure": "2004-2009 (2nd term)",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Gediminas Kirkilas",
+    "role": "Prime Minister",
+    "start": "2006-07-04",
+    "end": "2008-12-09",
+    "current": false,
+    "tenure": "2006-2008",
+    "party": "LSDP",
+    "era": null
+  },
+  {
+    "name": "Andrius Kubilius",
+    "role": "Prime Minister",
+    "start": "2008-12-09",
+    "end": "2012-12-13",
+    "current": false,
+    "tenure": "2008-2012 (2nd term)",
+    "party": "Homeland Union (TS-LKD)",
+    "era": null
+  },
+  {
+    "name": "Dalia Grybauskaitė",
+    "role": "President",
+    "start": "2009-07-12",
+    "end": "2019-07-12",
+    "current": false,
+    "tenure": "2009-2019",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Algirdas Butkevičius",
+    "role": "Prime Minister",
+    "start": "2012-12-13",
+    "end": "2016-12-13",
+    "current": false,
+    "tenure": "2012-2016",
+    "party": "LSDP",
+    "era": null
+  },
+  {
+    "name": "Saulius Skvernelis",
+    "role": "Prime Minister",
+    "start": "2016-12-13",
+    "end": "2020-12-11",
+    "current": false,
+    "tenure": "2016-2020",
+    "party": "LVŽS (independent)",
+    "era": null
+  },
+  {
+    "name": "Gitanas Nausėda",
+    "role": "President",
+    "start": "2019-07-12",
+    "end": null,
+    "current": true,
+    "tenure": "2019-present",
+    "party": "Independent",
+    "era": null
+  },
+  {
+    "name": "Ingrida Šimonytė",
+    "role": "Prime Minister",
+    "start": "2020-12-11",
+    "end": "2024-12-12",
+    "current": false,
+    "tenure": "2020-2024",
+    "party": "Homeland Union (TS-LKD)",
+    "era": null
+  },
+  {
+    "name": "Gintautas Paluckas",
+    "role": "Prime Minister",
+    "start": "2024-12-12",
+    "end": "2025-08-26",
+    "current": false,
+    "tenure": "2024-2025 (resigned amid scandal)",
+    "party": "LSDP",
+    "era": null
+  },
+  {
+    "name": "Inga Ruginienė",
+    "role": "Prime Minister",
+    "start": "2025-08-26",
+    "end": null,
+    "current": true,
+    "tenure": "2025-present (caretaker; resigned 23 Jun 2026, serving until successor sworn in)",
+    "party": "LSDP",
+    "era": null
+  }
+]

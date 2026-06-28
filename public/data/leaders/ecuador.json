@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Rafael Correa",
+    "role": "President",
+    "start": "2007-01-15",
+    "end": "2017-05-24",
+    "current": false,
+    "tenure": "2007-2017",
+    "party": "PAIS Alliance",
+    "era": "Citizens' Revolution"
+  },
+  {
+    "name": "Lenin Moreno",
+    "role": "President",
+    "start": "2017-05-24",
+    "end": "2021-05-24",
+    "current": false,
+    "tenure": "2017-2021",
+    "party": "PAIS Alliance / independent",
+    "era": "Post-Correa realignment"
+  },
+  {
+    "name": "Guillermo Lasso",
+    "role": "President",
+    "start": "2021-05-24",
+    "end": "2023-11-23",
+    "current": false,
+    "tenure": "2021-2023 (cut short by muerte cruzada)",
+    "party": "CREO Movement",
+    "era": "Post-Correa realignment"
+  },
+  {
+    "name": "Daniel Noboa",
+    "role": "President",
+    "start": "2023-11-23",
+    "end": null,
+    "current": true,
+    "tenure": "2023-present (re-elected April 2025)",
+    "party": "National Democratic Action (ADN)",
+    "era": "Noboa era"
+  }
+]

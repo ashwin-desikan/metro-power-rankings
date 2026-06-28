@@ -1,0 +1,42 @@
+[
+  {
+    "name": "⚠️ Islam Karimov",
+    "role": "President",
+    "start": "1991-12-29",
+    "end": "2016-09-02",
+    "current": false,
+    "tenure": "1991–2016",
+    "party": "People's Democratic Party / Liberal Democratic Party",
+    "era": "Independent Uzbekistan"
+  },
+  {
+    "name": "Nigmatilla Yuldashev",
+    "role": "Acting President",
+    "start": "2016-09-08",
+    "end": "2016-12-14",
+    "current": false,
+    "tenure": "2016",
+    "party": "Liberal Democratic Party",
+    "era": "Independent Uzbekistan"
+  },
+  {
+    "name": "Shavkat Mirziyoyev",
+    "role": "President",
+    "start": "2016-12-14",
+    "end": null,
+    "current": true,
+    "tenure": "2016–present",
+    "party": "Liberal Democratic Party",
+    "era": "Independent Uzbekistan"
+  },
+  {
+    "name": "Abdulla Aripov",
+    "role": "Prime Minister",
+    "start": "2016-12-14",
+    "end": null,
+    "current": true,
+    "tenure": "2016–present",
+    "party": "Liberal Democratic Party",
+    "era": "Independent Uzbekistan"
+  }
+]

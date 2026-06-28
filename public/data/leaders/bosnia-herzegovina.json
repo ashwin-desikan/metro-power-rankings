@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Mile Akmadžić",
+    "role": "Prime Minister",
+    "start": "1992-11-10",
+    "end": "1993-10-25",
+    "current": false,
+    "tenure": null,
+    "party": "HDZ BiH",
+    "era": "Independence / War era"
+  },
+  {
+    "name": "Haris Silajdžić",
+    "role": "Prime Minister",
+    "start": "1993-10-25",
+    "end": "1996-01-30",
+    "current": false,
+    "tenure": null,
+    "party": "SDA",
+    "era": "Independence / War era"
+  },
+  {
+    "name": "Hasan Muratović",
+    "role": "Prime Minister",
+    "start": "1996-01-30",
+    "end": "1997-01-03",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Boro Bosić / Haris Silajdžić",
+    "role": "Prime Minister",
+    "start": "1997-01-03",
+    "end": "1999-02-03",
+    "current": false,
+    "tenure": null,
+    "party": "SNSD / SDA",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Svetozar Mihajlović / Haris Silajdžić",
+    "role": "Prime Minister",
+    "start": "1999-02-03",
+    "end": "2000-06-06",
+    "current": false,
+    "tenure": null,
+    "party": "SNS / SDA",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Spasoje Tuševljak",
+    "role": "Prime Minister",
+    "start": "2000-06-06",
+    "end": "2000-10-18",
+    "current": false,
+    "tenure": null,
+    "party": "SDS",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Martin Raguž",
+    "role": "Prime Minister",
+    "start": "2000-10-18",
+    "end": "2001-02-22",
+    "current": false,
+    "tenure": null,
+    "party": "HDZ BiH",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Božidar Matić",
+    "role": "Prime Minister",
+    "start": "2001-02-22",
+    "end": "2001-07-18",
+    "current": false,
+    "tenure": null,
+    "party": "SDP BiH",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Zlatko Lagumdžija",
+    "role": "Prime Minister",
+    "start": "2001-07-18",
+    "end": "2002-03-15",
+    "current": false,
+    "tenure": null,
+    "party": "SDP BiH",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Dragan Mikerević",
+    "role": "Prime Minister",
+    "start": "2002-03-15",
+    "end": "2003-01-23",
+    "current": false,
+    "tenure": null,
+    "party": "PDP",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Adnan Terzić",
+    "role": "Prime Minister",
+    "start": "2003-01-23",
+    "end": "2007-01-11",
+    "current": false,
+    "tenure": null,
+    "party": "SDA",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Nikola Špirić",
+    "role": "Prime Minister",
+    "start": "2007-01-11",
+    "end": "2012-01-12",
+    "current": false,
+    "tenure": null,
+    "party": "SNSD",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Vjekoslav Bevanda",
+    "role": "Prime Minister",
+    "start": "2012-01-12",
+    "end": "2015-03-31",
+    "current": false,
+    "tenure": null,
+    "party": "HDZ BiH",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Denis Zvizdić",
+    "role": "Prime Minister",
+    "start": "2015-03-31",
+    "end": "2019-12-23",
+    "current": false,
+    "tenure": null,
+    "party": "SDA",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Zoran Tegeltija",
+    "role": "Prime Minister",
+    "start": "2019-12-23",
+    "end": "2023-01-25",
+    "current": false,
+    "tenure": null,
+    "party": "SNSD",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Denis Bećirović",
+    "role": "President (Presidency)",
+    "start": "2022-11-16",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "SDP BiH",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Željka Cvijanović",
+    "role": "President (Presidency)",
+    "start": "2022-11-16",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "SNSD",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Željko Komšić",
+    "role": "President (Presidency)",
+    "start": "2022-11-16",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "DF",
+    "era": "Dayton era"
+  },
+  {
+    "name": "Borjana Krišto",
+    "role": "Prime Minister",
+    "start": "2023-01-25",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "HDZ BiH",
+    "era": "Dayton era"
+  }
+]

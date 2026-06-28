@@ -1,0 +1,62 @@
+[
+  {
+    "name": "👑 Rainier III",
+    "role": "Monarch",
+    "start": "1949-05-09",
+    "end": "2005-04-06",
+    "current": false,
+    "tenure": "1949-2005 (Sovereign Prince)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Albert II",
+    "role": "Monarch",
+    "start": "2005-04-06",
+    "end": null,
+    "current": true,
+    "tenure": "2005-present (Sovereign Prince)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Pierre Dartout",
+    "role": "Prime Minister",
+    "start": "2020-09-01",
+    "end": "2024-09-01",
+    "current": false,
+    "tenure": "2020-2024 (Minister of State)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Didier Guillaume",
+    "role": "Prime Minister",
+    "start": "2024-09-02",
+    "end": "2025-01-17",
+    "current": false,
+    "tenure": "2024-2025 (Minister of State; died in office 17 Jan 2025)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Isabelle Berro-Amadeï",
+    "role": "Prime Minister",
+    "start": "2025-01-17",
+    "end": "2025-07-21",
+    "current": false,
+    "tenure": "2025 (acting Minister of State)",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Christophe Mirmand",
+    "role": "Prime Minister",
+    "start": "2025-07-21",
+    "end": null,
+    "current": true,
+    "tenure": "2025-present (Minister of State)",
+    "party": null,
+    "era": null
+  }
+]

@@ -7,6 +7,7 @@ import {
   getChildrenOf,
 } from "@/lib/countries";
 import { getLeaders } from "@/lib/leaders";
+import { getCurrentLeaderOverlay } from "@/lib/currentLeaders";
 import {
   AUTHOR,
   BASE_URL,
@@ -57,7 +58,11 @@ const HEAD_OF_GOV_PRIORITY = [
   "Taoiseach", "Premier", "President", "Monarch",
 ];
 const PM_LED_COUNTRIES = new Set([
+  // Parliamentary / PM-led systems where the head of government leads and the
+  // president (or, in BiH, the tripartite presidency) is largely ceremonial.
   "poland", "austria", "czech-republic", "hungary", "greece", "portugal", "finland",
+  "ethiopia", "iraq", "georgia", "croatia", "bulgaria", "bosnia-herzegovina",
+  "montenegro", "slovenia", "slovakia", "lithuania",
 ]);
 // Head-of-government / paramount roles (eligible to carry a secondary head of state).
 const GOV_ROLES = [
@@ -114,7 +119,9 @@ function pickCurrentLeader(
   }
 }
 
-function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number]): DirectoryCountry {
+type LeaderOverlay = Record<string, { name: string; role: string; second?: { name: string; role: string } }>;
+
+function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number], overlay: LeaderOverlay): DirectoryCountry {
   const children = getChildrenOf(c.name).map((child) => ({
     slug: child.slug,
     name: child.name,
@@ -126,7 +133,7 @@ function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number]): Director
     scoreTotal: child.scoreTotal,
     capital: child.capital,
     disputed: child.disputed,
-    currentLeader: pickCurrentLeader(child.slug),
+    currentLeader: overlay[child.slug] ?? pickCurrentLeader(child.slug),
     children: [],
   }));
   return {
@@ -140,14 +147,15 @@ function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number]): Director
     scoreTotal: c.scoreTotal,
     capital: c.capital,
     disputed: c.disputed,
-    currentLeader: pickCurrentLeader(c.slug),
+    currentLeader: overlay[c.slug] ?? pickCurrentLeader(c.slug),
     children,
   };
 }
 
-export default function CountriesIndexPage() {
+export default async function CountriesIndexPage() {
+  const overlay = await getCurrentLeaderOverlay();
   const tops = getTopLevelCountries();
-  const directory: DirectoryCountry[] = tops.map(toDirectoryRow);
+  const directory: DirectoryCountry[] = tops.map((c) => toDirectoryRow(c, overlay));
 
   const collectionLd = {
     "@context": "https://schema.org",

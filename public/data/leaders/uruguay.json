@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Julio María Sanguinetti",
+    "role": "President",
+    "start": "1985-03-01",
+    "end": "1990-03-01",
+    "current": false,
+    "tenure": "1985–1990 (return to democracy)",
+    "party": "Colorado Party",
+    "era": "Redemocratization"
+  },
+  {
+    "name": "Luis Alberto Lacalle",
+    "role": "President",
+    "start": "1990-03-01",
+    "end": "1995-03-01",
+    "current": false,
+    "tenure": "1990–1995",
+    "party": "National Party (Blancos)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Julio María Sanguinetti",
+    "role": "President",
+    "start": "1995-03-01",
+    "end": "2000-03-01",
+    "current": false,
+    "tenure": "1995–2000",
+    "party": "Colorado Party",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Jorge Batlle",
+    "role": "President",
+    "start": "2000-03-01",
+    "end": "2005-03-01",
+    "current": false,
+    "tenure": "2000–2005",
+    "party": "Colorado Party",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Tabaré Vázquez",
+    "role": "President",
+    "start": "2005-03-01",
+    "end": "2010-03-01",
+    "current": false,
+    "tenure": "2005–2010 (first Broad Front govt)",
+    "party": "Broad Front (Frente Amplio)",
+    "era": "Broad Front Era"
+  },
+  {
+    "name": "José Mujica",
+    "role": "President",
+    "start": "2010-03-01",
+    "end": "2015-03-01",
+    "current": false,
+    "tenure": "2010–2015",
+    "party": "Broad Front (Frente Amplio)",
+    "era": "Broad Front Era"
+  },
+  {
+    "name": "Tabaré Vázquez",
+    "role": "President",
+    "start": "2015-03-01",
+    "end": "2020-03-01",
+    "current": false,
+    "tenure": "2015–2020",
+    "party": "Broad Front (Frente Amplio)",
+    "era": "Broad Front Era"
+  },
+  {
+    "name": "Luis Lacalle Pou",
+    "role": "President",
+    "start": "2020-03-01",
+    "end": "2025-03-01",
+    "current": false,
+    "tenure": "2020–2025",
+    "party": "National Party (Blancos)",
+    "era": "Democratic Era"
+  },
+  {
+    "name": "Yamandú Orsi",
+    "role": "President",
+    "start": "2025-03-01",
+    "end": null,
+    "current": true,
+    "tenure": "2025–present",
+    "party": "Broad Front (Frente Amplio)",
+    "era": "Broad Front Era"
+  }
+]

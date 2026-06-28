@@ -1,0 +1,212 @@
+[
+  {
+    "name": "👑 Faisal I",
+    "role": "Monarch",
+    "start": "1921-08-23",
+    "end": "1933-09-08",
+    "current": false,
+    "tenure": "1921–1933",
+    "party": null,
+    "era": "Kingdom of Iraq (Hashemite)"
+  },
+  {
+    "name": "👑 Ghazi",
+    "role": "Monarch",
+    "start": "1933-09-08",
+    "end": "1939-04-04",
+    "current": false,
+    "tenure": "1933–1939",
+    "party": null,
+    "era": "Kingdom of Iraq (Hashemite)"
+  },
+  {
+    "name": "👑 Faisal II",
+    "role": "Monarch",
+    "start": "1939-04-04",
+    "end": "1958-07-14",
+    "current": false,
+    "tenure": "1939–1958 (regency to 1953)",
+    "party": null,
+    "era": "Kingdom of Iraq (Hashemite)"
+  },
+  {
+    "name": "Abd al-Karim Qasim",
+    "role": "Prime Minister",
+    "start": "1958-07-14",
+    "end": "1963-02-08",
+    "current": false,
+    "tenure": "1958–1963",
+    "party": null,
+    "era": "Republic (1958–2003)"
+  },
+  {
+    "name": "Abdul Salam Arif",
+    "role": "President",
+    "start": "1963-02-08",
+    "end": "1966-04-13",
+    "current": false,
+    "tenure": "1963–1966",
+    "party": null,
+    "era": "Republic (1958–2003)"
+  },
+  {
+    "name": "Abdul Rahman Arif",
+    "role": "President",
+    "start": "1966-04-16",
+    "end": "1968-07-17",
+    "current": false,
+    "tenure": "1966–1968",
+    "party": null,
+    "era": "Republic (1958–2003)"
+  },
+  {
+    "name": "Ahmed Hassan al-Bakr",
+    "role": "President",
+    "start": "1968-07-17",
+    "end": "1979-07-16",
+    "current": false,
+    "tenure": "1968–1979",
+    "party": "Ba'ath Party",
+    "era": "Republic (1958–2003)"
+  },
+  {
+    "name": "⚠️ Saddam Hussein",
+    "role": "President",
+    "start": "1979-07-16",
+    "end": "2003-04-09",
+    "current": false,
+    "tenure": "1979–2003",
+    "party": "Ba'ath Party",
+    "era": "Republic (1958–2003)"
+  },
+  {
+    "name": "Ayad Allawi",
+    "role": "Prime Minister",
+    "start": "2004-06-28",
+    "end": "2005-05-03",
+    "current": false,
+    "tenure": "2004–2005",
+    "party": "Iraqi National Accord",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Jalal Talabani",
+    "role": "President",
+    "start": "2005-04-07",
+    "end": "2014-07-24",
+    "current": false,
+    "tenure": "2005–2014",
+    "party": "Patriotic Union of Kurdistan",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Ibrahim al-Jaafari",
+    "role": "Prime Minister",
+    "start": "2005-05-03",
+    "end": "2006-05-20",
+    "current": false,
+    "tenure": "2005–2006",
+    "party": "Islamic Dawa Party",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Nouri al-Maliki",
+    "role": "Prime Minister",
+    "start": "2006-05-20",
+    "end": "2014-09-08",
+    "current": false,
+    "tenure": "2006–2014",
+    "party": "Islamic Dawa Party",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Fuad Masum",
+    "role": "President",
+    "start": "2014-07-24",
+    "end": "2018-10-02",
+    "current": false,
+    "tenure": "2014–2018",
+    "party": "Patriotic Union of Kurdistan",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Haider al-Abadi",
+    "role": "Prime Minister",
+    "start": "2014-09-08",
+    "end": "2018-10-25",
+    "current": false,
+    "tenure": "2014–2018",
+    "party": "Islamic Dawa Party",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Barham Salih",
+    "role": "President",
+    "start": "2018-10-02",
+    "end": "2022-10-17",
+    "current": false,
+    "tenure": "2018–2022",
+    "party": "Patriotic Union of Kurdistan",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Adil Abdul-Mahdi",
+    "role": "Prime Minister",
+    "start": "2018-10-25",
+    "end": "2020-05-07",
+    "current": false,
+    "tenure": "2018–2020",
+    "party": "Independent",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Mustafa al-Kadhimi",
+    "role": "Prime Minister",
+    "start": "2020-05-07",
+    "end": "2022-10-27",
+    "current": false,
+    "tenure": "2020–2022",
+    "party": "Independent",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Abdul Latif Rashid",
+    "role": "President",
+    "start": "2022-10-17",
+    "end": "2026-04-11",
+    "current": false,
+    "tenure": "2022–2026",
+    "party": "Patriotic Union of Kurdistan",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Mohammed Shia al-Sudani",
+    "role": "Prime Minister",
+    "start": "2022-10-27",
+    "end": "2026-05-14",
+    "current": false,
+    "tenure": "2022–2026",
+    "party": "Islamic Dawa Party",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Nizar Amedi",
+    "role": "President",
+    "start": "2026-04-11",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Patriotic Union of Kurdistan",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Ali al-Zaidi",
+    "role": "Prime Minister",
+    "start": "2026-05-14",
+    "end": null,
+    "current": true,
+    "tenure": "2026–present",
+    "party": "Independent",
+    "era": "Post-2003 Republic"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "👑 Abdullah III Al-Salim Al-Sabah",
+    "role": "Monarch",
+    "start": "1950-02-25",
+    "end": "1965-11-24",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Abdullah III Al-Salim Al-Sabah",
+    "role": "Prime Minister",
+    "start": "1962-01-17",
+    "end": "1963-12-03",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Sabah III Al-Salim Al-Sabah",
+    "role": "Prime Minister",
+    "start": "1963-12-03",
+    "end": "1965-11-24",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "👑 Sabah III Al-Salim Al-Sabah",
+    "role": "Monarch",
+    "start": "1965-11-24",
+    "end": "1977-12-31",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Jaber III Al-Ahmad Al-Jaber Al-Sabah",
+    "role": "Prime Minister",
+    "start": "1965-11-30",
+    "end": "1978-02-08",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "👑 Jaber III Al-Ahmad Al-Jaber Al-Sabah",
+    "role": "Monarch",
+    "start": "1977-12-31",
+    "end": "2006-01-15",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Saad Al-Abdullah Al-Salim Al-Sabah",
+    "role": "Prime Minister",
+    "start": "1978-02-08",
+    "end": "2003-07-13",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Sabah Al-Ahmad Al-Jaber Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2003-07-13",
+    "end": "2006-02-07",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "👑 Saad Al-Abdullah Al-Salim Al-Sabah",
+    "role": "Monarch",
+    "start": "2006-01-15",
+    "end": "2006-01-24",
+    "current": false,
+    "tenure": "9 days",
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "👑 Sabah IV Al-Ahmad Al-Jaber Al-Sabah",
+    "role": "Monarch",
+    "start": "2006-01-29",
+    "end": "2020-09-29",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Nasser Al-Mohammed Al-Ahmad Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2006-02-07",
+    "end": "2011-12-04",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Jaber Al-Mubarak Al-Hamad Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2011-12-04",
+    "end": "2019-11-19",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Sabah Al-Khalid Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2019-11-19",
+    "end": "2022-07-19",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "👑 Nawaf Al-Ahmad Al-Jaber Al-Sabah",
+    "role": "Monarch",
+    "start": "2020-09-30",
+    "end": "2023-12-16",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Ahmad Nawaf Al-Ahmad Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2022-07-24",
+    "end": "2024-01-17",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "👑 Meshal Al-Ahmad Al-Jaber Al-Sabah",
+    "role": "Monarch",
+    "start": "2023-12-16",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Mohammad Sabah Al-Salem Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2024-01-17",
+    "end": "2024-05-15",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Ahmad Abdullah Al-Ahmad Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2024-05-15",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
+    "era": "Al Sabah Emirate"
+  }
+]
