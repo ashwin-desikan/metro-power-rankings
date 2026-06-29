@@ -37,15 +37,16 @@ function pol(r: number, unit: number): [number, number] {
 }
 
 function FlagNode({
-  x, y, slug, size, gold, dim,
-}: { x: number; y: number; slug: string | null; size: number; gold: boolean; dim: boolean }) {
+  x, y, slug, size, gold, dim, compact = false,
+}: { x: number; y: number; slug: string | null; size: number; gold: boolean; dim: boolean; compact?: boolean }) {
   const url = slug ? flagCdnUrl(slug, "40x30") : null;
+  const dot = compact ? <circle cx={x} cy={y} r={3.5} fill="var(--text-muted)" /> : null;
   if (!slug || !url) {
-    return <circle cx={x} cy={y} r={size} fill="var(--surface-1)" stroke="var(--border)" strokeWidth={0.7} />;
+    return compact ? dot : <circle cx={x} cy={y} r={size} fill="var(--surface-1)" stroke="var(--border)" strokeWidth={0.7} />;
   }
   const cid = `rk-${slug}-${Math.round(x)}-${Math.round(y)}`;
-  return (
-    <g opacity={dim ? 0.4 : 1}>
+  const flag = (
+    <g opacity={dim ? 0.4 : 1} className={compact ? "hidden sm:block" : undefined}>
       <clipPath id={cid}>
         <circle cx={x} cy={y} r={size} />
       </clipPath>
@@ -61,6 +62,7 @@ function FlagNode({
       <circle cx={x} cy={y} r={size} fill="none" stroke={gold ? GOLD : "var(--border-strong)"} strokeWidth={gold ? 2.2 : 0.7} />
     </g>
   );
+  return compact ? (<>{dot}{flag}</>) : flag;
 }
 
 export default function RadialKnockout({ knockout }: { knockout: KO }) {
@@ -124,22 +126,22 @@ export default function RadialKnockout({ knockout }: { knockout: KO }) {
   });
 
   return (
-    <div className="hidden md:block">
+    <div>
       <svg viewBox="0 0 720 720" width="100%" role="img"
         aria-label="Radial World Cup 2026 knockout bracket from the round of 32 to the final; winners' paths are highlighted in gold.">
         <title>World Cup 2026 knockout bracket</title>
         {connectors}
         {ringAngles[4].map((a, i) => {
           const [x, y] = pol(RING_R[4], a);
-          return <FlagNode key={`r4-${i}`} x={x} y={y} slug={occByRing[4][i]} size={14} gold={advanced(4, i)} dim={false} />;
+          return <FlagNode key={`r4-${i}`} x={x} y={y} slug={occByRing[4][i]} size={14} gold={advanced(4, i)} dim={false} compact />;
         })}
         {ringAngles[3].map((a, i) => {
           const [x, y] = pol(RING_R[3], a);
-          return <FlagNode key={`r3-${i}`} x={x} y={y} slug={occByRing[3][i]} size={13} gold={advanced(3, i)} dim={false} />;
+          return <FlagNode key={`r3-${i}`} x={x} y={y} slug={occByRing[3][i]} size={13} gold={advanced(3, i)} dim={false} compact />;
         })}
         {ringAngles[2].map((a, i) => {
           const [x, y] = pol(RING_R[2], a);
-          return <FlagNode key={`r2-${i}`} x={x} y={y} slug={occByRing[2][i]} size={13} gold={advanced(2, i)} dim={false} />;
+          return <FlagNode key={`r2-${i}`} x={x} y={y} slug={occByRing[2][i]} size={13} gold={advanced(2, i)} dim={false} compact />;
         })}
         {ringAngles[1].map((a, i) => {
           const [x, y] = pol(RING_R[1], a);
