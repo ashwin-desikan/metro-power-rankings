@@ -12,7 +12,7 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "public/data/billionaires_raw.json"
-BASE = "https://cdn.statically.io/gh/komed3/rtb-api/main/api/"
+BASE = "https://cdn.jsdelivr.net/gh/komed3/rtb-api@main/api/"
 UA = {"User-Agent": "metro-power-rankings billionaires-refresh/1.0 (github actions)"}
 
 def gj(path, max_seconds=150, attempts=3):
