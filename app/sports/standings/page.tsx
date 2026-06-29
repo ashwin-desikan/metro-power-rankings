@@ -328,11 +328,55 @@ async function npbBlock(): Promise<Block | null> {
   return { league: "NPB", href: "/teams/baseball/npb", note: `${s.year}`, open: true, subTables };
 }
 
+function wc2026KnockoutSubTables(wc: ReturnType<typeof mergeWc2026Live>): SubTable[] {
+  const ko = wc.knockout ?? {};
+  const fmtDate = (d: string | null): string => {
+    if (!d) return DASH;
+    const dt = new Date(d + "T00:00:00Z");
+    return Number.isNaN(dt.getTime())
+      ? DASH
+      : dt.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  };
+  const ROUND_ORDER = ["Round of 32", "Round of 16", "Quarterfinals", "Semifinals", "Third Place Game", "Final"];
+  return ROUND_ORDER.map((rn): SubTable | null => {
+    const matches = (ko[rn] ?? []).filter((m) => m.team_slug && m.opp_slug);
+    if (matches.length === 0) return null;
+    const rows = matches.map((m): SRow => {
+      const tName = m.team_slug ? displayNameForTeam(m.team_slug, m.team_cur_name) : m.team_cur_name;
+      const oName = m.opp_slug ? displayNameForTeam(m.opp_slug, m.opp_cur_name) : m.opp_cur_name;
+      const result =
+        m.played && m.team_score !== null && m.opp_score !== null
+          ? `${m.team_score}–${m.opp_score}${m.penalty_kicks ? " (pens)" : ""}`
+          : fmtDate(m.date);
+      return {
+        rank: null,
+        name: `${tName} v ${oName}`,
+        href: m.team_slug ? `/teams/national/${m.team_slug}` : null,
+        flagUrl: m.team_slug ? flagCdnUrl(m.team_slug) : null,
+        cells: [result],
+      };
+    });
+    return { title: rn, columns: ["Result"], rows };
+  }).filter((s): s is SubTable => s !== null);
+}
+
 async function wc2026Block(): Promise<Block | null> {
   const bundle = getWorldCup2026();
   if (!bundle) return null;
   const live = await getWc2026LiveStandings();
   const wc = mergeWc2026Live(bundle, live);
+
+  // Follow the tournament into its active phase: once the bracket is populated
+  // (group stage complete), show the knockout rounds rather than the now-final
+  // group tables. Falls back to group tables during the group stage.
+  const r32 = wc.knockout?.["Round of 32"] ?? [];
+  if (r32.some((m) => !!m.team_slug && !!m.opp_slug)) {
+    const subTables = wc2026KnockoutSubTables(wc);
+    if (subTables.length > 0) {
+      return { league: "FIFA World Cup 2026", href: "/teams/national", note: "knockout stage", open: true, subTables };
+    }
+  }
+
   const keys = Object.keys(wc.group_stage).sort();
   const subTables = keys.map((k): SubTable => {
     const rows = wc.group_stage[k]

@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-29",
-    headline: "World Cup tables fixed; Romania leaders added",
+    headline: "World Cup fixes, more leader history, mobile Countries data",
     items: [
-      "World Cup Group Stage tables are now computed directly from match results, fixing standings that double-counted wins and points, and the Round of 32 shows the real fixtures as drawn.",
-      "Live group tables no longer regress to an early-matchday snapshot once a group is complete.",
-      "Added Romania's leadership history and extended Austria's back to the 1526 Habsburg Monarchy, covering Maria Theresa, Joseph II and Franz Joseph through to today's heads of state.",
-      "Iran's current Supreme Leader now carries the warning mark used across the leadership directory.",
+      "World Cup group tables are now computed from match results and reorder by the official tiebreakers, and the Round of 32 shows the real fixtures as drawn.",
+      "The Live Standings page now follows the World Cup into the knockout rounds once the group stage is complete, rather than holding on the group tables.",
+      "Added Romania's leadership history and extended Austria's to the 1526 Habsburg Monarchy; Iran's current Supreme Leader now carries the warning mark.",
+      "On phones, the Countries directory now reveals the columns hidden on small screens (Score, Metros, Leader, Continent) when you tap a country.",
     ],
   },
   {

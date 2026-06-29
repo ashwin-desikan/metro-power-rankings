@@ -212,14 +212,12 @@ function CountryRows({
     <>
       <tr className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
         <td className="px-2 sm:px-4 py-3 align-top">
-          {hasChildren ? (
-            <button
-              onClick={onToggle}
-              className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors w-6 h-6 inline-flex items-center justify-center"
-              aria-label={isOpen ? "Collapse" : "Expand"}
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            >{isOpen ? "−" : "+"}</button>
-          ) : null}
+          <button
+            onClick={onToggle}
+            className={`text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors w-6 h-6 inline-flex items-center justify-center ${hasChildren ? "" : "sm:hidden"}`}
+            aria-label={isOpen ? "Collapse" : "Expand"}
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >{isOpen ? "−" : "+"}</button>
         </td>
         <td className="px-2 sm:px-4 py-3">
           <Link href={`/countries/${country.slug}`} className="font-semibold hover:text-[var(--accent)] transition-colors">
@@ -253,6 +251,47 @@ function CountryRows({
         <td className="hidden sm:table-cell px-4 py-3 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{country.metroCount}</td>
         <td className="hidden sm:table-cell px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(country.scoreTotal)}</td>
       </tr>
+      {isOpen ? (
+        <tr className="sm:hidden border-b border-[var(--border)]" style={{ backgroundColor: "rgba(255,255,255,0.025)" }}>
+          <td />
+          <td colSpan={7} className="px-2 py-3">
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
+              <div className="flex justify-between gap-2">
+                <dt className="text-[var(--text-dim)]">Score</dt>
+                <dd className="font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(country.scoreTotal)}</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="text-[var(--text-dim)]">Metros</dt>
+                <dd className="text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{country.metroCount}</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="text-[var(--text-dim)]">Continent</dt>
+                <dd className="text-[var(--text-muted)]">{country.continent ?? "—"}</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="text-[var(--text-dim)]">Since</dt>
+                <dd className="text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{country.currentLeader?.since ?? "—"}</dd>
+              </div>
+              <div className="col-span-2 flex flex-col gap-0.5 pt-2 border-t border-[var(--border)]">
+                <dt className="text-[var(--text-dim)]">Leader</dt>
+                {country.currentLeader ? (
+                  <dd className="text-[var(--text)]">
+                    {country.currentLeader.name}
+                    <span className="ml-1 text-[var(--text-dim)]">({country.currentLeader.role})</span>
+                    {country.currentLeader.second ? (
+                      <span className="block text-[var(--text-dim)]">
+                        {country.currentLeader.second.name} ({country.currentLeader.second.role})
+                      </span>
+                    ) : null}
+                  </dd>
+                ) : (
+                  <dd className="text-[var(--text-dim)]">—</dd>
+                )}
+              </div>
+            </dl>
+          </td>
+        </tr>
+      ) : null}
       {isOpen && hasChildren
         ? visibleChildren.map((child) => (
             <tr key={child.slug} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors" style={{ backgroundColor: "rgba(255,255,255,0.015)" }}>
