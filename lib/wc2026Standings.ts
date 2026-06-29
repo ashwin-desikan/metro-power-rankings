@@ -124,6 +124,11 @@ export function mergeWc2026Live(
     group_stage[key] = rows.map((row) => {
       const lr = byName.get(norm(row.cur_name));
       if (!lr) return row;
+      // Never let a stale live row regress a more-complete bundle row: only
+      // override when the live source has played at least as many matches as
+      // the bundle already records. This prevents a matchday-1 ESPN snapshot
+      // from overwriting a completed group table derived from the results feed.
+      if (lr.played < (row.matches ?? 0)) return row;
       matched += 1;
       return {
         ...row,

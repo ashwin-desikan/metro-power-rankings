@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-06-29",
+    headline: "World Cup group tables and bracket corrected",
+    items: [
+      "Group Stage standings are now computed directly from match results, fixing tables that double-counted wins and points, and they reorder by the official tiebreakers.",
+      "The Round of 32 now shows the real fixtures as drawn, and the live group tables no longer regress to an early-matchday snapshot.",
+    ],
+  },
+  {
     date: "2026-06-28",
     headline: "Deeper leadership histories, a Since column, and Interstate Wars",
     items: [

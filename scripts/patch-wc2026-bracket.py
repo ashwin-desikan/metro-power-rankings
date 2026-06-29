@@ -54,6 +54,27 @@ THIRD_SLOTS = {
     75: set("ABCDF"), 78: set("CEFHI"), 79: set("CDFGH"), 80: set("BEFIJ"),
     81: set("AEHIJ"), 82: set("EHIJK"), 83: set("EFGIJ"), 86: set("DEIJL"),
 }
+# Official FIFA-confirmed Round of 32 fixtures, keyed by (date, host metro). Once
+# the bracket is officially set, these pinned pairings are the source of truth
+# and override the third-place slotting above (which can mis-assign teams).
+R32_OFFICIAL = {
+    ("2026-06-28", "Los Angeles"): ("Canada", "South Africa"),
+    ("2026-06-29", "Monterrey"): ("Netherlands", "Morocco"),
+    ("2026-06-29", "Boston"): ("Germany", "Paraguay"),
+    ("2026-06-29", "Houston"): ("Brazil", "Japan"),
+    ("2026-06-30", "Arlington"): ("Côte d'Ivoire", "Norway"),
+    ("2026-06-30", "Mexico City"): ("Mexico", "Ecuador"),
+    ("2026-06-30", "New York"): ("France", "Sweden"),
+    ("2026-07-01", "San Francisco-San Jose"): ("United States", "Bosnia-Herzegovina"),
+    ("2026-07-01", "Seattle"): ("Belgium", "Senegal"),
+    ("2026-07-01", "Atlanta"): ("England", "Congo DR"),
+    ("2026-07-02", "Vancouver"): ("Switzerland", "Algeria"),
+    ("2026-07-02", "Toronto"): ("Portugal", "Croatia"),
+    ("2026-07-02", "Los Angeles"): ("Spain", "Austria"),
+    ("2026-07-03", "Kansas City"): ("Colombia", "Ghana"),
+    ("2026-07-03", "Dallas"): ("Egypt", "Australia"),
+    ("2026-07-03", "Miami"): ("Argentina", "Cape Verde"),
+}
 # Knockout progression: match_id -> (winner_of_match_A, winner_of_match_B)
 WIN = {
     89: (74, 77), 90: (73, 75), 91: (79, 80), 92: (76, 78),
@@ -162,6 +183,43 @@ def main():
     gs = wc["group_stage"]
     name_of = {t["slug"]: t["cur_name"] for g in GROUPS for t in gs[g]}
 
+    # --- Recompute group standings from actual match results ---------------
+    # The workbook's W/D/L columns proved unreliable (cumulative values that
+    # double-count), so the displayed Group Stage tables are derived here from
+    # wc2026-results.json -- the same authoritative feed used for the bracket --
+    # and the rows are reordered by the FIFA 2026 ranking.
+    for g in GROUPS:
+        slugs = [t["slug"] for t in gs[g]]
+        st = {s: {"w": 0, "d": 0, "l": 0, "gs": 0, "ga": 0, "pts": 0, "matches": 0} for s in slugs}
+        for e in group_events:
+            a, b = e["a_slug"], e["b_slug"]
+            if a not in st or b not in st:
+                continue
+            sa, sb = e["a_score"], e["b_score"]
+            if sa is None or sb is None:
+                continue
+            st[a]["gs"] += sa; st[a]["ga"] += sb; st[a]["matches"] += 1
+            st[b]["gs"] += sb; st[b]["ga"] += sa; st[b]["matches"] += 1
+            if sa > sb:
+                st[a]["w"] += 1; st[a]["pts"] += 3; st[b]["l"] += 1
+            elif sb > sa:
+                st[b]["w"] += 1; st[b]["pts"] += 3; st[a]["l"] += 1
+            else:
+                st[a]["d"] += 1; st[b]["d"] += 1
+                st[a]["pts"] += 1; st[b]["pts"] += 1
+        if any(v["matches"] for v in st.values()):
+            ranked, _p, _g, _f = rank_group(g, slugs, group_events)
+            by_slug = {t["slug"]: t for t in gs[g]}
+            new_rows = []
+            for sl in ranked:
+                row = by_slug[sl]
+                row["w"] = st[sl]["w"]; row["d"] = st[sl]["d"]; row["l"] = st[sl]["l"]
+                row["gs"] = st[sl]["gs"]; row["ga"] = st[sl]["ga"]
+                row["gd"] = st[sl]["gs"] - st[sl]["ga"]
+                row["pts"] = st[sl]["pts"]; row["matches"] = st[sl]["matches"]
+                new_rows.append(row)
+            gs[g] = new_rows
+
     # --- Step 1: resolve group standings if all 48 group matches are in ---
     groups_complete = len(group_events) >= 48
     winner = {}; runner = {}; thirds = []  # (pts, gd, gf, slug, group)
@@ -229,22 +287,32 @@ def main():
     for rnd_name in ["Round of 32", "Round of 16", "Quarterfinals", "Semifinals", "Third Place Game", "Final"]:
         slots = ko.get(rnd_name, [])
         if rnd_name == "Round of 32" and groups_complete:
+            slug_of = {t["cur_name"]: t["slug"] for g in GROUPS for t in gs[g]}
+            nslug = {norm(t["cur_name"]): t["slug"] for g in GROUPS for t in gs[g]}
+            def _resolve(nm):
+                return slug_of.get(nm) or nslug.get(norm(nm))
             for i, slot in enumerate(slots):
-                mid = r32_mids[i] if i < len(r32_mids) else None
-                if mid and mid in r32_teams:
+                official = R32_OFFICIAL.get((slot.get("date"), slot.get("stad_metro")))
+                if official:
+                    a_slug, b_slug = _resolve(official[0]), _resolve(official[1])
+                else:
+                    mid = r32_mids[i] if i < len(r32_mids) else None
+                    if not (mid and mid in r32_teams):
+                        continue
                     a_slug, b_slug = r32_teams[mid]
-                    slot["team_slug"] = a_slug
-                    slot["team_cur_name"] = name_of.get(a_slug, a_slug)
-                    slot["opp_slug"] = b_slug
-                    slot["opp_cur_name"] = name_of.get(b_slug, b_slug)
-                    # Check if played
-                    key = frozenset((a_slug, b_slug))
-                    if key in ko_scores:
-                        scores = ko_scores[key]
-                        slot["team_score"] = scores.get(a_slug)
-                        slot["opp_score"]  = scores.get(b_slug)
-                        slot["played"] = True
-                        slot["result"] = "W" if scores.get(a_slug, 0) > scores.get(b_slug, 0) else "L"
+                if not (a_slug and b_slug):
+                    continue
+                slot["team_slug"] = a_slug
+                slot["team_cur_name"] = name_of.get(a_slug, a_slug)
+                slot["opp_slug"] = b_slug
+                slot["opp_cur_name"] = name_of.get(b_slug, b_slug)
+                key = frozenset((a_slug, b_slug))
+                if key in ko_scores:
+                    scores = ko_scores[key]
+                    slot["team_score"] = scores.get(a_slug)
+                    slot["opp_score"]  = scores.get(b_slug)
+                    slot["played"] = True
+                    slot["result"] = "W" if scores.get(a_slug, 0) > scores.get(b_slug, 0) else "L"
         elif rnd_name in ("Round of 16", "Quarterfinals", "Semifinals", "Final"):
             # Match by finding pairs of resolved match winners
             rnd_mids = {mid for mid, _ in WIN.items() if round_of(mid) == rnd_name}
