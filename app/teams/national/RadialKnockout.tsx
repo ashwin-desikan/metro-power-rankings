@@ -5,10 +5,32 @@ import type { WorldCup2026Bundle } from "@/lib/international";
 type KO = WorldCup2026Bundle["knockout"];
 type Match = KO[string][number];
 
-// Round-of-32 match order around the wheel, derived from the official feeder map
-// (R16 89=(74,77), 90=(73,75), ... -> Final), so adjacent matches are bracket
-// siblings and a plain inward binary merge reproduces the real bracket shape.
-const LEAF_ORDER = [1, 4, 0, 2, 10, 11, 8, 9, 12, 14, 13, 15, 6, 7, 3, 5];
+// Official knockout feeder tree by FIFA match number: the two matches that feed
+// each later match, Round of 16 through the final (published 2026 bracket).
+const WIN_MAP: Record<number, [number, number]> = {
+  89: [74, 77], 90: [73, 75], 91: [76, 78], 92: [79, 80],
+  93: [83, 84], 94: [81, 82], 95: [86, 88], 96: [85, 87],
+  97: [89, 90], 98: [93, 94], 99: [91, 92], 100: [95, 96],
+  101: [97, 98], 102: [99, 100], 104: [101, 102],
+};
+function leafMatchesOf(mid: number): number[] {
+  if (mid >= 73 && mid <= 88) return [mid];
+  const f = WIN_MAP[mid];
+  return f ? [...leafMatchesOf(f[0]), ...leafMatchesOf(f[1])] : [];
+}
+// The 16 Round-of-32 match numbers in wheel order (in-order leaf traversal), so a
+// plain inward binary merge of adjacent positions reproduces the real bracket.
+const LEAF_MATCHES = leafMatchesOf(104);
+// Round-of-32 match number keyed by the data's "date|metro" venue, so the wheel
+// stays correct no matter what order the matches sit in the data.
+const MATCH_BY_VENUE: Record<string, number> = {
+  "2026-06-28|Los Angeles": 73, "2026-06-29|Monterrey": 75, "2026-06-29|Boston": 74,
+  "2026-06-29|Houston": 76, "2026-06-30|Arlington": 78, "2026-06-30|New York": 77,
+  "2026-06-30|Mexico City": 79, "2026-07-01|Atlanta": 80, "2026-07-01|Seattle": 82,
+  "2026-07-01|San Francisco-San Jose": 81, "2026-07-02|Los Angeles": 84,
+  "2026-07-02|Toronto": 83, "2026-07-02|Vancouver": 85, "2026-07-03|Dallas": 88,
+  "2026-07-03|Miami": 86, "2026-07-03|Kansas City": 87,
+};
 const GOLD = "#c79a3b";
 const CX = 360;
 const CY = 360;
@@ -68,6 +90,18 @@ function FlagNode({
 export default function RadialKnockout({ knockout }: { knockout: KO }) {
   const r32 = knockout["Round of 32"] ?? [];
   if (r32.length < 16) return null;
+
+  // Resolve each Round-of-32 match number to its slot in the data via venue, then
+  // place matches in wheel order. Falls back to the data order if venues change.
+  const matchToSlot: Record<number, number> = {};
+  r32.forEach((m, i) => {
+    const mid = MATCH_BY_VENUE[`${m.date}|${m.stad_metro}`];
+    if (mid != null) matchToSlot[mid] = i;
+  });
+  const mapped = LEAF_MATCHES.map((mn) => matchToSlot[mn]);
+  const LEAF_ORDER: number[] = mapped.every((x) => typeof x === "number")
+    ? (mapped as number[])
+    : Array.from({ length: 16 }, (_, i) => i);
 
   // Angles per ring (binary merge inward).
   const ringAngles: number[][] = [Array.from({ length: 32 }, (_, i) => i)];
