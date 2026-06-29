@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { WorldCup2026Bundle, WorldCup2026Sim } from "@/lib/international";
 import { flagForTeam, flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
+import RadialKnockout from "./RadialKnockout";
 
 type Props = {
   wc: WorldCup2026Bundle;
@@ -107,6 +108,7 @@ export default function WorldCup2026({ wc }: Props) {
             <GroupStage groups={wc.group_stage} sim={sim} />
           )}
           {sim && sim.deep_runs.length > 0 && <TitleOdds sim={sim} />}
+          <RadialKnockout knockout={wc.knockout} />
           <Bracket knockout={wc.knockout} sim={sim} />
         </div>
       )}
