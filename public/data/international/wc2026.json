@@ -613,15 +613,15 @@
         "team_slug": "canada",
         "opp_cur_name": "South Africa",
         "opp_slug": "south-africa",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 1,
+        "opp_score": 0,
         "penalty_kicks": null,
-        "result": null,
+        "result": "W",
         "stadium": "SoFi Stadium",
         "stad_country": "United States",
         "stad_metro": "Los Angeles",
         "date": "2026-06-28",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "Netherlands",
