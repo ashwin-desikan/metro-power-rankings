@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-28T09:55:55Z",
+ "as_of": "2026-06-29T00:02:37Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -648,6 +648,15 @@
    "b_slug": "argentina",
    "b_score": 3,
    "winner_slug": null,
+   "completed": true
+  },
+  "apisports-1561329": {
+   "round": "Round of 32",
+   "a_slug": "south-africa",
+   "a_score": 0,
+   "b_slug": "canada",
+   "b_score": 1,
+   "winner_slug": "canada",
    "completed": true
   }
  }
