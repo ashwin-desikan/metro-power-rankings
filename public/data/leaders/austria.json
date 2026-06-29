@@ -1,5 +1,165 @@
 [
   {
+    "name": "👑 Ferdinand I",
+    "role": "Monarch",
+    "start": "1526-01-01",
+    "end": "1564-07-25",
+    "current": false,
+    "tenure": "1526-1564",
+    "party": "House of Habsburg; founder of the central-European Habsburg monarchy",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Maximilian II",
+    "role": "Monarch",
+    "start": "1564-07-25",
+    "end": "1576-10-12",
+    "current": false,
+    "tenure": "1564-1576",
+    "party": "House of Habsburg",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Rudolf II",
+    "role": "Monarch",
+    "start": "1576-10-12",
+    "end": "1612-01-20",
+    "current": false,
+    "tenure": "1576-1612",
+    "party": "House of Habsburg",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Matthias",
+    "role": "Monarch",
+    "start": "1612-01-20",
+    "end": "1619-03-20",
+    "current": false,
+    "tenure": "1612-1619",
+    "party": "House of Habsburg",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Ferdinand II",
+    "role": "Monarch",
+    "start": "1619-03-20",
+    "end": "1637-02-15",
+    "current": false,
+    "tenure": "1619-1637",
+    "party": "House of Habsburg; Counter-Reformation, Thirty Years' War",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Ferdinand III",
+    "role": "Monarch",
+    "start": "1637-02-15",
+    "end": "1657-04-02",
+    "current": false,
+    "tenure": "1637-1657",
+    "party": "House of Habsburg",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Leopold I",
+    "role": "Monarch",
+    "start": "1657-04-02",
+    "end": "1705-05-05",
+    "current": false,
+    "tenure": "1657-1705",
+    "party": "House of Habsburg",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Joseph I",
+    "role": "Monarch",
+    "start": "1705-05-05",
+    "end": "1711-04-17",
+    "current": false,
+    "tenure": "1705-1711",
+    "party": "House of Habsburg",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Charles VI",
+    "role": "Monarch",
+    "start": "1711-04-17",
+    "end": "1740-10-20",
+    "current": false,
+    "tenure": "1711-1740",
+    "party": "House of Habsburg; Pragmatic Sanction",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Maria Theresa",
+    "role": "Monarch",
+    "start": "1740-10-20",
+    "end": "1780-11-29",
+    "current": false,
+    "tenure": "1740-1780",
+    "party": "House of Habsburg; sole female ruler; founder of Habsburg-Lorraine",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Joseph II",
+    "role": "Monarch",
+    "start": "1780-11-29",
+    "end": "1790-02-20",
+    "current": false,
+    "tenure": "1780-1790",
+    "party": "House of Habsburg-Lorraine; enlightened absolutism",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Leopold II",
+    "role": "Monarch",
+    "start": "1790-02-20",
+    "end": "1792-03-01",
+    "current": false,
+    "tenure": "1790-1792",
+    "party": "House of Habsburg-Lorraine",
+    "era": "Habsburg Monarchy (1526–1804)"
+  },
+  {
+    "name": "👑 Francis I",
+    "role": "Monarch",
+    "start": "1792-03-01",
+    "end": "1835-03-02",
+    "current": false,
+    "tenure": "1792-1835",
+    "party": "Holy Roman Emperor Francis II from 1792; proclaimed first Emperor of Austria 1804",
+    "era": "Austrian Empire & Austria-Hungary (1804–1918)"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "Monarch",
+    "start": "1835-03-02",
+    "end": "1848-12-02",
+    "current": false,
+    "tenure": "1835-1848",
+    "party": "House of Habsburg-Lorraine; abdicated in the 1848 revolutions",
+    "era": "Austrian Empire & Austria-Hungary (1804–1918)"
+  },
+  {
+    "name": "👑 Franz Joseph I",
+    "role": "Monarch",
+    "start": "1848-12-02",
+    "end": "1916-11-21",
+    "current": false,
+    "tenure": "1848-1916",
+    "party": "68-year reign; Austria-Hungary from the 1867 Compromise",
+    "era": "Austrian Empire & Austria-Hungary (1804–1918)"
+  },
+  {
+    "name": "👑 Karl I",
+    "role": "Monarch",
+    "start": "1916-11-21",
+    "end": "1918-11-11",
+    "current": false,
+    "tenure": "1916-1918",
+    "party": "Last Emperor of Austria; renounced government Nov 1918",
+    "era": "Austrian Empire & Austria-Hungary (1804–1918)"
+  },
+  {
     "name": "Michael Hainisch",
     "role": "Federal President",
     "start": "1920-12-09",

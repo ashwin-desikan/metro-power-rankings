@@ -110,13 +110,13 @@
     "era": null
   },
   {
-    "name": "Mojtaba Khamenei",
+    "name": "⚠️ Mojtaba Khamenei",
     "role": "Supreme Leader",
     "start": "2026-03-08",
     "end": null,
     "current": true,
     "tenure": null,
-    "party": null,
+    "party": "Succeeded his father Ali Khamenei, 2026",
     "era": null
   }
 ]

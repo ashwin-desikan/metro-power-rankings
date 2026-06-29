@@ -46,7 +46,7 @@ WARN_NAMES = {
     # Current leaders carrying a warning glyph (atrocities / systemic subversion /
     # criminal conviction). Historical figures are flagged in the per-country
     # history files directly; this set only re-applies the glyph on the live feed.
-    "Vladimir Putin","Ali Khamenei","Kim Jong-un","Alexander Lukashenko",
+    "Vladimir Putin","Ali Khamenei","Mojtaba Khamenei","Kim Jong-un","Alexander Lukashenko",
     "Abdel Fattah al-Burhan","Min Aung Hlaing","Donald Trump",
     "Abdel Fattah el-Sisi","Kais Saied","Benjamin Netanyahu","Recep Tayyip Erdoğan",
 }

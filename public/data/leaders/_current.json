@@ -264,7 +264,7 @@
     "since": "2024-10-20"
   },
   "iran": {
-    "name": "Mojtaba Khamenei",
+    "name": "⚠️ Mojtaba Khamenei",
     "role": "Sup. Leader",
     "second": {
       "name": "Masoud Pezeshkian",
@@ -473,6 +473,11 @@
       "role": "Monarch"
     },
     "since": "2023-03-07"
+  },
+  "romania": {
+    "name": "Nicușor Dan",
+    "role": "Pres.",
+    "since": "2025-05-26"
   },
   "russia": {
     "name": "⚠️ Vladimir Putin",

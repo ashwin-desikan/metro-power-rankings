@@ -19,10 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-29",
-    headline: "World Cup group tables and bracket corrected",
+    headline: "World Cup tables fixed; Romania leaders added",
     items: [
-      "Group Stage standings are now computed directly from match results, fixing tables that double-counted wins and points, and they reorder by the official tiebreakers.",
-      "The Round of 32 now shows the real fixtures as drawn, and the live group tables no longer regress to an early-matchday snapshot.",
+      "World Cup Group Stage tables are now computed directly from match results, fixing standings that double-counted wins and points, and the Round of 32 shows the real fixtures as drawn.",
+      "Live group tables no longer regress to an early-matchday snapshot once a group is complete.",
+      "Added Romania's leadership history and extended Austria's back to the 1526 Habsburg Monarchy, covering Maria Theresa, Joseph II and Franz Joseph through to today's heads of state.",
+      "Iran's current Supreme Leader now carries the warning mark used across the leadership directory.",
     ],
   },
   {

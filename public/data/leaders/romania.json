@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Alexandru Ioan Cuza",
+    "role": "Domnitor",
+    "start": "1859-01-24",
+    "end": "1866-02-22",
+    "current": false,
+    "tenure": "7y",
+    "party": "United Principalities of Moldavia & Wallachia",
+    "era": "Founding & Principality"
+  },
+  {
+    "name": "👑 Carol I",
+    "role": "Monarch",
+    "start": "1866-05-10",
+    "end": "1914-10-10",
+    "current": false,
+    "tenure": "48y 5m",
+    "party": "House of Hohenzollern-Sigmaringen; Prince 1866, King from 1881",
+    "era": "Kingdom of Romania"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "Monarch",
+    "start": "1914-10-10",
+    "end": "1927-07-20",
+    "current": false,
+    "tenure": "12y 9m",
+    "party": "House of Hohenzollern-Sigmaringen; the Unifier",
+    "era": "Kingdom of Romania"
+  },
+  {
+    "name": "👑 Michael I",
+    "role": "Monarch",
+    "start": "1927-07-20",
+    "end": "1930-06-08",
+    "current": false,
+    "tenure": "2y 10m",
+    "party": "House of Hohenzollern-Sigmaringen; first reign, under regency",
+    "era": "Kingdom of Romania"
+  },
+  {
+    "name": "👑 Carol II",
+    "role": "Monarch",
+    "start": "1930-06-08",
+    "end": "1940-09-06",
+    "current": false,
+    "tenure": "10y 2m",
+    "party": "House of Hohenzollern-Sigmaringen",
+    "era": "Kingdom of Romania"
+  },
+  {
+    "name": "👑 Michael I",
+    "role": "Monarch",
+    "start": "1940-09-06",
+    "end": "1947-12-30",
+    "current": false,
+    "tenure": "7y 3m",
+    "party": "House of Hohenzollern-Sigmaringen; second reign, forced to abdicate",
+    "era": "Kingdom of Romania"
+  },
+  {
+    "name": "Gheorghe Gheorghiu-Dej",
+    "role": "General Secretary",
+    "start": "1947-12-30",
+    "end": "1965-03-19",
+    "current": false,
+    "tenure": "17y 2m",
+    "party": "Romanian Communist Party; de facto leader",
+    "era": "Communist Romania (1947–1989)"
+  },
+  {
+    "name": "⚠️ Nicolae Ceaușescu",
+    "role": "General Secretary",
+    "start": "1965-03-22",
+    "end": "1989-12-22",
+    "current": false,
+    "tenure": "24y 9m",
+    "party": "Romanian Communist Party; President from 1974; executed Dec 1989",
+    "era": "Communist Romania (1947–1989)"
+  },
+  {
+    "name": "Ion Iliescu",
+    "role": "President",
+    "start": "1989-12-26",
+    "end": "1996-11-29",
+    "current": false,
+    "tenure": "6y 11m",
+    "party": "FSN / PDSR",
+    "era": "Republic (since 1989)"
+  },
+  {
+    "name": "Emil Constantinescu",
+    "role": "President",
+    "start": "1996-11-29",
+    "end": "2000-12-20",
+    "current": false,
+    "tenure": "4y",
+    "party": "Romanian Democratic Convention (CDR)",
+    "era": "Republic (since 1989)"
+  },
+  {
+    "name": "Ion Iliescu",
+    "role": "President",
+    "start": "2000-12-20",
+    "end": "2004-12-20",
+    "current": false,
+    "tenure": "4y",
+    "party": "Social Democratic Party (PSD); 2nd presidency",
+    "era": "Republic (since 1989)"
+  },
+  {
+    "name": "Traian Băsescu",
+    "role": "President",
+    "start": "2004-12-20",
+    "end": "2014-12-21",
+    "current": false,
+    "tenure": "10y",
+    "party": "Democratic Party / PDL; 2 terms",
+    "era": "Republic (since 1989)"
+  },
+  {
+    "name": "Klaus Iohannis",
+    "role": "President",
+    "start": "2014-12-21",
+    "end": "2025-02-12",
+    "current": false,
+    "tenure": "10y 1m",
+    "party": "National Liberal Party (PNL); resigned amid 2025 crisis",
+    "era": "Republic (since 1989)"
+  },
+  {
+    "name": "Nicușor Dan",
+    "role": "President",
+    "start": "2025-05-26",
+    "end": null,
+    "current": true,
+    "tenure": "1y 1m",
+    "party": "Independent; pro-EU; former mayor of Bucharest",
+    "era": "Republic (since 1989)"
+  }
+]

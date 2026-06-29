@@ -15,21 +15,30 @@ OUT = ROOT / "public/data/billionaires_raw.json"
 BASE = "https://cdn.statically.io/gh/komed3/rtb-api/main/api/"
 UA = {"User-Agent": "metro-power-rankings billionaires-refresh/1.0 (github actions)"}
 
-def gj(path, max_seconds=90):
+def gj(path, max_seconds=150, attempts=3):
     # Hard total-time cap per fetch: stream the body and abort if it runs long,
-    # so a huge/slow CDN file can never hang the job (it fails fast for review
-    # instead). Connect 10s, read-inactivity 30s, total <= max_seconds.
+    # so a huge/slow CDN file can never hang the job. The CDN (statically.io)
+    # intermittently stalls mid-stream, so retry a few times with backoff before
+    # giving up. Connect 15s, read-inactivity 60s, total <= max_seconds.
     import time, json as _json
-    start = time.time()
-    r = requests.get(BASE + path, headers=UA, timeout=(10, 30), stream=True)
-    r.raise_for_status()
-    buf = []
-    for chunk in r.iter_content(chunk_size=1 << 16):
-        if chunk:
-            buf.append(chunk)
-        if time.time() - start > max_seconds:
-            raise TimeoutError(f"{path}: exceeded {max_seconds}s ({sum(len(b) for b in buf)} bytes) — endpoint too large/slow")
-    return _json.loads(b"".join(buf).decode("utf-8", "replace"))
+    last = None
+    for attempt in range(attempts):
+        start = time.time()
+        try:
+            r = requests.get(BASE + path, headers=UA, timeout=(15, 60), stream=True)
+            r.raise_for_status()
+            buf = []
+            for chunk in r.iter_content(chunk_size=1 << 16):
+                if chunk:
+                    buf.append(chunk)
+                if time.time() - start > max_seconds:
+                    raise TimeoutError(f"{path}: exceeded {max_seconds}s ({sum(len(b) for b in buf)} bytes) — endpoint too large/slow")
+            return _json.loads(b"".join(buf).decode("utf-8", "replace"))
+        except (requests.exceptions.RequestException, TimeoutError) as ex:
+            last = ex
+            if attempt < attempts - 1:
+                time.sleep(3 * (attempt + 1))
+    raise last
 
 def first(d, *keys, default=None):
     for k in keys:
