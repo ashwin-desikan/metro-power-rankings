@@ -1,0 +1,48 @@
+name: F1 hub refresh (per-race, no deploy)
+
+# Refreshes the current-season slice of public/data/f1/data.json -- the per-round
+# winners/poles/fastest laps in latest_season_races and the drivers'/constructors'
+# standings snapshot -- straight from the Jolpica (Ergast) API, and commits with
+# [vercel skip]. The F1 hub reads data.json via ISR from GitHub raw
+# (lib/f1.ts fetchF1LiveSeason), so it updates with no Vercel build. The deep
+# 1950-present history is left untouched; a full rebuild (scripts/build-f1-data.py
+# from the sibling F1 Data project) is only needed for historical corrections.
+# The script aborts WITHOUT writing on any API failure or implausibly small
+# standings, so a bad response can never overwrite good data; quiet weeks and
+# re-runs produce no diff and therefore no commit.
+
+on:
+  schedule:
+    - cron: "0 22 * * 0"   # Sunday 22:00 UTC -- after most Grands Prix finish
+    - cron: "0 10 * * 1"   # Monday 10:00 UTC -- late/Americas races + post-race classification changes
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: f1-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Refresh F1 current-season data
+        run: python3 scripts/refresh-f1-current-season.py
+      - name: Commit if changed
+        run: |
+          set -e
+          if git diff --quiet -- public/data/f1/data.json; then
+            echo "No F1 data change this run."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/f1/data.json
+          git commit -m "data: F1 current-season refresh [vercel skip]"
+          git push origin HEAD:main

@@ -5,7 +5,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import {
   getF1Meta, getF1Champions, getF1DriverTitles, getF1ConstructorTitles,
   getF1AllTimeDriverWins, getF1AllTimeConstructorWins, getF1HostMetros,
-  getF1LatestSeasonRaces, getF1CurrentStandingsFallback,
+  fetchF1LiveSeason,
 } from "@/lib/f1";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
@@ -57,11 +57,12 @@ export default async function F1Page() {
   const driverWins = getF1AllTimeDriverWins();
   const constructorWins = getF1AllTimeConstructorWins();
   const hostMetros = getF1HostMetros();
-  const season = getF1LatestSeasonRaces();
+  const live = await fetchF1LiveSeason();
+  const season = live.races;
   const standings = await getLiveF1Standings();
   // ESPN's live driver table omits the constructor; backfill it from the
   // fallback snapshot so the Team column (and its crest) renders in both modes.
-  const fallbackDriverTeam = new Map(getF1CurrentStandingsFallback().drivers.map((d) => [d.driver, d.team]));
+  const fallbackDriverTeam = new Map(live.standings.drivers.map((d) => [d.driver, d.team]));
   const isLive = standings.source === "espn";
 
   const td = "px-3 py-1.5 text-sm";

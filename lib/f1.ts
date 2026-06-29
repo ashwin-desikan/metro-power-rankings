@@ -89,6 +89,25 @@ export function getF1HostMetros(): F1HostMetro[] { return loadData().host_metros
 export function getF1LatestSeasonRaces(): F1Race[] { return loadData().latest_season_races; }
 export function getF1CurrentStandingsFallback(): F1CurrentStandings { return loadData().current_standings; }
 
+// Runtime ISR read of the live-season slice (race log + standings snapshot) from
+// GitHub raw, so the f1-refresh Action's [vercel skip] data commits surface on the
+// hub without a rebuild -- matching how the World Cup and leaders hubs stay fresh.
+// Falls back to the build-time bundle on any failure.
+const F1_DATA_RAW =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/f1/data.json";
+export async function fetchF1LiveSeason(): Promise<{ races: F1Race[]; standings: F1CurrentStandings }> {
+  const fallback = () => ({ races: loadData().latest_season_races, standings: loadData().current_standings });
+  try {
+    const res = await fetch(F1_DATA_RAW, { next: { revalidate: 1800 } });
+    if (!res.ok) return fallback();
+    const d = (await res.json()) as F1Data;
+    if (!d?.latest_season_races || !d?.current_standings) return fallback();
+    return { races: d.latest_season_races, standings: d.current_standings };
+  } catch {
+    return fallback();
+  }
+}
+
 export function getF1CircuitBySlug(slug: string): { circuit: F1Circuit; races: F1Race[] } | null {
   const d = loadData();
   const circuit = d.circuits.find((c) => c.slug === slug);
