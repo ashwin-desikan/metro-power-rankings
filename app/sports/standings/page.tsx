@@ -14,7 +14,7 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getNpbStandings } from "@/lib/npbStandings";
-import { getWc2026LiveStandings, mergeWc2026Live } from "@/lib/wc2026Standings";
+import { getWc2026LiveStandings, mergeWc2026Live, fetchWc2026Bundle } from "@/lib/wc2026Standings";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
 import { getLiveTennisSlam } from "@/lib/tennisDraw";
@@ -361,7 +361,11 @@ function wc2026KnockoutSubTables(wc: ReturnType<typeof mergeWc2026Live>): SubTab
 }
 
 async function wc2026Block(): Promise<Block | null> {
-  const bundle = getWorldCup2026();
+  // Read the live bundle from GitHub raw (ISR), matching /teams/national, so the
+  // standings hub reflects the daily Action's data commits (knockout scores,
+  // recomputed standings) without needing a Vercel rebuild. Falls back to the
+  // build-time bundle if the fetch fails.
+  const bundle = await fetchWc2026Bundle(getWorldCup2026());
   if (!bundle) return null;
   const live = await getWc2026LiveStandings();
   const wc = mergeWc2026Live(bundle, live);
