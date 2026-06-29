@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-29T15:05:41Z",
+ "as_of": "2026-06-29T23:55:27Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -657,6 +657,24 @@
    "b_slug": "canada",
    "b_score": 1,
    "winner_slug": "canada",
+   "completed": true
+  },
+  "apisports-1562344": {
+   "round": "Round of 32",
+   "a_slug": "brazil",
+   "a_score": 2,
+   "b_slug": "japan",
+   "b_score": 1,
+   "winner_slug": "brazil",
+   "completed": true
+  },
+  "apisports-1565176": {
+   "round": "Round of 32",
+   "a_slug": "germany",
+   "a_score": 1,
+   "b_slug": "paraguay",
+   "b_score": 1,
+   "winner_slug": "paraguay",
    "completed": true
   }
  }

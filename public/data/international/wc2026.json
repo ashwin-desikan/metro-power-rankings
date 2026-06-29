@@ -643,30 +643,30 @@
         "team_slug": "germany",
         "opp_cur_name": "Paraguay",
         "opp_slug": "paraguay",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 1,
+        "opp_score": 1,
         "penalty_kicks": null,
-        "result": null,
+        "result": "L",
         "stadium": "Gillette Stadium",
         "stad_country": "United States",
         "stad_metro": "Boston",
         "date": "2026-06-29",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "Brazil",
         "team_slug": "brazil",
         "opp_cur_name": "Japan",
         "opp_slug": "japan",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 2,
+        "opp_score": 1,
         "penalty_kicks": null,
-        "result": null,
+        "result": "W",
         "stadium": "NRG Stadium",
         "stad_country": "United States",
         "stad_metro": "Houston",
         "date": "2026-06-29",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "Côte d'Ivoire",
