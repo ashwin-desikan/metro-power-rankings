@@ -13,6 +13,7 @@ export type StateRow = {
   metroCount: number;
   score: number;
   weighted: boolean;
+  rank: number;
 };
 
 export function getStatesDirectory(): StateRow[] {
