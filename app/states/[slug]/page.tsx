@@ -95,7 +95,7 @@ function CapitalBadge() {
 export default async function StateDetailPage({ params }: Props) {
   const { slug } = await params;
   const state = getState(slug);
-  const governor = getStateGovernor(slug);
+  const governor = await getStateGovernor(slug);
   if (!state) notFound();
 
   const metros = getMetrosForState(slug);

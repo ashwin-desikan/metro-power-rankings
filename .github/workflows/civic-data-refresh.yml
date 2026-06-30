@@ -44,6 +44,7 @@ jobs:
           python scripts/civic/civic_common.py --self-test
           python scripts/civic/refresh_governors.py --self-test
           python scripts/civic/refresh_congress.py --self-test
+          python scripts/civic/refresh_mayors.py --self-test
 
       # ---- SAFE: auto-applied to main (gap-fills + counted splits) ----
       - name: World leaders (add-only gap-fill)
@@ -54,6 +55,9 @@ jobs:
 
       - name: US Congress (counted party splits + roster)
         run: python scripts/civic/refresh_congress.py
+
+      - name: Mayors (top-100 primary cities — probe/refresh)
+        run: python scripts/civic/refresh_mayors.py
 
       - name: Commit safe auto changes to main
         run: |
@@ -89,5 +93,4 @@ jobs:
           else
             gh pr create --base main --head "$BR" \
               --title "Weekly civic data: proposed officeholder changes for review" \
-              --body "Auto-generated from Wikidata. These **overwrite existing curated entries** (Wikidata reports a different current leader for a country we already track), so review before merging — Wikidata is frequently stale or wrong on who holds office now. Safe gap-fills and the Congress party splits were already applied to main directly. Merging applies these with no Vercel build ([vercel skip] + ISR). Close the PR to reject."
-          fi
+              --body "Auto-generated from Wikidata. These **overwrite existing curated entries** (Wikidata reports a different current leader for a country we already track), so review before merging — Wikidata is frequently stale or wrong on who holds office now. Safe gap-fills and the Congress party splits were already applied to main directly. Merging appli

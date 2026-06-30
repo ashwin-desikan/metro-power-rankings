@@ -6,6 +6,7 @@ import { getMetroTitles, getFormerTopFlightForMetro, type FormerTopFlight } from
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { competitionHref } from "@/lib/competitionLinks";
 import HubNav from "@/app/teams/HubNav";
+import { getMayor } from "@/lib/mayors";
 import {
   getAllMetros,
   getMetroDetail,
@@ -208,6 +209,7 @@ interface PageProps {
 export default async function MetroDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const detail = getMetroDetail(slug);
+  const mayor = await getMayor(slug);
 
   if (!detail) {
     notFound();
@@ -397,6 +399,17 @@ export default async function MetroDetailPage({ params }: PageProps) {
               {metro.primaryCity && (
                 <p className="text-lg">
                   Primary City: <span className="text-[var(--text)]">{metro.primaryCity}</span>
+                </p>
+              )}
+              {mayor && (
+                <p className="text-lg">
+                  Mayor of {mayor.city}: <span className="text-[var(--text)]">{mayor.mayor}</span>
+                  {mayor.since ? (
+                    <span className="text-[var(--text-muted)] text-sm"> (since {mayor.since.slice(0, 4)})</span>
+                  ) : null}
+                  {mayor.second ? (
+                    <span className="text-[var(--text-muted)] text-sm"> · {mayor.second.name} ({mayor.second.role})</span>
+                  ) : null}
                 </p>
               )}
               {metro.primaryState && (

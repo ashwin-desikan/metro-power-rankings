@@ -84,12 +84,12 @@ function OfficialCard({ label, name, sub }: { label: string; name: string; sub?:
   );
 }
 
-export default function USPoliticalLeadershipPage() {
-  const congress = getUsCongress();
+export default async function USPoliticalLeadershipPage() {
+  const congress = await getUsCongress();
 
   // Governors
-  const states = getAllStateGovernors();
-  const terr = getTerritoryGovernors();
+  const states = await getAllStateGovernors();
+  const terr = await getTerritoryGovernors();
   const stateRows: GovRow[] = Object.entries(states)
     .map(([slug, g]) => {
       const ms = getStateMetroScore(slug);

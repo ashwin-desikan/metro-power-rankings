@@ -20,14 +20,23 @@ export type UsCongress = {
   house: { partySplit: PartySplit; leadership: HouseLeader[] };
 };
 
-let _cache: UsCongress | null = null;
-export function getUsCongress(): UsCongress | null {
-  if (_cache) return _cache;
+const GH_RAW =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/us-congress.json";
+
+// Fetched at runtime via ISR from GitHub raw so the weekly civic-data-refresh
+// updates appear with NO Vercel build; the committed file is the build-time
+// fallback when the fetch fails.
+export async function getUsCongress(): Promise<UsCongress | null> {
+  try {
+    const res = await fetch(GH_RAW, { next: { revalidate: 3600 } });
+    if (res.ok) return (await res.json()) as UsCongress;
+  } catch {
+    /* fall through to build-time copy */
+  }
   try {
     const file = path.join(process.cwd(), "public", "data", "us-congress.json");
-    _cache = JSON.parse(fs.readFileSync(file, "utf-8"));
+    return JSON.parse(fs.readFileSync(file, "utf-8")) as UsCongress;
   } catch {
-    _cache = null;
+    return null;
   }
-  return _cache;
 }
