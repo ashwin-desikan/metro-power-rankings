@@ -1,0 +1,274 @@
+{
+  "beijing": {
+    "city": "Beijing",
+    "country": "China",
+    "mayor": "Yin Yong",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Yin Li",
+      "role": "Party Secretary"
+    },
+    "since": "2023-01-19",
+    "title": "Mayor"
+  },
+  "brisbane": {
+    "city": "Brisbane",
+    "country": "Australia",
+    "mayor": "Adrian Schrinner",
+    "party": "Liberal National Party (LNP)",
+    "since": "2019-04-08",
+    "title": "Lord Mayor"
+  },
+  "busan-ulsan": {
+    "city": "Busan",
+    "country": "South Korea",
+    "mayor": "Jeon Jae-soo",
+    "party": "Democratic Party",
+    "since": "2026-07-01",
+    "title": "Mayor"
+  },
+  "calcutta": {
+    "city": "Kolkata",
+    "country": "India",
+    "mayor": "Firhad Hakim",
+    "party": "AITC/TMC",
+    "since": "2018-12-13",
+    "title": "Mayor (resigned 2026-06-05; successor not yet seated)"
+  },
+  "changsha": {
+    "city": "Changsha",
+    "country": "China",
+    "mayor": "Zhou Haibing",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Wu Guiying",
+      "role": "Party Secretary"
+    },
+    "since": "2022-09-01",
+    "title": "Mayor"
+  },
+  "chengdu": {
+    "city": "Chengdu",
+    "country": "China",
+    "mayor": "Chen Shuping",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Cao Lijun",
+      "role": "Party Secretary"
+    },
+    "since": "2025-12-25",
+    "title": "Acting Mayor"
+  },
+  "chongqing": {
+    "city": "Chongqing",
+    "country": "China",
+    "mayor": "Chen Mingbo",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Yuan Jiajun",
+      "role": "Party Secretary"
+    },
+    "since": "2026-05-28",
+    "title": "Acting Mayor"
+  },
+  "doha": {
+    "city": "Doha",
+    "country": "Qatar",
+    "mayor": "Abdullah bin Hamad bin Abdullah Al Attiyah",
+    "party": "N/A",
+    "since": "2024-01-01",
+    "title": "Minister of Municipality"
+  },
+  "guangzhou": {
+    "city": "Guangzhou",
+    "country": "China",
+    "mayor": "Sun Zhiyang",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Feng Zhonghua",
+      "role": "Party Secretary"
+    },
+    "since": "2024-01-01",
+    "title": "Mayor"
+  },
+  "hangzhou": {
+    "city": "Hangzhou",
+    "country": "China",
+    "mayor": "Du Xuliang",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Liu Fei",
+      "role": "Party Secretary"
+    },
+    "since": "2025-01-01",
+    "title": "Acting Mayor"
+  },
+  "hong-kong": {
+    "city": "Hong Kong",
+    "country": "Hong Kong",
+    "mayor": "John Lee Ka-chiu",
+    "party": "Nonpartisan",
+    "since": "2022-07-01",
+    "title": "Chief Executive"
+  },
+  "manchester": {
+    "city": "Manchester",
+    "country": "United Kingdom",
+    "mayor": "Paul Dennett",
+    "party": "Labour",
+    "since": "2026-06-19",
+    "title": "Acting Mayor of Greater Manchester"
+  },
+  "melbourne": {
+    "city": "Melbourne",
+    "country": "Australia",
+    "mayor": "Nicholas Reece",
+    "party": "Independent (Labor-aligned)",
+    "since": "2024-07-01",
+    "title": "Lord Mayor"
+  },
+  "nanjing": {
+    "city": "Nanjing",
+    "country": "China",
+    "mayor": "Han Liming",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Zhou Hongbo",
+      "role": "Party Secretary"
+    },
+    "since": "2025-07-01",
+    "title": "Mayor"
+  },
+  "new-york": {
+    "city": "New York",
+    "country": "United States",
+    "mayor": "Zohran Mamdani",
+    "party": "Democratic (Democratic Socialists of America)",
+    "since": "2026-01-01",
+    "title": "Mayor"
+  },
+  "osaka-kyoto-kobe": {
+    "city": "Osaka",
+    "country": "Japan",
+    "mayor": "Hirofumi Yoshimura",
+    "party": "Japan Innovation Party (Ishin)",
+    "since": "2019-04-08",
+    "title": "Governor, Osaka Prefecture"
+  },
+  "qingdao": {
+    "city": "Qingdao",
+    "country": "China",
+    "mayor": "Zhao Haozhi",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Zeng Zanrong",
+      "role": "Party Secretary"
+    },
+    "since": "2021-01-01",
+    "title": "Mayor"
+  },
+  "riyadh": {
+    "city": "Riyadh",
+    "country": "Saudi Arabia",
+    "mayor": "Faisal bin Abdulaziz bin Ayyaf Al Muqrin",
+    "party": "Appointed",
+    "since": "2019-11-26",
+    "title": "Mayor"
+  },
+  "santiago": {
+    "city": "Santiago",
+    "country": "Chile",
+    "mayor": "Mario Desbordes",
+    "party": "RN (National Renewal)",
+    "since": "2024-12-06",
+    "title": "Mayor"
+  },
+  "sao-paulo": {
+    "city": "Sao Paulo",
+    "country": "Brazil",
+    "mayor": "Ricardo Nunes",
+    "party": "MDB (Brazilian Democratic Movement)",
+    "since": "2021-05-16",
+    "title": "Mayor"
+  },
+  "shanghai": {
+    "city": "Shanghai",
+    "country": "China",
+    "mayor": "Gong Zheng",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Chen Jining",
+      "role": "Party Secretary"
+    },
+    "since": "2020-03-23",
+    "title": "Mayor"
+  },
+  "stockholm": {
+    "city": "Stockholm",
+    "country": "Sweden",
+    "mayor": "Karin Wanngard",
+    "party": "Social Democrats (SAP)",
+    "since": "2022-10-18",
+    "title": "Mayor (Finance Commissioner)"
+  },
+  "tel-aviv": {
+    "city": "Tel-Aviv",
+    "country": "Israel",
+    "mayor": "Ron Huldai",
+    "party": "Tel Aviv 1 (local list; Labor-aligned)",
+    "since": "1998-11-01",
+    "title": "Mayor"
+  },
+  "tianjin": {
+    "city": "Tianjin",
+    "country": "China",
+    "mayor": "Zhang Gong",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Chen Min'er",
+      "role": "Party Secretary"
+    },
+    "since": "2022-05-31",
+    "title": "Mayor"
+  },
+  "vienna": {
+    "city": "Vienna",
+    "country": "Austria",
+    "mayor": "Michael Ludwig",
+    "party": "SPO (Social Democratic Party of Austria)",
+    "since": "2018-05-24",
+    "title": "Mayor"
+  },
+  "washington-baltimore": {
+    "city": "Washington",
+    "country": "United States",
+    "mayor": "Muriel Bowser",
+    "party": "Democratic",
+    "since": "2015-01-02",
+    "title": "Mayor"
+  },
+  "wuhan": {
+    "city": "Wuhan",
+    "country": "China",
+    "mayor": "Cheng Yongwen",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Sheng Yuechun",
+      "role": "Party Secretary"
+    },
+    "since": "2021-02-01",
+    "title": "Mayor"
+  },
+  "xian": {
+    "city": "Xi'an",
+    "country": "China",
+    "mayor": "Ye Niuping",
+    "party": "Chinese Communist Party",
+    "second": {
+      "name": "Hao Huijie",
+      "role": "Party Secretary"
+    },
+    "since": "2023-06-01",
+    "title": "Mayor"
+  }
+}

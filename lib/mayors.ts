@@ -8,6 +8,7 @@ export type Mayor = {
   mayor: string;
   title: string;
   since: string;
+  party?: string;
   second?: { name: string; role: string };
 };
 

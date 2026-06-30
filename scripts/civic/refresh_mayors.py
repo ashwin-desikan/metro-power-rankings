@@ -33,7 +33,7 @@ def resolve_all(metros):
         chunk = metros[i:i + CHUNK]
         values = "\n".join(
             f'    ("{esc(m["slug"])}" "{esc(m["city"])}" "{esc(m["country"])}")' for m in chunk)
-        q = f"""SELECT ?key ?mayorLabel ?start WHERE {{
+        q = f"""SELECT ?key ?mayorLabel ?partyLabel ?start WHERE {{
       VALUES (?key ?cityLabel ?countryLabel) {{
 {values}
       }}
@@ -42,6 +42,7 @@ def resolve_all(metros):
       ?city p:P6 ?st . ?st ps:P6 ?mayor .
       FILTER NOT EXISTS {{ ?st pq:P582 ?e }}
       OPTIONAL {{ ?st pq:P580 ?start }}
+      OPTIONAL {{ ?mayor wdt:P102 ?party }}
       SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
     }}"""
         try:
@@ -53,7 +54,7 @@ def resolve_all(metros):
             key = b.get("key", {}).get("value", "")
             nm = b.get("mayorLabel", {}).get("value", "")
             if key and key not in out and sanity_ok(nm):
-                out[key] = {"mayor": nm, "since": (b.get("start", {}).get("value", "") or "")[:10]}
+                out[key] = {"mayor": nm, "since": (b.get("start", {}).get("value", "") or "")[:10], "party": b.get("partyLabel", {}).get("value", "")}
     return out
 
 def build(metros, resolved, overrides):
@@ -63,7 +64,7 @@ def build(metros, resolved, overrides):
         if not info:
             continue
         out[m["slug"]] = {"city": m["city"], "country": m["country"],
-                          "mayor": info["mayor"], "title": "Mayor", "since": info["since"]}
+                          "mayor": info["mayor"], "title": "Mayor", "since": info["since"], "party": info.get("party", "")}
     return merge_overrides(out, overrides)
 
 def main():

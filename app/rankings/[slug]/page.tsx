@@ -403,7 +403,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
               )}
               {mayor && (
                 <p className="text-lg">
-                  Mayor of {mayor.city}: <span className="text-[var(--text)]">{mayor.mayor}</span>
+                  Mayor of {mayor.city}: <span className="text-[var(--text)]">{mayor.mayor}</span>{mayor.party ? <span className="text-[var(--text-muted)] text-sm"> ({mayor.party})</span> : null}
                   {mayor.since ? (
                     <span className="text-[var(--text-muted)] text-sm"> (since {mayor.since.slice(0, 4)})</span>
                   ) : null}
