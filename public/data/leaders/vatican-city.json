@@ -1,0 +1,2672 @@
+[
+  {
+    "name": "Peter",
+    "role": "Pope",
+    "start": "0030-01-01",
+    "end": "0064-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Bethsaida",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Linus",
+    "role": "Pope",
+    "start": "0064-01-01",
+    "end": "0076-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Volterra",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Cletus",
+    "role": "Pope",
+    "start": "0076-01-01",
+    "end": "0088-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Athens",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Clement I",
+    "role": "Pope",
+    "start": "0088-01-01",
+    "end": "0097-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Evaristus",
+    "role": "Pope",
+    "start": "0097-01-01",
+    "end": "0105-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Bethlehem",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Alexander I",
+    "role": "Pope",
+    "start": "0105-01-01",
+    "end": "0115-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Sixtus I",
+    "role": "Pope",
+    "start": "0115-01-01",
+    "end": "0125-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Telesphorus",
+    "role": "Pope",
+    "start": "0125-01-01",
+    "end": "0136-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Terra Nova",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Hyginus",
+    "role": "Pope",
+    "start": "0136-01-01",
+    "end": "0140-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Athens",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Pius I",
+    "role": "Pope",
+    "start": "0140-01-01",
+    "end": "0155-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Aquileia",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Anicetus",
+    "role": "Pope",
+    "start": "0155-01-01",
+    "end": "0166-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Emesa",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Soter",
+    "role": "Pope",
+    "start": "0166-01-01",
+    "end": "0174-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Fundi",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Eleutherius",
+    "role": "Pope",
+    "start": "0174-01-01",
+    "end": "0189-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Nicopolis",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Victor I",
+    "role": "Pope",
+    "start": "0189-01-01",
+    "end": "0198-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Africa",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Zephyrinus",
+    "role": "Pope",
+    "start": "0198-01-01",
+    "end": "0217-12-20",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Callixtus I",
+    "role": "Pope",
+    "start": "0218-01-01",
+    "end": "0222-10-14",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Urban I",
+    "role": "Pope",
+    "start": "0222-01-01",
+    "end": "0230-05-19",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Pontian",
+    "role": "Pope",
+    "start": "0230-07-21",
+    "end": "0235-09-28",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Anterus",
+    "role": "Pope",
+    "start": "0235-11-21",
+    "end": "0236-01-03",
+    "current": false,
+    "tenure": null,
+    "party": "Petelia",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Fabian",
+    "role": "Pope",
+    "start": "0236-01-10",
+    "end": "0250-01-20",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Cornelius",
+    "role": "Pope",
+    "start": "0251-03-01",
+    "end": "0253-06-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Lucius I",
+    "role": "Pope",
+    "start": "0253-06-25",
+    "end": "0254-03-05",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Stephen I",
+    "role": "Pope",
+    "start": "0254-03-12",
+    "end": "0257-08-02",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Sixtus II",
+    "role": "Pope",
+    "start": "0257-08-31",
+    "end": "0258-08-06",
+    "current": false,
+    "tenure": null,
+    "party": "Athens",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Dionysius",
+    "role": "Pope",
+    "start": "0259-07-22",
+    "end": "0268-12-27",
+    "current": false,
+    "tenure": null,
+    "party": "Terra Nova",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Felix I",
+    "role": "Pope",
+    "start": "0269-01-05",
+    "end": "0274-12-30",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Eutychian",
+    "role": "Pope",
+    "start": "0275-01-04",
+    "end": "0283-12-07",
+    "current": false,
+    "tenure": null,
+    "party": "Luna",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Caius",
+    "role": "Pope",
+    "start": "0283-12-17",
+    "end": "0296-04-22",
+    "current": false,
+    "tenure": null,
+    "party": "Salona",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Marcellinus",
+    "role": "Pope",
+    "start": "0296-06-30",
+    "end": "0304-10-25",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Marcellus I",
+    "role": "Pope",
+    "start": "0308-05-27",
+    "end": "0309-01-16",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Eusebius",
+    "role": "Pope",
+    "start": "0309-04-18",
+    "end": "0310-08-17",
+    "current": false,
+    "tenure": null,
+    "party": "Achaea",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Miltiades",
+    "role": "Pope",
+    "start": "0311-07-02",
+    "end": "0314-01-10",
+    "current": false,
+    "tenure": null,
+    "party": "Africa",
+    "era": "Early Church (1st–3rd c.)"
+  },
+  {
+    "name": "Sylvester I",
+    "role": "Pope",
+    "start": "0314-01-31",
+    "end": "0335-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Apulia",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Mark",
+    "role": "Pope",
+    "start": "0336-01-18",
+    "end": "0336-10-07",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Julius I",
+    "role": "Pope",
+    "start": "0337-02-06",
+    "end": "0352-04-12",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Liberius",
+    "role": "Pope",
+    "start": "0352-05-17",
+    "end": "0366-09-24",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Damasus I",
+    "role": "Pope",
+    "start": "0366-10-01",
+    "end": "0384-12-11",
+    "current": false,
+    "tenure": null,
+    "party": "Egitania",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Siricius",
+    "role": "Pope",
+    "start": "0384-12-17",
+    "end": "0399-11-26",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Anastasius I",
+    "role": "Pope",
+    "start": "0399-11-27",
+    "end": "0401-12-19",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Innocent I",
+    "role": "Pope",
+    "start": "0401-12-21",
+    "end": "0417-03-12",
+    "current": false,
+    "tenure": null,
+    "party": "Albano",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Zosimus",
+    "role": "Pope",
+    "start": "0417-03-18",
+    "end": "0418-12-26",
+    "current": false,
+    "tenure": null,
+    "party": "Mesoraca",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Boniface I",
+    "role": "Pope",
+    "start": "0418-12-28",
+    "end": "0422-09-04",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Celestine I",
+    "role": "Pope",
+    "start": "0422-09-10",
+    "end": "0432-07-27",
+    "current": false,
+    "tenure": null,
+    "party": "Campania",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Sixtus III",
+    "role": "Pope",
+    "start": "0432-07-31",
+    "end": "0440-08-18",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Leo I",
+    "role": "Pope",
+    "start": "0440-09-29",
+    "end": "0461-11-10",
+    "current": false,
+    "tenure": null,
+    "party": "Etruria",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Hilarius",
+    "role": "Pope",
+    "start": "0461-11-19",
+    "end": "0468-02-29",
+    "current": false,
+    "tenure": null,
+    "party": "Sardinia",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Simplicius",
+    "role": "Pope",
+    "start": "0468-03-03",
+    "end": "0483-03-10",
+    "current": false,
+    "tenure": null,
+    "party": "Tivoli",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Felix III",
+    "role": "Pope",
+    "start": "0483-03-13",
+    "end": "0492-03-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Gelasius I",
+    "role": "Pope",
+    "start": "0492-03-01",
+    "end": "0496-11-21",
+    "current": false,
+    "tenure": null,
+    "party": "Africa",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Anastasius II",
+    "role": "Pope",
+    "start": "0496-11-24",
+    "end": "0498-11-19",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Symmachus",
+    "role": "Pope",
+    "start": "0498-11-22",
+    "end": "0514-07-19",
+    "current": false,
+    "tenure": null,
+    "party": "Sardinia",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Hormisdas",
+    "role": "Pope",
+    "start": "0514-07-20",
+    "end": "0523-08-06",
+    "current": false,
+    "tenure": null,
+    "party": "Frosinone",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "John I",
+    "role": "Pope",
+    "start": "0523-08-13",
+    "end": "0526-05-18",
+    "current": false,
+    "tenure": null,
+    "party": "Siena",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Felix IV",
+    "role": "Pope",
+    "start": "0526-07-12",
+    "end": "0530-09-22",
+    "current": false,
+    "tenure": null,
+    "party": "Samnium",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Boniface II",
+    "role": "Pope",
+    "start": "0530-09-22",
+    "end": "0532-10-17",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "John II",
+    "role": "Pope",
+    "start": "0533-01-02",
+    "end": "0535-05-08",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Agapetus I",
+    "role": "Pope",
+    "start": "0535-05-13",
+    "end": "0536-04-22",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Silverius",
+    "role": "Pope",
+    "start": "0536-06-08",
+    "end": "0537-03-11",
+    "current": false,
+    "tenure": null,
+    "party": "Cicanum",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Vigilius",
+    "role": "Pope",
+    "start": "0537-03-29",
+    "end": "0555-06-07",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Pelagius I",
+    "role": "Pope",
+    "start": "0556-04-16",
+    "end": "0561-03-04",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "John III",
+    "role": "Pope",
+    "start": "0561-07-17",
+    "end": "0574-07-13",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Benedict I",
+    "role": "Pope",
+    "start": "0575-06-02",
+    "end": "0579-07-30",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Pelagius II",
+    "role": "Pope",
+    "start": "0579-11-26",
+    "end": "0590-02-07",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Gregory I",
+    "role": "Pope",
+    "start": "0590-09-03",
+    "end": "0604-03-12",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Late Antiquity (4th–6th c.)"
+  },
+  {
+    "name": "Sabinian",
+    "role": "Pope",
+    "start": "0604-09-13",
+    "end": "0606-02-22",
+    "current": false,
+    "tenure": null,
+    "party": "Blera",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Boniface III",
+    "role": "Pope",
+    "start": "0607-02-19",
+    "end": "0607-11-12",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Boniface IV",
+    "role": "Pope",
+    "start": "0608-09-15",
+    "end": "0615-05-08",
+    "current": false,
+    "tenure": null,
+    "party": "Marsica",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Adeodatus I",
+    "role": "Pope",
+    "start": "0615-11-13",
+    "end": "0618-11-08",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Boniface V",
+    "role": "Pope",
+    "start": "0619-12-23",
+    "end": "0625-10-25",
+    "current": false,
+    "tenure": null,
+    "party": "Naples",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Honorius I",
+    "role": "Pope",
+    "start": "0625-10-27",
+    "end": "0638-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "Ceprano",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Severinus",
+    "role": "Pope",
+    "start": "0640-05-28",
+    "end": "0640-08-02",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John IV",
+    "role": "Pope",
+    "start": "0640-12-24",
+    "end": "0642-10-12",
+    "current": false,
+    "tenure": null,
+    "party": "Zadar",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Theodore I",
+    "role": "Pope",
+    "start": "0642-11-24",
+    "end": "0649-05-14",
+    "current": false,
+    "tenure": null,
+    "party": "Jerusalem",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Martin I",
+    "role": "Pope",
+    "start": "0649-07-05",
+    "end": "0654-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Todi",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Eugene I",
+    "role": "Pope",
+    "start": "0654-08-10",
+    "end": "0657-06-02",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Vitalian",
+    "role": "Pope",
+    "start": "0657-07-30",
+    "end": "0672-01-27",
+    "current": false,
+    "tenure": null,
+    "party": "Segni",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Adeodatus II",
+    "role": "Pope",
+    "start": "0672-04-11",
+    "end": "0676-06-17",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Donus",
+    "role": "Pope",
+    "start": "0676-11-02",
+    "end": "0678-04-11",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Agatho",
+    "role": "Pope",
+    "start": "0678-06-27",
+    "end": "0681-01-10",
+    "current": false,
+    "tenure": null,
+    "party": "Palermo",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Leo II",
+    "role": "Pope",
+    "start": "0682-08-17",
+    "end": "0683-07-03",
+    "current": false,
+    "tenure": null,
+    "party": "Sicily",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Benedict II",
+    "role": "Pope",
+    "start": "0684-06-26",
+    "end": "0685-05-08",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John V",
+    "role": "Pope",
+    "start": "0685-07-23",
+    "end": "0686-08-02",
+    "current": false,
+    "tenure": null,
+    "party": "Antioch",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Conon",
+    "role": "Pope",
+    "start": "0686-10-21",
+    "end": "0687-09-21",
+    "current": false,
+    "tenure": null,
+    "party": "Thrace",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Sergius I",
+    "role": "Pope",
+    "start": "0687-12-15",
+    "end": "0701-09-08",
+    "current": false,
+    "tenure": null,
+    "party": "Palermo",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John VI",
+    "role": "Pope",
+    "start": "0701-10-30",
+    "end": "0705-01-11",
+    "current": false,
+    "tenure": null,
+    "party": "Ephesus",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John VII",
+    "role": "Pope",
+    "start": "0705-03-01",
+    "end": "0707-10-18",
+    "current": false,
+    "tenure": null,
+    "party": "Rossano",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Sisinnius",
+    "role": "Pope",
+    "start": "0708-01-15",
+    "end": "0708-02-04",
+    "current": false,
+    "tenure": null,
+    "party": "Syria",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Constantine",
+    "role": "Pope",
+    "start": "0708-03-25",
+    "end": "0715-04-09",
+    "current": false,
+    "tenure": null,
+    "party": "Tyre",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Gregory II",
+    "role": "Pope",
+    "start": "0715-05-19",
+    "end": "0731-02-11",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Gregory III",
+    "role": "Pope",
+    "start": "0731-03-18",
+    "end": "0741-11-28",
+    "current": false,
+    "tenure": null,
+    "party": "Syria",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Zachary",
+    "role": "Pope",
+    "start": "0741-12-03",
+    "end": "0752-03-15",
+    "current": false,
+    "tenure": null,
+    "party": "Santa Severina",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Stephen II",
+    "role": "Pope",
+    "start": "0752-03-26",
+    "end": "0757-04-26",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Paul I",
+    "role": "Pope",
+    "start": "0757-05-29",
+    "end": "0767-06-28",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Stephen III",
+    "role": "Pope",
+    "start": "0768-08-07",
+    "end": "0772-01-24",
+    "current": false,
+    "tenure": null,
+    "party": "Syracuse",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Adrian I",
+    "role": "Pope",
+    "start": "0772-02-01",
+    "end": "0795-12-26",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Leo III",
+    "role": "Pope",
+    "start": "0795-12-26",
+    "end": "0816-06-12",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Stephen IV",
+    "role": "Pope",
+    "start": "0816-06-22",
+    "end": "0817-01-24",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Paschal I",
+    "role": "Pope",
+    "start": "0817-01-25",
+    "end": "0824-02-11",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Eugene II",
+    "role": "Pope",
+    "start": "0824-06-06",
+    "end": "0827-08-27",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Valentine",
+    "role": "Pope",
+    "start": "0827-08-31",
+    "end": "0827-10-10",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Gregory IV",
+    "role": "Pope",
+    "start": "0827-12-20",
+    "end": "0844-01-25",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Sergius II",
+    "role": "Pope",
+    "start": "0844-01-25",
+    "end": "0847-01-27",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Leo IV",
+    "role": "Pope",
+    "start": "0847-04-10",
+    "end": "0855-07-17",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Benedict III",
+    "role": "Pope",
+    "start": "0855-09-29",
+    "end": "0858-04-17",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Nicholas I",
+    "role": "Pope",
+    "start": "0858-04-24",
+    "end": "0867-11-13",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Adrian II",
+    "role": "Pope",
+    "start": "0867-12-14",
+    "end": "0872-12-14",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John VIII",
+    "role": "Pope",
+    "start": "0872-12-14",
+    "end": "0882-12-16",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Marinus I",
+    "role": "Pope",
+    "start": "0882-12-16",
+    "end": "0884-05-15",
+    "current": false,
+    "tenure": null,
+    "party": "Gallese",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Adrian III",
+    "role": "Pope",
+    "start": "0884-05-17",
+    "end": "0885-07-08",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Stephen V",
+    "role": "Pope",
+    "start": "0885-09-01",
+    "end": "0891-09-14",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Formosus",
+    "role": "Pope",
+    "start": "0891-10-06",
+    "end": "0896-04-04",
+    "current": false,
+    "tenure": null,
+    "party": "Ostia",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Boniface VI",
+    "role": "Pope",
+    "start": "0896-04-11",
+    "end": "0896-04-26",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Stephen VI",
+    "role": "Pope",
+    "start": "0896-05-22",
+    "end": "0897-08-14",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Romanus",
+    "role": "Pope",
+    "start": "0897-08-14",
+    "end": "0897-11-01",
+    "current": false,
+    "tenure": null,
+    "party": "Gallese",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Theodore II",
+    "role": "Pope",
+    "start": "0897-12-01",
+    "end": "0897-12-20",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John IX",
+    "role": "Pope",
+    "start": "0898-01-18",
+    "end": "0900-01-05",
+    "current": false,
+    "tenure": null,
+    "party": "Tivoli",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Benedict IV",
+    "role": "Pope",
+    "start": "0900-02-01",
+    "end": "0903-07-30",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Leo V",
+    "role": "Pope",
+    "start": "0903-07-30",
+    "end": "0903-12-01",
+    "current": false,
+    "tenure": null,
+    "party": "Ardea",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Sergius III",
+    "role": "Pope",
+    "start": "0904-01-29",
+    "end": "0911-04-14",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Anastasius III",
+    "role": "Pope",
+    "start": "0911-04-14",
+    "end": "0913-06-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Lando",
+    "role": "Pope",
+    "start": "0913-07-07",
+    "end": "0914-02-05",
+    "current": false,
+    "tenure": null,
+    "party": "Sabina",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John X",
+    "role": "Pope",
+    "start": "0914-03-01",
+    "end": "0928-05-28",
+    "current": false,
+    "tenure": null,
+    "party": "Tossignano",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Leo VI",
+    "role": "Pope",
+    "start": "0928-05-28",
+    "end": "0929-02-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Stephen VII",
+    "role": "Pope",
+    "start": "0929-02-03",
+    "end": "0931-02-13",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John XI",
+    "role": "Pope",
+    "start": "0931-03-15",
+    "end": "0935-12-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Leo VII",
+    "role": "Pope",
+    "start": "0936-01-03",
+    "end": "0939-07-13",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Stephen VIII",
+    "role": "Pope",
+    "start": "0939-07-14",
+    "end": "0942-10-30",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Marinus II",
+    "role": "Pope",
+    "start": "0942-10-30",
+    "end": "0946-05-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Agapetus II",
+    "role": "Pope",
+    "start": "0946-05-10",
+    "end": "0955-11-08",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John XII",
+    "role": "Pope",
+    "start": "0955-12-16",
+    "end": "0964-05-14",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Benedict V",
+    "role": "Pope",
+    "start": "0964-05-22",
+    "end": "0964-06-23",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Leo VIII",
+    "role": "Pope",
+    "start": "0964-06-23",
+    "end": "0965-03-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John XIII",
+    "role": "Pope",
+    "start": "0965-10-01",
+    "end": "0972-09-06",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Benedict VI",
+    "role": "Pope",
+    "start": "0973-01-19",
+    "end": "0974-06-08",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Benedict VII",
+    "role": "Pope",
+    "start": "0974-10-01",
+    "end": "0983-07-10",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John XIV",
+    "role": "Pope",
+    "start": "0983-12-01",
+    "end": "0984-08-20",
+    "current": false,
+    "tenure": null,
+    "party": "Pavia",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John XV",
+    "role": "Pope",
+    "start": "0985-08-20",
+    "end": "0996-04-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Gregory V",
+    "role": "Pope",
+    "start": "0996-05-03",
+    "end": "0999-02-18",
+    "current": false,
+    "tenure": null,
+    "party": "Stainach",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "Sylvester II",
+    "role": "Pope",
+    "start": "0999-04-02",
+    "end": "1003-05-12",
+    "current": false,
+    "tenure": null,
+    "party": "Belliac",
+    "era": "Early Middle Ages (7th–10th c.)"
+  },
+  {
+    "name": "John XVII",
+    "role": "Pope",
+    "start": "1003-05-16",
+    "end": "1003-11-06",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "John XVIII",
+    "role": "Pope",
+    "start": "1003-12-25",
+    "end": "1009-07-18",
+    "current": false,
+    "tenure": null,
+    "party": "Rapagnano",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Sergius IV",
+    "role": "Pope",
+    "start": "1009-07-31",
+    "end": "1012-05-12",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Benedict VIII",
+    "role": "Pope",
+    "start": "1012-05-18",
+    "end": "1024-04-09",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "John XIX",
+    "role": "Pope",
+    "start": "1024-05-14",
+    "end": "1032-10-06",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Benedict IX",
+    "role": "Pope",
+    "start": "1032-10-21",
+    "end": "1044-12-31",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Sylvester III",
+    "role": "Pope",
+    "start": "1045-01-13",
+    "end": "1045-03-10",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Benedict IX",
+    "role": "Pope",
+    "start": "1045-03-10",
+    "end": "1045-05-01",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Gregory VI",
+    "role": "Pope",
+    "start": "1045-05-01",
+    "end": "1046-12-20",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Clement II",
+    "role": "Pope",
+    "start": "1046-12-24",
+    "end": "1047-10-09",
+    "current": false,
+    "tenure": null,
+    "party": "Hornburg",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Benedict IX",
+    "role": "Pope",
+    "start": "1047-11-08",
+    "end": "1048-07-17",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Damasus II",
+    "role": "Pope",
+    "start": "1048-07-17",
+    "end": "1048-08-09",
+    "current": false,
+    "tenure": null,
+    "party": "Pildenau",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Leo IX",
+    "role": "Pope",
+    "start": "1049-02-12",
+    "end": "1054-04-19",
+    "current": false,
+    "tenure": null,
+    "party": "Eguisheim",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Victor II",
+    "role": "Pope",
+    "start": "1055-04-13",
+    "end": "1057-07-28",
+    "current": false,
+    "tenure": null,
+    "party": "Swabia",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Stephen IX",
+    "role": "Pope",
+    "start": "1057-08-02",
+    "end": "1058-03-29",
+    "current": false,
+    "tenure": null,
+    "party": "Lorraine",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Nicholas II",
+    "role": "Pope",
+    "start": "1058-12-06",
+    "end": "1061-07-27",
+    "current": false,
+    "tenure": null,
+    "party": "Savoy",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Alexander II",
+    "role": "Pope",
+    "start": "1061-09-30",
+    "end": "1073-04-21",
+    "current": false,
+    "tenure": null,
+    "party": "Baggio",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Gregory VII",
+    "role": "Pope",
+    "start": "1073-04-22",
+    "end": "1085-05-25",
+    "current": false,
+    "tenure": null,
+    "party": "Sovana",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Victor III",
+    "role": "Pope",
+    "start": "1086-05-24",
+    "end": "1087-09-16",
+    "current": false,
+    "tenure": null,
+    "party": "Benevento",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Urban II",
+    "role": "Pope",
+    "start": "1088-03-12",
+    "end": "1099-07-29",
+    "current": false,
+    "tenure": null,
+    "party": "Châtillon-sur-Marne",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Paschal II",
+    "role": "Pope",
+    "start": "1099-08-13",
+    "end": "1118-01-21",
+    "current": false,
+    "tenure": null,
+    "party": "Bleda",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Gelasius II",
+    "role": "Pope",
+    "start": "1118-01-24",
+    "end": "1119-01-29",
+    "current": false,
+    "tenure": null,
+    "party": "Gaeta",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Callixtus II",
+    "role": "Pope",
+    "start": "1119-02-02",
+    "end": "1124-12-13",
+    "current": false,
+    "tenure": null,
+    "party": "Quingey",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Honorius II",
+    "role": "Pope",
+    "start": "1124-12-21",
+    "end": "1130-02-13",
+    "current": false,
+    "tenure": null,
+    "party": "Fiagnano",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Innocent II",
+    "role": "Pope",
+    "start": "1130-02-14",
+    "end": "1143-09-24",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Celestine II",
+    "role": "Pope",
+    "start": "1143-09-26",
+    "end": "1144-03-08",
+    "current": false,
+    "tenure": null,
+    "party": "Città di Castello",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Lucius II",
+    "role": "Pope",
+    "start": "1144-03-12",
+    "end": "1145-02-15",
+    "current": false,
+    "tenure": null,
+    "party": "Bologna",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Eugene III",
+    "role": "Pope",
+    "start": "1145-02-15",
+    "end": "1153-07-08",
+    "current": false,
+    "tenure": null,
+    "party": "Pisa",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Anastasius IV",
+    "role": "Pope",
+    "start": "1153-07-12",
+    "end": "1154-12-03",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Adrian IV",
+    "role": "Pope",
+    "start": "1154-12-04",
+    "end": "1159-09-01",
+    "current": false,
+    "tenure": null,
+    "party": "Abbots Langley",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Alexander III",
+    "role": "Pope",
+    "start": "1159-09-07",
+    "end": "1181-08-30",
+    "current": false,
+    "tenure": null,
+    "party": "Siena",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Lucius III",
+    "role": "Pope",
+    "start": "1181-09-01",
+    "end": "1185-11-25",
+    "current": false,
+    "tenure": null,
+    "party": "Lucca",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Urban III",
+    "role": "Pope",
+    "start": "1185-11-25",
+    "end": "1187-10-20",
+    "current": false,
+    "tenure": null,
+    "party": "Cuggiono",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Gregory VIII",
+    "role": "Pope",
+    "start": "1187-10-21",
+    "end": "1187-12-17",
+    "current": false,
+    "tenure": null,
+    "party": "Benevento",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Clement III",
+    "role": "Pope",
+    "start": "1187-12-19",
+    "end": "1191-03-20",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Celestine III",
+    "role": "Pope",
+    "start": "1191-03-30",
+    "end": "1198-01-08",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Innocent III",
+    "role": "Pope",
+    "start": "1198-01-08",
+    "end": "1216-07-16",
+    "current": false,
+    "tenure": null,
+    "party": "Gavignano",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Honorius III",
+    "role": "Pope",
+    "start": "1216-07-18",
+    "end": "1227-03-18",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Gregory IX",
+    "role": "Pope",
+    "start": "1227-03-19",
+    "end": "1241-08-22",
+    "current": false,
+    "tenure": null,
+    "party": "Anagni",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Celestine IV",
+    "role": "Pope",
+    "start": "1241-10-25",
+    "end": "1241-11-10",
+    "current": false,
+    "tenure": null,
+    "party": "Milan",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Innocent IV",
+    "role": "Pope",
+    "start": "1243-06-25",
+    "end": "1254-12-07",
+    "current": false,
+    "tenure": null,
+    "party": "Genoa",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Alexander IV",
+    "role": "Pope",
+    "start": "1254-12-12",
+    "end": "1261-05-25",
+    "current": false,
+    "tenure": null,
+    "party": "Jenne",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Urban IV",
+    "role": "Pope",
+    "start": "1261-08-29",
+    "end": "1264-10-02",
+    "current": false,
+    "tenure": null,
+    "party": "Troyes",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Clement IV",
+    "role": "Pope",
+    "start": "1265-02-05",
+    "end": "1268-11-29",
+    "current": false,
+    "tenure": null,
+    "party": "Saint-Gilles",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Gregory X",
+    "role": "Pope",
+    "start": "1271-09-01",
+    "end": "1276-01-10",
+    "current": false,
+    "tenure": null,
+    "party": "Piacenza",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Innocent V",
+    "role": "Pope",
+    "start": "1276-01-21",
+    "end": "1276-06-22",
+    "current": false,
+    "tenure": null,
+    "party": "Savoy",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Adrian V",
+    "role": "Pope",
+    "start": "1276-07-11",
+    "end": "1276-08-18",
+    "current": false,
+    "tenure": null,
+    "party": "Genoa",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "John XXI",
+    "role": "Pope",
+    "start": "1276-09-08",
+    "end": "1277-05-20",
+    "current": false,
+    "tenure": null,
+    "party": "Lisbon",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Nicholas III",
+    "role": "Pope",
+    "start": "1277-11-25",
+    "end": "1280-08-22",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Martin IV",
+    "role": "Pope",
+    "start": "1281-02-22",
+    "end": "1285-03-28",
+    "current": false,
+    "tenure": null,
+    "party": "Touraine",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Honorius IV",
+    "role": "Pope",
+    "start": "1285-04-02",
+    "end": "1287-04-03",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Nicholas IV",
+    "role": "Pope",
+    "start": "1288-02-22",
+    "end": "1292-04-04",
+    "current": false,
+    "tenure": null,
+    "party": "Lisciano",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Celestine V",
+    "role": "Pope",
+    "start": "1294-07-05",
+    "end": "1294-12-13",
+    "current": false,
+    "tenure": null,
+    "party": "Sant'Angelo Limosano",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Boniface VIII",
+    "role": "Pope",
+    "start": "1294-12-24",
+    "end": "1303-10-11",
+    "current": false,
+    "tenure": null,
+    "party": "Anagni",
+    "era": "High Middle Ages (11th–13th c.)"
+  },
+  {
+    "name": "Benedict XI",
+    "role": "Pope",
+    "start": "1303-10-22",
+    "end": "1304-07-07",
+    "current": false,
+    "tenure": null,
+    "party": "Treviso",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Clement V",
+    "role": "Pope",
+    "start": "1305-06-05",
+    "end": "1314-04-20",
+    "current": false,
+    "tenure": null,
+    "party": "Villandraut",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "John XXII",
+    "role": "Pope",
+    "start": "1316-08-07",
+    "end": "1334-12-04",
+    "current": false,
+    "tenure": null,
+    "party": "Cahors",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Benedict XII",
+    "role": "Pope",
+    "start": "1334-12-20",
+    "end": "1342-04-25",
+    "current": false,
+    "tenure": null,
+    "party": "Saverdun",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Clement VI",
+    "role": "Pope",
+    "start": "1342-05-07",
+    "end": "1352-12-06",
+    "current": false,
+    "tenure": null,
+    "party": "Maumont",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Innocent VI",
+    "role": "Pope",
+    "start": "1352-12-18",
+    "end": "1362-09-12",
+    "current": false,
+    "tenure": null,
+    "party": "Les Monts",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Urban V",
+    "role": "Pope",
+    "start": "1362-09-28",
+    "end": "1370-12-19",
+    "current": false,
+    "tenure": null,
+    "party": "Grizac",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Gregory XI",
+    "role": "Pope",
+    "start": "1370-12-30",
+    "end": "1378-03-27",
+    "current": false,
+    "tenure": null,
+    "party": "Maumont",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Urban VI",
+    "role": "Pope",
+    "start": "1378-04-08",
+    "end": "1389-10-15",
+    "current": false,
+    "tenure": null,
+    "party": "Naples",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Boniface IX",
+    "role": "Pope",
+    "start": "1389-11-02",
+    "end": "1404-10-01",
+    "current": false,
+    "tenure": null,
+    "party": "Naples",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Innocent VII",
+    "role": "Pope",
+    "start": "1404-10-17",
+    "end": "1406-11-06",
+    "current": false,
+    "tenure": null,
+    "party": "Sulmona",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Gregory XII",
+    "role": "Pope",
+    "start": "1406-11-30",
+    "end": "1415-07-04",
+    "current": false,
+    "tenure": null,
+    "party": "Venice",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Martin V",
+    "role": "Pope",
+    "start": "1417-11-11",
+    "end": "1431-02-20",
+    "current": false,
+    "tenure": null,
+    "party": "Genazzano",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Eugene IV",
+    "role": "Pope",
+    "start": "1431-03-03",
+    "end": "1447-02-23",
+    "current": false,
+    "tenure": null,
+    "party": "Venice",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Nicholas V",
+    "role": "Pope",
+    "start": "1447-03-06",
+    "end": "1455-03-24",
+    "current": false,
+    "tenure": null,
+    "party": "Sarzana",
+    "era": "Avignon & Western Schism (14th–15th c.)"
+  },
+  {
+    "name": "Callixtus III",
+    "role": "Pope",
+    "start": "1455-04-08",
+    "end": "1458-08-06",
+    "current": false,
+    "tenure": null,
+    "party": "Xàtiva",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Pius II",
+    "role": "Pope",
+    "start": "1458-08-19",
+    "end": "1464-08-15",
+    "current": false,
+    "tenure": null,
+    "party": "Corsignano",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Paul II",
+    "role": "Pope",
+    "start": "1464-08-30",
+    "end": "1471-07-26",
+    "current": false,
+    "tenure": null,
+    "party": "Venice",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Sixtus IV",
+    "role": "Pope",
+    "start": "1471-08-09",
+    "end": "1484-08-12",
+    "current": false,
+    "tenure": null,
+    "party": "Celle Ligure",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Innocent VIII",
+    "role": "Pope",
+    "start": "1484-08-29",
+    "end": "1492-07-25",
+    "current": false,
+    "tenure": null,
+    "party": "Genoa",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Alexander VI",
+    "role": "Pope",
+    "start": "1492-08-11",
+    "end": "1503-08-18",
+    "current": false,
+    "tenure": null,
+    "party": "Xàtiva",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Pius III",
+    "role": "Pope",
+    "start": "1503-09-22",
+    "end": "1503-10-18",
+    "current": false,
+    "tenure": null,
+    "party": "Siena",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Julius II",
+    "role": "Pope",
+    "start": "1503-10-31",
+    "end": "1513-02-21",
+    "current": false,
+    "tenure": null,
+    "party": "Albisola",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Leo X",
+    "role": "Pope",
+    "start": "1513-03-09",
+    "end": "1521-12-01",
+    "current": false,
+    "tenure": null,
+    "party": "Florence",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Adrian VI",
+    "role": "Pope",
+    "start": "1522-01-09",
+    "end": "1523-09-14",
+    "current": false,
+    "tenure": null,
+    "party": "Utrecht",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Clement VII",
+    "role": "Pope",
+    "start": "1523-11-26",
+    "end": "1534-09-25",
+    "current": false,
+    "tenure": null,
+    "party": "Florence",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Paul III",
+    "role": "Pope",
+    "start": "1534-10-13",
+    "end": "1549-11-10",
+    "current": false,
+    "tenure": null,
+    "party": "Canino",
+    "era": "Renaissance (15th–16th c.)"
+  },
+  {
+    "name": "Julius III",
+    "role": "Pope",
+    "start": "1550-02-07",
+    "end": "1555-03-29",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Marcellus II",
+    "role": "Pope",
+    "start": "1555-04-09",
+    "end": "1555-05-01",
+    "current": false,
+    "tenure": null,
+    "party": "Montefano",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Paul IV",
+    "role": "Pope",
+    "start": "1555-05-23",
+    "end": "1559-08-18",
+    "current": false,
+    "tenure": null,
+    "party": "Capriglia Irpina",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Pius IV",
+    "role": "Pope",
+    "start": "1559-12-26",
+    "end": "1565-12-09",
+    "current": false,
+    "tenure": null,
+    "party": "Milan",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Pius V",
+    "role": "Pope",
+    "start": "1566-01-07",
+    "end": "1572-05-01",
+    "current": false,
+    "tenure": null,
+    "party": "Bosco",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Gregory XIII",
+    "role": "Pope",
+    "start": "1572-05-13",
+    "end": "1585-04-10",
+    "current": false,
+    "tenure": null,
+    "party": "Bologna",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Sixtus V",
+    "role": "Pope",
+    "start": "1585-04-24",
+    "end": "1590-08-27",
+    "current": false,
+    "tenure": null,
+    "party": "Grottammare",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Urban VII",
+    "role": "Pope",
+    "start": "1590-09-15",
+    "end": "1590-09-27",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Gregory XIV",
+    "role": "Pope",
+    "start": "1590-12-05",
+    "end": "1591-10-16",
+    "current": false,
+    "tenure": null,
+    "party": "Somma Lombardo",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Innocent IX",
+    "role": "Pope",
+    "start": "1591-10-29",
+    "end": "1591-12-30",
+    "current": false,
+    "tenure": null,
+    "party": "Bologna",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Clement VIII",
+    "role": "Pope",
+    "start": "1592-01-30",
+    "end": "1605-03-03",
+    "current": false,
+    "tenure": null,
+    "party": "Fano",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Leo XI",
+    "role": "Pope",
+    "start": "1605-04-01",
+    "end": "1605-04-27",
+    "current": false,
+    "tenure": null,
+    "party": "Florence",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Paul V",
+    "role": "Pope",
+    "start": "1605-05-16",
+    "end": "1621-01-28",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Gregory XV",
+    "role": "Pope",
+    "start": "1621-02-09",
+    "end": "1623-07-08",
+    "current": false,
+    "tenure": null,
+    "party": "Bologna",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Urban VIII",
+    "role": "Pope",
+    "start": "1623-08-06",
+    "end": "1644-07-29",
+    "current": false,
+    "tenure": null,
+    "party": "Florence",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Innocent X",
+    "role": "Pope",
+    "start": "1644-09-15",
+    "end": "1655-01-07",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Alexander VII",
+    "role": "Pope",
+    "start": "1655-04-07",
+    "end": "1667-05-22",
+    "current": false,
+    "tenure": null,
+    "party": "Siena",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Clement IX",
+    "role": "Pope",
+    "start": "1667-06-20",
+    "end": "1669-12-09",
+    "current": false,
+    "tenure": null,
+    "party": "Pistoia",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Clement X",
+    "role": "Pope",
+    "start": "1670-04-29",
+    "end": "1676-07-22",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Innocent XI",
+    "role": "Pope",
+    "start": "1676-09-21",
+    "end": "1689-08-12",
+    "current": false,
+    "tenure": null,
+    "party": "Como",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Alexander VIII",
+    "role": "Pope",
+    "start": "1689-10-06",
+    "end": "1691-02-01",
+    "current": false,
+    "tenure": null,
+    "party": "Venice",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Innocent XII",
+    "role": "Pope",
+    "start": "1691-07-12",
+    "end": "1700-09-27",
+    "current": false,
+    "tenure": null,
+    "party": "Spinazzola",
+    "era": "Reformation & Counter-Reformation (16th–17th c.)"
+  },
+  {
+    "name": "Clement XI",
+    "role": "Pope",
+    "start": "1700-11-23",
+    "end": "1721-03-19",
+    "current": false,
+    "tenure": null,
+    "party": "Urbino",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Innocent XIII",
+    "role": "Pope",
+    "start": "1721-05-08",
+    "end": "1724-03-07",
+    "current": false,
+    "tenure": null,
+    "party": "Poli",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Benedict XIII",
+    "role": "Pope",
+    "start": "1724-05-29",
+    "end": "1730-02-21",
+    "current": false,
+    "tenure": null,
+    "party": "Gravina in Puglia",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Clement XII",
+    "role": "Pope",
+    "start": "1730-07-12",
+    "end": "1740-02-06",
+    "current": false,
+    "tenure": null,
+    "party": "Florence",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Benedict XIV",
+    "role": "Pope",
+    "start": "1740-08-17",
+    "end": "1758-05-03",
+    "current": false,
+    "tenure": null,
+    "party": "Bologna",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Clement XIII",
+    "role": "Pope",
+    "start": "1758-07-06",
+    "end": "1769-02-02",
+    "current": false,
+    "tenure": null,
+    "party": "Venice",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Clement XIV",
+    "role": "Pope",
+    "start": "1769-05-19",
+    "end": "1774-09-22",
+    "current": false,
+    "tenure": null,
+    "party": "Sant'Arcangelo di Romagna",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Pius VI",
+    "role": "Pope",
+    "start": "1775-02-15",
+    "end": "1799-08-29",
+    "current": false,
+    "tenure": null,
+    "party": "Cesena",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Pius VII",
+    "role": "Pope",
+    "start": "1800-03-14",
+    "end": "1823-08-20",
+    "current": false,
+    "tenure": null,
+    "party": "Cesena",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Leo XII",
+    "role": "Pope",
+    "start": "1823-09-28",
+    "end": "1829-02-10",
+    "current": false,
+    "tenure": null,
+    "party": "Genga",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Pius VIII",
+    "role": "Pope",
+    "start": "1829-03-31",
+    "end": "1830-11-30",
+    "current": false,
+    "tenure": null,
+    "party": "Cingoli",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Gregory XVI",
+    "role": "Pope",
+    "start": "1831-02-02",
+    "end": "1846-06-01",
+    "current": false,
+    "tenure": null,
+    "party": "Belluno",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Pius IX",
+    "role": "Pope",
+    "start": "1846-06-16",
+    "end": "1878-02-07",
+    "current": false,
+    "tenure": null,
+    "party": "Senigallia",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Leo XIII",
+    "role": "Pope",
+    "start": "1878-02-20",
+    "end": "1903-07-20",
+    "current": false,
+    "tenure": null,
+    "party": "Carpineto Romano",
+    "era": "Early Modern (18th–19th c.)"
+  },
+  {
+    "name": "Pius X",
+    "role": "Pope",
+    "start": "1903-08-04",
+    "end": "1914-08-20",
+    "current": false,
+    "tenure": null,
+    "party": "Riese",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "Benedict XV",
+    "role": "Pope",
+    "start": "1914-09-03",
+    "end": "1922-01-22",
+    "current": false,
+    "tenure": null,
+    "party": "Pegli",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "Pius XI",
+    "role": "Pope",
+    "start": "1922-02-06",
+    "end": "1939-02-10",
+    "current": false,
+    "tenure": null,
+    "party": "Desio",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "Pius XII",
+    "role": "Pope",
+    "start": "1939-03-02",
+    "end": "1958-10-09",
+    "current": false,
+    "tenure": null,
+    "party": "Rome",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "John XXIII",
+    "role": "Pope",
+    "start": "1958-10-28",
+    "end": "1963-06-03",
+    "current": false,
+    "tenure": null,
+    "party": "Sotto il Monte",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "Paul VI",
+    "role": "Pope",
+    "start": "1963-06-21",
+    "end": "1978-08-06",
+    "current": false,
+    "tenure": null,
+    "party": "Concesio",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "John Paul I",
+    "role": "Pope",
+    "start": "1978-08-26",
+    "end": "1978-09-28",
+    "current": false,
+    "tenure": null,
+    "party": "Forno di Canale",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "John Paul II",
+    "role": "Pope",
+    "start": "1978-10-16",
+    "end": "2005-04-02",
+    "current": false,
+    "tenure": null,
+    "party": "Wadowice",
+    "era": "Modern (20th c.)"
+  },
+  {
+    "name": "Benedict XVI",
+    "role": "Pope",
+    "start": "2005-04-19",
+    "end": "2013-02-28",
+    "current": false,
+    "tenure": null,
+    "party": "Marktl",
+    "era": "Contemporary (21st c.)"
+  },
+  {
+    "name": "Francis",
+    "role": "Pope",
+    "start": "2013-03-13",
+    "end": "2025-04-21",
+    "current": false,
+    "tenure": null,
+    "party": "Buenos Aires",
+    "era": "Contemporary (21st c.)"
+  },
+  {
+    "name": "Leo XIV",
+    "role": "Pope",
+    "start": "2025-05-08",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "Chicago",
+    "era": "Contemporary (21st c.)"
+  }
+]

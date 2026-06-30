@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import OrgLeaders from "@/app/orgs/OrgLeaders";
 import {
   ORG_DEFS,
   ORG_GROUPS,
@@ -128,6 +129,8 @@ function OrgCard({ orgKey }: { orgKey: string }) {
           </div>
         </div>
       </div>
+
+      <OrgLeaders orgKey={orgKey} />
 
       {/* Member pills */}
       <div className="flex flex-wrap gap-1.5 mt-3">

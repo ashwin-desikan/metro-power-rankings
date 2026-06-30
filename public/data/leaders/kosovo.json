@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Bajram Rexhepi",
+    "role": "Prime Minister",
+    "start": "2002-03-04",
+    "end": "2004-12-03",
+    "current": false,
+    "tenure": null,
+    "party": "PDK",
+    "era": "UN-administered self-government"
+  },
+  {
+    "name": "Ramush Haradinaj",
+    "role": "Prime Minister",
+    "start": "2004-12-03",
+    "end": "2005-03-08",
+    "current": false,
+    "tenure": null,
+    "party": "AAK",
+    "era": "UN-administered self-government"
+  },
+  {
+    "name": "Bajram Kosumi",
+    "role": "Prime Minister",
+    "start": "2005-03-23",
+    "end": "2006-03-10",
+    "current": false,
+    "tenure": null,
+    "party": "AAK",
+    "era": "UN-administered self-government"
+  },
+  {
+    "name": "Agim Çeku",
+    "role": "Prime Minister",
+    "start": "2006-03-10",
+    "end": "2008-01-09",
+    "current": false,
+    "tenure": null,
+    "party": "Independent",
+    "era": "UN-administered self-government"
+  },
+  {
+    "name": "Hashim Thaçi",
+    "role": "Prime Minister",
+    "start": "2008-01-09",
+    "end": "2014-12-09",
+    "current": false,
+    "tenure": null,
+    "party": "PDK",
+    "era": "Republic of Kosovo"
+  },
+  {
+    "name": "Isa Mustafa",
+    "role": "Prime Minister",
+    "start": "2014-12-09",
+    "end": "2017-09-09",
+    "current": false,
+    "tenure": null,
+    "party": "LDK",
+    "era": "Republic of Kosovo"
+  },
+  {
+    "name": "Ramush Haradinaj",
+    "role": "Prime Minister",
+    "start": "2017-09-09",
+    "end": "2020-02-03",
+    "current": false,
+    "tenure": null,
+    "party": "AAK",
+    "era": "Republic of Kosovo"
+  },
+  {
+    "name": "Albin Kurti",
+    "role": "Prime Minister",
+    "start": "2020-02-03",
+    "end": "2020-06-03",
+    "current": false,
+    "tenure": null,
+    "party": "Vetëvendosje",
+    "era": "Republic of Kosovo"
+  },
+  {
+    "name": "Avdullah Hoti",
+    "role": "Prime Minister",
+    "start": "2020-06-03",
+    "end": "2021-03-22",
+    "current": false,
+    "tenure": null,
+    "party": "LDK",
+    "era": "Republic of Kosovo"
+  },
+  {
+    "name": "Albin Kurti",
+    "role": "Prime Minister",
+    "start": "2021-03-22",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "Vetëvendosje",
+    "era": "Republic of Kosovo"
+  }
+]

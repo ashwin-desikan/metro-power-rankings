@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Yasser Arafat",
+    "role": "President",
+    "start": "1989-04-02",
+    "end": "2004-11-11",
+    "current": false,
+    "tenure": null,
+    "party": "Fatah / PLO",
+    "era": null
+  },
+  {
+    "name": "Rawhi Fattuh",
+    "role": "Acting President",
+    "start": "2004-11-11",
+    "end": "2005-01-15",
+    "current": false,
+    "tenure": null,
+    "party": "Fatah",
+    "era": null
+  },
+  {
+    "name": "Mahmoud Abbas",
+    "role": "President",
+    "start": "2005-01-15",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": "Fatah",
+    "era": null
+  }
+]

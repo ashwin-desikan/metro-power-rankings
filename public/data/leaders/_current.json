@@ -37,7 +37,8 @@
     "second": {
       "name": "👑 Charles III",
       "role": "Monarch"
-    }
+    },
+    "since": "2014-06-13"
   },
   "argentina": {
     "name": "Javier Milei",
@@ -52,6 +53,10 @@
   "australia": {
     "name": "Anthony Albanese",
     "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
     "since": "2022-05-23"
   },
   "austria": {
@@ -69,7 +74,7 @@
     "since": "2003-10-31"
   },
   "bahamas": {
-    "name": "Philip \"Brave\" Davis",
+    "name": "Philip Davis",
     "role": "PM",
     "second": {
       "name": "👑 Charles III",
@@ -197,6 +202,10 @@
   "canada": {
     "name": "Mark Carney",
     "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
     "since": "2025-03-14"
   },
   "cape-verde": {
@@ -438,9 +447,13 @@
     "since": "2019-07-08"
   },
   "grenada": {
-    "name": "Charles III",
-    "role": "Pres.",
-    "since": "2022-09-08"
+    "name": "Dickon Mitchell",
+    "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
+    "since": "2022-06-24"
   },
   "guatemala": {
     "name": "Bernardo Arévalo de León",
@@ -538,9 +551,13 @@
     "since": "2022-10-22"
   },
   "jamaica": {
-    "name": "Charles III",
-    "role": "Pres.",
-    "since": "2022-09-08"
+    "name": "Andrew Holness",
+    "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
+    "since": "2016-03-03"
   },
   "japan": {
     "name": "Sanae Takaichi",
@@ -570,6 +587,15 @@
     "name": "Taneti Maamau",
     "role": "Pres.",
     "since": "2016-03-11"
+  },
+  "kosovo": {
+    "name": "Albin Kurti",
+    "role": "PM",
+    "second": {
+      "name": "Vjosa Osmani",
+      "role": "Pres."
+    },
+    "since": "2021-03-22"
   },
   "kuwait": {
     "name": "Ahmad Abdullah Al-Ahmad Al-Sabah",
@@ -789,6 +815,10 @@
   "new-zealand": {
     "name": "Christopher Luxon",
     "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
     "since": "2023-10-27"
   },
   "nicaragua": {
@@ -844,15 +874,28 @@
     "role": "Pres.",
     "since": "2021-01-21"
   },
+  "palestine": {
+    "name": "Mahmoud Abbas",
+    "role": "Pres.",
+    "second": {
+      "name": "Hussein al-Sheikh",
+      "role": "VP"
+    },
+    "since": "2005-01-15"
+  },
   "panama": {
     "name": "Jose Raul Mulino",
     "role": "Pres.",
     "since": "2024-07-01"
   },
   "papua-new-guinea": {
-    "name": "Charles III",
-    "role": "Pres.",
-    "since": "2022-09-08"
+    "name": "James Marape",
+    "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
+    "since": "2019-05-30"
   },
   "paraguay": {
     "name": "Santiago Peña Palacios",
@@ -993,9 +1036,13 @@
     "since": "2026-05-22"
   },
   "solomon-islands": {
-    "name": "Charles III",
-    "role": "Pres.",
-    "since": "2022-09-08"
+    "name": "Matthew Wale",
+    "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
+    "since": "2026-05-15"
   },
   "somalia": {
     "name": "Hassan Sheikh Mohamud",
@@ -1038,7 +1085,7 @@
       "name": "👑 Charles III",
       "role": "Monarch"
     },
-    "since": "2022-01-01"
+    "since": "2022-08-06"
   },
   "st-vincent-the-grenadines": {
     "name": "Godwin Friday",
@@ -1135,9 +1182,13 @@
     "since": "2022-03-19"
   },
   "tuvalu": {
-    "name": "Charles III",
-    "role": "Pres.",
-    "since": "2022-09-08"
+    "name": "Feleti Teo",
+    "role": "PM",
+    "second": {
+      "name": "👑 Charles III",
+      "role": "Monarch"
+    },
+    "since": "2024-02-26"
   },
   "uganda": {
     "name": "Yoweri Museveni",
@@ -1158,8 +1209,8 @@
     "name": "Keir Starmer",
     "role": "PM",
     "second": {
-      "name": "👑 King Charles III",
-      "role": "Sovereign"
+      "name": "👑 Charles III",
+      "role": "Monarch"
     },
     "since": "2024-07-05"
   },
@@ -1182,6 +1233,11 @@
     "name": "Nikenike Vurobaravu",
     "role": "Pres.",
     "since": "2022-07-23"
+  },
+  "vatican-city": {
+    "name": "👑 Leo XIV",
+    "role": "Pope",
+    "since": "2025-05-08"
   },
   "venezuela": {
     "name": "Delcy Rodriguez",

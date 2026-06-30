@@ -41,6 +41,15 @@ PM_LED = {
 }
 # Executive monarchies where the sovereign (not the appointed head of government) leads.
 MONARCH_LED = {"monaco","eswatini","oman","brunei"}
+# Commonwealth realms: share King Charles III as head of state (crowned monarch),
+# but the head of government leads. Wikidata often lacks P6/P122 for the smaller
+# realms, which previously degraded them to a bare "Charles III, President"; this
+# set forces correct monarchy + PM-led treatment.
+COMMONWEALTH_REALMS = {
+    "united-kingdom","canada","australia","new-zealand","antigua-barbuda","bahamas",
+    "belize","grenada","jamaica","papua-new-guinea","st-kitts-nevis","saint-lucia",
+    "st-vincent-the-grenadines","solomon-islands","tuvalu",
+}
 # Current leaders that carry a warning glyph (editorial; cannot be auto-derived).
 WARN_NAMES = {
     # Current leaders carrying a warning glyph (atrocities / systemic subversion /
@@ -112,6 +121,9 @@ def build_entry(slug, hos_name, hog_name, hog_office, form, hos_start=None, hog_
     # president; monarchies fall through to default (a sitting PM outranks the
     # ceremonial monarch, matching the rest of the site).
     pm_led = (slug in PM_LED) or ("parliamentary" in form_l)
+    if slug in COMMONWEALTH_REALMS:
+        is_monarchy = True   # crown the shared sovereign (Charles III)
+        pm_led = True        # head of government leads, monarch second
     cands = []
     if hog_name and slug not in MONARCH_LED:
         cands.append({"name": hog_name, "role": hog_role_token(hog_office), "start": hog_start})
@@ -190,6 +202,11 @@ def main(add_only=False):
         # --add-only: never touch a country that already has a (curated) entry.
         if add_only and prev:
             continue
+        # Realm safeguard: if Wikidata dropped the head of government and we'd
+        # regress a curated PM entry to a monarch-only one, keep the curated entry.
+        if prev and not add_only and entry.get("role") == "Monarch" \
+           and "second" not in entry and prev.get("role") != "Monarch":
+            continue
         # Keep curated entry if the same person still leads; else replace.
         if prev and bare(prev["name"]) == bare(entry["name"]):
             continue
@@ -222,6 +239,12 @@ def self_test():
     # executive monarchy: sovereign leads, head of government suppressed
     e = build_entry("monaco", "Albert II", "Christophe Mirmand", "Minister of State", "constitutional monarchy")
     assert e["role"] == "Monarch" and "second" not in e, e
+    # Commonwealth realm: PM leads, Charles crowned as Monarch second, even with blank form
+    e = build_entry("jamaica", "Charles III", "Andrew Holness", "Prime Minister of Jamaica", "")
+    assert e["name"] == "Andrew Holness" and e["role"] == "PM" and e["second"]["name"].startswith(CROWN) and "Charles III" in e["second"]["name"], e
+    # realm with missing head of government -> crowned monarch only (main() guard preserves curated PM)
+    e = build_entry("tuvalu", "Charles III", None, None, "")
+    assert e["role"] == "Monarch" and e["name"].startswith(CROWN), e
     print("self-test OK")
 
 if __name__ == "__main__":
