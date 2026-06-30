@@ -40,7 +40,7 @@ PM_LED = {
     "montenegro","slovenia","slovakia","lithuania",
 }
 # Executive monarchies where the sovereign (not the appointed head of government) leads.
-MONARCH_LED = {"monaco"}
+MONARCH_LED = {"monaco","eswatini","oman","brunei"}
 # Current leaders that carry a warning glyph (editorial; cannot be auto-derived).
 WARN_NAMES = {
     # Current leaders carrying a warning glyph (atrocities / systemic subversion /
@@ -156,35 +156,48 @@ def query_wikidata():
                 d[k_out] = v[:10] if k_out.endswith("_start") else v
     return by_iso
 
-def load_iso_map():
+ISO2_BY_SLUG = Path(__file__).with_name("iso2_by_slug.json")
+
+def load_slug_iso():
+    """slug -> ISO 3166-1 alpha-2. Prefers the curated iso2_by_slug.json map
+    (countries.json's isoCode field holds display NAMES, not codes), and falls
+    back to isoCode only when it is already a valid alpha-2 string."""
     data = json.loads(COUNTRIES.read_text(encoding="utf-8"))
     rows = data if isinstance(data, list) else data.get("countries", data)
-    m = {}
+    override = json.loads(ISO2_BY_SLUG.read_text(encoding="utf-8")) if ISO2_BY_SLUG.exists() else {}
+    out = {}
     for c in rows:
-        iso = (c.get("isoCode") or c.get("iso2") or "").upper()
         slug = c.get("slug")
-        if iso and slug: m[iso] = slug
-    return m
+        if not slug: continue
+        iso = override.get(slug)
+        if not iso:
+            cand = (c.get("isoCode") or c.get("iso2") or "").upper()
+            if re.fullmatch(r"[A-Z]{2}", cand): iso = cand
+        if iso: out[slug] = iso.upper()
+    return out
 
-def main():
-    iso_map = load_iso_map()
+def main(add_only=False):
+    slug_iso = load_slug_iso()
     existing = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     wd = query_wikidata()
     changed = 0
-    for iso, slug in iso_map.items():
+    for slug, iso in slug_iso.items():
         info = wd.get(iso)
         if not info: continue
         entry = build_entry(slug, info.get("hos"), info.get("hog"), info.get("office"), info.get("form",""), info.get("hos_start"), info.get("hog_start"))
         if not entry: continue
         prev = existing.get(slug)
+        # --add-only: never touch a country that already has a (curated) entry.
+        if add_only and prev:
+            continue
         # Keep curated entry if the same person still leads; else replace.
         if prev and bare(prev["name"]) == bare(entry["name"]):
             continue
         existing[slug] = entry
         changed += 1
-        print(f"  updated {slug}: {entry['name']} ({entry['role']})")
+        print(f"  {'added' if not prev else 'updated'} {slug}: {entry['name']} ({entry['role']})")
     OUT.write_text(json.dumps(existing, indent=2, ensure_ascii=False, sort_keys=True), encoding="utf-8")
-    print(f"_current.json written: {len(existing)} countries, {changed} updated")
+    print(f"_current.json written: {len(existing)} countries, {changed} changed (add_only={add_only})")
 
 def self_test():
     # parliamentary republic: PM leads, president secondary
@@ -215,4 +228,4 @@ if __name__ == "__main__":
     if "--self-test" in sys.argv:
         self_test()
     else:
-        main()
+        main(add_only="--add-only" in sys.argv)

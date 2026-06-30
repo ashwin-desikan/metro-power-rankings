@@ -10,7 +10,12 @@ name: Leaders current-refresh (weekly, no deploy)
 on:
   schedule:
     - cron: "0 6 * * 1"   # Mondays 06:00 UTC
-  workflow_dispatch: {}    # allow manual "Run workflow"
+  workflow_dispatch:       # allow manual "Run workflow"
+    inputs:
+      add_only:
+        description: "Only insert countries missing from _current.json (never overwrite curated entries)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -38,7 +43,10 @@ jobs:
         run: python scripts/leaders/refresh-current-leaders.py --self-test
 
       - name: Refresh current leaders from Wikidata
-        run: python scripts/leaders/refresh-current-leaders.py
+        run: |
+          FLAG=""
+          if [ "${{ github.event.inputs.add_only }}" = "true" ]; then FLAG="--add-only"; fi
+          python scripts/leaders/refresh-current-leaders.py $FLAG
 
       - name: Commit if changed
         run: |
