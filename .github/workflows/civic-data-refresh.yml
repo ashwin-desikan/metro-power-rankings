@@ -1,0 +1,78 @@
+name: Civic data refresh (weekly, no deploy)
+
+# Single weekly job that refreshes every officeholder feed from Wikidata and
+# commits with [vercel skip]. The frontends read each feed via ISR from GitHub
+# raw, so updates appear with NO Vercel build. Runnable on demand from the
+# Actions tab. Sports/data feeds keep their own workflows; this one owns the
+# "who holds office" data: world leaders now, and US executive/Cabinet,
+# Congress, governors and mayors as their refresh scripts land (commented
+# steps below — uncomment each as scripts/civic/refresh_*.py is added).
+
+on:
+  schedule:
+    - cron: "30 6 * * 1"   # Mondays 06:30 UTC
+  workflow_dispatch:
+    inputs:
+      add_only:
+        description: "World leaders: only insert missing countries (don't overwrite curated)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: civic-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Self-test refresh logic (offline)
+        run: |
+          python scripts/civic/civic_common.py --self-test
+          python scripts/civic/refresh_governors.py --self-test
+          python scripts/civic/refresh_congress.py --self-test
+
+      - name: World leaders
+        run: |
+          FLAG=""
+          if [ "${{ github.event.inputs.add_only }}" = "true" ]; then FLAG="--add-only"; fi
+          python scripts/leaders/refresh-current-leaders.py $FLAG
+
+      - name: US governors
+        run: python scripts/civic/refresh_governors.py
+
+      - name: US Congress (senate roster + chamber party splits)
+        run: python scripts/civic/refresh_congress.py
+
+      # --- Added as each remaining feed's script lands (see scripts/civic/) ---
+      # - name: US executive and Cabinet
+      #   run: python scripts/civic/refresh_executive.py
+      # - name: Mayors (top-100 primary cities)
+      #   run: python scripts/civic/refresh_mayors.py
+
+      - name: Commit if anything changed
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- public/data; then
+            echo "No civic data changes this run."
+            exit 0
+          fi
+          git add public/data
+          git commit -m "data: weekly civic data refresh [vercel skip]"
+          git push origin HEAD:main

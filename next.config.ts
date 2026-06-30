@@ -13,6 +13,12 @@ const nextConfig: NextConfig = {
         destination: "/teams/nhl/senators-org",
         permanent: true,
       },
+      // Page renamed from "Governors" to "United States Political Leadership".
+      {
+        source: "/governors",
+        destination: "/us-political-leadership",
+        permanent: true,
+      },
     ];
   },
 };

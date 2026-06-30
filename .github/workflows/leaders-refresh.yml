@@ -8,8 +8,8 @@ name: Leaders current-refresh (weekly, no deploy)
 # the curated source of truth for the detail-page tables.
 
 on:
-  schedule:
-    - cron: "0 6 * * 1"   # Mondays 06:00 UTC
+  # Weekly schedule now lives in civic-data-refresh.yml (one job refreshes all
+  # officeholder feeds). Kept here for ad-hoc leaders-only manual runs.
   workflow_dispatch:       # allow manual "Run workflow"
     inputs:
       add_only:

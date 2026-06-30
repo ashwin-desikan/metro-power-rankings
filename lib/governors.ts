@@ -37,3 +37,22 @@ export function getAllStateGovernors(): Record<string, StateGovernor> {
 export function getTerritoryGovernors(): Record<string, TerritoryGovernor> {
   return load().territories;
 }
+
+export type StateScore = { score: number; metros: number };
+let _scoreCache: Record<string, StateScore> | null = null;
+function loadScores(): Record<string, StateScore> {
+  if (_scoreCache) return _scoreCache;
+  try {
+    const file = path.join(process.cwd(), "public", "data", "state-metro-scores.json");
+    _scoreCache = JSON.parse(fs.readFileSync(file, "utf-8"));
+  } catch {
+    _scoreCache = {};
+  }
+  return _scoreCache!;
+}
+/** Population-weighted sum of metro scores for a US state: each metro's score
+ * apportioned by the share of its population living in the state (Municipality
+ * sheet), so cross-state metros are split rather than double-counted. */
+export function getStateMetroScore(slug: string): StateScore | null {
+  return loadScores()[slug] ?? null;
+}

@@ -1,0 +1,882 @@
+{
+  "executive": {
+    "president": {
+      "name": "Donald Trump",
+      "party": "Republican",
+      "since": "2025-01-20"
+    },
+    "vicePresident": {
+      "name": "JD Vance",
+      "party": "Republican",
+      "since": "2025-01-20"
+    },
+    "cabinet": [
+      {
+        "office": "Secretary of State",
+        "name": "Marco Rubio",
+        "since": "2025-01-21"
+      },
+      {
+        "office": "Secretary of the Treasury",
+        "name": "Scott Bessent",
+        "since": "2025-01-28"
+      },
+      {
+        "office": "Secretary of Defense",
+        "name": "Pete Hegseth",
+        "since": "2025-01-25"
+      },
+      {
+        "office": "Attorney General",
+        "name": "Pam Bondi",
+        "since": "2025-02-05"
+      },
+      {
+        "office": "Secretary of the Interior",
+        "name": "Doug Burgum",
+        "since": "2025-02-01"
+      },
+      {
+        "office": "Secretary of Agriculture",
+        "name": "Brooke Rollins",
+        "since": "2025-02-13"
+      },
+      {
+        "office": "Secretary of Commerce",
+        "name": "Howard Lutnick",
+        "since": "2025-02-21"
+      },
+      {
+        "office": "Secretary of Labor",
+        "name": "Lori Chavez-DeRemer",
+        "since": "2025-03-11"
+      },
+      {
+        "office": "Secretary of Health and Human Services",
+        "name": "Robert F. Kennedy Jr.",
+        "since": "2025-02-13"
+      },
+      {
+        "office": "Secretary of Housing and Urban Development",
+        "name": "Scott Turner",
+        "since": "2025-02-05"
+      },
+      {
+        "office": "Secretary of Transportation",
+        "name": "Sean Duffy",
+        "since": "2025-01-28"
+      },
+      {
+        "office": "Secretary of Energy",
+        "name": "Chris Wright",
+        "since": "2025-02-04"
+      },
+      {
+        "office": "Secretary of Education",
+        "name": "Linda McMahon",
+        "since": "2025-03-03"
+      },
+      {
+        "office": "Secretary of Veterans Affairs",
+        "name": "Doug Collins",
+        "since": "2025-02-05"
+      },
+      {
+        "office": "Secretary of Homeland Security",
+        "name": "Markwayne Mullin",
+        "since": "2026-03-31"
+      },
+      {
+        "office": "White House Chief of Staff",
+        "name": "Susie Wiles",
+        "since": "2025-01-20"
+      },
+      {
+        "office": "Director of National Intelligence",
+        "name": "Tulsi Gabbard",
+        "since": "2025-02-12"
+      },
+      {
+        "office": "Director of the Central Intelligence Agency",
+        "name": "John Ratcliffe",
+        "since": "2025-01-23"
+      },
+      {
+        "office": "United States Trade Representative",
+        "name": "Jamieson Greer",
+        "since": "2025-02-27"
+      },
+      {
+        "office": "Director of the Office of Management and Budget",
+        "name": "Russell Vought",
+        "since": "2025-02-07"
+      },
+      {
+        "office": "Administrator of the Environmental Protection Agency",
+        "name": "Lee Zeldin",
+        "since": "2025-01-29"
+      },
+      {
+        "office": "Administrator of the Small Business Administration",
+        "name": "Kelly Loeffler",
+        "since": "2025-02-20"
+      }
+    ]
+  },
+  "senate": {
+    "partySplit": {
+      "Republican": 53,
+      "Democratic": 45,
+      "Independent": 2,
+      "note": "Independents caucus with the Democrats"
+    },
+    "members": [
+      {
+        "name": "Tommy Tuberville",
+        "state": "Alabama",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "alabama"
+      },
+      {
+        "name": "Katie Britt",
+        "state": "Alabama",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "alabama"
+      },
+      {
+        "name": "Lisa Murkowski",
+        "state": "Alaska",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "alaska"
+      },
+      {
+        "name": "Dan Sullivan",
+        "state": "Alaska",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "alaska"
+      },
+      {
+        "name": "Mark Kelly",
+        "state": "Arizona",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "arizona"
+      },
+      {
+        "name": "Ruben Gallego",
+        "state": "Arizona",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "arizona"
+      },
+      {
+        "name": "John Boozman",
+        "state": "Arkansas",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "arkansas"
+      },
+      {
+        "name": "Tom Cotton",
+        "state": "Arkansas",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "arkansas"
+      },
+      {
+        "name": "Alex Padilla",
+        "state": "California",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "california"
+      },
+      {
+        "name": "Adam Schiff",
+        "state": "California",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "california"
+      },
+      {
+        "name": "Michael Bennet",
+        "state": "Colorado",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "colorado"
+      },
+      {
+        "name": "John Hickenlooper",
+        "state": "Colorado",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "colorado"
+      },
+      {
+        "name": "Richard Blumenthal",
+        "state": "Connecticut",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "connecticut"
+      },
+      {
+        "name": "Chris Murphy",
+        "state": "Connecticut",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "connecticut"
+      },
+      {
+        "name": "Chris Coons",
+        "state": "Delaware",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "delaware"
+      },
+      {
+        "name": "Lisa Blunt Rochester",
+        "state": "Delaware",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "delaware"
+      },
+      {
+        "name": "Rick Scott",
+        "state": "Florida",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "florida-united-states"
+      },
+      {
+        "name": "Ashley Moody",
+        "state": "Florida",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "florida-united-states"
+      },
+      {
+        "name": "Jon Ossoff",
+        "state": "Georgia",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "georgia"
+      },
+      {
+        "name": "Raphael Warnock",
+        "state": "Georgia",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "georgia"
+      },
+      {
+        "name": "Brian Schatz",
+        "state": "Hawaii",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "hawaii"
+      },
+      {
+        "name": "Mazie Hirono",
+        "state": "Hawaii",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "hawaii"
+      },
+      {
+        "name": "Mike Crapo",
+        "state": "Idaho",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "idaho"
+      },
+      {
+        "name": "Jim Risch",
+        "state": "Idaho",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "idaho"
+      },
+      {
+        "name": "Dick Durbin",
+        "state": "Illinois",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "illinois"
+      },
+      {
+        "name": "Tammy Duckworth",
+        "state": "Illinois",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "illinois"
+      },
+      {
+        "name": "Todd Young",
+        "state": "Indiana",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "indiana"
+      },
+      {
+        "name": "Jim Banks",
+        "state": "Indiana",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "indiana"
+      },
+      {
+        "name": "Chuck Grassley",
+        "state": "Iowa",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "iowa"
+      },
+      {
+        "name": "Joni Ernst",
+        "state": "Iowa",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "iowa"
+      },
+      {
+        "name": "Jerry Moran",
+        "state": "Kansas",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "kansas"
+      },
+      {
+        "name": "Roger Marshall",
+        "state": "Kansas",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "kansas"
+      },
+      {
+        "name": "Mitch McConnell",
+        "state": "Kentucky",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "kentucky"
+      },
+      {
+        "name": "Rand Paul",
+        "state": "Kentucky",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "kentucky"
+      },
+      {
+        "name": "Bill Cassidy",
+        "state": "Louisiana",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "louisiana"
+      },
+      {
+        "name": "John Kennedy",
+        "state": "Louisiana",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "louisiana"
+      },
+      {
+        "name": "Susan Collins",
+        "state": "Maine",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "maine"
+      },
+      {
+        "name": "Angus King",
+        "state": "Maine",
+        "party": "Independent",
+        "class": 1,
+        "stateSlug": "maine"
+      },
+      {
+        "name": "Chris Van Hollen",
+        "state": "Maryland",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "maryland-united-states"
+      },
+      {
+        "name": "Angela Alsobrooks",
+        "state": "Maryland",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "maryland-united-states"
+      },
+      {
+        "name": "Elizabeth Warren",
+        "state": "Massachusetts",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "massachusetts"
+      },
+      {
+        "name": "Ed Markey",
+        "state": "Massachusetts",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "massachusetts"
+      },
+      {
+        "name": "Gary Peters",
+        "state": "Michigan",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "michigan"
+      },
+      {
+        "name": "Elissa Slotkin",
+        "state": "Michigan",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "michigan"
+      },
+      {
+        "name": "Amy Klobuchar",
+        "state": "Minnesota",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "minnesota"
+      },
+      {
+        "name": "Tina Smith",
+        "state": "Minnesota",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "minnesota"
+      },
+      {
+        "name": "Roger Wicker",
+        "state": "Mississippi",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "mississippi"
+      },
+      {
+        "name": "Cindy Hyde-Smith",
+        "state": "Mississippi",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "mississippi"
+      },
+      {
+        "name": "Josh Hawley",
+        "state": "Missouri",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "missouri"
+      },
+      {
+        "name": "Eric Schmitt",
+        "state": "Missouri",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "missouri"
+      },
+      {
+        "name": "Steve Daines",
+        "state": "Montana",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "montana-united-states"
+      },
+      {
+        "name": "Tim Sheehy",
+        "state": "Montana",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "montana-united-states"
+      },
+      {
+        "name": "Deb Fischer",
+        "state": "Nebraska",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "nebraska"
+      },
+      {
+        "name": "Pete Ricketts",
+        "state": "Nebraska",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "nebraska"
+      },
+      {
+        "name": "Catherine Cortez Masto",
+        "state": "Nevada",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "nevada"
+      },
+      {
+        "name": "Jacky Rosen",
+        "state": "Nevada",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "nevada"
+      },
+      {
+        "name": "Jeanne Shaheen",
+        "state": "New Hampshire",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "new-hampshire"
+      },
+      {
+        "name": "Maggie Hassan",
+        "state": "New Hampshire",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "new-hampshire"
+      },
+      {
+        "name": "Cory Booker",
+        "state": "New Jersey",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "new-jersey"
+      },
+      {
+        "name": "Andy Kim",
+        "state": "New Jersey",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "new-jersey"
+      },
+      {
+        "name": "Martin Heinrich",
+        "state": "New Mexico",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "new-mexico"
+      },
+      {
+        "name": "Ben Ray Lujan",
+        "state": "New Mexico",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "new-mexico"
+      },
+      {
+        "name": "Chuck Schumer",
+        "state": "New York",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "new-york"
+      },
+      {
+        "name": "Kirsten Gillibrand",
+        "state": "New York",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "new-york"
+      },
+      {
+        "name": "Thom Tillis",
+        "state": "North Carolina",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "north-carolina"
+      },
+      {
+        "name": "Ted Budd",
+        "state": "North Carolina",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "north-carolina"
+      },
+      {
+        "name": "John Hoeven",
+        "state": "North Dakota",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "north-dakota"
+      },
+      {
+        "name": "Kevin Cramer",
+        "state": "North Dakota",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "north-dakota"
+      },
+      {
+        "name": "Bernie Moreno",
+        "state": "Ohio",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "ohio"
+      },
+      {
+        "name": "Jon Husted",
+        "state": "Ohio",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "ohio"
+      },
+      {
+        "name": "James Lankford",
+        "state": "Oklahoma",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "oklahoma"
+      },
+      {
+        "name": "Alan Armstrong",
+        "state": "Oklahoma",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "oklahoma"
+      },
+      {
+        "name": "Ron Wyden",
+        "state": "Oregon",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "oregon"
+      },
+      {
+        "name": "Jeff Merkley",
+        "state": "Oregon",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "oregon"
+      },
+      {
+        "name": "John Fetterman",
+        "state": "Pennsylvania",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "pennsylvania"
+      },
+      {
+        "name": "Dave McCormick",
+        "state": "Pennsylvania",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "pennsylvania"
+      },
+      {
+        "name": "Jack Reed",
+        "state": "Rhode Island",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "rhode-island"
+      },
+      {
+        "name": "Sheldon Whitehouse",
+        "state": "Rhode Island",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "rhode-island"
+      },
+      {
+        "name": "Lindsey Graham",
+        "state": "South Carolina",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "south-carolina"
+      },
+      {
+        "name": "Tim Scott",
+        "state": "South Carolina",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "south-carolina"
+      },
+      {
+        "name": "John Thune",
+        "state": "South Dakota",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "south-dakota"
+      },
+      {
+        "name": "Mike Rounds",
+        "state": "South Dakota",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "south-dakota"
+      },
+      {
+        "name": "Marsha Blackburn",
+        "state": "Tennessee",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "tennessee"
+      },
+      {
+        "name": "Bill Hagerty",
+        "state": "Tennessee",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "tennessee"
+      },
+      {
+        "name": "John Cornyn",
+        "state": "Texas",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "texas"
+      },
+      {
+        "name": "Ted Cruz",
+        "state": "Texas",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "texas"
+      },
+      {
+        "name": "Mike Lee",
+        "state": "Utah",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "utah"
+      },
+      {
+        "name": "John Curtis",
+        "state": "Utah",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "utah"
+      },
+      {
+        "name": "Bernie Sanders",
+        "state": "Vermont",
+        "party": "Independent",
+        "class": 1,
+        "stateSlug": "vermont"
+      },
+      {
+        "name": "Peter Welch",
+        "state": "Vermont",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "vermont"
+      },
+      {
+        "name": "Mark Warner",
+        "state": "Virginia",
+        "party": "Democratic",
+        "class": 2,
+        "stateSlug": "virginia"
+      },
+      {
+        "name": "Tim Kaine",
+        "state": "Virginia",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "virginia"
+      },
+      {
+        "name": "Patty Murray",
+        "state": "Washington",
+        "party": "Democratic",
+        "class": 3,
+        "stateSlug": "washington"
+      },
+      {
+        "name": "Maria Cantwell",
+        "state": "Washington",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "washington"
+      },
+      {
+        "name": "Shelley Moore Capito",
+        "state": "West Virginia",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "west-virginia"
+      },
+      {
+        "name": "Jim Justice",
+        "state": "West Virginia",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "west-virginia"
+      },
+      {
+        "name": "Ron Johnson",
+        "state": "Wisconsin",
+        "party": "Republican",
+        "class": 3,
+        "stateSlug": "wisconsin"
+      },
+      {
+        "name": "Tammy Baldwin",
+        "state": "Wisconsin",
+        "party": "Democratic",
+        "class": 1,
+        "stateSlug": "wisconsin"
+      },
+      {
+        "name": "John Barrasso",
+        "state": "Wyoming",
+        "party": "Republican",
+        "class": 1,
+        "stateSlug": "wyoming"
+      },
+      {
+        "name": "Cynthia Lummis",
+        "state": "Wyoming",
+        "party": "Republican",
+        "class": 2,
+        "stateSlug": "wyoming"
+      }
+    ]
+  },
+  "house": {
+    "partySplit": {
+      "Republican": 218,
+      "Democratic": 212,
+      "Independent": 1,
+      "Vacant": 4,
+      "note": "435 seats; 4 vacant in mid-2026 (Gonzales R-TX, Swalwell D-CA, Cherfilus-McCormick D-FL, Scott D-GA). Kevin Kiley (CA) sits as an Independent since March 2026. Republicans hold the majority. Source: 119th Congress (Wikipedia), as of June 2026."
+    },
+    "leadership": [
+      {
+        "office": "Speaker of the House",
+        "name": "Mike Johnson",
+        "party": "Republican"
+      },
+      {
+        "office": "Majority Leader",
+        "name": "Steve Scalise",
+        "party": "Republican"
+      },
+      {
+        "office": "Majority Whip",
+        "name": "Tom Emmer",
+        "party": "Republican"
+      },
+      {
+        "office": "Republican Conference Chair",
+        "name": "Lisa McClain",
+        "party": "Republican"
+      },
+      {
+        "office": "Minority Leader",
+        "name": "Hakeem Jeffries",
+        "party": "Democratic"
+      },
+      {
+        "office": "Minority Whip",
+        "name": "Katherine Clark",
+        "party": "Democratic"
+      },
+      {
+        "office": "Democratic Caucus Chair",
+        "name": "Pete Aguilar",
+        "party": "Democratic"
+      }
+    ]
+  }
+}

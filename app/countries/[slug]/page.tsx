@@ -503,8 +503,8 @@ export default async function CountryDetailPage({ params }: Props) {
             <section className="mb-12" id="subdivisions">
               <h2 className="text-xl font-bold mb-3">{stateSectionTitle}</h2>
               {slug === "united-states" ? (
-                <Link href="/governors" className="inline-block mb-3 text-sm font-medium text-[var(--accent)] hover:underline">
-                  View all 50 state governors and US territory governors →
+                <Link href="/us-political-leadership" className="inline-block mb-3 text-sm font-medium text-[var(--accent)] hover:underline">
+                  United States political leadership: president, cabinet, governors &amp; Congress →
                 </Link>
               ) : null}
               <p className="text-sm text-[var(--text-muted)] mb-4">
