@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  const updated = updateEntry(id, patch);
+  const updated = await updateEntry(id, patch);
   if (!updated) return new NextResponse("not found", { status: 404 });
 
   const url = req.nextUrl.clone();

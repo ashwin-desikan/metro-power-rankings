@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
   const form = await req.formData();
   const id = String(form.get("id") ?? "");
   if (!id) return new NextResponse("missing id", { status: 400 });
-  deleteEntry(id);
+  await deleteEntry(id);
   const url = req.nextUrl.clone();
   url.pathname = "/admin";
   url.search = "";

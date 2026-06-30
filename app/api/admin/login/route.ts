@@ -1,60 +1,77 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import {
+  ADMIN_COOKIE,
+  SESSION_TTL_SECONDS,
+  issueSession,
+  verifyPassword,
+} from "@/lib/adminAuth";
+import { checkRateLimit } from "@/lib/rateLimit";
 
-const COOKIE_NAME = "mc_session";
-const COOKIE_MAX_AGE_SECONDS = 60 * 60 * 24 * 30; // 30 days
+export const runtime = "nodejs";
 
-async function sha256Hex(input: string): Promise<string> {
-  const data = new TextEncoder().encode(input);
-  const buf = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(buf))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
-
+// Only allow same-origin internal redirects under /admin to avoid an
+// open redirect via ?next=.
 function safePathname(input: string | null | undefined): string {
-  // Only allow same-origin internal redirects under /admin to avoid
-  // open-redirect via the ?next= parameter.
   if (!input || typeof input !== "string") return "/admin";
   if (!input.startsWith("/admin")) return "/admin";
   return input;
 }
 
+function clientIp(req: NextRequest): string {
+  const fwd = req.headers.get("x-forwarded-for");
+  if (fwd) return fwd.split(",")[0]!.trim();
+  return req.headers.get("x-real-ip") ?? "unknown";
+}
+
 export async function POST(req: NextRequest) {
+  // Throttle online password guessing: 10 attempts / 15 min / IP.
+  const rl = checkRateLimit(`admin-login:${clientIp(req)}`, 10, 15 * 60_000);
+  if (!rl.ok) {
+    return new NextResponse("Too many attempts. Try again later.", {
+      status: 429,
+      headers: {
+        "content-type": "text/plain",
+        "retry-after": String(rl.retryAfter),
+      },
+    });
+  }
+
   const form = await req.formData();
   const password = String(form.get("password") ?? "");
   const next = safePathname(String(form.get("next") ?? "/admin"));
 
   const expected = process.env.ADMIN_PASSWORD;
-  const salt = process.env.ADMIN_SALT ?? "metro-mission-control";
+  const secret = process.env.ADMIN_SESSION_SECRET;
 
-  if (!expected) {
+  if (!expected || !secret) {
     return new NextResponse(
-      "ADMIN_PASSWORD not set on this deployment.",
+      "ADMIN_PASSWORD and ADMIN_SESSION_SECRET must both be set on this deployment.",
       { status: 503, headers: { "content-type": "text/plain" } },
     );
   }
 
-  if (password !== expected) {
+  if (!(await verifyPassword(password, expected))) {
     const url = req.nextUrl.clone();
     url.pathname = "/admin/login";
+    url.search = "";
     url.searchParams.set("error", "bad");
     url.searchParams.set("next", next);
     return NextResponse.redirect(url, { status: 303 });
   }
 
-  const sessionValue = await sha256Hex(password + salt);
+  const token = await issueSession(secret);
 
   const url = req.nextUrl.clone();
   url.pathname = next;
   url.search = "";
   const res = NextResponse.redirect(url, { status: 303 });
-  res.cookies.set(COOKIE_NAME, sessionValue, {
+  res.cookies.set(ADMIN_COOKIE, token, {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
     path: "/",
-    maxAge: COOKIE_MAX_AGE_SECONDS,
+    maxAge: SESSION_TTL_SECONDS,
   });
   return res;
 }

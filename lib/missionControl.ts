@@ -7,11 +7,32 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "fs";
 import { join } from "path";
 import { randomBytes } from "crypto";
+import { Redis } from "@upstash/redis";
 
 const PROJECT_ROOT = process.cwd();
 const DIGEST_DIR = join(PROJECT_ROOT, "digests");
 const DATA_DIR = join(PROJECT_ROOT, "data");
 const QUEUE_PATH = join(DATA_DIR, "mission-control.json");
+const QUEUE_KEY = "mission-control:queue";
+
+// Durable queue store. In production the Upstash Redis integration (Vercel
+// Marketplace) supplies the connection through env vars; locally, when those
+// are absent, we fall back to a JSON file so dev needs no external service.
+function kv(): Redis | null {
+  if (
+    process.env.UPSTASH_REDIS_REST_URL &&
+    process.env.UPSTASH_REDIS_REST_TOKEN
+  ) {
+    return Redis.fromEnv();
+  }
+  if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+    return new Redis({
+      url: process.env.KV_REST_API_URL,
+      token: process.env.KV_REST_API_TOKEN,
+    });
+  }
+  return null;
+}
 
 // ---------- Types ----------
 
@@ -90,6 +111,9 @@ export function listDigestDates(): string[] {
 }
 
 export function loadDigest(date: string): Digest | null {
+  // Defense in depth: never let a non-ISO date reach the path join, so this
+  // function is traversal-safe regardless of caller.
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
   const path = join(DIGEST_DIR, `${date}.json`);
   if (!existsSync(path)) return null;
   try {
@@ -118,7 +142,20 @@ function ensureDataDir(): void {
   if (!existsSync(DATA_DIR)) mkdirSync(DATA_DIR, { recursive: true });
 }
 
-export function loadQueue(): QueueFile {
+export async function loadQueue(): Promise<QueueFile> {
+  const client = kv();
+  if (client) {
+    try {
+      const data = await client.get<QueueFile>(QUEUE_KEY);
+      if (data && data.version === 1 && Array.isArray(data.entries)) {
+        return data;
+      }
+    } catch {
+      // Transient KV error: treat as empty rather than crashing the panel.
+    }
+    return { version: 1, entries: [] };
+  }
+  // Local-dev fallback: JSON file under data/.
   if (!existsSync(QUEUE_PATH)) {
     return { version: 1, entries: [] };
   }
@@ -134,7 +171,13 @@ export function loadQueue(): QueueFile {
   }
 }
 
-function saveQueue(queue: QueueFile): void {
+async function saveQueue(queue: QueueFile): Promise<void> {
+  const client = kv();
+  if (client) {
+    await client.set(QUEUE_KEY, queue);
+    return;
+  }
+  // Local-dev fallback: atomic-ish file write.
   ensureDataDir();
   // Atomic-ish write: write to tmp, rename. Avoids leaving a half-written
   // file if the process is killed mid-write.
@@ -169,8 +212,8 @@ export type AddInput = {
   notes?: string;
 };
 
-export function addToQueue(input: AddInput): QueueEntry {
-  const queue = loadQueue();
+export async function addToQueue(input: AddInput): Promise<QueueEntry> {
+  const queue = await loadQueue();
   const now = new Date().toISOString();
   const id = randomBytes(6).toString("hex");
   const entry: QueueEntry = {
@@ -186,15 +229,15 @@ export function addToQueue(input: AddInput): QueueEntry {
     updatedAt: now,
   };
   queue.entries.unshift(entry);
-  saveQueue(queue);
+  await saveQueue(queue);
   return entry;
 }
 
-export function updateEntry(
+export async function updateEntry(
   id: string,
   patch: Partial<Pick<QueueEntry, "status" | "channel" | "notes" | "statusReason">>,
-): QueueEntry | null {
-  const queue = loadQueue();
+): Promise<QueueEntry | null> {
+  const queue = await loadQueue();
   const idx = queue.entries.findIndex((e) => e.id === id);
   if (idx < 0) return null;
   const updated: QueueEntry = {
@@ -203,21 +246,21 @@ export function updateEntry(
     updatedAt: new Date().toISOString(),
   };
   queue.entries[idx] = updated;
-  saveQueue(queue);
+  await saveQueue(queue);
   return updated;
 }
 
-export function deleteEntry(id: string): boolean {
-  const queue = loadQueue();
+export async function deleteEntry(id: string): Promise<boolean> {
+  const queue = await loadQueue();
   const before = queue.entries.length;
   queue.entries = queue.entries.filter((e) => e.id !== id);
   if (queue.entries.length === before) return false;
-  saveQueue(queue);
+  await saveQueue(queue);
   return true;
 }
 
-export function isAlreadyQueued(sourceId: string): boolean {
-  const queue = loadQueue();
+export async function isAlreadyQueued(sourceId: string): Promise<boolean> {
+  const queue = await loadQueue();
   return queue.entries.some(
     (e) =>
       `${e.source.digestDate}::${e.source.category}::${e.source.slug}::${

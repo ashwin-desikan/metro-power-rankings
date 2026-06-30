@@ -31,8 +31,8 @@ export async function POST(req: NextRequest) {
   }
 
   const sourceId = `${digestDate}::${category}::${slug}::${pairLabel || "obscurity"}`;
-  if (!isAlreadyQueued(sourceId)) {
-    addToQueue({
+  if (!(await isAlreadyQueued(sourceId))) {
+    await addToQueue({
       source: {
         digestDate,
         category,

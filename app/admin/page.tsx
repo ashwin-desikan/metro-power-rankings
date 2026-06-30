@@ -650,7 +650,7 @@ function ActivityPanel({
 export default async function MissionControlPage() {
   const digest = loadLatestDigest();
   const digestDates = listDigestDates();
-  const queueFile = loadQueue();
+  const queueFile = await loadQueue();
   // Touch isAlreadyQueued so the import is not stripped when unused:
   void isAlreadyQueued;
 

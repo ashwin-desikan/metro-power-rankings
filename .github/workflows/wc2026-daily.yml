@@ -10,8 +10,12 @@ name: WC2026 daily simulation refresh
 
 on:
   schedule:
-    - cron: "0 7  * * *"   # 07:00 UTC — catches overnight/morning results
-    - cron: "0 23 * * *"   # 23:00 UTC — catches afternoon/evening KO matches same day
+    # Every 3 hours. Knockout matches finish at varied US/Mexico/Canada kickoff
+    # times (often overnight UTC), so a once- or twice-daily run can leave a
+    # result waiting up to ~12h. Every run is cheap and safe: it commits ONLY
+    # when a result actually changed, and always with [vercel skip], so it never
+    # triggers a Vercel build. Can revert to twice daily after the final (2026-07-19).
+    - cron: "0 */3 * * *"
   workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
 
 permissions:
@@ -26,10 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
         with:
           python-version: "3.12"
 
