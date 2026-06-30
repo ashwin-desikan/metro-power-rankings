@@ -1,1 +1,520 @@
-{}
+{
+  "abu-dhabi": {
+    "city": "Abu Dhabi",
+    "country": "United Arab Emirates",
+    "mayor": "Mohammed Bin Zayed Al Nahyan",
+    "since": "2022-05-14",
+    "title": "Mayor"
+  },
+  "amsterdam": {
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "mayor": "Femke Halsema",
+    "since": "2018-07-12",
+    "title": "Mayor"
+  },
+  "athens": {
+    "city": "Athens",
+    "country": "Greece",
+    "mayor": "Haris Doukas",
+    "since": "2024-01-01",
+    "title": "Mayor"
+  },
+  "atlanta": {
+    "city": "Atlanta",
+    "country": "United States",
+    "mayor": "Andre Dickens",
+    "since": "2021-05-01",
+    "title": "Mayor"
+  },
+  "austin": {
+    "city": "Austin",
+    "country": "United States",
+    "mayor": "Kirk Watson",
+    "since": "2023-01-06",
+    "title": "Mayor"
+  },
+  "bangkok": {
+    "city": "Bangkok",
+    "country": "Thailand",
+    "mayor": "Chadchart Sittipunt",
+    "since": "2022-05-22",
+    "title": "Mayor"
+  },
+  "barcelona": {
+    "city": "Barcelona",
+    "country": "Spain",
+    "mayor": "Jaume Collboni Cuadrado",
+    "since": "2023-06-17",
+    "title": "Mayor"
+  },
+  "berlin": {
+    "city": "Berlin",
+    "country": "Germany",
+    "mayor": "Kai Wegner",
+    "since": "2023-04-27",
+    "title": "Mayor"
+  },
+  "boston": {
+    "city": "Boston",
+    "country": "United States",
+    "mayor": "Michelle Wu",
+    "since": "2021-11-16",
+    "title": "Mayor"
+  },
+  "brussels": {
+    "city": "Brussels",
+    "country": "Belgium",
+    "mayor": "Philippe Close",
+    "since": "2017-07-20",
+    "title": "Mayor"
+  },
+  "buenos-aires": {
+    "city": "Buenos Aires",
+    "country": "Argentina",
+    "mayor": "Jorge Macri",
+    "since": "2023-12-10",
+    "title": "Mayor"
+  },
+  "cairo": {
+    "city": "Cairo",
+    "country": "Egypt",
+    "mayor": "Abd El Azim Wazir",
+    "since": "",
+    "title": "Mayor"
+  },
+  "charlotte": {
+    "city": "Charlotte",
+    "country": "United States",
+    "mayor": "Vi Lyles",
+    "since": "2017-12-04",
+    "title": "Mayor"
+  },
+  "chicago": {
+    "city": "Chicago",
+    "country": "United States",
+    "mayor": "Brandon Johnson",
+    "since": "2023-05-15",
+    "title": "Mayor"
+  },
+  "cleveland": {
+    "city": "Cleveland",
+    "country": "United States",
+    "mayor": "Billy Nowell",
+    "since": "",
+    "title": "Mayor"
+  },
+  "copenhagen": {
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "mayor": "Lars Weiss",
+    "since": "2024-09-19",
+    "title": "Mayor"
+  },
+  "dallas": {
+    "city": "Dallas",
+    "country": "United States",
+    "mayor": "Eric Johnson",
+    "since": "2019-06-17",
+    "title": "Mayor"
+  },
+  "delhi": {
+    "city": "Delhi",
+    "country": "India",
+    "mayor": "Rekha Gupta",
+    "since": "2025-02-20",
+    "title": "Mayor"
+  },
+  "denver": {
+    "city": "Denver",
+    "country": "United States",
+    "mayor": "Michael Johnston",
+    "since": "2023-07-17",
+    "title": "Mayor"
+  },
+  "detroit": {
+    "city": "Detroit",
+    "country": "United States",
+    "mayor": "Mary Sheffield",
+    "since": "2026-01-01",
+    "title": "Mayor"
+  },
+  "dubai-sharjah": {
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "mayor": "Mohammed bin Rashid Al Maktoum",
+    "since": "2006-01-04",
+    "title": "Mayor"
+  },
+  "dublin": {
+    "city": "Dublin",
+    "country": "Ireland",
+    "mayor": "Mícheál Mac Donncha",
+    "since": "",
+    "title": "Mayor"
+  },
+  "edinburgh": {
+    "city": "Edinburgh",
+    "country": "United Kingdom",
+    "mayor": "Frank Ross",
+    "since": "2017-04-01",
+    "title": "Mayor"
+  },
+  "frankfurt": {
+    "city": "Frankfurt",
+    "country": "Germany",
+    "mayor": "Mike Josef",
+    "since": "2023-05-11",
+    "title": "Mayor"
+  },
+  "hamburg": {
+    "city": "Hamburg",
+    "country": "Germany",
+    "mayor": "Peter Tschentscher",
+    "since": "2018-03-28",
+    "title": "Mayor"
+  },
+  "houston": {
+    "city": "Houston",
+    "country": "United States",
+    "mayor": "John Whitmire",
+    "since": "2024-01-01",
+    "title": "Mayor"
+  },
+  "istanbul": {
+    "city": "Istanbul",
+    "country": "Turkey",
+    "mayor": "Nuri Aslan",
+    "since": "2025-03-26",
+    "title": "Mayor"
+  },
+  "jakarta": {
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "mayor": "Pramono Anung",
+    "since": "2025-02-20",
+    "title": "Mayor"
+  },
+  "johannesburg": {
+    "city": "Johannesburg",
+    "country": "South Africa",
+    "mayor": "Mpho Phalatse",
+    "since": "2021-11-22",
+    "title": "Mayor"
+  },
+  "kuala-lumpur": {
+    "city": "Kuala Lumpur",
+    "country": "Malaysia",
+    "mayor": "Kamarulzaman Mat Salleh",
+    "since": "2023-04-17",
+    "title": "Mayor"
+  },
+  "las-vegas": {
+    "city": "Las Vegas",
+    "country": "United States",
+    "mayor": "Carolyn Goodman",
+    "since": "2011-07-06",
+    "title": "Mayor"
+  },
+  "lisbon": {
+    "city": "Lisbon",
+    "country": "Portugal",
+    "mayor": "Carlos Moedas",
+    "since": "",
+    "title": "Mayor"
+  },
+  "london": {
+    "city": "London",
+    "country": "United Kingdom",
+    "mayor": "Sadiq Khan",
+    "since": "2016-05-09",
+    "title": "Mayor"
+  },
+  "los-angeles": {
+    "city": "Los Angeles",
+    "country": "United States",
+    "mayor": "Karen Bass",
+    "since": "2022-12-01",
+    "title": "Mayor"
+  },
+  "madrid": {
+    "city": "Madrid",
+    "country": "Spain",
+    "mayor": "José Luis Martínez-Almeida",
+    "since": "2019-06-15",
+    "title": "Mayor"
+  },
+  "manila": {
+    "city": "Manila",
+    "country": "Philippines",
+    "mayor": "Isko Moreno",
+    "since": "2025-06-30",
+    "title": "Mayor"
+  },
+  "mexico-city": {
+    "city": "Mexico City",
+    "country": "Mexico",
+    "mayor": "Clara Brugada",
+    "since": "2024-10-01",
+    "title": "Mayor"
+  },
+  "miami": {
+    "city": "Miami",
+    "country": "United States",
+    "mayor": "Francis X. Suarez",
+    "since": "2017-11-15",
+    "title": "Mayor"
+  },
+  "milan": {
+    "city": "Milan",
+    "country": "Italy",
+    "mayor": "Giuseppe Sala",
+    "since": "2016-06-20",
+    "title": "Mayor"
+  },
+  "minneapolis": {
+    "city": "Minneapolis",
+    "country": "United States",
+    "mayor": "Jacob Frey",
+    "since": "2018-01-02",
+    "title": "Mayor"
+  },
+  "montreal": {
+    "city": "Montreal",
+    "country": "Canada",
+    "mayor": "Soraya Martinez Ferrada",
+    "since": "2025-11-02",
+    "title": "Mayor"
+  },
+  "moscow": {
+    "city": "Moscow",
+    "country": "Russia",
+    "mayor": "Sergey Sobyanin",
+    "since": "2010-10-21",
+    "title": "Mayor"
+  },
+  "mumbai": {
+    "city": "Mumbai",
+    "country": "India",
+    "mayor": "Iqbal Singh Chahal",
+    "since": "2022-03-08",
+    "title": "Mayor"
+  },
+  "munich": {
+    "city": "Munich",
+    "country": "Germany",
+    "mayor": "Dominik Krause",
+    "since": "2026-05-01",
+    "title": "Mayor"
+  },
+  "nagoya": {
+    "city": "Nagoya",
+    "country": "Japan",
+    "mayor": "Ichirō Hirosawa",
+    "since": "2024-11-25",
+    "title": "Mayor"
+  },
+  "new-orleans": {
+    "city": "New Orleans",
+    "country": "United States",
+    "mayor": "Helena Moreno",
+    "since": "2026-01-12",
+    "title": "Mayor"
+  },
+  "osaka-kyoto-kobe": {
+    "city": "Osaka",
+    "country": "Japan",
+    "mayor": "Hideyuki Yokoyama",
+    "since": "2023-04-10",
+    "title": "Mayor"
+  },
+  "paris": {
+    "city": "Paris",
+    "country": "France",
+    "mayor": "Emmanuel Grégoire",
+    "since": "2026-03-29",
+    "title": "Mayor"
+  },
+  "philadelphia": {
+    "city": "Philadelphia",
+    "country": "United States",
+    "mayor": "Cherelle Parker",
+    "since": "2024-01-02",
+    "title": "Mayor"
+  },
+  "phoenix": {
+    "city": "Phoenix",
+    "country": "United States",
+    "mayor": "Kate Gallego",
+    "since": "2019-03-21",
+    "title": "Mayor"
+  },
+  "pittsburgh": {
+    "city": "Pittsburgh",
+    "country": "United States",
+    "mayor": "Corey O'Connor",
+    "since": "2026-01-05",
+    "title": "Mayor"
+  },
+  "portland": {
+    "city": "Portland",
+    "country": "United States",
+    "mayor": "Mike Callis",
+    "since": "",
+    "title": "Mayor"
+  },
+  "prague": {
+    "city": "Prague",
+    "country": "Czech Republic",
+    "mayor": "Bohuslav Svoboda",
+    "since": "2023-02-16",
+    "title": "Mayor"
+  },
+  "raleigh-durham": {
+    "city": "Raleigh",
+    "country": "United States",
+    "mayor": "Nancy McFarlane",
+    "since": "",
+    "title": "Mayor"
+  },
+  "rhine-ruhr": {
+    "city": "Cologne",
+    "country": "Germany",
+    "mayor": "Torsten Burmester",
+    "since": "2025-11-01",
+    "title": "Mayor"
+  },
+  "rio-de-janeiro": {
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "mayor": "Eduardo Paes",
+    "since": "2021-01-01",
+    "title": "Mayor"
+  },
+  "rome": {
+    "city": "Rome",
+    "country": "Italy",
+    "mayor": "Roberto Gualtieri",
+    "since": "2021-10-21",
+    "title": "Mayor"
+  },
+  "rotterdam-the-hague": {
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "mayor": "Carola Schouten",
+    "since": "2024-10-10",
+    "title": "Mayor"
+  },
+  "salt-lake-city-provo": {
+    "city": "Salt Lake City",
+    "country": "United States",
+    "mayor": "Erin Mendenhall",
+    "since": "2020-01-06",
+    "title": "Mayor"
+  },
+  "san-diego": {
+    "city": "San Diego",
+    "country": "United States",
+    "mayor": "Todd Gloria",
+    "since": "2020-12-10",
+    "title": "Mayor"
+  },
+  "san-francisco-san-jose": {
+    "city": "San Francisco",
+    "country": "United States",
+    "mayor": "Daniel Lurie",
+    "since": "2025-01-08",
+    "title": "Mayor"
+  },
+  "seattle": {
+    "city": "Seattle",
+    "country": "United States",
+    "mayor": "Katie Wilson",
+    "since": "2026-01-01",
+    "title": "Mayor"
+  },
+  "seoul": {
+    "city": "Seoul",
+    "country": "South Korea",
+    "mayor": "Oh Se-hoon",
+    "since": "2021-04-08",
+    "title": "Mayor"
+  },
+  "singapore": {
+    "city": "Singapore",
+    "country": "Singapore",
+    "mayor": "Lawrence Wong",
+    "since": "2024-05-15",
+    "title": "Mayor"
+  },
+  "st-louis": {
+    "city": "St. Louis",
+    "country": "United States",
+    "mayor": "Tishaura Jones",
+    "since": "2021-04-20",
+    "title": "Mayor"
+  },
+  "sydney": {
+    "city": "Sydney",
+    "country": "Australia",
+    "mayor": "Clover Moore",
+    "since": "2004-03-27",
+    "title": "Mayor"
+  },
+  "taipei": {
+    "city": "Taipei",
+    "country": "Taiwan",
+    "mayor": "Chiang Wan-an",
+    "since": "2022-12-25",
+    "title": "Mayor"
+  },
+  "tampa": {
+    "city": "Tampa",
+    "country": "United States",
+    "mayor": "Jane Castor",
+    "since": "2019-05-01",
+    "title": "Mayor"
+  },
+  "tokyo": {
+    "city": "Tokyo",
+    "country": "Japan",
+    "mayor": "Yuriko Koike",
+    "since": "2016-08-02",
+    "title": "Mayor"
+  },
+  "toronto": {
+    "city": "Toronto",
+    "country": "Canada",
+    "mayor": "Olivia Chow",
+    "since": "2023-07-12",
+    "title": "Mayor"
+  },
+  "vancouver": {
+    "city": "Vancouver",
+    "country": "Canada",
+    "mayor": "Ken Sim",
+    "since": "2022-01-01",
+    "title": "Mayor"
+  },
+  "warsaw": {
+    "city": "Warsaw",
+    "country": "Poland",
+    "mayor": "Rafał Trzaskowski",
+    "since": "2018-11-22",
+    "title": "Mayor"
+  },
+  "washington-baltimore": {
+    "city": "Washington",
+    "country": "United States",
+    "mayor": "Donald Sadler",
+    "since": "2020-08-26",
+    "title": "Mayor"
+  },
+  "zurich": {
+    "city": "Zurich",
+    "country": "Switzerland",
+    "mayor": "Corine Mauch",
+    "since": "2009-05-01",
+    "title": "Mayor"
+  }
+}
