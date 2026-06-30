@@ -1,15 +1,12 @@
 name: Civic data refresh (weekly, no deploy)
 
 # One weekly job (also runnable on demand) that keeps every officeholder feed
-# current from Wikidata. Two halves:
-#   SAFE  -> auto-applied to main: add-only gap-fills (leaders, governors) and
-#            the COUNTED Congress party splits. These can't clobber curation.
-#   REVIEW-> proposed OVERWRITES of existing curated leaders are pushed to a
-#            branch and opened as a Pull Request for human review, because
-#            Wikidata's "current leader" data is noisy (stale/wrong names). You
-#            get a GitHub email; merge to apply (no build, ISR), close to reject.
-# All commits carry [vercel skip]; the frontends ISR-read from GitHub raw, so
-# nothing here triggers a Vercel build (requires the Ignored Build Step set).
+# current from Wikidata. SAFE half auto-applies to main: add-only gap-fills
+# (leaders, governors), the COUNTED Congress splits, and the mayors refresh.
+# REVIEW half: proposed OVERWRITES of existing curated leaders go to a branch
+# and open a Pull Request for human review (Wikidata is noisy on who holds
+# office now). All commits carry [vercel skip]; frontends ISR-read from GitHub
+# raw, so nothing here triggers a Vercel build (needs the Ignored Build Step).
 
 on:
   schedule:
@@ -46,7 +43,7 @@ jobs:
           python scripts/civic/refresh_congress.py --self-test
           python scripts/civic/refresh_mayors.py --self-test
 
-      # ---- SAFE: auto-applied to main (gap-fills + counted splits) ----
+      # ---- SAFE: auto-applied to main ----
       - name: World leaders (add-only gap-fill)
         run: python scripts/leaders/refresh-current-leaders.py --add-only
 
@@ -56,7 +53,7 @@ jobs:
       - name: US Congress (counted party splits + roster)
         run: python scripts/civic/refresh_congress.py
 
-      - name: Mayors (top-100 primary cities — probe/refresh)
+      - name: Mayors (top-100 primary cities - probe/refresh)
         run: python scripts/civic/refresh_mayors.py
 
       - name: Commit safe auto changes to main
@@ -68,7 +65,7 @@ jobs:
             echo "No safe auto changes this run."
           else
             git add public/data
-            git commit -m "data: weekly civic refresh — gap-fills + Congress splits [vercel skip]"
+            git commit -m "data: weekly civic refresh - gap-fills + Congress splits + mayors [vercel skip]"
             git push origin HEAD:main
           fi
 
@@ -78,7 +75,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -e
-          python scripts/leaders/refresh-current-leaders.py    # FULL: overwrites existing entries
+          python scripts/leaders/refresh-current-leaders.py
           if git diff --quiet -- public/data; then
             echo "Wikidata agrees with curation; no proposed overwrites this week."
             exit 0
@@ -86,11 +83,12 @@ jobs:
           BR=civic-proposed-changes
           git checkout -B "$BR"
           git add public/data
-          git commit -m "data: PROPOSED weekly officeholder changes — review before merge [vercel skip]"
+          git commit -m "data: PROPOSED weekly officeholder changes - review before merge [vercel skip]"
           git push -f origin "$BR"
-          if gh pr view "$BR" --json number >/dev/null 2>&1; then
-            echo "Updated the existing review PR."
+          printf '%s\n' "Auto-generated from Wikidata. These overwrite existing curated leader entries, so review before merging - Wikidata is often stale or wrong on current officeholders. Safe gap-fills and Congress splits were already applied to main. Merging needs no Vercel build (vercel-skip + ISR). Close to reject." > pr_body.txt
+          if gh pr view "$BR" --json number > /dev/null 2>&1; then
+            echo "Existing review PR updated."
           else
-            gh pr create --base main --head "$BR" \
-              --title "Weekly civic data: proposed officeholder changes for review" \
-              --body "Auto-generated from Wikidata. These **overwrite existing curated entries** (Wikidata reports a different current leader for a country we already track), so review before merging — Wikidata is frequently stale or wrong on who holds office now. Safe gap-fills and the Congress party splits were already applied to main directly. Merging appli
+            gh pr create --base main --head "$BR" --title "Weekly civic data: proposed officeholder changes for review" --body-file pr_body.txt
+          fi
+          rm -f pr_body.txt
