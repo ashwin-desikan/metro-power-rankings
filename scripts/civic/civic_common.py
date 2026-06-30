@@ -29,6 +29,8 @@ def sanity_ok(name: str) -> bool:
     # A genuine name has at least one capitalized / non-Latin-script word.
     if not any((w[:1].isupper()) or (not w[:1].isascii()) for w in words):
         return False
+    if re.fullmatch(r"Q\d+", b):          # unresolved Wikidata QID (label didn't resolve)
+        return False
     low = b.lower()
     if any(p in low for p in _PROFANITY):
         return False
@@ -87,6 +89,7 @@ def _self_test():
     assert not sanity_ok("")
     assert not sanity_ok("x")
     assert not sanity_ok("lowercase only name")
+    assert not sanity_ok("Q22686")          # raw QID rejected
     assert merge_overrides({"a": 1, "b": 2}, {"b": 9})["b"] == 9
     print("civic_common self-test OK")
 

@@ -42,11 +42,13 @@ def query():
                           "since": (b.get("start", {}).get("value", "") or "")[:10]}
     return out
 
-def build(existing, wd, overrides):
+def build(existing, wd, overrides, add_only=False):
     states = dict(existing.get("states", {}))
     changed = 0
     for slug, info in wd.items():
         if slug not in states:        # only states we already track (50)
+            continue
+        if add_only:                   # never overwrite verified curation
             continue
         if not sanity_ok(info["name"]):
             continue
@@ -68,7 +70,7 @@ def main():
         print(f"ABORT: only {len(wd)} states from Wikidata (<45); writing nothing.")
         return
     overrides = load_json(OVR, {})
-    out, changed = build(existing, wd, overrides)
+    out, changed = build(existing, wd, overrides, add_only=("--add-only" in sys.argv))
     write_json(GOV, out, sort_keys=False)
     print(f"governors.json updated: {changed} governor(s) changed of {len(out['states'])}")
 

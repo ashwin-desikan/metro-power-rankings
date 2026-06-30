@@ -188,6 +188,18 @@ def load_slug_iso():
         if iso: out[slug] = iso.upper()
     return out
 
+def _plausible(name):
+    """Reject unresolved QIDs (Q22686) and all-lowercase vandalism (sapo cara
+    picha) before they reach _current.json / the live site."""
+    b = bare(name)
+    if len(b) < 2: return False
+    if re.fullmatch(r"Q\d+", b): return False
+    words = [w for w in re.split(r"\s+", b) if w]
+    if not any(w[:1].isupper() or (w[:1] and not w[:1].isascii()) for w in words):
+        return False
+    return True
+
+
 def main(add_only=False):
     slug_iso = load_slug_iso()
     existing = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
@@ -198,6 +210,9 @@ def main(add_only=False):
         if not info: continue
         entry = build_entry(slug, info.get("hos"), info.get("hog"), info.get("office"), info.get("form",""), info.get("hos_start"), info.get("hog_start"))
         if not entry: continue
+        if not _plausible(entry["name"]):
+            print(f"  skip {slug}: implausible name {entry['name']!r}")
+            continue
         prev = existing.get(slug)
         # --add-only: never touch a country that already has a (curated) entry.
         if add_only and prev:

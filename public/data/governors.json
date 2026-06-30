@@ -6,8 +6,8 @@
       "since": "2017-04-10"
     },
     "alaska": {
-      "name": "Mike J. Dunleavy",
-      "party": "Republican Party",
+      "name": "Mike Dunleavy",
+      "party": "Republican",
       "since": "2018-12-03"
     },
     "arizona": {
@@ -16,8 +16,8 @@
       "since": "2023-01-02"
     },
     "arkansas": {
-      "name": "Sarah Sanders",
-      "party": "Republican Party",
+      "name": "Sarah Huckabee Sanders",
+      "party": "Republican",
       "since": "2023-01-10"
     },
     "california": {
@@ -66,9 +66,9 @@
       "since": "2019-01-14"
     },
     "indiana": {
-      "name": "Eric Holcomb",
-      "party": "Republican Party",
-      "since": "2017-01-09"
+      "name": "Mike Braun",
+      "party": "Republican",
+      "since": "2025-01-13"
     },
     "iowa": {
       "name": "Kim Reynolds",
@@ -86,13 +86,13 @@
       "since": "2019-12-10"
     },
     "louisiana": {
-      "name": "John Bel Edwards",
-      "party": "Democratic Party",
-      "since": "2016-01-11"
+      "name": "Jeff Landry",
+      "party": "Republican",
+      "since": "2024-01-08"
     },
     "maine": {
-      "name": "Janet T. Mills",
-      "party": "Democratic Party",
+      "name": "Janet Mills",
+      "party": "Democratic",
       "since": "2019-01-02"
     },
     "maryland-united-states": {
@@ -121,9 +121,9 @@
       "since": "2020-01-14"
     },
     "missouri": {
-      "name": "Mike Parson",
-      "party": "Republican Party",
-      "since": "2018-06-01"
+      "name": "Mike Kehoe",
+      "party": "Republican",
+      "since": "2025-01-13"
     },
     "montana-united-states": {
       "name": "Greg Gianforte",
@@ -141,9 +141,9 @@
       "since": "2023-01-02"
     },
     "new-hampshire": {
-      "name": "Chris Sununu",
-      "party": "Republican Party",
-      "since": "2017-01-05"
+      "name": "Kelly Ayotte",
+      "party": "Republican",
+      "since": "2025-01-09"
     },
     "new-jersey": {
       "name": "Mikie Sherrill",
@@ -166,9 +166,9 @@
       "since": "2025-01-01"
     },
     "north-dakota": {
-      "name": "Doug Burgum",
-      "party": "Republican Party",
-      "since": "2016-12-15"
+      "name": "Kelly Armstrong",
+      "party": "Republican",
+      "since": "2024-12-15"
     },
     "ohio": {
       "name": "Mike DeWine",
@@ -191,8 +191,8 @@
       "since": "2023-01-17"
     },
     "rhode-island": {
-      "name": "Daniel McKee",
-      "party": "Democratic Party",
+      "name": "Dan McKee",
+      "party": "Democratic",
       "since": "2021-03-02"
     },
     "south-carolina": {

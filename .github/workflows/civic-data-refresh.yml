@@ -11,12 +11,7 @@ name: Civic data refresh (weekly, no deploy)
 on:
   schedule:
     - cron: "30 6 * * 1"   # Mondays 06:30 UTC
-  workflow_dispatch:
-    inputs:
-      add_only:
-        description: "World leaders: only insert missing countries (don't overwrite curated)"
-        type: boolean
-        default: false
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -46,14 +41,15 @@ jobs:
           python scripts/civic/refresh_governors.py --self-test
           python scripts/civic/refresh_congress.py --self-test
 
-      - name: World leaders
-        run: |
-          FLAG=""
-          if [ "${{ github.event.inputs.add_only }}" = "true" ]; then FLAG="--add-only"; fi
-          python scripts/leaders/refresh-current-leaders.py $FLAG
+      # ADD-ONLY by design: Wikidata's "current leader" data proved too noisy to
+      # overwrite verified curation (it returned dead PMs, raw QIDs and vandalism),
+      # so the weekly run only FILLS missing countries and never clobbers existing
+      # curated entries. Genuine changes to existing entries are curated by hand.
+      - name: World leaders (add-only)
+        run: python scripts/leaders/refresh-current-leaders.py --add-only
 
-      - name: US governors
-        run: python scripts/civic/refresh_governors.py
+      - name: US governors (add-only)
+        run: python scripts/civic/refresh_governors.py --add-only
 
       - name: US Congress (senate roster + chamber party splits)
         run: python scripts/civic/refresh_congress.py
