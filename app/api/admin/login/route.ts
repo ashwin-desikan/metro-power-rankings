@@ -26,7 +26,7 @@ function clientIp(req: NextRequest): string {
 
 export async function POST(req: NextRequest) {
   // Throttle online password guessing: 10 attempts / 15 min / IP.
-  const rl = checkRateLimit(`admin-login:${clientIp(req)}`, 10, 15 * 60_000);
+  const rl = await checkRateLimit(`admin-login:${clientIp(req)}`, 10, 15 * 60_000);
   if (!rl.ok) {
     return new NextResponse("Too many attempts. Try again later.", {
       status: 429,

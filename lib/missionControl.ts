@@ -7,32 +7,13 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "fs";
 import { join } from "path";
 import { randomBytes } from "crypto";
-import { Redis } from "@upstash/redis";
+import { getRedis } from "./kv";
 
 const PROJECT_ROOT = process.cwd();
 const DIGEST_DIR = join(PROJECT_ROOT, "digests");
 const DATA_DIR = join(PROJECT_ROOT, "data");
 const QUEUE_PATH = join(DATA_DIR, "mission-control.json");
 const QUEUE_KEY = "mission-control:queue";
-
-// Durable queue store. In production the Upstash Redis integration (Vercel
-// Marketplace) supplies the connection through env vars; locally, when those
-// are absent, we fall back to a JSON file so dev needs no external service.
-function kv(): Redis | null {
-  if (
-    process.env.UPSTASH_REDIS_REST_URL &&
-    process.env.UPSTASH_REDIS_REST_TOKEN
-  ) {
-    return Redis.fromEnv();
-  }
-  if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-    return new Redis({
-      url: process.env.KV_REST_API_URL,
-      token: process.env.KV_REST_API_TOKEN,
-    });
-  }
-  return null;
-}
 
 // ---------- Types ----------
 
@@ -143,7 +124,7 @@ function ensureDataDir(): void {
 }
 
 export async function loadQueue(): Promise<QueueFile> {
-  const client = kv();
+  const client = getRedis();
   if (client) {
     try {
       const data = await client.get<QueueFile>(QUEUE_KEY);
@@ -172,7 +153,7 @@ export async function loadQueue(): Promise<QueueFile> {
 }
 
 async function saveQueue(queue: QueueFile): Promise<void> {
-  const client = kv();
+  const client = getRedis();
   if (client) {
     await client.set(QUEUE_KEY, queue);
     return;
