@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllStateGovernors, getTerritoryGovernors } from "@/lib/governors";
-import { getState } from "@/lib/states";
+import { getState, getMetrosForState } from "@/lib/states";
+import { getAllMetros } from "@/lib/data";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import GovernorsTable, { type GovRow } from "./GovernorsTable";
 
 const PATH = "/governors";
 const TITLE = "US Governors";
 const DESC =
-  "The current governor of every US state and the five major US territories, with party and the date they took office. State governors link to their state hub; territory governors to their country page.";
+  "The current governor of every US state and the five major US territories, with party, date assumed office, and the combined Metro Power score of the metros in each. Sortable; click any column header.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -21,42 +23,49 @@ export const metadata: Metadata = {
   },
 };
 
-function partyClass(p: string): string {
-  const s = p.toLowerCase();
-  if (s.includes("republican")) return "text-red-700 dark:text-red-400";
-  if (s.includes("democratic")) return "text-blue-700 dark:text-blue-400";
-  return "text-[var(--text-muted)]";
-}
-function yr(d: string): string {
-  return d ? d.slice(0, 4) : "—";
+function scoreFor(metros: { score?: number | null }[]): number {
+  return metros.reduce((s, m) => s + (m.score || 0), 0);
 }
 
 export default function GovernorsPage() {
   const states = getAllStateGovernors();
   const terr = getTerritoryGovernors();
 
-  const rows = Object.entries(states)
-    .map(([slug, g]) => ({
-      slug,
-      stateName: getState(slug)?.name ?? slug,
-      gov: g.name,
-      party: g.party,
-      since: g.since,
-    }))
-    .sort((a, b) => a.stateName.localeCompare(b.stateName));
+  const stateRows: GovRow[] = Object.entries(states)
+    .map(([slug, g]) => {
+      const metros = getMetrosForState(slug);
+      return {
+        slug,
+        name: getState(slug)?.name ?? slug,
+        href: `/states/${slug}`,
+        gov: g.name,
+        party: g.party,
+        since: g.since,
+        score: scoreFor(metros),
+        metros: metros.length,
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 
-  const trows = Object.entries(terr)
-    .map(([slug, g]) => ({
-      slug,
-      country: g.countryName,
-      gov: g.name,
-      party: g.party,
-      since: g.since,
-    }))
-    .sort((a, b) => a.country.localeCompare(b.country));
+  const allMetros = getAllMetros();
+  const terrRows: GovRow[] = Object.entries(terr)
+    .map(([slug, g]) => {
+      const metros = allMetros.filter((m) => m.countrySlug === slug);
+      return {
+        slug,
+        name: g.countryName,
+        href: `/countries/${slug}`,
+        gov: g.name,
+        party: g.party,
+        since: g.since,
+        score: scoreFor(metros),
+        metros: metros.length,
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 
-  const rep = rows.filter((r) => r.party.toLowerCase().includes("republican")).length;
-  const dem = rows.filter((r) => r.party.toLowerCase().includes("democratic")).length;
+  const rep = stateRows.filter((r) => r.party.toLowerCase().includes("republican")).length;
+  const dem = stateRows.filter((r) => r.party.toLowerCase().includes("democratic")).length;
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
@@ -72,79 +81,26 @@ export default function GovernorsPage() {
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
         <p className="text-[var(--text-muted)] max-w-2xl">{DESC}</p>
         <p className="text-sm text-[var(--text-dim)] mt-2">
-          {rows.length} state governors ·{" "}
+          {stateRows.length} state governors ·{" "}
           <span className="text-red-700 dark:text-red-400">{rep} Republican</span> ·{" "}
           <span className="text-blue-700 dark:text-blue-400">{dem} Democratic</span>
         </p>
       </header>
 
       <section className="mb-10">
-        <div
-          className="rounded-xl border overflow-x-auto"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-        >
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-                <th className="py-2 px-4">State</th>
-                <th className="py-2 px-4">Governor</th>
-                <th className="py-2 px-4">Party</th>
-                <th className="py-2 px-4 text-right">Since</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.slug} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-2 px-4">
-                    <Link href={`/states/${r.slug}`} className="font-medium text-[var(--text)] hover:text-[var(--accent)]">
-                      {r.stateName}
-                    </Link>
-                  </td>
-                  <td className="py-2 px-4 text-[var(--text)]">{r.gov}</td>
-                  <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>{r.party}</td>
-                  <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">{yr(r.since)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <GovernorsTable rows={stateRows} nameHeader="State" />
       </section>
 
-      <section className="mb-12">
+      <section className="mb-8">
         <h2 className="text-xl font-bold mb-3 text-[var(--text)]">US Territories</h2>
-        <div
-          className="rounded-xl border overflow-x-auto"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-        >
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-                <th className="py-2 px-4">Territory</th>
-                <th className="py-2 px-4">Governor</th>
-                <th className="py-2 px-4">Party</th>
-                <th className="py-2 px-4 text-right">Since</th>
-              </tr>
-            </thead>
-            <tbody>
-              {trows.map((r) => (
-                <tr key={r.slug} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-2 px-4">
-                    <Link href={`/countries/${r.slug}`} className="font-medium text-[var(--text)] hover:text-[var(--accent)]">
-                      {r.country}
-                    </Link>
-                  </td>
-                  <td className="py-2 px-4 text-[var(--text)]">{r.gov}</td>
-                  <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>{r.party}</td>
-                  <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">{yr(r.since)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <GovernorsTable rows={terrRows} nameHeader="Territory" />
       </section>
 
-      <footer className="mt-10 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-        Current as of mid-2026. The District of Columbia is led by a mayor, not a governor, and is not listed here.
+      <footer className="mt-6 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
+        Governors current as of mid-2026; DC is led by a mayor and is not listed. The Metro score is the sum of the
+        Metro Power composite scores of every tracked metro in the state. A metro that spans more than one state is
+        counted in each, so state scores can total more than the national figure; a population-weighted split awaits
+        per-state metro population data.
       </footer>
     </main>
   );
