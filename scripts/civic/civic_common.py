@@ -34,6 +34,33 @@ def sanity_ok(name: str) -> bool:
         return False
     return True
 
+UA = "metro-power-rankings civic-refresh/1.0 (https://rankings.citizenofnowhere.org)"
+
+def sparql(query, timeout=180, retries=4):
+    """POST a SPARQL query to the Wikidata Query Service with retries/backoff.
+    POST avoids URL-length limits; retries ride out the frequent 429/5xx/timeout
+    responses from the public endpoint. Returns the list of result bindings."""
+    import time, requests
+    last = None
+    for i in range(retries):
+        try:
+            r = requests.post(
+                "https://query.wikidata.org/sparql",
+                data={"query": query, "format": "json"},
+                headers={"User-Agent": UA, "Accept": "application/sparql-results+json"},
+                timeout=timeout,
+            )
+            if r.status_code in (429, 500, 502, 503, 504):
+                last = f"HTTP {r.status_code}"; time.sleep(3 * (2 ** i)); continue
+            r.raise_for_status()
+            return r.json()["results"]["bindings"]
+        except requests.exceptions.RequestException as e:
+            last = str(e); time.sleep(3 * (2 ** i))
+    raise RuntimeError(f"WDQS failed after {retries} attempts: {last}")
+
+def qid(uri):
+    return uri.rsplit("/", 1)[-1] if uri else ""
+
 def merge_overrides(auto: dict, overrides: dict) -> dict:
     """Curated overrides win; auto-data fills the rest."""
     out = dict(auto)

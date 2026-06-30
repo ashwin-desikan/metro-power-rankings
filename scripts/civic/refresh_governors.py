@@ -7,7 +7,7 @@ few states. Run with --self-test for offline CI."""
 import sys, re
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from civic_common import sanity_ok, merge_overrides, load_json, write_json, bare  # noqa
+from civic_common import sanity_ok, merge_overrides, load_json, write_json, bare, sparql  # noqa
 
 ROOT = Path(__file__).resolve().parents[2]
 GOV = ROOT / "public" / "data" / "governors.json"
@@ -31,14 +31,8 @@ SELECT ?stateLabel ?govLabel ?partyLabel ?start WHERE {
 """
 
 def query():
-    import requests
-    r = requests.get("https://query.wikidata.org/sparql",
-                     params={"query": SPARQL, "format": "json"},
-                     headers={"User-Agent": "metro-power-rankings civic-refresh/1.0"},
-                     timeout=120)
-    r.raise_for_status()
     out = {}
-    for b in r.json()["results"]["bindings"]:
+    for b in sparql(SPARQL):
         st = b.get("stateLabel", {}).get("value")
         gov = b.get("govLabel", {}).get("value")
         if not st or not gov:
