@@ -9,6 +9,14 @@ RAW = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "public/data/billionair
 OUT = ROOT / "public/data/billionaires.json"
 COUNTRIES = ROOT / "public/data/countries.json"
 
+# Editorial warning glyph (same convention as leaders): names here get a
+# warning prefix baked into the display name so it renders everywhere
+# automatically and survives each data refresh. Curated by the editor.
+WARN = "⚠️"
+WARN_NAMES = {"Elon Musk"}
+def warn_name(n):
+    return f"{WARN} {n}" if n in WARN_NAMES and not str(n).startswith(WARN) else n
+
 def main():
     rows = json.loads(COUNTRIES.read_text(encoding="utf-8"))
     rows = rows if isinstance(rows, list) else rows.get("countries", rows)
@@ -37,7 +45,7 @@ def main():
                 age = today.year - int(bd[:4])
         out.append({
             "rank": b.get("rank"),
-            "name": b.get("name"),
+            "name": warn_name(b.get("name")),
             "uri": b.get("uri"),
             "networth": b.get("networth"),
             "countryCode": cc or None,

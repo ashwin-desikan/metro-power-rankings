@@ -57,6 +57,10 @@ jobs:
         continue-on-error: true
         run: python scripts/civic/refresh_mayors.py
 
+      - name: Power ranking (top 50 most powerful people)
+        continue-on-error: true
+        run: python scripts/build-power-ranking.py
+
       - name: Commit safe auto changes to main
         run: |
           set -e

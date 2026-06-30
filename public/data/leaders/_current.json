@@ -1000,9 +1000,13 @@
     "since": "2021-10-02"
   },
   "saudi-arabia": {
-    "name": "👑 King Salman bin Abdulaziz",
-    "role": "King",
-    "since": "2015-01-23"
+    "name": "⚠️ 👑 Mohammed bin Salman",
+    "role": "Crown Prince & PM",
+    "second": {
+      "name": "👑 King Salman bin Abdulaziz",
+      "role": "King"
+    },
+    "since": "2022-09-27"
   },
   "scotland": {
     "name": "Keir Starmer",

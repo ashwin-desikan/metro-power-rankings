@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-30",
-    headline: "Org leaders, three new states, realm fixes, and US governors",
+    headline: "Most Powerful People ranking, States directory, US leadership",
     items: [
-      "The Alliances & Organisations hub now shows each body's current leader and a full leadership history for NATO, the UN, and the European Union.",
-      "Added current leaders and leadership histories for Palestine, Kosovo, and Vatican City \u2014 the latter tracing every pope from Saint Peter to Leo XIV.",
-      "Commonwealth realms now list the head of government first with King Charles III as shared monarch, correcting entries that previously showed only the Crown.",
-      "US governors now appear on each state hub, with a new Governors page covering all 50 states and the five US territories by party and start date.",
+      "A new Most Powerful People ranking places the world's leaders, central bankers, institution heads, mayors, and billionaires on one Metro Power scale with a published methodology.",
+      "A new States directory ranks first-level subdivisions worldwide the way Countries does, dividing each metro's score across the states it spans by their share of its population.",
+      "The US page now spans the full federal government \u2014 President and Cabinet, 100 senators with party balance, House leadership, and governors for all 50 states and five territories.",
+      "Organisation hubs gained current leaders and histories for NATO, the UN, and the EU; Palestine, Kosovo, and the Vatican's papal line were added; realms now list their PM first.",
     ],
   },
   {

@@ -1,0 +1,395 @@
+{
+  "abu-dhabi": {
+    "name": "👑 Mohamed bin Zayed Al Nahyan",
+    "party": "",
+    "title": "Ruler of Abu Dhabi"
+  },
+  "alberta": {
+    "name": "Danielle Smith",
+    "party": "United Conservative Party",
+    "title": "Premier of Alberta"
+  },
+  "andalusia": {
+    "name": "Juanma Moreno",
+    "party": "People's Party (PP)",
+    "title": "President of the Junta de Andalucía"
+  },
+  "anhui": {
+    "name": "Liang Yanshun",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary of Anhui"
+  },
+  "attica": {
+    "name": "Nikos Hardalias",
+    "party": "New Democracy (backed)",
+    "title": "Regional Governor of Attica"
+  },
+  "auvergne-rhone-alpes": {
+    "name": "Fabrice Pannekoucke",
+    "party": "The Republicans (LR)",
+    "title": "President of the Regional Council of Auvergne-Rhône-Alpes"
+  },
+  "baden-wurttemberg": {
+    "name": "Cem Özdemir",
+    "party": "Greens",
+    "title": "Minister-President"
+  },
+  "bangkok-metropolitan": {
+    "name": "Chadchart Sittipunt",
+    "party": "Independent",
+    "title": "Governor of Bangkok"
+  },
+  "basque-country": {
+    "name": "Imanol Pradales",
+    "party": "Basque Nationalist Party (EAJ-PNV)",
+    "title": "Lehendakari (President of the Basque Government)"
+  },
+  "bavaria": {
+    "name": "Markus Söder",
+    "party": "CSU",
+    "title": "Minister-President"
+  },
+  "beijing": {
+    "name": "Yin Yong",
+    "party": "Chinese Communist Party",
+    "title": "Mayor"
+  },
+  "berlin": {
+    "name": "Kai Wegner",
+    "party": "Christian Democratic Union (CDU)",
+    "title": "Governing Mayor of Berlin"
+  },
+  "british-columbia": {
+    "name": "David Eby",
+    "party": "British Columbia New Democratic Party (BC NDP)",
+    "title": "Premier of British Columbia"
+  },
+  "buenos-aires": {
+    "name": "Axel Kicillof",
+    "party": "Frente de Todos (Peronist / Justicialist Party)",
+    "title": "Governor of Buenos Aires Province"
+  },
+  "catalonia": {
+    "name": "Salvador Illa",
+    "party": "Socialists' Party of Catalonia (PSC)",
+    "title": "President of the Generalitat of Catalonia"
+  },
+  "chongqing": {
+    "name": "Chen Mingbo",
+    "party": "Chinese Communist Party",
+    "title": "Mayor"
+  },
+  "dc": {
+    "name": "James Comer",
+    "party": "Republican",
+    "second": {
+      "name": "Muriel Bowser",
+      "role": "Mayor of DC"
+    },
+    "title": "House Oversight Chair (Congress oversees DC)"
+  },
+  "dubai": {
+    "name": "👑 Mohammed bin Rashid Al Maktoum",
+    "party": "",
+    "title": "Ruler of Dubai"
+  },
+  "emilia-romagna": {
+    "name": "Michele de Pascale",
+    "party": "Democratic Party (PD)",
+    "title": "President of Emilia-Romagna"
+  },
+  "fujian": {
+    "name": "Zhou Zuyi",
+    "party": "Chinese Communist Party",
+    "title": "Communist Party Secretary of Fujian"
+  },
+  "gauteng": {
+    "name": "Panyaza Lesufi",
+    "party": "African National Congress",
+    "title": "Premier of Gauteng"
+  },
+  "greater-london": {
+    "name": "Sadiq Khan",
+    "party": "Labour",
+    "title": "Mayor of London"
+  },
+  "greater-manchester": {
+    "name": "Paul Dennett",
+    "party": "Labour Party",
+    "title": "Acting Mayor of Greater Manchester"
+  },
+  "guangdong": {
+    "name": "Huang Kunming",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary"
+  },
+  "guangxi": {
+    "name": "Chen Gang",
+    "party": "Chinese Communist Party",
+    "title": "Communist Party Secretary of Guangxi"
+  },
+  "gyeonggi": {
+    "name": "Choo Mi-ae",
+    "party": "Democratic Party",
+    "title": "Governor"
+  },
+  "hebei": {
+    "name": "Ni Yuefeng",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary of Hebei"
+  },
+  "henan": {
+    "name": "Liu Ning",
+    "party": "Chinese Communist Party",
+    "title": "Communist Party Secretary of Henan"
+  },
+  "hesse": {
+    "name": "Boris Rhein",
+    "party": "Christian Democratic Union (CDU)",
+    "title": "Minister-President of Hesse"
+  },
+  "hubei": {
+    "name": "Guan Zhiyou",
+    "party": "Chinese Communist Party",
+    "title": "Communist Party Secretary of Hubei"
+  },
+  "hunan": {
+    "name": "Shen Xiaoming",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary of Hunan"
+  },
+  "ile-de-france": {
+    "name": "Valérie Pécresse",
+    "party": "Les Républicains",
+    "title": "Regional President"
+  },
+  "istanbul": {
+    "name": "Nuri Aslan",
+    "party": "Republican People's Party (CHP)",
+    "second": {
+      "name": "Ekrem İmamoğlu",
+      "role": "Elected Mayor (imprisoned)"
+    },
+    "title": "Acting Mayor"
+  },
+  "jiangsu": {
+    "name": "Xin Changxing",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary"
+  },
+  "kanagawa": {
+    "name": "Yuji Kuroiwa",
+    "party": "Independent",
+    "title": "Governor of Kanagawa Prefecture"
+  },
+  "lazio": {
+    "name": "Francesco Rocca",
+    "party": "Independent (centre-right coalition)",
+    "title": "President of Lazio"
+  },
+  "liaoning": {
+    "name": "Xu Kunlin",
+    "party": "Chinese Communist Party",
+    "title": "Communist Party Secretary of Liaoning"
+  },
+  "lombardy": {
+    "name": "Attilio Fontana",
+    "party": "Lega",
+    "title": "President of Lombardy"
+  },
+  "lower-saxony": {
+    "name": "Olaf Lies",
+    "party": "Social Democratic Party (SPD)",
+    "title": "Minister-President of Lower Saxony"
+  },
+  "madrid": {
+    "name": "Isabel Díaz Ayuso",
+    "party": "People's Party (PP)",
+    "title": "President of the Community of Madrid"
+  },
+  "maharashtra": {
+    "name": "Devendra Fadnavis",
+    "party": "Bharatiya Janata Party",
+    "title": "Chief Minister"
+  },
+  "masovian": {
+    "name": "Adam Struzik",
+    "party": "Polish People's Party (PSL)",
+    "title": "Marshal of the Masovian Voivodeship"
+  },
+  "mecca": {
+    "name": "Khalid Al-Faisal",
+    "party": "",
+    "title": "Governor of Mecca Province"
+  },
+  "mexico": {
+    "name": "Delfina Gomez Alvarez",
+    "party": "National Regeneration Movement (MORENA)",
+    "title": "Governor of the State of Mexico"
+  },
+  "moscow": {
+    "name": "Sergei Sobyanin",
+    "party": "United Russia",
+    "title": "Mayor of Moscow"
+  },
+  "new-south-wales": {
+    "name": "Chris Minns",
+    "party": "Labor",
+    "title": "Premier"
+  },
+  "north-holland": {
+    "name": "Arthur van Dijk",
+    "party": "People's Party for Freedom and Democracy (VVD)",
+    "title": "King's Commissioner of North Holland"
+  },
+  "north-rhine-westphalia": {
+    "name": "Hendrik Wüst",
+    "party": "CDU",
+    "title": "Minister-President"
+  },
+  "occitanie": {
+    "name": "Carole Delga",
+    "party": "Socialist Party (PS)",
+    "title": "President of the Regional Council of Occitanie"
+  },
+  "ontario": {
+    "name": "Doug Ford",
+    "party": "Progressive Conservative",
+    "title": "Premier"
+  },
+  "osaka": {
+    "name": "Hirofumi Yoshimura",
+    "party": "Japan Innovation Party (Nippon Ishin)",
+    "title": "Governor of Osaka Prefecture"
+  },
+  "provence-alpes-cote-d-azur": {
+    "name": "Renaud Muselier",
+    "party": "Renaissance",
+    "title": "President of the Regional Council of Provence-Alpes-Côte d'Azur"
+  },
+  "punjab-pakistan": {
+    "name": "Maryam Nawaz",
+    "party": "Pakistan Muslim League (N)",
+    "title": "Chief Minister of Punjab"
+  },
+  "quebec": {
+    "name": "Christine Fréchette",
+    "party": "Coalition Avenir Québec",
+    "title": "Premier"
+  },
+  "queensland": {
+    "name": "David Crisafulli",
+    "party": "Liberal National Party",
+    "title": "Premier of Queensland"
+  },
+  "rio-de-janeiro": {
+    "name": "Ricardo Couto de Castro",
+    "party": "Independent (Judiciary; non-partisan acting officeholder)",
+    "title": "Acting Governor"
+  },
+  "riyadh": {
+    "name": "Faisal bin Bandar Al Saud",
+    "party": "",
+    "title": "Governor of Riyadh Province"
+  },
+  "sao-paulo": {
+    "name": "Tarcísio de Freitas",
+    "party": "Republicanos",
+    "title": "Governor"
+  },
+  "selangor": {
+    "name": "Amirudin Shari",
+    "party": "People's Justice Party (PKR)",
+    "title": "Menteri Besar of Selangor"
+  },
+  "seoul": {
+    "name": "Oh Se-hoon",
+    "party": "People Power Party",
+    "title": "Mayor of Seoul"
+  },
+  "shaanxi": {
+    "name": "Zhao Yide",
+    "party": "Chinese Communist Party",
+    "title": "Communist Party Secretary of Shaanxi"
+  },
+  "shandong": {
+    "name": "Lin Wu",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary"
+  },
+  "shanghai": {
+    "name": "Gong Zheng",
+    "party": "Chinese Communist Party",
+    "title": "Mayor"
+  },
+  "sichuan": {
+    "name": "Wang Xiaohui",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary"
+  },
+  "south-holland": {
+    "name": "Wouter Kolff",
+    "party": "People's Party for Freedom and Democracy (VVD)",
+    "title": "King's Commissioner of South Holland"
+  },
+  "stockholm": {
+    "name": "Cecilia Skingsley",
+    "party": "Independent / Non-partisan",
+    "title": "Governor (Landshovding) of Stockholm County"
+  },
+  "tianjin": {
+    "name": "Zhang Gong",
+    "party": "Chinese Communist Party",
+    "title": "Mayor"
+  },
+  "tokyo": {
+    "name": "Yuriko Koike",
+    "party": "Independent (Tomin First no Kai-aligned)",
+    "title": "Governor of Tokyo"
+  },
+  "uttar-pradesh": {
+    "name": "Yogi Adityanath",
+    "party": "Bharatiya Janata Party",
+    "title": "Chief Minister"
+  },
+  "valencia": {
+    "name": "Juanfran Pérez Llorca",
+    "party": "People's Party (PP)",
+    "title": "President of the Generalitat Valenciana"
+  },
+  "veneto": {
+    "name": "Alberto Stefani",
+    "party": "Liga Veneta - Lega",
+    "title": "President of Veneto"
+  },
+  "victoria": {
+    "name": "Jacinta Allan",
+    "party": "Labor",
+    "title": "Premier"
+  },
+  "vienna": {
+    "name": "Michael Ludwig",
+    "party": "Social Democratic Party (SPÖ)",
+    "title": "Mayor and Governor of Vienna"
+  },
+  "west-bengal": {
+    "name": "Suvendu Adhikari",
+    "party": "Bharatiya Janata Party (BJP)",
+    "title": "Chief Minister of West Bengal"
+  },
+  "west-java": {
+    "name": "Dedi Mulyadi",
+    "party": "Gerindra",
+    "title": "Governor of West Java"
+  },
+  "zhejiang": {
+    "name": "Wang Hao",
+    "party": "Chinese Communist Party",
+    "title": "Party Secretary"
+  },
+  "zurich": {
+    "name": "Carmen Walker Späh",
+    "party": "FDP.The Liberals",
+    "title": "President of the cantonal government (Regierungsrat) of Zurich"
+  }
+}

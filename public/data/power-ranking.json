@@ -1,0 +1,469 @@
+{
+  "weights": {
+    "natl_min": 0.5,
+    "natl_max": 1.0,
+    "vp": 0.1,
+    "speaker": 0.14,
+    "sen_maj": 0.13,
+    "house_min": 0.02,
+    "sen_min": 0.02,
+    "subnatl": 0.55,
+    "party_sec": 0.8,
+    "mayor": 0.72,
+    "org": 0.025,
+    "central_bank": 0.35,
+    "billion_factor": 0.6
+  },
+  "ranking": [
+    {
+      "name": "⚠️ Donald Trump",
+      "role": "Pres., United States",
+      "category": "National",
+      "jurisdiction": "United States",
+      "jscore": 2520.5,
+      "weight": 0.625,
+      "power": 1574.0
+    },
+    {
+      "name": "Xi Jinping",
+      "role": "Pres. (PRC), China",
+      "category": "National",
+      "jurisdiction": "China",
+      "jscore": 1416.2,
+      "weight": 0.982,
+      "power": 1390.0
+    },
+    {
+      "name": "Christine Lagarde",
+      "role": "ECB President",
+      "category": "Central bank",
+      "jurisdiction": "Eurozone",
+      "jscore": 2609.9,
+      "weight": 0.35,
+      "power": 913.5
+    },
+    {
+      "name": "Kevin Warsh",
+      "role": "Chair of the Federal Reserve",
+      "category": "Central bank",
+      "jurisdiction": "United States",
+      "jscore": 2520.5,
+      "weight": 0.35,
+      "power": 882.2
+    },
+    {
+      "name": "⚠️ Elon Musk",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "jscore": 789.9,
+      "weight": 0.6,
+      "power": 473.9
+    },
+    {
+      "name": "Narendra Modi",
+      "role": "PM, India",
+      "category": "National",
+      "jurisdiction": "India",
+      "jscore": 312.8,
+      "weight": 1.289,
+      "power": 403.3
+    },
+    {
+      "name": "⚠️ Vladimir Putin",
+      "role": "Pres., Russia",
+      "category": "National",
+      "jurisdiction": "Russia",
+      "jscore": 197.1,
+      "weight": 1.943,
+      "power": 383.0
+    },
+    {
+      "name": "António Guterres",
+      "role": "UN Secretary-General",
+      "category": "Org",
+      "jurisdiction": "UN",
+      "jscore": 11876.8,
+      "weight": 0.03,
+      "power": 356.3
+    },
+    {
+      "name": "Mike Johnson",
+      "role": "Speaker of the House",
+      "category": "US federal",
+      "jurisdiction": "United States",
+      "jscore": 2520.5,
+      "weight": 0.14,
+      "power": 352.9
+    },
+    {
+      "name": "Keir Starmer",
+      "role": "PM, United Kingdom",
+      "category": "National",
+      "jurisdiction": "United Kingdom",
+      "jscore": 545.7,
+      "weight": 0.625,
+      "power": 341.1
+    },
+    {
+      "name": "Ursula von der Leyen",
+      "role": "EU Commission President",
+      "category": "Org",
+      "jurisdiction": "EU",
+      "jscore": 2609.9,
+      "weight": 0.13,
+      "power": 339.3
+    },
+    {
+      "name": "John Thune",
+      "role": "Senate Majority Leader",
+      "category": "US federal",
+      "jurisdiction": "United States",
+      "jscore": 2520.5,
+      "weight": 0.13,
+      "power": 327.7
+    },
+    {
+      "name": "⚠️ 👑 Mohammed bin Salman",
+      "role": "Crown Prince & PM, Saudi Arabia",
+      "category": "National",
+      "jurisdiction": "Saudi Arabia",
+      "jscore": 98.9,
+      "weight": 2.929,
+      "power": 289.7
+    },
+    {
+      "name": "Kristalina Georgieva",
+      "role": "IMF Managing Director",
+      "category": "Org",
+      "jurisdiction": "IMF",
+      "jscore": 12672.7,
+      "weight": 0.022,
+      "power": 278.8
+    },
+    {
+      "name": "Friedrich Merz",
+      "role": "Federal Chanc., Germany",
+      "category": "National",
+      "jurisdiction": "Germany",
+      "jscore": 451.9,
+      "weight": 0.611,
+      "power": 276.1
+    },
+    {
+      "name": "Pope Leo XIV",
+      "role": "Pope, Catholic Church (~1.3B faithful)",
+      "category": "Faith",
+      "jurisdiction": "Holy See",
+      "jscore": 260.0,
+      "weight": 1.0,
+      "power": 260.0
+    },
+    {
+      "name": "Pan Gongsheng",
+      "role": "Governor of the People's Bank of China",
+      "category": "Central bank",
+      "jurisdiction": "China",
+      "jscore": 1416.2,
+      "weight": 0.18,
+      "power": 254.9
+    },
+    {
+      "name": "JD Vance",
+      "role": "US Vice President",
+      "category": "US federal",
+      "jurisdiction": "United States",
+      "jscore": 2520.5,
+      "weight": 0.1,
+      "power": 252.0
+    },
+    {
+      "name": "Emmanuel Macron",
+      "role": "Pres., France",
+      "category": "National",
+      "jurisdiction": "France",
+      "jscore": 412.9,
+      "weight": 0.6,
+      "power": 247.7
+    },
+    {
+      "name": "Giorgia Meloni",
+      "role": "PM, Italy",
+      "category": "National",
+      "jurisdiction": "Italy",
+      "jscore": 360.5,
+      "weight": 0.656,
+      "power": 236.6
+    },
+    {
+      "name": "Luiz Inácio Lula da Silva",
+      "role": "Pres., Brazil",
+      "category": "National",
+      "jurisdiction": "Brazil",
+      "jscore": 271.6,
+      "weight": 0.837,
+      "power": 227.4
+    },
+    {
+      "name": "Sanae Takaichi",
+      "role": "PM, Japan",
+      "category": "National",
+      "jurisdiction": "Japan",
+      "jscore": 356.1,
+      "weight": 0.631,
+      "power": 224.9
+    },
+    {
+      "name": "Ajay Banga",
+      "role": "World Bank President",
+      "category": "Org",
+      "jurisdiction": "World Bank",
+      "jscore": 12672.7,
+      "weight": 0.017,
+      "power": 215.4
+    },
+    {
+      "name": "Claudia Sheinbaum",
+      "role": "Pres., Mexico",
+      "category": "National",
+      "jurisdiction": "Mexico",
+      "jscore": 195.2,
+      "weight": 1.052,
+      "power": 205.4
+    },
+    {
+      "name": "Pedro Sánchez",
+      "role": "PM, Spain",
+      "category": "National",
+      "jurisdiction": "Spain",
+      "jscore": 308.9,
+      "weight": 0.629,
+      "power": 194.2
+    },
+    {
+      "name": "Andrew Bailey",
+      "role": "Governor of the Bank of England",
+      "category": "Central bank",
+      "jurisdiction": "United Kingdom",
+      "jscore": 545.7,
+      "weight": 0.35,
+      "power": 191.0
+    },
+    {
+      "name": "Larry Page",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "jscore": 311.7,
+      "weight": 0.6,
+      "power": 187.0
+    },
+    {
+      "name": "Mark Carney",
+      "role": "PM, Canada",
+      "category": "National",
+      "jurisdiction": "Canada",
+      "jscore": 289.9,
+      "weight": 0.628,
+      "power": 182.1
+    },
+    {
+      "name": "Gavin Newsom",
+      "role": "Governor, California",
+      "category": "Sub-national",
+      "jurisdiction": "California",
+      "jscore": 326.1,
+      "weight": 0.55,
+      "power": 179.4
+    },
+    {
+      "name": "Sergey Brin",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "jscore": 287.4,
+      "weight": 0.6,
+      "power": 172.5
+    },
+    {
+      "name": "Jeff Bezos",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "jscore": 278.5,
+      "weight": 0.6,
+      "power": 167.1
+    },
+    {
+      "name": "⚠️ Mojtaba Khamenei",
+      "role": "Sup. Leader, Iran",
+      "category": "National",
+      "jurisdiction": "Iran",
+      "jscore": 55.0,
+      "weight": 2.868,
+      "power": 157.6
+    },
+    {
+      "name": "Mohamed bin Zayed Al Nahyan",
+      "role": "Pres., United Arab Emirates",
+      "category": "National",
+      "jurisdiction": "United Arab Emirates",
+      "jscore": 101.3,
+      "weight": 1.538,
+      "power": 155.8
+    },
+    {
+      "name": "Anthony Albanese",
+      "role": "PM, Australia",
+      "category": "National",
+      "jurisdiction": "Australia",
+      "jscore": 255.3,
+      "weight": 0.602,
+      "power": 153.7
+    },
+    {
+      "name": "Ngozi Okonjo-Iweala",
+      "role": "WTO Director-General",
+      "category": "Org",
+      "jurisdiction": "WTO",
+      "jscore": 12672.7,
+      "weight": 0.012,
+      "power": 152.1
+    },
+    {
+      "name": "Mark Rutte",
+      "role": "NATO Secretary General",
+      "category": "Org",
+      "jurisdiction": "NATO",
+      "jscore": 6039.3,
+      "weight": 0.025,
+      "power": 151.0
+    },
+    {
+      "name": "⚠️ Benjamin Netanyahu",
+      "role": "PM, Israel",
+      "category": "National",
+      "jurisdiction": "Israel",
+      "jscore": 58.6,
+      "weight": 2.455,
+      "power": 143.8
+    },
+    {
+      "name": "⚠️ Recep Tayyip Erdoğan",
+      "role": "Pres., Turkey",
+      "category": "National",
+      "jurisdiction": "Turkey",
+      "jscore": 149.1,
+      "weight": 0.946,
+      "power": 140.9
+    },
+    {
+      "name": "Prabowo Subianto",
+      "role": "Pres., Indonesia",
+      "category": "National",
+      "jurisdiction": "Indonesia",
+      "jscore": 117.7,
+      "weight": 1.168,
+      "power": 137.4
+    },
+    {
+      "name": "Larry Ellison",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "jscore": 226.1,
+      "weight": 0.6,
+      "power": 135.7
+    },
+    {
+      "name": "Lee Jae-myung",
+      "role": "Pres., South Korea",
+      "category": "National",
+      "jurisdiction": "South Korea",
+      "jscore": 194.8,
+      "weight": 0.686,
+      "power": 133.8
+    },
+    {
+      "name": "Zohran Mamdani",
+      "role": "Mayor of New York",
+      "category": "Mayor",
+      "jurisdiction": "New York",
+      "jscore": 181.7,
+      "weight": 0.72,
+      "power": 130.8
+    },
+    {
+      "name": "Sadiq Khan",
+      "role": "Mayor of London",
+      "category": "Mayor",
+      "jurisdiction": "London",
+      "jscore": 180.2,
+      "weight": 0.72,
+      "power": 129.7
+    },
+    {
+      "name": "Xin Changxing",
+      "role": "Party Secretary, Jiangsu",
+      "category": "Sub-national",
+      "jurisdiction": "Jiangsu",
+      "jscore": 158.3,
+      "weight": 0.8,
+      "power": 126.6
+    },
+    {
+      "name": "Volodymyr Zelensky",
+      "role": "Pres., Ukraine",
+      "category": "National",
+      "jurisdiction": "Ukraine",
+      "jscore": 35.7,
+      "weight": 3.54,
+      "power": 126.5
+    },
+    {
+      "name": "Mark Zuckerberg",
+      "role": "Billionaire (Technology)",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "jscore": 209.5,
+      "weight": 0.6,
+      "power": 125.7
+    },
+    {
+      "name": "Kazuo Ueda",
+      "role": "Governor of the Bank of Japan",
+      "category": "Central bank",
+      "jurisdiction": "Japan",
+      "jscore": 356.1,
+      "weight": 0.35,
+      "power": 124.6
+    },
+    {
+      "name": "Greg Abbott",
+      "role": "Governor, Texas",
+      "category": "Sub-national",
+      "jurisdiction": "Texas",
+      "jscore": 211.4,
+      "weight": 0.55,
+      "power": 116.3
+    },
+    {
+      "name": "⚠️ Kim Jong-un",
+      "role": "Sup. Leader, North Korea",
+      "category": "National",
+      "jurisdiction": "North Korea",
+      "jscore": 60,
+      "weight": 1.875,
+      "power": 112.5
+    },
+    {
+      "name": "Sanjay Malhotra",
+      "role": "Governor of the Reserve Bank of India",
+      "category": "Central bank",
+      "jurisdiction": "India",
+      "jscore": 312.8,
+      "weight": 0.35,
+      "power": 109.5
+    }
+  ]
+}
