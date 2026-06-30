@@ -502,6 +502,11 @@ export default async function CountryDetailPage({ params }: Props) {
           {stateGroups.length > 0 ? (
             <section className="mb-12" id="subdivisions">
               <h2 className="text-xl font-bold mb-3">{stateSectionTitle}</h2>
+              {slug === "united-states" ? (
+                <Link href="/governors" className="inline-block mb-3 text-sm font-medium text-[var(--accent)] hover:underline">
+                  View all 50 state governors and US territory governors →
+                </Link>
+              ) : null}
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 {states.length} {states.length === 1 ? "entry" : "entries"} listed under {country.name}
                 {stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""}

@@ -1,0 +1,291 @@
+{
+  "states": {
+    "alabama": {
+      "name": "Kay Ivey",
+      "party": "Republican",
+      "since": "2017-04-10"
+    },
+    "alaska": {
+      "name": "Mike Dunleavy",
+      "party": "Republican",
+      "since": "2018-12-03"
+    },
+    "arizona": {
+      "name": "Katie Hobbs",
+      "party": "Democratic",
+      "since": "2023-01-02"
+    },
+    "arkansas": {
+      "name": "Sarah Huckabee Sanders",
+      "party": "Republican",
+      "since": "2023-01-10"
+    },
+    "california": {
+      "name": "Gavin Newsom",
+      "party": "Democratic",
+      "since": "2019-01-07"
+    },
+    "colorado": {
+      "name": "Jared Polis",
+      "party": "Democratic",
+      "since": "2019-01-08"
+    },
+    "connecticut": {
+      "name": "Ned Lamont",
+      "party": "Democratic",
+      "since": "2019-01-09"
+    },
+    "delaware": {
+      "name": "Matt Meyer",
+      "party": "Democratic",
+      "since": "2025-01-21"
+    },
+    "florida-united-states": {
+      "name": "Ron DeSantis",
+      "party": "Republican",
+      "since": "2019-01-08"
+    },
+    "georgia": {
+      "name": "Brian Kemp",
+      "party": "Republican",
+      "since": "2019-01-14"
+    },
+    "hawaii": {
+      "name": "Josh Green",
+      "party": "Democratic",
+      "since": "2022-12-05"
+    },
+    "idaho": {
+      "name": "Brad Little",
+      "party": "Republican",
+      "since": "2019-01-07"
+    },
+    "illinois": {
+      "name": "JB Pritzker",
+      "party": "Democratic",
+      "since": "2019-01-14"
+    },
+    "indiana": {
+      "name": "Mike Braun",
+      "party": "Republican",
+      "since": "2025-01-13"
+    },
+    "iowa": {
+      "name": "Kim Reynolds",
+      "party": "Republican",
+      "since": "2017-05-24"
+    },
+    "kansas": {
+      "name": "Laura Kelly",
+      "party": "Democratic",
+      "since": "2019-01-14"
+    },
+    "kentucky": {
+      "name": "Andy Beshear",
+      "party": "Democratic",
+      "since": "2019-12-10"
+    },
+    "louisiana": {
+      "name": "Jeff Landry",
+      "party": "Republican",
+      "since": "2024-01-08"
+    },
+    "maine": {
+      "name": "Janet Mills",
+      "party": "Democratic",
+      "since": "2019-01-02"
+    },
+    "maryland-united-states": {
+      "name": "Wes Moore",
+      "party": "Democratic",
+      "since": "2023-01-18"
+    },
+    "massachusetts": {
+      "name": "Maura Healey",
+      "party": "Democratic",
+      "since": "2023-01-05"
+    },
+    "michigan": {
+      "name": "Gretchen Whitmer",
+      "party": "Democratic",
+      "since": "2019-01-01"
+    },
+    "minnesota": {
+      "name": "Tim Walz",
+      "party": "Democratic",
+      "since": "2019-01-07"
+    },
+    "mississippi": {
+      "name": "Tate Reeves",
+      "party": "Republican",
+      "since": "2020-01-14"
+    },
+    "missouri": {
+      "name": "Mike Kehoe",
+      "party": "Republican",
+      "since": "2025-01-13"
+    },
+    "montana-united-states": {
+      "name": "Greg Gianforte",
+      "party": "Republican",
+      "since": "2021-01-04"
+    },
+    "nebraska": {
+      "name": "Jim Pillen",
+      "party": "Republican",
+      "since": "2023-01-05"
+    },
+    "nevada": {
+      "name": "Joe Lombardo",
+      "party": "Republican",
+      "since": "2023-01-02"
+    },
+    "new-hampshire": {
+      "name": "Kelly Ayotte",
+      "party": "Republican",
+      "since": "2025-01-09"
+    },
+    "new-jersey": {
+      "name": "Mikie Sherrill",
+      "party": "Democratic",
+      "since": "2026-01-20"
+    },
+    "new-mexico": {
+      "name": "Michelle Lujan Grisham",
+      "party": "Democratic",
+      "since": "2019-01-01"
+    },
+    "new-york": {
+      "name": "Kathy Hochul",
+      "party": "Democratic",
+      "since": "2021-08-24"
+    },
+    "north-carolina": {
+      "name": "Josh Stein",
+      "party": "Democratic",
+      "since": "2025-01-01"
+    },
+    "north-dakota": {
+      "name": "Kelly Armstrong",
+      "party": "Republican",
+      "since": "2024-12-15"
+    },
+    "ohio": {
+      "name": "Mike DeWine",
+      "party": "Republican",
+      "since": "2019-01-14"
+    },
+    "oklahoma": {
+      "name": "Kevin Stitt",
+      "party": "Republican",
+      "since": "2019-01-14"
+    },
+    "oregon": {
+      "name": "Tina Kotek",
+      "party": "Democratic",
+      "since": "2023-01-09"
+    },
+    "pennsylvania": {
+      "name": "Josh Shapiro",
+      "party": "Democratic",
+      "since": "2023-01-17"
+    },
+    "rhode-island": {
+      "name": "Dan McKee",
+      "party": "Democratic",
+      "since": "2021-03-02"
+    },
+    "south-carolina": {
+      "name": "Henry McMaster",
+      "party": "Republican",
+      "since": "2017-01-24"
+    },
+    "south-dakota": {
+      "name": "Larry Rhoden",
+      "party": "Republican",
+      "since": "2025-01-25"
+    },
+    "tennessee": {
+      "name": "Bill Lee",
+      "party": "Republican",
+      "since": "2019-01-19"
+    },
+    "texas": {
+      "name": "Greg Abbott",
+      "party": "Republican",
+      "since": "2015-01-20"
+    },
+    "utah": {
+      "name": "Spencer Cox",
+      "party": "Republican",
+      "since": "2021-01-04"
+    },
+    "vermont": {
+      "name": "Phil Scott",
+      "party": "Republican",
+      "since": "2017-01-05"
+    },
+    "virginia": {
+      "name": "Abigail Spanberger",
+      "party": "Democratic",
+      "since": "2026-01-17"
+    },
+    "washington": {
+      "name": "Bob Ferguson",
+      "party": "Democratic",
+      "since": "2025-01-15"
+    },
+    "west-virginia": {
+      "name": "Patrick Morrisey",
+      "party": "Republican",
+      "since": "2025-01-13"
+    },
+    "wisconsin": {
+      "name": "Tony Evers",
+      "party": "Democratic",
+      "since": "2019-01-07"
+    },
+    "wyoming": {
+      "name": "Mark Gordon",
+      "party": "Republican",
+      "since": "2019-01-07"
+    }
+  },
+  "territories": {
+    "puerto-rico": {
+      "name": "Jenniffer González-Colón",
+      "title": "Governor",
+      "party": "New Progressive Party (PNP)",
+      "since": "2025-01-02",
+      "countryName": "Puerto Rico"
+    },
+    "guam": {
+      "name": "Lou Leon Guerrero",
+      "title": "Governor",
+      "party": "Democratic",
+      "since": "2019-01-07",
+      "countryName": "Guam"
+    },
+    "us-virgin-islands": {
+      "name": "Albert Bryan",
+      "title": "Governor",
+      "party": "Democratic",
+      "since": "2019-01-07",
+      "countryName": "US Virgin Islands"
+    },
+    "american-samoa": {
+      "name": "Pula Nikolao Pula",
+      "title": "Governor",
+      "party": "Republican",
+      "since": "2025-01-03",
+      "countryName": "American Samoa"
+    },
+    "northern-mariana-islands": {
+      "name": "David M. Apatang",
+      "title": "Governor",
+      "party": "Republican",
+      "since": "2025-07-23",
+      "countryName": "Northern Mariana Islands"
+    }
+  }
+}

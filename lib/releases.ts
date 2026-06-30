@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-06-30",
-    headline: "Leadership for organisations, three new states, and realm fixes",
+    headline: "Org leaders, three new states, realm fixes, and US governors",
     items: [
       "The Alliances & Organisations hub now shows each body's current leader and a full leadership history for NATO, the UN, and the European Union.",
       "Added current leaders and leadership histories for Palestine, Kosovo, and Vatican City \u2014 the latter tracing every pope from Saint Peter to Leo XIV.",
       "Commonwealth realms now list the head of government first with King Charles III as shared monarch, correcting entries that previously showed only the Crown.",
-      "Current-leader coverage now extends to nearly every sovereign state in the Countries directory.",
+      "US governors now appear on each state hub, with a new Governors page covering all 50 states and the five US territories by party and start date.",
     ],
   },
   {

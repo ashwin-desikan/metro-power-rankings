@@ -17,6 +17,11 @@
     "role": "Pres.",
     "since": "2019-12-19"
   },
+  "american-samoa": {
+    "name": "Pula Nikolao Pula",
+    "role": "Governor",
+    "since": "2025-01-03"
+  },
   "andorra": {
     "name": "Xavier Espot Zamora",
     "role": "PM",
@@ -163,8 +168,9 @@
     "since": "2023-01-01"
   },
   "brunei": {
-    "name": "Hassanal Bolkiah I of Brunei",
-    "role": "Pres."
+    "name": "👑 Hassanal Bolkiah",
+    "role": "Monarch",
+    "since": "1967-10-05"
   },
   "bulgaria": {
     "name": "Rumen Radev",
@@ -454,6 +460,11 @@
       "role": "Monarch"
     },
     "since": "2022-06-24"
+  },
+  "guam": {
+    "name": "Lou Leon Guerrero",
+    "role": "Governor",
+    "since": "2019-01-07"
   },
   "guatemala": {
     "name": "Bernardo Arévalo de León",
@@ -822,7 +833,7 @@
     "since": "2023-10-27"
   },
   "nicaragua": {
-    "name": "sapo cara picha",
+    "name": "Daniel Ortega",
     "role": "Pres.",
     "since": "2007-01-10"
   },
@@ -849,6 +860,11 @@
       "role": "Pres."
     },
     "since": "2024-06-23"
+  },
+  "northern-mariana-islands": {
+    "name": "David M. Apatang",
+    "role": "Governor",
+    "since": "2025-07-23"
   },
   "norway": {
     "name": "Jonas Gahr Støre",
@@ -929,6 +945,11 @@
       "role": "Pres."
     },
     "since": "2024-04-02"
+  },
+  "puerto-rico": {
+    "name": "Jenniffer González-Colón",
+    "role": "Governor",
+    "since": "2025-01-02"
   },
   "qatar": {
     "name": "Mohammed bin Abdulrahman Al Thani",
@@ -1153,8 +1174,8 @@
     "since": "2025-05-03"
   },
   "tonga": {
-    "name": "Tupou VI of Tonga",
-    "role": "Pres.",
+    "name": "👑 Tupou VI",
+    "role": "Monarch",
     "since": "2012-03-18"
   },
   "trinidad-tobago": {
@@ -1223,6 +1244,11 @@
     "name": "Yamandú Orsi",
     "role": "Pres.",
     "since": "2025-03-01"
+  },
+  "us-virgin-islands": {
+    "name": "Albert Bryan",
+    "role": "Governor",
+    "since": "2019-01-07"
   },
   "uzbekistan": {
     "name": "Shavkat Mirziyoyev",

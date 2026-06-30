@@ -8,6 +8,7 @@ import {
 } from "@/lib/states";
 import { getCountry, getCountryByName } from "@/lib/countries";
 import StateMap from "./StateMap";
+import { getStateGovernor } from "@/lib/governors";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
 import {
@@ -94,6 +95,7 @@ function CapitalBadge() {
 export default async function StateDetailPage({ params }: Props) {
   const { slug } = await params;
   const state = getState(slug);
+  const governor = getStateGovernor(slug);
   if (!state) notFound();
 
   const metros = getMetrosForState(slug);
@@ -239,6 +241,12 @@ export default async function StateDetailPage({ params }: Props) {
               {state.capital ? (
                 <span>
                   <span className="text-[var(--text-dim)]">Capital:</span> {state.capital}
+                </span>
+              ) : null}
+              {governor ? (
+                <span>
+                  <span className="text-[var(--text-dim)]">Governor:</span> {governor.name}
+                  <span className="text-[var(--text-dim)]"> ({governor.party})</span>
                 </span>
               ) : null}
               {state.subRegion ? (
