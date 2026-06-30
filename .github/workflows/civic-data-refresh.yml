@@ -54,6 +54,7 @@ jobs:
         run: python scripts/civic/refresh_congress.py
 
       - name: Mayors (top-100 primary cities - probe/refresh)
+        continue-on-error: true
         run: python scripts/civic/refresh_mayors.py
 
       - name: Commit safe auto changes to main

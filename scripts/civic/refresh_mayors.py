@@ -25,10 +25,15 @@ def top_metros():
 def esc(s): return (s or "").replace("\\", "").replace('"', '\\"')
 
 def resolve_all(metros):
-    """One batched query: VALUES(slug, city, country) -> current mayor."""
-    values = "\n".join(
-        f'    ("{esc(m["slug"])}" "{esc(m["city"])}" "{esc(m["country"])}")' for m in metros)
-    q = f"""SELECT ?key ?mayorLabel ?start WHERE {{
+    """Chunked batched queries (small VALUES sets) so WDQS never 504s on one
+    huge label-filter query. A failed chunk is skipped, not fatal."""
+    out = {}
+    CHUNK = 12
+    for i in range(0, len(metros), CHUNK):
+        chunk = metros[i:i + CHUNK]
+        values = "\n".join(
+            f'    ("{esc(m["slug"])}" "{esc(m["city"])}" "{esc(m["country"])}")' for m in chunk)
+        q = f"""SELECT ?key ?mayorLabel ?start WHERE {{
       VALUES (?key ?cityLabel ?countryLabel) {{
 {values}
       }}
@@ -39,12 +44,16 @@ def resolve_all(metros):
       OPTIONAL {{ ?st pq:P580 ?start }}
       SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
     }}"""
-    out = {}
-    for b in sparql(q, timeout=120):
-        key = b.get("key", {}).get("value", "")
-        nm = b.get("mayorLabel", {}).get("value", "")
-        if key and key not in out and sanity_ok(nm):
-            out[key] = {"mayor": nm, "since": (b.get("start", {}).get("value", "") or "")[:10]}
+        try:
+            rows = sparql(q, timeout=60)
+        except Exception as e:
+            print(f"  mayors chunk {i // CHUNK} failed ({e}); skipping")
+            continue
+        for b in rows:
+            key = b.get("key", {}).get("value", "")
+            nm = b.get("mayorLabel", {}).get("value", "")
+            if key and key not in out and sanity_ok(nm):
+                out[key] = {"mayor": nm, "since": (b.get("start", {}).get("value", "") or "")[:10]}
     return out
 
 def build(metros, resolved, overrides):
@@ -59,11 +68,14 @@ def build(metros, resolved, overrides):
 
 def main():
     metros = top_metros()
-    resolved = resolve_all(metros)
+    try:
+        resolved = resolve_all(metros)
+    except Exception as e:
+        print(f"mayors refresh error ({e}); keeping existing mayors.json."); return
+    if not resolved:
+        print("No mayors resolved this run; keeping existing mayors.json."); return
     overrides = load_json(OVR, {})
     out = build(metros, resolved, overrides)
-    if not out:
-        print("ABORT: 0 mayors resolved; writing nothing."); return
     write_json(OUT, out, sort_keys=True)
     miss = [f"{m['city']} ({m['country']})" for m in metros if m["slug"] not in resolved]
     print(f"COVERAGE: {len(resolved)}/{len(metros)} from Wikidata; {len(out)} total after {len(overrides)} overrides.")
