@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-29T23:55:27Z",
+ "as_of": "2026-06-30T10:12:16Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -675,6 +675,15 @@
    "b_slug": "paraguay",
    "b_score": 1,
    "winner_slug": "paraguay",
+   "completed": true
+  },
+  "apisports-1562345": {
+   "round": "Round of 32",
+   "a_slug": "netherlands",
+   "a_score": 1,
+   "b_slug": "morocco",
+   "b_score": 1,
+   "winner_slug": "morocco",
    "completed": true
   }
  }

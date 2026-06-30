@@ -628,15 +628,15 @@
         "team_slug": "netherlands",
         "opp_cur_name": "Morocco",
         "opp_slug": "morocco",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 1,
+        "opp_score": 1,
         "penalty_kicks": null,
-        "result": null,
+        "result": "L",
         "stadium": "Estadio BBVA",
         "stad_country": "Mexico",
         "stad_metro": "Monterrey",
         "date": "2026-06-29",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "Germany",
