@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-06-30T10:12:16Z",
+ "as_of": "2026-07-01T00:15:47Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -684,6 +684,24 @@
    "b_slug": "morocco",
    "b_score": 1,
    "winner_slug": "morocco",
+   "completed": true
+  },
+  "apisports-1564789": {
+   "round": "Round of 32",
+   "a_slug": "cote-d-ivoire",
+   "a_score": 1,
+   "b_slug": "norway",
+   "b_score": 2,
+   "winner_slug": "norway",
+   "completed": true
+  },
+  "apisports-1565177": {
+   "round": "Round of 32",
+   "a_slug": "france",
+   "a_score": 3,
+   "b_slug": "sweden",
+   "b_score": 0,
+   "winner_slug": "france",
    "completed": true
   }
  }

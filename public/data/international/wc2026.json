@@ -673,15 +673,15 @@
         "team_slug": "cote-d-ivoire",
         "opp_cur_name": "Norway",
         "opp_slug": "norway",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 1,
+        "opp_score": 2,
         "penalty_kicks": null,
-        "result": null,
+        "result": "L",
         "stadium": "AT&T Stadium",
         "stad_country": "United States",
         "stad_metro": "Arlington",
         "date": "2026-06-30",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "Mexico",
@@ -703,15 +703,15 @@
         "team_slug": "france",
         "opp_cur_name": "Sweden",
         "opp_slug": "sweden",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 3,
+        "opp_score": 0,
         "penalty_kicks": null,
-        "result": null,
+        "result": "W",
         "stadium": "MetLife Stadium",
         "stad_country": "United States",
         "stad_metro": "New York",
         "date": "2026-06-30",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "United States",
