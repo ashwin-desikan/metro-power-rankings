@@ -21,6 +21,7 @@ export const RELEASES: Release[] = [
     date: "2026-07-01",
     headline: "World Cup results now go live within the half-hour",
     items: [
+      "The Geography and Sports menus were reorganised: Geography now groups places, power and people, and geopolitics, and Sports opens to the full league directory by sport family plus every cross-sport tool.",
       "World Cup results now update from the live feed within about 30 minutes of full time, and the knockout bracket advances winners into the next round on the same cycle, no longer waiting on a daily run.",
       "The title and advancement odds still recompute each morning, so the model stays stable while the scoreboard stays current.",
     ],

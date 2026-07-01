@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { leagueStatusFor, clubFootballStatus, LeagueStatusTag, type LeagueStatus } from "@/lib/leagueStatus";
-import { MARQUEE_HUBS } from "@/lib/sportsCatalog";
+import { catalogByFamily, boardLabelFor, SPORTS_FEATURES, type CatalogEntry } from "@/lib/sportsCatalog";
 
 // Client-side desktop nav. Replaces the pure-CSS hover dropdowns that were
 // failing on touch and slow-hover environments. Each dropdown is now a
@@ -11,10 +11,9 @@ import { MARQUEE_HUBS } from "@/lib/sportsCatalog";
 // closes. Hover still works on desktop (mouseenter opens; the menu does
 // not close on mouseleave because click-to-open users expect it to stay).
 //
-// The Sports dropdown is a curated shortcut, not the full catalog: it shows
-// the marquee hubs (see lib/sportsCatalog) and routes to /sports for the
-// complete, family-grouped league directory. That keeps the menu short as the
-// number of league portals grows.
+// Geography and Sports are grouped mega-menus (multi-column, section
+// headers). The Sports directory is generated from lib/sportsCatalog, so the
+// desktop menu, the mobile menu and /sports never drift as leagues are added.
 
 type DropdownProps = {
   id: string;
@@ -22,13 +21,13 @@ type DropdownProps = {
   openId: string | null;
   setOpenId: (id: string | null) => void;
   children: React.ReactNode;
+  minWidth?: number;
 };
 
-function Dropdown({ id, label, openId, setOpenId, children }: DropdownProps) {
+function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260 }: DropdownProps) {
   const isOpen = openId === id;
   const wrapRef = useRef<HTMLDivElement | null>(null);
 
-  // Close on outside click for any dropdown that is open.
   useEffect(() => {
     if (!isOpen) return;
     const onClick = (e: MouseEvent) => {
@@ -70,7 +69,7 @@ function Dropdown({ id, label, openId, setOpenId, children }: DropdownProps) {
       {isOpen && (
         <div
           className="absolute right-0 top-full pt-2"
-          style={{ minWidth: "260px" }}
+          style={{ minWidth: `${minWidth}px`, maxWidth: "calc(100vw - 2rem)" }}
         >
           <div
             className="border rounded-md shadow-xl backdrop-blur-md overflow-hidden"
@@ -124,44 +123,75 @@ const NAV_TONE_COLOR: Record<string, string> = {
   offseason: "#55556A",
 };
 
-function navShortStatus(label: string): string {
-  return label.replace(/^Live\s*-\s*/, "");
+function MenuGroupLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="px-2 pt-2 pb-1 text-[10px] uppercase tracking-wider"
+      style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+    >
+      {children}
+    </div>
+  );
 }
 
-// Compact Sports-menu item: a status dot + name + sport + short live-status,
-// mirroring the /sports League hubs list. Replaces the wordy hint lines.
-function SportsNavItem({ href, name, sport }: { href: string; name: string; sport: string }) {
-  const status: LeagueStatus | null =
-    href === "/teams/football" ? clubFootballStatus() : leagueStatusFor(href);
-  const tone = status?.tone ?? "offseason";
-  const color = NAV_TONE_COLOR[tone];
+function MenuLink({
+  href,
+  title,
+  external,
+}: {
+  href: string;
+  title: string;
+  external?: boolean;
+}) {
   return (
     <a
       href={href}
-      className="flex items-center gap-2.5 px-4 py-2 hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="block px-2 py-1.5 rounded text-sm hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
     >
-      <span
-        className="inline-block rounded-full flex-shrink-0"
-        style={{ width: 7, height: 7, background: color }}
-        aria-hidden="true"
-      />
-      <span className="flex-1 min-w-0">
-        <span className="block text-sm leading-tight">{name}</span>
-        <span className="block text-[11px] leading-tight" style={{ color: "var(--text-dim)" }}>{sport}</span>
-      </span>
-      {status && (
-        <span className="text-[10px] whitespace-nowrap" style={{ color }}>
-          {navShortStatus(status.label)}
-        </span>
+      {title}
+      {external ? <span className="ml-1 text-[var(--text-dim)]" aria-hidden>↗</span> : null}
+    </a>
+  );
+}
+
+function SportsFeatureLink({ href, label, live }: { href: string; label: string; live?: boolean }) {
+  return (
+    <a
+      href={href}
+      className="flex items-center gap-2 px-2 py-1.5 rounded text-[13px] hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+    >
+      {live && (
+        <span className="inline-block rounded-full flex-shrink-0" style={{ width: 6, height: 6, background: "#10b981" }} aria-hidden />
       )}
+      <span>{label}</span>
+    </a>
+  );
+}
+
+function SportsMegaItem({ entry }: { entry: CatalogEntry }) {
+  const status: LeagueStatus | null =
+    entry.href === "/teams/football" ? clubFootballStatus() : leagueStatusFor(entry.href);
+  const active = !!status && status.tone !== "offseason";
+  const color = status ? NAV_TONE_COLOR[status.tone] : undefined;
+  return (
+    <a
+      href={entry.href}
+      className="flex items-center gap-1.5 px-2 py-1 rounded text-[13px] hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+    >
+      {active && (
+        <span className="inline-block rounded-full flex-shrink-0" style={{ width: 6, height: 6, background: color }} aria-hidden />
+      )}
+      <span>{boardLabelFor(entry)}</span>
     </a>
   );
 }
 
 export default function DesktopNav({ updated }: { updated: string | null }) {
   const [openId, setOpenId] = useState<string | null>(null);
+  const sportsFamilies = catalogByFamily(false);
 
-  // Close any open dropdown on escape.
   useEffect(() => {
     if (!openId) return;
     const onKey = (e: KeyboardEvent) => {
@@ -177,45 +207,62 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         Rankings
       </a>
 
-      <Dropdown id="data" label="Geography" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/expandable-map" title="Expandable Map" hint="Full-corpus interactive map; resizable canvas, persistent filters and viewport" />
-        <DropdownItem href="/compare" title="Compare" hint="Side-by-side any 2 to 4 metros" />
-        <DropdownItem href="/countries" title="Countries" hint="Population, metros, and composite score by country" />
-        <DropdownItem href="/orgs" title="Alliances & Orgs" hint="International organisation memberships by country" />
-        <DropdownItem href="/conflicts" title="Interstate Wars" hint="Wars between states since 1945" />
-        <DropdownItem href="/billionaires" title="Billionaires" hint="Forbes real-time billionaires by country" />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/badges" title="Badges" hint="Categorical lenses over the dataset" />
-        <DropdownItem href="/matchups/london-vs-new-york" title="Matchups" hint="Head-to-head metro pages" />
-        <DropdownItem href="/random" title="🎲 Random metro" hint="Tier-weighted random pick" />
+      <Dropdown id="data" label="Geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
+        <div className="p-2 grid grid-cols-2 gap-x-4">
+          <div>
+            <MenuGroupLabel>Places &amp; directories</MenuGroupLabel>
+            <MenuLink href="/countries" title="Countries" />
+            <MenuLink href="/states" title="States &amp; Provinces" />
+            <MenuLink href="/expandable-map" title="Expandable Map" />
+            <MenuLink href="/compare" title="Compare metros" />
+            <MenuLink href="/matchups/london-vs-new-york" title="Matchups" />
+          </div>
+          <div>
+            <MenuGroupLabel>Power &amp; people</MenuGroupLabel>
+            <MenuLink href="/power" title="The 50 Most Powerful People" />
+            <MenuLink href="/billionaires" title="Billionaires" />
+            <MenuLink href="/us-political-leadership" title="US Political Leadership" />
+            <MenuLink href="/mayors" title="Mayors of the World" />
+            <MenuGroupLabel>Geopolitics</MenuGroupLabel>
+            <MenuLink href="/orgs" title="Alliances &amp; Orgs" />
+            <MenuLink href="/conflicts" title="Interstate Wars" />
+          </div>
+        </div>
+        <div className="border-t px-2 py-1.5 flex gap-2" style={{ borderColor: "var(--border)" }}>
+          <MenuLink href="/badges" title="Badges" />
+          <MenuLink href="/random" title="🎲 Random metro" />
+        </div>
       </Dropdown>
 
-      <Dropdown id="sports" label="Sports" openId={openId} setOpenId={setOpenId}>
-        <a
-          href="/sports"
-          className="block px-4 py-2.5 text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-        >
-          Zone Zero Sports Hub <span aria-hidden className="text-[var(--text-dim)]">→</span>
-        </a>
-        <a
-          href="/sports/standings"
-          className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-        >
-          <span className="inline-block rounded-full flex-shrink-0" style={{ width: 7, height: 7, background: "#10b981" }} aria-hidden />
-          Live Standings <span aria-hidden className="text-[var(--text-dim)]">→</span>
-        </a>
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        {MARQUEE_HUBS.map((e) => (
-          <SportsNavItem key={e.href} href={e.href} name={e.label} sport={e.sport} />
-        ))}
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <a
-          href="/sports#league-directory"
-          className="block px-4 py-2.5 text-xs hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
-          style={{ color: "var(--text-muted)" }}
-        >
-          Browse all leagues <span aria-hidden>→</span>
-        </a>
+      <Dropdown id="sports" label="Sports" openId={openId} setOpenId={setOpenId} minWidth={660}>
+        <div className="grid" style={{ gridTemplateColumns: "210px 1fr" }}>
+          <div className="p-2 border-r" style={{ borderColor: "var(--border)" }}>
+            <a
+              href="/sports"
+              className="block px-2 py-1.5 rounded text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+            >
+              Zone Zero Sports Hub <span aria-hidden className="text-[var(--text-dim)]">→</span>
+            </a>
+            <MenuGroupLabel>Across all sports</MenuGroupLabel>
+            {SPORTS_FEATURES.map((f) => (
+              <SportsFeatureLink key={f.href} href={f.href} label={f.label} live={f.live} />
+            ))}
+          </div>
+          <div className="p-2" style={{ columnCount: 3, columnGap: "0.75rem" }}>
+            {sportsFamilies.map((g) => (
+              <div key={g.family} className="mb-1.5" style={{ breakInside: "avoid" }}>
+                <MenuGroupLabel>{g.family}</MenuGroupLabel>
+                {g.entries.map((e) => (
+                  <SportsMegaItem key={e.href} entry={e} />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="border-t px-3 py-2 flex gap-4 text-xs" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+          <a href="/sports" className="hover:text-[var(--accent)] transition-colors">Open the sports map <span aria-hidden>→</span></a>
+          <a href="/sports#league-directory" className="hover:text-[var(--accent)] transition-colors">Browse all leagues <span aria-hidden>→</span></a>
+        </div>
       </Dropdown>
 
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>

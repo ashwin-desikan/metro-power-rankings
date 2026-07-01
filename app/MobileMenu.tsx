@@ -1,83 +1,143 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { leagueStatusFor, LeagueStatusTag } from '@/lib/leagueStatus';
-import { MARQUEE_HUBS } from '@/lib/sportsCatalog';
+import { leagueStatusFor, clubFootballStatus } from '@/lib/leagueStatus';
+import { catalogByFamily, boardLabelFor, SPORTS_FEATURES } from '@/lib/sportsCatalog';
 
-// Mobile-only disclosure menu. The desktop nav in SiteNav.tsx is hidden
-// below md (768px); this component fills that gap so phone users can reach
-// every page that lives in the top nav. Flat list rather than nested
-// dropdowns because nested menus on mobile feel cramped on a thumb.
-//
-// The Sports section is derived from lib/sportsCatalog (the same registry the
-// desktop nav and /sports use), ordered by sport family, so the three surfaces
-// never drift apart.
+// Mobile-only menu. The desktop nav in SiteNav.tsx is hidden below md (768px);
+// this fills that gap. It mirrors the desktop mega-menus as collapsible
+// top-level sections: the panel opens to a short list of section headers, and
+// each expands to reveal its grouped contents. The Sports section (features +
+// every league family) and Geography groups are generated from the same
+// sources the desktop nav uses (lib/sportsCatalog), so the surfaces never drift.
 
-type Item = {
-  href: string;
-  label: string;
-  hint?: string;
-  external?: boolean;
-  group?: string;
+type Leaf = { href: string; label: string; hint?: string; external?: boolean; live?: boolean };
+type SubGroup = { label?: string; items: Leaf[] };
+type Section =
+  | { kind: 'link'; href: string; label: string; external?: boolean }
+  | { kind: 'group'; id: string; label: string; groups: SubGroup[] };
+
+const NAV_TONE_COLOR: Record<string, string> = {
+  regular: '#10b981',
+  playoffs: '#f59e0b',
+  worldcup: '#a855f7',
+  offseason: '#55556A',
 };
 
-// Sports entries from the shared catalog, ordered by family, shipped hubs only.
-const SPORTS_ITEMS: Item[] = [
-  { href: '/sports', label: 'Zone Zero Sports Hub', group: 'Sports' },
-  { href: '/sports/standings', label: 'Live Standings', group: 'Sports' },
-  // Marquee hubs only, mirroring the desktop Sports dropdown (DesktopNav).
-  // Both surfaces read MARQUEE_HUBS so they stay in sync; sport shown as a
-  // short sub-label instead of the long hint. Full directory lives at /sports.
-  ...MARQUEE_HUBS.map((e) => ({
-    href: e.href,
-    label: e.label,
-    hint: e.sport,
-    group: 'Sports',
-  })),
-  { href: '/sports#league-directory', label: 'Browse all leagues \u2192', group: 'Sports' },
-];
+function leafDotColor(leaf: Leaf): string | null {
+  if (leaf.live) return '#10b981';
+  const s = leaf.href === '/teams/football' ? clubFootballStatus() : leagueStatusFor(leaf.href);
+  if (s && s.tone !== 'offseason') return NAV_TONE_COLOR[s.tone];
+  return null;
+}
 
-const ITEMS: Item[] = [
-  { href: '/#rankings', label: 'Rankings', hint: 'Top metros by composite score' },
+function buildSections(): Section[] {
+  const geography: SubGroup[] = [
+    {
+      label: 'Places & directories',
+      items: [
+        { href: '/countries', label: 'Countries' },
+        { href: '/states', label: 'States & Provinces' },
+        { href: '/expandable-map', label: 'Expandable Map' },
+        { href: '/compare', label: 'Compare metros' },
+        { href: '/matchups/london-vs-new-york', label: 'Matchups' },
+      ],
+    },
+    {
+      label: 'Power & people',
+      items: [
+        { href: '/power', label: 'The 50 Most Powerful People' },
+        { href: '/billionaires', label: 'Billionaires' },
+        { href: '/us-political-leadership', label: 'US Political Leadership' },
+        { href: '/mayors', label: 'Mayors of the World' },
+      ],
+    },
+    {
+      label: 'Geopolitics',
+      items: [
+        { href: '/orgs', label: 'Alliances & Orgs' },
+        { href: '/conflicts', label: 'Interstate Wars' },
+      ],
+    },
+    {
+      label: 'More',
+      items: [
+        { href: '/badges', label: 'Badges' },
+        { href: '/random', label: '🎲 Random metro' },
+      ],
+    },
+  ];
 
-  { href: '/expandable-map', label: 'Expandable Map', hint: 'Full-corpus interactive map; resizable, persistent filters and viewport', group: 'Geography' },
-  { href: '/compare', label: 'Compare', hint: 'Side-by-side any 2 to 4 metros', group: 'Geography' },
-  { href: '/countries', label: 'Countries', hint: 'Population, metros, and composite score by country', group: 'Geography' },
-  { href: '/orgs', label: 'Alliances & Orgs', hint: 'International organisation memberships by country', group: 'Geography' },
-  { href: '/conflicts', label: 'Interstate Wars', hint: 'Wars between states since 1945', group: 'Geography' },
-  { href: '/billionaires', label: 'Billionaires', hint: 'Forbes real-time billionaires by country', group: 'Geography' },
-  { href: '/badges', label: 'Badges', hint: 'Categorical lenses over the dataset', group: 'Geography' },
-  { href: '/matchups/london-vs-new-york', label: 'Matchups', hint: 'Head-to-head metro pages', group: 'Geography' },
-  { href: '/random', label: '🎲 Random metro', hint: 'Tier-weighted random pick', group: 'Geography' },
+  const sports: SubGroup[] = [
+    {
+      label: 'Across all sports',
+      items: [
+        { href: '/sports', label: 'Zone Zero Sports Hub' },
+        ...SPORTS_FEATURES.map((f) => ({ href: f.href, label: f.label, live: f.live })),
+      ],
+    },
+    ...catalogByFamily(false).map((g) => ({
+      label: g.family,
+      items: g.entries.map((e) => ({ href: e.href, label: boardLabelFor(e) })),
+    })),
+  ];
 
-  ...SPORTS_ITEMS,
+  const deepDives: SubGroup[] = [
+    {
+      items: [
+        { href: '/deep-dives', label: 'All deep dives' },
+        { href: '/sports/geography-of-erasure', label: 'The Geography of Erasure' },
+        { href: '/sports/games', label: 'The Greatest Games' },
+        { href: '/sports/valuations', label: 'Team Valuations' },
+        { href: '/top-teams', label: 'The Team That Wins the City' },
+        { href: '/neighborhoods', label: 'The Last of the Marylebones' },
+        { href: '/badges/velvet-rock-capital', label: 'Velvet Rock Capital' },
+        { href: 'https://citizenofnowhere.substack.com', label: 'On Substack', external: true },
+      ],
+    },
+  ];
 
-  {
-    href: 'https://citizenofnowhere.substack.com',
-    label: 'Citizen of Nowhere',
-    hint: 'All essays on Substack',
-    external: true,
-    group: 'Articles',
-  },
-  { href: '/neighborhoods', label: 'The Last of the Marylebones', hint: 'Global neighborhoods reference', group: 'Articles' },
-  { href: '/top-teams', label: 'The Team That Wins the City', hint: 'Top sports team by metro', group: 'Articles' },
+  const play: SubGroup[] = [
+    {
+      items: [
+        { href: '/play', label: '🎮 Kids Games', hint: 'Free learning games for younger fans' },
+        { href: '/play/arcade', label: '🕹️ Games', hint: 'Bigger games: random metro, quizzes and more' },
+      ],
+    },
+  ];
 
-  { href: '/studio', label: 'Studio', hint: 'A martech reference implementation', group: 'Studio' },
+  const about: SubGroup[] = [
+    {
+      items: [
+        { href: '/about', label: 'About' },
+        { href: '/methodology', label: 'Methodology' },
+      ],
+    },
+  ];
 
-  { href: '/play', label: '🎮 Kids Games', hint: 'Free learning games for younger fans', group: 'Play' },
-  { href: '/play/arcade', label: '🕹️ Games', hint: 'Bigger games: random metro, quizzes and more', group: 'Play' },
-
-  { href: '/about', label: 'About', group: 'About' },
-  { href: '/methodology', label: 'Methodology', group: 'About' },
-  { href: '/updates', label: 'Release notes' },
-];
+  return [
+    { kind: 'link', href: '/#rankings', label: 'Rankings' },
+    { kind: 'group', id: 'geography', label: 'Geography', groups: geography },
+    { kind: 'group', id: 'sports', label: 'Sports', groups: sports },
+    { kind: 'group', id: 'deepdives', label: 'Deep Dives', groups: deepDives },
+    { kind: 'group', id: 'play', label: 'Play', groups: play },
+    { kind: 'group', id: 'about', label: 'About', groups: about },
+    { kind: 'link', href: '/studio', label: 'Studio' },
+    { kind: 'link', href: '/updates', label: 'Release notes' },
+  ];
+}
 
 export default function MobileMenu({ updated }: { updated: string | null }) {
   const [open, setOpen] = useState(false);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const panelRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
-  // Close on escape
+  const sections = buildSections();
+
+  const toggleSection = (id: string) =>
+    setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }));
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -87,7 +147,6 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
     return () => window.removeEventListener('keydown', onKey);
   }, [open]);
 
-  // Close on outside click
   useEffect(() => {
     if (!open) return;
     const onClick = (e: MouseEvent) => {
@@ -101,7 +160,6 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
     return () => document.removeEventListener('mousedown', onClick);
   }, [open]);
 
-  // Lock body scroll when open
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -111,16 +169,7 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
     };
   }, [open]);
 
-  // Group items in render order, preserving section dividers between groups
-  const groupedItems: { group?: string; items: Item[] }[] = [];
-  for (const it of ITEMS) {
-    const last = groupedItems[groupedItems.length - 1];
-    if (last && last.group === it.group) {
-      last.items.push(it);
-    } else {
-      groupedItems.push({ group: it.group, items: [it] });
-    }
-  }
+  const closePanel = () => setOpen(false);
 
   return (
     <div className="md:hidden">
@@ -162,60 +211,97 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
           }}
         >
           <nav className="px-4 py-3 space-y-1">
-            {groupedItems.map((g, gi) => (
-              <div key={gi}>
-                {g.group ? (
-                  <div
-                    className="text-xs uppercase tracking-wider mt-3 mb-1 px-2"
-                    style={{
-                      color: 'var(--text-dim)',
-                      fontFamily: "'JetBrains Mono', monospace",
-                    }}
-                  >
-                    {g.group}
-                  </div>
-                ) : null}
-                {g.items.map((it) => (
+            {sections.map((s) => {
+              if (s.kind === 'link') {
+                return (
                   <a
-                    key={it.href}
-                    href={it.href}
-                    target={it.external ? '_blank' : undefined}
-                    rel={it.external ? 'noopener noreferrer' : undefined}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-md px-3 py-2 hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+                    key={s.href}
+                    href={s.href}
+                    target={s.external ? '_blank' : undefined}
+                    rel={s.external ? 'noopener noreferrer' : undefined}
+                    onClick={closePanel}
+                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-[var(--text)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
                   >
-                    <div className="text-sm font-medium text-[var(--text)] flex items-center gap-2 flex-wrap">
-                      <span>
-                        {it.label}
-                        {it.external ? (
-                          <span
-                            className="ml-1 text-[var(--text-dim)]"
-                            aria-hidden="true"
-                          >
-                            ↗
-                          </span>
-                        ) : null}
-                      </span>
-                      <LeagueStatusTag status={leagueStatusFor(it.href)} />
-                    </div>
-                    {it.hint ? (
-                      <div
-                        className="text-xs mt-0.5"
-                        style={{ color: 'var(--text-muted)' }}
-                      >
-                        {it.hint}
-                      </div>
-                    ) : null}
+                    {s.label}
                   </a>
-                ))}
-              </div>
-            ))}
+                );
+              }
+              const isOpen = !!openSections[s.id];
+              return (
+                <div key={s.id}>
+                  <button
+                    type="button"
+                    onClick={() => toggleSection(s.id)}
+                    aria-expanded={isOpen}
+                    className="w-full flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-[var(--text)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+                  >
+                    <span>{s.label}</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                      style={{ transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.15s' }}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                  {isOpen && (
+                    <div className="pb-1 pl-2">
+                      {s.groups.map((g, gi) => (
+                        <div key={gi}>
+                          {g.label ? (
+                            <div
+                              className="text-[11px] uppercase tracking-wider mt-2 mb-0.5 px-3"
+                              style={{ color: 'var(--text-dim)', fontFamily: "'JetBrains Mono', monospace" }}
+                            >
+                              {g.label}
+                            </div>
+                          ) : null}
+                          {g.items.map((it) => {
+                            const dot = leafDotColor(it);
+                            return (
+                              <a
+                                key={it.href}
+                                href={it.href}
+                                target={it.external ? '_blank' : undefined}
+                                rel={it.external ? 'noopener noreferrer' : undefined}
+                                onClick={closePanel}
+                                className="block rounded-md px-3 py-2 hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+                              >
+                                <div className="text-sm text-[var(--text)] flex items-center gap-2">
+                                  {dot ? (
+                                    <span className="inline-block rounded-full flex-shrink-0" style={{ width: 6, height: 6, background: dot }} aria-hidden="true" />
+                                  ) : null}
+                                  <span>
+                                    {it.label}
+                                    {it.external ? (
+                                      <span className="ml-1 text-[var(--text-dim)]" aria-hidden="true">↗</span>
+                                    ) : null}
+                                  </span>
+                                </div>
+                                {it.hint ? (
+                                  <div className="text-xs mt-0.5 pl-0" style={{ color: 'var(--text-muted)' }}>{it.hint}</div>
+                                ) : null}
+                              </a>
+                            );
+                          })}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
             {updated ? (
               <div
                 className="mt-3 pt-3 border-t text-xs text-[var(--text-muted)] px-3"
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                }}
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
                 Source data last updated {updated}
               </div>

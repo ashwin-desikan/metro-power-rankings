@@ -155,3 +155,28 @@ export function catalogByFamily(includeComing = true): FamilyGroup[] {
 export function boardLabelFor(e: CatalogEntry): string {
   return e.boardLabel ?? e.label;
 }
+
+// Cross-sport features -------------------------------------------------------
+//
+// Tools and deep dives that sit ABOVE the league directory: they cut across
+// leagues rather than belonging to any one of them. Shared by the desktop
+// Sports mega-menu (DesktopNav) and the mobile Sports section (MobileMenu) so
+// the two surfaces never drift. `live` marks a hub that reflects in-season
+// status and earns a green dot in the nav.
+
+export type SportsFeature = {
+  href: string;
+  label: string;
+  hint: string;
+  live?: boolean;
+};
+
+export const SPORTS_FEATURES: SportsFeature[] = [
+  { href: "/sports/standings", label: "Live Standings", hint: "Every in-season league table in one place", live: true },
+  { href: "/sports/zone-zero-cup", label: "Zone Zero Cup", hint: "National sporting-merit index across all sports" },
+  { href: "/sports/games", label: "The Greatest Games", hint: "Top games of all time by Game Score" },
+  { href: "/sports/rivalries", label: "Sports Rivalries", hint: "Cross-sport derbies, classics and grudge matches" },
+  { href: "/sports/valuations", label: "Team Valuations", hint: "Franchise values across the major leagues" },
+  { href: "/sports/geography-of-erasure", label: "The Geography of Erasure", hint: "The champions the map forgot" },
+  { href: "/top-teams", label: "The Team That Wins the City", hint: "One defining club per metro" },
+];
