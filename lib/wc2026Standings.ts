@@ -254,9 +254,9 @@ export async function getWc2026LiveScores(): Promise<Wc2026LiveScores> {
 // matches; the third-place game (103) takes the two semifinal losers. Downstream
 // slots are labelled "Winner Match N" / "Loser Match N" until resolved.
 const WC_WIN_FEEDERS: Record<number, [number, number]> = {
-  89: [74, 77], 90: [73, 75], 91: [79, 80], 92: [76, 78],
-  93: [83, 84], 94: [81, 82], 95: [85, 87], 96: [86, 88],
-  97: [89, 90], 98: [93, 94], 99: [95, 96], 100: [91, 92],
+  89: [74, 77], 90: [73, 75], 91: [76, 78], 92: [79, 80],
+  93: [83, 84], 94: [81, 82], 95: [86, 88], 96: [85, 87],
+  97: [89, 90], 98: [93, 94], 99: [91, 92], 100: [95, 96],
   101: [97, 98], 102: [99, 100], 104: [101, 102],
 };
 const WC_OWN_OF_PAIR = new Map<string, number>();

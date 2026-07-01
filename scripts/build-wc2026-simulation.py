@@ -28,31 +28,31 @@ GROUPS = list("ABCDEFGHIJKL")
 HOSTS = {"united-states", "mexico", "canada"}
 
 THIRD_SLOTS = {
-    75: set("ABCDF"), 78: set("CEFHI"), 79: set("CDFGH"), 80: set("BEFIJ"),
-    81: set("AEHIJ"), 82: set("EHIJK"), 83: set("EFGIJ"), 86: set("DEIJL"),
+    74: set("ABCDF"), 77: set("CDFGH"), 79: set("CEFHI"), 80: set("EHIJK"),
+    81: set("BEFIJ"), 82: set("AEHIJ"), 85: set("EFGIJ"), 87: set("DEIJL"),
 }
 R32 = {
     73: (("R", "A"), ("R", "B")),
-    74: (("W", "F"), ("R", "C")),
-    75: (("W", "E"), ("3", 75)),
+    74: (("W", "E"), ("3", 74)),
+    75: (("W", "F"), ("R", "C")),
     76: (("W", "C"), ("R", "F")),
-    77: (("R", "E"), ("R", "I")),
-    78: (("W", "A"), ("3", 78)),
-    79: (("W", "I"), ("3", 79)),
-    80: (("W", "D"), ("3", 80)),
-    81: (("W", "G"), ("3", 81)),
-    82: (("W", "L"), ("3", 82)),
-    83: (("W", "B"), ("3", 83)),
-    84: (("R", "K"), ("R", "L")),
-    85: (("W", "H"), ("R", "J")),
-    86: (("W", "K"), ("3", 86)),
-    87: (("R", "D"), ("R", "G")),
-    88: (("W", "J"), ("R", "H")),
+    77: (("W", "I"), ("3", 77)),
+    78: (("R", "E"), ("R", "I")),
+    79: (("W", "A"), ("3", 79)),
+    80: (("W", "L"), ("3", 80)),
+    81: (("W", "D"), ("3", 81)),
+    82: (("W", "G"), ("3", 82)),
+    83: (("R", "K"), ("R", "L")),
+    84: (("W", "H"), ("R", "J")),
+    85: (("W", "B"), ("3", 85)),
+    86: (("W", "J"), ("R", "H")),
+    87: (("W", "K"), ("3", 87)),
+    88: (("R", "D"), ("R", "G")),
 }
 WIN = {
-    89: (74, 77), 90: (73, 75), 91: (79, 80), 92: (76, 78),
-    93: (83, 84), 94: (81, 82), 95: (85, 87), 96: (86, 88),
-    97: (89, 90), 98: (93, 94), 99: (95, 96), 100: (91, 92),
+    89: (74, 77), 90: (73, 75), 91: (76, 78), 92: (79, 80),
+    93: (83, 84), 94: (81, 82), 95: (86, 88), 96: (85, 87),
+    97: (89, 90), 98: (93, 94), 99: (91, 92), 100: (95, 96),
     101: (97, 98), 102: (99, 100), 104: (101, 102),
 }
 
@@ -107,6 +107,32 @@ def main():
             group_goals[frozenset((a, b))] = {a: e["a_score"], b: e["b_score"]}
         elif e.get("winner_slug"):
             ko_winner[(e["round"], frozenset((a, b)))] = e["winner_slug"]
+
+    # Lock completed knockout results from the bundle itself. wc2026-results.json
+    # can omit knockout events; wc2026.json carries the live-merged R32+ scores
+    # and the result flag (incl. penalty outcomes), and is what the page renders,
+    # so a side knocked out (even on penalties) never keeps title odds.
+    _KO_ROUNDS = ("Round of 32", "Round of 16", "Quarterfinals", "Semifinals", "Third Place Game", "Final")
+    eliminated = set()
+    for rn in _KO_ROUNDS:
+        for m in wc.get("knockout", {}).get(rn, []):
+            if not m.get("played"):
+                continue
+            ts, osl = m.get("team_slug"), m.get("opp_slug")
+            if not ts or not osl:
+                continue
+            r = m.get("result")
+            if r == "W":
+                w_slug, l_slug = ts, osl
+            elif r == "L":
+                w_slug, l_slug = osl, ts
+            else:
+                a_s, b_s = m.get("team_score"), m.get("opp_score")
+                if a_s is None or b_s is None or a_s == b_s:
+                    continue
+                w_slug, l_slug = (ts, osl) if a_s > b_s else (osl, ts)
+            ko_winner[(rn, frozenset((ts, osl)))] = w_slug
+            eliminated.add(l_slug)
 
     # Auto-select blend weight: once the group stage is complete, outright market
     # odds are less useful as head-to-head predictors (they price full-bracket
@@ -264,7 +290,7 @@ def main():
     r16 = {s: 0 for s in slugs}; qf = {s: 0 for s in slugs}
     sf = {s: 0 for s in slugs}; final = {s: 0 for s in slugs}; title = {s: 0 for s in slugs}
 
-    slot_order = [75, 78, 79, 80, 81, 82, 83, 86]
+    slot_order = [74, 77, 79, 80, 81, 82, 85, 87]
     poiss = rng.poisson; rand = rng.random
 
     def play(a, b):
@@ -349,6 +375,7 @@ def main():
             "p_sf": pct(sf[s]), "p_final": pct(final[s]), "p_title": pct(title[s]),
             "market_prob": round(100.0 * mkt[s], 2),
         })
+    deep = [r for r in deep if r["slug"] not in eliminated]
     deep.sort(key=lambda r: -r["p_title"])
 
     # Per-matchup win probabilities using the blended strength signal S.

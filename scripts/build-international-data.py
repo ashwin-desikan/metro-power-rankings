@@ -1321,6 +1321,56 @@ def build_wc2026(wb, slug_for_cur_name):
     for rn in knockout_rounds:
         knockout[rn].sort(key=lambda m: m["date"] or "")
 
+    # Order the Round of 32 by official FIFA 2026 match number (73..88). The
+    # read-time bracket advancement (lib/wc2026Standings.ts) maps R32 slot i to
+    # match 73+i, so the slots MUST be in official order or winners land in the
+    # wrong Round-of-16 slots. Same-day matches otherwise keep arbitrary workbook
+    # order. Derived from the group winners/runners-up + FIFA's group-slot map;
+    # falls back to date order pre-knockout or if teams are not yet set.
+    def _wc_r32_official_order(r32, groups):
+        if len(r32) != 16 or len(groups) != 12:
+            return None
+        norm = {str(k).replace("Group", "").strip(): v for k, v in groups.items()}
+        W = {}; RU = {}
+        for g, tl in norm.items():
+            if len(tl) < 2:
+                return None
+            W[g] = tl[0]["cur_name"]; RU[g] = tl[1]["cur_name"]
+        # match_no -> (roleA, roleB); role is ("W"|"RU", group) for the fixed
+        # slot, None for the variable best-third slot (matched via the other side).
+        T = {73: (("RU","A"),("RU","B")), 74: (("W","E"),None), 75: (("W","F"),("RU","C")),
+             76: (("W","C"),("RU","F")), 77: (("W","I"),None), 78: (("RU","E"),("RU","I")),
+             79: (("W","A"),None), 80: (("W","L"),None), 81: (("W","D"),None), 82: (("W","G"),None),
+             83: (("RU","K"),("RU","L")), 84: (("W","H"),("RU","J")), 85: (("W","B"),None),
+             86: (("W","J"),("RU","H")), 87: (("W","K"),None), 88: (("RU","D"),("RU","G"))}
+        def fixed(role):
+            if role is None:
+                return None
+            kind, grp = role
+            return W.get(grp) if kind == "W" else RU.get(grp)
+        used = set(); order = {}
+        for mno, (ra, rb) in T.items():
+            need = [x for x in (fixed(ra), fixed(rb)) if x]
+            if not need:
+                return None
+            cand = None
+            for idx, m in enumerate(r32):
+                if idx in used:
+                    continue
+                pair = {m.get("team_cur_name"), m.get("opp_cur_name")}
+                if all(f in pair for f in need):
+                    cand = idx; break
+            if cand is None:
+                return None
+            used.add(cand); order[mno] = r32[cand]
+        if len(order) != 16:
+            return None
+        return [order[m] for m in range(73, 89)]
+
+    _r32_official = _wc_r32_official_order(knockout["Round of 32"], group_stage_out)
+    if _r32_official:
+        knockout["Round of 32"] = _r32_official
+
     return {
         "tournament": {
             "name": "FIFA World Cup 2026",

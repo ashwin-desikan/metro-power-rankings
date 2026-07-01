@@ -624,21 +624,6 @@
         "played": true
       },
       {
-        "team_cur_name": "Netherlands",
-        "team_slug": "netherlands",
-        "opp_cur_name": "Morocco",
-        "opp_slug": "morocco",
-        "team_score": 1,
-        "opp_score": 1,
-        "penalty_kicks": null,
-        "result": "L",
-        "stadium": "Estadio BBVA",
-        "stad_country": "Mexico",
-        "stad_metro": "Monterrey",
-        "date": "2026-06-29",
-        "played": true
-      },
-      {
         "team_cur_name": "Germany",
         "team_slug": "germany",
         "opp_cur_name": "Paraguay",
@@ -650,6 +635,21 @@
         "stadium": "Gillette Stadium",
         "stad_country": "United States",
         "stad_metro": "Boston",
+        "date": "2026-06-29",
+        "played": true
+      },
+      {
+        "team_cur_name": "Netherlands",
+        "team_slug": "netherlands",
+        "opp_cur_name": "Morocco",
+        "opp_slug": "morocco",
+        "team_score": 1,
+        "opp_score": 1,
+        "penalty_kicks": null,
+        "result": "L",
+        "stadium": "Estadio BBVA",
+        "stad_country": "Mexico",
+        "stad_metro": "Monterrey",
         "date": "2026-06-29",
         "played": true
       },
@@ -666,6 +666,21 @@
         "stad_country": "United States",
         "stad_metro": "Houston",
         "date": "2026-06-29",
+        "played": true
+      },
+      {
+        "team_cur_name": "France",
+        "team_slug": "france",
+        "opp_cur_name": "Sweden",
+        "opp_slug": "sweden",
+        "team_score": 3,
+        "opp_score": 0,
+        "penalty_kicks": null,
+        "result": "W",
+        "stadium": "MetLife Stadium",
+        "stad_country": "United States",
+        "stad_metro": "New York",
+        "date": "2026-06-30",
         "played": true
       },
       {
@@ -699,19 +714,19 @@
         "played": true
       },
       {
-        "team_cur_name": "France",
-        "team_slug": "france",
-        "opp_cur_name": "Sweden",
-        "opp_slug": "sweden",
-        "team_score": 3,
-        "opp_score": 0,
+        "team_cur_name": "England",
+        "team_slug": "england",
+        "opp_cur_name": "Congo DR",
+        "opp_slug": "congo-dr",
+        "team_score": null,
+        "opp_score": null,
         "penalty_kicks": null,
-        "result": "W",
-        "stadium": "MetLife Stadium",
+        "result": null,
+        "stadium": "Mercedes-Benz Stadium",
         "stad_country": "United States",
-        "stad_metro": "New York",
-        "date": "2026-06-30",
-        "played": true
+        "stad_metro": "Atlanta",
+        "date": "2026-07-01",
+        "played": false
       },
       {
         "team_cur_name": "United States",
@@ -741,36 +756,6 @@
         "stad_country": "United States",
         "stad_metro": "Seattle",
         "date": "2026-07-01",
-        "played": false
-      },
-      {
-        "team_cur_name": "England",
-        "team_slug": "england",
-        "opp_cur_name": "Congo DR",
-        "opp_slug": "congo-dr",
-        "team_score": null,
-        "opp_score": null,
-        "penalty_kicks": null,
-        "result": null,
-        "stadium": "Mercedes-Benz Stadium",
-        "stad_country": "United States",
-        "stad_metro": "Atlanta",
-        "date": "2026-07-01",
-        "played": false
-      },
-      {
-        "team_cur_name": "Switzerland",
-        "team_slug": "switzerland",
-        "opp_cur_name": "Algeria",
-        "opp_slug": "algeria",
-        "team_score": null,
-        "opp_score": null,
-        "penalty_kicks": null,
-        "result": null,
-        "stadium": "BC Place",
-        "stad_country": "Canada",
-        "stad_metro": "Vancouver",
-        "date": "2026-07-02",
         "played": false
       },
       {
@@ -804,6 +789,36 @@
         "played": false
       },
       {
+        "team_cur_name": "Switzerland",
+        "team_slug": "switzerland",
+        "opp_cur_name": "Algeria",
+        "opp_slug": "algeria",
+        "team_score": null,
+        "opp_score": null,
+        "penalty_kicks": null,
+        "result": null,
+        "stadium": "BC Place",
+        "stad_country": "Canada",
+        "stad_metro": "Vancouver",
+        "date": "2026-07-02",
+        "played": false
+      },
+      {
+        "team_cur_name": "Argentina",
+        "team_slug": "argentina",
+        "opp_cur_name": "Cape Verde",
+        "opp_slug": "cape-verde",
+        "team_score": null,
+        "opp_score": null,
+        "penalty_kicks": null,
+        "result": null,
+        "stadium": "Hard Rock Stadium",
+        "stad_country": "United States",
+        "stad_metro": "Miami",
+        "date": "2026-07-03",
+        "played": false
+      },
+      {
         "team_cur_name": "Colombia",
         "team_slug": "colombia",
         "opp_cur_name": "Ghana",
@@ -830,21 +845,6 @@
         "stadium": "AT&T Stadium",
         "stad_country": "United States",
         "stad_metro": "Dallas",
-        "date": "2026-07-03",
-        "played": false
-      },
-      {
-        "team_cur_name": "Argentina",
-        "team_slug": "argentina",
-        "opp_cur_name": "Cape Verde",
-        "opp_slug": "cape-verde",
-        "team_score": null,
-        "opp_score": null,
-        "penalty_kicks": null,
-        "result": null,
-        "stadium": "Hard Rock Stadium",
-        "stad_country": "United States",
-        "stad_metro": "Miami",
         "date": "2026-07-03",
         "played": false
       }
