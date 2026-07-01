@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-07-01T00:15:47Z",
+ "as_of": "2026-07-01T06:10:46Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -702,6 +702,15 @@
    "b_slug": "sweden",
    "b_score": 0,
    "winner_slug": "france",
+   "completed": true
+  },
+  "apisports-1567306": {
+   "round": "Round of 32",
+   "a_slug": "mexico",
+   "a_score": 2,
+   "b_slug": "ecuador",
+   "b_score": 0,
+   "winner_slug": "mexico",
    "completed": true
   }
  }

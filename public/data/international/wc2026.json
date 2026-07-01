@@ -688,15 +688,15 @@
         "team_slug": "mexico",
         "opp_cur_name": "Ecuador",
         "opp_slug": "ecuador",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 2,
+        "opp_score": 0,
         "penalty_kicks": null,
-        "result": null,
+        "result": "W",
         "stadium": "Estadio Azteca",
         "stad_country": "Mexico",
         "stad_metro": "Mexico City",
         "date": "2026-06-30",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "France",
