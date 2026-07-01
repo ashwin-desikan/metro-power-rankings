@@ -35,10 +35,10 @@
   }
   function tableHTML(hl) {
     var r = '<table class="lt"><tr><th>Team</th><th>P</th><th>W</th><th>L</th><th>PF</th><th>PA</th><th>Diff</th></tr>';
-    table.teams.forEach(function (t) { var cls = t.Diff < 0 ? "neg" : "posn"; r += '<tr' + (hl === t.name ? ' class="hl"' : '') + '><td class="tm"><span class="em">🏈</span>' + t.name + '</td><td>' + t.P + '</td><td>' + t.W + '</td><td>' + t.L + '</td><td>' + t.PF + '</td><td>' + t.PA + '</td><td class="' + cls + '">' + sgn(t.Diff) + '</td></tr>'; });
+    table.teams.forEach(function (t) { var cls = t.Diff < 0 ? "neg" : "posn"; r += '<tr' + (hl === t.name ? ' class="hl"' : '') + '><td class="tm">' + (t.logo ? '<img class="crest" src="' + t.logo + '" alt="" onerror="this.style.display=&#39;none&#39;">' : '<span class="em">🏈</span>') + t.name + '</td><td>' + t.P + '</td><td>' + t.W + '</td><td>' + t.L + '</td><td>' + t.PF + '</td><td>' + t.PA + '</td><td class="' + cls + '">' + sgn(t.Diff) + '</td></tr>'; });
     return r + '</table><div class="legend">P=Played · W=Won · L=Lost · PF=Points For · PA=Points Against · Diff=Points Difference</div>';
   }
-  function barsHTML() { var max = Math.max.apply(null, table.teams.map(function (t) { return t.W; })); var r = '<div class="bars">'; table.teams.forEach(function (t) { var h = Math.round(t.W / max * 150) + 10; r += '<div class="bar" style="height:' + h + 'px">' + t.W + '<span class="lab">' + t.name + '</span></div>'; }); return r + '</div><div class="legend">Each bar shows a team\'s number of wins.</div>'; }
+  function barsHTML() { var max = Math.max.apply(null, table.teams.map(function (t) { return t.W; })); var r = '<div class="bars">'; table.teams.forEach(function (t) { var h = Math.round(t.W / max * 150) + 10; r += '<div class="bar" style="height:' + h + 'px">' + t.W + '<span class="lab">' + (t.logo ? '<img class="crest" src="' + t.logo + '" alt="" onerror="this.style.display=&#39;none&#39;">' : '') + t.name + '</span></div>'; }); return r + '</div><div class="legend">Each bar shows a team\'s number of wins.</div>'; }
   function buildProgress() { var p = $("progress"); p.innerHTML = ""; QUESTIONS.forEach(function (s, k) { var d = document.createElement("div"); d.className = "dot" + (k < i ? " got" : ""); d.textContent = k < i ? "★" : (k + 1); p.appendChild(d); }); }
   function newGame() { table = TABLES[Math.floor(Math.random() * TABLES.length)]; QUESTIONS = buildQuestions(table); $("title").textContent = "🏈 " + table.league + " · " + table.division + " · " + table.season + " final standings"; i = 0; }
   function render() {

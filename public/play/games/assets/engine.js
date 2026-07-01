@@ -34,7 +34,10 @@
   }
   function render() {
     locked = false; var s = STOPS[i];
-    $("scene").style.background = s.bg; $("city").textContent = s.city; $("flag").textContent = s.flag || "";
+    $("scene").style.background = s.bg;
+    var _c = $("city"); _c.textContent = "";
+    if (s.logo) { var _im = document.createElement("img"); _im.className = "crest"; _im.src = s.logo; _im.alt = s.place || ""; _im.onerror = function(){ _c.textContent = s.city || ""; }; _c.appendChild(_im); } else { _c.textContent = s.city; }
+    $("flag").textContent = s.flag || "";
     $("place").firstChild.textContent = s.place; $("sub").textContent = s.sub; $("q").textContent = s.q;
     $("toast").textContent = ""; $("reveal").className = "reveal"; $("next").className = "next";
     var o = $("opts"); o.innerHTML = "";
@@ -42,7 +45,7 @@
     for (var a = order.length - 1; a > 0; a--) { var b = Math.floor(Math.random() * (a + 1)); var t = order[a]; order[a] = order[b]; order[b] = t; }
     order.forEach(function (idx) {
       var opt = s.opts[idx]; var btn = document.createElement("button"); btn.className = "opt";
-      btn.innerHTML = (opt.e ? '<span class="em">' + opt.e + '</span>' : '') + '<span>' + opt.t + '</span>';
+      btn.innerHTML = (opt.logo ? '<img class="crest" src="' + opt.logo + '" alt="" onerror="this.style.display=&#39;none&#39;">' : (opt.e ? '<span class="em">' + opt.e + '</span>' : '')) + '<span>' + opt.t + '</span>';
       btn.onclick = function () { choose(btn, idx === s.ans); }; o.appendChild(btn);
     });
     buildPassport();
