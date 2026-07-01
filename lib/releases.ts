@@ -23,8 +23,8 @@ export const RELEASES: Release[] = [
     items: [
       "The power ranking is now The Nowhere 100: a dated, filterable Top 100 across politics, finance, corporate, media, sport, culture, faith and law, each row linked to its metro and jurisdiction, with a gold seal.",
       "The Geography and Sports menus were reorganised: Geography now groups places, power and people, and geopolitics, and Sports opens to the full league directory by sport family plus every cross-sport tool.",
-      "World Cup results now update from the live feed within about 30 minutes of full time, and the knockout bracket advances winners into the next round on the same cycle, no longer waiting on a daily run.",
-      "The title and advancement odds still recompute each morning, so the model stays stable while the scoreboard stays current.",
+      "World Cup results update from the live feed within about 30 minutes, advancing the bracket automatically; knockout fixtures now show kickoff times in your timezone and sort in match order.",
+      "The World Cup section is now tabbed for bracket, title odds and groups; the radial bracket reveals each matchup, kickoff and venue on hover, and title odds now drop every eliminated team.",
     ],
   },
   {

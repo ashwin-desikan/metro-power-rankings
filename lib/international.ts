@@ -218,6 +218,9 @@ export type WorldCup2026KnockoutMatch = {
   stad_metro: string | null;
   date: string | null;
   played: boolean;
+  // Kickoff time (ISO 8601, UTC). Joined at read time from the ESPN scoreboard
+  // feed by venue; optional and absent until that feed is captured.
+  kickoff_utc?: string | null;
 };
 
 export type WorldCup2026SimRow = {

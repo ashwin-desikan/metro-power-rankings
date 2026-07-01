@@ -349,3 +349,78 @@ export function mergeWc2026Knockout(
   if (changed === 0) return bundle;
   return { ...bundle, knockout, live: { source: "espn" } };
 }
+
+
+// ---------------------------------------------------------------------------
+// Kickoff times. The same scoreboard feed used for live scores also carries
+// each match's scheduled kickoff (UTC, timeValid) for played AND unplayed
+// matches. We capture it keyed by venue, then stamp `kickoff_utc` onto each
+// bracket slot by matching stadium and nearest date. This powers the timezone
+// localizer with no workbook change and no manual schedule input. The fetch
+// URL is identical to getWc2026LiveScores(), so Next dedupes it within a
+// request and it rides the same 30-minute ISR window.
+// ---------------------------------------------------------------------------
+type KickoffRow = { stadium: string; ts: number; iso: string };
+
+function stadiumNorm(s: string | null | undefined): string {
+  return (s ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+export async function getWc2026Kickoffs(): Promise<KickoffRow[]> {
+  try {
+    const res = await fetch(`${SCOREBOARD_URL}?dates=${KO_DATE_RANGE}`, {
+      next: { revalidate: 1800 },
+    });
+    if (!res.ok) return [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data: any = await res.json();
+    const rows: KickoffRow[] = [];
+    for (const ev of (data?.events ?? []) as any[]) {
+      const comp = ev?.competitions?.[0];
+      const iso: string | undefined = comp?.date ?? ev?.date;
+      const timeValid: boolean = comp?.timeValid !== false;
+      const stadium: string | undefined = comp?.venue?.fullName;
+      if (!iso || !stadium || !timeValid) continue;
+      const ts = Date.parse(iso);
+      if (Number.isNaN(ts)) continue;
+      rows.push({ stadium: stadiumNorm(stadium), ts, iso });
+    }
+    return rows;
+  } catch {
+    return [];
+  }
+}
+
+export function attachWc2026Kickoffs(
+  bundle: WorldCup2026Bundle,
+  kickoffs: KickoffRow[],
+): WorldCup2026Bundle {
+  if (!kickoffs || kickoffs.length === 0) return bundle;
+  const DAY = 86400000;
+  const knockout: WorldCup2026Bundle["knockout"] = {};
+  let changed = 0;
+  for (const [rn, ms] of Object.entries(bundle.knockout)) {
+    knockout[rn] = ms.map((m) => {
+      if (!m.date || !m.stadium) return { ...m };
+      const sn = stadiumNorm(m.stadium);
+      const anchor = Date.parse(`${m.date}T18:00:00Z`);
+      let best: KickoffRow | null = null;
+      let bestDiff = Infinity;
+      for (const k of kickoffs) {
+        if (!(k.stadium.includes(sn) || sn.includes(k.stadium))) continue;
+        const diff = Math.abs(k.ts - anchor);
+        if (diff < bestDiff) {
+          bestDiff = diff;
+          best = k;
+        }
+      }
+      if (best && bestDiff <= 1.5 * DAY) {
+        changed += 1;
+        return { ...m, kickoff_utc: best.iso };
+      }
+      return { ...m };
+    });
+  }
+  if (changed === 0) return bundle;
+  return { ...bundle, knockout };
+}

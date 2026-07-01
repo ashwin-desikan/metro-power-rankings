@@ -34,11 +34,41 @@ function fmtDate(iso: string): string {
   return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 }
 
+const WC_ZONES: ReadonlyArray<readonly [string, string]> = [
+  ["Your time", ""],
+  ["UK", "Europe/London"],
+  ["Central Europe", "Europe/Rome"],
+  ["US East", "America/New_York"],
+  ["US Central", "America/Chicago"],
+  ["US Mountain", "America/Denver"],
+  ["US Pacific", "America/Los_Angeles"],
+  ["Mexico City", "America/Mexico_City"],
+  ["Brazil", "America/Sao_Paulo"],
+  ["South Africa", "Africa/Johannesburg"],
+  ["Japan", "Asia/Tokyo"],
+  ["Sydney", "Australia/Sydney"],
+];
+
+function formatKickoff(iso: string, zone: string): string {
+  try {
+    const dt = new Date(iso);
+    const d = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: zone }).format(dt);
+    const t = new Intl.DateTimeFormat("en-US", { hour: "numeric", minute: "2-digit", timeZone: zone }).format(dt);
+    return `${d} \u00b7 ${t}`;
+  } catch {
+    return iso;
+  }
+}
+
 export default function WorldCup2026({ wc }: Props) {
   const startsDate = new Date(wc.tournament.starts_iso);
   const today = new Date();
   const preTournament = today < startsDate;
   const sim = wc.sim ?? null;
+  // Teams still alive in the (live-merged) knockout bracket. Used to keep the
+  // Title-odds table in step with the wheel: anyone eliminated in the groups OR
+  // the knockout, including live between simulation runs, drops off both.
+  const knockoutAlive = bracketAlive(wc.knockout);
 
   // Keep the section open by default through the tournament, then collapse it
   // once it is over (the 2026 final is 19 Jul; use the 20th as the cutoff).
@@ -47,6 +77,8 @@ export default function WorldCup2026({ wc }: Props) {
   const [open, setOpen] = useState(!tournamentOver);
   // Hide group tables once all 48 group matches are confirmed in the sim data.
   const groupStageComplete = (sim?.meta?.played_group ?? 0) >= 48;
+  const hasKnockout = KNOCKOUT_ROUND_ORDER.some((rn) => (wc.knockout[rn]?.length ?? 0) > 0);
+  const [tab, setTab] = useState<"bracket" | "odds" | "groups">(hasKnockout ? "bracket" : "groups");
 
   useEffect(() => {
     function syncFromHash() {
@@ -100,16 +132,52 @@ export default function WorldCup2026({ wc }: Props) {
 
       {open && (
         <div id="wc2026-body" className="mt-4">
-          {groupStageComplete ? (
-            <div className="mb-4 text-xs text-[var(--text-muted)] bg-[var(--bg-card)] border border-[var(--border)] rounded-lg px-3 py-2">
-              Group stage complete — all 48 matches played. Knockout bracket below.
-            </div>
-          ) : (
-            <GroupStage groups={wc.group_stage} sim={sim} />
-          )}
-          {sim && sim.deep_runs.length > 0 && <TitleOdds sim={sim} />}
-          <RadialKnockout knockout={wc.knockout} />
-          <Bracket knockout={wc.knockout} sim={sim} />
+          <div className="mb-4 flex flex-wrap gap-1 border-b" style={{ borderColor: "var(--border)" }}>
+            {([
+              ["bracket", "Bracket"],
+              ["odds", "Title odds"],
+              ["groups", groupStageComplete ? "Final groups" : "Groups"],
+            ] as const).map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setTab(id)}
+                aria-pressed={tab === id}
+                className={`-mb-px border-b-2 px-3 py-2 text-xs font-semibold uppercase tracking-wider transition ${
+                  tab === id
+                    ? "border-[var(--accent)] text-[var(--text)]"
+                    : "border-transparent text-[var(--text-muted)] hover:text-[var(--text)]"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {tab === "bracket" &&
+            (hasKnockout ? (
+              <div className="lg:grid lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-6 lg:items-start">
+                <div className="mb-4 lg:mb-0 lg:sticky lg:top-4">
+                  <RadialKnockout knockout={wc.knockout} />
+                </div>
+                <Bracket knockout={wc.knockout} sim={sim} />
+              </div>
+            ) : (
+              <p className="text-xs text-[var(--text-muted)] bg-[var(--bg-card)] border border-[var(--border)] rounded-lg px-3 py-2">
+                The knockout bracket appears once the group stage is complete.
+              </p>
+            ))}
+
+          {tab === "odds" &&
+            (sim && sim.deep_runs.length > 0 ? (
+              <TitleOdds sim={sim} alive={knockoutAlive} />
+            ) : (
+              <p className="text-xs text-[var(--text-muted)] bg-[var(--bg-card)] border border-[var(--border)] rounded-lg px-3 py-2">
+                Title projections are not available yet.
+              </p>
+            ))}
+
+          {tab === "groups" && <GroupStage groups={wc.group_stage} sim={sim} />}
         </div>
       )}
     </section>
@@ -232,8 +300,31 @@ function GroupStage({
   );
 }
 
-function TitleOdds({ sim }: { sim: WorldCup2026Sim }) {
-  const rows = [...sim.deep_runs].sort((a, b) => b.p_title - a.p_title);
+function bracketAlive(ko: WorldCup2026Bundle["knockout"]): Set<string> {
+  const appear = new Set<string>();
+  const lost = new Set<string>();
+  for (const rows of Object.values(ko)) {
+    for (const m of rows) {
+      if (m.team_slug) appear.add(m.team_slug);
+      if (m.opp_slug) appear.add(m.opp_slug);
+      if (m.played && m.team_score != null && m.opp_score != null) {
+        const teamWon = m.result === "W" || (m.result !== "L" && m.team_score > m.opp_score);
+        const oppWon = m.result === "L" || (m.result !== "W" && m.opp_score > m.team_score);
+        if (teamWon && m.opp_slug) lost.add(m.opp_slug);
+        else if (oppWon && m.team_slug) lost.add(m.team_slug);
+      }
+    }
+  }
+  const alive = new Set<string>();
+  for (const s of appear) if (!lost.has(s)) alive.add(s);
+  return alive;
+}
+
+function TitleOdds({ sim, alive }: { sim: WorldCup2026Sim; alive: Set<string> }) {
+  // Once the knockout bracket is populated, show only teams still in it.
+  // Before then (empty alive set) fall back to the full field.
+  const source = alive.size > 0 ? sim.deep_runs.filter((r) => alive.has(r.slug)) : sim.deep_runs;
+  const rows = [...source].sort((a, b) => b.p_title - a.p_title);
   return (
     <div className="mb-6">
       <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)] uppercase tracking-wider">Title odds</h3>
@@ -290,7 +381,25 @@ function TitleOdds({ sim }: { sim: WorldCup2026Sim }) {
   );
 }
 
+function koSortKey(m: WorldCup2026Bundle["knockout"][string][number]): number {
+  if (m.kickoff_utc) {
+    const t = Date.parse(m.kickoff_utc);
+    if (!Number.isNaN(t)) return t;
+  }
+  if (m.date) {
+    const t = Date.parse(`${m.date}T00:00:00Z`);
+    if (!Number.isNaN(t)) return t;
+  }
+  return Number.POSITIVE_INFINITY;
+}
+
 function Bracket({ knockout, sim }: { knockout: WorldCup2026Bundle["knockout"]; sim: WorldCup2026Sim | null }) {
+  const [tz, setTz] = useState("");
+  const [localZone, setLocalZone] = useState("UTC");
+  useEffect(() => {
+    setLocalZone(Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC");
+  }, []);
+  const zone = tz || localZone;
   const populatedRounds = KNOCKOUT_ROUND_ORDER.filter(
     (rn) => knockout[rn] && knockout[rn].length > 0
   );
@@ -298,7 +407,22 @@ function Bracket({ knockout, sim }: { knockout: WorldCup2026Bundle["knockout"]; 
   const matchups = sim?.matchups ?? {};
   return (
     <div>
-      <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)] uppercase tracking-wider">Knockout bracket</h3>
+      <div className="flex items-center justify-between gap-2 mb-3">
+        <h3 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">Knockout bracket</h3>
+        <label className="flex items-center gap-1.5 text-[11px] text-[var(--text-muted)]">
+          <span className="hidden sm:inline">Times in</span>
+          <select
+            value={tz}
+            onChange={(e) => setTz(e.target.value)}
+            className="rounded-md border border-[var(--border)] bg-[var(--bg-card)] px-1.5 py-1 text-[11px] text-[var(--text)] outline-none"
+            aria-label="Show kickoff times in timezone"
+          >
+            {WC_ZONES.map(([label, z]) => (
+              <option key={label} value={z}>{label}</option>
+            ))}
+          </select>
+        </label>
+      </div>
       <div className="space-y-4">
         {populatedRounds.map((rn) => (
           <div key={rn}>
@@ -306,8 +430,8 @@ function Bracket({ knockout, sim }: { knockout: WorldCup2026Bundle["knockout"]; 
               {rn} <span className="text-[10px] text-[var(--text-dim)] normal-case tracking-normal ml-1">({knockout[rn].length} matches)</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-              {knockout[rn].map((m, i) => (
-                <MatchCard key={`${m.date}-${i}`} m={m} matchups={matchups} />
+              {[...knockout[rn]].sort((a, b) => koSortKey(a) - koSortKey(b)).map((m, i) => (
+                <MatchCard key={`${m.date}-${i}`} m={m} matchups={matchups} zone={zone} />
               ))}
             </div>
           </div>
@@ -326,8 +450,10 @@ function getMatchupProb(matchups: Record<string, number>, slugA: string | null, 
   return null;
 }
 
-function MatchCard({ m, matchups }: { m: WorldCup2026Bundle["knockout"][string][number]; matchups: Record<string, number> }) {
-  const dateDisplay = m.date
+function MatchCard({ m, matchups, zone }: { m: WorldCup2026Bundle["knockout"][string][number]; matchups: Record<string, number>; zone: string }) {
+  const dateDisplay = m.kickoff_utc
+    ? formatKickoff(m.kickoff_utc, zone)
+    : m.date
     ? new Date(m.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })
     : null;
   const teamFlag = m.team_slug ? flagCdnUrl(m.team_slug) : null;
