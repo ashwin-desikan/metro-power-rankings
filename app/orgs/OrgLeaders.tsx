@@ -27,6 +27,7 @@ export default function OrgLeaders({ orgKey }: { orgKey: string }) {
         )}
       </p>
 
+      {data.history.length > 0 && (
       <details className="mt-2 group">
         <summary className="cursor-pointer list-none text-xs text-[var(--accent)] hover:underline">
           Leadership history ({data.history.length}) · click to expand
@@ -68,6 +69,7 @@ export default function OrgLeaders({ orgKey }: { orgKey: string }) {
           )}
         </div>
       </details>
+      )}
     </div>
   );
 }

@@ -392,5 +392,45 @@
         "era": null
       }
     ]
+  },
+  "African Union": {
+    "office": "Commission Chairperson",
+    "current": {
+      "name": "Mahmoud Ali Youssouf",
+      "role": "Commission Chairperson",
+      "since": "2025-02-15",
+      "country": "Djibouti"
+    },
+    "history": []
+  },
+  "ASEAN": {
+    "office": "Secretary-General",
+    "current": {
+      "name": "Kao Kim Hourn",
+      "role": "Secretary-General",
+      "since": "2023-01-01",
+      "country": "Cambodia"
+    },
+    "history": []
+  },
+  "Arab League": {
+    "office": "Secretary-General",
+    "current": {
+      "name": "Nabil Fahmy",
+      "role": "Secretary-General",
+      "since": "2026-07-01",
+      "country": "Egypt"
+    },
+    "history": []
+  },
+  "GCC": {
+    "office": "Secretary-General",
+    "current": {
+      "name": "Jasem Mohamed AlBudaiwi",
+      "role": "Secretary-General",
+      "since": "2023-02-01",
+      "country": "Kuwait"
+    },
+    "history": []
   }
 }

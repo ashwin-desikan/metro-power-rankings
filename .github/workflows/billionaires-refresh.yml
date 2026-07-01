@@ -1,4 +1,4 @@
-name: Billionaires refresh (monthly, no deploy)
+name: Billionaires refresh (manual; folded into weekly civic refresh)
 
 # Pulls the Forbes real-time billionaires list from the free rtb-api
 # (komed3/rtb-api, MIT), rebuilds public/data/billionaires.json with canonical
@@ -8,9 +8,7 @@ name: Billionaires refresh (monthly, no deploy)
 # overwrite good data.
 
 on:
-  schedule:
-    - cron: "0 6 2 * *"   # 06:00 UTC on the 2nd of each month
-  workflow_dispatch: {}
+  workflow_dispatch: {}   # Auto weekly run now lives in civic-data-refresh.yml; this stays for manual re-runs.
 
 permissions:
   contents: write

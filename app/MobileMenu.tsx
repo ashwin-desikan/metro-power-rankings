@@ -46,7 +46,7 @@ function buildSections(): Section[] {
     {
       label: 'Power & people',
       items: [
-        { href: '/power', label: 'The 50 Most Powerful People' },
+        { href: '/power', label: 'The Nowhere 100' },
         { href: '/billionaires', label: 'Billionaires' },
         { href: '/us-political-leadership', label: 'US Political Leadership' },
         { href: '/mayors', label: 'Mayors of the World' },

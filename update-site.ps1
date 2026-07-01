@@ -93,6 +93,11 @@ if ($LASTEXITCODE -ne 0) {
 }
 Write-Host ""
 
+Write-Host "Step 1b/3: Rebuilding corporate-power.json (market caps for World Power Rankings)..."
+& $python "scripts\corporate\build-corporate-power.py" $XlsxPath
+if ($LASTEXITCODE -ne 0) { Write-Host "corporate-power build skipped." -ForegroundColor Yellow }
+Write-Host ""
+
 # Step 2: Commit
 Write-Host "Step 2/3: Committing updated data..."
 git add public/data/

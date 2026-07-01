@@ -34,7 +34,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests openpyxl
 
       - name: Self-test refresh logic (offline)
         run: |
@@ -57,7 +57,17 @@ jobs:
         continue-on-error: true
         run: python scripts/civic/refresh_mayors.py
 
-      - name: Power ranking (top 50 most powerful people)
+      - name: Billionaires (Forbes real-time list)
+        continue-on-error: true
+        run: |
+          python scripts/billionaires/fetch-billionaires.py
+          python scripts/billionaires/build-billionaires.py
+
+      - name: Team valuations (from OtherLeagues.xlsx)
+        continue-on-error: true
+        run: python scripts/build-valuations-data.py
+
+      - name: World Power Rankings (top 100)
         continue-on-error: true
         run: python scripts/build-power-ranking.py
 
@@ -70,7 +80,7 @@ jobs:
             echo "No safe auto changes this run."
           else
             git add public/data
-            git commit -m "data: weekly civic refresh - gap-fills + Congress splits + mayors [vercel skip]"
+            git commit -m "data: weekly refresh - officeholders, billionaires, valuations, World Power Rankings [vercel skip]"
             git push origin HEAD:main
           fi
 

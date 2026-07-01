@@ -1,69 +1,463 @@
 {
-  "vdem": {
-    "united-states": 0.751,
-    "china": 0.037,
-    "united-kingdom": 0.750,
-    "germany": 0.778,
-    "france": 0.800,
-    "italy": 0.687,
-    "japan": 0.737,
-    "india": 0.281,
-    "spain": 0.743,
-    "canada": 0.744,
-    "brazil": 0.712,
-    "australia": 0.796,
-    "russia": 0.057,
-    "mexico": 0.246,
-    "south-korea": 0.627,
-    "netherlands": 0.766,
-    "turkey": 0.109,
-    "switzerland": 0.843,
-    "indonesia": 0.332,
-    "poland": 0.613,
-    "belgium": 0.810,
-    "south-africa": 0.648,
-    "united-arab-emirates": 0.077,
-    "malaysia": 0.359,
-    "saudi-arabia": 0.047,
-    "austria": 0.762,
-    "argentina": 0.558,
-    "portugal": 0.754,
-    "sweden": 0.846,
-    "taiwan": 0.707,
-    "thailand": 0.306,
-    "colombia": 0.554,
-    "egypt": 0.123,
-    "philippines": 0.301,
-    "greece": 0.565,
-    "denmark": 0.885,
-    "singapore": 0.348,
-    "israel": 0.597,
-    "nigeria": 0.314,
-    "vietnam": 0.109,
-    "iran": 0.088,
-    "pakistan": 0.193,
-    "ukraine": 0.230,
-    "norway": 0.847,
-    "ireland": 0.830,
-    "chile": 0.786,
-    "hong-kong": 0.037
+ "vdem": {
+  "united-states": 0.751,
+  "china": 0.037,
+  "united-kingdom": 0.75,
+  "germany": 0.778,
+  "france": 0.8,
+  "italy": 0.687,
+  "japan": 0.737,
+  "india": 0.281,
+  "spain": 0.743,
+  "canada": 0.744,
+  "brazil": 0.712,
+  "australia": 0.796,
+  "russia": 0.057,
+  "mexico": 0.246,
+  "south-korea": 0.627,
+  "netherlands": 0.766,
+  "turkey": 0.109,
+  "switzerland": 0.843,
+  "indonesia": 0.332,
+  "poland": 0.613,
+  "belgium": 0.81,
+  "south-africa": 0.648,
+  "united-arab-emirates": 0.077,
+  "malaysia": 0.359,
+  "saudi-arabia": 0.047,
+  "austria": 0.762,
+  "argentina": 0.558,
+  "portugal": 0.754,
+  "sweden": 0.846,
+  "taiwan": 0.707,
+  "thailand": 0.306,
+  "colombia": 0.554,
+  "egypt": 0.123,
+  "philippines": 0.301,
+  "greece": 0.565,
+  "denmark": 0.885,
+  "singapore": 0.348,
+  "israel": 0.597,
+  "nigeria": 0.314,
+  "vietnam": 0.109,
+  "iran": 0.088,
+  "pakistan": 0.193,
+  "ukraine": 0.23,
+  "norway": 0.847,
+  "ireland": 0.83,
+  "chile": 0.786,
+  "hong-kong": 0.037
+ },
+ "_vdem_notes": {
+  "year": 2024,
+  "source": "V-Dem v2x_libdem via Our World in Data full CSV (V-Dem 2025 release)",
+  "hong-kong": "V-Dem does NOT score Hong Kong as a separate entity. Value shown (0.037) is China's value used as a fallback per request. Treat as a proxy, not a true HK measurement."
+ },
+ "orgs": {
+  "IMF": {
+   "name": "Kristalina Georgieva",
+   "title": "Managing Director",
+   "country": "Bulgaria"
   },
-  "_vdem_notes": {
-    "year": 2024,
-    "source": "V-Dem v2x_libdem via Our World in Data full CSV (V-Dem 2025 release)",
-    "hong-kong": "V-Dem does NOT score Hong Kong as a separate entity. Value shown (0.037) is China's value used as a fallback per request. Treat as a proxy, not a true HK measurement."
+  "ECB": {
+   "name": "Christine Lagarde",
+   "title": "President",
+   "country": "France"
   },
-  "orgs": {
-    "IMF": {"name": "Kristalina Georgieva", "title": "Managing Director", "country": "Bulgaria"},
-    "ECB": {"name": "Christine Lagarde", "title": "President", "country": "France"},
-    "WORLD_BANK": {"name": "Ajay Banga", "title": "President", "country": "United States"},
-    "WTO": {"name": "Ngozi Okonjo-Iweala", "title": "Director-General", "country": "Nigeria"}
+  "WORLD_BANK": {
+   "name": "Ajay Banga",
+   "title": "President",
+   "country": "United States"
   },
-  "central_banks": {
-    "US": {"name": "Kevin Warsh", "title": "Chair of the Federal Reserve", "country_slug": "united-states"},
-    "UK": {"name": "Andrew Bailey", "title": "Governor of the Bank of England", "country_slug": "united-kingdom"},
-    "JP": {"name": "Kazuo Ueda", "title": "Governor of the Bank of Japan", "country_slug": "japan"},
-    "CN": {"name": "Pan Gongsheng", "title": "Governor of the People's Bank of China", "country_slug": "china"},
-    "IN": {"name": "Sanjay Malhotra", "title": "Governor of the Reserve Bank of India", "country_slug": "india"}
+  "WTO": {
+   "name": "Ngozi Okonjo-Iweala",
+   "title": "Director-General",
+   "country": "Nigeria"
   }
+ },
+ "central_banks": {
+  "US": {
+   "name": "Kevin Warsh",
+   "title": "Chair of the Federal Reserve",
+   "country_slug": "united-states"
+  },
+  "UK": {
+   "name": "Andrew Bailey",
+   "title": "Governor of the Bank of England",
+   "country_slug": "united-kingdom"
+  },
+  "JP": {
+   "name": "Kazuo Ueda",
+   "title": "Governor of the Bank of Japan",
+   "country_slug": "japan"
+  },
+  "CN": {
+   "name": "Pan Gongsheng",
+   "title": "Governor of the People's Bank of China",
+   "country_slug": "china"
+  },
+  "IN": {
+   "name": "Sanjay Malhotra",
+   "title": "Governor of the Reserve Bank of India",
+   "country_slug": "india"
+  }
+ },
+ "judiciary": {
+  "US_SCOTUS": {
+   "name": "John Roberts",
+   "title": "Chief Justice of the United States",
+   "country_slug": "united-states",
+   "metro_slug": "washington-baltimore"
+  }
+ },
+ "finance": {
+  "BLACKROCK": {
+   "name": "Larry Fink",
+   "firm": "BlackRock",
+   "aumB": 13900,
+   "metric": "AUM",
+   "metro_slug": "new-york"
+  },
+  "VANGUARD": {
+   "name": "Salim Ramji",
+   "firm": "Vanguard",
+   "aumB": 12000,
+   "metric": "AUM",
+   "metro_slug": "philadelphia"
+  },
+  "UBS": {
+   "name": "Sergio Ermotti",
+   "firm": "UBS",
+   "aumB": 6900,
+   "metric": "invested assets",
+   "metro_slug": "zurich"
+  },
+  "FIDELITY": {
+   "name": "Abigail Johnson",
+   "firm": "Fidelity",
+   "aumB": 6800,
+   "metric": "AUM",
+   "metro_slug": "boston"
+  },
+  "STATE_STREET": {
+   "name": "Ron O'Hanley",
+   "firm": "State Street",
+   "aumB": 5700,
+   "metric": "AUM",
+   "metro_slug": "boston"
+  },
+  "JPMORGAN": {
+   "name": "Jamie Dimon",
+   "firm": "JPMorgan Chase",
+   "aumB": 4200,
+   "metric": "total assets",
+   "metro_slug": "new-york"
+  },
+  "BOFA": {
+   "name": "Brian Moynihan",
+   "firm": "Bank of America",
+   "aumB": 3300,
+   "metric": "total assets",
+   "metro_slug": "charlotte"
+  },
+  "GOLDMAN": {
+   "name": "David Solomon",
+   "firm": "Goldman Sachs",
+   "aumB": 3100,
+   "metric": "AUM",
+   "metro_slug": "new-york"
+  },
+  "MORGAN_STANLEY": {
+   "name": "Ted Pick",
+   "firm": "Morgan Stanley",
+   "aumB": 1700,
+   "metric": "AUM",
+   "metro_slug": "new-york"
+  },
+  "BLACKSTONE": {
+   "name": "Stephen Schwarzman",
+   "firm": "Blackstone",
+   "aumB": 1100,
+   "metric": "AUM",
+   "metro_slug": "new-york"
+  }
+ },
+ "media": {
+  "DISNEY": {
+   "name": "Josh D'Amaro",
+   "role": "CEO, Disney",
+   "org": "Disney",
+   "reach": 800,
+   "metro_slug": "los-angeles",
+   "hq": "Los Angeles"
+  },
+  "NETFLIX": {
+   "name": "Ted Sarandos",
+   "role": "Co-CEO, Netflix",
+   "org": "Netflix",
+   "reach": 600,
+   "metro_slug": "san-francisco-san-jose",
+   "hq": "San Francisco-San Jose"
+  },
+  "COMCAST": {
+   "name": "Brian Roberts",
+   "role": "Chairman & CEO, Comcast",
+   "org": "Comcast / NBCUniversal",
+   "reach": 500,
+   "metro_slug": "philadelphia",
+   "hq": "Philadelphia"
+  },
+  "NEWSCORP": {
+   "name": "Lachlan Murdoch",
+   "role": "Chair, News Corp & Fox",
+   "org": "News Corp / Fox",
+   "reach": 450,
+   "metro_slug": "new-york",
+   "hq": "New York"
+  },
+  "WBD": {
+   "name": "David Zaslav",
+   "role": "CEO, Warner Bros",
+   "org": "Warner Bros",
+   "reach": 400,
+   "metro_slug": "new-york",
+   "hq": "New York"
+  },
+  "SPRINGER": {
+   "name": "Mathias Döpfner",
+   "role": "CEO, Axel Springer",
+   "org": "Axel Springer / Politico",
+   "reach": 250,
+   "metro_slug": "berlin",
+   "hq": "Berlin"
+  }
+ },
+ "sport_governance": {
+  "FIFA": {
+   "name": "Gianni Infantino",
+   "role": "President, FIFA",
+   "org": "FIFA",
+   "reach": 3500,
+   "metro_slug": "zurich",
+   "hq": "Zurich"
+  },
+  "IOC": {
+   "name": "Kirsty Coventry",
+   "role": "President, IOC",
+   "org": "IOC",
+   "reach": 3000,
+   "metro_slug": "lausanne",
+   "hq": "Lausanne"
+  },
+  "UEFA": {
+   "name": "Aleksander Čeferin",
+   "role": "President, UEFA",
+   "org": "UEFA",
+   "reach": 2000,
+   "metro_slug": "geneva",
+   "hq": "Geneva"
+  }
+ },
+ "culture": {
+  "RONALDO": {
+   "name": "Cristiano Ronaldo",
+   "role": "Athlete & global icon",
+   "org": "Al Nassr",
+   "reach": 700,
+   "metro_slug": "riyadh",
+   "hq": "Riyadh",
+   "jhref": "/teams/football/al-nassr"
+  },
+  "MRBEAST": {
+   "name": "MrBeast",
+   "role": "Creator",
+   "org": "Culture",
+   "reach": 500,
+   "metro_slug": "greenville-nc",
+   "hq": "Greenville (NC)"
+  },
+  "MESSI": {
+   "name": "Lionel Messi",
+   "role": "Athlete & global icon",
+   "org": "Inter Miami",
+   "reach": 450,
+   "metro_slug": "miami",
+   "hq": "Miami",
+   "jhref": "/teams/football/inter-miami-cf"
+  },
+  "SWIFT": {
+   "name": "Taylor Swift",
+   "role": "Musician",
+   "org": "Culture",
+   "reach": 400,
+   "metro_slug": "nashville",
+   "hq": "Nashville"
+  },
+  "BEYONCE": {
+   "name": "Beyoncé",
+   "role": "Musician",
+   "org": "Culture",
+   "reach": 300,
+   "metro_slug": "los-angeles",
+   "hq": "Los Angeles"
+  },
+  "OPRAH": {
+   "name": "Oprah Winfrey",
+   "role": "Media & culture",
+   "org": "Culture",
+   "reach": 150,
+   "metro_slug": "chicago",
+   "hq": "Chicago"
+  }
+ },
+ "monarch_overrides": {
+  "morocco": {
+   "name": "👑 Mohammed VI",
+   "role": "King"
+  },
+  "jordan": {
+   "name": "👑 Abdullah II",
+   "role": "King"
+  },
+  "qatar": {
+   "name": "👑 Tamim bin Hamad Al Thani",
+   "role": "Emir"
+  },
+  "thailand": {
+   "name": "👑 Maha Vajiralongkorn",
+   "role": "King"
+  }
+ },
+ "crown": {
+  "UK": {
+   "name": "👑 Charles III",
+   "role": "King (15 realms) & Head of the Commonwealth",
+   "country": "United Kingdom",
+   "value": 135,
+   "metro_slug": "london"
+  },
+  "JAPAN": {
+   "name": "👑 Naruhito",
+   "role": "Emperor of Japan",
+   "country": "Japan",
+   "value": 90,
+   "metro_slug": "tokyo"
+  },
+  "SPAIN": {
+   "name": "👑 Felipe VI",
+   "role": "King of Spain",
+   "country": "Spain",
+   "value": 65,
+   "metro_slug": "madrid"
+  },
+  "NETHERLANDS": {
+   "name": "👑 Willem-Alexander",
+   "role": "King of the Netherlands",
+   "country": "Netherlands",
+   "value": 52,
+   "metro_slug": "amsterdam"
+  },
+  "DENMARK": {
+   "name": "👑 Frederik X",
+   "role": "King of Denmark",
+   "country": "Denmark",
+   "value": 50,
+   "metro_slug": "copenhagen"
+  },
+  "SWEDEN": {
+   "name": "👑 Carl XVI Gustaf",
+   "role": "King of Sweden",
+   "country": "Sweden",
+   "value": 48,
+   "metro_slug": "stockholm"
+  }
+ },
+ "commissioners": {
+  "NFL": {
+   "name": "Roger Goodell",
+   "display": "NFL",
+   "league_key": "NFL",
+   "metro_slug": "new-york",
+   "jhref": "/teams/nfl"
+  },
+  "NBA": {
+   "name": "Adam Silver",
+   "display": "NBA",
+   "league_key": "NBA",
+   "metro_slug": "new-york",
+   "jhref": "/teams/nba"
+  },
+  "MLB": {
+   "name": "Rob Manfred",
+   "display": "MLB",
+   "league_key": "MLB",
+   "metro_slug": "new-york",
+   "jhref": "/teams/mlb"
+  },
+  "NHL": {
+   "name": "Gary Bettman",
+   "display": "NHL",
+   "league_key": "NHL",
+   "metro_slug": "new-york",
+   "jhref": "/teams/nhl"
+  },
+  "PL": {
+   "name": "Richard Masters",
+   "display": "Premier League",
+   "league_key": "England",
+   "metro_slug": "london",
+   "jhref": "/teams/football"
+  }
+ },
+ "transitions": {
+  "Keir Starmer": "Resigning; Labour successor (Burnham) expected ~20 Jul 2026",
+  "Tim Cook": "Apple CEO succession expected",
+  "António Guterres": "UN Secretary-General term ends 31 Dec 2026",
+  "Luiz Inácio Lula da Silva": "Brazil general election, 4 Oct 2026",
+  "Mike Johnson": "US midterms, 3 Nov 2026 (House control)",
+  "John Thune": "US midterms, 3 Nov 2026 (Senate control)",
+  "Benjamin Netanyahu": "Israeli election due by Oct 2026"
+ },
+ "faith": {
+  "POPE": {
+   "name": "Pope Leo XIV",
+   "role": "Pope, Catholic Church (~1.3B faithful)",
+   "jurisdiction": "Holy See",
+   "value": 260,
+   "metro_slug": "vatican-city",
+   "seat": "Vatican City"
+  },
+  "AZHAR": {
+   "name": "Ahmed el-Tayeb",
+   "role": "Grand Imam of Al-Azhar (Sunni Islam)",
+   "jurisdiction": "Sunni Islam",
+   "value": 88,
+   "metro_slug": "cairo",
+   "seat": "Cairo"
+  },
+  "SISTANI": {
+   "name": "Ali al-Sistani",
+   "role": "Grand Ayatollah, Najaf (Shia Islam)",
+   "jurisdiction": "Shia Islam",
+   "value": 55,
+   "metro_slug": "najaf",
+   "seat": "Najaf"
+  },
+  "DALAI_LAMA": {
+   "name": "Dalai Lama",
+   "role": "14th Dalai Lama, Tibetan Buddhism",
+   "jurisdiction": "Tibetan Buddhism",
+   "value": 48,
+   "metro_slug": "dharamshala",
+   "seat": "Dharamshala"
+  },
+  "KIRILL": {
+   "name": "Patriarch Kirill",
+   "role": "Patriarch of Moscow, Russian Orthodox Church",
+   "jurisdiction": "Russian Orthodox Church",
+   "value": 45,
+   "metro_slug": "moscow",
+   "seat": "Moscow"
+  }
+ }
 }

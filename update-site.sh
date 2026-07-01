@@ -58,6 +58,9 @@ echo ""
 echo "Step 1/3: Extracting data from Excel..."
 python3 scripts/extract.py "$XLSX_PATH"
 echo ""
+echo "Step 1b/3: Rebuilding corporate-power.json (market caps for World Power Rankings)..."
+python3 scripts/corporate/build-corporate-power.py "$XLSX_PATH" || echo "corporate-power build skipped"
+echo ""
 
 # Step 2: Commit
 echo "Step 2/3: Committing updated data..."
