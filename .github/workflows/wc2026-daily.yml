@@ -15,7 +15,7 @@ on:
     # result waiting up to ~12h. Every run is cheap and safe: it commits ONLY
     # when a result actually changed, and always with [vercel skip], so it never
     # triggers a Vercel build. Can revert to twice daily after the final (2026-07-19).
-    - cron: "0 7,23 * * *"   # twice daily (07:00 + 23:00 UTC); bump to */3 only if knockout latency matters AND Ignored Build Step is live
+    - cron: "0 7 * * *"   # once each morning (07:00 UTC): recomputes odds only. Live results + bracket now come from the ESPN scoreboard via 30-min ISR, so results no longer wait on this run.
   workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
 
 permissions:

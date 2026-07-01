@@ -187,3 +187,165 @@ export async function fetchWc2026Bundle(
     return buildTimeFallback;
   }
 }
+
+
+// ---------------------------------------------------------------------------
+// Live knockout results + bracket advancement from ESPN's fifa.world scoreboard.
+//
+// The group tables ride the standings feed above. This pulls finished matches
+// straight from the scoreboard across the whole knockout window and, at read
+// time: (1) writes their scores onto the bracket, and (2) advances winners into
+// the next round's slots. So both the score AND the bubble move within the
+// 30-minute ISR window, with no Action run and no deploy. The morning refresh
+// then only recomputes the projection odds.
+// ---------------------------------------------------------------------------
+
+const SCOREBOARD_URL =
+  "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
+// UTC window covering Round of 32 through the Final; one ranged request.
+const KO_DATE_RANGE = "20260628-20260720";
+
+export type Wc2026LiveMatch = {
+  a_name: string; a_score: number; a_win: boolean; a_so: number | null;
+  b_name: string; b_score: number; b_win: boolean; b_so: number | null;
+};
+export type Wc2026LiveScores = { source: "espn"; matches: Wc2026LiveMatch[] } | null;
+
+export async function getWc2026LiveScores(): Promise<Wc2026LiveScores> {
+  try {
+    const res = await fetch(`${SCOREBOARD_URL}?dates=${KO_DATE_RANGE}`, { next: { revalidate: 1800 } });
+    if (!res.ok) return null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const data: any = await res.json();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const events: any[] = data?.events ?? [];
+    const matches: Wc2026LiveMatch[] = [];
+    for (const ev of events) {
+      const comp = ev?.competitions?.[0];
+      if (!comp || !comp.status?.type?.completed) continue; // finished matches only
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const cs: any[] = comp.competitors ?? [];
+      if (cs.length !== 2) continue;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const home = cs.find((c: any) => c.homeAway === "home") ?? cs[0];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const away = cs.find((c: any) => c.homeAway === "away") ?? cs[1];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const nm = (c: any): string | null => (c?.team?.displayName ?? null);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const sc = (c: any): number | null => { const n = Number(c?.score); return Number.isFinite(n) ? n : null; };
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const so = (c: any): number | null => { const n = Number(c?.shootoutScore); return Number.isFinite(n) && n > 0 ? n : null; };
+      const an = nm(home), bn = nm(away), hs = sc(home), aws = sc(away);
+      if (!an || !bn || hs === null || aws === null) continue;
+      matches.push({
+        a_name: an, a_score: hs, a_win: !!home.winner, a_so: so(home),
+        b_name: bn, b_score: aws, b_win: !!away.winner, b_so: so(away),
+      });
+    }
+    return matches.length > 0 ? { source: "espn", matches } : null;
+  } catch {
+    return null;
+  }
+}
+
+// Bracket topology, mirroring scripts/patch-wc2026-bracket.py. Round of 32 slots
+// are in match order 73..88. Each later match takes the winners of two earlier
+// matches; the third-place game (103) takes the two semifinal losers. Downstream
+// slots are labelled "Winner Match N" / "Loser Match N" until resolved.
+const WC_WIN_FEEDERS: Record<number, [number, number]> = {
+  89: [74, 77], 90: [73, 75], 91: [79, 80], 92: [76, 78],
+  93: [83, 84], 94: [81, 82], 95: [85, 87], 96: [86, 88],
+  97: [89, 90], 98: [93, 94], 99: [95, 96], 100: [91, 92],
+  101: [97, 98], 102: [99, 100], 104: [101, 102],
+};
+const WC_OWN_OF_PAIR = new Map<string, number>();
+for (const [k, [a, b]] of Object.entries(WC_WIN_FEEDERS)) {
+  WC_OWN_OF_PAIR.set([a, b].sort((x, y) => x - y).join("-"), Number(k));
+}
+const WC_KO_ORDER = ["Round of 32", "Round of 16", "Quarterfinals", "Semifinals", "Third Place Game", "Final"];
+
+function wcFeeder(label: string | null): { num: number; loser: boolean } | null {
+  if (!label) return null;
+  const m = label.match(/(Winner|Loser)\s+Match\s+(\d+)/i);
+  return m ? { num: Number(m[2]), loser: m[1].toLowerCase() === "loser" } : null;
+}
+
+// Overlays live final scores AND advances winners through the bracket. Matched
+// by the unordered pair of team names, so home/away order is irrelevant.
+export function mergeWc2026Knockout(
+  bundle: WorldCup2026Bundle,
+  live: Wc2026LiveScores,
+): WorldCup2026Bundle {
+  if (!live || live.matches.length === 0) return bundle;
+  const pairKey = (x: string, y: string) => [norm(x), norm(y)].sort().join("|");
+  const byPair = new Map<string, Wc2026LiveMatch>();
+  for (const m of live.matches) {
+    byPair.set(pairKey(NAME_ALIASES[m.a_name] ?? m.a_name, NAME_ALIASES[m.b_name] ?? m.b_name), m);
+  }
+
+  type Side = { slug: string | null; name: string };
+  const winnerBy = new Map<number, Side>();
+  const loserBy = new Map<number, Side>();
+  let changed = 0;
+
+  const knockout: WorldCup2026Bundle["knockout"] = {};
+  for (const [rn, ms] of Object.entries(bundle.knockout)) knockout[rn] = ms.map((r) => ({ ...r }));
+
+  for (const rn of WC_KO_ORDER) {
+    const slots = knockout[rn];
+    if (!slots) continue;
+    slots.forEach((slot, i) => {
+      let ownNum: number | null = null;
+      if (rn === "Round of 32") {
+        ownNum = 73 + i;
+      } else {
+        const fa = wcFeeder(slot.team_cur_name);
+        const fb = wcFeeder(slot.opp_cur_name);
+        if (slot.team_slug === null && fa) {
+          const src = fa.loser ? loserBy.get(fa.num) : winnerBy.get(fa.num);
+          if (src && src.slug) { slot.team_slug = src.slug; slot.team_cur_name = src.name; changed += 1; }
+        }
+        if (slot.opp_slug === null && fb) {
+          const src = fb.loser ? loserBy.get(fb.num) : winnerBy.get(fb.num);
+          if (src && src.slug) { slot.opp_slug = src.slug; slot.opp_cur_name = src.name; changed += 1; }
+        }
+        if (rn === "Third Place Game") ownNum = 103;
+        else if (fa && fb) ownNum = WC_OWN_OF_PAIR.get([fa.num, fb.num].sort((x, y) => x - y).join("-")) ?? null;
+      }
+
+      const teamsKnown = slot.team_slug !== null && slot.opp_slug !== null;
+      if (teamsKnown) {
+        const lm = byPair.get(pairKey(slot.team_cur_name, slot.opp_cur_name));
+        if (lm) {
+          const teamIsA = norm(NAME_ALIASES[lm.a_name] ?? lm.a_name) === norm(slot.team_cur_name);
+          const ts = teamIsA ? lm.a_score : lm.b_score;
+          const os = teamIsA ? lm.b_score : lm.a_score;
+          const teamWon = teamIsA ? lm.a_win : lm.b_win;
+          const oppWon = teamIsA ? lm.b_win : lm.a_win;
+          const so = teamIsA ? (lm.a_so ?? lm.b_so) : (lm.b_so ?? lm.a_so);
+          const result = ts === os ? (teamWon ? "W" : oppWon ? "L" : "D") : ts > os ? "W" : "L";
+          if (!(slot.played && slot.team_score === ts && slot.opp_score === os)) {
+            slot.team_score = ts; slot.opp_score = os;
+            slot.penalty_kicks = so ?? slot.penalty_kicks;
+            slot.result = result; slot.played = true; changed += 1;
+          }
+        }
+      }
+
+      // Record the winner/loser (from whatever source resolved the score) so the
+      // next round can advance. Uses the final slot state, live or pre-existing.
+      if (ownNum !== null && slot.played && (slot.result === "W" || slot.result === "L")
+          && slot.team_slug !== null && slot.opp_slug !== null) {
+        const teamSide: Side = { slug: slot.team_slug, name: slot.team_cur_name };
+        const oppSide: Side = { slug: slot.opp_slug, name: slot.opp_cur_name };
+        const teamWon = slot.result === "W";
+        winnerBy.set(ownNum, teamWon ? teamSide : oppSide);
+        loserBy.set(ownNum, teamWon ? oppSide : teamSide);
+      }
+    });
+  }
+
+  if (changed === 0) return bundle;
+  return { ...bundle, knockout, live: { source: "espn" } };
+}

@@ -16,7 +16,7 @@ import {
   countryPageSlugFor,
 } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
-import { getWc2026LiveStandings, mergeWc2026Live, fetchWc2026Bundle } from "@/lib/wc2026Standings";
+import { getWc2026LiveStandings, mergeWc2026Live, mergeWc2026Knockout, getWc2026LiveScores, fetchWc2026Bundle } from "@/lib/wc2026Standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import NationalIndexClient, { type IndexTeam } from "./NationalIndexClient";
 import WorldCup2026 from "./WorldCup2026";
@@ -43,6 +43,7 @@ export default async function NationalIndexPage() {
   // to the build-time bundle on any network failure.
   const wc2026 = await fetchWc2026Bundle(getWorldCup2026());
   const wc2026Live = wc2026 ? await getWc2026LiveStandings() : null;
+  const wc2026Scores = wc2026 ? await getWc2026LiveScores() : null;
   const snapshots = getRankSnapshots();
   const countrySlugSet = new Set(getAllCountrySlugs());
 
@@ -118,7 +119,7 @@ export default async function NationalIndexPage() {
         ]}
       />
 
-      {wc2026 && <WorldCup2026 wc={mergeWc2026Live(wc2026, wc2026Live)} />}
+      {wc2026 && <WorldCup2026 wc={mergeWc2026Knockout(mergeWc2026Live(wc2026, wc2026Live), wc2026Scores)} />}
 
       <section className="mb-10">
         <h2 id="tournaments" className="text-lg font-semibold mb-3">Tournament hubs</h2>

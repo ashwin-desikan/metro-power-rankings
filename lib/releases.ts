@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-01",
+    headline: "World Cup results now go live within the half-hour",
+    items: [
+      "World Cup results now update from the live feed within about 30 minutes of full time, and the knockout bracket advances winners into the next round on the same cycle, no longer waiting on a daily run.",
+      "The title and advancement odds still recompute each morning, so the model stays stable while the scoreboard stays current.",
+    ],
+  },
+  {
     date: "2026-06-30",
     headline: "Most Powerful People ranking, States directory, US leadership",
     items: [
