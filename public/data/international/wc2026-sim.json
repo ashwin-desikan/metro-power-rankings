@@ -1,7 +1,7 @@
 {
  "meta": {
   "tournament": "FIFA World Cup 2026",
-  "generated_at": "2026-07-02T07:29:08Z",
+  "generated_at": "2026-07-02T10:12:13Z",
   "sims": 40000,
   "model": "Blended Elo + market odds, Poisson goals, Monte Carlo",
   "blend_market_weight": 0.45,
@@ -13,7 +13,7 @@
   "odds_as_of": "2026-06-04",
   "starts_iso": "2026-06-11",
   "pre_tournament": false,
-  "results_as_of": "2026-07-02T07:29:00Z",
+  "results_as_of": "2026-07-02T10:12:05Z",
   "played_group": 72,
   "played_knockout": 10
  },
@@ -745,17 +745,6 @@
    "market_prob": 0.03
   },
   {
-   "slug": "bosnia-herzegovina",
-   "name": "Bosnia-Herzegovina",
-   "group": "B",
-   "p_r16": 23.55,
-   "p_qf": 4.7,
-   "p_sf": 1.77,
-   "p_final": 0.32,
-   "p_title": 0.07,
-   "market_prob": 0.2
-  },
-  {
    "slug": "ghana",
    "name": "Ghana",
    "group": "L",
@@ -910,17 +899,6 @@
    "market_prob": 0.03
   },
   {
-   "slug": "senegal",
-   "name": "Senegal",
-   "group": "I",
-   "p_r16": 0.0,
-   "p_qf": 0.0,
-   "p_sf": 0.0,
-   "p_final": 0.0,
-   "p_title": 0.0,
-   "market_prob": 0.65
-  },
-  {
    "slug": "iraq",
    "name": "Iraq",
    "group": "I",
@@ -935,17 +913,6 @@
    "slug": "jordan",
    "name": "Jordan",
    "group": "J",
-   "p_r16": 0.0,
-   "p_qf": 0.0,
-   "p_sf": 0.0,
-   "p_final": 0.0,
-   "p_title": 0.0,
-   "market_prob": 0.03
-  },
-  {
-   "slug": "congo-dr",
-   "name": "Congo DR",
-   "group": "K",
    "p_r16": 0.0,
    "p_qf": 0.0,
    "p_sf": 0.0,
