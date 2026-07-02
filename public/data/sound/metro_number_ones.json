@@ -6821,7 +6821,7 @@
    },
    {
     "single": "Travellin' Light",
-    "artist": "Cliff Richard & The Shadows",
+    "artist": "The Shadows",
     "charts": "UK",
     "year": 1959
    },
@@ -6851,7 +6851,7 @@
    },
    {
     "single": "I Love You",
-    "artist": "Cliff Richard & The Shadows",
+    "artist": "The Shadows",
     "charts": "UK",
     "year": 1960
    },
@@ -6863,7 +6863,7 @@
    },
    {
     "single": "Please Don't Tease",
-    "artist": "Cliff Richard & The Shadows",
+    "artist": "The Shadows",
     "charts": "UK",
     "year": 1960
    },
@@ -6959,13 +6959,13 @@
    },
    {
     "single": "The Next Time",
-    "artist": "Cliff Richard & The Shadows",
+    "artist": "The Shadows",
     "charts": "UK",
     "year": 1962
    },
    {
     "single": "The Young Ones",
-    "artist": "Cliff Richard & The Shadows",
+    "artist": "The Shadows",
     "charts": "UK",
     "year": 1962
    },
@@ -7001,7 +7001,7 @@
    },
    {
     "single": "Summer Holiday",
-    "artist": "Cliff Richard & The Shadows",
+    "artist": "The Shadows",
     "charts": "UK",
     "year": 1963
    },
@@ -13021,7 +13021,7 @@
  },
  "miami": {
   "metro": "Miami",
-  "count": 51,
+  "count": 50,
   "number_ones": [
    {
     "single": "Rock Your Baby",
@@ -13068,12 +13068,6 @@
    {
     "single": "Anything for You",
     "artist": "Gloria Estefan",
-    "charts": "US",
-    "year": 1988
-   },
-   {
-    "single": "Anything for You",
-    "artist": "Miami Sound Machine",
     "charts": "US",
     "year": 1988
    },

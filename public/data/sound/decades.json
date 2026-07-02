@@ -980,6 +980,12 @@
     "combined": 17.9
    },
    {
+    "name": "The Shadows",
+    "slug": "the-shadows",
+    "metro": "London",
+    "combined": 17.8
+   },
+   {
     "name": "The Four Seasons",
     "slug": "the-four-seasons",
     "metro": "New York",
@@ -1056,12 +1062,6 @@
     "slug": "bobby-vee",
     "metro": "Fargo",
     "combined": 10.7
-   },
-   {
-    "name": "Dion",
-    "slug": "dion",
-    "metro": "New York",
-    "combined": 10.6
    }
   ],
   "top_songs": [
